@@ -4,20 +4,17 @@ import T from "./TestHelper";
 import {FromJSON} from "../Customizations/JSON/FromJSON";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
-import {UIEventSource} from "../Logic/UIEventSource";
 import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
-import EditableTagRendering from "../UI/Popup/EditableTagRendering";
 import {Translation} from "../UI/i18n/Translation";
 import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
-import PublicHolidayInput from "../UI/OpeningHours/PublicHolidayInput";
-import {SubstitutedTranslation} from "../UI/SubstitutedTranslation";
 import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
 
+
 Utils.runningFromConsole = true;
 
-export default class    TagSpec extends  T{
-    
+export default class TagSpec extends T {
+
     constructor() {
         super("Tags", [
             ["Tag replacement works in translation", () => {
@@ -88,12 +85,35 @@ export default class    TagSpec extends  T{
                 equal(assign.matchesProperties({"survey:date": "2021-03-29"}), false);
                 equal(assign.matchesProperties({"_date:now": "2021-03-29"}), false);
                 equal(assign.matchesProperties({"some_key": "2021-03-29"}), false);
-                
-                const notEmptyList = FromJSON.Tag("xyz!~\\[\\]")
-                equal(notEmptyList.matchesProperties({"xyz":undefined}), true);
-                equal(notEmptyList.matchesProperties({"xyz":"[]"}), false);
-                equal(notEmptyList.matchesProperties({"xyz":"[\"abc\"]"}), true);
 
+                const notEmptyList = FromJSON.Tag("xyz!~\\[\\]")
+                equal(notEmptyList.matchesProperties({"xyz": undefined}), true);
+                equal(notEmptyList.matchesProperties({"xyz": "[]"}), false);
+                equal(notEmptyList.matchesProperties({"xyz": "[\"abc\"]"}), true);
+                
+                let compare = FromJSON.Tag("key<=5")
+                equal(compare.matchesProperties({"key": undefined}), false);
+                equal(compare.matchesProperties({"key": "6"}), false);
+                equal(compare.matchesProperties({"key": "5"}), true);
+                equal(compare.matchesProperties({"key": "4"}), true);
+
+
+                compare = FromJSON.Tag("key<5")
+                equal(compare.matchesProperties({"key": undefined}), false);
+                equal(compare.matchesProperties({"key": "6"}), false);
+                equal(compare.matchesProperties({"key": "5"}), false);
+                equal(compare.matchesProperties({"key": "4.2"}), true);
+
+                compare = FromJSON.Tag("key>5")
+                equal(compare.matchesProperties({"key": undefined}), false);
+                equal(compare.matchesProperties({"key": "6"}), true);
+                equal(compare.matchesProperties({"key": "5"}), false);
+                equal(compare.matchesProperties({"key": "4.2"}), false);
+                compare = FromJSON.Tag("key>=5")
+                equal(compare.matchesProperties({"key": undefined}), false);
+                equal(compare.matchesProperties({"key": "6"}), true);
+                equal(compare.matchesProperties({"key": "5"}), true);
+                equal(compare.matchesProperties({"key": "4.2"}), false);
 
             })],
             ["Is equivalent test", (() => {
@@ -162,41 +182,35 @@ export default class    TagSpec extends  T{
                 }
             ],
             [
-                "Tagrendering test",
+                "Test not with overpass",
                 () => {
-
-                    const def = {
-                        "render": {
-                            "nl": "De toegankelijkheid van dit gebied is: {access:description}"
-                        },
-                        "question": {
-                            "nl": "Is dit gebied toegankelijk?"
-                        },
-                        "freeform": {
-                            "key": "access:description"
-                        },
-                        "mappings": [
-                            {
-                                "if": {
-                                    "and": [
-                                        "access:description=",
-                                        "access=",
-                                        "leisure=park"
-                                    ]
-                                },
-                                "then": {
-                                    "nl": "Dit gebied is vrij toegankelijk"
-                                },
-                                "hideInAnswer": true
-                            },
-                            {
-                                "if": "access=no",
-                                "then": "Niet toegankelijk"
-                            }
+                    const t = {
+                        and: [
+                            "boundary=protected_area",
+                            "protect_class!=98"
                         ]
-                    };
+                    }
+                    const filter = FromJSON.Tag(t)
+                    const overpass = filter.asOverpass();
+                    console.log(overpass)
+                    equal(overpass[0], "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]")
 
+                    const or =  {
+                        or: [
+                            "leisure=nature_reserve",
+                            t
+                        ]
+                    }
+                    const overpassOr = FromJSON.Tag(or).asOverpass()
+                    equal(2, overpassOr.length)
+                    equal(overpassOr[1], "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]")
 
+                   const orInOr = {or:[
+                       "amenity=drinking_water",
+                           or
+                       ]}
+                    const overpassOrInor = FromJSON.Tag(orInOr).asOverpass()
+                    equal(3, overpassOrInor.length)
                 }
             ], [
                 "Merge touching opening hours",
@@ -358,27 +372,27 @@ export default class    TagSpec extends  T{
                 ]);
                 equal(rules, "Tu 10:00-12:00; Su 13:00-17:00");
             }],
-            ["JOIN OH with end hours", () =>{
+            ["JOIN OH with end hours", () => {
                 const rules = OH.ToString(
                     OH.MergeTimes([
 
-                    {
-                        weekday: 1,
-                        endHour: 23,
-                        endMinutes: 30,
-                        startHour: 23,
-                        startMinutes: 0
-                    }, {
-                        weekday: 1,
-                        endHour: 24,
-                        endMinutes: 0,
-                        startHour: 23,
-                        startMinutes: 30
-                    },
+                        {
+                            weekday: 1,
+                            endHour: 23,
+                            endMinutes: 30,
+                            startHour: 23,
+                            startMinutes: 0
+                        }, {
+                            weekday: 1,
+                            endHour: 24,
+                            endMinutes: 0,
+                            startHour: 23,
+                            startMinutes: 30
+                        },
 
-                ]));
+                    ]));
                 equal(rules, "Tu 23:00-00:00");
-            }],            ["JOIN OH with overflowed hours", () =>{
+            }], ["JOIN OH with overflowed hours", () => {
                 const rules = OH.ToString(
                     OH.MergeTimes([
 
@@ -464,10 +478,10 @@ export default class    TagSpec extends  T{
                     ]
                 };
 
-                const tagRendering = new TagRenderingConfig(config, null,  "test");
+                const tagRendering = new TagRenderingConfig(config, null, "test");
                 equal(true, tagRendering.IsKnown({bottle: "yes"}))
                 equal(false, tagRendering.IsKnown({}))
             }]]);
     }
-    
+
 }

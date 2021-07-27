@@ -29,12 +29,8 @@
   "tagRenderings": [
     "images"
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/layers/information_board/board.svg"
-  },
-  "width": {
-    "render": "8"
   },
   "iconSize": {
     "render": "40,40,center"

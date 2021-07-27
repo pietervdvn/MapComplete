@@ -1,81 +1,233 @@
-import {OsmNode, OsmObject} from "./OsmObject";
+import {OsmNode, OsmObject, OsmRelation, OsmWay} from "./OsmObject";
 import State from "../../State";
-import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import Constants from "../../Models/Constants";
-import FeatureSource from "../FeatureSource/FeatureSource";
-import {TagsFilter} from "../Tags/TagsFilter";
-import {Tag} from "../Tags/Tag";
-import {OsmConnection} from "./OsmConnection";
+import OsmChangeAction from "./Actions/OsmChangeAction";
+import {ChangeDescription} from "./Actions/ChangeDescription";
+import {Utils} from "../../Utils";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 
 /**
  * Handles all changes made to OSM.
  * Needs an authenticator via OsmConnection
  */
-export class Changes implements FeatureSource {
+export class Changes {
 
 
     private static _nextId = -1; // Newly assigned ID's are negative
     public readonly name = "Newly added features"
     /**
-     * The newly created points, as a FeatureSource
+     * All the newly created features as featureSource + all the modified features
      */
     public features = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
-    /**
-     * All the pending changes
-     */
-    public readonly pending = LocalStorageSource.GetParsed<{ elementId: string, key: string, value: string }[]>("pending-changes", [])
 
-    /**
-     * All the pending new objects to upload
-     */
-    private readonly newObjects = LocalStorageSource.GetParsed<{ id: number, lat: number, lon: number }[]>("newObjects", [])
-
+    public readonly pendingChanges = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     private readonly isUploading = new UIEventSource(false);
+    
+    private readonly previouslyCreated : OsmObject[] = []
 
-    /**
-     * Adds a change to the pending changes
-     */
-    private static checkChange(kv: { k: string, v: string }): { k: string, v: string } {
-        const key = kv.k;
-        const value = kv.v;
-        if (key === undefined || key === null) {
-            console.log("Invalid key");
-            return undefined;
-        }
-        if (value === undefined || value === null) {
-            console.log("Invalid value for ", key);
-            return undefined;
-        }
-
-        if (key.startsWith(" ") || value.startsWith(" ") || value.endsWith(" ") || key.endsWith(" ")) {
-            console.warn("Tag starts with or ends with a space - trimming anyway")
-        }
-
-        return {k: key.trim(), v: value.trim()};
+    constructor() {
+       
     }
 
+    private static createChangesetFor(csId: string,
+                                     allChanges: {
+                                         modifiedObjects: OsmObject[],
+                                         newObjects: OsmObject[],
+                                         deletedObjects: OsmObject[]
+                                     }): string {
 
-    addTag(elementId: string, tagsFilter: TagsFilter,
-           tags?: UIEventSource<any>) {
-        const eventSource = tags ?? State.state?.allElements.getEventSourceById(elementId);
-        const elementTags = eventSource.data;
-        const changes = tagsFilter.asChange(elementTags).map(Changes.checkChange)
-        if (changes.length == 0) {
-            return;
+        const changedElements = allChanges.modifiedObjects ?? []
+        const newElements = allChanges.newObjects ?? []
+        const deletedElements = allChanges.deletedObjects ?? []
+
+        let changes = `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'>`;
+        if (newElements.length > 0) {
+            changes +=
+                "\n<create>\n" +
+                newElements.map(e => e.ChangesetXML(csId)).join("\n") +
+                "</create>";
+        }
+        if (changedElements.length > 0) {
+            changes +=
+                "\n<modify>\n" +
+                changedElements.map(e => e.ChangesetXML(csId)).join("\n") +
+                "\n</modify>";
         }
 
+        if (deletedElements.length > 0) {
+            changes +=
+                "\n<deleted>\n" +
+                deletedElements.map(e => e.ChangesetXML(csId)).join("\n") +
+                "\n</deleted>"
+        }
+
+        changes += "</osmChange>";
+        return changes;
+    }
+
+    private static GetNeededIds(changes: ChangeDescription[]) {
+        return Utils.Dedup(changes.filter(c => c.id >= 0)
+            .map(c => c.type + "/" + c.id))
+    }
+
+    private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
+        newObjects: OsmObject[],
+        modifiedObjects: OsmObject[]
+        deletedObjects: OsmObject[]
+
+    } {
+        const objects: Map<string, OsmObject> = new Map<string, OsmObject>()
+        const states: Map<string, "unchanged" | "created" | "modified" | "deleted"> = new Map();
+
+        for (const o of downloadedOsmObjects) {
+            objects.set(o.type + "/" + o.id, o)
+            states.set(o.type + "/" + o.id, "unchanged")
+        }
+
+        for (const o of this.previouslyCreated) {
+            objects.set(o.type + "/" + o.id, o) 
+            states.set(o.type + "/" + o.id, "unchanged")
+        }
+
+        let changed = false;
         for (const change of changes) {
-            if (elementTags[change.k] !== change.v) {
-                elementTags[change.k] = change.v;
-                console.log("Applied ", change.k, "=", change.v)
-                // We use 'elementTags.id' here, as we might have retrieved with the id 'node/-1' as new point, but should use the rewritten id
-                this.pending.data.push({elementId: elementTags.id, key: change.k, value: change.v});
+            const id = change.type + "/" + change.id
+            if (!objects.has(id)) {
+                if(change.id >= 0){
+                    throw "Did not get an object that should be known: "+id
+                }
+                // This is a new object that should be created
+                states.set(id, "created")
+                console.log("Creating object for changeDescription", change)
+                let osmObj: OsmObject = undefined;
+                switch (change.type) {
+                    case "node":
+                        const n = new OsmNode(change.id)
+                        n.lat = change.changes["lat"]
+                        n.lon = change.changes["lon"]
+                        osmObj = n
+                        break;
+                    case "way":
+                        const w = new OsmWay(change.id)
+                        w.nodes = change.changes["nodes"]
+                        osmObj = w
+                        break;
+                    case "relation":
+                        const r = new OsmRelation(change.id)
+                        r.members = change.changes["members"]
+                        osmObj = r
+                        break;
+                }
+                if (osmObj === undefined) {
+                    throw "Hmm? This is a bug"
+                }
+                objects.set(id, osmObj)
+                this.previouslyCreated.push(osmObj)
+            }
+
+            const state = states.get(id)
+            if (change.doDelete) {
+                if (state === "created") {
+                    states.set(id, "unchanged")
+                } else {
+                    states.set(id, "deleted")
+                }
+            }
+
+            const obj = objects.get(id)
+            // Apply tag changes
+            for (const kv of change.tags ?? []) {
+                const k = kv.k
+                let v = kv.v
+
+                if (v === "") {
+                    v = undefined;
+                }
+
+                const oldV = obj.type[k]
+                if (oldV === v) {
+                    continue;
+                }
+
+                obj.tags[k] = v;
+                changed = true;
+
+
+            }
+
+            if (change.changes !== undefined) {
+                switch (change.type) {
+                    case "node":
+                        // @ts-ignore
+                        const nlat = change.changes.lat;
+                        // @ts-ignore
+                        const nlon = change.changes.lon;
+                        const n = <OsmNode>obj
+                        if (n.lat !== nlat || n.lon !== nlon) {
+                            n.lat = nlat;
+                            n.lon = nlon;
+                            changed = true;
+                        }
+                        break;
+                    case "way":
+                        const nnodes = change.changes["nodes"]
+                        const w = <OsmWay>obj
+                        if (!Utils.Identical(nnodes, w.nodes)) {
+                            w.nodes = nnodes
+                            changed = true;
+                        }
+                        break;
+                    case "relation":
+                        const nmembers: { type: "node" | "way" | "relation", ref: number, role: string }[] = change.changes["members"]
+                        const r = <OsmRelation>obj
+                        if (!Utils.Identical(nmembers, r.members, (a, b) => {
+                            return a.role === b.role && a.type === b.type && a.ref === b.ref
+                        })) {
+                            r.members = nmembers;
+                            changed = true;
+                        }
+                        break;
+
+                }
+               
+            }
+
+            if (changed && state === "unchanged") {
+                states.set(id, "modified")
             }
         }
-        this.pending.ping();
-        eventSource.ping();
+
+
+        const result = {
+            newObjects: [],
+            modifiedObjects: [],
+            deletedObjects: []
+        }
+        
+        objects.forEach((v, id) => {
+
+            const state = states.get(id)
+            if (state === "created") {
+                result.newObjects.push(v)
+            }
+            if (state === "modified") {
+                result.modifiedObjects.push(v)
+            }
+            if (state === "deleted") {
+                result.deletedObjects.push(v)
+            }
+
+        })
+
+        return result
+    }
+
+    /**
+     * Returns a new ID and updates the value for the next ID
+     */
+    public getNewID() {
+        return Changes._nextId--;
     }
 
     /**
@@ -83,194 +235,65 @@ export class Changes implements FeatureSource {
      * Triggered by the 'PendingChangeUploader'-actor in Actors
      */
     public flushChanges(flushreason: string = undefined) {
-        if (this.pending.data.length === 0) {
+        if (this.pendingChanges.data.length === 0) {
             return;
         }
-        if (flushreason !== undefined) {
-            console.log(flushreason)
-        }
-        this.uploadAll();
-    }
-
-    /**
-     * Create a new node element at the given lat/long.
-     * An internal OsmObject is created to upload later on, a geojson represention is returned.
-     * Note that the geojson version shares the tags (properties) by pointer, but has _no_ id in properties
-     */
-    public createElement(basicTags: Tag[], lat: number, lon: number) {
-        console.log("Creating a new element with ", basicTags)
-        const newId = Changes._nextId;
-        Changes._nextId--;
-
-        const id = "node/" + newId;
-
-
-        const properties = {id: id};
-
-        const geojson = {
-            "type": "Feature",
-            "properties": properties,
-            "id": id,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    lon,
-                    lat
-                ]
-            }
-        }
-
-        // The basictags are COPIED, the id is included in the properties
-        // The tags are not yet written into the OsmObject, but this is applied onto a 
-        const changes = [];
-        for (const kv of basicTags) {
-            if (typeof kv.value !== "string") {
-                throw "Invalid value: don't use a regex in a preset"
-            }
-            properties[kv.key] = kv.value;
-            changes.push({elementId: id, key: kv.key, value: kv.value})
-        }
-
-        console.log("New feature added and pinged")
-        this.features.data.push({feature: geojson, freshness: new Date()});
-        this.features.ping();
-
-        State.state.allElements.addOrGetElement(geojson).ping();
-
-        if (State.state.osmConnection.userDetails.data.backend !== OsmConnection.oauth_configs.osm.url) {
-            properties["_backend"] = State.state.osmConnection.userDetails.data.backend
-        }
-
-
-        this.newObjects.data.push({id: newId, lat: lat, lon: lon})
-        this.pending.data.push(...changes)
-        this.pending.ping();
-        this.newObjects.ping();
-        return geojson;
-    }
-
-    private uploadChangesWithLatestVersions(
-        knownElements: OsmObject[]) {
-        const knownById = new Map<string, OsmObject>();
-        knownElements.forEach(knownElement => {
-            knownById.set(knownElement.type + "/" + knownElement.id, knownElement)
-        })
-
-        const newElements: OsmNode [] = this.newObjects.data.map(spec => {
-            const newElement = new OsmNode(spec.id);
-            newElement.lat = spec.lat;
-            newElement.lon = spec.lon;
-            return newElement
-        })
-
-
-        // Here, inside the continuation, we know that all 'neededIds' are loaded in 'knownElements', which maps the ids onto the elements
-        // We apply the changes on them
-        for (const change of this.pending.data) {
-            if (parseInt(change.elementId.split("/")[1]) < 0) {
-                // This is a new element - we should apply this on one of the new elements
-                for (const newElement of newElements) {
-                    if (newElement.type + "/" + newElement.id === change.elementId) {
-                        newElement.addTag(change.key, change.value);
-                    }
-                }
-            } else {
-                knownById.get(change.elementId).addTag(change.key, change.value);
-            }
-        }
-
-        // Small sanity check for duplicate information
-        let changedElements = [];
-        for (const elementId in knownElements) {
-            const element = knownElements[elementId];
-            if (element.changed) {
-                changedElements.push(element);
-            }
-        }
-        if (changedElements.length == 0 && newElements.length == 0) {
-            console.log("No changes in any object - clearing");
-            this.pending.setData([])
-            this.newObjects.setData([])
-            return;
-        }
-        const self = this;
-
+        
         if (this.isUploading.data) {
+            console.log("Is already uploading... Abort")
             return;
         }
+        
+      
         this.isUploading.setData(true)
-
-        console.log("Beginning upload...");
+       
+        console.log("Beginning upload... "+flushreason ?? "");
         // At last, we build the changeset and upload
-        State.state.osmConnection.UploadChangeset(
-            State.state.layoutToUse.data,
-            State.state.allElements,
-            function (csId) {
-
-                let modifications = "";
-                for (const element of changedElements) {
-                    if (!element.changed) {
-                        continue;
-                    }
-                    modifications += element.ChangesetXML(csId) + "\n";
-                }
-
-
-                let creations = "";
-                for (const newElement of newElements) {
-                    creations += newElement.ChangesetXML(csId);
-                }
-
-
-                let changes = `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'>`;
-
-                if (creations.length > 0) {
-                    changes +=
-                        "<create>" +
-                        creations +
-                        "</create>";
-                }
-
-                if (modifications.length > 0) {
-                    changes +=
-                        "<modify>\n" +
-                        modifications +
-                        "\n</modify>";
-                }
-
-                changes += "</osmChange>";
-
-                return changes;
-            },
-            () => {
-                console.log("Upload successfull!")
-                self.newObjects.setData([])
-                self.pending.setData([]);
-                self.isUploading.setData(false)
-            },
-            () => self.isUploading.setData(false)
-        );
-    };
-
-
-    private uploadAll() {
         const self = this;
+        const pending = self.pendingChanges.data;
+        const neededIds =  Changes.GetNeededIds(pending)
+        console.log("Needed ids", neededIds)
+        OsmObject.DownloadAll(neededIds, true).addCallbackAndRunD(osmObjects => {
+            console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
+            const changes: {
+                newObjects: OsmObject[],
+                modifiedObjects: OsmObject[]
+                deletedObjects: OsmObject[]
 
-        const pending = this.pending.data;
-        let neededIds: string[] = [];
-        for (const change of pending) {
-            const id = change.elementId;
-            if (parseFloat(id.split("/")[1]) < 0) {
-                // New element - we don't have to download this
-            } else {
-                neededIds.push(id);
+            }  = self.CreateChangesetObjects(pending, osmObjects)
+            if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
+                console.log("No changes to be made")
+                self.pendingChanges.setData([])
+                self.isUploading.setData(false)
+                return true; // Unregister the callback
             }
-        }
 
-        neededIds = Utils.Dedup(neededIds);
-        OsmObject.DownloadAll(neededIds).addCallbackAndRunD(knownElements => {
-            self.uploadChangesWithLatestVersions(knownElements)
-        })
+
+            State.state.osmConnection.UploadChangeset(
+                State.state.layoutToUse.data,
+                State.state.allElements,
+                (csId) => Changes.createChangesetFor(csId, changes),
+                () => {
+                    console.log("Upload successfull!")
+                    self.pendingChanges.setData([]);
+                    self.isUploading.setData(false)
+                },
+                () => {
+                    console.log("Upload failed - trying again later")
+                    return self.isUploading.setData(false);
+                } // Failed - mark to try again
+            )
+            return true;
+
+        });
+
+
     }
 
+    public applyAction(action: OsmChangeAction) {
+        const changes = action.Perform(this)
+        console.log("Received changes:", changes)
+        this.pendingChanges.data.push(...changes);
+        this.pendingChanges.ping();
+    }
 }

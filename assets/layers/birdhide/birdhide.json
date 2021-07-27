@@ -90,6 +90,17 @@
         },
         {
           "if": {
+            "and": [
+              "building=tower",
+              "bird_hide=tower"
+            ]
+          },
+          "then": {
+            "nl": "Vogelkijktoren"
+          }
+        },
+        {
+          "if": {
             "or": [
               "amenity=shelter",
               "building=yes",
@@ -241,5 +252,44 @@
       }
     }
   ],
-  "wayHandling": 2
+  "wayHandling": 1,
+  "filter": [
+    {
+      "options": [
+        {
+          "question": {
+            "nl": "Rolstoeltoegankelijk",
+            "en": "Wheelchair accessible"
+          },
+          "osmTags": {
+            "or": [
+              "wheelchair=yes",
+              "wheelchair=designated",
+              "wheelchair=permissive"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": {
+            "nl": "Enkel overdekte kijkhutten"
+          },
+          "osmTags": {
+            "and": [
+              {
+                "or": [
+                  "shelter=yes",
+                  "building~*"
+                ]
+              },
+              "covered!=no"
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -6,12 +6,13 @@ import {And} from "../../Logic/Tags/And";
 import {Tag} from "../../Logic/Tags/Tag";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
+import ComparingTag from "../../Logic/Tags/ComparingTag";
 
 export class FromJSON {
 
     public static SimpleTag(json: string, context?: string): Tag {
         const tag = Utils.SplitFirst(json, "=");
-        if(tag.length !== 2){
+        if (tag.length !== 2) {
             throw `Invalid tag: no (or too much) '=' found (in ${context ?? "unkown context"})`
         }
         return new Tag(tag[0], tag[1]);
@@ -26,6 +27,15 @@ export class FromJSON {
         }
     }
 
+    private static comparators
+        : [string, (a: number, b: number) => boolean][]
+        = [
+        ["<=", (a, b) => a <= b],
+        [">=", (a, b) => a >= b],
+        ["<", (a, b) => a < b],
+        [">", (a, b) => a > b],
+    ]
+
     private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
 
         if (json === undefined) {
@@ -33,6 +43,27 @@ export class FromJSON {
         }
         if (typeof (json) == "string") {
             const tag = json as string;
+
+            for (const [operator, comparator] of FromJSON.comparators) {
+                if (tag.indexOf(operator) >= 0) {
+                    const split = Utils.SplitFirst(tag, operator);
+
+                    const val = Number(split[1].trim())
+                    if (isNaN(val)) {
+                        throw `Error: not a valid value for a comparison: ${split[1]}, make sure it is a number and nothing more (at ${context})`
+                    }
+
+                    const f = (value: string | undefined) => {
+                        const b = Number(value?.replace(/[^\d.]/g,''))
+                        if (isNaN(b)) {
+                            return false;
+                        }
+                        return comparator(b, val)
+                    }
+                return new ComparingTag(split[0], f, operator + val)
+                }
+            }
+
             if (tag.indexOf("!~") >= 0) {
                 const split = Utils.SplitFirst(tag, "!~");
                 if (split[1] === "*") {
@@ -54,11 +85,11 @@ export class FromJSON {
                     new RegExp("^" + split[1] + "$")
                 );
             }
-            if(tag.indexOf(":=") >= 0){
+            if (tag.indexOf(":=") >= 0) {
                 const split = Utils.SplitFirst(tag, ":=");
                 return new SubstitutingTag(split[0], split[1]);
             }
-            
+
             if (tag.indexOf("!=") >= 0) {
                 const split = Utils.SplitFirst(tag, "!=");
                 if (split[1] === "*") {

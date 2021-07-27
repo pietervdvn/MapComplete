@@ -27,6 +27,14 @@
     "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about a specific theme.",
     "pickTheme": "Pick a theme below to get started."
   },
+  "split": {
+    "split": "Split",
+    "cancel": "Cancel",
+    "inviteToSplit": "Split this road",
+    "loginToSplit": "You must be logged in to split a road",
+    "splitTitle": "Choose on the map where to split this road",
+    "hasBeenSplit": "This way has been split"
+  },
   "delete": {
     "delete": "Delete",
     "cancel": "Cancel",
@@ -56,7 +64,7 @@
     "loginWithOpenStreetMap": "Login with OpenStreetMap",
     "welcomeBack": "You are logged in, welcome back!",
     "loginToStart": "Login to answer this question",
-    "openStreetMapIntro": "<h3>An Open Map</h3><p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit? A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p><p>A ton of people and application already use OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap. If you change something here, it'll be reflected in those applications too - after their next update!</p>",
+    "openStreetMapIntro": "<h3>An Open Map</h3><p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit? A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p><p>A ton of people and application already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap. If you change something here, it'll be reflected in those applications too - after their next update!</p>",
     "search": {
       "search": "Search a location",
       "searching": "Searching…",
@@ -150,8 +158,14 @@
       "title": "Select layers"
     },
     "download": {
+      "title": "Download visible data",
       "downloadGeojson": "Download visible data as geojson",
-      "licenseInfo": "<h3>Copyright notice</h3>The provided is available under ODbL. Reusing this data is free for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b></li><li>Any change to this data must be republished under the same license</li></ul>. Please see the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details"
+      "downloadGeoJsonHelper": "Compatible with QGIS, OsmAnd, ArcGIS, ESRI, ...",
+      "downloadCSV": "Download as CSV",
+      "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, ...",
+      "includeMetaData": "Include metadata (last editor, calculated values, ...)",
+      "licenseInfo": "<h3>Copyright notice</h3>The provided is available under ODbL. Reusing this data is free for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> is required</li><li>Any change to this data must be republished under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details",
+      "noDataLoaded": "No data is loaded yet. Download will be available soon"
     },
     "weekdays": {
       "abbreviations": {

@@ -430,5 +430,46 @@
       ]
     },
     "neededChangesets": 5
-  }
+  },
+  "filter": [
+    {
+      "options": [
+        {
+          "question": "Kinderboeken aanwezig?",
+          "osmTags": "books~.*children.*"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": "Boeken voor volwassenen aanwezig?",
+          "osmTags": "books~.*adults.*"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": "Binnen of buiten",
+          "osmTags": {
+            "and": []
+          }
+        },
+        {
+          "question": "Binnen?",
+          "osmTags": "indoor=yes"
+        },
+        {
+          "question": "Buiten?",
+          "osmTags": {
+            "or": [
+              "indoor=no",
+              "indoor="
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

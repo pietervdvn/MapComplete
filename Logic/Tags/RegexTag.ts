@@ -34,9 +34,9 @@ export class RegexTag extends TagsFilter {
 
     asOverpass(): string[] {
         if (typeof this.key === "string") {
-            return [`['${this.key}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
+            return [`["${this.key}"${this.invert ? "!" : ""}~"${RegexTag.source(this.value)}"]`];
         }
-        return [`[~'${this.key.source}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
+        return [`[~"${this.key.source}"${this.invert ? "!" : ""}~"${RegexTag.source(this.value)}"]`];
     }
 
     isUsableAsAnswer(): boolean {

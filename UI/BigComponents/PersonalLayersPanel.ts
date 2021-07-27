@@ -64,13 +64,11 @@ export default class PersonalLayersPanel extends VariableUiElement {
     private static CreateLayerToggle(layer: LayerConfig): Toggle {
         let icon :BaseUIElement =new Combine([ layer.GenerateLeafletStyle(
             new UIEventSource<any>({id: "node/-1"}),
-            false,
-            "2em"
+            false
         ).icon.html]).SetClass("relative")
         let iconUnset =new Combine([ layer.GenerateLeafletStyle(
             new UIEventSource<any>({id: "node/-1"}),
-            false,
-            "2em"
+            false
         ).icon.html]).SetClass("relative")
 
         iconUnset.SetStyle("opacity:0.1")

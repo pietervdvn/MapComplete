@@ -23,11 +23,15 @@
          //minimap op index.html -> hidden daar alles op doen en dan weg
          //minimap - leaflet map ophalen - boundaries ophalen - State.state.featurePipeline
          screenshotter.addTo(State.state.leafletMap.data);
-         let doc = new jsPDF('l');
+         let doc = new jsPDF('landscape');
+         console.log("Taking screenshot")
          screenshotter.takeScreen('image').then(image => {
+             if(!(image instanceof Blob)){
+                 alert("Exporting failed :(")
+                 return;
+             }
              let file = new PDFLayout();
              file.AddLayout(layout, doc, image);
-             console.log("SCREENSHOTTER");
              doc.save(name);
          })
      }

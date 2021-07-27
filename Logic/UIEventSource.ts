@@ -2,21 +2,27 @@ import {Utils} from "../Utils";
 
 export class UIEventSource<T> {
 
+    private static allSources: UIEventSource<any>[] = UIEventSource.PrepPerf();
     public data: T;
+    public trace: boolean;
     private readonly tag: string;
-    private _callbacks = [];
-    
-    private static allSources : UIEventSource<any>[] = UIEventSource.PrepPerf();
-    
-    static PrepPerf() : UIEventSource<any>[]{
-        if(Utils.runningFromConsole){
+    private _callbacks: ((t: T) => (boolean | void | any)) [] = [];
+
+    constructor(data: T, tag: string = "") {
+        this.tag = tag;
+        this.data = data;
+        UIEventSource.allSources.push(this);
+    }
+
+    static PrepPerf(): UIEventSource<any>[] {
+        if (Utils.runningFromConsole) {
             return [];
         }
         // @ts-ignore
         window.mapcomplete_performance = () => {
             console.log(UIEventSource.allSources.length, "uieventsources created");
             const copy = [...UIEventSource.allSources];
-            copy.sort((a,b) => b._callbacks.length - a._callbacks.length);
+            copy.sort((a, b) => b._callbacks.length - a._callbacks.length);
             console.log("Topten is:")
             for (let i = 0; i < 10; i++) {
                 console.log(copy[i].tag, copy[i]);
@@ -24,12 +30,6 @@ export class UIEventSource<T> {
             return UIEventSource.allSources;
         }
         return [];
-    }
-
-    constructor(data: T, tag: string = "") {
-        this.tag = tag;
-        this.data = data;
-        UIEventSource.allSources.push(this);
     }
 
     public static flatten<X>(source: UIEventSource<UIEventSource<X>>, possibleSources: UIEventSource<any>[]): UIEventSource<X> {
@@ -63,10 +63,19 @@ export class UIEventSource<T> {
 
     }
 
-    public addCallback(callback: ((latestData: T) => void)): UIEventSource<T> {
+    /**
+     * Adds a callback
+     *
+     * If the result of the callback is 'true', the callback is considered finished and will be removed again
+     * @param callback
+     */
+    public addCallback(callback: ((latestData: T) => (boolean | void | any))): UIEventSource<T> {
         if (callback === console.log) {
             // This ^^^ actually works!
             throw "Don't add console.log directly as a callback - you'll won't be able to find it afterwards. Wrap it in a lambda instead."
+        }
+        if (this.trace) {
+            console.trace("Added a callback")
         }
         this._callbacks.push(callback);
         return this;
@@ -87,8 +96,21 @@ export class UIEventSource<T> {
     }
 
     public ping(): void {
+        let toDelete = undefined
         for (const callback of this._callbacks) {
-            callback(this.data);
+            if (callback(this.data) === true) {
+                // This callback wants to be deleted
+                if (toDelete === undefined) {
+                    toDelete = [callback]
+                } else {
+                    toDelete.push(callback)
+                }
+            }
+        }
+        if (toDelete !== undefined) {
+            for (const toDeleteElement of toDelete) {
+                this._callbacks.splice(this._callbacks.indexOf(toDeleteElement), 1)
+            }
         }
     }
 
@@ -101,12 +123,12 @@ export class UIEventSource<T> {
      */
     public map<J>(f: ((t: T) => J),
                   extraSources: UIEventSource<any>[] = [],
-                  g: ((j:J, t:T) => T) = undefined): UIEventSource<J> {
+                  g: ((j: J, t: T) => T) = undefined): UIEventSource<J> {
         const self = this;
 
         const newSource = new UIEventSource<J>(
             f(this.data),
-            "map("+this.tag+")"
+            "map(" + this.tag + ")"
         );
 
         const update = function () {
@@ -159,11 +181,28 @@ export class UIEventSource<T> {
         return newSource;
     }
 
-    addCallbackAndRunD(callback: (data :T ) => void) {
+    addCallbackAndRunD(callback: (data: T) => void) {
         this.addCallbackAndRun(data => {
-            if(data !== undefined && data !== null){
-                callback(data)
+            if (data !== undefined && data !== null) {
+              return  callback(data)
             }
         })
     }
+}
+
+export class UIEventSourceTools {
+
+    private static readonly _download_cache = new Map<string, UIEventSource<any>>()
+
+    public static downloadJsonCached(url: string): UIEventSource<any>{
+        const cached = UIEventSourceTools._download_cache.get(url)
+        if(cached !== undefined){
+            return cached;
+        }
+        const src = new UIEventSource<any>(undefined)
+        UIEventSourceTools._download_cache.set(url, src)
+        Utils.downloadJson(url).then(r => src.setData(r))
+        return src;
+    }
+
 }

@@ -1,6 +1,10 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 
+/**
+ * Merges features from different featureSources
+ * Uses the freshest feature available in the case multiple sources offer data with the same identifier
+ */
 export default class FeatureSourceMerger implements FeatureSource {
 
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);

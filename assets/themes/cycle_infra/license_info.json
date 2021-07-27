@@ -1,0 +1,173 @@
+[
+  {
+    "authors": [
+      "Dávid Gladiš",
+      "Hannah Declerck"
+    ],
+    "path": "cycle-infra.svg",
+    "license": "CC-BY",
+    "sources": [
+      "https://thenounproject.com/davidgladis/collection/bicycles/?i=808040"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_road_sign_D07.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_D07.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_road_sign_D09.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_D09.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_road_sign_D10.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_D10.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_traffic_sign_M6.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M6.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_traffic_sign_M7.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M7.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_traffic_sign_M13.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M13.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_traffic_sign_M14.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M14.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_traffic_sign_M15.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M15.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "path": "Belgian_traffic_sign_M16.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M16.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Supaplex030"
+    ],
+    "path": "Cycle_barrier_single.png",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_single.png"
+    ]
+  },
+  {
+    "authors": [
+      "Supaplex030"
+    ],
+    "path": "Cycle_barrier_double.png",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_double.png"
+    ]
+  },
+  {
+    "authors": [
+      "Supaplex030"
+    ],
+    "path": "Cycle_barrier_triple.png",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_triple.png"
+    ]
+  },
+  {
+    "authors": [
+      "Supaplex030"
+    ],
+    "path": "Cycle_barrier_angular.png",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_angular.png"
+    ]
+  },
+  {
+    "authors": [
+      "Supaplex030"
+    ],
+    "path": "Cycle_barrier_squeeze.png",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_squeeze.png"
+    ]
+  },
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "street.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/street.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "bicycleway.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/bicycleway.svg"
+    ]
+  }
+]

@@ -25,7 +25,7 @@ export default class GeoJsonSource implements FeatureSource {
         let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         this.name = "GeoJsonSource of " + url;
         const zoomLevel = flayer.layerDef.source.geojsonZoomLevel;
-        
+
         this.isOsmCache = flayer.layerDef.source.isOsmCacheLayer;
 
         this.features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
@@ -112,7 +112,17 @@ export default class GeoJsonSource implements FeatureSource {
         }
 
         const neededTiles = locationControl.map(
-            _ => {
+            location => {
+                if (!flayer.isDisplayed.data) {
+                    // No need to download! - the layer is disabled
+                    return undefined;
+                }
+
+                if (location.zoom < flayer.layerDef.minzoom) {
+                    // No need to download! - the layer is disabled
+                    return undefined;
+                }
+
                 // Yup, this is cheating to just get the bounds here
                 const bounds = State.state.leafletMap.data.getBounds()
                 const tileRange = Utils.TileRangeBetween(zoomLevel, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
@@ -124,14 +134,6 @@ export default class GeoJsonSource implements FeatureSource {
             , [flayer.isDisplayed]);
         neededTiles.stabilized(250).addCallback((needed: Set<string>) => {
             if (needed === undefined) {
-                return;
-            }
-            if (!flayer.isDisplayed.data) {
-                // No need to download! - the layer is disabled
-                return;
-            }
-
-            if (locationControl.data.zoom < flayer.layerDef.minzoom) {
                 return;
             }
 
@@ -153,42 +155,42 @@ export default class GeoJsonSource implements FeatureSource {
         const self = this;
         Utils.downloadJson(url)
             .then(json => {
-            if (json.elements === [] && json.remarks.indexOf("runtime error") > 0) {
-                self.onFail("Runtime error (timeout)", url)
-                return;
-            }
-            const time = new Date();
-            const newFeatures: { feature: any, freshness: Date } [] = []
-            let i = 0;
-            let skipped = 0;
-            for (const feature of json.features) {
-                if (feature.properties.id === undefined) {
-                    feature.properties.id = url + "/" + i;
-                    feature.id = url + "/" + i;
-                    i++;
+                if (json.elements === [] && json.remarks.indexOf("runtime error") > 0) {
+                    self.onFail("Runtime error (timeout)", url)
+                    return;
                 }
-                if (self.seenids.has(feature.properties.id)) {
-                    skipped++;
-                    continue;
+                const time = new Date();
+                const newFeatures: { feature: any, freshness: Date } [] = []
+                let i = 0;
+                let skipped = 0;
+                for (const feature of json.features) {
+                    if (feature.properties.id === undefined) {
+                        feature.properties.id = url + "/" + i;
+                        feature.id = url + "/" + i;
+                        i++;
+                    }
+                    if (self.seenids.has(feature.properties.id)) {
+                        skipped++;
+                        continue;
+                    }
+                    self.seenids.add(feature.properties.id)
+
+                    let freshness: Date = time;
+                    if (feature.properties["_last_edit:timestamp"] !== undefined) {
+                        freshness = new Date(feature.properties["_last_edit:timestamp"])
+                    }
+
+                    newFeatures.push({feature: feature, freshness: freshness})
                 }
-                self.seenids.add(feature.properties.id)
+                console.debug("Downloaded " + newFeatures.length + " new features and " + skipped + " already seen features from " + url);
 
-                let freshness: Date = time;
-                if (feature.properties["_last_edit:timestamp"] !== undefined) {
-                    freshness = new Date(feature["_last_edit:timestamp"])
+                if (newFeatures.length == 0) {
+                    return;
                 }
 
-                newFeatures.push({feature: feature, freshness: freshness})
-            }
-            console.debug("Downloaded " + newFeatures.length + " new features and " + skipped + " already seen features from " + url);
+                eventSource.setData(eventSource.data.concat(newFeatures))
 
-            if (newFeatures.length == 0) {
-                return;
-            }
-
-            eventSource.setData(eventSource.data.concat(newFeatures))
-
-        }).catch(msg => self.onFail(msg, url))
+            }).catch(msg => self.onFail(msg, url))
     }
 
 }

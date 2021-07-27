@@ -601,7 +601,6 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 1,
   "presets": [
     {
       "title": {
@@ -610,7 +609,8 @@
         "fr": "Magasin et réparateur de vélo",
         "gl": "Tenda/arranxo de bicicletas",
         "de": "Fahrradwerkstatt/geschäft",
-        "it": "Negozio/riparatore di bici"
+        "it": "Negozio/riparatore di bici",
+        "ru": "Обслуживание велосипедов/магазин"
       },
       "tags": [
         "shop=bicycle"

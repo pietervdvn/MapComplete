@@ -1,0 +1,207 @@
+{
+  "id": "trail",
+  "name": {
+    "en": "Trails",
+    "nl": "Wandeltochten"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "route=hiking",
+            "route=bycicle",
+            "route=horse"
+          ]
+        }
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Trail",
+      "nl": "Wandeltocht"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "render": {
+        "en": "The trail is {_length:km} kilometers long",
+        "nl": "Deze wandeling is {_length:km} kilometer lang"
+      }
+    },
+    {
+      "#": "Name",
+      "question": {
+        "nl": "Wat is de naam van deze wandeling?"
+      },
+      "render": {
+        "nl": "Deze wandeling heet <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    {
+      "#": "Operator tag",
+      "render": {
+        "nl": "Beheer door {operator}"
+      },
+      "question": {
+        "nl": "Wie beheert deze wandeltocht?"
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator=Natuurpunt"
+            ]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator~(n|N)atuurpunt.*"
+            ]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "#": "Color",
+      "question": {
+        "nl": "Welke kleur heeft deze wandeling?"
+      },
+      "render": {
+        "nl": "Deze wandeling heeft kleur {colour}"
+      },
+      "freeform": {
+        "key": "colour",
+        "type": "color"
+      },
+      "mappings": [
+        {
+          "if": "colour=blue",
+          "then": {
+            "nl": "Blauwe wandeling",
+            "en": "Blue trail"
+          }
+        },
+        {
+          "if": "colour=red",
+          "then": {
+            "nl": "Rode wandeling",
+            "en": "Red trail"
+          }
+        },
+        {
+          "if": "colour=green",
+          "then": {
+            "nl": "Groene wandeling",
+            "en": "Green trail"
+          }
+        },
+        {
+          "if": "colour=yellow",
+          "then": {
+            "nl": "Gele wandeling",
+            "en": "Yellow trail"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Wheelchair access",
+      "question": {
+        "nl": "Is deze wandeling toegankelijk met de rolstoel?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "nl": "deze wandeltocht is toegankelijk met de rolstoel"
+          },
+          "if": "wheelchair=yes"
+        },
+        {
+          "then": {
+            "nl": "deze wandeltocht is niet toegankelijk met de rolstoel"
+          },
+          "if": "wheelchair=no"
+        }
+      ]
+    },
+    {
+      "#": "pushchair access",
+      "question": {
+        "nl": "Is deze wandeltocht toegankelijk met de buggy?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "nl": "deze wandeltocht is toegankelijk met de buggy"
+          },
+          "if": "pushchair=yes"
+        },
+        {
+          "then": {
+            "nl": "deze wandeltocht is niet toegankelijk met de buggy"
+          },
+          "if": "pushchair=no"
+        }
+      ]
+    }
+  ],
+  "icon": {
+    "render": "./assets/layers/trail/trail.svg",
+    "mappings": [
+      {
+        "if": "wheelchair=yes",
+        "then": "./assets/layers/trail/wheelchair.svg"
+      },
+      {
+        "if": "pushchair=yes",
+        "then": "./assets/layers/trail/pushchair.svg"
+      }
+    ]
+  },
+  "description": {
+    "nl": "Aangeduide wandeltochten"
+  },
+  "wayHandling": 0,
+  "width": {
+    "render": "3"
+  },
+  "iconSize": {
+    "render": "35,35,center"
+  },
+  "color": {
+    "render": "#335D9F",
+    "mappings": [
+      {
+        "if": "colour~*",
+        "then": "{colour}"
+      }
+    ]
+  },
+  "dashArray": {
+    "render": "5 5"
+  }
+}

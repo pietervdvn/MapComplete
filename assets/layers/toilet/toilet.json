@@ -8,6 +8,7 @@
     "ru": "Туалеты",
     "it": "Servizi igienici"
   },
+  "minzoom": 12,
   "source": {
     "osmTags": "amenity=toilets"
   },
@@ -37,8 +38,7 @@
   "color": {
     "render": "#0000ff"
   },
-  "minzoom": 12,
-  "wayHandling": 2,
+  "wayHandling": 1,
   "presets": [
     {
       "title": {

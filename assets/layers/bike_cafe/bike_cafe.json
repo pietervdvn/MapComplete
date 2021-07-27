@@ -293,7 +293,6 @@
       }
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/layers/bike_cafe/bike_cafe.svg"
   },

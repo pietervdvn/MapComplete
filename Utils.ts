@@ -136,6 +136,19 @@ export class Utils {
         return newArr;
     }
     
+    public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean{
+        if(t1.length !== t2.length){
+            return false
+        }
+        eq = (a, b) => a === b
+        for (let i = 0; i < t1.length ; i++) {
+            if(!eq(t1[i] ,t2[i])){
+                return false
+            }
+        }
+        return true;
+    }
+    
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
@@ -210,7 +223,9 @@ export class Utils {
             if (sourceV?.length !== undefined && targetV?.length !== undefined && key.startsWith("+")) {
                 target[key] = targetV.concat(sourceV)
             } else if (typeof sourceV === "object") {
-                if (targetV === undefined) {
+                if (sourceV === null) {
+                    target[key] = null
+                } else if (targetV === undefined) {
                     target[key] = sourceV;
                 } else {
                     Utils.Merge(sourceV, targetV);
@@ -356,12 +371,16 @@ export class Utils {
 
     /**
      * Triggers a 'download file' popup which will download the contents
-     * @param contents
-     * @param fileName
      */
-    public static offerContentsAsDownloadableFile(contents: string, fileName: string = "download.txt") {
+    public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt",
+                                                  options?: {        mimetype: string    }) {
         const element = document.createElement("a");
-        const file = new Blob([contents], {type: 'text/plain'});
+        let file;
+        if (typeof (contents) === "string") {
+            file = new Blob([contents], {type: options?.mimetype ?? 'text/plain'});
+        } else {
+            file = contents;
+        }
         element.href = URL.createObjectURL(file);
         element.download = fileName;
         document.body.appendChild(element); // Required for this to work in FireFox
@@ -449,8 +468,8 @@ export class Utils {
         }
     }
 
-    public static setDefaults(options, defaults){
-        for (let key in defaults){
+    public static setDefaults(options, defaults) {
+        for (let key in defaults) {
             if (!(key in options)) options[key] = defaults[key];
         }
         return options;

@@ -3,7 +3,7 @@
         "title": "オープンAEDマップ",
         "description": "この地図では近くにある除細動器(AED)を見つけてマークします"
     },
-    "artworks": {
+    "artwork": {
         "title": "オープン アートワーク マップ",
         "description": "オープン アートワーク マップへようこそ。世界中の銅像や胸像、壁の落書きなどのアートワークの地図です",
         "layers": {
@@ -583,7 +583,7 @@
             }
         }
     },
-    "fietsstraten": {
+    "cyclestreets": {
         "title": "Cyclestreets",
         "shortDescription": "cyclestreetsの地図",
         "description": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",

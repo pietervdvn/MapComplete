@@ -15,7 +15,7 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
-import * as personal from "./assets/themes/personalLayout/personalLayout.json"
+import * as personal from "./assets/themes/personal/personal.json"
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import * as L from "leaflet";
 import Img from "./UI/Base/Img";
@@ -41,22 +41,34 @@ import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import ExportPDF from "./Logic/Actors/ExportPDF";
+import {TagsFilter} from "./Logic/Tags/TagsFilter";
+import FilterView from "./UI/BigComponents/FilterView";
 
 export class InitUiElements {
-
-
-    static InitAll(layoutToUse: LayoutConfig, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
-                   layoutDefinition: string = "") {
-
+    static InitAll(
+        layoutToUse: LayoutConfig,
+        layoutFromBase64: string,
+        testing: UIEventSource<string>,
+        layoutName: string,
+        layoutDefinition: string = ""
+    ) {
         if (layoutToUse === undefined) {
-            console.log("Incorrect layout")
-            new FixedUiElement(`Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`).AttachTo("centermessage").onClick(() => {
-            });
-            throw "Incorrect layout"
+            console.log("Incorrect layout");
+            new FixedUiElement(
+                `Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`
+            )
+                .AttachTo("centermessage")
+                .onClick(() => {
+                });
+            throw "Incorrect layout";
         }
 
-        console.log("Using layout: ", layoutToUse.id, "LayoutFromBase64 is ", layoutFromBase64);
-
+        console.log(
+            "Using layout: ",
+            layoutToUse.id,
+            "LayoutFromBase64 is ",
+            layoutFromBase64
+        );
 
         State.state = new State(layoutToUse);
 
@@ -65,21 +77,29 @@ export class InitUiElements {
         window.mapcomplete_state = State.state;
 
         if (layoutToUse.hideFromOverview) {
-            State.state.osmConnection.GetPreference("hidden-theme-" + layoutToUse.id + "-enabled").setData("true");
+            State.state.osmConnection
+                .GetPreference("hidden-theme-" + layoutToUse.id + "-enabled")
+                .setData("true");
         }
 
         if (layoutFromBase64 !== "false") {
             State.state.layoutDefinition = layoutDefinition;
-            console.log("Layout definition:", Utils.EllipsesAfter(State.state.layoutDefinition, 100))
+            console.log(
+                "Layout definition:",
+                Utils.EllipsesAfter(State.state.layoutDefinition, 100)
+            );
             if (testing.data !== "true") {
                 State.state.osmConnection.OnLoggedIn(() => {
-                    State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.id).setData(State.state.layoutDefinition);
-                })
+                    State.state.osmConnection
+                        .GetLongPreference("installed-theme-" + layoutToUse.id)
+                        .setData(State.state.layoutDefinition);
+                });
             } else {
-                console.warn("NOT saving custom layout to OSM as we are tesing -> probably in an iFrame")
+                console.warn(
+                    "NOT saving custom layout to OSM as we are tesing -> probably in an iFrame"
+                );
             }
         }
-
 
         function updateFavs() {
             // This is purely for the personal theme to load the layers there
@@ -87,19 +107,17 @@ export class InitUiElements {
 
             const neededLayers = new Set<LayerConfig>();
 
-            console.log("Favourites are: ", favs)
+            console.log("Favourites are: ", favs);
             layoutToUse.layers.splice(0, layoutToUse.layers.length);
             let somethingChanged = false;
             for (const fav of favs) {
-
                 if (AllKnownLayers.sharedLayers.has(fav)) {
-                    const layer = AllKnownLayers.sharedLayers.get(fav)
+                    const layer = AllKnownLayers.sharedLayers.get(fav);
                     if (!neededLayers.has(layer)) {
-                        neededLayers.add(layer)
+                        neededLayers.add(layer);
                         somethingChanged = true;
                     }
                 }
-
 
                 for (const layouts of State.state.installedThemes.data) {
                     for (const layer of layouts.layout.layers) {
@@ -108,7 +126,7 @@ export class InitUiElements {
                         }
                         if (layer.id === fav) {
                             if (!neededLayers.has(layer)) {
-                                neededLayers.add(layer)
+                                neededLayers.add(layer);
                                 somethingChanged = true;
                             }
                         }
@@ -116,14 +134,12 @@ export class InitUiElements {
                 }
             }
             if (somethingChanged) {
-                console.log("layoutToUse.layers:", layoutToUse.layers)
+                console.log("layoutToUse.layers:", layoutToUse.layers);
                 State.state.layoutToUse.data.layers = Array.from(neededLayers);
                 State.state.layoutToUse.ping();
                 State.state.layerUpdater?.ForceRefresh();
             }
-
         }
-
 
         if (layoutToUse.customCss !== undefined) {
             Utils.LoadCustomCss(layoutToUse.customCss);
@@ -132,38 +148,47 @@ export class InitUiElements {
         InitUiElements.InitBaseMap();
 
         InitUiElements.OnlyIf(State.state.featureSwitchUserbadge, () => {
-            new UserBadge().AttachTo('userbadge');
+            new UserBadge().AttachTo("userbadge");
         });
 
-        InitUiElements.OnlyIf((State.state.featureSwitchSearch), () => {
+        InitUiElements.OnlyIf(State.state.featureSwitchSearch, () => {
             new SearchAndGo().AttachTo("searchbox");
         });
 
-
         InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
-            InitUiElements.InitWelcomeMessage()
+            InitUiElements.InitWelcomeMessage();
         });
 
-        if ((window != window.top && !State.state.featureSwitchWelcomeMessage.data) || State.state.featureSwitchIframe.data) {
+        if (
+            (window != window.top && !State.state.featureSwitchWelcomeMessage.data) ||
+            State.state.featureSwitchIframe.data
+        ) {
             const currentLocation = State.state.locationControl;
-            const url = `${window.location.origin}${window.location.pathname}?z=${currentLocation.data.zoom ?? 0}&lat=${currentLocation.data.lat ?? 0}&lon=${currentLocation.data.lon ?? 0}`;
+            const url = `${window.location.origin}${window.location.pathname}?z=${
+                currentLocation.data.zoom ?? 0
+            }&lat=${currentLocation.data.lat ?? 0}&lon=${
+                currentLocation.data.lon ?? 0
+            }`;
             new MapControlButton(
-                new Link(Svg.pop_out_img, url, true)
-                    .SetClass("block w-full h-full p-1.5")
-            )
-                .AttachTo("messagesbox");
+                new Link(Svg.pop_out_img, url, true).SetClass(
+                    "block w-full h-full p-1.5"
+                )
+            ).AttachTo("messagesbox");
         }
 
-        State.state.osmConnection.userDetails.map((userDetails: UserDetails) => userDetails?.home)
-            .addCallbackAndRunD(home => {
-                const color = getComputedStyle(document.body).getPropertyValue("--subtle-detail-color")
+        State.state.osmConnection.userDetails
+            .map((userDetails: UserDetails) => userDetails?.home)
+            .addCallbackAndRunD((home) => {
+                const color = getComputedStyle(document.body).getPropertyValue(
+                    "--subtle-detail-color"
+                );
                 const icon = L.icon({
                     iconUrl: Img.AsData(Svg.home_white_bg.replace(/#ffffff/g, color)),
                     iconSize: [30, 30],
-                    iconAnchor: [15, 15]
+                    iconAnchor: [15, 15],
                 });
-                const marker = L.marker([home.lat, home.lon], {icon: icon})
-                marker.addTo(State.state.leafletMap.data)
+                const marker = L.marker([home.lat, home.lon], {icon: icon});
+                marker.addTo(State.state.leafletMap.data);
             });
 
         const geolocationButton = new Toggle(
@@ -172,30 +197,34 @@ export class InitUiElements {
                     State.state.currentGPSLocation,
                     State.state.leafletMap,
                     State.state.layoutToUse
-                )),
+                ), {
+                    dontStyle : true
+                }
+            ),
             undefined,
-            State.state.featureSwitchGeolocation);
+            State.state.featureSwitchGeolocation
+        );
 
         const plus = new MapControlButton(
-            Svg.plus_ui()
+                Svg.plus_zoom_svg()
         ).onClick(() => {
             State.state.locationControl.data.zoom++;
             State.state.locationControl.ping();
-        })
+        });
 
         const min = new MapControlButton(
-            Svg.min_ui()
+           Svg.min_zoom_svg()
         ).onClick(() => {
             State.state.locationControl.data.zoom--;
             State.state.locationControl.ping();
-        })
+        });
 
         const screenshot = new MapControlButton(
-            new FixedUiElement(
-                Img.AsImageElement(Svg.bug, "", "width:1.25rem;height:1.25rem")
-            )
+            Svg.bug_svg(),
         ).onClick(() => {
-            let createdPDF = new ExportPDF("Screenshot", "natuurpunt");
+            // Will already export
+          new ExportPDF("Screenshot", "natuurpunt");
+          
         })
 
         new Combine([plus, min, geolocationButton, screenshot].map(el => el.SetClass("m-0.5 md:m-1")))
@@ -216,38 +245,45 @@ export class InitUiElements {
 
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
-        document.getElementById("centermessage").classList.add("pointer-events-none")
-
-
+        document
+            .getElementById("centermessage")
+            .classList.add("pointer-events-none");
     }
 
-    static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>): [LayoutConfig, string]{
+    static LoadLayoutFromHash(
+        userLayoutParam: UIEventSource<string>
+    ): [LayoutConfig, string] {
         try {
             let hash = location.hash.substr(1);
             const layoutFromBase64 = userLayoutParam.data;
             // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
 
-            const dedicatedHashFromLocalStorage = LocalStorageSource.Get("user-layout-" + layoutFromBase64.replace(" ", "_"));
+            const dedicatedHashFromLocalStorage = LocalStorageSource.Get(
+                "user-layout-" + layoutFromBase64.replace(" ", "_")
+            );
             if (dedicatedHashFromLocalStorage.data?.length < 10) {
                 dedicatedHashFromLocalStorage.setData(undefined);
             }
 
-            const hashFromLocalStorage = LocalStorageSource.Get("last-loaded-user-layout");
+            const hashFromLocalStorage = LocalStorageSource.Get(
+                "last-loaded-user-layout"
+            );
             if (hash.length < 10) {
                 hash = dedicatedHashFromLocalStorage.data ?? hashFromLocalStorage.data;
             } else {
-                console.log("Saving hash to local storage")
+                console.log("Saving hash to local storage");
                 hashFromLocalStorage.setData(hash);
                 dedicatedHashFromLocalStorage.setData(hash);
             }
 
-            let json: {}
+            let json: {};
             try {
                 json = JSON.parse(atob(hash));
             } catch (e) {
                 // We try to decode with lz-string
-                json = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(hash))) as LayoutConfigJson;
-
+                json = JSON.parse(
+                    Utils.UnMinify(LZString.decompressFromBase64(hash))
+                ) as LayoutConfigJson;
             }
 
             // @ts-ignore
@@ -255,13 +291,17 @@ export class InitUiElements {
             userLayoutParam.setData(layoutToUse.id);
             return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
         } catch (e) {
-
-            new FixedUiElement("Error: could not parse the custom layout:<br/> " + e).AttachTo("centermessage");
+            new FixedUiElement(
+                "Error: could not parse the custom layout:<br/> " + e
+            ).AttachTo("centermessage");
             throw e;
         }
     }
 
-    private static OnlyIf(featureSwitch: UIEventSource<boolean>, callback: () => void) {
+    private static OnlyIf(
+        featureSwitch: UIEventSource<boolean>,
+        callback: () => void
+    ) {
         featureSwitch.addCallbackAndRun(() => {
             if (featureSwitch.data) {
                 callback();
@@ -270,19 +310,15 @@ export class InitUiElements {
     }
 
     private static InitWelcomeMessage() {
-
         const isOpened = new UIEventSource<boolean>(false);
         const fullOptions = new FullWelcomePaneWithTabs(isOpened);
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg());
-        help.onClick(() => isOpened.setData(true))
-        new Toggle(
-            fullOptions
-                .SetClass("welcomeMessage"),
-            help
-            , isOpened
-        ).AttachTo("messagesbox");
+        help.onClick(() => isOpened.setData(true));
+        new Toggle(fullOptions.SetClass("welcomeMessage"), help, isOpened).AttachTo(
+            "messagesbox"
+        );
         const openedTime = new Date().getTime();
         State.state.locationControl.addCallback(() => {
             if (new Date().getTime() - openedTime < 15 * 1000) {
@@ -290,75 +326,107 @@ export class InitUiElements {
                 return;
             }
             isOpened.setData(false);
-        })
+        });
 
-        State.state.selectedElement.addCallbackAndRunD(_ => {
-                isOpened.setData(false);
-        })
-        isOpened.setData(Hash.hash.data === undefined || Hash.hash.data === "" || Hash.hash.data == "welcome")
+        State.state.selectedElement.addCallbackAndRunD((_) => {
+            isOpened.setData(false);
+        });
+        isOpened.setData(
+            Hash.hash.data === undefined ||
+            Hash.hash.data === "" ||
+            Hash.hash.data == "welcome"
+        );
     }
 
     private static InitLayerSelection(featureSource: FeatureSource) {
+        const copyrightNotice = new ScrollableFullScreen(
+            () => Translations.t.general.attribution.attributionTitle.Clone(),
+            () =>
+                new AttributionPanel(
+                    State.state.layoutToUse,
+                    new ContributorCount(featureSource).Contributors
+                ),
+            "copyright"
+        );
 
-        const copyrightNotice =
-            new ScrollableFullScreen(
-                () => Translations.t.general.attribution.attributionTitle.Clone(),
-                () => new AttributionPanel(State.state.layoutToUse, new ContributorCount(featureSource).Contributors),
-                "copyright"
-            )
-
-        ;
         const copyrightButton = new Toggle(
             copyrightNotice,
-            new MapControlButton(Svg.osm_copyright_svg()),
+            new MapControlButton(Svg.copyright_svg()),
             copyrightNotice.isShown
-        ).ToggleOnClick()
-            .SetClass("p-0.5")
+        )
+            .ToggleOnClick()
+            .SetClass("p-0.5");
 
         const layerControlPanel = new LayerControlPanel(
-            State.state.layerControlIsOpened)
-            .SetClass("block p-1 rounded-full");
+            State.state.layerControlIsOpened
+        ).SetClass("block p-1 rounded-full");
+
         const layerControlButton = new Toggle(
             layerControlPanel,
             new MapControlButton(Svg.layers_svg()),
             State.state.layerControlIsOpened
-        ).ToggleOnClick()
+        ).ToggleOnClick();
 
         const layerControl = new Toggle(
             layerControlButton,
             "",
             State.state.featureSwitchLayers
-        )
+        );
 
-        new Combine([copyrightButton, layerControl])
+
+        const filterView = 
+            new ScrollableFullScreen(
+                () => Translations.t.general.layerSelection.title.Clone(),
+                () => 
+                    new FilterView(State.state.filteredLayers).SetClass(
+                        "block p-1 rounded-full"
+                    ),
+                "filter",
+                State.state.filterIsOpened
+            );
+            
+
+        const filterMapControlButton = new MapControlButton(
+            Svg.filter_svg()
+        );
+
+        const filterButton = new Toggle(
+            filterView,
+            filterMapControlButton,
+            State.state.filterIsOpened
+        ).ToggleOnClick();
+
+        const filterControl = new Toggle(
+            filterButton,
+            undefined,
+            State.state.featureSwitchFilter
+        );
+
+        new Combine([copyrightButton, layerControl, filterControl])
+            .SetClass("flex flex-col")
             .AttachTo("bottom-left");
 
+        State.state.locationControl.addCallback(() => {
+            // Close the layer selection when the map is moved
+            layerControlButton.isEnabled.setData(false);
+            copyrightButton.isEnabled.setData(false);
+        });
 
-        State.state.locationControl
-            .addCallback(() => {
-                // Close the layer selection when the map is moved
-                layerControlButton.isEnabled.setData(false);
-                copyrightButton.isEnabled.setData(false);
-            });
-
-        State.state.selectedElement.addCallbackAndRunD(_ => {
-                layerControlButton.isEnabled.setData(false);
-                copyrightButton.isEnabled.setData(false);
-        })
-
+        State.state.selectedElement.addCallbackAndRunD((_) => {
+            layerControlButton.isEnabled.setData(false);
+            copyrightButton.isEnabled.setData(false);
+        });
     }
 
     private static InitBaseMap() {
-
-        State.state.availableBackgroundLayers = AvailableBaseLayers.AvailableLayersAt(State.state.locationControl);
-
-        State.state.backgroundLayer = State.state.backgroundLayerId
-            .map((selectedId: string) => {
-                if(selectedId === undefined){
-                    return AvailableBaseLayers.osmCarto
+        State.state.availableBackgroundLayers =
+            AvailableBaseLayers.AvailableLayersAt(State.state.locationControl);
+        State.state.backgroundLayer = State.state.backgroundLayerId.map(
+            (selectedId: string) => {
+                if (selectedId === undefined) {
+                    return AvailableBaseLayers.osmCarto;
                 }
-                
-                
+
                 const available = State.state.availableBackgroundLayers.data;
                 for (const layer of available) {
                     if (layer.id === selectedId) {
@@ -366,98 +434,126 @@ export class InitUiElements {
                     }
                 }
                 return AvailableBaseLayers.osmCarto;
-            }, [State.state.availableBackgroundLayers], layer => layer.id);
-        
+            },
+            [State.state.availableBackgroundLayers],
+            (layer) => layer.id
+        );
+
         new LayerResetter(
-            State.state.backgroundLayer, State.state.locationControl,
-            State.state.availableBackgroundLayers, State.state.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));
+            State.state.backgroundLayer,
+            State.state.locationControl,
+            State.state.availableBackgroundLayers,
+            State.state.layoutToUse.map(
+                (layout: LayoutConfig) => layout.defaultBackgroundId
+            )
+        );
 
+        const attr = new Attribution(
+            State.state.locationControl,
+            State.state.osmConnection.userDetails,
+            State.state.layoutToUse,
+            State.state.leafletMap
+        );
 
-        const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse,
-            State.state.leafletMap);
-
-        const bm = new Basemap("leafletDiv",
+        const bm = new Basemap(
+            "leafletDiv",
             State.state.locationControl,
             State.state.backgroundLayer,
             State.state.LastClickLocation,
             attr
         );
         State.state.leafletMap.setData(bm.map);
-        const layout = State.state.layoutToUse.data
+        const layout = State.state.layoutToUse.data;
         if (layout.lockLocation) {
-
             if (layout.lockLocation === true) {
-                const tile = Utils.embedded_tile(layout.startLat, layout.startLon, layout.startZoom - 1)
-                const bounds = Utils.tile_bounds(tile.z, tile.x, tile.y)
+                const tile = Utils.embedded_tile(
+                    layout.startLat,
+                    layout.startLon,
+                    layout.startZoom - 1
+                );
+                const bounds = Utils.tile_bounds(tile.z, tile.x, tile.y);
                 // We use the bounds to get a sense of distance for this zoom level
-                const latDiff = bounds[0][0] - bounds[1][0]
-                const lonDiff = bounds[0][1] - bounds[1][1]
-                layout.lockLocation = [[layout.startLat - latDiff, layout.startLon - lonDiff],
+                const latDiff = bounds[0][0] - bounds[1][0];
+                const lonDiff = bounds[0][1] - bounds[1][1];
+                layout.lockLocation = [
+                    [layout.startLat - latDiff, layout.startLon - lonDiff],
                     [layout.startLat + latDiff, layout.startLon + lonDiff],
                 ];
             }
-            console.warn("Locking the bounds to ", layout.lockLocation)
+            console.warn("Locking the bounds to ", layout.lockLocation);
             bm.map.setMaxBounds(layout.lockLocation);
-            bm.map.setMinZoom(layout.startZoom)
+            bm.map.setMinZoom(layout.startZoom);
         }
-
     }
 
     private static InitLayers(): FeatureSource {
-
-
         const state = State.state;
-        state.filteredLayers =
-            state.layoutToUse.map(layoutToUse => {
-                const flayers = [];
+        state.filteredLayers = state.layoutToUse.map((layoutToUse) => {
+            const flayers = [];
 
+            for (const layer of layoutToUse.layers) {
+                const isDisplayed = QueryParameters.GetQueryParameter(
+                    "layer-" + layer.id,
+                    "true",
+                    "Wether or not layer " + layer.id + " is shown"
+                ).map<boolean>(
+                    (str) => str !== "false",
+                    [],
+                    (b) => b.toString()
+                );
+                const flayer = {
+                    isDisplayed: isDisplayed,
+                    layerDef: layer,
+                    appliedFilters: new UIEventSource<TagsFilter>(undefined)
+                };
+                flayers.push(flayer);
+            }
+            return flayers;
+        });
 
-                for (const layer of layoutToUse.layers) {
-                    const isDisplayed = QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wether or not layer " + layer.id + " is shown")
-                        .map<boolean>((str) => str !== "false", [], (b) => b.toString());
-                    const flayer = {
-                        isDisplayed: isDisplayed,
-                        layerDef: layer
-                    }
-                    flayers.push(flayer);
-                }
-                return flayers;
-            });
-
-        const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
+        const updater = new LoadFromOverpass(
+            state.locationControl,
+            state.layoutToUse,
+            state.leafletMap
+        );
         State.state.layerUpdater = updater;
 
-
-        const source = new FeaturePipeline(state.filteredLayers,
+        const source = new FeaturePipeline(
+            state.filteredLayers,
+            State.state.changes,
             updater,
             state.osmApiFeatureSource,
             state.layoutToUse,
-            state.changes,
             state.locationControl,
-            state.selectedElement);
+            state.selectedElement
+        );
 
         State.state.featurePipeline = source;
+        new ShowDataLayer(
+            source.features,
+            State.state.leafletMap,
+            State.state.layoutToUse
+        );
 
-        new ShowDataLayer(source.features, State.state.leafletMap, State.state.layoutToUse);
-
-        const selectedFeatureHandler = new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source, State.state.osmApiFeatureSource);
+        const selectedFeatureHandler = new SelectedFeatureHandler(
+            Hash.hash,
+            State.state.selectedElement,
+            source,
+            State.state.osmApiFeatureSource
+        );
         selectedFeatureHandler.zoomToSelectedFeature(State.state.locationControl);
         return source;
     }
 
     private static setupAllLayerElements() {
-
         // ------------- Setup the layers -------------------------------
 
         const source = InitUiElements.InitLayers();
         InitUiElements.InitLayerSelection(source);
 
-
         // ------------------ Setup various other UI elements ------------
 
-
         InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
-
             let presetCount = 0;
             for (const layer of State.state.filteredLayers.data) {
                 for (const preset of layer.layerDef.presets) {
@@ -468,18 +564,18 @@ export class InitUiElements {
                 return;
             }
 
-
             const newPointDialogIsShown = new UIEventSource<boolean>(false);
             const addNewPoint = new ScrollableFullScreen(
                 () => Translations.t.general.add.title.Clone(),
                 () => new SimpleAddUI(newPointDialogIsShown),
                 "new",
-                newPointDialogIsShown)
-            addNewPoint.isShown.addCallback(isShown => {
+                newPointDialogIsShown
+            );
+            addNewPoint.isShown.addCallback((isShown) => {
                 if (!isShown) {
-                    State.state.LastClickLocation.setData(undefined)
+                    State.state.LastClickLocation.setData(undefined);
                 }
-            })
+            });
 
             new StrayClickHandler(
                 State.state.LastClickLocation,
@@ -489,7 +585,5 @@ export class InitUiElements {
                 addNewPoint
             );
         });
-
-
     }
 }

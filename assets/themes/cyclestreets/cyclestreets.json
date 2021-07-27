@@ -1,5 +1,5 @@
 {
-  "id": "fietsstraten",
+  "id": "cyclestreets",
   "version": "2020-08-30",
   "title": {
     "nl": "Fietsstraten",
@@ -34,7 +34,7 @@
   "startZoom": 14,
   "startLon": 3.2228,
   "maintainer": "MapComplete",
-  "widenfactor": 0.05,
+  "widenfactor": 0.01,
   "roamingRenderings": [
     {
       "question": {
@@ -68,7 +68,7 @@
             ]
           },
           "then": {
-            "nl": "Deze straat is een fietsstraat",
+            "nl": "Deze straat i een fietsstraat",
             "en": "This street is a cyclestreet",
             "ja": "この通りはcyclestreetだ",
             "nb_NO": "Denne gaten er en sykkelvei"
@@ -276,7 +276,8 @@
       },
       "tagRenderings": [
         "images"
-      ]
+      ],
+      "allowSplit": true
     }
   ]
 }

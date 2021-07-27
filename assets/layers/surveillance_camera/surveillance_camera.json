@@ -421,21 +421,20 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "./assets/themes/surveillance_cameras/logo.svg",
+    "render": "./assets/themes/surveillance/logo.svg",
     "mappings": [
       {
         "if": "camera:type=dome",
-        "then": "./assets/themes/surveillance_cameras/dome.svg"
+        "then": "./assets/themes/surveillance/dome.svg"
       },
       {
         "if": "_direction:leftright=right",
-        "then": "./assets/themes/surveillance_cameras/cam_right.svg"
+        "then": "./assets/themes/surveillance/cam_right.svg"
       },
       {
         "if": "_direction:leftright=left",
-        "then": "./assets/themes/surveillance_cameras/cam_left.svg"
+        "then": "./assets/themes/surveillance/cam_left.svg"
       }
     ]
   },

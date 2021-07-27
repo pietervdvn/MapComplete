@@ -1,0 +1,192 @@
+{
+  "id": "parking",
+  "name": {
+    "nl": "parking"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "amenity=parking",
+            "amenity=motorcycle_parking",
+            "amenity=bicycle_parking"
+          ]
+        }
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "nl": "Parking"
+    },
+    "mappings": [
+      {
+        "if": "amenity=parking",
+        "then": {
+          "nl": "{name:nl}"
+        }
+      },
+      {
+        "if": "amenity=motorcycle_parking",
+        "then": {
+          "nl": "{name}"
+        }
+      },
+      {
+        "if": "amenity=bicycle_parking",
+        "then": {
+          "nl": "Fietsenstalling"
+        }
+      }
+    ]
+  },
+  "icon": {
+    "render": "./assets/layers/parking/parking.svg"
+  },
+  "description": {
+    "nl": "Parking"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "#": "Access tag",
+      "render": {
+        "nl": "De toegankelijkheid van dit gebied is: {access:description}"
+      },
+      "question": {
+        "nl": "Is dit gebied toegankelijk?"
+      },
+      "freeform": {
+        "key": "access:description"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "access=yes",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Vrij toegankelijk"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=no",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Niet toegankelijk"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=private",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Niet toegankelijk, want privégebied"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=permissive",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Toegankelijk, ondanks dat het privegebied is"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=guided",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=yes",
+              "fee=yes"
+            ]
+          },
+          "then": {
+            "nl": "Toegankelijk mits betaling"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Operator tag",
+      "render": {
+        "nl": "Beheer door {operator}"
+      },
+      "question": {
+        "nl": "Wie beheert dit pad?"
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator=Natuurpunt"
+            ]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator~(n|N)atuurpunt.*"
+            ]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    }
+  ],
+  "wayHandling": 1,
+  "iconSize": {
+    "render": "36,36,center"
+  },
+  "color": {
+    "render": "#E1AD01"
+  },
+  "presets": [
+    {
+      "tags": [
+        "amenity=parking",
+        "amenity=motorcycle_parking",
+        "amenity=bicycle_parking",
+        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+      ],
+      "title": {
+        "nl": "Paden"
+      },
+      "description": {
+        "nl": "Voeg een ontbrekend, erkend pad toe."
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "id": "boomgaarden",
+  "id": "fruit_trees",
   "title": {
     "nl": "Open Boomgaardenkaart"
   },
@@ -43,7 +43,6 @@
       "tagRenderings": [
         "images"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/buurtnatuur/forest.svg"
       },
@@ -143,7 +142,6 @@
           }
         }
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/fruit_trees/fruit_tree.svg"
       },

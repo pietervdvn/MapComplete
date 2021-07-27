@@ -11,6 +11,7 @@ import FileSelectorButton from "../Input/FileSelectorButton";
 import ImgurUploader from "../../Logic/ImageProviders/ImgurUploader";
 import UploadFlowStateUI from "../BigComponents/UploadFlowStateUI";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 
 export class ImageUploadFlow extends Toggle {
 
@@ -28,7 +29,10 @@ export class ImageUploadFlow extends Toggle {
                 key = imagePrefix + ":" + freeIndex;
             }
             console.log("Adding image:" + key, url);
-            State.state.changes.addTag(tags.id, new Tag(key, url), tagsSource);
+            State.state.changes
+                .applyAction(new ChangeTagAction(
+                    tags.id, new Tag(key, url), tagsSource.data
+                ))
         })
 
 

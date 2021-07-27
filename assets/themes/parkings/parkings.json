@@ -1,0 +1,31 @@
+{
+  "id": "parkings",
+  "title": {
+    "nl": "Parking",
+    "en": "Parking"
+  },
+  "shortDescription": {
+    "nl": "Deze kaart toont verschillende parkeerplekken",
+    "en": "This map shows different parking spots"
+  },
+  "description": {
+    "nl": "Deze kaart toont verschillende parkeerplekken",
+    "en": "This map shows different parking spots"
+  },
+  "language": [
+    "nl",
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/parkings/parkings.svg",
+  "version": "0",
+  "startLat": 51.20875,
+  "startLon": 3.22435,
+  "startZoom": 12,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "parking"
+  ],
+  "roamingRenderings": []
+}

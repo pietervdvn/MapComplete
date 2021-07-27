@@ -28,7 +28,7 @@
       "builtin": "play_forest",
       "override": {
         "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         },
@@ -255,21 +255,21 @@
     "maxZoom": 16,
     "minNeededElements": 100
   },
-  "overrideAll": {
-    "+tagRenderings": [
-      {
-        "render": "Maakt deel uit van {_part_of_walking_routes}",
-        "condition": "_part_of_walking_routes~*"
+  "roamingRenderings": [
+    {
+      "render": "Maakt deel uit van {_part_of_walking_routes}",
+      "condition": "_part_of_walking_routes~*"
+    },
+    {
+      "render": "<a href='{video}' target='blank'>Een kinder-reportage vinden jullie hier<a/>",
+      "freeform": {
+        "key": "video",
+        "type": "url"
       },
-      {
-        "render": "<a href='{video}' target='blank'>Een kinder-reportage vinden jullie hier<a/>",
-        "freeform": {
-          "key": "video",
-          "type": "url"
-        },
-        "question": "Wat is de link naar de video-reportage?"
-      }
-    ],
+      "question": "Wat is de link naar de video-reportage?"
+    }
+  ],
+  "overrideAll": {
     "isShown": {
       "render": "yes",
       "mappings": [

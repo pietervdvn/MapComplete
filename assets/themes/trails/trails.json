@@ -1,0 +1,31 @@
+{
+  "id": "trails",
+  "title": {
+    "nl": "Wandeltochten",
+    "en": "Trails"
+  },
+  "shortDescription": {
+    "nl": "Deze kaart toont verschillende wandeltochten",
+    "en": "This map shows trails"
+  },
+  "description": {
+    "nl": "Deze kaart toont alle verschillende wandeltochten",
+    "en": "This map shows trails"
+  },
+  "language": [
+    "nl",
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/trails/trails.svg",
+  "version": "0",
+  "startLat": 51.20875,
+  "startLon": 3.22435,
+  "startZoom": 8,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "trail"
+  ],
+  "roamingRenderings": []
+}

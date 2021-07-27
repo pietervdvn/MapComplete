@@ -29,6 +29,16 @@ To check if a key does _not_ equal a certain value, use `key!=value`. This is co
 
 This implies that, to check if a key is present, `key!=` can be used. This will only match if the key is present and not empty.
 
+Number comparison
+-----------------
+
+If the value of a tag is a number (e.g. `key=42`), one can use a filter `key<=42`, `key>=35`, `key>40` or `key<50` to match this, e.g. in conditions for renderings.
+These tags cannot be used to generate an answer nor can they be used to request data upstream from overpass.
+
+Note that the value coming from OSM will first be stripped by removing all non-numeric characters. For example, `length=42 meter` will be interpreted as `length=42` and will thus match `length<=42` and `length>=42`.
+In special circumstances (e.g. `surface_area=42 m2` or `length=100 feet`), this will result in erronous values (`surface=422` or if a length in meters is compared to).
+However, this can be partially alleviated by using 'Units' to rewrite to a default format.
+
 Regex equals
 ------------
 

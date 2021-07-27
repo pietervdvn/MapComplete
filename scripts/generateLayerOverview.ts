@@ -56,6 +56,10 @@ class LayerOverviewUtils {
             if (path != undefined && path.indexOf(expected) < 0) {
                 errorCount.push("Layer is in an incorrect place. The path is " + path + ", but expected " + expected)
             }
+            if(layerJson["hideUnderlayingFeaturesMinPercentage"] !== undefined){
+                errorCount.push("Layer "+layer.id+" contains an old 'hideUnderlayingFeaturesMinPercentage'")
+            }            
+            
 
             for (const image of images) {
                 if (image.indexOf("{") >= 0) {
@@ -78,9 +82,9 @@ class LayerOverviewUtils {
 
     main(args: string[]) {
 
-        const lt = this.loadThemesAndLayers();
-        const layerFiles = lt.layers;
-        const themeFiles = lt.themes;
+        const layerFiles = ScriptUtils.getLayerFiles();
+        const themeFiles = ScriptUtils.getThemeFiles();
+
 
         console.log("   ---------- VALIDATING ---------")
         const licensePaths = []
@@ -93,12 +97,17 @@ class LayerOverviewUtils {
         const knownLayerIds = new Map<string, LayerConfig>();
         for (const layerFile of layerFiles) {
 
+            if (knownLayerIds.has(layerFile.parsed.id)) {
+                throw "Duplicate identifier: " + layerFile.parsed.id + " in file " + layerFile.path
+            }
             layerErrorCount.push(...this.validateLayer(layerFile.parsed, layerFile.path, knownPaths))
             knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed, AllKnownLayers.sharedUnits))
         }
 
         let themeErrorCount = []
-        for (const themeFile of themeFiles) {
+        for (const themeInfo of themeFiles) {
+            const themeFile = themeInfo.parsed
+            const themePath = themeInfo.path
             if (typeof themeFile.language === "string") {
                 themeErrorCount.push("The theme " + themeFile.id + " has a string as language. Please use a list of strings")
             }
@@ -107,21 +116,28 @@ class LayerOverviewUtils {
                     if (!knownLayerIds.has(layer)) {
                         themeErrorCount.push(`Unknown layer id: ${layer} in theme ${themeFile.id}`)
                     }
-                } else {
-                    if (layer.builtin !== undefined) {
-                        if (!knownLayerIds.has(layer.builtin)) {
-                            themeErrorCount.push("Unknown layer id: " + layer.builtin + "(which uses inheritance)")
+                } else if (layer["builtin"] !== undefined) {
+                    let names = layer["builtin"];
+                    if (typeof names === "string") {
+                        names = [names]
+                    }
+                    names.forEach(name => {
+                        if (!knownLayerIds.has(name)) {
+                            themeErrorCount.push("Unknown layer id: " + name + "(which uses inheritance)")
                         }
-                    } else {
-                        // layer.builtin contains layer overrides - we can skip those
-                        layerErrorCount.push(...this.validateLayer(layer, undefined, knownPaths, themeFile.id))
+                        return
+                    })
+                } else {
+                    layerErrorCount.push(...this.validateLayer(<LayerConfigJson>layer, undefined, knownPaths, themeFile.id))
+                    if (knownLayerIds.has(layer["id"])) {
+                        throw `The theme ${themeFile.id} defines a layer with id ${layer["id"]}, which is the same as an already existing layer`
                     }
                 }
             }
 
             themeFile.layers = themeFile.layers
                 .filter(l => typeof l != "string") // We remove all the builtin layer references as they don't work with ts-node for some weird reason
-                .filter(l => l.builtin === undefined)
+                .filter(l => l["builtin"] === undefined)
 
 
             try {
@@ -129,6 +145,12 @@ class LayerOverviewUtils {
                 if (theme.id !== theme.id.toLowerCase()) {
                     themeErrorCount.push("Theme ids should be in lowercase, but it is " + theme.id)
                 }
+                let filename = themePath.substring(themePath.lastIndexOf("/") + 1, themePath.length - 5)
+                if(theme.id !== filename){
+                    themeErrorCount.push("Theme ids should be the same as the name.json, but we got id: " + theme.id + " and filename "+filename+" ("+themePath+")")
+                }
+            
+            
             } catch (e) {
                 themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
             }

@@ -6,11 +6,14 @@ export class GeoOperations {
         return turf.area(feature);
     }
 
+    /**
+     * Converts a GeoJSon feature to a point feature
+     * @param feature
+     */
     static centerpoint(feature: any) {
         const newFeature = turf.center(feature);
         newFeature.properties = feature.properties;
         newFeature.id = feature.id;
-
         return newFeature;
     }
 
@@ -273,14 +276,61 @@ export class GeoOperations {
         }
         return undefined;
     }
+
     /**
      * Generates the closest point on a way from a given point
      * @param way The road on which you want to find a point
      * @param point Point defined as [lon, lat]
      */
-    public static nearestPoint(way, point: [number, number]){
+    public static nearestPoint(way, point: [number, number]) {
         return turf.nearestPointOnLine(way, point, {units: "kilometers"});
     }
+
+    public static toCSV(features: any[]): string {
+
+        const headerValuesSeen = new Set<string>();
+        const headerValuesOrdered: string[] = []
+
+        function addH(key) {
+            if (!headerValuesSeen.has(key)) {
+                headerValuesSeen.add(key)
+                headerValuesOrdered.push(key)
+            }
+        }
+
+        addH("_lat")
+        addH("_lon")
+
+        const lines: string[] = []
+
+        for (const feature of features) {
+            const properties = feature.properties;
+            for (const key in properties) {
+                if (!properties.hasOwnProperty(key)) {
+                    continue;
+                }
+                addH(key)
+
+            }
+        }
+        headerValuesOrdered.sort()
+        for (const feature of features) {
+            const properties = feature.properties;
+            let line = ""
+            for (const key of headerValuesOrdered) {
+                const value = properties[key]
+                if (value === undefined) {
+                    line += ","
+                } else {
+                    line += JSON.stringify(value)+","
+                }
+            }
+            lines.push(line)
+        }
+
+        return headerValuesOrdered.map(v => JSON.stringify(v)).join(",") + "\n" + lines.join("\n")
+    }
+
 }
 
 

@@ -3,7 +3,7 @@
         "title": "開放AED地圖",
         "description": "在這份地圖上，你可以找到與標記附近的除顫器"
     },
-    "artworks": {
+    "artwork": {
         "title": "開放藝術品地圖",
         "description": "歡迎來到開放藝術品地圖，這份地圖會顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品",
         "layers": {
@@ -294,7 +294,7 @@
             }
         }
     },
-    "fietsstraten": {
+    "cyclestreets": {
         "title": "單車街道",
         "shortDescription": "單車街道的地圖",
         "description": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",

@@ -1,11 +1,11 @@
 import * as L from "leaflet";
 import {UIEventSource} from "../UIEventSource";
-import {Utils} from "../../Utils";
 import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
+import BaseUIElement from "../../UI/BaseUIElement";
 
 export default class GeoLocationHandler extends VariableUiElement {
     /**
@@ -44,11 +44,13 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _leafletMap: UIEventSource<L.Map>;
+    
     /**
      * The date when the user requested the geolocation. If we have a location, it'll autozoom to it the first 30 secs
      * @private
      */
     private _lastUserRequest: Date;
+    
     /**
      * A small flag on localstorage. If the user previously granted the geolocation, it will be set.
      * On firefox, the permissions api is broken (probably fingerprint resistiance) and "granted + don't ask again" doesn't stick between sessions.
@@ -77,19 +79,23 @@ export default class GeoLocationHandler extends VariableUiElement {
         super(
             hasLocation.map(
                 (hasLocationData) => {
+                    let icon: BaseUIElement;
+
                     if (isLocked.data) {
-                        return Svg.crosshair_locked_ui();
+                        icon = Svg.location_svg();
                     } else if (hasLocationData) {
-                        return Svg.crosshair_blue_ui();
+                        icon = Svg.location_empty_svg();
                     } else if (isActive.data) {
-                        return Svg.crosshair_blue_center_ui();
+                        icon = Svg.location_empty_svg();
                     } else {
-                        return Svg.crosshair_ui();
+                        icon = Svg.location_circle_svg();
                     }
+                    return icon
                 },
                 [isActive, isLocked]
             )
         );
+        this.SetClass("mapcontrol")
         this._isActive = isActive;
         this._isLocked = isLocked;
         this._permission = new UIEventSource<string>("");

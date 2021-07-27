@@ -1,0 +1,28 @@
+[
+  {
+    "authors": [
+      "Freepik"
+    ],
+    "path": "trail.svg",
+    "license": "CC-BY",
+    "sources": [
+      "https://www.flaticon.com/free-icon/trail_3273172?term=trail&page=1&position=11&page=1&position=11&related_id=3273172&origin=search"
+    ]
+  },
+  {
+    "authors": [
+      "Freepik"
+    ],
+    "path": "pushchair.svg",
+    "license": "CC-BY",
+    "sources": [
+      "https://www.flaticon.com/free-icon/stroller_1032915?term=pushchair&page=1&position=76&page=1&position=76&related_id=1032915&origin=search"
+    ]
+  },
+  {
+    "authors": [],
+    "path": "wheelchair.svg",
+    "license": "CC0",
+    "sources": []
+  }
+]

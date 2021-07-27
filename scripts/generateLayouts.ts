@@ -84,7 +84,14 @@ async function createManifest(layout: LayoutConfig) {
             sizes: "513x513",
             type: "image/svg"
         })
-    } else {
+    } else if (icon.endsWith(".png")){
+        icons.push({
+            src: icon,
+            sizes: "513x513",
+            type: "image/png"
+        })
+    }
+    else {
         console.log(icon)
         throw "Icon is not an svg for " + layout.id
     }
@@ -199,7 +206,7 @@ for (const i in all) {
         createLandingPage(layout, manifObj).then(landing => {
             writeFile(enc(layout.id) + ".html", landing, err)
         });
-    })
+    }).catch(e => console.log("Could not generate the manifest: ", e))
    
 }
 

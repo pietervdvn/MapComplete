@@ -83,7 +83,7 @@ export default class SimpleMetaTagger {
 
         },
         (feature => {
-            const units = State.state.layoutToUse.data.units ?? [];
+            const units = State.state?.layoutToUse?.data?.units ?? [];
             let rewritten = false;
             for (const key in feature.properties) {
                 if (!feature.properties.hasOwnProperty(key)) {
@@ -100,10 +100,10 @@ export default class SimpleMetaTagger {
                         break;
                     }
                     console.log("Rewritten ", key, ` from '${value}' into '${canonical}'`)
-                    if(canonical === undefined && !unit.eraseInvalid) {
+                    if (canonical === undefined && !unit.eraseInvalid) {
                         break;
                     }
-                    
+
                     feature.properties[key] = canonical;
                     rewritten = true;
                     break;

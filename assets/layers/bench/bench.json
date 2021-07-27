@@ -152,10 +152,11 @@
         "hu": "Anyag: {material}",
         "it": "Materiale: {material}",
         "ru": "Материал: {material}",
-        "zh_Hans": "材质: {material}",
+        "zh_Hanå¨s": "材质: {material}",
         "zh_Hant": "材質：{material}",
         "nb_NO": "Materiale: {material}",
-        "fi": "Materiaali: {material}"
+        "fi": "Materiaali: {material}",
+        "zh_Hans": "材质: {material}"
       },
       "freeform": {
         "key": "material",
@@ -517,13 +518,8 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "./assets/themes/benches/bench_poi.svg",
-    "mappings": []
-  },
-  "width": {
-    "render": "8"
+    "render": "circle:#FE6F32;./assets/layers/bench/bench.svg"
   },
   "iconSize": {
     "render": "35,35,center"

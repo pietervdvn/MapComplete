@@ -1,0 +1,96 @@
+{
+  "id": "waste_basket",
+  "title": {
+    "en": "Waste Basket",
+    "nl": "Vuilnisbak"
+  },
+  "shortDescription": {
+    "en": "Throw away waste",
+    "nl": "Afval weggooien"
+  },
+  "description": {
+    "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+    "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien."
+  },
+  "language": [
+    "en",
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/waste_basket/waste_basket.svg",
+  "version": "7/7/2021",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "waste_basket",
+      "name": {
+        "en": "Waste Basket",
+        "nl": "Vuilnisbak"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=waste_basket"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Waste Basket",
+          "nl": "Vuilnisbak"
+        }
+      },
+      "description": {
+        "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+        "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien."
+      },
+      "tagRenderings": [],
+      "icon": {
+        "render": "./assets/themes/waste_basket/waste_basket.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "amenity=waste_basket"
+              ]
+            },
+            "then": {
+              "en": "Waste Basket",
+              "nl": "Vuilnisbak"
+            }
+          }
+        ]
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=waste_basket"
+          ],
+          "title": {
+            "en": "Waste Basket",
+            "nl": "Vuilnisbak"
+          },
+          "description": {
+            "en": "Throw away waste",
+            "nl": "Afval weggooien"
+          }
+        }
+      ]
+    }
+  ],
+  "roamingRenderings": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "surveillance",
+  "title": {
+    "en": "Surveillance under Surveillance",
+    "nl": "Surveillance under Surveillance",
+    "ja": "監視カメラの監視",
+    "zh_Hant": "被監視的監視器"
+  },
+  "shortDescription": {
+    "en": "Surveillance cameras and other means of surveillance",
+    "nl": "Bewakingscameras en dergelijke",
+    "ja": "監視カメラおよびその他の監視手段",
+    "zh_Hant": "監視鏡頭與其他型式的監視"
+  },
+  "description": {
+    "en": "On this open map, you can find surveillance cameras.",
+    "nl": "Op deze open kaart kan je bewakingscamera's vinden.",
+    "ja": "このオープンマップでは、監視カメラを確認できます。",
+    "zh_Hant": "在這份開放地圖，你可以找到監視鏡頭。"
+  },
+  "language": [
+    "en",
+    "nl",
+    "ja",
+    "zh_Hant"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/surveillance/logo.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "defaultBackgroundId": "osm",
+  "layers": [
+    "direction",
+    "surveillance_camera"
+  ],
+  "roamingRenderings": []
+}

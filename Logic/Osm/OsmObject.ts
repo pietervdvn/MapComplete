@@ -23,7 +23,7 @@ export abstract class OsmObject {
         this.id = id;
         this.type = type;
         this.tags = {
-            id: id
+            id: `${this.type}/${id}`
         }
     }
 
@@ -51,7 +51,10 @@ export abstract class OsmObject {
         }
         const splitted = id.split("/");
         const type = splitted[0];
-        const idN = splitted[1];
+        const idN = Number(splitted[1]);
+        if(idN <0){
+            return;
+        }
 
         OsmObject.objectCache.set(id, src);
         const newContinuation = (element: OsmObject) => {
@@ -68,6 +71,8 @@ export abstract class OsmObject {
             case("relation"):
                 new OsmRelation(idN).Download(newContinuation);
                 break;
+            default:
+                throw "Invalid object type:" + type + id;
 
         }
         return src;
@@ -103,7 +108,7 @@ export abstract class OsmObject {
         if (OsmObject.referencingRelationsCache.has(id)) {
             return OsmObject.referencingRelationsCache.get(id);
         }
-        const relsSrc = new UIEventSource<OsmRelation[]>([])
+        const relsSrc = new UIEventSource<OsmRelation[]>(undefined)
         OsmObject.referencingRelationsCache.set(id, relsSrc);
         Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${id}/relations`)
             .then(data => {
@@ -123,7 +128,7 @@ export abstract class OsmObject {
         }
         const splitted = id.split("/");
         const type = splitted[0];
-        const idN = splitted[1];
+        const idN = Number(splitted[1]);
         const src = new UIEventSource<OsmObject[]>([]);
         OsmObject.historyCache.set(id, src);
         Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${type}/${idN}/history`).then(data => {
@@ -312,20 +317,6 @@ export abstract class OsmObject {
         return this;
     }
 
-    public addTag(k: string, v: string): void {
-        if (k in this.tags) {
-            const oldV = this.tags[k];
-            if (oldV == v) {
-                return;
-            }
-            console.log("Overwriting ", oldV, " with ", v, " for key ", k)
-        }
-        this.tags[k] = v;
-        if (v === undefined || v === "") {
-            delete this.tags[k];
-        }
-        this.changed = true;
-    }
 
     abstract ChangesetXML(changesetId: string): string;
 
@@ -360,7 +351,7 @@ export class OsmNode extends OsmObject {
     lat: number;
     lon: number;
 
-    constructor(id) {
+    constructor(id: number) {
         super("node", id);
 
     }
@@ -368,9 +359,9 @@ export class OsmNode extends OsmObject {
     ChangesetXML(changesetId: string): string {
         let tags = this.TagsXML();
 
-        return '        <node id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + ' lat="' + this.lat + '" lon="' + this.lon + '">\n' +
+        return '    <node id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + ' lat="' + this.lat + '" lon="' + this.lon + '">\n' +
             tags +
-            '        </node>\n';
+            '    </node>\n';
     }
 
     SaveExtraData(element) {
@@ -413,9 +404,8 @@ export class OsmWay extends OsmObject {
     lat: number;
     lon: number;
 
-    constructor(id) {
+    constructor(id: number) {
         super("way", id);
-
     }
 
     centerpoint(): [number, number] {
@@ -432,7 +422,7 @@ export class OsmWay extends OsmObject {
         return '    <way id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
             nds +
             tags +
-            '        </way>\n';
+            '    </way>\n';
     }
 
     SaveExtraData(element, allNodes: OsmNode[]) {
@@ -458,7 +448,7 @@ export class OsmWay extends OsmObject {
         this.nodes = element.nodes;
     }
 
-    asGeoJson() {
+    public asGeoJson() {
         return {
             "type": "Feature",
             "properties": this.tags,
@@ -480,11 +470,14 @@ export class OsmWay extends OsmObject {
 
 export class OsmRelation extends OsmObject {
 
-    members;
+    public members: {
+        type: "node" | "way" | "relation",
+        ref: number,
+        role: string
+    }[];
 
-    constructor(id) {
+    constructor(id: number) {
         super("relation", id);
-
     }
 
     centerpoint(): [number, number] {

@@ -449,7 +449,6 @@
       }
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "circle:#ffffff;./assets/themes/trees/unknown.svg",
     "mappings": [

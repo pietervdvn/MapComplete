@@ -14,3 +14,5 @@ Docs/Tools/stats.*.json
 Docs/Tools/stats.csv
 missing_translations.txt
 *.swp
+.DS_Store
+Svg.ts

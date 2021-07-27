@@ -715,6 +715,9 @@
                         "then": "Vogelkijkhut"
                     },
                     "2": {
+                        "then": "Vogelkijktoren"
+                    },
+                    "3": {
                         "then": "Vogelkijkhut"
                     }
                 }
@@ -769,6 +772,149 @@
             "1": {
                 "title": "Vogelkijkwand",
                 "description": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Rolstoeltoegankelijk"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Enkel overdekte kijkhutten"
+                    }
+                }
+            }
+        }
+    },
+    "crossings": {
+        "name": "Oversteekplaatsen",
+        "description": "Oversteekplaatsen voor voetgangers en fietsers",
+        "title": {
+            "render": "Oversteekplaats",
+            "mappings": {
+                "0": {
+                    "then": "Verkeerslicht"
+                },
+                "1": {
+                    "then": "Oversteektplaats met verkeerslichten"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Oversteekplaats",
+                "description": "Oversteekplaats voor voetgangers en/of fietsers"
+            },
+            "1": {
+                "title": "Verkeerslicht",
+                "description": "Verkeerslicht op een weg"
+            }
+        },
+        "tagRenderings": {
+            "0": {
+                "question": "Wat voor oversteekplaats is dit?",
+                "mappings": {
+                    "0": {
+                        "then": "Oversteekplaats, zonder verkeerslichten"
+                    },
+                    "1": {
+                        "then": "Oversteekplaats met verkeerslichten"
+                    },
+                    "2": {
+                        "then": "Zebrapad"
+                    }
+                }
+            },
+            "1": {
+                "question": "Is dit een zebrapad?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een zebrapad"
+                    },
+                    "1": {
+                        "then": "Dit is niet een zebrapad"
+                    }
+                }
+            },
+            "2": {
+                "question": "Is deze oversteekplaats ook voor fietsers",
+                "mappings": {
+                    "0": {
+                        "then": "Een fietser kan deze oversteekplaats gebruiken"
+                    },
+                    "1": {
+                        "then": "Een fietser kan niet deze oversteekplaats gebruiken"
+                    }
+                }
+            },
+            "3": {
+                "question": "Heeft deze oversteekplaats een verkeerseiland in het midden?",
+                "mappings": {
+                    "0": {
+                        "then": "Deze oversteekplaats heeft een verkeerseiland in het midden"
+                    },
+                    "1": {
+                        "then": "Deze oversteekplaats heeft niet een verkeerseiland in het midden"
+                    }
+                }
+            },
+            "4": {
+                "question": "Heeft deze oversteekplaats een geleidelijn?",
+                "mappings": {
+                    "0": {
+                        "then": "Deze oversteekplaats heeft een geleidelijn"
+                    },
+                    "1": {
+                        "then": "Deze oversteekplaats heeft niet een geleidelijn"
+                    },
+                    "2": {
+                        "then": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
+                    }
+                }
+            },
+            "5": {
+                "question": "Heeft dit verkeerslicht een knop voor groen licht?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit verkeerslicht heeft een knop voor groen licht"
+                    },
+                    "1": {
+                        "then": "Dit verkeerlicht heeft niet een knop voor groen licht"
+                    }
+                }
+            },
+            "6": {
+                "question": "Mag een fietser rechtsaf slaan als het licht rood is?",
+                "mappings": {
+                    "0": {
+                        "then": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='height: 3em'>"
+                    },
+                    "1": {
+                        "then": "Een fietser mag wel rechtsaf slaan als het licht rood is"
+                    },
+                    "2": {
+                        "then": "Een fietser mag niet rechtsaf slaan als het licht rood is"
+                    }
+                }
+            },
+            "7": {
+                "question": "Mag een fietser rechtdoor gaan als het licht rood is?",
+                "mappings": {
+                    "0": {
+                        "then": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='height: 3em'>"
+                    },
+                    "1": {
+                        "then": "Een fietser mag wel rechtdoor gaan als het licht rood is"
+                    },
+                    "2": {
+                        "then": "Een fietser mag niet rechtdoor gaan als het licht rood is"
+                    }
+                }
             }
         }
     },
@@ -1172,6 +1318,90 @@
             "0": {
                 "title": "Natuurreservaat",
                 "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Vrij te bezoeken"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle natuurgebieden"
+                    },
+                    "1": {
+                        "question": "Honden mogen vrij rondlopen"
+                    },
+                    "2": {
+                        "question": "Honden welkom aan de leiband"
+                    }
+                }
+            }
+        }
+    },
+    "parking": {
+        "name": "parking",
+        "title": {
+            "render": "Parking",
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                },
+                "2": {
+                    "then": "Fietsenstalling"
+                }
+            }
+        },
+        "description": "Parking",
+        "tagRenderings": {
+            "1": {
+                "render": "De toegankelijkheid van dit gebied is: {access:description}",
+                "question": "Is dit gebied toegankelijk?",
+                "mappings": {
+                    "0": {
+                        "then": "Vrij toegankelijk"
+                    },
+                    "1": {
+                        "then": "Niet toegankelijk"
+                    },
+                    "2": {
+                        "then": "Niet toegankelijk, want privégebied"
+                    },
+                    "3": {
+                        "then": "Toegankelijk, ondanks dat het privegebied is"
+                    },
+                    "4": {
+                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
+                    },
+                    "5": {
+                        "then": "Toegankelijk mits betaling"
+                    }
+                }
+            },
+            "2": {
+                "render": "Beheer door {operator}",
+                "question": "Wie beheert dit pad?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Paden",
+                "description": "Voeg een ontbrekend, erkend pad toe."
             }
         }
     },
@@ -1846,6 +2076,74 @@
             }
         }
     },
+    "trail": {
+        "name": "Wandeltochten",
+        "title": {
+            "render": "Wandeltocht"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "Deze wandeling is {_length:km} kilometer lang"
+            },
+            "2": {
+                "question": "Wat is de naam van deze wandeling?",
+                "render": "Deze wandeling heet <b>{name}</b>"
+            },
+            "3": {
+                "render": "Beheer door {operator}",
+                "question": "Wie beheert deze wandeltocht?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                    }
+                }
+            },
+            "4": {
+                "question": "Welke kleur heeft deze wandeling?",
+                "render": "Deze wandeling heeft kleur {colour}",
+                "mappings": {
+                    "0": {
+                        "then": "Blauwe wandeling"
+                    },
+                    "1": {
+                        "then": "Rode wandeling"
+                    },
+                    "2": {
+                        "then": "Groene wandeling"
+                    },
+                    "3": {
+                        "then": "Gele wandeling"
+                    }
+                }
+            },
+            "5": {
+                "question": "Is deze wandeling toegankelijk met de rolstoel?",
+                "mappings": {
+                    "0": {
+                        "then": "deze wandeltocht is toegankelijk met de rolstoel"
+                    },
+                    "1": {
+                        "then": "deze wandeltocht is niet toegankelijk met de rolstoel"
+                    }
+                }
+            },
+            "6": {
+                "question": "Is deze wandeltocht toegankelijk met de buggy?",
+                "mappings": {
+                    "0": {
+                        "then": "deze wandeltocht is toegankelijk met de buggy"
+                    },
+                    "1": {
+                        "then": "deze wandeltocht is niet toegankelijk met de buggy"
+                    }
+                }
+            }
+        },
+        "description": "Aangeduide wandeltochten"
+    },
     "tree_node": {
         "name": "Boom",
         "title": {
@@ -1997,6 +2295,80 @@
                 "0": {
                     "then": "{name}"
                 }
+            }
+        }
+    },
+    "visitor_information_centre": {
+        "name": "Bezoekerscentrum",
+        "title": {
+            "render": "{name}",
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
+    },
+    "watermill": {
+        "name": "watermolens",
+        "title": {
+            "render": "Watermolens",
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "description": "Watermolens",
+        "tagRenderings": {
+            "1": {
+                "render": "De toegankelijkheid van dit gebied is: {access:description}",
+                "question": "Is dit gebied toegankelijk?",
+                "mappings": {
+                    "0": {
+                        "then": "Vrij toegankelijk"
+                    },
+                    "1": {
+                        "then": "Niet toegankelijk"
+                    },
+                    "2": {
+                        "then": "Niet toegankelijk, want privégebied"
+                    },
+                    "3": {
+                        "then": "Toegankelijk, ondanks dat het privegebied is"
+                    },
+                    "4": {
+                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
+                    },
+                    "5": {
+                        "then": "Toegankelijk mits betaling"
+                    }
+                }
+            },
+            "2": {
+                "render": "Beheer door {operator}",
+                "question": "Wie beheert dit pad?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Paden",
+                "description": "Voeg een ontbrekend, erkend pad toe."
             }
         }
     }
