@@ -812,6 +812,17 @@
                 }
             },
             "1": {
+                "question": "Is dit een zebrapad?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een zebrapad"
+                    },
+                    "1": {
+                        "then": "Dit is niet een zebrapad"
+                    }
+                }
+            },
+            "2": {
                 "question": "Is deze oversteekplaats ook voor fietsers",
                 "mappings": {
                     "0": {
@@ -822,7 +833,7 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "question": "Heeft deze oversteekplaats een verkeerseiland in het midden?",
                 "mappings": {
                     "0": {
@@ -833,7 +844,7 @@
                     }
                 }
             },
-            "3": {
+            "4": {
                 "question": "Heeft deze oversteekplaats een geleidelijn?",
                 "mappings": {
                     "0": {
@@ -847,7 +858,7 @@
                     }
                 }
             },
-            "4": {
+            "5": {
                 "question": "Heeft dit verkeerslicht een knop voor groen licht?",
                 "mappings": {
                     "0": {
@@ -858,7 +869,7 @@
                     }
                 }
             },
-            "5": {
+            "6": {
                 "question": "Mag een fietser rechtsaf slaan als het licht rood is?",
                 "mappings": {
                     "0": {
@@ -872,7 +883,7 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "question": "Mag een fietser rechtdoor gaan als het licht rood is?",
                 "mappings": {
                     "0": {

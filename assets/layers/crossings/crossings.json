@@ -116,6 +116,29 @@
     },
     {
       "question": {
+        "en": "Is this is a zebra crossing?",
+        "nl": "Is dit een zebrapad?"
+      },
+      "condition": "crossing=uncontrolled",
+      "mappings": [
+        {
+          "if": "crossing_ref=zebra",
+          "then": {
+            "en": "This is a zebra crossing",
+            "nl": "Dit is een zebrapad"
+          }
+        },
+        {
+          "if": "crossing_ref=",
+          "then": {
+            "en": "This is not a zebra crossing",
+            "nl": "Dit is niet een zebrapad"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
         "en": "Is this crossing also for bicycles?",
         "nl": "Is deze oversteekplaats ook voor fietsers"
       },
