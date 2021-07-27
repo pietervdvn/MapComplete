@@ -137,11 +137,11 @@ export default class State {
             (b) => "" + b
         );
 
-    public FilterIsOpened: UIEventSource<boolean> =
+    public filterIsOpened: UIEventSource<boolean> =
         QueryParameters.GetQueryParameter(
             "filter-toggle",
             "false",
-            "Whether or not the filter is shown"
+            "Whether or not the filter view is shown"
         ).map<boolean>(
             (str) => str !== "false",
             [],

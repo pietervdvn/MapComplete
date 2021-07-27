@@ -6,7 +6,6 @@ import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
-import FilterView from "./FilterView";
 import {DownloadPanel} from "./DownloadPanel";
 
 export default class LayerControlPanel extends ScrollableFullScreen {
@@ -31,15 +30,6 @@ export default class LayerControlPanel extends ScrollableFullScreen {
             });
             elements.push(backgroundSelector)
         }
-        elements.push(
-            new Toggle(
-                new FilterView(State.state.filteredLayers),
-                undefined,
-                State.state.filteredLayers.map(
-                    (layers) => layers.length > 1 || layers[0].layerDef.filters.length > 0
-                )
-            )
-        );
 
         elements.push(new Toggle(
             new DownloadPanel(),
