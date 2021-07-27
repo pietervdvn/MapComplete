@@ -6,8 +6,8 @@ import {Utils} from "../Utils";
 import BaseUIElement from "../UI/BaseUIElement";
 import List from "../UI/Base/List";
 import Title from "../UI/Base/Title";
-import AspectedRouting from "aspected-routing"
 import {UIEventSourceTools} from "./UIEventSource";
+import AspectedRouting from "./Osm/aspectedRouting";
 
 export class ExtraFunction {
 
@@ -189,7 +189,6 @@ export class ExtraFunction {
     private readonly _name: string;
     private readonly _args: string[];
     private readonly _doc: string;
-    private readonly _async: boolean;
     private readonly _f: (params: { featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[] }, feat: any) => any;
 
     constructor(options: { name: string, doc: string, args: string[] },
