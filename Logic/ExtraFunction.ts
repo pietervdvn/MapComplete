@@ -6,7 +6,7 @@ import {Utils} from "../Utils";
 import BaseUIElement from "../UI/BaseUIElement";
 import List from "../UI/Base/List";
 import Title from "../UI/Base/Title";
-import {RuleSet} from "aspected-routing"
+import AspectedRouting from "aspected-routing"
 import {UIEventSourceTools} from "./UIEventSource";
 
 export class ExtraFunction {
@@ -173,7 +173,7 @@ export class ExtraFunction {
                     if (config === undefined) {
                         return
                     }
-                    return new RuleSet(config).runProgram(feature.properties)
+                    return new AspectedRouting(config).evaluate(feature.properties)
                 })
             }
         }
