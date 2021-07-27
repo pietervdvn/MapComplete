@@ -65,12 +65,12 @@ export default class FilterView extends VariableUiElement {
                 Translations.t.general.layerSelection.zoomInToSeeThisLayer.Clone()
                     .SetClass("alert")
                     .SetStyle("display: block ruby;width:min-content;"),
-                State.state.locationControl.map(location =>location.zoom > filteredLayer.layerDef.minzoom )
+                State.state.locationControl.map(location =>location.zoom >= filteredLayer.layerDef.minzoom )
             )
             
 
         const style =
-            "display:flex;align-items:center;color:#007759;padding:0.5rem 0;";
+            "display:flex;align-items:center;padding:0.5rem 0;";
         const layerChecked = new Combine([icon, styledNameChecked, zoomStatus])
             .SetStyle(style)
             .onClick(() => filteredLayer.isDisplayed.setData(false));

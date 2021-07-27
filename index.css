@@ -94,11 +94,23 @@ svg, img {
 }
 
 .mapcontrol svg path{
-    fill: var(--subtle-detail-color-contrast);
+    fill: var(--subtle-detail-color-contrast) !important;
 }
 
 a {
     color: var(--foreground-color);
+}
+
+btn {
+    margin-top: 0.25rem;
+    margin-right: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: var(--catch-detail-color-contrast);
+    --tw-bg-opacity: 1;
+    background-color: var(--catch-detail-color);
 }
 
 .h-min {

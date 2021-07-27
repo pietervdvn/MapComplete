@@ -38,7 +38,8 @@
         "nl": "Deze wandeling is {_length:km} kilometer lang"
       }
     },
-    {"#": "Name",
+    {
+      "#": "Name",
       "question": {
         "nl": "Wat is de naam van deze wandeling?"
       },
@@ -147,8 +148,8 @@
         }
       ]
     },
-    { "#": "pushchair access",
-     
+    {
+      "#": "pushchair access",
       "question": {
         "nl": "Is deze wandeltocht toegankelijk met de buggy?"
       },

@@ -1,0 +1,17 @@
+:root {
+    --subtle-detail-color: #007759;
+    --subtle-detail-color-contrast: #ffffff;
+    --subtle-detail-color-light-contrast: lightgrey;
+
+    --catch-detail-color: #0fff00;
+    --catch-detail-color-contrast: #ffffff;
+    --alert-color: #fee4d1;
+    --background-color: white;
+    --foreground-color: #007759;
+    --popup-border: white;
+    --shadow-color: #00000066;
+    --variable-title-height: 0px; /* Set by javascript */
+    --return-to-the-map-height: 2em;
+
+    --image-carousel-height: 350px;
+}

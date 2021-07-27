@@ -1,5 +1,6 @@
 {
   "id": "natuurpunt",
+  "customCss": "./assets/themes/natuurpunt/natuurpunt.css",
   "title": {
     "nl": "Natuurgebieden",
     "en": "Nature Reserves"
