@@ -23,7 +23,7 @@ export class VariableUiElement extends BaseUIElement {
         el.innerHTML = contents;
       } else if (contents instanceof Array) {
         for (const content of contents) {
-          const c = content.ConstructElement();
+          const c = content?.ConstructElement();
           if (c !== undefined && c !== null) {
             el.appendChild(c);
           }

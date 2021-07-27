@@ -118,7 +118,7 @@ export class RadioButton<T> extends InputElement<T> {
             const label = document.createElement("label");
             label.appendChild(labelHtml);
             label.htmlFor = input.id;
-            label.classList.add("block", "w-full", "cursor-pointer", "bg-red");
+            label.classList.add("flex", "w-full", "cursor-pointer", "bg-red");
 
             if (!this._dontStyle) {
                 labelHtml.classList.add("p-2")

@@ -34,7 +34,8 @@ export default class LayerConfig {
     passAllFeatures: boolean;
     isShown: TagRenderingConfig;
     minzoom: number;
-    maxzoom: number;
+    minzoomVisible: number;
+    maxzoom:number;
     title?: TagRenderingConfig;
     titleIcons: TagRenderingConfig[];
     icon: TagRenderingConfig;
@@ -143,7 +144,7 @@ export default class LayerConfig {
         this.doNotDownload = json.doNotDownload ?? false;
         this.passAllFeatures = json.passAllFeatures ?? false;
         this.minzoom = json.minzoom ?? 0;
-        this.maxzoom = json.maxzoom ?? 1000;
+        this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.wayHandling = json.wayHandling ?? 0;
         this.presets = (json.presets ?? []).map((pr, i) => {
             if (pr.preciseInput === true) {

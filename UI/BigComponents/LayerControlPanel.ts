@@ -1,6 +1,5 @@
 import State from "../../State";
 import BackgroundSelector from "./BackgroundSelector";
-import LayerSelection from "./LayerSelection";
 import Combine from "../Base/Combine";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Translations from "../i18n/Translations";

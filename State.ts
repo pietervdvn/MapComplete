@@ -21,6 +21,7 @@ import {Relation} from "./Logic/Osm/ExtractRelations";
 import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import { TagsFilter } from "./Logic/Tags/TagsFilter";
+import FilteredLayer from "./Models/FilteredLayer";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -61,15 +62,7 @@ export default class State {
 
     public osmApiFeatureSource: OsmApiFeatureSource;
 
-    public filteredLayers: UIEventSource<{
-        readonly isDisplayed: UIEventSource<boolean>;
-        readonly appliedFilters: UIEventSource<TagsFilter>;
-        readonly layerDef: LayerConfig;
-    }[]> = new UIEventSource<{
-        readonly isDisplayed: UIEventSource<boolean>;
-        readonly appliedFilters: UIEventSource<TagsFilter>;
-        readonly layerDef: LayerConfig;
-    }[]>([]);
+    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([]);
 
     /**
      The latest element that was selected

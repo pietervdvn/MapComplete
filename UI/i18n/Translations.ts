@@ -19,7 +19,7 @@ export default class Translations {
 
 
     static T(t: string | any, context = undefined): Translation {
-        if(t === undefined){
+        if(t === undefined || t === null){
             return undefined;
         }
         if(typeof t === "string"){
@@ -38,7 +38,7 @@ export default class Translations {
 
     private static wtcache = {}
     public static WT(s: string | Translation): Translation {
-        if(s === undefined){
+        if(s === undefined || s === null){
             return undefined;
         }
         if (typeof (s) === "string") {

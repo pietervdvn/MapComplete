@@ -92,16 +92,16 @@ export interface LayerConfigJson {
 
 
     /**
-     * The zoomlevel at which point the data is shown and loaded.
+     * The minimum needed zoomlevel required before loading of the data start
      * Default: 0
      */
     minzoom?: number;
 
     /**
-     * The zoomlevel at which point the data is hidden again
-     * Default: 100 (thus: always visible
+     * If zoomed out below this zoomlevel, the data will be hidden.
+     * Default: minzoom
      */
-    maxzoom?: number;
+    minzoomVisible?: number;
 
     /**
      * The title shown in a popup for elements of this layer.

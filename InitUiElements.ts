@@ -1,19 +1,19 @@
-import { CenterFlexedElement } from "./UI/Base/CenterFlexedElement";
-import { FixedUiElement } from "./UI/Base/FixedUiElement";
+import {CenterFlexedElement} from "./UI/Base/CenterFlexedElement";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Toggle from "./UI/Input/Toggle";
-import { Basemap } from "./UI/BigComponents/Basemap";
+import {Basemap} from "./UI/BigComponents/Basemap";
 import State from "./State";
 import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
-import { UIEventSource } from "./Logic/UIEventSource";
-import { QueryParameters } from "./Logic/Web/QueryParameters";
+import {UIEventSource} from "./Logic/UIEventSource";
+import {QueryParameters} from "./Logic/Web/QueryParameters";
 import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
 import SimpleAddUI from "./UI/BigComponents/SimpleAddUI";
 import CenterMessageBox from "./UI/CenterMessageBox";
 import UserBadge from "./UI/BigComponents/UserBadge";
 import SearchAndGo from "./UI/BigComponents/SearchAndGo";
 import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
-import { LocalStorageSource } from "./Logic/Web/LocalStorageSource";
-import { Utils } from "./Utils";
+import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
+import {Utils} from "./Utils";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personalLayout/personalLayout.json";
@@ -34,17 +34,16 @@ import MapControlButton from "./UI/MapControlButton";
 import Combine from "./UI/Base/Combine";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
-import { LayoutConfigJson } from "./Customizations/JSON/LayoutConfigJson";
+import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-import { SimpleMapScreenshoter } from "leaflet-simple-map-screenshoter";
+import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
 import jsPDF from "jspdf";
-import FilterView from "./UI/BigComponents/FilterView";
-import { TagsFilter } from "./Logic/Tags/TagsFilter";
+import {TagsFilter} from "./Logic/Tags/TagsFilter";
 
 export class InitUiElements {
   static InitAll(

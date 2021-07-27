@@ -13,6 +13,9 @@ import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {And} from "../../Logic/Tags/And";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
+import State from "../../State";
+import {control} from "leaflet";
+
 
 /**
  * Shows the filter
@@ -22,12 +25,16 @@ export default class FilterView extends VariableUiElement {
     constructor(filteredLayer) {
         super(
             filteredLayer.map((filteredLayers) =>
-                filteredLayers.map(FilterView.createOneFilteredLayerElement)
+                filteredLayers.map(l => FilterView.createOneFilteredLayerElement(l))
             )
         );
     }
 
-    static createOneFilteredLayerElement(filteredLayer) {
+    private static createOneFilteredLayerElement(filteredLayer) {
+        if(filteredLayer.layerDef.name   === undefined){
+            // Name is not defined: we hide this one
+            return undefined;
+        }
         const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem";
 
         const icon = new Combine([Svg.checkbox_filled]).SetStyle(iconStyle);
@@ -52,9 +59,19 @@ export default class FilterView extends VariableUiElement {
             .Clone()
             .SetStyle("font-size:large;padding-left:1.25rem");
 
+        const zoomStatus =
+            new Toggle(
+                undefined,
+                Translations.t.general.layerSelection.zoomInToSeeThisLayer.Clone()
+                    .SetClass("alert")
+                    .SetStyle("display: block ruby;width:min-content;"),
+                State.state.locationControl.map(location =>location.zoom > filteredLayer.layerDef.minzoom )
+            )
+            
+
         const style =
             "display:flex;align-items:center;color:#007759;padding:0.5rem 0;";
-        const layerChecked = new Combine([icon, styledNameChecked])
+        const layerChecked = new Combine([icon, styledNameChecked, zoomStatus])
             .SetStyle(style)
             .onClick(() => filteredLayer.isDisplayed.setData(false));
 
@@ -62,25 +79,27 @@ export default class FilterView extends VariableUiElement {
             .SetStyle(style)
             .onClick(() => filteredLayer.isDisplayed.setData(true));
 
-        
+
         const filterPanel: BaseUIElement = FilterView.createFilterPanel(filteredLayer)
-        
+
+
+
         return new Toggle(
             new Combine([layerChecked, filterPanel]),
             layerNotChecked,
             filteredLayer.isDisplayed
         );
     }
-    
+
     static createFilterPanel(flayer: {
         layerDef: LayerConfig,
         appliedFilters: UIEventSource<TagsFilter>
-    }): BaseUIElement{
+    }): BaseUIElement {
         const layer = flayer.layerDef
-        if(layer.filters.length === 0){
+        if (layer.filters.length === 0) {
             return undefined;
         }
-        
+
         let listFilterElements: [BaseUIElement, UIEventSource<TagsFilter>][] = layer.filters.map(
             FilterView.createFilter
         );

@@ -50,7 +50,7 @@ export default class GeoJsonSource implements FeatureSource {
      * @param locationControl
      * @constructor
      */
-    public static ConstructMultiSource(flayers: { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[], locationControl: UIEventSource<Loc>): FeatureSource[] {
+    public static ConstructMultiSource(flayers: { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[], locationControl: UIEventSource<Loc>): GeoJsonSource[] {
 
         const flayersPerSource = new Map<string, { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[]>();
         for (const flayer of flayers) {
@@ -65,7 +65,7 @@ export default class GeoJsonSource implements FeatureSource {
             flayersPerSource.get(url).push(flayer)
         }
 
-        const sources: FeatureSource[] = []
+        const sources: GeoJsonSource[] = []
 
         flayersPerSource.forEach((flayers, key) => {
             if (flayers.length == 1) {
@@ -118,8 +118,7 @@ export default class GeoJsonSource implements FeatureSource {
                     return undefined;
                 }
 
-                if (location.zoom < flayer.layerDef.minzoom ||
-                    location.zoom > flayer.layerDef.maxzoom) {
+                if (location.zoom < flayer.layerDef.minzoom) {
                     // No need to download! - the layer is disabled
                     return undefined;
                 }

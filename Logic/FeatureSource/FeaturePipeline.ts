@@ -13,6 +13,7 @@ import Loc from "../../Models/Loc";
 import GeoJsonSource from "./GeoJsonSource";
 import MetaTaggingFeatureSource from "./MetaTaggingFeatureSource";
 import RegisteringFeatureSource from "./RegisteringFeatureSource";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 export default class FeaturePipeline implements FeatureSource {
 
@@ -20,7 +21,7 @@ export default class FeaturePipeline implements FeatureSource {
 
     public readonly name = "FeaturePipeline"
 
-    constructor(flayers: UIEventSource<{ isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[]>,
+    constructor(flayers: UIEventSource<FilteredLayer[]>,
                 updater: FeatureSource,
                 fromOsmApi: FeatureSource,
                 layout: UIEventSource<LayoutConfig>,

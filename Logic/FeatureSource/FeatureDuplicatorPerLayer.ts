@@ -1,6 +1,6 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 
 /**
@@ -13,7 +13,7 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
 
     public readonly name;
 
-    constructor(layers: UIEventSource<{ layerDef: LayerConfig }[]>, upstream: FeatureSource) {
+    constructor(layers: UIEventSource<FilteredLayer[]>, upstream: FeatureSource) {
         this.name = "FeatureDuplicator of "+upstream.name;
         this.features = upstream.features.map(features => {
             const newFeatures: { feature: any, freshness: Date }[] = [];
