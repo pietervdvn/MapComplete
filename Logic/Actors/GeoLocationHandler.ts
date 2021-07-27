@@ -5,7 +5,7 @@ import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
-import {CenterFlexedElement} from "../../UI/Base/CenterFlexedElement";
+import BaseUIElement from "../../UI/BaseUIElement";
 
 export default class GeoLocationHandler extends VariableUiElement {
     /**
@@ -79,25 +79,23 @@ export default class GeoLocationHandler extends VariableUiElement {
         super(
             hasLocation.map(
                 (hasLocationData) => {
-                    let icon: string;
+                    let icon: BaseUIElement;
 
                     if (isLocked.data) {
-                        icon = Svg.location;
+                        icon = Svg.location_svg();
                     } else if (hasLocationData) {
-                        icon = Svg.location_empty;
+                        icon = Svg.location_empty_svg();
                     } else if (isActive.data) {
-                        icon = Svg.location_empty;
+                        icon = Svg.location_empty_svg();
                     } else {
-                        icon = Svg.location_circle;
+                        icon = Svg.location_circle_svg();
                     }
-
-                    return new CenterFlexedElement(
-                        Img.AsImageElement(icon, "", "width:1.25rem;height:1.25rem")
-                    );
+                    return icon
                 },
                 [isActive, isLocked]
             )
         );
+        this.SetClass("mapcontrol")
         this._isActive = isActive;
         this._isLocked = isLocked;
         this._permission = new UIEventSource<string>("");

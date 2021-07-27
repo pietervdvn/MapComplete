@@ -93,6 +93,10 @@ svg, img {
     display: unset;
 }
 
+.mapcontrol svg path{
+    fill: var(--subtle-detail-color-contrast);
+}
+
 a {
     color: var(--foreground-color);
 }

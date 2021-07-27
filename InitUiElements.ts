@@ -1,4 +1,3 @@
-import {CenterFlexedElement} from "./UI/Base/CenterFlexedElement";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Toggle from "./UI/Input/Toggle";
 import {Basemap} from "./UI/BigComponents/Basemap";
@@ -197,25 +196,23 @@ export class InitUiElements {
                     State.state.currentGPSLocation,
                     State.state.leafletMap,
                     State.state.layoutToUse
-                )
+                ), {
+                    dontStyle : true
+                }
             ),
             undefined,
             State.state.featureSwitchGeolocation
         );
 
         const plus = new MapControlButton(
-            new CenterFlexedElement(
-                Img.AsImageElement(Svg.plus_zoom, "", "width:1.25rem;height:1.25rem")
-            )
+                Svg.plus_zoom_svg()
         ).onClick(() => {
             State.state.locationControl.data.zoom++;
             State.state.locationControl.ping();
         });
 
         const min = new MapControlButton(
-            new CenterFlexedElement(
-                Img.AsImageElement(Svg.min_zoom, "", "width:1.25rem;height:1.25rem")
-            )
+           Svg.min_zoom_svg()
         ).onClick(() => {
             State.state.locationControl.data.zoom--;
             State.state.locationControl.ping();
@@ -383,9 +380,7 @@ export class InitUiElements {
             
 
         const filterMapControlButton = new MapControlButton(
-            new CenterFlexedElement(
-                Img.AsImageElement(Svg.filter, "", "width:1.25rem;height:1.25rem")
-            )
+            Svg.filter_svg()
         );
 
         const filterButton = new Toggle(
