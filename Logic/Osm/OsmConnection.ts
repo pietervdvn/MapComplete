@@ -249,8 +249,13 @@ export class OsmConnection {
         });
     }
 
+    private isChecking = false;
     private CheckForMessagesContinuously(){
         const self =this;
+        if(this.isChecking){
+            return;
+        }
+        this.isChecking = true;
         UIEventSource.Chronic(5 * 60 * 1000).addCallback(_ => {
             if (self.isLoggedIn .data) {
             console.log("Checking for messages")
