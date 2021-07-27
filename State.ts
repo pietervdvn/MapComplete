@@ -14,14 +14,13 @@ import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
 
 import OverpassFeatureSource from "./Logic/Actors/OverpassFeatureSource";
-import LayerConfig from "./Customizations/JSON/LayerConfig";
 import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 import {Relation} from "./Logic/Osm/ExtractRelations";
 import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
-import { TagsFilter } from "./Logic/Tags/TagsFilter";
 import FilteredLayer from "./Models/FilteredLayer";
+import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -31,7 +30,7 @@ export default class State {
     // The singleton of the global state
     public static state: State;
 
-    public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined);
+    public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined, "layoutToUse");
 
     /**
      The mapping from id -> UIEventSource<properties>
@@ -44,7 +43,7 @@ export default class State {
     /**
      The leaflet instance of the big basemap
      */
-    public leafletMap = new UIEventSource<L.Map>(undefined);
+    public leafletMap = new UIEventSource<L.Map>(undefined, "leafletmap");
     /**
      * Background layer id
      */
@@ -62,7 +61,7 @@ export default class State {
 
     public osmApiFeatureSource: OsmApiFeatureSource;
 
-    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([]);
+    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([],"filteredLayers");
 
     /**
      The latest element that was selected
@@ -102,7 +101,7 @@ export default class State {
     /**
      * The map location: currently centered lat, lon and zoom
      */
-    public readonly locationControl = new UIEventSource<Loc>(undefined);
+    public readonly locationControl = new UIEventSource<Loc>(undefined, "locationControl");
     public backgroundLayer;
     public readonly backgroundLayerId: UIEventSource<string>;
 
@@ -187,11 +186,13 @@ export default class State {
                 ).syncWith(LocalStorageSource.Get("lon"))
             );
 
-            this.locationControl = new UIEventSource<Loc>({
+            this.locationControl.setData({
                 zoom: Utils.asFloat(zoom.data),
                 lat: Utils.asFloat(lat.data),
                 lon: Utils.asFloat(lon.data),
-            }).addCallback((latlonz) => {
+            })
+            this.locationControl.addCallback((latlonz) => {
+                // Sync th location controls
                 zoom.setData(latlonz.zoom);
                 lat.setData(latlonz.lat);
                 lon.setData(latlonz.lon);
@@ -371,7 +372,10 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
-        this.osmApiFeatureSource = new OsmApiFeatureSource();
+        
+        new ChangeToElementsActor(this.changes, this.allElements)
+        
+        this.osmApiFeatureSource = new OsmApiFeatureSource()
 
         new PendingChangesUploader(this.changes, this.selectedElement);
 

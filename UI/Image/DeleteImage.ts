@@ -5,6 +5,7 @@ import Combine from "../Base/Combine";
 import State from "../../State";
 import Svg from "../../Svg";
 import {Tag} from "../../Logic/Tags/Tag";
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 
 
 export default class DeleteImage extends Toggle {
@@ -15,14 +16,17 @@ export default class DeleteImage extends Toggle {
             .SetClass("rounded-full p-1")
             .SetStyle("color:white;background:#ff8c8c")
             .onClick(() => {
-                State.state?.changes?.addTag(tags.data.id, new Tag(key, oldValue), tags);
+                State.state?.changes?.
+                    applyAction(new ChangeTagAction(tags.data.id, new Tag(key, oldValue), tags.data))
             });
 
         const deleteButton = Translations.t.image.doDelete.Clone()
             .SetClass("block w-full pl-4 pr-4")
             .SetStyle("color:white;background:#ff8c8c; border-top-left-radius:30rem; border-top-right-radius: 30rem;")
             .onClick(() => {
-                State.state?.changes?.addTag(tags.data.id, new Tag(key, ""), tags);
+                State.state?.changes?.applyAction(
+                new ChangeTagAction(    tags.data.id, new Tag(key, ""), tags.data)
+                )
             });
 
         const cancelButton = Translations.t.general.cancel.Clone().SetClass("bg-white pl-4 pr-4").SetStyle("border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;");

@@ -20,6 +20,8 @@ import LocationInput from "../Input/LocationInput";
 import {InputElement} from "../Input/InputElement";
 import Loc from "../../Models/Loc";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
+import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
+import Hash from "../../Logic/Web/Hash";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -61,11 +63,6 @@ export default class SimpleAddUI extends Toggle {
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
 
-        function createNewPoint(tags: any[], location: { lat: number, lon: number }) {
-            let feature = State.state.changes.createElement(tags, location.lat, location.lon);
-            State.state.selectedElement.setData(feature);
-        }
-
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset)
 
         const addUi = new VariableUiElement(
@@ -75,8 +72,16 @@ export default class SimpleAddUI extends Toggle {
                     }
                     return SimpleAddUI.CreateConfirmButton(preset,
                         (tags, location) => {
-                            createNewPoint(tags, location)
+                        const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon)
+                            State.state.changes.applyAction(newElementAction)
                             selectedPreset.setData(undefined)
+                            isShown.setData(false)
+                            State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
+                                newElementAction.newElementId
+                            ))
+                            console.log("Did set selected element to",State.state.allElements.ContainingFeatures.get(
+                                newElementAction.newElementId
+                            ))
                         }, () => {
                             selectedPreset.setData(undefined)
                         })
@@ -121,16 +126,16 @@ export default class SimpleAddUI extends Toggle {
                 lon: location.data.lon,
                 zoom: 19
             });
-            
+
             let backgroundLayer = undefined;
-            if(preset.preciseInput.preferredBackground){
-               backgroundLayer= AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
+            if (preset.preciseInput.preferredBackground) {
+                backgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
             }
-            
+
             preciseInput = new LocationInput({
                 mapBackground: backgroundLayer,
-                centerLocation:locationSrc
-                    
+                centerLocation: locationSrc
+
             })
             preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
         }
@@ -145,7 +150,7 @@ export default class SimpleAddUI extends Toggle {
             .onClick(() => {
                 confirm(preset.tags, (preciseInput?.GetValue() ?? location).data);
             });
-        
+
         if (preciseInput !== undefined) {
             confirmButton = new Combine([preciseInput, confirmButton])
         }
@@ -241,7 +246,7 @@ export default class SimpleAddUI extends Toggle {
             for (const preset of presets) {
 
                 const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-                let icon:() => BaseUIElement = () => layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html
+                let icon: () => BaseUIElement = () => layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html
                     .SetClass("w-12 h-12 block relative");
                 const presetInfo: PresetInfo = {
                     tags: preset.tags,

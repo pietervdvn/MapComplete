@@ -3,7 +3,7 @@ import State from "../../State";
 import Toggle from "../Input/Toggle";
 import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
-import DeleteAction from "../../Logic/Osm/DeleteAction";
+import DeleteAction from "../../Logic/Osm/Actions/DeleteAction";
 import {Tag} from "../../Logic/Tags/Tag";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
@@ -19,6 +19,7 @@ import {Changes} from "../../Logic/Osm/Changes";
 import {And} from "../../Logic/Tags/And";
 import Constants from "../../Models/Constants";
 import DeleteConfig from "../../Customizations/JSON/DeleteConfig";
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -58,7 +59,9 @@ export default class DeleteWizard extends Toggle {
                 })
             }
             (State.state?.changes ?? new Changes())
-                .addTag(id, new And(tagsToApply.map(kv => new Tag(kv.k, kv.v))), tagsSource);
+                .applyAction(new ChangeTagAction(
+                   id, new And(tagsToApply.map(kv => new Tag(kv.k, kv.v))), tagsSource.data
+                ))
         }
 
         function doDelete(selected: TagsFilter) {

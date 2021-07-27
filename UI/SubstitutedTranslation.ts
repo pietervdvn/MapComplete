@@ -19,7 +19,6 @@ export class SubstitutedTranslation extends VariableUiElement {
         const extraMappings: SpecialVisualization[] = [];
 
         mapping?.forEach((value, key) => {
-            console.log("KV:", key, value)
             extraMappings.push(
                 {
                     funcName: key,
@@ -72,11 +71,6 @@ export class SubstitutedTranslation extends VariableUiElement {
             style: string
         }
     }[] {
-
-        if (extraMappings.length > 0) {
-
-            console.log("Extra mappings are", extraMappings)
-        }
 
         for (const knownSpecial of SpecialVisualizations.specialVisualizations.concat(extraMappings)) {
 

@@ -135,7 +135,20 @@ export class Utils {
         }
         return newArr;
     }
-
+    
+    public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean{
+        if(t1.length !== t2.length){
+            return false
+        }
+        eq = (a, b) => a === b
+        for (let i = 0; i < t1.length ; i++) {
+            if(!eq(t1[i] ,t2[i])){
+                return false
+            }
+        }
+        return true;
+    }
+    
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {

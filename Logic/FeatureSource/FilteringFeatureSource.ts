@@ -94,16 +94,9 @@ export default class FilteringFeatureSource implements FeatureSource {
                     return false;
                 }
 
-              
-
                 return true;
             });
-            console.log(
-                "Filtering layer source: input: ",
-                upstream.features.data?.length,
-                "output:",
-                newFeatures.length
-            );
+
             self.features.setData(newFeatures);
             if (missingLayers.size > 0) {
                 console.error(

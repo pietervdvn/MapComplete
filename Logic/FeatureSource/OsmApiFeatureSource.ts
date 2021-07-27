@@ -15,15 +15,19 @@ export default class OsmApiFeatureSource implements FeatureSource {
 
 
     public load(id: string) {
-        if(id.indexOf("-") >= 0){
+        if (id.indexOf("-") >= 0) {
             // Newly added point - not yet in OSM
             return;
         }
         console.debug("Downloading", id, "from the OSM-API")
         OsmObject.DownloadObject(id).addCallbackAndRunD(element => {
-            const geojson = element.asGeoJson();
-            geojson.id = geojson.properties.id;
-            this.features.setData([{feature: geojson, freshness: element.timestamp}])
+            try {
+                const geojson = element.asGeoJson();
+                geojson.id = geojson.properties.id;
+                this.features.setData([{feature: geojson, freshness: element.timestamp}])
+            } catch (e) {
+                console.error(e)
+            }
         })
     }
 
@@ -58,7 +62,7 @@ export default class OsmApiFeatureSource implements FeatureSource {
             const bounds = Utils.tile_bounds(z, x, y);
             console.log("Loading OSM data tile", z, x, y, " with bounds", bounds)
             OsmObject.LoadArea(bounds, objects => {
-                const keptGeoJson: {feature:any, freshness: Date}[] = []
+                const keptGeoJson: { feature: any, freshness: Date }[] = []
                 // Which layer does the object match?
                 for (const object of objects) {
 
@@ -69,7 +73,7 @@ export default class OsmApiFeatureSource implements FeatureSource {
                         if (doesMatch) {
                             const geoJson = object.asGeoJson();
                             geoJson._matching_layer_id = layer.id
-                            keptGeoJson.push({feature: geoJson, freshness:  object.timestamp})
+                            keptGeoJson.push({feature: geoJson, freshness: object.timestamp})
                             break;
                         }
 

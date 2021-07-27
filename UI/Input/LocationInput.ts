@@ -42,7 +42,6 @@ export default class LocationInput extends InputElement<Loc> {
             }
         )
         map.leafletMap.addCallbackAndRunD(leaflet => {
-            console.log(leaflet.getBounds(), leaflet.getBounds().pad(0.15))
             leaflet.setMaxBounds(
                 leaflet.getBounds().pad(0.15)
             )

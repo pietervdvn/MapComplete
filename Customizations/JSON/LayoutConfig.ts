@@ -66,7 +66,7 @@ export default class LayoutConfig {
             this.language = json.language;
         }
         if (this.language.length == 0) {
-            throw "No languages defined. Define at least one language"
+            throw `No languages defined. Define at least one language. (${context}.languages)`
         }
         if (json.title === undefined) {
             throw "Title not defined in " + this.id;

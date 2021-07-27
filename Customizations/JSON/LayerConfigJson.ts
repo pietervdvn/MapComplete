@@ -298,4 +298,9 @@ export interface LayerConfigJson {
      */
     deletion?: boolean | DeleteConfigJson
 
+    /**
+     * IF set, a 'split this road' button is shown
+     */
+    allowSplit?: boolean
+
 }
