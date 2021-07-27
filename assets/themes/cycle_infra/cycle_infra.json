@@ -518,6 +518,30 @@
                 "en": "This street is paved",
                 "nl": "Deze straat is geplaveid"
               }
+            },
+            {
+              "if": "surface=fine_gravel",
+              "then": {
+                "en": "This street is made from fine gravel",
+                "nl": "Deze straat is gemaakt van fijn grind"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "surface=cobblestone",
+              "then": {
+                "en": "This street is made from cobblestone",
+                "nl": "Deze straat is gemaakt van kasseien"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "surface=paving_stones",
+              "then": {
+                "en": "This street is made from paving stones",
+                "nl": "Deze straat is gemaakt van geplaveide stenen"
+              },
+              "hideInAnswer": true
             }
           ],
           "question": {
@@ -1144,7 +1168,7 @@
       "icon": "./assets/themes/cycle_infra/street.svg",
       "width": "5",
       "color": {
-        "render": "#aaaaaa",
+        "render": "rgba(170, 170, 170, 0.7)",
         "mappings": []
       },
       "tagRenderings": [

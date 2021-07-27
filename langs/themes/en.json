@@ -883,6 +883,15 @@
                             },
                             "4": {
                                 "then": "This street is paved"
+                            },
+                            "5": {
+                                "then": "This street is made from fine gravel"
+                            },
+                            "6": {
+                                "then": "This street is made from cobblestone"
+                            },
+                            "7": {
+                                "then": "This street is made from paving stones"
                             }
                         },
                         "question": "What is the surface of the street made from?"

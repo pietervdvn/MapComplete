@@ -745,6 +745,15 @@
                             },
                             "4": {
                                 "then": "Deze straat is geplaveid"
+                            },
+                            "5": {
+                                "then": "Deze straat is gemaakt van fijn grind"
+                            },
+                            "6": {
+                                "then": "Deze straat is gemaakt van kasseien"
+                            },
+                            "7": {
+                                "then": "Deze straat is gemaakt van geplaveide stenen"
                             }
                         },
                         "question": "Waaruit is het oppervlak van de straat gemaakt?"
