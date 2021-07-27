@@ -121,7 +121,6 @@ export default class GeoJsonSource implements FeatureSource {
                 if (location.zoom < flayer.layerDef.minzoom ||
                     location.zoom > flayer.layerDef.maxzoom) {
                     // No need to download! - the layer is disabled
-                    console.log("Not loading layers for " + url, "zoom" + location.zoom, " not between", flayer.layerDef.minzoom, "and", flayer.layerDef.maxzoom)
                     return undefined;
                 }
 
