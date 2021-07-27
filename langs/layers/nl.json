@@ -715,6 +715,9 @@
                         "then": "Vogelkijkhut"
                     },
                     "2": {
+                        "then": "Vogelkijktoren"
+                    },
+                    "3": {
                         "then": "Vogelkijkhut"
                     }
                 }
@@ -769,6 +772,22 @@
             "1": {
                 "title": "Vogelkijkwand",
                 "description": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Rolstoeltoegankelijk"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Enkel overdekte kijkhutten"
+                    }
+                }
             }
         }
     },
@@ -1288,6 +1307,28 @@
             "0": {
                 "title": "Natuurreservaat",
                 "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Vrij te bezoeken"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle natuurgebieden"
+                    },
+                    "1": {
+                        "question": "Honden mogen vrij rondlopen"
+                    },
+                    "2": {
+                        "question": "Honden welkom aan de leiband"
+                    }
+                }
             }
         }
     },
@@ -2025,38 +2066,21 @@
         }
     },
     "trail": {
-        "name": "Paden",
+        "name": "Wandeltochten",
         "title": {
-            "render": "Paden"
+            "render": "Wandeltocht"
         },
         "tagRenderings": {
             "1": {
-                "render": "De toegankelijkheid van dit gebied is: {access:description}",
-                "question": "Is dit gebied toegankelijk?",
-                "mappings": {
-                    "0": {
-                        "then": "Vrij toegankelijk"
-                    },
-                    "1": {
-                        "then": "Niet toegankelijk"
-                    },
-                    "2": {
-                        "then": "Niet toegankelijk, want privégebied"
-                    },
-                    "3": {
-                        "then": "Toegankelijk, ondanks dat het privegebied is"
-                    },
-                    "4": {
-                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
-                    },
-                    "5": {
-                        "then": "Toegankelijk mits betaling"
-                    }
-                }
+                "render": "Deze wandeling is {_length:km} kilometer lang"
             },
             "2": {
+                "question": "Wat is de naam van deze wandeling?",
+                "render": "Deze wandeling heet <b>{name}</b>"
+            },
+            "3": {
                 "render": "Beheer door {operator}",
-                "question": "Wie beheert dit pad?",
+                "question": "Wie beheert deze wandeltocht?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
@@ -2066,117 +2090,48 @@
                     }
                 }
             },
-            "3": {
-                "question": "Is dit pad toegankelijk met de rolstoel?",
-                "mappings": {
-                    "0": {
-                        "then": "Dit pad is toegankelijk met de rolstoel"
-                    },
-                    "1": {
-                        "then": "Dit pad is niet toegankelijk met de rolstoel"
-                    }
-                }
-            },
             "4": {
-                "question": "Is dit pad toegankelijk met de buggy?",
+                "question": "Welke kleur heeft deze wandeling?",
+                "render": "Deze wandeling heeft kleur {colour}",
                 "mappings": {
                     "0": {
-                        "then": "Dit pad is toegankelijk met de buggy"
+                        "then": "Blauwe wandeling"
                     },
                     "1": {
-                        "then": "Dit pad is niet toegankelijk met de buggy"
+                        "then": "Rode wandeling"
+                    },
+                    "2": {
+                        "then": "Groene wandeling"
+                    },
+                    "3": {
+                        "then": "Gele wandeling"
                     }
                 }
             },
             "5": {
-                "render": "Ondergrond bestaat uit {surface}",
+                "question": "Is deze wandeling toegankelijk met de rolstoel?",
                 "mappings": {
                     "0": {
-                        "then": "Het pad is aangelegd"
+                        "then": "deze wandeltocht is toegankelijk met de rolstoel"
                     },
                     "1": {
-                        "then": "Ondergrond bestaat uit asfalt"
-                    },
-                    "2": {
-                        "then": "Ondergrond bestaat uit cement"
-                    },
-                    "3": {
-                        "then": "Ondergrond bestaat uit plavei"
-                    },
-                    "4": {
-                        "then": "Ondergrond bestaat uit kasseien"
-                    },
-                    "5": {
-                        "then": "Ondergrond bestaat uit stenen pad"
-                    },
-                    "6": {
-                        "then": "Dit pad is niet aangelegd"
-                    },
-                    "7": {
-                        "then": "Ondergrond bestaat uit grind"
-                    },
-                    "8": {
-                        "then": "Ondergrond bestaat uit gesteente"
-                    },
-                    "9": {
-                        "then": "Ondergrond bestaat uit kiezels"
-                    },
-                    "10": {
-                        "then": "Ondergrond bestaat uit aarde"
-                    },
-                    "11": {
-                        "then": "Ondergrond bestaat uit gras"
-                    },
-                    "12": {
-                        "then": "Ondergrond bestaat uit modder"
-                    },
-                    "13": {
-                        "then": "Ondergrond bestaat uit zand"
+                        "then": "deze wandeltocht is niet toegankelijk met de rolstoel"
                     }
-                },
-                "question": "Waaruit bestaat de ondergrond van het pad?"
+                }
             },
             "6": {
+                "question": "Is deze wandeltocht toegankelijk met de buggy?",
                 "mappings": {
                     "0": {
-                        "then": "Het pad is plat"
+                        "then": "deze wandeltocht is toegankelijk met de buggy"
                     },
                     "1": {
-                        "then": "Het pad is zo goed als plat"
-                    },
-                    "2": {
-                        "then": "Het pad stijgt en/of daalt "
-                    },
-                    "3": {
-                        "then": "Het pad is lichtjes steil"
-                    },
-                    "4": {
-                        "then": "Het pad is steil"
-                    },
-                    "5": {
-                        "then": "Het pad is zeer steil"
-                    },
-                    "6": {
-                        "then": "Het pad is extreem steil"
+                        "then": "deze wandeltocht is niet toegankelijk met de buggy"
                     }
-                },
-                "question": "Hoe hard stijgt en/of daalt het pad?"
-            },
-            "7": {
-                "render": "De lengte van het pad bedraagt {distance}km"
-            },
-            "8": {
-                "render": "De breedte van het pad bedraagt {width}m",
-                "question": "Hoe breed is het pad (m)?"
+                }
             }
         },
-        "description": "Paden waarlangs kan gewandeld worden",
-        "presets": {
-            "0": {
-                "title": "Paden",
-                "description": "Voeg een ontbrekend, erkend pad toe."
-            }
-        }
+        "description": "Aangeduide wandeltochten"
     },
     "tree_node": {
         "name": "Boom",

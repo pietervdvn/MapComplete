@@ -1541,9 +1541,9 @@
         "description": "Een kaart met openbare toiletten"
     },
     "trails": {
-        "title": "Paden",
-        "shortDescription": "Deze kaart toont all verschillende paden",
-        "description": "Deze kaart toont all verschillende paden"
+        "title": "Wandeltochten",
+        "shortDescription": "Deze kaart toont verschillende wandeltochten",
+        "description": "Deze kaart toont alle verschillende wandeltochten"
     },
     "trees": {
         "title": "Bomen",

@@ -436,17 +436,22 @@
           "question": {
             "nl": "Alle natuurgebieden"
           }
-        },{
+        },
+        {
           "question": {
             "nl": "Honden mogen vrij rondlopen"
           },
           "osmTags": "dog=yes"
-        },{
+        },
+        {
           "question": {
             "nl": "Honden welkom aan de leiband"
           },
           "osmTags": {
-            "or": ["dog=yes","dog=leashed"]
+            "or": [
+              "dog=yes",
+              "dog=leashed"
+            ]
           }
         }
       ]
