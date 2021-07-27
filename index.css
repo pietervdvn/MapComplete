@@ -184,17 +184,6 @@ li::marker {
 
 .border-attention-catch{ border: 5px solid var(--catch-detail-color);}
 
-
-#topleft-tools svg {
-    fill: var(--foreground-color) !important;
-    stroke: var(--foreground-color) !important;
-}
-
-#topleft-tools svg path {
-    fill: var(--foreground-color) !important;
-    stroke: var(--foreground-color) !important;
-}
-
 .direction-svg svg path {
     fill: var(--catch-detail-color) !important;
 }

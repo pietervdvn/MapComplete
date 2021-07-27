@@ -160,13 +160,48 @@
   },
   {
    "key": "cycleway:surface",
-   "description": "Layer 'Cycleways' shows cycleway:surface=asphalt with a fixed text, namely 'This cycleway is made of asphalt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "description": "Layer 'Cycleways' shows cycleway:surface=unhewn_cobblestone with a fixed text, namely 'This cycleway is made of asphalt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "unhewn_cobblestone"
+  },
+  {
+   "key": "cycleway:surface",
+   "description": "Layer 'Cycleways' shows cycleway:surface=sett with a fixed text, namely 'This cycleway is paved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "sett"
+  },
+  {
+   "key": "cycleway:surface",
+   "description": "Layer 'Cycleways' shows cycleway:surface=asphalt with a fixed text, namely 'This cycleway is paved with stones with a flat top' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
    "value": "asphalt"
   },
   {
    "key": "cycleway:surface",
-   "description": "Layer 'Cycleways' shows cycleway:surface=paved with a fixed text, namely 'This cycleway is paved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "description": "Layer 'Cycleways' shows cycleway:surface=paved with a fixed text, namely 'This cycleway is made of gravel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
    "value": "paved"
+  },
+  {
+   "key": "cycleway:surface",
+   "description": "Layer 'Cycleways' shows cycleway:surface=paving_stones with a fixed text, namely 'This cycleway is unhardened' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "paving_stones"
+  },
+  {
+   "key": "cycleway:surface",
+   "description": "Layer 'Cycleways' shows cycleway:surface=gravel with a fixed text, namely 'This cycleway is made of gravel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "gravel"
+  },
+  {
+   "key": "cycleway:surface",
+   "description": "Layer 'Cycleways' shows cycleway:surface=fine_gravel with a fixed text, namely 'This cycleway is made of fine gravel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "fine_gravel"
+  },
+  {
+   "key": "cycleway:surface",
+   "description": "Layer 'Cycleways' shows cycleway:surface=pebblestone with a fixed text, namely 'This cycleway is made of pebblestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "pebblestone"
+  },
+  {
+   "key": "cycleway:surface",
+   "description": "Layer 'Cycleways' shows cycleway:surface=ground with a fixed text, namely 'This cycleway is made from raw ground' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "ground"
   },
   {
    "key": "cycleway:smoothness",
@@ -224,8 +259,8 @@
   },
   {
    "key": "surface",
-   "description": "Layer 'Cycleways' shows surface=cobblestone with a fixed text, namely 'This street is made of cobblestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
-   "value": "cobblestone"
+   "description": "Layer 'Cycleways' shows surface=sett with a fixed text, namely 'This street is made of cobblestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "sett"
   },
   {
    "key": "surface",
@@ -236,6 +271,21 @@
    "key": "surface",
    "description": "Layer 'Cycleways' shows surface=paved with a fixed text, namely 'This street is paved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
    "value": "paved"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Cycleways' shows surface=fine_gravel with a fixed text, namely 'This street is made from fine gravel' (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "fine_gravel"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Cycleways' shows surface=cobblestone with a fixed text, namely 'This street is made from cobblestone' (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "cobblestone"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Cycleways' shows surface=paving_stones with a fixed text, namely 'This street is made from paving stones' (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "paving_stones"
   },
   {
    "key": "smoothness",
@@ -627,6 +677,16 @@
    "key": "crossing",
    "description": "Layer 'Crossings' shows crossing=zebra with a fixed text, namely 'Zebra crossing' (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
    "value": "zebra"
+  },
+  {
+   "key": "crossing_ref",
+   "description": "Layer 'Crossings' shows crossing_ref=zebra with a fixed text, namely 'This is a zebra crossing' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+   "value": "zebra"
+  },
+  {
+   "key": "crossing_ref",
+   "description": "Layer 'Crossings' shows crossing_ref= with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key crossing_ref.",
+   "value": ""
   },
   {
    "key": "bicycle",

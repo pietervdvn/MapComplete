@@ -26,6 +26,12 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  Whether or not the layer control is shown The default value is _false_
 
 
+ filter-toggle 
+---------------
+
+ Whether or not the filter view is shown The default value is _false_
+
+
  tab 
 -----
 
@@ -66,6 +72,12 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 -----------
 
  Disables/Enables the layer control The default value is _true_
+
+
+ fs-filter 
+-----------
+
+ Disables/Enables the filter The default value is _true_
 
 
  fs-add-new 
@@ -110,28 +122,22 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  Always show all questions The default value is _false_
 
 
- fs-export 
------------
-
- If set, enables the 'download'-button to download everything as geojson The default value is _false_
-
-
  test 
 ------
 
  If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org The default value is _false_
 
 
- fake-user 
------------
-
- If true, 'dryrun' mode is activated and a fake user account is loaded The default value is _false_
-
-
  debug 
 -------
 
  If true, shows some extra debugging help such as all the available tags on every object The default value is _false_
+
+
+ fake-user 
+-----------
+
+ If true, 'dryrun' mode is activated and a fake user account is loaded The default value is _false_
 
 
  backend 
