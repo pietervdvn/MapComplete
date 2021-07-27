@@ -2,6 +2,8 @@ import T from "./TestHelper";
 import {Utils} from "../Utils";
 import {equal} from "assert";
 import LZString from "lz-string";
+import * as Assert from "assert";
+import * as assert from "assert";
 
 export default class UtilsSpec extends T {
     private static readonly example = {
@@ -104,6 +106,16 @@ export default class UtilsSpec extends T {
                 equal(result.list1[1], "appended")
                 equal(result.list2.length, 1)
                 equal(result.list2[0], "should-be-untouched")
+            }],
+            ["Test merge with null", () => {
+                const obj = {
+                    someValue: 42
+                }
+                const override = {
+                    someValue: null
+                }
+                Utils.Merge(override, obj)
+                equal(obj.someValue, null)
             }]
         ]);
     }

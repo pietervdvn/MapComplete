@@ -135,7 +135,7 @@ export class Utils {
         }
         return newArr;
     }
-    
+
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
@@ -210,7 +210,9 @@ export class Utils {
             if (sourceV?.length !== undefined && targetV?.length !== undefined && key.startsWith("+")) {
                 target[key] = targetV.concat(sourceV)
             } else if (typeof sourceV === "object") {
-                if (targetV === undefined) {
+                if (sourceV === null) {
+                    target[key] = null
+                } else if (targetV === undefined) {
                     target[key] = sourceV;
                 } else {
                     Utils.Merge(sourceV, targetV);
@@ -362,9 +364,11 @@ export class Utils {
     public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt") {
         const element = document.createElement("a");
         let file;
-        if(typeof(contents) === "string"){
+        if (typeof (contents) === "string") {
             file = new Blob([contents], {type: 'text/plain'});
-        }else {file = contents;}
+        } else {
+            file = contents;
+        }
         element.href = URL.createObjectURL(file);
         element.download = fileName;
         document.body.appendChild(element); // Required for this to work in FireFox
@@ -452,8 +456,8 @@ export class Utils {
         }
     }
 
-    public static setDefaults(options, defaults){
-        for (let key in defaults){
+    public static setDefaults(options, defaults) {
+        for (let key in defaults) {
             if (!(key in options)) options[key] = defaults[key];
         }
         return options;
