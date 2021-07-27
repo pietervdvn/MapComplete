@@ -1,0 +1,122 @@
+{
+ "data_format": 1,
+ "project": {
+  "name": "MapComplete Parking",
+  "description": "This map shows different parking spots",
+  "project_url": "https://mapcomplete.osm.be/parkings",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/parkings/parkings.svg",
+  "contact_name": "Pieter Vander Vennet, ",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Parking has a layer parking showing features with this tag",
+   "value": "parking"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Parking has a layer parking showing features with this tag",
+   "value": "motorcycle_parking"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Parking has a layer parking showing features with this tag",
+   "value": "bicycle_parking"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "access:description",
+   "description": "Layer 'parking' shows and asks freeform values for key 'access:description' (in the MapComplete.osm.be theme 'Parking')"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'parking' shows access=yes&fee= with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+   "value": "yes"
+  },
+  {
+   "key": "fee",
+   "description": "Layer 'parking' shows access=yes&fee= with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key fee.",
+   "value": ""
+  },
+  {
+   "key": "access",
+   "description": "Layer 'parking' shows access=no&fee= with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+   "value": "no"
+  },
+  {
+   "key": "fee",
+   "description": "Layer 'parking' shows access=no&fee= with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key fee.",
+   "value": ""
+  },
+  {
+   "key": "access",
+   "description": "Layer 'parking' shows access=private&fee= with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+   "value": "private"
+  },
+  {
+   "key": "fee",
+   "description": "Layer 'parking' shows access=private&fee= with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key fee.",
+   "value": ""
+  },
+  {
+   "key": "access",
+   "description": "Layer 'parking' shows access=permissive&fee= with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+   "value": "permissive"
+  },
+  {
+   "key": "fee",
+   "description": "Layer 'parking' shows access=permissive&fee= with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key fee.",
+   "value": ""
+  },
+  {
+   "key": "access",
+   "description": "Layer 'parking' shows access=guided&fee= with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+   "value": "guided"
+  },
+  {
+   "key": "fee",
+   "description": "Layer 'parking' shows access=guided&fee= with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key fee.",
+   "value": ""
+  },
+  {
+   "key": "access",
+   "description": "Layer 'parking' shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+   "value": "yes"
+  },
+  {
+   "key": "fee",
+   "description": "Layer 'parking' shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+   "value": "yes"
+  },
+  {
+   "key": "operator",
+   "description": "Layer 'parking' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Parking')"
+  },
+  {
+   "key": "operator",
+   "description": "Layer 'parking' shows operator=Natuurpunt with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+   "value": "Natuurpunt"
+  },
+  {
+   "key": "operator",
+   "description": "Layer 'parking' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'Parking')"
+  }
+ ]
+}

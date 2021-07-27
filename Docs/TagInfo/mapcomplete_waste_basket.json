@@ -1,0 +1,19 @@
+{
+ "data_format": 1,
+ "project": {
+  "name": "MapComplete Waste Basket",
+  "description": "Throw away waste",
+  "project_url": "https://mapcomplete.osm.be/waste_basket",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/waste_basket/waste_basket.svg",
+  "contact_name": "Pieter Vander Vennet, ",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Waste Basket has a layer Waste Basket showing features with this tag",
+   "value": "waste_basket"
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "data_format": 1,
+ "project": {
+  "name": "MapComplete Trails",
+  "description": "This map shows trails",
+  "project_url": "https://mapcomplete.osm.be/trails",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/trails/trails.svg",
+  "contact_name": "Pieter Vander Vennet, ",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "route",
+   "description": "The MapComplete theme Trails has a layer Trails showing features with this tag",
+   "value": "hiking"
+  },
+  {
+   "key": "route",
+   "description": "The MapComplete theme Trails has a layer Trails showing features with this tag",
+   "value": "bycicle"
+  },
+  {
+   "key": "route",
+   "description": "The MapComplete theme Trails has a layer Trails showing features with this tag",
+   "value": "horse"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Trails allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Trails allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Trails allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Trails allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "name",
+   "description": "Layer 'Trails' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Trails')"
+  },
+  {
+   "key": "operator",
+   "description": "Layer 'Trails' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Trails')"
+  },
+  {
+   "key": "operator",
+   "description": "Layer 'Trails' shows operator=Natuurpunt with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "Natuurpunt"
+  },
+  {
+   "key": "operator",
+   "description": "Layer 'Trails' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'Trails')"
+  },
+  {
+   "key": "colour",
+   "description": "Layer 'Trails' shows and asks freeform values for key 'colour' (in the MapComplete.osm.be theme 'Trails')"
+  },
+  {
+   "key": "colour",
+   "description": "Layer 'Trails' shows colour=blue with a fixed text, namely 'Blue trail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "blue"
+  },
+  {
+   "key": "colour",
+   "description": "Layer 'Trails' shows colour=red with a fixed text, namely 'Red trail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "red"
+  },
+  {
+   "key": "colour",
+   "description": "Layer 'Trails' shows colour=green with a fixed text, namely 'Green trail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "green"
+  },
+  {
+   "key": "colour",
+   "description": "Layer 'Trails' shows colour=yellow with a fixed text, namely 'Yellow trail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "yellow"
+  },
+  {
+   "key": "wheelchair",
+   "description": "Layer 'Trails' shows wheelchair=yes with a fixed text, namely 'deze wandeltocht is toegankelijk met de rolstoel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "yes"
+  },
+  {
+   "key": "wheelchair",
+   "description": "Layer 'Trails' shows wheelchair=no with a fixed text, namely 'deze wandeltocht is niet toegankelijk met de rolstoel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "no"
+  },
+  {
+   "key": "pushchair",
+   "description": "Layer 'Trails' shows pushchair=yes with a fixed text, namely 'deze wandeltocht is toegankelijk met de buggy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "yes"
+  },
+  {
+   "key": "pushchair",
+   "description": "Layer 'Trails' shows pushchair=no with a fixed text, namely 'deze wandeltocht is niet toegankelijk met de buggy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trails')",
+   "value": "no"
+  }
+ ]
+}

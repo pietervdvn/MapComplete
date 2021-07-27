@@ -34,6 +34,10 @@ function generateTagOverview(kv: { k: string, v: string }, description: string) 
 
 function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
 
+    if(layer.name === undefined){
+        return [] // Probably a duplicate or irrelevant layer
+    }
+    
     const usedTags = layer.source.osmTags.asChange({})
     const result : {
         key: string,
