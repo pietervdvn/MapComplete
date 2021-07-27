@@ -372,7 +372,7 @@ export class InitUiElements {
     );
 
 
-    const filterView = new FilterView(State.state.FilterIsOpened).SetClass(
+    const filterView = new FilterView(State.state.filteredLayers).SetClass(
       "block p-1 rounded-full"
     );
 

@@ -14,6 +14,7 @@ import {And} from "../../Logic/Tags/And";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import State from "../../State";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 
 /**
@@ -21,10 +22,10 @@ import State from "../../State";
  */
 
 export default class FilterView extends VariableUiElement {
-    constructor(filteredLayer) {
+    constructor(filteredLayer: UIEventSource<FilteredLayer[]>) {
         super(
             filteredLayer.map((filteredLayers) =>
-                filteredLayers.map(l => FilterView.createOneFilteredLayerElement(l))
+                filteredLayers?.map(l => FilterView.createOneFilteredLayerElement(l))
             )
         );
     }

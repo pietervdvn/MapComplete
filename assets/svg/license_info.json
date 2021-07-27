@@ -16,49 +16,67 @@
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "direction_outline.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "direction_stroke.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "SocialImageForeground.svg",
     "license": "CC-BY-SA",
-    "sources": ["https://mapcomplete.osm.be"]
+    "sources": [
+      "https://mapcomplete.osm.be"
+    ]
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "add.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "addSmall.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "download.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "copyright.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "arrow-download.svg",
     "license": "CC0",
     "sources": []
@@ -70,25 +88,33 @@
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "arrow-left-smooth.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "arrow-right-smooth.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "back.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Github"],
+    "authors": [
+      "Github"
+    ],
     "path": "bug.svg",
     "license": "MIT",
     "sources": [
@@ -99,26 +125,35 @@
   {
     "path": "camera-plus.svg",
     "license": "CC-BY-SA 3.0",
-    "authors": ["Dave Gandy", "Pieter Vander Vennet"],
+    "authors": [
+      "Dave Gandy",
+      "Pieter Vander Vennet"
+    ],
     "sources": [
       "https://fontawesome.com/",
       "https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg"
     ]
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "checkmark.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "circle.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "clock.svg",
     "license": "CC0",
     "sources": []
@@ -160,7 +195,9 @@
     "sources": []
   },
   {
-    "authors": ["Dave Gandy"],
+    "authors": [
+      "Dave Gandy"
+    ],
     "path": "delete_icon.svg",
     "license": "CC-BY-SA",
     "sources": [
@@ -192,7 +229,9 @@
     "sources": []
   },
   {
-    "authors": ["The Tango Desktop Project"],
+    "authors": [
+      "The Tango Desktop Project"
+    ],
     "path": "floppy.svg",
     "license": "CC0",
     "sources": [
@@ -213,19 +252,29 @@
     "sources": []
   },
   {
-    "authors": ["Timothy Miller"],
+    "authors": [
+      "Timothy Miller"
+    ],
     "path": "home.svg",
     "license": "CC-BY-SA 3.0",
-    "sources": ["https://commons.wikimedia.org/wiki/File:Home-icon.svg"]
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Home-icon.svg"
+    ]
   },
   {
-    "authors": ["Timothy Miller"],
+    "authors": [
+      "Timothy Miller"
+    ],
     "path": "home_white_bg.svg",
     "license": "CC-BY-SA 3.0",
-    "sources": ["https://commons.wikimedia.org/wiki/File:Home-icon.svg"]
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Home-icon.svg"
+    ]
   },
   {
-    "authors": ["JOSM Team"],
+    "authors": [
+      "JOSM Team"
+    ],
     "path": "josm_logo.svg",
     "license": "CC0",
     "sources": [
@@ -248,7 +297,9 @@
   {
     "path": "Ornament-Horiz-0.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -256,7 +307,9 @@
   {
     "path": "Ornament-Horiz-1.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -264,7 +317,9 @@
   {
     "path": "Ornament-Horiz-2.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -272,7 +327,9 @@
   {
     "path": "Ornament-Horiz-3.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -280,7 +337,9 @@
   {
     "path": "Ornament-Horiz-4.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -288,7 +347,9 @@
   {
     "path": "Ornament-Horiz-5.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -296,7 +357,9 @@
   {
     "path": "Ornament-Horiz-6.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -338,16 +401,25 @@
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet", " OSM"],
+    "authors": [
+      "Pieter Vander Vennet",
+      " OSM"
+    ],
     "path": "mapcomplete_logo.svg",
     "license": "Logo; CC-BY-SA",
-    "sources": ["https://mapcomplete.osm.be"]
+    "sources": [
+      "https://mapcomplete.osm.be"
+    ]
   },
   {
-    "authors": ["Mapillary"],
+    "authors": [
+      "Mapillary"
+    ],
     "path": "mapillary.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://mapillary.com/"]
+    "sources": [
+      "https://mapillary.com/"
+    ]
   },
   {
     "authors": [],
@@ -371,22 +443,32 @@
     "authors": [],
     "path": "osm-copyright.svg",
     "license": "logo; all rights reserved",
-    "sources": ["https://www.OpenStreetMap.org"]
+    "sources": [
+      "https://www.OpenStreetMap.org"
+    ]
   },
   {
-    "authors": ["OpenStreetMap U.S. Chapter"],
+    "authors": [
+      "OpenStreetMap U.S. Chapter"
+    ],
     "path": "osm-logo-us.svg",
     "license": "Logo",
-    "sources": ["https://www.openstreetmap.us/"]
+    "sources": [
+      "https://www.openstreetmap.us/"
+    ]
   },
   {
     "authors": [],
     "path": "osm-logo.svg",
     "license": "logo; all rights reserved",
-    "sources": ["https://www.OpenStreetMap.org"]
+    "sources": [
+      "https://www.OpenStreetMap.org"
+    ]
   },
   {
-    "authors": ["GitHub Octicons"],
+    "authors": [
+      "GitHub Octicons"
+    ],
     "path": "pencil.svg",
     "license": "MIT",
     "sources": [
@@ -395,10 +477,14 @@
     ]
   },
   {
-    "authors": ["@ tyskrat"],
+    "authors": [
+      "@ tyskrat"
+    ],
     "path": "phone.svg",
     "license": "CC-BY 3.0",
-    "sources": ["https://www.onlinewebfonts.com/icon/1059"]
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/1059"
+    ]
   },
   {
     "authors": [],
@@ -413,10 +499,14 @@
     "sources": []
   },
   {
-    "authors": ["@fatih"],
+    "authors": [
+      "@fatih"
+    ],
     "path": "pop-out.svg",
     "license": "CC-BY 3.0",
-    "sources": ["https://www.onlinewebfonts.com/icon/2151"]
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/2151"
+    ]
   },
   {
     "authors": [],
@@ -431,7 +521,9 @@
     "sources": []
   },
   {
-    "authors": ["OOjs UI Team and other contributors"],
+    "authors": [
+      "OOjs UI Team and other contributors"
+    ],
     "path": "search.svg",
     "license": "MIT",
     "sources": [
@@ -458,13 +550,19 @@
     "sources": []
   },
   {
-    "authors": ["@felpgrc"],
+    "authors": [
+      "@felpgrc"
+    ],
     "path": "statistics.svg",
     "license": "CC-BY 3.0",
-    "sources": ["https://www.onlinewebfonts.com/icon/197818"]
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/197818"
+    ]
   },
   {
-    "authors": ["MGalloway (WMF)"],
+    "authors": [
+      "MGalloway (WMF)"
+    ],
     "path": "translate.svg",
     "license": "CC-BY-SA 3.0",
     "sources": [
@@ -478,115 +576,163 @@
     "sources": []
   },
   {
-    "authors": ["Wikidata"],
+    "authors": [
+      "Wikidata"
+    ],
     "path": "wikidata.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://www.wikidata.org"]
+    "sources": [
+      "https://www.wikidata.org"
+    ]
   },
   {
-    "authors": ["Wikimedia"],
+    "authors": [
+      "Wikimedia"
+    ],
     "path": "wikimedia-commons-white.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://commons.wikimedia.org"]
+    "sources": [
+      "https://commons.wikimedia.org"
+    ]
   },
   {
-    "authors": ["Wikipedia"],
+    "authors": [
+      "Wikipedia"
+    ],
     "path": "wikipedia.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://www.wikipedia.org/"]
+    "sources": [
+      "https://www.wikipedia.org/"
+    ]
   },
   {
-    "authors": ["Mapillary"],
+    "authors": [
+      "Mapillary"
+    ],
     "path": "mapillary_black.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://www.mapillary.com/"]
+    "sources": [
+      "https://www.mapillary.com/"
+    ]
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "location.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pol Labaut"],
+    "authors": [
+      "Pol Labaut"
+    ],
     "path": "location-circle.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pol Labaut"],
+    "authors": [
+      "Pol Labaut"
+    ],
     "path": "location-empty.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "min-zoom.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "plus-zoom.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "filter.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "checkbox-empty.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "checkbox-filled.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "arrow-left-thin.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "direction_masked.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "direction_outline.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "direction_stroke.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "SocialImageForeground.svg",
     "license": "CC-BY-SA",
-    "sources": ["https://mapcomplete.osm.be"]
+    "sources": [
+      "https://mapcomplete.osm.be"
+    ]
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "add.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "addSmall.svg",
     "license": "CC0",
     "sources": []
@@ -598,19 +744,25 @@
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "arrow-left-smooth.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "arrow-right-smooth.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "back.svg",
     "license": "CC0",
     "sources": []
@@ -639,26 +791,35 @@
   {
     "path": "camera-plus.svg",
     "license": "CC-BY-SA 3.0",
-    "authors": ["Dave Gandy", "Pieter Vander Vennet"],
+    "authors": [
+      "Dave Gandy",
+      "Pieter Vander Vennet"
+    ],
     "sources": [
       "https://fontawesome.com/",
       "https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg"
     ]
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "checkmark.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "circle.svg",
     "license": "CC0",
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "clock.svg",
     "license": "CC0",
     "sources": []
@@ -712,7 +873,9 @@
     "sources": []
   },
   {
-    "authors": ["Dave Gandy"],
+    "authors": [
+      "Dave Gandy"
+    ],
     "path": "delete_icon.svg",
     "license": "CC-BY-SA",
     "sources": [
@@ -744,7 +907,9 @@
     "sources": []
   },
   {
-    "authors": ["The Tango Desktop Project"],
+    "authors": [
+      "The Tango Desktop Project"
+    ],
     "path": "floppy.svg",
     "license": "CC0",
     "sources": [
@@ -765,19 +930,29 @@
     "sources": []
   },
   {
-    "authors": ["Timothy Miller"],
+    "authors": [
+      "Timothy Miller"
+    ],
     "path": "home.svg",
     "license": "CC-BY-SA 3.0",
-    "sources": ["https://commons.wikimedia.org/wiki/File:Home-icon.svg"]
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Home-icon.svg"
+    ]
   },
   {
-    "authors": ["Timothy Miller"],
+    "authors": [
+      "Timothy Miller"
+    ],
     "path": "home_white_bg.svg",
     "license": "CC-BY-SA 3.0",
-    "sources": ["https://commons.wikimedia.org/wiki/File:Home-icon.svg"]
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Home-icon.svg"
+    ]
   },
   {
-    "authors": ["JOSM Team"],
+    "authors": [
+      "JOSM Team"
+    ],
     "path": "josm_logo.svg",
     "license": "CC0",
     "sources": [
@@ -800,7 +975,9 @@
   {
     "path": "Ornament-Horiz-0.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -808,7 +985,9 @@
   {
     "path": "Ornament-Horiz-1.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -816,7 +995,9 @@
   {
     "path": "Ornament-Horiz-2.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -824,7 +1005,9 @@
   {
     "path": "Ornament-Horiz-3.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -832,7 +1015,9 @@
   {
     "path": "Ornament-Horiz-4.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -840,7 +1025,9 @@
   {
     "path": "Ornament-Horiz-5.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -848,7 +1035,9 @@
   {
     "path": "Ornament-Horiz-6.svg",
     "license": "CC-BY",
-    "authors": ["Nightwolfdezines"],
+    "authors": [
+      "Nightwolfdezines"
+    ],
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
@@ -890,16 +1079,25 @@
     "sources": []
   },
   {
-    "authors": ["Pieter Vander Vennet", " OSM"],
+    "authors": [
+      "Pieter Vander Vennet",
+      " OSM"
+    ],
     "path": "mapcomplete_logo.svg",
     "license": "Logo; CC-BY-SA",
-    "sources": ["https://mapcomplete.osm.be"]
+    "sources": [
+      "https://mapcomplete.osm.be"
+    ]
   },
   {
-    "authors": ["Mapillary"],
+    "authors": [
+      "Mapillary"
+    ],
     "path": "mapillary.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://mapillary.com/"]
+    "sources": [
+      "https://mapillary.com/"
+    ]
   },
   {
     "authors": [],
@@ -923,22 +1121,32 @@
     "authors": [],
     "path": "osm-copyright.svg",
     "license": "logo; all rights reserved",
-    "sources": ["https://www.OpenStreetMap.org"]
+    "sources": [
+      "https://www.OpenStreetMap.org"
+    ]
   },
   {
-    "authors": ["OpenStreetMap U.S. Chapter"],
+    "authors": [
+      "OpenStreetMap U.S. Chapter"
+    ],
     "path": "osm-logo-us.svg",
     "license": "Logo",
-    "sources": ["https://www.openstreetmap.us/"]
+    "sources": [
+      "https://www.openstreetmap.us/"
+    ]
   },
   {
     "authors": [],
     "path": "osm-logo.svg",
     "license": "logo; all rights reserved",
-    "sources": ["https://www.OpenStreetMap.org"]
+    "sources": [
+      "https://www.OpenStreetMap.org"
+    ]
   },
   {
-    "authors": ["GitHub Octicons"],
+    "authors": [
+      "GitHub Octicons"
+    ],
     "path": "pencil.svg",
     "license": "MIT",
     "sources": [
@@ -947,10 +1155,14 @@
     ]
   },
   {
-    "authors": ["@ tyskrat"],
+    "authors": [
+      "@ tyskrat"
+    ],
     "path": "phone.svg",
     "license": "CC-BY 3.0",
-    "sources": ["https://www.onlinewebfonts.com/icon/1059"]
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/1059"
+    ]
   },
   {
     "authors": [],
@@ -965,10 +1177,14 @@
     "sources": []
   },
   {
-    "authors": ["@fatih"],
+    "authors": [
+      "@fatih"
+    ],
     "path": "pop-out.svg",
     "license": "CC-BY 3.0",
-    "sources": ["https://www.onlinewebfonts.com/icon/2151"]
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/2151"
+    ]
   },
   {
     "authors": [],
@@ -983,7 +1199,9 @@
     "sources": []
   },
   {
-    "authors": ["OOjs UI Team and other contributors"],
+    "authors": [
+      "OOjs UI Team and other contributors"
+    ],
     "path": "search.svg",
     "license": "MIT",
     "sources": [
@@ -1010,13 +1228,19 @@
     "sources": []
   },
   {
-    "authors": ["@felpgrc"],
+    "authors": [
+      "@felpgrc"
+    ],
     "path": "statistics.svg",
     "license": "CC-BY 3.0",
-    "sources": ["https://www.onlinewebfonts.com/icon/197818"]
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/197818"
+    ]
   },
   {
-    "authors": ["MGalloway (WMF)"],
+    "authors": [
+      "MGalloway (WMF)"
+    ],
     "path": "translate.svg",
     "license": "CC-BY-SA 3.0",
     "sources": [
@@ -1030,33 +1254,53 @@
     "sources": []
   },
   {
-    "authors": ["Wikidata"],
+    "authors": [
+      "Wikidata"
+    ],
     "path": "wikidata.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://www.wikidata.org"]
+    "sources": [
+      "https://www.wikidata.org"
+    ]
   },
   {
-    "authors": ["Wikimedia"],
+    "authors": [
+      "Wikimedia"
+    ],
     "path": "wikimedia-commons-white.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://commons.wikimedia.org"]
+    "sources": [
+      "https://commons.wikimedia.org"
+    ]
   },
   {
-    "authors": ["Wikipedia"],
+    "authors": [
+      "Wikipedia"
+    ],
     "path": "wikipedia.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://www.wikipedia.org/"]
+    "sources": [
+      "https://www.wikipedia.org/"
+    ]
   },
   {
-    "authors": ["Mapillary"],
+    "authors": [
+      "Mapillary"
+    ],
     "path": "mapillary_black.svg",
     "license": "Logo; All rights reserved",
-    "sources": ["https://www.mapillary.com/"]
+    "sources": [
+      "https://www.mapillary.com/"
+    ]
   },
   {
-    "authors": ["The Tango! Desktop Project"],
+    "authors": [
+      "The Tango! Desktop Project"
+    ],
     "path": "floppy.svg",
     "license": "CC0",
-    "sources": ["https://commons.wikimedia.org/wiki/File:Media-floppy.svg"]
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Media-floppy.svg"
+    ]
   }
 ]
