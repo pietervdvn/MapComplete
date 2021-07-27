@@ -159,7 +159,6 @@
       }
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/layers/map/map.svg",
     "mappings": [

@@ -38,13 +38,13 @@
     "nb_NO"
   ],
   "maintainer": "joost schouppe",
-  "icon": "./assets/themes/campersites/caravan.svg",
+  "icon": "./assets/themes/campersite/caravan.svg",
   "version": "0",
   "startLat": 43.14,
   "startLon": 3.14,
   "startZoom": 14,
   "widenFactor": 0.05,
-  "socialImage": "./assets/themes/campersites/Bar%C3%9Fel_Wohnmobilstellplatz.jpg",
+  "socialImage": "./assets/themes/campersite/Bar%C3%9Fel_Wohnmobilstellplatz.jpg",
   "layers": [
     {
       "id": "caravansites",
@@ -521,9 +521,8 @@
         "questions",
         "reviews"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "circle:white;./assets/themes/campersites/caravan.svg",
+        "render": "circle:white;./assets/themes/campersite/caravan.svg",
         "mappings": [
           {
             "if": {
@@ -531,7 +530,7 @@
                 "fee=no"
               ]
             },
-            "then": "circle:white;./assets/themes/campersites/caravan_green.svg"
+            "then": "circle:white;./assets/themes/campersite/caravan_green.svg"
           }
         ]
       },
@@ -862,9 +861,8 @@
           }
         }
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "circle:white;./assets/themes/campersites/sanitary_dump_station.svg"
+        "render": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg"
       },
       "width": {
         "render": "8"

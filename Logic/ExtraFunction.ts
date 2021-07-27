@@ -6,6 +6,8 @@ import {Utils} from "../Utils";
 import BaseUIElement from "../UI/BaseUIElement";
 import List from "../UI/Base/List";
 import Title from "../UI/Base/Title";
+import {UIEventSourceTools} from "./UIEventSource";
+import AspectedRouting from "./Osm/aspectedRouting";
 
 export class ExtraFunction {
 
@@ -38,12 +40,14 @@ export class ExtraFunction {
         ]),
         "Some advanced functions are available on **feat** as well:"
     ]).SetClass("flex-col").AsMarkdown();
-       
-    
+
+
     private static readonly OverlapFunc = new ExtraFunction(
-        "overlapWith",
-        "Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point",
-        ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"],
+        {
+            name: "overlapWith",
+            doc: "Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point",
+            args: ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"]
+        },
         (params, feat) => {
             return (...layerIds: string[]) => {
                 const result = []
@@ -62,9 +66,11 @@ export class ExtraFunction {
         }
     )
     private static readonly DistanceToFunc = new ExtraFunction(
-        "distanceTo",
-        "Calculates the distance between the feature and a specified point in kilometer. The input should either be a pair of coordinates, a geojson feature or the ID of an object",
-        ["longitude", "latitude"],
+        {
+            name: "distanceTo",
+            doc: "Calculates the distance between the feature and a specified point in kilometer. The input should either be a pair of coordinates, a geojson feature or the ID of an object",
+            args: ["longitude", "latitude"]
+        },
         (featuresPerLayer, feature) => {
             return (arg0, lat) => {
                 if (typeof arg0 === "number") {
@@ -88,9 +94,11 @@ export class ExtraFunction {
     )
 
     private static readonly ClosestObjectFunc = new ExtraFunction(
-        "closest",
-        "Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered.",
-        ["list of features"],
+        {
+            name: "closest",
+            doc: "Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered.",
+            args: ["list of features"]
+        },
         (params, feature) => {
             return (features) => {
                 if (typeof features === "string") {
@@ -139,28 +147,56 @@ export class ExtraFunction {
 
 
     private static readonly Memberships = new ExtraFunction(
-        "memberships",
-        "Gives a list of `{role: string, relation: Relation}`-objects, containing all the relations that this feature is part of. " +
-        "\n\n" +
-        "For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`",
-        [],
+        {
+            name: "memberships",
+            doc: "Gives a list of `{role: string, relation: Relation}`-objects, containing all the relations that this feature is part of. " +
+                "\n\n" +
+                "For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`",
+            args: []
+        },
         (params, _) => {
             return () => params.relations ?? [];
         }
     )
 
-    private static readonly allFuncs: ExtraFunction[] = [ExtraFunction.DistanceToFunc, ExtraFunction.OverlapFunc, ExtraFunction.ClosestObjectFunc, ExtraFunction.Memberships];
+    private static readonly AspectedRouting = new ExtraFunction(
+        {
+            name: "score",
+            doc: "Given the path of an aspected routing json file, will calculate the score. This score is wrapped in a UIEventSource, so for further calculations, use `.map(score => ...)`" +
+                "\n\n" +
+                "For example: `_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')`",
+            args: ["path"]
+        },
+        (_, feature) => {
+            return (path) => {
+                return UIEventSourceTools.downloadJsonCached(path).map(config => {
+                    if (config === undefined) {
+                        return
+                    }
+                    return new AspectedRouting(config).evaluate(feature.properties)
+                })
+            }
+        }
+    )
+
+    private static readonly allFuncs: ExtraFunction[] = [
+        ExtraFunction.DistanceToFunc,
+        ExtraFunction.OverlapFunc,
+        ExtraFunction.ClosestObjectFunc,
+        ExtraFunction.Memberships,
+        ExtraFunction.AspectedRouting
+    ];
     private readonly _name: string;
     private readonly _args: string[];
     private readonly _doc: string;
     private readonly _f: (params: { featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[] }, feat: any) => any;
 
-    constructor(name: string, doc: string, args: string[], f: ((params: { featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[] }, feat: any) => any)) {
-        this._name = name;
-        this._doc = doc;
-        this._args = args;
+    constructor(options: { name: string, doc: string, args: string[] },
+                f: ((params: { featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[] }, feat: any) => any)) {
+        this._name = options.name;
+        this._doc = options.doc;
+        this._args = options.args;
         this._f = f;
-
     }
 
     public static FullPatchFeature(featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[], feature) {
@@ -186,7 +222,6 @@ export class ExtraFunction {
     }
 
     public PatchFeature(featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[], feature: any) {
-
-        feature[this._name] = this._f({featuresPerLayer: featuresPerLayer, relations: relations}, feature);
+        feature[this._name] = this._f({featuresPerLayer: featuresPerLayer, relations: relations}, feature)
     }
 }

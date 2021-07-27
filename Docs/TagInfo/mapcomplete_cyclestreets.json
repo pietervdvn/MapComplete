@@ -1,0 +1,264 @@
+{
+ "data_format": 1,
+ "project": {
+  "name": "MapComplete Cyclestreets",
+  "description": "A map of cyclestreets",
+  "project_url": "https://mapcomplete.osm.be/cyclestreets",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/cyclestreets/F111.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "cyclestreet",
+   "description": "The MapComplete theme Cyclestreets has a layer Cyclestreets showing features with this tag",
+   "value": "yes"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Cyclestreets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Cyclestreets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Cyclestreets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Cyclestreets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "maxspeed",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "30"
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "no"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet' (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet' (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key overtaking:motor_vehicle.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet:start_date",
+   "description": "Layer 'Cyclestreets' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets')"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "The MapComplete theme Cyclestreets has a layer Future cyclestreet showing features with this tag",
+   "value": "yes"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Future cyclestreet allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Future cyclestreet allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Future cyclestreet allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Future cyclestreet allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "maxspeed",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "30"
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "no"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet' (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet' (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key overtaking:motor_vehicle.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet:start_date",
+   "description": "Layer 'Future cyclestreet' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets')"
+  },
+  {
+   "key": "highway",
+   "description": "The MapComplete theme Cyclestreets has a layer All streets showing features with this tag",
+   "value": "residential"
+  },
+  {
+   "key": "highway",
+   "description": "The MapComplete theme Cyclestreets has a layer All streets showing features with this tag",
+   "value": "tertiary"
+  },
+  {
+   "key": "highway",
+   "description": "The MapComplete theme Cyclestreets has a layer All streets showing features with this tag",
+   "value": "unclassified"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'All streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'All streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'All streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'All streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "maxspeed",
+   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "30"
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "no"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'All streets' shows cyclestreet=yes&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet' (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'All streets' shows cyclestreet=yes&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet' (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'All streets' shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'All streets' shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "value": "yes"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'All streets' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'All streets' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'All streets' shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key overtaking:motor_vehicle.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet:start_date",
+   "description": "Layer 'All streets' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets')"
+  }
+ ]
+}

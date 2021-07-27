@@ -392,7 +392,6 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 10,
   "wayHandling": 2,
   "icon": {
     "render": "./assets/themes/buurtnatuur/nature_reserve.svg"

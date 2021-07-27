@@ -210,7 +210,6 @@
     },
     "description"
   ],
-  "hideUnderlayingFeaturesMinPercentage": 1,
   "presets": [
     {
       "title": {

@@ -1,0 +1,55 @@
+{
+ "data_format": 1,
+ "project": {
+  "name": "MapComplete OpenWindPowerMap",
+  "description": "A map for showing and editing wind turbines",
+  "project_url": "https://mapcomplete.osm.be/openwindpowermap",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/openwindpowermap/wind_turbine.svg",
+  "contact_name": "Pieter Vander Vennet, Seppe Santens",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "generator:source",
+   "description": "The MapComplete theme OpenWindPowerMap has a layer wind turbine showing features with this tag",
+   "value": "wind"
+  },
+  {
+   "key": "generator:output:electricity",
+   "description": "Layer 'wind turbine' shows and asks freeform values for key 'generator:output:electricity' (in the MapComplete.osm.be theme 'OpenWindPowerMap')"
+  },
+  {
+   "key": "operator",
+   "description": "Layer 'wind turbine' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'OpenWindPowerMap')"
+  },
+  {
+   "key": "height",
+   "description": "Layer 'wind turbine' shows and asks freeform values for key 'height' (in the MapComplete.osm.be theme 'OpenWindPowerMap')"
+  },
+  {
+   "key": "rotor:diameter",
+   "description": "Layer 'wind turbine' shows and asks freeform values for key 'rotor:diameter' (in the MapComplete.osm.be theme 'OpenWindPowerMap')"
+  },
+  {
+   "key": "start_date",
+   "description": "Layer 'wind turbine' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'OpenWindPowerMap')"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  }
+ ]
+}

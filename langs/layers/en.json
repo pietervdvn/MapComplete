@@ -690,6 +690,122 @@
             }
         }
     },
+    "crossings": {
+        "name": "Crossings",
+        "description": "Crossings for pedestrians and cyclists",
+        "title": {
+            "render": "Crossing",
+            "mappings": {
+                "0": {
+                    "then": "Traffic signal"
+                },
+                "1": {
+                    "then": "Crossing with traffic signals"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Crossing",
+                "description": "Crossing for pedestrians and/or cyclists"
+            },
+            "1": {
+                "title": "Traffic signal",
+                "description": "Traffic signal on a road"
+            }
+        },
+        "tagRenderings": {
+            "0": {
+                "question": "What kind of crossing is this?",
+                "mappings": {
+                    "0": {
+                        "then": "Crossing, without traffic lights"
+                    },
+                    "1": {
+                        "then": "Crossing with traffic signals"
+                    },
+                    "2": {
+                        "then": "Zebra crossing"
+                    }
+                }
+            },
+            "1": {
+                "question": "Is this crossing also for bicycles?",
+                "mappings": {
+                    "0": {
+                        "then": "A cyclist can use this crossing"
+                    },
+                    "1": {
+                        "then": "A cyclist can not use this crossing"
+                    }
+                }
+            },
+            "2": {
+                "question": "Does this crossing have an island in the middle?",
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has an island in the middle"
+                    },
+                    "1": {
+                        "then": "This crossing does not have an island in the middle"
+                    }
+                }
+            },
+            "3": {
+                "question": "Does this crossing have tactile paving?",
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has tactile paving"
+                    },
+                    "1": {
+                        "then": "This crossing does not have tactile paving"
+                    },
+                    "2": {
+                        "then": "This crossing has tactile paving, but is not correct"
+                    }
+                }
+            },
+            "4": {
+                "question": "Does this traffic light have a button to request green light?",
+                "mappings": {
+                    "0": {
+                        "then": "This traffic light has a button to request green light"
+                    },
+                    "1": {
+                        "then": "This traffic light does not have a button to request green light"
+                    }
+                }
+            },
+            "5": {
+                "question": "Can a cyclist turn right when the light is red?",
+                "mappings": {
+                    "0": {
+                        "then": "A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='height: 3em'>"
+                    },
+                    "1": {
+                        "then": "A cyclist can turn right if the light is red"
+                    },
+                    "2": {
+                        "then": "A cyclist can not turn right if the light is red"
+                    }
+                }
+            },
+            "6": {
+                "question": "Can a cyclist go straight on when the light is red?",
+                "mappings": {
+                    "0": {
+                        "then": "A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='height: 3em'>"
+                    },
+                    "1": {
+                        "then": "A cyclist can go straight on if the light is red"
+                    },
+                    "2": {
+                        "then": "A cyclist can not go straight on if the light is red"
+                    }
+                }
+            }
+        }
+    },
     "defibrillator": {
         "name": "Defibrillators",
         "title": {

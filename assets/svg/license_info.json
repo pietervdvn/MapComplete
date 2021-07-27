@@ -3,6 +3,14 @@
     "authors": [
       "Pieter Vander Vennet"
     ],
+    "path": "length-crosshair.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "direction_masked.svg",
     "license": "CC0",
     "sources": []
@@ -726,6 +734,16 @@
     "path": "back.svg",
     "license": "CC0",
     "sources": []
+  },
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "barrier.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/barrier.svg"
+    ]
   },
   {
     "authors": [

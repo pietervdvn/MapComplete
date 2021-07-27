@@ -1,6 +1,5 @@
 import {lstatSync, readdirSync, readFileSync} from "fs";
 import {Utils} from "../Utils";
-
 Utils.runningFromConsole = true
 import * as https from "https";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";

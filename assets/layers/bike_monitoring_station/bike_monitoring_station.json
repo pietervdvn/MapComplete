@@ -63,7 +63,6 @@
       }
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/layers/bike_monitoring_station/monitoring_station.svg"
   },

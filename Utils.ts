@@ -358,14 +358,13 @@ export class Utils {
 
     /**
      * Triggers a 'download file' popup which will download the contents
-     * @param contents
-     * @param fileName
      */
-    public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt") {
+    public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt",
+                                                  options?: {        mimetype: string    }) {
         const element = document.createElement("a");
         let file;
         if (typeof (contents) === "string") {
-            file = new Blob([contents], {type: 'text/plain'});
+            file = new Blob([contents], {type: options?.mimetype ?? 'text/plain'});
         } else {
             file = contents;
         }

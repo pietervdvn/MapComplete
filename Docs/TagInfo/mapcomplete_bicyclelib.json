@@ -5,7 +5,7 @@
   "description": "A bicycle library is a place where bicycles can be lent, often for a small yearly fee",
   "project_url": "https://mapcomplete.osm.be/bicyclelib",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/assets/themes/bicycle_library/logo.svg",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/bicyclelib/logo.svg",
   "contact_name": "Pieter Vander Vennet, MapComplete",
   "contact_email": "pietervdvn@posteo.net"
  },

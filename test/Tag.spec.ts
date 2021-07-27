@@ -9,7 +9,7 @@ import {Translation} from "../UI/i18n/Translation";
 import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
 import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
-import {Overpass} from "../Logic/Osm/Overpass";
+
 
 Utils.runningFromConsole = true;
 
@@ -90,7 +90,30 @@ export default class TagSpec extends T {
                 equal(notEmptyList.matchesProperties({"xyz": undefined}), true);
                 equal(notEmptyList.matchesProperties({"xyz": "[]"}), false);
                 equal(notEmptyList.matchesProperties({"xyz": "[\"abc\"]"}), true);
+                
+                let compare = FromJSON.Tag("key<=5")
+                equal(compare.matchesProperties({"key": undefined}), false);
+                equal(compare.matchesProperties({"key": "6"}), false);
+                equal(compare.matchesProperties({"key": "5"}), true);
+                equal(compare.matchesProperties({"key": "4"}), true);
 
+
+                compare = FromJSON.Tag("key<5")
+                equal(compare.matchesProperties({"key": undefined}), false);
+                equal(compare.matchesProperties({"key": "6"}), false);
+                equal(compare.matchesProperties({"key": "5"}), false);
+                equal(compare.matchesProperties({"key": "4.2"}), true);
+
+                compare = FromJSON.Tag("key>5")
+                equal(compare.matchesProperties({"key": undefined}), false);
+                equal(compare.matchesProperties({"key": "6"}), true);
+                equal(compare.matchesProperties({"key": "5"}), false);
+                equal(compare.matchesProperties({"key": "4.2"}), false);
+                compare = FromJSON.Tag("key>=5")
+                equal(compare.matchesProperties({"key": undefined}), false);
+                equal(compare.matchesProperties({"key": "6"}), true);
+                equal(compare.matchesProperties({"key": "5"}), true);
+                equal(compare.matchesProperties({"key": "4.2"}), false);
 
             })],
             ["Is equivalent test", (() => {
@@ -188,44 +211,6 @@ export default class TagSpec extends T {
                        ]}
                     const overpassOrInor = FromJSON.Tag(orInOr).asOverpass()
                     equal(3, overpassOrInor.length)
-                }
-            ],
-            [
-                "Tagrendering test",
-                () => {
-
-                    const def = {
-                        "render": {
-                            "nl": "De toegankelijkheid van dit gebied is: {access:description}"
-                        },
-                        "question": {
-                            "nl": "Is dit gebied toegankelijk?"
-                        },
-                        "freeform": {
-                            "key": "access:description"
-                        },
-                        "mappings": [
-                            {
-                                "if": {
-                                    "and": [
-                                        "access:description=",
-                                        "access=",
-                                        "leisure=park"
-                                    ]
-                                },
-                                "then": {
-                                    "nl": "Dit gebied is vrij toegankelijk"
-                                },
-                                "hideInAnswer": true
-                            },
-                            {
-                                "if": "access=no",
-                                "then": "Niet toegankelijk"
-                            }
-                        ]
-                    };
-
-
                 }
             ], [
                 "Merge touching opening hours",

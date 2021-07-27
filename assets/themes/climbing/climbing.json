@@ -140,7 +140,6 @@
         "phone",
         "opening_hours"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/climbing/club.svg"
       },
@@ -280,7 +279,6 @@
         "opening_hours",
         "reviews"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/climbing/climbing_gym.svg"
       },
@@ -471,7 +469,6 @@
         },
         "reviews"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "circle:white;./assets/themes/climbing/climbing_route.svg"
       },
@@ -695,7 +692,6 @@
         },
         "reviews"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/climbing/climbing_no_rope.svg"
       },
@@ -850,7 +846,6 @@
         }
       ],
       "icon": "./assets/themes/climbing/climbing_unknown.svg",
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "width": {
         "render": "2"
       },

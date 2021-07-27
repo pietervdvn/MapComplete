@@ -772,6 +772,122 @@
             }
         }
     },
+    "crossings": {
+        "name": "Oversteekplaatsen",
+        "description": "Oversteekplaatsen voor voetgangers en fietsers",
+        "title": {
+            "render": "Oversteekplaats",
+            "mappings": {
+                "0": {
+                    "then": "Verkeerslicht"
+                },
+                "1": {
+                    "then": "Oversteektplaats met verkeerslichten"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Oversteekplaats",
+                "description": "Oversteekplaats voor voetgangers en/of fietsers"
+            },
+            "1": {
+                "title": "Verkeerslicht",
+                "description": "Verkeerslicht op een weg"
+            }
+        },
+        "tagRenderings": {
+            "0": {
+                "question": "Wat voor oversteekplaats is dit?",
+                "mappings": {
+                    "0": {
+                        "then": "Oversteekplaats, zonder verkeerslichten"
+                    },
+                    "1": {
+                        "then": "Oversteekplaats met verkeerslichten"
+                    },
+                    "2": {
+                        "then": "Zebrapad"
+                    }
+                }
+            },
+            "1": {
+                "question": "Is deze oversteekplaats ook voor fietsers",
+                "mappings": {
+                    "0": {
+                        "then": "Een fietser kan deze oversteekplaats gebruiken"
+                    },
+                    "1": {
+                        "then": "Een fietser kan niet deze oversteekplaats gebruiken"
+                    }
+                }
+            },
+            "2": {
+                "question": "Heeft deze oversteekplaats een verkeerseiland in het midden?",
+                "mappings": {
+                    "0": {
+                        "then": "Deze oversteekplaats heeft een verkeerseiland in het midden"
+                    },
+                    "1": {
+                        "then": "Deze oversteekplaats heeft niet een verkeerseiland in het midden"
+                    }
+                }
+            },
+            "3": {
+                "question": "Heeft deze oversteekplaats een geleidelijn?",
+                "mappings": {
+                    "0": {
+                        "then": "Deze oversteekplaats heeft een geleidelijn"
+                    },
+                    "1": {
+                        "then": "Deze oversteekplaats heeft niet een geleidelijn"
+                    },
+                    "2": {
+                        "then": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
+                    }
+                }
+            },
+            "4": {
+                "question": "Heeft dit verkeerslicht een knop voor groen licht?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit verkeerslicht heeft een knop voor groen licht"
+                    },
+                    "1": {
+                        "then": "Dit verkeerlicht heeft niet een knop voor groen licht"
+                    }
+                }
+            },
+            "5": {
+                "question": "Mag een fietser rechtsaf slaan als het licht rood is?",
+                "mappings": {
+                    "0": {
+                        "then": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='height: 3em'>"
+                    },
+                    "1": {
+                        "then": "Een fietser mag wel rechtsaf slaan als het licht rood is"
+                    },
+                    "2": {
+                        "then": "Een fietser mag niet rechtsaf slaan als het licht rood is"
+                    }
+                }
+            },
+            "6": {
+                "question": "Mag een fietser rechtdoor gaan als het licht rood is?",
+                "mappings": {
+                    "0": {
+                        "then": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='height: 3em'>"
+                    },
+                    "1": {
+                        "then": "Een fietser mag wel rechtdoor gaan als het licht rood is"
+                    },
+                    "2": {
+                        "then": "Een fietser mag niet rechtdoor gaan als het licht rood is"
+                    }
+                }
+            }
+        }
+    },
     "defibrillator": {
         "name": "Defibrillatoren",
         "title": {

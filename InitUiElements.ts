@@ -16,7 +16,7 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
-import * as personal from "./assets/themes/personalLayout/personalLayout.json";
+import * as personal from "./assets/themes/personal/personal.json"
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import * as L from "leaflet";
 import Img from "./UI/Base/Img";
@@ -41,8 +41,6 @@ import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
-import jsPDF from "jspdf";
 import {TagsFilter} from "./Logic/Tags/TagsFilter";
 
 export class InitUiElements {
@@ -221,33 +219,9 @@ export class InitUiElements {
       State.state.locationControl.ping();
     });
 
-    // To download pdf of leaflet you need to turn it into and image first
-    // Then export that image as a pdf
-    // leaflet-simple-map-screenshoter: to make image
-    // jsPDF:                           to make pdf
-
-    const screenshot = new MapControlButton(
-      new CenterFlexedElement(
-        Img.AsImageElement(Svg.bug, "", "width:1.25rem;height:1.25rem")
-      )
-    ).onClick(() => {
-      const screenshotter = new SimpleMapScreenshoter();
-      console.log("Debug - Screenshot");
-      screenshotter.addTo(State.state.leafletMap.data);
-      let doc = new jsPDF();
-      screenshotter.takeScreen("image").then((image) => {
-        // TO DO: scale image on pdf to its original size
-        doc.addImage(image, "PNG", 0, 0, screen.width / 10, screen.height / 10);
-        doc.setDisplayMode("fullheight");
-        doc.save("Screenshot");
-      });
-      //screenshotter.remove();
-      // The line below is for downloading the png
-      //screenshotter.takeScreen().then(blob => Utils.offerContentsAsDownloadableFile(blob, "Screenshot.png"));
-    });
 
     new Combine(
-      [plus, min, geolocationButton, screenshot].map((el) =>
+      [plus, min, geolocationButton].map((el) =>
         el.SetClass("m-0.5 md:m-1")
       )
     )

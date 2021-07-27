@@ -518,7 +518,6 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "circle:#FE6F32;./assets/layers/bench/bench.svg"
   },

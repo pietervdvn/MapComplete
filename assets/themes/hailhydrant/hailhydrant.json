@@ -258,7 +258,6 @@
         },
         "images"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/hailhydrant/hydrant.svg"
       },
@@ -365,7 +364,6 @@
         },
         "images"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
       },
@@ -568,7 +566,6 @@
         },
         "images"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
       },
@@ -744,7 +741,6 @@
         },
         "images"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
       },

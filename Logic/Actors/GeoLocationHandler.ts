@@ -26,7 +26,6 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _permission: UIEventSource<string>;
-
     /***
      * The marker on the map, in order to update it
      * @private
@@ -46,15 +45,11 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _leafletMap: UIEventSource<L.Map>;
-
-
     /**
      * The date when the user requested the geolocation. If we have a location, it'll autozoom to it the first 30 secs
      * @private
      */
     private _lastUserRequest: Date;
-
-
     /**
      * A small flag on localstorage. If the user previously granted the geolocation, it will be set.
      * On firefox, the permissions api is broken (probably fingerprint resistiance) and "granted + don't ask again" doesn't stick between sessions.
@@ -79,6 +74,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         );
         const isActive = new UIEventSource<boolean>(false);
         const isLocked = new UIEventSource<boolean>(false);
+
         super(
             hasLocation.map(
                 (hasLocationData) => {
@@ -97,7 +93,6 @@ export default class GeoLocationHandler extends VariableUiElement {
                     return new CenterFlexedElement(
                         Img.AsImageElement(icon, "", "width:1.25rem;height:1.25rem")
                     );
-
                 },
                 [isActive, isLocked]
             )
@@ -132,7 +127,6 @@ export default class GeoLocationHandler extends VariableUiElement {
             self.init(true);
         });
         this.init(false);
-
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
@@ -173,10 +167,12 @@ export default class GeoLocationHandler extends VariableUiElement {
 
     private init(askPermission: boolean) {
         const self = this;
+
         if (self._isActive.data) {
             self.MoveToCurrentLoction(16);
             return;
         }
+
         try {
             navigator?.permissions
                 ?.query({name: "geolocation"})
@@ -193,6 +189,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         } catch (e) {
             console.error(e);
         }
+
         if (askPermission) {
             self.StartGeolocating(true);
         } else if (this._previousLocationGrant.data === "granted") {
@@ -201,7 +198,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         }
     }
 
-    private MoveToCurrentLoction(targetZoom = 16) {
+    private MoveToCurrentLoction(targetZoom?: number) {
         const location = this._currentGPSLocation.data;
         this._lastUserRequest = undefined;
 
@@ -256,6 +253,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             return;
         }
         self._isActive.setData(true);
+
         navigator.geolocation.watchPosition(
             function (position) {
                 self._currentGPSLocation.setData({
@@ -265,6 +263,9 @@ export default class GeoLocationHandler extends VariableUiElement {
             },
             function () {
                 console.warn("Could not get location with navigator.geolocation");
+            },
+            {
+                enableHighAccuracy: true
             }
         );
     }

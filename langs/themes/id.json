@@ -3,7 +3,7 @@
         "title": "Buka Peta AED",
         "description": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat"
     },
-    "artworks": {
+    "artwork": {
         "title": "Buka Peta Karya Seni",
         "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
         "layers": {

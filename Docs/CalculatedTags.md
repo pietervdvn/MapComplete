@@ -141,6 +141,7 @@ Some advanced functions are available on **feat** as well:
   - overlapWith
   - closest
   - memberships
+  - score
  
 ### distanceTo 
 
@@ -168,4 +169,12 @@ Some advanced functions are available on **feat** as well:
 For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')` 
 
 
+ 
+### score 
+
+ Given the path of an aspected routing json file, will calculate the score. This score is wrapped in a UIEventSource, so for further calculations, use `.map(score => ...)`
+
+For example: `_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')` 
+
+  0. path
  Generated from SimpleMetaTagger, ExtraFunction

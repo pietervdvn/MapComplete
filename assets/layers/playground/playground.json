@@ -437,7 +437,6 @@
       "render": "{reviews(name, playground)}"
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/themes/playgrounds/playground.svg"
   },

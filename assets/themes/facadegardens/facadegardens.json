@@ -330,7 +330,6 @@
           }
         }
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "circle:white;./assets/themes/facadegardens/geveltuin.svg",
         "mappings": [
