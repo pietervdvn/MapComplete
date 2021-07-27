@@ -50,7 +50,6 @@
         "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien."
       },
       "tagRenderings": [],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/waste_basket/waste_basket.svg"
       },

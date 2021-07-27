@@ -159,7 +159,6 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 10,
   "wayHandling": 1,
   "icon": {
     "render": "./assets/layers/watermill/watermill.svg"
