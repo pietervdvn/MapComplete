@@ -69,7 +69,7 @@
             },
             "then": {
               "nl": "Fietsweg",
-              "en": "Bike road"
+              "en": "Cycleway"
             }
           },
           {
@@ -89,7 +89,7 @@
           {
             "if": "cycleway=track",
             "then": {
-              "en": "Bike road next to the road",
+              "en": "Cycleway next to the road",
               "nl": "Fietsweg naast de weg"
             }
           },
@@ -219,7 +219,7 @@
               "if": "cyclestreet=yes",
               "then": {
                 "en": "This is a cyclestreet, and a 30km/h zone.",
-                "nl": "Dit is een fietstraat, en dus een 30km/h zone"
+                "nl": "Dit is een fietsstraat, en dus een 30km/h zone"
               },
               "addExtraTags": [
                 "overtaking:motor_vehicle=no",
@@ -231,7 +231,7 @@
               "if": "cyclestreet=yes",
               "then": {
                 "en": "This is a cyclestreet",
-                "nl": "Dit is een fietstraat"
+                "nl": "Dit is een fietsstraat"
               },
               "hideInAnswer": "_country=be"
             },
@@ -239,7 +239,7 @@
               "if": "cyclestreet=",
               "then": {
                 "en": "This is not a cyclestreet.",
-                "nl": "Dit is niet een fietstraat"
+                "nl": "Dit is niet een fietsstraat"
               },
               "addExtraTags": [
                 "overtaking:motor_vehicle="
@@ -343,17 +343,66 @@
               }
             },
             {
-              "if": "cycleway:surface=asphalt",
+              "if": "cycleway:surface=unhewn_cobblestone",
               "then": {
                 "en": "This cycleway is made of asphalt",
                 "nl": "Dit fietspad is gemaakt van asfalt"
               }
             },
             {
-              "if": "cycleway:surface=paved",
+              "if": "cycleway:surface=sett",
               "then": {
                 "en": "This cycleway is paved",
                 "nl": "Dit fietspad is geplaveid"
+              }
+            },
+            {
+              "if": "cycleway:surface=asphalt",
+              "then": {
+                "en": "This cycleway is paved with stones with a flat top",
+                "nl": "Dit fietspad is geplaveid met stenen"
+              }
+            },
+            {
+              "if": "cycleway:surface=paved",
+              "then": {
+                "en": "This cycleway is made of gravel",
+                "nl": "Dit fietspad is gemaakt van grind"
+              }
+            },
+            {
+              "if": "cycleway:surface=paving_stones",
+              "then": {
+                "en": "This cycleway is unhardened",
+                "nl": "Dit fietspad is onverhard"
+              }
+            },
+            {
+              "if": "cycleway:surface=gravel",
+              "then": {
+                "en": "This cycleway is made of gravel",
+                "nl": "Dit fietspad is gemaakt van grind"
+              }
+            },
+            {
+              "if": "cycleway:surface=fine_gravel",
+              "then": {
+                "en": "This cycleway is made of fine gravel",
+                "nl": "Dit fietspad is gemaakt van fijn grind"
+              }
+            },
+            {
+              "if": "cycleway:surface=pebblestone",
+              "then": {
+                "en": "This cycleway is made of pebblestone",
+                "nl": "Dit fietspad is gemaakt van kiezelsteentjes"
+              }
+            },
+            {
+              "if": "cycleway:surface=ground",
+              "then": {
+                "en": "This cycleway is made from raw ground",
+                "nl": "Dit fietspad is gemaakt van aarde"
               }
             }
           ],
@@ -450,7 +499,7 @@
               }
             },
             {
-              "if": "surface=cobblestone",
+              "if": "surface=sett",
               "then": {
                 "en": "This street is made of cobblestone",
                 "nl": "Deze straat is gemaakt van kasseien"
@@ -469,6 +518,30 @@
                 "en": "This street is paved",
                 "nl": "Deze straat is geplaveid"
               }
+            },
+            {
+              "if": "surface=fine_gravel",
+              "then": {
+                "en": "This street is made from fine gravel",
+                "nl": "Deze straat is gemaakt van fijn grind"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "surface=cobblestone",
+              "then": {
+                "en": "This street is made from cobblestone",
+                "nl": "Deze straat is gemaakt van kasseien"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "surface=paving_stones",
+              "then": {
+                "en": "This street is made from paving stones",
+                "nl": "Deze straat is gemaakt van geplaveide stenen"
+              },
+              "hideInAnswer": true
             }
           ],
           "question": {
@@ -1095,7 +1168,7 @@
       "icon": "./assets/themes/cycle_infra/street.svg",
       "width": "5",
       "color": {
-        "render": "#aaaaaa",
+        "render": "rgba(170, 170, 170, 0.7)",
         "mappings": []
       },
       "tagRenderings": [
@@ -1193,7 +1266,7 @@
               "if": "cyclestreet=yes",
               "then": {
                 "en": "This is a cyclestreet, and a 30km/h zone.",
-                "nl": "Dit is een fietstraat, en dus een 30km/h zone"
+                "nl": "Dit is een fietsstraat, en dus een 30km/h zone"
               },
               "addExtraTags": [
                 "overtaking:motor_vehicle=no",
@@ -1205,7 +1278,7 @@
               "if": "cyclestreet=yes",
               "then": {
                 "en": "This is a cyclestreet",
-                "nl": "Dit is een fietstraat"
+                "nl": "Dit is een fietsstraat"
               },
               "hideInAnswer": "_country=be"
             },
@@ -1213,7 +1286,7 @@
               "if": "cyclestreet=",
               "then": {
                 "en": "This is not a cyclestreet.",
-                "nl": "Dit is niet een fietstraat"
+                "nl": "Dit is niet een fietsstraat"
               },
               "addExtraTags": [
                 "overtaking:motor_vehicle="

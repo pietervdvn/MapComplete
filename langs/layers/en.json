@@ -741,6 +741,17 @@
                 }
             },
             "1": {
+                "question": "Is this is a zebra crossing?",
+                "mappings": {
+                    "0": {
+                        "then": "This is a zebra crossing"
+                    },
+                    "1": {
+                        "then": "This is not a zebra crossing"
+                    }
+                }
+            },
+            "2": {
                 "question": "Is this crossing also for bicycles?",
                 "mappings": {
                     "0": {
@@ -751,7 +762,7 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "question": "Does this crossing have an island in the middle?",
                 "mappings": {
                     "0": {
@@ -762,7 +773,7 @@
                     }
                 }
             },
-            "3": {
+            "4": {
                 "question": "Does this crossing have tactile paving?",
                 "mappings": {
                     "0": {
@@ -776,7 +787,7 @@
                     }
                 }
             },
-            "4": {
+            "5": {
                 "question": "Does this traffic light have a button to request green light?",
                 "mappings": {
                     "0": {
@@ -787,7 +798,7 @@
                     }
                 }
             },
-            "5": {
+            "6": {
                 "question": "Can a cyclist turn right when the light is red?",
                 "mappings": {
                     "0": {
@@ -801,7 +812,7 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "question": "Can a cyclist go straight on when the light is red?",
                 "mappings": {
                     "0": {
