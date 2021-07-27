@@ -34,7 +34,7 @@ function createOverpassObject(theme: LayoutConfig) {
         if (layer.source.geojsonSource !== undefined) {
             // This layer defines a geoJson-source
             // SHould it be cached?
-            if (!layer.source.isOsmCacheLayer) {
+            if (layer.source.isOsmCacheLayer !== true) {
                 continue;
             }
         }
@@ -131,7 +131,7 @@ async function downloadExtraData(theme: LayoutConfig)/* : any[] */ {
         if (source === undefined) {
             continue;
         }
-        if (layer.source.isOsmCacheLayer) {
+        if (layer.source.isOsmCacheLayer !== undefined) {
             // Cached layers are not considered here
             continue;
         }
@@ -148,7 +148,7 @@ function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig, extra
         for (let y = r.ystart; y <= r.yend; y++) {
             processed++;
             const filename = rawJsonName(targetdir, x, y, r.zoomlevel)
-            console.log(" Post processing", processed, "/", r.total, filename)
+            ScriptUtils.erasableLog(" Post processing", processed, "/", r.total, filename)
             if (!existsSync(filename)) {
                 console.error("Not found - and not downloaded. Run this script again!: " + filename)
                 continue;
@@ -234,9 +234,8 @@ function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfig) {
 
                     })
                 const new_path = geoJsonName(targetdir + "_" + layer.id, x, y, z);
-                console.log(new_path, " has ", geojson.features.length, " features after filtering (dropped ", oldLength - geojson.features.length, ")")
+                ScriptUtils.erasableLog(new_path, " has ", geojson.features.length, " features after filtering (dropped ", oldLength - geojson.features.length, ")")
                 if (geojson.features.length == 0) {
-                    console.log("Not writing geojson file as it is empty", new_path)
                     continue;
                 }
                 writeFileSync(new_path, JSON.stringify(geojson, null, " "))
@@ -289,9 +288,20 @@ async function createOverview(targetdir: string, r: TileRange, z: number, layern
         }
     }
 
+    const featuresDedup = []
+    const seen = new Set<string>()
+    for (const feature of allFeatures) {
+        const id = feature.properties.id
+        if(seen.has(id)){
+            continue
+        }
+        seen.add(id)
+        featuresDedup.push(feature)
+    }
+    
     const geojson = {
         "type": "FeatureCollection",
-        "features": allFeatures
+        "features": featuresDedup
     }
     writeFileSync(targetdir + "_" + layername + "_points.geojson", JSON.stringify(geojson, null, " "))
 }
