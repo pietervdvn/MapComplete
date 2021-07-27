@@ -1,19 +1,19 @@
-import {CenterFlexedElement} from "./UI/Base/CenterFlexedElement";
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
+import { CenterFlexedElement } from "./UI/Base/CenterFlexedElement";
+import { FixedUiElement } from "./UI/Base/FixedUiElement";
 import Toggle from "./UI/Input/Toggle";
-import {Basemap} from "./UI/BigComponents/Basemap";
+import { Basemap } from "./UI/BigComponents/Basemap";
 import State from "./State";
 import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
-import {UIEventSource} from "./Logic/UIEventSource";
-import {QueryParameters} from "./Logic/Web/QueryParameters";
+import { UIEventSource } from "./Logic/UIEventSource";
+import { QueryParameters } from "./Logic/Web/QueryParameters";
 import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
 import SimpleAddUI from "./UI/BigComponents/SimpleAddUI";
 import CenterMessageBox from "./UI/CenterMessageBox";
 import UserBadge from "./UI/BigComponents/UserBadge";
 import SearchAndGo from "./UI/BigComponents/SearchAndGo";
 import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
-import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
-import {Utils} from "./Utils";
+import { LocalStorageSource } from "./Logic/Web/LocalStorageSource";
+import { Utils } from "./Utils";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personal/personal.json"
@@ -34,7 +34,7 @@ import MapControlButton from "./UI/MapControlButton";
 import Combine from "./UI/Base/Combine";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
-import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
+import { LayoutConfigJson } from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
@@ -42,6 +42,8 @@ import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import {TagsFilter} from "./Logic/Tags/TagsFilter";
+import FilterView from "./UI/BigComponents/FilterView";
+import ExportPDF from "./Logic/Actors/ExportPDF";
 
 export class InitUiElements {
   static InitAll(
@@ -219,7 +221,6 @@ export class InitUiElements {
       State.state.locationControl.ping();
     });
 
-
     new Combine(
       [plus, min, geolocationButton].map((el) =>
         el.SetClass("m-0.5 md:m-1")
@@ -348,7 +349,7 @@ export class InitUiElements {
 
     const copyrightButton = new Toggle(
       copyrightNotice,
-      new MapControlButton(Svg.osm_copyright_svg()),
+      new MapControlButton(Svg.copyright_svg()),
       copyrightNotice.isShown
     )
       .ToggleOnClick()
@@ -370,29 +371,32 @@ export class InitUiElements {
       State.state.featureSwitchLayers
     );
 
-    // const filterView = new FilterView(State.state.FilterIsOpened).SetClass(
-    //     "block p-1 rounded-full"
-    // );
 
-    // const filterMapControlButton = new MapControlButton(
-    //     new CenterFlexedElement(
-    //         Img.AsImageElement(Svg.filter, "", "width:1.25rem;height:1.25rem")
-    //     )
-    // );
+    const filterView = new FilterView(State.state.FilterIsOpened).SetClass(
+      "block p-1 rounded-full"
+    );
 
-    // const filterButton = new Toggle(
-    //     filterView,
-    //     filterMapControlButton,
-    //     State.state.FilterIsOpened
-    // ).ToggleOnClick();
+    const filterMapControlButton = new MapControlButton(
+      new CenterFlexedElement(
+        Img.AsImageElement(Svg.filter, "", "width:1.25rem;height:1.25rem")
+      )
+    );
 
-    // const filterControl = new Toggle(
-    //     filterButton,
-    //     "",
-    //     State.state.featureSwitchFilter
-    // );
+    const filterButton = new Toggle(
+      filterView,
+      filterMapControlButton,
+      State.state.FilterIsOpened
+    ).ToggleOnClick();
 
-    new Combine([copyrightButton, layerControl]).AttachTo("bottom-left");
+    const filterControl = new Toggle(
+      filterButton,
+      "",
+      State.state.featureSwitchFilter
+    );
+
+    new Combine([copyrightButton, layerControl, filterControl]).AttachTo(
+      "bottom-left"
+    );
 
     State.state.locationControl.addCallback(() => {
       // Close the layer selection when the map is moved

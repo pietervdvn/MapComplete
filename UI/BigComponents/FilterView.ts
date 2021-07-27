@@ -14,7 +14,6 @@ import {And} from "../../Logic/Tags/And";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import State from "../../State";
-import {control} from "leaflet";
 
 
 /**

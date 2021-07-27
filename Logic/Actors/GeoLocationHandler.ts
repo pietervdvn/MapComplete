@@ -14,7 +14,6 @@ export default class GeoLocationHandler extends VariableUiElement {
      */
     private readonly _isActive: UIEventSource<boolean>;
 
-
     /**
      * Wether or not the geolocation is locked, aka the user requested the current location and wants the crosshair to follow the user
      * @private
@@ -45,11 +44,13 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _leafletMap: UIEventSource<L.Map>;
+    
     /**
      * The date when the user requested the geolocation. If we have a location, it'll autozoom to it the first 30 secs
      * @private
      */
     private _lastUserRequest: Date;
+    
     /**
      * A small flag on localstorage. If the user previously granted the geolocation, it will be set.
      * On firefox, the permissions api is broken (probably fingerprint resistiance) and "granted + don't ask again" doesn't stick between sessions.
@@ -81,13 +82,13 @@ export default class GeoLocationHandler extends VariableUiElement {
                     let icon: string;
 
                     if (isLocked.data) {
-                        icon = Svg.crosshair_locked;
+                        icon = Svg.location;
                     } else if (hasLocationData) {
-                        icon = Svg.crosshair_blue;
+                        icon = Svg.location_empty;
                     } else if (isActive.data) {
-                        icon = Svg.crosshair_blue_center;
+                        icon = Svg.location_empty;
                     } else {
-                        icon = Svg.crosshair;
+                        icon = Svg.location_circle;
                     }
 
                     return new CenterFlexedElement(
