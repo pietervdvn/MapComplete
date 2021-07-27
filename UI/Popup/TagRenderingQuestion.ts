@@ -164,7 +164,7 @@ export default class TagRenderingQuestion extends Combine {
         if (configuration.multiAnswer) {
             return TagRenderingQuestion.GenerateMultiAnswer(configuration, inputEls, ff, configuration.mappings.map(mp => mp.ifnot))
         } else {
-            return new RadioButton(inputEls, false)
+            return new RadioButton(inputEls, {selectFirstAsDefault: false})
         }
 
     }

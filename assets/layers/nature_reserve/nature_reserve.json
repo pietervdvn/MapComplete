@@ -419,5 +419,38 @@
         "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
       }
     }
+  ],
+  "filter": [
+    {
+      "options": [
+        {
+          "question": {
+            "nl": "Vrij te bezoeken"
+          },
+          "osmTags": "access=yes"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": {
+            "nl": "Alle natuurgebieden"
+          }
+        },{
+          "question": {
+            "nl": "Honden mogen vrij rondlopen"
+          },
+          "osmTags": "dog=yes"
+        },{
+          "question": {
+            "nl": "Honden welkom aan de leiband"
+          },
+          "osmTags": {
+            "or": ["dog=yes","dog=leashed"]
+          }
+        }
+      ]
+    }
   ]
 }

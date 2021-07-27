@@ -17,7 +17,7 @@ export default class FilterConfig {
         context + ".options-[" + i + "].question"
       );
       const osmTags = FromJSON.Tag(
-        option.osmTags,
+        option.osmTags ?? {and:[]},
         `${context}.options-[${i}].osmTags`
       );
 

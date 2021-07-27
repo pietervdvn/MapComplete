@@ -11,26 +11,15 @@ export default class CheckBoxes extends InputElement<number[]> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly value: UIEventSource<number[]>;
     private readonly _elements: BaseUIElement[];
-    private styleWrapperOverride = "";
-    private styleInputOverride = "";
-    private styleLabelOverride = "";
 
     constructor(
         elements: BaseUIElement[],
-        value = new UIEventSource<number[]>([]),
-        styleFormOverride = "",
-        styleWrapperOverride = "",
-        styleInputOverride = "",
-        styleLabelOverride = ""
+        value = new UIEventSource<number[]>([])
     ) {
         super();
         this.value = value;
         this._elements = Utils.NoNull(elements);
         this.SetClass("flex flex-col");
-        this.SetStyle(styleFormOverride);
-        this.styleWrapperOverride = styleWrapperOverride;
-        this.styleInputOverride = styleInputOverride;
-        this.styleLabelOverride = styleLabelOverride;
     }
 
     IsValid(ts: number[]): boolean {
@@ -56,7 +45,6 @@ export default class CheckBoxes extends InputElement<number[]> {
 
             input.type = "checkbox";
             input.classList.add("p-1", "cursor-pointer", "m-3", "pl-3", "mr-0");
-            input.style.cssText = this.styleInputOverride;
 
             const label = document.createElement("label");
             label.htmlFor = input.id;
@@ -68,7 +56,6 @@ export default class CheckBoxes extends InputElement<number[]> {
                 "cursor-pointer",
                 "bg-red"
             );
-            label.style.cssText = this.styleLabelOverride;
 
             const wrapper = document.createElement("span");
             wrapper.classList.add(
@@ -79,7 +66,6 @@ export default class CheckBoxes extends InputElement<number[]> {
                 "border-gray-400",
                 "m-1"
             );
-            wrapper.style.cssText = this.styleWrapperOverride;
             wrapper.appendChild(input);
             wrapper.appendChild(label);
             el.appendChild(wrapper);
