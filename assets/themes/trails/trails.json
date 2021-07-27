@@ -1,15 +1,15 @@
 {
   "id": "trails",
   "title": {
-    "nl": "Paden",
+    "nl": "Wandeltochten",
     "en": "Trails"
   },
   "shortDescription": {
-    "nl": "Deze kaart toont all verschillende paden",
+    "nl": "Deze kaart toont verschillende wandeltochten",
     "en": "This map shows trails"
   },
   "description": {
-    "nl": "Deze kaart toont all verschillende paden",
+    "nl": "Deze kaart toont alle verschillende wandeltochten",
     "en": "This map shows trails"
   },
   "language": [

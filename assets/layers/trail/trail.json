@@ -2,7 +2,7 @@
   "id": "trail",
   "name": {
     "en": "Trails",
-    "nl": "Paden"
+    "nl": "Wandeltochten"
   },
   "minzoom": 12,
   "source": {
@@ -20,91 +20,34 @@
   },
   "title": {
     "render": {
-      "en": "Trails",
-      "nl": "Paden"
-    }
+      "en": "Trail",
+      "nl": "Wandeltocht"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
   },
   "tagRenderings": [
     "images",
     {
-      "#": "Access tag",
       "render": {
-        "nl": "De toegankelijkheid van dit gebied is: {access:description}"
-      },
+        "en": "The trail is {_length:km} kilometers long",
+        "nl": "Deze wandeling is {_length:km} kilometer lang"
+      }
+    },
+    {"#": "Name",
       "question": {
-        "nl": "Is dit gebied toegankelijk?"
+        "nl": "Wat is de naam van deze wandeling?"
+      },
+      "render": {
+        "nl": "Deze wandeling heet <b>{name}</b>"
       },
       "freeform": {
-        "key": "access:description"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "access=yes",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Vrij toegankelijk"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=no",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Niet toegankelijk"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=private",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Niet toegankelijk, want privégebied"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=permissive",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Toegankelijk, ondanks dat het privegebied is"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=guided",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=yes",
-              "fee=yes"
-            ]
-          },
-          "then": {
-            "nl": "Toegankelijk mits betaling"
-          }
-        }
-      ]
+        "key": "name"
+      }
     },
     {
       "#": "Operator tag",
@@ -112,7 +55,7 @@
         "nl": "Beheer door {operator}"
       },
       "question": {
-        "nl": "Wie beheert dit pad?"
+        "nl": "Wie beheert deze wandeltocht?"
       },
       "freeform": {
         "key": "operator"
@@ -142,237 +85,87 @@
       ]
     },
     {
+      "#": "Color",
       "question": {
-        "nl": "Is dit pad toegankelijk met de rolstoel?"
+        "nl": "Welke kleur heeft deze wandeling?"
+      },
+      "render": {
+        "nl": "Deze wandeling heeft kleur {colour}"
+      },
+      "freeform": {
+        "key": "colour",
+        "type": "color"
+      },
+      "mappings": [
+        {
+          "if": "colour=blue",
+          "then": {
+            "nl": "Blauwe wandeling",
+            "en": "Blue trail"
+          }
+        },
+        {
+          "if": "colour=red",
+          "then": {
+            "nl": "Rode wandeling",
+            "en": "Red trail"
+          }
+        },
+        {
+          "if": "colour=green",
+          "then": {
+            "nl": "Groene wandeling",
+            "en": "Green trail"
+          }
+        },
+        {
+          "if": "colour=yellow",
+          "then": {
+            "nl": "Gele wandeling",
+            "en": "Yellow trail"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Wheelchair access",
+      "question": {
+        "nl": "Is deze wandeling toegankelijk met de rolstoel?"
       },
       "mappings": [
         {
           "then": {
-            "nl": "Dit pad is toegankelijk met de rolstoel"
+            "nl": "deze wandeltocht is toegankelijk met de rolstoel"
           },
           "if": "wheelchair=yes"
         },
         {
           "then": {
-            "nl": "Dit pad is niet toegankelijk met de rolstoel"
+            "nl": "deze wandeltocht is niet toegankelijk met de rolstoel"
           },
           "if": "wheelchair=no"
         }
       ]
     },
-    {
+    { "#": "pushchair access",
+     
       "question": {
-        "nl": "Is dit pad toegankelijk met de buggy?"
+        "nl": "Is deze wandeltocht toegankelijk met de buggy?"
       },
       "mappings": [
         {
           "then": {
-            "nl": "Dit pad is toegankelijk met de buggy"
+            "nl": "deze wandeltocht is toegankelijk met de buggy"
           },
           "if": "pushchair=yes"
         },
         {
           "then": {
-            "nl": "Dit pad is niet toegankelijk met de buggy"
+            "nl": "deze wandeltocht is niet toegankelijk met de buggy"
           },
           "if": "pushchair=no"
         }
       ]
-    },
-    {
-      "render": {
-        "en": "Surface: {surface}",
-        "nl": "Ondergrond bestaat uit {surface}"
-      },
-      "freeform": {
-        "key": "surface",
-        "addExtraTags": []
-      },
-      "mappings": [
-        {
-          "if": "surface=paved",
-          "then": {
-            "en": "Surface: paved",
-            "nl": "Het pad is aangelegd"
-          }
-        },
-        {
-          "if": "surface=asphalt",
-          "then": {
-            "en": "Surface: asphalt",
-            "nl": "Ondergrond bestaat uit asfalt"
-          }
-        },
-        {
-          "if": "surface=concrete",
-          "then": {
-            "en": "Surface: concrete",
-            "nl": "Ondergrond bestaat uit cement"
-          }
-        },
-        {
-          "if": "surface=paving_stones",
-          "then": {
-            "en": "Surface: paving stones",
-            "nl": "Ondergrond bestaat uit plavei"
-          }
-        },
-        {
-          "if": "surface=cobblestone",
-          "then": {
-            "en": "Surface: cobblestone",
-            "nl": "Ondergrond bestaat uit kasseien"
-          }
-        },
-        {
-          "if": "surface=stepping_stones",
-          "then": {
-            "en": "Surface: stepping stones",
-            "nl": "Ondergrond bestaat uit stenen pad"
-          }
-        },
-        {
-          "if": "surface=unpaved",
-          "then": {
-            "en": "Surface: unpaved",
-            "nl": "Dit pad is niet aangelegd"
-          }
-        },
-        {
-          "if": "surface=gravel",
-          "then": {
-            "en": "Surface: gravel",
-            "nl": "Ondergrond bestaat uit grind"
-          }
-        },
-        {
-          "if": "surface=rock",
-          "then": {
-            "en": "Surface: rock",
-            "nl": "Ondergrond bestaat uit gesteente"
-          }
-        },
-        {
-          "if": "surface=pebblestone",
-          "then": {
-            "en": "Surface: pebblestone",
-            "nl": "Ondergrond bestaat uit kiezels"
-          }
-        },
-        {
-          "if": "surface=earth",
-          "then": {
-            "en": "Surface: earth",
-            "nl": "Ondergrond bestaat uit aarde"
-          }
-        },
-        {
-          "if": "surface=grass",
-          "then": {
-            "en": "Surface: grass",
-            "nl": "Ondergrond bestaat uit gras"
-          }
-        },
-        {
-          "if": "surface=mud",
-          "then": {
-            "en": "Surface: mud",
-            "nl": "Ondergrond bestaat uit modder"
-          }
-        },
-        {
-          "if": "surface=sand",
-          "then": {
-            "en": "Surface: sand",
-            "nl": "Ondergrond bestaat uit zand"
-          }
-        }
-      ],
-      "question": {
-        "en": "What type of surface does the trail have?",
-        "nl": "Waaruit bestaat de ondergrond van het pad?"
-      }
-    },
-    {
-      "mappings": [
-        {
-          "if": "incline=very_easy",
-          "then": {
-            "en": "The trail is flat",
-            "nl": "Het pad is plat"
-          }
-        },
-        {
-          "if": "incline=easy",
-          "then": {
-            "en": "The trail is slightly elevated",
-            "nl": "Het pad is zo goed als plat"
-          }
-        },
-        {
-          "if": "incline=moderate",
-          "then": {
-            "en": "The trail is elevated",
-            "nl": "Het pad stijgt en/of daalt "
-          }
-        },
-        {
-          "if": "incline=somewhat_hard",
-          "then": {
-            "en": "The trail is slightly steep",
-            "nl": "Het pad is lichtjes steil"
-          }
-        },
-        {
-          "if": "incline=hard",
-          "then": {
-            "en": "The trail is steep",
-            "nl": "Het pad is steil"
-          }
-        },
-        {
-          "if": "incline=very_hard",
-          "then": {
-            "en": "The trail is very steep",
-            "nl": "Het pad is zeer steil"
-          }
-        },
-        {
-          "if": "incline=extreme",
-          "then": {
-            "en": "The trail is extremely steep",
-            "nl": "Het pad is extreem steil"
-          }
-        }
-      ],
-      "question": {
-        "en": "What's the incline of the trail?",
-        "nl": "Hoe hard stijgt en/of daalt het pad?"
-      }
-    },
-    {
-      "render": {
-        "en": "The trail is {distance}km long",
-        "nl": "De lengte van het pad bedraagt {distance}km"
-      },
-      "freeform": {
-        "key": "distance",
-        "type": "float"
-      }
-    },
-    {
-      "render": {
-        "en": "The trail is {width}m wide",
-        "nl": "De breedte van het pad bedraagt {width}m"
-      },
-      "freeform": {
-        "key": "width",
-        "type": "nat"
-      },
-      "question": {
-        "en": "How wide is the trail (m)?",
-        "nl": "Hoe breed is het pad (m)?"
-      }
     }
   ],
   "icon": {
@@ -389,9 +182,9 @@
     ]
   },
   "description": {
-    "nl": "Paden waarlangs kan gewandeld worden"
+    "nl": "Aangeduide wandeltochten"
   },
-  "wayHandling": 2,
+  "wayHandling": 0,
   "width": {
     "render": "3"
   },
@@ -399,23 +192,15 @@
     "render": "35,35,center"
   },
   "color": {
-    "render": "#335D9F"
+    "render": "#335D9F",
+    "mappings": [
+      {
+        "if": "colour~*",
+        "then": "{colour}"
+      }
+    ]
   },
   "dashArray": {
     "render": "5 5"
-  },
-  "presets": [
-    {
-      "tags": [
-        "route=hiking",
-        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
-      ],
-      "title": {
-        "nl": "Paden"
-      },
-      "description": {
-        "nl": "Voeg een ontbrekend, erkend pad toe."
-      }
-    }
-  ]
+  }
 }

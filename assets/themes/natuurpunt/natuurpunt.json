@@ -30,6 +30,7 @@
       "#": "Nature reserve with geometry, z>=13",
       "builtin": "nature_reserve",
       "override": {
+        "name": null,
         "source": {
           "osmTags": {
             "+and": [
@@ -41,6 +42,7 @@
           "isOsmCache": true
         },
         "minzoom": 13,
+        "minzoomVisible": 0,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
         }
@@ -60,7 +62,6 @@
           "isOsmCache": "duplicate"
         },
         "minzoom": 1,
-        "maxzoom": 13,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
         }
@@ -76,7 +77,7 @@
             ]
           },
           "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 12,
+          "geoJsonZoomLevel": 1,
           "isOsmCache": true
         },
         "minzoom": "10",
@@ -141,14 +142,15 @@
     {
       "builtin": "birdhide",
       "override": {
-        "minzoom": "15",
+        "minzoom": 12,
         "source": {
           "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
         "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg"
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg",
+          "mappings": null
         }
       }
     },
