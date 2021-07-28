@@ -652,13 +652,13 @@
                         "question": "Is dit een fietsstraat?",
                         "mappings": {
                             "0": {
-                                "then": "Dit is een fietstraat, en dus een 30km/h zone"
+                                "then": "Dit is een fietsstraat, en dus een 30km/h zone"
                             },
                             "1": {
-                                "then": "Dit is een fietstraat"
+                                "then": "Dit is een fietsstraat"
                             },
                             "2": {
-                                "then": "Dit is niet een fietstraat"
+                                "then": "Dit is geen fietsstraat"
                             }
                         }
                     },
@@ -726,7 +726,33 @@
                         "question": "Waaruit is het oppervlak van het fietspad van gemaakt?"
                     },
                     "5": {
-                        "question": "Wat is de kwaliteit van dit fietspad?"
+                        "question": "Wat is de kwaliteit van dit fietspad?",
+                        "mappings": {
+                            "0": {
+                                "then": "Geschikt voor fijne rollers: rollerblade, skateboard"
+                            },
+                            "1": {
+                                "then": "Geschikt voor fijne wielen: racefiets"
+                            },
+                            "2": {
+                                "then": "Geschikt voor normale wielen: stadsfiets, rolstoel, scooter"
+                            },
+                            "3": {
+                                "then": "Geschikt voor brede wielen: trekfiets, auto, rickshaw"
+                            },
+                            "4": {
+                                "then": "Geschikt voor voertuigen met hoge banden: lichte terreinwagen"
+                            },
+                            "5": {
+                                "then": "Geschikt voor terreinwagens: zware terreinwagen"
+                            },
+                            "6": {
+                                "then": "Geschikt voor gespecialiseerde terreinwagens: tractor, alleterreinwagen"
+                            },
+                            "7": {
+                                "then": "Niet geschikt voor voertuigen met wielen"
+                            }
+                        }
                     },
                     "6": {
                         "render": "Deze weg is gemaakt van {surface}",
@@ -769,16 +795,16 @@
                         "question": "Welk verkeersbord heeft dit fietspad?",
                         "mappings": {
                             "0": {
-                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "2": {
-                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
                             },
                             "3": {
-                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
                             },
                             "4": {
                                 "then": "Geen verkeersbord aanwezig"
@@ -789,16 +815,16 @@
                         "question": "Welk verkeersbord heeft dit fietspad?",
                         "mappings": {
                             "0": {
-                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "2": {
-                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
                             },
                             "3": {
-                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
                             },
                             "4": {
                                 "then": "Geen verkeersbord aanwezig"
@@ -806,25 +832,25 @@
                         }
                     },
                     "11": {
-                        "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) een onderbord?",
+                        "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
                         "mappings": {
                             "0": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
                             },
                             "2": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
                             },
                             "3": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
                             },
                             "4": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
                             },
                             "5": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
                             },
                             "6": {
                                 "then": "Geen onderbord aanwezig"
@@ -832,25 +858,25 @@
                         }
                     },
                     "12": {
-                        "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) een onderbord?",
+                        "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
                         "mappings": {
                             "0": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
                             },
                             "2": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
                             },
                             "3": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
                             },
                             "4": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
                             },
                             "5": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
                             },
                             "6": {
                                 "then": "Geen onderbord aanwezig"
@@ -935,13 +961,13 @@
                         "question": "Is dit een fietsstraat?",
                         "mappings": {
                             "0": {
-                                "then": "Dit is een fietstraat, en dus een 30km/h zone"
+                                "then": "Dit is een fietsstraat, en dus een 30km/h zone"
                             },
                             "1": {
-                                "then": "Dit is een fietstraat"
+                                "then": "Dit is een fietsstraat"
                             },
                             "2": {
-                                "then": "Dit is niet een fietstraat"
+                                "then": "Dit is geen fietsstraat"
                             }
                         }
                     }
@@ -1014,12 +1040,26 @@
                             },
                             "2": {
                                 "then": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                            },
+                            "3": {
+                                "then": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
                             }
                         }
                     },
                     "3": {
                         "render": "Maximumbreedte: {maxwidth:physical} m",
                         "question": "Hoe breed is de ruimte naast de barrière?"
+                    },
+                    "4": {
+                        "render": "Ruimte tussen barrières (langs de lengte van de weg): {width:seperation} m",
+                        "question": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?"
+                    },
+                    "5": {
+                        "render": "Breedte van de opening: {width:opening} m",
+                        "question": "Hoe breed is de smalste opening naast de barrières?"
+                    },
+                    "6": {
+                        "question": "Hoeveel overlappen de barrières?"
                     }
                 }
             }
