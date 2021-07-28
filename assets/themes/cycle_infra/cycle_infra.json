@@ -239,7 +239,7 @@
               "if": "cyclestreet=",
               "then": {
                 "en": "This is not a cyclestreet.",
-                "nl": "Dit is niet een fietsstraat"
+                "nl": "Dit is geen fietsstraat"
               },
               "addExtraTags": [
                 "overtaking:motor_vehicle="
@@ -427,49 +427,57 @@
             {
               "if": "cycleway:smoothness=excellent",
               "then": {
-                "en": "Usable for thin rollers: rollerblade, skateboard"
+                "en": "Usable for thin rollers: rollerblade, skateboard",
+                "nl": "Geschikt voor fijne rollers: rollerblade, skateboard"
               }
             },
             {
               "if": "cycleway:smoothness=good",
               "then": {
-                "en": "Usable for thin wheels: racing bike"
+                "en": "Usable for thin wheels: racing bike",
+                "nl": "Geschikt voor fijne wielen: racefiets"
               }
             },
             {
               "if": "cycleway:smoothness=intermediate",
               "then": {
-                "en": "Usable for normal wheels: city bike, wheelchair, scooter"
+                "en": "Usable for normal wheels: city bike, wheelchair, scooter",
+                "nl": "Geschikt voor normale wielen: stadsfiets, rolstoel, scooter"
               }
             },
             {
               "if": "cycleway:smoothness=bad",
               "then": {
-                "en": "Usable for robust wheels: trekking bike, car, rickshaw"
+                "en": "Usable for robust wheels: trekking bike, car, rickshaw",
+                "nl": "Geschikt voor brede wielen: trekfiets, auto, rickshaw"
               }
             },
             {
               "if": "cycleway:smoothness=very_bad",
               "then": {
-                "en": "Usable for vehicles with high clearance: light duty off-road vehicle"
+                "en": "Usable for vehicles with high clearance: light duty off-road vehicle",
+                "nl": "Geschikt voor voertuigen met hoge banden: lichte terreinwagen"
               }
             },
             {
               "if": "cycleway:smoothness=horrible",
               "then": {
-                "en": "Usable for off-road vehicles: heavy duty off-road vehicle"
+                "en": "Usable for off-road vehicles: heavy duty off-road vehicle",
+                "nl": "Geschikt voor terreinwagens: zware terreinwagen"
               }
             },
             {
               "if": "cycleway:smoothness=very_horrible",
               "then": {
-                "en": "Usable for specialized off-road vehicles: tractor, ATV"
+                "en": "Usable for specialized off-road vehicles: tractor, ATV",
+                "nl": "Geschikt voor gespecialiseerde terreinwagens: tractor, alleterreinwagen"
               }
             },
             {
               "if": "cycleway:smoothness=impassable",
               "then": {
-                "en": "Impassable / No wheeled vehicle"
+                "en": "Impassable / No wheeled vehicle",
+                "nl": "Niet geschikt voor voertuigen met wielen"
               }
             }
           ]
@@ -1286,7 +1294,7 @@
               "if": "cyclestreet=",
               "then": {
                 "en": "This is not a cyclestreet.",
-                "nl": "Dit is niet een fietsstraat"
+                "nl": "Dit is geen fietsstraat"
               },
               "addExtraTags": [
                 "overtaking:motor_vehicle="
@@ -1465,7 +1473,8 @@
             {
               "if": "cycle_barrier:type=squeeze",
               "then": {
-                "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
+                "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
               }
             }
           ]
@@ -1492,10 +1501,12 @@
         },
         {
           "render": {
-            "en": "Space between barriers (along the length of the road): {width:seperation} m"
+            "en": "Space between barriers (along the length of the road): {width:seperation} m",
+            "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:seperation} m"
           },
           "question": {
-            "en": "How much space is there between the barriers (along the length of the road)?"
+            "en": "How much space is there between the barriers (along the length of the road)?",
+            "nl": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?"
           },
           "condition": {
             "or": [
@@ -1510,10 +1521,12 @@
         },
         {
           "render": {
-            "en": "Width of opening: {width:opening} m"
+            "en": "Width of opening: {width:opening} m",
+            "nl": "Breedte van de opening: {width:opening} m"
           },
           "question": {
-            "en": "How wide is the smallest opening next to the barriers?"
+            "en": "How wide is the smallest opening next to the barriers?",
+            "nl": "Hoe breed is de smalste opening naast de barrières?"
           },
           "condition": {
             "or": [
@@ -1531,7 +1544,8 @@
             "en": "Overlap: {overlap} m"
           },
           "question": {
-            "en": "How much overlap do the barriers have?"
+            "en": "How much overlap do the barriers have?",
+            "nl": "Hoeveel overlappen de barrières?"
           },
           "condition": {
             "or": [
