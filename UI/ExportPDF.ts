@@ -46,16 +46,17 @@ export default class ExportPDF {
 
         // We create a minimap at the given location and attach it to the given 'hidden' element
 
-        
+        const l = options.location.data;
+        const loc = {
+            lat : l.lat,
+            lon: l.lon,
+            zoom: l.zoom + 1
+        }
         
         const minimap = new Minimap({
-            location: options.location.map(l => ({
-                lat : l.lat,
-                lon: l.lon,
-                zoom: l.zoom + 1
-            })),
+            location: new UIEventSource<Loc>(loc), // We remove the link between the old and the new UI-event source as moving the map while the export is running fucks up the screenshot
             background: options.background,
-            allowMoving: true,
+            allowMoving: false,
             onFullyLoaded: leaflet => window.setTimeout(() => {
                 try{
                 self.CreatePdf(leaflet)

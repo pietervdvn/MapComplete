@@ -24,13 +24,14 @@ export class FeatureSourceUtils {
         options = Utils.setDefaults(options, defaults);
 
         // Select all features, ignore the freshness and other data
-        let featureList: any[] = featurePipeline.features.data.map((feature) => feature.feature);
+        let featureList: any[] = featurePipeline.features.data.map((feature) => 
+          JSON.parse(JSON.stringify((feature.feature)))); // Make a deep copy!
 
         if (!options.metadata) {
             for (let i = 0; i < featureList.length; i++) {
                 let feature = featureList[i];
                 for (let property in feature.properties) {
-                    if (property[0] == "_") {
+                    if (property[0] == "_" && property !== "_lat" && property !== "_lon") {
                         delete featureList[i]["properties"][property];
                     }
                 }
