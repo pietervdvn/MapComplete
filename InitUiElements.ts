@@ -1,21 +1,21 @@
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
+import { FixedUiElement } from "./UI/Base/FixedUiElement";
 import Toggle from "./UI/Input/Toggle";
-import {Basemap} from "./UI/BigComponents/Basemap";
+import { Basemap } from "./UI/BigComponents/Basemap";
 import State from "./State";
 import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
-import {UIEventSource} from "./Logic/UIEventSource";
-import {QueryParameters} from "./Logic/Web/QueryParameters";
+import { UIEventSource } from "./Logic/UIEventSource";
+import { QueryParameters } from "./Logic/Web/QueryParameters";
 import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
 import SimpleAddUI from "./UI/BigComponents/SimpleAddUI";
 import CenterMessageBox from "./UI/CenterMessageBox";
 import UserBadge from "./UI/BigComponents/UserBadge";
 import SearchAndGo from "./UI/BigComponents/SearchAndGo";
 import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
-import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
-import {Utils} from "./Utils";
+import { LocalStorageSource } from "./Logic/Web/LocalStorageSource";
+import { Utils } from "./Utils";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
-import * as personal from "./assets/themes/personal/personal.json"
+import * as personal from "./assets/themes/personal/personal.json";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import * as L from "leaflet";
 import Img from "./UI/Base/Img";
@@ -33,14 +33,14 @@ import MapControlButton from "./UI/MapControlButton";
 import Combine from "./UI/Base/Combine";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
-import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
+import { LayoutConfigJson } from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-import {TagsFilter} from "./Logic/Tags/TagsFilter";
+import { TagsFilter } from "./Logic/Tags/TagsFilter";
 import FilterView from "./UI/BigComponents/FilterView";
 
 export class InitUiElements {
@@ -57,8 +57,7 @@ export class InitUiElements {
                 `Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`
             )
                 .AttachTo("centermessage")
-                .onClick(() => {
-                });
+                .onClick(() => {});
             throw "Incorrect layout";
         }
 
@@ -158,16 +157,13 @@ export class InitUiElements {
             InitUiElements.InitWelcomeMessage();
         });
 
-        if (
-            (window != window.top && !State.state.featureSwitchWelcomeMessage.data) ||
-            State.state.featureSwitchIframe.data
-        ) {
+        if (State.state.featureSwitchIframe.data) {
             const currentLocation = State.state.locationControl;
-            const url = `${window.location.origin}${window.location.pathname}?z=${
-                currentLocation.data.zoom ?? 0
-            }&lat=${currentLocation.data.lat ?? 0}&lon=${
-                currentLocation.data.lon ?? 0
-            }`;
+            const url = `${window.location.origin}${
+                window.location.pathname
+            }?z=${currentLocation.data.zoom ?? 0}&lat=${
+                currentLocation.data.lat ?? 0
+            }&lon=${currentLocation.data.lon ?? 0}`;
             new MapControlButton(
                 new Link(Svg.pop_out_img, url, true).SetClass(
                     "block w-full h-full p-1.5"
@@ -182,11 +178,13 @@ export class InitUiElements {
                     "--subtle-detail-color"
                 );
                 const icon = L.icon({
-                    iconUrl: Img.AsData(Svg.home_white_bg.replace(/#ffffff/g, color)),
+                    iconUrl: Img.AsData(
+                        Svg.home_white_bg.replace(/#ffffff/g, color)
+                    ),
                     iconSize: [30, 30],
                     iconAnchor: [15, 15],
                 });
-                const marker = L.marker([home.lat, home.lon], {icon: icon});
+                const marker = L.marker([home.lat, home.lon], { icon: icon });
                 marker.addTo(State.state.leafletMap.data);
             });
 
@@ -196,31 +194,26 @@ export class InitUiElements {
                     State.state.currentGPSLocation,
                     State.state.leafletMap,
                     State.state.layoutToUse
-                ), {
-                    dontStyle : true
+                ),
+                {
+                    dontStyle: true,
                 }
             ),
             undefined,
             State.state.featureSwitchGeolocation
         );
 
-        const plus = new MapControlButton(
-                Svg.plus_zoom_svg()
-        ).onClick(() => {
+        const plus = new MapControlButton(Svg.plus_zoom_svg()).onClick(() => {
             State.state.locationControl.data.zoom++;
             State.state.locationControl.ping();
         });
 
-        const min = new MapControlButton(
-           Svg.min_zoom_svg()
-        ).onClick(() => {
+        const min = new MapControlButton(Svg.min_zoom_svg()).onClick(() => {
             State.state.locationControl.data.zoom--;
             State.state.locationControl.ping();
         });
 
-        new Combine(
-            [plus, min, geolocationButton]
-        )
+        new Combine([plus, min, geolocationButton])
             .SetClass("flex flex-col")
             .AttachTo("bottom-right");
 
@@ -262,7 +255,9 @@ export class InitUiElements {
                 "last-loaded-user-layout"
             );
             if (hash.length < 10) {
-                hash = dedicatedHashFromLocalStorage.data ?? hashFromLocalStorage.data;
+                hash =
+                    dedicatedHashFromLocalStorage.data ??
+                    hashFromLocalStorage.data;
             } else {
                 console.log("Saving hash to local storage");
                 hashFromLocalStorage.setData(hash);
@@ -309,9 +304,11 @@ export class InitUiElements {
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg());
         help.onClick(() => isOpened.setData(true));
-        new Toggle(fullOptions.SetClass("welcomeMessage"), help, isOpened).AttachTo(
-            "messagesbox"
-        );
+        new Toggle(
+            fullOptions.SetClass("welcomeMessage"),
+            help,
+            isOpened
+        ).AttachTo("messagesbox");
         const openedTime = new Date().getTime();
         State.state.locationControl.addCallback(() => {
             if (new Date().getTime() - openedTime < 15 * 1000) {
@@ -326,8 +323,8 @@ export class InitUiElements {
         });
         isOpened.setData(
             Hash.hash.data === undefined ||
-            Hash.hash.data === "" ||
-            Hash.hash.data == "welcome"
+                Hash.hash.data === "" ||
+                Hash.hash.data == "welcome"
         );
     }
 
@@ -366,22 +363,17 @@ export class InitUiElements {
             State.state.featureSwitchLayers
         );
 
-
-        const filterView = 
-            new ScrollableFullScreen(
-                () => Translations.t.general.layerSelection.title.Clone(),
-                () => 
-                    new FilterView(State.state.filteredLayers).SetClass(
-                        "block p-1 rounded-full"
-                    ),
-                undefined,
-                State.state.filterIsOpened
-            );
-            
-
-        const filterMapControlButton = new MapControlButton(
-            Svg.filter_svg()
+        const filterView = new ScrollableFullScreen(
+            () => Translations.t.general.layerSelection.title.Clone(),
+            () =>
+                new FilterView(State.state.filteredLayers).SetClass(
+                    "block p-1 rounded-full"
+                ),
+            undefined,
+            State.state.filterIsOpened
         );
+
+        const filterMapControlButton = new MapControlButton(Svg.filter_svg());
 
         const filterButton = new Toggle(
             filterView,
@@ -497,7 +489,7 @@ export class InitUiElements {
                 const flayer = {
                     isDisplayed: isDisplayed,
                     layerDef: layer,
-                    appliedFilters: new UIEventSource<TagsFilter>(undefined)
+                    appliedFilters: new UIEventSource<TagsFilter>(undefined),
                 };
                 flayers.push(flayer);
             }
@@ -534,7 +526,9 @@ export class InitUiElements {
             source,
             State.state.osmApiFeatureSource
         );
-        selectedFeatureHandler.zoomToSelectedFeature(State.state.locationControl);
+        selectedFeatureHandler.zoomToSelectedFeature(
+            State.state.locationControl
+        );
         return source;
     }
 
