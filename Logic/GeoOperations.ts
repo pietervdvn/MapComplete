@@ -322,7 +322,7 @@ export class GeoOperations {
                 if (value === undefined) {
                     line += ","
                 } else {
-                    line += JSON.stringify(value)+","
+                    line += JSON.stringify(value) + ","
                 }
             }
             lines.push(line)
@@ -334,7 +334,7 @@ export class GeoOperations {
 }
 
 
-class BBox {
+export class BBox {
 
     readonly maxLat: number;
     readonly maxLon: number;
@@ -357,33 +357,20 @@ class BBox {
         this.check();
     }
 
+    static fromLeafletBounds(bounds) {
+        return new BBox([[bounds.getWest(), bounds.getNorth()], [bounds.getEast(), bounds.getSouth()]])
+    }
+
     static get(feature) {
         if (feature.bbox?.overlapsWith === undefined) {
-
-            if (feature.geometry.type === "MultiPolygon") {
-                let coordinates = [];
-                for (const coorlist of feature.geometry.coordinates) {
-                    coordinates = coordinates.concat(coorlist[0]);
-                }
-                feature.bbox = new BBox(coordinates);
-            } else if (feature.geometry.type === "Polygon") {
-                feature.bbox = new BBox(feature.geometry.coordinates[0]);
-            } else if (feature.geometry.type === "LineString") {
-                feature.bbox = new BBox(feature.geometry.coordinates);
-            } else if (feature.geometry.type === "Point") {
-                // Point
-                feature.bbox = new BBox([feature.geometry.coordinates]);
-            } else {
-                throw "Cannot calculate bbox, unknown type " + feature.geometry.type;
-            }
+            const turfBbox: number[] = turf.bbox(feature)
+            feature.bbox = new BBox([[turfBbox[0], turfBbox[1]],[turfBbox[2], turfBbox[3]]]);
         }
 
         return feature.bbox;
     }
 
     public overlapsWith(other: BBox) {
-        this.check();
-        other.check();
         if (this.maxLon < other.minLon) {
             return false;
         }
@@ -395,6 +382,22 @@ class BBox {
         }
         return this.minLat <= other.maxLat;
 
+    }
+
+    public isContainedIn(other: BBox) {
+        if (this.maxLon > other.maxLon) {
+            return false;
+        }
+        if (this.maxLat > other.maxLat) {
+            return false;
+        }
+        if (this.minLon < other.minLon) {
+            return false;
+        }
+        if (this.minLat < other.minLat) {
+            return false
+        }
+        return true;
     }
 
     private check() {

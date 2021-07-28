@@ -45,8 +45,8 @@ export default class SplitRoadWizard extends Toggle {
         const roadElement = State.state.allElements.ContainingFeatures.get(id)
         const roadEventSource = new UIEventSource([{feature: roadElement, freshness: new Date()}]);
         // Datalayer displaying the road and the cut points (if any)
-        new ShowDataLayer(roadEventSource, miniMap.leafletMap, State.state.layoutToUse, false, true, "splitRoadWay");
-        new ShowDataLayer(splitPoints, miniMap.leafletMap, SplitRoadWizard.splitLayout, false, false, "splitRoad: splitpoints")
+        new ShowDataLayer(roadEventSource, miniMap.leafletMap, State.state.layoutToUse, false, true);
+        new ShowDataLayer(splitPoints, miniMap.leafletMap, SplitRoadWizard.splitLayout, false, false)
 
         /**
          * Handles a click on the overleaf map.

@@ -36,17 +36,7 @@ export default class LayerControlPanel extends ScrollableFullScreen {
             undefined,
             State.state.featureSwitchEnableExport
         ))
-        
 
-
-    elements.push(
-      new Toggle(
-        new DownloadPanel(),
-        undefined,
-        State.state.featureSwitchEnableExport
-      )
-    );
-
-    return new Combine(elements).SetClass("flex flex-col");
-  }
+        return new Combine(elements).SetClass("flex flex-col");
+    }
 }

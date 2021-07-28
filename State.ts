@@ -61,7 +61,7 @@ export default class State {
 
     public osmApiFeatureSource: OsmApiFeatureSource;
 
-    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([],"filteredLayers");
+    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([], "filteredLayers");
 
     /**
      The latest element that was selected
@@ -93,7 +93,7 @@ export default class State {
     public readonly featureSwitchFilter: UIEventSource<boolean>;
     public readonly featureSwitchEnableExport: UIEventSource<boolean>;
     public readonly featureSwitchFakeUser: UIEventSource<boolean>;
-
+    public readonly featureSwitchExportAsPdf: UIEventSource<boolean>;
 
     public featurePipeline: FeaturePipeline;
 
@@ -295,6 +295,17 @@ export default class State {
                 "Always show all questions"
             );
 
+            this.featureSwitchEnableExport = featSw(
+                "fs-export",
+                (layoutToUse) => layoutToUse?.enableExportButton ?? false,
+                "Enable the export as GeoJSON and CSV button"
+            );
+            this.featureSwitchExportAsPdf = featSw(
+                "fs-pdf",
+                (layoutToUse) => layoutToUse?.enablePdfDownload ?? false,
+                "Enable the PDF download button"
+            );
+
             this.featureSwitchIsTesting = QueryParameters.GetQueryParameter(
                 "test",
                 "false",
@@ -325,7 +336,6 @@ export default class State {
                 "osm",
                 "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'"
             );
-
 
 
             this.featureSwitchUserbadge.addCallbackAndRun(userbadge => {
@@ -372,9 +382,9 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
-        
+
         new ChangeToElementsActor(this.changes, this.allElements)
-        
+
         this.osmApiFeatureSource = new OsmApiFeatureSource()
 
         new PendingChangesUploader(this.changes, this.selectedElement);

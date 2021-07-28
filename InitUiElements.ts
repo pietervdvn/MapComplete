@@ -40,9 +40,9 @@ import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-import ExportPDF from "./Logic/Actors/ExportPDF";
 import {TagsFilter} from "./Logic/Tags/TagsFilter";
 import FilterView from "./UI/BigComponents/FilterView";
+import ExportPDF from "./UI/ExportPDF";
 
 export class InitUiElements {
     static InitAll(
@@ -198,7 +198,7 @@ export class InitUiElements {
                     State.state.leafletMap,
                     State.state.layoutToUse
                 ), {
-                    dontStyle : true
+                    dontStyle: true
                 }
             ),
             undefined,
@@ -206,28 +206,21 @@ export class InitUiElements {
         );
 
         const plus = new MapControlButton(
-                Svg.plus_zoom_svg()
+            Svg.plus_zoom_svg()
         ).onClick(() => {
             State.state.locationControl.data.zoom++;
             State.state.locationControl.ping();
         });
 
         const min = new MapControlButton(
-           Svg.min_zoom_svg()
+            Svg.min_zoom_svg()
         ).onClick(() => {
             State.state.locationControl.data.zoom--;
             State.state.locationControl.ping();
         });
 
-        const screenshot = new MapControlButton(
-            Svg.bug_svg(),
-        ).onClick(() => {
-            // Will already export
-          new ExportPDF("Screenshot", "natuurpunt");
-          
-        })
 
-        new Combine([plus, min, geolocationButton, screenshot].map(el => el.SetClass("m-0.5 md:m-1")))
+        new Combine([plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))
             .SetClass("flex flex-col")
             .AttachTo("bottom-right");
 
@@ -374,17 +367,17 @@ export class InitUiElements {
         );
 
 
-        const filterView = 
+        const filterView =
             new ScrollableFullScreen(
                 () => Translations.t.general.layerSelection.title.Clone(),
-                () => 
+                () =>
                     new FilterView(State.state.filteredLayers).SetClass(
                         "block p-1 rounded-full"
                     ),
                 undefined,
                 State.state.filterIsOpened
             );
-            
+
 
         const filterMapControlButton = new MapControlButton(
             Svg.filter_svg()
@@ -402,7 +395,26 @@ export class InitUiElements {
             State.state.featureSwitchFilter
         );
 
-        new Combine([copyrightButton, layerControl, filterControl])
+        const screenshot =
+            new Toggle(
+                new MapControlButton(
+                    Svg.download_svg(),
+                ).onClick(() => {
+                    // Will already export
+                    new ExportPDF(
+                        {
+                            freeDivId: "belowmap",
+                            background: State.state.backgroundLayer,
+                            location: State.state.locationControl,
+                            features: State.state.featurePipeline.features,
+                            layout: State.state.layoutToUse,
+                        }
+                    );
+
+                }), undefined, State.state.featureSwitchExportAsPdf)
+
+
+        new Combine([filterControl, layerControl, screenshot, copyrightButton,])
             .SetClass("flex flex-col")
             .AttachTo("bottom-left");
 

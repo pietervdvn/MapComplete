@@ -61,6 +61,9 @@
     "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback"
   },
   "general": {
+    "pdf": {
+      "attr": "Generated with MapComplete.osm.be - map data © OpenStreetMap Contributors, reusable under ODbL"
+    },
     "loginWithOpenStreetMap": "Login with OpenStreetMap",
     "welcomeBack": "You are logged in, welcome back!",
     "loginToStart": "Login to answer this question",
