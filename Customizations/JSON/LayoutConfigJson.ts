@@ -337,6 +337,6 @@ export interface LayoutConfigJson {
     enableBackgroundLayerSelection?: boolean;
     enableShowAllQuestions?: boolean;
     enableDownload?: boolean;  
-    enablePdfDownload: boolean;
+    enablePdfDownload?: boolean;
 
 }
