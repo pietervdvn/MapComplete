@@ -62,7 +62,10 @@
   },
   "general": {
     "pdf": {
-      "attr": "Generated with MapComplete.osm.be - map data © OpenStreetMap Contributors, reusable under ODbL"
+      "generatedWith": "Generated with MapComplete.osm.be",
+      "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
+      "attrBackground": "Background layer: {background}",
+      "versionInfo": "v{version} - generated on {date}"
     },
     "loginWithOpenStreetMap": "Login with OpenStreetMap",
     "welcomeBack": "You are logged in, welcome back!",

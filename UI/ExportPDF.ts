@@ -20,6 +20,8 @@ import BaseLayer from "../Models/BaseLayer";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import Translations from "./i18n/Translations";
+import State from "../State";
+import Constants from "../Models/Constants";
 
 export default class ExportPDF {
     // dimensions of the map in milimeter
@@ -100,7 +102,7 @@ export default class ExportPDF {
     }
 
     private cleanup() {
-        new FixedUiElement("Screenshot taken!").AttachTo(this.freeDivId)
+        //   new FixedUiElement("Screenshot taken!").AttachTo(this.freeDivId)
         this._screenhotTaken = true;
     }
 
@@ -124,28 +126,67 @@ export default class ExportPDF {
 
         doc.setDrawColor(255, 255, 255)
         doc.setFillColor(255, 255, 255)
-        doc.roundedRect(12, 5, 125, 30, 5, 5, 'FD')
+        doc.roundedRect(12, 10, 145, 25, 5, 5, 'FD')
 
         doc.setFontSize(20)
-        doc.text(layout.title.txt, 40, 20, {
-            maxWidth: 100
+        doc.textWithLink(layout.title.txt, 40, 18.5, {
+            maxWidth: 125,
+            url: window.location.href
         })
         doc.setFontSize(10)
-        doc.text(t.attr.txt, 40, 25, {
-            maxWidth: 100
+        doc.text(t.generatedWith.txt, 40, 23, {
+            maxWidth: 125
         })
+        const backgroundLayer : BaseLayer = State.state.backgroundLayer.data
+        const attribution = new FixedUiElement(backgroundLayer.layer().getAttribution() ?? backgroundLayer.name).ConstructElement().innerText
+        doc.textWithLink(t.attr.txt, 40, 26.5, {
+            maxWidth: 125,
+            url: "https://www.openstreetmap.org/copyright"
+        })
+
+        doc.text(t.attrBackground.Subs({
+            background: attribution
+        }).txt, 40, 30)
+
+        let date = new Date().toISOString().substr(0,16)
+        
+        doc.setFontSize(7)
+        doc.text(t.versionInfo.Subs({
+            version: Constants.vNumber,
+            date: date
+        }).txt, 40, 34, {
+            maxWidth: 125
+        })
+        
         // Add the logo of the layout
         let img = document.createElement('img');
         const imgSource = layout.icon
+        const imgType = imgSource.substr(imgSource.lastIndexOf(".") + 1);
         img.src = imgSource
-        try {
-            doc.addImage(img, imgSource.substr(imgSource.lastIndexOf(".")), 15, 12, 20, 20);
-        } catch (e) {
-            // TODO: support svg rendering...
-            console.error(e)
+        console.log(imgType)
+        if (imgType.toLowerCase() === "svg") {
+            new FixedUiElement("").AttachTo(this.freeDivId)
+
+            // This is an svg image, we use the canvas to convert it to a png
+            const canvas = document.createElement('canvas')
+            const ctx = canvas.getContext('2d');
+            canvas.width = 500
+            canvas.height = 500
+            img.style.width = "100%"
+            img.style.height = "100%"
+            ctx.drawImage(img, 0, 0, 500, 500);
+            const base64img = canvas.toDataURL("image/png")
+            doc.addImage(base64img, 'png', 15, 12, 20, 20);
+
+        } else {
+            try {
+                doc.addImage(img, imgType, 15, 12, 20, 20);
+            } catch (e) {
+                console.error(e)
+            }
         }
 
-        doc.save("MapComplete_export.pdf");
+        doc.save(`MapComplete_${layout.title.txt}_${date}.pdf`);
 
 
     }

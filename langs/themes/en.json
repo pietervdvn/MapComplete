@@ -1108,6 +1108,10 @@
                                 "then": "This is not a cyclestreet."
                             }
                         }
+                    },
+                    "2": {
+                        "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
+                        "question": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured from kerb to kerb, including parking lanes</span>"
                     }
                 }
             },

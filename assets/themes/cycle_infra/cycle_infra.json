@@ -633,11 +633,15 @@
           },
           "freeform": {
             "key": "width:carriageway",
-            "type": "length", "helperArgs": ["20", "map"]
+            "type": "length",
+            "helperArgs": [
+              "20",
+              "map"
+            ]
           },
           "question": {
-            "en": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured from kerb to kerb, including parking lanes</span>",
-            "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Gemeten van stoepsteen tot stoepsten, inclusief parkeerstroken</span>"
+            "en": "What is the carriage width of this road (in meters)?",
+            "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
           }
         },
         {
@@ -971,7 +975,11 @@
           },
           "freeform": {
             "key": "cycleway:buffer",
-            "type": "length", "helperArgs": ["20", "map"]
+            "type": "length",
+            "helperArgs": [
+              "20",
+              "map"
+            ]
           }
         },
         {
@@ -1308,7 +1316,11 @@
           },
           "freeform": {
             "key": "width:carriageway",
-            "type": "length", "helperArgs": ["20", "map"]
+            "type": "length",
+            "helperArgs": [
+              "20",
+              "map"
+            ]
           },
           "question": {
             "en": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured from kerb to kerb, including parking lanes</span>",
@@ -1509,7 +1521,11 @@
           },
           "freeform": {
             "key": "maxwidth:physical",
-            "type": "length", "helperArgs": ["20", "map"]
+            "type": "length",
+            "helperArgs": [
+              "20",
+              "map"
+            ]
           }
         },
         {
@@ -1529,8 +1545,11 @@
           },
           "freeform": {
             "key": "width:seperation",
-            "type": "length", 
-            "helperArgs": ["20", "map"]
+            "type": "length",
+            "helperArgs": [
+              "20",
+              "map"
+            ]
           }
         },
         {

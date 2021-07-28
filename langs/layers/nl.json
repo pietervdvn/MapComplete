@@ -2364,12 +2364,6 @@
                     }
                 }
             }
-        },
-        "presets": {
-            "0": {
-                "title": "Paden",
-                "description": "Voeg een ontbrekend, erkend pad toe."
-            }
         }
     }
 }
