@@ -69,7 +69,7 @@
             },
             "then": {
               "nl": "Fietsweg",
-              "en": "Bike road"
+              "en": "Cycleway"
             }
           },
           {
@@ -89,7 +89,7 @@
           {
             "if": "cycleway=track",
             "then": {
-              "en": "Bike road next to the road",
+              "en": "Cycleway next to the road",
               "nl": "Fietsweg naast de weg"
             }
           },
@@ -219,7 +219,7 @@
               "if": "cyclestreet=yes",
               "then": {
                 "en": "This is a cyclestreet, and a 30km/h zone.",
-                "nl": "Dit is een fietstraat, en dus een 30km/h zone"
+                "nl": "Dit is een fietsstraat, en dus een 30km/h zone"
               },
               "addExtraTags": [
                 "overtaking:motor_vehicle=no",
@@ -231,7 +231,7 @@
               "if": "cyclestreet=yes",
               "then": {
                 "en": "This is a cyclestreet",
-                "nl": "Dit is een fietstraat"
+                "nl": "Dit is een fietsstraat"
               },
               "hideInAnswer": "_country=be"
             },
@@ -664,8 +664,8 @@
             {
               "if": "cycleway:traffic_sign~BE:D7;.*",
               "then": {
-                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
-                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                "en": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
+                "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
               },
               "hideInAnswer": true
             },
@@ -1274,7 +1274,7 @@
               "if": "cyclestreet=yes",
               "then": {
                 "en": "This is a cyclestreet, and a 30km/h zone.",
-                "nl": "Dit is een fietstraat, en dus een 30km/h zone"
+                "nl": "Dit is een fietsstraat, en dus een 30km/h zone"
               },
               "addExtraTags": [
                 "overtaking:motor_vehicle=no",
@@ -1286,7 +1286,7 @@
               "if": "cyclestreet=yes",
               "then": {
                 "en": "This is a cyclestreet",
-                "nl": "Dit is een fietstraat"
+                "nl": "Dit is een fietsstraat"
               },
               "hideInAnswer": "_country=be"
             },

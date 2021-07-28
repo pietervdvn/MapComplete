@@ -31,7 +31,10 @@
       },
       {
         "if": {
-          "or": ["toilets:position=urinals", "toilets:position=urinal"]
+          "or": [
+            "toilets:position=urinals",
+            "toilets:position=urinal"
+          ]
         },
         "then": "./assets/layers/toilet/urinal.svg"
       }

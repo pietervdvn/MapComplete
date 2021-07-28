@@ -35,7 +35,10 @@ export default class AllDownloads extends ScrollableFullScreen {
         }
 
         const pdf = new Toggle(
-            new SubtleButton(Svg.floppy_ui(), Translations.t.general.download.downloadAsPdf.Clone().SetClass("font-bold"),)
+            new SubtleButton(Svg.floppy_ui(),
+                new Combine([Translations.t.general.download.downloadAsPdf.Clone().SetClass("font-bold"),
+                    Translations.t.general.download.downloadAsPdfHelper.Clone()]
+                    ).SetClass("flex flex-col"))
                 .onClick(generatePdf),
             undefined,
 
