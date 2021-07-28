@@ -86,7 +86,6 @@ The core strings and builtin themes of MapComplete are translated on [Hosted Web
 You can easily make an account and start translating in their web-environment - no installation required.
 
 [![Translation status](https://hosted.weblate.org/widgets/mapcomplete/-/multi-blue.svg)](https://hosted.weblate.org/engage/mapcomplete/)
-[![Translation status](https://hosted.weblate.org/widgets/mapcomplete/-/multi-blue.svg)](https://hosted.weblate.org/engage/mapcomplete/)
 
 
 ## Architecture
