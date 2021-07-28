@@ -168,19 +168,5 @@
   },
   "color": {
     "render": "#FFC0CB"
-  },
-  "presets": [
-    {
-      "tags": [
-        "man_made=watermill",
-        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
-      ],
-      "title": {
-        "nl": "Paden"
-      },
-      "description": {
-        "nl": "Voeg een ontbrekend, erkend pad toe."
-      }
-    }
-  ]
+  }
 }

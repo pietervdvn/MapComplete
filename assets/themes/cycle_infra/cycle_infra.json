@@ -633,12 +633,11 @@
           },
           "freeform": {
             "key": "width:carriageway",
-            "addExtraTags": [],
-            "type": "pfloat"
+            "type": "length", "helperArgs": ["20", "map"]
           },
           "question": {
-            "en": "What is the carriage width of this road (in meters)?",
-            "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
+            "en": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured from kerb to kerb, including parking lanes</span>",
+            "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Gemeten van stoepsteen tot stoepsten, inclusief parkeerstroken</span>"
           }
         },
         {
@@ -972,7 +971,7 @@
           },
           "freeform": {
             "key": "cycleway:buffer",
-            "type": "pfloat"
+            "type": "length", "helperArgs": ["20", "map"]
           }
         },
         {
@@ -1301,6 +1300,20 @@
               ]
             }
           ]
+        },
+        {
+          "render": {
+            "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
+            "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+          },
+          "freeform": {
+            "key": "width:carriageway",
+            "type": "length", "helperArgs": ["20", "map"]
+          },
+          "question": {
+            "en": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured from kerb to kerb, including parking lanes</span>",
+            "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Gemeten van stoepsteen tot stoepsten, inclusief parkeerstroken</span>"
+          }
         }
       ]
     },
@@ -1496,7 +1509,7 @@
           },
           "freeform": {
             "key": "maxwidth:physical",
-            "type": "pfloat"
+            "type": "length", "helperArgs": ["20", "map"]
           }
         },
         {
@@ -1516,7 +1529,8 @@
           },
           "freeform": {
             "key": "width:seperation",
-            "type": "pfloat"
+            "type": "length", 
+            "helperArgs": ["20", "map"]
           }
         },
         {

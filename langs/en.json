@@ -165,7 +165,7 @@
       "downloadAsPdf": "Download a PDF of the current map",
       "downloadAsPdfHelper": "Ideal to print the current map",
       "downloadGeojson": "Download visible data as geojson",
-      "downloadGeoJsonHelper": "Compatible with QGIS, OsmAnd, ArcGIS, ESRI, ...",
+      "downloadGeoJsonHelper": "Compatible with QGIS, ArcGIS, ESRI, ...",
       "downloadCSV": "Download visible data as CSV",
       "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, ...",
       "includeMetaData": "Include metadata (last editor, calculated values, ...)",
