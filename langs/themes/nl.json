@@ -798,7 +798,7 @@
                                 "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                                "then": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "2": {
                                 "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"

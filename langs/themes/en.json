@@ -936,7 +936,7 @@
                                 "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+                                "then": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
                             },
                             "2": {
                                 "then": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
