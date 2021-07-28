@@ -35,7 +35,7 @@ export default class DeleteConfig {
             }
         })
         
-        this.softDeletionTags = null;
+        this.softDeletionTags = undefined;
         if(json.softDeletionTags !== undefined){
             this.softDeletionTags =  FromJSON.Tag(json.softDeletionTags,`${context}.softDeletionTags`)
 
