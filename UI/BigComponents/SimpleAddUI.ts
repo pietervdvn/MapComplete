@@ -238,7 +238,7 @@ export default class SimpleAddUI extends Toggle {
         const allButtons = [];
         for (const layer of State.state.filteredLayers.data) {
 
-            if (layer.isDisplayed.data === false && State.state.featureSwitchFilter.data) {
+            if (layer.isDisplayed.data === false && !State.state.featureSwitchFilter.data) {
                 // The layer is not displayed and we cannot enable the layer control -> we skip
                 continue;
             }
