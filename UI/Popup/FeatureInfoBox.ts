@@ -63,13 +63,15 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             }
             return new EditableTagRendering(tags, tr, layerConfig.units);
         });
+        
+        let editElements : BaseUIElement[] = []
         if (!questionBoxIsUsed) {
-            renderings.push(questionBox);
+            editElements.push(questionBox);
         }
 
 
         if (layerConfig.deletion) {
-            renderings.push(
+            editElements.push(
                 new VariableUiElement(tags.map(tags => tags.id).map(id =>
                     new DeleteWizard(
                         id,
@@ -79,7 +81,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         }
 
         if (layerConfig.allowSplit) {
-            renderings.push(
+            editElements.push(
                 new VariableUiElement(tags.map(tags => tags.id).map(id =>
                     new SplitRoadWizard(id))
                 ))
@@ -91,7 +93,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
 
-        renderings.push(
+        editElements.push(
             new VariableUiElement(
                 State.state.osmConnection.userDetails
                     .map(ud => ud.csCount)
@@ -109,7 +111,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         )
 
 
-        renderings.push(
+        editElements.push(
             new VariableUiElement(
                 State.state.featureSwitchIsDebugging.map(isDebugging => {
                     if (isDebugging) {
@@ -119,6 +121,16 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 })
             )
         )
+        
+        const editors = new VariableUiElement(State.state.featureSwitchUserbadge.map(
+            userbadge => {
+                if(!userbadge){
+                    return undefined
+                }
+                return new Combine(editElements)
+            }
+        ))
+        renderings.push(editors)
 
         return new Combine(renderings).SetClass("block")
 

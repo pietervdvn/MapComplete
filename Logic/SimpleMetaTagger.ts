@@ -305,7 +305,7 @@ export default class SimpleMetaTagger {
             } else if (_otherParkingMode.matchesProperties(properties)) {
                 parallelParkingCount = 0;
             } else {
-                console.log("No parking data for ", properties.name, properties.id, properties)
+                console.log("No parking data for ", properties.name, properties.id)
             }
 
 

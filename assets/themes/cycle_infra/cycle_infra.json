@@ -23,7 +23,7 @@
   "startLat": 51,
   "startLon": 3.75,
   "startZoom": 11,
-  "widenFactor": 0.05,
+  "widenFactor": 0.0,
   "socialImage": "./assets/themes/cycle_infra/cycle-infra.svg",
   "enableDownload": true,
   "layers": [
@@ -33,7 +33,7 @@
         "en": "Cycleways",
         "nl": "Fietspaden"
       },
-      "minzoom": 14,
+      "minzoom": 16,
       "source": {
         "osmTags": {
           "or": [
@@ -1151,7 +1151,7 @@
       "calculatedTags": [
         "_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')"
       ],
-      "minzoom": 14,
+      "minzoom": 16,
       "wayHandling": 0,
       "title": {
         "render": {

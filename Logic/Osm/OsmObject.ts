@@ -437,6 +437,9 @@ export class OsmWay extends OsmObject {
 
         for (const nodeId of element.nodes) {
             const node = nodeDict.get(nodeId)
+            if(node === undefined){
+                console.error("Error: node ", nodeId, "not found in ", nodeDict)
+            }
             const cp = node.centerpoint();
             this.coordinates.push(cp);
             latSum = cp[0]

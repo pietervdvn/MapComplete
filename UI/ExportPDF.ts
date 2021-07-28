@@ -29,6 +29,7 @@ export default class ExportPDF {
     private readonly scaling = 2
     private readonly freeDivId: string;
     private readonly _layout: UIEventSource<LayoutConfig>;
+    private _screenhotTaken = false;
 
     constructor(
         options: {
@@ -48,21 +49,24 @@ export default class ExportPDF {
 
         const l = options.location.data;
         const loc = {
-            lat : l.lat,
+            lat: l.lat,
             lon: l.lon,
             zoom: l.zoom + 1
         }
-        
+
         const minimap = new Minimap({
             location: new UIEventSource<Loc>(loc), // We remove the link between the old and the new UI-event source as moving the map while the export is running fucks up the screenshot
             background: options.background,
             allowMoving: false,
             onFullyLoaded: leaflet => window.setTimeout(() => {
-                try{
-                self.CreatePdf(leaflet)
-                    .then(() => self.cleanup())
-                    .catch(() => self.cleanup())
-                }catch(e){
+                if (self._screenhotTaken) {
+                    return;
+                }
+                try {
+                    self.CreatePdf(leaflet)
+                        .then(() => self.cleanup())
+                        .catch(() => self.cleanup())
+                } catch (e) {
                     console.error(e)
                     self.cleanup()
                 }
@@ -94,9 +98,10 @@ export default class ExportPDF {
         )
 
     }
-    
-    private cleanup(){
+
+    private cleanup() {
         new FixedUiElement("Screenshot taken!").AttachTo(this.freeDivId)
+        this._screenhotTaken = true;
     }
 
     private async CreatePdf(leaflet: L.Map) {
@@ -122,7 +127,8 @@ export default class ExportPDF {
         doc.roundedRect(12, 5, 125, 30, 5, 5, 'FD')
 
         doc.setFontSize(20)
-        doc.text(layout.title.txt, 40, 20, {  maxWidth: 100
+        doc.text(layout.title.txt, 40, 20, {
+            maxWidth: 100
         })
         doc.setFontSize(10)
         doc.text(t.attr.txt, 40, 25, {
@@ -141,6 +147,6 @@ export default class ExportPDF {
 
         doc.save("MapComplete_export.pdf");
 
-     
+
     }
 }
