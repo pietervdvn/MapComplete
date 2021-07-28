@@ -703,7 +703,7 @@
                     "render": "Cycleways",
                     "mappings": {
                         "0": {
-                            "then": "Bike road"
+                            "then": "Cycleway"
                         },
                         "1": {
                             "then": "Shared lane"
@@ -712,7 +712,7 @@
                             "then": "Bike lane"
                         },
                         "3": {
-                            "then": "Bike road next to the road"
+                            "then": "Cycleway next to the road"
                         },
                         "4": {
                             "then": "Cyclestreet"

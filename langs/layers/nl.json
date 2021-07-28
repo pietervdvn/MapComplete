@@ -837,7 +837,7 @@
                         "then": "Dit is een zebrapad"
                     },
                     "1": {
-                        "then": "Dit is niet een zebrapad"
+                        "then": "Dit is geen zebrapad"
                     }
                 }
             },
@@ -848,7 +848,7 @@
                         "then": "Een fietser kan deze oversteekplaats gebruiken"
                     },
                     "1": {
-                        "then": "Een fietser kan niet deze oversteekplaats gebruiken"
+                        "then": "Een fietser kan deze oversteekplaats niet gebruiken"
                     }
                 }
             },
@@ -859,7 +859,7 @@
                         "then": "Deze oversteekplaats heeft een verkeerseiland in het midden"
                     },
                     "1": {
-                        "then": "Deze oversteekplaats heeft niet een verkeerseiland in het midden"
+                        "then": "Deze oversteekplaats heeft geen verkeerseiland in het midden"
                     }
                 }
             },
@@ -870,7 +870,7 @@
                         "then": "Deze oversteekplaats heeft een geleidelijn"
                     },
                     "1": {
-                        "then": "Deze oversteekplaats heeft niet een geleidelijn"
+                        "then": "Deze oversteekplaats heeft geen geleidelijn"
                     },
                     "2": {
                         "then": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
@@ -884,7 +884,7 @@
                         "then": "Dit verkeerslicht heeft een knop voor groen licht"
                     },
                     "1": {
-                        "then": "Dit verkeerlicht heeft niet een knop voor groen licht"
+                        "then": "Dit verkeerlicht heeft geen knop voor groen licht"
                     }
                 }
             },
