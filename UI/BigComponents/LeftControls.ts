@@ -27,19 +27,20 @@ export default class LeftControls extends Combine {
         
         const copyrightButton = new Toggle(
             toggledCopyright,
-            new MapControlButton(Svg.copyright_svg()),
+            new MapControlButton(Svg.copyright_svg())
+                .onClick(() => toggledCopyright.isShown.setData(true)),
             toggledCopyright.isShown
         )
-            .ToggleOnClick()
             .SetClass("p-0.5");
 
         const toggledDownload = new Toggle(
             new AllDownloads(
                 State.state.downloadControlIsOpened
             ).SetClass("block p-1 rounded-full"),
-            new MapControlButton(Svg.download_svg()),
+            new MapControlButton(Svg.download_svg())
+                .onClick(() => State.state.downloadControlIsOpened.setData(true)),
             State.state.downloadControlIsOpened
-        ).ToggleOnClick();
+        )
 
         const downloadButtonn = new Toggle(
             toggledDownload,
@@ -59,9 +60,10 @@ export default class LeftControls extends Combine {
                 undefined,
                 State.state.filterIsOpened
             ),
-            new MapControlButton(Svg.filter_svg()),
+            new MapControlButton(Svg.filter_svg())
+                .onClick(() =>   State.state.filterIsOpened.setData(true)),
             State.state.filterIsOpened
-        ).ToggleOnClick();
+        )
 
         const filterButton = new Toggle(
             toggledFilter,
