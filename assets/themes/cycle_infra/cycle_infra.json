@@ -656,24 +656,24 @@
             {
               "if": "cycleway:traffic_sign=BE:D7",
               "then": {
-                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>",
-                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
+                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be"
             },
             {
               "if": "cycleway:traffic_sign~BE:D7;.*",
               "then": {
-                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'> ",
-                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
+                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
               },
               "hideInAnswer": true
             },
             {
               "if": "cycleway:traffic_sign=BE:D9",
               "then": {
-                "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>",
-                "nl": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>",
+                "nl": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -684,8 +684,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D10",
               "then": {
-                "en": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>",
-                "nl": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                "en": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>",
+                "nl": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -717,8 +717,8 @@
             {
               "if": "traffic_sign=BE:D7",
               "then": {
-                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>",
-                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
+                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -731,16 +731,16 @@
             {
               "if": "traffic_sign~BE:D7;.*",
               "then": {
-                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'> ",
-                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
+                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
               },
               "hideInAnswer": true
             },
             {
               "if": "traffic_sign=BE:D9",
               "then": {
-                "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>",
-                "nl": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>",
+                "nl": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -755,8 +755,8 @@
             {
               "if": "traffic_sign=BE:D10",
               "then": {
-                "en": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>",
-                "nl": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                "en": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>",
+                "nl": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -779,8 +779,8 @@
         },
         {
           "question": {
-            "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) have a supplementary sign?",
-            "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) een onderbord?"
+            "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
+            "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
           },
           "condition": {
             "or": [
@@ -792,8 +792,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D7;BE:M6",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -803,8 +803,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D7;BE:M13",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -814,8 +814,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D7;BE:M14",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -826,8 +826,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D7;BE:M7",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -837,8 +837,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D7;BE:M15",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -848,8 +848,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D7;BE:M16",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -868,8 +868,8 @@
         },
         {
           "question": {
-            "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) have a supplementary sign?",
-            "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) een onderbord?"
+            "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
+            "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
           },
           "condition": {
             "or": [
@@ -881,8 +881,8 @@
             {
               "if": "traffic_sign=BE:D7;BE:M6",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -892,8 +892,8 @@
             {
               "if": "traffic_sign=BE:D7;BE:M13",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -903,8 +903,8 @@
             {
               "if": "traffic_sign=BE:D7;BE:M14",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -915,8 +915,8 @@
             {
               "if": "traffic_sign=BE:D7;BE:M7",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -926,8 +926,8 @@
             {
               "if": ":traffic_sign=BE:D7;BE:M15",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -937,8 +937,8 @@
             {
               "if": "traffic_sign=BE:D7;BE:M16",
               "then": {
-                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='height: 3em'>",
-                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='height: 3em'>"
+                "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>",
+                "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [

@@ -795,16 +795,16 @@
                         "question": "Welk verkeersbord heeft dit fietspad?",
                         "mappings": {
                             "0": {
-                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "2": {
-                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
                             },
                             "3": {
-                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
                             },
                             "4": {
                                 "then": "Geen verkeersbord aanwezig"
@@ -815,16 +815,16 @@
                         "question": "Welk verkeersbord heeft dit fietspad?",
                         "mappings": {
                             "0": {
-                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "2": {
-                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
                             },
                             "3": {
-                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
                             },
                             "4": {
                                 "then": "Geen verkeersbord aanwezig"
@@ -832,25 +832,25 @@
                         }
                     },
                     "11": {
-                        "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) een onderbord?",
+                        "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
                         "mappings": {
                             "0": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
                             },
                             "2": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
                             },
                             "3": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
                             },
                             "4": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
                             },
                             "5": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
                             },
                             "6": {
                                 "then": "Geen onderbord aanwezig"
@@ -858,25 +858,25 @@
                         }
                     },
                     "12": {
-                        "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) een onderbord?",
+                        "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
                         "mappings": {
                             "0": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
                             },
                             "2": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
                             },
                             "3": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
                             },
                             "4": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
                             },
                             "5": {
-                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='height: 3em'>"
+                                "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
                             },
                             "6": {
                                 "then": "Geen onderbord aanwezig"
