@@ -15,6 +15,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import State from "../../State";
 import FilteredLayer from "../../Models/FilteredLayer";
+import BackgroundSelector from "./BackgroundSelector";
 
 
 /**
@@ -23,9 +24,14 @@ import FilteredLayer from "../../Models/FilteredLayer";
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>) {
+        const backgroundSelector =  new Toggle(
+            new BackgroundSelector(),
+            undefined,
+            State.state.featureSwitchBackgroundSlection
+        )
         super(
             filteredLayer.map((filteredLayers) =>
-                filteredLayers?.map(l => FilterView.createOneFilteredLayerElement(l))
+                filteredLayers?.map(l => FilterView.createOneFilteredLayerElement(l)).concat(backgroundSelector)
             )
         );
     }

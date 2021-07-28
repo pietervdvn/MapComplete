@@ -10,7 +10,6 @@ import SimpleAddUI from "./UI/BigComponents/SimpleAddUI";
 import CenterMessageBox from "./UI/CenterMessageBox";
 import UserBadge from "./UI/BigComponents/UserBadge";
 import SearchAndGo from "./UI/BigComponents/SearchAndGo";
-import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
 import Svg from "./Svg";
@@ -23,26 +22,22 @@ import UserDetails from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/BigComponents/Attribution";
 import LayerResetter from "./Logic/Actors/LayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
-import LayerControlPanel from "./UI/BigComponents/LayerControlPanel";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import ScrollableFullScreen from "./UI/Base/ScrollableFullScreen";
 import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
-import Combine from "./UI/Base/Combine";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
 import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
-import AttributionPanel from "./UI/BigComponents/AttributionPanel";
-import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import {TagsFilter} from "./Logic/Tags/TagsFilter";
-import FilterView from "./UI/BigComponents/FilterView";
-import ExportPDF from "./UI/ExportPDF";
+import LeftControls from "./UI/BigComponents/LeftControls";
+import RightControls from "./UI/BigComponents/RightControls";
 
 export class InitUiElements {
     static InitAll(
@@ -191,42 +186,11 @@ export class InitUiElements {
                 marker.addTo(State.state.leafletMap.data);
             });
 
-        const geolocationButton = new Toggle(
-            new MapControlButton(
-                new GeoLocationHandler(
-                    State.state.currentGPSLocation,
-                    State.state.leafletMap,
-                    State.state.layoutToUse
-                ), {
-                    dontStyle: true
-                }
-            ),
-            undefined,
-            State.state.featureSwitchGeolocation
-        );
-
-        const plus = new MapControlButton(
-            Svg.plus_zoom_svg()
-        ).onClick(() => {
-            State.state.locationControl.data.zoom++;
-            State.state.locationControl.ping();
-        });
-
-        const min = new MapControlButton(
-            Svg.min_zoom_svg()
-        ).onClick(() => {
-            State.state.locationControl.data.zoom--;
-            State.state.locationControl.ping();
-        });
-
-
-        new Combine([plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))
-            .SetClass("flex flex-col")
-            .AttachTo("bottom-right");
 
         if (layoutToUse.id === personal.id) {
             updateFavs();
         }
+
         InitUiElements.setupAllLayerElements();
 
         if (layoutToUse.id === personal.id) {
@@ -329,105 +293,6 @@ export class InitUiElements {
             Hash.hash.data === "" ||
             Hash.hash.data == "welcome"
         );
-    }
-
-    private static InitLayerSelection(featureSource: FeatureSource) {
-        const copyrightNotice = new ScrollableFullScreen(
-            () => Translations.t.general.attribution.attributionTitle.Clone(),
-            () =>
-                new AttributionPanel(
-                    State.state.layoutToUse,
-                    new ContributorCount(featureSource).Contributors
-                ),
-            "copyright"
-        );
-
-        const copyrightButton = new Toggle(
-            copyrightNotice,
-            new MapControlButton(Svg.copyright_svg()),
-            copyrightNotice.isShown
-        )
-            .ToggleOnClick()
-            .SetClass("p-0.5");
-
-        const layerControlPanel = new LayerControlPanel(
-            State.state.layerControlIsOpened
-        ).SetClass("block p-1 rounded-full");
-
-        const layerControlButton = new Toggle(
-            layerControlPanel,
-            new MapControlButton(Svg.layers_svg()),
-            State.state.layerControlIsOpened
-        ).ToggleOnClick();
-
-        const layerControl = new Toggle(
-            layerControlButton,
-            "",
-            State.state.featureSwitchLayers
-        );
-
-
-        const filterView =
-            new ScrollableFullScreen(
-                () => Translations.t.general.layerSelection.title.Clone(),
-                () =>
-                    new FilterView(State.state.filteredLayers).SetClass(
-                        "block p-1 rounded-full"
-                    ),
-                undefined,
-                State.state.filterIsOpened
-            );
-
-
-        const filterMapControlButton = new MapControlButton(
-            Svg.filter_svg()
-        );
-
-        const filterButton = new Toggle(
-            filterView,
-            filterMapControlButton,
-            State.state.filterIsOpened
-        ).ToggleOnClick();
-
-        const filterControl = new Toggle(
-            filterButton,
-            undefined,
-            State.state.featureSwitchFilter
-        );
-
-        const screenshot =
-            new Toggle(
-                new MapControlButton(
-                    Svg.download_svg(),
-                ).onClick(() => {
-                    // Will already export
-                    new ExportPDF(
-                        {
-                            freeDivId: "belowmap",
-                            background: State.state.backgroundLayer,
-                            location: State.state.locationControl,
-                            features: State.state.featurePipeline.features,
-                            layout: State.state.layoutToUse,
-                        }
-                    );
-
-                }), undefined, State.state.featureSwitchExportAsPdf)
-
-
-        new Combine([filterControl, layerControl, screenshot, copyrightButton,])
-            .SetClass("flex flex-col")
-            .AttachTo("bottom-left");
-
-        State.state.locationControl.addCallback(() => {
-            // Close the layer selection when the map is moved
-            layerControlButton.isEnabled.setData(false);
-            copyrightButton.isEnabled.setData(false);
-        });
-
-        State.state.selectedElement.addCallbackAndRunD((_) => {
-            layerControlButton.isEnabled.setData(false);
-            copyrightButton.isEnabled.setData(false);
-        });
     }
 
     private static InitBaseMap() {
@@ -561,7 +426,9 @@ export class InitUiElements {
         // ------------- Setup the layers -------------------------------
 
         const source = InitUiElements.InitLayers();
-        InitUiElements.InitLayerSelection(source);
+
+        new LeftControls(source).AttachTo("bottom-left");
+        new RightControls().AttachTo("bottom-right");
 
         // ------------------ Setup various other UI elements ------------
 

@@ -162,6 +162,7 @@
     },
     "download": {
       "title": "Download visible data",
+      "downloadAsPdf": "Download a PDF of the current map",
       "downloadGeojson": "Download visible data as geojson",
       "downloadGeoJsonHelper": "Compatible with QGIS, OsmAnd, ArcGIS, ESRI, ...",
       "downloadCSV": "Download as CSV",

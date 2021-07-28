@@ -79,7 +79,7 @@ export default class State {
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
-    public readonly featureSwitchLayers: UIEventSource<boolean>;
+    public readonly featureSwitchBackgroundSlection: UIEventSource<boolean>;
     public readonly featureSwitchAddNew: UIEventSource<boolean>;
     public readonly featureSwitchWelcomeMessage: UIEventSource<boolean>;
     public readonly featureSwitchIframe: UIEventSource<boolean>;
@@ -125,11 +125,11 @@ export default class State {
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
-    public layerControlIsOpened: UIEventSource<boolean> =
+    public downloadControlIsOpened: UIEventSource<boolean> =
         QueryParameters.GetQueryParameter(
-            "layer-control-toggle",
+            "download-control-toggle",
             "false",
-            "Whether or not the layer control is shown"
+            "Whether or not the download panel is shown"
         ).map<boolean>(
             (str) => str !== "false",
             [],
@@ -249,11 +249,12 @@ export default class State {
                 (layoutToUse) => layoutToUse?.enableSearch ?? true,
                 "Disables/Enables the search bar"
             );
-            this.featureSwitchLayers = featSw(
-                "fs-layers",
-                (layoutToUse) => layoutToUse?.enableLayers ?? true,
-                "Disables/Enables the layer control"
+            this.featureSwitchBackgroundSlection = featSw(
+                "fs-background",
+                (layoutToUse) => layoutToUse?.enableBackgroundLayerSelection ?? true,
+                "Disables/Enables the background layer control"
             );
+            
             this.featureSwitchFilter = featSw(
                 "fs-filter",
                 (layoutToUse) => layoutToUse?.enableLayers ?? true,
