@@ -1,18 +1,18 @@
-import { FixedUiElement } from "./UI/Base/FixedUiElement";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Toggle from "./UI/Input/Toggle";
-import { Basemap } from "./UI/BigComponents/Basemap";
+import {Basemap} from "./UI/BigComponents/Basemap";
 import State from "./State";
 import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
-import { UIEventSource } from "./Logic/UIEventSource";
-import { QueryParameters } from "./Logic/Web/QueryParameters";
+import {UIEventSource} from "./Logic/UIEventSource";
+import {QueryParameters} from "./Logic/Web/QueryParameters";
 import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
 import SimpleAddUI from "./UI/BigComponents/SimpleAddUI";
 import CenterMessageBox from "./UI/CenterMessageBox";
 import UserBadge from "./UI/BigComponents/UserBadge";
 import SearchAndGo from "./UI/BigComponents/SearchAndGo";
 import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
-import { LocalStorageSource } from "./Logic/Web/LocalStorageSource";
-import { Utils } from "./Utils";
+import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
+import {Utils} from "./Utils";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personal/personal.json";
@@ -33,14 +33,14 @@ import MapControlButton from "./UI/MapControlButton";
 import Combine from "./UI/Base/Combine";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
-import { LayoutConfigJson } from "./Customizations/JSON/LayoutConfigJson";
+import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-import { TagsFilter } from "./Logic/Tags/TagsFilter";
+import {TagsFilter} from "./Logic/Tags/TagsFilter";
 import FilterView from "./UI/BigComponents/FilterView";
 
 export class InitUiElements {
@@ -57,7 +57,8 @@ export class InitUiElements {
                 `Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`
             )
                 .AttachTo("centermessage")
-                .onClick(() => {});
+                .onClick(() => {
+                });
             throw "Incorrect layout";
         }
 
@@ -184,7 +185,7 @@ export class InitUiElements {
                     iconSize: [30, 30],
                     iconAnchor: [15, 15],
                 });
-                const marker = L.marker([home.lat, home.lon], { icon: icon });
+                const marker = L.marker([home.lat, home.lon], {icon: icon});
                 marker.addTo(State.state.leafletMap.data);
             });
 
@@ -323,8 +324,8 @@ export class InitUiElements {
         });
         isOpened.setData(
             Hash.hash.data === undefined ||
-                Hash.hash.data === "" ||
-                Hash.hash.data == "welcome"
+            Hash.hash.data === "" ||
+            Hash.hash.data == "welcome"
         );
     }
 
