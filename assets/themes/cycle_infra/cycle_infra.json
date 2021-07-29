@@ -709,8 +709,8 @@
             {
               "if": "cycleway:traffic_sign~BE:D7;.*",
               "then": {
-                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
-                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                "en": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
+                "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
               },
               "hideInAnswer": true
             },
@@ -776,8 +776,8 @@
             {
               "if": "traffic_sign~BE:D7;.*",
               "then": {
-                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
-                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                "en": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
+                "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
               },
               "hideInAnswer": true
             },
