@@ -687,39 +687,42 @@
                         "render": "Dit fietspad is gemaakt van {cycleway:surface}",
                         "mappings": {
                             "0": {
-                                "then": "Dit fietspad is gemaakt van hout"
-                            },
-                            "1": {
-                                "then": "Dit fietspad is gemaakt van beton"
-                            },
-                            "2": {
-                                "then": "Dit fietspad is gemaakt van kasseien"
-                            },
-                            "3": {
-                                "then": "Dit fietspad is gemaakt van asfalt"
-                            },
-                            "4": {
-                                "then": "Dit fietspad is geplaveid"
-                            },
-                            "5": {
-                                "then": "Dit fietspad is geplaveid met stenen"
-                            },
-                            "6": {
-                                "then": "Dit fietspad is gemaakt van grind"
-                            },
-                            "7": {
                                 "then": "Dit fietspad is onverhard"
                             },
+                            "1": {
+                                "then": "Dit fietspad is geplaveid"
+                            },
+                            "2": {
+                                "then": "Dit fietspad is gemaakt van asfalt"
+                            },
+                            "3": {
+                                "then": "Dit fietspad is gemaakt van straatstenen"
+                            },
+                            "4": {
+                                "then": "Dit fietspad is gemaakt van beton"
+                            },
+                            "5": {
+                                "then": "Dit fietspad is gemaakt van kasseien (natuurlijk of verwerkt)"
+                            },
+                            "6": {
+                                "then": "Dit fietspad is gemaakt van ruwe, natuurlijke kasseien"
+                            },
+                            "7": {
+                                "then": "Dit fietspad is gemaakt van vlakke, rechthoekige kasseien"
+                            },
                             "8": {
-                                "then": "Dit fietspad is gemaakt van grind"
+                                "then": "Dit fietspad is gemaakt van hout"
                             },
                             "9": {
-                                "then": "Dit fietspad is gemaakt van fijn grind"
+                                "then": "Dit fietspad is gemaakt van grind"
                             },
                             "10": {
-                                "then": "Dit fietspad is gemaakt van kiezelsteentjes"
+                                "then": "Dit fietspad is gemaakt van fijn grind"
                             },
                             "11": {
+                                "then": "Dit fietspad is gemaakt van kiezelsteentjes"
+                            },
+                            "12": {
                                 "then": "Dit fietspad is gemaakt van aarde"
                             }
                         },
@@ -758,28 +761,43 @@
                         "render": "Deze weg is gemaakt van {surface}",
                         "mappings": {
                             "0": {
-                                "then": "Deze straat is gemaakt van hout"
+                                "then": "Dit fietspad is onverhard"
                             },
                             "1": {
-                                "then": "Deze straat is gemaakt van beton"
+                                "then": "Dit fietspad is geplaveid"
                             },
                             "2": {
-                                "then": "Deze straat is gemaakt van kasseien"
+                                "then": "Dit fietspad is gemaakt van asfalt"
                             },
                             "3": {
-                                "then": "Deze straat is gemaakt van asfalt"
+                                "then": "Dit fietspad is gemaakt van straatstenen"
                             },
                             "4": {
-                                "then": "Deze straat is geplaveid"
+                                "then": "Dit fietspad is gemaakt van beton"
                             },
                             "5": {
-                                "then": "Deze straat is gemaakt van fijn grind"
+                                "then": "Dit fietspad is gemaakt van kasseien (natuurlijk of verwerkt)"
                             },
                             "6": {
-                                "then": "Deze straat is gemaakt van kasseien"
+                                "then": "Dit fietspad is gemaakt van ruwe, natuurlijke kasseien"
                             },
                             "7": {
-                                "then": "Deze straat is gemaakt van geplaveide stenen"
+                                "then": "Dit fietspad is gemaakt van vlakke, rechthoekige kasseien"
+                            },
+                            "8": {
+                                "then": "Dit fietspad is gemaakt van hout"
+                            },
+                            "9": {
+                                "then": "Dit fietspad is gemaakt van grind"
+                            },
+                            "10": {
+                                "then": "Dit fietspad is gemaakt van fijn grind"
+                            },
+                            "11": {
+                                "then": "Dit fietspad is gemaakt van kiezelsteentjes"
+                            },
+                            "12": {
+                                "then": "Dit fietspad is gemaakt van aarde"
                             }
                         },
                         "question": "Waaruit is het oppervlak van de straat gemaakt?"
@@ -798,7 +816,7 @@
                                 "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "2": {
                                 "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
