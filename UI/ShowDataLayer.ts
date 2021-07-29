@@ -16,14 +16,13 @@ export default class ShowDataLayer {
     private readonly _leafletMap: UIEventSource<L.Map>;
     private _cleanCount = 0;
     private readonly _enablePopups: boolean;
-    private readonly _features: UIEventSource<{ feature: any, freshness: Date }[]>
+    private readonly _features: UIEventSource<{ feature: any}[]>
 
-    constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
+    constructor(features: UIEventSource<{ feature: any}[]>,
                 leafletMap: UIEventSource<L.Map>,
                 layoutToUse: UIEventSource<LayoutConfig>,
                 enablePopups = true,
-                zoomToFeatures = false,
-                name?: string) {
+                zoomToFeatures = false) {
         this._leafletMap = leafletMap;
         this._enablePopups = enablePopups;
         this._features = features;

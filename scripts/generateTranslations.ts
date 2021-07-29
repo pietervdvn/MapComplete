@@ -2,6 +2,7 @@ import * as fs from "fs";
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
+import {Layer} from "leaflet";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
@@ -40,12 +41,12 @@ class TranslationPart {
         }
     }
 
-    recursiveAdd(object: any) {
+    recursiveAdd(object: any, context: string) {
 
 
         const isProbablyTranslationObject = knownLanguages.map(l => object.hasOwnProperty(l)).filter(x => x).length > 0;
         if (isProbablyTranslationObject) {
-            this.addTranslationObject(object)
+            this.addTranslationObject(object, context)
             return;
         }
 
@@ -68,7 +69,7 @@ class TranslationPart {
                 this.contents.set(key, new TranslationPart())
             }
 
-            (this.contents.get(key) as TranslationPart).recursiveAdd(v);
+            (this.contents.get(key) as TranslationPart).recursiveAdd(v, context + "." + key);
         }
     }
 
@@ -190,7 +191,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
         if (config === undefined) {
             throw "Got something not parsed! Path is " + layerFile.path
         }
-        layerTr.recursiveAdd(config)
+        layerTr.recursiveAdd(config, layerFile.path)
         tr.contents.set(config.id, layerTr)
     }
 
@@ -301,7 +302,7 @@ function mergeThemeTranslations() {
 
         const oldLanguages = config.language;
         const allTranslations = new TranslationPart();
-        allTranslations.recursiveAdd(config)
+        allTranslations.recursiveAdd(config, themeFile.path)
         const newLanguages = allTranslations.knownLanguages()
         const languageDiff = newLanguages.filter(l => oldLanguages.indexOf(l) < 0).join(", ")
         if (languageDiff !== "") {

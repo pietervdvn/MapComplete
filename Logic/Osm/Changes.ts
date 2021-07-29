@@ -27,7 +27,9 @@ export class Changes {
     private readonly previouslyCreated : OsmObject[] = []
 
     constructor() {
-       
+       this.isUploading.addCallbackAndRun(uploading => {
+           console.trace("Is uploading changed:", uploading)
+       })
     }
 
     private static createChangesetFor(csId: string,
@@ -255,6 +257,9 @@ export class Changes {
         console.log("Needed ids", neededIds)
         OsmObject.DownloadAll(neededIds, true).addCallbackAndRunD(osmObjects => {
             console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
+            try{
+                
+        
             const changes: {
                 newObjects: OsmObject[],
                 modifiedObjects: OsmObject[]
@@ -283,6 +288,11 @@ export class Changes {
                     return self.isUploading.setData(false);
                 } // Failed - mark to try again
             )
+            }catch(e){
+                console.error("Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those", e)
+                self.pendingChanges.setData([])
+                self.isUploading.setData(false)
+            }
             return true;
 
         });

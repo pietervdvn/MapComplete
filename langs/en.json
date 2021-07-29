@@ -61,6 +61,12 @@
     "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback"
   },
   "general": {
+    "pdf": {
+      "generatedWith": "Generated with MapComplete.osm.be",
+      "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
+      "attrBackground": "Background layer: {background}",
+      "versionInfo": "v{version} - generated on {date}"
+    },
     "loginWithOpenStreetMap": "Login with OpenStreetMap",
     "welcomeBack": "You are logged in, welcome back!",
     "loginToStart": "Login to answer this question",
@@ -159,9 +165,11 @@
     },
     "download": {
       "title": "Download visible data",
+      "downloadAsPdf": "Download a PDF of the current map",
+      "downloadAsPdfHelper": "Ideal to print the current map",
       "downloadGeojson": "Download visible data as geojson",
-      "downloadGeoJsonHelper": "Compatible with QGIS, OsmAnd, ArcGIS, ESRI, ...",
-      "downloadCSV": "Download as CSV",
+      "downloadGeoJsonHelper": "Compatible with QGIS, ArcGIS, ESRI, ...",
+      "downloadCSV": "Download visible data as CSV",
       "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, ...",
       "includeMetaData": "Include metadata (last editor, calculated values, ...)",
       "licenseInfo": "<h3>Copyright notice</h3>The provided is available under ODbL. Reusing this data is free for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> is required</li><li>Any change to this data must be republished under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details",

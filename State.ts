@@ -61,7 +61,7 @@ export default class State {
 
     public osmApiFeatureSource: OsmApiFeatureSource;
 
-    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([],"filteredLayers");
+    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([], "filteredLayers");
 
     /**
      The latest element that was selected
@@ -79,7 +79,7 @@ export default class State {
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
-    public readonly featureSwitchLayers: UIEventSource<boolean>;
+    public readonly featureSwitchBackgroundSlection: UIEventSource<boolean>;
     public readonly featureSwitchAddNew: UIEventSource<boolean>;
     public readonly featureSwitchWelcomeMessage: UIEventSource<boolean>;
     public readonly featureSwitchIframe: UIEventSource<boolean>;
@@ -93,7 +93,7 @@ export default class State {
     public readonly featureSwitchFilter: UIEventSource<boolean>;
     public readonly featureSwitchEnableExport: UIEventSource<boolean>;
     public readonly featureSwitchFakeUser: UIEventSource<boolean>;
-
+    public readonly featureSwitchExportAsPdf: UIEventSource<boolean>;
 
     public featurePipeline: FeaturePipeline;
 
@@ -125,11 +125,11 @@ export default class State {
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
-    public layerControlIsOpened: UIEventSource<boolean> =
+    public downloadControlIsOpened: UIEventSource<boolean> =
         QueryParameters.GetQueryParameter(
-            "layer-control-toggle",
+            "download-control-toggle",
             "false",
-            "Whether or not the layer control is shown"
+            "Whether or not the download panel is shown"
         ).map<boolean>(
             (str) => str !== "false",
             [],
@@ -249,11 +249,12 @@ export default class State {
                 (layoutToUse) => layoutToUse?.enableSearch ?? true,
                 "Disables/Enables the search bar"
             );
-            this.featureSwitchLayers = featSw(
-                "fs-layers",
-                (layoutToUse) => layoutToUse?.enableLayers ?? true,
-                "Disables/Enables the layer control"
+            this.featureSwitchBackgroundSlection = featSw(
+                "fs-background",
+                (layoutToUse) => layoutToUse?.enableBackgroundLayerSelection ?? true,
+                "Disables/Enables the background layer control"
             );
+            
             this.featureSwitchFilter = featSw(
                 "fs-filter",
                 (layoutToUse) => layoutToUse?.enableLayers ?? true,
@@ -295,6 +296,17 @@ export default class State {
                 "Always show all questions"
             );
 
+            this.featureSwitchEnableExport = featSw(
+                "fs-export",
+                (layoutToUse) => layoutToUse?.enableExportButton ?? false,
+                "Enable the export as GeoJSON and CSV button"
+            );
+            this.featureSwitchExportAsPdf = featSw(
+                "fs-pdf",
+                (layoutToUse) => layoutToUse?.enablePdfDownload ?? false,
+                "Enable the PDF download button"
+            );
+
             this.featureSwitchIsTesting = QueryParameters.GetQueryParameter(
                 "test",
                 "false",
@@ -325,7 +337,6 @@ export default class State {
                 "osm",
                 "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'"
             );
-
 
 
             this.featureSwitchUserbadge.addCallbackAndRun(userbadge => {
@@ -372,9 +383,9 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
-        
+
         new ChangeToElementsActor(this.changes, this.allElements)
-        
+
         this.osmApiFeatureSource = new OsmApiFeatureSource()
 
         new PendingChangesUploader(this.changes, this.selectedElement);

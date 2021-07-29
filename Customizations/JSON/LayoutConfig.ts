@@ -43,6 +43,8 @@ export default class LayoutConfig {
     public readonly enableBackgroundLayerSelection: boolean;
     public readonly enableShowAllQuestions: boolean;
     public readonly enableExportButton: boolean;
+    public readonly enablePdfDownload: boolean;
+
     public readonly customCss?: string;
     /*
     How long is the cache valid, in seconds?
@@ -153,7 +155,8 @@ export default class LayoutConfig {
         this.enableAddNewPoints = json.enableAddNewPoints ?? true;
         this.enableBackgroundLayerSelection = json.enableBackgroundLayerSelection ?? true;
         this.enableShowAllQuestions = json.enableShowAllQuestions ?? false;
-        this.enableExportButton = json.enableExportButton ?? false;
+        this.enableExportButton = json.enableDownload ?? false;
+        this.enablePdfDownload = json.enablePdfDownload ?? false;
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
 
@@ -176,7 +179,7 @@ export default class LayoutConfig {
                         return
                     }
                 } else {
-                    console.log("Layer ", layer," not kown, try one of", Array.from(AllKnownLayers.sharedLayers.keys()).join(", "))
+                    console.log("Layer ", layer, " not kown, try one of", Array.from(AllKnownLayers.sharedLayers.keys()).join(", "))
                     throw `Unknown builtin layer ${layer} at ${context}.layers[${i}]`;
                 }
             }

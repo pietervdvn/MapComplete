@@ -132,7 +132,7 @@
           "if": "crossing_ref=",
           "then": {
             "en": "This is not a zebra crossing",
-            "nl": "Dit is niet een zebrapad"
+            "nl": "Dit is geen zebrapad"
           }
         }
       ]
@@ -155,7 +155,7 @@
           "if": "bicycle=no",
           "then": {
             "en": "A cyclist can not use this crossing",
-            "nl": "Een fietser kan niet deze oversteekplaats gebruiken"
+            "nl": "Een fietser kan deze oversteekplaats niet gebruiken"
           }
         }
       ]
@@ -178,7 +178,7 @@
           "if": "crossing:island=no",
           "then": {
             "en": "This crossing does not have an island in the middle",
-            "nl": "Deze oversteekplaats heeft niet een verkeerseiland in het midden"
+            "nl": "Deze oversteekplaats heeft geen verkeerseiland in het midden"
           }
         }
       ]
@@ -201,7 +201,7 @@
           "if": "tactile_paving=no",
           "then": {
             "en": "This crossing does not have tactile paving",
-            "nl": "Deze oversteekplaats heeft niet een geleidelijn"
+            "nl": "Deze oversteekplaats heeft geen geleidelijn"
           }
         },
         {
@@ -237,7 +237,7 @@
           "if": "button_operated=no",
           "then": {
             "en": "This traffic light does not have a button to request green light",
-            "nl": "Dit verkeerlicht heeft niet een knop voor groen licht"
+            "nl": "Dit verkeerlicht heeft geen knop voor groen licht"
           }
         }
       ]
@@ -252,8 +252,8 @@
         {
           "if": "red_turn:right:bicycle=yes",
           "then": {
-            "en": "A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='height: 3em'>",
-            "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='height: 3em'>"
+            "en": "A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>",
+            "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
           },
           "hideInAnswer": "_country!=be"
         },
@@ -284,8 +284,8 @@
         {
           "if": "red_turn:straight:bicycle=yes",
           "then": {
-            "en": "A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='height: 3em'>",
-            "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='height: 3em'>"
+            "en": "A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>",
+            "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
           },
           "hideInAnswer": "_country!=be"
         },

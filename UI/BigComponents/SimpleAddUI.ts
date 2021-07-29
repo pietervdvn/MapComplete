@@ -166,7 +166,7 @@ export default class SimpleAddUI extends Toggle {
                 ])
             )
 
-                .onClick(() => State.state.layerControlIsOpened.setData(true))
+                .onClick(() => State.state.filterIsOpened.setData(true))
 
         const openLayerOrConfirm = new Toggle(
             confirmButton,
@@ -238,7 +238,13 @@ export default class SimpleAddUI extends Toggle {
         const allButtons = [];
         for (const layer of State.state.filteredLayers.data) {
 
-            if (layer.isDisplayed.data === false && State.state.featureSwitchLayers) {
+            if (layer.isDisplayed.data === false && !State.state.featureSwitchFilter.data) {
+                // The layer is not displayed and we cannot enable the layer control -> we skip
+                continue;
+            }
+            
+            if(layer.layerDef.name === undefined){
+                // this is a parlty hidden layer
                 continue;
             }
 

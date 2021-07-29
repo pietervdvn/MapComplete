@@ -142,7 +142,7 @@ export default class LengthInput extends InputElement<string> {
                 if (leaflet) {
                     const first = leaflet.layerPointToLatLng(firstClickXY)
                     const last = leaflet.layerPointToLatLng([dx, dy])
-                    const geoDist = Math.floor(GeoOperations.distanceBetween([first.lng, first.lat], [last.lng, last.lat]) * 100000) / 100
+                    const geoDist = Math.floor(GeoOperations.distanceBetween([first.lng, first.lat], [last.lng, last.lat]) * 10000) / 10
                     self.value.setData("" + geoDist)
                 }
 

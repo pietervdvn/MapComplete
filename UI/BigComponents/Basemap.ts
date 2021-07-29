@@ -50,6 +50,8 @@ export class Basemap {
             }
             previousLayer = newLayer;
             self.map.addLayer(newLayer);
+            extraAttribution.AttachTo('leaflet-attribution')
+
         })
 
 

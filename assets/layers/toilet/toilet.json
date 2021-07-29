@@ -30,7 +30,12 @@
         "then": "./assets/layers/toilet/wheelchair.svg"
       },
       {
-        "if": "toilets:position=urinals",
+        "if": {
+          "or": [
+            "toilets:position=urinals",
+            "toilets:position=urinal"
+          ]
+        },
         "then": "./assets/layers/toilet/urinal.svg"
       }
     ]
@@ -260,7 +265,7 @@
           }
         },
         {
-          "if": "toilets:position=urinals",
+          "if": "toilets:position=urinal",
           "then": {
             "en": "There are only urinals here",
             "de": "Hier gibt es nur Pissoirs",
@@ -280,7 +285,7 @@
           }
         },
         {
-          "if": "toilets:position=seated;urinals",
+          "if": "toilets:position=seated;urinal",
           "then": {
             "en": "Both seated toilets and urinals are available here",
             "de": "Sowohl Sitztoiletten als auch Pissoirs sind hier verfügbar",

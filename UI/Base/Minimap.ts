@@ -17,12 +17,14 @@ export default class Minimap extends BaseUIElement {
     private _isInited = false;
     private _allowMoving: boolean;
     private readonly _leafletoptions: any;
+    private readonly _onFullyLoaded: (leaflet: L.Map) => void
 
     constructor(options?: {
                     background?: UIEventSource<BaseLayer>,
                     location?: UIEventSource<Loc>,
                     allowMoving?: boolean,
-                    leafletOptions?: any
+                    leafletOptions?: any,
+                    onFullyLoaded?: (leaflet: L.Map) => void
                 }
     ) {
         super()
@@ -32,6 +34,7 @@ export default class Minimap extends BaseUIElement {
         this._id = "minimap" + Minimap._nextId;
         this._allowMoving = options.allowMoving ?? true;
         this._leafletoptions = options.leafletOptions ?? {}
+        this._onFullyLoaded = options.onFullyLoaded
         Minimap._nextId++
 
     }
@@ -74,10 +77,10 @@ export default class Minimap extends BaseUIElement {
         }
         this._isInited = true;
         const location = this._location;
-
+        const self = this;
         let currentLayer = this._background.data.layer()
         const options = {
-            center: <[number, number]> [location.data?.lat ?? 0, location.data?.lon ?? 0],
+            center: <[number, number]>[location.data?.lat ?? 0, location.data?.lon ?? 0],
             zoom: location.data?.zoom ?? 2,
             layers: [currentLayer],
             zoomControl: false,
@@ -90,10 +93,17 @@ export default class Minimap extends BaseUIElement {
             // Disabling this breaks the geojson layer - don't ask me why!  zoomAnimation: this._allowMoving,
             fadeAnimation: this._allowMoving
         }
-        
+
         Utils.Merge(this._leafletoptions, options)
-        
+
         const map = L.map(this._id, options);
+        if (self._onFullyLoaded !== undefined) {
+
+            currentLayer.on("load", () => {
+                console.log("Fully loaded all tiles!")
+                self._onFullyLoaded(map)
+            })
+        }
 
         map.setMaxBounds(
             [[-100, -200], [100, 200]]
@@ -105,6 +115,13 @@ export default class Minimap extends BaseUIElement {
                 map.removeLayer(currentLayer);
             }
             currentLayer = newLayer;
+            if (self._onFullyLoaded !== undefined) {
+
+                currentLayer.on("load", () => {
+                    console.log("Fully loaded all tiles!")
+                    self._onFullyLoaded(map)
+                })
+            }
             map.addLayer(newLayer);
         })
 

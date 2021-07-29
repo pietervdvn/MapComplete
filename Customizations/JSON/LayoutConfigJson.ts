@@ -336,5 +336,7 @@ export interface LayoutConfigJson {
     enableGeolocation?: boolean;
     enableBackgroundLayerSelection?: boolean;
     enableShowAllQuestions?: boolean;
-    enableExportButton?: boolean;
+    enableDownload?: boolean;  
+    enablePdfDownload?: boolean;
+
 }

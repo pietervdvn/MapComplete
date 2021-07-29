@@ -87,6 +87,10 @@ export default class TagRenderingConfig {
             if (this.freeform.key === undefined || this.freeform.key === "") {
                 throw `Freeform.key is undefined or the empty string - this is not allowed; either fill out something or remove the freeform block alltogether. Error in ${context}`
             }
+            if(json.freeform["args"] !== undefined){
+                throw `Freeform.args is defined. This should probably be 'freeform.helperArgs' (at ${context})`
+
+            }
 
 
             if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
