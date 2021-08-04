@@ -1,1 +1,128 @@
-{}
+{
+    "campersite": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "3": {
+                        "question": "Quanto este lugar cobra?",
+                        "render": "Este lugar cobra {charge}"
+                    },
+                    "2": {
+                        "mappings": {
+                            "1": {
+                                "then": "Pode ser usado de graça"
+                            },
+                            "0": {
+                                "then": "Você precisa pagar para usar"
+                            }
+                        },
+                        "question": "Este lugar cobra alguma taxa?"
+                    },
+                    "1": {
+                        "question": "Qual o nome deste lugar?",
+                        "render": "Este lugar é chamado de {name}"
+                    }
+                },
+                "description": "Locais de acampamento",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Locais de acampamento sem nome"
+                        }
+                    },
+                    "render": "Local de acampamento {name}"
+                },
+                "name": "Locais de acampamento"
+            }
+        },
+        "shortDescription": "Encontre locais para passar a noite com o seu campista",
+        "title": "Locais de acampamento"
+    },
+    "bicyclelib": {
+        "title": "Bibliotecas de bicicletas"
+    },
+    "benches": {
+        "shortDescription": "Um mapa de bancadas",
+        "title": "Bancadas"
+    },
+    "artworks": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "4": {
+                        "render": "Corresponde com <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+                        "question": "Qual entrada do Wikidata corresponde a <b>esta obra de arte</b>?"
+                    },
+                    "3": {
+                        "render": "Mais informações <a href='{website}' target='_blank'>neste website</a>",
+                        "question": "Há um website com mais informações a respeito desta obra de arte?"
+                    },
+                    "2": {
+                        "render": "Criado por {artist_name}",
+                        "question": "Qual artista criou isso?"
+                    },
+                    "1": {
+                        "mappings": {
+                            "11": {
+                                "then": "Azulejaria"
+                            },
+                            "10": {
+                                "then": "Azulejo"
+                            },
+                            "8": {
+                                "then": "Grafite"
+                            },
+                            "7": {
+                                "then": "Instalação"
+                            },
+                            "6": {
+                                "then": "Pedra"
+                            },
+                            "5": {
+                                "then": "Busto"
+                            },
+                            "4": {
+                                "then": "Estátua"
+                            },
+                            "3": {
+                                "then": "Escultura"
+                            },
+                            "2": {
+                                "then": "Pintura"
+                            },
+                            "1": {
+                                "then": "Mural"
+                            },
+                            "0": {
+                                "then": "Arquitetura"
+                            }
+                        },
+                        "question": "Qual é o tipo desta obra de arte?",
+                        "render": "Este é um(a) {artwork_type}"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Obra de arte"
+                    }
+                },
+                "description": "Diversas obras de arte",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Obra de arte <i>{name}</i>"
+                        }
+                    },
+                    "render": "Obra de arte"
+                },
+                "name": "Obras de arte"
+            }
+        },
+        "description": "Bem-vindo ao Open Artwork Map, um mapa de estátuas, bustos, grafites e outras obras de arte ao redor do mundo",
+        "title": "Abrir mapa de obras de arte"
+    },
+    "aed": {
+        "description": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
+        "title": "Abrir mapa AED"
+    }
+}
