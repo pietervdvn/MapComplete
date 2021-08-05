@@ -276,7 +276,8 @@
             "en": "What is the email address of this shop?",
             "fr": "Quelle est l'adresse électronique de ce magasin ?",
             "ja": "このお店のメールアドレスは何ですか?",
-            "ru": "Каков адрес электронной почты этого магазина?"
+            "ru": "Каков адрес электронной почты этого магазина?",
+            "nl": "Wat is het e-mailadres van deze winkel?"
           },
           "freeform": {
             "key": "email",

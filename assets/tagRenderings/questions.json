@@ -135,14 +135,16 @@
     "question": {
       "nl": "Op welke verdieping bevindt dit punt zich?",
       "en": "On what level is this feature located?",
-      "de": "In welchem Stockwerk befindet sich dieses Objekt?"
+      "de": "In welchem Stockwerk befindet sich dieses Objekt?",
+      "zh_Hant": "此圖徽位於哪個樓層／層級？"
     },
     "render": {
       "en": "Located on the {level}th floor",
       "nl": "Bevindt zich op de {level}de verdieping",
       "de": "Befindet sich im {level}ten Stock",
       "pt_BR": "Localizado no {level}o andar",
-      "ru": "Расположено на {level}ом этаже"
+      "ru": "Расположено на {level}ом этаже",
+      "zh_Hant": "位於 {level} 樓"
     },
     "freeform": {
       "key": "level",
@@ -155,7 +157,8 @@
           "en": "Located underground",
           "nl": "Bevindt zich ondergronds",
           "pt_BR": "Localizado no subsolo",
-          "ru": "Расположено под землей"
+          "ru": "Расположено под землей",
+          "zh_Hant": "位於地下"
         },
         "hideInAnswer": true
       },
@@ -166,7 +169,8 @@
           "nl": "Bevindt zich gelijkvloers",
           "de": "Ist im Erdgeschoss",
           "pt_BR": "Localizado no térreo",
-          "ru": "Расположено на первом этаже"
+          "ru": "Расположено на первом этаже",
+          "zh_Hant": "位於 1 樓"
         }
       },
       {
@@ -176,7 +180,8 @@
           "nl": "Bevindt zich op de eerste verdieping",
           "de": "Ist im ersten Stock",
           "pt_BR": "Localizado no primeiro andar",
-          "ru": "Расположено на первом этаже"
+          "ru": "Расположено на первом этаже",
+          "zh_Hant": "位於 2 樓"
         }
       }
     ]

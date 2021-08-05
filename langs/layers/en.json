@@ -1946,5 +1946,8 @@
             }
         },
         "description": "A visitor center offers information about a specific attraction or place of interest where it is located."
+    },
+    "watermill": {
+        "name": "Watermill"
     }
 }

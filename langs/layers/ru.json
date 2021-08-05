@@ -257,19 +257,28 @@
         "name": "Станции мониторинга"
     },
     "bike_parking": {
+        "name": "Велопарковка",
+        "presets": {
+            "0": {
+                "title": "Велопарковка"
+            }
+        },
+        "title": {
+            "render": "Велопарковка"
+        },
         "tagRenderings": {
             "1": {
                 "question": "К какому типу относится эта велопарковка?",
                 "render": "Это велопарковка типа {bicycle_parking}",
                 "mappings": {
-                    "5": {
-                        "then": "Навес <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                    "3": {
+                        "then": "Стойка <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
                     },
                     "4": {
                         "then": "Двухуровневая <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
                     },
-                    "3": {
-                        "then": "Стойка <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                    "5": {
+                        "then": "Навес <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
                     }
                 }
             },
@@ -303,28 +312,19 @@
                 "question": "Кто может пользоваться этой велопарковкой?",
                 "render": "{access}"
             }
-        },
-        "title": {
-            "render": "Велопарковка"
-        },
-        "presets": {
-            "0": {
-                "title": "Велопарковка"
-            }
-        },
-        "name": "Велопарковка"
+        }
     },
     "bike_repair_station": {
         "title": {
             "mappings": {
+                "2": {
+                    "then": "Сломанный насос"
+                },
                 "3": {
                     "then": "Велосипедный насос <i>{name}</i>"
                 },
                 "4": {
                     "then": "Велосипедный насос"
-                },
-                "2": {
-                    "then": "Сломанный насос"
                 }
             }
         },
@@ -535,6 +535,26 @@
             }
         },
         "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": "Общедоступный"
+                    },
+                    "1": {
+                        "then": "Общедоступный"
+                    },
+                    "2": {
+                        "then": "Доступно только для клиентов"
+                    }
+                }
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": "Это обычный автоматический дефибриллятор"
+                    }
+                }
+            },
             "12": {
                 "render": "{opening_hours_table(opening_hours)}",
                 "question": "В какое время доступен этот дефибриллятор?"
@@ -551,26 +571,6 @@
             },
             "15": {
                 "render": "Дополнительная информация для экспертов OpenStreetMap: {fixme}"
-            },
-            "3": {
-                "mappings": {
-                    "1": {
-                        "then": "Это обычный автоматический дефибриллятор"
-                    }
-                }
-            },
-            "2": {
-                "mappings": {
-                    "2": {
-                        "then": "Доступно только для клиентов"
-                    },
-                    "1": {
-                        "then": "Общедоступный"
-                    },
-                    "0": {
-                        "then": "Общедоступный"
-                    }
-                }
             }
         }
     },

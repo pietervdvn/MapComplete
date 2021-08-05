@@ -135,7 +135,8 @@
             "fr": "Librement accessible",
             "nl": "Publiek toegankelijk",
             "de": "Öffentlich zugänglich",
-            "it": "Pubblicamente accessibile"
+            "it": "Pubblicamente accessibile",
+            "ru": "Общедоступный"
           }
         },
         {
@@ -147,7 +148,8 @@
             "fr": "Librement accessible",
             "nl": "Publiek toegankelijk",
             "de": "Öffentlich zugänglich",
-            "it": "Pubblicamente accessibile"
+            "it": "Pubblicamente accessibile",
+            "ru": "Общедоступный"
           },
           "hideInAnswer": true
         },
@@ -160,7 +162,8 @@
             "fr": "Réservé aux clients du lieu",
             "nl": "Enkel toegankelijk voor klanten",
             "de": "Nur für Kunden zugänglich",
-            "it": "Accessibile solo ai clienti"
+            "it": "Accessibile solo ai clienti",
+            "ru": "Доступно только для клиентов"
           }
         },
         {
@@ -225,7 +228,8 @@
             "en": "This is a normal automatic defibrillator",
             "nl": "Dit is een gewone automatische defibrillator",
             "fr": "C'est un défibrillateur automatique manuel",
-            "it": "È un normale defibrillatore automatico"
+            "it": "È un normale defibrillatore automatico",
+            "ru": "Это обычный автоматический дефибриллятор"
           }
         }
       ]

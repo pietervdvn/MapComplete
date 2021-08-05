@@ -8,7 +8,8 @@
     "de": "Fahrrad-Parkplätze",
     "hu": "Kerékpáros parkoló",
     "it": "Parcheggio bici",
-    "zh_Hant": "單車停車場"
+    "zh_Hant": "單車停車場",
+    "ru": "Велопарковка"
   },
   "minzoom": 17,
   "source": {
@@ -35,7 +36,8 @@
         "de": "Fahrrad-Parkplätze",
         "hu": "Kerékpáros parkoló",
         "it": "Parcheggio bici",
-        "zh_Hant": "單車停車場"
+        "zh_Hant": "單車停車場",
+        "ru": "Велопарковка"
       },
       "tags": [
         "amenity=bicycle_parking"
@@ -51,7 +53,8 @@
       "de": "Fahrrad-Parkplätze",
       "hu": "Kerékpáros parkoló",
       "it": "Parcheggio bici",
-      "zh_Hant": "單車停車場"
+      "zh_Hant": "單車停車場",
+      "ru": "Велопарковка"
     }
   },
   "tagRenderings": [
@@ -134,7 +137,8 @@
             "gl": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
             "de": "Gestell <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
             "zh_Hant": "車架<img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "it": "Rastrelliera <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+            "it": "Rastrelliera <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
+            "ru": "Стойка <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
           }
         },
         {
@@ -147,7 +151,8 @@
             "de": "Zweistufig <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
             "hu": "Kétszintű <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
             "zh_Hant": "兩層<img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "it": "A due piani <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+            "it": "A due piani <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
+            "ru": "Двухуровневая <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
           }
         },
         {
@@ -160,7 +165,8 @@
             "de": "Schuppen <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
             "hu": "Fészer <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
             "zh_Hant": "車棚 <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "it": "Rimessa <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+            "it": "Rimessa <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
+            "ru": "Навес <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
           }
         },
         {

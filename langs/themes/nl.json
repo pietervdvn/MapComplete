@@ -1447,6 +1447,19 @@
         "description": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt"
     },
     "openwindpowermap": {
+        "layers": {
+            "0": {
+                "name": "windturbine",
+                "title": {
+                    "render": "windturbine"
+                },
+                "presets": {
+                    "0": {
+                        "title": "windturbine"
+                    }
+                }
+            }
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -1470,19 +1483,6 @@
                         "human": " meter"
                     }
                 }
-            }
-        },
-        "layers": {
-            "0": {
-                "presets": {
-                    "0": {
-                        "title": "windturbine"
-                    }
-                },
-                "title": {
-                    "render": "windturbine"
-                },
-                "name": "windturbine"
             }
         }
     },
@@ -1536,11 +1536,11 @@
                     "4": {
                         "question": "Wat is de website van deze winkel?"
                     },
-                    "6": {
-                        "question": "Wat zijn de openingsuren van deze winkel?"
-                    },
                     "5": {
                         "question": "Wat is het e-mailadres van deze winkel?"
+                    },
+                    "6": {
+                        "question": "Wat zijn de openingsuren van deze winkel?"
                     }
                 },
                 "presets": {
