@@ -15,6 +15,21 @@
         "opening_hours": {
             "question": "{name} 的開放時間是什麼？",
             "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
+        },
+        "level": {
+            "mappings": {
+                "2": {
+                    "then": "位於 2 樓"
+                },
+                "1": {
+                    "then": "位於 1 樓"
+                },
+                "0": {
+                    "then": "位於地下"
+                }
+            },
+            "render": "位於 {level} 樓",
+            "question": "此圖徽位於哪個樓層／層級？"
         }
     }
 }

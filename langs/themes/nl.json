@@ -1453,6 +1453,19 @@
                     }
                 }
             }
+        },
+        "layers": {
+            "0": {
+                "presets": {
+                    "0": {
+                        "title": "windturbine"
+                    }
+                },
+                "title": {
+                    "render": "windturbine"
+                },
+                "name": "windturbine"
+            }
         }
     },
     "parkings": {
@@ -1507,6 +1520,9 @@
                     },
                     "6": {
                         "question": "Wat zijn de openingsuren van deze winkel?"
+                    },
+                    "5": {
+                        "question": "Wat is het e-mailadres van deze winkel?"
                     }
                 },
                 "presets": {
