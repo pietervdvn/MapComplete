@@ -799,39 +799,42 @@
                         "render": "This cyleway is made of {cycleway:surface}",
                         "mappings": {
                             "0": {
-                                "then": "This cycleway is made of wood"
-                            },
-                            "1": {
-                                "then": "This cycleway is made of concrete"
-                            },
-                            "2": {
-                                "then": "This cycleway is made of cobblestone"
-                            },
-                            "3": {
-                                "then": "This cycleway is made of asphalt"
-                            },
-                            "4": {
-                                "then": "This cycleway is paved"
-                            },
-                            "5": {
-                                "then": "This cycleway is paved with stones with a flat top"
-                            },
-                            "6": {
-                                "then": "This cycleway is made of gravel"
-                            },
-                            "7": {
                                 "then": "This cycleway is unhardened"
                             },
+                            "1": {
+                                "then": "This cycleway is paved"
+                            },
+                            "2": {
+                                "then": "This cycleway is made of asphalt"
+                            },
+                            "3": {
+                                "then": "This cycleway is made of smooth paving stones"
+                            },
+                            "4": {
+                                "then": "This cycleway is made of concrete"
+                            },
+                            "5": {
+                                "then": "This cycleway is made of cobblestone (unhewn or sett)"
+                            },
+                            "6": {
+                                "then": "This cycleway is made of raw, natural cobblestone"
+                            },
+                            "7": {
+                                "then": "This cycleway is made of flat, square cobblestone"
+                            },
                             "8": {
-                                "then": "This cycleway is made of gravel"
+                                "then": "This cycleway is made of wood"
                             },
                             "9": {
-                                "then": "This cycleway is made of fine gravel"
+                                "then": "This cycleway is made of gravel"
                             },
                             "10": {
-                                "then": "This cycleway is made of pebblestone"
+                                "then": "This cycleway is made of fine gravel"
                             },
                             "11": {
+                                "then": "This cycleway is made of pebblestone"
+                            },
+                            "12": {
                                 "then": "This cycleway is made from raw ground"
                             }
                         },
@@ -870,28 +873,43 @@
                         "render": "This road is made of {surface}",
                         "mappings": {
                             "0": {
-                                "then": "This street is made of wood"
+                                "then": "This cycleway is unhardened"
                             },
                             "1": {
-                                "then": "This street is made of concrete"
+                                "then": "This cycleway is paved"
                             },
                             "2": {
-                                "then": "This street is made of cobblestone"
+                                "then": "This cycleway is made of asphalt"
                             },
                             "3": {
-                                "then": "This street is made of asphalt"
+                                "then": "This cycleway is made of smooth paving stones"
                             },
                             "4": {
-                                "then": "This street is paved"
+                                "then": "This cycleway is made of concrete"
                             },
                             "5": {
-                                "then": "This street is made from fine gravel"
+                                "then": "This cycleway is made of cobblestone (unhewn or sett)"
                             },
                             "6": {
-                                "then": "This street is made from cobblestone"
+                                "then": "This cycleway is made of raw, natural cobblestone"
                             },
                             "7": {
-                                "then": "This street is made from paving stones"
+                                "then": "This cycleway is made of flat, square cobblestone"
+                            },
+                            "8": {
+                                "then": "This cycleway is made of wood"
+                            },
+                            "9": {
+                                "then": "This cycleway is made of gravel"
+                            },
+                            "10": {
+                                "then": "This cycleway is made of fine gravel"
+                            },
+                            "11": {
+                                "then": "This cycleway is made of pebblestone"
+                            },
+                            "12": {
+                                "then": "This cycleway is made from raw ground"
                             }
                         },
                         "question": "What is the surface of the street made from?"
@@ -956,7 +974,7 @@
                                 "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
                             },
                             "1": {
-                                "then": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+                                "then": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
                             },
                             "2": {
                                 "then": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
