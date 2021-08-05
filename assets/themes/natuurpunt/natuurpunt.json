@@ -47,14 +47,6 @@
         "minzoomVisible": 0,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
-        },
-        "deletion": {
-          "hardDeletionTags": {
-            "and": [
-              "leisure=nature_reserve",
-              "boundary=protected_area"
-            ]
-          }
         }
       }
     },
@@ -74,14 +66,6 @@
         "minzoom": 1,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
-        },
-        "deletion": {
-          "hardDeletionTags": {
-            "and": [
-              "leisure=nature_reserve",
-              "boundary=protected_area"
-            ]
-          }
         }
       }
     },
@@ -100,14 +84,6 @@
         "minzoom": 1,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/information.svg"
-        },
-        "deletion": {
-          "hardDeletionTags": {
-            "and": [
-              "information=visitor_centre",
-              "information=office"
-            ]
-          }
         }
       }
     },
@@ -137,15 +113,6 @@
               "then": "circle:#FE6F32;./assets/themes/natuurpunt/pushchair.svg"
             }
           ]
-        },
-        "deletion": {
-          "hardDeletionTags": {
-            "and": [
-              "route=hiking",
-              "route=bycicle",
-              "route=horse"
-            ]
-          }
         }
       }
     },
@@ -170,9 +137,6 @@
               "then": "circle:#FE6F32;./assets/themes/natuurpunt/urinal.svg"
             }
           ]
-        },
-        "deletion": {
-          "hardDeletionTags": "amenity=toilets"
         }
       }
     },
@@ -188,33 +152,7 @@
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg",
           "mappings": null
-        },
-        "deletion": [
-          {
-            "if": "leisure=bird_hide",
-            "then": {
-              "hardDeletionTags": "leisure=bird_hide"
-            }
-          },
-          {
-            "if": {
-              "or": [
-                "building=yes",
-                "shelter=yes",
-                "amenity=shelter"
-              ]
-            },
-            "then": {
-              "hardDeletionTags": {
-                "and": [
-                  "building=yes",
-                  "shelter=yes",
-                  "amenity=shelter"
-                ]
-              }
-            }
-          }
-        ]
+        }
       }
     },
     {
@@ -228,9 +166,6 @@
         },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/picnic_table.svg"
-        },
-        "deletion": {
-          "hardDeletionTags": "leisure=picnic_table"
         }
       }
     },
@@ -245,9 +180,6 @@
         },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/drips.svg"
-        },
-        "deletion": {
-          "hardDeletionTags": "amenity=drinking_water"
         }
       }
     },
@@ -275,16 +207,7 @@
             "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingwheels.svg",
             "badge": true
           }
-        ],
-        "deletion": {
-          "hardDeletionTags": {
-            "and": [
-              "amenity=parking",
-              "amenity=motorcycle_parking",
-              "amenity=bicycle_parking"
-            ]
-          }
-        }
+        ]
       }
     },
     {
@@ -298,9 +221,6 @@
         },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/information_board.svg"
-        },
-        "deletion": {
-          "hardDeletionTags": "information=board"
         }
       }
     },
@@ -315,9 +235,6 @@
         },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/bench.svg"
-        },
-        "deletion": {
-          "hardDeletionTags": "amenity=bench"
         }
       }
     },
@@ -332,12 +249,8 @@
         },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/watermill.svg"
-        },
-        "deletion": {
-          "hardDeletionTags": "man_made=watermill"
         }
       }
     }
-  ],
-  "roamingRenderings": []
+  ]
 }

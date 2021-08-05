@@ -40,6 +40,10 @@ export default class DeleteConfig {
             this.softDeletionTags =  FromJSON.Tag(json.softDeletionTags,`${context}.softDeletionTags`)
 
         }
+        
+        if(json["hardDeletionTags"] !== undefined){
+            throw `You probably meant 'softDeletionTags' instead of 'hardDeletionTags' (at ${context})`
+        }
         this.neededChangesets = json.neededChangesets
     }
     
