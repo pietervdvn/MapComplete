@@ -12,10 +12,12 @@
                 "0": {
                     "then": "Localizado no subsolo"
                 }
-            }
+            },
+            "question": "Em que nível esse recurso está localizado?"
         },
         "opening_hours": {
-            "question": "Qual o horário de funcionamento de {name}?"
+            "question": "Qual o horário de funcionamento de {name}?",
+            "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
         },
         "website": {
             "question": "Qual o site de {name}?"
@@ -25,6 +27,9 @@
         },
         "phone": {
             "question": "Qual o número de telefone de {name}?"
+        },
+        "description": {
+            "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
         }
     }
 }
