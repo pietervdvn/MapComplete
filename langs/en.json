@@ -120,7 +120,7 @@
     "sharescreen": {
       "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
       "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this.",
-      "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people using this, the more valuable it becomes.",
+      "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people are using this, the more valuable it becomes.",
       "copiedToClipboard": "Link copied to clipboard",
       "thanksForSharing": "Thanks for sharing!",
       "editThisTheme": "Edit this theme",
