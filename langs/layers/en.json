@@ -919,6 +919,388 @@
             }
         }
     },
+    "cycleways_and_roads": {
+        "name": "Cycleways and roads",
+        "title": {
+            "render": "Cycleways",
+            "mappings": {
+                "0": {
+                    "then": "Cycleway"
+                },
+                "1": {
+                    "then": "Shared lane"
+                },
+                "2": {
+                    "then": "Bike lane"
+                },
+                "3": {
+                    "then": "Cycleway next to the road"
+                },
+                "4": {
+                    "then": "Cyclestreet"
+                }
+            }
+        },
+        "tagRenderings": {
+            "0": {
+                "question": "What kind of cycleway is here?",
+                "mappings": {
+                    "0": {
+                        "then": "There is a shared lane"
+                    },
+                    "1": {
+                        "then": "There is a lane next to the road (seperated with paint)"
+                    },
+                    "2": {
+                        "then": "There is a track, but no cycleway drawn seperately from this road on the map."
+                    },
+                    "3": {
+                        "then": "There is a seperately drawn cycleway"
+                    },
+                    "4": {
+                        "then": "There is no cycleway"
+                    },
+                    "5": {
+                        "then": "There is no cycleway"
+                    }
+                }
+            },
+            "1": {
+                "question": "Is this street lit?",
+                "mappings": {
+                    "0": {
+                        "then": "This street is lit"
+                    },
+                    "1": {
+                        "then": "This road is not lit"
+                    },
+                    "2": {
+                        "then": "This road is lit at night"
+                    },
+                    "3": {
+                        "then": "This road is lit 24/7"
+                    }
+                }
+            },
+            "2": {
+                "question": "Is this a cyclestreet?",
+                "mappings": {
+                    "0": {
+                        "then": "This is a cyclestreet, and a 30km/h zone."
+                    },
+                    "1": {
+                        "then": "This is a cyclestreet"
+                    },
+                    "2": {
+                        "then": "This is not a cyclestreet."
+                    }
+                }
+            },
+            "3": {
+                "render": "The maximum speed on this road is {maxspeed} km/h",
+                "mappings": {
+                    "0": {
+                        "then": "The maximum speed is 20 km/h"
+                    },
+                    "1": {
+                        "then": "The maximum speed is 30 km/h"
+                    },
+                    "2": {
+                        "then": "The maximum speed is 50 km/h"
+                    },
+                    "3": {
+                        "then": "The maximum speed is 70 km/h"
+                    },
+                    "4": {
+                        "then": "The maximum speed is 90 km/h"
+                    }
+                },
+                "question": "What is the maximum speed in this street?"
+            },
+            "4": {
+                "render": "This cyleway is made of {cycleway:surface}",
+                "mappings": {
+                    "0": {
+                        "then": "This cycleway is unpaved"
+                    },
+                    "1": {
+                        "then": "This cycleway is paved"
+                    },
+                    "2": {
+                        "then": "This cycleway is made of asphalt"
+                    },
+                    "3": {
+                        "then": "This cycleway is made of smooth paving stones"
+                    },
+                    "4": {
+                        "then": "This cycleway is made of concrete"
+                    },
+                    "5": {
+                        "then": "This cycleway is made of cobblestone (unhewn or sett)"
+                    },
+                    "6": {
+                        "then": "This cycleway is made of raw, natural cobblestone"
+                    },
+                    "7": {
+                        "then": "This cycleway is made of flat, square cobblestone"
+                    },
+                    "8": {
+                        "then": "This cycleway is made of wood"
+                    },
+                    "9": {
+                        "then": "This cycleway is made of gravel"
+                    },
+                    "10": {
+                        "then": "This cycleway is made of fine gravel"
+                    },
+                    "11": {
+                        "then": "This cycleway is made of pebblestone"
+                    },
+                    "12": {
+                        "then": "This cycleway is made from raw ground"
+                    }
+                },
+                "question": "What is the surface of the cycleway made from?"
+            },
+            "5": {
+                "question": "What is the smoothness of this cycleway?",
+                "mappings": {
+                    "0": {
+                        "then": "Usable for thin rollers: rollerblade, skateboard"
+                    },
+                    "1": {
+                        "then": "Usable for thin wheels: racing bike"
+                    },
+                    "2": {
+                        "then": "Usable for normal wheels: city bike, wheelchair, scooter"
+                    },
+                    "3": {
+                        "then": "Usable for robust wheels: trekking bike, car, rickshaw"
+                    },
+                    "4": {
+                        "then": "Usable for vehicles with high clearance: light duty off-road vehicle"
+                    },
+                    "5": {
+                        "then": "Usable for off-road vehicles: heavy duty off-road vehicle"
+                    },
+                    "6": {
+                        "then": "Usable for specialized off-road vehicles: tractor, ATV"
+                    },
+                    "7": {
+                        "then": "Impassable / No wheeled vehicle"
+                    }
+                }
+            },
+            "6": {
+                "render": "This road is made of {surface}",
+                "mappings": {
+                    "0": {
+                        "then": "This cycleway is unhardened"
+                    },
+                    "1": {
+                        "then": "This cycleway is paved"
+                    },
+                    "2": {
+                        "then": "This cycleway is made of asphalt"
+                    },
+                    "3": {
+                        "then": "This cycleway is made of smooth paving stones"
+                    },
+                    "4": {
+                        "then": "This cycleway is made of concrete"
+                    },
+                    "5": {
+                        "then": "This cycleway is made of cobblestone (unhewn or sett)"
+                    },
+                    "6": {
+                        "then": "This cycleway is made of raw, natural cobblestone"
+                    },
+                    "7": {
+                        "then": "This cycleway is made of flat, square cobblestone"
+                    },
+                    "8": {
+                        "then": "This cycleway is made of wood"
+                    },
+                    "9": {
+                        "then": "This cycleway is made of gravel"
+                    },
+                    "10": {
+                        "then": "This cycleway is made of fine gravel"
+                    },
+                    "11": {
+                        "then": "This cycleway is made of pebblestone"
+                    },
+                    "12": {
+                        "then": "This cycleway is made from raw ground"
+                    }
+                },
+                "question": "What is the surface of the street made from?"
+            },
+            "7": {
+                "question": "What is the smoothness of this street?",
+                "mappings": {
+                    "0": {
+                        "then": "Usable for thin rollers: rollerblade, skateboard"
+                    },
+                    "1": {
+                        "then": "Usable for thin wheels: racing bike"
+                    },
+                    "2": {
+                        "then": "Usable for normal wheels: city bike, wheelchair, scooter"
+                    },
+                    "3": {
+                        "then": "Usable for robust wheels: trekking bike, car, rickshaw"
+                    },
+                    "4": {
+                        "then": "Usable for vehicles with high clearance: light duty off-road vehicle"
+                    },
+                    "5": {
+                        "then": "Usable for off-road vehicles: heavy duty off-road vehicle"
+                    },
+                    "6": {
+                        "then": "Usable for specialized off-road vehicles: tractor, ATV"
+                    },
+                    "7": {
+                        "then": "Impassable / No wheeled vehicle"
+                    }
+                }
+            },
+            "8": {
+                "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
+                "question": "What is the carriage width of this road (in meters)?"
+            },
+            "9": {
+                "question": "What traffic sign does this cycleway have?",
+                "mappings": {
+                    "0": {
+                        "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+                    },
+                    "2": {
+                        "then": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+                    },
+                    "3": {
+                        "then": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+                    },
+                    "4": {
+                        "then": "No traffic sign present"
+                    }
+                }
+            },
+            "10": {
+                "question": "What traffic sign does this cycleway have?",
+                "mappings": {
+                    "0": {
+                        "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+                    },
+                    "2": {
+                        "then": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+                    },
+                    "3": {
+                        "then": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+                    },
+                    "4": {
+                        "then": "No traffic sign present"
+                    }
+                }
+            },
+            "11": {
+                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
+                    },
+                    "2": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
+                    },
+                    "3": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
+                    },
+                    "4": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
+                    },
+                    "5": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
+                    },
+                    "6": {
+                        "then": "No supplementary traffic sign present"
+                    }
+                }
+            },
+            "12": {
+                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
+                    },
+                    "2": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
+                    },
+                    "3": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
+                    },
+                    "4": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
+                    },
+                    "5": {
+                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
+                    },
+                    "6": {
+                        "then": "No supplementary traffic sign present"
+                    }
+                }
+            },
+            "13": {
+                "render": "The buffer besides this cycleway is {cycleway:buffer} m",
+                "question": "How wide is the gap between the cycleway and the road?"
+            },
+            "14": {
+                "question": "How is this cycleway seperated from the road?",
+                "mappings": {
+                    "0": {
+                        "then": "This cycleway is seperated by a dashed line"
+                    },
+                    "1": {
+                        "then": "This cycleway is seperated by a solid line"
+                    },
+                    "2": {
+                        "then": "This cycleway is seperated by a parking lane"
+                    },
+                    "3": {
+                        "then": "This cycleway is seperated by a kerb"
+                    }
+                }
+            },
+            "15": {
+                "question": "How is this cycleway seperated from the road?",
+                "mappings": {
+                    "0": {
+                        "then": "This cycleway is seperated by a dashed line"
+                    },
+                    "1": {
+                        "then": "This cycleway is seperated by a solid line"
+                    },
+                    "2": {
+                        "then": "This cycleway is seperated by a parking lane"
+                    },
+                    "3": {
+                        "then": "This cycleway is seperated by a kerb"
+                    }
+                }
+            }
+        }
+    },
     "defibrillator": {
         "name": "Defibrillators",
         "title": {

@@ -120,13 +120,12 @@ export default class ValidatedTextField {
                 }
                 
                 // Bit of a hack: we project the centerpoint to the closes point on the road - if available
-                if(options.feature){
+                if(options.feature !== undefined && options.feature.geometry.type !== "Point"){
                     const lonlat: [number, number] = [...options.location]
                     lonlat.reverse()
                     options.location = <[number,number]> GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
                     options.location.reverse()
                 }
-                options.feature
                 
                 const location = new UIEventSource<Loc>({
                     lat: options.location[0],
@@ -142,7 +141,8 @@ export default class ValidatedTextField {
                 const li = new LengthInput(options.mapBackgroundLayer, location, value)
                 li.SetStyle("height: 20rem;")
                 return li;
-            }
+            },
+            "decimal"
         ),
         ValidatedTextField.tp(
             "wikidata",
