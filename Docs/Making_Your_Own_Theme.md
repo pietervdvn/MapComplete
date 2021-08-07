@@ -75,9 +75,9 @@ There are three important levels in the .JSON-file:
 
 Every field is documented in the source code itself - you can find them here:
 
-- [The top level `LayoutConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/JSON/LayoutConfigJson.ts)
-- [A layer object `LayerConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/JSON/LayerConfigJson.ts)
-- [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/JSON/TagRenderingConfigJson.ts)
+- [The top level `LayoutConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayoutConfigJson.ts)
+- [A layer object `LayerConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayerConfigJson.ts)
+- [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
 - At last, the exact semantics of tags is documented [here](Tags_format.md)
 
 ### MetaTags
