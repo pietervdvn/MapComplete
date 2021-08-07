@@ -7,9 +7,9 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import {Utils} from "./Utils";
 import {SubtleButton} from "./UI/Base/SubtleButton";
 import LZString from "lz-string";
-import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import BaseUIElement from "./UI/BaseUIElement";
 import Table from "./UI/Base/Table";
+import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
 
 
 const connection = new OsmConnection(false, false, new UIEventSource<string>(undefined), "");

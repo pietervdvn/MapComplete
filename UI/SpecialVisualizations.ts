@@ -17,13 +17,13 @@ import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import State from "../State";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 import BaseUIElement from "./BaseUIElement";
-import LayerConfig from "../Customizations/JSON/LayerConfig";
 import Title from "./Base/Title";
 import Table from "./Base/Table";
 import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import BaseLayer from "../Models/BaseLayer";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 export interface SpecialVisualization {
     funcName: string,

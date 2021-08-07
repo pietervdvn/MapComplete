@@ -5,10 +5,10 @@ import {OsmPreferences} from "./OsmPreferences";
 import {ChangesetHandler} from "./ChangesetHandler";
 import {ElementStorage} from "../ElementStorage";
 import Svg from "../../Svg";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Img from "../../UI/Base/Img";
 import {Utils} from "../../Utils";
 import {OsmObject} from "./OsmObject";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class UserDetails {
 

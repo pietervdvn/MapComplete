@@ -6,7 +6,6 @@ import Locale from "./UI/i18n/Locale";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
-import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {MangroveIdentity} from "./Logic/Web/MangroveReviews";
 import InstalledThemes from "./Logic/Actors/InstalledThemes";
 import BaseLayer from "./Models/BaseLayer";
@@ -21,6 +20,7 @@ import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import FilteredLayer from "./Models/FilteredLayer";
 import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
+import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 
 /**
  * Contains the global state: a bunch of UI-event sources

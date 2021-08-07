@@ -3,7 +3,6 @@ import Translations from "../i18n/Translations";
 import Attribution from "./Attribution";
 import State from "../../State";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import * as licenses from "../../assets/generated/license_info.json"
 import SmallLicense from "../../Models/smallLicense";
@@ -12,6 +11,7 @@ import Link from "../Base/Link";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import * as contributors from "../../assets/contributors.json"
 import BaseUIElement from "../BaseUIElement";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 /**
  * The attribution panel shown on mobile

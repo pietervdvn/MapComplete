@@ -1,9 +1,9 @@
 import {Utils} from "../Utils";
 Utils.runningFromConsole = true;
 import {writeFile} from "fs";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import Translations from "../UI/i18n/Translations";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
 
 function generateWikiEntry(layout: LayoutConfig) {

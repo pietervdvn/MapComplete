@@ -1,14 +1,12 @@
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
-import Translations from "../../UI/i18n/Translations";
-import {FromJSON} from "./FromJSON";
-import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 import {Translation} from "../../UI/i18n/Translation";
-import {Utils} from "../../Utils";
+import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
+import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
-import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import ValidatedTextField from "../../UI/Input/ValidatedTextField";
+import {Utils} from "../../Utils";
 import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
-
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -62,7 +60,7 @@ export default class TagRenderingConfig {
         this.render = Translations.T(json.render, context + ".render");
         this.question = Translations.T(json.question, context + ".question");
         this.roaming = json.roaming ?? false;
-        const condition = FromJSON.Tag(json.condition ?? {"and": []}, `${context}.condition`);
+        const condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (this.roaming && conditionIfRoaming !== undefined) {
             this.condition = new And([condition, conditionIfRoaming]);
         } else {
@@ -75,7 +73,7 @@ export default class TagRenderingConfig {
                 key: json.freeform.key,
                 type: json.freeform.type ?? "string",
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
-                    FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? [],
+                    TagUtils.Tag(tg, `${context}.extratag[${i}]`)) ?? [],
                 inline: json.freeform.inline ?? false,
                 default: json.freeform.default,
                 helperArgs: json.freeform.helperArgs
@@ -87,7 +85,7 @@ export default class TagRenderingConfig {
             if (this.freeform.key === undefined || this.freeform.key === "") {
                 throw `Freeform.key is undefined or the empty string - this is not allowed; either fill out something or remove the freeform block alltogether. Error in ${context}`
             }
-            if(json.freeform["args"] !== undefined){
+            if (json.freeform["args"] !== undefined) {
                 throw `Freeform.args is defined. This should probably be 'freeform.helperArgs' (at ${context})`
 
             }
@@ -134,12 +132,12 @@ export default class TagRenderingConfig {
                 if (typeof mapping.hideInAnswer === "boolean") {
                     hideInAnswer = mapping.hideInAnswer;
                 } else if (mapping.hideInAnswer !== undefined) {
-                    hideInAnswer = FromJSON.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
+                    hideInAnswer = TagUtils.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
                 }
                 const mappingContext = `${context}.mapping[${i}]`
                 const mp = {
-                    if: FromJSON.Tag(mapping.if, `${mappingContext}.if`),
-                    ifnot: (mapping.ifnot !== undefined ? FromJSON.Tag(mapping.ifnot, `${mappingContext}.ifnot`) : undefined),
+                    if: TagUtils.Tag(mapping.if, `${mappingContext}.if`),
+                    ifnot: (mapping.ifnot !== undefined ? TagUtils.Tag(mapping.ifnot, `${mappingContext}.ifnot`) : undefined),
                     then: Translations.T(mapping.then, `{mappingContext}.then`),
                     hideInAnswer: hideInAnswer
                 };
@@ -336,25 +334,5 @@ export default class TagRenderingConfig {
         return usedIcons;
     }
 
-    /**
-     * Returns true if this tag rendering has a minimap in some language.
-     * Note: this might be hidden by conditions
-     */
-    public hasMinimap(): boolean {
-        const translations: Translation[] = Utils.NoNull([this.render, ...(this.mappings ?? []).map(m => m.then)]);
-        for (const translation of translations) {
-            for (const key in translation.translations) {
-                if (!translation.translations.hasOwnProperty(key)) {
-                    continue
-                }
-                const template = translation.translations[key]
-                const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
-                const hasMiniMap = parts.filter(part => part.special !== undefined).some(special => special.special.func.funcName === "minimap")
-                if (hasMiniMap) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+
 }

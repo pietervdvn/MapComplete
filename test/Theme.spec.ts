@@ -4,10 +4,10 @@ import {Utils} from "../Utils";
 Utils.runningFromConsole = true;
 import TagRenderingQuestion from "../UI/Popup/TagRenderingQuestion";
 import {UIEventSource} from "../Logic/UIEventSource";
-import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 import * as assert from "assert";
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
+import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
 export default class ThemeSpec extends T{
     constructor() {

@@ -1,7 +1,7 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import LocalStorageSaver from "./LocalStorageSaver";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class LocalStorageSource implements FeatureSource {
     public features: UIEventSource<{ feature: any; freshness: Date }[]>;

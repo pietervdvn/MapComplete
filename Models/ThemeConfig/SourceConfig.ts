@@ -29,7 +29,7 @@ export default class SourceConfig {
         if (defined == 0) {
             throw `Source: nothing correct defined in the source (in ${context}) (the params are ${JSON.stringify(params)})`
         }
-        if(params.isOsmCache && params.geojsonSource == undefined){
+        if (params.isOsmCache && params.geojsonSource == undefined) {
             console.error(params)
             throw `Source said it is a OSM-cached layer, but didn't define the actual source of the cache (in context ${context})`
         }

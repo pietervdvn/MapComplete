@@ -1,6 +1,7 @@
 import T from "./TestHelper";
-import {Denomination, Unit} from "../Customizations/JSON/Denomination";
 import {equal} from "assert";
+import {Unit} from "../Models/Unit";
+import {Denomination} from "../Models/Denomination";
 
 export default class UnitsSpec extends T {
 

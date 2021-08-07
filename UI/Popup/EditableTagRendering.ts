@@ -1,5 +1,4 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
 import Combine from "../Base/Combine";
@@ -8,7 +7,8 @@ import State from "../../State";
 import Svg from "../../Svg";
 import Toggle from "../Input/Toggle";
 import BaseUIElement from "../BaseUIElement";
-import {Unit} from "../../Customizations/JSON/Denomination";
+import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
+import {Unit} from "../../Models/Unit";
 
 export default class EditableTagRendering extends Toggle {
 

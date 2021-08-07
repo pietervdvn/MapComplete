@@ -1,10 +1,10 @@
 import {UIEventSource} from "../UIEventSource";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Translations from "../../UI/i18n/Translations";
 import Locale from "../../UI/i18n/Locale";
 import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer";
 import {ElementStorage} from "../ElementStorage";
 import Combine from "../../UI/Base/Combine";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 class TitleElement extends UIEventSource<string> {
     

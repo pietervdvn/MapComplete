@@ -1,10 +1,10 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import List from "../Base/List";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
+import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 
 /***
  * Displays the correct value for a known tagrendering

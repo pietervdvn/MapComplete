@@ -1,9 +1,9 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import Loc from "../../Models/Loc";
 import Hash from "../Web/Hash";
 import {TagsFilter} from "../Tags/TagsFilter";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export default class FilteringFeatureSource implements FeatureSource {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> =

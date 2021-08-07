@@ -1,11 +1,12 @@
 import {Translation} from "../../UI/i18n/Translation";
 import TagRenderingConfig from "./TagRenderingConfig";
-import LayerConfig from "./LayerConfig";
-import {LayoutConfigJson} from "./LayoutConfigJson";
-import AllKnownLayers from "../AllKnownLayers";
-import SharedTagRenderings from "../SharedTagRenderings";
+import {LayoutConfigJson} from "./Json/LayoutConfigJson";
+import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
+import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import {Utils} from "../../Utils";
-import {Denomination, Unit} from "./Denomination";
+import LayerConfig from "./LayerConfig";
+import {Unit} from "../Unit";
+import {Denomination} from "../Denomination";
 
 export default class LayoutConfig {
     public readonly id: string;

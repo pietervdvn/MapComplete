@@ -5,10 +5,8 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import {Translation} from "../i18n/Translation";
 import Svg from "../../Svg";
-import FilterConfig from "../../Customizations/JSON/FilterConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {And} from "../../Logic/Tags/And";
 import {UIEventSource} from "../../Logic/UIEventSource";
@@ -16,6 +14,8 @@ import BaseUIElement from "../BaseUIElement";
 import State from "../../State";
 import FilteredLayer from "../../Models/FilteredLayer";
 import BackgroundSelector from "./BackgroundSelector";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 
 
 /**

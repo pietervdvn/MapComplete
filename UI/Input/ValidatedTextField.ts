@@ -11,10 +11,10 @@ import DirectionInput from "./DirectionInput";
 import ColorPicker from "./ColorPicker";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
-import {Unit} from "../../Customizations/JSON/Denomination";
 import BaseUIElement from "../BaseUIElement";
 import LengthInput from "./LengthInput";
 import {GeoOperations} from "../../Logic/GeoOperations";
+import {Unit} from "../../Models/Unit";
 
 interface TextFieldDef {
     name: string,

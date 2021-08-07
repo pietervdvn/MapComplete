@@ -1,12 +1,12 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
 import State from "../../State";
 import Combine from "../Base/Combine";
 import BaseUIElement from "../BaseUIElement";
-import {Unit} from "../../Customizations/JSON/Denomination";
 import {VariableUiElement} from "../Base/VariableUIElement";
+import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
+import {Unit} from "../../Models/Unit";
 
 
 /**

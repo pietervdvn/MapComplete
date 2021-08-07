@@ -1,11 +1,9 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import EditableTagRendering from "./EditableTagRendering";
 import QuestionBox from "./QuestionBox";
 import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
-import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import {Tag} from "../../Logic/Tags/Tag";
 import Constants from "../../Models/Constants";
@@ -14,6 +12,11 @@ import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import DeleteWizard from "./DeleteWizard";
 import SplitRoadWizard from "./SplitRoadWizard";
+import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import {Translation} from "../i18n/Translation";
+import {Utils} from "../../Utils";
+import {SubstitutedTranslation} from "../SubstitutedTranslation";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -88,7 +91,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         }
 
 
-        const hasMinimap = layerConfig.tagRenderings.some(tr => tr.hasMinimap())
+        const hasMinimap = layerConfig.tagRenderings.some(tr => FeatureInfoBox.hasMinimap(tr))
         if (!hasMinimap) {
             renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
@@ -134,6 +137,28 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
         return new Combine(renderings).SetClass("block")
 
+    }
+
+    /**
+     * Returns true if this tag rendering has a minimap in some language.
+     * Note: this might be hidden by conditions
+     */
+    private static hasMinimap(renderingConfig: TagRenderingConfig): boolean {
+        const translations: Translation[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);
+        for (const translation of translations) {
+            for (const key in translation.translations) {
+                if (!translation.translations.hasOwnProperty(key)) {
+                    continue
+                }
+                const template = translation.translations[key]
+                const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
+                const hasMiniMap = parts.filter(part => part.special !== undefined).some(special => special.special.func.funcName === "minimap")
+                if (hasMiniMap) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }

@@ -8,9 +8,9 @@ import ValidatedTextField from "../UI/Input/ValidatedTextField";
 import BaseUIElement from "../UI/BaseUIElement";
 import Translations from "../UI/i18n/Translations";
 import {writeFileSync} from "fs";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import State from "../State";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
 
 

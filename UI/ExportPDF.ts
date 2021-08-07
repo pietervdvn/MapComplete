@@ -17,11 +17,11 @@ import Loc from "../Models/Loc";
 import {BBox} from "../Logic/GeoOperations";
 import ShowDataLayer from "./ShowDataLayer";
 import BaseLayer from "../Models/BaseLayer";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import Translations from "./i18n/Translations";
 import State from "../State";
 import Constants from "../Models/Constants";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
 export default class ExportPDF {
     // dimensions of the map in milimeter

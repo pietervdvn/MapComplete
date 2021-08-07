@@ -1,7 +1,7 @@
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {AndOrTagConfigJson} from "./TagConfigJson";
-import {DeleteConfigJson} from "./DeleteConfigJson";
+import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import FilterConfigJson from "./FilterConfigJson";
+import {DeleteConfigJson} from "./DeleteConfigJson";
 
 /**
  * Configuration for a single layer
@@ -222,7 +222,7 @@ export interface LayerConfigJson {
         /**
          * If set, the user will prompted to confirm the location before actually adding the data.
          * This will be with a 'drag crosshair'-method.
-         * 
+         *
          * If 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.
          */
         preciseInput?: true | {

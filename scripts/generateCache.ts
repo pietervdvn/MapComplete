@@ -8,17 +8,17 @@ import {Overpass} from "../Logic/Osm/Overpass";
 import {existsSync, readFileSync, writeFileSync} from "fs";
 import {TagsFilter} from "../Logic/Tags/TagsFilter";
 import {Or} from "../Logic/Tags/Or";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import ScriptUtils from "./ScriptUtils";
 import ExtractRelations from "../Logic/Osm/ExtractRelations";
 import * as OsmToGeoJson from "osmtogeojson";
 import MetaTagging from "../Logic/MetaTagging";
-import LayerConfig from "../Customizations/JSON/LayerConfig";
 import {GeoOperations} from "../Logic/GeoOperations";
 import {UIEventSource} from "../Logic/UIEventSource";
 import * as fs from "fs";
 import {TileRange} from "../Models/TileRange";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 
 function createOverpassObject(theme: LayoutConfig) {

@@ -5,7 +5,7 @@
  */
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class LocalStorageSaver implements FeatureSource {
     public static readonly storageKey: string = "cached-features";

@@ -5,8 +5,8 @@ import {equal} from "assert";
 import T from "./TestHelper";
 import {Translation} from "../UI/i18n/Translation";
 import AllKnownLayers from "../Customizations/AllKnownLayers";
-import LayerConfig from "../Customizations/JSON/LayerConfig";
 import * as bike_repair_station from "../assets/layers/bike_repair_station/bike_repair_station.json"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 export default class ImageAttributionSpec extends T {
     constructor() {

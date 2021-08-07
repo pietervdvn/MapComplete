@@ -1,6 +1,5 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
-import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import {InputElement} from "../Input/InputElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {FixedInputElement} from "../Input/FixedInputElement";
@@ -23,9 +22,10 @@ import {And} from "../../Logic/Tags/And";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
 import {DropDown} from "../Input/DropDown";
-import {Unit} from "../../Customizations/JSON/Denomination";
 import InputElementWrapper from "../Input/InputElementWrapper";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
+import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
+import {Unit} from "../../Models/Unit";
 
 /**
  * Shows the question element.

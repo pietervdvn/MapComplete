@@ -3,7 +3,7 @@ import {UIEventSource} from "../UIEventSource";
 import Loc from "../../Models/Loc";
 import State from "../../State";
 import {Utils} from "../../Utils";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 
 /**

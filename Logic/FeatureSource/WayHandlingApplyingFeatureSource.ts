@@ -1,7 +1,7 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import {GeoOperations} from "../GeoOperations";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 /**
  * This is the part of the pipeline which introduces extra points at the center of an area (but only if this is demanded by the wayhandling)

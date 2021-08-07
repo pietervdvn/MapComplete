@@ -1,8 +1,8 @@
-import LayerConfig from "../Customizations/JSON/LayerConfig";
 import SimpleMetaTagger from "./SimpleMetaTagger";
 import {ExtraFunction} from "./ExtraFunction";
 import {Relation} from "./Osm/ExtractRelations";
 import {UIEventSource} from "./UIEventSource";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 
 interface Params {

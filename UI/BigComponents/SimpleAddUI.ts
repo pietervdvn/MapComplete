@@ -8,7 +8,6 @@ import State from "../../State";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
@@ -17,8 +16,9 @@ import UserDetails from "../../Logic/Osm/OsmConnection";
 import LocationInput from "../Input/LocationInput";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
-import PresetConfig from "../../Customizations/JSON/PresetConfig";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
+import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:

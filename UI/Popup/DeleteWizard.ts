@@ -8,18 +8,18 @@ import {Tag} from "../../Logic/Tags/Tag";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import TagRenderingQuestion from "./TagRenderingQuestion";
-import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {Translation} from "../i18n/Translation";
-import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
 import BaseUIElement from "../BaseUIElement";
 import {Changes} from "../../Logic/Osm/Changes";
 import {And} from "../../Logic/Tags/And";
 import Constants from "../../Models/Constants";
-import DeleteConfig from "../../Customizations/JSON/DeleteConfig";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
+import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
+import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
+import DeleteConfig from "../../Models/ThemeConfig/DeleteConfig";
 
 export default class DeleteWizard extends Toggle {
     /**

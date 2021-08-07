@@ -1,4 +1,4 @@
-export default interface UnitConfigJson{
+export default interface UnitConfigJson {
 
     /**
      * The canonical value which will be added to the text.
@@ -19,7 +19,7 @@ export default interface UnitConfigJson{
      *     "fr": "metre"
      * }
      */
-    human?:string | any
+    human?: string | any
 
     /**
      * If set, then the canonical value will be prefixed instead, e.g. for '€'

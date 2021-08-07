@@ -15,7 +15,6 @@ import {Utils} from "./Utils";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personal/personal.json";
-import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import * as L from "leaflet";
 import Img from "./UI/Base/Img";
 import UserDetails from "./Logic/Osm/OsmConnection";
@@ -30,14 +29,15 @@ import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
-import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
-import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import {TagsFilter} from "./Logic/Tags/TagsFilter";
 import LeftControls from "./UI/BigComponents/LeftControls";
 import RightControls from "./UI/BigComponents/RightControls";
+import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
+import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
+import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 
 export class InitUiElements {
     static InitAll(

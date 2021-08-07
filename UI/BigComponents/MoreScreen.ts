@@ -1,5 +1,4 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
 import Svg from "../../Svg";
 import State from "../../State";
@@ -11,6 +10,7 @@ import Constants from "../../Models/Constants";
 import LanguagePicker from "../LanguagePicker";
 import IndexText from "./IndexText";
 import BaseUIElement from "../BaseUIElement";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class MoreScreen extends Combine {
 

@@ -3,9 +3,9 @@ import {UIEventSource} from "../UIEventSource";
 import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import BaseUIElement from "../../UI/BaseUIElement";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class GeoLocationHandler extends VariableUiElement {
     /**

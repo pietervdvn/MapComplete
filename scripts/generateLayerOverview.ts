@@ -1,11 +1,11 @@
 import ScriptUtils from "./ScriptUtils";
 import {writeFileSync} from "fs";
-import LayerConfig from "../Customizations/JSON/LayerConfig";
 import * as licenses from "../assets/generated/license_info.json"
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
-import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 import AllKnownLayers from "../Customizations/AllKnownLayers";
+import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them

@@ -10,11 +10,11 @@ import Constants from "../../Models/Constants";
 import Combine from "../Base/Combine";
 import {TabbedComponent} from "../Base/TabbedComponent";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import UserDetails from "../../Logic/Osm/OsmConnection";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 

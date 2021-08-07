@@ -8,7 +8,7 @@ export interface TagRenderingConfigJson {
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
-     * 
+     *
      * Note that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`
      */
     render?: string | any,
@@ -30,7 +30,7 @@ export interface TagRenderingConfigJson {
      * Allow freeform text input from the user
      */
     freeform?: {
-    
+
         /**
          * If this key is present, then 'render' is used to display the value.
          * If this is undefined, the rendering is _always_ shown
@@ -55,7 +55,7 @@ export interface TagRenderingConfigJson {
         /**
          * When set, influences the way a question is asked.
          * Instead of showing a full-widht text field, the text field will be shown within the rendering of the question.
-         * 
+         *
          * This combines badly with special input elements, as it'll distort the layout.
          */
         inline?: boolean
@@ -88,12 +88,12 @@ export interface TagRenderingConfigJson {
         then: string | any,
         /**
          * In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).
-         * 
+         *
          * In the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.
          * In this case, one of the mappings can be hiden by setting this flag.
-         * 
+         *
          * To demonstrate an example making a default assumption:
-         * 
+         *
          * mappings: [
          *  {
          *      if: "access=", -- no access tag present, we assume accessible
@@ -109,8 +109,8 @@ export interface TagRenderingConfigJson {
          *      then: "Not accessible to the public"
          *  }
          * ]
-         * 
-         * 
+         *
+         *
          * For example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.
          * Then, we would add two mappings:
          * {
@@ -122,13 +122,13 @@ export interface TagRenderingConfigJson {
          *     then: "Maintained by Agentschap Natuur en Bos"
          *     hideInAnswer: true
          * }
-         * 
+         *
          * Hide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.
          * Keep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch
-         * 
+         *
          * e.g., for toilets: if "wheelchair=no", we know there is no wheelchair dedicated room.
          * For the location of the changing table, the option "in the wheelchair accessible toilet is weird", so we write:
-         * 
+         *
          * {
          *     "question": "Where is the changing table located?"
          *     "mappings": [
@@ -138,7 +138,7 @@ export interface TagRenderingConfigJson {
          *         
          *     ]
          * }
-         * 
+         *
          * Also have a look for the meta-tags
          * {
          *     if: "operator=Agentschap Natuur en Bos",
@@ -156,7 +156,7 @@ export interface TagRenderingConfigJson {
          * If this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`
          */
         ifnot?: AndOrTagConfigJson | string
-        
+
     }[]
 
     /**

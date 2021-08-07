@@ -5,9 +5,9 @@ import {UIEventSource} from "../UIEventSource";
 import {ElementStorage} from "../ElementStorage";
 import State from "../../State";
 import Locale from "../../UI/i18n/Locale";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Constants from "../../Models/Constants";
 import {OsmObject} from "./OsmObject";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export class ChangesetHandler {
 

@@ -7,9 +7,9 @@ import {SubtleButton} from "../Base/SubtleButton";
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import Img from "../Base/Img";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export default class PersonalLayersPanel extends VariableUiElement {
 

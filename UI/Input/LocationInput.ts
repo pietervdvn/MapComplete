@@ -8,8 +8,8 @@ import Svg from "../../Svg";
 import State from "../../State";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {GeoOperations} from "../../Logic/GeoOperations";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import ShowDataLayer from "../ShowDataLayer";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class LocationInput extends InputElement<Loc> {
 

@@ -1,6 +1,6 @@
-import LayerConfig from "./JSON/LayerConfig";
 import * as known_layers from "../assets/generated/known_layers_and_themes.json"
 import {Utils} from "../Utils";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 export default class AllKnownLayers {
 

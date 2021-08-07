@@ -1,14 +1,14 @@
 import {Utils} from "../Utils";
 import {equal} from "assert";
 import T from "./TestHelper";
-import {FromJSON} from "../Customizations/JSON/FromJSON";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
-import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
 import {Translation} from "../UI/i18n/Translation";
 import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
 import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
+import {TagUtils} from "../Logic/Tags/TagUtils";
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 
 
 Utils.runningFromConsole = true;
@@ -25,7 +25,7 @@ export default class TagSpec extends T {
 
             }],
             ["Parse tag config", (() => {
-                const tag = FromJSON.Tag("key=value") as Tag;
+                const tag = TagUtils.Tag("key=value") as Tag;
                 equal(tag.key, "key");
                 equal(tag.value, "value");
                 equal(tag.matchesProperties({"key": "value"}), true)
@@ -34,13 +34,13 @@ export default class TagSpec extends T {
                 equal(tag.matchesProperties({"other_key": ""}), false)
                 equal(tag.matchesProperties({"other_key": "value"}), false)
 
-                const isEmpty = FromJSON.Tag("key=") as Tag;
+                const isEmpty = TagUtils.Tag("key=") as Tag;
                 equal(isEmpty.matchesProperties({"key": "value"}), false)
                 equal(isEmpty.matchesProperties({"key": ""}), true)
                 equal(isEmpty.matchesProperties({"other_key": ""}), true)
                 equal(isEmpty.matchesProperties({"other_key": "value"}), true)
 
-                const isNotEmpty = FromJSON.Tag("key!=");
+                const isNotEmpty = TagUtils.Tag("key!=");
                 equal(isNotEmpty.matchesProperties({"key": "value"}), true)
                 equal(isNotEmpty.matchesProperties({"key": "other_value"}), true)
                 equal(isNotEmpty.matchesProperties({"key": ""}), false)
@@ -48,68 +48,68 @@ export default class TagSpec extends T {
                 equal(isNotEmpty.matchesProperties({"other_key": "value"}), false)
 
 
-                const and = FromJSON.Tag({"and": ["key=value", "x=y"]}) as And;
+                const and = TagUtils.Tag({"and": ["key=value", "x=y"]}) as And;
                 equal((and.and[0] as Tag).key, "key");
                 equal((and.and[1] as Tag).value, "y");
 
 
-                const notReg = FromJSON.Tag("x!~y") as And;
+                const notReg = TagUtils.Tag("x!~y") as And;
                 equal(notReg.matchesProperties({"x": "y"}), false)
                 equal(notReg.matchesProperties({"x": "z"}), true)
                 equal(notReg.matchesProperties({"x": ""}), true)
                 equal(notReg.matchesProperties({}), true)
 
-                const noMatch = FromJSON.Tag("key!=value") as Tag;
+                const noMatch = TagUtils.Tag("key!=value") as Tag;
                 equal(noMatch.matchesProperties({"key": "value"}), false)
                 equal(noMatch.matchesProperties({"key": "otherValue"}), true)
                 equal(noMatch.matchesProperties({"key": ""}), true)
                 equal(noMatch.matchesProperties({"otherKey": ""}), true)
 
 
-                const multiMatch = FromJSON.Tag("vending~.*bicycle_tube.*") as Tag;
+                const multiMatch = TagUtils.Tag("vending~.*bicycle_tube.*") as Tag;
                 equal(multiMatch.matchesProperties({"vending": "bicycle_tube"}), true)
                 equal(multiMatch.matchesProperties({"vending": "something;bicycle_tube"}), true)
                 equal(multiMatch.matchesProperties({"vending": "bicycle_tube;something"}), true)
                 equal(multiMatch.matchesProperties({"vending": "xyz;bicycle_tube;something"}), true)
 
-                const nameStartsWith = FromJSON.Tag("name~[sS]peelbos.*")
+                const nameStartsWith = TagUtils.Tag("name~[sS]peelbos.*")
                 equal(nameStartsWith.matchesProperties({"name": "Speelbos Sint-Anna"}), true)
                 equal(nameStartsWith.matchesProperties({"name": "speelbos Sint-Anna"}), true)
                 equal(nameStartsWith.matchesProperties({"name": "Sint-Anna"}), false)
                 equal(nameStartsWith.matchesProperties({"name": ""}), false)
 
 
-                const assign = FromJSON.Tag("survey:date:={_date:now}")
+                const assign = TagUtils.Tag("survey:date:={_date:now}")
                 equal(assign.matchesProperties({"survey:date": "2021-03-29", "_date:now": "2021-03-29"}), true);
                 equal(assign.matchesProperties({"survey:date": "2021-03-29", "_date:now": "2021-01-01"}), false);
                 equal(assign.matchesProperties({"survey:date": "2021-03-29"}), false);
                 equal(assign.matchesProperties({"_date:now": "2021-03-29"}), false);
                 equal(assign.matchesProperties({"some_key": "2021-03-29"}), false);
 
-                const notEmptyList = FromJSON.Tag("xyz!~\\[\\]")
+                const notEmptyList = TagUtils.Tag("xyz!~\\[\\]")
                 equal(notEmptyList.matchesProperties({"xyz": undefined}), true);
                 equal(notEmptyList.matchesProperties({"xyz": "[]"}), false);
                 equal(notEmptyList.matchesProperties({"xyz": "[\"abc\"]"}), true);
                 
-                let compare = FromJSON.Tag("key<=5")
+                let compare = TagUtils.Tag("key<=5")
                 equal(compare.matchesProperties({"key": undefined}), false);
                 equal(compare.matchesProperties({"key": "6"}), false);
                 equal(compare.matchesProperties({"key": "5"}), true);
                 equal(compare.matchesProperties({"key": "4"}), true);
 
 
-                compare = FromJSON.Tag("key<5")
+                compare = TagUtils.Tag("key<5")
                 equal(compare.matchesProperties({"key": undefined}), false);
                 equal(compare.matchesProperties({"key": "6"}), false);
                 equal(compare.matchesProperties({"key": "5"}), false);
                 equal(compare.matchesProperties({"key": "4.2"}), true);
 
-                compare = FromJSON.Tag("key>5")
+                compare = TagUtils.Tag("key>5")
                 equal(compare.matchesProperties({"key": undefined}), false);
                 equal(compare.matchesProperties({"key": "6"}), true);
                 equal(compare.matchesProperties({"key": "5"}), false);
                 equal(compare.matchesProperties({"key": "4.2"}), false);
-                compare = FromJSON.Tag("key>=5")
+                compare = TagUtils.Tag("key>=5")
                 equal(compare.matchesProperties({"key": undefined}), false);
                 equal(compare.matchesProperties({"key": "6"}), true);
                 equal(compare.matchesProperties({"key": "5"}), true);
@@ -190,7 +190,7 @@ export default class TagSpec extends T {
                             "protect_class!=98"
                         ]
                     }
-                    const filter = FromJSON.Tag(t)
+                    const filter = TagUtils.Tag(t)
                     const overpass = filter.asOverpass();
                     console.log(overpass)
                     equal(overpass[0], "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]")
@@ -201,7 +201,7 @@ export default class TagSpec extends T {
                             t
                         ]
                     }
-                    const overpassOr = FromJSON.Tag(or).asOverpass()
+                    const overpassOr = TagUtils.Tag(or).asOverpass()
                     equal(2, overpassOr.length)
                     equal(overpassOr[1], "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]")
 
@@ -209,7 +209,7 @@ export default class TagSpec extends T {
                        "amenity=drinking_water",
                            or
                        ]}
-                    const overpassOrInor = FromJSON.Tag(orInOr).asOverpass()
+                    const overpassOrInor = TagUtils.Tag(orInOr).asOverpass()
                     equal(3, overpassOrInor.length)
                 }
             ], [

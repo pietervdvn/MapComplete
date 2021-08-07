@@ -1,21 +1,10 @@
 import {Utils} from "../Utils";
-
-Utils.runningFromConsole = true;
 import {equal} from "assert";
 import T from "./TestHelper";
-import {FromJSON} from "../Customizations/JSON/FromJSON";
-import Locale from "../UI/i18n/Locale";
-import Translations from "../UI/i18n/Translations";
 import {UIEventSource} from "../Logic/UIEventSource";
-import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
-import EditableTagRendering from "../UI/Popup/EditableTagRendering";
-import {Translation} from "../UI/i18n/Translation";
-import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
-import PublicHolidayInput from "../UI/OpeningHours/PublicHolidayInput";
-import {SubstitutedTranslation} from "../UI/SubstitutedTranslation";
-import {Tag} from "../Logic/Tags/Tag";
-import {And} from "../Logic/Tags/And";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
+
+Utils.runningFromConsole = true;
 export default class ImageSearcherSpec extends T {
 
     constructor() {

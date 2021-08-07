@@ -2,14 +2,14 @@
 import {Utils} from "../Utils";
 Utils.runningFromConsole = true;
 
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 import Constants from "../Models/Constants";
 import * as all_known_layouts from "../assets/generated/known_layers_and_themes.json"
-import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
+import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 const sharp = require('sharp');
 
 

@@ -4,10 +4,10 @@
 import {UIEventSource} from "../Logic/UIEventSource";
 import * as L from "leaflet"
 import "leaflet.markercluster"
-import LayerConfig from "../Customizations/JSON/LayerConfig";
 import State from "../State";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 
 export default class ShowDataLayer {

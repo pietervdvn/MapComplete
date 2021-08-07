@@ -7,7 +7,6 @@ import FeatureSource from "../FeatureSource/FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import LocalStorageSaver from "./LocalStorageSaver";
 import LocalStorageSource from "./LocalStorageSource";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
 import GeoJsonSource from "./GeoJsonSource";
 import MetaTaggingFeatureSource from "./MetaTaggingFeatureSource";
@@ -15,6 +14,7 @@ import RegisteringFeatureSource from "./RegisteringFeatureSource";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {Changes} from "../Osm/Changes";
 import ChangeApplicator from "./ChangeApplicator";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class FeaturePipeline implements FeatureSource {
 

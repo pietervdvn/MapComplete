@@ -10,8 +10,8 @@ import Toggle from "../Input/Toggle";
 import FileSelectorButton from "../Input/FileSelectorButton";
 import ImgurUploader from "../../Logic/ImageProviders/ImgurUploader";
 import UploadFlowStateUI from "../BigComponents/UploadFlowStateUI";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export class ImageUploadFlow extends Toggle {
 

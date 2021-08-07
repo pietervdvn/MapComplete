@@ -1,13 +1,13 @@
 import {UIEventSource} from "../UIEventSource";
 import Loc from "../../Models/Loc";
 import {Or} from "../Tags/Or";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {Overpass} from "../Osm/Overpass";
 import Bounds from "../../Models/Bounds";
 import FeatureSource from "../FeatureSource/FeatureSource";
 import {Utils} from "../../Utils";
 import {TagsFilter} from "../Tags/TagsFilter";
 import SimpleMetaTagger from "../SimpleMetaTagger";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 
 export default class OverpassFeatureSource implements FeatureSource {

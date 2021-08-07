@@ -42,14 +42,14 @@ export interface DeleteConfigJson {
      * In some cases, the contributor is not allowed to delete the current feature (e.g. because it isn't a point, the point is referenced by a relation or the user isn't experienced enough).
      * To still offer the user a 'delete'-option, the feature is retagged with these tags. This is a soft deletion, as the point isn't actually removed from OSM but rather marked as 'disused'
      * It is important that the feature will be retagged in such a way that it won't be picked up by the layer anymore!
-     * 
-     * Example (note that "amenity=" erases the 'amenity'-key alltogether): 
+     *
+     * Example (note that "amenity=" erases the 'amenity'-key alltogether):
      * ```
      * {
      *     "and": ["disussed:amenity=public_bookcase", "amenity="]
      * }
      * ```
-     * 
+     *
      * or (notice the use of the ':='-tag to copy the old value of 'shop=*' into 'disused:shop='):
      * ```
      * {

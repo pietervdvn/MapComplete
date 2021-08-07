@@ -1,6 +1,6 @@
-import {LayerConfigJson} from "./LayerConfigJson";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import UnitConfigJson from "./UnitConfigJson";
+import {LayerConfigJson} from "./LayerConfigJson";
 
 /**
  * Defines the entire theme.
@@ -15,7 +15,7 @@ import UnitConfigJson from "./UnitConfigJson";
  * General remark: a type (string | any) indicates either a fixed or a translatable string.
  */
 export interface LayoutConfigJson {
-   
+
     /**
      * The id of this layout.
      *
@@ -207,7 +207,7 @@ export interface LayoutConfigJson {
      * ```
      *
      * It's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:
-     * 
+     *
      * ```
      * "layer": {
      *  "builtin": ["benches", "drinking_water"],
@@ -226,9 +226,9 @@ export interface LayoutConfigJson {
      *
      * Not only do we want to write consistent data to OSM, we also want to present this consistently to the user.
      * This is handled by defining units.
-     * 
+     *
      * # Rendering
-     * 
+     *
      * To render a value with long (human) denomination, use {canonical(key)}
      *
      * # Usage
@@ -336,7 +336,7 @@ export interface LayoutConfigJson {
     enableGeolocation?: boolean;
     enableBackgroundLayerSelection?: boolean;
     enableShowAllQuestions?: boolean;
-    enableDownload?: boolean;  
+    enableDownload?: boolean;
     enablePdfDownload?: boolean;
 
 }

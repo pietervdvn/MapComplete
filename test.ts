@@ -1,11 +1,11 @@
 import {UIEventSource} from "./Logic/UIEventSource";
-import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import State from "./State";
 import LocationInput from "./UI/Input/LocationInput";
 import Loc from "./Models/Loc";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
+import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 
 const layout = new UIEventSource<LayoutConfig>(AllKnownLayouts.allKnownLayouts.get("cycle_infra"))
 State.state = new State(layout.data)

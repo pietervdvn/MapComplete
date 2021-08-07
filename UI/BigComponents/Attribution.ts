@@ -4,10 +4,10 @@ import Combine from "../Base/Combine";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import UserDetails from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
 import * as L from "leaflet"
 import {VariableUiElement} from "../Base/VariableUIElement";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 /**
  * The bottom right attribution panel in the leaflet map

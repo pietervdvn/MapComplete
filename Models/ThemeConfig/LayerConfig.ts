@@ -1,24 +1,23 @@
-import Translations from "../../UI/i18n/Translations";
-import TagRenderingConfig from "./TagRenderingConfig";
-import {LayerConfigJson} from "./LayerConfigJson";
-import {FromJSON} from "./FromJSON";
-import SharedTagRenderings from "../SharedTagRenderings";
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {Translation} from "../../UI/i18n/Translation";
-import Svg from "../../Svg";
-
+import SourceConfig from "./SourceConfig";
+import TagRenderingConfig from "./TagRenderingConfig";
+import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import PresetConfig from "./PresetConfig";
+import {LayerConfigJson} from "./Json/LayerConfigJson";
+import Translations from "../../UI/i18n/Translations";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
+import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
+import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 import {Utils} from "../../Utils";
+import Svg from "../../Svg";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import BaseUIElement from "../../UI/BaseUIElement";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import {FixedUiElement} from "../../UI/Base/FixedUiElement";
-import SourceConfig from "./SourceConfig";
-import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import BaseUIElement from "../../UI/BaseUIElement";
-import {Unit} from "./Denomination";
-import DeleteConfig from "./DeleteConfig";
 import FilterConfig from "./FilterConfig";
-import PresetConfig from "./PresetConfig";
+import {Unit} from "../Unit";
+import DeleteConfig from "./DeleteConfig";
 
 export default class LayerConfig {
     static WAYHANDLING_DEFAULT = 0;
@@ -83,7 +82,7 @@ export default class LayerConfig {
         let legacy = undefined;
         if (json["overpassTags"] !== undefined) {
             // @ts-ignore
-            legacy = FromJSON.Tag(json["overpassTags"], context + ".overpasstags");
+            legacy = TagUtils.Tag(json["overpassTags"], context + ".overpasstags");
         }
         if (json.source !== undefined) {
             if (legacy !== undefined) {
@@ -95,7 +94,7 @@ export default class LayerConfig {
 
             let osmTags: TagsFilter = legacy;
             if (json.source["osmTags"]) {
-                osmTags = FromJSON.Tag(
+                osmTags = TagUtils.Tag(
                     json.source["osmTags"],
                     context + "source.osmTags"
                 );
@@ -144,9 +143,9 @@ export default class LayerConfig {
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.wayHandling = json.wayHandling ?? 0;
         this.presets = (json.presets ?? []).map((pr, i) => {
-            
+
             let preciseInput = undefined;
-            if(pr.preciseInput !== undefined){
+            if (pr.preciseInput !== undefined) {
                 if (pr.preciseInput === true) {
                     pr.preciseInput = {
                         preferredBackground: undefined
@@ -158,8 +157,8 @@ export default class LayerConfig {
                 } else {
                     snapToLayers = pr.preciseInput.snapToLayer
                 }
-                
-                let preferredBackground : string[]
+
+                let preferredBackground: string[]
                 if (typeof pr.preciseInput.preferredBackground === "string") {
                     preferredBackground = [pr.preciseInput.preferredBackground]
                 } else {
@@ -171,10 +170,10 @@ export default class LayerConfig {
                     maxSnapDistance: pr.preciseInput.maxSnapDistance ?? 10
                 }
             }
-         
-            const config : PresetConfig= {
+
+            const config: PresetConfig = {
                 title: Translations.T(pr.title, `${context}.presets[${i}].title`),
-                tags: pr.tags.map((t) => FromJSON.SimpleTag(t)),
+                tags: pr.tags.map((t) => TagUtils.SimpleTag(t)),
                 description: Translations.T(pr.description, `${context}.presets[${i}].description`),
                 preciseInput: preciseInput,
             }
@@ -301,7 +300,7 @@ export default class LayerConfig {
                 tr = SharedTagRenderings.SharedIcons.get(overlay.then);
             }
             return {
-                if: FromJSON.Tag(overlay.if),
+                if: TagUtils.Tag(overlay.if),
                 then: tr,
                 badge: overlay.badge ?? false,
             };
@@ -426,7 +425,7 @@ export default class LayerConfig {
         }
 
         function render(tr: TagRenderingConfig, deflt?: string) {
-            if(tags === undefined){
+            if (tags === undefined) {
                 return deflt
             }
             const str = tr?.GetRenderValue(tags.data)?.txt ?? deflt;

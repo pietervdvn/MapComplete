@@ -10,10 +10,10 @@ import {LeafletMouseEvent} from "leaflet";
 import Combine from "../Base/Combine";
 import {Button} from "../Base/Button";
 import Translations from "../i18n/Translations";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import SplitAction from "../../Logic/Osm/Actions/SplitAction";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import Title from "../Base/Title";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class SplitRoadWizard extends Toggle {
     private static splitLayout = new UIEventSource(SplitRoadWizard.GetSplitLayout())

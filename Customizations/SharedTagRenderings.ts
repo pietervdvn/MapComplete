@@ -1,7 +1,7 @@
-import TagRenderingConfig from "./JSON/TagRenderingConfig";
 import * as questions from "../assets/tagRenderings/questions.json";
 import * as icons from "../assets/tagRenderings/icons.json";
 import {Utils} from "../Utils";
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 
 export default class SharedTagRenderings {
 

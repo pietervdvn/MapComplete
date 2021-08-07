@@ -1,6 +1,5 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {Translation} from "../i18n/Translation";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Svg from "../../Svg";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
@@ -11,8 +10,9 @@ import Toggle from "../Input/Toggle";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
-import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import BaseUIElement from "../BaseUIElement";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export default class ShareScreen extends Combine {
 

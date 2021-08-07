@@ -1,8 +1,8 @@
 import {UIEventSource} from "../UIEventSource";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {OsmConnection} from "../Osm/OsmConnection";
 import {Utils} from "../../Utils";
 import LZString from "lz-string";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class InstalledThemes {
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
