@@ -53,6 +53,11 @@
       "description": {
         "en": "A bollard in the road",
         "nl": "Een paaltje in de weg"
+      },
+      "preciseInput": {
+        "preferredBackground": ["photo"],
+        "snapToLayer": "cycleways_and_roads",
+        "maxSnapDistance": 25
       }
     },
     {
@@ -66,6 +71,11 @@
       "description": {
         "en": "Cycle barrier, slowing down cyclists",
         "nl": "Fietshekjes, voor het afremmen van fietsers"
+      },
+      "preciseInput": {
+        "preferredBackground": ["photo"],
+        "snapToLayer": "cycleways_and_roads",
+        "maxSnapDistance": 25
       }
     }
   ],

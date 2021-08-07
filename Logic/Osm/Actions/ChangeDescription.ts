@@ -14,7 +14,7 @@ export interface ChangeDescription {
         lat: number,
         lon: number
     } | {
-        // Coordinates are only used for rendering
+        // Coordinates are only used for rendering. They should be lon, lat
         locations: [number, number][]
         nodes: number[],
     } | {

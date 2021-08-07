@@ -9,19 +9,16 @@ import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
-import {Tag} from "../../Logic/Tags/Tag";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
 import UserDetails from "../../Logic/Osm/OsmConnection";
-import {Translation} from "../i18n/Translation";
 import LocationInput from "../Input/LocationInput";
-import {InputElement} from "../Input/InputElement";
-import Loc from "../../Models/Loc";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
-import Hash from "../../Logic/Web/Hash";
+import PresetConfig from "../../Customizations/JSON/PresetConfig";
+import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -32,17 +29,12 @@ import Hash from "../../Logic/Web/Hash";
  */
 
 /*private*/
-interface PresetInfo {
-    description: string | Translation,
+interface PresetInfo extends PresetConfig {
     name: string | BaseUIElement,
     icon: () => BaseUIElement,
-    tags: Tag[],
     layerToAddTo: {
         layerDef: LayerConfig,
         isDisplayed: UIEventSource<boolean>
-    },
-    preciseInput?: {
-        preferredBackground?: string
     }
 }
 
@@ -65,24 +57,43 @@ export default class SimpleAddUI extends Toggle {
 
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset)
 
+
+        function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
+            console.trace("Creating a new point")
+            const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {snapOnto: snapOntoWay})
+            State.state.changes.applyAction(newElementAction)
+            selectedPreset.setData(undefined)
+            isShown.setData(false)
+            State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
+                newElementAction.newElementId
+            ))
+            console.log("Did set selected element to", State.state.allElements.ContainingFeatures.get(
+                newElementAction.newElementId
+            ))
+
+        }
+
         const addUi = new VariableUiElement(
             selectedPreset.map(preset => {
                     if (preset === undefined) {
                         return presetsOverview
                     }
                     return SimpleAddUI.CreateConfirmButton(preset,
-                        (tags, location) => {
-                        const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon)
-                            State.state.changes.applyAction(newElementAction)
-                            selectedPreset.setData(undefined)
-                            isShown.setData(false)
-                            State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
-                                newElementAction.newElementId
-                            ))
-                            console.log("Did set selected element to",State.state.allElements.ContainingFeatures.get(
-                                newElementAction.newElementId
-                            ))
-                        }, () => {
+                        (tags, location, snapOntoWayId?: string) => {
+                            if (snapOntoWayId === undefined) {
+                                createNewPoint(tags, location, undefined)
+                            } else {
+                                OsmObject.DownloadObject(snapOntoWayId).addCallbackAndRunD(way => {
+                                    createNewPoint(tags, location,<OsmWay> way)
+                                    return true;
+                                })
+                            }
+
+
+                        },
+
+
+                        () => {
                             selectedPreset.setData(undefined)
                         })
                 }
@@ -115,11 +126,11 @@ export default class SimpleAddUI extends Toggle {
 
 
     private static CreateConfirmButton(preset: PresetInfo,
-                                       confirm: (tags: any[], location: { lat: number, lon: number }) => void,
+                                       confirm: (tags: any[], location: { lat: number, lon: number }, snapOntoWayId: string) => void,
                                        cancel: () => void): BaseUIElement {
 
         let location = State.state.LastClickLocation;
-        let preciseInput: InputElement<Loc> = undefined
+        let preciseInput: LocationInput = undefined
         if (preset.preciseInput !== undefined) {
             const locationSrc = new UIEventSource({
                 lat: location.data.lat,
@@ -132,9 +143,22 @@ export default class SimpleAddUI extends Toggle {
                 backgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
             }
 
+            let features: UIEventSource<{ feature: any }[]> = undefined
+            if (preset.preciseInput.snapToLayers) {
+                // We have to snap to certain layers.
+                // Lets fetch tehm
+                const asSet = new Set(preset.preciseInput.snapToLayers)
+                features = State.state.featurePipeline.features.map(f => f.filter(feat => asSet.has(feat.feature._matching_layer_id)))
+            }
+
+            const tags = TagUtils.KVtoProperties(preset.tags ?? []);
+            console.log("Opening precise input ", preset.preciseInput, "with tags", tags)
             preciseInput = new LocationInput({
                 mapBackground: backgroundLayer,
-                centerLocation: locationSrc
+                centerLocation: locationSrc,
+                snapTo: features,
+                snappedPointTags: tags,
+                maxSnapDistance: preset.preciseInput.maxSnapDistance
 
             })
             preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
@@ -148,7 +172,7 @@ export default class SimpleAddUI extends Toggle {
             ]).SetClass("flex flex-col")
         ).SetClass("font-bold break-words")
             .onClick(() => {
-                confirm(preset.tags, (preciseInput?.GetValue() ?? location).data);
+                confirm(preset.tags, (preciseInput?.GetValue() ?? location).data, preciseInput?.snappedOnto?.data?.properties?.id);
             });
 
         if (preciseInput !== undefined) {
@@ -242,8 +266,8 @@ export default class SimpleAddUI extends Toggle {
                 // The layer is not displayed and we cannot enable the layer control -> we skip
                 continue;
             }
-            
-            if(layer.layerDef.name === undefined){
+
+            if (layer.layerDef.name === undefined) {
                 // this is a parlty hidden layer
                 continue;
             }
@@ -258,6 +282,7 @@ export default class SimpleAddUI extends Toggle {
                     tags: preset.tags,
                     layerToAddTo: layer,
                     name: preset.title,
+                    title: preset.title,
                     description: preset.description,
                     icon: icon,
                     preciseInput: preset.preciseInput

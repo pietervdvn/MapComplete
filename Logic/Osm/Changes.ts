@@ -27,9 +27,6 @@ export class Changes {
     private readonly previouslyCreated : OsmObject[] = []
 
     constructor() {
-       this.isUploading.addCallbackAndRun(uploading => {
-           console.trace("Is uploading changed:", uploading)
-       })
     }
 
     private static createChangesetFor(csId: string,

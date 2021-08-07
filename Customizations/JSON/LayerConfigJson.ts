@@ -226,7 +226,21 @@ export interface LayerConfigJson {
          * If 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.
          */
         preciseInput?: true | {
-            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string
+            /**
+             * The type of background picture
+             */
+            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string | string [],
+            /**
+             * If specified, these layers will be shown to and the new point will be snapped towards it
+             */
+            snapToLayer?: string | string[],
+            /**
+             * If specified, a new point will only be snapped if it is within this range.
+             * Distance in meter
+             *
+             * Default: 10
+             */
+            maxSnapDistance?: number
         }
     }[],
 

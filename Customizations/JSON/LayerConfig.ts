@@ -14,11 +14,11 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import SourceConfig from "./SourceConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import {Tag} from "../../Logic/Tags/Tag";
 import BaseUIElement from "../../UI/BaseUIElement";
 import {Unit} from "./Denomination";
 import DeleteConfig from "./DeleteConfig";
 import FilterConfig from "./FilterConfig";
+import PresetConfig from "./PresetConfig";
 
 export default class LayerConfig {
     static WAYHANDLING_DEFAULT = 0;
@@ -35,7 +35,7 @@ export default class LayerConfig {
     isShown: TagRenderingConfig;
     minzoom: number;
     minzoomVisible: number;
-    maxzoom:number;
+    maxzoom: number;
     title?: TagRenderingConfig;
     titleIcons: TagRenderingConfig[];
     icon: TagRenderingConfig;
@@ -51,12 +51,7 @@ export default class LayerConfig {
     public readonly deletion: DeleteConfig | null;
     public readonly allowSplit: boolean
 
-    presets: {
-        title: Translation,
-        tags: Tag[],
-        description?: Translation,
-        preciseInput?: { preferredBackground?: string }
-    }[];
+    presets: PresetConfig[];
 
     tagRenderings: TagRenderingConfig[];
     filters: FilterConfig[];
@@ -149,17 +144,41 @@ export default class LayerConfig {
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.wayHandling = json.wayHandling ?? 0;
         this.presets = (json.presets ?? []).map((pr, i) => {
-            if (pr.preciseInput === true) {
-                pr.preciseInput = {
-                    preferredBackground: undefined
+            
+            let preciseInput = undefined;
+            if(pr.preciseInput !== undefined){
+                if (pr.preciseInput === true) {
+                    pr.preciseInput = {
+                        preferredBackground: undefined
+                    }
+                }
+                let snapToLayers: string[];
+                if (typeof pr.preciseInput.snapToLayer === "string") {
+                    snapToLayers = [pr.preciseInput.snapToLayer]
+                } else {
+                    snapToLayers = pr.preciseInput.snapToLayer
+                }
+                
+                let preferredBackground : string[]
+                if (typeof pr.preciseInput.preferredBackground === "string") {
+                    preferredBackground = [pr.preciseInput.preferredBackground]
+                } else {
+                    preferredBackground = pr.preciseInput.preferredBackground
+                }
+                preciseInput = {
+                    preferredBackground: preferredBackground,
+                    snapToLayers: snapToLayers,
+                    maxSnapDistance: pr.preciseInput.maxSnapDistance ?? 10
                 }
             }
-            return {
+         
+            const config : PresetConfig= {
                 title: Translations.T(pr.title, `${context}.presets[${i}].title`),
                 tags: pr.tags.map((t) => FromJSON.SimpleTag(t)),
                 description: Translations.T(pr.description, `${context}.presets[${i}].description`),
-                preciseInput: pr.preciseInput
+                preciseInput: preciseInput,
             }
+            return config;
         });
 
         /** Given a key, gets the corresponding property from the json (or the default if not found
@@ -407,12 +426,15 @@ export default class LayerConfig {
         }
 
         function render(tr: TagRenderingConfig, deflt?: string) {
+            if(tags === undefined){
+                return deflt
+            }
             const str = tr?.GetRenderValue(tags.data)?.txt ?? deflt;
             return Utils.SubstituteKeys(str, tags.data).replace(/{.*}/g, "");
         }
 
         const iconSize = render(this.iconSize, "40,40,center").split(",");
-        const dashArray = render(this.dashArray).split(" ").map(Number);
+        const dashArray = render(this.dashArray)?.split(" ")?.map(Number);
         let color = render(this.color, "#00f");
 
         if (color.startsWith("--")) {
@@ -445,24 +467,26 @@ export default class LayerConfig {
 
         const iconUrlStatic = render(this.icon);
         const self = this;
-        const mappedHtml = tags.map((tgs) => {
-            function genHtmlFromString(sourcePart: string): BaseUIElement {
-                const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
-                let html: BaseUIElement = new FixedUiElement(
-                    `<img src="${sourcePart}" style="${style}" />`
-                );
-                const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/);
-                if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
-                    html = new Combine([
-                        (Svg.All[match[1] + ".svg"] as string).replace(
-                            /#000000/g,
-                            match[2]
-                        ),
-                    ]).SetStyle(style);
-                }
-                return html;
-            }
 
+        function genHtmlFromString(sourcePart: string, rotation: string): BaseUIElement {
+            const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
+            let html: BaseUIElement = new FixedUiElement(
+                `<img src="${sourcePart}" style="${style}" />`
+            );
+            const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/);
+            if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
+                html = new Combine([
+                    (Svg.All[match[1] + ".svg"] as string).replace(
+                        /#000000/g,
+                        match[2]
+                    ),
+                ]).SetStyle(style);
+            }
+            return html;
+        }
+
+
+        const mappedHtml = tags?.map((tgs) => {
             // What do you mean, 'tgs' is never read?
             // It is read implicitly in the 'render' method
             const iconUrl = render(self.icon);
@@ -473,7 +497,7 @@ export default class LayerConfig {
                 iconUrl.split(";").filter((prt) => prt != "")
             );
             for (const sourcePart of sourceParts) {
-                htmlParts.push(genHtmlFromString(sourcePart));
+                htmlParts.push(genHtmlFromString(sourcePart, rotation));
             }
 
             let badges = [];
@@ -489,7 +513,7 @@ export default class LayerConfig {
                         .filter((prt) => prt != "");
 
                     for (const badgePartStr of partDefs) {
-                        badgeParts.push(genHtmlFromString(badgePartStr));
+                        badgeParts.push(genHtmlFromString(badgePartStr, "0"));
                     }
 
                     const badgeCompound = new Combine(badgeParts).SetStyle(
@@ -499,7 +523,7 @@ export default class LayerConfig {
                     badges.push(badgeCompound);
                 } else {
                     htmlParts.push(
-                        genHtmlFromString(iconOverlay.then.GetRenderValue(tgs).txt)
+                        genHtmlFromString(iconOverlay.then.GetRenderValue(tgs).txt, "0")
                     );
                 }
             }
@@ -533,7 +557,7 @@ export default class LayerConfig {
 
         return {
             icon: {
-                html: new VariableUiElement(mappedHtml),
+                html: mappedHtml === undefined ? new FixedUiElement(self.icon.render.txt) : new VariableUiElement(mappedHtml),
                 iconSize: [iconW, iconH],
                 iconAnchor: [anchorW, anchorH],
                 popupAnchor: [0, 3 - anchorH],

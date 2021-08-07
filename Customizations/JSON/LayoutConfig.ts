@@ -99,7 +99,7 @@ export default class LayoutConfig {
         this.defaultBackgroundId = json.defaultBackgroundId;
         this.layers = LayoutConfig.ExtractLayers(json, this.units, official, context);
 
-        // ALl the layers are constructed, let them share tags in now!
+        // ALl the layers are constructed, let them share tagRenderings now!
         const roaming: { r, source: LayerConfig }[] = []
         for (const layer of this.layers) {
             roaming.push({r: layer.GetRoamingRenderings(), source: layer});

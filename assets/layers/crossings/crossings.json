@@ -66,6 +66,11 @@
       "description": {
         "en": "Crossing for pedestrians and/or cyclists",
         "nl": "Oversteekplaats voor voetgangers en/of fietsers"
+      },
+      "preciseInput": {
+        "preferredBackground": ["photo"],
+        "snapToLayer": "cycleways_and_roads",
+        "maxSnapDistance": 25
       }
     },
     {
@@ -79,6 +84,11 @@
       "description": {
         "en": "Traffic signal on a road",
         "nl": "Verkeerslicht op een weg"
+      },
+      "preciseInput": {
+        "preferredBackground": ["photo"],
+        "snapToLayer": "cycleways_and_roads",
+        "maxSnapDistance": 25
       }
     }
   ],
