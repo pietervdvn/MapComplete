@@ -512,7 +512,15 @@
                 "question": ""
             },
             "8": {
-                "question": ""
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
             },
             "4": {
                 "question": ""
