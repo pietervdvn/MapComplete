@@ -778,7 +778,7 @@
                                 "then": "The garden is in partial shade"
                             },
                             "2": {
-                                "then": "The sun is in the shade"
+                                "then": "The garden is in the shade"
                             }
                         },
                         "question": "Is the garden shaded or sunny?"
