@@ -34,12 +34,47 @@
             "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt.",
             "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
             "title": "Czy dodać nowy punkt?",
-            "addNew": "Dodaj nową {kategorię} tutaj"
+            "addNew": "Dodaj nową {kategorię} tutaj",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Zaloguj się, aby dodać nowy punkt</a>"
         },
         "number": "numer",
         "skippedQuestions": "Niektóre pytania są pominięte",
         "oneSkippedQuestion": "Jedno pytanie zostało pominięte",
-        "welcomeBack": "Jesteś zalogowany, witaj z powrotem!"
+        "welcomeBack": "Jesteś zalogowany, witaj z powrotem!",
+        "opening_hours": {
+            "ph_open": "otwarte",
+            "ph_closed": "zamknięte",
+            "ph_not_known": " ",
+            "open_24_7": "Otwarte przez całą dobę",
+            "closed_permanently": "Zamknięte na nieokreślony czas",
+            "closed_until": "Zamknięte do {date}",
+            "not_all_rules_parsed": "Godziny otwarcia tego sklepu są skomplikowane. Następujące reguły są ignorowane w elemencie wejściowym:",
+            "openTill": "do",
+            "open_during_ph": "W święto państwowe to udogodnienie jest",
+            "error_loading": "Błąd: nie można zwizualizować tych godzin otwarcia."
+        },
+        "weekdays": {
+            "wednesday": "Środa",
+            "tuesday": "Wtorek",
+            "monday": "Poniedziałek",
+            "abbreviations": {
+                "sunday": "Niedz",
+                "saturday": "Sob",
+                "friday": "Pt",
+                "thursday": "Czw",
+                "wednesday": "Śr",
+                "monday": "Pn",
+                "tuesday": "Wt"
+            },
+            "sunday": "Niedziela",
+            "saturday": "Sobota",
+            "friday": "Piątek",
+            "thursday": "Czwartek"
+        },
+        "aboutMapcomplete": "<h3>O MapComplete</h3><p>Dzięki MapComplete możesz wzbogacić OpenStreetMap o informacje na temat <b> pojedynczego motywu. </b> Odpowiedz na kilka pytań, a w ciągu kilku minut twoje odpowiedzi będą dostępne na całym świecie! <b>Opiekun motywu</b> definiuje elementy, pytania i języki tematu. </p><h3> Dowiedz się więcej</h3><p>MapComplete zawsze <b>oferuje następny krok</b>, aby dowiedzieć się więcej o OpenStreetMap. </p><ul> <li> Po umieszczeniu w witrynie internetowej, iframe linki do pełnoekranowego MapComplete</li><li>Wersja pełnoekranowa oferuje informacje o OpenStreetMap</li><li>Oglądanie działa bez logowania, ale edycja wymaga logowania OSM. </li> <li> Jeśli nie jesteś zalogowany, zostaniesz poproszony o zalogowanie się</li><li>Po udzieleniu odpowiedzi na jedno pytanie, możesz dodać nowe punkty do mapy</li><li>Po chwili wyświetlane są rzeczywiste znaczniki OSM, które później łączą się z wiki</li></ul><p></p><br><p></p><p>Czy zauważyłeś <b>problem</b>? Czy masz <b>żądanie funkcji</b>? Chcesz <b>pomóc przetłumaczyć</b>? Przejdź do <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kod źródłowy</a> lub <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">śledzenia problemów. </a> </p><p> Chcesz zobaczyć <b>swoje postępy</b>? Śledź liczbę edycji na <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>. </p>",
+        "noNameCategory": "{category} bez nazwy",
+        "nameInlineQuestion": "Nazwa tej {category} to $$$",
+        "osmLinkTooltip": "Zobacz ten obiekt na OpenStreetMap, aby uzyskać historię i więcej opcji edycji"
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
@@ -52,5 +87,18 @@
         "ready": "Zrobione!",
         "zoomIn": "Przybliż żeby zobaczyć lub edytować",
         "retrying": "Ładowanie danych nie powiodło się. Spróbujemy ponownie za {liczba} sekund…"
+    },
+    "reviews": {
+        "plz_login": "Zaloguj się, aby zostawić opinię",
+        "saving_review": "Zapisywanie…",
+        "posting_as": "Publikowanie jako",
+        "no_rating": "Nie podano oceny",
+        "name_required": "Nazwa jest wymagana do wyświetlania i tworzenia opinii",
+        "title": "{count} opinii",
+        "title_singular": "Jedna opinia"
+    },
+    "favourite": {
+        "reload": "Odśwież dane",
+        "loginNeeded": "<h3>Zaloguj się</h3>Osobisty układ jest dostępny tylko dla użytkowników OpenStreetMap"
     }
 }
