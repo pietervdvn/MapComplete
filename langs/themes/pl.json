@@ -1,1 +1,13 @@
-{}
+{
+    "artworks": {
+        "layers": {
+            "0": {
+                "name": "Dzieła sztuki"
+            }
+        }
+    },
+    "aed": {
+        "description": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy",
+        "title": "Otwórz mapę AED"
+    }
+}
