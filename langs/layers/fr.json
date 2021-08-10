@@ -153,7 +153,8 @@
         },
         "presets": {
             "0": {
-                "description": "Une vélothèque a une collection de vélos qui peuvent être empruntés"
+                "description": "Une vélothèque a une flotte de vélos qui peuvent être empruntés",
+                "title": "Vélothèque"
             }
         }
     },
@@ -316,7 +317,7 @@
                         "then": "Abri <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
                     },
                     "6": {
-                        "then": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "Potelet <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
                     },
                     "7": {
                         "then": "Zone au sol qui est marquée pour le stationnement des vélos"
@@ -531,6 +532,9 @@
             "2": {
                 "title": "Point de réparation vélo sans pompe"
             }
+        },
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
         }
     },
     "bike_shop": {
@@ -820,6 +824,13 @@
                 "render": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}",
                 "question": "Y a-t-il quelque chose qui ne va pas dans la manière dont ça a été cartographié, et que vous n'avez pas pu réparer ici ? (laisser une note pour les experts d'OpenStreetMap)"
             }
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
         }
     },
     "direction": {
@@ -862,6 +873,9 @@
                         "then": "Les bouteilles d'eau peuvent ne pas passer"
                     }
                 }
+            },
+            "3": {
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres a>"
             }
         }
     },
@@ -941,8 +955,18 @@
                     },
                     "4": {
                         "then": "Il n'y a aucune attribution"
+                    },
+                    "2": {
+                        "then": "OpenStreetMap n’est pas mentionné, un sticker OpenStreetMap a été collé"
+                    },
+                    "1": {
+                        "then": "L’attribution est clairement inscrite mais la licence est absente"
+                    },
+                    "0": {
+                        "then": "L’attribution est clairement inscrite ainsi que la licence ODBL"
                     }
-                }
+                },
+                "question": "L’attribution à OpenStreetMap est elle-présente ?"
             }
         },
         "presets": {
@@ -981,6 +1005,10 @@
             },
             "12": {
                 "render": "Superficie : {_surface:ha}&nbsp;ha"
+            },
+            "7": {
+                "render": "{curator} est en charge de la conservation de la réserve",
+                "question": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public"
             }
         }
     },
@@ -989,29 +1017,71 @@
         "title": {
             "render": "Table de pique-nique"
         },
-        "description": "La couche montrant les tables de pique-nique"
+        "description": "La couche montrant les tables de pique-nique",
+        "presets": {
+            "0": {
+                "title": "Table de pique-nique"
+            }
+        },
+        "tagRenderings": {
+            "0": {
+                "mappings": {
+                    "1": {
+                        "then": "C’est une table en béton"
+                    },
+                    "0": {
+                        "then": "C’est une table en bois"
+                    }
+                },
+                "render": "La table est faite en {material}",
+                "question": "En quel matériau est faite la table de pique-nique ?"
+            }
+        }
     },
     "playground": {
         "tagRenderings": {
             "2": {
-                "question": "Ce terrain de jeux est-il éclairé la nuit ?"
+                "question": "Ce terrain de jeux est-il éclairé la nuit ?",
+                "mappings": {
+                    "1": {
+                        "then": "L’aire de jeu n’est pas éclairée de nuit"
+                    },
+                    "0": {
+                        "then": "L’aire de jeu est éclairée de nuit"
+                    }
+                }
             },
             "3": {
                 "render": "Accessible aux enfants de plus de {min_age} ans",
                 "question": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?"
             },
             "4": {
-                "render": "Accessible aux enfants de {max_age} au maximum"
+                "render": "Accessible aux enfants de {max_age} au maximum",
+                "question": "Quel est l’âge maximum autorisé pour utiliser l’aire de jeu ?"
             },
             "5": {
-                "render": "Exploité par {operator}"
+                "render": "Exploité par {operator}",
+                "question": "Qui est en charge de l’exploitation de l’aire de jeu ?"
             },
             "6": {
                 "mappings": {
                     "4": {
                         "then": "Non accessible"
+                    },
+                    "3": {
+                        "then": "Réservée aux élèves de l’école"
+                    },
+                    "2": {
+                        "then": "Réservée aux clients"
+                    },
+                    "1": {
+                        "then": "Accessible au public"
+                    },
+                    "0": {
+                        "then": "Accessible au public"
                     }
-                }
+                },
+                "question": "L’aire de jeu est-elle accessible au public ?"
             },
             "7": {
                 "question": "Quelle est l'adresse électronique du responsable de l'aire de jeux ?",
@@ -1048,13 +1118,53 @@
                         "then": "Toujours accessible"
                     }
                 }
+            },
+            "1": {
+                "mappings": {
+                    "7": {
+                        "then": "La surface a <b>un revêtement</b>"
+                    },
+                    "6": {
+                        "then": "La surface n’a <b>pas de revêtement</b>"
+                    },
+                    "5": {
+                        "then": "La surface est en <b>béton</b>"
+                    },
+                    "4": {
+                        "then": "La surface est en <b>bitume</b>"
+                    },
+                    "3": {
+                        "then": "La surface est en <b>pavés</b>"
+                    },
+                    "2": {
+                        "then": "La surface est en <b>copeaux de bois</b>"
+                    },
+                    "1": {
+                        "then": "La surface est en <b>sable</b>"
+                    },
+                    "0": {
+                        "then": "La surface est en <b>gazon</b>"
+                    }
+                },
+                "render": "La surface est en <b>{surface}</b>",
+                "question": "De quelle matière est la surface de l’aire de jeu ?<br/><i>Pour plusieurs matières, sélectionner la principale</i>"
             }
         },
         "presets": {
             "0": {
                 "title": "Terrain de jeux"
             }
-        }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Aire de jeu <i>{name}</i>"
+                }
+            },
+            "render": "Aire de jeu"
+        },
+        "description": "Aire de jeu",
+        "name": "Aire de jeu"
     },
     "public_bookcase": {
         "name": "Microbibliothèque",
@@ -1182,6 +1292,12 @@
                     },
                     "7": {
                         "then": "La surface est <b>pavée</b>"
+                    },
+                    "5": {
+                        "then": "La surface est en <b>bitume</b>"
+                    },
+                    "4": {
+                        "then": "La surface est en <b>pierres pavées</b>"
                     }
                 }
             }
@@ -1541,6 +1657,21 @@
                     },
                     "6": {
                         "then": "L'arbre est une zone urbaine."
+                    },
+                    "7": {
+                        "then": "Cet arbre est en zone rurale."
+                    },
+                    "4": {
+                        "then": "Cet arbre est dans une cour résidentielle."
+                    },
+                    "3": {
+                        "then": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …)."
+                    },
+                    "2": {
+                        "then": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)"
+                    },
+                    "1": {
+                        "then": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)"
                     }
                 }
             },
@@ -1548,8 +1679,12 @@
                 "mappings": {
                     "1": {
                         "then": "À feuilles persistantes."
+                    },
+                    "0": {
+                        "then": "Caduc : l’arbre perd son feuillage une partie de l’année."
                     }
-                }
+                },
+                "question": "L’arbre est-il à feuillage persistant ou caduc ?"
             },
             "5": {
                 "render": "Nom : {name}",
@@ -1574,11 +1709,33 @@
                     },
                     "4": {
                         "then": "Enregistré comme patrimoine par une autre organisation"
+                    },
+                    "0": {
+                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
                     }
                 }
             },
             "8": {
-                "question": "Quel est l'identifiant Wikidata de cet arbre ?"
+                "question": "Quel est l'identifiant Wikidata de cet arbre ?",
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata : <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+            },
+            "7": {
+                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+                "question": "Quel est son identifiant donné par Onroerend Erfgoed ?"
+            },
+            "2": {
+                "mappings": {
+                    "2": {
+                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Sans feuilles (Permanent)"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Résineux"
+                    },
+                    "0": {
+                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Feuillu"
+                    }
+                },
+                "question": "Cet arbre est-il un feuillu ou un résineux ?"
             }
         },
         "presets": {
@@ -1589,6 +1746,10 @@
             "2": {
                 "title": "Arbre",
                 "description": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles."
+            },
+            "1": {
+                "description": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
+                "title": "Arbre résineux"
             }
         }
     },
