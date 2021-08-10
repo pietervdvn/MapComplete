@@ -1,1 +1,10 @@
-{}
+{
+    "undefined": {
+        "email": {
+            "question": "Jaki jest adres e-mail do {name}?"
+        },
+        "phone": {
+            "question": "Jaki jest numer telefonu do {name}?"
+        }
+    }
+}
