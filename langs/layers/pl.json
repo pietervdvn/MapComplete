@@ -365,7 +365,8 @@
                     "0": {
                         "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "5": {
                 "mappings": {
@@ -382,6 +383,17 @@
                 "question": ""
             },
             "3": {
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
                 "question": ""
             }
         },
