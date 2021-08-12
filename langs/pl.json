@@ -35,7 +35,8 @@
             "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
             "title": "Czy dodać nowy punkt?",
             "addNew": "Dodaj nową {kategorię} tutaj",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Zaloguj się, aby dodać nowy punkt</a>"
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Zaloguj się, aby dodać nowy punkt</a>",
+            "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>"
         },
         "number": "numer",
         "skippedQuestions": "Niektóre pytania są pominięte",
