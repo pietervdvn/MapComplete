@@ -1,1 +1,113 @@
-{}
+{
+    "bicycle_library": {
+        "description": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Ławka na przystanku komunikacji miejskiej"
+                }
+            },
+            "render": "Ławka"
+        },
+        "name": "Ławki na przystankach komunikacji miejskiej"
+    },
+    "bench": {
+        "presets": {
+            "0": {
+                "description": "Dodaj nową ławkę",
+                "title": "Ławka"
+            }
+        },
+        "tagRenderings": {
+            "6": {
+                "render": "Ławka ta była ostatnio badana w dniu {survey:date}",
+                "question": "Kiedy ostatnio badano tę ławkę?"
+            },
+            "5": {
+                "mappings": {
+                    "7": {
+                        "then": "Kolor: żółty"
+                    },
+                    "6": {
+                        "then": "Kolor: niebieski"
+                    },
+                    "5": {
+                        "then": "Kolor: czarny"
+                    },
+                    "4": {
+                        "then": "Kolor: czerwony"
+                    },
+                    "3": {
+                        "then": "Kolor: biały"
+                    },
+                    "2": {
+                        "then": "Kolor: szary"
+                    },
+                    "1": {
+                        "then": "Kolor: zielony"
+                    },
+                    "0": {
+                        "then": "Kolor: brązowy"
+                    }
+                },
+                "question": "Jaki kolor ma ta ławka?",
+                "render": "Kolor: {colour}"
+            },
+            "4": {
+                "render": "Siedząc na ławce, patrzy się w kierunku {direction}°.",
+                "question": "W jakim kierunku patrzysz siedząc na ławce?"
+            },
+            "3": {
+                "question": "Z czego wykonana jest ławka (siedzisko)?",
+                "mappings": {
+                    "5": {
+                        "then": "Materiał: stal"
+                    },
+                    "4": {
+                        "then": "Materiał: plastik"
+                    },
+                    "3": {
+                        "then": "Materiał: beton"
+                    },
+                    "2": {
+                        "then": "Materiał: kamień"
+                    },
+                    "1": {
+                        "then": "Materiał: metal"
+                    },
+                    "0": {
+                        "then": "Materiał: drewno"
+                    }
+                },
+                "render": "Materiał: {material}"
+            },
+            "2": {
+                "render": "{seats} siedzeń",
+                "question": "Ile siedzeń ma ta ławka?"
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Oparcie: Tak"
+                    },
+                    "1": {
+                        "then": "Oparcie: Nie"
+                    }
+                },
+                "render": "Oparcie",
+                "question": "Czy ta ławka ma oparcie?"
+            }
+        },
+        "title": {
+            "render": "Ławka"
+        },
+        "name": "Ławki"
+    }
+}
