@@ -36,7 +36,10 @@
             "title": "Czy dodać nowy punkt?",
             "addNew": "Dodaj nową {kategorię} tutaj",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">Zaloguj się, aby dodać nowy punkt</a>",
-            "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>"
+            "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>",
+            "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
+            "openLayerControl": "Otwórz okno sterowania warstwą",
+            "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>"
         },
         "number": "numer",
         "skippedQuestions": "Niektóre pytania są pominięte",
@@ -75,7 +78,20 @@
         "aboutMapcomplete": "<h3>O MapComplete</h3><p>Dzięki MapComplete możesz wzbogacić OpenStreetMap o informacje na temat <b> pojedynczego motywu. </b> Odpowiedz na kilka pytań, a w ciągu kilku minut twoje odpowiedzi będą dostępne na całym świecie! <b>Opiekun motywu</b> definiuje elementy, pytania i języki tematu. </p><h3> Dowiedz się więcej</h3><p>MapComplete zawsze <b>oferuje następny krok</b>, aby dowiedzieć się więcej o OpenStreetMap. </p><ul> <li> Po umieszczeniu w witrynie internetowej, iframe linki do pełnoekranowego MapComplete</li><li>Wersja pełnoekranowa oferuje informacje o OpenStreetMap</li><li>Oglądanie działa bez logowania, ale edycja wymaga logowania OSM. </li> <li> Jeśli nie jesteś zalogowany, zostaniesz poproszony o zalogowanie się</li><li>Po udzieleniu odpowiedzi na jedno pytanie, możesz dodać nowe punkty do mapy</li><li>Po chwili wyświetlane są rzeczywiste znaczniki OSM, które później łączą się z wiki</li></ul><p></p><br><p></p><p>Czy zauważyłeś <b>problem</b>? Czy masz <b>żądanie funkcji</b>? Chcesz <b>pomóc przetłumaczyć</b>? Przejdź do <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kod źródłowy</a> lub <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">śledzenia problemów. </a> </p><p> Chcesz zobaczyć <b>swoje postępy</b>? Śledź liczbę edycji na <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>. </p>",
         "noNameCategory": "{category} bez nazwy",
         "nameInlineQuestion": "Nazwa tej {category} to $$$",
-        "osmLinkTooltip": "Zobacz ten obiekt na OpenStreetMap, aby uzyskać historię i więcej opcji edycji"
+        "osmLinkTooltip": "Zobacz ten obiekt na OpenStreetMap, aby uzyskać historię i więcej opcji edycji",
+        "sharescreen": {
+            "addToHomeScreen": "<h3> Dodaj do ekranu głównego</h3>Możesz łatwo dodać tę stronę do ekranu głównego smartfona, aby poczuć się jak w domu. Kliknij przycisk \"Dodaj do ekranu głównego\" na pasku adresu URL, aby to zrobić.",
+            "intro": "<h3> Udostępnij tę mapę</h3> Udostępnij tę mapę, kopiując poniższy link i wysyłając ją do przyjaciół i rodziny:"
+        },
+        "questions": {
+            "emailIs": "Adres e-mail {category} to <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
+            "emailOf": "Jaki jest adres e-mail {category}?",
+            "websiteIs": "Strona internetowa: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteOf": "Jaka jest strona internetowa {category}?",
+            "phoneNumberIs": "Numer telefonu {category} to <a target=\"_blank\">{phone}</a>",
+            "phoneNumberOf": "Jaki jest numer telefonu do {category}?"
+        },
+        "about": "Łatwo edytuj i dodaj OpenStreetMap dla określonego motywu"
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
