@@ -2,7 +2,56 @@
     "artworks": {
         "layers": {
             "0": {
-                "name": "Dzieła sztuki"
+                "name": "Dzieła sztuki",
+                "tagRenderings": {
+                    "3": {
+                        "render": "Więcej informacji na <a href='{website}' target='_blank'>this website</a>",
+                        "question": "Czy istnieje strona internetowa zawierająca więcej informacji na temat tego dzieła sztuki?"
+                    },
+                    "2": {
+                        "render": "Stworzony przez {artysta_name}",
+                        "question": "Który artysta to stworzył?"
+                    },
+                    "1": {
+                        "mappings": {
+                            "10": {
+                                "then": "Azulejo (hiszpańskie kafelki dekoracyjne)"
+                            },
+                            "8": {
+                                "then": "Graffiti"
+                            },
+                            "6": {
+                                "then": "Kamień"
+                            },
+                            "7": {
+                                "then": "Instalacja"
+                            },
+                            "5": {
+                                "then": "Popiersie"
+                            },
+                            "4": {
+                                "then": "Statua"
+                            },
+                            "3": {
+                                "then": "Rzeźba"
+                            },
+                            "1": {
+                                "then": "Mural"
+                            },
+                            "0": {
+                                "then": "Architektura"
+                            }
+                        },
+                        "question": "Jaki jest typ tego dzieła sztuki?",
+                        "render": "Jest to {artwork_type}"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Dzieła sztuki"
+                    }
+                },
+                "description": "Różnorodne dzieła sztuki"
             }
         }
     },
