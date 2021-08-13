@@ -109,5 +109,37 @@
             "render": "Ławka"
         },
         "name": "Ławki"
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "2": {
+                "question": "Jaka jest względna lokalizacja tego parkingu rowerowego?"
+            },
+            "1": {
+                "render": "Jest to parking rowerowy typu: {bicycle_parking}",
+                "question": "Jaki jest typ tego parkingu dla rowerów?"
+            }
+        },
+        "title": {
+            "render": "Parking dla rowerów"
+        },
+        "presets": {
+            "0": {
+                "title": "Parking dla rowerów"
+            }
+        },
+        "name": "Parking dla rowerów"
+    },
+    "bike_monitoring_station": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Stacja liczenia rowerów {ref}"
+                },
+                "0": {
+                    "then": "Stacja liczenia rowerów {name}"
+                }
+            }
+        }
     }
 }
