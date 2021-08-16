@@ -35,7 +35,9 @@
         "partOfOthers": ""
     },
     "favourite": {
-        "reload": "Muat ulang data"
+        "reload": "Muat ulang data",
+        "panelIntro": "",
+        "loginNeeded": ""
     },
     "general": {
         "add": {
@@ -117,7 +119,10 @@
             "ph_not_known": " ",
             "ph_open": "buka",
             "loadingCountry": "",
-            "ph_open_as_usual": ""
+            "ph_open_as_usual": "",
+            "error_loading": "",
+            "not_all_rules_parsed": "",
+            "open_during_ph": ""
         },
         "pickLanguage": "Pilih bahasa: ",
         "questions": {
@@ -125,7 +130,8 @@
             "phoneNumberOf": "Apakah nombor telepon {category} ini?",
             "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "emailIs": "",
-            "phoneNumberIs": ""
+            "phoneNumberIs": "",
+            "websiteOf": ""
         },
         "search": {
             "searching": "Sdg mencari…",
@@ -151,7 +157,8 @@
             "downloadCustomThemeHelp": "",
             "addToHomeScreen": "",
             "fsLayerControlToggle": "",
-            "intro": ""
+            "intro": "",
+            "embedIntro": ""
         },
         "weekdays": {
             "abbreviations": {
@@ -268,7 +275,13 @@
         "useSearchForMore": "",
         "loginOnlyNeededToEdit": "",
         "loginWithOpenStreetMap": "",
-        "logout": ""
+        "logout": "",
+        "noNameCategory": "",
+        "aboutMapcomplete": "",
+        "readYourMessages": "",
+        "save": "",
+        "customThemeIntro": "",
+        "fewChangesBefore": ""
     },
     "image": {
         "addPicture": "Tambahkan foto",
