@@ -5,6 +5,9 @@
         },
         "website": {
             "question": "Apa situs web dari {name}?"
+        },
+        "phone": {
+            "question": "Nomor telepon dari {name|?"
         }
     }
 }
