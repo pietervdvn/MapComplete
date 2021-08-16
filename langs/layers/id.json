@@ -96,6 +96,45 @@
             "5": {
                 "render": "Nama: {name}"
             }
+        },
+        "presets": {
+            "2": {
+                "title": "Pohon"
+            }
         }
+    },
+    "defibrillator": {
+        "tagRenderings": {
+            "13": {
+                "render": "Informasi tambahan: {description}"
+            }
+        }
+    },
+    "drinking_water": {
+        "presets": {
+            "0": {
+                "title": "Air minum"
+            }
+        },
+        "title": {
+            "render": "Air minum"
+        },
+        "name": "Air minum"
+    },
+    "viewpoint": {
+        "tagRenderings": {
+            "1": {
+                "question": "Apakah Anda ingin menambahkan deskripsi?"
+            }
+        },
+        "title": {
+            "render": "Sudut pandang"
+        },
+        "presets": {
+            "0": {
+                "title": "Sudut pandang"
+            }
+        },
+        "name": "Sudut pandang"
     }
 }
