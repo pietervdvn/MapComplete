@@ -1539,7 +1539,11 @@
                 "render": ""
             }
         },
-        "description": ""
+        "description": "",
+        "title": {
+            "render": ""
+        },
+        "name": ""
     },
     "viewpoint": {
         "name": "Sudut pandang",
@@ -3011,7 +3015,11 @@
                     }
                 }
             }
-        }
+        },
+        "title": {
+            "render": ""
+        },
+        "name": ""
     },
     "crossings": {
         "presets": {
@@ -3980,7 +3988,17 @@
         },
         "title": {
             "render": ""
-        }
+        },
+        "description": "",
+        "presets": {
+            "0": {
+                "title": ""
+            },
+            "1": {
+                "title": ""
+            }
+        },
+        "name": ""
     },
     "street_lamps": {
         "description": "",
@@ -4243,7 +4261,8 @@
         },
         "title": {
             "render": ""
-        }
+        },
+        "name": ""
     },
     "waste_basket": {
         "tagRenderings": {
@@ -5202,7 +5221,16 @@
         "description": ""
     },
     "visitor_information_centre": {
-        "description": ""
+        "description": "",
+        "name": "",
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        }
     },
     "bicycle_rental": {
         "presets": {
