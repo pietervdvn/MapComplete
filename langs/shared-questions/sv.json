@@ -2,6 +2,30 @@
     "undefined": {
         "phone": {
             "question": "Vad är telefonnumret till {name}?"
+        },
+        "level": {
+            "mappings": {
+                "2": {
+                    "then": "Ligger på första våningen"
+                },
+                "1": {
+                    "then": "Ligger på bottenvåningen"
+                },
+                "0": {
+                    "then": "Ligger under jorden"
+                }
+            },
+            "render": "Ligger på {level}:e våningen"
+        },
+        "opening_hours": {
+            "render": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+            "question": "Vilka är öppettiderna för {name}?"
+        },
+        "website": {
+            "question": "Vad är webbplatsen för {name}?"
+        },
+        "email": {
+            "question": "Vad är e-postadressen till {name}?"
         }
     }
 }
