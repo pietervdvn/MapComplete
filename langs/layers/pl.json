@@ -141,5 +141,58 @@
                 }
             }
         }
+    },
+    "bike_repair_station": {
+        "presets": {
+            "1": {
+                "title": "Stacja naprawy rowerów i pompka"
+            },
+            "0": {
+                "description": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.<h3>Przykłady pompek rowerowych</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "title": "Pompka do roweru"
+            }
+        },
+        "tagRenderings": {
+            "9": {
+                "mappings": {
+                    "2": {
+                        "then": "Jest manometr, ale jest uszkodzony"
+                    },
+                    "1": {
+                        "then": "Nie ma manometru"
+                    },
+                    "0": {
+                        "then": "Jest manometr"
+                    }
+                },
+                "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
+            },
+            "8": {
+                "mappings": {
+                    "1": {
+                        "then": "Pompka elektryczna"
+                    },
+                    "0": {
+                        "then": "Pompa ręczna"
+                    }
+                },
+                "question": "Czy jest to elektryczna pompka do roweru?"
+            },
+            "7": {
+                "render": "Ta pompka obsługuje następujące zawory: {valves}",
+                "question": "Jakie zawory są obsługiwane?"
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": "Pompka rowerowa jest sprawna"
+                    },
+                    "0": {
+                        "then": "Pompka rowerowa jest zepsuta"
+                    }
+                },
+                "question": "Czy pompka rowerowa jest nadal sprawna?"
+            }
+        }
     }
 }
