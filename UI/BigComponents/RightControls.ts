@@ -23,18 +23,14 @@ export default class RightControls extends Combine {
         );
 
         const plus = new MapControlButton(
-            Svg.plus_svg(),{
-                dontStyle:true
-            }
+            Svg.plus_svg()
         ).onClick(() => {
             State.state.locationControl.data.zoom++;
             State.state.locationControl.ping();
         });
 
         const min = new MapControlButton(
-            Svg.min_svg(),{
-                dontStyle: true
-            }
+            Svg.min_svg()
         ).onClick(() => {
             State.state.locationControl.data.zoom--;
             State.state.locationControl.ping();
