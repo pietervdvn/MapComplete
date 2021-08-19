@@ -71,7 +71,7 @@
                         "render": "Créé par {artist_name}"
                     },
                     "3": {
-                        "question": "Sur quel site web pouvons-nous trouver plus d'informations sur cette œuvre d'art?",
+                        "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
                         "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
                     },
                     "4": {
@@ -120,64 +120,493 @@
                         "mappings": {
                             "1": {
                                 "then": "Peut être utilisé gratuitement"
+                            },
+                            "0": {
+                                "then": "L’utilisation est payante"
                             }
                         }
                     },
                     "3": {
-                        "question": "Combien coûte cet endroit ?"
+                        "question": "Combien coûte cet endroit ?",
+                        "render": "Ce site fait payer {charge}"
                     },
                     "4": {
                         "mappings": {
                             "0": {
                                 "then": "Cet endroit a une station de vidange sanitaire"
+                            },
+                            "1": {
+                                "then": "Ce site ne possède pas de lieu de vidange"
+                            }
+                        },
+                        "question": "Ce site possède-t’il un lieu de vidange ?"
+                    },
+                    "6": {
+                        "question": "Cet endroit offre-t-il un accès à Internet ?",
+                        "mappings": {
+                            "2": {
+                                "then": "Il n’y a pas d’accès internet"
+                            },
+                            "1": {
+                                "then": "Il y a un accès internet"
+                            },
+                            "0": {
+                                "then": "Il y a un accès internet"
                             }
                         }
                     },
+                    "11": {
+                        "question": "Souhaitez-vous ajouter une description générale du lieu ? (Ne pas répéter les informations précédentes et rester neutre, les opinions vont dans les avis)",
+                        "render": "Plus de détails à propos du site : {description}"
+                    },
+                    "10": {
+                        "mappings": {
+                            "2": {
+                                "then": "C’est possible sous contrat (Cette option fera disparaître le site de la carte)"
+                            },
+                            "1": {
+                                "then": "Non, il n’y a pas de résidents permanents"
+                            },
+                            "0": {
+                                "then": "Oui, mais il est possible d’y passer seulement une nuit"
+                            }
+                        },
+                        "question": "Ce site permet-il la location longue durée ?"
+                    },
+                    "9": {
+                        "question": "Ce lieu a-t’il un site internet ?",
+                        "render": "Site officiel : <a href='{website}'>{website}</a>"
+                    },
+                    "8": {
+                        "mappings": {
+                            "1": {
+                                "then": "Ce site n’a pas de toilettes"
+                            },
+                            "0": {
+                                "then": "Ce site a des toilettes"
+                            }
+                        },
+                        "question": "Y-a-t’il des toilettes sur le site ?"
+                    },
+                    "7": {
+                        "mappings": {
+                            "1": {
+                                "then": "L’accès internet est inclus"
+                            },
+                            "0": {
+                                "then": "L’accès internet est en supplément"
+                            }
+                        },
+                        "question": "L’accès internet est-il payant ?"
+                    },
+                    "5": {
+                        "question": "Combien de personnes peuvent camper ici ? (Passez s’il n’y a pas de places délimitées)",
+                        "render": "{capacity} personnes peuvent utiliser cet espace en même temps"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "description": "Ajouter une nouvelle aire de camping officielle, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking ne suffit pas à rentrer dans cette catégorie ",
+                        "title": "Aire de camping"
+                    }
+                }
+            },
+            "1": {
+                "presets": {
+                    "0": {
+                        "description": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires) généralement alimenté en eau potable et électricité.",
+                        "title": "Site de vidange"
+                    }
+                },
+                "tagRenderings": {
+                    "7": {
+                        "question": "De quel réseau fait-elle partie ? (Passer si aucun)",
+                        "render": "Cette station fait parte d’un réseau {network}"
+                    },
                     "6": {
-                        "question": "Cet endroit offre-t-il un accès à Internet ?"
+                        "mappings": {
+                            "3": {
+                                "then": "Le site est en libre-service"
+                            },
+                            "2": {
+                                "then": "Le site est en libre-service"
+                            },
+                            "1": {
+                                "then": "Le site est réservés aux clients"
+                            },
+                            "0": {
+                                "then": "Un code est nécessaire"
+                            }
+                        },
+                        "question": "Qui peut utiliser le site de vidange ?"
+                    },
+                    "5": {
+                        "mappings": {
+                            "1": {
+                                "then": "Il n’est pas possible d’y vidanger ses toilettes chimiques"
+                            },
+                            "0": {
+                                "then": "Il est possible d’y vidanger ses toilettes chimiques"
+                            }
+                        },
+                        "question": "Est-il possible d’y vidanger ses toilettes chimiques ?"
+                    },
+                    "4": {
+                        "mappings": {
+                            "1": {
+                                "then": "Il n’est pas possible d’y vidanger ses eaux usées"
+                            },
+                            "0": {
+                                "then": "Il est possible d’y vidanger ses eaux usées"
+                            }
+                        },
+                        "question": "Est-il possible d’y faire sa vidange des eaux usées ?"
+                    },
+                    "3": {
+                        "mappings": {
+                            "1": {
+                                "then": "Ce site n’a pas de point d’eau"
+                            },
+                            "0": {
+                                "then": "Ce site a un point d’eau"
+                            }
+                        },
+                        "question": "Ce site dispose-t’il d’un point d’eau ?"
+                    },
+                    "2": {
+                        "question": "Combien ce site demande t’il de payer ?",
+                        "render": "Ce site fait payer {charge}"
+                    },
+                    "1": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ce site demande un paiement"
+                            },
+                            "1": {
+                                "then": "Ce site ne demande pas de paiement"
+                            }
+                        },
+                        "question": "Ce site est-il payant ?"
+                    }
+                },
+                "description": "Site de vidange",
+                "name": "Site de vidange",
+                "title": {
+                    "render": "Site de vidange {name}",
+                    "mappings": {
+                        "0": {
+                            "then": "Site de vidange"
+                        }
                     }
                 }
             }
-        }
+        },
+        "roamingRenderings": {
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce site a une source d’alimentation"
+                    },
+                    "1": {
+                        "then": "Ce site n’a pas de source d’alimentation"
+                    }
+                },
+                "question": "Ce site a-t’il une source d’électricité ?"
+            },
+            "0": {
+                "question": "Qui est l’exploitant du site ?",
+                "render": "Ce site est exploité par {operator}"
+            }
+        },
+        "description": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis. C’est un site et une application. Les données sont stockées sur OpenStreetMap, elles seront toujours gratuites et peuvent être réutilisées par n’importe quelle application."
     },
     "climbing": {
         "layers": {
             "0": {
                 "tagRenderings": {
                     "0": {
-                        "render": "<strong>{name}</strong>"
+                        "render": "<strong>{name}</strong>",
+                        "question": "Quel est le nom du club ou de l’association ?"
                     }
-                }
+                },
+                "presets": {
+                    "1": {
+                        "description": "Une association d’escalade",
+                        "title": "Association d’escalade"
+                    },
+                    "0": {
+                        "description": "Un club d’escalade",
+                        "title": "Club d’escalade"
+                    }
+                },
+                "description": "Club ou association d’escalade",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Association d’escalade"
+                        }
+                    },
+                    "render": "Club d’escalade"
+                },
+                "name": "Club d’escalade"
             },
             "1": {
                 "tagRenderings": {
                     "3": {
-                        "render": "<strong>{name}</strong>"
+                        "render": "<strong>{name}</strong>",
+                        "question": "Quel est le nom de la salle d’escalade ?"
                     }
-                }
+                },
+                "description": "Une salle d’escalade",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Salle d’escalade <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Salle d’escalade"
+                },
+                "name": "Salle d’escalade"
             },
             "2": {
                 "tagRenderings": {
                     "3": {
-                        "render": "<strong>{name}</strong>"
+                        "render": "<strong>{name}</strong>",
+                        "mappings": {
+                            "0": {
+                                "then": "Cette voie n’a pas de nom"
+                            }
+                        },
+                        "question": "Quel est le nom de cette voie d’escalade ?"
+                    },
+                    "8": {
+                        "render": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>"
+                    },
+                    "6": {
+                        "mappings": {
+                            "1": {
+                                "then": "Cette voie n’a pas de prises"
+                            },
+                            "0": {
+                                "then": "Cette voie n’a pas de prises"
+                            }
+                        },
+                        "render": "Cette voie a {climbing:bolts} prises",
+                        "question": "Combien de prises cette voie possède avant d’atteindre la moulinette ?"
+                    },
+                    "5": {
+                        "render": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}",
+                        "question": "Quelle est la difficulté de cette voie selon le système franco-belge ?"
+                    },
+                    "4": {
+                        "render": "Cette voie fait {canonical(climbing:length)} de long",
+                        "question": "Quelle est la longueur de cette voie (en mètres) ?"
                     }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Voie d’escalade"
+                    }
+                },
+                "name": "Voies d’escalade",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Voie d’escalade <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Voie d’escalade"
                 }
             },
             "3": {
                 "tagRenderings": {
                     "6": {
-                        "render": "<strong>{name}</strong>"
+                        "render": "<strong>{name}</strong>",
+                        "mappings": {
+                            "0": {
+                                "then": "Ce site n’a pas de nom"
+                            }
+                        },
+                        "question": "Quel est le nom de ce site ?"
+                    },
+                    "8": {
+                        "mappings": {
+                            "0": {
+                                "then": "Calcaire"
+                            }
+                        },
+                        "render": "La roche est du {rock}",
+                        "question": "Quel est le type de roche ?"
+                    },
+                    "5": {
+                        "render": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>"
+                    },
+                    "4": {
+                        "render": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}"
+                    },
+                    "7": {
+                        "mappings": {
+                            "1": {
+                                "then": "Mur d’escalade, rocher avec plusieurs voies d’escalades"
+                            },
+                            "0": {
+                                "then": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde"
+                            }
+                        }
+                    },
+                    "3": {
+                        "render": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}"
                     }
-                }
+                },
+                "presets": {
+                    "0": {
+                        "description": "Opportunité d’escalade",
+                        "title": "Opportunité d’escalade"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Mur d’escalade <b>{name}</b>"
+                        },
+                        "3": {
+                            "then": "Opportunité d’escalade <b>{name}</b>"
+                        },
+                        "2": {
+                            "then": "Site d’escalade"
+                        },
+                        "1": {
+                            "then": "Zone d’escalade <b>{name}</b>"
+                        }
+                    },
+                    "render": "Opportunité d’escalade"
+                },
+                "description": "Opportunité d’escalade",
+                "name": "Opportunité d’escalade"
             },
             "4": {
                 "tagRenderings": {
                     "1": {
                         "render": "<strong>{name}</strong>"
+                    },
+                    "2": {
+                        "mappings": {
+                            "2": {
+                                "then": "Escalader n’est pas possible"
+                            },
+                            "1": {
+                                "then": "Escalader est possible"
+                            },
+                            "0": {
+                                "then": "Escalader n’est pas possible"
+                            }
+                        },
+                        "question": "Est-il possible d’escalader ici ?"
+                    }
+                },
+                "description": "Opportunité d’escalade ?",
+                "title": {
+                    "render": "Opportunité d’escalade ?"
+                },
+                "name": "Opportunités d’escalade ?"
+            }
+        },
+        "title": "Open Climbing Map",
+        "roamingRenderings": {
+            "8": {
+                "mappings": {
+                    "2": {
+                        "then": "{climbing:toprope} voies sont équipées de moulinettes"
+                    },
+                    "1": {
+                        "then": "L’escalade à la moulinette n’est pas possible"
+                    },
+                    "0": {
+                        "then": "L’escalade à la moulinette est possible"
+                    }
+                },
+                "question": "Est-il possible d’escalader à la moulinette ?"
+            },
+            "7": {
+                "mappings": {
+                    "3": {
+                        "then": "Il y a {climbing:boulder} voies d’escalade de bloc"
+                    },
+                    "2": {
+                        "then": "L’escalade de bloc est possible sur des voies précises"
+                    },
+                    "1": {
+                        "then": "L’escalade de bloc n’est pas possible"
+                    },
+                    "0": {
+                        "then": "L’escalade de bloc est possible"
+                    }
+                },
+                "question": "L’escalade de bloc est-elle possible ici ?"
+            },
+            "6": {
+                "render": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge",
+                "question": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?"
+            },
+            "5": {
+                "render": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge",
+                "question": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?"
+            },
+            "4": {
+                "question": "Quelle est la longueur moyenne des voies en mètres ?",
+                "render": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne"
+            },
+            "2": {
+                "mappings": {
+                    "3": {
+                        "then": "Réservé aux membres"
+                    },
+                    "2": {
+                        "then": "Réservé aux clients"
+                    },
+                    "1": {
+                        "then": "Une autorisation est nécessaire"
+                    },
+                    "0": {
+                        "then": "Libre d’accès"
+                    }
+                },
+                "question": "Qui peut y accéder ?"
+            },
+            "1": {
+                "mappings": {
+                    "3": {
+                        "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}"
+                    },
+                    "2": {
+                        "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}"
+                    },
+                    "1": {
+                        "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}"
+                    },
+                    "0": {
+                        "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}"
+                    }
+                }
+            },
+            "0": {
+                "question": "Existe-t’il un site avec plus d’informations (ex : topographie) ?"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": " pieds"
+                    },
+                    "0": {
+                        "human": " mètres"
                     }
                 }
             }
-        }
+        },
+        "description": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels.",
+        "descriptionTail": "La carte a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
     },
     "cyclofix": {
         "title": "Cyclofix - Une carte ouverte pour les cyclistes",
@@ -255,6 +684,20 @@
                                 "then": "Graisse animale"
                             }
                         }
+                    },
+                    "8": {
+                        "mappings": {
+                            "2": {
+                                "then": "Il est <b>obligatoire</b> d’apporter ses propres contenants"
+                            },
+                            "1": {
+                                "then": "Apporter ses propres contenants <b>n’est pas permis</b>"
+                            },
+                            "0": {
+                                "then": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets"
+                            }
+                        },
+                        "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>"
                     }
                 },
                 "presets": {
@@ -368,5 +811,468 @@
         "title": "Arbres",
         "shortDescription": "Carte des arbres",
         "description": "Cartographions tous les arbres !"
+    },
+    "openwindpowermap": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "3": {
+                        "human": " gigawatts"
+                    },
+                    "2": {
+                        "human": " watts"
+                    },
+                    "1": {
+                        "human": " kilowatts"
+                    },
+                    "0": {
+                        "human": " megawatts"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " mètres"
+                    }
+                }
+            }
+        },
+        "title": "OpenWindPowerMap",
+        "layers": {
+            "0": {
+                "presets": {
+                    "0": {
+                        "title": "Éolienne"
+                    }
+                },
+                "tagRenderings": {
+                    "4": {
+                        "question": "Depuis quand l’éolienne est-elle en fonctionnement ?",
+                        "render": "L’éolienne est active depuis {start_date}."
+                    },
+                    "3": {
+                        "question": "Quel est le diamètre du rotor en mètres ?",
+                        "render": "Le diamètre du rotor est de {rotor:diameter} mètres."
+                    },
+                    "2": {
+                        "question": "Quelle est la hauteur totale de l’éolienne en mètres, pales incluses ?",
+                        "render": "La hauteur totale, incluant les pales, est de {height} mètres."
+                    },
+                    "1": {
+                        "question": "Qui est l’exploitant de cette éolienne ?",
+                        "render": "Cette éolienne est opérée par {operator}."
+                    },
+                    "0": {
+                        "question": "Quel est la puissance générée par cette éolienne ?",
+                        "render": "La puissance générée par cette éolienne est de {generator:output:electricity}."
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    },
+                    "render": "éolienne"
+                },
+                "name": "Éolienne"
+            }
+        },
+        "description": "Une carte indiquant les éoliennes et permettant leur édition."
+    },
+    "hailhydrant": {
+        "layers": {
+            "3": {
+                "tagRenderings": {
+                    "4": {
+                        "mappings": {
+                            "3": {
+                                "then": "La station est opérée par un groupe privé."
+                            },
+                            "1": {
+                                "then": "La station est opérée par une organisation informelle."
+                            },
+                            "0": {
+                                "then": "La station est opérée par le gouvernement."
+                            },
+                            "2": {
+                                "then": "La station est opérée par un groupe officiel de bénévoles."
+                            }
+                        },
+                        "question": "Quel est le type d’exploitant ?",
+                        "render": "L’exploitant est de type {operator:type}."
+                    },
+                    "3": {
+                        "render": "Cette station est opérée par {operator}.",
+                        "question": "Quel est l’exploitant de la station ?"
+                    },
+                    "2": {
+                        "render": "La station fait partie de {addr:place}.",
+                        "question": "Dans quelle localité la station est-elle située ?"
+                    },
+                    "1": {
+                        "render": "La station fait partie de {addr:street}.",
+                        "question": " Quel est le nom de la rue où la station se situe ?"
+                    },
+                    "0": {
+                        "render": "Cette station s’appelle {name}.",
+                        "question": "Quel est le nom de cette station ?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "description": "Ajouter une station d’ambulances à la carte",
+                        "title": "Station d’ambulances"
+                    }
+                },
+                "description": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
+                "title": {
+                    "render": "Station d’ambulances"
+                },
+                "name": "Couche des ambulances"
+            },
+            "2": {
+                "tagRenderings": {
+                    "4": {
+                        "render": "L’exploitant est de type {operator:type}.",
+                        "mappings": {
+                            "3": {
+                                "then": "La station est opérée par un groupe privé."
+                            },
+                            "2": {
+                                "then": "La station est opérée par un groupe officiel de bénévoles."
+                            },
+                            "1": {
+                                "then": "La station est opérée par une organisation informelle."
+                            },
+                            "0": {
+                                "then": "La station est opérée par le gouvernement."
+                            }
+                        },
+                        "question": "Quel est le type d’exploitant ?"
+                    },
+                    "1": {
+                        "render": "La station fait partie de la {addr:street}.",
+                        "question": " Quel est le nom de la rue dans lequel elle se situe ?"
+                    },
+                    "3": {
+                        "render": "Cette station est opérée par {operator}.",
+                        "mappings": {
+                            "0": {
+                                "then": "Brigade de Protection du Feu"
+                            }
+                        },
+                        "question": "Quel est l’exploitant de la station ?"
+                    },
+                    "2": {
+                        "render": "La station fait partie de {addr:place}.",
+                        "question": "Dans quelle localité la station est-elle située ?"
+                    },
+                    "0": {
+                        "render": "Cette station s’appelle {name}.",
+                        "question": "Quel est le nom de la station ?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "description": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
+                        "title": "Caserne de pompiers"
+                    }
+                },
+                "description": "Couche des stations de pompiers.",
+                "title": {
+                    "render": "Station de pompiers"
+                },
+                "name": "Couche des stations de pompiers"
+            },
+            "1": {
+                "presets": {
+                    "0": {
+                        "description": "Un extincteur est un appareil portatif servant à éteindre un feu",
+                        "title": "Extincteur"
+                    }
+                },
+                "tagRenderings": {
+                    "0": {
+                        "mappings": {
+                            "1": {
+                                "then": "Extérieur."
+                            },
+                            "0": {
+                                "then": "Intérieur."
+                            }
+                        },
+                        "question": "Où est-elle positionnée ?",
+                        "render": "Emplacement : {location}"
+                    }
+                },
+                "description": "Couche des lances à incendie.",
+                "title": {
+                    "render": "Exctincteurs"
+                },
+                "name": "Couche des extincteurs."
+            },
+            "0": {
+                "presets": {
+                    "0": {
+                        "description": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
+                        "title": "Borne incendie"
+                    }
+                },
+                "tagRenderings": {
+                    "2": {
+                        "mappings": {
+                            "2": {
+                                "then": "La borne a été retirée."
+                            },
+                            "1": {
+                                "then": "La borne est hors-service."
+                            },
+                            "0": {
+                                "then": "La borne est en état, ou partiellement en état, de fonctionner."
+                            }
+                        },
+                        "render": "État",
+                        "question": "Mettre à jour l’état de la borne."
+                    },
+                    "1": {
+                        "mappings": {
+                            "4": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré."
+                            },
+                            "3": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural."
+                            },
+                            "2": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau."
+                            },
+                            "1": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier."
+                            },
+                            "0": {
+                                "then": "La borne est de type inconnu."
+                            }
+                        },
+                        "render": " Type de borne : {fire_hydrant:type}",
+                        "question": "De quel type de borne s’agit-il ?"
+                    },
+                    "0": {
+                        "mappings": {
+                            "2": {
+                                "then": "La borne est rouge."
+                            },
+                            "1": {
+                                "then": "La borne est jaune."
+                            },
+                            "0": {
+                                "then": "La borne est de couleur inconnue."
+                            }
+                        },
+                        "render": "La borne est {colour}",
+                        "question": "Quelle est la couleur de la borne ?"
+                    }
+                },
+                "title": {
+                    "render": "Bornes incendie"
+                },
+                "description": "Couche des bornes incendie.",
+                "name": "Carte des bornes incendie"
+            }
+        },
+        "description": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.<br/>Les options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.<br/>Toutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres.",
+        "shortDescription": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
+        "title": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers."
+    },
+    "surveillance": {
+        "description": "Cette carte indique l’emplacement des caméras de surveillance.",
+        "shortDescription": "Caméras et autres dispositifs de surveillance",
+        "title": "Surveillance"
+    },
+    "ghostbikes": {
+        "description": "Les <b>vélos fantômes</b> sont des mémoriaux pour les cyclistes tuées sur la route, prenant la forme de vélos blancs placés à proximité des faits.<br/><br/>Cette carte indique leur emplacement à partir d’OpenStreetMap. Il est possible de contribuer aux informations ici, sous réserve d’avoir un compte OpenStreetMap (gratuit).",
+        "title": "Vélo fantôme"
+    },
+    "facadegardens": {
+        "layers": {
+            "0": {
+                "presets": {
+                    "0": {
+                        "description": "Ajouter un jardin mural",
+                        "title": "jardin mural"
+                    }
+                },
+                "tagRenderings": {
+                    "7": {
+                        "question": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)",
+                        "render": "Plus de détails : {description}"
+                    },
+                    "6": {
+                        "mappings": {
+                            "3": {
+                                "then": "Il y a des plantes couvre-sol"
+                            },
+                            "2": {
+                                "then": "Il y a des buissons"
+                            },
+                            "1": {
+                                "then": "Il y a des fleurs"
+                            },
+                            "0": {
+                                "then": "Il y a des plantes grimpantes"
+                            }
+                        },
+                        "question": "Quel type de plantes pousse ici ?"
+                    },
+                    "5": {
+                        "question": "Y-a-t’il des plantes comestibles ?",
+                        "mappings": {
+                            "1": {
+                                "then": "Il n’y a pas de plantes comestibles"
+                            },
+                            "0": {
+                                "then": "Il y a des plantes comestibles"
+                            }
+                        }
+                    },
+                    "4": {
+                        "question": "Quand le jardin a-t’il été construit ? (L’année suffit)",
+                        "render": "Date de construction du jardin : {start_date}"
+                    },
+                    "3": {
+                        "mappings": {
+                            "1": {
+                                "then": "Il n’y a pas de réserves"
+                            },
+                            "0": {
+                                "then": "Il y a des réserves"
+                            }
+                        },
+                        "question": "Des réserves d’eau ont-elles été installées pour le jardin ?"
+                    },
+                    "2": {
+                        "question": "Quel est l’ensoleillement du jardin ?",
+                        "mappings": {
+                            "2": {
+                                "then": "Le jardin est à l’ombre"
+                            },
+                            "1": {
+                                "then": "Le jardin est partiellement ensoleillé"
+                            },
+                            "0": {
+                                "then": "Le jardin est en plein soleil"
+                            }
+                        }
+                    },
+                    "1": {
+                        "question": "Quelle est l’orientation du jardin ?",
+                        "render": "Orientation : {direction} (0 pour le Nord et 90 pour l’Ouest)"
+                    }
+                },
+                "description": "Jardins muraux",
+                "title": {
+                    "render": "Jardin mural"
+                },
+                "name": "Jardins muraux"
+            }
+        },
+        "description": "Les <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>jardins muraux</a> en ville n’apportent pas seulement paix et tranquillité mais contribuent à embellir la ville, favoriser la biodiversité, régule la température et assainit l’air. <br/> Klimaan VZW et Mechelen Klimaatneutraal veulent cartographier les jardins muraux comme exemple pour les personnes souhaitant en construire ainsi que celles aimant la nature.<br/>Plus d’infos sur <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+        "shortDescription": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes.",
+        "title": "Facade gardens"
+    },
+    "fietsstraten": {
+        "title": "Cyclestreets",
+        "layers": {
+            "2": {
+                "title": {
+                    "render": "Rue"
+                },
+                "description": "Couche indiquant les vélorues",
+                "name": "Toutes les rues"
+            },
+            "1": {
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} deviendra bientôt une vélorue"
+                        }
+                    },
+                    "render": "Future vélorue"
+                },
+                "description": "Cette rue deviendra bientôt une vélorue",
+                "name": "Future vélorue"
+            },
+            "0": {
+                "description": "Une vélorue une rue où le trafic motorisé n’est pas autorisé à doubler les cyclistes",
+                "name": "Vélorues"
+            }
+        },
+        "roamingRenderings": {
+            "1": {
+                "render": "Cette rue deviendra une vélorue le {cyclestreet:start_date}",
+                "question": "Quand est prévue la création de la vélorue ?"
+            },
+            "0": {
+                "mappings": {
+                    "3": {
+                        "then": "Cette rue n’est pas une vélorue"
+                    },
+                    "2": {
+                        "then": "Cette rue deviendra bientôt une vélorue"
+                    },
+                    "1": {
+                        "then": "Cette rue est une vélorue"
+                    },
+                    "0": {
+                        "then": "Cette rue est une vélorue (et la vitesse est limitée à 30 km/h)"
+                    }
+                },
+                "question": "Cette rue est elle une vélorue ?"
+            }
+        },
+        "description": "Une vélorue est une rue où le <b>trafic motorisé n’est pas autorisé à doubler les cyclistes</b>, elles sont signalées par des panneaux. On en trouve aux Pays-Bas, en Belgique, en Allemagne et en France. ",
+        "shortDescription": "Carte des vélorues"
+    },
+    "charging_stations": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "6": {
+                        "mappings": {
+                            "3": {
+                                "then": "eVgo"
+                            },
+                            "2": {
+                                "then": "Blink"
+                            },
+                            "1": {
+                                "then": "AeroVironment"
+                            },
+                            "0": {
+                                "then": "Pas de réseau"
+                            }
+                        },
+                        "question": "De quel réseau fait-elle partie ?",
+                        "render": "{network}"
+                    },
+                    "5": {
+                        "question": "Quand cette station a-t’elle été ouverte ?"
+                    }
+                },
+                "description": "Une station de recharge",
+                "title": {
+                    "render": "Station de recharge"
+                },
+                "name": "Station de recharge"
+            }
+        },
+        "description": "Cette carte indique et permet d’indiquer des informations sur les stations de recharge",
+        "shortDescription": "Carte mondiale de stations de recharge",
+        "title": "Station de recharge"
+    },
+    "bike_monitoring_stations": {
+        "description": "Ce thème montre les données des compteurs en temps réel",
+        "shortDescription": "Station de comptage vélo avec données en temps réel par Bruxelles Mobilités",
+        "title": "Station de comptage vélo"
     }
 }

@@ -146,7 +146,8 @@
         "title_singular": "Um comentário",
         "title": "{count} comentários",
         "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>",
-        "affiliated_reviewer_warning": "(Revisão de afiliados)"
+        "affiliated_reviewer_warning": "(Revisão de afiliados)",
+        "attribution": "As resenhas são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis em <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>."
     },
     "favourite": {
         "reload": "Recarregar dados",

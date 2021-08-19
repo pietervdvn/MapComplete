@@ -1,1 +1,198 @@
-{}
+{
+    "bicycle_library": {
+        "description": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Ławka na przystanku komunikacji miejskiej"
+                }
+            },
+            "render": "Ławka"
+        },
+        "name": "Ławki na przystankach komunikacji miejskiej"
+    },
+    "bench": {
+        "presets": {
+            "0": {
+                "description": "Dodaj nową ławkę",
+                "title": "Ławka"
+            }
+        },
+        "tagRenderings": {
+            "6": {
+                "render": "Ławka ta była ostatnio badana w dniu {survey:date}",
+                "question": "Kiedy ostatnio badano tę ławkę?"
+            },
+            "5": {
+                "mappings": {
+                    "7": {
+                        "then": "Kolor: żółty"
+                    },
+                    "6": {
+                        "then": "Kolor: niebieski"
+                    },
+                    "5": {
+                        "then": "Kolor: czarny"
+                    },
+                    "4": {
+                        "then": "Kolor: czerwony"
+                    },
+                    "3": {
+                        "then": "Kolor: biały"
+                    },
+                    "2": {
+                        "then": "Kolor: szary"
+                    },
+                    "1": {
+                        "then": "Kolor: zielony"
+                    },
+                    "0": {
+                        "then": "Kolor: brązowy"
+                    }
+                },
+                "question": "Jaki kolor ma ta ławka?",
+                "render": "Kolor: {colour}"
+            },
+            "4": {
+                "render": "Siedząc na ławce, patrzy się w kierunku {direction}°.",
+                "question": "W jakim kierunku patrzysz siedząc na ławce?"
+            },
+            "3": {
+                "question": "Z czego wykonana jest ławka (siedzisko)?",
+                "mappings": {
+                    "5": {
+                        "then": "Materiał: stal"
+                    },
+                    "4": {
+                        "then": "Materiał: plastik"
+                    },
+                    "3": {
+                        "then": "Materiał: beton"
+                    },
+                    "2": {
+                        "then": "Materiał: kamień"
+                    },
+                    "1": {
+                        "then": "Materiał: metal"
+                    },
+                    "0": {
+                        "then": "Materiał: drewno"
+                    }
+                },
+                "render": "Materiał: {material}"
+            },
+            "2": {
+                "render": "{seats} siedzeń",
+                "question": "Ile siedzeń ma ta ławka?"
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Oparcie: Tak"
+                    },
+                    "1": {
+                        "then": "Oparcie: Nie"
+                    }
+                },
+                "render": "Oparcie",
+                "question": "Czy ta ławka ma oparcie?"
+            }
+        },
+        "title": {
+            "render": "Ławka"
+        },
+        "name": "Ławki"
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "2": {
+                "question": "Jaka jest względna lokalizacja tego parkingu rowerowego?"
+            },
+            "1": {
+                "render": "Jest to parking rowerowy typu: {bicycle_parking}",
+                "question": "Jaki jest typ tego parkingu dla rowerów?"
+            }
+        },
+        "title": {
+            "render": "Parking dla rowerów"
+        },
+        "presets": {
+            "0": {
+                "title": "Parking dla rowerów"
+            }
+        },
+        "name": "Parking dla rowerów"
+    },
+    "bike_monitoring_station": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Stacja liczenia rowerów {ref}"
+                },
+                "0": {
+                    "then": "Stacja liczenia rowerów {name}"
+                }
+            }
+        }
+    },
+    "bike_repair_station": {
+        "presets": {
+            "1": {
+                "title": "Stacja naprawy rowerów i pompka"
+            },
+            "0": {
+                "description": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.<h3>Przykłady pompek rowerowych</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "title": "Pompka do roweru"
+            }
+        },
+        "tagRenderings": {
+            "9": {
+                "mappings": {
+                    "2": {
+                        "then": "Jest manometr, ale jest uszkodzony"
+                    },
+                    "1": {
+                        "then": "Nie ma manometru"
+                    },
+                    "0": {
+                        "then": "Jest manometr"
+                    }
+                },
+                "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
+            },
+            "8": {
+                "mappings": {
+                    "1": {
+                        "then": "Pompka elektryczna"
+                    },
+                    "0": {
+                        "then": "Pompa ręczna"
+                    }
+                },
+                "question": "Czy jest to elektryczna pompka do roweru?"
+            },
+            "7": {
+                "render": "Ta pompka obsługuje następujące zawory: {valves}",
+                "question": "Jakie zawory są obsługiwane?"
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": "Pompka rowerowa jest sprawna"
+                    },
+                    "0": {
+                        "then": "Pompka rowerowa jest zepsuta"
+                    }
+                },
+                "question": "Czy pompka rowerowa jest nadal sprawna?"
+            }
+        }
+    }
+}

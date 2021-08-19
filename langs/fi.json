@@ -30,7 +30,15 @@
         "save": "Tallenna",
         "search": {
             "searching": "Etsitään…"
-        }
+        },
+        "sharescreen": {
+            "thanksForSharing": "Kiitos jakamisesta!"
+        },
+        "questions": {
+            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+        },
+        "skip": "Ohita tämä kysymys",
+        "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla"
     },
     "centerMessage": {
         "ready": "Valmis!"
@@ -38,6 +46,16 @@
     "image": {
         "doDelete": "Poista kuva",
         "dontDelete": "Peruuta",
-        "addPicture": "Lisää kuva"
+        "addPicture": "Lisää kuva",
+        "isDeleted": "Poistettu",
+        "ccb": "CC-BY-lisenssillä",
+        "ccbs": "CC-BY-SA-lisenssillä"
+    },
+    "reviews": {
+        "title": "{count} arvostelua",
+        "title_singular": "Yksi arvostelu"
+    },
+    "index": {
+        "title": "Tervetuloa MapCompleteen"
     }
 }

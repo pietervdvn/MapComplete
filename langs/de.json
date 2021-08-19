@@ -63,15 +63,15 @@
         "noNameCategory": "{category} ohne Namen",
         "questions": {
             "phoneNumberOf": "Wie lautet die Telefonnummer der {category}?",
-            "phoneNumberIs": "Die Telefonnummer der {category} lautet <a href='tel:{phone}' target='_blank'>{phone}</a>",
+            "phoneNumberIs": "Die Telefonnummer der {category} lautet <a target=\"_blank\">{phone}</a>",
             "websiteOf": "Was ist die Website der {category}?",
-            "websiteIs": "Webseite: <a href='{website}' target='_blank'>{website}</a>",
+            "websiteIs": "Webseite: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "emailOf": "Wie lautet die E-Mail-Adresse der {category}?",
-            "emailIs": "Die E-Mail-Adresse dieser {category} lautet <a href='mailto:{email}' target='_blank'>{email}</a>"
+            "emailIs": "Die E-Mail-Adresse dieser {category} lautet <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>"
         },
         "openStreetMapIntro": "<h3>Eine offene Karte</h3><p>Wäre es nicht toll, wenn es eine offene Karte gäbe, die von jedem angepasst und benutzt werden könnte? Eine Karte, zu der jeder seine Interessen hinzufügen kann? Dann bräuchte man all diese Websites mit unterschiedlichen, kleinen und inkompatiblen Karten (die immer veraltet sind) nicht mehr.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> ist diese offene Karte. Die Kartendaten können kostenlos verwendet werden (mit <a href='https://osm.org/copyright' target='_blank'>Attribution und Veröffentlichung von Änderungen an diesen Daten</a>). Darüber hinaus können Sie die Karte kostenlos ändern und Fehler beheben, wenn Sie ein Konto erstellen. Diese Website basiert ebenfalls auf OpenStreetMap. Wenn Sie eine Frage hier beantworten, geht die Antwort auch dorthin.</p>Viele Menschen und Anwendungen nutzen OpenStreetMap bereits: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, verschiedene spezialisierte Routenplaner, die Hintergrundkarten auf Facebook, Instagram,...<br/>Sogar Apple Maps und Bing Maps verwenden OpenStreetMap in ihren Karten!</p></p><p>Wenn Sie hier einen Punkt hinzufügen oder eine Frage beantworten, wird er nach einer Weile in all diesen Anwendungen sichtbar sein.</p>",
         "sharescreen": {
-            "intro": "<h3>Diese Karte teilen</h3> Sie können diese Karte teilen, indem Sie den untenstehenden Link kopieren und an Freunde und Familie schick",
+            "intro": "<h3>Diese Karte teilen</h3> Sie können diese Karte teilen, indem Sie den untenstehenden Link kopieren und an Freunde und Familie schicken:",
             "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Website einfach zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der URL-Leiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
             "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte, betten Sie diese Karte in Ihre Website ein. <br/>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br/> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
             "copiedToClipboard": "Link in die Zwischenablage kopiert",
@@ -95,7 +95,7 @@
             "streetcomplete": "Eine andere, ähnliche Anwendung ist <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Erstellen Sie Ihr eigenes MapComplete-Thema von Grund auf neu"
         },
-        "readYourMessages": "Bitte lesen Sie alle Ihre OpenStreetMap-Nachrichten, bevor Sie einen neuen Punkt hinzufügen",
+        "readYourMessages": "Bitte lesen Sie alle Ihre OpenStreetMap-Nachrichten, bevor Sie einen neuen Punkt hinzufügen.",
         "fewChangesBefore": "Bitte beantworten Sie ein paar Fragen zu bestehenden Punkten, bevor Sie einen neuen Punkt hinzufügen.",
         "goToInbox": "Posteingang öffnen",
         "getStartedLogin": "Mit OpenStreetMap einloggen und loslegen",
@@ -127,7 +127,7 @@
             "sunday": "Sonntag"
         },
         "opening_hours": {
-            "error_loading": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden",
+            "error_loading": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden.",
             "open_during_ph": "An Feiertagen ist diese Einrichtung",
             "opensAt": "von",
             "openTill": "bis",
@@ -149,7 +149,7 @@
             "codeContributionsBy": "MapComplete wurde von {contributors} und <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} weiteren Beitragenden</a> erstellt",
             "themeBy": "Thema betreut von {author}",
             "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>"
-    }
+        }
     },
     "favourite": {
         "panelIntro": "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen",
