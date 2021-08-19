@@ -17,19 +17,19 @@
             "render": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}"
         },
         "level": {
+            "question": "À quel étage se situe l’élément ?",
+            "render": "Étage {level}",
             "mappings": {
-                "2": {
-                    "then": "Premier étage"
+                "0": {
+                    "then": "En sous-sol"
                 },
                 "1": {
                     "then": "Rez-de-chaussée"
                 },
-                "0": {
-                    "then": "En sous-sol"
+                "2": {
+                    "then": "Premier étage"
                 }
-            },
-            "render": "Étage {level}",
-            "question": "À quel étage se situe l’élément ?"
+            }
         }
     }
 }

@@ -54,6 +54,24 @@
             }
         }
     },
+    "defibrillator": {
+        "tagRenderings": {
+            "13": {
+                "render": "Informasi tambahan: {description}"
+            }
+        }
+    },
+    "drinking_water": {
+        "name": "Air minum",
+        "title": {
+            "render": "Air minum"
+        },
+        "presets": {
+            "0": {
+                "title": "Air minum"
+            }
+        }
+    },
     "ghost_bike": {
         "tagRenderings": {
             "3": {
@@ -103,38 +121,20 @@
             }
         }
     },
-    "defibrillator": {
-        "tagRenderings": {
-            "13": {
-                "render": "Informasi tambahan: {description}"
-            }
-        }
-    },
-    "drinking_water": {
-        "presets": {
-            "0": {
-                "title": "Air minum"
-            }
-        },
-        "title": {
-            "render": "Air minum"
-        },
-        "name": "Air minum"
-    },
     "viewpoint": {
-        "tagRenderings": {
-            "1": {
-                "question": "Apakah Anda ingin menambahkan deskripsi?"
-            }
-        },
-        "title": {
-            "render": "Sudut pandang"
-        },
+        "name": "Sudut pandang",
         "presets": {
             "0": {
                 "title": "Sudut pandang"
             }
         },
-        "name": "Sudut pandang"
+        "title": {
+            "render": "Sudut pandang"
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Apakah Anda ingin menambahkan deskripsi?"
+            }
+        }
     }
 }

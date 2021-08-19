@@ -261,7 +261,8 @@
           "question": {
             "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
             "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
-            "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>"
+            "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>",
+            "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>"
           },
           "mappings": [
             {
@@ -269,7 +270,8 @@
               "then": {
                 "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
                 "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste",
-                "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます"
+                "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます",
+                "fr": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets"
               }
             },
             {
@@ -278,7 +280,8 @@
                 "nl": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen",
                 "en": "Bringing your own container is <b>not allowed</b>",
                 "ja": "独自の容器を持参することは<b>できません</b>",
-                "ru": "Приносить свою тару <b>не разрешено</b>"
+                "ru": "Приносить свою тару <b>не разрешено</b>",
+                "fr": "Apporter ses propres contenants <b>n’est pas permis</b>"
               }
             },
             {
@@ -286,7 +289,8 @@
               "then": {
                 "nl": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen.",
                 "en": "You <b>must</b> bring your own container to order here.",
-                "ja": "自身の容器が注文に<b>必要</b>。"
+                "ja": "自身の容器が注文に<b>必要</b>。",
+                "fr": "Il est <b>obligatoire</b> d’apporter ses propres contenants"
               }
             }
           ]

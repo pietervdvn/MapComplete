@@ -6,7 +6,8 @@
     "de": "Aussichtspunkt",
     "fr": "Point de vue",
     "it": "Punto panoramico",
-    "ru": "Смотровая площадка"
+    "ru": "Смотровая площадка",
+    "id": "Sudut pandang"
   },
   "description": {
     "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
@@ -32,7 +33,8 @@
         "de": "Aussichtspunkt",
         "fr": "Point de vue",
         "ru": "Смотровая площадка",
-        "it": "Punto panoramico"
+        "it": "Punto panoramico",
+        "id": "Sudut pandang"
       },
       "tags": [
         "tourism=viewpoint"
@@ -46,7 +48,8 @@
       "de": "Aussichtspunkt",
       "fr": "Point de vue",
       "ru": "Смотровая площадка",
-      "it": "Punto panoramico"
+      "it": "Punto panoramico",
+      "id": "Sudut pandang"
     }
   },
   "tagRenderings": [
@@ -58,7 +61,8 @@
         "de": "Möchten Sie eine Beschreibung hinzufügen?",
         "ru": "Вы хотите добавить описание?",
         "fr": "Voulez-vous ajouter une description ?",
-        "it": "Vuoi aggiungere una descrizione?"
+        "it": "Vuoi aggiungere una descrizione?",
+        "id": "Apakah Anda ingin menambahkan deskripsi?"
       },
       "render": "{description}",
       "freeform": {

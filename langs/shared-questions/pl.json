@@ -1,35 +1,35 @@
 {
     "undefined": {
-        "email": {
-            "question": "Jaki jest adres e-mail do {name}?"
-        },
         "phone": {
             "question": "Jaki jest numer telefonu do {name}?"
         },
-        "opening_hours": {
-            "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
-            "question": "Jakie są godziny otwarcia {name}?"
-        },
-        "description": {
-            "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
+        "email": {
+            "question": "Jaki jest adres e-mail do {name}?"
         },
         "website": {
             "question": "Jaka jest strona internetowa {name}?"
         },
+        "description": {
+            "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
+        },
+        "opening_hours": {
+            "question": "Jakie są godziny otwarcia {name}?",
+            "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
+        },
         "level": {
+            "question": "Na jakim poziomie znajduje się ta funkcja?",
+            "render": "Znajduje się na {level} piętrze",
             "mappings": {
-                "2": {
-                    "then": "Znajduje się na pierwszym piętrze"
+                "0": {
+                    "then": "Znajduje się pod ziemią"
                 },
                 "1": {
                     "then": "Znajduje się na parterze"
                 },
-                "0": {
-                    "then": "Znajduje się pod ziemią"
+                "2": {
+                    "then": "Znajduje się na pierwszym piętrze"
                 }
-            },
-            "render": "Znajduje się na {level} piętrze",
-            "question": "Na jakim poziomie znajduje się ta funkcja?"
+            }
         }
     }
 }

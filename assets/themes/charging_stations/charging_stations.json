@@ -7,7 +7,8 @@
     "ja": "充電ステーション",
     "zh_Hant": "充電站",
     "it": "Stazioni di ricarica",
-    "nl": "Oplaadpunten"
+    "nl": "Oplaadpunten",
+    "fr": "Station de recharge"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
@@ -15,14 +16,16 @@
     "ja": "充電ステーションの世界地図",
     "zh_Hant": "全世界的充電站地圖",
     "it": "Una mappa mondiale delle stazioni di ricarica",
-    "nl": "Een wereldwijde kaart van oplaadpunten"
+    "nl": "Een wereldwijde kaart van oplaadpunten",
+    "fr": "Carte mondiale de stations de recharge"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
     "ru": "На этой карте вы можно найти и отметить информацию о зарядных станциях",
     "ja": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます",
     "zh_Hant": "在這份開放地圖上，你可以尋找與標示充電站的資訊",
-    "it": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni"
+    "it": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni",
+    "fr": "Cette carte indique et permet d’indiquer des informations sur les stations de recharge"
   },
   "language": [
     "en",
@@ -32,6 +35,7 @@
     "zh_Hant",
     "it",
     "nl",
+    "fr",
     "nb_NO"
   ],
   "maintainer": "",
@@ -52,7 +56,8 @@
         "zh_Hant": "充電站",
         "nb_NO": "Ladestasjoner",
         "it": "Stazioni di ricarica",
-        "nl": "Oplaadpunten"
+        "nl": "Oplaadpunten",
+        "fr": "Station de recharge"
       },
       "minzoom": 10,
       "source": {
@@ -70,7 +75,8 @@
           "zh_Hant": "充電站",
           "nb_NO": "Ladestasjon",
           "it": "Stazione di ricarica",
-          "nl": "Oplaadpunt"
+          "nl": "Oplaadpunt",
+          "fr": "Station de recharge"
         }
       },
       "description": {
@@ -80,7 +86,8 @@
         "zh_Hant": "充電站",
         "nb_NO": "En ladestasjon",
         "it": "Una stazione di ricarica",
-        "nl": "Een oplaadpunt"
+        "nl": "Een oplaadpunt",
+        "fr": "Une station de recharge"
       },
       "tagRenderings": [
         "images",
@@ -213,7 +220,8 @@
             "ja": "この充電ステーションはいつオープンしますか?",
             "zh_Hant": "何時是充電站開放使用的時間？",
             "nb_NO": "Når åpnet denne ladestasjonen?",
-            "it": "Quali sono gli orari di apertura di questa stazione di ricarica?"
+            "it": "Quali sono gli orari di apertura di questa stazione di ricarica?",
+            "fr": "Quand cette station a-t’elle été ouverte ?"
           },
           "mappings": [
             {
@@ -231,14 +239,16 @@
             "zh_Hant": "{network}",
             "nb_NO": "{network}",
             "it": "{network}",
-            "nl": "{network}"
+            "nl": "{network}",
+            "fr": "{network}"
           },
           "question": {
             "en": "What network of this charging station under?",
             "ru": "К какой сети относится эта зарядная станция?",
             "ja": "この充電ステーションの運営チェーンはどこですか?",
             "zh_Hant": "充電站所屬的網路是？",
-            "it": "A quale rete appartiene questa stazione di ricarica?"
+            "it": "A quale rete appartiene questa stazione di ricarica?",
+            "fr": "De quel réseau fait-elle partie ?"
           },
           "freeform": {
             "key": "network"
@@ -256,7 +266,8 @@
                 "ja": "大規模な運営チェーンの一部ではない",
                 "zh_Hant": "不屬於大型網路",
                 "it": "Non appartiene a una rete",
-                "nl": "Maakt geen deel uit van een netwerk"
+                "nl": "Maakt geen deel uit van een netwerk",
+                "fr": "Pas de réseau"
               }
             },
             {
@@ -271,7 +282,8 @@
                 "ja": "AeroVironment",
                 "zh_Hant": "AeroVironment",
                 "it": "AeroVironment",
-                "nl": "AeroVironment"
+                "nl": "AeroVironment",
+                "fr": "AeroVironment"
               }
             },
             {
@@ -286,7 +298,8 @@
                 "ja": "Blink",
                 "zh_Hant": "Blink",
                 "it": "Blink",
-                "nl": "Blink"
+                "nl": "Blink",
+                "fr": "Blink"
               }
             },
             {
@@ -301,7 +314,8 @@
                 "ja": "eVgo",
                 "zh_Hant": "eVgo",
                 "it": "eVgo",
-                "nl": "eVgo"
+                "nl": "eVgo",
+                "fr": "eVgo"
               }
             }
           ]

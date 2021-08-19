@@ -78,7 +78,8 @@
         "en": "Is the OpenStreetMap-attribution given?",
         "nl": "Is de attributie voor OpenStreetMap aanwezig?",
         "it": "L’attribuzione a OpenStreetMap è presente?",
-        "de": "Ist die OpenStreetMap-Attribution vorhanden?"
+        "de": "Ist die OpenStreetMap-Attribution vorhanden?",
+        "fr": "L’attribution à OpenStreetMap est elle-présente ?"
       },
       "mappings": [
         {
@@ -91,7 +92,8 @@
             "en": "OpenStreetMap is clearly attributed, including the ODBL-license",
             "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" ",
             "it": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL",
-            "de": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz"
+            "de": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz",
+            "fr": "L’attribution est clairement inscrite ainsi que la licence ODBL"
           }
         },
         {
@@ -104,7 +106,8 @@
             "en": "OpenStreetMap is clearly attributed, but the license is not mentioned",
             "nl": "OpenStreetMap is duidelijk aangegeven, maar de licentievermelding ontbreekt",
             "it": "L’attribuzione a OpenStreetMap è chiaramente specificata ma la licenza non compare",
-            "de": "OpenStreetMap ist eindeutig attributiert, aber die Lizenz wird nicht erwähnt"
+            "de": "OpenStreetMap ist eindeutig attributiert, aber die Lizenz wird nicht erwähnt",
+            "fr": "L’attribution est clairement inscrite mais la licence est absente"
           }
         },
         {
@@ -117,7 +120,8 @@
             "en": "OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it",
             "nl": "OpenStreetMap was oorspronkelijk niet aangeduid, maar iemand plaatste er een sticker",
             "it": "Non era presente alcun cenno a OpenStreetMap ma qualcuno vi ha attaccato un adesivo di OpenStreetMap",
-            "de": "OpenStreetMap wurde nicht erwähnt, aber jemand hat einen OpenStreetMap-Aufkleber darauf geklebt"
+            "de": "OpenStreetMap wurde nicht erwähnt, aber jemand hat einen OpenStreetMap-Aufkleber darauf geklebt",
+            "fr": "OpenStreetMap n’est pas mentionné, un sticker OpenStreetMap a été collé"
           }
         },
         {

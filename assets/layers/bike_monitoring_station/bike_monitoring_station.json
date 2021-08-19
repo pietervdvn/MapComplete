@@ -6,7 +6,8 @@
     "fr": "Stations de contrôle",
     "it": "Stazioni di monitoraggio",
     "zh_Hant": "監視站",
-    "ru": "Станции мониторинга"
+    "ru": "Станции мониторинга",
+    "pt_BR": "Estações de monitoramento"
   },
   "minzoom": 12,
   "source": {
@@ -24,7 +25,8 @@
       "fr": "Station de comptage de vélo",
       "it": "Contabiciclette",
       "de": "Fahrradzählstation",
-      "zh_Hant": "單車計數站"
+      "zh_Hant": "單車計數站",
+      "pt_BR": "Estação de contagem de bicicletas"
     },
     "mappings": [
       {
@@ -35,7 +37,9 @@
           "fr": "Station de comptage de vélo {name}",
           "it": "Contabiciclette {name}",
           "de": "Fahrradzählstation {name}",
-          "zh_Hant": "單車計數站 {name}"
+          "zh_Hant": "單車計數站 {name}",
+          "pl": "Stacja liczenia rowerów {name}",
+          "pt_BR": "Estação de contagem de bicicletas {name}"
         }
       },
       {
@@ -46,7 +50,9 @@
           "fr": "Station de comptage de vélo {ref}",
           "it": "Contabiciclette {ref}",
           "de": "Fahrradzählstation {ref}",
-          "zh_Hant": "單車計數站 {ref}"
+          "zh_Hant": "單車計數站 {ref}",
+          "pl": "Stacja liczenia rowerów {ref}",
+          "pt_BR": "Estação de contagem de bicicletas {ref}"
         }
       }
     ]

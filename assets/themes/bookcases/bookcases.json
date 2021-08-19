@@ -10,7 +10,8 @@
     "ru",
     "ja",
     "zh_Hant",
-    "it"
+    "it",
+    "pt_BR"
   ],
   "title": {
     "en": "Open Bookcase Map",
@@ -20,7 +21,8 @@
     "ru": "Открытая карта книжных шкафов",
     "ja": "オープン本棚マップ",
     "zh_Hant": "開放書架地圖",
-    "it": "Mappa libera delle microbiblioteche"
+    "it": "Mappa libera delle microbiblioteche",
+    "pt_BR": "Abrir Mapa de Estantes"
   },
   "description": {
     "en": "A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",

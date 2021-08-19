@@ -1,107 +1,128 @@
 {
+    "aed": {
+        "title": "Abrir mapa AED",
+        "description": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos"
+    },
+    "benches": {
+        "title": "Bancadas",
+        "shortDescription": "Um mapa de bancadas"
+    },
+    "bicyclelib": {
+        "title": "Bibliotecas de bicicletas"
+    },
+    "bike_monitoring_stations": {
+        "title": "Estações de monitoramento de bicicletas",
+        "shortDescription": "Estações de monitoramento de bicicletas com dados ao vivo da Mobilidade de Bruxelas",
+        "description": "Este tema mostra as estações de monitoramento de bicicletas com dados ao vivo"
+    },
+    "bookcases": {
+        "title": "Abrir Mapa de Estantes"
+    },
     "campersite": {
+        "title": "Locais de acampamento",
+        "shortDescription": "Encontre locais para passar a noite com o seu campista",
         "layers": {
             "0": {
-                "tagRenderings": {
-                    "3": {
-                        "question": "Quanto este lugar cobra?",
-                        "render": "Este lugar cobra {charge}"
-                    },
-                    "2": {
-                        "mappings": {
-                            "1": {
-                                "then": "Pode ser usado de graça"
-                            },
-                            "0": {
-                                "then": "Você precisa pagar para usar"
-                            }
-                        },
-                        "question": "Este lugar cobra alguma taxa?"
-                    },
-                    "1": {
-                        "question": "Qual o nome deste lugar?",
-                        "render": "Este lugar é chamado de {name}"
-                    },
-                    "8": {
-                        "mappings": {
-                            "1": {
-                                "then": "Este lugar não tem banheiros"
-                            },
-                            "0": {
-                                "then": "Este lugar tem banheiros"
-                            }
-                        },
-                        "question": "Este lugar tem banheiros?"
-                    },
-                    "7": {
-                        "mappings": {
-                            "1": {
-                                "then": "Você não precisa pagar um extra pelo acesso à internet"
-                            },
-                            "0": {
-                                "then": "Você precisa pagar um extra pelo acesso à internet"
-                            }
-                        },
-                        "question": "Você tem que pagar pelo acesso à internet?"
-                    },
-                    "6": {
-                        "mappings": {
-                            "2": {
-                                "then": "Não há acesso à internet"
-                            },
-                            "1": {
-                                "then": "Há acesso à Internet"
-                            },
-                            "0": {
-                                "then": "Há acesso à internet"
-                            }
-                        },
-                        "question": "Este lugar fornece acesso a internet?"
-                    },
-                    "5": {
-                        "question": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)",
-                        "render": "{capacity} campistas podem usar este lugar ao mesmo tempo"
-                    },
-                    "4": {
-                        "mappings": {
-                            "1": {
-                                "then": "Este local não tem uma estação de aterro sanitário"
-                            },
-                            "0": {
-                                "then": "Este local tem uma estação de aterro sanitário"
-                            }
-                        },
-                        "question": "Este local tem uma estação de aterro sanitário?"
-                    },
-                    "11": {
-                        "render": "Mais detalhes sobre este lugar: {description}"
-                    },
-                    "10": {
-                        "mappings": {
-                            "1": {
-                                "then": "Não, não há hóspedes permanentes aqui"
-                            },
-                            "0": {
-                                "then": "Sim, há alguns pontos para aluguel a longo prazo, mas você também pode ficar em uma base diária"
-                            }
-                        },
-                        "question": "Este lugar oferece vagas para aluguel a longo prazo?"
-                    },
-                    "9": {
-                        "question": "Este lugar tem um website?",
-                        "render": "Site oficial: <a href='{website}'>{website}</a>"
-                    }
-                },
-                "description": "Locais de acampamento",
+                "name": "Locais de acampamento",
                 "title": {
+                    "render": "Local de acampamento {name}",
                     "mappings": {
                         "0": {
                             "then": "Locais de acampamento sem nome"
                         }
-                    },
-                    "render": "Local de acampamento {name}"
+                    }
                 },
-                "name": "Locais de acampamento",
+                "description": "Locais de acampamento",
+                "tagRenderings": {
+                    "1": {
+                        "render": "Este lugar é chamado de {name}",
+                        "question": "Qual o nome deste lugar?"
+                    },
+                    "2": {
+                        "question": "Este lugar cobra alguma taxa?",
+                        "mappings": {
+                            "0": {
+                                "then": "Você precisa pagar para usar"
+                            },
+                            "1": {
+                                "then": "Pode ser usado de graça"
+                            }
+                        }
+                    },
+                    "3": {
+                        "render": "Este lugar cobra {charge}",
+                        "question": "Quanto este lugar cobra?"
+                    },
+                    "4": {
+                        "question": "Este local tem uma estação de aterro sanitário?",
+                        "mappings": {
+                            "0": {
+                                "then": "Este local tem uma estação de aterro sanitário"
+                            },
+                            "1": {
+                                "then": "Este local não tem uma estação de aterro sanitário"
+                            }
+                        }
+                    },
+                    "5": {
+                        "render": "{capacity} campistas podem usar este lugar ao mesmo tempo",
+                        "question": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)"
+                    },
+                    "6": {
+                        "question": "Este lugar fornece acesso a internet?",
+                        "mappings": {
+                            "0": {
+                                "then": "Há acesso à internet"
+                            },
+                            "1": {
+                                "then": "Há acesso à Internet"
+                            },
+                            "2": {
+                                "then": "Não há acesso à internet"
+                            }
+                        }
+                    },
+                    "7": {
+                        "question": "Você tem que pagar pelo acesso à internet?",
+                        "mappings": {
+                            "0": {
+                                "then": "Você precisa pagar um extra pelo acesso à internet"
+                            },
+                            "1": {
+                                "then": "Você não precisa pagar um extra pelo acesso à internet"
+                            }
+                        }
+                    },
+                    "8": {
+                        "question": "Este lugar tem banheiros?",
+                        "mappings": {
+                            "0": {
+                                "then": "Este lugar tem banheiros"
+                            },
+                            "1": {
+                                "then": "Este lugar não tem banheiros"
+                            }
+                        }
+                    },
+                    "9": {
+                        "render": "Site oficial: <a href='{website}'>{website}</a>",
+                        "question": "Este lugar tem um website?"
+                    },
+                    "10": {
+                        "question": "Este lugar oferece vagas para aluguel a longo prazo?",
+                        "mappings": {
+                            "0": {
+                                "then": "Sim, há alguns pontos para aluguel a longo prazo, mas você também pode ficar em uma base diária"
+                            },
+                            "1": {
+                                "then": "Não, não há hóspedes permanentes aqui"
+                            }
+                        }
+                    },
+                    "11": {
+                        "render": "Mais detalhes sobre este lugar: {description}"
+                    }
+                },
                 "presets": {
                     "0": {
                         "title": "local de acampamento"
@@ -109,142 +130,45 @@
                 }
             },
             "1": {
-                "tagRenderings": {
-                    "3": {
-                        "mappings": {
-                            "1": {
-                                "then": "Este lugar não tem um ponto de água"
-                            },
-                            "0": {
-                                "then": "Este lugar tem um ponto de água"
-                            }
-                        },
-                        "question": "Este lugar tem um ponto de água?"
-                    },
-                    "2": {
-                        "question": "Quanto este lugar cobra?",
-                        "render": "Este lugar cobra {charge}"
-                    },
-                    "1": {
-                        "mappings": {
-                            "1": {
-                                "then": "Pode ser usado gratuitamente"
-                            },
-                            "0": {
-                                "then": "Você precisa pagar pelo uso"
-                            }
-                        },
-                        "question": "Este lugar cobra alguma taxa?"
-                    }
-                },
-                "description": "Estações de despejo sanitário",
+                "name": "Estações de despejo sanitário",
                 "title": {
+                    "render": "Estação de despejo {nome}",
                     "mappings": {
                         "0": {
                             "then": "Estação de despejo"
                         }
-                    },
-                    "render": "Estação de despejo {nome}"
+                    }
                 },
-                "name": "Estações de despejo sanitário"
-            }
-        },
-        "shortDescription": "Encontre locais para passar a noite com o seu campista",
-        "title": "Locais de acampamento"
-    },
-    "bicyclelib": {
-        "title": "Bibliotecas de bicicletas"
-    },
-    "benches": {
-        "shortDescription": "Um mapa de bancadas",
-        "title": "Bancadas"
-    },
-    "artworks": {
-        "layers": {
-            "0": {
+                "description": "Estações de despejo sanitário",
                 "tagRenderings": {
-                    "4": {
-                        "render": "Corresponde com <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-                        "question": "Qual entrada do Wikidata corresponde a <b>esta obra de arte</b>?"
-                    },
-                    "3": {
-                        "render": "Mais informações <a href='{website}' target='_blank'>neste website</a>",
-                        "question": "Há um website com mais informações a respeito desta obra de arte?"
-                    },
-                    "2": {
-                        "render": "Criado por {artist_name}",
-                        "question": "Qual artista criou isso?"
-                    },
                     "1": {
+                        "question": "Este lugar cobra alguma taxa?",
                         "mappings": {
-                            "11": {
-                                "then": "Azulejaria"
-                            },
-                            "10": {
-                                "then": "Azulejo"
-                            },
-                            "8": {
-                                "then": "Grafite"
-                            },
-                            "7": {
-                                "then": "Instalação"
-                            },
-                            "6": {
-                                "then": "Pedra"
-                            },
-                            "5": {
-                                "then": "Busto"
-                            },
-                            "4": {
-                                "then": "Estátua"
-                            },
-                            "3": {
-                                "then": "Escultura"
-                            },
-                            "2": {
-                                "then": "Pintura"
+                            "0": {
+                                "then": "Você precisa pagar pelo uso"
                             },
                             "1": {
-                                "then": "Mural"
-                            },
-                            "0": {
-                                "then": "Arquitetura"
+                                "then": "Pode ser usado gratuitamente"
                             }
-                        },
-                        "question": "Qual é o tipo desta obra de arte?",
-                        "render": "Este é um(a) {artwork_type}"
-                    }
-                },
-                "presets": {
-                    "0": {
-                        "title": "Obra de arte"
-                    }
-                },
-                "description": "Diversas obras de arte",
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Obra de arte <i>{name}</i>"
                         }
                     },
-                    "render": "Obra de arte"
-                },
-                "name": "Obras de arte"
+                    "2": {
+                        "render": "Este lugar cobra {charge}",
+                        "question": "Quanto este lugar cobra?"
+                    },
+                    "3": {
+                        "question": "Este lugar tem um ponto de água?",
+                        "mappings": {
+                            "0": {
+                                "then": "Este lugar tem um ponto de água"
+                            },
+                            "1": {
+                                "then": "Este lugar não tem um ponto de água"
+                            }
+                        }
+                    }
+                }
             }
-        },
-        "description": "Bem-vindo ao Open Artwork Map, um mapa de estátuas, bustos, grafites e outras obras de arte ao redor do mundo",
-        "title": "Abrir mapa de obras de arte"
-    },
-    "aed": {
-        "description": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
-        "title": "Abrir mapa AED"
-    },
-    "bookcases": {
-        "title": "Abrir Mapa de Estantes"
-    },
-    "bike_monitoring_stations": {
-        "description": "Este tema mostra as estações de monitoramento de bicicletas com dados ao vivo",
-        "shortDescription": "Estações de monitoramento de bicicletas com dados ao vivo da Mobilidade de Bruxelas",
-        "title": "Estações de monitoramento de bicicletas"
+        }
     }
 }

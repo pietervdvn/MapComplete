@@ -1,15 +1,18 @@
 {
   "id": "openwindpowermap",
   "title": {
-    "en": "OpenWindPowerMap"
+    "en": "OpenWindPowerMap",
+    "fr": "OpenWindPowerMap"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
   "description": {
-    "en": "A map for showing and editing wind turbines."
+    "en": "A map for showing and editing wind turbines.",
+    "fr": "Une carte indiquant les éoliennes et permettant leur édition."
   },
   "language": [
     "en",
+    "fr",
     "nl"
   ],
   "version": "2021-06-18",
@@ -24,7 +27,8 @@
       "id": "windturbine",
       "name": {
         "en": "wind turbine",
-        "nl": "windturbine"
+        "nl": "windturbine",
+        "fr": "Éolienne"
       },
       "source": {
         "osmTags": "generator:source=wind"
@@ -34,13 +38,15 @@
       "title": {
         "render": {
           "en": "wind turbine",
-          "nl": "windturbine"
+          "nl": "windturbine",
+          "fr": "éolienne"
         },
         "mappings": [
           {
             "if": "name~*",
             "then": {
-              "en": "{name}"
+              "en": "{name}",
+              "fr": "{name}"
             }
           }
         ]
@@ -58,10 +64,12 @@
       "tagRenderings": [
         {
           "render": {
-            "en": "The power output of this wind turbine is {generator:output:electricity}."
+            "en": "The power output of this wind turbine is {generator:output:electricity}.",
+            "fr": "La puissance générée par cette éolienne est de {generator:output:electricity}."
           },
           "question": {
-            "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)"
+            "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
+            "fr": "Quel est la puissance générée par cette éolienne ?"
           },
           "freeform": {
             "key": "generator:output:electricity",
@@ -70,10 +78,12 @@
         },
         {
           "render": {
-            "en": "This wind turbine is operated by {operator}."
+            "en": "This wind turbine is operated by {operator}.",
+            "fr": "Cette éolienne est opérée par {operator}."
           },
           "question": {
-            "en": "Who operates this wind turbine?"
+            "en": "Who operates this wind turbine?",
+            "fr": "Qui est l’exploitant de cette éolienne ?"
           },
           "freeform": {
             "key": "operator"
@@ -81,10 +91,12 @@
         },
         {
           "render": {
-            "en": "The total height (including rotor radius) of this wind turbine is {height} metres."
+            "en": "The total height (including rotor radius) of this wind turbine is {height} metres.",
+            "fr": "La hauteur totale, incluant les pales, est de {height} mètres."
           },
           "question": {
-            "en": "What is the total height of this wind turbine (including rotor radius), in metres?"
+            "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
+            "fr": "Quelle est la hauteur totale de l’éolienne en mètres, pales incluses ?"
           },
           "freeform": {
             "key": "height",
@@ -93,10 +105,12 @@
         },
         {
           "render": {
-            "en": "The rotor diameter of this wind turbine is {rotor:diameter} metres."
+            "en": "The rotor diameter of this wind turbine is {rotor:diameter} metres.",
+            "fr": "Le diamètre du rotor est de {rotor:diameter} mètres."
           },
           "question": {
-            "en": "What is the rotor diameter of this wind turbine, in metres?"
+            "en": "What is the rotor diameter of this wind turbine, in metres?",
+            "fr": "Quel est le diamètre du rotor en mètres ?"
           },
           "freeform": {
             "key": "rotor:diameter",
@@ -105,10 +119,12 @@
         },
         {
           "render": {
-            "en": "This wind turbine went into operation on/in {start_date}."
+            "en": "This wind turbine went into operation on/in {start_date}.",
+            "fr": "L’éolienne est active depuis {start_date}."
           },
           "question": {
-            "en": "When did this wind turbine go into operation?"
+            "en": "When did this wind turbine go into operation?",
+            "fr": "Depuis quand l’éolienne est-elle en fonctionnement ?"
           },
           "freeform": {
             "key": "start_date",
@@ -125,7 +141,8 @@
           ],
           "title": {
             "en": "wind turbine",
-            "nl": "windturbine"
+            "nl": "windturbine",
+            "fr": "Éolienne"
           }
         }
       ]
@@ -145,7 +162,8 @@
           ],
           "human": {
             "en": " megawatts",
-            "nl": " megawatt"
+            "nl": " megawatt",
+            "fr": " megawatts"
           }
         },
         {
@@ -156,7 +174,8 @@
           ],
           "human": {
             "en": " kilowatts",
-            "nl": " kilowatt"
+            "nl": " kilowatt",
+            "fr": " kilowatts"
           }
         },
         {
@@ -167,7 +186,8 @@
           ],
           "human": {
             "en": " watts",
-            "nl": " watt"
+            "nl": " watt",
+            "fr": " watts"
           }
         },
         {
@@ -178,7 +198,8 @@
           ],
           "human": {
             "en": " gigawatts",
-            "nl": " gigawatt"
+            "nl": " gigawatt",
+            "fr": " gigawatts"
           }
         }
       ],
@@ -197,7 +218,8 @@
           ],
           "human": {
             "en": " meter",
-            "nl": " meter"
+            "nl": " meter",
+            "fr": " mètres"
           }
         }
       ]

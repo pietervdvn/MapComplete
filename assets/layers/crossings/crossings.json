@@ -68,7 +68,9 @@
         "nl": "Oversteekplaats voor voetgangers en/of fietsers"
       },
       "preciseInput": {
-        "preferredBackground": ["photo"],
+        "preferredBackground": [
+          "photo"
+        ],
         "snapToLayer": "cycleways_and_roads",
         "maxSnapDistance": 25
       }
@@ -86,7 +88,9 @@
         "nl": "Verkeerslicht op een weg"
       },
       "preciseInput": {
-        "preferredBackground": ["photo"],
+        "preferredBackground": [
+          "photo"
+        ],
         "snapToLayer": "cycleways_and_roads",
         "maxSnapDistance": 25
       }

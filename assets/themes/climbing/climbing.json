@@ -8,7 +8,8 @@
     "ja": "登山地図を開く",
     "zh_Hant": "開放攀爬地圖",
     "nb_NO": "Åpent klatrekart",
-    "it": "Mappa aperta per le arrampicate"
+    "it": "Mappa aperta per le arrampicate",
+    "fr": "Open Climbing Map"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -16,7 +17,8 @@
     "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
     "ru": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
     "ja": "この地図には、自然の中のクライミングジム、ボルダリングホール、岩など、さまざまなクライミングの機会があります。",
-    "zh_Hant": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。"
+    "zh_Hant": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
+    "fr": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels."
   },
   "descriptionTail": {
     "nl": "De Open Klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -24,7 +26,8 @@
     "de": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
     "ru": "Создатель карты скалолазания — <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Пожалуйста, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>пишите</a> если у вас есть отзыв или вопросы.</p><p>Проект использует данные <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "ja": "登山地図はもともと <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> によって作成されたものです。フィードバックや質問がありましたら、<a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ご連絡</a>ください。</p><p>このプロジェクトでは、<a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>プロジェクトのデータを使用します。</p>",
-    "zh_Hant": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>"
+    "zh_Hant": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
+    "fr": "La carte a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
   },
   "language": [
     "nl",
@@ -57,7 +60,8 @@
         "ru": "Клуб скалолазания",
         "ja": "クライミングクラブ",
         "zh_Hant": "攀岩社團",
-        "nb_NO": "Klatreklubb"
+        "nb_NO": "Klatreklubb",
+        "fr": "Club d’escalade"
       },
       "minzoom": 10,
       "source": {
@@ -86,7 +90,8 @@
           "ru": "Клуб скалолазания",
           "ja": "クライミングクラブ",
           "zh_Hant": "攀岩社團",
-          "nb_NO": "Klatreklubb"
+          "nb_NO": "Klatreklubb",
+          "fr": "Club d’escalade"
         },
         "mappings": [
           {
@@ -96,7 +101,8 @@
               "en": "Climbing NGO",
               "de": "Kletter-Organisation",
               "ja": "クライミングNGO",
-              "zh_Hant": "攀岩 NGO"
+              "zh_Hant": "攀岩 NGO",
+              "fr": "Association d’escalade"
             }
           }
         ]
@@ -107,7 +113,8 @@
         "en": "A climbing club or organisations",
         "ja": "クライミングクラブや団体",
         "zh_Hant": "攀岩社團或組織",
-        "nb_NO": "En klatreklubb eller organisasjoner"
+        "nb_NO": "En klatreklubb eller organisasjoner",
+        "fr": "Club ou association d’escalade"
       },
       "tagRenderings": [
         {
@@ -126,7 +133,8 @@
             "en": "What is the name of this climbing club or NGO?",
             "de": "Wie lautet der Name dieses Vereins oder Organisation?",
             "nl": "Wat is de naam van deze klimclub?",
-            "ja": "この登山クラブやNGOの名前は何ですか?"
+            "ja": "この登山クラブやNGOの名前は何ですか?",
+            "fr": "Quel est le nom du club ou de l’association ?"
           },
           "freeform": {
             "key": "name"
@@ -171,7 +179,8 @@
             "nl": "Klimclub",
             "ja": "クライミングクラブ",
             "nb_NO": "Klatreklubb",
-            "ru": "Клуб скалолазания"
+            "ru": "Клуб скалолазания",
+            "fr": "Club d’escalade"
           },
           "description": {
             "de": "Ein Kletterverein",
@@ -179,7 +188,8 @@
             "en": "A climbing club",
             "ja": "クライミングクラブ",
             "nb_NO": "En klatreklubb",
-            "ru": "Клуб скалолазания"
+            "ru": "Клуб скалолазания",
+            "fr": "Un club d’escalade"
           }
         },
         {
@@ -191,13 +201,15 @@
             "de": "Eine Kletter-Organisation",
             "en": "Climbing NGO",
             "nl": "Een klimorganisatie",
-            "ja": "クライミングNGO"
+            "ja": "クライミングNGO",
+            "fr": "Association d’escalade"
           },
           "description": {
             "de": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
             "nl": "Een VZW die werkt rond klimmen",
             "en": "A NGO working around climbing",
-            "ja": "登山に関わるNGO"
+            "ja": "登山に関わるNGO",
+            "fr": "Une association d’escalade"
           }
         }
       ],
@@ -209,7 +221,8 @@
         "de": "Kletterhallen",
         "en": "Climbing gyms",
         "nl": "Klimzalen",
-        "ja": "クライミングジム"
+        "ja": "クライミングジム",
+        "fr": "Salle d’escalade"
       },
       "minzoom": 10,
       "source": {
@@ -225,7 +238,8 @@
           "nl": "Klimzaal",
           "de": "Kletterhalle",
           "en": "Climbing gym",
-          "ja": "クライミングジム"
+          "ja": "クライミングジム",
+          "fr": "Salle d’escalade"
         },
         "mappings": [
           {
@@ -234,7 +248,8 @@
               "nl": "Klimzaal <strong>{name}</strong>",
               "de": "Kletterhalle <strong>{name}</strong>",
               "en": "Climbing gym <strong>{name}</strong>",
-              "ja": "クライミングジム<strong>{name}</strong>"
+              "ja": "クライミングジム<strong>{name}</strong>",
+              "fr": "Salle d’escalade <strong>{name}</strong>"
             }
           }
         ]
@@ -243,7 +258,8 @@
         "de": "Eine Kletterhalle",
         "en": "A climbing gym",
         "ja": "クライミングジム",
-        "nl": "Een klimzaal"
+        "nl": "Een klimzaal",
+        "fr": "Une salle d’escalade"
       },
       "tagRenderings": [
         "images",
@@ -267,7 +283,8 @@
             "en": "What is the name of this climbing gym?",
             "nl": "Wat is de naam van dit Klimzaal?",
             "de": "Wie heißt diese Kletterhalle?",
-            "ja": "このクライミングジムは何という名前ですか?"
+            "ja": "このクライミングジムは何という名前ですか?",
+            "fr": "Quel est le nom de la salle d’escalade ?"
           },
           "freeform": {
             "key": "name"
@@ -302,7 +319,8 @@
         "de": "Kletterrouten",
         "nl": "Klimroute",
         "ja": "登坂ルート",
-        "nb_NO": "Klatreruter"
+        "nb_NO": "Klatreruter",
+        "fr": "Voies d’escalade"
       },
       "minzoom": 18,
       "source": {
@@ -319,7 +337,8 @@
           "nl": "Klimroute",
           "ja": "登坂ルート",
           "nb_NO": "Klatrerute",
-          "it": "Via di arrampicata"
+          "it": "Via di arrampicata",
+          "fr": "Voie d’escalade"
         },
         "mappings": [
           {
@@ -329,7 +348,8 @@
               "en": "Climbing route <strong>{name}</strong>",
               "nl": "Klimroute <strong>{name}</strong>",
               "ja": "登坂ルート<strong>{name}</strong>",
-              "it": "Via di arrampicata <strong>{name}</strong>"
+              "it": "Via di arrampicata <strong>{name}</strong>",
+              "fr": "Voie d’escalade <strong>{name}</strong>"
             }
           }
         ]
@@ -358,7 +378,8 @@
             "de": "Wie heißt diese Kletterroute?",
             "nl": "Hoe heet deze klimroute?",
             "ja": "この登坂ルートの名前は何ですか?",
-            "it": "Come si chiama questa via di arrampicata?"
+            "it": "Come si chiama questa via di arrampicata?",
+            "fr": "Quel est le nom de cette voie d’escalade ?"
           },
           "freeform": {
             "key": "name"
@@ -376,7 +397,8 @@
                 "de": "Diese Kletterroute hat keinen Namen",
                 "nl": "Deze klimroute heeft geen naam",
                 "ja": "この登坂ルートには名前がありません",
-                "it": "Questa via di arrampicata non ha un nome"
+                "it": "Questa via di arrampicata non ha un nome",
+                "fr": "Cette voie n’a pas de nom"
               }
             }
           ]
@@ -386,7 +408,8 @@
           "question": {
             "en": "How long is this climbing route (in meters)?",
             "nl": "Hoe lang is deze klimroute (in meters)?",
-            "it": "Quanto è lunga questa via di arrampicata (in metri)?"
+            "it": "Quanto è lunga questa via di arrampicata (in metri)?",
+            "fr": "Quelle est la longueur de cette voie (en mètres) ?"
           },
           "render": {
             "de": "Diese Route ist {canonical(climbing:length)} lang",
@@ -394,7 +417,8 @@
             "nl": "Deze klimroute is {canonical(climbing:length)} lang",
             "ja": "このルート長は、 {canonical(climbing:length)} メーターです",
             "nb_NO": "Denne ruten er {canonical(climbing:length)} lang",
-            "it": "Questo percorso è lungo {canonical(climbing:length)}"
+            "it": "Questo percorso è lungo {canonical(climbing:length)}",
+            "fr": "Cette voie fait {canonical(climbing:length)} de long"
           },
           "freeform": {
             "key": "climbing:length",
@@ -406,14 +430,16 @@
           "question": {
             "en": "What is the difficulty of this climbing route according to the french/belgian system?",
             "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
-            "it": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?"
+            "it": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
+            "fr": "Quelle est la difficulté de cette voie selon le système franco-belge ?"
           },
           "render": {
             "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
             "en": "The difficulty is {climbing:grade:french} according to the french/belgian system",
             "nl": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
             "ja": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です",
-            "it": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
+            "it": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga",
+            "fr": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}"
           },
           "freeform": {
             "key": "climbing:grade:french"
@@ -422,10 +448,12 @@
         {
           "#": "Bolts",
           "question": {
-            "en": "How much bolts does this route have before reaching the moulinette?"
+            "en": "How much bolts does this route have before reaching the moulinette?",
+            "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?"
           },
           "render": {
-            "en": "This route has {climbing:bolts} bolts"
+            "en": "This route has {climbing:bolts} bolts",
+            "fr": "Cette voie a {climbing:bolts} prises"
           },
           "freeform": {
             "key": "climbing:bolts",
@@ -438,14 +466,16 @@
             {
               "if": "climbing:bolted=no",
               "then": {
-                "en": "This route is not bolted"
+                "en": "This route is not bolted",
+                "fr": "Cette voie n’a pas de prises"
               },
               "hideInAnswer": true
             },
             {
               "if": "climbing:bolted=no&climbing:bolts=",
               "then": {
-                "en": "This route is not bolted"
+                "en": "This route is not bolted",
+                "fr": "Cette voie n’a pas de prises"
               }
             }
           ]
@@ -461,7 +491,8 @@
         {
           "#": "Rock type",
           "render": {
-            "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
+            "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>",
+            "fr": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>"
           },
           "freeform": {
             "key": "_embedding_features_with_rock:rock"
@@ -485,7 +516,8 @@
         {
           "title": {
             "en": "Climbing route",
-            "nl": "Klimroute"
+            "nl": "Klimroute",
+            "fr": "Voie d’escalade"
           },
           "tags": [
             "sport=climbing",
@@ -501,7 +533,8 @@
         "nl": "Klimgelegenheden",
         "de": "Klettermöglichkeiten",
         "en": "Climbing opportunities",
-        "ja": "登坂教室"
+        "ja": "登坂教室",
+        "fr": "Opportunité d’escalade"
       },
       "minzoom": 10,
       "source": {
@@ -521,13 +554,15 @@
           "nl": "Klimgelegenheid",
           "de": "Klettermöglichkeit",
           "ja": "登坂教室",
-          "nb_NO": "Klatremulighet"
+          "nb_NO": "Klatremulighet",
+          "fr": "Opportunité d’escalade"
         },
         "mappings": [
           {
             "if": "climbing=crag",
             "then": {
-              "en": "Climbing crag <b>{name}</b>"
+              "en": "Climbing crag <b>{name}</b>",
+              "fr": "Mur d’escalade <b>{name}</b>"
             }
           },
           {
@@ -544,7 +579,8 @@
             },
             "then": {
               "en": "Climbing area <b>{name}</b>",
-              "nl": "Klimsite <b>{name}</b>"
+              "nl": "Klimsite <b>{name}</b>",
+              "fr": "Zone d’escalade <b>{name}</b>"
             }
           },
           {
@@ -556,14 +592,16 @@
             },
             "then": {
               "en": "Climbing site",
-              "nl": "Klimsite"
+              "nl": "Klimsite",
+              "fr": "Site d’escalade"
             }
           },
           {
             "if": "name~*",
             "then": {
               "nl": "Klimgelegenheid <b>{name}</b>",
-              "en": "Climbing opportunity <b>{name}</b>"
+              "en": "Climbing opportunity <b>{name}</b>",
+              "fr": "Opportunité d’escalade <b>{name}</b>"
             }
           }
         ]
@@ -573,7 +611,8 @@
         "de": "Eine Klettergelegenheit",
         "en": "A climbing opportunity",
         "ja": "登坂教室",
-        "nb_NO": "En klatremulighet"
+        "nb_NO": "En klatremulighet",
+        "fr": "Opportunité d’escalade"
       },
       "tagRenderings": [
         "images",
@@ -584,21 +623,24 @@
         {
           "#": "Contained routes length hist",
           "render": {
-            "en": "<h3>Length overview</h3>{histogram(_length_hist)}"
+            "en": "<h3>Length overview</h3>{histogram(_length_hist)}",
+            "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}"
           },
           "condition": "_length_hist!~\\[\\]"
         },
         {
           "#": "Contained routes hist",
           "render": {
-            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
+            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}",
+            "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}"
           },
           "condition": "_difficulty_hist!~\\[\\]"
         },
         {
           "#": "Containe {_contained_climbing_routes_count} routes",
           "render": {
-            "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
+            "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>",
+            "fr": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>"
           },
           "condition": "_contained_climbing_routes~*"
         },
@@ -618,7 +660,8 @@
             "en": "What is the name of this climbing opportunity?",
             "nl": "Wat is de naam van dit Klimgelegenheid?",
             "de": "Wie heißt diese Klettergelegenheit?",
-            "ja": "この登坂教室の名前は何ですか?"
+            "ja": "この登坂教室の名前は何ですか?",
+            "fr": "Quel est le nom de ce site ?"
           },
           "freeform": {
             "key": "name"
@@ -635,7 +678,8 @@
                 "en": "This climbing opportunity doesn't have a name",
                 "nl": "Dit Klimgelegenheid heeft geen naam",
                 "de": "Diese Klettergelegenheit hat keinen Namen",
-                "ja": "この登坂教室には名前がついていない"
+                "ja": "この登坂教室には名前がついていない",
+                "fr": "Ce site n’a pas de nom"
               }
             }
           ]
@@ -647,13 +691,15 @@
             {
               "if": "climbing=boulder",
               "then": {
-                "en": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope"
+                "en": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope",
+                "fr": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde"
               }
             },
             {
               "if": "climbing=crag",
               "then": {
-                "en": "A climbing crag - a single rock or cliff with at least a few climbing routes"
+                "en": "A climbing crag - a single rock or cliff with at least a few climbing routes",
+                "fr": "Mur d’escalade, rocher avec plusieurs voies d’escalades"
               }
             },
             {
@@ -665,10 +711,12 @@
         {
           "#": "Rock type (crag/rock/cliff only)",
           "question": {
-            "en": "What is the rock type here?"
+            "en": "What is the rock type here?",
+            "fr": "Quel est le type de roche ?"
           },
           "render": {
-            "en": "The rock type is {rock}"
+            "en": "The rock type is {rock}",
+            "fr": "La roche est du {rock}"
           },
           "freeform": {
             "key": "rock"
@@ -678,7 +726,8 @@
               "if": "rock=limestone",
               "then": {
                 "en": "Limestone",
-                "nl": "Kalksteen"
+                "nl": "Kalksteen",
+                "fr": "Calcaire"
               }
             }
           ],
@@ -714,14 +763,16 @@
             "nl": "Klimgelegenheid",
             "de": "Klettermöglichkeit",
             "ja": "登坂教室",
-            "nb_NO": "Klatremulighet"
+            "nb_NO": "Klatremulighet",
+            "fr": "Opportunité d’escalade"
           },
           "description": {
             "nl": "Een klimgelegenheid",
             "de": "Eine Klettergelegenheit",
             "en": "A climbing opportunity",
             "ja": "登坂教室",
-            "nb_NO": "En klatremulighet"
+            "nb_NO": "En klatremulighet",
+            "fr": "Opportunité d’escalade"
           }
         }
       ],
@@ -742,7 +793,8 @@
         "de": "Klettermöglichkeiten?",
         "en": "Climbing opportunities?",
         "ja": "登坂教室？",
-        "nb_NO": "Klatremuligheter?"
+        "nb_NO": "Klatremuligheter?",
+        "fr": "Opportunités d’escalade ?"
       },
       "minzoom": 19,
       "source": {
@@ -768,7 +820,8 @@
           "nl": "Klimgelegenheid?",
           "de": "Klettermöglichkeit?",
           "ja": "登坂教室？",
-          "nb_NO": "Klatremulighet?"
+          "nb_NO": "Klatremulighet?",
+          "fr": "Opportunité d’escalade ?"
         }
       },
       "description": {
@@ -776,7 +829,8 @@
         "de": "Eine Klettergelegenheit?",
         "en": "A climbing opportunity?",
         "ja": "登坂教室？",
-        "nb_NO": "En klatremulighet?"
+        "nb_NO": "En klatremulighet?",
+        "fr": "Opportunité d’escalade ?"
       },
       "tagRenderings": [
         {
@@ -800,7 +854,8 @@
             "en": "Is climbing possible here?",
             "de": "Kann hier geklettert werden?",
             "ja": "ここで登坂はできますか?",
-            "nb_NO": "Er klatring mulig her?"
+            "nb_NO": "Er klatring mulig her?",
+            "fr": "Est-il possible d’escalader ici ?"
           },
           "mappings": [
             {
@@ -814,7 +869,8 @@
                 "de": "Hier kann nicht geklettert werden",
                 "ja": "ここでは登ることができない",
                 "nb_NO": "Klatring er ikke mulig her",
-                "nl": "Klimmen is hier niet mogelijk"
+                "nl": "Klimmen is hier niet mogelijk",
+                "fr": "Escalader n’est pas possible"
               },
               "hideInAnswer": true
             },
@@ -829,7 +885,8 @@
                 "de": "Hier kann geklettert werden",
                 "ja": "ここでは登ることができる",
                 "nb_NO": "Klatring er mulig her",
-                "nl": "Klimmen is hier niet toegelaten"
+                "nl": "Klimmen is hier niet toegelaten",
+                "fr": "Escalader est possible"
               }
             },
             {
@@ -839,7 +896,8 @@
                 "de": "Hier kann nicht geklettert werden",
                 "ja": "ここでは登ることができない",
                 "nb_NO": "Klatring er ikke mulig her",
-                "nl": "Klimmen is hier niet toegelaten"
+                "nl": "Klimmen is hier niet toegelaten",
+                "fr": "Escalader n’est pas possible"
               }
             }
           ]
@@ -872,7 +930,8 @@
           ],
           "human": {
             "en": " meter",
-            "nl": " meter"
+            "nl": " meter",
+            "fr": " mètres"
           },
           "default": true
         },
@@ -884,7 +943,8 @@
           ],
           "human": {
             "en": " feet",
-            "nl": " voet"
+            "nl": " voet",
+            "fr": " pieds"
           }
         }
       ]
@@ -898,7 +958,8 @@
         "de": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?",
         "ja": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?",
         "nl": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?",
-        "ru": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?"
+        "ru": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?",
+        "fr": "Existe-t’il un site avec plus d’informations (ex : topographie) ?"
       },
       "condition": {
         "and": [
@@ -921,26 +982,30 @@
           "if": "_embedding_feature:access=yes",
           "then": {
             "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}",
-            "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
+            "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}",
+            "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}"
           }
         },
         {
           "if": "_embedding_feature:access=permit",
           "then": {
             "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}",
-            "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
+            "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}",
+            "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}"
           }
         },
         {
           "if": "_embedding_feature:access=customers",
           "then": {
-            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
+            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}",
+            "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}"
           }
         },
         {
           "if": "_embedding_feature:access=members",
           "then": {
-            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
+            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}",
+            "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}"
           }
         },
         {
@@ -953,32 +1018,37 @@
     {
       "#": "Access",
       "question": {
-        "en": "Who can access here?"
+        "en": "Who can access here?",
+        "fr": "Qui peut y accéder ?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
-            "en": "Publicly accessible to anyone"
+            "en": "Publicly accessible to anyone",
+            "fr": "Libre d’accès"
           }
         },
         {
           "if": "access=permit",
           "then": {
-            "en": "You need a permit to access here"
+            "en": "You need a permit to access here",
+            "fr": "Une autorisation est nécessaire"
           }
         },
         {
           "if": "access=customers",
           "then": {
-            "en": "Only custumers"
+            "en": "Only custumers",
+            "fr": "Réservé aux clients"
           }
         },
         {
           "if": "access=members",
           "then": {
             "en": "Only club members",
-            "ru": "Только членам клуба"
+            "ru": "Только членам клуба",
+            "fr": "Réservé aux membres"
           }
         },
         {
@@ -1019,7 +1089,8 @@
         "de": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang",
         "en": "The routes are <b>{canonical(climbing:length)}</b> long on average",
         "nl": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang",
-        "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です"
+        "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
+        "fr": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne"
       },
       "condition": {
         "and": [
@@ -1041,7 +1112,8 @@
         "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
         "en": "What is the (average) length of the routes in meters?",
         "nl": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
-        "ja": "ルートの(平均)長さはメートル単位でいくつですか?"
+        "ja": "ルートの(平均)長さはメートル単位でいくつですか?",
+        "fr": "Quelle est la longueur moyenne des voies en mètres ?"
       },
       "freeform": {
         "key": "climbing:length",
@@ -1054,13 +1126,15 @@
         "de": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
         "en": "What is the level of the easiest route here, accoring to the french classification system?",
         "nl": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
-        "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?"
+        "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
+        "fr": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?"
       },
       "render": {
         "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
         "en": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system",
         "nl": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem",
-        "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です"
+        "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です",
+        "fr": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge"
       },
       "freeform": {
         "key": "climbing:grade:french:min"
@@ -1085,13 +1159,15 @@
         "de": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
         "en": "What is the level of the most difficult route here, accoring to the french classification system?",
         "nl": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
-        "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?"
+        "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
+        "fr": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?"
       },
       "render": {
         "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
         "en": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system",
         "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
-        "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です"
+        "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です",
+        "fr": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge"
       },
       "freeform": {
         "key": "climbing:grade:french:max"
@@ -1117,7 +1193,8 @@
         "en": "Is bouldering possible here?",
         "nl": "Is het mogelijk om hier te bolderen?",
         "ja": "ここでボルダリングはできますか?",
-        "nb_NO": "Er buldring mulig her?"
+        "nb_NO": "Er buldring mulig her?",
+        "fr": "L’escalade de bloc est-elle possible ici ?"
       },
       "mappings": [
         {
@@ -1127,7 +1204,8 @@
             "en": "Bouldering is possible here",
             "nl": "Bolderen kan hier",
             "ja": "ボルダリングはここで可能です",
-            "nb_NO": "Buldring er mulig her"
+            "nb_NO": "Buldring er mulig her",
+            "fr": "L’escalade de bloc est possible"
           }
         },
         {
@@ -1137,7 +1215,8 @@
             "en": "Bouldering is not possible here",
             "nl": "Bolderen kan hier niet",
             "ja": "ここではボルダリングはできません",
-            "nb_NO": "Buldring er ikke mulig her"
+            "nb_NO": "Buldring er ikke mulig her",
+            "fr": "L’escalade de bloc n’est pas possible"
           }
         },
         {
@@ -1146,7 +1225,8 @@
             "de": "Bouldern ist hier nur an wenigen Routen möglich",
             "en": "Bouldering is possible, allthough there are only a few routes",
             "nl": "Bolderen kan hier, maar er zijn niet zoveel routes",
-            "ja": "ボルダリングは可能ですが、少しのルートしかありません"
+            "ja": "ボルダリングは可能ですが、少しのルートしかありません",
+            "fr": "L’escalade de bloc est possible sur des voies précises"
           }
         },
         {
@@ -1155,7 +1235,8 @@
             "de": "Hier gibt es {climbing:boulder} Boulder-Routen",
             "en": "There are {climbing:boulder} boulder routes",
             "nl": "Er zijn hier {climbing:boulder} bolderroutes",
-            "ja": "{climbing:boulder} ボルダールートがある"
+            "ja": "{climbing:boulder} ボルダールートがある",
+            "fr": "Il y a {climbing:boulder} voies d’escalade de bloc"
           },
           "hideInAnswer": true
         }
@@ -1179,7 +1260,8 @@
         "de": "Ist Toprope-Klettern hier möglich?",
         "en": "Is toprope climbing possible here?",
         "nl": "Is het mogelijk om hier te toprope-klimmen?",
-        "ja": "ここでtoprope登坂はできますか?"
+        "ja": "ここでtoprope登坂はできますか?",
+        "fr": "Est-il possible d’escalader à la moulinette ?"
       },
       "mappings": [
         {
@@ -1188,7 +1270,8 @@
             "de": "Toprope-Klettern ist hier möglich",
             "en": "Toprope climbing is possible here",
             "nl": "Toprope-klimmen kan hier",
-            "ja": "ここでToprope登坂ができます"
+            "ja": "ここでToprope登坂ができます",
+            "fr": "L’escalade à la moulinette est possible"
           }
         },
         {
@@ -1197,7 +1280,8 @@
             "de": "Toprope-Climbing ist hier nicht möglich",
             "en": "Toprope climbing is not possible here",
             "nl": "Toprope-klimmen kan hier niet",
-            "ja": "ここではToprope登坂はできません"
+            "ja": "ここではToprope登坂はできません",
+            "fr": "L’escalade à la moulinette n’est pas possible"
           }
         },
         {
@@ -1206,7 +1290,8 @@
             "de": "Hier gibt es {climbing:toprope} Toprope-Routen",
             "en": "There are {climbing:toprope} toprope routes",
             "nl": "Er zijn hier {climbing:toprope} toprope routes",
-            "ja": "{climbing:toprope} 登坂ルートがある"
+            "ja": "{climbing:toprope} 登坂ルートがある",
+            "fr": "{climbing:toprope} voies sont équipées de moulinettes"
           },
           "hideInAnswer": true
         }

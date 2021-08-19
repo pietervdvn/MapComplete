@@ -167,7 +167,8 @@
             "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
             "en": "The surface is <b>paving stones</b>",
             "ru": "Поверхность - <b>брусчатка</b>",
-            "it": "La superficie è <b>pietre irregolari</b>"
+            "it": "La superficie è <b>pietre irregolari</b>",
+            "fr": "La surface est en <b>pierres pavées</b>"
           }
         },
         {
@@ -176,7 +177,8 @@
             "nl": "De ondergrond is <b>asfalt</b>",
             "en": "The surface is <b>asphalt</b>",
             "ru": "Поверхность - <b>асфальт</b>",
-            "it": "La superficie è <b>asfalto</b>"
+            "it": "La superficie è <b>asfalto</b>",
+            "fr": "La surface est en <b>bitume</b>"
           }
         },
         {

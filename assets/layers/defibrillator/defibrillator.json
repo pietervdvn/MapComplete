@@ -38,7 +38,8 @@
         "then": {
           "en": "./assets/layers/defibrillator/aed_checked.svg",
           "ru": "./assets/layers/defibrillator/aed_checked.svg",
-          "it": "./assets/layers/defibrillator/aed_checked.svg"
+          "it": "./assets/layers/defibrillator/aed_checked.svg",
+          "fr": "./assets/layers/defibrillator/aed_checked.svg"
         }
       }
     ]
@@ -518,7 +519,8 @@
         "fr": "Informations supplémentaires : {description}",
         "it": "Informazioni supplementari: {description}",
         "ru": "Дополнительная информация: {description}",
-        "de": "Zusätzliche Informationen: {description}"
+        "de": "Zusätzliche Informationen: {description}",
+        "id": "Informasi tambahan: {description}"
       },
       "question": {
         "en": "Is there any useful information for users that you haven't been able to describe above? (leave blank if no)",

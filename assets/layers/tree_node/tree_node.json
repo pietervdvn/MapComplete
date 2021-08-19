@@ -75,7 +75,8 @@
       "question": {
         "nl": "Is dit een naald- of loofboom?",
         "en": "Is this a broadleaved or needleleaved tree?",
-        "it": "Si tratta di un albero latifoglia o aghifoglia?"
+        "it": "Si tratta di un albero latifoglia o aghifoglia?",
+        "fr": "Cet arbre est-il un feuillu ou un résineux ?"
       },
       "mappings": [
         {
@@ -87,7 +88,8 @@
           "then": {
             "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom",
             "en": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved",
-            "it": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Latifoglia"
+            "it": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Latifoglia",
+            "fr": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Feuillu"
           }
         },
         {
@@ -99,7 +101,8 @@
           "then": {
             "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Naaldboom",
             "en": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved",
-            "it": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Aghifoglia"
+            "it": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Aghifoglia",
+            "fr": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Résineux"
           }
         },
         {
@@ -111,7 +114,8 @@
           "then": {
             "nl": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos",
             "en": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless",
-            "it": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Privo di foglie (permanente)"
+            "it": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Privo di foglie (permanente)",
+            "fr": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Sans feuilles (Permanent)"
           },
           "hideInAnswer": true
         }
@@ -147,7 +151,8 @@
           "then": {
             "nl": "De boom is een natuurlijk monument, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
             "en": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species.",
-            "it": "L’albero è un monumento naturale, ad esempio perché specialmente antico o appartenente a specie importanti."
+            "it": "L’albero è un monumento naturale, ad esempio perché specialmente antico o appartenente a specie importanti.",
+            "fr": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)"
           }
         },
         {
@@ -159,7 +164,8 @@
           "then": {
             "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
             "en": "The tree is used for agricultural purposes, e.g. in an orchard.",
-            "it": "L’albero è usato per scopi agricoli, ad esempio in un frutteto."
+            "it": "L’albero è usato per scopi agricoli, ad esempio in un frutteto.",
+            "fr": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)"
           }
         },
         {
@@ -171,7 +177,8 @@
           "then": {
             "nl": "De boom staat in een park of dergelijke (begraafplaats, schoolterrein, …).",
             "en": "The tree is in a park or similar (cemetery, school grounds, …).",
-            "it": "L’albero è in un parco o qualcosa di simile (cimitero, aree didattiche, etc.)."
+            "it": "L’albero è in un parco o qualcosa di simile (cimitero, aree didattiche, etc.).",
+            "fr": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …)."
           }
         },
         {
@@ -183,7 +190,8 @@
           "then": {
             "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
             "en": "The tree is a residential garden.",
-            "it": "L’albero è un giardino residenziale."
+            "it": "L’albero è un giardino residenziale.",
+            "fr": "Cet arbre est dans une cour résidentielle."
           }
         },
         {
@@ -221,7 +229,8 @@
           "then": {
             "nl": "De boom staat buiten een woonkern.",
             "en": "The tree is outside of an urban area.",
-            "it": "L’albero si trova fuori dall’area urbana."
+            "it": "L’albero si trova fuori dall’area urbana.",
+            "fr": "Cet arbre est en zone rurale."
           }
         }
       ]
@@ -231,7 +240,8 @@
         "nl": "Is deze boom groenblijvend of bladverliezend?",
         "en": "Is this tree evergreen or deciduous?",
         "it": "È un sempreverde o caduco?",
-        "ru": "Это дерево вечнозелёное или листопадное?"
+        "ru": "Это дерево вечнозелёное или листопадное?",
+        "fr": "L’arbre est-il à feuillage persistant ou caduc ?"
       },
       "mappings": [
         {
@@ -244,7 +254,8 @@
             "nl": "Bladverliezend: de boom is een periode van het jaar kaal.",
             "en": "Deciduous: the tree loses its leaves for some time of the year.",
             "it": "Caduco: l’albero perde le sue foglie per un periodo dell’anno.",
-            "ru": "Листопадное: у дерева опадают листья в определённое время года."
+            "ru": "Листопадное: у дерева опадают листья в определённое время года.",
+            "fr": "Caduc : l’arbre perd son feuillage une partie de l’année."
           }
         },
         {
@@ -333,7 +344,8 @@
           "then": {
             "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
             "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders",
-            "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders"
+            "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
+            "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
           }
         },
         {
@@ -405,12 +417,14 @@
         "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed-ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-        "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+        "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
       },
       "question": {
         "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
         "en": "What is the ID issued by Onroerend Erfgoed Flanders?",
-        "it": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?"
+        "it": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?",
+        "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?"
       },
       "freeform": {
         "key": "ref:OnroerendErfgoed",
@@ -428,7 +442,8 @@
         "nl": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
         "en": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
         "it": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
-        "ru": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+        "ru": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+        "fr": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata : <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
       },
       "question": {
         "nl": "Wat is het Wikidata-ID van deze boom?",
@@ -509,13 +524,15 @@
         "nl": "Naaldboom",
         "en": "Needleleaved tree",
         "it": "Albero aghifoglia",
-        "ru": "Хвойное дерево"
+        "ru": "Хвойное дерево",
+        "fr": "Arbre résineux"
       },
       "description": {
         "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
         "en": "A tree of a species with needles, such as pine or spruce.",
         "it": "Un albero di una specie con aghi come il pino o l’abete.",
-        "ru": "Дерево с хвоей (иглами), например, сосна или ель."
+        "ru": "Дерево с хвоей (иглами), например, сосна или ель.",
+        "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa."
       }
     },
     {
@@ -527,7 +544,8 @@
         "en": "Tree",
         "it": "Albero",
         "ru": "Дерево",
-        "fr": "Arbre"
+        "fr": "Arbre",
+        "id": "Pohon"
       },
       "description": {
         "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",

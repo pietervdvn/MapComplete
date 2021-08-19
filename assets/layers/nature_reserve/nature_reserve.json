@@ -297,12 +297,14 @@
       "question": {
         "nl": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
         "en": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
-        "it": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)"
+        "it": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
+        "fr": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public"
       },
       "render": {
         "nl": "{curator} is de beheerder van dit gebied",
         "en": "{curator} is the curator of this nature reserve",
-        "it": "{curator} è il curatore di questa riserva naturale"
+        "it": "{curator} è il curatore di questa riserva naturale",
+        "fr": "{curator} est en charge de la conservation de la réserve"
       },
       "freeform": {
         "key": "curator",

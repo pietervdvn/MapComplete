@@ -19,7 +19,9 @@
       "sv": "Vad är telefonnumret till {name}?",
       "zh_Hant": "{name} 的電話號碼是什麼？",
       "it": "Qual è il numero di telefono di {name}?",
-      "pt_BR": "Qual o número de telefone de {name}?"
+      "pt_BR": "Qual o número de telefone de {name}?",
+      "id": "Nomor telepon dari {name|?",
+      "pl": "Jaki jest numer telefonu do {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "freeform": {
@@ -52,7 +54,9 @@
       "zh_Hant": "{name} 的電子郵件地址是什麼？",
       "it": "Qual è l'indirizzo email di {name}?",
       "de": "Was ist die Mail-Adresse von {name}?",
-      "pt_BR": "Qual o endereço de e-mail de {name}?"
+      "pt_BR": "Qual o endereço de e-mail de {name}?",
+      "pl": "Jaki jest adres e-mail do {name}?",
+      "sv": "Vad är e-postadressen till {name}?"
     },
     "freeform": {
       "key": "email",
@@ -71,7 +75,9 @@
       "zh_Hant": "{name} 網址是什麼？",
       "it": "Qual è il sito web di {name}?",
       "de": "Was ist die Website von {name}?",
-      "pt_BR": "Qual o site de {name}?"
+      "pt_BR": "Qual o site de {name}?",
+      "pl": "Jaka jest strona internetowa {name}?",
+      "sv": "Vad är webbplatsen för {name}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -85,10 +91,12 @@
       "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>",
       "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>",
       "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>",
-      "ru": "Есть ли еще что-то важное, о чем вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>",
+      "ru": "Есть ли ещё что-то важное, о чём вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>",
       "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>",
       "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>",
-      "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
+      "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>",
+      "pl": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>",
+      "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -105,7 +113,9 @@
       "ru": "Какое время работы у {name}?",
       "zh_Hant": "{name} 的開放時間是什麼？",
       "it": "Quali sono gli orari di apertura di {name}?",
-      "pt_BR": "Qual o horário de funcionamento de {name}?"
+      "pt_BR": "Qual o horário de funcionamento de {name}?",
+      "pl": "Jakie są godziny otwarcia {name}?",
+      "sv": "Vilka är öppettiderna för {name}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -115,7 +125,10 @@
       "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
       "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
       "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
-      "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
+      "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+      "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+      "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+      "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -136,7 +149,11 @@
       "nl": "Op welke verdieping bevindt dit punt zich?",
       "en": "On what level is this feature located?",
       "de": "In welchem Stockwerk befindet sich dieses Objekt?",
-      "zh_Hant": "此圖徽位於哪個樓層／層級？"
+      "zh_Hant": "此圖徽位於哪個樓層／層級？",
+      "fr": "À quel étage se situe l’élément ?",
+      "pl": "Na jakim poziomie znajduje się ta funkcja?",
+      "pt_BR": "Em que nível esse recurso está localizado?",
+      "ru": "На каком этаже находится этот объект?"
     },
     "render": {
       "en": "Located on the {level}th floor",
@@ -144,7 +161,10 @@
       "de": "Befindet sich im {level}ten Stock",
       "pt_BR": "Localizado no {level}o andar",
       "ru": "Расположено на {level}ом этаже",
-      "zh_Hant": "位於 {level} 樓"
+      "zh_Hant": "位於 {level} 樓",
+      "fr": "Étage {level}",
+      "pl": "Znajduje się na {level} piętrze",
+      "sv": "Ligger på {level}:e våningen"
     },
     "freeform": {
       "key": "level",
@@ -158,7 +178,10 @@
           "nl": "Bevindt zich ondergronds",
           "pt_BR": "Localizado no subsolo",
           "ru": "Расположено под землей",
-          "zh_Hant": "位於地下"
+          "zh_Hant": "位於地下",
+          "fr": "En sous-sol",
+          "pl": "Znajduje się pod ziemią",
+          "sv": "Ligger under jorden"
         },
         "hideInAnswer": true
       },
@@ -170,7 +193,10 @@
           "de": "Ist im Erdgeschoss",
           "pt_BR": "Localizado no térreo",
           "ru": "Расположено на первом этаже",
-          "zh_Hant": "位於 1 樓"
+          "zh_Hant": "位於 1 樓",
+          "fr": "Rez-de-chaussée",
+          "pl": "Znajduje się na parterze",
+          "sv": "Ligger på bottenvåningen"
         }
       },
       {
@@ -181,7 +207,10 @@
           "de": "Ist im ersten Stock",
           "pt_BR": "Localizado no primeiro andar",
           "ru": "Расположено на первом этаже",
-          "zh_Hant": "位於 2 樓"
+          "zh_Hant": "位於 2 樓",
+          "fr": "Premier étage",
+          "pl": "Znajduje się na pierwszym piętrze",
+          "sv": "Ligger på första våningen"
         }
       }
     ]

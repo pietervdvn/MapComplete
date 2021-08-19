@@ -55,7 +55,9 @@
         "nl": "Een paaltje in de weg"
       },
       "preciseInput": {
-        "preferredBackground": ["photo"],
+        "preferredBackground": [
+          "photo"
+        ],
         "snapToLayer": "cycleways_and_roads",
         "maxSnapDistance": 25
       }
@@ -73,7 +75,9 @@
         "nl": "Fietshekjes, voor het afremmen van fietsers"
       },
       "preciseInput": {
-        "preferredBackground": ["photo"],
+        "preferredBackground": [
+          "photo"
+        ],
         "snapToLayer": "cycleways_and_roads",
         "maxSnapDistance": 25
       }
@@ -218,8 +222,8 @@
         "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:seperation} m"
       },
       "question": {
-        "en": "How much space is there between the barriers (along the length of the road, in meter)?<br/><img src='./assets/themes/cycle_infra/Cycle_barrier_double_length.svg' style='width: 8em'/>",
-        "nl": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg, in meter)?<br/><img src='./assets/themes/cycle_infra/Cycle_barrier_double_length.svg' style='width: 8em'/>"
+        "en": "How much space is there between the barriers (along the length of the road)?",
+        "nl": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?"
       },
       "condition": {
         "or": [
@@ -243,8 +247,8 @@
         "nl": "Breedte van de opening: {width:opening} m"
       },
       "question": {
-        "en": "How wide is the smallest opening next to the barriers (in meter)?<br/><img src='./assets/themes/cycle_infra/Cycle_barrier_double_width.svg' style='width: 8em'/>",
-        "nl": "Hoe breed is de smalste opening naast de barrières (in meter)?<br/><img src='./assets/themes/cycle_infra/Cycle_barrier_double_width.svg' style='width: 8em'/>"
+        "en": "How wide is the smallest opening next to the barriers?",
+        "nl": "Hoe breed is de smalste opening naast de barrières?"
       },
       "condition": {
         "or": [
@@ -267,8 +271,8 @@
         "en": "Overlap: {overlap} m"
       },
       "question": {
-        "en": "How much overlap do the barriers have?<br/><img src='./assets/themes/cycle_infra/Cycle_barrier_double_overlap.svg' style='width: 8em'/>",
-        "nl": "Hoeveel overlappen de barrières (in meter)?<br/><img src='./assets/themes/cycle_infra/Cycle_barrier_double_overlap.svg' style='width: 8em'/>"
+        "en": "How much overlap do the barriers have?",
+        "nl": "Hoeveel overlappen de barrières?"
       },
       "condition": {
         "or": [
