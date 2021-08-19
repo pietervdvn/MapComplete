@@ -4,7 +4,7 @@ import {UIEventSource} from "../UIEventSource";
 /**
  * There are multiple way to fetch images for an object
  * 1) There is an image tag
- * 2) There is an image tag, the image tag contains multiple ';'-seperated URLS
+ * 2) There is an image tag, the image tag contains multiple ';'-separated URLS
  * 3) there are multiple image tags, e.g. 'image', 'image:0', 'image:1', and 'image_0', 'image_1' - however, these are pretty rare so we are gonna ignore them
  * 4) There is a wikimedia_commons-tag, which either has a 'File': or a 'category:' containing images
  * 5) There is a wikidata-tag, and the wikidata item either has an 'image' attribute or has 'a link to a wikimedia commons category'

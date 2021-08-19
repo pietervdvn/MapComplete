@@ -2,7 +2,7 @@
  "data_format": 1,
  "project": {
   "name": "MapComplete Waste Basket",
-  "description": "Throw away waste",
+  "description": "A map with waste baskets",
   "project_url": "https://mapcomplete.osm.be/waste_basket",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
   "icon_url": "https://mapcomplete.osm.be/assets/themes/waste_basket/waste_basket.svg",

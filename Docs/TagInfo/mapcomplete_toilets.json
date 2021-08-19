@@ -86,8 +86,8 @@
   },
   {
    "key": "toilets:position",
-   "description": "Layer 'Toilets' shows toilets:position=urinals with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-   "value": "urinals"
+   "description": "Layer 'Toilets' shows toilets:position=urinal with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+   "value": "urinal"
   },
   {
    "key": "toilets:position",
@@ -96,8 +96,8 @@
   },
   {
    "key": "toilets:position",
-   "description": "Layer 'Toilets' shows toilets:position=seated;urinals with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-   "value": "seated;urinals"
+   "description": "Layer 'Toilets' shows toilets:position=seated;urinal with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+   "value": "seated;urinal"
   },
   {
    "key": "changing_table",

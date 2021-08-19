@@ -1267,11 +1267,6 @@
         "title": "Open Toilet Map",
         "description": "A map of public toilets"
     },
-    "trails": {
-        "title": "Trails",
-        "shortDescription": "This map shows trails",
-        "description": "This map shows trails"
-    },
     "trees": {
         "title": "Trees",
         "shortDescription": "Map all the trees",
@@ -1279,8 +1274,8 @@
     },
     "waste_basket": {
         "title": "Waste Basket",
-        "shortDescription": "Throw away waste",
-        "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+        "shortDescription": "A map with waste baskets",
+        "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
         "layers": {
             "0": {
                 "name": "Waste Basket",
@@ -1297,8 +1292,7 @@
                 },
                 "presets": {
                     "0": {
-                        "title": "Waste Basket",
-                        "description": "Throw away waste"
+                        "title": "Waste Basket"
                     }
                 }
             }

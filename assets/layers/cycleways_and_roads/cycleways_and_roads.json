@@ -103,21 +103,21 @@
         {
           "if": "cycleway=lane",
           "then": {
-            "en": "There is a lane next to the road (seperated with paint)",
+            "en": "There is a lane next to the road (separated with paint)",
             "nl": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)"
           }
         },
         {
           "if": "cycleway=track",
           "then": {
-            "en": "There is a track, but no cycleway drawn seperately from this road on the map.",
+            "en": "There is a track, but no cycleway drawn separately from this road on the map.",
             "nl": "Er is een fietspad (los van de weg), maar geen fietspad afzonderlijk getekend naast deze weg."
           }
         },
         {
-          "if": "cycleway=seperate",
+          "if": "cycleway=separate",
           "then": {
-            "en": "There is a seperately drawn cycleway",
+            "en": "There is a separately drawn cycleway",
             "nl": "Er is een apart getekend fietspad."
           }
         },
@@ -1011,7 +1011,7 @@
     },
     {
       "question": {
-        "en": "How is this cycleway seperated from the road?",
+        "en": "How is this cycleway separated from the road?",
         "nl": "Hoe is dit fietspad gescheiden van de weg?"
       },
       "condition": {
@@ -1022,30 +1022,30 @@
       },
       "mappings": [
         {
-          "if": "cycleway:seperation=dashed_line",
+          "if": "cycleway:separation=dashed_line",
           "then": {
-            "en": "This cycleway is seperated by a dashed line",
+            "en": "This cycleway is separated by a dashed line",
             "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
           }
         },
         {
-          "if": "cycleway:seperation=solid_line",
+          "if": "cycleway:separation=solid_line",
           "then": {
-            "en": "This cycleway is seperated by a solid line",
+            "en": "This cycleway is separated by a solid line",
             "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep"
           }
         },
         {
-          "if": "cycleway:seperation=parking_lane",
+          "if": "cycleway:separation=parking_lane",
           "then": {
-            "en": "This cycleway is seperated by a parking lane",
+            "en": "This cycleway is separated by a parking lane",
             "nl": "Dit fietspad is gescheiden van de weg met parkeervakken"
           }
         },
         {
-          "if": "cycleway:seperation=kerb",
+          "if": "cycleway:separation=kerb",
           "then": {
-            "en": "This cycleway is seperated by a kerb",
+            "en": "This cycleway is separated by a kerb",
             "nl": "Dit fietspad is gescheiden van de weg met een stoeprand"
           }
         }
@@ -1053,7 +1053,7 @@
     },
     {
       "question": {
-        "en": "How is this cycleway seperated from the road?",
+        "en": "How is this cycleway separated from the road?",
         "nl": "Hoe is dit fietspad gescheiden van de weg?"
       },
       "condition": {
@@ -1064,30 +1064,30 @@
       },
       "mappings": [
         {
-          "if": "seperation=dashed_line",
+          "if": "separation=dashed_line",
           "then": {
-            "en": "This cycleway is seperated by a dashed line",
+            "en": "This cycleway is separated by a dashed line",
             "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
           }
         },
         {
-          "if": "seperation=solid_line",
+          "if": "separation=solid_line",
           "then": {
-            "en": "This cycleway is seperated by a solid line",
+            "en": "This cycleway is separated by a solid line",
             "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep"
           }
         },
         {
-          "if": "seperation=parking_lane",
+          "if": "separation=parking_lane",
           "then": {
-            "en": "This cycleway is seperated by a parking lane",
+            "en": "This cycleway is separated by a parking lane",
             "nl": "Dit fietspad is gescheiden van de weg met parkeervakken"
           }
         },
         {
-          "if": "seperation=kerb",
+          "if": "separation=kerb",
           "then": {
-            "en": "This cycleway is seperated by a kerb",
+            "en": "This cycleway is separated by a kerb",
             "nl": "Dit fietspad is gescheiden van de weg met een stoeprand"
           }
         }

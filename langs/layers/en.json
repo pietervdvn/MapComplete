@@ -77,7 +77,7 @@
                 "question": "How wide is the gap left over besides the barrier?"
             },
             "4": {
-                "render": "Space between barriers (along the length of the road): {width:seperation} m",
+                "render": "Space between barriers (along the length of the road): {width:separation} m",
                 "question": "How much space is there between the barriers (along the length of the road)?"
             },
             "5": {
@@ -731,7 +731,7 @@
                         "then": "This shop doesn't offer a bike pump for anyone"
                     },
                     "2": {
-                        "then": "There is bicycle pump, it is shown as a seperate point "
+                        "then": "There is bicycle pump, it is shown as a separate point "
                     }
                 }
             },
@@ -949,13 +949,13 @@
                         "then": "There is a shared lane"
                     },
                     "1": {
-                        "then": "There is a lane next to the road (seperated with paint)"
+                        "then": "There is a lane next to the road (separated with paint)"
                     },
                     "2": {
-                        "then": "There is a track, but no cycleway drawn seperately from this road on the map."
+                        "then": "There is a track, but no cycleway drawn separately from this road on the map."
                     },
                     "3": {
-                        "then": "There is a seperately drawn cycleway"
+                        "then": "There is a separately drawn cycleway"
                     },
                     "4": {
                         "then": "There is no cycleway"
@@ -1266,36 +1266,36 @@
                 "question": "How wide is the gap between the cycleway and the road?"
             },
             "14": {
-                "question": "How is this cycleway seperated from the road?",
+                "question": "How is this cycleway separated from the road?",
                 "mappings": {
                     "0": {
-                        "then": "This cycleway is seperated by a dashed line"
+                        "then": "This cycleway is separated by a dashed line"
                     },
                     "1": {
-                        "then": "This cycleway is seperated by a solid line"
+                        "then": "This cycleway is separated by a solid line"
                     },
                     "2": {
-                        "then": "This cycleway is seperated by a parking lane"
+                        "then": "This cycleway is separated by a parking lane"
                     },
                     "3": {
-                        "then": "This cycleway is seperated by a kerb"
+                        "then": "This cycleway is separated by a kerb"
                     }
                 }
             },
             "15": {
-                "question": "How is this cycleway seperated from the road?",
+                "question": "How is this cycleway separated from the road?",
                 "mappings": {
                     "0": {
-                        "then": "This cycleway is seperated by a dashed line"
+                        "then": "This cycleway is separated by a dashed line"
                     },
                     "1": {
-                        "then": "This cycleway is seperated by a solid line"
+                        "then": "This cycleway is separated by a solid line"
                     },
                     "2": {
-                        "then": "This cycleway is seperated by a parking lane"
+                        "then": "This cycleway is separated by a parking lane"
                     },
                     "3": {
-                        "then": "This cycleway is seperated by a kerb"
+                        "then": "This cycleway is separated by a kerb"
                     }
                 }
             }

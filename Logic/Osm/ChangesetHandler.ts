@@ -132,7 +132,7 @@ export class ChangesetHandler {
      * Deletes the element with the given ID from the OSM database.
      * DOES NOT PERFORM ANY SAFETY CHECKS!
      *
-     * For the deletion of an element, a new, seperate changeset is created with a slightly changed comment and some extra flags set.
+     * For the deletion of an element, a new, separate changeset is created with a slightly changed comment and some extra flags set.
      * The CS will be closed afterwards.
      *
      * If dryrun is specified, will not actually delete the point but print the CS-XML to console instead

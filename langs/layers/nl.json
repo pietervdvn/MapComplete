@@ -77,7 +77,7 @@
                 "question": "Hoe breed is de ruimte naast de barrière?"
             },
             "4": {
-                "render": "Ruimte tussen barrières (langs de lengte van de weg): {width:seperation} m",
+                "render": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m",
                 "question": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?"
             },
             "5": {

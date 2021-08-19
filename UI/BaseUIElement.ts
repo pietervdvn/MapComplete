@@ -42,7 +42,7 @@ export default abstract class BaseUIElement {
     }
 
     /**
-     * Adds all the relevant classes, space seperated
+     * Adds all the relevant classes, space separated
      */
     public SetClass(clss: string) {
         const all = clss.split(" ").map(clsName => clsName.trim());

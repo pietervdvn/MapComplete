@@ -218,8 +218,8 @@
     {
       "#": "Space between barrier (cyclebarrier)",
       "render": {
-        "en": "Space between barriers (along the length of the road): {width:seperation} m",
-        "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:seperation} m"
+        "en": "Space between barriers (along the length of the road): {width:separation} m",
+        "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m"
       },
       "question": {
         "en": "How much space is there between the barriers (along the length of the road)?",
@@ -232,7 +232,7 @@
         ]
       },
       "freeform": {
-        "key": "width:seperation",
+        "key": "width:separation",
         "type": "length",
         "helperArgs": [
           "21",

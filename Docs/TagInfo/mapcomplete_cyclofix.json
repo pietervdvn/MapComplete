@@ -285,8 +285,8 @@
   },
   {
    "key": "service:bicycle:pump",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=seperate with a fixed text, namely 'There is bicycle pump, it is shown as a seperate point ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "seperate"
+   "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=separate with a fixed text, namely 'There is bicycle pump, it is shown as a separate point ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+   "value": "separate"
   },
   {
    "key": "service:bicycle:diy",

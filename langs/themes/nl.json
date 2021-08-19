@@ -1146,11 +1146,6 @@
         "title": "Open Toilettenkaart",
         "description": "Een kaart met openbare toiletten"
     },
-    "trails": {
-        "title": "Wandeltochten",
-        "shortDescription": "Deze kaart toont verschillende wandeltochten",
-        "description": "Deze kaart toont alle verschillende wandeltochten"
-    },
     "trees": {
         "title": "Bomen",
         "shortDescription": "Breng bomen in kaart",
@@ -1158,8 +1153,8 @@
     },
     "waste_basket": {
         "title": "Vuilnisbak",
-        "shortDescription": "Afval weggooien",
-        "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+        "shortDescription": "Een kaart met vuilnisbakken",
+        "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "layers": {
             "0": {
                 "name": "Vuilnisbak",
@@ -1176,8 +1171,7 @@
                 },
                 "presets": {
                     "0": {
-                        "title": "Vuilnisbak",
-                        "description": "Afval weggooien"
+                        "title": "Vuilnisbak"
                     }
                 }
             }

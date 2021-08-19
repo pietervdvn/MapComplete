@@ -1,7 +1,7 @@
 
 ### Special tag renderings 
 
- In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's. General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_fcs need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args 
+ In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's. General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_fcs need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args 
 ### all_tags 
 
  Prints all key-value pairs of the object - used for debugging 
@@ -78,7 +78,7 @@ key | opening_hours | The tagkey from which the table is constructed.
 name | default | description
 ------ | --------- | -------------
 Url | undefined | The URL to load
-Shorthands | undefined | A list of shorthands, of the format 'shorthandname:path.path.path'. Seperated by ;
+Shorthands | undefined | A list of shorthands, of the format 'shorthandname:path.path.path'. separated by ;
 path | undefined | The path (or shorthand) that should be returned
  
 #### Example usage 

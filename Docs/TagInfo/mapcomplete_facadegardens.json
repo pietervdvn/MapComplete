@@ -52,7 +52,7 @@
   },
   {
    "key": "direct_sunlight",
-   "description": "Layer 'Facade gardens' shows direct_sunlight=no with a fixed text, namely 'The sun is in the shade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
+   "description": "Layer 'Facade gardens' shows direct_sunlight=no with a fixed text, namely 'The garden is in the shade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "no"
   },
   {
