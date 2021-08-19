@@ -44,13 +44,13 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _leafletMap: UIEventSource<L.Map>;
-    
+
     /**
      * The date when the user requested the geolocation. If we have a location, it'll autozoom to it the first 30 secs
      * @private
      */
     private _lastUserRequest: Date;
-    
+
     /**
      * A small flag on localstorage. If the user previously granted the geolocation, it will be set.
      * On firefox, the permissions api is broken (probably fingerprint resistiance) and "granted + don't ask again" doesn't stick between sessions.
@@ -75,30 +75,57 @@ export default class GeoLocationHandler extends VariableUiElement {
         );
         const isActive = new UIEventSource<boolean>(false);
         const isLocked = new UIEventSource<boolean>(false);
-
+        const permission = new UIEventSource<string>("");
+        const lastClick = new UIEventSource<Date>(undefined);
+        const lastClickWithinThreeSecs = lastClick.map(lastClick => {
+            if (lastClick === undefined) {
+                return false;
+            }
+            const timeDiff = (new Date().getTime() - lastClick.getTime()) / 1000
+            return timeDiff <= 3
+        })
+        lastClick.addCallbackAndRunD(_ => {
+            window.setTimeout(() => {
+                if (lastClickWithinThreeSecs.data) {
+                    lastClick.ping()
+                }
+            }, 500)
+        })
         super(
             hasLocation.map(
                 (hasLocationData) => {
                     let icon: BaseUIElement;
-
-                    if (isLocked.data) {
-                        icon = Svg.location_svg();
-                    } else if (hasLocationData) {
-                        icon = Svg.location_empty_svg();
-                    } else if (isActive.data) {
-                        icon = Svg.location_empty_svg();
-                    } else {
-                        icon = Svg.location_circle_svg();
+                    console.log("Determining icon:", permission.data, isActive.data, hasLocationData, isLocked.data, lastClickWithinThreeSecs.data)
+                    if (permission.data === "denied") {
+                        return Svg.location_refused_svg();
                     }
-                    return icon
+
+                    if (!isActive.data) {
+                        return Svg.location_empty_svg()
+                    }
+                    if (!hasLocationData) {
+                        // Position not yet found but we are active: we spin to indicate activity
+                        const icon = Svg.location_empty_svg()
+                        icon.SetStyle("animation: spin 4s linear infinite;")
+                        return icon;
+                    }
+                    if (isLocked.data) {
+                        return Svg.location_locked_svg()
+                    }
+                    if (lastClickWithinThreeSecs.data) {
+                        return Svg.location_unlocked_svg()
+                    }
+
+                    // We have a location, so we show a dot in the center
+                    return Svg.location_svg();
                 },
-                [isActive, isLocked]
+                [isActive, isLocked, permission, lastClickWithinThreeSecs]
             )
         );
         this.SetClass("mapcontrol")
         this._isActive = isActive;
         this._isLocked = isLocked;
-        this._permission = new UIEventSource<string>("");
+        this._permission = permission
         this._previousLocationGrant = previousLocationGrant;
         this._currentGPSLocation = currentGPSLocation;
         this._leafletMap = leafletMap;
@@ -119,13 +146,38 @@ export default class GeoLocationHandler extends VariableUiElement {
             self.SetClass(pointerClass);
         });
 
+
         this.onClick(() => {
+            /*
+             * If the previous click was within 3 seconds (and we have an active location), then we lock to the location 
+             */
             if (self._hasLocation.data) {
-                self._isLocked.setData(!self._isLocked.data);
+                if (isLocked.data) {
+                    isLocked.setData(false)
+                } else if (lastClick.data !== undefined) {
+                    const timeDiff = (new Date().getTime() - lastClick.data.getTime()) / 1000
+                    if (timeDiff <= 3) {
+                        isLocked.setData(true)
+                        lastClick.setData(undefined)
+                    } else {
+                        lastClick.setData(new Date())
+                    }
+                }else{
+                    lastClick.setData(new Date())
+                }
             }
+
             self.init(true);
         });
         this.init(false);
+
+        isLocked.addCallbackAndRunD(isLocked => {
+            if (isLocked) {
+                leafletMap.data?.dragging?.disable()
+            } else {
+                leafletMap.data?.dragging?.enable()
+            }
+        })
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
@@ -147,7 +199,7 @@ export default class GeoLocationHandler extends VariableUiElement {
                 console.error(e);
             }
             const icon = L.icon({
-                iconUrl: Img.AsData(Svg.crosshair.replace(/#000000/g, color)),
+                iconUrl: Img.AsData(Svg.location.replace(/#000000/g, color).replace(/#000/g, color)),
                 iconSize: [40, 40], // size of the icon
                 iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
             });
@@ -240,6 +292,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         this._lastUserRequest = zoomToGPS ? new Date() : new Date(0);
         if (self._permission.data === "denied") {
             self._previousLocationGrant.setData("");
+            self._isActive.setData(false)
             return "";
         }
         if (this._currentGPSLocation.data !== undefined) {

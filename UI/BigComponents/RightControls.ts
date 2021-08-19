@@ -23,21 +23,25 @@ export default class RightControls extends Combine {
         );
 
         const plus = new MapControlButton(
-            Svg.plus_zoom_svg()
+            Svg.plus_svg(),{
+                dontStyle:true
+            }
         ).onClick(() => {
             State.state.locationControl.data.zoom++;
             State.state.locationControl.ping();
         });
 
         const min = new MapControlButton(
-            Svg.min_zoom_svg()
+            Svg.min_svg(),{
+                dontStyle: true
+            }
         ).onClick(() => {
             State.state.locationControl.data.zoom--;
             State.state.locationControl.ping();
         });
 
         super([plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))
-        this.SetClass("flex flex-col")
+        this.SetClass("flex flex-col items-center")
     }
 
 }
