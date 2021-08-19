@@ -53,10 +53,23 @@
                 },
                 "description": "Różnorodne dzieła sztuki"
             }
-        }
+        },
+        "title": "Otwórz mapę dzieł sztuki"
     },
     "aed": {
         "description": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy",
         "title": "Otwórz mapę AED"
+    },
+    "trees": {
+        "shortDescription": "Sporządzić mapę wszystkich drzew",
+        "title": "Drzewa"
+    },
+    "toilets": {
+        "description": "Mapa toalet publicznych",
+        "title": "Mapa otwartych toalet"
+    },
+    "surveillance": {
+        "description": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
+        "shortDescription": "Kamery monitorujące i inne środki nadzoru"
     }
 }
