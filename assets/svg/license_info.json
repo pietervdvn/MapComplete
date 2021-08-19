@@ -1322,5 +1322,29 @@
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Media-floppy.svg"
     ]
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "path": "location-refused.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "path": "location_locked.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "path": "location_unlocked.svg",
+    "license": "CC0",
+    "sources": []
   }
 ]
