@@ -41,6 +41,7 @@ export class TextField extends InputElement<string> {
             el.placeholder = placeholder
             el.rows = options.textAreaRows
             el.cols = 50
+            el.style.width = "100%"
             inputEl = el;
         } else {
             const el = document.createElement("input")

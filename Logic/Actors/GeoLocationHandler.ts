@@ -178,6 +178,7 @@ export default class GeoLocationHandler extends VariableUiElement {
                 leafletMap.data?.dragging?.enable()
             }
         })
+        
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
