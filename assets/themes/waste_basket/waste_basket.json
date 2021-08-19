@@ -5,12 +5,12 @@
     "nl": "Vuilnisbak"
   },
   "shortDescription": {
-    "en": "Throw away waste",
-    "nl": "Afval weggooien"
+    "en": "A map with waste baskets",
+    "nl": "Een kaart met vuilnisbakken"
   },
   "description": {
-    "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
-    "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien."
+    "en": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
+    "nl": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen"
   },
   "language": [
     "en",
@@ -83,10 +83,6 @@
           "title": {
             "en": "Waste Basket",
             "nl": "Vuilnisbak"
-          },
-          "description": {
-            "en": "Throw away waste",
-            "nl": "Afval weggooien"
           }
         }
       ]

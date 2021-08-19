@@ -28,6 +28,7 @@
   "defaultBackgroundId": "CartoDB.Positron",
   "enablePdfDownload": true,
   "enableDownload": true,
+  "hideFromOverview": true,
   "layers": [
     {
       "#": "Nature reserve with geometry, z>=13",
