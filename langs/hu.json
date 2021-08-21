@@ -2,7 +2,12 @@
     "general": {
         "openStreetMapIntro": "<h3>Egy nyílt térkép</h3><p>Nem lenne király, ha lenne egy térkép, amit mindenki szabadon használhatna és szerkeszthetne? Egyetlen hely minden geoinformáció tárolására. Hogy arra a sok weboldalra a kicsi és egymással nem kompatibilis térképekkel (amik többnyire elavultak) ne legyen szükség többé.</p><p><b>Az <a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> éppen ez. A trékép adatai ingyenesen használhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">az adatokban történő változtatások megjelölésével és publikálásával</a>) Mindezeken túl bárki szabadon hozzáadhat új helyeket és kijavíthatja a hibákat. Ez a weboldal is OpenStreetMapet használ. Minden adat onnan származik és a te válaszaid és módosításaid is oda futnak be.</p><p>Rengeteg ember és alkalmazás használja már most is az OpenStreetMapet: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de még a Facebook, Instagram, Apple és Bing által használt térképek is (részben) az OpenStreetMapet használják. Ha itt módosítasz valamit, az ezekben az alkalmazásokban is megjelenik - a legközelebbi frissítés után.</p>",
         "questions": {
-            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "emailIs": "",
+            "emailOf": "",
+            "websiteOf": "",
+            "phoneNumberIs": "",
+            "phoneNumberOf": ""
         },
         "noNameCategory": "Név nélküli {category}",
         "nameInlineQuestion": "A(z) {category} neve $$$",
@@ -14,7 +19,12 @@
             "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt új pontot adsz hozzá!",
             "zoomInFurther": "Pont hozzáadásához közelíts rá jobban!",
             "title": "Hozzáadsz egy új pontot?",
-            "addNew": "Új {category} hozzáadása itt"
+            "addNew": "Új {category} hozzáadása itt",
+            "intro": "",
+            "pleaseLogin": "",
+            "warnVisibleForEveryone": "",
+            "presetInfo": "",
+            "openLayerControl": ""
         },
         "number": "szám",
         "skip": "Kérdés kihagyása",
@@ -31,11 +41,121 @@
         },
         "loginToStart": "Jelentkezz be a kérdés megválaszolásához",
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
-        "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével"
+        "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével",
+        "download": {
+            "downloadAsPdfHelper": "",
+            "downloadCSV": "",
+            "licenseInfo": "",
+            "downloadGeojson": "",
+            "noDataLoaded": "",
+            "downloadCSVHelper": "",
+            "downloadAsPdf": "",
+            "includeMetaData": "",
+            "downloadGeoJsonHelper": "",
+            "title": ""
+        },
+        "attribution": {
+            "codeContributionsBy": "",
+            "mapContributionsByAndHidden": "",
+            "mapContributionsBy": "",
+            "iconAttribution": {
+                "title": ""
+            },
+            "themeBy": "",
+            "attributionContent": "",
+            "attributionTitle": ""
+        },
+        "opening_hours": {
+            "ph_open": "",
+            "ph_closed": "",
+            "open_during_ph": "",
+            "not_all_rules_parsed": "",
+            "error_loading": "",
+            "ph_not_known": "",
+            "loadingCountry": "",
+            "ph_open_as_usual": "",
+            "openTill": "",
+            "opensAt": "",
+            "open_24_7": "",
+            "closed_permanently": "",
+            "closed_until": ""
+        },
+        "pdf": {
+            "generatedWith": "",
+            "attrBackground": "",
+            "attr": "",
+            "versionInfo": ""
+        },
+        "getStartedLogin": "",
+        "sharescreen": {
+            "editThemeDescription": "",
+            "editThisTheme": "",
+            "embedIntro": "",
+            "fsIncludeCurrentLocation": "",
+            "fsIncludeCurrentLayers": "",
+            "fsIncludeCurrentBackgroundMap": "",
+            "fsGeolocation": "",
+            "fsAddNew": "",
+            "fsLayerControlToggle": "",
+            "fsSearch": "",
+            "fsUserbadge": "",
+            "fsLayers": "",
+            "fsWelcomeMessage": "",
+            "thanksForSharing": "",
+            "copiedToClipboard": "",
+            "addToHomeScreen": "",
+            "intro": ""
+        },
+        "customThemeIntro": "",
+        "weekdays": {
+            "wednesday": "",
+            "monday": "",
+            "thursday": "",
+            "tuesday": "",
+            "friday": "",
+            "sunday": "",
+            "saturday": "",
+            "abbreviations": {
+                "sunday": "",
+                "saturday": "",
+                "friday": "",
+                "thursday": "",
+                "wednesday": "",
+                "tuesday": "",
+                "monday": ""
+            }
+        },
+        "getStartedNewAccount": "",
+        "morescreen": {
+            "requestATheme": "",
+            "intro": "",
+            "createYourOwnTheme": "",
+            "streetcomplete": ""
+        },
+        "openTheMap": "",
+        "histogram": {
+            "error_loading": ""
+        },
+        "goToInbox": "",
+        "testing": "",
+        "noTagsSelected": "",
+        "layerSelection": {
+            "title": "",
+            "zoomInToSeeThisLayer": ""
+        },
+        "loginOnlyNeededToEdit": "",
+        "aboutMapcomplete": "",
+        "fewChangesBefore": "",
+        "readYourMessages": "",
+        "backgroundMap": "",
+        "about": "",
+        "osmLinkTooltip": ""
     },
     "index": {
         "pickTheme": "Válassz egy témát lent a kezdéshez!",
-        "title": "Üdvözlünk a MapComplete-nél!"
+        "title": "Üdvözlünk a MapComplete-nél!",
+        "intro": "",
+        "#": ""
     },
     "centerMessage": {
         "retrying": "Nem sikerült betölteni az adatokat. Újrapróbálkozás {count} másodperc múlva…",
@@ -55,6 +175,62 @@
         "pleaseLogin": "Kép hozzáadásához jelentkezz be",
         "uploadingMultiple": "{count} kép feltöltése folyamatban",
         "uploadingPicture": "Kép feltöltése folyamatban",
-        "addPicture": "Kép hozzáadása"
+        "addPicture": "Kép hozzáadása",
+        "cco": "",
+        "willBePublished": ""
+    },
+    "delete": {
+        "cancel": "",
+        "useSomethingElse": "",
+        "delete": "",
+        "notEnoughExperience": "",
+        "loginToDelete": "",
+        "safeDelete": "",
+        "isDeleted": "",
+        "onlyEditedByLoggedInUser": "",
+        "isntAPoint": "",
+        "partOfOthers": "",
+        "readMessages": "",
+        "explanations": {
+            "softDelete": "",
+            "hardDelete": "",
+            "selectReason": ""
+        },
+        "reasons": {
+            "notFound": "",
+            "disused": "",
+            "test": ""
+        },
+        "whyDelete": "",
+        "loading": ""
+    },
+    "reviews": {
+        "no_reviews_yet": "",
+        "name_required": "",
+        "title": "",
+        "write_a_comment": "",
+        "posting_as": "",
+        "title_singular": "",
+        "attribution": "",
+        "no_rating": "",
+        "plz_login": "",
+        "affiliated_reviewer_warning": "",
+        "tos": "",
+        "saved": "",
+        "saving_review": "",
+        "i_am_affiliated": ""
+    },
+    "split": {
+        "hasBeenSplit": "",
+        "cancel": "",
+        "splitTitle": "",
+        "loginToSplit": "",
+        "inviteToSplit": "",
+        "split": ""
+    },
+    "favourite": {
+        "loginNeeded": "",
+        "reload": "",
+        "panelIntro": ""
     }
 }
