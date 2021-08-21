@@ -149,12 +149,8 @@
             "attributionContent": "<p>Todos os datos proveñen do <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, e pódense reutilizar libremente baixo <a href=\"https://osm.org/copyright\" target=\"_blank\">a Licenza Aberta de Base de Datos (ODbL)</a>.</p>",
             "attributionTitle": "Aviso de atribución"
         },
-        "pdf": {
-            "attr": ""
-        },
         "download": {
             "downloadAsPdfHelper": "",
-            "downloadCSV": "",
             "noDataLoaded": ""
         }
     },
@@ -177,16 +173,10 @@
         "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!"
     },
     "split": {
-        "loginToSplit": "",
         "splitTitle": ""
     },
     "delete": {
-        "reasons": {
-            "disused": ""
-        },
         "readMessages": "",
-        "useSomethingElse": "",
-        "safeDelete": "",
-        "delete": ""
+        "safeDelete": ""
     }
 }

@@ -143,12 +143,8 @@
         "loginToStart": "登入之後來回答這問題",
         "welcomeBack": "你已經登入了，歡迎回來！",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
-        "pdf": {
-            "attrBackground": ""
-        },
         "download": {
-            "downloadGeoJsonHelper": "",
-            "title": ""
+            "downloadGeoJsonHelper": ""
         },
         "loginOnlyNeededToEdit": ""
     },
@@ -181,13 +177,10 @@
         "addPicture": "新增圖片"
     },
     "delete": {
-        "readMessages": "",
         "whyDelete": "",
-        "notEnoughExperience": "",
         "loginToDelete": ""
     },
     "split": {
-        "loginToSplit": "",
         "hasBeenSplit": ""
     }
 }

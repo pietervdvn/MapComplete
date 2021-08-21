@@ -148,11 +148,7 @@
         },
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
         "download": {
-            "noDataLoaded": "",
             "licenseInfo": ""
-        },
-        "pdf": {
-            "attrBackground": ""
         },
         "testing": ""
     },
@@ -170,19 +166,15 @@
         "no_rating": "Sin calificación dada",
         "write_a_comment": "Deja una reseña…",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
-        "plz_login": "Inicia sesión para dejar una reseña",
-        "affiliated_reviewer_warning": ""
+        "plz_login": "Inicia sesión para dejar una reseña"
     },
     "split": {
         "split": ""
     },
     "delete": {
-        "readMessages": "",
         "reasons": {
             "notFound": ""
         },
-        "loading": "",
-        "onlyEditedByLoggedInUser": "",
-        "isDeleted": ""
+        "onlyEditedByLoggedInUser": ""
     }
 }

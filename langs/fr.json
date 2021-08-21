@@ -151,15 +151,10 @@
             "ph_not_known": " "
         },
         "download": {
-            "downloadAsPdfHelper": "",
-            "downloadGeojson": "",
-            "downloadCSVHelper": ""
+            "downloadGeojson": ""
         },
         "pdf": {
             "attrBackground": ""
-        },
-        "histogram": {
-            "error_loading": ""
         }
     },
     "favourite": {
@@ -183,18 +178,11 @@
         "attribution": "Les avis sont fournis par <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> et sont disponibles sous licence <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "plz_login": "Connectez vous pour laisser un avis"
     },
-    "split": {
-        "cancel": ""
-    },
     "delete": {
         "explanations": {
             "softDelete": ""
         },
-        "reasons": {
-            "disused": ""
-        },
         "partOfOthers": "",
-        "isntAPoint": "",
         "cancel": ""
     }
 }

@@ -1,86 +1,49 @@
 {
     "image": {
-        "uploadingMultiple": "",
-        "uploadDone": "",
-        "ccbs": ""
+        "uploadDone": ""
     },
     "reviews": {
         "write_a_comment": "",
-        "affiliated_reviewer_warning": "",
-        "saving_review": "",
-        "attribution": ""
+        "saving_review": ""
     },
     "general": {
         "download": {
-            "downloadAsPdfHelper": "",
-            "title": ""
+            "downloadAsPdfHelper": ""
         },
         "noNameCategory": "",
-        "questions": {
-            "phoneNumberOf": ""
-        },
         "opening_hours": {
             "ph_open": "",
-            "not_all_rules_parsed": "",
-            "ph_closed": "",
-            "error_loading": ""
+            "ph_closed": ""
         },
         "add": {
             "addNew": "",
-            "warnVisibleForEveryone": "",
             "stillLoading": ""
-        },
-        "pdf": {
-            "attrBackground": ""
         },
         "sharescreen": {
             "fsIncludeCurrentLocation": "",
-            "fsIncludeCurrentLayers": "",
             "fsLayerControlToggle": "",
-            "fsUserbadge": "",
             "intro": ""
-        },
-        "search": {
-            "error": ""
         },
         "weekdays": {
             "abbreviations": {
-                "thursday": "",
-                "saturday": ""
+                "thursday": ""
             },
             "saturday": ""
         },
-        "number": "",
         "morescreen": {
             "intro": ""
         },
-        "getStartedNewAccount": "",
         "testing": "",
-        "attribution": {
-            "mapContributionsBy": ""
-        },
         "oneSkippedQuestion": "",
-        "about": "",
-        "readYourMessages": "",
-        "aboutMapcomplete": ""
+        "readYourMessages": ""
     },
     "delete": {
         "safeDelete": "",
-        "loginToDelete": "",
         "isntAPoint": "",
-        "explanations": {
-            "selectReason": ""
-        },
         "whyDelete": ""
-    },
-    "split": {
-        "loginToSplit": ""
     },
     "favourite": {
         "reload": ""
-    },
-    "index": {
-        "intro": ""
     },
     "centerMessage": {
         "ready": ""

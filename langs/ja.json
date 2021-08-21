@@ -143,12 +143,8 @@
         },
         "welcomeBack": "ログインしました、お帰りなさい!",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
-        "pdf": {
-            "generatedWith": ""
-        },
         "download": {
-            "includeMetaData": "",
-            "downloadAsPdf": ""
+            "includeMetaData": ""
         },
         "histogram": {
             "error_loading": ""
@@ -183,17 +179,12 @@
         "addPicture": "写真の追加"
     },
     "delete": {
-        "reasons": {
-            "test": ""
-        },
         "explanations": {
             "softDelete": ""
         },
-        "readMessages": "",
         "useSomethingElse": ""
     },
     "split": {
-        "inviteToSplit": "",
         "splitTitle": ""
     }
 }

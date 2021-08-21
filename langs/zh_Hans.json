@@ -2,89 +2,60 @@
     "general": {
         "weekdays": {
             "abbreviations": {
-                "sunday": "",
                 "thursday": ""
-            },
-            "monday": ""
+            }
         },
         "sharescreen": {
             "fsLayerControlToggle": "",
-            "fsGeolocation": "",
-            "fsWelcomeMessage": "",
-            "fsIncludeCurrentBackgroundMap": ""
+            "fsWelcomeMessage": ""
         },
         "opening_hours": {
             "open_during_ph": "",
-            "closed_until": "",
-            "ph_closed": "",
-            "open_24_7": ""
+            "ph_closed": ""
         },
         "download": {
-            "downloadGeoJsonHelper": "",
-            "downloadAsPdfHelper": ""
+            "downloadGeoJsonHelper": ""
         },
         "osmLinkTooltip": "",
-        "returnToTheMap": "",
         "questions": {
             "websiteIs": ""
         },
-        "getStartedLogin": "",
         "add": {
             "layerNotEnabled": "",
-            "stillLoading": "",
             "warnVisibleForEveryone": ""
         },
-        "testing": "",
         "search": {
             "searching": ""
-        },
-        "layerSelection": {
-            "zoomInToSeeThisLayer": ""
         },
         "pdf": {
             "attr": ""
         },
-        "cancel": "",
         "morescreen": {
             "streetcomplete": ""
         },
-        "histogram": {
-            "error_loading": ""
-        },
         "attribution": {
-            "codeContributionsBy": "",
-            "themeBy": ""
+            "codeContributionsBy": ""
         },
         "nameInlineQuestion": ""
     },
     "split": {
-        "split": "",
         "loginToSplit": ""
     },
     "reviews": {
-        "attribution": "",
-        "posting_as": "",
-        "title_singular": ""
+        "posting_as": ""
     },
     "favourite": {
         "reload": ""
     },
     "image": {
-        "dontDelete": "",
-        "uploadingMultiple": "",
-        "uploadDone": ""
+        "uploadingMultiple": ""
     },
     "delete": {
         "cancel": "",
-        "delete": "",
         "explanations": {
             "selectReason": ""
         },
-        "whyDelete": "",
         "notEnoughExperience": ""
-    },
-    "centerMessage": {
-        "loadingData": ""
     },
     "index": {
         "pickTheme": ""

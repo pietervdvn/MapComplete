@@ -1,88 +1,53 @@
 {
     "general": {
         "opening_hours": {
-            "ph_closed": "",
-            "open_during_ph": "",
-            "not_all_rules_parsed": ""
+            "open_during_ph": ""
         },
         "sharescreen": {
             "fsSearch": "",
-            "fsGeolocation": "",
             "addToHomeScreen": "",
-            "fsIncludeCurrentLocation": "",
             "embedIntro": ""
-        },
-        "questions": {
-            "emailIs": ""
         },
         "download": {
             "title": "",
-            "downloadCSV": "",
             "downloadGeojson": ""
-        },
-        "search": {
-            "search": ""
         },
         "weekdays": {
             "abbreviations": {
                 "sunday": ""
             },
-            "tuesday": "",
             "saturday": ""
         },
         "add": {
-            "zoomInFurther": "",
-            "stillLoading": "",
-            "confirmButton": ""
+            "stillLoading": ""
         },
         "attribution": {
-            "mapContributionsBy": "",
-            "iconAttribution": {
-                "title": ""
-            }
+            "mapContributionsBy": ""
         },
         "loginOnlyNeededToEdit": "",
-        "save": "",
         "fewChangesBefore": "",
-        "openTheMap": "",
         "pdf": {
             "attrBackground": ""
         },
-        "morescreen": {
-            "intro": ""
-        },
         "pickLanguage": "",
-        "goToInbox": "",
         "osmLinkTooltip": ""
     },
     "delete": {
-        "whyDelete": "",
         "loginToDelete": "",
-        "explanations": {
-            "softDelete": ""
-        },
-        "loading": "",
-        "partOfOthers": ""
+        "loading": ""
     },
     "centerMessage": {
         "loadingData": ""
     },
     "image": {
-        "isDeleted": "",
-        "addPicture": "",
-        "ccbs": ""
+        "addPicture": ""
     },
     "reviews": {
         "i_am_affiliated": "",
-        "saved": "",
-        "write_a_comment": "",
-        "affiliated_reviewer_warning": ""
+        "write_a_comment": ""
     },
     "split": {
         "inviteToSplit": ""
-    },
-    "index": {
-        "intro": ""
     },
     "favourite": {
         "panelIntro": ""

@@ -1,88 +1,55 @@
 {
     "general": {
         "opening_hours": {
-            "open_during_ph": "",
-            "openTill": "",
-            "not_all_rules_parsed": ""
+            "openTill": ""
         },
         "add": {
             "confirmButton": "",
-            "addNew": "",
             "intro": ""
         },
         "sharescreen": {
-            "fsLayerControlToggle": "",
             "fsUserbadge": "",
-            "fsIncludeCurrentBackgroundMap": "",
             "embedIntro": ""
         },
         "weekdays": {
             "abbreviations": {
-                "monday": "",
                 "thursday": ""
             },
-            "thursday": "",
             "monday": ""
         },
-        "morescreen": {
-            "createYourOwnTheme": ""
-        },
         "download": {
-            "downloadGeoJsonHelper": "",
-            "noDataLoaded": ""
+            "downloadGeoJsonHelper": ""
         },
         "customThemeIntro": "",
-        "attribution": {
-            "attributionContent": ""
-        },
         "testing": "",
-        "questions": {
-            "emailOf": ""
-        },
         "search": {
             "searching": ""
         },
-        "returnToTheMap": "",
         "pdf": {
             "generatedWith": ""
         },
-        "skip": "",
         "readYourMessages": "",
-        "getStartedLogin": "",
         "fewChangesBefore": "",
-        "pickLanguage": "",
         "openTheMap": ""
     },
     "delete": {
-        "onlyEditedByLoggedInUser": "",
         "explanations": {
             "hardDelete": ""
         },
-        "whyDelete": "",
-        "cancel": "",
-        "notEnoughExperience": ""
+        "cancel": ""
     },
     "favourite": {
         "panelIntro": ""
     },
-    "split": {
-        "split": ""
-    },
     "reviews": {
         "title": "",
-        "tos": "",
-        "i_am_affiliated": "",
-        "no_reviews_yet": ""
+        "i_am_affiliated": ""
     },
     "index": {
         "#": ""
     },
-    "centerMessage": {
-        "loadingData": ""
-    },
     "image": {
         "uploadDone": "",
-        "ccbs": "",
         "uploadingMultiple": ""
     }
 }

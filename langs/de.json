@@ -151,11 +151,7 @@
             "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>"
         },
         "download": {
-            "title": "",
             "downloadAsPdf": ""
-        },
-        "pdf": {
-            "generatedWith": ""
         },
         "histogram": {
             "error_loading": ""
@@ -183,17 +179,12 @@
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar."
     },
     "delete": {
-        "explanations": {
-            "softDelete": ""
-        },
         "reasons": {
             "disused": ""
         },
-        "partOfOthers": "",
         "isntAPoint": ""
     },
     "split": {
-        "split": "",
         "inviteToSplit": ""
     }
 }

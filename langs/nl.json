@@ -151,12 +151,8 @@
             "ph_open_as_usual": "geopend zoals gewoonlijk",
             "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:"
         },
-        "pdf": {
-            "attrBackground": ""
-        },
         "download": {
             "downloadGeoJsonHelper": "",
-            "downloadAsPdf": "",
             "title": ""
         }
     },
@@ -182,17 +178,10 @@
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas"
     },
     "delete": {
-        "reasons": {
-            "disused": ""
-        },
         "safeDelete": "",
-        "explanations": {
-            "softDelete": ""
-        },
         "useSomethingElse": ""
     },
     "split": {
-        "loginToSplit": "",
         "splitTitle": ""
     }
 }

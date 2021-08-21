@@ -139,11 +139,7 @@
         "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
         "loginWithOpenStreetMap": "Accedi con OpenStreetMap",
         "download": {
-            "noDataLoaded": "",
             "downloadGeojson": ""
-        },
-        "histogram": {
-            "error_loading": ""
         },
         "pdf": {
             "attr": ""
@@ -182,18 +178,11 @@
         "uploadingPicture": "Caricamento della tua foto…",
         "addPicture": "Aggiungi foto"
     },
-    "split": {
-        "split": ""
-    },
     "delete": {
         "reasons": {
             "disused": ""
         },
-        "explanations": {
-            "hardDelete": ""
-        },
         "partOfOthers": "",
-        "isntAPoint": "",
         "cancel": ""
     }
 }

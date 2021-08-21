@@ -121,20 +121,14 @@
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
         "download": {
-            "downloadAsPdf": "",
             "downloadGeoJsonHelper": ""
-        },
-        "morescreen": {
-            "requestATheme": ""
         },
         "pdf": {
             "generatedWith": ""
         },
         "attribution": {
-            "mapContributionsBy": "",
             "attributionContent": ""
-        },
-        "testing": ""
+        }
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
@@ -169,16 +163,11 @@
         "loginNeeded": "<h3>Zaloguj się</h3>Osobisty układ jest dostępny tylko dla użytkowników OpenStreetMap",
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów"
     },
-    "split": {
-        "inviteToSplit": ""
-    },
     "delete": {
         "partOfOthers": "",
-        "readMessages": "",
         "reasons": {
             "notFound": ""
         },
-        "isntAPoint": "",
         "cancel": ""
     }
 }

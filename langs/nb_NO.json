@@ -7,57 +7,35 @@
             "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "attribution": {
-            "iconAttribution": {
-                "title": ""
-            }
-        },
         "morescreen": {
             "requestATheme": ""
         },
         "sharescreen": {
-            "thanksForSharing": "",
             "embedIntro": "",
-            "fsGeolocation": "",
-            "fsSearch": "",
-            "intro": ""
+            "fsSearch": ""
         },
         "weekdays": {
             "abbreviations": {
-                "thursday": "",
-                "friday": ""
+                "thursday": ""
             },
             "tuesday": ""
         },
         "opening_hours": {
-            "open_24_7": "",
             "opensAt": "",
-            "ph_not_known": "",
             "error_loading": ""
         },
         "download": {
-            "downloadCSV": "",
             "downloadGeojson": ""
-        },
-        "pdf": {
-            "generatedWith": ""
         },
         "skippedQuestions": "",
         "add": {
-            "warnVisibleForEveryone": "",
-            "stillLoading": "",
-            "title": ""
+            "stillLoading": ""
         },
         "returnToTheMap": "",
-        "loginToStart": "",
         "openTheMap": "",
-        "questions": {
-            "websiteIs": ""
-        },
         "histogram": {
             "error_loading": ""
         },
-        "customThemeIntro": "",
         "osmLinkTooltip": ""
     },
     "index": {
@@ -76,30 +54,20 @@
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
-        "pleaseLogin": "Logg inn for å legge til et bilde",
-        "ccb": ""
+        "pleaseLogin": "Logg inn for å legge til et bilde"
     },
     "reviews": {
         "no_reviews_yet": "",
-        "saved": "",
-        "tos": "",
-        "attribution": ""
+        "tos": ""
     },
     "split": {
         "splitTitle": ""
-    },
-    "favourite": {
-        "reload": ""
     },
     "delete": {
         "explanations": {
             "softDelete": ""
         },
-        "reasons": {
-            "disused": ""
-        },
         "partOfOthers": "",
-        "isntAPoint": "",
         "cancel": ""
     }
 }

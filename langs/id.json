@@ -22,8 +22,7 @@
             "closed_permanently": "Ditutup sampai pemberitahuan lebih lanjut",
             "openTill": "sampai",
             "opensAt": "dari",
-            "closed_until": "Ditutup sampai {date}",
-            "ph_open_as_usual": ""
+            "closed_until": "Ditutup sampai {date}"
         },
         "noTagsSelected": "Tidak ada tag yang dipilih",
         "getStartedNewAccount": " atau <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">membuat akun baru</a>",
@@ -41,8 +40,7 @@
             "editThemeDescription": "Tambahkan atau ubah pertanyaan ke tema peta ini",
             "editThisTheme": "Sunting tema ini",
             "thanksForSharing": "Terima kasih telah berbagi!",
-            "copiedToClipboard": "Tautan disalin ke papan klip",
-            "intro": ""
+            "copiedToClipboard": "Tautan disalin ke papan klip"
         },
         "goToInbox": "Buka kotak masuk",
         "weekdays": {
@@ -64,30 +62,21 @@
             "monday": "Senin"
         },
         "download": {
-            "downloadGeoJsonHelper": "",
             "title": ""
-        },
-        "morescreen": {
-            "requestATheme": ""
         },
         "pdf": {
             "versionInfo": ""
         },
         "add": {
-            "presetInfo": "",
-            "confirmButton": "",
-            "pleaseLogin": ""
+            "confirmButton": ""
         },
         "attribution": {
             "iconAttribution": {
                 "title": ""
-            },
-            "themeBy": ""
+            }
         },
         "customThemeIntro": "",
-        "openTheMap": "",
         "noNameCategory": "",
-        "skippedQuestions": "",
         "save": ""
     },
     "image": {
@@ -120,8 +109,7 @@
         "write_a_comment": "Beri ulasan…",
         "title_singular": "Satu ulasan",
         "title": "{count} ulasan",
-        "plz_login": "Masuk untuk meninggalkan ulasan",
-        "name_required": ""
+        "plz_login": "Masuk untuk meninggalkan ulasan"
     },
     "index": {
         "pickTheme": "Pilih tema di bawah ini untuk memulai.",
@@ -129,15 +117,10 @@
         "title": "Selamat datang di MapComplete"
     },
     "delete": {
-        "explanations": {
-            "selectReason": ""
-        },
         "partOfOthers": "",
-        "isDeleted": "",
         "reasons": {
             "notFound": ""
-        },
-        "loading": ""
+        }
     },
     "split": {
         "split": ""
