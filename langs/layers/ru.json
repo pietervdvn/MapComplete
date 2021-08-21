@@ -254,7 +254,18 @@
         }
     },
     "bike_monitoring_station": {
-        "name": "Станции мониторинга"
+        "name": "Станции мониторинга",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        }
     },
     "bike_parking": {
         "name": "Велопарковка",
@@ -279,6 +290,21 @@
                     },
                     "5": {
                         "then": "Навес <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
                     }
                 }
             },
@@ -292,8 +318,15 @@
                     },
                     "4": {
                         "then": "Парковка на крыше"
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "3": {
                 "mappings": {
@@ -303,14 +336,45 @@
                     "1": {
                         "then": "Это открытая парковка"
                     }
-                }
+                },
+                "question": ""
             },
             "4": {
-                "render": "Место для {capacity} велосипеда(ов)"
+                "render": "Место для {capacity} велосипеда(ов)",
+                "question": ""
             },
             "5": {
                 "question": "Кто может пользоваться этой велопарковкой?",
-                "render": "{access}"
+                "render": "{access}",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "7": {
+                "render": "",
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
         }
     },
@@ -325,8 +389,15 @@
                 },
                 "4": {
                     "then": "Велосипедный насос"
+                },
+                "1": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
                 }
-            }
+            },
+            "render": ""
         },
         "tagRenderings": {
             "5": {
@@ -334,6 +405,9 @@
                 "mappings": {
                     "0": {
                         "then": "Всегда открыто"
+                    },
+                    "1": {
+                        "then": ""
                     }
                 }
             },
@@ -356,8 +430,12 @@
                     },
                     "1": {
                         "then": "Клапан Dunlop"
+                    },
+                    "2": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "11": {
                 "question": "Это электрический велосипедный насос?",
@@ -381,7 +459,35 @@
                     "2": {
                         "then": "Есть манометр, но он сломан"
                     }
+                },
+                "question": ""
+            },
+            "2": {
+                "question": "",
+                "render": ""
+            },
+            "1": {
+                "question": "",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
                 }
+            },
+            "7": {
+                "question": ""
+            },
+            "9": {
+                "render": ""
+            },
+            "4": {
+                "question": ""
             }
         },
         "icon": {
@@ -389,9 +495,18 @@
         },
         "presets": {
             "0": {
-                "title": "Велосипедный насос"
+                "title": "Велосипедный насос",
+                "description": ""
+            },
+            "2": {
+                "title": ""
+            },
+            "1": {
+                "description": "",
+                "title": ""
             }
-        }
+        },
+        "name": ""
     },
     "bike_shop": {
         "name": "Обслуживание велосипедов/магазин",
@@ -409,6 +524,9 @@
                 },
                 "4": {
                     "then": "Магазин велосипедов <i>{name}</i>"
+                },
+                "5": {
+                    "then": ""
                 }
             }
         },
@@ -488,6 +606,9 @@
                     },
                     "1": {
                         "then": "В этом магазине нет велосипедного насоса для всеобщего пользования"
+                    },
+                    "2": {
+                        "then": ""
                     }
                 }
             },
@@ -496,6 +617,12 @@
                 "mappings": {
                     "2": {
                         "then": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине"
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
                     }
                 }
             },
@@ -507,8 +634,14 @@
                     },
                     "2": {
                         "then": "В этом магазине нет услуг мойки/чистки велосипедов"
+                    },
+                    "1": {
+                        "then": ""
                     }
                 }
+            },
+            "1": {
+                "render": ""
             }
         },
         "presets": {
@@ -545,37 +678,124 @@
                     },
                     "2": {
                         "then": "Доступно только для клиентов"
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
                     }
-                }
+                },
+                "question": "",
+                "render": ""
             },
             "3": {
                 "mappings": {
                     "1": {
                         "then": "Это обычный автоматический дефибриллятор"
+                    },
+                    "0": {
+                        "then": ""
                     }
-                }
+                },
+                "render": "",
+                "question": ""
             },
             "12": {
                 "render": "{opening_hours_table(opening_hours)}",
-                "question": "В какое время доступен этот дефибриллятор?"
+                "question": "В какое время доступен этот дефибриллятор?",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
             },
             "13": {
-                "render": "Дополнительная информация: {description}"
+                "render": "Дополнительная информация: {description}",
+                "question": ""
             },
             "14": {
                 "mappings": {
                     "0": {
                         "then": "Проверено сегодня!"
                     }
-                }
+                },
+                "render": "",
+                "question": ""
             },
             "15": {
-                "render": "Дополнительная информация для экспертов OpenStreetMap: {fixme}"
+                "render": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
+                "question": ""
+            },
+            "4": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "7": {
+                "render": "",
+                "question": ""
+            },
+            "5": {
+                "question": "",
+                "render": ""
+            },
+            "1": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "11": {
+                "render": "",
+                "question": ""
+            },
+            "6": {
+                "render": "",
+                "question": ""
+            },
+            "10": {
+                "question": "",
+                "render": ""
+            },
+            "8": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "9": {
+                "render": "",
+                "question": ""
             }
         }
     },
     "direction": {
-        "name": "Визуализация направления"
+        "name": "Визуализация направления",
+        "description": ""
     },
     "drinking_water": {
         "name": "Питьевая вода",
@@ -586,23 +806,80 @@
             "0": {
                 "title": "Питьевая вода"
             }
+        },
+        "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "3": {
+                "render": ""
+            }
         }
     },
     "ghost_bike": {
         "tagRenderings": {
             "2": {
-                "render": "В знак памяти о {name}"
+                "render": "В знак памяти о {name}",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
             },
             "3": {
-                "render": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>"
+                "render": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>",
+                "question": ""
             },
             "4": {
-                "render": "<i>{inscription}</i>"
+                "render": "<i>{inscription}</i>",
+                "question": ""
             },
             "5": {
-                "render": "Установлен {start_date}"
+                "render": "Установлен {start_date}",
+                "question": ""
+            },
+            "0": {
+                "render": ""
             }
-        }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "name": ""
     },
     "information_board": {
         "name": "Информационные щиты",
@@ -627,22 +904,71 @@
                         "then": "Эта карта основана на OpenStreetMap"
                     }
                 },
-                "render": "Эта карта основана на {map_source}"
+                "render": "Эта карта основана на {map_source}",
+                "question": ""
+            },
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
         },
         "presets": {
             "0": {
-                "title": "Карта"
+                "title": "Карта",
+                "description": ""
             }
-        }
+        },
+        "description": ""
     },
     "nature_reserve": {
         "tagRenderings": {
             "8": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "question": ""
             },
             "9": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "question": ""
+            },
+            "5": {
+                "question": "",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "12": {
+                "render": ""
+            },
+            "7": {
+                "render": "",
+                "question": ""
+            },
+            "6": {
+                "question": ""
             }
         }
     },
@@ -704,8 +1030,15 @@
                     },
                     "5": {
                         "then": "Поверхность - <b>бетон</b>"
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "2": {
                 "question": "Эта игровая площадка освещается ночью?",
@@ -723,20 +1056,36 @@
                 "question": "С какого возраста доступна эта детская площадка?"
             },
             "4": {
-                "render": "Доступно детям до {max_age}"
+                "render": "Доступно детям до {max_age}",
+                "question": ""
             },
             "6": {
                 "mappings": {
                     "4": {
                         "then": "Недоступно"
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "7": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
+                "render": "<a href='mailto:{email}'>{email}</a>",
+                "question": ""
             },
             "8": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
+                "render": "<a href='tel:{phone}'>{phone}</a>",
+                "question": ""
             },
             "9": {
                 "question": "Доступна ли детская площадка пользователям кресел-колясок?",
@@ -765,6 +1114,10 @@
                         "then": "Всегда доступен"
                     }
                 }
+            },
+            "5": {
+                "question": "",
+                "render": ""
             }
         },
         "presets": {
@@ -822,6 +1175,9 @@
                 "mappings": {
                     "0": {
                         "then": "Свободный доступ"
+                    },
+                    "1": {
+                        "then": ""
                     }
                 }
             },
@@ -832,6 +1188,45 @@
             "11": {
                 "render": "Более подробная информация <a href='{website}' target='_blank'>на сайте</a>",
                 "question": "Есть ли веб-сайт с более подробной информацией об этом общественном книжном шкафе?"
+            },
+            "8": {
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "5": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "9": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "7": {
+                "render": "",
+                "question": ""
             }
         }
     },
@@ -857,6 +1252,12 @@
                     },
                     "6": {
                         "then": "Поверхность - <b>бетон</b>"
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
                 }
             }
@@ -889,7 +1290,9 @@
                     "5": {
                         "then": "Здесь можно играть в баскетбол"
                     }
-                }
+                },
+                "question": "",
+                "render": ""
             },
             "2": {
                 "question": "Какое покрытие на этой спортивной площадке?",
@@ -923,6 +1326,9 @@
                     },
                     "2": {
                         "then": "Доступ только членам клуба"
+                    },
+                    "3": {
+                        "then": ""
                     }
                 }
             },
@@ -937,6 +1343,9 @@
                     },
                     "3": {
                         "then": "Невозможна предварительная запись"
+                    },
+                    "0": {
+                        "then": ""
                     }
                 }
             },
@@ -947,6 +1356,12 @@
                         "then": "Всегда доступен"
                     }
                 }
+            },
+            "5": {
+                "question": ""
+            },
+            "6": {
+                "question": ""
             }
         },
         "presets": {
@@ -972,6 +1387,9 @@
                     },
                     "2": {
                         "then": "Панорамная камера"
+                    },
+                    "0": {
+                        "then": ""
                     }
                 }
             },
@@ -982,11 +1400,82 @@
                     },
                     "2": {
                         "then": "Возможно, эта камера расположена снаружи"
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "8": {
+                "question": "Как расположена эта камера?",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
                 }
             },
-            "8": {
-                "question": "Как расположена эта камера?"
+            "7": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "4": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "3": {
+                "render": "",
+                "question": ""
+            },
+            "2": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "6": {
+                "render": "",
+                "question": ""
             }
         }
     },
@@ -1001,7 +1490,8 @@
                 "description": "Туалет или комната отдыха со свободным доступом"
             },
             "1": {
-                "title": "Туалет с доступом для пользователей кресел-колясок"
+                "title": "Туалет с доступом для пользователей кресел-колясок",
+                "description": ""
             }
         },
         "tagRenderings": {
@@ -1013,15 +1503,26 @@
                     },
                     "2": {
                         "then": "Недоступно"
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
                     }
-                }
+                },
+                "render": ""
             },
             "2": {
                 "mappings": {
                     "0": {
                         "then": "Это платные туалеты"
+                    },
+                    "1": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "3": {
                 "question": "Сколько стоит посещение туалета?",
@@ -1031,11 +1532,58 @@
                 "mappings": {
                     "1": {
                         "then": "Недоступно пользователям кресел-колясок"
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "5": {
+                "question": "Какие это туалеты?",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
                     }
                 }
             },
-            "5": {
-                "question": "Какие это туалеты?"
+            "7": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "6": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
             }
         }
     },
@@ -1079,15 +1627,81 @@
                 }
             },
             "7": {
-                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+                "question": ""
             },
             "8": {
-                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "2": {
+                "question": "",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
             }
         },
         "presets": {
             "0": {
-                "title": "Лиственное дерево"
+                "title": "Лиственное дерево",
+                "description": ""
             },
             "1": {
                 "title": "Хвойное дерево",
@@ -1112,6 +1726,687 @@
         "tagRenderings": {
             "1": {
                 "question": "Вы хотите добавить описание?"
+            }
+        },
+        "description": ""
+    },
+    "barrier": {
+        "tagRenderings": {
+            "6": {
+                "question": "",
+                "render": ""
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "2": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "0": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "render": "",
+                "question": ""
+            },
+            "5": {
+                "question": "",
+                "render": ""
+            },
+            "4": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "presets": {
+            "1": {
+                "title": "",
+                "description": ""
+            },
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": "",
+        "name": ""
+    },
+    "visitor_information_centre": {
+        "name": "",
+        "title": {
+            "render": "",
+            "mappings": {
+                "1": {
+                    "then": ""
+                }
+            }
+        },
+        "description": ""
+    },
+    "crossings": {
+        "tagRenderings": {
+            "7": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "4": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "5": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "0": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "1": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "presets": {
+            "1": {
+                "title": "",
+                "description": ""
+            },
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "name": "",
+        "description": ""
+    },
+    "cycleways_and_roads": {
+        "tagRenderings": {
+            "4": {
+                "mappings": {
+                    "11": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "7": {
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "15": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "5": {
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "11": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "8": {
+                "render": "",
+                "question": ""
+            },
+            "14": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "6": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "12": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "0": {
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "9": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "12": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "13": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "4": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                },
+                "3": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "name": ""
+    },
+    "bike_cleaning": {
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "name": ""
+    },
+    "watermill": {
+        "name": ""
+    },
+    "trail": {
+        "tagRenderings": {
+            "4": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "1": {
+                "render": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "name": ""
+    },
+    "bike_themed_object": {
+        "name": "",
+        "title": {
+            "render": "",
+            "mappings": {
+                "1": {
+                    "then": ""
+                }
+            }
+        }
+    },
+    "birdhide": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
             }
         }
     }
