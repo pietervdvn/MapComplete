@@ -1,1 +1,236 @@
-{}
+{
+    "general": {
+        "opening_hours": {
+            "ph_open_as_usual": "",
+            "open_24_7": "",
+            "loadingCountry": "",
+            "open_during_ph": "",
+            "closed_permanently": "",
+            "ph_closed": "",
+            "ph_open": "",
+            "openTill": "",
+            "opensAt": "",
+            "closed_until": "",
+            "error_loading": "",
+            "not_all_rules_parsed": "",
+            "ph_not_known": ""
+        },
+        "add": {
+            "stillLoading": "",
+            "title": "",
+            "confirmButton": "",
+            "openLayerControl": "",
+            "presetInfo": "",
+            "pleaseLogin": "",
+            "addNew": "",
+            "zoomInFurther": "",
+            "layerNotEnabled": "",
+            "warnVisibleForEveryone": "",
+            "intro": "",
+            "confirmIntro": ""
+        },
+        "sharescreen": {
+            "editThisTheme": "",
+            "fsAddNew": "",
+            "fsLayerControlToggle": "",
+            "fsWelcomeMessage": "",
+            "fsGeolocation": "",
+            "fsIncludeCurrentLayers": "",
+            "fsUserbadge": "",
+            "editThemeDescription": "",
+            "thanksForSharing": "",
+            "copiedToClipboard": "",
+            "fsIncludeCurrentBackgroundMap": "",
+            "fsSearch": "",
+            "fsIncludeCurrentLocation": "",
+            "fsLayers": "",
+            "embedIntro": "",
+            "addToHomeScreen": "",
+            "intro": ""
+        },
+        "weekdays": {
+            "abbreviations": {
+                "saturday": "",
+                "monday": "",
+                "friday": "",
+                "tuesday": "",
+                "wednesday": "",
+                "thursday": "",
+                "sunday": ""
+            },
+            "friday": "",
+            "saturday": "",
+            "thursday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "sunday": "",
+            "monday": ""
+        },
+        "morescreen": {
+            "intro": "",
+            "streetcomplete": "",
+            "requestATheme": "",
+            "createYourOwnTheme": ""
+        },
+        "download": {
+            "title": "",
+            "licenseInfo": "",
+            "downloadGeojson": "",
+            "downloadGeoJsonHelper": "",
+            "includeMetaData": "",
+            "downloadAsPdf": "",
+            "downloadCSV": "",
+            "noDataLoaded": "",
+            "downloadAsPdfHelper": "",
+            "downloadCSVHelper": ""
+        },
+        "save": "",
+        "customThemeIntro": "",
+        "attribution": {
+            "mapContributionsByAndHidden": "",
+            "mapContributionsBy": "",
+            "codeContributionsBy": "",
+            "attributionContent": "",
+            "themeBy": "",
+            "attributionTitle": "",
+            "iconAttribution": {
+                "title": ""
+            }
+        },
+        "testing": "",
+        "questions": {
+            "phoneNumberOf": "",
+            "websiteIs": "",
+            "emailIs": "",
+            "emailOf": "",
+            "websiteOf": "",
+            "phoneNumberIs": ""
+        },
+        "histogram": {
+            "error_loading": ""
+        },
+        "search": {
+            "searching": "",
+            "error": "",
+            "search": "",
+            "nothing": ""
+        },
+        "returnToTheMap": "",
+        "osmLinkTooltip": "",
+        "welcomeBack": "",
+        "pdf": {
+            "attrBackground": "",
+            "generatedWith": "",
+            "versionInfo": "",
+            "attr": ""
+        },
+        "noTagsSelected": "",
+        "skip": "",
+        "goToInbox": "",
+        "skippedQuestions": "",
+        "number": "",
+        "readYourMessages": "",
+        "noNameCategory": "",
+        "cancel": "",
+        "openStreetMapIntro": "",
+        "getStartedLogin": "",
+        "getStartedNewAccount": "",
+        "loginToStart": "",
+        "oneSkippedQuestion": "",
+        "fewChangesBefore": "",
+        "about": "",
+        "loginWithOpenStreetMap": "",
+        "nameInlineQuestion": "",
+        "pickLanguage": "",
+        "layerSelection": {
+            "title": "",
+            "zoomInToSeeThisLayer": ""
+        },
+        "loginOnlyNeededToEdit": "",
+        "openTheMap": "",
+        "backgroundMap": "",
+        "aboutMapcomplete": ""
+    },
+    "delete": {
+        "safeDelete": "",
+        "onlyEditedByLoggedInUser": "",
+        "readMessages": "",
+        "explanations": {
+            "softDelete": "",
+            "selectReason": "",
+            "hardDelete": ""
+        },
+        "reasons": {
+            "notFound": "",
+            "test": "",
+            "disused": ""
+        },
+        "whyDelete": "",
+        "isntAPoint": "",
+        "isDeleted": "",
+        "loading": "",
+        "cancel": "",
+        "useSomethingElse": "",
+        "loginToDelete": "",
+        "delete": "",
+        "notEnoughExperience": "",
+        "partOfOthers": ""
+    },
+    "favourite": {
+        "loginNeeded": "",
+        "reload": "",
+        "panelIntro": ""
+    },
+    "split": {
+        "inviteToSplit": "",
+        "cancel": "",
+        "loginToSplit": "",
+        "split": "",
+        "hasBeenSplit": "",
+        "splitTitle": ""
+    },
+    "reviews": {
+        "title_singular": "",
+        "title": "",
+        "name_required": "",
+        "plz_login": "",
+        "attribution": "",
+        "tos": "",
+        "saved": "",
+        "saving_review": "",
+        "affiliated_reviewer_warning": "",
+        "i_am_affiliated": "",
+        "posting_as": "",
+        "no_rating": "",
+        "write_a_comment": "",
+        "no_reviews_yet": ""
+    },
+    "index": {
+        "pickTheme": "",
+        "intro": "",
+        "title": "",
+        "#": ""
+    },
+    "centerMessage": {
+        "retrying": "",
+        "ready": "",
+        "zoomIn": "",
+        "loadingData": ""
+    },
+    "image": {
+        "isDeleted": "",
+        "doDelete": "",
+        "dontDelete": "",
+        "uploadDone": "",
+        "respectPrivacy": "",
+        "uploadFailed": "",
+        "ccb": "",
+        "ccbs": "",
+        "cco": "",
+        "willBePublished": "",
+        "pleaseLogin": "",
+        "uploadingMultiple": "",
+        "uploadingPicture": "",
+        "addPicture": ""
+    }
+}
