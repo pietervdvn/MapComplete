@@ -55,7 +55,9 @@
             "confirmIntro": "<h3>Engadir {title} aquí?</h3>O punto que estás a crear <b>será ollado por todo o mundo</b>. Só engade cousas que realmente existan. Moitas aplicacións empregan estes datos.",
             "confirmButton": "Engadir {category} aquí",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
-            "openLayerControl": "Abrir o control de capas"
+            "openLayerControl": "Abrir o control de capas",
+            "warnVisibleForEveryone": "",
+            "presetInfo": ""
         },
         "pickLanguage": "Escoller lingua: ",
         "about": "Editar doadamente e engadir puntos no OpenStreetMap dun eido en concreto",
@@ -112,7 +114,9 @@
             "openTill": "até",
             "opensAt": "dende",
             "open_during_ph": "Durante festas este servizo está",
-            "error_loading": "Erro: non foi posíbel ver eses horarios de abertura."
+            "error_loading": "Erro: non foi posíbel ver eses horarios de abertura.",
+            "ph_open_as_usual": "",
+            "loadingCountry": ""
         },
         "weekdays": {
             "sunday": "Domingo",
@@ -148,7 +152,32 @@
             "themeBy": "Tema mantido por {author}",
             "attributionContent": "<p>Todos os datos proveñen do <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, e pódense reutilizar libremente baixo <a href=\"https://osm.org/copyright\" target=\"_blank\">a Licenza Aberta de Base de Datos (ODbL)</a>.</p>",
             "attributionTitle": "Aviso de atribución"
-        }
+        },
+        "pdf": {
+            "generatedWith": "",
+            "attrBackground": "",
+            "versionInfo": "",
+            "attr": ""
+        },
+        "histogram": {
+            "error_loading": ""
+        },
+        "openTheMap": "",
+        "loginOnlyNeededToEdit": "",
+        "download": {
+            "downloadAsPdfHelper": "",
+            "downloadCSVHelper": "",
+            "licenseInfo": "",
+            "title": "",
+            "downloadCSV": "",
+            "downloadGeojson": "",
+            "downloadGeoJsonHelper": "",
+            "downloadAsPdf": "",
+            "noDataLoaded": "",
+            "includeMetaData": ""
+        },
+        "aboutMapcomplete": "",
+        "testing": ""
     },
     "favourite": {
         "panelIntro": "<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais",
@@ -166,6 +195,42 @@
         "title_singular": "Unha recensión",
         "title": "{count} recensións",
         "name_required": "Requírese un nome para amosar e crear recensións",
-        "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!"
+        "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!",
+        "i_am_affiliated": "",
+        "attribution": "",
+        "tos": ""
+    },
+    "split": {
+        "loginToSplit": "",
+        "split": "",
+        "inviteToSplit": "",
+        "hasBeenSplit": "",
+        "splitTitle": "",
+        "cancel": ""
+    },
+    "delete": {
+        "reasons": {
+            "test": "",
+            "notFound": "",
+            "disused": ""
+        },
+        "explanations": {
+            "hardDelete": "",
+            "selectReason": "",
+            "softDelete": ""
+        },
+        "readMessages": "",
+        "whyDelete": "",
+        "loading": "",
+        "partOfOthers": "",
+        "useSomethingElse": "",
+        "notEnoughExperience": "",
+        "onlyEditedByLoggedInUser": "",
+        "isntAPoint": "",
+        "safeDelete": "",
+        "loginToDelete": "",
+        "isDeleted": "",
+        "cancel": "",
+        "delete": ""
     }
 }
