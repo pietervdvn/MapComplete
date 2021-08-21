@@ -82,8 +82,7 @@
             "stillLoading": "データはまだロード中です。新しいポイントを追加する前に少しお待ちください。",
             "zoomInFurther": "さらにズーム拡大して点を追加します。",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">新しいポイントを追加するにはログインしてください</a>",
-            "title": "新しいポイントを追加しますか?",
-            "warnVisibleForEveryone": ""
+            "title": "新しいポイントを追加しますか?"
         },
         "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
         "skippedQuestions": "一部の質問はスキップされました",
@@ -99,8 +98,7 @@
             "openTill": "終了時刻",
             "opensAt": "開始時刻",
             "open_during_ph": "このアメニティは、祝日には",
-            "error_loading": "エラー:これらの営業時間を表示できませんでした。",
-            "loadingCountry": ""
+            "error_loading": "エラー:これらの営業時間を表示できませんでした。"
         },
         "weekdays": {
             "sunday": "日曜日",
@@ -146,20 +144,15 @@
         "welcomeBack": "ログインしました、お帰りなさい!",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
         "pdf": {
-            "attrBackground": "",
             "generatedWith": ""
         },
         "download": {
-            "downloadCSV": "",
             "includeMetaData": "",
-            "title": "",
-            "downloadAsPdf": "",
-            "licenseInfo": ""
+            "downloadAsPdf": ""
         },
         "histogram": {
             "error_loading": ""
-        },
-        "openTheMap": ""
+        }
     },
     "index": {
         "#": "これらのテキストは、テーマがロードされていない場合にテーマボタンの上に表示されます",
@@ -191,22 +184,16 @@
     },
     "delete": {
         "reasons": {
-            "notFound": "",
             "test": ""
         },
-        "notEnoughExperience": "",
         "explanations": {
             "softDelete": ""
         },
-        "cancel": "",
         "readMessages": "",
-        "loading": "",
-        "useSomethingElse": "",
-        "loginToDelete": ""
+        "useSomethingElse": ""
     },
     "split": {
         "inviteToSplit": "",
-        "loginToSplit": "",
         "splitTitle": ""
     }
 }

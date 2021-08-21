@@ -55,8 +55,7 @@
             "confirmIntro": "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "confirmButton": "Voeg hier een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
             "openLayerControl": "Open de laag-instellingen",
-            "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
-            "warnVisibleForEveryone": ""
+            "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen"
         },
         "pickLanguage": "Kies je taal: ",
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
@@ -153,20 +152,13 @@
             "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:"
         },
         "pdf": {
-            "generatedWith": "",
             "attrBackground": ""
-        },
-        "histogram": {
-            "error_loading": ""
         },
         "download": {
             "downloadGeoJsonHelper": "",
-            "downloadAsPdfHelper": "",
             "downloadAsPdf": "",
-            "includeMetaData": "",
             "title": ""
-        },
-        "testing": ""
+        }
     },
     "reviews": {
         "title": "{count} beoordelingen",
@@ -191,22 +183,16 @@
     },
     "delete": {
         "reasons": {
-            "test": "",
             "disused": ""
         },
-        "loginToDelete": "",
         "safeDelete": "",
         "explanations": {
-            "selectReason": "",
             "softDelete": ""
         },
-        "readMessages": "",
-        "useSomethingElse": "",
-        "onlyEditedByLoggedInUser": ""
+        "useSomethingElse": ""
     },
     "split": {
         "loginToSplit": "",
-        "inviteToSplit": "",
         "splitTitle": ""
     }
 }

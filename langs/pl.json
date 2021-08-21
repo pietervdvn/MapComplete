@@ -39,8 +39,7 @@
             "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>",
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
-            "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>",
-            "warnVisibleForEveryone": ""
+            "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>"
         },
         "number": "numer",
         "skippedQuestions": "Niektóre pytania są pominięte",
@@ -57,8 +56,7 @@
             "openTill": "do",
             "open_during_ph": "W czasie świąt państwowych udogodnienie to jest",
             "error_loading": "Błąd: nie można zwizualizować tych godzin otwarcia.",
-            "opensAt": "z",
-            "ph_open_as_usual": ""
+            "opensAt": "z"
         },
         "weekdays": {
             "wednesday": "Środa",
@@ -123,32 +121,20 @@
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
         "download": {
-            "downloadGeojson": "",
             "downloadAsPdf": "",
-            "downloadAsPdfHelper": "",
-            "downloadGeoJsonHelper": "",
-            "noDataLoaded": ""
+            "downloadGeoJsonHelper": ""
         },
         "morescreen": {
-            "requestATheme": "",
-            "streetcomplete": ""
+            "requestATheme": ""
         },
         "pdf": {
-            "generatedWith": "",
-            "attrBackground": ""
+            "generatedWith": ""
         },
         "attribution": {
             "mapContributionsBy": "",
-            "mapContributionsByAndHidden": "",
-            "attributionContent": "",
-            "iconAttribution": {
-                "title": ""
-            }
+            "attributionContent": ""
         },
-        "testing": "",
-        "histogram": {
-            "error_loading": ""
-        }
+        "testing": ""
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
@@ -184,23 +170,15 @@
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów"
     },
     "split": {
-        "splitTitle": "",
-        "inviteToSplit": "",
-        "hasBeenSplit": ""
+        "inviteToSplit": ""
     },
     "delete": {
         "partOfOthers": "",
-        "notEnoughExperience": "",
         "readMessages": "",
-        "explanations": {
-            "hardDelete": ""
-        },
         "reasons": {
-            "notFound": "",
-            "test": ""
+            "notFound": ""
         },
         "isntAPoint": "",
-        "loginToDelete": "",
         "cancel": ""
     }
 }

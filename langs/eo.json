@@ -1,139 +1,88 @@
 {
     "general": {
         "opening_hours": {
-            "open_24_7": "",
             "open_during_ph": "",
-            "ph_closed": "",
             "openTill": "",
-            "closed_until": "",
             "not_all_rules_parsed": ""
         },
         "add": {
-            "stillLoading": "",
             "confirmButton": "",
-            "presetInfo": "",
             "addNew": "",
-            "layerNotEnabled": "",
             "intro": ""
         },
         "sharescreen": {
-            "editThisTheme": "",
             "fsLayerControlToggle": "",
-            "fsGeolocation": "",
             "fsUserbadge": "",
-            "thanksForSharing": "",
             "fsIncludeCurrentBackgroundMap": "",
-            "fsIncludeCurrentLocation": "",
-            "embedIntro": "",
-            "intro": ""
+            "embedIntro": ""
         },
         "weekdays": {
             "abbreviations": {
                 "monday": "",
-                "tuesday": "",
                 "thursday": ""
             },
-            "friday": "",
             "thursday": "",
-            "wednesday": "",
             "monday": ""
         },
         "morescreen": {
-            "streetcomplete": "",
             "createYourOwnTheme": ""
         },
         "download": {
-            "licenseInfo": "",
             "downloadGeoJsonHelper": "",
-            "downloadAsPdf": "",
-            "noDataLoaded": "",
-            "downloadCSVHelper": ""
+            "noDataLoaded": ""
         },
         "customThemeIntro": "",
         "attribution": {
-            "mapContributionsBy": "",
-            "attributionContent": "",
-            "attributionTitle": ""
+            "attributionContent": ""
         },
         "testing": "",
         "questions": {
-            "websiteIs": "",
-            "emailOf": "",
-            "phoneNumberIs": ""
+            "emailOf": ""
         },
         "search": {
-            "searching": "",
-            "search": ""
+            "searching": ""
         },
         "returnToTheMap": "",
-        "welcomeBack": "",
         "pdf": {
-            "generatedWith": "",
-            "attr": ""
+            "generatedWith": ""
         },
         "skip": "",
-        "skippedQuestions": "",
         "readYourMessages": "",
-        "cancel": "",
         "getStartedLogin": "",
-        "loginToStart": "",
         "fewChangesBefore": "",
-        "loginWithOpenStreetMap": "",
         "pickLanguage": "",
-        "layerSelection": {
-            "zoomInToSeeThisLayer": ""
-        },
-        "openTheMap": "",
-        "aboutMapcomplete": ""
+        "openTheMap": ""
     },
     "delete": {
         "onlyEditedByLoggedInUser": "",
         "explanations": {
-            "softDelete": "",
             "hardDelete": ""
         },
-        "reasons": {
-            "test": ""
-        },
         "whyDelete": "",
-        "isDeleted": "",
         "cancel": "",
-        "loginToDelete": "",
         "notEnoughExperience": ""
     },
     "favourite": {
-        "loginNeeded": "",
         "panelIntro": ""
     },
     "split": {
-        "cancel": "",
-        "split": "",
-        "splitTitle": ""
+        "split": ""
     },
     "reviews": {
         "title": "",
-        "plz_login": "",
         "tos": "",
-        "saving_review": "",
         "i_am_affiliated": "",
-        "no_rating": "",
         "no_reviews_yet": ""
     },
     "index": {
-        "intro": "",
         "#": ""
     },
     "centerMessage": {
-        "ready": "",
         "loadingData": ""
     },
     "image": {
-        "doDelete": "",
         "uploadDone": "",
-        "uploadFailed": "",
         "ccbs": "",
-        "willBePublished": "",
-        "uploadingMultiple": "",
-        "addPicture": ""
+        "uploadingMultiple": ""
     }
 }

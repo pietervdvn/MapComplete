@@ -4,98 +4,65 @@
         "cancel": "Avbryt",
         "save": "Lagre",
         "search": {
-            "searching": "Søker …",
-            "nothing": ""
+            "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
         "attribution": {
-            "mapContributionsByAndHidden": "",
             "iconAttribution": {
                 "title": ""
-            },
-            "attributionContent": ""
+            }
         },
         "morescreen": {
-            "requestATheme": "",
-            "createYourOwnTheme": ""
+            "requestATheme": ""
         },
         "sharescreen": {
             "thanksForSharing": "",
-            "copiedToClipboard": "",
             "embedIntro": "",
-            "fsIncludeCurrentLayers": "",
             "fsGeolocation": "",
-            "fsLayers": "",
             "fsSearch": "",
-            "editThisTheme": "",
             "intro": ""
         },
         "weekdays": {
             "abbreviations": {
-                "monday": "",
                 "thursday": "",
-                "saturday": "",
                 "friday": ""
             },
-            "monday": "",
-            "tuesday": "",
-            "saturday": ""
+            "tuesday": ""
         },
         "opening_hours": {
             "open_24_7": "",
-            "ph_closed": "",
             "opensAt": "",
-            "ph_open_as_usual": "",
             "ph_not_known": "",
-            "not_all_rules_parsed": "",
             "error_loading": ""
         },
         "download": {
-            "downloadGeoJsonHelper": "",
             "downloadCSV": "",
-            "noDataLoaded": "",
-            "downloadGeojson": "",
-            "downloadAsPdf": ""
+            "downloadGeojson": ""
         },
         "pdf": {
-            "generatedWith": "",
-            "versionInfo": ""
+            "generatedWith": ""
         },
         "skippedQuestions": "",
         "add": {
-            "presetInfo": "",
             "warnVisibleForEveryone": "",
-            "confirmButton": "",
             "stillLoading": "",
-            "pleaseLogin": "",
             "title": ""
         },
-        "getStartedNewAccount": "",
         "returnToTheMap": "",
-        "nameInlineQuestion": "",
         "loginToStart": "",
-        "layerSelection": {
-            "zoomInToSeeThisLayer": ""
-        },
         "openTheMap": "",
         "questions": {
-            "emailIs": "",
-            "websiteIs": "",
-            "phoneNumberIs": ""
+            "websiteIs": ""
         },
         "histogram": {
             "error_loading": ""
         },
-        "backgroundMap": "",
         "customThemeIntro": "",
-        "about": "",
-        "osmLinkTooltip": "",
-        "loginWithOpenStreetMap": ""
+        "osmLinkTooltip": ""
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
-        "title": "Velkommen til MapComplete",
-        "#": ""
+        "title": "Velkommen til MapComplete"
     },
     "centerMessage": {
         "ready": "Ferdig",
@@ -110,41 +77,29 @@
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
         "pleaseLogin": "Logg inn for å legge til et bilde",
-        "uploadDone": "",
-        "ccb": "",
-        "cco": ""
+        "ccb": ""
     },
     "reviews": {
         "no_reviews_yet": "",
-        "no_rating": "",
         "saved": "",
-        "i_am_affiliated": "",
         "tos": "",
-        "write_a_comment": "",
         "attribution": ""
     },
     "split": {
-        "cancel": "",
-        "splitTitle": "",
-        "split": ""
+        "splitTitle": ""
     },
     "favourite": {
-        "reload": "",
-        "panelIntro": ""
+        "reload": ""
     },
     "delete": {
         "explanations": {
-            "softDelete": "",
-            "selectReason": ""
+            "softDelete": ""
         },
         "reasons": {
             "disused": ""
         },
-        "whyDelete": "",
         "partOfOthers": "",
-        "notEnoughExperience": "",
         "isntAPoint": "",
-        "loginToDelete": "",
         "cancel": ""
     }
 }

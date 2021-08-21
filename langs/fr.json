@@ -55,8 +55,7 @@
             "confirmIntro": "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que ce point existe réellement. Beaucoup d'autres applications utilisent ces données.",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "openLayerControl": "Ouvrir la panneau de contrôle",
-            "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
-            "warnVisibleForEveryone": ""
+            "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point"
         },
         "pickLanguage": "Choisir la langue : ",
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
@@ -149,21 +148,16 @@
             "open_24_7": "Ouvert en permanence",
             "ph_closed": "fermé",
             "ph_open": "ouvert",
-            "ph_not_known": " ",
-            "ph_open_as_usual": ""
+            "ph_not_known": " "
         },
         "download": {
             "downloadAsPdfHelper": "",
-            "includeMetaData": "",
             "downloadGeojson": "",
-            "noDataLoaded": "",
             "downloadCSVHelper": ""
         },
         "pdf": {
-            "versionInfo": "",
             "attrBackground": ""
         },
-        "openTheMap": "",
         "histogram": {
             "error_loading": ""
         }
@@ -190,23 +184,17 @@
         "plz_login": "Connectez vous pour laisser un avis"
     },
     "split": {
-        "hasBeenSplit": "",
-        "cancel": "",
-        "splitTitle": ""
+        "cancel": ""
     },
     "delete": {
         "explanations": {
-            "softDelete": "",
-            "selectReason": ""
+            "softDelete": ""
         },
         "reasons": {
             "disused": ""
         },
-        "whyDelete": "",
         "partOfOthers": "",
-        "notEnoughExperience": "",
         "isntAPoint": "",
-        "loginToDelete": "",
         "cancel": ""
     }
 }

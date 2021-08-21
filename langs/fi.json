@@ -4,11 +4,8 @@
             "ph_open": "avattu",
             "ph_closed": "suljettu",
             "ph_not_known": " ",
-            "closed_permanently": "",
             "loadingCountry": "",
-            "not_all_rules_parsed": "",
-            "openTill": "",
-            "error_loading": ""
+            "openTill": ""
         },
         "weekdays": {
             "sunday": "Sunnuntai",
@@ -34,75 +31,49 @@
         "cancel": "Peruuta",
         "save": "Tallenna",
         "search": {
-            "searching": "Etsitään…",
-            "nothing": ""
+            "searching": "Etsitään…"
         },
         "sharescreen": {
             "thanksForSharing": "Kiitos jakamisesta!",
-            "copiedToClipboard": "",
             "fsLayers": "",
-            "fsIncludeCurrentLocation": "",
             "embedIntro": "",
-            "fsAddNew": "",
             "fsIncludeCurrentBackgroundMap": "",
-            "fsLayerControlToggle": "",
             "intro": ""
         },
         "questions": {
             "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "emailOf": "",
             "phoneNumberOf": ""
         },
         "skip": "Ohita tämä kysymys",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
         "add": {
-            "title": "",
             "addNew": "",
-            "intro": "",
             "presetInfo": "",
-            "layerNotEnabled": "",
             "confirmButton": ""
         },
         "download": {
-            "downloadGeojson": "",
             "title": "",
-            "noDataLoaded": "",
-            "licenseInfo": "",
-            "downloadAsPdf": ""
+            "licenseInfo": ""
         },
         "morescreen": {
-            "streetcomplete": "",
-            "intro": ""
+            "streetcomplete": ""
         },
         "attribution": {
             "attributionContent": "",
-            "codeContributionsBy": "",
-            "attributionTitle": "",
-            "iconAttribution": {
-                "title": ""
-            }
+            "attributionTitle": ""
         },
         "about": "",
-        "testing": "",
         "goToInbox": "",
         "pdf": {
-            "attrBackground": "",
             "generatedWith": ""
         },
-        "openStreetMapIntro": "",
         "osmLinkTooltip": "",
-        "oneSkippedQuestion": "",
         "readYourMessages": "",
-        "loginToStart": "",
         "noNameCategory": "",
-        "layerSelection": {
-            "zoomInToSeeThisLayer": ""
-        },
         "openTheMap": ""
     },
     "centerMessage": {
-        "ready": "Valmis!",
-        "zoomIn": ""
+        "ready": "Valmis!"
     },
     "image": {
         "doDelete": "Poista kuva",
@@ -111,47 +82,30 @@
         "isDeleted": "Poistettu",
         "ccb": "CC-BY-lisenssillä",
         "ccbs": "CC-BY-SA-lisenssillä",
-        "respectPrivacy": "",
         "cco": "",
-        "pleaseLogin": "",
         "uploadingPicture": ""
     },
     "reviews": {
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu",
-        "attribution": "",
         "saved": "",
-        "affiliated_reviewer_warning": "",
         "posting_as": "",
-        "write_a_comment": "",
         "name_required": ""
     },
     "index": {
-        "title": "Tervetuloa MapCompleteen",
-        "intro": ""
+        "title": "Tervetuloa MapCompleteen"
     },
     "delete": {
         "reasons": {
-            "notFound": "",
-            "disused": ""
+            "notFound": ""
         },
         "notEnoughExperience": "",
-        "explanations": {
-            "selectReason": ""
-        },
         "useSomethingElse": "",
-        "partOfOthers": "",
         "whyDelete": "",
-        "safeDelete": "",
-        "isDeleted": "",
-        "delete": ""
+        "isDeleted": ""
     },
     "split": {
         "loginToSplit": "",
-        "splitTitle": "",
         "hasBeenSplit": ""
-    },
-    "favourite": {
-        "reload": ""
     }
 }

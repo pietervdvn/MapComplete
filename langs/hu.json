@@ -3,7 +3,6 @@
         "openStreetMapIntro": "<h3>Egy nyílt térkép</h3><p>Nem lenne király, ha lenne egy térkép, amit mindenki szabadon használhatna és szerkeszthetne? Egyetlen hely minden geoinformáció tárolására. Hogy arra a sok weboldalra a kicsi és egymással nem kompatibilis térképekkel (amik többnyire elavultak) ne legyen szükség többé.</p><p><b>Az <a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> éppen ez. A trékép adatai ingyenesen használhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">az adatokban történő változtatások megjelölésével és publikálásával</a>) Mindezeken túl bárki szabadon hozzáadhat új helyeket és kijavíthatja a hibákat. Ez a weboldal is OpenStreetMapet használ. Minden adat onnan származik és a te válaszaid és módosításaid is oda futnak be.</p><p>Rengeteg ember és alkalmazás használja már most is az OpenStreetMapet: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de még a Facebook, Instagram, Apple és Bing által használt térképek is (részben) az OpenStreetMapet használják. Ha itt módosítasz valamit, az ezekben az alkalmazásokban is megjelenik - a legközelebbi frissítés után.</p>",
         "questions": {
             "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "emailOf": "",
             "phoneNumberIs": ""
         },
         "noNameCategory": "Név nélküli {category}",
@@ -17,7 +16,6 @@
             "zoomInFurther": "Pont hozzáadásához közelíts rá jobban!",
             "title": "Hozzáadsz egy új pontot?",
             "addNew": "Új {category} hozzáadása itt",
-            "pleaseLogin": "",
             "presetInfo": ""
         },
         "number": "szám",
@@ -37,75 +35,46 @@
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével",
         "download": {
-            "downloadCSV": "",
             "downloadGeojson": "",
-            "downloadCSVHelper": "",
-            "includeMetaData": "",
-            "title": ""
+            "includeMetaData": ""
         },
         "attribution": {
             "mapContributionsByAndHidden": "",
-            "iconAttribution": {
-                "title": ""
-            },
             "attributionContent": ""
         },
         "opening_hours": {
-            "ph_open": "",
             "open_during_ph": "",
-            "error_loading": "",
             "loadingCountry": "",
-            "openTill": "",
-            "open_24_7": "",
-            "closed_until": ""
+            "open_24_7": ""
         },
         "pdf": {
-            "attrBackground": "",
-            "versionInfo": ""
+            "attrBackground": ""
         },
         "sharescreen": {
             "editThemeDescription": "",
-            "embedIntro": "",
             "fsIncludeCurrentLayers": "",
-            "fsGeolocation": "",
             "fsLayerControlToggle": "",
-            "fsUserbadge": "",
             "fsWelcomeMessage": "",
-            "copiedToClipboard": "",
             "intro": ""
         },
         "weekdays": {
-            "wednesday": "",
             "thursday": "",
-            "friday": "",
             "saturday": "",
             "abbreviations": {
-                "saturday": "",
-                "thursday": "",
-                "tuesday": ""
+                "thursday": ""
             }
         },
         "getStartedNewAccount": "",
         "morescreen": {
-            "intro": "",
             "streetcomplete": ""
         },
-        "histogram": {
-            "error_loading": ""
-        },
         "testing": "",
-        "layerSelection": {
-            "title": ""
-        },
         "loginOnlyNeededToEdit": "",
-        "fewChangesBefore": "",
-        "backgroundMap": "",
-        "osmLinkTooltip": ""
+        "backgroundMap": ""
     },
     "index": {
         "pickTheme": "Válassz egy témát lent a kezdéshez!",
-        "title": "Üdvözlünk a MapComplete-nél!",
-        "#": ""
+        "title": "Üdvözlünk a MapComplete-nél!"
     },
     "centerMessage": {
         "retrying": "Nem sikerült betölteni az adatokat. Újrapróbálkozás {count} másodperc múlva…",
@@ -125,40 +94,27 @@
         "pleaseLogin": "Kép hozzáadásához jelentkezz be",
         "uploadingMultiple": "{count} kép feltöltése folyamatban",
         "uploadingPicture": "Kép feltöltése folyamatban",
-        "addPicture": "Kép hozzáadása",
-        "willBePublished": ""
+        "addPicture": "Kép hozzáadása"
     },
     "delete": {
         "useSomethingElse": "",
-        "notEnoughExperience": "",
         "safeDelete": "",
-        "onlyEditedByLoggedInUser": "",
         "partOfOthers": "",
         "explanations": {
-            "softDelete": "",
             "selectReason": ""
-        },
-        "reasons": {
-            "disused": ""
         },
         "whyDelete": ""
     },
     "reviews": {
-        "no_reviews_yet": "",
         "title": "",
-        "posting_as": "",
         "attribution": "",
-        "plz_login": "",
-        "tos": "",
-        "saving_review": ""
+        "tos": ""
     },
     "split": {
         "hasBeenSplit": "",
-        "splitTitle": "",
         "inviteToSplit": ""
     },
     "favourite": {
-        "loginNeeded": "",
         "panelIntro": ""
     }
 }

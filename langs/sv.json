@@ -10,8 +10,7 @@
             "openTill": "till",
             "opensAt": "från",
             "open_during_ph": "Om det är en röd dag är det här stället",
-            "error_loading": "Fel: kunde inte visualisera öppettiderna.",
-            "loadingCountry": ""
+            "error_loading": "Fel: kunde inte visualisera öppettiderna."
         },
         "weekdays": {
             "sunday": "Söndag",
@@ -32,74 +31,48 @@
             }
         },
         "sharescreen": {
-            "fsIncludeCurrentBackgroundMap": "",
             "copiedToClipboard": "",
-            "editThemeDescription": "",
             "fsIncludeCurrentLocation": "",
-            "embedIntro": "",
             "fsAddNew": "",
-            "fsLayers": "",
             "fsUserbadge": ""
         },
         "search": {
-            "search": "",
             "searching": ""
         },
         "pdf": {
-            "versionInfo": "",
             "generatedWith": ""
         },
         "download": {
-            "downloadGeojson": "",
             "includeMetaData": "",
-            "downloadGeoJsonHelper": "",
-            "licenseInfo": "",
-            "downloadCSVHelper": ""
+            "licenseInfo": ""
         },
         "add": {
             "intro": "",
-            "presetInfo": "",
             "openLayerControl": "",
-            "stillLoading": "",
-            "confirmIntro": "",
-            "layerNotEnabled": ""
+            "confirmIntro": ""
         },
         "oneSkippedQuestion": "",
         "morescreen": {
-            "streetcomplete": "",
             "requestATheme": ""
         },
-        "about": "",
         "aboutMapcomplete": "",
-        "returnToTheMap": "",
         "layerSelection": {
             "zoomInToSeeThisLayer": ""
         },
-        "welcomeBack": "",
         "backgroundMap": "",
-        "save": "",
         "loginToStart": "",
-        "number": "",
         "questions": {
             "phoneNumberOf": "",
-            "emailOf": "",
             "phoneNumberIs": ""
         },
-        "skip": "",
         "attribution": {
             "mapContributionsBy": "",
-            "iconAttribution": {
-                "title": ""
-            },
             "attributionContent": ""
         },
-        "loginOnlyNeededToEdit": "",
         "histogram": {
             "error_loading": ""
         },
-        "noTagsSelected": "",
-        "getStartedLogin": "",
-        "fewChangesBefore": ""
+        "getStartedLogin": ""
     },
     "centerMessage": {
         "ready": "Klar!",
@@ -124,40 +97,26 @@
         "addPicture": "Lägg till bild"
     },
     "delete": {
-        "explanations": {
-            "softDelete": ""
-        },
         "useSomethingElse": "",
-        "isntAPoint": "",
         "whyDelete": "",
         "reasons": {
-            "disused": "",
             "notFound": ""
         },
-        "loading": "",
-        "loginToDelete": "",
-        "cancel": ""
+        "loginToDelete": ""
     },
     "split": {
         "cancel": "",
-        "hasBeenSplit": "",
         "split": ""
     },
     "reviews": {
-        "saved": "",
         "tos": "",
-        "attribution": "",
         "affiliated_reviewer_warning": "",
-        "posting_as": "",
-        "write_a_comment": "",
-        "title_singular": ""
+        "write_a_comment": ""
     },
     "favourite": {
-        "reload": "",
-        "panelIntro": ""
+        "reload": ""
     },
     "index": {
-        "intro": "",
-        "#": ""
+        "intro": ""
     }
 }

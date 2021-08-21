@@ -1,141 +1,90 @@
 {
     "general": {
         "opening_hours": {
-            "ph_not_known": "",
             "ph_closed": "",
-            "loadingCountry": "",
             "open_during_ph": "",
-            "closed_until": "",
-            "not_all_rules_parsed": "",
-            "ph_open_as_usual": ""
+            "not_all_rules_parsed": ""
         },
         "sharescreen": {
             "fsSearch": "",
-            "fsWelcomeMessage": "",
             "fsGeolocation": "",
-            "fsLayerControlToggle": "",
             "addToHomeScreen": "",
-            "fsUserbadge": "",
             "fsIncludeCurrentLocation": "",
-            "fsLayers": "",
             "embedIntro": ""
         },
         "questions": {
-            "emailOf": "",
-            "emailIs": "",
-            "websiteIs": ""
+            "emailIs": ""
         },
         "download": {
             "title": "",
-            "downloadAsPdfHelper": "",
             "downloadCSV": "",
-            "includeMetaData": "",
             "downloadGeojson": ""
         },
         "search": {
-            "searching": "",
             "search": ""
         },
         "weekdays": {
             "abbreviations": {
-                "thursday": "",
-                "sunday": "",
-                "tuesday": ""
+                "sunday": ""
             },
             "tuesday": "",
-            "sunday": "",
-            "saturday": "",
-            "thursday": ""
+            "saturday": ""
         },
         "add": {
             "zoomInFurther": "",
-            "confirmIntro": "",
             "stillLoading": "",
-            "openLayerControl": "",
-            "confirmButton": "",
-            "addNew": ""
+            "confirmButton": ""
         },
         "attribution": {
             "mapContributionsBy": "",
-            "attributionContent": "",
             "iconAttribution": {
                 "title": ""
             }
         },
-        "about": "",
         "loginOnlyNeededToEdit": "",
-        "layerSelection": {
-            "title": ""
-        },
         "save": "",
-        "nameInlineQuestion": "",
         "fewChangesBefore": "",
-        "oneSkippedQuestion": "",
         "openTheMap": "",
         "pdf": {
-            "generatedWith": "",
             "attrBackground": ""
         },
-        "testing": "",
         "morescreen": {
-            "intro": "",
-            "streetcomplete": ""
+            "intro": ""
         },
         "pickLanguage": "",
-        "getStartedLogin": "",
         "goToInbox": "",
-        "noNameCategory": "",
-        "osmLinkTooltip": "",
-        "number": ""
+        "osmLinkTooltip": ""
     },
     "delete": {
         "whyDelete": "",
-        "safeDelete": "",
         "loginToDelete": "",
-        "reasons": {
-            "disused": ""
-        },
         "explanations": {
-            "softDelete": "",
-            "selectReason": ""
+            "softDelete": ""
         },
         "loading": "",
-        "useSomethingElse": "",
         "partOfOthers": ""
     },
     "centerMessage": {
-        "zoomIn": "",
         "loadingData": ""
     },
     "image": {
-        "ccb": "",
         "isDeleted": "",
-        "cco": "",
         "addPicture": "",
-        "willBePublished": "",
-        "ccbs": "",
-        "uploadDone": ""
+        "ccbs": ""
     },
     "reviews": {
         "i_am_affiliated": "",
-        "attribution": "",
         "saved": "",
-        "title_singular": "",
         "write_a_comment": "",
-        "plz_login": "",
         "affiliated_reviewer_warning": ""
     },
     "split": {
-        "loginToSplit": "",
-        "inviteToSplit": "",
-        "split": ""
+        "inviteToSplit": ""
     },
     "index": {
-        "intro": "",
-        "title": ""
+        "intro": ""
     },
     "favourite": {
-        "panelIntro": "",
-        "loginNeeded": ""
+        "panelIntro": ""
     }
 }

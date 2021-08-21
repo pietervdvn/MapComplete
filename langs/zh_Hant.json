@@ -32,8 +32,7 @@
             "openTill": "結束時間",
             "opensAt": "開始時間",
             "open_during_ph": "國定假日的時候，這個場所是",
-            "error_loading": "錯誤：無法視覺化開放時間。",
-            "ph_open_as_usual": ""
+            "error_loading": "錯誤：無法視覺化開放時間。"
         },
         "weekdays": {
             "sunday": "星期日",
@@ -125,8 +124,7 @@
             "pleaseLogin": "<a class=\"activate-osm-authentication\">請先登入來新增節點</a>",
             "intro": "您點擊處目前未有已知的資料。<br>",
             "title": "新增新的節點？",
-            "addNew": "在這裡新增新的 {category}",
-            "presetInfo": ""
+            "addNew": "在這裡新增新的 {category}"
         },
         "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來檢視這物件",
         "number": "號碼",
@@ -146,18 +144,13 @@
         "welcomeBack": "你已經登入了，歡迎回來！",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
         "pdf": {
-            "generatedWith": "",
             "attrBackground": ""
         },
         "download": {
-            "downloadAsPdfHelper": "",
             "downloadGeoJsonHelper": "",
-            "includeMetaData": "",
-            "title": "",
-            "downloadAsPdf": ""
+            "title": ""
         },
-        "loginOnlyNeededToEdit": "",
-        "testing": ""
+        "loginOnlyNeededToEdit": ""
     },
     "index": {
         "pickTheme": "請挑選主題來開始。",
@@ -188,23 +181,13 @@
         "addPicture": "新增圖片"
     },
     "delete": {
-        "reasons": {
-            "disused": ""
-        },
         "readMessages": "",
-        "explanations": {
-            "hardDelete": ""
-        },
         "whyDelete": "",
-        "partOfOthers": "",
         "notEnoughExperience": "",
-        "isntAPoint": "",
-        "loginToDelete": "",
-        "cancel": ""
+        "loginToDelete": ""
     },
     "split": {
         "loginToSplit": "",
-        "inviteToSplit": "",
         "hasBeenSplit": ""
     }
 }

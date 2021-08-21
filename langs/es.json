@@ -55,8 +55,7 @@
             "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
             "confirmButton": "Añadir una {category} aquí.<br><div class=\"alert\">Tu contribución es visible para todos</div>",
             "openLayerControl": "Abrir el control de capas",
-            "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
-            "warnVisibleForEveryone": ""
+            "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa"
         },
         "pickLanguage": "Escoge idioma: ",
         "about": "Edita facilmente y añade puntos en OpenStreetMap de un tema concreto",
@@ -136,8 +135,7 @@
             "ph_closed": "cerrado",
             "ph_open": "abierto",
             "open_24_7": "Abierto las 24 horas del día",
-            "error_loading": "Error: no se han podido visualizar esos horarios de apertura.",
-            "loadingCountry": ""
+            "error_loading": "Error: no se han podido visualizar esos horarios de apertura."
         },
         "attribution": {
             "mapContributionsBy": "La información visible actual tiene ediciones hechas por {contributors}",
@@ -146,25 +144,17 @@
             },
             "themeBy": "Tema mantenido por {author}",
             "attributionContent": "<p>Todos los datos son proporcionados por <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, reutilizables libremente bajo <a href=\"https://osm.org/copyright\" target=\"_blank\">la Licencia Abierta de Bases de Datos (ODL)</a>.</p>",
-            "attributionTitle": "Aviso de atribución",
-            "mapContributionsByAndHidden": ""
+            "attributionTitle": "Aviso de atribución"
         },
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
         "download": {
-            "downloadGeojson": "",
             "noDataLoaded": "",
-            "title": "",
-            "licenseInfo": "",
-            "downloadGeoJsonHelper": ""
+            "licenseInfo": ""
         },
         "pdf": {
-            "attrBackground": "",
-            "generatedWith": ""
+            "attrBackground": ""
         },
-        "testing": "",
-        "histogram": {
-            "error_loading": ""
-        }
+        "testing": ""
     },
     "favourite": {
         "panelIntro": "<h3>Tu interficie personal</h3>Activa tus capas favoritas de todas las interficies oficiales",
@@ -181,28 +171,18 @@
         "write_a_comment": "Deja una reseña…",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
         "plz_login": "Inicia sesión para dejar una reseña",
-        "tos": "",
         "affiliated_reviewer_warning": ""
     },
     "split": {
-        "hasBeenSplit": "",
-        "split": "",
-        "inviteToSplit": ""
+        "split": ""
     },
     "delete": {
         "readMessages": "",
-        "explanations": {
-            "hardDelete": ""
-        },
         "reasons": {
-            "notFound": "",
-            "test": ""
+            "notFound": ""
         },
         "loading": "",
-        "useSomethingElse": "",
         "onlyEditedByLoggedInUser": "",
-        "safeDelete": "",
-        "isDeleted": "",
-        "delete": ""
+        "isDeleted": ""
     }
 }

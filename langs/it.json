@@ -65,8 +65,7 @@
             "openTill": "fino a",
             "opensAt": "da",
             "open_during_ph": "Durante le festività questo luogo è",
-            "error_loading": "Errore: impossibile visualizzare questi orari di apertura.",
-            "loadingCountry": ""
+            "error_loading": "Errore: impossibile visualizzare questi orari di apertura."
         },
         "weekdays": {
             "sunday": "Domenica",
@@ -120,8 +119,7 @@
             "pleaseLogin": "<a class=\"activate-osm-authentication\">Accedi per aggiungere un punto</a>",
             "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br>",
             "title": "Aggiungi un nuovo punto?",
-            "addNew": "Aggiungi una nuova {category} qua",
-            "presetInfo": ""
+            "addNew": "Aggiungi una nuova {category} qua"
         },
         "osmLinkTooltip": "Vedi questo oggetto su OpenStreetMap per la cronologia o altre opzioni di modifica",
         "number": "numero",
@@ -141,20 +139,15 @@
         "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
         "loginWithOpenStreetMap": "Accedi con OpenStreetMap",
         "download": {
-            "title": "",
             "noDataLoaded": "",
-            "downloadAsPdf": "",
-            "downloadGeojson": "",
-            "downloadCSVHelper": ""
+            "downloadGeojson": ""
         },
         "histogram": {
             "error_loading": ""
         },
         "pdf": {
-            "versionInfo": "",
             "attr": ""
-        },
-        "testing": ""
+        }
     },
     "index": {
         "#": "Questi testi sono mostrati sopra ai pulsanti del tema quando nessun tema è stato caricato",
@@ -190,23 +183,17 @@
         "addPicture": "Aggiungi foto"
     },
     "split": {
-        "splitTitle": "",
-        "split": "",
-        "loginToSplit": ""
+        "split": ""
     },
     "delete": {
         "reasons": {
             "disused": ""
         },
         "explanations": {
-            "selectReason": "",
             "hardDelete": ""
         },
-        "whyDelete": "",
         "partOfOthers": "",
-        "notEnoughExperience": "",
         "isntAPoint": "",
-        "loginToDelete": "",
         "cancel": ""
     }
 }
