@@ -407,7 +407,7 @@
                 "question": "Wer wartet diese Fahrradpumpe?",
                 "render": "Gewartet von {operator}"
             },
-            "3": {
+            "5": {
                 "question": "Wann ist diese Fahrradreparaturstelle geöffnet?",
                 "mappings": {
                     "0": {
@@ -418,7 +418,7 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "question": "Verfügt diese Fahrrad-Reparaturstation über Spezialwerkzeug zur Reparatur von Fahrradketten?",
                 "mappings": {
                     "0": {
@@ -429,7 +429,7 @@
                     }
                 }
             },
-            "5": {
+            "7": {
                 "question": "Hat diese Fahrradstation einen Haken, an dem Sie Ihr Fahrrad aufhängen können, oder einen Ständer, um es anzuheben?",
                 "mappings": {
                     "0": {
@@ -440,7 +440,7 @@
                     }
                 }
             },
-            "6": {
+            "8": {
                 "question": "Ist die Fahrradpumpe noch funktionstüchtig?",
                 "mappings": {
                     "0": {
@@ -451,7 +451,7 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Welche Ventile werden unterstützt?",
                 "render": "Diese Pumpe unterstützt die folgenden Ventile: {valves}",
                 "mappings": {
@@ -466,7 +466,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "question": "Ist dies eine elektrische Fahrradpumpe?",
                 "mappings": {
                     "0": {
@@ -477,7 +477,7 @@
                     }
                 }
             },
-            "9": {
+            "12": {
                 "question": "Verfügt die Pumpe über einen Druckanzeiger oder ein Manometer?",
                 "mappings": {
                     "0": {

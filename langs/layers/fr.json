@@ -435,7 +435,7 @@
                 "question": "Qui maintient cette pompe à vélo ?",
                 "render": "Mantenue par {operator}"
             },
-            "3": {
+            "5": {
                 "question": "Quand ce point de réparation de vélo est-il ouvert ?",
                 "mappings": {
                     "0": {
@@ -446,7 +446,7 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "question": "Est-ce que cette station vélo a un outil specifique pour réparer la chaîne du vélo ?",
                 "mappings": {
                     "0": {
@@ -457,7 +457,7 @@
                     }
                 }
             },
-            "5": {
+            "7": {
                 "question": "Est-ce que cette station vélo à un crochet pour suspendre son vélo ou une accroche pour l'élevé ?",
                 "mappings": {
                     "0": {
@@ -468,7 +468,7 @@
                     }
                 }
             },
-            "6": {
+            "8": {
                 "question": "La pompe à vélo fonctionne-t-elle toujours ?",
                 "mappings": {
                     "0": {
@@ -479,7 +479,7 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Quelles valves sont compatibles ?",
                 "render": "Cette pompe est compatible avec les valves suivantes : {valves}",
                 "mappings": {
@@ -494,7 +494,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "question": "Est-ce que cette pompe est électrique ?",
                 "mappings": {
                     "0": {
@@ -505,7 +505,7 @@
                     }
                 }
             },
-            "9": {
+            "12": {
                 "question": "Est-ce que la pompe à un manomètre integré ?",
                 "mappings": {
                     "0": {

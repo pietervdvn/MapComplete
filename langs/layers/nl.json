@@ -526,6 +526,12 @@
                 "render": "Beheer door {operator}"
             },
             "3": {
+                "question": "Wat is het email-adres van de beheerder?"
+            },
+            "4": {
+                "question": "Wat is het telefoonnummer van de beheerder?"
+            },
+            "5": {
                 "question": "Wanneer is dit fietsherstelpunt open?",
                 "mappings": {
                     "0": {
@@ -536,7 +542,7 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "question": "Heeft dit herstelpunt een speciale reparatieset voor je ketting?",
                 "mappings": {
                     "0": {
@@ -547,7 +553,7 @@
                     }
                 }
             },
-            "5": {
+            "7": {
                 "question": "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
                 "mappings": {
                     "0": {
@@ -558,7 +564,7 @@
                     }
                 }
             },
-            "6": {
+            "8": {
                 "question": "Werkt de fietspomp nog?",
                 "mappings": {
                     "0": {
@@ -569,7 +575,7 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Welke ventielen werken er met de pomp?",
                 "render": "Deze pomp werkt met de volgende ventielen: {valves}",
                 "mappings": {
@@ -584,7 +590,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "question": "Is dit een electrische fietspomp?",
                 "mappings": {
                     "0": {
@@ -595,7 +601,7 @@
                     }
                 }
             },
-            "9": {
+            "12": {
                 "question": "Heeft deze pomp een luchtdrukmeter?",
                 "mappings": {
                     "0": {

@@ -393,7 +393,7 @@
                 "question": "Quem faz a manutenção desta bomba de ciclo?",
                 "render": "Mantida por {operator}"
             },
-            "3": {
+            "5": {
                 "mappings": {
                     "0": {
                         "then": "Sempre aberto"
@@ -403,7 +403,7 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "mappings": {
                     "0": {
                         "then": "Há uma ferramenta de corrente"
@@ -413,7 +413,7 @@
                     }
                 }
             },
-            "5": {
+            "7": {
                 "mappings": {
                     "0": {
                         "then": "Há um gancho ou um suporte"
@@ -423,7 +423,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "mappings": {
                     "0": {
                         "then": "Bomba manual"
@@ -433,7 +433,7 @@
                     }
                 }
             },
-            "9": {
+            "12": {
                 "mappings": {
                     "0": {
                         "then": "Há um manômetro"

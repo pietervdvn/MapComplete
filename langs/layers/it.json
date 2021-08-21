@@ -435,7 +435,7 @@
                 "question": "Chi gestisce questa pompa per bici?",
                 "render": "Manutenuta da {operator}"
             },
-            "3": {
+            "5": {
                 "question": "Quando è aperto questo punto riparazione bici?",
                 "mappings": {
                     "0": {
@@ -446,7 +446,7 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "question": "Questa stazione di riparazione bici ha un attrezzo speciale per riparare la catena della bici?",
                 "mappings": {
                     "0": {
@@ -457,7 +457,7 @@
                     }
                 }
             },
-            "5": {
+            "7": {
                 "question": "Questa stazione bici ha un gancio per tenere sospesa la bici o un supporto per alzarla?",
                 "mappings": {
                     "0": {
@@ -468,7 +468,7 @@
                     }
                 }
             },
-            "6": {
+            "8": {
                 "question": "La pompa per bici è sempre funzionante?",
                 "mappings": {
                     "0": {
@@ -479,7 +479,7 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Quali valvole sono supportate?",
                 "render": "Questa pompa è compatibile con le seguenti valvole: {valves}",
                 "mappings": {
@@ -494,7 +494,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "question": "Questa pompa per bici è elettrica?",
                 "mappings": {
                     "0": {
@@ -505,7 +505,7 @@
                     }
                 }
             },
-            "9": {
+            "12": {
                 "question": "Questa pompa ha l’indicatore della pressione o il manometro?",
                 "mappings": {
                     "0": {

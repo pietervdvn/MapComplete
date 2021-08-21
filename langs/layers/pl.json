@@ -144,7 +144,7 @@
     },
     "bike_repair_station": {
         "tagRenderings": {
-            "6": {
+            "8": {
                 "question": "Czy pompka rowerowa jest nadal sprawna?",
                 "mappings": {
                     "0": {
@@ -155,11 +155,11 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Jakie zawory są obsługiwane?",
                 "render": "Ta pompka obsługuje następujące zawory: {valves}"
             },
-            "8": {
+            "11": {
                 "question": "Czy jest to elektryczna pompka do roweru?",
                 "mappings": {
                     "0": {
@@ -170,7 +170,7 @@
                     }
                 }
             },
-            "9": {
+            "12": {
                 "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?",
                 "mappings": {
                     "0": {

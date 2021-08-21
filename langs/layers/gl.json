@@ -170,7 +170,7 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "question": "Esta estación de arranxo de bicicletas ten unha ferramenta especial para arranxar a cadea da túa bicicleta?",
                 "mappings": {
                     "0": {
@@ -181,7 +181,7 @@
                     }
                 }
             },
-            "5": {
+            "7": {
                 "question": "Esta estación de bicicletas ten un guindastre para pendurar a túa bicicleta ou un soporte para elevala?",
                 "mappings": {
                     "0": {
@@ -192,7 +192,7 @@
                     }
                 }
             },
-            "6": {
+            "8": {
                 "question": "Segue a funcionar a bomba de ar?",
                 "mappings": {
                     "0": {
@@ -203,7 +203,7 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Que válvulas son compatíbeis?",
                 "render": "Esta bomba de ar admite as seguintes válvulas: {valves}",
                 "mappings": {
@@ -218,7 +218,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "question": "Esta é unha bomba de ar eléctrica?",
                 "mappings": {
                     "0": {
@@ -229,7 +229,7 @@
                     }
                 }
             },
-            "9": {
+            "12": {
                 "question": "Ten a bomba de ar un indicador de presión ou un manómetro?",
                 "mappings": {
                     "0": {

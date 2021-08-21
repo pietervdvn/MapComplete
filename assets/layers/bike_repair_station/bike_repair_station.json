@@ -226,6 +226,30 @@
         }
       ]
     },
+    
+    {
+      "question": {
+        "en": "What is the email address of the maintainer?",
+        "nl": "Wat is het email-adres van de beheerder?"
+      },
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "render": "<a href='mailto:{email}'>{email}</a>"
+    },
+    {
+      "question": {
+        "en": "What is the phone number of the maintainer?",
+        "nl": "Wat is het telefoonnummer van de beheerder?"
+      },
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "render": "<a href='tel:{phone}'>{phone}</a>"
+    },
+    
     {
       "question": {
         "nl": "Wanneer is dit fietsherstelpunt open?",
@@ -342,6 +366,7 @@
       ]
     },
     {
+      "#": "Operational status",
       "question": {
         "en": "Is the bike pump still operational?",
         "nl": "Werkt de fietspomp nog?",
@@ -381,6 +406,16 @@
           }
         }
       ]
+    },
+    {
+      "#": "Email maintainer",
+      "condition": {
+        "and": ["email~*", "service:bicycle:pump:operational_status=broken"]
+      },
+      "render": {
+        "en": "<a href='mailto:{email}?subject=Broken bicycle pump&body=Hello,%0D%0A%0D%0AWith this email, I&#39;d like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix#{id} is broken.'>Report this bicycle pump as broken</a>",
+        "nl": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix#{id}.'>Rapporteer deze fietspomp als kapot</a>"
+      }
     },
     {
       "question": {
