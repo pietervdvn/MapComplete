@@ -147,9 +147,6 @@
             "attributionTitle": "Aviso de atribución"
         },
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
-        "download": {
-            "licenseInfo": ""
-        },
         "testing": ""
     },
     "favourite": {
@@ -168,13 +165,9 @@
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
         "plz_login": "Inicia sesión para dejar una reseña"
     },
-    "split": {
-        "split": ""
-    },
     "delete": {
         "reasons": {
             "notFound": ""
-        },
-        "onlyEditedByLoggedInUser": ""
+        }
     }
 }

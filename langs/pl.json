@@ -120,14 +120,8 @@
         "goToInbox": "Otwórz skrzynkę odbiorczą",
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
-        "download": {
-            "downloadGeoJsonHelper": ""
-        },
         "pdf": {
             "generatedWith": ""
-        },
-        "attribution": {
-            "attributionContent": ""
         }
     },
     "index": {
@@ -164,10 +158,8 @@
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów"
     },
     "delete": {
-        "partOfOthers": "",
         "reasons": {
             "notFound": ""
-        },
-        "cancel": ""
+        }
     }
 }

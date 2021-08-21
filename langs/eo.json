@@ -1,55 +1,37 @@
 {
     "general": {
-        "opening_hours": {
-            "openTill": ""
-        },
         "add": {
-            "confirmButton": "",
-            "intro": ""
+            "confirmButton": ""
         },
         "sharescreen": {
-            "fsUserbadge": "",
-            "embedIntro": ""
+            "fsUserbadge": ""
         },
         "weekdays": {
             "abbreviations": {
                 "thursday": ""
-            },
-            "monday": ""
+            }
         },
         "download": {
             "downloadGeoJsonHelper": ""
         },
-        "customThemeIntro": "",
         "testing": "",
-        "search": {
-            "searching": ""
-        },
         "pdf": {
             "generatedWith": ""
         },
-        "readYourMessages": "",
-        "fewChangesBefore": "",
-        "openTheMap": ""
+        "fewChangesBefore": ""
     },
     "delete": {
         "explanations": {
             "hardDelete": ""
-        },
-        "cancel": ""
+        }
     },
     "favourite": {
         "panelIntro": ""
     },
     "reviews": {
-        "title": "",
         "i_am_affiliated": ""
     },
-    "index": {
-        "#": ""
-    },
     "image": {
-        "uploadDone": "",
-        "uploadingMultiple": ""
+        "uploadDone": ""
     }
 }

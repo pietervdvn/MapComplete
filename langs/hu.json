@@ -32,30 +32,19 @@
         "loginToStart": "Jelentkezz be a kérdés megválaszolásához",
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével",
-        "download": {
-            "includeMetaData": ""
-        },
         "attribution": {
             "attributionContent": ""
-        },
-        "opening_hours": {
-            "loadingCountry": ""
         },
         "pdf": {
             "attrBackground": ""
         },
         "sharescreen": {
-            "fsIncludeCurrentLayers": "",
             "fsWelcomeMessage": ""
         },
         "weekdays": {
-            "thursday": "",
             "abbreviations": {
                 "thursday": ""
             }
-        },
-        "morescreen": {
-            "streetcomplete": ""
         },
         "loginOnlyNeededToEdit": ""
     },
@@ -84,16 +73,11 @@
         "addPicture": "Kép hozzáadása"
     },
     "delete": {
-        "safeDelete": "",
         "explanations": {
             "selectReason": ""
         }
     },
     "reviews": {
-        "title": "",
         "tos": ""
-    },
-    "split": {
-        "inviteToSplit": ""
     }
 }

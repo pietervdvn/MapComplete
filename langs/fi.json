@@ -3,8 +3,7 @@
         "opening_hours": {
             "ph_open": "avattu",
             "ph_closed": "suljettu",
-            "ph_not_known": " ",
-            "openTill": ""
+            "ph_not_known": " "
         },
         "weekdays": {
             "sunday": "Sunnuntai",
@@ -34,7 +33,6 @@
         },
         "sharescreen": {
             "thanksForSharing": "Kiitos jakamisesta!",
-            "embedIntro": "",
             "intro": ""
         },
         "questions": {
@@ -42,21 +40,13 @@
         },
         "skip": "Ohita tämä kysymys",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
-        "add": {
-            "presetInfo": ""
-        },
         "download": {
             "title": ""
-        },
-        "morescreen": {
-            "streetcomplete": ""
         },
         "attribution": {
             "attributionTitle": ""
         },
-        "goToInbox": "",
-        "osmLinkTooltip": "",
-        "noNameCategory": ""
+        "osmLinkTooltip": ""
     },
     "centerMessage": {
         "ready": "Valmis!"
@@ -67,22 +57,16 @@
         "addPicture": "Lisää kuva",
         "isDeleted": "Poistettu",
         "ccb": "CC-BY-lisenssillä",
-        "ccbs": "CC-BY-SA-lisenssillä",
-        "uploadingPicture": ""
+        "ccbs": "CC-BY-SA-lisenssillä"
     },
     "reviews": {
         "title": "{count} arvostelua",
-        "title_singular": "Yksi arvostelu",
-        "posting_as": ""
+        "title_singular": "Yksi arvostelu"
     },
     "index": {
         "title": "Tervetuloa MapCompleteen"
     },
     "delete": {
-        "notEnoughExperience": "",
         "whyDelete": ""
-    },
-    "split": {
-        "loginToSplit": ""
     }
 }

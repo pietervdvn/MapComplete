@@ -138,9 +138,6 @@
         "loginToStart": "Accedi per rispondere alla domanda",
         "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
         "loginWithOpenStreetMap": "Accedi con OpenStreetMap",
-        "download": {
-            "downloadGeojson": ""
-        },
         "pdf": {
             "attr": ""
         }
@@ -179,10 +176,6 @@
         "addPicture": "Aggiungi foto"
     },
     "delete": {
-        "reasons": {
-            "disused": ""
-        },
-        "partOfOthers": "",
-        "cancel": ""
+        "partOfOthers": ""
     }
 }

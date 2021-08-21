@@ -31,29 +31,15 @@
             }
         },
         "sharescreen": {
-            "fsIncludeCurrentLocation": "",
             "fsUserbadge": ""
-        },
-        "pdf": {
-            "generatedWith": ""
         },
         "download": {
             "licenseInfo": ""
         },
-        "add": {
-            "openLayerControl": ""
-        },
         "oneSkippedQuestion": "",
-        "aboutMapcomplete": "",
         "backgroundMap": "",
-        "questions": {
-            "phoneNumberOf": ""
-        },
         "attribution": {
             "mapContributionsBy": ""
-        },
-        "histogram": {
-            "error_loading": ""
         }
     },
     "centerMessage": {
@@ -79,16 +65,9 @@
         "addPicture": "Lägg till bild"
     },
     "delete": {
-        "whyDelete": "",
         "loginToDelete": ""
-    },
-    "split": {
-        "split": ""
     },
     "reviews": {
         "affiliated_reviewer_warning": ""
-    },
-    "favourite": {
-        "reload": ""
     }
 }

@@ -152,7 +152,6 @@
             "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:"
         },
         "download": {
-            "downloadGeoJsonHelper": "",
             "title": ""
         }
     },
@@ -178,10 +177,6 @@
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas"
     },
     "delete": {
-        "safeDelete": "",
         "useSomethingElse": ""
-    },
-    "split": {
-        "splitTitle": ""
     }
 }

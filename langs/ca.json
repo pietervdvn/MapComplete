@@ -143,9 +143,6 @@
             },
             "themeBy": "Tema mantingut per {author}"
         },
-        "download": {
-            "downloadGeojson": ""
-        },
         "pdf": {
             "attrBackground": ""
         }
@@ -165,13 +162,9 @@
         "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
         "saving_review": "Desant…"
     },
-    "split": {
-        "cancel": ""
-    },
     "delete": {
         "explanations": {
             "hardDelete": ""
-        },
-        "notEnoughExperience": ""
+        }
     }
 }

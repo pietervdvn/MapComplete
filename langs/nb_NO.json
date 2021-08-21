@@ -7,35 +7,24 @@
             "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "morescreen": {
-            "requestATheme": ""
-        },
         "sharescreen": {
-            "embedIntro": "",
-            "fsSearch": ""
+            "embedIntro": ""
         },
         "weekdays": {
             "abbreviations": {
                 "thursday": ""
-            },
-            "tuesday": ""
+            }
         },
         "opening_hours": {
-            "opensAt": "",
-            "error_loading": ""
+            "opensAt": ""
         },
         "download": {
             "downloadGeojson": ""
         },
-        "skippedQuestions": "",
         "add": {
             "stillLoading": ""
         },
-        "returnToTheMap": "",
         "openTheMap": "",
-        "histogram": {
-            "error_loading": ""
-        },
         "osmLinkTooltip": ""
     },
     "index": {
@@ -57,17 +46,12 @@
         "pleaseLogin": "Logg inn for å legge til et bilde"
     },
     "reviews": {
-        "no_reviews_yet": "",
         "tos": ""
-    },
-    "split": {
-        "splitTitle": ""
     },
     "delete": {
         "explanations": {
             "softDelete": ""
         },
-        "partOfOthers": "",
         "cancel": ""
     }
 }

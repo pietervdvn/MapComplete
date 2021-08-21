@@ -1,51 +1,31 @@
 {
-    "image": {
-        "uploadDone": ""
-    },
     "reviews": {
-        "write_a_comment": "",
-        "saving_review": ""
+        "write_a_comment": ""
     },
     "general": {
         "download": {
             "downloadAsPdfHelper": ""
         },
-        "noNameCategory": "",
         "opening_hours": {
-            "ph_open": "",
-            "ph_closed": ""
+            "ph_open": ""
         },
         "add": {
-            "addNew": "",
-            "stillLoading": ""
+            "addNew": ""
         },
         "sharescreen": {
             "fsIncludeCurrentLocation": "",
-            "fsLayerControlToggle": "",
             "intro": ""
         },
         "weekdays": {
-            "abbreviations": {
-                "thursday": ""
-            },
             "saturday": ""
         },
-        "morescreen": {
-            "intro": ""
-        },
         "testing": "",
-        "oneSkippedQuestion": "",
         "readYourMessages": ""
     },
     "delete": {
-        "safeDelete": "",
-        "isntAPoint": "",
-        "whyDelete": ""
+        "isntAPoint": ""
     },
     "favourite": {
         "reload": ""
-    },
-    "centerMessage": {
-        "ready": ""
     }
 }

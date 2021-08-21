@@ -1,63 +1,35 @@
 {
     "general": {
-        "weekdays": {
-            "abbreviations": {
-                "thursday": ""
-            }
-        },
         "sharescreen": {
-            "fsLayerControlToggle": "",
-            "fsWelcomeMessage": ""
+            "fsLayerControlToggle": ""
         },
         "opening_hours": {
-            "open_during_ph": "",
-            "ph_closed": ""
+            "open_during_ph": ""
         },
         "download": {
             "downloadGeoJsonHelper": ""
         },
-        "osmLinkTooltip": "",
         "questions": {
             "websiteIs": ""
         },
         "add": {
-            "layerNotEnabled": "",
             "warnVisibleForEveryone": ""
-        },
-        "search": {
-            "searching": ""
         },
         "pdf": {
             "attr": ""
         },
-        "morescreen": {
-            "streetcomplete": ""
-        },
         "attribution": {
             "codeContributionsBy": ""
-        },
-        "nameInlineQuestion": ""
+        }
     },
     "split": {
         "loginToSplit": ""
     },
-    "reviews": {
-        "posting_as": ""
-    },
     "favourite": {
         "reload": ""
     },
-    "image": {
-        "uploadingMultiple": ""
-    },
     "delete": {
         "cancel": "",
-        "explanations": {
-            "selectReason": ""
-        },
         "notEnoughExperience": ""
-    },
-    "index": {
-        "pickTheme": ""
     }
 }

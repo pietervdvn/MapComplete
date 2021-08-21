@@ -150,9 +150,6 @@
             "ph_open": "ouvert",
             "ph_not_known": " "
         },
-        "download": {
-            "downloadGeojson": ""
-        },
         "pdf": {
             "attrBackground": ""
         }
@@ -179,10 +176,6 @@
         "plz_login": "Connectez vous pour laisser un avis"
     },
     "delete": {
-        "explanations": {
-            "softDelete": ""
-        },
-        "partOfOthers": "",
-        "cancel": ""
+        "partOfOthers": ""
     }
 }

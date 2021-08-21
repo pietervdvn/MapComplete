@@ -61,23 +61,15 @@
             "tuesday": "Selasa",
             "monday": "Senin"
         },
-        "download": {
-            "title": ""
-        },
         "pdf": {
             "versionInfo": ""
-        },
-        "add": {
-            "confirmButton": ""
         },
         "attribution": {
             "iconAttribution": {
                 "title": ""
             }
         },
-        "customThemeIntro": "",
-        "noNameCategory": "",
-        "save": ""
+        "noNameCategory": ""
     },
     "image": {
         "doDelete": "Buang gambar",
@@ -117,12 +109,8 @@
         "title": "Selamat datang di MapComplete"
     },
     "delete": {
-        "partOfOthers": "",
         "reasons": {
             "notFound": ""
         }
-    },
-    "split": {
-        "split": ""
     }
 }
