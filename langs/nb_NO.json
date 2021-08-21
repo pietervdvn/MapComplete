@@ -7,15 +7,9 @@
             "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "weekdays": {
-            "abbreviations": {
-                "thursday": ""
-            }
-        },
         "download": {
             "downloadGeojson": ""
-        },
-        "openTheMap": ""
+        }
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
@@ -34,10 +28,5 @@
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
         "pleaseLogin": "Logg inn for å legge til et bilde"
-    },
-    "delete": {
-        "explanations": {
-            "softDelete": ""
-        }
     }
 }

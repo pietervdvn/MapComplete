@@ -32,9 +32,6 @@
         "loginToStart": "Jelentkezz be a kérdés megválaszolásához",
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével",
-        "pdf": {
-            "attrBackground": ""
-        },
         "weekdays": {
             "abbreviations": {
                 "thursday": ""
@@ -64,8 +61,5 @@
         "uploadingMultiple": "{count} kép feltöltése folyamatban",
         "uploadingPicture": "Kép feltöltése folyamatban",
         "addPicture": "Kép hozzáadása"
-    },
-    "reviews": {
-        "tos": ""
     }
 }

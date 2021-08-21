@@ -30,9 +30,6 @@
                 "monday": "Mån"
             }
         },
-        "download": {
-            "licenseInfo": ""
-        },
         "backgroundMap": ""
     },
     "centerMessage": {
@@ -56,8 +53,5 @@
         "uploadingMultiple": "Laddar upp {count} bilder…",
         "uploadingPicture": "Laddar upp din bild…",
         "addPicture": "Lägg till bild"
-    },
-    "reviews": {
-        "affiliated_reviewer_warning": ""
     }
 }

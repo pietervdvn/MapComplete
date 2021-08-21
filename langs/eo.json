@@ -1,21 +1,12 @@
 {
     "general": {
-        "sharescreen": {
-            "fsUserbadge": ""
-        },
         "download": {
             "downloadGeoJsonHelper": ""
-        },
-        "pdf": {
-            "generatedWith": ""
         }
     },
     "delete": {
         "explanations": {
             "hardDelete": ""
         }
-    },
-    "reviews": {
-        "i_am_affiliated": ""
     }
 }

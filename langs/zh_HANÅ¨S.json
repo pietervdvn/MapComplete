@@ -1,17 +1,10 @@
 {
     "general": {
-        "sharescreen": {
-            "embedIntro": ""
-        },
         "weekdays": {
             "saturday": ""
-        },
-        "fewChangesBefore": ""
+        }
     },
     "delete": {
         "loginToDelete": ""
-    },
-    "reviews": {
-        "i_am_affiliated": ""
     }
 }

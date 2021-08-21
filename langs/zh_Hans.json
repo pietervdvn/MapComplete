@@ -1,19 +1,10 @@
 {
     "general": {
-        "opening_hours": {
-            "open_during_ph": ""
-        },
         "questions": {
             "websiteIs": ""
-        },
-        "pdf": {
-            "attr": ""
         }
     },
     "split": {
         "loginToSplit": ""
-    },
-    "delete": {
-        "cancel": ""
     }
 }

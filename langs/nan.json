@@ -1,17 +1,8 @@
 {
     "general": {
-        "download": {
-            "downloadAsPdfHelper": ""
-        },
         "add": {
             "addNew": ""
         },
-        "sharescreen": {
-            "intro": ""
-        },
         "testing": ""
-    },
-    "delete": {
-        "isntAPoint": ""
     }
 }
