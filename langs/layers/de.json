@@ -141,7 +141,21 @@
                         "then": "Fahrräder für Behinderte verfügbar"
                     }
                 }
+            },
+            "1": {
+                "question": "",
+                "render": ""
             }
+        },
+        "name": "",
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "title": {
+            "render": ""
         }
     },
     "bicycle_tube_vending_machine": {
@@ -228,6 +242,9 @@
             },
             "7": {
                 "question": "Wie lautet die E-Mail-Adresse von {name}?"
+            },
+            "8": {
+                "question": ""
             }
         },
         "presets": {
@@ -263,7 +280,8 @@
                     "then": "Fahrradzählstation {ref}"
                 }
             }
-        }
+        },
+        "name": ""
     },
     "bike_parking": {
         "name": "Fahrrad-Parkplätze",
@@ -319,8 +337,12 @@
                     },
                     "3": {
                         "then": "Ebenerdiges Parken"
+                    },
+                    "4": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "3": {
                 "question": "Ist dieser Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Innenparkplätze.",
@@ -343,6 +365,12 @@
                 "mappings": {
                     "0": {
                         "then": "Öffentlich zugänglich"
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
                 }
             },
@@ -490,6 +518,12 @@
                         "then": "Es gibt ein Manometer, aber es ist kaputt"
                     }
                 }
+            },
+            "4": {
+                "question": ""
+            },
+            "9": {
+                "render": ""
             }
         },
         "presets": {
@@ -504,6 +538,9 @@
             "2": {
                 "title": "Fahrrad-Reparaturstation ohne Pumpe"
             }
+        },
+        "icon": {
+            "render": ""
         }
     },
     "bike_shop": {
@@ -603,6 +640,9 @@
                     },
                     "1": {
                         "then": "Dieses Geschäft bietet für niemanden eine Fahrradpumpe an"
+                    },
+                    "2": {
+                        "then": ""
                     }
                 }
             },
@@ -633,13 +673,17 @@
                         "then": "Dieser Laden bietet keine Fahrradreinigung an"
                     }
                 }
+            },
+            "1": {
+                "render": ""
             }
         },
         "presets": {
             "0": {
                 "title": "Fahrradwerkstatt/geschäft"
             }
-        }
+        },
+        "description": ""
     },
     "bike_themed_object": {
         "name": "Mit Fahrrad zusammenhängendes Objekt",
@@ -689,6 +733,9 @@
                     },
                     "3": {
                         "then": "Nicht für die Öffentlichkeit zugänglich (z.B. nur für das Personal, die Eigentümer, ...)"
+                    },
+                    "4": {
+                        "then": ""
                     }
                 }
             },
@@ -697,8 +744,12 @@
                 "mappings": {
                     "0": {
                         "then": "Dies ist ein manueller Defibrillator für den professionellen Einsatz"
+                    },
+                    "1": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "4": {
                 "question": "In welchem Stockwerk befindet sich dieser Defibrillator?",
@@ -759,7 +810,8 @@
                     "0": {
                         "then": "24/7 geöffnet (auch an Feiertagen)"
                     }
-                }
+                },
+                "render": ""
             },
             "13": {
                 "render": "Zusätzliche Informationen: {description}",
@@ -778,6 +830,13 @@
                 "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
                 "question": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlasse eine Notiz an OpenStreetMap-Experten)"
             }
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
         }
     },
     "drinking_water": {
@@ -793,7 +852,18 @@
         "tagRenderings": {
             "1": {
                 "question": "Ist diese Trinkwasserstelle noch in Betrieb?",
-                "render": "Der Betriebsstatus ist <i>{operational_status</i>"
+                "render": "Der Betriebsstatus ist <i>{operational_status</i>",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
             },
             "2": {
                 "question": "Wie einfach ist es, Wasserflaschen zu füllen?",
@@ -846,6 +916,10 @@
             "4": {
                 "question": "Wie lautet die Inschrift auf diesem Geisterrad?",
                 "render": "<i>{inscription}</i>"
+            },
+            "5": {
+                "render": "",
+                "question": ""
             }
         }
     },
@@ -901,7 +975,8 @@
                 "title": "Karte",
                 "description": "Fehlende Karte hinzufügen"
             }
-        }
+        },
+        "description": ""
     },
     "nature_reserve": {
         "tagRenderings": {
@@ -923,10 +998,19 @@
                 "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
             },
             "8": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "question": ""
             },
             "9": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "question": ""
+            },
+            "12": {
+                "render": ""
+            },
+            "7": {
+                "render": "",
+                "question": ""
             }
         }
     },
@@ -953,7 +1037,8 @@
             "0": {
                 "title": "Picknicktisch"
             }
-        }
+        },
+        "description": ""
     },
     "playground": {
         "name": "Spielplätze",
@@ -1037,7 +1122,8 @@
                 "render": "<a href='mailto:{email}'>{email}</a>"
             },
             "8": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
+                "render": "<a href='tel:{phone}'>{phone}</a>",
+                "question": ""
             },
             "9": {
                 "question": "Ist dieser Spielplatz für Rollstuhlfahrer zugänglich?",
@@ -1052,6 +1138,33 @@
                         "then": "Nicht zugänglich für Rollstuhlfahrer"
                     }
                 }
+            },
+            "10": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "render": "",
+                "question": ""
+            },
+            "4": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
             }
         }
     },
@@ -1273,8 +1386,125 @@
                 "0": {
                     "then": "<i>{name}</i>"
                 }
+            },
+            "render": ""
+        },
+        "tagRenderings": {
+            "3": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "7": {
+                "question": "",
+                "render": ""
+            },
+            "8": {
+                "render": "",
+                "question": ""
+            },
+            "4": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "1": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "5": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
             }
-        }
+        },
+        "presets": {
+            "2": {
+                "title": "",
+                "description": ""
+            },
+            "1": {
+                "title": "",
+                "description": ""
+            },
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "name": ""
     },
     "viewpoint": {
         "name": "Aussichtspunkt",
@@ -1290,6 +1520,912 @@
         "tagRenderings": {
             "1": {
                 "question": "Möchten Sie eine Beschreibung hinzufügen?"
+            }
+        }
+    },
+    "crossings": {
+        "tagRenderings": {
+            "5": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "0": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "4": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "7": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "name": "",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            },
+            "1": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "description": ""
+    },
+    "cycleways_and_roads": {
+        "tagRenderings": {
+            "11": {
+                "mappings": {
+                    "6": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "10": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "7": {
+                "question": "",
+                "mappings": {
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                }
+            },
+            "12": {
+                "question": "",
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                }
+            },
+            "0": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "4": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "5": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "1": {
+                "question": "",
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "9": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "14": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "15": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "13": {
+                "question": "",
+                "render": ""
+            },
+            "8": {
+                "render": "",
+                "question": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "3": {
+                    "then": ""
+                },
+                "4": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": ""
+    },
+    "surveillance_camera": {
+        "tagRenderings": {
+            "8": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "2": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "1": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "6": {
+                "question": "",
+                "render": ""
+            },
+            "4": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "question": "",
+                "render": ""
+            },
+            "7": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "5": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "name": ""
+    },
+    "barrier": {
+        "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "0": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "1": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "5": {
+                "question": "",
+                "render": ""
+            },
+            "6": {
+                "question": "",
+                "render": ""
+            },
+            "3": {
+                "render": "",
+                "question": ""
+            },
+            "4": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            },
+            "1": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "description": "",
+        "name": ""
+    },
+    "sport_pitch": {
+        "tagRenderings": {
+            "6": {
+                "question": ""
+            },
+            "4": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "5": {
+                "question": ""
+            },
+            "2": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "1": {
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "7": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "presets": {
+            "1": {
+                "title": ""
+            },
+            "0": {
+                "title": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "description": "",
+        "name": ""
+    },
+    "slow_roads": {
+        "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            }
+        }
+    },
+    "visitor_information_centre": {
+        "title": {
+            "render": "",
+            "mappings": {
+                "1": {
+                    "then": ""
+                }
+            }
+        },
+        "name": "",
+        "description": ""
+    },
+    "trail": {
+        "tagRenderings": {
+            "4": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "1": {
+                "render": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "name": ""
+    },
+    "direction": {
+        "description": "",
+        "name": ""
+    },
+    "watermill": {
+        "name": ""
+    },
+    "birdhide": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
             }
         }
     }
