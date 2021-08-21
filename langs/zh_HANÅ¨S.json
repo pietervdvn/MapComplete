@@ -1,9 +1,4 @@
 {
-    "general": {
-        "weekdays": {
-            "saturday": ""
-        }
-    },
     "delete": {
         "loginToDelete": ""
     }

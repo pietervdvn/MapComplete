@@ -31,12 +31,7 @@
         },
         "loginToStart": "Jelentkezz be a kérdés megválaszolásához",
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
-        "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével",
-        "weekdays": {
-            "abbreviations": {
-                "thursday": ""
-            }
-        }
+        "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével"
     },
     "index": {
         "pickTheme": "Válassz egy témát lent a kezdéshez!",

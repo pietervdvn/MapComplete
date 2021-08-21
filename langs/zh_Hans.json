@@ -1,9 +1,4 @@
 {
-    "general": {
-        "questions": {
-            "websiteIs": ""
-        }
-    },
     "split": {
         "loginToSplit": ""
     }

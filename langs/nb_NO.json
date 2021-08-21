@@ -6,10 +6,7 @@
         "search": {
             "searching": "Søker …"
         },
-        "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "download": {
-            "downloadGeojson": ""
-        }
+        "welcomeBack": "Du er innlogget. Velkommen tilbake."
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",

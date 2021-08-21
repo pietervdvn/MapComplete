@@ -29,8 +29,7 @@
                 "saturday": "Lör",
                 "monday": "Mån"
             }
-        },
-        "backgroundMap": ""
+        }
     },
     "centerMessage": {
         "ready": "Klar!",

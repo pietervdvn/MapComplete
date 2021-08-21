@@ -1,9 +1,4 @@
 {
-    "general": {
-        "download": {
-            "downloadGeoJsonHelper": ""
-        }
-    },
     "delete": {
         "explanations": {
             "hardDelete": ""
