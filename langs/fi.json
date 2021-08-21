@@ -3,7 +3,17 @@
         "opening_hours": {
             "ph_open": "avattu",
             "ph_closed": "suljettu",
-            "ph_not_known": " "
+            "ph_not_known": " ",
+            "open_24_7": "",
+            "closed_permanently": "",
+            "ph_open_as_usual": "",
+            "loadingCountry": "",
+            "opensAt": "",
+            "not_all_rules_parsed": "",
+            "closed_until": "",
+            "openTill": "",
+            "open_during_ph": "",
+            "error_loading": ""
         },
         "weekdays": {
             "sunday": "Sunnuntai",
@@ -29,19 +39,123 @@
         "cancel": "Peruuta",
         "save": "Tallenna",
         "search": {
-            "searching": "Etsitään…"
+            "searching": "Etsitään…",
+            "error": "",
+            "nothing": "",
+            "search": ""
         },
         "sharescreen": {
-            "thanksForSharing": "Kiitos jakamisesta!"
+            "thanksForSharing": "Kiitos jakamisesta!",
+            "fsGeolocation": "",
+            "copiedToClipboard": "",
+            "editThemeDescription": "",
+            "fsLayers": "",
+            "fsIncludeCurrentLayers": "",
+            "fsIncludeCurrentLocation": "",
+            "fsUserbadge": "",
+            "embedIntro": "",
+            "fsWelcomeMessage": "",
+            "fsAddNew": "",
+            "editThisTheme": "",
+            "fsIncludeCurrentBackgroundMap": "",
+            "fsSearch": "",
+            "fsLayerControlToggle": "",
+            "addToHomeScreen": "",
+            "intro": ""
         },
         "questions": {
-            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "phoneNumberIs": "",
+            "emailOf": "",
+            "emailIs": "",
+            "phoneNumberOf": "",
+            "websiteOf": ""
         },
         "skip": "Ohita tämä kysymys",
-        "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla"
+        "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
+        "getStartedLogin": "",
+        "add": {
+            "title": "",
+            "openLayerControl": "",
+            "addNew": "",
+            "zoomInFurther": "",
+            "intro": "",
+            "warnVisibleForEveryone": "",
+            "presetInfo": "",
+            "pleaseLogin": "",
+            "layerNotEnabled": "",
+            "confirmIntro": "",
+            "confirmButton": "",
+            "stillLoading": ""
+        },
+        "download": {
+            "downloadGeojson": "",
+            "downloadAsPdfHelper": "",
+            "title": "",
+            "downloadCSVHelper": "",
+            "noDataLoaded": "",
+            "downloadCSV": "",
+            "licenseInfo": "",
+            "includeMetaData": "",
+            "downloadAsPdf": "",
+            "downloadGeoJsonHelper": ""
+        },
+        "morescreen": {
+            "streetcomplete": "",
+            "requestATheme": "",
+            "intro": "",
+            "createYourOwnTheme": ""
+        },
+        "attribution": {
+            "attributionContent": "",
+            "mapContributionsBy": "",
+            "codeContributionsBy": "",
+            "themeBy": "",
+            "attributionTitle": "",
+            "mapContributionsByAndHidden": "",
+            "iconAttribution": {
+                "title": ""
+            }
+        },
+        "fewChangesBefore": "",
+        "about": "",
+        "noTagsSelected": "",
+        "testing": "",
+        "nameInlineQuestion": "",
+        "goToInbox": "",
+        "pdf": {
+            "versionInfo": "",
+            "attrBackground": "",
+            "attr": "",
+            "generatedWith": ""
+        },
+        "skippedQuestions": "",
+        "openStreetMapIntro": "",
+        "welcomeBack": "",
+        "osmLinkTooltip": "",
+        "customThemeIntro": "",
+        "oneSkippedQuestion": "",
+        "returnToTheMap": "",
+        "readYourMessages": "",
+        "histogram": {
+            "error_loading": ""
+        },
+        "loginToStart": "",
+        "getStartedNewAccount": "",
+        "noNameCategory": "",
+        "layerSelection": {
+            "title": "",
+            "zoomInToSeeThisLayer": ""
+        },
+        "loginOnlyNeededToEdit": "",
+        "openTheMap": "",
+        "aboutMapcomplete": ""
     },
     "centerMessage": {
-        "ready": "Valmis!"
+        "ready": "Valmis!",
+        "retrying": "",
+        "zoomIn": "",
+        "loadingData": ""
     },
     "image": {
         "doDelete": "Poista kuva",
@@ -49,13 +163,74 @@
         "addPicture": "Lisää kuva",
         "isDeleted": "Poistettu",
         "ccb": "CC-BY-lisenssillä",
-        "ccbs": "CC-BY-SA-lisenssillä"
+        "ccbs": "CC-BY-SA-lisenssillä",
+        "uploadDone": "",
+        "respectPrivacy": "",
+        "uploadFailed": "",
+        "cco": "",
+        "willBePublished": "",
+        "pleaseLogin": "",
+        "uploadingMultiple": "",
+        "uploadingPicture": ""
     },
     "reviews": {
         "title": "{count} arvostelua",
-        "title_singular": "Yksi arvostelu"
+        "title_singular": "Yksi arvostelu",
+        "plz_login": "",
+        "attribution": "",
+        "tos": "",
+        "saved": "",
+        "saving_review": "",
+        "affiliated_reviewer_warning": "",
+        "i_am_affiliated": "",
+        "posting_as": "",
+        "no_rating": "",
+        "write_a_comment": "",
+        "no_reviews_yet": "",
+        "name_required": ""
     },
     "index": {
-        "title": "Tervetuloa MapCompleteen"
+        "title": "Tervetuloa MapCompleteen",
+        "pickTheme": "",
+        "intro": "",
+        "#": ""
+    },
+    "delete": {
+        "reasons": {
+            "notFound": "",
+            "test": "",
+            "disused": ""
+        },
+        "readMessages": "",
+        "notEnoughExperience": "",
+        "explanations": {
+            "hardDelete": "",
+            "selectReason": "",
+            "softDelete": ""
+        },
+        "useSomethingElse": "",
+        "onlyEditedByLoggedInUser": "",
+        "partOfOthers": "",
+        "loading": "",
+        "whyDelete": "",
+        "isntAPoint": "",
+        "safeDelete": "",
+        "loginToDelete": "",
+        "isDeleted": "",
+        "cancel": "",
+        "delete": ""
+    },
+    "split": {
+        "cancel": "",
+        "loginToSplit": "",
+        "split": "",
+        "splitTitle": "",
+        "inviteToSplit": "",
+        "hasBeenSplit": ""
+    },
+    "favourite": {
+        "loginNeeded": "",
+        "reload": "",
+        "panelIntro": ""
     }
 }
