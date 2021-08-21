@@ -19,6 +19,10 @@ the URL-parameters are stated in the part between the `?` and the `#`. There are
 
 Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 
+ language
+----------
+
+The language to display mapcomplete in. Will be ignored in case a logged-in-user did set their language before. If the specified language does not exist, it will default to the first language in the theme.
 
  download-control-toggle 
 -------------------------
