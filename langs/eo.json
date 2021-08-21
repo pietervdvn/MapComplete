@@ -1,37 +1,21 @@
 {
     "general": {
-        "add": {
-            "confirmButton": ""
-        },
         "sharescreen": {
             "fsUserbadge": ""
-        },
-        "weekdays": {
-            "abbreviations": {
-                "thursday": ""
-            }
         },
         "download": {
             "downloadGeoJsonHelper": ""
         },
-        "testing": "",
         "pdf": {
             "generatedWith": ""
-        },
-        "fewChangesBefore": ""
+        }
     },
     "delete": {
         "explanations": {
             "hardDelete": ""
         }
     },
-    "favourite": {
-        "panelIntro": ""
-    },
     "reviews": {
         "i_am_affiliated": ""
-    },
-    "image": {
-        "uploadDone": ""
     }
 }

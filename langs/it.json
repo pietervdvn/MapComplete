@@ -137,10 +137,7 @@
         },
         "loginToStart": "Accedi per rispondere alla domanda",
         "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
-        "loginWithOpenStreetMap": "Accedi con OpenStreetMap",
-        "pdf": {
-            "attr": ""
-        }
+        "loginWithOpenStreetMap": "Accedi con OpenStreetMap"
     },
     "index": {
         "#": "Questi testi sono mostrati sopra ai pulsanti del tema quando nessun tema è stato caricato",
@@ -174,8 +171,5 @@
         "uploadingMultiple": "Caricamento di {count} foto…",
         "uploadingPicture": "Caricamento della tua foto…",
         "addPicture": "Aggiungi foto"
-    },
-    "delete": {
-        "partOfOthers": ""
     }
 }

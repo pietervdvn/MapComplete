@@ -30,17 +30,10 @@
                 "monday": "Mån"
             }
         },
-        "sharescreen": {
-            "fsUserbadge": ""
-        },
         "download": {
             "licenseInfo": ""
         },
-        "oneSkippedQuestion": "",
-        "backgroundMap": "",
-        "attribution": {
-            "mapContributionsBy": ""
-        }
+        "backgroundMap": ""
     },
     "centerMessage": {
         "ready": "Klar!",
@@ -63,9 +56,6 @@
         "uploadingMultiple": "Laddar upp {count} bilder…",
         "uploadingPicture": "Laddar upp din bild…",
         "addPicture": "Lägg till bild"
-    },
-    "delete": {
-        "loginToDelete": ""
     },
     "reviews": {
         "affiliated_reviewer_warning": ""

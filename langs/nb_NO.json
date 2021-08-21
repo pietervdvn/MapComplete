@@ -7,25 +7,15 @@
             "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "sharescreen": {
-            "embedIntro": ""
-        },
         "weekdays": {
             "abbreviations": {
                 "thursday": ""
             }
         },
-        "opening_hours": {
-            "opensAt": ""
-        },
         "download": {
             "downloadGeojson": ""
         },
-        "add": {
-            "stillLoading": ""
-        },
-        "openTheMap": "",
-        "osmLinkTooltip": ""
+        "openTheMap": ""
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
@@ -45,13 +35,9 @@
         "addPicture": "Legg til bilde",
         "pleaseLogin": "Logg inn for å legge til et bilde"
     },
-    "reviews": {
-        "tos": ""
-    },
     "delete": {
         "explanations": {
             "softDelete": ""
-        },
-        "cancel": ""
+        }
     }
 }

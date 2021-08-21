@@ -32,21 +32,16 @@
             "searching": "Etsitään…"
         },
         "sharescreen": {
-            "thanksForSharing": "Kiitos jakamisesta!",
-            "intro": ""
+            "thanksForSharing": "Kiitos jakamisesta!"
         },
         "questions": {
             "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
         },
         "skip": "Ohita tämä kysymys",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
-        "download": {
-            "title": ""
-        },
         "attribution": {
             "attributionTitle": ""
-        },
-        "osmLinkTooltip": ""
+        }
     },
     "centerMessage": {
         "ready": "Valmis!"
@@ -65,8 +60,5 @@
     },
     "index": {
         "title": "Tervetuloa MapCompleteen"
-    },
-    "delete": {
-        "whyDelete": ""
     }
 }

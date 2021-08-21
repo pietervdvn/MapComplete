@@ -1,31 +1,17 @@
 {
-    "reviews": {
-        "write_a_comment": ""
-    },
     "general": {
         "download": {
             "downloadAsPdfHelper": ""
-        },
-        "opening_hours": {
-            "ph_open": ""
         },
         "add": {
             "addNew": ""
         },
         "sharescreen": {
-            "fsIncludeCurrentLocation": "",
             "intro": ""
         },
-        "weekdays": {
-            "saturday": ""
-        },
-        "testing": "",
-        "readYourMessages": ""
+        "testing": ""
     },
     "delete": {
         "isntAPoint": ""
-    },
-    "favourite": {
-        "reload": ""
     }
 }

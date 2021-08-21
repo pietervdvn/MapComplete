@@ -1,35 +1,19 @@
 {
     "general": {
-        "sharescreen": {
-            "fsLayerControlToggle": ""
-        },
         "opening_hours": {
             "open_during_ph": ""
-        },
-        "download": {
-            "downloadGeoJsonHelper": ""
         },
         "questions": {
             "websiteIs": ""
         },
-        "add": {
-            "warnVisibleForEveryone": ""
-        },
         "pdf": {
             "attr": ""
-        },
-        "attribution": {
-            "codeContributionsBy": ""
         }
     },
     "split": {
         "loginToSplit": ""
     },
-    "favourite": {
-        "reload": ""
-    },
     "delete": {
-        "cancel": "",
-        "notEnoughExperience": ""
+        "cancel": ""
     }
 }

@@ -1,31 +1,17 @@
 {
     "general": {
         "sharescreen": {
-            "fsSearch": "",
             "embedIntro": ""
-        },
-        "download": {
-            "downloadGeojson": ""
         },
         "weekdays": {
             "saturday": ""
         },
-        "attribution": {
-            "mapContributionsBy": ""
-        },
-        "fewChangesBefore": "",
-        "pickLanguage": ""
+        "fewChangesBefore": ""
     },
     "delete": {
         "loginToDelete": ""
     },
-    "centerMessage": {
-        "loadingData": ""
-    },
     "reviews": {
         "i_am_affiliated": ""
-    },
-    "split": {
-        "inviteToSplit": ""
     }
 }

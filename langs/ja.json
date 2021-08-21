@@ -142,10 +142,7 @@
             "search": "場所を検索する"
         },
         "welcomeBack": "ログインしました、お帰りなさい!",
-        "loginWithOpenStreetMap": "OpenStreetMapからログインする",
-        "histogram": {
-            "error_loading": ""
-        }
+        "loginWithOpenStreetMap": "OpenStreetMapからログインする"
     },
     "index": {
         "#": "これらのテキストは、テーマがロードされていない場合にテーマボタンの上に表示されます",
@@ -174,8 +171,5 @@
         "uploadingMultiple": "{count} 枚の写真をアップロードします…",
         "uploadingPicture": "写真をアップロードします…",
         "addPicture": "写真の追加"
-    },
-    "delete": {
-        "useSomethingElse": ""
     }
 }
