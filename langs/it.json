@@ -65,7 +65,9 @@
             "openTill": "fino a",
             "opensAt": "da",
             "open_during_ph": "Durante le festività questo luogo è",
-            "error_loading": "Errore: impossibile visualizzare questi orari di apertura."
+            "error_loading": "Errore: impossibile visualizzare questi orari di apertura.",
+            "ph_open_as_usual": "",
+            "loadingCountry": ""
         },
         "weekdays": {
             "sunday": "Domenica",
@@ -119,7 +121,9 @@
             "pleaseLogin": "<a class=\"activate-osm-authentication\">Accedi per aggiungere un punto</a>",
             "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br>",
             "title": "Aggiungi un nuovo punto?",
-            "addNew": "Aggiungi una nuova {category} qua"
+            "addNew": "Aggiungi una nuova {category} qua",
+            "warnVisibleForEveryone": "",
+            "presetInfo": ""
         },
         "osmLinkTooltip": "Vedi questo oggetto su OpenStreetMap per la cronologia o altre opzioni di modifica",
         "number": "numero",
@@ -137,7 +141,31 @@
         },
         "loginToStart": "Accedi per rispondere alla domanda",
         "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
-        "loginWithOpenStreetMap": "Accedi con OpenStreetMap"
+        "loginWithOpenStreetMap": "Accedi con OpenStreetMap",
+        "download": {
+            "licenseInfo": "",
+            "title": "",
+            "downloadGeoJsonHelper": "",
+            "noDataLoaded": "",
+            "downloadAsPdfHelper": "",
+            "downloadAsPdf": "",
+            "includeMetaData": "",
+            "downloadGeojson": "",
+            "downloadCSV": "",
+            "downloadCSVHelper": ""
+        },
+        "loginOnlyNeededToEdit": "",
+        "histogram": {
+            "error_loading": ""
+        },
+        "pdf": {
+            "attrBackground": "",
+            "versionInfo": "",
+            "generatedWith": "",
+            "attr": ""
+        },
+        "openTheMap": "",
+        "testing": ""
     },
     "index": {
         "#": "Questi testi sono mostrati sopra ai pulsanti del tema quando nessun tema è stato caricato",
@@ -171,5 +199,38 @@
         "uploadingMultiple": "Caricamento di {count} foto…",
         "uploadingPicture": "Caricamento della tua foto…",
         "addPicture": "Aggiungi foto"
+    },
+    "split": {
+        "hasBeenSplit": "",
+        "splitTitle": "",
+        "cancel": "",
+        "split": "",
+        "inviteToSplit": "",
+        "loginToSplit": ""
+    },
+    "delete": {
+        "reasons": {
+            "notFound": "",
+            "disused": "",
+            "test": ""
+        },
+        "explanations": {
+            "selectReason": "",
+            "softDelete": "",
+            "hardDelete": ""
+        },
+        "readMessages": "",
+        "whyDelete": "",
+        "loading": "",
+        "partOfOthers": "",
+        "useSomethingElse": "",
+        "notEnoughExperience": "",
+        "onlyEditedByLoggedInUser": "",
+        "isntAPoint": "",
+        "safeDelete": "",
+        "loginToDelete": "",
+        "isDeleted": "",
+        "cancel": "",
+        "delete": ""
     }
 }
