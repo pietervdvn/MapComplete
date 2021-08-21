@@ -33,7 +33,6 @@
             "opensAt": "開始時間",
             "open_during_ph": "國定假日的時候，這個場所是",
             "error_loading": "錯誤：無法視覺化開放時間。",
-            "loadingCountry": "",
             "ph_open_as_usual": ""
         },
         "weekdays": {
@@ -127,7 +126,6 @@
             "intro": "您點擊處目前未有已知的資料。<br>",
             "title": "新增新的節點？",
             "addNew": "在這裡新增新的 {category}",
-            "warnVisibleForEveryone": "",
             "presetInfo": ""
         },
         "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來檢視這物件",
@@ -148,28 +146,17 @@
         "welcomeBack": "你已經登入了，歡迎回來！",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
         "pdf": {
-            "versionInfo": "",
             "generatedWith": "",
-            "attr": "",
             "attrBackground": ""
         },
         "download": {
-            "downloadCSV": "",
             "downloadAsPdfHelper": "",
-            "noDataLoaded": "",
             "downloadGeoJsonHelper": "",
-            "licenseInfo": "",
             "includeMetaData": "",
-            "downloadGeojson": "",
             "title": "",
-            "downloadCSVHelper": "",
             "downloadAsPdf": ""
         },
-        "openTheMap": "",
         "loginOnlyNeededToEdit": "",
-        "histogram": {
-            "error_loading": ""
-        },
         "testing": ""
     },
     "index": {
@@ -202,35 +189,22 @@
     },
     "delete": {
         "reasons": {
-            "notFound": "",
-            "disused": "",
-            "test": ""
+            "disused": ""
         },
         "readMessages": "",
         "explanations": {
-            "softDelete": "",
-            "hardDelete": "",
-            "selectReason": ""
+            "hardDelete": ""
         },
         "whyDelete": "",
-        "loading": "",
         "partOfOthers": "",
-        "useSomethingElse": "",
         "notEnoughExperience": "",
-        "onlyEditedByLoggedInUser": "",
         "isntAPoint": "",
-        "safeDelete": "",
         "loginToDelete": "",
-        "isDeleted": "",
-        "cancel": "",
-        "delete": ""
+        "cancel": ""
     },
     "split": {
         "loginToSplit": "",
-        "cancel": "",
         "inviteToSplit": "",
-        "splitTitle": "",
-        "hasBeenSplit": "",
-        "split": ""
+        "hasBeenSplit": ""
     }
 }

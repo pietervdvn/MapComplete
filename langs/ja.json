@@ -83,7 +83,6 @@
             "zoomInFurther": "さらにズーム拡大して点を追加します。",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">新しいポイントを追加するにはログインしてください</a>",
             "title": "新しいポイントを追加しますか?",
-            "presetInfo": "",
             "warnVisibleForEveryone": ""
         },
         "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
@@ -101,7 +100,6 @@
             "opensAt": "開始時刻",
             "open_during_ph": "このアメニティは、祝日には",
             "error_loading": "エラー:これらの営業時間を表示できませんでした。",
-            "ph_open_as_usual": "",
             "loadingCountry": ""
         },
         "weekdays": {
@@ -148,28 +146,19 @@
         "welcomeBack": "ログインしました、お帰りなさい!",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
         "pdf": {
-            "versionInfo": "",
             "attrBackground": "",
-            "attr": "",
             "generatedWith": ""
         },
         "download": {
-            "noDataLoaded": "",
             "downloadCSV": "",
-            "downloadCSVHelper": "",
             "includeMetaData": "",
-            "downloadGeoJsonHelper": "",
             "title": "",
-            "downloadAsPdfHelper": "",
             "downloadAsPdf": "",
-            "downloadGeojson": "",
             "licenseInfo": ""
         },
-        "testing": "",
         "histogram": {
             "error_loading": ""
         },
-        "loginOnlyNeededToEdit": "",
         "openTheMap": ""
     },
     "index": {
@@ -201,36 +190,23 @@
         "addPicture": "写真の追加"
     },
     "delete": {
-        "isntAPoint": "",
         "reasons": {
             "notFound": "",
-            "disused": "",
             "test": ""
         },
-        "onlyEditedByLoggedInUser": "",
         "notEnoughExperience": "",
         "explanations": {
-            "selectReason": "",
-            "softDelete": "",
-            "hardDelete": ""
+            "softDelete": ""
         },
         "cancel": "",
-        "delete": "",
         "readMessages": "",
-        "whyDelete": "",
         "loading": "",
-        "partOfOthers": "",
         "useSomethingElse": "",
-        "safeDelete": "",
-        "loginToDelete": "",
-        "isDeleted": ""
+        "loginToDelete": ""
     },
     "split": {
         "inviteToSplit": "",
-        "cancel": "",
         "loginToSplit": "",
-        "split": "",
-        "splitTitle": "",
-        "hasBeenSplit": ""
+        "splitTitle": ""
     }
 }

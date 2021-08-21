@@ -66,7 +66,6 @@
             "opensAt": "da",
             "open_during_ph": "Durante le festività questo luogo è",
             "error_loading": "Errore: impossibile visualizzare questi orari di apertura.",
-            "ph_open_as_usual": "",
             "loadingCountry": ""
         },
         "weekdays": {
@@ -122,7 +121,6 @@
             "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br>",
             "title": "Aggiungi un nuovo punto?",
             "addNew": "Aggiungi una nuova {category} qua",
-            "warnVisibleForEveryone": "",
             "presetInfo": ""
         },
         "osmLinkTooltip": "Vedi questo oggetto su OpenStreetMap per la cronologia o altre opzioni di modifica",
@@ -143,28 +141,19 @@
         "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
         "loginWithOpenStreetMap": "Accedi con OpenStreetMap",
         "download": {
-            "licenseInfo": "",
             "title": "",
-            "downloadGeoJsonHelper": "",
             "noDataLoaded": "",
-            "downloadAsPdfHelper": "",
             "downloadAsPdf": "",
-            "includeMetaData": "",
             "downloadGeojson": "",
-            "downloadCSV": "",
             "downloadCSVHelper": ""
         },
-        "loginOnlyNeededToEdit": "",
         "histogram": {
             "error_loading": ""
         },
         "pdf": {
-            "attrBackground": "",
             "versionInfo": "",
-            "generatedWith": "",
             "attr": ""
         },
-        "openTheMap": "",
         "testing": ""
     },
     "index": {
@@ -201,36 +190,23 @@
         "addPicture": "Aggiungi foto"
     },
     "split": {
-        "hasBeenSplit": "",
         "splitTitle": "",
-        "cancel": "",
         "split": "",
-        "inviteToSplit": "",
         "loginToSplit": ""
     },
     "delete": {
         "reasons": {
-            "notFound": "",
-            "disused": "",
-            "test": ""
+            "disused": ""
         },
         "explanations": {
             "selectReason": "",
-            "softDelete": "",
             "hardDelete": ""
         },
-        "readMessages": "",
         "whyDelete": "",
-        "loading": "",
         "partOfOthers": "",
-        "useSomethingElse": "",
         "notEnoughExperience": "",
-        "onlyEditedByLoggedInUser": "",
         "isntAPoint": "",
-        "safeDelete": "",
         "loginToDelete": "",
-        "isDeleted": "",
-        "cancel": "",
-        "delete": ""
+        "cancel": ""
     }
 }

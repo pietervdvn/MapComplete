@@ -56,7 +56,6 @@
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "openLayerControl": "Ouvrir la panneau de contrôle",
             "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
-            "presetInfo": "",
             "warnVisibleForEveryone": ""
         },
         "pickLanguage": "Choisir la langue : ",
@@ -151,30 +150,20 @@
             "ph_closed": "fermé",
             "ph_open": "ouvert",
             "ph_not_known": " ",
-            "loadingCountry": "",
             "ph_open_as_usual": ""
         },
         "download": {
-            "downloadAsPdf": "",
             "downloadAsPdfHelper": "",
-            "licenseInfo": "",
             "includeMetaData": "",
-            "downloadGeoJsonHelper": "",
             "downloadGeojson": "",
-            "title": "",
             "noDataLoaded": "",
-            "downloadCSV": "",
             "downloadCSVHelper": ""
         },
         "pdf": {
-            "attr": "",
             "versionInfo": "",
-            "generatedWith": "",
             "attrBackground": ""
         },
-        "testing": "",
         "openTheMap": "",
-        "loginOnlyNeededToEdit": "",
         "histogram": {
             "error_loading": ""
         }
@@ -201,36 +190,23 @@
         "plz_login": "Connectez vous pour laisser un avis"
     },
     "split": {
-        "inviteToSplit": "",
         "hasBeenSplit": "",
-        "split": "",
         "cancel": "",
-        "loginToSplit": "",
         "splitTitle": ""
     },
     "delete": {
-        "readMessages": "",
         "explanations": {
             "softDelete": "",
-            "hardDelete": "",
             "selectReason": ""
         },
         "reasons": {
-            "notFound": "",
-            "disused": "",
-            "test": ""
+            "disused": ""
         },
         "whyDelete": "",
-        "loading": "",
         "partOfOthers": "",
-        "useSomethingElse": "",
         "notEnoughExperience": "",
-        "onlyEditedByLoggedInUser": "",
         "isntAPoint": "",
-        "safeDelete": "",
         "loginToDelete": "",
-        "isDeleted": "",
-        "cancel": "",
-        "delete": ""
+        "cancel": ""
     }
 }

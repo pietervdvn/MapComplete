@@ -4,22 +4,17 @@
             "phoneNumberOf": "Apakah nombor telepon {category} ini?",
             "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "emailOf": "Apa alamat email {category}?",
-            "emailIs": "",
-            "websiteOf": "",
-            "phoneNumberIs": ""
+            "websiteOf": ""
         },
         "nameInlineQuestion": "Name {category} ini adalah $$$",
         "pickLanguage": "Pilih bahasa: ",
         "layerSelection": {
-            "title": "Pilih lapisan",
-            "zoomInToSeeThisLayer": ""
+            "title": "Pilih lapisan"
         },
         "backgroundMap": "Peta latar belakang",
         "search": {
             "searching": "Sdg mencari…",
-            "error": "",
-            "nothing": "",
-            "search": ""
+            "nothing": ""
         },
         "opening_hours": {
             "ph_not_known": " ",
@@ -30,11 +25,8 @@
             "openTill": "sampai",
             "opensAt": "dari",
             "closed_until": "Ditutup sampai {date}",
-            "error_loading": "",
             "open_during_ph": "",
-            "loadingCountry": "",
-            "ph_open_as_usual": "",
-            "not_all_rules_parsed": ""
+            "ph_open_as_usual": ""
         },
         "noTagsSelected": "Tidak ada tag yang dipilih",
         "getStartedNewAccount": " atau <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">membuat akun baru</a>",
@@ -53,9 +45,7 @@
             "editThisTheme": "Sunting tema ini",
             "thanksForSharing": "Terima kasih telah berbagi!",
             "copiedToClipboard": "Tautan disalin ke papan klip",
-            "embedIntro": "",
             "fsLayerControlToggle": "",
-            "addToHomeScreen": "",
             "intro": ""
         },
         "goToInbox": "Buka kotak masuk",
@@ -78,78 +68,46 @@
             "monday": "Senin"
         },
         "download": {
-            "noDataLoaded": "",
             "downloadCSV": "",
-            "downloadAsPdfHelper": "",
             "downloadGeoJsonHelper": "",
-            "includeMetaData": "",
             "downloadAsPdf": "",
-            "downloadCSVHelper": "",
             "title": "",
-            "licenseInfo": "",
             "downloadGeojson": ""
         },
         "morescreen": {
-            "createYourOwnTheme": "",
             "requestATheme": "",
-            "intro": "",
             "streetcomplete": ""
         },
         "pdf": {
-            "attrBackground": "",
             "versionInfo": "",
-            "generatedWith": "",
             "attr": ""
         },
-        "testing": "",
         "add": {
             "presetInfo": "",
-            "warnVisibleForEveryone": "",
             "layerNotEnabled": "",
-            "openLayerControl": "",
             "confirmButton": "",
-            "confirmIntro": "",
             "stillLoading": "",
-            "zoomInFurther": "",
             "pleaseLogin": "",
-            "intro": "",
-            "title": "",
-            "addNew": ""
+            "title": ""
         },
         "attribution": {
             "iconAttribution": {
                 "title": ""
             },
-            "mapContributionsByAndHidden": "",
             "mapContributionsBy": "",
-            "codeContributionsBy": "",
             "themeBy": "",
-            "attributionContent": "",
             "attributionTitle": ""
         },
-        "loginWithOpenStreetMap": "",
         "customThemeIntro": "",
-        "histogram": {
-            "error_loading": ""
-        },
         "loginOnlyNeededToEdit": "",
-        "aboutMapcomplete": "",
         "openTheMap": "",
-        "openStreetMapIntro": "",
         "fewChangesBefore": "",
-        "readYourMessages": "",
         "noNameCategory": "",
-        "about": "",
         "osmLinkTooltip": "",
-        "number": "",
         "skippedQuestions": "",
-        "oneSkippedQuestion": "",
         "skip": "",
-        "cancel": "",
         "save": "",
-        "returnToTheMap": "",
-        "loginToStart": "",
-        "welcomeBack": ""
+        "loginToStart": ""
     },
     "image": {
         "doDelete": "Buang gambar",
@@ -163,19 +121,15 @@
         "addPicture": "Tambahkan foto",
         "isDeleted": "Dihapus",
         "dontDelete": "Batal",
-        "uploadFailed": "",
-        "uploadDone": "",
-        "respectPrivacy": ""
+        "uploadDone": ""
     },
     "centerMessage": {
         "ready": "Selesai!",
         "loadingData": "Memuat data…",
-        "retrying": "",
         "zoomIn": ""
     },
     "favourite": {
         "reload": "Muat ulang data",
-        "loginNeeded": "",
         "panelIntro": ""
     },
     "reviews": {
@@ -189,48 +143,33 @@
         "title_singular": "Satu ulasan",
         "title": "{count} ulasan",
         "plz_login": "Masuk untuk meninggalkan ulasan",
-        "affiliated_reviewer_warning": "",
         "i_am_affiliated": "",
-        "no_reviews_yet": "",
         "name_required": ""
     },
     "index": {
         "pickTheme": "Pilih tema di bawah ini untuk memulai.",
         "intro": "MapComplete adalah penampil dan editor OpenStreetMap, yang menunjukkan informasi tentang tema tertentu.",
-        "title": "Selamat datang di MapComplete",
-        "#": ""
+        "title": "Selamat datang di MapComplete"
     },
     "delete": {
         "explanations": {
             "softDelete": "",
-            "hardDelete": "",
             "selectReason": ""
         },
-        "isntAPoint": "",
         "cancel": "",
-        "useSomethingElse": "",
         "partOfOthers": "",
-        "onlyEditedByLoggedInUser": "",
         "notEnoughExperience": "",
-        "loginToDelete": "",
         "isDeleted": "",
-        "safeDelete": "",
         "readMessages": "",
-        "delete": "",
         "reasons": {
             "notFound": "",
-            "disused": "",
             "test": ""
         },
-        "whyDelete": "",
         "loading": ""
     },
     "split": {
-        "splitTitle": "",
         "cancel": "",
-        "hasBeenSplit": "",
         "split": "",
-        "loginToSplit": "",
         "inviteToSplit": ""
     }
 }

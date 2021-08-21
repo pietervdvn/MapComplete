@@ -56,7 +56,6 @@
             "confirmButton": "Engadir {category} aquí",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
             "openLayerControl": "Abrir o control de capas",
-            "warnVisibleForEveryone": "",
             "presetInfo": ""
         },
         "pickLanguage": "Escoller lingua: ",
@@ -115,7 +114,6 @@
             "opensAt": "dende",
             "open_during_ph": "Durante festas este servizo está",
             "error_loading": "Erro: non foi posíbel ver eses horarios de abertura.",
-            "ph_open_as_usual": "",
             "loadingCountry": ""
         },
         "weekdays": {
@@ -154,30 +152,18 @@
             "attributionTitle": "Aviso de atribución"
         },
         "pdf": {
-            "generatedWith": "",
             "attrBackground": "",
-            "versionInfo": "",
             "attr": ""
         },
-        "histogram": {
-            "error_loading": ""
-        },
         "openTheMap": "",
-        "loginOnlyNeededToEdit": "",
         "download": {
             "downloadAsPdfHelper": "",
-            "downloadCSVHelper": "",
             "licenseInfo": "",
-            "title": "",
             "downloadCSV": "",
-            "downloadGeojson": "",
             "downloadGeoJsonHelper": "",
-            "downloadAsPdf": "",
-            "noDataLoaded": "",
-            "includeMetaData": ""
+            "noDataLoaded": ""
         },
-        "aboutMapcomplete": "",
-        "testing": ""
+        "aboutMapcomplete": ""
     },
     "favourite": {
         "panelIntro": "<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais",
@@ -196,41 +182,27 @@
         "title": "{count} recensións",
         "name_required": "Requírese un nome para amosar e crear recensións",
         "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!",
-        "i_am_affiliated": "",
-        "attribution": "",
-        "tos": ""
+        "attribution": ""
     },
     "split": {
         "loginToSplit": "",
-        "split": "",
         "inviteToSplit": "",
-        "hasBeenSplit": "",
-        "splitTitle": "",
-        "cancel": ""
+        "splitTitle": ""
     },
     "delete": {
         "reasons": {
             "test": "",
-            "notFound": "",
             "disused": ""
         },
         "explanations": {
-            "hardDelete": "",
-            "selectReason": "",
-            "softDelete": ""
+            "selectReason": ""
         },
         "readMessages": "",
-        "whyDelete": "",
         "loading": "",
-        "partOfOthers": "",
         "useSomethingElse": "",
-        "notEnoughExperience": "",
         "onlyEditedByLoggedInUser": "",
-        "isntAPoint": "",
         "safeDelete": "",
-        "loginToDelete": "",
         "isDeleted": "",
-        "cancel": "",
         "delete": ""
     }
 }

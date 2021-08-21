@@ -40,7 +40,6 @@
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
             "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>",
-            "presetInfo": "",
             "warnVisibleForEveryone": ""
         },
         "number": "numer",
@@ -59,7 +58,6 @@
             "open_during_ph": "W czasie świąt państwowych udogodnienie to jest",
             "error_loading": "Błąd: nie można zwizualizować tych godzin otwarcia.",
             "opensAt": "z",
-            "loadingCountry": "",
             "ph_open_as_usual": ""
         },
         "weekdays": {
@@ -125,44 +123,29 @@
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
         "download": {
-            "downloadCSVHelper": "",
             "downloadGeojson": "",
-            "includeMetaData": "",
             "downloadAsPdf": "",
-            "licenseInfo": "",
             "downloadAsPdfHelper": "",
-            "title": "",
             "downloadGeoJsonHelper": "",
-            "downloadCSV": "",
             "noDataLoaded": ""
         },
         "morescreen": {
-            "intro": "",
             "requestATheme": "",
-            "createYourOwnTheme": "",
             "streetcomplete": ""
         },
         "pdf": {
-            "attr": "",
             "generatedWith": "",
-            "versionInfo": "",
             "attrBackground": ""
         },
-        "loginOnlyNeededToEdit": "",
         "attribution": {
             "mapContributionsBy": "",
-            "codeContributionsBy": "",
             "mapContributionsByAndHidden": "",
-            "themeBy": "",
             "attributionContent": "",
-            "attributionTitle": "",
             "iconAttribution": {
                 "title": ""
             }
         },
-        "openTheMap": "",
         "testing": "",
-        "openStreetMapIntro": "",
         "histogram": {
             "error_loading": ""
         }
@@ -201,36 +184,23 @@
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów"
     },
     "split": {
-        "split": "",
         "splitTitle": "",
-        "cancel": "",
         "inviteToSplit": "",
-        "loginToSplit": "",
         "hasBeenSplit": ""
     },
     "delete": {
-        "onlyEditedByLoggedInUser": "",
         "partOfOthers": "",
-        "loading": "",
         "notEnoughExperience": "",
-        "useSomethingElse": "",
         "readMessages": "",
         "explanations": {
-            "softDelete": "",
-            "hardDelete": "",
-            "selectReason": ""
+            "hardDelete": ""
         },
         "reasons": {
             "notFound": "",
-            "disused": "",
             "test": ""
         },
-        "whyDelete": "",
         "isntAPoint": "",
-        "safeDelete": "",
         "loginToDelete": "",
-        "isDeleted": "",
-        "cancel": "",
-        "delete": ""
+        "cancel": ""
     }
 }
