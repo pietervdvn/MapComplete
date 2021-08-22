@@ -86,6 +86,7 @@
     "number": "number",
     "osmLinkTooltip": "See this object on OpenStreetMap for history and more editing options",
     "add": {
+      "addNewMapLabel": "Add new item",
       "addNew": "Add a new {category} here",
       "presetInfo": "The new POI will have {tags}",
       "warnVisibleForEveryone": "Your addition will be visible for everyone",

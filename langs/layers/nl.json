@@ -575,6 +575,9 @@
                     }
                 }
             },
+            "9": {
+                "render": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix#{id}.'>Rapporteer deze fietspomp als kapot</a>"
+            },
             "10": {
                 "question": "Welke ventielen werken er met de pomp?",
                 "render": "Deze pomp werkt met de volgende ventielen: {valves}",

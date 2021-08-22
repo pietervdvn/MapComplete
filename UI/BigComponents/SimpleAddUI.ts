@@ -204,7 +204,7 @@ export default class SimpleAddUI extends Toggle {
         ).onClick(cancel)
 
         return new Combine([
-            Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
+           // Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
             State.state.osmConnection.userDetails.data.dryRun ?
                 Translations.t.general.testing.Clone().SetClass("alert") : undefined,
             openLayerOrConfirm,

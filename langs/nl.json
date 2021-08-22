@@ -46,6 +46,7 @@
         "number": "getal",
         "osmLinkTooltip": "Bekijk dit object op OpenStreetMap waar geschiedenis en meer aanpasopties zijn",
         "add": {
+            "addNewMapLabel": "Voeg item toe",
             "addNew": "Voeg hier een {category} toe",
             "title": "Nieuw punt toevoegen?",
             "intro": "Je klikte ergens waar er nog geen data is. Kies hieronder welk punt je wilt toevoegen<br/>",

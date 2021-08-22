@@ -3,6 +3,8 @@ import Svg from "../../Svg";
 import {UIEventSource} from "../UIEventSource";
 import Img from "../../UI/Base/Img";
 import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen";
+import AddNewMarker from "../../UI/BigComponents/AddNewMarker";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.
@@ -14,7 +16,7 @@ export default class StrayClickHandler {
     constructor(
         lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
         selectedElement: UIEventSource<string>,
-        filteredLayers: UIEventSource<{ readonly isDisplayed: UIEventSource<boolean> }[]>,
+        filteredLayers: UIEventSource<FilteredLayer[]>,
         leafletMap: UIEventSource<L.Map>,
         uiToShow: ScrollableFullScreen) {
         const self = this;
@@ -40,12 +42,12 @@ export default class StrayClickHandler {
 
             selectedElement.setData(undefined);
             self._lastMarker = L.marker([lastClick.lat, lastClick.lon], {
-                icon: L.icon({
-                    iconUrl: Img.AsData(Svg.add),
+                icon: L.divIcon({
+                    html: new AddNewMarker(filteredLayers).ConstructElement(),
                     iconSize: [50, 50],
                     iconAnchor: [25, 50],
                     popupAnchor: [0, -45]
-                })
+                })                  
             });
             const popup = L.popup({
                 autoPan: true,
