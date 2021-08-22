@@ -24,6 +24,7 @@ export default class Minimap extends BaseUIElement {
                     location?: UIEventSource<Loc>,
                     allowMoving?: boolean,
                     leafletOptions?: any,
+                    
                     onFullyLoaded?: (leaflet: L.Map) => void
                 }
     ) {

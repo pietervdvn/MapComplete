@@ -33,6 +33,9 @@ export default class ExportPDF {
     private readonly _layout: UIEventSource<LayoutConfig>;
     private _screenhotTaken = false;
 
+    public isRunning = new UIEventSource(true)
+    public loadedTiles = new UIEventSource(0)
+
     constructor(
         options: {
             freeDivId: string,
@@ -60,6 +63,8 @@ export default class ExportPDF {
             location: new UIEventSource<Loc>(loc), // We remove the link between the old and the new UI-event source as moving the map while the export is running fucks up the screenshot
             background: options.background,
             allowMoving: false,
+            
+            
             onFullyLoaded: leaflet => window.setTimeout(() => {
                 if (self._screenhotTaken) {
                     return;
@@ -137,7 +142,7 @@ export default class ExportPDF {
         doc.text(t.generatedWith.txt, 40, 23, {
             maxWidth: 125
         })
-        const backgroundLayer : BaseLayer = State.state.backgroundLayer.data
+        const backgroundLayer: BaseLayer = State.state.backgroundLayer.data
         const attribution = new FixedUiElement(backgroundLayer.layer().getAttribution() ?? backgroundLayer.name).ConstructElement().innerText
         doc.textWithLink(t.attr.txt, 40, 26.5, {
             maxWidth: 125,
@@ -148,8 +153,8 @@ export default class ExportPDF {
             background: attribution
         }).txt, 40, 30)
 
-        let date = new Date().toISOString().substr(0,16)
-        
+        let date = new Date().toISOString().substr(0, 16)
+
         doc.setFontSize(7)
         doc.text(t.versionInfo.Subs({
             version: Constants.vNumber,
@@ -157,7 +162,7 @@ export default class ExportPDF {
         }).txt, 40, 34, {
             maxWidth: 125
         })
-        
+
         // Add the logo of the layout
         let img = document.createElement('img');
         const imgSource = layout.icon
@@ -188,6 +193,6 @@ export default class ExportPDF {
 
         doc.save(`MapComplete_${layout.title.txt}_${date}.pdf`);
 
-
+        this.isRunning.setData(false)
     }
 }

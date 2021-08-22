@@ -331,20 +331,7 @@ li::marker {
     width: 40em;
     max-height: calc(100vh - 15em);
     overflow-y: auto;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-}
-
-
-#messagesbox {
-    /*Only shown on big screens*/
-    position: relative;
-    padding: 0;
-    pointer-events: all;
-    box-shadow: 0 0 10px var(--shadow-color);
-    width: min-content;
+    border-radius: 1em;
     background-color: var(--background-color);
     color: var(--foreground-color);
 }
