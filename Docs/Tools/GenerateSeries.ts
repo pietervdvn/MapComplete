@@ -530,7 +530,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
 
     new Histogram<string>(allFeatures.map(f => f.properties.metadata.host))
         .asPie({
-            name: "Changesets per host"
+            name: "Changesets per host" + appliedFilterDescription
         }).render()
 
 
@@ -586,7 +586,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
 }
 
 
-// new StatsDownloader("stats").DownloadStats()
+new StatsDownloader("stats").DownloadStats()
 const allPaths = readdirSync("stats")
     .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
 let allFeatures: ChangeSetData[] = [].concat(...allPaths
