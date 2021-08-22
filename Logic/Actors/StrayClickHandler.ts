@@ -5,6 +5,7 @@ import Img from "../../UI/Base/Img";
 import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen";
 import AddNewMarker from "../../UI/BigComponents/AddNewMarker";
 import FilteredLayer from "../../Models/FilteredLayer";
+import Constants from "../../Models/Constants";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.
@@ -41,7 +42,8 @@ export default class StrayClickHandler {
             }
 
             selectedElement.setData(undefined);
-            self._lastMarker = L.marker([lastClick.lat, lastClick.lon], {
+            const clickCoor : [number, number] = [lastClick.lat, lastClick.lon]
+            self._lastMarker = L.marker(clickCoor, {
                 icon: L.divIcon({
                     html: new AddNewMarker(filteredLayers).ConstructElement(),
                     iconSize: [50, 50],
@@ -59,6 +61,13 @@ export default class StrayClickHandler {
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
+                if(leafletMap.data.getZoom() < Constants.userJourney.minZoomLevelToAddNewPoints){
+                    self._lastMarker.closePopup()
+                    leafletMap.data.flyTo(clickCoor, Constants.userJourney.minZoomLevelToAddNewPoints)
+                    return;
+                }
+                
+                
                 uiToShow.AttachTo("strayclick")
                 uiToShow.Activate();
             });
