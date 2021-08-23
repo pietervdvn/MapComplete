@@ -393,7 +393,9 @@ export class InitUiElements {
         const updater = new LoadFromOverpass(
             state.locationControl,
             state.layoutToUse,
-            state.leafletMap
+            state.leafletMap,
+            state.overpassUrl,
+            state.overpassTimeout
         );
         State.state.layerUpdater = updater;
 

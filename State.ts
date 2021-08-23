@@ -94,6 +94,8 @@ export default class State {
     public readonly featureSwitchEnableExport: UIEventSource<boolean>;
     public readonly featureSwitchFakeUser: UIEventSource<boolean>;
     public readonly featureSwitchExportAsPdf: UIEventSource<boolean>;
+    public readonly overpassUrl: UIEventSource<string>;
+    public readonly overpassTimeout: UIEventSource<number>;
 
     public featurePipeline: FeaturePipeline;
 
@@ -254,7 +256,7 @@ export default class State {
                 (layoutToUse) => layoutToUse?.enableBackgroundLayerSelection ?? true,
                 "Disables/Enables the background layer control"
             );
-            
+
             this.featureSwitchFilter = featSw(
                 "fs-filter",
                 (layoutToUse) => layoutToUse?.enableLayers ?? true,
@@ -307,6 +309,7 @@ export default class State {
                 "Enable the PDF download button"
             );
 
+
             this.featureSwitchIsTesting = QueryParameters.GetQueryParameter(
                 "test",
                 "false",
@@ -338,6 +341,15 @@ export default class State {
                 "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'"
             );
 
+            this.overpassUrl = QueryParameters.GetQueryParameter("overpassUrl",
+                layoutToUse?.overpassUrl,
+                "Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter"
+            )
+
+            this.overpassTimeout = QueryParameters.GetQueryParameter("overpassTimeout",
+                "" + layoutToUse?.overpassTimeout,
+                "Set a different timeout (in seconds) for queries in overpass")
+                .map(str => Number(str), [], n => "" + n)
 
             this.featureSwitchUserbadge.addCallbackAndRun(userbadge => {
                 if (!userbadge) {

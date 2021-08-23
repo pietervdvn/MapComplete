@@ -1,0 +1,176 @@
+{
+  "id": "cycle_highways",
+  "title": {
+    "en": "Cycle highways"
+  },
+  "hideFromOverview": true,
+  "maintainer": "L'imaginaire",
+  "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
+  "overpassUrl": "https://overpass.kumi.de/api/interpreter",
+  "overpassTimeout": 60,
+  "description": {
+    "en": "This map shows cycle highways"
+  },
+  "language": [
+    "en"
+  ],
+  "version": "2021-05-22",
+  "startLat": 51.1599,
+  "startLon": 3.3475,
+  "startZoom": 8,
+  "clustering": {
+    "maxZoom": 1
+  },
+  "enableDownload": true,
+  "enablePdfDownload": true,
+  "layers": [
+    {
+      "id": "cycle_highways",
+      "tagRenderings": [
+        {
+          "render": "The name is <b>{name}</b>",
+          "question": "What is the name of this cycle highway?",
+          "freeform": {
+            "key": "name"
+          }
+        },
+        {
+          "render": "Referentienummer is <b>{ref}</b>",
+          "question": "What is the reference number of this cycle highway?",
+          "freeform": {
+            "key": "ref"
+          }
+        },
+        {
+          "render": "The current state of this link is {state}",
+          "question": "What is the state of this link?",
+          "freeform": {
+            "key": "state"
+          },
+          "mappings": [
+            {
+              "if": "state=proposed",
+              "then": "This is a proposed route"
+            },
+            {
+              "if": "state=temporary",
+              "then": "This is a temporary deviation"
+            },
+            {
+              "if": "state=",
+              "then": "This link is operational and signposted"
+            }
+          ]
+        },
+        {
+          "render": "This part is {_length:km}km long"
+        },
+        "website",
+        {
+          "render":"{all_tags()}" 
+        }
+      ],
+      "name": {
+        "en": "cycle highways"
+      },
+      "source": {
+        "osmTags": "cycle_network=BE-VLG:cycle_highway"
+      },
+      "minzoom": 8,
+      "title": {
+        "render": {
+          "en": "cycle highway"
+        }
+      },
+      "width": {
+        "render": "4"
+      },
+      "color": {
+        "render": "#ff7392",
+        "mappings": [
+          {
+            "if": "state=",
+            "then": "#00acfc"
+          },
+          {
+            "if": "state=temporary",
+            "then": "#00acfc"
+          }
+        ]
+      },
+      "dashArray": {
+        "render": "",
+        "mappings": [
+          {
+            "if": "state=temporary",
+            "then": "12 10"
+          }
+        ]
+      },
+      "filter": [
+        {
+          "options": [
+            {
+              "question": "Name contains 'alt'",
+              "osmTags": "name~.*[aA]lt.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "Name contains 'wenslijn'",
+              "osmTags": "name~.*[wW]enslijn.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "Name contains 'omleiding'",
+              "osmTags": "name~.*[oO]mleiding.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "Reference contains 'alt'",
+              "osmTags": "ref~.*[aA]lt.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "No filter"
+            },
+            {
+              "question": "state=proposed",
+              "osmTags": "state=proposed"
+            },
+            {
+              "question": "state=temporary",
+              "osmTags": "state=temporary"
+            },
+            {
+              "question": "state unset",
+              "osmTags": "state="
+            },
+            {
+              "question": "Other state",
+              "osmTags": {
+                "and": [
+                  "state!=",
+                  "state!=proposed",
+                  "state!=temporary"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "defaultBackgroundId": "CartoDB.Positron"
+}

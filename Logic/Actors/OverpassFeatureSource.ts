@@ -35,6 +35,8 @@ export default class OverpassFeatureSource implements FeatureSource {
     private readonly _location: UIEventSource<Loc>;
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
     private readonly _leafletMap: UIEventSource<L.Map>;
+    private readonly _interpreterUrl: UIEventSource<string>;
+    private readonly _timeout: UIEventSource<number>;
 
     /**
      * The most important layer should go first, as that one gets first pick for the questions
@@ -42,10 +44,14 @@ export default class OverpassFeatureSource implements FeatureSource {
     constructor(
         location: UIEventSource<Loc>,
         layoutToUse: UIEventSource<LayoutConfig>,
-        leafletMap: UIEventSource<L.Map>) {
+        leafletMap: UIEventSource<L.Map>,
+        interpreterUrl: UIEventSource<string>,
+        timeout: UIEventSource<number>,) {
         this._location = location;
         this._layoutToUse = layoutToUse;
         this._leafletMap = leafletMap;
+        this._interpreterUrl = interpreterUrl;
+        this._timeout = timeout;
         const self = this;
 
         this.sufficientlyZoomed = location.map(location => {
@@ -123,7 +129,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         if (filters.length + extraScripts.length === 0) {
             return undefined;
         }
-        return new Overpass(new Or(filters), extraScripts);
+        return new Overpass(new Or(filters), extraScripts, this._interpreterUrl, this._timeout);
     }
 
     private update(): void {

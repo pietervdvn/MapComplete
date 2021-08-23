@@ -14,6 +14,9 @@ export default class Translations {
         if (typeof (s) === "string") {
             return new FixedUiElement(s);
         }
+        if(typeof s === "number"){
+            return new FixedUiElement(""+s)
+        }
         return s;
     }
 

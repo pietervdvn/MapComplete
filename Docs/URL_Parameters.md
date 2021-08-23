@@ -150,6 +150,17 @@ The language to display mapcomplete in. Will be ignored in case a logged-in-user
  If true, shows some extra debugging help such as all the available tags on every object The default value is _false_
 
 
+overpassUrl
+-------------
+
+Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter The default value is _https://overpass.kumi.de/api/interpreter_
+
+
+overpassTimeout
+-----------------
+
+Set a different timeout (in seconds) for queries in overpass The default value is _60_
+
  fake-user 
 -----------
 

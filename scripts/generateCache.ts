@@ -52,7 +52,8 @@ function createOverpassObject(theme: LayoutConfig) {
     if (filters.length + extraScripts.length === 0) {
         throw "Nothing to download! The theme doesn't declare anything to download"
     }
-    return new Overpass(new Or(filters), extraScripts);
+    return new Overpass(new Or(filters), extraScripts, new UIEventSource<string>("https://overpass-api.de/api/interpreter"),
+        new UIEventSource<number>(60));
 }
 
 function rawJsonName(targetDir: string, x: number, y: number, z: number): string {

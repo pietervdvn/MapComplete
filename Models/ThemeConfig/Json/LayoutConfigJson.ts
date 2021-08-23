@@ -339,4 +339,12 @@ export interface LayoutConfigJson {
     enableDownload?: boolean;
     enablePdfDownload?: boolean;
 
+    /**
+     * Set a different overpass URL. Default: https://overpass-api.de/api/interpreter
+     */
+    overpassUrl?: string;
+    /**
+     * Set a different timeout for overpass queries - in seconds. Default: 30s
+     */
+    overpassTimeout?: number
 }

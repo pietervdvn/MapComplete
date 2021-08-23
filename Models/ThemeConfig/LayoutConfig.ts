@@ -53,6 +53,9 @@ export default class LayoutConfig {
     public readonly cacheTimeout?: number;
     public readonly units: Unit[] = []
     private readonly _official: boolean;
+    
+    public readonly overpassUrl: string;
+    public readonly overpassTimeout: number;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this._official = official;
@@ -160,7 +163,8 @@ export default class LayoutConfig {
         this.enablePdfDownload = json.enablePdfDownload ?? false;
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
-
+        this.overpassUrl = json.overpassUrl ?? "https://overpass-api.de/api/interpreter"
+        this.overpassTimeout = json.overpassTimeout ?? 30
 
     }
 

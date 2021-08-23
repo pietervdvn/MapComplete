@@ -17,7 +17,7 @@
     "nl"
   ],
   "maintainer": "MapComplete",
-  "hideFromOverview": true,
+  "hideFromOverview": false,
   "defaultBackgroundId": "CartoDB.Voyager",
   "icon": "./assets/themes/cycle_infra/cycle-infra.svg",
   "version": "0",
