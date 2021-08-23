@@ -6,7 +6,7 @@
   "hideFromOverview": true,
   "maintainer": "L'imaginaire",
   "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
-  "overpassUrl": "https://overpass.kumi.de/api/interpreter",
+  "overpassUrl": "https://overpass.kumi.systems/api/interpreter",
   "overpassTimeout": 60,
   "description": {
     "en": "This map shows cycle highways"
