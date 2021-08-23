@@ -34,7 +34,7 @@ export class DownloadPanel extends Toggle {
             .onClick(() => {
                 const geojson = FeatureSourceUtils.extractGeoJson(State.state.featurePipeline, {metadata: metaisIncluded.data})
                 const csv = GeoOperations.toCSV(geojson.features)
-
+                const name = State.state.layoutToUse.data.id;
 
                 Utils.offerContentsAsDownloadableFile(csv,
                     `MapComplete_${name}_export_${new Date().toISOString().substr(0, 19)}.csv`, {
