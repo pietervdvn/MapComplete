@@ -37,7 +37,7 @@ export class Overpass {
         }
         Utils.downloadJson(query)
             .then(json => {
-                if (json.elements === [] && (json.remarks.indexOf("runtime error") > 0)) {
+                if (json.elements === [] && ((json.remarks ?? json.remark).indexOf("runtime error") >= 0)) {
                     console.log("Timeout or other runtime error");
                     onFail("Runtime error (timeout)")
                     return;
