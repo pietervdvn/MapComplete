@@ -6,7 +6,7 @@
   "hideFromOverview": true,
   "maintainer": "L'imaginaire",
   "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
-  "overpassUrl": "https://overpass.kumi.systems/api/interpreter",
+  "#overpassUrl": "https://overpass.kumi.systems/api/interpreter",
   "overpassTimeout": 60,
   "description": {
     "en": "This map shows cycle highways"
@@ -50,8 +50,31 @@
           },
           "mappings": [
             {
-              "if": "state=proposed",
-              "then": "This is a proposed route"
+              "if": {
+                "and": [
+                  "state=proposed",
+                  "note:state="
+                ]
+              },
+              "then": "This is a proposed route which can be cycled"
+            },
+            {
+              "then": "This is a proposed route which has missing links (thus: some parts don't even have a building permit yet)",
+              "if": {
+                "and": [
+                  "state=proposed",
+                  "note:state=has_highway_no"
+                ]
+              }
+            },
+            {
+              "then": "This is a proposed route which has some links which are under construction",
+              "if": {
+                "and": [
+                  "state=proposed",
+                  "note:state=has_highway_under_construction"
+                ]
+              }
             },
             {
               "if": "state=temporary",
@@ -68,7 +91,7 @@
         },
         "website",
         {
-          "render":"{all_tags()}" 
+          "render": "{all_tags()}"
         }
       ],
       "name": {
@@ -105,6 +128,14 @@
           {
             "if": "state=temporary",
             "then": "12 10"
+          },
+          {
+            "if": "note:state=has_highway_no",
+            "then": "0 8"
+          },
+          {
+            "if": "note:state=has_highway_under_construction",
+            "then": "12 10"
           }
         ]
       },
@@ -138,6 +169,21 @@
             {
               "question": "Reference contains 'alt'",
               "osmTags": "ref~.*[aA]lt.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "No filter"
+            },
+            {
+              "question": "Has missing links",
+              "osmTags": "note:state=has_highway_no"
+            },
+            {
+              "question": "Has links which are under construction",
+              "osmTags": "note:state=has_highway_under_construction"
             }
           ]
         },
