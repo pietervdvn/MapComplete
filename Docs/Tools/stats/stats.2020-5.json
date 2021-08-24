@@ -1,0 +1,1675 @@
+{
+  "features": [
+    {
+      "id": 85964427,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T19:57:45Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85964426,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2319562,
+              51.20296
+            ],
+            [
+              3.2345334,
+              51.20296
+            ],
+            [
+              3.2345334,
+              51.21206
+            ],
+            [
+              3.2319562,
+              51.21206
+            ],
+            [
+              3.2319562,
+              51.20296
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T19:57:45Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.000023452520000011,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85964318,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2194673,
+              51.2131627
+            ],
+            [
+              3.2194673,
+              51.2131627
+            ],
+            [
+              3.2194673,
+              51.2131627
+            ],
+            [
+              3.2194673,
+              51.2131627
+            ],
+            [
+              3.2194673,
+              51.2131627
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T19:54:05Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85964229,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2194673,
+              51.2131627
+            ],
+            [
+              3.2194673,
+              51.2131627
+            ],
+            [
+              3.2194673,
+              51.2131627
+            ],
+            [
+              3.2194673,
+              51.2131627
+            ],
+            [
+              3.2194673,
+              51.2131627
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T19:50:48Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85961402,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T18:19:31Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85961401,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T18:19:31Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85961400,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T18:19:31Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85961398,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.217728,
+              51.2058585
+            ],
+            [
+              3.217728,
+              51.2058585
+            ],
+            [
+              3.217728,
+              51.2058585
+            ],
+            [
+              3.217728,
+              51.2058585
+            ],
+            [
+              3.217728,
+              51.2058585
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T18:19:26Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85959748,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.1647077,
+              51.1791624
+            ],
+            [
+              3.315736,
+              51.1791624
+            ],
+            [
+              3.315736,
+              51.3249222
+            ],
+            [
+              3.1647077,
+              51.3249222
+            ],
+            [
+              3.1647077,
+              51.1791624
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T17:32:28Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.02201385480234,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85959295,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.2300527,
+              50.7085687
+            ],
+            [
+              4.2354362,
+              50.7085687
+            ],
+            [
+              4.2354362,
+              50.713622
+            ],
+            [
+              4.2300527,
+              50.713622
+            ],
+            [
+              4.2300527,
+              50.7085687
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "joost schouppe",
+        "uid": "67832",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T17:20:28Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.0000272044405499996,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85959134,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.104352,
+              51.2756347
+            ],
+            [
+              3.1522026,
+              51.2756347
+            ],
+            [
+              3.1522026,
+              51.3071476
+            ],
+            [
+              3.104352,
+              51.3071476
+            ],
+            [
+              3.104352,
+              51.2756347
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T17:15:37Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00150791117274013,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85959077,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2483648,
+              51.2347129
+            ],
+            [
+              3.2594896,
+              51.2347129
+            ],
+            [
+              3.2594896,
+              51.2416789
+            ],
+            [
+              3.2483648,
+              51.2416789
+            ],
+            [
+              3.2483648,
+              51.2347129
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Updaten van metadata met Mapcomplete",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T17:14:00Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.0000774953567999841,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85914046,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.0405637,
+              51.1731876
+            ],
+            [
+              3.0573667,
+              51.1731876
+            ],
+            [
+              3.0573667,
+              51.1787359
+            ],
+            [
+              3.0405637,
+              51.1787359
+            ],
+            [
+              3.0405637,
+              51.1731876
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T02:09:05Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.0000932280849000179,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85912330,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.6584773,
+              51.0538256
+            ],
+            [
+              3.6890486,
+              51.0538256
+            ],
+            [
+              3.6890486,
+              51.0703779
+            ],
+            [
+              3.6584773,
+              51.0703779
+            ],
+            [
+              3.6584773,
+              51.0538256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-29T00:01:54Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.000506025328989807,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85911841,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2781905,
+              51.2568614
+            ],
+            [
+              3.2855451,
+              51.2568614
+            ],
+            [
+              3.2855451,
+              51.2621717
+            ],
+            [
+              3.2781905,
+              51.2621717
+            ],
+            [
+              3.2781905,
+              51.2568614
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T23:21:15Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.0000390551323800378,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85907088,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2483648,
+              51.2347129
+            ],
+            [
+              3.2594896,
+              51.2347129
+            ],
+            [
+              3.2594896,
+              51.2416789
+            ],
+            [
+              3.2483648,
+              51.2416789
+            ],
+            [
+              3.2483648,
+              51.2347129
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T20:04:54Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.0000774953567999841,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85906742,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2803896,
+              51.191496
+            ],
+            [
+              3.315736,
+              51.191496
+            ],
+            [
+              3.315736,
+              51.2058162
+            ],
+            [
+              3.2803896,
+              51.2058162
+            ],
+            [
+              3.2803896,
+              51.191496
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:53:31Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.000506167517280006,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85906674,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:50:58Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85906630,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:49:28Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85906563,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:47:14Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85906489,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:45:03Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85906408,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:42:43Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85906342,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:41:04Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85905687,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.257052,
+              51.1945809
+            ],
+            [
+              3.2689366,
+              51.1945809
+            ],
+            [
+              3.2689366,
+              51.2020482
+            ],
+            [
+              3.257052,
+              51.2020482
+            ],
+            [
+              3.257052,
+              51.1945809
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:18:14Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.0000887458735800229,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85905503,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2707036,
+              51.1791624
+            ],
+            [
+              3.2914513,
+              51.1791624
+            ],
+            [
+              3.2914513,
+              51.1878966
+            ],
+            [
+              3.2707036,
+              51.1878966
+            ],
+            [
+              3.2707036,
+              51.1791624
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:12:01Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.000181214561339983,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85905476,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T19:11:01Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85903433,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.1410974,
+              51.220467
+            ],
+            [
+              3.1410974,
+              51.220467
+            ],
+            [
+              3.1410974,
+              51.220467
+            ],
+            [
+              3.1410974,
+              51.220467
+            ],
+            [
+              3.1410974,
+              51.220467
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T18:11:10Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85903409,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T18:10:32Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85903300,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Toevoegen of dit natuurreservaat toegangkelijk is",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-28T18:06:58Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856178,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2197236,
+              51.2157018
+            ],
+            [
+              3.2197236,
+              51.2157018
+            ],
+            [
+              3.2197236,
+              51.2157018
+            ],
+            [
+              3.2197236,
+              51.2157018
+            ],
+            [
+              3.2197236,
+              51.2157018
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          },
+          {
+            "id": 42,
+            "name": "Invalid tag modification"
+          }
+        ],
+        "tags": [],
+        "features": [
+          {
+            "url": "node-7564216431",
+            "osm_id": 7564216431,
+            "reasons": [
+              42
+            ],
+            "version": 3,
+            "primary_tags": {}
+          }
+        ],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:48:48Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856175,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:48:37Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856166,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:48:01Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856160,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:47:30Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856151,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:46:56Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856121,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:44:46Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856110,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:43:38Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856101,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:42:51Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856094,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:42:20Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856093,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:42:10Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    },
+    {
+      "id": 85856075,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 1,
+            "name": "suspect_word"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.0.0",
+        "comment": "Testing Mapcomplete 0.0.0",
+        "comments_count": null,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2020-05-27T23:40:55Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {}
+      }
+    }
+  ]
+}

@@ -48,19 +48,22 @@ export default class ScriptUtils {
         })
     }
 
-    public static DownloadJSON(url): Promise<any> {
+    public static DownloadJSON(url, options?: {
+        headers: any
+    }): Promise<any> {
         return new Promise((resolve, reject) => {
             try {
 
+                const headers = options?.headers ?? {}
+                headers.accept = "application/json"
+                
                 const urlObj = new URL(url)
                 https.get({
                     host: urlObj.host,
                     path: urlObj.pathname + urlObj.search,
                     
                     port: urlObj.port,
-                    headers: {
-                        "accept": "application/json"
-                    }
+                    headers: headers
                 }, (res) => {
                     const parts: string[] = []
                     res.setEncoding('utf8');
