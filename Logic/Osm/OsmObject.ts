@@ -115,6 +115,7 @@ export abstract class OsmObject {
                 const rels = data.elements.map(wayInfo => {
                     const rel = new OsmRelation(wayInfo.id)
                     rel.LoadData(wayInfo)
+                    rel.SaveExtraData(wayInfo)
                     return rel
                 })
                 relsSrc.setData(rels)
@@ -496,10 +497,13 @@ export class OsmRelation extends OsmObject {
         }
 
         let tags = this.TagsXML();
-        return '    <relation id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
-            members +
-            tags +
-            '        </relation>\n';
+        let cs = ""
+        if(changesetId !== undefined){
+            cs = `changeset="${changesetId}"`
+        }
+        return `    <relation id="${this.id}" ${cs} ${this.VersionXML()}>
+${members}${tags}        </relation>
+`;
 
     }
 
