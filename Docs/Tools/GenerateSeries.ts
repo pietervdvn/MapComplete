@@ -548,6 +548,13 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         1
     )
 
+    Group.createStackedBarChartPerDay(
+        "Deletion-changesets per theme" + appliedFilterDescription,
+        allFeatures.filter(f => f.properties.delete > 0),
+        f => f.properties.metadata.theme,
+        1
+    )
+
     {
         // Contributors (unique + unique new) per day
         const contributorCountPerDay = new Group<string, string>()
@@ -601,7 +608,7 @@ new Histogram(emptyCS.map(f => f.properties.date)).keyToDate().asBar({
 }).render()
 
 
-writeFileSync("centerpoints.geojson", JSON.stringify({
+const geojson = {
     type: "FeatureCollection",
     features: allFeatures.map(f => {
         try {
@@ -610,7 +617,9 @@ writeFileSync("centerpoints.geojson", JSON.stringify({
             console.error("Could not create center point: ", e, f)
         }
     })
-}))
+}
+
+writeFileSync("centerpoints.geojson",JSON.stringify(geojson, undefined, 2) )
 
 
 createGraphs(allFeatures, "")
