@@ -10,6 +10,7 @@ import Combine from "../../UI/Base/Combine";
 export class QueryParameters {
 
     private static order: string [] = ["layout", "test", "z", "lat", "lon"];
+    private static _wasInitialized: Set<string> = new Set()
     private static knownSources = {};
     private static initialized = false;
     private static defaults = {}
@@ -91,6 +92,7 @@ export class QueryParameters {
                 const kv = param.split("=");
                 const key = decodeURIComponent(kv[0]);
                 QueryParameters.addOrder(key)
+                QueryParameters._wasInitialized.add(key)
                 const v = decodeURIComponent(kv[1]);
                 const source = new UIEventSource<string>(v);
                 source.addCallback(() => QueryParameters.Serialize())
@@ -101,6 +103,10 @@ export class QueryParameters {
         window["mapcomplete_query_parameter_overview"] = () => {
             console.log(QueryParameters.GenerateQueryParameterDocs())
         }
+    }
+    
+    public static wasInitialized(key: string) : boolean{
+        return QueryParameters._wasInitialized.has(key)
     }
 
     private static Serialize() {
