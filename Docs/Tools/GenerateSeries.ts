@@ -571,12 +571,12 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         })
         const total = new Set(allFeatures.map(f => f.properties.user)).size
         createGraph(
-            `Contributors per day${appliedFilterDescription} (${total} total contributors)`,
+            `Contributors per day${appliedFilterDescription}`,
             contributorCountPerDay
                 .asHist(true)
                 .keyToDate(true)
                 .asBar({
-                    name: "Unique contributors per day"
+                    name: `Unique contributors per day (${total} total)`
                 }),
             newContributorsPerDay
                 .asHist(true)
