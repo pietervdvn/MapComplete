@@ -53,9 +53,10 @@ export default class DirectionInput extends InputElement<string> {
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
                 .SetClass("direction-svg relative")
                  .SetStyle("z-index: 1000"),
-            map.SetClass("w-full h-full absolute top-0 left-O rounded-full overflow-hidden"),
+            map.SetClass("w-full h-full block absolute top-0 left-O overflow-hidden"),
         ])
-            .SetStyle("position:relative;display:block;width: min(100%, 25em); height: min(100% , 25em); background:white; border: 1px solid black; border-radius: 999em")
+            .SetStyle("width: min(100%, 25em); height: min(100% , 25em);")
+            .SetClass("relative block bg-white border border-black overflow-hidden rounded-full")
             .ConstructElement()
 
 
@@ -67,6 +68,7 @@ export default class DirectionInput extends InputElement<string> {
 
         this.RegisterTriggers(element)
         element.style.overflow = "hidden"
+        element.style.display = "block"
 
         return element;
     }

@@ -8,8 +8,28 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import LZString from "lz-string";
 import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
 import Combine from "./UI/Base/Combine";
+import DirectionInput from "./UI/Input/DirectionInput";
+import Loc from "./Models/Loc";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
+import Minimap from "./UI/Base/Minimap";
+import ValidatedTextField from "./UI/Input/ValidatedTextField";
 
 
+const location = new UIEventSource<Loc>({
+    zoom: 18,
+    lat: 51.2,
+    lon: 4.3
+})
+DirectionInput.constructMinimap = options =>  new Minimap(options)
+
+new DirectionInput(
+    AvailableBaseLayers.SelectBestLayerAccordingTo(location, new UIEventSource<string | string[]>("map")),
+    location
+).SetStyle("height: 250px; width: 250px")
+    .SetClass("block")
+    .AttachTo("maindiv")
+
+/*
 new VariableUiElement(Hash.hash.map(
     hash => {
         let json: {};
@@ -28,4 +48,4 @@ new VariableUiElement(Hash.hash.map(
         ]).SetClass("flex flex-col m-1")
     }
 ))
-    .AttachTo("maindiv")
+    .AttachTo("maindiv")*/

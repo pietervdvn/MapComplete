@@ -41,10 +41,6 @@ export default class LengthInput extends InputElement<string> {
     }
 
     protected InnerConstructElement(): HTMLElement {
-        const modeElement = new RadioButton([
-            new FixedInputElement("Measure", "measure"),
-            new FixedInputElement("Move", "move")
-        ])
         // @ts-ignore
         let map = undefined
         if (!Utils.runningFromConsole) {
