@@ -178,12 +178,16 @@
               "question": "No filter"
             },
             {
-              "question": "Has missing links",
+              "question": "Has missing links (note:state=has_highway_no)",
               "osmTags": "note:state=has_highway_no"
             },
             {
-              "question": "Has links which are under construction",
+              "question": "Has links which are under construction (note:state=has_highway_under_construction)",
               "osmTags": "note:state=has_highway_under_construction"
+            },
+            {
+              "question": "Has links which are proposed (note:state=has_highway_proposed)",
+              "osmTags": "note:state=has_highway_proposed"
             }
           ]
         },
