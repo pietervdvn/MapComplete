@@ -22,7 +22,7 @@
         "retrying": "La càrrega de dades ha fallat. Tornant-ho a intentar... ({count})"
     },
     "index": {
-        "#": "These texts are shown above the theme buttons when no theme is loaded",
+        "#": "",
         "intro": "MapComplete és un visor i editor d'OpenStreetMap, que et mostra informació sobre un tema específic",
         "title": "Benvingut/da a MapComplete"
     },
