@@ -1555,6 +1555,36 @@
             }
         }
     },
+    "food": {
+        "name": "Eetgelegenheden",
+        "presets": {
+            "0": {
+                "title": "restaurant",
+                "description": "Een eetgegelegenheid waar je aan tafel wordt bediend"
+            },
+            "1": {
+                "title": "fastfood-zaak",
+                "description": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt tot afwezig"
+            }
+        },
+        "title": {
+            "render": "Eetgelegenheid",
+            "mappings": {
+                "0": {
+                    "then": "Restaurant <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Fastfood-zaak <i>{name}</i>"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Wat is de naam van deze eetgelegenheid?",
+                "render": "De naam van deze eetgelegeheid is {name}"
+            }
+        }
+    },
     "ghost_bike": {
         "name": "Witte Fietsen",
         "title": {

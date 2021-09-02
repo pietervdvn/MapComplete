@@ -1,0 +1,42 @@
+[
+  {
+    "authors": [
+      "OSM Carto"
+    ],
+    "path": "fastfood.svg",
+    "license": "CC0",
+    "sources": [
+      "https://wiki.openstreetmap.org/w/images/1/1f/Fast-food-16.svg"
+    ]
+  },
+  {
+    "authors": [
+      "OSM Carto"
+    ],
+    "path": "restaurant.svg",
+    "license": "CC0",
+    "sources": [
+      "https://wiki.openstreetmap.org/w/images/b/bb/Restaurant-14.svg"
+    ]
+  },
+  {
+    "authors": [
+      "European Vegetarian Union"
+    ],
+    "path": "Vegetarian-mark.svg",
+    "license": "PD",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Vegetarian-mark.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Freepik"
+    ],
+    "path": "fries.svg",
+    "license": "CC-BY",
+    "sources": [
+      "https://www.flaticon.com/free-icon/french-fries_1144288"
+    ]
+  }
+]

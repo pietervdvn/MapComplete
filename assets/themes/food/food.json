@@ -1,0 +1,26 @@
+{
+  "id": "food",
+  "title": {
+    "nl": "Eetgelegenheden",
+    "en": "Restaurants and fast food"
+  },
+  "description": {
+    "nl": "Restaurants en fast food"
+  },
+  "language": [
+    "nl",
+    "fr",
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/layers/food/restaurant.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "food"
+  ]
+}

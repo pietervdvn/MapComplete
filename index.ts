@@ -21,6 +21,7 @@ import * as L from "leaflet";
 import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
+import Constants from "./Models/Constants";
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts
 SimpleMetaTagger.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
@@ -159,7 +160,8 @@ if (layoutFromBase64.startsWith("http")) {
     new FixedUiElement("").AttachTo("centermessage")
     State.state = new State(undefined);
     new Combine([new MoreScreen(true),
-        Translations.t.general.aboutMapcomplete.SetClass("link-underline")
+        Translations.t.general.aboutMapcomplete.SetClass("link-underline"),
+        new FixedUiElement("v"+Constants.vNumber)
     ]).SetClass("block m-5 lg:w-3/4 lg:ml-40")
         .SetStyle("pointer-events: all;")
         .AttachTo("topleft-tools");

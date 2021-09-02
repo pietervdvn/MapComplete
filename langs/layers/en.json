@@ -1499,6 +1499,28 @@
             }
         }
     },
+    "food": {
+        "name": "Restaurants and fast food",
+        "presets": {
+            "0": {
+                "title": "restaurant",
+                "description": "A formal eating place with sit-down facilities selling full meals served by waiters"
+            },
+            "1": {
+                "title": "fastfood"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Restaurant <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Fastfood <i>{name}</i>"
+                }
+            }
+        }
+    },
     "ghost_bike": {
         "name": "Ghost bikes",
         "title": {

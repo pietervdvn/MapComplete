@@ -111,9 +111,10 @@ export class Translation extends BaseUIElement {
                     rtext = date.toLocaleString();
                 } else if (el.ConstructElement === undefined) {
                     console.error("ConstructElement is not defined", el);
-                    throw "ConstructElement is not defined, you are working with a "+(typeof el)+":"+(el.constructor.name)
+                    throw "ConstructElement is not defined, you are working with a " + (typeof el) + ":" + (el.constructor.name)
+                }else if(el["translations"] !== undefined){
+                    rtext = el["translations"][lang]
                 } else {
-                    Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
                     rtext = el.ConstructElement().innerHTML;
 
                 }
@@ -126,7 +127,6 @@ export class Translation extends BaseUIElement {
             }
             newTranslations[lang] = template;
         }
-        Translation.forcedLanguage = undefined;
         return new Translation(newTranslations);
 
     }

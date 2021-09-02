@@ -256,6 +256,9 @@ export class OH {
         start?: string,
         end?: string
     } {
+        if(str === undefined){
+            return null
+        }
         str = str.trim();
         if (!str.startsWith("PH")) {
             return null;

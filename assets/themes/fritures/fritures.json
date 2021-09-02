@@ -229,7 +229,7 @@
         },
         {
           "question": {
-            "nl": "Bakt deze frituur in dierlijk  vetof plantaardig olie?",
+            "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
             "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?"
           },
           "mappings": [
@@ -266,7 +266,7 @@
           },
           "mappings": [
             {
-              "if": "bulk_purchase=yes",
+              "if": "reusable_packaging:accept=yes",
               "then": {
                 "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
                 "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste",
@@ -275,7 +275,7 @@
               }
             },
             {
-              "if": "bulk_purchase=no",
+              "if": "reusable_packaging:accept=no",
               "then": {
                 "nl": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen",
                 "en": "Bringing your own container is <b>not allowed</b>",
@@ -285,7 +285,7 @@
               }
             },
             {
-              "if": "bulk_purchase=only",
+              "if": "reusable_packaging:accept=only",
               "then": {
                 "nl": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen.",
                 "en": "You <b>must</b> bring your own container to order here.",

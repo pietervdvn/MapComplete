@@ -733,6 +733,10 @@
             }
         }
     },
+    "food": {
+        "title": "Eetgelegenheden",
+        "description": "Restaurants en fast food"
+    },
     "fritures": {
         "title": "Friturenkaart",
         "description": "Op deze kaart vind je je favoriete frituur!",

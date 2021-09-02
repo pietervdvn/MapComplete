@@ -52,11 +52,12 @@
             "intro": "Je klikte ergens waar er nog geen data is. Kies hieronder welk punt je wilt toevoegen<br/>",
             "pleaseLogin": "<a class='activate-osm-authentication'>Gelieve je aan te melden om een punt to te voegen</a>",
             "zoomInFurther": "Gelieve verder in te zoomen om een punt toe te voegen.",
-            "stillLoading": "De data wordt nog geladen. Nog even geduld en dan kan je een punt toevoegen.",
+            "stillLoading": "De data worden nog geladen. Nog even geduld en dan kan je een punt toevoegen.",
             "confirmIntro": "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "confirmButton": "Voeg hier een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
             "openLayerControl": "Open de laag-instellingen",
-            "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen"
+            "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
+            "presetInfo": "Het nieuwe punt krijgt de attributen {tags}"
         },
         "pickLanguage": "Kies je taal: ",
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
