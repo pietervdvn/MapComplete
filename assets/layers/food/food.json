@@ -84,7 +84,8 @@
         "amenity=fast_food"
       ],
       "description": {
-        "nl": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt tot afwezig"
+        "nl": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
+        "en": "A food business concentrating on fast counter-only service and take-away food"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -92,8 +93,8 @@
     },
     {
       "title": {
-        "en": "Friture",
-        "nl": "Friture"
+        "en": "fries shop",
+        "nl": "frituur"
       },
       "tags": [
         "amenity=fast_food",
@@ -141,6 +142,7 @@
   "tagRenderings": [
     "images",
     {
+      "#": "Name",
       "question": {
         "nl": "Wat is de naam van deze eetgelegenheid?"
       },
@@ -151,12 +153,175 @@
         "key": "name"
       }
     },
+    {"#": "Fastfood vs restaurant",
+      "question": {
+        "en": "What type of business is this?",
+        "nl": "Wat voor soort zaak is dit?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=fast_food",
+          "then": {
+            "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
+          }
+        },
+        {
+          "if": "amenity=restaurant",
+          "then": {
+            "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
+          }
+        }
+      ]
+    },
     "opening_hours",
     "website",
     "email",
     "phone",
-    
+    "wheelchair-access",
     {
+      "#": "Cuisine",
+      "question": {
+        "nl": "Welk soort gerechten worden hier geserveerd?",
+        "en": "Which food is served here?"
+      },
+      "render": {
+        "nl": "Deze plaats serveert vooral {cuisine}",
+        "en": "This place mostly serves {cuisine}"
+      },
+      "freeform": {
+        "key": "cuisine",
+        "addExtraTags": [
+          "fixme=Freeform tag `cuisine` used, to be doublechecked"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "cuisine=pizza",
+          "then": {
+            "en": "This is a pizzeria",
+            "nl": "Dit is een pizzeria"
+          }
+        },
+        {
+          "if": "cuisine=friture",
+          "then": {
+            "en": "This is a friture",
+            "nl": "Dit is een frituur"
+          }
+        },
+        {
+          "if": "cuisine=pasta",
+          "then": {
+            "en": "Mainly serves pasta",
+            "nl": "Dit is een pastazaak"
+          }
+        },
+        {
+          "if": "cuisine=kebab",
+          "then": {
+            "nl": "Dit is een kebabzaak"
+          }
+        },
+        {
+          "if": "cuisine=sandwich",
+          "then": {
+            "nl": "Dit is een broodjeszaak"
+          }
+        },
+        {
+          "if": "cuisine=burger",
+          "then": {
+            "nl": "Dit is een hamburgerrestaurant"
+          }
+        },
+        {
+          "if": "cuisine=sushi",
+          "then": {
+            "nl": "Dit is een sushirestaurant"
+          }
+        },
+        {
+          "if": "cuisine=coffee",
+          "then": {
+            "nl": "Dit is een koffiezaak"
+          }
+        },
+        {
+          "if": "cuisine=italian",
+          "then": {
+            "nl": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
+          }
+        },
+        {
+          "if": "cuisine=french",
+          "then": {
+            "nl": "Dit is een Frans restaurant"
+          }
+        },
+        {
+          "if": "cuisine=chinese",
+          "then": {
+            "nl": "Dit is een Chinees restaurant"
+          }
+        },
+        {
+          "if": "cuisine=greek",
+          "then": {
+            "nl": "Dit is een Grieks restaurant"
+          }
+        },
+        {
+          "if": "cuisine=indian",
+          "then": {
+            "nl": "Dit is een Indisch restaurant"
+          }
+        },
+        {
+          "if": "cuisine=turkish",
+          "then": {
+            "nl": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
+          }
+        },
+        {
+          "if": "cuisine=thai",
+          "then": {
+            "nl": "Dit is een Thaïs restaurant"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Takeaway",
+      "question": {
+        "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
+        "en": "Does this place offer takea-way?"
+      },
+      "mappings": [
+        {
+          "if": "takeaway=only",
+          "then": {
+            "en": "This is a take-away only business",
+            "nl": "Hier is enkel afhaal mogelijk"
+          }
+        },
+        {
+          "if": "takeaway=yes",
+          "then": {
+            "en": "Take-away is possible here",
+            "nl": "Eten kan hier afgehaald worden"
+          }
+        },
+        {
+          "if": "takeaway=no",
+          "then": {
+            "en": "Take-away is not possible here",
+            "nl": "Hier is geen afhaalmogelijkheid"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Vegetarion (no friture)",
       "question": {
         "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
         "en": "Does this restaurant have a vegetarian option?"
@@ -189,8 +354,8 @@
       ],
       "condition": "cuisine!=friture"
     },
-
     {
+      "#": "Vegan (no friture)",
       "question": {
         "nl": "Heeft deze eetgelegenheid een veganistische optie?"
       },
@@ -222,7 +387,6 @@
       ],
       "condition": "cuisine!=friture"
     },
-    
     {
       "question": {
         "nl": "Heeft deze frituur vegetarische snacks?",

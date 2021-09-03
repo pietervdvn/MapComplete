@@ -21,6 +21,7 @@
   "source": {
     "osmTags": "amenity=bench"
   },
+  "wayHandling": 1,
   "title": {
     "render": {
       "en": "Bench",

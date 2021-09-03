@@ -85,6 +85,58 @@
       "type": "url"
     }
   },
+  "wheelchair-access": {
+    "question": {
+      "nl": "Is deze plaats rolstoeltoegankelijk?",
+      "en": "Is this place accessible with a wheelchair?"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "wheelchair=designated"
+          ]
+        },
+        "then": {
+          "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
+          "en": "This place is specially adapated for wheelchair users"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "wheelchair=yes"
+          ]
+        },
+        "then": {
+          "nl": "Deze plaats is vlot bereikbaar met een rolstoel",
+          "en": "This place is easily reachable with a wheelchair"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "wheelchair=limited"
+          ]
+        },
+        "then": {
+          "nl": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk",
+          "en": "It is possible to reach this place in a wheelchair, but it is not easy"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "wheelchair=no"
+          ]
+        },
+        "then": {
+          "nl": "Niet rolstoeltoegankelijk",
+          "en": "This place is not reachable with a wheelchair"
+        }
+      }
+    ]
+  },
   "description": {
     "question": {
       "nl": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
