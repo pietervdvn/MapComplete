@@ -724,23 +724,6 @@
                 "render": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:Standort:fr}",
                 "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Französisch)"
             },
-            "8": {
-                "question": "Ist dieser Defibrillator mit einem Rollstuhl erreichbar?",
-                "mappings": {
-                    "0": {
-                        "then": "Dieser Defibrillator ist speziell für Rollstuhlfahrer angepasst"
-                    },
-                    "1": {
-                        "then": "Dieser Defibrillator ist mit einem Rollstuhl leicht zu erreichen"
-                    },
-                    "2": {
-                        "then": "Es ist möglich, den Defibrillator mit einem Rollstuhl zu erreichen, aber es ist nicht einfach"
-                    },
-                    "3": {
-                        "then": "Dieser Defibrillator ist mit einem Rollstuhl nicht erreichbar"
-                    }
-                }
-            },
             "9": {
                 "render": "Offizielle Identifikationsnummer des Geräts: <i>{ref}</i>",
                 "question": "Wie lautet die offizielle Identifikationsnummer des Geräts? (falls am Gerät sichtbar)"

@@ -9,6 +9,23 @@
         "website": {
             "question": "What is the website of {name}?"
         },
+        "wheelchair-access": {
+            "question": "Is this place accessible with a wheelchair?",
+            "mappings": {
+                "0": {
+                    "then": "This place is specially adapated for wheelchair users"
+                },
+                "1": {
+                    "then": "This place is easily reachable with a wheelchair"
+                },
+                "2": {
+                    "then": "It is possible to reach this place in a wheelchair, but it is not easy"
+                },
+                "3": {
+                    "then": "This place is not reachable with a wheelchair"
+                }
+            }
+        },
         "description": {
             "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
         },

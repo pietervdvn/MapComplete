@@ -1396,23 +1396,6 @@
                 "render": "<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}",
                 "question": "Please give some explanation on where the defibrillator can be found (in French)"
             },
-            "8": {
-                "question": "Is this defibrillator accessible with a wheelchair?",
-                "mappings": {
-                    "0": {
-                        "then": "This defibrillator is specially adapated for wheelchair users"
-                    },
-                    "1": {
-                        "then": "This defibrillator is easily reachable with a wheelchair"
-                    },
-                    "2": {
-                        "then": "It is possible to reach the defibrillator in a wheelchair, but it is not easy"
-                    },
-                    "3": {
-                        "then": "This defibrillator is not reachable with a wheelchair"
-                    }
-                }
-            },
             "9": {
                 "render": "Official identification number of the device: <i>{ref}</i>",
                 "question": "What is the official identification number of the device? (if visible on device)"
@@ -1507,7 +1490,11 @@
                 "description": "A formal eating place with sit-down facilities selling full meals served by waiters"
             },
             "1": {
-                "title": "fastfood"
+                "title": "fastfood",
+                "description": "A food business concentrating on fast counter-only service and take-away food"
+            },
+            "2": {
+                "title": "fries shop"
             }
         },
         "title": {
@@ -1517,6 +1504,57 @@
                 },
                 "1": {
                     "then": "Fastfood <i>{name}</i>"
+                }
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "What type of business is this?"
+            },
+            "8": {
+                "question": "Which food is served here?",
+                "render": "This place mostly serves {cuisine}",
+                "mappings": {
+                    "0": {
+                        "then": "This is a pizzeria"
+                    },
+                    "1": {
+                        "then": "This is a friture"
+                    },
+                    "2": {
+                        "then": "Mainly serves pasta"
+                    }
+                }
+            },
+            "9": {
+                "question": "Does this place offer takea-way?",
+                "mappings": {
+                    "0": {
+                        "then": "This is a take-away only business"
+                    },
+                    "1": {
+                        "then": "Take-away is possible here"
+                    },
+                    "2": {
+                        "then": "Take-away is not possible here"
+                    }
+                }
+            },
+            "10": {
+                "question": "Does this restaurant have a vegetarian option?"
+            },
+            "15": {
+                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
+                "mappings": {
+                    "0": {
+                        "then": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste"
+                    },
+                    "1": {
+                        "then": "Bringing your own container is <b>not allowed</b>"
+                    },
+                    "2": {
+                        "then": "You <b>must</b> bring your own container to order here."
+                    }
                 }
             }
         }

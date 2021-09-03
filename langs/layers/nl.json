@@ -1452,23 +1452,6 @@
                 "render": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}",
                 "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Frans)"
             },
-            "8": {
-                "question": "Is deze defibrillator rolstoeltoegankelijk?",
-                "mappings": {
-                    "0": {
-                        "then": "Deze defibrillator is speciaal aangepast voor gebruikers van een rolstoel"
-                    },
-                    "1": {
-                        "then": "Deze defibrillator is vlot bereikbaar met een rolstoel"
-                    },
-                    "2": {
-                        "then": "Je kan er raken met een rolstoel, maar het is niet makkelijk"
-                    },
-                    "3": {
-                        "then": "Niet rolstoeltoegankelijk"
-                    }
-                }
-            },
             "9": {
                 "render": "Officieel identificatienummer van het toestel: <i>{ref}</i>",
                 "question": "Wat is het officieel identificatienummer van het toestel? (indien zichtbaar op toestel)"
@@ -1564,7 +1547,11 @@
             },
             "1": {
                 "title": "fastfood-zaak",
-                "description": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt tot afwezig"
+                "description": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)"
+            },
+            "2": {
+                "title": "frituur",
+                "description": "Een fastfood-zaak waar je frieten koopt"
             }
         },
         "title": {
@@ -1582,6 +1569,169 @@
             "1": {
                 "question": "Wat is de naam van deze eetgelegenheid?",
                 "render": "De naam van deze eetgelegeheid is {name}"
+            },
+            "2": {
+                "question": "Wat voor soort zaak is dit?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
+                    },
+                    "1": {
+                        "then": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
+                    }
+                }
+            },
+            "8": {
+                "question": "Welk soort gerechten worden hier geserveerd?",
+                "render": "Deze plaats serveert vooral {cuisine}",
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een pizzeria"
+                    },
+                    "1": {
+                        "then": "Dit is een frituur"
+                    },
+                    "2": {
+                        "then": "Dit is een pastazaak"
+                    },
+                    "3": {
+                        "then": "Dit is een kebabzaak"
+                    },
+                    "4": {
+                        "then": "Dit is een broodjeszaak"
+                    },
+                    "5": {
+                        "then": "Dit is een hamburgerrestaurant"
+                    },
+                    "6": {
+                        "then": "Dit is een sushirestaurant"
+                    },
+                    "7": {
+                        "then": "Dit is een koffiezaak"
+                    },
+                    "8": {
+                        "then": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
+                    },
+                    "9": {
+                        "then": "Dit is een Frans restaurant"
+                    },
+                    "10": {
+                        "then": "Dit is een Chinees restaurant"
+                    },
+                    "11": {
+                        "then": "Dit is een Grieks restaurant"
+                    },
+                    "12": {
+                        "then": "Dit is een Indisch restaurant"
+                    },
+                    "13": {
+                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
+                    },
+                    "14": {
+                        "then": "Dit is een Thaïs restaurant"
+                    }
+                }
+            },
+            "9": {
+                "question": "Biedt deze zaak een afhaalmogelijkheid aan?",
+                "mappings": {
+                    "0": {
+                        "then": "Hier is enkel afhaal mogelijk"
+                    },
+                    "1": {
+                        "then": "Eten kan hier afgehaald worden"
+                    },
+                    "2": {
+                        "then": "Hier is geen afhaalmogelijkheid"
+                    }
+                }
+            },
+            "10": {
+                "question": "Heeft deze eetgelegenheid een vegetarische optie?",
+                "mappings": {
+                    "0": {
+                        "then": "Geen vegetarische opties beschikbaar"
+                    },
+                    "1": {
+                        "then": "Beperkte vegetarische opties zijn beschikbaar"
+                    },
+                    "2": {
+                        "then": "Vegetarische opties zijn beschikbaar"
+                    },
+                    "3": {
+                        "then": "Enkel vegetarische opties zijn beschikbaar"
+                    }
+                }
+            },
+            "11": {
+                "question": "Heeft deze eetgelegenheid een veganistische optie?",
+                "mappings": {
+                    "0": {
+                        "then": "Geen veganistische opties beschikbaar"
+                    },
+                    "1": {
+                        "then": "Beperkte veganistische opties zijn beschikbaar"
+                    },
+                    "2": {
+                        "then": "Veganistische opties zijn beschikbaar"
+                    },
+                    "3": {
+                        "then": "Enkel veganistische opties zijn beschikbaar"
+                    }
+                }
+            },
+            "12": {
+                "question": "Heeft deze frituur vegetarische snacks?",
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn vegetarische snacks aanwezig"
+                    },
+                    "1": {
+                        "then": "Slechts enkele vegetarische snacks"
+                    },
+                    "2": {
+                        "then": "Geen vegetarische snacks beschikbaar"
+                    }
+                }
+            },
+            "13": {
+                "question": "Heeft deze frituur veganistische snacks?",
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn veganistische snacks aanwezig"
+                    },
+                    "1": {
+                        "then": "Slechts enkele veganistische snacks"
+                    },
+                    "2": {
+                        "then": "Geen veganistische snacks beschikbaar"
+                    }
+                }
+            },
+            "14": {
+                "question": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
+                "mappings": {
+                    "0": {
+                        "then": "Plantaardige olie"
+                    },
+                    "1": {
+                        "then": "Dierlijk vet"
+                    }
+                }
+            },
+            "15": {
+                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
+                "mappings": {
+                    "0": {
+                        "then": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken"
+                    },
+                    "1": {
+                        "then": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen"
+                    },
+                    "2": {
+                        "then": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen."
+                    }
+                }
             }
         }
     },

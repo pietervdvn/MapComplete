@@ -9,6 +9,23 @@
         "website": {
             "question": "Wat is de website van {name}?"
         },
+        "wheelchair-access": {
+            "question": "Is deze plaats rolstoeltoegankelijk?",
+            "mappings": {
+                "0": {
+                    "then": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel"
+                },
+                "1": {
+                    "then": "Deze plaats is vlot bereikbaar met een rolstoel"
+                },
+                "2": {
+                    "then": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk"
+                },
+                "3": {
+                    "then": "Niet rolstoeltoegankelijk"
+                }
+            }
+        },
         "description": {
             "question": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
         },

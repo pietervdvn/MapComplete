@@ -588,6 +588,17 @@
             }
         }
     },
+    "food": {
+        "tagRenderings": {
+            "15": {
+                "mappings": {
+                    "1": {
+                        "then": "Приносить свою тару <b>не разрешено</b>"
+                    }
+                }
+            }
+        }
+    },
     "ghost_bike": {
         "tagRenderings": {
             "2": {

@@ -776,23 +776,6 @@
                 "render": "<i>Informazioni supplementari circa la posizione (in francese):</i><br/>{defibrillator:location:fr}",
                 "question": "Indica più precisamente dove si trova il defibrillatore (in francese)"
             },
-            "8": {
-                "question": "Questo defibrillatore è accessibile con la sedia a rotelle?",
-                "mappings": {
-                    "0": {
-                        "then": "Questo defibrillatore è stato appositamente adattato per gli utenti con la sedia a rotelle"
-                    },
-                    "1": {
-                        "then": "Questo defibrillatore è facilmente raggiungibile con un sedia a rotelle"
-                    },
-                    "2": {
-                        "then": "È possibile raggiungere questo defibrillatore con la sedia a rotelle ma non è semplice"
-                    },
-                    "3": {
-                        "then": "Questo defibrillatore non è raggiungibile con la sedia a rotelle"
-                    }
-                }
-            },
             "9": {
                 "render": "Numero identificativo ufficiale di questo dispositivo:<i>{ref}</i>",
                 "question": "Qual è il numero identificativo ufficiale di questo dispositivo? (se visibile sul dispositivo)"

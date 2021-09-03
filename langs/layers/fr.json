@@ -776,23 +776,6 @@
                 "render": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location}",
                 "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)"
             },
-            "8": {
-                "question": "Ce défibrillatuer est-il accessible en fauteuil roulant ?",
-                "mappings": {
-                    "0": {
-                        "then": "Ce défibrillateur est spécialement adapté aux utilisateurs en fauteuil roulant"
-                    },
-                    "1": {
-                        "then": "Ce défibrillateur est facilement atteignable en fauteuil roulant"
-                    },
-                    "2": {
-                        "then": "Il est possible d'atteindre ce défibrillateur en fauteuil roulant, mais ce n'est pas facile"
-                    },
-                    "3": {
-                        "then": "Ce défibrillateur n'est pas atteignable en fauteuil roulant"
-                    }
-                }
-            },
             "9": {
                 "render": "Numéro d'identification officiel de ce dispositif : <i>{ref}</i>",
                 "question": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)"
@@ -876,6 +859,63 @@
             },
             "3": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres a>"
+            }
+        }
+    },
+    "food": {
+        "tagRenderings": {
+            "12": {
+                "question": "Cette friterie est-elle équipée de snacks végétariens ?",
+                "mappings": {
+                    "0": {
+                        "then": "Des collations végétariennes sont disponibles"
+                    },
+                    "1": {
+                        "then": "Quelques snacks végétariens seulement"
+                    },
+                    "2": {
+                        "then": "Pas d'en-cas végétariens disponibles"
+                    }
+                }
+            },
+            "13": {
+                "question": "Cette friterie est-elle équipée de snacks végétaliens ?",
+                "mappings": {
+                    "0": {
+                        "then": "Des collations végétaliens sont disponibles"
+                    },
+                    "1": {
+                        "then": "Quelques snacks végétaliens seulement"
+                    },
+                    "2": {
+                        "then": "Pas d'en-cas végétaliens disponibles"
+                    }
+                }
+            },
+            "14": {
+                "question": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?",
+                "mappings": {
+                    "0": {
+                        "then": "Huile végétale"
+                    },
+                    "1": {
+                        "then": "Graisse animale"
+                    }
+                }
+            },
+            "15": {
+                "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
+                "mappings": {
+                    "0": {
+                        "then": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets"
+                    },
+                    "1": {
+                        "then": "Apporter ses propres contenants <b>n’est pas permis</b>"
+                    },
+                    "2": {
+                        "then": "Il est <b>obligatoire</b> d’apporter ses propres contenants"
+                    }
+                }
             }
         }
     },

@@ -796,7 +796,7 @@
                         }
                     },
                     "7": {
-                        "question": "Bakt deze frituur in dierlijk  vetof plantaardig olie?",
+                        "question": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
                         "mappings": {
                             "0": {
                                 "then": "Plantaardige olie"
