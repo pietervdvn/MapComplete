@@ -1,10 +1,10 @@
 import BaseUIElement from "../BaseUIElement";
 import * as L from "leaflet";
+import {Map} from "leaflet";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
-import {Map} from "leaflet";
 import {Utils} from "../../Utils";
 
 export default class Minimap extends BaseUIElement {
