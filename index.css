@@ -320,7 +320,6 @@ li::marker {
     position: absolute;
     z-index: 5000;
     transition: all 500ms linear;
-    pointer-events: none;
     left: 0;
     right: 0;
 }

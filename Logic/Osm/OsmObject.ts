@@ -292,7 +292,7 @@ export abstract class OsmObject {
                 const element = data.elements.pop();
 
                 let nodes = []
-                if (data.elements.length > 2) {
+                if (self.type === "way" && data.elements.length >= 0) {
                     nodes = OsmObject.ParseObjects(data.elements)
                 }
 
@@ -445,8 +445,8 @@ export class OsmWay extends OsmObject {
             }
             const cp = node.centerpoint();
             this.coordinates.push(cp);
-            latSum = cp[0]
-            lonSum = cp[1]
+            latSum += cp[0]
+            lonSum += cp[1]
         }
         let count = this.coordinates.length;
         this.lat = latSum / count;

@@ -112,8 +112,9 @@ export class Translation extends BaseUIElement {
                 } else if (el.ConstructElement === undefined) {
                     console.error("ConstructElement is not defined", el);
                     throw "ConstructElement is not defined, you are working with a " + (typeof el) + ":" + (el.constructor.name)
-                }else if(el["translations"] !== undefined){
-                    rtext = el["translations"][lang]
+                }else if(el["textFor"] !== undefined){
+                    // @ts-ignore
+                    rtext = el.textFor(lang)
                 } else {
                     rtext = el.ConstructElement().innerHTML;
 

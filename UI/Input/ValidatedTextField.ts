@@ -95,7 +95,7 @@ export default class ValidatedTextField {
                     )
                 }
                 const di = new DirectionInput(options.mapBackgroundLayer, location, value)
-                di.SetStyle("height: 20rem;");
+                di.SetStyle("max-width: 25rem;");
 
                 return di;
             },
