@@ -1,0 +1,22 @@
+[
+  {
+    "path": "glider.svg",
+    "license": "CC0",
+    "authors": [
+      "Bryan.burgers"
+    ],
+    "sources": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/02/Game_of_life_glider.svg"
+    ]
+  },
+  {
+    "path": "led.png",
+    "license": "CC0",
+    "authors": [
+      "Tommaso.sansone91"
+    ],
+    "sources": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/2a/Led_light_bulb_-_led_lamp_2.png"
+    ]
+  }
+]
