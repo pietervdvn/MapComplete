@@ -896,6 +896,83 @@
         "title": "Ghost bikes",
         "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account."
     },
+    "hackerspaces": {
+        "title": "Hackerspaces",
+        "shortDescription": "A map of hackerspaces",
+        "description": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
+        "layers": {
+            "0": {
+                "name": "Hackerspace",
+                "title": {
+                    "render": "Hackerspace",
+                    "mappings": {
+                        "0": {
+                            "then": " {name}"
+                        }
+                    }
+                },
+                "description": "Hackerspace",
+                "tagRenderings": {
+                    "0": {
+                        "question": "Is this a hackerspace or a makerspace?",
+                        "mappings": {
+                            "0": {
+                                "then": "This is a makerspace"
+                            },
+                            "1": {
+                                "then": "This is a traditional (software oriented) hackerspace"
+                            }
+                        }
+                    },
+                    "1": {
+                        "question": "What is the name of this hackerspace?",
+                        "render": "This hackerspace is named <b>{name}</b>"
+                    },
+                    "5": {
+                        "question": "When is this hackerspace opened?",
+                        "render": "{opening_hours_table()}",
+                        "mappings": {
+                            "0": {
+                                "then": "Opened 24/7"
+                            }
+                        }
+                    },
+                    "7": {
+                        "question": "Does this hackerspace serve Club Mate?",
+                        "mappings": {
+                            "0": {
+                                "then": "This hackerspace serves club mate"
+                            },
+                            "1": {
+                                "then": "This hackerspace is not worthy of the name hackerspace as it does not serve club mate"
+                            }
+                        }
+                    },
+                    "8": {
+                        "render": "This hackerspace was founded at {start_date}",
+                        "question": "When was this hackerspace founded?"
+                    }
+                },
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/themes/hackerspaces/led.png"
+                        }
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Hackerspace",
+                        "description": "A hackerspace is an area where people interested in software gather"
+                    },
+                    "1": {
+                        "title": "Makerspace",
+                        "description": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ..."
+                    }
+                }
+            }
+        }
+    },
     "hailhydrant": {
         "title": "Hydrants, Extinguishers, Fire stations, and Ambulance stations.",
         "shortDescription": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",

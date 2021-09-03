@@ -50,6 +50,64 @@
       "tagRenderings": [
         {
           "question": {
+            "en": "Is this a hackerspace or a makerspace?"
+          },
+          "mappings": [
+            {
+              "if": "hackerspace=makerspace",
+              "then": {
+                "en": "This is a makerspace"
+              }
+            },
+            {
+              "if": "hackerspace=",
+              "then": {
+                "en": "This is a traditional (software oriented) hackerspace"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "What is the name of this hackerspace?"
+          },
+          "render": {
+            "en": "This hackerspace is named <b>{name}</b>"
+          },
+          "freeform": {
+            "key": "name"
+          }
+        },
+        "website",
+        "email",
+        "phone",
+        {
+          "question": {
+            "en": "When is this hackerspace opened?"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours"
+          },
+          "render": {
+            "en": "{opening_hours_table()}"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "opening_hours=24/7"
+                ]
+              },
+              "then": {
+                "en": "Opened 24/7"
+              }
+            }
+          ]
+        },
+        "wheelchair-access",
+        {
+          "question": {
             "en": "Does this hackerspace serve Club Mate?"
           },
           "mappings": [
@@ -86,30 +144,6 @@
             "key": "start_date",
             "type": "date"
           }
-        },
-        {
-          "question": {
-            "en": "When is this hackerspace opened?"
-          },
-          "freeform": {
-            "key": "opening_hours",
-            "type": "opening_hours"
-          },
-          "render": {
-            "en": "{opening_hours_table()}"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "opening_hours=24/7"
-                ]
-              },
-              "then": {
-                "en": "Opened 24/7"
-              }
-            }
-          ]
         }
       ],
       "icon": {
