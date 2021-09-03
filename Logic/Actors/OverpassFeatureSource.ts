@@ -73,6 +73,9 @@ export default class OverpassFeatureSource implements FeatureSource {
         location.addCallback(() => {
             self.update()
         });
+        leafletMap.addCallbackAndRunD(_ => {
+            self.update();
+        })
     }
 
     public ForceRefresh() {
@@ -143,7 +146,11 @@ export default class OverpassFeatureSource implements FeatureSource {
             return;
         }
 
-        const bounds = this._leafletMap.data.getBounds();
+        const bounds = this._leafletMap.data?.getBounds();
+        if(bounds === undefined){
+            console.log("Leaflet map not yet initialized; retrying later")
+            return;
+        }
 
         const diff = this._layoutToUse.data.widenFactor;
 

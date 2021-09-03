@@ -1,6 +1,5 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Toggle from "./UI/Input/Toggle";
-import {Basemap} from "./UI/BigComponents/Basemap";
 import State from "./State";
 import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
 import {UIEventSource} from "./Logic/UIEventSource";
@@ -38,6 +37,7 @@ import RightControls from "./UI/BigComponents/RightControls";
 import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "./Models/ThemeConfig/LayerConfig";
+import Minimap from "./UI/Base/Minimap";
 
 export class InitUiElements {
     static InitAll(
@@ -296,7 +296,7 @@ export class InitUiElements {
             Hash.hash.data == "welcome"
         );
     }
-    
+
     private static InitBaseMap() {
         State.state.availableBackgroundLayers =
             AvailableBaseLayers.AvailableLayersAt(State.state.locationControl);
@@ -334,14 +334,15 @@ export class InitUiElements {
             State.state.leafletMap
         );
 
-        const bm = new Basemap(
-            "leafletDiv",
-            State.state.locationControl,
-            State.state.backgroundLayer,
-            State.state.LastClickLocation,
-            attr
-        );
-        State.state.leafletMap.setData(bm.map);
+        new Minimap({
+            background: State.state.backgroundLayer,
+            location: State.state.locationControl,
+            leafletMap: State.state.leafletMap,
+            attribution: attr,
+            lastClickLocation: State.state.LastClickLocation
+        }).SetClass("w-full h-full")
+            .AttachTo("leafletDiv")
+
         const layout = State.state.layoutToUse.data;
         if (layout.lockLocation) {
             if (layout.lockLocation === true) {
@@ -360,8 +361,11 @@ export class InitUiElements {
                 ];
             }
             console.warn("Locking the bounds to ", layout.lockLocation);
-            bm.map.setMaxBounds(layout.lockLocation);
-            bm.map.setMinZoom(layout.startZoom);
+            State.state.leafletMap.addCallbackAndRunD(map => {
+                // @ts-ignore
+                map.setMaxBounds(layout.lockLocation);
+                map.setMinZoom(layout.startZoom);
+            })
         }
     }
 
