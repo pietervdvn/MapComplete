@@ -198,7 +198,7 @@ interface PlotSpec {
 function createGraph(
     title: string,
     ...options: PlotSpec[]) {
-    const process = exec("python GenPlot.py \"graphs/" + title + "\"", ((error, stdout, stderr) => {
+    const process = exec("python3 GenPlot.py \"graphs/" + title + "\"", ((error, stdout, stderr) => {
         console.log("Python: ", stdout)
         if (error !== null) {
             console.error(error)
@@ -571,12 +571,12 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         })
         const total = new Set(allFeatures.map(f => f.properties.user)).size
         createGraph(
-            `Contributors per day${appliedFilterDescription} (${total} total contributors)`,
+            `Contributors per day${appliedFilterDescription}`,
             contributorCountPerDay
                 .asHist(true)
                 .keyToDate(true)
                 .asBar({
-                    name: "Unique contributors per day"
+                    name: `Unique contributors per day (${total} total contributors)`
                 }),
             newContributorsPerDay
                 .asHist(true)
