@@ -101,7 +101,7 @@
             {
               "if": {
                 "and": [
-                  "addr:housenumber:=",
+                  "addr:housenumber=",
                   "not:addr:housenumber=yes",
                   "fixme="
                 ]

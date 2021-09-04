@@ -25,6 +25,9 @@ class LayerOverviewUtils {
         const themeFiles: LayoutConfigJson[] = ScriptUtils.getThemeFiles().map(x => x.parsed);
 
         console.log("Discovered", layerFiles.length, "layers and", themeFiles.length, "themes\n")
+        if (layerFiles.length + themeFiles.length === 0) {
+            throw "Panic: no themes and layers loaded!"
+        }
         return {
             layers: layerFiles,
             themes: themeFiles
@@ -56,10 +59,10 @@ class LayerOverviewUtils {
             if (path != undefined && path.indexOf(expected) < 0) {
                 errorCount.push("Layer is in an incorrect place. The path is " + path + ", but expected " + expected)
             }
-            if(layerJson["hideUnderlayingFeaturesMinPercentage"] !== undefined){
-                errorCount.push("Layer "+layer.id+" contains an old 'hideUnderlayingFeaturesMinPercentage'")
-            }            
-            
+            if (layerJson["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
+                errorCount.push("Layer " + layer.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'")
+            }
+
 
             for (const image of images) {
                 if (image.indexOf("{") >= 0) {
@@ -146,11 +149,11 @@ class LayerOverviewUtils {
                     themeErrorCount.push("Theme ids should be in lowercase, but it is " + theme.id)
                 }
                 let filename = themePath.substring(themePath.lastIndexOf("/") + 1, themePath.length - 5)
-                if(theme.id !== filename){
-                    themeErrorCount.push("Theme ids should be the same as the name.json, but we got id: " + theme.id + " and filename "+filename+" ("+themePath+")")
+                if (theme.id !== filename) {
+                    themeErrorCount.push("Theme ids should be the same as the name.json, but we got id: " + theme.id + " and filename " + filename + " (" + themePath + ")")
                 }
-            
-            
+
+
             } catch (e) {
                 themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
             }

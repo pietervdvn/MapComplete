@@ -235,7 +235,7 @@ function MergeTranslation(source: any, target: any, language: string, context: s
             }
 
             if (typeof targetV === "string") {
-                throw `At context ${context}: Could not add a translation. The target object has a string at the given path, whereas the translation contains an object.\n    String at target: ${targetV}\n    Object at translation source: ${JSON.stringify(sourceV)}`
+                throw `At context ${context}: Could not add a translation in language ${language}. The target object has a string at the given path, whereas the translation contains an object.\n    String at target: ${targetV}\n    Object at translation source: ${JSON.stringify(sourceV)}`
             }
 
             targetV[language] = sourceV;
