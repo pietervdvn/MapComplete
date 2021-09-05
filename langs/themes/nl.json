@@ -8,8 +8,8 @@
         "description": "Op deze kaart kan je informatie over AEDs vinden en verbeteren + een export van de brugse defibrillatoren"
     },
     "artwork": {
-        "title": "Kunstwerkenkaart",
-        "description": "Welkom op de Open Kunstwerken Kaart",
+        "title": "Open kunstwerken-kaart",
+        "description": "Welkom op de open kunstwerken-kaart, een kaart van standbeelden, bustes, graffiti en andere kunstwerken over de hele wereld",
         "layers": {
             "0": {
                 "name": "Kunstwerken",
@@ -71,15 +71,15 @@
                         }
                     },
                     "2": {
-                        "question": "Welke artist creëerde dit kunstwerk?",
+                        "question": "Welke kunstenaar creëerde dit kunstwerk?",
                         "render": "Gecreëerd door {artist_name}"
                     },
                     "3": {
-                        "question": "Op welke website kan men meer informatie vinden over dit kunstwerk?",
+                        "question": "Is er een website met meer informatie over dit kunstwerk?",
                         "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
                     },
                     "4": {
-                        "question": "Welk Wikidata-item beschrijft dit kunstwerk?",
+                        "question": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
                         "render": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
                 }
@@ -88,8 +88,8 @@
     },
     "benches": {
         "title": "Zitbanken",
-        "shortDescription": "Een kaart met zitbanken",
-        "description": "Deze kaart toont alle zitbanken die in OpenStreetMap gekend zijn: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account can je informatie verbeteren en nieuwe zitbanken in toevoegen."
+        "shortDescription": "Een kaart van zitbanken",
+        "description": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account kan je informatie verbeteren en nieuwe zitbanken toevoegen."
     },
     "bicyclelib": {
         "title": "Fietsbibliotheken",
@@ -97,11 +97,11 @@
     },
     "bike_monitoring_stations": {
         "title": "Fietstelstations",
-        "shortDescription": "Fietstelstations met live data van Brussels Mobiliteit",
+        "shortDescription": "Fietstelstations met live data van Brussel Mobiliteit",
         "description": "Dit thema toont fietstelstations met live data"
     },
     "bookcases": {
-        "title": "Open Boekenruilkastenkaart",
+        "title": "Open boekenruilkasten-kaart",
         "description": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren"
     },
     "buurtnatuur": {
@@ -241,7 +241,7 @@
     "campersite": {
         "title": "Kampeersite",
         "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
-        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslaan en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
+        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslagen en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
         "layers": {
             "0": {
                 "name": "Camperplaatsen",
@@ -308,15 +308,19 @@
                                 "then": "eVgo"
                             }
                         }
+                    },
+                    "5": {
+                        "question": "Wanneer is dit oplaadstation open?"
                     }
                 }
             }
-        }
+        },
+        "description": "Op deze open kaart kan men informatie vinden en toevoegen over oplaadstations"
     },
     "climbing": {
-        "title": "Open Klimkaart",
+        "title": "Open klimkaart",
         "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
-        "descriptionTail": "De Open Klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
+        "descriptionTail": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
         "layers": {
             "0": {
                 "name": "Klimclub",
@@ -588,7 +592,7 @@
     "cyclestreets": {
         "title": "Fietsstraten",
         "shortDescription": "Een kaart met alle gekende fietsstraten",
-        "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voortuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.",
+        "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
         "roamingRenderings": {
             "0": {
                 "question": "Is deze straat een fietsstraat?",
