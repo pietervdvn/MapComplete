@@ -1,3 +1,4 @@
+
 # Available types for text fields
 
 The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them

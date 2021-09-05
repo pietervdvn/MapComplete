@@ -3,39 +3,36 @@
   "title": {
     "en": "Charging stations",
     "id": "Stasiun pengisian daya",
-    "ru": "Зарядные станции",
+    "it": "Stazioni di ricarica",
     "ja": "充電ステーション",
     "zh_Hant": "充電站",
     "it": "Stazioni di ricarica",
-    "nl": "Oplaadpunten",
-    "fr": "Station de recharge"
+    "nl": "Oplaadpunten"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
-    "ru": "Карта зарядных станций по всему миру",
+    "it": "Una mappa mondiale delle stazioni di ricarica",
     "ja": "充電ステーションの世界地図",
     "zh_Hant": "全世界的充電站地圖",
     "it": "Una mappa mondiale delle stazioni di ricarica",
-    "nl": "Een wereldwijde kaart van oplaadpunten",
-    "fr": "Carte mondiale de stations de recharge"
+    "nl": "Een wereldwijde kaart van oplaadpunten"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
-    "ru": "На этой карте вы можно найти и отметить информацию о зарядных станциях",
-    "ja": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます",
-    "zh_Hant": "在這份開放地圖上，你可以尋找與標示充電站的資訊",
     "it": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni",
-    "fr": "Cette carte indique et permet d’indiquer des informations sur les stations de recharge"
+    "ja": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます",
+    "ru": "На этой карте вы можно найти и отметить информацию о зарядных станциях",
+    "zh_Hant": "在這份開放地圖上，你可以尋找與標示充電站的資訊"
   },
   "language": [
     "en",
     "id",
-    "ru",
+    "it",
     "ja",
+    "ru",
     "zh_Hant",
     "it",
     "nl",
-    "fr",
     "nb_NO"
   ],
   "maintainer": "",
@@ -46,335 +43,9 @@
   "startZoom": 1,
   "widenFactor": 0.05,
   "socialImage": "",
+  "defaultBackgroundId": "CartoDB.Voyager",
   "layers": [
-    {
-      "id": "charging_stations",
-      "name": {
-        "en": "Charging stations",
-        "ru": "Зарядные станции",
-        "ja": "充電ステーション",
-        "zh_Hant": "充電站",
-        "nb_NO": "Ladestasjoner",
-        "it": "Stazioni di ricarica",
-        "nl": "Oplaadpunten",
-        "fr": "Station de recharge"
-      },
-      "minzoom": 10,
-      "source": {
-        "osmTags": {
-          "and": [
-            "amenity=charging_station"
-          ]
-        }
-      },
-      "title": {
-        "render": {
-          "en": "Charging station",
-          "ru": "Зарядная станция",
-          "ja": "充電ステーション",
-          "zh_Hant": "充電站",
-          "nb_NO": "Ladestasjon",
-          "it": "Stazione di ricarica",
-          "nl": "Oplaadpunt",
-          "fr": "Station de recharge"
-        }
-      },
-      "description": {
-        "en": "A charging station",
-        "ru": "Зарядная станция",
-        "ja": "充電ステーション",
-        "zh_Hant": "充電站",
-        "nb_NO": "En ladestasjon",
-        "it": "Una stazione di ricarica",
-        "nl": "Een oplaadpunt",
-        "fr": "Une station de recharge"
-      },
-      "tagRenderings": [
-        "images",
-        {
-          "#": "Type",
-          "question": "Is this charging station meant for cars or bicycles?",
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "motorcar=yes",
-                  "bicycle=yes"
-                ]
-              },
-              "then": "This is a charging station for <b>both bicycles and cars</b>"
-            },
-            {
-              "if": {
-                "and": [
-                  "motorcar=",
-                  "car=",
-                  "bicycle=yes"
-                ]
-              },
-              "then": "This is a charging station exclusively for <b>bicycles</b>"
-            },
-            {
-              "if": {
-                "and": [
-                  "motorcar=yes",
-                  "car=",
-                  "bicycle="
-                ]
-              },
-              "then": "This is a charging station exclusively for <b>electric cars and similar vehicles</b>"
-            },
-            {
-              "if": {
-                "and": [
-                  "car=yes",
-                  "bicycle="
-                ]
-              },
-              "then": "This is a charging station exclusively for <b>electric cars</b>",
-              "hideInAnswer": true
-            },
-            {
-              "if": {
-                "and": [
-                  "car=yes",
-                  "bicycle=yes"
-                ]
-              },
-              "then": "This is a charging station for <b>both electric cars and bicycles</b>",
-              "hideInAnswer": true
-            }
-          ]
-        },
-        {
-          "#": "capacity",
-          "render": "{capacity} vehicles can be charged here at the same time",
-          "question": "How much vehicles can be charged here at the same time?",
-          "freeform": {
-            "key": "capacity",
-            "type": "pnat"
-          }
-        },
-        {
-          "#": "Authentication",
-          "multiAnswer": true,
-          "mappings": [
-            {
-              "if": "authentication:membership_card=yes",
-              "then": "Authentication by a membership card"
-            },
-            {
-              "if": "authentication:app=yes",
-              "then": "Authentication by an app"
-            },
-            {
-              "if": "authentication:phone_call=yes",
-              "then": "Authentication via phone call is available"
-            },
-            {
-              "if": "authentication:short_message=yes",
-              "then": "Authentication via phone call is available"
-            },
-            {
-              "if": "authentication:nfc=yes",
-              "then": "Authentication via NFC is available"
-            },
-            {
-              "if": "authentication:money_card=yes",
-              "then": "Authentication via Money Card is available"
-            },
-            {
-              "if": "authentication:debig=yes",
-              "then": "Authentication via debit card is available"
-            },
-            {
-              "if": "authentication:none=yes",
-              "then": "No authentication is needed"
-            }
-          ]
-        },
-        {
-          "#": "Auth phone",
-          "render": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
-          "freeform": {
-            "key": "authentication:phone_call:number",
-            "type": "phone"
-          },
-          "condition": {
-            "or": [
-              "authentication:phone_call=yes",
-              "authentication:short_message=yes"
-            ]
-          }
-        },
-        {
-          "#": "OH",
-          "render": "{opening_hours_table(opening_hours)}",
-          "freeform": {
-            "key": "opening_hours",
-            "type": "opening_hours"
-          },
-          "question": {
-            "en": "When is this charging station opened?",
-            "ru": "В какое время работает эта зарядная станция?",
-            "ja": "この充電ステーションはいつオープンしますか?",
-            "zh_Hant": "何時是充電站開放使用的時間？",
-            "nb_NO": "Når åpnet denne ladestasjonen?",
-            "it": "Quali sono gli orari di apertura di questa stazione di ricarica?",
-            "fr": "Quand cette station a-t’elle été ouverte ?"
-          },
-          "mappings": [
-            {
-              "if": "opening_hours=24/7",
-              "then": "24/7 opened (including holidays)"
-            }
-          ]
-        },
-        {
-          "#": "Network",
-          "render": {
-            "en": "{network}",
-            "ru": "{network}",
-            "ja": "{network}",
-            "zh_Hant": "{network}",
-            "nb_NO": "{network}",
-            "it": "{network}",
-            "nl": "{network}",
-            "fr": "{network}"
-          },
-          "question": {
-            "en": "What network of this charging station under?",
-            "ru": "К какой сети относится эта зарядная станция?",
-            "ja": "この充電ステーションの運営チェーンはどこですか?",
-            "zh_Hant": "充電站所屬的網路是？",
-            "it": "A quale rete appartiene questa stazione di ricarica?",
-            "fr": "De quel réseau fait-elle partie ?"
-          },
-          "freeform": {
-            "key": "network"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "no:network=yes"
-                ]
-              },
-              "then": {
-                "en": "Not part of a bigger network",
-                "ru": "Не является частью более крупной сети",
-                "ja": "大規模な運営チェーンの一部ではない",
-                "zh_Hant": "不屬於大型網路",
-                "it": "Non appartiene a una rete",
-                "nl": "Maakt geen deel uit van een netwerk",
-                "fr": "Pas de réseau"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "network=AeroVironment"
-                ]
-              },
-              "then": {
-                "en": "AeroVironment",
-                "ru": "AeroVironment",
-                "ja": "AeroVironment",
-                "zh_Hant": "AeroVironment",
-                "it": "AeroVironment",
-                "nl": "AeroVironment",
-                "fr": "AeroVironment"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "network=Blink"
-                ]
-              },
-              "then": {
-                "en": "Blink",
-                "ru": "Blink",
-                "ja": "Blink",
-                "zh_Hant": "Blink",
-                "it": "Blink",
-                "nl": "Blink",
-                "fr": "Blink"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "network=eVgo"
-                ]
-              },
-              "then": {
-                "en": "eVgo",
-                "ru": "eVgo",
-                "ja": "eVgo",
-                "zh_Hant": "eVgo",
-                "it": "eVgo",
-                "nl": "eVgo",
-                "fr": "eVgo"
-              }
-            }
-          ]
-        }
-      ],
-      "icon": {
-        "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
-        "mappings": [
-          {
-            "if": "bicycle=yes",
-            "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
-          },
-          {
-            "if": {
-              "or": [
-                "car=yes",
-                "motorcar=yes"
-              ]
-            },
-            "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
-          }
-        ]
-      },
-      "iconOverlays": [
-        {
-          "if": {
-            "and": [
-              "bicycle=yes",
-              {
-                "or": [
-                  "motorcar=yes",
-                  "car=yes"
-                ]
-              }
-            ]
-          },
-          "then": "circle:#fff;./assets/themes/charging_stations/car.svg",
-          "badge": true
-        }
-      ],
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "50,50,bottom"
-      },
-      "color": {
-        "render": "#00f"
-      },
-      "presets": [
-        {
-          "tags": [
-            "amenity=charging_station"
-          ],
-          "title": "Charging station"
-        }
-      ],
-      "wayHandling": 1
-    }
+    "charging_station"
   ],
   "roamingRenderings": []
 }

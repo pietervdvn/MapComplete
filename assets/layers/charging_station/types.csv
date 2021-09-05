@@ -1,0 +1,8 @@
+Key in OSM,image,Description,Country-whitelist
+socket:schuko,CEE7_4F.svg,<b>Schuko wall plug</b> without ground pin (CEE7/4 type F),be;fr;ma;tn;pl;cs;sk;mo
+socket:typee,TypeE.svg,<b>European wall plug</b> with ground pin (CEE7/4 type E),
+socket:chademo,Chademo_type4.svg,<b>Chademo</b> (type 4),
+socket:type1_cable,Type1_J1772.svg,<b>Type 1 with cable</b> (J1772),
+socket:type1,Type1_J1772.svg,<b>Type 1 <i>without</i> cable</b> (J1772),
+socket:type1_combo,Type1-ccs.svg,<b>Type 1 CCS</b> (aka Type 1 Combo),
+socket:tesla_supercharger,Tesla-hpwc-model-s.svg,<b>Tesla Supercharger</b>,

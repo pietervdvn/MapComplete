@@ -53,6 +53,12 @@ export default class TagRenderingQuestion extends Combine {
 
 
         const inputElement: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
+
+        if(inputElement === undefined){
+            console.trace("MultiAnswer failed", configuration)
+            const inputElement0: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
+
+        }
         const save = () => {
             const selection = inputElement.GetValue().data;
             if (selection) {
@@ -176,6 +182,7 @@ export default class TagRenderingQuestion extends Combine {
         configuration: TagRenderingConfig,
         elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>, ifNotSelected: TagsFilter[]): InputElement<TagsFilter> {
         const checkBoxes = new CheckBoxes(elements);
+        
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
             (t0, t1) => {
@@ -247,7 +254,6 @@ export default class TagRenderingQuestion extends Combine {
             },
             elements.map(el => el.GetValue())
         );
-
 
         freeformField?.GetValue()?.addCallbackAndRun(value => {
             // The list of indices of the selected elements

@@ -1,0 +1,403 @@
+{
+  "id": "charging_station",
+  "name": {
+    "en": "Charging stations",
+    "it": "Stazioni di ricarica",
+    "ja": "充電ステーション",
+    "nb_NO": "Ladestasjoner",
+    "ru": "Зарядные станции",
+    "zh_Hant": "充電站"
+  },
+  "minzoom": 10,
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=charging_station"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Charging station",
+      "it": "Stazione di ricarica",
+      "ja": "充電ステーション",
+      "nb_NO": "Ladestasjon",
+      "ru": "Зарядная станция",
+      "zh_Hant": "充電站"
+    }
+  },
+  "description": {
+    "en": "A charging station",
+    "it": "Una stazione di ricarica",
+    "ja": "充電ステーション",
+    "nb_NO": "En ladestasjon",
+    "ru": "Зарядная станция",
+    "zh_Hant": "充電站"
+  },
+  "calculatedTags": [
+    "motorcar=feat.properties.motorcar ?? feat.properties.car"
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "#": "Type",
+      "question": {
+        "en": "Which vehicles are allowed to charge here?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "bicycle=yes",
+          "ifnot": "bicycle=no",
+          "then": {
+            "en": "<b>bicycles</b> can be charged here"
+          }
+        },
+        {
+          "if": "motorcar=yes",
+          "extraTags": "car=",
+          "ifnot": {
+            "and": [
+              "car=",
+              "motorcar=no"
+            ]
+          },
+          "then": {
+            "en": "<b>Cars</b> can be charged here"
+          }
+        },
+        {
+          "if": "scooter=yes",
+          "ifnot": "scooter=no",
+          "then": {
+            "en": "<b>Scooters</b> can be charged here"
+          }
+        },
+        {
+          "if": "hgv=yes",
+          "ifnot": "hgv=no",
+          "then": {
+            "en": "<b>Heavy good vehicles</b> (such as trucks) can be charged here"
+          }
+        },
+        {
+          "if": "bus=yes",
+          "ifnot": "bus=no",
+          "then": {
+            "en": "<b>Buses</b> can be charged here"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Who is allowed to use this charging station?",
+      "render": "Access is {access}",
+      "freeform": {
+        "key": "access",
+        "addExtraTags": [
+          "fixme=Freeform field used for access - doublecheck the value"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": "Anyone can use this charging station (payment might be needed)"
+        },
+        {
+          "if": {
+            "or": [
+              "access=permissive",
+              "access=public"
+            ]
+          },
+          "then": "Anyone can use this charging station (payment might be needed)",
+          "hideInAnswer": true
+        },
+        {
+          "if": "access=customers",
+          "then": "Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span> "
+        },
+        {
+          "if": "access=private",
+          "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)"
+        }
+      ]
+    },
+    {
+      "#": "capacity",
+      "render": {
+        "en": "{capacity} vehicles can be charged here at the same time"
+      },
+      "question": {
+        "en": "How much vehicles can be charged here at the same time?"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat"
+      }
+    },
+    $$$
+    {
+      "#": "Authentication",
+      "question": {
+        "en": "What kind of authentication is available at the charging station?",
+        "it": "Quali sono gli orari di apertura di questa stazione di ricarica?",
+        "ja": "この充電ステーションはいつオープンしますか?",
+        "nb_NO": "Når åpnet denne ladestasjonen?",
+        "ru": "В какое время работает эта зарядная станция?",
+        "zh_Hant": "何時是充電站開放使用的時間？"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "authentication:membership_card=yes",
+          "ifnot": "authentication:membership_card=no",
+          "then": {
+            "en": "Authentication by a membership card"
+          }
+        },
+        {
+          "if": "authentication:app=yes",
+          "ifnot": "authentication:app=no",
+          "then": {
+            "en": "Authentication by an app"
+          }
+        },
+        {
+          "if": "authentication:phone_call=yes",
+          "ifnot": "authentication:phone_call=no",
+          "then": {
+            "en": "Authentication via phone call is available"
+          }
+        },
+        {
+          "if": "authentication:short_message=yes",
+          "ifnot": "authentication:short_message=no",
+          "then": {
+            "en": "Authentication via phone call is available"
+          }
+        },
+        {
+          "if": "authentication:nfc=yes",
+          "ifnot": "authentication:nfc=no",
+          "then": {
+            "en": "Authentication via NFC is available"
+          }
+        },
+        {
+          "if": "authentication:money_card=yes",
+          "ifnot": "authentication:money_card=no",
+          "then": {
+            "en": "Authentication via Money Card is available"
+          }
+        },
+        {
+          "if": "authentication:debit_card=yes",
+          "ifnot": "authentication:debit_card=no",
+          "then": {
+            "en": "Authentication via debit card is available"
+          }
+        },
+        {
+          "if": "authentication:none=yes",
+          "ifnot": "authentication:none=no",
+          "then": {
+            "en": "No authentication is needed"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Auth phone",
+      "render": {
+        "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+        "it": "{network}",
+        "ja": "{network}",
+        "nb_NO": "{network}",
+        "ru": "{network}",
+        "zh_Hant": "{network}"
+      },
+      "question": {
+        "en": "What's the phone number for authentication call or SMS?",
+        "it": "A quale rete appartiene questa stazione di ricarica?",
+        "ja": "この充電ステーションの運営チェーンはどこですか?",
+        "ru": "К какой сети относится эта станция?",
+        "zh_Hant": "充電站所屬的網路是？"
+      },
+      "freeform": {
+        "key": "authentication:phone_call:number",
+        "type": "phone"
+      },
+      "condition": {
+        "or": [
+          "authentication:phone_call=yes",
+          "authentication:short_message=yes"
+        ]
+      },
+      "it": {
+        "0": {
+          "then": "Non appartiene a una rete"
+        }
+      },
+      "ja": {
+        "0": {
+          "then": "大規模な運営チェーンの一部ではない"
+        }
+      },
+      "ru": {
+        "0": {
+          "then": "Не является частью более крупной сети"
+        }
+      },
+      "zh_Hant": {
+        "0": {
+          "then": "不屬於大型網路"
+        }
+      }
+    },
+    {
+      "#": "OH",
+      "render": "{opening_hours_table(opening_hours)}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "question": {
+        "en": "When is this charging station opened?"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "en": "24/7 opened (including holidays)"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Network",
+      "render": {
+        "en": "Part of the network <b>{network}</b>"
+      },
+      "question": {
+        "en": "Is this charging station part of a network?"
+      },
+      "freeform": {
+        "key": "network"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "no:network=yes"
+            ]
+          },
+          "then": {
+            "en": "Not part of a bigger network"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "network=AeroVironment"
+            ]
+          },
+          "then": "AeroVironment"
+        },
+        {
+          "if": {
+            "and": [
+              "network=Blink"
+            ]
+          },
+          "then": "Blink"
+        },
+        {
+          "if": {
+            "and": [
+              "network=eVgo"
+            ]
+          },
+          "then": "eVgo"
+        }
+      ]
+    },
+    {
+      "#": "Operator",
+      "question": "Who is the operator of this charging station?",
+      "render": "This charging station is operated by {operator}",
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "network:={operator}"
+            ]
+          },
+          "then": "Actually, {operator} is the network",
+          "addExtraTags": [
+            "operator="
+          ],
+          "hideInAnswer": "operator="
+        }
+      ]
+    }
+  ],
+  "icon": {
+    "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
+    "mappings": [
+      {
+        "if": "bicycle=yes",
+        "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
+      },
+      {
+        "if": {
+          "or": [
+            "car=yes",
+            "motorcar=yes"
+          ]
+        },
+        "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
+      }
+    ]
+  },
+  "iconOverlays": [
+    {
+      "if": {
+        "and": [
+          "bicycle=yes",
+          {
+            "or": [
+              "motorcar=yes",
+              "car=yes"
+            ]
+          }
+        ]
+      },
+      "then": "circle:#fff;./assets/themes/charging_stations/car.svg",
+      "badge": true
+    }
+  ],
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "50,50,bottom"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "amenity=charging_station"
+      ],
+      "title": {
+        "en": "Charging station"
+      }
+    }
+  ],
+  "wayHandling": 1
+}

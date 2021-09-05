@@ -9,7 +9,6 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 import {Utils} from "../../Utils";
-import Svg from "../../Svg";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../../UI/BaseUIElement";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
@@ -18,6 +17,7 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import FilterConfig from "./FilterConfig";
 import {Unit} from "../Unit";
 import DeleteConfig from "./DeleteConfig";
+import Svg from "../../Svg";
 
 export default class LayerConfig {
     static WAYHANDLING_DEFAULT = 0;
