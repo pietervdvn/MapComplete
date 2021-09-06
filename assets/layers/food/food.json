@@ -153,7 +153,8 @@
         "key": "name"
       }
     },
-    {"#": "Fastfood vs restaurant",
+    {
+      "#": "Fastfood vs restaurant",
       "question": {
         "en": "What type of business is this?",
         "nl": "Wat voor soort zaak is dit?"

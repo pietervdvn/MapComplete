@@ -355,7 +355,7 @@
         "key": "defibrillator:location:fr"
       }
     },
-   "wheelchair-access",
+    "wheelchair-access",
     {
       "render": {
         "nl": "Officieel identificatienummer van het toestel: <i>{ref}</i>",
