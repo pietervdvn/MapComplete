@@ -148,7 +148,6 @@ export default class OverpassFeatureSource implements FeatureSource {
 
         const bounds = this._leafletMap.data?.getBounds();
         if(bounds === undefined){
-            console.log("Leaflet map not yet initialized; retrying later")
             return;
         }
 
@@ -189,7 +188,6 @@ export default class OverpassFeatureSource implements FeatureSource {
                 function countDown() {
                     window?.setTimeout(
                         function () {
-                            console.log("Countdown: ", self.timeout.data)
                             if (self.timeout.data > 1) {
                                 self.timeout.setData(self.timeout.data - 1);
                                 window.setTimeout(

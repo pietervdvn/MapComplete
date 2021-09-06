@@ -18,6 +18,7 @@ export default class FilterConfig {
         if(json.options.map === undefined){
             throw `A filter was given where the options aren't a list at ${context}`
         }
+        
         this.options = json.options.map((option, i) => {
             const question = Translations.T(
                 option.question,
@@ -27,6 +28,9 @@ export default class FilterConfig {
                 option.osmTags ?? {and: []},
                 `${context}.options-[${i}].osmTags`
             );
+            if(question === undefined){
+                throw `Invalid filter: no question given at ${context}[${i}]`
+            }
 
             return {question: question, osmTags: osmTags};
         });

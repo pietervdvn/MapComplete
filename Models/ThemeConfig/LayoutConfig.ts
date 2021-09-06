@@ -7,6 +7,7 @@ import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
 import {Unit} from "../Unit";
 import {Denomination} from "../Denomination";
+import {LayerConfigJson} from "./Json/LayerConfigJson";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -208,8 +209,7 @@ export default class LayoutConfig {
                 if (shared === undefined) {
                     throw `Unknown shared/builtin layer ${name} at ${context}.layers[${i}]. Available layers are ${Array.from(AllKnownLayers.sharedLayersJson.keys()).join(", ")}`;
                 }
-                // @ts-ignore
-                let newLayer: LayerConfigJson = Utils.Merge(layer.override, JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
+                let newLayer: LayerConfigJson = Utils.Merge(layer["override"], JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
                 if (json.overrideAll !== undefined) {
                     newLayer = Utils.Merge(json.overrideAll, newLayer);
                 }

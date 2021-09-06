@@ -180,7 +180,6 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                     oh.endMinutes = 0;
                 }
                 self.source.data.push(oh);
-                console.log("Created ", oh)
             }
             self.source.ping();
 

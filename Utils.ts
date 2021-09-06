@@ -221,9 +221,7 @@ export class Utils {
 
             const sourceV = source[key];
             const targetV = target[key]
-            if (sourceV?.length !== undefined && targetV?.length !== undefined && key.startsWith("+")) {
-                target[key] = targetV.concat(sourceV)
-            } else if (typeof sourceV === "object") {
+            if (typeof sourceV === "object") {
                 if (sourceV === null) {
                     target[key] = null
                 } else if (targetV === undefined) {
