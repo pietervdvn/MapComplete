@@ -14,7 +14,6 @@ import BaseUIElement from "../BaseUIElement";
 import State from "../../State";
 import FilteredLayer from "../../Models/FilteredLayer";
 import BackgroundSelector from "./BackgroundSelector";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 
 
@@ -24,7 +23,7 @@ import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>) {
-        const backgroundSelector =  new Toggle(
+        const backgroundSelector = new Toggle(
             new BackgroundSelector(),
             undefined,
             State.state.featureSwitchBackgroundSlection
@@ -36,8 +35,8 @@ export default class FilterView extends VariableUiElement {
         );
     }
 
-    private static createOneFilteredLayerElement(filteredLayer) {
-        if(filteredLayer.layerDef.name   === undefined){
+    private static createOneFilteredLayerElement(filteredLayer: FilteredLayer) {
+        if (filteredLayer.layerDef.name === undefined) {
             // Name is not defined: we hide this one
             return undefined;
         }
@@ -71,9 +70,9 @@ export default class FilterView extends VariableUiElement {
                 Translations.t.general.layerSelection.zoomInToSeeThisLayer.Clone()
                     .SetClass("alert")
                     .SetStyle("display: block ruby;width:min-content;"),
-                State.state.locationControl.map(location =>location.zoom >= filteredLayer.layerDef.minzoom )
+                State.state.locationControl.map(location => location.zoom >= filteredLayer.layerDef.minzoom)
             )
-            
+
 
         const style =
             "display:flex;align-items:center;padding:0.5rem 0;";
@@ -89,7 +88,6 @@ export default class FilterView extends VariableUiElement {
         const filterPanel: BaseUIElement = FilterView.createFilterPanel(filteredLayer)
 
 
-
         return new Toggle(
             new Combine([layerChecked, filterPanel]),
             layerNotChecked,
@@ -97,10 +95,7 @@ export default class FilterView extends VariableUiElement {
         );
     }
 
-    static createFilterPanel(flayer: {
-        layerDef: LayerConfig,
-        appliedFilters: UIEventSource<TagsFilter>
-    }): BaseUIElement {
+    private static createFilterPanel(flayer: FilteredLayer): BaseUIElement {
         const layer = flayer.layerDef
         if (layer.filters.length === 0) {
             return undefined;
@@ -121,12 +116,19 @@ export default class FilterView extends VariableUiElement {
             inputElement[1].addCallback((_) => update())
         );
 
+        flayer.appliedFilters.addCallbackAndRun(appliedFilters => {
+            if (appliedFilters === undefined || appliedFilters.and.length === 0) {
+                listFilterElements.forEach(filter => filter[1].setData(undefined))
+                return
+            }
+        })
+
         return new Combine(listFilterElements.map(input => input[0].SetClass("mt-3")))
             .SetClass("flex flex-col ml-8 bg-gray-300 rounded-xl p-2")
 
     }
 
-    static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<TagsFilter>] {
+    private static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<TagsFilter>] {
         if (filterConfig.options.length === 1) {
             let option = filterConfig.options[0];
 
@@ -140,7 +142,7 @@ export default class FilterView extends VariableUiElement {
                 .ToggleOnClick()
                 .SetClass("block m-1")
 
-            return [toggle, toggle.isEnabled.map(enabled => enabled ? option.osmTags : undefined)]
+            return [toggle, toggle.isEnabled.map(enabled => enabled ? option.osmTags : undefined, [], tags => tags !== undefined)]
         }
 
         let options = filterConfig.options;

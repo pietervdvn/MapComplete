@@ -98,6 +98,10 @@ svg, img {
     fill: var(--subtle-detail-color-contrast) !important;
 }
 
+.red-svg svg path {
+    stroke: #d71010 !important;
+}
+
 a {
     color: var(--foreground-color);
 }
