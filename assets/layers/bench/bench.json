@@ -17,7 +17,7 @@
     "pl": "Ławki",
     "pt_BR": "Bancos"
   },
-  "minzoom": 14,
+  "minzoom": 17,
   "source": {
     "osmTags": "amenity=bench"
   },
