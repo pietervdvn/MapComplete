@@ -274,10 +274,11 @@ export class InitUiElements {
         const help = new MapControlButton(Svg.help_svg());
         help.onClick(() => isOpened.setData(true));
         new Toggle(
-            fullOptions.SetClass("welcomeMessage"),
-            help,
+            fullOptions.SetClass("welcomeMessage pointer-events-auto"),
+            help.SetClass("pointer-events-auto"),
             isOpened
-        ).AttachTo("messagesbox");
+        )
+            .AttachTo("messagesbox");
         const openedTime = new Date().getTime();
         State.state.locationControl.addCallback(() => {
             if (new Date().getTime() - openedTime < 15 * 1000) {
