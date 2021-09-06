@@ -58,7 +58,7 @@ function run() {
 
     const stringified = questions.map(q => JSON.stringify(q, null, "  "))
     console.log(stringified)
-    let proto = readFileSync("charging_station.proto.json", "utf8")
+    let proto = readFileSync("charging_station.protojson", "utf8")
     proto = proto.replace("$$$", stringified.join(",\n") + ",")
     writeFileSync("charging_station.json", proto)
 }
