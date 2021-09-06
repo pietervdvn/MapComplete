@@ -3023,6 +3023,25 @@
         },
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
     },
+    "waste_basket": {
+        "name": "Vuilnisbak",
+        "title": {
+            "render": "Vuilnisbak"
+        },
+        "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Vuilnisbak"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Vuilnisbak"
+            }
+        }
+    },
     "watermill": {
         "name": "watermolens",
         "title": {

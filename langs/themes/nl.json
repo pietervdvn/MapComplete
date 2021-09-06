@@ -1039,7 +1039,8 @@
     },
     "toerisme_vlaanderen": {
         "title": "Toeristisch relevante info",
-        "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden"
+        "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
+        "description": "Op deze kaart kan je info zien voor toeristen en zelf aanpasingen maken, zichtbaar voor iedereen"
     },
     "toilets": {
         "title": "Open Toilettenkaart",
@@ -1053,28 +1054,7 @@
     "waste_basket": {
         "title": "Vuilnisbak",
         "shortDescription": "Een kaart met vuilnisbakken",
-        "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
-        "layers": {
-            "0": {
-                "name": "Vuilnisbak",
-                "title": {
-                    "render": "Vuilnisbak"
-                },
-                "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Vuilnisbak"
-                        }
-                    }
-                },
-                "presets": {
-                    "0": {
-                        "title": "Vuilnisbak"
-                    }
-                }
-            }
-        }
+        "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen"
     },
     "width": {
         "title": "Straatbreedtes",

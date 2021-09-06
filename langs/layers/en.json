@@ -2668,6 +2668,25 @@
         },
         "description": "A visitor center offers information about a specific attraction or place of interest where it is located."
     },
+    "waste_basket": {
+        "name": "Waste Basket",
+        "title": {
+            "render": "Waste Basket"
+        },
+        "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Waste Basket"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Waste Basket"
+            }
+        }
+    },
     "watermill": {
         "name": "Watermill"
     }

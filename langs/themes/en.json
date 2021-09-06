@@ -1312,27 +1312,6 @@
     "waste_basket": {
         "title": "Waste Basket",
         "shortDescription": "A map with waste baskets",
-        "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
-        "layers": {
-            "0": {
-                "name": "Waste Basket",
-                "title": {
-                    "render": "Waste Basket"
-                },
-                "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Waste Basket"
-                        }
-                    }
-                },
-                "presets": {
-                    "0": {
-                        "title": "Waste Basket"
-                    }
-                }
-            }
-        }
+        "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself"
     }
 }
