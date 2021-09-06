@@ -8,6 +8,11 @@ function run(file, protojson) {
 
     const result = []
     const questions = []
+    const filterOptions: { question: string, osmTags?: string } [] = [
+        {
+            question: "All connectors"
+        }
+    ]
 
     for (const entry of entries) {
         const [key, image, description, whitelist] = entry.split(",").map(str => str.trim())
@@ -19,12 +24,12 @@ function run(file, protojson) {
             if: `${key}=1`,
             ifnot: `${key}=`,
             then: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${image}'/> ${description}`,
-        
+
         }
 
         if (whitelist) {
             const countries = whitelist.split(";").map(country => "_country!=" + country) //HideInAnswer if it is in the wrong country
-            json["hideInAnswer"] = {or:countries}
+            json["hideInAnswer"] = {or: countries}
         }
 
         result.push(json)
@@ -45,6 +50,11 @@ function run(file, protojson) {
         }
 
         questions.push(indivQ)
+
+        filterOptions.push({
+            question: `Has a ${description} <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${image}'/> connector`,
+            osmTags: `${key}~*`
+        })
     }
 
     const toggles = {
@@ -60,11 +70,15 @@ function run(file, protojson) {
     console.log(stringified)
     let proto = readFileSync(protojson, "utf8")
     proto = proto.replace("$$$", stringified.join(",\n") + ",")
-    writeFileSync("charging_station.json", proto)
+    proto = JSON.parse(proto)
+    proto["filter"].push({
+        options: filterOptions
+    })
+    writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "  "))
 }
 
 try {
-    run("types.csv","charging_station.protojson")
+    run("types.csv", "charging_station.protojson")
 } catch (e) {
     console.error(e)
 }

@@ -530,5 +530,71 @@
       }
     }
   ],
-  "wayHandling": 1
+  "wayHandling": 1,
+  "filter": [
+    {
+      "options": [
+        {
+          "question": {
+            "en": "All vehicle types",
+            "nl": "Alle voertuigen"
+          }
+        },
+        {
+          "question": {
+            "en": "Charging station for bicycles",
+            "nl": "Oplaadpunten voor fietsen"
+          },
+          "osmTags": "bicycle=yes"
+        },
+        {
+          "question": {
+            "en": "Charging station for cars",
+            "nl": "Oplaadpunten voor auto's"
+          },
+          "osmTags": {
+            "or": [
+              "car=yes",
+              "motor_car=yes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": "All connectors"
+        },
+        {
+          "question": "Has a <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> connector",
+          "osmTags": "socket:schuko~*"
+        },
+        {
+          "question": "Has a <b>European wall plug</b> with ground pin (CEE7/4 type E) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> connector",
+          "osmTags": "socket:typee~*"
+        },
+        {
+          "question": "Has a <b>Chademo</b> (type 4) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> connector",
+          "osmTags": "socket:chademo~*"
+        },
+        {
+          "question": "Has a <b>Type 1 with cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> connector",
+          "osmTags": "socket:type1_cable~*"
+        },
+        {
+          "question": "Has a <b>Type 1 <i>without</i> cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> connector",
+          "osmTags": "socket:type1~*"
+        },
+        {
+          "question": "Has a <b>Type 1 CCS</b> (aka Type 1 Combo) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> connector",
+          "osmTags": "socket:type1_combo~*"
+        },
+        {
+          "question": "Has a <b>Tesla Supercharger</b> <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> connector",
+          "osmTags": "socket:tesla_supercharger~*"
+        }
+      ]
+    }
+  ]
 }

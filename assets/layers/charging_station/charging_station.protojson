@@ -399,5 +399,36 @@
       }
     }
   ],
-  "wayHandling": 1
+  "wayHandling": 1,
+  "filter": [
+    {
+      "options": [
+        {
+          "question": {
+            "en": "All vehicle types",
+            "nl": "Alle voertuigen"
+          }
+        },
+        {
+          "question": {
+            "en": "Charging station for bicycles",
+            "nl": "Oplaadpunten voor fietsen"
+          },
+          "osmTags": "bicycle=yes"
+        },
+        {
+          "question": {
+            "en": "Charging station for cars",
+            "nl": "Oplaadpunten voor auto's"
+          },
+          "osmTags": {
+            "or": [
+              "car=yes",
+              "motor_car=yes"
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }
