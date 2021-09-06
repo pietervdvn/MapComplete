@@ -117,25 +117,6 @@
             }
         }
     },
-    "charging_stations": {
-        "layers": {
-            "0": {
-                "name": "Ladestasjoner",
-                "title": {
-                    "render": "Ladestasjon"
-                },
-                "description": "En ladestasjon",
-                "tagRenderings": {
-                    "5": {
-                        "question": "Når åpnet denne ladestasjonen?"
-                    },
-                    "6": {
-                        "render": "{network}"
-                    }
-                }
-            }
-        }
-    },
     "climbing": {
         "title": "Åpent klatrekart",
         "layers": {

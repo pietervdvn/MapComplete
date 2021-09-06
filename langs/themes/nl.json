@@ -283,35 +283,7 @@
     },
     "charging_stations": {
         "title": "Oplaadpunten",
-        "shortDescription": "Een wereldwijde kaart van oplaadpunten",
-        "layers": {
-            "0": {
-                "name": "Oplaadpunten",
-                "title": {
-                    "render": "Oplaadpunt"
-                },
-                "description": "Een oplaadpunt",
-                "tagRenderings": {
-                    "6": {
-                        "render": "{network}",
-                        "mappings": {
-                            "0": {
-                                "then": "Maakt geen deel uit van een netwerk"
-                            },
-                            "1": {
-                                "then": "AeroVironment"
-                            },
-                            "2": {
-                                "then": "Blink"
-                            },
-                            "3": {
-                                "then": "eVgo"
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        "shortDescription": "Een wereldwijde kaart van oplaadpunten"
     },
     "climbing": {
         "title": "Open Klimkaart",

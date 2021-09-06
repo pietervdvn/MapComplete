@@ -328,39 +328,7 @@
     "charging_stations": {
         "title": "充電ステーション",
         "shortDescription": "充電ステーションの世界地図",
-        "description": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます",
-        "layers": {
-            "0": {
-                "name": "充電ステーション",
-                "title": {
-                    "render": "充電ステーション"
-                },
-                "description": "充電ステーション",
-                "tagRenderings": {
-                    "5": {
-                        "question": "この充電ステーションはいつオープンしますか?"
-                    },
-                    "6": {
-                        "render": "{network}",
-                        "question": "この充電ステーションの運営チェーンはどこですか?",
-                        "mappings": {
-                            "0": {
-                                "then": "大規模な運営チェーンの一部ではない"
-                            },
-                            "1": {
-                                "then": "AeroVironment"
-                            },
-                            "2": {
-                                "then": "Blink"
-                            },
-                            "3": {
-                                "then": "eVgo"
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        "description": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます"
     },
     "climbing": {
         "title": "登山地図を開く",

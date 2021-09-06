@@ -103,5 +103,20 @@
                 }
             }
         }
+    },
+    "charging_station": {
+        "name": "Ladestasjoner",
+        "title": {
+            "render": "Ladestasjon"
+        },
+        "description": "En ladestasjon",
+        "tagRenderings": {
+            "12": {
+                "question": "Når åpnet denne ladestasjonen?"
+            },
+            "13": {
+                "render": "{network}"
+            }
+        }
     }
 }

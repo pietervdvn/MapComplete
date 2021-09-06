@@ -690,6 +690,22 @@
             }
         }
     },
+    "charging_station": {
+        "name": "Stazioni di ricarica",
+        "title": {
+            "render": "Stazione di ricarica"
+        },
+        "description": "Una stazione di ricarica",
+        "tagRenderings": {
+            "12": {
+                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
+            },
+            "13": {
+                "render": "{network}",
+                "question": "A quale rete appartiene questa stazione di ricarica?"
+            }
+        }
+    },
     "defibrillator": {
         "name": "Defibrillatori",
         "title": {

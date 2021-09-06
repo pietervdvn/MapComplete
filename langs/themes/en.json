@@ -328,39 +328,7 @@
     "charging_stations": {
         "title": "Charging stations",
         "shortDescription": "A worldwide map of charging stations",
-        "description": "On this open map, one can find and mark information about charging stations",
-        "layers": {
-            "0": {
-                "name": "Charging stations",
-                "title": {
-                    "render": "Charging station"
-                },
-                "description": "A charging station",
-                "tagRenderings": {
-                    "5": {
-                        "question": "When is this charging station opened?"
-                    },
-                    "6": {
-                        "render": "{network}",
-                        "question": "What network of this charging station under?",
-                        "mappings": {
-                            "0": {
-                                "then": "Not part of a bigger network"
-                            },
-                            "1": {
-                                "then": "AeroVironment"
-                            },
-                            "2": {
-                                "then": "Blink"
-                            },
-                            "3": {
-                                "then": "eVgo"
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        "description": "On this open map, one can find and mark information about charging stations"
     },
     "climbing": {
         "title": "Open Climbing Map",

@@ -328,39 +328,7 @@
     "charging_stations": {
         "title": "Stazioni di ricarica",
         "shortDescription": "Una mappa mondiale delle stazioni di ricarica",
-        "description": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni",
-        "layers": {
-            "0": {
-                "name": "Stazioni di ricarica",
-                "title": {
-                    "render": "Stazione di ricarica"
-                },
-                "description": "Una stazione di ricarica",
-                "tagRenderings": {
-                    "5": {
-                        "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
-                    },
-                    "6": {
-                        "render": "{network}",
-                        "question": "A quale rete appartiene questa stazione di ricarica?",
-                        "mappings": {
-                            "0": {
-                                "then": "Non appartiene a una rete"
-                            },
-                            "1": {
-                                "then": "AeroVironment"
-                            },
-                            "2": {
-                                "then": "Blink"
-                            },
-                            "3": {
-                                "then": "eVgo"
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        "description": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni"
     },
     "climbing": {
         "title": "Mappa aperta per le arrampicate",

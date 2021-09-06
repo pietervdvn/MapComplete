@@ -325,43 +325,6 @@
             }
         }
     },
-    "charging_stations": {
-        "title": "Station de recharge",
-        "shortDescription": "Carte mondiale de stations de recharge",
-        "description": "Cette carte indique et permet d’indiquer des informations sur les stations de recharge",
-        "layers": {
-            "0": {
-                "name": "Station de recharge",
-                "title": {
-                    "render": "Station de recharge"
-                },
-                "description": "Une station de recharge",
-                "tagRenderings": {
-                    "5": {
-                        "question": "Quand cette station a-t’elle été ouverte ?"
-                    },
-                    "6": {
-                        "render": "{network}",
-                        "question": "De quel réseau fait-elle partie ?",
-                        "mappings": {
-                            "0": {
-                                "then": "Pas de réseau"
-                            },
-                            "1": {
-                                "then": "AeroVironment"
-                            },
-                            "2": {
-                                "then": "Blink"
-                            },
-                            "3": {
-                                "then": "eVgo"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
     "climbing": {
         "title": "Open Climbing Map",
         "description": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels.",

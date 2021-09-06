@@ -1,4 +1,20 @@
 {
+    "charging_station": {
+        "name": "充電ステーション",
+        "title": {
+            "render": "充電ステーション"
+        },
+        "description": "充電ステーション",
+        "tagRenderings": {
+            "12": {
+                "question": "この充電ステーションはいつオープンしますか?"
+            },
+            "13": {
+                "render": "{network}",
+                "question": "この充電ステーションの運営チェーンはどこですか?"
+            }
+        }
+    },
     "food": {
         "tagRenderings": {
             "15": {

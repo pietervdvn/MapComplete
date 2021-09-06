@@ -236,39 +236,7 @@
     "charging_stations": {
         "title": "充電站",
         "shortDescription": "全世界的充電站地圖",
-        "description": "在這份開放地圖上，你可以尋找與標示充電站的資訊",
-        "layers": {
-            "0": {
-                "name": "充電站",
-                "title": {
-                    "render": "充電站"
-                },
-                "description": "充電站",
-                "tagRenderings": {
-                    "5": {
-                        "question": "何時是充電站開放使用的時間？"
-                    },
-                    "6": {
-                        "render": "{network}",
-                        "question": "充電站所屬的網路是？",
-                        "mappings": {
-                            "0": {
-                                "then": "不屬於大型網路"
-                            },
-                            "1": {
-                                "then": "AeroVironment"
-                            },
-                            "2": {
-                                "then": "Blink"
-                            },
-                            "3": {
-                                "then": "eVgo"
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        "description": "在這份開放地圖上，你可以尋找與標示充電站的資訊"
     },
     "climbing": {
         "title": "開放攀爬地圖",
