@@ -389,6 +389,39 @@
       "condition": "cuisine!=friture"
     },
     {
+      "#": "halal (no friture)",
+      "question": {
+        "nl": "Heeft deze eetgelegenheid een halal optie?"
+      },
+      "mappings": [
+        {
+          "if": "diet:halal=no",
+          "then": {
+            "nl": "Geen halal opties beschikbaar"
+          }
+        },
+        {
+          "if": "diet:halal=limited",
+          "then": {
+            "nl": "Beperkte halal opties zijn beschikbaar"
+          }
+        },
+        {
+          "if": "diet:halal=yes",
+          "then": {
+            "nl": "halal opties zijn beschikbaar"
+          }
+        },
+        {
+          "if": "diet:halal=only",
+          "then": {
+            "nl": "Enkel halal opties zijn beschikbaar"
+          }
+        }
+      ],
+      "condition": "cuisine!=friture"
+    },
+    {
       "question": {
         "nl": "Heeft deze frituur vegetarische snacks?",
         "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
@@ -541,6 +574,94 @@
         }
       ],
       "condition": "cuisine=friture"
+    },
+    {
+      "question": {
+        "en": "Which methods of payment are accepted here?",
+        "nl": "Welke betaalmiddelen worden hier geaccepteerd?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=no",
+          "then": {
+            "en": "Cash is accepted here",
+            "nl": "Cash geld wordt hier aanvaard"
+          }
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=no",
+          "then": {
+            "en": "Payment cards are accepted here",
+            "nl": "Betalen met bankkaarten kan hier"
+          }
+        }
+      ]
+    }
+  ],
+  "filter": [
+    {
+      "options": [
+        {
+          "question": {
+            "en": "Opened now",
+            "nl": "Nu geopened"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": {
+            "en": "Has a vegetarian menu",
+            "nl": "Heeft een vegetarisch menu"
+          },
+          "osmTags": {
+            "or": [
+              "diet:vegetarian=yes",
+              "diet:vegetarian=only",
+              "diet:vegan=yes",
+              "diet:vegan=only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": {
+            "en": "Has a vegan menu",
+            "nl": "Heeft een veganistisch menu"
+          },
+          "osmTags": {
+            "or": [
+              "diet:vegan=yes",
+              "diet:vegan=only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": {
+            "en": "Has a halal menu",
+            "nl": "Heeft een halal menu"
+          },
+          "osmTags": {
+            "or": [
+              "diet:halal=yes",
+              "diet:halal=only"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

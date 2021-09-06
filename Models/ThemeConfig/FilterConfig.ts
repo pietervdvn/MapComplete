@@ -11,6 +11,13 @@ export default class FilterConfig {
     }[];
 
     constructor(json: FilterConfigJson, context: string) {
+        if(json.options === undefined){
+            throw `A filter without options was given at ${context}`
+        }
+
+        if(json.options.map === undefined){
+            throw `A filter was given where the options aren't a list at ${context}`
+        }
         this.options = json.options.map((option, i) => {
             const question = Translations.T(
                 option.question,
