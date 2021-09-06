@@ -243,17 +243,6 @@
             }
         }
     },
-    "fritures": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "4": {
-                        "question": "Hva er telefonnummeret?"
-                    }
-                }
-            }
-        }
-    },
     "ghostbikes": {
         "title": "Spøkelsessykler"
     },

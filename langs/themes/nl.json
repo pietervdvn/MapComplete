@@ -714,89 +714,8 @@
         "description": "Op deze kaart vind je je favoriete frituur!",
         "layers": {
             "0": {
-                "name": "Frituren",
-                "title": {
-                    "render": "Frituur",
-                    "mappings": {
-                        "0": {
-                            "then": " <i>{name}</i>"
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "1": {
-                        "render": "{name}",
-                        "question": "Wat is de naam van deze frituur?"
-                    },
-                    "2": {
-                        "render": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
-                        "question": "Wat zijn de openinguren van deze frituur?"
-                    },
-                    "3": {
-                        "question": "Wat is de website van deze frituur?"
-                    },
-                    "4": {
-                        "render": "<a href='tel:{phone}'>{phone}</a>",
-                        "question": "Wat is het telefoonnummer van deze frituur?"
-                    },
-                    "5": {
-                        "question": "Heeft deze frituur vegetarische snacks?",
-                        "mappings": {
-                            "0": {
-                                "then": "Er zijn vegetarische snacks aanwezig"
-                            },
-                            "1": {
-                                "then": "Slechts enkele vegetarische snacks"
-                            },
-                            "2": {
-                                "then": "Geen vegetarische snacks beschikbaar"
-                            }
-                        }
-                    },
-                    "6": {
-                        "question": "Heeft deze frituur veganistische snacks?",
-                        "mappings": {
-                            "0": {
-                                "then": "Er zijn veganistische snacks aanwezig"
-                            },
-                            "1": {
-                                "then": "Slechts enkele veganistische snacks"
-                            },
-                            "2": {
-                                "then": "Geen veganistische snacks beschikbaar"
-                            }
-                        }
-                    },
-                    "7": {
-                        "question": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
-                        "mappings": {
-                            "0": {
-                                "then": "Plantaardige olie"
-                            },
-                            "1": {
-                                "then": "Dierlijk vet"
-                            }
-                        }
-                    },
-                    "8": {
-                        "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
-                        "mappings": {
-                            "0": {
-                                "then": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken"
-                            },
-                            "1": {
-                                "then": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen"
-                            },
-                            "2": {
-                                "then": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen."
-                            }
-                        }
-                    }
-                },
-                "presets": {
-                    "0": {
-                        "title": "Frituur"
-                    }
+                "override": {
+                    "name": "Frituren"
                 }
             }
         }
@@ -1117,6 +1036,10 @@
         "title": "Surveillance under Surveillance",
         "shortDescription": "Bewakingscameras en dergelijke",
         "description": "Op deze open kaart kan je bewakingscamera's vinden."
+    },
+    "toerisme_vlaanderen": {
+        "title": "Toeristisch relevante info",
+        "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden"
     },
     "toilets": {
         "title": "Open Toilettenkaart",

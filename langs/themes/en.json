@@ -831,31 +831,8 @@
     "fritures": {
         "layers": {
             "0": {
-                "tagRenderings": {
-                    "1": {
-                        "question": "What is the name of this friture?"
-                    },
-                    "3": {
-                        "render": "<a href='{website}'>{website}</a>",
-                        "question": "What is the website of this shop?"
-                    },
-                    "4": {
-                        "question": "What is the phone number?"
-                    },
-                    "8": {
-                        "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
-                        "mappings": {
-                            "0": {
-                                "then": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste"
-                            },
-                            "1": {
-                                "then": "Bringing your own container is <b>not allowed</b>"
-                            },
-                            "2": {
-                                "then": "You <b>must</b> bring your own container to order here."
-                            }
-                        }
-                    }
+                "override": {
+                    "name": "Fries shop"
                 }
             }
         }

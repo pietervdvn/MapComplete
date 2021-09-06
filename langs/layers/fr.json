@@ -900,10 +900,24 @@
                     },
                     "1": {
                         "then": "Graisse animale"
+                    },
+                    "2": {
+                        "then": "Pas d'en-cas végétaliens disponibles"
                     }
                 }
             },
             "15": {
+                "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
+                "mappings": {
+                    "0": {
+                        "then": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets"
+                    },
+                    "1": {
+                        "then": "Apporter ses propres contenants <b>n’est pas permis</b>"
+                    }
+                }
+            },
+            "16": {
                 "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
                 "mappings": {
                     "0": {

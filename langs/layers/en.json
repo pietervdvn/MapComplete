@@ -911,6 +911,21 @@
             "0": {
                 "title": "Charging station"
             }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "All vehicle types"
+                    },
+                    "1": {
+                        "question": "Charging station for bicycles"
+                    },
+                    "2": {
+                        "question": "Charging station for cars"
+                    }
+                }
+            }
         }
     },
     "crossings": {
@@ -1663,9 +1678,61 @@
                     },
                     "1": {
                         "then": "Bringing your own container is <b>not allowed</b>"
+                    }
+                }
+            },
+            "16": {
+                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
+                "mappings": {
+                    "0": {
+                        "then": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste"
+                    },
+                    "1": {
+                        "then": "Bringing your own container is <b>not allowed</b>"
                     },
                     "2": {
                         "then": "You <b>must</b> bring your own container to order here."
+                    }
+                }
+            },
+            "17": {
+                "question": "Which methods of payment are accepted here?",
+                "mappings": {
+                    "0": {
+                        "then": "Cash is accepted here"
+                    },
+                    "1": {
+                        "then": "Payment cards are accepted here"
+                    }
+                }
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Opened now"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Has a vegetarian menu"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Has a vegan menu"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Has a halal menu"
                     }
                 }
             }

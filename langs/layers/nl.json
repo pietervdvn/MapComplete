@@ -890,6 +890,23 @@
             }
         }
     },
+    "charging_station": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle voertuigen"
+                    },
+                    "1": {
+                        "question": "Oplaadpunten voor fietsen"
+                    },
+                    "2": {
+                        "question": "Oplaadpunten voor auto's"
+                    }
+                }
+            }
+        }
+    },
     "crossings": {
         "name": "Oversteekplaatsen",
         "description": "Oversteekplaatsen voor voetgangers en fietsers",
@@ -1691,6 +1708,9 @@
                     },
                     "2": {
                         "then": "Geen vegetarische snacks beschikbaar"
+                    },
+                    "3": {
+                        "then": "Enkel halal opties zijn beschikbaar"
                     }
                 }
             },
@@ -1716,6 +1736,9 @@
                     },
                     "1": {
                         "then": "Dierlijk vet"
+                    },
+                    "2": {
+                        "then": "Geen veganistische snacks beschikbaar"
                     }
                 }
             },
@@ -1727,9 +1750,61 @@
                     },
                     "1": {
                         "then": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen"
+                    }
+                }
+            },
+            "16": {
+                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
+                "mappings": {
+                    "0": {
+                        "then": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken"
+                    },
+                    "1": {
+                        "then": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen"
                     },
                     "2": {
                         "then": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen."
+                    }
+                }
+            },
+            "17": {
+                "question": "Welke betaalmiddelen worden hier geaccepteerd?",
+                "mappings": {
+                    "0": {
+                        "then": "Cash geld wordt hier aanvaard"
+                    },
+                    "1": {
+                        "then": "Betalen met bankkaarten kan hier"
+                    }
+                }
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nu geopened"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een vegetarisch menu"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een veganistisch menu"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een halal menu"
                     }
                 }
             }

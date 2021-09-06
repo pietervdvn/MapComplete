@@ -125,17 +125,6 @@
             }
         }
     },
-    "fritures": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "3": {
-                        "render": "<a href='{website}'>{website}</a>"
-                    }
-                }
-            }
-        }
-    },
     "hailhydrant": {
         "layers": {
             "0": {

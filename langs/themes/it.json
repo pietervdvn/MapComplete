@@ -488,21 +488,6 @@
             }
         }
     },
-    "fritures": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "3": {
-                        "render": "<a href='{website}'>{website}</a>",
-                        "question": "Qual è il sito web di questo negozio?"
-                    },
-                    "4": {
-                        "question": "Qual è il numero di telefono?"
-                    }
-                }
-            }
-        }
-    },
     "hailhydrant": {
         "layers": {
             "0": {

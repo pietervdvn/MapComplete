@@ -42,17 +42,6 @@
             }
         }
     },
-    "fritures": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "3": {
-                        "render": "<a href='{website}'>{website}</a>"
-                    }
-                }
-            }
-        }
-    },
     "personal": {
         "title": "Interfície personal",
         "description": "Crea una interfície basada en totes les capes disponibles de totes les interfícies"
