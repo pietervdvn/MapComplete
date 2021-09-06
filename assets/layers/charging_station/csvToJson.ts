@@ -2,8 +2,8 @@ import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../../../Utils";
 
 // SMall script to output the properties of the types.csv as json to add in the tagRenderingGroup. Should be copied manually
-function run() {
-    const entries: string[] = Utils.NoNull(readFileSync("types.csv", "utf8").split("\n").map(str => str.trim()))
+function run(file, protojson) {
+    const entries: string[] = Utils.NoNull(readFileSync(file, "utf8").split("\n").map(str => str.trim()))
     entries.shift()
 
     const result = []
@@ -58,13 +58,13 @@ function run() {
 
     const stringified = questions.map(q => JSON.stringify(q, null, "  "))
     console.log(stringified)
-    let proto = readFileSync("charging_station.protojson", "utf8")
+    let proto = readFileSync(protojson, "utf8")
     proto = proto.replace("$$$", stringified.join(",\n") + ",")
     writeFileSync("charging_station.json", proto)
 }
 
 try {
-    run()
+    run("types.csv","charging_station.protojson")
 } catch (e) {
     console.error(e)
 }

@@ -137,137 +137,137 @@
       }
     },
     {
-  "question": {
-    "en": "Which charging stations are available here?"
-  },
-  "multiAnswer": true,
-  "mappings": [
-    {
-      "if": "socket:schuko=1",
-      "ifnot": "socket:schuko=",
-      "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
-      "hideInAnswer": {
-        "or": [
-          "_country!=be",
-          "_country!=fr",
-          "_country!=ma",
-          "_country!=tn",
-          "_country!=pl",
-          "_country!=cs",
-          "_country!=sk",
-          "_country!=mo"
-        ]
-      }
+      "question": {
+        "en": "Which charging stations are available here?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "socket:schuko=1",
+          "ifnot": "socket:schuko=",
+          "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
+          "hideInAnswer": {
+            "or": [
+              "_country!=be",
+              "_country!=fr",
+              "_country!=ma",
+              "_country!=tn",
+              "_country!=pl",
+              "_country!=cs",
+              "_country!=sk",
+              "_country!=mo"
+            ]
+          }
+        },
+        {
+          "if": "socket:typee=1",
+          "ifnot": "socket:typee=",
+          "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)"
+        },
+        {
+          "if": "socket:chademo=1",
+          "ifnot": "socket:chademo=",
+          "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b> (type 4)"
+        },
+        {
+          "if": "socket:type1_cable=1",
+          "ifnot": "socket:type1_cable=",
+          "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)"
+        },
+        {
+          "if": "socket:type1=1",
+          "ifnot": "socket:type1=",
+          "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)"
+        },
+        {
+          "if": "socket:type1_combo=1",
+          "ifnot": "socket:type1_combo=",
+          "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)"
+        },
+        {
+          "if": "socket:tesla_supercharger=1",
+          "ifnot": "socket:tesla_supercharger=",
+          "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>"
+        }
+      ]
     },
     {
-      "if": "socket:typee=1",
-      "ifnot": "socket:typee=",
-      "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)"
+      "question": {
+        "en": "How much plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> are available here?"
+      },
+      "render": "There are <b>{socket:schuko}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here",
+      "freeform": {
+        "key": "socket:schuko",
+        "type": "pnat"
+      },
+      "condition": "socket:schuko~*"
     },
     {
-      "if": "socket:chademo=1",
-      "ifnot": "socket:chademo=",
-      "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b> (type 4)"
+      "question": {
+        "en": "How much plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> are available here?"
+      },
+      "render": "There are <b>{socket:typee}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here",
+      "freeform": {
+        "key": "socket:typee",
+        "type": "pnat"
+      },
+      "condition": "socket:typee~*"
     },
     {
-      "if": "socket:type1_cable=1",
-      "ifnot": "socket:type1_cable=",
-      "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)"
+      "question": {
+        "en": "How much plugs of type <b>Chademo</b> (type 4) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?"
+      },
+      "render": "There are <b>{socket:chademo}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> plugs of type <b>Chademo</b> (type 4) available here",
+      "freeform": {
+        "key": "socket:chademo",
+        "type": "pnat"
+      },
+      "condition": "socket:chademo~*"
     },
     {
-      "if": "socket:type1=1",
-      "ifnot": "socket:type1=",
-      "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)"
+      "question": {
+        "en": "How much plugs of type <b>Type 1 with cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?"
+      },
+      "render": "There are <b>{socket:type1_cable}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 with cable</b> (J1772) available here",
+      "freeform": {
+        "key": "socket:type1_cable",
+        "type": "pnat"
+      },
+      "condition": "socket:type1_cable~*"
     },
     {
-      "if": "socket:type1_combo=1",
-      "ifnot": "socket:type1_combo=",
-      "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)"
+      "question": {
+        "en": "How much plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?"
+      },
+      "render": "There are <b>{socket:type1}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here",
+      "freeform": {
+        "key": "socket:type1",
+        "type": "pnat"
+      },
+      "condition": "socket:type1~*"
     },
     {
-      "if": "socket:tesla_supercharger=1",
-      "ifnot": "socket:tesla_supercharger=",
-      "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>"
-    }
-  ]
-},
-{
-  "question": {
-    "en": "How much plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> are available here?"
-  },
-  "render": "There are <b>{socket:schuko}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here",
-  "freeform": {
-    "key": "socket:schuko",
-    "type": "pnat"
-  },
-  "condition": "socket:schuko~*"
-},
-{
-  "question": {
-    "en": "How much plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> are available here?"
-  },
-  "render": "There are <b>{socket:typee}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here",
-  "freeform": {
-    "key": "socket:typee",
-    "type": "pnat"
-  },
-  "condition": "socket:typee~*"
-},
-{
-  "question": {
-    "en": "How much plugs of type <b>Chademo</b> (type 4) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?"
-  },
-  "render": "There are <b>{socket:chademo}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> plugs of type <b>Chademo</b> (type 4) available here",
-  "freeform": {
-    "key": "socket:chademo",
-    "type": "pnat"
-  },
-  "condition": "socket:chademo~*"
-},
-{
-  "question": {
-    "en": "How much plugs of type <b>Type 1 with cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?"
-  },
-  "render": "There are <b>{socket:type1_cable}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 with cable</b> (J1772) available here",
-  "freeform": {
-    "key": "socket:type1_cable",
-    "type": "pnat"
-  },
-  "condition": "socket:type1_cable~*"
-},
-{
-  "question": {
-    "en": "How much plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?"
-  },
-  "render": "There are <b>{socket:type1}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here",
-  "freeform": {
-    "key": "socket:type1",
-    "type": "pnat"
-  },
-  "condition": "socket:type1~*"
-},
-{
-  "question": {
-    "en": "How much plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> are available here?"
-  },
-  "render": "There are <b>{socket:type1_combo}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here",
-  "freeform": {
-    "key": "socket:type1_combo",
-    "type": "pnat"
-  },
-  "condition": "socket:type1_combo~*"
-},
-{
-  "question": {
-    "en": "How much plugs of type <b>Tesla Supercharger</b> <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?"
-  },
-  "render": "There are <b>{socket:tesla_supercharger}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> plugs of type <b>Tesla Supercharger</b> available here",
-  "freeform": {
-    "key": "socket:tesla_supercharger",
-    "type": "pnat"
-  },
-  "condition": "socket:tesla_supercharger~*"
-},
+      "question": {
+        "en": "How much plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> are available here?"
+      },
+      "render": "There are <b>{socket:type1_combo}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here",
+      "freeform": {
+        "key": "socket:type1_combo",
+        "type": "pnat"
+      },
+      "condition": "socket:type1_combo~*"
+    },
+    {
+      "question": {
+        "en": "How much plugs of type <b>Tesla Supercharger</b> <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?"
+      },
+      "render": "There are <b>{socket:tesla_supercharger}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> plugs of type <b>Tesla Supercharger</b> available here",
+      "freeform": {
+        "key": "socket:tesla_supercharger",
+        "type": "pnat"
+      },
+      "condition": "socket:tesla_supercharger~*"
+    },
     {
       "#": "Authentication",
       "question": {
