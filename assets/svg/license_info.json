@@ -1350,5 +1350,15 @@
     "path": "loading.svg",
     "license": "CC0; trivial",
     "sources": []
+  },
+  {
+    "path": "hand.svg",
+    "license": "CC0",
+    "authors": [
+      "Anomie"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Right-pointing_hand_in_green_octagon.svg"
+    ]
   }
 ]

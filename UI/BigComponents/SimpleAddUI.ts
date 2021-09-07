@@ -215,7 +215,10 @@ export default class SimpleAddUI extends Toggle {
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
             disableFilter,
-            preset.layerToAddTo.appliedFilters.map(filters => filters === undefined || filters.and.length === 0)
+            preset.layerToAddTo.appliedFilters.map(filters => {
+                console.log("Current filters are ", filters)
+                return filters === undefined || filters.normalize().and.length === 0;
+            })
         )
         
         

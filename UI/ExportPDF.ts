@@ -34,7 +34,6 @@ export default class ExportPDF {
     private _screenhotTaken = false;
 
     public isRunning = new UIEventSource(true)
-    public loadedTiles = new UIEventSource(0)
 
     constructor(
         options: {

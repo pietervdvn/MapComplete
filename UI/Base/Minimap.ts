@@ -18,7 +18,7 @@ export default class Minimap extends BaseUIElement {
     private _allowMoving: boolean;
     private readonly _leafletoptions: any;
     private readonly _onFullyLoaded: (leaflet: L.Map) => void
-    private readonly _attribution: BaseUIElement;
+    private readonly _attribution: BaseUIElement | boolean;
     private readonly _lastClickLocation: UIEventSource<{ lat: number; lon: number }>;
 
     constructor(options?: {
@@ -26,7 +26,7 @@ export default class Minimap extends BaseUIElement {
                     location?: UIEventSource<Loc>,
                     allowMoving?: boolean,
                     leafletOptions?: any,
-                    attribution?: BaseUIElement,
+                    attribution?: BaseUIElement | boolean,
                     onFullyLoaded?: (leaflet: L.Map) => void,
                     leafletMap?: UIEventSource<Map>,
                     lastClickLocation?: UIEventSource<{ lat: number, lon: number }>
@@ -122,8 +122,12 @@ export default class Minimap extends BaseUIElement {
         );
 
         if (this._attribution !== undefined) {
+            if(this._attribution === true){
+             map.attributionControl.setPrefix(false)   
+            }else{
             map.attributionControl.setPrefix(
-                "<span id='leaflet-attribution'>A</span>");
+                "<span id='leaflet-attribution'></span>");
+            }
         }
 
         this._background.addCallbackAndRun(layer => {
@@ -141,7 +145,9 @@ export default class Minimap extends BaseUIElement {
             }
             map.addLayer(newLayer);
             map.setMaxZoom(layer.max_zoom ?? map.getMaxZoom())
-            self._attribution?.AttachTo('leaflet-attribution')
+            if (self._attribution !== true && self._attribution !== false) {
+                self._attribution?.AttachTo('leaflet-attribution')
+            }
 
         })
 

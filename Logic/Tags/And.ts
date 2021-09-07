@@ -5,7 +5,19 @@ export class And extends TagsFilter {
 
     constructor(and: TagsFilter[]) {
         super();
-        this.and = and;
+        this.and = and
+    }
+    
+    normalize(){
+        const ands = []
+        for (const c of this.and) {
+            if(c instanceof And){
+                ands.push(...c.and)
+            }else{
+                ands.push(c)
+            }
+        }
+        return new And(ands)
     }
 
     private static combine(filter: string, choices: string[]): string[] {
@@ -62,17 +74,6 @@ export class And extends TagsFilter {
     isEquivalent(other: TagsFilter): boolean {
         if (!(other instanceof And)) {
             return false;
-        }
-
-        for (const selfTag of this.and) {
-            let matchFound = false;
-            for (let i = 0; i < other.and.length && !matchFound; i++) {
-                let otherTag = other.and[i];
-                matchFound = selfTag.isEquivalent(otherTag);
-            }
-            if (!matchFound) {
-                return false;
-            }
         }
 
         for (const selfTag of this.and) {
