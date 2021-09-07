@@ -252,6 +252,21 @@
         }
       },
       {
+        "if": "level=",
+        "hideInAnswer": true,
+        "then": {
+          "en": "Located on the ground floor",
+          "nl": "Bevindt zich gelijkvloers",
+          "de": "Ist im Erdgeschoss",
+          "pt_BR": "Localizado no térreo",
+          "ru": "Расположено на первом этаже",
+          "zh_Hant": "位於 1 樓",
+          "fr": "Rez-de-chaussée",
+          "pl": "Znajduje się na parterze",
+          "sv": "Ligger på bottenvåningen"
+        }
+      },
+      {
         "if": "level=1",
         "then": {
           "en": "Located on the first floor",
