@@ -905,6 +905,20 @@
                         "then": "Not part of a bigger network"
                     }
                 }
+            },
+            "17": {
+                "question": "Is this charging point in use?",
+                "mappings": {
+                    "0": {
+                        "then": "This charging station works"
+                    },
+                    "1": {
+                        "then": "This charging station is broken"
+                    },
+                    "2": {
+                        "then": "This charging station has beed permanently disabled and is not in use anymore but is still visible"
+                    }
+                }
             }
         },
         "presets": {

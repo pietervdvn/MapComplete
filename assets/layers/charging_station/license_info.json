@@ -11,6 +11,37 @@
     ]
   },
   {
+    "path": "Type2_socket.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "GreatDrok"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Type_2_mennekes.svg"
+    ]
+  },
+  {
+    "path": "Type2_CCS.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "GreatDrok"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Combo-ccs-eu.svg"
+    ]
+  },
+  {
+    "path": "Type2_tethered.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "GreatDrok",
+      "Open Charge Map"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/openchargemap/ocm-app/master/src/assets/images/icons/connectors/Type2_tethered.svg"
+    ]
+  },
+  {
     "path": "TypeE.svg",
     "license": "MIT",
     "authors": [
@@ -56,6 +87,16 @@
     ],
     "sources": [
       "https://upload.wikimedia.org/wikipedia/commons/e/ec/Chademo_type4.svg"
+    ]
+  },
+  {
+    "path": "Type3c.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Pyrog"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Type3c.svg"
     ]
   }
 ]

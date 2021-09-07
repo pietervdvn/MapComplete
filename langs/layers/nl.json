@@ -891,6 +891,22 @@
         }
     },
     "charging_station": {
+        "tagRenderings": {
+            "17": {
+                "question": "Is dit oplaadpunt operationeel?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit oplaadpunt werkt"
+                    },
+                    "1": {
+                        "then": "Dit oplaadpunt is kapot"
+                    },
+                    "2": {
+                        "then": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
+                    }
+                }
+            }
+        },
         "filter": {
             "0": {
                 "options": {
