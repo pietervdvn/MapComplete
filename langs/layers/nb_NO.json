@@ -111,10 +111,10 @@
         },
         "description": "En ladestasjon",
         "tagRenderings": {
-            "12": {
+            "14": {
                 "question": "Når åpnet denne ladestasjonen?"
             },
-            "13": {
+            "15": {
                 "render": "{network}"
             }
         }

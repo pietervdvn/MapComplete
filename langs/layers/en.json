@@ -842,7 +842,7 @@
                 "question": "How much plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> are available here?"
             },
             "7": {
-                "question": "How much plugs of type <b>Chademo</b> (type 4) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?"
+                "question": "How much plugs of type <b>Chademo</b> <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?"
             },
             "8": {
                 "question": "How much plugs of type <b>Type 1 with cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?"
@@ -857,6 +857,12 @@
                 "question": "How much plugs of type <b>Tesla Supercharger</b> <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?"
             },
             "12": {
+                "question": "How much plugs of type <b>Type 2</b> (mennekes) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> are available here?"
+            },
+            "13": {
+                "question": "How much plugs of type <b>Type 2 CCS</b> (mennekes) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?"
+            },
+            "14": {
                 "question": "What kind of authentication is available at the charging station?",
                 "mappings": {
                     "0": {
@@ -885,11 +891,11 @@
                     }
                 }
             },
-            "13": {
+            "15": {
                 "render": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
                 "question": "What's the phone number for authentication call or SMS?"
             },
-            "14": {
+            "16": {
                 "question": "When is this charging station opened?",
                 "mappings": {
                     "0": {
@@ -897,26 +903,50 @@
                     }
                 }
             },
-            "15": {
+            "17": {
                 "render": "Part of the network <b>{network}</b>",
                 "question": "Is this charging station part of a network?",
                 "mappings": {
                     "0": {
                         "then": "Not part of a bigger network"
+                    },
+                    "1": {
+                        "then": "Not part of a bigger network"
                     }
                 }
             },
-            "17": {
+            "19": {
+                "question": "What number can one call if there is a problem with this charging station?",
+                "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
+            },
+            "20": {
+                "question": "What is the email address of the operator?",
+                "render": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
+            },
+            "21": {
+                "question": "What is the website of the operator?",
+                "render": "More info on <a href='{website}'>{website}</a>"
+            },
+            "22": {
+                "question": "What is the reference number of this charging station?"
+            },
+            "23": {
                 "question": "Is this charging point in use?",
                 "mappings": {
                     "0": {
-                        "then": "This charging station works"
-                    },
-                    "1": {
                         "then": "This charging station is broken"
                     },
+                    "1": {
+                        "then": "A charging station is planned here"
+                    },
                     "2": {
+                        "then": "A charging station is constructed here"
+                    },
+                    "3": {
                         "then": "This charging station has beed permanently disabled and is not in use anymore but is still visible"
+                    },
+                    "4": {
+                        "then": "This charging station works"
                     }
                 }
             }
@@ -937,6 +967,13 @@
                     },
                     "2": {
                         "question": "Charging station for cars"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Only working charging stations"
                     }
                 }
             }
