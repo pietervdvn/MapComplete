@@ -1,19 +1,7 @@
 [
   {
-    "authors": [
-      "Pieter Fiers",
-      "Thibault Declercq",
-      "Pierre Barban",
-      "Joost Schouppe",
-      "Pieter Vander Vennet"
-    ],
     "path": "bike_pump.svg",
     "license": "CC-BY-SA",
-    "sources": [
-      "https://osoc.be/editions/2020/cyclofix"
-    ]
-  },
-  {
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -21,13 +9,13 @@
       "Joost Schouppe",
       "Pieter Vander Vennet"
     ],
+    "sources": [
+      "https://osoc.be/editions/2020/cyclofix"
+    ]
+  },
+  {
     "path": "broken_pump.svg",
     "license": "CC-BY-SA",
-    "sources": [
-      "https://osoc.be/editions/2020/cyclofix"
-    ]
-  },
-  {
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -35,13 +23,13 @@
       "Joost Schouppe",
       "Pieter Vander Vennet"
     ],
+    "sources": [
+      "https://osoc.be/editions/2020/cyclofix"
+    ]
+  },
+  {
     "path": "broken_pump_2.svg",
     "license": "CC-BY-SA",
-    "sources": [
-      "https://osoc.be/editions/2020/cyclofix"
-    ]
-  },
-  {
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -49,43 +37,56 @@
       "Joost Schouppe",
       "Pieter Vander Vennet"
     ],
-    "path": "pump.svg",
-    "license": "CC-BY-SA",
     "sources": [
       "https://osoc.be/editions/2020/cyclofix"
     ]
   },
   {
+    "path": "pump.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Pieter Fiers",
+      "Thibault Declercq",
+      "Pierre Barban",
+      "Joost Schouppe",
+      "Pieter Vander Vennet"
+    ],
+    "sources": [
+      "https://osoc.be/editions/2020/cyclofix"
+    ]
+  },
+  {
+    "path": "pump_example.png",
+    "license": "Used with permission; all rights reserved",
     "authors": [
       "Turvec Solutions"
     ],
-    "path": "pump_example.png",
-    "license": "Used with permission; all rights reserved",
-    "note": "Used with permission after email conversation, can be assumed to be CC-BY",
     "sources": [
       "https://turvec.com/product/public-bike-pump/"
     ]
   },
   {
+    "path": "pump_example_manual.jpg",
+    "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "path": "pump_example_manual.jpg",
-    "license": "CC0",
     "sources": []
   },
   {
+    "path": "pump_example_round.jpg",
+    "license": "Used with permission; all rights reserved",
     "authors": [
       "©Altinnova"
     ],
-    "path": "pump_example_round.jpg",
-    "license": "Used with permission; all rights reserved",
     "sources": [
       "https://www.altinnova.com",
       "https://www.teeken.de/produkte/stadtmobiliar/green-air1/12?lang=3"
     ]
   },
   {
+    "path": "repair_station.svg",
+    "license": "CC-BY-SA",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -93,23 +94,23 @@
       "Joost Schouppe",
       "Pieter Vander Vennet"
     ],
-    "path": "repair_station.svg",
-    "license": "CC-BY-SA",
     "sources": [
       "https://osoc.be/editions/2020/cyclofix"
     ]
   },
   {
+    "path": "repair_station_example.jpg",
+    "license": "CC-BY-SA 4.0",
     "authors": [
       "Polarbear24"
     ],
-    "path": "repair_station_example.jpg",
-    "license": "CC-BY-SA 4.0",
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Public_Bike_Repair_Station.jpg"
     ]
   },
   {
+    "path": "repair_station_pump.svg",
+    "license": "CC-BY-SA",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -117,8 +118,6 @@
       "Joost Schouppe",
       "Pieter Vander Vennet"
     ],
-    "path": "repair_station_pump.svg",
-    "license": "CC-BY-SA",
     "sources": [
       "https://osoc.be/editions/2020/cyclofix"
     ]

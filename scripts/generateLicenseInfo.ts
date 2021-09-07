@@ -87,7 +87,6 @@ knownLicenses.set("na", {
 })
 
 
-
 function promptLicenseFor(path): SmallLicense {
     console.log("License abbreviations:")
     knownLicenses.forEach((value, key) => {
@@ -144,10 +143,18 @@ function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
         if (!perDirectory.has(dir)) {
             perDirectory.set(dir, [])
         }
-        perDirectory.get(dir).push(license)
+        const cloned : SmallLicense = {
+            // We make a clone to force the order of the keys
+            path: license.path,
+            license: license.license,
+            authors: license.authors,
+            sources: license.sources
+        }
+        perDirectory.get(dir).push(cloned)
     }
 
     perDirectory.forEach((licenses, dir) => {
+        licenses.sort((a, b) => a.path < b.path ? -1 : 1)
         writeFileSync(dir + "/license_info.json", JSON.stringify(licenses, null, 2))
     })
 

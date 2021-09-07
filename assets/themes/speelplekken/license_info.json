@@ -1,95 +1,95 @@
 [
   {
+    "path": "Departement_Omgeving_Vlaanderen.png",
+    "license": "Logo; All rights reserved",
     "authors": [
       "Departement Omgeving, Vlaamse Overheid"
     ],
-    "path": "Departement_Omgeving_Vlaanderen.png",
-    "license": "Logo; All rights reserved",
     "sources": [
       "https://omgeving.vlaanderen.be/"
     ]
   },
   {
-    "authors": [
-      "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
-    ],
     "path": "logo.svg",
     "license": "CC-BY-SA 4.0",
-    "sources": [
-      "https://createlli.com/",
-      "https://www.provincieantwerpen.be/"
-    ]
-  },
-  {
     "authors": [
       "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
     ],
-    "path": "walking_route.svg",
-    "license": "CC-BY-SA 4.0",
     "sources": [
       "https://createlli.com/",
       "https://www.provincieantwerpen.be/"
     ]
   },
   {
-    "authors": [
-      "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
-    ],
-    "path": "speelbos.svg",
-    "license": "CC-BY-SA 4.0",
-    "sources": [
-      "https://createlli.com/",
-      "https://www.provincieantwerpen.be/"
-    ]
-  },
-  {
-    "authors": [
-      "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
-    ],
-    "path": "speeltuin.svg",
-    "license": "CC-BY-SA 4.0",
-    "sources": [
-      "https://createlli.com/",
-      "https://www.provincieantwerpen.be/"
-    ]
-  },
-  {
-    "authors": [
-      "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
-    ],
-    "path": "speelweide.svg",
-    "license": "CC-BY-SA 4.0",
-    "sources": [
-      "https://createlli.com/",
-      "https://www.provincieantwerpen.be/"
-    ]
-  },
-  {
+    "path": "provincie_antwerpen.jpg",
+    "license": "Logo; All rights reserved",
     "authors": [
       "Provincie Antwerpen"
     ],
-    "path": "provincie_antwerpen.jpg",
-    "license": "Logo; All rights reserved",
     "sources": [
       "https://www.antwerpen.be/"
     ]
   },
   {
+    "path": "social_image.jpg",
+    "license": "Logo (all rights reserved)",
     "authors": [
       "Createlli"
     ],
-    "path": "social_image.jpg",
-    "license": "Logo (all rights reserved)",
     "sources": [
       "https://createlli.com/"
     ]
   },
   {
+    "path": "speelbos.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
+    ],
+    "sources": [
+      "https://createlli.com/",
+      "https://www.provincieantwerpen.be/"
+    ]
+  },
+  {
+    "path": "speeltuin.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
+    ],
+    "sources": [
+      "https://createlli.com/",
+      "https://www.provincieantwerpen.be/"
+    ]
+  },
+  {
+    "path": "speelweide.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
+    ],
+    "sources": [
+      "https://createlli.com/",
+      "https://www.provincieantwerpen.be/"
+    ]
+  },
+  {
+    "path": "walking_route.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
+    ],
+    "sources": [
+      "https://createlli.com/",
+      "https://www.provincieantwerpen.be/"
+    ]
+  },
+  {
+    "path": "youtube.svg",
+    "license": "Logo (all rights reserved)",
     "authors": [
       "Youtube"
     ],
-    "path": "youtube.svg",
-    "license": "Logo (all rights reserved)",
     "sources": [
       "https://www.youtube.com/"
     ]

@@ -1,221 +1,221 @@
 [
   {
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "path": "Cycle_barrier_double.svg",
+    "path": "Belgian_road_sign_D07.svg",
     "license": "CC0",
-    "sources": []
-  },
-  {
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "path": "Cycle_barrier_double_length.png",
-    "license": "CC0",
-    "sources": []
-  },
-  {
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "path": "Cycle_barrier_double_length.svg",
-    "license": "CC0",
-    "sources": []
-  },
-  {
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "path": "Cycle_barrier_double_overlap.svg",
-    "license": "CC0",
-    "sources": []
-  },
-  {
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "path": "Cycle_barrier_double_template.svg",
-    "license": "CC0",
-    "sources": []
-  },
-  {
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "path": "Cycle_barrier_double_width.svg",
-    "license": "CC0",
-    "sources": []
-  },
-  {
-    "authors": [
-      "Dávid Gladiš",
-      "Hannah Declerck"
-    ],
-    "path": "cycle-infra.svg",
-    "license": "CC-BY",
-    "sources": [
-      "https://thenounproject.com/davidgladis/collection/bicycles/?i=808040"
-    ]
-  },
-  {
     "authors": [
       "Belgische Wetgever"
     ],
-    "path": "Belgian_road_sign_D07.svg",
-    "license": "CC0",
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_D07.svg"
     ]
   },
   {
+    "path": "Belgian_road_sign_D09.svg",
+    "license": "CC0",
     "authors": [
       "Belgische Wetgever"
     ],
-    "path": "Belgian_road_sign_D09.svg",
-    "license": "CC0",
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_D09.svg"
     ]
   },
   {
+    "path": "Belgian_road_sign_D10.svg",
+    "license": "CC0",
     "authors": [
       "Belgische Wetgever"
     ],
-    "path": "Belgian_road_sign_D10.svg",
-    "license": "CC0",
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_D10.svg"
     ]
   },
   {
-    "authors": [
-      "Belgische Wetgever"
-    ],
-    "path": "Belgian_traffic_sign_M6.svg",
-    "license": "CC0",
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M6.svg"
-    ]
-  },
-  {
-    "authors": [
-      "Belgische Wetgever"
-    ],
-    "path": "Belgian_traffic_sign_M7.svg",
-    "license": "CC0",
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M7.svg"
-    ]
-  },
-  {
-    "authors": [
-      "Belgische Wetgever"
-    ],
     "path": "Belgian_traffic_sign_M13.svg",
     "license": "CC0",
+    "authors": [
+      "Belgische Wetgever"
+    ],
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M13.svg"
     ]
   },
   {
+    "path": "Belgian_traffic_sign_M14.svg",
+    "license": "CC0",
     "authors": [
       "Belgische Wetgever"
     ],
-    "path": "Belgian_traffic_sign_M14.svg",
-    "license": "CC0",
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M14.svg"
     ]
   },
   {
+    "path": "Belgian_traffic_sign_M15.svg",
+    "license": "CC0",
     "authors": [
       "Belgische Wetgever"
     ],
-    "path": "Belgian_traffic_sign_M15.svg",
-    "license": "CC0",
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M15.svg"
     ]
   },
   {
+    "path": "Belgian_traffic_sign_M16.svg",
+    "license": "CC0",
     "authors": [
       "Belgische Wetgever"
     ],
-    "path": "Belgian_traffic_sign_M16.svg",
-    "license": "CC0",
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M16.svg"
     ]
   },
   {
+    "path": "Belgian_traffic_sign_M6.svg",
+    "license": "CC0",
     "authors": [
-      "Supaplex030"
+      "Belgische Wetgever"
     ],
-    "path": "Cycle_barrier_single.png",
-    "license": "CC-BY-SA 4.0",
     "sources": [
-      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_single.png"
+      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M6.svg"
     ]
   },
   {
+    "path": "Belgian_traffic_sign_M7.svg",
+    "license": "CC0",
     "authors": [
-      "Supaplex030"
+      "Belgische Wetgever"
     ],
-    "path": "Cycle_barrier_double.png",
-    "license": "CC-BY-SA 4.0",
     "sources": [
-      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_double.png"
+      "https://commons.wikimedia.org/wiki/File:Belgian_traffic_sign_M7.svg"
     ]
   },
   {
-    "authors": [
-      "Supaplex030"
-    ],
-    "path": "Cycle_barrier_triple.png",
-    "license": "CC-BY-SA 4.0",
-    "sources": [
-      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_triple.png"
-    ]
-  },
-  {
-    "authors": [
-      "Supaplex030"
-    ],
     "path": "Cycle_barrier_angular.png",
     "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Supaplex030"
+    ],
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_angular.png"
     ]
   },
   {
+    "path": "Cycle_barrier_double.png",
+    "license": "CC-BY-SA 4.0",
     "authors": [
       "Supaplex030"
     ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_double.png"
+    ]
+  },
+  {
+    "path": "Cycle_barrier_double.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "Cycle_barrier_double_length.png",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "Cycle_barrier_double_length.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "Cycle_barrier_double_overlap.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "Cycle_barrier_double_template.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "Cycle_barrier_double_width.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "Cycle_barrier_single.png",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Supaplex030"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_single.png"
+    ]
+  },
+  {
     "path": "Cycle_barrier_squeeze.png",
     "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Supaplex030"
+    ],
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_squeeze.png"
     ]
   },
   {
-    "authors": [
-      "Tobias Zwick"
-    ],
-    "path": "street.svg",
+    "path": "Cycle_barrier_triple.png",
     "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Supaplex030"
+    ],
     "sources": [
-      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/street.svg"
+      "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_triple.png"
     ]
   },
   {
+    "path": "bicycleway.svg",
+    "license": "CC-BY-SA 4.0",
     "authors": [
       "Tobias Zwick"
     ],
-    "path": "bicycleway.svg",
-    "license": "CC-BY-SA 4.0",
     "sources": [
       "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/bicycleway.svg"
+    ]
+  },
+  {
+    "path": "cycle-infra.svg",
+    "license": "CC-BY",
+    "authors": [
+      "Dávid Gladiš",
+      "Hannah Declerck"
+    ],
+    "sources": [
+      "https://thenounproject.com/davidgladis/collection/bicycles/?i=808040"
+    ]
+  },
+  {
+    "path": "street.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/street.svg"
     ]
   }
 ]
