@@ -44,6 +44,9 @@
                     "then": "Located on the ground floor"
                 },
                 "2": {
+                    "then": "Located on the ground floor"
+                },
+                "3": {
                     "then": "Located on the first floor"
                 }
             }

@@ -24,6 +24,9 @@
                     "then": "Ist im Erdgeschoss"
                 },
                 "2": {
+                    "then": "Ist im Erdgeschoss"
+                },
+                "3": {
                     "then": "Ist im ersten Stock"
                 }
             }

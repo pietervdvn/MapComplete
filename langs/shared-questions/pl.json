@@ -27,6 +27,9 @@
                     "then": "Znajduje się na parterze"
                 },
                 "2": {
+                    "then": "Znajduje się na parterze"
+                },
+                "3": {
                     "then": "Znajduje się na pierwszym piętrze"
                 }
             }

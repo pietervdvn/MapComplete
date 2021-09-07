@@ -27,6 +27,9 @@
                     "then": "Localizado no térreo"
                 },
                 "2": {
+                    "then": "Localizado no térreo"
+                },
+                "3": {
                     "then": "Localizado no primeiro andar"
                 }
             }

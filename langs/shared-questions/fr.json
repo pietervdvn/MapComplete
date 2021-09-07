@@ -27,6 +27,9 @@
                     "then": "Rez-de-chaussée"
                 },
                 "2": {
+                    "then": "Rez-de-chaussée"
+                },
+                "3": {
                     "then": "Premier étage"
                 }
             }

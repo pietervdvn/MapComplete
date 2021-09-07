@@ -23,6 +23,9 @@
                     "then": "Ligger på bottenvåningen"
                 },
                 "2": {
+                    "then": "Ligger på bottenvåningen"
+                },
+                "3": {
                     "then": "Ligger på första våningen"
                 }
             }

@@ -44,6 +44,9 @@
                     "then": "Bevindt zich gelijkvloers"
                 },
                 "2": {
+                    "then": "Bevindt zich gelijkvloers"
+                },
+                "3": {
                     "then": "Bevindt zich op de eerste verdieping"
                 }
             }
