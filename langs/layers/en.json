@@ -1721,14 +1721,20 @@
             "10": {
                 "question": "Does this restaurant have a vegetarian option?"
             },
-            "15": {
-                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
+            "12": {
+                "question": "Does this restaurant offer a halal menu?",
                 "mappings": {
                     "0": {
-                        "then": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste"
+                        "then": "There are no halal options available"
                     },
                     "1": {
-                        "then": "Bringing your own container is <b>not allowed</b>"
+                        "then": "There is a small halal menu"
+                    },
+                    "2": {
+                        "then": "There is a halal menu"
+                    },
+                    "3": {
+                        "then": "Only halal options are available"
                     }
                 }
             },

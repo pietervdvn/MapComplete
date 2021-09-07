@@ -391,39 +391,70 @@
     {
       "#": "halal (no friture)",
       "question": {
-        "nl": "Heeft deze frituur vegetarische snacks?",
-        "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
+        "en": "Does this restaurant offer a halal menu?",
+        "nl": "Heeft dit restaurant halal opties?"
       },
       "mappings": [
         {
           "if": "diet:halal=no",
           "then": {
-            "nl": "Er zijn vegetarische snacks aanwezig",
-            "fr": "Des collations végétariennes sont disponibles"
+            "en": "There are no halal options available",
+            "nl": "Er zijn geen halal opties aanwezig"
           }
         },
         {
           "if": "diet:halal=limited",
+          "then": {
+            "en": "There is a small halal menu",
+            "nl": "Er zijn een beperkt aantal halal opties"
+          }
+        },
+        {
+          "if": "diet:halal=yes",
+          "then": {
+            "nl": "Halal menu verkrijgbaar",
+            "en": "There is a halal menu"
+          }
+        },
+        {
+          "if": "diet:halal=only",
+          "then": {
+            "nl": "Enkel halal opties zijn beschikbaar",
+            "en": "Only halal options are available"
+          }
+        }
+      ],
+      "condition": "cuisine!=friture"
+    },
+    {
+      "question": {
+        "nl": "Heeft deze frituur vegetarische snacks?",
+        "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
+      },
+      "mappings": [
+        {
+          "if": "diet:vegetarian=yes",
+          "then": {
+            "nl": "Er zijn vegetarische snacks aanwezig",
+            "fr": "Des collations végétariens sont disponibles"
+          }
+        },
+        {
+          "if": "diet:vegetarian=limited",
           "then": {
             "nl": "Slechts enkele vegetarische snacks",
             "fr": "Quelques snacks végétariens seulement"
           }
         },
         {
-          "if": "diet:halal=yes",
+          "if": "diet:vegetarian=no",
           "then": {
             "nl": "Geen vegetarische snacks beschikbaar",
             "fr": "Pas d'en-cas végétariens disponibles"
           }
-        },
-        {
-          "if": "diet:halal=only",
-          "then": {
-            "nl": "Enkel halal opties zijn beschikbaar"
-          }
         }
       ],
-      "condition": "cuisine!=friture"
+      "condition": "cuisine=friture"
     },
     {
       "question": {
@@ -432,33 +463,21 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "diet:vegetarian=yes"
-            ]
-          },
+          "if": "diet:vegan=yes",
           "then": {
             "nl": "Er zijn veganistische snacks aanwezig",
             "fr": "Des collations végétaliens sont disponibles"
           }
         },
         {
-          "if": {
-            "and": [
-              "diet:vegetarian=limited"
-            ]
-          },
+          "if": "diet:vegan=limited",
           "then": {
             "nl": "Slechts enkele veganistische snacks",
             "fr": "Quelques snacks végétaliens seulement"
           }
         },
         {
-          "if": {
-            "and": [
-              "diet:vegetarian=no"
-            ]
-          },
+          "if": "diet:vegan=no",
           "then": {
             "nl": "Geen veganistische snacks beschikbaar",
             "fr": "Pas d'en-cas végétaliens disponibles"
@@ -474,36 +493,17 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "diet:vegan=yes"
-            ]
-          },
+          "if": "friture:oil=vegetable",
           "then": {
             "nl": "Plantaardige olie",
             "fr": "Huile végétale"
           }
         },
         {
-          "if": {
-            "and": [
-              "diet:vegan=limited"
-            ]
-          },
+          "if": "friture:oil=animal",
           "then": {
             "nl": "Dierlijk vet",
             "fr": "Graisse animale"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "diet:vegetarian=no"
-            ]
-          },
-          "then": {
-            "nl": "Geen veganistische snacks beschikbaar",
-            "fr": "Pas d'en-cas végétaliens disponibles"
           }
         }
       ],
@@ -518,11 +518,7 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "friture:oil=vegetable"
-            ]
-          },
+          "if": "reusable_packaging:accept=yes",
           "then": {
             "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
             "fr": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets",
@@ -531,11 +527,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "friture:oil=animal"
-            ]
-          },
+          "if": "reusable_packaging:accept=no",
           "then": {
             "nl": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen",
             "fr": "Apporter ses propres contenants <b>n’est pas permis</b>",
@@ -543,39 +535,9 @@
             "ja": "独自の容器を持参することは<b>できません</b>",
             "ru": "Приносить свою тару <b>не разрешено</b>"
           }
-        }
-      ],
-      "condition": "cuisine=friture"
-    },
-    {
-      "question": {
-        "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
-        "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
-        "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>",
-        "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>"
-      },
-      "mappings": [
-        {
-          "if": "bulk_purchase=yes",
-          "then": {
-            "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
-            "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste",
-            "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます",
-            "fr": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets"
-          }
         },
         {
-          "if": "bulk_purchase=no",
-          "then": {
-            "nl": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen",
-            "en": "Bringing your own container is <b>not allowed</b>",
-            "ja": "独自の容器を持参することは<b>できません</b>",
-            "ru": "Приносить свою тару <b>не разрешено</b>",
-            "fr": "Apporter ses propres contenants <b>n’est pas permis</b>"
-          }
-        },
-        {
-          "if": "bulk_purchase=only",
+          "if": "reusable_packaging:accept=only",
           "then": {
             "nl": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen.",
             "en": "You <b>must</b> bring your own container to order here.",

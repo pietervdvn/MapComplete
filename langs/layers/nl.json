@@ -1720,6 +1720,23 @@
                 }
             },
             "12": {
+                "question": "Heeft dit restaurant halal opties?",
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn geen halal opties aanwezig"
+                    },
+                    "1": {
+                        "then": "Er zijn een beperkt aantal halal opties"
+                    },
+                    "2": {
+                        "then": "Halal menu verkrijgbaar"
+                    },
+                    "3": {
+                        "then": "Enkel halal opties zijn beschikbaar"
+                    }
+                }
+            },
+            "13": {
                 "question": "Heeft deze frituur vegetarische snacks?",
                 "mappings": {
                     "0": {
@@ -1730,13 +1747,10 @@
                     },
                     "2": {
                         "then": "Geen vegetarische snacks beschikbaar"
-                    },
-                    "3": {
-                        "then": "Enkel halal opties zijn beschikbaar"
                     }
                 }
             },
-            "13": {
+            "14": {
                 "question": "Heeft deze frituur veganistische snacks?",
                 "mappings": {
                     "0": {
@@ -1750,7 +1764,7 @@
                     }
                 }
             },
-            "14": {
+            "15": {
                 "question": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
                 "mappings": {
                     "0": {
@@ -1758,20 +1772,6 @@
                     },
                     "1": {
                         "then": "Dierlijk vet"
-                    },
-                    "2": {
-                        "then": "Geen veganistische snacks beschikbaar"
-                    }
-                }
-            },
-            "15": {
-                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
-                "mappings": {
-                    "0": {
-                        "then": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken"
-                    },
-                    "1": {
-                        "then": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen"
                     }
                 }
             },

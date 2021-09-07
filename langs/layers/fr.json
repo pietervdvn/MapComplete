@@ -864,11 +864,11 @@
     },
     "food": {
         "tagRenderings": {
-            "12": {
+            "13": {
                 "question": "Cette friterie est-elle équipée de snacks végétariens ?",
                 "mappings": {
                     "0": {
-                        "then": "Des collations végétariennes sont disponibles"
+                        "then": "Des collations végétariens sont disponibles"
                     },
                     "1": {
                         "then": "Quelques snacks végétariens seulement"
@@ -878,7 +878,7 @@
                     }
                 }
             },
-            "13": {
+            "14": {
                 "question": "Cette friterie est-elle équipée de snacks végétaliens ?",
                 "mappings": {
                     "0": {
@@ -892,7 +892,7 @@
                     }
                 }
             },
-            "14": {
+            "15": {
                 "question": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?",
                 "mappings": {
                     "0": {
@@ -900,20 +900,6 @@
                     },
                     "1": {
                         "then": "Graisse animale"
-                    },
-                    "2": {
-                        "then": "Pas d'en-cas végétaliens disponibles"
-                    }
-                }
-            },
-            "15": {
-                "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
-                "mappings": {
-                    "0": {
-                        "then": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets"
-                    },
-                    "1": {
-                        "then": "Apporter ses propres contenants <b>n’est pas permis</b>"
                     }
                 }
             },
