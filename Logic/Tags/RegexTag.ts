@@ -2,10 +2,10 @@ import {Tag} from "./Tag";
 import {TagsFilter} from "./TagsFilter";
 
 export class RegexTag extends TagsFilter {
-    private readonly key: RegExp | string;
-    private readonly value: RegExp | string;
-    private readonly invert: boolean;
-    private readonly matchesEmpty: boolean
+    public readonly key: RegExp | string;
+    public readonly value: RegExp | string;
+    public readonly invert: boolean;
+    public readonly matchesEmpty: boolean
 
     constructor(key: string | RegExp, value: RegExp | string, invert: boolean = false) {
         super();

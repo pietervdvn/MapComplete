@@ -98,5 +98,15 @@
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Type3c.svg"
     ]
+  },
+  {
+    "path": "under_construction.svg",
+    "license": "Public domain",
+    "authors": [
+      "Sarang"
+    ],
+    "sources": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/20/UnderCon_icon.svg"
+    ]
   }
 ]

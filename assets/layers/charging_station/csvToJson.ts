@@ -6,7 +6,7 @@ function run(file, protojson) {
     const entries: string[] = Utils.NoNull(readFileSync(file, "utf8").split("\n").map(str => str.trim()))
     entries.shift()
 
-    const result = []
+    const overview_question_answers = []
     const questions = []
     const filterOptions: { question: string, osmTags?: string } [] = [
         {
@@ -20,27 +20,35 @@ function run(file, protojson) {
             continue;
         }
 
+        const txt = `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${image}'/> ${description}`
         const json = {
             if: `${key}=1`,
             ifnot: `${key}=`,
-            then: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${image}'/> ${description}`,
-
+            then: txt,
         }
 
         if (whitelist) {
-            const countries = whitelist.split(";").map(country => "_country!=" + country) //HideInAnswer if it is in the wrong country
+            const countries = whitelist.replace(/"/g, '').split(",").map(country => "_country!=" + country) //HideInAnswer if it is in the wrong country
             json["hideInAnswer"] = {or: countries}
         }
 
-        result.push(json)
+        overview_question_answers.push(json)
 
-
+        // We add a second time for any amount to trigger a visualisation; but this is not an answer option
+        const no_ask_json = {
+            if: {and: [`${key}~*`,`${key}!=1`]
+            },
+            then: txt,
+            hideInAnswer: true
+        }
+        overview_question_answers.push(no_ask_json)
+        
         const indivQ = {
 
             question: {
                 en: `How much plugs of type ${description} <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${image}'/> are available here?`
             },
-            render: `There are <b>{${key}}</b>  <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${image}'/> plugs of type ${description} available here`,
+            render: `There are <b>{${key}}</b>  <img style='width:1rem' src='./assets/layers/charging_station/${image}'/> plugs of type ${description} available here`,
             freeform: {
                 key: key,
                 type: "pnat"
@@ -52,7 +60,7 @@ function run(file, protojson) {
         questions.push(indivQ)
 
         filterOptions.push({
-            question: `Has a ${description} <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${image}'/> connector`,
+            question: `Has a ${description} <img style='width:1rem' src='./assets/layers/charging_station/${image}'/> connector`,
             osmTags: `${key}~*`
         })
     }
@@ -62,7 +70,7 @@ function run(file, protojson) {
             "en": "Which charging stations are available here?"
         },
         "multiAnswer": true,
-        "mappings": result
+        "mappings": overview_question_answers
     }
     questions.unshift(toggles)
 

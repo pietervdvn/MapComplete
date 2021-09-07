@@ -13,7 +13,9 @@
     "osmTags": {
       "or": [
         "amenity=charging_station",
-        "disused:amenity=charging_station"
+        "disused:amenity=charging_station",
+        "planned:amenity=charging_station",
+        "construction:amenity=charging_station"
       ]
     }
   },
@@ -288,37 +290,28 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "no:network=yes"
-            ]
-          },
+          "if": "no:network=yes",
           "then": {
             "en": "Not part of a bigger network"
           }
         },
         {
-          "if": {
-            "and": [
-              "network=AeroVironment"
-            ]
+          "if": "network=none",
+          "then": {
+            "en": "Not part of a bigger network"
           },
+          "hideInAnswer": true
+        },
+        {
+          "if": "network=AeroVironment",
           "then": "AeroVironment"
         },
         {
-          "if": {
-            "and": [
-              "network=Blink"
-            ]
-          },
+          "if": "network=Blink",
           "then": "Blink"
         },
         {
-          "if": {
-            "and": [
-              "network=eVgo"
-            ]
-          },
+          "if": "network=eVgo",
           "then": "eVgo"
         }
       ]
@@ -345,6 +338,52 @@
         }
       ]
     },
+    {"#": "phone",
+      "question": {
+        "en": "What number can one call if there is a problem with this charging station?"
+      },
+      "render": {
+        "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
+      },
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      }
+    },
+    {"#": "email",
+      "question": {
+        "en": "What is the email address of the operator?"
+      },
+      "render": {
+        "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
+      },
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      }
+    },
+    {"#": "website",
+      "question": {
+        "en": "What is the website of the operator?"
+      },
+      "render": {
+        "en": "More info on <a href='{website}'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url"
+      }
+    },
+    {
+      "#": "ref",
+      "question": {
+        "en": "What is the reference number of this charging station?"
+      },
+      "render": "Reference number is <b>{ref}</b>",
+      "freeform": {
+        "key": "ref"
+      }
+    },
     {
       "#": "Operational status",
       "question": {
@@ -353,17 +392,34 @@
       },
       "mappings": [
         {
-          "if": "operational_status=",
-          "then": {
-            "en": "This charging station works",
-            "nl": "Dit oplaadpunt werkt"
-          }
-        },
-        {
           "if": "operational_status=broken",
           "then": {
             "en": "This charging station is broken",
             "nl": "Dit oplaadpunt is kapot"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "planned:amenity=charging_station",
+              "amenity="
+            ]
+          },
+          "then": {
+            "en": "A charging station is planned here",
+            "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "construction:amenity=charging_station",
+              "amenity="
+            ]
+          },
+          "then": {
+            "en": "A charging station is constructed here",
+            "nl": "Hier wordt op dit moment een oplaadpunt gebouwd"
           }
         },
         {
@@ -376,6 +432,13 @@
           "then": {
             "en": "This charging station has beed permanently disabled and is not in use anymore but is still visible",
             "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
+          }
+        },
+        {
+          "if": "amenity=charging_station",
+          "then": {
+            "en": "This charging station works",
+            "nl": "Dit oplaadpunt werkt"
           }
         }
       ]
@@ -402,9 +465,22 @@
   "iconOverlays": [
     {
       "if": {
-        "or": ["disused:amenity=charging_station","operational_status=broken"]
+        "or": [
+          "disused:amenity=charging_station",
+          "operational_status=broken"
+        ]
       },
       "then": "cross_bottom_right:#c22;"
+    },
+    {
+      "if": {
+        "or": [
+          "proposed:amenity=charging_station",
+          "planned:amenity=charging_station"
+        ]
+      },
+      "then": "./assets/layers/charging_station/under_construction.svg",
+      "badge": true
     },
     {
       "if": {
@@ -467,6 +543,21 @@
             "or": [
               "car=yes",
               "motorcar=yes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": {
+            "en": "Only working charging stations"
+          },
+          "osmTags": {
+            "and": [
+              "operational_status!=broken",
+              "amenity=charging_station"
             ]
           }
         }
