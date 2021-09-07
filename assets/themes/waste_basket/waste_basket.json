@@ -26,7 +26,7 @@
   "socialImage": "",
   "layers": [
     {
-     "builtin": "waste_basket",
+      "builtin": "waste_basket",
       "override": {
         "minzoom": 12
       }

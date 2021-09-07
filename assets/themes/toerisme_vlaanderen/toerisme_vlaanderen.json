@@ -19,7 +19,7 @@
   "icon": "./assets/svg/star.svg",
   "startZoom": 8,
   "startLat": 50.8536,
-  "startLon": 4.4330,
+  "startLon": 4.433,
   "widenFactor": 0.2,
   "layers": [
     {
