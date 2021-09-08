@@ -927,10 +927,10 @@
                 "question": "What is the website of the operator?",
                 "render": "More info on <a href='{website}'>{website}</a>"
             },
-            "22": {
+            "23": {
                 "question": "What is the reference number of this charging station?"
             },
-            "23": {
+            "24": {
                 "question": "Is this charging point in use?",
                 "mappings": {
                     "0": {

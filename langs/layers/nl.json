@@ -892,7 +892,7 @@
     },
     "charging_station": {
         "tagRenderings": {
-            "23": {
+            "24": {
                 "question": "Is dit oplaadpunt operationeel?",
                 "mappings": {
                     "0": {
