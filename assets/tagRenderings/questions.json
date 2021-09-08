@@ -187,6 +187,31 @@
       "type": "opening_hours"
     }
   },
+  "payment-options":  {
+    "question": {
+      "en": "Which methods of payment are accepted here?",
+      "nl": "Welke betaalmiddelen worden hier geaccepteerd?"
+    },
+    "multiAnswer": true,
+    "mappings": [
+      {
+        "if": "payment:cash=yes",
+        "ifnot": "payment:cash=no",
+        "then": {
+          "en": "Cash is accepted here",
+          "nl": "Cash geld wordt hier aanvaard"
+        }
+      },
+      {
+        "if": "payment:cards=yes",
+        "ifnot": "payment:cards=no",
+        "then": {
+          "en": "Payment cards are accepted here",
+          "nl": "Betalen met bankkaarten kan hier"
+        }
+      }
+    ]
+  },
   "last_edit": {
     "#": "Gives some metainfo about the last edit and who did edit it - rendering only",
     "condition": "_last_edit:contributor~*",

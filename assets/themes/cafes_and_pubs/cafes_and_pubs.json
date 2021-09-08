@@ -1,0 +1,26 @@
+{
+  "id": "cafes_and_pubs",
+  "title": {
+    "nl": "Cafés",
+    "en": "Cafés and pubs"
+  },
+  "description": {
+    "nl": "Cafés, kroegen en drinkgelegenheden"
+  },
+  "language": [
+    "nl",
+    "fr",
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/layers/cafe_pub/pub.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "cafe_pub"
+  ]
+}

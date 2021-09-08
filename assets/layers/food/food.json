@@ -144,10 +144,12 @@
     {
       "#": "Name",
       "question": {
-        "nl": "Wat is de naam van deze eetgelegenheid?"
+        "nl": "Wat is de naam van deze eetgelegenheid?",
+        "en": "What is the name of this restaurant?"
       },
       "render": {
-        "nl": "De naam van deze eetgelegeheid is {name}"
+        "nl": "De naam van deze eetgelegeheid is {name}",
+        "en": "The name of this restaurant is {name}"
       },
       "freeform": {
         "key": "name"
@@ -178,6 +180,7 @@
     "website",
     "email",
     "phone",
+    "payment-options",
     "wheelchair-access",
     {
       "#": "Cuisine",
@@ -547,31 +550,6 @@
         }
       ],
       "condition": "cuisine=friture"
-    },
-    {
-      "question": {
-        "en": "Which methods of payment are accepted here?",
-        "nl": "Welke betaalmiddelen worden hier geaccepteerd?"
-      },
-      "multiAnswer": true,
-      "mappings": [
-        {
-          "if": "payment:cash=yes",
-          "ifnot": "payment:cash=no",
-          "then": {
-            "en": "Cash is accepted here",
-            "nl": "Cash geld wordt hier aanvaard"
-          }
-        },
-        {
-          "if": "payment:cards=yes",
-          "ifnot": "payment:cards=no",
-          "then": {
-            "en": "Payment cards are accepted here",
-            "nl": "Betalen met bankkaarten kan hier"
-          }
-        }
-      ]
     }
   ],
   "filter": [

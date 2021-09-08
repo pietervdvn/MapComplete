@@ -1,0 +1,22 @@
+[
+  {
+    "path": "cafe.svg",
+    "license": "CC0",
+    "authors": [
+      "OSM Carto"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Cafe-16.svg"
+    ]
+  },
+  {
+    "path": "pub.svg",
+    "license": "CC0",
+    "authors": [
+      "OSM Carto"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Pub-16.svg"
+    ]
+  }
+]
