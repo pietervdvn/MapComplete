@@ -187,7 +187,7 @@
       "type": "opening_hours"
     }
   },
-  "payment-options":  {
+  "payment-options": {
     "question": {
       "en": "Which methods of payment are accepted here?",
       "nl": "Welke betaalmiddelen worden hier geaccepteerd?"

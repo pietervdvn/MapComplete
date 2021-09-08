@@ -23,7 +23,7 @@ export default class ImageSearcherSpec extends T {
 
 
         ]);
-        
+
     }
 
 

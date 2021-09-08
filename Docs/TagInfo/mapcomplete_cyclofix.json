@@ -1,1164 +1,1164 @@
 {
- "data_format": 1,
- "project": {
-  "name": "MapComplete Cyclofix - an open map for cyclists",
-  "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs",
-  "project_url": "https://mapcomplete.osm.be/cyclofix",
-  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/assets/themes/cyclofix/logo.svg",
-  "contact_name": "Pieter Vander Vennet, MapComplete",
-  "contact_email": "pietervdvn@posteo.net"
- },
- "tags": [
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
-   "value": "pub"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
-   "value": "bar"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
-   "value": "cafe"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
-   "value": "restaurant"
-  },
-  {
-   "key": "pub",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
-   "value": "cycling"
-  },
-  {
-   "key": "pub",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
-   "value": "bicycle"
-  },
-  {
-   "key": "theme",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
-   "value": "cycling"
-  },
-  {
-   "key": "theme",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
-   "value": "bicycle"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "name",
-   "description": "Layer 'Bike cafe' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:pump",
-   "description": "Layer 'Bike cafe' shows service:bicycle:pump=yes with a fixed text, namely 'This bike cafe offers a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:pump",
-   "description": "Layer 'Bike cafe' shows service:bicycle:pump=no with a fixed text, namely 'This bike cafe doesn't offer a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:diy",
-   "description": "Layer 'Bike cafe' shows service:bicycle:diy=yes with a fixed text, namely 'This bike cafe offers tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:diy",
-   "description": "Layer 'Bike cafe' shows service:bicycle:diy=no with a fixed text, namely 'This bike cafe doesn't offer tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:repair",
-   "description": "Layer 'Bike cafe' shows service:bicycle:repair=yes with a fixed text, namely 'This bike cafe repairs bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:repair",
-   "description": "Layer 'Bike cafe' shows service:bicycle:repair=no with a fixed text, namely 'This bike cafe doesn't repair bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "website",
-   "description": "Layer 'Bike cafe' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "phone",
-   "description": "Layer 'Bike cafe' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "email",
-   "description": "Layer 'Bike cafe' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Bike cafe' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Bike cafe' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike cafe' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike cafe' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike cafe' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "shop",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
-   "value": "bicycle"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
-   "value": "bicycle_rental"
-  },
-  {
-   "key": "network",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
-   "value": ""
-  },
-  {
-   "key": "shop",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
-   "value": "sports"
-  },
-  {
-   "key": "sport",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
-   "value": "bicycle"
-  },
-  {
-   "key": "sport",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
-   "value": "cycling"
-  },
-  {
-   "key": "sport",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
-   "value": ""
-  },
-  {
-   "key": "shop",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "name",
-   "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "website",
-   "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "phone",
-   "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "email",
-   "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "description",
-   "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Bike repair/shop' shows values with key 'access' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:retail",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:retail",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:repair",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:repair",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:repair",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "only_sold"
-  },
-  {
-   "key": "service:bicycle:repair",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "brand"
-  },
-  {
-   "key": "service:bicycle:rental",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:rental",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:second_hand",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=yes with a fixed text, namely 'This shop sells second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:second_hand",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=no with a fixed text, namely 'This shop doesn't sell second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:second_hand",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=only with a fixed text, namely 'This shop only sells second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "only"
-  },
-  {
-   "key": "service:bicycle:pump",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=yes with a fixed text, namely 'This shop offers a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:pump",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=no with a fixed text, namely 'This shop doesn't offer a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:pump",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=separate with a fixed text, namely 'There is bicycle pump, it is shown as a separate point ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "separate"
-  },
-  {
-   "key": "service:bicycle:diy",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=yes with a fixed text, namely 'This shop offers tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:diy",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=no with a fixed text, namely 'This shop doesn't offer tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:diy",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=only_sold with a fixed text, namely 'Tools for DIY repair are only available if you bought/hire the bike in the shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "only_sold"
-  },
-  {
-   "key": "service:bicycle:cleaning",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=yes with a fixed text, namely 'This shop cleans bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:cleaning",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=diy with a fixed text, namely 'This shop has an installation where one can clean bicycles themselves' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "diy"
-  },
-  {
-   "key": "service:bicycle:cleaning",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=no with a fixed text, namely 'This shop doesn't offer bicycle cleaning' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle library showing features with this tag",
-   "value": "bicycle_library"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "name",
-   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "website",
-   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "phone",
-   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "email",
-   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "charge",
-   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "fee",
-   "description": "Layer 'Bicycle library' shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "charge",
-   "description": "Layer 'Bicycle library' shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key charge.",
-   "value": ""
-  },
-  {
-   "key": "fee",
-   "description": "Layer 'Bicycle library' shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "charge",
-   "description": "Layer 'Bicycle library' shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "€20warranty + €20/year"
-  },
-  {
-   "key": "bicycle_library:for",
-   "description": "Layer 'Bicycle library' shows bicycle_library:for=child with a fixed text, namely 'Bikes for children available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "child"
-  },
-  {
-   "key": "bicycle_library:for",
-   "description": "Layer 'Bicycle library' shows bicycle_library:for=adult with a fixed text, namely 'Bikes for adult available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "adult"
-  },
-  {
-   "key": "bicycle_library:for",
-   "description": "Layer 'Bicycle library' shows bicycle_library:for=disabled with a fixed text, namely 'Bikes for disabled persons available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "disabled"
-  },
-  {
-   "key": "description",
-   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bicycle library' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bicycle library' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bicycle library' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike stations (repair, pump or both) showing features with this tag",
-   "value": "bicycle_repair_station"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "service:bicycle:tools",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:pump",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:tools",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:pump",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:tools",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:pump",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "operator",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "operator",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows operator=De Fietsambassade Gent with a fixed text, namely '<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "De Fietsambassade Gent"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours=24/7 with a fixed text, namely 'Always open' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "24/7"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours= with a fixed text, namely 'Always open' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key opening_hours.",
-   "value": ""
-  },
-  {
-   "key": "service:bicycle:chain_tool",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:chain_tool=yes with a fixed text, namely 'There is a chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:chain_tool",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:chain_tool=no with a fixed text, namely 'There is no chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:stand",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:stand=yes with a fixed text, namely 'There is a hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:stand",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:stand=no with a fixed text, namely 'There is no hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:pump:operational_status",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:pump:operational_status=broken with a fixed text, namely 'The bike pump is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "broken"
-  },
-  {
-   "key": "service:bicycle:pump:operational_status",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:pump:operational_status= with a fixed text, namely 'The bike pump is operational' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key service:bicycle:pump:operational_status.",
-   "value": ""
-  },
-  {
-   "key": "valves",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'valves' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "valves",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows valves=sclaverand with a fixed text, namely 'Sclaverand (also known as Presta)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "sclaverand"
-  },
-  {
-   "key": "valves",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows valves=dunlop with a fixed text, namely 'Dunlop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "dunlop"
-  },
-  {
-   "key": "valves",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows valves=schrader with a fixed text, namely 'Schrader (cars)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "schrader"
-  },
-  {
-   "key": "manual",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows manual=yes with a fixed text, namely 'Manual pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "manual",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows manual=no with a fixed text, namely 'Electrical pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "manometer",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=yes with a fixed text, namely 'There is a manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "manometer",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=no with a fixed text, namely 'There is no manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "manometer",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=broken with a fixed text, namely 'There is manometer but it is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "broken"
-  },
-  {
-   "key": "level",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "location",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "underground"
-  },
-  {
-   "key": "level",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "0"
-  },
-  {
-   "key": "level",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "1"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle tube vending machine showing features with this tag",
-   "value": "vending_machine"
-  },
-  {
-   "key": "vending",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle tube vending machine showing features with this tag"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "operational_status",
-   "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'operational_status' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "operational_status",
-   "description": "Layer 'Bicycle tube vending machine' shows operational_status= with a fixed text, namely 'This vending machine works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key operational_status.",
-   "value": ""
-  },
-  {
-   "key": "operational_status",
-   "description": "Layer 'Bicycle tube vending machine' shows operational_status=broken with a fixed text, namely 'This vending machine is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "broken"
-  },
-  {
-   "key": "operational_status",
-   "description": "Layer 'Bicycle tube vending machine' shows operational_status=closed with a fixed text, namely 'This vending machine is closed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "closed"
-  },
-  {
-   "key": "charge",
-   "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "payment:coins",
-   "description": "Layer 'Bicycle tube vending machine' shows payment:coins=yes with a fixed text, namely 'Payment with coins is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "payment:notes",
-   "description": "Layer 'Bicycle tube vending machine' shows payment:notes=yes with a fixed text, namely 'Payment with notes is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "payment:cards",
-   "description": "Layer 'Bicycle tube vending machine' shows payment:cards=yes with a fixed text, namely 'Payment with cards is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "brand",
-   "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'brand' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "brand",
-   "description": "Layer 'Bicycle tube vending machine' shows brand=Continental with a fixed text, namely 'Continental tubes are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "Continental"
-  },
-  {
-   "key": "brand",
-   "description": "Layer 'Bicycle tube vending machine' shows brand=Schwalbe with a fixed text, namely 'Schwalbe tubes are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "Schwalbe"
-  },
-  {
-   "key": "operator",
-   "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "operator",
-   "description": "Layer 'Bicycle tube vending machine' shows operator=Schwalbe with a fixed text, namely 'Maintained by Schwalbe' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "Schwalbe"
-  },
-  {
-   "key": "operator",
-   "description": "Layer 'Bicycle tube vending machine' shows operator=Continental with a fixed text, namely 'Maintained by Continental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "Continental"
-  },
-  {
-   "key": "vending:bicycle_light",
-   "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_light=yes with a fixed text, namely 'Bicycle lights are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "vending:gloves",
-   "description": "Layer 'Bicycle tube vending machine' shows vending:gloves=yes with a fixed text, namely 'Gloves are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "vending:bicycle_repair_kit",
-   "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_repair_kit=yes with a fixed text, namely 'Bicycle repair kits are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "vending:bicycle_pump",
-   "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_pump=yes with a fixed text, namely 'Bicycle pumps are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "vending:bicycle_lock",
-   "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_lock=yes with a fixed text, namely 'Bicycle locks are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bicycle tube vending machine' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bicycle tube vending machine' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bicycle tube vending machine' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Drinking water showing features with this tag",
-   "value": "drinking_water"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "operational_status",
-   "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "operational_status",
-   "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key operational_status.",
-   "value": ""
-  },
-  {
-   "key": "operational_status",
-   "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "broken"
-  },
-  {
-   "key": "operational_status",
-   "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "closed"
-  },
-  {
-   "key": "bottle",
-   "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "bottle",
-   "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Drinking water' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "theme",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "bicycle"
-  },
-  {
-   "key": "theme",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "cycling"
-  },
-  {
-   "key": "sport",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "cycling"
-  },
-  {
-   "key": "association",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "cycling"
-  },
-  {
-   "key": "association",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "bicycle"
-  },
-  {
-   "key": "ngo",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "cycling"
-  },
-  {
-   "key": "ngo",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "bicycle"
-  },
-  {
-   "key": "club",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "bicycle"
-  },
-  {
-   "key": "club",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
-   "value": "cycling"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "description",
-   "description": "Layer 'Bike related object' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "website",
-   "description": "Layer 'Bike related object' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "email",
-   "description": "Layer 'Bike related object' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "phone",
-   "description": "Layer 'Bike related object' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Bike related object' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Bike related object' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike related object' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike related object' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike related object' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:cleaning",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
-   "value": "yes"
-  },
-  {
-   "key": "service:bicycle:cleaning",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
-   "value": "diy"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
-   "value": "bicycle_wash"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "charge",
-   "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "fee",
-   "description": "Layer 'Bike cleaning service' shows fee=no&charge= with a fixed text, namely 'Free to use cleaning service' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&charge="
-  },
-  {
-   "key": "fee",
-   "description": "Layer 'Bike cleaning service' shows fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "fee",
-   "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike parking showing features with this tag",
-   "value": "bicycle_parking"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows and asks freeform values for key 'bicycle_parking' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "stands"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheel rack/loops <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "wall_loops"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows bicycle_parking=handlebar_holder with a fixed text, namely 'Handlebar holder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "handlebar_holder"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows bicycle_parking=rack with a fixed text, namely 'Rack <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "rack"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows bicycle_parking=two_tier with a fixed text, namely 'Two-tiered <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "two_tier"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows bicycle_parking=shed with a fixed text, namely 'Shed <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "shed"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows bicycle_parking=bollard with a fixed text, namely 'Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "bollard"
-  },
-  {
-   "key": "bicycle_parking",
-   "description": "Layer 'Bike parking' shows bicycle_parking=floor with a fixed text, namely 'An area on the floor which is  marked for bicycle parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "floor"
-  },
-  {
-   "key": "location",
-   "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "underground"
-  },
-  {
-   "key": "location",
-   "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "underground"
-  },
-  {
-   "key": "location",
-   "description": "Layer 'Bike parking' shows location=surface with a fixed text, namely 'Surface level parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "surface"
-  },
-  {
-   "key": "location",
-   "description": "Layer 'Bike parking' shows location= with a fixed text, namely 'Surface level parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key location.",
-   "value": ""
-  },
-  {
-   "key": "location",
-   "description": "Layer 'Bike parking' shows location=rooftop with a fixed text, namely 'Rooftop parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "rooftop"
-  },
-  {
-   "key": "covered",
-   "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "covered",
-   "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "capacity",
-   "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Bike parking' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Bike parking' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Bike parking' shows access=customers with a fixed text, namely 'Access is primarily for visitors to a business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "customers"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "private"
-  },
-  {
-   "key": "cargo_bike",
-   "description": "Layer 'Bike parking' shows cargo_bike=yes with a fixed text, namely 'This parking has room for cargo bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  },
-  {
-   "key": "cargo_bike",
-   "description": "Layer 'Bike parking' shows cargo_bike=designated with a fixed text, namely 'This parking has designated (official) spots for cargo bikes.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "designated"
-  },
-  {
-   "key": "cargo_bike",
-   "description": "Layer 'Bike parking' shows cargo_bike=no with a fixed text, namely 'You're not allowed to park cargo bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no"
-  },
-  {
-   "key": "capacity:cargo_bike",
-   "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Bike parking' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike parking' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&service:bicycle:cleaning:charge="
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike parking' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "no&"
-  },
-  {
-   "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Bike parking' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-   "value": "yes"
-  }
- ]
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Cyclofix - an open map for cyclists",
+    "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs",
+    "project_url": "https://mapcomplete.osm.be/cyclofix",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/cyclofix/logo.svg",
+    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "pub"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "bar"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "cafe"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "restaurant"
+    },
+    {
+      "key": "pub",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "pub",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "theme",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "theme",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike cafe' shows service:bicycle:pump=yes with a fixed text, namely 'This bike cafe offers a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike cafe' shows service:bicycle:pump=no with a fixed text, namely 'This bike cafe doesn't offer a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike cafe' shows service:bicycle:diy=yes with a fixed text, namely 'This bike cafe offers tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike cafe' shows service:bicycle:diy=no with a fixed text, namely 'This bike cafe doesn't offer tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike cafe' shows service:bicycle:repair=yes with a fixed text, namely 'This bike cafe repairs bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike cafe' shows service:bicycle:repair=no with a fixed text, namely 'This bike cafe doesn't repair bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike cafe' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike cafe' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike cafe' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "shop",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "bicycle_rental"
+    },
+    {
+      "key": "network",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": ""
+    },
+    {
+      "key": "shop",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "sports"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": ""
+    },
+    {
+      "key": "shop",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike repair/shop' shows values with key 'access' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:retail",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:retail",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "only_sold"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "brand"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=yes with a fixed text, namely 'This shop sells second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=no with a fixed text, namely 'This shop doesn't sell second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=only with a fixed text, namely 'This shop only sells second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "only"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=yes with a fixed text, namely 'This shop offers a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=no with a fixed text, namely 'This shop doesn't offer a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=separate with a fixed text, namely 'There is bicycle pump, it is shown as a separate point ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "separate"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=yes with a fixed text, namely 'This shop offers tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=no with a fixed text, namely 'This shop doesn't offer tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=only_sold with a fixed text, namely 'Tools for DIY repair are only available if you bought/hire the bike in the shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "only_sold"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=yes with a fixed text, namely 'This shop cleans bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=diy with a fixed text, namely 'This shop has an installation where one can clean bicycles themselves' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "diy"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=no with a fixed text, namely 'This shop doesn't offer bicycle cleaning' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle library showing features with this tag",
+      "value": "bicycle_library"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bicycle library' shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bicycle library' shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "€20warranty + €20/year"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=child with a fixed text, namely 'Bikes for children available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "child"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=adult with a fixed text, namely 'Bikes for adult available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "adult"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=disabled with a fixed text, namely 'Bikes for disabled persons available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "disabled"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bicycle library' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bicycle library' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bicycle library' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike stations (repair, pump or both) showing features with this tag",
+      "value": "bicycle_repair_station"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "service:bicycle:tools",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:tools",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:tools",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows operator=De Fietsambassade Gent with a fixed text, namely '<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "De Fietsambassade Gent"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours=24/7 with a fixed text, namely 'Always open' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours= with a fixed text, namely 'Always open' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key opening_hours.",
+      "value": ""
+    },
+    {
+      "key": "service:bicycle:chain_tool",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:chain_tool=yes with a fixed text, namely 'There is a chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:chain_tool",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:chain_tool=no with a fixed text, namely 'There is no chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:stand",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:stand=yes with a fixed text, namely 'There is a hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:stand",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:stand=no with a fixed text, namely 'There is no hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:pump:operational_status",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:pump:operational_status=broken with a fixed text, namely 'The bike pump is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "broken"
+    },
+    {
+      "key": "service:bicycle:pump:operational_status",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:pump:operational_status= with a fixed text, namely 'The bike pump is operational' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key service:bicycle:pump:operational_status.",
+      "value": ""
+    },
+    {
+      "key": "valves",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'valves' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "valves",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows valves=sclaverand with a fixed text, namely 'Sclaverand (also known as Presta)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "sclaverand"
+    },
+    {
+      "key": "valves",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows valves=dunlop with a fixed text, namely 'Dunlop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "dunlop"
+    },
+    {
+      "key": "valves",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows valves=schrader with a fixed text, namely 'Schrader (cars)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "schrader"
+    },
+    {
+      "key": "manual",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows manual=yes with a fixed text, namely 'Manual pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "manual",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows manual=no with a fixed text, namely 'Electrical pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "manometer",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=yes with a fixed text, namely 'There is a manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "manometer",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=no with a fixed text, namely 'There is no manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "manometer",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=broken with a fixed text, namely 'There is manometer but it is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "broken"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle tube vending machine showing features with this tag",
+      "value": "vending_machine"
+    },
+    {
+      "key": "vending",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle tube vending machine showing features with this tag"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'operational_status' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Bicycle tube vending machine' shows operational_status= with a fixed text, namely 'This vending machine works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Bicycle tube vending machine' shows operational_status=broken with a fixed text, namely 'This vending machine is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Bicycle tube vending machine' shows operational_status=closed with a fixed text, namely 'This vending machine is closed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "closed"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:coins=yes with a fixed text, namely 'Payment with coins is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:notes=yes with a fixed text, namely 'Payment with notes is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:cards=yes with a fixed text, namely 'Payment with cards is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'brand' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Bicycle tube vending machine' shows brand=Continental with a fixed text, namely 'Continental tubes are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "Continental"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Bicycle tube vending machine' shows brand=Schwalbe with a fixed text, namely 'Schwalbe tubes are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "Schwalbe"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bicycle tube vending machine' shows operator=Schwalbe with a fixed text, namely 'Maintained by Schwalbe' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "Schwalbe"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bicycle tube vending machine' shows operator=Continental with a fixed text, namely 'Maintained by Continental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "Continental"
+    },
+    {
+      "key": "vending:bicycle_light",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_light=yes with a fixed text, namely 'Bicycle lights are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "vending:gloves",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:gloves=yes with a fixed text, namely 'Gloves are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "vending:bicycle_repair_kit",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_repair_kit=yes with a fixed text, namely 'Bicycle repair kits are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "vending:bicycle_pump",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_pump=yes with a fixed text, namely 'Bicycle pumps are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "vending:bicycle_lock",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_lock=yes with a fixed text, namely 'Bicycle locks are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bicycle tube vending machine' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bicycle tube vending machine' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bicycle tube vending machine' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Drinking water showing features with this tag",
+      "value": "drinking_water"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "closed"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "theme",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "theme",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "association",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "association",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "ngo",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "ngo",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "club",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "club",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Bike related object' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bike related object' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bike related object' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike related object' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike related object' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bike related object' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike related object' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike related object' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike related object' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
+      "value": "diy"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
+      "value": "bicycle_wash"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bike cleaning service' shows fee=no&charge= with a fixed text, namely 'Free to use cleaning service' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&charge="
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bike cleaning service' shows fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike parking showing features with this tag",
+      "value": "bicycle_parking"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'bicycle_parking' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "stands"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheel rack/loops <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "wall_loops"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=handlebar_holder with a fixed text, namely 'Handlebar holder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "handlebar_holder"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=rack with a fixed text, namely 'Rack <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "rack"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=two_tier with a fixed text, namely 'Two-tiered <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "two_tier"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=shed with a fixed text, namely 'Shed <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "shed"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=bollard with a fixed text, namely 'Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "bollard"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=floor with a fixed text, namely 'An area on the floor which is  marked for bicycle parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "floor"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "underground"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "underground"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows location=surface with a fixed text, namely 'Surface level parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "surface"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows location= with a fixed text, namely 'Surface level parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key location.",
+      "value": ""
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows location=rooftop with a fixed text, namely 'Rooftop parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "rooftop"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike parking' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike parking' shows access=customers with a fixed text, namely 'Access is primarily for visitors to a business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "private"
+    },
+    {
+      "key": "cargo_bike",
+      "description": "Layer 'Bike parking' shows cargo_bike=yes with a fixed text, namely 'This parking has room for cargo bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "cargo_bike",
+      "description": "Layer 'Bike parking' shows cargo_bike=designated with a fixed text, namely 'This parking has designated (official) spots for cargo bikes.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "designated"
+    },
+    {
+      "key": "cargo_bike",
+      "description": "Layer 'Bike parking' shows cargo_bike=no with a fixed text, namely 'You're not allowed to park cargo bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "capacity:cargo_bike",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike parking' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike parking' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike parking' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    }
+  ]
 }

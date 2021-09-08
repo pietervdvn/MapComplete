@@ -6,7 +6,7 @@ import {VariableUiElement} from "../Base/VariableUIElement";
  * The 'Toggle' is a UIElement showing either one of two elements, depending on the state.
  * It can be used to implement e.g. checkboxes or collapsible elements
  */
-export default class Toggle extends VariableUiElement{
+export default class Toggle extends VariableUiElement {
 
     public readonly isEnabled: UIEventSource<boolean>;
 
@@ -16,11 +16,11 @@ export default class Toggle extends VariableUiElement{
         );
         this.isEnabled = isEnabled
     }
-    
-    public ToggleOnClick(): Toggle{
+
+    public ToggleOnClick(): Toggle {
         const self = this;
         this.onClick(() => {
-           self. isEnabled.setData(!self.isEnabled.data);
+            self.isEnabled.setData(!self.isEnabled.data);
         })
         return this;
     }

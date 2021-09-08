@@ -118,15 +118,15 @@ export default class ValidatedTextField {
                         throw "Invalid zoom level for argument at 'length'-input"
                     }
                 }
-                
+
                 // Bit of a hack: we project the centerpoint to the closes point on the road - if available
-                if(options.feature !== undefined && options.feature.geometry.type !== "Point"){
+                if (options.feature !== undefined && options.feature.geometry.type !== "Point") {
                     const lonlat: [number, number] = [...options.location]
                     lonlat.reverse()
-                    options.location = <[number,number]> GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
+                    options.location = <[number, number]>GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
                     options.location.reverse()
                 }
-                
+
                 const location = new UIEventSource<Loc>({
                     lat: options.location[0],
                     lon: options.location[1],

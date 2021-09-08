@@ -1,7 +1,5 @@
 import * as L from "leaflet";
-import Svg from "../../Svg";
 import {UIEventSource} from "../UIEventSource";
-import Img from "../../UI/Base/Img";
 import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen";
 import AddNewMarker from "../../UI/BigComponents/AddNewMarker";
 import FilteredLayer from "../../Models/FilteredLayer";
@@ -32,28 +30,28 @@ export default class StrayClickHandler {
         })
 
         lastClickLocation.addCallback(function (lastClick) {
-            
+
             if (self._lastMarker !== undefined) {
                 leafletMap.data?.removeLayer(self._lastMarker);
             }
-            
-            if(lastClick === undefined){
+
+            if (lastClick === undefined) {
                 return;
             }
 
             selectedElement.setData(undefined);
-            const clickCoor : [number, number] = [lastClick.lat, lastClick.lon]
+            const clickCoor: [number, number] = [lastClick.lat, lastClick.lon]
             self._lastMarker = L.marker(clickCoor, {
                 icon: L.divIcon({
                     html: new AddNewMarker(filteredLayers).ConstructElement(),
                     iconSize: [50, 50],
                     iconAnchor: [25, 50],
                     popupAnchor: [0, -45]
-                })                  
+                })
             });
             const popup = L.popup({
                 autoPan: true,
-                autoPanPaddingTopLeft: [15,15],
+                autoPanPaddingTopLeft: [15, 15],
                 closeOnEscapeKey: true,
                 autoClose: true
             }).setContent("<div id='strayclick' style='height: 65vh'></div>");
@@ -61,13 +59,13 @@ export default class StrayClickHandler {
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
-                if(leafletMap.data.getZoom() < Constants.userJourney.minZoomLevelToAddNewPoints){
+                if (leafletMap.data.getZoom() < Constants.userJourney.minZoomLevelToAddNewPoints) {
                     self._lastMarker.closePopup()
                     leafletMap.data.flyTo(clickCoor, Constants.userJourney.minZoomLevelToAddNewPoints)
                     return;
                 }
-                
-                
+
+
                 uiToShow.AttachTo("strayclick")
                 uiToShow.Activate();
             });

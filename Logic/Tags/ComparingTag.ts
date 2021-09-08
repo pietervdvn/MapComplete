@@ -4,19 +4,19 @@ export default class ComparingTag implements TagsFilter {
     private readonly _key: string;
     private readonly _predicate: (value: string) => boolean;
     private readonly _representation: string;
-    
-    constructor(key: string, predicate : (value:string | undefined) => boolean, representation: string = "") {
+
+    constructor(key: string, predicate: (value: string | undefined) => boolean, representation: string = "") {
         this._key = key;
         this._predicate = predicate;
         this._representation = representation;
     }
-    
+
     asChange(properties: any): { k: string; v: string }[] {
         throw "A comparable tag can not be used to be uploaded to OSM"
     }
 
     asHumanString(linkToWiki: boolean, shorten: boolean, properties: any) {
-        return this._key+this._representation
+        return this._key + this._representation
     }
 
     asOverpass(): string[] {
@@ -38,5 +38,5 @@ export default class ComparingTag implements TagsFilter {
     usedKeys(): string[] {
         return [this._key];
     }
-    
+
 }

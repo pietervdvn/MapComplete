@@ -8,6 +8,7 @@ Contains tweaks for small screens
         display: none !important;
     }
 }
+
 @media only screen and (max-width: 768px), only screen and (max-height: 768px) {
 
 
@@ -38,10 +39,10 @@ Contains tweaks for small screens
 }
 
 @media only screen and (max-width: 768px) {
-    .leaflet-control-attribution{
+    .leaflet-control-attribution {
         display: none;
     }
-    
+
     .leaflet-popup {
         display: none;
     }

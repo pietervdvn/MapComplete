@@ -13,13 +13,12 @@ import Loc from "../../Models/Loc";
  */
 export default class DirectionInput extends InputElement<string> {
     public static constructMinimap: ((any) => BaseUIElement);
-    private readonly _location: UIEventSource<Loc>;
-
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _location: UIEventSource<Loc>;
     private readonly value: UIEventSource<string>;
     private background;
 
-    constructor(mapBackground: UIEventSource<any>, 
+    constructor(mapBackground: UIEventSource<any>,
                 location: UIEventSource<Loc>,
                 value?: UIEventSource<string>) {
         super();
@@ -49,10 +48,10 @@ export default class DirectionInput extends InputElement<string> {
         }
 
         const element = new Combine([
-             Svg.direction_stroke_svg().SetStyle(
+            Svg.direction_stroke_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
                 .SetClass("direction-svg relative")
-                 .SetStyle("z-index: 1000"),
+                .SetStyle("z-index: 1000"),
             map.SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;`)
 

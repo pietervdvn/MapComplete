@@ -77,7 +77,7 @@ export class Wikimedia extends ImageAttributionSource {
 
     static GetWikiData(id: number, handleWikidata: ((Wikidata) => void)) {
         const url = "https://www.wikidata.org/wiki/Special:EntityData/Q" + id + ".json";
-        Utils.downloadJson(url).then (response => {
+        Utils.downloadJson(url).then(response => {
             const entity = response.entities["Q" + id];
             const commons = entity.sitelinks.commonswiki;
             const wd = new Wikidata();
@@ -139,10 +139,10 @@ export class Wikimedia extends ImageAttributionSource {
             "titles=" + filename +
             "&format=json&origin=*";
         Utils.downloadJson(url).then(
-            data =>{
+            data => {
                 const licenseInfo = new LicenseInfo();
                 const license = (data.query.pages[-1].imageinfo ?? [])[0]?.extmetadata;
-                if(license === undefined){
+                if (license === undefined) {
                     console.error("This file has no usable metedata or license attached... Please fix the license info file yourself!")
                     source.setData(null)
                     return;
@@ -156,10 +156,10 @@ export class Wikimedia extends ImageAttributionSource {
                 licenseInfo.licenseShortName = license.LicenseShortName?.value;
                 licenseInfo.credit = license.Credit?.value;
                 licenseInfo.description = license.ImageDescription?.value;
-                source.setData(licenseInfo);      
+                source.setData(licenseInfo);
             }
         )
-        
+
         return source;
 
     }

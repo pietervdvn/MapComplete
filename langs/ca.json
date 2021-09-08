@@ -1,162 +1,162 @@
 {
-    "image": {
-        "addPicture": "Afegir foto",
-        "uploadingPicture": "Pujant la teva imatge…",
-        "uploadingMultiple": "Pujant {count} imatges…",
-        "pleaseLogin": "Entra per pujar una foto",
-        "willBePublished": "La teva foto serà publicada: ",
-        "cco": "en domini públic",
-        "ccbs": "sota llicència CC-BY-SA",
-        "ccb": "sota la llicència CC-BY",
-        "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
-        "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
-        "uploadDone": "<span class='thanks'>La teva imatge ha estat afegida. Gràcies per ajudar.</span>",
-        "dontDelete": "Cancel·lar",
-        "doDelete": "Esborrar imatge",
-        "isDeleted": "Esborrada"
+  "image": {
+    "addPicture": "Afegir foto",
+    "uploadingPicture": "Pujant la teva imatge…",
+    "uploadingMultiple": "Pujant {count} imatges…",
+    "pleaseLogin": "Entra per pujar una foto",
+    "willBePublished": "La teva foto serà publicada: ",
+    "cco": "en domini públic",
+    "ccbs": "sota llicència CC-BY-SA",
+    "ccb": "sota la llicència CC-BY",
+    "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
+    "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
+    "uploadDone": "<span class='thanks'>La teva imatge ha estat afegida. Gràcies per ajudar.</span>",
+    "dontDelete": "Cancel·lar",
+    "doDelete": "Esborrar imatge",
+    "isDeleted": "Esborrada"
+  },
+  "centerMessage": {
+    "loadingData": "Carregant dades...",
+    "zoomIn": "Amplia per veure o editar les dades",
+    "ready": "Fet.",
+    "retrying": "La càrrega de dades ha fallat. Tornant-ho a intentar... ({count})"
+  },
+  "index": {
+    "#": "These texts are shown above the theme buttons when no theme is loaded",
+    "intro": "MapComplete és un visor i editor d'OpenStreetMap, que et mostra informació sobre un tema específic",
+    "title": "Benvingut/da a MapComplete"
+  },
+  "general": {
+    "loginWithOpenStreetMap": "Entra a OpenStreetMap",
+    "welcomeBack": "Has entrat, benvingut.",
+    "loginToStart": "Entra per contestar aquesta pregunta",
+    "search": {
+      "search": "Cerca una ubicació",
+      "searching": "Cercant...",
+      "nothing": "Res trobat.",
+      "error": "Alguna cosa no ha sortit bé..."
     },
-    "centerMessage": {
-        "loadingData": "Carregant dades...",
-        "zoomIn": "Amplia per veure o editar les dades",
-        "ready": "Fet.",
-        "retrying": "La càrrega de dades ha fallat. Tornant-ho a intentar... ({count})"
+    "returnToTheMap": "Tornar al mapa",
+    "save": "Desar",
+    "cancel": "Cancel·lar",
+    "skip": "Saltar aquesta pregunta",
+    "oneSkippedQuestion": "Has ignorat una pregunta",
+    "skippedQuestions": "Has ignorat algunes preguntes",
+    "number": "nombre",
+    "osmLinkTooltip": "Mira aquest objecte a OpenStreetMap per veure historial i altres opcions d'edició",
+    "add": {
+      "addNew": "Afegir {category} aquí",
+      "title": "Vols afegir un punt?",
+      "intro": "Has marcat un lloc on no coneixem les dades.<br/>",
+      "pleaseLogin": "<a class='activate-osm-authentication'>Entra per afegir un nou punt</a>",
+      "zoomInFurther": "Apropa per afegir un punt.",
+      "stillLoading": "Les dades es segueixen carregant. Espera una mica abans d'afegir cap punt.",
+      "confirmIntro": "<h3>Afegir {title} aquí?</h3>El punt que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixin. Moltes aplicacions fan servir aquestes dades.",
+      "confirmButton": "Afegir {category} aquí",
+      "openLayerControl": "Obrir el control de capes",
+      "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa"
     },
-    "index": {
-        "#": "These texts are shown above the theme buttons when no theme is loaded",
-        "intro": "MapComplete és un visor i editor d'OpenStreetMap, que et mostra informació sobre un tema específic",
-        "title": "Benvingut/da a MapComplete"
+    "pickLanguage": "Tria idioma: ",
+    "about": "Edita facilment i afegeix punts a OpenStreetMap d'una temàtica determinada",
+    "nameInlineQuestion": "{category}: El seu nom és $$$",
+    "noNameCategory": "{category} sense nom",
+    "questions": {
+      "phoneNumberOf": "Quin és el telèfon de {category}?",
+      "phoneNumberIs": "El número de telèfon de {category} és <a href='tel:{phone}' target='_blank'>{phone}</a>",
+      "websiteOf": "Quina és la pàgina web de {category}?",
+      "websiteIs": "Pàgina web: <a href='{website}' target='_blank'>{website}</a>",
+      "emailOf": "Quina és l'adreça de correu-e de {category}?",
+      "emailIs": "L'adreça de correu de {category} és <a href='mailto:{email}' target='_blank'>{email}</a>"
     },
-    "general": {
-        "loginWithOpenStreetMap": "Entra a OpenStreetMap",
-        "welcomeBack": "Has entrat, benvingut.",
-        "loginToStart": "Entra per contestar aquesta pregunta",
-        "search": {
-            "search": "Cerca una ubicació",
-            "searching": "Cercant...",
-            "nothing": "Res trobat.",
-            "error": "Alguna cosa no ha sortit bé..."
-        },
-        "returnToTheMap": "Tornar al mapa",
-        "save": "Desar",
-        "cancel": "Cancel·lar",
-        "skip": "Saltar aquesta pregunta",
-        "oneSkippedQuestion": "Has ignorat una pregunta",
-        "skippedQuestions": "Has ignorat algunes preguntes",
-        "number": "nombre",
-        "osmLinkTooltip": "Mira aquest objecte a OpenStreetMap per veure historial i altres opcions d'edició",
-        "add": {
-            "addNew": "Afegir {category} aquí",
-            "title": "Vols afegir un punt?",
-            "intro": "Has marcat un lloc on no coneixem les dades.<br/>",
-            "pleaseLogin": "<a class='activate-osm-authentication'>Entra per afegir un nou punt</a>",
-            "zoomInFurther": "Apropa per afegir un punt.",
-            "stillLoading": "Les dades es segueixen carregant. Espera una mica abans d'afegir cap punt.",
-            "confirmIntro": "<h3>Afegir {title} aquí?</h3>El punt que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixin. Moltes aplicacions fan servir aquestes dades.",
-            "confirmButton": "Afegir {category} aquí",
-            "openLayerControl": "Obrir el control de capes",
-            "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa"
-        },
-        "pickLanguage": "Tria idioma: ",
-        "about": "Edita facilment i afegeix punts a OpenStreetMap d'una temàtica determinada",
-        "nameInlineQuestion": "{category}: El seu nom és $$$",
-        "noNameCategory": "{category} sense nom",
-        "questions": {
-            "phoneNumberOf": "Quin és el telèfon de {category}?",
-            "phoneNumberIs": "El número de telèfon de {category} és <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "websiteOf": "Quina és la pàgina web de {category}?",
-            "websiteIs": "Pàgina web: <a href='{website}' target='_blank'>{website}</a>",
-            "emailOf": "Quina és l'adreça de correu-e de {category}?",
-            "emailIs": "L'adreça de correu de {category} és <a href='mailto:{email}' target='_blank'>{email}</a>"
-        },
-        "openStreetMapIntro": "<h3>Un mapa obert</h3><p></p>No seria genial si hagués un únic mapa, que tothom pogués utilitzar i editar lliurement?Un sol lloc on emmagatzemar tota la informació geogràfica? Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactulitzats) ja no serien necessaris.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> és aquest mapa. Les dades del mapa es poden utilitzar de franc (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. De fet, aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats ​​per OpenStreetMap. Si canvies alguna cosa aquí també es reflectirà en aquestes aplicacions en la seva propera actualització.</p>",
-        "sharescreen": {
-            "intro": "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l'enllaç de sota i enviant-lo a amics i família:",
-            "addToHomeScreen": "<h3>Afegir-lo a la pantalla d'inici</h3>Pots afegir aquesta web a la pantalla d'inici del teu smartphone per a que es vegi més nadiu. Apreta al botó 'afegir a l'inici' a la barra d'adreces URL per fer-ho.",
-            "embedIntro": "<h3>Inclou-ho a la teva pàgina web</h3>Inclou aquest mapa dins de la teva pàgina web. <br/> T'animem a que ho facis, no cal que demanis permís. <br/> És de franc, i sempre ho serà. A més gent que ho faci servir més valuós serà.",
-            "copiedToClipboard": "Enllaç copiat al portapapers",
-            "thanksForSharing": "Gràcies per compartir",
-            "editThisTheme": "Editar aquest repte",
-            "editThemeDescription": "Afegir o canviar preguntes d'aquest repte",
-            "fsUserbadge": "Activar el botó d'entrada",
-            "fsSearch": "Activar la barra de cerca",
-            "fsWelcomeMessage": "Mostra el missatge emergent de benvinguda i pestanyes associades",
-            "fsLayers": "Activar el control de capes",
-            "fsLayerControlToggle": "Iniciar el control de capes avançat",
-            "fsAddNew": "Activar el botó d'afegir nou PDI'",
-            "fsGeolocation": "Activar el botó de 'geolocalitza'm' (només mòbil)",
-            "fsIncludeCurrentBackgroundMap": "Incloure l'opció de fons actual <b>{name}</b>",
-            "fsIncludeCurrentLayers": "Incloure les opcions de capa actual",
-            "fsIncludeCurrentLocation": "Incloure localització actual"
-        },
-        "morescreen": {
-            "intro": "<h3>Més peticions</h3>T'agrada captar dades? <br/>Hi ha més capes disponibles.",
-            "requestATheme": "Si vols que et fem una petició pròpia , demana-la <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>aquí</a>.",
-            "streetcomplete": "Una altra aplicació similar és <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
-            "createYourOwnTheme": "Crea la teva pròpia petició completa de MapComplete des de zero."
-        },
-        "readYourMessages": "Llegeix tots els teus missatges d'OpenStreetMap abans d'afegir nous punts.",
-        "fewChangesBefore": "Contesta unes quantes preguntes sobre punts existents abans d'afegir-ne un de nou.",
-        "goToInbox": "Obrir missatges",
-        "getStartedLogin": "Entra a OpenStreetMap per començar",
-        "getStartedNewAccount": " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea un nou compte</a>",
-        "noTagsSelected": "No s'han seleccionat etiquetes",
-        "backgroundMap": "Mapa de fons",
-        "layerSelection": {
-            "zoomInToSeeThisLayer": "Amplia per veure aquesta capa"
-        },
-        "weekdays": {
-            "abbreviations": {
-                "monday": "Dil",
-                "tuesday": "Dim",
-                "wednesday": "Dic",
-                "thursday": "Dij",
-                "friday": "Div",
-                "saturday": "Dis",
-                "sunday": "Diu"
-            },
-            "monday": "Dilluns",
-            "tuesday": "Dimarts",
-            "wednesday": "Dimecres",
-            "thursday": "Dijous",
-            "friday": "Divendres",
-            "saturday": "Dissabte",
-            "sunday": "Diumenge"
-        },
-        "opening_hours": {
-            "open_during_ph": "Durant festes aquest servei és",
-            "opensAt": "des de",
-            "openTill": "fins",
-            "not_all_rules_parsed": "L'horari d'aquesta botiga és complicat. Les normes següents seran ignorades en l'entrada:",
-            "closed_until": "Tancat fins {date}",
-            "closed_permanently": "Tancat - sense dia d'obertura conegut",
-            "ph_not_known": " ",
-            "ph_closed": "tancat",
-            "ph_open": "tancat"
-        },
-        "attribution": {
-            "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
-            "attributionTitle": "Avís d’atribució",
-            "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
-            "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
-            "iconAttribution": {
-                "title": "Icones utilitzades"
-            },
-            "themeBy": "Tema mantingut per {author}"
-        }
+    "openStreetMapIntro": "<h3>Un mapa obert</h3><p></p>No seria genial si hagués un únic mapa, que tothom pogués utilitzar i editar lliurement?Un sol lloc on emmagatzemar tota la informació geogràfica? Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactulitzats) ja no serien necessaris.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> és aquest mapa. Les dades del mapa es poden utilitzar de franc (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. De fet, aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats ​​per OpenStreetMap. Si canvies alguna cosa aquí també es reflectirà en aquestes aplicacions en la seva propera actualització.</p>",
+    "sharescreen": {
+      "intro": "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l'enllaç de sota i enviant-lo a amics i família:",
+      "addToHomeScreen": "<h3>Afegir-lo a la pantalla d'inici</h3>Pots afegir aquesta web a la pantalla d'inici del teu smartphone per a que es vegi més nadiu. Apreta al botó 'afegir a l'inici' a la barra d'adreces URL per fer-ho.",
+      "embedIntro": "<h3>Inclou-ho a la teva pàgina web</h3>Inclou aquest mapa dins de la teva pàgina web. <br/> T'animem a que ho facis, no cal que demanis permís. <br/> És de franc, i sempre ho serà. A més gent que ho faci servir més valuós serà.",
+      "copiedToClipboard": "Enllaç copiat al portapapers",
+      "thanksForSharing": "Gràcies per compartir",
+      "editThisTheme": "Editar aquest repte",
+      "editThemeDescription": "Afegir o canviar preguntes d'aquest repte",
+      "fsUserbadge": "Activar el botó d'entrada",
+      "fsSearch": "Activar la barra de cerca",
+      "fsWelcomeMessage": "Mostra el missatge emergent de benvinguda i pestanyes associades",
+      "fsLayers": "Activar el control de capes",
+      "fsLayerControlToggle": "Iniciar el control de capes avançat",
+      "fsAddNew": "Activar el botó d'afegir nou PDI'",
+      "fsGeolocation": "Activar el botó de 'geolocalitza'm' (només mòbil)",
+      "fsIncludeCurrentBackgroundMap": "Incloure l'opció de fons actual <b>{name}</b>",
+      "fsIncludeCurrentLayers": "Incloure les opcions de capa actual",
+      "fsIncludeCurrentLocation": "Incloure localització actual"
     },
-    "favourite": {
-        "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
-        "loginNeeded": "<h3>Entrar</h3>El disseny personalizat només està disponible pels usuaris d' OpenstreetMap",
-        "reload": "Recarregar dades"
+    "morescreen": {
+      "intro": "<h3>Més peticions</h3>T'agrada captar dades? <br/>Hi ha més capes disponibles.",
+      "requestATheme": "Si vols que et fem una petició pròpia , demana-la <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>aquí</a>.",
+      "streetcomplete": "Una altra aplicació similar és <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
+      "createYourOwnTheme": "Crea la teva pròpia petició completa de MapComplete des de zero."
     },
-    "reviews": {
-        "plz_login": "Entra per deixar una revisió",
-        "write_a_comment": "Deixa una revisió…",
-        "no_reviews_yet": "No hi ha revisions encara. Sigues el primer a escriure'n una i ajuda al negoci i a les dades lliures!",
-        "name_required": "És requerit un nom per mostrar i crear revisions",
-        "title_singular": "Una revisió",
-        "title": "{count} revisions",
-        "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
-        "saving_review": "Desant…"
+    "readYourMessages": "Llegeix tots els teus missatges d'OpenStreetMap abans d'afegir nous punts.",
+    "fewChangesBefore": "Contesta unes quantes preguntes sobre punts existents abans d'afegir-ne un de nou.",
+    "goToInbox": "Obrir missatges",
+    "getStartedLogin": "Entra a OpenStreetMap per començar",
+    "getStartedNewAccount": " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea un nou compte</a>",
+    "noTagsSelected": "No s'han seleccionat etiquetes",
+    "backgroundMap": "Mapa de fons",
+    "layerSelection": {
+      "zoomInToSeeThisLayer": "Amplia per veure aquesta capa"
+    },
+    "weekdays": {
+      "abbreviations": {
+        "monday": "Dil",
+        "tuesday": "Dim",
+        "wednesday": "Dic",
+        "thursday": "Dij",
+        "friday": "Div",
+        "saturday": "Dis",
+        "sunday": "Diu"
+      },
+      "monday": "Dilluns",
+      "tuesday": "Dimarts",
+      "wednesday": "Dimecres",
+      "thursday": "Dijous",
+      "friday": "Divendres",
+      "saturday": "Dissabte",
+      "sunday": "Diumenge"
+    },
+    "opening_hours": {
+      "open_during_ph": "Durant festes aquest servei és",
+      "opensAt": "des de",
+      "openTill": "fins",
+      "not_all_rules_parsed": "L'horari d'aquesta botiga és complicat. Les normes següents seran ignorades en l'entrada:",
+      "closed_until": "Tancat fins {date}",
+      "closed_permanently": "Tancat - sense dia d'obertura conegut",
+      "ph_not_known": " ",
+      "ph_closed": "tancat",
+      "ph_open": "tancat"
+    },
+    "attribution": {
+      "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
+      "attributionTitle": "Avís d’atribució",
+      "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
+      "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
+      "iconAttribution": {
+        "title": "Icones utilitzades"
+      },
+      "themeBy": "Tema mantingut per {author}"
     }
+  },
+  "favourite": {
+    "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
+    "loginNeeded": "<h3>Entrar</h3>El disseny personalizat només està disponible pels usuaris d' OpenstreetMap",
+    "reload": "Recarregar dades"
+  },
+  "reviews": {
+    "plz_login": "Entra per deixar una revisió",
+    "write_a_comment": "Deixa una revisió…",
+    "no_reviews_yet": "No hi ha revisions encara. Sigues el primer a escriure'n una i ajuda al negoci i a les dades lliures!",
+    "name_required": "És requerit un nom per mostrar i crear revisions",
+    "title_singular": "Una revisió",
+    "title": "{count} revisions",
+    "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
+    "saving_review": "Desant…"
+  }
 }

@@ -6,8 +6,8 @@ export class Denomination {
     public readonly canonical: string;
     readonly default: boolean;
     readonly prefix: boolean;
-    private readonly _human: Translation;
     public readonly alternativeDenominations: string [];
+    private readonly _human: Translation;
 
     constructor(json: UnitConfigJson, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`

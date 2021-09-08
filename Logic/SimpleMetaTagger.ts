@@ -96,7 +96,7 @@ export default class SimpleMetaTagger {
                     const value = feature.properties[key]
                     const [, denomination] = unit.findDenomination(value)
                     let canonical = denomination?.canonicalValue(value) ?? undefined;
-                    if(canonical === value){
+                    if (canonical === value) {
                         break;
                     }
                     console.log("Rewritten ", key, ` from '${value}' into '${canonical}'`)
@@ -110,7 +110,7 @@ export default class SimpleMetaTagger {
                 }
 
             }
-            if(rewritten){
+            if (rewritten) {
                 State.state.allElements.getEventSourceById(feature.id).ping();
             }
         })

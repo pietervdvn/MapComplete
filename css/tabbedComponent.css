@@ -17,16 +17,16 @@
     height: 3em;
     max-width: 3em;
     padding: 0.5em;
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
 }
 
 .tab-single-header svg {
     height: 3em;
     max-width: 3em;
     padding: 0.5em;
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
 }
 
 
@@ -68,7 +68,7 @@
     stroke: var(--foreground-color) !important;
 }
 
-.tab-non-active svg path{
+.tab-non-active svg path {
     fill: var(--foreground-color) !important;
     stroke: var(--foreground-color) !important;
 }

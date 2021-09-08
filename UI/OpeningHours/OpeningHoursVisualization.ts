@@ -53,7 +53,7 @@ export default class OpeningHoursVisualization extends Toggle {
                 }
             ))
 
-       super(
+        super(
             ohTable,
             Translations.t.general.opening_hours.loadingCountry.Clone(),
             tags.map(tgs => tgs._country !== undefined)
@@ -141,7 +141,7 @@ export default class OpeningHoursVisualization extends Toggle {
                 OpeningHoursVisualization.CreateRangeElem(availableArea, earliestOpen, latestclose, range, isWeekstable)
             )
             const allRanges = new Combine([
-                ...OpeningHoursVisualization.CreateLinesAtChangeHours(changeHours, availableArea, earliestOpen) ,
+                ...OpeningHoursVisualization.CreateLinesAtChangeHours(changeHours, availableArea, earliestOpen),
                 ...rangesForDay]).SetClass("w-full block");
 
             let extraStyle = ""
@@ -224,7 +224,7 @@ export default class OpeningHoursVisualization extends Toggle {
                 continue;
             }
 
-            if (i > 0 && ((changeMoment - changeHours[i - 1]) / (60*60)) < 2) {
+            if (i > 0 && ((changeMoment - changeHours[i - 1]) / (60 * 60)) < 2) {
                 // Quite close to the previous value
                 // We alternate the heights
                 showHigherUsed = true;

@@ -1,7 +1,7 @@
-
 # Available types for text fields
 
-The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them
+The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to
+activate them
 
 ## string
 
@@ -21,7 +21,8 @@ A geographical direction, in degrees. 0° is north, 90° is east, ... Will retur
 
 ## length
 
-A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
+A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool.
+Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
 
 ## wikidata
 

@@ -57,12 +57,12 @@ export default class FeatureSourceMerger implements FeatureSource {
                 }
             }
         }
-        
-        if(!somethingChanged){
+
+        if (!somethingChanged) {
             // We don't bother triggering an update
             return;
         }
-        
+
         const newList = [];
         all.forEach((value, key) => {
             newList.push(value)

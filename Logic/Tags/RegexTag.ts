@@ -16,7 +16,7 @@ export class RegexTag extends TagsFilter {
     }
 
     private static doesMatch(fromTag: string, possibleRegex: string | RegExp): boolean {
-        if(fromTag === undefined){
+        if (fromTag === undefined) {
             return;
         }
         if (typeof possibleRegex === "string") {
@@ -45,7 +45,7 @@ export class RegexTag extends TagsFilter {
 
     matchesProperties(tags: any): boolean {
         for (const key in tags) {
-            if(key === undefined){
+            if (key === undefined) {
                 continue;
             }
             if (RegexTag.doesMatch(key, this.key)) {
@@ -86,14 +86,14 @@ export class RegexTag extends TagsFilter {
     }
 
     asChange(properties: any): { k: string; v: string }[] {
-        if(this.invert){
+        if (this.invert) {
             return []
         }
         if (typeof this.key === "string") {
-            if( typeof this.value === "string"){
+            if (typeof this.value === "string") {
                 return [{k: this.key, v: this.value}]
             }
-            if(this.value.toString() != "/^..*$/"){
+            if (this.value.toString() != "/^..*$/") {
                 console.warn("Regex value in tag; using wildcard:", this.key, this.value)
             }
             return [{k: this.key, v: undefined}]

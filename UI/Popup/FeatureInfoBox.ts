@@ -66,8 +66,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             }
             return new EditableTagRendering(tags, tr, layerConfig.units);
         });
-        
-        let editElements : BaseUIElement[] = []
+
+        let editElements: BaseUIElement[] = []
         if (!questionBoxIsUsed) {
             editElements.push(questionBox);
         }
@@ -124,10 +124,10 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 })
             )
         )
-        
+
         const editors = new VariableUiElement(State.state.featureSwitchUserbadge.map(
             userbadge => {
-                if(!userbadge){
+                if (!userbadge) {
                     return undefined
                 }
                 return new Combine(editElements)

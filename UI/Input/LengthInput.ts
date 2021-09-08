@@ -6,17 +6,14 @@ import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import DirectionInput from "./DirectionInput";
-import {RadioButton} from "./RadioButton";
-import {FixedInputElement} from "./FixedInputElement";
 
 
 /**
  * Selects a length after clicking on the minimap, in meters
  */
 export default class LengthInput extends InputElement<string> {
-    private readonly _location: UIEventSource<Loc>;
-
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _location: UIEventSource<Loc>;
     private readonly value: UIEventSource<string>;
     private background;
 
@@ -68,8 +65,8 @@ export default class LengthInput extends InputElement<string> {
         this.RegisterTriggers(element, map?.leafletMap)
         element.style.overflow = "hidden"
         element.style.display = "block"
-        
-      return element
+
+        return element
     }
 
     private RegisterTriggers(htmlElement: HTMLElement, leafletMap: UIEventSource<L.Map>) {
@@ -77,7 +74,7 @@ export default class LengthInput extends InputElement<string> {
         let firstClickXY: [number, number] = undefined
         let lastClickXY: [number, number] = undefined
         const self = this;
-        
+
 
         function onPosChange(x: number, y: number, isDown: boolean, isUp?: boolean) {
             if (x === undefined || y === undefined) {
@@ -115,7 +112,7 @@ export default class LengthInput extends InputElement<string> {
 
 
             const measurementCrosshair = htmlElement.getElementsByClassName("length-crosshair-svg")[0] as HTMLElement
-            
+
             const measurementCrosshairInner: HTMLElement = <HTMLElement>measurementCrosshair.firstChild
             if (firstClickXY === undefined) {
                 measurementCrosshair.style.visibility = "hidden"

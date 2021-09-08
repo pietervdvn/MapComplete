@@ -27,7 +27,7 @@ export default class AddNewMarker extends Combine {
                     }
                 }
             }
-            if(icons.length === 1){
+            if (icons.length === 1) {
                 return icons[0]
             }
             icons.push(last)
@@ -46,9 +46,9 @@ export default class AddNewMarker extends Combine {
                     .SetClass("absolute p-1 rounded-full overflow-hidden"),
                 Svg.addSmall_svg().SetClass("absolute animate-pulse").SetStyle("width: 30px; left: 30px; top: 35px;")
             ]).SetClass("absolute"),
-           new Combine([label]).SetStyle("position: absolute; left: 50%")
+            new Combine([label]).SetStyle("position: absolute; left: 50%")
         ])
-            this.SetClass("block relative");
+        this.SetClass("block relative");
     }
 
 }

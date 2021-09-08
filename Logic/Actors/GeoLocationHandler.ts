@@ -4,7 +4,6 @@ import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
-import BaseUIElement from "../../UI/BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
 
@@ -161,16 +160,16 @@ export default class GeoLocationHandler extends VariableUiElement {
                     } else {
                         lastClick.setData(new Date())
                     }
-                }else{
+                } else {
                     lastClick.setData(new Date())
                 }
             }
 
             self.init(true, true);
         });
-        
+
         const latLonGiven = QueryParameters.wasInitialized("lat") && QueryParameters.wasInitialized("lon")
-        
+
         this.init(false, !latLonGiven);
 
         isLocked.addCallbackAndRunD(isLocked => {
@@ -180,7 +179,7 @@ export default class GeoLocationHandler extends VariableUiElement {
                 leafletMap.data?.dragging?.enable()
             }
         })
-        
+
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");

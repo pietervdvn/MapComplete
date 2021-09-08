@@ -13,10 +13,10 @@ export default class GeoJsonSource implements FeatureSource {
 
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name;
+    public readonly isOsmCache: boolean
     private onFail: ((errorMsg: any, url: string) => void) = undefined;
     private readonly layerId: string;
     private readonly seenids: Set<string> = new Set<string>()
-    public readonly isOsmCache: boolean
 
     private constructor(locationControl: UIEventSource<Loc>,
                         flayer: { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig },

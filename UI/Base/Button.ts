@@ -13,7 +13,7 @@ export class Button extends BaseUIElement {
 
     protected InnerConstructElement(): HTMLElement {
         const el = this._text.ConstructElement();
-        if(el === undefined){
+        if (el === undefined) {
             return undefined;
         }
         const form = document.createElement("form")

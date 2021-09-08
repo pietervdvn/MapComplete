@@ -1,105 +1,105 @@
 {
- "data_format": 1,
- "project": {
-  "name": "MapComplete Friturenkaart",
-  "description": "Op deze kaart vind je je favoriete frituur!",
-  "project_url": "https://mapcomplete.osm.be/fritures",
-  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/assets/themes/fritures/logo.svg",
-  "contact_name": "Pieter Vander Vennet, ",
-  "contact_email": "pietervdvn@posteo.net"
- },
- "tags": [
-  {
-   "key": "cuisine",
-   "description": "The MapComplete theme Friturenkaart has a layer Frituren showing features with this tag"
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Friturenkaart",
+    "description": "Op deze kaart vind je je favoriete frituur!",
+    "project_url": "https://mapcomplete.osm.be/fritures",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/fritures/logo.svg",
+    "contact_name": "Pieter Vander Vennet, ",
+    "contact_email": "pietervdvn@posteo.net"
   },
-  {
-   "key": "image",
-   "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "name",
-   "description": "Layer 'Frituren' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Friturenkaart')"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Frituren' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Friturenkaart')"
-  },
-  {
-   "key": "website",
-   "description": "Layer 'Frituren' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Friturenkaart')"
-  },
-  {
-   "key": "phone",
-   "description": "Layer 'Frituren' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Friturenkaart')"
-  },
-  {
-   "key": "diet:vegetarian",
-   "description": "Layer 'Frituren' shows diet:vegetarian=yes with a fixed text, namely 'Er zijn vegetarische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "yes"
-  },
-  {
-   "key": "diet:vegetarian",
-   "description": "Layer 'Frituren' shows diet:vegetarian=limited with a fixed text, namely 'Slechts enkele vegetarische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "limited"
-  },
-  {
-   "key": "diet:vegetarian",
-   "description": "Layer 'Frituren' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "no"
-  },
-  {
-   "key": "diet:vegan",
-   "description": "Layer 'Frituren' shows diet:vegan=yes with a fixed text, namely 'Er zijn veganistische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "yes"
-  },
-  {
-   "key": "diet:vegan",
-   "description": "Layer 'Frituren' shows diet:vegan=limited with a fixed text, namely 'Slechts enkele veganistische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "limited"
-  },
-  {
-   "key": "diet:vegetarian",
-   "description": "Layer 'Frituren' shows diet:vegetarian=no with a fixed text, namely 'Geen veganistische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "no"
-  },
-  {
-   "key": "friture:oil",
-   "description": "Layer 'Frituren' shows friture:oil=vegetable with a fixed text, namely 'Plantaardige olie' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "vegetable"
-  },
-  {
-   "key": "friture:oil",
-   "description": "Layer 'Frituren' shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "animal"
-  },
-  {
-   "key": "bulk_purchase",
-   "description": "Layer 'Frituren' shows bulk_purchase=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "yes"
-  },
-  {
-   "key": "bulk_purchase",
-   "description": "Layer 'Frituren' shows bulk_purchase=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "no"
-  },
-  {
-   "key": "bulk_purchase",
-   "description": "Layer 'Frituren' shows bulk_purchase=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
-   "value": "only"
-  }
- ]
+  "tags": [
+    {
+      "key": "cuisine",
+      "description": "The MapComplete theme Friturenkaart has a layer Frituren showing features with this tag"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Frituren' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Frituren' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Frituren' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Frituren' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Frituren' shows diet:vegetarian=yes with a fixed text, namely 'Er zijn vegetarische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Frituren' shows diet:vegetarian=limited with a fixed text, namely 'Slechts enkele vegetarische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Frituren' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Frituren' shows diet:vegan=yes with a fixed text, namely 'Er zijn veganistische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Frituren' shows diet:vegan=limited with a fixed text, namely 'Slechts enkele veganistische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Frituren' shows diet:vegetarian=no with a fixed text, namely 'Geen veganistische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Frituren' shows friture:oil=vegetable with a fixed text, namely 'Plantaardige olie' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "vegetable"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Frituren' shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "animal"
+    },
+    {
+      "key": "bulk_purchase",
+      "description": "Layer 'Frituren' shows bulk_purchase=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "bulk_purchase",
+      "description": "Layer 'Frituren' shows bulk_purchase=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "bulk_purchase",
+      "description": "Layer 'Frituren' shows bulk_purchase=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    }
+  ]
 }

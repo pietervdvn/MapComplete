@@ -1,140 +1,140 @@
 {
-    "bench": {
-        "name": "Bangku",
-        "title": {
-            "render": "Bangku"
+  "bench": {
+    "name": "Bangku",
+    "title": {
+      "render": "Bangku"
+    },
+    "tagRenderings": {
+      "1": {
+        "render": "Sandaran",
+        "mappings": {
+          "0": {
+            "then": "Sandaran: Ya"
+          },
+          "1": {
+            "then": "Sandaran: Tidak"
+          }
         },
-        "tagRenderings": {
-            "1": {
-                "render": "Sandaran",
-                "mappings": {
-                    "0": {
-                        "then": "Sandaran: Ya"
-                    },
-                    "1": {
-                        "then": "Sandaran: Tidak"
-                    }
-                },
-                "question": "Apakah bangku ini memiliki sandaran?"
-            },
-            "2": {
-                "render": "{seats} kursi"
-            },
-            "5": {
-                "render": "Warna: {colour}"
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Bangku"
-            }
-        }
+        "question": "Apakah bangku ini memiliki sandaran?"
+      },
+      "2": {
+        "render": "{seats} kursi"
+      },
+      "5": {
+        "render": "Warna: {colour}"
+      }
     },
-    "bench_at_pt": {
-        "title": {
-            "render": "Bangku"
-        },
-        "tagRenderings": {
-            "1": {
-                "render": "{name}"
-            }
-        }
-    },
-    "bike_parking": {
-        "tagRenderings": {
-            "5": {
-                "render": "{access}"
-            }
-        }
-    },
-    "bike_shop": {
-        "tagRenderings": {
-            "3": {
-                "question": "URL {name} apa?"
-            }
-        }
-    },
-    "defibrillator": {
-        "tagRenderings": {
-            "13": {
-                "render": "Informasi tambahan: {description}"
-            }
-        }
-    },
-    "drinking_water": {
-        "name": "Air minum",
-        "title": {
-            "render": "Air minum"
-        },
-        "presets": {
-            "0": {
-                "title": "Air minum"
-            }
-        }
-    },
-    "ghost_bike": {
-        "tagRenderings": {
-            "3": {
-                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
-            },
-            "4": {
-                "render": "<i>{inscription}</i>"
-            }
-        }
-    },
-    "nature_reserve": {
-        "tagRenderings": {
-            "8": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "9": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            }
-        }
-    },
-    "playground": {
-        "tagRenderings": {
-            "7": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "8": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            }
-        }
-    },
-    "tree_node": {
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            }
-        },
-        "tagRenderings": {
-            "5": {
-                "render": "Nama: {name}"
-            }
-        },
-        "presets": {
-            "2": {
-                "title": "Pohon"
-            }
-        }
-    },
-    "viewpoint": {
-        "name": "Sudut pandang",
-        "presets": {
-            "0": {
-                "title": "Sudut pandang"
-            }
-        },
-        "title": {
-            "render": "Sudut pandang"
-        },
-        "tagRenderings": {
-            "1": {
-                "question": "Apakah Anda ingin menambahkan deskripsi?"
-            }
-        }
+    "presets": {
+      "0": {
+        "title": "Bangku"
+      }
     }
+  },
+  "bench_at_pt": {
+    "title": {
+      "render": "Bangku"
+    },
+    "tagRenderings": {
+      "1": {
+        "render": "{name}"
+      }
+    }
+  },
+  "bike_parking": {
+    "tagRenderings": {
+      "5": {
+        "render": "{access}"
+      }
+    }
+  },
+  "bike_shop": {
+    "tagRenderings": {
+      "3": {
+        "question": "URL {name} apa?"
+      }
+    }
+  },
+  "defibrillator": {
+    "tagRenderings": {
+      "13": {
+        "render": "Informasi tambahan: {description}"
+      }
+    }
+  },
+  "drinking_water": {
+    "name": "Air minum",
+    "title": {
+      "render": "Air minum"
+    },
+    "presets": {
+      "0": {
+        "title": "Air minum"
+      }
+    }
+  },
+  "ghost_bike": {
+    "tagRenderings": {
+      "3": {
+        "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+      },
+      "4": {
+        "render": "<i>{inscription}</i>"
+      }
+    }
+  },
+  "nature_reserve": {
+    "tagRenderings": {
+      "8": {
+        "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+      },
+      "9": {
+        "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+      }
+    }
+  },
+  "playground": {
+    "tagRenderings": {
+      "7": {
+        "render": "<a href='mailto:{email}'>{email}</a>"
+      },
+      "8": {
+        "render": "<a href='tel:{phone}'>{phone}</a>"
+      }
+    }
+  },
+  "tree_node": {
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "<i>{name}</i>"
+        }
+      }
+    },
+    "tagRenderings": {
+      "5": {
+        "render": "Nama: {name}"
+      }
+    },
+    "presets": {
+      "2": {
+        "title": "Pohon"
+      }
+    }
+  },
+  "viewpoint": {
+    "name": "Sudut pandang",
+    "presets": {
+      "0": {
+        "title": "Sudut pandang"
+      }
+    },
+    "title": {
+      "render": "Sudut pandang"
+    },
+    "tagRenderings": {
+      "1": {
+        "question": "Apakah Anda ingin menambahkan deskripsi?"
+      }
+    }
+  }
 }

@@ -14,7 +14,27 @@ import * as L from "leaflet";
 
 export default class LocationInput extends InputElement<Loc> {
 
+    private static readonly matchLayout = new UIEventSource(new LayoutConfig({
+        description: "Matchpoint style",
+        icon: "./assets/svg/crosshair-empty.svg",
+        id: "matchpoint",
+        language: ["en"],
+        layers: [{
+            id: "matchpoint", source: {
+                osmTags: {and: []}
+            },
+            icon: "./assets/svg/crosshair-empty.svg"
+        }],
+        maintainer: "MapComplete",
+        startLat: 0,
+        startLon: 0,
+        startZoom: 0,
+        title: "Location input",
+        version: "0"
+
+    }));
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
     private _centerLocation: UIEventSource<Loc>;
     private readonly mapBackground: UIEventSource<BaseLayer>;
     private readonly _snapTo: UIEventSource<{ feature: any }[]>
@@ -22,7 +42,6 @@ export default class LocationInput extends InputElement<Loc> {
     private readonly _snappedPoint: UIEventSource<any>
     private readonly _maxSnapDistance: number
     private readonly _snappedPointTags: any;
-    public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
 
     constructor(options: {
         mapBackground?: UIEventSource<BaseLayer>,
@@ -228,25 +247,5 @@ export default class LocationInput extends InputElement<Loc> {
             return undefined;
         }
     }
-
-    private static readonly matchLayout = new UIEventSource(new LayoutConfig({
-        description: "Matchpoint style",
-        icon: "./assets/svg/crosshair-empty.svg",
-        id: "matchpoint",
-        language: ["en"],
-        layers: [{
-            id: "matchpoint", source: {
-                osmTags: {and: []}
-            },
-            icon: "./assets/svg/crosshair-empty.svg"
-        }],
-        maintainer: "MapComplete",
-        startLat: 0,
-        startLon: 0,
-        startZoom: 0,
-        title: "Location input",
-        version: "0"
-
-    }));
 
 }

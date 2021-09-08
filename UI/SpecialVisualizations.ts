@@ -56,10 +56,10 @@ export default class SpecialVisualizations {
                             if (!tags.hasOwnProperty(key)) {
                                 continue;
                             }
-                            parts.push([key , tags[key] ?? "<b>undefined</b>" ]);
+                            parts.push([key, tags[key] ?? "<b>undefined</b>"]);
                         }
                         return new Table(
-                            ["key","value"],
+                            ["key", "value"],
                             parts
                         )
                     })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
@@ -130,7 +130,7 @@ export default class SpecialVisualizations {
                                 // This is a list of values
                                 idList = JSON.parse(value)
                             }
-                            
+
                             for (const id of idList) {
                                 features.push({
                                     freshness: new Date(),
@@ -383,8 +383,9 @@ export default class SpecialVisualizations {
             }
 
         ]
-    
+
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
+
     private static GenHelpMessage() {
 
         const helpTexts =

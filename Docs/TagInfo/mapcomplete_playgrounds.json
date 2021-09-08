@@ -1,168 +1,168 @@
 {
- "data_format": 1,
- "project": {
-  "name": "MapComplete Playgrounds",
-  "description": "A map with playgrounds",
-  "project_url": "https://mapcomplete.osm.be/playgrounds",
-  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/assets/themes/playgrounds/playground.svg",
-  "contact_name": "Pieter Vander Vennet, ",
-  "contact_email": "pietervdvn@posteo.net"
- },
- "tags": [
-  {
-   "key": "leisure",
-   "description": "The MapComplete theme Playgrounds has a layer Playgrounds showing features with this tag",
-   "value": "playground"
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Playgrounds",
+    "description": "A map with playgrounds",
+    "project_url": "https://mapcomplete.osm.be/playgrounds",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/playgrounds/playground.svg",
+    "contact_name": "Pieter Vander Vennet, ",
+    "contact_email": "pietervdvn@posteo.net"
   },
-  {
-   "key": "image",
-   "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows and asks freeform values for key 'surface' (in the MapComplete.osm.be theme 'Playgrounds')"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows surface=grass with a fixed text, namely 'The surface is <b>grass</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "grass"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows surface=sand with a fixed text, namely 'The surface is <b>sand</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "sand"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows surface=woodchips with a fixed text, namely 'The surface consist of <b>woodchips</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "woodchips"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows surface=paving_stones with a fixed text, namely 'The surface is <b>paving stones</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "paving_stones"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows surface=asphalt with a fixed text, namely 'The surface is <b>asphalt</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "asphalt"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows surface=concrete with a fixed text, namely 'The surface is <b>concrete</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "concrete"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows surface=unpaved with a fixed text, namely 'The surface is <b>unpaved</b>' (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "unpaved"
-  },
-  {
-   "key": "surface",
-   "description": "Layer 'Playgrounds' shows surface=paved with a fixed text, namely 'The surface is <b>paved</b>' (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "paved"
-  },
-  {
-   "key": "lit",
-   "description": "Layer 'Playgrounds' shows lit=yes with a fixed text, namely 'This playground is lit at night' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "yes"
-  },
-  {
-   "key": "lit",
-   "description": "Layer 'Playgrounds' shows lit=no with a fixed text, namely 'This playground is not lit at night' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "no"
-  },
-  {
-   "key": "min_age",
-   "description": "Layer 'Playgrounds' shows and asks freeform values for key 'min_age' (in the MapComplete.osm.be theme 'Playgrounds')"
-  },
-  {
-   "key": "max_age",
-   "description": "Layer 'Playgrounds' shows and asks freeform values for key 'max_age' (in the MapComplete.osm.be theme 'Playgrounds')"
-  },
-  {
-   "key": "operator",
-   "description": "Layer 'Playgrounds' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Playgrounds')"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Playgrounds' shows access= with a fixed text, namely 'Accessible to the general public' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key access.",
-   "value": ""
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Playgrounds' shows access=yes with a fixed text, namely 'Accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "yes"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Playgrounds' shows access=customers with a fixed text, namely 'Only accessible for clients of the operating business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "customers"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "students"
-  },
-  {
-   "key": "access",
-   "description": "Layer 'Playgrounds' shows access=private with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "private"
-  },
-  {
-   "key": "email",
-   "description": "Layer 'Playgrounds' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Playgrounds')"
-  },
-  {
-   "key": "phone",
-   "description": "Layer 'Playgrounds' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Playgrounds')"
-  },
-  {
-   "key": "wheelchair",
-   "description": "Layer 'Playgrounds' shows wheelchair=yes with a fixed text, namely 'Completely accessible for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "yes"
-  },
-  {
-   "key": "wheelchair",
-   "description": "Layer 'Playgrounds' shows wheelchair=limited with a fixed text, namely 'Limited accessibility for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "limited"
-  },
-  {
-   "key": "wheelchair",
-   "description": "Layer 'Playgrounds' shows wheelchair=no with a fixed text, namely 'Not accessible for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "no"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Playgrounds' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Playgrounds')"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Playgrounds' shows opening_hours=sunrise-sunset with a fixed text, namely 'Accessible from sunrise till sunset' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "sunrise-sunset"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Playgrounds' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
-   "value": "24/7"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Playgrounds' shows opening_hours= with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key opening_hours.",
-   "value": ""
-  }
- ]
+  "tags": [
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Playgrounds has a layer Playgrounds showing features with this tag",
+      "value": "playground"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'surface' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=grass with a fixed text, namely 'The surface is <b>grass</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "grass"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=sand with a fixed text, namely 'The surface is <b>sand</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "sand"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=woodchips with a fixed text, namely 'The surface consist of <b>woodchips</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "woodchips"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=paving_stones with a fixed text, namely 'The surface is <b>paving stones</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "paving_stones"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=asphalt with a fixed text, namely 'The surface is <b>asphalt</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "asphalt"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=concrete with a fixed text, namely 'The surface is <b>concrete</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "concrete"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=unpaved with a fixed text, namely 'The surface is <b>unpaved</b>' (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "unpaved"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=paved with a fixed text, namely 'The surface is <b>paved</b>' (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "paved"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Playgrounds' shows lit=yes with a fixed text, namely 'This playground is lit at night' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "yes"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Playgrounds' shows lit=no with a fixed text, namely 'This playground is not lit at night' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "no"
+    },
+    {
+      "key": "min_age",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'min_age' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
+      "key": "max_age",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'max_age' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Playgrounds' shows access= with a fixed text, namely 'Accessible to the general public' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key access.",
+      "value": ""
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Playgrounds' shows access=yes with a fixed text, namely 'Accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Playgrounds' shows access=customers with a fixed text, namely 'Only accessible for clients of the operating business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "students"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Playgrounds' shows access=private with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "private"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Playgrounds' shows wheelchair=yes with a fixed text, namely 'Completely accessible for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Playgrounds' shows wheelchair=limited with a fixed text, namely 'Limited accessibility for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Playgrounds' shows wheelchair=no with a fixed text, namely 'Not accessible for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "no"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Playgrounds' shows opening_hours=sunrise-sunset with a fixed text, namely 'Accessible from sunrise till sunset' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "sunrise-sunset"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Playgrounds' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Playgrounds' shows opening_hours= with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key opening_hours.",
+      "value": ""
+    }
+  ]
 }

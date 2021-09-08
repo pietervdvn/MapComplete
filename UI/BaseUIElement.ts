@@ -13,7 +13,7 @@ export default abstract class BaseUIElement {
     private style: string;
     private _onClick: () => void;
     private _onHover: UIEventSource<boolean>;
-    
+
     public onClick(f: (() => void)) {
         this._onClick = f;
         this.SetClass("clickable")
@@ -22,7 +22,7 @@ export default abstract class BaseUIElement {
         }
         return this;
     }
-    
+
     AttachTo(divId: string) {
         let element = document.getElementById(divId);
         if (element === null) {
@@ -37,7 +37,7 @@ export default abstract class BaseUIElement {
         if (el !== undefined) {
             element.appendChild(el)
         }
-        
+
         return this;
     }
 

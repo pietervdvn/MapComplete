@@ -2,8 +2,6 @@ import T from "./TestHelper";
 import {Utils} from "../Utils";
 import {equal} from "assert";
 import LZString from "lz-string";
-import * as Assert from "assert";
-import * as assert from "assert";
 
 export default class UtilsSpec extends T {
     private static readonly example = {

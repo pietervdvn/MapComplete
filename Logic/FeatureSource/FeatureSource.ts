@@ -24,8 +24,8 @@ export class FeatureSourceUtils {
         options = Utils.setDefaults(options, defaults);
 
         // Select all features, ignore the freshness and other data
-        let featureList: any[] = featurePipeline.features.data.map((feature) => 
-          JSON.parse(JSON.stringify((feature.feature)))); // Make a deep copy!
+        let featureList: any[] = featurePipeline.features.data.map((feature) =>
+            JSON.parse(JSON.stringify((feature.feature)))); // Make a deep copy!
 
         if (!options.metadata) {
             for (let i = 0; i < featureList.length; i++) {
@@ -39,7 +39,7 @@ export class FeatureSourceUtils {
         }
         return {type: "FeatureCollection", features: featureList}
 
-  
+
     }
 
 

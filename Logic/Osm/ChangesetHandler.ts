@@ -258,7 +258,7 @@ export class ChangesetHandler {
         }, function (err, response) {
             if (response === undefined) {
                 console.log("err", err);
-                if(options.onFail){
+                if (options.onFail) {
                     options.onFail()
                 }
                 return;

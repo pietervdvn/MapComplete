@@ -25,12 +25,11 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             Translations.t.general.weekdays.abbreviations.sunday
         ]
     public readonly IsSelected: UIEventSource<boolean>;
-    private readonly source: UIEventSource<OpeningHour[]>;
-    
     /*
     These html-elements are an overlay over the table columns and act as a host for the ranges in the weekdays
      */
-    public readonly weekdayElements : HTMLElement[] = Utils.TimesT(7, () => document.createElement("div"))
+    public readonly weekdayElements: HTMLElement[] = Utils.TimesT(7, () => document.createElement("div"))
+    private readonly source: UIEventSource<OpeningHour[]>;
 
     constructor(source?: UIEventSource<OpeningHour[]>) {
         super();
@@ -51,7 +50,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
         const table = document.createElement("table")
         table.classList.add("oh-table")
-        
+
         const cellHeightInPx = 14;
 
         const headerRow = document.createElement("tr")
@@ -62,28 +61,26 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             const cell = document.createElement("th")
             cell.style.width = "14%"
             cell.appendChild(weekday.ConstructElement())
-            
+
             const fullColumnSpan = this.weekdayElements[i]
-            fullColumnSpan.classList.add("w-full","relative")
-            
+            fullColumnSpan.classList.add("w-full", "relative")
+
             // We need to round! The table height is rounded as following, we use this to calculate the actual number of pixels afterwards
-            fullColumnSpan.style.height = ( (cellHeightInPx) * 48) + "px"  
-            
-            
+            fullColumnSpan.style.height = ((cellHeightInPx) * 48) + "px"
+
+
             const ranges = new VariableUiElement(
-                this.source.map(ohs => ohs.filter((oh : OpeningHour) => oh.weekday === i))
+                this.source.map(ohs => ohs.filter((oh: OpeningHour) => oh.weekday === i))
                     .map(ohsForToday => {
-                        return new Combine(ohsForToday.map(oh => new OpeningHoursRange(oh, () =>{
+                        return new Combine(ohsForToday.map(oh => new OpeningHoursRange(oh, () => {
                             this.source.data.splice(this.source.data.indexOf(oh), 1)
                             this.source.ping()
                         })))
                     })
             )
             fullColumnSpan.appendChild(ranges.ConstructElement())
-            
-            
-            
-            
+
+
             const fullColumnSpanWrapper = document.createElement("div")
             fullColumnSpanWrapper.classList.add("absolute")
             fullColumnSpanWrapper.style.zIndex = "10"
@@ -91,7 +88,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             fullColumnSpanWrapper.style.pointerEvents = "none"
 
             fullColumnSpanWrapper.appendChild(fullColumnSpan)
-            
+
             cell.appendChild(fullColumnSpanWrapper)
             headerRow.appendChild(cell)
         }
@@ -115,7 +112,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                 cell.classList.add("oh-timecell", "oh-timecell-full", `oh-timecell-${weekday}`)
                 evenRow.appendChild(cell)
             }
-            evenRow.style.height = (cellHeightInPx)+"px";
+            evenRow.style.height = (cellHeightInPx) + "px";
             evenRow.style.maxHeight = evenRow.style.height;
             evenRow.style.minHeight = evenRow.style.height;
             table.appendChild(evenRow)
@@ -133,7 +130,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             table.appendChild(oddRow)
         }
 
-        
+
         /**** Event handling below ***/
 
 

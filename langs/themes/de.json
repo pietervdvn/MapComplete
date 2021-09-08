@@ -1,334 +1,334 @@
 {
-    "aed": {
-        "title": "AED-Karte öffnen",
-        "description": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren"
-    },
-    "artwork": {
-        "title": "Freie Kunstwerk-Karte",
-        "description": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
-        "layers": {
+  "aed": {
+    "title": "AED-Karte öffnen",
+    "description": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren"
+  },
+  "artwork": {
+    "title": "Freie Kunstwerk-Karte",
+    "description": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
+    "layers": {
+      "0": {
+        "name": "Kunstwerke",
+        "title": {
+          "render": "Kunstwerk",
+          "mappings": {
             "0": {
-                "name": "Kunstwerke",
-                "title": {
-                    "render": "Kunstwerk",
-                    "mappings": {
-                        "0": {
-                            "then": "Kunstwerk <i>{name}</i>"
-                        }
-                    }
-                },
-                "description": "Verschiedene Kunstwerke",
-                "presets": {
-                    "0": {
-                        "title": "Kunstwerk"
-                    }
-                },
-                "tagRenderings": {
-                    "1": {
-                        "render": "Dies ist ein {artwork_type}",
-                        "question": "Was ist die Art dieses Kunstwerks?",
-                        "mappings": {
-                            "0": {
-                                "then": "Architektur"
-                            },
-                            "1": {
-                                "then": "Wandbild"
-                            },
-                            "2": {
-                                "then": "Malerei"
-                            },
-                            "3": {
-                                "then": "Skulptur"
-                            },
-                            "4": {
-                                "then": "Statue"
-                            },
-                            "5": {
-                                "then": "Büste"
-                            },
-                            "6": {
-                                "then": "Stein"
-                            },
-                            "7": {
-                                "then": "Installation"
-                            },
-                            "8": {
-                                "then": "Graffiti"
-                            },
-                            "9": {
-                                "then": "Relief"
-                            },
-                            "10": {
-                                "then": "Azulejo (spanische dekorative Fliesenarbeit)"
-                            },
-                            "11": {
-                                "then": "Fliesenarbeit"
-                            }
-                        }
-                    },
-                    "2": {
-                        "question": "Welcher Künstler hat das geschaffen?",
-                        "render": "Erstellt von {artist_name}"
-                    },
-                    "3": {
-                        "question": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
-                        "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
-                    },
-                    "4": {
-                        "question": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
-                        "render": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
-                    }
-                }
+              "then": "Kunstwerk <i>{name}</i>"
             }
-        }
-    },
-    "benches": {
-        "title": "Sitzbänke",
-        "shortDescription": "Eine Karte aller Sitzbänke",
-        "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten."
-    },
-    "bicyclelib": {
-        "title": "Fahrradbibliothek"
-    },
-    "bookcases": {
-        "title": "Öffentliche Bücherschränke Karte",
-        "description": "Ein öffentlicher Bücherschrank ist ein kleiner Bücherschrank am Straßenrand, ein Kasten, eine alte Telefonzelle oder andere Gegenstände, in denen Bücher aufbewahrt werden. Jeder kann ein Buch hinstellen oder mitnehmen. Diese Karte zielt darauf ab, all diese Bücherschränke zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Account schnell Ihre Lieblingsbücherschränke hinzufügen."
-    },
-    "climbing": {
-        "title": "Offene Kletterkarte",
-        "description": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
-        "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
-        "layers": {
-            "0": {
-                "name": "Kletterverein",
-                "title": {
-                    "render": "Kletterverein",
-                    "mappings": {
-                        "0": {
-                            "then": "Kletter-Organisation"
-                        }
-                    }
-                },
-                "description": "Ein Kletterverein oder eine Organisation",
-                "tagRenderings": {
-                    "0": {
-                        "render": "<strong>{name}</strong>",
-                        "question": "Wie lautet der Name dieses Vereins oder Organisation?"
-                    }
-                },
-                "presets": {
-                    "0": {
-                        "title": "Kletterverein",
-                        "description": "Ein Kletterverein"
-                    },
-                    "1": {
-                        "title": "Eine Kletter-Organisation",
-                        "description": "Eine Organisation, welche sich mit dem Klettern beschäftigt"
-                    }
-                }
-            },
-            "1": {
-                "name": "Kletterhallen",
-                "title": {
-                    "render": "Kletterhalle",
-                    "mappings": {
-                        "0": {
-                            "then": "Kletterhalle <strong>{name}</strong>"
-                        }
-                    }
-                },
-                "description": "Eine Kletterhalle",
-                "tagRenderings": {
-                    "3": {
-                        "render": "<strong>{name}</strong>",
-                        "question": "Wie heißt diese Kletterhalle?"
-                    }
-                }
-            },
-            "2": {
-                "name": "Kletterrouten",
-                "title": {
-                    "render": "Kleterroute",
-                    "mappings": {
-                        "0": {
-                            "then": "Kleterroute <strong>{name}</strong>"
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "3": {
-                        "render": "<strong>{name}</strong>",
-                        "question": "Wie heißt diese Kletterroute?",
-                        "mappings": {
-                            "0": {
-                                "then": "Diese Kletterroute hat keinen Namen"
-                            }
-                        }
-                    },
-                    "4": {
-                        "render": "Diese Route ist {canonical(climbing:length)} lang"
-                    },
-                    "5": {
-                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
-                    }
-                }
-            },
-            "3": {
-                "name": "Klettermöglichkeiten",
-                "title": {
-                    "render": "Klettermöglichkeit"
-                },
-                "description": "Eine Klettergelegenheit",
-                "tagRenderings": {
-                    "6": {
-                        "render": "<strong>{name}</strong>",
-                        "question": "Wie heißt diese Klettergelegenheit?",
-                        "mappings": {
-                            "0": {
-                                "then": "Diese Klettergelegenheit hat keinen Namen"
-                            }
-                        }
-                    }
-                },
-                "presets": {
-                    "0": {
-                        "title": "Klettermöglichkeit",
-                        "description": "Eine Klettergelegenheit"
-                    }
-                }
-            },
-            "4": {
-                "name": "Klettermöglichkeiten?",
-                "title": {
-                    "render": "Klettermöglichkeit?"
-                },
-                "description": "Eine Klettergelegenheit?",
-                "tagRenderings": {
-                    "1": {
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "2": {
-                        "question": "Kann hier geklettert werden?",
-                        "mappings": {
-                            "0": {
-                                "then": "Hier kann nicht geklettert werden"
-                            },
-                            "1": {
-                                "then": "Hier kann geklettert werden"
-                            },
-                            "2": {
-                                "then": "Hier kann nicht geklettert werden"
-                            }
-                        }
-                    }
-                }
-            }
+          }
         },
-        "roamingRenderings": {
-            "0": {
-                "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
-            },
-            "4": {
-                "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang",
-                "question": "Wie lang sind die Routen (durchschnittlich) in Metern?"
-            },
-            "5": {
-                "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
-                "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
-            },
-            "6": {
-                "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-                "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
-            },
-            "7": {
-                "question": "Kann hier gebouldert werden?",
-                "mappings": {
-                    "0": {
-                        "then": "Hier kann gebouldert werden"
-                    },
-                    "1": {
-                        "then": "Hier kann nicht gebouldert werden"
-                    },
-                    "2": {
-                        "then": "Bouldern ist hier nur an wenigen Routen möglich"
-                    },
-                    "3": {
-                        "then": "Hier gibt es {climbing:boulder} Boulder-Routen"
-                    }
-                }
-            },
-            "8": {
-                "question": "Ist Toprope-Klettern hier möglich?",
-                "mappings": {
-                    "0": {
-                        "then": "Toprope-Klettern ist hier möglich"
-                    },
-                    "1": {
-                        "then": "Toprope-Climbing ist hier nicht möglich"
-                    },
-                    "2": {
-                        "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
-                    }
-                }
-            },
-            "9": {
-                "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?",
-                "mappings": {
-                    "0": {
-                        "then": "Sportklettern ist hier möglich"
-                    },
-                    "1": {
-                        "then": "Sportklettern ist hier nicht möglich"
-                    },
-                    "2": {
-                        "then": "Hier gibt es {climbing:sport} Sportkletter-Routen"
-                    }
-                }
-            },
-            "10": {
-                "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?",
-                "mappings": {
-                    "0": {
-                        "then": "Traditionelles Klettern ist hier möglich"
-                    },
-                    "1": {
-                        "then": "Traditionelles Klettern ist hier nicht möglich"
-                    },
-                    "2": {
-                        "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
-                    }
-                }
-            },
-            "11": {
-                "question": "Gibt es hier eine Speedkletter-Wand?",
-                "mappings": {
-                    "0": {
-                        "then": "Hier gibt es eine Speedkletter-Wand"
-                    },
-                    "1": {
-                        "then": "Hier gibt es keine Speedkletter-Wand"
-                    },
-                    "2": {
-                        "then": "Hier gibt es {climbing:speed} Speedkletter-Routen"
-                    }
-                }
+        "description": "Verschiedene Kunstwerke",
+        "presets": {
+          "0": {
+            "title": "Kunstwerk"
+          }
+        },
+        "tagRenderings": {
+          "1": {
+            "render": "Dies ist ein {artwork_type}",
+            "question": "Was ist die Art dieses Kunstwerks?",
+            "mappings": {
+              "0": {
+                "then": "Architektur"
+              },
+              "1": {
+                "then": "Wandbild"
+              },
+              "2": {
+                "then": "Malerei"
+              },
+              "3": {
+                "then": "Skulptur"
+              },
+              "4": {
+                "then": "Statue"
+              },
+              "5": {
+                "then": "Büste"
+              },
+              "6": {
+                "then": "Stein"
+              },
+              "7": {
+                "then": "Installation"
+              },
+              "8": {
+                "then": "Graffiti"
+              },
+              "9": {
+                "then": "Relief"
+              },
+              "10": {
+                "then": "Azulejo (spanische dekorative Fliesenarbeit)"
+              },
+              "11": {
+                "then": "Fliesenarbeit"
+              }
             }
+          },
+          "2": {
+            "question": "Welcher Künstler hat das geschaffen?",
+            "render": "Erstellt von {artist_name}"
+          },
+          "3": {
+            "question": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
+            "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
+          },
+          "4": {
+            "question": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
+            "render": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+          }
         }
-    },
-    "cyclofix": {
-        "title": "Cyclofix - eine offene Karte für Radfahrer",
-        "description": "Das Ziel dieser Karte ist es, den Radfahrern eine einfach zu benutzende Lösung zu präsentieren, um die geeignete Infrastruktur für ihre Bedürfnisse zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>Alle Änderungen, die Sie vornehmen, werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei wiederverwendet werden.<br><br>Weitere Informationen über das Projekt Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
-    },
-    "ghostbikes": {
-        "title": "Geisterrad",
-        "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap kennt. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account."
-    },
-    "personal": {
-        "title": "Persönliches Thema",
-        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen"
-    },
-    "toilets": {
-        "title": "Offene Toilette Karte",
-        "description": "Eine Karte der öffentlichen Toiletten"
+      }
     }
+  },
+  "benches": {
+    "title": "Sitzbänke",
+    "shortDescription": "Eine Karte aller Sitzbänke",
+    "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten."
+  },
+  "bicyclelib": {
+    "title": "Fahrradbibliothek"
+  },
+  "bookcases": {
+    "title": "Öffentliche Bücherschränke Karte",
+    "description": "Ein öffentlicher Bücherschrank ist ein kleiner Bücherschrank am Straßenrand, ein Kasten, eine alte Telefonzelle oder andere Gegenstände, in denen Bücher aufbewahrt werden. Jeder kann ein Buch hinstellen oder mitnehmen. Diese Karte zielt darauf ab, all diese Bücherschränke zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Account schnell Ihre Lieblingsbücherschränke hinzufügen."
+  },
+  "climbing": {
+    "title": "Offene Kletterkarte",
+    "description": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
+    "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
+    "layers": {
+      "0": {
+        "name": "Kletterverein",
+        "title": {
+          "render": "Kletterverein",
+          "mappings": {
+            "0": {
+              "then": "Kletter-Organisation"
+            }
+          }
+        },
+        "description": "Ein Kletterverein oder eine Organisation",
+        "tagRenderings": {
+          "0": {
+            "render": "<strong>{name}</strong>",
+            "question": "Wie lautet der Name dieses Vereins oder Organisation?"
+          }
+        },
+        "presets": {
+          "0": {
+            "title": "Kletterverein",
+            "description": "Ein Kletterverein"
+          },
+          "1": {
+            "title": "Eine Kletter-Organisation",
+            "description": "Eine Organisation, welche sich mit dem Klettern beschäftigt"
+          }
+        }
+      },
+      "1": {
+        "name": "Kletterhallen",
+        "title": {
+          "render": "Kletterhalle",
+          "mappings": {
+            "0": {
+              "then": "Kletterhalle <strong>{name}</strong>"
+            }
+          }
+        },
+        "description": "Eine Kletterhalle",
+        "tagRenderings": {
+          "3": {
+            "render": "<strong>{name}</strong>",
+            "question": "Wie heißt diese Kletterhalle?"
+          }
+        }
+      },
+      "2": {
+        "name": "Kletterrouten",
+        "title": {
+          "render": "Kleterroute",
+          "mappings": {
+            "0": {
+              "then": "Kleterroute <strong>{name}</strong>"
+            }
+          }
+        },
+        "tagRenderings": {
+          "3": {
+            "render": "<strong>{name}</strong>",
+            "question": "Wie heißt diese Kletterroute?",
+            "mappings": {
+              "0": {
+                "then": "Diese Kletterroute hat keinen Namen"
+              }
+            }
+          },
+          "4": {
+            "render": "Diese Route ist {canonical(climbing:length)} lang"
+          },
+          "5": {
+            "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
+          }
+        }
+      },
+      "3": {
+        "name": "Klettermöglichkeiten",
+        "title": {
+          "render": "Klettermöglichkeit"
+        },
+        "description": "Eine Klettergelegenheit",
+        "tagRenderings": {
+          "6": {
+            "render": "<strong>{name}</strong>",
+            "question": "Wie heißt diese Klettergelegenheit?",
+            "mappings": {
+              "0": {
+                "then": "Diese Klettergelegenheit hat keinen Namen"
+              }
+            }
+          }
+        },
+        "presets": {
+          "0": {
+            "title": "Klettermöglichkeit",
+            "description": "Eine Klettergelegenheit"
+          }
+        }
+      },
+      "4": {
+        "name": "Klettermöglichkeiten?",
+        "title": {
+          "render": "Klettermöglichkeit?"
+        },
+        "description": "Eine Klettergelegenheit?",
+        "tagRenderings": {
+          "1": {
+            "render": "<strong>{name}</strong>"
+          },
+          "2": {
+            "question": "Kann hier geklettert werden?",
+            "mappings": {
+              "0": {
+                "then": "Hier kann nicht geklettert werden"
+              },
+              "1": {
+                "then": "Hier kann geklettert werden"
+              },
+              "2": {
+                "then": "Hier kann nicht geklettert werden"
+              }
+            }
+          }
+        }
+      }
+    },
+    "roamingRenderings": {
+      "0": {
+        "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
+      },
+      "4": {
+        "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang",
+        "question": "Wie lang sind die Routen (durchschnittlich) in Metern?"
+      },
+      "5": {
+        "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
+        "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
+      },
+      "6": {
+        "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
+        "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
+      },
+      "7": {
+        "question": "Kann hier gebouldert werden?",
+        "mappings": {
+          "0": {
+            "then": "Hier kann gebouldert werden"
+          },
+          "1": {
+            "then": "Hier kann nicht gebouldert werden"
+          },
+          "2": {
+            "then": "Bouldern ist hier nur an wenigen Routen möglich"
+          },
+          "3": {
+            "then": "Hier gibt es {climbing:boulder} Boulder-Routen"
+          }
+        }
+      },
+      "8": {
+        "question": "Ist Toprope-Klettern hier möglich?",
+        "mappings": {
+          "0": {
+            "then": "Toprope-Klettern ist hier möglich"
+          },
+          "1": {
+            "then": "Toprope-Climbing ist hier nicht möglich"
+          },
+          "2": {
+            "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
+          }
+        }
+      },
+      "9": {
+        "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?",
+        "mappings": {
+          "0": {
+            "then": "Sportklettern ist hier möglich"
+          },
+          "1": {
+            "then": "Sportklettern ist hier nicht möglich"
+          },
+          "2": {
+            "then": "Hier gibt es {climbing:sport} Sportkletter-Routen"
+          }
+        }
+      },
+      "10": {
+        "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?",
+        "mappings": {
+          "0": {
+            "then": "Traditionelles Klettern ist hier möglich"
+          },
+          "1": {
+            "then": "Traditionelles Klettern ist hier nicht möglich"
+          },
+          "2": {
+            "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
+          }
+        }
+      },
+      "11": {
+        "question": "Gibt es hier eine Speedkletter-Wand?",
+        "mappings": {
+          "0": {
+            "then": "Hier gibt es eine Speedkletter-Wand"
+          },
+          "1": {
+            "then": "Hier gibt es keine Speedkletter-Wand"
+          },
+          "2": {
+            "then": "Hier gibt es {climbing:speed} Speedkletter-Routen"
+          }
+        }
+      }
+    }
+  },
+  "cyclofix": {
+    "title": "Cyclofix - eine offene Karte für Radfahrer",
+    "description": "Das Ziel dieser Karte ist es, den Radfahrern eine einfach zu benutzende Lösung zu präsentieren, um die geeignete Infrastruktur für ihre Bedürfnisse zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>Alle Änderungen, die Sie vornehmen, werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei wiederverwendet werden.<br><br>Weitere Informationen über das Projekt Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
+  },
+  "ghostbikes": {
+    "title": "Geisterrad",
+    "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap kennt. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account."
+  },
+  "personal": {
+    "title": "Persönliches Thema",
+    "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen"
+  },
+  "toilets": {
+    "title": "Offene Toilette Karte",
+    "description": "Eine Karte der öffentlichen Toiletten"
+  }
 }

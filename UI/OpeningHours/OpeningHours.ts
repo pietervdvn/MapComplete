@@ -93,7 +93,7 @@ export class OH {
         const queue = ohs.map(oh => {
             if (oh.endHour === 0 && oh.endMinutes === 0) {
                 const newOh = {
-                        ...oh
+                    ...oh
                 }
                 newOh.endHour = 24
                 return newOh
@@ -256,7 +256,7 @@ export class OH {
         start?: string,
         end?: string
     } {
-        if(str === undefined){
+        if (str === undefined) {
             return null
         }
         str = str.trim();

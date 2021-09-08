@@ -1,27 +1,25 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.187.0/containers/typescript-node
 {
-    "name": "MapComplete",
-    "build": {
-        "dockerfile": "Dockerfile",
-        // Update 'VARIANT' to pick a Node version: 12, 14, 16
-        "args": {
-            "VARIANT": "14"
-        }
-    },
+  "name": "MapComplete",
+  "build": {
+    "dockerfile": "Dockerfile",
+    // Update 'VARIANT' to pick a Node version: 12, 14, 16
+    "args": {
+      "VARIANT": "14"
+    }
+  },
+  // Set *default* container specific settings.json values on container create.
+  "settings": {},
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    1234
+  ],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  //"postCreateCommand": "npm run init",
 
-    // Set *default* container specific settings.json values on container create.
-    "settings": {},
-
-    // Add the IDs of extensions you want installed when the container is created.
-    "extensions": [],
-
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    "forwardPorts": [1234],
-
-    // Use 'postCreateCommand' to run commands after the container is created.
-    //"postCreateCommand": "npm run init",
-
-    // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "node"
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node"
 }

@@ -24,19 +24,19 @@ export class Tag extends TagsFilter {
 
     matchesProperties(properties: any): boolean {
         for (const propertiesKey in properties) {
-            if(!properties.hasOwnProperty(propertiesKey)){
+            if (!properties.hasOwnProperty(propertiesKey)) {
                 continue
             }
             if (this.key === propertiesKey) {
                 const value = properties[propertiesKey];
-                if(value === undefined){
+                if (value === undefined) {
                     continue
                 }
                 return value === this.value;
             }
         }
         // The tag was not found
-        
+
         if (this.value === "") {
             // and it shouldn't be found!
             return true;
@@ -52,6 +52,7 @@ export class Tag extends TagsFilter {
         }
         return [`["${this.key}"="${this.value}"]`];
     }
+
     asHumanString(linkToWiki?: boolean, shorten?: boolean) {
         let v = this.value;
         if (shorten) {
@@ -84,6 +85,6 @@ export class Tag extends TagsFilter {
     }
 
     asChange(properties: any): { k: string; v: string }[] {
-        return [{k: this.key,  v: this.value}];
+        return [{k: this.key, v: this.value}];
     }
 }

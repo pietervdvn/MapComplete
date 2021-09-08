@@ -9,17 +9,17 @@ export class TabbedComponent extends Combine {
     constructor(elements: { header: BaseUIElement | string, content: BaseUIElement | string }[], openedTab: (UIEventSource<number> | number) = 0) {
 
         const openedTabSrc = typeof (openedTab) === "number" ? new UIEventSource(openedTab) : (openedTab ?? new UIEventSource<number>(0))
-            
+
         const tabs: BaseUIElement[] = []
         const contentElements: BaseUIElement[] = [];
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
             const header = Translations.W(element.header).onClick(() => openedTabSrc.setData(i))
             openedTabSrc.addCallbackAndRun(selected => {
-                if(selected === i){
+                if (selected === i) {
                     header.SetClass("tab-active")
                     header.RemoveClass("tab-non-active")
-                }else{
+                } else {
                     header.SetClass("tab-non-active")
                     header.RemoveClass("tab-active")
                 }

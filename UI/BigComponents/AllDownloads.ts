@@ -9,8 +9,6 @@ import {DownloadPanel} from "./DownloadPanel";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import ExportPDF from "../ExportPDF";
-import {Browser} from "leaflet";
-import ie = Browser.ie;
 import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class AllDownloads extends ScrollableFullScreen {

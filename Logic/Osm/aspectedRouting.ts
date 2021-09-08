@@ -12,12 +12,9 @@ export default class AspectedRouting {
         this.program = JSON.parse(JSON.stringify(program))
         delete this.program.name
         delete this.program.description
-       delete this.program.unit
+        delete this.program.unit
     }
 
-    public evaluate(properties){
-        return AspectedRouting.interpret(this.program, properties)
-    }
     /**
      * Interprets the given Aspected-routing program for the given properties
      */
@@ -189,6 +186,10 @@ export default class AspectedRouting {
             }
         }
         return result;
+    }
+
+    public evaluate(properties) {
+        return AspectedRouting.interpret(this.program, properties)
     }
 
 }

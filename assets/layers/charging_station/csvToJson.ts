@@ -36,13 +36,14 @@ function run(file, protojson) {
 
         // We add a second time for any amount to trigger a visualisation; but this is not an answer option
         const no_ask_json = {
-            if: {and: [`${key}~*`,`${key}!=1`]
+            if: {
+                and: [`${key}~*`, `${key}!=1`]
             },
             then: txt,
             hideInAnswer: true
         }
         overview_question_answers.push(no_ask_json)
-        
+
         const indivQ = {
 
             question: {

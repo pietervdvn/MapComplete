@@ -1,18 +1,8 @@
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import Hash from "./Logic/Web/Hash";
-import {InitUiElements} from "./InitUiElements";
-import {Utils} from "./Utils";
 import {UIEventSource} from "./Logic/UIEventSource";
-import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
-import LZString from "lz-string";
-import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
-import Combine from "./UI/Base/Combine";
 import DirectionInput from "./UI/Input/DirectionInput";
 import Loc from "./Models/Loc";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import Minimap from "./UI/Base/Minimap";
-import ValidatedTextField from "./UI/Input/ValidatedTextField";
 
 
 const location = new UIEventSource<Loc>({
@@ -20,7 +10,7 @@ const location = new UIEventSource<Loc>({
     lat: 51.2,
     lon: 4.3
 })
-DirectionInput.constructMinimap = options =>  new Minimap(options)
+DirectionInput.constructMinimap = options => new Minimap(options)
 
 new DirectionInput(
     AvailableBaseLayers.SelectBestLayerAccordingTo(location, new UIEventSource<string | string[]>("map")),

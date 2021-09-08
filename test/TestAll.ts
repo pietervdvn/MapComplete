@@ -1,4 +1,4 @@
-import {Utils} from "../Utils";Utils.runningFromConsole = true;
+import {Utils} from "../Utils";
 import TagSpec from "./Tag.spec";
 import ImageAttributionSpec from "./ImageAttribution.spec";
 import GeoOperationsSpec from "./GeoOperations.spec";
@@ -13,6 +13,7 @@ import OsmObjectSpec from "./OsmObject.spec";
 import ScriptUtils from "../scripts/ScriptUtils";
 import UnitsSpec from "./Units.spec";
 
+Utils.runningFromConsole = true;
 
 
 export default class TestAll {
@@ -45,6 +46,6 @@ const allTests = [
 
 for (const test of allTests) {
     if (test.failures.length > 0) {
-        throw "Some test failed: "+test.failures.join(", ")
+        throw "Some test failed: " + test.failures.join(", ")
     }
 }

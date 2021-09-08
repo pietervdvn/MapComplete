@@ -1,0 +1,30 @@
+{
+  "id": "binoculars",
+  "title": {
+    "en": "Binoculars",
+    "nl": "Verrekijkers"
+  },
+  "shortDescription": {
+    "en": "A map with fixed binoculars",
+    "nl": "Een kaart met publieke verrekijker"
+  },
+  "description": {
+    "en": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
+    "nl": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd"
+  },
+  "language": [
+    "en",
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/binoculars/Line-style-icons-telescope.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "binocular"
+  ]
+}

@@ -17,22 +17,22 @@ export default class ThemeIntroductionPanel extends VariableUiElement {
                 State.state.layoutToUse.map(layout => LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone()))
             )
         ;
-        
+
         const toTheMap = new SubtleButton(
             undefined,
             Translations.t.general.openTheMap.Clone().SetClass("text-xl font-bold w-full text-center")
-        ).onClick(() =>{
+        ).onClick(() => {
             isShown.setData(false)
         }).SetClass("only-on-mobile")
 
         const plzLogIn =
             new SubtleButton(
                 Svg.osm_logo_ui(),
-                
+
                 new Combine([Translations.t.general.loginWithOpenStreetMap
                     .Clone().SetClass("text-xl font-bold"),
                     Translations.t.general.loginOnlyNeededToEdit.Clone().SetClass("font-bold")]
-                    ).SetClass("flex flex-col text-center w-full")
+                ).SetClass("flex flex-col text-center w-full")
             )
                 .onClick(() => {
                     State.state.osmConnection.AttemptLogin()
@@ -40,8 +40,7 @@ export default class ThemeIntroductionPanel extends VariableUiElement {
 
 
         const welcomeBack = Translations.t.general.welcomeBack.Clone();
-        
-        
+
 
         const loginStatus =
             new Toggle(
@@ -55,7 +54,7 @@ export default class ThemeIntroductionPanel extends VariableUiElement {
             )
 
 
-        super(State.state.layoutToUse.map (layout => new Combine([
+        super(State.state.layoutToUse.map(layout => new Combine([
             layout.description.Clone(),
             "<br/><br/>",
             toTheMap,

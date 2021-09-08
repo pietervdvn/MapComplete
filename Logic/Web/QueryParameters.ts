@@ -69,6 +69,10 @@ export class QueryParameters {
         return docs.join("\n\n");
     }
 
+    public static wasInitialized(key: string): boolean {
+        return QueryParameters._wasInitialized.has(key)
+    }
+
     private static addOrder(key) {
         if (this.order.indexOf(key) < 0) {
             this.order.push(key)
@@ -103,10 +107,6 @@ export class QueryParameters {
         window["mapcomplete_query_parameter_overview"] = () => {
             console.log(QueryParameters.GenerateQueryParameterDocs())
         }
-    }
-    
-    public static wasInitialized(key: string) : boolean{
-        return QueryParameters._wasInitialized.has(key)
     }
 
     private static Serialize() {

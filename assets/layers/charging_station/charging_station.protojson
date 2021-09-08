@@ -338,7 +338,8 @@
         }
       ]
     },
-    {"#": "phone",
+    {
+      "#": "phone",
       "question": {
         "en": "What number can one call if there is a problem with this charging station?"
       },
@@ -350,7 +351,8 @@
         "type": "phone"
       }
     },
-    {"#": "email",
+    {
+      "#": "email",
       "question": {
         "en": "What is the email address of the operator?"
       },
@@ -362,7 +364,8 @@
         "type": "email"
       }
     },
-    {"#": "website",
+    {
+      "#": "website",
       "question": {
         "en": "What is the website of the operator?"
       },

@@ -2,7 +2,6 @@ import * as fs from "fs";
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
-import {Layer} from "leaflet";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
@@ -213,7 +212,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 }
 
 function MergeTranslation(source: any, target: any, language: string, context: string = "") {
-   
+
     for (const key in source) {
         if (!source.hasOwnProperty(key)) {
             continue
@@ -221,14 +220,14 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         const sourceV = source[key];
         const targetV = target[key]
         if (typeof sourceV === "string") {
-            if(targetV === undefined){
-                if(typeof target === "string"){
-                    throw "Trying to merge a translation into a fixed string at "+context+" for key "+key;
+            if (targetV === undefined) {
+                if (typeof target === "string") {
+                    throw "Trying to merge a translation into a fixed string at " + context + " for key " + key;
                 }
                 target[key] = source[key];
                 continue;
             }
-            
+
             if (targetV[language] === sourceV) {
                 // Already the same
                 continue;
@@ -264,7 +263,7 @@ function mergeLayerTranslation(layerConfig: { id: string }, path: string, transl
     const id = layerConfig.id;
     translationFiles.forEach((translations, lang) => {
         const translationsForLayer = translations[id]
-        MergeTranslation(translationsForLayer, layerConfig, lang, path+":"+id)
+        MergeTranslation(translationsForLayer, layerConfig, lang, path + ":" + id)
     })
 
 }

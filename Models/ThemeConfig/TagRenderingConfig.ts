@@ -6,7 +6,6 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 import {Utils} from "../../Utils";
-import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 
 /***
  * The parsed version of TagRenderingConfigJSON

@@ -105,12 +105,12 @@ export default class UserBadge extends Toggle {
                     userStats
                 ]).SetClass("flex flex-col sm:w-auto sm:pl-2 overflow-hidden w-0")
                 const userIcon =
-                    (user.img === undefined ? Svg.osm_logo_ui() :   new Img(user.img)).SetClass("rounded-full opacity-0 m-0 p-0 duration-500 w-16 min-width-16 h16 float-left")
+                    (user.img === undefined ? Svg.osm_logo_ui() : new Img(user.img)).SetClass("rounded-full opacity-0 m-0 p-0 duration-500 w-16 min-width-16 h16 float-left")
                         .onClick(() => {
-                            if(usertext.HasClass("w-0")){
+                            if (usertext.HasClass("w-0")) {
                                 usertext.RemoveClass("w-0")
                                 usertext.SetClass("w-min pl-2")
-                            }else{
+                            } else {
                                 usertext.RemoveClass("w-min")
                                 usertext.RemoveClass("pl-2")
                                 usertext.SetClass("w-0")
@@ -121,7 +121,7 @@ export default class UserBadge extends Toggle {
                     usertext,
                     userIcon,
                 ]).SetClass("h-16 flex bg-white")
-                
+
             }
         }));
 
@@ -132,9 +132,9 @@ export default class UserBadge extends Toggle {
             State.state.osmConnection.isLoggedIn
         )
 
-        
-       this.SetClass("shadow rounded-full h-min overflow-hidden block w-max")
-        
+
+        this.SetClass("shadow rounded-full h-min overflow-hidden block w-max")
+
     }
 
 

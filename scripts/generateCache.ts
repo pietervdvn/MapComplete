@@ -2,9 +2,8 @@
  * Generates a collection of geojson files based on an overpass query for a given theme
  */
 import {Utils} from "../Utils";
-
-Utils.runningFromConsole = true
 import {Overpass} from "../Logic/Osm/Overpass";
+import * as fs from "fs";
 import {existsSync, readFileSync, writeFileSync} from "fs";
 import {TagsFilter} from "../Logic/Tags/TagsFilter";
 import {Or} from "../Logic/Tags/Or";
@@ -15,10 +14,11 @@ import * as OsmToGeoJson from "osmtogeojson";
 import MetaTagging from "../Logic/MetaTagging";
 import {GeoOperations} from "../Logic/GeoOperations";
 import {UIEventSource} from "../Logic/UIEventSource";
-import * as fs from "fs";
 import {TileRange} from "../Models/TileRange";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+
+Utils.runningFromConsole = true
 
 
 function createOverpassObject(theme: LayoutConfig) {
@@ -256,8 +256,8 @@ function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfig) {
     for (const layer of theme.layers) {
         const id = layer.id
         const loaded = generated[id]
-        if(loaded === undefined){
-            console.log("No features loaded for layer ",id)
+        if (loaded === undefined) {
+            console.log("No features loaded for layer ", id)
             continue;
         }
         writeFileSync(targetdir + "_" + id + "_overview.json", JSON.stringify(loaded))
@@ -275,9 +275,9 @@ async function createOverview(targetdir: string, r: TileRange, z: number, layern
             }
             const features = JSON.parse(fs.readFileSync(read_path, "UTF-8")).features
             const pointsOnly = features.map(f => {
-                
+
                 f.properties["_last_edit:timestamp"] = "1970-01-01"
-                
+
                 if (f.geometry.type === "Point") {
                     return f
                 } else {
@@ -293,13 +293,13 @@ async function createOverview(targetdir: string, r: TileRange, z: number, layern
     const seen = new Set<string>()
     for (const feature of allFeatures) {
         const id = feature.properties.id
-        if(seen.has(id)){
+        if (seen.has(id)) {
             continue
         }
         seen.add(id)
         featuresDedup.push(feature)
     }
-    
+
     const geojson = {
         "type": "FeatureCollection",
         "features": featuresDedup

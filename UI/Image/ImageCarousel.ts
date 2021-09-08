@@ -46,7 +46,7 @@ export class ImageCarousel extends Toggle {
      */
     private static CreateImageElement(url: string): BaseUIElement {
         // @ts-ignore
-        let attrSource : ImageAttributionSource = undefined;
+        let attrSource: ImageAttributionSource = undefined;
         if (url.startsWith("File:")) {
             attrSource = Wikimedia.singleton
         } else if (url.toLowerCase().startsWith("https://commons.wikimedia.org/wiki/")) {
@@ -58,8 +58,8 @@ export class ImageCarousel extends Toggle {
         } else {
             return new Img(url);
         }
-        
+
         return new AttributedImage(url, attrSource)
-        
+
     }
 }

@@ -82,7 +82,7 @@ export default class SimpleAddUI extends Toggle {
                                 createNewPoint(tags, location, undefined)
                             } else {
                                 OsmObject.DownloadObject(snapOntoWayId).addCallbackAndRunD(way => {
-                                    createNewPoint(tags, location,<OsmWay> way)
+                                    createNewPoint(tags, location, <OsmWay>way)
                                     return true;
                                 })
                             }
@@ -188,17 +188,17 @@ export default class SimpleAddUI extends Toggle {
                 ])
             )
                 .onClick(() => State.state.filterIsOpened.setData(true))
-        
-        
+
+
         const openLayerOrConfirm = new Toggle(
             confirmButton,
             openLayerControl,
             preset.layerToAddTo.isDisplayed
         )
-        
+
         const disableFilter = new SubtleButton(
             new Combine([
-                Svg.filter_ui().SetClass("absolute w-full"),    
+                Svg.filter_ui().SetClass("absolute w-full"),
                 Svg.cross_bottom_right_svg().SetClass("absolute red-svg")
             ]).SetClass("relative"),
             new Combine(
@@ -211,7 +211,7 @@ export default class SimpleAddUI extends Toggle {
             preset.layerToAddTo.appliedFilters.setData(new And([]))
             cancel()
         })
-        
+
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
             disableFilter,
@@ -220,9 +220,8 @@ export default class SimpleAddUI extends Toggle {
                 return filters === undefined || filters.normalize().and.length === 0;
             })
         )
-        
-        
-        
+
+
         const tagInfo = SimpleAddUI.CreateTagInfoFor(preset);
 
         const cancelButton = new SubtleButton(Svg.close_ui(),
@@ -230,7 +229,7 @@ export default class SimpleAddUI extends Toggle {
         ).onClick(cancel)
 
         return new Combine([
-           // Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
+            // Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
             State.state.osmConnection.userDetails.data.dryRun ?
                 Translations.t.general.testing.Clone().SetClass("alert") : undefined,
             disableFiltersOrConfirm,

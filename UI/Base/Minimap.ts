@@ -122,11 +122,11 @@ export default class Minimap extends BaseUIElement {
         );
 
         if (this._attribution !== undefined) {
-            if(this._attribution === true){
-             map.attributionControl.setPrefix(false)   
-            }else{
-            map.attributionControl.setPrefix(
-                "<span id='leaflet-attribution'></span>");
+            if (this._attribution === true) {
+                map.attributionControl.setPrefix(false)
+            } else {
+                map.attributionControl.setPrefix(
+                    "<span id='leaflet-attribution'></span>");
             }
         }
 

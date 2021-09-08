@@ -15,7 +15,7 @@ export interface Relation {
 
 export default class ExtractRelations {
 
-    public static RegisterRelations(overpassJson: any) : void{
+    public static RegisterRelations(overpassJson: any): void {
         const memberships = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(overpassJson))
         State.state.knownRelations.setData(memberships)
     }

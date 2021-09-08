@@ -23,7 +23,7 @@
   "widenFactor": 0.2,
   "layers": [
     {
-      "builtin": "food",
+      "builtin": ["food", "cafe_pub"],
       "override": {
         "minzoom": 16
       }
@@ -32,7 +32,8 @@
     "toilet",
     "bench",
     "waste_basket",
-    "bike_repair_station"
+    "bike_repair_station",
+    "binocular"
   ],
   "hideFromOverview": true
 }

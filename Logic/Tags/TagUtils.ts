@@ -10,6 +10,15 @@ import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
 import {isRegExp} from "util";
 
 export class TagUtils {
+    private static comparators
+        : [string, (a: number, b: number) => boolean][]
+        = [
+        ["<=", (a, b) => a <= b],
+        [">=", (a, b) => a >= b],
+        ["<", (a, b) => a < b],
+        [">", (a, b) => a > b],
+    ]
+
     static ApplyTemplate(template: string, tags: any): string {
         for (const k in tags) {
             while (template.indexOf("{" + k + "}") >= 0) {
@@ -75,21 +84,21 @@ export class TagUtils {
                 keyValues[tagsFilter.key].push(...tagsFilter.value.split(";"));
                 continue;
             }
-            
-            if(allowRegex && tagsFilter instanceof RegexTag) {
+
+            if (allowRegex && tagsFilter instanceof RegexTag) {
                 const key = tagsFilter.key
-                if(isRegExp(key)) {
+                if (isRegExp(key)) {
                     console.error("Invalid type to flatten the multiAnswer: key is a regex too", tagsFilter);
                     throw "Invalid type to FlattenMultiAnswer"
                 }
                 const keystr = <string>key
                 if (keyValues[keystr] === undefined) {
-                    keyValues[keystr    ] = [];
+                    keyValues[keystr] = [];
                 }
                 keyValues[keystr].push(tagsFilter);
                 continue;
             }
-                
+
 
             console.error("Invalid type to flatten the multiAnswer", tagsFilter);
             throw "Invalid type to FlattenMultiAnswer"
@@ -138,13 +147,13 @@ export class TagUtils {
 
             const actualValue = properties[splitKey].split(";");
             for (const neededValue of neededValues) {
-                
-                if(neededValue instanceof RegexTag) {
-                    if(!neededValue.matchesProperties(properties)) {
+
+                if (neededValue instanceof RegexTag) {
+                    if (!neededValue.matchesProperties(properties)) {
                         return false
                     }
                     continue
-                }           
+                }
                 if (actualValue.indexOf(neededValue) < 0) {
                     return false;
                 }
@@ -169,15 +178,6 @@ export class TagUtils {
             throw e;
         }
     }
-
-    private static comparators
-        : [string, (a: number, b: number) => boolean][]
-        = [
-        ["<=", (a, b) => a <= b],
-        [">=", (a, b) => a >= b],
-        ["<", (a, b) => a < b],
-        [">", (a, b) => a > b],
-    ]
 
     private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
 

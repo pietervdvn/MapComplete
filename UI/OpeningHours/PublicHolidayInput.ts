@@ -75,10 +75,10 @@ export default class PublicHolidayInput extends InputElement<string> {
         const value = this._value;
         value.map(ph => OH.ParsePHRule(ph))
             .addCallbackAndRunD(parsed => {
-            mode.setData(parsed.mode)
-            startTime.setData(parsed.start)
-            endTime.setData(parsed.end)
-        })
+                mode.setData(parsed.mode)
+                startTime.setData(parsed.start)
+                endTime.setData(parsed.end)
+            })
 
         // We use this as a 'addCallbackAndRun'
         mode.map(mode => {

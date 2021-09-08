@@ -1,0 +1,88 @@
+{
+  "id": "binocular",
+  "name": {
+    "en": "Binoculars",
+    "nl": "Verrekijkers"
+  },
+  "minzoom": 0,
+  "title": {
+    "render": {
+      "en": "Binoculars",
+      "nl": "Verrekijker"
+    }
+  },
+  "description": {
+    "en": "Binoculas",
+    "nl": "Verrekijkers"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "fee=no",
+              "charge="
+            ]
+          },
+          "then": {
+            "en": "Free to use",
+            "nl": "Gratis te gebruiken"
+          }
+        }
+      ],
+      "freeform": {
+        "key": "charge",
+        "addExtraTags": [
+          "fee=yes"
+        ]
+      },
+      "render": {
+        "en": "Using these binoculars costs {charge}",
+        "nl": "Deze verrekijker gebruiken kost {charge}"
+      },
+      "question": {
+        "en": "How much does one have to pay to use these binoculars?",
+        "nl": "Hoeveel moet men betalen om deze verrekijker te gebruiken?"
+      }
+    }
+  ],
+  "icon": {
+    "render": "circle:white;./assets/layers/binocular/Line-style-icons-telescope.svg"
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "amenity=binoculars"
+      ],
+      "title": {
+        "en": "Binoculars",
+        "nl": "Verrekijker"
+      },
+      "description": {
+        "en": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 200px' />",
+        "nl": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 200px' />"
+      },
+      "preciseInput": {
+        "preferredBackground": "photo"
+      }
+    }
+  ],
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=binoculars"
+      ]
+    }
+  }
+}

@@ -54,7 +54,7 @@ export default class PendingChangesUploader {
 
 
         function onunload(e) {
-            if(changes.pendingChanges.data.length == 0){
+            if (changes.pendingChanges.data.length == 0) {
                 return;
             }
             changes.flushChanges("onbeforeunload - probably closing or something similar");

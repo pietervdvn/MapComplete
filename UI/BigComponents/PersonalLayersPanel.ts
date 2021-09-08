@@ -7,7 +7,6 @@ import {SubtleButton} from "../Base/SubtleButton";
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import Img from "../Base/Img";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
@@ -62,18 +61,18 @@ export default class PersonalLayersPanel extends VariableUiElement {
      * @private
      */
     private static CreateLayerToggle(layer: LayerConfig): Toggle {
-        let icon :BaseUIElement =new Combine([ layer.GenerateLeafletStyle(
+        let icon: BaseUIElement = new Combine([layer.GenerateLeafletStyle(
             new UIEventSource<any>({id: "node/-1"}),
             false
         ).icon.html]).SetClass("relative")
-        let iconUnset =new Combine([ layer.GenerateLeafletStyle(
+        let iconUnset = new Combine([layer.GenerateLeafletStyle(
             new UIEventSource<any>({id: "node/-1"}),
             false
         ).icon.html]).SetClass("relative")
 
         iconUnset.SetStyle("opacity:0.1")
 
-        let name = layer.name ;
+        let name = layer.name;
         if (name === undefined) {
             return undefined;
         }
@@ -90,7 +89,7 @@ export default class PersonalLayersPanel extends VariableUiElement {
         return new Toggle(
             new SubtleButton(
                 icon,
-                content ),
+                content),
             new SubtleButton(
                 iconUnset,
                 contentUnselected

@@ -10,22 +10,27 @@ export default class Link extends BaseUIElement {
 
     constructor(embeddedShow: BaseUIElement | string, href: string | UIEventSource<string>, newTab: boolean = false) {
         super();
-        this._embeddedShow =Translations.W(embeddedShow);
+        this._embeddedShow = Translations.W(embeddedShow);
         this._href = href;
         this._newTab = newTab;
 
     }
 
+    AsMarkdown(): string {
+        // @ts-ignore
+        return `[${this._embeddedShow.AsMarkdown()}](${this._href.data ?? this._href})`;
+    }
+
     protected InnerConstructElement(): HTMLElement {
         const embeddedShow = this._embeddedShow?.ConstructElement();
-        if(embeddedShow === undefined){
+        if (embeddedShow === undefined) {
             return undefined;
         }
         const el = document.createElement("a")
-        if(typeof this._href === "string"){
+        if (typeof this._href === "string") {
             el.href = this._href
-        }else{
-           this._href.addCallbackAndRun(href => {
+        } else {
+            this._href.addCallbackAndRun(href => {
                 el.href = href;
             })
         }
@@ -34,11 +39,6 @@ export default class Link extends BaseUIElement {
         }
         el.appendChild(embeddedShow)
         return el;
-    }
-
-    AsMarkdown(): string {
-        // @ts-ignore
-        return `[${this._embeddedShow.AsMarkdown()}](${this._href.data ?? this._href})`;
     }
 
 }

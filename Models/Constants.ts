@@ -1,7 +1,7 @@
-import { Utils } from "../Utils";
+import {Utils} from "../Utils";
 
 export default class Constants {
-    
+
     public static vNumber = "0.9.6";
 
     // The user journey states thresholds when a new feature gets unlocked
@@ -12,13 +12,13 @@ export default class Constants {
         deletePointsOfOthersUnlock: 20,
         tagsVisibleAt: 25,
         tagsVisibleAndWikiLinked: 30,
-        
+
         mapCompleteHelpUnlock: 50,
         themeGeneratorReadOnlyUnlock: 50,
         themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
         minZoomLevelToAddNewPoints: (Constants.isRetina() ? 18 : 19),
-       
+
     };
     /**
      * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.
@@ -34,5 +34,5 @@ export default class Constants {
         // See https://stackoverflow.com/questions/19689715/what-is-the-best-way-to-detect-retina-support-on-a-device-using-javascript
         return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)').matches)) || (window.devicePixelRatio && window.devicePixelRatio >= 2));
     }
-    
+
 }

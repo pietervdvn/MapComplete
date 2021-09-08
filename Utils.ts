@@ -135,20 +135,20 @@ export class Utils {
         }
         return newArr;
     }
-    
-    public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean{
-        if(t1.length !== t2.length){
+
+    public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean {
+        if (t1.length !== t2.length) {
             return false
         }
         eq = (a, b) => a === b
-        for (let i = 0; i < t1.length ; i++) {
-            if(!eq(t1[i] ,t2[i])){
+        for (let i = 0; i < t1.length; i++) {
+            if (!eq(t1[i], t2[i])) {
                 return false
             }
         }
         return true;
     }
-    
+
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
@@ -372,7 +372,7 @@ export class Utils {
      * Triggers a 'download file' popup which will download the contents
      */
     public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt",
-                                                  options?: {        mimetype: string    }) {
+                                                  options?: { mimetype: string }) {
         const element = document.createElement("a");
         let file;
         if (typeof (contents) === "string") {
@@ -422,6 +422,12 @@ export class Utils {
         return bestColor ?? hex;
     }
 
+    public static setDefaults(options, defaults) {
+        for (let key in defaults) {
+            if (!(key in options)) options[key] = defaults[key];
+        }
+        return options;
+    }
 
     private static tile2long(x, z) {
         return (x / Math.pow(2, z) * 360 - 180);
@@ -465,13 +471,6 @@ export class Utils {
             g: parseInt(hex.substr(3, 2), 16),
             b: parseInt(hex.substr(5, 2), 16),
         }
-    }
-
-    public static setDefaults(options, defaults) {
-        for (let key in defaults) {
-            if (!(key in options)) options[key] = defaults[key];
-        }
-        return options;
     }
 }
 

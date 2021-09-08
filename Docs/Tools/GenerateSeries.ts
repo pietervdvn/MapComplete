@@ -216,12 +216,6 @@ function createGraph(
 }
 
 class Histogram<K> {
-    total(): number {
-        let total = 0
-        Array.from(this.counts.values()).forEach(i => total = total + i)
-        return total
-    }
-
     public counts: Map<K, number> = new Map<K, number>()
     private sortAtEnd: K[] = []
 
@@ -230,6 +224,11 @@ class Histogram<K> {
         keys?.forEach(key => self.bump(key))
     }
 
+    total(): number {
+        let total = 0
+        Array.from(this.counts.values()).forEach(i => total = total + i)
+        return total
+    }
 
     public bump(key: K, increase = 1) {
         if (this.counts.has(key)) {
@@ -525,7 +524,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         .asPie({
             name: "Changesets per host" + appliedFilterDescription
         }).render()
-        
+
     new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
         .createOthersCategory("< 25 changesets", 25)
         .addCountToName()
@@ -618,7 +617,7 @@ const geojson = {
     })
 }
 
-writeFileSync("centerpoints.geojson",JSON.stringify(geojson, undefined, 2) )
+writeFileSync("centerpoints.geojson", JSON.stringify(geojson, undefined, 2))
 
 
 createGraphs(allFeatures, "")

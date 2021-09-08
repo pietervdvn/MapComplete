@@ -54,7 +54,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const inputElement: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
 
-        if(inputElement === undefined){
+        if (inputElement === undefined) {
             console.trace("MultiAnswer failed", configuration)
             const inputElement0: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
 
@@ -128,21 +128,22 @@ export default class TagRenderingQuestion extends Combine {
             })
 
 
-        function allIfNotsExcept(excludeIndex: number) : TagsFilter[]{
-            if(configuration.mappings === undefined){
+        function allIfNotsExcept(excludeIndex: number): TagsFilter[] {
+            if (configuration.mappings === undefined) {
                 return []
             }
-            if(configuration.multiAnswer){
+            if (configuration.multiAnswer) {
                 // The multianswer will do the ifnot configuration themself
                 return []
             }
-            return Utils.NoNull(configuration.mappings?.map((m,i) => excludeIndex === i ? undefined:  m.ifnot))
+            return Utils.NoNull(configuration.mappings?.map((m, i) => excludeIndex === i ? undefined : m.ifnot))
         }
+
         const ff = TagRenderingQuestion.GenerateFreeform(configuration, applicableUnit, tagsSource);
         const hasImages = mappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
 
         if (mappings.length < 8 || configuration.multiAnswer || hasImages) {
-            inputEls = (mappings ?? []).map((mapping,i) => TagRenderingQuestion.GenerateMappingElement(tagsSource, mapping, allIfNotsExcept(i)));
+            inputEls = (mappings ?? []).map((mapping, i) => TagRenderingQuestion.GenerateMappingElement(tagsSource, mapping, allIfNotsExcept(i)));
             inputEls = Utils.NoNull(inputEls);
         } else {
             const dropdown: InputElement<TagsFilter> = new DropDown("",
@@ -182,7 +183,7 @@ export default class TagRenderingQuestion extends Combine {
         configuration: TagRenderingConfig,
         elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>, ifNotSelected: TagsFilter[]): InputElement<TagsFilter> {
         const checkBoxes = new CheckBoxes(elements);
-        
+
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
             (t0, t1) => {
@@ -350,19 +351,19 @@ export default class TagRenderingQuestion extends Combine {
 
         input.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
 
-        let inputTagsFilter : InputElement<TagsFilter> = new InputElementMap(
+        let inputTagsFilter: InputElement<TagsFilter> = new InputElementMap(
             input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),
             pickString, toString
         );
-        
-        if(freeform.inline){
-            
+
+        if (freeform.inline) {
+
             inputTagsFilter.SetClass("w-16-imp")
             inputTagsFilter = new InputElementWrapper(inputTagsFilter, configuration.render, freeform.key, tags)
             inputTagsFilter.SetClass("block")
-            
+
         }
-        
+
         return inputTagsFilter;
 
     }

@@ -7,18 +7,6 @@ export class And extends TagsFilter {
         super();
         this.and = and
     }
-    
-    normalize(){
-        const ands = []
-        for (const c of this.and) {
-            if(c instanceof And){
-                ands.push(...c.and)
-            }else{
-                ands.push(c)
-            }
-        }
-        return new And(ands)
-    }
 
     private static combine(filter: string, choices: string[]): string[] {
         const values = [];
@@ -26,6 +14,18 @@ export class And extends TagsFilter {
             values.push(filter + or);
         }
         return values;
+    }
+
+    normalize() {
+        const ands = []
+        for (const c of this.and) {
+            if (c instanceof And) {
+                ands.push(...c.and)
+            } else {
+                ands.push(c)
+            }
+        }
+        return new And(ands)
     }
 
     matchesProperties(tags: any): boolean {

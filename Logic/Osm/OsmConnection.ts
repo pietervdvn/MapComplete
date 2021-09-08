@@ -22,7 +22,7 @@ export default class UserDetails {
     public dryRun: boolean;
     home: { lon: number; lat: number };
     public backend: string;
-    
+
     constructor(backend: string) {
         this.backend = backend;
     }
@@ -47,10 +47,10 @@ export class OsmConnection {
     public auth;
     public userDetails: UIEventSource<UserDetails>;
     public isLoggedIn: UIEventSource<boolean>
-    private fakeUser: boolean;
     _dryRun: boolean;
     public preferencesHandler: OsmPreferences;
     public changesetHandler: ChangesetHandler;
+    private fakeUser: boolean;
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
     private readonly _iframeMode: Boolean | boolean;
     private readonly _singlePage: boolean;
@@ -59,8 +59,9 @@ export class OsmConnection {
         oauth_secret: string,
         url: string
     };
+    private isChecking = false;
 
-    constructor(dryRun: boolean, 
+    constructor(dryRun: boolean,
                 fakeUser: boolean,
                 oauth_token: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
@@ -77,17 +78,17 @@ export class OsmConnection {
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(this._oauth_config.url), "userDetails");
         this.userDetails.data.dryRun = dryRun || fakeUser;
-        if(fakeUser){
+        if (fakeUser) {
             const ud = this.userDetails.data;
             ud.csCount = 5678
-            ud.loggedIn= true;
+            ud.loggedIn = true;
             ud.unreadMessages = 0
             ud.name = "Fake user"
             ud.totalMessages = 42;
         }
-        const self =this;
+        const self = this;
         this.isLoggedIn = this.userDetails.map(user => user.loggedIn).addCallback(isLoggedIn => {
-            if(self.userDetails.data.loggedIn == false && isLoggedIn == true){
+            if (self.userDetails.data.loggedIn == false && isLoggedIn == true) {
                 // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
                 // This means someone attempted to toggle this; so we attempt to login!
                 self.AttemptLogin()
@@ -150,7 +151,7 @@ export class OsmConnection {
     }
 
     public AttemptLogin() {
-        if(this.fakeUser){
+        if (this.fakeUser) {
             console.log("AttemptLogin called, but ignored as fakeUser is set")
             return;
         }
@@ -191,7 +192,7 @@ export class OsmConnection {
             data.loggedIn = true;
             console.log("Login completed, userinfo is ", userInfo);
             data.name = userInfo.getAttribute('display_name');
-            data.uid= Number(userInfo.getAttribute("id"))
+            data.uid = Number(userInfo.getAttribute("id"))
             data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count");
 
             data.img = undefined;
@@ -249,20 +250,19 @@ export class OsmConnection {
         });
     }
 
-    private isChecking = false;
-    private CheckForMessagesContinuously(){
-        const self =this;
-        if(this.isChecking){
+    private CheckForMessagesContinuously() {
+        const self = this;
+        if (this.isChecking) {
             return;
         }
         this.isChecking = true;
         UIEventSource.Chronic(5 * 60 * 1000).addCallback(_ => {
-            if (self.isLoggedIn .data) {
-            console.log("Checking for messages")
-            self.AttemptLogin();
-        }
+            if (self.isLoggedIn.data) {
+                console.log("Checking for messages")
+                self.AttemptLogin();
+            }
         });
-       
+
     }
 
 

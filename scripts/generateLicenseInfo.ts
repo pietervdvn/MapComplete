@@ -1,5 +1,5 @@
 import {Utils} from "../Utils";
-import {lstatSync, readdirSync, readFileSync, writeFileSync, unlinkSync, existsSync, mkdir, mkdirSync} from "fs";
+import {existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync} from "fs";
 import SmallLicense from "../Models/smallLicense";
 import ScriptUtils from "./ScriptUtils";
 
@@ -143,7 +143,7 @@ function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
         if (!perDirectory.has(dir)) {
             perDirectory.set(dir, [])
         }
-        const cloned : SmallLicense = {
+        const cloned: SmallLicense = {
             // We make a clone to force the order of the keys
             path: license.path,
             license: license.license,

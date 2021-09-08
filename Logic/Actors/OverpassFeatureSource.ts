@@ -13,7 +13,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 export default class OverpassFeatureSource implements FeatureSource {
 
     public readonly name = "OverpassFeatureSource"
-    
+
     /**
      * The last loaded features of the geojson
      */
@@ -147,7 +147,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         }
 
         const bounds = this._leafletMap.data?.getBounds();
-        if(bounds === undefined){
+        if (bounds === undefined) {
             return;
         }
 

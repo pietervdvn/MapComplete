@@ -40,7 +40,7 @@ export default class Histogram<T> extends VariableUiElement {
 
             const keys = Array.from(counts.keys());
             keys.sort()
-            
+
             const max = Math.max(...Array.from(counts.values()))
 
             const fallbackColor = (keyValue: string) => {
@@ -50,7 +50,7 @@ export default class Histogram<T> extends VariableUiElement {
             let actualAssignColor = undefined;
             if (assignColor === undefined) {
                 actualAssignColor = fallbackColor;
-            }else{
+            } else {
                 actualAssignColor = (keyValue: string) => {
                     return assignColor(keyValue) ?? fallbackColor(keyValue)
                 }
@@ -61,7 +61,7 @@ export default class Histogram<T> extends VariableUiElement {
                 keys.map(key => [
                     key,
                     new Combine([
-                    new Combine([new FixedUiElement("" + counts.get(key)).SetClass("font-bold rounded-full block")])
+                        new Combine([new FixedUiElement("" + counts.get(key)).SetClass("font-bold rounded-full block")])
                             .SetClass("flex justify-center rounded border border-black")
                             .SetStyle(`background: ${actualAssignColor(key)}; width: ${100 * counts.get(key) / max}%`)
                     ]).SetClass("block w-full")

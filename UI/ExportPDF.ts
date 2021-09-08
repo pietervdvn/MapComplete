@@ -25,6 +25,7 @@ import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
 export default class ExportPDF {
     // dimensions of the map in milimeter
+    public isRunning = new UIEventSource(true)
     // A4: 297 * 210mm
     private readonly mapW = 297;
     private readonly mapH = 210;
@@ -32,8 +33,6 @@ export default class ExportPDF {
     private readonly freeDivId: string;
     private readonly _layout: UIEventSource<LayoutConfig>;
     private _screenhotTaken = false;
-
-    public isRunning = new UIEventSource(true)
 
     constructor(
         options: {
@@ -62,8 +61,8 @@ export default class ExportPDF {
             location: new UIEventSource<Loc>(loc), // We remove the link between the old and the new UI-event source as moving the map while the export is running fucks up the screenshot
             background: options.background,
             allowMoving: false,
-            
-            
+
+
             onFullyLoaded: leaflet => window.setTimeout(() => {
                 if (self._screenhotTaken) {
                     return;

@@ -53,10 +53,9 @@ export default class LayoutConfig {
      */
     public readonly cacheTimeout?: number;
     public readonly units: Unit[] = []
-    private readonly _official: boolean;
-    
     public readonly overpassUrl: string;
     public readonly overpassTimeout: number;
+    private readonly _official: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this._official = official;

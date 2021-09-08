@@ -1,93 +1,93 @@
 {
- "data_format": 1,
- "project": {
-  "name": "MapComplete Open Shop Map",
-  "description": "An editable map with basic shop information",
-  "project_url": "https://mapcomplete.osm.be/shops",
-  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/assets/themes/shops/shop.svg",
-  "contact_name": "Pieter Vander Vennet, MapComplete",
-  "contact_email": "pietervdvn@posteo.net"
- },
- "tags": [
-  {
-   "key": "shop",
-   "description": "The MapComplete theme Open Shop Map has a layer Shop showing features with this tag"
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Open Shop Map",
+    "description": "An editable map with basic shop information",
+    "project_url": "https://mapcomplete.osm.be/shops",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/shops/shop.svg",
+    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_email": "pietervdvn@posteo.net"
   },
-  {
-   "key": "image",
-   "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "name",
-   "description": "Layer 'Shop' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Shop Map')"
-  },
-  {
-   "key": "shop",
-   "description": "Layer 'Shop' shows and asks freeform values for key 'shop' (in the MapComplete.osm.be theme 'Open Shop Map')"
-  },
-  {
-   "key": "shop",
-   "description": "Layer 'Shop' shows shop=convenience with a fixed text, namely 'Convenience store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
-   "value": "convenience"
-  },
-  {
-   "key": "shop",
-   "description": "Layer 'Shop' shows shop=supermarket with a fixed text, namely 'Supermarket' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
-   "value": "supermarket"
-  },
-  {
-   "key": "shop",
-   "description": "Layer 'Shop' shows shop=clothes with a fixed text, namely 'Clothing store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
-   "value": "clothes"
-  },
-  {
-   "key": "shop",
-   "description": "Layer 'Shop' shows shop=hairdresser with a fixed text, namely 'Hairdresser' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
-   "value": "hairdresser"
-  },
-  {
-   "key": "shop",
-   "description": "Layer 'Shop' shows shop=bakery with a fixed text, namely 'Bakery' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
-   "value": "bakery"
-  },
-  {
-   "key": "shop",
-   "description": "Layer 'Shop' shows shop=car_repair with a fixed text, namely 'Car repair (garage)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
-   "value": "car_repair"
-  },
-  {
-   "key": "shop",
-   "description": "Layer 'Shop' shows shop=car with a fixed text, namely 'Car dealer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
-   "value": "car"
-  },
-  {
-   "key": "phone",
-   "description": "Layer 'Shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Open Shop Map')"
-  },
-  {
-   "key": "website",
-   "description": "Layer 'Shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Shop Map')"
-  },
-  {
-   "key": "email",
-   "description": "Layer 'Shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Open Shop Map')"
-  },
-  {
-   "key": "opening_hours",
-   "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Shop Map')"
-  }
- ]
+  "tags": [
+    {
+      "key": "shop",
+      "description": "The MapComplete theme Open Shop Map has a layer Shop showing features with this tag"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Shop Map')"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'shop' (in the MapComplete.osm.be theme 'Open Shop Map')"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=convenience with a fixed text, namely 'Convenience store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "convenience"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=supermarket with a fixed text, namely 'Supermarket' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "supermarket"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=clothes with a fixed text, namely 'Clothing store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "clothes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hairdresser with a fixed text, namely 'Hairdresser' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "hairdresser"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bakery with a fixed text, namely 'Bakery' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "bakery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=car_repair with a fixed text, namely 'Car repair (garage)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "car_repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=car with a fixed text, namely 'Car dealer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "car"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Open Shop Map')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Shop Map')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Open Shop Map')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Shop Map')"
+    }
+  ]
 }

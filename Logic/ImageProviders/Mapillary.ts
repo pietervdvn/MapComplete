@@ -1,4 +1,3 @@
-import $ from "jquery"
 import {LicenseInfo} from "./Wikimedia";
 import ImageAttributionSource from "./ImageAttributionSource";
 import BaseUIElement from "../../UI/BaseUIElement";

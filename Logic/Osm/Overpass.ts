@@ -15,7 +15,7 @@ export class Overpass {
     private readonly _timeout: UIEventSource<number>;
     private readonly _extraScripts: string[];
     private _includeMeta: boolean;
-    
+
     constructor(filter: TagsFilter, extraScripts: string[],
                 interpreterUrl: UIEventSource<string>,
                 timeout: UIEventSource<number>,
@@ -42,7 +42,7 @@ export class Overpass {
                     onFail("Runtime error (timeout)")
                     return;
                 }
-                
+
 
                 ExtractRelations.RegisterRelations(json)
                 // @ts-ignore
