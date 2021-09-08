@@ -80,12 +80,12 @@
         "amenity=binoculars"
       ],
       "title": {
-        "en": "Binoculars",
-        "nl": "Verrekijker"
+        "en": "binoculars",
+        "nl": "verrekijker"
       },
       "description": {
-        "en": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 200px' />",
-        "nl": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 200px' />"
+        "en": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto;' />",
+        "nl": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto;' />"
       },
       "preciseInput": {
         "preferredBackground": "photo"
