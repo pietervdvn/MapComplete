@@ -1,13 +1,13 @@
 {
-  "undefined": {
-    "phone": {
-      "question": "Nomor telepon dari {name|?"
-    },
-    "email": {
-      "question": "Apa alamat surel dari {name}?"
-    },
-    "website": {
-      "question": "Apa situs web dari {name}?"
+    "undefined": {
+        "phone": {
+            "question": "Nomor telepon dari {name|?"
+        },
+        "email": {
+            "question": "Apa alamat surel dari {name}?"
+        },
+        "website": {
+            "question": "Apa situs web dari {name}?"
+        }
     }
-  }
 }

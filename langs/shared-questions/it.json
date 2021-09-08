@@ -1,20 +1,20 @@
 {
-  "undefined": {
-    "phone": {
-      "question": "Qual è il numero di telefono di {name}?"
-    },
-    "email": {
-      "question": "Qual è l'indirizzo email di {name}?"
-    },
-    "website": {
-      "question": "Qual è il sito web di {name}?"
-    },
-    "description": {
-      "question": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>"
-    },
-    "opening_hours": {
-      "question": "Quali sono gli orari di apertura di {name}?",
-      "render": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
+    "undefined": {
+        "phone": {
+            "question": "Qual è il numero di telefono di {name}?"
+        },
+        "email": {
+            "question": "Qual è l'indirizzo email di {name}?"
+        },
+        "website": {
+            "question": "Qual è il sito web di {name}?"
+        },
+        "description": {
+            "question": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>"
+        },
+        "opening_hours": {
+            "question": "Quali sono gli orari di apertura di {name}?",
+            "render": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
+        }
     }
-  }
 }

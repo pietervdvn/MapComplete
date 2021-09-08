@@ -1,66 +1,66 @@
 {
-  "undefined": {
-    "phone": {
-      "question": "Wat is het telefoonnummer van {name}?"
-    },
-    "email": {
-      "question": "Wat is het email-adres van {name}?"
-    },
-    "website": {
-      "question": "Wat is de website van {name}?"
-    },
-    "wheelchair-access": {
-      "question": "Is deze plaats rolstoeltoegankelijk?",
-      "mappings": {
-        "0": {
-          "then": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel"
+    "undefined": {
+        "phone": {
+            "question": "Wat is het telefoonnummer van {name}?"
         },
-        "1": {
-          "then": "Deze plaats is vlot bereikbaar met een rolstoel"
+        "email": {
+            "question": "Wat is het email-adres van {name}?"
         },
-        "2": {
-          "then": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk"
+        "website": {
+            "question": "Wat is de website van {name}?"
         },
-        "3": {
-          "then": "Niet rolstoeltoegankelijk"
+        "wheelchair-access": {
+            "question": "Is deze plaats rolstoeltoegankelijk?",
+            "mappings": {
+                "0": {
+                    "then": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel"
+                },
+                "1": {
+                    "then": "Deze plaats is vlot bereikbaar met een rolstoel"
+                },
+                "2": {
+                    "then": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk"
+                },
+                "3": {
+                    "then": "Niet rolstoeltoegankelijk"
+                }
+            }
+        },
+        "description": {
+            "question": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
+        },
+        "opening_hours": {
+            "question": "Wat zijn de openingsuren van {name}?",
+            "render": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "question": "Welke betaalmiddelen worden hier geaccepteerd?",
+            "mappings": {
+                "0": {
+                    "then": "Cash geld wordt hier aanvaard"
+                },
+                "1": {
+                    "then": "Betalen met bankkaarten kan hier"
+                }
+            }
+        },
+        "level": {
+            "question": "Op welke verdieping bevindt dit punt zich?",
+            "render": "Bevindt zich op de {level}de verdieping",
+            "mappings": {
+                "0": {
+                    "then": "Bevindt zich ondergronds"
+                },
+                "1": {
+                    "then": "Bevindt zich gelijkvloers"
+                },
+                "2": {
+                    "then": "Bevindt zich gelijkvloers"
+                },
+                "3": {
+                    "then": "Bevindt zich op de eerste verdieping"
+                }
+            }
         }
-      }
-    },
-    "description": {
-      "question": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
-    },
-    "opening_hours": {
-      "question": "Wat zijn de openingsuren van {name}?",
-      "render": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}"
-    },
-    "payment-options": {
-      "question": "Welke betaalmiddelen worden hier geaccepteerd?",
-      "mappings": {
-        "0": {
-          "then": "Cash geld wordt hier aanvaard"
-        },
-        "1": {
-          "then": "Betalen met bankkaarten kan hier"
-        }
-      }
-    },
-    "level": {
-      "question": "Op welke verdieping bevindt dit punt zich?",
-      "render": "Bevindt zich op de {level}de verdieping",
-      "mappings": {
-        "0": {
-          "then": "Bevindt zich ondergronds"
-        },
-        "1": {
-          "then": "Bevindt zich gelijkvloers"
-        },
-        "2": {
-          "then": "Bevindt zich gelijkvloers"
-        },
-        "3": {
-          "then": "Bevindt zich op de eerste verdieping"
-        }
-      }
     }
-  }
 }

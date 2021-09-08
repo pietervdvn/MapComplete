@@ -1,541 +1,541 @@
 {
-  "bench": {
-    "name": "Bancos",
-    "title": {
-      "render": "Banco"
-    },
-    "tagRenderings": {
-      "1": {
-        "render": "Encosto",
-        "mappings": {
-          "0": {
-            "then": "Encosto: Sim"
-          },
-          "1": {
-            "then": "Encosto: Não"
-          }
+    "bench": {
+        "name": "Bancos",
+        "title": {
+            "render": "Banco"
         },
-        "question": "Este assento tem um escosto?"
-      },
-      "2": {
-        "render": "{seats} assentos",
-        "question": "Quantos assentos este banco tem?"
-      },
-      "3": {
-        "render": "Material: {material}",
-        "mappings": {
-          "0": {
-            "then": "Material: madeira"
-          },
-          "1": {
-            "then": "Material: metal"
-          },
-          "2": {
-            "then": "Material: pedra"
-          },
-          "3": {
-            "then": "Material: concreto"
-          },
-          "4": {
-            "then": "Material: plástico"
-          },
-          "5": {
-            "then": "Material: aço"
-          }
+        "tagRenderings": {
+            "1": {
+                "render": "Encosto",
+                "mappings": {
+                    "0": {
+                        "then": "Encosto: Sim"
+                    },
+                    "1": {
+                        "then": "Encosto: Não"
+                    }
+                },
+                "question": "Este assento tem um escosto?"
+            },
+            "2": {
+                "render": "{seats} assentos",
+                "question": "Quantos assentos este banco tem?"
+            },
+            "3": {
+                "render": "Material: {material}",
+                "mappings": {
+                    "0": {
+                        "then": "Material: madeira"
+                    },
+                    "1": {
+                        "then": "Material: metal"
+                    },
+                    "2": {
+                        "then": "Material: pedra"
+                    },
+                    "3": {
+                        "then": "Material: concreto"
+                    },
+                    "4": {
+                        "then": "Material: plástico"
+                    },
+                    "5": {
+                        "then": "Material: aço"
+                    }
+                },
+                "question": "De que é feito o banco (assento)?"
+            },
+            "4": {
+                "question": "Em que direção você olha quando está sentado no banco?",
+                "render": "Ao sentar-se no banco, olha-se para {direction} °."
+            },
+            "5": {
+                "render": "Cor: {colour}",
+                "question": "Qual a cor dessa bancada?",
+                "mappings": {
+                    "0": {
+                        "then": "Cor: marrom"
+                    },
+                    "1": {
+                        "then": "Cor: verde"
+                    },
+                    "2": {
+                        "then": "Cor: cinza"
+                    },
+                    "3": {
+                        "then": "Cor: branco"
+                    },
+                    "4": {
+                        "then": "Cor: vermelho"
+                    },
+                    "5": {
+                        "then": "Cor: preto"
+                    },
+                    "6": {
+                        "then": "Cor: azul"
+                    },
+                    "7": {
+                        "then": "Cor: amarelo"
+                    }
+                }
+            },
+            "6": {
+                "question": "Quando esta bancada foi pesquisada pela última vez?",
+                "render": "Esta bancada foi pesquisada pela última vez em {survey:date}"
+            }
         },
-        "question": "De que é feito o banco (assento)?"
-      },
-      "4": {
-        "question": "Em que direção você olha quando está sentado no banco?",
-        "render": "Ao sentar-se no banco, olha-se para {direction} °."
-      },
-      "5": {
-        "render": "Cor: {colour}",
-        "question": "Qual a cor dessa bancada?",
-        "mappings": {
-          "0": {
-            "then": "Cor: marrom"
-          },
-          "1": {
-            "then": "Cor: verde"
-          },
-          "2": {
-            "then": "Cor: cinza"
-          },
-          "3": {
-            "then": "Cor: branco"
-          },
-          "4": {
-            "then": "Cor: vermelho"
-          },
-          "5": {
-            "then": "Cor: preto"
-          },
-          "6": {
-            "then": "Cor: azul"
-          },
-          "7": {
-            "then": "Cor: amarelo"
-          }
+        "presets": {
+            "0": {
+                "title": "Banco",
+                "description": "Adicionar um novo banco"
+            }
         }
-      },
-      "6": {
-        "question": "Quando esta bancada foi pesquisada pela última vez?",
-        "render": "Esta bancada foi pesquisada pela última vez em {survey:date}"
-      }
     },
-    "presets": {
-      "0": {
-        "title": "Banco",
-        "description": "Adicionar um novo banco"
-      }
+    "bench_at_pt": {
+        "name": "Bancos em pontos de transporte público",
+        "title": {
+            "render": "Banco",
+            "mappings": {
+                "0": {
+                    "then": "Banco em ponto de transporte público"
+                },
+                "1": {
+                    "then": "Banco em abrigo"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            }
+        }
+    },
+    "bicycle_library": {
+        "name": "Biblioteca de bicicleta",
+        "title": {
+            "render": "Biblioteca de bicicleta"
+        },
+        "description": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
+        "tagRenderings": {
+            "1": {
+                "question": "Qual o nome desta biblioteca de bicicleta?",
+                "render": "Esta biblioteca de bicicleta é chamada de {name}"
+            },
+            "6": {
+                "question": "Quanto custa um empréstimo de bicicleta?",
+                "render": "Custos de empréstimo de bicicleta {charge}",
+                "mappings": {
+                    "0": {
+                        "then": "Emprestar uma bicicleta é grátis"
+                    },
+                    "1": {
+                        "then": "Emprestar uma bicicleta custa €20/ano e €20 de garantia"
+                    }
+                }
+            },
+            "7": {
+                "question": "Quem pode emprestar bicicletas aqui?",
+                "mappings": {
+                    "0": {
+                        "then": "Bicicletas para crianças disponíveis"
+                    },
+                    "1": {
+                        "then": "Bicicletas para adulto disponíveis"
+                    },
+                    "2": {
+                        "then": "Bicicletas para deficientes físicos disponíveis"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Biblioteca de bicicletas"
+            }
+        }
+    },
+    "bicycle_tube_vending_machine": {
+        "name": "Máquina de venda automática de tubos de bicicleta",
+        "title": {
+            "render": "Máquina de venda automática de tubos de bicicleta"
+        },
+        "presets": {
+            "0": {
+                "title": "Máquina de venda automática de tubos de bicicleta"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Esta máquina de venda automática ainda está operacional?",
+                "render": "O estado operacional é: <i>{operational_status</i>",
+                "mappings": {
+                    "0": {
+                        "then": "Esta máquina de venda automática funciona"
+                    },
+                    "1": {
+                        "then": "Esta máquina de venda automática está quebrada"
+                    },
+                    "2": {
+                        "then": "Esta máquina de venda automática está fechada"
+                    }
+                }
+            }
+        }
+    },
+    "bike_cafe": {
+        "name": "Café de bicicletas",
+        "title": {
+            "render": "Café de bicicleta",
+            "mappings": {
+                "0": {
+                    "then": "Café de bicicleta <i>{name}</i>"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Qual o nome deste café de bicicleta?",
+                "render": "Este café de bicicleta se chama {name}"
+            },
+            "3": {
+                "question": "Há ferramentas aqui para consertar sua bicicleta?",
+                "mappings": {
+                    "0": {
+                        "then": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo"
+                    },
+                    "1": {
+                        "then": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo"
+                    }
+                }
+            },
+            "4": {
+                "question": "Este café de bicicleta conserta bicicletas?",
+                "mappings": {
+                    "0": {
+                        "then": "Este café de bicicleta conserta bicicletas"
+                    },
+                    "1": {
+                        "then": "Este café de bicicleta não conserta bicicletas"
+                    }
+                }
+            },
+            "5": {
+                "question": "Qual o website de {name}?"
+            },
+            "6": {
+                "question": "Qual o número de telefone de {name}?"
+            },
+            "7": {
+                "question": "Qual o endereço de email de {name}?"
+            },
+            "8": {
+                "question": "Quando este café de bicicleta abre?"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Café de bicicleta"
+            }
+        }
+    },
+    "bike_cleaning": {
+        "name": "Serviço de limpeza de bicicletas",
+        "title": {
+            "render": "Serviço de limpeza de bicicletas",
+            "mappings": {
+                "0": {
+                    "then": "Serviço de limpeza de bicicletas <i>{name}</i>"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Serviço de limpeza de bicicletas"
+            }
+        }
+    },
+    "bike_monitoring_station": {
+        "name": "Estações de monitoramento",
+        "title": {
+            "render": "Estação de contagem de bicicletas",
+            "mappings": {
+                "0": {
+                    "then": "Estação de contagem de bicicletas {name}"
+                },
+                "1": {
+                    "then": "Estação de contagem de bicicletas {ref}"
+                }
+            }
+        }
+    },
+    "bike_parking": {
+        "name": "Estacionamento de bicicletas",
+        "presets": {
+            "0": {
+                "title": "Estacionamento de bicicletas"
+            }
+        },
+        "title": {
+            "render": "Estacionamento de bicicletas"
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Qual o tipo deste estacionamento de bicicletas?",
+                "render": "Este é um estacionamento de bicicletas do tipo: {bicycle_parking}"
+            },
+            "2": {
+                "question": "Qual a localização relativa deste estacionamento de bicicletas?",
+                "mappings": {
+                    "0": {
+                        "then": "Estacionamento subterrâneo"
+                    },
+                    "1": {
+                        "then": "Estacionamento subterrâneo"
+                    },
+                    "2": {
+                        "then": "Estacionamento de superfície"
+                    },
+                    "3": {
+                        "then": "Estacionamento ao nível da superfície"
+                    },
+                    "4": {
+                        "then": "Estacionamento no telhado"
+                    }
+                }
+            },
+            "3": {
+                "question": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
+                "mappings": {
+                    "0": {
+                        "then": "Este estacionamento é coberto (tem um telhado)"
+                    },
+                    "1": {
+                        "then": "Este estacionamento não é coberto"
+                    }
+                }
+            },
+            "4": {
+                "render": "Lugar para {capacity} bicicletas"
+            },
+            "5": {
+                "question": "Quem pode usar este estacionamento de bicicletas?",
+                "render": "{access}",
+                "mappings": {
+                    "0": {
+                        "then": "Acessível ao público"
+                    },
+                    "1": {
+                        "then": "Acesso é principalmente para visitantes de uma empresa"
+                    },
+                    "2": {
+                        "then": "Acesso é limitado aos membros de uma escola, companhia ou organização"
+                    }
+                }
+            },
+            "6": {
+                "question": "O estacionamento de bicicletas tem vagas para bicicletas de carga?",
+                "mappings": {
+                    "0": {
+                        "then": "Este estacionamento tem vagas para bicicletas de carga"
+                    },
+                    "1": {
+                        "then": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga."
+                    },
+                    "2": {
+                        "then": "Você não tem permissão para estacionar bicicletas de carga"
+                    }
+                }
+            },
+            "7": {
+                "question": "Quantas bicicletas de carga cabem neste estacionamento de bicicletas?",
+                "render": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga"
+            }
+        }
+    },
+    "bike_repair_station": {
+        "name": "Estações de bicicletas (reparo, bomba ou ambos)",
+        "title": {
+            "render": "Estação de bicicletas (bomba e reparo)",
+            "mappings": {
+                "0": {
+                    "then": "Estação de reparo de bicicletas"
+                },
+                "1": {
+                    "then": "Estação de reparo de bicicletas"
+                },
+                "2": {
+                    "then": "Bomba quebrada"
+                },
+                "3": {
+                    "then": "Bomba de bicicleta <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Bomba de bicicleta"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Quais serviços estão disponíveis nesta estação de bicicletas?",
+                "mappings": {
+                    "0": {
+                        "then": "Há somente uma bomba presente"
+                    },
+                    "1": {
+                        "then": "Há somente ferramentas (chaves de fenda, alicates...) presentes"
+                    },
+                    "2": {
+                        "then": "Há tanto ferramentas e uma bomba presente"
+                    }
+                }
+            },
+            "2": {
+                "question": "Quem faz a manutenção desta bomba de ciclo?",
+                "render": "Mantida por {operator}"
+            },
+            "5": {
+                "mappings": {
+                    "0": {
+                        "then": "Sempre aberto"
+                    },
+                    "1": {
+                        "then": "Sempre aberto"
+                    }
+                }
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Há uma ferramenta de corrente"
+                    },
+                    "1": {
+                        "then": "Não há uma ferramenta de corrente"
+                    }
+                }
+            },
+            "7": {
+                "mappings": {
+                    "0": {
+                        "then": "Há um gancho ou um suporte"
+                    },
+                    "1": {
+                        "then": "Não há um gancho ou um suporte"
+                    }
+                }
+            },
+            "11": {
+                "mappings": {
+                    "0": {
+                        "then": "Bomba manual"
+                    },
+                    "1": {
+                        "then": "Bomba elétrica"
+                    }
+                }
+            },
+            "12": {
+                "mappings": {
+                    "0": {
+                        "then": "Há um manômetro"
+                    },
+                    "1": {
+                        "then": "Não há um manômetro"
+                    },
+                    "2": {
+                        "then": "Há um manômetro mas está quebrado"
+                    }
+                }
+            }
+        },
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
+        },
+        "presets": {
+            "0": {
+                "title": "Bomba de bicicleta",
+                "description": "Um dispositivo para encher seus pneus em um local fixa no espaço público<h3>Exemplos de bombas de bicicletas</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
+            }
+        }
+    },
+    "bike_shop": {
+        "name": "Reparo/loja de bicicletas",
+        "title": {
+            "render": "Reparo/loja de bicicletas",
+            "mappings": {
+                "0": {
+                    "then": "Loja de equipamentos esportivos <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Aluguel de bicicletas <i>{name}</i>"
+                },
+                "3": {
+                    "then": "Reparo de bicicletas <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Loja de bicicletas <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Loja/reparo de bicicletas <i>{name}</i>"
+                }
+            }
+        },
+        "description": "Uma loja que vende especificamente bicicletas ou itens relacionados",
+        "tagRenderings": {
+            "1": {
+                "render": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas"
+            },
+            "2": {
+                "question": "Qual o nome desta loja de bicicletas?",
+                "render": "Esta loja de bicicletas se chama {nome}"
+            },
+            "3": {
+                "question": "Qual o website de {name}?"
+            },
+            "4": {
+                "question": "Qual o número de telefone de {name}?"
+            },
+            "5": {
+                "question": "Qual o endereço de email de {name}?"
+            },
+            "9": {
+                "question": "Esta loja vende bicicletas?",
+                "mappings": {
+                    "0": {
+                        "then": "Esta loja vende bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta loja não vende bicicletas"
+                    }
+                }
+            },
+            "10": {
+                "question": "Esta loja conserta bicicletas?",
+                "mappings": {
+                    "0": {
+                        "then": "Esta loja conserta bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta loja não conserta bicicletas"
+                    },
+                    "2": {
+                        "then": "Esta loja conserta bicicletas compradas aqui"
+                    },
+                    "3": {
+                        "then": "Esta loja conserta bicicletas de uma certa marca"
+                    }
+                }
+            },
+            "11": {
+                "question": "Esta loja aluga bicicletas?",
+                "mappings": {
+                    "0": {
+                        "then": "Esta loja aluga bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta loja não aluga bicicletas"
+                    }
+                }
+            }
+        }
     }
-  },
-  "bench_at_pt": {
-    "name": "Bancos em pontos de transporte público",
-    "title": {
-      "render": "Banco",
-      "mappings": {
-        "0": {
-          "then": "Banco em ponto de transporte público"
-        },
-        "1": {
-          "then": "Banco em abrigo"
-        }
-      }
-    },
-    "tagRenderings": {
-      "1": {
-        "render": "{name}"
-      }
-    }
-  },
-  "bicycle_library": {
-    "name": "Biblioteca de bicicleta",
-    "title": {
-      "render": "Biblioteca de bicicleta"
-    },
-    "description": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-    "tagRenderings": {
-      "1": {
-        "question": "Qual o nome desta biblioteca de bicicleta?",
-        "render": "Esta biblioteca de bicicleta é chamada de {name}"
-      },
-      "6": {
-        "question": "Quanto custa um empréstimo de bicicleta?",
-        "render": "Custos de empréstimo de bicicleta {charge}",
-        "mappings": {
-          "0": {
-            "then": "Emprestar uma bicicleta é grátis"
-          },
-          "1": {
-            "then": "Emprestar uma bicicleta custa €20/ano e €20 de garantia"
-          }
-        }
-      },
-      "7": {
-        "question": "Quem pode emprestar bicicletas aqui?",
-        "mappings": {
-          "0": {
-            "then": "Bicicletas para crianças disponíveis"
-          },
-          "1": {
-            "then": "Bicicletas para adulto disponíveis"
-          },
-          "2": {
-            "then": "Bicicletas para deficientes físicos disponíveis"
-          }
-        }
-      }
-    },
-    "presets": {
-      "0": {
-        "title": "Biblioteca de bicicletas"
-      }
-    }
-  },
-  "bicycle_tube_vending_machine": {
-    "name": "Máquina de venda automática de tubos de bicicleta",
-    "title": {
-      "render": "Máquina de venda automática de tubos de bicicleta"
-    },
-    "presets": {
-      "0": {
-        "title": "Máquina de venda automática de tubos de bicicleta"
-      }
-    },
-    "tagRenderings": {
-      "1": {
-        "question": "Esta máquina de venda automática ainda está operacional?",
-        "render": "O estado operacional é: <i>{operational_status</i>",
-        "mappings": {
-          "0": {
-            "then": "Esta máquina de venda automática funciona"
-          },
-          "1": {
-            "then": "Esta máquina de venda automática está quebrada"
-          },
-          "2": {
-            "then": "Esta máquina de venda automática está fechada"
-          }
-        }
-      }
-    }
-  },
-  "bike_cafe": {
-    "name": "Café de bicicletas",
-    "title": {
-      "render": "Café de bicicleta",
-      "mappings": {
-        "0": {
-          "then": "Café de bicicleta <i>{name}</i>"
-        }
-      }
-    },
-    "tagRenderings": {
-      "1": {
-        "question": "Qual o nome deste café de bicicleta?",
-        "render": "Este café de bicicleta se chama {name}"
-      },
-      "3": {
-        "question": "Há ferramentas aqui para consertar sua bicicleta?",
-        "mappings": {
-          "0": {
-            "then": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo"
-          },
-          "1": {
-            "then": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo"
-          }
-        }
-      },
-      "4": {
-        "question": "Este café de bicicleta conserta bicicletas?",
-        "mappings": {
-          "0": {
-            "then": "Este café de bicicleta conserta bicicletas"
-          },
-          "1": {
-            "then": "Este café de bicicleta não conserta bicicletas"
-          }
-        }
-      },
-      "5": {
-        "question": "Qual o website de {name}?"
-      },
-      "6": {
-        "question": "Qual o número de telefone de {name}?"
-      },
-      "7": {
-        "question": "Qual o endereço de email de {name}?"
-      },
-      "8": {
-        "question": "Quando este café de bicicleta abre?"
-      }
-    },
-    "presets": {
-      "0": {
-        "title": "Café de bicicleta"
-      }
-    }
-  },
-  "bike_cleaning": {
-    "name": "Serviço de limpeza de bicicletas",
-    "title": {
-      "render": "Serviço de limpeza de bicicletas",
-      "mappings": {
-        "0": {
-          "then": "Serviço de limpeza de bicicletas <i>{name}</i>"
-        }
-      }
-    },
-    "presets": {
-      "0": {
-        "title": "Serviço de limpeza de bicicletas"
-      }
-    }
-  },
-  "bike_monitoring_station": {
-    "name": "Estações de monitoramento",
-    "title": {
-      "render": "Estação de contagem de bicicletas",
-      "mappings": {
-        "0": {
-          "then": "Estação de contagem de bicicletas {name}"
-        },
-        "1": {
-          "then": "Estação de contagem de bicicletas {ref}"
-        }
-      }
-    }
-  },
-  "bike_parking": {
-    "name": "Estacionamento de bicicletas",
-    "presets": {
-      "0": {
-        "title": "Estacionamento de bicicletas"
-      }
-    },
-    "title": {
-      "render": "Estacionamento de bicicletas"
-    },
-    "tagRenderings": {
-      "1": {
-        "question": "Qual o tipo deste estacionamento de bicicletas?",
-        "render": "Este é um estacionamento de bicicletas do tipo: {bicycle_parking}"
-      },
-      "2": {
-        "question": "Qual a localização relativa deste estacionamento de bicicletas?",
-        "mappings": {
-          "0": {
-            "then": "Estacionamento subterrâneo"
-          },
-          "1": {
-            "then": "Estacionamento subterrâneo"
-          },
-          "2": {
-            "then": "Estacionamento de superfície"
-          },
-          "3": {
-            "then": "Estacionamento ao nível da superfície"
-          },
-          "4": {
-            "then": "Estacionamento no telhado"
-          }
-        }
-      },
-      "3": {
-        "question": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
-        "mappings": {
-          "0": {
-            "then": "Este estacionamento é coberto (tem um telhado)"
-          },
-          "1": {
-            "then": "Este estacionamento não é coberto"
-          }
-        }
-      },
-      "4": {
-        "render": "Lugar para {capacity} bicicletas"
-      },
-      "5": {
-        "question": "Quem pode usar este estacionamento de bicicletas?",
-        "render": "{access}",
-        "mappings": {
-          "0": {
-            "then": "Acessível ao público"
-          },
-          "1": {
-            "then": "Acesso é principalmente para visitantes de uma empresa"
-          },
-          "2": {
-            "then": "Acesso é limitado aos membros de uma escola, companhia ou organização"
-          }
-        }
-      },
-      "6": {
-        "question": "O estacionamento de bicicletas tem vagas para bicicletas de carga?",
-        "mappings": {
-          "0": {
-            "then": "Este estacionamento tem vagas para bicicletas de carga"
-          },
-          "1": {
-            "then": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga."
-          },
-          "2": {
-            "then": "Você não tem permissão para estacionar bicicletas de carga"
-          }
-        }
-      },
-      "7": {
-        "question": "Quantas bicicletas de carga cabem neste estacionamento de bicicletas?",
-        "render": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga"
-      }
-    }
-  },
-  "bike_repair_station": {
-    "name": "Estações de bicicletas (reparo, bomba ou ambos)",
-    "title": {
-      "render": "Estação de bicicletas (bomba e reparo)",
-      "mappings": {
-        "0": {
-          "then": "Estação de reparo de bicicletas"
-        },
-        "1": {
-          "then": "Estação de reparo de bicicletas"
-        },
-        "2": {
-          "then": "Bomba quebrada"
-        },
-        "3": {
-          "then": "Bomba de bicicleta <i>{name}</i>"
-        },
-        "4": {
-          "then": "Bomba de bicicleta"
-        }
-      }
-    },
-    "tagRenderings": {
-      "1": {
-        "question": "Quais serviços estão disponíveis nesta estação de bicicletas?",
-        "mappings": {
-          "0": {
-            "then": "Há somente uma bomba presente"
-          },
-          "1": {
-            "then": "Há somente ferramentas (chaves de fenda, alicates...) presentes"
-          },
-          "2": {
-            "then": "Há tanto ferramentas e uma bomba presente"
-          }
-        }
-      },
-      "2": {
-        "question": "Quem faz a manutenção desta bomba de ciclo?",
-        "render": "Mantida por {operator}"
-      },
-      "5": {
-        "mappings": {
-          "0": {
-            "then": "Sempre aberto"
-          },
-          "1": {
-            "then": "Sempre aberto"
-          }
-        }
-      },
-      "6": {
-        "mappings": {
-          "0": {
-            "then": "Há uma ferramenta de corrente"
-          },
-          "1": {
-            "then": "Não há uma ferramenta de corrente"
-          }
-        }
-      },
-      "7": {
-        "mappings": {
-          "0": {
-            "then": "Há um gancho ou um suporte"
-          },
-          "1": {
-            "then": "Não há um gancho ou um suporte"
-          }
-        }
-      },
-      "11": {
-        "mappings": {
-          "0": {
-            "then": "Bomba manual"
-          },
-          "1": {
-            "then": "Bomba elétrica"
-          }
-        }
-      },
-      "12": {
-        "mappings": {
-          "0": {
-            "then": "Há um manômetro"
-          },
-          "1": {
-            "then": "Não há um manômetro"
-          },
-          "2": {
-            "then": "Há um manômetro mas está quebrado"
-          }
-        }
-      }
-    },
-    "icon": {
-      "render": "./assets/layers/bike_repair_station/repair_station.svg"
-    },
-    "presets": {
-      "0": {
-        "title": "Bomba de bicicleta",
-        "description": "Um dispositivo para encher seus pneus em um local fixa no espaço público<h3>Exemplos de bombas de bicicletas</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
-      }
-    }
-  },
-  "bike_shop": {
-    "name": "Reparo/loja de bicicletas",
-    "title": {
-      "render": "Reparo/loja de bicicletas",
-      "mappings": {
-        "0": {
-          "then": "Loja de equipamentos esportivos <i>{name}</i>"
-        },
-        "2": {
-          "then": "Aluguel de bicicletas <i>{name}</i>"
-        },
-        "3": {
-          "then": "Reparo de bicicletas <i>{name}</i>"
-        },
-        "4": {
-          "then": "Loja de bicicletas <i>{name}</i>"
-        },
-        "5": {
-          "then": "Loja/reparo de bicicletas <i>{name}</i>"
-        }
-      }
-    },
-    "description": "Uma loja que vende especificamente bicicletas ou itens relacionados",
-    "tagRenderings": {
-      "1": {
-        "render": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas"
-      },
-      "2": {
-        "question": "Qual o nome desta loja de bicicletas?",
-        "render": "Esta loja de bicicletas se chama {nome}"
-      },
-      "3": {
-        "question": "Qual o website de {name}?"
-      },
-      "4": {
-        "question": "Qual o número de telefone de {name}?"
-      },
-      "5": {
-        "question": "Qual o endereço de email de {name}?"
-      },
-      "9": {
-        "question": "Esta loja vende bicicletas?",
-        "mappings": {
-          "0": {
-            "then": "Esta loja vende bicicletas"
-          },
-          "1": {
-            "then": "Esta loja não vende bicicletas"
-          }
-        }
-      },
-      "10": {
-        "question": "Esta loja conserta bicicletas?",
-        "mappings": {
-          "0": {
-            "then": "Esta loja conserta bicicletas"
-          },
-          "1": {
-            "then": "Esta loja não conserta bicicletas"
-          },
-          "2": {
-            "then": "Esta loja conserta bicicletas compradas aqui"
-          },
-          "3": {
-            "then": "Esta loja conserta bicicletas de uma certa marca"
-          }
-        }
-      },
-      "11": {
-        "question": "Esta loja aluga bicicletas?",
-        "mappings": {
-          "0": {
-            "then": "Esta loja aluga bicicletas"
-          },
-          "1": {
-            "then": "Esta loja não aluga bicicletas"
-          }
-        }
-      }
-    }
-  }
 }

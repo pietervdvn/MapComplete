@@ -1,16 +1,5 @@
 [
   {
-    "path": "Line-style-icons-telescope.svg",
-    "license": "GPL",
-    "authors": [
-      "Kenny Sing/Elegant Themes"
-    ],
-    "sources": [
-      "https://upload.wikimedia.org/wikipedia/commons/b/b1/Line-style-icons-telescope.svg",
-      "https://www.elegantthemes.com/blog/freebie-of-the-week/free-line-style-icons"
-    ]
-  },
-  {
     "path": "binoculars_example.jpg",
     "license": "CC-BY-SA 4.0",
     "authors": [
@@ -18,6 +7,17 @@
     ],
     "sources": [
       "https://upload.wikimedia.org/wikipedia/commons/a/a0/Coin-operated_binocular_at_Cape_of_Good_Hope_%2801%29.jpg"
+    ]
+  },
+  {
+    "path": "telescope.svg",
+    "license": "GPL",
+    "authors": [
+      "Kenny Sing/Elegant Themes"
+    ],
+    "sources": [
+      "https://upload.wikimedia.org/wikipedia/commons/b/b1/Line-style-icons-telescope.svg",
+      "https://www.elegantthemes.com/blog/freebie-of-the-week/free-line-style-icons"
     ]
   }
 ]

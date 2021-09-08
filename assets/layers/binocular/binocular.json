@@ -46,10 +46,24 @@
         "en": "How much does one have to pay to use these binoculars?",
         "nl": "Hoeveel moet men betalen om deze verrekijker te gebruiken?"
       }
+    },
+    {
+      "question": {
+        "en": "When looking through this binocular, in what direction does one look?",
+        "nl": "Welke richting kijkt men uit als men door deze verrekijker kijkt?"
+      },
+      "render": {
+        "en": "Looks towards {direction}°",
+        "nl": "Kijkt richting {direction}°"
+      },
+      "freeform": {
+        "key": "direction",
+        "type": "direction"
+      }
     }
   ],
   "icon": {
-    "render": "circle:white;./assets/layers/binocular/Line-style-icons-telescope.svg"
+    "render": "circle:white;./assets/layers/binocular/telescope.svg"
   },
   "width": {
     "render": "8"

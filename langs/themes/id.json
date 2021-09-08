@@ -1,160 +1,160 @@
 {
-  "aed": {
-    "title": "Buka Peta AED",
-    "description": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat"
-  },
-  "artwork": {
-    "title": "Buka Peta Karya Seni",
-    "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
-    "layers": {
-      "0": {
-        "name": "Karya seni",
-        "title": {
-          "render": "Karya seni",
-          "mappings": {
-            "0": {
-              "then": "Karya seni <i>{name}</i>"
-            }
-          }
-        },
-        "tagRenderings": {
-          "3": {
-            "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
-          }
-        }
-      }
-    }
-  },
-  "campersite": {
-    "layers": {
-      "0": {
-        "tagRenderings": {
-          "1": {
-            "question": "Apakah nama tempat ini?"
-          },
-          "2": {
-            "mappings": {
-              "1": {
-                "then": "Boleh digunakan tanpa bayaran"
-              }
-            }
-          },
-          "6": {
-            "question": "Tempat ini berbagi akses Web?",
-            "mappings": {
-              "0": {
-                "then": "Akses Web tersedia"
-              },
-              "1": {
-                "then": "Akses Web tersedia"
-              },
-              "2": {
-                "then": "Tiada akses Web"
-              }
-            }
-          },
-          "8": {
-            "mappings": {
-              "0": {
-                "then": "Tempat sini ada tandas"
-              },
-              "1": {
-                "then": "Tempat sini tiada tandas"
-              }
-            }
-          },
-          "9": {
-            "render": "Situs resmi: <a href='{website}'>{website}</a>",
-            "question": "Tempat sini terada situs web?"
-          }
-        }
-      }
+    "aed": {
+        "title": "Buka Peta AED",
+        "description": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat"
     },
-    "roamingRenderings": {
-      "1": {
-        "mappings": {
-          "0": {
-            "then": "Tempat ini memiliki catu daya"
-          },
-          "1": {
-            "then": "Tempat ini tidak memiliki sumber listrik"
-          }
-        }
-      }
-    }
-  },
-  "charging_stations": {
-    "title": "Stasiun pengisian daya"
-  },
-  "climbing": {
-    "layers": {
-      "0": {
-        "tagRenderings": {
-          "0": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      },
-      "1": {
-        "tagRenderings": {
-          "3": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      },
-      "2": {
-        "tagRenderings": {
-          "3": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      },
-      "3": {
-        "tagRenderings": {
-          "6": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      },
-      "4": {
-        "tagRenderings": {
-          "1": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      }
-    }
-  },
-  "hailhydrant": {
-    "layers": {
-      "0": {
-        "tagRenderings": {
-          "1": {
-            "mappings": {
-              "3": {
-                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
-              }
+    "artwork": {
+        "title": "Buka Peta Karya Seni",
+        "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
+        "layers": {
+            "0": {
+                "name": "Karya seni",
+                "title": {
+                    "render": "Karya seni",
+                    "mappings": {
+                        "0": {
+                            "then": "Karya seni <i>{name}</i>"
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "3": {
+                        "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  },
-  "shops": {
-    "layers": {
-      "0": {
-        "tagRenderings": {
-          "3": {
-            "render": "<a href='tel:{phone}'>{phone}</a>"
-          },
-          "4": {
-            "render": "<a href='{website}'>{website}</a>"
-          },
-          "5": {
-            "render": "<a href='mailto:{email}'>{email}</a>"
-          }
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "1": {
+                        "question": "Apakah nama tempat ini?"
+                    },
+                    "2": {
+                        "mappings": {
+                            "1": {
+                                "then": "Boleh digunakan tanpa bayaran"
+                            }
+                        }
+                    },
+                    "6": {
+                        "question": "Tempat ini berbagi akses Web?",
+                        "mappings": {
+                            "0": {
+                                "then": "Akses Web tersedia"
+                            },
+                            "1": {
+                                "then": "Akses Web tersedia"
+                            },
+                            "2": {
+                                "then": "Tiada akses Web"
+                            }
+                        }
+                    },
+                    "8": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tempat sini ada tandas"
+                            },
+                            "1": {
+                                "then": "Tempat sini tiada tandas"
+                            }
+                        }
+                    },
+                    "9": {
+                        "render": "Situs resmi: <a href='{website}'>{website}</a>",
+                        "question": "Tempat sini terada situs web?"
+                    }
+                }
+            }
+        },
+        "roamingRenderings": {
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Tempat ini memiliki catu daya"
+                    },
+                    "1": {
+                        "then": "Tempat ini tidak memiliki sumber listrik"
+                    }
+                }
+            }
         }
-      }
+    },
+    "charging_stations": {
+        "title": "Stasiun pengisian daya"
+    },
+    "climbing": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "0": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "2": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "3": {
+                "tagRenderings": {
+                    "6": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "4": {
+                "tagRenderings": {
+                    "1": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            }
+        }
+    },
+    "hailhydrant": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "1": {
+                        "mappings": {
+                            "3": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "shops": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "<a href='tel:{phone}'>{phone}</a>"
+                    },
+                    "4": {
+                        "render": "<a href='{website}'>{website}</a>"
+                    },
+                    "5": {
+                        "render": "<a href='mailto:{email}'>{email}</a>"
+                    }
+                }
+            }
+        }
     }
-  }
 }

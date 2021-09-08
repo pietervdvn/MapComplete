@@ -1,18 +1,18 @@
 {
-  "aed": {
-    "title": "Otwórz mapę AED",
-    "description": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy"
-  },
-  "surveillance": {
-    "shortDescription": "Kamery monitorujące i inne środki nadzoru",
-    "description": "Na tej otwartej mapie można znaleźć kamery monitoringu."
-  },
-  "toilets": {
-    "title": "Mapa otwartych toalet",
-    "description": "Mapa toalet publicznych"
-  },
-  "trees": {
-    "title": "Drzewa",
-    "shortDescription": "Sporządzić mapę wszystkich drzew"
-  }
+    "aed": {
+        "title": "Otwórz mapę AED",
+        "description": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy"
+    },
+    "surveillance": {
+        "shortDescription": "Kamery monitorujące i inne środki nadzoru",
+        "description": "Na tej otwartej mapie można znaleźć kamery monitoringu."
+    },
+    "toilets": {
+        "title": "Mapa otwartych toalet",
+        "description": "Mapa toalet publicznych"
+    },
+    "trees": {
+        "title": "Drzewa",
+        "shortDescription": "Sporządzić mapę wszystkich drzew"
+    }
 }

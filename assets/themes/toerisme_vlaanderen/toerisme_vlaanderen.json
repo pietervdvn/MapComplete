@@ -23,7 +23,10 @@
   "widenFactor": 0.2,
   "layers": [
     {
-      "builtin": ["food", "cafe_pub"],
+      "builtin": [
+        "food",
+        "cafe_pub"
+      ],
       "override": {
         "minzoom": 16
       }

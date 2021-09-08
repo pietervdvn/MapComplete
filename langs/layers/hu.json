@@ -1,202 +1,202 @@
 {
-  "bench": {
-    "name": "Padok",
-    "title": {
-      "render": "Pad"
-    },
-    "tagRenderings": {
-      "1": {
-        "render": "Háttámla",
-        "mappings": {
-          "0": {
-            "then": "Háttámla: Igen"
-          },
-          "1": {
-            "then": "Háttámla: Nem"
-          }
+    "bench": {
+        "name": "Padok",
+        "title": {
+            "render": "Pad"
         },
-        "question": "Van háttámlája ennek a padnak?"
-      },
-      "2": {
-        "render": "{seats} ülőhely",
-        "question": "Hány ülőhely van ezen a padon?"
-      },
-      "3": {
-        "render": "Anyag: {material}",
-        "mappings": {
-          "0": {
-            "then": "Anyag: fa"
-          },
-          "1": {
-            "then": "Anyag: fém"
-          },
-          "2": {
-            "then": "Anyag: kő"
-          },
-          "3": {
-            "then": "Anyag: beton"
-          },
-          "4": {
-            "then": "Anyag: műanyag"
-          },
-          "5": {
-            "then": "Anyag: acél"
-          }
+        "tagRenderings": {
+            "1": {
+                "render": "Háttámla",
+                "mappings": {
+                    "0": {
+                        "then": "Háttámla: Igen"
+                    },
+                    "1": {
+                        "then": "Háttámla: Nem"
+                    }
+                },
+                "question": "Van háttámlája ennek a padnak?"
+            },
+            "2": {
+                "render": "{seats} ülőhely",
+                "question": "Hány ülőhely van ezen a padon?"
+            },
+            "3": {
+                "render": "Anyag: {material}",
+                "mappings": {
+                    "0": {
+                        "then": "Anyag: fa"
+                    },
+                    "1": {
+                        "then": "Anyag: fém"
+                    },
+                    "2": {
+                        "then": "Anyag: kő"
+                    },
+                    "3": {
+                        "then": "Anyag: beton"
+                    },
+                    "4": {
+                        "then": "Anyag: műanyag"
+                    },
+                    "5": {
+                        "then": "Anyag: acél"
+                    }
+                },
+                "question": "Miből van a pad (ülő része)?"
+            },
+            "4": {
+                "question": "Milyen irányba néz a pad?",
+                "render": "A pad {direction}° felé néz."
+            },
+            "5": {
+                "render": "Szín: {colour}",
+                "question": "Milyen színű a pad?",
+                "mappings": {
+                    "0": {
+                        "then": "Szín: barna"
+                    },
+                    "1": {
+                        "then": "Szín: zöld"
+                    },
+                    "2": {
+                        "then": "Szín: szürke"
+                    },
+                    "3": {
+                        "then": "Szín: fehér"
+                    },
+                    "4": {
+                        "then": "Szín: piros"
+                    },
+                    "5": {
+                        "then": "Szín: fekete"
+                    },
+                    "6": {
+                        "then": "Szín: kék"
+                    },
+                    "7": {
+                        "then": "Szín: sárga"
+                    }
+                }
+            }
         },
-        "question": "Miből van a pad (ülő része)?"
-      },
-      "4": {
-        "question": "Milyen irányba néz a pad?",
-        "render": "A pad {direction}° felé néz."
-      },
-      "5": {
-        "render": "Szín: {colour}",
-        "question": "Milyen színű a pad?",
-        "mappings": {
-          "0": {
-            "then": "Szín: barna"
-          },
-          "1": {
-            "then": "Szín: zöld"
-          },
-          "2": {
-            "then": "Szín: szürke"
-          },
-          "3": {
-            "then": "Szín: fehér"
-          },
-          "4": {
-            "then": "Szín: piros"
-          },
-          "5": {
-            "then": "Szín: fekete"
-          },
-          "6": {
-            "then": "Szín: kék"
-          },
-          "7": {
-            "then": "Szín: sárga"
-          }
+        "presets": {
+            "0": {
+                "description": "Pad hozzáadása"
+            }
         }
-      }
     },
-    "presets": {
-      "0": {
-        "description": "Pad hozzáadása"
-      }
-    }
-  },
-  "bench_at_pt": {
-    "name": "Padok megállókban",
-    "title": {
-      "render": "Pad",
-      "mappings": {
-        "0": {
-          "then": "Pad megállóban"
+    "bench_at_pt": {
+        "name": "Padok megállókban",
+        "title": {
+            "render": "Pad",
+            "mappings": {
+                "0": {
+                    "then": "Pad megállóban"
+                },
+                "1": {
+                    "then": "Pad fedett helyen"
+                }
+            }
         },
-        "1": {
-          "then": "Pad fedett helyen"
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            }
         }
-      }
     },
-    "tagRenderings": {
-      "1": {
-        "render": "{name}"
-      }
-    }
-  },
-  "bicycle_library": {
-    "description": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
-    "tagRenderings": {
-      "6": {
-        "question": "Mennyibe kerül egy kerékpár kölcsönzése?",
-        "render": "Egy kerékpár kölcsönzése {charge}",
-        "mappings": {
-          "0": {
-            "then": "A kerékpárkölcsönzés ingyenes"
-          }
+    "bicycle_library": {
+        "description": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
+        "tagRenderings": {
+            "6": {
+                "question": "Mennyibe kerül egy kerékpár kölcsönzése?",
+                "render": "Egy kerékpár kölcsönzése {charge}",
+                "mappings": {
+                    "0": {
+                        "then": "A kerékpárkölcsönzés ingyenes"
+                    }
+                }
+            },
+            "7": {
+                "question": "Ki kölcsönözhet itt kerékpárt?",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            }
         }
-      },
-      "7": {
-        "question": "Ki kölcsönözhet itt kerékpárt?",
-        "mappings": {
-          "0": {
-            "then": ""
-          }
-        }
-      }
-    }
-  },
-  "bicycle_tube_vending_machine": {
-    "tagRenderings": {
-      "1": {
-        "mappings": {
-          "0": {
-            "then": "Az automata működik"
-          },
-          "1": {
-            "then": "Az automata elromlott"
-          },
-          "2": {
-            "then": "Az automata zárva van"
-          }
-        }
-      }
-    }
-  },
-  "bike_parking": {
-    "name": "Kerékpáros parkoló",
-    "presets": {
-      "0": {
-        "title": "Kerékpáros parkoló"
-      }
     },
-    "title": {
-      "render": "Kerékpáros parkoló"
+    "bicycle_tube_vending_machine": {
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Az automata működik"
+                    },
+                    "1": {
+                        "then": "Az automata elromlott"
+                    },
+                    "2": {
+                        "then": "Az automata zárva van"
+                    }
+                }
+            }
+        }
     },
-    "tagRenderings": {
-      "1": {
-        "question": "Milyen típusú ez a kerékpáros parkoló?",
-        "render": "Ez egy {bicycle_parking} típusú kerékpáros parkoló",
-        "mappings": {
-          "0": {
-            "then": "\"U\" <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
-          },
-          "1": {
-            "then": "Kengyeles <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
-          },
-          "4": {
-            "then": "Kétszintű <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
-          },
-          "5": {
-            "then": "Fészer <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
-          }
+    "bike_parking": {
+        "name": "Kerékpáros parkoló",
+        "presets": {
+            "0": {
+                "title": "Kerékpáros parkoló"
+            }
+        },
+        "title": {
+            "render": "Kerékpáros parkoló"
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Milyen típusú ez a kerékpáros parkoló?",
+                "render": "Ez egy {bicycle_parking} típusú kerékpáros parkoló",
+                "mappings": {
+                    "0": {
+                        "then": "\"U\" <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                    },
+                    "1": {
+                        "then": "Kengyeles <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                    },
+                    "4": {
+                        "then": "Kétszintű <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                    },
+                    "5": {
+                        "then": "Fészer <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                    }
+                }
+            },
+            "2": {
+                "mappings": {
+                    "2": {
+                        "then": "Felszíni parkoló"
+                    },
+                    "3": {
+                        "then": "Felszíni parkoló"
+                    },
+                    "4": {
+                        "then": "Tetőparkoló"
+                    }
+                }
+            },
+            "3": {
+                "question": "Fedett ez a parkoló? (Beltéri parkoló esetén is válaszd a \"fedett\" opciót.)",
+                "mappings": {
+                    "0": {
+                        "then": "A parkoló fedett"
+                    },
+                    "1": {
+                        "then": "A parkoló nem fedett"
+                    }
+                }
+            }
         }
-      },
-      "2": {
-        "mappings": {
-          "2": {
-            "then": "Felszíni parkoló"
-          },
-          "3": {
-            "then": "Felszíni parkoló"
-          },
-          "4": {
-            "then": "Tetőparkoló"
-          }
-        }
-      },
-      "3": {
-        "question": "Fedett ez a parkoló? (Beltéri parkoló esetén is válaszd a \"fedett\" opciót.)",
-        "mappings": {
-          "0": {
-            "then": "A parkoló fedett"
-          },
-          "1": {
-            "then": "A parkoló nem fedett"
-          }
-        }
-      }
     }
-  }
 }

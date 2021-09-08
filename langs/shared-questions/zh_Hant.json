@@ -1,38 +1,38 @@
 {
-  "undefined": {
-    "phone": {
-      "question": "{name} 的電話號碼是什麼？"
-    },
-    "email": {
-      "question": "{name} 的電子郵件地址是什麼？"
-    },
-    "website": {
-      "question": "{name} 網址是什麼？"
-    },
-    "description": {
-      "question": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>"
-    },
-    "opening_hours": {
-      "question": "{name} 的開放時間是什麼？",
-      "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
-    },
-    "level": {
-      "question": "此圖徽位於哪個樓層／層級？",
-      "render": "位於 {level} 樓",
-      "mappings": {
-        "0": {
-          "then": "位於地下"
+    "undefined": {
+        "phone": {
+            "question": "{name} 的電話號碼是什麼？"
         },
-        "1": {
-          "then": "位於 1 樓"
+        "email": {
+            "question": "{name} 的電子郵件地址是什麼？"
         },
-        "2": {
-          "then": "位於 1 樓"
+        "website": {
+            "question": "{name} 網址是什麼？"
         },
-        "3": {
-          "then": "位於 2 樓"
+        "description": {
+            "question": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>"
+        },
+        "opening_hours": {
+            "question": "{name} 的開放時間是什麼？",
+            "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
+        },
+        "level": {
+            "question": "此圖徽位於哪個樓層／層級？",
+            "render": "位於 {level} 樓",
+            "mappings": {
+                "0": {
+                    "then": "位於地下"
+                },
+                "1": {
+                    "then": "位於 1 樓"
+                },
+                "2": {
+                    "then": "位於 1 樓"
+                },
+                "3": {
+                    "then": "位於 2 樓"
+                }
+            }
         }
-      }
     }
-  }
 }

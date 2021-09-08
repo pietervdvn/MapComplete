@@ -1,4 +1,5 @@
 import {Utils} from "../Utils";
+Utils.runningFromConsole = true;
 import TagSpec from "./Tag.spec";
 import ImageAttributionSpec from "./ImageAttribution.spec";
 import GeoOperationsSpec from "./GeoOperations.spec";
@@ -13,7 +14,6 @@ import OsmObjectSpec from "./OsmObject.spec";
 import ScriptUtils from "../scripts/ScriptUtils";
 import UnitsSpec from "./Units.spec";
 
-Utils.runningFromConsole = true;
 
 
 export default class TestAll {

@@ -1,38 +1,38 @@
 {
-  "undefined": {
-    "phone": {
-      "question": "Qual o número de telefone de {name}?"
-    },
-    "email": {
-      "question": "Qual o endereço de e-mail de {name}?"
-    },
-    "website": {
-      "question": "Qual o site de {name}?"
-    },
-    "description": {
-      "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
-    },
-    "opening_hours": {
-      "question": "Qual o horário de funcionamento de {name}?",
-      "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
-    },
-    "level": {
-      "question": "Em que nível esse recurso está localizado?",
-      "render": "Localizado no {level}o andar",
-      "mappings": {
-        "0": {
-          "then": "Localizado no subsolo"
+    "undefined": {
+        "phone": {
+            "question": "Qual o número de telefone de {name}?"
         },
-        "1": {
-          "then": "Localizado no térreo"
+        "email": {
+            "question": "Qual o endereço de e-mail de {name}?"
         },
-        "2": {
-          "then": "Localizado no térreo"
+        "website": {
+            "question": "Qual o site de {name}?"
         },
-        "3": {
-          "then": "Localizado no primeiro andar"
+        "description": {
+            "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
+        },
+        "opening_hours": {
+            "question": "Qual o horário de funcionamento de {name}?",
+            "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
+        },
+        "level": {
+            "question": "Em que nível esse recurso está localizado?",
+            "render": "Localizado no {level}o andar",
+            "mappings": {
+                "0": {
+                    "then": "Localizado no subsolo"
+                },
+                "1": {
+                    "then": "Localizado no térreo"
+                },
+                "2": {
+                    "then": "Localizado no térreo"
+                },
+                "3": {
+                    "then": "Localizado no primeiro andar"
+                }
+            }
         }
-      }
     }
-  }
 }

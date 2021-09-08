@@ -39,8 +39,7 @@
       }
     ]
   },
-  "presets": [
-  ],
+  "presets": [],
   "title": {
     "render": {
       "nl": "Café"

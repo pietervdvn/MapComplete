@@ -17,7 +17,7 @@
     "nl"
   ],
   "maintainer": "",
-  "icon": "./assets/themes/binoculars/Line-style-icons-telescope.svg",
+  "icon": "./assets/layers/binocular/telescope.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
