@@ -132,6 +132,25 @@
       "key": "changing_table:location",
       "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "dedicated_room"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Toilets' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Toilets' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Toilets' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "yes"
     }
   ]
 }

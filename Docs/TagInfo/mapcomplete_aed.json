@@ -112,22 +112,22 @@
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Defibrillators' shows wheelchair=designated with a fixed text, namely 'This defibrillator is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+      "description": "Layer 'Defibrillators' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
       "value": "designated"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Defibrillators' shows wheelchair=yes with a fixed text, namely 'This defibrillator is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+      "description": "Layer 'Defibrillators' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
       "value": "yes"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Defibrillators' shows wheelchair=limited with a fixed text, namely 'It is possible to reach the defibrillator in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+      "description": "Layer 'Defibrillators' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
       "value": "limited"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Defibrillators' shows wheelchair=no with a fixed text, namely 'This defibrillator is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+      "description": "Layer 'Defibrillators' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
       "value": "no"
     },
     {

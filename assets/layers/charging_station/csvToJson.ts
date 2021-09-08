@@ -76,7 +76,6 @@ function run(file, protojson) {
     questions.unshift(toggles)
 
     const stringified = questions.map(q => JSON.stringify(q, null, "  "))
-    console.log(stringified)
     let proto = readFileSync(protojson, "utf8")
     proto = proto.replace("$$$", stringified.join(",\n") + ",")
     proto = JSON.parse(proto)

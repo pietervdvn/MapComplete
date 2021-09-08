@@ -1,4 +1,5 @@
 import {Utils} from "../Utils";
+Utils.runningFromConsole = true;
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import Locale from "../UI/i18n/Locale";
 import {Translation} from "../UI/i18n/Translation";
@@ -6,7 +7,6 @@ import {readFileSync, writeFileSync} from "fs";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
-Utils.runningFromConsole = true;
 
 /**
  * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used
@@ -147,7 +147,7 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
 
     const filename = "mapcomplete_" + layout.id
     console.log("Writing info about " + layout.id)
-    writeFileSync(`${outputDirectory}/${filename}.json`, JSON.stringify(themeInfo, null, " "))
+    writeFileSync(`${outputDirectory}/${filename}.json`, JSON.stringify(themeInfo, null, 2))
     return filename
 }
 

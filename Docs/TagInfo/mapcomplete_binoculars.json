@@ -1,0 +1,72 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Binoculars",
+    "description": "A map with fixed binoculars",
+    "project_url": "https://mapcomplete.osm.be/binoculars",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/layers/binocular/telescope.svg",
+    "contact_name": "Pieter Vander Vennet, ",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Binoculars has a layer Binoculars showing features with this tag",
+      "value": "binoculars"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Binoculars' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Binoculars')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Binoculars' shows fee=no&charge= with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Binoculars' shows fee=no&charge= with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Binoculars' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Binoculars')"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Binoculars' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Binoculars')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Binoculars' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Binoculars' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Binoculars')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Binoculars' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars')",
+      "value": "yes"
+    }
+  ]
+}

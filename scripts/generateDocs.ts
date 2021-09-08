@@ -1,4 +1,5 @@
 import {Utils} from "../Utils";
+Utils.runningFromConsole = true;
 import SpecialVisualizations from "../UI/SpecialVisualizations";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import Combine from "../UI/Base/Combine";
@@ -11,7 +12,6 @@ import State from "../State";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
-Utils.runningFromConsole = true;
 
 
 function WriteFile(filename, html: string | BaseUIElement, autogenSource: string[]): void {

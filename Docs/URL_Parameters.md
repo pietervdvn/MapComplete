@@ -18,11 +18,6 @@ URL-parameters are stated in the part between the `?` and the `#`. There are mul
 
 Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 
-language
-----------
-
-The language to display mapcomplete in. Will be ignored in case a logged-in-user did set their language before. If the
-specified language does not exist, it will default to the first language in the theme.
 
 download-control-toggle
 -------------------------
@@ -154,18 +149,6 @@ debug
 If true, shows some extra debugging help such as all the available tags on every object The default value is _false_
 
 
-overpassUrl
--------------
-
-Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter The default value
-is _https://overpass.kumi.de/api/interpreter_
-
-
-overpassTimeout
------------------
-
-Set a different timeout (in seconds) for queries in overpass The default value is _60_
-
 fake-user
 -----------
 
@@ -177,6 +160,19 @@ backend
 
 The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test' The default
 value is _osm_
+
+
+overpassUrl
+-------------
+
+Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter The default value
+is _https://overpass-api.de/api/interpreter_
+
+
+overpassTimeout
+-----------------
+
+Set a different timeout (in seconds) for queries in overpass The default value is _30_
 
 
 custom-css

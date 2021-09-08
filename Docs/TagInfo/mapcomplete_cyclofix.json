@@ -501,6 +501,14 @@
       "value": "De Fietsambassade Gent"
     },
     {
+      "key": "email",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
@@ -601,6 +609,11 @@
       "key": "level",
       "description": "Layer 'Bike stations (repair, pump or both)' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows level= with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key level.",
+      "value": ""
     },
     {
       "key": "level",

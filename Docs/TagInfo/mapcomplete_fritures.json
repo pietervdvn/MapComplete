@@ -12,93 +12,597 @@
   "tags": [
     {
       "key": "cuisine",
-      "description": "The MapComplete theme Friturenkaart has a layer Frituren showing features with this tag"
+      "description": "The MapComplete theme Friturenkaart has a layer Fries shop showing features with this tag",
+      "value": "friture"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Friturenkaart has a layer Fries shop showing features with this tag",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Friturenkaart has a layer Fries shop showing features with this tag",
+      "value": "restaurant"
     },
     {
       "key": "image",
-      "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fries shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fries shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fries shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Frituren allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fries shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
-      "description": "Layer 'Frituren' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Friturenkaart')"
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Fries shop' shows amenity=fast_food with a fixed text, namely 'Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Fries shop' shows amenity=restaurant with a fixed text, namely 'Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "restaurant"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Frituren' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Friturenkaart')"
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
       "key": "website",
-      "description": "Layer 'Frituren' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Friturenkaart')"
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
       "key": "phone",
-      "description": "Layer 'Frituren' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Friturenkaart')"
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
-      "key": "diet:vegetarian",
-      "description": "Layer 'Frituren' shows diet:vegetarian=yes with a fixed text, namely 'Er zijn vegetarische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "key": "payment:cash",
+      "description": "Layer 'Fries shop' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "yes"
     },
     {
+      "key": "payment:cards",
+      "description": "Layer 'Fries shop' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Fries shop' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Fries shop' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Fries shop' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Fries shop' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'cuisine' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=pizza with a fixed text, namely 'This is a pizzeria' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "pizza"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=friture with a fixed text, namely 'This is a friture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "friture"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=pasta with a fixed text, namely 'Mainly serves pasta' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "pasta"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=kebab with a fixed text, namely 'Dit is een kebabzaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "kebab"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=sandwich with a fixed text, namely 'Dit is een broodjeszaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "sandwich"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=burger with a fixed text, namely 'Dit is een hamburgerrestaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "burger"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=sushi with a fixed text, namely 'Dit is een sushirestaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "sushi"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=coffee with a fixed text, namely 'Dit is een koffiezaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "coffee"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=italian with a fixed text, namely 'Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "italian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=french with a fixed text, namely 'Dit is een Frans restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "french"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=chinese with a fixed text, namely 'Dit is een Chinees restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "chinese"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=greek with a fixed text, namely 'Dit is een Grieks restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "greek"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=indian with a fixed text, namely 'Dit is een Indisch restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "indian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=turkish with a fixed text, namely 'Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "turkish"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=thai with a fixed text, namely 'Dit is een Thaïs restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "thai"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Fries shop' shows takeaway=only with a fixed text, namely 'This is a take-away only business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Fries shop' shows takeaway=yes with a fixed text, namely 'Take-away is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Fries shop' shows takeaway=no with a fixed text, namely 'Take-away is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
       "key": "diet:vegetarian",
-      "description": "Layer 'Frituren' shows diet:vegetarian=limited with a fixed text, namely 'Slechts enkele vegetarische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "description": "Layer 'Fries shop' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische opties beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Fries shop' shows diet:vegetarian=limited with a fixed text, namely 'Beperkte vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "limited"
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Frituren' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "description": "Layer 'Fries shop' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Fries shop' shows diet:vegetarian=only with a fixed text, namely 'Enkel vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Fries shop' shows diet:vegan=no with a fixed text, namely 'Geen veganistische opties beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "no"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Frituren' shows diet:vegan=yes with a fixed text, namely 'Er zijn veganistische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "description": "Layer 'Fries shop' shows diet:vegan=limited with a fixed text, namely 'Beperkte veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Fries shop' shows diet:vegan=yes with a fixed text, namely 'Veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "yes"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Frituren' shows diet:vegan=limited with a fixed text, namely 'Slechts enkele veganistische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "description": "Layer 'Fries shop' shows diet:vegan=only with a fixed text, namely 'Enkel veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Fries shop' shows diet:halal=no with a fixed text, namely 'There are no halal options available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Fries shop' shows diet:halal=limited with a fixed text, namely 'There is a small halal menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Fries shop' shows diet:halal=yes with a fixed text, namely 'There is a halal menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Fries shop' shows diet:halal=only with a fixed text, namely 'Only halal options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Fries shop' shows diet:vegetarian=yes with a fixed text, namely 'Er zijn vegetarische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Fries shop' shows diet:vegetarian=limited with a fixed text, namely 'Slechts enkele vegetarische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "limited"
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Frituren' shows diet:vegetarian=no with a fixed text, namely 'Geen veganistische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "description": "Layer 'Fries shop' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Fries shop' shows diet:vegan=yes with a fixed text, namely 'Er zijn veganistische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Fries shop' shows diet:vegan=limited with a fixed text, namely 'Slechts enkele veganistische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Fries shop' shows diet:vegan=no with a fixed text, namely 'Geen veganistische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "no"
     },
     {
       "key": "friture:oil",
-      "description": "Layer 'Frituren' shows friture:oil=vegetable with a fixed text, namely 'Plantaardige olie' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "description": "Layer 'Fries shop' shows friture:oil=vegetable with a fixed text, namely 'Plantaardige olie' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "vegetable"
     },
     {
       "key": "friture:oil",
-      "description": "Layer 'Frituren' shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "description": "Layer 'Fries shop' shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "animal"
     },
     {
-      "key": "bulk_purchase",
-      "description": "Layer 'Frituren' shows bulk_purchase=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Fries shop' shows reusable_packaging:accept=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "yes"
     },
     {
-      "key": "bulk_purchase",
-      "description": "Layer 'Frituren' shows bulk_purchase=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Fries shop' shows reusable_packaging:accept=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "no"
     },
     {
-      "key": "bulk_purchase",
-      "description": "Layer 'Frituren' shows bulk_purchase=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Fries shop' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Friturenkaart has a layer Restaurants and fast food showing features with this tag",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Friturenkaart has a layer Restaurants and fast food showing features with this tag",
+      "value": "restaurant"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Restaurants and fast food' shows amenity=restaurant with a fixed text, namely 'Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "restaurant"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Restaurants and fast food' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Restaurants and fast food' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'cuisine' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pizza with a fixed text, namely 'This is a pizzeria' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "pizza"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=friture with a fixed text, namely 'This is a friture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "friture"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pasta with a fixed text, namely 'Mainly serves pasta' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "pasta"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'Dit is een kebabzaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "kebab"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'Dit is een broodjeszaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "sandwich"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Dit is een hamburgerrestaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "burger"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Dit is een sushirestaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "sushi"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Dit is een koffiezaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "coffee"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "italian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'Dit is een Frans restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "french"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Dit is een Chinees restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "chinese"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Dit is een Grieks restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "greek"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Dit is een Indisch restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "indian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "turkish"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Dit is een Thaïs restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "thai"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=only with a fixed text, namely 'This is a take-away only business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=yes with a fixed text, namely 'Take-away is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=no with a fixed text, namely 'Take-away is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische opties beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Beperkte vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'Enkel vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'Geen veganistische opties beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'Beperkte veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'Enkel veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=no with a fixed text, namely 'There are no halal options available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=limited with a fixed text, namely 'There is a small halal menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=yes with a fixed text, namely 'There is a halal menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=only with a fixed text, namely 'Only halal options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Er zijn vegetarische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Slechts enkele vegetarische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Er zijn veganistische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'Slechts enkele veganistische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'Geen veganistische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'Plantaardige olie' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "vegetable"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "animal"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "only"
     }
   ]
