@@ -507,13 +507,6 @@ function stackHists<K, V>(hists: [V, Histogram<K>][]): [V, Histogram<K>][] {
 function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: string) {
     const hist = new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
     hist
-        .addCountToName()
-        .createOthersCategory("other", 40)
-        .asPie({
-            name: "Changesets per theme" + appliedFilterDescription
-        }).render()
-
-    hist
         .createOthersCategory("other", 20)
         .addCountToName()
         .asBar({name: "Changesets per theme (bar)" + appliedFilterDescription}).render()
@@ -532,7 +525,13 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         .asPie({
             name: "Changesets per host" + appliedFilterDescription
         }).render()
-
+        
+    new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
+        .createOthersCategory("< 25 changesets", 25)
+        .addCountToName()
+        .asPie({
+            name: "Changesets per theme (pie)" + appliedFilterDescription
+        }).render()
 
     Group.createStackedBarChartPerDay(
         "Changesets per theme" + appliedFilterDescription,

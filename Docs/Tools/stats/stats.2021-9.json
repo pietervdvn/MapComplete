@@ -1,6 +1,7204 @@
 {
   "features": [
     {
+      "id": 110920216,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.7597403,
+              -34.6588894
+            ],
+            [
+              -58.7597403,
+              -34.6588894
+            ],
+            [
+              -58.7597403,
+              -34.6588894
+            ],
+            [
+              -58.7597403,
+              -34.6588894
+            ],
+            [
+              -58.7597403,
+              -34.6588894
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T13:14:40Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+          "imagery": "osm",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110919484,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.2506443,
+              -39.8106972
+            ],
+            [
+              -73.2506443,
+              -39.8106972
+            ],
+            [
+              -73.2506443,
+              -39.8106972
+            ],
+            [
+              -73.2506443,
+              -39.8106972
+            ],
+            [
+              -73.2506443,
+              -39.8106972
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Awo",
+        "uid": "196556",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T13:02:45Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110914135,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.3572324,
+              50.9115312
+            ],
+            [
+              4.9349119,
+              50.9115312
+            ],
+            [
+              4.9349119,
+              51.317037
+            ],
+            [
+              4.3572324,
+              51.317037
+            ],
+            [
+              4.3572324,
+              50.9115312
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.6",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T11:40:37Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.2342523877911,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "CartoDB.Positron",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110908896,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.5104322,
+              43.8947941
+            ],
+            [
+              3.5104322,
+              43.8947941
+            ],
+            [
+              3.5104322,
+              43.8947941
+            ],
+            [
+              3.5104322,
+              43.8947941
+            ],
+            [
+              3.5104322,
+              43.8947941
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Brec10",
+        "uid": "13615286",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T10:16:53Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110906828,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2243449,
+              51.2102969
+            ],
+            [
+              3.2243449,
+              51.2102969
+            ],
+            [
+              3.2243449,
+              51.2102969
+            ],
+            [
+              3.2243449,
+              51.2102969
+            ],
+            [
+              3.2243449,
+              51.2102969
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.9.6",
+        "comment": "Adding data with #MapComplete for theme #shops",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T09:43:41Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "shops",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110901893,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.704501,
+              51.0438969
+            ],
+            [
+              13.7050815,
+              51.0438969
+            ],
+            [
+              13.7050815,
+              51.0444178
+            ],
+            [
+              13.704501,
+              51.0444178
+            ],
+            [
+              13.704501,
+              51.0438969
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T08:16:03Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 3.02382449998736e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110901351,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2772333,
+              50.8331293
+            ],
+            [
+              3.4087977,
+              50.8331293
+            ],
+            [
+              3.4087977,
+              50.8981259
+            ],
+            [
+              3.2772333,
+              50.8981259
+            ],
+            [
+              3.2772333,
+              50.8331293
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.6",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T08:06:13Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00855123868103916,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "CartoDB.Positron",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110901164,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7044853,
+              51.0448679
+            ],
+            [
+              13.7049804,
+              51.0448679
+            ],
+            [
+              13.7049804,
+              51.0487701
+            ],
+            [
+              13.7044853,
+              51.0487701
+            ],
+            [
+              13.7044853,
+              51.0448679
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T08:03:01Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 5,
+        "delete": 0,
+        "area": 0.00000193197922000019,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110900957,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7038741,
+              51.0487701
+            ],
+            [
+              13.7045143,
+              51.0487701
+            ],
+            [
+              13.7045143,
+              51.050382
+            ],
+            [
+              13.7038741,
+              51.050382
+            ],
+            [
+              13.7038741,
+              51.0487701
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T07:59:30Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000103193837999929,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110900277,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.6969395,
+              51.0491805
+            ],
+            [
+              13.7038741,
+              51.0491805
+            ],
+            [
+              13.7038741,
+              51.0517102
+            ],
+            [
+              13.6969395,
+              51.0517102
+            ],
+            [
+              13.6969395,
+              51.0491805
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T07:48:23Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 8,
+        "delete": 0,
+        "area": 0.0000175424576200285,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110899591,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.6913216,
+              51.0514929
+            ],
+            [
+              13.7024647,
+              51.0514929
+            ],
+            [
+              13.7024647,
+              51.0536912
+            ],
+            [
+              13.6913216,
+              51.0536912
+            ],
+            [
+              13.6913216,
+              51.0514929
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T07:37:23Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.0000244958767300381,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CyclOSM",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110883035,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.4273403,
+              50.9259408
+            ],
+            [
+              4.4291782,
+              50.9259408
+            ],
+            [
+              4.4291782,
+              50.9276447
+            ],
+            [
+              4.4273403,
+              50.9276447
+            ],
+            [
+              4.4273403,
+              50.9259408
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclestreets",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-08T00:06:22Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000313159781000457,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclestreets",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110880524,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.736063,
+              51.0342157
+            ],
+            [
+              3.7462159,
+              51.0342157
+            ],
+            [
+              3.7462159,
+              51.0417968
+            ],
+            [
+              3.736063,
+              51.0417968
+            ],
+            [
+              3.736063,
+              51.0342157
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.5",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T21:37:46Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 6,
+        "delete": 0,
+        "area": 0.0000769701501900307,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "charging_stations",
+          "imagery": "CartoDB.Voyager",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110878740,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.3707589,
+              -34.6402759
+            ],
+            [
+              -71.3707589,
+              -34.6402759
+            ],
+            [
+              -71.3707589,
+              -34.6402759
+            ],
+            [
+              -71.3707589,
+              -34.6402759
+            ],
+            [
+              -71.3707589,
+              -34.6402759
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Awo",
+        "uid": "196556",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T20:31:14Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "Mapbox",
+          "language": "en",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110877207,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.4443896,
+              51.1126056
+            ],
+            [
+              3.4443896,
+              51.1126056
+            ],
+            [
+              3.4443896,
+              51.1126056
+            ],
+            [
+              3.4443896,
+              51.1126056
+            ],
+            [
+              3.4443896,
+              51.1126056
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "L'imaginaire",
+        "uid": "654234",
+        "editor": "MapComplete 0.9.5",
+        "comment": "Adding data with #MapComplete for theme #food",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T19:46:06Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "food",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110875916,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.687333,
+              51.0510463
+            ],
+            [
+              13.7042739,
+              51.0510463
+            ],
+            [
+              13.7042739,
+              51.0579507
+            ],
+            [
+              13.687333,
+              51.0579507
+            ],
+            [
+              13.687333,
+              51.0510463
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T19:08:29Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.000116966749959935,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CyclOSM",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110875675,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              11.1404664,
+              44.8348664
+            ],
+            [
+              11.5056645,
+              44.8348664
+            ],
+            [
+              11.5056645,
+              44.8737844
+            ],
+            [
+              11.1404664,
+              44.8737844
+            ],
+            [
+              11.1404664,
+              44.8348664
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "WinstonSmith",
+        "uid": "36030",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T19:00:53Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.0142127796557983,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110875109,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.2247563,
+              41.435389
+            ],
+            [
+              2.2300808,
+              41.435389
+            ],
+            [
+              2.2300808,
+              41.4427751
+            ],
+            [
+              2.2247563,
+              41.4427751
+            ],
+            [
+              2.2247563,
+              41.435389
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 43,
+            "name": "Invalid key value combination"
+          }
+        ],
+        "tags": [],
+        "features": [
+          {
+            "url": "node-3947006984",
+            "osm_id": 3947006984,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3947006424",
+            "osm_id": 3947006424,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3947006673",
+            "osm_id": 3947006673,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3947006284",
+            "osm_id": 3947006284,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946997496",
+            "osm_id": 3946997496,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946997546",
+            "osm_id": 3946997546,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946966429",
+            "osm_id": 3946966429,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3947006574",
+            "osm_id": 3947006574,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946966249",
+            "osm_id": 3946966249,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965538",
+            "osm_id": 3946965538,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946966280",
+            "osm_id": 3946966280,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946966186",
+            "osm_id": 3946966186,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965585",
+            "osm_id": 3946965585,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965557",
+            "osm_id": 3946965557,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946966393",
+            "osm_id": 3946966393,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946966212",
+            "osm_id": 3946966212,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-9071410202",
+            "osm_id": 9071410202,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965581",
+            "osm_id": 3946965581,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965397",
+            "osm_id": 3946965397,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946966399",
+            "osm_id": 3946966399,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965479",
+            "osm_id": 3946965479,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965507",
+            "osm_id": 3946965507,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965318",
+            "osm_id": 3946965318,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946964659",
+            "osm_id": 3946964659,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965282",
+            "osm_id": 3946965282,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946966653",
+            "osm_id": 3946966653,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965113",
+            "osm_id": 3946965113,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965139",
+            "osm_id": 3946965139,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-8770455435",
+            "osm_id": 8770455435,
+            "reasons": [
+              43
+            ],
+            "version": 4,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946962237",
+            "osm_id": 3946962237,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946964925",
+            "osm_id": 3946964925,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946964944",
+            "osm_id": 3946964944,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965060",
+            "osm_id": 3946965060,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946962877",
+            "osm_id": 3946962877,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946961992",
+            "osm_id": 3946961992,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-3946965070",
+            "osm_id": 3946965070,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-9071637293",
+            "osm_id": 9071637293,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-9071664438",
+            "osm_id": 9071664438,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          },
+          {
+            "url": "node-8833127483",
+            "osm_id": 8833127483,
+            "reasons": [
+              43
+            ],
+            "version": 2,
+            "primary_tags": {
+              "natural": "tree_stump"
+            }
+          }
+        ],
+        "user": "Jose Luis Infante",
+        "uid": "126203",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://llefia.org/arbres/mapcomplete1.json",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T18:46:21Z",
+        "reviewed_features": [],
+        "create": 8,
+        "modify": 66,
+        "delete": 0,
+        "area": 0.0000393272894499888,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://llefia.org/arbres/mapcomplete1.json",
+          "imagery": "HDM_HOT",
+          "language": "ca"
+        }
+      }
+    },
+    {
+      "id": 110874001,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.5721611,
+              53.0176086
+            ],
+            [
+              6.5727619,
+              53.0176086
+            ],
+            [
+              6.5727619,
+              53.025998
+            ],
+            [
+              6.5721611,
+              53.025998
+            ],
+            [
+              6.5721611,
+              53.0176086
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.5",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T18:17:10Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00000504035151999883,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "charging_stations",
+          "imagery": "CartoDB.Voyager",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110873102,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7412927,
+              51.0361053
+            ],
+            [
+              3.7412927,
+              51.0361053
+            ],
+            [
+              3.7412927,
+              51.0361053
+            ],
+            [
+              3.7412927,
+              51.0361053
+            ],
+            [
+              3.7412927,
+              51.0361053
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T17:54:50Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110872782,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2120516,
+              51.191464
+            ],
+            [
+              3.2120516,
+              51.191464
+            ],
+            [
+              3.2120516,
+              51.191464
+            ],
+            [
+              3.2120516,
+              51.191464
+            ],
+            [
+              3.2120516,
+              51.191464
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "L'imaginaire",
+        "uid": "654234",
+        "editor": "MapComplete 0.9.5",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T17:47:04Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "charging_stations",
+          "imagery": "CartoDB.Voyager",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110872737,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7362206,
+              51.0367764
+            ],
+            [
+              3.7365425,
+              51.0367764
+            ],
+            [
+              3.7365425,
+              51.0368641
+            ],
+            [
+              3.7362206,
+              51.0368641
+            ],
+            [
+              3.7362206,
+              51.0367764
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T17:45:56Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 2,
+        "delete": 0,
+        "area": 2.82306300005717e-8,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110870231,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.2927924,
+              50.8617505
+            ],
+            [
+              4.2927924,
+              50.8617505
+            ],
+            [
+              4.2927924,
+              50.8617505
+            ],
+            [
+              4.2927924,
+              50.8617505
+            ],
+            [
+              4.2927924,
+              50.8617505
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "carodm",
+        "uid": "11564583",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T16:47:37Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110864432,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2081858,
+              51.1869804
+            ],
+            [
+              3.2081858,
+              51.1869804
+            ],
+            [
+              3.2081858,
+              51.1869804
+            ],
+            [
+              3.2081858,
+              51.1869804
+            ],
+            [
+              3.2081858,
+              51.1869804
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "L'imaginaire",
+        "uid": "654234",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T14:36:11Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "charging_stations",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110859989,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.5681439,
+              53.0099743
+            ],
+            [
+              6.5689395,
+              53.0099743
+            ],
+            [
+              6.5689395,
+              53.0112357
+            ],
+            [
+              6.5681439,
+              53.0112357
+            ],
+            [
+              6.5681439,
+              53.0099743
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T12:58:39Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00000100356983999769,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "charging_stations",
+          "imagery": "CartoDB.Voyager",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110859395,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.5721604,
+              53.0264806
+            ],
+            [
+              6.5721604,
+              53.0264806
+            ],
+            [
+              6.5721604,
+              53.0264806
+            ],
+            [
+              6.5721604,
+              53.0264806
+            ],
+            [
+              6.5721604,
+              53.0264806
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #toilets",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T12:47:03Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "toilets",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110858186,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.5337501,
+              52.9890967
+            ],
+            [
+              6.5805537,
+              52.9890967
+            ],
+            [
+              6.5805537,
+              53.0113921
+            ],
+            [
+              6.5337501,
+              53.0113921
+            ],
+            [
+              6.5337501,
+              52.9890967
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T12:25:34Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 19,
+        "delete": 0,
+        "area": 0.00104350498344022,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110853884,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.7796401,
+              51.2028367
+            ],
+            [
+              4.7796401,
+              51.2028367
+            ],
+            [
+              4.7796401,
+              51.2028367
+            ],
+            [
+              4.7796401,
+              51.2028367
+            ],
+            [
+              4.7796401,
+              51.2028367
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T11:16:48Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cyclofix",
+          "imagery": "AGIV",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110853877,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7262583,
+              51.0264084
+            ],
+            [
+              13.7267207,
+              51.0264084
+            ],
+            [
+              13.7267207,
+              51.0264321
+            ],
+            [
+              13.7262583,
+              51.0264321
+            ],
+            [
+              13.7262583,
+              51.0264084
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T11:16:45Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 1.09588799999295e-8,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "GEOSN-DOP-RGB",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110853474,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.374155,
+              50.8601654
+            ],
+            [
+              4.7795717,
+              50.8601654
+            ],
+            [
+              4.7795717,
+              51.202872
+            ],
+            [
+              4.374155,
+              51.202872
+            ],
+            [
+              4.374155,
+              50.8601654
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T11:10:23Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.13893897884022,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "charging_stations",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl"
+        }
+      }
+    },
+    {
+      "id": 110848487,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5347279,
+              52.2938452
+            ],
+            [
+              -1.5344799,
+              52.2938452
+            ],
+            [
+              -1.5344799,
+              52.2940475
+            ],
+            [
+              -1.5347279,
+              52.2940475
+            ],
+            [
+              -1.5347279,
+              52.2938452
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "user_5589",
+        "uid": "5589",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #parkings",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T09:53:28Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 5.01703999995068e-8,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "parkings",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110847424,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7273525,
+              51.032144
+            ],
+            [
+              13.7315572,
+              51.032144
+            ],
+            [
+              13.7315572,
+              51.0359965
+            ],
+            [
+              13.7273525,
+              51.0359965
+            ],
+            [
+              13.7273525,
+              51.032144
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T09:36:42Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0.0000161986067499989,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "GEOSN-DOP-RGB",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110847304,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.5188726,
+              52.1400304
+            ],
+            [
+              12.5188726,
+              52.1400304
+            ],
+            [
+              12.5188726,
+              52.1400304
+            ],
+            [
+              12.5188726,
+              52.1400304
+            ],
+            [
+              12.5188726,
+              52.1400304
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "sebkur",
+        "uid": "22917",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T09:34:55Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110845596,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7561436,
+              51.048242
+            ],
+            [
+              13.7664618,
+              51.048242
+            ],
+            [
+              13.7664618,
+              51.0499418
+            ],
+            [
+              13.7561436,
+              51.0499418
+            ],
+            [
+              13.7561436,
+              51.048242
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T09:10:05Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 11,
+        "delete": 0,
+        "area": 0.0000175388763599723,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "GEOSN-DOP-RGB",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110844164,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7650207,
+              51.0484817
+            ],
+            [
+              13.8043147,
+              51.0484817
+            ],
+            [
+              13.8043147,
+              51.0512669
+            ],
+            [
+              13.7650207,
+              51.0512669
+            ],
+            [
+              13.7650207,
+              51.0484817
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T08:48:47Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 5,
+        "delete": 0,
+        "area": 0.000109441648799927,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110841379,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.8037974,
+              51.0512669
+            ],
+            [
+              13.8143483,
+              51.0512669
+            ],
+            [
+              13.8143483,
+              51.0545375
+            ],
+            [
+              13.8037974,
+              51.0545375
+            ],
+            [
+              13.8037974,
+              51.0512669
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T08:08:40Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 21,
+        "delete": 0,
+        "area": 0.0000345077735400053,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "GEOSN-DOP-RGB",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110840665,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7007618,
+              51.0268819
+            ],
+            [
+              3.7007618,
+              51.0268819
+            ],
+            [
+              3.7007618,
+              51.0268819
+            ],
+            [
+              3.7007618,
+              51.0268819
+            ],
+            [
+              3.7007618,
+              51.0268819
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T07:57:42Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110836770,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7942271,
+              51.0635741
+            ],
+            [
+              13.7954781,
+              51.0635741
+            ],
+            [
+              13.7954781,
+              51.0637744
+            ],
+            [
+              13.7942271,
+              51.0637744
+            ],
+            [
+              13.7942271,
+              51.0635741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T06:57:09Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 2.50575300003781e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "GEOSN-DOP-RGB",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110827103,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.5691639,
+              45.4782467
+            ],
+            [
+              -73.5524031,
+              45.4782467
+            ],
+            [
+              -73.5524031,
+              45.4811018
+            ],
+            [
+              -73.5691639,
+              45.4811018
+            ],
+            [
+              -73.5691639,
+              45.4782467
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "treemap",
+        "uid": "926359",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-07T03:45:57Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.000047853760079965,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110820210,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.5606823,
+              52.9957289
+            ],
+            [
+              6.5725224,
+              52.9957289
+            ],
+            [
+              6.5725224,
+              53.0277864
+            ],
+            [
+              6.5606823,
+              53.0277864
+            ],
+            [
+              6.5606823,
+              52.9957289
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #food",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T20:37:34Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 27,
+        "delete": 0,
+        "area": 0.00037956400574994,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "food",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110818057,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.5608832,
+              53.0193218
+            ],
+            [
+              6.5610558,
+              53.0193218
+            ],
+            [
+              6.5610558,
+              53.019367
+            ],
+            [
+              6.5608832,
+              53.019367
+            ],
+            [
+              6.5608832,
+              53.0193218
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #parkings",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T19:23:23Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 7.80152000041448e-9,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "parkings",
+          "imagery": "osm",
+          "language": "nl"
+        }
+      }
+    },
+    {
+      "id": 110817161,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.9020683,
+              51.0967472
+            ],
+            [
+              4.9032216,
+              51.0967472
+            ],
+            [
+              4.9032216,
+              51.0972414
+            ],
+            [
+              4.9020683,
+              51.0972414
+            ],
+            [
+              4.9020683,
+              51.0967472
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Frans_Napaters",
+        "uid": "3574538",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #playgrounds",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T18:56:35Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 5.69960859998512e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "playgrounds",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110812835,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.70131,
+              51.0458374
+            ],
+            [
+              13.7022414,
+              51.0458374
+            ],
+            [
+              13.7022414,
+              51.0473085
+            ],
+            [
+              13.70131,
+              51.0473085
+            ],
+            [
+              13.70131,
+              51.0458374
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T16:47:15Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.00000137018253999756,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110812653,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7022414,
+              51.044257
+            ],
+            [
+              13.7038729,
+              51.044257
+            ],
+            [
+              13.7038729,
+              51.0458374
+            ],
+            [
+              13.7022414,
+              51.0458374
+            ],
+            [
+              13.7022414,
+              51.044257
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T16:42:09Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000257842260000314,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110811749,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7022414,
+              51.0395806
+            ],
+            [
+              13.7121747,
+              51.0395806
+            ],
+            [
+              13.7121747,
+              51.0458374
+            ],
+            [
+              13.7022414,
+              51.0458374
+            ],
+            [
+              13.7022414,
+              51.0395806
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T16:19:32Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 26,
+        "delete": 0,
+        "area": 0.000062150671440028,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110811416,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7121747,
+              51.0375715
+            ],
+            [
+              13.7148894,
+              51.0375715
+            ],
+            [
+              13.7148894,
+              51.0395806
+            ],
+            [
+              13.7121747,
+              51.0395806
+            ],
+            [
+              13.7121747,
+              51.0375715
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T16:11:28Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000545410377000658,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110810252,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7148894,
+              51.0309855
+            ],
+            [
+              13.7241266,
+              51.0309855
+            ],
+            [
+              13.7241266,
+              51.0375715
+            ],
+            [
+              13.7148894,
+              51.0375715
+            ],
+            [
+              13.7148894,
+              51.0309855
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T15:45:08Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 11,
+        "delete": 0,
+        "area": 0.0000608361991999835,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110810008,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7147766,
+              51.0309855
+            ],
+            [
+              13.7241266,
+              51.0309855
+            ],
+            [
+              13.7241266,
+              51.0352069
+            ],
+            [
+              13.7147766,
+              51.0352069
+            ],
+            [
+              13.7147766,
+              51.0309855
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T15:38:59Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.0000394700899999859,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110809973,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              11.2545995,
+              43.7735024
+            ],
+            [
+              11.2545995,
+              43.7735024
+            ],
+            [
+              11.2545995,
+              43.7735024
+            ],
+            [
+              11.2545995,
+              43.7735024
+            ],
+            [
+              11.2545995,
+              43.7735024
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "CanadaRunner",
+        "uid": "1261175",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #aed",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T15:38:18Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "aed",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110808804,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7147766,
+              51.0264777
+            ],
+            [
+              13.7259723,
+              51.0264777
+            ],
+            [
+              13.7259723,
+              51.0352069
+            ],
+            [
+              13.7147766,
+              51.0352069
+            ],
+            [
+              13.7147766,
+              51.0264777
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T15:09:04Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 16,
+        "delete": 0,
+        "area": 0.0000977295044399741,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110804202,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.3930882,
+              51.2084886
+            ],
+            [
+              4.4135964,
+              51.2084886
+            ],
+            [
+              4.4135964,
+              51.2218927
+            ],
+            [
+              4.3930882,
+              51.2218927
+            ],
+            [
+              4.3930882,
+              51.2084886
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "matissevdberg",
+        "uid": "12928471",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #surveillance",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T13:22:18Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 6,
+        "delete": 0,
+        "area": 0.000274893963619906,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "surveillance",
+          "imagery": "osm",
+          "language": "nl"
+        }
+      }
+    },
+    {
+      "id": 110803772,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.7821696,
+              -34.6662525
+            ],
+            [
+              -58.5953289,
+              -34.6662525
+            ],
+            [
+              -58.5953289,
+              -34.6449017
+            ],
+            [
+              -58.7821696,
+              -34.6449017
+            ],
+            [
+              -58.7821696,
+              -34.6662525
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T13:12:39Z",
+        "reviewed_features": [],
+        "create": 3,
+        "modify": 14,
+        "delete": 0,
+        "area": 0.00398919841756018,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+          "imagery": "osm",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110790669,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7252449,
+              51.0271596
+            ],
+            [
+              13.7258763,
+              51.0271596
+            ],
+            [
+              13.7258763,
+              51.0271687
+            ],
+            [
+              13.7252449,
+              51.0271687
+            ],
+            [
+              13.7252449,
+              51.0271596
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T09:41:11Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 5.74573999984628e-9,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110786060,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.710363,
+              51.036858
+            ],
+            [
+              13.7154765,
+              51.036858
+            ],
+            [
+              13.7154765,
+              51.04022
+            ],
+            [
+              13.710363,
+              51.04022
+            ],
+            [
+              13.710363,
+              51.036858
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T08:21:55Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 3,
+        "delete": 0,
+        "area": 0.0000171915869999785,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110785141,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7044849,
+              51.04022
+            ],
+            [
+              13.710363,
+              51.04022
+            ],
+            [
+              13.710363,
+              51.0435054
+            ],
+            [
+              13.7044849,
+              51.0435054
+            ],
+            [
+              13.7044849,
+              51.04022
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-06T08:06:48Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 12,
+        "delete": 0,
+        "area": 0.0000193119097400122,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "GEOSN-DOP-RGB",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110765328,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.9579986,
+              49.4358907
+            ],
+            [
+              11.0755599,
+              49.4358907
+            ],
+            [
+              11.0755599,
+              49.4479454
+            ],
+            [
+              10.9579986,
+              49.4479454
+            ],
+            [
+              10.9579986,
+              49.4358907
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Lippmann Richard",
+        "uid": "14059700",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #toilets",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T20:55:28Z",
+        "reviewed_features": [],
+        "create": 3,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00141716620311003,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "toilets",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110764955,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.9575963,
+              49.4417911
+            ],
+            [
+              10.9576526,
+              49.4417911
+            ],
+            [
+              10.9576526,
+              49.4418382
+            ],
+            [
+              10.9575963,
+              49.4418382
+            ],
+            [
+              10.9575963,
+              49.4417911
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Lippmann Richard",
+        "uid": "14059700",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #surveillance",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T20:42:37Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 0,
+        "delete": 0,
+        "area": 2.65172999973374e-9,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "surveillance",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110764735,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.9615713,
+              49.4172352
+            ],
+            [
+              10.9615713,
+              49.4172352
+            ],
+            [
+              10.9615713,
+              49.4172352
+            ],
+            [
+              10.9615713,
+              49.4172352
+            ],
+            [
+              10.9615713,
+              49.4172352
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Lippmann Richard",
+        "uid": "14059700",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #hailhydrant",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T20:35:17Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "hailhydrant",
+          "imagery": "HDM_HOT",
+          "language": "en",
+          "theme-creator": "Erwin Olario"
+        }
+      }
+    },
+    {
+      "id": 110762517,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.6837178,
+              51.0573171
+            ],
+            [
+              13.6843088,
+              51.0573171
+            ],
+            [
+              13.6843088,
+              51.0587762
+            ],
+            [
+              13.6837178,
+              51.0587762
+            ],
+            [
+              13.6837178,
+              51.0573171
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T19:12:15Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 8.62328099998924e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110762394,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T19:08:00Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110762315,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T19:05:51Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110762308,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T19:05:35Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110762005,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.6816389,
+              51.0518165
+            ],
+            [
+              13.683204,
+              51.0518165
+            ],
+            [
+              13.683204,
+              51.0560484
+            ],
+            [
+              13.6816389,
+              51.0560484
+            ],
+            [
+              13.6816389,
+              51.0518165
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T18:55:48Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 3,
+        "delete": 0,
+        "area": 0.00000662334669000326,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110761753,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T18:48:12Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110761714,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T18:46:52Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110761625,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T18:43:41Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110761584,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T18:42:18Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110761579,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T18:42:06Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110761577,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T18:42:00Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110761238,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.6836342,
+              51.0545118
+            ],
+            [
+              13.6873738,
+              51.0545118
+            ],
+            [
+              13.6873738,
+              51.0579899
+            ],
+            [
+              13.6836342,
+              51.0579899
+            ],
+            [
+              13.6836342,
+              51.0545118
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T18:28:41Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 9,
+        "delete": 0,
+        "area": 0.0000130067027600068,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110759123,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7245505,
+              51.0572368
+            ],
+            [
+              3.7245505,
+              51.0572368
+            ],
+            [
+              3.7245505,
+              51.0572368
+            ],
+            [
+              3.7245505,
+              51.0572368
+            ],
+            [
+              3.7245505,
+              51.0572368
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #food",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T17:28:16Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 8,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "food",
+          "imagery": "AGIVFlandersGRB",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110756723,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.6896286,
+              51.0555568
+            ],
+            [
+              13.7232331,
+              51.0555568
+            ],
+            [
+              13.7232331,
+              51.0614117
+            ],
+            [
+              13.6896286,
+              51.0614117
+            ],
+            [
+              13.6896286,
+              51.0555568
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T16:23:00Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.000196750987050088,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110755864,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7435108,
+              51.0309303
+            ],
+            [
+              3.7480826,
+              51.0309303
+            ],
+            [
+              3.7480826,
+              51.0357439
+            ],
+            [
+              3.7435108,
+              51.0357439
+            ],
+            [
+              3.7435108,
+              51.0309303
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T15:59:20Z",
+        "reviewed_features": [],
+        "create": 3,
+        "modify": 8,
+        "delete": 0,
+        "area": 0.0000220068164799928,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110754992,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7446588,
+              51.0304599
+            ],
+            [
+              3.7473035,
+              51.0304599
+            ],
+            [
+              3.7473035,
+              51.0337224
+            ],
+            [
+              3.7446588,
+              51.0337224
+            ],
+            [
+              3.7446588,
+              51.0304599
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T15:39:57Z",
+        "reviewed_features": [],
+        "create": 9,
+        "modify": 19,
+        "delete": 0,
+        "area": 0.00000862833375001486,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110753945,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7425667,
+              51.0331747
+            ],
+            [
+              3.7481296,
+              51.0331747
+            ],
+            [
+              3.7481296,
+              51.0348085
+            ],
+            [
+              3.7425667,
+              51.0348085
+            ],
+            [
+              3.7425667,
+              51.0331747
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T15:16:48Z",
+        "reviewed_features": [],
+        "create": 7,
+        "modify": 13,
+        "delete": 0,
+        "area": 0.00000908866602000282,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110752801,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7446722,
+              51.0341521
+            ],
+            [
+              3.7473866,
+              51.0341521
+            ],
+            [
+              3.7473866,
+              51.0372676
+            ],
+            [
+              3.7446722,
+              51.0372676
+            ],
+            [
+              3.7446722,
+              51.0341521
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T14:49:52Z",
+        "reviewed_features": [],
+        "create": 9,
+        "modify": 16,
+        "delete": 0,
+        "area": 0.0000084567131999992,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110752554,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7377907,
+              51.0501288
+            ],
+            [
+              3.7377907,
+              51.0501288
+            ],
+            [
+              3.7377907,
+              51.0501288
+            ],
+            [
+              3.7377907,
+              51.0501288
+            ],
+            [
+              3.7377907,
+              51.0501288
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T14:44:23Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110752287,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.8507381,
+              52.1688877
+            ],
+            [
+              12.8507381,
+              52.1688877
+            ],
+            [
+              12.8507381,
+              52.1688877
+            ],
+            [
+              12.8507381,
+              52.1688877
+            ],
+            [
+              12.8507381,
+              52.1688877
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "dekoe65",
+        "uid": "13921921",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T14:38:43Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110751439,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7431782,
+              51.0372415
+            ],
+            [
+              3.7464023,
+              51.0372415
+            ],
+            [
+              3.7464023,
+              51.0391209
+            ],
+            [
+              3.7431782,
+              51.0391209
+            ],
+            [
+              3.7431782,
+              51.0372415
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "lebeno",
+        "uid": "1710114",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T14:16:47Z",
+        "reviewed_features": [],
+        "create": 7,
+        "modify": 14,
+        "delete": 0,
+        "area": 0.00000605937354000025,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110750569,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.3803906,
+              50.8044363
+            ],
+            [
+              4.3803906,
+              50.8044363
+            ],
+            [
+              4.3803906,
+              50.8044363
+            ],
+            [
+              4.3803906,
+              50.8044363
+            ],
+            [
+              4.3803906,
+              50.8044363
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "joost schouppe",
+        "uid": "67832",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T13:52:30Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 3,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110748089,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.3807313,
+              50.8044092
+            ],
+            [
+              4.3807313,
+              50.8044092
+            ],
+            [
+              4.3807313,
+              50.8044092
+            ],
+            [
+              4.3807313,
+              50.8044092
+            ],
+            [
+              4.3807313,
+              50.8044092
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "joost schouppe",
+        "uid": "67832",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #aed",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T12:41:33Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "aed",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110743699,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.8656922,
+              51.1467859
+            ],
+            [
+              13.8709344,
+              51.1467859
+            ],
+            [
+              13.8709344,
+              51.1484776
+            ],
+            [
+              13.8656922,
+              51.1484776
+            ],
+            [
+              13.8656922,
+              51.1467859
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T10:35:12Z",
+        "reviewed_features": [],
+        "create": 4,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.00000886822974001026,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110742775,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.0870298,
+              47.2684337
+            ],
+            [
+              6.0870298,
+              47.2684337
+            ],
+            [
+              6.0870298,
+              47.2684337
+            ],
+            [
+              6.0870298,
+              47.2684337
+            ],
+            [
+              6.0870298,
+              47.2684337
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Koen Rijnsent",
+        "uid": "4569696",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T10:07:13Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110742143,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.8656922,
+              51.1471856
+            ],
+            [
+              13.8693764,
+              51.1471856
+            ],
+            [
+              13.8693764,
+              51.148262
+            ],
+            [
+              13.8656922,
+              51.148262
+            ],
+            [
+              13.8656922,
+              51.1471856
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T09:46:31Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.00000396567288000889,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110737915,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              37.9934373,
+              48.629113
+            ],
+            [
+              37.9934373,
+              48.629113
+            ],
+            [
+              37.9934373,
+              48.629113
+            ],
+            [
+              37.9934373,
+              48.629113
+            ],
+            [
+              37.9934373,
+              48.629113
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "skimua",
+        "uid": "200631",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #artwork",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-05T06:59:15Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "artwork",
+          "imagery": "CartoDB.VoyagerNoLabels",
+          "language": "ru",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110730420,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.8171257,
+              41.5804011
+            ],
+            [
+              -4.8171257,
+              41.5804011
+            ],
+            [
+              -4.8171257,
+              41.5804011
+            ],
+            [
+              -4.8171257,
+              41.5804011
+            ],
+            [
+              -4.8171257,
+              41.5804011
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Rober castro",
+        "uid": "13601244",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #hailhydrant",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T20:34:52Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "hailhydrant",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "Erwin Olario"
+        }
+      }
+    },
+    {
+      "id": 110729653,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.5551392,
+              50.7873265
+            ],
+            [
+              5.5551392,
+              50.7873265
+            ],
+            [
+              5.5551392,
+              50.7873265
+            ],
+            [
+              5.5551392,
+              50.7873265
+            ],
+            [
+              5.5551392,
+              50.7873265
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T20:01:43Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 4,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "bookcases",
+          "imagery": "AGIV10cm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110727164,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.5170975,
+              41.6336276
+            ],
+            [
+              -4.5170975,
+              41.6336276
+            ],
+            [
+              -4.5170975,
+              41.6336276
+            ],
+            [
+              -4.5170975,
+              41.6336276
+            ],
+            [
+              -4.5170975,
+              41.6336276
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Ninopiña10",
+        "uid": "11138282",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T18:27:10Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110725856,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.5583292,
+              50.7859898
+            ],
+            [
+              5.5583292,
+              50.7859898
+            ],
+            [
+              5.5583292,
+              50.7859898
+            ],
+            [
+              5.5583292,
+              50.7859898
+            ],
+            [
+              5.5583292,
+              50.7859898
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T17:38:10Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "charging_stations",
+          "imagery": "osm",
+          "language": "nl"
+        }
+      }
+    },
+    {
+      "id": 110725782,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.4011295,
+              50.7860886
+            ],
+            [
+              5.5584142,
+              50.7860886
+            ],
+            [
+              5.5584142,
+              50.8555385
+            ],
+            [
+              4.4011295,
+              50.8555385
+            ],
+            [
+              4.4011295,
+              50.7860886
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T17:35:13Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 6,
+        "delete": 0,
+        "area": 0.0803733066865325,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110723272,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.8764212,
+              51.0556829
+            ],
+            [
+              4.8906168,
+              51.0556829
+            ],
+            [
+              4.8906168,
+              51.0855661
+            ],
+            [
+              4.8764212,
+              51.0855661
+            ],
+            [
+              4.8764212,
+              51.0556829
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Frans_Napaters",
+        "uid": "3574538",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #playgrounds",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T16:18:26Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.000424209953920002,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "playgrounds",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110722942,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6041795,
+              -33.4236709
+            ],
+            [
+              -70.6031601,
+              -33.4236709
+            ],
+            [
+              -70.6031601,
+              -33.4232802
+            ],
+            [
+              -70.6041795,
+              -33.4232802
+            ],
+            [
+              -70.6041795,
+              -33.4236709
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Awo",
+        "uid": "196556",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T16:09:11Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 2,
+        "delete": 0,
+        "area": 3.98279579998516e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "CyclOSM",
+          "language": "en",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110722840,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.9932707,
+              51.1558826
+            ],
+            [
+              5.0017845,
+              51.1558826
+            ],
+            [
+              5.0017845,
+              51.1578304
+            ],
+            [
+              4.9932707,
+              51.1578304
+            ],
+            [
+              4.9932707,
+              51.1558826
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "dentonny",
+        "uid": "4198737",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #aed",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T16:07:07Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.0000165831796400302,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "aed",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110722032,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.8693764,
+              51.1477107
+            ],
+            [
+              13.8752179,
+              51.1477107
+            ],
+            [
+              13.8752179,
+              51.1484825
+            ],
+            [
+              13.8693764,
+              51.1484825
+            ],
+            [
+              13.8693764,
+              51.1477107
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:43:47Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00000450846970001541,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110722003,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.0020165,
+              51.1579367
+            ],
+            [
+              5.0020165,
+              51.1579367
+            ],
+            [
+              5.0020165,
+              51.1579367
+            ],
+            [
+              5.0020165,
+              51.1579367
+            ],
+            [
+              5.0020165,
+              51.1579367
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "dentonny",
+        "uid": "4198737",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #artwork",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:43:08Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "artwork",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110721639,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:34:11Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721634,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:34:03Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721625,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:33:59Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721603,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:33:18Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721579,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:32:38Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721572,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:32:31Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721569,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:32:25Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721447,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:29:27Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721445,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:29:26Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721442,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:29:25Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721429,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:29:00Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721271,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:25:09Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721252,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:24:42Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721241,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:24:24Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721226,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:24:07Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721214,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:23:51Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721190,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:23:22Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721176,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:22:57Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721122,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:21:57Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721117,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:21:52Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721111,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:21:45Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721109,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:21:43Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110721104,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:21:39Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110720968,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.865307,
+              51.1469886
+            ],
+            [
+              13.868294,
+              51.1469886
+            ],
+            [
+              13.868294,
+              51.1480932
+            ],
+            [
+              13.865307,
+              51.1480932
+            ],
+            [
+              13.865307,
+              51.1469886
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:18:07Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00000329944019999479,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110720700,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.8638384,
+              51.1462532
+            ],
+            [
+              13.865307,
+              51.1462532
+            ],
+            [
+              13.865307,
+              51.1469886
+            ],
+            [
+              13.8638384,
+              51.1469886
+            ],
+            [
+              13.8638384,
+              51.1462532
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:10:44Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00000108000844000443,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110720419,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.971914,
+              51.1578304
+            ],
+            [
+              5.0017845,
+              51.1578304
+            ],
+            [
+              5.0017845,
+              51.1702606
+            ],
+            [
+              4.971914,
+              51.1702606
+            ],
+            [
+              4.971914,
+              51.1578304
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "dentonny",
+        "uid": "4198737",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #aed",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T15:03:01Z",
+        "reviewed_features": [],
+        "create": 5,
+        "modify": 19,
+        "delete": 0,
+        "area": 0.00037129628909992,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "aed",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110720183,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.8611662,
+              51.1447523
+            ],
+            [
+              13.8634925,
+              51.1447523
+            ],
+            [
+              13.8634925,
+              51.1459965
+            ],
+            [
+              13.8611662,
+              51.1459965
+            ],
+            [
+              13.8611662,
+              51.1447523
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T14:56:36Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000289438246000498,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "timor.github.io",
+          "path": "mapcomplete/",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "timor"
+        }
+      }
+    },
+    {
+      "id": 110717930,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.7321484,
+              51.0568936
+            ],
+            [
+              3.7321484,
+              51.0568936
+            ],
+            [
+              3.7321484,
+              51.0568936
+            ],
+            [
+              3.7321484,
+              51.0568936
+            ],
+            [
+              3.7321484,
+              51.0568936
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.9.4",
+        "comment": "Adding data with #MapComplete for theme #food",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-09-04T14:02:08Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "food",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
       "id": 110714072,
       "type": "Feature",
       "geometry": {
