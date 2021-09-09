@@ -2,13 +2,13 @@
  * Generates a collection of geojson files based on an overpass query for a given theme
  */
 import {Utils} from "../Utils";
+Utils.runningFromConsole = true
 import {Overpass} from "../Logic/Osm/Overpass";
 import * as fs from "fs";
 import {existsSync, readFileSync, writeFileSync} from "fs";
 import {TagsFilter} from "../Logic/Tags/TagsFilter";
 import {Or} from "../Logic/Tags/Or";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
-import ScriptUtils from "./ScriptUtils";
 import ExtractRelations from "../Logic/Osm/ExtractRelations";
 import * as OsmToGeoJson from "osmtogeojson";
 import MetaTagging from "../Logic/MetaTagging";
@@ -17,8 +17,9 @@ import {UIEventSource} from "../Logic/UIEventSource";
 import {TileRange} from "../Models/TileRange";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import ScriptUtils from "./ScriptUtils";
 
-Utils.runningFromConsole = true
+ScriptUtils.fixUtils()
 
 
 function createOverpassObject(theme: LayoutConfig) {
@@ -52,7 +53,7 @@ function createOverpassObject(theme: LayoutConfig) {
     if (filters.length + extraScripts.length === 0) {
         throw "Nothing to download! The theme doesn't declare anything to download"
     }
-    return new Overpass(new Or(filters), extraScripts, new UIEventSource<string>("https://overpass-api.de/api/interpreter"),
+    return new Overpass(new Or(filters), extraScripts, new UIEventSource<string>("https://overpass.kumi.systems/api/interpreter"), //https://overpass-api.de/api/interpreter"),
         new UIEventSource<number>(60));
 }
 
@@ -112,9 +113,11 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
                     failed++;
                     return ScriptUtils.sleep(60000).then(() => console.log("Waiting is done"))
                 })
-            // Cooldown
-            console.debug("Cooling down 10s")
-            await ScriptUtils.sleep(10000)
+
+            if (x < r.xend || y < r.yend) {
+                console.debug("Cooling down 10s")
+                await ScriptUtils.sleep(10000)
+            }
         }
     }
 
@@ -132,7 +135,7 @@ async function downloadExtraData(theme: LayoutConfig)/* : any[] */ {
         if (source === undefined) {
             continue;
         }
-        if (layer.source.isOsmCacheLayer !== undefined) {
+        if (layer.source.isOsmCacheLayer !== undefined && layer.source.isOsmCacheLayer !== false) {
             // Cached layers are not considered here
             continue;
         }
