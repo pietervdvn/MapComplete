@@ -256,7 +256,7 @@ export interface LayerConfigJson {
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
      *
      */
-    tagRenderings?: (string | TagRenderingConfigJson) [],
+    tagRenderings?: (string | {builtin: string, override: any} | TagRenderingConfigJson) [],
 
 
     /**

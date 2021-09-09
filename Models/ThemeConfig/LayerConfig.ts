@@ -214,7 +214,7 @@ export default class LayerConfig {
          * A string is interpreted as a name to call
          */
         function trs(
-            tagRenderings?: (string | TagRenderingConfigJson)[],
+            tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson)[],
             readOnly = false
         ) {
             if (tagRenderings === undefined) {
@@ -224,7 +224,12 @@ export default class LayerConfig {
             return Utils.NoNull(
                 tagRenderings.map((renderingJson, i) => {
                     if (typeof renderingJson === "string") {
-                        if (renderingJson === "questions") {
+                        renderingJson = {builtin: renderingJson, override: undefined}
+                    }
+
+                    if (renderingJson["builtin"] !== undefined) {
+                        const renderingId = renderingJson["builtin"]
+                        if (renderingId === "questions") {
                             if (readOnly) {
                                 throw `A tagrendering has a question, but asking a question does not make sense here: is it a title icon or a geojson-layer? ${context}. The offending tagrendering is ${JSON.stringify(
                                     renderingJson
@@ -234,26 +239,34 @@ export default class LayerConfig {
                             return new TagRenderingConfig("questions", undefined);
                         }
 
-                        const shared =
-                            SharedTagRenderings.SharedTagRendering.get(renderingJson);
+                        if (renderingJson["override"] !== undefined) {
+                            const sharedJson = SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
+                            return new TagRenderingConfig(
+                                Utils.Merge(renderingJson["override"], sharedJson),
+                                self.source.osmTags,
+                                `${context}.tagrendering[${i}]+override`
+                            );
+                        }
+
+                        const shared = SharedTagRenderings.SharedTagRendering.get(renderingId);
+
                         if (shared !== undefined) {
                             return shared;
+                        }
+                        if (Utils.runningFromConsole) {
+                            return undefined;
                         }
 
                         const keys = Array.from(
                             SharedTagRenderings.SharedTagRendering.keys()
                         );
-
-                        if (Utils.runningFromConsole) {
-                            return undefined;
-                        }
-
-                        throw `Predefined tagRendering ${renderingJson} not found in ${context}.\n    Try one of ${keys.join(
+                        throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(
                             ", "
                         )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
                     }
+
                     return new TagRenderingConfig(
-                        renderingJson,
+                        <TagRenderingConfigJson>renderingJson,
                         self.source.osmTags,
                         `${context}.tagrendering[${i}]`
                     );
