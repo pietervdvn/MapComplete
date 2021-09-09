@@ -105,7 +105,7 @@ export default class ExportPDF {
     }
 
     private cleanup() {
-        //   new FixedUiElement("Screenshot taken!").AttachTo(this.freeDivId)
+        new FixedUiElement("Screenshot taken!").AttachTo(this.freeDivId)
         this._screenhotTaken = true;
     }
 

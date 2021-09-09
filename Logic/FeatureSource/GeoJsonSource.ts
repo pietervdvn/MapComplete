@@ -124,14 +124,18 @@ export default class GeoJsonSource implements FeatureSource {
                 }
 
                 // Yup, this is cheating to just get the bounds here
-                const bounds = State.state.leafletMap.data.getBounds()
+                const bounds = State.state.leafletMap.data?.getBounds()
+                if(bounds === undefined){
+                    // We'll retry later
+                    return undefined
+                }
                 const tileRange = Utils.TileRangeBetween(zoomLevel, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
                 const needed = Utils.MapRange(tileRange, (x, y) => {
                     return url.replace("{x}", "" + x).replace("{y}", "" + y);
                 })
                 return new Set<string>(needed);
             }
-            , [flayer.isDisplayed]);
+            , [flayer.isDisplayed, State.state.leafletMap]);
         neededTiles.stabilized(250).addCallback((needed: Set<string>) => {
             if (needed === undefined) {
                 return;
