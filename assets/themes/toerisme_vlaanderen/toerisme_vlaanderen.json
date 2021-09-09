@@ -36,7 +36,29 @@
     "bench",
     "waste_basket",
     "bike_repair_station",
-    "binocular"
+    "binocular",
+    "observation_tower"
   ],
-  "hideFromOverview": true
+  "hideFromOverview": true,
+  "units": [
+    {
+      "appliesToKey": [
+        "height"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter",
+            "mtr"
+          ],
+          "human": {
+            "nl": " meter",
+            "en": " meter"
+          }
+        }
+      ],
+      "eraseInvalidValues": true
+    }
+  ]
 }
