@@ -38,6 +38,7 @@ import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 import Minimap from "./UI/Base/Minimap";
+import Constants from "./Models/Constants";
 
 export class InitUiElements {
     static InitAll(
@@ -400,7 +401,8 @@ export class InitUiElements {
             state.layoutToUse,
             state.leafletMap,
             state.overpassUrl,
-            state.overpassTimeout
+            state.overpassTimeout,
+            Constants.useOsmApiAt
         );
         State.state.layerUpdater = updater;
 

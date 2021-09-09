@@ -1,16 +1,34 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import {OsmObject} from "../Osm/OsmObject";
-import State from "../../State";
 import {Utils} from "../../Utils";
+import Loc from "../../Models/Loc";
+import FilteredLayer from "../../Models/FilteredLayer";
+import Constants from "../../Models/Constants";
 
 
 export default class OsmApiFeatureSource implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name: string = "OsmApiFeatureSource";
     private readonly loadedTiles: Set<string> = new Set<string>();
+    private readonly _state: {
+        leafletMap: UIEventSource<any>;
+        locationControl: UIEventSource<Loc>, filteredLayers: UIEventSource<FilteredLayer[]>};
 
-    constructor() {
+    constructor(minZoom = undefined, state: {locationControl: UIEventSource<Loc>, filteredLayers: UIEventSource<FilteredLayer[]>, leafletMap: UIEventSource<any>}) {
+        this._state = state;
+        if(minZoom !== undefined){
+            if(minZoom < 14){
+                throw "MinZoom should be at least 14 or higher, OSM-api won't work otherwise"
+            }
+            const self = this;
+            state.locationControl.addCallbackAndRunD(location => {
+                if(location.zoom > minZoom){
+                    return;
+                }
+                self.loadArea()
+            })
+        }
     }
 
 
@@ -34,21 +52,21 @@ export default class OsmApiFeatureSource implements FeatureSource {
     /**
      * Loads the current inview-area
      */
-    public loadArea(z: number = 16): boolean {
-        const layers = State.state.filteredLayers.data;
+    public loadArea(z: number = 14): boolean {
+        const layers = this._state.filteredLayers.data;
 
         const disabledLayers = layers.filter(layer => layer.layerDef.source.overpassScript !== undefined || layer.layerDef.source.geojsonSource !== undefined)
         if (disabledLayers.length > 0) {
             return false;
         }
-        const loc = State.state.locationControl.data;
-        if (loc.zoom < 16) {
+        const loc = this._state.locationControl.data;
+        if (loc.zoom < Constants.useOsmApiAt) {
             return false;
         }
-        if (State.state.leafletMap.data === undefined) {
+        if (this._state.leafletMap.data === undefined) {
             return false; // Not yet inited
         }
-        const bounds = State.state.leafletMap.data.getBounds()
+        const bounds = this._state.leafletMap.data.getBounds()
         const tileRange = Utils.TileRangeBetween(z, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
         const self = this;
         Utils.MapRange(tileRange, (x, y) => {

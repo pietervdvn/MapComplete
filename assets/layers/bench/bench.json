@@ -605,6 +605,9 @@
         "pt_BR": "Adicionar um novo banco",
         "fi": "Lisää uusi penkki",
         "pl": "Dodaj nową ławkę"
+      },
+      "presiceInput": {
+        "preferredBackground": "photo"
       }
     }
   ]

@@ -398,7 +398,7 @@ export default class State {
 
         new ChangeToElementsActor(this.changes, this.allElements)
 
-        this.osmApiFeatureSource = new OsmApiFeatureSource()
+        this.osmApiFeatureSource = new OsmApiFeatureSource(Constants.useOsmApiAt, this)
 
         new PendingChangesUploader(this.changes, this.selectedElement);
 

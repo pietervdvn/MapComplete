@@ -23,6 +23,7 @@ export default class OverpassFeatureSource implements FeatureSource {
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0);
+    
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
     /**
      * The previous bounds for which the query has been run at the given zoom level
@@ -46,7 +47,8 @@ export default class OverpassFeatureSource implements FeatureSource {
         layoutToUse: UIEventSource<LayoutConfig>,
         leafletMap: UIEventSource<L.Map>,
         interpreterUrl: UIEventSource<string>,
-        timeout: UIEventSource<number>,) {
+        timeout: UIEventSource<number>,
+        maxZoom = undefined) {
         this._location = location;
         this._layoutToUse = layoutToUse;
         this._leafletMap = leafletMap;
@@ -59,7 +61,14 @@ export default class OverpassFeatureSource implements FeatureSource {
                     return false;
                 }
                 let minzoom = Math.min(...layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
-                return location.zoom >= minzoom;
+                if(location.zoom < minzoom){
+                    return false;
+                }
+                if(maxZoom !== undefined && location.zoom > maxZoom){
+                    return false;
+                }
+                
+                return true;
             }, [layoutToUse]
         );
         for (let i = 0; i < 25; i++) {
