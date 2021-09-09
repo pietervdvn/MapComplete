@@ -813,8 +813,8 @@
         },
         "presets": {
             "0": {
-                "title": "Binoculars",
-                "description": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 200px' />"
+                "title": "binoculars",
+                "description": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
             }
         }
     },
@@ -1977,6 +1977,51 @@
             }
         }
     },
+    "observation_tower": {
+        "name": "Observation towers",
+        "title": {
+            "render": "Observation tower",
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            }
+        },
+        "description": "Towers with a panoramic view",
+        "tagRenderings": {
+            "1": {
+                "question": "What is the name of this tower?",
+                "render": "This tower is called <b>{name}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "This tower doesn't have a specific name"
+                    }
+                }
+            },
+            "2": {
+                "question": "What is the height of this tower?",
+                "render": "This tower is {height} high"
+            },
+            "3": {
+                "question": "Who maintains this tower?",
+                "render": "Maintained by <b>{operator}</b>"
+            },
+            "5": {
+                "question": "How much does one have to pay to enter this tower?",
+                "render": "Visiting this tower costs <b>{charge}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "Free to visit"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "observation tower"
+            }
+        }
+    },
     "picnic_table": {
         "name": "Picnic tables",
         "title": {
@@ -2780,6 +2825,31 @@
             "render": "Waste Basket"
         },
         "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+        "tagRenderings": {
+            "0": {
+                "question": "What kind of waste basket is this?",
+                "mappings": {
+                    "0": {
+                        "then": "A waste basket for general waste"
+                    },
+                    "1": {
+                        "then": "A waste basket for general waste"
+                    },
+                    "2": {
+                        "then": "A waste basket for dog excrements"
+                    },
+                    "3": {
+                        "then": "A waste basket for cigarettes"
+                    },
+                    "4": {
+                        "then": "A waste basket for drugs"
+                    },
+                    "5": {
+                        "then": "A waste basket for needles and other sharp objects"
+                    }
+                }
+            }
+        },
         "iconSize": {
             "mappings": {
                 "0": {

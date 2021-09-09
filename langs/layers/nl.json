@@ -809,8 +809,8 @@
         },
         "presets": {
             "0": {
-                "title": "Verrekijker",
-                "description": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 200px' />"
+                "title": "verrekijker",
+                "description": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
             }
         }
     },
@@ -2138,6 +2138,52 @@
             }
         }
     },
+    "observation_tower": {
+        "name": "Uitkijktorens",
+        "title": {
+            "render": "Uitkijktoren",
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            }
+        },
+        "description": "Torens om van het uitzicht te genieten",
+        "tagRenderings": {
+            "1": {
+                "question": "Heeft deze toren een naam?",
+                "render": "Deze toren heet <b>{name}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "Deze toren heeft geen specifieke naam"
+                    }
+                }
+            },
+            "2": {
+                "question": "Hoe hoog is deze toren?",
+                "render": "Deze toren is {height} hoog"
+            },
+            "3": {
+                "question": "Wie onderhoudt deze toren?",
+                "render": "Wordt onderhouden door <b>{operator}</b>"
+            },
+            "5": {
+                "question": "Hoeveel moet men betalen om deze toren te bezoeken?",
+                "render": "Deze toren bezoeken kost <b>{charge}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "Gratis te bezoeken"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Uitkijktoren",
+                "description": "Een publiek toegankelijke uitkijktoren"
+            }
+        }
+    },
     "parking": {
         "name": "parking",
         "title": {
@@ -3114,6 +3160,31 @@
             "render": "Vuilnisbak"
         },
         "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+        "tagRenderings": {
+            "0": {
+                "question": "Wat voor soort vuilnisbak is dit?",
+                "mappings": {
+                    "0": {
+                        "then": "Een vuilnisbak voor zwerfvuil"
+                    },
+                    "1": {
+                        "then": "Een vuilnisbak voor zwerfvuil"
+                    },
+                    "2": {
+                        "then": "Een vuilnisbak specifiek voor hondenuitwerpselen"
+                    },
+                    "3": {
+                        "then": "Een vuilnisbak voor sigarettenpeuken"
+                    },
+                    "4": {
+                        "then": "Een vuilnisbak voor (vervallen) medicatie en drugs"
+                    },
+                    "5": {
+                        "then": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
+                    }
+                }
+            }
+        },
         "iconSize": {
             "mappings": {
                 "0": {

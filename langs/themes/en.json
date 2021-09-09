@@ -1139,6 +1139,20 @@
         "shortDescription": "This map shows the nature reserves of Natuurpunt",
         "description": "On this map you can find all the nature reserves that Natuurpunt offers "
     },
+    "observation_towers": {
+        "title": "Observation towers",
+        "shortDescription": "Publicly accessible towers to enjoy the view",
+        "description": "Publicly accessible towers to enjoy the view",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
+    },
     "openwindpowermap": {
         "title": "OpenWindPowerMap",
         "description": "A map for showing and editing wind turbines.",
@@ -1307,6 +1321,17 @@
         "title": "Surveillance under Surveillance",
         "shortDescription": "Surveillance cameras and other means of surveillance",
         "description": "On this open map, you can find surveillance cameras."
+    },
+    "toerisme_vlaanderen": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
     },
     "toilets": {
         "title": "Open Toilet Map",

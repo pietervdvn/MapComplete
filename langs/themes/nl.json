@@ -848,6 +848,20 @@
         "shortDescription": "Deze kaart toont de natuurgebieden van Natuurpunt",
         "description": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt"
     },
+    "observation_towers": {
+        "title": "Uitkijktorens",
+        "shortDescription": "Publieke uitkijktorens om van het panorama te genieten",
+        "description": "Publieke uitkijktorens om van het panorama te genieten",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
+    },
     "openwindpowermap": {
         "layers": {
             "0": {
@@ -1049,7 +1063,16 @@
     "toerisme_vlaanderen": {
         "title": "Toeristisch relevante info",
         "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
-        "description": "Op deze kaart kan je info zien voor toeristen en zelf aanpasingen maken, zichtbaar voor iedereen"
+        "description": "Op deze kaart kan je info zien voor toeristen en zelf aanpasingen maken, zichtbaar voor iedereen",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
     },
     "toilets": {
         "title": "Open Toilettenkaart",
