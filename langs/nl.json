@@ -16,13 +16,13 @@
         "isDeleted": "Verwijderd"
     },
     "centerMessage": {
-        "loadingData": "Data wordt geladen...",
+        "loadingData": "Data wordt geladen…",
         "zoomIn": "Zoom in om de data te zien en te bewerken",
         "ready": "Klaar!",
-        "retrying": "Data inladen mislukt - wordt opnieuw geprobeerd over {count} seconden"
+        "retrying": "Data inladen mislukt. Opnieuw proberen over {count} seconden…"
     },
     "index": {
-        "#": "These texts are shown above the theme buttons when no theme is loaded",
+        "#": "Deze teksten worden getoond boven de themaknoppen als er geen thema is geladen",
         "title": "Welkom bij MapComplete",
         "intro": "MapComplete is een OpenStreetMap applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
         "pickTheme": "Kies hieronder een thema om te beginnen."
@@ -33,9 +33,9 @@
         "loginToStart": "Meld je aan om deze vraag te beantwoorden",
         "search": {
             "search": "Zoek naar een locatie",
-            "searching": "Aan het zoeken...",
-            "nothing": "Niet gevonden...",
-            "error": "Niet gelukt..."
+            "searching": "Aan het zoeken…",
+            "nothing": "Niets gevonden…",
+            "error": "Iets ging mis…"
         },
         "returnToTheMap": "Naar de kaart",
         "save": "Opslaan",
@@ -83,8 +83,8 @@
         },
         "sharescreen": {
             "intro": "<h3>Deel deze kaart</h3> Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
-            "addToHomeScreen": "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel",
-            "embedIntro": "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller",
+            "addToHomeScreen": "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website gemakkelijk aan het thuisscherm van je smartphone toevoegen voor een native feel. Klik op de 'voeg toe aan thuis-scherm' knop in de URL-balk om dit te doen.",
+            "embedIntro": "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller.",
             "copiedToClipboard": "Link gekopieerd naar klembord",
             "thanksForSharing": "Bedankt om te delen!",
             "editThisTheme": "Pas dit thema aan",
@@ -138,7 +138,7 @@
             "sunday": "Zondag"
         },
         "opening_hours": {
-            "error_loading": "Sorry, deze openingsuren kunnen niet getoond worden",
+            "error_loading": "Fout: kon deze openingstijden niet weergeven.",
             "open_during_ph": "Op een feestdag is deze zaak",
             "opensAt": "vanaf",
             "openTill": "tot",
@@ -157,15 +157,15 @@
         "title_singular": "Eén beoordeling",
         "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
         "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf!",
-        "write_a_comment": "Schrijf een beoordeling...",
+        "write_a_comment": "Schrijf een beoordeling…",
         "no_rating": "Geen score bekend",
         "posting_as": "Ingelogd als",
         "i_am_affiliated": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
         "affiliated_reviewer_warning": "(Review door betrokkene)",
-        "saving_review": "Opslaan...",
+        "saving_review": "Opslaan…",
         "saved": "<span class='thanks'>Bedankt om je beoordeling te delen!</span>",
         "tos": "Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>",
-        "attribution": "De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a>. ",
+        "attribution": "De beoordelingen worden voorzien door <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> en zijn beschikbaar onder de<a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0-licentie</a>.",
         "plz_login": "Meld je aan om een beoordeling te geven"
     },
     "favourite": {
