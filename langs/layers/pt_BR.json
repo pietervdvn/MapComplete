@@ -537,5 +537,11 @@
                 }
             }
         }
+    },
+    "ghost_bike": {
+        "title": {
+            "render": "Bicicleta fantasma"
+        },
+        "name": "Bicicleta fantasma"
     }
 }
