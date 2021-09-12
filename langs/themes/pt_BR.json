@@ -170,5 +170,8 @@
                 }
             }
         }
+    },
+    "ghostbikes": {
+        "title": "Bicicleta fantasma"
     }
 }
