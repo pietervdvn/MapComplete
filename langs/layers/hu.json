@@ -198,5 +198,11 @@
                 }
             }
         }
+    },
+    "ghost_bike": {
+        "title": {
+            "render": "Emlékkerékpár"
+        },
+        "name": "Emlékkerékpár"
     }
 }
