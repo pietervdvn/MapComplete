@@ -129,10 +129,12 @@
     {
       "#": "capacity",
       "render": {
-        "en": "{capacity} vehicles can be charged here at the same time"
+        "en": "{capacity} vehicles can be charged here at the same time",
+        "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden"
       },
       "question": {
-        "en": "How much vehicles can be charged here at the same time?"
+        "en": "How much vehicles can be charged here at the same time?",
+        "nl": "Hoeveel voertuigen kunnen hier opgeladen worden?"
       },
       "freeform": {
         "key": "capacity",
@@ -276,6 +278,58 @@
           }
         }
       ]
+    },
+    {
+      "#": "fee/charge",
+      "question": {
+        "en": "How much does one have to pay to use this charging station?",
+        "nl": "Hoeveel kost het gebruik van dit oplaadpunt?"
+      },
+      "freeform": {
+        "key": "charge",
+        "addExtraTags": [
+          "fee=yes"
+        ]
+      },
+      "render": {
+        "en": "Using this charging station costs <b>{charge}</b>",
+        "nl": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "fee=no",
+              "charge="
+            ]
+          },
+          "then": {
+            "nl": "Gratis te gebruiken",
+            "en": "Free to use"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "payment-options",
+      "override": {
+        "condition": {
+          "or": [
+            "fee=yes",
+            "charge~*"
+          ]
+        },
+        "mappings+": [
+          {
+            "if": "payment:app=yes",
+            "ifnot": "payment:app=no",
+            "then": {
+              "en": "Payment is done using a dedicated app",
+              "nl": "Betalen via een app van het netwerk"
+            }
+          }
+        ]
+      }
     },
     {
       "#": "Network",
@@ -518,6 +572,9 @@
       ],
       "title": {
         "en": "Charging station"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
       }
     }
   ],
