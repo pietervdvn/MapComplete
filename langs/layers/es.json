@@ -112,5 +112,11 @@
                 "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
             }
         }
+    },
+    "ghost_bike": {
+        "title": {
+            "render": "Bicicleta blanca"
+        },
+        "name": "Bicicleta blanca"
     }
 }
