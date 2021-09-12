@@ -1,5 +1,5 @@
 import BaseUIElement from "../BaseUIElement";
-import Translations from "../i18n/Translations";
+import {FixedUiElement} from "./FixedUiElement";
 
 export default class Title extends BaseUIElement {
     private readonly _embedded: BaseUIElement;
@@ -7,7 +7,11 @@ export default class Title extends BaseUIElement {
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()
-        this._embedded = Translations.W(embedded);
+        if(typeof embedded === "string"){
+        this._embedded = new FixedUiElement(embedded)
+        }else{
+            this._embedded = embedded
+        }
         this._level = level;
     }
 
