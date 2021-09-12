@@ -55,9 +55,8 @@ export default class TagRenderingQuestion extends Combine {
         const inputElement: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
 
         if (inputElement === undefined) {
-            console.trace("MultiAnswer failed", configuration)
-            const inputElement0: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
-
+            console.error("MultiAnswer failed - probably not a single option was possible", configuration)
+            throw "MultiAnswer failed - probably not a single option was possible"
         }
         const save = () => {
             const selection = inputElement.GetValue().data;
