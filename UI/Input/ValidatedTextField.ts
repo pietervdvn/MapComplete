@@ -15,6 +15,7 @@ import BaseUIElement from "../BaseUIElement";
 import LengthInput from "./LengthInput";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {Unit} from "../../Models/Unit";
+import {FixedInputElement} from "./FixedInputElement";
 
 interface TextFieldDef {
     name: string,
@@ -197,14 +198,14 @@ export default class ValidatedTextField {
         ValidatedTextField.tp(
             "float",
             "A decimal",
-            (str) => !isNaN(Number(str)),
+            (str) => !isNaN(Number(str)) && !str.endsWith(".") && !str.endsWith(","),
             str => "" + Number(str),
             undefined,
             "decimal"),
         ValidatedTextField.tp(
             "pfloat",
             "A positive decimal (incl zero)",
-            (str) => !isNaN(Number(str)) && Number(str) >= 0,
+            (str) => !isNaN(Number(str)) && Number(str) >= 0 && !str.endsWith(".") && !str.endsWith(","),
             str => "" + Number(str),
             undefined,
             "decimal"),
@@ -323,10 +324,29 @@ export default class ValidatedTextField {
         } else {
             isValid = isValidTp;
         }
-        options.isValid = isValid;
+
+        if (options.unit !== undefined && isValid !== undefined) {
+            // Reformatting is handled by the unit in this case
+            options.isValid = str => {
+                const denom = options.unit.findDenomination(str);
+                if (denom === undefined) {
+                    return false;
+                }
+                const stripped = denom[0]
+                console.log("Is valid? ", str, "stripped: ", stripped, "isValid:", isValid(stripped))
+                return isValid(stripped)
+            }
+        } else {
+            options.isValid = isValid;
+
+        }
+
+
         options.inputMode = tp.inputmode;
+
+
         let input: InputElement<string> = new TextField(options);
-        if (tp.reformat) {
+        if (tp.reformat && options.unit === undefined) {
             input.GetValue().addCallbackAndRun(str => {
                 if (!options.isValid(str, options.country)) {
                     return;
@@ -341,32 +361,42 @@ export default class ValidatedTextField {
             // This implies:
             // We have to create a dropdown with applicable denominations, and fuse those values
             const unit = options.unit
-            const unitDropDown = new DropDown("",
-                unit.denominations.map(denom => {
-                    return {
-                        shown: denom.human,
-                        value: denom
-                    }
-                })
-            )
+
+            const unitDropDown =
+                unit.denominations.length === 1 ?
+                    new FixedInputElement(unit.denominations[0].human, unit.denominations[0])
+                    : new DropDown("",
+                        unit.denominations.map(denom => {
+                            return {
+                                shown: denom.human,
+                                value: denom
+                            }
+                        })
+                    )
             unitDropDown.GetValue().setData(unit.defaultDenom)
             unitDropDown.SetClass("w-min")
-
+            
+            const fixedDenom =  unit.denominations.length === 1 ? unit.denominations[0] : undefined
             input = new CombinedInputElement(
                 input,
                 unitDropDown,
                 // combine the value from the textfield and the dropdown into the resulting value that should go into OSM
-                (text, denom) => denom?.canonicalValue(text, true) ?? undefined,
+                (text, denom) => {
+                    if(denom === undefined){
+                        return text
+                    }
+                    return denom?.canonicalValue(text, true) 
+                },
                 (valueWithDenom: string) => {
                     // Take the value from OSM and feed it into the textfield and the dropdown
                     const withDenom = unit.findDenomination(valueWithDenom);
                     if (withDenom === undefined) {
-                        // Not a valid value at all - we give it undefined and leave the details up to the other elements
-                        return [undefined, undefined]
+                        // Not a valid value at all - we give it undefined and leave the details up to the other elements (but we keep the previous denomination)
+                        return [undefined, fixedDenom]
                     }
                     const [strippedText, denom] = withDenom
                     if (strippedText === undefined) {
-                        return [undefined, undefined]
+                        return [undefined, fixedDenom]
                     }
                     return [strippedText, denom]
                 }
