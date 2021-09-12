@@ -103,5 +103,11 @@
                 }
             }
         }
+    },
+    "ghost_bike": {
+        "title": {
+            "render": "Spøkelsessykler"
+        },
+        "name": "Spøkelsessykler"
     }
 }
