@@ -6,5 +6,8 @@
     "personal": {
         "title": "Tema personalizado",
         "description": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas"
+    },
+    "ghostbikes": {
+        "title": "Bicicleta pantasma"
     }
 }
