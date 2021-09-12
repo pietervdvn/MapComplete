@@ -1,11 +1,11 @@
 import * as fs from "fs";
 import {lstatSync, readdirSync, readFileSync} from "fs";
 import {Utils} from "../Utils";
-Utils.runningFromConsole = true
 import * as https from "https";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 
+Utils.runningFromConsole = true
 
 
 export default class ScriptUtils {
@@ -144,5 +144,12 @@ export default class ScriptUtils {
             });
     }
 
+
+    public static TagInfoHistogram(key: string): Promise<{
+        data: { count: number, value: string, fraction: number }[]
+    }> {
+        const url = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&filter=all&lang=en&sortname=count&sortorder=desc&page=1&rp=17&qtype=value`
+        return ScriptUtils.DownloadJSON(url)
+    }
 
 }
