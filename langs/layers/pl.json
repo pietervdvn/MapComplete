@@ -194,5 +194,11 @@
                 "title": "Stacja naprawy rowerów i pompka"
             }
         }
+    },
+    "ghost_bike": {
+        "title": {
+            "render": "Duch roweru"
+        },
+        "name": "Duch roweru"
     }
 }
