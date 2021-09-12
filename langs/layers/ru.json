@@ -602,7 +602,11 @@
             "5": {
                 "render": "Установлен {start_date}"
             }
-        }
+        },
+        "title": {
+            "render": "Велосипед Ghost"
+        },
+        "name": "Велосипед Ghost"
     },
     "information_board": {
         "name": "Информационные щиты",
