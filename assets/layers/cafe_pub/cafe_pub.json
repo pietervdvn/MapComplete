@@ -39,7 +39,53 @@
       }
     ]
   },
-  "presets": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=pub"
+      ],
+      "title": {
+        "en": "pub",
+        "nl": "bruin cafe of kroeg"
+      },
+      "description": {
+        "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    },
+    {
+      "tags": [
+        "amenity=bar"
+      ],
+      "title": {
+        "en": "bar",
+        "nl": "bar"
+      },
+      "description": {
+        "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    },
+    {
+      "tags": [
+        "amenity=cafe"
+      ],
+      "title": {
+        "en": "cafe",
+        "nl": "cafe"
+      },
+      "description": {
+        "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    }
+  ],
   "title": {
     "render": {
       "nl": "Café"
