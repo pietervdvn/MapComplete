@@ -1,5 +1,5 @@
 import {Translation} from "../UI/i18n/Translation";
-import UnitConfigJson from "./ThemeConfig/Json/UnitConfigJson";
+import {ApplicableUnitJson} from "./ThemeConfig/Json/UnitConfigJson";
 import Translations from "../UI/i18n/Translations";
 
 export class Denomination {
@@ -9,7 +9,7 @@ export class Denomination {
     public readonly alternativeDenominations: string [];
     private readonly _human: Translation;
 
-    constructor(json: UnitConfigJson, context: string) {
+    constructor(json: ApplicableUnitJson, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`
         this.canonical = json.canonicalDenomination.trim()
         if (this.canonical === undefined) {

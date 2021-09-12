@@ -154,5 +154,26 @@
         "tower:type=observation"
       ]
     }
-  }
+  },
+  "units": [
+    {
+      "appliesToKey": [
+        "height"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter",
+            "mtr"
+          ],
+          "human": {
+            "nl": " meter",
+            "en": " meter"
+          }
+        }
+      ],
+      "eraseInvalidValues": true
+    }
+  ]
 }

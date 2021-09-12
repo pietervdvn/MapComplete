@@ -41,7 +41,7 @@ for (const layerConfigJson of themeConfigJson.layers) {
         layerConfigJson["source"] = {osmTags: tags}
     }
     // @ts-ignore
-    const layerConfig = new LayerConfig(layerConfigJson, AllKnownLayers.sharedUnits, "fix theme", true)
+    const layerConfig = new LayerConfig(layerConfigJson, "fix theme", true)
     const images: string[] = Array.from(layerConfig.ExtractImages())
     const remoteImages = images.filter(img => img.startsWith("http"))
 

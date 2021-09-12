@@ -57,16 +57,16 @@ export default class LayerConfig {
 
     constructor(
         json: LayerConfigJson,
-        units?: Unit[],
         context?: string,
         official: boolean = true
     ) {
-        this.units = units ?? [];
+
         context = context + "." + json.id;
         const self = this;
         this.id = json.id;
         this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, context + ".name");
+        this.units =   (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
 
         if (json.description !== undefined) {
             if (Object.keys(json.description).length === 0) {

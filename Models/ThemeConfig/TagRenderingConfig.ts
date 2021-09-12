@@ -67,7 +67,7 @@ export default class TagRenderingConfig {
         }
         if (json.freeform) {
 
-            if(json.freeform.addExtraTags !== undefined && json.freeform.addExtraTags.length === undefined){
+            if(json.freeform.addExtraTags !== undefined && json.freeform.addExtraTags.map === undefined){
                 throw `Freeform.addExtraTags should be a list of strings - not a single string (at ${context})`
             }
             this.freeform = {

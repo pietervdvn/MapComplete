@@ -1,6 +1,24 @@
 export default interface UnitConfigJson {
 
     /**
+     * Every key from this list will be normalized
+     */
+    appliesToKey: string[],
+    /**
+     * If set, invalid values will be erased in the MC application (but not in OSM of course!)
+     * Be careful with setting this
+     */
+    eraseInvalidValues?: boolean;
+    /**
+     * The possible denominations
+     */
+    applicableUnits:ApplicableUnitJson[]
+
+}
+
+export interface ApplicableUnitJson
+{
+    /**
      * The canonical value which will be added to the text.
      * e.g. "m" for meters
      * If the user inputs '42', the canonical value will be added and it'll become '42m'
@@ -32,5 +50,4 @@ export default interface UnitConfigJson {
      * If none is set, the first unit will be considered the default interpretation of a value without a unit
      */
     default?: boolean
-
 }

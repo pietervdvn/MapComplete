@@ -39,26 +39,5 @@
     "binocular",
     "observation_tower"
   ],
-  "hideFromOverview": true,
-  "units": [
-    {
-      "appliesToKey": [
-        "height"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter",
-            "mtr"
-          ],
-          "human": {
-            "nl": " meter",
-            "en": " meter"
-          }
-        }
-      ],
-      "eraseInvalidValues": true
-    }
-  ]
+  "hideFromOverview": true
 }
