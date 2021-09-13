@@ -448,18 +448,6 @@
                 }
             }
         },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    },
-                    "1": {
-                        "human": " voet"
-                    }
-                }
-            }
-        },
         "roamingRenderings": {
             "0": {
                 "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
@@ -556,6 +544,20 @@
                     },
                     "2": {
                         "then": "Er zijn hier {climbing:speed} snelklimmuren"
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " meter"
+                        },
+                        "1": {
+                            "human": " voet"
+                        }
                     }
                 }
             }
@@ -851,16 +853,7 @@
     "observation_towers": {
         "title": "Uitkijktorens",
         "shortDescription": "Publieke uitkijktorens om van het panorama te genieten",
-        "description": "Publieke uitkijktorens om van het panorama te genieten",
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    }
-                }
-            }
-        }
+        "description": "Publieke uitkijktorens om van het panorama te genieten"
     },
     "openwindpowermap": {
         "layers": {
@@ -873,30 +866,30 @@
                     "0": {
                         "title": "windturbine"
                     }
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
+                },
+                "units": {
                     "0": {
-                        "human": " megawatt"
+                        "applicableUnits": {
+                            "0": {
+                                "human": " megawatt"
+                            },
+                            "1": {
+                                "human": " kilowatt"
+                            },
+                            "2": {
+                                "human": " watt"
+                            },
+                            "3": {
+                                "human": " gigawatt"
+                            }
+                        }
                     },
                     "1": {
-                        "human": " kilowatt"
-                    },
-                    "2": {
-                        "human": " watt"
-                    },
-                    "3": {
-                        "human": " gigawatt"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
+                        "applicableUnits": {
+                            "0": {
+                                "human": " meter"
+                            }
+                        }
                     }
                 }
             }
@@ -1063,16 +1056,7 @@
     "toerisme_vlaanderen": {
         "title": "Toeristisch relevante info",
         "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
-        "description": "Op deze kaart kan je info zien voor toeristen en zelf aanpasingen maken, zichtbaar voor iedereen",
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    }
-                }
-            }
-        }
+        "description": "Op deze kaart kan je info zien voor toeristen en zelf aanpasingen maken, zichtbaar voor iedereen"
     },
     "toilets": {
         "title": "Open Toilettenkaart",

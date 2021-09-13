@@ -532,18 +532,6 @@
                 }
             }
         },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    },
-                    "1": {
-                        "human": " feet"
-                    }
-                }
-            }
-        },
         "roamingRenderings": {
             "0": {
                 "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
@@ -663,6 +651,20 @@
                     },
                     "2": {
                         "then": "There are {climbing:speed} speed climbing walls"
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " meter"
+                        },
+                        "1": {
+                            "human": " feet"
+                        }
                     }
                 }
             }
@@ -1142,16 +1144,7 @@
     "observation_towers": {
         "title": "Observation towers",
         "shortDescription": "Publicly accessible towers to enjoy the view",
-        "description": "Publicly accessible towers to enjoy the view",
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    }
-                }
-            }
-        }
+        "description": "Publicly accessible towers to enjoy the view"
     },
     "openwindpowermap": {
         "title": "OpenWindPowerMap",
@@ -1193,30 +1186,30 @@
                     "0": {
                         "title": "wind turbine"
                     }
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
+                },
+                "units": {
                     "0": {
-                        "human": " megawatts"
+                        "applicableUnits": {
+                            "0": {
+                                "human": " megawatts"
+                            },
+                            "1": {
+                                "human": " kilowatts"
+                            },
+                            "2": {
+                                "human": " watts"
+                            },
+                            "3": {
+                                "human": " gigawatts"
+                            }
+                        }
                     },
                     "1": {
-                        "human": " kilowatts"
-                    },
-                    "2": {
-                        "human": " watts"
-                    },
-                    "3": {
-                        "human": " gigawatts"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
+                        "applicableUnits": {
+                            "0": {
+                                "human": " meter"
+                            }
+                        }
                     }
                 }
             }
@@ -1321,17 +1314,6 @@
         "title": "Surveillance under Surveillance",
         "shortDescription": "Surveillance cameras and other means of surveillance",
         "description": "On this open map, you can find surveillance cameras."
-    },
-    "toerisme_vlaanderen": {
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    }
-                }
-            }
-        }
     },
     "toilets": {
         "title": "Open Toilet Map",

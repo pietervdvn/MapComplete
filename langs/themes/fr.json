@@ -519,18 +519,6 @@
                 }
             }
         },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " mètres"
-                    },
-                    "1": {
-                        "human": " pieds"
-                    }
-                }
-            }
-        },
         "roamingRenderings": {
             "0": {
                 "question": "Existe-t’il un site avec plus d’informations (ex : topographie) ?"
@@ -608,6 +596,20 @@
                     },
                     "2": {
                         "then": "{climbing:toprope} voies sont équipées de moulinettes"
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " mètres"
+                        },
+                        "1": {
+                            "human": " pieds"
+                        }
                     }
                 }
             }
@@ -970,30 +972,30 @@
                     "0": {
                         "title": "Éolienne"
                     }
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
+                },
+                "units": {
                     "0": {
-                        "human": " megawatts"
+                        "applicableUnits": {
+                            "0": {
+                                "human": " megawatts"
+                            },
+                            "1": {
+                                "human": " kilowatts"
+                            },
+                            "2": {
+                                "human": " watts"
+                            },
+                            "3": {
+                                "human": " gigawatts"
+                            }
+                        }
                     },
                     "1": {
-                        "human": " kilowatts"
-                    },
-                    "2": {
-                        "human": " watts"
-                    },
-                    "3": {
-                        "human": " gigawatts"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " mètres"
+                        "applicableUnits": {
+                            "0": {
+                                "human": " mètres"
+                            }
+                        }
                     }
                 }
             }

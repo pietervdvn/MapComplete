@@ -394,10 +394,10 @@
         },
         "description": "充電站",
         "tagRenderings": {
-            "14": {
+            "41": {
                 "question": "何時是充電站開放使用的時間？"
             },
-            "15": {
+            "42": {
                 "render": "{network}",
                 "question": "充電站所屬的網路是？"
             }

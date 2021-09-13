@@ -831,6 +831,17 @@
     },
     "cafe_pub": {
         "name": "Cafés and pubs",
+        "presets": {
+            "0": {
+                "title": "pub"
+            },
+            "1": {
+                "title": "bar"
+            },
+            "2": {
+                "title": "cafe"
+            }
+        },
         "title": {
             "mappings": {
                 "0": {
@@ -889,36 +900,404 @@
                 "question": "How much vehicles can be charged here at the same time?"
             },
             "4": {
-                "question": "Which charging stations are available here?"
+                "question": "Which charging stations are available here?",
+                "mappings": {
+                    "0": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)"
+                    },
+                    "1": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)"
+                    },
+                    "2": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)"
+                    },
+                    "3": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)"
+                    },
+                    "4": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)"
+                    },
+                    "10": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)"
+                    },
+                    "11": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)"
+                    },
+                    "12": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>"
+                    },
+                    "13": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>"
+                    },
+                    "14": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)"
+                    },
+                    "15": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)"
+                    },
+                    "16": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)"
+                    },
+                    "17": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)"
+                    }
+                }
             },
             "5": {
-                "question": "How much plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> are available here?"
+                "question": "How much plugs of type <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> are available here?",
+                "render": "There are <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here"
             },
             "6": {
-                "question": "How much plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> are available here?"
+                "question": "What voltage do the plugs with <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
+                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs {socket:schuko:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs 230 volt"
+                    }
+                }
             },
             "7": {
-                "question": "How much plugs of type <b>Chademo</b> <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?"
+                "question": "What current do the plugs with <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
+                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most {socket:schuko:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most 16 A"
+                    }
+                }
             },
             "8": {
-                "question": "How much plugs of type <b>Type 1 with cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?"
+                "question": "What power output does a single plug of type <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
+                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most {socket:schuko:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most 3.6 kw"
+                    }
+                }
             },
             "9": {
-                "question": "How much plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?"
+                "question": "How much plugs of type <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> are available here?",
+                "render": "There are <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here"
             },
             "10": {
-                "question": "How much plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> are available here?"
+                "question": "What voltage do the plugs with <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
+                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs {socket:typee:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs 230 volt"
+                    }
+                }
             },
             "11": {
-                "question": "How much plugs of type <b>Tesla Supercharger</b> <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?"
+                "question": "What current do the plugs with <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
+                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most {socket:typee:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 16 A"
+                    }
+                }
             },
             "12": {
-                "question": "How much plugs of type <b>Type 2</b> (mennekes) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> are available here?"
+                "question": "What power output does a single plug of type <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
+                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most {socket:typee:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 3 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 22 kw"
+                    }
+                }
             },
             "13": {
-                "question": "How much plugs of type <b>Type 2 CCS</b> (mennekes) <img style='width:1rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?"
+                "question": "How much plugs of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?",
+                "render": "There are <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> plugs of type <b>Chademo</b> available here"
             },
             "14": {
+                "question": "What voltage do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
+                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs {socket:chademo:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs 500 volt"
+                    }
+                }
+            },
+            "15": {
+                "question": "What current do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
+                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most {socket:chademo:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most 120 A"
+                    }
+                }
+            },
+            "16": {
+                "question": "What power output does a single plug of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
+                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most {socket:chademo:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most 50 kw"
+                    }
+                }
+            },
+            "17": {
+                "question": "How much plugs of type <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?",
+                "render": "There are <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 with cable</b> (J1772) available here"
+            },
+            "18": {
+                "question": "What voltage do the plugs with <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs {socket:type1_cable:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 200 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 240 volt"
+                    }
+                }
+            },
+            "19": {
+                "question": "What current do the plugs with <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1_cable:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 32 A"
+                    }
+                }
+            },
+            "20": {
+                "question": "What power output does a single plug of type <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1_cable:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 3.7 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7 kw"
+                    }
+                }
+            },
+            "21": {
+                "question": "How much plugs of type <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?",
+                "render": "There are <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here"
+            },
+            "22": {
+                "question": "What voltage do the plugs with <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs {socket:type1:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 200 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 240 volt"
+                    }
+                }
+            },
+            "23": {
+                "question": "What current do the plugs with <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 32 A"
+                    }
+                }
+            },
+            "24": {
+                "question": "What power output does a single plug of type <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 3.7 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 6.6 kw"
+                    },
+                    "2": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7 kw"
+                    },
+                    "3": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7.2 kw"
+                    }
+                }
+            },
+            "25": {
+                "question": "How much plugs of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> are available here?",
+                "render": "There are <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here"
+            },
+            "26": {
+                "question": "What voltage do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
+                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs {socket:type1_combo:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs 400 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs 1000 volt"
+                    }
+                }
+            },
+            "27": {
+                "question": "What current do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
+                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most {socket:type1_combo:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 50 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 125 A"
+                    }
+                }
+            },
+            "28": {
+                "question": "What power output does a single plug of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
+                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most {socket:type1_combo:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 50 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 62.5 kw"
+                    },
+                    "2": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 150 kw"
+                    },
+                    "3": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 350 kw"
+                    }
+                }
+            },
+            "29": {
+                "question": "How much plugs of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?",
+                "render": "There are <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> plugs of type <b>Tesla Supercharger</b> available here"
+            },
+            "30": {
+                "question": "What voltage do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs {socket:tesla_supercharger:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs 480 volt"
+                    }
+                }
+            },
+            "31": {
+                "question": "What current do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_supercharger:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 125 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 350 A"
+                    }
+                }
+            },
+            "32": {
+                "question": "What power output does a single plug of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_supercharger:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 120 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 150 kw"
+                    },
+                    "2": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 250 kw"
+                    }
+                }
+            },
+            "33": {
+                "question": "How much plugs of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> are available here?",
+                "render": "There are <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> plugs of type <b>Type 2</b> (mennekes) available here"
+            },
+            "34": {
+                "question": "What voltage do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
+                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs {socket:type2:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs 230 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs 400 volt"
+                    }
+                }
+            },
+            "35": {
+                "question": "What current do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
+                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most {socket:type2:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 16 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 32 A"
+                    }
+                }
+            },
+            "36": {
+                "question": "What power output does a single plug of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
+                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most {socket:type2:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 11 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 22 kw"
+                    }
+                }
+            },
+            "37": {
+                "question": "How much plugs of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?",
+                "render": "There are <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> plugs of type <b>Type 2 CCS</b> (mennekes) available here"
+            },
+            "38": {
+                "question": "What voltage do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs {socket:type2_combo:voltage} volt",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 500 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 920 volt"
+                    }
+                }
+            },
+            "39": {
+                "question": "What current do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:current}A",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 125 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 350 A"
+                    }
+                }
+            },
+            "40": {
+                "question": "What power output does a single plug of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:output}",
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 50 kw"
+                    }
+                }
+            },
+            "41": {
                 "question": "What kind of authentication is available at the charging station?",
                 "mappings": {
                     "0": {
@@ -947,11 +1326,11 @@
                     }
                 }
             },
-            "15": {
+            "42": {
                 "render": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
                 "question": "What's the phone number for authentication call or SMS?"
             },
-            "16": {
+            "43": {
                 "question": "When is this charging station opened?",
                 "mappings": {
                     "0": {
@@ -959,7 +1338,34 @@
                     }
                 }
             },
-            "17": {
+            "44": {
+                "question": "How much does one have to pay to use this charging station?",
+                "render": "Using this charging station costs <b>{charge}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "Free to use"
+                    }
+                }
+            },
+            "45": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Payment is done using a dedicated app"
+                        }
+                    }
+                }
+            },
+            "46": {
+                "question": "What is the maximum amount of time one is allowed to stay here?",
+                "render": "One can stay at most <b>{canonical(maxstay)}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "No timelimit on leaving your vehicle here"
+                    }
+                }
+            },
+            "47": {
                 "render": "Part of the network <b>{network}</b>",
                 "question": "Is this charging station part of a network?",
                 "mappings": {
@@ -971,22 +1377,22 @@
                     }
                 }
             },
-            "19": {
+            "49": {
                 "question": "What number can one call if there is a problem with this charging station?",
                 "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
             },
-            "20": {
+            "50": {
                 "question": "What is the email address of the operator?",
                 "render": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
             },
-            "21": {
+            "51": {
                 "question": "What is the website of the operator?",
                 "render": "More info on <a href='{website}'>{website}</a>"
             },
-            "23": {
+            "53": {
                 "question": "What is the reference number of this charging station?"
             },
-            "24": {
+            "54": {
                 "question": "Is this charging point in use?",
                 "mappings": {
                     "0": {
@@ -1030,6 +1436,82 @@
                 "options": {
                     "0": {
                         "question": "Only working charging stations"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "All connectors"
+                    },
+                    "1": {
+                        "question": "Has a <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> connector"
+                    },
+                    "2": {
+                        "question": "Has a <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> connector"
+                    },
+                    "3": {
+                        "question": "Has a <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> connector"
+                    },
+                    "4": {
+                        "question": "Has a <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> connector"
+                    },
+                    "5": {
+                        "question": "Has a <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> connector"
+                    },
+                    "6": {
+                        "question": "Has a <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> connector"
+                    },
+                    "7": {
+                        "question": "Has a <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> connector"
+                    },
+                    "8": {
+                        "question": "Has a <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> connector"
+                    },
+                    "9": {
+                        "question": "Has a <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> connector"
+                    }
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " minutes",
+                        "humanSingular": " minute"
+                    },
+                    "1": {
+                        "human": " hours",
+                        "humanSingular": " hour"
+                    },
+                    "2": {
+                        "human": " days",
+                        "humanSingular": " day"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Volts"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "A"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilowatt"
+                    },
+                    "1": {
+                        "human": "megawatt"
                     }
                 }
             }
@@ -2019,6 +2501,15 @@
         "presets": {
             "0": {
                 "title": "observation tower"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
             }
         }
     },

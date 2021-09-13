@@ -697,10 +697,10 @@
         },
         "description": "Una stazione di ricarica",
         "tagRenderings": {
-            "14": {
+            "41": {
                 "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
             },
-            "15": {
+            "42": {
                 "render": "{network}",
                 "question": "A quale rete appartiene questa stazione di ricarica?"
             }
