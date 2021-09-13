@@ -220,7 +220,9 @@ function run(file, protojson) {
         options: filterOptions
     })
 
-    proto["units"] = [
+  
+    
+    const extraUnits = [
         {
             appliesToKey: entries.map(e => e.key + ":voltage"),
             applicableUnits: [{
@@ -267,6 +269,11 @@ function run(file, protojson) {
         },
     ];
 
+    if(proto["units"] == undefined){
+        proto["units"] = []
+    }
+    proto["units"].push(...extraUnits)
+    
     writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "  "))
 }
 

@@ -361,14 +361,17 @@ export default class ValidatedTextField {
             // This implies:
             // We have to create a dropdown with applicable denominations, and fuse those values
             const unit = options.unit
+            
+            
+            const isSingular = input.GetValue().map(str => str?.trim() === "1")
 
             const unitDropDown =
                 unit.denominations.length === 1 ?
-                    new FixedInputElement(unit.denominations[0].human, unit.denominations[0])
+                    new FixedInputElement( unit.denominations[0].getToggledHuman(isSingular), unit.denominations[0])
                     : new DropDown("",
                         unit.denominations.map(denom => {
                             return {
-                                shown: denom.human,
+                                shown: denom.getToggledHuman(isSingular),
                                 value: denom
                             }
                         })

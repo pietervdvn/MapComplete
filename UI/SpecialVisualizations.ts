@@ -370,7 +370,8 @@ export default class SpecialVisualizations {
                                 if (value === undefined) {
                                     return undefined
                                 }
-                                const unit = state.layoutToUse.data.units.filter(unit => unit.isApplicableToKey(key))[0]
+                                const allUnits = [].concat(...state.layoutToUse.data.layers.map(lyr => lyr.units))
+                                const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
                                 if (unit === undefined) {
                                     return value;
                                 }

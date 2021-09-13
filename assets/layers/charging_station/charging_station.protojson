@@ -332,6 +332,29 @@
       }
     },
     {
+      "#": "maxstay",
+      "question": {
+        "en": "What is the maximum amount of time one is allowed to stay here?",
+        "nl": "Hoelang mag een voertuig hier blijven staan?"
+      },
+      "freeform": {
+        "key": "maxstay"
+      },
+      "render": {
+        "en": "One can stay at most <b>{canonical(maxstay)}</b>",
+        "nl": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
+      },
+      "mappings": [
+        {
+          "if": "maxstay=unlimited",
+          "then": {
+            "en": "No timelimit on leaving your vehicle here",
+            "nl": "Geen maximum parkeertijd"
+          }
+        }  
+      ]
+    },
+    {
       "#": "Network",
       "render": {
         "en": "Part of the network <b>{network}</b>"
@@ -620,6 +643,71 @@
               "operational_status!=broken",
               "amenity=charging_station"
             ]
+          }
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "maxstay"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "minutes",
+          "canonicalDenominationSingular": "minute",
+          "alternativeDenomination": [
+            "m",
+            "min",
+            "mins",
+            "minuten",
+            "mns"
+          ],
+          "human": {
+            "en": " minutes",
+            "nl": " minuten"
+          },
+          "humanSingular": {
+            "en": " minute",
+            "nl": " minuut"
+          }
+        },
+        {
+          "canonicalDenomination": "hours",
+          "canonicalDenominationSingular": "hour",
+          "alternativeDenomination": [
+            "h",
+            "hrs",
+            "hours",
+            "u",
+            "uur",
+            "uren"
+          ],
+          "human": {
+            "en": " hours",
+            "nl": " uren"
+          },
+          "humanSingular": {
+            "en": " hour",
+            "nl": " uur"
+          }
+        },
+        {
+          "canonicalDenomination": "days",
+          "canonicalDenominationSingular": "day",
+          "alternativeDenomination": [
+            "dys",
+            "dagen",
+            "dag"
+          ],
+          "human": {
+            "en": " days",
+            "nl": " day"
+          },
+          "humanSingular":{
+            "en": " day",
+            "nl": " dag"
           }
         }
       ]

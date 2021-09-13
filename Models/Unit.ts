@@ -34,10 +34,10 @@ export class Unit {
         this.denominationsSorted = [...this.denominations]
         this.denominationsSorted.sort((a, b) => b.canonical.length - a.canonical.length)
 
-
         const possiblePostFixes = new Set<string>()
 
         function addPostfixesOf(str) {
+            if(str === undefined){return}
             str = str.toLowerCase()
             for (let i = 0; i < str.length + 1; i++) {
                 const substr = str.substring(0, i)
@@ -47,6 +47,7 @@ export class Unit {
 
         for (const denomination of this.denominations) {
             addPostfixesOf(denomination.canonical)
+            addPostfixesOf(denomination._canonicalSingular)
             denomination.alternativeDenominations.forEach(addPostfixesOf)
         }
         this.possiblePostFixes = Array.from(possiblePostFixes)
@@ -111,7 +112,7 @@ export class Unit {
             return undefined;
         }
         const [stripped, denom] = this.findDenomination(value)
-        const human = denom?.human
+        const human =  stripped === "1" ? denom?.humanSingular :  denom?.human
         if (human === undefined) {
             return new FixedUiElement(stripped ?? value);
         }
