@@ -411,11 +411,11 @@ export default class ValidatedTextField {
                 mapBackgroundLayer: options.mapBackgroundLayer,
                 args: options.args,
                 feature: options.feature
-            })
+            }).SetClass("block")
             input = new CombinedInputElement(input, helper,
                 (a, _) => a, // We can ignore b, as they are linked earlier
                 a => [a, a]
-            );
+            ).SetClass("block w-full");
         }
         return input;
     }
