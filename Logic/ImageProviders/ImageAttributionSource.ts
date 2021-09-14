@@ -21,7 +21,7 @@ export default abstract class ImageAttributionSource {
     public abstract SourceIcon(backlinkSource?: string): BaseUIElement;
 
     /*Converts a value to a URL. Can return null if not applicable*/
-    public PrepareUrl(value: string): string {
+    public PrepareUrl(value: string): string | UIEventSource<string>{
         return value;
     }
 

@@ -59,7 +59,12 @@ export class ImageCarousel extends Toggle {
             return new Img(url);
         }
 
-        return new AttributedImage(url, attrSource)
+        try {
+            return new AttributedImage(url, attrSource)
+        } catch (e) {
+            console.error("Could not create an image: ", e)
+            return undefined;
+        }
 
     }
 }
