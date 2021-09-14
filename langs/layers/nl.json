@@ -3367,6 +3367,9 @@
                     },
                     "3": {
                         "then": "Toegankelijk na het vragen van de sleutel"
+                    },
+                    "4": {
+                        "then": "Publiek toegankelijk"
                     }
                 }
             },

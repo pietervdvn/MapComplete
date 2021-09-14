@@ -1549,6 +1549,9 @@
                     },
                     "3": {
                         "then": "Accessibile, ma occorre chiedere una chiave per accedere"
+                    },
+                    "4": {
+                        "then": "Accesso pubblico"
                     }
                 }
             },

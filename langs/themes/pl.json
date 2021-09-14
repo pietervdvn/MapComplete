@@ -3,6 +3,9 @@
         "title": "Otwórz mapę AED",
         "description": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy"
     },
+    "artwork": {
+        "title": "Otwórz mapę dzieł sztuki"
+    },
     "surveillance": {
         "shortDescription": "Kamery monitorujące i inne środki nadzoru",
         "description": "Na tej otwartej mapie można znaleźć kamery monitoringu."
@@ -14,8 +17,5 @@
     "trees": {
         "title": "Drzewa",
         "shortDescription": "Sporządzić mapę wszystkich drzew"
-    },
-    "artwork": {
-        "title": "Otwórz mapę dzieł sztuki"
     }
 }

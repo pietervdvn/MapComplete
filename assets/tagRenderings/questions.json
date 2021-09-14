@@ -45,7 +45,7 @@
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "question": {
-      "nl": "Wat is het email-adres van {name}?",
+      "nl": "Wat is het e-mailadres van {name}?",
       "fr": "Quelle est l'adresse courriel de {name} ?",
       "en": "What is the email address of {name}?",
       "nb_NO": "Hva er e-postadressen til {name}?",
@@ -139,7 +139,7 @@
   },
   "description": {
     "question": {
-      "nl": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
+      "nl": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
       "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>",
       "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>",
       "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>",
@@ -160,7 +160,7 @@
       "en": "What are the opening hours of {name}?",
       "fr": "Quelles sont les horaires d'ouverture de {name} ?",
       "de": "Was sind die Öffnungszeiten von {name}?",
-      "nl": "Wat zijn de openingsuren van {name}?",
+      "nl": "Wat zijn de openingstijden van {name}?",
       "nb_NO": "Hva er åpningstidene for {name})",
       "ru": "Какое время работы у {name}?",
       "zh_Hant": "{name} 的開放時間是什麼？",
@@ -173,7 +173,7 @@
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
       "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
       "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
-      "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
+      "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
       "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
       "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
       "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
@@ -266,7 +266,7 @@
         "if": "level=0",
         "then": {
           "en": "Located on the ground floor",
-          "nl": "Bevindt zich gelijkvloers",
+          "nl": "Bevindt zich op de begane grond",
           "de": "Ist im Erdgeschoss",
           "pt_BR": "Localizado no térreo",
           "ru": "Расположено на первом этаже",

@@ -1,7 +1,7 @@
 {
   "id": "climbing",
   "title": {
-    "nl": "Open Klimkaart",
+    "nl": "Open klimkaart",
     "de": "Offene Kletterkarte",
     "en": "Open Climbing Map",
     "ru": "Открытая карта скалолазания",
@@ -21,7 +21,7 @@
     "fr": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels."
   },
   "descriptionTail": {
-    "nl": "De Open Klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
+    "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
     "en": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
     "de": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
     "ru": "Создатель карты скалолазания — <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Пожалуйста, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>пишите</a> если у вас есть отзыв или вопросы.</p><p>Проект использует данные <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
@@ -1429,7 +1429,6 @@
       ]
     }
   ],
-    
   "overrideAll": {
     "titleIcons": [
       {

@@ -1173,6 +1173,9 @@
                     },
                     "3": {
                         "then": "Zugänglich, aber man muss einen Schlüssel für die Eingabe verlangen"
+                    },
+                    "4": {
+                        "then": "Öffentlicher Zugang"
                     }
                 }
             },

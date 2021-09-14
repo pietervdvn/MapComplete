@@ -3051,6 +3051,9 @@
                     },
                     "3": {
                         "then": "Accessible, but one has to ask a key to enter"
+                    },
+                    "4": {
+                        "then": "Public access"
                     }
                 }
             },

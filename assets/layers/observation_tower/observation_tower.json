@@ -10,13 +10,15 @@
       "en": "Observation tower",
       "nl": "Uitkijktoren"
     },
-    "mappings": [{
-      "if": "name~*",
-      "then": {
-        "en": "<b>{name}</b>",
-        "nl": "<b>{name}</b>"
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "<b>{name}</b>",
+          "nl": "<b>{name}</b>"
+        }
       }
-    }]
+    ]
   },
   "description": {
     "en": "Towers with a panoramic view",
@@ -89,7 +91,9 @@
       },
       "freeform": {
         "key": "charge",
-        "addExtraTags": ["fee=yes"]
+        "addExtraTags": [
+          "fee=yes"
+        ]
       },
       "mappings": [
         {

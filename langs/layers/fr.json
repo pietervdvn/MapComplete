@@ -1590,6 +1590,9 @@
                     },
                     "3": {
                         "then": "Accessible, mais vous devez demander la clé"
+                    },
+                    "4": {
+                        "then": "Accès publique"
                     }
                 }
             },
