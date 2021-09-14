@@ -14,5 +14,8 @@
     "trees": {
         "title": "Drzewa",
         "shortDescription": "Sporządzić mapę wszystkich drzew"
+    },
+    "artwork": {
+        "title": "Otwórz mapę dzieł sztuki"
     }
 }

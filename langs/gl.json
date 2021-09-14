@@ -22,7 +22,6 @@
         "retrying": "A carga dos datos fallou. Tentándoo de novo... ({count})"
     },
     "index": {
-        "#": "These texts are shown above the theme buttons when no theme is loaded",
         "pickTheme": "Escolle un tema para comezar.",
         "intro": "O MapComplete é un visor e editor do OpenStreetMap, que te amosa información sobre un tema específico.",
         "title": "Benvido ao MapComplete"

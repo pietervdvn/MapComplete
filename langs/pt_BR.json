@@ -137,7 +137,7 @@
         "plz_login": "Entrar para deixar um comentário",
         "saved": "<span class=\"thanks\">Comentário salvo. Obrigado por compartilhar!</span>",
         "saving_review": "Salvando…",
-        "i_am_affiliated": "<span>Eu sou afiliado a este objeto</span><br><span class=\"subtle\"><br><span class=\"subtle\">Verifique se você é proprietário, criador, funcionário, …</span></span>",
+        "i_am_affiliated": "<span>Eu sou afiliado a este objeto</span><br><span class=\"subtle\">Verifique se você é proprietário, criador, funcionário, …</span>",
         "posting_as": "Postando como",
         "no_rating": "Nenhuma classificação dada",
         "write_a_comment": "Deixe um comentário…",
