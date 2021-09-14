@@ -91,8 +91,9 @@ class TranslationPart {
 
     toJson(neededLanguage?: string): string {
         const parts = []
-
-        for (let key of Array.from(this.contents.keys())) {
+        let keys = Array.from(this.contents.keys())
+        keys = keys.sort()
+        for (let key of keys) {
             let value = this.contents.get(key);
 
             if (typeof value === "string") {

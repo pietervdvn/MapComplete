@@ -472,5 +472,19 @@ export class Utils {
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
+
+    static sortKeys(o: any) {
+        const copy  = {}
+        let keys = Object.keys(o)
+        keys = keys.sort()
+        for (const key of keys) {
+            let v = o[key]
+            if(typeof v === "object"){
+                v = Utils.sortKeys(v)
+            }
+            copy[key] = v
+        }
+        return copy
+    }
 }
 

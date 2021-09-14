@@ -40,6 +40,17 @@ export default class UtilsSpec extends T {
 
     constructor() {
         super("Utils", [
+            ["Sort object keys", () => {
+                const o = {
+                    x: 'x',
+                    abc: {'x':'x','a':'a'},
+                    def: 'def'
+                }
+                equal('{"x":"x","abc":{"x":"x","a":"a"},"def":"def"}', JSON.stringify(o))
+                const copy = Utils.sortKeys(o)
+                equal('{"abc":{"a":"a","x":"x"},"def":"def","x":"x"}', JSON.stringify(copy))
+            }],
+
             ["Minify-json", () => {
                 const str = JSON.stringify({title: "abc", "and": "xyz", "render": "somevalue"}, null, 0);
                 const minified = Utils.MinifyJSON(str);

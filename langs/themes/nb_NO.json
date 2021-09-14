@@ -6,9 +6,6 @@
         "layers": {
             "0": {
                 "name": "Kunstverk",
-                "title": {
-                    "render": "Kunstverk"
-                },
                 "presets": {
                     "0": {
                         "title": "Kunstverk"
@@ -16,8 +13,6 @@
                 },
                 "tagRenderings": {
                     "1": {
-                        "render": "Dette er et kunstverk av typen {artwork_type}",
-                        "question": "Hvilken type kunstverk er dette?",
                         "mappings": {
                             "0": {
                                 "then": "Arkitektur"
@@ -55,7 +50,9 @@
                             "11": {
                                 "then": "Flisarbeid"
                             }
-                        }
+                        },
+                        "question": "Hvilken type kunstverk er dette?",
+                        "render": "Dette er et kunstverk av typen {artwork_type}"
                     },
                     "2": {
                         "question": "Hvilken artist lagde dette?",
@@ -69,13 +66,16 @@
                         "question": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
                         "render": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
+                },
+                "title": {
+                    "render": "Kunstverk"
                 }
             }
         }
     },
     "benches": {
-        "title": "Benker",
-        "shortDescription": "Et benkekart"
+        "shortDescription": "Et benkekart",
+        "title": "Benker"
     },
     "bicyclelib": {
         "title": "Sykkelbibliotek"
@@ -92,11 +92,10 @@
                         }
                     },
                     "3": {
-                        "render": "Dette stedet tar {charge}",
-                        "question": "pø"
+                        "question": "pø",
+                        "render": "Dette stedet tar {charge}"
                     },
                     "8": {
-                        "question": "Har dette stedet toaletter?",
                         "mappings": {
                             "0": {
                                 "then": "Dette stedet har toalettfasiliteter"
@@ -104,11 +103,12 @@
                             "1": {
                                 "then": "Dette stedet har ikke toalettfasiliteter"
                             }
-                        }
+                        },
+                        "question": "Har dette stedet toaletter?"
                     },
                     "9": {
-                        "render": "Offisiell nettside: <a href='{website}'>{website}</a>",
-                        "question": "Har dette stedet en nettside?"
+                        "question": "Har dette stedet en nettside?",
+                        "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
                     },
                     "11": {
                         "render": "Flere detaljer om dette stedet: {description}"
@@ -118,53 +118,48 @@
         }
     },
     "climbing": {
-        "title": "Åpent klatrekart",
         "layers": {
             "0": {
-                "name": "Klatreklubb",
-                "title": {
-                    "render": "Klatreklubb"
-                },
                 "description": "En klatreklubb eller organisasjoner",
+                "name": "Klatreklubb",
                 "presets": {
                     "0": {
-                        "title": "Klatreklubb",
-                        "description": "En klatreklubb"
+                        "description": "En klatreklubb",
+                        "title": "Klatreklubb"
                     }
+                },
+                "title": {
+                    "render": "Klatreklubb"
                 }
             },
             "2": {
                 "name": "Klatreruter",
-                "title": {
-                    "render": "Klatrerute"
-                },
                 "tagRenderings": {
                     "4": {
                         "render": "Denne ruten er {canonical(climbing:length)} lang"
                     }
+                },
+                "title": {
+                    "render": "Klatrerute"
                 }
             },
             "3": {
-                "title": {
-                    "render": "Klatremulighet"
-                },
                 "description": "En klatremulighet",
                 "presets": {
                     "0": {
-                        "title": "Klatremulighet",
-                        "description": "En klatremulighet"
+                        "description": "En klatremulighet",
+                        "title": "Klatremulighet"
                     }
+                },
+                "title": {
+                    "render": "Klatremulighet"
                 }
             },
             "4": {
-                "name": "Klatremuligheter?",
-                "title": {
-                    "render": "Klatremulighet?"
-                },
                 "description": "En klatremulighet?",
+                "name": "Klatremuligheter?",
                 "tagRenderings": {
                     "2": {
-                        "question": "Er klatring mulig her?",
                         "mappings": {
                             "0": {
                                 "then": "Klatring er ikke mulig her"
@@ -175,14 +170,17 @@
                             "2": {
                                 "then": "Klatring er ikke mulig her"
                             }
-                        }
+                        },
+                        "question": "Er klatring mulig her?"
                     }
+                },
+                "title": {
+                    "render": "Klatremulighet?"
                 }
             }
         },
         "roamingRenderings": {
             "7": {
-                "question": "Er buldring mulig her?",
                 "mappings": {
                     "0": {
                         "then": "Buldring er mulig her"
@@ -190,15 +188,27 @@
                     "1": {
                         "then": "Buldring er ikke mulig her"
                     }
-                }
+                },
+                "question": "Er buldring mulig her?"
             }
-        }
+        },
+        "title": "Åpent klatrekart"
     },
     "cyclestreets": {
-        "shortDescription": "Et kart over sykkelveier",
+        "layers": {
+            "1": {
+                "name": "Fremtidig sykkelvei",
+                "title": {
+                    "render": "Fremtidig sykkelvei"
+                }
+            },
+            "2": {
+                "description": "Lag for å markere hvilken som helst gate som sykkelvei",
+                "name": "Alle gater"
+            }
+        },
         "roamingRenderings": {
             "0": {
-                "question": "Er denne gaten en sykkelvei?",
                 "mappings": {
                     "0": {
                         "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
@@ -212,21 +222,11 @@
                     "3": {
                         "then": "Denne gaten er ikke en sykkelvei"
                     }
-                }
+                },
+                "question": "Er denne gaten en sykkelvei?"
             }
         },
-        "layers": {
-            "1": {
-                "name": "Fremtidig sykkelvei",
-                "title": {
-                    "render": "Fremtidig sykkelvei"
-                }
-            },
-            "2": {
-                "name": "Alle gater",
-                "description": "Lag for å markere hvilken som helst gate som sykkelvei"
-            }
-        }
+        "shortDescription": "Et kart over sykkelveier"
     },
     "facadegardens": {
         "layers": {
@@ -249,33 +249,33 @@
     "hailhydrant": {
         "layers": {
             "0": {
-                "name": "Kart over brannhydranter",
-                "title": {
-                    "render": "Brannhydrant"
-                },
                 "description": "Kartlag for å vise brannhydranter.",
+                "name": "Kart over brannhydranter",
+                "presets": {
+                    "0": {
+                        "title": "Brannhydrant"
+                    }
+                },
                 "tagRenderings": {
                     "0": {
                         "question": "Hvilken farge har brannhydranten?",
                         "render": "Brannhydranter er {colour}"
                     }
                 },
-                "presets": {
-                    "0": {
-                        "title": "Brannhydrant"
-                    }
+                "title": {
+                    "render": "Brannhydrant"
                 }
             },
             "1": {
-                "name": "Kart over brannhydranter",
-                "title": {
-                    "render": "Brannslokkere"
-                },
                 "description": "Kartlag for å vise brannslokkere.",
+                "name": "Kart over brannhydranter",
                 "presets": {
                     "0": {
                         "title": "Brannslukker"
                     }
+                },
+                "title": {
+                    "render": "Brannslokkere"
                 }
             },
             "2": {

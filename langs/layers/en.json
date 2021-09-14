@@ -1,31 +1,19 @@
 {
     "barrier": {
-        "name": "Barriers",
         "description": "Obstacles while cycling, such as bollards and cycle barriers",
-        "title": {
-            "render": "Barrier",
-            "mappings": {
-                "0": {
-                    "then": "Bollard"
-                },
-                "1": {
-                    "then": "Cycling Barrier"
-                }
-            }
-        },
+        "name": "Barriers",
         "presets": {
             "0": {
-                "title": "Bollard",
-                "description": "A bollard in the road"
+                "description": "A bollard in the road",
+                "title": "Bollard"
             },
             "1": {
-                "title": "Cycle barrier",
-                "description": "Cycle barrier, slowing down cyclists"
+                "description": "Cycle barrier, slowing down cyclists",
+                "title": "Cycle barrier"
             }
         },
         "tagRenderings": {
             "0": {
-                "question": "Can a bicycle go past this barrier?",
                 "mappings": {
                     "0": {
                         "then": "A cyclist can go past this."
@@ -33,10 +21,10 @@
                     "1": {
                         "then": "A cyclist can not go past this."
                     }
-                }
+                },
+                "question": "Can a bicycle go past this barrier?"
             },
             "1": {
-                "question": "What kind of bollard is this?",
                 "mappings": {
                     "0": {
                         "then": "Removable bollard"
@@ -53,10 +41,10 @@
                     "4": {
                         "then": "Rising bollard"
                     }
-                }
+                },
+                "question": "What kind of bollard is this?"
             },
             "2": {
-                "question": "What kind of cycling barrier is this?",
                 "mappings": {
                     "0": {
                         "then": "Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
@@ -70,34 +58,48 @@
                     "3": {
                         "then": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
                     }
-                }
+                },
+                "question": "What kind of cycling barrier is this?"
             },
             "3": {
-                "render": "Maximum width: {maxwidth:physical} m",
-                "question": "How wide is the gap left over besides the barrier?"
+                "question": "How wide is the gap left over besides the barrier?",
+                "render": "Maximum width: {maxwidth:physical} m"
             },
             "4": {
-                "render": "Space between barriers (along the length of the road): {width:separation} m",
-                "question": "How much space is there between the barriers (along the length of the road)?"
+                "question": "How much space is there between the barriers (along the length of the road)?",
+                "render": "Space between barriers (along the length of the road): {width:separation} m"
             },
             "5": {
-                "render": "Width of opening: {width:opening} m",
-                "question": "How wide is the smallest opening next to the barriers?"
+                "question": "How wide is the smallest opening next to the barriers?",
+                "render": "Width of opening: {width:opening} m"
             },
             "6": {
-                "render": "Overlap: {overlap} m",
-                "question": "How much overlap do the barriers have?"
+                "question": "How much overlap do the barriers have?",
+                "render": "Overlap: {overlap} m"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bollard"
+                },
+                "1": {
+                    "then": "Cycling Barrier"
+                }
+            },
+            "render": "Barrier"
         }
     },
     "bench": {
         "name": "Benches",
-        "title": {
-            "render": "Bench"
+        "presets": {
+            "0": {
+                "description": "Add a new bench",
+                "title": "Bench"
+            }
         },
         "tagRenderings": {
             "1": {
-                "render": "Backrest",
                 "mappings": {
                     "0": {
                         "then": "Backrest: Yes"
@@ -106,14 +108,14 @@
                         "then": "Backrest: No"
                     }
                 },
-                "question": "Does this bench have a backrest?"
+                "question": "Does this bench have a backrest?",
+                "render": "Backrest"
             },
             "2": {
-                "render": "{seats} seats",
-                "question": "How many seats does this bench have?"
+                "question": "How many seats does this bench have?",
+                "render": "{seats} seats"
             },
             "3": {
-                "render": "Material: {material}",
                 "mappings": {
                     "0": {
                         "then": "Material: wood"
@@ -134,15 +136,14 @@
                         "then": "Material: steel"
                     }
                 },
-                "question": "What is the bench (seating) made from?"
+                "question": "What is the bench (seating) made from?",
+                "render": "Material: {material}"
             },
             "4": {
                 "question": "In which direction are you looking when sitting on the bench?",
                 "render": "When sitting on the bench, one looks towards {direction}°."
             },
             "5": {
-                "render": "Colour: {colour}",
-                "question": "Which colour does this bench have?",
                 "mappings": {
                     "0": {
                         "then": "Colour: brown"
@@ -168,33 +169,21 @@
                     "7": {
                         "then": "Colour: yellow"
                     }
-                }
+                },
+                "question": "Which colour does this bench have?",
+                "render": "Colour: {colour}"
             },
             "6": {
                 "question": "When was this bench last surveyed?",
                 "render": "This bench was last surveyed on {survey:date}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Bench",
-                "description": "Add a new bench"
-            }
+        "title": {
+            "render": "Bench"
         }
     },
     "bench_at_pt": {
         "name": "Benches at public transport stops",
-        "title": {
-            "render": "Bench",
-            "mappings": {
-                "0": {
-                    "then": "Bench at public transport stop"
-                },
-                "1": {
-                    "then": "Bench in shelter"
-                }
-            }
-        },
         "tagRenderings": {
             "1": {
                 "render": "{name}"
@@ -202,22 +191,34 @@
             "2": {
                 "render": "Stand up bench"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bench at public transport stop"
+                },
+                "1": {
+                    "then": "Bench in shelter"
+                }
+            },
+            "render": "Bench"
         }
     },
     "bicycle_library": {
-        "name": "Bicycle library",
-        "title": {
-            "render": "Bicycle library"
-        },
         "description": "A facility where bicycles can be lent for longer period of times",
+        "name": "Bicycle library",
+        "presets": {
+            "0": {
+                "description": "A bicycle library has a collection of bikes which can be lent",
+                "title": "Fietsbibliotheek"
+            }
+        },
         "tagRenderings": {
             "1": {
                 "question": "What is the name of this bicycle library?",
                 "render": "This bicycle library is called {name}"
             },
             "6": {
-                "question": "How much does lending a bicycle cost?",
-                "render": "Lending a bicycle costs {charge}",
                 "mappings": {
                     "0": {
                         "then": "Lending a bicycle is free"
@@ -225,10 +226,11 @@
                     "1": {
                         "then": "Lending a bicycle costs €20/year and €20 warranty"
                     }
-                }
+                },
+                "question": "How much does lending a bicycle cost?",
+                "render": "Lending a bicycle costs {charge}"
             },
             "7": {
-                "question": "Who can lend bicycles here?",
                 "mappings": {
                     "0": {
                         "then": "Bikes for children available"
@@ -239,21 +241,16 @@
                     "2": {
                         "then": "Bikes for disabled persons available"
                     }
-                }
+                },
+                "question": "Who can lend bicycles here?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Fietsbibliotheek",
-                "description": "A bicycle library has a collection of bikes which can be lent"
-            }
+        "title": {
+            "render": "Bicycle library"
         }
     },
     "bicycle_tube_vending_machine": {
         "name": "Bicycle tube vending machine",
-        "title": {
-            "render": "Bicycle tube vending machine"
-        },
         "presets": {
             "0": {
                 "title": "Bicycle tube vending machine"
@@ -261,8 +258,6 @@
         },
         "tagRenderings": {
             "1": {
-                "question": "Is this vending machine still operational?",
-                "render": "The operational status is <i>{operational_status</i>",
                 "mappings": {
                     "0": {
                         "then": "This vending machine works"
@@ -273,18 +268,20 @@
                     "2": {
                         "then": "This vending machine is closed"
                     }
-                }
+                },
+                "question": "Is this vending machine still operational?",
+                "render": "The operational status is <i>{operational_status</i>"
             }
+        },
+        "title": {
+            "render": "Bicycle tube vending machine"
         }
     },
     "bike_cafe": {
         "name": "Bike cafe",
-        "title": {
-            "render": "Bike cafe",
-            "mappings": {
-                "0": {
-                    "then": "Bike cafe <i>{name}</i>"
-                }
+        "presets": {
+            "0": {
+                "title": "Bike cafe"
             }
         },
         "tagRenderings": {
@@ -293,7 +290,6 @@
                 "render": "This bike cafe is called {name}"
             },
             "2": {
-                "question": "Does this bike cafe offer a bike pump for use by anyone?",
                 "mappings": {
                     "0": {
                         "then": "This bike cafe offers a bike pump for anyone"
@@ -301,10 +297,10 @@
                     "1": {
                         "then": "This bike cafe doesn't offer a bike pump for anyone"
                     }
-                }
+                },
+                "question": "Does this bike cafe offer a bike pump for use by anyone?"
             },
             "3": {
-                "question": "Are there tools here to repair your own bike?",
                 "mappings": {
                     "0": {
                         "then": "This bike cafe offers tools for DIY repair"
@@ -312,10 +308,10 @@
                     "1": {
                         "then": "This bike cafe doesn't offer tools for DIY repair"
                     }
-                }
+                },
+                "question": "Are there tools here to repair your own bike?"
             },
             "4": {
-                "question": "Does this bike cafe repair bikes?",
                 "mappings": {
                     "0": {
                         "then": "This bike cafe repairs bikes"
@@ -323,7 +319,8 @@
                     "1": {
                         "then": "This bike cafe doesn't repair bikes"
                     }
-                }
+                },
+                "question": "Does this bike cafe repair bikes?"
             },
             "5": {
                 "question": "What is the website of {name}?"
@@ -338,32 +335,34 @@
                 "question": "When it this bike café opened?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Bike cafe"
-            }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bike cafe <i>{name}</i>"
+                }
+            },
+            "render": "Bike cafe"
         }
     },
     "bike_cleaning": {
         "name": "Bike cleaning service",
-        "title": {
-            "render": "Bike cleaning service",
-            "mappings": {
-                "0": {
-                    "then": "Bike cleaning service <i>{name}</i>"
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "Bike cleaning service"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bike cleaning service <i>{name}</i>"
+                }
+            },
+            "render": "Bike cleaning service"
         }
     },
     "bike_monitoring_station": {
         "name": "Monitoring stations",
         "title": {
-            "render": "Bicycle counting station",
             "mappings": {
                 "0": {
                     "then": "Bicycle counting station {name}"
@@ -371,7 +370,8 @@
                 "1": {
                     "then": "Bicycle counting station {ref}"
                 }
-            }
+            },
+            "render": "Bicycle counting station"
         }
     },
     "bike_parking": {
@@ -381,13 +381,8 @@
                 "title": "Bike parking"
             }
         },
-        "title": {
-            "render": "Bike parking"
-        },
         "tagRenderings": {
             "1": {
-                "question": "What is the type of this bicycle parking?",
-                "render": "This is a bicycle parking of the type: {bicycle_parking}",
                 "mappings": {
                     "0": {
                         "then": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
@@ -413,10 +408,11 @@
                     "7": {
                         "then": "An area on the floor which is  marked for bicycle parking"
                     }
-                }
+                },
+                "question": "What is the type of this bicycle parking?",
+                "render": "This is a bicycle parking of the type: {bicycle_parking}"
             },
             "2": {
-                "question": "What is the relative location of this bicycle parking?",
                 "mappings": {
                     "0": {
                         "then": "Underground parking"
@@ -433,10 +429,10 @@
                     "4": {
                         "then": "Rooftop parking"
                     }
-                }
+                },
+                "question": "What is the relative location of this bicycle parking?"
             },
             "3": {
-                "question": "Is this parking covered? Also select \"covered\" for indoor parkings.",
                 "mappings": {
                     "0": {
                         "then": "This parking is covered (it has a roof)"
@@ -444,15 +440,14 @@
                     "1": {
                         "then": "This parking is not covered"
                     }
-                }
+                },
+                "question": "Is this parking covered? Also select \"covered\" for indoor parkings."
             },
             "4": {
                 "question": "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
                 "render": "Place for {capacity} bikes"
             },
             "5": {
-                "question": "Who can use this bicycle parking?",
-                "render": "{access}",
                 "mappings": {
                     "0": {
                         "then": "Publicly accessible"
@@ -463,10 +458,11 @@
                     "2": {
                         "then": "Access is limited to members of a school, company or organisation"
                     }
-                }
+                },
+                "question": "Who can use this bicycle parking?",
+                "render": "{access}"
             },
             "6": {
-                "question": "Does this bicycle parking have spots for cargo bikes?",
                 "mappings": {
                     "0": {
                         "then": "This parking has room for cargo bikes"
@@ -477,18 +473,150 @@
                     "2": {
                         "then": "You're not allowed to park cargo bikes"
                     }
-                }
+                },
+                "question": "Does this bicycle parking have spots for cargo bikes?"
             },
             "7": {
                 "question": "How many cargo bicycles fit in this bicycle parking?",
                 "render": "This parking fits {capacity:cargo_bike} cargo bikes"
             }
+        },
+        "title": {
+            "render": "Bike parking"
         }
     },
     "bike_repair_station": {
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
+        },
         "name": "Bike stations (repair, pump or both)",
+        "presets": {
+            "0": {
+                "description": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "title": "Bike pump"
+            },
+            "1": {
+                "description": "A device with tools to repair your bike combined with a pump at a fixed location. The tools are often secured with chains against theft.<h3>Example</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
+                "title": "Bike repair station and pump"
+            },
+            "2": {
+                "title": "Bike repair station without pump"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "There is only a pump present"
+                    },
+                    "1": {
+                        "then": "There are only tools (screwdrivers, pliers...) present"
+                    },
+                    "2": {
+                        "then": "There are both tools and a pump present"
+                    }
+                },
+                "question": "Which services are available at this bike station?"
+            },
+            "2": {
+                "question": "Who maintains this cycle pump?",
+                "render": "Maintained by {operator}"
+            },
+            "3": {
+                "question": "What is the email address of the maintainer?"
+            },
+            "4": {
+                "question": "What is the phone number of the maintainer?"
+            },
+            "5": {
+                "mappings": {
+                    "0": {
+                        "then": "Always open"
+                    },
+                    "1": {
+                        "then": "Always open"
+                    }
+                },
+                "question": "When is this bicycle repair point open?"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a chain tool"
+                    },
+                    "1": {
+                        "then": "There is no chain tool"
+                    }
+                },
+                "question": "Does this bike repair station have a special tool to repair your bike chain?"
+            },
+            "7": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a hook or stand"
+                    },
+                    "1": {
+                        "then": "There is no hook or stand"
+                    }
+                },
+                "question": "Does this bike station have a hook to hang your bike on or a stand to raise it?"
+            },
+            "8": {
+                "mappings": {
+                    "0": {
+                        "then": "The bike pump is broken"
+                    },
+                    "1": {
+                        "then": "The bike pump is operational"
+                    }
+                },
+                "question": "Is the bike pump still operational?"
+            },
+            "9": {
+                "render": "<a href='mailto:{email}?subject=Broken bicycle pump&body=Hello,\n\nWith this email, I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} is broken.'>Report this bicycle pump as broken</a>"
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": "Sclaverand (also known as Presta)"
+                    },
+                    "1": {
+                        "then": "Dunlop"
+                    },
+                    "2": {
+                        "then": "Schrader (cars)"
+                    }
+                },
+                "question": "What valves are supported?",
+                "render": "This pump supports the following valves: {valves}"
+            },
+            "11": {
+                "mappings": {
+                    "0": {
+                        "then": "Manual pump"
+                    },
+                    "1": {
+                        "then": "Electrical pump"
+                    }
+                },
+                "question": "Is this an electric bike pump?"
+            },
+            "12": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a manometer"
+                    },
+                    "1": {
+                        "then": "There is no manometer"
+                    },
+                    "2": {
+                        "then": "There is manometer but it is broken"
+                    }
+                },
+                "question": "Does the pump have a pressure indicator or manometer?"
+            }
+        },
         "title": {
-            "render": "Bike station (pump & repair)",
             "mappings": {
                 "0": {
                     "then": "Bike repair station"
@@ -505,161 +633,18 @@
                 "4": {
                     "then": "Bicycle pump"
                 }
-            }
-        },
-        "tagRenderings": {
-            "1": {
-                "question": "Which services are available at this bike station?",
-                "mappings": {
-                    "0": {
-                        "then": "There is only a pump present"
-                    },
-                    "1": {
-                        "then": "There are only tools (screwdrivers, pliers...) present"
-                    },
-                    "2": {
-                        "then": "There are both tools and a pump present"
-                    }
-                }
             },
-            "2": {
-                "question": "Who maintains this cycle pump?",
-                "render": "Maintained by {operator}"
-            },
-            "3": {
-                "question": "What is the email address of the maintainer?"
-            },
-            "4": {
-                "question": "What is the phone number of the maintainer?"
-            },
-            "5": {
-                "question": "When is this bicycle repair point open?",
-                "mappings": {
-                    "0": {
-                        "then": "Always open"
-                    },
-                    "1": {
-                        "then": "Always open"
-                    }
-                }
-            },
-            "6": {
-                "question": "Does this bike repair station have a special tool to repair your bike chain?",
-                "mappings": {
-                    "0": {
-                        "then": "There is a chain tool"
-                    },
-                    "1": {
-                        "then": "There is no chain tool"
-                    }
-                }
-            },
-            "7": {
-                "question": "Does this bike station have a hook to hang your bike on or a stand to raise it?",
-                "mappings": {
-                    "0": {
-                        "then": "There is a hook or stand"
-                    },
-                    "1": {
-                        "then": "There is no hook or stand"
-                    }
-                }
-            },
-            "8": {
-                "question": "Is the bike pump still operational?",
-                "mappings": {
-                    "0": {
-                        "then": "The bike pump is broken"
-                    },
-                    "1": {
-                        "then": "The bike pump is operational"
-                    }
-                }
-            },
-            "9": {
-                "render": "<a href='mailto:{email}?subject=Broken bicycle pump&body=Hello,\n\nWith this email, I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} is broken.'>Report this bicycle pump as broken</a>"
-            },
-            "10": {
-                "question": "What valves are supported?",
-                "render": "This pump supports the following valves: {valves}",
-                "mappings": {
-                    "0": {
-                        "then": "Sclaverand (also known as Presta)"
-                    },
-                    "1": {
-                        "then": "Dunlop"
-                    },
-                    "2": {
-                        "then": "Schrader (cars)"
-                    }
-                }
-            },
-            "11": {
-                "question": "Is this an electric bike pump?",
-                "mappings": {
-                    "0": {
-                        "then": "Manual pump"
-                    },
-                    "1": {
-                        "then": "Electrical pump"
-                    }
-                }
-            },
-            "12": {
-                "question": "Does the pump have a pressure indicator or manometer?",
-                "mappings": {
-                    "0": {
-                        "then": "There is a manometer"
-                    },
-                    "1": {
-                        "then": "There is no manometer"
-                    },
-                    "2": {
-                        "then": "There is manometer but it is broken"
-                    }
-                }
-            }
-        },
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
-        "presets": {
-            "0": {
-                "title": "Bike pump",
-                "description": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
-            },
-            "1": {
-                "title": "Bike repair station and pump",
-                "description": "A device with tools to repair your bike combined with a pump at a fixed location. The tools are often secured with chains against theft.<h3>Example</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>"
-            },
-            "2": {
-                "title": "Bike repair station without pump"
-            }
+            "render": "Bike station (pump & repair)"
         }
     },
     "bike_shop": {
+        "description": "A shop specifically selling bicycles or related items",
         "name": "Bike repair/shop",
-        "title": {
-            "render": "Bike repair/shop",
-            "mappings": {
-                "0": {
-                    "then": "Sport gear shop <i>{name}</i>"
-                },
-                "2": {
-                    "then": "Bicycle rental <i>{name}</i>"
-                },
-                "3": {
-                    "then": "Bike repair <i>{name}</i>"
-                },
-                "4": {
-                    "then": "Bike shop <i>{name}</i>"
-                },
-                "5": {
-                    "then": "Bike repair/shop <i>{name}</i>"
-                }
+        "presets": {
+            "0": {
+                "title": "Bike repair/shop"
             }
         },
-        "description": "A shop specifically selling bicycles or related items",
         "tagRenderings": {
             "1": {
                 "render": "This shop is specialized in selling {shop} and does bicycle related activities"
@@ -678,7 +663,6 @@
                 "question": "What is the email address of {name}?"
             },
             "9": {
-                "question": "Does this shop sell bikes?",
                 "mappings": {
                     "0": {
                         "then": "This shop sells bikes"
@@ -686,10 +670,10 @@
                     "1": {
                         "then": "This shop doesn't sell bikes"
                     }
-                }
+                },
+                "question": "Does this shop sell bikes?"
             },
             "10": {
-                "question": "Does this shop repair bikes?",
                 "mappings": {
                     "0": {
                         "then": "This shop repairs bikes"
@@ -703,10 +687,10 @@
                     "3": {
                         "then": "This shop only repairs bikes of a certain brand"
                     }
-                }
+                },
+                "question": "Does this shop repair bikes?"
             },
             "11": {
-                "question": "Does this shop rent out bikes?",
                 "mappings": {
                     "0": {
                         "then": "This shop rents out bikes"
@@ -714,10 +698,10 @@
                     "1": {
                         "then": "This shop doesn't rent out bikes"
                     }
-                }
+                },
+                "question": "Does this shop rent out bikes?"
             },
             "12": {
-                "question": "Does this shop sell second-hand bikes?",
                 "mappings": {
                     "0": {
                         "then": "This shop sells second-hand bikes"
@@ -728,10 +712,10 @@
                     "2": {
                         "then": "This shop only sells second-hand bikes"
                     }
-                }
+                },
+                "question": "Does this shop sell second-hand bikes?"
             },
             "13": {
-                "question": "Does this shop offer a bike pump for use by anyone?",
                 "mappings": {
                     "0": {
                         "then": "This shop offers a bike pump for anyone"
@@ -742,10 +726,10 @@
                     "2": {
                         "then": "There is bicycle pump, it is shown as a separate point "
                     }
-                }
+                },
+                "question": "Does this shop offer a bike pump for use by anyone?"
             },
             "14": {
-                "question": "Are there tools here to repair your own bike?",
                 "mappings": {
                     "0": {
                         "then": "This shop offers tools for DIY repair"
@@ -756,10 +740,10 @@
                     "2": {
                         "then": "Tools for DIY repair are only available if you bought/hire the bike in the shop"
                     }
-                }
+                },
+                "question": "Are there tools here to repair your own bike?"
             },
             "15": {
-                "question": "Are bicycles washed here?",
                 "mappings": {
                     "0": {
                         "then": "This shop cleans bicycles"
@@ -770,32 +754,51 @@
                     "2": {
                         "then": "This shop doesn't offer bicycle cleaning"
                     }
-                }
+                },
+                "question": "Are bicycles washed here?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Bike repair/shop"
-            }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Sport gear shop <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Bicycle rental <i>{name}</i>"
+                },
+                "3": {
+                    "then": "Bike repair <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Bike shop <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Bike repair/shop <i>{name}</i>"
+                }
+            },
+            "render": "Bike repair/shop"
         }
     },
     "bike_themed_object": {
         "name": "Bike related object",
         "title": {
-            "render": "Bike related object",
             "mappings": {
                 "1": {
                     "then": "Cycle track"
                 }
-            }
+            },
+            "render": "Bike related object"
         }
     },
     "binocular": {
-        "name": "Binoculars",
-        "title": {
-            "render": "Binoculars"
-        },
         "description": "Binoculas",
+        "name": "Binoculars",
+        "presets": {
+            "0": {
+                "description": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "binoculars"
+            }
+        },
         "tagRenderings": {
             "1": {
                 "mappings": {
@@ -803,19 +806,16 @@
                         "then": "Free to use"
                     }
                 },
-                "render": "Using these binoculars costs {charge}",
-                "question": "How much does one have to pay to use these binoculars?"
+                "question": "How much does one have to pay to use these binoculars?",
+                "render": "Using these binoculars costs {charge}"
             },
             "2": {
                 "question": "When looking through this binocular, in what direction does one look?",
                 "render": "Looks towards {direction}°"
             }
         },
-        "presets": {
-            "0": {
-                "title": "binoculars",
-                "description": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
-            }
+        "title": {
+            "render": "Binoculars"
         }
     },
     "birdhide": {
@@ -830,6 +830,15 @@
         }
     },
     "cafe_pub": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Opened now"
+                    }
+                }
+            }
+        },
         "name": "Cafés and pubs",
         "presets": {
             "0": {
@@ -842,13 +851,6 @@
                 "title": "cafe"
             }
         },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            }
-        },
         "tagRenderings": {
             "1": {
                 "question": "What is the name of this pub?",
@@ -858,566 +860,16 @@
                 "question": "What kind of cafe is this"
             }
         },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Opened now"
-                    }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
                 }
             }
         }
     },
     "charging_station": {
-        "name": "Charging stations",
-        "title": {
-            "render": "Charging station"
-        },
         "description": "A charging station",
-        "tagRenderings": {
-            "1": {
-                "question": "Which vehicles are allowed to charge here?",
-                "mappings": {
-                    "0": {
-                        "then": "<b>bicycles</b> can be charged here"
-                    },
-                    "1": {
-                        "then": "<b>Cars</b> can be charged here"
-                    },
-                    "2": {
-                        "then": "<b>Scooters</b> can be charged here"
-                    },
-                    "3": {
-                        "then": "<b>Heavy good vehicles</b> (such as trucks) can be charged here"
-                    },
-                    "4": {
-                        "then": "<b>Buses</b> can be charged here"
-                    }
-                }
-            },
-            "3": {
-                "render": "{capacity} vehicles can be charged here at the same time",
-                "question": "How much vehicles can be charged here at the same time?"
-            },
-            "4": {
-                "question": "Which charging stations are available here?",
-                "mappings": {
-                    "0": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)"
-                    },
-                    "1": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)"
-                    },
-                    "2": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)"
-                    },
-                    "3": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)"
-                    },
-                    "4": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)"
-                    },
-                    "10": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)"
-                    },
-                    "11": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)"
-                    },
-                    "12": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>"
-                    },
-                    "13": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>"
-                    },
-                    "14": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)"
-                    },
-                    "15": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)"
-                    },
-                    "16": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)"
-                    },
-                    "17": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)"
-                    }
-                }
-            },
-            "5": {
-                "question": "How much plugs of type <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> are available here?",
-                "render": "There are <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here"
-            },
-            "6": {
-                "question": "What voltage do the plugs with <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
-                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs {socket:schuko:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs 230 volt"
-                    }
-                }
-            },
-            "7": {
-                "question": "What current do the plugs with <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
-                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most {socket:schuko:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most 16 A"
-                    }
-                }
-            },
-            "8": {
-                "question": "What power output does a single plug of type <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
-                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most {socket:schuko:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most 3.6 kw"
-                    }
-                }
-            },
-            "9": {
-                "question": "How much plugs of type <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> are available here?",
-                "render": "There are <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here"
-            },
-            "10": {
-                "question": "What voltage do the plugs with <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
-                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs {socket:typee:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs 230 volt"
-                    }
-                }
-            },
-            "11": {
-                "question": "What current do the plugs with <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
-                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most {socket:typee:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 16 A"
-                    }
-                }
-            },
-            "12": {
-                "question": "What power output does a single plug of type <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
-                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most {socket:typee:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 3 kw"
-                    },
-                    "1": {
-                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 22 kw"
-                    }
-                }
-            },
-            "13": {
-                "question": "How much plugs of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?",
-                "render": "There are <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> plugs of type <b>Chademo</b> available here"
-            },
-            "14": {
-                "question": "What voltage do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
-                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs {socket:chademo:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs 500 volt"
-                    }
-                }
-            },
-            "15": {
-                "question": "What current do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
-                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most {socket:chademo:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most 120 A"
-                    }
-                }
-            },
-            "16": {
-                "question": "What power output does a single plug of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
-                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most {socket:chademo:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most 50 kw"
-                    }
-                }
-            },
-            "17": {
-                "question": "How much plugs of type <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?",
-                "render": "There are <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 with cable</b> (J1772) available here"
-            },
-            "18": {
-                "question": "What voltage do the plugs with <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
-                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs {socket:type1_cable:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 200 volt"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 240 volt"
-                    }
-                }
-            },
-            "19": {
-                "question": "What current do the plugs with <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
-                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1_cable:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 32 A"
-                    }
-                }
-            },
-            "20": {
-                "question": "What power output does a single plug of type <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
-                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1_cable:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 3.7 kw"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7 kw"
-                    }
-                }
-            },
-            "21": {
-                "question": "How much plugs of type <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?",
-                "render": "There are <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here"
-            },
-            "22": {
-                "question": "What voltage do the plugs with <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
-                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs {socket:type1:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 200 volt"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 240 volt"
-                    }
-                }
-            },
-            "23": {
-                "question": "What current do the plugs with <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
-                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 32 A"
-                    }
-                }
-            },
-            "24": {
-                "question": "What power output does a single plug of type <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
-                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 3.7 kw"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 6.6 kw"
-                    },
-                    "2": {
-                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7 kw"
-                    },
-                    "3": {
-                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7.2 kw"
-                    }
-                }
-            },
-            "25": {
-                "question": "How much plugs of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> are available here?",
-                "render": "There are <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here"
-            },
-            "26": {
-                "question": "What voltage do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
-                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs {socket:type1_combo:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs 400 volt"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs 1000 volt"
-                    }
-                }
-            },
-            "27": {
-                "question": "What current do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
-                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most {socket:type1_combo:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 50 A"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 125 A"
-                    }
-                }
-            },
-            "28": {
-                "question": "What power output does a single plug of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
-                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most {socket:type1_combo:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 50 kw"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 62.5 kw"
-                    },
-                    "2": {
-                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 150 kw"
-                    },
-                    "3": {
-                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 350 kw"
-                    }
-                }
-            },
-            "29": {
-                "question": "How much plugs of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?",
-                "render": "There are <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> plugs of type <b>Tesla Supercharger</b> available here"
-            },
-            "30": {
-                "question": "What voltage do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs {socket:tesla_supercharger:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs 480 volt"
-                    }
-                }
-            },
-            "31": {
-                "question": "What current do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_supercharger:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 125 A"
-                    },
-                    "1": {
-                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 350 A"
-                    }
-                }
-            },
-            "32": {
-                "question": "What power output does a single plug of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_supercharger:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 120 kw"
-                    },
-                    "1": {
-                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 150 kw"
-                    },
-                    "2": {
-                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 250 kw"
-                    }
-                }
-            },
-            "33": {
-                "question": "How much plugs of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> are available here?",
-                "render": "There are <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> plugs of type <b>Type 2</b> (mennekes) available here"
-            },
-            "34": {
-                "question": "What voltage do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
-                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs {socket:type2:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs 230 volt"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs 400 volt"
-                    }
-                }
-            },
-            "35": {
-                "question": "What current do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
-                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most {socket:type2:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 16 A"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 32 A"
-                    }
-                }
-            },
-            "36": {
-                "question": "What power output does a single plug of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
-                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most {socket:type2:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 11 kw"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 22 kw"
-                    }
-                }
-            },
-            "37": {
-                "question": "How much plugs of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?",
-                "render": "There are <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> plugs of type <b>Type 2 CCS</b> (mennekes) available here"
-            },
-            "38": {
-                "question": "What voltage do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs {socket:type2_combo:voltage} volt",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 500 volt"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 920 volt"
-                    }
-                }
-            },
-            "39": {
-                "question": "What current do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:current}A",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 125 A"
-                    },
-                    "1": {
-                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 350 A"
-                    }
-                }
-            },
-            "40": {
-                "question": "What power output does a single plug of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:output}",
-                "mappings": {
-                    "0": {
-                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 50 kw"
-                    }
-                }
-            },
-            "41": {
-                "question": "What kind of authentication is available at the charging station?",
-                "mappings": {
-                    "0": {
-                        "then": "Authentication by a membership card"
-                    },
-                    "1": {
-                        "then": "Authentication by an app"
-                    },
-                    "2": {
-                        "then": "Authentication via phone call is available"
-                    },
-                    "3": {
-                        "then": "Authentication via phone call is available"
-                    },
-                    "4": {
-                        "then": "Authentication via NFC is available"
-                    },
-                    "5": {
-                        "then": "Authentication via Money Card is available"
-                    },
-                    "6": {
-                        "then": "Authentication via debit card is available"
-                    },
-                    "7": {
-                        "then": "No authentication is needed"
-                    }
-                }
-            },
-            "42": {
-                "render": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
-                "question": "What's the phone number for authentication call or SMS?"
-            },
-            "43": {
-                "question": "When is this charging station opened?",
-                "mappings": {
-                    "0": {
-                        "then": "24/7 opened (including holidays)"
-                    }
-                }
-            },
-            "44": {
-                "question": "How much does one have to pay to use this charging station?",
-                "render": "Using this charging station costs <b>{charge}</b>",
-                "mappings": {
-                    "0": {
-                        "then": "Free to use"
-                    }
-                }
-            },
-            "45": {
-                "override": {
-                    "mappings+": {
-                        "0": {
-                            "then": "Payment is done using a dedicated app"
-                        }
-                    }
-                }
-            },
-            "46": {
-                "question": "What is the maximum amount of time one is allowed to stay here?",
-                "render": "One can stay at most <b>{canonical(maxstay)}</b>",
-                "mappings": {
-                    "0": {
-                        "then": "No timelimit on leaving your vehicle here"
-                    }
-                }
-            },
-            "47": {
-                "render": "Part of the network <b>{network}</b>",
-                "question": "Is this charging station part of a network?",
-                "mappings": {
-                    "0": {
-                        "then": "Not part of a bigger network"
-                    },
-                    "1": {
-                        "then": "Not part of a bigger network"
-                    }
-                }
-            },
-            "49": {
-                "question": "What number can one call if there is a problem with this charging station?",
-                "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
-            },
-            "50": {
-                "question": "What is the email address of the operator?",
-                "render": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
-            },
-            "51": {
-                "question": "What is the website of the operator?",
-                "render": "More info on <a href='{website}'>{website}</a>"
-            },
-            "53": {
-                "question": "What is the reference number of this charging station?"
-            },
-            "54": {
-                "question": "Is this charging point in use?",
-                "mappings": {
-                    "0": {
-                        "then": "This charging station is broken"
-                    },
-                    "1": {
-                        "then": "A charging station is planned here"
-                    },
-                    "2": {
-                        "then": "A charging station is constructed here"
-                    },
-                    "3": {
-                        "then": "This charging station has beed permanently disabled and is not in use anymore but is still visible"
-                    },
-                    "4": {
-                        "then": "This charging station works"
-                    }
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Charging station"
-            }
-        },
         "filter": {
             "0": {
                 "options": {
@@ -1474,6 +926,554 @@
                 }
             }
         },
+        "name": "Charging stations",
+        "presets": {
+            "0": {
+                "title": "Charging station"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>bicycles</b> can be charged here"
+                    },
+                    "1": {
+                        "then": "<b>Cars</b> can be charged here"
+                    },
+                    "2": {
+                        "then": "<b>Scooters</b> can be charged here"
+                    },
+                    "3": {
+                        "then": "<b>Heavy good vehicles</b> (such as trucks) can be charged here"
+                    },
+                    "4": {
+                        "then": "<b>Buses</b> can be charged here"
+                    }
+                },
+                "question": "Which vehicles are allowed to charge here?"
+            },
+            "3": {
+                "question": "How much vehicles can be charged here at the same time?",
+                "render": "{capacity} vehicles can be charged here at the same time"
+            },
+            "4": {
+                "mappings": {
+                    "0": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)"
+                    },
+                    "1": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)"
+                    },
+                    "2": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)"
+                    },
+                    "3": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)"
+                    },
+                    "4": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)"
+                    },
+                    "10": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)"
+                    },
+                    "11": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)"
+                    },
+                    "12": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>"
+                    },
+                    "13": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>"
+                    },
+                    "14": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)"
+                    },
+                    "15": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)"
+                    },
+                    "16": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)"
+                    },
+                    "17": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)"
+                    }
+                },
+                "question": "Which charging stations are available here?"
+            },
+            "5": {
+                "question": "How much plugs of type <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> are available here?",
+                "render": "There are <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs 230 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
+                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs {socket:schuko:voltage} volt"
+            },
+            "7": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most 16 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
+                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most {socket:schuko:current}A"
+            },
+            "8": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most 3.6 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
+                "render": "<b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> outputs at most {socket:schuko:output}"
+            },
+            "9": {
+                "question": "How much plugs of type <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> are available here?",
+                "render": "There are <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here"
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs 230 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
+                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs {socket:typee:voltage} volt"
+            },
+            "11": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 16 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
+                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most {socket:typee:current}A"
+            },
+            "12": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 3 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most 22 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
+                "render": "<b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> outputs at most {socket:typee:output}"
+            },
+            "13": {
+                "question": "How much plugs of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?",
+                "render": "There are <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> plugs of type <b>Chademo</b> available here"
+            },
+            "14": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs 500 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
+                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs {socket:chademo:voltage} volt"
+            },
+            "15": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most 120 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
+                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most {socket:chademo:current}A"
+            },
+            "16": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most 50 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
+                "render": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most {socket:chademo:output}"
+            },
+            "17": {
+                "question": "How much plugs of type <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?",
+                "render": "There are <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 with cable</b> (J1772) available here"
+            },
+            "18": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 200 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 240 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs {socket:type1_cable:voltage} volt"
+            },
+            "19": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 32 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1_cable:current}A"
+            },
+            "20": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 3.7 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1_cable:output}"
+            },
+            "21": {
+                "question": "How much plugs of type <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?",
+                "render": "There are <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here"
+            },
+            "22": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 200 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs 240 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs {socket:type1:voltage} volt"
+            },
+            "23": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 32 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1:current}A"
+            },
+            "24": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 3.7 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 6.6 kw"
+                    },
+                    "2": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7 kw"
+                    },
+                    "3": {
+                        "then": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most 7.2 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
+                "render": "<b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> outputs at most {socket:type1:output}"
+            },
+            "25": {
+                "question": "How much plugs of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> are available here?",
+                "render": "There are <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here"
+            },
+            "26": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs 400 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs 1000 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
+                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs {socket:type1_combo:voltage} volt"
+            },
+            "27": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 50 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 125 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
+                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most {socket:type1_combo:current}A"
+            },
+            "28": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 50 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 62.5 kw"
+                    },
+                    "2": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 150 kw"
+                    },
+                    "3": {
+                        "then": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 350 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
+                "render": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most {socket:type1_combo:output}"
+            },
+            "29": {
+                "question": "How much plugs of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?",
+                "render": "There are <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> plugs of type <b>Tesla Supercharger</b> available here"
+            },
+            "30": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs 480 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs {socket:tesla_supercharger:voltage} volt"
+            },
+            "31": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 125 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 350 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_supercharger:current}A"
+            },
+            "32": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 120 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 150 kw"
+                    },
+                    "2": {
+                        "then": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 250 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_supercharger:output}"
+            },
+            "33": {
+                "question": "How much plugs of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> are available here?",
+                "render": "There are <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> plugs of type <b>Type 2</b> (mennekes) available here"
+            },
+            "34": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs 230 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs 400 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
+                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs {socket:type2:voltage} volt"
+            },
+            "35": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 16 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 32 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
+                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most {socket:type2:current}A"
+            },
+            "36": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 11 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 22 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
+                "render": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most {socket:type2:output}"
+            },
+            "37": {
+                "question": "How much plugs of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?",
+                "render": "There are <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> plugs of type <b>Type 2 CCS</b> (mennekes) available here"
+            },
+            "38": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 500 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 920 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs {socket:type2_combo:voltage} volt"
+            },
+            "39": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 125 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 350 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:current}A"
+            },
+            "40": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 50 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:output}"
+            },
+            "41": {
+                "mappings": {
+                    "0": {
+                        "then": "Authentication by a membership card"
+                    },
+                    "1": {
+                        "then": "Authentication by an app"
+                    },
+                    "2": {
+                        "then": "Authentication via phone call is available"
+                    },
+                    "3": {
+                        "then": "Authentication via phone call is available"
+                    },
+                    "4": {
+                        "then": "Authentication via NFC is available"
+                    },
+                    "5": {
+                        "then": "Authentication via Money Card is available"
+                    },
+                    "6": {
+                        "then": "Authentication via debit card is available"
+                    },
+                    "7": {
+                        "then": "No authentication is needed"
+                    }
+                },
+                "question": "What kind of authentication is available at the charging station?"
+            },
+            "42": {
+                "question": "What's the phone number for authentication call or SMS?",
+                "render": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
+            "43": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 opened (including holidays)"
+                    }
+                },
+                "question": "When is this charging station opened?"
+            },
+            "44": {
+                "mappings": {
+                    "0": {
+                        "then": "Free to use"
+                    }
+                },
+                "question": "How much does one have to pay to use this charging station?",
+                "render": "Using this charging station costs <b>{charge}</b>"
+            },
+            "45": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Payment is done using a dedicated app"
+                        }
+                    }
+                }
+            },
+            "46": {
+                "mappings": {
+                    "0": {
+                        "then": "No timelimit on leaving your vehicle here"
+                    }
+                },
+                "question": "What is the maximum amount of time one is allowed to stay here?",
+                "render": "One can stay at most <b>{canonical(maxstay)}</b>"
+            },
+            "47": {
+                "mappings": {
+                    "0": {
+                        "then": "Not part of a bigger network"
+                    },
+                    "1": {
+                        "then": "Not part of a bigger network"
+                    }
+                },
+                "question": "Is this charging station part of a network?",
+                "render": "Part of the network <b>{network}</b>"
+            },
+            "49": {
+                "question": "What number can one call if there is a problem with this charging station?",
+                "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
+            },
+            "50": {
+                "question": "What is the email address of the operator?",
+                "render": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
+            },
+            "51": {
+                "question": "What is the website of the operator?",
+                "render": "More info on <a href='{website}'>{website}</a>"
+            },
+            "53": {
+                "question": "What is the reference number of this charging station?"
+            },
+            "54": {
+                "mappings": {
+                    "0": {
+                        "then": "This charging station is broken"
+                    },
+                    "1": {
+                        "then": "A charging station is planned here"
+                    },
+                    "2": {
+                        "then": "A charging station is constructed here"
+                    },
+                    "3": {
+                        "then": "This charging station has beed permanently disabled and is not in use anymore but is still visible"
+                    },
+                    "4": {
+                        "then": "This charging station works"
+                    }
+                },
+                "question": "Is this charging point in use?"
+            }
+        },
+        "title": {
+            "render": "Charging station"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -1518,32 +1518,20 @@
         }
     },
     "crossings": {
-        "name": "Crossings",
         "description": "Crossings for pedestrians and cyclists",
-        "title": {
-            "render": "Crossing",
-            "mappings": {
-                "0": {
-                    "then": "Traffic signal"
-                },
-                "1": {
-                    "then": "Crossing with traffic signals"
-                }
-            }
-        },
+        "name": "Crossings",
         "presets": {
             "0": {
-                "title": "Crossing",
-                "description": "Crossing for pedestrians and/or cyclists"
+                "description": "Crossing for pedestrians and/or cyclists",
+                "title": "Crossing"
             },
             "1": {
-                "title": "Traffic signal",
-                "description": "Traffic signal on a road"
+                "description": "Traffic signal on a road",
+                "title": "Traffic signal"
             }
         },
         "tagRenderings": {
             "0": {
-                "question": "What kind of crossing is this?",
                 "mappings": {
                     "0": {
                         "then": "Crossing, without traffic lights"
@@ -1554,10 +1542,10 @@
                     "2": {
                         "then": "Zebra crossing"
                     }
-                }
+                },
+                "question": "What kind of crossing is this?"
             },
             "1": {
-                "question": "Is this is a zebra crossing?",
                 "mappings": {
                     "0": {
                         "then": "This is a zebra crossing"
@@ -1565,10 +1553,10 @@
                     "1": {
                         "then": "This is not a zebra crossing"
                     }
-                }
+                },
+                "question": "Is this is a zebra crossing?"
             },
             "2": {
-                "question": "Is this crossing also for bicycles?",
                 "mappings": {
                     "0": {
                         "then": "A cyclist can use this crossing"
@@ -1576,10 +1564,10 @@
                     "1": {
                         "then": "A cyclist can not use this crossing"
                     }
-                }
+                },
+                "question": "Is this crossing also for bicycles?"
             },
             "3": {
-                "question": "Does this crossing have an island in the middle?",
                 "mappings": {
                     "0": {
                         "then": "This crossing has an island in the middle"
@@ -1587,10 +1575,10 @@
                     "1": {
                         "then": "This crossing does not have an island in the middle"
                     }
-                }
+                },
+                "question": "Does this crossing have an island in the middle?"
             },
             "4": {
-                "question": "Does this crossing have tactile paving?",
                 "mappings": {
                     "0": {
                         "then": "This crossing has tactile paving"
@@ -1601,10 +1589,10 @@
                     "2": {
                         "then": "This crossing has tactile paving, but is not correct"
                     }
-                }
+                },
+                "question": "Does this crossing have tactile paving?"
             },
             "5": {
-                "question": "Does this traffic light have a button to request green light?",
                 "mappings": {
                     "0": {
                         "then": "This traffic light has a button to request green light"
@@ -1612,10 +1600,10 @@
                     "1": {
                         "then": "This traffic light does not have a button to request green light"
                     }
-                }
+                },
+                "question": "Does this traffic light have a button to request green light?"
             },
             "6": {
-                "question": "Can a cyclist turn right when the light is red?",
                 "mappings": {
                     "0": {
                         "then": "A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
@@ -1626,10 +1614,10 @@
                     "2": {
                         "then": "A cyclist can not turn right if the light is red"
                     }
-                }
+                },
+                "question": "Can a cyclist turn right when the light is red?"
             },
             "7": {
-                "question": "Can a cyclist go straight on when the light is red?",
                 "mappings": {
                     "0": {
                         "then": "A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
@@ -1640,35 +1628,26 @@
                     "2": {
                         "then": "A cyclist can not go straight on if the light is red"
                     }
-                }
+                },
+                "question": "Can a cyclist go straight on when the light is red?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Traffic signal"
+                },
+                "1": {
+                    "then": "Crossing with traffic signals"
+                }
+            },
+            "render": "Crossing"
         }
     },
     "cycleways_and_roads": {
         "name": "Cycleways and roads",
-        "title": {
-            "render": "Cycleways",
-            "mappings": {
-                "0": {
-                    "then": "Cycleway"
-                },
-                "1": {
-                    "then": "Shared lane"
-                },
-                "2": {
-                    "then": "Bike lane"
-                },
-                "3": {
-                    "then": "Cycleway next to the road"
-                },
-                "4": {
-                    "then": "Cyclestreet"
-                }
-            }
-        },
         "tagRenderings": {
             "0": {
-                "question": "What kind of cycleway is here?",
                 "mappings": {
                     "0": {
                         "then": "There is a shared lane"
@@ -1688,10 +1667,10 @@
                     "5": {
                         "then": "There is no cycleway"
                     }
-                }
+                },
+                "question": "What kind of cycleway is here?"
             },
             "1": {
-                "question": "Is this street lit?",
                 "mappings": {
                     "0": {
                         "then": "This street is lit"
@@ -1705,10 +1684,10 @@
                     "3": {
                         "then": "This road is lit 24/7"
                     }
-                }
+                },
+                "question": "Is this street lit?"
             },
             "2": {
-                "question": "Is this a cyclestreet?",
                 "mappings": {
                     "0": {
                         "then": "This is a cyclestreet, and a 30km/h zone."
@@ -1719,10 +1698,10 @@
                     "2": {
                         "then": "This is not a cyclestreet."
                     }
-                }
+                },
+                "question": "Is this a cyclestreet?"
             },
             "3": {
-                "render": "The maximum speed on this road is {maxspeed} km/h",
                 "mappings": {
                     "0": {
                         "then": "The maximum speed is 20 km/h"
@@ -1740,10 +1719,10 @@
                         "then": "The maximum speed is 90 km/h"
                     }
                 },
-                "question": "What is the maximum speed in this street?"
+                "question": "What is the maximum speed in this street?",
+                "render": "The maximum speed on this road is {maxspeed} km/h"
             },
             "4": {
-                "render": "This cyleway is made of {cycleway:surface}",
                 "mappings": {
                     "0": {
                         "then": "This cycleway is unpaved"
@@ -1785,10 +1764,10 @@
                         "then": "This cycleway is made from raw ground"
                     }
                 },
-                "question": "What is the surface of the cycleway made from?"
+                "question": "What is the surface of the cycleway made from?",
+                "render": "This cyleway is made of {cycleway:surface}"
             },
             "5": {
-                "question": "What is the smoothness of this cycleway?",
                 "mappings": {
                     "0": {
                         "then": "Usable for thin rollers: rollerblade, skateboard"
@@ -1814,10 +1793,10 @@
                     "7": {
                         "then": "Impassable / No wheeled vehicle"
                     }
-                }
+                },
+                "question": "What is the smoothness of this cycleway?"
             },
             "6": {
-                "render": "This road is made of {surface}",
                 "mappings": {
                     "0": {
                         "then": "This cycleway is unhardened"
@@ -1859,10 +1838,10 @@
                         "then": "This cycleway is made from raw ground"
                     }
                 },
-                "question": "What is the surface of the street made from?"
+                "question": "What is the surface of the street made from?",
+                "render": "This road is made of {surface}"
             },
             "7": {
-                "question": "What is the smoothness of this street?",
                 "mappings": {
                     "0": {
                         "then": "Usable for thin rollers: rollerblade, skateboard"
@@ -1888,14 +1867,14 @@
                     "7": {
                         "then": "Impassable / No wheeled vehicle"
                     }
-                }
+                },
+                "question": "What is the smoothness of this street?"
             },
             "8": {
-                "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
-                "question": "What is the carriage width of this road (in meters)?"
+                "question": "What is the carriage width of this road (in meters)?",
+                "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>"
             },
             "9": {
-                "question": "What traffic sign does this cycleway have?",
                 "mappings": {
                     "0": {
                         "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
@@ -1912,10 +1891,10 @@
                     "4": {
                         "then": "No traffic sign present"
                     }
-                }
+                },
+                "question": "What traffic sign does this cycleway have?"
             },
             "10": {
-                "question": "What traffic sign does this cycleway have?",
                 "mappings": {
                     "0": {
                         "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
@@ -1932,10 +1911,10 @@
                     "4": {
                         "then": "No traffic sign present"
                     }
-                }
+                },
+                "question": "What traffic sign does this cycleway have?"
             },
             "11": {
-                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
                 "mappings": {
                     "0": {
                         "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
@@ -1958,10 +1937,10 @@
                     "6": {
                         "then": "No supplementary traffic sign present"
                     }
-                }
+                },
+                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?"
             },
             "12": {
-                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
                 "mappings": {
                     "0": {
                         "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
@@ -1984,14 +1963,14 @@
                     "6": {
                         "then": "No supplementary traffic sign present"
                     }
-                }
+                },
+                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?"
             },
             "13": {
-                "render": "The buffer besides this cycleway is {cycleway:buffer} m",
-                "question": "How wide is the gap between the cycleway and the road?"
+                "question": "How wide is the gap between the cycleway and the road?",
+                "render": "The buffer besides this cycleway is {cycleway:buffer} m"
             },
             "14": {
-                "question": "How is this cycleway separated from the road?",
                 "mappings": {
                     "0": {
                         "then": "This cycleway is separated by a dashed line"
@@ -2005,10 +1984,10 @@
                     "3": {
                         "then": "This cycleway is separated by a kerb"
                     }
-                }
+                },
+                "question": "How is this cycleway separated from the road?"
             },
             "15": {
-                "question": "How is this cycleway separated from the road?",
                 "mappings": {
                     "0": {
                         "then": "This cycleway is separated by a dashed line"
@@ -2022,15 +2001,32 @@
                     "3": {
                         "then": "This cycleway is separated by a kerb"
                     }
-                }
+                },
+                "question": "How is this cycleway separated from the road?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Cycleway"
+                },
+                "1": {
+                    "then": "Shared lane"
+                },
+                "2": {
+                    "then": "Bike lane"
+                },
+                "3": {
+                    "then": "Cycleway next to the road"
+                },
+                "4": {
+                    "then": "Cyclestreet"
+                }
+            },
+            "render": "Cycleways"
         }
     },
     "defibrillator": {
-        "name": "Defibrillators",
-        "title": {
-            "render": "Defibrillator"
-        },
         "icon": {
             "mappings": {
                 "0": {
@@ -2038,6 +2034,7 @@
                 }
             }
         },
+        "name": "Defibrillators",
         "presets": {
             "0": {
                 "title": "Defibrillator"
@@ -2045,7 +2042,6 @@
         },
         "tagRenderings": {
             "1": {
-                "question": "Is this defibrillator located indoors?",
                 "mappings": {
                     "0": {
                         "then": "This defibrillator is located indoors"
@@ -2053,11 +2049,10 @@
                     "1": {
                         "then": "This defibrillator is located outdoors"
                     }
-                }
+                },
+                "question": "Is this defibrillator located indoors?"
             },
             "2": {
-                "question": "Is this defibrillator freely accessible?",
-                "render": "Access is {access}",
                 "mappings": {
                     "0": {
                         "then": "Publicly accessible"
@@ -2074,11 +2069,11 @@
                     "4": {
                         "then": "Not accessible, possibly only for professional use"
                     }
-                }
+                },
+                "question": "Is this defibrillator freely accessible?",
+                "render": "Access is {access}"
             },
             "3": {
-                "render": "There is no info about the type of device",
-                "question": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
                 "mappings": {
                     "0": {
                         "then": "This is a manual defibrillator for professionals"
@@ -2086,11 +2081,11 @@
                     "1": {
                         "then": "This is a normal automatic defibrillator"
                     }
-                }
+                },
+                "question": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
+                "render": "There is no info about the type of device"
             },
             "4": {
-                "question": "On which floor is this defibrillator located?",
-                "render": "This defibrillator is on floor {level}",
                 "mappings": {
                     "0": {
                         "then": "This defibrillator is on the <b>ground floor</b>"
@@ -2098,69 +2093,71 @@
                     "1": {
                         "then": "This defibrillator is on the <b>first floor</b>"
                     }
-                }
+                },
+                "question": "On which floor is this defibrillator located?",
+                "render": "This defibrillator is on floor {level}"
             },
             "5": {
-                "render": "<i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}",
-                "question": "Please give some explanation on where the defibrillator can be found (in the local language)"
+                "question": "Please give some explanation on where the defibrillator can be found (in the local language)",
+                "render": "<i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}"
             },
             "6": {
-                "render": "<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}",
-                "question": "Please give some explanation on where the defibrillator can be found (in English)"
+                "question": "Please give some explanation on where the defibrillator can be found (in English)",
+                "render": "<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}"
             },
             "7": {
-                "render": "<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}",
-                "question": "Please give some explanation on where the defibrillator can be found (in French)"
+                "question": "Please give some explanation on where the defibrillator can be found (in French)",
+                "render": "<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}"
             },
             "9": {
-                "render": "Official identification number of the device: <i>{ref}</i>",
-                "question": "What is the official identification number of the device? (if visible on device)"
+                "question": "What is the official identification number of the device? (if visible on device)",
+                "render": "Official identification number of the device: <i>{ref}</i>"
             },
             "10": {
-                "render": "Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>",
-                "question": "What is the email for questions about this defibrillator?"
+                "question": "What is the email for questions about this defibrillator?",
+                "render": "Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>"
             },
             "11": {
-                "render": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>",
-                "question": "What is the phone number for questions about this defibrillator?"
+                "question": "What is the phone number for questions about this defibrillator?",
+                "render": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>"
             },
             "12": {
-                "render": "{opening_hours_table(opening_hours)}",
-                "question": "At what times is this defibrillator available?",
                 "mappings": {
                     "0": {
                         "then": "24/7 opened (including holidays)"
                     }
-                }
+                },
+                "question": "At what times is this defibrillator available?",
+                "render": "{opening_hours_table(opening_hours)}"
             },
             "13": {
-                "render": "Additional information: {description}",
-                "question": "Is there any useful information for users that you haven't been able to describe above? (leave blank if no)"
+                "question": "Is there any useful information for users that you haven't been able to describe above? (leave blank if no)",
+                "render": "Additional information: {description}"
             },
             "14": {
-                "question": "When was this defibrillator last surveyed?",
-                "render": "This defibrillator was last surveyed on {survey:date}",
                 "mappings": {
                     "0": {
                         "then": "Checked today!"
                     }
-                }
+                },
+                "question": "When was this defibrillator last surveyed?",
+                "render": "This defibrillator was last surveyed on {survey:date}"
             },
             "15": {
-                "render": "Extra information for OpenStreetMap experts: {fixme}",
-                "question": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)"
+                "question": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
+                "render": "Extra information for OpenStreetMap experts: {fixme}"
             }
+        },
+        "title": {
+            "render": "Defibrillator"
         }
     },
     "direction": {
-        "name": "Direction visualization",
-        "description": "This layer visualizes directions"
+        "description": "This layer visualizes directions",
+        "name": "Direction visualization"
     },
     "drinking_water": {
         "name": "Drinking water",
-        "title": {
-            "render": "Drinking water"
-        },
         "presets": {
             "0": {
                 "title": "Drinking water"
@@ -2168,8 +2165,6 @@
         },
         "tagRenderings": {
             "1": {
-                "question": "Is this drinking water spot still operational?",
-                "render": "The operational status is <i>{operational_status</i>",
                 "mappings": {
                     "0": {
                         "then": "This drinking water works"
@@ -2180,10 +2175,11 @@
                     "2": {
                         "then": "This drinking water is closed"
                     }
-                }
+                },
+                "question": "Is this drinking water spot still operational?",
+                "render": "The operational status is <i>{operational_status</i>"
             },
             "2": {
-                "question": "How easy is it to fill water bottles?",
                 "mappings": {
                     "0": {
                         "then": "It is easy to refill water bottles"
@@ -2191,110 +2187,18 @@
                     "1": {
                         "then": "Water bottles may not fit"
                     }
-                }
+                },
+                "question": "How easy is it to fill water bottles?"
             },
             "3": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>"
             }
+        },
+        "title": {
+            "render": "Drinking water"
         }
     },
     "food": {
-        "name": "Restaurants and fast food",
-        "presets": {
-            "0": {
-                "title": "restaurant",
-                "description": "A formal eating place with sit-down facilities selling full meals served by waiters"
-            },
-            "1": {
-                "title": "fastfood",
-                "description": "A food business concentrating on fast counter-only service and take-away food"
-            },
-            "2": {
-                "title": "fries shop"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Restaurant <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Fastfood <i>{name}</i>"
-                }
-            }
-        },
-        "tagRenderings": {
-            "1": {
-                "question": "What is the name of this restaurant?",
-                "render": "The name of this restaurant is {name}"
-            },
-            "2": {
-                "question": "What type of business is this?"
-            },
-            "9": {
-                "question": "Which food is served here?",
-                "render": "This place mostly serves {cuisine}",
-                "mappings": {
-                    "0": {
-                        "then": "This is a pizzeria"
-                    },
-                    "1": {
-                        "then": "This is a friture"
-                    },
-                    "2": {
-                        "then": "Mainly serves pasta"
-                    }
-                }
-            },
-            "10": {
-                "question": "Does this place offer takea-way?",
-                "mappings": {
-                    "0": {
-                        "then": "This is a take-away only business"
-                    },
-                    "1": {
-                        "then": "Take-away is possible here"
-                    },
-                    "2": {
-                        "then": "Take-away is not possible here"
-                    }
-                }
-            },
-            "11": {
-                "question": "Does this restaurant have a vegetarian option?"
-            },
-            "13": {
-                "question": "Does this restaurant offer a halal menu?",
-                "mappings": {
-                    "0": {
-                        "then": "There are no halal options available"
-                    },
-                    "1": {
-                        "then": "There is a small halal menu"
-                    },
-                    "2": {
-                        "then": "There is a halal menu"
-                    },
-                    "3": {
-                        "then": "Only halal options are available"
-                    }
-                }
-            },
-            "17": {
-                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
-                "mappings": {
-                    "0": {
-                        "then": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste"
-                    },
-                    "1": {
-                        "then": "Bringing your own container is <b>not allowed</b>"
-                    },
-                    "2": {
-                        "then": "You <b>must</b> bring your own container to order here."
-                    }
-                }
-            }
-        },
         "filter": {
             "0": {
                 "options": {
@@ -2324,18 +2228,106 @@
                     }
                 }
             }
+        },
+        "name": "Restaurants and fast food",
+        "presets": {
+            "0": {
+                "description": "A formal eating place with sit-down facilities selling full meals served by waiters",
+                "title": "restaurant"
+            },
+            "1": {
+                "description": "A food business concentrating on fast counter-only service and take-away food",
+                "title": "fastfood"
+            },
+            "2": {
+                "title": "fries shop"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "What is the name of this restaurant?",
+                "render": "The name of this restaurant is {name}"
+            },
+            "2": {
+                "question": "What type of business is this?"
+            },
+            "9": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a pizzeria"
+                    },
+                    "1": {
+                        "then": "This is a friture"
+                    },
+                    "2": {
+                        "then": "Mainly serves pasta"
+                    }
+                },
+                "question": "Which food is served here?",
+                "render": "This place mostly serves {cuisine}"
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a take-away only business"
+                    },
+                    "1": {
+                        "then": "Take-away is possible here"
+                    },
+                    "2": {
+                        "then": "Take-away is not possible here"
+                    }
+                },
+                "question": "Does this place offer takea-way?"
+            },
+            "11": {
+                "question": "Does this restaurant have a vegetarian option?"
+            },
+            "13": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no halal options available"
+                    },
+                    "1": {
+                        "then": "There is a small halal menu"
+                    },
+                    "2": {
+                        "then": "There is a halal menu"
+                    },
+                    "3": {
+                        "then": "Only halal options are available"
+                    }
+                },
+                "question": "Does this restaurant offer a halal menu?"
+            },
+            "17": {
+                "mappings": {
+                    "0": {
+                        "then": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste"
+                    },
+                    "1": {
+                        "then": "Bringing your own container is <b>not allowed</b>"
+                    },
+                    "2": {
+                        "then": "You <b>must</b> bring your own container to order here."
+                    }
+                },
+                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Restaurant <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Fastfood <i>{name}</i>"
+                }
+            }
         }
     },
     "ghost_bike": {
         "name": "Ghost bikes",
-        "title": {
-            "render": "Ghost bike",
-            "mappings": {
-                "0": {
-                    "then": "Ghost bike in the remembrance of {name}"
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "Ghost bike"
@@ -2346,13 +2338,13 @@
                 "render": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location."
             },
             "2": {
-                "question": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
-                "render": "In remembrance of {name}",
                 "mappings": {
                     "0": {
                         "then": "No name is marked on the bike"
                     }
-                }
+                },
+                "question": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
+                "render": "In remembrance of {name}"
             },
             "3": {
                 "question": "On what webpage can one find more information about the Ghost bike or the accident?",
@@ -2366,37 +2358,47 @@
                 "question": "When was this Ghost bike installed?",
                 "render": "Placed on {start_date}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Ghost bike in the remembrance of {name}"
+                }
+            },
+            "render": "Ghost bike"
         }
     },
     "information_board": {
         "name": "Information boards",
-        "title": {
-            "render": "Information board"
-        },
         "presets": {
             "0": {
                 "title": "Information board"
             }
+        },
+        "title": {
+            "render": "Information board"
         }
     },
     "map": {
-        "name": "Maps",
-        "title": {
-            "render": "Map"
-        },
         "description": "A map, meant for tourists which is permanently installed in the public space",
+        "name": "Maps",
+        "presets": {
+            "0": {
+                "description": "Add a missing map",
+                "title": "Map"
+            }
+        },
         "tagRenderings": {
             "1": {
-                "question": "On which data is this map based?",
                 "mappings": {
                     "0": {
                         "then": "This map is based on OpenStreetMap"
                     }
                 },
+                "question": "On which data is this map based?",
                 "render": "This map is based on {map_source}"
             },
             "2": {
-                "question": "Is the OpenStreetMap-attribution given?",
                 "mappings": {
                     "0": {
                         "then": "OpenStreetMap is clearly attributed, including the ODBL-license"
@@ -2413,20 +2415,17 @@
                     "4": {
                         "then": "There is no attribution at all"
                     }
-                }
+                },
+                "question": "Is the OpenStreetMap-attribution given?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Map",
-                "description": "Add a missing map"
-            }
+        "title": {
+            "render": "Map"
         }
     },
     "nature_reserve": {
         "tagRenderings": {
             "5": {
-                "question": "Are dogs allowed in this nature reserve?",
                 "mappings": {
                     "0": {
                         "then": "Dogs have to be leashed"
@@ -2437,7 +2436,8 @@
                     "2": {
                         "then": "Dogs are allowed to roam freely"
                     }
-                }
+                },
+                "question": "Are dogs allowed in this nature reserve?"
             },
             "6": {
                 "question": "On which webpage can one find more information about this nature reserve?"
@@ -2460,25 +2460,22 @@
         }
     },
     "observation_tower": {
+        "description": "Towers with a panoramic view",
         "name": "Observation towers",
-        "title": {
-            "render": "Observation tower",
-            "mappings": {
-                "0": {
-                    "then": "<b>{name}</b>"
-                }
+        "presets": {
+            "0": {
+                "title": "observation tower"
             }
         },
-        "description": "Towers with a panoramic view",
         "tagRenderings": {
             "1": {
-                "question": "What is the name of this tower?",
-                "render": "This tower is called <b>{name}</b>",
                 "mappings": {
                     "0": {
                         "then": "This tower doesn't have a specific name"
                     }
-                }
+                },
+                "question": "What is the name of this tower?",
+                "render": "This tower is called <b>{name}</b>"
             },
             "2": {
                 "question": "What is the height of this tower?",
@@ -2489,19 +2486,22 @@
                 "render": "Maintained by <b>{operator}</b>"
             },
             "5": {
-                "question": "How much does one have to pay to enter this tower?",
-                "render": "Visiting this tower costs <b>{charge}</b>",
                 "mappings": {
                     "0": {
                         "then": "Free to visit"
                     }
-                }
+                },
+                "question": "How much does one have to pay to enter this tower?",
+                "render": "Visiting this tower costs <b>{charge}</b>"
             }
         },
-        "presets": {
-            "0": {
-                "title": "observation tower"
-            }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            },
+            "render": "Observation tower"
         },
         "units": {
             "0": {
@@ -2514,15 +2514,15 @@
         }
     },
     "picnic_table": {
-        "name": "Picnic tables",
-        "title": {
-            "render": "Picnic table"
-        },
         "description": "The layer showing picnic tables",
+        "name": "Picnic tables",
+        "presets": {
+            "0": {
+                "title": "Picnic table"
+            }
+        },
         "tagRenderings": {
             "0": {
-                "question": "What material is this picnic table made of?",
-                "render": "This picnic table is made of {material}",
                 "mappings": {
                     "0": {
                         "then": "This is a wooden picnic table"
@@ -2530,30 +2530,25 @@
                     "1": {
                         "then": "This is a concrete picnic table"
                     }
-                }
+                },
+                "question": "What material is this picnic table made of?",
+                "render": "This picnic table is made of {material}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Picnic table"
-            }
+        "title": {
+            "render": "Picnic table"
         }
     },
     "playground": {
-        "name": "Playgrounds",
         "description": "Playgrounds",
-        "title": {
-            "render": "Playground",
-            "mappings": {
-                "0": {
-                    "then": "Playground <i>{name}</i>"
-                }
+        "name": "Playgrounds",
+        "presets": {
+            "0": {
+                "title": "Playground"
             }
         },
         "tagRenderings": {
             "1": {
-                "question": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>",
-                "render": "The surface is <b>{surface}</b>",
                 "mappings": {
                     "0": {
                         "then": "The surface is <b>grass</b>"
@@ -2579,10 +2574,11 @@
                     "7": {
                         "then": "The surface is <b>paved</b>"
                     }
-                }
+                },
+                "question": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>",
+                "render": "The surface is <b>{surface}</b>"
             },
             "2": {
-                "question": "Is this playground lit at night?",
                 "mappings": {
                     "0": {
                         "then": "This playground is lit at night"
@@ -2590,22 +2586,22 @@
                     "1": {
                         "then": "This playground is not lit at night"
                     }
-                }
+                },
+                "question": "Is this playground lit at night?"
             },
             "3": {
-                "render": "Accessible to kids older than {min_age} years",
-                "question": "What is the minimum age required to access this playground?"
+                "question": "What is the minimum age required to access this playground?",
+                "render": "Accessible to kids older than {min_age} years"
             },
             "4": {
-                "render": "Accessible to kids of at most {max_age}",
-                "question": "What is the maximum age allowed to access this playground?"
+                "question": "What is the maximum age allowed to access this playground?",
+                "render": "Accessible to kids of at most {max_age}"
             },
             "5": {
                 "question": "Who operates this playground?",
                 "render": "Operated by {operator}"
             },
             "6": {
-                "question": "Is this playground accessible to the general public?",
                 "mappings": {
                     "0": {
                         "then": "Accessible to the general public"
@@ -2622,7 +2618,8 @@
                     "4": {
                         "then": "Not accessible"
                     }
-                }
+                },
+                "question": "Is this playground accessible to the general public?"
             },
             "7": {
                 "question": "What is the email address of the playground maintainer?",
@@ -2633,7 +2630,6 @@
                 "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "9": {
-                "question": "Is this playground accessible to wheelchair users?",
                 "mappings": {
                     "0": {
                         "then": "Completely accessible for wheelchair users"
@@ -2644,10 +2640,10 @@
                     "2": {
                         "then": "Not accessible for wheelchair users"
                     }
-                }
+                },
+                "question": "Is this playground accessible to wheelchair users?"
             },
             "10": {
-                "question": "When is this playground accessible?",
                 "mappings": {
                     "0": {
                         "then": "Accessible from sunrise till sunset"
@@ -2658,26 +2654,22 @@
                     "2": {
                         "then": "Always accessible"
                     }
-                }
+                },
+                "question": "When is this playground accessible?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Playground"
-            }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Playground <i>{name}</i>"
+                }
+            },
+            "render": "Playground"
         }
     },
     "public_bookcase": {
-        "name": "Bookcases",
         "description": "A streetside cabinet with books, accessible to anyone",
-        "title": {
-            "render": "Bookcase",
-            "mappings": {
-                "0": {
-                    "then": "Public bookcase <i>{name}</i>"
-                }
-            }
-        },
+        "name": "Bookcases",
         "presets": {
             "0": {
                 "title": "Bookcase"
@@ -2685,20 +2677,19 @@
         },
         "tagRenderings": {
             "2": {
-                "render": "The name of this bookcase is {name}",
-                "question": "What is the name of this public bookcase?",
                 "mappings": {
                     "0": {
                         "then": "This bookcase doesn't have a name"
                     }
-                }
+                },
+                "question": "What is the name of this public bookcase?",
+                "render": "The name of this bookcase is {name}"
             },
             "3": {
-                "render": "{capacity} books fit in this bookcase",
-                "question": "How many books fit into this public bookcase?"
+                "question": "How many books fit into this public bookcase?",
+                "render": "{capacity} books fit in this bookcase"
             },
             "4": {
-                "question": "What kind of books can be found in this public bookcase?",
                 "mappings": {
                     "0": {
                         "then": "Mostly children books"
@@ -2709,10 +2700,10 @@
                     "2": {
                         "then": "Both books for kids and adults"
                     }
-                }
+                },
+                "question": "What kind of books can be found in this public bookcase?"
             },
             "5": {
-                "question": "Is this bookcase located outdoors?",
                 "mappings": {
                     "0": {
                         "then": "This bookcase is located indoors"
@@ -2723,10 +2714,10 @@
                     "2": {
                         "then": "This bookcase is located outdoors"
                     }
-                }
+                },
+                "question": "Is this bookcase located outdoors?"
             },
             "6": {
-                "question": "Is this public bookcase freely accessible?",
                 "mappings": {
                     "0": {
                         "then": "Publicly accessible"
@@ -2734,15 +2725,14 @@
                     "1": {
                         "then": "Only accessible to customers"
                     }
-                }
+                },
+                "question": "Is this public bookcase freely accessible?"
             },
             "7": {
                 "question": "Who maintains this public bookcase?",
                 "render": "Operated by {operator}"
             },
             "8": {
-                "question": "Is this public bookcase part of a bigger network?",
-                "render": "This public bookcase is part of {brand}",
                 "mappings": {
                     "0": {
                         "then": "Part of the network 'Little Free Library'"
@@ -2750,31 +2740,40 @@
                     "1": {
                         "then": "This public bookcase is not part of a bigger network"
                     }
-                }
+                },
+                "question": "Is this public bookcase part of a bigger network?",
+                "render": "This public bookcase is part of {brand}"
             },
             "9": {
-                "render": "The reference number of this public bookcase within {brand} is {ref}",
-                "question": "What is the reference number of this public bookcase?",
                 "mappings": {
                     "0": {
                         "then": "This bookcase is not part of a bigger network"
                     }
-                }
+                },
+                "question": "What is the reference number of this public bookcase?",
+                "render": "The reference number of this public bookcase within {brand} is {ref}"
             },
             "10": {
                 "question": "When was this public bookcase installed?",
                 "render": "Installed on {start_date}"
             },
             "11": {
-                "render": "More info on <a href='{website}' target='_blank'>the website</a>",
-                "question": "Is there a website with more information about this public bookcase?"
+                "question": "Is there a website with more information about this public bookcase?",
+                "render": "More info on <a href='{website}' target='_blank'>the website</a>"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Public bookcase <i>{name}</i>"
+                }
+            },
+            "render": "Bookcase"
         }
     },
     "slow_roads": {
         "tagRenderings": {
             "2": {
-                "render": "The surface is <b>{surface}</b>",
                 "mappings": {
                     "0": {
                         "then": "The surface is <b>grass</b>"
@@ -2800,20 +2799,24 @@
                     "7": {
                         "then": "The surface is <b>paved</b>"
                     }
-                }
+                },
+                "render": "The surface is <b>{surface}</b>"
             }
         }
     },
     "sport_pitch": {
-        "name": "Sport pitches",
-        "title": {
-            "render": "Sport pitch"
-        },
         "description": "A sport pitch",
+        "name": "Sport pitches",
+        "presets": {
+            "0": {
+                "title": "Tabletennis table"
+            },
+            "1": {
+                "title": "Sport pitch"
+            }
+        },
         "tagRenderings": {
             "1": {
-                "render": "{sport} is played here",
-                "question": "Which sport can be played here?",
                 "mappings": {
                     "0": {
                         "then": "Basketball is played here"
@@ -2833,11 +2836,11 @@
                     "5": {
                         "then": "Basketball is played here"
                     }
-                }
+                },
+                "question": "Which sport can be played here?",
+                "render": "{sport} is played here"
             },
             "2": {
-                "question": "Which is the surface of this sport pitch?",
-                "render": "The surface is <b>{surface}</b>",
                 "mappings": {
                     "0": {
                         "then": "The surface is <b>grass</b>"
@@ -2854,10 +2857,11 @@
                     "4": {
                         "then": "The surface is <b>concrete</b>"
                     }
-                }
+                },
+                "question": "Which is the surface of this sport pitch?",
+                "render": "The surface is <b>{surface}</b>"
             },
             "3": {
-                "question": "Is this sport pitch publicly accessible?",
                 "mappings": {
                     "0": {
                         "then": "Public access"
@@ -2871,10 +2875,10 @@
                     "3": {
                         "then": "Private - not accessible to the public"
                     }
-                }
+                },
+                "question": "Is this sport pitch publicly accessible?"
             },
             "4": {
-                "question": "Does one have to make an appointment to use this sport pitch?",
                 "mappings": {
                     "0": {
                         "then": "Making an appointment is obligatory to use this sport pitch"
@@ -2888,7 +2892,8 @@
                     "3": {
                         "then": "Making an appointment is not possible"
                     }
-                }
+                },
+                "question": "Does one have to make an appointment to use this sport pitch?"
             },
             "5": {
                 "question": "What is the phone number of the operator?"
@@ -2897,31 +2902,22 @@
                 "question": "What is the email address of the operator?"
             },
             "7": {
-                "question": "When is this pitch accessible?",
                 "mappings": {
                     "1": {
                         "then": "Always accessible"
                     }
-                }
+                },
+                "question": "When is this pitch accessible?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Tabletennis table"
-            },
-            "1": {
-                "title": "Sport pitch"
-            }
+        "title": {
+            "render": "Sport pitch"
         }
     },
     "surveillance_camera": {
         "name": "Surveillance camera's",
-        "title": {
-            "render": "Surveillance Camera"
-        },
         "tagRenderings": {
             "1": {
-                "question": "What kind of camera is this?",
                 "mappings": {
                     "0": {
                         "then": "A fixed (non-moving) camera"
@@ -2932,23 +2928,23 @@
                     "2": {
                         "then": "A panning camera"
                     }
-                }
+                },
+                "question": "What kind of camera is this?"
             },
             "2": {
-                "question": "In which geographical direction does this camera film?",
-                "render": "Films to a compass heading of {camera:direction}",
                 "mappings": {
                     "0": {
                         "then": "Films to a compass heading of {direction}"
                     }
-                }
+                },
+                "question": "In which geographical direction does this camera film?",
+                "render": "Films to a compass heading of {camera:direction}"
             },
             "3": {
                 "question": "Who operates this CCTV?",
                 "render": "Operated by {operator}"
             },
             "4": {
-                "question": "What kind of surveillance is this camera",
                 "mappings": {
                     "0": {
                         "then": "A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel,..."
@@ -2959,10 +2955,10 @@
                     "2": {
                         "then": "A private indoor area is surveilled, e.g. a shop, a private underground parking, ..."
                     }
-                }
+                },
+                "question": "What kind of surveillance is this camera"
             },
             "5": {
-                "question": "Is the public space surveilled by this camera an indoor or outdoor space?",
                 "mappings": {
                     "0": {
                         "then": "This camera is located indoors"
@@ -2973,15 +2969,14 @@
                     "2": {
                         "then": "This camera is probably located outdoors"
                     }
-                }
+                },
+                "question": "Is the public space surveilled by this camera an indoor or outdoor space?"
             },
             "6": {
                 "question": "On which level is this camera located?",
                 "render": "Located on level {level}"
             },
             "7": {
-                "question": "What exactly is surveilled here?",
-                "render": " Surveills a {surveillance:zone}",
                 "mappings": {
                     "0": {
                         "then": "Surveills a parking"
@@ -3001,11 +2996,11 @@
                     "5": {
                         "then": "Surveills a shop"
                     }
-                }
+                },
+                "question": "What exactly is surveilled here?",
+                "render": " Surveills a {surveillance:zone}"
             },
             "8": {
-                "question": "How is this camera placed?",
-                "render": "Mounting method: {mount}",
                 "mappings": {
                     "0": {
                         "then": "This camera is placed against a wall"
@@ -3016,29 +3011,29 @@
                     "2": {
                         "then": "This camera is placed on the ceiling"
                     }
-                }
+                },
+                "question": "How is this camera placed?",
+                "render": "Mounting method: {mount}"
             }
+        },
+        "title": {
+            "render": "Surveillance Camera"
         }
     },
     "toilet": {
         "name": "Toilets",
-        "title": {
-            "render": "Toilet"
-        },
         "presets": {
             "0": {
-                "title": "Toilet",
-                "description": "A publicly accessible toilet or restroom"
+                "description": "A publicly accessible toilet or restroom",
+                "title": "Toilet"
             },
             "1": {
-                "title": "Toilets with wheelchair accessible toilet",
-                "description": "A restroom which has at least one wheelchair-accessible toilet"
+                "description": "A restroom which has at least one wheelchair-accessible toilet",
+                "title": "Toilets with wheelchair accessible toilet"
             }
         },
         "tagRenderings": {
             "1": {
-                "question": "Are these toilets publicly accessible?",
-                "render": "Access is {access}",
                 "mappings": {
                     "0": {
                         "then": "Public access"
@@ -3055,10 +3050,11 @@
                     "4": {
                         "then": "Public access"
                     }
-                }
+                },
+                "question": "Are these toilets publicly accessible?",
+                "render": "Access is {access}"
             },
             "2": {
-                "question": "Are these toilets free to use?",
                 "mappings": {
                     "0": {
                         "then": "These are paid toilets"
@@ -3066,14 +3062,14 @@
                     "1": {
                         "then": "Free to use"
                     }
-                }
+                },
+                "question": "Are these toilets free to use?"
             },
             "3": {
                 "question": "How much does one have to pay for these toilets?",
                 "render": "The fee is {charge}"
             },
             "4": {
-                "question": "Is there a dedicated toilet for wheelchair users",
                 "mappings": {
                     "0": {
                         "then": "There is a dedicated toilet for wheelchair users"
@@ -3081,10 +3077,10 @@
                     "1": {
                         "then": "No wheelchair access"
                     }
-                }
+                },
+                "question": "Is there a dedicated toilet for wheelchair users"
             },
             "5": {
-                "question": "Which kind of toilets are this?",
                 "mappings": {
                     "0": {
                         "then": "There are only seated toilets"
@@ -3098,10 +3094,10 @@
                     "3": {
                         "then": "Both seated toilets and urinals are available here"
                     }
-                }
+                },
+                "question": "Which kind of toilets are this?"
             },
             "6": {
-                "question": "Is a changing table (to change diapers) available?",
                 "mappings": {
                     "0": {
                         "then": "A changing table is available"
@@ -3109,11 +3105,10 @@
                     "1": {
                         "then": "No changing table is available"
                     }
-                }
+                },
+                "question": "Is a changing table (to change diapers) available?"
             },
             "7": {
-                "question": "Where is the changing table located?",
-                "render": "The changing table is located at {changing_table:location}",
                 "mappings": {
                     "0": {
                         "then": "The changing table is in the toilet for women. "
@@ -3127,15 +3122,17 @@
                     "3": {
                         "then": "The changing table is in a dedicated room. "
                     }
-                }
+                },
+                "question": "Where is the changing table located?",
+                "render": "The changing table is located at {changing_table:location}"
             }
+        },
+        "title": {
+            "render": "Toilet"
         }
     },
     "trail": {
         "name": "Trails",
-        "title": {
-            "render": "Trail"
-        },
         "tagRenderings": {
             "1": {
                 "render": "The trail is {_length:km} kilometers long"
@@ -3156,29 +3153,37 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Trail"
         }
     },
     "tree_node": {
         "name": "Tree",
-        "title": {
-            "render": "Tree",
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
+        "presets": {
+            "0": {
+                "description": "A tree of a species with leaves, such as oak or populus.",
+                "title": "Broadleaved tree"
+            },
+            "1": {
+                "description": "A tree of a species with needles, such as pine or spruce.",
+                "title": "Needleleaved tree"
+            },
+            "2": {
+                "description": "If you're not sure whether it's a broadleaved or needleleaved tree.",
+                "title": "Tree"
             }
         },
         "tagRenderings": {
             "1": {
-                "render": "Height: {height}",
                 "mappings": {
                     "0": {
                         "then": "Height: {height}&nbsp;m"
                     }
-                }
+                },
+                "render": "Height: {height}"
             },
             "2": {
-                "question": "Is this a broadleaved or needleleaved tree?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved"
@@ -3189,10 +3194,10 @@
                     "2": {
                         "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless"
                     }
-                }
+                },
+                "question": "Is this a broadleaved or needleleaved tree?"
             },
             "3": {
-                "question": "How significant is this tree? Choose the first answer that applies.",
                 "mappings": {
                     "0": {
                         "then": "The tree is remarkable due to its size or prominent location. It is useful for navigation."
@@ -3218,10 +3223,10 @@
                     "7": {
                         "then": "The tree is outside of an urban area."
                     }
-                }
+                },
+                "question": "How significant is this tree? Choose the first answer that applies."
             },
             "4": {
-                "question": "Is this tree evergreen or deciduous?",
                 "mappings": {
                     "0": {
                         "then": "Deciduous: the tree loses its leaves for some time of the year."
@@ -3229,19 +3234,19 @@
                     "1": {
                         "then": "Evergreen."
                     }
-                }
+                },
+                "question": "Is this tree evergreen or deciduous?"
             },
             "5": {
-                "render": "Name: {name}",
-                "question": "Does the tree have a name?",
                 "mappings": {
                     "0": {
                         "then": "The tree does not have a name."
                     }
-                }
+                },
+                "question": "Does the tree have a name?",
+                "render": "Name: {name}"
             },
             "6": {
-                "question": "Is this tree registered heritage?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders"
@@ -3258,70 +3263,73 @@
                     "4": {
                         "then": "Registered as heritage by a different organisation"
                     }
-                }
+                },
+                "question": "Is this tree registered heritage?"
             },
             "7": {
-                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-                "question": "What is the ID issued by Onroerend Erfgoed Flanders?"
+                "question": "What is the ID issued by Onroerend Erfgoed Flanders?",
+                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
             },
             "8": {
-                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
-                "question": "What is the Wikidata ID for this tree?"
+                "question": "What is the Wikidata ID for this tree?",
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Broadleaved tree",
-                "description": "A tree of a species with leaves, such as oak or populus."
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
             },
-            "1": {
-                "title": "Needleleaved tree",
-                "description": "A tree of a species with needles, such as pine or spruce."
-            },
-            "2": {
-                "title": "Tree",
-                "description": "If you're not sure whether it's a broadleaved or needleleaved tree."
-            }
+            "render": "Tree"
         }
     },
     "viewpoint": {
-        "name": "Viewpoint",
         "description": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
+        "name": "Viewpoint",
         "presets": {
             "0": {
                 "title": "Viewpoint"
             }
         },
-        "title": {
-            "render": "Viewpoint"
-        },
         "tagRenderings": {
             "1": {
                 "question": "Do you want to add a description?"
             }
+        },
+        "title": {
+            "render": "Viewpoint"
         }
     },
     "visitor_information_centre": {
+        "description": "A visitor center offers information about a specific attraction or place of interest where it is located.",
         "name": "Visitor Information Centre",
         "title": {
-            "render": "{name}",
             "mappings": {
                 "1": {
                     "then": "{name}"
                 }
-            }
-        },
-        "description": "A visitor center offers information about a specific attraction or place of interest where it is located."
+            },
+            "render": "{name}"
+        }
     },
     "waste_basket": {
-        "name": "Waste Basket",
-        "title": {
-            "render": "Waste Basket"
-        },
         "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Waste Basket"
+                }
+            }
+        },
+        "name": "Waste Basket",
+        "presets": {
+            "0": {
+                "title": "Waste Basket"
+            }
+        },
         "tagRenderings": {
             "0": {
-                "question": "What kind of waste basket is this?",
                 "mappings": {
                     "0": {
                         "then": "A waste basket for general waste"
@@ -3341,20 +3349,12 @@
                     "5": {
                         "then": "A waste basket for needles and other sharp objects"
                     }
-                }
+                },
+                "question": "What kind of waste basket is this?"
             }
         },
-        "iconSize": {
-            "mappings": {
-                "0": {
-                    "then": "Waste Basket"
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Waste Basket"
-            }
+        "title": {
+            "render": "Waste Basket"
         }
     },
     "watermill": {

@@ -1,12 +1,14 @@
 {
     "bench": {
         "name": "Bancos",
-        "title": {
-            "render": "Banco"
+        "presets": {
+            "0": {
+                "description": "Añadir un nuevo banco",
+                "title": "Banco"
+            }
         },
         "tagRenderings": {
             "1": {
-                "render": "Respaldo",
                 "mappings": {
                     "0": {
                         "then": "Respaldo: Si"
@@ -15,14 +17,14 @@
                         "then": "Respaldo: No"
                     }
                 },
-                "question": "¿Este banco tiene un respaldo?"
+                "question": "¿Este banco tiene un respaldo?",
+                "render": "Respaldo"
             },
             "2": {
-                "render": "{seats} asientos",
-                "question": "¿Cuántos asientos tiene este banco?"
+                "question": "¿Cuántos asientos tiene este banco?",
+                "render": "{seats} asientos"
             },
             "3": {
-                "render": "Material: {material}",
                 "mappings": {
                     "0": {
                         "then": "Material: madera"
@@ -42,14 +44,12 @@
                     "5": {
                         "then": "Material: acero"
                     }
-                }
+                },
+                "render": "Material: {material}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Banco",
-                "description": "Añadir un nuevo banco"
-            }
+        "title": {
+            "render": "Banco"
         }
     },
     "bench_at_pt": {
@@ -60,9 +60,6 @@
     },
     "defibrillator": {
         "name": "Desfibriladores",
-        "title": {
-            "render": "Desfibrilador"
-        },
         "presets": {
             "0": {
                 "title": "Desfibrilador"
@@ -70,7 +67,6 @@
         },
         "tagRenderings": {
             "1": {
-                "question": "¿Esté el desfibrilador en interior?",
                 "mappings": {
                     "0": {
                         "then": "Este desfibrilador está en interior"
@@ -78,11 +74,10 @@
                     "1": {
                         "then": "Este desfibrilador está en exterior"
                     }
-                }
+                },
+                "question": "¿Esté el desfibrilador en interior?"
             },
             "2": {
-                "question": "¿Está el desfibrilador accesible libremente?",
-                "render": "El acceso es {access}",
                 "mappings": {
                     "0": {
                         "then": "Acceso libre"
@@ -96,7 +91,9 @@
                     "3": {
                         "then": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)"
                     }
-                }
+                },
+                "question": "¿Está el desfibrilador accesible libremente?",
+                "render": "El acceso es {access}"
             },
             "4": {
                 "question": "¿En qué planta se encuentra el defibrilador localizado?",
@@ -111,6 +108,9 @@
             "7": {
                 "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
             }
+        },
+        "title": {
+            "render": "Desfibrilador"
         }
     }
 }
