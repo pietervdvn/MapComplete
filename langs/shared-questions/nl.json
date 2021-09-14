@@ -4,7 +4,7 @@
             "question": "Wat is het telefoonnummer van {name}?"
         },
         "email": {
-            "question": "Wat is het email-adres van {name}?"
+            "question": "Wat is het e-mailadres van {name}?"
         },
         "website": {
             "question": "Wat is de website van {name}?"
@@ -27,11 +27,11 @@
             }
         },
         "description": {
-            "question": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
+            "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
         },
         "opening_hours": {
-            "question": "Wat zijn de openingsuren van {name}?",
-            "render": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}"
+            "question": "Wat zijn de openingstijden van {name}?",
+            "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
             "question": "Welke betaalmiddelen worden hier geaccepteerd?",
@@ -52,7 +52,7 @@
                     "then": "Bevindt zich ondergronds"
                 },
                 "1": {
-                    "then": "Bevindt zich gelijkvloers"
+                    "then": "Bevindt zich op de begane grond"
                 },
                 "2": {
                     "then": "Bevindt zich gelijkvloers"

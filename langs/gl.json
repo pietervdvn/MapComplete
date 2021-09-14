@@ -69,6 +69,11 @@
       "emailOf": "Cal é o enderezo de correo electrónico de {category}?",
       "emailIs": "O enderezo de correo electrónico de {category} é <a href='mailto:{email}' target='_blank'>{email}</a>"
     },
+    "index": {
+        "pickTheme": "Escolle un tema para comezar.",
+        "intro": "O MapComplete é un visor e editor do OpenStreetMap, que te amosa información sobre un tema específico.",
+        "title": "Benvido ao MapComplete"
+    },
     "openStreetMapIntro": "<h3>Un mapa aberto</h3><p></p>Non sería xenial se houbera un só mapa, que todos puideran empregar e editar de xeito libre?Un só lugar para almacenar toda a información xeográfica? Entón, todos eses sitios web con mapas diferentes, pequenos e incompatíbeis (que sempre están desactualizados) xa non serían necesarios.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> é ese mapa. Os datos do mapa pódense empregar de balde (con <a href='https://osm.org/copyright' target='_blank'> atribución e publicación de modificacións neses datos</a>). Ademais diso, todos poden engadir de xeito ceibe novos datos e corrixir erros. Este sitio web tamén emprega o OpenStreetMap. Todos os datos proveñen de alí, e as túas respostas e correccións tamén serán engadidas alí.</p><p>Moitas persoas e aplicacións xa empregan o OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero tamén os mapas do Facebook, Instagram, Apple e Bing son (en parte) impulsados ​​polo OpenStreetMap. Se mudas algo aquí, tamén será reflexado nesas aplicacións, na súa seguinte actualización!</p>",
     "sharescreen": {
       "intro": "<h3>Comparte este mapa</h3> Comparte este mapa copiando a ligazón de embaixo e enviándoa ás amizades e familia:",

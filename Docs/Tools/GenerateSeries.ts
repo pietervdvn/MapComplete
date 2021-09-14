@@ -574,7 +574,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
                 .asHist(true)
                 .keyToDate(true)
                 .asBar({
-                    name: `Unique contributors per day (${total} total contributors)`
+                    name: `Unique contributors per day (${total} total)`
                 }),
             newContributorsPerDay
                 .asHist(true)

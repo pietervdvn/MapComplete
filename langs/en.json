@@ -87,6 +87,8 @@
     "osmLinkTooltip": "See this object on OpenStreetMap for history and more editing options",
     "add": {
       "addNewMapLabel": "Add new item",
+      "disableFiltersExplanation": "Some features might be hidden by a filter",
+      "disableFilters": "Disable all filters",
       "addNew": "Add a new {category} here",
       "presetInfo": "The new POI will have {tags}",
       "warnVisibleForEveryone": "Your addition will be visible for everyone",
@@ -98,9 +100,7 @@
       "confirmIntro": "<h3>Add a {title} here?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
       "confirmButton": "Add a {category} here.<br/><div class='alert'>Your addition is visible for everyone</div>",
       "openLayerControl": "Open the layer control box",
-      "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point",
-      "disableFiltersExplanation": "Some features might be hidden by a filter",
-      "disableFilters": "Disable all filters"
+      "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point"
     },
     "pickLanguage": "Choose a language: ",
     "about": "Easily edit and add OpenStreetMap for a certain theme",
@@ -122,7 +122,7 @@
     },
     "sharescreen": {
       "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
-      "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this.",
+      "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen' button in the URL bar to do this.",
       "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people are using this, the more valuable it becomes.",
       "copiedToClipboard": "Link copied to clipboard",
       "thanksForSharing": "Thanks for sharing!",
