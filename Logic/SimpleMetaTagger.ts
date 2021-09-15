@@ -83,7 +83,7 @@ export default class SimpleMetaTagger {
 
         },
         (feature => {
-            const units = [].concat(Utils.NoNull(State.state?.layoutToUse?.data?.layers?.map(layer => layer.units)));
+            const units = Utils.NoNull([].concat(State.state?.layoutToUse?.data?.layers?.map(layer => layer.units ?? [])));
             let rewritten = false;
             for (const key in feature.properties) {
                 if (!feature.properties.hasOwnProperty(key)) {
