@@ -276,6 +276,14 @@
     "sources": []
   },
   {
+    "path": "blocked.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "bug.svg",
     "license": "MIT",
     "authors": [
