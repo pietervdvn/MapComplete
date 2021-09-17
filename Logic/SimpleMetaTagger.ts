@@ -83,13 +83,20 @@ export default class SimpleMetaTagger {
 
         },
         (feature => {
-            const units = Utils.NoNull([].concat(State.state?.layoutToUse?.data?.layers?.map(layer => layer.units ?? [])));
+            const units = Utils.NoNull([].concat(...State.state?.layoutToUse?.data?.layers?.map(layer => layer.units ?? [])));
+            if(units.length == 0){
+                return;
+            }
             let rewritten = false;
             for (const key in feature.properties) {
                 if (!feature.properties.hasOwnProperty(key)) {
                     continue;
                 }
                 for (const unit of units) {
+                    if(unit.appliesToKeys === undefined){
+                        console.error("The unit ", unit, "has no appliesToKey defined")
+                        continue
+                    }
                     if (!unit.appliesToKeys.has(key)) {
                         continue;
                     }
