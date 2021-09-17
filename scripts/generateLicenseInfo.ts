@@ -72,6 +72,14 @@ knownLicenses.set("me", {
     sources: []
 })
 
+knownLicenses.set("streetcomplete", {
+    authors: ["Tobias Zwick (westnordost)"],
+    path: undefined,
+    license: "CC0",
+    sources: ["https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics","https://f-droid.org/packages/de.westnordost.streetcomplete/"]
+})
+
+
 knownLicenses.set("t", {
     authors: [],
     path: undefined,
