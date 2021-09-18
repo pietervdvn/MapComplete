@@ -25,7 +25,7 @@
       "id": "to_import",
       "source": {
         "#geoJson": "http://127.0.0.1:8080/islington_small_piece.geojson",
-        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/assets/themes/uk_addresses/islington_small_piece.json",
+        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/assets/themes/uk_addresses/islington_small_piece.geojson",
         "##geoJson": "https://raw.githubusercontent.com/russss/osm-uk-addresses/main/output/islington.geojson",
         "osmTags": "inspireid~*",
         "isOsmCache": false
