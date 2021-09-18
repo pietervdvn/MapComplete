@@ -84,7 +84,9 @@ export interface LayerConfigJson {
 
     /**
      * This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
-     * This is useful to hide certain features from view. Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
+     * This is useful to hide certain features from view. 
+     * 
+     * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
      * This implies that it is not possible to hide a feature after a tagging change
      *
      * The default value is 'yes'

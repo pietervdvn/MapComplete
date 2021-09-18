@@ -53,10 +53,10 @@ export default class LayoutConfig {
     public readonly cacheTimeout?: number;
     public readonly overpassUrl: string;
     public readonly overpassTimeout: number;
-    private readonly _official: boolean;
+    public readonly official: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
-        this._official = official;
+        this.official = official;
         this.id = json.id;
         context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
@@ -221,7 +221,7 @@ export default class LayoutConfig {
     }
 
     public CustomCodeSnippets(): string[] {
-        if (this._official) {
+        if (this.official) {
             return [];
         }
         const msg = "<br/><b>This layout uses <span class='alert'>custom javascript</span>, loaded for the wide internet. The code is printed below, please report suspicious code on the issue tracker of MapComplete:</b><br/>"

@@ -104,6 +104,10 @@ export default class LayerConfig {
                 throw context + "Use 'geoJson' instead of 'geoJsonSource'";
             }
 
+            if (json.source["geojson"] !== undefined) {
+                throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)";
+            }
+
             this.source = new SourceConfig(
                 {
                     osmTags: osmTags,
@@ -132,6 +136,14 @@ export default class LayerConfig {
                 const index = kv.indexOf("=");
                 const key = kv.substring(0, index);
                 const code = kv.substring(index + 1);
+
+                try{
+                    
+                new Function("feat", "return " + code + ";");
+                }catch(e){
+                 throw `Invalid function definition: code ${code} is invalid:${e} (at ${context})`   
+                }
+
 
                 this.calculatedTags.push([key, code]);
             }
