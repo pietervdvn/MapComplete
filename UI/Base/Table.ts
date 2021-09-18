@@ -12,7 +12,7 @@ export default class Table extends BaseUIElement {
                 contents: (BaseUIElement | string)[][],
                 contentStyle?: string[][]) {
         super();
-        this._contentStyle = contentStyle ?? [];
+        this._contentStyle = contentStyle ?? [["min-width: 9rem"]];
         this._header = header?.map(Translations.W);
         this._contents = contents.map(row => row.map(Translations.W));
     }
