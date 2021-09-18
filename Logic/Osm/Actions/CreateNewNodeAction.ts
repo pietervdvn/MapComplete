@@ -24,7 +24,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
             throw "Lat or lon are undefined!"
         }
         this._snapOnto = options?.snapOnto;
-        this._reusePointDistance = options.reusePointWithinMeters ?? 1
+        this._reusePointDistance = options?.reusePointWithinMeters ?? 1
     }
 
     CreateChangeDescriptions(changes: Changes): ChangeDescription[] {
