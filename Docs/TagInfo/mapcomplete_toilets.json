@@ -56,6 +56,11 @@
       "value": "key"
     },
     {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=public with a fixed text, namely 'Public access' (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "public"
+    },
+    {
       "key": "fee",
       "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "yes"
