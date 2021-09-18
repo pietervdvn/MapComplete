@@ -155,17 +155,15 @@ export default class OverpassFeatureSource implements FeatureSource {
             return;
         }
 
-        const bounds = this._leafletMap.data?.getBounds();
+        const bounds = this._leafletMap.data?.getBounds()?.pad( this._layoutToUse.data.widenFactor);
         if (bounds === undefined) {
             return;
         }
 
-        const diff = this._layoutToUse.data.widenFactor;
-
-        const n = Math.min(90, bounds.getNorth() + diff);
-        const e = Math.min(180, bounds.getEast() + diff);
-        const s = Math.max(-90, bounds.getSouth() - diff);
-        const w = Math.max(-180, bounds.getWest() - diff);
+        const n = Math.min(90, bounds.getNorth() );
+        const e = Math.min(180, bounds.getEast() );
+        const s = Math.max(-90, bounds.getSouth());
+        const w = Math.max(-180, bounds.getWest());
         const queryBounds = {north: n, east: e, south: s, west: w};
 
         const z = Math.floor(this._location.data.zoom ?? 0);
