@@ -103,11 +103,10 @@ export default class MetaTagging {
             if (code === undefined) {
                 continue;
             }
+            
             const func = new Function("feat", "return " + code + ";");
 
             try {
-
-
                 const f = (featuresPerLayer, feature: any) => {
                     try {
                         let result = func(feature);

@@ -168,20 +168,27 @@ export default class GeoJsonSource implements FeatureSource {
                 let i = 0;
                 let skipped = 0;
                 for (const feature of json.features) {
-                    if (feature.properties.id === undefined) {
-                        feature.properties.id = url + "/" + i;
+                    const props = feature.presets
+                    for (const key in props) {
+                        if(typeof props[key] !== "string"){
+                            props[key] = ""+props[key]
+                        }
+                    }
+                    
+                    if (props.id === undefined) {
+                        props.id = url + "/" + i;
                         feature.id = url + "/" + i;
                         i++;
                     }
-                    if (self.seenids.has(feature.properties.id)) {
+                    if (self.seenids.has(props.id)) {
                         skipped++;
                         continue;
                     }
-                    self.seenids.add(feature.properties.id)
+                    self.seenids.add(props.id)
 
                     let freshness: Date = time;
                     if (feature.properties["_last_edit:timestamp"] !== undefined) {
-                        freshness = new Date(feature.properties["_last_edit:timestamp"])
+                        freshness = new Date(props["_last_edit:timestamp"])
                     }
 
                     newFeatures.push({feature: feature, freshness: freshness})
