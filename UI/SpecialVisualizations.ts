@@ -24,6 +24,8 @@ import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import BaseLayer from "../Models/BaseLayer";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import ImportButton from "./BigComponents/ImportButton";
+import {Tag} from "../Logic/Tags/Tag";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -65,7 +67,6 @@ export default class SpecialVisualizations {
                     })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
                 })
             },
-
             {
                 funcName: "image_carousel",
                 docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
@@ -87,7 +88,6 @@ export default class SpecialVisualizations {
                     return new ImageCarousel(searcher, tags);
                 }
             },
-
             {
                 funcName: "image_upload",
                 docs: "Creates a button where a user can upload an image to IMGUR",
@@ -185,7 +185,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
-                example: "<b>{reviews()}<b> for a vanilla review, <b>{reviews(name, play_forest)}</b> to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
+                example: "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
                 args: [{
                     name: "subjectKey",
                     defaultValue: "name",
@@ -222,7 +222,6 @@ export default class SpecialVisualizations {
                     return new OpeningHoursVisualization(tagSource, args[0])
                 }
             },
-
             {
                 funcName: "live",
                 docs: "Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)}",
@@ -243,7 +242,6 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(source.map(data => data[neededValue] ?? "Loading..."));
                 }
             },
-
             {
                 funcName: "histogram",
                 docs: "Create a histogram for a list of given values, read from the properties.",
@@ -381,6 +379,75 @@ export default class SpecialVisualizations {
                             [state.layoutToUse])
                     )
                 }
+            },
+            {
+                funcName: "import_button",
+                args: [
+                    {
+                        name: "tags",
+                        doc: "Tags to copy-specification. This contains one or more pairs (seperated by a `;`), e.g. `amenity=fast_food; addr:housenumber=$number`. This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. (Hint: prepare these values, e.g. with calculatedTags)"
+                    },
+                    {
+                        name: "text",
+                        doc: "The text to show on the button",
+                        defaultValue: "Import this data into OpenStreetMap"
+                    },
+                    {
+                        name: "icon",
+                        doc: "A nice icon to show in the button",
+                        defaultValue: "./assets/svg/addSmall.svg"
+                    }],
+                docs: `This button will copy the data from an external dataset into OpenStreetMap. It is only functional in official themes but can be tested in unofficial themes.
+
+If you want to import a dataset, make sure that:
+
+1. The dataset to import has a suitable license
+2. The community has been informed of the import
+3. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed
+
+There are also some technicalities in your theme to keep in mind:
+
+1. The new point will be added and will flow through the program as any other new point as if it came from OSM.
+    This means that there should be a layer which will match the new tags and which will display it.
+2. The original point from your geojson layer will gain the tag '_imported=yes'.
+    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
+3. There should be a way for the theme to detect previously imported points, even after reloading.
+    A reference number to the original dataset is an excellen way to do this    
+`,
+                constr: (state, tagSource, args) => {
+                    if (!state.layoutToUse.data.official && !state.featureSwitchIsTesting.data) {
+                        return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),
+                            new FixedUiElement("To test, add 'test=true' to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
+                    }
+                    const tgsSpec = args[0].split(",").map(spec => {
+                        const kv = spec.split("=").map(s => s.trim());
+                        if (kv.length != 2) {
+                            throw "Invalid key spec: multiple '=' found in " + spec
+                        }
+                        return kv
+                    })
+                    const rewrittenTags : UIEventSource<Tag[]> = tagSource.map(tags => {
+                        const newTags : Tag [] = []
+                        for (const [key, value] of tgsSpec) {
+                            if (value.startsWith('$')) {
+                                const origKey = value.substring(1)
+                                newTags.push(new Tag(key, tags[origKey]))
+                            } else {
+                                newTags.push(new Tag(key, value))
+                            }
+                        }
+                        return newTags
+                    })
+                    const id = tagSource.data.id;
+                    const feature = State.state.allElements.ContainingFeatures.get(id)
+                    if (feature.geometry.type !== "Point") {
+                        return new FixedUiElement("Error: can only import point objects").SetClass("alert")
+                    }
+                    const [lon, lat] = feature.geometry.coordinates;
+                    return new ImportButton(
+                        args[2], args[1], tagSource, rewrittenTags, lat, lon
+                    )
+                }
             }
 
         ]
@@ -399,7 +466,7 @@ export default class SpecialVisualizations {
                     ),
                     new Title("Example usage", 4),
                     new FixedUiElement(
-                        viz.example ?? "{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}"
+                        viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
                     ).SetClass("literal-code"),
 
                 ]
