@@ -1,0 +1,124 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Observation towers",
+    "description": "Publicly accessible towers to enjoy the view",
+    "project_url": "https://mapcomplete.osm.be/observation_towers",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/layers/observation_tower/Tower_observation.svg",
+    "contact_name": "Pieter Vander Vennet, ",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "tower:type",
+      "description": "The MapComplete theme Observation towers has a layer Observation towers showing features with this tag",
+      "value": "observation"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Observation towers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Observation towers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Observation towers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Observation towers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Observation towers' shows noname=yes with a fixed text, namely 'This tower doesn't have a specific name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    },
+    {
+      "key": "height",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'height' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Observation towers' shows fee=no&charge= with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Observation towers' shows fee=no&charge= with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Observation towers' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Observation towers' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:app",
+      "description": "Layer 'Observation towers' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Observation towers' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Observation towers' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Observation towers' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Observation towers' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Observation towers' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Observation towers' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Observation towers' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    }
+  ]
+}
