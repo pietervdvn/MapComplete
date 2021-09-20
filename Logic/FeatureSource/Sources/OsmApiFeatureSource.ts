@@ -4,7 +4,6 @@ import {OsmObject} from "../Osm/OsmObject";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
 import FilteredLayer from "../../Models/FilteredLayer";
-import Constants from "../../Models/Constants";
 
 
 export default class OsmApiFeatureSource implements FeatureSource {
@@ -15,19 +14,23 @@ export default class OsmApiFeatureSource implements FeatureSource {
         leafletMap: UIEventSource<any>;
         locationControl: UIEventSource<Loc>, filteredLayers: UIEventSource<FilteredLayer[]>};
 
-    constructor(minZoom = undefined, state: {locationControl: UIEventSource<Loc>, filteredLayers: UIEventSource<FilteredLayer[]>, leafletMap: UIEventSource<any>}) {
+    constructor(state: {locationControl: UIEventSource<Loc>, filteredLayers: UIEventSource<FilteredLayer[]>, leafletMap: UIEventSource<any>,
+    overpassMaxZoom: UIEventSource<number>}) {
         this._state = state;
-        if(minZoom !== undefined){
+        const self = this;
+        function update(){
+            const minZoom = state.overpassMaxZoom.data;
+            const location = state.locationControl.data
+            if(minZoom === undefined || location === undefined){
+                return;
+            }
             if(minZoom < 14){
                 throw "MinZoom should be at least 14 or higher, OSM-api won't work otherwise"
             }
-            const self = this;
-            state.locationControl.addCallbackAndRunD(location => {
-                if(location.zoom > minZoom){
-                    return;
-                }
-                self.loadArea()
-            })
+            if(location.zoom > minZoom){
+                return;
+            }
+            self.loadArea()
         }
     }
 
@@ -57,10 +60,6 @@ export default class OsmApiFeatureSource implements FeatureSource {
 
         const disabledLayers = layers.filter(layer => layer.layerDef.source.overpassScript !== undefined || layer.layerDef.source.geojsonSource !== undefined)
         if (disabledLayers.length > 0) {
-            return false;
-        }
-        const loc = this._state.locationControl.data;
-        if (loc.zoom < Constants.useOsmApiAt) {
             return false;
         }
         if (this._state.leafletMap.data === undefined) {

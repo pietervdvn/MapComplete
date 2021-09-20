@@ -1,6 +1,6 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
-import LocalStorageSaver from "./LocalStorageSaver";
+import LocalStorageSaverActor from "./LocalStorageSaverActor";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class LocalStorageSource implements FeatureSource {
@@ -9,7 +9,7 @@ export default class LocalStorageSource implements FeatureSource {
 
     constructor(layout: UIEventSource<LayoutConfig>) {
         this.features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
-        const key = LocalStorageSaver.storageKey + layout.data.id
+        const key = LocalStorageSaverActor.storageKey + layout.data.id
         layout.addCallbackAndRun(_ => {
             try {
                 const fromStorage = localStorage.getItem(key);

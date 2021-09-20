@@ -1,27 +1,44 @@
-import FeatureSource from "./FeatureSource";
+import FeatureSource, {FeatureSourceForLayer} from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 /**
- * Merges features from different featureSources
+ * Merges features from different featureSources for a single layer
  * Uses the freshest feature available in the case multiple sources offer data with the same identifier
  */
-export default class FeatureSourceMerger implements FeatureSource {
+export default class FeatureSourceMerger implements FeatureSourceForLayer {
 
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name;
-    private readonly _sources: FeatureSource[];
+    public readonly layer: FilteredLayer
+    private readonly _sources: UIEventSource<FeatureSource[]>;
 
-    constructor(sources: FeatureSource[]) {
+    constructor(layer: FilteredLayer ,sources: UIEventSource<FeatureSource[]>) {
         this._sources = sources;
-        this.name = "SourceMerger of (" + sources.map(s => s.name).join(", ") + ")"
+        this.layer = layer;
+        this.name = "SourceMerger"
         const self = this;
-        for (let i = 0; i < sources.length; i++) {
-            let source = sources[i];
-            source.features.addCallback(() => {
-                self.Update();
-            });
-        }
-        this.Update();
+
+        const handledSources = new Set<FeatureSource>();
+
+        sources.addCallbackAndRunD(sources => {
+            let newSourceRegistered = false;
+            for (let i = 0; i < sources.length; i++) {
+                let source = sources[i];
+                if (handledSources.has(source)) {
+                    continue
+                }
+                handledSources.add(source)
+                newSourceRegistered = true
+                source.features.addCallback(() => {
+                    self.Update();
+                });
+                if (newSourceRegistered) {
+                    self.Update();
+                }
+            }
+        })
+
     }
 
     private Update() {
@@ -34,7 +51,7 @@ export default class FeatureSourceMerger implements FeatureSource {
             all.set(oldValue.feature.id + oldValue.feature._matching_layer_id, oldValue)
         }
 
-        for (const source of this._sources) {
+        for (const source of this._sources.data) {
             if (source?.features?.data === undefined) {
                 continue;
             }
@@ -64,7 +81,7 @@ export default class FeatureSourceMerger implements FeatureSource {
         }
 
         const newList = [];
-        all.forEach((value, key) => {
+        all.forEach((value, _) => {
             newList.push(value)
         })
         this.features.setData(newList);
