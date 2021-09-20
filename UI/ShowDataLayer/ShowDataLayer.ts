@@ -3,48 +3,46 @@
  */
 import {UIEventSource} from "../Logic/UIEventSource";
 import * as L from "leaflet"
-import "leaflet.markercluster"
 import State from "../State";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import FeatureSource from "../Logic/FeatureSource/FeatureSource";
 
+export interface ShowDataLayerOptions {
+    features: FeatureSource,
+    leafletMap: UIEventSource<L.Map>,
+    enablePopups?: true | boolean,
+    zoomToFeatures? : false | boolean,
+}
 
 export default class ShowDataLayer {
 
-    private _layerDict;
     private readonly _leafletMap: UIEventSource<L.Map>;
-    private _cleanCount = 0;
     private readonly _enablePopups: boolean;
     private readonly _features: UIEventSource<{ feature: any }[]>
+    private readonly _layerToShow: LayerConfig;
 
-    constructor(features: UIEventSource<{ feature: any }[]>,
-                leafletMap: UIEventSource<L.Map>,
-                layoutToUse: UIEventSource<LayoutConfig>,
-                enablePopups = true,
-                zoomToFeatures = false) {
-        this._leafletMap = leafletMap;
-        this._enablePopups = enablePopups;
+    // Used to generate a fresh ID when needed
+    private _cleanCount = 0;
+    
+    constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig}) {
+        this._leafletMap = options.leafletMap;
+        this._enablePopups = options.enablePopups ?? true;
+        if(options.features === undefined){
+            throw "Invalid ShowDataLayer invocation"
+        }
+        const features = options.features.features.map(featFreshes => featFreshes.map(ff => ff.feature));
         this._features = features;
+        this._layerToShow = options.layerToShow;
         const self = this;
-        self._layerDict = {};
-
-        layoutToUse.addCallbackAndRun(layoutToUse => {
-            for (const layer of layoutToUse.layers) {
-                if (self._layerDict[layer.id] === undefined) {
-                    self._layerDict[layer.id] = layer;
-                }
-            }
-        });
 
         let geoLayer = undefined;
-        let cluster = undefined;
 
         function update() {
             if (features.data === undefined) {
                 return;
             }
-            const mp = leafletMap.data;
+            const mp =options. leafletMap.data;
 
             if (mp === undefined) {
                 return;
@@ -55,11 +53,8 @@ export default class ShowDataLayer {
             if (geoLayer !== undefined) {
                 mp.removeLayer(geoLayer);
             }
-            if (cluster !== undefined) {
-                mp.removeLayer(cluster);
-            }
 
-            const allFeats = features.data.map(ff => ff.feature);
+            const allFeats = features.data;
             geoLayer = self.CreateGeojsonLayer();
             for (const feat of allFeats) {
                 if (feat === undefined) {
@@ -68,17 +63,10 @@ export default class ShowDataLayer {
                 // @ts-ignore
                 geoLayer.addData(feat);
             }
-            if (layoutToUse.data.clustering.minNeededElements <= allFeats.length) {
-                // Activate clustering if it wasn't already activated
-                const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
-                cluster = cl.markerClusterGroup({disableClusteringAtZoom: layoutToUse.data.clustering.maxZoom});
-                cluster.addLayer(geoLayer);
-                mp.addLayer(cluster);
-            } else {
+           
                 mp.addLayer(geoLayer)
-            }
 
-            if (zoomToFeatures) {
+            if (options.zoomToFeatures ?? false) {
                 try {
                     mp.fitBounds(geoLayer.getBounds(), {animate: false})
                 } catch (e) {
@@ -91,7 +79,7 @@ export default class ShowDataLayer {
         }
 
         features.addCallback(() => update());
-        leafletMap.addCallback(() => update());
+        options.leafletMap.addCallback(() => update());
         update();
     }
 
@@ -99,8 +87,8 @@ export default class ShowDataLayer {
     private createStyleFor(feature) {
         const tagsSource = State.state.allElements.addOrGetElement(feature);
         // Every object is tied to exactly one layer
-        const layer = this._layerDict[feature._matching_layer_id];
-        return layer?.GenerateLeafletStyle(tagsSource, layer._showOnPopup !== undefined);
+        const layer = this._layerToShow 
+        return layer?.GenerateLeafletStyle(tagsSource, true);
     }
 
     private pointToLayer(feature, latLng): L.Layer {
@@ -108,7 +96,7 @@ export default class ShowDataLayer {
         // We have to convert them to the appropriate icon
         // Click handling is done in the next step
 
-        const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
+        const layer: LayerConfig = this._layerToShow 
         if (layer === undefined) {
             return;
         }
@@ -131,12 +119,14 @@ export default class ShowDataLayer {
         });
     }
 
+    /**
+     * POst processing - basically adding the popup
+     * @param feature
+     * @param leafletLayer
+     * @private
+     */
     private postProcessFeature(feature, leafletLayer: L.Layer) {
-        const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
-        if (layer === undefined) {
-            console.warn("No layer found for object (probably a now disabled layer)", feature, this._layerDict)
-            return;
-        }
+        const layer: LayerConfig = this._layerToShow
         if (layer.title === undefined || !this._enablePopups) {
             // No popup action defined -> Don't do anything
             // or probably a map in the popup - no popups needed!
