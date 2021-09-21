@@ -165,7 +165,8 @@
     "email",
     "phone",
     "payment-options",
-    "wheelchair-access"
+    "wheelchair-access",
+    "dog-access"
   ],
   "filter": [
     {

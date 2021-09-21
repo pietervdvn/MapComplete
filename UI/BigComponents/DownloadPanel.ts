@@ -107,7 +107,7 @@ export class DownloadPanel extends Toggle {
 
         return {
             type:"FeatureCollection",
-            features: featureList
+            features: resultFeatures
         }
 
     }

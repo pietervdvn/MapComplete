@@ -137,6 +137,42 @@
       }
     ]
   },
+  "dog-access": {
+    "question": {
+      "en": "Are dogs allowed in this business?",
+      "nl": "Zijn honden toegelaten in deze zaak?"
+    },
+    "mappings": [
+      {
+        "if": "dog=yes",
+        "then": {
+          "en": "Dogs are allowed",
+          "nl": "honden zijn toegelaten"
+        }
+      },
+      {
+        "if": "dog=no",
+        "then": {
+          "en": "Dogs are <b>not</b> allowed",
+          "nl": "honden zijn <b>niet</b> toegelaten"
+        }
+      },
+      {
+        "if": "dog=leashed",
+        "then": {
+          "en": "Dogs are allowed, but they have to be leashed",
+          "nl": "honden zijn <b>enkel aan de leiband</b> welkom"
+        }
+      },
+      {
+        "if": "dog=unleashed",
+        "then": {
+          "en": "Dogs are allowed and can run around freely",
+          "nl": "honden zijn welkom en mogen vrij rondlopen"
+        }
+      }
+    ]
+  },
   "description": {
     "question": {
       "nl": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
