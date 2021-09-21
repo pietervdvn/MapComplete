@@ -16,11 +16,20 @@ export default class ShowDataLayer {
 
     // Used to generate a fresh ID when needed
     private _cleanCount = 0;
-    
-    constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig}) {
+    private geoLayer = undefined;
+
+    /**
+     * If the selected element triggers, this is used to lookup the correct layer and to open the popup
+     * Used to avoid a lot of callbacks on the selected element
+     * @private
+     */
+    private readonly leafletLayersPerId = new Map<string, { feature: any, leafletlayer: any }>()
+
+
+    constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
         this._leafletMap = options.leafletMap;
         this._enablePopups = options.enablePopups ?? true;
-        if(options.features === undefined){
+        if (options.features === undefined) {
             throw "Invalid ShowDataLayer invocation"
         }
         const features = options.features.features.map(featFreshes => featFreshes.map(ff => ff.feature));
@@ -28,58 +37,77 @@ export default class ShowDataLayer {
         this._layerToShow = options.layerToShow;
         const self = this;
 
-        let geoLayer = undefined;
+        features.addCallback(() => self.update(options));
+        options.leafletMap.addCallback(() => self.update(options));
+        this.update(options);
 
-        function update() {
-            if (features.data === undefined) {
+
+        State.state.selectedElement.addCallbackAndRunD(selected => {
+            if (self._leafletMap.data === undefined) {
                 return;
             }
-            const mp =options. leafletMap.data;
-
-            if (mp === undefined) {
+            const v = self.leafletLayersPerId.get(selected.properties.id)
+            if(v === undefined){return;}
+            const leafletLayer = v.leafletlayer
+            const feature = v.feature
+            if (leafletLayer.getPopup().isOpen()) {
                 return;
             }
-
-            self._cleanCount++
-            // clean all the old stuff away, if any
-            if (geoLayer !== undefined) {
-                mp.removeLayer(geoLayer);
-            }
-
-            const allFeats = features.data;
-            geoLayer = self.CreateGeojsonLayer();
-            for (const feat of allFeats) {
-                if (feat === undefined) {
-                    continue
+            if (selected.properties.id === feature.properties.id) {
+                // A small sanity check to prevent infinite loops:
+                if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
+                    && feature.id === feature.properties.id // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
+                ) {
+                    leafletLayer.openPopup()
                 }
-                // @ts-ignore
-                geoLayer.addData(feat);
-            }
-           
-                mp.addLayer(geoLayer)
-
-            if (options.zoomToFeatures ?? false) {
-                try {
-                    mp.fitBounds(geoLayer.getBounds(), {animate: false})
-                } catch (e) {
-                    console.error(e)
+                if (feature.id !== feature.properties.id) {
+                    console.trace("Not opening the popup for", feature)
                 }
+
             }
-            if (self._enablePopups) {
-                State.state.selectedElement.ping()
-            }
+        })
+    }
+
+    private update(options) {
+        if (this._features.data === undefined) {
+            return;
+        }
+        const mp = options.leafletMap.data;
+
+        if (mp === undefined) {
+            return;
+        }
+        this._cleanCount++
+        // clean all the old stuff away, if any
+        if (this.geoLayer !== undefined) {
+            mp.removeLayer(this.geoLayer);
         }
 
-        features.addCallback(() => update());
-        options.leafletMap.addCallback(() => update());
-        update();
+        const allFeats = this._features.data;
+        this.geoLayer = this.CreateGeojsonLayer();
+        for (const feat of allFeats) {
+            if (feat === undefined) {
+                continue
+            }
+            this.geoLayer.addData(feat);
+        }
+
+        mp.addLayer(this.geoLayer)
+
+        if (options.zoomToFeatures ?? false) {
+            try {
+                mp.fitBounds(this.geoLayer.getBounds(), {animate: false})
+            } catch (e) {
+                console.error(e)
+            }
+        }
     }
 
 
     private createStyleFor(feature) {
         const tagsSource = State.state.allElements.addOrGetElement(feature);
         // Every object is tied to exactly one layer
-        const layer = this._layerToShow 
+        const layer = this._layerToShow
         return layer?.GenerateLeafletStyle(tagsSource, true);
     }
 
@@ -88,7 +116,7 @@ export default class ShowDataLayer {
         // We have to convert them to the appropriate icon
         // Click handling is done in the next step
 
-        const layer: LayerConfig = this._layerToShow 
+        const layer: LayerConfig = this._layerToShow
         if (layer === undefined) {
             return;
         }
@@ -159,28 +187,9 @@ export default class ShowDataLayer {
             infobox.AttachTo(id)
             infobox.Activate();
         });
-        const self = this;
-        State.state.selectedElement.addCallbackAndRunD(selected => {
-            if (self._leafletMap.data === undefined) {
-                return;
-            }
-            if (leafletLayer.getPopup().isOpen()) {
-                return;
-            }
-            if (selected.properties.id === feature.properties.id) {
-                // A small sanity check to prevent infinite loops:
-                if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
-                    && feature.id === feature.properties.id // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
-                ) {
-                    leafletLayer.openPopup()
-                }
-                if (feature.id !== feature.properties.id) {
-                    console.trace("Not opening the popup for", feature)
-                }
 
-            }
-        })
-
+        // Add the feature to the index to open the popup when needed
+        this.leafletLayersPerId.set(feature.properties.id, {feature: feature, leafletlayer: leafletLayer})
     }
 
     private CreateGeojsonLayer(): L.Layer {

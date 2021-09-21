@@ -35,6 +35,7 @@ import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 import Minimap from "./UI/Base/Minimap";
+import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 
 export class InitUiElements {
     static InitAll(
@@ -193,6 +194,8 @@ export class InitUiElements {
         } else {
             State.state.locationControl.ping();
         }
+
+        new SelectedFeatureHandler(Hash.hash, State.state)
 
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
@@ -404,15 +407,6 @@ export class InitUiElements {
             }, state
         );
 
-        /*   const selectedFeatureHandler = new SelectedFeatureHandler(
-               Hash.hash,
-               State.state.selectedElement,
-               source,
-               State.state.osmApiFeatureSource
-           );
-           selectedFeatureHandler.zoomToSelectedFeature(
-               State.state.locationControl
-           );*/
     }
 
     private static setupAllLayerElements() {

@@ -13,7 +13,6 @@ import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
 import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
-import OsmApiFeatureSource from "./Logic/FeatureSource/Sources/OsmApiFeatureSource";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import FilteredLayer from "./Models/FilteredLayer";
 import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
@@ -54,8 +53,6 @@ export default class State {
     public mangroveIdentity: MangroveIdentity;
 
     public favouriteLayers: UIEventSource<string[]>;
-
-    public osmApiFeatureSource: OsmApiFeatureSource;
 
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([], "filteredLayers");
 
@@ -394,8 +391,6 @@ export default class State {
         this.changes = new Changes();
 
         new ChangeToElementsActor(this.changes, this.allElements)
-
-        this.osmApiFeatureSource = new OsmApiFeatureSource(this)
 
         new PendingChangesUploader(this.changes, this.selectedElement);
 

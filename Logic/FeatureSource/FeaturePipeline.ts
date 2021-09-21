@@ -36,7 +36,6 @@ export default class FeaturePipeline implements FeatureSourceState {
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer) => void,
         state: {
-            osmApiFeatureSource: FeatureSource,
             filteredLayers: UIEventSource<FilteredLayer[]>,
             locationControl: UIEventSource<Loc>,
             selectedElement: UIEventSource<any>,

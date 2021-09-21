@@ -1,9 +1,7 @@
 /// Given a feature source, calculates a list of OSM-contributors who mapped the latest versions
-import FeatureSource from "./FeatureSource/FeatureSource";
 import {UIEventSource} from "./UIEventSource";
 import FeaturePipeline from "./FeatureSource/FeaturePipeline";
 import Loc from "../Models/Loc";
-import State from "../State";
 import {BBox} from "./GeoOperations";
 
 export default class ContributorCount {
@@ -33,7 +31,7 @@ export default class ContributorCount {
         if (this.lastUpdate !== undefined && ((now.getTime() - this.lastUpdate.getTime()) < 1000 * 60)) {
             return;
         }
-        console.log("Calculating contributors")
+        this.lastUpdate = now;
         const featuresList = this.state.featurePipeline.GetAllFeaturesWithin(bbox)
         const hist = new Map<string, number>();
         for (const list of featuresList) {
