@@ -1,6 +1,6 @@
-import FeatureSource from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import State from "../../State";
+import FeatureSource from "../FeatureSource";
+import {UIEventSource} from "../../UIEventSource";
+import State from "../../../State";
 
 export default class RegisteringAllFromFeatureSourceActor {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;

@@ -401,5 +401,43 @@
         }
       ]
     }
+  ],
+  "filter": [
+    {
+      "options": [
+        {
+          "question": {
+            "en": "Wheelchair accessible"
+          },
+          "osmTags": "wheelchair=yes"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": {
+            "en": "Has a changing table"
+          },
+          "osmTags": "changing_table=yes"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "question": {
+            "en": "Free to use"
+          },
+          "osmTags": {
+            "or": [
+              "fee=no",
+              "fee=0",
+              "charge=0"
+            ]
+          }
+        }
+      ]
+    }
   ]
 }

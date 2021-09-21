@@ -1,5 +1,7 @@
 import {UIEventSource} from "../UIEventSource";
 import {Utils} from "../../Utils";
+import FilteredLayer from "../../Models/FilteredLayer";
+import {BBox} from "../GeoOperations";
 
 export default interface FeatureSource {
     features: UIEventSource<{ feature: any, freshness: Date }[]>;
@@ -9,38 +11,30 @@ export default interface FeatureSource {
     name: string;
 }
 
-export class FeatureSourceUtils {
+export interface Tiled {
+    tileIndex: number,
+    bbox: BBox
+}
 
-    /**
-     * Exports given featurePipeline as a geojson FeatureLists (downloads as a json)
-     * @param featurePipeline The FeaturePipeline you want to export
-     * @param options The options object
-     * @param options.metadata True if you want to include the MapComplete metadata, false otherwise
-     */
-    public static extractGeoJson(featurePipeline: FeatureSource, options: { metadata?: boolean } = {}) {
-        let defaults = {
-            metadata: false,
-        }
-        options = Utils.setDefaults(options, defaults);
+/**
+ * A feature source which only contains features for the defined layer
+ */
+export interface FeatureSourceForLayer extends FeatureSource{
+    readonly layer: FilteredLayer
+}
 
-        // Select all features, ignore the freshness and other data
-        let featureList: any[] = featurePipeline.features.data.map((feature) =>
-            JSON.parse(JSON.stringify((feature.feature)))); // Make a deep copy!
+/**
+ * A feature source which is aware of the indexes it contains
+ */
+export interface IndexedFeatureSource extends FeatureSource {
+    readonly containedIds: UIEventSource<Set<string>>
+}
 
-        if (!options.metadata) {
-            for (let i = 0; i < featureList.length; i++) {
-                let feature = featureList[i];
-                for (let property in feature.properties) {
-                    if (property[0] == "_" && property !== "_lat" && property !== "_lon") {
-                        delete featureList[i]["properties"][property];
-                    }
-                }
-            }
-        }
-        return {type: "FeatureCollection", features: featureList}
-
-
-    }
-
-
+/**
+ * A feature source which has some extra data about it's state
+ */
+export interface FeatureSourceState {
+    readonly sufficientlyZoomed: UIEventSource<boolean>;
+    readonly runningQuery: UIEventSource<boolean>;
+    readonly timeout: UIEventSource<number>;
 }

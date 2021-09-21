@@ -245,7 +245,6 @@ export class Utils {
         }
         dict.set(k, v());
         return dict.get(k);
-
     }
 
     /**
@@ -257,6 +256,26 @@ export class Utils {
      */
     static tile_bounds(z: number, x: number, y: number): [[number, number], [number, number]] {
         return [[Utils.tile2lat(y, z), Utils.tile2long(x, z)], [Utils.tile2lat(y + 1, z), Utils.tile2long(x + 1, z)]]
+    }
+
+    static tile_bounds_lon_lat(z: number, x: number, y: number): [[number, number], [number, number]] {
+        return [[Utils.tile2long(x, z),Utils.tile2lat(y, z)], [Utils.tile2long(x + 1, z), Utils.tile2lat(y + 1, z)]]
+    }
+    
+    static tile_index(z: number, x: number, y: number):number{
+        return ((x * (2 << z)) + y) * 100 + z
+    }
+
+    /**
+     * Given a tile index number, returns [z, x, y]
+     * @param index
+     * @returns 'zxy'
+     */
+    static tile_from_index(index: number) : [number, number, number]{
+        const z = index % 100;
+        const factor = 2 << z
+        index = Math.floor(index / 100)
+        return [z, Math.floor(index / factor), index % factor]
     }
 
     /**
@@ -420,13 +439,6 @@ export class Utils {
             }
         }
         return bestColor ?? hex;
-    }
-
-    public static setDefaults(options, defaults) {
-        for (let key in defaults) {
-            if (!(key in options)) options[key] = defaults[key];
-        }
-        return options;
     }
 
     private static tile2long(x, z) {

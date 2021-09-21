@@ -8,12 +8,19 @@ export default class StaticFeatureSource implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name: string = "StaticFeatureSource"
 
-    constructor(features: any[]) {
+    constructor(features: any[] | UIEventSource<any[]>, useFeaturesDirectly = false) {
         const now = new Date();
-        this.features = new UIEventSource(features.map(f => ({
-            feature: f,
-            freshness: now
-        })))
+        if(useFeaturesDirectly){
+            // @ts-ignore
+            this.features = features
+        }else         if (features instanceof UIEventSource) {
+            this.features = features.map(features => features.map(f => ({feature: f, freshness: now})))
+        } else {
+            this.features = new UIEventSource(features.map(f => ({
+                feature: f,
+                freshness: now
+            })))
+        }
     }
 
 

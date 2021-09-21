@@ -32,7 +32,6 @@ export class Mapillary extends ImageAttributionSource {
         }
 
         const mapview = value.match(/https?:\/\/www.mapillary.com\/map\/im\/(.*)/)
-        console.log("Mapview matched ", value, mapview)
         if(mapview !== null){
             const key = mapview[1]
             return {key:key, isApiv4: !isNaN(Number(key))};

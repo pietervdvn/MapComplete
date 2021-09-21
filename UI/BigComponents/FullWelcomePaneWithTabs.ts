@@ -15,6 +15,7 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Utils} from "../../Utils";
 
 export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
@@ -62,9 +63,15 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
         const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse, isShown)
         const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse, isShown)]
+
+        const now = new Date()
+        const date = now.getFullYear()+"-"+Utils.TwoDigits(now.getMonth()+1)+"-"+Utils.TwoDigits(now.getDate())
+        const osmcha_link = `https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%22${date}%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D`
+        
         tabsWithAboutMc.push({
                 header: Svg.help,
-                content: new Combine([Translations.t.general.aboutMapcomplete.Clone(), "<br/>Version " + Constants.vNumber])
+                content: new Combine([Translations.t.general.aboutMapcomplete.Clone()
+                    .Subs({"osmcha_link": osmcha_link}), "<br/>Version " + Constants.vNumber])
                     .SetClass("link-underline")
             }
         );

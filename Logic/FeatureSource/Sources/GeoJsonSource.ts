@@ -1,14 +1,14 @@
-import {FeatureSourceForLayer} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import {Utils} from "../../Utils";
-import FilteredLayer from "../../Models/FilteredLayer";
-import {control} from "leaflet";
-
-
 /**
  * Fetches a geojson file somewhere and passes it along
  */
-export default class GeoJsonSource implements FeatureSourceForLayer {
+import {UIEventSource} from "../../UIEventSource";
+import FilteredLayer from "../../../Models/FilteredLayer";
+import {Utils} from "../../../Utils";
+import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
+import {BBox} from "../../GeoOperations";
+
+
+export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
 
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name;
@@ -17,6 +17,8 @@ export default class GeoJsonSource implements FeatureSourceForLayer {
     private readonly seenids: Set<string> = new Set<string>()
     public readonly layer: FilteredLayer;
 
+    public readonly tileIndex
+    public readonly bbox;
 
     public constructor(flayer: FilteredLayer,
                        zxy?: [number, number, number]) {
@@ -28,10 +30,16 @@ export default class GeoJsonSource implements FeatureSourceForLayer {
         this.layer = flayer;
         let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         if (zxy !== undefined) {
+            const [z, x, y] = zxy;
             url = url
-                .replace('{z}', "" + zxy[0])
-                .replace('{x}', "" + zxy[1])
-                .replace('{y}', "" + zxy[2])
+                .replace('{z}', "" + z)
+                .replace('{x}', "" + x)
+                .replace('{y}', "" + y)
+            this.tileIndex = Utils.tile_index(z, x, y)
+            this.bbox = BBox.fromTile(z, x, y)
+        } else {
+            this.tileIndex = Utils.tile_index(0, 0, 0)
+            this.bbox = BBox.global;
         }
 
         this.name = "GeoJsonSource of " + url;

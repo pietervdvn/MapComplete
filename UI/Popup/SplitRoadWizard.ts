@@ -4,7 +4,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {SubtleButton} from "../Base/SubtleButton";
 import Minimap from "../Base/Minimap";
 import State from "../../State";
-import ShowDataLayer from "../ShowDataLayer";
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {LeafletMouseEvent} from "leaflet";
 import Combine from "../Base/Combine";
@@ -13,10 +13,16 @@ import Translations from "../i18n/Translations";
 import SplitAction from "../../Logic/Osm/Actions/SplitAction";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import Title from "../Base/Title";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
+import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export default class SplitRoadWizard extends Toggle {
-    private static splitLayout = new UIEventSource(SplitRoadWizard.GetSplitLayout())
+    private static splitLayerStyling = new LayerConfig({
+        id: "splitpositions",
+        source: {osmTags: "_cutposition=yes"},
+        icon: "./assets/svg/plus.svg"
+    }, "(BUILTIN) SplitRoadWizard.ts", true)
 
     /**
      * A UI Element used for splitting roads
@@ -36,7 +42,7 @@ export default class SplitRoadWizard extends Toggle {
         const splitClicked = new UIEventSource<boolean>(false);
 
         // Minimap on which you can select the points to be splitted
-        const miniMap = new Minimap({background: State.state.backgroundLayer, allowMoving: false});
+        const miniMap = Minimap.createMiniMap({background: State.state.backgroundLayer, allowMoving: false});
         miniMap.SetStyle("width: 100%; height: 24rem;");
 
         // Define how a cut is displayed on the map
@@ -45,8 +51,20 @@ export default class SplitRoadWizard extends Toggle {
         const roadElement = State.state.allElements.ContainingFeatures.get(id)
         const roadEventSource = new UIEventSource([{feature: roadElement, freshness: new Date()}]);
         // Datalayer displaying the road and the cut points (if any)
-        new ShowDataLayer(roadEventSource, miniMap.leafletMap, State.state.layoutToUse, false, true);
-        new ShowDataLayer(splitPoints, miniMap.leafletMap, SplitRoadWizard.splitLayout, false, false)
+        new ShowDataMultiLayer({
+            features: new StaticFeatureSource(roadEventSource, true),
+            layers: State.state.filteredLayers,
+            leafletMap: miniMap.leafletMap,
+            enablePopups: false,
+            zoomToFeatures: true
+        }) 
+        new ShowDataLayer({
+            features: new StaticFeatureSource(splitPoints, true),
+            leafletMap: miniMap.leafletMap,
+            zoomToFeatures: false,
+            enablePopups: false,
+            layerToShow:  SplitRoadWizard.splitLayerStyling
+        })
 
         /**
          * Handles a click on the overleaf map.
@@ -134,22 +152,5 @@ export default class SplitRoadWizard extends Toggle {
         mapView.SetClass("question")
         const confirm = new Toggle(mapView, splitToggle, splitClicked);
         super(t.hasBeenSplit.Clone(), confirm, hasBeenSplit)
-    }
-
-    private static GetSplitLayout(): LayoutConfig {
-        return new LayoutConfig({
-            maintainer: "mapcomplete",
-            language: ["en"],
-            startLon: 0,
-            startLat: 0,
-            description: "Split points visualisations - built in at SplitRoadWizard.ts",
-            icon: "", startZoom: 0,
-            title: "Split locations",
-            version: "",
-
-            id: "splitpositions",
-            layers: [{id: "splitpositions", source: {osmTags: "_cutposition=yes"}, icon: "./assets/svg/plus.svg"}]
-        }, true, "(BUILTIN) SplitRoadWizard.ts")
-
     }
 }

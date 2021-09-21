@@ -1,9 +1,9 @@
-import FeatureSource from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import {OsmObject} from "../Osm/OsmObject";
-import {Utils} from "../../Utils";
-import Loc from "../../Models/Loc";
-import FilteredLayer from "../../Models/FilteredLayer";
+import FeatureSource from "../FeatureSource";
+import {UIEventSource} from "../../UIEventSource";
+import Loc from "../../../Models/Loc";
+import FilteredLayer from "../../../Models/FilteredLayer";
+import {Utils} from "../../../Utils";
+import {OsmObject} from "../../Osm/OsmObject";
 
 
 export default class OsmApiFeatureSource implements FeatureSource {

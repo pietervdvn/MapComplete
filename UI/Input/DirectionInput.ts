@@ -6,13 +6,13 @@ import BaseUIElement from "../BaseUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
+import Minimap from "../Base/Minimap";
 
 
 /**
  * Selects a direction in degrees
  */
 export default class DirectionInput extends InputElement<string> {
-    public static constructMinimap: ((any) => BaseUIElement);
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _location: UIEventSource<Loc>;
     private readonly value: UIEventSource<string>;
@@ -40,7 +40,7 @@ export default class DirectionInput extends InputElement<string> {
 
         let map: BaseUIElement = new FixedUiElement("")
         if (!Utils.runningFromConsole) {
-            map = DirectionInput.constructMinimap({
+            map = Minimap.createMiniMap({
                 background: this.background,
                 allowMoving: false,
                 location: this._location

@@ -9,6 +9,7 @@ import Combine from "../UI/Base/Combine";
 import BaseUIElement from "../UI/BaseUIElement";
 import Title from "../UI/Base/Title";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
+import CountryCoder from "latlon2country/index";
 
 
 const cardinalDirections = {
@@ -20,7 +21,7 @@ const cardinalDirections = {
 
 
 export default class SimpleMetaTagger {
-    static coder: any;
+    private static coder: CountryCoder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
     public static readonly objectMetaInfo = new SimpleMetaTagger(
         {
             keys: ["_last_edit:contributor",
@@ -84,7 +85,7 @@ export default class SimpleMetaTagger {
         },
         (feature => {
             const units = Utils.NoNull([].concat(...State.state?.layoutToUse?.data?.layers?.map(layer => layer.units ?? [])));
-            if(units.length == 0){
+            if (units.length == 0) {
                 return;
             }
             let rewritten = false;
@@ -93,7 +94,7 @@ export default class SimpleMetaTagger {
                     continue;
                 }
                 for (const unit of units) {
-                    if(unit.appliesToKeys === undefined){
+                    if (unit.appliesToKeys === undefined) {
                         console.error("The unit ", unit, "has no appliesToKey defined")
                         continue
                     }
@@ -148,7 +149,7 @@ export default class SimpleMetaTagger {
             const lat = centerPoint.geometry.coordinates[1];
             const lon = centerPoint.geometry.coordinates[0];
 
-            SimpleMetaTagger.GetCountryCodeFor(lon, lat, (countries) => {
+            SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, (countries: string[]) => {
                 try {
                     const oldCountry = feature.properties["_country"];
                     feature.properties["_country"] = countries[0].trim().toLowerCase();
@@ -160,7 +161,7 @@ export default class SimpleMetaTagger {
                 } catch (e) {
                     console.warn(e)
                 }
-            });
+            })
         }
     )
     private static isOpen = new SimpleMetaTagger(
@@ -426,11 +427,7 @@ export default class SimpleMetaTagger {
         }
     }
 
-    static GetCountryCodeFor(lon: number, lat: number, callback: (country: string) => void) {
-        SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, callback)
-    }
-
-    static HelpText(): BaseUIElement {
+    public static HelpText(): BaseUIElement {
         const subElements: (string | BaseUIElement)[] = [
             new Combine([
                 new Title("Metatags", 1),
@@ -453,7 +450,7 @@ export default class SimpleMetaTagger {
         return new Combine(subElements).SetClass("flex-col")
     }
 
-    addMetaTags(features: { feature: any, freshness: Date }[]) {
+    public addMetaTags(features: { feature: any, freshness: Date }[]) {
         for (let i = 0; i < features.length; i++) {
             let feature = features[i];
             this._f(feature.feature, i, feature.freshness);

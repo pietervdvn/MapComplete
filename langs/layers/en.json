@@ -3021,6 +3021,29 @@
         }
     },
     "toilet": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Wheelchair accessible"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Has a changing table"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Free to use"
+                    }
+                }
+            }
+        },
         "name": "Toilets",
         "presets": {
             "0": {

@@ -8,31 +8,16 @@ import MoreScreen from "./UI/BigComponents/MoreScreen";
 import State from "./State";
 import Combine from "./UI/Base/Combine";
 import Translations from "./UI/i18n/Translations";
-
-
-import CountryCoder from "latlon2country"
-
-import SimpleMetaTagger from "./Logic/SimpleMetaTagger";
-import Minimap from "./UI/Base/Minimap";
-import DirectionInput from "./UI/Input/DirectionInput";
-import SpecialVisualizations from "./UI/SpecialVisualizations";
-import ShowDataLayer from "./UI/ShowDataLayer";
-import * as L from "leaflet";
 import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import Constants from "./Models/Constants";
+import MinimapImplementation from "./UI/Base/MinimapImplementation";
 
+MinimapImplementation.initialize()
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts
-SimpleMetaTagger.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
-DirectionInput.constructMinimap = options => new Minimap(options)
 ValidatedTextField.bestLayerAt = (location, layerPref) => AvailableBaseLayers.SelectBestLayerAccordingTo(location, layerPref)
-SpecialVisualizations.constructMiniMap = options => new Minimap(options)
-SpecialVisualizations.constructShowDataLayer = (features: UIEventSource<{ feature: any, freshness: Date }[]>,
-                                                leafletMap: UIEventSource<L.Map>,
-                                                layoutToUse: UIEventSource<LayoutConfig>,
-                                                enablePopups = true,
-                                                zoomToFeatures = false) => new ShowDataLayer(features, leafletMap, layoutToUse, enablePopups, zoomToFeatures)
+
 
 let defaultLayout = ""
 // --------------------- Special actions based on the parameters -----------------

@@ -1,19 +1,11 @@
 /**
  * The data layer shows all the given geojson elements with the appropriate icon etc
  */
-import {UIEventSource} from "../Logic/UIEventSource";
-import * as L from "leaflet"
-import State from "../State";
-import FeatureInfoBox from "./Popup/FeatureInfoBox";
-import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import FeatureSource from "../Logic/FeatureSource/FeatureSource";
-
-export interface ShowDataLayerOptions {
-    features: FeatureSource,
-    leafletMap: UIEventSource<L.Map>,
-    enablePopups?: true | boolean,
-    zoomToFeatures? : false | boolean,
-}
+import {UIEventSource} from "../../Logic/UIEventSource";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import FeatureInfoBox from "../Popup/FeatureInfoBox";
+import State from "../../State";
+import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
 
 export default class ShowDataLayer {
 

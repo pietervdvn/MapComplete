@@ -1,7 +1,7 @@
 import * as OsmToGeoJson from "osmtogeojson";
 import Bounds from "../../Models/Bounds";
 import {TagsFilter} from "../Tags/TagsFilter";
-import ExtractRelations from "./ExtractRelations";
+import RelationsTracker from "./RelationsTracker";
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 
@@ -15,16 +15,20 @@ export class Overpass {
     private readonly _timeout: UIEventSource<number>;
     private readonly _extraScripts: string[];
     private _includeMeta: boolean;
-
+    private _relationTracker: RelationsTracker;
+    
+   
     constructor(filter: TagsFilter, extraScripts: string[],
                 interpreterUrl: UIEventSource<string>,
                 timeout: UIEventSource<number>,
+                relationTracker: RelationsTracker,
                 includeMeta = true) {
         this._timeout = timeout;
         this._interpreterUrl = interpreterUrl;
         this._filter = filter
         this._extraScripts = extraScripts;
         this._includeMeta = includeMeta;
+        this._relationTracker = relationTracker
     }
 
     queryGeoJson(bounds: Bounds, continuation: ((any, date: Date) => void), onFail: ((reason) => void)): void {
@@ -35,6 +39,7 @@ export class Overpass {
             console.log("Using testing URL")
             query = Overpass.testUrl;
         }
+        const self = this;
         Utils.downloadJson(query)
             .then(json => {
                 if (json.elements === [] && ((json.remarks ?? json.remark).indexOf("runtime error") >= 0)) {
@@ -44,13 +49,15 @@ export class Overpass {
                 }
 
 
-                ExtractRelations.RegisterRelations(json)
+                self._relationTracker.RegisterRelations(json)
                 // @ts-ignore
                 const geojson = OsmToGeoJson.default(json);
                 const osmTime = new Date(json.osm3s.timestamp_osm_base);
 
                 continuation(geojson, osmTime);
-            }).catch(onFail)
+            }).catch(e => {
+            onFail(e);
+        })
     }
 
     buildQuery(bbox: string): string {

@@ -1,22 +1,24 @@
-/***
- * A tiled source which dynamically loads the required tiles
- */
+
 import State from "../../../State";
 import FilteredLayer from "../../../Models/FilteredLayer";
-import {FeatureSourceForLayer} from "../FeatureSource";
+import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {Utils} from "../../../Utils";
 import {UIEventSource} from "../../UIEventSource";
 import Loc from "../../../Models/Loc";
+import TileHierarchy from "./TileHierarchy";
 
-export default class DynamicTileSource {
+/***
+ * A tiled source which dynamically loads the required tiles at a fixed zoom level
+ */
+export default class DynamicTileSource implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     private readonly _loadedTiles = new Set<number>();
-    
-    public readonly existingTiles: Map<number, Map<number, FeatureSourceForLayer>> = new Map<number, Map<number, FeatureSourceForLayer>>()
+
+    public readonly loadedTiles: Map<number, FeatureSourceForLayer & Tiled>;
 
     constructor(
         layer: FilteredLayer,
         zoomlevel: number,
-        constructTile: (xy: [number, number]) => FeatureSourceForLayer,
+        constructTile: (zxy: [number, number, number]) => (FeatureSourceForLayer & Tiled),
         state: {
             locationControl: UIEventSource<Loc>
             leafletMap: any
@@ -24,6 +26,8 @@ export default class DynamicTileSource {
     ) {
         state = State.state
         const self = this;
+
+        this.loadedTiles = new Map<number,FeatureSourceForLayer & Tiled>()
         const neededTiles = state.locationControl.map(
             location => {
                 if (!layer.isDisplayed.data) {
@@ -45,28 +49,30 @@ export default class DynamicTileSource {
                 const tileRange = Utils.TileRangeBetween(zoomlevel, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
 
                 const needed = Utils.MapRange(tileRange, (x, y) => Utils.tile_index(zoomlevel, x, y)).filter(i => !self._loadedTiles.has(i))
-                if(needed.length === 0){
+                if (needed.length === 0) {
                     return undefined
                 }
                 return needed
             }
             , [layer.isDisplayed, state.leafletMap]).stabilized(250);
-        
+
         neededTiles.addCallbackAndRunD(neededIndexes => {
+            console.log("Tiled geojson source ",layer.layerDef.id," needs", neededIndexes)
+            if (neededIndexes === undefined) {
+                return;
+            }
             for (const neededIndex of neededIndexes) {
                 self._loadedTiles.add(neededIndex)
-                const xy = Utils.tile_from_index(zoomlevel, neededIndex)
-                const src = constructTile(xy)
-                let xmap = self.existingTiles.get(xy[0])
-                if(xmap === undefined){
-                   xmap =  new Map<number, FeatureSourceForLayer>()
-                   self.existingTiles.set(xy[0], xmap) 
+                const src = constructTile( Utils.tile_from_index(neededIndex))
+                if(src !== undefined){
+                    self.loadedTiles.set(neededIndex, src)
                 }
-            xmap.set(xy[1], src)
             }
         })
 
 
     }
 
+
 }
+

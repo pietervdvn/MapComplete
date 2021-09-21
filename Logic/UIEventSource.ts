@@ -81,9 +81,12 @@ export class UIEventSource<T> {
         return this;
     }
 
-    public addCallbackAndRun(callback: ((latestData: T) => void)): UIEventSource<T> {
-        callback(this.data);
-        return this.addCallback(callback);
+    public addCallbackAndRun(callback: ((latestData: T) => (boolean | void | any))): UIEventSource<T> {
+        const doDeleteCallback = callback(this.data);
+        if (!doDeleteCallback) {
+            this.addCallback(callback);
+        }
+        return this;
     }
 
     public setData(t: T): UIEventSource<T> {

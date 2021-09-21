@@ -1,13 +1,13 @@
-import {FeatureSourceForLayer} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import Hash from "../Web/Hash";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import FilteredLayer from "../../Models/FilteredLayer";
+import {UIEventSource} from "../../UIEventSource";
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+import FilteredLayer from "../../../Models/FilteredLayer";
+import {FeatureSourceForLayer} from "../FeatureSource";
+import Hash from "../../Web/Hash";
 
 export default class FilteringFeatureSource implements FeatureSourceForLayer {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> =
         new UIEventSource<{ feature: any; freshness: Date }[]>([]);
-    public readonly name = "FilteringFeatureSource";
+    public readonly name;
     public readonly layer: FilteredLayer;
 
     constructor(
@@ -18,6 +18,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer {
         upstream: FeatureSourceForLayer
     ) {
         const self = this;
+        this.name = "FilteringFeatureSource("+upstream.name+")"
 
         this.layer = upstream.layer;
         const layer = upstream.layer;

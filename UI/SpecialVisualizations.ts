@@ -5,7 +5,6 @@ import {ImageCarousel} from "./Image/ImageCarousel";
 import Combine from "./Base/Combine";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {ImageUploadFlow} from "./Image/ImageUploadFlow";
-
 import ShareButton from "./BigComponents/ShareButton";
 import Svg from "../Svg";
 import ReviewElement from "./Reviews/ReviewElement";
@@ -13,7 +12,6 @@ import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
-
 import State from "../State";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 import BaseUIElement from "./BaseUIElement";
@@ -26,6 +24,9 @@ import BaseLayer from "../Models/BaseLayer";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import ImportButton from "./BigComponents/ImportButton";
 import {Tag} from "../Logic/Tags/Tag";
+import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
+import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
+import Minimap from "./Base/Minimap";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -37,14 +38,6 @@ export interface SpecialVisualization {
 
 export default class SpecialVisualizations {
 
-
-    static constructMiniMap: (options?: {
-        background?: UIEventSource<BaseLayer>,
-        location?: UIEventSource<Loc>,
-        allowMoving?: boolean,
-        leafletOptions?: any
-    }) => BaseUIElement;
-    static constructShowDataLayer: (features: UIEventSource<{ feature: any; freshness: Date }[]>, leafletMap: UIEventSource<any>, layoutToUse: UIEventSource<any>, enablePopups?: boolean, zoomToFeatures?: boolean) => any;
     public static specialVisualizations: SpecialVisualization[] =
         [
             {
@@ -153,7 +146,7 @@ export default class SpecialVisualizations {
                         lon: Number(properties._lon),
                         zoom: zoom
                     })
-                    const minimap = SpecialVisualizations.constructMiniMap(
+                    const minimap = Minimap.createMiniMap(
                         {
                             background: state.backgroundLayer,
                             location: locationSource,
@@ -169,12 +162,14 @@ export default class SpecialVisualizations {
                         }
                     })
 
-                    SpecialVisualizations.constructShowDataLayer(
-                        featuresToShow,
-                        minimap["leafletMap"],
-                        State.state.layoutToUse,
-                        false,
-                        true
+                   new ShowDataMultiLayer(
+                        {
+                            leafletMap: minimap["leafletMap"],
+                            enablePopups : false,
+                            zoomToFeatures: true,
+                            layers: State.state.filteredLayers,
+                            features: new StaticFeatureSource(featuresToShow, true)
+                        }
                     )
 
 

@@ -1,18 +1,18 @@
-import {FeatureSourceForLayer} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import {GeoOperations} from "../GeoOperations";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-
 /**
  * This is the part of the pipeline which introduces extra points at the center of an area (but only if this is demanded by the wayhandling)
  */
+import {UIEventSource} from "../../UIEventSource";
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+import {GeoOperations} from "../../GeoOperations";
+import {FeatureSourceForLayer} from "../FeatureSource";
+
 export default class WayHandlingApplyingFeatureSource implements FeatureSourceForLayer {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name;
     public readonly layer;
 
     constructor(upstream: FeatureSourceForLayer) {
-        this.name = "Wayhandling of " + upstream.name;
+        this.name = "Wayhandling(" + upstream.name+")";
         this.layer = upstream.layer
         const layer = upstream.layer.layerDef;
         

@@ -5,19 +5,19 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import UserDetails from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import Loc from "../../Models/Loc";
-import * as L from "leaflet"
 import {VariableUiElement} from "../Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {BBox} from "../../Logic/GeoOperations";
 
 /**
  * The bottom right attribution panel in the leaflet map
  */
 export default class Attribution extends Combine {
 
-    constructor(location: UIEventSource<Loc>,
+     constructor(location: UIEventSource<Loc>,
                 userDetails: UIEventSource<UserDetails>,
                 layoutToUse: UIEventSource<LayoutConfig>,
-                leafletMap: UIEventSource<L.Map>) {
+                currentBounds: UIEventSource<BBox>) {
 
         const mapComplete = new Link(`Mapcomplete ${Constants.vNumber}`, 'https://github.com/pietervdvn/MapComplete', true);
         const reportBug = new Link(Svg.bug_ui().SetClass("small-image"), "https://github.com/pietervdvn/MapComplete/issues", true);
@@ -43,7 +43,7 @@ export default class Attribution extends Combine {
                     if (userDetails.csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
                         return undefined;
                     }
-                    const bounds: any = leafletMap?.data?.getBounds();
+                    const bounds: any = currentBounds.data;
                     if (bounds === undefined) {
                         return undefined
                     }
@@ -55,7 +55,7 @@ export default class Attribution extends Combine {
                     const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
                     return new Link(Svg.josm_logo_ui().SetClass("small-image"), josmLink, true);
                 },
-                [location, leafletMap]
+                [location, currentBounds]
             )
         )
         super([mapComplete, reportBug, stats, editHere, editWithJosm, mapillary]);

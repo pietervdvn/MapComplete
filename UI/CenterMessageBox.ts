@@ -6,7 +6,7 @@ export default class CenterMessageBox extends VariableUiElement {
 
     constructor() {
         const state = State.state;
-        const updater = State.state.layerUpdater;
+        const updater = State.state.featurePipeline;
         const t = Translations.t.centerMessage;
         const message = updater.runningQuery.map(
             isRunning => {

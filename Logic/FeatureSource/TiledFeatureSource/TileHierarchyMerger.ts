@@ -1,10 +1,10 @@
-import TileHierarchy from "./TiledFeatureSource/TileHierarchy";
-import FeatureSource, {FeatureSourceForLayer, Tiled} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import FilteredLayer from "../../Models/FilteredLayer";
-import FeatureSourceMerger from "./Sources/FeatureSourceMerger";
-import {BBox} from "../GeoOperations";
-import {Utils} from "../../Utils";
+import TileHierarchy from "./TileHierarchy";
+import {UIEventSource} from "../../UIEventSource";
+import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource";
+import FilteredLayer from "../../../Models/FilteredLayer";
+import {Utils} from "../../../Utils";
+import {BBox} from "../../GeoOperations";
+import FeatureSourceMerger from "../Sources/FeatureSourceMerger";
 
 export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     public readonly loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
@@ -24,8 +24,9 @@ export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer 
      * @param src
      * @param index
      */
-    public registerTile(src: FeatureSource, index: number) {
+    public registerTile(src: FeatureSource  & Tiled) {
 
+        const index = src.tileIndex
         if (this.sources.has(index)) {
             const sources = this.sources.get(index)
             sources.data.push(src)

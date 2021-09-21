@@ -32,7 +32,7 @@ export default class AllDownloads extends ScrollableFullScreen {
                     freeDivId: "belowmap",
                     background: State.state.backgroundLayer,
                     location: State.state.locationControl,
-                    features: State.state.featurePipeline.features,
+                    features: State.state.featurePipeline,
                     layout: State.state.layoutToUse,
                 }).isRunning.addCallbackAndRun(isRunning => isExporting.setData(isRunning))
         }

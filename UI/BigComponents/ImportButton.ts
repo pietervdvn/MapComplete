@@ -52,7 +52,7 @@ export default class ImportButton extends Toggle {
         const withLoadingCheck = new Toggle(
             t.stillLoading,
             new Combine([button, appliedTags]).SetClass("flex flex-col"),
-            State.state.layerUpdater.runningQuery
+            State.state.featurePipeline.runningQuery
         )
         super(t.hasBeenImported, withLoadingCheck, isImported)
     }

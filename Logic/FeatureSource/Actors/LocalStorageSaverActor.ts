@@ -1,11 +1,11 @@
-import {FeatureSourceForLayer} from "./FeatureSource";
-import {Utils} from "../../Utils";
-
 /***
  * Saves all the features that are passed in to localstorage, so they can be retrieved on the next run
  *
  * Technically, more an Actor then a featuresource, but it fits more neatly this ay
  */
+import {FeatureSourceForLayer} from "../FeatureSource";
+import {Utils} from "../../../Utils";
+
 export default class LocalStorageSaverActor {
     public static readonly storageKey: string = "cached-features";
 
@@ -21,7 +21,6 @@ export default class LocalStorageSaverActor {
 
             try {
                 localStorage.setItem(key, JSON.stringify(features));
-                console.log("Saved ", features.length, "elements to", key)
                 localStorage.setItem(key + "-time", JSON.stringify(now))
             } catch (e) {
                 console.warn("Could not save the features to local storage:", e)

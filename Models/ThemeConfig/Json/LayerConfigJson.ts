@@ -59,10 +59,9 @@ export interface LayerConfigJson {
      * NOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
      *  While still supported, this is considered deprecated
      */
-    source: { osmTags: AndOrTagConfigJson | string } |
-        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean } |
-        { osmTags: AndOrTagConfigJson | string, overpassScript: string }
-
+    source: { osmTags: AndOrTagConfigJson | string, overpassScript?: string  } |
+        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean }
+    
     /**
      *
      * A list of extra tags to calculate, specified as "keyToAssignTo=javascript-expression".

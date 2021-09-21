@@ -1,11 +1,10 @@
-
-import FeatureSource, {FeatureSourceForLayer} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import FilteredLayer from "../../Models/FilteredLayer";
 /**
  * Every previously added point is remembered, but new points are added.
  * Data coming from upstream will always overwrite a previous value
  */
+import FeatureSource from "../FeatureSource";
+import {UIEventSource} from "../../UIEventSource";
+
 export default class RememberingSource implements FeatureSource {
 
     public readonly features: UIEventSource<{ feature: any, freshness: Date }[]>;

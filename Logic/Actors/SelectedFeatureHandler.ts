@@ -3,7 +3,7 @@ import FeatureSource from "../FeatureSource/FeatureSource";
 import {OsmObject} from "../Osm/OsmObject";
 import Loc from "../../Models/Loc";
 import FeaturePipeline from "../FeatureSource/FeaturePipeline";
-import OsmApiFeatureSource from "../FeatureSource/OsmApiFeatureSource";
+import OsmApiFeatureSource from "../FeatureSource/Sources/OsmApiFeatureSource";
 
 /**
  * Makes sure the hash shows the selected element and vice-versa.

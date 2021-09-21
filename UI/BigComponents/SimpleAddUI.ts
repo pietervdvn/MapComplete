@@ -65,10 +65,6 @@ export default class SimpleAddUI extends Toggle {
             State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
-            console.log("Did set selected element to", State.state.allElements.ContainingFeatures.get(
-                newElementAction.newElementId
-            ))
-
         }
 
         const addUi = new VariableUiElement(
@@ -104,7 +100,7 @@ export default class SimpleAddUI extends Toggle {
                     new Toggle(
                         Translations.t.general.add.stillLoading.Clone().SetClass("alert"),
                         addUi,
-                        State.state.layerUpdater.runningQuery
+                        State.state.featurePipeline.runningQuery
                     ),
                     Translations.t.general.add.zoomInFurther.Clone().SetClass("alert"),
                     State.state.locationControl.map(loc => loc.zoom >= Constants.userJourney.minZoomLevelToAddNewPoints)
@@ -150,7 +146,6 @@ export default class SimpleAddUI extends Toggle {
             }
 
             const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-            console.log("Opening precise input ", preset.preciseInput, "with tags", tags)
             preciseInput = new LocationInput({
                 mapBackground: backgroundLayer,
                 centerLocation: locationSrc,
@@ -215,10 +210,7 @@ export default class SimpleAddUI extends Toggle {
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
             disableFilter,
-            preset.layerToAddTo.appliedFilters.map(filters => {
-                console.log("Current filters are ", filters)
-                return filters === undefined || filters.normalize().and.length === 0;
-            })
+            preset.layerToAddTo.appliedFilters.map(filters => filters === undefined || filters.normalize().and.length === 0)
         )
 
 

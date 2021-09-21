@@ -26,10 +26,13 @@ export default class AttributionPanel extends Combine {
             ((layoutToUse.data.maintainer ?? "") == "") ? "" : Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.data.maintainer}),
             layoutToUse.data.credits,
             "<br/>",
-            new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.leafletMap),
+            new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.currentBounds),
             "<br/>",
 
             new VariableUiElement(contributions.map(contributions => {
+                if(contributions === undefined){
+                    return ""
+                }
                 const sorted = Array.from(contributions, ([name, value]) => ({
                     name,
                     value

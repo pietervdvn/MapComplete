@@ -1,8 +1,7 @@
-import FeatureSource from "./FeatureSource";
+import FeatureSource, {FeatureSourceForLayer} from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import FilteredLayer from "../../Models/FilteredLayer";
-import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
-import SimpleFeatureSource from "./SimpleFeatureSource";
+import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
 
 
 /**
@@ -13,17 +12,17 @@ import SimpleFeatureSource from "./SimpleFeatureSource";
 export default class PerLayerFeatureSourceSplitter {
 
     constructor(layers: UIEventSource<FilteredLayer[]>,
-                handleLayerData: (source: FeatureSource) => void,
-                upstream: OverpassFeatureSource) {
+                handleLayerData: (source: FeatureSourceForLayer) => void,
+                upstream: FeatureSource) {
 
-        const knownLayers = new Map<string, FeatureSource>()
+        const knownLayers = new Map<string, FeatureSourceForLayer>()
 
         function update() {
             const features = upstream.features.data;
             if (features === undefined) {
                 return;
             }
-            if(layers.data === undefined){
+            if (layers.data === undefined) {
                 return;
             }
 
@@ -69,19 +68,16 @@ export default class PerLayerFeatureSourceSplitter {
                 if (featureSource === undefined) {
                     // Not yet initialized - now is a good time
                     featureSource = new SimpleFeatureSource(layer)
+                    featureSource.features.setData(features)
                     knownLayers.set(id, featureSource)
                     handleLayerData(featureSource)
+                } else {
+                    featureSource.features.setData(features)
                 }
-                featureSource.features.setData(features)
             }
-
-
-            upstream.features.addCallbackAndRunD(_ => update())
-            layers.addCallbackAndRunD(_ => update())
-
         }
-        
-        layers.addCallbackAndRunD(_ => update())
+
+        layers.addCallback(_ => update())
         upstream.features.addCallbackAndRunD(_ => update())
     }
 }

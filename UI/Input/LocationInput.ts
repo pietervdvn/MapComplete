@@ -8,35 +8,31 @@ import Svg from "../../Svg";
 import State from "../../State";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {GeoOperations} from "../../Logic/GeoOperations";
-import ShowDataLayer from "../ShowDataLayer";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import * as L from "leaflet";
+import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export default class LocationInput extends InputElement<Loc> {
 
-    private static readonly matchLayout = new UIEventSource(new LayoutConfig({
-        description: "Matchpoint style",
-        icon: "./assets/svg/crosshair-empty.svg",
-        id: "matchpoint",
-        language: ["en"],
-        layers: [{
+    private static readonly matchLayer = new LayerConfig(
+        {
             id: "matchpoint", source: {
                 osmTags: {and: []}
             },
             icon: "./assets/svg/crosshair-empty.svg"
-        }],
-        maintainer: "MapComplete",
-        startLat: 0,
-        startLon: 0,
-        startZoom: 0,
-        title: "Location input",
-        version: "0"
-
-    }));
+        }, "matchpoint icon", true
+    )
+    
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
     private _centerLocation: UIEventSource<Loc>;
     private readonly mapBackground: UIEventSource<BaseLayer>;
+    /**
+     * The features to which the input should be snapped
+     * @private
+     */
     private readonly _snapTo: UIEventSource<{ feature: any }[]>
     private readonly _value: UIEventSource<Loc>
     private readonly _snappedPoint: UIEventSource<any>
@@ -143,7 +139,7 @@ export default class LocationInput extends InputElement<Loc> {
     protected InnerConstructElement(): HTMLElement {
         try {
             const clickLocation = new UIEventSource<Loc>(undefined);
-            const map = new Minimap(
+            const map = Minimap.createMiniMap(
                 {
                     location: this._centerLocation,
                     background: this.mapBackground,
@@ -198,7 +194,6 @@ export default class LocationInput extends InputElement<Loc> {
             })
 
             if (this._snapTo !== undefined) {
-                new ShowDataLayer(this._snapTo, map.leafletMap, State.state.layoutToUse, false, false)
 
                 const matchPoint = this._snappedPoint.map(loc => {
                     if (loc === undefined) {
@@ -207,16 +202,25 @@ export default class LocationInput extends InputElement<Loc> {
                     return [{feature: loc}];
                 })
                 if (this._snapTo) {
-                    let layout = LocationInput.matchLayout
-                    if (this._snappedPointTags !== undefined) {
-                        layout = State.state.layoutToUse
+                    if (this._snappedPointTags === undefined) {
+                        // No special tags - we show a default crosshair
+                        new ShowDataLayer({
+                            features: new StaticFeatureSource(matchPoint),
+                            enablePopups: false,
+                            zoomToFeatures: false,
+                            leafletMap: map.leafletMap,
+                            layerToShow: LocationInput.matchLayer
+                        })
+                    }else{
+                        new ShowDataMultiLayer({
+                                features: new StaticFeatureSource(matchPoint),
+                                enablePopups: false,
+                                zoomToFeatures: false,
+                                leafletMap: map.leafletMap,
+                                layers: State.state.filteredLayers
+                            }
+                        )
                     }
-                    new ShowDataLayer(
-                        matchPoint,
-                        map.leafletMap,
-                        layout,
-                        false, false
-                    )
                 }
             }
 

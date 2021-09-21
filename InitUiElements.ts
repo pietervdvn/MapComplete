@@ -1,7 +1,6 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Toggle from "./UI/Input/Toggle";
 import State from "./State";
-import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
@@ -18,17 +17,15 @@ import * as L from "leaflet";
 import Img from "./UI/Base/Img";
 import UserDetails from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/BigComponents/Attribution";
-import LayerResetter from "./Logic/Actors/LayerResetter";
+import BackgroundLayerResetter from "./Logic/Actors/BackgroundLayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
-import ShowDataLayer from "./UI/ShowDataLayer";
+import ShowDataLayer from "./UI/ShowDataLayer/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import ScrollableFullScreen from "./UI/Base/ScrollableFullScreen";
 import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
-import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
-import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import {TagsFilter} from "./Logic/Tags/TagsFilter";
@@ -38,7 +35,6 @@ import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 import Minimap from "./UI/Base/Minimap";
-import Constants from "./Models/Constants";
 
 export class InitUiElements {
     static InitAll(
@@ -130,10 +126,9 @@ export class InitUiElements {
                 }
             }
             if (somethingChanged) {
-                console.log("layoutToUse.layers:", layoutToUse.layers);
                 State.state.layoutToUse.data.layers = Array.from(neededLayers);
                 State.state.layoutToUse.ping();
-                State.state.layerUpdater?.ForceRefresh();
+                State.state.featurePipeline?.ForceRefresh();
             }
         }
 
@@ -320,7 +315,7 @@ export class InitUiElements {
             (layer) => layer.id
         );
 
-        new LayerResetter(
+        new BackgroundLayerResetter(
             State.state.backgroundLayer,
             State.state.locationControl,
             State.state.availableBackgroundLayers,
@@ -333,13 +328,14 @@ export class InitUiElements {
             State.state.locationControl,
             State.state.osmConnection.userDetails,
             State.state.layoutToUse,
-            State.state.leafletMap
+            State.state.currentBounds
         );
 
-        new Minimap({
+        Minimap.createMiniMap({
             background: State.state.backgroundLayer,
             location: State.state.locationControl,
             leafletMap: State.state.leafletMap,
+            bounds: State.state.currentBounds,
             attribution: attr,
             lastClickLocation: State.state.LastClickLocation
         }).SetClass("w-full h-full")
@@ -371,7 +367,7 @@ export class InitUiElements {
         }
     }
 
-    private static InitLayers(): FeatureSource {
+    private static InitLayers(): void {
         const state = State.state;
         state.filteredLayers = state.layoutToUse.map((layoutToUse) => {
             const flayers = [];
@@ -396,51 +392,35 @@ export class InitUiElements {
             return flayers;
         });
 
-        const updater = new LoadFromOverpass(
-            state.locationControl,
-            state.layoutToUse,
-            state.leafletMap,
-            state.overpassUrl,
-            state.overpassTimeout,
-            Constants.useOsmApiAt
-        );
-        State.state.layerUpdater = updater;
-
-        const source = new FeaturePipeline(
-            state.filteredLayers,
-            State.state.changes,
-            updater,
-            state.osmApiFeatureSource,
-            state.layoutToUse,
-            state.locationControl,
-            state.selectedElement
+        State.state.featurePipeline = new FeaturePipeline(
+            source => {
+                new ShowDataLayer(
+                    {
+                        features: source,
+                        leafletMap: State.state.leafletMap,
+                        layerToShow: source.layer.layerDef
+                    }
+                );
+            }, state
         );
 
-        State.state.featurePipeline = source;
-        new ShowDataLayer(
-            source.features,
-            State.state.leafletMap,
-            State.state.layoutToUse
-        );
-
-        const selectedFeatureHandler = new SelectedFeatureHandler(
-            Hash.hash,
-            State.state.selectedElement,
-            source,
-            State.state.osmApiFeatureSource
-        );
-        selectedFeatureHandler.zoomToSelectedFeature(
-            State.state.locationControl
-        );
-        return source;
+        /*   const selectedFeatureHandler = new SelectedFeatureHandler(
+               Hash.hash,
+               State.state.selectedElement,
+               source,
+               State.state.osmApiFeatureSource
+           );
+           selectedFeatureHandler.zoomToSelectedFeature(
+               State.state.locationControl
+           );*/
     }
 
     private static setupAllLayerElements() {
         // ------------- Setup the layers -------------------------------
 
-        const source = InitUiElements.InitLayers();
+        InitUiElements.InitLayers();
 
-        new LeftControls(source).AttachTo("bottom-left");
+        new LeftControls(State.state).AttachTo("bottom-left");
         new RightControls().AttachTo("bottom-right");
 
         // ------------------ Setup various other UI elements ------------

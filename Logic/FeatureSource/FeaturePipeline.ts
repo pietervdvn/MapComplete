@@ -1,95 +1,191 @@
-import FilteringFeatureSource from "../FeatureSource/FilteringFeatureSource";
-import FeatureSourceMerger from "../FeatureSource/FeatureSourceMerger";
-import RememberingSource from "../FeatureSource/RememberingSource";
-import WayHandlingApplyingFeatureSource from "../FeatureSource/WayHandlingApplyingFeatureSource";
-import FeatureDuplicatorPerLayer from "../FeatureSource/FeatureDuplicatorPerLayer";
-import FeatureSource from "../FeatureSource/FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import LocalStorageSaver from "./LocalStorageSaver";
-import LocalStorageSource from "./LocalStorageSource";
-import Loc from "../../Models/Loc";
-import GeoJsonSource from "./GeoJsonSource";
-import MetaTaggingFeatureSource from "./MetaTaggingFeatureSource";
-import RegisteringFeatureSource from "./RegisteringFeatureSource";
-import FilteredLayer from "../../Models/FilteredLayer";
-import {Changes} from "../Osm/Changes";
-import ChangeApplicator from "./ChangeApplicator";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import FilteringFeatureSource from "./Sources/FilteringFeatureSource";
+import PerLayerFeatureSourceSplitter from "./PerLayerFeatureSourceSplitter";
+import FeatureSource, {FeatureSourceForLayer, FeatureSourceState, Tiled} from "./FeatureSource";
+import TiledFeatureSource from "./TiledFeatureSource/TiledFeatureSource";
+import {UIEventSource} from "../UIEventSource";
+import {TileHierarchyTools} from "./TiledFeatureSource/TileHierarchy";
+import FilteredLayer from "../../Models/FilteredLayer";
+import MetaTagging from "../MetaTagging";
+import RememberingSource from "./Sources/RememberingSource";
+import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
+import {Changes} from "../Osm/Changes";
+import GeoJsonSource from "./Sources/GeoJsonSource";
+import Loc from "../../Models/Loc";
+import WayHandlingApplyingFeatureSource from "./Sources/WayHandlingApplyingFeatureSource";
+import RegisteringAllFromFeatureSourceActor from "./Actors/RegisteringAllFromFeatureSourceActor";
+import {Utils} from "../../Utils";
+import TiledFromLocalStorageSource from "./TiledFeatureSource/TiledFromLocalStorageSource";
+import LocalStorageSaverActor from "./Actors/LocalStorageSaverActor";
+import DynamicGeoJsonTileSource from "./TiledFeatureSource/DynamicGeoJsonTileSource";
+import {BBox} from "../GeoOperations";
+import {TileHierarchyMerger} from "./TiledFeatureSource/TileHierarchyMerger";
+import RelationsTracker from "../Osm/RelationsTracker";
 
-export default class FeaturePipeline implements FeatureSource {
 
-    public features: UIEventSource<{ feature: any; freshness: Date }[]>;
+export default class FeaturePipeline implements FeatureSourceState {
 
-    public readonly name = "FeaturePipeline"
+    public readonly sufficientlyZoomed: UIEventSource<boolean>;
+    public readonly runningQuery: UIEventSource<boolean>;
+    public readonly timeout: UIEventSource<number>;
+    public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
-    constructor(flayers: UIEventSource<FilteredLayer[]>,
-                changes: Changes,
-                updater: FeatureSource,
-                fromOsmApi: FeatureSource,
-                layout: UIEventSource<LayoutConfig>,
-                locationControl: UIEventSource<Loc>,
-                selectedElement: UIEventSource<any>) {
+    private readonly overpassUpdater: OverpassFeatureSource
+    private readonly relationTracker: RelationsTracker
+    private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>;
+    constructor(
+        handleFeatureSource: (source: FeatureSourceForLayer) => void,
+        state: {
+            osmApiFeatureSource: FeatureSource,
+            filteredLayers: UIEventSource<FilteredLayer[]>,
+            locationControl: UIEventSource<Loc>,
+            selectedElement: UIEventSource<any>,
+            changes: Changes,
+            layoutToUse: UIEventSource<LayoutConfig>,
+            leafletMap: any,
+            readonly overpassUrl: UIEventSource<string>;
+            readonly overpassTimeout: UIEventSource<number>;
+            readonly overpassMaxZoom: UIEventSource<number>;
+        }) {
 
-        const allLoadedFeatures = new UIEventSource<{ feature: any; freshness: Date }[]>([])
+        const self = this
+        const updater = new OverpassFeatureSource(state);
+        this.overpassUpdater = updater;
+        this.sufficientlyZoomed = updater.sufficientlyZoomed
+        this.runningQuery = updater.runningQuery
+        this.timeout = updater.timeout
+        this.relationTracker = updater.relationsTracker
+        // Register everything in the state' 'AllElements'
+        new RegisteringAllFromFeatureSourceActor(updater)
 
-        // first we metatag, then we save to get the metatags into storage too
-        // Note that we need to register before we do metatagging (as it expects the event sources)
+        const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
+        this.perLayerHierarchy = perLayerHierarchy
 
-        // AT last, the metaTagging also needs to be run _after_ the duplicatorPerLayer
-        const amendedOverpassSource =
-            new RememberingSource(
-                new LocalStorageSaver(
-                    new MetaTaggingFeatureSource(allLoadedFeatures,
-                        new FeatureDuplicatorPerLayer(flayers,
-                            new RegisteringFeatureSource(
-                                new ChangeApplicator(
-                                    updater, changes
-                                ))
-                        )), layout));
+        const patchedHandleFeatureSource = function (src: FeatureSourceForLayer) {
+            // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
+            const srcFiltered =
+                new FilteringFeatureSource(state,
+                    new WayHandlingApplyingFeatureSource(
+                        src,
+                    )
+                )
+            handleFeatureSource(srcFiltered)
+            self.somethingLoaded.setData(true)
+        };
 
-        const geojsonSources: FeatureSource [] = GeoJsonSource
-            .ConstructMultiSource(flayers.data, locationControl)
-            .map(geojsonSource => {
-                let source = new RegisteringFeatureSource(
-                    new FeatureDuplicatorPerLayer(flayers,
-                        new ChangeApplicator(geojsonSource, changes)));
-                if (!geojsonSource.isOsmCache) {
-                    source = new MetaTaggingFeatureSource(allLoadedFeatures, source, updater.features);
-                }
-                return source
-            });
+        function addToHierarchy(src: FeatureSource & Tiled, layerId: string) {
+            perLayerHierarchy.get(layerId).registerTile(src)
+        }
 
-        const amendedLocalStorageSource =
-            new RememberingSource(new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, new ChangeApplicator(new LocalStorageSource(layout), changes))
-            ));
+        for (const filteredLayer of state.filteredLayers.data) {
+            const hierarchy = new TileHierarchyMerger(filteredLayer, (tile, _) => patchedHandleFeatureSource(tile))
+            const id = filteredLayer.layerDef.id
+            perLayerHierarchy.set(id, hierarchy)
+            const source = filteredLayer.layerDef.source
 
-        const amendedOsmApiSource = new RememberingSource(
-            new MetaTaggingFeatureSource(allLoadedFeatures,
-                new FeatureDuplicatorPerLayer(flayers,
-                    new RegisteringFeatureSource(new ChangeApplicator(fromOsmApi, changes,
-                        {
-                            // We lump in the new points here
-                            generateNewGeometries: true
+            if (source.geojsonSource === undefined) {
+                // This is an OSM layer
+                // We load the cached values and register them
+                // Getting data from upstream happens a bit lower
+                new TiledFromLocalStorageSource(filteredLayer,
+                    (src) => {
+                        new RegisteringAllFromFeatureSourceActor(src)
+                        hierarchy.registerTile(src);
+                    }, state)
+                continue
+            }
+
+            if (source.geojsonZoomLevel === undefined) {
+                // This is a 'load everything at once' geojson layer
+                // We split them up into tiles
+                const src = new GeoJsonSource(filteredLayer)
+                TiledFeatureSource.createHierarchy(src, {
+                    layer: src.layer,
+                    registerTile: (tile) => {
+                        new RegisteringAllFromFeatureSourceActor(tile)
+                        addToHierarchy(tile, id)
+                    }
+                })
+            } else {
+                new DynamicGeoJsonTileSource(
+                    filteredLayer,
+                    src => TiledFeatureSource.createHierarchy(src, {
+                        layer: src.layer,
+                        registerTile: (tile) => {
+                            new RegisteringAllFromFeatureSourceActor(tile)
+                            addToHierarchy(tile, id)
                         }
-                    )))));
+                    }),
+                    state
+                )
+            }
 
-        const merged =
-            new FeatureSourceMerger([
-                amendedOverpassSource,
-                amendedOsmApiSource,
-                amendedLocalStorageSource,
-                ...geojsonSources
-            ]);
+        }
 
-        merged.features.syncWith(allLoadedFeatures)
+        // Actually load data from the overpass source
 
-        this.features = new WayHandlingApplyingFeatureSource(flayers,
-            new FilteringFeatureSource(
-                flayers,
-                locationControl,
-                selectedElement,
-                merged
-            )).features;
+        new PerLayerFeatureSourceSplitter(state.filteredLayers,
+            (source) => TiledFeatureSource.createHierarchy(source, {
+                layer: source.layer,
+                registerTile: (tile) => {
+                    // We save the tile data for the given layer to local storage
+                    const [z, x, y] = Utils.tile_from_index(tile.tileIndex)
+                    new LocalStorageSaverActor(tile, x, y, z)
+                    addToHierarchy(tile, source.layer.layerDef.id);
+                }
+            }), new RememberingSource(updater))
+
+
+        // Whenever fresh data comes in, we need to update the metatagging
+        updater.features.addCallback(_ => {
+            self.updateAllMetaTagging()
+        })
+
     }
 
+    private updateAllMetaTagging() {
+        console.log("Updating the meta tagging")
+        const self = this;
+        this.perLayerHierarchy.forEach(hierarchy => {
+            hierarchy.loadedTiles.forEach(src => {
+                MetaTagging.addMetatags(
+                    src.features.data,
+                    {
+                        memberships: this.relationTracker,
+                        getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox)
+                    },
+                    src.layer.layerDef
+                )
+            })
+        })
+
+    }
+    
+    public GetAllFeaturesWithin(bbox: BBox): any[][]{
+        const self = this
+        const tiles = []
+        Array.from(this.perLayerHierarchy.keys())
+            .forEach(key => tiles.push(...self.GetFeaturesWithin(key, bbox)))
+        return tiles;
+    }
+    
+    public GetFeaturesWithin(layerId: string, bbox: BBox): any[][]{
+        const requestedHierarchy = this.perLayerHierarchy.get(layerId)
+        if (requestedHierarchy === undefined) {
+            return undefined;
+        }
+        return TileHierarchyTools.getTiles(requestedHierarchy, bbox)
+            .filter(featureSource => featureSource.features?.data !== undefined)
+            .map(featureSource => featureSource.features.data.map(fs => fs.feature))
+    }
+    
+    public GetTilesPerLayerWithin(bbox: BBox, handleTile: (tile:  FeatureSourceForLayer & Tiled) => void){
+       Array.from(this.perLayerHierarchy.values()).forEach(hierarchy => {
+            TileHierarchyTools.getTiles(hierarchy, bbox).forEach(handleTile)
+        })
+    }
+
+    public ForceRefresh() {
+        this.overpassUpdater.ForceRefresh()
+    }
 }

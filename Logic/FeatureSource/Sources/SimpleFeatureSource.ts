@@ -1,6 +1,6 @@
-import {FeatureSourceForLayer} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import FilteredLayer from "../../Models/FilteredLayer";
+import {UIEventSource} from "../../UIEventSource";
+import FilteredLayer from "../../../Models/FilteredLayer";
+import {FeatureSourceForLayer} from "../FeatureSource";
 
 export default class SimpleFeatureSource implements FeatureSourceForLayer {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);

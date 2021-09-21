@@ -11,16 +11,14 @@ import InstalledThemes from "./Logic/Actors/InstalledThemes";
 import BaseLayer from "./Models/BaseLayer";
 import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
-
-import OverpassFeatureSource from "./Logic/Actors/OverpassFeatureSource";
 import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
-import {Relation} from "./Logic/Osm/ExtractRelations";
-import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
+import OsmApiFeatureSource from "./Logic/FeatureSource/Sources/OsmApiFeatureSource";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import FilteredLayer from "./Models/FilteredLayer";
 import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
+import {BBox} from "./Logic/GeoOperations";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -57,8 +55,6 @@ export default class State {
 
     public favouriteLayers: UIEventSource<string[]>;
 
-    public layerUpdater: OverpassFeatureSource;
-
     public osmApiFeatureSource: OsmApiFeatureSource;
 
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([], "filteredLayers");
@@ -70,12 +66,6 @@ export default class State {
         undefined,
         "Selected element"
     );
-
-    /**
-     * Keeps track of relations: which way is part of which other way?
-     * Set by the overpass-updater; used in the metatagging
-     */
-    public readonly knownRelations = new UIEventSource<Map<string, { role: string; relation: Relation }[]>>(undefined, "Relation memberships");
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
@@ -96,6 +86,7 @@ export default class State {
     public readonly featureSwitchExportAsPdf: UIEventSource<boolean>;
     public readonly overpassUrl: UIEventSource<string>;
     public readonly overpassTimeout: UIEventSource<number>;
+    public readonly overpassMaxZoom: UIEventSource<number> = new UIEventSource<number>(undefined);
 
     public featurePipeline: FeaturePipeline;
 
@@ -104,6 +95,12 @@ export default class State {
      * The map location: currently centered lat, lon and zoom
      */
     public readonly locationControl = new UIEventSource<Loc>(undefined, "locationControl");
+
+    /**
+     * The current visible extent of the screen
+     */
+    public readonly currentBounds = new UIEventSource<BBox>(undefined)
+    
     public backgroundLayer;
     public readonly backgroundLayerId: UIEventSource<string>;
 
@@ -398,7 +395,7 @@ export default class State {
 
         new ChangeToElementsActor(this.changes, this.allElements)
 
-        this.osmApiFeatureSource = new OsmApiFeatureSource(Constants.useOsmApiAt, this)
+        this.osmApiFeatureSource = new OsmApiFeatureSource(this)
 
         new PendingChangesUploader(this.changes, this.selectedElement);
 

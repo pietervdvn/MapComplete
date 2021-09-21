@@ -3,14 +3,15 @@ import Loc from "../../Models/Loc";
 import {Or} from "../Tags/Or";
 import {Overpass} from "../Osm/Overpass";
 import Bounds from "../../Models/Bounds";
-import FeatureSource from "../FeatureSource/FeatureSource";
+import FeatureSource, {FeatureSourceState} from "../FeatureSource/FeatureSource";
 import {Utils} from "../../Utils";
 import {TagsFilter} from "../Tags/TagsFilter";
 import SimpleMetaTagger from "../SimpleMetaTagger";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import RelationsTracker from "../Osm/RelationsTracker";
 
 
-export default class OverpassFeatureSource implements FeatureSource {
+export default class OverpassFeatureSource implements FeatureSource, FeatureSourceState {
 
     public readonly name = "OverpassFeatureSource"
 
@@ -24,6 +25,9 @@ export default class OverpassFeatureSource implements FeatureSource {
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0);
     
+    public readonly relationsTracker: RelationsTracker;
+    
+
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
     /**
      * The previous bounds for which the query has been run at the given zoom level
@@ -33,56 +37,61 @@ export default class OverpassFeatureSource implements FeatureSource {
      * we start checking the bounds at the first zoom level the layer might operate. If in bounds - no reload needed, otherwise we continue walking down
      */
     private readonly _previousBounds: Map<number, Bounds[]> = new Map<number, Bounds[]>();
-    private readonly _location: UIEventSource<Loc>;
-    private readonly _layoutToUse: UIEventSource<LayoutConfig>;
-    private readonly _leafletMap: UIEventSource<L.Map>;
-    private readonly _interpreterUrl: UIEventSource<string>;
-    private readonly _timeout: UIEventSource<number>;
+    private readonly state: {
+        readonly locationControl: UIEventSource<Loc>,
+        readonly layoutToUse: UIEventSource<LayoutConfig>,
+        readonly leafletMap: any,
+        readonly overpassUrl: UIEventSource<string>;
+        readonly overpassTimeout: UIEventSource<number>;
+    }
 
     /**
      * The most important layer should go first, as that one gets first pick for the questions
      */
     constructor(
-        location: UIEventSource<Loc>,
-        layoutToUse: UIEventSource<LayoutConfig>,
-        leafletMap: UIEventSource<L.Map>,
-        interpreterUrl: UIEventSource<string>,
-        timeout: UIEventSource<number>,
-        maxZoom = undefined) {
-        this._location = location;
-        this._layoutToUse = layoutToUse;
-        this._leafletMap = leafletMap;
-        this._interpreterUrl = interpreterUrl;
-        this._timeout = timeout;
+        state: {
+            readonly locationControl: UIEventSource<Loc>,
+            readonly layoutToUse: UIEventSource<LayoutConfig>,
+            readonly leafletMap: any,
+            readonly overpassUrl: UIEventSource<string>;
+            readonly overpassTimeout: UIEventSource<number>;
+            readonly overpassMaxZoom: UIEventSource<number>
+        }) {
+
+
+        this.state = state
+        this.relationsTracker = new RelationsTracker()
+        const location = state.locationControl
         const self = this;
 
         this.sufficientlyZoomed = location.map(location => {
                 if (location?.zoom === undefined) {
                     return false;
                 }
-                let minzoom = Math.min(...layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
-                if(location.zoom < minzoom){
+                let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
+                if (location.zoom < minzoom) {
                     return false;
                 }
-                if(maxZoom !== undefined && location.zoom > maxZoom){
+                const maxZoom = state.overpassMaxZoom.data
+                if (maxZoom !== undefined && location.zoom > maxZoom) {
                     return false;
                 }
-                
+
                 return true;
-            }, [layoutToUse]
+            }, [state.layoutToUse]
         );
         for (let i = 0; i < 25; i++) {
             // This update removes all data on all layers -> erase the map on lower levels too
             this._previousBounds.set(i, []);
         }
 
-        layoutToUse.addCallback(() => {
+        state.layoutToUse.addCallback(() => {
             self.update()
         });
         location.addCallback(() => {
             self.update()
         });
-        leafletMap.addCallbackAndRunD(_ => {
+        state.leafletMap.addCallbackAndRunD(_ => {
             self.update();
         })
     }
@@ -97,11 +106,11 @@ export default class OverpassFeatureSource implements FeatureSource {
     private GetFilter(): Overpass {
         let filters: TagsFilter[] = [];
         let extraScripts: string[] = [];
-        for (const layer of this._layoutToUse.data.layers) {
+        for (const layer of this.state.layoutToUse.data.layers) {
             if (typeof (layer) === "string") {
                 throw "A layer was not expanded!"
             }
-            if (this._location.data.zoom < layer.minzoom) {
+            if (this.state.locationControl.data.zoom < layer.minzoom) {
                 continue;
             }
             if (layer.doNotDownload) {
@@ -141,7 +150,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         if (filters.length + extraScripts.length === 0) {
             return undefined;
         }
-        return new Overpass(new Or(filters), extraScripts, this._interpreterUrl, this._timeout);
+        return new Overpass(new Or(filters), extraScripts, this.state.overpassUrl, this.state.overpassTimeout, this.relationsTracker);
     }
 
     private update(): void {
@@ -155,21 +164,22 @@ export default class OverpassFeatureSource implements FeatureSource {
             return;
         }
 
-        const bounds = this._leafletMap.data?.getBounds()?.pad( this._layoutToUse.data.widenFactor);
+        const bounds = this.state.leafletMap.data?.getBounds()?.pad(this.state.layoutToUse.data.widenFactor);
         if (bounds === undefined) {
             return;
         }
 
-        const n = Math.min(90, bounds.getNorth() );
-        const e = Math.min(180, bounds.getEast() );
+        const n = Math.min(90, bounds.getNorth());
+        const e = Math.min(180, bounds.getEast());
         const s = Math.max(-90, bounds.getSouth());
         const w = Math.max(-180, bounds.getWest());
         const queryBounds = {north: n, east: e, south: s, west: w};
 
-        const z = Math.floor(this._location.data.zoom ?? 0);
+        const z = Math.floor(this.state.locationControl.data.zoom ?? 0);
 
         const self = this;
         const overpass = this.GetFilter();
+        
         if (overpass === undefined) {
             return;
         }
@@ -181,14 +191,18 @@ export default class OverpassFeatureSource implements FeatureSource {
                 const features = data.features.map(f => ({feature: f, freshness: date}));
                 SimpleMetaTagger.objectMetaInfo.addMetaTags(features)
 
-                self.features.setData(features);
+                try{
+                    self.features.setData(features);
+                }catch(e){
+                    console.error("Got the overpass response, but could not process it: ", e, e.stack)
+                }
                 self.runningQuery.setData(false);
             },
             function (reason) {
                 self.retries.data++;
                 self.ForceRefresh();
                 self.timeout.setData(self.retries.data * 5);
-                console.log(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to ${reason}`);
+                console.error(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to ${reason}`);
                 self.retries.ping();
                 self.runningQuery.setData(false);
 
@@ -222,7 +236,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             return false;
         }
 
-        const b = this._leafletMap.data.getBounds();
+        const b = this.state.leafletMap.data.getBounds();
         return b.getSouth() >= bounds.south &&
             b.getNorth() <= bounds.north &&
             b.getEast() <= bounds.east &&

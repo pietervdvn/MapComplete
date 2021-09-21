@@ -1,22 +1,28 @@
-import FeatureSource, {FeatureSourceForLayer} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import FilteredLayer from "../../Models/FilteredLayer";
-
 /**
  * Merges features from different featureSources for a single layer
  * Uses the freshest feature available in the case multiple sources offer data with the same identifier
  */
-export default class FeatureSourceMerger implements FeatureSourceForLayer {
+import {UIEventSource} from "../../UIEventSource";
+import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource";
+import FilteredLayer from "../../../Models/FilteredLayer";
+import {BBox} from "../../GeoOperations";
+import {Utils} from "../../../Utils";
+
+export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled {
 
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name;
     public readonly layer: FilteredLayer
     private readonly _sources: UIEventSource<FeatureSource[]>;
+    public readonly tileIndex: number;
+    public readonly bbox: BBox;
 
-    constructor(layer: FilteredLayer ,sources: UIEventSource<FeatureSource[]>) {
+    constructor(layer: FilteredLayer, tileIndex: number, bbox: BBox, sources: UIEventSource<FeatureSource[]>) {
+        this.tileIndex = tileIndex;
+        this.bbox = bbox;
         this._sources = sources;
         this.layer = layer;
-        this.name = "SourceMerger"
+        this.name = "FeatureSourceMerger("+layer.layerDef.id+", "+Utils.tile_from_index(tileIndex).join(",")+")"
         const self = this;
 
         const handledSources = new Set<FeatureSource>();

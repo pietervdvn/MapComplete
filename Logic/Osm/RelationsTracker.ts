@@ -1,4 +1,5 @@
 import State from "../../State";
+import {UIEventSource} from "../UIEventSource";
 
 export interface Relation {
     id: number,
@@ -13,11 +14,15 @@ export interface Relation {
     properties: any
 }
 
-export default class ExtractRelations {
+export default class RelationsTracker {
 
-    public static RegisterRelations(overpassJson: any): void {
-        const memberships = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(overpassJson))
-        State.state.knownRelations.setData(memberships)
+    public knownRelations = new UIEventSource<Map<string, { role: string; relation: Relation }[]>>(new Map(), "Relation memberships");
+
+    constructor() {
+    }
+
+    public RegisterRelations(overpassJson: any): void {
+        this.UpdateMembershipTable(RelationsTracker.GetRelationElements(overpassJson))
     }
 
     /**
@@ -25,7 +30,7 @@ export default class ExtractRelations {
      * @param overpassJson
      * @constructor
      */
-    public static GetRelationElements(overpassJson: any): Relation[] {
+    private static GetRelationElements(overpassJson: any): Relation[] {
         const relations = overpassJson.elements
             .filter(element => element.type === "relation" && element.tags.type !== "multipolygon")
         for (const relation of relations) {
@@ -39,12 +44,11 @@ export default class ExtractRelations {
      * @param relations
      * @constructor
      */
-    public static BuildMembershipTable(relations: Relation[]): Map<string, { role: string, relation: Relation }[]> {
-        const memberships = new Map<string, { role: string, relation: Relation }[]>()
-
+    private UpdateMembershipTable(relations: Relation[]): void {
+        const memberships = this.knownRelations.data
+        let changed = false;
         for (const relation of relations) {
             for (const member of relation.members) {
-
                 const role = {
                     role: member.role,
                     relation: relation
@@ -53,11 +57,21 @@ export default class ExtractRelations {
                 if (!memberships.has(key)) {
                     memberships.set(key, [])
                 }
-                memberships.get(key).push(role)
+                const knownRelations = memberships.get(key)
+
+                const alreadyExists = knownRelations.some(knownRole => {
+                    return knownRole.role === role.role && knownRole.relation === role.relation
+                })
+                if (!alreadyExists) {
+                    knownRelations.push(role)
+                    changed = true;
+                }
             }
         }
+        if (changed) {
+            this.knownRelations.ping()
+        }
 
-        return memberships
     }
 
 }

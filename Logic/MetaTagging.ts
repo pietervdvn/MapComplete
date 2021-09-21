@@ -1,14 +1,8 @@
 import SimpleMetaTagger from "./SimpleMetaTagger";
-import {ExtraFunction} from "./ExtraFunction";
-import {Relation} from "./Osm/ExtractRelations";
+import {ExtraFuncParams, ExtraFunction} from "./ExtraFunction";
 import {UIEventSource} from "./UIEventSource";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
-
-interface Params {
-    featuresPerLayer: Map<string, any[]>,
-    memberships: Map<string, { role: string, relation: Relation }[]>
-}
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -22,13 +16,12 @@ export default class MetaTagging {
     private static readonly stopErrorOutputAt = 10;
 
     /**
-     * An actor which adds metatags on every feature in the given object
-     * The features are a list of geojson-features, with a "properties"-field and geometry
+     * This method (re)calculates all metatags and calculated tags on every given object.
+     * The given features should be part of the given layer
      */
     static addMetatags(features: { feature: any; freshness: Date }[],
-                       allKnownFeatures: UIEventSource<{ feature: any; freshness: Date }[]>,
-                       relations: Map<string, { role: string, relation: Relation }[]>,
-                       layers: LayerConfig[],
+                       params: ExtraFuncParams,
+                       layer: LayerConfig,
                        includeDates = true) {
 
         if (features === undefined || features.length === 0) {
@@ -44,66 +37,39 @@ export default class MetaTagging {
                 metatag.addMetaTags(features);
             } catch (e) {
                 console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e)
-
             }
         }
 
         // The functions - per layer - which add the new keys
-        const layerFuncs = new Map<string, ((params: Params, feature: any) => void)>();
-        for (const layer of layers) {
-            layerFuncs.set(layer.id, this.createRetaggingFunc(layer));
-        }
+        const layerFuncs = this.createRetaggingFunc(layer)
 
-        allKnownFeatures.addCallbackAndRunD(newFeatures => {
-
-            const featuresPerLayer = new Map<string, any[]>();
-            const allFeatures = Array.from(new Set(features.concat(newFeatures)))
-            for (const feature of allFeatures) {
-
-                const key = feature.feature._matching_layer_id;
-                if (!featuresPerLayer.has(key)) {
-                    featuresPerLayer.set(key, [])
-                }
-                featuresPerLayer.get(key).push(feature.feature)
-            }
-
+        if (layerFuncs !== undefined) {
             for (const feature of features) {
-                // @ts-ignore
-                const key = feature.feature._matching_layer_id;
-                const f = layerFuncs.get(key);
-                if (f === undefined) {
-                    continue;
-                }
 
                 try {
-                    f({featuresPerLayer: featuresPerLayer, memberships: relations}, feature.feature)
+                    layerFuncs(params, feature.feature)
                 } catch (e) {
                     console.error(e)
                 }
-
             }
-
-
-        })
-
-
+        }
     }
 
     private static createRetaggingFunc(layer: LayerConfig):
-        ((params: Params, feature: any) => void) {
+        ((params: ExtraFuncParams, feature: any) => void) {
         const calculatedTags: [string, string][] = layer.calculatedTags;
         if (calculatedTags === undefined) {
             return undefined;
         }
 
-        const functions: ((params: Params, feature: any) => void)[] = [];
+        const functions: ((params: ExtraFuncParams, feature: any) => void)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]
             const code = entry[1];
             if (code === undefined) {
                 continue;
             }
-            
+
             const func = new Function("feat", "return " + code + ";");
 
             try {
@@ -145,14 +111,13 @@ export default class MetaTagging {
                 console.error("Could not create a dynamic function: ", e)
             }
         }
-        return (params: Params, feature) => {
+        return (params: ExtraFuncParams, feature) => {
             const tags = feature.properties
             if (tags === undefined) {
                 return;
             }
 
-            const relations = params.memberships?.get(feature.properties.id) ?? []
-            ExtraFunction.FullPatchFeature(params.featuresPerLayer, relations, feature);
+            ExtraFunction.FullPatchFeature(params, feature);
             try {
                 for (const f of functions) {
                     f(params, feature);

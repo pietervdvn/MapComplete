@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.9.12";
+    public static vNumber = "0.10.0";
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -25,12 +25,6 @@ export default class Constants {
      * (Note that pendingChanges might upload sooner if the popup is closed or similar)
      */
     static updateTimeoutSec: number = 30;
-
-    /**
-     * If zoom >= useOsmApiAt, then the OSM api will be used directly.
-     * If undefined, use overpass exclusively
-     */
-    static useOsmApiAt = undefined;
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

@@ -7,7 +7,6 @@ import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 
 Utils.runningFromConsole = true
 
-
 export default class ScriptUtils {
 
 

@@ -55,6 +55,7 @@
     {
       "#": "Nature reserve overview from cache, points only, z < 13",
       "builtin": "nature_reserve",
+      "wayHandling": 1,
       "override": {
         "source": {
           "osmTags": {
@@ -63,6 +64,7 @@
             ]
           },
           "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson",
+          "geoJsonZoomLevel": 0,
           "isOsmCache": "duplicate"
         },
         "minzoom": 1,

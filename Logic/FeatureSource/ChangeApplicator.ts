@@ -1,10 +1,35 @@
-import FeatureSource from "./FeatureSource";
+import FeatureSource, {IndexedFeatureSource} from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import {Changes} from "../Osm/Changes";
 import {ChangeDescription} from "../Osm/Actions/ChangeDescription";
 import {Utils} from "../../Utils";
 import {OsmNode, OsmRelation, OsmWay} from "../Osm/OsmObject";
 
+/**
+ * A feature source containing exclusively new elements
+ */
+export class NewGeometryChangeApplicatorFeatureSource implements FeatureSource{
+    
+    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
+    public readonly name: string = "newFeatures";
+    constructor(changes: Changes) {
+        const seenChanges = new Set<ChangeDescription>();
+        changes.pendingChanges.addCallbackAndRunD(changes => {
+            for (const change of changes) {
+                if(seenChanges.has(change)){
+                    continue
+                }
+                seenChanges.add(change)
+                
+                if(change.id < 0){
+                    // This is a new object!
+                }
+                
+            }
+        })
+    }
+
+}
 
 /**
  * Applies changes from 'Changes' onto a featureSource
@@ -12,10 +37,18 @@ import {OsmNode, OsmRelation, OsmWay} from "../Osm/OsmObject";
 export default class ChangeApplicator implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name: string;
+    private readonly source: IndexedFeatureSource;
+    private readonly changes: Changes;
+    private readonly mode?: {
+        generateNewGeometries: boolean
+    };
 
-    constructor(source: FeatureSource, changes: Changes, mode?: {
+    constructor(source: IndexedFeatureSource, changes: Changes, mode?: {
         generateNewGeometries: boolean
     }) {
+        this.source = source;
+        this.changes = changes;
+        this.mode = mode;
 
         this.name = "ChangesApplied(" + source.name + ")"
         this.features = source.features
@@ -26,7 +59,7 @@ export default class ChangeApplicator implements FeatureSource {
             if (runningUpdate) {
                 return; // No need to ping again
             }
-            ChangeApplicator.ApplyChanges(features, changes.pendingChanges.data, mode)
+            self.ApplyChanges()
             seenChanges.clear()
         })
 
@@ -34,19 +67,20 @@ export default class ChangeApplicator implements FeatureSource {
             runningUpdate = true;
             changes = changes.filter(ch => !seenChanges.has(ch))
             changes.forEach(c => seenChanges.add(c))
-            ChangeApplicator.ApplyChanges(self.features.data, changes, mode)
+            self.ApplyChanges()
             source.features.ping()
             runningUpdate = false;
         })
-
-
     }
 
 
     /**
      * Returns true if the geometry is changed and the source should be pinged
      */
-    private static ApplyChanges(features: { feature: any; freshness: Date }[], cs: ChangeDescription[], mode: { generateNewGeometries: boolean }): boolean {
+    private ApplyChanges(): boolean {
+        const cs = this.changes.pendingChanges.data
+        const features = this.source.features.data
+        const loadedIds = this.source.containedIds
         if (cs.length === 0 || features === undefined) {
             return;
         }
@@ -56,12 +90,18 @@ export default class ChangeApplicator implements FeatureSource {
         const changesPerId: Map<string, ChangeDescription[]> = new Map<string, ChangeDescription[]>()
         for (const c of cs) {
             const id = c.type + "/" + c.id
+            if (!loadedIds.has(id)) {
+                continue
+            }
             if (!changesPerId.has(id)) {
                 changesPerId.set(id, [])
             }
             changesPerId.get(id).push(c)
         }
-
+        if (changesPerId.size === 0) {
+            // The current feature source set doesn't contain any changed feature, so we can safely skip
+            return;
+        }
 
         const now = new Date()
 
@@ -77,7 +117,7 @@ export default class ChangeApplicator implements FeatureSource {
 
         // First, create the new features - they have a negative ID
         // We don't set the properties yet though
-        if (mode?.generateNewGeometries) {
+        if (this.mode?.generateNewGeometries) {
             changesPerId.forEach(cs => {
                 cs
                     .forEach(change => {

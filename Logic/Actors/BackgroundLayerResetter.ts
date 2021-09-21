@@ -6,7 +6,7 @@ import Loc from "../../Models/Loc";
 /**
  * Sets the current background layer to a layer that is actually available
  */
-export default class LayerResetter {
+export default class BackgroundLayerResetter {
 
     constructor(currentBackgroundLayer: UIEventSource<BaseLayer>,
                 location: UIEventSource<Loc>,

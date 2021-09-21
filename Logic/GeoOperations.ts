@@ -1,4 +1,5 @@
 import * as turf from '@turf/turf'
+import {Utils} from "../Utils";
 
 export class GeoOperations {
 
@@ -184,6 +185,44 @@ export class GeoOperations {
     static lengthInMeters(feature: any) {
         return turf.length(feature) * 1000
     }
+    
+    static buffer(feature: any, bufferSizeInMeter: number){
+        return turf.buffer(feature, bufferSizeInMeter/1000, {
+            units: 'kilometers'
+        })
+    }
+    
+    static bbox(feature: any){
+        const [lon, lat, lon0, lat0] = turf.bbox(feature)
+        return {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        lon,
+                        lat
+                    ],
+                    [
+                        lon0,
+                        lat
+                    ],
+                    [
+                        lon0,
+                        lat0
+                    ],
+                    [
+                        lon,
+                        lat0
+                    ],
+                    [
+                        lon,
+                        lat
+                    ],
+                ]
+            }
+        }
+    }
 
     /**
      * Generates the closest point on a way from a given point
@@ -340,6 +379,7 @@ export class BBox {
     readonly maxLon: number;
     readonly minLat: number;
     readonly minLon: number;
+    static global: BBox = new BBox([[-180,-90],[180,90]]);
 
     constructor(coordinates) {
         this.maxLat = Number.MIN_VALUE;
@@ -361,12 +401,11 @@ export class BBox {
         return new BBox([[bounds.getWest(), bounds.getNorth()], [bounds.getEast(), bounds.getSouth()]])
     }
 
-    static get(feature) {
+    static get(feature): BBox {
         if (feature.bbox?.overlapsWith === undefined) {
             const turfBbox: number[] = turf.bbox(feature)
             feature.bbox = new BBox([[turfBbox[0], turfBbox[1]], [turfBbox[2], turfBbox[3]]]);
         }
-
         return feature.bbox;
     }
 
@@ -407,4 +446,23 @@ export class BBox {
         }
     }
 
+    static fromTile(z: number, x: number, y: number) {
+      return new BBox( Utils.tile_bounds_lon_lat(z, x, y))
+    }
+
+    getEast() {
+        return this.maxLon
+    }
+
+    getNorth() {
+        return this.maxLat
+    }
+
+    getWest() {
+        return this.minLon
+    }
+
+    getSouth() {
+        return this.minLat
+    }
 }
