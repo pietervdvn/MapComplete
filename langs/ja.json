@@ -83,11 +83,8 @@
             "zoomInFurther": "さらにズーム拡大して点を追加します。",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">新しいポイントを追加するにはログインしてください</a>",
             "title": "新しいポイントを追加しますか?",
-            "disableFilters": "",
             "presetInfo": "",
-            "warnVisibleForEveryone": "",
-            "disableFiltersExplanation": "",
-            "addNewMapLabel": ""
+            "disableFiltersExplanation": ""
         },
         "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
         "skippedQuestions": "一部の質問はスキップされました",
@@ -104,7 +101,6 @@
             "opensAt": "開始時刻",
             "open_during_ph": "このアメニティは、祝日には",
             "error_loading": "エラー:これらの営業時間を表示できませんでした。",
-            "ph_open_as_usual": "",
             "loadingCountry": ""
         },
         "weekdays": {
@@ -151,28 +147,19 @@
         "welcomeBack": "ログインしました、お帰りなさい!",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
         "download": {
-            "noDataLoaded": "",
             "downloadCSV": "",
-            "downloadCSVHelper": "",
             "includeMetaData": "",
-            "downloadGeoJsonHelper": "",
             "title": "",
-            "downloadAsPdfHelper": "",
             "downloadAsPdf": "",
-            "downloadGeojson": "",
             "licenseInfo": ""
         },
         "pdf": {
-            "attrBackground": "",
             "generatedWith": "",
-            "attr": "",
             "versionInfo": ""
         },
-        "testing": "",
         "histogram": {
             "error_loading": ""
         },
-        "loginOnlyNeededToEdit": "",
         "openTheMap": ""
     },
     "index": {
@@ -205,35 +192,22 @@
     },
     "delete": {
         "explanations": {
-            "softDelete": "",
-            "hardDelete": "",
-            "selectReason": ""
+            "hardDelete": ""
         },
         "cancel": "",
-        "useSomethingElse": "",
         "delete": "",
         "reasons": {
-            "notFound": "",
-            "disused": "",
-            "test": ""
+            "disused": ""
         },
         "partOfOthers": "",
-        "readMessages": "",
         "whyDelete": "",
-        "loading": "",
         "safeDelete": "",
-        "loginToDelete": "",
         "isDeleted": "",
-        "notEnoughExperience": "",
-        "onlyEditedByLoggedInUser": "",
-        "isntAPoint": ""
+        "onlyEditedByLoggedInUser": ""
     },
     "split": {
         "inviteToSplit": "",
-        "hasBeenSplit": "",
         "splitTitle": "",
-        "split": "",
-        "loginToSplit": "",
-        "cancel": ""
+        "loginToSplit": ""
     }
 }

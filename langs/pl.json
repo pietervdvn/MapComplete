@@ -40,11 +40,8 @@
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
             "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>",
-            "disableFilters": "",
             "presetInfo": "",
-            "disableFiltersExplanation": "",
-            "addNewMapLabel": "",
-            "warnVisibleForEveryone": ""
+            "addNewMapLabel": ""
         },
         "number": "numer",
         "skippedQuestions": "Niektóre pytania są pominięte",
@@ -62,7 +59,6 @@
             "open_during_ph": "W czasie świąt państwowych udogodnienie to jest",
             "error_loading": "Błąd: nie można zwizualizować tych godzin otwarcia.",
             "opensAt": "z",
-            "loadingCountry": "",
             "ph_open_as_usual": ""
         },
         "general": {
@@ -240,44 +236,27 @@
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
         "attribution": {
-            "mapContributionsByAndHidden": "",
             "attributionTitle": "",
-            "mapContributionsBy": "",
             "codeContributionsBy": "",
-            "themeBy": "",
-            "attributionContent": "",
-            "iconAttribution": {
-                "title": ""
-            }
+            "attributionContent": ""
         },
         "download": {
             "downloadCSVHelper": "",
-            "downloadGeojson": "",
             "includeMetaData": "",
-            "downloadAsPdf": "",
             "licenseInfo": "",
-            "downloadAsPdfHelper": "",
             "title": "",
-            "noDataLoaded": "",
-            "downloadGeoJsonHelper": "",
-            "downloadCSV": ""
+            "downloadGeoJsonHelper": ""
         },
         "morescreen": {
             "intro": "",
-            "requestATheme": "",
-            "createYourOwnTheme": "",
-            "streetcomplete": ""
+            "createYourOwnTheme": ""
         },
         "pdf": {
             "attr": "",
-            "attrBackground": "",
-            "versionInfo": "",
-            "generatedWith": ""
+            "versionInfo": ""
         },
         "loginOnlyNeededToEdit": "",
-        "openStreetMapIntro": "",
         "openTheMap": "",
-        "testing": "",
         "histogram": {
             "error_loading": ""
         }
@@ -317,35 +296,22 @@
     },
     "delete": {
         "explanations": {
-            "softDelete": "",
-            "hardDelete": "",
-            "selectReason": ""
+            "hardDelete": ""
         },
         "isDeleted": "",
-        "delete": "",
         "loginToDelete": "",
-        "readMessages": "",
         "reasons": {
             "disused": "",
-            "notFound": "",
             "test": ""
         },
-        "whyDelete": "",
         "cancel": "",
-        "useSomethingElse": "",
         "safeDelete": "",
-        "isntAPoint": "",
         "notEnoughExperience": "",
-        "loading": "",
-        "partOfOthers": "",
-        "onlyEditedByLoggedInUser": ""
+        "partOfOthers": ""
     },
     "split": {
         "splitTitle": "",
-        "loginToSplit": "",
         "hasBeenSplit": "",
-        "split": "",
-        "cancel": "",
-        "inviteToSplit": ""
+        "cancel": ""
     }
 }
