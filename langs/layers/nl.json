@@ -74,7 +74,8 @@
                 "render": "Breedte van de opening: {width:opening} m"
             },
             "6": {
-                "question": "Hoeveel overlappen de barrières?"
+                "question": "Hoeveel overlappen de barrières?",
+                "render": ""
             }
         },
         "title": {
@@ -631,6 +632,9 @@
                 }
             },
             "render": "Herstelpunt met pomp"
+        },
+        "icon": {
+            "render": ""
         }
     },
     "bike_shop": {
@@ -1026,6 +1030,13 @@
                         "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
             }
         },
         "tagRenderings": {
@@ -1089,7 +1100,8 @@
                     "17": {
                         "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
                     }
-                }
+                },
+                "question": ""
             },
             "5": {
                 "question": "Hoeveel stekkers van type  <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> heeft dit oplaadpunt?",
@@ -1476,6 +1488,94 @@
                     }
                 },
                 "question": "Is dit oplaadpunt operationeel?"
+            },
+            "50": {
+                "question": "",
+                "render": ""
+            },
+            "41": {
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "47": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "49": {
+                "question": "",
+                "render": ""
+            },
+            "42": {
+                "render": "",
+                "question": ""
+            },
+            "53": {
+                "question": ""
+            },
+            "43": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "51": {
+                "render": "",
+                "question": ""
             }
         },
         "units": {
@@ -1519,7 +1619,17 @@
                     }
                 }
             }
-        }
+        },
+        "title": {
+            "render": ""
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "name": "",
+        "description": ""
     },
     "crossings": {
         "description": "Oversteekplaatsen voor voetgangers en fietsers",
@@ -1846,7 +1956,33 @@
                 "render": "Deze weg is gemaakt van {surface}"
             },
             "7": {
-                "question": "Wat is de kwaliteit van deze straat?"
+                "question": "Wat is de kwaliteit van deze straat?",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    }
+                }
             },
             "8": {
                 "question": "Hoe breed is de rijbaan in deze straat (in meters)?",
@@ -2121,6 +2257,13 @@
         },
         "title": {
             "render": "Defibrillator"
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
         }
     },
     "direction": {
