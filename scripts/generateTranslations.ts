@@ -248,7 +248,11 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         }
         if (typeof sourceV === "object") {
             if (targetV === undefined) {
+                try{
                 target[language] = sourceV;
+                }catch(e){
+                    throw `At context${context}: Could not add a translation in language ${language} due to ${e}`
+                }
             } else {
                 MergeTranslation(sourceV, targetV, language, context + "." + key);
             }

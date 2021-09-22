@@ -182,7 +182,6 @@
     "phone",
     "payment-options",
     "wheelchair-access",
-    "dog-access",
     {
       "#": "Cuisine",
       "question": {
@@ -551,7 +550,8 @@
         }
       ],
       "condition": "cuisine=friture"
-    }
+    },
+    "dog-access"
   ],
   "filter": [
     {
