@@ -46,8 +46,6 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
 
     public installBounds(factor: number | BBox, showRange?: boolean) {
         this.leafletMap.addCallbackD(leaflet => {
-            console.log("Installing max bounds")
-
             let bounds;
             if (typeof factor === "number") {
                 bounds = leaflet.getBounds()
