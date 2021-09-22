@@ -30,6 +30,7 @@ To develop and build MapComplete, you
 0. Make a fork and clone the repository.
 1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install
    nodeJS: https://nodejs.org/en/download/
+0. Install `wget`, `brew install wget`
 3. Run `npm run init` and generate some additional dependencies and generated files. Note that it'll install the
    dependencies too
 4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
@@ -125,4 +126,3 @@ Overview of package.json-scripts
 - `deploy:staging`,`deploy:pietervdvn`, `deploy:production`: deploy the latest code on various locations
 - `lint`: get depressed by the amount of warnings
 - `clean`: remove some generated files which are annoying in the repo
-  
