@@ -55,7 +55,12 @@
             "confirmIntro": "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que ce point existe réellement. Beaucoup d'autres applications utilisent ces données.",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "openLayerControl": "Ouvrir la panneau de contrôle",
-            "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point"
+            "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
+            "disableFiltersExplanation": "",
+            "warnVisibleForEveryone": "",
+            "disableFilters": "",
+            "presetInfo": "",
+            "addNewMapLabel": ""
         },
         "pickLanguage": "Choisir la langue : ",
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
@@ -148,7 +153,33 @@
             "open_24_7": "Ouvert en permanence",
             "ph_closed": "fermé",
             "ph_open": "ouvert",
-            "ph_not_known": " "
+            "ph_not_known": " ",
+            "loadingCountry": "",
+            "ph_open_as_usual": ""
+        },
+        "download": {
+            "downloadAsPdf": "",
+            "licenseInfo": "",
+            "includeMetaData": "",
+            "downloadGeojson": "",
+            "title": "",
+            "noDataLoaded": "",
+            "downloadCSV": "",
+            "downloadCSVHelper": "",
+            "downloadAsPdfHelper": "",
+            "downloadGeoJsonHelper": ""
+        },
+        "pdf": {
+            "attrBackground": "",
+            "generatedWith": "",
+            "attr": "",
+            "versionInfo": ""
+        },
+        "testing": "",
+        "openTheMap": "",
+        "loginOnlyNeededToEdit": "",
+        "histogram": {
+            "error_loading": ""
         }
     },
     "favourite": {
@@ -171,5 +202,38 @@
         "tos": "En publiant un avis, vous êtes d'accord avec <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">les conditions d'utilisation et la politique de confidentialité de Mangrove.reviews</a>",
         "attribution": "Les avis sont fournis par <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> et sont disponibles sous licence <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "plz_login": "Connectez vous pour laisser un avis"
+    },
+    "delete": {
+        "onlyEditedByLoggedInUser": "",
+        "whyDelete": "",
+        "isntAPoint": "",
+        "loginToDelete": "",
+        "reasons": {
+            "test": "",
+            "notFound": "",
+            "disused": ""
+        },
+        "notEnoughExperience": "",
+        "partOfOthers": "",
+        "useSomethingElse": "",
+        "loading": "",
+        "delete": "",
+        "cancel": "",
+        "explanations": {
+            "selectReason": "",
+            "softDelete": "",
+            "hardDelete": ""
+        },
+        "safeDelete": "",
+        "isDeleted": "",
+        "readMessages": ""
+    },
+    "split": {
+        "splitTitle": "",
+        "loginToSplit": "",
+        "split": "",
+        "hasBeenSplit": "",
+        "inviteToSplit": "",
+        "cancel": ""
     }
 }
