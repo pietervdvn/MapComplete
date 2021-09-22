@@ -149,17 +149,17 @@
           "mappings": [
             {
               "if": "addr:street:={_closest_street:0:name}",
-              "then": "<b>{_closest_street:0:name}</b> {_closest_street:0:distance}m",
+              "then": "Located in <b>{_closest_street:0:name}</b> (~{_closest_street:0:distance}m away)",
               "hideInAnswer": "_closest_street:0:name="
             },
             {
               "if": "addr:street:={_closest_street:1:name}",
-              "then": "<b>{_closest_street:1:name}</b> {_closest_street:1:distance}m",
+              "then": "Located in <b>{_closest_street:1:name}</b> (~{_closest_street:1:distance}m away)",
               "hideInAnswer": "_closest_street:1:name="
             },
             {
               "if": "addr:street:={_closest_street:2:name}",
-              "then": "<b>{_closest_street:2:name}</b> {_closest_street:2:distance}m",
+              "then": "Located in <b>{_closest_street:2:name}</b> (~{_closest_street:2:distance}m away)",
               "hideInAnswer": "_closest_street:2:name="
             }
           ],
@@ -214,7 +214,11 @@
           }
         ]
       },
-      "presets": []
+      "presets": [
+        {
+          
+        }
+      ]
     },
     {
       "id": "named_streets",

@@ -134,11 +134,18 @@ export class ExtraFunction {
             args: ["list of features or layer name", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
         },
         (params, feature) => {
-            return (features, amount, uniqueTag, maxDistanceInMeters) => ExtraFunction.GetClosestNFeatures(params, feature, features, {
-                maxFeatures: Number(amount),
-                uniqueTag: uniqueTag,
-                maxDistance: Number(maxDistanceInMeters)
-            })
+           
+            return (features, amount, uniqueTag, maxDistanceInMeters) => {
+                let distance : number = Number(maxDistanceInMeters)
+                if(isNaN(distance)){
+                    distance = undefined
+                }
+                return ExtraFunction.GetClosestNFeatures(params, feature, features, {
+                    maxFeatures: Number(amount),
+                    uniqueTag: uniqueTag,
+                    maxDistance: distance
+                });
+            }
         }
     )
 
