@@ -17,7 +17,7 @@ export default abstract class OsmChangeAction {
         return this.CreateChangeDescriptions(changes)
     }
 
-    protected abstract CreateChangeDescriptions(changes: Changes): ChangeDescription[]
+    protected abstract CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]>
 
 
 }

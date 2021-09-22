@@ -16,7 +16,7 @@ Utils.runningFromConsole = true;
 export default class TagSpec extends T {
 
     constructor() {
-        super("Tags", [
+        super("tag", [
             ["Tag replacement works in translation", () => {
                 const tr = new Translation({
                     "en": "Test {key} abc"

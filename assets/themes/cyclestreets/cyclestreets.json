@@ -68,7 +68,7 @@
             ]
           },
           "then": {
-            "nl": "Deze straat i een fietsstraat",
+            "nl": "Deze straat is een fietsstraat",
             "en": "This street is a cyclestreet",
             "ja": "この通りはcyclestreetだ",
             "nb_NO": "Denne gaten er en sykkelvei"
@@ -276,8 +276,10 @@
       },
       "tagRenderings": [
         "images"
-      ],
-      "allowSplit": false
+      ]
     }
-  ]
+  ],
+  "overrideAll": {
+    "allowSplit": true
+  }
 }

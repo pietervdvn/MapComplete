@@ -1,9 +1,9 @@
-import {OsmRelation, OsmWay} from "../OsmObject";
+import {OsmObject, OsmWay} from "../OsmObject";
 import {Changes} from "../Changes";
 import {GeoOperations} from "../../GeoOperations";
 import OsmChangeAction from "./OsmChangeAction";
 import {ChangeDescription} from "./ChangeDescription";
-import RelationSplitlHandler from "./RelationSplitlHandler";
+import RelationSplitHandler from "./RelationSplitHandler";
 
 interface SplitInfo {
     originalIndex?: number, // or negative for new elements
@@ -12,17 +12,13 @@ interface SplitInfo {
 }
 
 export default class SplitAction extends OsmChangeAction {
-    private readonly roadObject: any;
-    private readonly osmWay: OsmWay;
-    private _partOf: OsmRelation[];
-    private readonly _splitPoints: any[];
+    private readonly wayId: string;
+    private readonly _splitPointsCoordinates: [number, number] []// lon, lat
 
-    constructor(osmWay: OsmWay, wayGeoJson: any, partOf: OsmRelation[], splitPoints: any[]) {
+    constructor(wayId: string, splitPointCoordinates: [number, number][]) {
         super()
-        this.osmWay = osmWay;
-        this.roadObject = wayGeoJson;
-        this._partOf = partOf;
-        this._splitPoints = splitPoints;
+        this.wayId = wayId;
+        this._splitPointsCoordinates = splitPointCoordinates
     }
 
     private static SegmentSplitInfo(splitInfo: SplitInfo[]): SplitInfo[][] {
@@ -42,26 +38,17 @@ export default class SplitAction extends OsmChangeAction {
         return wayParts.filter(wp => wp.length > 0)
     }
 
-    CreateChangeDescriptions(changes: Changes): ChangeDescription[] {
-        const splitPoints = this._splitPoints
-        // We mark the new split points with a new id
-        console.log(splitPoints)
-        for (const splitPoint of splitPoints) {
-            splitPoint.properties["_is_split_point"] = true
-        }
-
-
+    async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
         const self = this;
-        const partOf = this._partOf
-        const originalElement = this.osmWay
-        const originalNodes = this.osmWay.nodes;
+        const originalElement = <OsmWay>await OsmObject.DownloadObjectAsync(this.wayId)
+        const originalNodes = originalElement.nodes;
 
         // First, calculate splitpoints and remove points close to one another
-        const splitInfo = self.CalculateSplitCoordinates(splitPoints)
+        const splitInfo = self.CalculateSplitCoordinates(originalElement)
         // Now we have a list with e.g. 
         // [ { originalIndex: 0}, {originalIndex: 1, doSplit: true}, {originalIndex: 2}, {originalIndex: undefined, doSplit: true}, {originalIndex: 3}]
 
-        // Lets change 'originalIndex' to the actual node id first:
+        // Lets change 'originalIndex' to the actual node id first (or assign a new id if needed):
         for (const element of splitInfo) {
             if (element.originalIndex >= 0) {
                 element.originalIndex = originalElement.nodes[element.originalIndex]
@@ -102,25 +89,30 @@ export default class SplitAction extends OsmChangeAction {
             })
         }
 
-        const newWayIds: number[] = []
+        // The ids of all the ways (including the original)
+        const allWayIdsInOrder: number[] = []
+
+        const allWaysNodesInOrder: number[][] = []
         // Lets create OsmWays based on them
         for (const wayPart of wayParts) {
 
             let isOriginal = wayPart === longest
             if (isOriginal) {
                 // We change the actual element!
+                const nodeIds = wayPart.map(p => p.originalIndex)
                 changeDescription.push({
                     type: "way",
                     id: originalElement.id,
                     changes: {
-                        locations: wayPart.map(p => p.lngLat),
-                        nodes: wayPart.map(p => p.originalIndex)
+                        coordinates: wayPart.map(p => p.lngLat),
+                        nodes: nodeIds
                     }
                 })
+                allWayIdsInOrder.push(originalElement.id)
+                allWaysNodesInOrder.push(nodeIds)
             } else {
                 let id = changes.getNewID();
-                newWayIds.push(id)
-
+                // Copy the tags from the original object onto the new
                 const kv = []
                 for (const k in originalElement.tags) {
                     if (!originalElement.tags.hasOwnProperty(k)) {
@@ -131,22 +123,35 @@ export default class SplitAction extends OsmChangeAction {
                     }
                     kv.push({k: k, v: originalElement.tags[k]})
                 }
+                const nodeIds = wayPart.map(p => p.originalIndex)
                 changeDescription.push({
                     type: "way",
                     id: id,
                     tags: kv,
                     changes: {
-                        locations: wayPart.map(p => p.lngLat),
-                        nodes: wayPart.map(p => p.originalIndex)
+                        coordinates: wayPart.map(p => p.lngLat),
+                        nodes: nodeIds
                     }
                 })
-            }
 
+                allWayIdsInOrder.push(id)
+                allWaysNodesInOrder.push(nodeIds)
+            }
         }
 
         // At last, we still have to check that we aren't part of a relation...
         // At least, the order of the ways is identical, so we can keep the same roles
-        changeDescription.push(...new RelationSplitlHandler(partOf, newWayIds, originalNodes).CreateChangeDescriptions(changes))
+        const relations = await OsmObject.DownloadReferencingRelations(this.wayId)
+        for (const relation of relations) {
+            const changDescrs = await new RelationSplitHandler({
+                relation: relation,
+                allWayIdsInOrder: allWayIdsInOrder,
+                originalNodes: originalNodes,
+                allWaysNodesInOrder: allWaysNodesInOrder,
+                originalWayId: originalElement.id
+            }).CreateChangeDescriptions(changes)
+            changeDescription.push(...changDescrs)
+        }
 
         // And we have our objects!
         // Time to upload
@@ -158,75 +163,96 @@ export default class SplitAction extends OsmChangeAction {
      * Calculates the actual points to split
      * If another point is closer then ~5m, we reuse that point
      */
-    private CalculateSplitCoordinates(
-        splitPoints: any[],
-        toleranceInM = 5): SplitInfo[] {
+    private CalculateSplitCoordinates(osmWay: OsmWay, toleranceInM = 5): SplitInfo[] {
+        const wayGeoJson = osmWay.asGeoJson()
+        // Should be [lon, lat][]
+        const originalPoints = osmWay.coordinates.map(c => <[number, number]>c.reverse())
+        const allPoints: {
+            coordinates: [number, number],
+            isSplitPoint: boolean,
+            originalIndex?: number, // Original index
+            dist: number, // Distance from the nearest point on the original line
+            location: number // Distance from the start of the way
+        }[] = this._splitPointsCoordinates.map(c => {
+            // From the turf.js docs:
+            // The properties object will contain three values: 
+            // - `index`: closest point was found on nth line part,
+            // - `dist`: distance between pt and the closest point, 
+            // `location`: distance along the line between start and the closest point.
+            let projected = GeoOperations.nearestPoint(wayGeoJson, c)
+            return ({
+                coordinates: c,
+                isSplitPoint: true,
+                dist: projected.properties.dist,
+                location: projected.properties.location
+            });
+        })
 
-        const allPoints = [...splitPoints];
-        // We have a bunch of coordinates here: [ [lat, lon], [lat, lon], ...] ...
-        const originalPoints: [number, number][] = this.roadObject.geometry.coordinates
-        // We project them onto the line (which should yield pretty much the same point
+        // We have a bunch of coordinates here: [ [lon, lon], [lat, lon], ...] ...
+        // We project them onto the line (which should yield pretty much the same point and add them to allPoints
         for (let i = 0; i < originalPoints.length; i++) {
             let originalPoint = originalPoints[i];
-            let projected = GeoOperations.nearestPoint(this.roadObject, originalPoint)
-            projected.properties["_is_split_point"] = false
-            projected.properties["_original_index"] = i
-            allPoints.push(projected)
+            let projected = GeoOperations.nearestPoint(wayGeoJson, originalPoint)
+            allPoints.push({
+                coordinates: originalPoint,
+                isSplitPoint: false,
+                location: projected.properties.location,
+                originalIndex: i,
+                dist: projected.properties.dist
+            })
         }
         // At this point, we have a list of both the split point and the old points, with some properties to discriminate between them
         // We sort this list so that the new points are at the same location
-        allPoints.sort((a, b) => a.properties.location - b.properties.location)
+        allPoints.sort((a, b) => a.location - b.location)
 
-        // When this is done, we check that no now point is too close to an already existing point and no very small segments get created
 
-        /*   for (let i = allPoints.length - 1; i > 0; i--) {
-   
-               const point = allPoints[i];
-               if (point.properties._original_index !== undefined) {
-                   // This point is already in OSM - we have to keep it!
-                   continue;
-               }
-   
-               if (i != allPoints.length - 1) {
-                   const prevPoint = allPoints[i + 1]
-                   const diff = Math.abs(point.properties.location - prevPoint.properties.location) * 1000
-                   if (diff <= toleranceInM) {
-                       // To close to the previous point! We delete this point...
-                       allPoints.splice(i, 1)
-                       // ... and mark the previous point as a split point
-                       prevPoint.properties._is_split_point = true
-                       continue;
-                   }
-               }
-   
-               if (i > 0) {
-                   const nextPoint = allPoints[i - 1]
-                   const diff = Math.abs(point.properties.location - nextPoint.properties.location) * 1000
-                   if (diff <= toleranceInM) {
-                       // To close to the next point! We delete this point...
-                       allPoints.splice(i, 1)
-                       // ... and mark the next point as a split point
-                       nextPoint.properties._is_split_point = true
-                       // noinspection UnnecessaryContinueJS
-                       continue;
-                   }
-               }
-               // We don't have to remove this point...
-           }*/
+        for (let i = allPoints.length - 2; i >= 1; i--) {
+            // We 'merge' points with already existing nodes if they are close enough to avoid closeby elements
+
+            // Note the loop bounds: we skip the first two and last two elements:
+            // The first and last element are always part of the original way and should be kept
+            // Furthermore, we run in reverse order as we'll delete elements on the go
+
+            const point = allPoints[i]
+            if (point.originalIndex !== undefined) {
+                // We keep the original points
+                continue
+            }
+            if (point.dist * 1000 >= toleranceInM) {
+                // No need to remove this one
+                continue
+            }
+
+            // At this point, 'dist' told us the point is pretty close to an already existing point.
+            // Lets see which (already existing) point is closer and mark it as splitpoint
+            const nextPoint = allPoints[i + 1]
+            const prevPoint = allPoints[i - 1]
+            const distToNext = nextPoint.location - point.location
+            const distToPrev = prevPoint.location - point.location
+            let closest = nextPoint
+            if (distToNext > distToPrev) {
+                closest = prevPoint
+            }
+
+            // Ok, we have a closest point!
+            closest.isSplitPoint = true;
+            allPoints.splice(i, 1)
+
+        }
 
         const splitInfo: SplitInfo[] = []
-        let nextId = -1
+        let nextId = -1 // Note: these IDs are overwritten later on, no need to use a global counter here
 
         for (const p of allPoints) {
-            let index = p.properties._original_index
+            let index = p.originalIndex
             if (index === undefined) {
                 index = nextId;
                 nextId--;
             }
             const splitInfoElement = {
                 originalIndex: index,
-                lngLat: p.geometry.coordinates,
-                doSplit: p.properties._is_split_point
+                lngLat: p.coordinates,
+                doSplit: p.isSplitPoint
             }
             splitInfo.push(splitInfoElement)
         }

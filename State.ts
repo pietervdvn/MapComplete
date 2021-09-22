@@ -433,7 +433,7 @@ export default class State {
             })
             .ping();
 
-        new TitleHandler(this.layoutToUse, this.selectedElement, this.allElements);
+        new TitleHandler(this);
     }
 
     private static asFloat(source: UIEventSource<string>): UIEventSource<number> {

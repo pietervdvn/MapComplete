@@ -1,6 +1,6 @@
 import TileHierarchy from "./TileHierarchy";
 import {UIEventSource} from "../../UIEventSource";
-import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource";
+import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {Utils} from "../../../Utils";
 import {BBox} from "../../GeoOperations";
@@ -11,9 +11,9 @@ export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer 
     private readonly sources: Map<number, UIEventSource<FeatureSource[]>> = new Map<number, UIEventSource<FeatureSource[]>>();
 
     public readonly layer: FilteredLayer;
-    private _handleTile: (src: FeatureSourceForLayer, index: number) => void;
+    private _handleTile: (src: FeatureSourceForLayer & IndexedFeatureSource, index: number) => void;
 
-    constructor(layer: FilteredLayer, handleTile: (src: FeatureSourceForLayer, index: number) => void) {
+    constructor(layer: FilteredLayer, handleTile: (src: FeatureSourceForLayer & IndexedFeatureSource, index: number) => void) {
         this.layer = layer;
         this._handleTile = handleTile;
     }

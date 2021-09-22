@@ -1,23 +1,31 @@
 export default class T {
 
-    public readonly failures: string[] = []
     public readonly name: string;
+    private readonly _tests: [string, (() => void)][];
 
     constructor(testsuite: string, tests: [string, () => void][]) {
         this.name = testsuite
-        for (const [name, test] of tests) {
+        this._tests = tests;
+    }
+
+    /**
+     * RUns the test, returns the error messages.
+     * Returns an empty list if successful
+     * @constructor
+     */
+    public Run() : ({testsuite: string, name: string, msg: string} []) {
+        const failures: {testsuite: string, name: string, msg: string} []  = []
+        for (const [name, test] of this._tests) {
             try {
                 test();
             } catch (e) {
-                this.failures.push(name);
-                console.warn(`>>> Failed test in ${this.name}: ${name}because${e}`);
+                failures.push({testsuite: this.name, name: name, msg: ""+e});
             }
         }
-        if (this.failures.length == 0) {
-            console.log(`All tests of ${testsuite} done!`)
+        if (failures.length == 0) {
+            return undefined
         } else {
-            console.warn(this.failures.length, `tests of ${testsuite} failed :(`)
-            console.log("Failed tests: ", this.failures.join(","))
+           return failures
         }
     }
 

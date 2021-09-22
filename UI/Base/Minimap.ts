@@ -16,6 +16,11 @@ export interface MinimapOptions {
     lastClickLocation?: UIEventSource<{ lat: number, lon: number }>
 }
 
+export interface MinimapObj {
+    readonly leafletMap: UIEventSource<any>, 
+    installBounds(factor: number | BBox, showRange?: boolean) : void
+}
+
 export default class Minimap {
     /**
      * A stub implementation. The actual implementation is injected later on, but only in the browser.
@@ -25,6 +30,6 @@ export default class Minimap {
     /**
      * Construct a minimap
      */
-    public static createMiniMap: (options: MinimapOptions) => BaseUIElement & { readonly leafletMap: UIEventSource<any> }
+    public static createMiniMap: (options: MinimapOptions) => (BaseUIElement & MinimapObj)
 
 }

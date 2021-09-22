@@ -19,22 +19,31 @@ export default class MetaTagging {
      * This method (re)calculates all metatags and calculated tags on every given object.
      * The given features should be part of the given layer
      */
-    static addMetatags(features: { feature: any; freshness: Date }[],
+    public static addMetatags(features: { feature: any; freshness: Date }[],
                        params: ExtraFuncParams,
                        layer: LayerConfig,
-                       includeDates = true) {
+                       options?: {
+                           includeDates?: true | boolean,
+                           includeNonDates?: true | boolean
+                       }) {
 
         if (features === undefined || features.length === 0) {
             return;
         }
 
         for (const metatag of SimpleMetaTagger.metatags) {
-            if (metatag.includesDates && !includeDates) {
-                // We do not add dated entries
-                continue;
-            }
+
             try {
-                metatag.addMetaTags(features);
+                if (metatag.includesDates) {
+                    if (options.includeDates ?? true) {
+                        metatag.addMetaTags(features);
+                    }
+                } else {
+                    if (options.includeNonDates ?? true) {
+                        metatag.addMetaTags(features);
+                    }
+                }
+
             } catch (e) {
                 console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e)
             }

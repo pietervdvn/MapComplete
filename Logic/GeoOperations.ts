@@ -185,14 +185,14 @@ export class GeoOperations {
     static lengthInMeters(feature: any) {
         return turf.length(feature) * 1000
     }
-    
-    static buffer(feature: any, bufferSizeInMeter: number){
-        return turf.buffer(feature, bufferSizeInMeter/1000, {
+
+    static buffer(feature: any, bufferSizeInMeter: number) {
+        return turf.buffer(feature, bufferSizeInMeter / 1000, {
             units: 'kilometers'
         })
     }
-    
-    static bbox(feature: any){
+
+    static bbox(feature: any) {
         const [lon, lat, lon0, lat0] = turf.bbox(feature)
         return {
             "type": "Feature",
@@ -226,6 +226,11 @@ export class GeoOperations {
 
     /**
      * Generates the closest point on a way from a given point
+     * 
+     *  The properties object will contain three values:
+     // - `index`: closest point was found on nth line part,
+     // - `dist`: distance between pt and the closest point (in kilometer),
+     // `location`: distance along the line between start and the closest point.
      * @param way The road on which you want to find a point
      * @param point Point defined as [lon, lat]
      */
@@ -379,7 +384,7 @@ export class BBox {
     readonly maxLon: number;
     readonly minLat: number;
     readonly minLon: number;
-    static global: BBox = new BBox([[-180,-90],[180,90]]);
+    static global: BBox = new BBox([[-180, -90], [180, 90]]);
 
     constructor(coordinates) {
         this.maxLat = Number.MIN_VALUE;
@@ -447,7 +452,7 @@ export class BBox {
     }
 
     static fromTile(z: number, x: number, y: number) {
-      return new BBox( Utils.tile_bounds_lon_lat(z, x, y))
+        return new BBox(Utils.tile_bounds_lon_lat(z, x, y))
     }
 
     getEast() {
@@ -464,5 +469,21 @@ export class BBox {
 
     getSouth() {
         return this.minLat
+    }
+
+    pad(factor: number) : BBox {
+        const latDiff = this.maxLat - this.minLat
+        const lat = (this.maxLat + this.minLat) / 2
+        const lonDiff = this.maxLon - this.minLon
+        const lon = (this.maxLon + this.minLon) / 2
+        return new BBox([[
+            lon - lonDiff * factor,
+            lat - latDiff * factor
+        ], [lon + lonDiff * factor,
+            lat + latDiff * factor]])
+    }
+
+    toLeaflet() {
+       return [[this.minLat, this.minLon], [this.maxLat, this.maxLon]]
     }
 }

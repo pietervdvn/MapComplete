@@ -4,7 +4,7 @@ import {UIEventSource} from "../../UIEventSource";
 import Loc from "../../../Models/Loc";
 import TileHierarchy from "./TileHierarchy";
 import {Utils} from "../../../Utils";
-import LocalStorageSaverActor from "../Actors/LocalStorageSaverActor";
+import SaveTileToLocalStorageActor from "../Actors/SaveTileToLocalStorageActor";
 import {BBox} from "../../GeoOperations";
 
 export default class TiledFromLocalStorageSource implements TileHierarchy<FeatureSourceForLayer & Tiled> {
@@ -17,7 +17,7 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                     leafletMap: any
                 }) {
 
-        const prefix = LocalStorageSaverActor.storageKey + "-" + layer.layerDef.id + "-"
+        const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-"
         // @ts-ignore
         const indexes: number[] = Object.keys(localStorage)
             .filter(key => {
@@ -76,7 +76,7 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
             for (const neededIndex of neededIndexes) {
                 // We load the features from localStorage
                 try {
-                    const key = LocalStorageSaverActor.storageKey + "-" + layer.layerDef.id + "-" + neededIndex
+                    const key = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" + neededIndex
                     const data = localStorage.getItem(key)
                     const features = JSON.parse(data)
                     const src = {

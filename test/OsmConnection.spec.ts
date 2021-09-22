@@ -12,7 +12,7 @@ export default class OsmConnectionSpec extends T {
     private static _osm_token = "LJFmv2nUicSNmBNsFeyCHx5KKx6Aiesx8pXPbX4n"
 
     constructor() {
-        super("OsmConnectionSpec-test", [
+        super("osmconnection", [
             ["login on dev",
                 () => {
                     const osmConn = new OsmConnection(false, false,

@@ -1,4 +1,4 @@
-import FeatureSource, {FeatureSourceForLayer} from "./FeatureSource";
+import FeatureSource, {FeatureSourceForLayer, Tiled} from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import FilteredLayer from "../../Models/FilteredLayer";
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
@@ -12,10 +12,13 @@ import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
 export default class PerLayerFeatureSourceSplitter {
 
     constructor(layers: UIEventSource<FilteredLayer[]>,
-                handleLayerData: (source: FeatureSourceForLayer) => void,
-                upstream: FeatureSource) {
+                handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
+                upstream: FeatureSource,
+                options?:{
+        handleLeftovers?: (featuresWithoutLayer: any[]) => void
+                }) {
 
-        const knownLayers = new Map<string, FeatureSourceForLayer>()
+        const knownLayers = new Map<string, FeatureSourceForLayer & Tiled>()
 
         function update() {
             const features = upstream.features.data;
@@ -30,7 +33,7 @@ export default class PerLayerFeatureSourceSplitter {
             // Note that this splitter is only run when it is invoked by the overpass feature source, so we can't be sure in which layer it should go
 
             const featuresPerLayer = new Map<string, { feature, freshness } []>();
-
+            const noLayerFound = []
             function addTo(layer: FilteredLayer, feature: { feature, freshness }) {
                 const id = layer.layerDef.id
                 const list = featuresPerLayer.get(id)
@@ -51,6 +54,7 @@ export default class PerLayerFeatureSourceSplitter {
                             break;
                         }
                     }
+                    noLayerFound.push(f)
                 }
             }
 
@@ -74,6 +78,11 @@ export default class PerLayerFeatureSourceSplitter {
                 } else {
                     featureSource.features.setData(features)
                 }
+            }
+            
+            // AT last, the leftovers are handled
+            if(options?.handleLeftovers !== undefined && noLayerFound.length > 0){
+                options.handleLeftovers(noLayerFound)
             }
         }
 

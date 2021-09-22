@@ -60,7 +60,12 @@ export class UIEventSource<T> {
 
         run();
         return source;
-
+    }
+    
+    public static FromPromise<T>(promise : Promise<T>): UIEventSource<T>{
+        const src = new UIEventSource<T>(undefined)
+        promise.then(d => src.setData(d))
+        return src
     }
 
     /**
@@ -186,6 +191,14 @@ export class UIEventSource<T> {
 
     addCallbackAndRunD(callback: (data: T) => void) {
         this.addCallbackAndRun(data => {
+            if (data !== undefined && data !== null) {
+                return callback(data)
+            }
+        })
+    }
+
+    addCallbackD(callback: (data: T) => void) {
+        this.addCallback(data => {
             if (data !== undefined && data !== null) {
                 return callback(data)
             }

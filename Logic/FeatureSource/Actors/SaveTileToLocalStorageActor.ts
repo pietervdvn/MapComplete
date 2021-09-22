@@ -4,15 +4,13 @@
  * Technically, more an Actor then a featuresource, but it fits more neatly this ay
  */
 import {FeatureSourceForLayer} from "../FeatureSource";
-import {Utils} from "../../../Utils";
 
-export default class LocalStorageSaverActor {
+export default class SaveTileToLocalStorageActor {
     public static readonly storageKey: string = "cached-features";
 
-    constructor(source: FeatureSourceForLayer, x: number, y: number, z: number) {
+    constructor(source: FeatureSourceForLayer, tileIndex: number) {
         source.features.addCallbackAndRunD(features => {
-            const index = Utils.tile_index(z, x, y)
-            const key = `${LocalStorageSaverActor.storageKey}-${source.layer.layerDef.id}-${index}`
+            const key = `${SaveTileToLocalStorageActor.storageKey}-${source.layer.layerDef.id}-${tileIndex}`
             const now = new Date().getTime()
 
             if (features.length == 0) {

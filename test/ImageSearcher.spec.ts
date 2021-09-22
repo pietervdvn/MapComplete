@@ -8,7 +8,7 @@ Utils.runningFromConsole = true;
 export default class ImageSearcherSpec extends T {
 
     constructor() {
-        super("ImageSearcher", [
+        super("imagesearcher", [
             [
                 "Should find images",
                 () => {

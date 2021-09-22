@@ -8,7 +8,7 @@ Utils.runningFromConsole = true;
 
 export default class ThemeSpec extends T {
     constructor() {
-        super("Theme tests",
+        super("theme",
             [
                 ["Nested overrides work", () => {
 

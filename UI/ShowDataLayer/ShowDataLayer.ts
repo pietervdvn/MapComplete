@@ -37,8 +37,8 @@ export default class ShowDataLayer {
         this._layerToShow = options.layerToShow;
         const self = this;
 
-        features.addCallback(() => self.update(options));
-        options.leafletMap.addCallback(() => self.update(options));
+        features.addCallback(_ => self.update(options));
+        options.leafletMap.addCallback(_ => self.update(options));
         this.update(options);
 
 
@@ -83,13 +83,17 @@ export default class ShowDataLayer {
             mp.removeLayer(this.geoLayer);
         }
 
+        this.geoLayer= this.CreateGeojsonLayer()
         const allFeats = this._features.data;
-        this.geoLayer = this.CreateGeojsonLayer();
         for (const feat of allFeats) {
             if (feat === undefined) {
                 continue
             }
-            this.geoLayer.addData(feat);
+            try{
+                this.geoLayer.addData(feat);
+            }catch(e){
+                console.error("Could not add ", feat, "to the geojson layer in leaflet")
+            }
         }
 
         mp.addLayer(this.geoLayer)
@@ -122,7 +126,8 @@ export default class ShowDataLayer {
         }
 
         const tagSource = feature.properties.id === undefined ? new UIEventSource<any>(feature.properties) : State.state.allElements.getEventSourceById(feature.properties.id)
-        const style = layer.GenerateLeafletStyle(tagSource, !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0));
+        const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
+        const style = layer.GenerateLeafletStyle(tagSource, clickable);
         const baseElement = style.icon.html;
         if (!this._enablePopups) {
             baseElement.SetStyle("cursor: initial !important")
@@ -132,7 +137,7 @@ export default class ShowDataLayer {
                 html: baseElement.ConstructElement(),
                 className: style.icon.className,
                 iconAnchor: style.icon.iconAnchor,
-                iconUrl: style.icon.iconUrl,
+                iconUrl: style.icon.iconUrl ?? "./assets/svg/bug.svg",
                 popupAnchor: style.icon.popupAnchor,
                 iconSize: style.icon.iconSize
             })

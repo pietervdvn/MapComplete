@@ -159,7 +159,7 @@ export default class DeleteAction {
                     canBeDeleted: false,
                     reason: t.notEnoughExperience
                 })
-                return;
+                return true; // unregister this caller!
             }
 
             if (!useTheInternet) {
@@ -167,13 +167,14 @@ export default class DeleteAction {
             }
 
             // All right! We have arrived at a point that we should query OSM again to check that the point isn't a part of ways or relations
-            OsmObject.DownloadReferencingRelations(id).addCallbackAndRunD(rels => {
+            OsmObject.DownloadReferencingRelations(id).then(rels => {
                 hasRelations.setData(rels.length > 0)
             })
 
-            OsmObject.DownloadReferencingWays(id).addCallbackAndRunD(ways => {
+            OsmObject.DownloadReferencingWays(id).then(ways => {
                 hasWays.setData(ways.length > 0)
             })
+            return true; // unregister to only run once
         })
 
 

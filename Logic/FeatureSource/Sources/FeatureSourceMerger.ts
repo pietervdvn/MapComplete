@@ -3,12 +3,12 @@
  * Uses the freshest feature available in the case multiple sources offer data with the same identifier
  */
 import {UIEventSource} from "../../UIEventSource";
-import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource";
+import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {BBox} from "../../GeoOperations";
 import {Utils} from "../../../Utils";
 
-export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled {
+export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled, IndexedFeatureSource {
 
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name;
@@ -16,6 +16,7 @@ export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled
     private readonly _sources: UIEventSource<FeatureSource[]>;
     public readonly tileIndex: number;
     public readonly bbox: BBox;
+    public readonly containedIds: UIEventSource<Set<string>> = new UIEventSource<Set<string>>(new Set())
 
     constructor(layer: FilteredLayer, tileIndex: number, bbox: BBox, sources: UIEventSource<FeatureSource[]>) {
         this.tileIndex = tileIndex;
@@ -54,7 +55,7 @@ export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled
         // We seed the dictionary with the previously loaded features
         const oldValues = this.features.data ?? [];
         for (const oldValue of oldValues) {
-            all.set(oldValue.feature.id + oldValue.feature._matching_layer_id, oldValue)
+            all.set(oldValue.feature.id, oldValue)
         }
 
         for (const source of this._sources.data) {
@@ -62,7 +63,7 @@ export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled
                 continue;
             }
             for (const f of source.features.data) {
-                const id = f.feature.properties.id + f.feature._matching_layer_id;
+                const id = f.feature.properties.id;
                 if (!all.has(id)) {
                     // This is a new feature
                     somethingChanged = true;
@@ -90,6 +91,7 @@ export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled
         all.forEach((value, _) => {
             newList.push(value)
         })
+        this.containedIds.setData(new Set(all.keys()))
         this.features.setData(newList);
     }
 

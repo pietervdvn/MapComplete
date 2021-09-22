@@ -56,7 +56,7 @@ export default class ScriptUtils {
 
                 const headers = options?.headers ?? {}
                 headers.accept = "application/json"
-
+                console.log("Fetching", url)
                 const urlObj = new URL(url)
                 https.get({
                     host: urlObj.host,
@@ -75,6 +75,7 @@ export default class ScriptUtils {
                     res.addListener('end', function () {
                         const result = parts.join("")
                         try {
+                            console.log("Fetched", result)
                             resolve(JSON.parse(result))
                         } catch (e) {
                             console.error("Could not parse the following as JSON:", result)

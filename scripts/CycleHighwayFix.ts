@@ -10,7 +10,7 @@ writeFileSync("cycleHighwayFix.osc", "<osmChange version=\"0.6\" generator=\"Han
     "    <modify>", "utf8")
 const ids = JSON.parse(readFileSync("export.geojson", "utf-8")).features.map(f => f.properties["@id"])
 console.log(ids)
-ids.map(id => OsmObject.DownloadReferencingRelations(id).addCallbackAndRunD(relations => {
+ids.map(id => OsmObject.DownloadReferencingRelations(id).then(relations => {
     console.log(relations)
     const changeparts = relations.filter(relation => relation.tags["cycle_highway"] == "yes" && relation.tags["note:state"] == undefined)
         .map(relation => {
@@ -18,5 +18,4 @@ ids.map(id => OsmObject.DownloadReferencingRelations(id).addCallbackAndRunD(rela
             return relation.ChangesetXML(undefined)
         })
     appendFileSync("cycleHighwayFix.osc", changeparts.join("\n"), "utf8")
-    return true;
 }))

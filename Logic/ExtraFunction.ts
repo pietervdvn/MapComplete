@@ -88,7 +88,7 @@ export class ExtraFunction {
         {
             name: "distanceTo",
             doc: "Calculates the distance between the feature and a specified point in kilometer. The input should either be a pair of coordinates, a geojson feature or the ID of an object",
-            args: ["longitude", "latitude"]
+            args: ["feature OR featureID OR longitude", "undefined OR latitude"]
         },
         (featuresPerLayer, feature) => {
             return (arg0, lat) => {
@@ -128,10 +128,10 @@ export class ExtraFunction {
     private static readonly ClosestNObjectFunc = new ExtraFunction(
         {
             name: "closestn",
-            doc: "Given either a list of geojson features or a single layer name, gives the n closest objects which are nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. " +
-                "Returns a list of `{feat: geojson, distance:number}` the empty list if nothing is found (or not yet laoded)\n\n" +
+            doc: "Given either a list of geojson features or a single layer name, gives the n closest objects which are nearest to the feature (excluding the feature itself). In the case of ways/polygons, only the centerpoint is considered. " +
+                "Returns a list of `{feat: geojson, distance:number}` the empty list if nothing is found (or not yet loaded)\n\n" +
                 "If a 'unique tag key' is given, the tag with this key will only appear once (e.g. if 'name' is given, all features will have a different name)",
-            args: ["list of features", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
+            args: ["list of features or layer name", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
         },
         (params, feature) => {
             return (features, amount, uniqueTag, maxDistanceInMeters) => ExtraFunction.GetClosestNFeatures(params, feature, features, {

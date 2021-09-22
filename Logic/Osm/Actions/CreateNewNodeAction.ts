@@ -27,7 +27,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
         this._reusePointDistance = options?.reusePointWithinMeters ?? 1
     }
 
-    CreateChangeDescriptions(changes: Changes): ChangeDescription[] {
+    async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
         const id = changes.getNewID()
         const properties = {
             id: "node/" + id
@@ -97,7 +97,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
                 type: "way",
                 id: this._snapOnto.id,
                 changes: {
-                    locations: locations,
+                    coordinates: locations,
                     nodes: ids
                 }
             }

@@ -21,12 +21,15 @@ export class Changes {
      */
     public features = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
 
-    public readonly pendingChanges = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
+    public readonly pendingChanges: UIEventSource<ChangeDescription[]> = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
+    public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
     private readonly isUploading = new UIEventSource(false);
 
     private readonly previouslyCreated: OsmObject[] = []
 
     constructor() {
+        // We keep track of all changes just as well
+        this.allChanges.setData([...this.pendingChanges.data])
     }
 
     private static createChangesetFor(csId: string,
@@ -146,10 +149,13 @@ export class Changes {
     }
 
     public applyAction(action: OsmChangeAction) {
-        const changes = action.Perform(this)
-        console.log("Received changes:", changes)
-        this.pendingChanges.data.push(...changes);
-        this.pendingChanges.ping();
+        action.Perform(this).then(changes => {
+            console.log("Received changes:", changes)
+            this.pendingChanges.data.push(...changes);
+            this.pendingChanges.ping();
+            this.allChanges.data.push(...changes)
+            this.allChanges.ping()
+        })
     }
 
     private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {

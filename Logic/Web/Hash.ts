@@ -9,7 +9,7 @@ export default class Hash {
     public static hash: UIEventSource<string> = Hash.Get();
 
     /**
-     * Gets the current string, including the pound sign
+     * Gets the current string, including the pound sign if there is any
      * @constructor
      */
     public static Current(): string {

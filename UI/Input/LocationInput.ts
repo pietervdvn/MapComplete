@@ -7,7 +7,7 @@ import Combine from "../Base/Combine";
 import Svg from "../../Svg";
 import State from "../../State";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
-import {GeoOperations} from "../../Logic/GeoOperations";
+import {BBox, GeoOperations} from "../../Logic/GeoOperations";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import * as L from "leaflet";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
@@ -38,6 +38,8 @@ export default class LocationInput extends InputElement<Loc> {
     private readonly _snappedPoint: UIEventSource<any>
     private readonly _maxSnapDistance: number
     private readonly _snappedPointTags: any;
+    private readonly _bounds: UIEventSource<BBox>;
+    public readonly _matching_layer: UIEventSource<LayerConfig>;
 
     constructor(options: {
         mapBackground?: UIEventSource<BaseLayer>,
@@ -46,32 +48,33 @@ export default class LocationInput extends InputElement<Loc> {
         snappedPointTags?: any,
         requiresSnapping?: boolean,
         centerLocation: UIEventSource<Loc>,
+        bounds?: UIEventSource<BBox>
     }) {
         super();
         this._snapTo = options.snapTo?.map(features => features?.filter(feat => feat.feature.geometry.type !== "Point"))
         this._maxSnapDistance = options.maxSnapDistance
         this._centerLocation = options.centerLocation;
         this._snappedPointTags = options.snappedPointTags
+        this._bounds = options.bounds;
         if (this._snapTo === undefined) {
             this._value = this._centerLocation;
         } else {
             const self = this;
 
-            let matching_layer: UIEventSource<string>
 
             if (self._snappedPointTags !== undefined) {
-                matching_layer = State.state.layoutToUse.map(layout => {
+                this._matching_layer = State.state.layoutToUse.map(layout => {
 
                     for (const layer of layout.layers) {
                         if (layer.source.osmTags.matchesProperties(self._snappedPointTags)) {
-                            return layer.id
+                            return layer
                         }
                     }
                     console.error("No matching layer found for tags ", self._snappedPointTags)
-                    return "matchpoint"
+                    return LocationInput.matchLayer
                 })
             } else {
-                matching_layer = new UIEventSource<string>("matchpoint")
+               this._matching_layer = new UIEventSource<LayerConfig>(LocationInput.matchLayer)
             }
 
             this._snappedPoint = options.centerLocation.map(loc => {
@@ -83,7 +86,7 @@ export default class LocationInput extends InputElement<Loc> {
 
                 let min = undefined;
                 let matchedWay = undefined;
-                for (const feature of self._snapTo.data) {
+                for (const feature of self._snapTo.data ?? []) {
                     const nearestPointOnLine = GeoOperations.nearestPoint(feature.feature, [loc.lon, loc.lat])
                     if (min === undefined) {
                         min = nearestPointOnLine
@@ -98,19 +101,17 @@ export default class LocationInput extends InputElement<Loc> {
                     }
                 }
 
-                if (min.properties.dist * 1000 > self._maxSnapDistance) {
+                if (min === undefined || min.properties.dist * 1000 > self._maxSnapDistance) {
                     if (options.requiresSnapping) {
                         return undefined
                     } else {
                         return {
                             "type": "Feature",
-                            "_matching_layer_id": matching_layer.data,
                             "properties": options.snappedPointTags ?? min.properties,
                             "geometry": {"type": "Point", "coordinates": [loc.lon, loc.lat]}
                         }
                     }
                 }
-                min._matching_layer_id = matching_layer?.data ?? "matchpoint"
                 min.properties = options.snappedPointTags ?? min.properties
                 self.snappedOnto.setData(matchedWay)
                 return min
@@ -144,84 +145,40 @@ export default class LocationInput extends InputElement<Loc> {
                     location: this._centerLocation,
                     background: this.mapBackground,
                     attribution: this.mapBackground !== State.state.backgroundLayer,
-                    lastClickLocation: clickLocation
+                    lastClickLocation: clickLocation,
+                    bounds: this._bounds
                 }
             )
             clickLocation.addCallbackAndRunD(location => this._centerLocation.setData(location))
-            map.leafletMap.addCallbackAndRunD(leaflet => {
-                const bounds = leaflet.getBounds()
-                leaflet.setMaxBounds(bounds.pad(0.15))
-                const data = {
-                    type: "FeatureCollection",
-                    features: [{
-                        "type": "Feature",
-                        "geometry": {
-                            "type": "LineString",
-                            "coordinates": [
-                                [
-                                    bounds.getEast(),
-                                    bounds.getNorth()
-                                ],
-                                [
-                                    bounds.getWest(),
-                                    bounds.getNorth()
-                                ],
-                                [
-                                    bounds.getWest(),
-                                    bounds.getSouth()
-                                ],
 
-                                [
-                                    bounds.getEast(),
-                                    bounds.getSouth()
-                                ],
-                                [
-                                    bounds.getEast(),
-                                    bounds.getNorth()
-                                ]
-                            ]
-                        }
-                    }]
-                }
-                // @ts-ignore
-                L.geoJSON(data, {
-                    style: {
-                        color: "#f00",
-                        weight: 2,
-                        opacity: 0.4
-                    }
-                }).addTo(leaflet)
-            })
+            map.installBounds(0.15, true);
 
             if (this._snapTo !== undefined) {
-
+                
+                // Show the lines to snap to
+                new ShowDataMultiLayer({
+                        features: new StaticFeatureSource(this._snapTo, true),
+                        enablePopups: false,
+                        zoomToFeatures: false,
+                        leafletMap: map.leafletMap,
+                        layers: State.state.filteredLayers
+                    }
+                )
+                // Show the central point
                 const matchPoint = this._snappedPoint.map(loc => {
                     if (loc === undefined) {
                         return []
                     }
                     return [{feature: loc}];
                 })
-                if (this._snapTo) {
-                    if (this._snappedPointTags === undefined) {
-                        // No special tags - we show a default crosshair
-                        new ShowDataLayer({
-                            features: new StaticFeatureSource(matchPoint),
-                            enablePopups: false,
-                            zoomToFeatures: false,
-                            leafletMap: map.leafletMap,
-                            layerToShow: LocationInput.matchLayer
-                        })
-                    }else{
-                        new ShowDataMultiLayer({
-                                features: new StaticFeatureSource(matchPoint),
-                                enablePopups: false,
-                                zoomToFeatures: false,
-                                leafletMap: map.leafletMap,
-                                layers: State.state.filteredLayers
-                            }
-                        )
-                    }
-                }
+                    new ShowDataLayer({
+                        features: new StaticFeatureSource(matchPoint, true),
+                        enablePopups: false,
+                        zoomToFeatures: false,
+                        leafletMap: map.leafletMap,
+                        layerToShow: this._matching_layer.data
+                    })
+                    
             }
 
             this.mapBackground.map(layer => {

@@ -127,7 +127,6 @@ export class QueryParameters {
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
         // Don't pollute the history every time a parameter changes
-
         history.replaceState(null, "", "?" + parts.join("&") + Hash.Current());
 
     }

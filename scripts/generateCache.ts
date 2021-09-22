@@ -201,7 +201,10 @@ function postProcess(allFeatures: FeatureSource, theme: LayoutConfig, relationsT
                 }
             },
             layer,
-            false);
+            {
+                includeDates: false,
+                includeNonDates: true
+            });
 
         const createdTiles = []
         // At this point, we have all the features of the entire area.

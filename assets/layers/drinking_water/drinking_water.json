@@ -49,7 +49,7 @@
   },
   "calculatedTags": [
     "_closest_other_drinking_water_id=feat.closest('drinking_water')?.id",
-    "_closest_other_drinking_water_distance=Math.floor(feat.distanceTo(feat.closest('drinking_water')) * 1000)"
+    "_closest_other_drinking_water_distance=Math.floor(feat.distanceTo(feat.closest('drinking_water')).distance * 1000)"
   ],
   "minzoom": 13,
   "wayHandling": 1,

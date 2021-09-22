@@ -1,16 +1,50 @@
-const client_token = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
+import SplitRoadWizard from "./UI/Popup/SplitRoadWizard";
+import State from "./State";
+import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import MinimapImplementation from "./UI/Base/MinimapImplementation";
+import {UIEventSource} from "./Logic/UIEventSource";
+import FilteredLayer from "./Models/FilteredLayer";
+import {And} from "./Logic/Tags/And";
 
-const image_id = '196804715753265';
-const api_url = 'https://graph.mapillary.com/' + image_id + '?fields=thumb_1024_url&&access_token=' + client_token;
-fetch(api_url,
-    {
-        headers: {'Authorization': 'OAuth ' + client_token}
+const layout = AllKnownLayouts.allKnownLayouts.get("cyclestreets")
+State.state = new State(layout)
+MinimapImplementation.initialize()
+const feature = {
+    "type": "Feature",
+    "properties": {
+        id: "way/1234",
+        "highway":"residential",
+        "cyclestreet":"yes"
+    },
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                3.2207107543945312,
+                51.21978729870313
+            ],
+            [
+                3.2198524475097656,
+                51.21899435057332
+            ],
+            [
+                3.2155394554138184,
+                51.21617188199714
+            ]
+        ]
     }
-).then(response => {
-    return response.json()
-}).then(
-    json => {
-        const thumbnail_url = json["thumb_1024"]
-        console.log(thumbnail_url)
-    }
+}
+
+State.state.allElements.addOrGetElement(feature)
+State.state.filteredLayers = new UIEventSource<FilteredLayer[]>(
+    layout.layers.map( l => ({
+        layerDef :l,
+        appliedFilters: new UIEventSource<And>(undefined),
+        isDisplayed: new UIEventSource<boolean>(undefined)
+    }))
 )
+
+const splitroad = new SplitRoadWizard("way/1234")
+    splitroad.AttachTo("maindiv")
+
+splitroad.dialogIsOpened.setData(true)

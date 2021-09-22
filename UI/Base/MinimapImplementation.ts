@@ -7,9 +7,9 @@ import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {BBox} from "../../Logic/GeoOperations";
 import * as L from "leaflet";
 import {Map} from "leaflet";
-import Minimap, {MinimapOptions} from "./Minimap";
+import Minimap, {MinimapObj, MinimapOptions} from "./Minimap";
 
-export default class MinimapImplementation extends BaseUIElement {
+export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0;
     public readonly leafletMap: UIEventSource<Map>
     private readonly _id: string;
@@ -42,6 +42,65 @@ export default class MinimapImplementation extends BaseUIElement {
 
     public static initialize() {
         Minimap.createMiniMap = options => new MinimapImplementation(options)
+    }
+
+    public installBounds(factor: number | BBox, showRange?: boolean) {
+        this.leafletMap.addCallbackD(leaflet => {
+            console.log("Installing max bounds")
+
+            let bounds;
+            if (typeof factor === "number") {
+                bounds = leaflet.getBounds()
+                leaflet.setMaxBounds(bounds.pad(factor))
+            }else{
+                // @ts-ignore
+                leaflet.setMaxBounds(factor.toLeaflet())
+                bounds = leaflet.getBounds()
+            }
+
+            if (showRange) {
+                const data = {
+                    type: "FeatureCollection",
+                    features: [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    bounds.getEast(),
+                                    bounds.getNorth()
+                                ],
+                                [
+                                    bounds.getWest(),
+                                    bounds.getNorth()
+                                ],
+                                [
+                                    bounds.getWest(),
+                                    bounds.getSouth()
+                                ],
+
+                                [
+                                    bounds.getEast(),
+                                    bounds.getSouth()
+                                ],
+                                [
+                                    bounds.getEast(),
+                                    bounds.getNorth()
+                                ]
+                            ]
+                        }
+                    }]
+                }
+                // @ts-ignore
+                L.geoJSON(data, {
+                    style: {
+                        color: "#f00",
+                        weight: 2,
+                        opacity: 0.4
+                    }
+                }).addTo(leaflet)
+            }
+        })
     }
 
     protected InnerConstructElement(): HTMLElement {
