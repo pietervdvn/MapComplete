@@ -523,6 +523,26 @@
           }
         }
       ]
+    },
+    {
+      "#": "Parking:fee",
+      "question": {
+        "en": "Does one have to pay a parking fee while charging?"
+      },
+      "mappings": [
+        {
+          "if": "parking:fee=no",
+          "then": {
+            "en": "No additional parking cost while charging"
+          }
+        },
+        {
+          "if": "parking:fee=yes",
+          "then": {
+            "en": "An additional parking fee should be paid while charging"
+          }
+        }
+      ]
     }
   ],
   "icon": {
