@@ -1,91 +1,55 @@
 {
     "image": {
-        "cco": "",
-        "ccb": "",
-        "uploadingPicture": ""
+        "ccb": ""
     },
     "centerMessage": {
         "loadingData": ""
     },
     "reviews": {
-        "write_a_comment": "",
         "affiliated_reviewer_warning": "",
-        "attribution": "",
         "posting_as": ""
     },
     "general": {
         "download": {
-            "downloadAsPdfHelper": "",
             "title": ""
         },
-        "noNameCategory": "",
         "questions": {
             "emailOf": ""
         },
         "opening_hours": {
-            "ph_open": "",
             "loadingCountry": "",
-            "ph_closed": "",
             "ph_not_known": ""
         },
         "sharescreen": {
-            "copiedToClipboard": "",
             "embedIntro": "",
-            "fsSearch": "",
             "fsLayers": ""
         },
         "add": {
-            "pleaseLogin": "",
             "presetInfo": "",
-            "warnVisibleForEveryone": "",
             "stillLoading": ""
         },
-        "pdf": {
-            "attrBackground": ""
-        },
         "attribution": {
-            "themeBy": "",
-            "iconAttribution": {
-                "title": ""
-            }
+            "themeBy": ""
         },
         "search": {
             "error": ""
         },
         "weekdays": {
-            "tuesday": "",
             "abbreviations": {
                 "thursday": ""
             },
-            "wednesday": "",
             "saturday": ""
         },
-        "morescreen": {
-            "streetcomplete": ""
-        },
         "openTheMap": "",
-        "aboutMapcomplete": "",
         "customThemeIntro": "",
-        "skip": "",
-        "osmLinkTooltip": "",
-        "loginWithOpenStreetMap": ""
+        "osmLinkTooltip": ""
     },
     "split": {
         "inviteToSplit": ""
     },
-    "index": {
-        "intro": ""
-    },
     "delete": {
         "safeDelete": "",
-        "reasons": {
-            "notFound": ""
-        },
         "whyDelete": "",
-        "delete": "",
         "useSomethingElse": ""
-    },
-    "favourite": {
-        "panelIntro": ""
     }
 }

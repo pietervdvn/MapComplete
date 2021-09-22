@@ -8,56 +8,35 @@
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
         "attribution": {
-            "themeBy": "",
             "attributionTitle": ""
-        },
-        "morescreen": {
-            "createYourOwnTheme": ""
         },
         "sharescreen": {
             "fsIncludeCurrentLayers": "",
-            "fsLayerControlToggle": "",
-            "fsGeolocation": "",
-            "thanksForSharing": ""
+            "fsGeolocation": ""
         },
         "weekdays": {
             "abbreviations": {
-                "wednesday": "",
-                "tuesday": ""
+                "wednesday": ""
             },
-            "saturday": "",
-            "thursday": ""
+            "saturday": ""
         },
         "opening_hours": {
             "open_during_ph": "",
-            "ph_open_as_usual": "",
             "not_all_rules_parsed": ""
         },
         "download": {
-            "downloadAsPdfHelper": "",
             "licenseInfo": ""
         },
         "add": {
-            "confirmIntro": "",
             "presetInfo": "",
-            "openLayerControl": "",
-            "title": ""
-        },
-        "layerSelection": {
             "title": ""
         },
         "questions": {
             "phoneNumberOf": ""
         },
-        "noTagsSelected": "",
         "number": "",
-        "about": "",
         "loginWithOpenStreetMap": "",
-        "pdf": {
-            "versionInfo": ""
-        },
-        "pickLanguage": "",
-        "returnToTheMap": ""
+        "pickLanguage": ""
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
@@ -75,28 +54,18 @@
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
-        "pleaseLogin": "Logg inn for å legge til et bilde",
-        "respectPrivacy": ""
+        "pleaseLogin": "Logg inn for å legge til et bilde"
     },
     "reviews": {
         "no_reviews_yet": "",
-        "i_am_affiliated": "",
-        "write_a_comment": "",
-        "saved": ""
+        "write_a_comment": ""
     },
     "delete": {
         "explanations": {
             "softDelete": ""
         },
-        "reasons": {
-            "notFound": ""
-        },
         "useSomethingElse": "",
-        "cancel": "",
         "partOfOthers": ""
-    },
-    "split": {
-        "splitTitle": ""
     },
     "favourite": {
         "loginNeeded": ""

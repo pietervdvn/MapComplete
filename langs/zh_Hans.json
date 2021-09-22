@@ -1,89 +1,53 @@
 {
     "general": {
         "sharescreen": {
-            "thanksForSharing": "",
             "editThisTheme": "",
-            "addToHomeScreen": "",
             "fsWelcomeMessage": ""
-        },
-        "questions": {
-            "emailOf": ""
         },
         "nameInlineQuestion": "",
         "opening_hours": {
-            "ph_open": "",
-            "openTill": "",
-            "closed_permanently": ""
+            "openTill": ""
         },
         "add": {
             "intro": "",
-            "openLayerControl": "",
-            "pleaseLogin": "",
-            "presetInfo": ""
+            "pleaseLogin": ""
         },
         "download": {
-            "downloadGeoJsonHelper": "",
-            "downloadGeojson": ""
+            "downloadGeoJsonHelper": ""
         },
         "pickLanguage": "",
-        "morescreen": {
-            "requestATheme": ""
-        },
         "attribution": {
-            "mapContributionsBy": "",
-            "attributionContent": ""
+            "mapContributionsBy": ""
         },
         "loginOnlyNeededToEdit": "",
         "weekdays": {
             "abbreviations": {
-                "wednesday": "",
                 "tuesday": ""
-            },
-            "tuesday": ""
+            }
         },
         "openStreetMapIntro": "",
-        "search": {
-            "nothing": ""
-        },
         "pdf": {
             "versionInfo": ""
         },
-        "loginWithOpenStreetMap": "",
         "noTagsSelected": "",
-        "readYourMessages": "",
-        "save": "",
-        "getStartedNewAccount": ""
+        "save": ""
     },
     "reviews": {
         "saving_review": "",
-        "i_am_affiliated": "",
         "name_required": ""
-    },
-    "favourite": {
-        "panelIntro": ""
     },
     "delete": {
         "delete": "",
-        "cancel": "",
         "explanations": {
             "selectReason": ""
         },
-        "whyDelete": "",
         "onlyEditedByLoggedInUser": ""
-    },
-    "index": {
-        "#": ""
     },
     "centerMessage": {
         "loadingData": ""
     },
-    "split": {
-        "loginToSplit": ""
-    },
     "image": {
         "uploadDone": "",
-        "respectPrivacy": "",
-        "pleaseLogin": "",
-        "ccbs": ""
+        "pleaseLogin": ""
     }
 }

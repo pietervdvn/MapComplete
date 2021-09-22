@@ -1,91 +1,55 @@
 {
     "general": {
         "attribution": {
-            "attributionContent": "",
             "codeContributionsBy": ""
         },
         "sharescreen": {
-            "fsSearch": "",
             "fsUserbadge": "",
-            "editThisTheme": "",
             "fsIncludeCurrentLayers": ""
         },
         "add": {
-            "zoomInFurther": "",
             "confirmButton": "",
-            "addNewMapLabel": "",
             "addNew": ""
         },
         "weekdays": {
             "abbreviations": {
-                "thursday": "",
                 "saturday": ""
             },
-            "wednesday": "",
             "tuesday": ""
-        },
-        "search": {
-            "nothing": ""
         },
         "opening_hours": {
             "open_24_7": "",
-            "ph_closed": "",
             "ph_open": ""
         },
-        "pickLanguage": "",
         "morescreen": {
             "createYourOwnTheme": ""
         },
         "download": {
-            "licenseInfo": "",
             "noDataLoaded": ""
         },
-        "loginToStart": "",
         "questions": {
             "websiteIs": ""
         },
-        "pdf": {
-            "attr": ""
-        },
         "skip": "",
-        "loginOnlyNeededToEdit": "",
         "fewChangesBefore": "",
-        "save": "",
-        "nameInlineQuestion": "",
-        "noTagsSelected": ""
+        "nameInlineQuestion": ""
     },
     "reviews": {
         "no_rating": "",
-        "affiliated_reviewer_warning": "",
         "i_am_affiliated": ""
-    },
-    "centerMessage": {
-        "zoomIn": ""
     },
     "image": {
         "ccb": "",
-        "uploadDone": "",
-        "addPicture": "",
-        "uploadingMultiple": ""
+        "addPicture": ""
     },
     "index": {
         "title": ""
-    },
-    "split": {
-        "split": ""
     },
     "favourite": {
         "panelIntro": ""
     },
     "delete": {
-        "reasons": {
-            "test": ""
-        },
         "useSomethingElse": "",
-        "explanations": {
-            "selectReason": ""
-        },
-        "partOfOthers": "",
-        "cancel": ""
+        "partOfOthers": ""
     }
 }

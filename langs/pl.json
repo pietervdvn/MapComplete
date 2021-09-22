@@ -39,8 +39,7 @@
             "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>",
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
-            "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>",
-            "addNewMapLabel": ""
+            "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>"
         },
         "number": "numer",
         "skippedQuestions": "Niektóre pytania są pominięte",
@@ -233,21 +232,13 @@
         "goToInbox": "Otwórz skrzynkę odbiorczą",
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
-        "attribution": {
-            "themeBy": ""
-        },
         "download": {
             "downloadCSVHelper": "",
-            "licenseInfo": "",
             "noDataLoaded": ""
-        },
-        "morescreen": {
-            "createYourOwnTheme": ""
         },
         "pdf": {
             "versionInfo": ""
-        },
-        "openTheMap": ""
+        }
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
@@ -283,15 +274,12 @@
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów"
     },
     "delete": {
-        "isDeleted": "",
         "reasons": {
             "disused": ""
         },
-        "useSomethingElse": "",
         "notEnoughExperience": ""
     },
     "split": {
-        "splitTitle": "",
         "hasBeenSplit": ""
     }
 }

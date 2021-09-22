@@ -1,91 +1,57 @@
 {
     "general": {
         "opening_hours": {
-            "open_during_ph": "",
-            "ph_open": "",
-            "error_loading": ""
+            "ph_open": ""
         },
         "add": {
             "confirmButton": "",
-            "warnVisibleForEveryone": "",
-            "intro": "",
-            "stillLoading": ""
+            "intro": ""
         },
         "sharescreen": {
             "fsWelcomeMessage": "",
-            "editThemeDescription": "",
-            "fsSearch": "",
-            "embedIntro": ""
+            "fsSearch": ""
         },
         "weekdays": {
             "abbreviations": {
-                "friday": "",
-                "sunday": ""
+                "friday": ""
             },
             "friday": ""
         },
-        "loginOnlyNeededToEdit": "",
         "morescreen": {
             "createYourOwnTheme": ""
         },
         "download": {
-            "downloadGeoJsonHelper": "",
             "noDataLoaded": ""
         },
         "attribution": {
-            "mapContributionsByAndHidden": "",
             "themeBy": ""
         },
         "questions": {
-            "phoneNumberOf": "",
             "websiteOf": ""
         },
-        "pdf": {
-            "attrBackground": ""
-        },
         "noTagsSelected": "",
-        "cancel": "",
         "loginToStart": "",
-        "layerSelection": {
-            "title": ""
-        },
         "search": {
             "searching": ""
         },
-        "goToInbox": "",
-        "osmLinkTooltip": "",
-        "openTheMap": ""
+        "osmLinkTooltip": ""
     },
     "image": {
         "uploadingMultiple": "",
-        "ccbs": "",
         "cco": ""
     },
     "reviews": {
-        "tos": "",
         "saved": "",
-        "posting_as": "",
         "attribution": ""
-    },
-    "index": {
-        "title": ""
     },
     "delete": {
         "explanations": {
             "selectReason": ""
         },
-        "reasons": {
-            "disused": ""
-        },
         "useSomethingElse": "",
-        "readMessages": "",
         "delete": ""
     },
-    "centerMessage": {
-        "retrying": ""
-    },
     "split": {
-        "loginToSplit": "",
-        "hasBeenSplit": ""
+        "loginToSplit": ""
     }
 }

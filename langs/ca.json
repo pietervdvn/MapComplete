@@ -54,8 +54,7 @@
             "confirmIntro": "<h3>Afegir {title} aquí?</h3>El punt que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixin. Moltes aplicacions fan servir aquestes dades.",
             "confirmButton": "Afegir {category} aquí",
             "openLayerControl": "Obrir el control de capes",
-            "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa",
-            "presetInfo": ""
+            "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa"
         },
         "pickLanguage": "Tria idioma: ",
         "about": "Edita facilment i afegeix punts a OpenStreetMap d'una temàtica determinada",
@@ -132,8 +131,7 @@
             "closed_permanently": "Tancat - sense dia d'obertura conegut",
             "ph_not_known": " ",
             "ph_closed": "tancat",
-            "ph_open": "tancat",
-            "error_loading": ""
+            "ph_open": "tancat"
         },
         "attribution": {
             "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
@@ -146,14 +144,11 @@
             "themeBy": "Tema mantingut per {author}"
         },
         "download": {
-            "licenseInfo": "",
             "downloadGeoJsonHelper": ""
         },
-        "aboutMapcomplete": "",
         "pdf": {
             "attrBackground": ""
-        },
-        "loginOnlyNeededToEdit": ""
+        }
     },
     "favourite": {
         "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
@@ -168,19 +163,13 @@
         "title_singular": "Una revisió",
         "title": "{count} revisions",
         "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
-        "saving_review": "Desant…",
-        "posting_as": ""
+        "saving_review": "Desant…"
     },
     "delete": {
         "isntAPoint": "",
-        "whyDelete": "",
         "explanations": {
             "softDelete": ""
         },
-        "notEnoughExperience": "",
         "isDeleted": ""
-    },
-    "split": {
-        "loginToSplit": ""
     }
 }

@@ -82,8 +82,7 @@
             "stillLoading": "データはまだロード中です。新しいポイントを追加する前に少しお待ちください。",
             "zoomInFurther": "さらにズーム拡大して点を追加します。",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">新しいポイントを追加するにはログインしてください</a>",
-            "title": "新しいポイントを追加しますか?",
-            "disableFiltersExplanation": ""
+            "title": "新しいポイントを追加しますか?"
         },
         "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
         "skippedQuestions": "一部の質問はスキップされました",
@@ -145,11 +144,7 @@
         "welcomeBack": "ログインしました、お帰りなさい!",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
         "download": {
-            "includeMetaData": "",
             "downloadAsPdf": ""
-        },
-        "pdf": {
-            "generatedWith": ""
         },
         "histogram": {
             "error_loading": ""
@@ -184,15 +179,12 @@
         "addPicture": "写真の追加"
     },
     "delete": {
-        "cancel": "",
         "reasons": {
             "disused": ""
         },
-        "whyDelete": "",
         "isDeleted": ""
     },
     "split": {
-        "inviteToSplit": "",
         "loginToSplit": ""
     }
 }
