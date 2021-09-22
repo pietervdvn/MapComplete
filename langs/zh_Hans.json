@@ -1,19 +1,12 @@
 {
     "general": {
-        "opening_hours": {
-            "openTill": ""
-        },
         "weekdays": {
             "abbreviations": {
                 "saturday": ""
             }
-        },
-        "getStartedLogin": ""
+        }
     },
     "reviews": {
         "saving_review": ""
-    },
-    "delete": {
-        "onlyEditedByLoggedInUser": ""
     }
 }

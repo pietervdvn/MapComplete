@@ -1,17 +1,10 @@
 {
-    "reviews": {
-        "attribution": ""
-    },
     "general": {
         "opening_hours": {
             "open_24_7": ""
         },
-        "add": {
-            "warnVisibleForEveryone": ""
-        },
         "weekdays": {
             "wednesday": ""
-        },
-        "loginWithOpenStreetMap": ""
+        }
     }
 }

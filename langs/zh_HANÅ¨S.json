@@ -1,19 +1,10 @@
 {
     "general": {
-        "add": {
-            "confirmButton": ""
-        },
         "opening_hours": {
             "ph_closed": ""
-        },
-        "pdf": {
-            "attr": ""
         }
     },
     "reviews": {
         "no_rating": ""
-    },
-    "index": {
-        "title": ""
     }
 }

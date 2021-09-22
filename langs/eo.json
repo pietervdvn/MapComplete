@@ -1,17 +1,10 @@
 {
     "general": {
-        "sharescreen": {
-            "fsWelcomeMessage": ""
-        },
         "morescreen": {
             "createYourOwnTheme": ""
-        },
-        "backgroundMap": ""
+        }
     },
     "image": {
         "addPicture": ""
-    },
-    "delete": {
-        "partOfOthers": ""
     }
 }
