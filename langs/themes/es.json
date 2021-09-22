@@ -23,7 +23,7 @@
                 "title": {
                     "mappings": {
                         "0": {
-                            "then": "Obra de arte <i>{nombre}</i>"
+                            "then": "Obra de arte <i>{name}</i>"
                         }
                     },
                     "render": "Obra de arte"
