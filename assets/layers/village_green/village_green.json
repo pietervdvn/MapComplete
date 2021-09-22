@@ -1,37 +1,37 @@
 {
-  "id": "village_green",
-  "name": {
-    "nl": "Speelweide"
-  },
-  "source": {
-    "osmTags": "landuse=village_green"
-  },
-  "minzoom": 0,
-  "title": {
-    "render": {
-      "nl": "Speelweide"
+    "id": "village_green",
+    "name": {
+        "nl": "Speelweide"
     },
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": {
-          "nl": "{name}"
+    "source": {
+        "osmTags": "landuse=village_green"
+    },
+    "minzoom": 0,
+    "title": {
+        "render": {
+            "nl": "Speelweide"
+        },
+        "mappings": [
+            {
+                "if": "name~*",
+                "then": {
+                    "nl": "{name}"
+                }
+            }
+        ]
+    },
+    "icon": "./assets/themes/playgrounds/playground.svg",
+    "iconSize": "40,40,center",
+    "width": "1",
+    "color": "#937f20",
+    "wayHandling": 2,
+    "tagRenderings": [
+        "images",
+        {
+            "render": "Dit is een klein stukje openbaar groen waar je mag spelen, picnicken, zitten, ..."
+        },
+        {
+            "render": "{reviews(name, landuse=village_green )}"
         }
-      }
     ]
-  },
-  "icon": "./assets/themes/playgrounds/playground.svg",
-  "iconSize": "40,40,center",
-  "width": "1",
-  "color": "#937f20",
-  "wayHandling": 2,
-  "tagRenderings": [
-    "images",
-    {
-      "render": "Dit is een klein stukje openbaar groen waar je mag spelen, picnicken, zitten, ..."
-    },
-    {
-      "render": "{reviews(name, landuse=village_green )}"
-    }
-  ]
 }

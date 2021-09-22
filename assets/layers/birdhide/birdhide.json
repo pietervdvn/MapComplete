@@ -1,295 +1,295 @@
 {
-  "id": "birdhide",
-  "name": {
-    "nl": "Vogelkijkhutten"
-  },
-  "minzoom": 14,
-  "source": {
-    "osmTags": {
-      "and": [
-        "leisure=bird_hide"
-      ]
-    }
-  },
-  "title": {
-    "render": {
-      "nl": "Vogelkijkplaats"
+    "id": "birdhide",
+    "name": {
+        "nl": "Vogelkijkhutten"
     },
-    "mappings": [
-      {
-        "if": {
-          "and": [
-            "name~((V|v)ogel.*).*"
-          ]
-        },
-        "then": {
-          "nl": "{name}"
+    "minzoom": 14,
+    "source": {
+        "osmTags": {
+            "and": [
+                "leisure=bird_hide"
+            ]
         }
-      },
-      {
-        "if": {
-          "and": [
-            "name~*",
+    },
+    "title": {
+        "render": {
+            "nl": "Vogelkijkplaats"
+        },
+        "mappings": [
             {
-              "or": [
-                "building!~no",
-                "shelter=yes"
-              ]
+                "if": {
+                    "and": [
+                        "name~((V|v)ogel.*).*"
+                    ]
+                },
+                "then": {
+                    "nl": "{name}"
+                }
+            },
+            {
+                "if": {
+                    "and": [
+                        "name~*",
+                        {
+                            "or": [
+                                "building!~no",
+                                "shelter=yes"
+                            ]
+                        }
+                    ]
+                },
+                "then": {
+                    "nl": "Vogelkijkhut {name}"
+                }
+            },
+            {
+                "if": {
+                    "and": [
+                        "name~*"
+                    ]
+                },
+                "then": {
+                    "nl": "Vogelkijkwand {name}"
+                }
             }
-          ]
+        ]
+    },
+    "description": {
+        "nl": "Een vogelkijkhut"
+    },
+    "tagRenderings": [
+        "images",
+        {
+            "question": {
+                "nl": "Is dit een kijkwand of kijkhut?"
+            },
+            "mappings": [
+                {
+                    "if": {
+                        "and": [
+                            "shelter=no",
+                            "building=",
+                            "amenity="
+                        ]
+                    },
+                    "then": {
+                        "nl": "Vogelkijkwand"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "amenity=shelter",
+                            "building=yes",
+                            "shelter=yes"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Vogelkijkhut"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "building=tower",
+                            "bird_hide=tower"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Vogelkijktoren"
+                    }
+                },
+                {
+                    "if": {
+                        "or": [
+                            "amenity=shelter",
+                            "building=yes",
+                            "shelter=yes"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Vogelkijkhut"
+                    },
+                    "hideInAnswer": true
+                }
+            ]
         },
-        "then": {
-          "nl": "Vogelkijkhut {name}"
-        }
-      },
-      {
-        "if": {
-          "and": [
-            "name~*"
-          ]
+        {
+            "question": {
+                "nl": "Is deze vogelkijkplaats rolstoeltoegankelijk?"
+            },
+            "mappings": [
+                {
+                    "if": {
+                        "and": [
+                            "wheelchair=designated"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Er zijn speciale voorzieningen voor rolstoelen"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "wheelchair=yes"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Een rolstoel raakt er vlot"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "wheelchair=limited"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Je kan er raken met een rolstoel, maar het is niet makkelijk"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "wheelchair=no"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Niet rolstoeltoegankelijk"
+                    }
+                }
+            ]
         },
-        "then": {
-          "nl": "Vogelkijkwand {name}"
+        {
+            "render": {
+                "nl": "Beheer door {operator}"
+            },
+            "freeform": {
+                "key": "operator"
+            },
+            "question": {
+                "nl": "Wie beheert deze vogelkijkplaats?"
+            },
+            "mappings": [
+                {
+                    "if": "operator=Natuurpunt",
+                    "then": {
+                        "nl": "Beheer door Natuurpunt"
+                    }
+                },
+                {
+                    "if": "operator=Agentschap Natuur en Bos",
+                    "then": {
+                        "nl": "Beheer door het Agentschap Natuur en Bos "
+                    }
+                }
+            ]
         }
-      }
+    ],
+    "icon": {
+        "render": {
+            "nl": "./assets/layers/birdhide/birdhide.svg"
+        },
+        "mappings": [
+            {
+                "if": {
+                    "or": [
+                        "building=yes",
+                        "shelter=yes",
+                        "amenity=shelter"
+                    ]
+                },
+                "then": "./assets/layers/birdhide/birdshelter.svg"
+            }
+        ]
+    },
+    "size": {
+        "freeform": {
+            "addExtraTags": []
+        },
+        "render": {
+            "nl": "40,40,center"
+        },
+        "mappings": []
+    },
+    "color": {
+        "render": {
+            "nl": "#94bb28"
+        }
+    },
+    "stroke": {
+        "render": {
+            "nl": "3"
+        }
+    },
+    "presets": [
+        {
+            "tags": [
+                "leisure=bird_hide",
+                "building=yes",
+                "shelter=yes",
+                "amenity=shelter"
+            ],
+            "title": {
+                "nl": "Vogelkijkhut"
+            },
+            "description": {
+                "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden"
+            }
+        },
+        {
+            "tags": [
+                "leisure=bird_hide",
+                "building=no",
+                "shelter=no"
+            ],
+            "title": {
+                "nl": "Vogelkijkwand"
+            },
+            "description": {
+                "nl": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
+            }
+        }
+    ],
+    "wayHandling": 1,
+    "filter": [
+        {
+            "options": [
+                {
+                    "question": {
+                        "nl": "Rolstoeltoegankelijk",
+                        "en": "Wheelchair accessible"
+                    },
+                    "osmTags": {
+                        "or": [
+                            "wheelchair=yes",
+                            "wheelchair=designated",
+                            "wheelchair=permissive"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "options": [
+                {
+                    "question": {
+                        "nl": "Enkel overdekte kijkhutten"
+                    },
+                    "osmTags": {
+                        "and": [
+                            {
+                                "or": [
+                                    "shelter=yes",
+                                    "building~*"
+                                ]
+                            },
+                            "covered!=no"
+                        ]
+                    }
+                }
+            ]
+        }
     ]
-  },
-  "description": {
-    "nl": "Een vogelkijkhut"
-  },
-  "tagRenderings": [
-    "images",
-    {
-      "question": {
-        "nl": "Is dit een kijkwand of kijkhut?"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "shelter=no",
-              "building=",
-              "amenity="
-            ]
-          },
-          "then": {
-            "nl": "Vogelkijkwand"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "amenity=shelter",
-              "building=yes",
-              "shelter=yes"
-            ]
-          },
-          "then": {
-            "nl": "Vogelkijkhut"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "building=tower",
-              "bird_hide=tower"
-            ]
-          },
-          "then": {
-            "nl": "Vogelkijktoren"
-          }
-        },
-        {
-          "if": {
-            "or": [
-              "amenity=shelter",
-              "building=yes",
-              "shelter=yes"
-            ]
-          },
-          "then": {
-            "nl": "Vogelkijkhut"
-          },
-          "hideInAnswer": true
-        }
-      ]
-    },
-    {
-      "question": {
-        "nl": "Is deze vogelkijkplaats rolstoeltoegankelijk?"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "wheelchair=designated"
-            ]
-          },
-          "then": {
-            "nl": "Er zijn speciale voorzieningen voor rolstoelen"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "wheelchair=yes"
-            ]
-          },
-          "then": {
-            "nl": "Een rolstoel raakt er vlot"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "wheelchair=limited"
-            ]
-          },
-          "then": {
-            "nl": "Je kan er raken met een rolstoel, maar het is niet makkelijk"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "wheelchair=no"
-            ]
-          },
-          "then": {
-            "nl": "Niet rolstoeltoegankelijk"
-          }
-        }
-      ]
-    },
-    {
-      "render": {
-        "nl": "Beheer door {operator}"
-      },
-      "freeform": {
-        "key": "operator"
-      },
-      "question": {
-        "nl": "Wie beheert deze vogelkijkplaats?"
-      },
-      "mappings": [
-        {
-          "if": "operator=Natuurpunt",
-          "then": {
-            "nl": "Beheer door Natuurpunt"
-          }
-        },
-        {
-          "if": "operator=Agentschap Natuur en Bos",
-          "then": {
-            "nl": "Beheer door het Agentschap Natuur en Bos "
-          }
-        }
-      ]
-    }
-  ],
-  "icon": {
-    "render": {
-      "nl": "./assets/layers/birdhide/birdhide.svg"
-    },
-    "mappings": [
-      {
-        "if": {
-          "or": [
-            "building=yes",
-            "shelter=yes",
-            "amenity=shelter"
-          ]
-        },
-        "then": "./assets/layers/birdhide/birdshelter.svg"
-      }
-    ]
-  },
-  "size": {
-    "freeform": {
-      "addExtraTags": []
-    },
-    "render": {
-      "nl": "40,40,center"
-    },
-    "mappings": []
-  },
-  "color": {
-    "render": {
-      "nl": "#94bb28"
-    }
-  },
-  "stroke": {
-    "render": {
-      "nl": "3"
-    }
-  },
-  "presets": [
-    {
-      "tags": [
-        "leisure=bird_hide",
-        "building=yes",
-        "shelter=yes",
-        "amenity=shelter"
-      ],
-      "title": {
-        "nl": "Vogelkijkhut"
-      },
-      "description": {
-        "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden"
-      }
-    },
-    {
-      "tags": [
-        "leisure=bird_hide",
-        "building=no",
-        "shelter=no"
-      ],
-      "title": {
-        "nl": "Vogelkijkwand"
-      },
-      "description": {
-        "nl": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
-      }
-    }
-  ],
-  "wayHandling": 1,
-  "filter": [
-    {
-      "options": [
-        {
-          "question": {
-            "nl": "Rolstoeltoegankelijk",
-            "en": "Wheelchair accessible"
-          },
-          "osmTags": {
-            "or": [
-              "wheelchair=yes",
-              "wheelchair=designated",
-              "wheelchair=permissive"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "options": [
-        {
-          "question": {
-            "nl": "Enkel overdekte kijkhutten"
-          },
-          "osmTags": {
-            "and": [
-              {
-                "or": [
-                  "shelter=yes",
-                  "building~*"
-                ]
-              },
-              "covered!=no"
-            ]
-          }
-        }
-      ]
-    }
-  ]
 }
