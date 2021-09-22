@@ -231,10 +231,7 @@
         "getStartedLogin": "Zaloguj się za pomocą OpenStreetMap, aby rozpocząć",
         "goToInbox": "Otwórz skrzynkę odbiorczą",
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
-        "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
-        "download": {
-            "downloadGeoJsonHelper": ""
-        }
+        "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu."
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
@@ -268,8 +265,5 @@
         "reload": "Odśwież dane",
         "loginNeeded": "<h3>Zaloguj się</h3>Osobisty układ jest dostępny tylko dla użytkowników OpenStreetMap",
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów"
-    },
-    "delete": {
-        "notEnoughExperience": ""
     }
 }

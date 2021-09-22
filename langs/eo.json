@@ -1,35 +1,17 @@
 {
     "general": {
-        "add": {
-            "confirmButton": ""
-        },
         "sharescreen": {
             "fsWelcomeMessage": ""
-        },
-        "weekdays": {
-            "abbreviations": {
-                "friday": ""
-            }
         },
         "morescreen": {
             "createYourOwnTheme": ""
         },
-        "attribution": {
-            "themeBy": ""
-        },
-        "backgroundMap": "",
-        "search": {
-            "nothing": ""
-        }
+        "backgroundMap": ""
     },
     "image": {
         "addPicture": ""
     },
     "delete": {
-        "onlyEditedByLoggedInUser": "",
         "partOfOthers": ""
-    },
-    "reviews": {
-        "name_required": ""
     }
 }

@@ -1,33 +1,19 @@
 {
     "general": {
-        "sharescreen": {
-            "fsIncludeCurrentBackgroundMap": ""
-        },
         "opening_hours": {
             "openTill": ""
-        },
-        "add": {
-            "pleaseLogin": ""
         },
         "weekdays": {
             "abbreviations": {
                 "saturday": ""
             }
         },
-        "histogram": {
-            "error_loading": ""
-        },
-        "getStartedLogin": "",
-        "skippedQuestions": ""
+        "getStartedLogin": ""
     },
     "reviews": {
         "saving_review": ""
     },
     "delete": {
-        "delete": "",
         "onlyEditedByLoggedInUser": ""
-    },
-    "image": {
-        "uploadDone": ""
     }
 }

@@ -32,20 +32,11 @@
         "loginToStart": "Jelentkezz be a kérdés megválaszolásához",
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével",
-        "sharescreen": {
-            "fsSearch": ""
-        },
         "attribution": {
             "themeBy": ""
         },
-        "morescreen": {
-            "streetcomplete": ""
-        },
         "weekdays": {
             "tuesday": ""
-        },
-        "pdf": {
-            "generatedWith": ""
         }
     },
     "index": {
@@ -71,9 +62,6 @@
         "uploadingMultiple": "{count} kép feltöltése folyamatban",
         "uploadingPicture": "Kép feltöltése folyamatban",
         "addPicture": "Kép hozzáadása"
-    },
-    "delete": {
-        "delete": ""
     },
     "reviews": {
         "tos": ""

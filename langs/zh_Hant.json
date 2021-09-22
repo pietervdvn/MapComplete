@@ -262,8 +262,7 @@
         },
         "loginToStart": "登入之後來回答這問題",
         "welcomeBack": "你已經登入了，歡迎回來！",
-        "loginWithOpenStreetMap": "用開放街圖帳號登入",
-        "openTheMap": ""
+        "loginWithOpenStreetMap": "用開放街圖帳號登入"
     },
     "index": {
         "pickTheme": "請挑選主題來開始。",
@@ -292,8 +291,5 @@
         "uploadingMultiple": "正在上傳 {count} 張圖片…",
         "uploadingPicture": "正在上傳你的圖片…",
         "addPicture": "新增圖片"
-    },
-    "delete": {
-        "isDeleted": ""
     }
 }
