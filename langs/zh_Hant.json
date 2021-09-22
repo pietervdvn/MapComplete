@@ -263,9 +263,6 @@
         "loginToStart": "登入之後來回答這問題",
         "welcomeBack": "你已經登入了，歡迎回來！",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
-        "download": {
-            "downloadCSVHelper": ""
-        },
         "openTheMap": ""
     },
     "index": {
@@ -297,12 +294,6 @@
         "addPicture": "新增圖片"
     },
     "delete": {
-        "explanations": {
-            "softDelete": ""
-        },
         "isDeleted": ""
-    },
-    "split": {
-        "inviteToSplit": ""
     }
 }

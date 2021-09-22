@@ -7,35 +7,24 @@
             "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "attribution": {
-            "attributionTitle": ""
-        },
         "sharescreen": {
-            "fsIncludeCurrentLayers": "",
-            "fsIncludeCurrentBackgroundMap": ""
+            "fsIncludeCurrentLayers": ""
         },
         "weekdays": {
             "abbreviations": {
                 "wednesday": ""
-            },
-            "sunday": ""
+            }
         },
         "opening_hours": {
-            "openTill": "",
-            "loadingCountry": ""
+            "openTill": ""
         },
         "download": {
             "downloadGeojson": ""
         },
         "add": {
-            "disableFilters": "",
             "title": ""
         },
-        "questions": {
-            "phoneNumberOf": ""
-        },
         "number": "",
-        "loginWithOpenStreetMap": "",
         "pickLanguage": ""
     },
     "index": {
@@ -57,13 +46,10 @@
         "pleaseLogin": "Logg inn for å legge til et bilde"
     },
     "delete": {
-        "loginToDelete": "",
-        "isDeleted": "",
-        "onlyEditedByLoggedInUser": ""
+        "isDeleted": ""
     },
     "reviews": {
-        "i_am_affiliated": "",
-        "no_reviews_yet": ""
+        "i_am_affiliated": ""
     },
     "favourite": {
         "loginNeeded": ""

@@ -1,55 +1,37 @@
 {
     "general": {
-        "attribution": {
-            "mapContributionsByAndHidden": ""
-        },
         "sharescreen": {
-            "copiedToClipboard": "",
-            "fsAddNew": ""
+            "copiedToClipboard": ""
         },
         "add": {
-            "confirmButton": "",
-            "disableFiltersExplanation": ""
+            "confirmButton": ""
         },
         "weekdays": {
             "abbreviations": {
                 "saturday": ""
-            },
-            "tuesday": ""
+            }
         },
         "opening_hours": {
             "ph_closed": ""
         },
-        "pickLanguage": "",
         "download": {
             "licenseInfo": ""
         },
-        "loginToStart": "",
         "pdf": {
             "attr": ""
         },
-        "search": {
-            "nothing": ""
-        },
-        "nameInlineQuestion": "",
-        "save": ""
+        "nameInlineQuestion": ""
     },
     "reviews": {
-        "no_rating": "",
-        "no_reviews_yet": ""
+        "no_rating": ""
     },
     "image": {
-        "ccb": "",
-        "isDeleted": ""
+        "ccb": ""
     },
     "index": {
         "title": ""
     },
-    "favourite": {
-        "panelIntro": ""
-    },
     "delete": {
-        "cancel": "",
-        "safeDelete": ""
+        "cancel": ""
     }
 }

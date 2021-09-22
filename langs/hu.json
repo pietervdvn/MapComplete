@@ -14,8 +14,7 @@
             "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt új pontot adsz hozzá!",
             "zoomInFurther": "Pont hozzáadásához közelíts rá jobban!",
             "title": "Hozzáadsz egy új pontot?",
-            "addNew": "Új {category} hozzáadása itt",
-            "intro": ""
+            "addNew": "Új {category} hozzáadása itt"
         },
         "number": "szám",
         "skip": "Kérdés kihagyása",
@@ -34,28 +33,17 @@
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével",
         "sharescreen": {
-            "fsLayerControlToggle": "",
             "fsSearch": ""
-        },
-        "download": {
-            "downloadAsPdf": ""
         },
         "attribution": {
             "themeBy": ""
-        },
-        "opening_hours": {
-            "error_loading": ""
         },
         "morescreen": {
             "streetcomplete": ""
         },
         "weekdays": {
-            "abbreviations": {
-                "wednesday": ""
-            },
             "tuesday": ""
         },
-        "goToInbox": "",
         "pdf": {
             "generatedWith": ""
         }
@@ -85,14 +73,9 @@
         "addPicture": "Kép hozzáadása"
     },
     "delete": {
-        "onlyEditedByLoggedInUser": "",
         "delete": ""
     },
     "reviews": {
-        "title": "",
         "tos": ""
-    },
-    "split": {
-        "inviteToSplit": ""
     }
 }

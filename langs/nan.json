@@ -1,31 +1,20 @@
 {
     "image": {
-        "cco": "",
         "uploadingPicture": ""
     },
     "reviews": {
-        "write_a_comment": "",
         "attribution": ""
     },
     "general": {
-        "download": {
-            "downloadAsPdfHelper": ""
-        },
         "noNameCategory": "",
         "opening_hours": {
-            "ph_open": "",
             "open_24_7": ""
         },
         "sharescreen": {
-            "copiedToClipboard": "",
             "fsLayerControlToggle": ""
         },
         "add": {
-            "pleaseLogin": "",
             "warnVisibleForEveryone": ""
-        },
-        "pdf": {
-            "attrBackground": ""
         },
         "attribution": {
             "iconAttribution": {
@@ -33,19 +22,12 @@
             }
         },
         "weekdays": {
-            "tuesday": "",
             "wednesday": ""
         },
-        "morescreen": {
-            "streetcomplete": ""
-        },
         "aboutMapcomplete": "",
-        "skip": "",
         "loginWithOpenStreetMap": ""
     },
     "delete": {
-        "safeDelete": "",
-        "whyDelete": "",
-        "useSomethingElse": ""
+        "whyDelete": ""
     }
 }

@@ -1,55 +1,35 @@
 {
     "general": {
-        "opening_hours": {
-            "openTill": ""
-        },
         "add": {
-            "confirmButton": "",
-            "intro": ""
+            "confirmButton": ""
         },
         "sharescreen": {
-            "fsWelcomeMessage": "",
-            "fsSearch": ""
+            "fsWelcomeMessage": ""
         },
         "weekdays": {
             "abbreviations": {
                 "friday": ""
-            },
-            "sunday": ""
+            }
         },
         "morescreen": {
             "createYourOwnTheme": ""
         },
-        "download": {
-            "noDataLoaded": ""
-        },
         "attribution": {
             "themeBy": ""
         },
-        "questions": {
-            "websiteOf": ""
-        },
         "backgroundMap": "",
-        "oneSkippedQuestion": "",
         "search": {
             "nothing": ""
-        },
-        "skip": ""
+        }
     },
     "image": {
-        "addPicture": "",
-        "doDelete": ""
+        "addPicture": ""
     },
     "delete": {
         "onlyEditedByLoggedInUser": "",
-        "isntAPoint": "",
         "partOfOthers": ""
     },
     "reviews": {
-        "saved": "",
         "name_required": ""
-    },
-    "split": {
-        "loginToSplit": ""
     }
 }

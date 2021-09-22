@@ -1,55 +1,33 @@
 {
     "general": {
         "sharescreen": {
-            "editThisTheme": "",
             "fsIncludeCurrentBackgroundMap": ""
         },
-        "nameInlineQuestion": "",
         "opening_hours": {
             "openTill": ""
         },
         "add": {
-            "intro": "",
             "pleaseLogin": ""
-        },
-        "download": {
-            "downloadGeoJsonHelper": ""
         },
         "weekdays": {
             "abbreviations": {
                 "saturday": ""
-            },
-            "thursday": ""
+            }
         },
         "histogram": {
             "error_loading": ""
         },
-        "attribution": {
-            "codeContributionsBy": ""
-        },
         "getStartedLogin": "",
-        "search": {
-            "searching": ""
-        },
-        "skippedQuestions": "",
-        "save": ""
+        "skippedQuestions": ""
     },
     "reviews": {
-        "saving_review": "",
-        "name_required": ""
+        "saving_review": ""
     },
     "delete": {
         "delete": "",
-        "explanations": {
-            "selectReason": ""
-        },
         "onlyEditedByLoggedInUser": ""
     },
-    "centerMessage": {
-        "loadingData": ""
-    },
     "image": {
-        "uploadDone": "",
-        "pleaseLogin": ""
+        "uploadDone": ""
     }
 }
