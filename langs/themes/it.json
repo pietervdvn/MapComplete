@@ -488,6 +488,9 @@
         "shortDescription": "Questa mappa mostra i giardini verticali, con foto e informazioni utili sulla loro orientazione, sull'illuminazione solare e sui tipi di piante.",
         "title": "Giardini verticali"
     },
+    "ghostbikes": {
+        "title": "Bici fantasma"
+    },
     "hailhydrant": {
         "layers": {
             "0": {
@@ -531,8 +534,6 @@
     "trees": {
         "description": "Mappa tutti gli alberi!",
         "shortDescription": "Mappa tutti gli alberi",
-    },
-    "ghostbikes": {
-        "title": "Bici fantasma"
+        "title": "Alberi"
     }
 }

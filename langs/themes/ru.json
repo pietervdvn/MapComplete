@@ -421,6 +421,9 @@
             }
         }
     },
+    "ghostbikes": {
+        "title": "Велосипед Ghost"
+    },
     "hailhydrant": {
         "layers": {
             "0": {
@@ -642,8 +645,6 @@
     "trees": {
         "description": "Нанесите все деревья на карту!",
         "shortDescription": "Карта деревьев",
-    },
-    "ghostbikes": {
-        "title": "Велосипед Ghost"
+        "title": "Деревья"
     }
 }

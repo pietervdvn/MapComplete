@@ -6,6 +6,9 @@
     "artwork": {
         "title": "Otwórz mapę dzieł sztuki"
     },
+    "ghostbikes": {
+        "title": "Duch roweru"
+    },
     "surveillance": {
         "description": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
         "shortDescription": "Kamery monitorujące i inne środki nadzoru"
@@ -15,13 +18,7 @@
         "title": "Mapa otwartych toalet"
     },
     "trees": {
-        "title": "Drzewa",
-        "shortDescription": "Sporządzić mapę wszystkich drzew"
-    },
-    "artwork": {
-        "title": "Otwórz mapę dzieł sztuki"
-    },
-    "ghostbikes": {
-        "title": "Duch roweru"
+        "shortDescription": "Sporządzić mapę wszystkich drzew",
+        "title": "Drzewa"
     }
 }
