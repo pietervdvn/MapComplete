@@ -38,8 +38,7 @@
             "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
         },
         "skip": "Ohita tämä kysymys",
-        "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
-        "osmLinkTooltip": ""
+        "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla"
     },
     "centerMessage": {
         "ready": "Valmis!"
