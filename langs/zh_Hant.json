@@ -244,8 +244,7 @@
             "pleaseLogin": "<a class=\"activate-osm-authentication\">請先登入來新增節點</a>",
             "intro": "您點擊處目前未有已知的資料。<br>",
             "title": "新增新的節點？",
-            "addNew": "在這裡新增新的 {category}",
-            "warnVisibleForEveryone": ""
+            "addNew": "在這裡新增新的 {category}"
         },
         "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來檢視這物件",
         "number": "號碼",
@@ -265,16 +264,9 @@
         "welcomeBack": "你已經登入了，歡迎回來！",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
         "download": {
-            "licenseInfo": "",
             "downloadCSVHelper": ""
         },
-        "pdf": {
-            "attr": ""
-        },
-        "openTheMap": "",
-        "layerSelection": {
-            "title": ""
-        }
+        "openTheMap": ""
     },
     "index": {
         "pickTheme": "請挑選主題來開始。",
@@ -305,17 +297,12 @@
         "addPicture": "新增圖片"
     },
     "delete": {
-        "reasons": {
-            "disused": ""
-        },
         "explanations": {
             "softDelete": ""
         },
-        "readMessages": "",
         "isDeleted": ""
     },
     "split": {
-        "loginToSplit": "",
         "inviteToSplit": ""
     }
 }

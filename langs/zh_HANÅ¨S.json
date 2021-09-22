@@ -1,91 +1,55 @@
 {
     "general": {
         "attribution": {
-            "attributionContent": "",
             "mapContributionsByAndHidden": ""
         },
         "sharescreen": {
-            "fsSearch": "",
             "copiedToClipboard": "",
-            "fsIncludeCurrentBackgroundMap": "",
             "fsAddNew": ""
         },
         "add": {
-            "zoomInFurther": "",
             "confirmButton": "",
-            "disableFilters": "",
             "disableFiltersExplanation": ""
         },
         "weekdays": {
             "abbreviations": {
-                "thursday": "",
                 "saturday": ""
             },
-            "wednesday": "",
             "tuesday": ""
         },
         "opening_hours": {
-            "open_24_7": "",
-            "ph_closed": "",
-            "ph_open": ""
+            "ph_closed": ""
         },
         "pickLanguage": "",
-        "morescreen": {
-            "createYourOwnTheme": ""
-        },
         "download": {
-            "licenseInfo": "",
-            "noDataLoaded": ""
+            "licenseInfo": ""
         },
         "loginToStart": "",
-        "questions": {
-            "websiteIs": ""
-        },
         "pdf": {
             "attr": ""
         },
-        "skip": "",
         "search": {
             "nothing": ""
         },
-        "getStartedNewAccount": "",
         "nameInlineQuestion": "",
-        "fewChangesBefore": "",
-        "save": "",
-        "noTagsSelected": ""
+        "save": ""
     },
     "reviews": {
         "no_rating": "",
-        "affiliated_reviewer_warning": "",
         "no_reviews_yet": ""
-    },
-    "centerMessage": {
-        "zoomIn": ""
     },
     "image": {
         "ccb": "",
-        "uploadDone": "",
-        "isDeleted": "",
-        "uploadingPicture": ""
+        "isDeleted": ""
     },
     "index": {
         "title": ""
-    },
-    "split": {
-        "split": ""
     },
     "favourite": {
         "panelIntro": ""
     },
     "delete": {
-        "reasons": {
-            "test": ""
-        },
         "cancel": "",
-        "explanations": {
-            "hardDelete": ""
-        },
-        "safeDelete": "",
-        "isntAPoint": ""
+        "safeDelete": ""
     }
 }

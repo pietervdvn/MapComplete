@@ -31,48 +31,26 @@
             }
         },
         "sharescreen": {
-            "copiedToClipboard": "",
             "editThemeDescription": "",
-            "fsLayers": "",
             "fsAddNew": ""
         },
         "download": {
-            "includeMetaData": "",
             "licenseInfo": ""
         },
-        "getStartedLogin": "",
         "add": {
             "addNewMapLabel": "",
-            "warnVisibleForEveryone": "",
             "zoomInFurther": ""
         },
-        "morescreen": {
-            "streetcomplete": ""
-        },
         "about": "",
-        "histogram": {
-            "error_loading": ""
-        },
         "testing": "",
-        "questions": {
-            "phoneNumberOf": ""
-        },
         "fewChangesBefore": "",
-        "getStartedNewAccount": "",
         "attribution": {
-            "codeContributionsBy": "",
-            "iconAttribution": {
-                "title": ""
-            }
+            "codeContributionsBy": ""
         },
         "number": "",
-        "search": {
-            "searching": ""
-        },
         "pdf": {
             "generatedWith": ""
         },
-        "osmLinkTooltip": "",
         "oneSkippedQuestion": ""
     },
     "centerMessage": {
@@ -98,28 +76,16 @@
         "addPicture": "Lägg till bild"
     },
     "delete": {
-        "explanations": {
-            "softDelete": ""
-        },
         "reasons": {
             "disused": ""
         },
-        "loading": "",
         "loginToDelete": ""
-    },
-    "index": {
-        "intro": ""
     },
     "reviews": {
         "saved": "",
-        "tos": "",
-        "name_required": "",
-        "title_singular": ""
+        "name_required": ""
     },
     "split": {
         "splitTitle": ""
-    },
-    "favourite": {
-        "reload": ""
     }
 }

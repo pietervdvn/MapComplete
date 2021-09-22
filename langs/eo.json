@@ -1,91 +1,55 @@
 {
     "general": {
         "opening_hours": {
-            "ph_not_known": "",
-            "openTill": "",
-            "not_all_rules_parsed": ""
+            "openTill": ""
         },
         "add": {
             "confirmButton": "",
-            "layerNotEnabled": "",
-            "intro": "",
-            "stillLoading": ""
+            "intro": ""
         },
         "sharescreen": {
             "fsWelcomeMessage": "",
-            "editThemeDescription": "",
-            "fsSearch": "",
-            "embedIntro": ""
+            "fsSearch": ""
         },
         "weekdays": {
             "abbreviations": {
-                "friday": "",
-                "sunday": ""
+                "friday": ""
             },
             "sunday": ""
         },
-        "loginOnlyNeededToEdit": "",
         "morescreen": {
             "createYourOwnTheme": ""
         },
         "download": {
-            "downloadGeoJsonHelper": "",
             "noDataLoaded": ""
         },
         "attribution": {
-            "mapContributionsByAndHidden": "",
             "themeBy": ""
         },
         "questions": {
-            "phoneNumberOf": "",
             "websiteOf": ""
         },
-        "pdf": {
-            "generatedWith": ""
-        },
         "backgroundMap": "",
-        "openStreetMapIntro": "",
         "oneSkippedQuestion": "",
-        "about": "",
         "search": {
             "nothing": ""
         },
-        "histogram": {
-            "error_loading": ""
-        },
-        "skip": "",
-        "openTheMap": ""
+        "skip": ""
     },
     "image": {
         "addPicture": "",
-        "uploadFailed": "",
         "doDelete": ""
-    },
-    "index": {
-        "intro": ""
     },
     "delete": {
         "onlyEditedByLoggedInUser": "",
-        "reasons": {
-            "notFound": ""
-        },
         "isntAPoint": "",
-        "cancel": "",
         "partOfOthers": ""
-    },
-    "favourite": {
-        "reload": ""
     },
     "reviews": {
         "saved": "",
-        "posting_as": "",
         "name_required": ""
     },
-    "centerMessage": {
-        "retrying": ""
-    },
     "split": {
-        "loginToSplit": "",
-        "hasBeenSplit": ""
+        "loginToSplit": ""
     }
 }

@@ -55,8 +55,7 @@
             "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
             "confirmButton": "Añadir una {category} aquí.<br><div class=\"alert\">Tu contribución es visible para todos</div>",
             "openLayerControl": "Abrir el control de capas",
-            "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
-            "warnVisibleForEveryone": ""
+            "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa"
         },
         "pickLanguage": "Escoge idioma: ",
         "about": "Edita facilmente y añade puntos en OpenStreetMap de un tema concreto",
@@ -149,10 +148,8 @@
         },
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
         "download": {
-            "downloadAsPdf": "",
             "downloadGeoJsonHelper": ""
         },
-        "testing": "",
         "pdf": {
             "versionInfo": ""
         }
@@ -171,19 +168,13 @@
         "no_rating": "Sin calificación dada",
         "write_a_comment": "Deja una reseña…",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
-        "plz_login": "Inicia sesión para dejar una reseña",
-        "affiliated_reviewer_warning": ""
+        "plz_login": "Inicia sesión para dejar una reseña"
     },
     "delete": {
         "loginToDelete": "",
-        "cancel": "",
         "reasons": {
             "test": ""
         },
-        "partOfOthers": "",
         "safeDelete": ""
-    },
-    "split": {
-        "split": ""
     }
 }

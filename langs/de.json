@@ -55,8 +55,7 @@
             "confirmIntro": "<h3>Hier einen {title} hinzufügen?</h3>Der Punkt, den Sie hier anlegen, wird <b>für alle sichtbar sein</b>. Bitte fügen Sie der Karte nur dann Dinge hinzu, wenn sie wirklich existieren. Viele Anwendungen verwenden diese Daten.",
             "confirmButton": "Fügen Sie hier eine {category} hinzu.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
             "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
-            "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen",
-            "disableFiltersExplanation": ""
+            "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen"
         },
         "pickLanguage": "Wählen Sie eine Sprache: ",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
@@ -152,10 +151,8 @@
             "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>"
         },
         "download": {
-            "downloadGeojson": "",
             "downloadAsPdf": ""
         },
-        "openTheMap": "",
         "pdf": {
             "attr": ""
         }
@@ -182,17 +179,12 @@
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar."
     },
     "delete": {
-        "reasons": {
-            "disused": ""
-        },
         "explanations": {
             "selectReason": ""
         },
-        "onlyEditedByLoggedInUser": "",
         "readMessages": ""
     },
     "split": {
-        "hasBeenSplit": "",
         "splitTitle": ""
     }
 }

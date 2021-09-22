@@ -4,7 +4,6 @@
             "ph_open": "avattu",
             "ph_closed": "suljettu",
             "ph_not_known": " ",
-            "loadingCountry": "",
             "openTill": ""
         },
         "weekdays": {
@@ -35,43 +34,28 @@
         },
         "sharescreen": {
             "thanksForSharing": "Kiitos jakamisesta!",
-            "fsLayers": "",
             "embedIntro": "",
-            "fsIncludeCurrentBackgroundMap": "",
             "intro": ""
         },
         "questions": {
-            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "phoneNumberOf": ""
+            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
         },
         "skip": "Ohita tämä kysymys",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
         "add": {
-            "addNew": "",
             "pleaseLogin": "",
-            "confirmButton": "",
             "intro": ""
         },
         "download": {
-            "downloadCSVHelper": "",
             "includeMetaData": ""
         },
-        "morescreen": {
-            "requestATheme": ""
-        },
         "attribution": {
-            "mapContributionsBy": "",
-            "mapContributionsByAndHidden": ""
+            "mapContributionsBy": ""
         },
         "noTagsSelected": "",
-        "openStreetMapIntro": "",
         "oneSkippedQuestion": "",
-        "loginToStart": "",
         "pdf": {
             "generatedWith": ""
-        },
-        "layerSelection": {
-            "title": ""
         },
         "osmLinkTooltip": ""
     },
@@ -85,34 +69,23 @@
         "isDeleted": "Poistettu",
         "ccb": "CC-BY-lisenssillä",
         "ccbs": "CC-BY-SA-lisenssillä",
-        "uploadingPicture": "",
         "cco": ""
     },
     "reviews": {
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu",
-        "name_required": "",
-        "i_am_affiliated": "",
-        "attribution": ""
+        "i_am_affiliated": ""
     },
     "index": {
         "title": "Tervetuloa MapCompleteen"
     },
     "delete": {
-        "cancel": "",
         "loginToDelete": "",
-        "reasons": {
-            "notFound": ""
-        },
         "explanations": {
             "selectReason": ""
-        },
-        "notEnoughExperience": ""
+        }
     },
     "favourite": {
         "reload": ""
-    },
-    "split": {
-        "loginToSplit": ""
     }
 }

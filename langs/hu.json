@@ -2,8 +2,7 @@
     "general": {
         "openStreetMapIntro": "<h3>Egy nyílt térkép</h3><p>Nem lenne király, ha lenne egy térkép, amit mindenki szabadon használhatna és szerkeszthetne? Egyetlen hely minden geoinformáció tárolására. Hogy arra a sok weboldalra a kicsi és egymással nem kompatibilis térképekkel (amik többnyire elavultak) ne legyen szükség többé.</p><p><b>Az <a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> éppen ez. A trékép adatai ingyenesen használhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">az adatokban történő változtatások megjelölésével és publikálásával</a>) Mindezeken túl bárki szabadon hozzáadhat új helyeket és kijavíthatja a hibákat. Ez a weboldal is OpenStreetMapet használ. Minden adat onnan származik és a te válaszaid és módosításaid is oda futnak be.</p><p>Rengeteg ember és alkalmazás használja már most is az OpenStreetMapet: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de még a Facebook, Instagram, Apple és Bing által használt térképek is (részben) az OpenStreetMapet használják. Ha itt módosítasz valamit, az ezekben az alkalmazásokban is megjelenik - a legközelebbi frissítés után.</p>",
         "questions": {
-            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "emailOf": ""
+            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>"
         },
         "noNameCategory": "Név nélküli {category}",
         "nameInlineQuestion": "A(z) {category} neve $$$",
@@ -16,7 +15,6 @@
             "zoomInFurther": "Pont hozzáadásához közelíts rá jobban!",
             "title": "Hozzáadsz egy új pontot?",
             "addNew": "Új {category} hozzáadása itt",
-            "presetInfo": "",
             "intro": ""
         },
         "number": "szám",
@@ -36,42 +34,31 @@
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével",
         "sharescreen": {
-            "embedIntro": "",
             "fsLayerControlToggle": "",
-            "copiedToClipboard": "",
             "fsSearch": ""
         },
         "download": {
-            "licenseInfo": "",
             "downloadAsPdf": ""
         },
         "attribution": {
-            "codeContributionsBy": "",
             "themeBy": ""
         },
         "opening_hours": {
-            "open_during_ph": "",
-            "error_loading": "",
-            "ph_closed": ""
+            "error_loading": ""
         },
         "morescreen": {
             "streetcomplete": ""
         },
         "weekdays": {
             "abbreviations": {
-                "saturday": "",
                 "wednesday": ""
             },
-            "saturday": "",
             "tuesday": ""
         },
-        "customThemeIntro": "",
         "goToInbox": "",
-        "aboutMapcomplete": "",
         "pdf": {
             "generatedWith": ""
-        },
-        "fewChangesBefore": ""
+        }
     },
     "index": {
         "pickTheme": "Válassz egy témát lent a kezdéshez!",
@@ -98,26 +85,14 @@
         "addPicture": "Kép hozzáadása"
     },
     "delete": {
-        "reasons": {
-            "notFound": ""
-        },
         "onlyEditedByLoggedInUser": "",
-        "isDeleted": "",
-        "delete": "",
-        "explanations": {
-            "hardDelete": ""
-        }
+        "delete": ""
     },
     "reviews": {
         "title": "",
-        "posting_as": "",
         "tos": ""
     },
-    "favourite": {
-        "loginNeeded": ""
-    },
     "split": {
-        "inviteToSplit": "",
-        "hasBeenSplit": ""
+        "inviteToSplit": ""
     }
 }
