@@ -1,47 +1,47 @@
 {
-  "id": "direction",
-  "name": {
-    "en": "Direction visualization",
-    "nl": "Richtingsvisualisatie",
-    "fr": "Visualisation de la direction",
-    "it": "Visualizzazione della direzione",
-    "ru": "Визуализация направления"
-  },
-  "minzoom": 16,
-  "source": {
-    "osmTags": {
-      "or": [
-        "camera:direction~*",
-        "direction~*"
-      ]
-    }
-  },
-  "doNotDownload": true,
-  "passAllFeatures": true,
-  "title": null,
-  "description": {
-    "en": "This layer visualizes directions",
-    "nl": "Deze laag toont de oriëntatie van een object",
-    "fr": "Cette couche visualise les directions",
-    "it": "Questo livello visualizza le direzioni"
-  },
-  "tagRenderings": [],
-  "icon": {
-    "render": "direction_gradient:var(--catch-detail-color)",
-    "#": "For some weird reason, showing the icon in the layer control panel breaks the svg-gradient (because the svg gradient has a global color or smthng) - so we use a different icon without gradient",
-    "mappings": [
-      {
-        "if": "id=node/-1",
-        "then": "direction:var(--catch-detail-color)"
-      }
-    ]
-  },
-  "rotation": {
-    "render": "{_direction:numerical}deg"
-  },
-  "iconSize": "200,200,center",
-  "color": "--catch-detail-color",
-  "stroke": "0",
-  "presets": [],
-  "wayHandling": 2
+    "id": "direction",
+    "name": {
+        "en": "Direction visualization",
+        "nl": "Richtingsvisualisatie",
+        "fr": "Visualisation de la direction",
+        "it": "Visualizzazione della direzione",
+        "ru": "Визуализация направления"
+    },
+    "minzoom": 16,
+    "source": {
+        "osmTags": {
+            "or": [
+                "camera:direction~*",
+                "direction~*"
+            ]
+        }
+    },
+    "doNotDownload": true,
+    "passAllFeatures": true,
+    "title": null,
+    "description": {
+        "en": "This layer visualizes directions",
+        "nl": "Deze laag toont de oriëntatie van een object",
+        "fr": "Cette couche visualise les directions",
+        "it": "Questo livello visualizza le direzioni"
+    },
+    "tagRenderings": [],
+    "icon": {
+        "render": "direction_gradient:var(--catch-detail-color)",
+        "#": "For some weird reason, showing the icon in the layer control panel breaks the svg-gradient (because the svg gradient has a global color or smthng) - so we use a different icon without gradient",
+        "mappings": [
+            {
+                "if": "id=node/-1",
+                "then": "direction:var(--catch-detail-color)"
+            }
+        ]
+    },
+    "rotation": {
+        "render": "{_direction:numerical}deg"
+    },
+    "iconSize": "200,200,center",
+    "color": "--catch-detail-color",
+    "stroke": "0",
+    "presets": [],
+    "wayHandling": 2
 }

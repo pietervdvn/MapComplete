@@ -36,6 +36,8 @@ import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 import Minimap from "./UI/Base/Minimap";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
+import Combine from "./UI/Base/Combine";
+import {SubtleButton} from "./UI/Base/SubtleButton";
 
 export class InitUiElements {
     static InitAll(
@@ -207,8 +209,8 @@ export class InitUiElements {
     static LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
     ): [LayoutConfig, string] {
-        try {
             let hash = location.hash.substr(1);
+        try {
             const layoutFromBase64 = userLayoutParam.data;
             // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
 
@@ -247,9 +249,21 @@ export class InitUiElements {
             userLayoutParam.setData(layoutToUse.id);
             return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
         } catch (e) {
-            new FixedUiElement(
-                "Error: could not parse the custom layout:<br/> " + e
-            ).AttachTo("centermessage");
+            
+            if(hash === undefined || hash.length < 10){
+                e = "Did you effectively add a theme? It seems no data could be found."
+            }
+            
+            new Combine([
+                "Error: could not parse the custom layout:",
+                new FixedUiElement(""+e).SetClass("alert"),
+                new SubtleButton("./assets/svg/mapcomplete_logo.svg", 
+                    "Go back to the theme overview", 
+                    {url: window.location.protocol+"//"+ window.location.hostname+"/index.html", newTab: false})
+                
+            ])
+                .SetClass("flex flex-col")
+                .AttachTo("centermessage");
             throw e;
         }
     }

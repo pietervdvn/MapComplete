@@ -93,8 +93,13 @@
       ]
     },
     {
-      "question": "Who is allowed to use this charging station?",
-      "render": "Access is {access}",
+      "#": "access",
+      "question": {
+        "en": "Who is allowed to use this charging station?"
+      },
+      "render": {
+        "en": "Access is {access}"
+      },
       "freeform": {
         "key": "access",
         "addExtraTags": [
@@ -141,7 +146,7 @@
         "type": "pnat"
       }
     },
-    $$$
+    {"#": "$$$"},
     {
       "#": "Authentication",
       "question": {
@@ -311,6 +316,7 @@
       ]
     },
     {
+      "#": "payment-options",
       "builtin": "payment-options",
       "override": {
         "condition": {
@@ -326,6 +332,14 @@
             "then": {
               "en": "Payment is done using a dedicated app",
               "nl": "Betalen via een app van het netwerk"
+            }
+          },
+          {
+            "if": "payment:membership_card=yes",
+            "ifnot": "payment:membership_card=no",
+            "then": {
+              "en": "Payment is done using a membership card",
+              "nl": "Betalen via een lidkaart van het netwerk"
             }
           }
         ]
@@ -395,8 +409,12 @@
     },
     {
       "#": "Operator",
-      "question": "Who is the operator of this charging station?",
-      "render": "This charging station is operated by {operator}",
+      "question": {
+        "en": "Who is the operator of this charging station?"
+      },
+      "render": {
+        "en": "This charging station is operated by {operator}"
+      },
       "freeform": {
         "key": "operator"
       },
@@ -407,7 +425,9 @@
               "network:={operator}"
             ]
           },
-          "then": "Actually, {operator} is the network",
+          "then": {
+            "en": "Actually, {operator} is the network"
+          },
           "addExtraTags": [
             "operator="
           ],
@@ -460,7 +480,9 @@
       "question": {
         "en": "What is the reference number of this charging station?"
       },
-      "render": "Reference number is <b>{ref}</b>",
+      "render": {
+        "en": "Reference number is <b>{ref}</b>"
+      },
       "freeform": {
         "key": "ref"
       }
@@ -520,6 +542,26 @@
           "then": {
             "en": "This charging station works",
             "nl": "Dit oplaadpunt werkt"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Parking:fee",
+      "question": {
+        "en": "Does one have to pay a parking fee while charging?"
+      },
+      "mappings": [
+        {
+          "if": "parking:fee=no",
+          "then": {
+            "en": "No additional parking cost while charging"
+          }
+        },
+        {
+          "if": "parking:fee=yes",
+          "then": {
+            "en": "An additional parking fee should be paid while charging"
           }
         }
       ]

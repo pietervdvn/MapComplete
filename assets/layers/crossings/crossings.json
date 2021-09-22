@@ -1,324 +1,324 @@
 {
-  "id": "crossings",
-  "name": {
-    "en": "Crossings",
-    "nl": "Oversteekplaatsen"
-  },
-  "description": {
-    "en": "Crossings for pedestrians and cyclists",
-    "nl": "Oversteekplaatsen voor voetgangers en fietsers"
-  },
-  "source": {
-    "osmTags": {
-      "or": [
-        "highway=traffic_signals",
-        "highway=crossing"
-      ]
-    }
-  },
-  "minzoom": 17,
-  "title": {
-    "render": {
-      "en": "Crossing",
-      "nl": "Oversteekplaats"
+    "id": "crossings",
+    "name": {
+        "en": "Crossings",
+        "nl": "Oversteekplaatsen"
     },
-    "mappings": [
-      {
-        "if": "highway=traffic_signals",
-        "then": {
-          "en": "Traffic signal",
-          "nl": "Verkeerslicht"
-        }
-      },
-      {
-        "if": "crossing=traffic_signals",
-        "then": {
-          "en": "Crossing with traffic signals",
-          "nl": "Oversteektplaats met verkeerslichten"
-        }
-      }
-    ]
-  },
-  "icon": {
-    "render": "./assets/layers/crossings/pedestrian_crossing.svg",
-    "mappings": [
-      {
-        "if": {
-          "or": [
-            "highway=traffic_signals",
-            "crossing=traffic_signals"
-          ]
-        },
-        "then": "./assets/layers/crossings/traffic_lights.svg"
-      }
-    ]
-  },
-  "width": "5",
-  "presets": [
-    {
-      "title": {
-        "en": "Crossing",
-        "nl": "Oversteekplaats"
-      },
-      "tags": [
-        "highway=crossing"
-      ],
-      "description": {
-        "en": "Crossing for pedestrians and/or cyclists",
-        "nl": "Oversteekplaats voor voetgangers en/of fietsers"
-      },
-      "preciseInput": {
-        "preferredBackground": [
-          "photo"
-        ],
-        "snapToLayer": "cycleways_and_roads",
-        "maxSnapDistance": 25
-      }
+    "description": {
+        "en": "Crossings for pedestrians and cyclists",
+        "nl": "Oversteekplaatsen voor voetgangers en fietsers"
     },
-    {
-      "title": {
-        "en": "Traffic signal",
-        "nl": "Verkeerslicht"
-      },
-      "tags": [
-        "highway=traffic_signals"
-      ],
-      "description": {
-        "en": "Traffic signal on a road",
-        "nl": "Verkeerslicht op een weg"
-      },
-      "preciseInput": {
-        "preferredBackground": [
-          "photo"
-        ],
-        "snapToLayer": "cycleways_and_roads",
-        "maxSnapDistance": 25
-      }
-    }
-  ],
-  "tagRenderings": [
-    {
-      "question": {
-        "en": "What kind of crossing is this?",
-        "nl": "Wat voor oversteekplaats is dit?"
-      },
-      "condition": "highway=crossing",
-      "mappings": [
-        {
-          "if": "crossing=uncontrolled",
-          "then": {
-            "en": "Crossing, without traffic lights",
-            "nl": "Oversteekplaats, zonder verkeerslichten"
-          }
-        },
-        {
-          "if": "crossing=traffic_signals",
-          "then": {
-            "en": "Crossing with traffic signals",
-            "nl": "Oversteekplaats met verkeerslichten"
-          }
-        },
-        {
-          "if": "crossing=zebra",
-          "then": {
-            "en": "Zebra crossing",
-            "nl": "Zebrapad"
-          },
-          "hideInAnswer": true
+    "source": {
+        "osmTags": {
+            "or": [
+                "highway=traffic_signals",
+                "highway=crossing"
+            ]
         }
-      ]
     },
-    {
-      "question": {
-        "en": "Is this is a zebra crossing?",
-        "nl": "Is dit een zebrapad?"
-      },
-      "condition": "crossing=uncontrolled",
-      "mappings": [
-        {
-          "if": "crossing_ref=zebra",
-          "then": {
-            "en": "This is a zebra crossing",
-            "nl": "Dit is een zebrapad"
-          }
+    "minzoom": 17,
+    "title": {
+        "render": {
+            "en": "Crossing",
+            "nl": "Oversteekplaats"
         },
-        {
-          "if": "crossing_ref=",
-          "then": {
-            "en": "This is not a zebra crossing",
-            "nl": "Dit is geen zebrapad"
-          }
-        }
-      ]
-    },
-    {
-      "question": {
-        "en": "Is this crossing also for bicycles?",
-        "nl": "Is deze oversteekplaats ook voor fietsers"
-      },
-      "condition": "highway=crossing",
-      "mappings": [
-        {
-          "if": "bicycle=yes",
-          "then": {
-            "en": "A cyclist can use this crossing",
-            "nl": "Een fietser kan deze oversteekplaats gebruiken"
-          }
-        },
-        {
-          "if": "bicycle=no",
-          "then": {
-            "en": "A cyclist can not use this crossing",
-            "nl": "Een fietser kan deze oversteekplaats niet gebruiken"
-          }
-        }
-      ]
-    },
-    {
-      "question": {
-        "en": "Does this crossing have an island in the middle?",
-        "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
-      },
-      "condition": "highway=crossing",
-      "mappings": [
-        {
-          "if": "crossing:island=yes",
-          "then": {
-            "en": "This crossing has an island in the middle",
-            "nl": "Deze oversteekplaats heeft een verkeerseiland in het midden"
-          }
-        },
-        {
-          "if": "crossing:island=no",
-          "then": {
-            "en": "This crossing does not have an island in the middle",
-            "nl": "Deze oversteekplaats heeft geen verkeerseiland in het midden"
-          }
-        }
-      ]
-    },
-    {
-      "question": {
-        "en": "Does this crossing have tactile paving?",
-        "nl": "Heeft deze oversteekplaats een geleidelijn?"
-      },
-      "condition": "highway=crossing",
-      "mappings": [
-        {
-          "if": "tactile_paving=yes",
-          "then": {
-            "en": "This crossing has tactile paving",
-            "nl": "Deze oversteekplaats heeft een geleidelijn"
-          }
-        },
-        {
-          "if": "tactile_paving=no",
-          "then": {
-            "en": "This crossing does not have tactile paving",
-            "nl": "Deze oversteekplaats heeft geen geleidelijn"
-          }
-        },
-        {
-          "if": "tactile_paving=incorrect",
-          "then": {
-            "en": "This crossing has tactile paving, but is not correct",
-            "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
-          },
-          "hideInAnswer": true
-        }
-      ]
-    },
-    {
-      "question": {
-        "en": "Does this traffic light have a button to request green light?",
-        "nl": "Heeft dit verkeerslicht een knop voor groen licht?"
-      },
-      "condition": {
-        "or": [
-          "highway=traffic_signals",
-          "crossing=traffic_signals"
+        "mappings": [
+            {
+                "if": "highway=traffic_signals",
+                "then": {
+                    "en": "Traffic signal",
+                    "nl": "Verkeerslicht"
+                }
+            },
+            {
+                "if": "crossing=traffic_signals",
+                "then": {
+                    "en": "Crossing with traffic signals",
+                    "nl": "Oversteektplaats met verkeerslichten"
+                }
+            }
         ]
-      },
-      "mappings": [
-        {
-          "if": "button_operated=yes",
-          "then": {
-            "en": "This traffic light has a button to request green light",
-            "nl": "Dit verkeerslicht heeft een knop voor groen licht"
-          }
-        },
-        {
-          "if": "button_operated=no",
-          "then": {
-            "en": "This traffic light does not have a button to request green light",
-            "nl": "Dit verkeerlicht heeft geen knop voor groen licht"
-          }
-        }
-      ]
     },
-    {
-      "question": {
-        "en": "Can a cyclist turn right when the light is red?",
-        "nl": "Mag een fietser rechtsaf slaan als het licht rood is?"
-      },
-      "condition": "highway=traffic_signals",
-      "mappings": [
-        {
-          "if": "red_turn:right:bicycle=yes",
-          "then": {
-            "en": "A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>",
-            "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
-          },
-          "hideInAnswer": "_country!=be"
-        },
-        {
-          "if": "red_turn:right:bicycle=yes",
-          "then": {
-            "en": "A cyclist can turn right if the light is red",
-            "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is"
-          },
-          "hideInAnswer": "_country=be"
-        },
-        {
-          "if": "red_turn:right:bicycle=no",
-          "then": {
-            "en": "A cyclist can not turn right if the light is red",
-            "nl": "Een fietser mag niet rechtsaf slaan als het licht rood is"
-          }
-        }
-      ]
+    "icon": {
+        "render": "./assets/layers/crossings/pedestrian_crossing.svg",
+        "mappings": [
+            {
+                "if": {
+                    "or": [
+                        "highway=traffic_signals",
+                        "crossing=traffic_signals"
+                    ]
+                },
+                "then": "./assets/layers/crossings/traffic_lights.svg"
+            }
+        ]
     },
-    {
-      "question": {
-        "en": "Can a cyclist go straight on when the light is red?",
-        "nl": "Mag een fietser rechtdoor gaan als het licht rood is?"
-      },
-      "condition": "highway=traffic_signals",
-      "mappings": [
+    "width": "5",
+    "presets": [
         {
-          "if": "red_turn:straight:bicycle=yes",
-          "then": {
-            "en": "A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>",
-            "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
-          },
-          "hideInAnswer": "_country!=be"
+            "title": {
+                "en": "Crossing",
+                "nl": "Oversteekplaats"
+            },
+            "tags": [
+                "highway=crossing"
+            ],
+            "description": {
+                "en": "Crossing for pedestrians and/or cyclists",
+                "nl": "Oversteekplaats voor voetgangers en/of fietsers"
+            },
+            "preciseInput": {
+                "preferredBackground": [
+                    "photo"
+                ],
+                "snapToLayer": "cycleways_and_roads",
+                "maxSnapDistance": 25
+            }
         },
         {
-          "if": "red_turn:straight:bicycle=yes",
-          "then": {
-            "en": "A cyclist can go straight on if the light is red",
-            "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is"
-          },
-          "hideInAnswer": "_country=be"
-        },
-        {
-          "if": "red_turn:straight:bicycle=no",
-          "then": {
-            "en": "A cyclist can not go straight on if the light is red",
-            "nl": "Een fietser mag niet rechtdoor gaan als het licht rood is"
-          }
+            "title": {
+                "en": "Traffic signal",
+                "nl": "Verkeerslicht"
+            },
+            "tags": [
+                "highway=traffic_signals"
+            ],
+            "description": {
+                "en": "Traffic signal on a road",
+                "nl": "Verkeerslicht op een weg"
+            },
+            "preciseInput": {
+                "preferredBackground": [
+                    "photo"
+                ],
+                "snapToLayer": "cycleways_and_roads",
+                "maxSnapDistance": 25
+            }
         }
-      ]
-    }
-  ]
+    ],
+    "tagRenderings": [
+        {
+            "question": {
+                "en": "What kind of crossing is this?",
+                "nl": "Wat voor oversteekplaats is dit?"
+            },
+            "condition": "highway=crossing",
+            "mappings": [
+                {
+                    "if": "crossing=uncontrolled",
+                    "then": {
+                        "en": "Crossing, without traffic lights",
+                        "nl": "Oversteekplaats, zonder verkeerslichten"
+                    }
+                },
+                {
+                    "if": "crossing=traffic_signals",
+                    "then": {
+                        "en": "Crossing with traffic signals",
+                        "nl": "Oversteekplaats met verkeerslichten"
+                    }
+                },
+                {
+                    "if": "crossing=zebra",
+                    "then": {
+                        "en": "Zebra crossing",
+                        "nl": "Zebrapad"
+                    },
+                    "hideInAnswer": true
+                }
+            ]
+        },
+        {
+            "question": {
+                "en": "Is this is a zebra crossing?",
+                "nl": "Is dit een zebrapad?"
+            },
+            "condition": "crossing=uncontrolled",
+            "mappings": [
+                {
+                    "if": "crossing_ref=zebra",
+                    "then": {
+                        "en": "This is a zebra crossing",
+                        "nl": "Dit is een zebrapad"
+                    }
+                },
+                {
+                    "if": "crossing_ref=",
+                    "then": {
+                        "en": "This is not a zebra crossing",
+                        "nl": "Dit is geen zebrapad"
+                    }
+                }
+            ]
+        },
+        {
+            "question": {
+                "en": "Is this crossing also for bicycles?",
+                "nl": "Is deze oversteekplaats ook voor fietsers"
+            },
+            "condition": "highway=crossing",
+            "mappings": [
+                {
+                    "if": "bicycle=yes",
+                    "then": {
+                        "en": "A cyclist can use this crossing",
+                        "nl": "Een fietser kan deze oversteekplaats gebruiken"
+                    }
+                },
+                {
+                    "if": "bicycle=no",
+                    "then": {
+                        "en": "A cyclist can not use this crossing",
+                        "nl": "Een fietser kan deze oversteekplaats niet gebruiken"
+                    }
+                }
+            ]
+        },
+        {
+            "question": {
+                "en": "Does this crossing have an island in the middle?",
+                "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
+            },
+            "condition": "highway=crossing",
+            "mappings": [
+                {
+                    "if": "crossing:island=yes",
+                    "then": {
+                        "en": "This crossing has an island in the middle",
+                        "nl": "Deze oversteekplaats heeft een verkeerseiland in het midden"
+                    }
+                },
+                {
+                    "if": "crossing:island=no",
+                    "then": {
+                        "en": "This crossing does not have an island in the middle",
+                        "nl": "Deze oversteekplaats heeft geen verkeerseiland in het midden"
+                    }
+                }
+            ]
+        },
+        {
+            "question": {
+                "en": "Does this crossing have tactile paving?",
+                "nl": "Heeft deze oversteekplaats een geleidelijn?"
+            },
+            "condition": "highway=crossing",
+            "mappings": [
+                {
+                    "if": "tactile_paving=yes",
+                    "then": {
+                        "en": "This crossing has tactile paving",
+                        "nl": "Deze oversteekplaats heeft een geleidelijn"
+                    }
+                },
+                {
+                    "if": "tactile_paving=no",
+                    "then": {
+                        "en": "This crossing does not have tactile paving",
+                        "nl": "Deze oversteekplaats heeft geen geleidelijn"
+                    }
+                },
+                {
+                    "if": "tactile_paving=incorrect",
+                    "then": {
+                        "en": "This crossing has tactile paving, but is not correct",
+                        "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
+                    },
+                    "hideInAnswer": true
+                }
+            ]
+        },
+        {
+            "question": {
+                "en": "Does this traffic light have a button to request green light?",
+                "nl": "Heeft dit verkeerslicht een knop voor groen licht?"
+            },
+            "condition": {
+                "or": [
+                    "highway=traffic_signals",
+                    "crossing=traffic_signals"
+                ]
+            },
+            "mappings": [
+                {
+                    "if": "button_operated=yes",
+                    "then": {
+                        "en": "This traffic light has a button to request green light",
+                        "nl": "Dit verkeerslicht heeft een knop voor groen licht"
+                    }
+                },
+                {
+                    "if": "button_operated=no",
+                    "then": {
+                        "en": "This traffic light does not have a button to request green light",
+                        "nl": "Dit verkeerlicht heeft geen knop voor groen licht"
+                    }
+                }
+            ]
+        },
+        {
+            "question": {
+                "en": "Can a cyclist turn right when the light is red?",
+                "nl": "Mag een fietser rechtsaf slaan als het licht rood is?"
+            },
+            "condition": "highway=traffic_signals",
+            "mappings": [
+                {
+                    "if": "red_turn:right:bicycle=yes",
+                    "then": {
+                        "en": "A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>",
+                        "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                    },
+                    "hideInAnswer": "_country!=be"
+                },
+                {
+                    "if": "red_turn:right:bicycle=yes",
+                    "then": {
+                        "en": "A cyclist can turn right if the light is red",
+                        "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is"
+                    },
+                    "hideInAnswer": "_country=be"
+                },
+                {
+                    "if": "red_turn:right:bicycle=no",
+                    "then": {
+                        "en": "A cyclist can not turn right if the light is red",
+                        "nl": "Een fietser mag niet rechtsaf slaan als het licht rood is"
+                    }
+                }
+            ]
+        },
+        {
+            "question": {
+                "en": "Can a cyclist go straight on when the light is red?",
+                "nl": "Mag een fietser rechtdoor gaan als het licht rood is?"
+            },
+            "condition": "highway=traffic_signals",
+            "mappings": [
+                {
+                    "if": "red_turn:straight:bicycle=yes",
+                    "then": {
+                        "en": "A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>",
+                        "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                    },
+                    "hideInAnswer": "_country!=be"
+                },
+                {
+                    "if": "red_turn:straight:bicycle=yes",
+                    "then": {
+                        "en": "A cyclist can go straight on if the light is red",
+                        "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is"
+                    },
+                    "hideInAnswer": "_country=be"
+                },
+                {
+                    "if": "red_turn:straight:bicycle=no",
+                    "then": {
+                        "en": "A cyclist can not go straight on if the light is red",
+                        "nl": "Een fietser mag niet rechtdoor gaan als het licht rood is"
+                    }
+                }
+            ]
+        }
+    ]
 }

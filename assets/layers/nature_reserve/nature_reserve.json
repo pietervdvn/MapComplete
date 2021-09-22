@@ -1,462 +1,462 @@
 {
-  "id": "nature_reserve",
-  "name": {
-    "nl": "Natuurgebied"
-  },
-  "minzoom": 12,
-  "source": {
-    "osmTags": {
-      "and": [
-        {
-          "or": [
-            "leisure=nature_reserve",
+    "id": "nature_reserve",
+    "name": {
+        "nl": "Natuurgebied"
+    },
+    "minzoom": 12,
+    "source": {
+        "osmTags": {
+            "and": [
+                {
+                    "or": [
+                        "leisure=nature_reserve",
+                        {
+                            "and": [
+                                "protect_class!=98",
+                                "boundary=protected_area"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "title": {
+        "render": {
+            "nl": "Natuurgebied"
+        },
+        "mappings": [
             {
-              "and": [
-                "protect_class!=98",
-                "boundary=protected_area"
-              ]
+                "if": {
+                    "and": [
+                        "name:nl~*"
+                    ]
+                },
+                "then": {
+                    "nl": "{name:nl}"
+                }
+            },
+            {
+                "if": {
+                    "and": [
+                        "name~*"
+                    ]
+                },
+                "then": {
+                    "nl": "{name}"
+                }
             }
-          ]
-        }
-      ]
-    }
-  },
-  "title": {
-    "render": {
-      "nl": "Natuurgebied"
+        ]
     },
-    "mappings": [
-      {
-        "if": {
-          "and": [
-            "name:nl~*"
-          ]
+    "description": {
+        "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid."
+    },
+    "tagRenderings": [
+        "images",
+        {
+            "#": "Access tag",
+            "render": {
+                "nl": "De toegankelijkheid van dit gebied is: {access:description}"
+            },
+            "question": {
+                "nl": "Is dit gebied toegankelijk?"
+            },
+            "freeform": {
+                "key": "access:description"
+            },
+            "mappings": [
+                {
+                    "if": {
+                        "and": [
+                            "access=yes",
+                            "fee="
+                        ]
+                    },
+                    "then": {
+                        "nl": "Vrij toegankelijk"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "access=no",
+                            "fee="
+                        ]
+                    },
+                    "then": {
+                        "nl": "Niet toegankelijk"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "access=private",
+                            "fee="
+                        ]
+                    },
+                    "then": {
+                        "nl": "Niet toegankelijk, want privégebied"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "access=permissive",
+                            "fee="
+                        ]
+                    },
+                    "then": {
+                        "nl": "Toegankelijk, ondanks dat het privegebied is"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "access=guided",
+                            "fee="
+                        ]
+                    },
+                    "then": {
+                        "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "access=yes",
+                            "fee=yes"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Toegankelijk mits betaling"
+                    }
+                }
+            ]
         },
-        "then": {
-          "nl": "{name:nl}"
-        }
-      },
-      {
-        "if": {
-          "and": [
-            "name~*"
-          ]
+        {
+            "#": "Operator tag",
+            "render": {
+                "nl": "Beheer door {operator}"
+            },
+            "question": {
+                "nl": "Wie beheert dit gebied?"
+            },
+            "freeform": {
+                "key": "operator"
+            },
+            "mappings": [
+                {
+                    "if": {
+                        "and": [
+                            "operator=Natuurpunt"
+                        ]
+                    },
+                    "then": {
+                        "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "operator~(n|N)atuurpunt.*"
+                        ]
+                    },
+                    "then": {
+                        "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                    },
+                    "hideInAnswer": true
+                },
+                {
+                    "if": {
+                        "and": [
+                            "operator=Agentschap Natuur en Bos"
+                        ]
+                    },
+                    "then": {
+                        "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+                    }
+                }
+            ]
         },
-        "then": {
-          "nl": "{name}"
+        {
+            "#": "Name:nl-tag",
+            "render": {
+                "nl": "Dit gebied heet {name:nl}"
+            },
+            "question": {
+                "nl": "Wat is de Nederlandstalige naam van dit gebied?"
+            },
+            "freeform": {
+                "key": "name:nl"
+            },
+            "condition": {
+                "and": [
+                    "name:nl~*"
+                ]
+            }
+        },
+        {
+            "#": "Name tag",
+            "render": {
+                "nl": "Dit gebied heet {name}"
+            },
+            "question": {
+                "nl": "Wat is de naam van dit gebied?"
+            },
+            "freeform": {
+                "key": "name",
+                "addExtraTags": [
+                    "noname="
+                ]
+            },
+            "condition": {
+                "and": [
+                    "name:nl="
+                ]
+            },
+            "mappings": [
+                {
+                    "if": {
+                        "and": [
+                            "noname=yes",
+                            "name="
+                        ]
+                    },
+                    "then": {
+                        "nl": "Dit gebied heeft geen naam"
+                    }
+                }
+            ]
+        },
+        {
+            "#": "Dogs?",
+            "question": {
+                "nl": "Zijn honden toegelaten in dit gebied?",
+                "en": "Are dogs allowed in this nature reserve?",
+                "it": "I cani sono ammessi in questa riserva naturale?",
+                "fr": "Les chiens sont-ils autorisés dans cette réserve naturelle ?",
+                "de": "Sind Hunde in diesem Naturschutzgebiet erlaubt?"
+            },
+            "condition": {
+                "or": [
+                    "access=yes",
+                    "access=permissive",
+                    "access=guided"
+                ]
+            },
+            "mappings": [
+                {
+                    "if": "dog=leashed",
+                    "then": {
+                        "nl": "Honden moeten aan de leiband",
+                        "en": "Dogs have to be leashed",
+                        "it": "I cani devono essere tenuti al guinzaglio",
+                        "fr": "Les chiens doivent être tenus en laisse",
+                        "de": "Hunde müssen angeleint sein"
+                    }
+                },
+                {
+                    "if": "dog=no",
+                    "then": {
+                        "nl": "Honden zijn niet toegestaan",
+                        "en": "No dogs allowed",
+                        "it": "I cani non sono ammessi",
+                        "fr": "Chiens interdits",
+                        "de": "Hunde sind nicht erlaubt"
+                    }
+                },
+                {
+                    "if": "dog=yes",
+                    "then": {
+                        "nl": "Honden zijn welkom en mogen vrij rondlopen",
+                        "en": "Dogs are allowed to roam freely",
+                        "it": "I cani sono liberi di girare liberi",
+                        "fr": "Les chiens sont autorisés à se promener librement",
+                        "de": "Hunde dürfen frei herumlaufen"
+                    }
+                }
+            ]
+        },
+        {
+            "#": "Website",
+            "question": {
+                "en": "On which webpage can one find more information about this nature reserve?",
+                "nl": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?",
+                "it": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?",
+                "fr": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?",
+                "de": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
+            },
+            "render": "<a href='{website}'target='_blank'>{website}</a>",
+            "freeform": {
+                "key": "website",
+                "type": "url"
+            }
+        },
+        {
+            "#": "Curator",
+            "question": {
+                "nl": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
+                "en": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
+                "it": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
+                "fr": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public"
+            },
+            "render": {
+                "nl": "{curator} is de beheerder van dit gebied",
+                "en": "{curator} is the curator of this nature reserve",
+                "it": "{curator} è il curatore di questa riserva naturale",
+                "fr": "{curator} est en charge de la conservation de la réserve"
+            },
+            "freeform": {
+                "key": "curator",
+                "type": "string"
+            }
+        },
+        {
+            "#": "Email",
+            "question": {
+                "nl": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
+                "en": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
+                "it": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
+                "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée"
+            },
+            "render": {
+                "nl": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "en": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "ca": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "de": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "fr": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "it": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "ru": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "id": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "freeform": {
+                "key": "email",
+                "type": "email"
+            }
+        },
+        {
+            "#": "phone",
+            "question": {
+                "nl": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
+                "en": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
+                "it": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
+                "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
+            },
+            "render": {
+                "nl": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "en": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "ca": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "de": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "fr": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "it": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "ru": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "id": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "freeform": {
+                "key": "phone",
+                "type": "phone"
+            }
+        },
+        {
+            "#": "Non-editable description {description}",
+            "render": {
+                "nl": "Extra info: <i>{description}</i>"
+            },
+            "freeform": {
+                "key": "description"
+            }
+        },
+        {
+            "#": "Editable description {description:0}",
+            "question": "Is er extra info die je kwijt wil?",
+            "render": {
+                "nl": "Extra info: <i>{description:0}</i>"
+            },
+            "freeform": {
+                "key": "description:0"
+            }
+        },
+        {
+            "#": "Surface area",
+            "render": {
+                "en": "Surface area: {_surface:ha}Ha",
+                "nl": "Totale oppervlakte: {_surface:ha}Ha",
+                "it": "Area: {_surface:ha} ha",
+                "fr": "Superficie : {_surface:ha}&nbsp;ha"
+            },
+            "mappings": [
+                {
+                    "if": "_surface:ha=0",
+                    "then": {
+                        "*": ""
+                    }
+                }
+            ]
         }
-      }
+    ],
+    "wayHandling": 2,
+    "icon": {
+        "render": "./assets/themes/buurtnatuur/nature_reserve.svg"
+    },
+    "width": {
+        "render": "1"
+    },
+    "iconSize": {
+        "render": "50,50,center"
+    },
+    "color": {
+        "render": "#3c3"
+    },
+    "presets": [
+        {
+            "tags": [
+                "leisure=nature_reserve",
+                "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+            ],
+            "title": {
+                "nl": "Natuurreservaat"
+            },
+            "description": {
+                "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
+            }
+        }
+    ],
+    "filter": [
+        {
+            "options": [
+                {
+                    "question": {
+                        "nl": "Vrij te bezoeken"
+                    },
+                    "osmTags": "access=yes"
+                }
+            ]
+        },
+        {
+            "options": [
+                {
+                    "question": {
+                        "nl": "Alle natuurgebieden"
+                    }
+                },
+                {
+                    "question": {
+                        "nl": "Honden mogen vrij rondlopen"
+                    },
+                    "osmTags": "dog=yes"
+                },
+                {
+                    "question": {
+                        "nl": "Honden welkom aan de leiband"
+                    },
+                    "osmTags": {
+                        "or": [
+                            "dog=yes",
+                            "dog=leashed"
+                        ]
+                    }
+                }
+            ]
+        }
     ]
-  },
-  "description": {
-    "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid."
-  },
-  "tagRenderings": [
-    "images",
-    {
-      "#": "Access tag",
-      "render": {
-        "nl": "De toegankelijkheid van dit gebied is: {access:description}"
-      },
-      "question": {
-        "nl": "Is dit gebied toegankelijk?"
-      },
-      "freeform": {
-        "key": "access:description"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "access=yes",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Vrij toegankelijk"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=no",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Niet toegankelijk"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=private",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Niet toegankelijk, want privégebied"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=permissive",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Toegankelijk, ondanks dat het privegebied is"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=guided",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access=yes",
-              "fee=yes"
-            ]
-          },
-          "then": {
-            "nl": "Toegankelijk mits betaling"
-          }
-        }
-      ]
-    },
-    {
-      "#": "Operator tag",
-      "render": {
-        "nl": "Beheer door {operator}"
-      },
-      "question": {
-        "nl": "Wie beheert dit gebied?"
-      },
-      "freeform": {
-        "key": "operator"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "operator=Natuurpunt"
-            ]
-          },
-          "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "operator~(n|N)atuurpunt.*"
-            ]
-          },
-          "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
-          },
-          "hideInAnswer": true
-        },
-        {
-          "if": {
-            "and": [
-              "operator=Agentschap Natuur en Bos"
-            ]
-          },
-          "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
-          }
-        }
-      ]
-    },
-    {
-      "#": "Name:nl-tag",
-      "render": {
-        "nl": "Dit gebied heet {name:nl}"
-      },
-      "question": {
-        "nl": "Wat is de Nederlandstalige naam van dit gebied?"
-      },
-      "freeform": {
-        "key": "name:nl"
-      },
-      "condition": {
-        "and": [
-          "name:nl~*"
-        ]
-      }
-    },
-    {
-      "#": "Name tag",
-      "render": {
-        "nl": "Dit gebied heet {name}"
-      },
-      "question": {
-        "nl": "Wat is de naam van dit gebied?"
-      },
-      "freeform": {
-        "key": "name",
-        "addExtraTags": [
-          "noname="
-        ]
-      },
-      "condition": {
-        "and": [
-          "name:nl="
-        ]
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "noname=yes",
-              "name="
-            ]
-          },
-          "then": {
-            "nl": "Dit gebied heeft geen naam"
-          }
-        }
-      ]
-    },
-    {
-      "#": "Dogs?",
-      "question": {
-        "nl": "Zijn honden toegelaten in dit gebied?",
-        "en": "Are dogs allowed in this nature reserve?",
-        "it": "I cani sono ammessi in questa riserva naturale?",
-        "fr": "Les chiens sont-ils autorisés dans cette réserve naturelle ?",
-        "de": "Sind Hunde in diesem Naturschutzgebiet erlaubt?"
-      },
-      "condition": {
-        "or": [
-          "access=yes",
-          "access=permissive",
-          "access=guided"
-        ]
-      },
-      "mappings": [
-        {
-          "if": "dog=leashed",
-          "then": {
-            "nl": "Honden moeten aan de leiband",
-            "en": "Dogs have to be leashed",
-            "it": "I cani devono essere tenuti al guinzaglio",
-            "fr": "Les chiens doivent être tenus en laisse",
-            "de": "Hunde müssen angeleint sein"
-          }
-        },
-        {
-          "if": "dog=no",
-          "then": {
-            "nl": "Honden zijn niet toegestaan",
-            "en": "No dogs allowed",
-            "it": "I cani non sono ammessi",
-            "fr": "Chiens interdits",
-            "de": "Hunde sind nicht erlaubt"
-          }
-        },
-        {
-          "if": "dog=yes",
-          "then": {
-            "nl": "Honden zijn welkom en mogen vrij rondlopen",
-            "en": "Dogs are allowed to roam freely",
-            "it": "I cani sono liberi di girare liberi",
-            "fr": "Les chiens sont autorisés à se promener librement",
-            "de": "Hunde dürfen frei herumlaufen"
-          }
-        }
-      ]
-    },
-    {
-      "#": "Website",
-      "question": {
-        "en": "On which webpage can one find more information about this nature reserve?",
-        "nl": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?",
-        "it": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?",
-        "fr": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?",
-        "de": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
-      },
-      "render": "<a href='{website}'target='_blank'>{website}</a>",
-      "freeform": {
-        "key": "website",
-        "type": "url"
-      }
-    },
-    {
-      "#": "Curator",
-      "question": {
-        "nl": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
-        "en": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
-        "it": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
-        "fr": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public"
-      },
-      "render": {
-        "nl": "{curator} is de beheerder van dit gebied",
-        "en": "{curator} is the curator of this nature reserve",
-        "it": "{curator} è il curatore di questa riserva naturale",
-        "fr": "{curator} est en charge de la conservation de la réserve"
-      },
-      "freeform": {
-        "key": "curator",
-        "type": "string"
-      }
-    },
-    {
-      "#": "Email",
-      "question": {
-        "nl": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
-        "en": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
-        "it": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
-        "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée"
-      },
-      "render": {
-        "nl": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "en": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "ca": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "de": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "fr": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "it": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "ru": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "id": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-      },
-      "freeform": {
-        "key": "email",
-        "type": "email"
-      }
-    },
-    {
-      "#": "phone",
-      "question": {
-        "nl": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
-        "en": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
-        "it": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
-        "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
-      },
-      "render": {
-        "nl": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "en": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "ca": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "de": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "fr": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "it": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "ru": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "id": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-      },
-      "freeform": {
-        "key": "phone",
-        "type": "phone"
-      }
-    },
-    {
-      "#": "Non-editable description {description}",
-      "render": {
-        "nl": "Extra info: <i>{description}</i>"
-      },
-      "freeform": {
-        "key": "description"
-      }
-    },
-    {
-      "#": "Editable description {description:0}",
-      "question": "Is er extra info die je kwijt wil?",
-      "render": {
-        "nl": "Extra info: <i>{description:0}</i>"
-      },
-      "freeform": {
-        "key": "description:0"
-      }
-    },
-    {
-      "#": "Surface area",
-      "render": {
-        "en": "Surface area: {_surface:ha}Ha",
-        "nl": "Totale oppervlakte: {_surface:ha}Ha",
-        "it": "Area: {_surface:ha} ha",
-        "fr": "Superficie : {_surface:ha}&nbsp;ha"
-      },
-      "mappings": [
-        {
-          "if": "_surface:ha=0",
-          "then": {
-            "*": ""
-          }
-        }
-      ]
-    }
-  ],
-  "wayHandling": 2,
-  "icon": {
-    "render": "./assets/themes/buurtnatuur/nature_reserve.svg"
-  },
-  "width": {
-    "render": "1"
-  },
-  "iconSize": {
-    "render": "50,50,center"
-  },
-  "color": {
-    "render": "#3c3"
-  },
-  "presets": [
-    {
-      "tags": [
-        "leisure=nature_reserve",
-        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
-      ],
-      "title": {
-        "nl": "Natuurreservaat"
-      },
-      "description": {
-        "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
-      }
-    }
-  ],
-  "filter": [
-    {
-      "options": [
-        {
-          "question": {
-            "nl": "Vrij te bezoeken"
-          },
-          "osmTags": "access=yes"
-        }
-      ]
-    },
-    {
-      "options": [
-        {
-          "question": {
-            "nl": "Alle natuurgebieden"
-          }
-        },
-        {
-          "question": {
-            "nl": "Honden mogen vrij rondlopen"
-          },
-          "osmTags": "dog=yes"
-        },
-        {
-          "question": {
-            "nl": "Honden welkom aan de leiband"
-          },
-          "osmTags": {
-            "or": [
-              "dog=yes",
-              "dog=leashed"
-            ]
-          }
-        }
-      ]
-    }
-  ]
 }

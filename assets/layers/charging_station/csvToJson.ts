@@ -2,6 +2,7 @@ import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../../../Utils";
 import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import ScriptUtils from "../../../scripts/ScriptUtils";
+import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
 
 
 function colonSplit(value: string): string[] {
@@ -13,6 +14,7 @@ function loadCsv(file): {
     image: string,
     description: Map<string, string>,
     countryWhiteList?: string[],
+    countryBlackList?: string[],
     commonVoltages?: number[],
     commonCurrents?: number[],
     commonOutputs?: string[]
@@ -27,7 +29,7 @@ function loadCsv(file): {
         }
 
         const v = {}
-        const colonSeperated = ["commonVoltages", "commonOutputs", "commonCurrents", "countryWhiteList"]
+        const colonSeperated = ["commonVoltages", "commonOutputs", "commonCurrents", "countryWhiteList","countryBlackList"]
         const descriptionTranslations = new Map<string, string>()
         for (let j = 0; j < header.length; j++) {
             const key = header[j];
@@ -51,7 +53,7 @@ function loadCsv(file): {
 function run(file, protojson) {
 
     const overview_question_answers = []
-    const questions: TagRenderingConfigJson[] = []
+    const questions: (TagRenderingConfigJson & {"#": string})[] = []
     const filterOptions: { question: any, osmTags?: string } [] = [
         {
             question: {
@@ -62,7 +64,8 @@ function run(file, protojson) {
     ]
 
     const entries = loadCsv(file)
-    for (const e of entries) {
+    for (let i = 0; i < entries.length; i++){
+        const e = entries[i];
         const txt = {
             en: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("en")}`,
             nl: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("nl")}`
@@ -73,8 +76,14 @@ function run(file, protojson) {
             then: txt,
         }
 
-        if (e.countryWhiteList !== undefined && e.countryWhiteList.length > 0) {
+        if(e.countryWhiteList.length > 0 && e.countryBlackList.length > 0){
+            throw "Error for type "+e.key+": don't defined both a whitelist and a blacklist"
+        }
+        if (e.countryWhiteList.length > 0) {
             const countries = e.countryWhiteList.map(country => "_country!=" + country) //HideInAnswer if it is in the wrong country
+            json["hideInAnswer"] = {or: countries}
+        }else if (e.countryBlackList .length > 0) {
+            const countries = e.countryBlackList.map(country => "_country=" + country) //HideInAnswer if it is in the wrong country
             json["hideInAnswer"] = {or: countries}
         }
 
@@ -94,6 +103,7 @@ function run(file, protojson) {
         const descrWithImage_nl = `<b>${e.description.get("nl")}</b> <img style='width:1rem;' src='./assets/layers/charging_station/${e.image}'/>`
 
         questions.push({
+            "#":"plugs-"+i,
             question: {
                 en: `How much plugs of type ${descrWithImage_en} are available here?`,
                 nl: `Hoeveel stekkers van type  ${descrWithImage_nl} heeft dit oplaadpunt?`,
@@ -112,6 +122,7 @@ function run(file, protojson) {
         })
 
         questions.push({
+            "#":"voltage-"+i,
             question: {
                 en: `What voltage do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke spanning levert de stekker van type ${descrWithImage_nl}`
@@ -140,6 +151,7 @@ function run(file, protojson) {
 
 
         questions.push({
+            "#":"current-"+i,
             question: {
                 en: `What current do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke stroom levert de stekker van type ${descrWithImage_nl}?`,
@@ -168,6 +180,7 @@ function run(file, protojson) {
 
 
         questions.push({
+            "#":"power-output-"+i,
             question: {
                 en: `What power output does a single plug of type ${descrWithImage_en} offer?`,
                 nl: `Welk vermogen levert een enkele stekker van type ${descrWithImage_nl}?`,
@@ -204,6 +217,7 @@ function run(file, protojson) {
     }
 
     const toggles = {
+        "#":"Available_charging_stations (generated)",
         "question": {
             "en": "Which charging stations are available here?"
         },
@@ -213,9 +227,20 @@ function run(file, protojson) {
     questions.unshift(toggles)
 
     const stringified = questions.map(q => JSON.stringify(q, null, "  "))
-    let proto = readFileSync(protojson, "utf8")
-    proto = proto.replace("$$$", stringified.join(",\n") + ",")
-    proto = JSON.parse(proto)
+    let protoString = readFileSync(protojson, "utf8")
+
+    protoString = protoString.replace("{\"#\": \"$$$\"}", stringified.join(",\n"))
+    const proto = <LayerConfigJson> JSON.parse(protoString)
+    proto.tagRenderings.forEach(tr => {
+        if(typeof tr === "string"){
+            return;
+        }
+        if(tr["#"] === undefined || typeof tr["#"] !== "string"){
+            console.error(tr)
+            throw "Every tagrendering should have an id, acting as comment"
+        }
+    })
+    
     proto["filter"].push({
         options: filterOptions
     })
@@ -274,7 +299,8 @@ function run(file, protojson) {
     }
     proto["units"].push(...extraUnits)
     
-    writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "  "))
+    mergeTranslations("charging_station.json",proto)
+    writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "    "))
 }
 
 
@@ -302,22 +328,51 @@ async function queryTagInfo(file, type, clean: ((s: string) => string)) {
         }
         const countsArray = Array.from(counts.keys())
         countsArray.sort()
-        //    console.log(`${e.key}:${type} = ${countsArray.join(";")}`)
-        console.log(`${countsArray.join(";")}`)
+        console.log(`${e.key}:${type} = ${countsArray.join(";")}`)
+        // console.log(`${countsArray.join(";")}`)
+    }
+}
+
+/**
+ * Adds the translations into the 'newConfig' object
+ * @param origPath
+ * @param newConfig
+ */
+function mergeTranslations(origPath, newConfig: LayerConfigJson){
+    const oldFile = <LayerConfigJson> JSON.parse(readFileSync(origPath, "utf-8"))
+    const newFile =<LayerConfigJson> newConfig
+    const renderingsOld = oldFile.tagRenderings
+    delete oldFile.tagRenderings
+    const newRenderings = newFile.tagRenderings
+    Utils.Merge(oldFile, newFile)
+
+    for (const oldRendering of renderingsOld) {
+        
+        const oldRenderingName = oldRendering["#"]
+        if(oldRenderingName === undefined){
+            continue
+        }
+        const applicable = newRenderings.filter(r => r["#"] === oldRenderingName)[0]
+        if(applicable === undefined){
+            continue;
+        }
+        Utils.Merge(oldRendering, applicable)
     }
 }
 
 try {
     run("types.csv", "charging_station.protojson")
-    // queryTagInfo("types.csv","voltage", true)
-    // queryTagInfo("types.csv", "current", true)
-    /* queryTagInfo("types.csv", "output", s => {
+    /*/
+    queryTagInfo("types.csv","voltage", s => s.trim())
+    queryTagInfo("types.csv", "current", s => s.trim())
+    queryTagInfo("types.csv", "output", s => {
          if(s.endsWith("kW")){
              s = s.substring(0, s.length - 2)
          }
          s = s.trim()
          return s + " kW"
-     })*/
+     })
+     //*/
 
 } catch (e) {
     console.error(e)
