@@ -3072,19 +3072,19 @@
     "bike_cafe": {
         "tagRenderings": {
             "1": {
-                "question": "",
-                "render": ""
+                "question": "Hva heter denne Sykkelkaféen?",
+                "render": "Den heter {name}"
             },
             "2": {
                 "mappings": {
                     "1": {
-                        "then": ""
+                        "then": "Denne sykkelkaféen tilbyr ikke en sykkelpumpe for allemannsbruk"
                     },
                     "0": {
-                        "then": ""
+                        "then": "Denne sykkelkaféen tilbyr en sykkelpumpe for allemannsbruk"
                     }
                 },
-                "question": ""
+                "question": "Tilbyr denne sykkelkaféen en sykkelpumpe for allemannsbruk?"
             },
             "4": {
                 "mappings": {
@@ -3131,10 +3131,10 @@
         },
         "presets": {
             "0": {
-                "title": ""
+                "title": "Sykkelkafé"
             }
         },
-        "name": ""
+        "name": "Sykkelkafé"
     },
     "trail": {
         "tagRenderings": {
