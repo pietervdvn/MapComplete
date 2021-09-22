@@ -63,7 +63,7 @@
                     },
                     "3": {
                         "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
-                        "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
+                        "render": "Plus d'info <a href='{website}' target='_blank'>sur ce site web</a>"
                     },
                     "4": {
                         "question": "Quelle entrée Wikidata correspond à <b>cette œuvre d'art</b> ?",
@@ -83,7 +83,7 @@
         "title": "Carte ouverte des œuvres d'art"
     },
     "benches": {
-        "description": "Cette carte affiche les bancs mappés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStretMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
+        "description": "Cette carte affiche les bancs mappés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStreetMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
         "shortDescription": "Carte des bancs",
         "title": "Bancs"
     },
@@ -93,11 +93,11 @@
     },
     "bike_monitoring_stations": {
         "description": "Ce thème montre les données des compteurs en temps réel",
-        "shortDescription": "Station de comptage vélo avec données en temps réel par Bruxelles Mobilités",
+        "shortDescription": "Station de comptage vélo avec données en temps réel par Bruxelles Mobilité",
         "title": "Station de comptage vélo"
     },
     "bookcases": {
-        "description": "Une microbibliothèques, également appelée boite à livre, est un élément de mobilier urbain (étagère, armoire, etc) dans lequel sont stockés des livres et autres objets en accès libre. Découvrez les boites à livres prêt de chez vous, ou ajouter en une nouvelle à l'aide de votre compte OpenStreetMap.",
+        "description": "Une microbibliothèques, également appelée boite à livre, est un élément de mobilier urbain (étagère, armoire, etc.) dans lequel sont stockés des livres et autres objets en accès libre. Découvrez les boites à livres proches de chez vous, ou ajouter en une nouvelle à l'aide de votre compte OpenStreetMap.",
         "title": "Carte des microbibliothèques"
     },
     "campersite": {
@@ -181,7 +181,7 @@
                                 "then": "Ce site n’a pas de toilettes"
                             }
                         },
-                        "question": "Y-a-t’il des toilettes sur le site ?"
+                        "question": "Y a-t’il des toilettes sur le site ?"
                     },
                     "9": {
                         "question": "Ce lieu a-t’il un site internet ?",
@@ -249,7 +249,7 @@
                                 "then": "Ce site n’a pas de point d’eau"
                             }
                         },
-                        "question": "Ce site dispose-t’il d’un point d’eau ?"
+                        "question": "Ce site dispose-t-il d’un point d’eau ?"
                     },
                     "4": {
                         "mappings": {
@@ -260,7 +260,7 @@
                                 "then": "Il n’est pas possible d’y vidanger ses eaux usées"
                             }
                         },
-                        "question": "Est-il possible d’y faire sa vidange des eaux usées ?"
+                        "question": "Est-il possible d’y faire sa vidange d'eaux usées ?"
                     },
                     "5": {
                         "mappings": {
@@ -282,10 +282,10 @@
                                 "then": "Le site est réservés aux clients"
                             },
                             "2": {
-                                "then": "Le site est en libre-service"
+                                "then": "Le site de vidange est en libre-service"
                             },
                             "3": {
-                                "then": "Le site est en libre-service"
+                                "then": "Le site de vidange est en libre-service"
                             }
                         },
                         "question": "Qui peut utiliser le site de vidange ?"
@@ -313,10 +313,10 @@
             "1": {
                 "mappings": {
                     "0": {
-                        "then": "Ce site a une source d’alimentation"
+                        "then": "Ce site a une source d’alimentation électrique"
                     },
                     "1": {
-                        "then": "Ce site n’a pas de source d’alimentation"
+                        "then": "Ce site n’a pas de source d’alimentation électrique"
                     }
                 },
                 "question": "Ce site a-t’il une source d’électricité ?"
@@ -326,7 +326,7 @@
         "title": "Campings"
     },
     "climbing": {
-        "description": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels.",
+        "description": "Cette carte indique divers sites d’escalade comme les salles d’escalade ou les sites naturels.",
         "descriptionTail": "La carte a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
             "0": {
@@ -344,7 +344,7 @@
                 },
                 "tagRenderings": {
                     "0": {
-                        "question": "Quel est le nom du club ou de l’association ?",
+                        "question": "Quel est le nom du club ou de l’association d'escalade ?",
                         "render": "<strong>{name}</strong>"
                     }
                 },
@@ -386,14 +386,14 @@
                     "3": {
                         "mappings": {
                             "0": {
-                                "then": "Cette voie n’a pas de nom"
+                                "then": "Cette voie d'escalade n’a pas de nom"
                             }
                         },
                         "question": "Quel est le nom de cette voie d’escalade ?",
                         "render": "<strong>{name}</strong>"
                     },
                     "4": {
-                        "question": "Quelle est la longueur de cette voie (en mètres) ?",
+                        "question": "Quelle est la longueur de cette voie d'escalade (en mètres) ?",
                         "render": "Cette voie fait {canonical(climbing:length)} de long"
                     },
                     "5": {
@@ -409,7 +409,7 @@
                                 "then": "Cette voie n’a pas de prises"
                             }
                         },
-                        "question": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
+                        "question": "Combien de prises cette voie possède-t-elle avant d’atteindre la moulinette ?",
                         "render": "Cette voie a {climbing:bolts} prises"
                     },
                     "8": {
@@ -427,10 +427,10 @@
             },
             "3": {
                 "description": "Opportunité d’escalade",
-                "name": "Opportunité d’escalade",
+                "name": "Opportunités d’escalade",
                 "presets": {
                     "0": {
-                        "description": "Opportunité d’escalade",
+                        "description": "Une opportunité d’escalade",
                         "title": "Opportunité d’escalade"
                     }
                 },
@@ -447,10 +447,10 @@
                     "6": {
                         "mappings": {
                             "0": {
-                                "then": "Ce site n’a pas de nom"
+                                "then": "Ce site d'escalade n’a pas de nom"
                             }
                         },
-                        "question": "Quel est le nom de ce site ?",
+                        "question": "Quel est le nom de ce site d'escalade ?",
                         "render": "<strong>{name}</strong>"
                     },
                     "7": {
@@ -459,7 +459,7 @@
                                 "then": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde"
                             },
                             "1": {
-                                "then": "Mur d’escalade, rocher avec plusieurs voies d’escalades"
+                                "then": "Mur d’escalade, rocher avec plusieurs voies d’escalade"
                             }
                         }
                     },
@@ -1104,5 +1104,20 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Carte des arbres",
         "title": "Arbres"
+    },
+    "binoculars": {
+        "title": "Longues-vues",
+        "shortDescription": "Une carte avec les longues-vues fixes"
+    },
+    "waste_basket": {
+        "title": "Poubelle"
+    },
+    "charging_stations": {
+        "shortDescription": "Une carte mondiale des stations de recharge",
+        "description": "Sur cette carte open, on peut trouver et ajouter des informations sur les stations de recharge",
+        "title": "Stations de recharge"
+    },
+    "cafes_and_pubs": {
+        "title": "Cafés et pubs"
     }
 }
