@@ -93,8 +93,13 @@
       ]
     },
     {
-      "question": "Who is allowed to use this charging station?",
-      "render": "Access is {access}",
+      "#": "access",
+      "question": {
+        "en": "Who is allowed to use this charging station?"
+      },
+      "render": {
+        "en": "Access is {access}"
+      },
       "freeform": {
         "key": "access",
         "addExtraTags": [
@@ -141,7 +146,7 @@
         "type": "pnat"
       }
     },
-    $$$
+    {"#": "$$$"},
     {
       "#": "Authentication",
       "question": {
@@ -311,6 +316,7 @@
       ]
     },
     {
+      "#": "payment-options",
       "builtin": "payment-options",
       "override": {
         "condition": {
@@ -395,8 +401,12 @@
     },
     {
       "#": "Operator",
-      "question": "Who is the operator of this charging station?",
-      "render": "This charging station is operated by {operator}",
+      "question": {
+        "en": "Who is the operator of this charging station?"
+      },
+      "render": {
+        "en": "This charging station is operated by {operator}"
+      },
       "freeform": {
         "key": "operator"
       },
@@ -407,7 +417,9 @@
               "network:={operator}"
             ]
           },
-          "then": "Actually, {operator} is the network",
+          "then": {
+            "en": "Actually, {operator} is the network"
+          },
           "addExtraTags": [
             "operator="
           ],
@@ -460,7 +472,9 @@
       "question": {
         "en": "What is the reference number of this charging station?"
       },
-      "render": "Reference number is <b>{ref}</b>",
+      "render": {
+        "en": "Reference number is <b>{ref}</b>"
+      },
       "freeform": {
         "key": "ref"
       }

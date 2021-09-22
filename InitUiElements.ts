@@ -258,7 +258,7 @@ export class InitUiElements {
             
             new Combine([
                 "Error: could not parse the custom layout:",
-                e,
+                new FixedUiElement(""+e).SetClass("alert"),
                 new SubtleButton("./assets/svg/mapcomplete_logo.svg", 
                     "Go back to the theme overview", 
                     {url: window.location.protocol+"//"+ window.location.hostname+"/index.html", newTab: false})
