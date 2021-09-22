@@ -5,54 +5,57 @@ import BaseUIElement from "../BaseUIElement";
 
 export default class Translations {
 
+    static t = AllTranslationAssets.t;
+    private static wtcache = {}
+
     constructor() {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"
     }
 
-    static t = AllTranslationAssets.t;
     public static W(s: string | BaseUIElement): BaseUIElement {
         if (typeof (s) === "string") {
             return new FixedUiElement(s);
         }
+        if (typeof s === "number") {
+            return new FixedUiElement("" + s)
+        }
         return s;
     }
 
-
     static T(t: string | any, context = undefined): Translation {
-        if(t === undefined || t === null){
+        if (t === undefined || t === null) {
             return undefined;
         }
-        if(typeof t === "string"){
-            return new Translation({"*":t}, context);
+        if (typeof t === "string") {
+            return new Translation({"*": t}, context);
         }
-        if(t.render !== undefined){
+        if (t.render !== undefined) {
             const msg = "Creating a translation, but this object contains a 'render'-field. Use the translation directly"
             console.error(msg, t);
             throw msg
         }
-        if(t instanceof Translation){
+        if (t instanceof Translation) {
             return t;
         }
         return new Translation(t, context);
     }
 
-    private static wtcache = {}
     public static WT(s: string | Translation): Translation {
-        if(s === undefined || s === null){
+        if (s === undefined || s === null) {
             return undefined;
         }
         if (typeof (s) === "string") {
-            if(Translations.wtcache[s]){
+            if (Translations.wtcache[s]) {
                 return Translations.wtcache[s];
             }
             const tr = new Translation({en: s});
-            Translations.wtcache[s]=  tr;
+            Translations.wtcache[s] = tr;
             return tr;
         }
         if (s instanceof Translation) {
             return s;
         }
-        console.error("Trying to Translation.WT, but got ",s)
+        console.error("Trying to Translation.WT, but got ", s)
         throw "??? Not a valid translation"
     }
 

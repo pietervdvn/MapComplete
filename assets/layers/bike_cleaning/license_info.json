@@ -1,18 +1,18 @@
 [
   {
+    "path": "bike_cleaning.svg",
+    "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "path": "bike_cleaning.svg",
-    "license": "CC0",
     "sources": []
   },
   {
+    "path": "bike_cleaning_icon.svg",
+    "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "path": "bike_cleaning_icon.svg",
-    "license": "CC0",
     "sources": []
   }
 ]

@@ -1,0 +1,227 @@
+{
+  "id": "cycle_highways",
+  "title": {
+    "en": "Cycle highways"
+  },
+  "hideFromOverview": true,
+  "maintainer": "L'imaginaire",
+  "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
+  "#overpassUrl": "https://overpass.kumi.systems/api/interpreter",
+  "overpassTimeout": 60,
+  "description": {
+    "en": "This map shows cycle highways"
+  },
+  "language": [
+    "en"
+  ],
+  "version": "2021-08-23",
+  "startLat": 51.1599,
+  "startLon": 3.3475,
+  "startZoom": 10,
+  "clustering": {
+    "maxZoom": 1
+  },
+  "widenFactor": 0.005,
+  "enableDownload": true,
+  "enablePdfDownload": true,
+  "layers": [
+    {
+      "id": "cycle_highways",
+      "tagRenderings": [
+        {
+          "render": "The name is <b>{name}</b>",
+          "question": "What is the name of this cycle highway?",
+          "freeform": {
+            "key": "name"
+          }
+        },
+        {
+          "render": "Referentienummer is <b>{ref}</b>",
+          "question": "What is the reference number of this cycle highway?",
+          "freeform": {
+            "key": "ref"
+          }
+        },
+        {
+          "render": "The current state of this link is {state}",
+          "question": "What is the state of this link?",
+          "freeform": {
+            "key": "state"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "state=proposed",
+                  "note:state="
+                ]
+              },
+              "then": "This is a proposed route which can be cycled"
+            },
+            {
+              "then": "This is a proposed route which has missing links (thus: some parts don't even have a building permit yet)",
+              "if": {
+                "and": [
+                  "state=proposed",
+                  "note:state=has_highway_no"
+                ]
+              }
+            },
+            {
+              "then": "This is a proposed route which has some links which are under construction",
+              "if": {
+                "and": [
+                  "state=proposed",
+                  "note:state=has_highway_under_construction"
+                ]
+              }
+            },
+            {
+              "if": "state=temporary",
+              "then": "This is a temporary deviation"
+            },
+            {
+              "if": "state=",
+              "then": "This link is operational and signposted"
+            }
+          ]
+        },
+        {
+          "render": "This part is {_length:km}km long"
+        },
+        "website",
+        {
+          "render": "{all_tags()}"
+        }
+      ],
+      "name": {
+        "en": "cycle highways"
+      },
+      "source": {
+        "osmTags": "cycle_network=BE-VLG:cycle_highway"
+      },
+      "minzoom": 8,
+      "title": {
+        "render": {
+          "en": "cycle highway"
+        }
+      },
+      "width": {
+        "render": "4"
+      },
+      "color": {
+        "render": "#ff7392",
+        "mappings": [
+          {
+            "if": "state=",
+            "then": "#00acfc"
+          },
+          {
+            "if": "state=temporary",
+            "then": "#00acfc"
+          }
+        ]
+      },
+      "dashArray": {
+        "render": "",
+        "mappings": [
+          {
+            "if": "state=temporary",
+            "then": "12 10"
+          },
+          {
+            "if": "note:state=has_highway_no",
+            "then": "0 8"
+          },
+          {
+            "if": "note:state=has_highway_under_construction",
+            "then": "12 10"
+          }
+        ]
+      },
+      "filter": [
+        {
+          "options": [
+            {
+              "question": "Name contains 'alt'",
+              "osmTags": "name~.*[aA]lt.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "Name contains 'wenslijn'",
+              "osmTags": "name~.*[wW]enslijn.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "Name contains 'omleiding'",
+              "osmTags": "name~.*[oO]mleiding.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "Reference contains 'alt'",
+              "osmTags": "ref~.*[aA]lt.*"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "No filter"
+            },
+            {
+              "question": "Has missing links (note:state=has_highway_no)",
+              "osmTags": "note:state=has_highway_no"
+            },
+            {
+              "question": "Has links which are under construction (note:state=has_highway_under_construction)",
+              "osmTags": "note:state=has_highway_under_construction"
+            },
+            {
+              "question": "Has links which are proposed (note:state=has_highway_proposed)",
+              "osmTags": "note:state=has_highway_proposed"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "question": "No filter"
+            },
+            {
+              "question": "state=proposed",
+              "osmTags": "state=proposed"
+            },
+            {
+              "question": "state=temporary",
+              "osmTags": "state=temporary"
+            },
+            {
+              "question": "state unset",
+              "osmTags": "state="
+            },
+            {
+              "question": "Other state",
+              "osmTags": {
+                "and": [
+                  "state!=",
+                  "state!=proposed",
+                  "state!=temporary"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "defaultBackgroundId": "CartoDB.Positron"
+}

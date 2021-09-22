@@ -1,0 +1,30 @@
+{
+  "id": "observation_towers",
+  "title": {
+    "en": "Observation towers",
+    "nl": "Uitkijktorens"
+  },
+  "shortDescription": {
+    "en": "Publicly accessible towers to enjoy the view",
+    "nl": "Publieke uitkijktorens om van het panorama te genieten"
+  },
+  "description": {
+    "nl": "Publieke uitkijktorens om van het panorama te genieten",
+    "en": "Publicly accessible towers to enjoy the view"
+  },
+  "language": [
+    "en",
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/layers/observation_tower/Tower_observation.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "observation_tower"
+  ]
+}

@@ -1,197 +1,216 @@
 {
- "data_format": 1,
- "project": {
-  "name": "MapComplete Benches",
-  "description": "A map of benches",
-  "project_url": "https://mapcomplete.osm.be/benches",
-  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/assets/themes/benches/bench_poi.svg",
-  "contact_name": "Pieter Vander Vennet, Florian Edelmann",
-  "contact_email": "pietervdvn@posteo.net"
- },
- "tags": [
-  {
-   "key": "amenity",
-   "description": "The MapComplete theme Benches has a layer Benches showing features with this tag",
-   "value": "bench"
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Benches",
+    "description": "A map of benches",
+    "project_url": "https://mapcomplete.osm.be/benches",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/benches/bench_poi.svg",
+    "contact_name": "Pieter Vander Vennet, Florian Edelmann",
+    "contact_email": "pietervdvn@posteo.net"
   },
-  {
-   "key": "image",
-   "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "backrest",
-   "description": "Layer 'Benches' shows and asks freeform values for key 'backrest' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "backrest",
-   "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Backrest: Yes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "yes"
-  },
-  {
-   "key": "backrest",
-   "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Backrest: No' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "no"
-  },
-  {
-   "key": "seats",
-   "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Benches' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'Material: wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "wood"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'Material: metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "metal"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'Material: stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "stone"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'Material: concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "concrete"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'Material: plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "plastic"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'Material: steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "steel"
-  },
-  {
-   "key": "direction",
-   "description": "Layer 'Benches' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows and asks freeform values for key 'colour' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows colour=brown with a fixed text, namely 'Colour: brown' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "brown"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows colour=green with a fixed text, namely 'Colour: green' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "green"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows colour=gray with a fixed text, namely 'Colour: gray' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "gray"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows colour=white with a fixed text, namely 'Colour: white' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "white"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows colour=red with a fixed text, namely 'Colour: red' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "red"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows colour=black with a fixed text, namely 'Colour: black' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "black"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows colour=blue with a fixed text, namely 'Colour: blue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "blue"
-  },
-  {
-   "key": "colour",
-   "description": "Layer 'Benches' shows colour=yellow with a fixed text, namely 'Colour: yellow' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "yellow"
-  },
-  {
-   "key": "survey:date",
-   "description": "Layer 'Benches' shows and asks freeform values for key 'survey:date' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "survey:date",
-   "description": "Layer 'Benches' shows survey:date= with a fixed text, namely 'Surveyed today!' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches') Picking this answer will delete the key survey:date.",
-   "value": ""
-  },
-  {
-   "key": "bench",
-   "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
-   "value": "yes"
-  },
-  {
-   "key": "bench",
-   "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
-   "value": "stand_up_bench"
-  },
-  {
-   "key": "image",
-   "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "mapillary",
-   "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikidata",
-   "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "wikipedia",
-   "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-  },
-  {
-   "key": "name",
-   "description": "Layer 'Benches at public transport stops' shows values with key 'name' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "bench",
-   "description": "Layer 'Benches at public transport stops' shows values with key 'bench' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "leisure",
-   "description": "The MapComplete theme Benches has a layer Picnic tables showing features with this tag",
-   "value": "picnic_table"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Picnic tables' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Benches')"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Picnic tables' shows material=wood with a fixed text, namely 'This is a wooden picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "wood"
-  },
-  {
-   "key": "material",
-   "description": "Layer 'Picnic tables' shows material=concrete with a fixed text, namely 'This is a concrete picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-   "value": "concrete"
-  }
- ]
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Benches has a layer Benches showing features with this tag",
+      "value": "bench"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'backrest' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Backrest: Yes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "yes"
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Backrest: No' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "no"
+    },
+    {
+      "key": "seats",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'Material: wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "wood"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'Material: metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "metal"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'Material: stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "stone"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'Material: concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "concrete"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'Material: plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "plastic"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'Material: steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "steel"
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'colour' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows colour=brown with a fixed text, namely 'Colour: brown' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "brown"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows colour=green with a fixed text, namely 'Colour: green' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "green"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows colour=gray with a fixed text, namely 'Colour: gray' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "gray"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows colour=white with a fixed text, namely 'Colour: white' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "white"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows colour=red with a fixed text, namely 'Colour: red' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "red"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows colour=black with a fixed text, namely 'Colour: black' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "black"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows colour=blue with a fixed text, namely 'Colour: blue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "blue"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Benches' shows colour=yellow with a fixed text, namely 'Colour: yellow' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "yellow"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'survey:date' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Benches' shows survey:date= with a fixed text, namely 'Surveyed today!' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches') Picking this answer will delete the key survey:date.",
+      "value": ""
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Benches' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "no&service:bicycle:cleaning:charge="
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Benches' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Benches')",
+      "value": "no&"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Benches' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "yes"
+    },
+    {
+      "key": "bench",
+      "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "bench",
+      "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
+      "value": "stand_up_bench"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Benches at public transport stops' shows values with key 'name' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "bench",
+      "description": "Layer 'Benches at public transport stops' shows values with key 'bench' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Benches has a layer Picnic tables showing features with this tag",
+      "value": "picnic_table"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=wood with a fixed text, namely 'This is a wooden picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "wood"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=concrete with a fixed text, namely 'This is a concrete picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "concrete"
+    }
+  ]
 }

@@ -1,12 +1,14 @@
 {
     "bench": {
         "name": "Penkit",
-        "title": {
-            "render": "Penkki"
+        "presets": {
+            "0": {
+                "description": "Lisää uusi penkki",
+                "title": "Penkki"
+            }
         },
         "tagRenderings": {
             "1": {
-                "render": "Selkänoja",
                 "mappings": {
                     "0": {
                         "then": "Selkänoja: kyllä"
@@ -14,10 +16,10 @@
                     "1": {
                         "then": "Selkänoja: ei"
                     }
-                }
+                },
+                "render": "Selkänoja"
             },
             "3": {
-                "render": "Materiaali: {material}",
                 "mappings": {
                     "0": {
                         "then": "Materiaali: puu"
@@ -34,10 +36,10 @@
                     "5": {
                         "then": "Materiaali: teräs"
                     }
-                }
+                },
+                "render": "Materiaali: {material}"
             },
             "5": {
-                "render": "Väri: {colour}",
                 "mappings": {
                     "0": {
                         "then": "Väri: ruskea"
@@ -63,24 +65,22 @@
                     "7": {
                         "then": "Väri: keltainen"
                     }
-                }
+                },
+                "render": "Väri: {colour}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Penkki",
-                "description": "Lisää uusi penkki"
-            }
+        "title": {
+            "render": "Penkki"
         }
     },
     "bench_at_pt": {
-        "title": {
-            "render": "Penkki"
-        },
         "tagRenderings": {
             "1": {
                 "render": "{name}"
             }
+        },
+        "title": {
+            "render": "Penkki"
         }
     },
     "bike_parking": {

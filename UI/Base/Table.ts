@@ -50,21 +50,26 @@ export default class Table extends BaseUIElement {
             let row = this._contents[i];
             const tr = document.createElement("tr")
             for (let j = 0; j < row.length; j++) {
-                let elem = row[j];
-                const htmlElem = elem?.ConstructElement()
-                if (htmlElem === undefined) {
-                    continue;
-                }
+                try {
 
-                let style = undefined;
-                if (this._contentStyle !== undefined && this._contentStyle[i] !== undefined && this._contentStyle[j] !== undefined) {
-                    style = this._contentStyle[i][j]
-                }
+                    let elem = row[j];
+                    const htmlElem = elem?.ConstructElement()
+                    if (htmlElem === undefined) {
+                        continue;
+                    }
 
-                const td = document.createElement("td")
-                td.style.cssText = style;
-                td.appendChild(htmlElem)
-                tr.appendChild(td)
+                    let style = undefined;
+                    if (this._contentStyle !== undefined && this._contentStyle[i] !== undefined && this._contentStyle[j] !== undefined) {
+                        style = this._contentStyle[i][j]
+                    }
+
+                    const td = document.createElement("td")
+                    td.style.cssText = style;
+                    td.appendChild(htmlElem)
+                    tr.appendChild(td)
+                } catch (e) {
+                    console.error("Could not render an element in a table due to", e, row[j])
+                }
             }
             table.appendChild(tr)
         }

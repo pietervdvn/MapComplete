@@ -1,0 +1,10 @@
+key,image,description:en,countryWhitelist,commonVoltages,commonCurrents,commonOutputs,description:nl
+socket:schuko,CEE7_4F.svg,<b>Schuko wall plug</b> without ground pin (CEE7/4 type F),be;fr;ma;tn;pl;cs;sk;mo,230,16,3.6 kW,<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)
+socket:typee,TypeE.svg,<b>European wall plug</b> with ground pin (CEE7/4 type E),,230,16,3 kW;22 kW;,<b>Europese stekker</b> met aardingspin (CEE7/4 type E)
+socket:chademo,Chademo_type4.svg,<b>Chademo</b>,,500,120,50 kW,
+socket:type1_cable,Type1_J1772.svg,<b>Type 1 with cable</b> (J1772),,200;240,32,3.7 kW;7 kW,<b>Type 1 met kabel</b> (J1772)
+socket:type1,Type1_J1772.svg,<b>Type 1 <i>without</i> cable</b> (J1772),,200;240,32,3.7 kW;6.6 kW;7 kW;7.2 kW,<b>Type 1 <i>zonder</i> kabel</b> (J1772)
+socket:type1_combo,Type1-ccs.svg,<b>Type 1 CCS</b> (aka Type 1 Combo),,400;1000,50;125,50 kW;62.5 kW;150 kW;350 kW;,
+socket:tesla_supercharger,Tesla-hpwc-model-s.svg,<b>Tesla Supercharger</b>,,480,125;350,120 kW;150 kW;250 kW,
+socket:type2,Type2_socket.svg,<b>Type 2</b> (mennekes),,230;400,16;32,11 kW;22 kW,
+socket:type2_combo,Type2_CCS.svg,<b>Type 2 CCS</b> (mennekes),,500;920,125;350,50 kW,

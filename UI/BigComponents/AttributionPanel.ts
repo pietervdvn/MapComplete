@@ -121,7 +121,7 @@ export default class AttributionPanel extends Combine {
                         })
                     ]
                 ).SetClass("block m-2")
-                    
+
             ]).SetClass("flex flex-col").SetStyle("width: calc(100% - 50px - 0.5em); min-width: 12rem;")
         ]).SetClass("flex flex-wrap border-b border-gray-300 m-2 border-box")
     }

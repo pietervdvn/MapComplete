@@ -30,7 +30,8 @@
       "id": "shadow",
       "source": {
         "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/master/assets/themes/speelplekken/shadow.geojson",
-        "osmTags": "shadow=yes"
+        "osmTags": "shadow=yes",
+        "isOsmCache": false
       },
       "color": "#444444",
       "width": {
@@ -49,7 +50,7 @@
         "minzoom": 12,
         "calculatedTags": [
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
-          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
+          "_video:id= feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },
@@ -66,7 +67,7 @@
         },
         "calculatedTags": [
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
-          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
+          "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },
@@ -83,7 +84,7 @@
         },
         "calculatedTags": [
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
-          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
+          "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },
@@ -100,7 +101,7 @@
         },
         "calculatedTags": [
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
-          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
+          "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },
@@ -116,7 +117,7 @@
         },
         "calculatedTags": [
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
-          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
+          "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },

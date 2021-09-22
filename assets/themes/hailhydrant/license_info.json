@@ -1,69 +1,5 @@
 [
   {
-    "authors": [
-      "http://jaanos.deviantart.com/"
-    ],
-    "path": "hydrant.svg",
-    "license": "GPL",
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Hydrant.svg"
-    ]
-  },
-  {
-    "authors": [
-      "Twemoji Project"
-    ],
-    "path": "Twemoji12_1f9ef.svg",
-    "license": "CC-BY 4.0",
-    "sources": [
-      "https://upload.wikimedia.org/wikipedia/commons/9/9b/Twemoji12_1f9ef.svg",
-      "https://twemoji.twitter.com/"
-    ]
-  },
-  {
-    "path": "hydrant_pillar.svg",
-    "license": "CC-BY-SA 4.0",
-    "authors": [
-      "M!dgard"
-    ],
-    "sources": [
-      "https://www.openstreetmap.org/user/M!dgard",
-      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_pillar.svg"
-    ]
-  },
-  {
-    "path": "hydrant_unknown.svg",
-    "license": "CC-BY-SA 4.0",
-    "authors": [
-      "M!dgard"
-    ],
-    "sources": [
-      "https://www.openstreetmap.org/user/M!dgard",
-      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_unknown.svg"
-    ]
-  },
-  {
-    "path": "hydrant_underground.svg",
-    "license": "CC-BY-SA 4.0",
-    "authors": [
-      "M!dgard"
-    ],
-    "sources": [
-      "https://www.openstreetmap.org/user/M!dgard",
-      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_underground.svg"
-    ]
-  },
-  {
-    "path": "hydrant.svg",
-    "license": "CC-BY-SA 4.0",
-    "authors": [
-      "GOwin"
-    ],
-    "sources": [
-      "https://raw.githubusercontent.com/mapamore/MapComplete/master/assets/themes/hailhydrant/hydrant.svg"
-    ]
-  },
-  {
     "path": "Twemoji12_1f692.svg",
     "license": "CC-BY 4.0",
     "authors": [
@@ -71,6 +7,17 @@
     ],
     "sources": [
       "https://upload.wikimedia.org/wikipedia/commons/1/19/Twemoji12_1f692.svg",
+      "https://twemoji.twitter.com/"
+    ]
+  },
+  {
+    "path": "Twemoji12_1f9ef.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji Project"
+    ],
+    "sources": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9b/Twemoji12_1f9ef.svg",
       "https://twemoji.twitter.com/"
     ]
   },
@@ -97,11 +44,64 @@
     ]
   },
   {
+    "path": "hydrant.svg",
+    "license": "GPL",
+    "authors": [
+      "http://jaanos.deviantart.com/"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Hydrant.svg"
+    ]
+  },
+  {
+    "path": "hydrant.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "GOwin"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/mapamore/MapComplete/master/assets/themes/hailhydrant/hydrant.svg"
+    ]
+  },
+  {
+    "path": "hydrant_pillar.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "M!dgard"
+    ],
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard",
+      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_pillar.svg"
+    ]
+  },
+  {
+    "path": "hydrant_underground.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "M!dgard"
+    ],
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard",
+      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_underground.svg"
+    ]
+  },
+  {
+    "path": "hydrant_unknown.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "M!dgard"
+    ],
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard",
+      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_unknown.svg"
+    ]
+  },
+  {
+    "path": "logo.svg",
+    "license": "CC-BY-SA 4.0",
     "authors": [
       "Erwin Olario"
     ],
-    "path": "logo.svg",
-    "license": "CC-BY-SA 4.0",
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Hailhydrant-logo.svg"
     ]

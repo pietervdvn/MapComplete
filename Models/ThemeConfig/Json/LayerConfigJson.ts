@@ -2,6 +2,7 @@ import {AndOrTagConfigJson} from "./TagConfigJson";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import FilterConfigJson from "./FilterConfigJson";
 import {DeleteConfigJson} from "./DeleteConfigJson";
+import UnitConfigJson from "./UnitConfigJson";
 
 /**
  * Configuration for a single layer
@@ -256,7 +257,7 @@ export interface LayerConfigJson {
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
      *
      */
-    tagRenderings?: (string | TagRenderingConfigJson) [],
+    tagRenderings?: (string | {builtin: string, override: any} | TagRenderingConfigJson) [],
 
 
     /**
@@ -316,5 +317,65 @@ export interface LayerConfigJson {
      * IF set, a 'split this road' button is shown
      */
     allowSplit?: boolean
+
+    /**
+     * In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)
+     *
+     * Sometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)
+     *
+     * This brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)
+     *
+     * Not only do we want to write consistent data to OSM, we also want to present this consistently to the user.
+     * This is handled by defining units.
+     *
+     * # Rendering
+     *
+     * To render a value with long (human) denomination, use {canonical(key)}
+     *
+     * # Usage
+     *
+     * First of all, you define which keys have units applied, for example:
+     *
+     * ```
+     * units: [
+     *  appliesTo: ["maxspeed", "maxspeed:hgv", "maxspeed:bus"]
+     *  applicableUnits: [
+     *      ...
+     *  ]
+     * ]
+     * ```
+     *
+     * ApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:
+     *
+     * ```
+     * applicableUnits: [
+     * {
+     *     canonicalDenomination: "km/h",
+     *     alternativeDenomination: ["km/u", "kmh", "kph"]
+     *     default: true,
+     *     human: {
+     *         en: "kilometer/hour",
+     *         nl: "kilometer/uur"
+     *     },
+     *     humanShort: {
+     *         en: "km/h",
+     *         nl: "km/u"
+     *     }
+     * },
+     * {
+     *     canoncialDenomination: "mph",
+     *     ... similar for miles an hour ...
+     * }
+     * ]
+     * ```
+     *
+     *
+     * If this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:
+     * every value will be parsed and the canonical extension will be added add presented to the other parts of the code.
+     *
+     * Also, if a freeform text field is used, an extra dropdown with applicable denominations will be given
+     *
+     */
+    units?: UnitConfigJson[]
 
 }

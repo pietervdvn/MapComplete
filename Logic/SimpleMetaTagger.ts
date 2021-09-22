@@ -83,7 +83,7 @@ export default class SimpleMetaTagger {
 
         },
         (feature => {
-            const units = State.state?.layoutToUse?.data?.units ?? [];
+            const units = Utils.NoNull([].concat(State.state?.layoutToUse?.data?.layers?.map(layer => layer.units ?? [])));
             let rewritten = false;
             for (const key in feature.properties) {
                 if (!feature.properties.hasOwnProperty(key)) {
@@ -96,7 +96,7 @@ export default class SimpleMetaTagger {
                     const value = feature.properties[key]
                     const [, denomination] = unit.findDenomination(value)
                     let canonical = denomination?.canonicalValue(value) ?? undefined;
-                    if(canonical === value){
+                    if (canonical === value) {
                         break;
                     }
                     console.log("Rewritten ", key, ` from '${value}' into '${canonical}'`)
@@ -110,7 +110,7 @@ export default class SimpleMetaTagger {
                 }
 
             }
-            if(rewritten){
+            if (rewritten) {
                 State.state.allElements.getEventSourceById(feature.id).ping();
             }
         })

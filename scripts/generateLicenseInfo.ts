@@ -1,5 +1,5 @@
 import {Utils} from "../Utils";
-import {lstatSync, readdirSync, readFileSync, writeFileSync, unlinkSync, existsSync, mkdir, mkdirSync} from "fs";
+import {existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync} from "fs";
 import SmallLicense from "../Models/smallLicense";
 import ScriptUtils from "./ScriptUtils";
 
@@ -65,12 +65,6 @@ function missingLicenseInfos(licenseInfos: SmallLicense[], allIcons: string[]) {
 const prompt = require('prompt-sync')();
 
 const knownLicenses = new Map<string, SmallLicense>()
-knownLicenses.set("cf", {
-    authors: ["Pieter Fiers", "Thibault Declercq", "Pierre Barban", "Joost Schouppe", "Pieter Vander Vennet"],
-    path: undefined,
-    license: "CC-BY-SA",
-    sources: ["https://osoc.be/editions/2020/cyclofix"]
-})
 knownLicenses.set("me", {
     authors: ["Pieter Vander Vennet"],
     path: undefined,
@@ -92,19 +86,6 @@ knownLicenses.set("na", {
     sources: []
 })
 
-knownLicenses.set("chrn", {
-    authors: ["Christian Neumann"],
-    path: undefined,
-    license: "CC-BY-SA 3.0",
-    sources: ["https://utopicode.de/", "https://github.com/chrneumann/MapComplete"]
-})
-
-knownLicenses.set("klimaan", {
-    authors: ["Klimaan VZW"],
-    path: undefined,
-    license: "CC-BY-SA 3.0",
-    sources: ["https://klimaan.be/"]
-})
 
 function promptLicenseFor(path): SmallLicense {
     console.log("License abbreviations:")
@@ -162,10 +143,18 @@ function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
         if (!perDirectory.has(dir)) {
             perDirectory.set(dir, [])
         }
-        perDirectory.get(dir).push(license)
+        const cloned: SmallLicense = {
+            // We make a clone to force the order of the keys
+            path: license.path,
+            license: license.license,
+            authors: license.authors,
+            sources: license.sources
+        }
+        perDirectory.get(dir).push(cloned)
     }
 
     perDirectory.forEach((licenses, dir) => {
+        licenses.sort((a, b) => a.path < b.path ? -1 : 1)
         writeFileSync(dir + "/license_info.json", JSON.stringify(licenses, null, 2))
     })
 

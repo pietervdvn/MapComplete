@@ -1,6 +1,6 @@
 import BaseUIElement from "./BaseUIElement";
 
-export abstract class UIElement extends BaseUIElement{
+export abstract class UIElement extends BaseUIElement {
 
 
     /**
@@ -24,7 +24,7 @@ export abstract class UIElement extends BaseUIElement{
         }
         return el;
     }
-    
+
     protected abstract InnerRender(): string | BaseUIElement;
 
 }

@@ -19,7 +19,7 @@ export default class OsmObjectSpec extends T {
 
                         timeout--;
                     }
-                    if(!downloaded){
+                    if (!downloaded) {
                         throw "Timeout: referencing ways not found"
                     }
                 }

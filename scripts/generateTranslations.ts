@@ -2,7 +2,6 @@ import * as fs from "fs";
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
-import {Layer} from "leaflet";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
@@ -92,8 +91,9 @@ class TranslationPart {
 
     toJson(neededLanguage?: string): string {
         const parts = []
-
-        for (let key of Array.from(this.contents.keys())) {
+        let keys = Array.from(this.contents.keys())
+        keys = keys.sort()
+        for (let key of keys) {
             let value = this.contents.get(key);
 
             if (typeof value === "string") {
@@ -213,7 +213,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 }
 
 function MergeTranslation(source: any, target: any, language: string, context: string = "") {
-   
+
     for (const key in source) {
         if (!source.hasOwnProperty(key)) {
             continue
@@ -221,21 +221,21 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         const sourceV = source[key];
         const targetV = target[key]
         if (typeof sourceV === "string") {
-            if(targetV === undefined){
-                if(typeof target === "string"){
-                    throw "Trying to merge a translation into a fixed string at "+context+" for key "+key;
+            if (targetV === undefined) {
+                if (typeof target === "string") {
+                    throw "Trying to merge a translation into a fixed string at " + context + " for key " + key;
                 }
                 target[key] = source[key];
                 continue;
             }
-            
+
             if (targetV[language] === sourceV) {
                 // Already the same
                 continue;
             }
 
             if (typeof targetV === "string") {
-                throw `At context ${context}: Could not add a translation. The target object has a string at the given path, whereas the translation contains an object.\n    String at target: ${targetV}\n    Object at translation source: ${JSON.stringify(sourceV)}`
+                throw `At context ${context}: Could not add a translation in language ${language}. The target object has a string at the given path, whereas the translation contains an object.\n    String at target: ${targetV}\n    Object at translation source: ${JSON.stringify(sourceV)}`
             }
 
             targetV[language] = sourceV;
@@ -264,7 +264,7 @@ function mergeLayerTranslation(layerConfig: { id: string }, path: string, transl
     const id = layerConfig.id;
     translationFiles.forEach((translations, lang) => {
         const translationsForLayer = translations[id]
-        MergeTranslation(translationsForLayer, layerConfig, lang, path+":"+id)
+        MergeTranslation(translationsForLayer, layerConfig, lang, path + ":" + id)
     })
 
 }

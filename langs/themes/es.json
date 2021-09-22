@@ -1,22 +1,14 @@
 {
     "aed": {
-        "title": "Mapa abierto de desfibriladores (DEA)",
-        "description": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos"
+        "description": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
+        "title": "Mapa abierto de desfibriladores (DEA)"
     },
     "artwork": {
         "description": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo",
         "layers": {
             "0": {
-                "name": "Obras de arte",
-                "title": {
-                    "render": "Obra de arte",
-                    "mappings": {
-                        "0": {
-                            "then": "Obra de arte <i>{nombre}</i>"
-                        }
-                    }
-                },
                 "description": "Diversas piezas de obras de arte",
+                "name": "Obras de arte",
                 "presets": {
                     "0": {
                         "title": "Obra de arte"
@@ -24,9 +16,17 @@
                 },
                 "tagRenderings": {
                     "1": {
-                        "render": "Esta es un {artwork_type}",
-                        "question": "Cuál es el tipo de esta obra de arte?"
+                        "question": "Cuál es el tipo de esta obra de arte?",
+                        "render": "Esta es un {artwork_type}"
                     }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Obra de arte <i>{nombre}</i>"
+                        }
+                    },
+                    "render": "Obra de arte"
                 }
             }
         }
@@ -34,5 +34,8 @@
     "personal": {
         "title": "Interficie personal",
         "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies"
+    },
+    "ghostbikes": {
+        "title": "Bicicleta blanca"
     }
 }

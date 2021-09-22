@@ -15,6 +15,7 @@ import BaseUIElement from "../BaseUIElement";
 import LengthInput from "./LengthInput";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {Unit} from "../../Models/Unit";
+import {FixedInputElement} from "./FixedInputElement";
 
 interface TextFieldDef {
     name: string,
@@ -95,7 +96,7 @@ export default class ValidatedTextField {
                     )
                 }
                 const di = new DirectionInput(options.mapBackgroundLayer, location, value)
-                di.SetStyle("height: 20rem;");
+                di.SetStyle("max-width: 25rem;");
 
                 return di;
             },
@@ -118,15 +119,15 @@ export default class ValidatedTextField {
                         throw "Invalid zoom level for argument at 'length'-input"
                     }
                 }
-                
+
                 // Bit of a hack: we project the centerpoint to the closes point on the road - if available
-                if(options.feature !== undefined && options.feature.geometry.type !== "Point"){
+                if (options.feature !== undefined && options.feature.geometry.type !== "Point") {
                     const lonlat: [number, number] = [...options.location]
                     lonlat.reverse()
-                    options.location = <[number,number]> GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
+                    options.location = <[number, number]>GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
                     options.location.reverse()
                 }
-                
+
                 const location = new UIEventSource<Loc>({
                     lat: options.location[0],
                     lon: options.location[1],
@@ -171,7 +172,7 @@ export default class ValidatedTextField {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))
             },
-            undefined,
+            str => "" + Number(str),
             undefined,
             "numeric"),
         ValidatedTextField.tp(
@@ -181,7 +182,7 @@ export default class ValidatedTextField {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0
             },
-            undefined,
+            str => "" + Number(str),
             undefined,
             "numeric"),
         ValidatedTextField.tp(
@@ -191,21 +192,21 @@ export default class ValidatedTextField {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0
             },
-            undefined,
+            str => "" + Number(str),
             undefined,
             "numeric"),
         ValidatedTextField.tp(
             "float",
             "A decimal",
-            (str) => !isNaN(Number(str)),
-            undefined,
+            (str) => !isNaN(Number(str)) && !str.endsWith(".") && !str.endsWith(","),
+            str => "" + Number(str),
             undefined,
             "decimal"),
         ValidatedTextField.tp(
             "pfloat",
             "A positive decimal (incl zero)",
-            (str) => !isNaN(Number(str)) && Number(str) >= 0,
-            undefined,
+            (str) => !isNaN(Number(str)) && Number(str) >= 0 && !str.endsWith(".") && !str.endsWith(","),
+            str => "" + Number(str),
             undefined,
             "decimal"),
         ValidatedTextField.tp(
@@ -323,10 +324,29 @@ export default class ValidatedTextField {
         } else {
             isValid = isValidTp;
         }
-        options.isValid = isValid;
+
+        if (options.unit !== undefined && isValid !== undefined) {
+            // Reformatting is handled by the unit in this case
+            options.isValid = str => {
+                const denom = options.unit.findDenomination(str);
+                if (denom === undefined) {
+                    return false;
+                }
+                const stripped = denom[0]
+                console.log("Is valid? ", str, "stripped: ", stripped, "isValid:", isValid(stripped))
+                return isValid(stripped)
+            }
+        } else {
+            options.isValid = isValid;
+
+        }
+
+
         options.inputMode = tp.inputmode;
+
+
         let input: InputElement<string> = new TextField(options);
-        if (tp.reformat) {
+        if (tp.reformat && options.unit === undefined) {
             input.GetValue().addCallbackAndRun(str => {
                 if (!options.isValid(str, options.country)) {
                     return;
@@ -341,32 +361,45 @@ export default class ValidatedTextField {
             // This implies:
             // We have to create a dropdown with applicable denominations, and fuse those values
             const unit = options.unit
-            const unitDropDown = new DropDown("",
-                unit.denominations.map(denom => {
-                    return {
-                        shown: denom.human,
-                        value: denom
-                    }
-                })
-            )
+            
+            
+            const isSingular = input.GetValue().map(str => str?.trim() === "1")
+
+            const unitDropDown =
+                unit.denominations.length === 1 ?
+                    new FixedInputElement( unit.denominations[0].getToggledHuman(isSingular), unit.denominations[0])
+                    : new DropDown("",
+                        unit.denominations.map(denom => {
+                            return {
+                                shown: denom.getToggledHuman(isSingular),
+                                value: denom
+                            }
+                        })
+                    )
             unitDropDown.GetValue().setData(unit.defaultDenom)
             unitDropDown.SetClass("w-min")
-
+            
+            const fixedDenom =  unit.denominations.length === 1 ? unit.denominations[0] : undefined
             input = new CombinedInputElement(
                 input,
                 unitDropDown,
                 // combine the value from the textfield and the dropdown into the resulting value that should go into OSM
-                (text, denom) => denom?.canonicalValue(text, true) ?? undefined,
+                (text, denom) => {
+                    if(denom === undefined){
+                        return text
+                    }
+                    return denom?.canonicalValue(text, true) 
+                },
                 (valueWithDenom: string) => {
                     // Take the value from OSM and feed it into the textfield and the dropdown
                     const withDenom = unit.findDenomination(valueWithDenom);
                     if (withDenom === undefined) {
-                        // Not a valid value at all - we give it undefined and leave the details up to the other elements
-                        return [undefined, undefined]
+                        // Not a valid value at all - we give it undefined and leave the details up to the other elements (but we keep the previous denomination)
+                        return [undefined, fixedDenom]
                     }
                     const [strippedText, denom] = withDenom
                     if (strippedText === undefined) {
-                        return [undefined, undefined]
+                        return [undefined, fixedDenom]
                     }
                     return [strippedText, denom]
                 }
@@ -378,11 +411,11 @@ export default class ValidatedTextField {
                 mapBackgroundLayer: options.mapBackgroundLayer,
                 args: options.args,
                 feature: options.feature
-            })
+            }).SetClass("block")
             input = new CombinedInputElement(input, helper,
                 (a, _) => a, // We can ignore b, as they are linked earlier
                 a => [a, a]
-            );
+            ).SetClass("block w-full");
         }
         return input;
     }

@@ -24,9 +24,9 @@ export default class CenterMessageBox extends VariableUiElement {
             },
             [updater.timeout, updater.sufficientlyZoomed, state.locationControl]
         )
-        
+
         super(message.map(toShow => toShow.el))
-        
+
         this.SetClass("block " +
             "rounded-3xl bg-white text-xl font-bold text-center pointer-events-none p-4")
         this.SetStyle("transition: opacity 750ms linear")

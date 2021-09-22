@@ -18,7 +18,8 @@ import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import FilteredLayer from "../../Models/FilteredLayer";
+import {And} from "../../Logic/Tags/And";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -32,10 +33,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 interface PresetInfo extends PresetConfig {
     name: string | BaseUIElement,
     icon: () => BaseUIElement,
-    layerToAddTo: {
-        layerDef: LayerConfig,
-        isDisplayed: UIEventSource<boolean>
-    }
+    layerToAddTo: FilteredLayer
 }
 
 export default class SimpleAddUI extends Toggle {
@@ -84,7 +82,7 @@ export default class SimpleAddUI extends Toggle {
                                 createNewPoint(tags, location, undefined)
                             } else {
                                 OsmObject.DownloadObject(snapOntoWayId).addCallbackAndRunD(way => {
-                                    createNewPoint(tags, location,<OsmWay> way)
+                                    createNewPoint(tags, location, <OsmWay>way)
                                     return true;
                                 })
                             }
@@ -189,14 +187,41 @@ export default class SimpleAddUI extends Toggle {
                     Translations.t.general.add.openLayerControl
                 ])
             )
-
                 .onClick(() => State.state.filterIsOpened.setData(true))
+
 
         const openLayerOrConfirm = new Toggle(
             confirmButton,
             openLayerControl,
             preset.layerToAddTo.isDisplayed
         )
+
+        const disableFilter = new SubtleButton(
+            new Combine([
+                Svg.filter_ui().SetClass("absolute w-full"),
+                Svg.cross_bottom_right_svg().SetClass("absolute red-svg")
+            ]).SetClass("relative"),
+            new Combine(
+                [
+                    Translations.t.general.add.disableFiltersExplanation.Clone(),
+                    Translations.t.general.add.disableFilters.Clone().SetClass("text-xl")
+                ]
+            ).SetClass("flex flex-col")
+        ).onClick(() => {
+            preset.layerToAddTo.appliedFilters.setData(new And([]))
+            cancel()
+        })
+
+        const disableFiltersOrConfirm = new Toggle(
+            openLayerOrConfirm,
+            disableFilter,
+            preset.layerToAddTo.appliedFilters.map(filters => {
+                console.log("Current filters are ", filters)
+                return filters === undefined || filters.normalize().and.length === 0;
+            })
+        )
+
+
         const tagInfo = SimpleAddUI.CreateTagInfoFor(preset);
 
         const cancelButton = new SubtleButton(Svg.close_ui(),
@@ -204,10 +229,10 @@ export default class SimpleAddUI extends Toggle {
         ).onClick(cancel)
 
         return new Combine([
-            Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
+            // Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
             State.state.osmConnection.userDetails.data.dryRun ?
                 Translations.t.general.testing.Clone().SetClass("alert") : undefined,
-            openLayerOrConfirm,
+            disableFiltersOrConfirm,
             cancelButton,
             preset.description,
             tagInfo

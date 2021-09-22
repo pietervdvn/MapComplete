@@ -1,77 +1,77 @@
 [
   {
+    "path": "MapComplete_Screenshot.png",
+    "license": "GPL3",
     "authors": [
       "Pietervdvn"
     ],
-    "path": "MapComplete_Screenshot.png",
-    "license": "GPL3",
     "sources": [
       "https://mapcomplete.osm.be/bookcases"
     ]
   },
   {
-    "authors": [
-      "pietervdvn"
-    ],
-    "path": "SocialImageSmall.png",
-    "license": "CC-BY-SA 4.0",
-    "sources": []
-  },
-  {
+    "path": "SocialImage.png",
+    "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "path": "SocialImage.png",
-    "license": "CC0",
     "sources": []
   },
   {
+    "path": "SocialImageSmall.png",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "pietervdvn"
+    ],
+    "sources": []
+  },
+  {
+    "path": "generic_osm_background.png",
+    "license": "CC-BY-SA",
     "authors": [
       "OpenStreetMap"
     ],
-    "path": "generic_osm_background.png",
-    "license": "CC-BY-SA",
     "sources": [
       "https://www.OpenStreetMap.org"
     ]
   },
   {
+    "path": "mangrove_logo.png",
+    "license": "logo; All rights reserved",
     "authors": [
       "Mangrove Reviews"
     ],
-    "path": "mangrove_logo.png",
-    "license": "logo; All rights reserved",
     "sources": [
       "https://mangrove.reviews/"
     ]
   },
   {
+    "path": "social_image_front.png",
+    "license": "CC-BY-SA",
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "path": "social_image_front.png",
-    "license": "CC-BY-SA",
     "sources": []
   },
   {
+    "path": "weblogo.png",
+    "license": "Logo; CC-BY-SA",
     "authors": [
       "Pieter Vander Vennet",
       " OpenStreetMap"
     ],
-    "path": "weblogo.png",
-    "license": "Logo; CC-BY-SA",
     "sources": [
       "https://mapcomplete.osm.be",
       " https://www.openstreetmap.org"
     ]
   },
   {
+    "path": "weblogo.svg",
+    "license": "Logo; CC-BY-SA",
     "authors": [
       "Pieter Vander Vennet",
       " OpenStreetMap"
     ],
-    "path": "weblogo.svg",
-    "license": "Logo; CC-BY-SA",
     "sources": [
       "https://mapcomplete.osm.be",
       " https://www.openstreetmap.org"

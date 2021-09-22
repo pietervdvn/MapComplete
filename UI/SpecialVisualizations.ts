@@ -56,10 +56,10 @@ export default class SpecialVisualizations {
                             if (!tags.hasOwnProperty(key)) {
                                 continue;
                             }
-                            parts.push([key , tags[key] ?? "<b>undefined</b>" ]);
+                            parts.push([key, tags[key] ?? "<b>undefined</b>"]);
                         }
                         return new Table(
-                            ["key","value"],
+                            ["key", "value"],
                             parts
                         )
                     })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
@@ -130,7 +130,7 @@ export default class SpecialVisualizations {
                                 // This is a list of values
                                 idList = JSON.parse(value)
                             }
-                            
+
                             for (const id of idList) {
                                 features.push({
                                     freshness: new Date(),
@@ -370,7 +370,8 @@ export default class SpecialVisualizations {
                                 if (value === undefined) {
                                     return undefined
                                 }
-                                const unit = state.layoutToUse.data.units.filter(unit => unit.isApplicableToKey(key))[0]
+                                const allUnits = [].concat(...state.layoutToUse.data.layers.map(lyr => lyr.units))
+                                const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
                                 if (unit === undefined) {
                                     return value;
                                 }
@@ -383,8 +384,9 @@ export default class SpecialVisualizations {
             }
 
         ]
-    
+
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
+
     private static GenHelpMessage() {
 
         const helpTexts =

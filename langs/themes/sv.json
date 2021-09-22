@@ -1,9 +1,12 @@
 {
     "aed": {
-        "title": "Öppna AED-karta",
-        "description": "På denna karta kan man hitta och markera närliggande defibrillatorer"
+        "description": "På denna karta kan man hitta och markera närliggande defibrillatorer",
+        "title": "Öppna AED-karta"
     },
     "artwork": {
         "title": "Öppen konstverkskarta"
+    },
+    "ghostbikes": {
+        "title": "Spökcykel"
     }
 }

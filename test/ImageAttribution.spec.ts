@@ -1,12 +1,11 @@
 import {Utils} from "../Utils";
-
-Utils.runningFromConsole = true;
 import {equal} from "assert";
 import T from "./TestHelper";
 import {Translation} from "../UI/i18n/Translation";
-import AllKnownLayers from "../Customizations/AllKnownLayers";
 import * as bike_repair_station from "../assets/layers/bike_repair_station/bike_repair_station.json"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+
+Utils.runningFromConsole = true;
 
 export default class ImageAttributionSpec extends T {
     constructor() {
@@ -15,7 +14,7 @@ export default class ImageAttributionSpec extends T {
                 [
                     "Should find all the images",
                     () => {
-                        const pumps: LayerConfig = new LayerConfig(bike_repair_station )
+                        const pumps: LayerConfig = new LayerConfig(bike_repair_station)
                         const images = pumps.ExtractImages();
                         const expectedValues = ['./assets/layers/bike_repair_station/repair_station.svg',
                             './assets/layers/bike_repair_station/repair_station_pump.svg',

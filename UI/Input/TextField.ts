@@ -66,7 +66,7 @@ export class TextField extends InputElement<string> {
 
 
         this.value.addCallbackAndRunD(value => {
-                // We leave the textfield as is in the case of undefined or null (handled by addCallbackAndRunD) - make sure we do not erase it!
+            // We leave the textfield as is in the case of undefined or null (handled by addCallbackAndRunD) - make sure we do not erase it!
             field["value"] = value;
             if (self.IsValid(value)) {
                 self.RemoveClass("invalid")

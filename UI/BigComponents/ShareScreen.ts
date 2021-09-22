@@ -23,7 +23,7 @@ export default class ShareScreen extends Combine {
 
         const optionCheckboxes: BaseUIElement[] = []
         const optionParts: (UIEventSource<string>)[] = [];
-        
+
         function check() {
             return Svg.checkmark_svg().SetStyle("width: 1.5em; display:inline-block;");
         }
@@ -48,7 +48,7 @@ export default class ShareScreen extends Combine {
             if (includeL) {
                 return [["z", currentLocation.data?.zoom], ["lat", currentLocation.data?.lat], ["lon", currentLocation.data?.lon]]
                     .filter(p => p[1] !== undefined)
-                    .map(p => p[0]+"="+p[1])
+                    .map(p => p[0] + "=" + p[1])
                     .join("&")
             } else {
                 return null;
@@ -56,7 +56,7 @@ export default class ShareScreen extends Combine {
         }, [currentLocation]));
 
 
-        function fLayerToParam(flayer: {isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig}) {
+        function fLayerToParam(flayer: { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }) {
             if (flayer.isDisplayed.data) {
                 return null; // Being displayed is the default
             }
@@ -123,12 +123,12 @@ export default class ShareScreen extends Combine {
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.isEnabled.map((isEn) => {
                 if (isEn) {
-                    if(swtch.reverse){
-                       return `${swtch.urlName}=true`
+                    if (swtch.reverse) {
+                        return `${swtch.urlName}=true`
                     }
                     return null;
                 } else {
-                    if(swtch.reverse){
+                    if (swtch.reverse) {
                         return null;
                     }
                     return `${swtch.urlName}=false`
@@ -178,9 +178,7 @@ export default class ShareScreen extends Combine {
         );
 
 
-     
-
-        let editLayout : BaseUIElement= new FixedUiElement("");
+        let editLayout: BaseUIElement = new FixedUiElement("");
         if ((layoutDefinition !== undefined && State.state?.osmConnection !== undefined)) {
             editLayout =
                 new VariableUiElement(
@@ -240,11 +238,11 @@ export default class ShareScreen extends Combine {
         });
 
 
-       super ([
+        super([
             editLayout,
             tr.intro.Clone(),
             link,
-           new VariableUiElement(linkStatus),
+            new VariableUiElement(linkStatus),
             tr.addToHomeScreen.Clone(),
             tr.embedIntro.Clone(),
             options,

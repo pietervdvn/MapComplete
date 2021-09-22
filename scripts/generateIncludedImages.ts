@@ -9,17 +9,17 @@ function genImages() {
     const allNames: string[] = [];
     for (const path of dir) {
 
-        if(path.endsWith("license_info.json")){
+        if (path.endsWith("license_info.json")) {
             continue;
         }
-        
+
         if (!path.endsWith(".svg")) {
             throw "Non-svg file detected in the svg files: " + path;
         }
 
         const svg = fs.readFileSync("./assets/svg/" + path, "utf-8")
             .replace(/<\?xml.*?>/, "")
-            .replace(/fill: ?none;/g,"fill: none !important;") // This is such a brittle hack...
+            .replace(/fill: ?none;/g, "fill: none !important;") // This is such a brittle hack...
             .replace(/\n/g, " ")
             .replace(/\r/g, "")
             .replace(/\\/g, "\\")
@@ -37,4 +37,5 @@ function genImages() {
     fs.writeFileSync("Svg.ts", module);
     console.log("Done")
 }
+
 genImages()

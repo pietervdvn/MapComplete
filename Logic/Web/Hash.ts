@@ -48,7 +48,7 @@ export default class Hash {
             }
             hash.setData(newValue)
         }
-        
+
         window.addEventListener('popstate', _ => {
             let newValue = window.location.hash.substr(1);
             if (newValue === "") {

@@ -1,0 +1,208 @@
+{
+  "id": "hackerspaces",
+  "title": {
+    "en": "Hackerspaces"
+  },
+  "shortDescription": {
+    "en": "A map of hackerspaces"
+  },
+  "description": {
+    "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/hackerspaces/glider.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "hackerspaces",
+      "name": {
+        "en": "Hackerspace"
+      },
+      "minzoom": 8,
+      "title": {
+        "render": {
+          "en": "Hackerspace"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name~*"
+              ]
+            },
+            "then": {
+              "en": " {name}"
+            }
+          }
+        ]
+      },
+      "description": {
+        "en": "Hackerspace"
+      },
+      "tagRenderings": [
+        {
+          "question": {
+            "en": "Is this a hackerspace or a makerspace?"
+          },
+          "mappings": [
+            {
+              "if": "hackerspace=makerspace",
+              "then": {
+                "en": "This is a makerspace"
+              }
+            },
+            {
+              "if": "hackerspace=",
+              "then": {
+                "en": "This is a traditional (software oriented) hackerspace"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "What is the name of this hackerspace?"
+          },
+          "render": {
+            "en": "This hackerspace is named <b>{name}</b>"
+          },
+          "freeform": {
+            "key": "name"
+          }
+        },
+        "website",
+        "email",
+        "phone",
+        {
+          "question": {
+            "en": "When is this hackerspace opened?"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours"
+          },
+          "render": {
+            "en": "{opening_hours_table()}"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "opening_hours=24/7"
+                ]
+              },
+              "then": {
+                "en": "Opened 24/7"
+              }
+            }
+          ]
+        },
+        "wheelchair-access",
+        {
+          "question": {
+            "en": "Does this hackerspace serve Club Mate?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "drink:club-mate=yes"
+                ]
+              },
+              "then": {
+                "en": "This hackerspace serves club mate"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "drink:club-mate=no"
+                ]
+              },
+              "then": {
+                "en": "This hackerspace is not worthy of the name hackerspace as it does not serve club mate"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "This hackerspace was founded at {start_date}"
+          },
+          "question": {
+            "en": "When was this hackerspace founded?"
+          },
+          "freeform": {
+            "key": "start_date",
+            "type": "date"
+          }
+        }
+      ],
+      "icon": {
+        "render": "./assets/themes/hackerspaces/glider.svg",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "hackerspace=makerspace"
+              ]
+            },
+            "then": {
+              "en": "./assets/themes/hackerspaces/led.png"
+            }
+          }
+        ]
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "leisure=hackerspace"
+          ],
+          "title": {
+            "en": "Hackerspace"
+          },
+          "description": {
+            "en": "A hackerspace is an area where people interested in software gather"
+          }
+        },
+        {
+          "tags": [
+            "leisure=hackerspace",
+            "hackerspace=makerspace"
+          ],
+          "title": {
+            "en": "Makerspace"
+          },
+          "description": {
+            "en": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ..."
+          }
+        }
+      ],
+      "wayHandling": 2,
+      "source": {
+        "osmTags": {
+          "and": [
+            "leisure=hackerspace"
+          ]
+        }
+      }
+    }
+  ]
+}

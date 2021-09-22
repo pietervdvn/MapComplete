@@ -23,18 +23,18 @@ export class Changes {
 
     public readonly pendingChanges = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     private readonly isUploading = new UIEventSource(false);
-    
-    private readonly previouslyCreated : OsmObject[] = []
+
+    private readonly previouslyCreated: OsmObject[] = []
 
     constructor() {
     }
 
     private static createChangesetFor(csId: string,
-                                     allChanges: {
-                                         modifiedObjects: OsmObject[],
-                                         newObjects: OsmObject[],
-                                         deletedObjects: OsmObject[]
-                                     }): string {
+                                      allChanges: {
+                                          modifiedObjects: OsmObject[],
+                                          newObjects: OsmObject[],
+                                          deletedObjects: OsmObject[]
+                                      }): string {
 
         const changedElements = allChanges.modifiedObjects ?? []
         const newElements = allChanges.newObjects ?? []
@@ -70,6 +70,88 @@ export class Changes {
             .map(c => c.type + "/" + c.id))
     }
 
+    /**
+     * Returns a new ID and updates the value for the next ID
+     */
+    public getNewID() {
+        return Changes._nextId--;
+    }
+
+    /**
+     * Uploads all the pending changes in one go.
+     * Triggered by the 'PendingChangeUploader'-actor in Actors
+     */
+    public flushChanges(flushreason: string = undefined) {
+        if (this.pendingChanges.data.length === 0) {
+            return;
+        }
+
+        if (this.isUploading.data) {
+            console.log("Is already uploading... Abort")
+            return;
+        }
+
+
+        this.isUploading.setData(true)
+
+        console.log("Beginning upload... " + flushreason ?? "");
+        // At last, we build the changeset and upload
+        const self = this;
+        const pending = self.pendingChanges.data;
+        const neededIds = Changes.GetNeededIds(pending)
+        console.log("Needed ids", neededIds)
+        OsmObject.DownloadAll(neededIds, true).addCallbackAndRunD(osmObjects => {
+            console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
+            try {
+
+
+                const changes: {
+                    newObjects: OsmObject[],
+                    modifiedObjects: OsmObject[]
+                    deletedObjects: OsmObject[]
+
+                } = self.CreateChangesetObjects(pending, osmObjects)
+                if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
+                    console.log("No changes to be made")
+                    self.pendingChanges.setData([])
+                    self.isUploading.setData(false)
+                    return true; // Unregister the callback
+                }
+
+
+                State.state.osmConnection.UploadChangeset(
+                    State.state.layoutToUse.data,
+                    State.state.allElements,
+                    (csId) => Changes.createChangesetFor(csId, changes),
+                    () => {
+                        console.log("Upload successfull!")
+                        self.pendingChanges.setData([]);
+                        self.isUploading.setData(false)
+                    },
+                    () => {
+                        console.log("Upload failed - trying again later")
+                        return self.isUploading.setData(false);
+                    } // Failed - mark to try again
+                )
+            } catch (e) {
+                console.error("Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those", e)
+                self.pendingChanges.setData([])
+                self.isUploading.setData(false)
+            }
+            return true;
+
+        });
+
+
+    }
+
+    public applyAction(action: OsmChangeAction) {
+        const changes = action.Perform(this)
+        console.log("Received changes:", changes)
+        this.pendingChanges.data.push(...changes);
+        this.pendingChanges.ping();
+    }
+
     private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
         newObjects: OsmObject[],
         modifiedObjects: OsmObject[]
@@ -85,7 +167,7 @@ export class Changes {
         }
 
         for (const o of this.previouslyCreated) {
-            objects.set(o.type + "/" + o.id, o) 
+            objects.set(o.type + "/" + o.id, o)
             states.set(o.type + "/" + o.id, "unchanged")
         }
 
@@ -93,8 +175,8 @@ export class Changes {
         for (const change of changes) {
             const id = change.type + "/" + change.id
             if (!objects.has(id)) {
-                if(change.id >= 0){
-                    throw "Did not get an object that should be known: "+id
+                if (change.id >= 0) {
+                    throw "Did not get an object that should be known: " + id
                 }
                 // This is a new object that should be created
                 states.set(id, "created")
@@ -189,7 +271,7 @@ export class Changes {
                         break;
 
                 }
-               
+
             }
 
             if (changed && state === "unchanged") {
@@ -203,7 +285,7 @@ export class Changes {
             modifiedObjects: [],
             deletedObjects: []
         }
-        
+
         objects.forEach((v, id) => {
 
             const state = states.get(id)
@@ -220,87 +302,5 @@ export class Changes {
         })
 
         return result
-    }
-
-    /**
-     * Returns a new ID and updates the value for the next ID
-     */
-    public getNewID() {
-        return Changes._nextId--;
-    }
-
-    /**
-     * Uploads all the pending changes in one go.
-     * Triggered by the 'PendingChangeUploader'-actor in Actors
-     */
-    public flushChanges(flushreason: string = undefined) {
-        if (this.pendingChanges.data.length === 0) {
-            return;
-        }
-        
-        if (this.isUploading.data) {
-            console.log("Is already uploading... Abort")
-            return;
-        }
-        
-      
-        this.isUploading.setData(true)
-       
-        console.log("Beginning upload... "+flushreason ?? "");
-        // At last, we build the changeset and upload
-        const self = this;
-        const pending = self.pendingChanges.data;
-        const neededIds =  Changes.GetNeededIds(pending)
-        console.log("Needed ids", neededIds)
-        OsmObject.DownloadAll(neededIds, true).addCallbackAndRunD(osmObjects => {
-            console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
-            try{
-                
-        
-            const changes: {
-                newObjects: OsmObject[],
-                modifiedObjects: OsmObject[]
-                deletedObjects: OsmObject[]
-
-            }  = self.CreateChangesetObjects(pending, osmObjects)
-            if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
-                console.log("No changes to be made")
-                self.pendingChanges.setData([])
-                self.isUploading.setData(false)
-                return true; // Unregister the callback
-            }
-
-
-            State.state.osmConnection.UploadChangeset(
-                State.state.layoutToUse.data,
-                State.state.allElements,
-                (csId) => Changes.createChangesetFor(csId, changes),
-                () => {
-                    console.log("Upload successfull!")
-                    self.pendingChanges.setData([]);
-                    self.isUploading.setData(false)
-                },
-                () => {
-                    console.log("Upload failed - trying again later")
-                    return self.isUploading.setData(false);
-                } // Failed - mark to try again
-            )
-            }catch(e){
-                console.error("Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those", e)
-                self.pendingChanges.setData([])
-                self.isUploading.setData(false)
-            }
-            return true;
-
-        });
-
-
-    }
-
-    public applyAction(action: OsmChangeAction) {
-        const changes = action.Perform(this)
-        console.log("Received changes:", changes)
-        this.pendingChanges.data.push(...changes);
-        this.pendingChanges.ping();
     }
 }

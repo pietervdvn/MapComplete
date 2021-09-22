@@ -95,16 +95,16 @@ export default class OpeningHoursInput extends InputElement<string> {
         ])
     }
 
-    protected InnerConstructElement(): HTMLElement {
-        return this._element.ConstructElement()
-    }
-
     GetValue(): UIEventSource<string> {
         return this._value;
     }
 
     IsValid(t: string): boolean {
         return true;
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+        return this._element.ConstructElement()
     }
 
 }

@@ -1,20 +1,9 @@
 {
     "undefined": {
-        "phone": {
-            "question": "Vad är telefonnumret till {name}?"
-        },
         "email": {
             "question": "Vad är e-postadressen till {name}?"
         },
-        "website": {
-            "question": "Vad är webbplatsen för {name}?"
-        },
-        "opening_hours": {
-            "question": "Vilka är öppettiderna för {name}?",
-            "render": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
-        },
         "level": {
-            "render": "Ligger på {level}:e våningen",
             "mappings": {
                 "0": {
                     "then": "Ligger under jorden"
@@ -23,9 +12,23 @@
                     "then": "Ligger på bottenvåningen"
                 },
                 "2": {
+                    "then": "Ligger på bottenvåningen"
+                },
+                "3": {
                     "then": "Ligger på första våningen"
                 }
-            }
+            },
+            "render": "Ligger på {level}:e våningen"
+        },
+        "opening_hours": {
+            "question": "Vilka är öppettiderna för {name}?",
+            "render": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
+        },
+        "phone": {
+            "question": "Vad är telefonnumret till {name}?"
+        },
+        "website": {
+            "question": "Vad är webbplatsen för {name}?"
         }
     }
 }

@@ -1,0 +1,43 @@
+{
+  "id": "toerisme_vlaanderen",
+  "credits": "Commissioned theme for <a href='https://www.toerismevlaanderen.be/'>Toerisme Vlaandere</a>",
+  "maintainer": "MapComplete",
+  "version": "0.0.1",
+  "language": [
+    "en",
+    "nl"
+  ],
+  "title": {
+    "nl": "Toeristisch relevante info"
+  },
+  "shortDescription": {
+    "nl": "Een kaart om toeristisch relevante info op aan te duiden"
+  },
+  "description": {
+    "nl": "Op deze kaart kan je info zien voor toeristen en zelf aanpasingen maken, zichtbaar voor iedereen"
+  },
+  "icon": "./assets/svg/star.svg",
+  "startZoom": 8,
+  "startLat": 50.8536,
+  "startLon": 4.433,
+  "widenFactor": 0.2,
+  "layers": [
+    {
+      "builtin": [
+        "food",
+        "cafe_pub"
+      ],
+      "override": {
+        "minzoom": 16
+      }
+    },
+    "charging_station",
+    "toilet",
+    "bench",
+    "waste_basket",
+    "bike_repair_station",
+    "binocular",
+    "observation_tower"
+  ],
+  "hideFromOverview": true
+}

@@ -1,5 +1,4 @@
 import {Utils} from "../Utils";
-
 Utils.runningFromConsole = true;
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import Locale from "../UI/i18n/Locale";
@@ -8,13 +7,14 @@ import {readFileSync, writeFileSync} from "fs";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
+
 /**
  * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used
  */
 
 const outputDirectory = "Docs/TagInfo"
 
-function generateTagOverview(kv: { k: string, v: string }, description: string) : {
+function generateTagOverview(kv: { k: string, v: string }, description: string): {
     key: string,
     description: string,
     value?: string
@@ -23,7 +23,7 @@ function generateTagOverview(kv: { k: string, v: string }, description: string) 
         // OSM tag key (required)
         key: kv.k,
         description: description,
-        value : undefined
+        value: undefined
     };
     if (kv.v !== undefined) {
         // OSM tag value (optional, if not supplied it means "all values")
@@ -34,12 +34,12 @@ function generateTagOverview(kv: { k: string, v: string }, description: string) 
 
 function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
 
-    if(layer.name === undefined){
+    if (layer.name === undefined) {
         return [] // Probably a duplicate or irrelevant layer
     }
-    
+
     const usedTags = layer.source.osmTags.asChange({})
-    const result : {
+    const result: {
         key: string,
         description: string,
         value?: string
@@ -101,7 +101,7 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
 
         }
     }
-    
+
     return result.filter(result => !result.key.startsWith("_"))
 }
 
@@ -147,7 +147,7 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
 
     const filename = "mapcomplete_" + layout.id
     console.log("Writing info about " + layout.id)
-    writeFileSync(`${outputDirectory}/${filename}.json`, JSON.stringify(themeInfo, null, " "))
+    writeFileSync(`${outputDirectory}/${filename}.json`, JSON.stringify(themeInfo, null, 2))
     return filename
 }
 
@@ -171,7 +171,6 @@ function generateProjectsOverview() {
     }
 
 }
-
 
 
 console.log("Creating taginfo project files")

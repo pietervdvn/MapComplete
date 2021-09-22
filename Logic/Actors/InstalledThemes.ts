@@ -6,7 +6,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class InstalledThemes {
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
-    
+
     constructor(osmConnection: OsmConnection) {
         this.installedThemes = osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: LayoutConfig, definition: string }[] = [];
@@ -25,10 +25,10 @@ export default class InstalledThemes {
                     }
                     try {
                         let layoutJson;
-                        try{
+                        try {
                             layoutJson = JSON.parse(atob(customLayout.data))
-                        }catch(e){
-                            layoutJson =  JSON.parse( Utils.UnMinify(LZString.decompressFromBase64(customLayout.data)))
+                        } catch (e) {
+                            layoutJson = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(customLayout.data)))
                         }
                         const layout = new LayoutConfig(layoutJson, false);
                         installedThemes.push({
@@ -43,7 +43,7 @@ export default class InstalledThemes {
             }
 
             InstalledThemes.DeleteInvalid(osmConnection, invalidThemes);
-            
+
             return installedThemes;
 
         });

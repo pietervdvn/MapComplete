@@ -1,16 +1,16 @@
 import BaseUIElement from "../BaseUIElement";
 import * as L from "leaflet";
+import {Map} from "leaflet";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
-import {Map} from "leaflet";
 import {Utils} from "../../Utils";
 
 export default class Minimap extends BaseUIElement {
 
     private static _nextId = 0;
-    public readonly leafletMap: UIEventSource<Map> = new UIEventSource<Map>(undefined)
+    public readonly leafletMap: UIEventSource<Map>
     private readonly _id: string;
     private readonly _background: UIEventSource<BaseLayer>;
     private readonly _location: UIEventSource<Loc>;
@@ -18,23 +18,31 @@ export default class Minimap extends BaseUIElement {
     private _allowMoving: boolean;
     private readonly _leafletoptions: any;
     private readonly _onFullyLoaded: (leaflet: L.Map) => void
+    private readonly _attribution: BaseUIElement | boolean;
+    private readonly _lastClickLocation: UIEventSource<{ lat: number; lon: number }>;
 
     constructor(options?: {
                     background?: UIEventSource<BaseLayer>,
                     location?: UIEventSource<Loc>,
                     allowMoving?: boolean,
                     leafletOptions?: any,
-                    onFullyLoaded?: (leaflet: L.Map) => void
+                    attribution?: BaseUIElement | boolean,
+                    onFullyLoaded?: (leaflet: L.Map) => void,
+                    leafletMap?: UIEventSource<Map>,
+                    lastClickLocation?: UIEventSource<{ lat: number, lon: number }>
                 }
     ) {
         super()
         options = options ?? {}
+        this.leafletMap = options.leafletMap ?? new UIEventSource<Map>(undefined)
         this._background = options?.background ?? new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
         this._location = options?.location ?? new UIEventSource<Loc>({lat: 0, lon: 0, zoom: 1})
         this._id = "minimap" + Minimap._nextId;
         this._allowMoving = options.allowMoving ?? true;
         this._leafletoptions = options.leafletOptions ?? {}
         this._onFullyLoaded = options.onFullyLoaded
+        this._attribution = options.attribution
+        this._lastClickLocation = options.lastClickLocation;
         Minimap._nextId++
 
     }
@@ -84,14 +92,14 @@ export default class Minimap extends BaseUIElement {
             zoom: location.data?.zoom ?? 2,
             layers: [currentLayer],
             zoomControl: false,
-            attributionControl: false,
+            attributionControl: this._attribution !== undefined,
             dragging: this._allowMoving,
             scrollWheelZoom: this._allowMoving,
             doubleClickZoom: this._allowMoving,
             keyboard: this._allowMoving,
             touchZoom: this._allowMoving,
             // Disabling this breaks the geojson layer - don't ask me why!  zoomAnimation: this._allowMoving,
-            fadeAnimation: this._allowMoving
+            fadeAnimation: this._allowMoving,
         }
 
         Utils.Merge(this._leafletoptions, options)
@@ -105,9 +113,22 @@ export default class Minimap extends BaseUIElement {
             })
         }
 
+        // Users are not allowed to zoom to the 'copies' on the left and the right, stuff goes wrong then
+        // We give a bit of leeway for people on the edges
+        // Also see: https://www.reddit.com/r/openstreetmap/comments/ih4zzc/mapcomplete_a_new_easytouse_editor/g31ubyv/
+
         map.setMaxBounds(
             [[-100, -200], [100, 200]]
         );
+
+        if (this._attribution !== undefined) {
+            if (this._attribution === true) {
+                map.attributionControl.setPrefix(false)
+            } else {
+                map.attributionControl.setPrefix(
+                    "<span id='leaflet-attribution'></span>");
+            }
+        }
 
         this._background.addCallbackAndRun(layer => {
             const newLayer = layer.layer()
@@ -123,6 +144,11 @@ export default class Minimap extends BaseUIElement {
                 })
             }
             map.addLayer(newLayer);
+            map.setMaxZoom(layer.max_zoom ?? map.getMaxZoom())
+            if (self._attribution !== true && self._attribution !== false) {
+                self._attribution?.AttachTo('leaflet-attribution')
+            }
+
         })
 
 
@@ -163,6 +189,19 @@ export default class Minimap extends BaseUIElement {
                 }
             })
 
+
+        if (this._lastClickLocation) {
+            const lastClickLocation = this._lastClickLocation
+            map.on("click", function (e) {
+                // @ts-ignore
+                lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng})
+            });
+
+            map.on("contextmenu", function (e) {
+                // @ts-ignore
+                lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng});
+            });
+        }
 
         this.leafletMap.setData(map)
     }

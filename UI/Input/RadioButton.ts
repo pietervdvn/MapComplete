@@ -25,6 +25,19 @@ export class RadioButton<T> extends InputElement<T> {
         this._dontStyle = options.dontStyle ?? false
     }
 
+    IsValid(t: T): boolean {
+        for (const inputElement of this._elements) {
+            if (inputElement.IsValid(t)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    GetValue(): UIEventSource<T> {
+        return this.value;
+    }
+
     protected InnerConstructElement(): HTMLElement {
         const elements = this._elements;
         const selectFirstAsDefault = this._selectFirstAsDefault;
@@ -164,19 +177,6 @@ export class RadioButton<T> extends InputElement<T> {
         this.SetClass("flex flex-col");
 
         return form;
-    }
-
-    IsValid(t: T): boolean {
-        for (const inputElement of this._elements) {
-            if (inputElement.IsValid(t)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    GetValue(): UIEventSource<T> {
-        return this.value;
     }
 
     /*

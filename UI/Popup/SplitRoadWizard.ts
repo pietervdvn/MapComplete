@@ -97,10 +97,10 @@ export default class SplitRoadWizard extends Toggle {
             let hasRun = false
             way.map(way => {
                 const partOf = partOfSrc.data
-                if(way === undefined || partOf === undefined){
+                if (way === undefined || partOf === undefined) {
                     return;
                 }
-                if(hasRun){
+                if (hasRun) {
                     return
                 }
                 hasRun = true
@@ -108,7 +108,7 @@ export default class SplitRoadWizard extends Toggle {
                     <OsmWay>way, way.asGeoJson(), partOf, splitPoints.data.map(ff => ff.feature)
                 )
                 State.state.changes.applyAction(splitAction)
-                
+
             }, [partOfSrc])
 
 

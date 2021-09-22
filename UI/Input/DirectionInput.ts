@@ -13,13 +13,12 @@ import Loc from "../../Models/Loc";
  */
 export default class DirectionInput extends InputElement<string> {
     public static constructMinimap: ((any) => BaseUIElement);
-    private readonly _location: UIEventSource<Loc>;
-
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _location: UIEventSource<Loc>;
     private readonly value: UIEventSource<string>;
     private background;
 
-    constructor(mapBackground: UIEventSource<any>, 
+    constructor(mapBackground: UIEventSource<any>,
                 location: UIEventSource<Loc>,
                 value?: UIEventSource<string>) {
         super();
@@ -49,13 +48,16 @@ export default class DirectionInput extends InputElement<string> {
         }
 
         const element = new Combine([
-             Svg.direction_stroke_svg().SetStyle(
+            Svg.direction_stroke_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
                 .SetClass("direction-svg relative")
-                 .SetStyle("z-index: 1000"),
-            map.SetClass("w-full h-full absolute top-0 left-O rounded-full overflow-hidden"),
+                .SetStyle("z-index: 1000"),
+            map.SetStyle(
+                `position: absolute;top: 0;left: 0;width: 100%;height: 100%;`)
+
         ])
-            .SetStyle("position:relative;display:block;width: min(100%, 25em); height: min(100% , 25em); background:white; border: 1px solid black; border-radius: 999em")
+            .SetStyle("width: min(100%, 25em); height: 0; padding-bottom: 100%") // A bit a weird CSS   , see https://stackoverflow.com/questions/13851940/pure-css-solution-square-elements#19448481
+            .SetClass("relative block bg-white border border-black overflow-hidden rounded-full")
             .ConstructElement()
 
 
@@ -67,6 +69,7 @@ export default class DirectionInput extends InputElement<string> {
 
         this.RegisterTriggers(element)
         element.style.overflow = "hidden"
+        element.style.display = "block"
 
         return element;
     }

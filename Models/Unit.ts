@@ -2,6 +2,7 @@ import BaseUIElement from "../UI/BaseUIElement";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import Combine from "../UI/Base/Combine";
 import {Denomination} from "./Denomination";
+import UnitConfigJson from "./ThemeConfig/Json/UnitConfigJson";
 
 export class Unit {
     public readonly appliesToKeys: Set<string>;
@@ -33,10 +34,10 @@ export class Unit {
         this.denominationsSorted = [...this.denominations]
         this.denominationsSorted.sort((a, b) => b.canonical.length - a.canonical.length)
 
-
         const possiblePostFixes = new Set<string>()
 
         function addPostfixesOf(str) {
+            if(str === undefined){return}
             str = str.toLowerCase()
             for (let i = 0; i < str.length + 1; i++) {
                 const substr = str.substring(0, i)
@@ -46,12 +47,42 @@ export class Unit {
 
         for (const denomination of this.denominations) {
             addPostfixesOf(denomination.canonical)
+            addPostfixesOf(denomination._canonicalSingular)
             denomination.alternativeDenominations.forEach(addPostfixesOf)
         }
         this.possiblePostFixes = Array.from(possiblePostFixes)
         this.possiblePostFixes.sort((a, b) => b.length - a.length)
     }
 
+    
+    static fromJson(json: UnitConfigJson, ctx: string){
+        const appliesTo = json.appliesToKey
+        for (let i = 0; i < appliesTo.length; i++) {
+            let key = appliesTo[i];
+            if (key.trim() !== key) {
+                throw `${ctx}.appliesToKey[${i}] is invalid: it starts or ends with whitespace`
+            }
+        }
+
+        if ((json.applicableUnits ?? []).length === 0) {
+            throw  `${ctx}: define at least one applicable unit`
+        }
+        // Some keys do have unit handling
+
+        const defaultSet = json.applicableUnits.filter(u => u.default === true)
+        // No default is defined - we pick the first as default
+        if (defaultSet.length === 0) {
+            json.applicableUnits[0].default = true
+        }
+
+        // Check that there are not multiple defaults
+        if (defaultSet.length > 1) {
+            throw `Multiple units are set as default: they have canonical values of ${defaultSet.map(u => u.canonicalDenomination).join(", ")}`
+        }
+        const applicable = json.applicableUnits.map((u, i) => new Denomination(u, `${ctx}.units[${i}]`))
+        return new Unit(appliesTo, applicable, json.eraseInvalidValues ?? false)
+    }
+    
     isApplicableToKey(key: string | undefined): boolean {
         if (key === undefined) {
             return false;
@@ -81,7 +112,7 @@ export class Unit {
             return undefined;
         }
         const [stripped, denom] = this.findDenomination(value)
-        const human = denom?.human
+        const human =  stripped === "1" ? denom?.humanSingular :  denom?.human
         if (human === undefined) {
             return new FixedUiElement(stripped ?? value);
         }

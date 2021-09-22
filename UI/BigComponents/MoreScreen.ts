@@ -30,22 +30,22 @@ export default class MoreScreen extends Combine {
                     .SetClass("absolute top-2 right-3"),
                 new IndexText()
             ]);
-            
+
             themeButtonStyle = "h-32 min-h-32 max-h-32 overflow-ellipsis overflow-hidden"
             themeListStyle = "md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-g4 gap-4"
         }
 
-        return[
+        return [
             intro,
             MoreScreen.createOfficialThemesList(state, themeButtonStyle).SetClass(themeListStyle),
             MoreScreen.createUnofficialThemeList(themeButtonStyle)?.SetClass(themeListStyle),
             tr.streetcomplete.Clone().SetClass("block text-base mx-10 my-3 mb-10")
         ];
     }
-    
-    private static createUnofficialThemeList(buttonClass: string): BaseUIElement{
+
+    private static createUnofficialThemeList(buttonClass: string): BaseUIElement {
         return new VariableUiElement(State.state.installedThemes.map(customThemes => {
-            const els : BaseUIElement[] = []
+            const els: BaseUIElement[] = []
             if (customThemes.length > 0) {
                 els.push(Translations.t.general.customThemeIntro.Clone())
 
@@ -62,18 +62,18 @@ export default class MoreScreen extends Combine {
         let officialThemes = AllKnownLayouts.layoutsList
 
         let buttons = officialThemes.map((layout) => {
-            if(layout === undefined){
+            if (layout === undefined) {
                 console.trace("Layout is undefined")
                 return undefined
             }
             const button = MoreScreen.createLinkButton(layout)?.SetClass(buttonClass);
-            if(layout.id === personal.id){
+            if (layout.id === personal.id) {
                 return new VariableUiElement(
                     State.state.osmConnection.userDetails.map(userdetails => userdetails.csCount)
                         .map(csCount => {
-                            if(csCount < Constants.userJourney.personalLayoutUnlock){
+                            if (csCount < Constants.userJourney.personalLayoutUnlock) {
                                 return undefined
-                            }else{
+                            } else {
                                 return button
                             }
                         })
@@ -131,7 +131,7 @@ export default class MoreScreen extends Combine {
         }
 
         const currentLocation = State.state.locationControl;
-        
+
         let path = window.location.pathname;
         // Path starts with a '/' and contains everything, e.g. '/dir/dir/page.html'
         path = path.substr(0, path.lastIndexOf("/"));
@@ -155,15 +155,13 @@ export default class MoreScreen extends Combine {
             const params = [
                 ["z", currentLocation?.zoom],
                 ["lat", currentLocation?.lat],
-                ["lon",currentLocation?.lon]
+                ["lon", currentLocation?.lon]
             ].filter(part => part[1] !== undefined)
-                .map(part => part[0]+"="+part[1])
+                .map(part => part[0] + "=" + part[1])
                 .join("&")
             return `${linkPrefix}${params}${linkSuffix}`;
         })
 
-  
-       
 
         let description = Translations.WT(layout.shortDescription).Clone();
         return new SubtleButton(layout.icon,

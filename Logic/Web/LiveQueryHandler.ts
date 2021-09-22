@@ -24,7 +24,7 @@ export default class LiveQueryHandler {
             const source = new UIEventSource({});
             LiveQueryHandler[url] = source;
 
-                console.log("Fetching live data from a third-party (unknown) API:",url)
+            console.log("Fetching live data from a third-party (unknown) API:", url)
             Utils.downloadJson(url).then(data => {
                 for (const shorthandDescription of shorthandsSet) {
 

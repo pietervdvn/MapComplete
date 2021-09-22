@@ -16,7 +16,7 @@ export default class Locale {
                 source.setData(language)
             }
             source.syncWith(
-                QueryParameters.GetQueryParameter("language", undefined,"The language to display mapcomplete in. Will be ignored in case a logged-in-user did set their language before. If the specified language does not exist, it will default to the first language in the theme."),
+                QueryParameters.GetQueryParameter("language", undefined, "The language to display mapcomplete in. Will be ignored in case a logged-in-user did set their language before. If the specified language does not exist, it will default to the first language in the theme."),
                 true
             )
         }

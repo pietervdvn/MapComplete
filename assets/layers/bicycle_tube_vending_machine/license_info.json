@@ -1,18 +1,18 @@
 [
   {
+    "path": "pinIcon.svg",
+    "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "path": "pinIcon.svg",
-    "license": "CC0",
     "sources": []
   },
   {
+    "path": "tube.svg",
+    "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "path": "tube.svg",
-    "license": "CC0",
     "sources": []
   }
 ]

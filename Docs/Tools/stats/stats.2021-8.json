@@ -1,6 +1,7333 @@
 {
   "features": [
     {
+      "id": 110522977,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.9652812,
+              43.286326
+            ],
+            [
+              -3.881245,
+              43.286326
+            ],
+            [
+              -3.881245,
+              43.317462
+            ],
+            [
+              -3.9652812,
+              43.317462
+            ],
+            [
+              -3.9652812,
+              43.286326
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Ninopiña10",
+        "uid": "11138282",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-31T16:24:00Z",
+        "reviewed_features": [],
+        "create": 5,
+        "modify": 5,
+        "delete": 0,
+        "area": 0.00261655112319972,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110500377,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.9239677,
+              52.2839406
+            ],
+            [
+              8.9268073,
+              52.2839406
+            ],
+            [
+              8.9268073,
+              52.2878551
+            ],
+            [
+              8.9239677,
+              52.2878551
+            ],
+            [
+              8.9239677,
+              52.2839406
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Jotam",
+        "uid": "768145",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #campersite",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-31T08:54:17Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.0000111156142000003,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "campersite",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "joost schouppe"
+        }
+      }
+    },
+    {
+      "id": 110499778,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.9352699,
+              52.3086901
+            ],
+            [
+              8.9357146,
+              52.3086901
+            ],
+            [
+              8.9357146,
+              52.3101211
+            ],
+            [
+              8.9352699,
+              52.3101211
+            ],
+            [
+              8.9352699,
+              52.3086901
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Jotam",
+        "uid": "768145",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #shops",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-31T08:44:25Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 6.3636570000304e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "shops",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110499125,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.2601325,
+              50.7373676
+            ],
+            [
+              4.2601325,
+              50.7373676
+            ],
+            [
+              4.2601325,
+              50.7373676
+            ],
+            [
+              4.2601325,
+              50.7373676
+            ],
+            [
+              4.2601325,
+              50.7373676
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "jospyck",
+        "uid": "12128135",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #benches",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-31T08:32:06Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "benches",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "Florian Edelmann"
+        }
+      }
+    },
+    {
+      "id": 110483407,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.7654876,
+              51.4912031
+            ],
+            [
+              4.7732333,
+              51.4912031
+            ],
+            [
+              4.7732333,
+              51.4913649
+            ],
+            [
+              4.7654876,
+              51.4913649
+            ],
+            [
+              4.7654876,
+              51.4912031
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclestreets",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T23:49:33Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0.00000125325426000595,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclestreets",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110482912,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.9208828,
+              51.0927259
+            ],
+            [
+              4.9911859,
+              51.0927259
+            ],
+            [
+              4.9911859,
+              51.1582234
+            ],
+            [
+              4.9208828,
+              51.1582234
+            ],
+            [
+              4.9208828,
+              51.0927259
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "dentonny",
+        "uid": "4198737",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T23:18:29Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00460467729224991,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "charging_stations",
+          "imagery": "osm",
+          "language": "nl"
+        }
+      }
+    },
+    {
+      "id": 110479119,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7207186,
+              51.6254756
+            ],
+            [
+              13.7208276,
+              51.6254756
+            ],
+            [
+              13.7208276,
+              51.6269018
+            ],
+            [
+              13.7207186,
+              51.6269018
+            ],
+            [
+              13.7207186,
+              51.6254756
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "da-werbung",
+        "uid": "4923577",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T20:23:22Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 1.55455799999909e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110474449,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.5652936,
+              51.9702387
+            ],
+            [
+              13.5652936,
+              51.9702387
+            ],
+            [
+              13.5652936,
+              51.9702387
+            ],
+            [
+              13.5652936,
+              51.9702387
+            ],
+            [
+              13.5652936,
+              51.9702387
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Firefighter-112",
+        "uid": "14014754",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T18:09:43Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110474280,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.1588903,
+              52.4506053
+            ],
+            [
+              14.1588903,
+              52.4506053
+            ],
+            [
+              14.1588903,
+              52.4506053
+            ],
+            [
+              14.1588903,
+              52.4506053
+            ],
+            [
+              14.1588903,
+              52.4506053
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Casi1980",
+        "uid": "13989376",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T18:04:42Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110468824,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6031775,
+              -33.42405
+            ],
+            [
+              -70.6030358,
+              -33.42405
+            ],
+            [
+              -70.6030358,
+              -33.4240207
+            ],
+            [
+              -70.6031775,
+              -33.4240207
+            ],
+            [
+              -70.6031775,
+              -33.42405
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Awo",
+        "uid": "196556",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T15:52:31Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 4.1518100002006e-9,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110466911,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7198746,
+              52.8247118
+            ],
+            [
+              13.7990534,
+              52.8247118
+            ],
+            [
+              13.7990534,
+              52.858904
+            ],
+            [
+              13.7198746,
+              52.858904
+            ],
+            [
+              13.7198746,
+              52.8247118
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Brandoberinspektor Erdmann",
+        "uid": "13364061",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T15:06:30Z",
+        "reviewed_features": [],
+        "create": 243,
+        "modify": 243,
+        "delete": 0,
+        "area": 0.00270729736535995,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110465435,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.91956,
+              52.5122283
+            ],
+            [
+              9.91956,
+              52.5122283
+            ],
+            [
+              9.91956,
+              52.5122283
+            ],
+            [
+              9.91956,
+              52.5122283
+            ],
+            [
+              9.91956,
+              52.5122283
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "hke2912",
+        "uid": "5154951",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T14:33:56Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "de",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110461689,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.7570232,
+              -34.6667643
+            ],
+            [
+              -58.5276273,
+              -34.6667643
+            ],
+            [
+              -58.5276273,
+              -34.6390219
+            ],
+            [
+              -58.7570232,
+              -34.6390219
+            ],
+            [
+              -58.7570232,
+              -34.6667643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T13:18:57Z",
+        "reviewed_features": [],
+        "create": 4,
+        "modify": 27,
+        "delete": 0,
+        "area": 0.00636399281615861,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+          "imagery": "osm",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110461433,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.2327525,
+              51.212346
+            ],
+            [
+              3.2327525,
+              51.212346
+            ],
+            [
+              3.2327525,
+              51.212346
+            ],
+            [
+              3.2327525,
+              51.212346
+            ],
+            [
+              3.2327525,
+              51.212346
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Deleting a point with #MapComplete for theme #bookcases: disused",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T13:13:18Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 1,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "deletion": "yes",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110457054,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.8907714,
+              48.6732764
+            ],
+            [
+              7.2508335,
+              48.6732764
+            ],
+            [
+              7.2508335,
+              48.7351296
+            ],
+            [
+              5.8907714,
+              48.7351296
+            ],
+            [
+              5.8907714,
+              48.6732764
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Koen Rijnsent",
+        "uid": "4569696",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T11:48:07Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.0841241930837222,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110451095,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7212452,
+              52.8325133
+            ],
+            [
+              13.7369335,
+              52.8325133
+            ],
+            [
+              13.7369335,
+              52.8377179
+            ],
+            [
+              13.7212452,
+              52.8377179
+            ],
+            [
+              13.7212452,
+              52.8325133
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Brandoberinspektor Erdmann",
+        "uid": "13364061",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T10:05:30Z",
+        "reviewed_features": [],
+        "create": 10,
+        "modify": 11,
+        "delete": 0,
+        "area": 0.0000816513261799791,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110449938,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7137297,
+              52.8321017
+            ],
+            [
+              13.7369066,
+              52.8321017
+            ],
+            [
+              13.7369066,
+              52.8443394
+            ],
+            [
+              13.7137297,
+              52.8443394
+            ],
+            [
+              13.7137297,
+              52.8321017
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Brandoberinspektor Erdmann",
+        "uid": "13364061",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T09:43:55Z",
+        "reviewed_features": [],
+        "create": 39,
+        "modify": 39,
+        "delete": 0,
+        "area": 0.000283631949129992,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110448225,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.461066,
+              50.7810491
+            ],
+            [
+              5.4634153,
+              50.7810491
+            ],
+            [
+              5.4634153,
+              50.7829941
+            ],
+            [
+              5.461066,
+              50.7829941
+            ],
+            [
+              5.461066,
+              50.7810491
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #playgrounds",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-30T09:11:50Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0.00000456938850001588,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "playgrounds",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110428059,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6031775,
+              -33.42405
+            ],
+            [
+              -70.6030358,
+              -33.42405
+            ],
+            [
+              -70.6030358,
+              -33.4240207
+            ],
+            [
+              -70.6031775,
+              -33.4240207
+            ],
+            [
+              -70.6031775,
+              -33.42405
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Awo",
+        "uid": "196556",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T21:42:55Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 4.1518100002006e-9,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "osm",
+          "language": "fr",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110420814,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.9914571,
+              48.4983347
+            ],
+            [
+              8.9919683,
+              48.4983347
+            ],
+            [
+              8.9919683,
+              48.4985387
+            ],
+            [
+              8.9914571,
+              48.4985387
+            ],
+            [
+              8.9914571,
+              48.4983347
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Ygramul",
+        "uid": "1230818",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #personal",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T17:02:22Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 1.04284799998241e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "personal",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110417964,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              11.2557221,
+              43.7859072
+            ],
+            [
+              11.2557221,
+              43.7859072
+            ],
+            [
+              11.2557221,
+              43.7859072
+            ],
+            [
+              11.2557221,
+              43.7859072
+            ],
+            [
+              11.2557221,
+              43.7859072
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T15:43:30Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110416754,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.878176,
+              52.3875656
+            ],
+            [
+              12.878176,
+              52.3875656
+            ],
+            [
+              12.878176,
+              52.3875656
+            ],
+            [
+              12.878176,
+              52.3875656
+            ],
+            [
+              12.878176,
+              52.3875656
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "andre901",
+        "uid": "165171",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T15:10:52Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110416126,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.3338032,
+              47.8180013
+            ],
+            [
+              8.3338032,
+              47.8180013
+            ],
+            [
+              8.3338032,
+              47.8180013
+            ],
+            [
+              8.3338032,
+              47.8180013
+            ],
+            [
+              8.3338032,
+              47.8180013
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Eeule",
+        "uid": "12479179",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T14:55:40Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 5,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "de",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110413360,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7197208,
+              51.0524991
+            ],
+            [
+              13.7289546,
+              51.0524991
+            ],
+            [
+              13.7289546,
+              51.0574402
+            ],
+            [
+              13.7197208,
+              51.0574402
+            ],
+            [
+              13.7197208,
+              51.0524991
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "brust84",
+        "uid": "1225756",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #inline_skating",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T13:43:48Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.0000456251291800346,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "inline_skating",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110412870,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.8615811,
+              52.3855979
+            ],
+            [
+              12.8615811,
+              52.3855979
+            ],
+            [
+              12.8615811,
+              52.3855979
+            ],
+            [
+              12.8615811,
+              52.3855979
+            ],
+            [
+              12.8615811,
+              52.3855979
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "andre901",
+        "uid": "165171",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T13:29:02Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110411836,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Manuel C Arco Martos",
+        "uid": "13949545",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T13:00:49Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 0,
+        "delete": 0,
+        "area": null,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110411635,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.6954055,
+              37.7413784
+            ],
+            [
+              -3.6912776,
+              37.7413784
+            ],
+            [
+              -3.6912776,
+              37.7428631
+            ],
+            [
+              -3.6954055,
+              37.7428631
+            ],
+            [
+              -3.6954055,
+              37.7413784
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Manuel C Arco Martos",
+        "uid": "13949545",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T12:55:53Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00000612869312999588,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110408479,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.5215607,
+              41.6305262
+            ],
+            [
+              -4.5215607,
+              41.6305262
+            ],
+            [
+              -4.5215607,
+              41.6305262
+            ],
+            [
+              -4.5215607,
+              41.6305262
+            ],
+            [
+              -4.5215607,
+              41.6305262
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Ninopiña10",
+        "uid": "11138282",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T11:21:51Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110406920,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.459437,
+              51.3650876
+            ],
+            [
+              4.459437,
+              51.3650876
+            ],
+            [
+              4.459437,
+              51.3650876
+            ],
+            [
+              4.459437,
+              51.3650876
+            ],
+            [
+              4.459437,
+              51.3650876
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #aed",
+        "comments_count": 3,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T10:33:56Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "aed",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110406038,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.5606319,
+              51.9693745
+            ],
+            [
+              13.6181215,
+              51.9693745
+            ],
+            [
+              13.6181215,
+              51.9754956
+            ],
+            [
+              13.5606319,
+              51.9754956
+            ],
+            [
+              13.5606319,
+              51.9693745
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Firefighter-112",
+        "uid": "14014754",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T10:05:06Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.000351899590560084,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110404922,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.2678505,
+              50.74381
+            ],
+            [
+              4.2678505,
+              50.74381
+            ],
+            [
+              4.2678505,
+              50.74381
+            ],
+            [
+              4.2678505,
+              50.74381
+            ],
+            [
+              4.2678505,
+              50.74381
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "joost schouppe",
+        "uid": "67832",
+        "editor": "MapComplete 0.8.5-rc2",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T09:33:43Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 3,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/feature/road-splitting/",
+          "theme": "cyclofix",
+          "imagery": "AGIV10cm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110404373,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.5124488,
+              47.4452066
+            ],
+            [
+              -0.5124488,
+              47.4452066
+            ],
+            [
+              -0.5124488,
+              47.4452066
+            ],
+            [
+              -0.5124488,
+              47.4452066
+            ],
+            [
+              -0.5124488,
+              47.4452066
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Ltrlg",
+        "uid": "5035134",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T09:14:22Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "language": "fr",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110404088,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.5133567,
+              47.4451131
+            ],
+            [
+              -0.5133567,
+              47.4451131
+            ],
+            [
+              -0.5133567,
+              47.4451131
+            ],
+            [
+              -0.5133567,
+              47.4451131
+            ],
+            [
+              -0.5133567,
+              47.4451131
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Ltrlg",
+        "uid": "5035134",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #aed",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T09:05:21Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "aed",
+          "imagery": "osm",
+          "language": "fr",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110402536,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.9729156,
+              51.8382039
+            ],
+            [
+              13.9897773,
+              51.8382039
+            ],
+            [
+              13.9897773,
+              51.8466023
+            ],
+            [
+              13.9729156,
+              51.8466023
+            ],
+            [
+              13.9729156,
+              51.8382039
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "kleenwalle",
+        "uid": "14014719",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T08:13:44Z",
+        "reviewed_features": [],
+        "create": 10,
+        "modify": 0,
+        "delete": 0,
+        "area": 0.000141611301279952,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110401909,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.1118555,
+              50.7995312
+            ],
+            [
+              4.1118555,
+              50.7995312
+            ],
+            [
+              4.1118555,
+              50.7995312
+            ],
+            [
+              4.1118555,
+              50.7995312
+            ],
+            [
+              4.1118555,
+              50.7995312
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "joost schouppe",
+        "uid": "67832",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T07:47:14Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110401090,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.6959372,
+              37.7408119
+            ],
+            [
+              -3.6915025,
+              37.7408119
+            ],
+            [
+              -3.6915025,
+              37.7466374
+            ],
+            [
+              -3.6959372,
+              37.7466374
+            ],
+            [
+              -3.6959372,
+              37.7408119
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Manuel C Arco Martos",
+        "uid": "13949545",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-29T07:06:19Z",
+        "reviewed_features": [],
+        "create": 5,
+        "modify": 17,
+        "delete": 0,
+        "area": 0.0000258343448500012,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110396066,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.5231646,
+              41.630438
+            ],
+            [
+              -4.5231646,
+              41.630438
+            ],
+            [
+              -4.5231646,
+              41.630438
+            ],
+            [
+              -4.5231646,
+              41.630438
+            ],
+            [
+              -4.5231646,
+              41.630438
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Ninopiña10",
+        "uid": "11138282",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T22:56:03Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110395474,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.4655305,
+              50.7791435
+            ],
+            [
+              5.4711684,
+              50.7791435
+            ],
+            [
+              5.4711684,
+              50.7831345
+            ],
+            [
+              5.4655305,
+              50.7831345
+            ],
+            [
+              5.4655305,
+              50.7791435
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclestreets",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T22:14:30Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.0000225008588999953,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclestreets",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110392599,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.0077223,
+              51.4381799
+            ],
+            [
+              7.0077223,
+              51.4381799
+            ],
+            [
+              7.0077223,
+              51.4381799
+            ],
+            [
+              7.0077223,
+              51.4381799
+            ],
+            [
+              7.0077223,
+              51.4381799
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "thschick",
+        "uid": "2753036",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #artwork",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T19:48:40Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "artwork",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110392546,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.0096636,
+              51.4387791
+            ],
+            [
+              7.0096636,
+              51.4387791
+            ],
+            [
+              7.0096636,
+              51.4387791
+            ],
+            [
+              7.0096636,
+              51.4387791
+            ],
+            [
+              7.0096636,
+              51.4387791
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "thschick",
+        "uid": "2753036",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #parkings",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T19:46:25Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "parkings",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110391900,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.889307,
+              51.0556829
+            ],
+            [
+              4.8906168,
+              51.0556829
+            ],
+            [
+              4.8906168,
+              51.0565095
+            ],
+            [
+              4.889307,
+              51.0565095
+            ],
+            [
+              4.889307,
+              51.0556829
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Frans_Napaters",
+        "uid": "3574538",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #playgrounds",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T19:16:10Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000108268067999561,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "playgrounds",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110391628,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.9888208,
+              51.1638865
+            ],
+            [
+              4.9888208,
+              51.1638865
+            ],
+            [
+              4.9888208,
+              51.1638865
+            ],
+            [
+              4.9888208,
+              51.1638865
+            ],
+            [
+              4.9888208,
+              51.1638865
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "dentonny",
+        "uid": "4198737",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T19:04:17Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110388360,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.6981758,
+              37.734455
+            ],
+            [
+              -3.6946041,
+              37.734455
+            ],
+            [
+              -3.6946041,
+              37.7466374
+            ],
+            [
+              -3.6981758,
+              37.7466374
+            ],
+            [
+              -3.6981758,
+              37.734455
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Manuel C Arco Martos",
+        "uid": "13949545",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T17:09:52Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 5,
+        "delete": 0,
+        "area": 0.0000435118780800035,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110387566,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.9068538,
+              51.0911055
+            ],
+            [
+              4.907967,
+              51.0911055
+            ],
+            [
+              4.907967,
+              51.0920025
+            ],
+            [
+              4.9068538,
+              51.0920025
+            ],
+            [
+              4.9068538,
+              51.0911055
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Frans_Napaters",
+        "uid": "3574538",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #playgrounds",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T16:48:18Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 9.98540400001975e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "playgrounds",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110381615,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.271279,
+              51.057879
+            ],
+            [
+              4.271279,
+              51.057879
+            ],
+            [
+              4.271279,
+              51.057879
+            ],
+            [
+              4.271279,
+              51.057879
+            ],
+            [
+              4.271279,
+              51.057879
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Rienux",
+        "uid": "11911273",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T13:57:42Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "AGIV",
+          "language": "nl",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110380688,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.8892452,
+              51.0556781
+            ],
+            [
+              4.8906257,
+              51.0556781
+            ],
+            [
+              4.8906257,
+              51.0565095
+            ],
+            [
+              4.8892452,
+              51.0565095
+            ],
+            [
+              4.8892452,
+              51.0556781
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Frans_Napaters",
+        "uid": "3574538",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #playgrounds",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T13:31:51Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.00000114774769999374,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "playgrounds",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110375071,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.9859605,
+              51.1576155
+            ],
+            [
+              5.0015368,
+              51.1576155
+            ],
+            [
+              5.0015368,
+              51.1639424
+            ],
+            [
+              4.9859605,
+              51.1639424
+            ],
+            [
+              4.9859605,
+              51.1576155
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "dentonny",
+        "uid": "4198737",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #aed",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T10:41:26Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 14,
+        "delete": 0,
+        "area": 0.0000985496924700761,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "aed",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110374800,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.7502989,
+              51.4088837
+            ],
+            [
+              13.7838763,
+              51.4088837
+            ],
+            [
+              13.7838763,
+              51.4421969
+            ],
+            [
+              13.7502989,
+              51.4421969
+            ],
+            [
+              13.7502989,
+              51.4088837
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Rosi93",
+        "uid": "14010270",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T10:32:36Z",
+        "reviewed_features": [],
+        "create": 5,
+        "modify": 6,
+        "delete": 0,
+        "area": 0.00111857064168002,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110374240,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              11.2706164,
+              44.5230379
+            ],
+            [
+              11.2706164,
+              44.5230379
+            ],
+            [
+              11.2706164,
+              44.5230379
+            ],
+            [
+              11.2706164,
+              44.5230379
+            ],
+            [
+              11.2706164,
+              44.5230379
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "WinstonSmith",
+        "uid": "36030",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T10:16:18Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110372483,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.3756708,
+              51.5825079
+            ],
+            [
+              13.3889871,
+              51.5825079
+            ],
+            [
+              13.3889871,
+              51.5870441
+            ],
+            [
+              13.3756708,
+              51.5870441
+            ],
+            [
+              13.3756708,
+              51.5825079
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "da-werbung",
+        "uid": "4923577",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T09:25:21Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0.0000604054000599567,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110372196,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.2686778,
+              51.0605068
+            ],
+            [
+              4.2686778,
+              51.0605068
+            ],
+            [
+              4.2686778,
+              51.0605068
+            ],
+            [
+              4.2686778,
+              51.0605068
+            ],
+            [
+              4.2686778,
+              51.0605068
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Rienux",
+        "uid": "11911273",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T09:16:28Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "AGIV",
+          "language": "nl",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110371506,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.5179344,
+              45.5046634
+            ],
+            [
+              -73.5179344,
+              45.5046634
+            ],
+            [
+              -73.5179344,
+              45.5046634
+            ],
+            [
+              -73.5179344,
+              45.5046634
+            ],
+            [
+              -73.5179344,
+              45.5046634
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "treemap",
+        "uid": "926359",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T08:54:46Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110370542,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.2202923,
+              50.748141
+            ],
+            [
+              4.2202923,
+              50.748141
+            ],
+            [
+              4.2202923,
+              50.748141
+            ],
+            [
+              4.2202923,
+              50.748141
+            ],
+            [
+              4.2202923,
+              50.748141
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 43,
+            "name": "Invalid key value combination"
+          }
+        ],
+        "tags": [],
+        "features": [
+          {
+            "url": "node-9042426135",
+            "name": "Fietsbieb Halle",
+            "osm_id": 9042426135,
+            "reasons": [
+              43
+            ],
+            "version": 3,
+            "primary_tags": {
+              "amenity": "bicycle_library"
+            }
+          }
+        ],
+        "user": "joost schouppe",
+        "uid": "67832",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T08:22:37Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110368630,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.7171638,
+              48.688034
+            ],
+            [
+              5.7171638,
+              48.688034
+            ],
+            [
+              5.7171638,
+              48.688034
+            ],
+            [
+              5.7171638,
+              48.688034
+            ],
+            [
+              5.7171638,
+              48.688034
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Koen Rijnsent",
+        "uid": "4569696",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T07:22:17Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110365638,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.1256902,
+              50.6541734
+            ],
+            [
+              3.1439862,
+              50.6541734
+            ],
+            [
+              3.1439862,
+              50.6960312
+            ],
+            [
+              3.1256902,
+              50.6960312
+            ],
+            [
+              3.1256902,
+              50.6541734
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "eiryelio",
+        "uid": "831652",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #surveillance",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T04:53:14Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 3,
+        "delete": 0,
+        "area": 0.00076583030880004,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "surveillance",
+          "imagery": "osm",
+          "language": "fr"
+        }
+      }
+    },
+    {
+      "id": 110363347,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.0471272,
+              37.2517689
+            ],
+            [
+              -122.047127,
+              37.2517689
+            ],
+            [
+              -122.047127,
+              37.2517689
+            ],
+            [
+              -122.0471272,
+              37.2517689
+            ],
+            [
+              -122.0471272,
+              37.2517689
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Larry Gallagher",
+        "uid": "5492654",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-28T01:51:52Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110361908,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.5653507,
+              45.4788934
+            ],
+            [
+              -73.5653507,
+              45.4788934
+            ],
+            [
+              -73.5653507,
+              45.4788934
+            ],
+            [
+              -73.5653507,
+              45.4788934
+            ],
+            [
+              -73.5653507,
+              45.4788934
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "treemap",
+        "uid": "926359",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T23:28:13Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110360732,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.4795645,
+              50.8591534
+            ],
+            [
+              5.6690699,
+              50.8591534
+            ],
+            [
+              5.6690699,
+              51.0930146
+            ],
+            [
+              3.4795645,
+              51.0930146
+            ],
+            [
+              3.4795645,
+              50.8591534
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T22:18:42Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.51204036025048,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "CartoDB.Positron",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110354638,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.484309,
+              53.8368359
+            ],
+            [
+              -1.4280837,
+              53.8368359
+            ],
+            [
+              -1.4280837,
+              53.8685583
+            ],
+            [
+              -1.484309,
+              53.8685583
+            ],
+            [
+              -1.484309,
+              53.8368359
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "The_JF",
+        "uid": "4543415",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #aed",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T18:22:39Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 22,
+        "delete": 0,
+        "area": 0.00178360145671998,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "aed",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110351802,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.6819299,
+              51.677429
+            ],
+            [
+              13.6819299,
+              51.677429
+            ],
+            [
+              13.6819299,
+              51.677429
+            ],
+            [
+              13.6819299,
+              51.677429
+            ],
+            [
+              13.6819299,
+              51.677429
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "da-werbung",
+        "uid": "4923577",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T16:58:49Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110345728,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.7218111,
+              37.7355389
+            ],
+            [
+              -3.7218111,
+              37.7355389
+            ],
+            [
+              -3.7218111,
+              37.7355389
+            ],
+            [
+              -3.7218111,
+              37.7355389
+            ],
+            [
+              -3.7218111,
+              37.7355389
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          },
+          {
+            "id": 43,
+            "name": "Invalid key value combination"
+          }
+        ],
+        "tags": [],
+        "features": [
+          {
+            "url": "node-9041075454",
+            "osm_id": 9041075454,
+            "reasons": [
+              43
+            ],
+            "version": 1,
+            "primary_tags": {
+              "tourism": "map"
+            }
+          }
+        ],
+        "user": "Manuel C Arco Martos",
+        "uid": "13949545",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #nature",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T14:30:08Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "nature",
+          "imagery": "osm",
+          "language": "nl"
+        }
+      }
+    },
+    {
+      "id": 110341888,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.6932501,
+              51.6456486
+            ],
+            [
+              14.6932501,
+              51.6456486
+            ],
+            [
+              14.6932501,
+              51.6456486
+            ],
+            [
+              14.6932501,
+              51.6456486
+            ],
+            [
+              14.6932501,
+              51.6456486
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Druese",
+        "uid": "13987920",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T13:04:16Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110341268,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.4563581,
+              50.7603302
+            ],
+            [
+              5.3366173,
+              50.7603302
+            ],
+            [
+              5.3366173,
+              51.1914193
+            ],
+            [
+              3.4563581,
+              51.1914193
+            ],
+            [
+              3.4563581,
+              50.7603302
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T12:51:32Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 12,
+        "delete": 0,
+        "area": 0.810559246294722,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "CartoDB.Positron",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110331166,
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T09:49:25Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": null,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "CartoDB.Positron",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110328737,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.4345096,
+              41.6106455
+            ],
+            [
+              -4.4345096,
+              41.6106455
+            ],
+            [
+              -4.4345096,
+              41.6106455
+            ],
+            [
+              -4.4345096,
+              41.6106455
+            ],
+            [
+              -4.4345096,
+              41.6106455
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Ninopiña10",
+        "uid": "11138282",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T09:08:39Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110311804,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.5735592,
+              45.4787169
+            ],
+            [
+              -73.5635787,
+              45.4787169
+            ],
+            [
+              -73.5635787,
+              45.4793732
+            ],
+            [
+              -73.5735592,
+              45.4793732
+            ],
+            [
+              -73.5735592,
+              45.4787169
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "treemap",
+        "uid": "926359",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T01:18:11Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000655020214996501,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110311324,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.7301797,
+              -34.6640971
+            ],
+            [
+              -58.40994,
+              -34.6640971
+            ],
+            [
+              -58.40994,
+              -34.6087006
+            ],
+            [
+              -58.7301797,
+              -34.6087006
+            ],
+            [
+              -58.7301797,
+              -34.6640971
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-27T00:31:33Z",
+        "reviewed_features": [],
+        "create": 7,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.0177401585410503,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+          "imagery": "osm",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110310132,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.6934628,
+              51.0415158
+            ],
+            [
+              3.6939847,
+              51.0415158
+            ],
+            [
+              3.6939847,
+              51.0417911
+            ],
+            [
+              3.6934628,
+              51.0417911
+            ],
+            [
+              3.6934628,
+              51.0415158
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T23:00:26Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 1.43679069999259e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110302017,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.4259574,
+              51.2126193
+            ],
+            [
+              4.4259574,
+              51.2126193
+            ],
+            [
+              4.4259574,
+              51.2126193
+            ],
+            [
+              4.4259574,
+              51.2126193
+            ],
+            [
+              4.4259574,
+              51.2126193
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.9.3",
+        "comment": "Adding data with #MapComplete for theme #fritures",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T18:08:43Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "fritures",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110295287,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.9903969,
+              48.4980299
+            ],
+            [
+              8.9910487,
+              48.4980299
+            ],
+            [
+              8.9910487,
+              48.4983523
+            ],
+            [
+              8.9903969,
+              48.4983523
+            ],
+            [
+              8.9903969,
+              48.4980299
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Ygramul",
+        "uid": "1230818",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #personal",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T15:36:52Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 3,
+        "delete": 0,
+        "area": 2.10140320001116e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "personal",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110291443,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.2085659,
+              41.5459407
+            ],
+            [
+              2.2127688,
+              41.5459407
+            ],
+            [
+              2.2127688,
+              41.5475618
+            ],
+            [
+              2.2085659,
+              41.5475618
+            ],
+            [
+              2.2085659,
+              41.5459407
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Moisès",
+        "uid": "12884230",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #parkings",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T14:18:58Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 5,
+        "delete": 0,
+        "area": 0.00000681332118997564,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "parkings",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110288047,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.763148,
+              -34.6657561
+            ],
+            [
+              -58.5493854,
+              -34.6657561
+            ],
+            [
+              -58.5493854,
+              -34.6398296
+            ],
+            [
+              -58.763148,
+              -34.6398296
+            ],
+            [
+              -58.763148,
+              -34.6657561
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T13:05:37Z",
+        "reviewed_features": [],
+        "create": 4,
+        "modify": 19,
+        "delete": 0,
+        "area": 0.00554211604890096,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+          "imagery": "osm",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110287012,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.6365021,
+              52.015425
+            ],
+            [
+              14.6365021,
+              52.015425
+            ],
+            [
+              14.6365021,
+              52.015425
+            ],
+            [
+              14.6365021,
+              52.015425
+            ],
+            [
+              14.6365021,
+              52.015425
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "PaulSembten",
+        "uid": "13999064",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T12:43:38Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110285848,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.6721768,
+              51.9473461
+            ],
+            [
+              14.6721768,
+              51.9473461
+            ],
+            [
+              14.6721768,
+              51.9473461
+            ],
+            [
+              14.6721768,
+              51.9473461
+            ],
+            [
+              14.6721768,
+              51.9473461
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Der Kalle",
+        "uid": "13998301",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #hailhydrant",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T12:22:04Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "hailhydrant",
+          "imagery": "HDM_HOT",
+          "language": "en",
+          "theme-creator": "Erwin Olario"
+        }
+      }
+    },
+    {
+      "id": 110281843,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.2297336,
+              50.8954102
+            ],
+            [
+              4.2297336,
+              50.8954102
+            ],
+            [
+              4.2297336,
+              50.8954102
+            ],
+            [
+              4.2297336,
+              50.8954102
+            ],
+            [
+              4.2297336,
+              50.8954102
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "jospyck",
+        "uid": "12128135",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T11:17:36Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110279162,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.71425,
+              51.9491832
+            ],
+            [
+              14.71425,
+              51.9491832
+            ],
+            [
+              14.71425,
+              51.9491832
+            ],
+            [
+              14.71425,
+              51.9491832
+            ],
+            [
+              14.71425,
+              51.9491832
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Der Kalle",
+        "uid": "13998301",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #hailhydrant",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T10:30:53Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "hailhydrant",
+          "imagery": "HDM_HOT",
+          "language": "en",
+          "theme-creator": "Erwin Olario"
+        }
+      }
+    },
+    {
+      "id": 110278890,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.5593499,
+              13.9636129
+            ],
+            [
+              121.5593499,
+              13.9636129
+            ],
+            [
+              121.5593499,
+              13.9636129
+            ],
+            [
+              121.5593499,
+              13.9636129
+            ],
+            [
+              121.5593499,
+              13.9636129
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Nickrds09",
+        "uid": "966535",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #streetlamps",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T10:26:16Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "streetlamps",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110275748,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.7108772,
+              50.6550157
+            ],
+            [
+              5.7108772,
+              50.6550157
+            ],
+            [
+              5.7108772,
+              50.6550157
+            ],
+            [
+              5.7108772,
+              50.6550157
+            ],
+            [
+              5.7108772,
+              50.6550157
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "jospyck",
+        "uid": "12128135",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #toilets",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T09:35:16Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "toilets",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110274106,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.5583292,
+              50.7859898
+            ],
+            [
+              5.5583292,
+              50.7859898
+            ],
+            [
+              5.5583292,
+              50.7859898
+            ],
+            [
+              5.5583292,
+              50.7859898
+            ],
+            [
+              5.5583292,
+              50.7859898
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "jospyck",
+        "uid": "12128135",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T09:06:41Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 3,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "charging_stations",
+          "imagery": "osm",
+          "language": "nl"
+        }
+      }
+    },
+    {
+      "id": 110268266,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.5795903,
+              41.5859942
+            ],
+            [
+              -4.523567,
+              41.5859942
+            ],
+            [
+              -4.523567,
+              41.6310134
+            ],
+            [
+              -4.5795903,
+              41.6310134
+            ],
+            [
+              -4.5795903,
+              41.5859942
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Ninopiña10",
+        "uid": "11138282",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T07:20:02Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.00252212414735991,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110260590,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5977571,
+              -33.5708396
+            ],
+            [
+              -70.597672,
+              -33.5708396
+            ],
+            [
+              -70.597672,
+              -33.5707265
+            ],
+            [
+              -70.5977571,
+              -33.5707265
+            ],
+            [
+              -70.5977571,
+              -33.5708396
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Awo",
+        "uid": "196556",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #climbing",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T04:38:46Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 9.62480999917301e-9,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "climbing",
+          "imagery": "osm",
+          "language": "fr",
+          "theme-creator": "Christian Neumann <christian@utopicode.de>"
+        }
+      }
+    },
+    {
+      "id": 110256028,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.6320166,
+              50.7971005
+            ],
+            [
+              5.1588804,
+              50.7971005
+            ],
+            [
+              5.1588804,
+              51.2381323
+            ],
+            [
+              2.6320166,
+              51.2381323
+            ],
+            [
+              2.6320166,
+              50.7971005
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.2",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-26T00:16:05Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 9,
+        "delete": 0,
+        "area": 1.11442729006883,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "CartoDB.Positron",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110251690,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.038426,
+              -2.8624529
+            ],
+            [
+              -79.038426,
+              -2.8624529
+            ],
+            [
+              -79.038426,
+              -2.8624529
+            ],
+            [
+              -79.038426,
+              -2.8624529
+            ],
+            [
+              -79.038426,
+              -2.8624529
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Villodie",
+        "uid": "619565",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T20:45:18Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110250614,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.4356167,
+              51.890284
+            ],
+            [
+              14.4529098,
+              51.890284
+            ],
+            [
+              14.4529098,
+              51.8958927
+            ],
+            [
+              14.4356167,
+              51.8958927
+            ],
+            [
+              14.4356167,
+              51.890284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Mitch85",
+        "uid": "4907923",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T20:08:40Z",
+        "reviewed_features": [],
+        "create": 6,
+        "modify": 5,
+        "delete": 0,
+        "area": 0.0000969918099699342,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110249682,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.8526738,
+              52.1649094
+            ],
+            [
+              12.855248,
+              52.1649094
+            ],
+            [
+              12.855248,
+              52.1666764
+            ],
+            [
+              12.8526738,
+              52.1666764
+            ],
+            [
+              12.8526738,
+              52.1649094
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "dekoe65",
+        "uid": "13921921",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T19:40:40Z",
+        "reviewed_features": [],
+        "create": 3,
+        "modify": 0,
+        "delete": 0,
+        "area": 0.00000454861140000203,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110243813,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.0585135,
+              51.5434224
+            ],
+            [
+              -0.0585135,
+              51.5434224
+            ],
+            [
+              -0.0585135,
+              51.5434224
+            ],
+            [
+              -0.0585135,
+              51.5434224
+            ],
+            [
+              -0.0585135,
+              51.5434224
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "okwithmydecay",
+        "uid": "10370720",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T16:54:43Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110238612,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.2882186,
+              52.0194508
+            ],
+            [
+              14.3685785,
+              52.0194508
+            ],
+            [
+              14.3685785,
+              52.0376192
+            ],
+            [
+              14.2882186,
+              52.0376192
+            ],
+            [
+              14.2882186,
+              52.0194508
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Mannsen",
+        "uid": "13988107",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T15:05:33Z",
+        "reviewed_features": [],
+        "create": 3,
+        "modify": 3,
+        "delete": 0,
+        "area": 0.00146001080716002,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110236764,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.3353862,
+              39.4604794
+            ],
+            [
+              -3.3335274,
+              39.4604794
+            ],
+            [
+              -3.3335274,
+              39.4649094
+            ],
+            [
+              -3.3353862,
+              39.4649094
+            ],
+            [
+              -3.3353862,
+              39.4604794
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusOrux",
+        "uid": "13624541",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #nature",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T14:27:32Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000823448400001157,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "nature",
+          "imagery": "PNOA-Spain-TMS",
+          "language": "nl"
+        }
+      }
+    },
+    {
+      "id": 110235467,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.3282872,
+              52.0326218
+            ],
+            [
+              14.3282926,
+              52.0326218
+            ],
+            [
+              14.3282926,
+              52.0326306
+            ],
+            [
+              14.3282872,
+              52.0326306
+            ],
+            [
+              14.3282872,
+              52.0326218
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Mannsen",
+        "uid": "13988107",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T14:04:42Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 4.75199999723572e-11,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110234434,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.3545962,
+              45.4323164
+            ],
+            [
+              12.3545962,
+              45.4323164
+            ],
+            [
+              12.3545962,
+              45.4323164
+            ],
+            [
+              12.3545962,
+              45.4323164
+            ],
+            [
+              12.3545962,
+              45.4323164
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T13:44:00Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110232873,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.7607549,
+              -34.6656833
+            ],
+            [
+              -58.527583,
+              -34.6656833
+            ],
+            [
+              -58.527583,
+              -34.6390219
+            ],
+            [
+              -58.7607549,
+              -34.6390219
+            ],
+            [
+              -58.7607549,
+              -34.6656833
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T13:15:22Z",
+        "reviewed_features": [],
+        "create": 3,
+        "modify": 20,
+        "delete": 0,
+        "area": 0.00621668929465883,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+          "imagery": "osm",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110227343,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.3042502,
+              51.799496
+            ],
+            [
+              14.3042502,
+              51.799496
+            ],
+            [
+              14.3042502,
+              51.799496
+            ],
+            [
+              14.3042502,
+              51.799496
+            ],
+            [
+              14.3042502,
+              51.799496
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Mike Gallert",
+        "uid": "13992729",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T11:49:23Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110224603,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.330247,
+              45.4307374
+            ],
+            [
+              12.3303449,
+              45.4307374
+            ],
+            [
+              12.3303449,
+              45.4310003
+            ],
+            [
+              12.330247,
+              45.4310003
+            ],
+            [
+              12.330247,
+              45.4307374
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #benches",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T11:10:54Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 11,
+        "delete": 0,
+        "area": 2.57379100002923e-8,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "benches",
+          "imagery": "osm",
+          "language": "nl",
+          "theme-creator": "Florian Edelmann"
+        }
+      }
+    },
+    {
+      "id": 110222055,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.6002786,
+              51.1516226
+            ],
+            [
+              3.6024372,
+              51.1516226
+            ],
+            [
+              3.6024372,
+              51.1534628
+            ],
+            [
+              3.6002786,
+              51.1534628
+            ],
+            [
+              3.6002786,
+              51.1516226
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": "MapComplete 0.9.2",
+        "comment": "Adding data with #MapComplete for theme #cyclestreets",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T10:31:26Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00000397225571999192,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cyclestreets",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110220790,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.7403371,
+              51.46117
+            ],
+            [
+              14.7750968,
+              51.46117
+            ],
+            [
+              14.7750968,
+              51.4707802
+            ],
+            [
+              14.7403371,
+              51.4707802
+            ],
+            [
+              14.7403371,
+              51.46117
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Druese",
+        "uid": "13987920",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T10:13:05Z",
+        "reviewed_features": [],
+        "create": 4,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.000334047668939912,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110219133,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.3236236,
+              45.4289724
+            ],
+            [
+              12.3339585,
+              45.4289724
+            ],
+            [
+              12.3339585,
+              45.4341631
+            ],
+            [
+              12.3236236,
+              45.4341631
+            ],
+            [
+              12.3236236,
+              45.4289724
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T09:46:16Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 6,
+        "delete": 0,
+        "area": 0.0000536453654300007,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110210088,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -5.941734,
+              37.2431772
+            ],
+            [
+              -5.724066,
+              37.2431772
+            ],
+            [
+              -5.724066,
+              37.3016835
+            ],
+            [
+              -5.941734,
+              37.3016835
+            ],
+            [
+              -5.941734,
+              37.2431772
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "troNpo",
+        "uid": "12221867",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #trees",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T07:08:31Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 6,
+        "delete": 0,
+        "area": 0.0127349493084011,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "trees",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "Midgard"
+        }
+      }
+    },
+    {
+      "id": 110205818,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -5.9371702,
+              37.3109191
+            ],
+            [
+              -5.8360282,
+              37.3109191
+            ],
+            [
+              -5.8360282,
+              37.3396878
+            ],
+            [
+              -5.9371702,
+              37.3396878
+            ],
+            [
+              -5.9371702,
+              37.3109191
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Trompo",
+        "uid": "12221867",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T05:48:47Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00290972385540004,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110205391,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.5913047,
+              45.5174774
+            ],
+            [
+              -73.5912323,
+              45.5174774
+            ],
+            [
+              -73.5912323,
+              45.517538
+            ],
+            [
+              -73.5913047,
+              45.517538
+            ],
+            [
+              -73.5913047,
+              45.5174774
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "treemap",
+        "uid": "926359",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T05:39:18Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 2,
+        "delete": 0,
+        "area": 4.38743999994457e-9,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110200544,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.0242866,
+              51.6839101
+            ],
+            [
+              14.0435529,
+              51.6839101
+            ],
+            [
+              14.0435529,
+              51.694154
+            ],
+            [
+              14.0242866,
+              51.694154
+            ],
+            [
+              14.0242866,
+              51.6839101
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Christian 1102",
+        "uid": "13990176",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-25T03:30:28Z",
+        "reviewed_features": [],
+        "create": 4,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.00019736205056998,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110197630,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.1561676,
+              52.4396062
+            ],
+            [
+              14.1916293,
+              52.4396062
+            ],
+            [
+              14.1916293,
+              52.4532087
+            ],
+            [
+              14.1561676,
+              52.4532087
+            ],
+            [
+              14.1561676,
+              52.4396062
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Casi1980",
+        "uid": "13989376",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T23:49:36Z",
+        "reviewed_features": [],
+        "create": 14,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.000482367774249923,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110195980,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.7290773,
+              -34.6641159
+            ],
+            [
+              -58.7290773,
+              -34.6641159
+            ],
+            [
+              -58.7290773,
+              -34.6641159
+            ],
+            [
+              -58.7290773,
+              -34.6641159
+            ],
+            [
+              -58.7290773,
+              -34.6641159
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T22:19:59Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+          "imagery": "EsriWorldImageryClarity",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110195344,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.5584142,
+              50.7860886
+            ],
+            [
+              5.5584142,
+              50.7860886
+            ],
+            [
+              5.5584142,
+              50.7860886
+            ],
+            [
+              5.5584142,
+              50.7860886
+            ],
+            [
+              5.5584142,
+              50.7860886
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T21:53:38Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "AGIV10cm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110193404,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.5925962,
+              44.3287832
+            ],
+            [
+              6.5925962,
+              44.3287832
+            ],
+            [
+              6.5925962,
+              44.3287832
+            ],
+            [
+              6.5925962,
+              44.3287832
+            ],
+            [
+              6.5925962,
+              44.3287832
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Brec10",
+        "uid": "13615286",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T20:48:34Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110192320,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              11.4257015,
+              44.4611836
+            ],
+            [
+              11.4257015,
+              44.4611836
+            ],
+            [
+              11.4257015,
+              44.4611836
+            ],
+            [
+              11.4257015,
+              44.4611836
+            ],
+            [
+              11.4257015,
+              44.4611836
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "WinstonSmith",
+        "uid": "36030",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclofix",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T20:18:06Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclofix",
+          "imagery": "CartoDB.Voyager",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110192119,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.1061331,
+              51.0665522
+            ],
+            [
+              3.1621286,
+              51.0665522
+            ],
+            [
+              3.1621286,
+              51.1251496
+            ],
+            [
+              3.1061331,
+              51.1251496
+            ],
+            [
+              3.1061331,
+              51.0665522
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.2",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T20:12:28Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0.00328119071170019,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "CartoDB.Positron",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110190369,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.601183,
+              50.8089108
+            ],
+            [
+              5.6018773,
+              50.8089108
+            ],
+            [
+              5.6018773,
+              50.8092837
+            ],
+            [
+              5.601183,
+              50.8092837
+            ],
+            [
+              5.601183,
+              50.8089108
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Thierry1030",
+        "uid": "286563",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #cyclestreets",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T19:23:24Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 2.58904470001526e-7,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "cyclestreets",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110188312,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.3267343,
+              45.4409673
+            ],
+            [
+              12.3267343,
+              45.4409673
+            ],
+            [
+              12.3267343,
+              45.4409673
+            ],
+            [
+              12.3267343,
+              45.4409673
+            ],
+            [
+              12.3267343,
+              45.4409673
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T18:17:32Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110185535,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.6369916,
+              51.6370247
+            ],
+            [
+              14.7370943,
+              51.6370247
+            ],
+            [
+              14.7370943,
+              51.6718748
+            ],
+            [
+              14.6369916,
+              51.6718748
+            ],
+            [
+              14.6369916,
+              51.6370247
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Druese",
+        "uid": "13987920",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T17:02:30Z",
+        "reviewed_features": [],
+        "create": 16,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.00348858910527002,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110183455,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.3213063,
+              52.0215487
+            ],
+            [
+              14.3846834,
+              52.0215487
+            ],
+            [
+              14.3846834,
+              52.0420651
+            ],
+            [
+              14.3213063,
+              52.0420651
+            ],
+            [
+              14.3213063,
+              52.0215487
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Mannsen",
+        "uid": "13988107",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T16:17:25Z",
+        "reviewed_features": [],
+        "create": 14,
+        "modify": 22,
+        "delete": 0,
+        "area": 0.00130026993444034,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110178344,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.1767718,
+              48.5005919
+            ],
+            [
+              9.1767718,
+              48.5005919
+            ],
+            [
+              9.1767718,
+              48.5005919
+            ],
+            [
+              9.1767718,
+              48.5005919
+            ],
+            [
+              9.1767718,
+              48.5005919
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Dark-Star",
+        "uid": "93252",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #charging_stations",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T14:38:00Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "charging_stations",
+          "imagery": "osm",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 110177856,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.2032143,
+              48.5266916
+            ],
+            [
+              9.2034341,
+              48.5266916
+            ],
+            [
+              9.2034341,
+              48.5509151
+            ],
+            [
+              9.2032143,
+              48.5509151
+            ],
+            [
+              9.2032143,
+              48.5266916
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Dark-Star",
+        "uid": "93252",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #bookcases",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T14:27:42Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 4,
+        "delete": 0,
+        "area": 0.00000532432529999936,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "bookcases",
+          "imagery": "osm",
+          "language": "en",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
+      "id": 110177596,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.40994,
+              -34.6088596
+            ],
+            [
+              -58.40994,
+              -34.6088596
+            ],
+            [
+              -58.40994,
+              -34.6088596
+            ],
+            [
+              -58.40994,
+              -34.6088596
+            ],
+            [
+              -58.40994,
+              -34.6088596
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T14:23:34Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/Signals",
+          "imagery": "osm",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110176789,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.4886309,
+              -34.6344151
+            ],
+            [
+              -58.4596751,
+              -34.6344151
+            ],
+            [
+              -58.4596751,
+              -34.6259296
+            ],
+            [
+              -58.4886309,
+              -34.6259296
+            ],
+            [
+              -58.4886309,
+              -34.6344151
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "AgusQui",
+        "uid": "331218",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/railway",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T14:07:30Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 5,
+        "delete": 0,
+        "area": 0.00024570444089996,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/railway",
+          "imagery": "osm",
+          "language": "es"
+        }
+      }
+    },
+    {
+      "id": 110175590,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.4834965,
+              52.1562531
+            ],
+            [
+              13.4852684,
+              52.1562531
+            ],
+            [
+              13.4852684,
+              52.1567414
+            ],
+            [
+              13.4834965,
+              52.1567414
+            ],
+            [
+              13.4834965,
+              52.1562531
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Stefank3355",
+        "uid": "13987313",
+        "editor": "MapComplete 0.7.2l",
+        "comment": "Adding data with #MapComplete for theme #waldbrand",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T13:41:37Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 1,
+        "delete": 0,
+        "area": 8.65218770001849e-7,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "waldbrand-app.de",
+          "theme": "waldbrand",
+          "imagery": "osm",
+          "language": "de",
+          "theme-creator": "Sebastian Kürten"
+        }
+      }
+    },
+    {
+      "id": 110168021,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.4414722,
+              51.0848877
+            ],
+            [
+              3.4791521,
+              51.0848877
+            ],
+            [
+              3.4791521,
+              51.0957782
+            ],
+            [
+              3.4414722,
+              51.0957782
+            ],
+            [
+              3.4414722,
+              51.0848877
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "L'imaginaire",
+        "uid": "654234",
+        "editor": "MapComplete 0.9.2",
+        "comment": "Adding data with #MapComplete for theme #cycle_highways",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T11:18:16Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 7,
+        "delete": 0,
+        "area": 0.000410352950949809,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "pietervdvn.github.io",
+          "path": "mc/develop/",
+          "theme": "cycle_highways",
+          "imagery": "CartoDB.Positron",
+          "language": "en",
+          "theme-creator": "L'imaginaire"
+        }
+      }
+    },
+    {
+      "id": 110165364,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.3254217,
+              45.4320999
+            ],
+            [
+              12.3452714,
+              45.4320999
+            ],
+            [
+              12.3452714,
+              45.4383903
+            ],
+            [
+              12.3254217,
+              45.4383903
+            ],
+            [
+              12.3254217,
+              45.4320999
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [],
+        "tags": [],
+        "features": [],
+        "user": "Robin van der Linde",
+        "uid": "5093765",
+        "editor": "MapComplete 0.9.0",
+        "comment": "Adding data with #MapComplete for theme #drinking_water",
+        "comments_count": 0,
+        "source": "survey",
+        "imagery_used": "Not reported",
+        "date": "2021-08-24T10:38:46Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 9,
+        "delete": 0,
+        "area": 0.000124862552880091,
+        "is_suspect": false,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "mapcomplete.osm.be",
+          "theme": "drinking_water",
+          "imagery": "CartoDB.Voyager",
+          "language": "nl",
+          "theme-creator": "MapComplete"
+        }
+      }
+    },
+    {
       "id": 110157524,
       "type": "Feature",
       "geometry": {

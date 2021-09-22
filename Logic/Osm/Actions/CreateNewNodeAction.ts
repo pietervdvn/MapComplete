@@ -8,11 +8,10 @@ import {GeoOperations} from "../../GeoOperations";
 
 export default class CreateNewNodeAction extends OsmChangeAction {
 
+    public newElementId: string = undefined
     private readonly _basicTags: Tag[];
     private readonly _lat: number;
     private readonly _lon: number;
-
-    public newElementId: string = undefined
     private readonly _snapOnto: OsmWay;
     private readonly _reusePointDistance: number;
 
@@ -21,7 +20,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
         this._basicTags = basicTags;
         this._lat = lat;
         this._lon = lon;
-        if(lat === undefined || lon === undefined){
+        if (lat === undefined || lon === undefined) {
             throw "Lat or lon are undefined!"
         }
         this._snapOnto = options?.snapOnto;
@@ -82,20 +81,20 @@ export default class CreateNewNodeAction extends OsmChangeAction {
                 id: reusedPointId
             }]
         }
-        
+
         const locations = [...this._snapOnto.coordinates]
         locations.forEach(coor => coor.reverse())
         console.log("Locations are: ", locations)
         const ids = [...this._snapOnto.nodes]
-        
+
         locations.splice(index + 1, 0, [this._lon, this._lat])
         ids.splice(index + 1, 0, id)
-        
+
         // Allright, we have to insert a new point in the way
         return [
             newPointChange,
             {
-                type:"way",
+                type: "way",
                 id: this._snapOnto.id,
                 changes: {
                     locations: locations,

@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   id="svg4"
-   version="1.1"
-   viewBox="0 0 114 114"
-   height="114"
-   width="114">
-  <metadata
-     id="metadata10">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs8" />
-  <path
-     id="path817"
-     d="M 9.6696131,22.725039 42.932885,56.977838 c 0,0 12.343058,14.397206 26.130256,0 C 88.864049,36.30085 103.12276,22.224485 103.12276,22.224485"
-     style="fill:none;stroke:#000000;stroke-width:8.16401958;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  <path
-     id="path823"
-     d="M 9.9025424,22.944915 102.88983,22.461864 v 69.921611"
-     style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
-  <path
-     id="path823-3"
-     d="M 102.88983,92.383475 9.902543,92.866526 V 22.944915"
-     style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  <path
-     id="path840"
-     d="M 15.059836,89.897056 52.138595,60.125694"
-     style="fill:none;stroke:#000000;stroke-width:2.88938379;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  <path
-     id="path840-7"
-     d="M 59.644597,61.331869 98.071505,89.49552"
-     style="fill:none;stroke:#000000;stroke-width:2.89490533;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns="http://www.w3.org/2000/svg"
+        id="svg4"
+        version="1.1"
+        viewBox="0 0 114 114"
+        height="114"
+        width="114">
+    <metadata
+            id="metadata10">
+        <rdf:RDF>
+            <cc:Work
+                    rdf:about="">
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                        rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                <dc:title></dc:title>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <defs
+            id="defs8"/>
+    <path
+            id="path817"
+            d="M 9.6696131,22.725039 42.932885,56.977838 c 0,0 12.343058,14.397206 26.130256,0 C 88.864049,36.30085 103.12276,22.224485 103.12276,22.224485"
+            style="fill:none;stroke:#000000;stroke-width:8.16401958;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+    <path
+            id="path823"
+            d="M 9.9025424,22.944915 102.88983,22.461864 v 69.921611"
+            style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"/>
+    <path
+            id="path823-3"
+            d="M 102.88983,92.383475 9.902543,92.866526 V 22.944915"
+            style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+    <path
+            id="path840"
+            d="M 15.059836,89.897056 52.138595,60.125694"
+            style="fill:none;stroke:#000000;stroke-width:2.88938379;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+    <path
+            id="path840-7"
+            d="M 59.644597,61.331869 98.071505,89.49552"
+            style="fill:none;stroke:#000000;stroke-width:2.89490533;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
 </svg>

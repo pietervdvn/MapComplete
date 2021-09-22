@@ -1,5 +1,4 @@
 
-
 .userstats {
     display: flex;
     align-items: center;
@@ -38,7 +37,7 @@
     font-size: large;
     background-color: var(--subtle-detail-color) !important;
     color: var(--subtle-detail-color-contrast);
-    height:3em;
+    height: 3em;
 
     display: inline-block;
     text-align: center;

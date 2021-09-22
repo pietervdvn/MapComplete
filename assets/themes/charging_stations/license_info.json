@@ -1,31 +1,31 @@
 [
   {
+    "path": "bicycle.svg",
+    "license": "CC0",
     "authors": [
       "Stijn Wens"
     ],
-    "path": "bicycle.svg",
-    "license": "CC0",
     "sources": [
       "https://wens.be/free-antwerpenize-bicycle-font",
       " https://antwerpenize.be/post/634396003556081664/antwerpenize-lettertype"
     ]
   },
   {
-    "authors": [],
     "path": "car.svg",
     "license": "CC0",
+    "authors": [],
     "sources": []
   },
   {
-    "authors": [],
     "path": "logo.svg",
     "license": "CC0; trivial",
+    "authors": [],
     "sources": []
   },
   {
-    "authors": [],
     "path": "plug.svg",
     "license": "CC0; trivial",
+    "authors": [],
     "sources": []
   }
 ]

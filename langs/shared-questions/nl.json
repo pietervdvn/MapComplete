@@ -1,24 +1,12 @@
 {
     "undefined": {
-        "phone": {
-            "question": "Wat is het telefoonnummer van {name}?"
+        "description": {
+            "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
         },
         "email": {
             "question": "Wat is het e-mailadres van {name}?"
         },
-        "website": {
-            "question": "Wat is de website van {name}?"
-        },
-        "description": {
-            "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
-        },
-        "opening_hours": {
-            "question": "Wat zijn de openingstijden van {name}?",
-            "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
-        },
         "level": {
-            "question": "Op welke verdieping bevindt dit punt zich?",
-            "render": "Bevindt zich op de {level}de verdieping",
             "mappings": {
                 "0": {
                     "then": "Bevindt zich ondergronds"
@@ -27,9 +15,52 @@
                     "then": "Bevindt zich op de begane grond"
                 },
                 "2": {
+                    "then": "Bevindt zich gelijkvloers"
+                },
+                "3": {
                     "then": "Bevindt zich op de eerste verdieping"
                 }
-            }
+            },
+            "question": "Op welke verdieping bevindt dit punt zich?",
+            "render": "Bevindt zich op de {level}de verdieping"
+        },
+        "opening_hours": {
+            "question": "Wat zijn de openingstijden van {name}?",
+            "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Cash geld wordt hier aanvaard"
+                },
+                "1": {
+                    "then": "Betalen met bankkaarten kan hier"
+                }
+            },
+            "question": "Welke betaalmiddelen worden hier geaccepteerd?"
+        },
+        "phone": {
+            "question": "Wat is het telefoonnummer van {name}?"
+        },
+        "website": {
+            "question": "Wat is de website van {name}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel"
+                },
+                "1": {
+                    "then": "Deze plaats is vlot bereikbaar met een rolstoel"
+                },
+                "2": {
+                    "then": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk"
+                },
+                "3": {
+                    "then": "Niet rolstoeltoegankelijk"
+                }
+            },
+            "question": "Is deze plaats rolstoeltoegankelijk?"
         }
     }
 }

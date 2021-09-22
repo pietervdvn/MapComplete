@@ -14,13 +14,13 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
     public readonly name;
 
     constructor(layers: UIEventSource<FilteredLayer[]>, upstream: FeatureSource) {
-        this.name = "FeatureDuplicator of "+upstream.name;
+        this.name = "FeatureDuplicator of " + upstream.name;
         this.features = upstream.features.map(features => {
             const newFeatures: { feature: any, freshness: Date }[] = [];
-            if(features === undefined){
+            if (features === undefined) {
                 return newFeatures;
             }
-           
+
             for (const f of features) {
                 if (f.feature._matching_layer_id) {
                     // Already matched previously
@@ -29,7 +29,7 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
                     continue;
                 }
 
-                
+
                 let foundALayer = false;
                 for (const layer of layers.data) {
                     if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
@@ -43,7 +43,7 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
                                 id: f.feature.id,
                                 type: f.feature.type,
                                 properties: f.feature.properties,
-                                _matching_layer_id : layer.layerDef.id
+                                _matching_layer_id: layer.layerDef.id
                             }
                             newFeatures.push({feature: newFeature, freshness: f.freshness});
                         } else {

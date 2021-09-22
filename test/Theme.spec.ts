@@ -1,21 +1,18 @@
 import T from "./TestHelper";
 import {Utils} from "../Utils";
-
-Utils.runningFromConsole = true;
-import TagRenderingQuestion from "../UI/Popup/TagRenderingQuestion";
-import {UIEventSource} from "../Logic/UIEventSource";
 import * as assert from "assert";
-import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
-export default class ThemeSpec extends T{
+Utils.runningFromConsole = true;
+
+export default class ThemeSpec extends T {
     constructor() {
         super("Theme tests",
             [
                 ["Nested overrides work", () => {
 
-                    const themeConfigJson : LayoutConfigJson = {
+                    const themeConfigJson: LayoutConfigJson = {
                         description: "Descr",
                         icon: "",
                         language: ["en"],
@@ -23,7 +20,7 @@ export default class ThemeSpec extends T{
                             {
                                 builtin: "public_bookcase",
                                 override: {
-                                    source:{
+                                    source: {
                                         geoJson: "xyz"
                                     }
                                 }

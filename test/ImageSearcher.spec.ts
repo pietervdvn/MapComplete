@@ -19,11 +19,9 @@ export default class ImageSearcherSpec extends T {
                     const result = searcher.data[0];
                     equal(result.url, "https://www.mapillary.com/map/im/bYH6FFl8LXAPapz4PNSh3Q");
                 }
-            ]
-
-
+            ],
         ]);
-        
+
     }
 
 

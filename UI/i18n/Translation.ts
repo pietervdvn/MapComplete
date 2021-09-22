@@ -31,10 +31,10 @@ export class Translation extends BaseUIElement {
     }
 
     get txt(): string {
-      return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
+        return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
     }
-    
-    public textFor(language: string): string{
+
+    public textFor(language: string): string {
         if (this.translations["*"]) {
             return this.translations["*"];
         }
@@ -55,7 +55,7 @@ export class Translation extends BaseUIElement {
         console.error("Missing language ", Locale.language.data, "for", this.translations)
         return "";
     }
-    
+
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         Locale.language.addCallbackAndRun(_ => {
@@ -73,7 +73,7 @@ export class Translation extends BaseUIElement {
             if (translationsKey === "#") {
                 continue;
             }
-            if(!this.translations.hasOwnProperty(translationsKey)){
+            if (!this.translations.hasOwnProperty(translationsKey)) {
                 continue
             }
             langs.push(translationsKey)
@@ -111,9 +111,11 @@ export class Translation extends BaseUIElement {
                     rtext = date.toLocaleString();
                 } else if (el.ConstructElement === undefined) {
                     console.error("ConstructElement is not defined", el);
-                    throw "ConstructElement is not defined, you are working with a "+(typeof el)+":"+(el.constructor.name)
+                    throw "ConstructElement is not defined, you are working with a " + (typeof el) + ":" + (el.constructor.name)
+                } else if (el["textFor"] !== undefined) {
+                    // @ts-ignore
+                    rtext = el.textFor(lang)
                 } else {
-                    Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
                     rtext = el.ConstructElement().innerHTML;
 
                 }
@@ -126,7 +128,6 @@ export class Translation extends BaseUIElement {
             }
             newTranslations[lang] = template;
         }
-        Translation.forcedLanguage = undefined;
         return new Translation(newTranslations);
 
     }
@@ -194,5 +195,5 @@ export class Translation extends BaseUIElement {
         }
         return allIcons.filter(icon => icon != undefined)
     }
-    
+
 }

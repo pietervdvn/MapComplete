@@ -3,7 +3,7 @@
   "version": "2020-08-30",
   "title": {
     "en": "Open Artwork Map",
-    "nl": "Kunstwerkenkaart",
+    "nl": "Open kunstwerken-kaart",
     "fr": "Carte ouverte des œuvres d'art",
     "de": "Freie Kunstwerk-Karte",
     "hu": "Nyít Műalkotás Térkép",
@@ -12,11 +12,12 @@
     "ru": "Открытая карта произведений искусства",
     "ja": "オープン アートワーク マップ",
     "zh_Hant": "開放藝術品地圖",
-    "sv": "Öppen konstverkskarta"
+    "sv": "Öppen konstverkskarta",
+    "pl": "Otwórz mapę dzieł sztuki"
   },
   "description": {
     "en": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
-    "nl": "Welkom op de Open Kunstwerken Kaart",
+    "nl": "Welkom op de open kunstwerken-kaart, een kaart van standbeelden, bustes, graffiti en andere kunstwerken over de hele wereld",
     "fr": "Bienvenue sur la carte ouverte des œuvres d'art, une carte des statues, fresques, ... du monde entier",
     "de": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
     "id": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
@@ -38,6 +39,7 @@
     "ja",
     "zh_Hant",
     "sv",
+    "pl",
     "es",
     "nb_NO"
   ],
@@ -345,7 +347,7 @@
         {
           "question": {
             "en": "Which artist created this?",
-            "nl": "Welke artist creëerde dit kunstwerk?",
+            "nl": "Welke kunstenaar creëerde dit kunstwerk?",
             "fr": "Quel artiste a créé cette œuvre ?",
             "de": "Welcher Künstler hat das geschaffen?",
             "it": "Quale artista ha creato quest’opera?",
@@ -372,7 +374,7 @@
         {
           "question": {
             "en": "Is there a website with more information about this artwork?",
-            "nl": "Op welke website kan men meer informatie vinden over dit kunstwerk?",
+            "nl": "Is er een website met meer informatie over dit kunstwerk?",
             "fr": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
             "de": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
             "it": "Esiste un sito web con maggiori informazioni su quest’opera?",
@@ -401,7 +403,7 @@
         {
           "question": {
             "en": "Which Wikidata-entry corresponds with <b>this artwork</b>?",
-            "nl": "Welk Wikidata-item beschrijft dit kunstwerk?",
+            "nl": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
             "fr": "Quelle entrée Wikidata correspond à <b>cette œuvre d'art</b> ?",
             "de": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
             "it": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?",

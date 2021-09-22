@@ -1,29 +1,29 @@
 {
     "aed": {
-        "title": "Buka Peta AED",
-        "description": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat"
+        "description": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat",
+        "title": "Buka Peta AED"
     },
     "artwork": {
-        "title": "Buka Peta Karya Seni",
         "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
         "layers": {
             "0": {
                 "name": "Karya seni",
-                "title": {
-                    "render": "Karya seni",
-                    "mappings": {
-                        "0": {
-                            "then": "Karya seni <i>{name}</i>"
-                        }
-                    }
-                },
                 "tagRenderings": {
                     "3": {
                         "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
                     }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Karya seni <i>{name}</i>"
+                        }
+                    },
+                    "render": "Karya seni"
                 }
             }
-        }
+        },
+        "title": "Buka Peta Karya Seni"
     },
     "campersite": {
         "layers": {
@@ -40,7 +40,6 @@
                         }
                     },
                     "6": {
-                        "question": "Tempat ini berbagi akses Web?",
                         "mappings": {
                             "0": {
                                 "then": "Akses Web tersedia"
@@ -51,7 +50,8 @@
                             "2": {
                                 "then": "Tiada akses Web"
                             }
-                        }
+                        },
+                        "question": "Tempat ini berbagi akses Web?"
                     },
                     "8": {
                         "mappings": {
@@ -64,8 +64,8 @@
                         }
                     },
                     "9": {
-                        "render": "Situs resmi: <a href='{website}'>{website}</a>",
-                        "question": "Tempat sini terada situs web?"
+                        "question": "Tempat sini terada situs web?",
+                        "render": "Situs resmi: <a href='{website}'>{website}</a>"
                     }
                 }
             }
@@ -120,17 +120,6 @@
                 "tagRenderings": {
                     "1": {
                         "render": "<strong>{name}</strong>"
-                    }
-                }
-            }
-        }
-    },
-    "fritures": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "3": {
-                        "render": "<a href='{website}'>{website}</a>"
                     }
                 }
             }

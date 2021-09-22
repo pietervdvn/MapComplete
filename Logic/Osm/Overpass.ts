@@ -3,6 +3,7 @@ import Bounds from "../../Models/Bounds";
 import {TagsFilter} from "../Tags/TagsFilter";
 import ExtractRelations from "./ExtractRelations";
 import {Utils} from "../../Utils";
+import {UIEventSource} from "../UIEventSource";
 
 /**
  * Interfaces overpass to get all the latest data
@@ -10,10 +11,17 @@ import {Utils} from "../../Utils";
 export class Overpass {
     public static testUrl: string = null
     private _filter: TagsFilter
+    private readonly _interpreterUrl: UIEventSource<string>;
+    private readonly _timeout: UIEventSource<number>;
     private readonly _extraScripts: string[];
     private _includeMeta: boolean;
 
-    constructor(filter: TagsFilter, extraScripts: string[], includeMeta = true) {
+    constructor(filter: TagsFilter, extraScripts: string[],
+                interpreterUrl: UIEventSource<string>,
+                timeout: UIEventSource<number>,
+                includeMeta = true) {
+        this._timeout = timeout;
+        this._interpreterUrl = interpreterUrl;
         this._filter = filter
         this._extraScripts = extraScripts;
         this._includeMeta = includeMeta;
@@ -29,11 +37,12 @@ export class Overpass {
         }
         Utils.downloadJson(query)
             .then(json => {
-                if (json.elements === [] && json.remarks.indexOf("runtime error") > 0) {
+                if (json.elements === [] && ((json.remarks ?? json.remark).indexOf("runtime error") >= 0)) {
                     console.log("Timeout or other runtime error");
                     onFail("Runtime error (timeout)")
                     return;
                 }
+
 
                 ExtractRelations.RegisterRelations(json)
                 // @ts-ignore
@@ -54,7 +63,7 @@ export class Overpass {
             filter += '(' + extraScript + ');';
         }
         const query =
-            `[out:json][timeout:25]${bbox};(${filter});out body;${this._includeMeta ? 'out meta;' : ''}>;out skel qt;`
-        return "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query)
+            `[out:json][timeout:${this._timeout.data}]${bbox};(${filter});out body;${this._includeMeta ? 'out meta;' : ''}>;out skel qt;`
+        return `${this._interpreterUrl.data}?data=${encodeURIComponent(query)}`
     }
 }
