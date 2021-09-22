@@ -130,10 +130,6 @@ btn {
     width: 4rem !important;
 }
 
-.space-between {
-    justify-content: space-between;
-}
-
 .link-underline a {
     text-decoration: underline 1px #0078a855;;
     color: #0078A8;
