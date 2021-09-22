@@ -65,8 +65,7 @@
             "openTill": "fino a",
             "opensAt": "da",
             "open_during_ph": "Durante le festività questo luogo è",
-            "error_loading": "Errore: impossibile visualizzare questi orari di apertura.",
-            "ph_open_as_usual": ""
+            "error_loading": "Errore: impossibile visualizzare questi orari di apertura."
         },
         "weekdays": {
             "sunday": "Domenica",
@@ -121,7 +120,6 @@
             "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br>",
             "title": "Aggiungi un nuovo punto?",
             "addNew": "Aggiungi una nuova {category} qua",
-            "addNewMapLabel": "",
             "presetInfo": ""
         },
         "osmLinkTooltip": "Vedi questo oggetto su OpenStreetMap per la cronologia o altre opzioni di modifica",
@@ -142,18 +140,13 @@
         "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
         "loginWithOpenStreetMap": "Accedi con OpenStreetMap",
         "download": {
-            "title": "",
             "noDataLoaded": "",
-            "downloadAsPdf": "",
-            "downloadGeojson": "",
-            "downloadCSVHelper": ""
+            "downloadGeojson": ""
         },
         "pdf": {
-            "attrBackground": "",
-            "attr": ""
+            "attrBackground": ""
         },
-        "openTheMap": "",
-        "testing": ""
+        "openTheMap": ""
     },
     "index": {
         "#": "Questi testi sono mostrati sopra ai pulsanti del tema quando nessun tema è stato caricato",
@@ -189,23 +182,17 @@
         "addPicture": "Aggiungi foto"
     },
     "split": {
-        "loginToSplit": "",
-        "split": "",
-        "splitTitle": ""
+        "split": ""
     },
     "delete": {
         "reasons": {
             "disused": ""
         },
         "explanations": {
-            "softDelete": "",
             "selectReason": ""
         },
-        "cancel": "",
         "readMessages": "",
-        "loading": "",
         "useSomethingElse": "",
-        "onlyEditedByLoggedInUser": "",
         "safeDelete": ""
     }
 }

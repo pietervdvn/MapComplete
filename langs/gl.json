@@ -56,7 +56,6 @@
             "confirmButton": "Engadir {category} aquí",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
             "openLayerControl": "Abrir o control de capas",
-            "presetInfo": "",
             "addNewMapLabel": ""
         },
         "pickLanguage": "Escoller lingua: ",
@@ -119,8 +118,7 @@
             "openTill": "até",
             "opensAt": "dende",
             "open_during_ph": "Durante festas este servizo está",
-            "error_loading": "Erro: non foi posíbel ver eses horarios de abertura.",
-            "loadingCountry": ""
+            "error_loading": "Erro: non foi posíbel ver eses horarios de abertura."
         },
         "weekdays": {
             "sunday": "Domingo",
@@ -158,19 +156,12 @@
             "attributionTitle": "Aviso de atribución"
         },
         "pdf": {
-            "generatedWith": "",
             "attr": ""
         },
-        "loginOnlyNeededToEdit": "",
         "download": {
             "downloadCSVHelper": "",
-            "title": "",
             "downloadGeoJsonHelper": "",
-            "noDataLoaded": "",
             "downloadCSV": ""
-        },
-        "histogram": {
-            "error_loading": ""
         }
     },
     "favourite": {
@@ -189,28 +180,17 @@
         "title_singular": "Unha recensión",
         "title": "{count} recensións",
         "name_required": "Requírese un nome para amosar e crear recensións",
-        "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!",
-        "attribution": ""
+        "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!"
     },
     "delete": {
         "useSomethingElse": "",
-        "reasons": {
-            "disused": ""
-        },
         "readMessages": "",
-        "explanations": {
-            "softDelete": ""
-        },
         "delete": "",
-        "onlyEditedByLoggedInUser": "",
         "isntAPoint": "",
-        "isDeleted": "",
-        "partOfOthers": "",
-        "whyDelete": ""
+        "partOfOthers": ""
     },
     "split": {
         "inviteToSplit": "",
-        "cancel": "",
         "hasBeenSplit": ""
     }
 }

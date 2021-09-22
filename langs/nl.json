@@ -49,8 +49,7 @@
             "confirmButton": "Voeg hier een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
             "openLayerControl": "Open de laag-instellingen",
             "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
-            "presetInfo": "Het nieuwe punt krijgt de attributen {tags}",
-            "disableFiltersExplanation": ""
+            "presetInfo": "Het nieuwe punt krijgt de attributen {tags}"
         },
         "pickLanguage": "Kies je taal: ",
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
@@ -300,24 +299,15 @@
             "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:"
         },
         "pdf": {
-            "generatedWith": "",
             "attrBackground": ""
-        },
-        "histogram": {
-            "error_loading": ""
         },
         "download": {
             "downloadGeoJsonHelper": "",
-            "noDataLoaded": "",
             "includeMetaData": "",
-            "downloadCSV": "",
             "downloadGeojson": ""
         },
-        "skip": "",
         "loginOnlyNeededToEdit": "",
-        "returnToTheMap": "",
-        "openTheMap": "",
-        "cancel": ""
+        "openTheMap": ""
     },
     "reviews": {
         "title": "{count} beoordelingen",
@@ -341,23 +331,17 @@
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas"
     },
     "delete": {
-        "loading": "",
         "onlyEditedByLoggedInUser": "",
-        "readMessages": "",
         "delete": "",
         "reasons": {
-            "test": "",
             "notFound": ""
         },
-        "whyDelete": "",
         "explanations": {
             "hardDelete": ""
-        },
-        "safeDelete": ""
+        }
     },
     "split": {
         "loginToSplit": "",
-        "split": "",
         "cancel": ""
     }
 }

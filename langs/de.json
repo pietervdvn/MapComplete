@@ -56,7 +56,6 @@
             "confirmButton": "Fügen Sie hier eine {category} hinzu.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
             "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
             "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen",
-            "warnVisibleForEveryone": "",
             "disableFiltersExplanation": ""
         },
         "pickLanguage": "Wählen Sie eine Sprache: ",
@@ -139,8 +138,7 @@
             "open_24_7": "Tag und Nacht geöffnet",
             "ph_not_known": " ",
             "ph_closed": "geschlossen",
-            "ph_open": "geöffnet",
-            "ph_open_as_usual": ""
+            "ph_open": "geöffnet"
         },
         "attribution": {
             "mapContributionsByAndHidden": "Die aktuell sichtbaren Daten wurden editiert durch {contributors} und {hiddenCount} weitere Beitragende",
@@ -154,18 +152,13 @@
             "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>"
         },
         "download": {
-            "licenseInfo": "",
             "noDataLoaded": "",
-            "includeMetaData": "",
-            "downloadAsPdf": "",
-            "downloadCSVHelper": ""
+            "downloadAsPdf": ""
         },
         "openTheMap": "",
         "pdf": {
-            "generatedWith": "",
             "attr": ""
-        },
-        "testing": ""
+        }
     },
     "favourite": {
         "panelIntro": "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen",
@@ -190,22 +183,16 @@
     },
     "delete": {
         "reasons": {
-            "test": "",
             "disused": ""
         },
         "explanations": {
-            "selectReason": "",
             "hardDelete": ""
         },
-        "onlyEditedByLoggedInUser": "",
         "safeDelete": "",
-        "cancel": "",
-        "readMessages": "",
-        "partOfOthers": ""
+        "readMessages": ""
     },
     "split": {
         "hasBeenSplit": "",
-        "loginToSplit": "",
         "splitTitle": ""
     }
 }

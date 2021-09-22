@@ -3,8 +3,7 @@
         "questions": {
             "phoneNumberOf": "Apakah nombor telepon {category} ini?",
             "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "emailOf": "Apa alamat email {category}?",
-            "phoneNumberIs": ""
+            "emailOf": "Apa alamat email {category}?"
         },
         "nameInlineQuestion": "Name {category} ini adalah $$$",
         "pickLanguage": "Pilih bahasa: ",
@@ -13,8 +12,7 @@
         },
         "backgroundMap": "Peta latar belakang",
         "search": {
-            "searching": "Sdg mencari…",
-            "error": ""
+            "searching": "Sdg mencari…"
         },
         "opening_hours": {
             "ph_not_known": " ",
@@ -25,7 +23,6 @@
             "openTill": "sampai",
             "opensAt": "dari",
             "closed_until": "Ditutup sampai {date}",
-            "open_during_ph": "",
             "ph_open_as_usual": ""
         },
         "noTagsSelected": "Tidak ada tag yang dipilih",
@@ -45,7 +42,6 @@
             "editThisTheme": "Sunting tema ini",
             "thanksForSharing": "Terima kasih telah berbagi!",
             "copiedToClipboard": "Tautan disalin ke papan klip",
-            "addToHomeScreen": "",
             "intro": ""
         },
         "goToInbox": "Buka kotak masuk",
@@ -68,46 +64,30 @@
             "monday": "Senin"
         },
         "download": {
-            "downloadCSV": "",
             "downloadGeoJsonHelper": "",
-            "title": "",
-            "includeMetaData": "",
-            "downloadGeojson": ""
+            "includeMetaData": ""
         },
         "morescreen": {
-            "requestATheme": "",
-            "streetcomplete": ""
+            "requestATheme": ""
         },
         "pdf": {
-            "versionInfo": "",
-            "generatedWith": ""
+            "versionInfo": ""
         },
         "add": {
             "presetInfo": "",
-            "disableFilters": "",
             "layerNotEnabled": "",
-            "confirmButton": "",
             "stillLoading": "",
-            "pleaseLogin": "",
             "title": ""
         },
-        "testing": "",
         "attribution": {
             "themeBy": "",
-            "attributionTitle": "",
             "mapContributionsBy": ""
         },
-        "readYourMessages": "",
         "customThemeIntro": "",
-        "loginToStart": "",
         "aboutMapcomplete": "",
-        "loginWithOpenStreetMap": "",
         "fewChangesBefore": "",
-        "osmLinkTooltip": "",
         "skippedQuestions": "",
-        "skip": "",
-        "save": "",
-        "welcomeBack": ""
+        "save": ""
     },
     "image": {
         "doDelete": "Buang gambar",
@@ -120,17 +100,14 @@
         "uploadingPicture": "Mengunggah gambar Anda…",
         "addPicture": "Tambahkan foto",
         "isDeleted": "Dihapus",
-        "dontDelete": "Batal",
-        "uploadDone": ""
+        "dontDelete": "Batal"
     },
     "centerMessage": {
         "ready": "Selesai!",
-        "loadingData": "Memuat data…",
-        "retrying": ""
+        "loadingData": "Memuat data…"
     },
     "favourite": {
-        "reload": "Muat ulang data",
-        "panelIntro": ""
+        "reload": "Muat ulang data"
     },
     "reviews": {
         "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -143,7 +120,6 @@
         "title_singular": "Satu ulasan",
         "title": "{count} ulasan",
         "plz_login": "Masuk untuk meninggalkan ulasan",
-        "i_am_affiliated": "",
         "name_required": ""
     },
     "index": {
@@ -153,23 +129,16 @@
     },
     "delete": {
         "explanations": {
-            "softDelete": "",
             "selectReason": ""
         },
-        "loading": "",
         "reasons": {
             "notFound": ""
         },
-        "isDeleted": "",
         "isntAPoint": "",
-        "safeDelete": "",
         "onlyEditedByLoggedInUser": "",
-        "useSomethingElse": "",
         "delete": ""
     },
     "split": {
-        "inviteToSplit": "",
-        "split": "",
-        "cancel": ""
+        "split": ""
     }
 }

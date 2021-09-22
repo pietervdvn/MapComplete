@@ -4,97 +4,64 @@
         "cancel": "Avbryt",
         "save": "Lagre",
         "search": {
-            "searching": "Søker …",
-            "nothing": ""
+            "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
         "attribution": {
-            "codeContributionsBy": "",
             "themeBy": "",
-            "iconAttribution": {
-                "title": ""
-            },
             "attributionTitle": ""
         },
         "morescreen": {
-            "intro": "",
             "createYourOwnTheme": ""
         },
         "sharescreen": {
-            "fsSearch": "",
             "fsIncludeCurrentLayers": "",
-            "editThisTheme": "",
             "fsLayerControlToggle": "",
-            "editThemeDescription": "",
             "fsGeolocation": "",
-            "addToHomeScreen": "",
             "thanksForSharing": ""
         },
-        "getStartedLogin": "",
         "weekdays": {
             "abbreviations": {
                 "wednesday": "",
-                "sunday": "",
                 "tuesday": ""
             },
-            "wednesday": "",
             "saturday": "",
-            "tuesday": "",
             "thursday": ""
         },
         "opening_hours": {
-            "ph_open": "",
             "open_during_ph": "",
-            "closed_until": "",
             "ph_open_as_usual": "",
-            "ph_not_known": "",
             "not_all_rules_parsed": ""
         },
         "download": {
-            "includeMetaData": "",
             "downloadAsPdfHelper": "",
-            "downloadCSVHelper": "",
-            "licenseInfo": "",
-            "title": ""
+            "licenseInfo": ""
         },
         "add": {
             "confirmIntro": "",
-            "intro": "",
             "presetInfo": "",
-            "warnVisibleForEveryone": "",
             "openLayerControl": "",
-            "disableFiltersExplanation": "",
-            "title": "",
-            "pleaseLogin": ""
+            "title": ""
         },
         "layerSelection": {
             "title": ""
         },
         "questions": {
-            "phoneNumberIs": "",
-            "phoneNumberOf": "",
-            "emailOf": ""
+            "phoneNumberOf": ""
         },
         "noTagsSelected": "",
-        "readYourMessages": "",
         "number": "",
-        "aboutMapcomplete": "",
         "about": "",
-        "openTheMap": "",
         "loginWithOpenStreetMap": "",
-        "backgroundMap": "",
         "pdf": {
-            "versionInfo": "",
-            "attrBackground": ""
+            "versionInfo": ""
         },
         "pickLanguage": "",
-        "loginToStart": "",
         "returnToTheMap": ""
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
-        "title": "Velkommen til MapComplete",
-        "intro": ""
+        "title": "Velkommen til MapComplete"
     },
     "centerMessage": {
         "ready": "Ferdig",
@@ -109,39 +76,27 @@
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
         "pleaseLogin": "Logg inn for å legge til et bilde",
-        "willBePublished": "",
-        "respectPrivacy": "",
-        "uploadDone": ""
+        "respectPrivacy": ""
     },
     "reviews": {
         "no_reviews_yet": "",
-        "title_singular": "",
         "i_am_affiliated": "",
-        "tos": "",
         "write_a_comment": "",
-        "attribution": "",
         "saved": ""
     },
     "delete": {
-        "loginToDelete": "",
         "explanations": {
-            "softDelete": "",
-            "selectReason": ""
+            "softDelete": ""
         },
         "reasons": {
-            "notFound": "",
-            "test": ""
+            "notFound": ""
         },
         "useSomethingElse": "",
-        "whyDelete": "",
         "cancel": "",
-        "onlyEditedByLoggedInUser": "",
         "partOfOthers": ""
     },
     "split": {
-        "split": "",
-        "splitTitle": "",
-        "cancel": ""
+        "splitTitle": ""
     },
     "favourite": {
         "loginNeeded": ""

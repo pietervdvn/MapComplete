@@ -55,7 +55,6 @@
             "confirmButton": "Afegir {category} aquí",
             "openLayerControl": "Obrir el control de capes",
             "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa",
-            "disableFiltersExplanation": "",
             "presetInfo": ""
         },
         "pickLanguage": "Tria idioma: ",
@@ -134,7 +133,6 @@
             "ph_not_known": " ",
             "ph_closed": "tancat",
             "ph_open": "tancat",
-            "ph_open_as_usual": "",
             "error_loading": ""
         },
         "attribution": {
@@ -148,18 +146,13 @@
             "themeBy": "Tema mantingut per {author}"
         },
         "download": {
-            "noDataLoaded": "",
             "licenseInfo": "",
-            "downloadCSV": "",
-            "downloadGeoJsonHelper": "",
-            "downloadGeojson": ""
+            "downloadGeoJsonHelper": ""
         },
         "aboutMapcomplete": "",
         "pdf": {
-            "versionInfo": "",
             "attrBackground": ""
         },
-        "customThemeIntro": "",
         "loginOnlyNeededToEdit": ""
     },
     "favourite": {
@@ -176,28 +169,18 @@
         "title": "{count} revisions",
         "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
         "saving_review": "Desant…",
-        "tos": "",
-        "posting_as": "",
-        "i_am_affiliated": ""
+        "posting_as": ""
     },
     "delete": {
         "isntAPoint": "",
-        "reasons": {
-            "notFound": ""
-        },
         "whyDelete": "",
         "explanations": {
-            "selectReason": "",
             "softDelete": ""
         },
-        "partOfOthers": "",
         "notEnoughExperience": "",
-        "safeDelete": "",
         "isDeleted": ""
     },
     "split": {
-        "splitTitle": "",
-        "loginToSplit": "",
-        "cancel": ""
+        "loginToSplit": ""
     }
 }

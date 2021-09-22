@@ -40,7 +40,6 @@
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
             "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>",
-            "presetInfo": "",
             "addNewMapLabel": ""
         },
         "number": "numer",
@@ -58,8 +57,7 @@
             "openTill": "do",
             "open_during_ph": "W czasie świąt państwowych udogodnienie to jest",
             "error_loading": "Błąd: nie można zwizualizować tych godzin otwarcia.",
-            "opensAt": "z",
-            "ph_open_as_usual": ""
+            "opensAt": "z"
         },
         "general": {
             "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap",
@@ -236,30 +234,20 @@
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
         "attribution": {
-            "mapContributionsBy": "",
-            "themeBy": "",
-            "attributionTitle": ""
+            "themeBy": ""
         },
         "download": {
             "downloadCSVHelper": "",
-            "includeMetaData": "",
             "licenseInfo": "",
-            "title": "",
             "noDataLoaded": ""
         },
         "morescreen": {
-            "intro": "",
             "createYourOwnTheme": ""
         },
         "pdf": {
-            "attr": "",
             "versionInfo": ""
         },
-        "loginOnlyNeededToEdit": "",
-        "openTheMap": "",
-        "histogram": {
-            "error_loading": ""
-        }
+        "openTheMap": ""
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
@@ -295,23 +283,15 @@
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów"
     },
     "delete": {
-        "explanations": {
-            "hardDelete": ""
-        },
         "isDeleted": "",
-        "loginToDelete": "",
         "reasons": {
-            "disused": "",
-            "notFound": ""
+            "disused": ""
         },
         "useSomethingElse": "",
-        "cancel": "",
-        "notEnoughExperience": "",
-        "partOfOthers": ""
+        "notEnoughExperience": ""
     },
     "split": {
         "splitTitle": "",
-        "split": "",
         "hasBeenSplit": ""
     }
 }

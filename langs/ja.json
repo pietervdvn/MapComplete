@@ -83,7 +83,6 @@
             "zoomInFurther": "さらにズーム拡大して点を追加します。",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">新しいポイントを追加するにはログインしてください</a>",
             "title": "新しいポイントを追加しますか?",
-            "presetInfo": "",
             "disableFiltersExplanation": ""
         },
         "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
@@ -100,8 +99,7 @@
             "openTill": "終了時刻",
             "opensAt": "開始時刻",
             "open_during_ph": "このアメニティは、祝日には",
-            "error_loading": "エラー:これらの営業時間を表示できませんでした。",
-            "loadingCountry": ""
+            "error_loading": "エラー:これらの営業時間を表示できませんでした。"
         },
         "weekdays": {
             "sunday": "日曜日",
@@ -147,20 +145,15 @@
         "welcomeBack": "ログインしました、お帰りなさい!",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
         "download": {
-            "downloadCSV": "",
             "includeMetaData": "",
-            "title": "",
-            "downloadAsPdf": "",
-            "licenseInfo": ""
+            "downloadAsPdf": ""
         },
         "pdf": {
-            "generatedWith": "",
-            "versionInfo": ""
+            "generatedWith": ""
         },
         "histogram": {
             "error_loading": ""
-        },
-        "openTheMap": ""
+        }
     },
     "index": {
         "#": "これらのテキストは、テーマがロードされていない場合にテーマボタンの上に表示されます",
@@ -191,23 +184,15 @@
         "addPicture": "写真の追加"
     },
     "delete": {
-        "explanations": {
-            "hardDelete": ""
-        },
         "cancel": "",
-        "delete": "",
         "reasons": {
             "disused": ""
         },
-        "partOfOthers": "",
         "whyDelete": "",
-        "safeDelete": "",
-        "isDeleted": "",
-        "onlyEditedByLoggedInUser": ""
+        "isDeleted": ""
     },
     "split": {
         "inviteToSplit": "",
-        "splitTitle": "",
         "loginToSplit": ""
     }
 }

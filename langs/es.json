@@ -56,7 +56,6 @@
             "confirmButton": "Añadir una {category} aquí.<br><div class=\"alert\">Tu contribución es visible para todos</div>",
             "openLayerControl": "Abrir el control de capas",
             "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
-            "presetInfo": "",
             "warnVisibleForEveryone": ""
         },
         "pickLanguage": "Escoge idioma: ",
@@ -137,8 +136,7 @@
             "ph_closed": "cerrado",
             "ph_open": "abierto",
             "open_24_7": "Abierto las 24 horas del día",
-            "error_loading": "Error: no se han podido visualizar esos horarios de apertura.",
-            "loadingCountry": ""
+            "error_loading": "Error: no se han podido visualizar esos horarios de apertura."
         },
         "attribution": {
             "mapContributionsBy": "La información visible actual tiene ediciones hechas por {contributors}",
@@ -147,24 +145,16 @@
             },
             "themeBy": "Tema mantenido por {author}",
             "attributionContent": "<p>Todos los datos son proporcionados por <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, reutilizables libremente bajo <a href=\"https://osm.org/copyright\" target=\"_blank\">la Licencia Abierta de Bases de Datos (ODL)</a>.</p>",
-            "attributionTitle": "Aviso de atribución",
-            "mapContributionsByAndHidden": ""
+            "attributionTitle": "Aviso de atribución"
         },
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
         "download": {
-            "downloadAsPdfHelper": "",
             "downloadAsPdf": "",
-            "downloadCSV": "",
-            "downloadCSVHelper": "",
-            "downloadGeojson": ""
+            "downloadCSVHelper": ""
         },
         "testing": "",
         "pdf": {
-            "attr": "",
             "versionInfo": ""
-        },
-        "histogram": {
-            "error_loading": ""
         }
     },
     "favourite": {
@@ -182,28 +172,18 @@
         "write_a_comment": "Deja una reseña…",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
         "plz_login": "Inicia sesión para dejar una reseña",
-        "posting_as": "",
         "affiliated_reviewer_warning": ""
     },
     "delete": {
-        "notEnoughExperience": "",
         "explanations": {
-            "hardDelete": "",
-            "selectReason": ""
+            "hardDelete": ""
         },
         "useSomethingElse": "",
-        "reasons": {
-            "notFound": ""
-        },
         "partOfOthers": "",
-        "isDeleted": "",
         "loading": "",
-        "onlyEditedByLoggedInUser": "",
         "safeDelete": ""
     },
     "split": {
-        "inviteToSplit": "",
-        "split": "",
-        "cancel": ""
+        "split": ""
     }
 }
