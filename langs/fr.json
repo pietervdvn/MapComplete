@@ -56,7 +56,6 @@
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "openLayerControl": "Ouvrir la panneau de contrôle",
             "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
-            "warnVisibleForEveryone": "",
             "presetInfo": ""
         },
         "pickLanguage": "Choisir la langue : ",
@@ -150,21 +149,16 @@
             "open_24_7": "Ouvert en permanence",
             "ph_closed": "fermé",
             "ph_open": "ouvert",
-            "ph_not_known": " ",
-            "ph_open_as_usual": ""
+            "ph_not_known": " "
         },
         "download": {
             "downloadAsPdfHelper": "",
-            "includeMetaData": "",
             "title": "",
-            "downloadCSV": "",
             "downloadGeoJsonHelper": ""
         },
         "pdf": {
-            "generatedWith": "",
             "versionInfo": ""
         },
-        "openTheMap": "",
         "histogram": {
             "error_loading": ""
         }
@@ -191,23 +185,15 @@
         "plz_login": "Connectez vous pour laisser un avis"
     },
     "delete": {
-        "whyDelete": "",
         "loginToDelete": "",
-        "reasons": {
-            "notFound": ""
-        },
         "notEnoughExperience": "",
-        "useSomethingElse": "",
         "delete": "",
         "explanations": {
-            "selectReason": "",
             "hardDelete": ""
-        },
-        "isDeleted": ""
+        }
     },
     "split": {
         "splitTitle": "",
-        "split": "",
         "inviteToSplit": ""
     }
 }

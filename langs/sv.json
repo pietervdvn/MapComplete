@@ -10,8 +10,7 @@
             "openTill": "till",
             "opensAt": "från",
             "open_during_ph": "Om det är en röd dag är det här stället",
-            "error_loading": "Fel: kunde inte visualisera öppettiderna.",
-            "ph_open_as_usual": ""
+            "error_loading": "Fel: kunde inte visualisera öppettiderna."
         },
         "weekdays": {
             "sunday": "Söndag",
@@ -32,76 +31,49 @@
             }
         },
         "sharescreen": {
-            "fsIncludeCurrentBackgroundMap": "",
             "copiedToClipboard": "",
-            "fsSearch": "",
             "editThemeDescription": "",
-            "fsIncludeCurrentLocation": "",
             "fsLayers": "",
-            "fsLayerControlToggle": "",
             "fsAddNew": ""
         },
         "download": {
-            "downloadGeojson": "",
             "includeMetaData": "",
-            "downloadGeoJsonHelper": "",
-            "licenseInfo": "",
-            "downloadCSV": ""
+            "licenseInfo": ""
         },
         "getStartedLogin": "",
         "add": {
-            "pleaseLogin": "",
             "addNewMapLabel": "",
-            "disableFiltersExplanation": "",
             "warnVisibleForEveryone": "",
-            "confirmButton": "",
-            "zoomInFurther": "",
-            "openLayerControl": ""
+            "zoomInFurther": ""
         },
         "morescreen": {
-            "streetcomplete": "",
-            "intro": ""
+            "streetcomplete": ""
         },
         "about": "",
-        "aboutMapcomplete": "",
         "histogram": {
             "error_loading": ""
         },
-        "layerSelection": {
-            "zoomInToSeeThisLayer": ""
-        },
         "testing": "",
         "questions": {
-            "phoneNumberIs": "",
-            "phoneNumberOf": "",
-            "emailOf": ""
+            "phoneNumberOf": ""
         },
         "fewChangesBefore": "",
-        "noNameCategory": "",
         "getStartedNewAccount": "",
-        "cancel": "",
         "attribution": {
             "codeContributionsBy": "",
-            "mapContributionsBy": "",
             "iconAttribution": {
                 "title": ""
             }
         },
-        "skip": "",
         "number": "",
-        "goToInbox": "",
         "search": {
-            "searching": "",
-            "search": ""
+            "searching": ""
         },
         "pdf": {
-            "generatedWith": "",
-            "versionInfo": ""
+            "generatedWith": ""
         },
         "osmLinkTooltip": "",
-        "returnToTheMap": "",
-        "oneSkippedQuestion": "",
-        "customThemeIntro": ""
+        "oneSkippedQuestion": ""
     },
     "centerMessage": {
         "ready": "Klar!",
@@ -126,40 +98,28 @@
         "addPicture": "Lägg till bild"
     },
     "delete": {
-        "whyDelete": "",
         "explanations": {
             "softDelete": ""
         },
-        "notEnoughExperience": "",
         "reasons": {
-            "disused": "",
-            "test": ""
+            "disused": ""
         },
         "loading": "",
-        "partOfOthers": "",
-        "loginToDelete": "",
-        "cancel": ""
+        "loginToDelete": ""
     },
     "index": {
-        "intro": "",
-        "title": ""
+        "intro": ""
     },
     "reviews": {
         "saved": "",
-        "plz_login": "",
         "tos": "",
-        "no_reviews_yet": "",
         "name_required": "",
-        "affiliated_reviewer_warning": "",
         "title_singular": ""
     },
     "split": {
-        "hasBeenSplit": "",
-        "splitTitle": "",
-        "loginToSplit": ""
+        "splitTitle": ""
     },
     "favourite": {
-        "reload": "",
-        "panelIntro": ""
+        "reload": ""
     }
 }
