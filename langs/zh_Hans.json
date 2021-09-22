@@ -1,91 +1,55 @@
 {
     "general": {
         "sharescreen": {
-            "thanksForSharing": "",
             "editThisTheme": "",
-            "fsLayers": "",
             "fsIncludeCurrentBackgroundMap": ""
-        },
-        "questions": {
-            "emailIs": ""
         },
         "nameInlineQuestion": "",
         "opening_hours": {
-            "ph_open": "",
-            "openTill": "",
-            "closed_permanently": ""
+            "openTill": ""
         },
         "add": {
             "intro": "",
-            "disableFilters": "",
-            "pleaseLogin": "",
-            "presetInfo": ""
+            "pleaseLogin": ""
         },
         "download": {
-            "downloadGeoJsonHelper": "",
-            "downloadAsPdfHelper": ""
+            "downloadGeoJsonHelper": ""
         },
         "weekdays": {
             "abbreviations": {
-                "saturday": "",
-                "wednesday": ""
+                "saturday": ""
             },
-            "thursday": "",
-            "friday": ""
+            "thursday": ""
         },
         "histogram": {
             "error_loading": ""
         },
-        "morescreen": {
-            "requestATheme": ""
-        },
         "attribution": {
-            "codeContributionsBy": "",
-            "attributionTitle": ""
+            "codeContributionsBy": ""
         },
         "getStartedLogin": "",
-        "about": "",
         "search": {
             "searching": ""
         },
-        "pdf": {
-            "attrBackground": ""
-        },
         "skippedQuestions": "",
-        "noNameCategory": "",
-        "save": "",
-        "getStartedNewAccount": ""
+        "save": ""
     },
     "reviews": {
         "saving_review": "",
-        "write_a_comment": "",
         "name_required": ""
-    },
-    "favourite": {
-        "panelIntro": ""
     },
     "delete": {
         "delete": "",
-        "cancel": "",
         "explanations": {
             "selectReason": ""
         },
-        "whyDelete": "",
         "onlyEditedByLoggedInUser": ""
-    },
-    "index": {
-        "#": ""
     },
     "centerMessage": {
         "loadingData": ""
     },
-    "split": {
-        "inviteToSplit": ""
-    },
     "image": {
         "uploadDone": "",
-        "respectPrivacy": "",
-        "pleaseLogin": "",
-        "ccbs": ""
+        "pleaseLogin": ""
     }
 }

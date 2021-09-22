@@ -8,56 +8,35 @@
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
         "attribution": {
-            "themeBy": "",
             "attributionTitle": ""
-        },
-        "morescreen": {
-            "createYourOwnTheme": ""
         },
         "sharescreen": {
             "fsIncludeCurrentLayers": "",
-            "embedIntro": "",
-            "fsIncludeCurrentBackgroundMap": "",
-            "thanksForSharing": ""
+            "fsIncludeCurrentBackgroundMap": ""
         },
         "weekdays": {
             "abbreviations": {
-                "wednesday": "",
-                "friday": ""
+                "wednesday": ""
             },
-            "sunday": "",
-            "thursday": ""
+            "sunday": ""
         },
         "opening_hours": {
             "openTill": "",
-            "error_loading": "",
             "loadingCountry": ""
         },
         "download": {
-            "downloadAsPdfHelper": "",
             "downloadGeojson": ""
         },
         "add": {
-            "confirmIntro": "",
             "disableFilters": "",
-            "addNewMapLabel": "",
-            "title": ""
-        },
-        "layerSelection": {
             "title": ""
         },
         "questions": {
             "phoneNumberOf": ""
         },
-        "noTagsSelected": "",
         "number": "",
-        "about": "",
         "loginWithOpenStreetMap": "",
-        "pdf": {
-            "versionInfo": ""
-        },
-        "pickLanguage": "",
-        "returnToTheMap": ""
+        "pickLanguage": ""
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
@@ -75,26 +54,16 @@
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
-        "pleaseLogin": "Logg inn for å legge til et bilde",
-        "respectPrivacy": ""
+        "pleaseLogin": "Logg inn for å legge til et bilde"
     },
     "delete": {
         "loginToDelete": "",
-        "reasons": {
-            "disused": ""
-        },
         "isDeleted": "",
-        "loading": "",
         "onlyEditedByLoggedInUser": ""
     },
     "reviews": {
-        "no_rating": "",
         "i_am_affiliated": "",
-        "write_a_comment": "",
         "no_reviews_yet": ""
-    },
-    "split": {
-        "splitTitle": ""
     },
     "favourite": {
         "loginNeeded": ""

@@ -55,8 +55,7 @@
             "confirmIntro": "<h3>Engadir {title} aquí?</h3>O punto que estás a crear <b>será ollado por todo o mundo</b>. Só engade cousas que realmente existan. Moitas aplicacións empregan estes datos.",
             "confirmButton": "Engadir {category} aquí",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
-            "openLayerControl": "Abrir o control de capas",
-            "addNewMapLabel": ""
+            "openLayerControl": "Abrir o control de capas"
         },
         "pickLanguage": "Escoller lingua: ",
         "about": "Editar doadamente e engadir puntos no OpenStreetMap dun eido en concreto",
@@ -155,12 +154,8 @@
             "attributionContent": "<p>Todos os datos proveñen do <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, e pódense reutilizar libremente baixo <a href=\"https://osm.org/copyright\" target=\"_blank\">a Licenza Aberta de Base de Datos (ODbL)</a>.</p>",
             "attributionTitle": "Aviso de atribución"
         },
-        "pdf": {
-            "attr": ""
-        },
         "download": {
             "downloadAsPdfHelper": "",
-            "downloadGeojson": "",
             "includeMetaData": ""
         }
     },
@@ -183,14 +178,10 @@
         "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!"
     },
     "delete": {
-        "useSomethingElse": "",
         "readMessages": "",
-        "delete": "",
-        "loginToDelete": "",
-        "partOfOthers": ""
+        "loginToDelete": ""
     },
     "split": {
-        "inviteToSplit": "",
-        "hasBeenSplit": ""
+        "inviteToSplit": ""
     }
 }

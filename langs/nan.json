@@ -1,91 +1,51 @@
 {
-    "index": {
-        "pickTheme": ""
-    },
     "image": {
         "cco": "",
-        "ccb": "",
         "uploadingPicture": ""
-    },
-    "centerMessage": {
-        "loadingData": ""
     },
     "reviews": {
         "write_a_comment": "",
-        "affiliated_reviewer_warning": "",
-        "attribution": "",
-        "posting_as": ""
+        "attribution": ""
     },
     "general": {
         "download": {
-            "downloadAsPdfHelper": "",
-            "title": ""
+            "downloadAsPdfHelper": ""
         },
         "noNameCategory": "",
-        "questions": {
-            "emailOf": ""
-        },
         "opening_hours": {
             "ph_open": "",
-            "loadingCountry": "",
-            "open_24_7": "",
-            "ph_not_known": ""
+            "open_24_7": ""
         },
         "sharescreen": {
             "copiedToClipboard": "",
-            "fsAddNew": "",
-            "fsLayerControlToggle": "",
-            "fsIncludeCurrentBackgroundMap": ""
+            "fsLayerControlToggle": ""
         },
         "add": {
             "pleaseLogin": "",
-            "presetInfo": "",
-            "warnVisibleForEveryone": "",
-            "stillLoading": ""
+            "warnVisibleForEveryone": ""
         },
         "pdf": {
             "attrBackground": ""
         },
         "attribution": {
-            "themeBy": "",
             "iconAttribution": {
                 "title": ""
             }
         },
-        "search": {
-            "error": ""
-        },
         "weekdays": {
             "tuesday": "",
-            "abbreviations": {
-                "thursday": ""
-            },
-            "wednesday": "",
-            "saturday": ""
+            "wednesday": ""
         },
         "morescreen": {
             "streetcomplete": ""
         },
-        "openTheMap": "",
         "aboutMapcomplete": "",
-        "customThemeIntro": "",
         "skip": "",
-        "osmLinkTooltip": "",
         "loginWithOpenStreetMap": ""
-    },
-    "split": {
-        "inviteToSplit": ""
     },
     "delete": {
         "safeDelete": "",
-        "reasons": {
-            "notFound": ""
-        },
         "whyDelete": "",
-        "delete": "",
         "useSomethingElse": ""
-    },
-    "favourite": {
-        "loginNeeded": ""
     }
 }
