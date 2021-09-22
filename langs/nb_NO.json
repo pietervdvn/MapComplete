@@ -7,15 +7,9 @@
             "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "weekdays": {
-            "abbreviations": {
-                "wednesday": ""
-            }
-        },
         "download": {
             "downloadGeojson": ""
-        },
-        "number": ""
+        }
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
@@ -34,8 +28,5 @@
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
         "pleaseLogin": "Logg inn for å legge til et bilde"
-    },
-    "reviews": {
-        "i_am_affiliated": ""
     }
 }

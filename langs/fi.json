@@ -39,9 +39,6 @@
         },
         "skip": "Ohita tämä kysymys",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
-        "attribution": {
-            "mapContributionsBy": ""
-        },
         "osmLinkTooltip": ""
     },
     "centerMessage": {
