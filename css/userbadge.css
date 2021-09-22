@@ -33,16 +33,7 @@
 }
 
 .userbadge-login {
-    font-weight: bold;
-    font-size: large;
     background-color: var(--subtle-detail-color) !important;
     color: var(--subtle-detail-color-contrast);
     height: 3em;
-
-    display: inline-block;
-    text-align: center;
-    margin: 0;
-
-    min-width: 20em;
-    pointer-events: all;
 }
