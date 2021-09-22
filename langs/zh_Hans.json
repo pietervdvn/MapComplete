@@ -1,11 +1,4 @@
 {
-    "general": {
-        "weekdays": {
-            "abbreviations": {
-                "saturday": ""
-            }
-        }
-    },
     "reviews": {
         "saving_review": ""
     }
