@@ -56,11 +56,8 @@
             "confirmButton": "Engadir {category} aquí",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
             "openLayerControl": "Abrir o control de capas",
-            "warnVisibleForEveryone": "",
             "presetInfo": "",
-            "disableFiltersExplanation": "",
-            "addNewMapLabel": "",
-            "disableFilters": ""
+            "addNewMapLabel": ""
         },
         "pickLanguage": "Escoller lingua: ",
         "about": "Editar doadamente e engadir puntos no OpenStreetMap dun eido en concreto",
@@ -123,7 +120,6 @@
             "opensAt": "dende",
             "open_during_ph": "Durante festas este servizo está",
             "error_loading": "Erro: non foi posíbel ver eses horarios de abertura.",
-            "ph_open_as_usual": "",
             "loadingCountry": ""
         },
         "weekdays": {
@@ -161,31 +157,21 @@
             "attributionContent": "<p>Todos os datos proveñen do <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, e pódense reutilizar libremente baixo <a href=\"https://osm.org/copyright\" target=\"_blank\">a Licenza Aberta de Base de Datos (ODbL)</a>.</p>",
             "attributionTitle": "Aviso de atribución"
         },
-        "testing": "",
         "pdf": {
             "generatedWith": "",
-            "attrBackground": "",
-            "attr": "",
-            "versionInfo": ""
+            "attr": ""
         },
         "loginOnlyNeededToEdit": "",
         "download": {
-            "downloadAsPdfHelper": "",
             "downloadCSVHelper": "",
-            "licenseInfo": "",
             "title": "",
-            "downloadGeojson": "",
             "downloadGeoJsonHelper": "",
-            "downloadAsPdf": "",
             "noDataLoaded": "",
-            "includeMetaData": "",
             "downloadCSV": ""
         },
-        "aboutMapcomplete": "",
         "histogram": {
             "error_loading": ""
-        },
-        "openTheMap": ""
+        }
     },
     "favourite": {
         "panelIntro": "<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais",
@@ -204,41 +190,27 @@
         "title": "{count} recensións",
         "name_required": "Requírese un nome para amosar e crear recensións",
         "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!",
-        "tos": "",
-        "attribution": "",
-        "i_am_affiliated": ""
+        "attribution": ""
     },
     "delete": {
         "useSomethingElse": "",
         "reasons": {
-            "test": "",
-            "disused": "",
-            "notFound": ""
+            "disused": ""
         },
         "readMessages": "",
         "explanations": {
-            "selectReason": "",
-            "softDelete": "",
-            "hardDelete": ""
+            "softDelete": ""
         },
         "delete": "",
-        "notEnoughExperience": "",
         "onlyEditedByLoggedInUser": "",
-        "safeDelete": "",
         "isntAPoint": "",
-        "loginToDelete": "",
         "isDeleted": "",
-        "cancel": "",
         "partOfOthers": "",
-        "loading": "",
         "whyDelete": ""
     },
     "split": {
-        "split": "",
         "inviteToSplit": "",
-        "loginToSplit": "",
         "cancel": "",
-        "splitTitle": "",
         "hasBeenSplit": ""
     }
 }

@@ -50,9 +50,7 @@
             "openLayerControl": "Open de laag-instellingen",
             "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
             "presetInfo": "Het nieuwe punt krijgt de attributen {tags}",
-            "disableFilters": "",
-            "disableFiltersExplanation": "",
-            "warnVisibleForEveryone": ""
+            "disableFiltersExplanation": ""
         },
         "pickLanguage": "Kies je taal: ",
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
@@ -299,41 +297,27 @@
             "ph_closed": "gesloten",
             "ph_open": "open",
             "ph_open_as_usual": "geopend zoals gewoonlijk",
-            "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:",
-            "loadingCountry": ""
+            "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:"
         },
         "pdf": {
             "generatedWith": "",
-            "versionInfo": "",
-            "attrBackground": "",
-            "attr": ""
+            "attrBackground": ""
         },
         "histogram": {
             "error_loading": ""
         },
         "download": {
-            "downloadCSVHelper": "",
             "downloadGeoJsonHelper": "",
-            "licenseInfo": "",
             "noDataLoaded": "",
-            "downloadAsPdf": "",
             "includeMetaData": "",
-            "downloadAsPdfHelper": "",
             "downloadCSV": "",
-            "title": "",
             "downloadGeojson": ""
         },
-        "skippedQuestions": "",
         "skip": "",
-        "save": "",
         "loginOnlyNeededToEdit": "",
-        "oneSkippedQuestion": "",
         "returnToTheMap": "",
-        "testing": "",
         "openTheMap": "",
-        "number": "",
-        "cancel": "",
-        "osmLinkTooltip": ""
+        "cancel": ""
     },
     "reviews": {
         "title": "{count} beoordelingen",
@@ -357,36 +341,23 @@
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas"
     },
     "delete": {
-        "isDeleted": "",
         "loading": "",
-        "notEnoughExperience": "",
         "onlyEditedByLoggedInUser": "",
-        "partOfOthers": "",
         "readMessages": "",
-        "useSomethingElse": "",
         "delete": "",
-        "isntAPoint": "",
         "reasons": {
             "test": "",
-            "disused": "",
             "notFound": ""
         },
-        "loginToDelete": "",
         "whyDelete": "",
         "explanations": {
-            "softDelete": "",
-            "hardDelete": "",
-            "selectReason": ""
+            "hardDelete": ""
         },
-        "safeDelete": "",
-        "cancel": ""
+        "safeDelete": ""
     },
     "split": {
         "loginToSplit": "",
-        "splitTitle": "",
         "split": "",
-        "inviteToSplit": "",
-        "cancel": "",
-        "hasBeenSplit": ""
+        "cancel": ""
     }
 }

@@ -33,7 +33,6 @@
             "opensAt": "開始時間",
             "open_during_ph": "國定假日的時候，這個場所是",
             "error_loading": "錯誤：無法視覺化開放時間。",
-            "loadingCountry": "",
             "ph_open_as_usual": ""
         },
         "weekdays": {
@@ -247,11 +246,8 @@
             "intro": "您點擊處目前未有已知的資料。<br>",
             "title": "新增新的節點？",
             "addNew": "在這裡新增新的 {category}",
-            "disableFilters": "",
             "disableFiltersExplanation": "",
-            "addNewMapLabel": "",
-            "warnVisibleForEveryone": "",
-            "presetInfo": ""
+            "warnVisibleForEveryone": ""
         },
         "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來檢視這物件",
         "number": "號碼",
@@ -271,31 +267,19 @@
         "welcomeBack": "你已經登入了，歡迎回來！",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
         "download": {
-            "downloadCSV": "",
             "downloadAsPdfHelper": "",
-            "noDataLoaded": "",
             "licenseInfo": "",
-            "includeMetaData": "",
             "downloadGeojson": "",
-            "title": "",
             "downloadCSVHelper": "",
-            "downloadAsPdf": "",
             "downloadGeoJsonHelper": ""
         },
         "pdf": {
-            "generatedWith": "",
             "attr": "",
-            "attrBackground": "",
             "versionInfo": ""
         },
-        "histogram": {
-            "error_loading": ""
-        },
         "openTheMap": "",
-        "loginOnlyNeededToEdit": "",
         "testing": "",
         "layerSelection": {
-            "zoomInToSeeThisLayer": "",
             "title": ""
         }
     },
@@ -328,36 +312,23 @@
         "addPicture": "新增圖片"
     },
     "delete": {
-        "safeDelete": "",
         "loading": "",
         "reasons": {
-            "disused": "",
-            "notFound": "",
-            "test": ""
+            "notFound": ""
         },
         "whyDelete": "",
-        "partOfOthers": "",
         "explanations": {
             "softDelete": "",
-            "hardDelete": "",
             "selectReason": ""
         },
-        "loginToDelete": "",
         "readMessages": "",
-        "isntAPoint": "",
         "delete": "",
-        "cancel": "",
         "isDeleted": "",
-        "onlyEditedByLoggedInUser": "",
-        "notEnoughExperience": "",
-        "useSomethingElse": ""
+        "notEnoughExperience": ""
     },
     "split": {
         "loginToSplit": "",
-        "split": "",
         "hasBeenSplit": "",
-        "splitTitle": "",
-        "inviteToSplit": "",
-        "cancel": ""
+        "inviteToSplit": ""
     }
 }

@@ -23,11 +23,8 @@
             "intro": "Вы нажали туда, где ещё нет данных.<br>",
             "title": "Добавить новую точку?",
             "addNew": "Добавить новую {category} здесь",
-            "disableFilters": "",
             "addNewMapLabel": "",
-            "disableFiltersExplanation": "",
-            "warnVisibleForEveryone": "",
-            "presetInfo": ""
+            "warnVisibleForEveryone": ""
         },
         "osmLinkTooltip": "Посмотрите этот объект на OpenStreetMap чтобы увидеть его историю или отредактировать",
         "number": "номер",
@@ -58,7 +55,6 @@
             "openTill": "до",
             "opensAt": "с",
             "error_loading": "Ошибка: не удалось визуализировать эти часы работы.",
-            "ph_open_as_usual": "",
             "loadingCountry": ""
         },
         "weekdays": {
@@ -130,28 +126,17 @@
         },
         "openStreetMapIntro": "<h3>Свободная карта</h3><p>Было бы здорово если бы была одна карта, которую каждый может свободно использовать и редактировать? Использовать как общее хранилище для всей гео-информации? Тогда, все сайты с разной, неполной и несовместимой информацией (которая обычно устарела) будут больше не нужны.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> такая карта. Данные карты могу быть свободно использованы (с <a href=\"https://osm.org/copyright\" target=\"_blank\">аннотацией и публикацией изменений к данным</a>). Более того, каждый может свободно добавлять информацию и исправлять ошибки. Этот сайт также использует OpenStreetMap. Все данные берутся оттуда, а ваши ответы и исправления отправляются обратно туда.</p><p>Огромное количество людей уже использует OpenStreetMap: <a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, а также карты в Facebook, Instagram, Apple-карты и Bing-карты (частично) используют OpenStreetMap. Если вы что-то измените здесь, это также будет отражено в этих приложениях - после их следующего обновления!</p>",
         "pdf": {
-            "generatedWith": "",
             "attrBackground": "",
-            "versionInfo": "",
             "attr": ""
         },
         "download": {
-            "downloadAsPdfHelper": "",
             "licenseInfo": "",
-            "downloadCSVHelper": "",
             "downloadGeojson": "",
-            "noDataLoaded": "",
             "downloadCSV": "",
-            "downloadGeoJsonHelper": "",
             "downloadAsPdf": "",
-            "includeMetaData": "",
             "title": ""
         },
-        "histogram": {
-            "error_loading": ""
-        },
         "openTheMap": "",
-        "testing": "",
         "loginOnlyNeededToEdit": ""
     },
     "index": {
@@ -205,35 +190,22 @@
     },
     "delete": {
         "explanations": {
-            "hardDelete": "",
-            "softDelete": "",
-            "selectReason": ""
+            "softDelete": ""
         },
         "partOfOthers": "",
-        "readMessages": "",
         "safeDelete": "",
         "reasons": {
-            "notFound": "",
-            "test": "",
-            "disused": ""
+            "test": ""
         },
         "loginToDelete": "",
-        "onlyEditedByLoggedInUser": "",
         "loading": "",
-        "useSomethingElse": "",
         "whyDelete": "",
-        "notEnoughExperience": "",
         "isntAPoint": "",
-        "isDeleted": "",
-        "cancel": "",
-        "delete": ""
+        "cancel": ""
     },
     "split": {
         "loginToSplit": "",
-        "split": "",
         "inviteToSplit": "",
-        "cancel": "",
-        "splitTitle": "",
-        "hasBeenSplit": ""
+        "splitTitle": ""
     }
 }

@@ -4,15 +4,10 @@
             "ph_open": "avattu",
             "ph_closed": "suljettu",
             "ph_not_known": " ",
-            "open_24_7": "",
             "closed_permanently": "",
-            "ph_open_as_usual": "",
             "loadingCountry": "",
-            "opensAt": "",
             "not_all_rules_parsed": "",
-            "closed_until": "",
             "openTill": "",
-            "open_during_ph": "",
             "error_loading": ""
         },
         "weekdays": {
@@ -40,125 +35,78 @@
         "save": "Tallenna",
         "search": {
             "searching": "Etsitään…",
-            "error": "",
-            "nothing": "",
-            "search": ""
+            "nothing": ""
         },
         "sharescreen": {
             "thanksForSharing": "Kiitos jakamisesta!",
-            "fsGeolocation": "",
             "copiedToClipboard": "",
-            "editThemeDescription": "",
             "fsIncludeCurrentLayers": "",
-            "fsIncludeCurrentLocation": "",
             "fsUserbadge": "",
-            "embedIntro": "",
             "fsWelcomeMessage": "",
-            "fsAddNew": "",
             "editThisTheme": "",
-            "fsIncludeCurrentBackgroundMap": "",
             "fsSearch": "",
-            "fsLayerControlToggle": "",
             "fsLayers": "",
-            "addToHomeScreen": "",
             "intro": ""
         },
         "questions": {
             "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "phoneNumberIs": "",
             "emailOf": "",
-            "emailIs": "",
-            "phoneNumberOf": "",
-            "websiteOf": ""
+            "phoneNumberOf": ""
         },
         "skip": "Ohita tämä kysymys",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
-        "getStartedLogin": "",
         "add": {
             "title": "",
-            "openLayerControl": "",
             "addNew": "",
-            "zoomInFurther": "",
             "addNewMapLabel": "",
-            "warnVisibleForEveryone": "",
             "pleaseLogin": "",
-            "layerNotEnabled": "",
             "confirmIntro": "",
-            "disableFiltersExplanation": "",
             "confirmButton": "",
-            "disableFilters": "",
             "stillLoading": "",
-            "presetInfo": "",
             "intro": ""
         },
         "download": {
-            "downloadGeojson": "",
             "downloadAsPdfHelper": "",
-            "title": "",
             "downloadCSVHelper": "",
-            "noDataLoaded": "",
             "downloadCSV": "",
-            "licenseInfo": "",
             "includeMetaData": "",
-            "downloadAsPdf": "",
             "downloadGeoJsonHelper": ""
         },
         "morescreen": {
-            "streetcomplete": "",
             "requestATheme": "",
-            "createYourOwnTheme": "",
             "intro": ""
         },
         "attribution": {
-            "attributionContent": "",
             "codeContributionsBy": "",
-            "themeBy": "",
             "attributionTitle": "",
-            "mapContributionsByAndHidden": "",
             "iconAttribution": {
                 "title": ""
-            },
-            "mapContributionsBy": ""
+            }
         },
         "fewChangesBefore": "",
-        "about": "",
         "noTagsSelected": "",
-        "testing": "",
         "nameInlineQuestion": "",
-        "skippedQuestions": "",
         "openStreetMapIntro": "",
-        "customThemeIntro": "",
         "aboutMapcomplete": "",
-        "oneSkippedQuestion": "",
         "returnToTheMap": "",
-        "readYourMessages": "",
         "histogram": {
             "error_loading": ""
         },
-        "loginToStart": "",
         "noNameCategory": "",
-        "getStartedNewAccount": "",
         "welcomeBack": "",
         "pdf": {
-            "attr": "",
             "generatedWith": "",
-            "attrBackground": "",
             "versionInfo": ""
         },
-        "goToInbox": "",
         "layerSelection": {
-            "title": "",
-            "zoomInToSeeThisLayer": ""
+            "title": ""
         },
         "loginOnlyNeededToEdit": "",
-        "openTheMap": "",
         "osmLinkTooltip": ""
     },
     "centerMessage": {
         "ready": "Valmis!",
-        "zoomIn": "",
-        "retrying": "",
-        "loadingData": ""
+        "retrying": ""
     },
     "image": {
         "doDelete": "Poista kuva",
@@ -167,73 +115,47 @@
         "isDeleted": "Poistettu",
         "ccb": "CC-BY-lisenssillä",
         "ccbs": "CC-BY-SA-lisenssillä",
-        "respectPrivacy": "",
         "pleaseLogin": "",
-        "uploadingMultiple": "",
         "uploadingPicture": "",
-        "uploadFailed": "",
         "uploadDone": "",
-        "willBePublished": "",
         "cco": ""
     },
     "reviews": {
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu",
-        "saved": "",
         "saving_review": "",
-        "write_a_comment": "",
         "no_rating": "",
-        "name_required": "",
         "no_reviews_yet": "",
-        "plz_login": "",
         "affiliated_reviewer_warning": "",
-        "i_am_affiliated": "",
         "tos": "",
-        "posting_as": "",
         "attribution": ""
     },
     "index": {
         "title": "Tervetuloa MapCompleteen",
-        "intro": "",
-        "#": "",
-        "pickTheme": ""
+        "#": ""
     },
     "delete": {
         "cancel": "",
-        "delete": "",
         "useSomethingElse": "",
-        "loginToDelete": "",
         "isntAPoint": "",
         "reasons": {
-            "disused": "",
-            "test": "",
-            "notFound": ""
+            "test": ""
         },
         "partOfOthers": "",
-        "loading": "",
         "explanations": {
             "softDelete": "",
-            "selectReason": "",
             "hardDelete": ""
         },
-        "whyDelete": "",
         "isDeleted": "",
-        "safeDelete": "",
         "notEnoughExperience": "",
-        "readMessages": "",
         "onlyEditedByLoggedInUser": ""
     },
     "favourite": {
-        "loginNeeded": "",
-        "reload": "",
-        "panelIntro": ""
+        "reload": ""
     },
     "split": {
         "splitTitle": "",
-        "split": "",
         "loginToSplit": "",
-        "cancel": "",
-        "hasBeenSplit": "",
-        "inviteToSplit": ""
+        "hasBeenSplit": ""
     }
 }

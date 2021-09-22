@@ -56,11 +56,8 @@
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "openLayerControl": "Ouvrir la panneau de contrôle",
             "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
-            "disableFiltersExplanation": "",
             "warnVisibleForEveryone": "",
-            "disableFilters": "",
-            "presetInfo": "",
-            "addNewMapLabel": ""
+            "presetInfo": ""
         },
         "pickLanguage": "Choisir la langue : ",
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
@@ -154,30 +151,20 @@
             "ph_closed": "fermé",
             "ph_open": "ouvert",
             "ph_not_known": " ",
-            "loadingCountry": "",
             "ph_open_as_usual": ""
         },
         "download": {
-            "downloadAsPdf": "",
             "licenseInfo": "",
-            "includeMetaData": "",
             "downloadGeojson": "",
-            "title": "",
             "noDataLoaded": "",
-            "downloadCSV": "",
             "downloadCSVHelper": "",
-            "downloadAsPdfHelper": "",
             "downloadGeoJsonHelper": ""
         },
         "pdf": {
-            "attrBackground": "",
             "generatedWith": "",
-            "attr": "",
             "versionInfo": ""
         },
-        "testing": "",
         "openTheMap": "",
-        "loginOnlyNeededToEdit": "",
         "histogram": {
             "error_loading": ""
         }
@@ -204,36 +191,23 @@
         "plz_login": "Connectez vous pour laisser un avis"
     },
     "delete": {
-        "onlyEditedByLoggedInUser": "",
         "whyDelete": "",
-        "isntAPoint": "",
         "loginToDelete": "",
         "reasons": {
-            "test": "",
-            "notFound": "",
-            "disused": ""
+            "notFound": ""
         },
         "notEnoughExperience": "",
-        "partOfOthers": "",
         "useSomethingElse": "",
-        "loading": "",
         "delete": "",
-        "cancel": "",
         "explanations": {
             "selectReason": "",
-            "softDelete": "",
             "hardDelete": ""
         },
-        "safeDelete": "",
-        "isDeleted": "",
-        "readMessages": ""
+        "isDeleted": ""
     },
     "split": {
         "splitTitle": "",
-        "loginToSplit": "",
         "split": "",
-        "hasBeenSplit": "",
-        "inviteToSplit": "",
-        "cancel": ""
+        "inviteToSplit": ""
     }
 }

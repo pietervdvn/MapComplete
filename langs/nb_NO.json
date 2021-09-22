@@ -5,166 +5,101 @@
         "save": "Lagre",
         "search": {
             "searching": "Søker …",
-            "error": "",
-            "nothing": "",
-            "search": ""
+            "nothing": ""
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "osmLinkTooltip": "",
         "attribution": {
             "codeContributionsBy": "",
-            "mapContributionsByAndHidden": "",
             "themeBy": "",
-            "mapContributionsBy": "",
             "iconAttribution": {
                 "title": ""
             },
-            "attributionContent": "",
             "attributionTitle": ""
         },
         "morescreen": {
-            "requestATheme": "",
             "intro": "",
-            "streetcomplete": "",
             "createYourOwnTheme": ""
         },
         "sharescreen": {
-            "fsAddNew": "",
             "fsSearch": "",
-            "fsWelcomeMessage": "",
             "fsIncludeCurrentLayers": "",
-            "fsLayers": "",
             "editThisTheme": "",
-            "copiedToClipboard": "",
             "fsLayerControlToggle": "",
-            "embedIntro": "",
             "editThemeDescription": "",
-            "fsUserbadge": "",
             "fsGeolocation": "",
-            "fsIncludeCurrentBackgroundMap": "",
             "addToHomeScreen": "",
-            "intro": "",
-            "thanksForSharing": "",
-            "fsIncludeCurrentLocation": ""
+            "thanksForSharing": ""
         },
         "getStartedLogin": "",
         "weekdays": {
             "abbreviations": {
-                "monday": "",
                 "wednesday": "",
-                "thursday": "",
                 "sunday": "",
-                "saturday": "",
-                "tuesday": "",
-                "friday": ""
+                "tuesday": ""
             },
             "wednesday": "",
-            "monday": "",
             "saturday": "",
-            "sunday": "",
             "tuesday": "",
-            "friday": "",
             "thursday": ""
         },
         "opening_hours": {
-            "open_24_7": "",
             "ph_open": "",
-            "ph_closed": "",
             "open_during_ph": "",
-            "opensAt": "",
             "closed_until": "",
-            "error_loading": "",
             "ph_open_as_usual": "",
-            "closed_permanently": "",
             "ph_not_known": "",
-            "loadingCountry": "",
-            "not_all_rules_parsed": "",
-            "openTill": ""
+            "not_all_rules_parsed": ""
         },
         "download": {
             "includeMetaData": "",
-            "downloadGeoJsonHelper": "",
             "downloadAsPdfHelper": "",
-            "downloadCSV": "",
             "downloadCSVHelper": "",
-            "noDataLoaded": "",
             "licenseInfo": "",
-            "downloadGeojson": "",
-            "title": "",
-            "downloadAsPdf": ""
+            "title": ""
         },
         "add": {
             "confirmIntro": "",
-            "stillLoading": "",
             "intro": "",
-            "disableFilters": "",
             "presetInfo": "",
-            "layerNotEnabled": "",
             "warnVisibleForEveryone": "",
-            "addNewMapLabel": "",
             "openLayerControl": "",
-            "confirmButton": "",
             "disableFiltersExplanation": "",
-            "addNew": "",
             "title": "",
-            "zoomInFurther": "",
             "pleaseLogin": ""
         },
         "layerSelection": {
-            "zoomInToSeeThisLayer": "",
             "title": ""
         },
-        "openStreetMapIntro": "",
         "questions": {
             "phoneNumberIs": "",
-            "websiteOf": "",
             "phoneNumberOf": "",
-            "emailIs": "",
-            "emailOf": "",
-            "websiteIs": ""
+            "emailOf": ""
         },
         "noTagsSelected": "",
-        "getStartedNewAccount": "",
         "readYourMessages": "",
-        "loginOnlyNeededToEdit": "",
         "number": "",
-        "noNameCategory": "",
         "aboutMapcomplete": "",
-        "nameInlineQuestion": "",
         "about": "",
-        "goToInbox": "",
         "openTheMap": "",
-        "customThemeIntro": "",
         "loginWithOpenStreetMap": "",
-        "fewChangesBefore": "",
         "backgroundMap": "",
         "pdf": {
-            "generatedWith": "",
             "versionInfo": "",
-            "attr": "",
             "attrBackground": ""
         },
-        "skippedQuestions": "",
         "pickLanguage": "",
-        "testing": "",
         "loginToStart": "",
-        "oneSkippedQuestion": "",
-        "returnToTheMap": "",
-        "histogram": {
-            "error_loading": ""
-        }
+        "returnToTheMap": ""
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
         "title": "Velkommen til MapComplete",
-        "#": "",
         "intro": ""
     },
     "centerMessage": {
         "ready": "Ferdig",
         "zoomIn": "Forstørr for å vise eller redigere data",
-        "loadingData": "Laster inn data …",
-        "retrying": ""
+        "loadingData": "Laster inn data …"
     },
     "image": {
         "isDeleted": "Slettet",
@@ -174,66 +109,41 @@
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
         "pleaseLogin": "Logg inn for å legge til et bilde",
-        "uploadFailed": "",
         "willBePublished": "",
-        "ccbs": "",
         "respectPrivacy": "",
-        "ccb": "",
-        "uploadDone": "",
-        "cco": ""
+        "uploadDone": ""
     },
     "reviews": {
         "no_reviews_yet": "",
-        "no_rating": "",
         "title_singular": "",
-        "affiliated_reviewer_warning": "",
         "i_am_affiliated": "",
-        "posting_as": "",
         "tos": "",
-        "name_required": "",
         "write_a_comment": "",
-        "title": "",
         "attribution": "",
-        "saving_review": "",
-        "saved": "",
-        "plz_login": ""
+        "saved": ""
     },
     "delete": {
         "loginToDelete": "",
-        "isntAPoint": "",
         "explanations": {
             "softDelete": "",
-            "hardDelete": "",
             "selectReason": ""
         },
-        "notEnoughExperience": "",
         "reasons": {
             "notFound": "",
-            "disused": "",
             "test": ""
         },
-        "delete": "",
         "useSomethingElse": "",
-        "isDeleted": "",
         "whyDelete": "",
-        "readMessages": "",
         "cancel": "",
-        "loading": "",
         "onlyEditedByLoggedInUser": "",
-        "safeDelete": "",
         "partOfOthers": ""
     },
     "split": {
-        "hasBeenSplit": "",
         "split": "",
-        "loginToSplit": "",
         "splitTitle": "",
-        "inviteToSplit": "",
         "cancel": ""
     },
     "favourite": {
-        "reload": "",
-        "loginNeeded": "",
-        "panelIntro": ""
+        "loginNeeded": ""
     }
 }
