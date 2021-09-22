@@ -1,15 +1,8 @@
 {
     "general": {
-        "opening_hours": {
-            "openTill": ""
-        },
-        "pickLanguage": "",
-        "openStreetMapIntro": ""
+        "pickLanguage": ""
     },
     "reviews": {
         "saving_review": ""
-    },
-    "delete": {
-        "onlyEditedByLoggedInUser": ""
     }
 }

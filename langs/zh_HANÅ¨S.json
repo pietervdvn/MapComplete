@@ -1,19 +1,10 @@
 {
     "general": {
-        "add": {
-            "confirmButton": ""
-        },
         "opening_hours": {
             "open_24_7": ""
-        },
-        "questions": {
-            "websiteIs": ""
         }
     },
     "reviews": {
         "no_rating": ""
-    },
-    "index": {
-        "title": ""
     }
 }

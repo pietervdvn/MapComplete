@@ -1,19 +1,10 @@
 {
-    "reviews": {
-        "posting_as": ""
-    },
     "general": {
         "opening_hours": {
             "ph_not_known": ""
         },
-        "add": {
-            "stillLoading": ""
-        },
         "weekdays": {
             "saturday": ""
         }
-    },
-    "split": {
-        "inviteToSplit": ""
     }
 }
