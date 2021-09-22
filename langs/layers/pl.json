@@ -196,9 +196,9 @@
         }
     },
     "ghost_bike": {
+        "name": "Duch roweru",
         "title": {
             "render": "Duch roweru"
-        },
-        "name": "Duch roweru"
+        }
     }
 }

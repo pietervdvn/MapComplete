@@ -1,8 +1,8 @@
 {
     "ghost_bike": {
+        "name": "Fantombiciklo",
         "title": {
             "render": "Fantombiciklo"
-        },
-        "name": "Fantombiciklo"
+        }
     }
 }

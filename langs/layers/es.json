@@ -114,9 +114,9 @@
         }
     },
     "ghost_bike": {
+        "name": "Bicicleta blanca",
         "title": {
             "render": "Bicicleta blanca"
-        },
-        "name": "Bicicleta blanca"
+        }
     }
 }

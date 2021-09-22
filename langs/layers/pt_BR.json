@@ -539,9 +539,9 @@
         }
     },
     "ghost_bike": {
+        "name": "Bicicleta fantasma",
         "title": {
             "render": "Bicicleta fantasma"
-        },
-        "name": "Bicicleta fantasma"
+        }
     }
 }
