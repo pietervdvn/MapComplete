@@ -44,7 +44,12 @@
             "zoomInFurther": "Aumente mais o zoom para adicionar um ponto.",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">Por favor, faça o login para adicionar um novo ponto</a>",
             "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
-            "title": "Adicionar um novo ponto?"
+            "title": "Adicionar um novo ponto?",
+            "addNewMapLabel": "",
+            "disableFiltersExplanation": "",
+            "warnVisibleForEveryone": "",
+            "disableFilters": "",
+            "presetInfo": ""
         },
         "osmLinkTooltip": "Veja este objeto no OpenStreetMap para histórico e mais opções de edição",
         "number": "número",
@@ -74,7 +79,9 @@
             "openTill": "até",
             "opensAt": "desde",
             "open_during_ph": "Durante um feriado, esse serviço está",
-            "error_loading": "Erro: não foi possível visualizar este horário de funcionamento."
+            "error_loading": "Erro: não foi possível visualizar este horário de funcionamento.",
+            "ph_open_as_usual": "",
+            "loadingCountry": ""
         },
         "weekdays": {
             "sunday": "Domingo",
@@ -125,7 +132,49 @@
             "intro": "<h3>Compartilhe este mapa</h3> Compartilhe este mapa copiando o link abaixo e enviando-o para amigos e familiares:",
             "embedIntro": "<h3>Incorpore em seu site</h3>Por favor, incorpore este mapa em seu site.<br>Nós o encorajamos a fazer isso - você nem precisa pedir permissão.<br>É gratuito e sempre será. Quanto mais pessoas usarem isso, mais valioso se tornará."
         },
-        "aboutMapcomplete": "<h3>Sobre o MapComplete</h3><p>Com o MapComplete, você pode enriquecer o OpenStreetMap com informações sobre um<b>único tema.</b>Responda a algumas perguntas e, em minutos, suas contribuições estarão disponíveis em todo o mundo! O<b>mantenedor do tema</b>define elementos, questões e linguagens para o tema.</p><h3>Saiba mais</h3><p>MapComplete sempre<b>oferece a próxima etapa</b>para saber mais sobre o OpenStreetMap.</p><ul><li>Quando incorporado em um site, o iframe vincula-se a um MapComplete em tela inteira</li><li>A versão em tela inteira oferece informações sobre o OpenStreetMap</li><li>A visualização funciona sem login, mas a edição requer um login do OSM.</li><li>Se você não estiver conectado, será solicitado que você faça o login</li><li>Depois de responder a uma única pergunta, você pode adicionar novos aponta para o mapa </li><li> Depois de um tempo, as tags OSM reais são mostradas, posteriormente vinculadas ao wiki </li></ul><p></p><br><p>Você percebeu<b>um problema</b>? Você tem uma<b>solicitação de recurso </b>? Quer<b>ajudar a traduzir</b>? Acesse <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">o código-fonte</a>ou <a href=\"https: //github.com/pietervdvn/MapComplete / issues \" target=\" _ blank \">rastreador de problemas.</a></p><p>Quer ver<b>seu progresso</b>? Siga a contagem de edição em<a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>"
+        "aboutMapcomplete": "<h3>Sobre o MapComplete</h3><p>Com o MapComplete, você pode enriquecer o OpenStreetMap com informações sobre um<b>único tema.</b>Responda a algumas perguntas e, em minutos, suas contribuições estarão disponíveis em todo o mundo! O<b>mantenedor do tema</b>define elementos, questões e linguagens para o tema.</p><h3>Saiba mais</h3><p>MapComplete sempre<b>oferece a próxima etapa</b>para saber mais sobre o OpenStreetMap.</p><ul><li>Quando incorporado em um site, o iframe vincula-se a um MapComplete em tela inteira</li><li>A versão em tela inteira oferece informações sobre o OpenStreetMap</li><li>A visualização funciona sem login, mas a edição requer um login do OSM.</li><li>Se você não estiver conectado, será solicitado que você faça o login</li><li>Depois de responder a uma única pergunta, você pode adicionar novos aponta para o mapa </li><li> Depois de um tempo, as tags OSM reais são mostradas, posteriormente vinculadas ao wiki </li></ul><p></p><br><p>Você percebeu<b>um problema</b>? Você tem uma<b>solicitação de recurso </b>? Quer<b>ajudar a traduzir</b>? Acesse <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">o código-fonte</a>ou <a href=\"https: //github.com/pietervdvn/MapComplete / issues \" target=\" _ blank \">rastreador de problemas.</a></p><p>Quer ver<b>seu progresso</b>? Siga a contagem de edição em<a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>",
+        "download": {
+            "downloadCSV": "",
+            "downloadGeojson": "",
+            "downloadGeoJsonHelper": "",
+            "title": "",
+            "includeMetaData": "",
+            "downloadCSVHelper": "",
+            "downloadAsPdfHelper": "",
+            "noDataLoaded": "",
+            "licenseInfo": "",
+            "downloadAsPdf": ""
+        },
+        "morescreen": {
+            "intro": "",
+            "requestATheme": "",
+            "streetcomplete": "",
+            "createYourOwnTheme": ""
+        },
+        "openStreetMapIntro": "",
+        "attribution": {
+            "mapContributionsBy": "",
+            "iconAttribution": {
+                "title": ""
+            },
+            "themeBy": "",
+            "attributionContent": "",
+            "codeContributionsBy": "",
+            "mapContributionsByAndHidden": "",
+            "attributionTitle": ""
+        },
+        "testing": "",
+        "openTheMap": "",
+        "loginOnlyNeededToEdit": "",
+        "pdf": {
+            "generatedWith": "",
+            "attrBackground": "",
+            "versionInfo": "",
+            "attr": ""
+        },
+        "histogram": {
+            "error_loading": ""
+        }
     },
     "index": {
         "pickTheme": "Escolha um tema abaixo para começar.",
@@ -153,5 +202,38 @@
         "reload": "Recarregar dados",
         "panelIntro": "<h3>Seu tema pessoal</h3>Ative suas camadas favoritas de todos os temas oficiais",
         "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap"
+    },
+    "split": {
+        "hasBeenSplit": "",
+        "split": "",
+        "splitTitle": "",
+        "cancel": "",
+        "inviteToSplit": "",
+        "loginToSplit": ""
+    },
+    "delete": {
+        "loginToDelete": "",
+        "readMessages": "",
+        "isDeleted": "",
+        "explanations": {
+            "softDelete": "",
+            "hardDelete": "",
+            "selectReason": ""
+        },
+        "delete": "",
+        "cancel": "",
+        "loading": "",
+        "whyDelete": "",
+        "reasons": {
+            "notFound": "",
+            "disused": "",
+            "test": ""
+        },
+        "partOfOthers": "",
+        "useSomethingElse": "",
+        "notEnoughExperience": "",
+        "onlyEditedByLoggedInUser": "",
+        "isntAPoint": "",
+        "safeDelete": ""
     }
 }
