@@ -1,1 +1,239 @@
-{}
+{
+    "image": {
+        "pleaseLogin": "",
+        "uploadDone": "",
+        "addPicture": "",
+        "cco": "",
+        "uploadFailed": "",
+        "dontDelete": "",
+        "isDeleted": "",
+        "ccb": "",
+        "doDelete": "",
+        "respectPrivacy": "",
+        "uploadingMultiple": "",
+        "uploadingPicture": "",
+        "willBePublished": "",
+        "ccbs": ""
+    },
+    "centerMessage": {
+        "ready": "",
+        "loadingData": "",
+        "retrying": "",
+        "zoomIn": ""
+    },
+    "reviews": {
+        "tos": "",
+        "write_a_comment": "",
+        "no_rating": "",
+        "name_required": "",
+        "i_am_affiliated": "",
+        "affiliated_reviewer_warning": "",
+        "no_reviews_yet": "",
+        "saved": "",
+        "title_singular": "",
+        "attribution": "",
+        "saving_review": "",
+        "plz_login": "",
+        "title": "",
+        "posting_as": ""
+    },
+    "general": {
+        "goToInbox": "",
+        "download": {
+            "noDataLoaded": "",
+            "downloadAsPdf": "",
+            "downloadAsPdfHelper": "",
+            "downloadCSV": "",
+            "downloadGeojson": "",
+            "includeMetaData": "",
+            "title": "",
+            "licenseInfo": "",
+            "downloadGeoJsonHelper": "",
+            "downloadCSVHelper": ""
+        },
+        "noNameCategory": "",
+        "questions": {
+            "emailIs": "",
+            "websiteOf": "",
+            "websiteIs": "",
+            "emailOf": "",
+            "phoneNumberIs": "",
+            "phoneNumberOf": ""
+        },
+        "fewChangesBefore": "",
+        "opening_hours": {
+            "ph_open": "",
+            "open_during_ph": "",
+            "ph_open_as_usual": "",
+            "opensAt": "",
+            "loadingCountry": "",
+            "not_all_rules_parsed": "",
+            "closed_permanently": "",
+            "open_24_7": "",
+            "ph_closed": "",
+            "openTill": "",
+            "error_loading": "",
+            "closed_until": "",
+            "ph_not_known": ""
+        },
+        "getStartedLogin": "",
+        "sharescreen": {
+            "fsUserbadge": "",
+            "fsIncludeCurrentLocation": "",
+            "copiedToClipboard": "",
+            "editThemeDescription": "",
+            "editThisTheme": "",
+            "fsWelcomeMessage": "",
+            "embedIntro": "",
+            "fsIncludeCurrentLayers": "",
+            "fsLayerControlToggle": "",
+            "intro": "",
+            "fsSearch": "",
+            "addToHomeScreen": "",
+            "fsIncludeCurrentBackgroundMap": "",
+            "fsGeolocation": "",
+            "fsLayers": "",
+            "fsAddNew": "",
+            "thanksForSharing": ""
+        },
+        "add": {
+            "zoomInFurther": "",
+            "pleaseLogin": "",
+            "disableFiltersExplanation": "",
+            "addNew": "",
+            "layerNotEnabled": "",
+            "presetInfo": "",
+            "disableFilters": "",
+            "intro": "",
+            "addNewMapLabel": "",
+            "warnVisibleForEveryone": "",
+            "openLayerControl": "",
+            "confirmButton": "",
+            "confirmIntro": "",
+            "stillLoading": "",
+            "title": ""
+        },
+        "returnToTheMap": "",
+        "openStreetMapIntro": "",
+        "pdf": {
+            "attrBackground": "",
+            "versionInfo": "",
+            "attr": "",
+            "generatedWith": ""
+        },
+        "attribution": {
+            "themeBy": "",
+            "mapContributionsBy": "",
+            "attributionTitle": "",
+            "mapContributionsByAndHidden": "",
+            "iconAttribution": {
+                "title": ""
+            },
+            "codeContributionsBy": "",
+            "attributionContent": ""
+        },
+        "search": {
+            "search": "",
+            "error": "",
+            "searching": "",
+            "nothing": ""
+        },
+        "backgroundMap": "",
+        "weekdays": {
+            "tuesday": "",
+            "abbreviations": {
+                "monday": "",
+                "friday": "",
+                "saturday": "",
+                "thursday": "",
+                "sunday": "",
+                "tuesday": "",
+                "wednesday": ""
+            },
+            "wednesday": "",
+            "monday": "",
+            "thursday": "",
+            "sunday": "",
+            "saturday": "",
+            "friday": ""
+        },
+        "number": "",
+        "morescreen": {
+            "requestATheme": "",
+            "streetcomplete": "",
+            "createYourOwnTheme": "",
+            "intro": ""
+        },
+        "nameInlineQuestion": "",
+        "openTheMap": "",
+        "getStartedNewAccount": "",
+        "histogram": {
+            "error_loading": ""
+        },
+        "pickLanguage": "",
+        "aboutMapcomplete": "",
+        "testing": "",
+        "oneSkippedQuestion": "",
+        "save": "",
+        "customThemeIntro": "",
+        "about": "",
+        "noTagsSelected": "",
+        "loginOnlyNeededToEdit": "",
+        "skip": "",
+        "skippedQuestions": "",
+        "cancel": "",
+        "loginToStart": "",
+        "osmLinkTooltip": "",
+        "readYourMessages": "",
+        "layerSelection": {
+            "title": "",
+            "zoomInToSeeThisLayer": ""
+        },
+        "loginWithOpenStreetMap": "",
+        "welcomeBack": ""
+    },
+    "split": {
+        "cancel": "",
+        "hasBeenSplit": "",
+        "inviteToSplit": "",
+        "split": "",
+        "splitTitle": "",
+        "loginToSplit": ""
+    },
+    "index": {
+        "intro": "",
+        "#": "",
+        "title": "",
+        "pickTheme": ""
+    },
+    "delete": {
+        "safeDelete": "",
+        "loading": "",
+        "reasons": {
+            "test": "",
+            "disused": "",
+            "notFound": ""
+        },
+        "explanations": {
+            "selectReason": "",
+            "softDelete": "",
+            "hardDelete": ""
+        },
+        "whyDelete": "",
+        "isntAPoint": "",
+        "notEnoughExperience": "",
+        "partOfOthers": "",
+        "delete": "",
+        "loginToDelete": "",
+        "isDeleted": "",
+        "onlyEditedByLoggedInUser": "",
+        "useSomethingElse": "",
+        "cancel": "",
+        "readMessages": ""
+    },
+    "favourite": {
+        "loginNeeded": "",
+        "panelIntro": "",
+        "reload": ""
+    }
+}
