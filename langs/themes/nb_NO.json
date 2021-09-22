@@ -1,6 +1,7 @@
 {
     "aed": {
-        "title": "Åpne AED-kart"
+        "title": "Åpent AED-kart",
+        "description": "På dette kartet kan man finne og markere hjertestartere i nærheten"
     },
     "artwork": {
         "layers": {
@@ -68,17 +69,27 @@
                     }
                 },
                 "title": {
-                    "render": "Kunstverk"
-                }
+                    "render": "Kunstverk",
+                    "mappings": {
+                        "0": {
+                            "then": "Kunstverk <i>{name}</i>"
+                        }
+                    }
+                },
+                "description": "Ymse kunstgjenstander"
             }
-        }
+        },
+        "title": "Åpent kunstverkskart",
+        "description": "Velkommen til det åpne kunstverkskartet, et kart over byster, grafitti og annen kunst rundt omkring i verden"
     },
     "benches": {
         "shortDescription": "Et benkekart",
-        "title": "Benker"
+        "title": "Benker",
+        "description": "Dette kartet viser benker registrert i OpenStreetMap: Enkeltstående benker, og benker tilhørende offentlige transportoverganger eller skur. Med en OpenStreetMap-konto kan du kartlegge nye benker eller redigere eksisterende."
     },
     "bicyclelib": {
-        "title": "Sykkelbibliotek"
+        "title": "Sykkelbibliotek",
+        "description": "Et sykkelbibliotek er et sted der sykler kan lånes, ofte for en liten årlig sum. Dette er spesielt nyttig mtp. dem tiltenkt barn, fordi de vokser ut av sykler og kan leie en som er større."
     },
     "campersite": {
         "layers": {
@@ -88,8 +99,12 @@
                         "mappings": {
                             "1": {
                                 "then": "Kan brukes gratis"
+                            },
+                            "0": {
+                                "then": "Du må betale for bruk"
                             }
-                        }
+                        },
+                        "question": "Tar dette stedet betalt?"
                     },
                     "3": {
                         "question": "pø",
@@ -112,6 +127,45 @@
                     },
                     "11": {
                         "render": "Flere detaljer om dette stedet: {description}"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "4": {
+                        "mappings": {
+                            "0": {
+                                "then": "Du kan kvitte deg med gråvann her"
+                            },
+                            "1": {
+                                "then": "Du kan ikke kvitte deg med gråvann her"
+                            }
+                        },
+                        "question": "Kan du kvitte deg med gråvann her?"
+                    },
+                    "2": {
+                        "render": "Det koster {charge}",
+                        "question": "Hvor mye koster bruk av dette stedet?"
+                    },
+                    "1": {
+                        "question": "Tar dette stedet betalt?",
+                        "mappings": {
+                            "1": {
+                                "then": "Kan brukes gratis"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "roamingRenderings": {
+            "0": {
+                "render": "Dette stedet drives av {operator}"
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": ""
                     }
                 }
             }
@@ -137,10 +191,24 @@
                 "tagRenderings": {
                     "4": {
                         "render": "Denne ruten er {canonical(climbing:length)} lang"
+                    },
+                    "3": {
+                        "render": "<strong>{name}</strong>",
+                        "question": "Hva heter denne klatreruten?",
+                        "mappings": {
+                            "0": {
+                                "then": "Klatreruten har ikke et navn"
+                            }
+                        }
                     }
                 },
                 "title": {
                     "render": "Klatrerute"
+                },
+                "presets": {
+                    "0": {
+                        "title": "Klatrerute"
+                    }
                 }
             },
             "3": {
@@ -177,6 +245,13 @@
                 "title": {
                     "render": "Klatremulighet?"
                 }
+            },
+            "1": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
             }
         },
         "roamingRenderings": {
@@ -192,19 +267,45 @@
                 "question": "Er buldring mulig her?"
             }
         },
-        "title": "Åpent klatrekart"
+        "title": "Åpent klatrekart",
+        "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "1": {
+                            "human": " fot"
+                        },
+                        "0": {
+                            "human": " meter"
+                        }
+                    }
+                }
+            }
+        }
     },
     "cyclestreets": {
         "layers": {
             "1": {
                 "name": "Fremtidig sykkelvei",
                 "title": {
-                    "render": "Fremtidig sykkelvei"
-                }
+                    "render": "Fremtidig sykkelvei",
+                    "mappings": {
+                        "0": {
+                            "then": "{name} vil snart bli en sykkelgate"
+                        }
+                    }
+                },
+                "description": "Denne gaten vil bli gjort til sykkelgate snart"
             },
             "2": {
                 "description": "Lag for å markere hvilken som helst gate som sykkelvei",
-                "name": "Alle gater"
+                "name": "Alle gater",
+                "title": {
+                    "render": "Gate"
+                }
+            },
+            "0": {
+                "name": "Sykkelgater"
             }
         },
         "roamingRenderings": {
@@ -224,9 +325,14 @@
                     }
                 },
                 "question": "Er denne gaten en sykkelvei?"
+            },
+            "1": {
+                "render": "Denne gaten vil bli gjort til sykkelgate {cyclestreet:start_date}",
+                "question": "Når vil denne gaten bli gjort til sykkelgate?"
             }
         },
-        "shortDescription": "Et kart over sykkelveier"
+        "shortDescription": "Et kart over sykkelveier",
+        "title": "Sykkelgater"
     },
     "facadegardens": {
         "layers": {
@@ -285,5 +391,31 @@
                 }
             }
         }
+    },
+    "drinking_water": {
+        "title": "Drikkevann"
+    },
+    "cycle_infra": {
+        "title": "Sykkelinfrastruktur",
+        "description": "Et kart der du kan sjekke og redigere ting som har med sykkelinfrastruktur å gjøre. Laget under #osoc21."
+    },
+    "cycle_highways": {
+        "title": "Sykkelmotorveier"
+    },
+    "charging_stations": {
+        "title": "Ladestasjoner"
+    },
+    "cafes_and_pubs": {
+        "title": "Kaféer og barer"
+    },
+    "binoculars": {
+        "title": "Kikkerter",
+        "shortDescription": "Et kart over fastmonterte kikkerter",
+        "description": "Et kart over faste kikkerter montert på stativ. De er typisk å finne på turiststeder, utkikkspunkter, på toppen av tårn eller naturreservater."
+    },
+    "bike_monitoring_stations": {
+        "shortDescription": "Sykkelovervåkningsstasjoner med sanntidsdata fra Brussels Mobility",
+        "title": "Sykkelovervåkningsstasjoner",
+        "description": "Denne drakten viser overvåkningsstasjoner med sanntidsdata"
     }
 }
