@@ -147,9 +147,6 @@
             "attributionTitle": "Aviso de atribución"
         },
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
-        "download": {
-            "downloadCSVHelper": ""
-        },
         "pdf": {
             "versionInfo": ""
         }
@@ -171,10 +168,6 @@
         "plz_login": "Inicia sesión para dejar una reseña"
     },
     "delete": {
-        "explanations": {
-            "hardDelete": ""
-        },
-        "partOfOthers": "",
-        "safeDelete": ""
+        "partOfOthers": ""
     }
 }

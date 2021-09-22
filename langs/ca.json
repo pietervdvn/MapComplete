@@ -143,9 +143,6 @@
             },
             "themeBy": "Tema mantingut per {author}"
         },
-        "download": {
-            "downloadGeoJsonHelper": ""
-        },
         "pdf": {
             "attrBackground": ""
         }
@@ -166,10 +163,8 @@
         "saving_review": "Desant…"
     },
     "delete": {
-        "isntAPoint": "",
         "explanations": {
             "softDelete": ""
-        },
-        "isDeleted": ""
+        }
     }
 }

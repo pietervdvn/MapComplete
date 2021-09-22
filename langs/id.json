@@ -61,21 +61,13 @@
             "tuesday": "Selasa",
             "monday": "Senin"
         },
-        "download": {
-            "includeMetaData": ""
-        },
         "pdf": {
             "versionInfo": ""
         },
         "add": {
-            "layerNotEnabled": "",
             "title": ""
         },
-        "attribution": {
-            "mapContributionsBy": ""
-        },
-        "aboutMapcomplete": "",
-        "skippedQuestions": ""
+        "aboutMapcomplete": ""
     },
     "image": {
         "doDelete": "Buang gambar",
@@ -115,12 +107,6 @@
         "title": "Selamat datang di MapComplete"
     },
     "delete": {
-        "reasons": {
-            "notFound": ""
-        },
         "onlyEditedByLoggedInUser": ""
-    },
-    "split": {
-        "split": ""
     }
 }

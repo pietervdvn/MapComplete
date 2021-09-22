@@ -233,11 +233,7 @@
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "readYourMessages": "Przeczytaj wszystkie wiadomości OpenStreetMap przed dodaniem nowego punktu.",
         "download": {
-            "downloadCSVHelper": "",
             "noDataLoaded": ""
-        },
-        "pdf": {
-            "versionInfo": ""
         }
     },
     "index": {
@@ -274,12 +270,6 @@
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów"
     },
     "delete": {
-        "reasons": {
-            "disused": ""
-        },
         "notEnoughExperience": ""
-    },
-    "split": {
-        "hasBeenSplit": ""
     }
 }

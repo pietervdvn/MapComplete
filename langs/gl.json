@@ -155,7 +155,6 @@
             "attributionTitle": "Aviso de atribución"
         },
         "download": {
-            "downloadCSVHelper": "",
             "downloadCSV": ""
         }
     },
@@ -178,10 +177,6 @@
         "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!"
     },
     "delete": {
-        "readMessages": "",
         "isntAPoint": ""
-    },
-    "split": {
-        "inviteToSplit": ""
     }
 }

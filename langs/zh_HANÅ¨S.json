@@ -1,55 +1,37 @@
 {
     "general": {
-        "attribution": {
-            "codeContributionsBy": ""
-        },
         "sharescreen": {
-            "fsUserbadge": "",
-            "fsIncludeCurrentLayers": ""
+            "fsUserbadge": ""
         },
         "add": {
-            "confirmButton": "",
-            "addNew": ""
+            "confirmButton": ""
         },
         "weekdays": {
             "abbreviations": {
                 "saturday": ""
-            },
-            "tuesday": ""
+            }
         },
         "opening_hours": {
-            "open_24_7": "",
-            "ph_open": ""
+            "open_24_7": ""
         },
         "morescreen": {
             "createYourOwnTheme": ""
         },
-        "download": {
-            "noDataLoaded": ""
-        },
         "questions": {
             "websiteIs": ""
         },
-        "skip": "",
-        "fewChangesBefore": "",
-        "nameInlineQuestion": ""
+        "fewChangesBefore": ""
     },
     "reviews": {
-        "no_rating": "",
-        "i_am_affiliated": ""
+        "no_rating": ""
     },
     "image": {
-        "ccb": "",
-        "addPicture": ""
+        "ccb": ""
     },
     "index": {
         "title": ""
     },
-    "favourite": {
-        "panelIntro": ""
-    },
     "delete": {
-        "useSomethingElse": "",
-        "partOfOthers": ""
+        "useSomethingElse": ""
     }
 }

@@ -1,55 +1,35 @@
 {
-    "image": {
-        "ccb": ""
-    },
     "centerMessage": {
         "loadingData": ""
     },
     "reviews": {
-        "affiliated_reviewer_warning": "",
         "posting_as": ""
     },
     "general": {
-        "download": {
-            "title": ""
-        },
         "questions": {
             "emailOf": ""
         },
         "opening_hours": {
-            "loadingCountry": "",
             "ph_not_known": ""
         },
         "sharescreen": {
-            "embedIntro": "",
             "fsLayers": ""
         },
         "add": {
-            "presetInfo": "",
             "stillLoading": ""
-        },
-        "attribution": {
-            "themeBy": ""
         },
         "search": {
             "error": ""
         },
         "weekdays": {
-            "abbreviations": {
-                "thursday": ""
-            },
             "saturday": ""
         },
-        "openTheMap": "",
-        "customThemeIntro": "",
-        "osmLinkTooltip": ""
+        "customThemeIntro": ""
     },
     "split": {
         "inviteToSplit": ""
     },
     "delete": {
-        "safeDelete": "",
-        "whyDelete": "",
-        "useSomethingElse": ""
+        "whyDelete": ""
     }
 }

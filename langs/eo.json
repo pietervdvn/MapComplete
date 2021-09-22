@@ -1,57 +1,37 @@
 {
     "general": {
-        "opening_hours": {
-            "ph_open": ""
-        },
         "add": {
-            "confirmButton": "",
-            "intro": ""
+            "confirmButton": ""
         },
         "sharescreen": {
-            "fsWelcomeMessage": "",
-            "fsSearch": ""
+            "fsWelcomeMessage": ""
         },
         "weekdays": {
             "abbreviations": {
                 "friday": ""
-            },
-            "friday": ""
+            }
         },
         "morescreen": {
             "createYourOwnTheme": ""
         },
-        "download": {
-            "noDataLoaded": ""
-        },
         "attribution": {
             "themeBy": ""
         },
-        "questions": {
-            "websiteOf": ""
-        },
         "noTagsSelected": "",
-        "loginToStart": "",
         "search": {
             "searching": ""
-        },
-        "osmLinkTooltip": ""
+        }
     },
     "image": {
-        "uploadingMultiple": "",
-        "cco": ""
+        "uploadingMultiple": ""
     },
     "reviews": {
-        "saved": "",
-        "attribution": ""
+        "saved": ""
     },
     "delete": {
         "explanations": {
             "selectReason": ""
         },
-        "useSomethingElse": "",
         "delete": ""
-    },
-    "split": {
-        "loginToSplit": ""
     }
 }

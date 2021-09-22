@@ -31,26 +31,14 @@
             }
         },
         "sharescreen": {
-            "editThemeDescription": "",
             "editThisTheme": ""
         },
-        "download": {
-            "licenseInfo": ""
-        },
         "add": {
-            "addNewMapLabel": "",
-            "zoomInFurther": ""
+            "addNewMapLabel": ""
         },
         "about": "",
-        "testing": "",
         "fewChangesBefore": "",
-        "attribution": {
-            "codeContributionsBy": ""
-        },
         "welcomeBack": "",
-        "pdf": {
-            "generatedWith": ""
-        },
         "oneSkippedQuestion": ""
     },
     "centerMessage": {
@@ -76,16 +64,9 @@
         "addPicture": "Lägg till bild"
     },
     "delete": {
-        "reasons": {
-            "notFound": ""
-        },
         "loginToDelete": ""
     },
     "reviews": {
-        "saved": "",
         "attribution": ""
-    },
-    "split": {
-        "inviteToSplit": ""
     }
 }

@@ -1,53 +1,27 @@
 {
     "general": {
         "sharescreen": {
-            "editThisTheme": "",
             "fsWelcomeMessage": ""
         },
-        "nameInlineQuestion": "",
         "opening_hours": {
             "openTill": ""
         },
         "add": {
-            "intro": "",
             "pleaseLogin": ""
         },
-        "download": {
-            "downloadGeoJsonHelper": ""
-        },
         "pickLanguage": "",
-        "attribution": {
-            "mapContributionsBy": ""
-        },
         "loginOnlyNeededToEdit": "",
-        "weekdays": {
-            "abbreviations": {
-                "tuesday": ""
-            }
-        },
         "openStreetMapIntro": "",
-        "pdf": {
-            "versionInfo": ""
-        },
-        "noTagsSelected": "",
-        "save": ""
+        "noTagsSelected": ""
     },
     "reviews": {
-        "saving_review": "",
-        "name_required": ""
+        "saving_review": ""
     },
     "delete": {
         "delete": "",
-        "explanations": {
-            "selectReason": ""
-        },
         "onlyEditedByLoggedInUser": ""
     },
-    "centerMessage": {
-        "loadingData": ""
-    },
     "image": {
-        "uploadDone": "",
-        "pleaseLogin": ""
+        "uploadDone": ""
     }
 }
