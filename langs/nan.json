@@ -1,33 +1,17 @@
 {
-    "image": {
-        "uploadingPicture": ""
-    },
     "reviews": {
         "attribution": ""
     },
     "general": {
-        "noNameCategory": "",
         "opening_hours": {
             "open_24_7": ""
-        },
-        "sharescreen": {
-            "fsLayerControlToggle": ""
         },
         "add": {
             "warnVisibleForEveryone": ""
         },
-        "attribution": {
-            "iconAttribution": {
-                "title": ""
-            }
-        },
         "weekdays": {
             "wednesday": ""
         },
-        "aboutMapcomplete": "",
         "loginWithOpenStreetMap": ""
-    },
-    "delete": {
-        "whyDelete": ""
     }
 }

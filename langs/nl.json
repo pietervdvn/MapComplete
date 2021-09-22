@@ -297,9 +297,6 @@
             "ph_open": "open",
             "ph_open_as_usual": "geopend zoals gewoonlijk",
             "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:"
-        },
-        "download": {
-            "downloadGeojson": ""
         }
     },
     "reviews": {
@@ -322,10 +319,5 @@
         "reload": "Herlaad de data",
         "loginNeeded": "<h3>Log in</h3>Je moet je aanmelden met OpenStreetMap om een persoonlijk thema te gebruiken",
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas"
-    },
-    "delete": {
-        "explanations": {
-            "hardDelete": ""
-        }
     }
 }

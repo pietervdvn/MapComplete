@@ -142,8 +142,7 @@
                 "title": "Icones utilitzades"
             },
             "themeBy": "Tema mantingut per {author}"
-        },
-        "aboutMapcomplete": ""
+        }
     },
     "favourite": {
         "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
@@ -159,10 +158,5 @@
         "title": "{count} revisions",
         "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
         "saving_review": "Desant…"
-    },
-    "delete": {
-        "explanations": {
-            "softDelete": ""
-        }
     }
 }

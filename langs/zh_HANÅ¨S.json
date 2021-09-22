@@ -1,37 +1,19 @@
 {
     "general": {
-        "sharescreen": {
-            "copiedToClipboard": ""
-        },
         "add": {
             "confirmButton": ""
-        },
-        "weekdays": {
-            "abbreviations": {
-                "saturday": ""
-            }
         },
         "opening_hours": {
             "ph_closed": ""
         },
-        "download": {
-            "licenseInfo": ""
-        },
         "pdf": {
             "attr": ""
-        },
-        "nameInlineQuestion": ""
+        }
     },
     "reviews": {
         "no_rating": ""
     },
-    "image": {
-        "ccb": ""
-    },
     "index": {
         "title": ""
-    },
-    "delete": {
-        "cancel": ""
     }
 }

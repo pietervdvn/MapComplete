@@ -7,25 +7,15 @@
             "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "sharescreen": {
-            "fsIncludeCurrentLayers": ""
-        },
         "weekdays": {
             "abbreviations": {
                 "wednesday": ""
             }
         },
-        "opening_hours": {
-            "openTill": ""
-        },
         "download": {
             "downloadGeojson": ""
         },
-        "add": {
-            "title": ""
-        },
-        "number": "",
-        "pickLanguage": ""
+        "number": ""
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
@@ -45,13 +35,7 @@
         "addPicture": "Legg til bilde",
         "pleaseLogin": "Logg inn for å legge til et bilde"
     },
-    "delete": {
-        "isDeleted": ""
-    },
     "reviews": {
         "i_am_affiliated": ""
-    },
-    "favourite": {
-        "loginNeeded": ""
     }
 }
