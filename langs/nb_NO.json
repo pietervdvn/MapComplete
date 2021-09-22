@@ -9,8 +9,9 @@
         "welcomeBack": "Du er innlogget. Velkommen tilbake."
     },
     "index": {
-        "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
-        "title": "Velkommen til MapComplete"
+        "pickTheme": "Begynn ved å velge ett av temaene nedenfor.",
+        "title": "Velkommen til MapComplete",
+        "intro": "MapComplete er en OpenStreetMap-verktøy som også kan vise info om et gitt tema."
     },
     "centerMessage": {
         "ready": "Ferdig",
