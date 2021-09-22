@@ -514,6 +514,9 @@
                     }
                 },
                 "question": "Est-ce que la pompe à un manomètre integré ?"
+            },
+            "9": {
+                "render": ""
             }
         },
         "title": {
@@ -916,6 +919,116 @@
                     }
                 },
                 "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>"
+            },
+            "13": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                }
+            },
+            "9": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "1": {
+                "render": "",
+                "question": ""
+            },
+            "10": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "11": {
+                "question": ""
+            },
+            "2": {
+                "question": ""
+            }
+        },
+        "name": "",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            }
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "presets": {
+            "1": {
+                "description": "",
+                "title": ""
+            },
+            "2": {
+                "title": ""
+            },
+            "0": {
+                "description": "",
+                "title": ""
             }
         }
     },
@@ -1811,6 +1924,1473 @@
         },
         "title": {
             "render": "Point de vue"
+        }
+    },
+    "charging_station": {
+        "tagRenderings": {
+            "27": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "31": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "37": {
+                "question": "",
+                "render": ""
+            },
+            "30": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "3": {
+                "question": "",
+                "render": ""
+            },
+            "40": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "25": {
+                "render": "",
+                "question": ""
+            },
+            "4": {
+                "mappings": {
+                    "10": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "14": {
+                        "then": ""
+                    },
+                    "15": {
+                        "then": ""
+                    },
+                    "17": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "16": {
+                        "then": ""
+                    },
+                    "13": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "7": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "29": {
+                "render": "",
+                "question": ""
+            },
+            "35": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "21": {
+                "question": "",
+                "render": ""
+            },
+            "14": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "22": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "16": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "20": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "18": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "28": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "38": {
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "36": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "39": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "46": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "41": {
+                "mappings": {
+                    "7": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "32": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "51": {
+                "render": "",
+                "question": ""
+            },
+            "24": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "33": {
+                "render": "",
+                "question": ""
+            },
+            "15": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "47": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "26": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "23": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "11": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "9": {
+                "render": "",
+                "question": ""
+            },
+            "54": {
+                "question": "",
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "5": {
+                "question": "",
+                "render": ""
+            },
+            "44": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "19": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "12": {
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "45": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": ""
+                        }
+                    }
+                }
+            },
+            "1": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "13": {
+                "render": "",
+                "question": ""
+            },
+            "49": {
+                "question": "",
+                "render": ""
+            },
+            "42": {
+                "render": "",
+                "question": ""
+            },
+            "17": {
+                "render": "",
+                "question": ""
+            },
+            "8": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "34": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "53": {
+                "question": ""
+            },
+            "43": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "50": {
+                "render": "",
+                "question": ""
+            }
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "1": {
+                        "question": ""
+                    },
+                    "8": {
+                        "question": ""
+                    },
+                    "4": {
+                        "question": ""
+                    },
+                    "6": {
+                        "question": ""
+                    },
+                    "7": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    },
+                    "9": {
+                        "question": ""
+                    },
+                    "3": {
+                        "question": ""
+                    },
+                    "5": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "2": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": "",
+                        "humanSingular": ""
+                    },
+                    "0": {
+                        "humanSingular": "",
+                        "human": ""
+                    },
+                    "2": {
+                        "humanSingular": "",
+                        "human": ""
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    },
+                    "1": {
+                        "human": ""
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "name": "",
+        "title": {
+            "render": ""
+        },
+        "description": ""
+    },
+    "crossings": {
+        "tagRenderings": {
+            "7": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "1": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "5": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "0": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "4": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "description": "",
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            },
+            "1": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": ""
+    },
+    "cycleways_and_roads": {
+        "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "4": {
+                "mappings": {
+                    "8": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "9": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "10": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "15": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "question": "",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "12": {
+                "question": "",
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    }
+                }
+            },
+            "11": {
+                "mappings": {
+                    "6": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "8": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "0": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "14": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "5": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "8": {
+                "question": "",
+                "render": ""
+            },
+            "7": {
+                "question": "",
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    }
+                }
+            },
+            "1": {
+                "question": "",
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "13": {
+                "render": "",
+                "question": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "4": {
+                    "then": ""
+                },
+                "3": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": ""
+    },
+    "cafe_pub": {
+        "presets": {
+            "2": {
+                "title": ""
+            },
+            "1": {
+                "title": ""
+            },
+            "0": {
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "",
+                "render": ""
+            },
+            "2": {
+                "question": ""
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "name": "",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        }
+    },
+    "binocular": {
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "render": "",
+                "question": ""
+            },
+            "1": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "description": "",
+        "name": ""
+    },
+    "waste_basket": {
+        "tagRenderings": {
+            "0": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "name": "",
+        "description": "",
+        "title": {
+            "render": ""
+        },
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        }
+    },
+    "barrier": {
+        "tagRenderings": {
+            "0": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "6": {
+                "render": "",
+                "question": ""
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "3": {
+                "question": "",
+                "render": ""
+            },
+            "4": {
+                "question": "",
+                "render": ""
+            },
+            "5": {
+                "render": "",
+                "question": ""
+            },
+            "1": {
+                "question": "",
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            }
+        },
+        "presets": {
+            "1": {
+                "description": "",
+                "title": ""
+            },
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "description": "",
+        "title": {
+            "render": "",
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "name": ""
+    },
+    "observation_tower": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "3": {
+                "render": "",
+                "question": ""
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "2": {
+                "render": "",
+                "question": ""
+            },
+            "5": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": "",
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "description": ""
+    },
+    "visitor_information_centre": {
+        "name": "",
+        "title": {
+            "render": "",
+            "mappings": {
+                "1": {
+                    "then": ""
+                }
+            }
+        },
+        "description": ""
+    },
+    "watermill": {
+        "name": ""
+    },
+    "trail": {
+        "title": {
+            "render": ""
+        },
+        "tagRenderings": {
+            "4": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "1": {
+                "render": ""
+            }
+        },
+        "name": ""
+    },
+    "birdhide": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
         }
     }
 }
