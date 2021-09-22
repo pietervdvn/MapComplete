@@ -10,7 +10,10 @@
             "openTill": "till",
             "opensAt": "från",
             "open_during_ph": "Om det är en röd dag är det här stället",
-            "error_loading": "Fel: kunde inte visualisera öppettiderna."
+            "error_loading": "Fel: kunde inte visualisera öppettiderna.",
+            "not_all_rules_parsed": "",
+            "loadingCountry": "",
+            "ph_open_as_usual": ""
         },
         "weekdays": {
             "sunday": "Söndag",
@@ -29,7 +32,127 @@
                 "saturday": "Lör",
                 "monday": "Mån"
             }
-        }
+        },
+        "sharescreen": {
+            "thanksForSharing": "",
+            "fsIncludeCurrentBackgroundMap": "",
+            "fsIncludeCurrentLayers": "",
+            "copiedToClipboard": "",
+            "fsWelcomeMessage": "",
+            "fsSearch": "",
+            "fsUserbadge": "",
+            "editThemeDescription": "",
+            "intro": "",
+            "fsIncludeCurrentLocation": "",
+            "addToHomeScreen": "",
+            "fsLayers": "",
+            "fsGeolocation": "",
+            "fsLayerControlToggle": "",
+            "fsAddNew": "",
+            "editThisTheme": "",
+            "embedIntro": ""
+        },
+        "download": {
+            "downloadGeojson": "",
+            "downloadAsPdf": "",
+            "includeMetaData": "",
+            "downloadAsPdfHelper": "",
+            "downloadGeoJsonHelper": "",
+            "title": "",
+            "licenseInfo": "",
+            "noDataLoaded": "",
+            "downloadCSVHelper": "",
+            "downloadCSV": ""
+        },
+        "getStartedLogin": "",
+        "add": {
+            "intro": "",
+            "pleaseLogin": "",
+            "presetInfo": "",
+            "addNewMapLabel": "",
+            "addNew": "",
+            "disableFiltersExplanation": "",
+            "title": "",
+            "warnVisibleForEveryone": "",
+            "confirmButton": "",
+            "confirmIntro": "",
+            "disableFilters": "",
+            "zoomInFurther": "",
+            "layerNotEnabled": "",
+            "openLayerControl": "",
+            "stillLoading": ""
+        },
+        "morescreen": {
+            "streetcomplete": "",
+            "requestATheme": "",
+            "intro": "",
+            "createYourOwnTheme": ""
+        },
+        "about": "",
+        "nameInlineQuestion": "",
+        "aboutMapcomplete": "",
+        "loginOnlyNeededToEdit": "",
+        "histogram": {
+            "error_loading": ""
+        },
+        "openStreetMapIntro": "",
+        "layerSelection": {
+            "zoomInToSeeThisLayer": "",
+            "title": ""
+        },
+        "testing": "",
+        "questions": {
+            "websiteIs": "",
+            "phoneNumberIs": "",
+            "websiteOf": "",
+            "phoneNumberOf": "",
+            "emailIs": "",
+            "emailOf": ""
+        },
+        "backgroundMap": "",
+        "fewChangesBefore": "",
+        "noTagsSelected": "",
+        "noNameCategory": "",
+        "readYourMessages": "",
+        "getStartedNewAccount": "",
+        "loginToStart": "",
+        "cancel": "",
+        "attribution": {
+            "attributionTitle": "",
+            "codeContributionsBy": "",
+            "mapContributionsByAndHidden": "",
+            "attributionContent": "",
+            "mapContributionsBy": "",
+            "iconAttribution": {
+                "title": ""
+            },
+            "themeBy": ""
+        },
+        "number": "",
+        "skip": "",
+        "welcomeBack": "",
+        "pickLanguage": "",
+        "goToInbox": "",
+        "search": {
+            "error": "",
+            "searching": "",
+            "nothing": "",
+            "search": ""
+        },
+        "pdf": {
+            "attr": "",
+            "generatedWith": "",
+            "attrBackground": "",
+            "versionInfo": ""
+        },
+        "loginWithOpenStreetMap": "",
+        "osmLinkTooltip": "",
+        "save": "",
+        "returnToTheMap": "",
+        "skippedQuestions": "",
+        "oneSkippedQuestion": "",
+        "openTheMap": "",
+        "customThemeIntro": ""
     },
     "centerMessage": {
         "ready": "Klar!",
@@ -52,5 +175,65 @@
         "uploadingMultiple": "Laddar upp {count} bilder…",
         "uploadingPicture": "Laddar upp din bild…",
         "addPicture": "Lägg till bild"
+    },
+    "delete": {
+        "useSomethingElse": "",
+        "whyDelete": "",
+        "explanations": {
+            "hardDelete": "",
+            "softDelete": "",
+            "selectReason": ""
+        },
+        "onlyEditedByLoggedInUser": "",
+        "reasons": {
+            "disused": "",
+            "notFound": "",
+            "test": ""
+        },
+        "readMessages": "",
+        "notEnoughExperience": "",
+        "loading": "",
+        "isntAPoint": "",
+        "partOfOthers": "",
+        "safeDelete": "",
+        "loginToDelete": "",
+        "isDeleted": "",
+        "cancel": "",
+        "delete": ""
+    },
+    "index": {
+        "intro": "",
+        "#": "",
+        "title": "",
+        "pickTheme": ""
+    },
+    "reviews": {
+        "saved": "",
+        "no_rating": "",
+        "plz_login": "",
+        "write_a_comment": "",
+        "tos": "",
+        "posting_as": "",
+        "no_reviews_yet": "",
+        "name_required": "",
+        "attribution": "",
+        "saving_review": "",
+        "affiliated_reviewer_warning": "",
+        "i_am_affiliated": "",
+        "title_singular": "",
+        "title": ""
+    },
+    "split": {
+        "hasBeenSplit": "",
+        "splitTitle": "",
+        "inviteToSplit": "",
+        "split": "",
+        "loginToSplit": "",
+        "cancel": ""
+    },
+    "favourite": {
+        "reload": "",
+        "loginNeeded": "",
+        "panelIntro": ""
     }
 }
