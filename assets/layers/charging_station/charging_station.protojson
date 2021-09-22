@@ -538,7 +538,9 @@
           }
         },
         {
-          "if": "amenity=charging_station",
+          "if": {
+          "and":  ["amenity=charging_station","operational_status="]
+          },
           "then": {
             "en": "This charging station works",
             "nl": "Dit oplaadpunt werkt"

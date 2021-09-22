@@ -213,12 +213,7 @@
             "then": "#ff0"
           }
         ]
-      },
-      "presets": [
-        {
-          
-        }
-      ]
+      }
     },
     {
       "id": "named_streets",

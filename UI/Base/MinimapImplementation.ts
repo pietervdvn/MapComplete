@@ -50,7 +50,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             if (typeof factor === "number") {
                 bounds = leaflet.getBounds()
                 leaflet.setMaxBounds(bounds.pad(factor))
-            }else{
+            } else {
                 // @ts-ignore
                 leaflet.setMaxBounds(factor.toLeaflet())
                 bounds = leaflet.getBounds()
@@ -114,8 +114,12 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         const self = this;
         // @ts-ignore
         const resizeObserver = new ResizeObserver(_ => {
-            self.InitMap();
-            self.leafletMap?.data?.invalidateSize()
+            try {
+                self.InitMap();
+                self.leafletMap?.data?.invalidateSize()
+            } catch (e) {
+                console.error("Could not construct a minimap:", e)
+            }
         });
 
         resizeObserver.observe(div);
@@ -141,8 +145,12 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         const location = this._location;
         const self = this;
         let currentLayer = this._background.data.layer()
+        let latLon = <[number, number]>[location.data?.lat ?? 0, location.data?.lon ?? 0]
+        if(isNaN(latLon[0]) || isNaN(latLon[1])){
+            latLon = [0,0]
+        }
         const options = {
-            center: <[number, number]>[location.data?.lat ?? 0, location.data?.lon ?? 0],
+            center: latLon,
             zoom: location.data?.zoom ?? 2,
             layers: [currentLayer],
             zoomControl: false,

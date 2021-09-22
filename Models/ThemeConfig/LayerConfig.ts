@@ -154,6 +154,9 @@ export default class LayerConfig {
         this.minzoom = json.minzoom ?? 0;
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.wayHandling = json.wayHandling ?? 0;
+        if(json.presets !== undefined && json.presets?.map === undefined){
+            throw "Presets should be a list of items (at "+context+")"
+        }
         this.presets = (json.presets ?? []).map((pr, i) => {
 
             let preciseInput = undefined;
@@ -492,8 +495,8 @@ export default class LayerConfig {
         const iconUrlStatic = render(this.icon);
         const self = this;
 
-        function genHtmlFromString(sourcePart: string, rotation: string): BaseUIElement {
-            const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
+        function genHtmlFromString(sourcePart: string, rotation: string, style?: string): BaseUIElement {
+            style = style ?? `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
             let html: BaseUIElement = new FixedUiElement(
                 `<img src="${sourcePart}" style="${style}" />`
             );
@@ -537,7 +540,7 @@ export default class LayerConfig {
                         .filter((prt) => prt != "");
 
                     for (const badgePartStr of partDefs) {
-                        badgeParts.push(genHtmlFromString(badgePartStr, "0"));
+                        badgeParts.push(genHtmlFromString(badgePartStr, "0", `width:unset;height:100%;display:block;`));
                     }
 
                     const badgeCompound = new Combine(badgeParts).SetStyle(
