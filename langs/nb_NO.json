@@ -4,97 +4,64 @@
         "cancel": "Avbryt",
         "save": "Lagre",
         "search": {
-            "searching": "Søker …",
-            "nothing": ""
+            "searching": "Søker …"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
         "attribution": {
-            "codeContributionsBy": "",
             "themeBy": "",
-            "iconAttribution": {
-                "title": ""
-            },
             "attributionTitle": ""
         },
         "morescreen": {
-            "intro": "",
             "createYourOwnTheme": ""
         },
         "sharescreen": {
-            "fsSearch": "",
             "fsIncludeCurrentLayers": "",
-            "copiedToClipboard": "",
             "embedIntro": "",
-            "fsUserbadge": "",
             "fsIncludeCurrentBackgroundMap": "",
-            "addToHomeScreen": "",
             "thanksForSharing": ""
         },
-        "getStartedLogin": "",
         "weekdays": {
             "abbreviations": {
                 "wednesday": "",
-                "saturday": "",
                 "friday": ""
             },
-            "monday": "",
             "sunday": "",
-            "wednesday": "",
             "thursday": ""
         },
         "opening_hours": {
-            "ph_open": "",
             "openTill": "",
-            "opensAt": "",
             "error_loading": "",
-            "closed_permanently": "",
             "loadingCountry": ""
         },
         "download": {
-            "includeMetaData": "",
             "downloadAsPdfHelper": "",
-            "downloadCSVHelper": "",
-            "downloadGeojson": "",
-            "downloadAsPdf": ""
+            "downloadGeojson": ""
         },
         "add": {
             "confirmIntro": "",
-            "addNew": "",
             "disableFilters": "",
-            "layerNotEnabled": "",
             "addNewMapLabel": "",
-            "confirmButton": "",
-            "title": "",
-            "pleaseLogin": ""
+            "title": ""
         },
         "layerSelection": {
             "title": ""
         },
         "questions": {
-            "phoneNumberIs": "",
-            "phoneNumberOf": "",
-            "emailOf": ""
+            "phoneNumberOf": ""
         },
         "noTagsSelected": "",
-        "readYourMessages": "",
         "number": "",
-        "aboutMapcomplete": "",
         "about": "",
-        "openTheMap": "",
         "loginWithOpenStreetMap": "",
-        "backgroundMap": "",
         "pdf": {
-            "versionInfo": "",
-            "attrBackground": ""
+            "versionInfo": ""
         },
         "pickLanguage": "",
-        "loginToStart": "",
         "returnToTheMap": ""
     },
     "index": {
         "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
-        "title": "Velkommen til MapComplete",
-        "intro": ""
+        "title": "Velkommen til MapComplete"
     },
     "centerMessage": {
         "ready": "Ferdig",
@@ -109,39 +76,25 @@
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
         "pleaseLogin": "Logg inn for å legge til et bilde",
-        "willBePublished": "",
-        "respectPrivacy": "",
-        "uploadDone": ""
+        "respectPrivacy": ""
     },
     "delete": {
         "loginToDelete": "",
-        "notEnoughExperience": "",
         "reasons": {
             "disused": ""
         },
-        "delete": "",
         "isDeleted": "",
-        "readMessages": "",
         "loading": "",
-        "explanations": {
-            "selectReason": ""
-        },
-        "onlyEditedByLoggedInUser": "",
-        "partOfOthers": ""
+        "onlyEditedByLoggedInUser": ""
     },
     "reviews": {
         "no_rating": "",
-        "saved": "",
         "i_am_affiliated": "",
-        "tos": "",
         "write_a_comment": "",
-        "attribution": "",
         "no_reviews_yet": ""
     },
     "split": {
-        "split": "",
-        "splitTitle": "",
-        "cancel": ""
+        "splitTitle": ""
     },
     "favourite": {
         "loginNeeded": ""

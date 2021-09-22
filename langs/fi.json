@@ -4,11 +4,8 @@
             "ph_open": "avattu",
             "ph_closed": "suljettu",
             "ph_not_known": " ",
-            "closed_permanently": "",
             "loadingCountry": "",
-            "not_all_rules_parsed": "",
-            "openTill": "",
-            "error_loading": ""
+            "openTill": ""
         },
         "weekdays": {
             "sunday": "Sunnuntai",
@@ -34,75 +31,52 @@
         "cancel": "Peruuta",
         "save": "Tallenna",
         "search": {
-            "searching": "Etsitään…",
-            "nothing": ""
+            "searching": "Etsitään…"
         },
         "sharescreen": {
             "thanksForSharing": "Kiitos jakamisesta!",
-            "copiedToClipboard": "",
             "fsLayers": "",
-            "fsIncludeCurrentLocation": "",
             "embedIntro": "",
-            "fsAddNew": "",
             "fsIncludeCurrentBackgroundMap": "",
-            "fsLayerControlToggle": "",
             "intro": ""
         },
         "questions": {
             "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "emailOf": "",
             "phoneNumberOf": ""
         },
         "skip": "Ohita tämä kysymys",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
         "add": {
-            "title": "",
             "addNew": "",
-            "addNewMapLabel": "",
             "pleaseLogin": "",
-            "confirmIntro": "",
             "confirmButton": "",
-            "stillLoading": "",
             "intro": ""
         },
         "download": {
-            "downloadAsPdfHelper": "",
             "downloadCSVHelper": "",
-            "downloadCSV": "",
-            "includeMetaData": "",
-            "downloadGeoJsonHelper": ""
+            "includeMetaData": ""
         },
         "morescreen": {
-            "requestATheme": "",
-            "intro": ""
+            "requestATheme": ""
         },
         "attribution": {
             "mapContributionsBy": "",
-            "themeBy": "",
             "mapContributionsByAndHidden": ""
         },
-        "fewChangesBefore": "",
         "noTagsSelected": "",
-        "nameInlineQuestion": "",
         "openStreetMapIntro": "",
-        "customThemeIntro": "",
         "oneSkippedQuestion": "",
-        "readYourMessages": "",
         "loginToStart": "",
-        "getStartedNewAccount": "",
         "pdf": {
-            "generatedWith": "",
-            "versionInfo": ""
+            "generatedWith": ""
         },
         "layerSelection": {
             "title": ""
         },
-        "loginOnlyNeededToEdit": "",
         "osmLinkTooltip": ""
     },
     "centerMessage": {
-        "ready": "Valmis!",
-        "retrying": ""
+        "ready": "Valmis!"
     },
     "image": {
         "doDelete": "Poista kuva",
@@ -111,47 +85,34 @@
         "isDeleted": "Poistettu",
         "ccb": "CC-BY-lisenssillä",
         "ccbs": "CC-BY-SA-lisenssillä",
-        "pleaseLogin": "",
         "uploadingPicture": "",
-        "uploadDone": "",
         "cco": ""
     },
     "reviews": {
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu",
-        "write_a_comment": "",
         "name_required": "",
-        "plz_login": "",
         "i_am_affiliated": "",
-        "posting_as": "",
         "attribution": ""
     },
     "index": {
-        "title": "Tervetuloa MapCompleteen",
-        "#": ""
+        "title": "Tervetuloa MapCompleteen"
     },
     "delete": {
         "cancel": "",
-        "safeDelete": "",
         "loginToDelete": "",
         "reasons": {
-            "disused": "",
             "notFound": ""
         },
-        "loading": "",
         "explanations": {
             "selectReason": ""
         },
-        "whyDelete": "",
-        "notEnoughExperience": "",
-        "onlyEditedByLoggedInUser": ""
+        "notEnoughExperience": ""
     },
     "favourite": {
         "reload": ""
     },
     "split": {
-        "splitTitle": "",
-        "loginToSplit": "",
-        "hasBeenSplit": ""
+        "loginToSplit": ""
     }
 }

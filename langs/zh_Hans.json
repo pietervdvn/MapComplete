@@ -1,142 +1,91 @@
 {
     "general": {
         "sharescreen": {
-            "fsLayerControlToggle": "",
             "thanksForSharing": "",
-            "fsGeolocation": "",
             "editThisTheme": "",
-            "fsWelcomeMessage": "",
             "fsLayers": "",
-            "fsAddNew": "",
             "fsIncludeCurrentBackgroundMap": ""
         },
         "questions": {
-            "phoneNumberIs": "",
-            "emailIs": "",
-            "emailOf": ""
+            "emailIs": ""
         },
         "nameInlineQuestion": "",
         "opening_hours": {
-            "error_loading": "",
             "ph_open": "",
-            "ph_not_known": "",
             "openTill": "",
-            "opensAt": "",
             "closed_permanently": ""
         },
         "add": {
-            "confirmIntro": "",
             "intro": "",
-            "confirmButton": "",
             "disableFilters": "",
-            "addNew": "",
             "pleaseLogin": "",
-            "warnVisibleForEveryone": "",
             "presetInfo": ""
         },
         "download": {
-            "downloadCSVHelper": "",
             "downloadGeoJsonHelper": "",
-            "licenseInfo": "",
-            "downloadAsPdfHelper": "",
-            "downloadCSV": ""
+            "downloadAsPdfHelper": ""
         },
         "weekdays": {
             "abbreviations": {
                 "saturday": "",
-                "monday": "",
-                "wednesday": "",
-                "tuesday": ""
+                "wednesday": ""
             },
             "thursday": "",
-            "monday": "",
             "friday": ""
         },
-        "osmLinkTooltip": "",
         "histogram": {
             "error_loading": ""
         },
         "morescreen": {
-            "createYourOwnTheme": "",
             "requestATheme": ""
         },
         "attribution": {
-            "mapContributionsByAndHidden": "",
             "codeContributionsBy": "",
-            "themeBy": "",
             "attributionTitle": ""
         },
-        "aboutMapcomplete": "",
         "getStartedLogin": "",
-        "backgroundMap": "",
         "about": "",
-        "welcomeBack": "",
         "search": {
-            "searching": "",
-            "error": ""
+            "searching": ""
         },
         "pdf": {
-            "attrBackground": "",
-            "attr": ""
+            "attrBackground": ""
         },
         "skippedQuestions": "",
-        "layerSelection": {
-            "zoomInToSeeThisLayer": ""
-        },
         "noNameCategory": "",
-        "goToInbox": "",
         "save": "",
-        "returnToTheMap": "",
         "getStartedNewAccount": ""
     },
     "reviews": {
-        "tos": "",
         "saving_review": "",
-        "plz_login": "",
         "write_a_comment": "",
-        "i_am_affiliated": "",
-        "name_required": "",
-        "title": ""
+        "name_required": ""
     },
     "favourite": {
-        "panelIntro": "",
-        "loginNeeded": ""
+        "panelIntro": ""
     },
     "delete": {
         "delete": "",
-        "loginToDelete": "",
         "cancel": "",
         "explanations": {
-            "softDelete": "",
             "selectReason": ""
         },
-        "reasons": {
-            "disused": ""
-        },
         "whyDelete": "",
-        "useSomethingElse": "",
         "onlyEditedByLoggedInUser": ""
     },
     "index": {
-        "pickTheme": "",
         "#": ""
     },
     "centerMessage": {
-        "zoomIn": "",
         "loadingData": ""
     },
     "split": {
-        "splitTitle": "",
-        "inviteToSplit": "",
-        "cancel": ""
+        "inviteToSplit": ""
     },
     "image": {
         "uploadDone": "",
-        "doDelete": "",
         "respectPrivacy": "",
-        "addPicture": "",
         "pleaseLogin": "",
-        "isDeleted": "",
         "ccbs": ""
     }
 }
