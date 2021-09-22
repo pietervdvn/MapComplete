@@ -15,6 +15,52 @@
         },
         "website": {
             "question": "Hva er nettsiden til {name}?"
+        },
+        "level": {
+            "render": "Er å finne én etasje over {level} etasje",
+            "question": "Hvilken etasje er det?",
+            "mappings": {
+                "3": {
+                    "then": "I andre etasje"
+                },
+                "2": {
+                    "then": "I første etasje"
+                },
+                "1": {
+                    "then": "I første etasje"
+                },
+                "0": {
+                    "then": "Ligger under jorden"
+                }
+            }
+        },
+        "wheelchair-access": {
+            "question": "Er dette stedet rullestolsvennlig?",
+            "mappings": {
+                "3": {
+                    "then": "Dette stedet kan ikke besøkes med rullestol"
+                },
+                "2": {
+                    "then": "Det er mulig å besøke dette stedet med rullestol, men det er ikke lett"
+                },
+                "1": {
+                    "then": "Dette stedet kan enkelt besøkes med rullestol"
+                },
+                "0": {
+                    "then": "Dette stedet er spesielt tilpasset rullestolsbrukere"
+                }
+            }
+        },
+        "payment-options": {
+            "question": "Hvilke betalingsmetoder kan benyttes her?",
+            "mappings": {
+                "1": {
+                    "then": "Kortbetaling er mulig"
+                },
+                "0": {
+                    "then": "Kontanter godtas"
+                }
+            }
         }
     }
 }
