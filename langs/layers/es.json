@@ -112,5 +112,11 @@
         "title": {
             "render": "Desfibrilador"
         }
+    },
+    "ghost_bike": {
+        "title": {
+            "render": "Bicicleta blanca"
+        },
+        "name": "Bicicleta blanca"
     }
 }

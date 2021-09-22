@@ -378,5 +378,11 @@
         "title": {
             "render": "Auga potábel"
         }
+    },
+    "ghost_bike": {
+        "title": {
+            "render": "Bicicleta pantasma"
+        },
+        "name": "Bicicleta pantasma"
     }
 }

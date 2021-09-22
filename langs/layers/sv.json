@@ -1,1 +1,8 @@
-{}
+{
+    "ghost_bike": {
+        "title": {
+            "render": "Spökcykel"
+        },
+        "name": "Spökcykel"
+    }
+}

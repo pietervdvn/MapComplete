@@ -402,5 +402,11 @@
         "title": {
             "render": "充電站"
         }
+    },
+    "ghost_bike": {
+        "title": {
+            "render": "幽靈單車"
+        },
+        "name": "幽靈單車"
     }
 }

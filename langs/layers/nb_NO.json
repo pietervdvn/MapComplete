@@ -104,6 +104,12 @@
             }
         }
     },
+    "ghost_bike": {
+        "title": {
+            "render": "Spøkelsessykler"
+        },
+        "name": "Spøkelsessykler"
+     },
     "charging_station": {
         "description": "En ladestasjon",
         "name": "Ladestasjoner",

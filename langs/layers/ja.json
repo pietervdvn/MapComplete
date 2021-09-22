@@ -1,4 +1,10 @@
 {
+    "ghost_bike": {
+        "title": {
+            "render": "ゴーストバイク"
+        },
+        "name": "ゴーストバイク"
+    },
     "charging_station": {
         "description": "充電ステーション",
         "name": "充電ステーション",
@@ -34,3 +40,4 @@
         }
     }
 }
+
