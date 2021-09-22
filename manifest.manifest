@@ -1,26 +1,26 @@
 {
-  "name": "MapComplete",
-  "short_name": "MapComplete",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#fff",
-  "description": "Easily edit OpenStreetMap",
-  "orientation": "portrait-primary, landscape-primary",
-  "icons": [
-    {
-      "src": "./assets/svg/add.svg",
-      "sizes": "192x192",
-      "type": "image/svg"
-    },
-    {
-      "src": "./assets/svg/add.svg",
-      "sizes": "512x512",
-      "type": "image/svg"
-    },
-    {
-      "src": "./assets/svg/add.svg",
-      "sizes": "513x513",
-      "type": "image/svg"
-    }
-  ]
-}
+        "name": "MapComplete",
+        "short_name": "MapComplete",
+        "start_url": "index.html",
+        "display": "standalone",
+        "background_color": "#fff",
+        "description": "Easily edit OpenStreetMap",
+        "orientation": "portrait-primary, landscape-primary",
+        "icons": [
+        {
+        "src": "./assets/svg/add.svg",
+        "sizes": "192x192",
+        "type": "image/svg"
+        },
+        {
+        "src": "./assets/svg/add.svg",
+        "sizes": "512x512",
+        "type": "image/svg"
+        },
+        {
+        "src": "./assets/svg/add.svg",
+        "sizes": "513x513",
+        "type": "image/svg"
+        }
+        ]
+        }

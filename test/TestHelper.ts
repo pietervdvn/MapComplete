@@ -1,7 +1,7 @@
 export default class T {
 
-    public readonly failures : string[] = []
-    public readonly name : string;
+    public readonly failures: string[] = []
+    public readonly name: string;
 
     constructor(testsuite: string, tests: [string, () => void][]) {
         this.name = testsuite
@@ -32,6 +32,7 @@ export default class T {
             throw "Expected true, but got false: " + msg
         }
     }
+
     static isFalse(b: boolean, msg: string) {
         if (b) {
             throw "Expected false, but got true: " + msg

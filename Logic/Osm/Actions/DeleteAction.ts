@@ -30,7 +30,7 @@ export default class DeleteAction {
      * Does actually delete the feature; returns the event source 'this.isDeleted'
      * If deletion is not allowed, triggers the callback instead
      */
-    public DoDelete(reason: string, onNotAllowed : () => void): void {
+    public DoDelete(reason: string, onNotAllowed: () => void): void {
         const isDeleted = this.isDeleted
         const self = this;
         let deletionStarted = false;
@@ -40,23 +40,21 @@ export default class DeleteAction {
                     // Already deleted...
                     return;
                 }
-                
-                if(canBeDeleted.canBeDeleted === false){
+
+                if (canBeDeleted.canBeDeleted === false) {
                     // We aren't allowed to delete
                     deletionStarted = true;
                     onNotAllowed();
                     isDeleted.setData(true);
                     return;
                 }
-                
+
                 if (!canBeDeleted) {
                     // We are not allowed to delete (yet), this might change in the future though
                     return;
                 }
 
-              
 
-              
                 deletionStarted = true;
                 OsmObject.DownloadObject(self._id).addCallbackAndRun(obj => {
                     if (obj === undefined) {
@@ -207,7 +205,7 @@ export default class DeleteAction {
                         canBeDeleted: false,
                         reason: t.partOfOthers
                     })
-                }else{
+                } else {
                     // alright, this point can be safely deleted!
                     state.setData({
                         canBeDeleted: true,
@@ -215,7 +213,6 @@ export default class DeleteAction {
                     })
                 }
 
-              
 
             }
         )

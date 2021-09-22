@@ -90,7 +90,7 @@ export default class TagSpec extends T {
                 equal(notEmptyList.matchesProperties({"xyz": undefined}), true);
                 equal(notEmptyList.matchesProperties({"xyz": "[]"}), false);
                 equal(notEmptyList.matchesProperties({"xyz": "[\"abc\"]"}), true);
-                
+
                 let compare = TagUtils.Tag("key<=5")
                 equal(compare.matchesProperties({"key": undefined}), false);
                 equal(compare.matchesProperties({"key": "6"}), false);
@@ -195,7 +195,7 @@ export default class TagSpec extends T {
                     console.log(overpass)
                     equal(overpass[0], "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]")
 
-                    const or =  {
+                    const or = {
                         or: [
                             "leisure=nature_reserve",
                             t
@@ -205,10 +205,12 @@ export default class TagSpec extends T {
                     equal(2, overpassOr.length)
                     equal(overpassOr[1], "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]")
 
-                   const orInOr = {or:[
-                       "amenity=drinking_water",
-                           or
-                       ]}
+                    const orInOr = {
+                        or: [
+                            "amenity=drinking_water",
+                            or
+                        ]
+                    }
                     const overpassOrInor = TagUtils.Tag(orInOr).asOverpass()
                     equal(3, overpassOrInor.length)
                 }

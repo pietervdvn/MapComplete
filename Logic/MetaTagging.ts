@@ -18,6 +18,9 @@ interface Params {
 export default class MetaTagging {
 
 
+    private static errorPrintCount = 0;
+    private static readonly stopErrorOutputAt = 10;
+
     /**
      * An actor which adds metatags on every feature in the given object
      * The features are a list of geojson-features, with a "properties"-field and geometry
@@ -86,9 +89,6 @@ export default class MetaTagging {
 
     }
 
-    private static errorPrintCount = 0;
-    private static readonly stopErrorOutputAt = 10;
-
     private static createRetaggingFunc(layer: LayerConfig):
         ((params: Params, feature: any) => void) {
         const calculatedTags: [string, string][] = layer.calculatedTags;
@@ -111,7 +111,7 @@ export default class MetaTagging {
                 const f = (featuresPerLayer, feature: any) => {
                     try {
                         let result = func(feature);
-                        if(result instanceof UIEventSource){
+                        if (result instanceof UIEventSource) {
                             result.addCallbackAndRunD(d => {
                                 if (typeof d !== "string") {
                                     // Make sure it is a string!
@@ -121,7 +121,7 @@ export default class MetaTagging {
                             })
                             result = result.data
                         }
-                        
+
                         if (result === undefined || result === "") {
                             return;
                         }

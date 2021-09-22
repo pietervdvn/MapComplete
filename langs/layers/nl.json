@@ -1,31 +1,19 @@
 {
     "barrier": {
-        "name": "Barrières",
         "description": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
-        "title": {
-            "render": "Barrière",
-            "mappings": {
-                "0": {
-                    "then": "Paaltje"
-                },
-                "1": {
-                    "then": "Fietshekjes"
-                }
-            }
-        },
+        "name": "Barrières",
         "presets": {
             "0": {
-                "title": "Paaltje",
-                "description": "Een paaltje in de weg"
+                "description": "Een paaltje in de weg",
+                "title": "Paaltje"
             },
             "1": {
-                "title": "Fietshekjes",
-                "description": "Fietshekjes, voor het afremmen van fietsers"
+                "description": "Fietshekjes, voor het afremmen van fietsers",
+                "title": "Fietshekjes"
             }
         },
         "tagRenderings": {
             "0": {
-                "question": "Kan een fietser langs deze barrière?",
                 "mappings": {
                     "0": {
                         "then": "Een fietser kan hier langs."
@@ -33,10 +21,10 @@
                     "1": {
                         "then": "Een fietser kan hier niet langs."
                     }
-                }
+                },
+                "question": "Kan een fietser langs deze barrière?"
             },
             "1": {
-                "question": "Wat voor soort paal is dit?",
                 "mappings": {
                     "0": {
                         "then": "Verwijderbare paal"
@@ -53,10 +41,10 @@
                     "4": {
                         "then": "Verzonken poller"
                     }
-                }
+                },
+                "question": "Wat voor soort paal is dit?"
             },
             "2": {
-                "question": "Wat voor fietshekjes zijn dit?",
                 "mappings": {
                     "0": {
                         "then": "Enkelvoudig, slechts twee hekjes met ruimte ertussen <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
@@ -70,33 +58,47 @@
                     "3": {
                         "then": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
                     }
-                }
+                },
+                "question": "Wat voor fietshekjes zijn dit?"
             },
             "3": {
-                "render": "Maximumbreedte: {maxwidth:physical} m",
-                "question": "Hoe breed is de ruimte naast de barrière?"
+                "question": "Hoe breed is de ruimte naast de barrière?",
+                "render": "Maximumbreedte: {maxwidth:physical} m"
             },
             "4": {
-                "render": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m",
-                "question": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?"
+                "question": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
+                "render": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m"
             },
             "5": {
-                "render": "Breedte van de opening: {width:opening} m",
-                "question": "Hoe breed is de smalste opening naast de barrières?"
+                "question": "Hoe breed is de smalste opening naast de barrières?",
+                "render": "Breedte van de opening: {width:opening} m"
             },
             "6": {
                 "question": "Hoeveel overlappen de barrières?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Paaltje"
+                },
+                "1": {
+                    "then": "Fietshekjes"
+                }
+            },
+            "render": "Barrière"
         }
     },
     "bench": {
         "name": "Zitbanken",
-        "title": {
-            "render": "Zitbank"
+        "presets": {
+            "0": {
+                "description": "Voeg een nieuwe zitbank toe",
+                "title": "Zitbank"
+            }
         },
         "tagRenderings": {
             "1": {
-                "render": "Rugleuning",
                 "mappings": {
                     "0": {
                         "then": "Heeft een rugleuning"
@@ -105,14 +107,14 @@
                         "then": "Rugleuning ontbreekt"
                     }
                 },
-                "question": "Heeft deze zitbank een rugleuning?"
+                "question": "Heeft deze zitbank een rugleuning?",
+                "render": "Rugleuning"
             },
             "2": {
-                "render": "{seats} zitplaatsen",
-                "question": "Hoeveel zitplaatsen heeft deze bank?"
+                "question": "Hoeveel zitplaatsen heeft deze bank?",
+                "render": "{seats} zitplaatsen"
             },
             "3": {
-                "render": "Gemaakt van {material}",
                 "mappings": {
                     "0": {
                         "then": "Gemaakt uit hout"
@@ -133,15 +135,14 @@
                         "then": "Gemaakt uit staal"
                     }
                 },
-                "question": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?"
+                "question": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
+                "render": "Gemaakt van {material}"
             },
             "4": {
                 "question": "In welke richting kijk je wanneer je op deze zitbank zit?",
                 "render": "Wanneer je op deze bank zit, dan kijk je in {direction}°."
             },
             "5": {
-                "render": "Kleur: {colour}",
-                "question": "Welke kleur heeft deze zitbank?",
                 "mappings": {
                     "0": {
                         "then": "De kleur is bruin"
@@ -167,33 +168,21 @@
                     "7": {
                         "then": "De kleur is geel"
                     }
-                }
+                },
+                "question": "Welke kleur heeft deze zitbank?",
+                "render": "Kleur: {colour}"
             },
             "6": {
                 "question": "Wanneer is deze laatste bank laatst gesurveyed?",
                 "render": "Deze bank is laatst gesurveyd op {survey:date}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Zitbank",
-                "description": "Voeg een nieuwe zitbank toe"
-            }
+        "title": {
+            "render": "Zitbank"
         }
     },
     "bench_at_pt": {
         "name": "Zitbanken aan bushaltes",
-        "title": {
-            "render": "Zitbank",
-            "mappings": {
-                "0": {
-                    "then": "Zitbank aan een bushalte"
-                },
-                "1": {
-                    "then": "Zitbank in een schuilhokje"
-                }
-            }
-        },
         "tagRenderings": {
             "1": {
                 "render": "{name}"
@@ -201,22 +190,34 @@
             "2": {
                 "render": "Leunbank"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Zitbank aan een bushalte"
+                },
+                "1": {
+                    "then": "Zitbank in een schuilhokje"
+                }
+            },
+            "render": "Zitbank"
         }
     },
     "bicycle_library": {
-        "name": "Fietsbibliotheek",
-        "title": {
-            "render": "Fietsbibliotheek"
-        },
         "description": "Een plaats waar men voor langere tijd een fiets kan lenen",
+        "name": "Fietsbibliotheek",
+        "presets": {
+            "0": {
+                "description": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
+                "title": "Bicycle library"
+            }
+        },
         "tagRenderings": {
             "1": {
                 "question": "Wat is de naam van deze fietsbieb?",
                 "render": "Deze fietsbieb heet {name}"
             },
             "6": {
-                "question": "Hoeveel kost het huren van een fiets?",
-                "render": "Een fiets huren kost {charge}",
                 "mappings": {
                     "0": {
                         "then": "Een fiets huren is gratis"
@@ -224,10 +225,11 @@
                     "1": {
                         "then": "Een fiets huren kost €20/jaar en €20 waarborg"
                     }
-                }
+                },
+                "question": "Hoeveel kost het huren van een fiets?",
+                "render": "Een fiets huren kost {charge}"
             },
             "7": {
-                "question": "Voor wie worden hier fietsen aangeboden?",
                 "mappings": {
                     "0": {
                         "then": "Aanbod voor kinderen"
@@ -238,21 +240,16 @@
                     "2": {
                         "then": "Aanbod voor personen met een handicap"
                     }
-                }
+                },
+                "question": "Voor wie worden hier fietsen aangeboden?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Bicycle library",
-                "description": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen"
-            }
+        "title": {
+            "render": "Fietsbibliotheek"
         }
     },
     "bicycle_tube_vending_machine": {
         "name": "Fietsbanden-verkoopsautomaat",
-        "title": {
-            "render": "Fietsbanden-verkoopsautomaat"
-        },
         "presets": {
             "0": {
                 "title": "Fietsbanden-verkoopsautomaat"
@@ -260,8 +257,6 @@
         },
         "tagRenderings": {
             "1": {
-                "question": "Is deze verkoopsautomaat nog steeds werkende?",
-                "render": "Deze verkoopsautomaat is <i>{operational_status}</i>",
                 "mappings": {
                     "0": {
                         "then": "Deze verkoopsautomaat werkt"
@@ -272,18 +267,20 @@
                     "2": {
                         "then": "Deze verkoopsautomaat is uitgeschakeld"
                     }
-                }
+                },
+                "question": "Is deze verkoopsautomaat nog steeds werkende?",
+                "render": "Deze verkoopsautomaat is <i>{operational_status}</i>"
             }
+        },
+        "title": {
+            "render": "Fietsbanden-verkoopsautomaat"
         }
     },
     "bike_cafe": {
         "name": "Fietscafé",
-        "title": {
-            "render": "Fietscafé",
-            "mappings": {
-                "0": {
-                    "then": "Fietscafé <i>{name}</i>"
-                }
+        "presets": {
+            "0": {
+                "title": "Fietscafé"
             }
         },
         "tagRenderings": {
@@ -292,7 +289,6 @@
                 "render": "Dit fietscafé heet {name}"
             },
             "2": {
-                "question": "Biedt dit fietscafé een fietspomp aan voor iedereen?",
                 "mappings": {
                     "0": {
                         "then": "Dit fietscafé biedt een fietspomp aan voor eender wie"
@@ -300,10 +296,10 @@
                     "1": {
                         "then": "Dit fietscafé biedt geen fietspomp aan voor iedereen"
                     }
-                }
+                },
+                "question": "Biedt dit fietscafé een fietspomp aan voor iedereen?"
             },
             "3": {
-                "question": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
                 "mappings": {
                     "0": {
                         "then": "Dit fietscafé biedt gereedschap aan om je fiets zelf te herstellen"
@@ -311,10 +307,10 @@
                     "1": {
                         "then": "Dit fietscafé biedt geen gereedschap aan om je fiets zelf te herstellen"
                     }
-                }
+                },
+                "question": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?"
             },
             "4": {
-                "question": "Herstelt dit fietscafé fietsen?",
                 "mappings": {
                     "0": {
                         "then": "Dit fietscafé herstelt fietsen"
@@ -322,7 +318,8 @@
                     "1": {
                         "then": "Dit fietscafé herstelt geen fietsen"
                     }
-                }
+                },
+                "question": "Herstelt dit fietscafé fietsen?"
             },
             "5": {
                 "question": "Wat is de website van {name}?"
@@ -337,32 +334,34 @@
                 "question": "Wanneer is dit fietscafé geopend?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Fietscafé"
-            }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Fietscafé <i>{name}</i>"
+                }
+            },
+            "render": "Fietscafé"
         }
     },
     "bike_cleaning": {
         "name": "Fietsschoonmaakpunt",
-        "title": {
-            "render": "Fietsschoonmaakpunt",
-            "mappings": {
-                "0": {
-                    "then": "Fietsschoonmaakpunt <i>{name}</i>"
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "Fietsschoonmaakpunt"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Fietsschoonmaakpunt <i>{name}</i>"
+                }
+            },
+            "render": "Fietsschoonmaakpunt"
         }
     },
     "bike_monitoring_station": {
         "name": "Telstation",
         "title": {
-            "render": "Fietstelstation",
             "mappings": {
                 "0": {
                     "then": "Fietstelstation {name}"
@@ -370,7 +369,8 @@
                 "1": {
                     "then": "Fietstelstation {ref}"
                 }
-            }
+            },
+            "render": "Fietstelstation"
         }
     },
     "bike_parking": {
@@ -380,13 +380,8 @@
                 "title": "Fietsparking"
             }
         },
-        "title": {
-            "render": "Fietsparking"
-        },
         "tagRenderings": {
             "1": {
-                "question": "Van welk type is deze fietsparking?",
-                "render": "Dit is een fietsparking van het type: {bicycle_parking}",
                 "mappings": {
                     "0": {
                         "then": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
@@ -412,10 +407,11 @@
                     "7": {
                         "then": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"
                     }
-                }
+                },
+                "question": "Van welk type is deze fietsparking?",
+                "render": "Dit is een fietsparking van het type: {bicycle_parking}"
             },
             "2": {
-                "question": "Wat is de relatieve locatie van deze parking??",
                 "mappings": {
                     "0": {
                         "then": "Ondergrondse parking"
@@ -432,10 +428,10 @@
                     "4": {
                         "then": "Dakparking"
                     }
-                }
+                },
+                "question": "Wat is de relatieve locatie van deze parking??"
             },
             "3": {
-                "question": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw.",
                 "mappings": {
                     "0": {
                         "then": "Deze parking is overdekt (er is een afdak)"
@@ -443,15 +439,14 @@
                     "1": {
                         "then": "Deze parking is niet overdekt"
                     }
-                }
+                },
+                "question": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw."
             },
             "4": {
                 "question": "Hoeveel fietsen kunnen in deze fietsparking (inclusief potentiëel bakfietsen)?",
                 "render": "Plaats voor {capacity} fietsen"
             },
             "5": {
-                "question": "Wie mag er deze fietsenstalling gebruiken?",
-                "render": "{access}",
                 "mappings": {
                     "0": {
                         "then": "Publiek toegankelijke fietsenstalling"
@@ -462,10 +457,11 @@
                     "2": {
                         "then": "Private fietsenstalling van een school, een bedrijf, ..."
                     }
-                }
+                },
+                "question": "Wie mag er deze fietsenstalling gebruiken?",
+                "render": "{access}"
             },
             "6": {
-                "question": "Heeft deze fietsparking plaats voor bakfietsen?",
                 "mappings": {
                     "0": {
                         "then": "Deze parking heeft plaats voor bakfietsen"
@@ -476,18 +472,147 @@
                     "2": {
                         "then": "Je mag hier geen bakfietsen parkeren"
                     }
-                }
+                },
+                "question": "Heeft deze fietsparking plaats voor bakfietsen?"
             },
             "7": {
                 "question": "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
                 "render": "Deze parking heeft plaats voor {capacity:cargo_bike} fietsen"
             }
+        },
+        "title": {
+            "render": "Fietsparking"
         }
     },
     "bike_repair_station": {
         "name": "Fietspunten (herstel, pomp of allebei)",
+        "presets": {
+            "0": {
+                "description": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden</h3><h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "title": "Fietspomp"
+            },
+            "1": {
+                "description": "Een apparaat met zowel gereedschap om je fiets te herstellen, met een pomp. Deze zijn op een vastgemaakt op een plaats in de publieke ruimte, bv. aan een paal.<h3>Voorbeeld</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
+                "title": "Herstelpunt en pomp"
+            },
+            "2": {
+                "title": "Herstelpunt zonder pomp"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is enkel een pomp aanwezig"
+                    },
+                    "1": {
+                        "then": "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)"
+                    },
+                    "2": {
+                        "then": "Er is zowel een pomp als gereedschap aanwezig"
+                    }
+                },
+                "question": "Welke functies biedt dit fietspunt?"
+            },
+            "2": {
+                "question": "Wie beheert deze fietspomp?",
+                "render": "Beheer door {operator}"
+            },
+            "3": {
+                "question": "Wat is het email-adres van de beheerder?"
+            },
+            "4": {
+                "question": "Wat is het telefoonnummer van de beheerder?"
+            },
+            "5": {
+                "mappings": {
+                    "0": {
+                        "then": "Dag en nacht open"
+                    },
+                    "1": {
+                        "then": "Dag en nacht open"
+                    }
+                },
+                "question": "Wanneer is dit fietsherstelpunt open?"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is een reparatieset voor je ketting"
+                    },
+                    "1": {
+                        "then": "Er is geen reparatieset voor je ketting"
+                    }
+                },
+                "question": "Heeft dit herstelpunt een speciale reparatieset voor je ketting?"
+            },
+            "7": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is een haak of standaard"
+                    },
+                    "1": {
+                        "then": "Er is geen haak of standaard"
+                    }
+                },
+                "question": "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?"
+            },
+            "8": {
+                "mappings": {
+                    "0": {
+                        "then": "De fietspomp is kapot"
+                    },
+                    "1": {
+                        "then": "De fietspomp werkt nog"
+                    }
+                },
+                "question": "Werkt de fietspomp nog?"
+            },
+            "9": {
+                "render": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix#{id}.'>Rapporteer deze fietspomp als kapot</a>"
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": "Sclaverand (ook gekend als Presta)"
+                    },
+                    "1": {
+                        "then": "Dunlop"
+                    },
+                    "2": {
+                        "then": "Schrader (auto's)"
+                    }
+                },
+                "question": "Welke ventielen werken er met de pomp?",
+                "render": "Deze pomp werkt met de volgende ventielen: {valves}"
+            },
+            "11": {
+                "mappings": {
+                    "0": {
+                        "then": "Manuele pomp"
+                    },
+                    "1": {
+                        "then": "Electrische pomp"
+                    }
+                },
+                "question": "Is dit een electrische fietspomp?"
+            },
+            "12": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is een luchtdrukmeter"
+                    },
+                    "1": {
+                        "then": "Er is geen luchtdrukmeter"
+                    },
+                    "2": {
+                        "then": "Er is een luchtdrukmeter maar die is momenteel defect"
+                    }
+                },
+                "question": "Heeft deze pomp een luchtdrukmeter?"
+            }
+        },
         "title": {
-            "render": "Herstelpunt met pomp",
             "mappings": {
                 "0": {
                     "then": "Herstelpunt"
@@ -504,155 +629,18 @@
                 "4": {
                     "then": "Fietspomp"
                 }
-            }
-        },
-        "tagRenderings": {
-            "1": {
-                "question": "Welke functies biedt dit fietspunt?",
-                "mappings": {
-                    "0": {
-                        "then": "Er is enkel een pomp aanwezig"
-                    },
-                    "1": {
-                        "then": "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)"
-                    },
-                    "2": {
-                        "then": "Er is zowel een pomp als gereedschap aanwezig"
-                    }
-                }
             },
-            "2": {
-                "question": "Wie beheert deze fietspomp?",
-                "render": "Beheer door {operator}"
-            },
-            "3": {
-                "question": "Wat is het email-adres van de beheerder?"
-            },
-            "4": {
-                "question": "Wat is het telefoonnummer van de beheerder?"
-            },
-            "5": {
-                "question": "Wanneer is dit fietsherstelpunt open?",
-                "mappings": {
-                    "0": {
-                        "then": "Dag en nacht open"
-                    },
-                    "1": {
-                        "then": "Dag en nacht open"
-                    }
-                }
-            },
-            "6": {
-                "question": "Heeft dit herstelpunt een speciale reparatieset voor je ketting?",
-                "mappings": {
-                    "0": {
-                        "then": "Er is een reparatieset voor je ketting"
-                    },
-                    "1": {
-                        "then": "Er is geen reparatieset voor je ketting"
-                    }
-                }
-            },
-            "7": {
-                "question": "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
-                "mappings": {
-                    "0": {
-                        "then": "Er is een haak of standaard"
-                    },
-                    "1": {
-                        "then": "Er is geen haak of standaard"
-                    }
-                }
-            },
-            "8": {
-                "question": "Werkt de fietspomp nog?",
-                "mappings": {
-                    "0": {
-                        "then": "De fietspomp is kapot"
-                    },
-                    "1": {
-                        "then": "De fietspomp werkt nog"
-                    }
-                }
-            },
-            "10": {
-                "question": "Welke ventielen werken er met de pomp?",
-                "render": "Deze pomp werkt met de volgende ventielen: {valves}",
-                "mappings": {
-                    "0": {
-                        "then": "Sclaverand (ook gekend als Presta)"
-                    },
-                    "1": {
-                        "then": "Dunlop"
-                    },
-                    "2": {
-                        "then": "Schrader (auto's)"
-                    }
-                }
-            },
-            "11": {
-                "question": "Is dit een electrische fietspomp?",
-                "mappings": {
-                    "0": {
-                        "then": "Manuele pomp"
-                    },
-                    "1": {
-                        "then": "Electrische pomp"
-                    }
-                }
-            },
-            "12": {
-                "question": "Heeft deze pomp een luchtdrukmeter?",
-                "mappings": {
-                    "0": {
-                        "then": "Er is een luchtdrukmeter"
-                    },
-                    "1": {
-                        "then": "Er is geen luchtdrukmeter"
-                    },
-                    "2": {
-                        "then": "Er is een luchtdrukmeter maar die is momenteel defect"
-                    }
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Fietspomp",
-                "description": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden</h3><h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
-            },
-            "1": {
-                "title": "Herstelpunt en pomp",
-                "description": "Een apparaat met zowel gereedschap om je fiets te herstellen, met een pomp. Deze zijn op een vastgemaakt op een plaats in de publieke ruimte, bv. aan een paal.<h3>Voorbeeld</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>"
-            },
-            "2": {
-                "title": "Herstelpunt zonder pomp"
-            }
+            "render": "Herstelpunt met pomp"
         }
     },
     "bike_shop": {
+        "description": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
         "name": "Fietszaak",
-        "title": {
-            "render": "Fietszaak",
-            "mappings": {
-                "0": {
-                    "then": "Sportwinkel <i>{name}</i>"
-                },
-                "2": {
-                    "then": "Fietsverhuur <i>{name}</i>"
-                },
-                "3": {
-                    "then": "Fietsenmaker <i>{name}</i>"
-                },
-                "4": {
-                    "then": "Fietswinkel <i>{name}</i>"
-                },
-                "5": {
-                    "then": "Fietszaak <i>{name}</i>"
-                }
+        "presets": {
+            "0": {
+                "title": "Fietszaak"
             }
         },
-        "description": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
         "tagRenderings": {
             "1": {
                 "render": "Deze winkel verkoopt {shop} en heeft fiets-gerelateerde activiteiten."
@@ -671,7 +659,6 @@
                 "question": "Wat is het email-adres van {name}?"
             },
             "9": {
-                "question": "Verkoopt deze fietszaak fietsen?",
                 "mappings": {
                     "0": {
                         "then": "Deze winkel verkoopt fietsen"
@@ -679,10 +666,10 @@
                     "1": {
                         "then": "Deze winkel verkoopt geen fietsen"
                     }
-                }
+                },
+                "question": "Verkoopt deze fietszaak fietsen?"
             },
             "10": {
-                "question": "Herstelt deze winkel fietsen?",
                 "mappings": {
                     "0": {
                         "then": "Deze winkel herstelt fietsen"
@@ -696,10 +683,10 @@
                     "3": {
                         "then": "Deze winkel herstelt enkel fietsen van een bepaald merk"
                     }
-                }
+                },
+                "question": "Herstelt deze winkel fietsen?"
             },
             "11": {
-                "question": "Verhuurt deze winkel fietsen?",
                 "mappings": {
                     "0": {
                         "then": "Deze winkel verhuurt fietsen"
@@ -707,10 +694,10 @@
                     "1": {
                         "then": "Deze winkel verhuurt geen fietsen"
                     }
-                }
+                },
+                "question": "Verhuurt deze winkel fietsen?"
             },
             "12": {
-                "question": "Verkoopt deze winkel tweedehands fietsen?",
                 "mappings": {
                     "0": {
                         "then": "Deze winkel verkoopt tweedehands fietsen"
@@ -721,10 +708,10 @@
                     "2": {
                         "then": "Deze winkel verkoopt enkel tweedehands fietsen"
                     }
-                }
+                },
+                "question": "Verkoopt deze winkel tweedehands fietsen?"
             },
             "13": {
-                "question": "Biedt deze winkel een fietspomp aan voor iedereen?",
                 "mappings": {
                     "0": {
                         "then": "Deze winkel biedt een fietspomp aan voor iedereen"
@@ -735,10 +722,10 @@
                     "2": {
                         "then": "Er is een fietspomp, deze is apart aangeduid"
                     }
-                }
+                },
+                "question": "Biedt deze winkel een fietspomp aan voor iedereen?"
             },
             "14": {
-                "question": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?",
                 "mappings": {
                     "0": {
                         "then": "Deze winkel biedt gereedschap aan om je fiets zelf te herstellen"
@@ -749,10 +736,10 @@
                     "2": {
                         "then": "Het gereedschap aan om je fiets zelf te herstellen is enkel voor als je de fiets er kocht of huurt"
                     }
-                }
+                },
+                "question": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?"
             },
             "15": {
-                "question": "Biedt deze winkel een fietsschoonmaak aan?",
                 "mappings": {
                     "0": {
                         "then": "Deze winkel biedt fietsschoonmaak aan"
@@ -763,113 +750,75 @@
                     "2": {
                         "then": "Deze winkel biedt geen fietsschoonmaak aan"
                     }
-                }
+                },
+                "question": "Biedt deze winkel een fietsschoonmaak aan?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Fietszaak"
-            }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Sportwinkel <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Fietsverhuur <i>{name}</i>"
+                },
+                "3": {
+                    "then": "Fietsenmaker <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Fietswinkel <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Fietszaak <i>{name}</i>"
+                }
+            },
+            "render": "Fietszaak"
         }
     },
     "bike_themed_object": {
         "name": "Fietsgerelateerd object",
         "title": {
-            "render": "Fietsgerelateerd object",
             "mappings": {
                 "1": {
                     "then": "Wielerpiste"
                 }
+            },
+            "render": "Fietsgerelateerd object"
+        }
+    },
+    "binocular": {
+        "description": "Verrekijkers",
+        "name": "Verrekijkers",
+        "presets": {
+            "0": {
+                "description": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "verrekijker"
             }
+        },
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis te gebruiken"
+                    }
+                },
+                "question": "Hoeveel moet men betalen om deze verrekijker te gebruiken?",
+                "render": "Deze verrekijker gebruiken kost {charge}"
+            },
+            "2": {
+                "question": "Welke richting kijkt men uit als men door deze verrekijker kijkt?",
+                "render": "Kijkt richting {direction}°"
+            }
+        },
+        "title": {
+            "render": "Verrekijker"
         }
     },
     "birdhide": {
-        "name": "Vogelkijkhutten",
-        "title": {
-            "render": "Vogelkijkplaats",
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
-                "1": {
-                    "then": "Vogelkijkhut {name}"
-                },
-                "2": {
-                    "then": "Vogelkijkwand {name}"
-                }
-            }
-        },
-        "description": "Een vogelkijkhut",
-        "tagRenderings": {
-            "1": {
-                "question": "Is dit een kijkwand of kijkhut?",
-                "mappings": {
-                    "0": {
-                        "then": "Vogelkijkwand"
-                    },
-                    "1": {
-                        "then": "Vogelkijkhut"
-                    },
-                    "2": {
-                        "then": "Vogelkijktoren"
-                    },
-                    "3": {
-                        "then": "Vogelkijkhut"
-                    }
-                }
-            },
-            "2": {
-                "question": "Is deze vogelkijkplaats rolstoeltoegankelijk?",
-                "mappings": {
-                    "0": {
-                        "then": "Er zijn speciale voorzieningen voor rolstoelen"
-                    },
-                    "1": {
-                        "then": "Een rolstoel raakt er vlot"
-                    },
-                    "2": {
-                        "then": "Je kan er raken met een rolstoel, maar het is niet makkelijk"
-                    },
-                    "3": {
-                        "then": "Niet rolstoeltoegankelijk"
-                    }
-                }
-            },
-            "3": {
-                "render": "Beheer door {operator}",
-                "question": "Wie beheert deze vogelkijkplaats?",
-                "mappings": {
-                    "0": {
-                        "then": "Beheer door Natuurpunt"
-                    },
-                    "1": {
-                        "then": "Beheer door het Agentschap Natuur en Bos "
-                    }
-                }
-            }
-        },
-        "icon": {
-            "render": "./assets/layers/birdhide/birdhide.svg"
-        },
-        "size": {
-            "render": "40,40,center"
-        },
         "color": {
             "render": "#94bb28"
         },
-        "stroke": {
-            "render": "3"
-        },
-        "presets": {
-            "0": {
-                "title": "Vogelkijkhut",
-                "description": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden"
-            },
-            "1": {
-                "title": "Vogelkijkwand",
-                "description": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
-            }
-        },
+        "description": "Een vogelkijkhut",
         "filter": {
             "0": {
                 "options": {
@@ -885,35 +834,708 @@
                     }
                 }
             }
-        }
-    },
-    "crossings": {
-        "name": "Oversteekplaatsen",
-        "description": "Oversteekplaatsen voor voetgangers en fietsers",
+        },
+        "icon": {
+            "render": "./assets/layers/birdhide/birdhide.svg"
+        },
+        "name": "Vogelkijkhutten",
+        "presets": {
+            "0": {
+                "description": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden",
+                "title": "Vogelkijkhut"
+            },
+            "1": {
+                "description": "Een vogelkijkwand waarachter men kan staan om vogels te kijken",
+                "title": "Vogelkijkwand"
+            }
+        },
+        "size": {
+            "render": "40,40,center"
+        },
+        "stroke": {
+            "render": "3"
+        },
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Vogelkijkwand"
+                    },
+                    "1": {
+                        "then": "Vogelkijkhut"
+                    },
+                    "2": {
+                        "then": "Vogelkijktoren"
+                    },
+                    "3": {
+                        "then": "Vogelkijkhut"
+                    }
+                },
+                "question": "Is dit een kijkwand of kijkhut?"
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn speciale voorzieningen voor rolstoelen"
+                    },
+                    "1": {
+                        "then": "Een rolstoel raakt er vlot"
+                    },
+                    "2": {
+                        "then": "Je kan er raken met een rolstoel, maar het is niet makkelijk"
+                    },
+                    "3": {
+                        "then": "Niet rolstoeltoegankelijk"
+                    }
+                },
+                "question": "Is deze vogelkijkplaats rolstoeltoegankelijk?"
+            },
+            "3": {
+                "mappings": {
+                    "0": {
+                        "then": "Beheer door Natuurpunt"
+                    },
+                    "1": {
+                        "then": "Beheer door het Agentschap Natuur en Bos "
+                    }
+                },
+                "question": "Wie beheert deze vogelkijkplaats?",
+                "render": "Beheer door {operator}"
+            }
+        },
         "title": {
-            "render": "Oversteekplaats",
             "mappings": {
                 "0": {
-                    "then": "Verkeerslicht"
+                    "then": "{name}"
                 },
                 "1": {
-                    "then": "Oversteektplaats met verkeerslichten"
+                    "then": "Vogelkijkhut {name}"
+                },
+                "2": {
+                    "then": "Vogelkijkwand {name}"
+                }
+            },
+            "render": "Vogelkijkplaats"
+        }
+    },
+    "cafe_pub": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nu geopened"
+                    }
                 }
             }
         },
+        "name": "Cafés",
         "presets": {
             "0": {
-                "title": "Oversteekplaats",
-                "description": "Oversteekplaats voor voetgangers en/of fietsers"
+                "description": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk ",
+                "title": "bruin cafe of kroeg"
             },
             "1": {
-                "title": "Verkeerslicht",
-                "description": "Verkeerslicht op een weg"
+                "description": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
+                "title": "bar"
+            },
+            "2": {
+                "description": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
+                "title": "cafe"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Wat is de naam van dit café?",
+                "render": "De naam van dit café is {name}"
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
+                    },
+                    "1": {
+                        "then": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
+                    },
+                    "2": {
+                        "then": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
+                    },
+                    "3": {
+                        "then": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt"
+                    },
+                    "4": {
+                        "then": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland"
+                    }
+                },
+                "question": "Welk soort café is dit?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Café"
+        }
+    },
+    "charging_station": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle voertuigen"
+                    },
+                    "1": {
+                        "question": "Oplaadpunten voor fietsen"
+                    },
+                    "2": {
+                        "question": "Oplaadpunten voor auto's"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Alle types"
+                    },
+                    "1": {
+                        "question": "Heeft een <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/>"
+                    },
+                    "2": {
+                        "question": "Heeft een <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/>"
+                    },
+                    "3": {
+                        "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>"
+                    },
+                    "4": {
+                        "question": "Heeft een <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>"
+                    },
+                    "5": {
+                        "question": "Heeft een <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>"
+                    },
+                    "6": {
+                        "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>"
+                    },
+                    "7": {
+                        "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
+                    },
+                    "8": {
+                        "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>"
+                    },
+                    "9": {
+                        "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "3": {
+                "question": "Hoeveel voertuigen kunnen hier opgeladen worden?",
+                "render": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden"
+            },
+            "4": {
+                "mappings": {
+                    "0": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                    },
+                    "1": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                    },
+                    "2": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                    },
+                    "3": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                    },
+                    "4": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+                    },
+                    "5": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+                    },
+                    "6": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                    },
+                    "10": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+                    },
+                    "11": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+                    },
+                    "12": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                    },
+                    "13": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                    },
+                    "14": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+                    },
+                    "15": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+                    },
+                    "16": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                    },
+                    "17": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                    }
+                }
+            },
+            "5": {
+                "question": "Hoeveel stekkers van type  <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> stekkers van het type <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> heeft een spanning van 230 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/>",
+                "render": "<b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> heeft een spanning van {socket:schuko:voltage} volt"
+            },
+            "7": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> levert een stroom van maximaal 16 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/>?",
+                "render": "<b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> levert een stroom van maximaal {socket:schuko:current}A"
+            },
+            "8": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> levert een vermogen van maximaal 3.6 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/>?",
+                "render": "<b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> levert een vermogen van maximaal {socket:schuko:output}"
+            },
+            "9": {
+                "question": "Hoeveel stekkers van type  <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> stekkers van het type <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> heeft een spanning van 230 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/>",
+                "render": "<b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> heeft een spanning van {socket:typee:voltage} volt"
+            },
+            "11": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> levert een stroom van maximaal 16 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/>?",
+                "render": "<b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> levert een stroom van maximaal {socket:typee:current}A"
+            },
+            "12": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> levert een vermogen van maximaal 3 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> levert een vermogen van maximaal 22 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/>?",
+                "render": "<b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> levert een vermogen van maximaal {socket:typee:output}"
+            },
+            "13": {
+                "question": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> stekkers van het type "
+            },
+            "14": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft een spanning van 500 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft een spanning van {socket:chademo:voltage} volt"
+            },
+            "15": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een stroom van maximaal 120 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een stroom van maximaal {socket:chademo:current}A"
+            },
+            "16": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een vermogen van maximaal 50 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een vermogen van maximaal {socket:chademo:output}"
+            },
+            "17": {
+                "question": "Hoeveel stekkers van type  <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> stekkers van het type <b>Type 1 met kabel</b> (J1772)"
+            },
+            "18": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft een spanning van 200 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft een spanning van 240 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>",
+                "render": "<b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft een spanning van {socket:type1_cable:voltage} volt"
+            },
+            "19": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een stroom van maximaal 32 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>?",
+                "render": "<b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een stroom van maximaal {socket:type1_cable:current}A"
+            },
+            "20": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een vermogen van maximaal 3.7 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een vermogen van maximaal 7 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>?",
+                "render": "<b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een vermogen van maximaal {socket:type1_cable:output}"
+            },
+            "21": {
+                "question": "Hoeveel stekkers van type  <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> stekkers van het type <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+            },
+            "22": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft een spanning van 200 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft een spanning van 240 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>",
+                "render": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft een spanning van {socket:type1:voltage} volt"
+            },
+            "23": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een stroom van maximaal 32 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>?",
+                "render": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een stroom van maximaal {socket:type1:current}A"
+            },
+            "24": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een vermogen van maximaal 3.7 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een vermogen van maximaal 6.6 kw"
+                    },
+                    "2": {
+                        "then": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een vermogen van maximaal 7 kw"
+                    },
+                    "3": {
+                        "then": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een vermogen van maximaal 7.2 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>?",
+                "render": "<b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> levert een vermogen van maximaal {socket:type1:output}"
+            },
+            "25": {
+                "question": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> stekkers van het type "
+            },
+            "26": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van 400 volt"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van 1000 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van {socket:type1_combo:voltage} volt"
+            },
+            "27": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal 50 A"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal 125 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal {socket:type1_combo:current}A"
+            },
+            "28": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 50 kw"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 62.5 kw"
+                    },
+                    "2": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 150 kw"
+                    },
+                    "3": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 350 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal {socket:type1_combo:output}"
+            },
+            "29": {
+                "question": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> stekkers van het type "
+            },
+            "30": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van 480 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van {socket:tesla_supercharger:voltage} volt"
+            },
+            "31": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 125 A"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 350 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal {socket:tesla_supercharger:current}A"
+            },
+            "32": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 120 kw"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 150 kw"
+                    },
+                    "2": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 250 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal {socket:tesla_supercharger:output}"
+            },
+            "33": {
+                "question": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> stekkers van het type "
+            },
+            "34": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van 230 volt"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van 400 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van {socket:type2:voltage} volt"
+            },
+            "35": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal 16 A"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal 32 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal {socket:type2:current}A"
+            },
+            "36": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal 11 kw"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal 22 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal {socket:type2:output}"
+            },
+            "37": {
+                "question": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> stekkers van het type "
+            },
+            "38": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 500 volt"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 920 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van {socket:type2_combo:voltage} volt"
+            },
+            "39": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 125 A"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 350 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal {socket:type2_combo:current}A"
+            },
+            "40": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal 50 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal {socket:type2_combo:output}"
+            },
+            "44": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis te gebruiken"
+                    }
+                },
+                "question": "Hoeveel kost het gebruik van dit oplaadpunt?",
+                "render": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
+            },
+            "45": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Betalen via een app van het netwerk"
+                        }
+                    }
+                }
+            },
+            "46": {
+                "mappings": {
+                    "0": {
+                        "then": "Geen maximum parkeertijd"
+                    }
+                },
+                "question": "Hoelang mag een voertuig hier blijven staan?",
+                "render": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
+            },
+            "54": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit oplaadpunt is kapot"
+                    },
+                    "1": {
+                        "then": "Hier zal binnenkort een oplaadpunt gebouwd worden"
+                    },
+                    "2": {
+                        "then": "Hier wordt op dit moment een oplaadpunt gebouwd"
+                    },
+                    "3": {
+                        "then": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
+                    },
+                    "4": {
+                        "then": "Dit oplaadpunt werkt"
+                    }
+                },
+                "question": "Is dit oplaadpunt operationeel?"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " minuten",
+                        "humanSingular": " minuut"
+                    },
+                    "1": {
+                        "human": " uren",
+                        "humanSingular": " uur"
+                    },
+                    "2": {
+                        "human": " day",
+                        "humanSingular": " dag"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "volt"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "A"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilowatt"
+                    },
+                    "1": {
+                        "human": "megawatt"
+                    }
+                }
+            }
+        }
+    },
+    "crossings": {
+        "description": "Oversteekplaatsen voor voetgangers en fietsers",
+        "name": "Oversteekplaatsen",
+        "presets": {
+            "0": {
+                "description": "Oversteekplaats voor voetgangers en/of fietsers",
+                "title": "Oversteekplaats"
+            },
+            "1": {
+                "description": "Verkeerslicht op een weg",
+                "title": "Verkeerslicht"
             }
         },
         "tagRenderings": {
             "0": {
-                "question": "Wat voor oversteekplaats is dit?",
                 "mappings": {
                     "0": {
                         "then": "Oversteekplaats, zonder verkeerslichten"
@@ -924,10 +1546,10 @@
                     "2": {
                         "then": "Zebrapad"
                     }
-                }
+                },
+                "question": "Wat voor oversteekplaats is dit?"
             },
             "1": {
-                "question": "Is dit een zebrapad?",
                 "mappings": {
                     "0": {
                         "then": "Dit is een zebrapad"
@@ -935,10 +1557,10 @@
                     "1": {
                         "then": "Dit is geen zebrapad"
                     }
-                }
+                },
+                "question": "Is dit een zebrapad?"
             },
             "2": {
-                "question": "Is deze oversteekplaats ook voor fietsers",
                 "mappings": {
                     "0": {
                         "then": "Een fietser kan deze oversteekplaats gebruiken"
@@ -946,10 +1568,10 @@
                     "1": {
                         "then": "Een fietser kan deze oversteekplaats niet gebruiken"
                     }
-                }
+                },
+                "question": "Is deze oversteekplaats ook voor fietsers"
             },
             "3": {
-                "question": "Heeft deze oversteekplaats een verkeerseiland in het midden?",
                 "mappings": {
                     "0": {
                         "then": "Deze oversteekplaats heeft een verkeerseiland in het midden"
@@ -957,10 +1579,10 @@
                     "1": {
                         "then": "Deze oversteekplaats heeft geen verkeerseiland in het midden"
                     }
-                }
+                },
+                "question": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
             },
             "4": {
-                "question": "Heeft deze oversteekplaats een geleidelijn?",
                 "mappings": {
                     "0": {
                         "then": "Deze oversteekplaats heeft een geleidelijn"
@@ -971,10 +1593,10 @@
                     "2": {
                         "then": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
                     }
-                }
+                },
+                "question": "Heeft deze oversteekplaats een geleidelijn?"
             },
             "5": {
-                "question": "Heeft dit verkeerslicht een knop voor groen licht?",
                 "mappings": {
                     "0": {
                         "then": "Dit verkeerslicht heeft een knop voor groen licht"
@@ -982,10 +1604,10 @@
                     "1": {
                         "then": "Dit verkeerlicht heeft geen knop voor groen licht"
                     }
-                }
+                },
+                "question": "Heeft dit verkeerslicht een knop voor groen licht?"
             },
             "6": {
-                "question": "Mag een fietser rechtsaf slaan als het licht rood is?",
                 "mappings": {
                     "0": {
                         "then": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
@@ -996,10 +1618,10 @@
                     "2": {
                         "then": "Een fietser mag niet rechtsaf slaan als het licht rood is"
                     }
-                }
+                },
+                "question": "Mag een fietser rechtsaf slaan als het licht rood is?"
             },
             "7": {
-                "question": "Mag een fietser rechtdoor gaan als het licht rood is?",
                 "mappings": {
                     "0": {
                         "then": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
@@ -1010,35 +1632,26 @@
                     "2": {
                         "then": "Een fietser mag niet rechtdoor gaan als het licht rood is"
                     }
-                }
+                },
+                "question": "Mag een fietser rechtdoor gaan als het licht rood is?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Verkeerslicht"
+                },
+                "1": {
+                    "then": "Oversteektplaats met verkeerslichten"
+                }
+            },
+            "render": "Oversteekplaats"
         }
     },
     "cycleways_and_roads": {
         "name": "Fietspaden, straten en wegen",
-        "title": {
-            "render": "Fietspaden",
-            "mappings": {
-                "0": {
-                    "then": "Fietsweg"
-                },
-                "1": {
-                    "then": "Fietssuggestiestrook"
-                },
-                "2": {
-                    "then": "Fietsstrook"
-                },
-                "3": {
-                    "then": "Fietsweg naast de weg"
-                },
-                "4": {
-                    "then": "Fietsstraat"
-                }
-            }
-        },
         "tagRenderings": {
             "0": {
-                "question": "Wat voor fietspad is hier?",
                 "mappings": {
                     "0": {
                         "then": "Er is een fietssuggestiestrook"
@@ -1058,10 +1671,10 @@
                     "5": {
                         "then": "Er is geen fietspad aanwezig"
                     }
-                }
+                },
+                "question": "Wat voor fietspad is hier?"
             },
             "1": {
-                "question": "Is deze weg verlicht?",
                 "mappings": {
                     "0": {
                         "then": "Deze weg is verlicht"
@@ -1075,10 +1688,10 @@
                     "3": {
                         "then": "Deze weg is 24/7 verlicht"
                     }
-                }
+                },
+                "question": "Is deze weg verlicht?"
             },
             "2": {
-                "question": "Is dit een fietsstraat?",
                 "mappings": {
                     "0": {
                         "then": "Dit is een fietsstraat, en dus een 30km/h zone"
@@ -1089,10 +1702,10 @@
                     "2": {
                         "then": "Dit is geen fietsstraat"
                     }
-                }
+                },
+                "question": "Is dit een fietsstraat?"
             },
             "3": {
-                "render": "De maximumsnelheid op deze weg is {maxspeed} km/u",
                 "mappings": {
                     "0": {
                         "then": "De maximumsnelheid is 20 km/u"
@@ -1110,10 +1723,10 @@
                         "then": "De maximumsnelheid is 90 km/u"
                     }
                 },
-                "question": "Wat is de maximumsnelheid in deze straat?"
+                "question": "Wat is de maximumsnelheid in deze straat?",
+                "render": "De maximumsnelheid op deze weg is {maxspeed} km/u"
             },
             "4": {
-                "render": "Dit fietspad is gemaakt van {cycleway:surface}",
                 "mappings": {
                     "0": {
                         "then": "Dit fietspad is onverhard"
@@ -1155,10 +1768,10 @@
                         "then": "Dit fietspad is gemaakt van aarde"
                     }
                 },
-                "question": "Waaruit is het oppervlak van het fietspad van gemaakt?"
+                "question": "Waaruit is het oppervlak van het fietspad van gemaakt?",
+                "render": "Dit fietspad is gemaakt van {cycleway:surface}"
             },
             "5": {
-                "question": "Wat is de kwaliteit van dit fietspad?",
                 "mappings": {
                     "0": {
                         "then": "Geschikt voor fijne rollers: rollerblade, skateboard"
@@ -1184,10 +1797,10 @@
                     "7": {
                         "then": "Niet geschikt voor voertuigen met wielen"
                     }
-                }
+                },
+                "question": "Wat is de kwaliteit van dit fietspad?"
             },
             "6": {
-                "render": "Deze weg is gemaakt van {surface}",
                 "mappings": {
                     "0": {
                         "then": "Dit fietspad is onverhard"
@@ -1229,17 +1842,17 @@
                         "then": "Dit fietspad is gemaakt van aarde"
                     }
                 },
-                "question": "Waaruit is het oppervlak van de straat gemaakt?"
+                "question": "Waaruit is het oppervlak van de straat gemaakt?",
+                "render": "Deze weg is gemaakt van {surface}"
             },
             "7": {
                 "question": "Wat is de kwaliteit van deze straat?"
             },
             "8": {
-                "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>",
-                "question": "Hoe breed is de rijbaan in deze straat (in meters)?"
+                "question": "Hoe breed is de rijbaan in deze straat (in meters)?",
+                "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
             },
             "9": {
-                "question": "Welk verkeersbord heeft dit fietspad?",
                 "mappings": {
                     "0": {
                         "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
@@ -1256,10 +1869,10 @@
                     "4": {
                         "then": "Geen verkeersbord aanwezig"
                     }
-                }
+                },
+                "question": "Welk verkeersbord heeft dit fietspad?"
             },
             "10": {
-                "question": "Welk verkeersbord heeft dit fietspad?",
                 "mappings": {
                     "0": {
                         "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
@@ -1276,10 +1889,10 @@
                     "4": {
                         "then": "Geen verkeersbord aanwezig"
                     }
-                }
+                },
+                "question": "Welk verkeersbord heeft dit fietspad?"
             },
             "11": {
-                "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
                 "mappings": {
                     "0": {
                         "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
@@ -1302,10 +1915,10 @@
                     "6": {
                         "then": "Geen onderbord aanwezig"
                     }
-                }
+                },
+                "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
             },
             "12": {
-                "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
                 "mappings": {
                     "0": {
                         "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
@@ -1328,14 +1941,14 @@
                     "6": {
                         "then": "Geen onderbord aanwezig"
                     }
-                }
+                },
+                "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
             },
             "13": {
-                "render": "De schrikafstand van dit fietspad is {cycleway:buffer} m",
-                "question": "Hoe breed is de ruimte tussen het fietspad en de weg?"
+                "question": "Hoe breed is de ruimte tussen het fietspad en de weg?",
+                "render": "De schrikafstand van dit fietspad is {cycleway:buffer} m"
             },
             "14": {
-                "question": "Hoe is dit fietspad gescheiden van de weg?",
                 "mappings": {
                     "0": {
                         "then": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
@@ -1349,10 +1962,10 @@
                     "3": {
                         "then": "Dit fietspad is gescheiden van de weg met een stoeprand"
                     }
-                }
+                },
+                "question": "Hoe is dit fietspad gescheiden van de weg?"
             },
             "15": {
-                "question": "Hoe is dit fietspad gescheiden van de weg?",
                 "mappings": {
                     "0": {
                         "then": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
@@ -1366,15 +1979,33 @@
                     "3": {
                         "then": "Dit fietspad is gescheiden van de weg met een stoeprand"
                     }
-                }
+                },
+                "question": "Hoe is dit fietspad gescheiden van de weg?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Fietsweg"
+                },
+                "1": {
+                    "then": "Fietssuggestiestrook"
+                },
+                "2": {
+                    "then": "Fietsstrook"
+                },
+                "3": {
+                    "then": "Fietsweg naast de weg"
+                },
+                "4": {
+                    "then": "Fietsstraat"
+                }
+            },
+            "render": "Fietspaden"
         }
     },
     "defibrillator": {
         "name": "Defibrillatoren",
-        "title": {
-            "render": "Defibrillator"
-        },
         "presets": {
             "0": {
                 "title": "Defibrillator"
@@ -1382,7 +2013,6 @@
         },
         "tagRenderings": {
             "1": {
-                "question": "Hangt deze defibrillator binnen of buiten?",
                 "mappings": {
                     "0": {
                         "then": "Deze defibrillator bevindt zich in een gebouw"
@@ -1390,11 +2020,10 @@
                     "1": {
                         "then": "Deze defibrillator hangt buiten"
                     }
-                }
+                },
+                "question": "Hangt deze defibrillator binnen of buiten?"
             },
             "2": {
-                "question": "Is deze defibrillator vrij toegankelijk?",
-                "render": "Toegankelijkheid is {access}",
                 "mappings": {
                     "0": {
                         "then": "Publiek toegankelijk"
@@ -1411,11 +2040,11 @@
                     "4": {
                         "then": "Niet toegankelijk, mogelijk enkel voor professionals"
                     }
-                }
+                },
+                "question": "Is deze defibrillator vrij toegankelijk?",
+                "render": "Toegankelijkheid is {access}"
             },
             "3": {
-                "render": "Er is geen info over het soort toestel",
-                "question": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
                 "mappings": {
                     "0": {
                         "then": "Dit is een manueel toestel enkel voor professionals"
@@ -1423,11 +2052,11 @@
                     "1": {
                         "then": "Dit is een gewone automatische defibrillator"
                     }
-                }
+                },
+                "question": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
+                "render": "Er is geen info over het soort toestel"
             },
             "4": {
-                "question": "Op welke verdieping bevindt deze defibrillator zich?",
-                "render": "De defibrillator bevindt zicht op verdieping {level}",
                 "mappings": {
                     "0": {
                         "then": "Deze defibrillator bevindt zich <b>gelijkvloers</b>"
@@ -1435,86 +2064,71 @@
                     "1": {
                         "then": "Deze defibrillator is op de <b>eerste verdieping</b>"
                     }
-                }
+                },
+                "question": "Op welke verdieping bevindt deze defibrillator zich?",
+                "render": "De defibrillator bevindt zicht op verdieping {level}"
             },
             "5": {
-                "render": "<i>Meer informatie over de locatie (lokale taal):</i><br/>{defibrillator:location}",
-                "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)"
+                "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)",
+                "render": "<i>Meer informatie over de locatie (lokale taal):</i><br/>{defibrillator:location}"
             },
             "6": {
-                "render": "<i>Meer informatie over de locatie (in het Engels):</i><br/>{defibrillator:location:en}",
-                "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Engels)"
+                "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Engels)",
+                "render": "<i>Meer informatie over de locatie (in het Engels):</i><br/>{defibrillator:location:en}"
             },
             "7": {
-                "render": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}",
-                "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Frans)"
-            },
-            "8": {
-                "question": "Is deze defibrillator rolstoeltoegankelijk?",
-                "mappings": {
-                    "0": {
-                        "then": "Deze defibrillator is speciaal aangepast voor gebruikers van een rolstoel"
-                    },
-                    "1": {
-                        "then": "Deze defibrillator is vlot bereikbaar met een rolstoel"
-                    },
-                    "2": {
-                        "then": "Je kan er raken met een rolstoel, maar het is niet makkelijk"
-                    },
-                    "3": {
-                        "then": "Niet rolstoeltoegankelijk"
-                    }
-                }
+                "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Frans)",
+                "render": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}"
             },
             "9": {
-                "render": "Officieel identificatienummer van het toestel: <i>{ref}</i>",
-                "question": "Wat is het officieel identificatienummer van het toestel? (indien zichtbaar op toestel)"
+                "question": "Wat is het officieel identificatienummer van het toestel? (indien zichtbaar op toestel)",
+                "render": "Officieel identificatienummer van het toestel: <i>{ref}</i>"
             },
             "10": {
-                "render": "Email voor vragen over deze defibrillator: <a href='mailto:{email}'>{email}</a>",
-                "question": "Wat is het email-adres voor vragen over deze defibrillator"
+                "question": "Wat is het email-adres voor vragen over deze defibrillator",
+                "render": "Email voor vragen over deze defibrillator: <a href='mailto:{email}'>{email}</a>"
             },
             "11": {
-                "render": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>",
-                "question": "Wat is het telefoonnummer voor vragen over deze defibrillator"
+                "question": "Wat is het telefoonnummer voor vragen over deze defibrillator",
+                "render": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>"
             },
             "12": {
-                "render": "{opening_hours_table(opening_hours)}",
-                "question": "Wanneer is deze defibrillator beschikbaar?",
                 "mappings": {
                     "0": {
                         "then": "24/7 open (inclusief feestdagen)"
                     }
-                }
+                },
+                "question": "Wanneer is deze defibrillator beschikbaar?",
+                "render": "{opening_hours_table(opening_hours)}"
             },
             "13": {
-                "render": "Aanvullende info: {description}",
-                "question": "Is er nog iets bijzonder aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)"
+                "question": "Is er nog iets bijzonder aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
+                "render": "Aanvullende info: {description}"
             },
             "14": {
-                "question": "Wanneer is deze defibrillator het laatst gecontroleerd in OpenStreetMap?",
-                "render": "Deze defibrillator is nagekeken in OSM op {survey:date}",
                 "mappings": {
                     "0": {
                         "then": "Vandaag nagekeken!"
                     }
-                }
+                },
+                "question": "Wanneer is deze defibrillator het laatst gecontroleerd in OpenStreetMap?",
+                "render": "Deze defibrillator is nagekeken in OSM op {survey:date}"
             },
             "15": {
-                "render": "Extra informatie voor OpenStreetMap experts: {fixme}",
-                "question": "Is er iets mis met de informatie over deze defibrillator dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)"
+                "question": "Is er iets mis met de informatie over deze defibrillator dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
+                "render": "Extra informatie voor OpenStreetMap experts: {fixme}"
             }
+        },
+        "title": {
+            "render": "Defibrillator"
         }
     },
     "direction": {
-        "name": "Richtingsvisualisatie",
-        "description": "Deze laag toont de oriëntatie van een object"
+        "description": "Deze laag toont de oriëntatie van een object",
+        "name": "Richtingsvisualisatie"
     },
     "drinking_water": {
         "name": "Drinkbaar water",
-        "title": {
-            "render": "Drinkbaar water"
-        },
         "presets": {
             "0": {
                 "title": "Drinkbaar water"
@@ -1522,8 +2136,6 @@
         },
         "tagRenderings": {
             "1": {
-                "question": "Is deze drinkwaterkraan nog steeds werkende?",
-                "render": "Deze waterkraan-status is <i>{operational_status}</i>",
                 "mappings": {
                     "0": {
                         "then": "Deze drinkwaterfontein werkt"
@@ -1534,10 +2146,11 @@
                     "2": {
                         "then": "Deze drinkwaterfontein is afgesloten"
                     }
-                }
+                },
+                "question": "Is deze drinkwaterkraan nog steeds werkende?",
+                "render": "Deze waterkraan-status is <i>{operational_status}</i>"
             },
             "2": {
-                "question": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
                 "mappings": {
                     "0": {
                         "then": "Een drinkbus bijvullen gaat makkelijk"
@@ -1545,23 +2158,263 @@
                     "1": {
                         "then": "Een drinkbus past moeilijk"
                     }
-                }
+                },
+                "question": "Hoe gemakkelijk is het om drinkbussen bij te vullen?"
             },
             "3": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>"
             }
+        },
+        "title": {
+            "render": "Drinkbaar water"
+        }
+    },
+    "food": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nu geopened"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een vegetarisch menu"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een veganistisch menu"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een halal menu"
+                    }
+                }
+            }
+        },
+        "name": "Eetgelegenheden",
+        "presets": {
+            "0": {
+                "description": "Een eetgegelegenheid waar je aan tafel wordt bediend",
+                "title": "restaurant"
+            },
+            "1": {
+                "description": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
+                "title": "fastfood-zaak"
+            },
+            "2": {
+                "description": "Een fastfood-zaak waar je frieten koopt",
+                "title": "frituur"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Wat is de naam van deze eetgelegenheid?",
+                "render": "De naam van deze eetgelegeheid is {name}"
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
+                    },
+                    "1": {
+                        "then": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
+                    }
+                },
+                "question": "Wat voor soort zaak is dit?"
+            },
+            "9": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een pizzeria"
+                    },
+                    "1": {
+                        "then": "Dit is een frituur"
+                    },
+                    "2": {
+                        "then": "Dit is een pastazaak"
+                    },
+                    "3": {
+                        "then": "Dit is een kebabzaak"
+                    },
+                    "4": {
+                        "then": "Dit is een broodjeszaak"
+                    },
+                    "5": {
+                        "then": "Dit is een hamburgerrestaurant"
+                    },
+                    "6": {
+                        "then": "Dit is een sushirestaurant"
+                    },
+                    "7": {
+                        "then": "Dit is een koffiezaak"
+                    },
+                    "8": {
+                        "then": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
+                    },
+                    "9": {
+                        "then": "Dit is een Frans restaurant"
+                    },
+                    "10": {
+                        "then": "Dit is een Chinees restaurant"
+                    },
+                    "11": {
+                        "then": "Dit is een Grieks restaurant"
+                    },
+                    "12": {
+                        "then": "Dit is een Indisch restaurant"
+                    },
+                    "13": {
+                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
+                    },
+                    "14": {
+                        "then": "Dit is een Thaïs restaurant"
+                    }
+                },
+                "question": "Welk soort gerechten worden hier geserveerd?",
+                "render": "Deze plaats serveert vooral {cuisine}"
+            },
+            "10": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier is enkel afhaal mogelijk"
+                    },
+                    "1": {
+                        "then": "Eten kan hier afgehaald worden"
+                    },
+                    "2": {
+                        "then": "Hier is geen afhaalmogelijkheid"
+                    }
+                },
+                "question": "Biedt deze zaak een afhaalmogelijkheid aan?"
+            },
+            "11": {
+                "mappings": {
+                    "0": {
+                        "then": "Geen vegetarische opties beschikbaar"
+                    },
+                    "1": {
+                        "then": "Beperkte vegetarische opties zijn beschikbaar"
+                    },
+                    "2": {
+                        "then": "Vegetarische opties zijn beschikbaar"
+                    },
+                    "3": {
+                        "then": "Enkel vegetarische opties zijn beschikbaar"
+                    }
+                },
+                "question": "Heeft deze eetgelegenheid een vegetarische optie?"
+            },
+            "12": {
+                "mappings": {
+                    "0": {
+                        "then": "Geen veganistische opties beschikbaar"
+                    },
+                    "1": {
+                        "then": "Beperkte veganistische opties zijn beschikbaar"
+                    },
+                    "2": {
+                        "then": "Veganistische opties zijn beschikbaar"
+                    },
+                    "3": {
+                        "then": "Enkel veganistische opties zijn beschikbaar"
+                    }
+                },
+                "question": "Heeft deze eetgelegenheid een veganistische optie?"
+            },
+            "13": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn geen halal opties aanwezig"
+                    },
+                    "1": {
+                        "then": "Er zijn een beperkt aantal halal opties"
+                    },
+                    "2": {
+                        "then": "Halal menu verkrijgbaar"
+                    },
+                    "3": {
+                        "then": "Enkel halal opties zijn beschikbaar"
+                    }
+                },
+                "question": "Heeft dit restaurant halal opties?"
+            },
+            "14": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn vegetarische snacks aanwezig"
+                    },
+                    "1": {
+                        "then": "Slechts enkele vegetarische snacks"
+                    },
+                    "2": {
+                        "then": "Geen vegetarische snacks beschikbaar"
+                    }
+                },
+                "question": "Heeft deze frituur vegetarische snacks?"
+            },
+            "15": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn veganistische snacks aanwezig"
+                    },
+                    "1": {
+                        "then": "Slechts enkele veganistische snacks"
+                    },
+                    "2": {
+                        "then": "Geen veganistische snacks beschikbaar"
+                    }
+                },
+                "question": "Heeft deze frituur veganistische snacks?"
+            },
+            "16": {
+                "mappings": {
+                    "0": {
+                        "then": "Plantaardige olie"
+                    },
+                    "1": {
+                        "then": "Dierlijk vet"
+                    }
+                },
+                "question": "Bakt deze frituur met dierlijk vet of met plantaardige olie?"
+            },
+            "17": {
+                "mappings": {
+                    "0": {
+                        "then": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken"
+                    },
+                    "1": {
+                        "then": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen"
+                    },
+                    "2": {
+                        "then": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen."
+                    }
+                },
+                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Restaurant <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Fastfood-zaak <i>{name}</i>"
+                }
+            },
+            "render": "Eetgelegenheid"
         }
     },
     "ghost_bike": {
         "name": "Witte Fietsen",
-        "title": {
-            "render": "Witte Fiets",
-            "mappings": {
-                "0": {
-                    "then": "Witte fiets ter nagedachtenis van {name}"
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "Witte fiets"
@@ -1572,13 +2425,13 @@
                 "render": "Een Witte Fiets (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval."
             },
             "2": {
-                "question": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>",
-                "render": "Ter nagedachtenis van {name}",
                 "mappings": {
                     "0": {
                         "then": "De naam is niet aangeduid op de fiets"
                     }
-                }
+                },
+                "question": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>",
+                "render": "Ter nagedachtenis van {name}"
             },
             "3": {
                 "question": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
@@ -1592,48 +2445,58 @@
                 "question": "Wanneer werd deze witte fiets geplaatst?",
                 "render": "Geplaatst op {start_date}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Witte fiets ter nagedachtenis van {name}"
+                }
+            },
+            "render": "Witte Fiets"
         }
     },
     "grass_in_parks": {
         "name": "Toegankelijke grasvelden in parken",
         "title": {
-            "render": "Speelweide in een park",
             "mappings": {
                 "0": {
                     "then": "{name}"
                 }
-            }
+            },
+            "render": "Speelweide in een park"
         }
     },
     "information_board": {
         "name": "Informatieborden",
-        "title": {
-            "render": "Informatiebord"
-        },
         "presets": {
             "0": {
                 "title": "Informatiebord"
             }
+        },
+        "title": {
+            "render": "Informatiebord"
         }
     },
     "map": {
-        "name": "Kaarten",
-        "title": {
-            "render": "Kaart"
-        },
         "description": "Een permantent geinstalleerde kaart",
+        "name": "Kaarten",
+        "presets": {
+            "0": {
+                "description": "Voeg een ontbrekende kaart toe",
+                "title": "Kaart"
+            }
+        },
         "tagRenderings": {
             "1": {
-                "question": "Op welke data is deze kaart gebaseerd?",
                 "mappings": {
                     "0": {
                         "then": "Deze kaart is gebaseerd op OpenStreetMap"
                     }
                 },
+                "question": "Op welke data is deze kaart gebaseerd?",
                 "render": "Deze kaart is gebaseerd op {map_source}"
             },
             "2": {
-                "question": "Is de attributie voor OpenStreetMap aanwezig?",
                 "mappings": {
                     "0": {
                         "then": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" "
@@ -1650,34 +2513,47 @@
                     "4": {
                         "then": "Er is geen attributie"
                     }
-                }
+                },
+                "question": "Is de attributie voor OpenStreetMap aanwezig?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Kaart",
-                "description": "Voeg een ontbrekende kaart toe"
-            }
+        "title": {
+            "render": "Kaart"
         }
     },
     "nature_reserve": {
-        "name": "Natuurgebied",
-        "title": {
-            "render": "Natuurgebied",
-            "mappings": {
-                "0": {
-                    "then": "{name:nl}"
-                },
-                "1": {
-                    "then": "{name}"
+        "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Vrij te bezoeken"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle natuurgebieden"
+                    },
+                    "1": {
+                        "question": "Honden mogen vrij rondlopen"
+                    },
+                    "2": {
+                        "question": "Honden welkom aan de leiband"
+                    }
                 }
             }
         },
-        "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
+        "name": "Natuurgebied",
+        "presets": {
+            "0": {
+                "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
+                "title": "Natuurreservaat"
+            }
+        },
         "tagRenderings": {
             "1": {
-                "render": "De toegankelijkheid van dit gebied is: {access:description}",
-                "question": "Is dit gebied toegankelijk?",
                 "mappings": {
                     "0": {
                         "then": "Vrij toegankelijk"
@@ -1697,11 +2573,11 @@
                     "5": {
                         "then": "Toegankelijk mits betaling"
                     }
-                }
+                },
+                "question": "Is dit gebied toegankelijk?",
+                "render": "De toegankelijkheid van dit gebied is: {access:description}"
             },
             "2": {
-                "render": "Beheer door {operator}",
-                "question": "Wie beheert dit gebied?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
@@ -1712,23 +2588,24 @@
                     "2": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
                     }
-                }
+                },
+                "question": "Wie beheert dit gebied?",
+                "render": "Beheer door {operator}"
             },
             "3": {
-                "render": "Dit gebied heet {name:nl}",
-                "question": "Wat is de Nederlandstalige naam van dit gebied?"
+                "question": "Wat is de Nederlandstalige naam van dit gebied?",
+                "render": "Dit gebied heet {name:nl}"
             },
             "4": {
-                "render": "Dit gebied heet {name}",
-                "question": "Wat is de naam van dit gebied?",
                 "mappings": {
                     "0": {
                         "then": "Dit gebied heeft geen naam"
                     }
-                }
+                },
+                "question": "Wat is de naam van dit gebied?",
+                "render": "Dit gebied heet {name}"
             },
             "5": {
-                "question": "Zijn honden toegelaten in dit gebied?",
                 "mappings": {
                     "0": {
                         "then": "Honden moeten aan de leiband"
@@ -1739,7 +2616,8 @@
                     "2": {
                         "then": "Honden zijn welkom en mogen vrij rondlopen"
                     }
-                }
+                },
+                "question": "Zijn honden toegelaten in dit gebied?"
             },
             "6": {
                 "question": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?"
@@ -1766,56 +2644,84 @@
                 "render": "Totale oppervlakte: {_surface:ha}Ha"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Natuurreservaat",
-                "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
-            }
-        },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Vrij te bezoeken"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Alle natuurgebieden"
-                    },
-                    "1": {
-                        "question": "Honden mogen vrij rondlopen"
-                    },
-                    "2": {
-                        "question": "Honden welkom aan de leiband"
-                    }
-                }
-            }
-        }
-    },
-    "parking": {
-        "name": "parking",
         "title": {
-            "render": "Parking",
             "mappings": {
                 "0": {
                     "then": "{name:nl}"
                 },
                 "1": {
                     "then": "{name}"
-                },
-                "2": {
-                    "then": "Fietsenstalling"
                 }
+            },
+            "render": "Natuurgebied"
+        }
+    },
+    "observation_tower": {
+        "description": "Torens om van het uitzicht te genieten",
+        "name": "Uitkijktorens",
+        "presets": {
+            "0": {
+                "description": "Een publiek toegankelijke uitkijktoren",
+                "title": "Uitkijktoren"
             }
         },
-        "description": "Parking",
         "tagRenderings": {
             "1": {
-                "render": "De toegankelijkheid van dit gebied is: {access:description}",
-                "question": "Is dit gebied toegankelijk?",
+                "mappings": {
+                    "0": {
+                        "then": "Deze toren heeft geen specifieke naam"
+                    }
+                },
+                "question": "Heeft deze toren een naam?",
+                "render": "Deze toren heet <b>{name}</b>"
+            },
+            "2": {
+                "question": "Hoe hoog is deze toren?",
+                "render": "Deze toren is {height} hoog"
+            },
+            "3": {
+                "question": "Wie onderhoudt deze toren?",
+                "render": "Wordt onderhouden door <b>{operator}</b>"
+            },
+            "5": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis te bezoeken"
+                    }
+                },
+                "question": "Hoeveel moet men betalen om deze toren te bezoeken?",
+                "render": "Deze toren bezoeken kost <b>{charge}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            },
+            "render": "Uitkijktoren"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
+    },
+    "parking": {
+        "description": "Parking",
+        "name": "parking",
+        "presets": {
+            "0": {
+                "description": "Voeg een ontbrekend, erkend pad toe.",
+                "title": "Paden"
+            }
+        },
+        "tagRenderings": {
+            "1": {
                 "mappings": {
                     "0": {
                         "then": "Vrij toegankelijk"
@@ -1835,11 +2741,11 @@
                     "5": {
                         "then": "Toegankelijk mits betaling"
                     }
-                }
+                },
+                "question": "Is dit gebied toegankelijk?",
+                "render": "De toegankelijkheid van dit gebied is: {access:description}"
             },
             "2": {
-                "render": "Beheer door {operator}",
-                "question": "Wie beheert dit pad?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
@@ -1847,26 +2753,36 @@
                     "1": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
                     }
-                }
+                },
+                "question": "Wie beheert dit pad?",
+                "render": "Beheer door {operator}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Paden",
-                "description": "Voeg een ontbrekend, erkend pad toe."
-            }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                },
+                "2": {
+                    "then": "Fietsenstalling"
+                }
+            },
+            "render": "Parking"
         }
     },
     "picnic_table": {
-        "name": "Picnictafels",
-        "title": {
-            "render": "Picnictafel"
-        },
         "description": "Deze laag toont picnictafels",
+        "name": "Picnictafels",
+        "presets": {
+            "0": {
+                "title": "Picnic-tafel"
+            }
+        },
         "tagRenderings": {
             "0": {
-                "question": "Van welk materiaal is deze picnictafel gemaakt?",
-                "render": "Deze picnictafel is gemaakt van {material}",
                 "mappings": {
                     "0": {
                         "then": "Deze picnictafel is gemaakt uit hout"
@@ -1874,19 +2790,19 @@
                     "1": {
                         "then": "Deze picnictafel is gemaakt uit beton"
                     }
-                }
+                },
+                "question": "Van welk materiaal is deze picnictafel gemaakt?",
+                "render": "Deze picnictafel is gemaakt van {material}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Picnic-tafel"
-            }
+        "title": {
+            "render": "Picnictafel"
         }
     },
     "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
         "name": "Speelbossen",
         "title": {
-            "render": "Speelbos",
             "mappings": {
                 "0": {
                     "then": "{name}"
@@ -1894,25 +2810,20 @@
                 "1": {
                     "then": "Speelbos {name}"
                 }
-            }
-        },
-        "description": "Een speelbos is een vrij toegankelijke zone in een bos"
+            },
+            "render": "Speelbos"
+        }
     },
     "playground": {
-        "name": "Speeltuinen",
         "description": "Speeltuinen",
-        "title": {
-            "render": "Speeltuin",
-            "mappings": {
-                "0": {
-                    "then": "Speeltuin <i>{name}</i>"
-                }
+        "name": "Speeltuinen",
+        "presets": {
+            "0": {
+                "title": "Speeltuin"
             }
         },
         "tagRenderings": {
             "1": {
-                "question": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>",
-                "render": "De ondergrond is <b>{surface}</b>",
                 "mappings": {
                     "0": {
                         "then": "De ondergrond is <b>gras</b>"
@@ -1938,10 +2849,11 @@
                     "7": {
                         "then": "De ondergrond is <b>verhard</b>"
                     }
-                }
+                },
+                "question": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>",
+                "render": "De ondergrond is <b>{surface}</b>"
             },
             "2": {
-                "question": "Is deze speeltuin 's nachts verlicht?",
                 "mappings": {
                     "0": {
                         "then": "Deze speeltuin is 's nachts verlicht"
@@ -1949,22 +2861,22 @@
                     "1": {
                         "then": "Deze speeltuin is 's nachts niet verlicht"
                     }
-                }
+                },
+                "question": "Is deze speeltuin 's nachts verlicht?"
             },
             "3": {
-                "render": "Toegankelijk vanaf {min_age} jaar oud",
-                "question": "Wat is de minimale leeftijd om op deze speeltuin te mogen?"
+                "question": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",
+                "render": "Toegankelijk vanaf {min_age} jaar oud"
             },
             "4": {
-                "render": "Toegankelijk tot {max_age}",
-                "question": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?"
+                "question": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
+                "render": "Toegankelijk tot {max_age}"
             },
             "5": {
                 "question": "Wie beheert deze speeltuin?",
                 "render": "Beheer door {operator}"
             },
             "6": {
-                "question": "Is deze speeltuin vrij toegankelijk voor het publiek?",
                 "mappings": {
                     "0": {
                         "then": "Vrij toegankelijk voor het publiek"
@@ -1981,7 +2893,8 @@
                     "4": {
                         "then": "Niet vrij toegankelijk"
                     }
-                }
+                },
+                "question": "Is deze speeltuin vrij toegankelijk voor het publiek?"
             },
             "7": {
                 "question": "Wie kan men emailen indien er problemen zijn met de speeltuin?",
@@ -1992,7 +2905,6 @@
                 "render": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>"
             },
             "9": {
-                "question": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?",
                 "mappings": {
                     "0": {
                         "then": "Geheel toegankelijk voor rolstoelgebruikers"
@@ -2003,10 +2915,10 @@
                     "2": {
                         "then": "Niet toegankelijk voor rolstoelgebruikers"
                     }
-                }
+                },
+                "question": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?"
             },
             "10": {
-                "question": "Op welke uren is deze speeltuin toegankelijk?",
                 "mappings": {
                     "0": {
                         "then": "Van zonsopgang tot zonsondergang"
@@ -2017,26 +2929,22 @@
                     "2": {
                         "then": "Dag en nacht toegankelijk"
                     }
-                }
+                },
+                "question": "Op welke uren is deze speeltuin toegankelijk?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Speeltuin"
-            }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Speeltuin <i>{name}</i>"
+                }
+            },
+            "render": "Speeltuin"
         }
     },
     "public_bookcase": {
-        "name": "Boekenruilkastjes",
         "description": "Een straatkastje met boeken voor iedereen",
-        "title": {
-            "render": "Boekenruilkast",
-            "mappings": {
-                "0": {
-                    "then": "Boekenruilkast <i>{name}</i>"
-                }
-            }
-        },
+        "name": "Boekenruilkastjes",
         "presets": {
             "0": {
                 "title": "Boekenruilkast"
@@ -2044,20 +2952,19 @@
         },
         "tagRenderings": {
             "2": {
-                "render": "De naam van dit boekenruilkastje is {name}",
-                "question": "Wat is de naam van dit boekenuilkastje?",
                 "mappings": {
                     "0": {
                         "then": "Dit boekenruilkastje heeft geen naam"
                     }
-                }
+                },
+                "question": "Wat is de naam van dit boekenuilkastje?",
+                "render": "De naam van dit boekenruilkastje is {name}"
             },
             "3": {
-                "render": "Er passen {capacity} boeken",
-                "question": "Hoeveel boeken passen er in dit boekenruilkastje?"
+                "question": "Hoeveel boeken passen er in dit boekenruilkastje?",
+                "render": "Er passen {capacity} boeken"
             },
             "4": {
-                "question": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
                 "mappings": {
                     "0": {
                         "then": "Voornamelijk kinderboeken"
@@ -2068,10 +2975,10 @@
                     "2": {
                         "then": "Boeken voor zowel kinderen als volwassenen"
                     }
-                }
+                },
+                "question": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?"
             },
             "5": {
-                "question": "Staat dit boekenruilkastje binnen of buiten?",
                 "mappings": {
                     "0": {
                         "then": "Dit boekenruilkastje staat binnen"
@@ -2082,10 +2989,10 @@
                     "2": {
                         "then": "Dit boekenruilkastje staat buiten"
                     }
-                }
+                },
+                "question": "Staat dit boekenruilkastje binnen of buiten?"
             },
             "6": {
-                "question": "Is dit boekenruilkastje publiek toegankelijk?",
                 "mappings": {
                     "0": {
                         "then": "Publiek toegankelijk"
@@ -2093,15 +3000,14 @@
                     "1": {
                         "then": "Enkel toegankelijk voor klanten"
                     }
-                }
+                },
+                "question": "Is dit boekenruilkastje publiek toegankelijk?"
             },
             "7": {
                 "question": "Wie is verantwoordelijk voor dit boekenruilkastje?",
                 "render": "Onderhouden door {operator}"
             },
             "8": {
-                "question": "Is dit boekenruilkastje deel van een netwerk?",
-                "render": "Dit boekenruilkastje is deel van het netwerk {brand}",
                 "mappings": {
                     "0": {
                         "then": "Deel van het netwerk 'Little Free Library'"
@@ -2109,49 +3015,39 @@
                     "1": {
                         "then": "Dit boekenruilkastje maakt geen deel uit van een netwerk"
                     }
-                }
+                },
+                "question": "Is dit boekenruilkastje deel van een netwerk?",
+                "render": "Dit boekenruilkastje is deel van het netwerk {brand}"
             },
             "9": {
-                "render": "Het referentienummer binnen {brand} is {ref}",
-                "question": "Wat is het referentienummer van dit boekenruilkastje?",
                 "mappings": {
                     "0": {
                         "then": "Dit boekenruilkastje maakt geen deel uit van een netwerk"
                     }
-                }
+                },
+                "question": "Wat is het referentienummer van dit boekenruilkastje?",
+                "render": "Het referentienummer binnen {brand} is {ref}"
             },
             "10": {
                 "question": "Op welke dag werd dit boekenruilkastje geinstalleerd?",
                 "render": "Geplaatst op {start_date}"
             },
             "11": {
-                "render": "Meer info op <a href='{website}' target='_blank'>de website</a>",
-                "question": "Is er een website over dit boekenruilkastje?"
+                "question": "Is er een website over dit boekenruilkastje?",
+                "render": "Meer info op <a href='{website}' target='_blank'>de website</a>"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Boekenruilkast <i>{name}</i>"
+                }
+            },
+            "render": "Boekenruilkast"
         }
     },
     "slow_roads": {
         "name": "Paadjes, trage wegen en autoluwe straten",
-        "title": {
-            "render": "Trage weg",
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
-                "1": {
-                    "then": "Voetpad"
-                },
-                "2": {
-                    "then": "Fietspad"
-                },
-                "3": {
-                    "then": "Voetgangersstraat"
-                },
-                "4": {
-                    "then": "Woonerf"
-                }
-            }
-        },
         "tagRenderings": {
             "1": {
                 "mappings": {
@@ -2173,8 +3069,6 @@
                 }
             },
             "2": {
-                "question": "Wat is de wegverharding van dit pad?",
-                "render": "De ondergrond is <b>{surface}</b>",
                 "mappings": {
                     "0": {
                         "then": "De ondergrond is <b>gras</b>"
@@ -2200,20 +3094,45 @@
                     "7": {
                         "then": "De ondergrond is <b>verhard</b>"
                     }
-                }
+                },
+                "question": "Wat is de wegverharding van dit pad?",
+                "render": "De ondergrond is <b>{surface}</b>"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Voetpad"
+                },
+                "2": {
+                    "then": "Fietspad"
+                },
+                "3": {
+                    "then": "Voetgangersstraat"
+                },
+                "4": {
+                    "then": "Woonerf"
+                }
+            },
+            "render": "Trage weg"
         }
     },
     "sport_pitch": {
-        "name": "Sportterrein",
-        "title": {
-            "render": "Sportterrein"
-        },
         "description": "Een sportterrein",
+        "name": "Sportterrein",
+        "presets": {
+            "0": {
+                "title": "Ping-pong tafel"
+            },
+            "1": {
+                "title": "Sportterrein"
+            }
+        },
         "tagRenderings": {
             "1": {
-                "render": "Hier kan men {sport} beoefenen",
-                "question": "Welke sporten kan men hier beoefenen?",
                 "mappings": {
                     "0": {
                         "then": "Hier kan men basketbal spelen"
@@ -2233,11 +3152,11 @@
                     "5": {
                         "then": "Hier kan men basketbal beoefenen"
                     }
-                }
+                },
+                "question": "Welke sporten kan men hier beoefenen?",
+                "render": "Hier kan men {sport} beoefenen"
             },
             "2": {
-                "question": "Wat is de ondergrond van dit sportveld?",
-                "render": "De ondergrond is <b>{surface}</b>",
                 "mappings": {
                     "0": {
                         "then": "De ondergrond is <b>gras</b>"
@@ -2254,10 +3173,11 @@
                     "4": {
                         "then": "De ondergrond is <b>beton</b>"
                     }
-                }
+                },
+                "question": "Wat is de ondergrond van dit sportveld?",
+                "render": "De ondergrond is <b>{surface}</b>"
             },
             "3": {
-                "question": "Is dit sportterrein publiek toegankelijk?",
                 "mappings": {
                     "0": {
                         "then": "Publiek toegankelijk"
@@ -2271,10 +3191,10 @@
                     "3": {
                         "then": "Privaat en niet toegankelijk"
                     }
-                }
+                },
+                "question": "Is dit sportterrein publiek toegankelijk?"
             },
             "4": {
-                "question": "Moet men reserveren om gebruik te maken van dit sportveld?",
                 "mappings": {
                     "0": {
                         "then": "Reserveren is verplicht om gebruik te maken van dit sportterrein"
@@ -2288,7 +3208,8 @@
                     "3": {
                         "then": "Reserveren is niet mogelijk"
                     }
-                }
+                },
+                "question": "Moet men reserveren om gebruik te maken van dit sportveld?"
             },
             "5": {
                 "question": "Wat is het telefoonnummer van de bevoegde dienst of uitbater?"
@@ -2297,31 +3218,22 @@
                 "question": "Wat is het email-adres van de bevoegde dienst of uitbater?"
             },
             "7": {
-                "question": "Wanneer is dit sportveld toegankelijk?",
                 "mappings": {
                     "1": {
                         "then": "24/7 toegankelijk"
                     }
-                }
+                },
+                "question": "Wanneer is dit sportveld toegankelijk?"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Ping-pong tafel"
-            },
-            "1": {
-                "title": "Sportterrein"
-            }
+        "title": {
+            "render": "Sportterrein"
         }
     },
     "surveillance_camera": {
         "name": "Bewakingscamera's",
-        "title": {
-            "render": "Bewakingscamera"
-        },
         "tagRenderings": {
             "1": {
-                "question": "Wat voor soort camera is dit?",
                 "mappings": {
                     "0": {
                         "then": "Een vaste camera"
@@ -2332,23 +3244,23 @@
                     "2": {
                         "then": "Een camera die (met een motor) van links naar rechts kan draaien"
                     }
-                }
+                },
+                "question": "Wat voor soort camera is dit?"
             },
             "2": {
-                "question": "In welke geografische richting filmt deze camera?",
-                "render": "Filmt in kompasrichting {camera:direction}",
                 "mappings": {
                     "0": {
                         "then": "Filmt in kompasrichting {direction}"
                     }
-                }
+                },
+                "question": "In welke geografische richting filmt deze camera?",
+                "render": "Filmt in kompasrichting {camera:direction}"
             },
             "3": {
                 "question": "Wie beheert deze bewakingscamera?",
                 "render": "Beheer door {operator}"
             },
             "4": {
-                "question": "Wat soort bewaking wordt hier uitgevoerd?",
                 "mappings": {
                     "0": {
                         "then": "Bewaking van de publieke ruilmte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel..."
@@ -2359,10 +3271,10 @@
                     "2": {
                         "then": "Een private binnenruimte wordt bewaakt, bv. een winkel, een parkeergarage, ..."
                     }
-                }
+                },
+                "question": "Wat soort bewaking wordt hier uitgevoerd?"
             },
             "5": {
-                "question": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?",
                 "mappings": {
                     "0": {
                         "then": "Deze camera bevindt zich binnen"
@@ -2373,15 +3285,14 @@
                     "2": {
                         "then": "Deze camera bevindt zich waarschijnlijk buiten"
                     }
-                }
+                },
+                "question": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?"
             },
             "6": {
                 "question": "Op welke verdieping bevindt deze camera zich?",
                 "render": "Bevindt zich op verdieping {level}"
             },
             "7": {
-                "question": "Wat wordt hier precies bewaakt?",
-                "render": "Bewaakt een {surveillance:zone}",
                 "mappings": {
                     "0": {
                         "then": "Bewaakt een parking"
@@ -2401,11 +3312,11 @@
                     "5": {
                         "then": "Bewaakt een winkel"
                     }
-                }
+                },
+                "question": "Wat wordt hier precies bewaakt?",
+                "render": "Bewaakt een {surveillance:zone}"
             },
             "8": {
-                "question": "Hoe is deze camera geplaatst?",
-                "render": "Montage: {camera:mount}",
                 "mappings": {
                     "0": {
                         "then": "Deze camera hangt aan een muur"
@@ -2416,29 +3327,29 @@
                     "2": {
                         "then": "Deze camera hangt aan het plafond"
                     }
-                }
+                },
+                "question": "Hoe is deze camera geplaatst?",
+                "render": "Montage: {camera:mount}"
             }
+        },
+        "title": {
+            "render": "Bewakingscamera"
         }
     },
     "toilet": {
         "name": "Toiletten",
-        "title": {
-            "render": "Toilet"
-        },
         "presets": {
             "0": {
-                "title": "Toilet",
-                "description": "Een publieke toilet"
+                "description": "Een publieke toilet",
+                "title": "Toilet"
             },
             "1": {
-                "title": "Een rolstoeltoegankelijke toilet",
-                "description": "Deze toiletten hebben op zijn minst één rolstoeltoegankelijke WC"
+                "description": "Deze toiletten hebben op zijn minst één rolstoeltoegankelijke WC",
+                "title": "Een rolstoeltoegankelijke toilet"
             }
         },
         "tagRenderings": {
             "1": {
-                "question": "Zijn deze toiletten publiek toegankelijk?",
-                "render": "Toegankelijkheid is {access}",
                 "mappings": {
                     "0": {
                         "then": "Publiek toegankelijk"
@@ -2451,11 +3362,15 @@
                     },
                     "3": {
                         "then": "Toegankelijk na het vragen van de sleutel"
+                    },
+                    "4": {
+                        "then": "Publiek toegankelijk"
                     }
-                }
+                },
+                "question": "Zijn deze toiletten publiek toegankelijk?",
+                "render": "Toegankelijkheid is {access}"
             },
             "2": {
-                "question": "Zijn deze toiletten gratis te gebruiken?",
                 "mappings": {
                     "0": {
                         "then": "Men moet betalen om deze toiletten te gebruiken"
@@ -2463,14 +3378,14 @@
                     "1": {
                         "then": "Gratis te gebruiken"
                     }
-                }
+                },
+                "question": "Zijn deze toiletten gratis te gebruiken?"
             },
             "3": {
                 "question": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
                 "render": "De toiletten gebruiken kost {charge}"
             },
             "4": {
-                "question": "Is er een rolstoeltoegankelijke toilet voorzien?",
                 "mappings": {
                     "0": {
                         "then": "Er is een toilet voor rolstoelgebruikers"
@@ -2478,10 +3393,10 @@
                     "1": {
                         "then": "Niet toegankelijk voor rolstoelgebruikers"
                     }
-                }
+                },
+                "question": "Is er een rolstoeltoegankelijke toilet voorzien?"
             },
             "5": {
-                "question": "Welke toiletten zijn dit?",
                 "mappings": {
                     "0": {
                         "then": "Er zijn enkel WC's om op te zitten"
@@ -2495,10 +3410,10 @@
                     "3": {
                         "then": "Er zijn zowel urinoirs als zittoiletten"
                     }
-                }
+                },
+                "question": "Welke toiletten zijn dit?"
             },
             "6": {
-                "question": "Is er een luiertafel beschikbaar?",
                 "mappings": {
                     "0": {
                         "then": "Er is een luiertafel"
@@ -2506,11 +3421,10 @@
                     "1": {
                         "then": "Geen luiertafel"
                     }
-                }
+                },
+                "question": "Is er een luiertafel beschikbaar?"
             },
             "7": {
-                "question": "Waar bevindt de luiertafel zich?",
-                "render": "De luiertafel bevindt zich in {changing_table:location}",
                 "mappings": {
                     "0": {
                         "then": "De luiertafel bevindt zich in de vrouwentoiletten "
@@ -2524,15 +3438,18 @@
                     "3": {
                         "then": "De luiertafel bevindt zich in een daartoe voorziene kamer "
                     }
-                }
+                },
+                "question": "Waar bevindt de luiertafel zich?",
+                "render": "De luiertafel bevindt zich in {changing_table:location}"
             }
+        },
+        "title": {
+            "render": "Toilet"
         }
     },
     "trail": {
+        "description": "Aangeduide wandeltochten",
         "name": "Wandeltochten",
-        "title": {
-            "render": "Wandeltocht"
-        },
         "tagRenderings": {
             "1": {
                 "render": "Deze wandeling is {_length:km} kilometer lang"
@@ -2542,8 +3459,6 @@
                 "render": "Deze wandeling heet <b>{name}</b>"
             },
             "3": {
-                "render": "Beheer door {operator}",
-                "question": "Wie beheert deze wandeltocht?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
@@ -2551,11 +3466,11 @@
                     "1": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
                     }
-                }
+                },
+                "question": "Wie beheert deze wandeltocht?",
+                "render": "Beheer door {operator}"
             },
             "4": {
-                "question": "Welke kleur heeft deze wandeling?",
-                "render": "Deze wandeling heeft kleur {colour}",
                 "mappings": {
                     "0": {
                         "then": "Blauwe wandeling"
@@ -2569,10 +3484,11 @@
                     "3": {
                         "then": "Gele wandeling"
                     }
-                }
+                },
+                "question": "Welke kleur heeft deze wandeling?",
+                "render": "Deze wandeling heeft kleur {colour}"
             },
             "5": {
-                "question": "Is deze wandeling toegankelijk met de rolstoel?",
                 "mappings": {
                     "0": {
                         "then": "deze wandeltocht is toegankelijk met de rolstoel"
@@ -2580,10 +3496,10 @@
                     "1": {
                         "then": "deze wandeltocht is niet toegankelijk met de rolstoel"
                     }
-                }
+                },
+                "question": "Is deze wandeling toegankelijk met de rolstoel?"
             },
             "6": {
-                "question": "Is deze wandeltocht toegankelijk met de buggy?",
                 "mappings": {
                     "0": {
                         "then": "deze wandeltocht is toegankelijk met de buggy"
@@ -2591,32 +3507,40 @@
                     "1": {
                         "then": "deze wandeltocht is niet toegankelijk met de buggy"
                     }
-                }
+                },
+                "question": "Is deze wandeltocht toegankelijk met de buggy?"
             }
         },
-        "description": "Aangeduide wandeltochten"
+        "title": {
+            "render": "Wandeltocht"
+        }
     },
     "tree_node": {
         "name": "Boom",
-        "title": {
-            "render": "Boom",
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
+        "presets": {
+            "0": {
+                "description": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
+                "title": "Loofboom"
+            },
+            "1": {
+                "description": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
+                "title": "Naaldboom"
+            },
+            "2": {
+                "description": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
+                "title": "Boom"
             }
         },
         "tagRenderings": {
             "1": {
-                "render": "Hoogte: {height}",
                 "mappings": {
                     "0": {
                         "then": "Hoogte: {height}&nbsp;m"
                     }
-                }
+                },
+                "render": "Hoogte: {height}"
             },
             "2": {
-                "question": "Is dit een naald- of loofboom?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom"
@@ -2627,10 +3551,10 @@
                     "2": {
                         "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos"
                     }
-                }
+                },
+                "question": "Is dit een naald- of loofboom?"
             },
             "3": {
-                "question": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
                 "mappings": {
                     "0": {
                         "then": "De boom valt op door zijn grootte of prominente locatie. Hij is nuttig voor navigatie."
@@ -2656,10 +3580,10 @@
                     "7": {
                         "then": "De boom staat buiten een woonkern."
                     }
-                }
+                },
+                "question": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is."
             },
             "4": {
-                "question": "Is deze boom groenblijvend of bladverliezend?",
                 "mappings": {
                     "0": {
                         "then": "Bladverliezend: de boom is een periode van het jaar kaal."
@@ -2667,19 +3591,19 @@
                     "1": {
                         "then": "Groenblijvend."
                     }
-                }
+                },
+                "question": "Is deze boom groenblijvend of bladverliezend?"
             },
             "5": {
-                "render": "Naam: {name}",
-                "question": "Heeft de boom een naam?",
                 "mappings": {
                     "0": {
                         "then": "De boom heeft geen naam."
                     }
-                }
+                },
+                "question": "Heeft de boom een naam?",
+                "render": "Naam: {name}"
             },
             "6": {
-                "question": "Is deze boom erkend als erfgoed?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen"
@@ -2696,64 +3620,59 @@
                     "4": {
                         "then": "Erkend als erfgoed door een andere organisatie"
                     }
-                }
+                },
+                "question": "Is deze boom erkend als erfgoed?"
             },
             "7": {
-                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed-ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-                "question": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?"
+                "question": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
+                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed-ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
             },
             "8": {
-                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
-                "question": "Wat is het Wikidata-ID van deze boom?"
+                "question": "Wat is het Wikidata-ID van deze boom?",
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Loofboom",
-                "description": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier."
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
             },
-            "1": {
-                "title": "Naaldboom",
-                "description": "Een boom van een soort met naalden, bijvoorbeeld den of spar."
-            },
-            "2": {
-                "title": "Boom",
-                "description": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is."
-            }
+            "render": "Boom"
         }
     },
     "viewpoint": {
-        "name": "Uitzicht",
         "description": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
+        "name": "Uitzicht",
         "presets": {
             "0": {
                 "title": "Uitzicht"
             }
         },
-        "title": {
-            "render": "Uitzicht"
-        },
         "tagRenderings": {
             "1": {
                 "question": "Zijn er bijzonderheden die je wilt toevoegen?"
             }
+        },
+        "title": {
+            "render": "Uitzicht"
         }
     },
     "village_green": {
         "name": "Speelweide",
         "title": {
-            "render": "Speelweide",
             "mappings": {
                 "0": {
                     "then": "{name}"
                 }
-            }
+            },
+            "render": "Speelweide"
         }
     },
     "visitor_information_centre": {
+        "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
-            "render": "{name}",
             "mappings": {
                 "0": {
                     "then": "{name:nl}"
@@ -2761,28 +3680,59 @@
                 "1": {
                     "then": "{name}"
                 }
+            },
+            "render": "{name}"
+        }
+    },
+    "waste_basket": {
+        "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Vuilnisbak"
+                }
             }
         },
-        "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
+        "name": "Vuilnisbak",
+        "presets": {
+            "0": {
+                "title": "Vuilnisbak"
+            }
+        },
+        "tagRenderings": {
+            "0": {
+                "mappings": {
+                    "0": {
+                        "then": "Een vuilnisbak voor zwerfvuil"
+                    },
+                    "1": {
+                        "then": "Een vuilnisbak voor zwerfvuil"
+                    },
+                    "2": {
+                        "then": "Een vuilnisbak specifiek voor hondenuitwerpselen"
+                    },
+                    "3": {
+                        "then": "Een vuilnisbak voor sigarettenpeuken"
+                    },
+                    "4": {
+                        "then": "Een vuilnisbak voor (vervallen) medicatie en drugs"
+                    },
+                    "5": {
+                        "then": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
+                    }
+                },
+                "question": "Wat voor soort vuilnisbak is dit?"
+            }
+        },
+        "title": {
+            "render": "Vuilnisbak"
+        }
     },
     "watermill": {
-        "name": "watermolens",
-        "title": {
-            "render": "Watermolens",
-            "mappings": {
-                "0": {
-                    "then": "{name:nl}"
-                },
-                "1": {
-                    "then": "{name}"
-                }
-            }
-        },
         "description": "Watermolens",
+        "name": "watermolens",
         "tagRenderings": {
             "1": {
-                "render": "De toegankelijkheid van dit gebied is: {access:description}",
-                "question": "Is dit gebied toegankelijk?",
                 "mappings": {
                     "0": {
                         "then": "Vrij toegankelijk"
@@ -2802,11 +3752,11 @@
                     "5": {
                         "then": "Toegankelijk mits betaling"
                     }
-                }
+                },
+                "question": "Is dit gebied toegankelijk?",
+                "render": "De toegankelijkheid van dit gebied is: {access:description}"
             },
             "2": {
-                "render": "Beheer door {operator}",
-                "question": "Wie beheert dit pad?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
@@ -2814,8 +3764,21 @@
                     "1": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
                     }
-                }
+                },
+                "question": "Wie beheert dit pad?",
+                "render": "Beheer door {operator}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Watermolens"
         }
     }
 }

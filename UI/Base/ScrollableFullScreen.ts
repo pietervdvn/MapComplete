@@ -8,27 +8,27 @@ import Hash from "../../Logic/Web/Hash";
 import BaseUIElement from "../BaseUIElement";
 
 /**
- * 
+ *
  * The scrollableFullScreen is a bit of a peculiar component:
  * - It shows a title and some contents, constructed from the respective functions passed into the constructor
  * - When the element is 'activated', one clone of title+contents is attached to the fullscreen
  * - The element itself will - upon rendering - also show the title and contents (allthough it'll be a different clone)
- * 
- * 
+ *
+ *
  */
 export default class ScrollableFullScreen extends UIElement {
     private static readonly empty = new FixedUiElement("");
+    private static readonly _actor = ScrollableFullScreen.InitActor();
+    private static _currentlyOpen: ScrollableFullScreen;
     public isShown: UIEventSource<boolean>;
     private _component: BaseUIElement;
     private _fullscreencomponent: BaseUIElement;
-    private static readonly _actor = ScrollableFullScreen.InitActor();
-    private _hashToSet: string;  
-    private static _currentlyOpen : ScrollableFullScreen;
+    private _hashToSet: string;
 
     constructor(title: ((mode: string) => BaseUIElement), content: ((mode: string) => BaseUIElement),
                 hashToSet: string,
                 isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
-              ) {
+    ) {
         super();
         this.isShown = isShown;
         this._hashToSet = hashToSet;
@@ -46,6 +46,23 @@ export default class ScrollableFullScreen extends UIElement {
         })
     }
 
+    private static clear() {
+        ScrollableFullScreen.empty.AttachTo("fullscreen")
+        const fs = document.getElementById("fullscreen");
+        ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
+        fs.classList.add("hidden")
+        Hash.hash.setData(undefined);
+    }
+
+    private static InitActor() {
+        Hash.hash.addCallback(hash => {
+            if (hash === undefined || hash === "") {
+                ScrollableFullScreen.clear()
+            }
+        });
+        return true;
+    }
+
     InnerRender(): BaseUIElement {
         return this._component;
     }
@@ -53,7 +70,7 @@ export default class ScrollableFullScreen extends UIElement {
     Activate(): void {
         this.isShown.setData(true)
         this._fullscreencomponent.AttachTo("fullscreen");
-        if(this._hashToSet != undefined){
+        if (this._hashToSet != undefined) {
             Hash.hash.setData(this._hashToSet)
         }
         const fs = document.getElementById("fullscreen");
@@ -61,7 +78,7 @@ export default class ScrollableFullScreen extends UIElement {
         fs.classList.remove("hidden")
     }
 
-    private BuildComponent(title: BaseUIElement, content:BaseUIElement, isShown: UIEventSource<boolean>) {
+    private BuildComponent(title: BaseUIElement, content: BaseUIElement, isShown: UIEventSource<boolean>) {
         const returnToTheMap =
             new Combine([
                 Svg.back_svg().SetClass("block md:hidden"),
@@ -84,23 +101,6 @@ export default class ScrollableFullScreen extends UIElement {
             ]).SetClass("flex flex-col h-full relative bg-white")
         ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative z-above-controls");
 
-    }
-
-    private static clear() {
-        ScrollableFullScreen.empty.AttachTo("fullscreen")
-        const fs = document.getElementById("fullscreen");
-        ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
-        fs.classList.add("hidden")
-        Hash.hash.setData(undefined);
-    }
-
-    private static InitActor(){
-        Hash.hash.addCallback(hash => {
-            if(hash === undefined || hash === ""){
-                ScrollableFullScreen.clear()
-            }
-        });
-        return true;
     }
 
 }

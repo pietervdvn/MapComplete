@@ -1,34 +1,34 @@
 [
   {
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
     "path": "cam_left.svg",
     "license": "CC0",
-    "sources": []
-  },
-  {
     "authors": [
       "Pieter Vander Vennet"
     ],
+    "sources": []
+  },
+  {
     "path": "cam_right.svg",
     "license": "CC0",
-    "sources": []
-  },
-  {
     "authors": [
       "Pieter Vander Vennet"
     ],
+    "sources": []
+  },
+  {
     "path": "dome.svg",
     "license": "CC0",
-    "sources": []
-  },
-  {
     "authors": [
       "Pieter Vander Vennet"
     ],
+    "sources": []
+  },
+  {
     "path": "logo.svg",
     "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "sources": []
   }
 ]

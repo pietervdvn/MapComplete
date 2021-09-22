@@ -1,6 +1,6 @@
-import { InputElement } from "./InputElement";
-import { UIEventSource } from "../../Logic/UIEventSource";
-import { Utils } from "../../Utils";
+import {InputElement} from "./InputElement";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
 
 /**

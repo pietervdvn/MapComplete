@@ -8,5 +8,5 @@ export default interface BaseLayer {
     min_zoom: number;
     feature: any,
     isBest?: boolean,
-    category?: "map" | "osmbasedmap" | "photo"  | "historicphoto" | string
+    category?: "map" | "osmbasedmap" | "photo" | "historicphoto" | string
 }

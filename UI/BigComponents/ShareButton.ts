@@ -1,9 +1,9 @@
 import BaseUIElement from "../BaseUIElement";
 
-export default class ShareButton extends BaseUIElement{
+export default class ShareButton extends BaseUIElement {
     private _embedded: BaseUIElement;
     private _shareData: () => { text: string; title: string; url: string };
-    
+
     constructor(embedded: BaseUIElement, generateShareData: () => {
         text: string,
         title: string,
@@ -19,7 +19,7 @@ export default class ShareButton extends BaseUIElement{
         const e = document.createElement("button")
         e.type = "button"
         e.appendChild(this._embedded.ConstructElement())
-        
+
         e.addEventListener('click', () => {
             if (navigator.share) {
                 navigator.share(this._shareData()).then(() => {
@@ -32,7 +32,7 @@ export default class ShareButton extends BaseUIElement{
                 console.log('web share not supported');
             }
         });
-        
+
         return e;
     }
 

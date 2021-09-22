@@ -7,7 +7,7 @@ import BaseUIElement from "../BaseUIElement";
 import Img from "../Base/Img";
 
 export default class SingleReview extends Combine {
-    
+
     constructor(review: Review) {
         const d = review.date;
         super(

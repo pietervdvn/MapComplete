@@ -13,15 +13,24 @@ export default class List extends BaseUIElement {
             .map(Translations.W);
     }
 
+    AsMarkdown(): string {
+        if (this._ordered) {
+            return "\n\n" + this.uiElements.map((el, i) => "  " + i + ". " + el.AsMarkdown().replace(/\n/g, '  \n')).join("\n") + "\n"
+        } else {
+            return "\n\n" + this.uiElements.map(el => "  - " + el.AsMarkdown().replace(/\n/g, '  \n')).join("\n") + "\n"
+
+        }
+    }
+
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement(this._ordered ? "ol" : "ul")
 
         for (const subEl of this.uiElements) {
-            if(subEl === undefined || subEl === null){
+            if (subEl === undefined || subEl === null) {
                 continue;
             }
             const subHtml = subEl.ConstructElement()
-            if(subHtml !== undefined){
+            if (subHtml !== undefined) {
                 const item = document.createElement("li")
                 item.appendChild(subHtml)
                 el.appendChild(item)
@@ -29,15 +38,6 @@ export default class List extends BaseUIElement {
         }
 
         return el;
-    }
-    
-    AsMarkdown(): string {
-        if(this._ordered){
-            return "\n\n"+this.uiElements.map((el, i) => "  "+i+". "+el.AsMarkdown().replace(/\n/g, '  \n') ).join("\n") + "\n"
-        }else{
-            return "\n\n"+this.uiElements.map(el => "  - "+el.AsMarkdown().replace(/\n/g, '  \n') ).join("\n")+"\n"
-
-        }
     }
 
 }

@@ -15,25 +15,25 @@ export default class OsmConnectionSpec extends T {
         super("OsmConnectionSpec-test", [
             ["login on dev",
                 () => {
-                   const osmConn = new OsmConnection(false,false,
+                    const osmConn = new OsmConnection(false, false,
                         new UIEventSource<string>(undefined),
                         "Unit test",
                         true,
                         "osm-test"
                     )
-                    
-                    osmConn.userDetails.map((userdetails : UserDetails) => {
-                       if(userdetails.loggedIn){
-                           console.log("Logged in with the testing account. Writing some random data to test preferences")
-                           const data = Math.random().toString()
-                           osmConn.GetPreference("test").setData(data)
-                           
-                           osmConn.GetPreference("https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/railway")
-                               .setData(data)
-                           
-                       }
+
+                    osmConn.userDetails.map((userdetails: UserDetails) => {
+                        if (userdetails.loggedIn) {
+                            console.log("Logged in with the testing account. Writing some random data to test preferences")
+                            const data = Math.random().toString()
+                            osmConn.GetPreference("test").setData(data)
+
+                            osmConn.GetPreference("https://raw.githubusercontent.com/AgusQui/MapCompleteRailway/main/railway")
+                                .setData(data)
+
+                        }
                     });
-                    
+
                     ScriptUtils.sleep(1000)
 
                 }

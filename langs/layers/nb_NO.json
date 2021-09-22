@@ -1,12 +1,14 @@
 {
     "bench": {
         "name": "Benker",
-        "title": {
-            "render": "Benk"
+        "presets": {
+            "0": {
+                "description": "Legg til en ny benk",
+                "title": "Benk"
+            }
         },
         "tagRenderings": {
             "1": {
-                "render": "Rygglene",
                 "mappings": {
                     "0": {
                         "then": "Rygglene: Ja"
@@ -15,14 +17,14 @@
                         "then": "Rygglene: Nei"
                     }
                 },
-                "question": "Har denne beken et rygglene?"
+                "question": "Har denne beken et rygglene?",
+                "render": "Rygglene"
             },
             "2": {
-                "render": "{seats} seter",
-                "question": "Hvor mange sitteplasser har denne benken?"
+                "question": "Hvor mange sitteplasser har denne benken?",
+                "render": "{seats} seter"
             },
             "3": {
-                "render": "Materiale: {material}",
                 "mappings": {
                     "0": {
                         "then": "Materiale: tre"
@@ -42,10 +44,10 @@
                     "5": {
                         "then": "Materiale: stål"
                     }
-                }
+                },
+                "render": "Materiale: {material}"
             },
             "5": {
-                "render": "Farge: {colour}",
                 "mappings": {
                     "0": {
                         "then": "Farge: brun"
@@ -71,14 +73,12 @@
                     "7": {
                         "then": "Farge: gul"
                     }
-                }
+                },
+                "render": "Farge: {colour}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Benk",
-                "description": "Legg til en ny benk"
-            }
+        "title": {
+            "render": "Benk"
         }
     },
     "bench_at_pt": {
@@ -94,14 +94,29 @@
                 "render": "Dette sykkelbiblioteket heter {name}"
             },
             "6": {
-                "question": "Hvor mye koster det å leie en sykkel?",
-                "render": "Sykkelleie koster {charge}",
                 "mappings": {
                     "0": {
                         "then": "Det er gratis å leie en sykkel"
                     }
-                }
+                },
+                "question": "Hvor mye koster det å leie en sykkel?",
+                "render": "Sykkelleie koster {charge}"
             }
+        }
+    },
+    "charging_station": {
+        "description": "En ladestasjon",
+        "name": "Ladestasjoner",
+        "tagRenderings": {
+            "41": {
+                "question": "Når åpnet denne ladestasjonen?"
+            },
+            "42": {
+                "render": "{network}"
+            }
+        },
+        "title": {
+            "render": "Ladestasjon"
         }
     }
 }

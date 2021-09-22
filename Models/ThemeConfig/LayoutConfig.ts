@@ -6,7 +6,7 @@ import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
 import {Unit} from "../Unit";
-import {Denomination} from "../Denomination";
+import {LayerConfigJson} from "./Json/LayerConfigJson";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -51,7 +51,8 @@ export default class LayoutConfig {
     How long is the cache valid, in seconds?
      */
     public readonly cacheTimeout?: number;
-    public readonly units: Unit[] = []
+    public readonly overpassUrl: string;
+    public readonly overpassTimeout: number;
     private readonly _official: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
@@ -77,7 +78,6 @@ export default class LayoutConfig {
         if (json.description === undefined) {
             throw "Description not defined in " + this.id;
         }
-        this.units = LayoutConfig.ExtractUnits(json, context) ?? [];
         this.title = new Translation(json.title, context + ".title");
         this.description = new Translation(json.description, context + ".description");
         this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
@@ -98,7 +98,7 @@ export default class LayoutConfig {
             }
         );
         this.defaultBackgroundId = json.defaultBackgroundId;
-        this.layers = LayoutConfig.ExtractLayers(json, this.units, official, context);
+        this.layers = LayoutConfig.ExtractLayers(json, official, context);
 
         // ALl the layers are constructed, let them share tagRenderings now!
         const roaming: { r, source: LayerConfig }[] = []
@@ -160,11 +160,12 @@ export default class LayoutConfig {
         this.enablePdfDownload = json.enablePdfDownload ?? false;
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
-
+        this.overpassUrl = json.overpassUrl ?? "https://overpass-api.de/api/interpreter"
+        this.overpassTimeout = json.overpassTimeout ?? 30
 
     }
 
-    private static ExtractLayers(json: LayoutConfigJson, units: Unit[], official: boolean, context: string): LayerConfig[] {
+    private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): LayerConfig[] {
         const result: LayerConfig[] = []
 
         json.layers.forEach((layer, i) => {
@@ -172,7 +173,7 @@ export default class LayoutConfig {
                 if (AllKnownLayers.sharedLayersJson.get(layer) !== undefined) {
                     if (json.overrideAll !== undefined) {
                         let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson[layer]));
-                        const newLayer = new LayerConfig(Utils.Merge(json.overrideAll, lyr), units, `${json.id}+overrideAll.layers[${i}]`, official)
+                        const newLayer = new LayerConfig(Utils.Merge(json.overrideAll, lyr), `${json.id}+overrideAll.layers[${i}]`, official)
                         result.push(newLayer)
                         return
                     } else {
@@ -190,7 +191,7 @@ export default class LayoutConfig {
                     layer = Utils.Merge(json.overrideAll, layer);
                 }
                 // @ts-ignore
-                const newLayer = new LayerConfig(layer, units, `${json.id}.layers[${i}]`, official)
+                const newLayer = new LayerConfig(layer, `${json.id}.layers[${i}]`, official)
                 result.push(newLayer)
                 return
             }
@@ -204,13 +205,12 @@ export default class LayoutConfig {
                 if (shared === undefined) {
                     throw `Unknown shared/builtin layer ${name} at ${context}.layers[${i}]. Available layers are ${Array.from(AllKnownLayers.sharedLayersJson.keys()).join(", ")}`;
                 }
-                // @ts-ignore
-                let newLayer: LayerConfigJson = Utils.Merge(layer.override, JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
+                let newLayer: LayerConfigJson = Utils.Merge(layer["override"], JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
                 if (json.overrideAll !== undefined) {
                     newLayer = Utils.Merge(json.overrideAll, newLayer);
                 }
                 // @ts-ignore
-                const layerConfig = new LayerConfig(newLayer, units, `${json.id}.layers[${i}]`, official)
+                const layerConfig = new LayerConfig(newLayer, `${json.id}.layers[${i}]`, official)
                 result.push(layerConfig)
                 return
             })
@@ -218,54 +218,6 @@ export default class LayoutConfig {
         });
 
         return result
-    }
-
-    private static ExtractUnits(json: LayoutConfigJson, context: string): Unit[] {
-        const result: Unit[] = []
-        if ((json.units ?? []).length !== 0) {
-            for (let i1 = 0; i1 < json.units.length; i1++) {
-                let unit = json.units[i1];
-                const appliesTo = unit.appliesToKey
-
-                for (let i = 0; i < appliesTo.length; i++) {
-                    let key = appliesTo[i];
-                    if (key.trim() !== key) {
-                        throw `${context}.unit[${i1}].appliesToKey[${i}] is invalid: it starts or ends with whitespace`
-                    }
-                }
-
-                if ((unit.applicableUnits ?? []).length === 0) {
-                    throw  `${context}: define at least one applicable unit`
-                }
-                // Some keys do have unit handling
-
-                const defaultSet = unit.applicableUnits.filter(u => u.default === true)
-                // No default is defined - we pick the first as default
-                if (defaultSet.length === 0) {
-                    unit.applicableUnits[0].default = true
-                }
-
-                // Check that there are not multiple defaults
-                if (defaultSet.length > 1) {
-                    throw `Multiple units are set as default: they have canonical values of ${defaultSet.map(u => u.canonicalDenomination).join(", ")}`
-                }
-                const applicable = unit.applicableUnits.map((u, i) => new Denomination(u, `${context}.units[${i}]`))
-                result.push(new Unit(appliesTo, applicable, unit.eraseInvalidValues ?? false));
-            }
-
-            const seenKeys = new Set<string>()
-            for (const unit of result) {
-                const alreadySeen = Array.from(unit.appliesToKeys).filter((key: string) => seenKeys.has(key));
-                if (alreadySeen.length > 0) {
-                    throw `${context}.units: multiple units define the same keys. The key(s) ${alreadySeen.join(",")} occur multiple times`
-                }
-                unit.appliesToKeys.forEach(key => seenKeys.add(key))
-            }
-            return result;
-
-        }
-
-
     }
 
     public CustomCodeSnippets(): string[] {

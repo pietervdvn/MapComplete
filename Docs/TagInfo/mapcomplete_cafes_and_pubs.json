@@ -1,0 +1,125 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Cafés and pubs",
+    "description": "Cafés, kroegen en drinkgelegenheden",
+    "project_url": "https://mapcomplete.osm.be/cafes_and_pubs",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/layers/cafe_pub/pub.svg",
+    "contact_name": "Pieter Vander Vennet, ",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cafés and pubs has a layer Cafés and pubs showing features with this tag",
+      "value": "bar"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cafés and pubs has a layer Cafés and pubs showing features with this tag",
+      "value": "pub"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cafés and pubs has a layer Cafés and pubs showing features with this tag",
+      "value": "cafe"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cafés and pubs has a layer Cafés and pubs showing features with this tag",
+      "value": "biergarten"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Cafés and pubs' shows amenity=pub with a fixed text, namely 'Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "pub"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Cafés and pubs' shows amenity=bar with a fixed text, namely 'Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "bar"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Cafés and pubs' shows amenity=cafe with a fixed text, namely 'Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "cafe"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Cafés and pubs' shows amenity=restaurant with a fixed text, namely 'Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "restaurant"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Cafés and pubs' shows amenity=biergarten with a fixed text, namely 'Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "biergarten"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Cafés and pubs' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Cafés and pubs' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Cafés and pubs' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Cafés and pubs' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Cafés and pubs' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Cafés and pubs' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "no"
+    }
+  ]
+}

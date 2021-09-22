@@ -9,11 +9,10 @@ import OsmApiFeatureSource from "../FeatureSource/OsmApiFeatureSource";
  * Makes sure the hash shows the selected element and vice-versa.
  */
 export default class SelectedFeatureHandler {
+    private static readonly _no_trigger_on = ["welcome", "copyright", "layers", "new"]
     private readonly _featureSource: FeatureSource;
     private readonly _hash: UIEventSource<string>;
     private readonly _selectedFeature: UIEventSource<any>;
-
-    private static readonly _no_trigger_on = ["welcome", "copyright", "layers", "new"]
     private readonly _osmApiSource: OsmApiFeatureSource;
 
     constructor(hash: UIEventSource<string>,

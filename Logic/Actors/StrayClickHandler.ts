@@ -1,8 +1,9 @@
 import * as L from "leaflet";
-import Svg from "../../Svg";
 import {UIEventSource} from "../UIEventSource";
-import Img from "../../UI/Base/Img";
 import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen";
+import AddNewMarker from "../../UI/BigComponents/AddNewMarker";
+import FilteredLayer from "../../Models/FilteredLayer";
+import Constants from "../../Models/Constants";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.
@@ -14,7 +15,7 @@ export default class StrayClickHandler {
     constructor(
         lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
         selectedElement: UIEventSource<string>,
-        filteredLayers: UIEventSource<{ readonly isDisplayed: UIEventSource<boolean> }[]>,
+        filteredLayers: UIEventSource<FilteredLayer[]>,
         leafletMap: UIEventSource<L.Map>,
         uiToShow: ScrollableFullScreen) {
         const self = this;
@@ -29,19 +30,20 @@ export default class StrayClickHandler {
         })
 
         lastClickLocation.addCallback(function (lastClick) {
-            
+
             if (self._lastMarker !== undefined) {
                 leafletMap.data?.removeLayer(self._lastMarker);
             }
-            
-            if(lastClick === undefined){
+
+            if (lastClick === undefined) {
                 return;
             }
 
             selectedElement.setData(undefined);
-            self._lastMarker = L.marker([lastClick.lat, lastClick.lon], {
-                icon: L.icon({
-                    iconUrl: Img.AsData(Svg.add),
+            const clickCoor: [number, number] = [lastClick.lat, lastClick.lon]
+            self._lastMarker = L.marker(clickCoor, {
+                icon: L.divIcon({
+                    html: new AddNewMarker(filteredLayers).ConstructElement(),
                     iconSize: [50, 50],
                     iconAnchor: [25, 50],
                     popupAnchor: [0, -45]
@@ -49,7 +51,7 @@ export default class StrayClickHandler {
             });
             const popup = L.popup({
                 autoPan: true,
-                autoPanPaddingTopLeft: [15,15],
+                autoPanPaddingTopLeft: [15, 15],
                 closeOnEscapeKey: true,
                 autoClose: true
             }).setContent("<div id='strayclick' style='height: 65vh'></div>");
@@ -57,6 +59,13 @@ export default class StrayClickHandler {
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
+                if (leafletMap.data.getZoom() < Constants.userJourney.minZoomLevelToAddNewPoints) {
+                    self._lastMarker.closePopup()
+                    leafletMap.data.flyTo(clickCoor, Constants.userJourney.minZoomLevelToAddNewPoints)
+                    return;
+                }
+
+
                 uiToShow.AttachTo("strayclick")
                 uiToShow.Activate();
             });

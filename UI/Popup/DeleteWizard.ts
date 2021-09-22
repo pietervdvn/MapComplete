@@ -60,7 +60,7 @@ export default class DeleteWizard extends Toggle {
             }
             (State.state?.changes ?? new Changes())
                 .applyAction(new ChangeTagAction(
-                   id, new And(tagsToApply.map(kv => new Tag(kv.k, kv.v))), tagsSource.data
+                    id, new And(tagsToApply.map(kv => new Tag(kv.k, kv.v))), tagsSource.data
                 ))
         }
 
@@ -115,30 +115,30 @@ export default class DeleteWizard extends Toggle {
             }
         ).SetClass("w-1/2 float-right");
 
-        const isShown = new UIEventSource<boolean>(id.indexOf("-")< 0)
-        
+        const isShown = new UIEventSource<boolean>(id.indexOf("-") < 0)
+
         super(
             new Toggle(
-            new Combine([Svg.delete_icon_svg().SetClass("h-16 w-16 p-2 m-2 block bg-gray-300 rounded-full"),
-                t.isDeleted.Clone()]).SetClass("flex m-2 rounded-full"),
-            new Toggle(
+                new Combine([Svg.delete_icon_svg().SetClass("h-16 w-16 p-2 m-2 block bg-gray-300 rounded-full"),
+                    t.isDeleted.Clone()]).SetClass("flex m-2 rounded-full"),
                 new Toggle(
                     new Toggle(
                         new Toggle(
-                            question,
-                            new SubtleButton(Svg.envelope_ui(), t.readMessages.Clone()),
-                            State.state.osmConnection.userDetails.map(ud => ud.csCount > Constants.userJourney.addNewPointWithUnreadMessagesUnlock || ud.unreadMessages == 0)
-                        ),
+                            new Toggle(
+                                question,
+                                new SubtleButton(Svg.envelope_ui(), t.readMessages.Clone()),
+                                State.state.osmConnection.userDetails.map(ud => ud.csCount > Constants.userJourney.addNewPointWithUnreadMessagesUnlock || ud.unreadMessages == 0)
+                            ),
 
-                        deleteButton,
-                        confirm),
-                    new VariableUiElement(deleteAction.canBeDeleted.map(cbd => new Combine([cbd.reason.Clone(), t.useSomethingElse.Clone()]))),
-                    deleteAction.canBeDeleted.map(cbd => allowSoftDeletion || cbd.canBeDeleted !== false)),
+                            deleteButton,
+                            confirm),
+                        new VariableUiElement(deleteAction.canBeDeleted.map(cbd => new Combine([cbd.reason.Clone(), t.useSomethingElse.Clone()]))),
+                        deleteAction.canBeDeleted.map(cbd => allowSoftDeletion || cbd.canBeDeleted !== false)),
 
-                t.loginToDelete.Clone().onClick(State.state.osmConnection.AttemptLogin),
-                State.state.osmConnection.isLoggedIn
-            ),
-            deleteAction.isDeleted),
+                    t.loginToDelete.Clone().onClick(State.state.osmConnection.AttemptLogin),
+                    State.state.osmConnection.isLoggedIn
+                ),
+                deleteAction.isDeleted),
             undefined,
             isShown)
 

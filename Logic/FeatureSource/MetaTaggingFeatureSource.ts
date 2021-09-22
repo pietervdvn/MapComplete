@@ -19,10 +19,10 @@ export default class MetaTaggingFeatureSource implements FeatureSource {
         const self = this;
         this.name = "MetaTagging of " + source.name
 
-        if(allFeaturesSource === undefined){
+        if (allFeaturesSource === undefined) {
             throw ("UIEVentSource is undefined")
         }
-        
+
         function update() {
             const featuresFreshness = source.features.data
             if (featuresFreshness === undefined) {

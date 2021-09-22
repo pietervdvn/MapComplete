@@ -1,0 +1,118 @@
+{
+  "id": "waste_basket",
+  "name": {
+    "en": "Waste Basket",
+    "nl": "Vuilnisbak"
+  },
+  "minzoom": 17,
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=waste_basket"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Waste Basket",
+      "nl": "Vuilnisbak"
+    }
+  },
+  "description": {
+    "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+    "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien."
+  },
+  "tagRenderings": [
+    {
+      "question": {
+        "en": "What kind of waste basket is this?",
+        "nl": "Wat voor soort vuilnisbak is dit?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "waste=",
+          "then": {
+            "en": "A waste basket for general waste",
+            "nl": "Een vuilnisbak voor zwerfvuil"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "waste=trash",
+          "then": {
+            "en": "A waste basket for general waste",
+            "nl": "Een vuilnisbak voor zwerfvuil"
+          }
+        },
+        {
+          "if": "waste=dog_excrement",
+          "then": {
+            "en": "A waste basket for dog excrements",
+            "nl": "Een vuilnisbak specifiek voor hondenuitwerpselen"
+          }
+        },
+        {
+          "if": "waste=cigarettes",
+          "then": {
+            "en": "A waste basket for cigarettes",
+            "nl": "Een vuilnisbak voor sigarettenpeuken"
+          }
+        },
+        {
+          "if": "waste=drugs",
+          "then": {
+            "en": "A waste basket for drugs",
+            "nl": "Een vuilnisbak voor (vervallen) medicatie en drugs"
+          }
+        },
+        {
+          "if": "waste=sharps",
+          "then": {
+            "en": "A waste basket for needles and other sharp objects",
+            "nl": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
+          }
+        }
+      ]
+    }
+  ],
+  "icon": {
+    "render": "./assets/themes/waste_basket/waste_basket.svg"
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,center",
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "amenity=waste_basket"
+          ]
+        },
+        "then": {
+          "en": "Waste Basket",
+          "nl": "Vuilnisbak"
+        }
+      }
+    ]
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "amenity=waste_basket"
+      ],
+      "title": {
+        "en": "Waste Basket",
+        "nl": "Vuilnisbak"
+      },
+      "presiceInput": {
+        "preferredBackground": "photo"
+      }
+    }
+  ]
+}

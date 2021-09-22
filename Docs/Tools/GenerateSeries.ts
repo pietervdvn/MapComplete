@@ -198,7 +198,7 @@ interface PlotSpec {
 function createGraph(
     title: string,
     ...options: PlotSpec[]) {
-    const process = exec("python GenPlot.py \"graphs/" + title + "\"", ((error, stdout, stderr) => {
+    const process = exec("python3 GenPlot.py \"graphs/" + title + "\"", ((error, stdout, stderr) => {
         console.log("Python: ", stdout)
         if (error !== null) {
             console.error(error)
@@ -216,12 +216,6 @@ function createGraph(
 }
 
 class Histogram<K> {
-    total(): number {
-        let total = 0
-        Array.from(this.counts.values()).forEach(i => total = total + i)
-        return total
-    }
-
     public counts: Map<K, number> = new Map<K, number>()
     private sortAtEnd: K[] = []
 
@@ -230,6 +224,11 @@ class Histogram<K> {
         keys?.forEach(key => self.bump(key))
     }
 
+    total(): number {
+        let total = 0
+        Array.from(this.counts.values()).forEach(i => total = total + i)
+        return total
+    }
 
     public bump(key: K, increase = 1) {
         if (this.counts.has(key)) {
@@ -507,13 +506,6 @@ function stackHists<K, V>(hists: [V, Histogram<K>][]): [V, Histogram<K>][] {
 function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: string) {
     const hist = new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
     hist
-        .addCountToName()
-        .createOthersCategory("other", 40)
-        .asPie({
-            name: "Changesets per theme" + appliedFilterDescription
-        }).render()
-
-    hist
         .createOthersCategory("other", 20)
         .addCountToName()
         .asBar({name: "Changesets per theme (bar)" + appliedFilterDescription}).render()
@@ -533,6 +525,12 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
             name: "Changesets per host" + appliedFilterDescription
         }).render()
 
+    new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
+        .createOthersCategory("< 25 changesets", 25)
+        .addCountToName()
+        .asPie({
+            name: "Changesets per theme (pie)" + appliedFilterDescription
+        }).render()
 
     Group.createStackedBarChartPerDay(
         "Changesets per theme" + appliedFilterDescription,
@@ -619,7 +617,7 @@ const geojson = {
     })
 }
 
-writeFileSync("centerpoints.geojson",JSON.stringify(geojson, undefined, 2) )
+writeFileSync("centerpoints.geojson", JSON.stringify(geojson, undefined, 2))
 
 
 createGraphs(allFeatures, "")

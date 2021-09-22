@@ -1,0 +1,88 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Hackerspaces",
+    "description": "A map of hackerspaces",
+    "project_url": "https://mapcomplete.osm.be/hackerspaces",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/hackerspaces/glider.svg",
+    "contact_name": "Pieter Vander Vennet, ",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Hackerspaces has a layer Hackerspace showing features with this tag",
+      "value": "hackerspace"
+    },
+    {
+      "key": "hackerspace",
+      "description": "Layer 'Hackerspace' shows hackerspace=makerspace with a fixed text, namely 'This is a makerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "makerspace"
+    },
+    {
+      "key": "hackerspace",
+      "description": "Layer 'Hackerspace' shows hackerspace= with a fixed text, namely 'This is a traditional (software oriented) hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces') Picking this answer will delete the key hackerspace.",
+      "value": ""
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Hackerspaces')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Hackerspaces')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Hackerspaces')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Hackerspaces')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Hackerspaces')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Hackerspace' shows opening_hours=24/7 with a fixed text, namely 'Opened 24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "24/7"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "drink:club-mate",
+      "description": "Layer 'Hackerspace' shows drink:club-mate=yes with a fixed text, namely 'This hackerspace serves club mate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "drink:club-mate",
+      "description": "Layer 'Hackerspace' shows drink:club-mate=no with a fixed text, namely 'This hackerspace is not worthy of the name hackerspace as it does not serve club mate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Hackerspaces')"
+    }
+  ]
+}

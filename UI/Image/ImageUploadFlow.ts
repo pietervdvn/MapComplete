@@ -43,7 +43,7 @@ export class ImageUploadFlow extends Toggle {
             Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1"),
             Translations.t.image.addPicture.Clone().SetClass("block align-middle mt-1 ml-3")
         ]).SetClass("p-2 border-4 border-black rounded-full text-4xl font-bold h-full align-middle w-full flex justify-center")
-        
+
         const fileSelector = new FileSelectorButton(label)
         fileSelector.GetValue().addCallback(filelist => {
             if (filelist === undefined) {
@@ -97,7 +97,7 @@ export class ImageUploadFlow extends Toggle {
                 /* User not logged in*/ pleaseLoginButton,
                 State.state?.osmConnection?.isLoggedIn
             ),
-            undefined /* Nothing as the user badge is disabled*/, 
+            undefined /* Nothing as the user badge is disabled*/,
             State.state.featureSwitchUserbadge
         )
 

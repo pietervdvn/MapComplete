@@ -7,8 +7,18 @@ import {RegexTag} from "./RegexTag";
 import SubstitutingTag from "./SubstitutingTag";
 import {Or} from "./Or";
 import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
+import {isRegExp} from "util";
 
 export class TagUtils {
+    private static comparators
+        : [string, (a: number, b: number) => boolean][]
+        = [
+        ["<=", (a, b) => a <= b],
+        [">=", (a, b) => a >= b],
+        ["<", (a, b) => a < b],
+        [">", (a, b) => a > b],
+    ]
+
     static ApplyTemplate(template: string, tags: any): string {
         for (const k in tags) {
             while (template.indexOf("{" + k + "}") >= 0) {
@@ -47,16 +57,15 @@ export class TagUtils {
     }
 
     /***
-     * Creates a hash {key --> [values]}, with all the values present in the tagsfilter
+     * Creates a hash {key --> [values : string | Regex ]}, with all the values present in the tagsfilter
      *
      * @param tagsFilters
      * @constructor
      */
-    static SplitKeys(tagsFilters: TagsFilter[]) {
+    static SplitKeys(tagsFilters: TagsFilter[], allowRegex = false) {
         const keyValues = {} // Map string -> string[]
-        tagsFilters = [...tagsFilters] // copy all
+        tagsFilters = [...tagsFilters] // copy all, use as queue
         while (tagsFilters.length > 0) {
-            // Queue
             const tagsFilter = tagsFilters.shift();
 
             if (tagsFilter === undefined) {
@@ -75,6 +84,21 @@ export class TagUtils {
                 keyValues[tagsFilter.key].push(...tagsFilter.value.split(";"));
                 continue;
             }
+
+            if (allowRegex && tagsFilter instanceof RegexTag) {
+                const key = tagsFilter.key
+                if (isRegExp(key)) {
+                    console.error("Invalid type to flatten the multiAnswer: key is a regex too", tagsFilter);
+                    throw "Invalid type to FlattenMultiAnswer"
+                }
+                const keystr = <string>key
+                if (keyValues[keystr] === undefined) {
+                    keyValues[keystr] = [];
+                }
+                keyValues[keystr].push(tagsFilter);
+                continue;
+            }
+
 
             console.error("Invalid type to flatten the multiAnswer", tagsFilter);
             throw "Invalid type to FlattenMultiAnswer"
@@ -106,16 +130,30 @@ export class TagUtils {
         return new And(and);
     }
 
-    static MatchesMultiAnswer(tag: TagsFilter, tags: any): boolean {
-        const splitted = TagUtils.SplitKeys([tag]);
+    /**
+     * Returns true if the properties match the tagsFilter, interpreted as a multikey.
+     * Note that this might match a regex tag
+     * @param tag
+     * @param properties
+     * @constructor
+     */
+    static MatchesMultiAnswer(tag: TagsFilter, properties: any): boolean {
+        const splitted = TagUtils.SplitKeys([tag], true);
         for (const splitKey in splitted) {
             const neededValues = splitted[splitKey];
-            if (tags[splitKey] === undefined) {
+            if (properties[splitKey] === undefined) {
                 return false;
             }
 
-            const actualValue = tags[splitKey].split(";");
+            const actualValue = properties[splitKey].split(";");
             for (const neededValue of neededValues) {
+
+                if (neededValue instanceof RegexTag) {
+                    if (!neededValue.matchesProperties(properties)) {
+                        return false
+                    }
+                    continue
+                }
                 if (actualValue.indexOf(neededValue) < 0) {
                     return false;
                 }
@@ -140,15 +178,6 @@ export class TagUtils {
             throw e;
         }
     }
-
-    private static comparators
-        : [string, (a: number, b: number) => boolean][]
-        = [
-        ["<=", (a, b) => a <= b],
-        [">=", (a, b) => a >= b],
-        ["<", (a, b) => a < b],
-        [">", (a, b) => a > b],
-    ]
 
     private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
 

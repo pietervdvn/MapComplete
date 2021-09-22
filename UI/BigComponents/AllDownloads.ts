@@ -9,6 +9,7 @@ import {DownloadPanel} from "./DownloadPanel";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import ExportPDF from "../ExportPDF";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class AllDownloads extends ScrollableFullScreen {
 
@@ -23,7 +24,9 @@ export default class AllDownloads extends ScrollableFullScreen {
     }
 
     private static GeneratePanel(): BaseUIElement {
+        const isExporting = new UIEventSource(false, "Pdf-is-exporting")
         const generatePdf = () => {
+            isExporting.setData(true)
             new ExportPDF(
                 {
                     freeDivId: "belowmap",
@@ -31,21 +34,34 @@ export default class AllDownloads extends ScrollableFullScreen {
                     location: State.state.locationControl,
                     features: State.state.featurePipeline.features,
                     layout: State.state.layoutToUse,
-                })
+                }).isRunning.addCallbackAndRun(isRunning => isExporting.setData(isRunning))
         }
 
+        const loading = Svg.loading_svg().SetClass("animate-rotate");
+
+        const icon = new Toggle(loading, Svg.floppy_ui(), isExporting);
+        const text = new Toggle(
+            new FixedUiElement("Exporting..."),
+
+            new Combine([
+                Translations.t.general.download.downloadAsPdf.Clone().SetClass("font-bold"),
+                Translations.t.general.download.downloadAsPdfHelper.Clone()]
+            ).SetClass("flex flex-col")
+                .onClick(() => {
+                    generatePdf()
+                }),
+            isExporting);
+
         const pdf = new Toggle(
-            new SubtleButton(Svg.floppy_ui(),
-                new Combine([Translations.t.general.download.downloadAsPdf.Clone().SetClass("font-bold"),
-                    Translations.t.general.download.downloadAsPdfHelper.Clone()]
-                    ).SetClass("flex flex-col"))
-                .onClick(generatePdf),
+            new SubtleButton(
+                icon,
+                text),
             undefined,
 
             State.state.featureSwitchExportAsPdf
         )
 
-       const exportPanel = new Toggle(
+        const exportPanel = new Toggle(
             new DownloadPanel(),
             undefined,
             State.state.featureSwitchEnableExport

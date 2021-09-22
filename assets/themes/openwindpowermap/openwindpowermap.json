@@ -145,82 +145,82 @@
             "fr": "Éolienne"
           }
         }
-      ]
-    }
-  ],
-  "units": [
-    {
-      "appliesToKey": [
-        "generator:output:electricity"
       ],
-      "applicableUnits": [
+      "units": [
         {
-          "canonicalDenomination": "MW",
-          "alternativeDenomination": [
-            "megawatts",
-            "megawatt"
+          "appliesToKey": [
+            "generator:output:electricity"
           ],
-          "human": {
-            "en": " megawatts",
-            "nl": " megawatt",
-            "fr": " megawatts"
-          }
+          "applicableUnits": [
+            {
+              "canonicalDenomination": "MW",
+              "alternativeDenomination": [
+                "megawatts",
+                "megawatt"
+              ],
+              "human": {
+                "en": " megawatts",
+                "nl": " megawatt",
+                "fr": " megawatts"
+              }
+            },
+            {
+              "canonicalDenomination": "kW",
+              "alternativeDenomination": [
+                "kilowatts",
+                "kilowatt"
+              ],
+              "human": {
+                "en": " kilowatts",
+                "nl": " kilowatt",
+                "fr": " kilowatts"
+              }
+            },
+            {
+              "canonicalDenomination": "W",
+              "alternativeDenomination": [
+                "watts",
+                "watt"
+              ],
+              "human": {
+                "en": " watts",
+                "nl": " watt",
+                "fr": " watts"
+              }
+            },
+            {
+              "canonicalDenomination": "GW",
+              "alternativeDenomination": [
+                "gigawatts",
+                "gigawatt"
+              ],
+              "human": {
+                "en": " gigawatts",
+                "nl": " gigawatt",
+                "fr": " gigawatts"
+              }
+            }
+          ],
+          "eraseInvalidValues": true
         },
         {
-          "canonicalDenomination": "kW",
-          "alternativeDenomination": [
-            "kilowatts",
-            "kilowatt"
+          "appliesToKey": [
+            "height",
+            "rotor:diameter"
           ],
-          "human": {
-            "en": " kilowatts",
-            "nl": " kilowatt",
-            "fr": " kilowatts"
-          }
-        },
-        {
-          "canonicalDenomination": "W",
-          "alternativeDenomination": [
-            "watts",
-            "watt"
-          ],
-          "human": {
-            "en": " watts",
-            "nl": " watt",
-            "fr": " watts"
-          }
-        },
-        {
-          "canonicalDenomination": "GW",
-          "alternativeDenomination": [
-            "gigawatts",
-            "gigawatt"
-          ],
-          "human": {
-            "en": " gigawatts",
-            "nl": " gigawatt",
-            "fr": " gigawatts"
-          }
-        }
-      ],
-      "eraseInvalidValues": true
-    },
-    {
-      "appliesToKey": [
-        "height",
-        "rotor:diameter"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": " meter",
-            "nl": " meter",
-            "fr": " mètres"
-          }
+          "applicableUnits": [
+            {
+              "canonicalDenomination": "m",
+              "alternativeDenomination": [
+                "meter"
+              ],
+              "human": {
+                "en": " meter",
+                "nl": " meter",
+                "fr": " mètres"
+              }
+            }
+          ]
         }
       ]
     }

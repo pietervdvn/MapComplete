@@ -11,39 +11,39 @@
         .max-h-20vh {
             max-height: 20vh;
         }
-        
-        .z-above-map{
+
+        .z-above-map {
             z-index: 10000
         }
 
-        .z-above-controls{
+        .z-above-controls {
             z-index: 10001
         }
-        
+
     }
 
-  .btn {
-      @apply inline-flex justify-center;
-      @apply py-2 px-4;
-      @apply border border-transparent shadow-sm;
-      @apply shadow-sm rounded-3xl;
-      @apply ring-2 ring-blue-200 hover:ring-blue-300;
-      @apply mt-1 mr-1;
-      @apply text-sm font-medium text-white;
-      @apply bg-blue-600 hover:bg-blue-700;
-      @apply focus:outline-none focus:ring-blue-700;
-  }
+    .btn {
+        @apply inline-flex justify-center;
+        @apply py-2 px-4;
+        @apply border border-transparent shadow-sm;
+        @apply shadow-sm rounded-3xl;
+        @apply ring-2 ring-blue-200 hover:ring-blue-300;
+        @apply mt-1 mr-1;
+        @apply text-sm font-medium text-white;
+        @apply bg-blue-600 hover:bg-blue-700;
+        @apply focus:outline-none focus:ring-blue-700;
+    }
 
-  .btn-secondary {
-      @apply bg-gray-600 hover:bg-gray-700;
-  }
+    .btn-secondary {
+        @apply bg-gray-600 hover:bg-gray-700;
+    }
 
-  .btn-disabled {
-      @apply bg-gray-500 hover:bg-gray-500;
-      @apply text-gray-300;
-      @apply ring-gray-200 hover:ring-gray-200 focus:ring-gray-200;
-      @apply cursor-default;
-  }
+    .btn-disabled {
+        @apply bg-gray-500 hover:bg-gray-500;
+        @apply text-gray-300;
+        @apply ring-gray-200 hover:ring-gray-200 focus:ring-gray-200;
+        @apply cursor-default;
+    }
 }
 
 
@@ -61,7 +61,7 @@
     --shadow-color: #00000066;
     --variable-title-height: 0px; /* Set by javascript */
     --return-to-the-map-height: 2em;
-    
+
     --image-carousel-height: 350px;
 }
 
@@ -75,6 +75,7 @@ html, body {
     color: var(--foreground-color);
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
+
 .leaflet-overlay-pane .leaflet-zoom-animated {
     /* Another workaround to keep leaflet working */
     width: initial !important;
@@ -93,8 +94,12 @@ svg, img {
     display: unset;
 }
 
-.mapcontrol svg path{
+.mapcontrol svg path {
     fill: var(--subtle-detail-color-contrast) !important;
+}
+
+.red-svg svg path {
+    stroke: #d71010 !important;
 }
 
 a {
@@ -125,12 +130,12 @@ btn {
     width: 4rem !important;
 }
 
-.space-between{
+.space-between {
     justify-content: space-between;
 }
 
 .link-underline a {
-    text-decoration: underline 1px #0078a855;; 
+    text-decoration: underline 1px #0078a855;;
     color: #0078A8;
 }
 
@@ -182,7 +187,9 @@ li::marker {
     color: var(--subtle-detail-color-light-contrast);
 }
 
-.border-attention-catch{ border: 5px solid var(--catch-detail-color);}
+.border-attention-catch {
+    border: 5px solid var(--catch-detail-color);
+}
 
 .direction-svg svg path {
     fill: var(--catch-detail-color) !important;
@@ -299,6 +306,15 @@ li::marker {
 }
 
 
+@keyframes slide {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(calc(-100% + 42px));
+    }
+}
 
 /**************************************/
 
@@ -308,7 +324,6 @@ li::marker {
     position: absolute;
     z-index: 5000;
     transition: all 500ms linear;
-    pointer-events: none;
     left: 0;
     right: 0;
 }
@@ -319,20 +334,7 @@ li::marker {
     width: 40em;
     max-height: calc(100vh - 15em);
     overflow-y: auto;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-}
-
-
-#messagesbox {
-    /*Only shown on big screens*/
-    position: relative;
-    padding: 0;
-    pointer-events: all;
-    box-shadow: 0 0 10px var(--shadow-color);
-    width: min-content;
+    border-radius: 1em;
     background-color: var(--background-color);
     color: var(--foreground-color);
 }
@@ -380,7 +382,7 @@ li::marker {
 }
 
 
-.slideshow-item img{
+.slideshow-item img {
     height: var(--image-carousel-height);
     width: unset;
 }

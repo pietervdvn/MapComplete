@@ -79,8 +79,8 @@ export default class FilteringFeatureSource implements FeatureSource {
                     if (result !== "yes") {
                         return false;
                     }
-                } 
-                
+                }
+
                 const tagsFilter = layer.appliedFilters.data;
                 if (tagsFilter) {
                     if (!tagsFilter.matchesProperties(f.feature.properties)) {
@@ -118,7 +118,7 @@ export default class FilteringFeatureSource implements FeatureSource {
                     if (l.zoom < layer.layerDef.minzoom) {
                         continue;
                     }
-                 
+
                     if (!layer.isDisplayed.data) {
                         continue;
                     }

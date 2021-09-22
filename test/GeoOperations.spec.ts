@@ -111,74 +111,74 @@ export default class GeoOperationsSpec extends T {
 
                     const isTrue = GeoOperationsSpec.isTrue;
                     const isFalse = GeoOperationsSpec.isFalse;
-                    
+
                     isFalse(GeoOperations.inside(GeoOperationsSpec.inHole, GeoOperationsSpec.multiPolygon), "InHole was detected as true");
                     isTrue(GeoOperations.inside(GeoOperationsSpec.inMultiPolygon, GeoOperationsSpec.multiPolygon), "InMultiPolgyon was not detected as true");
                     isFalse(GeoOperations.inside(GeoOperationsSpec.outsidePolygon, GeoOperationsSpec.multiPolygon), "OutsideOfPolygon was detected as true");
 
                 }],
-            ["Intersection between a line and a polygon", () => {
-                const line = {
-                    "type": "Feature",
-                    "properties": {},
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [
-                            [
-                                3.779296875,
-                                48.777912755501845
-                            ],
-                            [
-                                1.23046875,
-                                47.60616304386874
+                ["Intersection between a line and a polygon", () => {
+                    const line = {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    3.779296875,
+                                    48.777912755501845
+                                ],
+                                [
+                                    1.23046875,
+                                    47.60616304386874
+                                ]
                             ]
-                        ]
-                    }
-                };
+                        }
+                    };
 
-                const overlap = GeoOperations.calculateOverlap(line, [GeoOperationsSpec.polygon]);
-                Assert.equal(1, overlap.length)
-            }],
-            ["Fully enclosed", () => {
-                const line = {
-                    "type": "Feature",
-                    "properties": {},
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [
-                            [
-                                0.0439453125,
-                                47.31648293428332
-                            ],
-                            [
-                                0.6591796875,
-                                46.77749276376827
+                    const overlap = GeoOperations.calculateOverlap(line, [GeoOperationsSpec.polygon]);
+                    Assert.equal(1, overlap.length)
+                }],
+                ["Fully enclosed", () => {
+                    const line = {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    0.0439453125,
+                                    47.31648293428332
+                                ],
+                                [
+                                    0.6591796875,
+                                    46.77749276376827
+                                ]
                             ]
-                        ]
-                    }
-                };
+                        }
+                    };
 
-                const overlap = GeoOperations.calculateOverlap(line, [GeoOperationsSpec.polygon]);
-                Assert.equal(1, overlap.length)
-            }],
-            ["overlapWith matches points too", () => {
-                const point = {
-                    "type": "Feature",
-                    "properties": {},
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            2.274169921875,
-                            46.76244305208004
-                        ]
-                    }
-                };
+                    const overlap = GeoOperations.calculateOverlap(line, [GeoOperationsSpec.polygon]);
+                    Assert.equal(1, overlap.length)
+                }],
+                ["overlapWith matches points too", () => {
+                    const point = {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                2.274169921875,
+                                46.76244305208004
+                            ]
+                        }
+                    };
 
-                const overlap = GeoOperations.calculateOverlap(point, [GeoOperationsSpec.polygon]);
-                Assert.equal(1, overlap.length)
-            }]
-    ]
-    )
-        
+                    const overlap = GeoOperations.calculateOverlap(point, [GeoOperationsSpec.polygon]);
+                    Assert.equal(1, overlap.length)
+                }]
+            ]
+        )
+
     }
 }

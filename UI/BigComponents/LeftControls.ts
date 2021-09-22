@@ -24,7 +24,7 @@ export default class LeftControls extends Combine {
                 ),
             undefined
         );
-        
+
         const copyrightButton = new Toggle(
             toggledCopyright,
             new MapControlButton(Svg.copyright_svg())
@@ -61,7 +61,7 @@ export default class LeftControls extends Combine {
                 State.state.filterIsOpened
             ),
             new MapControlButton(Svg.filter_svg())
-                .onClick(() =>   State.state.filterIsOpened.setData(true)),
+                .onClick(() => State.state.filterIsOpened.setData(true)),
             State.state.filterIsOpened
         )
 
@@ -87,7 +87,7 @@ export default class LeftControls extends Combine {
         super([filterButton,
             downloadButtonn,
             copyrightButton])
-        
+
         this.SetClass("flex flex-col")
 
     }

@@ -13,7 +13,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 export default class OverpassFeatureSource implements FeatureSource {
 
     public readonly name = "OverpassFeatureSource"
-    
+
     /**
      * The last loaded features of the geojson
      */
@@ -23,6 +23,7 @@ export default class OverpassFeatureSource implements FeatureSource {
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0);
+    
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
     /**
      * The previous bounds for which the query has been run at the given zoom level
@@ -35,6 +36,8 @@ export default class OverpassFeatureSource implements FeatureSource {
     private readonly _location: UIEventSource<Loc>;
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
     private readonly _leafletMap: UIEventSource<L.Map>;
+    private readonly _interpreterUrl: UIEventSource<string>;
+    private readonly _timeout: UIEventSource<number>;
 
     /**
      * The most important layer should go first, as that one gets first pick for the questions
@@ -42,10 +45,15 @@ export default class OverpassFeatureSource implements FeatureSource {
     constructor(
         location: UIEventSource<Loc>,
         layoutToUse: UIEventSource<LayoutConfig>,
-        leafletMap: UIEventSource<L.Map>) {
+        leafletMap: UIEventSource<L.Map>,
+        interpreterUrl: UIEventSource<string>,
+        timeout: UIEventSource<number>,
+        maxZoom = undefined) {
         this._location = location;
         this._layoutToUse = layoutToUse;
         this._leafletMap = leafletMap;
+        this._interpreterUrl = interpreterUrl;
+        this._timeout = timeout;
         const self = this;
 
         this.sufficientlyZoomed = location.map(location => {
@@ -53,7 +61,14 @@ export default class OverpassFeatureSource implements FeatureSource {
                     return false;
                 }
                 let minzoom = Math.min(...layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
-                return location.zoom >= minzoom;
+                if(location.zoom < minzoom){
+                    return false;
+                }
+                if(maxZoom !== undefined && location.zoom > maxZoom){
+                    return false;
+                }
+                
+                return true;
             }, [layoutToUse]
         );
         for (let i = 0; i < 25; i++) {
@@ -67,6 +82,9 @@ export default class OverpassFeatureSource implements FeatureSource {
         location.addCallback(() => {
             self.update()
         });
+        leafletMap.addCallbackAndRunD(_ => {
+            self.update();
+        })
     }
 
     public ForceRefresh() {
@@ -123,7 +141,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         if (filters.length + extraScripts.length === 0) {
             return undefined;
         }
-        return new Overpass(new Or(filters), extraScripts);
+        return new Overpass(new Or(filters), extraScripts, this._interpreterUrl, this._timeout);
     }
 
     private update(): void {
@@ -137,7 +155,10 @@ export default class OverpassFeatureSource implements FeatureSource {
             return;
         }
 
-        const bounds = this._leafletMap.data.getBounds();
+        const bounds = this._leafletMap.data?.getBounds();
+        if (bounds === undefined) {
+            return;
+        }
 
         const diff = this._layoutToUse.data.widenFactor;
 
@@ -176,7 +197,6 @@ export default class OverpassFeatureSource implements FeatureSource {
                 function countDown() {
                     window?.setTimeout(
                         function () {
-                            console.log("Countdown: ", self.timeout.data)
                             if (self.timeout.data > 1) {
                                 self.timeout.setData(self.timeout.data - 1);
                                 window.setTimeout(

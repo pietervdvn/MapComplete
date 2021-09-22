@@ -10,10 +10,31 @@ import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import ShowDataLayer from "../ShowDataLayer";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import * as L from "leaflet";
 
 export default class LocationInput extends InputElement<Loc> {
 
+    private static readonly matchLayout = new UIEventSource(new LayoutConfig({
+        description: "Matchpoint style",
+        icon: "./assets/svg/crosshair-empty.svg",
+        id: "matchpoint",
+        language: ["en"],
+        layers: [{
+            id: "matchpoint", source: {
+                osmTags: {and: []}
+            },
+            icon: "./assets/svg/crosshair-empty.svg"
+        }],
+        maintainer: "MapComplete",
+        startLat: 0,
+        startLon: 0,
+        startZoom: 0,
+        title: "Location input",
+        version: "0"
+
+    }));
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
     private _centerLocation: UIEventSource<Loc>;
     private readonly mapBackground: UIEventSource<BaseLayer>;
     private readonly _snapTo: UIEventSource<{ feature: any }[]>
@@ -21,7 +42,6 @@ export default class LocationInput extends InputElement<Loc> {
     private readonly _snappedPoint: UIEventSource<any>
     private readonly _maxSnapDistance: number
     private readonly _snappedPointTags: any;
-    public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
 
     constructor(options: {
         mapBackground?: UIEventSource<BaseLayer>,
@@ -103,7 +123,7 @@ export default class LocationInput extends InputElement<Loc> {
             this._value = this._snappedPoint.map(f => {
                 const [lon, lat] = f.geometry.coordinates;
                 return {
-                    lon: lon, lat: lat, zoom: undefined 
+                    lon: lon, lat: lat, zoom: undefined
                 }
             })
 
@@ -122,16 +142,59 @@ export default class LocationInput extends InputElement<Loc> {
 
     protected InnerConstructElement(): HTMLElement {
         try {
+            const clickLocation = new UIEventSource<Loc>(undefined);
             const map = new Minimap(
                 {
                     location: this._centerLocation,
-                    background: this.mapBackground
+                    background: this.mapBackground,
+                    attribution: this.mapBackground !== State.state.backgroundLayer,
+                    lastClickLocation: clickLocation
                 }
             )
+            clickLocation.addCallbackAndRunD(location => this._centerLocation.setData(location))
             map.leafletMap.addCallbackAndRunD(leaflet => {
-                leaflet.setMaxBounds(
-                    leaflet.getBounds().pad(0.15)
-                )
+                const bounds = leaflet.getBounds()
+                leaflet.setMaxBounds(bounds.pad(0.15))
+                const data = {
+                    type: "FeatureCollection",
+                    features: [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    bounds.getEast(),
+                                    bounds.getNorth()
+                                ],
+                                [
+                                    bounds.getWest(),
+                                    bounds.getNorth()
+                                ],
+                                [
+                                    bounds.getWest(),
+                                    bounds.getSouth()
+                                ],
+
+                                [
+                                    bounds.getEast(),
+                                    bounds.getSouth()
+                                ],
+                                [
+                                    bounds.getEast(),
+                                    bounds.getNorth()
+                                ]
+                            ]
+                        }
+                    }]
+                }
+                // @ts-ignore
+                L.geoJSON(data, {
+                    style: {
+                        color: "#f00",
+                        weight: 2,
+                        opacity: 0.4
+                    }
+                }).addTo(leaflet)
             })
 
             if (this._snapTo !== undefined) {
@@ -164,15 +227,15 @@ export default class LocationInput extends InputElement<Loc> {
                 }
 
                 leaflet.setMaxZoom(layer.max_zoom)
-                leaflet.setMinZoom(layer.max_zoom - 3)
+                leaflet.setMinZoom(layer.max_zoom - 2)
                 leaflet.setZoom(layer.max_zoom - 1)
 
             }, [map.leafletMap])
             return new Combine([
                 new Combine([
-                    Svg.crosshair_empty_ui()
-                        .SetClass("block relative")
-                        .SetStyle("left: -1.25rem; top: -1.25rem; width: 2.5rem; height: 2.5rem")
+                    Svg.move_arrows_ui()
+                        .SetClass("block relative pointer-events-none")
+                        .SetStyle("left: -2.5rem; top: -2.5rem; width: 5rem; height: 5rem")
                 ]).SetClass("block w-0 h-0 z-10 relative")
                     .SetStyle("background: rgba(255, 128, 128, 0.21); left: 50%; top: 50%"),
                 map
@@ -184,25 +247,5 @@ export default class LocationInput extends InputElement<Loc> {
             return undefined;
         }
     }
-
-    private static readonly matchLayout = new UIEventSource(new LayoutConfig({
-        description: "Matchpoint style",
-        icon: "./assets/svg/crosshair-empty.svg",
-        id: "matchpoint",
-        language: ["en"],
-        layers: [{
-            id: "matchpoint", source: {
-                osmTags: {and: []}
-            },
-            icon: "./assets/svg/crosshair-empty.svg"
-        }],
-        maintainer: "MapComplete",
-        startLat: 0,
-        startLon: 0,
-        startZoom: 0,
-        title: "Location input",
-        version: "0"
-
-    }));
 
 }

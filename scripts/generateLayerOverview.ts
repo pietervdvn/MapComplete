@@ -1,7 +1,6 @@
 import ScriptUtils from "./ScriptUtils";
 import {writeFileSync} from "fs";
 import * as licenses from "../assets/generated/license_info.json"
-import AllKnownLayers from "../Customizations/AllKnownLayers";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
@@ -25,6 +24,9 @@ class LayerOverviewUtils {
         const themeFiles: LayoutConfigJson[] = ScriptUtils.getThemeFiles().map(x => x.parsed);
 
         console.log("Discovered", layerFiles.length, "layers and", themeFiles.length, "themes\n")
+        if (layerFiles.length + themeFiles.length === 0) {
+            throw "Panic: no themes and layers loaded!"
+        }
         return {
             layers: layerFiles,
             themes: themeFiles
@@ -46,7 +48,7 @@ class LayerOverviewUtils {
             errorCount.push("Layer " + layerJson.id + "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
         }
         try {
-            const layer = new LayerConfig(layerJson, AllKnownLayers.sharedUnits, "test", true)
+            const layer = new LayerConfig(layerJson, "test", true)
             const images = Array.from(layer.ExtractImages())
             const remoteImages = images.filter(img => img.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
@@ -56,10 +58,10 @@ class LayerOverviewUtils {
             if (path != undefined && path.indexOf(expected) < 0) {
                 errorCount.push("Layer is in an incorrect place. The path is " + path + ", but expected " + expected)
             }
-            if(layerJson["hideUnderlayingFeaturesMinPercentage"] !== undefined){
-                errorCount.push("Layer "+layer.id+" contains an old 'hideUnderlayingFeaturesMinPercentage'")
-            }            
-            
+            if (layerJson["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
+                errorCount.push("Layer " + layer.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'")
+            }
+
 
             for (const image of images) {
                 if (image.indexOf("{") >= 0) {
@@ -101,7 +103,7 @@ class LayerOverviewUtils {
                 throw "Duplicate identifier: " + layerFile.parsed.id + " in file " + layerFile.path
             }
             layerErrorCount.push(...this.validateLayer(layerFile.parsed, layerFile.path, knownPaths))
-            knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed, AllKnownLayers.sharedUnits))
+            knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed))
         }
 
         let themeErrorCount = []
@@ -110,6 +112,9 @@ class LayerOverviewUtils {
             const themePath = themeInfo.path
             if (typeof themeFile.language === "string") {
                 themeErrorCount.push("The theme " + themeFile.id + " has a string as language. Please use a list of strings")
+            }
+            if (themeFile["units"] !== undefined) {
+                themeErrorCount.push("The theme " + themeFile.id + " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) ")
             }
             for (const layer of themeFile.layers) {
                 if (typeof layer === "string") {
@@ -146,11 +151,10 @@ class LayerOverviewUtils {
                     themeErrorCount.push("Theme ids should be in lowercase, but it is " + theme.id)
                 }
                 let filename = themePath.substring(themePath.lastIndexOf("/") + 1, themePath.length - 5)
-                if(theme.id !== filename){
-                    themeErrorCount.push("Theme ids should be the same as the name.json, but we got id: " + theme.id + " and filename "+filename+" ("+themePath+")")
+                if (theme.id !== filename) {
+                    themeErrorCount.push("Theme ids should be the same as the name.json, but we got id: " + theme.id + " and filename " + filename + " (" + themePath + ")")
                 }
-            
-            
+
             } catch (e) {
                 themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
             }

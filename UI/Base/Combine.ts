@@ -15,33 +15,33 @@ export default class Combine extends BaseUIElement {
                 return el;
             });
     }
-    
+
+    AsMarkdown(): string {
+        return this.uiElements.map(el => el.AsMarkdown()).join(this.HasClass("flex-col") ? "\n\n" : " ");
+    }
+
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
 
-        try{
-            
-     
-        for (const subEl of this.uiElements) {
-            if(subEl === undefined || subEl === null){
-                continue;
+        try {
+
+
+            for (const subEl of this.uiElements) {
+                if (subEl === undefined || subEl === null) {
+                    continue;
+                }
+                const subHtml = subEl.ConstructElement()
+                if (subHtml !== undefined) {
+                    el.appendChild(subHtml)
+                }
             }
-            const subHtml = subEl.ConstructElement()
-            if(subHtml !== undefined){
-                el.appendChild(subHtml)
-            }
-        }
-        }catch(e){
+        } catch (e) {
             const domExc = e as DOMException
             console.error("DOMException: ", domExc.name)
             el.appendChild(new FixedUiElement("Could not generate this combine!").SetClass("alert").ConstructElement())
         }
-        
+
         return el;
-    }
-    
-    AsMarkdown(): string {
-        return this.uiElements.map(el => el.AsMarkdown()).join(this.HasClass("flex-col") ? "\n\n" : " ");
     }
 
 }

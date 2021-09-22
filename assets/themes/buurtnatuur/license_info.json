@@ -1,70 +1,70 @@
 [
   {
+    "path": "ANB.jpg",
+    "license": "Logo; All rights reserved",
     "authors": [
       "Agentschap Natuur en Bos"
     ],
-    "path": "ANB.jpg",
-    "license": "Logo; All rights reserved",
     "sources": [
       "https://www.natuurenbos.be/"
     ]
   },
   {
+    "path": "Natuurpunt.jpg",
+    "license": "Logo; All rights reserved",
     "authors": [
       "Natuurpunt"
     ],
-    "path": "Natuurpunt.jpg",
-    "license": "Logo; All rights reserved",
     "sources": [
       "https://www.natuurpunt.be/"
     ]
   },
   {
+    "path": "forest.svg",
+    "license": "CC-BY 3.0",
     "authors": [
       "@ Federico Sibella"
     ],
-    "path": "forest.svg",
-    "license": "CC-BY 3.0",
     "sources": [
       "https://www.onlinewebfonts.com/icon/498112"
     ]
   },
   {
+    "path": "groen_logo.svg",
+    "license": "Logo; All rights reserved",
     "authors": [
       "Groen"
     ],
-    "path": "groen_logo.svg",
-    "license": "Logo; All rights reserved",
     "sources": [
       "https://www.groen.be/"
     ]
   },
   {
+    "path": "nature_reserve.svg",
+    "license": "CC-BY 3.0",
     "authors": [
       "@ Эдуард Черных"
     ],
-    "path": "nature_reserve.svg",
-    "license": "CC-BY 3.0",
     "sources": [
       "https://www.onlinewebfonts.com/icon/389579"
     ]
   },
   {
+    "path": "park.svg",
+    "license": "CC-BY 3.0",
     "authors": [
       "@sterankofrank"
     ],
-    "path": "park.svg",
-    "license": "CC-BY 3.0",
     "sources": [
       "http://www.onlinewebfonts.com/icon/425974"
     ]
   },
   {
+    "path": "social_image.jpg",
+    "license": "All rights reserved",
     "authors": [
       "Groen"
     ],
-    "path": "social_image.jpg",
-    "license": "All rights reserved",
     "sources": []
   }
 ]

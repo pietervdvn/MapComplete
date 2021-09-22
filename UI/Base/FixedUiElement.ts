@@ -7,8 +7,12 @@ export class FixedUiElement extends BaseUIElement {
         super();
         this._html = html ?? "";
     }
-    
+
     InnerRender(): string {
+        return this._html;
+    }
+
+    AsMarkdown(): string {
         return this._html;
     }
 
@@ -16,10 +20,6 @@ export class FixedUiElement extends BaseUIElement {
         const e = document.createElement("span")
         e.innerHTML = this._html
         return e;
-    }
-    
-    AsMarkdown(): string {
-        return this._html;
     }
 
 }

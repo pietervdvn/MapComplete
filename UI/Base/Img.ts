@@ -4,11 +4,15 @@ import BaseUIElement from "../BaseUIElement";
 export default class Img extends BaseUIElement {
     private _src: string;
     private readonly _rawSvg: boolean;
+    private _options: { fallbackImage?: string };
 
-    constructor(src: string, rawSvg = false) {
+    constructor(src: string, rawSvg = false, options?: {
+        fallbackImage?: string
+    }) {
         super();
         this._src = src;
         this._rawSvg = rawSvg;
+        this._options = options;
     }
 
     static AsData(source: string) {
@@ -23,7 +27,7 @@ export default class Img extends BaseUIElement {
     }
 
     protected InnerConstructElement(): HTMLElement {
-
+        const self = this;
         if (this._rawSvg) {
             const e = document.createElement("div")
             e.innerHTML = this._src
@@ -34,6 +38,15 @@ export default class Img extends BaseUIElement {
         el.src = this._src;
         el.onload = () => {
             el.style.opacity = "1"
+        }
+        el.onerror = () => {
+            if (self._options?.fallbackImage) {
+                if(el.src === self._options.fallbackImage){
+                    // Sigh... nothing to be done anymore
+                    return;
+                }
+                el.src = self._options.fallbackImage
+            }
         }
         return el;
     }

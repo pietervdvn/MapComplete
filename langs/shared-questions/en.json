@@ -1,24 +1,12 @@
 {
     "undefined": {
-        "phone": {
-            "question": "What is the phone number of {name}?"
+        "description": {
+            "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
         },
         "email": {
             "question": "What is the email address of {name}?"
         },
-        "website": {
-            "question": "What is the website of {name}?"
-        },
-        "description": {
-            "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
-        },
-        "opening_hours": {
-            "question": "What are the opening hours of {name}?",
-            "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
-        },
         "level": {
-            "question": "On what level is this feature located?",
-            "render": "Located on the {level}th floor",
             "mappings": {
                 "0": {
                     "then": "Located underground"
@@ -27,9 +15,52 @@
                     "then": "Located on the ground floor"
                 },
                 "2": {
+                    "then": "Located on the ground floor"
+                },
+                "3": {
                     "then": "Located on the first floor"
                 }
-            }
+            },
+            "question": "On what level is this feature located?",
+            "render": "Located on the {level}th floor"
+        },
+        "opening_hours": {
+            "question": "What are the opening hours of {name}?",
+            "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Cash is accepted here"
+                },
+                "1": {
+                    "then": "Payment cards are accepted here"
+                }
+            },
+            "question": "Which methods of payment are accepted here?"
+        },
+        "phone": {
+            "question": "What is the phone number of {name}?"
+        },
+        "website": {
+            "question": "What is the website of {name}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "This place is specially adapated for wheelchair users"
+                },
+                "1": {
+                    "then": "This place is easily reachable with a wheelchair"
+                },
+                "2": {
+                    "then": "It is possible to reach this place in a wheelchair, but it is not easy"
+                },
+                "3": {
+                    "then": "This place is not reachable with a wheelchair"
+                }
+            },
+            "question": "Is this place accessible with a wheelchair?"
         }
     }
 }

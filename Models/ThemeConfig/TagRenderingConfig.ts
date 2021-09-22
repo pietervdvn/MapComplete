@@ -6,7 +6,6 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 import {Utils} from "../../Utils";
-import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -68,7 +67,9 @@ export default class TagRenderingConfig {
         }
         if (json.freeform) {
 
-
+            if(json.freeform.addExtraTags !== undefined && json.freeform.addExtraTags.map === undefined){
+                throw `Freeform.addExtraTags should be a list of strings - not a single string (at ${context})`
+            }
             this.freeform = {
                 key: json.freeform.key,
                 type: json.freeform.type ?? "string",

@@ -1,12 +1,13 @@
 {
     "bench": {
         "name": "Bangku",
-        "title": {
-            "render": "Bangku"
+        "presets": {
+            "0": {
+                "title": "Bangku"
+            }
         },
         "tagRenderings": {
             "1": {
-                "render": "Sandaran",
                 "mappings": {
                     "0": {
                         "then": "Sandaran: Ya"
@@ -15,7 +16,8 @@
                         "then": "Sandaran: Tidak"
                     }
                 },
-                "question": "Apakah bangku ini memiliki sandaran?"
+                "question": "Apakah bangku ini memiliki sandaran?",
+                "render": "Sandaran"
             },
             "2": {
                 "render": "{seats} kursi"
@@ -24,20 +26,18 @@
                 "render": "Warna: {colour}"
             }
         },
-        "presets": {
-            "0": {
-                "title": "Bangku"
-            }
+        "title": {
+            "render": "Bangku"
         }
     },
     "bench_at_pt": {
-        "title": {
-            "render": "Bangku"
-        },
         "tagRenderings": {
             "1": {
                 "render": "{name}"
             }
+        },
+        "title": {
+            "render": "Bangku"
         }
     },
     "bike_parking": {
@@ -63,13 +63,13 @@
     },
     "drinking_water": {
         "name": "Air minum",
-        "title": {
-            "render": "Air minum"
-        },
         "presets": {
             "0": {
                 "title": "Air minum"
             }
+        },
+        "title": {
+            "render": "Air minum"
         }
     },
     "ghost_bike": {
@@ -103,11 +103,9 @@
         }
     },
     "tree_node": {
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
+        "presets": {
+            "2": {
+                "title": "Pohon"
             }
         },
         "tagRenderings": {
@@ -115,9 +113,11 @@
                 "render": "Nama: {name}"
             }
         },
-        "presets": {
-            "2": {
-                "title": "Pohon"
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
             }
         }
     },
@@ -128,13 +128,13 @@
                 "title": "Sudut pandang"
             }
         },
-        "title": {
-            "render": "Sudut pandang"
-        },
         "tagRenderings": {
             "1": {
                 "question": "Apakah Anda ingin menambahkan deskripsi?"
             }
+        },
+        "title": {
+            "render": "Sudut pandang"
         }
     }
 }

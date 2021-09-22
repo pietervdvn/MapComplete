@@ -21,14 +21,14 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
     constructor(isShown: UIEventSource<boolean>) {
         const layoutToUse = State.state.layoutToUse.data;
-        super (
+        super(
             () => layoutToUse.title.Clone(),
             () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails, isShown),
-            "welcome" ,isShown
+            "welcome", isShown
         )
     }
-    
-    private static ConstructBaseTabs(layoutToUse: LayoutConfig, isShown: UIEventSource<boolean>): { header: string | BaseUIElement; content: BaseUIElement }[]{
+
+    private static ConstructBaseTabs(layoutToUse: LayoutConfig, isShown: UIEventSource<boolean>): { header: string | BaseUIElement; content: BaseUIElement }[] {
 
         let welcome: BaseUIElement = new ThemeIntroductionPanel(isShown);
         if (layoutToUse.id === personal.id) {
@@ -70,8 +70,8 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         );
 
         return new Toggle(
-          new TabbedComponent(tabsWithAboutMc, State.state.welcomeMessageOpenedTab),
-           new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab),
+            new TabbedComponent(tabsWithAboutMc, State.state.welcomeMessageOpenedTab),
+            new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab),
             userDetails.map((userdetails: UserDetails) =>
                 userdetails.loggedIn &&
                 userdetails.csCount >= Constants.userJourney.mapCompleteHelpUnlock)

@@ -51,15 +51,15 @@ function salvageThemes(preferences: any) {
             const prefix = "mapcomplete-installed-theme-";
             const key = prefix + failedTheme + "-combined-" + i;
             foundValue = preferences[key]
-            console.log(key,"-->",foundValue)
+            console.log(key, "-->", foundValue)
             i++;
             combined += foundValue ?? ""
         } while (foundValue !== undefined);
 
-        if(combined === ""){
+        if (combined === "") {
             return null;
         }
-        
+
         console.log("COmbined value is", combined)
         let jsonObject;
         try {
@@ -75,10 +75,10 @@ function salvageThemes(preferences: any) {
             contents: JSON.stringify(jsonObject, null, "  ")
         }
     })
-    return  Utils.NoNull(missingValues);
+    return Utils.NoNull(missingValues);
 }
 
-function clearAll(preferences){
+function clearAll(preferences) {
     for (const key in preferences) {
         const pref = connection.GetPreference(key, "");
         if (key.startsWith("mapcomplete")) {
@@ -100,9 +100,9 @@ function createTable(preferences: any) {
         return;
     }
     rendered = true;
-    const prefs: (BaseUIElement|string)[][] = [];
+    const prefs: (BaseUIElement | string)[][] = [];
     for (const key in preferences) {
-        if(!preferences.hasOwnProperty(key)){
+        if (!preferences.hasOwnProperty(key)) {
             continue;
         }
         const pref = connection.GetPreference(key, "");
@@ -127,11 +127,10 @@ function createTable(preferences: any) {
         [
             ...salvageThemes(preferences).map(theme => SalvageButton(theme)),
             new Table(
-                ["Key","","Value"],
+                ["Key", "", "Value"],
                 prefs
-                
             ),
-        new SubtleButton("./assets/svg/delete_icon.svg", "Delete all mapcomplete preferences (mangrove identies are preserved)").onClick(() => clearAll(preferences))]
+            new SubtleButton("./assets/svg/delete_icon.svg", "Delete all mapcomplete preferences (mangrove identies are preserved)").onClick(() => clearAll(preferences))]
     ).AttachTo("maindiv");
 }
 

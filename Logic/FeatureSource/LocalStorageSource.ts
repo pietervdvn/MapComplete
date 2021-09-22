@@ -16,14 +16,14 @@ export default class LocalStorageSource implements FeatureSource {
                 if (fromStorage == null) {
                     return;
                 }
-                const loaded :  { feature: any; freshness: Date | string }[]= 
+                const loaded: { feature: any; freshness: Date | string }[] =
                     JSON.parse(fromStorage);
-                
-                const parsed :  { feature: any; freshness: Date }[]= loaded.map(ff => ({
+
+                const parsed: { feature: any; freshness: Date }[] = loaded.map(ff => ({
                     feature: ff.feature,
-                    freshness : typeof ff.freshness == "string" ? new Date(ff.freshness) : ff.freshness
+                    freshness: typeof ff.freshness == "string" ? new Date(ff.freshness) : ff.freshness
                 }))
-                
+
                 this.features.setData(parsed);
                 console.log("Loaded ", loaded.length, " features from localstorage as cache")
             } catch (e) {

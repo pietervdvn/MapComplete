@@ -1,4 +1,5 @@
-import {Utils} from "../Utils";Utils.runningFromConsole = true;
+import {Utils} from "../Utils";
+Utils.runningFromConsole = true;
 import TagSpec from "./Tag.spec";
 import ImageAttributionSpec from "./ImageAttribution.spec";
 import GeoOperationsSpec from "./GeoOperations.spec";
@@ -45,6 +46,6 @@ const allTests = [
 
 for (const test of allTests) {
     if (test.failures.length > 0) {
-        throw "Some test failed: "+test.failures.join(", ")
+        throw "Some test failed: " + test.failures.join(", ")
     }
 }

@@ -135,20 +135,20 @@ export class Utils {
         }
         return newArr;
     }
-    
-    public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean{
-        if(t1.length !== t2.length){
+
+    public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean {
+        if (t1.length !== t2.length) {
             return false
         }
         eq = (a, b) => a === b
-        for (let i = 0; i < t1.length ; i++) {
-            if(!eq(t1[i] ,t2[i])){
+        for (let i = 0; i < t1.length; i++) {
+            if (!eq(t1[i], t2[i])) {
                 return false
             }
         }
         return true;
     }
-    
+
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
@@ -173,8 +173,9 @@ export class Utils {
             if (!tags.hasOwnProperty(key)) {
                 continue
             }
-            txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key])
+            txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key] ?? "")
         }
+        txt = txt.replace(new RegExp('{.*}', "g"), "")
         return txt;
     }
 
@@ -220,9 +221,7 @@ export class Utils {
 
             const sourceV = source[key];
             const targetV = target[key]
-            if (sourceV?.length !== undefined && targetV?.length !== undefined && key.startsWith("+")) {
-                target[key] = targetV.concat(sourceV)
-            } else if (typeof sourceV === "object") {
+            if (typeof sourceV === "object") {
                 if (sourceV === null) {
                     target[key] = null
                 } else if (targetV === undefined) {
@@ -373,7 +372,7 @@ export class Utils {
      * Triggers a 'download file' popup which will download the contents
      */
     public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt",
-                                                  options?: {        mimetype: string    }) {
+                                                  options?: { mimetype: string }) {
         const element = document.createElement("a");
         let file;
         if (typeof (contents) === "string") {
@@ -423,6 +422,12 @@ export class Utils {
         return bestColor ?? hex;
     }
 
+    public static setDefaults(options, defaults) {
+        for (let key in defaults) {
+            if (!(key in options)) options[key] = defaults[key];
+        }
+        return options;
+    }
 
     private static tile2long(x, z) {
         return (x / Math.pow(2, z) * 360 - 180);
@@ -468,11 +473,18 @@ export class Utils {
         }
     }
 
-    public static setDefaults(options, defaults) {
-        for (let key in defaults) {
-            if (!(key in options)) options[key] = defaults[key];
+    static sortKeys(o: any) {
+        const copy  = {}
+        let keys = Object.keys(o)
+        keys = keys.sort()
+        for (const key of keys) {
+            let v = o[key]
+            if(typeof v === "object"){
+                v = Utils.sortKeys(v)
+            }
+            copy[key] = v
         }
-        return options;
+        return copy
     }
 }
 

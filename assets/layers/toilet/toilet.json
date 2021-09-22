@@ -154,6 +154,18 @@
             "nl": "Toegankelijk na het vragen van de sleutel",
             "it": "Accessibile, ma occorre chiedere una chiave per accedere"
           }
+        },
+        {
+          "if": "access=public",
+          "then": {
+            "en": "Public access",
+            "de": "Öffentlicher Zugang",
+            "fr": "Accès publique",
+            "nl": "Publiek toegankelijk",
+            "it": "Accesso pubblico",
+            "ru": "Свободный доступ"
+          },
+          "hideInAnswer": true
         }
       ]
     },

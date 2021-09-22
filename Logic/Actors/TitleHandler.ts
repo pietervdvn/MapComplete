@@ -7,7 +7,7 @@ import Combine from "../../UI/Base/Combine";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 class TitleElement extends UIEventSource<string> {
-    
+
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
     private readonly _selectedFeature: UIEventSource<any>;
     private readonly _allElementsStorage: ElementStorage;
@@ -16,17 +16,17 @@ class TitleElement extends UIEventSource<string> {
                 selectedFeature: UIEventSource<any>,
                 allElementsStorage: ElementStorage) {
         super("MapComplete");
-        
+
         this._layoutToUse = layoutToUse;
         this._selectedFeature = selectedFeature;
         this._allElementsStorage = allElementsStorage;
-        
+
         this.syncWith(
             this._selectedFeature.map(
                 selected => {
-                    const defaultTitle = Translations.WT(this._layoutToUse.data?.title)?.txt ??"MapComplete"
+                    const defaultTitle = Translations.WT(this._layoutToUse.data?.title)?.txt ?? "MapComplete"
 
-                    if(selected === undefined){
+                    if (selected === undefined) {
                         return defaultTitle
                     }
 
@@ -49,10 +49,9 @@ class TitleElement extends UIEventSource<string> {
                 }
                 , [Locale.language, layoutToUse]
             )
-            
         )
-        
-        
+
+
     }
 
 }

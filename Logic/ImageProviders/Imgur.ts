@@ -6,8 +6,8 @@ import {UIEventSource} from "../UIEventSource";
 import BaseUIElement from "../../UI/BaseUIElement";
 
 export class Imgur extends ImageAttributionSource {
-    
-    public static readonly singleton = new Imgur(); 
+
+    public static readonly singleton = new Imgur();
 
     private constructor() {
         super();

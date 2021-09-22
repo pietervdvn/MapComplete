@@ -1,23 +1,23 @@
 [
   {
-    "authors": [
-      "Belgische Wetgever"
-    ],
-    "path": "woonerf.svg",
-    "license": "CC0",
-    "sources": [
-      "https://nl.wikipedia.org/wiki/Bestand:Belgian_road_sign_F12a.svg"
-    ]
-  },
-  {
+    "path": "slow_road.svg",
+    "license": "CC-BY-SA 4.0",
     "authors": [
       "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
     ],
-    "path": "slow_road.svg",
-    "license": "CC-BY-SA 4.0",
     "sources": [
       "https://createlli.com/",
       "https://www.provincieantwerpen.be/"
+    ]
+  },
+  {
+    "path": "woonerf.svg",
+    "license": "CC0",
+    "authors": [
+      "Belgische Wetgever"
+    ],
+    "sources": [
+      "https://nl.wikipedia.org/wiki/Bestand:Belgian_road_sign_F12a.svg"
     ]
   }
 ]

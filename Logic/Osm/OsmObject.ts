@@ -52,7 +52,7 @@ export abstract class OsmObject {
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = Number(splitted[1]);
-        if(idN <0){
+        if (idN < 0) {
             return;
         }
 
@@ -292,7 +292,7 @@ export abstract class OsmObject {
                 const element = data.elements.pop();
 
                 let nodes = []
-                if (data.elements.length > 2) {
+                if (self.type === "way" && data.elements.length >= 0) {
                     nodes = OsmObject.ParseObjects(data.elements)
                 }
 
@@ -438,15 +438,15 @@ export class OsmWay extends OsmObject {
 
         for (const nodeId of element.nodes) {
             const node = nodeDict.get(nodeId)
-            if(node === undefined){
+            if (node === undefined) {
                 console.error("Error: node ", nodeId, "not found in ", nodeDict)
                 // This is probably part of a relation which hasn't been fully downloaded
                 continue;
             }
             const cp = node.centerpoint();
             this.coordinates.push(cp);
-            latSum = cp[0]
-            lonSum = cp[1]
+            latSum += cp[0]
+            lonSum += cp[1]
         }
         let count = this.coordinates.length;
         this.lat = latSum / count;
@@ -498,7 +498,7 @@ export class OsmRelation extends OsmObject {
 
         let tags = this.TagsXML();
         let cs = ""
-        if(changesetId !== undefined){
+        if (changesetId !== undefined) {
             cs = `changeset="${changesetId}"`
         }
         return `    <relation id="${this.id}" ${cs} ${this.VersionXML()}>

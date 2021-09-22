@@ -100,7 +100,7 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
 
     public static construct(tags: UIEventSource<any>, imagePrefix = "image", loadSpecial = true): ImageSearcher {
         const key = tags.data["id"] + " " + imagePrefix + loadSpecial;
-        if (ImageSearcher._cache.has(key)) {
+        if (tags.data["id"] !== undefined && ImageSearcher._cache.has(key)) {
             return ImageSearcher._cache.get(key)
         }
 

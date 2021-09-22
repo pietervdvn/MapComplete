@@ -4,8 +4,8 @@ import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
-import BaseUIElement from "../../UI/BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {QueryParameters} from "../Web/QueryParameters";
 
 export default class GeoLocationHandler extends VariableUiElement {
     /**
@@ -94,8 +94,6 @@ export default class GeoLocationHandler extends VariableUiElement {
         super(
             hasLocation.map(
                 (hasLocationData) => {
-                    let icon: BaseUIElement;
-                    console.log("Determining icon:", permission.data, isActive.data, hasLocationData, isLocked.data, lastClickWithinThreeSecs.data)
                     if (permission.data === "denied") {
                         return Svg.location_refused_svg();
                     }
@@ -162,14 +160,17 @@ export default class GeoLocationHandler extends VariableUiElement {
                     } else {
                         lastClick.setData(new Date())
                     }
-                }else{
+                } else {
                     lastClick.setData(new Date())
                 }
             }
 
-            self.init(true);
+            self.init(true, true);
         });
-        this.init(false);
+
+        const latLonGiven = QueryParameters.wasInitialized("lat") && QueryParameters.wasInitialized("lon")
+
+        this.init(false, !latLonGiven);
 
         isLocked.addCallbackAndRunD(isLocked => {
             if (isLocked) {
@@ -178,7 +179,7 @@ export default class GeoLocationHandler extends VariableUiElement {
                 leafletMap.data?.dragging?.enable()
             }
         })
-        
+
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
@@ -217,7 +218,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         });
     }
 
-    private init(askPermission: boolean) {
+    private init(askPermission: boolean, forceZoom: boolean) {
         const self = this;
 
         if (self._isActive.data) {
@@ -231,7 +232,7 @@ export default class GeoLocationHandler extends VariableUiElement {
                 ?.then(function (status) {
                     console.log("Geolocation is already", status);
                     if (status.state === "granted") {
-                        self.StartGeolocating(false);
+                        self.StartGeolocating(forceZoom);
                     }
                     self._permission.setData(status.state);
                     status.onchange = function () {
@@ -243,10 +244,10 @@ export default class GeoLocationHandler extends VariableUiElement {
         }
 
         if (askPermission) {
-            self.StartGeolocating(true);
+            self.StartGeolocating(forceZoom);
         } else if (this._previousLocationGrant.data === "granted") {
             this._previousLocationGrant.setData("");
-            self.StartGeolocating(false);
+            self.StartGeolocating(forceZoom);
         }
     }
 

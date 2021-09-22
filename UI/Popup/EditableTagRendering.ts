@@ -16,7 +16,7 @@ export default class EditableTagRendering extends Toggle {
                 configuration: TagRenderingConfig,
                 units: Unit [],
                 editMode = new UIEventSource<boolean>(false)
-                ) {
+    ) {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration)
         answer.SetClass("w-full")
         let rendering = answer;
@@ -30,7 +30,6 @@ export default class EditableTagRendering extends Toggle {
                     });
 
 
-            
             const answerWithEditButton = new Combine([answer,
                 new Toggle(editButton, undefined, State.state.osmConnection.isLoggedIn)])
                 .SetClass("flex justify-between w-full")
@@ -47,7 +46,7 @@ export default class EditableTagRendering extends Toggle {
                 {
                     units: units,
                     cancelButton: cancelbutton,
-                    afterSave:   () => {
+                    afterSave: () => {
                         editMode.setData(false)
                     }
                 })
