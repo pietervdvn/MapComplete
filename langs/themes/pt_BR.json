@@ -170,5 +170,8 @@
         },
         "shortDescription": "Encontre locais para passar a noite com o seu campista",
         "title": "Locais de acampamento"
+    },
+    "ghostbikes": {
+        "title": "Bicicleta fantasma"
     }
 }

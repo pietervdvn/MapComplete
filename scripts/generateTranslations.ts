@@ -277,7 +277,12 @@ function loadTranslationFilesFrom(target: string): Map<string, any> {
     for (const translationFilePath of translationFilePaths) {
         let language = translationFilePath.substr(translationFilePath.lastIndexOf("/") + 1)
         language = language.substr(0, language.length - 5)
-        translationFiles.set(language, JSON.parse(readFileSync(translationFilePath, "utf8")))
+        try{
+            translationFiles.set(language, JSON.parse(readFileSync(translationFilePath, "utf8")))
+        }catch(e){
+            console.error("Invalid JSON file or file does not exist", translationFilePath)
+            throw e;
+        }
     }
     return translationFiles;
 }

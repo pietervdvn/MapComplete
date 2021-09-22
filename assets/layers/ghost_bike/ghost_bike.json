@@ -5,7 +5,19 @@
     "nl": "Witte Fietsen",
     "de": "Geisterrad",
     "it": "Bici fantasma",
-    "fr": "Vélos fantômes"
+    "fr": "Vélos fantômes",
+    "eo": "Fantombiciklo",
+    "es": "Bicicleta blanca",
+    "fi": "Haamupyörä",
+    "gl": "Bicicleta pantasma",
+    "hu": "Emlékkerékpár",
+    "ja": "ゴーストバイク",
+    "nb_NO": "Spøkelsessykler",
+    "pl": "Duch roweru",
+    "pt_BR": "Bicicleta fantasma",
+    "ru": "Велосипед Ghost",
+    "sv": "Spökcykel",
+    "zh_Hant": "幽靈單車"
   },
   "source": {
     "osmTags": "memorial=ghost_bike"
@@ -17,7 +29,19 @@
       "nl": "Witte Fiets",
       "de": "Geisterrad",
       "it": "Bici fantasma",
-      "fr": "Vélo fantôme"
+      "fr": "Vélo fantôme",
+      "eo": "Fantombiciklo",
+      "es": "Bicicleta blanca",
+      "fi": "Haamupyörä",
+      "gl": "Bicicleta pantasma",
+      "hu": "Emlékkerékpár",
+      "ja": "ゴーストバイク",
+      "nb_NO": "Spøkelsessykler",
+      "pl": "Duch roweru",
+      "pt_BR": "Bicicleta fantasma",
+      "ru": "Велосипед Ghost",
+      "sv": "Spökcykel",
+      "zh_Hant": "幽靈單車"
     },
     "mappings": [
       {

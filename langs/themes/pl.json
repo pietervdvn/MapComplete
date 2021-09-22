@@ -6,6 +6,9 @@
     "artwork": {
         "title": "Otwórz mapę dzieł sztuki"
     },
+    "ghostbikes": {
+        "title": "Duch roweru"
+    },
     "surveillance": {
         "description": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
         "shortDescription": "Kamery monitorujące i inne środki nadzoru"

@@ -194,5 +194,11 @@
                 "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
             }
         }
+    },
+    "ghost_bike": {
+        "name": "Duch roweru",
+        "title": {
+            "render": "Duch roweru"
+        }
     }
 }

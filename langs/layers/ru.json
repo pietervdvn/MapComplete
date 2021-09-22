@@ -616,6 +616,7 @@
         }
     },
     "ghost_bike": {
+        "name": "Велосипед Ghost",
         "tagRenderings": {
             "2": {
                 "render": "В знак памяти о {name}"
@@ -629,6 +630,9 @@
             "5": {
                 "render": "Установлен {start_date}"
             }
+        },
+        "title": {
+            "render": "Велосипед Ghost"
         }
     },
     "information_board": {

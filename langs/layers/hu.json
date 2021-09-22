@@ -198,5 +198,11 @@
         "title": {
             "render": "Kerékpáros parkoló"
         }
+    },
+    "ghost_bike": {
+        "name": "Emlékkerékpár",
+        "title": {
+            "render": "Emlékkerékpár"
+        }
     }
 }

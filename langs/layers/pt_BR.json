@@ -537,5 +537,11 @@
             },
             "render": "Reparo/loja de bicicletas"
         }
+    },
+    "ghost_bike": {
+        "name": "Bicicleta fantasma",
+        "title": {
+            "render": "Bicicleta fantasma"
+        }
     }
 }

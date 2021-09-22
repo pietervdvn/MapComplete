@@ -118,5 +118,11 @@
         "title": {
             "render": "Ladestasjon"
         }
+    },
+    "ghost_bike": {
+        "name": "Spøkelsessykler",
+        "title": {
+            "render": "Spøkelsessykler"
+        }
     }
 }

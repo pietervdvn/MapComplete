@@ -99,5 +99,11 @@
                 "title": "Pyöräpumppu"
             }
         }
+    },
+    "ghost_bike": {
+        "name": "Haamupyörä",
+        "title": {
+            "render": "Haamupyörä"
+        }
     }
 }

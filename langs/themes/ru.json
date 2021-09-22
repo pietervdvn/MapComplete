@@ -421,6 +421,9 @@
             }
         }
     },
+    "ghostbikes": {
+        "title": "Велосипед Ghost"
+    },
     "hailhydrant": {
         "layers": {
             "0": {
