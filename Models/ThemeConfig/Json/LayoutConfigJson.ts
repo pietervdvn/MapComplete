@@ -100,7 +100,7 @@ export interface LayoutConfigJson {
      * However, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.
      * For this, the bounds are widened in order to make a small pan still within bounds of the loaded data.
      *
-     * IF widenfactor is 0, this feature is disabled. A recommended value is between 0.5 and 0.01 (the latter for very dense queries)
+     * IF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3
      */
     widenFactor?: number;
 

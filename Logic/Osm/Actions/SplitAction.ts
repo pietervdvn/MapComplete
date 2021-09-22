@@ -15,6 +15,11 @@ export default class SplitAction extends OsmChangeAction {
     private readonly wayId: string;
     private readonly _splitPointsCoordinates: [number, number] []// lon, lat
 
+    /**
+     * 
+     * @param wayId
+     * @param splitPointCoordinates: lon, lat
+     */
     constructor(wayId: string, splitPointCoordinates: [number, number][]) {
         super()
         this.wayId = wayId;
@@ -39,12 +44,11 @@ export default class SplitAction extends OsmChangeAction {
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        const self = this;
-        const originalElement = <OsmWay>await OsmObject.DownloadObjectAsync(this.wayId)
+        const originalElement = <OsmWay> await OsmObject.DownloadObjectAsync(this.wayId)
         const originalNodes = originalElement.nodes;
 
         // First, calculate splitpoints and remove points close to one another
-        const splitInfo = self.CalculateSplitCoordinates(originalElement)
+        const splitInfo = this.CalculateSplitCoordinates(originalElement)
         // Now we have a list with e.g. 
         // [ { originalIndex: 0}, {originalIndex: 1, doSplit: true}, {originalIndex: 2}, {originalIndex: undefined, doSplit: true}, {originalIndex: 3}]
 
@@ -166,8 +170,9 @@ export default class SplitAction extends OsmChangeAction {
     private CalculateSplitCoordinates(osmWay: OsmWay, toleranceInM = 5): SplitInfo[] {
         const wayGeoJson = osmWay.asGeoJson()
         // Should be [lon, lat][]
-        const originalPoints = osmWay.coordinates.map(c => <[number, number]>c.reverse())
+        const originalPoints : [number, number][] = osmWay.coordinates.map(c => [c[1], c[0]])
         const allPoints: {
+            // lon, lat
             coordinates: [number, number],
             isSplitPoint: boolean,
             originalIndex?: number, // Original index
@@ -180,6 +185,7 @@ export default class SplitAction extends OsmChangeAction {
             // - `dist`: distance between pt and the closest point, 
             // `location`: distance along the line between start and the closest point.
             let projected = GeoOperations.nearestPoint(wayGeoJson, c)
+            // c is lon lat
             return ({
                 coordinates: c,
                 isSplitPoint: true,
@@ -233,8 +239,12 @@ export default class SplitAction extends OsmChangeAction {
             if (distToNext > distToPrev) {
                 closest = prevPoint
             }
-
             // Ok, we have a closest point!
+            
+            if(closest.originalIndex === 0 || closest.originalIndex === originalPoints.length){
+                // We can not split on the first or last points...
+                continue
+            }
             closest.isSplitPoint = true;
             allPoints.splice(i, 1)
 

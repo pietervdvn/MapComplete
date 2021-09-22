@@ -21,7 +21,7 @@ import {BBox} from "../GeoOperations";
 import {TileHierarchyMerger} from "./TiledFeatureSource/TileHierarchyMerger";
 import RelationsTracker from "../Osm/RelationsTracker";
 import {NewGeometryFromChangesFeatureSource} from "./Sources/NewGeometryFromChangesFeatureSource";
-import ChangeGeometryApplicator from "./ChangeApplicator";
+import ChangeGeometryApplicator from "./Sources/ChangeGeometryApplicator";
 
 
 export default class FeaturePipeline implements FeatureSourceState {
@@ -159,7 +159,6 @@ export default class FeaturePipeline implements FeatureSourceState {
 
         // Whenever fresh data comes in, we need to update the metatagging
         self.newDataLoadedSignal.stabilized(1000).addCallback(src => {
-            console.log("Got an update from ", src.name)
             self.updateAllMetaTagging()
         })
 
@@ -183,7 +182,6 @@ export default class FeaturePipeline implements FeatureSourceState {
     }
 
     private updateAllMetaTagging() {
-        console.log("Updating the meta tagging")
         const self = this;
         this.perLayerHierarchy.forEach(hierarchy => {
             hierarchy.loadedTiles.forEach(src => {

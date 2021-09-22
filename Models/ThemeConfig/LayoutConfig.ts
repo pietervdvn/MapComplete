@@ -87,7 +87,7 @@ export default class LayoutConfig {
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;
-        this.widenFactor = json.widenFactor ?? 0.05;
+        this.widenFactor = json.widenFactor ?? 1.5;
         this.roamingRenderings = (json.roamingRenderings ?? []).map((tr, i) => {
                 if (typeof tr === "string") {
                     if (SharedTagRenderings.SharedTagRendering.get(tr) !== undefined) {

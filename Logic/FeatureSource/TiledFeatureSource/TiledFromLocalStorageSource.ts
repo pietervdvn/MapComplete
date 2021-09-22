@@ -27,7 +27,7 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                 return Number(key.substring(prefix.length));
             })
 
-        console.log("Avaible datasets in local storage:", indexes)
+        console.log("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Utils.tile_from_index(i).join("/")).join(", "))
 
         const zLevels = indexes.map(i => i % 100)
         const indexesSet = new Set(indexes)

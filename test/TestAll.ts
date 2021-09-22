@@ -8,7 +8,8 @@ import OsmObjectSpec from "./OsmObject.spec";
 import ScriptUtils from "../scripts/ScriptUtils";
 import UnitsSpec from "./Units.spec";
 import RelationSplitHandlerSpec from "./RelationSplitHandler.spec";
-
+import SplitActionSpec from "./SplitAction.spec";
+import {Utils} from "../Utils";
 
 
 ScriptUtils.fixUtils()
@@ -21,8 +22,18 @@ const allTests = [
     new ThemeSpec(),
     new UtilsSpec(),
     new UnitsSpec(),
-    new RelationSplitHandlerSpec()
+    new RelationSplitHandlerSpec(),
+    new SplitActionSpec()
 ]
+
+Utils.externalDownloadFunction = async (url) => {
+    console.error("Fetching ", url, "blocked in tests, use Utils.injectJsonDownloadForTests")
+    const data = await ScriptUtils.DownloadJSON(url)
+    console.log("\n\n ----------- \nBLOCKED DATA\n Utils.injectJsonDownloadForTests(\n" +
+        "       ", JSON.stringify(url),", \n",
+        "       ", JSON.stringify(data), "\n    )\n------------------\n\n")
+    throw "Detected internet access for URL " + url + ", please inject it with Utils.injectJsonDownloadForTests"
+}
 
 let args = [...process.argv]
 args.splice(0, 2)
@@ -34,15 +45,15 @@ if (args.length > 0) {
     testsToRun = allTests.filter(t => args.indexOf(t.name) >= 0)
 }
 
-if(testsToRun.length == 0){
+if (testsToRun.length == 0) {
     throw "No tests found"
 }
 
-for (let i = 0; i < testsToRun.length; i++){
+for (let i = 0; i < testsToRun.length; i++) {
     const test = testsToRun[i];
-    ScriptUtils.erasableLog(" Running test", i, "/", allTests.length)
+    console.log(" Running test", i, "/", allTests.length, test.name)
     allFailures.push(...(test.Run() ?? []))
-
+    console.log("OK!")
 }
 if (allFailures.length > 0) {
     for (const failure of allFailures) {
@@ -50,4 +61,4 @@ if (allFailures.length > 0) {
     }
     throw "Some test failed"
 }
-console.log("All tests successful: ", allTests.map(t => t.name).join(", "))
+console.log("All tests successful: ", testsToRun.map(t => t.name).join(", "))

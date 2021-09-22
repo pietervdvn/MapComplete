@@ -15,13 +15,15 @@ export interface RelationSplitInput {
  * When a way is split and this way is part of a relation, the relation should be updated too to have the new segment if relevant.
  */
 export default class RelationSplitHandler extends OsmChangeAction {
+    private readonly _input: RelationSplitInput;
 
     constructor(input: RelationSplitInput) {
         super()
+        this._input = input;
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        return [];
+       return new InPlaceReplacedmentRTSH(this._input).CreateChangeDescriptions(changes)
     }
 
 

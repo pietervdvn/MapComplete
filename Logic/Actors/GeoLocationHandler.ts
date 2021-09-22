@@ -230,7 +230,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             navigator?.permissions
                 ?.query({name: "geolocation"})
                 ?.then(function (status) {
-                    console.log("Geolocation is already", status);
+                    console.log("Geolocation permission is ", status.state);
                     if (status.state === "granted") {
                         self.StartGeolocating(forceZoom);
                     }
@@ -289,7 +289,6 @@ export default class GeoLocationHandler extends VariableUiElement {
 
     private StartGeolocating(zoomToGPS = true) {
         const self = this;
-        console.log("Starting geolocation");
 
         this._lastUserRequest = zoomToGPS ? new Date() : new Date(0);
         if (self._permission.data === "denied") {
@@ -300,8 +299,6 @@ export default class GeoLocationHandler extends VariableUiElement {
         if (this._currentGPSLocation.data !== undefined) {
             this.MoveToCurrentLoction(16);
         }
-
-        console.log("Searching location using GPS");
 
         if (self._isActive.data) {
             return;

@@ -14,7 +14,7 @@ import {LocalStorageSource} from "../Web/LocalStorageSource";
 export class Changes {
 
 
-    private static _nextId = -1; // Newly assigned ID's are negative
+    private _nextId : number = -1; // Newly assigned ID's are negative
     public readonly name = "Newly added features"
     /**
      * All the newly created features as featureSource + all the modified features
@@ -30,6 +30,8 @@ export class Changes {
     constructor() {
         // We keep track of all changes just as well
         this.allChanges.setData([...this.pendingChanges.data])
+        // If a pending change contains a negative ID, we save that
+       this._nextId = Math.min(-1, ...this.pendingChanges.data?.map(pch => pch.id) ?? [])
     }
 
     private static createChangesetFor(csId: string,
@@ -77,7 +79,7 @@ export class Changes {
      * Returns a new ID and updates the value for the next ID
      */
     public getNewID() {
-        return Changes._nextId--;
+        return this._nextId--;
     }
 
     /**

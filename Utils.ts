@@ -259,10 +259,10 @@ export class Utils {
     }
 
     static tile_bounds_lon_lat(z: number, x: number, y: number): [[number, number], [number, number]] {
-        return [[Utils.tile2long(x, z),Utils.tile2lat(y, z)], [Utils.tile2long(x + 1, z), Utils.tile2lat(y + 1, z)]]
+        return [[Utils.tile2long(x, z), Utils.tile2lat(y, z)], [Utils.tile2long(x + 1, z), Utils.tile2lat(y + 1, z)]]
     }
-    
-    static tile_index(z: number, x: number, y: number):number{
+
+    static tile_index(z: number, x: number, y: number): number {
         return ((x * (2 << z)) + y) * 100 + z
     }
 
@@ -271,7 +271,7 @@ export class Utils {
      * @param index
      * @returns 'zxy'
      */
-    static tile_from_index(index: number) : [number, number, number]{
+    static tile_from_index(index: number): [number, number, number] {
         const z = index % 100;
         const factor = 2 << z
         index = Math.floor(index / 100)
@@ -356,35 +356,43 @@ export class Utils {
         return result;
     }
 
+    private static injectedDownloads = {}
+
+    public static injectJsonDownloadForTests(url: string, data) {
+        Utils.injectedDownloads[url] = data
+    }
+
     public static downloadJson(url: string): Promise<any> {
+
+        const injected = Utils.injectedDownloads[url]
+        if (injected !== undefined) {
+            console.log("Using injected resource for test for URL", url)
+            return new Promise((resolve, _) => resolve(injected))
+        }
+
         if (this.externalDownloadFunction !== undefined) {
             return this.externalDownloadFunction(url)
         }
 
-        return new Promise(
-            (resolve, reject) => {
-                try {
-                    const xhr = new XMLHttpRequest();
-                    xhr.onload = () => {
-                        if (xhr.status == 200) {
-                            try {
-                                resolve(JSON.parse(xhr.response))
-                            } catch (e) {
-                                reject("Not a valid json: " + xhr.response)
-                            }
-                        } else {
-                            reject(xhr.statusText)
+        return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.onload = () => {
+                    if (xhr.status == 200) {
+                        try {
+                            console.log("Got a response! Parsing now...")
+                            resolve(JSON.parse(xhr.response))
+                        } catch (e) {
+                            reject("Not a valid json: " + xhr.response)
                         }
-                    };
-                    xhr.open('GET', url);
-                    xhr.setRequestHeader("accept", "application/json")
-                    xhr.send();
-                } catch (e) {
-                    reject(e)
-                }
+                    } else {
+                        reject(xhr.statusText)
+                    }
+                };
+                xhr.open('GET', url);
+                xhr.setRequestHeader("accept", "application/json")
+                xhr.send();
             }
         )
-
     }
 
     /**
@@ -486,12 +494,12 @@ export class Utils {
     }
 
     static sortKeys(o: any) {
-        const copy  = {}
+        const copy = {}
         let keys = Object.keys(o)
         keys = keys.sort()
         for (const key of keys) {
             let v = o[key]
-            if(typeof v === "object"){
+            if (typeof v === "object") {
                 v = Utils.sortKeys(v)
             }
             copy[key] = v

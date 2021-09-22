@@ -31,7 +31,7 @@ export class Overpass {
         this._relationTracker = relationTracker
     }
 
-    queryGeoJson(bounds: Bounds, continuation: ((any, date: Date) => void), onFail: ((reason) => void)): void {
+    public async queryGeoJson(bounds: Bounds): Promise<[any, Date]> {
 
         let query = this.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
@@ -40,24 +40,18 @@ export class Overpass {
             query = Overpass.testUrl;
         }
         const self = this;
-        Utils.downloadJson(query)
-            .then(json => {
-                if (json.elements === [] && ((json.remarks ?? json.remark).indexOf("runtime error") >= 0)) {
-                    console.log("Timeout or other runtime error");
-                    onFail("Runtime error (timeout)")
-                    return;
-                }
+        const json = await Utils.downloadJson(query)
+        
+        if (json.elements === [] && ((json.remarks ?? json.remark).indexOf("runtime error") >= 0)) {
+            console.log("Timeout or other runtime error");
+            throw("Runtime error (timeout)")
+        }
 
-
-                self._relationTracker.RegisterRelations(json)
-                // @ts-ignore
-                const geojson = OsmToGeoJson.default(json);
-                const osmTime = new Date(json.osm3s.timestamp_osm_base);
-
-                continuation(geojson, osmTime);
-            }).catch(e => {
-            onFail(e);
-        })
+        self._relationTracker.RegisterRelations(json)
+        // @ts-ignore
+        const geojson = OsmToGeoJson.default(json);
+        const osmTime = new Date(json.osm3s.timestamp_osm_base);
+        return [geojson, osmTime];
     }
 
     buildQuery(bbox: string): string {

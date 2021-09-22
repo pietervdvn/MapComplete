@@ -1,15 +1,13 @@
-import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
-import {Changes} from "../Osm/Changes";
-import {ChangeDescription, ChangeDescriptionTools} from "../Osm/Actions/ChangeDescription";
-import {Utils} from "../../Utils";
-import FilteredLayer from "../../Models/FilteredLayer";
-import {OsmNode, OsmRelation, OsmWay} from "../Osm/OsmObject";
-
-
 /**
  * Applies geometry changes from 'Changes' onto every feature of a featureSource
  */
+import {Changes} from "../../Osm/Changes";
+import {UIEventSource} from "../../UIEventSource";
+import {FeatureSourceForLayer, IndexedFeatureSource} from "../FeatureSource";
+import FilteredLayer from "../../../Models/FilteredLayer";
+import {ChangeDescription, ChangeDescriptionTools} from "../../Osm/Actions/ChangeDescription";
+
+
 export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name: string;
@@ -76,6 +74,7 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
             // We only apply the last change as that one'll have the latest geometry
             const change = changesForFeature[changesForFeature.length - 1]
             copy.feature.geometry = ChangeDescriptionTools.getGeojsonGeometry(change)
+            console.log("Applying a geometry change onto ", feature, change, copy)
             newFeatures.push(copy)
         }
         this.features.setData(newFeatures)

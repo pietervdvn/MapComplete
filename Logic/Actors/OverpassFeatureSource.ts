@@ -184,8 +184,8 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
             return;
         }
         this.runningQuery.setData(true);
-        overpass.queryGeoJson(queryBounds,
-            function (data, date) {
+        overpass.queryGeoJson(queryBounds).
+            then(([data, date]) => {
                 self._previousBounds.get(z).push(queryBounds);
                 self.retries.setData(0);
                 const features = data.features.map(f => ({feature: f, freshness: date}));
@@ -197,12 +197,12 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
                     console.error("Got the overpass response, but could not process it: ", e, e.stack)
                 }
                 self.runningQuery.setData(false);
-            },
-            function (reason) {
+            })
+            .catch((reason) => {
                 self.retries.data++;
                 self.ForceRefresh();
                 self.timeout.setData(self.retries.data * 5);
-                console.error(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to ${reason}`);
+                console.error(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to`, reason);
                 self.retries.ping();
                 self.runningQuery.setData(false);
 

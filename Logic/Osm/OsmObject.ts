@@ -63,17 +63,26 @@ export abstract class OsmObject {
         if (idN < 0) {
             return undefined;
         }
-        switch (type) {
-            case("node"):
-                return await new OsmNode(idN).Download();
-            case("way"):
-                return await new OsmWay(idN).Download();
-            case("relation"):
-                return await new OsmRelation(idN).Download();
-            default:
-                throw ("Invalid object type:" + type + id);
 
+        const full = !id.startsWith("way") ? "" : "/full";
+        const url = `${OsmObject.backendURL}api/0.6/${id}${full}`;
+        const rawData = await Utils.downloadJson(url)
+        // A full query might contain more then just the requested object (e.g. nodes that are part of a way, where we only want the way)
+        const parsed = OsmObject.ParseObjects(rawData.elements);
+        // Lets fetch the object we need
+        for (const osmObject of parsed) {
+            if(osmObject.type !== type){
+                continue;
+            }
+            if(osmObject.id !== idN){
+                continue
+            }
+            // Found the one!
+            return osmObject
         }
+        throw "PANIC: requested object is not part of the response"
+        
+        
     }
 
 
@@ -205,6 +214,7 @@ export abstract class OsmObject {
     private static ParseObjects(elements: any[]): OsmObject[] {
         const objects: OsmObject[] = [];
         const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
+
         for (const element of elements) {
             const type = element.type;
             const idN = element.id;
@@ -226,6 +236,11 @@ export abstract class OsmObject {
                     osmObject.SaveExtraData(element, [])
                     break;
             }
+            
+            if (osmObject !== undefined && OsmObject.backendURL !== OsmObject.defaultBackend) {
+                osmObject.tags["_backend"] = OsmObject.backendURL
+            }
+            
             osmObject?.LoadData(element)
             objects.push(osmObject)
         }
@@ -237,7 +252,7 @@ export abstract class OsmObject {
 
     public abstract asGeoJson(): any;
 
-    abstract SaveExtraData(element: any, allElements: any[]);
+    abstract SaveExtraData(element: any, allElements: OsmObject[]);
 
     /**
      * Generates the changeset-XML for tags
@@ -259,37 +274,6 @@ export abstract class OsmObject {
         }
         return tags;
     }
-
-    /**
-     * Downloads the object, a full download for ways and relations
-     * @constructor
-     */
-    async Download(): Promise<OsmObject> {
-        const self = this;
-        const full = this.type !== "way" ? "" : "/full";
-        const url = `${OsmObject.backendURL}api/0.6/${this.type}/${this.id}${full}`;
-        return await Utils.downloadJson(url).then(data => {
-                const element = data.elements.pop();
-                let nodes = []
-                if (self.type === "way" && data.elements.length >= 0) {
-                    nodes = OsmObject.ParseObjects(data.elements)
-                }
-
-                if (self.type === "rellation") {
-                    throw "We should save some extra data"
-                }
-
-                self.LoadData(element)
-                self.SaveExtraData(element, nodes);
-
-                if (OsmObject.backendURL !== OsmObject.defaultBackend) {
-                    self.tags["_backend"] = OsmObject.backendURL
-                }
-                return this;
-            }
-        );
-    }
-
 
     abstract ChangesetXML(changesetId: string): string;
 
@@ -363,7 +347,7 @@ export class OsmNode extends OsmObject {
 
 export class OsmWay extends OsmObject {
 
-    nodes: number[];
+    nodes: number[] = [];
     // The coordinates of the way, [lat, lon][]
     coordinates: [number, number][] = []
     lat: number;
@@ -400,6 +384,10 @@ export class OsmWay extends OsmObject {
             nodeDict.set(node.id, node)
         }
 
+        if (element.nodes === undefined) {
+            console.log("PANIC")
+        }
+
         for (const nodeId of element.nodes) {
             const node = nodeDict.get(nodeId)
             if (node === undefined) {
@@ -419,8 +407,8 @@ export class OsmWay extends OsmObject {
     }
 
     public asGeoJson() {
-        let coordinates : ([number, number][] | [number, number][][]) = this.coordinates.map(c => <[number, number]>c.reverse());
-        if(this.isPolygon()){
+        let coordinates: ([number, number][] | [number, number][][]) = this.coordinates.map(c => [c[1], c[0]]);
+        if (this.isPolygon()) {
             coordinates = [coordinates]
         }
         return {

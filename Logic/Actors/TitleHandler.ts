@@ -8,8 +8,6 @@ export default class TitleHandler {
     constructor(state) {
         const currentTitle: UIEventSource<string> = state.selectedElement.map(
             selected => {
-                console.log("UPdating title")
-
                 const layout = state.layoutToUse.data
                 const defaultTitle = Translations.WT(layout?.title)?.txt ?? "MapComplete"
 
