@@ -150,9 +150,6 @@
             "ph_open": "ouvert",
             "ph_not_known": " "
         },
-        "download": {
-            "title": ""
-        },
         "pdf": {
             "versionInfo": ""
         }
@@ -179,12 +176,8 @@
         "plz_login": "Connectez vous pour laisser un avis"
     },
     "delete": {
-        "notEnoughExperience": "",
         "explanations": {
             "hardDelete": ""
         }
-    },
-    "split": {
-        "inviteToSplit": ""
     }
 }

@@ -143,9 +143,6 @@
         },
         "welcomeBack": "ログインしました、お帰りなさい!",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
-        "download": {
-            "downloadAsPdf": ""
-        },
         "histogram": {
             "error_loading": ""
         }
@@ -179,12 +176,6 @@
         "addPicture": "写真の追加"
     },
     "delete": {
-        "reasons": {
-            "disused": ""
-        },
         "isDeleted": ""
-    },
-    "split": {
-        "loginToSplit": ""
     }
 }
