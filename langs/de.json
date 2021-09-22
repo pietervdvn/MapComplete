@@ -149,9 +149,6 @@
             "codeContributionsBy": "MapComplete wurde von {contributors} und <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} weiteren Beitragenden</a> erstellt",
             "themeBy": "Thema betreut von {author}",
             "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>"
-        },
-        "pdf": {
-            "attr": ""
         }
     },
     "favourite": {
@@ -174,8 +171,5 @@
         "plz_login": "Melde dich an, um eine Rezension zu vergeben",
         "affiliated_reviewer_warning": "(Partner-Rezension)",
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar."
-    },
-    "delete": {
-        "readMessages": ""
     }
 }

@@ -149,9 +149,6 @@
             "ph_closed": "fermé",
             "ph_open": "ouvert",
             "ph_not_known": " "
-        },
-        "pdf": {
-            "versionInfo": ""
         }
     },
     "favourite": {
@@ -174,10 +171,5 @@
         "tos": "En publiant un avis, vous êtes d'accord avec <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">les conditions d'utilisation et la politique de confidentialité de Mangrove.reviews</a>",
         "attribution": "Les avis sont fournis par <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> et sont disponibles sous licence <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "plz_login": "Connectez vous pour laisser un avis"
-    },
-    "delete": {
-        "explanations": {
-            "hardDelete": ""
-        }
     }
 }

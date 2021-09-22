@@ -30,15 +30,10 @@
                 "monday": "Mån"
             }
         },
-        "sharescreen": {
-            "editThisTheme": ""
-        },
         "add": {
             "addNewMapLabel": ""
         },
-        "about": "",
         "fewChangesBefore": "",
-        "welcomeBack": "",
         "oneSkippedQuestion": ""
     },
     "centerMessage": {
@@ -62,9 +57,6 @@
         "uploadingMultiple": "Laddar upp {count} bilder…",
         "uploadingPicture": "Laddar upp din bild…",
         "addPicture": "Lägg till bild"
-    },
-    "delete": {
-        "loginToDelete": ""
     },
     "reviews": {
         "attribution": ""

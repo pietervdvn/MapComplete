@@ -1,35 +1,19 @@
 {
-    "centerMessage": {
-        "loadingData": ""
-    },
     "reviews": {
         "posting_as": ""
     },
     "general": {
-        "questions": {
-            "emailOf": ""
-        },
         "opening_hours": {
             "ph_not_known": ""
-        },
-        "sharescreen": {
-            "fsLayers": ""
         },
         "add": {
             "stillLoading": ""
         },
-        "search": {
-            "error": ""
-        },
         "weekdays": {
             "saturday": ""
-        },
-        "customThemeIntro": ""
+        }
     },
     "split": {
         "inviteToSplit": ""
-    },
-    "delete": {
-        "whyDelete": ""
     }
 }

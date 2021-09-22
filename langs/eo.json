@@ -1,37 +1,19 @@
 {
     "general": {
-        "add": {
-            "confirmButton": ""
-        },
         "sharescreen": {
             "fsWelcomeMessage": ""
-        },
-        "weekdays": {
-            "abbreviations": {
-                "friday": ""
-            }
         },
         "morescreen": {
             "createYourOwnTheme": ""
         },
-        "attribution": {
-            "themeBy": ""
-        },
-        "noTagsSelected": "",
-        "search": {
-            "searching": ""
-        }
+        "noTagsSelected": ""
     },
     "image": {
         "uploadingMultiple": ""
     },
-    "reviews": {
-        "saved": ""
-    },
     "delete": {
         "explanations": {
             "selectReason": ""
-        },
-        "delete": ""
+        }
     }
 }

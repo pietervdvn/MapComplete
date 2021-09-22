@@ -1,27 +1,15 @@
 {
     "general": {
-        "sharescreen": {
-            "fsWelcomeMessage": ""
-        },
         "opening_hours": {
             "openTill": ""
         },
-        "add": {
-            "pleaseLogin": ""
-        },
         "pickLanguage": "",
-        "loginOnlyNeededToEdit": "",
-        "openStreetMapIntro": "",
-        "noTagsSelected": ""
+        "openStreetMapIntro": ""
     },
     "reviews": {
         "saving_review": ""
     },
     "delete": {
-        "delete": "",
         "onlyEditedByLoggedInUser": ""
-    },
-    "image": {
-        "uploadDone": ""
     }
 }

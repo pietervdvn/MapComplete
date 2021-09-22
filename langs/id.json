@@ -61,13 +61,9 @@
             "tuesday": "Selasa",
             "monday": "Senin"
         },
-        "pdf": {
-            "versionInfo": ""
-        },
         "add": {
             "title": ""
-        },
-        "aboutMapcomplete": ""
+        }
     },
     "image": {
         "doDelete": "Buang gambar",
@@ -105,8 +101,5 @@
         "pickTheme": "Pilih tema di bawah ini untuk memulai.",
         "intro": "MapComplete adalah penampil dan editor OpenStreetMap, yang menunjukkan informasi tentang tema tertentu.",
         "title": "Selamat datang di MapComplete"
-    },
-    "delete": {
-        "onlyEditedByLoggedInUser": ""
     }
 }

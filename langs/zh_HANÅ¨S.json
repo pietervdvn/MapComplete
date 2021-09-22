@@ -1,37 +1,19 @@
 {
     "general": {
-        "sharescreen": {
-            "fsUserbadge": ""
-        },
         "add": {
             "confirmButton": ""
-        },
-        "weekdays": {
-            "abbreviations": {
-                "saturday": ""
-            }
         },
         "opening_hours": {
             "open_24_7": ""
         },
-        "morescreen": {
-            "createYourOwnTheme": ""
-        },
         "questions": {
             "websiteIs": ""
-        },
-        "fewChangesBefore": ""
+        }
     },
     "reviews": {
         "no_rating": ""
     },
-    "image": {
-        "ccb": ""
-    },
     "index": {
         "title": ""
-    },
-    "delete": {
-        "useSomethingElse": ""
     }
 }
