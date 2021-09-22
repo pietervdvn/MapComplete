@@ -56,11 +56,8 @@
             "confirmButton": "Fügen Sie hier eine {category} hinzu.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
             "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
             "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen",
-            "warnVisibleForEveryone": "",
             "addNewMapLabel": "",
-            "disableFilters": "",
-            "disableFiltersExplanation": "",
-            "presetInfo": ""
+            "disableFiltersExplanation": ""
         },
         "pickLanguage": "Wählen Sie eine Sprache: ",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
@@ -143,7 +140,6 @@
             "ph_not_known": " ",
             "ph_closed": "geschlossen",
             "ph_open": "geöffnet",
-            "loadingCountry": "",
             "ph_open_as_usual": ""
         },
         "attribution": {
@@ -158,27 +154,16 @@
             "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>"
         },
         "download": {
-            "licenseInfo": "",
             "noDataLoaded": "",
-            "downloadAsPdfHelper": "",
             "downloadGeojson": "",
-            "includeMetaData": "",
             "downloadGeoJsonHelper": "",
-            "title": "",
             "downloadAsPdf": "",
-            "downloadCSV": "",
             "downloadCSVHelper": ""
         },
-        "loginOnlyNeededToEdit": "",
         "openTheMap": "",
         "pdf": {
-            "attrBackground": "",
             "generatedWith": "",
-            "versionInfo": "",
             "attr": ""
-        },
-        "histogram": {
-            "error_loading": ""
         },
         "testing": ""
     },
@@ -204,36 +189,23 @@
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar."
     },
     "delete": {
-        "isntAPoint": "",
         "reasons": {
             "test": "",
-            "notFound": "",
             "disused": ""
         },
-        "loginToDelete": "",
         "isDeleted": "",
-        "safeDelete": "",
         "explanations": {
             "selectReason": "",
-            "softDelete": "",
             "hardDelete": ""
         },
-        "notEnoughExperience": "",
         "onlyEditedByLoggedInUser": "",
-        "whyDelete": "",
         "cancel": "",
-        "delete": "",
         "readMessages": "",
-        "loading": "",
-        "partOfOthers": "",
-        "useSomethingElse": ""
+        "partOfOthers": ""
     },
     "split": {
         "hasBeenSplit": "",
-        "inviteToSplit": "",
         "loginToSplit": "",
-        "cancel": "",
-        "splitTitle": "",
-        "split": ""
+        "splitTitle": ""
     }
 }
