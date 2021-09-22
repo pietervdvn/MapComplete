@@ -1,17 +1,18 @@
+/*
+    TailwindCSS JIT-Mode Input file.
+    Use TailwindCSS functions and directives here – https://tailwindcss.com/docs/functions-and-directives
+    About JIT-Mode: https://tailwindcss.com/docs/just-in-time-mode#styles-rebuild-in-an-infinite-loop
+
+    TailwindCSS CLI generates the css/index-tailwind-output.css file based on this file.
+    It is not used directly in the app.
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
     @variants responsive {
-        .max-h-65vh {
-            max-height: 65vh;
-        }
-
-        .max-h-20vh {
-            max-height: 20vh;
-        }
-
         .z-above-map {
             z-index: 10000
         }
@@ -19,7 +20,6 @@
         .z-above-controls {
             z-index: 10001
         }
-
     }
 
     .btn {
