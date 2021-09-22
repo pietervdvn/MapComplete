@@ -24,7 +24,8 @@
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
         "intro": "MapComplete és un visor i editor d'OpenStreetMap, que et mostra informació sobre un tema específic",
-        "title": "Benvingut/da a MapComplete"
+        "title": "Benvingut/da a MapComplete",
+        "pickTheme": ""
     },
     "general": {
         "loginWithOpenStreetMap": "Entra a OpenStreetMap",
@@ -54,7 +55,12 @@
             "confirmIntro": "<h3>Afegir {title} aquí?</h3>El punt que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixin. Moltes aplicacions fan servir aquestes dades.",
             "confirmButton": "Afegir {category} aquí",
             "openLayerControl": "Obrir el control de capes",
-            "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa"
+            "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa",
+            "addNewMapLabel": "",
+            "disableFiltersExplanation": "",
+            "disableFilters": "",
+            "presetInfo": "",
+            "warnVisibleForEveryone": ""
         },
         "pickLanguage": "Tria idioma: ",
         "about": "Edita facilment i afegeix punts a OpenStreetMap d'una temàtica determinada",
@@ -102,7 +108,8 @@
         "noTagsSelected": "No s'han seleccionat etiquetes",
         "backgroundMap": "Mapa de fons",
         "layerSelection": {
-            "zoomInToSeeThisLayer": "Amplia per veure aquesta capa"
+            "zoomInToSeeThisLayer": "Amplia per veure aquesta capa",
+            "title": ""
         },
         "weekdays": {
             "abbreviations": {
@@ -131,7 +138,11 @@
             "closed_permanently": "Tancat - sense dia d'obertura conegut",
             "ph_not_known": " ",
             "ph_closed": "tancat",
-            "ph_open": "tancat"
+            "ph_open": "tancat",
+            "loadingCountry": "",
+            "ph_open_as_usual": "",
+            "open_24_7": "",
+            "error_loading": ""
         },
         "attribution": {
             "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
@@ -141,8 +152,35 @@
             "iconAttribution": {
                 "title": "Icones utilitzades"
             },
-            "themeBy": "Tema mantingut per {author}"
-        }
+            "themeBy": "Tema mantingut per {author}",
+            "codeContributionsBy": ""
+        },
+        "download": {
+            "noDataLoaded": "",
+            "title": "",
+            "licenseInfo": "",
+            "downloadCSVHelper": "",
+            "downloadCSV": "",
+            "includeMetaData": "",
+            "downloadGeoJsonHelper": "",
+            "downloadAsPdf": "",
+            "downloadGeojson": "",
+            "downloadAsPdfHelper": ""
+        },
+        "aboutMapcomplete": "",
+        "testing": "",
+        "pdf": {
+            "versionInfo": "",
+            "generatedWith": "",
+            "attrBackground": "",
+            "attr": ""
+        },
+        "customThemeIntro": "",
+        "histogram": {
+            "error_loading": ""
+        },
+        "loginOnlyNeededToEdit": "",
+        "openTheMap": ""
     },
     "favourite": {
         "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
@@ -157,6 +195,45 @@
         "title_singular": "Una revisió",
         "title": "{count} revisions",
         "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
-        "saving_review": "Desant…"
+        "saving_review": "Desant…",
+        "attribution": "",
+        "tos": "",
+        "no_rating": "",
+        "posting_as": "",
+        "affiliated_reviewer_warning": "",
+        "i_am_affiliated": ""
+    },
+    "delete": {
+        "delete": "",
+        "isntAPoint": "",
+        "reasons": {
+            "disused": "",
+            "notFound": "",
+            "test": ""
+        },
+        "whyDelete": "",
+        "useSomethingElse": "",
+        "explanations": {
+            "selectReason": "",
+            "hardDelete": "",
+            "softDelete": ""
+        },
+        "loading": "",
+        "partOfOthers": "",
+        "readMessages": "",
+        "notEnoughExperience": "",
+        "onlyEditedByLoggedInUser": "",
+        "safeDelete": "",
+        "loginToDelete": "",
+        "isDeleted": "",
+        "cancel": ""
+    },
+    "split": {
+        "splitTitle": "",
+        "inviteToSplit": "",
+        "loginToSplit": "",
+        "hasBeenSplit": "",
+        "cancel": "",
+        "split": ""
     }
 }
