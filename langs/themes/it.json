@@ -531,6 +531,8 @@
     "trees": {
         "description": "Mappa tutti gli alberi!",
         "shortDescription": "Mappa tutti gli alberi",
-        "title": "Alberi"
+    },
+    "ghostbikes": {
+        "title": "Bici fantasma"
     }
 }

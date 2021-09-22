@@ -32,7 +32,10 @@
         }
     },
     "personal": {
-        "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
-        "title": "Interficie personal"
+        "title": "Interficie personal",
+        "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies"
+    },
+    "ghostbikes": {
+        "title": "Bicicleta blanca"
     }
 }

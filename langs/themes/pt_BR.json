@@ -166,9 +166,13 @@
                     },
                     "render": "Estação de despejo {nome}"
                 }
-            }
-        },
-        "shortDescription": "Encontre locais para passar a noite com o seu campista",
+            },
+           "shortDescription": "Encontre locais para passar a noite com o seu campista",
         "title": "Locais de acampamento"
+        }
+    },
+    "ghostbikes": {
+        "title": "Bicicleta fantasma"
+        }
     }
 }

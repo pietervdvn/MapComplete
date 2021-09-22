@@ -642,6 +642,8 @@
     "trees": {
         "description": "Нанесите все деревья на карту!",
         "shortDescription": "Карта деревьев",
-        "title": "Деревья"
+    },
+    "ghostbikes": {
+        "title": "Велосипед Ghost"
     }
 }

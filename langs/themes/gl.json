@@ -4,7 +4,10 @@
         "title": "Cyclofix - Un mapa aberto para os ciclistas"
     },
     "personal": {
-        "description": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
-        "title": "Tema personalizado"
+        "title": "Tema personalizado",
+        "description": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas"
+    },
+    "ghostbikes": {
+        "title": "Bicicleta pantasma"
     }
 }

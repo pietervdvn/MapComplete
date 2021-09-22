@@ -15,7 +15,13 @@
         "title": "Mapa otwartych toalet"
     },
     "trees": {
-        "shortDescription": "Sporządzić mapę wszystkich drzew",
-        "title": "Drzewa"
+        "title": "Drzewa",
+        "shortDescription": "Sporządzić mapę wszystkich drzew"
+    },
+    "artwork": {
+        "title": "Otwórz mapę dzieł sztuki"
+    },
+    "ghostbikes": {
+        "title": "Duch roweru"
     }
 }
