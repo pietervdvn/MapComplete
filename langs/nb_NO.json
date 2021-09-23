@@ -4,19 +4,103 @@
         "cancel": "Avbryt",
         "save": "Lagre",
         "search": {
-            "searching": "Søker …"
+            "searching": "Søker …",
+            "error": "Noe gikk galt …",
+            "nothing": "Fant ikke noe …",
+            "search": "Søk etter et sted"
         },
-        "welcomeBack": "Du er innlogget. Velkommen tilbake."
+        "welcomeBack": "Du er innlogget. Velkommen tilbake.",
+        "noTagsSelected": "Ingen etiketter valgt",
+        "getStartedLogin": "Logg inn med OpenStreetMap for å begynne",
+        "goToInbox": "Åpne innboks",
+        "sharescreen": {
+            "fsAddNew": "Skru på «Legg til ny POI»-knapp",
+            "fsLayerControlToggle": "Start med lagkontrollen utvidet",
+            "fsLayers": "Skru på lagkontrollen",
+            "fsWelcomeMessage": "Vis velkomstoppsprettsmeldingen og tilknyttede faner",
+            "fsSearch": "Skru på søkefeltet",
+            "fsUserbadge": "Skru på innloggingsknappen",
+            "intro": "<h3>Del dette kartet</h3> Del dette kartet ved å kopiere lenken nedenfor, som du så sender til venner og familie:",
+            "copiedToClipboard": "Lenke kopiert til utklippstavle",
+            "thanksForSharing": "Takk for at du deler.",
+            "editThemeDescription": "Legg til eller endre spørsmål for dette karttemaet",
+            "editThisTheme": "Rediger dette temaet"
+        },
+        "questions": {
+            "emailIs": "E-postadressen til denne {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
+            "emailOf": "Hva er e-postadressen til {category}?",
+            "websiteIs": "Nettside: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteOf": "Hva er nettsiden til {category}?",
+            "phoneNumberIs": "Telefonnummeret til denne {category} er <a target=\"_blank\">{phone}</a>",
+            "phoneNumberOf": "Hva er telefonnummeret til {category}?"
+        },
+        "about": "Rediger og legg til OpenStreetMap for et gitt tema",
+        "add": {
+            "layerNotEnabled": "Laget {layer} er ikke påskrudd. Skru det på for å legge til et punkt",
+            "confirmButton": "Legg til en {category} her.<br><div class=\"alert\">Ditt tillegg er synlig for hvem som helst</div>",
+            "stillLoading": "Dataen lastes fremdeles inn. Vent litt før du legger til et nytt punkt.",
+            "openLayerControl": "Åpne dette lagets kontrollboks",
+            "zoomInFurther": "Forstørr mer for å legge til et nytt punkt.",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Logg inn for å legge til et nytt punkt</a>",
+            "intro": "Du klikket et sted der ingen data er tilgjengelig enda.<br>",
+            "title": "Legg til et nytt punkt?",
+            "addNew": "Legg til en ny {category} her"
+        },
+        "opening_hours": {
+            "ph_not_known": " ",
+            "closed_permanently": "Stengt på ubestemt tid",
+            "closed_until": "Stengt til {date}",
+            "open_24_7": "Åpen hele døgnet",
+            "ph_open": "åpen",
+            "ph_closed": "stengt",
+            "openTill": "til",
+            "opensAt": "fra"
+        },
+        "noNameCategory": "{category} uten navn",
+        "nameInlineQuestion": "Navnet på denne {category} er $$$",
+        "pickLanguage": "Velg et språk: ",
+        "osmLinkTooltip": "Vis dette objektet i OpenStreetMap for historikk og flere redigeringsmuligheter",
+        "number": "tall",
+        "skippedQuestions": "Noen spørsmål har blitt hoppet over",
+        "oneSkippedQuestion": "Ett spørsmål har blitt hoppet over",
+        "returnToTheMap": "Gå tilbake til kartet",
+        "loginToStart": "Logg inn for å besvare dette spørsmålet",
+        "weekdays": {
+            "sunday": "Søndag",
+            "saturday": "Lørdag",
+            "friday": "Fredag",
+            "thursday": "Torsdag",
+            "wednesday": "Onsdag",
+            "tuesday": "Tirsdag",
+            "monday": "Mandag",
+            "abbreviations": {
+                "sunday": "Søn",
+                "saturday": "Lør",
+                "friday": "Fre",
+                "thursday": "Tor",
+                "wednesday": "Ons",
+                "tuesday": "Tir",
+                "monday": "Man"
+            }
+        },
+        "layerSelection": {
+            "title": "Velg lag",
+            "zoomInToSeeThisLayer": "Forstørr kartet for å vise dette laget"
+        },
+        "backgroundMap": "Bakgrunnskart",
+        "loginWithOpenStreetMap": "Logg inn med OpenStreetMap"
     },
     "index": {
         "pickTheme": "Begynn ved å velge ett av temaene nedenfor.",
         "title": "Velkommen til MapComplete",
-        "intro": "MapComplete er en OpenStreetMap-verktøy som også kan vise info om et gitt tema."
+        "intro": "MapComplete er en OpenStreetMap-verktøy som også kan vise info om et gitt tema.",
+        "#": "Disse tekstene vises over temaknappene når det ikke er lastet inn noe tema"
     },
     "centerMessage": {
         "ready": "Ferdig",
         "zoomIn": "Forstørr for å vise eller redigere data",
-        "loadingData": "Laster inn data …"
+        "loadingData": "Laster inn data …",
+        "retrying": "Kunne ikke laste inn data. Prøver igjen om {count} sekunder …"
     },
     "image": {
         "isDeleted": "Slettet",
@@ -25,6 +109,34 @@
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
         "addPicture": "Legg til bilde",
-        "pleaseLogin": "Logg inn for å legge til et bilde"
+        "pleaseLogin": "Logg inn for å legge til et bilde",
+        "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. IKke last opp Google Maps, Google Street View eller andre kopirettsbeskyttede kilder.",
+        "uploadFailed": "Kunne ikke laste inn bildet ditt. Er du tilkoblet Internett og innvilger tilgang til tredjeparts-API-er? Kanskje Brave-nettleseren eller uMatrix-programtillegget blokkerer dem?",
+        "uploadDone": "<span class=\"thanks\">Bildet ditt har blitt lagt til. Takk for at du hjelper til.</span>",
+        "ccb": "med CC-BY-lisens",
+        "cco": "med fri anvendelse",
+        "ccbs": "med CC-BY-SA-lisens",
+        "willBePublished": "Ditt bilde vil bli publisert: "
+    },
+    "favourite": {
+        "panelIntro": "<h3>Ditt personaliserte tema</h3>Aktiver dine favorittlag fra alle de offisielle temaene",
+        "loginNeeded": "<h3>Logg inn</h3>Et personalisert snitt er kun tilgjengelig for OpenStreetMap-brukere",
+        "reload": "Last inn dataen igjen"
+    },
+    "reviews": {
+        "attribution": "Vurderinger drives av <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> og er tilgjengelige med <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0-lisens</a>.",
+        "tos": "Hvis du oppretter en vurdering, samtykker du til <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">tjenestevilkårene og personvernspraksisen til Mangrove.reviews</a>",
+        "plz_login": "Logg inn for å legge igjen en vurdering",
+        "saved": "<span class=\"thanks\">Vurdering lagret. Takk for at du deler.</span>",
+        "affiliated_reviewer_warning": "(Tilknyttet vurdering)",
+        "i_am_affiliated": "<span>Jeg har tilknytning til dette objektet</span><br><span class=\"subtle\">Huk av hvis du er eier, skaper, ansatt, …</span>",
+        "posting_as": "Poster som",
+        "no_rating": "Ingen vurdering gitt",
+        "no_reviews_yet": "Det finnes ingen vurderinger enda. Vær først med å skrive en for å hjelpe åpen data og bedriften.",
+        "write_a_comment": "Legg igjen en vurdering …",
+        "name_required": "Et navn kreves for å kunne vise og opprette vurderinger",
+        "title_singular": "Én vurdering",
+        "title": "{count} vurderinger",
+        "saving_review": "Lagrer …"
     }
 }
