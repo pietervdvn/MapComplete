@@ -760,7 +760,7 @@
                 "render": "Nama: {name}",
                 "mappings": {
                     "0": {
-                        "then": ""
+                        "then": "Pohon ini tidak memiliki nama."
                     }
                 },
                 "question": ""
@@ -774,7 +774,7 @@
                         "then": ""
                     },
                     "2": {
-                        "then": ""
+                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Tanpa daun permanen"
                     }
                 },
                 "question": ""
@@ -862,9 +862,9 @@
                     "then": "<i>{name}</i>"
                 }
             },
-            "render": ""
+            "render": "Pohon"
         },
-        "name": ""
+        "name": "Pohon"
     },
     "viewpoint": {
         "name": "Sudut pandang",
@@ -1406,7 +1406,7 @@
                         "then": ""
                     },
                     "4": {
-                        "then": ""
+                        "then": "Akses publik"
                     },
                     "1": {
                         "then": ""
@@ -1468,7 +1468,7 @@
                         "then": ""
                     },
                     "0": {
-                        "then": ""
+                        "then": "Hanya ada toilet duduk"
                     },
                     "3": {
                         "then": ""
@@ -1502,9 +1502,9 @@
             }
         },
         "title": {
-            "render": ""
+            "render": "Toilet"
         },
-        "name": ""
+        "name": "Toilet"
     },
     "bike_cafe": {
         "tagRenderings": {
@@ -2416,26 +2416,26 @@
             "1": {
                 "mappings": {
                     "5": {
-                        "then": ""
+                        "then": "Main bola basket di sini"
                     },
                     "3": {
-                        "then": ""
+                        "then": "Main tenis di sini"
                     },
                     "4": {
-                        "then": ""
+                        "then": "Main Korfball di sini"
                     },
                     "2": {
                         "then": ""
                     },
                     "1": {
-                        "then": ""
+                        "then": "Main bola di sini"
                     },
                     "0": {
-                        "then": ""
+                        "then": "Bola basket main di sini"
                     }
                 },
-                "render": "",
-                "question": ""
+                "render": "Main {sport} di sini",
+                "question": "Olahraga apa yang bisa dimainkan di sini?"
             },
             "3": {
                 "mappings": {
@@ -2446,7 +2446,7 @@
                         "then": ""
                     },
                     "0": {
-                        "then": ""
+                        "then": "Akses publik"
                     },
                     "3": {
                         "then": ""
@@ -2469,7 +2469,7 @@
                         "then": ""
                     },
                     "0": {
-                        "then": ""
+                        "then": "Permukaannya <b>rumput</b>"
                     }
                 },
                 "render": "",
@@ -2493,25 +2493,25 @@
                 "question": ""
             },
             "6": {
-                "question": ""
+                "question": "Apa alamat email operator?"
             },
             "5": {
                 "question": ""
             }
         },
-        "name": "",
+        "name": "Lapangan olahraga",
         "presets": {
             "1": {
-                "title": ""
+                "title": "Lapangan olahraga"
             },
             "0": {
-                "title": ""
+                "title": "Meja tenis meja"
             }
         },
         "title": {
             "render": ""
         },
-        "description": ""
+        "description": "Lapangan olahraga"
     },
     "public_bookcase": {
         "tagRenderings": {
@@ -2903,14 +2903,14 @@
         "name": ""
     },
     "visitor_information_centre": {
-        "name": "",
+        "name": "Pusat Informasi Pengunjung",
         "title": {
             "mappings": {
                 "1": {
-                    "then": ""
+                    "then": "{name}"
                 }
             },
-            "render": ""
+            "render": "{name}"
         },
         "description": ""
     },
@@ -2978,10 +2978,10 @@
                         "then": ""
                     },
                     "1": {
-                        "then": ""
+                        "then": "Kamera pengawas lalu lintas"
                     },
                     "0": {
-                        "then": ""
+                        "then": "Kamera pengawas di tempat parkir"
                     }
                 },
                 "render": ""
@@ -3038,14 +3038,14 @@
                 "question": ""
             },
             "3": {
-                "render": "",
-                "question": ""
+                "render": "Dioperasikan oleh {operator}",
+                "question": "Siapa yang mengoperasikan CCTV ini?"
             }
         },
         "title": {
             "render": ""
         },
-        "name": ""
+        "name": "Kamera pengawas"
     },
     "bike_cleaning": {
         "title": {
@@ -3300,31 +3300,31 @@
             "2": {
                 "mappings": {
                     "4": {
-                        "then": ""
+                        "then": "Permukaannya <b>batu paving</b>"
                     },
                     "5": {
-                        "then": ""
+                        "then": "Permukaannya <b>aspal</b>"
                     },
                     "6": {
-                        "then": ""
+                        "then": "Permukaannya <b>beton</b>"
                     },
                     "7": {
-                        "then": ""
+                        "then": "Permukaannya <b>beton</b>"
                     },
                     "3": {
-                        "then": ""
+                        "then": "Permukaannya <b>pasir</b>"
                     },
                     "2": {
-                        "then": ""
+                        "then": "Permukaannya <b>tidak beraspal</b>"
                     },
                     "1": {
-                        "then": ""
+                        "then": "Permukaannya adalah <b>tanah</b>"
                     },
                     "0": {
-                        "then": ""
+                        "then": "Permukaannya adalah <b>rumput</b>"
                     }
                 },
-                "render": ""
+                "render": "Permukaannya <b>{surface}</b>"
             }
         }
     },
