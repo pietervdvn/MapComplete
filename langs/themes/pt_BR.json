@@ -173,5 +173,32 @@
     },
     "ghostbikes": {
         "title": "Bicicleta fantasma"
+    },
+    "climbing": {
+        "layers": {
+            "4": {
+                "tagRenderings": {
+                    "2": {
+                        "question": "É possível escalar aqui?",
+                        "mappings": {
+                            "2": {
+                                "then": "Não é possível escalar aqui"
+                            },
+                            "1": {
+                                "then": "É possível escalar aqui"
+                            }
+                        }
+                    }
+                }
+            },
+            "3": {
+                "tagRenderings": {
+                    "8": {
+                        "render": "O tipo de rocha é {rock}",
+                        "question": "Qual é o tipo de rocha aqui?"
+                    }
+                }
+            }
+        }
     }
 }
