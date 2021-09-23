@@ -48,7 +48,7 @@
         "doDelete": "Kép eltávolítása",
         "dontDelete": "Mégse",
         "uploadDone": "<span class=\"thanks\">A kép hozzá lett adva. Köszönjük a segítséged!</span>",
-        "respectPrivacy": "Ne készíts fényképet emberekről és rendszámtáblákról! Ne tölts fel képeket Google Mapsről, Google Streetview-ról és egyéb szerzői jog által védett forrásokból!",
+        "respectPrivacy": "Ne készíts fényképet emberekről és rendszámtáblákról! Ne tölts fel képeket Google Mapsről, Google Street View-ról és egyéb szerzői jog által védett forrásokból!",
         "uploadFailed": "A kép feltöltése sikertelen. Biztosan van hálózati kapcsolatod és engedélyezve vannak a harmadik féltől származó API-k? A Brave böngésző és az UMatrix blokkolhatja ezeket.",
         "ccb": "a CC-BY licenc szerint",
         "ccbs": "a CC-BY-SA licenc szerint",
