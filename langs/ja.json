@@ -161,7 +161,7 @@
         "doDelete": "イメージの削除",
         "dontDelete": "[キャンセル]",
         "uploadDone": "<span class=\"thanks\">あなたの写真が追加されました。ご協力ありがとうございます!</span>",
-        "respectPrivacy": "人やナンバープレートを撮影しないでください。Googleマップ、Google Streetview、その他著作権で保護された情報源をアップロードしないでください。",
+        "respectPrivacy": "人やナンバープレートを撮影しないでください。Googleマップ、Google Street View、その他著作権で保護された情報源をアップロードしないでください。",
         "uploadFailed": "写真をアップロードできませんでした。インターネット接続があり、外部のAPIが許可されていますか？Brave ブラウザやUMatrixは、これらをブロックするかもしれません。",
         "ccb": "CC-BY-ライセンスで",
         "ccbs": "CC-BY-SA-ライセンスで",
