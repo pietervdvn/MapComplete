@@ -3,7 +3,8 @@
         "questions": {
             "phoneNumberOf": "Apakah nombor telepon {category} ini?",
             "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "emailOf": "Apa alamat email {category}?"
+            "emailOf": "Apa alamat email {category}?",
+            "websiteOf": "Apa situs web {category}?"
         },
         "nameInlineQuestion": "Name {category} ini adalah $$$",
         "pickLanguage": "Pilih bahasa: ",
@@ -22,7 +23,10 @@
             "closed_permanently": "Ditutup sampai pemberitahuan lebih lanjut",
             "openTill": "sampai",
             "opensAt": "dari",
-            "closed_until": "Ditutup sampai {date}"
+            "closed_until": "Ditutup sampai {date}",
+            "not_all_rules_parsed": "Jam buka toko ini rumit. Aturan berikut diabaikan dalam elemen input:",
+            "error_loading": "Galat: tidak dapat memvisualisasikan jam buka ini.",
+            "open_during_ph": "Selama hari libur, fasilitas ini"
         },
         "noTagsSelected": "Tidak ada tag yang dipilih",
         "getStartedNewAccount": " atau <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">membuat akun baru</a>",
@@ -40,7 +44,8 @@
             "editThemeDescription": "Tambahkan atau ubah pertanyaan ke tema peta ini",
             "editThisTheme": "Sunting tema ini",
             "thanksForSharing": "Terima kasih telah berbagi!",
-            "copiedToClipboard": "Tautan disalin ke papan klip"
+            "copiedToClipboard": "Tautan disalin ke papan klip",
+            "embedIntro": "<h3>Sematkan di situs web Anda</h3> Silakan, sematkan peta ini ke situs web Anda. <br>Kami mendorong Anda untuk melakukannya - Anda tidak perlu meminta izin. <br> Ini gratis, dan akan selalu begitu. Semakin banyak orang menggunakan ini, semakin jadi berharga."
         },
         "goToInbox": "Buka kotak masuk",
         "weekdays": {
@@ -60,7 +65,17 @@
             "wednesday": "Rabu",
             "tuesday": "Selasa",
             "monday": "Senin"
-        }
+        },
+        "save": "Simpan",
+        "cancel": "Batal",
+        "add": {
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Silakan masuk untuk menambahkan titik baru</a>"
+        },
+        "noNameCategory": "{category} tanpa nama",
+        "customThemeIntro": "<h3>Tema kustom</h3> Ini sebelumnya dikunjungi tema yang dibuat pengguna.",
+        "fewChangesBefore": "Harap, jawab beberapa pertanyaan dari titik yang ada sebelum menambahkan titik baru.",
+        "readYourMessages": "Harap, baca semua pesan OpenStreetMap anda sebelum menambahkan titik baru.",
+        "aboutMapcomplete": "<h3>Tentang MapComplete</h3><p>Dengan MapComplete Anda dapat memperkaya OpenStreetMap dengan informasi tentang tema <b>single.</b> Jawab beberapa pertanyaan, dan dalam beberapa menit kontribusi Anda akan tersedia di seluruh dunia! Pengelola <b>theme</b> mendefinisikan elemen, pertanyaan, dan bahasa untuk tema.</p> <h3>Cari tahu lebih</h3><p>MapComplete selalu <b>offers langkah berikutnya</b> untuk mempelajari lebih lanjut tentang OpenStreetMap.</p><ul> <li>Ketika disematkan di situs web, iframe menautkan ke MapComplete layar penuh</li><li>Mengatat layar penuh menawarkan informasi tentang OpenStreetMap</li><li>Viewing berfungsi tanpa login, tetapi pengeditan memerlukan login OSM. </li> <li>Jika Anda tidak masuk, Anda diminta untuk masuk</li><li>Di anda menjawab satu pertanyaan, anda dapat menambahkan poin baru ke peta</li><li>Setelah beberapa saat, osm-tag yang sebenarnya ditampilkan, nanti menghubungkan ke wiki</li></ul><p></p><br><p>Did Anda perhatikan <b>an </b>? Apakah Anda memiliki permintaan <b>peraturasi</b>? Ingin <b>help diterjemahkan</b>? Kunjungi <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">the source code</a> atau <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a> </p> <p>Want untuk melihat kemajuan <b>yyour</b>? Ikuti hitungan edit pada <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%22%22%22%22%.7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>"
     },
     "image": {
         "doDelete": "Buang gambar",
@@ -80,7 +95,9 @@
         "loadingData": "Memuat data…"
     },
     "favourite": {
-        "reload": "Muat ulang data"
+        "reload": "Muat ulang data",
+        "panelIntro": "<h3>Tema pribadi Anda</h3> Aktifkan layer favorit Anda dari semua tema resmi",
+        "loginNeeded": "<h3>Masuk</h3>Tata letak pribadi hanya tersedia untuk pengguna OpenStreetMap"
     },
     "reviews": {
         "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
