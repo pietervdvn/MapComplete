@@ -9,7 +9,7 @@
         "ccbs": "sota llicència CC-BY-SA",
         "ccb": "sota la llicència CC-BY",
         "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
-        "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
+        "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Street View o altres fonts amb copyright.",
         "uploadDone": "<span class='thanks'>La teva imatge ha estat afegida. Gràcies per ajudar.</span>",
         "dontDelete": "Cancel·lar",
         "doDelete": "Esborrar imatge",
