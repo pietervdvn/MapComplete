@@ -32,7 +32,7 @@
         },
         "noNameCategory": "{category} sem nome",
         "nameInlineQuestion": "O nome desta {category} é $$$",
-        "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
+        "about": "Edite e adicione o OpenStreetMap para um determinado tema",
         "pickLanguage": "Escolha um idioma: ",
         "add": {
             "addNew": "Adicione uma nova {category} aqui",
