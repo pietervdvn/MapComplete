@@ -161,7 +161,7 @@
         "doDelete": "Rimuovi immagine",
         "dontDelete": "Annulla",
         "uploadDone": "<span class=\"thanks\">La tua foto è stata aggiunta! Grazie mille!</span>",
-        "respectPrivacy": "Non fotografare persone o targhe dei veicoli. Non caricare da Google Maps, Google Streetview o da altre fonti coperte da copyright.",
+        "respectPrivacy": "Non fotografare persone o targhe dei veicoli. Non caricare da Google Maps, Google Street View o da altre fonti coperte da copyright.",
         "uploadFailed": "Impossibile caricare la tua foto. La connessione internet è attiva e le API di terze parti sono abilitate? Il browser Brave o il plugin uMatrix potrebbero bloccarle.",
         "ccb": "con licenza CC-BY",
         "ccbs": "con licenza CC-BY-SA",
