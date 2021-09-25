@@ -58,7 +58,7 @@
             "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen"
         },
         "pickLanguage": "Wählen Sie eine Sprache: ",
-        "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
+        "about": "OpenStreetMap für ein bestimmtes Thema bearbeiten und hinzufügen",
         "nameInlineQuestion": "Der Name dieser {category} ist $$$",
         "noNameCategory": "{category} ohne Namen",
         "questions": {
@@ -73,17 +73,17 @@
         "sharescreen": {
             "intro": "<h3>Diese Karte teilen</h3> Sie können diese Karte teilen, indem Sie den untenstehenden Link kopieren und an Freunde und Familie schicken:",
             "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Website einfach zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der URL-Leiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
-            "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte, betten Sie diese Karte in Ihre Website ein. <br/>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br/> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
+            "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte, betten Sie diese Karte in Ihre Website ein. <br>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
             "copiedToClipboard": "Link in die Zwischenablage kopiert",
             "thanksForSharing": "Danke für das Teilen!",
             "editThisTheme": "Dieses Thema bearbeiten",
-            "editThemeDescription": "Fragen zu diesem Kartenthema hinzufügen oder ändern",
+            "editThemeDescription": "Fragen für dieses Kartenthema hinzufügen oder ändern",
             "fsUserbadge": "Anmelde-Knopf aktivieren",
             "fsSearch": "Suchleiste aktivieren",
             "fsWelcomeMessage": "Popup der Begrüßungsnachricht und zugehörige Registerkarten anzeigen",
             "fsLayers": "Aktivieren der Layersteuerung",
             "fsLayerControlToggle": "Mit der erweiterten Ebenenkontrolle beginnen",
-            "fsAddNew": "Schaltfläche 'neuen POI hinzufügen' aktivieren",
+            "fsAddNew": "Schaltfläche 'Neuen POI hinzufügen' aktivieren",
             "fsGeolocation": "Die Schaltfläche 'Mich geolokalisieren' aktivieren (nur für Mobil)",
             "fsIncludeCurrentBackgroundMap": "Die aktuelle Hintergrundwahl einschließen <b>{name}</b>",
             "fsIncludeCurrentLayers": "Die aktuelle Ebenenauswahl einbeziehen",
@@ -102,7 +102,7 @@
         "getStartedNewAccount": " oder <a href='https://www.openstreetmap.org/user/new' target='_blank'>ein neues Konto anlegen</a>",
         "noTagsSelected": "Keine Tags ausgewählt",
         "customThemeIntro": "<h3>Benutzerdefinierte Themes</h3>Dies sind zuvor besuchte benutzergenerierte Themen.",
-        "aboutMapcomplete": "<h3>Über MapComplete</h3><p>MapComplete ist ein OpenStreetMap-Editor, der jedem helfen soll, auf einfache Weise Informationen zu einem <b>Einzelthema hinzuzufügen.</b></p><p>Nur Merkmale, die für ein einzelnes Thema relevant sind, werden mit einigen vordefinierten Fragen gezeigt, um die Dinge <b>einfach und extrem benutzerfreundlich</b> zu halten. Der Themen-Betreuer kann auch eine Sprache für die Schnittstelle wählen, Elemente deaktivieren oder sogar in eine andere Website ohne jegliches UI-Element einbetten.</p><p>Ein weiterer wichtiger Teil von MapComplete ist jedoch, immer <b>den nächsten Schritt anzubieten</b>um mehr über OpenStreetMap zu erfahren:<ul><li>Ein iframe ohne UI-Elemente verlinkt zu einer Vollbildversion</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Wenn Sie nicht eingeloggt sind, werden Sie gebeten, sich einzuloggen</li><li>Wenn Sie eine einzige Frage beantwortet haben, dürfen Sie Punkte hinzufügen</li><li>An einem bestimmten Punkt erscheinen die tatsächlich hinzugefügten Tags, die später mit dem Wiki verlinkt werden...</li></ul></p><p>Fällt Ihnen ein Problem mit MapComplete auf? Haben Sie einen Feature-Wunsch? Wollen Sie beim Übersetzen helfen? Gehen Sie <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zum Quellcode</a> oder <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>zur Problemverfolgung</a>.</p>",
+        "aboutMapcomplete": "<h3>Über MapComplete</h3><p>Mit MapComplete kann man OpenStreetmap mit Informationen in einem einzelnen <b>Thema </b>anreichern. Beantworten Sie ein paar Fragen und innerhalb von Minuten wird Ihr Beitrag auf der ganzen Welt verfügbar sein! Die <b>Themen Maintainer </b>definieren Elemente, Fragen und Sprachen für ein Thema.</p><h3>Mehr darüber</h3><p>MapComplete ist es wichtig, Ihnen immer <b>den nächsten Schritt anzubieten </b>damit Sie mehr über OpenStreetMap erfahren.</p><ul><li>Wenn es in einer Webseite eingebettet wird, verlinkt das iframe zu einer Vollbildversion.</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap.</li><li>Anzeigen funktioniert ohne Anmeldung, aber zum Bearbeiten muss man sich anmelden.</li><li>Wenn Sie nicht angemeldet sind, werden Sie gebeten, sich anzumelden.</li><li>Sobald Sie eine einzige Frage beantwortet haben, dürfen Sie Punkte zur Karte hinzufügen.</li><li>Nach einer Weile erscheinen die tatsächlich hinzugefügten OSM-Tags, die später mit dem Wiki verlinkt werden.</li></ul><p></p><br><p>Fällt Ihnen <b>ein Problem </b>mit Mapcomplete auf? Haben Sie einen <b>Feature-Wunsch</b>? Wollen Sie beim <b>Übersetzen helfen</b>? Dann gehen Sie <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">zum Quellcode</a> oder zur <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">zur Problem-Verwaltung</a>.</p><p>Möchten Sie <b>Ihren Fortschritt </b>sehen? Folgen Sie dem Bearbeitungs-Zähler auf <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>",
         "backgroundMap": "Hintergrundkarte",
         "layerSelection": {
             "zoomInToSeeThisLayer": "Vergrößern, um diese Ebene zu sehen",
@@ -164,11 +164,11 @@
         "write_a_comment": "Schreibe einen Kommentar…",
         "no_rating": "Keine Bewertung vorhanden",
         "posting_as": "Angemeldet als",
-        "i_am_affiliated": "<span>Ich bin angehörig</span><br/><span class='subtle'>Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>",
+        "i_am_affiliated": "<span>Ich bin diesem Objekt angehörig</span><br><span class=\"subtle\">Abhaken, falls du Eigentümer, Ersteller, Angestellter etc. bist</span>",
         "saving_review": "Speichern…",
-        "saved": "<span class='thanks'>Rezension gespeichert. Vielen Dank für den Beitrag!</span>",
+        "saved": "<span class=\"thanks\">Rezension gespeichert. Vielen Dank für den Beitrag!</span>",
         "tos": "Mit deiner Rezension stimmst du den <a href='https://mangrove.reviews/terms' target='_blank'>AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
-        "plz_login": "Melde dich an, um eine Rezension zu vergeben",
+        "plz_login": "Anmelden, um eine Rezension zu vergeben",
         "affiliated_reviewer_warning": "(Partner-Rezension)",
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar."
     }
