@@ -985,7 +985,7 @@
             },
             "8": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-                "question": "An welche Emailadresse kann man sich bei Fragen und Problemen mit diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Emailadresse an, wenn diese auch öffentlich publiziert wird"
+                "question": "An welche Emailadresse kann man sich bei Fragen und Problemen mit diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Emailadresse an, wenn diese auch öffentlich publiziert ist"
             },
             "9": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>",
