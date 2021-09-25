@@ -1024,7 +1024,7 @@
         "title": {
             "render": "Picknick-Tisch"
         },
-        "description": ""
+        "description": "Die Ebene zeigt Picknicktische an"
     },
     "playground": {
         "description": "Spielplätze",
@@ -1136,8 +1136,8 @@
                 }
             },
             "3": {
-                "render": "",
-                "question": ""
+                "render": "Geeignet für Kinder, die älter als {min_age} Jahre sind",
+                "question": "Was ist das Mindestalter für den Zutritt zu diesem Spielplatz?"
             }
         },
         "title": {
