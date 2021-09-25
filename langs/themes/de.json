@@ -88,7 +88,7 @@
         "title": "Sitzbänke"
     },
     "bicyclelib": {
-        "title": "Fahrradbibliothek"
+        "title": "Fahrradverleih"
     },
     "bookcases": {
         "description": "Ein öffentlicher Bücherschrank ist ein kleiner Bücherschrank am Straßenrand, ein Kasten, eine alte Telefonzelle oder andere Gegenstände, in denen Bücher aufbewahrt werden. Jeder kann ein Buch hinstellen oder mitnehmen. Diese Karte zielt darauf ab, all diese Bücherschränke zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Account schnell Ihre Lieblingsbücherschränke hinzufügen.",
@@ -330,5 +330,43 @@
     "toilets": {
         "description": "Eine Karte der öffentlichen Toiletten",
         "title": "Offene Toilette Karte"
+    },
+    "campersite": {
+        "title": "Campingplatz",
+        "shortDescription": "Finde Plätze, an denen du die Nacht in deinem Wohnmobil verbringen kannst",
+        "layers": {
+            "0": {
+                "title": {
+                    "render": "Campingplatz {name}"
+                },
+                "tagRenderings": {
+                    "2": {
+                        "question": "Nimmt dieser Platz Gebühren?",
+                        "mappings": {
+                            "0": {
+                                "then": "Die Nutzung ist kostenpflichtig"
+                            },
+                            "1": {
+                                "then": "Die Nutzung ist kostenlos"
+                            }
+                        }
+                    },
+                    "1": {
+                        "render": "Dieser Ort heißt {name}",
+                        "question": "Wie heißt dieser Ort?"
+                    }
+                },
+                "name": "Campingplatz",
+                "description": "Campingplatz"
+            }
+        }
+    },
+    "cafes_and_pubs": {
+        "title": "Cafés und Lokale"
+    },
+    "binoculars": {
+        "title": "Ferngläser",
+        "shortDescription": "Eine Karte mit fest verbauten Ferngläsern",
+        "description": "Ein Karte mit fest verbauten Ferngläsern in der Landschaft. Man findet sie typischerweise an Touristen Attraktionen, Aussichtspunkten, auf Aussichtstürmen und manchmal in Naturschutzgebieten."
     }
 }
