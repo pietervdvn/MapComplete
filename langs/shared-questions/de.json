@@ -16,6 +16,9 @@
                 },
                 "3": {
                     "then": "Ist im ersten Stock"
+                },
+                "0": {
+                    "then": "Ist unterirdisch"
                 }
             },
             "question": "In welchem Stockwerk befindet sich dieses Objekt?",
