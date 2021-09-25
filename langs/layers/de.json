@@ -1096,12 +1096,12 @@
                 "question": "Ist dieser Spielplatz für die Allgemeinheit zugänglich?"
             },
             "7": {
-                "question": "Wie lautet die E-Mail Adresse des Spielplatzbetreuers?",
+                "question": "Wie lautet die E-Mail Adresse des Spielplatzwartes?",
                 "render": "<a href='mailto:{email}'>{email}</a>"
             },
             "8": {
                 "render": "<a href='tel:{phone}'>{phone}</a>",
-                "question": ""
+                "question": "Wie lautet die Telefonnummer des Spielplatzwartes?"
             },
             "9": {
                 "mappings": {
@@ -1118,8 +1118,8 @@
                 "question": "Ist dieser Spielplatz für Rollstuhlfahrer zugänglich?"
             },
             "4": {
-                "render": "",
-                "question": ""
+                "render": "Zutritt für Kinder im Alter von höchstens {max_age}",
+                "question": "Wie hoch ist das maximale Alter für den Zutritt zu diesem Spielplatz?"
             },
             "10": {
                 "question": "",
