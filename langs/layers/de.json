@@ -336,7 +336,7 @@
                         "then": "Ebenerdiges Parken"
                     },
                     "4": {
-                        "then": ""
+                        "then": "Parken auf dem Dach"
                     }
                 },
                 "question": ""
@@ -362,10 +362,10 @@
                         "then": "Öffentlich zugänglich"
                     },
                     "1": {
-                        "then": ""
+                        "then": "Der Zugang ist in erster Linie für Besucher eines Unternehmens"
                     },
                     "2": {
-                        "then": ""
+                        "then": "Der Zugang ist auf Mitglieder einer Schule, Firma oder Organisation beschränkt"
                     }
                 },
                 "question": "Wer kann diesen Fahrradparplatz nutzen?",
@@ -663,7 +663,7 @@
                 "question": "Werden hier Fahrräder gewaschen?"
             },
             "1": {
-                "render": ""
+                "render": "Dieses Geschäft hat sich auf den Verkauf von {shop} spezialisiert und führt Dienstleistungen rund ums Fahrrad aus"
             }
         },
         "title": {
@@ -686,7 +686,7 @@
             },
             "render": "Fahrradwerkstatt/geschäft"
         },
-        "description": ""
+        "description": "Ein Geschäft, das speziell Fahrräder oder Zubehörteile verkauft"
     },
     "bike_themed_object": {
         "name": "Mit Fahrrad zusammenhängendes Objekt",
@@ -733,7 +733,7 @@
                         "then": "Nicht für die Öffentlichkeit zugänglich (z.B. nur für das Personal, die Eigentümer, ...)"
                     },
                     "4": {
-                        "then": ""
+                        "then": "Nicht zugänglich, möglicherweise nur für den professionellen Einsatz"
                     }
                 },
                 "question": "Ist dieser Defibrillator frei zugänglich?",
@@ -745,11 +745,11 @@
                         "then": "Dies ist ein manueller Defibrillator für den professionellen Einsatz"
                     },
                     "1": {
-                        "then": ""
+                        "then": "Dies ist ein normaler automatischer Defibrillator"
                     }
                 },
                 "render": "Es gibt keine Informationen über den Gerätetyp",
-                "question": ""
+                "question": "Handelt es sich um einen regulären automatischen Defibrillator oder um einen manuellen Defibrillator nur für den professionellen Einsatz?"
             },
             "4": {
                 "mappings": {
@@ -897,7 +897,7 @@
             },
             "5": {
                 "question": "",
-                "render": ""
+                "render": "Platziert am {start_date}"
             }
         },
         "title": {
@@ -962,7 +962,7 @@
         "title": {
             "render": "Karte"
         },
-        "description": ""
+        "description": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist"
     },
     "nature_reserve": {
         "tagRenderings": {
@@ -985,15 +985,15 @@
             },
             "8": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-                "question": ""
+                "question": "An welche Emailadresse kann man sich bei Fragen und Problemen mit diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Emailadresse an, wenn diese auch öffentlich publiziert wird"
             },
             "9": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>",
                 "question": ""
             },
             "7": {
-                "question": "",
-                "render": ""
+                "question": "Wer ist der Betreuer dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur einen Namen an, wenn dieser weithin veröffentlicht ist",
+                "render": "{x} ist der Betreuer dieses Naturschutzgebietes"
             },
             "12": {
                 "render": ""
@@ -3354,7 +3354,7 @@
         }
     },
     "direction": {
-        "description": "",
+        "description": "Diese Ebene visualisiert Richtungen",
         "name": ""
     },
     "watermill": {
