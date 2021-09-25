@@ -30,6 +30,31 @@
         },
         "website": {
             "question": "Was ist die Website von {name}?"
+        },
+        "wheelchair-access": {
+            "question": "Ist dieser Ort im Rollstuhl erreichbar?",
+            "mappings": {
+                "3": {
+                    "then": "Dieser Ort ist im Rollstuhl nicht erreichbar"
+                },
+                "2": {
+                    "then": "Es ist möglich, diesen Ort in einem Rollstuhl zu erreichen, aber es ist nicht einfach"
+                },
+                "1": {
+                    "then": "Dieser Ort ist mit einem Rollstuhl gut erreichbar"
+                }
+            }
+        },
+        "payment-options": {
+            "question": "Welche Zahlungsmethoden werden hier akzeptiert?",
+            "mappings": {
+                "1": {
+                    "then": "Kartenzahlung wird hier akzeptiert"
+                },
+                "0": {
+                    "then": "Bargeld wird hier angenommen"
+                }
+            }
         }
     }
 }
