@@ -114,7 +114,7 @@
         }
     },
     "bicycle_library": {
-        "description": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
+        "description": "Eine Einrichtung an der Fahrräder für längere Zeit geliehen werden können.",
         "tagRenderings": {
             "6": {
                 "mappings": {
@@ -2755,26 +2755,26 @@
         "tagRenderings": {
             "4": {
                 "question": "",
-                "render": ""
+                "render": "Platz zwischen den Barrieren (entlang der Länge der Straße): {width:separation} m"
             },
             "0": {
                 "mappings": {
                     "0": {
-                        "then": ""
+                        "then": "Ein Fahrradfahrer kann dort vorbei fahren."
                     },
                     "1": {
-                        "then": ""
+                        "then": "Ein Fahrradfahrer kann dort nicht vorbei fahren."
                     }
                 },
-                "question": ""
+                "question": "Kann ein Fahrradfahrer an dieser Barriere vorbei fahren?"
             },
             "2": {
                 "mappings": {
                     "2": {
-                        "then": ""
+                        "then": "Dreifach, drei Barrieren hinter einander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
                     },
                     "1": {
-                        "then": ""
+                        "then": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>"
                     },
                     "3": {
                         "then": ""
@@ -2783,64 +2783,64 @@
                         "then": ""
                     }
                 },
-                "question": ""
+                "question": "Welche Art von Fahrrad Barriere ist das?"
             },
             "3": {
-                "render": "",
-                "question": ""
+                "render": "Maximale Breite: {maxwidth:physical} m",
+                "question": "Wie groß ist die Lücke neben der Barriere?"
             },
             "5": {
-                "render": "",
+                "render": "Breite der Öffnung: {width:opening} m",
                 "question": ""
             },
             "1": {
                 "mappings": {
                     "0": {
-                        "then": ""
+                        "then": "Entfernbarer Poller"
                     },
                     "2": {
-                        "then": ""
+                        "then": "Poller kann heruntergeklappt werden"
                     },
                     "1": {
-                        "then": ""
+                        "then": "Fest angebrachter Poller"
                     },
                     "3": {
-                        "then": ""
+                        "then": "Flexibler Poller, für gewöhnlich aus Kunststoff"
                     },
                     "4": {
-                        "then": ""
+                        "then": "Automatisch versenkbarer Poller"
                     }
                 },
-                "question": ""
+                "question": "Welche Art von Poller ist das?"
             },
             "6": {
-                "render": "",
-                "question": ""
+                "render": "Überlappung: {overlap} m",
+                "question": "Wie viel überlappen die Barrieren?"
             }
         },
         "presets": {
             "1": {
-                "description": "",
-                "title": ""
+                "description": "Fahrrad Barriere, macht Radfahrer langsamer",
+                "title": "Fahrrad Barriere"
             },
             "0": {
-                "title": "",
-                "description": ""
+                "title": "Poller",
+                "description": "Ein Poller auf der Straße"
             }
         },
         "title": {
-            "render": "",
+            "render": "Barriere",
             "mappings": {
                 "0": {
-                    "then": ""
+                    "then": "Poller"
                 },
                 "1": {
-                    "then": ""
+                    "then": "Fahrrad Barriere"
                 }
             }
         },
         "description": "",
-        "name": ""
+        "name": "Hindernisse"
     },
     "crossings": {
         "presets": {
