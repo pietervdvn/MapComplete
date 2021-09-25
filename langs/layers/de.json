@@ -989,7 +989,7 @@
             },
             "9": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-                "question": "Welche Telefonnummer kann man bei Fragen und Problemen mit diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine persönliche Telefonnummer-Adresse an, wenn diese weithin publiziert wird"
+                "question": "Welche Telefonnummer kann man bei Fragen und Problemen mit diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine persönliche Telefonnummer-Adresse an, wenn diese weithin publiziert ist"
             },
             "7": {
                 "question": "Wer ist der Betreuer dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur einen Namen an, wenn dieser weithin veröffentlicht ist",
