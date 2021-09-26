@@ -79,7 +79,8 @@
             },
             "freeform": {
                 "key": "name"
-            }
+            },
+            "id": "bicycle_library-name"
         },
         "website",
         "phone",
@@ -155,7 +156,8 @@
                         "pt_BR": "Emprestar uma bicicleta custa €20/ano e €20 de garantia"
                     }
                 }
-            ]
+            ],
+            "id": "bicycle_library-charge"
         },
         {
             "question": {

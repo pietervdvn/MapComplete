@@ -106,7 +106,8 @@
             },
             "freeform": {
                 "key": "name"
-            }
+            },
+            "id": "bench_at_pt-name"
         },
         {
             "render": {
@@ -127,7 +128,8 @@
                 "and": [
                     "bench=stand_up_bench"
                 ]
-            }
+            },
+            "id": "bench_at_pt-bench"
         }
     ],
     "icon": {

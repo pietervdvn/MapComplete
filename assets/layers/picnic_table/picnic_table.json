@@ -73,7 +73,8 @@
                         "fr": "C’est une table en béton"
                     }
                 }
-            ]
+            ],
+            "id": "picnic_table-material"
         }
     ],
     "icon": {

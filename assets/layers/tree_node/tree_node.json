@@ -324,7 +324,8 @@
                     "denotation=natural_monument",
                     "name~*"
                 ]
-            }
+            },
+            "id": "tree_node-name"
         },
         {
             "question": {
@@ -435,7 +436,8 @@
                     "heritage=4",
                     "heritage:operator=OnroerendErfgoed"
                 ]
-            }
+            },
+            "id": "tree_node-ref:OnroerendErfgoed"
         },
         {
             "render": {
@@ -461,7 +463,8 @@
                     "denotation=natural_monument",
                     "wikidata~*"
                 ]
-            }
+            },
+            "id": "tree_node-wikidata"
         }
     ],
     "icon": {

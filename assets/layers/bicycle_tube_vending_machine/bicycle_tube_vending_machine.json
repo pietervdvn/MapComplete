@@ -161,7 +161,8 @@
             "render": "A bicycle tube costs {charge}",
             "freeform": {
                 "key": "charge"
-            }
+            },
+            "id": "bicycle_tube_vending_machine-charge"
         },
         {
             "question": "How can one pay at this tube vending machine?",
@@ -200,7 +201,8 @@
                     "then": "Schwalbe tubes are sold here"
                 }
             ],
-            "multiAnswer": true
+            "multiAnswer": true,
+            "id": "bicycle_tube_vending_machine-brand"
         },
         {
             "question": "Who maintains this vending machine?",
@@ -217,7 +219,8 @@
             ],
             "freeform": {
                 "key": "operator"
-            }
+            },
+            "id": "bicycle_tube_vending_machine-operator"
         },
         {
             "question": "Are other bicycle bicycle accessories sold here?",

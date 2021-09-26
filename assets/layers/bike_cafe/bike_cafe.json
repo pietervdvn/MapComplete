@@ -97,7 +97,8 @@
             },
             "freeform": {
                 "key": "name"
-            }
+            },
+            "id": "bike_cafe-name"
         },
         {
             "question": {
@@ -250,7 +251,8 @@
             "render": "<a href='{website}' target='_blank'>{website}</a>",
             "freeform": {
                 "key": "website"
-            }
+            },
+            "id": "bike_cafe-website"
         },
         {
             "question": {
@@ -269,7 +271,8 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "bike_cafe-phone"
         },
         {
             "question": {
@@ -288,7 +291,8 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "bike_cafe-email"
         },
         {
             "question": {
@@ -305,7 +309,8 @@
             "freeform": {
                 "key": "opening_hours",
                 "type": "opening_hours"
-            }
+            },
+            "id": "bike_cafe-opening_hours"
         }
     ],
     "icon": {

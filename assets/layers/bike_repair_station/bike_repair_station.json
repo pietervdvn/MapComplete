@@ -224,7 +224,8 @@
                     "then": "<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>",
                     "hideInAnswer": "_country!=be"
                 }
-            ]
+            ],
+            "id": "bike_repair_station-operator"
         },
         {
             "question": {
@@ -235,7 +236,8 @@
                 "key": "email",
                 "type": "email"
             },
-            "render": "<a href='mailto:{email}'>{email}</a>"
+            "render": "<a href='mailto:{email}'>{email}</a>",
+            "id": "bike_repair_station-email"
         },
         {
             "question": {
@@ -246,7 +248,8 @@
                 "key": "phone",
                 "type": "phone"
             },
-            "render": "<a href='tel:{phone}'>{phone}</a>"
+            "render": "<a href='tel:{phone}'>{phone}</a>",
+            "id": "bike_repair_station-phone"
         },
         {
             "question": {
@@ -287,7 +290,8 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "bike_repair_station-opening_hours"
         },
         {
             "question": {
@@ -481,7 +485,8 @@
                         "it": "Schrader (valvola delle auto)"
                     }
                 }
-            ]
+            ],
+            "id": "bike_repair_station-valves"
         },
         {
             "question": {

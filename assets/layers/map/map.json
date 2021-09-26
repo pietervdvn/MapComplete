@@ -71,7 +71,8 @@
                 "ru": "Эта карта основана на {map_source}",
                 "fr": "Cette carte est basée sur {map_source}",
                 "de": "Diese Karte basiert auf {map_source}"
-            }
+            },
+            "id": "map-map_source"
         },
         {
             "question": {

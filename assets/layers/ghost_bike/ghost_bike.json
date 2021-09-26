@@ -117,7 +117,8 @@
                         "fr": "Aucun nom n'est marqué sur le vélo"
                     }
                 }
-            ]
+            ],
+            "id": "ghost_bike-name"
         },
         {
             "question": {
@@ -139,7 +140,8 @@
             "freeform": {
                 "type": "url",
                 "key": "source"
-            }
+            },
+            "id": "ghost_bike-source"
         },
         {
             "question": {
@@ -161,7 +163,8 @@
             },
             "freeform": {
                 "key": "inscription"
-            }
+            },
+            "id": "ghost_bike-inscription"
         },
         {
             "question": {
@@ -180,7 +183,8 @@
             "freeform": {
                 "key": "start_date",
                 "type": "date"
-            }
+            },
+            "id": "ghost_bike-start_date"
         }
     ]
 }

@@ -67,7 +67,8 @@
             "render": "{description}",
             "freeform": {
                 "key": "description"
-            }
+            },
+            "id": "viewpoint-description"
         }
     ]
 }

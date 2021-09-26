@@ -121,7 +121,8 @@
                         "it": "Questa microbiblioteca non ha un nome proprio"
                     }
                 }
-            ]
+            ],
+            "id": "public_bookcase-name"
         },
         {
             "render": {
@@ -144,7 +145,8 @@
                 "key": "capacity",
                 "type": "nat",
                 "inline": true
-            }
+            },
+            "id": "public_bookcase-capacity"
         },
         {
             "question": {
@@ -285,7 +287,8 @@
             "freeform": {
                 "type": "string",
                 "key": "operator"
-            }
+            },
+            "id": "public_bookcase-operator"
         },
         {
             "question": {
@@ -337,7 +340,8 @@
                         "it": "Questa microbiblioteca non fa parte di una rete"
                     }
                 }
-            ]
+            ],
+            "id": "public_bookcase-brand"
         },
         {
             "render": {
@@ -375,7 +379,8 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "id": "public_bookcase-ref"
         },
         {
             "question": {
@@ -397,7 +402,8 @@
             "freeform": {
                 "key": "start_date",
                 "type": "date"
-            }
+            },
+            "id": "public_bookcase-start_date"
         },
         {
             "render": {
@@ -419,7 +425,8 @@
             "freeform": {
                 "key": "website",
                 "type": "url"
-            }
+            },
+            "id": "public_bookcase-website"
         }
     ],
     "deletion": {

@@ -225,7 +225,8 @@
             },
             "freeform": {
                 "key": "name"
-            }
+            },
+            "id": "bike_shop-name"
         },
         {
             "question": {
@@ -243,7 +244,8 @@
             "freeform": {
                 "key": "website",
                 "type": "url"
-            }
+            },
+            "id": "bike_shop-website"
         },
         {
             "question": {
@@ -260,7 +262,8 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "bike_shop-phone"
         },
         {
             "question": {
@@ -277,7 +280,8 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "bike_shop-email"
         },
         {
             "render": "{opening_hours_table(opening_hours)}",
@@ -285,14 +289,16 @@
             "freeform": {
                 "key": "opening_hours",
                 "type": "opening_hours"
-            }
+            },
+            "id": "bike_shop-opening_hours"
         },
         "description",
         {
             "render": "Enkel voor {access}",
             "freeform": {
                 "key": "access"
-            }
+            },
+            "id": "bike_shop-access"
         },
         {
             "question": {

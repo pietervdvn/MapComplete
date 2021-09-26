@@ -167,7 +167,8 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "toilet-access"
         },
         {
             "question": {
@@ -222,7 +223,8 @@
             "freeform": {
                 "key": "charge",
                 "type": "string"
-            }
+            },
+            "id": "toilet-charge"
         },
         {
             "question": {
@@ -399,7 +401,8 @@
                         "it": "Il fasciatoio è in una stanza dedicata. "
                     }
                 }
-            ]
+            ],
+            "id": "toilet-changing_table:location"
         }
     ]
 }

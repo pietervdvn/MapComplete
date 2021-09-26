@@ -121,7 +121,8 @@
                 "nb_NO": "Har denne beken et rygglene?",
                 "pl": "Czy ta ławka ma oparcie?",
                 "pt_BR": "Este assento tem um escosto?"
-            }
+            },
+            "id": "bench-backrest"
         },
         {
             "render": {
@@ -157,7 +158,8 @@
                 "nb_NO": "Hvor mange sitteplasser har denne benken?",
                 "pl": "Ile siedzeń ma ta ławka?",
                 "pt_BR": "Quantos assentos este banco tem?"
-            }
+            },
+            "id": "bench-seats"
         },
         {
             "render": {
@@ -308,7 +310,8 @@
                 "zh_Hant": "這個長椅 (座位) 是什麼做的？",
                 "pt_BR": "De que é feito o banco (assento)?",
                 "pl": "Z czego wykonana jest ławka (siedzisko)?"
-            }
+            },
+            "id": "bench-material"
         },
         {
             "question": {
@@ -340,7 +343,8 @@
             "freeform": {
                 "key": "direction",
                 "type": "direction"
-            }
+            },
+            "id": "bench-direction"
         },
         {
             "render": {
@@ -521,7 +525,8 @@
                         "pl": "Kolor: żółty"
                     }
                 }
-            ]
+            ],
+            "id": "bench-colour"
         },
         {
             "question": {
@@ -557,7 +562,8 @@
                     "if": "survey:date:={_now:date}",
                     "then": "Surveyed today!"
                 }
-            ]
+            ],
+            "id": "bench-survey:date"
         }
     ],
     "icon": {

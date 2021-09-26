@@ -184,7 +184,8 @@
                         "nl": "Beheer door het Agentschap Natuur en Bos "
                     }
                 }
-            ]
+            ],
+            "id": "birdhide-operator"
         }
     ],
     "icon": {

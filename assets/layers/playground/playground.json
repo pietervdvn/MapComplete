@@ -161,7 +161,8 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "playground-surface"
         },
         {
             "question": {
@@ -215,7 +216,8 @@
             "freeform": {
                 "key": "min_age",
                 "type": "pnat"
-            }
+            },
+            "id": "playground-min_age"
         },
         {
             "render": {
@@ -234,7 +236,8 @@
             "freeform": {
                 "key": "max_age",
                 "type": "pnat"
-            }
+            },
+            "id": "playground-max_age"
         },
         {
             "question": {
@@ -253,7 +256,8 @@
             },
             "freeform": {
                 "key": "operator"
-            }
+            },
+            "id": "playground-operator"
         },
         {
             "question": {
@@ -339,7 +343,8 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "playground-email"
         },
         {
             "question": {
@@ -361,7 +366,8 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "playground-phone"
         },
         {
             "question": {
@@ -453,7 +459,8 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "playground-opening_hours"
         },
         "questions",
         {

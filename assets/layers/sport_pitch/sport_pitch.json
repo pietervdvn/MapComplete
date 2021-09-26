@@ -140,7 +140,8 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "sport_pitch-sport"
         },
         {
             "question": {
@@ -211,7 +212,8 @@
                         "it": "La superficie è <b>calcestruzzo</b>"
                     }
                 }
-            ]
+            ],
+            "id": "sport_pitch-surface"
         },
         {
             "question": {
@@ -331,7 +333,8 @@
                 "key": "phone",
                 "type": "phone"
             },
-            "render": "<a href='tel:{phone}'>{phone}</a>"
+            "render": "<a href='tel:{phone}'>{phone}</a>",
+            "id": "sport_pitch-phone"
         },
         {
             "question": {
@@ -344,7 +347,8 @@
                 "key": "email",
                 "type": "email"
             },
-            "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+            "id": "sport_pitch-email"
         },
         {
             "question": {
@@ -376,7 +380,8 @@
                     }
                 }
             ],
-            "condition": "access~*"
+            "condition": "access~*",
+            "id": "sport_pitch-opening_hours"
         },
         "questions",
         {
