@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Добро пожаловать на Open Artwork Map, карту статуй, бюстов, граффити и других произведений искусства по всему миру",
         "layers": {
-            "artwork": {
+            "0": {
                 "description": "Разнообразные произведения искусства",
                 "name": "Произведения искусства",
                 "presets": {
@@ -98,7 +98,7 @@
     "campersite": {
         "description": "На этом сайте собраны все официальные места остановки кемперов и места, где можно сбросить серую и черную воду. Вы можете добавить подробную информацию о предоставляемых услугах и их стоимости. Добавлять фотографии и отзывы. Это веб-сайт и веб-приложение. Данные хранятся в OpenStreetMap, поэтому они будут бесплатными всегда и могут быть повторно использованы любым приложением.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "площадки для кемпинга",
                 "name": "Площадки для кемпинга",
                 "presets": {
@@ -210,7 +210,7 @@
                     "render": "Место для кемпинга {name}"
                 }
             },
-            "dumpstations": {
+            "1": {
                 "description": "Ассенизационные сливные станции",
                 "name": "Места для слива отходов из туалетных резервуаров",
                 "tagRenderings": {
@@ -298,14 +298,7 @@
         "description": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
         "descriptionTail": "Создатель карты скалолазания — <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Пожалуйста, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>пишите</a> если у вас есть отзыв или вопросы.</p><p>Проект использует данные <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
-            "climbing": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "climbing_club": {
+            "0": {
                 "name": "Клуб скалолазания",
                 "presets": {
                     "0": {
@@ -322,21 +315,28 @@
                     "render": "Клуб скалолазания"
                 }
             },
-            "climbing_gym": {
+            "1": {
                 "tagRenderings": {
                     "name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "climbing_route": {
+            "2": {
                 "tagRenderings": {
                     "Name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "maybe_climbing": {
+            "3": {
+                "tagRenderings": {
+                    "name": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "4": {
                 "tagRenderings": {
                     "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
@@ -370,7 +370,7 @@
     },
     "cyclestreets": {
         "layers": {
-            "all_streets": {
+            "2": {
                 "name": "Все улицы",
                 "title": {
                     "render": "Улица"
@@ -387,7 +387,7 @@
     },
     "facadegardens": {
         "layers": {
-            "facadegardens": {
+            "0": {
                 "tagRenderings": {
                     "facadegardens-description": {
                         "question": "Дополнительная информация о саде (если требуется или еще не указана выше)",
@@ -421,85 +421,7 @@
     },
     "hailhydrant": {
         "layers": {
-            "ambulancestation": {
-                "name": "Карта станций скорой помощи",
-                "presets": {
-                    "0": {
-                        "description": "Добавить станцию скорой помощи на карту",
-                        "title": "Станция скорой помощи"
-                    }
-                },
-                "tagRenderings": {
-                    "ambulance-name": {
-                        "question": "Как называется эта станция скорой помощи?",
-                        "render": "Эта станция называется {name}."
-                    },
-                    "ambulance-place": {
-                        "question": "Где расположена станция? (напр., название населённого пункта)"
-                    },
-                    "ambulance-street": {
-                        "question": " По какому адресу расположена эта станция?",
-                        "render": "Эта станция расположена вдоль шоссе {addr:street}."
-                    }
-                },
-                "title": {
-                    "render": "Станция скорой помощи"
-                }
-            },
-            "extinguisher": {
-                "description": "Слой карты, отображающий огнетушители.",
-                "name": "Карта огнетушителей.",
-                "presets": {
-                    "0": {
-                        "description": "Огнетушитель - небольшое переносное устройство для тушения огня",
-                        "title": "Огнетушитель"
-                    }
-                },
-                "tagRenderings": {
-                    "extinguisher-location": {
-                        "mappings": {
-                            "0": {
-                                "then": "Внутри."
-                            },
-                            "1": {
-                                "then": "Снаружи."
-                            }
-                        },
-                        "question": "Где это расположено?",
-                        "render": "Местоположение: {location}"
-                    }
-                },
-                "title": {
-                    "render": "Огнетушители"
-                }
-            },
-            "fire_stations": {
-                "description": "Слой карты, отображающий пожарные части.",
-                "name": "Карта пожарных частей",
-                "presets": {
-                    "0": {
-                        "title": "Пожарная часть"
-                    }
-                },
-                "tagRenderings": {
-                    "station-name": {
-                        "question": "Как называется эта пожарная часть?",
-                        "render": "Эта часть называется {name}."
-                    },
-                    "station-place": {
-                        "question": "Где расположена часть? (напр., название населённого пункта)",
-                        "render": "Эта часть расположена в {addr:place}."
-                    },
-                    "station-street": {
-                        "question": " По какому адресу расположена эта часть?",
-                        "render": "Часть расположена вдоль шоссе {addr:street}."
-                    }
-                },
-                "title": {
-                    "render": "Пожарная часть"
-                }
-            },
-            "hydrants": {
+            "0": {
                 "description": "Слой карты, отображающий пожарные гидранты.",
                 "name": "Карта пожарных гидрантов",
                 "presets": {
@@ -549,6 +471,84 @@
                 "title": {
                     "render": "Гидрант"
                 }
+            },
+            "1": {
+                "description": "Слой карты, отображающий огнетушители.",
+                "name": "Карта огнетушителей.",
+                "presets": {
+                    "0": {
+                        "description": "Огнетушитель - небольшое переносное устройство для тушения огня",
+                        "title": "Огнетушитель"
+                    }
+                },
+                "tagRenderings": {
+                    "extinguisher-location": {
+                        "mappings": {
+                            "0": {
+                                "then": "Внутри."
+                            },
+                            "1": {
+                                "then": "Снаружи."
+                            }
+                        },
+                        "question": "Где это расположено?",
+                        "render": "Местоположение: {location}"
+                    }
+                },
+                "title": {
+                    "render": "Огнетушители"
+                }
+            },
+            "2": {
+                "description": "Слой карты, отображающий пожарные части.",
+                "name": "Карта пожарных частей",
+                "presets": {
+                    "0": {
+                        "title": "Пожарная часть"
+                    }
+                },
+                "tagRenderings": {
+                    "station-name": {
+                        "question": "Как называется эта пожарная часть?",
+                        "render": "Эта часть называется {name}."
+                    },
+                    "station-place": {
+                        "question": "Где расположена часть? (напр., название населённого пункта)",
+                        "render": "Эта часть расположена в {addr:place}."
+                    },
+                    "station-street": {
+                        "question": " По какому адресу расположена эта часть?",
+                        "render": "Часть расположена вдоль шоссе {addr:street}."
+                    }
+                },
+                "title": {
+                    "render": "Пожарная часть"
+                }
+            },
+            "3": {
+                "name": "Карта станций скорой помощи",
+                "presets": {
+                    "0": {
+                        "description": "Добавить станцию скорой помощи на карту",
+                        "title": "Станция скорой помощи"
+                    }
+                },
+                "tagRenderings": {
+                    "ambulance-name": {
+                        "question": "Как называется эта станция скорой помощи?",
+                        "render": "Эта станция называется {name}."
+                    },
+                    "ambulance-place": {
+                        "question": "Где расположена станция? (напр., название населённого пункта)"
+                    },
+                    "ambulance-street": {
+                        "question": " По какому адресу расположена эта станция?",
+                        "render": "Эта станция расположена вдоль шоссе {addr:street}."
+                    }
+                },
+                "title": {
+                    "render": "Станция скорой помощи"
+                }
             }
         },
         "shortDescription": "Карта пожарных гидрантов, огнетушителей, пожарных станций и станций скорой помощи.",
@@ -567,7 +567,7 @@
     },
     "shops": {
         "layers": {
-            "shops": {
+            "0": {
                 "description": "Магазин",
                 "name": "Магазин",
                 "presets": {

@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
         "layers": {
-            "artwork": {
+            "0": {
                 "description": "Diverse pieces of artwork",
                 "name": "Artworks",
                 "presets": {
@@ -106,7 +106,7 @@
     "campersite": {
         "description": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "camper sites",
                 "name": "Camper sites",
                 "presets": {
@@ -218,7 +218,7 @@
                     "render": "Camper site {name}"
                 }
             },
-            "dumpstations": {
+            "1": {
                 "description": "Sanitary dump stations",
                 "name": "Sanitary dump stations",
                 "presets": {
@@ -337,7 +337,103 @@
         "description": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
         "descriptionTail": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
         "layers": {
-            "climbing": {
+            "0": {
+                "description": "A climbing club or organisations",
+                "name": "Climbing club",
+                "presets": {
+                    "0": {
+                        "description": "A climbing club",
+                        "title": "Climbing club"
+                    },
+                    "1": {
+                        "description": "A NGO working around climbing",
+                        "title": "Climbing NGO"
+                    }
+                },
+                "tagRenderings": {
+                    "climbing_club-name": {
+                        "question": "What is the name of this climbing club or NGO?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Climbing NGO"
+                        }
+                    },
+                    "render": "Climbing club"
+                }
+            },
+            "1": {
+                "description": "A climbing gym",
+                "name": "Climbing gyms",
+                "tagRenderings": {
+                    "name": {
+                        "question": "What is the name of this climbing gym?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Climbing gym <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Climbing gym"
+                }
+            },
+            "2": {
+                "name": "Climbing routes",
+                "presets": {
+                    "0": {
+                        "title": "Climbing route"
+                    }
+                },
+                "tagRenderings": {
+                    "Bolts": {
+                        "mappings": {
+                            "0": {
+                                "then": "This route is not bolted"
+                            },
+                            "1": {
+                                "then": "This route is not bolted"
+                            }
+                        },
+                        "question": "How much bolts does this route have before reaching the moulinette?",
+                        "render": "This route has {climbing:bolts} bolts"
+                    },
+                    "Difficulty": {
+                        "question": "What is the difficulty of this climbing route according to the french/belgian system?",
+                        "render": "The difficulty is {climbing:grade:french} according to the french/belgian system"
+                    },
+                    "Length": {
+                        "question": "How long is this climbing route (in meters)?",
+                        "render": "This route is {canonical(climbing:length)} long"
+                    },
+                    "Name": {
+                        "mappings": {
+                            "0": {
+                                "then": "This climbing route doesn't have a name"
+                            }
+                        },
+                        "question": "What is the name of this climbing route?",
+                        "render": "<strong>{name}</strong>"
+                    },
+                    "Rock type": {
+                        "render": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Climbing route <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Climbing route"
+                }
+            },
+            "3": {
                 "description": "A climbing opportunity",
                 "name": "Climbing opportunities",
                 "presets": {
@@ -403,103 +499,7 @@
                     "render": "Climbing opportunity"
                 }
             },
-            "climbing_club": {
-                "description": "A climbing club or organisations",
-                "name": "Climbing club",
-                "presets": {
-                    "0": {
-                        "description": "A climbing club",
-                        "title": "Climbing club"
-                    },
-                    "1": {
-                        "description": "A NGO working around climbing",
-                        "title": "Climbing NGO"
-                    }
-                },
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "question": "What is the name of this climbing club or NGO?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Climbing NGO"
-                        }
-                    },
-                    "render": "Climbing club"
-                }
-            },
-            "climbing_gym": {
-                "description": "A climbing gym",
-                "name": "Climbing gyms",
-                "tagRenderings": {
-                    "name": {
-                        "question": "What is the name of this climbing gym?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Climbing gym <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Climbing gym"
-                }
-            },
-            "climbing_route": {
-                "name": "Climbing routes",
-                "presets": {
-                    "0": {
-                        "title": "Climbing route"
-                    }
-                },
-                "tagRenderings": {
-                    "Bolts": {
-                        "mappings": {
-                            "0": {
-                                "then": "This route is not bolted"
-                            },
-                            "1": {
-                                "then": "This route is not bolted"
-                            }
-                        },
-                        "question": "How much bolts does this route have before reaching the moulinette?",
-                        "render": "This route has {climbing:bolts} bolts"
-                    },
-                    "Difficulty": {
-                        "question": "What is the difficulty of this climbing route according to the french/belgian system?",
-                        "render": "The difficulty is {climbing:grade:french} according to the french/belgian system"
-                    },
-                    "Length": {
-                        "question": "How long is this climbing route (in meters)?",
-                        "render": "This route is {canonical(climbing:length)} long"
-                    },
-                    "Name": {
-                        "mappings": {
-                            "0": {
-                                "then": "This climbing route doesn't have a name"
-                            }
-                        },
-                        "question": "What is the name of this climbing route?",
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "Rock type": {
-                        "render": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Climbing route <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Climbing route"
-                }
-            },
-            "maybe_climbing": {
+            "4": {
                 "description": "A climbing opportunity?",
                 "name": "Climbing opportunities?",
                 "tagRenderings": {
@@ -668,7 +668,7 @@
     "cycle_highways": {
         "description": "This map shows cycle highways",
         "layers": {
-            "cycle_highways": {
+            "0": {
                 "name": "cycle highways",
                 "title": {
                     "render": "cycle highway"
@@ -685,18 +685,11 @@
     "cyclestreets": {
         "description": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
         "layers": {
-            "all_streets": {
-                "description": "Layer to mark any street as cyclestreet",
-                "name": "All streets",
-                "title": {
-                    "render": "Street"
-                }
-            },
-            "fietsstraat": {
+            "0": {
                 "description": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",
                 "name": "Cyclestreets"
             },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "This street will become a cyclestreet soon",
                 "name": "Future cyclestreet",
                 "title": {
@@ -706,6 +699,13 @@
                         }
                     },
                     "render": "Future cyclestreet"
+                }
+            },
+            "2": {
+                "description": "Layer to mark any street as cyclestreet",
+                "name": "All streets",
+                "title": {
+                    "render": "Street"
                 }
             }
         },
@@ -746,7 +746,7 @@
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facade gardens</a>, green facades and trees in the city not only bring peace and quiet, but also a more beautiful city, greater biodiversity, a cooling effect and better air quality. <br/> Klimaan VZW and Mechelen Klimaatneutraal want to map existing and new facade gardens as an example for people who want to build their own garden or for city walkers who love nature.<br/>More info about the project at <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "facadegardens": {
+            "0": {
                 "description": "Facade gardens",
                 "name": "Facade gardens",
                 "presets": {
@@ -836,7 +836,7 @@
     "fritures": {
         "layers": {
             "0": {
-                "friture": {
+                "override": {
                     "name": "Fries shop"
                 }
             }
@@ -849,7 +849,7 @@
     "hackerspaces": {
         "description": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
         "layers": {
-            "hackerspaces": {
+            "0": {
                 "description": "Hackerspace",
                 "icon": {
                     "mappings": {
@@ -926,137 +926,7 @@
     "hailhydrant": {
         "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
         "layers": {
-            "ambulancestation": {
-                "description": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
-                "name": "Map of ambulance stations",
-                "presets": {
-                    "0": {
-                        "description": "Add an ambulance station to the map",
-                        "title": "Ambulance station"
-                    }
-                },
-                "tagRenderings": {
-                    "ambulance-agency": {
-                        "question": "What agency operates this station?",
-                        "render": "This station is operated by {operator}."
-                    },
-                    "ambulance-name": {
-                        "question": "What is the name of this ambulance station?",
-                        "render": "This station is called {name}."
-                    },
-                    "ambulance-operator-type": {
-                        "mappings": {
-                            "0": {
-                                "then": "The station is operated by the government."
-                            },
-                            "1": {
-                                "then": "The station is operated by a community-based, or informal organization."
-                            },
-                            "2": {
-                                "then": "The station is operated by a formal group of volunteers."
-                            },
-                            "3": {
-                                "then": "The station is privately operated."
-                            }
-                        },
-                        "question": "How is the station operator classified?",
-                        "render": "The operator is a(n) {operator:type} entity."
-                    },
-                    "ambulance-place": {
-                        "question": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
-                        "render": "This station is found within {addr:place}."
-                    },
-                    "ambulance-street": {
-                        "question": " What is the street name where the station located?",
-                        "render": "This station is along a highway called {addr:street}."
-                    }
-                },
-                "title": {
-                    "render": "Ambulance Station"
-                }
-            },
-            "extinguisher": {
-                "description": "Map layer to show fire hydrants.",
-                "name": "Map of fire extinguishers.",
-                "presets": {
-                    "0": {
-                        "description": "A fire extinguisher is a small, portable device used to stop a fire",
-                        "title": "Fire extinguisher"
-                    }
-                },
-                "tagRenderings": {
-                    "extinguisher-location": {
-                        "mappings": {
-                            "0": {
-                                "then": "Found indoors."
-                            },
-                            "1": {
-                                "then": "Found outdoors."
-                            }
-                        },
-                        "question": "Where is it positioned?",
-                        "render": "Location: {location}"
-                    }
-                },
-                "title": {
-                    "render": "Extinguishers"
-                }
-            },
-            "fire_stations": {
-                "description": "Map layer to show fire stations.",
-                "name": "Map of fire stations",
-                "presets": {
-                    "0": {
-                        "description": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
-                        "title": "Fire station"
-                    }
-                },
-                "tagRenderings": {
-                    "station-agency": {
-                        "mappings": {
-                            "0": {
-                                "then": "Bureau of Fire Protection"
-                            }
-                        },
-                        "question": "What agency operates this station?",
-                        "render": "This station is operated by {operator}."
-                    },
-                    "station-name": {
-                        "question": "What is the name of this fire station?",
-                        "render": "This station is called {name}."
-                    },
-                    "station-operator": {
-                        "mappings": {
-                            "0": {
-                                "then": "The station is operated by the government."
-                            },
-                            "1": {
-                                "then": "The station is operated by a community-based, or informal organization."
-                            },
-                            "2": {
-                                "then": "The station is operated by a formal group of volunteers."
-                            },
-                            "3": {
-                                "then": "The station is privately operated."
-                            }
-                        },
-                        "question": "How is the station operator classified?",
-                        "render": "The operator is a(n) {operator:type} entity."
-                    },
-                    "station-place": {
-                        "question": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
-                        "render": "This station is found within {addr:place}."
-                    },
-                    "station-street": {
-                        "question": " What is the street name where the station located?",
-                        "render": "This station is along a highway called {addr:street}."
-                    }
-                },
-                "title": {
-                    "render": "Fire Station"
-                }
-            },
-            "hydrants": {
+            "0": {
                 "description": "Map layer to show fire hydrants.",
                 "name": "Map of hydrants",
                 "presets": {
@@ -1121,6 +991,136 @@
                 "title": {
                     "render": "Hydrant"
                 }
+            },
+            "1": {
+                "description": "Map layer to show fire hydrants.",
+                "name": "Map of fire extinguishers.",
+                "presets": {
+                    "0": {
+                        "description": "A fire extinguisher is a small, portable device used to stop a fire",
+                        "title": "Fire extinguisher"
+                    }
+                },
+                "tagRenderings": {
+                    "extinguisher-location": {
+                        "mappings": {
+                            "0": {
+                                "then": "Found indoors."
+                            },
+                            "1": {
+                                "then": "Found outdoors."
+                            }
+                        },
+                        "question": "Where is it positioned?",
+                        "render": "Location: {location}"
+                    }
+                },
+                "title": {
+                    "render": "Extinguishers"
+                }
+            },
+            "2": {
+                "description": "Map layer to show fire stations.",
+                "name": "Map of fire stations",
+                "presets": {
+                    "0": {
+                        "description": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
+                        "title": "Fire station"
+                    }
+                },
+                "tagRenderings": {
+                    "station-agency": {
+                        "mappings": {
+                            "0": {
+                                "then": "Bureau of Fire Protection"
+                            }
+                        },
+                        "question": "What agency operates this station?",
+                        "render": "This station is operated by {operator}."
+                    },
+                    "station-name": {
+                        "question": "What is the name of this fire station?",
+                        "render": "This station is called {name}."
+                    },
+                    "station-operator": {
+                        "mappings": {
+                            "0": {
+                                "then": "The station is operated by the government."
+                            },
+                            "1": {
+                                "then": "The station is operated by a community-based, or informal organization."
+                            },
+                            "2": {
+                                "then": "The station is operated by a formal group of volunteers."
+                            },
+                            "3": {
+                                "then": "The station is privately operated."
+                            }
+                        },
+                        "question": "How is the station operator classified?",
+                        "render": "The operator is a(n) {operator:type} entity."
+                    },
+                    "station-place": {
+                        "question": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
+                        "render": "This station is found within {addr:place}."
+                    },
+                    "station-street": {
+                        "question": " What is the street name where the station located?",
+                        "render": "This station is along a highway called {addr:street}."
+                    }
+                },
+                "title": {
+                    "render": "Fire Station"
+                }
+            },
+            "3": {
+                "description": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
+                "name": "Map of ambulance stations",
+                "presets": {
+                    "0": {
+                        "description": "Add an ambulance station to the map",
+                        "title": "Ambulance station"
+                    }
+                },
+                "tagRenderings": {
+                    "ambulance-agency": {
+                        "question": "What agency operates this station?",
+                        "render": "This station is operated by {operator}."
+                    },
+                    "ambulance-name": {
+                        "question": "What is the name of this ambulance station?",
+                        "render": "This station is called {name}."
+                    },
+                    "ambulance-operator-type": {
+                        "mappings": {
+                            "0": {
+                                "then": "The station is operated by the government."
+                            },
+                            "1": {
+                                "then": "The station is operated by a community-based, or informal organization."
+                            },
+                            "2": {
+                                "then": "The station is operated by a formal group of volunteers."
+                            },
+                            "3": {
+                                "then": "The station is privately operated."
+                            }
+                        },
+                        "question": "How is the station operator classified?",
+                        "render": "The operator is a(n) {operator:type} entity."
+                    },
+                    "ambulance-place": {
+                        "question": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
+                        "render": "This station is found within {addr:place}."
+                    },
+                    "ambulance-street": {
+                        "question": " What is the street name where the station located?",
+                        "render": "This station is along a highway called {addr:street}."
+                    }
+                },
+                "title": {
+                    "render": "Ambulance Station"
+                }
             }
         },
         "shortDescription": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
@@ -1144,7 +1144,7 @@
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
         "layers": {
-            "windturbine": {
+            "0": {
                 "name": "wind turbine",
                 "presets": {
                     "0": {
@@ -1227,7 +1227,7 @@
     "shops": {
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
         "layers": {
-            "shops": {
+            "0": {
                 "description": "A shop",
                 "name": "Shop",
                 "presets": {

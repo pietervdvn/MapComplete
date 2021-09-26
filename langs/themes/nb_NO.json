@@ -4,7 +4,7 @@
     },
     "artwork": {
         "layers": {
-            "artwork": {
+            "0": {
                 "name": "Kunstverk",
                 "presets": {
                     "0": {
@@ -82,7 +82,7 @@
     },
     "campersite": {
         "layers": {
-            "caravansites": {
+            "0": {
                 "tagRenderings": {
                     "caravansites-charge": {
                         "question": "pø",
@@ -119,19 +119,7 @@
     },
     "climbing": {
         "layers": {
-            "climbing": {
-                "description": "En klatremulighet",
-                "presets": {
-                    "0": {
-                        "description": "En klatremulighet",
-                        "title": "Klatremulighet"
-                    }
-                },
-                "title": {
-                    "render": "Klatremulighet"
-                }
-            },
-            "climbing_club": {
+            "0": {
                 "description": "En klatreklubb eller organisasjoner",
                 "name": "Klatreklubb",
                 "presets": {
@@ -144,7 +132,7 @@
                     "render": "Klatreklubb"
                 }
             },
-            "climbing_route": {
+            "2": {
                 "name": "Klatreruter",
                 "tagRenderings": {
                     "Length": {
@@ -155,7 +143,19 @@
                     "render": "Klatrerute"
                 }
             },
-            "maybe_climbing": {
+            "3": {
+                "description": "En klatremulighet",
+                "presets": {
+                    "0": {
+                        "description": "En klatremulighet",
+                        "title": "Klatremulighet"
+                    }
+                },
+                "title": {
+                    "render": "Klatremulighet"
+                }
+            },
+            "4": {
                 "description": "En klatremulighet?",
                 "name": "Klatremuligheter?",
                 "tagRenderings": {
@@ -196,15 +196,15 @@
     },
     "cyclestreets": {
         "layers": {
-            "all_streets": {
-                "description": "Lag for å markere hvilken som helst gate som sykkelvei",
-                "name": "Alle gater"
-            },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "name": "Fremtidig sykkelvei",
                 "title": {
                     "render": "Fremtidig sykkelvei"
                 }
+            },
+            "2": {
+                "description": "Lag for å markere hvilken som helst gate som sykkelvei",
+                "name": "Alle gater"
             }
         },
         "roamingRenderings": {
@@ -230,7 +230,7 @@
     },
     "facadegardens": {
         "layers": {
-            "facadegardens": {
+            "0": {
                 "tagRenderings": {
                     "facadegardens-sunshine": {
                         "mappings": {
@@ -248,25 +248,7 @@
     },
     "hailhydrant": {
         "layers": {
-            "extinguisher": {
-                "description": "Kartlag for å vise brannslokkere.",
-                "name": "Kart over brannhydranter",
-                "presets": {
-                    "0": {
-                        "title": "Brannslukker"
-                    }
-                },
-                "title": {
-                    "render": "Brannslokkere"
-                }
-            },
-            "fire_stations": {
-                "name": "Kart over brannstasjoner",
-                "title": {
-                    "render": "Brannstasjon"
-                }
-            },
-            "hydrants": {
+            "0": {
                 "description": "Kartlag for å vise brannhydranter.",
                 "name": "Kart over brannhydranter",
                 "presets": {
@@ -282,6 +264,24 @@
                 },
                 "title": {
                     "render": "Brannhydrant"
+                }
+            },
+            "1": {
+                "description": "Kartlag for å vise brannslokkere.",
+                "name": "Kart over brannhydranter",
+                "presets": {
+                    "0": {
+                        "title": "Brannslukker"
+                    }
+                },
+                "title": {
+                    "render": "Brannslokkere"
+                }
+            },
+            "2": {
+                "name": "Kart over brannstasjoner",
+                "title": {
+                    "render": "Brannstasjon"
                 }
             }
         }

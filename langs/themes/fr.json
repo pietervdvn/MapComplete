@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Bienvenue sur la carte ouverte des œuvres d'art, une carte des statues, fresques, ... du monde entier",
         "layers": {
-            "artwork": {
+            "0": {
                 "description": "Diverses œuvres d'art",
                 "name": "Œuvres d'art",
                 "presets": {
@@ -98,7 +98,7 @@
     "campersite": {
         "description": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis. C’est un site et une application. Les données sont stockées sur OpenStreetMap, elles seront toujours gratuites et peuvent être réutilisées par n’importe quelle application.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "campings",
                 "name": "Campings",
                 "presets": {
@@ -210,7 +210,7 @@
                     "render": "Camping {name}"
                 }
             },
-            "dumpstations": {
+            "1": {
                 "description": "Site de vidange",
                 "name": "Site de vidange",
                 "presets": {
@@ -324,7 +324,103 @@
         "description": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels.",
         "descriptionTail": "La carte a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
-            "climbing": {
+            "0": {
+                "description": "Club ou association d’escalade",
+                "name": "Club d’escalade",
+                "presets": {
+                    "0": {
+                        "description": "Un club d’escalade",
+                        "title": "Club d’escalade"
+                    },
+                    "1": {
+                        "description": "Une association d’escalade",
+                        "title": "Association d’escalade"
+                    }
+                },
+                "tagRenderings": {
+                    "climbing_club-name": {
+                        "question": "Quel est le nom du club ou de l’association ?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Association d’escalade"
+                        }
+                    },
+                    "render": "Club d’escalade"
+                }
+            },
+            "1": {
+                "description": "Une salle d’escalade",
+                "name": "Salle d’escalade",
+                "tagRenderings": {
+                    "name": {
+                        "question": "Quel est le nom de la salle d’escalade ?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Salle d’escalade <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Salle d’escalade"
+                }
+            },
+            "2": {
+                "name": "Voies d’escalade",
+                "presets": {
+                    "0": {
+                        "title": "Voie d’escalade"
+                    }
+                },
+                "tagRenderings": {
+                    "Bolts": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cette voie n’a pas de prises"
+                            },
+                            "1": {
+                                "then": "Cette voie n’a pas de prises"
+                            }
+                        },
+                        "question": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
+                        "render": "Cette voie a {climbing:bolts} prises"
+                    },
+                    "Difficulty": {
+                        "question": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
+                        "render": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}"
+                    },
+                    "Length": {
+                        "question": "Quelle est la longueur de cette voie (en mètres) ?",
+                        "render": "Cette voie fait {canonical(climbing:length)} de long"
+                    },
+                    "Name": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cette voie n’a pas de nom"
+                            }
+                        },
+                        "question": "Quel est le nom de cette voie d’escalade ?",
+                        "render": "<strong>{name}</strong>"
+                    },
+                    "Rock type": {
+                        "render": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Voie d’escalade <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Voie d’escalade"
+                }
+            },
+            "3": {
                 "description": "Opportunité d’escalade",
                 "name": "Opportunité d’escalade",
                 "presets": {
@@ -390,103 +486,7 @@
                     "render": "Opportunité d’escalade"
                 }
             },
-            "climbing_club": {
-                "description": "Club ou association d’escalade",
-                "name": "Club d’escalade",
-                "presets": {
-                    "0": {
-                        "description": "Un club d’escalade",
-                        "title": "Club d’escalade"
-                    },
-                    "1": {
-                        "description": "Une association d’escalade",
-                        "title": "Association d’escalade"
-                    }
-                },
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "question": "Quel est le nom du club ou de l’association ?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Association d’escalade"
-                        }
-                    },
-                    "render": "Club d’escalade"
-                }
-            },
-            "climbing_gym": {
-                "description": "Une salle d’escalade",
-                "name": "Salle d’escalade",
-                "tagRenderings": {
-                    "name": {
-                        "question": "Quel est le nom de la salle d’escalade ?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Salle d’escalade <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Salle d’escalade"
-                }
-            },
-            "climbing_route": {
-                "name": "Voies d’escalade",
-                "presets": {
-                    "0": {
-                        "title": "Voie d’escalade"
-                    }
-                },
-                "tagRenderings": {
-                    "Bolts": {
-                        "mappings": {
-                            "0": {
-                                "then": "Cette voie n’a pas de prises"
-                            },
-                            "1": {
-                                "then": "Cette voie n’a pas de prises"
-                            }
-                        },
-                        "question": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
-                        "render": "Cette voie a {climbing:bolts} prises"
-                    },
-                    "Difficulty": {
-                        "question": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
-                        "render": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}"
-                    },
-                    "Length": {
-                        "question": "Quelle est la longueur de cette voie (en mètres) ?",
-                        "render": "Cette voie fait {canonical(climbing:length)} de long"
-                    },
-                    "Name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Cette voie n’a pas de nom"
-                            }
-                        },
-                        "question": "Quel est le nom de cette voie d’escalade ?",
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "Rock type": {
-                        "render": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Voie d’escalade <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Voie d’escalade"
-                }
-            },
-            "maybe_climbing": {
+            "4": {
                 "description": "Opportunité d’escalade ?",
                 "name": "Opportunités d’escalade ?",
                 "tagRenderings": {
@@ -621,7 +621,7 @@
     "facadegardens": {
         "description": "Les <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>jardins muraux</a> en ville n’apportent pas seulement paix et tranquillité mais contribuent à embellir la ville, favoriser la biodiversité, régule la température et assainit l’air. <br/> Klimaan VZW et Mechelen Klimaatneutraal veulent cartographier les jardins muraux comme exemple pour les personnes souhaitant en construire ainsi que celles aimant la nature.<br/>Plus d’infos sur <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "facadegardens": {
+            "0": {
                 "description": "Jardins muraux",
                 "name": "Jardins muraux",
                 "presets": {
@@ -708,7 +708,7 @@
     "fritures": {
         "layers": {
             "0": {
-                "friture": {
+                "override": {
                     "name": "Friteries"
                 }
             }
@@ -722,137 +722,7 @@
     "hailhydrant": {
         "description": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.<br/>Les options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.<br/>Toutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres.",
         "layers": {
-            "ambulancestation": {
-                "description": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
-                "name": "Couche des ambulances",
-                "presets": {
-                    "0": {
-                        "description": "Ajouter une station d’ambulances à la carte",
-                        "title": "Station d’ambulances"
-                    }
-                },
-                "tagRenderings": {
-                    "ambulance-agency": {
-                        "question": "Quel est l’exploitant de la station ?",
-                        "render": "Cette station est opérée par {operator}."
-                    },
-                    "ambulance-name": {
-                        "question": "Quel est le nom de cette station ?",
-                        "render": "Cette station s’appelle {name}."
-                    },
-                    "ambulance-operator-type": {
-                        "mappings": {
-                            "0": {
-                                "then": "La station est opérée par le gouvernement."
-                            },
-                            "1": {
-                                "then": "La station est opérée par une organisation informelle."
-                            },
-                            "2": {
-                                "then": "La station est opérée par un groupe officiel de bénévoles."
-                            },
-                            "3": {
-                                "then": "La station est opérée par un groupe privé."
-                            }
-                        },
-                        "question": "Quel est le type d’exploitant ?",
-                        "render": "L’exploitant est de type {operator:type}."
-                    },
-                    "ambulance-place": {
-                        "question": "Dans quelle localité la station est-elle située ?",
-                        "render": "La station fait partie de {addr:place}."
-                    },
-                    "ambulance-street": {
-                        "question": " Quel est le nom de la rue où la station se situe ?",
-                        "render": "La station fait partie de {addr:street}."
-                    }
-                },
-                "title": {
-                    "render": "Station d’ambulances"
-                }
-            },
-            "extinguisher": {
-                "description": "Couche des lances à incendie.",
-                "name": "Couche des extincteurs.",
-                "presets": {
-                    "0": {
-                        "description": "Un extincteur est un appareil portatif servant à éteindre un feu",
-                        "title": "Extincteur"
-                    }
-                },
-                "tagRenderings": {
-                    "extinguisher-location": {
-                        "mappings": {
-                            "0": {
-                                "then": "Intérieur."
-                            },
-                            "1": {
-                                "then": "Extérieur."
-                            }
-                        },
-                        "question": "Où est-elle positionnée ?",
-                        "render": "Emplacement : {location}"
-                    }
-                },
-                "title": {
-                    "render": "Exctincteurs"
-                }
-            },
-            "fire_stations": {
-                "description": "Couche des stations de pompiers.",
-                "name": "Couche des stations de pompiers",
-                "presets": {
-                    "0": {
-                        "description": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
-                        "title": "Caserne de pompiers"
-                    }
-                },
-                "tagRenderings": {
-                    "station-agency": {
-                        "mappings": {
-                            "0": {
-                                "then": "Brigade de Protection du Feu"
-                            }
-                        },
-                        "question": "Quel est l’exploitant de la station ?",
-                        "render": "Cette station est opérée par {operator}."
-                    },
-                    "station-name": {
-                        "question": "Quel est le nom de la station ?",
-                        "render": "Cette station s’appelle {name}."
-                    },
-                    "station-operator": {
-                        "mappings": {
-                            "0": {
-                                "then": "La station est opérée par le gouvernement."
-                            },
-                            "1": {
-                                "then": "La station est opérée par une organisation informelle."
-                            },
-                            "2": {
-                                "then": "La station est opérée par un groupe officiel de bénévoles."
-                            },
-                            "3": {
-                                "then": "La station est opérée par un groupe privé."
-                            }
-                        },
-                        "question": "Quel est le type d’exploitant ?",
-                        "render": "L’exploitant est de type {operator:type}."
-                    },
-                    "station-place": {
-                        "question": "Dans quelle localité la station est-elle située ?",
-                        "render": "La station fait partie de {addr:place}."
-                    },
-                    "station-street": {
-                        "question": " Quel est le nom de la rue dans lequel elle se situe ?",
-                        "render": "La station fait partie de la {addr:street}."
-                    }
-                },
-                "title": {
-                    "render": "Station de pompiers"
-                }
-            },
-            "hydrants": {
+            "0": {
                 "description": "Couche des bornes incendie.",
                 "name": "Carte des bornes incendie",
                 "presets": {
@@ -917,6 +787,136 @@
                 "title": {
                     "render": "Bornes incendie"
                 }
+            },
+            "1": {
+                "description": "Couche des lances à incendie.",
+                "name": "Couche des extincteurs.",
+                "presets": {
+                    "0": {
+                        "description": "Un extincteur est un appareil portatif servant à éteindre un feu",
+                        "title": "Extincteur"
+                    }
+                },
+                "tagRenderings": {
+                    "extinguisher-location": {
+                        "mappings": {
+                            "0": {
+                                "then": "Intérieur."
+                            },
+                            "1": {
+                                "then": "Extérieur."
+                            }
+                        },
+                        "question": "Où est-elle positionnée ?",
+                        "render": "Emplacement : {location}"
+                    }
+                },
+                "title": {
+                    "render": "Exctincteurs"
+                }
+            },
+            "2": {
+                "description": "Couche des stations de pompiers.",
+                "name": "Couche des stations de pompiers",
+                "presets": {
+                    "0": {
+                        "description": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
+                        "title": "Caserne de pompiers"
+                    }
+                },
+                "tagRenderings": {
+                    "station-agency": {
+                        "mappings": {
+                            "0": {
+                                "then": "Brigade de Protection du Feu"
+                            }
+                        },
+                        "question": "Quel est l’exploitant de la station ?",
+                        "render": "Cette station est opérée par {operator}."
+                    },
+                    "station-name": {
+                        "question": "Quel est le nom de la station ?",
+                        "render": "Cette station s’appelle {name}."
+                    },
+                    "station-operator": {
+                        "mappings": {
+                            "0": {
+                                "then": "La station est opérée par le gouvernement."
+                            },
+                            "1": {
+                                "then": "La station est opérée par une organisation informelle."
+                            },
+                            "2": {
+                                "then": "La station est opérée par un groupe officiel de bénévoles."
+                            },
+                            "3": {
+                                "then": "La station est opérée par un groupe privé."
+                            }
+                        },
+                        "question": "Quel est le type d’exploitant ?",
+                        "render": "L’exploitant est de type {operator:type}."
+                    },
+                    "station-place": {
+                        "question": "Dans quelle localité la station est-elle située ?",
+                        "render": "La station fait partie de {addr:place}."
+                    },
+                    "station-street": {
+                        "question": " Quel est le nom de la rue dans lequel elle se situe ?",
+                        "render": "La station fait partie de la {addr:street}."
+                    }
+                },
+                "title": {
+                    "render": "Station de pompiers"
+                }
+            },
+            "3": {
+                "description": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
+                "name": "Couche des ambulances",
+                "presets": {
+                    "0": {
+                        "description": "Ajouter une station d’ambulances à la carte",
+                        "title": "Station d’ambulances"
+                    }
+                },
+                "tagRenderings": {
+                    "ambulance-agency": {
+                        "question": "Quel est l’exploitant de la station ?",
+                        "render": "Cette station est opérée par {operator}."
+                    },
+                    "ambulance-name": {
+                        "question": "Quel est le nom de cette station ?",
+                        "render": "Cette station s’appelle {name}."
+                    },
+                    "ambulance-operator-type": {
+                        "mappings": {
+                            "0": {
+                                "then": "La station est opérée par le gouvernement."
+                            },
+                            "1": {
+                                "then": "La station est opérée par une organisation informelle."
+                            },
+                            "2": {
+                                "then": "La station est opérée par un groupe officiel de bénévoles."
+                            },
+                            "3": {
+                                "then": "La station est opérée par un groupe privé."
+                            }
+                        },
+                        "question": "Quel est le type d’exploitant ?",
+                        "render": "L’exploitant est de type {operator:type}."
+                    },
+                    "ambulance-place": {
+                        "question": "Dans quelle localité la station est-elle située ?",
+                        "render": "La station fait partie de {addr:place}."
+                    },
+                    "ambulance-street": {
+                        "question": " Quel est le nom de la rue où la station se situe ?",
+                        "render": "La station fait partie de {addr:street}."
+                    }
+                },
+                "title": {
+                    "render": "Station d’ambulances"
+                }
             }
         },
         "shortDescription": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
@@ -930,7 +930,7 @@
     "openwindpowermap": {
         "description": "Une carte indiquant les éoliennes et permettant leur édition.",
         "layers": {
-            "windturbine": {
+            "0": {
                 "name": "Éolienne",
                 "presets": {
                     "0": {
@@ -1008,7 +1008,7 @@
     "shops": {
         "description": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, horaires d'ouverture et numéro de téléphone",
         "layers": {
-            "shops": {
+            "0": {
                 "description": "Un magasin",
                 "name": "Magasin",
                 "presets": {

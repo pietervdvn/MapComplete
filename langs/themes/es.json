@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo",
         "layers": {
-            "artwork": {
+            "0": {
                 "description": "Diversas piezas de obras de arte",
                 "name": "Obras de arte",
                 "presets": {

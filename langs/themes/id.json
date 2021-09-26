@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
         "layers": {
-            "artwork": {
+            "0": {
                 "name": "Karya seni",
                 "tagRenderings": {
                     "artwork-website": {
@@ -27,7 +27,7 @@
     },
     "campersite": {
         "layers": {
-            "caravansites": {
+            "0": {
                 "tagRenderings": {
                     "caravansites-fee": {
                         "mappings": {
@@ -88,35 +88,35 @@
     },
     "climbing": {
         "layers": {
-            "climbing": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "climbing_club": {
+            "0": {
                 "tagRenderings": {
                     "climbing_club-name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "climbing_gym": {
+            "1": {
                 "tagRenderings": {
                     "name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "climbing_route": {
+            "2": {
                 "tagRenderings": {
                     "Name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "maybe_climbing": {
+            "3": {
+                "tagRenderings": {
+                    "name": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "4": {
                 "tagRenderings": {
                     "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
@@ -127,7 +127,7 @@
     },
     "hailhydrant": {
         "layers": {
-            "hydrants": {
+            "0": {
                 "tagRenderings": {
                     "hydrant-type": {
                         "mappings": {
@@ -142,7 +142,7 @@
     },
     "shops": {
         "layers": {
-            "shops": {
+            "0": {
                 "tagRenderings": {
                     "shops-email": {
                         "render": "<a href='mailto:{email}'>{email}</a>"

@@ -10,7 +10,7 @@
     "artwork": {
         "description": "Welkom op de open kunstwerken-kaart, een kaart van standbeelden, bustes, graffiti en andere kunstwerken over de hele wereld",
         "layers": {
-            "artwork": {
+            "0": {
                 "description": "Verschillende soorten kunstwerken",
                 "name": "Kunstwerken",
                 "presets": {
@@ -108,28 +108,7 @@
         "description": "<img style='float:right;margin: 1em;width: 10em;height: auto;' src='./assets/themes/buurtnatuur/groen_logo.svg' alt='logo-groen' class='logo/> <br /><b>Natuur maakt gelukkig.</b> Aan de hand van deze website willen we de natuur dicht bij ons beter inventariseren. Met als doel meer mensen te laten genieten van toegankelijke natuur én te strijden voor meer natuur in onze buurten.<ul><li>In welke natuurgebieden kan jij terecht? Hoe toegankelijk zijn ze?</li><li>In welke bossen kan een gezin in jouw gemeente opnieuw op adem komen?</li><li>Op welke onbekende plekjes is het zalig spelen?</li></ul><p>Samen kleuren we heel Vlaanderen en Brussel groen.Blijf op de hoogte van de resultaten van buurtnatuur.be: <a href='https://www.groen.be/buurtnatuur' target='_blank'>meld je aan voor e-mailupdates</a>.",
         "descriptionTail": "<h4>Tips</h4><ul><li>Over groen ingekleurde gebieden weten we alles wat we willen weten.</li><li>Bij rood ingekleurde gebieden ontbreekt nog heel wat info: klik een gebied aan en beantwoord de vragen.</li><li>Je kan altijd een vraag overslaan als je het antwoord niet weet of niet zeker bent</li><li>Je kan altijd een foto toevoegen</li><li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li><li>Open buurtnatuur.be <b>op je smartphone</b> om al wandelend foto's te maken en vragen te beantwoorden</li></ul><small><p>De oorspronkelijke data komt van <b>OpenStreetMap</b> en je antwoorden worden daar bewaard.<br/> Omdat iedereen vrij kan meewerken aan dit project, kunnen we niet garanderen dat er geen fouten opduiken.Kan je hier niet aanpassen wat je wilt, dan kan je dat zelf via OpenStreetMap.org doen. Groen kan <b>geen enkele verantwoordelijkheid</b> nemen over de kaart.</p>Je privacy is belangrijk. We tellen wel hoeveel gebruikers deze website bezoeken. We plaatsen een cookie waar geen persoonlijke informatie in bewaard wordt. Als je inlogt, komt er een tweede cookie bij met je inloggegevens.</small>",
         "layers": {
-            "forest": {
-                "description": "Een bos is een verzameling bomen, al dan niet als productiehout.",
-                "name": "Bos",
-                "presets": {
-                    "0": {
-                        "description": "Voeg een ontbrekend bos toe aan de kaart",
-                        "title": "Bos"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name:nl}"
-                        },
-                        "1": {
-                            "then": "{name}"
-                        }
-                    },
-                    "render": "Bos"
-                }
-            },
-            "nature_reserve_buurtnatuur": {
+            "0": {
                 "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
                 "name": "Natuurgebied",
                 "presets": {
@@ -150,7 +129,7 @@
                     "render": "Natuurgebied"
                 }
             },
-            "parks": {
+            "1": {
                 "description": "Een park is een publiek toegankelijke, groene ruimte binnen de stad. Ze is typisch ingericht voor recreatief gebruik, met (verharde) wandelpaden, zitbanken, vuilnisbakken, een gezellig vijvertje, ...",
                 "name": "Park",
                 "presets": {
@@ -169,6 +148,27 @@
                         }
                     },
                     "render": "Park"
+                }
+            },
+            "2": {
+                "description": "Een bos is een verzameling bomen, al dan niet als productiehout.",
+                "name": "Bos",
+                "presets": {
+                    "0": {
+                        "description": "Voeg een ontbrekend bos toe aan de kaart",
+                        "title": "Bos"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name:nl}"
+                        },
+                        "1": {
+                            "then": "{name}"
+                        }
+                    },
+                    "render": "Bos"
                 }
             }
         },
@@ -245,7 +245,7 @@
     "campersite": {
         "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslagen en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "camperplaatsen",
                 "name": "Camperplaatsen",
                 "tagRenderings": {
@@ -293,7 +293,88 @@
         "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
         "descriptionTail": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
         "layers": {
-            "climbing": {
+            "0": {
+                "description": "Een klimclub of organisatie",
+                "name": "Klimclub",
+                "presets": {
+                    "0": {
+                        "description": "Een klimclub",
+                        "title": "Klimclub"
+                    },
+                    "1": {
+                        "description": "Een VZW die werkt rond klimmen",
+                        "title": "Een klimorganisatie"
+                    }
+                },
+                "tagRenderings": {
+                    "climbing_club-name": {
+                        "question": "Wat is de naam van deze klimclub?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Klimorganisatie"
+                        }
+                    },
+                    "render": "Klimclub"
+                }
+            },
+            "1": {
+                "description": "Een klimzaal",
+                "name": "Klimzalen",
+                "tagRenderings": {
+                    "name": {
+                        "question": "Wat is de naam van dit Klimzaal?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Klimzaal <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Klimzaal"
+                }
+            },
+            "2": {
+                "name": "Klimroute",
+                "presets": {
+                    "0": {
+                        "title": "Klimroute"
+                    }
+                },
+                "tagRenderings": {
+                    "Difficulty": {
+                        "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
+                        "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+                    },
+                    "Length": {
+                        "question": "Hoe lang is deze klimroute (in meters)?",
+                        "render": "Deze klimroute is {canonical(climbing:length)} lang"
+                    },
+                    "Name": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze klimroute heeft geen naam"
+                            }
+                        },
+                        "question": "Hoe heet deze klimroute?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Klimroute <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Klimroute"
+                }
+            },
+            "3": {
                 "description": "Een klimgelegenheid",
                 "name": "Klimgelegenheden",
                 "presets": {
@@ -335,88 +416,7 @@
                     "render": "Klimgelegenheid"
                 }
             },
-            "climbing_club": {
-                "description": "Een klimclub of organisatie",
-                "name": "Klimclub",
-                "presets": {
-                    "0": {
-                        "description": "Een klimclub",
-                        "title": "Klimclub"
-                    },
-                    "1": {
-                        "description": "Een VZW die werkt rond klimmen",
-                        "title": "Een klimorganisatie"
-                    }
-                },
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "question": "Wat is de naam van deze klimclub?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Klimorganisatie"
-                        }
-                    },
-                    "render": "Klimclub"
-                }
-            },
-            "climbing_gym": {
-                "description": "Een klimzaal",
-                "name": "Klimzalen",
-                "tagRenderings": {
-                    "name": {
-                        "question": "Wat is de naam van dit Klimzaal?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Klimzaal <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Klimzaal"
-                }
-            },
-            "climbing_route": {
-                "name": "Klimroute",
-                "presets": {
-                    "0": {
-                        "title": "Klimroute"
-                    }
-                },
-                "tagRenderings": {
-                    "Difficulty": {
-                        "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
-                        "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
-                    },
-                    "Length": {
-                        "question": "Hoe lang is deze klimroute (in meters)?",
-                        "render": "Deze klimroute is {canonical(climbing:length)} lang"
-                    },
-                    "Name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Deze klimroute heeft geen naam"
-                            }
-                        },
-                        "question": "Hoe heet deze klimroute?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Klimroute <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Klimroute"
-                }
-            },
-            "maybe_climbing": {
+            "4": {
                 "description": "Een klimgelegenheid?",
                 "name": "Klimgelegenheiden?",
                 "tagRenderings": {
@@ -566,18 +566,11 @@
     "cyclestreets": {
         "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
         "layers": {
-            "all_streets": {
-                "description": "Laag waar je een straat als fietsstraat kan markeren",
-                "name": "Alle straten",
-                "title": {
-                    "render": "Straat"
-                }
-            },
-            "fietsstraat": {
+            "0": {
                 "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen.",
                 "name": "Fietsstraten"
             },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "Deze straat wordt binnenkort een fietsstraat",
                 "name": "Toekomstige fietsstraat",
                 "title": {
@@ -587,6 +580,13 @@
                         }
                     },
                     "render": "Toekomstige fietsstraat"
+                }
+            },
+            "2": {
+                "description": "Laag waar je een straat als fietsstraat kan markeren",
+                "name": "Alle straten",
+                "title": {
+                    "render": "Straat"
                 }
             }
         },
@@ -627,7 +627,7 @@
     "facadegardens": {
         "description": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "facadegardens": {
+            "0": {
                 "description": "Geveltuintjes",
                 "name": "Geveltuintjes",
                 "presets": {
@@ -719,7 +719,7 @@
         "description": "Op deze kaart vind je je favoriete frituur!",
         "layers": {
             "0": {
-                "friture": {
+                "override": {
                     "name": "Frituren"
                 }
             }
@@ -729,7 +729,19 @@
     "fruit_trees": {
         "description": "Op deze kaart vindt je boomgaarden en fruitbomen",
         "layers": {
-            "fruitboom": {
+            "0": {
+                "name": "Boomgaarden",
+                "presets": {
+                    "0": {
+                        "description": "Voeg een boomgaard toe (als punt - omtrek nog te tekenen)",
+                        "title": "Boomgaard"
+                    }
+                },
+                "title": {
+                    "render": "Boomgaard"
+                }
+            },
+            "1": {
                 "description": "Een boom",
                 "name": "Boom",
                 "presets": {
@@ -759,18 +771,6 @@
                 "title": {
                     "render": "Boom"
                 }
-            },
-            "orchards": {
-                "name": "Boomgaarden",
-                "presets": {
-                    "0": {
-                        "description": "Voeg een boomgaard toe (als punt - omtrek nog te tekenen)",
-                        "title": "Boomgaard"
-                    }
-                },
-                "title": {
-                    "render": "Boomgaard"
-                }
             }
         },
         "shortDescription": "Boomgaarden en fruitbomen",
@@ -783,7 +783,7 @@
     "grb": {
         "description": "GRB Fixup",
         "layers": {
-            "grb-fixmes": {
+            "0": {
                 "description": "Dit gebouw heeft een foutmelding",
                 "name": "Fixmes op gebouwen",
                 "tagRenderings": {
@@ -852,7 +852,7 @@
     },
     "openwindpowermap": {
         "layers": {
-            "windturbine": {
+            "0": {
                 "name": "windturbine",
                 "presets": {
                     "0": {
@@ -911,7 +911,7 @@
     },
     "shops": {
         "layers": {
-            "shops": {
+            "0": {
                 "description": "Een winkel",
                 "name": "Winkel",
                 "presets": {
@@ -959,7 +959,7 @@
     "speelplekken": {
         "description": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>",
         "layers": {
-            "walking_routes": {
+            "7": {
                 "name": "Wandelroutes van provincie Antwerpen",
                 "tagRenderings": {
                     "walk-description": {

@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
         "layers": {
-            "artwork": {
+            "0": {
                 "description": "Verschiedene Kunstwerke",
                 "name": "Kunstwerke",
                 "presets": {
@@ -98,31 +98,7 @@
         "description": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
         "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
         "layers": {
-            "climbing": {
-                "description": "Eine Klettergelegenheit",
-                "name": "Klettermöglichkeiten",
-                "presets": {
-                    "0": {
-                        "description": "Eine Klettergelegenheit",
-                        "title": "Klettermöglichkeit"
-                    }
-                },
-                "tagRenderings": {
-                    "name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Diese Klettergelegenheit hat keinen Namen"
-                            }
-                        },
-                        "question": "Wie heißt diese Klettergelegenheit?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "render": "Klettermöglichkeit"
-                }
-            },
-            "climbing_club": {
+            "0": {
                 "description": "Ein Kletterverein oder eine Organisation",
                 "name": "Kletterverein",
                 "presets": {
@@ -150,7 +126,7 @@
                     "render": "Kletterverein"
                 }
             },
-            "climbing_gym": {
+            "1": {
                 "description": "Eine Kletterhalle",
                 "name": "Kletterhallen",
                 "tagRenderings": {
@@ -168,7 +144,7 @@
                     "render": "Kletterhalle"
                 }
             },
-            "climbing_route": {
+            "2": {
                 "name": "Kletterrouten",
                 "tagRenderings": {
                     "Difficulty": {
@@ -196,7 +172,31 @@
                     "render": "Kleterroute"
                 }
             },
-            "maybe_climbing": {
+            "3": {
+                "description": "Eine Klettergelegenheit",
+                "name": "Klettermöglichkeiten",
+                "presets": {
+                    "0": {
+                        "description": "Eine Klettergelegenheit",
+                        "title": "Klettermöglichkeit"
+                    }
+                },
+                "tagRenderings": {
+                    "name": {
+                        "mappings": {
+                            "0": {
+                                "then": "Diese Klettergelegenheit hat keinen Namen"
+                            }
+                        },
+                        "question": "Wie heißt diese Klettergelegenheit?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "render": "Klettermöglichkeit"
+                }
+            },
+            "4": {
                 "description": "Eine Klettergelegenheit?",
                 "name": "Klettermöglichkeiten?",
                 "tagRenderings": {

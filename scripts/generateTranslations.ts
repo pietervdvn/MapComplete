@@ -61,14 +61,14 @@ class TranslationPart {
                 continue
             }
 
-            if (v["id"] !== undefined) {
+            if (v["id"] !== undefined && context.endsWith("tagRenderings")) {
                 // We use the embedded id as key instead of the index as this is more stable
                 // Note: indonesian is shortened as 'id' as well!
                 if (v["en"] !== undefined || v["nl"] !== undefined) {
                     // This is probably a translation already!
                     // pass
                 } else {
-                    
+
                     key = v["id"]
                     if (typeof key !== "string") {
                         throw "Panic: found a non-string ID at" + context
@@ -247,7 +247,23 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
     }
 }
 
+/**
+ * Merge two objects together
+ * @param source: where the tranlations come from
+ * @param target: the object in which the translations should be merged
+ * @param language: the language code
+ * @param context: context for error handling
+ * @constructor
+ */
 function MergeTranslation(source: any, target: any, language: string, context: string = "") {
+
+    let keyRemapping: Map<string, string> = undefined
+    if (context.endsWith(".tagRenderings")) {
+        keyRemapping = new Map<string, string>()
+        for (const key in target) {
+            keyRemapping.set(target[key].id, key)
+        }
+    }
 
     for (const key in source) {
         if (!source.hasOwnProperty(key)) {
@@ -255,8 +271,10 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         }
 
         const sourceV = source[key];
-        const targetV = target[key]
+        const targetV = target[keyRemapping?.get(key) ?? key]
+
         if (typeof sourceV === "string") {
+            // Add the translation
             if (targetV === undefined) {
                 if (typeof target === "string") {
                     throw "Trying to merge a translation into a fixed string at " + context + " for key " + key;
@@ -335,6 +353,9 @@ function mergeLayerTranslations() {
     }
 }
 
+/**
+ * Load the translations into the theme files
+ */
 function mergeThemeTranslations() {
     const themeFiles = ScriptUtils.getThemeFiles();
     for (const themeFile of themeFiles) {

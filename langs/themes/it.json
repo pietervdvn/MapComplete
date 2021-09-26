@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
         "layers": {
-            "artwork": {
+            "0": {
                 "description": "Diverse opere d’arte",
                 "name": "Opere d’arte",
                 "presets": {
@@ -98,7 +98,7 @@
     "campersite": {
         "description": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "Aree camper",
                 "name": "Aree camper",
                 "presets": {
@@ -210,7 +210,7 @@
                     "render": "Area camper {name}"
                 }
             },
-            "dumpstations": {
+            "1": {
                 "description": "Luoghi di sversamento delle acque reflue",
                 "name": "Luoghi di sversamento delle acque reflue",
                 "presets": {
@@ -327,7 +327,7 @@
     },
     "climbing": {
         "layers": {
-            "climbing_route": {
+            "2": {
                 "tagRenderings": {
                     "Difficulty": {
                         "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
@@ -361,18 +361,11 @@
     },
     "cyclestreets": {
         "layers": {
-            "all_streets": {
-                "description": "Livello per contrassegnare tutte le strade come strade ciclabili",
-                "name": "Tutte le strade",
-                "title": {
-                    "render": "Strada"
-                }
-            },
-            "fietsstraat": {
+            "0": {
                 "description": "Una strada ciclabile è una strada in cui i veicoli a motore non possono sorpassare le persone in bicicletta",
                 "name": "Strade ciclabili"
             },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "Questa strada diventerà presto una strada ciclabile",
                 "name": "Futura strada ciclabile",
                 "title": {
@@ -382,6 +375,13 @@
                         }
                     },
                     "render": "Futura strada ciclabile"
+                }
+            },
+            "2": {
+                "description": "Livello per contrassegnare tutte le strade come strade ciclabili",
+                "name": "Tutte le strade",
+                "title": {
+                    "render": "Strada"
                 }
             }
         },
@@ -409,7 +409,7 @@
     },
     "facadegardens": {
         "layers": {
-            "facadegardens": {
+            "0": {
                 "presets": {
                     "0": {
                         "description": "Aggiungi un giardino verticale",
@@ -488,23 +488,7 @@
     },
     "hailhydrant": {
         "layers": {
-            "fire_stations": {
-                "description": "Livello che mostra le caserme dei vigili del fuoco.",
-                "name": "Mappa delle caserme dei vigili del fuoco",
-                "tagRenderings": {
-                    "station-name": {
-                        "question": "Come si chiama questa caserma dei vigili del fuoco?",
-                        "render": "Questa caserma si chiama {name}."
-                    },
-                    "station-street": {
-                        "question": " Qual è il nome della via in cui si trova la caserma?"
-                    }
-                },
-                "title": {
-                    "render": "Caserma dei vigili del fuoco"
-                }
-            },
-            "hydrants": {
+            "0": {
                 "tagRenderings": {
                     "hydrant-color": {
                         "mappings": {
@@ -522,6 +506,22 @@
                         "question": "Di che tipo è questo idrante?",
                         "render": " Tipo di idrante: {fire_hydrant:type}"
                     }
+                }
+            },
+            "2": {
+                "description": "Livello che mostra le caserme dei vigili del fuoco.",
+                "name": "Mappa delle caserme dei vigili del fuoco",
+                "tagRenderings": {
+                    "station-name": {
+                        "question": "Come si chiama questa caserma dei vigili del fuoco?",
+                        "render": "Questa caserma si chiama {name}."
+                    },
+                    "station-street": {
+                        "question": " Qual è il nome della via in cui si trova la caserma?"
+                    }
+                },
+                "title": {
+                    "render": "Caserma dei vigili del fuoco"
                 }
             }
         }
