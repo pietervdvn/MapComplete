@@ -67,6 +67,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "explanation",
             "mappings": [
                 {
                     "if": "highway=living_street",
@@ -205,6 +206,7 @@
             "id": "slow_roads-surface"
         },
         {
+            "id": "slow_road_is_lit",
             "question": "Is deze weg 's nachts verlicht?",
             "mappings": [
                 {

@@ -82,6 +82,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "minimap",
             "render": "{minimap():height: 9rem; border-radius: 2.5rem; overflow:hidden;border:1px solid gray}"
         },
         {
@@ -149,6 +150,7 @@
             "id": "public_bookcase-capacity"
         },
         {
+            "id": "bookcase-booktypes",
             "question": {
                 "en": "What kind of books can be found in this public bookcase?",
                 "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
@@ -194,6 +196,7 @@
             ]
         },
         {
+            "id": "bookcase-is-indoors",
             "question": {
                 "en": "Is this bookcase located outdoors?",
                 "nl": "Staat dit boekenruilkastje binnen of buiten?",
@@ -236,6 +239,7 @@
             ]
         },
         {
+            "id": "bookcase-is-accessible",
             "question": {
                 "en": "Is this public bookcase freely accessible?",
                 "nl": "Is dit boekenruilkastje publiek toegankelijk?",

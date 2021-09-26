@@ -216,6 +216,7 @@
             "id": "sport_pitch-surface"
         },
         {
+            "id": "sport-pitch-access",
             "question": {
                 "nl": "Is dit sportterrein publiek toegankelijk?",
                 "fr": "Est-ce que ce terrain de sport est accessible au public ?",
@@ -266,6 +267,7 @@
             ]
         },
         {
+            "id": "sport-pitch-reservation",
             "question": {
                 "nl": "Moet men reserveren om gebruik te maken van dit sportveld?",
                 "fr": "Doit-on réserver pour utiliser ce terrain de sport ?",
@@ -384,7 +386,8 @@
             "id": "sport_pitch-opening_hours"
         },
         "questions",
-        {
+        { "id": "sport-pitch-reviews",
+
             "render": "{reviews(name, sportpitch)}"
         }
     ],

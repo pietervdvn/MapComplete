@@ -33,6 +33,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "trail-length",
             "render": {
                 "en": "The trail is {_length:km} kilometers long",
                 "nl": "Deze wandeling is {_length:km} kilometer lang"

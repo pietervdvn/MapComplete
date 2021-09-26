@@ -68,6 +68,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "defibrillator-indoors",
             "question": {
                 "en": "Is this defibrillator located indoors?",
                 "ca": "Està el desfibril·lador a l'interior?",

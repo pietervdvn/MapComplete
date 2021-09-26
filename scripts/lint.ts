@@ -8,23 +8,39 @@
 import ScriptUtils from "./ScriptUtils";
 import {readFileSync, writeFileSync} from "fs";
 import {tag} from "@turf/turf";
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 
-const layerFiles = ScriptUtils.getLayerFiles();
-for (const layerFile of layerFiles) {
-    console.log("Handling ", layerFile.path)
-
-    for (const tagRendering of layerFile.parsed.tagRenderings) {
+/**
+ * In place fix
+ */
+function fixLayerConfig(config: LayerConfigJson) : void{
+    for (const tagRendering of config.tagRenderings) {
         if(tagRendering["#"] !== undefined){
             tagRendering["id"] = tagRendering["#"]
             delete tagRendering["#"]
         }
         if(tagRendering["id"] === undefined){
             if(tagRendering["freeform"]?.key !== undefined ) {
-                tagRendering["id"] = layerFile.parsed.id+"-"+tagRendering["freeform"]["key"]
+                tagRendering["id"] = config.id+"-"+tagRendering["freeform"]["key"]
             }
         }
     }
-    
-    
+}
+
+const layerFiles = ScriptUtils.getLayerFiles();
+for (const layerFile of layerFiles) {
+    fixLayerConfig(layerFile.parsed)
     writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "    "))
+}
+
+const themeFiles = ScriptUtils.getThemeFiles()
+for (const themeFile of themeFiles) {
+    for (const layerConfig of themeFile.parsed.layers) {
+        if(typeof layerConfig === "string" || layerConfig["builtin"]!== undefined){
+            continue
+        }
+        // @ts-ignore
+        fixLayerConfig(layerConfig)
+    }
+    writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "    "))
 }

@@ -165,6 +165,7 @@
             "id": "playground-surface"
         },
         {
+            "id": "playground-lit",
             "question": {
                 "nl": "Is deze speeltuin 's nachts verlicht?",
                 "en": "Is this playground lit at night?",
@@ -260,6 +261,7 @@
             "id": "playground-operator"
         },
         {
+            "id": "playground-access",
             "question": {
                 "nl": "Is deze speeltuin vrij toegankelijk voor het publiek?",
                 "en": "Is this playground accessible to the general public?",
@@ -370,6 +372,7 @@
             "id": "playground-phone"
         },
         {
+            "id": "Playground-wheelchair",
             "question": {
                 "nl": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?",
                 "en": "Is this playground accessible to wheelchair users?",
@@ -464,6 +467,7 @@
         },
         "questions",
         {
+            "id": "playground-reviews",
             "render": "{reviews(name, playground)}"
         }
     ],

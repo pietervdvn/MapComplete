@@ -44,9 +44,11 @@
     "tagRenderings": [
         "images",
         {
+            "id": "explanation",
             "render": "Op dit grasveld in het park mag je spelen, picnicken, zitten, ..."
         },
         {
+            "id": "grass-in-parks-reviews",
             "render": "{reviews(name, landuse=grass )}"
         }
     ]

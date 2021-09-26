@@ -430,6 +430,7 @@
             "id": "halal (no friture)"
         },
         {
+            "id": "friture-vegetarian",
             "question": {
                 "nl": "Heeft deze frituur vegetarische snacks?",
                 "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
@@ -460,6 +461,7 @@
             "condition": "cuisine=friture"
         },
         {
+            "id": "friture-vegan",
             "question": {
                 "nl": "Heeft deze frituur veganistische snacks?",
                 "fr": "Cette friterie est-elle équipée de snacks végétaliens ?"
@@ -490,6 +492,7 @@
             "condition": "cuisine=friture"
         },
         {
+            "id": "friture-oil",
             "question": {
                 "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
                 "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?"
@@ -513,6 +516,7 @@
             "condition": "cuisine=friture"
         },
         {
+            "id": "friture-take-your-container",
             "question": {
                 "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
                 "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",

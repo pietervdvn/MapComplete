@@ -135,6 +135,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "bike_repair_station-available-services",
             "question": {
                 "en": "Which services are available at this bike station?",
                 "nl": "Welke functies biedt dit fietspunt?",
@@ -294,6 +295,7 @@
             "id": "bike_repair_station-opening_hours"
         },
         {
+            "id": "bike_repair_station-bike-chain-tool",
             "question": {
                 "en": "Does this bike repair station have a special tool to repair your bike chain?",
                 "nl": "Heeft dit herstelpunt een speciale reparatieset voor je ketting?",
@@ -331,6 +333,7 @@
             ]
         },
         {
+            "id": "bike_repair_station-bike-stand",
             "question": {
                 "en": "Does this bike station have a hook to hang your bike on or a stand to raise it?",
                 "nl": "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
@@ -488,7 +491,8 @@
             ],
             "id": "bike_repair_station-valves"
         },
-        {
+        {   "id": "bike_repair_station-electrical_pump",
+
             "question": {
                 "en": "Is this an electric bike pump?",
                 "nl": "Is dit een electrische fietspomp?",
@@ -531,7 +535,7 @@
                 }
             ]
         },
-        {
+        {   "id": "bike_repair_station-manometer",
             "question": {
                 "en": "Does the pump have a pressure indicator or manometer?",
                 "nl": "Heeft deze pomp een luchtdrukmeter?",

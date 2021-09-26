@@ -60,6 +60,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "bird-hide-shelter-or-wall",
             "question": {
                 "nl": "Is dit een kijkwand of kijkhut?"
             },
@@ -115,6 +116,7 @@
             ]
         },
         {
+            "id": "bird-hide-wheelchair",
             "question": {
                 "nl": "Is deze vogelkijkplaats rolstoeltoegankelijk?"
             },

@@ -75,6 +75,7 @@
             "id": "map-map_source"
         },
         {
+            "id": "map-attribution",
             "question": {
                 "en": "Is the OpenStreetMap-attribution given?",
                 "nl": "Is de attributie voor OpenStreetMap aanwezig?",

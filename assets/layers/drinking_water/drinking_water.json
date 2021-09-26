@@ -155,6 +155,7 @@
             "id": "Bottle refill"
         },
         {
+            "id": "render-closest-drinking-water",
             "render": {
                 "en": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>",
                 "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>",

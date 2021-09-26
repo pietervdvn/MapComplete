@@ -98,6 +98,7 @@
     ],
     "tagRenderings": [
         {
+            "id": "crossing-type",
             "question": {
                 "en": "What kind of crossing is this?",
                 "nl": "Wat voor oversteekplaats is dit?"
@@ -129,6 +130,7 @@
             ]
         },
         {
+            "id": "crossing-is-zebra",
             "question": {
                 "en": "Is this is a zebra crossing?",
                 "nl": "Is dit een zebrapad?"
@@ -152,6 +154,7 @@
             ]
         },
         {
+            "id": "crossing-bicycle-allowed",
             "question": {
                 "en": "Is this crossing also for bicycles?",
                 "nl": "Is deze oversteekplaats ook voor fietsers"
@@ -175,6 +178,7 @@
             ]
         },
         {
+            "id": "crossing-has-island",
             "question": {
                 "en": "Does this crossing have an island in the middle?",
                 "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
@@ -198,6 +202,7 @@
             ]
         },
         {
+            "id": "crossing-tactile",
             "question": {
                 "en": "Does this crossing have tactile paving?",
                 "nl": "Heeft deze oversteekplaats een geleidelijn?"
@@ -229,6 +234,7 @@
             ]
         },
         {
+            "id": "crossing-button",
             "question": {
                 "en": "Does this traffic light have a button to request green light?",
                 "nl": "Heeft dit verkeerslicht een knop voor groen licht?"
@@ -257,6 +263,7 @@
             ]
         },
         {
+            "id": "crossing-right-turn-through-red",
             "question": {
                 "en": "Can a cyclist turn right when the light is red?",
                 "nl": "Mag een fietser rechtsaf slaan als het licht rood is?"
@@ -289,6 +296,7 @@
             ]
         },
         {
+            "id": "crossing-continue-through-red",
             "question": {
                 "en": "Can a cyclist go straight on when the light is red?",
                 "nl": "Mag een fietser rechtdoor gaan als het licht rood is?"
