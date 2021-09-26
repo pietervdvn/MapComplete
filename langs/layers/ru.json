@@ -253,9 +253,6 @@
             "render": "Велосипедное кафе"
         }
     },
-    "bike_monitoring_station": {
-        "name": "Станции мониторинга"
-    },
     "bike_parking": {
         "name": "Велопарковка",
         "presets": {

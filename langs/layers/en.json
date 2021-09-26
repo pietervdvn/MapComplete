@@ -360,20 +360,6 @@
             "render": "Bike cleaning service"
         }
     },
-    "bike_monitoring_station": {
-        "name": "Monitoring stations",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Bicycle counting station {name}"
-                },
-                "1": {
-                    "then": "Bicycle counting station {ref}"
-                }
-            },
-            "render": "Bicycle counting station"
-        }
-    },
     "bike_parking": {
         "name": "Bike parking",
         "presets": {

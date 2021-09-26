@@ -91,11 +91,6 @@
         "description": "A bicycle library is a place where bicycles can be lent, often for a small yearly fee. A notable use case are bicycle libraries for kids, which allows them to change for a bigger bike when they've outgrown their current bike",
         "title": "Bicycle libraries"
     },
-    "bike_monitoring_stations": {
-        "description": "This theme shows bike monitoring stations with live data",
-        "shortDescription": "Bike monitoring stations with live data from Brussels Mobility",
-        "title": "Bike Monitoring stations"
-    },
     "binoculars": {
         "description": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
         "shortDescription": "A map with fixed binoculars",
@@ -905,7 +900,7 @@
                                 "then": "This hackerspace serves club mate"
                             },
                             "1": {
-                                "then": "This hackerspace is not worthy of the name hackerspace as it does not serve club mate"
+                                "then": "This hackerspace does not serve club mate"
                             }
                         },
                         "question": "Does this hackerspace serve Club Mate?"

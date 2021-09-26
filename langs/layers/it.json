@@ -269,20 +269,6 @@
             "render": "Servizio lavaggio bici"
         }
     },
-    "bike_monitoring_station": {
-        "name": "Stazioni di monitoraggio",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Contabiciclette {name}"
-                },
-                "1": {
-                    "then": "Contabiciclette {ref}"
-                }
-            },
-            "render": "Contabiciclette"
-        }
-    },
     "bike_parking": {
         "name": "Parcheggio bici",
         "presets": {

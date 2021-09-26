@@ -252,19 +252,6 @@
             "render": "Fahrrad-Reinigungsdienst"
         }
     },
-    "bike_monitoring_station": {
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Fahrradzählstation {name}"
-                },
-                "1": {
-                    "then": "Fahrradzählstation {ref}"
-                }
-            },
-            "render": "Fahrradzählstation"
-        }
-    },
     "bike_parking": {
         "name": "Fahrrad-Parkplätze",
         "presets": {

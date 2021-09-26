@@ -49,12 +49,21 @@ class TranslationPart {
             return;
         }
 
-        for (const key in object) {
+        for (let key in object) {
             if (!object.hasOwnProperty(key)) {
                 continue;
             }
 
             const v = object[key]
+            
+            if(typeof key === "number" && v["id"] !== undefined){
+                // We use the embedded id as key instead of the index as this is more stable
+               // key = v["id"]
+                if(typeof key !== "string"){
+                    throw "Panic: found a non-string ID at"+context
+                }
+            }
+            
             if (v == null) {
                 console.warn("Got a null value for key ", key)
                 continue
@@ -120,7 +129,10 @@ class TranslationPart {
     }
 }
 
-
+/**
+ * Checks that the given object only contains string-values
+ * @param tr
+ */
 function isTranslation(tr: any): boolean {
     for (const key in tr) {
         if (typeof tr[key] !== "string") {
@@ -130,6 +142,11 @@ function isTranslation(tr: any): boolean {
     return true;
 }
 
+/**
+ * Converts a translation object into something that can be added to the 'generated translations'
+ * @param obj
+ * @param depth
+ */
 function transformTranslation(obj: any, depth = 1) {
 
     if (isTranslation(obj)) {
@@ -150,6 +167,9 @@ function transformTranslation(obj: any, depth = 1) {
 
 }
 
+/**
+ * Generates the big compiledTranslations file
+ */
 function genTranslations() {
     const translations = JSON.parse(fs.readFileSync("./assets/generated/translations.json", "utf-8"))
     const transformed = transformTranslation(translations);
@@ -163,7 +183,10 @@ function genTranslations() {
 
 }
 
-// Read 'lang/*.json', writes to 'assets/generated/translations.json'
+/**
+ * Reads 'lang/*.json', writes them into to 'assets/generated/translations.json'.
+ * This is only for the core translations
+ */
 function compileTranslationsFromWeblate() {
     const translations = ScriptUtils.readDirRecSync("./langs", 1)
         .filter(path => path.indexOf(".json") > 0)
@@ -181,7 +204,11 @@ function compileTranslationsFromWeblate() {
 
 }
 
-// Get all the strings out of the layers; writes them onto the weblate paths
+/**
+ * Get all the strings out of the layers; writes them onto the weblate paths
+ * @param objects
+ * @param target
+ */
 function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: string } }[], target: string) {
     const tr = new TranslationPart();
 
@@ -218,6 +245,7 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         if (!source.hasOwnProperty(key)) {
             continue
         }
+        
         const sourceV = source[key];
         const targetV = target[key]
         if (typeof sourceV === "string") {

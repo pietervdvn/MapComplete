@@ -10,11 +10,6 @@
     "bicyclelib": {
         "title": "Bibliotecas de bicicletas"
     },
-    "bike_monitoring_stations": {
-        "description": "Este tema mostra as estações de monitoramento de bicicletas com dados ao vivo",
-        "shortDescription": "Estações de monitoramento de bicicletas com dados ao vivo da Mobilidade de Bruxelas",
-        "title": "Estações de monitoramento de bicicletas"
-    },
     "bookcases": {
         "title": "Abrir Mapa de Estantes"
     },

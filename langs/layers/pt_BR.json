@@ -254,20 +254,6 @@
             "render": "Serviço de limpeza de bicicletas"
         }
     },
-    "bike_monitoring_station": {
-        "name": "Estações de monitoramento",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Estação de contagem de bicicletas {name}"
-                },
-                "1": {
-                    "then": "Estação de contagem de bicicletas {ref}"
-                }
-            },
-            "render": "Estação de contagem de bicicletas"
-        }
-    },
     "bike_parking": {
         "name": "Estacionamento de bicicletas",
         "presets": {

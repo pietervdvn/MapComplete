@@ -269,20 +269,6 @@
             "render": "單車清理服務"
         }
     },
-    "bike_monitoring_station": {
-        "name": "監視站",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "單車計數站 {name}"
-                },
-                "1": {
-                    "then": "單車計數站 {ref}"
-                }
-            },
-            "render": "單車計數站"
-        }
-    },
     "bike_parking": {
         "name": "單車停車場",
         "presets": {

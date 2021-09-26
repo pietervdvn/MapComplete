@@ -269,20 +269,6 @@
             "render": "Service de nettoyage de vélo"
         }
     },
-    "bike_monitoring_station": {
-        "name": "Stations de contrôle",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Station de comptage de vélo {name}"
-                },
-                "1": {
-                    "then": "Station de comptage de vélo {ref}"
-                }
-            },
-            "render": "Station de comptage de vélo"
-        }
-    },
     "bike_parking": {
         "name": "Parking à vélo",
         "presets": {

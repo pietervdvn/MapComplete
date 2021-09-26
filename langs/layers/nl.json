@@ -359,20 +359,6 @@
             "render": "Fietsschoonmaakpunt"
         }
     },
-    "bike_monitoring_station": {
-        "name": "Telstation",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Fietstelstation {name}"
-                },
-                "1": {
-                    "then": "Fietstelstation {ref}"
-                }
-            },
-            "render": "Fietstelstation"
-        }
-    },
     "bike_parking": {
         "name": "Fietsparking",
         "presets": {

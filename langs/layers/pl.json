@@ -110,18 +110,6 @@
     "bicycle_library": {
         "description": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
     },
-    "bike_monitoring_station": {
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Stacja liczenia rowerów {name}"
-                },
-                "1": {
-                    "then": "Stacja liczenia rowerów {ref}"
-                }
-            }
-        }
-    },
     "bike_parking": {
         "name": "Parking dla rowerów",
         "presets": {

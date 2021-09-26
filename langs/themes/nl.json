@@ -95,11 +95,6 @@
         "description": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",
         "title": "Fietsbibliotheken"
     },
-    "bike_monitoring_stations": {
-        "description": "Dit thema toont fietstelstations met live data",
-        "shortDescription": "Fietstelstations met live data van Brussel Mobiliteit",
-        "title": "Fietstelstations"
-    },
     "binoculars": {
         "description": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd",
         "shortDescription": "Een kaart met publieke verrekijker",
@@ -1002,47 +997,6 @@
         "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
         "title": "Welkom bij de groendoener!"
     },
-    "speelplekken_temp": {
-        "description": "Speelplekken in de Antwerpse Zuidrand. Een project van Provincie Antwerpen, in samenwerking met Createlli, Sportpret en OpenStreetMap België",
-        "layers": {
-            "6": {
-                "name": "Wandelroutes van provincie Antwerpen",
-                "tagRenderings": {
-                    "0": {
-                        "render": "Deze wandeling is <b>{_length:km}km</b> lang"
-                    },
-                    "1": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dit is een internationale wandelroute"
-                            },
-                            "1": {
-                                "then": "Dit is een nationale wandelroute"
-                            },
-                            "2": {
-                                "then": "Dit is een regionale wandelroute"
-                            },
-                            "3": {
-                                "then": "Dit is een lokale wandelroute"
-                            }
-                        }
-                    },
-                    "2": {
-                        "render": "<h3>Korte beschrijving:</h3>{description}"
-                    },
-                    "3": {
-                        "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
-                    },
-                    "4": {
-                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?",
-                        "render": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
-                    }
-                }
-            }
-        },
-        "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
-        "title": "Speelplekken in de Antwerpse Zuidrand"
-    },
     "sport_pitches": {
         "description": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
         "shortDescription": "Deze kaart toont sportvelden",
@@ -1071,23 +1025,5 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
-    },
-    "width": {
-        "description": " <h3>De straat is opgebruikt</h3>\n <p>Er is steeds meer druk op de openbare ruimte. Voetgangers, fietsers, steps, auto's, bussen, bestelwagens, buggies, cargobikes, ... willen allemaal hun deel van de openbare ruimte.</p>\n <p>In deze studie nemen we Brugge onder de loep en kijken we hoe breed elke straat is én hoe breed elke straat zou moeten zijn voor een veilig én vlot verkeer.</p>\n <h3>Legende</h3>\n <span style='background: red'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat te smal voor veilig verkeer<br/>\n <span style='background: #0f0'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat is breed genoeg veilig verkeer<br/>\n <span style='background: orange'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat zonder voetpad, te smal als ook voetgangers plaats krijgen<br/>\n <span style='background: lightgrey'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Woonerf, autoluw, autoloos of enkel plaatselijk verkeer<br/>\n <br/>\n <br/>\n Een gestippelde lijn is een straat waar ook voor fietsers éénrichtingsverkeer geldt.<br/>\n Klik op een straat om meer informatie te zien.\n <h3>Hoe gaan we verder?</h3>\n Verschillende ingrepen kunnen de stad teruggeven aan de inwoners en de stad leefbaarder en levendiger maken.<br/>\n Denk aan:\n <ul>\n <li>De autovrije zone's uitbreiden</li>\n <li>De binnenstad fietszone maken</li>\n <li>Het aantal woonerven uitbreiden</li>\n <li>Grotere auto's meer belasten - ze nemen immers meer parkeerruimte in.</li>\n <li>Laat toeristen verplicht parkeren onder het zand; een (fiets)taxi kan hen naar hun hotel brengen</li>\n <li>Voorzie in elke straat enkele parkeerplaatsen voor kortparkeren. Zo kunnen leveringen, iemand afzetten,... gebeuren zonder op het voetpad en fietspad te parkeren</li>\n </ul>",
-        "layers": {
-            "0": {
-                "name": "Straten met een breedte",
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Naamloos segmet"
-                        }
-                    },
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Is de straat breed genoeg?",
-        "title": "Straatbreedtes"
     }
 }

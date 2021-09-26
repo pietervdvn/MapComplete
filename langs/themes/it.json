@@ -91,11 +91,6 @@
         "description": "«Biciclette in prestito» è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola",
         "title": "Biciclette in prestito"
     },
-    "bike_monitoring_stations": {
-        "description": "Questo tema mostra le stazioni di monitoraggio bici con dati dal vivo",
-        "shortDescription": "Stazioni di monitoraggio bici con dati in tempo reale forniti da Bruxelles Mobility",
-        "title": "Stazioni di monitoraggio biciclette"
-    },
     "bookcases": {
         "description": "Una minibiblioteca è una piccola cabina a lato della strada, una scatola, una vecchia cabina telefonica o qualche altro contenitore che ospita libri. Tutti può lasciare o prendere un libro. Questa mappa punta a rappresentarle tutte. Puoi facilmente scoprire nuove minibiblioteche nelle tue vicinanze e, con un account gratuito su OpenStreetMap, puoi aggiungerne altre.",
         "title": "Mappa libera delle microbiblioteche"
