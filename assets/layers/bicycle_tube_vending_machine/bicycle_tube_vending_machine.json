@@ -165,6 +165,7 @@
             "id": "bicycle_tube_vending_machine-charge"
         },
         {
+            "id": "vending-machine-payment-methods",
             "question": "How can one pay at this tube vending machine?",
             "mappings": [
                 {
@@ -223,6 +224,7 @@
             "id": "bicycle_tube_vending_machine-operator"
         },
         {
+            "id": "bicycle_tube_vending_maching-other-items",
             "question": "Are other bicycle bicycle accessories sold here?",
             "mappings": [
                 {
