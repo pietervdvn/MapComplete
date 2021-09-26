@@ -13,7 +13,7 @@ import {Utils} from "../../Utils";
  */
 export default class TagRenderingConfig {
 
-    readonly id?: string;
+    readonly id: string;
     readonly render?: Translation;
     readonly question?: Translation;
     readonly condition?: TagsFilter;
@@ -57,6 +57,7 @@ export default class TagRenderingConfig {
             return;
         }
 
+        
         this.id = json.id ?? "";
         this.render = Translations.T(json.render, context + ".render");
         this.question = Translations.T(json.question, context + ".question");

@@ -8,7 +8,7 @@ export interface TagRenderingConfigJson {
 
     /**
      * The id of the tagrendering, should be an unique string.
-     * Used to keep the translations in sync
+     * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise
      */
     id?: string,
     

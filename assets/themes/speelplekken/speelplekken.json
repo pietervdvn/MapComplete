@@ -166,11 +166,13 @@
       },
       "tagRenderings": [
         {
+          "id": "walk-length",
           "render": {
             "nl": "Deze wandeling is <b>{_length:km}km</b> lang"
           }
         },
         {
+          "id":"walk-type",
           "mappings": [
             {
               "if": "route=iwn",
@@ -199,6 +201,7 @@
           ]
         },
         {
+          "id": "walk-description",
           "render": {
             "nl": "<h3>Korte beschrijving:</h3>{description}"
           },
@@ -209,6 +212,7 @@
           }
         },
         {
+          "id": "walk-operator",
           "question": {
             "nl": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
           },
@@ -218,6 +222,7 @@
           }
         },
         {
+          "id": "walk-operator-email",
           "question": {
             "nl": "Naar wie kan men emailen bij problemen rond signalisatie?"
           },
