@@ -34,7 +34,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "Camera type: fixed; panning; dome",
             "question": {
                 "en": "What kind of camera is this?",
                 "nl": "Wat voor soort camera is dit?",
@@ -84,10 +83,10 @@
                         "it": "Una videocamera panoramica"
                     }
                 }
-            ]
+            ],
+            "id": "Camera type: fixed; panning; dome"
         },
         {
-            "#": "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view",
             "question": {
                 "en": "In which geographical direction does this camera film?",
                 "nl": "In welke geografische richting filmt deze camera?",
@@ -133,10 +132,10 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view"
         },
         {
-            "#": "Operator",
             "freeform": {
                 "key": "operator"
             },
@@ -151,10 +150,10 @@
                 "nl": "Beheer door {operator}",
                 "fr": "Exploité par {operator}",
                 "it": "È gestita da {operator}"
-            }
+            },
+            "id": "Operator"
         },
         {
-            "#": "Surveillance type: public, outdoor, indoor",
             "question": {
                 "en": "What kind of surveillance is this camera",
                 "nl": "Wat soort bewaking wordt hier uitgevoerd?",
@@ -201,10 +200,10 @@
                         "it": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
                     }
                 }
-            ]
+            ],
+            "id": "Surveillance type: public, outdoor, indoor"
         },
         {
-            "#": "Indoor camera? This isn't clear for 'public'-cameras",
             "question": {
                 "en": "Is the public space surveilled by this camera an indoor or outdoor space?",
                 "nl": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?",
@@ -247,10 +246,10 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "Indoor camera? This isn't clear for 'public'-cameras"
         },
         {
-            "#": "Level",
             "question": {
                 "en": "On which level is this camera located?",
                 "nl": "Op welke verdieping bevindt deze camera zich?",
@@ -272,10 +271,10 @@
                     "indoor=yes",
                     "surveillance:type=ye"
                 ]
-            }
+            },
+            "id": "Level"
         },
         {
-            "#": "Surveillance:zone",
             "question": {
                 "en": "What exactly is surveilled here?",
                 "nl": "Wat wordt hier precies bewaakt?",
@@ -370,10 +369,10 @@
                         "it": "Sorveglia un negozio"
                     }
                 }
-            ]
+            ],
+            "id": "Surveillance:zone"
         },
         {
-            "#": "camera:mount",
             "question": {
                 "en": "How is this camera placed?",
                 "nl": "Hoe is deze camera geplaatst?",
@@ -418,7 +417,8 @@
                         "it": "Questa telecamera è posizionata sul soffitto"
                     }
                 }
-            ]
+            ],
+            "id": "camera:mount"
         }
     ],
     "icon": {

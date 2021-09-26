@@ -54,7 +54,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "Access tag",
             "render": {
                 "nl": "De toegankelijkheid van dit gebied is: {access:description}"
             },
@@ -131,10 +130,10 @@
                         "nl": "Toegankelijk mits betaling"
                     }
                 }
-            ]
+            ],
+            "id": "Access tag"
         },
         {
-            "#": "Operator tag",
             "render": {
                 "nl": "Beheer door {operator}"
             },
@@ -176,10 +175,10 @@
                         "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
                     }
                 }
-            ]
+            ],
+            "id": "Operator tag"
         },
         {
-            "#": "Name:nl-tag",
             "render": {
                 "nl": "Dit gebied heet {name:nl}"
             },
@@ -193,10 +192,10 @@
                 "and": [
                     "name:nl~*"
                 ]
-            }
+            },
+            "id": "Name:nl-tag"
         },
         {
-            "#": "Name tag",
             "render": {
                 "nl": "Dit gebied heet {name}"
             },
@@ -226,10 +225,10 @@
                         "nl": "Dit gebied heeft geen naam"
                     }
                 }
-            ]
+            ],
+            "id": "Name tag"
         },
         {
-            "#": "Dogs?",
             "question": {
                 "nl": "Zijn honden toegelaten in dit gebied?",
                 "en": "Are dogs allowed in this nature reserve?",
@@ -275,10 +274,10 @@
                         "de": "Hunde dürfen frei herumlaufen"
                     }
                 }
-            ]
+            ],
+            "id": "Dogs?"
         },
         {
-            "#": "Website",
             "question": {
                 "en": "On which webpage can one find more information about this nature reserve?",
                 "nl": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?",
@@ -290,10 +289,10 @@
             "freeform": {
                 "key": "website",
                 "type": "url"
-            }
+            },
+            "id": "Website"
         },
         {
-            "#": "Curator",
             "question": {
                 "nl": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
                 "en": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
@@ -309,10 +308,10 @@
             "freeform": {
                 "key": "curator",
                 "type": "string"
-            }
+            },
+            "id": "Curator"
         },
         {
-            "#": "Email",
             "question": {
                 "nl": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
                 "en": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
@@ -332,10 +331,10 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "Email"
         },
         {
-            "#": "phone",
             "question": {
                 "nl": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
                 "en": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
@@ -355,29 +354,29 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "phone"
         },
         {
-            "#": "Non-editable description {description}",
             "render": {
                 "nl": "Extra info: <i>{description}</i>"
             },
             "freeform": {
                 "key": "description"
-            }
+            },
+            "id": "Non-editable description {description}"
         },
         {
-            "#": "Editable description {description:0}",
             "question": "Is er extra info die je kwijt wil?",
             "render": {
                 "nl": "Extra info: <i>{description:0}</i>"
             },
             "freeform": {
                 "key": "description:0"
-            }
+            },
+            "id": "Editable description {description:0}"
         },
         {
-            "#": "Surface area",
             "render": {
                 "en": "Surface area: {_surface:ha}Ha",
                 "nl": "Totale oppervlakte: {_surface:ha}Ha",
@@ -391,7 +390,8 @@
                         "*": ""
                     }
                 }
-            ]
+            ],
+            "id": "Surface area"
         }
     ],
     "wayHandling": 2,

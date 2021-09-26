@@ -74,7 +74,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "Still in use?",
             "question": {
                 "en": "Is this drinking water spot still operational?",
                 "nl": "Is deze drinkwaterkraan nog steeds werkende?",
@@ -120,10 +119,10 @@
                         "fr": "Cette fontaine est fermée"
                     }
                 }
-            ]
+            ],
+            "id": "Still in use?"
         },
         {
-            "#": "Bottle refill",
             "question": {
                 "en": "How easy is it to fill water bottles?",
                 "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
@@ -152,7 +151,8 @@
                         "fr": "Les bouteilles d'eau peuvent ne pas passer"
                     }
                 }
-            ]
+            ],
+            "id": "Bottle refill"
         },
         {
             "render": {

@@ -84,7 +84,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "Still in use?",
             "question": {
                 "en": "Is this vending machine still operational?",
                 "nl": "Is deze verkoopsautomaat nog steeds werkende?",
@@ -154,7 +153,8 @@
                         "pt_BR": "Esta máquina de venda automática está fechada"
                     }
                 }
-            ]
+            ],
+            "id": "Still in use?"
         },
         {
             "question": "How much does a bicycle tube cost?",

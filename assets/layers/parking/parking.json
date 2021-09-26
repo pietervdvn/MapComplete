@@ -51,7 +51,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "Access tag",
             "render": {
                 "nl": "De toegankelijkheid van dit gebied is: {access:description}"
             },
@@ -128,10 +127,10 @@
                         "nl": "Toegankelijk mits betaling"
                     }
                 }
-            ]
+            ],
+            "id": "Access tag"
         },
         {
-            "#": "Operator tag",
             "render": {
                 "nl": "Beheer door {operator}"
             },
@@ -163,7 +162,8 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "Operator tag"
         }
     ],
     "wayHandling": 1,

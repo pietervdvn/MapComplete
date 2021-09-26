@@ -39,7 +39,6 @@
             }
         },
         {
-            "#": "Name",
             "question": {
                 "nl": "Wat is de naam van deze wandeling?"
             },
@@ -48,10 +47,10 @@
             },
             "freeform": {
                 "key": "name"
-            }
+            },
+            "id": "Name"
         },
         {
-            "#": "Operator tag",
             "render": {
                 "nl": "Beheer door {operator}"
             },
@@ -83,10 +82,10 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "Operator tag"
         },
         {
-            "#": "Color",
             "question": {
                 "nl": "Welke kleur heeft deze wandeling?"
             },
@@ -126,10 +125,10 @@
                         "en": "Yellow trail"
                     }
                 }
-            ]
+            ],
+            "id": "Color"
         },
         {
-            "#": "Wheelchair access",
             "question": {
                 "nl": "Is deze wandeling toegankelijk met de rolstoel?"
             },
@@ -146,10 +145,10 @@
                     },
                     "if": "wheelchair=no"
                 }
-            ]
+            ],
+            "id": "Wheelchair access"
         },
         {
-            "#": "pushchair access",
             "question": {
                 "nl": "Is deze wandeltocht toegankelijk met de buggy?"
             },
@@ -166,7 +165,8 @@
                     },
                     "if": "pushchair=no"
                 }
-            ]
+            ],
+            "id": "pushchair access"
         }
     ],
     "icon": {
