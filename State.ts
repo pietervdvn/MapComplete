@@ -32,11 +32,11 @@ export default class State {
     /**
      The mapping from id -> UIEventSource<properties>
      */
-    public allElements: ElementStorage;
+    public allElements: ElementStorage = new ElementStorage();
     /**
      THe change handler
      */
-    public changes: Changes;
+    public changes: Changes = new Changes();
     /**
      The leaflet instance of the big basemap
      */
@@ -155,7 +155,6 @@ export default class State {
 
     constructor(layoutToUse: LayoutConfig) {
         const self = this;
-
         this.layoutToUse.setData(layoutToUse);
 
         // -- Location control initialization
@@ -376,6 +375,8 @@ export default class State {
         this.osmConnection = new OsmConnection(
             this.featureSwitchIsTesting.data,
             this.featureSwitchFakeUser.data,
+            this.allElements, 
+            this.changes,
             QueryParameters.GetQueryParameter(
                 "oauth_token",
                 undefined,
@@ -387,9 +388,7 @@ export default class State {
             this.featureSwitchApiURL.data
         );
 
-        this.allElements = new ElementStorage();
-        this.changes = new Changes();
-
+      
         new ChangeToElementsActor(this.changes, this.allElements)
 
         new PendingChangesUploader(this.changes, this.selectedElement);

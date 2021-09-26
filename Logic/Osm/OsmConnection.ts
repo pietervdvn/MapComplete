@@ -9,6 +9,7 @@ import Img from "../../UI/Base/Img";
 import {Utils} from "../../Utils";
 import {OsmObject} from "./OsmObject";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Changes} from "./Changes";
 
 export default class UserDetails {
 
@@ -54,7 +55,7 @@ export class OsmConnection {
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
     private readonly _iframeMode: Boolean | boolean;
     private readonly _singlePage: boolean;
-    private readonly _oauth_config: {
+    public readonly _oauth_config: {
         oauth_consumer_key: string,
         oauth_secret: string,
         url: string
@@ -63,6 +64,8 @@ export class OsmConnection {
 
     constructor(dryRun: boolean,
                 fakeUser: boolean,
+                allElements: ElementStorage,
+                changes: Changes,
                 oauth_token: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
                 layoutName: string,
@@ -101,7 +104,7 @@ export class OsmConnection {
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
 
-        this.changesetHandler = new ChangesetHandler(layoutName, dryRun, this, this.auth);
+        this.changesetHandler = new ChangesetHandler(layoutName, dryRun, this, allElements, changes, this.auth);
         if (oauth_token.data !== undefined) {
             console.log(oauth_token.data)
             const self = this;
@@ -124,10 +127,8 @@ export class OsmConnection {
     public UploadChangeset(
         layout: LayoutConfig,
         allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string,
-        whenDone: (csId: string) => void,
-        onFail: () => {}) {
-        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, whenDone, onFail);
+        generateChangeXML: (csid: string) => string): Promise<void> {
+        return this.changesetHandler.UploadChangeset(layout, generateChangeXML);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

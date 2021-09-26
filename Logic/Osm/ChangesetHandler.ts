@@ -8,15 +8,23 @@ import Locale from "../../UI/i18n/Locale";
 import Constants from "../../Models/Constants";
 import {OsmObject} from "./OsmObject";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Changes} from "./Changes";
 
 export class ChangesetHandler {
 
     public readonly currentChangeset: UIEventSource<string>;
+    private readonly allElements: ElementStorage;
+    private readonly changes: Changes;
     private readonly _dryRun: boolean;
     private readonly userDetails: UIEventSource<UserDetails>;
     private readonly auth: any;
 
-    constructor(layoutName: string, dryRun: boolean, osmConnection: OsmConnection, auth) {
+    constructor(layoutName: string, dryRun: boolean, osmConnection: OsmConnection,
+                allElements: ElementStorage,
+                changes: Changes,
+                auth) {
+        this.allElements = allElements;
+        this.changes = changes;
         this._dryRun = dryRun;
         this.userDetails = osmConnection.userDetails;
         this.auth = auth;
@@ -27,35 +35,55 @@ export class ChangesetHandler {
         }
     }
 
-    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage): void {
+    private handleIdRewrite(node: any, type: string): [string, string] {
+        const oldId = parseInt(node.attributes.old_id.value);
+        if (node.attributes.new_id === undefined) {
+            // We just removed this point!
+            const element =this. allElements.getEventSourceById("node/" + oldId);
+            element.data._deleted = "yes"
+            element.ping();
+            return;
+        }
+
+        const newId = parseInt(node.attributes.new_id.value);
+        const result: [string, string] = [type + "/" + oldId, type + "/" + newId]
+        if (!(oldId !== undefined && newId !== undefined &&
+            !isNaN(oldId) && !isNaN(newId))) {
+            return undefined;
+        }
+        if (oldId == newId) {
+            return undefined;
+        }
+        console.log("Rewriting id: ", type + "/" + oldId, "-->", type + "/" + newId);
+        const element = this.allElements.getEventSourceById("node/" + oldId);
+        element.data.id = type + "/" + newId;
+        this.allElements.addElementById(type + "/" + newId, element);
+        this.allElements.ContainingFeatures.set(type + "/" + newId, this.allElements.ContainingFeatures.get(type + "/" + oldId))
+        element.ping();
+        return result;
+    }
+
+    private parseUploadChangesetResponse(response: XMLDocument): void {
         const nodes = response.getElementsByTagName("node");
+        const mappings = new Map<string, string>()
         // @ts-ignore
         for (const node of nodes) {
-            const oldId = parseInt(node.attributes.old_id.value);
-            if (node.attributes.new_id === undefined) {
-                // We just removed this point!
-                const element = allElements.getEventSourceById("node/" + oldId);
-                element.data._deleted = "yes"
-                element.ping();
-                continue;
+            const mapping = this.handleIdRewrite(node, "node")
+            if (mapping !== undefined) {
+                mappings.set(mapping[0], mapping[1])
             }
-
-            const newId = parseInt(node.attributes.new_id.value);
-            if (oldId !== undefined && newId !== undefined &&
-                !isNaN(oldId) && !isNaN(newId)) {
-                if (oldId == newId) {
-                    continue;
-                }
-                console.log("Rewriting id: ", oldId, "-->", newId);
-                const element = allElements.getEventSourceById("node/" + oldId);
-                element.data.id = "node/" + newId;
-                allElements.addElementById("node/" + newId, element);
-                element.ping();
-
-            }
-
-
         }
+
+        const ways = response.getElementsByTagName("way");
+        // @ts-ignore
+        for (const way of ways) {
+            const mapping = this.handleIdRewrite(way, "way")
+            if (mapping !== undefined) {
+                mappings.set(mapping[0], mapping[1])
+            }
+        }
+        this.changes.registerIdRewrites(mappings)
+        
     }
 
     /**
@@ -68,13 +96,9 @@ export class ChangesetHandler {
      * If 'dryrun' is specified, the changeset XML will be printed to console instead of being uploaded
      *
      */
-    public UploadChangeset(
+    public async UploadChangeset(
         layout: LayoutConfig,
-        allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string,
-        whenDone: (csId: string) => void,
-        onFail: () => void) {
-
+        generateChangeXML: (csid: string) => string): Promise<void> {
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
             this.userDetails.data.csCount = 1;
@@ -84,46 +108,36 @@ export class ChangesetHandler {
         if (this._dryRun) {
             const changesetXML = generateChangeXML("123456");
             console.log(changesetXML);
-            whenDone("123456")
             return;
         }
 
-        const self = this;
-
         if (this.currentChangeset.data === undefined || this.currentChangeset.data === "") {
             // We have to open a new changeset
-            this.OpenChangeset(layout, (csId) => {
+            try {
+                const csId = await this.OpenChangeset(layout)
                 this.currentChangeset.setData(csId);
                 const changeset = generateChangeXML(csId);
-                console.log(changeset);
-                self.AddChange(csId, changeset,
-                    allElements,
-                    whenDone,
-                    (e) => {
-                        console.error("UPLOADING FAILED!", e)
-                        onFail()
-                    }
-                )
-            }, {
-                onFail: onFail
-            })
+                console.log("Current changeset is:", changeset);
+                await this.AddChange(csId, changeset)
+            } catch (e) {
+                console.error("Could not open/upload changeset due to ", e)
+                this.currentChangeset.setData("")
+            }
         } else {
             // There still exists an open changeset (or at least we hope so)
             const csId = this.currentChangeset.data;
-            self.AddChange(
-                csId,
-                generateChangeXML(csId),
-                allElements,
-                whenDone,
-                (e) => {
-                    console.warn("Could not upload, changeset is probably closed: ", e);
-                    // Mark the CS as closed...
-                    this.currentChangeset.setData("");
-                    // ... and try again. As the cs is closed, no recursive loop can exist  
-                    self.UploadChangeset(layout, allElements, generateChangeXML, whenDone, onFail);
-                }
-            )
+            try {
 
+                await this.AddChange(
+                    csId,
+                    generateChangeXML(csId))
+            } catch (e) {
+                console.warn("Could not upload, changeset is probably closed: ", e);
+                // Mark the CS as closed...
+                this.currentChangeset.setData("");
+                // ... and try again. As the cs is closed, no recursive loop can exist  
+                await this.UploadChangeset(layout, generateChangeXML)
+            }
         }
     }
 
@@ -143,6 +157,13 @@ export class ChangesetHandler {
                          reason: string,
                          allElements: ElementStorage,
                          continuation: () => void) {
+        return this.DeleteElementAsync(object, layout, reason, allElements).then(continuation)
+    }
+
+    public async DeleteElementAsync(object: OsmObject,
+                                    layout: LayoutConfig,
+                                    reason: string,
+                                    allElements: ElementStorage): Promise<void> {
 
         function generateChangeXML(csId: string) {
             let [lat, lon] = object.centerpoint();
@@ -151,9 +172,7 @@ export class ChangesetHandler {
             changes +=
                 `<delete><${object.type} id="${object.id}" version="${object.version}" changeset="${csId}" lat="${lat}" lon="${lon}" /></delete>`;
             changes += "</osmChange>";
-            continuation()
             return changes;
-
         }
 
 
@@ -163,143 +182,122 @@ export class ChangesetHandler {
             return;
         }
 
-        const self = this;
-        this.OpenChangeset(layout, (csId: string) => {
-
-                // The cs is open - let us actually upload!
-                const changes = generateChangeXML(csId)
-
-                self.AddChange(csId, changes, allElements, (csId) => {
-                    console.log("Successfully deleted ", object.id)
-                    self.CloseChangeset(csId, continuation)
-                }, (csId) => {
-                    alert("Deletion failed... Should not happend")
-                    // FAILED
-                    self.CloseChangeset(csId, continuation)
-                })
-            }, {
-                isDeletionCS: true,
-                deletionReason: reason
-            }
-        )
+        const csId = await this.OpenChangeset(layout, {
+            isDeletionCS: true,
+            deletionReason: reason
+        })
+        // The cs is open - let us actually upload!
+        const changes = generateChangeXML(csId)
+        await this.AddChange(csId, changes)
+        await this.CloseChangeset(csId)
     }
 
-    private CloseChangeset(changesetId: string = undefined, continuation: (() => void) = () => {
-    }) {
-        if (changesetId === undefined) {
-            changesetId = this.currentChangeset.data;
-        }
-        if (changesetId === undefined) {
-            return;
-        }
-        console.log("closing changeset", changesetId);
-        this.currentChangeset.setData("");
-        this.auth.xhr({
-            method: 'PUT',
-            path: '/api/0.6/changeset/' + changesetId + '/close',
-        }, function (err, response) {
-            if (response == null) {
-
-                console.log("err", err);
+    private async CloseChangeset(changesetId: string = undefined): Promise<void> {
+        const self = this
+        return new Promise<void>(function (resolve, reject) {
+            if (changesetId === undefined) {
+                changesetId = self.currentChangeset.data;
             }
-            console.log("Closed changeset ", changesetId)
-
-            if (continuation !== undefined) {
-                continuation();
+            if (changesetId === undefined) {
+                return;
             }
-        });
+            console.log("closing changeset", changesetId);
+            self.currentChangeset.setData("");
+            self.auth.xhr({
+                method: 'PUT',
+                path: '/api/0.6/changeset/' + changesetId + '/close',
+            }, function (err, response) {
+                if (response == null) {
+
+                    console.log("err", err);
+                }
+                console.log("Closed changeset ", changesetId)
+                resolve()
+            });
+        })
     }
 
     private OpenChangeset(
         layout: LayoutConfig,
-        continuation: (changesetId: string) => void,
         options?: {
             isDeletionCS?: boolean,
             deletionReason?: string,
-            onFail?: () => void
         }
-    ) {
-        options = options ?? {}
-        options.isDeletionCS = options.isDeletionCS ?? false
-        const commentExtra = layout.changesetmessage !== undefined ? " - " + layout.changesetmessage : "";
-        let comment = `Adding data with #MapComplete for theme #${layout.id}${commentExtra}`
-        if (options.isDeletionCS) {
-            comment = `Deleting a point with #MapComplete for theme #${layout.id}${commentExtra}`
-            if (options.deletionReason) {
-                comment += ": " + options.deletionReason;
-            }
-        }
-
-        let path = window.location.pathname;
-        path = path.substr(1, path.lastIndexOf("/"));
-        const metadata = [
-            ["created_by", `MapComplete ${Constants.vNumber}`],
-            ["comment", comment],
-            ["deletion", options.isDeletionCS ? "yes" : undefined],
-            ["theme", layout.id],
-            ["language", Locale.language.data],
-            ["host", window.location.host],
-            ["path", path],
-            ["source", State.state.currentGPSLocation.data !== undefined ? "survey" : undefined],
-            ["imagery", State.state.backgroundLayer.data.id],
-            ["theme-creator", layout.maintainer]
-        ]
-            .filter(kv => (kv[1] ?? "") !== "")
-            .map(kv => `<tag k="${kv[0]}" v="${escapeHtml(kv[1])}"/>`)
-            .join("\n")
-
-        this.auth.xhr({
-            method: 'PUT',
-            path: '/api/0.6/changeset/create',
-            options: {header: {'Content-Type': 'text/xml'}},
-            content: [`<osm><changeset>`,
-                metadata,
-                `</changeset></osm>`].join("")
-        }, function (err, response) {
-            if (response === undefined) {
-                console.log("err", err);
-                if (options.onFail) {
-                    options.onFail()
+    ): Promise<string> {
+        const self = this;
+        return new Promise<string>(function (resolve, reject) {
+            options = options ?? {}
+            options.isDeletionCS = options.isDeletionCS ?? false
+            const commentExtra = layout.changesetmessage !== undefined ? " - " + layout.changesetmessage : "";
+            let comment = `Adding data with #MapComplete for theme #${layout.id}${commentExtra}`
+            if (options.isDeletionCS) {
+                comment = `Deleting a point with #MapComplete for theme #${layout.id}${commentExtra}`
+                if (options.deletionReason) {
+                    comment += ": " + options.deletionReason;
                 }
-                return;
-            } else {
-                continuation(response);
             }
-        });
+
+            let path = window.location.pathname;
+            path = path.substr(1, path.lastIndexOf("/"));
+            const metadata = [
+                ["created_by", `MapComplete ${Constants.vNumber}`],
+                ["comment", comment],
+                ["deletion", options.isDeletionCS ? "yes" : undefined],
+                ["theme", layout.id],
+                ["language", Locale.language.data],
+                ["host", window.location.host],
+                ["path", path],
+                ["source", State.state.currentGPSLocation.data !== undefined ? "survey" : undefined],
+                ["imagery", State.state.backgroundLayer.data.id],
+                ["theme-creator", layout.maintainer]
+            ]
+                .filter(kv => (kv[1] ?? "") !== "")
+                .map(kv => `<tag k="${kv[0]}" v="${escapeHtml(kv[1])}"/>`)
+                .join("\n")
+
+
+            self.auth.xhr({
+                method: 'PUT',
+                path: '/api/0.6/changeset/create',
+                options: {header: {'Content-Type': 'text/xml'}},
+                content: [`<osm><changeset>`,
+                    metadata,
+                    `</changeset></osm>`].join("")
+            }, function (err, response) {
+                if (response === undefined) {
+                    console.log("err", err);
+                    reject(err)
+                } else {
+                    resolve(response);
+                }
+            });
+        })
+
     }
 
     /**
      * Upload a changesetXML
-     * @param changesetId
-     * @param changesetXML
-     * @param allElements
-     * @param continuation
-     * @param onFail
-     * @constructor
-     * @private
      */
     private AddChange(changesetId: string,
-                      changesetXML: string,
-                      allElements: ElementStorage,
-                      continuation: ((changesetId: string) => void),
-                      onFail: ((changesetId: string, reason: string) => void) = undefined) {
-        this.auth.xhr({
-            method: 'POST',
-            options: {header: {'Content-Type': 'text/xml'}},
-            path: '/api/0.6/changeset/' + changesetId + '/upload',
-            content: changesetXML
-        }, function (err, response) {
-            if (response == null) {
-                console.log("err", err);
-                if (onFail) {
-                    onFail(changesetId, err);
+                      changesetXML: string): Promise<string> {
+        const self = this;
+        return new Promise(function (resolve, reject) {
+            self.auth.xhr({
+                method: 'POST',
+                options: {header: {'Content-Type': 'text/xml'}},
+                path: '/api/0.6/changeset/' + changesetId + '/upload',
+                content: changesetXML
+            }, function (err, response) {
+                if (response == null) {
+                    console.log("err", err);
+                    reject(err);
                 }
-                return;
-            }
-            ChangesetHandler.parseUploadChangesetResponse(response, allElements);
-            console.log("Uploaded changeset ", changesetId);
-            continuation(changesetId);
-        });
+                self.parseUploadChangesetResponse(response);
+                console.log("Uploaded changeset ", changesetId);
+                resolve(changesetId);
+            });
+        })
+
     }
 
 

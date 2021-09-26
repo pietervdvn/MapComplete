@@ -1326,10 +1326,10 @@
                 "description": "Addresses",
                 "name": "Known addresses in OSM",
                 "tagRenderings": {
-                    "0": {
+                    "uk_addresses_explanation_osm": {
                         "render": "This address is saved in OpenStreetMap"
                     },
-                    "1": {
+                    "uk_addresses_housenumber": {
                         "mappings": {
                             "0": {
                                 "then": "This building has no house number"
@@ -1338,7 +1338,7 @@
                         "question": "What is the number of this house?",
                         "render": "The housenumber is <b>{addr:housenumber}</b>"
                     },
-                    "2": {
+                    "uk_addresses_street": {
                         "question": "What street is this address located in?",
                         "render": "This address is in street <b>{addr:street}</b>"
                     }

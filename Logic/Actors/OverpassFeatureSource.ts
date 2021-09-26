@@ -56,8 +56,6 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
             readonly overpassTimeout: UIEventSource<number>;
             readonly overpassMaxZoom: UIEventSource<number>
         }) {
-        console.trace("Initializing an overpass FS")
-
 
         this.state = state
         this.relationsTracker = new RelationsTracker()

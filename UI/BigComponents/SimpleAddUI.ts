@@ -57,7 +57,6 @@ export default class SimpleAddUI extends Toggle {
 
 
         function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
-            console.trace("Creating a new point")
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {snapOnto: snapOntoWay})
             State.state.changes.applyAction(newElementAction)
             selectedPreset.setData(undefined)

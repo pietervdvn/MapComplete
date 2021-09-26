@@ -54,13 +54,16 @@
       },
       "tagRenderings": [
         {
+          "id": "uk_addresses_explanation",
           "render": "There probably is an address here"
         },
         {
+          "id": "uk_addresses_embedding_outline",
           "render": "An outline embedding this point with an address already exists in OpenStreetMap.<br>This <a href='https://openstreetmap.org/{_embedding_object:id}' target='blank'>object</a> has address <b>{_embedding_object:addr:street} {_embedding_object:addr:housenumber}</b>",
           "condition": "_embedding_object:id~*"
         },
         {
+          "id": "uk_addresses_import_button",
           "render": "{import_button(ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
         },
         "all_tags"
@@ -109,11 +112,13 @@
       },
       "tagRenderings": [
         {
+          "id": "uk_addresses_explanation_osm",
           "render": {
             "en": "This address is saved in OpenStreetMap"
           }
         },
         {
+          "id": "uk_addresses_housenumber",
           "render": {
             "en": "The housenumber is <b>{addr:housenumber}</b>"
           },
@@ -137,6 +142,7 @@
           ]
         },
         {
+          "id": "uk_addresses_street",
           "render": {
             "en": "This address is in street <b>{addr:street}</b>"
           },
