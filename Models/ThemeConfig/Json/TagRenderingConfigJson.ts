@@ -5,6 +5,13 @@ import {AndOrTagConfigJson} from "./TagConfigJson";
  * If the desired tags are missing and a question is defined, a question will be shown instead.
  */
 export interface TagRenderingConfigJson {
+
+    /**
+     * The id of the tagrendering, should be an unique string.
+     * Used to keep the translations in sync
+     */
+    id?: string,
+    
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
