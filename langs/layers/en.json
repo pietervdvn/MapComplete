@@ -922,6 +922,18 @@
                     },
                     "9": {
                         "question": "Has a <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> connector"
+                    },
+                    "10": {
+                        "question": "Has a <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> connector"
+                    },
+                    "11": {
+                        "question": "Has a <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> connector"
+                    },
+                    "12": {
+                        "question": "Has a <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> connector"
+                    },
+                    "13": {
+                        "question": "Has a <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> connector"
                     }
                 }
             }
@@ -952,6 +964,10 @@
                     }
                 },
                 "question": "Which vehicles are allowed to charge here?"
+            },
+            "2": {
+                "question": "Who is allowed to use this charging station?",
+                "render": "Access is {access}"
             },
             "3": {
                 "question": "How much vehicles can be charged here at the same time?",
@@ -1012,6 +1028,30 @@
                     },
                     "17": {
                         "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)"
+                    },
+                    "18": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Type 2 with cable</b> (mennekes)"
+                    },
+                    "19": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Type 2 with cable</b> (mennekes)"
+                    },
+                    "20": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Tesla Supercharger CCS</b> (a branded type2_css)"
+                    },
+                    "21": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Tesla Supercharger CCS</b> (a branded type2_css)"
+                    },
+                    "22": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger (destination)</b>"
+                    },
+                    "23": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger (destination)</b>"
+                    },
+                    "24": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)"
+                    },
+                    "25": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)"
                     }
                 },
                 "question": "Which charging stations are available here?"
@@ -1356,6 +1396,163 @@
                 "render": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:output}"
             },
             "41": {
+                "question": "How much plugs of type <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> are available here?",
+                "render": "There are <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> plugs of type <b>Type 2 with cable</b> (mennekes) available here"
+            },
+            "42": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs 230 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs 400 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
+                "render": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs {socket:type2_cable:voltage} volt"
+            },
+            "43": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 16 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 32 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
+                "render": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most {socket:type2_cable:current}A"
+            },
+            "44": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 11 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 22 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
+                "render": "<b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most {socket:type2_cable:output}"
+            },
+            "45": {
+                "question": "How much plugs of type <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?",
+                "render": "There are <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) available here"
+            },
+            "46": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 500 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 920 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs {socket:tesla_supercharger_ccs:voltage} volt"
+            },
+            "47": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 125 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 350 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:tesla_supercharger_ccs:current}A"
+            },
+            "48": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 50 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:tesla_supercharger_ccs:output}"
+            },
+            "49": {
+                "question": "How much plugs of type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?",
+                "render": "There are <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> plugs of type <b>Tesla Supercharger (destination)</b> available here"
+            },
+            "50": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs 480 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs {socket:tesla_destination:voltage} volt"
+            },
+            "51": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 125 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 350 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_destination:current}A"
+            },
+            "52": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 120 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 150 kw"
+                    },
+                    "2": {
+                        "then": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 250 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
+                "render": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_destination:output}"
+            },
+            "53": {
+                "question": "How much plugs of type <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> are available here?",
+                "render": "There are <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> plugs of type <b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla) available here"
+            },
+            "54": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs 230 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs 400 volt"
+                    }
+                },
+                "question": "What voltage do the plugs with <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
+                "render": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs {socket:tesla_destination:voltage} volt"
+            },
+            "55": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 16 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 32 A"
+                    }
+                },
+                "question": "What current do the plugs with <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
+                "render": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most {socket:tesla_destination:current}A"
+            },
+            "56": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 11 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 22 kw"
+                    }
+                },
+                "question": "What power output does a single plug of type <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
+                "render": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most {socket:tesla_destination:output}"
+            },
+            "57": {
                 "mappings": {
                     "0": {
                         "then": "Authentication by a membership card"
@@ -1384,11 +1581,11 @@
                 },
                 "question": "What kind of authentication is available at the charging station?"
             },
-            "42": {
+            "58": {
                 "question": "What's the phone number for authentication call or SMS?",
                 "render": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
             },
-            "43": {
+            "59": {
                 "mappings": {
                     "0": {
                         "then": "24/7 opened (including holidays)"
@@ -1396,7 +1593,7 @@
                 },
                 "question": "When is this charging station opened?"
             },
-            "44": {
+            "60": {
                 "mappings": {
                     "0": {
                         "then": "Free to use"
@@ -1405,8 +1602,13 @@
                 "question": "How much does one have to pay to use this charging station?",
                 "render": "Using this charging station costs <b>{charge}</b>"
             },
-            "45": {
+            "61": {
                 "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Payment is done using a dedicated app"
+                        }
+                    },
                     "mappings+": {
                         "0": {
                             "then": "Payment is done using a dedicated app"
@@ -1414,7 +1616,7 @@
                     }
                 }
             },
-            "46": {
+            "62": {
                 "mappings": {
                     "0": {
                         "then": "No timelimit on leaving your vehicle here"
@@ -1423,7 +1625,7 @@
                 "question": "What is the maximum amount of time one is allowed to stay here?",
                 "render": "One can stay at most <b>{canonical(maxstay)}</b>"
             },
-            "47": {
+            "63": {
                 "mappings": {
                     "0": {
                         "then": "Not part of a bigger network"
@@ -1435,22 +1637,22 @@
                 "question": "Is this charging station part of a network?",
                 "render": "Part of the network <b>{network}</b>"
             },
-            "49": {
+            "65": {
                 "question": "What number can one call if there is a problem with this charging station?",
                 "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
             },
-            "50": {
+            "66": {
                 "question": "What is the email address of the operator?",
                 "render": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
             },
-            "51": {
+            "67": {
                 "question": "What is the website of the operator?",
                 "render": "More info on <a href='{website}'>{website}</a>"
             },
-            "53": {
+            "69": {
                 "question": "What is the reference number of this charging station?"
             },
-            "54": {
+            "70": {
                 "mappings": {
                     "0": {
                         "then": "This charging station is broken"
@@ -1469,6 +1671,17 @@
                     }
                 },
                 "question": "Is this charging point in use?"
+            },
+            "71": {
+                "mappings": {
+                    "0": {
+                        "then": "No additional parking cost while charging"
+                    },
+                    "1": {
+                        "then": "An additional parking fee should be paid while charging"
+                    }
+                },
+                "question": "Does one have to pay a parking fee while charging?"
             }
         },
         "title": {

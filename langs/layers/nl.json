@@ -1024,6 +1024,18 @@
                     },
                     "9": {
                         "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
+                    },
+                    "10": {
+                        "question": "Heeft een <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>"
+                    },
+                    "11": {
+                        "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
+                    },
+                    "12": {
+                        "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
+                    },
+                    "13": {
+                        "question": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>"
                     }
                 }
             }
@@ -1088,6 +1100,30 @@
                     },
                     "17": {
                         "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                    },
+                    "18": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Type 2 met kabel</b> (J1772)"
+                    },
+                    "19": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Type 2 met kabel</b> (J1772)"
+                    },
+                    "20": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                    },
+                    "21": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                    },
+                    "22": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                    },
+                    "23": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                    },
+                    "24": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> "
+                    },
+                    "25": {
+                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> "
                     }
                 }
             },
@@ -1430,7 +1466,164 @@
                 "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?",
                 "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal {socket:type2_combo:output}"
             },
+            "41": {
+                "question": "Hoeveel stekkers van type  <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> stekkers van het type <b>Type 2 met kabel</b> (J1772)"
+            },
+            "42": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van 230 volt"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van 400 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>",
+                "render": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van {socket:type2_cable:voltage} volt"
+            },
+            "43": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal 16 A"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal 32 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?",
+                "render": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal {socket:type2_cable:current}A"
+            },
             "44": {
+                "mappings": {
+                    "0": {
+                        "then": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal 11 kw"
+                    },
+                    "1": {
+                        "then": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal 22 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?",
+                "render": "<b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal {socket:type2_cable:output}"
+            },
+            "45": {
+                "question": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> stekkers van het type "
+            },
+            "46": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 500 volt"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 920 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van {socket:tesla_supercharger_ccs:voltage} volt"
+            },
+            "47": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 125 A"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 350 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal {socket:tesla_supercharger_ccs:current}A"
+            },
+            "48": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal 50 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal {socket:tesla_supercharger_ccs:output}"
+            },
+            "49": {
+                "question": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> stekkers van het type "
+            },
+            "50": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van 480 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van {socket:tesla_destination:voltage} volt"
+            },
+            "51": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 125 A"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 350 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal {socket:tesla_destination:current}A"
+            },
+            "52": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 120 kw"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 150 kw"
+                    },
+                    "2": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 250 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal {socket:tesla_destination:output}"
+            },
+            "53": {
+                "question": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> stekkers van het type "
+            },
+            "54": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van 230 volt"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van 400 volt"
+                    }
+                },
+                "question": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van {socket:tesla_destination:voltage} volt"
+            },
+            "55": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal 16 A"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal 32 A"
+                    }
+                },
+                "question": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal {socket:tesla_destination:current}A"
+            },
+            "56": {
+                "mappings": {
+                    "0": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal 11 kw"
+                    },
+                    "1": {
+                        "then": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal 22 kw"
+                    }
+                },
+                "question": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?",
+                "render": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal {socket:tesla_destination:output}"
+            },
+            "60": {
                 "mappings": {
                     "0": {
                         "then": "Gratis te gebruiken"
@@ -1439,8 +1632,13 @@
                 "question": "Hoeveel kost het gebruik van dit oplaadpunt?",
                 "render": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
             },
-            "45": {
+            "61": {
                 "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Betalen via een app van het netwerk"
+                        }
+                    },
                     "mappings+": {
                         "0": {
                             "then": "Betalen via een app van het netwerk"
@@ -1448,7 +1646,7 @@
                     }
                 }
             },
-            "46": {
+            "62": {
                 "mappings": {
                     "0": {
                         "then": "Geen maximum parkeertijd"
@@ -1457,7 +1655,7 @@
                 "question": "Hoelang mag een voertuig hier blijven staan?",
                 "render": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
             },
-            "54": {
+            "70": {
                 "mappings": {
                     "0": {
                         "then": "Dit oplaadpunt is kapot"
