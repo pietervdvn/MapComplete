@@ -4,7 +4,7 @@ import {Utils} from "../../../Utils";
 import {BBox} from "../../GeoOperations";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import TileHierarchy from "./TileHierarchy";
-import {feature} from "@turf/turf";
+import {Tiles} from "../../../Models/TileRange";
 
 /**
  * Contains all features in a tiled fashion.
@@ -41,12 +41,12 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
         this.x = x;
         this.y = y;
         this.bbox = BBox.fromTile(z, x, y)
-        this.tileIndex = Utils.tile_index(z, x, y)
+        this.tileIndex = Tiles.tile_index(z, x, y)
         this.name = `TiledFeatureSource(${z},${x},${y})`
         this.parent = parent;
         this.layer = options.layer
         options = options ?? {}
-        this.maxFeatureCount = options?.maxFeatureCount ?? 500;
+        this.maxFeatureCount = options?.maxFeatureCount ?? 250;
         this.maxzoom = options.maxZoomLevel ?? 18
         this.options = options;
         if (parent === undefined) {
@@ -61,7 +61,7 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
         } else {
             this.root = this.parent.root;
             this.loadedTiles = this.root.loadedTiles;
-            const i = Utils.tile_index(z, x, y)
+            const i = Tiles.tile_index(z, x, y)
             this.root.loadedTiles.set(i, this)
         }
         this.features = new UIEventSource<any[]>([])
@@ -143,9 +143,7 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
 
         for (const feature of features) {
             const bbox = BBox.get(feature.feature)
-            if (this.options.minZoomLevel === undefined) {
-
-
+            if (this.options.dontEnforceMinZoom || this.options.minZoomLevel === undefined) {
                 if (bbox.isContainedIn(this.upper_left.bbox)) {
                     ulf.push(feature)
                 } else if (bbox.isContainedIn(this.upper_right.bbox)) {
@@ -186,6 +184,11 @@ export interface TiledFeatureSourceOptions {
     readonly maxFeatureCount?: number,
     readonly maxZoomLevel?: number,
     readonly minZoomLevel?: number,
+    /**
+     * IF minZoomLevel is set, and if a feature runs through a tile boundary, it would normally be duplicated.
+     * Setting 'dontEnforceMinZoomLevel' will still allow bigger zoom levels for those features
+     */
+    readonly dontEnforceMinZoom?: boolean,
     readonly registerTile?: (tile: TiledFeatureSource & Tiled) => void,
     readonly layer?: FilteredLayer
 }

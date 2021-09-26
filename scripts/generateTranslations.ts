@@ -33,7 +33,7 @@ class TranslationPart {
             }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
-                console.error("Non-string object in translation: ", translations[translationsKey])
+                console.error("Non-string object in translation while trying to add more translations to '", translationsKey ,"': ", v)
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
             this.contents.set(translationsKey, v)
@@ -41,9 +41,7 @@ class TranslationPart {
     }
 
     recursiveAdd(object: any, context: string) {
-
-
-        const isProbablyTranslationObject = knownLanguages.map(l => object.hasOwnProperty(l)).filter(x => x).length > 0;
+        const isProbablyTranslationObject = knownLanguages.some(l => object.hasOwnProperty(l));
         if (isProbablyTranslationObject) {
             this.addTranslationObject(object, context)
             return;

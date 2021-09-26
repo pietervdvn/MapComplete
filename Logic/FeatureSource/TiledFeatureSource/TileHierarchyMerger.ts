@@ -5,6 +5,7 @@ import FilteredLayer from "../../../Models/FilteredLayer";
 import {Utils} from "../../../Utils";
 import {BBox} from "../../GeoOperations";
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger";
+import {Tiles} from "../../../Models/TileRange";
 
 export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     public readonly loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
@@ -13,7 +14,7 @@ export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer 
     public readonly layer: FilteredLayer;
     private _handleTile: (src: FeatureSourceForLayer & IndexedFeatureSource, index: number) => void;
 
-    constructor(layer: FilteredLayer, handleTile: (src: FeatureSourceForLayer & IndexedFeatureSource, index: number) => void) {
+    constructor(layer: FilteredLayer, handleTile: (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled, index: number) => void) {
         this.layer = layer;
         this._handleTile = handleTile;
     }
@@ -37,7 +38,7 @@ export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer 
         // We have to setup
         const sources = new UIEventSource<FeatureSource[]>([src])
         this.sources.set(index, sources)
-        const merger = new FeatureSourceMerger(this.layer, index, BBox.fromTile(...Utils.tile_from_index(index)), sources)
+        const merger = new FeatureSourceMerger(this.layer, index, BBox.fromTile(...Tiles.tile_from_index(index)), sources)
         this.loadedTiles.set(index, merger)
         this._handleTile(merger, index)
     }

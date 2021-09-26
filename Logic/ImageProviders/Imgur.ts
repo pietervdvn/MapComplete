@@ -2,8 +2,9 @@
 import $ from "jquery"
 import {LicenseInfo} from "./Wikimedia";
 import ImageAttributionSource from "./ImageAttributionSource";
-import {UIEventSource} from "../UIEventSource";
 import BaseUIElement from "../../UI/BaseUIElement";
+import {Utils} from "../../Utils";
+import Constants from "../../Models/Constants";
 
 export class Imgur extends ImageAttributionSource {
 
@@ -86,50 +87,27 @@ export class Imgur extends ImageAttributionSource {
         return undefined;
     }
 
-    protected DownloadAttribution(url: string): UIEventSource<LicenseInfo> {
-        const src = new UIEventSource<LicenseInfo>(undefined)
-
-
+    protected async DownloadAttribution(url: string): Promise<LicenseInfo> {
         const hash = url.substr("https://i.imgur.com/".length).split(".jpg")[0];
 
         const apiUrl = 'https://api.imgur.com/3/image/' + hash;
-        const apiKey = '7070e7167f0a25a';
+        const response = await Utils.downloadJson(apiUrl, {Authorization: 'Client-ID ' + Constants.ImgurApiKey})
 
-        const settings = {
-            async: true,
-            crossDomain: true,
-            processData: false,
-            contentType: false,
-            type: 'GET',
-            url: apiUrl,
-            headers: {
-                Authorization: 'Client-ID ' + apiKey,
-                Accept: 'application/json',
-            },
-        };
-        // @ts-ignore
-        $.ajax(settings).done(function (response) {
-            const descr: string = response.data.description ?? "";
-            const data: any = {};
-            for (const tag of descr.split("\n")) {
-                const kv = tag.split(":");
-                const k = kv[0];
-                data[k] = kv[1].replace("\r", "");
-            }
+        const descr: string = response.data.description ?? "";
+        const data: any = {};
+        for (const tag of descr.split("\n")) {
+            const kv = tag.split(":");
+            const k = kv[0];
+            data[k] = kv[1]?.replace("\r", "");
+        }
 
 
-            const licenseInfo = new LicenseInfo();
+        const licenseInfo = new LicenseInfo();
 
-            licenseInfo.licenseShortName = data.license;
-            licenseInfo.artist = data.author;
+        licenseInfo.licenseShortName = data.license;
+        licenseInfo.artist = data.author;
 
-            src.setData(licenseInfo)
-
-        }).fail((reason) => {
-            console.log("Getting metadata from to IMGUR failed", reason)
-        });
-
-        return src;
+        return licenseInfo
     }
 
 

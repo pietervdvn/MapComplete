@@ -5,7 +5,6 @@ import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
-import {Unit} from "../Unit";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
 
 export default class LayoutConfig {
@@ -87,6 +86,9 @@ export default class LayoutConfig {
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;
+        if(json.widenFactor < 1){
+            throw "Widenfactor too small"
+        }
         this.widenFactor = json.widenFactor ?? 1.5;
         this.roamingRenderings = (json.roamingRenderings ?? []).map((tr, i) => {
                 if (typeof tr === "string") {

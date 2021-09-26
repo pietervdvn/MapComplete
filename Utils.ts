@@ -10,7 +10,7 @@ export class Utils {
      */
     public static runningFromConsole = typeof window === "undefined";
     public static readonly assets_path = "./assets/svg/";
-    public static externalDownloadFunction: (url: string) => Promise<any>;
+    public static externalDownloadFunction: (url: string, headers?: any) => Promise<any>;
     private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
     private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
 
@@ -247,64 +247,6 @@ export class Utils {
         return dict.get(k);
     }
 
-    /**
-     * Calculates the tile bounds of the
-     * @param z
-     * @param x
-     * @param y
-     * @returns [[maxlat, minlon], [minlat, maxlon]]
-     */
-    static tile_bounds(z: number, x: number, y: number): [[number, number], [number, number]] {
-        return [[Utils.tile2lat(y, z), Utils.tile2long(x, z)], [Utils.tile2lat(y + 1, z), Utils.tile2long(x + 1, z)]]
-    }
-
-    static tile_bounds_lon_lat(z: number, x: number, y: number): [[number, number], [number, number]] {
-        return [[Utils.tile2long(x, z), Utils.tile2lat(y, z)], [Utils.tile2long(x + 1, z), Utils.tile2lat(y + 1, z)]]
-    }
-
-    static tile_index(z: number, x: number, y: number): number {
-        return ((x * (2 << z)) + y) * 100 + z
-    }
-
-    /**
-     * Given a tile index number, returns [z, x, y]
-     * @param index
-     * @returns 'zxy'
-     */
-    static tile_from_index(index: number): [number, number, number] {
-        const z = index % 100;
-        const factor = 2 << z
-        index = Math.floor(index / 100)
-        return [z, Math.floor(index / factor), index % factor]
-    }
-
-    /**
-     * Return x, y of the tile containing (lat, lon) on the given zoom level
-     */
-    static embedded_tile(lat: number, lon: number, z: number): { x: number, y: number, z: number } {
-        return {x: Utils.lon2tile(lon, z), y: Utils.lat2tile(lat, z), z: z}
-    }
-
-    static TileRangeBetween(zoomlevel: number, lat0: number, lon0: number, lat1: number, lon1: number): TileRange {
-        const t0 = Utils.embedded_tile(lat0, lon0, zoomlevel)
-        const t1 = Utils.embedded_tile(lat1, lon1, zoomlevel)
-
-        const xstart = Math.min(t0.x, t1.x)
-        const xend = Math.max(t0.x, t1.x)
-        const ystart = Math.min(t0.y, t1.y)
-        const yend = Math.max(t0.y, t1.y)
-        const total = (1 + xend - xstart) * (1 + yend - ystart)
-
-        return {
-            xstart: xstart,
-            xend: xend,
-            ystart: ystart,
-            yend: yend,
-            total: total,
-            zoomlevel: zoomlevel
-        }
-    }
-
     public static MinifyJSON(stringified: string): string {
         stringified = stringified.replace(/\|/g, "||");
 
@@ -345,16 +287,7 @@ export class Utils {
         return result;
     }
 
-    public static MapRange<T>(tileRange: TileRange, f: (x: number, y: number) => T): T[] {
-        const result: T[] = []
-        for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
-            for (let y = tileRange.ystart; y <= tileRange.yend; y++) {
-                const t = f(x, y);
-                result.push(t)
-            }
-        }
-        return result;
-    }
+
 
     private static injectedDownloads = {}
 
@@ -362,7 +295,7 @@ export class Utils {
         Utils.injectedDownloads[url] = data
     }
 
-    public static downloadJson(url: string): Promise<any> {
+    public static downloadJson(url: string, headers?: any): Promise<any> {
 
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
@@ -371,7 +304,7 @@ export class Utils {
         }
 
         if (this.externalDownloadFunction !== undefined) {
-            return this.externalDownloadFunction(url)
+            return this.externalDownloadFunction(url, headers)
         }
 
         return new Promise((resolve, reject) => {
@@ -379,7 +312,6 @@ export class Utils {
                 xhr.onload = () => {
                     if (xhr.status == 200) {
                         try {
-                            console.log("Got a response! Parsing now...")
                             resolve(JSON.parse(xhr.response))
                         } catch (e) {
                             reject("Not a valid json: " + xhr.response)
@@ -390,6 +322,13 @@ export class Utils {
                 };
                 xhr.open('GET', url);
                 xhr.setRequestHeader("accept", "application/json")
+                if (headers !== undefined) {
+
+                    for (const key in headers) {
+                        xhr.setRequestHeader(key, headers[key])
+                    }
+                }
+
                 xhr.send();
             }
         )
@@ -449,22 +388,6 @@ export class Utils {
         return bestColor ?? hex;
     }
 
-    private static tile2long(x, z) {
-        return (x / Math.pow(2, z) * 360 - 180);
-    }
-
-    private static tile2lat(y, z) {
-        const n = Math.PI - 2 * Math.PI * y / Math.pow(2, z);
-        return (180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))));
-    }
-
-    private static lon2tile(lon, zoom) {
-        return (Math.floor((lon + 180) / 360 * Math.pow(2, zoom)));
-    }
-
-    private static lat2tile(lat, zoom) {
-        return (Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
-    }
 
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
@@ -505,6 +428,12 @@ export class Utils {
             copy[key] = v
         }
         return copy
+    }
+
+    public static async waitFor(timeMillis: number): Promise<void> {
+        return new Promise((resolve) => {
+            window.setTimeout(resolve, timeMillis);
+        })
     }
 }
 

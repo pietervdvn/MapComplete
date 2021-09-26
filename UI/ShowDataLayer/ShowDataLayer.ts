@@ -41,13 +41,14 @@ export default class ShowDataLayer {
         options.leafletMap.addCallback(_ => self.update(options));
         this.update(options);
 
-
         State.state.selectedElement.addCallbackAndRunD(selected => {
             if (self._leafletMap.data === undefined) {
                 return;
             }
             const v = self.leafletLayersPerId.get(selected.properties.id)
-            if(v === undefined){return;}
+            if (v === undefined) {
+                return;
+            }
             const leafletLayer = v.leafletlayer
             const feature = v.feature
             if (leafletLayer.getPopup().isOpen()) {
@@ -66,6 +67,21 @@ export default class ShowDataLayer {
 
             }
         })
+
+        options.doShowLayer?.addCallbackAndRun(doShow => {
+            const mp = options.leafletMap.data;
+            if (this.geoLayer == undefined || mp == undefined) {
+                return;
+            }
+            if (doShow) {
+                mp.addLayer(this.geoLayer)
+            } else {
+                mp.removeLayer(this.geoLayer)
+            }
+
+
+        })
+
     }
 
     private update(options) {
@@ -83,20 +99,18 @@ export default class ShowDataLayer {
             mp.removeLayer(this.geoLayer);
         }
 
-        this.geoLayer= this.CreateGeojsonLayer()
+        this.geoLayer = this.CreateGeojsonLayer()
         const allFeats = this._features.data;
         for (const feat of allFeats) {
             if (feat === undefined) {
                 continue
             }
-            try{
+            try {
                 this.geoLayer.addData(feat);
-            }catch(e){
+            } catch (e) {
                 console.error("Could not add ", feat, "to the geojson layer in leaflet")
             }
         }
-
-        mp.addLayer(this.geoLayer)
 
         if (options.zoomToFeatures ?? false) {
             try {
@@ -104,6 +118,10 @@ export default class ShowDataLayer {
             } catch (e) {
                 console.error(e)
             }
+        }
+
+        if (options.doShowLayer?.data ?? true) {
+            mp.addLayer(this.geoLayer)
         }
     }
 
@@ -125,7 +143,8 @@ export default class ShowDataLayer {
             return;
         }
 
-        const tagSource = feature.properties.id === undefined ? new UIEventSource<any>(feature.properties) : State.state.allElements.getEventSourceById(feature.properties.id)
+        const tagSource = feature.properties.id === undefined ? new UIEventSource<any>(feature.properties) : 
+            State.state.allElements.getEventSourceById(feature.properties.id)
         const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
         const style = layer.GenerateLeafletStyle(tagSource, clickable);
         const baseElement = style.icon.html;
@@ -193,8 +212,10 @@ export default class ShowDataLayer {
             infobox.Activate();
         });
 
+
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(feature.properties.id, {feature: feature, leafletlayer: leafletLayer})
+
     }
 
     private CreateGeojsonLayer(): L.Layer {

@@ -71,7 +71,7 @@ export default class SplitRoadWizard extends Toggle {
         })
 
         new ShowDataMultiLayer({
-            features: new StaticFeatureSource([roadElement]),
+            features: new StaticFeatureSource([roadElement], false),
             layers: State.state.filteredLayers,
             leafletMap: miniMap.leafletMap,
             enablePopups: false,

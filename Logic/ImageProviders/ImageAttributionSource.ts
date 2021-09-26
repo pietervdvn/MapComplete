@@ -12,8 +12,11 @@ export default abstract class ImageAttributionSource {
         if (cached !== undefined) {
             return cached;
         }
-        const src = this.DownloadAttribution(url)
+        const src = new UIEventSource(undefined)
         this._cache.set(url, src)
+        this.DownloadAttribution(url).then(license =>
+            src.setData(license))
+            .catch(e => console.error("Could not download license information for ", url, " due to", e))
         return src;
     }
 
@@ -21,10 +24,10 @@ export default abstract class ImageAttributionSource {
     public abstract SourceIcon(backlinkSource?: string): BaseUIElement;
 
     /*Converts a value to a URL. Can return null if not applicable*/
-    public PrepareUrl(value: string): string | UIEventSource<string>{
+    public PrepareUrl(value: string): string | UIEventSource<string> {
         return value;
     }
 
-    protected abstract DownloadAttribution(url: string): UIEventSource<LicenseInfo>;
+    protected abstract DownloadAttribution(url: string): Promise<LicenseInfo>;
 
 }

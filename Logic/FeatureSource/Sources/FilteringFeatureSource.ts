@@ -1,24 +1,29 @@
 import {UIEventSource} from "../../UIEventSource";
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 import FilteredLayer from "../../../Models/FilteredLayer";
-import {FeatureSourceForLayer} from "../FeatureSource";
+import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import Hash from "../../Web/Hash";
+import {BBox} from "../../GeoOperations";
 
-export default class FilteringFeatureSource implements FeatureSourceForLayer {
+export default class FilteringFeatureSource implements FeatureSourceForLayer , Tiled {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> =
         new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name;
     public readonly layer: FilteredLayer;
-
+public readonly tileIndex : number
+    public readonly bbox : BBox
     constructor(
         state: {
             locationControl: UIEventSource<{ zoom: number }>,
             selectedElement: UIEventSource<any>,
         },
+        tileIndex,
         upstream: FeatureSourceForLayer
     ) {
         const self = this;
         this.name = "FilteringFeatureSource("+upstream.name+")"
+        this.tileIndex = tileIndex
+        this.bbox = BBox.fromTileIndex(tileIndex)
 
         this.layer = upstream.layer;
         const layer = upstream.layer;
@@ -51,7 +56,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer {
                         return false;
                     }
                 }
-                if (!FilteringFeatureSource.showLayer(layer, state.locationControl.data)) {
+                if (!layer.isDisplayed) {
                     // The layer itself is either disabled or hidden due to zoom constraints
                     // We should return true, but it might still match some other layer
                     return false;
@@ -66,10 +71,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer {
             update();
         });
 
-        let isShown = state.locationControl.map((l) => FilteringFeatureSource.showLayer(layer, l),
-            [layer.isDisplayed])
-            
-        isShown.addCallback(isShown => {
+        layer.isDisplayed.addCallback(isShown => {
             if (isShown) {
                 update();
             } else {
@@ -78,7 +80,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer {
         });
 
         layer.appliedFilters.addCallback(_ => {
-            if(!isShown.data){
+            if(!layer.isDisplayed.data){
                 // Currently not shown.
                 // Note that a change in 'isSHown' will trigger an update as well, so we don't have to watch it another time
                 return;
@@ -93,10 +95,8 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer {
         layer: {
             isDisplayed: UIEventSource<boolean>;
             layerDef: LayerConfig;
-        },
-        location: { zoom: number }) {
-        return layer.isDisplayed.data &&
-            layer.layerDef.minzoomVisible <= location.zoom;
+        }) {
+        return layer.isDisplayed.data;
 
     }
 }

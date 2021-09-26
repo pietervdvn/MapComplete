@@ -21,7 +21,7 @@
   "clustering": {
     "maxZoom": 1
   },
-  "widenFactor": 0.005,
+  "widenFactor": 1.1,
   "enableDownload": true,
   "enablePdfDownload": true,
   "layers": [

@@ -37,7 +37,7 @@ export default class FeaturePipeline implements FeatureSourceState {
     private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>;
 
     constructor(
-        handleFeatureSource: (source: FeatureSourceForLayer) => void,
+        handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
         state: {
             filteredLayers: UIEventSource<FilteredLayer[]>,
             locationControl: UIEventSource<Loc>,
@@ -52,7 +52,6 @@ export default class FeaturePipeline implements FeatureSourceState {
 
         const self = this
         const updater = new OverpassFeatureSource(state);
-        updater.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(updater))
         this.overpassUpdater = updater;
         this.sufficientlyZoomed = updater.sufficientlyZoomed
         this.runningQuery = updater.runningQuery
@@ -65,14 +64,15 @@ export default class FeaturePipeline implements FeatureSourceState {
         const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
         this.perLayerHierarchy = perLayerHierarchy
 
-        const patchedHandleFeatureSource = function (src: FeatureSourceForLayer & IndexedFeatureSource) {
+        const patchedHandleFeatureSource = function (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
             const srcFiltered =
-                new FilteringFeatureSource(state,
+                new FilteringFeatureSource(state, src.tileIndex,
                     new WayHandlingApplyingFeatureSource(
                         new ChangeGeometryApplicator(src, state.changes)
                     )
                 )
+            
             handleFeatureSource(srcFiltered)
             self.somethingLoaded.setData(true)
         };
@@ -102,10 +102,12 @@ export default class FeaturePipeline implements FeatureSourceState {
 
             if (source.geojsonZoomLevel === undefined) {
                 // This is a 'load everything at once' geojson layer
-                // We split them up into tiles
+                // We split them up into tiles anyway
                 const src = new GeoJsonSource(filteredLayer)
                 TiledFeatureSource.createHierarchy(src, {
                     layer: src.layer,
+                    minZoomLevel:14,
+                    dontEnforceMinZoom: true,
                     registerTile: (tile) => {
                         new RegisteringAllFromFeatureSourceActor(tile)
                         addToHierarchy(tile, id)
@@ -115,14 +117,11 @@ export default class FeaturePipeline implements FeatureSourceState {
             } else {
                 new DynamicGeoJsonTileSource(
                     filteredLayer,
-                    src => TiledFeatureSource.createHierarchy(src, {
-                        layer: src.layer,
-                        registerTile: (tile) => {
+                    tile => {
                             new RegisteringAllFromFeatureSourceActor(tile)
                             addToHierarchy(tile, id)
                             tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
-                        }
-                    }),
+                        },
                     state
                 )
             }
@@ -133,13 +132,17 @@ export default class FeaturePipeline implements FeatureSourceState {
         new PerLayerFeatureSourceSplitter(state.filteredLayers,
             (source) => TiledFeatureSource.createHierarchy(source, {
                 layer: source.layer,
+                minZoomLevel: 14,
+                dontEnforceMinZoom: true,
                 registerTile: (tile) => {
                     // We save the tile data for the given layer to local storage
                     new SaveTileToLocalStorageActor(tile, tile.tileIndex)
-                    addToHierarchy(tile, source.layer.layerDef.id);
+                    addToHierarchy(new RememberingSource(tile), source.layer.layerDef.id);
+                    tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+
                 }
             }),
-            new RememberingSource(updater))
+            updater)
 
 
         // Also load points/lines that are newly added. 
@@ -152,6 +155,8 @@ export default class FeaturePipeline implements FeatureSourceState {
                 addToHierarchy(perLayer, perLayer.layer.layerDef.id)
                 // AT last, we always apply the metatags whenever possible
                 perLayer.features.addCallbackAndRunD(_ => self.applyMetaTags(perLayer))
+                perLayer.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(perLayer))
+
             },
             newGeometry
         )
@@ -166,6 +171,7 @@ export default class FeaturePipeline implements FeatureSourceState {
     
     private applyMetaTags(src: FeatureSourceForLayer){
         const self = this
+        console.log("Applying metatagging onto ", src.name)
         MetaTagging.addMetatags(
             src.features.data,
             {
@@ -183,6 +189,7 @@ export default class FeaturePipeline implements FeatureSourceState {
 
     private updateAllMetaTagging() {
         const self = this;
+        console.log("Reupdating all metatagging")
         this.perLayerHierarchy.forEach(hierarchy => {
             hierarchy.loadedTiles.forEach(src => {
                 self.applyMetaTags(src)

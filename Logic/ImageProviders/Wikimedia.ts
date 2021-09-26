@@ -1,7 +1,6 @@
 import ImageAttributionSource from "./ImageAttributionSource";
 import BaseUIElement from "../../UI/BaseUIElement";
 import Svg from "../../Svg";
-import {UIEventSource} from "../UIEventSource";
 import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
 
@@ -124,43 +123,34 @@ export class Wikimedia extends ImageAttributionSource {
             .replace(/'/g, '%27');
     }
 
-    protected DownloadAttribution(filename: string): UIEventSource<LicenseInfo> {
-
-        const source = new UIEventSource<LicenseInfo>(undefined);
-
+    protected async DownloadAttribution(filename: string): Promise<LicenseInfo> {
         filename = Wikimedia.ExtractFileName(filename)
 
         if (filename === "") {
-            return source;
+            return undefined;
         }
 
         const url = "https://en.wikipedia.org/w/" +
             "api.php?action=query&prop=imageinfo&iiprop=extmetadata&" +
             "titles=" + filename +
             "&format=json&origin=*";
-        Utils.downloadJson(url).then(
-            data => {
-                const licenseInfo = new LicenseInfo();
-                const license = (data.query.pages[-1].imageinfo ?? [])[0]?.extmetadata;
-                if (license === undefined) {
-                    console.error("This file has no usable metedata or license attached... Please fix the license info file yourself!")
-                    source.setData(null)
-                    return;
-                }
+        const data = await Utils.downloadJson(url)
+        const licenseInfo = new LicenseInfo();
+        const license = (data.query.pages[-1].imageinfo ?? [])[0]?.extmetadata;
+        if (license === undefined) {
+            console.error("This file has no usable metedata or license attached... Please fix the license info file yourself!")
+            return undefined;
+        }
 
-                licenseInfo.artist = license.Artist?.value;
-                licenseInfo.license = license.License?.value;
-                licenseInfo.copyrighted = license.Copyrighted?.value;
-                licenseInfo.attributionRequired = license.AttributionRequired?.value;
-                licenseInfo.usageTerms = license.UsageTerms?.value;
-                licenseInfo.licenseShortName = license.LicenseShortName?.value;
-                licenseInfo.credit = license.Credit?.value;
-                licenseInfo.description = license.ImageDescription?.value;
-                source.setData(licenseInfo);
-            }
-        )
-
-        return source;
+        licenseInfo.artist = license.Artist?.value;
+        licenseInfo.license = license.License?.value;
+        licenseInfo.copyrighted = license.Copyrighted?.value;
+        licenseInfo.attributionRequired = license.AttributionRequired?.value;
+        licenseInfo.usageTerms = license.UsageTerms?.value;
+        licenseInfo.licenseShortName = license.LicenseShortName?.value;
+        licenseInfo.credit = license.Credit?.value;
+        licenseInfo.description = license.ImageDescription?.value;
+        return licenseInfo;
 
     }
 

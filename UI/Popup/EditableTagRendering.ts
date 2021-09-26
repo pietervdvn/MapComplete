@@ -31,8 +31,10 @@ export default class EditableTagRendering extends Toggle {
 
 
             const answerWithEditButton = new Combine([answer,
-                new Toggle(editButton, undefined, State.state.osmConnection.isLoggedIn)])
-                .SetClass("flex justify-between w-full")
+                new Toggle(editButton, 
+                    undefined,
+                    State.state.osmConnection.isLoggedIn)
+            ]).SetClass("flex justify-between w-full")
 
 
             const cancelbutton =

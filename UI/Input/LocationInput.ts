@@ -9,7 +9,6 @@ import State from "../../State";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {BBox, GeoOperations} from "../../Logic/GeoOperations";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
-import * as L from "leaflet";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";

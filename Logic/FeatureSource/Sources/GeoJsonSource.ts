@@ -6,6 +6,7 @@ import FilteredLayer from "../../../Models/FilteredLayer";
 import {Utils} from "../../../Utils";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {BBox} from "../../GeoOperations";
+import {Tiles} from "../../../Models/TileRange";
 
 
 export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
@@ -35,10 +36,10 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                 .replace('{z}', "" + z)
                 .replace('{x}', "" + x)
                 .replace('{y}', "" + y)
-            this.tileIndex = Utils.tile_index(z, x, y)
+            this.tileIndex = Tiles.tile_index(z, x, y)
             this.bbox = BBox.fromTile(z, x, y)
         } else {
-            this.tileIndex = Utils.tile_index(0, 0, 0)
+            this.tileIndex = Tiles.tile_index(0, 0, 0)
             this.bbox = BBox.global;
         }
 
@@ -89,7 +90,6 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
 
                     newFeatures.push({feature: feature, freshness: freshness})
                 }
-                console.debug("Downloaded " + newFeatures.length + " new features and " + skipped + " already seen features from " + url);
 
                 if (newFeatures.length == 0) {
                     return;

@@ -94,6 +94,7 @@ export class OsmConnection {
                 self.AttemptLogin()
             }
         });
+        this.isLoggedIn.addCallbackAndRunD(li => console.log("User is logged in!", li))
         this._dryRun = dryRun;
 
         this.updateAuthObject();

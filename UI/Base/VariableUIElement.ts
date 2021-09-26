@@ -2,22 +2,23 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 
 export class VariableUiElement extends BaseUIElement {
-    private _element: HTMLElement;
+    private readonly _contents: UIEventSource<string | BaseUIElement | BaseUIElement[]>;
 
-    constructor(
-        contents: UIEventSource<string | BaseUIElement | BaseUIElement[]>
-    ) {
+    constructor(contents: UIEventSource<string | BaseUIElement | BaseUIElement[]>) {
         super();
+        this._contents = contents;
 
-        this._element = document.createElement("span");
-        const el = this._element;
-        contents.addCallbackAndRun((contents) => {
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+        const el = document.createElement("span");
+        this._contents.addCallbackAndRun((contents) => {
             while (el.firstChild) {
                 el.removeChild(el.lastChild);
             }
 
             if (contents === undefined) {
-                return el;
+                return;
             }
             if (typeof contents === "string") {
                 el.innerHTML = contents;
@@ -35,9 +36,6 @@ export class VariableUiElement extends BaseUIElement {
                 }
             }
         });
-    }
-
-    protected InnerConstructElement(): HTMLElement {
-        return this._element;
+        return el;
     }
 }

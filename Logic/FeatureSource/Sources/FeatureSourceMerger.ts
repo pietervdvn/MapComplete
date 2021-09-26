@@ -7,6 +7,7 @@ import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from 
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {BBox} from "../../GeoOperations";
 import {Utils} from "../../../Utils";
+import {Tiles} from "../../../Models/TileRange";
 
 export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled, IndexedFeatureSource {
 
@@ -23,7 +24,7 @@ export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled
         this.bbox = bbox;
         this._sources = sources;
         this.layer = layer;
-        this.name = "FeatureSourceMerger("+layer.layerDef.id+", "+Utils.tile_from_index(tileIndex).join(",")+")"
+        this.name = "FeatureSourceMerger("+layer.layerDef.id+", "+Tiles.tile_from_index(tileIndex).join(",")+")"
         const self = this;
 
         const handledSources = new Set<FeatureSource>();

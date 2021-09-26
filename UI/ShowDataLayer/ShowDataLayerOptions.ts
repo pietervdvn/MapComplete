@@ -6,4 +6,5 @@ export interface ShowDataLayerOptions {
     leafletMap: UIEventSource<L.Map>,
     enablePopups?: true | boolean,
     zoomToFeatures?: false | boolean,
+    doShowLayer?: UIEventSource<boolean>
 }

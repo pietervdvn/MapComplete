@@ -1,5 +1,6 @@
 import * as turf from '@turf/turf'
 import {Utils} from "../Utils";
+import {Tiles} from "../Models/TileRange";
 
 export class GeoOperations {
 
@@ -8,7 +9,7 @@ export class GeoOperations {
     }
 
     /**
-     * Converts a GeoJSon feature to a point feature
+     * Converts a GeoJson feature to a point GeoJson feature
      * @param feature
      */
     static centerpoint(feature: any) {
@@ -451,8 +452,12 @@ export class BBox {
         }
     }
 
-    static fromTile(z: number, x: number, y: number) {
-        return new BBox(Utils.tile_bounds_lon_lat(z, x, y))
+    static fromTile(z: number, x: number, y: number): BBox {
+        return new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
+    }
+
+    static fromTileIndex(i: number): BBox {
+        return BBox.fromTile(...Tiles.tile_from_index(i))
     }
 
     getEast() {

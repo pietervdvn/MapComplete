@@ -12,6 +12,7 @@
             ]
         }
     },
+    "minzoom": 12,
     "wayHandling": 1,
     "icon": {
         "render": "circle:white;./assets/layers/food/restaurant.svg",

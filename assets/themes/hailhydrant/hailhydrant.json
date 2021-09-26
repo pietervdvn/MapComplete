@@ -36,7 +36,7 @@
   "startLat": 13.67801,
   "startLon": 121.6625,
   "startZoom": 6,
-  "widenFactor": 0.05,
+  "widenFactor": 3,
   "socialImage": "",
   "layers": [
     {

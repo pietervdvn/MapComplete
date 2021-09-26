@@ -19,7 +19,7 @@
     "source": {
         "osmTags": "amenity=public_bookcase"
     },
-    "minzoom": 12,
+    "minzoom": 10,
     "wayHandling": 2,
     "title": {
         "render": {

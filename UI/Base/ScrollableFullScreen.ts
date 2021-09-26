@@ -36,6 +36,8 @@ export default class ScrollableFullScreen extends UIElement {
         this._component = this.BuildComponent(title("desktop"), content("desktop"), isShown)
             .SetClass("hidden md:block");
         this._fullscreencomponent = this.BuildComponent(title("mobile"), content("mobile"), isShown);
+
+        
         const self = this;
         isShown.addCallback(isShown => {
             if (isShown) {

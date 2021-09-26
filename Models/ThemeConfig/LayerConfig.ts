@@ -18,6 +18,7 @@ import FilterConfig from "./FilterConfig";
 import {Unit} from "../Unit";
 import DeleteConfig from "./DeleteConfig";
 import Svg from "../../Svg";
+import Img from "../../UI/Base/Img";
 
 export default class LayerConfig {
     static WAYHANDLING_DEFAULT = 0;
@@ -495,19 +496,20 @@ export default class LayerConfig {
         const iconUrlStatic = render(this.icon);
         const self = this;
 
-        function genHtmlFromString(sourcePart: string, rotation: string, style?: string): BaseUIElement {
-            style = style ?? `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
+        function genHtmlFromString(sourcePart: string, rotation: string): BaseUIElement {
+            const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
             let html: BaseUIElement = new FixedUiElement(
                 `<img src="${sourcePart}" style="${style}" />`
             );
             const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/);
             if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
-                html = new Combine([
+                html = new Img(
                     (Svg.All[match[1] + ".svg"] as string).replace(
                         /#000000/g,
                         match[2]
                     ),
-                ]).SetStyle(style);
+                    true
+                ).SetStyle(style);
             }
             return html;
         }
@@ -540,7 +542,7 @@ export default class LayerConfig {
                         .filter((prt) => prt != "");
 
                     for (const badgePartStr of partDefs) {
-                        badgeParts.push(genHtmlFromString(badgePartStr, "0", `width:unset;height:100%;display:block;`));
+                        badgeParts.push(genHtmlFromString(badgePartStr, "0"));
                     }
 
                     const badgeCompound = new Combine(badgeParts).SetStyle(

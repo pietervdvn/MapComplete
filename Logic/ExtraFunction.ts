@@ -256,7 +256,7 @@ export class ExtraFunction {
         let closestFeatures: { feat: any, distance: number }[] = [];
         for(const featureList of features) {
             for (const otherFeature of featureList) {
-                if (otherFeature == feature || otherFeature.id == feature.id) {
+                if (otherFeature === feature || otherFeature.id === feature.id) {
                     continue; // We ignore self
                 }
                 let distance = undefined;
@@ -268,7 +268,8 @@ export class ExtraFunction {
                         [feature._lon, feature._lat]
                     )
                 }
-                if (distance === undefined) {
+                if (distance === undefined || distance === null) {
+                    console.error("Could not calculate the distance between", feature, "and", otherFeature)
                     throw "Undefined distance!"
                 }
                 if (distance > maxDistance) {

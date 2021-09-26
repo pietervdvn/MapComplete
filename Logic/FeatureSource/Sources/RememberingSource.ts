@@ -2,17 +2,23 @@
  * Every previously added point is remembered, but new points are added.
  * Data coming from upstream will always overwrite a previous value
  */
-import FeatureSource from "../FeatureSource";
+import FeatureSource, {Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
+import {BBox} from "../../GeoOperations";
 
-export default class RememberingSource implements FeatureSource {
+export default class RememberingSource implements FeatureSource , Tiled{
 
     public readonly features: UIEventSource<{ feature: any, freshness: Date }[]>;
     public readonly name;
-
-    constructor(source: FeatureSource) {
+    public readonly  tileIndex : number
+    public  readonly  bbox : BBox
+    
+    constructor(source: FeatureSource & Tiled) {
         const self = this;
         this.name = "RememberingSource of " + source.name;
+        this.tileIndex=  source.tileIndex
+        this.bbox = source.bbox;
+        
         const empty = [];
         this.features = source.features.map(features => {
             const oldFeatures = self.features?.data ?? empty;

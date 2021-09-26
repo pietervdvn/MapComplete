@@ -47,7 +47,7 @@
   "startLat": 50.8435,
   "startLon": 4.3688,
   "startZoom": 14,
-  "widenFactor": 0.05,
+  "widenFactor": 1.5,
   "socialImage": "",
   "layers": [
     "bike_monitoring_station"

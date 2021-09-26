@@ -15,7 +15,6 @@ import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personal/personal.json";
 import * as L from "leaflet";
 import Img from "./UI/Base/Img";
-import UserDetails from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/BigComponents/Attribution";
 import BackgroundLayerResetter from "./Logic/Actors/BackgroundLayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
@@ -38,6 +37,9 @@ import Minimap from "./UI/Base/Minimap";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import Combine from "./UI/Base/Combine";
 import {SubtleButton} from "./UI/Base/SubtleButton";
+import ShowTileInfo from "./UI/ShowDataLayer/ShowTileInfo";
+import {Tiles} from "./Models/TileRange";
+import PerTileCountAggregator from "./UI/ShowDataLayer/PerTileCountAggregator";
 
 export class InitUiElements {
     static InitAll(
@@ -167,22 +169,38 @@ export class InitUiElements {
             ).AttachTo("messagesbox");
         }
 
-        State.state.osmConnection.userDetails
-            .map((userDetails: UserDetails) => userDetails?.home)
-            .addCallbackAndRunD((home) => {
-                const color = getComputedStyle(document.body).getPropertyValue(
-                    "--subtle-detail-color"
-                );
-                const icon = L.icon({
-                    iconUrl: Img.AsData(
-                        Svg.home_white_bg.replace(/#ffffff/g, color)
-                    ),
-                    iconSize: [30, 30],
-                    iconAnchor: [15, 15],
-                });
-                const marker = L.marker([home.lat, home.lon], {icon: icon});
-                marker.addTo(State.state.leafletMap.data);
+        function addHomeMarker() {
+            const userDetails = State.state.osmConnection.userDetails.data;
+            if (userDetails === undefined) {
+                return false;
+            }
+            console.log("Adding home location of ", userDetails)
+            const home = userDetails.home;
+            if (home === undefined) {
+                return userDetails.loggedIn; // If logged in, the home is not set and we unregister. If not logged in, we stay registered if a login still comes
+            }
+            const leaflet = State.state.leafletMap.data;
+            if (leaflet === undefined) {
+                return false;
+            }
+            const color = getComputedStyle(document.body).getPropertyValue(
+                "--subtle-detail-color"
+            );
+            const icon = L.icon({
+                iconUrl: Img.AsData(
+                    Svg.home_white_bg.replace(/#ffffff/g, color)
+                ),
+                iconSize: [30, 30],
+                iconAnchor: [15, 15],
             });
+            const marker = L.marker([home.lat, home.lon], {icon: icon});
+            marker.addTo(leaflet);
+            return true;
+        }
+
+        State.state.osmConnection.userDetails
+            .addCallbackAndRunD(_ => addHomeMarker());
+        State.state.leafletMap.addCallbackAndRunD(_ => addHomeMarker())
 
         if (layoutToUse.id === personal.id) {
             updateFavs();
@@ -209,7 +227,7 @@ export class InitUiElements {
     static LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
     ): [LayoutConfig, string] {
-            let hash = location.hash.substr(1);
+        let hash = location.hash.substr(1);
         try {
             const layoutFromBase64 = userLayoutParam.data;
             // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
@@ -249,18 +267,18 @@ export class InitUiElements {
             userLayoutParam.setData(layoutToUse.id);
             return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
         } catch (e) {
-            
-            if(hash === undefined || hash.length < 10){
+
+            if (hash === undefined || hash.length < 10) {
                 e = "Did you effectively add a theme? It seems no data could be found."
             }
-            
+
             new Combine([
                 "Error: could not parse the custom layout:",
-                new FixedUiElement(""+e).SetClass("alert"),
-                new SubtleButton("./assets/svg/mapcomplete_logo.svg", 
-                    "Go back to the theme overview", 
-                    {url: window.location.protocol+"//"+ window.location.hostname+"/index.html", newTab: false})
-                
+                new FixedUiElement("" + e).SetClass("alert"),
+                new SubtleButton("./assets/svg/mapcomplete_logo.svg",
+                    "Go back to the theme overview",
+                    {url: window.location.protocol + "//" + window.location.hostname + "/index.html", newTab: false})
+
             ])
                 .SetClass("flex flex-col")
                 .AttachTo("centermessage");
@@ -361,12 +379,12 @@ export class InitUiElements {
         const layout = State.state.layoutToUse.data;
         if (layout.lockLocation) {
             if (layout.lockLocation === true) {
-                const tile = Utils.embedded_tile(
+                const tile = Tiles.embedded_tile(
                     layout.startLat,
                     layout.startLon,
                     layout.startZoom - 1
                 );
-                const bounds = Utils.tile_bounds(tile.z, tile.x, tile.y);
+                const bounds = Tiles.tile_bounds(tile.z, tile.x, tile.y);
                 // We use the bounds to get a sense of distance for this zoom level
                 const latDiff = bounds[0][0] - bounds[1][0];
                 const lonDiff = bounds[0][1] - bounds[1][1];
@@ -402,6 +420,9 @@ export class InitUiElements {
                 const flayer = {
                     isDisplayed: isDisplayed,
                     layerDef: layer,
+                    isSufficientlyZoomed: state.locationControl.map(l => {
+                        return l.zoom >= (layer.minzoomVisible ?? layer.minzoom)
+                    }),
                     appliedFilters: new UIEventSource<TagsFilter>(undefined),
                 };
                 flayers.push(flayer);
@@ -409,13 +430,54 @@ export class InitUiElements {
             return flayers;
         });
 
+        const clusterCounter = new PerTileCountAggregator(State.state.locationControl.map(l => {
+            const z = l.zoom + 1
+            if(z < 7){
+                return 7
+            }
+            return z
+        }))
+        const clusterShow = Math.min(...State.state.layoutToUse.data.layers.map(layer => layer.minzoomVisible ?? layer.minzoom))
+        new ShowDataLayer({
+            features: clusterCounter,
+            leafletMap: State.state.leafletMap,
+            layerToShow: ShowTileInfo.styling,
+            doShowLayer: State.state.locationControl.map(l => l.zoom < clusterShow)
+        })
         State.state.featurePipeline = new FeaturePipeline(
             source => {
+                const clustering = State.state.layoutToUse.data.clustering
+                const doShowFeatures = source.features.map(
+                    f => {
+                        const z = State.state.locationControl.data.zoom
+                        if(z >= clustering.maxZoom){
+                            return true
+                        }
+                        if(z < source.layer.layerDef.minzoom){
+                            return false;
+                        }
+                        if(f.length > clustering.minNeededElements){
+                            console.log("Activating clustering for tile ", Tiles.tile_from_index(source.tileIndex)," as it has ", f.length, "features (clustering starts at)", clustering.minNeededElements)
+                            return false
+                        }
+                        
+                        return true
+                    }, [State.state.locationControl]
+                )
+                clusterCounter.addTile(source, doShowFeatures.map(b => !b))
+                
+                /*
+                new ShowTileInfo({source: source, 
+                    leafletMap: State.state.leafletMap, 
+                    layer: source.layer.layerDef,
+                    doShowLayer: doShowFeatures.map(b => !b)
+                })*/
                 new ShowDataLayer(
                     {
                         features: source,
                         leafletMap: State.state.leafletMap,
-                        layerToShow: source.layer.layerDef
+                        layerToShow: source.layer.layerDef,
+                        doShowLayer: doShowFeatures
                     }
                 );
             }, state

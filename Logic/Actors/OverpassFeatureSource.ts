@@ -24,9 +24,9 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0);
-    
+
     public readonly relationsTracker: RelationsTracker;
-    
+
 
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
     /**
@@ -44,7 +44,6 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
         readonly overpassUrl: UIEventSource<string>;
         readonly overpassTimeout: UIEventSource<number>;
     }
-
     /**
      * The most important layer should go first, as that one gets first pick for the questions
      */
@@ -57,6 +56,7 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
             readonly overpassTimeout: UIEventSource<number>;
             readonly overpassMaxZoom: UIEventSource<number>
         }) {
+        console.trace("Initializing an overpass FS")
 
 
         this.state = state
@@ -153,7 +153,12 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
         return new Overpass(new Or(filters), extraScripts, this.state.overpassUrl, this.state.overpassTimeout, this.relationsTracker);
     }
 
-    private update(): void {
+    private update() {
+        this.updateAsync().then(_ => {
+        })
+    }
+
+    private async updateAsync(): Promise<void> {
         if (this.runningQuery.data) {
             console.log("Still running a query, not updating");
             return;
@@ -179,54 +184,46 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
 
         const self = this;
         const overpass = this.GetFilter();
-        
+
         if (overpass === undefined) {
             return;
         }
         this.runningQuery.setData(true);
-        overpass.queryGeoJson(queryBounds).
-            then(([data, date]) => {
-                self._previousBounds.get(z).push(queryBounds);
-                self.retries.setData(0);
-                const features = data.features.map(f => ({feature: f, freshness: date}));
-                SimpleMetaTagger.objectMetaInfo.addMetaTags(features)
 
-                try{
-                    self.features.setData(features);
-                }catch(e){
-                    console.error("Got the overpass response, but could not process it: ", e, e.stack)
-                }
-                self.runningQuery.setData(false);
-            })
-            .catch((reason) => {
+        let data: any = undefined
+        let date: Date = undefined
+
+        do {
+
+            try {
+                [data, date] = await overpass.queryGeoJson(queryBounds)
+            } catch (e) {
+                console.error(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to`, e);
+
                 self.retries.data++;
-                self.ForceRefresh();
-                self.timeout.setData(self.retries.data * 5);
-                console.error(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to`, reason);
                 self.retries.ping();
+
+                self.timeout.setData(self.retries.data * 5);
                 self.runningQuery.setData(false);
 
-                function countDown() {
-                    window?.setTimeout(
-                        function () {
-                            if (self.timeout.data > 1) {
-                                self.timeout.setData(self.timeout.data - 1);
-                                window.setTimeout(
-                                    countDown,
-                                    1000
-                                )
-                            } else {
-                                self.timeout.setData(0);
-                                self.update()
-                            }
-                        }, 1000
-                    )
+                while (self.timeout.data > 0) {
+                    await Utils.waitFor(1000)
+                    self.timeout.data--
+                    self.timeout.ping();
                 }
-
-                countDown();
-
             }
-        );
+        } while (data === undefined);
+
+        self._previousBounds.get(z).push(queryBounds);
+        self.retries.setData(0);
+
+        try {
+            data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date));
+            self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
+        } catch (e) {
+            console.error("Got the overpass response, but could not process it: ", e, e.stack)
+        }
+        self.runningQuery.setData(false);
 
 
     }

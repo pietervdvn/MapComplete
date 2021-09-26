@@ -6,6 +6,7 @@ import TileHierarchy from "./TileHierarchy";
 import {Utils} from "../../../Utils";
 import SaveTileToLocalStorageActor from "../Actors/SaveTileToLocalStorageActor";
 import {BBox} from "../../GeoOperations";
+import {Tiles} from "../../../Models/TileRange";
 
 export default class TiledFromLocalStorageSource implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     public loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
@@ -17,6 +18,7 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                     leafletMap: any
                 }) {
 
+        const undefinedTiles = new Set<number>()
         const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-"
         // @ts-ignore
         const indexes: number[] = Object.keys(localStorage)
@@ -27,7 +29,7 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                 return Number(key.substring(prefix.length));
             })
 
-        console.log("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Utils.tile_from_index(i).join("/")).join(", "))
+        console.log("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
 
         const zLevels = indexes.map(i => i % 100)
         const indexesSet = new Set(indexes)
@@ -57,9 +59,9 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                 const needed = []
                 for (let z = minZoom; z <= maxZoom; z++) {
 
-                    const tileRange = Utils.TileRangeBetween(z, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
-                    const neededZ = Utils.MapRange(tileRange, (x, y) => Utils.tile_index(z, x, y))
-                        .filter(i => !self.loadedTiles.has(i) && indexesSet.has(i))
+                    const tileRange = Tiles.TileRangeBetween(z, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
+                    const neededZ = Tiles.MapRange(tileRange, (x, y) => Tiles.tile_index(z, x, y))
+                        .filter(i => !self.loadedTiles.has(i) && !undefinedTiles.has(i) && indexesSet.has(i))
                     needed.push(...neededZ)
                 }
 
@@ -84,12 +86,13 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                         features: new UIEventSource<{ feature: any; freshness: Date }[]>(features),
                         name: "FromLocalStorage(" + key + ")",
                         tileIndex: neededIndex,
-                        bbox: BBox.fromTile(...Utils.tile_from_index(neededIndex))
+                        bbox: BBox.fromTileIndex(neededIndex)
                     }
                     handleFeatureSource(src, neededIndex)
                     self.loadedTiles.set(neededIndex, src)
                 } catch (e) {
                     console.error("Could not load data tile from local storage due to", e)
+                    undefinedTiles.add(neededIndex)
                 }
             }
 
