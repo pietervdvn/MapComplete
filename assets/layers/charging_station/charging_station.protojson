@@ -43,7 +43,7 @@
   "tagRenderings": [
     "images",
     {
-      "#": "Type",
+      "id": "Type",
       "question": {
         "en": "Which vehicles are allowed to charge here?"
       },
@@ -93,7 +93,7 @@
       ]
     },
     {
-      "#": "access",
+      "id": "access",
       "question": {
         "en": "Who is allowed to use this charging station?"
       },
@@ -132,7 +132,7 @@
       ]
     },
     {
-      "#": "capacity",
+      "id": "capacity",
       "render": {
         "en": "{capacity} vehicles can be charged here at the same time",
         "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden"
@@ -146,9 +146,9 @@
         "type": "pnat"
       }
     },
-    {"#": "$$$"},
+    {"id": "$$$"},
     {
-      "#": "Authentication",
+      "id": "Authentication",
       "question": {
         "en": "What kind of authentication is available at the charging station?",
         "it": "Quali sono gli orari di apertura di questa stazione di ricarica?",
@@ -218,7 +218,7 @@
       ]
     },
     {
-      "#": "Auth phone",
+      "id": "Auth phone",
       "render": {
         "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "it": "{network}",
@@ -266,7 +266,7 @@
       }
     },
     {
-      "#": "OH",
+      "id": "OH",
       "render": "{opening_hours_table(opening_hours)}",
       "freeform": {
         "key": "opening_hours",
@@ -285,7 +285,7 @@
       ]
     },
     {
-      "#": "fee/charge",
+      "id": "fee/charge",
       "question": {
         "en": "How much does one have to pay to use this charging station?",
         "nl": "Hoeveel kost het gebruik van dit oplaadpunt?"
@@ -316,7 +316,7 @@
       ]
     },
     {
-      "#": "payment-options",
+      "id": "payment-options",
       "builtin": "payment-options",
       "override": {
         "condition": {
@@ -346,7 +346,7 @@
       }
     },
     {
-      "#": "maxstay",
+      "id": "maxstay",
       "question": {
         "en": "What is the maximum amount of time one is allowed to stay here?",
         "nl": "Hoelang mag een voertuig hier blijven staan?"
@@ -369,7 +369,7 @@
       ]
     },
     {
-      "#": "Network",
+      "id": "Network",
       "render": {
         "en": "Part of the network <b>{network}</b>"
       },
@@ -408,7 +408,7 @@
       ]
     },
     {
-      "#": "Operator",
+      "id": "Operator",
       "question": {
         "en": "Who is the operator of this charging station?"
       },
@@ -436,7 +436,7 @@
       ]
     },
     {
-      "#": "phone",
+      "id": "phone",
       "question": {
         "en": "What number can one call if there is a problem with this charging station?"
       },
@@ -449,7 +449,7 @@
       }
     },
     {
-      "#": "email",
+      "id": "email",
       "question": {
         "en": "What is the email address of the operator?"
       },
@@ -462,7 +462,7 @@
       }
     },
     {
-      "#": "website",
+      "id": "website",
       "question": {
         "en": "What is the website of the operator?"
       },
@@ -476,7 +476,7 @@
     },
     "level",
     {
-      "#": "ref",
+      "id": "ref",
       "question": {
         "en": "What is the reference number of this charging station?"
       },
@@ -488,7 +488,7 @@
       }
     },
     {
-      "#": "Operational status",
+      "id": "Operational status",
       "question": {
         "en": "Is this charging point in use?",
         "nl": "Is dit oplaadpunt operationeel?"
@@ -547,7 +547,7 @@
       ]
     },
     {
-      "#": "Parking:fee",
+      "id": "Parking:fee",
       "question": {
         "en": "Does one have to pay a parking fee while charging?"
       },

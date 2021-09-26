@@ -43,6 +43,7 @@
     "tagRenderings": [
         "images",
         {
+            "#": "Type",
             "question": {
                 "en": "Which vehicles are allowed to charge here?"
             },
@@ -89,10 +90,10 @@
                         "en": "<b>Buses</b> can be charged here"
                     }
                 }
-            ],
-            "id": "Type"
+            ]
         },
         {
+            "#": "access",
             "question": {
                 "en": "Who is allowed to use this charging station?"
             },
@@ -128,10 +129,10 @@
                     "if": "access=private",
                     "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)"
                 }
-            ],
-            "id": "access"
+            ]
         },
         {
+            "#": "capacity",
             "render": {
                 "en": "{capacity} vehicles can be charged here at the same time",
                 "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden"
@@ -143,10 +144,10 @@
             "freeform": {
                 "key": "capacity",
                 "type": "pnat"
-            },
-            "id": "capacity"
+            }
         },
         {
+            "#": "Available_charging_stations (generated)",
             "question": {
                 "en": "Which charging stations are available here?"
             },
@@ -447,10 +448,10 @@
                     },
                     "hideInAnswer": true
                 }
-            ],
-            "id": "Available_charging_stations (generated)"
+            ]
         },
         {
+            "#": "plugs-0",
             "question": {
                 "en": "How much plugs of type <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> heeft dit oplaadpunt?"
@@ -468,10 +469,10 @@
                     "socket:schuko~*",
                     "socket:schuko!=0"
                 ]
-            },
-            "id": "plugs-0"
+            }
         },
         {
+            "#": "voltage-0",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/>"
@@ -498,10 +499,10 @@
                     "socket:schuko~*",
                     "socket:schuko!=0"
                 ]
-            },
-            "id": "voltage-0"
+            }
         },
         {
+            "#": "current-0",
             "question": {
                 "en": "What current do the plugs with <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/>?"
@@ -528,10 +529,10 @@
                     "socket:schuko~*",
                     "socket:schuko!=0"
                 ]
-            },
-            "id": "current-0"
+            }
         },
         {
+            "#": "power-output-0",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem;' src='./assets/layers/charging_station/CEE7_4F.svg'/>?"
@@ -558,10 +559,10 @@
                     "socket:schuko~*",
                     "socket:schuko!=0"
                 ]
-            },
-            "id": "power-output-0"
+            }
         },
         {
+            "#": "plugs-1",
             "question": {
                 "en": "How much plugs of type <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> heeft dit oplaadpunt?"
@@ -579,10 +580,10 @@
                     "socket:typee~*",
                     "socket:typee!=0"
                 ]
-            },
-            "id": "plugs-1"
+            }
         },
         {
+            "#": "voltage-1",
             "question": {
                 "en": "What voltage do the plugs with <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/>"
@@ -609,10 +610,10 @@
                     "socket:typee~*",
                     "socket:typee!=0"
                 ]
-            },
-            "id": "voltage-1"
+            }
         },
         {
+            "#": "current-1",
             "question": {
                 "en": "What current do the plugs with <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/>?"
@@ -639,10 +640,10 @@
                     "socket:typee~*",
                     "socket:typee!=0"
                 ]
-            },
-            "id": "current-1"
+            }
         },
         {
+            "#": "power-output-1",
             "question": {
                 "en": "What power output does a single plug of type <b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem;' src='./assets/layers/charging_station/TypeE.svg'/>?"
@@ -676,10 +677,10 @@
                     "socket:typee~*",
                     "socket:typee!=0"
                 ]
-            },
-            "id": "power-output-1"
+            }
         },
         {
+            "#": "plugs-2",
             "question": {
                 "en": "How much plugs of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft dit oplaadpunt?"
@@ -697,10 +698,10 @@
                     "socket:chademo~*",
                     "socket:chademo!=0"
                 ]
-            },
-            "id": "plugs-2"
+            }
         },
         {
+            "#": "voltage-2",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>"
@@ -727,10 +728,10 @@
                     "socket:chademo~*",
                     "socket:chademo!=0"
                 ]
-            },
-            "id": "voltage-2"
+            }
         },
         {
+            "#": "current-2",
             "question": {
                 "en": "What current do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>?"
@@ -757,10 +758,10 @@
                     "socket:chademo~*",
                     "socket:chademo!=0"
                 ]
-            },
-            "id": "current-2"
+            }
         },
         {
+            "#": "power-output-2",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>?"
@@ -787,10 +788,10 @@
                     "socket:chademo~*",
                     "socket:chademo!=0"
                 ]
-            },
-            "id": "power-output-2"
+            }
         },
         {
+            "#": "plugs-3",
             "question": {
                 "en": "How much plugs of type <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft dit oplaadpunt?"
@@ -808,10 +809,10 @@
                     "socket:type1_cable~*",
                     "socket:type1_cable!=0"
                 ]
-            },
-            "id": "plugs-3"
+            }
         },
         {
+            "#": "voltage-3",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>"
@@ -845,10 +846,10 @@
                     "socket:type1_cable~*",
                     "socket:type1_cable!=0"
                 ]
-            },
-            "id": "voltage-3"
+            }
         },
         {
+            "#": "current-3",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>?"
@@ -875,10 +876,10 @@
                     "socket:type1_cable~*",
                     "socket:type1_cable!=0"
                 ]
-            },
-            "id": "current-3"
+            }
         },
         {
+            "#": "power-output-3",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>?"
@@ -912,10 +913,10 @@
                     "socket:type1_cable~*",
                     "socket:type1_cable!=0"
                 ]
-            },
-            "id": "power-output-3"
+            }
         },
         {
+            "#": "plugs-4",
             "question": {
                 "en": "How much plugs of type <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> heeft dit oplaadpunt?"
@@ -933,10 +934,10 @@
                     "socket:type1~*",
                     "socket:type1!=0"
                 ]
-            },
-            "id": "plugs-4"
+            }
         },
         {
+            "#": "voltage-4",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>"
@@ -970,10 +971,10 @@
                     "socket:type1~*",
                     "socket:type1!=0"
                 ]
-            },
-            "id": "voltage-4"
+            }
         },
         {
+            "#": "current-4",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>?"
@@ -1000,10 +1001,10 @@
                     "socket:type1~*",
                     "socket:type1!=0"
                 ]
-            },
-            "id": "current-4"
+            }
         },
         {
+            "#": "power-output-4",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1_J1772.svg'/>?"
@@ -1051,10 +1052,10 @@
                     "socket:type1~*",
                     "socket:type1!=0"
                 ]
-            },
-            "id": "power-output-4"
+            }
         },
         {
+            "#": "plugs-5",
             "question": {
                 "en": "How much plugs of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft dit oplaadpunt?"
@@ -1072,10 +1073,10 @@
                     "socket:type1_combo~*",
                     "socket:type1_combo!=0"
                 ]
-            },
-            "id": "plugs-5"
+            }
         },
         {
+            "#": "voltage-5",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>"
@@ -1109,10 +1110,10 @@
                     "socket:type1_combo~*",
                     "socket:type1_combo!=0"
                 ]
-            },
-            "id": "voltage-5"
+            }
         },
         {
+            "#": "current-5",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>?"
@@ -1146,10 +1147,10 @@
                     "socket:type1_combo~*",
                     "socket:type1_combo!=0"
                 ]
-            },
-            "id": "current-5"
+            }
         },
         {
+            "#": "power-output-5",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>?"
@@ -1197,10 +1198,10 @@
                     "socket:type1_combo~*",
                     "socket:type1_combo!=0"
                 ]
-            },
-            "id": "power-output-5"
+            }
         },
         {
+            "#": "plugs-6",
             "question": {
                 "en": "How much plugs of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft dit oplaadpunt?"
@@ -1218,10 +1219,10 @@
                     "socket:tesla_supercharger~*",
                     "socket:tesla_supercharger!=0"
                 ]
-            },
-            "id": "plugs-6"
+            }
         },
         {
+            "#": "voltage-6",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
@@ -1248,10 +1249,10 @@
                     "socket:tesla_supercharger~*",
                     "socket:tesla_supercharger!=0"
                 ]
-            },
-            "id": "voltage-6"
+            }
         },
         {
+            "#": "current-6",
             "question": {
                 "en": "What current do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
@@ -1285,10 +1286,10 @@
                     "socket:tesla_supercharger~*",
                     "socket:tesla_supercharger!=0"
                 ]
-            },
-            "id": "current-6"
+            }
         },
         {
+            "#": "power-output-6",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
@@ -1329,10 +1330,10 @@
                     "socket:tesla_supercharger~*",
                     "socket:tesla_supercharger!=0"
                 ]
-            },
-            "id": "power-output-6"
+            }
         },
         {
+            "#": "plugs-7",
             "question": {
                 "en": "How much plugs of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft dit oplaadpunt?"
@@ -1350,10 +1351,10 @@
                     "socket:type2~*",
                     "socket:type2!=0"
                 ]
-            },
-            "id": "plugs-7"
+            }
         },
         {
+            "#": "voltage-7",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>"
@@ -1387,10 +1388,10 @@
                     "socket:type2~*",
                     "socket:type2!=0"
                 ]
-            },
-            "id": "voltage-7"
+            }
         },
         {
+            "#": "current-7",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>?"
@@ -1424,10 +1425,10 @@
                     "socket:type2~*",
                     "socket:type2!=0"
                 ]
-            },
-            "id": "current-7"
+            }
         },
         {
+            "#": "power-output-7",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>?"
@@ -1461,10 +1462,10 @@
                     "socket:type2~*",
                     "socket:type2!=0"
                 ]
-            },
-            "id": "power-output-7"
+            }
         },
         {
+            "#": "plugs-8",
             "question": {
                 "en": "How much plugs of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft dit oplaadpunt?"
@@ -1482,10 +1483,10 @@
                     "socket:type2_combo~*",
                     "socket:type2_combo!=0"
                 ]
-            },
-            "id": "plugs-8"
+            }
         },
         {
+            "#": "voltage-8",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
@@ -1519,10 +1520,10 @@
                     "socket:type2_combo~*",
                     "socket:type2_combo!=0"
                 ]
-            },
-            "id": "voltage-8"
+            }
         },
         {
+            "#": "current-8",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
@@ -1556,10 +1557,10 @@
                     "socket:type2_combo~*",
                     "socket:type2_combo!=0"
                 ]
-            },
-            "id": "current-8"
+            }
         },
         {
+            "#": "power-output-8",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
@@ -1586,10 +1587,10 @@
                     "socket:type2_combo~*",
                     "socket:type2_combo!=0"
                 ]
-            },
-            "id": "power-output-8"
+            }
         },
         {
+            "#": "plugs-9",
             "question": {
                 "en": "How much plugs of type <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft dit oplaadpunt?"
@@ -1607,10 +1608,10 @@
                     "socket:type2_cable~*",
                     "socket:type2_cable!=0"
                 ]
-            },
-            "id": "plugs-9"
+            }
         },
         {
+            "#": "voltage-9",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>"
@@ -1644,10 +1645,10 @@
                     "socket:type2_cable~*",
                     "socket:type2_cable!=0"
                 ]
-            },
-            "id": "voltage-9"
+            }
         },
         {
+            "#": "current-9",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?"
@@ -1681,10 +1682,10 @@
                     "socket:type2_cable~*",
                     "socket:type2_cable!=0"
                 ]
-            },
-            "id": "current-9"
+            }
         },
         {
+            "#": "power-output-9",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?"
@@ -1718,10 +1719,10 @@
                     "socket:type2_cable~*",
                     "socket:type2_cable!=0"
                 ]
-            },
-            "id": "power-output-9"
+            }
         },
         {
+            "#": "plugs-10",
             "question": {
                 "en": "How much plugs of type <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft dit oplaadpunt?"
@@ -1739,10 +1740,10 @@
                     "socket:tesla_supercharger_ccs~*",
                     "socket:tesla_supercharger_ccs!=0"
                 ]
-            },
-            "id": "plugs-10"
+            }
         },
         {
+            "#": "voltage-10",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
@@ -1776,10 +1777,10 @@
                     "socket:tesla_supercharger_ccs~*",
                     "socket:tesla_supercharger_ccs!=0"
                 ]
-            },
-            "id": "voltage-10"
+            }
         },
         {
+            "#": "current-10",
             "question": {
                 "en": "What current do the plugs with <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
@@ -1813,10 +1814,10 @@
                     "socket:tesla_supercharger_ccs~*",
                     "socket:tesla_supercharger_ccs!=0"
                 ]
-            },
-            "id": "current-10"
+            }
         },
         {
+            "#": "power-output-10",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
@@ -1843,10 +1844,10 @@
                     "socket:tesla_supercharger_ccs~*",
                     "socket:tesla_supercharger_ccs!=0"
                 ]
-            },
-            "id": "power-output-10"
+            }
         },
         {
+            "#": "plugs-11",
             "question": {
                 "en": "How much plugs of type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft dit oplaadpunt?"
@@ -1864,10 +1865,10 @@
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
                 ]
-            },
-            "id": "plugs-11"
+            }
         },
         {
+            "#": "voltage-11",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
@@ -1894,10 +1895,10 @@
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
                 ]
-            },
-            "id": "voltage-11"
+            }
         },
         {
+            "#": "current-11",
             "question": {
                 "en": "What current do the plugs with <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
@@ -1931,10 +1932,10 @@
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
                 ]
-            },
-            "id": "current-11"
+            }
         },
         {
+            "#": "power-output-11",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
@@ -1975,10 +1976,10 @@
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
                 ]
-            },
-            "id": "power-output-11"
+            }
         },
         {
+            "#": "plugs-12",
             "question": {
                 "en": "How much plugs of type <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> are available here?",
                 "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft dit oplaadpunt?"
@@ -1996,10 +1997,10 @@
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
                 ]
-            },
-            "id": "plugs-12"
+            }
         },
         {
+            "#": "voltage-12",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
                 "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>"
@@ -2033,10 +2034,10 @@
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
                 ]
-            },
-            "id": "voltage-12"
+            }
         },
         {
+            "#": "current-12",
             "question": {
                 "en": "What current do the plugs with <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
                 "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?"
@@ -2070,10 +2071,10 @@
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
                 ]
-            },
-            "id": "current-12"
+            }
         },
         {
+            "#": "power-output-12",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
                 "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?"
@@ -2107,10 +2108,10 @@
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
                 ]
-            },
-            "id": "power-output-12"
+            }
         },
         {
+            "#": "Authentication",
             "question": {
                 "en": "What kind of authentication is available at the charging station?",
                 "it": "Quali sono gli orari di apertura di questa stazione di ricarica?",
@@ -2177,10 +2178,10 @@
                         "en": "No authentication is needed"
                     }
                 }
-            ],
-            "id": "Authentication"
+            ]
         },
         {
+            "#": "Auth phone",
             "render": {
                 "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
                 "it": "{network}",
@@ -2225,10 +2226,10 @@
                 "0": {
                     "then": "不屬於大型網路"
                 }
-            },
-            "id": "Auth phone"
+            }
         },
         {
+            "#": "OH",
             "render": "{opening_hours_table(opening_hours)}",
             "freeform": {
                 "key": "opening_hours",
@@ -2244,10 +2245,10 @@
                         "en": "24/7 opened (including holidays)"
                     }
                 }
-            ],
-            "id": "OH"
+            ]
         },
         {
+            "#": "fee/charge",
             "question": {
                 "en": "How much does one have to pay to use this charging station?",
                 "nl": "Hoeveel kost het gebruik van dit oplaadpunt?"
@@ -2275,10 +2276,10 @@
                         "en": "Free to use"
                     }
                 }
-            ],
-            "id": "fee/charge"
+            ]
         },
         {
+            "#": "payment-options",
             "builtin": "payment-options",
             "override": {
                 "condition": {
@@ -2295,22 +2296,20 @@
                             "en": "Payment is done using a dedicated app",
                             "nl": "Betalen via een app van het netwerk"
                         }
-                    }
-                ],
-                "mappings": [
+                    },
                     {
-                        "if": "payment:app=yes",
-                        "ifnot": "payment:app=no",
+                        "if": "payment:membership_card=yes",
+                        "ifnot": "payment:membership_card=no",
                         "then": {
-                            "en": "Payment is done using a dedicated app",
-                            "nl": "Betalen via een app van het netwerk"
+                            "en": "Payment is done using a membership card",
+                            "nl": "Betalen via een lidkaart van het netwerk"
                         }
                     }
                 ]
-            },
-            "id": "payment-options"
+            }
         },
         {
+            "#": "maxstay",
             "question": {
                 "en": "What is the maximum amount of time one is allowed to stay here?",
                 "nl": "Hoelang mag een voertuig hier blijven staan?"
@@ -2330,10 +2329,10 @@
                         "nl": "Geen maximum parkeertijd"
                     }
                 }
-            ],
-            "id": "maxstay"
+            ]
         },
         {
+            "#": "Network",
             "render": {
                 "en": "Part of the network <b>{network}</b>"
             },
@@ -2369,12 +2368,16 @@
                     "if": "network=eVgo",
                     "then": "eVgo"
                 }
-            ],
-            "id": "Network"
+            ]
         },
         {
-            "question": "Who is the operator of this charging station?",
-            "render": "This charging station is operated by {operator}",
+            "#": "Operator",
+            "question": {
+                "en": "Who is the operator of this charging station?"
+            },
+            "render": {
+                "en": "This charging station is operated by {operator}"
+            },
             "freeform": {
                 "key": "operator"
             },
@@ -2385,16 +2388,18 @@
                             "network:={operator}"
                         ]
                     },
-                    "then": "Actually, {operator} is the network",
+                    "then": {
+                        "en": "Actually, {operator} is the network"
+                    },
                     "addExtraTags": [
                         "operator="
                     ],
                     "hideInAnswer": "operator="
                 }
-            ],
-            "id": "Operator"
+            ]
         },
         {
+            "#": "phone",
             "question": {
                 "en": "What number can one call if there is a problem with this charging station?"
             },
@@ -2404,10 +2409,10 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            },
-            "id": "phone"
+            }
         },
         {
+            "#": "email",
             "question": {
                 "en": "What is the email address of the operator?"
             },
@@ -2417,10 +2422,10 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            },
-            "id": "email"
+            }
         },
         {
+            "#": "website",
             "question": {
                 "en": "What is the website of the operator?"
             },
@@ -2430,21 +2435,23 @@
             "freeform": {
                 "key": "website",
                 "type": "url"
-            },
-            "id": "website"
+            }
         },
         "level",
         {
+            "#": "ref",
             "question": {
                 "en": "What is the reference number of this charging station?"
             },
-            "render": "Reference number is <b>{ref}</b>",
+            "render": {
+                "en": "Reference number is <b>{ref}</b>"
+            },
             "freeform": {
                 "key": "ref"
-            },
-            "id": "ref"
+            }
         },
         {
+            "#": "Operational status",
             "question": {
                 "en": "Is this charging point in use?",
                 "nl": "Is dit oplaadpunt operationeel?"
@@ -2500,10 +2507,10 @@
                         "nl": "Dit oplaadpunt werkt"
                     }
                 }
-            ],
-            "id": "Operational status"
+            ]
         },
         {
+            "#": "Parking:fee",
             "question": {
                 "en": "Does one have to pay a parking fee while charging?"
             },
@@ -2520,8 +2527,7 @@
                         "en": "An additional parking fee should be paid while charging"
                     }
                 }
-            ],
-            "id": "Parking:fee"
+            ]
         }
     ],
     "icon": {

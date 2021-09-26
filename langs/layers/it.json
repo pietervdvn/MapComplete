@@ -680,12 +680,12 @@
         "description": "Una stazione di ricarica",
         "name": "Stazioni di ricarica",
         "tagRenderings": {
-            "Auth phone": {
+            "57": {
+                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
+            },
+            "58": {
                 "question": "A quale rete appartiene questa stazione di ricarica?",
                 "render": "{network}"
-            },
-            "Authentication": {
-                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
             }
         },
         "title": {

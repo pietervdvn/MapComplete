@@ -53,7 +53,7 @@ function loadCsv(file): {
 function run(file, protojson) {
 
     const overview_question_answers = []
-    const questions: (TagRenderingConfigJson & {"#": string})[] = []
+    const questions: (TagRenderingConfigJson & {"id": string})[] = []
     const filterOptions: { question: any, osmTags?: string } [] = [
         {
             question: {
@@ -103,7 +103,7 @@ function run(file, protojson) {
         const descrWithImage_nl = `<b>${e.description.get("nl")}</b> <img style='width:1rem;' src='./assets/layers/charging_station/${e.image}'/>`
 
         questions.push({
-            "#":"plugs-"+i,
+            "id":"plugs-"+i,
             question: {
                 en: `How much plugs of type ${descrWithImage_en} are available here?`,
                 nl: `Hoeveel stekkers van type  ${descrWithImage_nl} heeft dit oplaadpunt?`,
@@ -122,7 +122,7 @@ function run(file, protojson) {
         })
 
         questions.push({
-            "#":"voltage-"+i,
+            "id":"voltage-"+i,
             question: {
                 en: `What voltage do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke spanning levert de stekker van type ${descrWithImage_nl}`
@@ -151,7 +151,7 @@ function run(file, protojson) {
 
 
         questions.push({
-            "#":"current-"+i,
+            "id":"current-"+i,
             question: {
                 en: `What current do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke stroom levert de stekker van type ${descrWithImage_nl}?`,
@@ -180,7 +180,7 @@ function run(file, protojson) {
 
 
         questions.push({
-            "#":"power-output-"+i,
+            "id":"power-output-"+i,
             question: {
                 en: `What power output does a single plug of type ${descrWithImage_en} offer?`,
                 nl: `Welk vermogen levert een enkele stekker van type ${descrWithImage_nl}?`,
@@ -217,7 +217,7 @@ function run(file, protojson) {
     }
 
     const toggles = {
-        "#":"Available_charging_stations (generated)",
+        "id":"Available_charging_stations (generated)",
         "question": {
             "en": "Which charging stations are available here?"
         },
@@ -235,7 +235,7 @@ function run(file, protojson) {
         if(typeof tr === "string"){
             return;
         }
-        if(tr["#"] === undefined || typeof tr["#"] !== "string"){
+        if(tr["id"] === undefined || typeof tr["id"] !== "string"){
             console.error(tr)
             throw "Every tagrendering should have an id, acting as comment"
         }
@@ -348,11 +348,11 @@ function mergeTranslations(origPath, newConfig: LayerConfigJson){
 
     for (const oldRendering of renderingsOld) {
         
-        const oldRenderingName = oldRendering["#"]
+        const oldRenderingName = oldRendering["id"]
         if(oldRenderingName === undefined){
             continue
         }
-        const applicable = newRenderings.filter(r => r["#"] === oldRenderingName)[0]
+        const applicable = newRenderings.filter(r => r["id"] === oldRenderingName)[0]
         if(applicable === undefined){
             continue;
         }

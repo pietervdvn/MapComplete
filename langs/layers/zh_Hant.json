@@ -377,12 +377,12 @@
         "description": "充電站",
         "name": "充電站",
         "tagRenderings": {
-            "Auth phone": {
+            "57": {
+                "question": "何時是充電站開放使用的時間？"
+            },
+            "58": {
                 "question": "充電站所屬的網路是？",
                 "render": "{network}"
-            },
-            "Authentication": {
-                "question": "何時是充電站開放使用的時間？"
             }
         },
         "title": {

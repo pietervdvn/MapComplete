@@ -3,12 +3,12 @@
         "description": "充電ステーション",
         "name": "充電ステーション",
         "tagRenderings": {
-            "Auth phone": {
+            "57": {
+                "question": "この充電ステーションはいつオープンしますか?"
+            },
+            "58": {
                 "question": "この充電ステーションの運営チェーンはどこですか?",
                 "render": "{network}"
-            },
-            "Authentication": {
-                "question": "この充電ステーションはいつオープンしますか?"
             }
         },
         "title": {
