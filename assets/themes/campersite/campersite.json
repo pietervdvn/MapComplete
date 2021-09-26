@@ -142,6 +142,7 @@
           "id": "caravansites-name"
         },
         {
+          "id": "caravansites-fee",
           "question": {
             "en": "Does this place charge a fee?",
             "it": "Ha una tariffa questo luogo?",
@@ -231,6 +232,7 @@
           "id": "caravansites-charge"
         },
         {
+          "id": "caravansites-sanitary-dump",
           "question": {
             "en": "Does this place have a sanitary dump station?",
             "it": "Questo luogo ha una stazione per lo scarico delle acque?",
@@ -301,6 +303,7 @@
           "id": "caravansites-capacity"
         },
         {
+          "id": "caravansites-internet",
           "question": {
             "en": "Does this place provide internet access?",
             "id": "Tempat ini berbagi akses Web?",
@@ -368,6 +371,7 @@
           ]
         },
         {
+          "id": "caravansites-internet-fee",
           "question": {
             "en": "Do you have to pay for the internet access?",
             "it": "Occorre pagare per avere l’accesso a internet?",
@@ -418,6 +422,7 @@
           }
         },
         {
+          "id": "caravansites-toilets",
           "question": {
             "en": "Does this place have toilets?",
             "it": "Questo luogo dispone di servizi igienici?",
@@ -498,6 +503,7 @@
           "id": "caravansites-website"
         },
         {
+          "id": "caravansites-long-term",
           "question": {
             "en": "Does this place offer spots for long term rental?",
             "ru": "Предлагает ли эта площадка места для долгосрочной аренды?",
@@ -689,6 +695,7 @@
       "tagRenderings": [
         "images",
         {
+          "id": "dumpstations-fee",
           "question": {
             "en": "Does this place charge a fee?",
             "ru": "Взимается ли в этом месте плата?",
@@ -758,6 +765,7 @@
           "id": "dumpstations-charge"
         },
         {
+          "id": "dumpstations-waterpoint",
           "question": {
             "en": "Does this place have a water point?",
             "ru": "Есть ли в этом месте водоснабжение?",
@@ -800,6 +808,7 @@
           ]
         },
         {
+          "id": "dumpstations-grey-water",
           "question": {
             "en": "Can you dispose of grey water here?",
             "ru": "Можно ли здесь утилизировать серую воду?",
@@ -839,6 +848,7 @@
           ]
         },
         {
+          "id": "dumpstations-chemical-waste",
           "question": {
             "en": "Can you dispose of chemical toilet waste here?",
             "ru": "Можно ли здесь утилизировать отходы химических туалетов?",
@@ -881,6 +891,7 @@
           ]
         },
         {
+          "id": "dumpstations-access",
           "question": {
             "en": "Who can use this dump station?",
             "ja": "このゴミ捨て場は誰が使えるんですか?",

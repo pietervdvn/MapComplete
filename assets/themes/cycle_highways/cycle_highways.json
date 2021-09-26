@@ -90,12 +90,11 @@
           "id": "cycle_highways-state"
         },
         {
+          "id": "cycle-highway-length",
           "render": "This part is {_length:km}km long"
         },
         "website",
-        {
-          "render": "{all_tags()}"
-        }
+        "all_tags"
       ],
       "name": {
         "en": "cycle highways"

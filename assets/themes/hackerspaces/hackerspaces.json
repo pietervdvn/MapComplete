@@ -49,6 +49,7 @@
       },
       "tagRenderings": [
         {
+          "id": "is_makerspace",
           "question": {
             "en": "Is this a hackerspace or a makerspace?"
           },
@@ -109,6 +110,7 @@
         },
         "wheelchair-access",
         {
+          "id": "hs-club-mate",
           "question": {
             "en": "Does this hackerspace serve Club Mate?"
           },
@@ -130,7 +132,7 @@
                 ]
               },
               "then": {
-                "en": "This hackerspace is not worthy of the name hackerspace as it does not serve club mate"
+                "en": "This hackerspace does not serve club mate"
               }
             }
           ]

@@ -276,9 +276,9 @@ export default class LayerConfig {
 
         this.tagRenderings = trs(json.tagRenderings, false);
         
-       const missingIds = json.tagRenderings.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined);
+       const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined) ?? [];
 
-       if(missingIds.length > 0){
+       if(missingIds.length > 0 && official){
            console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
            throw "Missing ids in tagrenderings"
        }

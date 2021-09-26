@@ -129,6 +129,7 @@
           "id": "facadegardens-direction"
         },
         {
+          "id": "facadegardens-sunshine",
           "mappings": [
             {
               "if": {
@@ -184,6 +185,7 @@
           }
         },
         {
+          "id": "facadegardens-rainbarrel",
           "question": {
             "nl": "Is er een regenton voorzien bij het tuintje?",
             "en": "Is there a water barrel installed for the garden?",
@@ -246,6 +248,7 @@
           "id": "facadegardens-start_date"
         },
         {
+          "id": "facadegardens-edible",
           "mappings": [
             {
               "if": {
@@ -285,6 +288,7 @@
           }
         },
         {
+          "id": "facadegardens-plants",
           "question": {
             "nl": "Wat voor planten staan hier?",
             "en": "What kinds of plants grow here?",
