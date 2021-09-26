@@ -386,8 +386,8 @@
             "id": "sport_pitch-opening_hours"
         },
         "questions",
-        { "id": "sport-pitch-reviews",
-
+        {
+            "id": "sport-pitch-reviews",
             "render": "{reviews(name, sportpitch)}"
         }
     ],

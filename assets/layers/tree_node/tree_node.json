@@ -238,7 +238,8 @@
                 }
             ]
         },
-        { "id": "tree-decidouous",
+        {
+            "id": "tree-decidouous",
             "question": {
                 "nl": "Is deze boom groenblijvend of bladverliezend?",
                 "en": "Is this tree evergreen or deciduous?",

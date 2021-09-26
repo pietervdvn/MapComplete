@@ -491,8 +491,8 @@
             ],
             "id": "bike_repair_station-valves"
         },
-        {   "id": "bike_repair_station-electrical_pump",
-
+        {
+            "id": "bike_repair_station-electrical_pump",
             "question": {
                 "en": "Is this an electric bike pump?",
                 "nl": "Is dit een electrische fietspomp?",
@@ -535,7 +535,8 @@
                 }
             ]
         },
-        {   "id": "bike_repair_station-manometer",
+        {
+            "id": "bike_repair_station-manometer",
             "question": {
                 "en": "Does the pump have a pressure indicator or manometer?",
                 "nl": "Heeft deze pomp een luchtdrukmeter?",

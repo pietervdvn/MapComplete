@@ -32,15 +32,16 @@ for (const layerFile of layerFiles) {
     fixLayerConfig(layerFile.parsed)
     writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "    "))
 }
-
+/*
 const themeFiles = ScriptUtils.getThemeFiles()
 for (const themeFile of themeFiles) {
-    for (const layerConfig of themeFile.parsed.layers) {
+    for (const layerConfig of themeFile.parsed.layers ?? []) {
         if(typeof layerConfig === "string" || layerConfig["builtin"]!== undefined){
             continue
         }
         // @ts-ignore
         fixLayerConfig(layerConfig)
     }
-    writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "    "))
+  //  writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "    "))
 }
+//*/
