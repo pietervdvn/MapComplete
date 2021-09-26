@@ -125,7 +125,8 @@
           "freeform": {
             "type": "direction",
             "key": "direction"
-          }
+          },
+          "id": "facadegardens-direction"
         },
         {
           "mappings": [
@@ -241,7 +242,8 @@
           "freeform": {
             "key": "start_date",
             "type": "text"
-          }
+          },
+          "id": "facadegardens-start_date"
         },
         {
           "mappings": [
@@ -355,7 +357,8 @@
           "freeform": {
             "key": "description",
             "type": "text"
-          }
+          },
+          "id": "facadegardens-description"
         }
       ],
       "icon": {

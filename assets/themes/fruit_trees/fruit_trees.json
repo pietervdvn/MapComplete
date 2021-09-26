@@ -101,7 +101,8 @@
           },
           "freeform": {
             "key": "species:nl"
-          }
+          },
+          "id": "fruitboom-species:nl"
         },
         {
           "render": {
@@ -117,7 +118,8 @@
             "and": [
               "species:nl~*"
             ]
-          }
+          },
+          "id": "fruitboom-taxon"
         },
         {
           "render": {
@@ -128,7 +130,8 @@
           },
           "freeform": {
             "key": "description"
-          }
+          },
+          "id": "fruitboom-description"
         },
         {
           "render": {
@@ -139,7 +142,8 @@
           },
           "freeform": {
             "key": "ref"
-          }
+          },
+          "id": "fruitboom-ref"
         }
       ],
       "icon": {

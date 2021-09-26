@@ -172,7 +172,7 @@
           }
         },
         {
-          "id":"walk-type",
+          "id": "walk-type",
           "mappings": [
             {
               "if": "route=iwn",

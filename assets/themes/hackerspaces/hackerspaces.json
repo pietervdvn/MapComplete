@@ -76,7 +76,8 @@
           },
           "freeform": {
             "key": "name"
-          }
+          },
+          "id": "hackerspaces-name"
         },
         "website",
         "email",
@@ -103,7 +104,8 @@
                 "en": "Opened 24/7"
               }
             }
-          ]
+          ],
+          "id": "hackerspaces-opening_hours"
         },
         "wheelchair-access",
         {
@@ -143,7 +145,8 @@
           "freeform": {
             "key": "start_date",
             "type": "date"
-          }
+          },
+          "id": "hackerspaces-start_date"
         }
       ],
       "icon": {

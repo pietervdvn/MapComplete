@@ -138,7 +138,8 @@
           },
           "freeform": {
             "key": "name"
-          }
+          },
+          "id": "caravansites-name"
         },
         {
           "question": {
@@ -226,7 +227,8 @@
             "and": [
               "fee=yes"
             ]
-          }
+          },
+          "id": "caravansites-charge"
         },
         {
           "question": {
@@ -295,7 +297,8 @@
           "freeform": {
             "key": "capacity",
             "type": "pnat"
-          }
+          },
+          "id": "caravansites-capacity"
         },
         {
           "question": {
@@ -491,7 +494,8 @@
             "zh_Hant": "這個地方有網站嗎？",
             "fr": "Ce lieu a-t’il un site internet ?",
             "pt_BR": "Este lugar tem um website?"
-          }
+          },
+          "id": "caravansites-website"
         },
         {
           "question": {
@@ -575,7 +579,8 @@
           "freeform": {
             "key": "description",
             "type": "text"
-          }
+          },
+          "id": "caravansites-description"
         },
         "questions",
         "reviews"
@@ -749,7 +754,8 @@
             "and": [
               "fee=yes"
             ]
-          }
+          },
+          "id": "dumpstations-charge"
         },
         {
           "question": {
@@ -957,7 +963,8 @@
           },
           "freeform": {
             "key": "network"
-          }
+          },
+          "id": "dumpstations-network"
         }
       ],
       "icon": {

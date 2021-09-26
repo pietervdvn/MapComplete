@@ -14,6 +14,10 @@ import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
  * In place fix
  */
 function fixLayerConfig(config: LayerConfigJson) : void{
+    if(config.tagRenderings === undefined){
+        return
+    }
+    
     for (const tagRendering of config.tagRenderings) {
         if(tagRendering["#"] !== undefined){
             tagRendering["id"] = tagRendering["#"]
@@ -32,7 +36,7 @@ for (const layerFile of layerFiles) {
     fixLayerConfig(layerFile.parsed)
     writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "    "))
 }
-/*
+
 const themeFiles = ScriptUtils.getThemeFiles()
 for (const themeFile of themeFiles) {
     for (const layerConfig of themeFile.parsed.layers ?? []) {
@@ -42,6 +46,6 @@ for (const themeFile of themeFiles) {
         // @ts-ignore
         fixLayerConfig(layerConfig)
     }
-  //  writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "    "))
+    writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "  "))
 }
 //*/
