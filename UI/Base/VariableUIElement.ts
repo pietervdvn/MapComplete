@@ -18,7 +18,7 @@ export class VariableUiElement extends BaseUIElement {
             }
 
             if (contents === undefined) {
-                return;
+                return
             }
             if (typeof contents === "string") {
                 el.innerHTML = contents;

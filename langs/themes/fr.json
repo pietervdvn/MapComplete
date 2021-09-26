@@ -15,7 +15,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "Quel artiste a créé cette œuvre ?",
+                        "render": "Créé par {artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "Architecture"
@@ -57,15 +61,11 @@
                         "question": "Quel est le type de cette œuvre d'art?",
                         "render": "Type d'œuvre : {artwork_type}"
                     },
-                    "2": {
-                        "question": "Quel artiste a créé cette œuvre ?",
-                        "render": "Créé par {artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
                         "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "Quelle entrée Wikidata correspond à <b>cette œuvre d'art</b> ?",
                         "render": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
@@ -91,11 +91,6 @@
         "description": "Une vélothèque est un endroit où on peut emprunter des vélos, souvent moyennant une petite somme annuelle. Un cas d'utilisation notable est celui des vélothèques pour les enfants, qui leur permettent de passer à un vélo plus grand quand ils sont trop grands pour leur vélo actuel",
         "title": "Vélothèques"
     },
-    "bike_monitoring_stations": {
-        "description": "Ce thème montre les données des compteurs en temps réel",
-        "shortDescription": "Station de comptage vélo avec données en temps réel par Bruxelles Mobilités",
-        "title": "Station de comptage vélo"
-    },
     "bookcases": {
         "description": "Une microbibliothèques, également appelée boite à livre, est un élément de mobilier urbain (étagère, armoire, etc) dans lequel sont stockés des livres et autres objets en accès libre. Découvrez les boites à livres prêt de chez vous, ou ajouter en une nouvelle à l'aide de votre compte OpenStreetMap.",
         "title": "Carte des microbibliothèques"
@@ -113,11 +108,19 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "question": "Comment s'appelle cet endroit ?",
-                        "render": "Cet endroit s'appelle {nom}"
+                    "caravansites-capacity": {
+                        "question": "Combien de personnes peuvent camper ici ? (Passez s’il n’y a pas de places délimitées)",
+                        "render": "{capacity} personnes peuvent utiliser cet espace en même temps"
                     },
-                    "2": {
+                    "caravansites-charge": {
+                        "question": "Combien coûte cet endroit ?",
+                        "render": "Ce site fait payer {charge}"
+                    },
+                    "caravansites-description": {
+                        "question": "Souhaitez-vous ajouter une description générale du lieu ? (Ne pas répéter les informations précédentes et rester neutre, les opinions vont dans les avis)",
+                        "render": "Plus de détails à propos du site : {description}"
+                    },
+                    "caravansites-fee": {
                         "mappings": {
                             "0": {
                                 "then": "L’utilisation est payante"
@@ -128,26 +131,7 @@
                         },
                         "question": "Cet endroit est-il payant ?"
                     },
-                    "3": {
-                        "question": "Combien coûte cet endroit ?",
-                        "render": "Ce site fait payer {charge}"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "Cet endroit a une station de vidange sanitaire"
-                            },
-                            "1": {
-                                "then": "Ce site ne possède pas de lieu de vidange"
-                            }
-                        },
-                        "question": "Ce site possède-t’il un lieu de vidange ?"
-                    },
-                    "5": {
-                        "question": "Combien de personnes peuvent camper ici ? (Passez s’il n’y a pas de places délimitées)",
-                        "render": "{capacity} personnes peuvent utiliser cet espace en même temps"
-                    },
-                    "6": {
+                    "caravansites-internet": {
                         "mappings": {
                             "0": {
                                 "then": "Il y a un accès internet"
@@ -161,7 +145,7 @@
                         },
                         "question": "Cet endroit offre-t-il un accès à Internet ?"
                     },
-                    "7": {
+                    "caravansites-internet-fee": {
                         "mappings": {
                             "0": {
                                 "then": "L’accès internet est en supplément"
@@ -172,22 +156,7 @@
                         },
                         "question": "L’accès internet est-il payant ?"
                     },
-                    "8": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ce site a des toilettes"
-                            },
-                            "1": {
-                                "then": "Ce site n’a pas de toilettes"
-                            }
-                        },
-                        "question": "Y-a-t’il des toilettes sur le site ?"
-                    },
-                    "9": {
-                        "question": "Ce lieu a-t’il un site internet ?",
-                        "render": "Site officiel : <a href='{website}'>{website}</a>"
-                    },
-                    "10": {
+                    "caravansites-long-term": {
                         "mappings": {
                             "0": {
                                 "then": "Oui, mais il est possible d’y passer seulement une nuit"
@@ -201,9 +170,35 @@
                         },
                         "question": "Ce site permet-il la location longue durée ?"
                     },
-                    "11": {
-                        "question": "Souhaitez-vous ajouter une description générale du lieu ? (Ne pas répéter les informations précédentes et rester neutre, les opinions vont dans les avis)",
-                        "render": "Plus de détails à propos du site : {description}"
+                    "caravansites-name": {
+                        "question": "Comment s'appelle cet endroit ?",
+                        "render": "Cet endroit s'appelle {nom}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cet endroit a une station de vidange sanitaire"
+                            },
+                            "1": {
+                                "then": "Ce site ne possède pas de lieu de vidange"
+                            }
+                        },
+                        "question": "Ce site possède-t’il un lieu de vidange ?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ce site a des toilettes"
+                            },
+                            "1": {
+                                "then": "Ce site n’a pas de toilettes"
+                            }
+                        },
+                        "question": "Y-a-t’il des toilettes sur le site ?"
+                    },
+                    "caravansites-website": {
+                        "question": "Ce lieu a-t’il un site internet ?",
+                        "render": "Site officiel : <a href='{website}'>{website}</a>"
                     }
                 },
                 "title": {
@@ -225,55 +220,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ce site demande un paiement"
-                            },
-                            "1": {
-                                "then": "Ce site ne demande pas de paiement"
-                            }
-                        },
-                        "question": "Ce site est-il payant ?"
-                    },
-                    "2": {
-                        "question": "Combien ce site demande t’il de payer ?",
-                        "render": "Ce site fait payer {charge}"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ce site a un point d’eau"
-                            },
-                            "1": {
-                                "then": "Ce site n’a pas de point d’eau"
-                            }
-                        },
-                        "question": "Ce site dispose-t’il d’un point d’eau ?"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "Il est possible d’y vidanger ses eaux usées"
-                            },
-                            "1": {
-                                "then": "Il n’est pas possible d’y vidanger ses eaux usées"
-                            }
-                        },
-                        "question": "Est-il possible d’y faire sa vidange des eaux usées ?"
-                    },
-                    "5": {
-                        "mappings": {
-                            "0": {
-                                "then": "Il est possible d’y vidanger ses toilettes chimiques"
-                            },
-                            "1": {
-                                "then": "Il n’est pas possible d’y vidanger ses toilettes chimiques"
-                            }
-                        },
-                        "question": "Est-il possible d’y vidanger ses toilettes chimiques ?"
-                    },
-                    "6": {
+                    "dumpstations-access": {
                         "mappings": {
                             "0": {
                                 "then": "Un code est nécessaire"
@@ -290,9 +237,57 @@
                         },
                         "question": "Qui peut utiliser le site de vidange ?"
                     },
-                    "7": {
+                    "dumpstations-charge": {
+                        "question": "Combien ce site demande t’il de payer ?",
+                        "render": "Ce site fait payer {charge}"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "Il est possible d’y vidanger ses toilettes chimiques"
+                            },
+                            "1": {
+                                "then": "Il n’est pas possible d’y vidanger ses toilettes chimiques"
+                            }
+                        },
+                        "question": "Est-il possible d’y vidanger ses toilettes chimiques ?"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ce site demande un paiement"
+                            },
+                            "1": {
+                                "then": "Ce site ne demande pas de paiement"
+                            }
+                        },
+                        "question": "Ce site est-il payant ?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Il est possible d’y vidanger ses eaux usées"
+                            },
+                            "1": {
+                                "then": "Il n’est pas possible d’y vidanger ses eaux usées"
+                            }
+                        },
+                        "question": "Est-il possible d’y faire sa vidange des eaux usées ?"
+                    },
+                    "dumpstations-network": {
                         "question": "De quel réseau fait-elle partie ? (Passer si aucun)",
                         "render": "Cette station fait parte d’un réseau {network}"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ce site a un point d’eau"
+                            },
+                            "1": {
+                                "then": "Ce site n’a pas de point d’eau"
+                            }
+                        },
+                        "question": "Ce site dispose-t’il d’un point d’eau ?"
                     }
                 },
                 "title": {
@@ -343,7 +338,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "climbing_club-name": {
                         "question": "Quel est le nom du club ou de l’association ?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -361,7 +356,7 @@
                 "description": "Une salle d’escalade",
                 "name": "Salle d’escalade",
                 "tagRenderings": {
-                    "3": {
+                    "name": {
                         "question": "Quel est le nom de la salle d’escalade ?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -383,24 +378,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "Cette voie n’a pas de nom"
-                            }
-                        },
-                        "question": "Quel est le nom de cette voie d’escalade ?",
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "4": {
-                        "question": "Quelle est la longueur de cette voie (en mètres) ?",
-                        "render": "Cette voie fait {canonical(climbing:length)} de long"
-                    },
-                    "5": {
-                        "question": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
-                        "render": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}"
-                    },
-                    "6": {
+                    "Bolts": {
                         "mappings": {
                             "0": {
                                 "then": "Cette voie n’a pas de prises"
@@ -412,7 +390,24 @@
                         "question": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
                         "render": "Cette voie a {climbing:bolts} prises"
                     },
-                    "8": {
+                    "Difficulty": {
+                        "question": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
+                        "render": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}"
+                    },
+                    "Length": {
+                        "question": "Quelle est la longueur de cette voie (en mètres) ?",
+                        "render": "Cette voie fait {canonical(climbing:length)} de long"
+                    },
+                    "Name": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cette voie n’a pas de nom"
+                            }
+                        },
+                        "question": "Quel est le nom de cette voie d’escalade ?",
+                        "render": "<strong>{name}</strong>"
+                    },
+                    "Rock type": {
                         "render": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>"
                     }
                 },
@@ -435,25 +430,25 @@
                     }
                 },
                 "tagRenderings": {
-                    "3": {
-                        "render": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}"
-                    },
-                    "4": {
-                        "render": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}"
-                    },
-                    "5": {
+                    "Containe {_contained_climbing_routes_count} routes": {
                         "render": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>"
                     },
-                    "6": {
+                    "Contained routes hist": {
+                        "render": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}"
+                    },
+                    "Contained routes length hist": {
+                        "render": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}"
+                    },
+                    "Rock type (crag/rock/cliff only)": {
                         "mappings": {
                             "0": {
-                                "then": "Ce site n’a pas de nom"
+                                "then": "Calcaire"
                             }
                         },
-                        "question": "Quel est le nom de ce site ?",
-                        "render": "<strong>{name}</strong>"
+                        "question": "Quel est le type de roche ?",
+                        "render": "La roche est du {rock}"
                     },
-                    "7": {
+                    "Type": {
                         "mappings": {
                             "0": {
                                 "then": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde"
@@ -463,14 +458,14 @@
                             }
                         }
                     },
-                    "8": {
+                    "name": {
                         "mappings": {
                             "0": {
-                                "then": "Calcaire"
+                                "then": "Ce site n’a pas de nom"
                             }
                         },
-                        "question": "Quel est le type de roche ?",
-                        "render": "La roche est du {rock}"
+                        "question": "Quel est le nom de ce site ?",
+                        "render": "<strong>{name}</strong>"
                     }
                 },
                 "title": {
@@ -495,10 +490,10 @@
                 "description": "Opportunité d’escalade ?",
                 "name": "Opportunités d’escalade ?",
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "2": {
+                    "climbing-possible": {
                         "mappings": {
                             "0": {
                                 "then": "Escalader n’est pas possible"
@@ -636,40 +631,15 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "facadegardens-description": {
+                        "question": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)",
+                        "render": "Plus de détails : {description}"
+                    },
+                    "facadegardens-direction": {
                         "question": "Quelle est l’orientation du jardin ?",
                         "render": "Orientation : {direction} (0 pour le Nord et 90 pour l’Ouest)"
                     },
-                    "2": {
-                        "mappings": {
-                            "0": {
-                                "then": "Le jardin est en plein soleil"
-                            },
-                            "1": {
-                                "then": "Le jardin est partiellement ensoleillé"
-                            },
-                            "2": {
-                                "then": "Le jardin est à l’ombre"
-                            }
-                        },
-                        "question": "Quel est l’ensoleillement du jardin ?"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "Il y a des réserves"
-                            },
-                            "1": {
-                                "then": "Il n’y a pas de réserves"
-                            }
-                        },
-                        "question": "Des réserves d’eau ont-elles été installées pour le jardin ?"
-                    },
-                    "4": {
-                        "question": "Quand le jardin a-t’il été construit ? (L’année suffit)",
-                        "render": "Date de construction du jardin : {start_date}"
-                    },
-                    "5": {
+                    "facadegardens-edible": {
                         "mappings": {
                             "0": {
                                 "then": "Il y a des plantes comestibles"
@@ -680,7 +650,7 @@
                         },
                         "question": "Y-a-t’il des plantes comestibles ?"
                     },
-                    "6": {
+                    "facadegardens-plants": {
                         "mappings": {
                             "0": {
                                 "then": "Il y a des plantes grimpantes"
@@ -697,9 +667,34 @@
                         },
                         "question": "Quel type de plantes pousse ici ?"
                     },
-                    "7": {
-                        "question": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)",
-                        "render": "Plus de détails : {description}"
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "Il y a des réserves"
+                            },
+                            "1": {
+                                "then": "Il n’y a pas de réserves"
+                            }
+                        },
+                        "question": "Des réserves d’eau ont-elles été installées pour le jardin ?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "Quand le jardin a-t’il été construit ? (L’année suffit)",
+                        "render": "Date de construction du jardin : {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "Le jardin est en plein soleil"
+                            },
+                            "1": {
+                                "then": "Le jardin est partiellement ensoleillé"
+                            },
+                            "2": {
+                                "then": "Le jardin est à l’ombre"
+                            }
+                        },
+                        "question": "Quel est l’ensoleillement du jardin ?"
                     }
                 },
                 "title": {
@@ -737,7 +732,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "hydrant-color": {
                         "mappings": {
                             "0": {
                                 "then": "La borne est de couleur inconnue."
@@ -752,7 +747,22 @@
                         "question": "Quelle est la couleur de la borne ?",
                         "render": "La borne est {colour}"
                     },
-                    "1": {
+                    "hydrant-state": {
+                        "mappings": {
+                            "0": {
+                                "then": "La borne est en état, ou partiellement en état, de fonctionner."
+                            },
+                            "1": {
+                                "then": "La borne est hors-service."
+                            },
+                            "2": {
+                                "then": "La borne a été retirée."
+                            }
+                        },
+                        "question": "Mettre à jour l’état de la borne.",
+                        "render": "État"
+                    },
+                    "hydrant-type": {
                         "mappings": {
                             "0": {
                                 "then": "La borne est de type inconnu."
@@ -772,21 +782,6 @@
                         },
                         "question": "De quel type de borne s’agit-il ?",
                         "render": " Type de borne : {fire_hydrant:type}"
-                    },
-                    "2": {
-                        "mappings": {
-                            "0": {
-                                "then": "La borne est en état, ou partiellement en état, de fonctionner."
-                            },
-                            "1": {
-                                "then": "La borne est hors-service."
-                            },
-                            "2": {
-                                "then": "La borne a été retirée."
-                            }
-                        },
-                        "question": "Mettre à jour l’état de la borne.",
-                        "render": "État"
                     }
                 },
                 "title": {
@@ -803,7 +798,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "extinguisher-location": {
                         "mappings": {
                             "0": {
                                 "then": "Intérieur."
@@ -830,19 +825,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "Quel est le nom de la station ?",
-                        "render": "Cette station s’appelle {name}."
-                    },
-                    "1": {
-                        "question": " Quel est le nom de la rue dans lequel elle se situe ?",
-                        "render": "La station fait partie de la {addr:street}."
-                    },
-                    "2": {
-                        "question": "Dans quelle localité la station est-elle située ?",
-                        "render": "La station fait partie de {addr:place}."
-                    },
-                    "3": {
+                    "station-agency": {
                         "mappings": {
                             "0": {
                                 "then": "Brigade de Protection du Feu"
@@ -851,7 +834,11 @@
                         "question": "Quel est l’exploitant de la station ?",
                         "render": "Cette station est opérée par {operator}."
                     },
-                    "4": {
+                    "station-name": {
+                        "question": "Quel est le nom de la station ?",
+                        "render": "Cette station s’appelle {name}."
+                    },
+                    "station-operator": {
                         "mappings": {
                             "0": {
                                 "then": "La station est opérée par le gouvernement."
@@ -868,6 +855,14 @@
                         },
                         "question": "Quel est le type d’exploitant ?",
                         "render": "L’exploitant est de type {operator:type}."
+                    },
+                    "station-place": {
+                        "question": "Dans quelle localité la station est-elle située ?",
+                        "render": "La station fait partie de {addr:place}."
+                    },
+                    "station-street": {
+                        "question": " Quel est le nom de la rue dans lequel elle se situe ?",
+                        "render": "La station fait partie de la {addr:street}."
                     }
                 },
                 "title": {
@@ -884,23 +879,15 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "Quel est le nom de cette station ?",
-                        "render": "Cette station s’appelle {name}."
-                    },
-                    "1": {
-                        "question": " Quel est le nom de la rue où la station se situe ?",
-                        "render": "La station fait partie de {addr:street}."
-                    },
-                    "2": {
-                        "question": "Dans quelle localité la station est-elle située ?",
-                        "render": "La station fait partie de {addr:place}."
-                    },
-                    "3": {
+                    "ambulance-agency": {
                         "question": "Quel est l’exploitant de la station ?",
                         "render": "Cette station est opérée par {operator}."
                     },
-                    "4": {
+                    "ambulance-name": {
+                        "question": "Quel est le nom de cette station ?",
+                        "render": "Cette station s’appelle {name}."
+                    },
+                    "ambulance-operator-type": {
                         "mappings": {
                             "0": {
                                 "then": "La station est opérée par le gouvernement."
@@ -917,6 +904,14 @@
                         },
                         "question": "Quel est le type d’exploitant ?",
                         "render": "L’exploitant est de type {operator:type}."
+                    },
+                    "ambulance-place": {
+                        "question": "Dans quelle localité la station est-elle située ?",
+                        "render": "La station fait partie de {addr:place}."
+                    },
+                    "ambulance-street": {
+                        "question": " Quel est le nom de la rue où la station se situe ?",
+                        "render": "La station fait partie de {addr:street}."
                     }
                 },
                 "title": {
@@ -943,23 +938,23 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "Quel est la puissance générée par cette éolienne ?",
-                        "render": "La puissance générée par cette éolienne est de {generator:output:electricity}."
-                    },
-                    "1": {
-                        "question": "Qui est l’exploitant de cette éolienne ?",
-                        "render": "Cette éolienne est opérée par {operator}."
-                    },
-                    "2": {
-                        "question": "Quelle est la hauteur totale de l’éolienne en mètres, pales incluses ?",
-                        "render": "La hauteur totale, incluant les pales, est de {height} mètres."
-                    },
-                    "3": {
+                    "turbine-diameter": {
                         "question": "Quel est le diamètre du rotor en mètres ?",
                         "render": "Le diamètre du rotor est de {rotor:diameter} mètres."
                     },
-                    "4": {
+                    "turbine-height": {
+                        "question": "Quelle est la hauteur totale de l’éolienne en mètres, pales incluses ?",
+                        "render": "La hauteur totale, incluant les pales, est de {height} mètres."
+                    },
+                    "turbine-operator": {
+                        "question": "Qui est l’exploitant de cette éolienne ?",
+                        "render": "Cette éolienne est opérée par {operator}."
+                    },
+                    "turbine-output": {
+                        "question": "Quel est la puissance générée par cette éolienne ?",
+                        "render": "La puissance générée par cette éolienne est de {generator:output:electricity}."
+                    },
+                    "turbine-start-date": {
                         "question": "Depuis quand l’éolienne est-elle en fonctionnement ?",
                         "render": "L’éolienne est active depuis {start_date}."
                     }
@@ -1023,10 +1018,22 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "shops-email": {
+                        "question": "Quelle est l'adresse électronique de ce magasin ?",
+                        "render": "<a href='mailto:{email}'>{email}</a>"
+                    },
+                    "shops-name": {
                         "question": "Qu'est-ce que le nom de ce magasin?"
                     },
-                    "2": {
+                    "shops-opening_hours": {
+                        "question": "Quels sont les horaires d'ouverture de ce magasin ?",
+                        "render": "{opening_hours_table(opening_hours)}"
+                    },
+                    "shops-phone": {
+                        "question": "Quel est le numéro de téléphone ?",
+                        "render": "<a href='tel:{phone}'>{phone}</a>"
+                    },
+                    "shops-shop": {
                         "mappings": {
                             "0": {
                                 "then": "Épicerie/superette"
@@ -1053,21 +1060,9 @@
                         "question": "Que vends ce magasin ?",
                         "render": "Ce magasin vends {shop}"
                     },
-                    "3": {
-                        "question": "Quel est le numéro de téléphone ?",
-                        "render": "<a href='tel:{phone}'>{phone}</a>"
-                    },
-                    "4": {
+                    "shops-website": {
                         "question": "Quel est le site internet de ce magasin ?",
                         "render": "<a href='{website}'>{website}</a>"
-                    },
-                    "5": {
-                        "question": "Quelle est l'adresse électronique de ce magasin ?",
-                        "render": "<a href='mailto:{email}'>{email}</a>"
-                    },
-                    "6": {
-                        "question": "Quels sont les horaires d'ouverture de ce magasin ?",
-                        "render": "{opening_hours_table(opening_hours)}"
                     }
                 },
                 "title": {

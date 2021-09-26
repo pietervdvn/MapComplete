@@ -24,6 +24,7 @@
     },
     "tagRenderings": [
         {
+            "id": "waste-basket-waste-types",
             "question": {
                 "en": "What kind of waste basket is this?",
                 "nl": "Wat voor soort vuilnisbak is dit?"

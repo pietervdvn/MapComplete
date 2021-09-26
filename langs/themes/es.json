@@ -15,7 +15,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artwork_type": {
                         "question": "Cuál es el tipo de esta obra de arte?",
                         "render": "Esta es un {artwork_type}"
                     }

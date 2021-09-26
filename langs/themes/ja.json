@@ -15,7 +15,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "どのアーティストが作ったんですか?",
+                        "render": "作成者:{artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "建物"
@@ -57,15 +61,11 @@
                         "question": "この作品の種類は何ですか?",
                         "render": "これは{artwork_type}です"
                     },
-                    "2": {
-                        "question": "どのアーティストが作ったんですか?",
-                        "render": "作成者:{artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "この作品についての詳しい情報はどのウェブサイトにありますか?",
                         "render": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "<b>このアートワーク</b>に関するWikidataのエントリーはどれですか?",
                         "render": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する"
                     }
@@ -91,11 +91,6 @@
         "description": "自転車ライブラリは、少額の年間料金で自転車を借りられる場所です。注目すべきユースケースとしては、子供向けの自転車ライブラリで、子どもの成長にあわせて大きな自転車へ借り替えられます",
         "title": "自転車ライブラリ"
     },
-    "bike_monitoring_stations": {
-        "description": "このテーマでは、ライブデータのある自転車監視ステーションを示します",
-        "shortDescription": "Brussels Mobilityのライブデータを使用した自転車モニタリングステーション",
-        "title": "自転車監視ステーション"
-    },
     "bookcases": {
         "description": "公共の本棚とは、本が保管されている小さな街角のキャビネット、箱、古い電話のトランク、その他の物のことです。誰でも本を置いたり持ったりすることができます。このマップは、すべての公共の本棚を収集することを目的としています。近くで新しい本棚を見つけることができ、無料のOpenStreetMapアカウントを使えば、お気に入りの本棚を簡単に追加できます。",
         "title": "オープン本棚マップ"
@@ -113,11 +108,19 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "question": "ここは何というところですか?",
-                        "render": "この場所は {name} と呼ばれています"
+                    "caravansites-capacity": {
+                        "question": "ここには何人のキャンパーが泊まれますか?(許可された車両の数や駐車スペースが明らかでない場合は省略)",
+                        "render": "{capacity} 人が同時に使用できます"
                     },
-                    "2": {
+                    "caravansites-charge": {
+                        "question": "ここはいくらかかりますか？",
+                        "render": "この場所は{charge} が必要"
+                    },
+                    "caravansites-description": {
+                        "question": "この場所の一般的な説明を追加しますか?(前に問い合わせた情報や上記の情報を繰り返し入力しないでください。客観的な意見はレビューに反映されます)",
+                        "render": "この場所の詳細:{description}"
+                    },
+                    "caravansites-fee": {
                         "mappings": {
                             "0": {
                                 "then": "使用料を支払う必要がある"
@@ -128,26 +131,7 @@
                         },
                         "question": "ここは有料ですか?"
                     },
-                    "3": {
-                        "question": "ここはいくらかかりますか？",
-                        "render": "この場所は{charge} が必要"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "この場所には衛生的なゴミ捨て場がある"
-                            },
-                            "1": {
-                                "then": "この場所には衛生的なゴミ捨て場がない"
-                            }
-                        },
-                        "question": "この場所に衛生的なゴミ捨て場はありますか?"
-                    },
-                    "5": {
-                        "question": "ここには何人のキャンパーが泊まれますか?(許可された車両の数や駐車スペースが明らかでない場合は省略)",
-                        "render": "{capacity} 人が同時に使用できます"
-                    },
-                    "6": {
+                    "caravansites-internet": {
                         "mappings": {
                             "0": {
                                 "then": "インターネットアクセスがある"
@@ -161,7 +145,7 @@
                         },
                         "question": "この場所はインターネットにアクセスできますか?"
                     },
-                    "7": {
+                    "caravansites-internet-fee": {
                         "mappings": {
                             "0": {
                                 "then": "インターネット接続には別途料金が必要です"
@@ -172,22 +156,7 @@
                         },
                         "question": "インターネット接続にお金はかかりますか?"
                     },
-                    "8": {
-                        "mappings": {
-                            "0": {
-                                "then": "ここにはトイレがある"
-                            },
-                            "1": {
-                                "then": "ここにはトイレがない"
-                            }
-                        },
-                        "question": "ここにトイレはありますか?"
-                    },
-                    "9": {
-                        "question": "ここにはウェブサイトがありますか?",
-                        "render": "公式Webサイト: <a href='{website}'>{website}</a>"
-                    },
-                    "10": {
+                    "caravansites-long-term": {
                         "mappings": {
                             "0": {
                                 "then": "はい、長期レンタルのスポットもあり、日常的に滞在することもできます"
@@ -201,9 +170,35 @@
                         },
                         "question": "ここには長期レンタルのスポットがありますか?"
                     },
-                    "11": {
-                        "question": "この場所の一般的な説明を追加しますか?(前に問い合わせた情報や上記の情報を繰り返し入力しないでください。客観的な意見はレビューに反映されます)",
-                        "render": "この場所の詳細:{description}"
+                    "caravansites-name": {
+                        "question": "ここは何というところですか?",
+                        "render": "この場所は {name} と呼ばれています"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "この場所には衛生的なゴミ捨て場がある"
+                            },
+                            "1": {
+                                "then": "この場所には衛生的なゴミ捨て場がない"
+                            }
+                        },
+                        "question": "この場所に衛生的なゴミ捨て場はありますか?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "ここにはトイレがある"
+                            },
+                            "1": {
+                                "then": "ここにはトイレがない"
+                            }
+                        },
+                        "question": "ここにトイレはありますか?"
+                    },
+                    "caravansites-website": {
+                        "question": "ここにはウェブサイトがありますか?",
+                        "render": "公式Webサイト: <a href='{website}'>{website}</a>"
                     }
                 },
                 "title": {
@@ -225,55 +220,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "mappings": {
-                            "0": {
-                                "then": "使用料を支払う必要がある"
-                            },
-                            "1": {
-                                "then": "無料で使用可能"
-                            }
-                        },
-                        "question": "ここは有料ですか?"
-                    },
-                    "2": {
-                        "question": "ここはいくらかかりますか？",
-                        "render": "この場所は{charge} が必要"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "この場所には給水所がある"
-                            },
-                            "1": {
-                                "then": "この場所には給水所がない"
-                            }
-                        },
-                        "question": "この場所には給水所がありますか?"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "ここで汚水(雑排水)を捨てることができます"
-                            },
-                            "1": {
-                                "then": "ここでは汚水(雑排水)を捨てることはできない"
-                            }
-                        },
-                        "question": "汚水(雑排水)はこちらで処分できますか?"
-                    },
-                    "5": {
-                        "mappings": {
-                            "0": {
-                                "then": "携帯トイレのゴミはここで処分できます"
-                            },
-                            "1": {
-                                "then": "ここでは携帯トイレの廃棄物を処分することはできません"
-                            }
-                        },
-                        "question": "携帯トイレのゴミはこちらで処分できますか?"
-                    },
-                    "6": {
+                    "dumpstations-access": {
                         "mappings": {
                             "0": {
                                 "then": "これを使用するには、ネットワークキー/コードが必要です"
@@ -290,9 +237,57 @@
                         },
                         "question": "このゴミ捨て場は誰が使えるんですか?"
                     },
-                    "7": {
+                    "dumpstations-charge": {
+                        "question": "ここはいくらかかりますか？",
+                        "render": "この場所は{charge} が必要"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "携帯トイレのゴミはここで処分できます"
+                            },
+                            "1": {
+                                "then": "ここでは携帯トイレの廃棄物を処分することはできません"
+                            }
+                        },
+                        "question": "携帯トイレのゴミはこちらで処分できますか?"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "使用料を支払う必要がある"
+                            },
+                            "1": {
+                                "then": "無料で使用可能"
+                            }
+                        },
+                        "question": "ここは有料ですか?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "ここで汚水(雑排水)を捨てることができます"
+                            },
+                            "1": {
+                                "then": "ここでは汚水(雑排水)を捨てることはできない"
+                            }
+                        },
+                        "question": "汚水(雑排水)はこちらで処分できますか?"
+                    },
+                    "dumpstations-network": {
                         "question": "ここは何のネットワークの一部ですか?(なければスキップ)",
                         "render": "このステーションはネットワーク{network}の一部です"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "この場所には給水所がある"
+                            },
+                            "1": {
+                                "then": "この場所には給水所がない"
+                            }
+                        },
+                        "question": "この場所には給水所がありますか?"
                     }
                 },
                 "title": {
@@ -348,7 +343,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "climbing_club-name": {
                         "question": "この登山クラブやNGOの名前は何ですか?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -366,7 +361,7 @@
                 "description": "クライミングジム",
                 "name": "クライミングジム",
                 "tagRenderings": {
-                    "3": {
+                    "name": {
                         "question": "このクライミングジムは何という名前ですか?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -383,7 +378,13 @@
             "2": {
                 "name": "登坂ルート",
                 "tagRenderings": {
-                    "3": {
+                    "Difficulty": {
+                        "render": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です"
+                    },
+                    "Length": {
+                        "render": "このルート長は、 {canonical(climbing:length)} メーターです"
+                    },
+                    "Name": {
                         "mappings": {
                             "0": {
                                 "then": "この登坂ルートには名前がありません"
@@ -391,12 +392,6 @@
                         },
                         "question": "この登坂ルートの名前は何ですか?",
                         "render": "<strong>{name}</strong>"
-                    },
-                    "4": {
-                        "render": "このルート長は、 {canonical(climbing:length)} メーターです"
-                    },
-                    "5": {
-                        "render": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です"
                     }
                 },
                 "title": {
@@ -418,7 +413,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "6": {
+                    "name": {
                         "mappings": {
                             "0": {
                                 "then": "この登坂教室には名前がついていない"
@@ -436,10 +431,10 @@
                 "description": "登坂教室？",
                 "name": "登坂教室？",
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "2": {
+                    "climbing-possible": {
                         "mappings": {
                             "0": {
                                 "then": "ここでは登ることができない"
@@ -625,40 +620,15 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "facadegardens-description": {
+                        "question": "庭園に関する追加の説明情報(必要な場合でまだ上記に記載されていない場合)",
+                        "render": "詳細情報: {description}"
+                    },
+                    "facadegardens-direction": {
                         "question": "庭の向きはどうなっていますか?",
                         "render": "方向: {direction} (0=N で 90=O)"
                     },
-                    "2": {
-                        "mappings": {
-                            "0": {
-                                "then": "庭は日があたっている"
-                            },
-                            "1": {
-                                "then": "庭は部分的に日陰である"
-                            },
-                            "2": {
-                                "then": "庭は日陰である"
-                            }
-                        },
-                        "question": "庭は日陰ですか、日当たりがいいですか?"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "雨樽がある"
-                            },
-                            "1": {
-                                "then": "雨樽はありません"
-                            }
-                        },
-                        "question": "庭に水桶が設置されているのですか?"
-                    },
-                    "4": {
-                        "question": "その庭園はいつ造られたのですか?(建設年で十分です)",
-                        "render": "庭園の建設日: {start_date}"
-                    },
-                    "5": {
+                    "facadegardens-edible": {
                         "mappings": {
                             "0": {
                                 "then": "食用の植物がある"
@@ -669,7 +639,7 @@
                         },
                         "question": "食用の植物はありますか?"
                     },
-                    "6": {
+                    "facadegardens-plants": {
                         "mappings": {
                             "0": {
                                 "then": "つるがある"
@@ -686,9 +656,34 @@
                         },
                         "question": "ここではどんな植物が育つんですか?"
                     },
-                    "7": {
-                        "question": "庭園に関する追加の説明情報(必要な場合でまだ上記に記載されていない場合)",
-                        "render": "詳細情報: {description}"
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "雨樽がある"
+                            },
+                            "1": {
+                                "then": "雨樽はありません"
+                            }
+                        },
+                        "question": "庭に水桶が設置されているのですか?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "その庭園はいつ造られたのですか?(建設年で十分です)",
+                        "render": "庭園の建設日: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "庭は日があたっている"
+                            },
+                            "1": {
+                                "then": "庭は部分的に日陰である"
+                            },
+                            "2": {
+                                "then": "庭は日陰である"
+                            }
+                        },
+                        "question": "庭は日陰ですか、日当たりがいいですか?"
                     }
                 },
                 "title": {
@@ -716,7 +711,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "hydrant-color": {
                         "mappings": {
                             "0": {
                                 "then": "消火栓の色は不明です。"
@@ -731,7 +726,22 @@
                         "question": "消火栓の色は何色ですか?",
                         "render": "消火栓の色は{color}です"
                     },
-                    "1": {
+                    "hydrant-state": {
+                        "mappings": {
+                            "0": {
+                                "then": "消火栓は(完全にまたは部分的に)機能しています。"
+                            },
+                            "1": {
+                                "then": "消火栓は使用できません。"
+                            },
+                            "2": {
+                                "then": "消火栓が撤去されました。"
+                            }
+                        },
+                        "question": "消火栓のライフサイクルステータスを更新します。",
+                        "render": "ライフサイクルステータス"
+                    },
+                    "hydrant-type": {
                         "mappings": {
                             "0": {
                                 "then": "消火栓の種類は不明です。"
@@ -751,21 +761,6 @@
                         },
                         "question": "どんな消火栓なんですか?",
                         "render": " 消火栓のタイプ:{fire_hydrant:type}"
-                    },
-                    "2": {
-                        "mappings": {
-                            "0": {
-                                "then": "消火栓は(完全にまたは部分的に)機能しています。"
-                            },
-                            "1": {
-                                "then": "消火栓は使用できません。"
-                            },
-                            "2": {
-                                "then": "消火栓が撤去されました。"
-                            }
-                        },
-                        "question": "消火栓のライフサイクルステータスを更新します。",
-                        "render": "ライフサイクルステータス"
                     }
                 },
                 "title": {
@@ -782,7 +777,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "extinguisher-location": {
                         "mappings": {
                             "0": {
                                 "then": "屋内にある。"
@@ -809,19 +804,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "この消防署の名前は何ですか?",
-                        "render": "このステーションの名前は{name}です。"
-                    },
-                    "1": {
-                        "question": " 救急ステーションの所在地はどこですか?",
-                        "render": "{addr:street} 沿いにあります。"
-                    },
-                    "2": {
-                        "question": "このステーションの住所は?(例: 地区、村、または町の名称)",
-                        "render": "このステーションは{addr:place}にあります。"
-                    },
-                    "3": {
+                    "station-agency": {
                         "mappings": {
                             "0": {
                                 "then": "消防局(消防庁)"
@@ -830,7 +813,11 @@
                         "question": "このステーションを運営しているのはどこですか?",
                         "render": "このステーションは{operator}によって運営されています。"
                     },
-                    "4": {
+                    "station-name": {
+                        "question": "この消防署の名前は何ですか?",
+                        "render": "このステーションの名前は{name}です。"
+                    },
+                    "station-operator": {
                         "mappings": {
                             "0": {
                                 "then": "ステーションは自治体が運営する。"
@@ -847,6 +834,14 @@
                         },
                         "question": "ステーションの運営の分類は?",
                         "render": "運営者は、{operator:type} です。"
+                    },
+                    "station-place": {
+                        "question": "このステーションの住所は?(例: 地区、村、または町の名称)",
+                        "render": "このステーションは{addr:place}にあります。"
+                    },
+                    "station-street": {
+                        "question": " 救急ステーションの所在地はどこですか?",
+                        "render": "{addr:street} 沿いにあります。"
                     }
                 },
                 "title": {
@@ -863,23 +858,15 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "この救急ステーションの名前は何ですか?",
-                        "render": "このステーションの名前は{name}です。"
-                    },
-                    "1": {
-                        "question": " 救急ステーションの所在地はどこですか?",
-                        "render": "{addr:street} 沿いにあります。"
-                    },
-                    "2": {
-                        "question": "このステーションの住所は?(例: 地区、村、または町の名称)",
-                        "render": "このステーションは{addr:place}にあります。"
-                    },
-                    "3": {
+                    "ambulance-agency": {
                         "question": "このステーションを運営しているのはどこですか?",
                         "render": "このステーションは{operator}によって運営されています。"
                     },
-                    "4": {
+                    "ambulance-name": {
+                        "question": "この救急ステーションの名前は何ですか?",
+                        "render": "このステーションの名前は{name}です。"
+                    },
+                    "ambulance-operator-type": {
                         "mappings": {
                             "0": {
                                 "then": "ステーションは自治体が運営する。"
@@ -896,6 +883,14 @@
                         },
                         "question": "ステーションの運営の分類は?",
                         "render": "運営者は、{operator:type} です。"
+                    },
+                    "ambulance-place": {
+                        "question": "このステーションの住所は?(例: 地区、村、または町の名称)",
+                        "render": "このステーションは{addr:place}にあります。"
+                    },
+                    "ambulance-street": {
+                        "question": " 救急ステーションの所在地はどこですか?",
+                        "render": "{addr:street} 沿いにあります。"
                     }
                 },
                 "title": {
@@ -933,10 +928,22 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "shops-email": {
+                        "question": "このお店のメールアドレスは何ですか?",
+                        "render": "<a href='mailto:{email}'>{email}</a>"
+                    },
+                    "shops-name": {
                         "question": "このお店の名前は何ですか?"
                     },
-                    "2": {
+                    "shops-opening_hours": {
+                        "question": "この店の営業時間は何時から何時までですか?",
+                        "render": "{opening_hours_table(opening_hours)}"
+                    },
+                    "shops-phone": {
+                        "question": "電話番号は何番ですか?",
+                        "render": "<a href='tel:{phone}'>{phone}</a>"
+                    },
+                    "shops-shop": {
                         "mappings": {
                             "0": {
                                 "then": "コンビニエンスストア"
@@ -963,21 +970,9 @@
                         "question": "このお店では何を売っていますか?",
                         "render": "こちらのお店では{shop}を販売しております"
                     },
-                    "3": {
-                        "question": "電話番号は何番ですか?",
-                        "render": "<a href='tel:{phone}'>{phone}</a>"
-                    },
-                    "4": {
+                    "shops-website": {
                         "question": "このお店のホームページは何ですか?",
                         "render": "<a href='{website}'>{website}</a>"
-                    },
-                    "5": {
-                        "question": "このお店のメールアドレスは何ですか?",
-                        "render": "<a href='mailto:{email}'>{email}</a>"
-                    },
-                    "6": {
-                        "question": "この店の営業時間は何時から何時までですか?",
-                        "render": "{opening_hours_table(opening_hours)}"
                     }
                 },
                 "title": {

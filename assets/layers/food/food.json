@@ -143,7 +143,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "Name",
             "question": {
                 "nl": "Wat is de naam van deze eetgelegenheid?",
                 "en": "What is the name of this restaurant?"
@@ -154,10 +153,10 @@
             },
             "freeform": {
                 "key": "name"
-            }
+            },
+            "id": "Name"
         },
         {
-            "#": "Fastfood vs restaurant",
             "question": {
                 "en": "What type of business is this?",
                 "nl": "Wat voor soort zaak is dit?"
@@ -175,7 +174,8 @@
                         "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
                     }
                 }
-            ]
+            ],
+            "id": "Fastfood vs restaurant"
         },
         "opening_hours",
         "website",
@@ -184,7 +184,6 @@
         "payment-options",
         "wheelchair-access",
         {
-            "#": "Cuisine",
             "question": {
                 "nl": "Welk soort gerechten worden hier geserveerd?",
                 "en": "Which food is served here?"
@@ -293,10 +292,10 @@
                         "nl": "Dit is een Thaïs restaurant"
                     }
                 }
-            ]
+            ],
+            "id": "Cuisine"
         },
         {
-            "#": "Takeaway",
             "question": {
                 "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
                 "en": "Does this place offer takea-way?"
@@ -323,10 +322,10 @@
                         "nl": "Hier is geen afhaalmogelijkheid"
                     }
                 }
-            ]
+            ],
+            "id": "Takeaway"
         },
         {
-            "#": "Vegetarian (no friture)",
             "question": {
                 "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
                 "en": "Does this restaurant have a vegetarian option?"
@@ -357,10 +356,10 @@
                     }
                 }
             ],
-            "condition": "cuisine!=friture"
+            "condition": "cuisine!=friture",
+            "id": "Vegetarian (no friture)"
         },
         {
-            "#": "Vegan (no friture)",
             "question": {
                 "nl": "Heeft deze eetgelegenheid een veganistische optie?"
             },
@@ -390,10 +389,10 @@
                     }
                 }
             ],
-            "condition": "cuisine!=friture"
+            "condition": "cuisine!=friture",
+            "id": "Vegan (no friture)"
         },
         {
-            "#": "halal (no friture)",
             "question": {
                 "en": "Does this restaurant offer a halal menu?",
                 "nl": "Heeft dit restaurant halal opties?"
@@ -428,9 +427,11 @@
                     }
                 }
             ],
-            "condition": "cuisine!=friture"
+            "condition": "cuisine!=friture",
+            "id": "halal (no friture)"
         },
         {
+            "id": "friture-vegetarian",
             "question": {
                 "nl": "Heeft deze frituur vegetarische snacks?",
                 "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
@@ -461,6 +462,7 @@
             "condition": "cuisine=friture"
         },
         {
+            "id": "friture-vegan",
             "question": {
                 "nl": "Heeft deze frituur veganistische snacks?",
                 "fr": "Cette friterie est-elle équipée de snacks végétaliens ?"
@@ -491,6 +493,7 @@
             "condition": "cuisine=friture"
         },
         {
+            "id": "friture-oil",
             "question": {
                 "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
                 "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?"
@@ -514,6 +517,7 @@
             "condition": "cuisine=friture"
         },
         {
+            "id": "friture-take-your-container",
             "question": {
                 "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
                 "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",

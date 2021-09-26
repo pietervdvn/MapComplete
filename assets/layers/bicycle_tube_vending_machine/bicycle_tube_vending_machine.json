@@ -84,7 +84,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "Still in use?",
             "question": {
                 "en": "Is this vending machine still operational?",
                 "nl": "Is deze verkoopsautomaat nog steeds werkende?",
@@ -154,16 +153,19 @@
                         "pt_BR": "Esta máquina de venda automática está fechada"
                     }
                 }
-            ]
+            ],
+            "id": "Still in use?"
         },
         {
             "question": "How much does a bicycle tube cost?",
             "render": "A bicycle tube costs {charge}",
             "freeform": {
                 "key": "charge"
-            }
+            },
+            "id": "bicycle_tube_vending_machine-charge"
         },
         {
+            "id": "vending-machine-payment-methods",
             "question": "How can one pay at this tube vending machine?",
             "mappings": [
                 {
@@ -200,7 +202,8 @@
                     "then": "Schwalbe tubes are sold here"
                 }
             ],
-            "multiAnswer": true
+            "multiAnswer": true,
+            "id": "bicycle_tube_vending_machine-brand"
         },
         {
             "question": "Who maintains this vending machine?",
@@ -217,9 +220,11 @@
             ],
             "freeform": {
                 "key": "operator"
-            }
+            },
+            "id": "bicycle_tube_vending_machine-operator"
         },
         {
+            "id": "bicycle_tube_vending_maching-other-items",
             "question": "Are other bicycle bicycle accessories sold here?",
             "mappings": [
                 {

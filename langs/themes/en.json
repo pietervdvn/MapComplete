@@ -15,7 +15,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "Which artist created this?",
+                        "render": "Created by {artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "Architecture"
@@ -57,15 +61,11 @@
                         "question": "What is the type of this artwork?",
                         "render": "This is a {artwork_type}"
                     },
-                    "2": {
-                        "question": "Which artist created this?",
-                        "render": "Created by {artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "Is there a website with more information about this artwork?",
                         "render": "More information on <a href='{website}' target='_blank'>this website</a>"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "Which Wikidata-entry corresponds with <b>this artwork</b>?",
                         "render": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
@@ -90,11 +90,6 @@
     "bicyclelib": {
         "description": "A bicycle library is a place where bicycles can be lent, often for a small yearly fee. A notable use case are bicycle libraries for kids, which allows them to change for a bigger bike when they've outgrown their current bike",
         "title": "Bicycle libraries"
-    },
-    "bike_monitoring_stations": {
-        "description": "This theme shows bike monitoring stations with live data",
-        "shortDescription": "Bike monitoring stations with live data from Brussels Mobility",
-        "title": "Bike Monitoring stations"
     },
     "binoculars": {
         "description": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
@@ -121,11 +116,19 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "question": "What is this place called?",
-                        "render": "This place is called {name}"
+                    "caravansites-capacity": {
+                        "question": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
+                        "render": "{capacity} campers can use this place at the same time"
                     },
-                    "2": {
+                    "caravansites-charge": {
+                        "question": "How much does this place charge?",
+                        "render": "This place charges {charge}"
+                    },
+                    "caravansites-description": {
+                        "question": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
+                        "render": "More details about this place: {description}"
+                    },
+                    "caravansites-fee": {
                         "mappings": {
                             "0": {
                                 "then": "You need to pay for use"
@@ -136,26 +139,7 @@
                         },
                         "question": "Does this place charge a fee?"
                     },
-                    "3": {
-                        "question": "How much does this place charge?",
-                        "render": "This place charges {charge}"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "This place has a sanitary dump station"
-                            },
-                            "1": {
-                                "then": "This place does not have a sanitary dump station"
-                            }
-                        },
-                        "question": "Does this place have a sanitary dump station?"
-                    },
-                    "5": {
-                        "question": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
-                        "render": "{capacity} campers can use this place at the same time"
-                    },
-                    "6": {
+                    "caravansites-internet": {
                         "mappings": {
                             "0": {
                                 "then": "There is internet access"
@@ -169,7 +153,7 @@
                         },
                         "question": "Does this place provide internet access?"
                     },
-                    "7": {
+                    "caravansites-internet-fee": {
                         "mappings": {
                             "0": {
                                 "then": "You need to pay extra for internet access"
@@ -180,22 +164,7 @@
                         },
                         "question": "Do you have to pay for the internet access?"
                     },
-                    "8": {
-                        "mappings": {
-                            "0": {
-                                "then": "This place has toilets"
-                            },
-                            "1": {
-                                "then": "This place does not have toilets"
-                            }
-                        },
-                        "question": "Does this place have toilets?"
-                    },
-                    "9": {
-                        "question": "Does this place have a website?",
-                        "render": "Official website: <a href='{website}'>{website}</a>"
-                    },
-                    "10": {
+                    "caravansites-long-term": {
                         "mappings": {
                             "0": {
                                 "then": "Yes, there are some spots for long term rental, but you can also stay on a daily basis"
@@ -209,9 +178,35 @@
                         },
                         "question": "Does this place offer spots for long term rental?"
                     },
-                    "11": {
-                        "question": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
-                        "render": "More details about this place: {description}"
+                    "caravansites-name": {
+                        "question": "What is this place called?",
+                        "render": "This place is called {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "This place has a sanitary dump station"
+                            },
+                            "1": {
+                                "then": "This place does not have a sanitary dump station"
+                            }
+                        },
+                        "question": "Does this place have a sanitary dump station?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "This place has toilets"
+                            },
+                            "1": {
+                                "then": "This place does not have toilets"
+                            }
+                        },
+                        "question": "Does this place have toilets?"
+                    },
+                    "caravansites-website": {
+                        "question": "Does this place have a website?",
+                        "render": "Official website: <a href='{website}'>{website}</a>"
                     }
                 },
                 "title": {
@@ -233,55 +228,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "mappings": {
-                            "0": {
-                                "then": "You need to pay for use"
-                            },
-                            "1": {
-                                "then": "Can be used for free"
-                            }
-                        },
-                        "question": "Does this place charge a fee?"
-                    },
-                    "2": {
-                        "question": "How much does this place charge?",
-                        "render": "This place charges {charge}"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "This place has a water point"
-                            },
-                            "1": {
-                                "then": "This place does not have a water point"
-                            }
-                        },
-                        "question": "Does this place have a water point?"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "You can dispose of grey water here"
-                            },
-                            "1": {
-                                "then": "You cannot dispose of gray water here"
-                            }
-                        },
-                        "question": "Can you dispose of grey water here?"
-                    },
-                    "5": {
-                        "mappings": {
-                            "0": {
-                                "then": "You can dispose of chemical toilet waste here"
-                            },
-                            "1": {
-                                "then": "You cannot dispose of chemical toilet waste here"
-                            }
-                        },
-                        "question": "Can you dispose of chemical toilet waste here?"
-                    },
-                    "6": {
+                    "dumpstations-access": {
                         "mappings": {
                             "0": {
                                 "then": "You need a network key/code to use this"
@@ -298,9 +245,57 @@
                         },
                         "question": "Who can use this dump station?"
                     },
-                    "7": {
+                    "dumpstations-charge": {
+                        "question": "How much does this place charge?",
+                        "render": "This place charges {charge}"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "You can dispose of chemical toilet waste here"
+                            },
+                            "1": {
+                                "then": "You cannot dispose of chemical toilet waste here"
+                            }
+                        },
+                        "question": "Can you dispose of chemical toilet waste here?"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "You need to pay for use"
+                            },
+                            "1": {
+                                "then": "Can be used for free"
+                            }
+                        },
+                        "question": "Does this place charge a fee?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "You can dispose of grey water here"
+                            },
+                            "1": {
+                                "then": "You cannot dispose of gray water here"
+                            }
+                        },
+                        "question": "Can you dispose of grey water here?"
+                    },
+                    "dumpstations-network": {
                         "question": "What network is this place a part of? (skip if none)",
                         "render": "This station is part of network {network}"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "This place has a water point"
+                            },
+                            "1": {
+                                "then": "This place does not have a water point"
+                            }
+                        },
+                        "question": "Does this place have a water point?"
                     }
                 },
                 "title": {
@@ -356,7 +351,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "climbing_club-name": {
                         "question": "What is the name of this climbing club or NGO?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -374,7 +369,7 @@
                 "description": "A climbing gym",
                 "name": "Climbing gyms",
                 "tagRenderings": {
-                    "3": {
+                    "name": {
                         "question": "What is the name of this climbing gym?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -396,24 +391,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "This climbing route doesn't have a name"
-                            }
-                        },
-                        "question": "What is the name of this climbing route?",
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "4": {
-                        "question": "How long is this climbing route (in meters)?",
-                        "render": "This route is {canonical(climbing:length)} long"
-                    },
-                    "5": {
-                        "question": "What is the difficulty of this climbing route according to the french/belgian system?",
-                        "render": "The difficulty is {climbing:grade:french} according to the french/belgian system"
-                    },
-                    "6": {
+                    "Bolts": {
                         "mappings": {
                             "0": {
                                 "then": "This route is not bolted"
@@ -425,7 +403,24 @@
                         "question": "How much bolts does this route have before reaching the moulinette?",
                         "render": "This route has {climbing:bolts} bolts"
                     },
-                    "8": {
+                    "Difficulty": {
+                        "question": "What is the difficulty of this climbing route according to the french/belgian system?",
+                        "render": "The difficulty is {climbing:grade:french} according to the french/belgian system"
+                    },
+                    "Length": {
+                        "question": "How long is this climbing route (in meters)?",
+                        "render": "This route is {canonical(climbing:length)} long"
+                    },
+                    "Name": {
+                        "mappings": {
+                            "0": {
+                                "then": "This climbing route doesn't have a name"
+                            }
+                        },
+                        "question": "What is the name of this climbing route?",
+                        "render": "<strong>{name}</strong>"
+                    },
+                    "Rock type": {
                         "render": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
                     }
                 },
@@ -448,25 +443,25 @@
                     }
                 },
                 "tagRenderings": {
-                    "3": {
-                        "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
-                    },
-                    "4": {
-                        "render": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
-                    },
-                    "5": {
+                    "Containe {_contained_climbing_routes_count} routes": {
                         "render": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
                     },
-                    "6": {
+                    "Contained routes hist": {
+                        "render": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
+                    },
+                    "Contained routes length hist": {
+                        "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
+                    },
+                    "Rock type (crag/rock/cliff only)": {
                         "mappings": {
                             "0": {
-                                "then": "This climbing opportunity doesn't have a name"
+                                "then": "Limestone"
                             }
                         },
-                        "question": "What is the name of this climbing opportunity?",
-                        "render": "<strong>{name}</strong>"
+                        "question": "What is the rock type here?",
+                        "render": "The rock type is {rock}"
                     },
-                    "7": {
+                    "Type": {
                         "mappings": {
                             "0": {
                                 "then": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope"
@@ -476,14 +471,14 @@
                             }
                         }
                     },
-                    "8": {
+                    "name": {
                         "mappings": {
                             "0": {
-                                "then": "Limestone"
+                                "then": "This climbing opportunity doesn't have a name"
                             }
                         },
-                        "question": "What is the rock type here?",
-                        "render": "The rock type is {rock}"
+                        "question": "What is the name of this climbing opportunity?",
+                        "render": "<strong>{name}</strong>"
                     }
                 },
                 "title": {
@@ -508,10 +503,10 @@
                 "description": "A climbing opportunity?",
                 "name": "Climbing opportunities?",
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "2": {
+                    "climbing-possible": {
                         "mappings": {
                             "0": {
                                 "then": "Climbing is not possible here"
@@ -761,40 +756,15 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "facadegardens-description": {
+                        "question": "Extra describing info about the garden (if needed and not yet described above)",
+                        "render": "More details: {description}"
+                    },
+                    "facadegardens-direction": {
                         "question": "What is the orientation of the garden?",
                         "render": "Orientation: {direction} (where 0=N and 90=O)"
                     },
-                    "2": {
-                        "mappings": {
-                            "0": {
-                                "then": "The garden is in full sun"
-                            },
-                            "1": {
-                                "then": "The garden is in partial shade"
-                            },
-                            "2": {
-                                "then": "The garden is in the shade"
-                            }
-                        },
-                        "question": "Is the garden shaded or sunny?"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "There is a rain barrel"
-                            },
-                            "1": {
-                                "then": "There is no rain barrel"
-                            }
-                        },
-                        "question": "Is there a water barrel installed for the garden?"
-                    },
-                    "4": {
-                        "question": "When was the garden constructed? (a year is sufficient)",
-                        "render": "Construction date of the garden: {start_date}"
-                    },
-                    "5": {
+                    "facadegardens-edible": {
                         "mappings": {
                             "0": {
                                 "then": "There are edible plants"
@@ -805,7 +775,7 @@
                         },
                         "question": "Are there any edible plants?"
                     },
-                    "6": {
+                    "facadegardens-plants": {
                         "mappings": {
                             "0": {
                                 "then": "There are vines"
@@ -822,9 +792,34 @@
                         },
                         "question": "What kinds of plants grow here?"
                     },
-                    "7": {
-                        "question": "Extra describing info about the garden (if needed and not yet described above)",
-                        "render": "More details: {description}"
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "There is a rain barrel"
+                            },
+                            "1": {
+                                "then": "There is no rain barrel"
+                            }
+                        },
+                        "question": "Is there a water barrel installed for the garden?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "When was the garden constructed? (a year is sufficient)",
+                        "render": "Construction date of the garden: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "The garden is in full sun"
+                            },
+                            "1": {
+                                "then": "The garden is in partial shade"
+                            },
+                            "2": {
+                                "then": "The garden is in the shade"
+                            }
+                        },
+                        "question": "Is the garden shaded or sunny?"
                     }
                 },
                 "title": {
@@ -875,7 +870,35 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "hackerspaces-name": {
+                        "question": "What is the name of this hackerspace?",
+                        "render": "This hackerspace is named <b>{name}</b>"
+                    },
+                    "hackerspaces-opening_hours": {
+                        "mappings": {
+                            "0": {
+                                "then": "Opened 24/7"
+                            }
+                        },
+                        "question": "When is this hackerspace opened?",
+                        "render": "{opening_hours_table()}"
+                    },
+                    "hackerspaces-start_date": {
+                        "question": "When was this hackerspace founded?",
+                        "render": "This hackerspace was founded at {start_date}"
+                    },
+                    "hs-club-mate": {
+                        "mappings": {
+                            "0": {
+                                "then": "This hackerspace serves club mate"
+                            },
+                            "1": {
+                                "then": "This hackerspace does not serve club mate"
+                            }
+                        },
+                        "question": "Does this hackerspace serve Club Mate?"
+                    },
+                    "is_makerspace": {
                         "mappings": {
                             "0": {
                                 "then": "This is a makerspace"
@@ -885,34 +908,6 @@
                             }
                         },
                         "question": "Is this a hackerspace or a makerspace?"
-                    },
-                    "1": {
-                        "question": "What is the name of this hackerspace?",
-                        "render": "This hackerspace is named <b>{name}</b>"
-                    },
-                    "5": {
-                        "mappings": {
-                            "0": {
-                                "then": "Opened 24/7"
-                            }
-                        },
-                        "question": "When is this hackerspace opened?",
-                        "render": "{opening_hours_table()}"
-                    },
-                    "7": {
-                        "mappings": {
-                            "0": {
-                                "then": "This hackerspace serves club mate"
-                            },
-                            "1": {
-                                "then": "This hackerspace is not worthy of the name hackerspace as it does not serve club mate"
-                            }
-                        },
-                        "question": "Does this hackerspace serve Club Mate?"
-                    },
-                    "8": {
-                        "question": "When was this hackerspace founded?",
-                        "render": "This hackerspace was founded at {start_date}"
                     }
                 },
                 "title": {
@@ -941,7 +936,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "hydrant-color": {
                         "mappings": {
                             "0": {
                                 "then": "The hydrant color is unknown."
@@ -956,7 +951,22 @@
                         "question": "What color is the hydrant?",
                         "render": "The hydrant color is {colour}"
                     },
-                    "1": {
+                    "hydrant-state": {
+                        "mappings": {
+                            "0": {
+                                "then": "The hydrant is (fully or partially) working."
+                            },
+                            "1": {
+                                "then": "The hydrant is unavailable."
+                            },
+                            "2": {
+                                "then": "The hydrant has been removed."
+                            }
+                        },
+                        "question": "Update the lifecycle status of the hydrant.",
+                        "render": "Lifecycle status"
+                    },
+                    "hydrant-type": {
                         "mappings": {
                             "0": {
                                 "then": "The hydrant type is unknown."
@@ -976,21 +986,6 @@
                         },
                         "question": "What type of hydrant is it?",
                         "render": " Hydrant type: {fire_hydrant:type}"
-                    },
-                    "2": {
-                        "mappings": {
-                            "0": {
-                                "then": "The hydrant is (fully or partially) working."
-                            },
-                            "1": {
-                                "then": "The hydrant is unavailable."
-                            },
-                            "2": {
-                                "then": "The hydrant has been removed."
-                            }
-                        },
-                        "question": "Update the lifecycle status of the hydrant.",
-                        "render": "Lifecycle status"
                     }
                 },
                 "title": {
@@ -1007,7 +1002,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "extinguisher-location": {
                         "mappings": {
                             "0": {
                                 "then": "Found indoors."
@@ -1034,19 +1029,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "What is the name of this fire station?",
-                        "render": "This station is called {name}."
-                    },
-                    "1": {
-                        "question": " What is the street name where the station located?",
-                        "render": "This station is along a highway called {addr:street}."
-                    },
-                    "2": {
-                        "question": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
-                        "render": "This station is found within {addr:place}."
-                    },
-                    "3": {
+                    "station-agency": {
                         "mappings": {
                             "0": {
                                 "then": "Bureau of Fire Protection"
@@ -1055,7 +1038,11 @@
                         "question": "What agency operates this station?",
                         "render": "This station is operated by {operator}."
                     },
-                    "4": {
+                    "station-name": {
+                        "question": "What is the name of this fire station?",
+                        "render": "This station is called {name}."
+                    },
+                    "station-operator": {
                         "mappings": {
                             "0": {
                                 "then": "The station is operated by the government."
@@ -1072,6 +1059,14 @@
                         },
                         "question": "How is the station operator classified?",
                         "render": "The operator is a(n) {operator:type} entity."
+                    },
+                    "station-place": {
+                        "question": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
+                        "render": "This station is found within {addr:place}."
+                    },
+                    "station-street": {
+                        "question": " What is the street name where the station located?",
+                        "render": "This station is along a highway called {addr:street}."
                     }
                 },
                 "title": {
@@ -1088,23 +1083,15 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "What is the name of this ambulance station?",
-                        "render": "This station is called {name}."
-                    },
-                    "1": {
-                        "question": " What is the street name where the station located?",
-                        "render": "This station is along a highway called {addr:street}."
-                    },
-                    "2": {
-                        "question": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
-                        "render": "This station is found within {addr:place}."
-                    },
-                    "3": {
+                    "ambulance-agency": {
                         "question": "What agency operates this station?",
                         "render": "This station is operated by {operator}."
                     },
-                    "4": {
+                    "ambulance-name": {
+                        "question": "What is the name of this ambulance station?",
+                        "render": "This station is called {name}."
+                    },
+                    "ambulance-operator-type": {
                         "mappings": {
                             "0": {
                                 "then": "The station is operated by the government."
@@ -1121,6 +1108,14 @@
                         },
                         "question": "How is the station operator classified?",
                         "render": "The operator is a(n) {operator:type} entity."
+                    },
+                    "ambulance-place": {
+                        "question": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
+                        "render": "This station is found within {addr:place}."
+                    },
+                    "ambulance-street": {
+                        "question": " What is the street name where the station located?",
+                        "render": "This station is along a highway called {addr:street}."
                     }
                 },
                 "title": {
@@ -1157,23 +1152,23 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
-                        "render": "The power output of this wind turbine is {generator:output:electricity}."
-                    },
-                    "1": {
-                        "question": "Who operates this wind turbine?",
-                        "render": "This wind turbine is operated by {operator}."
-                    },
-                    "2": {
-                        "question": "What is the total height of this wind turbine (including rotor radius), in metres?",
-                        "render": "The total height (including rotor radius) of this wind turbine is {height} metres."
-                    },
-                    "3": {
+                    "turbine-diameter": {
                         "question": "What is the rotor diameter of this wind turbine, in metres?",
                         "render": "The rotor diameter of this wind turbine is {rotor:diameter} metres."
                     },
-                    "4": {
+                    "turbine-height": {
+                        "question": "What is the total height of this wind turbine (including rotor radius), in metres?",
+                        "render": "The total height (including rotor radius) of this wind turbine is {height} metres."
+                    },
+                    "turbine-operator": {
+                        "question": "Who operates this wind turbine?",
+                        "render": "This wind turbine is operated by {operator}."
+                    },
+                    "turbine-output": {
+                        "question": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
+                        "render": "The power output of this wind turbine is {generator:output:electricity}."
+                    },
+                    "turbine-start-date": {
                         "question": "When did this wind turbine go into operation?",
                         "render": "This wind turbine went into operation on/in {start_date}."
                     }
@@ -1242,10 +1237,22 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "shops-email": {
+                        "question": "What is the email address of this shop?",
+                        "render": "<a href='mailto:{email}'>{email}</a>"
+                    },
+                    "shops-name": {
                         "question": "What is the name of this shop?"
                     },
-                    "2": {
+                    "shops-opening_hours": {
+                        "question": "What are the opening hours of this shop?",
+                        "render": "{opening_hours_table(opening_hours)}"
+                    },
+                    "shops-phone": {
+                        "question": "What is the phone number?",
+                        "render": "<a href='tel:{phone}'>{phone}</a>"
+                    },
+                    "shops-shop": {
                         "mappings": {
                             "0": {
                                 "then": "Convenience store"
@@ -1272,21 +1279,9 @@
                         "question": "What does this shop sell?",
                         "render": "This shop sells {shop}"
                     },
-                    "3": {
-                        "question": "What is the phone number?",
-                        "render": "<a href='tel:{phone}'>{phone}</a>"
-                    },
-                    "4": {
+                    "shops-website": {
                         "question": "What is the website of this shop?",
                         "render": "<a href='{website}'>{website}</a>"
-                    },
-                    "5": {
-                        "question": "What is the email address of this shop?",
-                        "render": "<a href='mailto:{email}'>{email}</a>"
-                    },
-                    "6": {
-                        "question": "What are the opening hours of this shop?",
-                        "render": "{opening_hours_table(opening_hours)}"
                     }
                 },
                 "title": {

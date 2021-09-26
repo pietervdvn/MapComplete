@@ -85,7 +85,6 @@
     ],
     "tagRenderings": [
         {
-            "#": "bicycle=yes/no",
             "question": {
                 "en": "Can a bicycle go past this barrier?",
                 "nl": "Kan een fietser langs deze barrière?"
@@ -105,10 +104,10 @@
                         "nl": "Een fietser kan hier niet langs."
                     }
                 }
-            ]
+            ],
+            "id": "bicycle=yes/no"
         },
         {
-            "#": "Bollard type",
             "question": {
                 "en": "What kind of bollard is this?",
                 "nl": "Wat voor soort paal is dit?"
@@ -150,10 +149,10 @@
                         "nl": "Verzonken poller"
                     }
                 }
-            ]
+            ],
+            "id": "Bollard type"
         },
         {
-            "#": "Cycle barrier type",
             "question": {
                 "en": "What kind of cycling barrier is this?",
                 "nl": "Wat voor fietshekjes zijn dit?"
@@ -188,10 +187,10 @@
                         "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
                     }
                 }
-            ]
+            ],
+            "id": "Cycle barrier type"
         },
         {
-            "#": "MaxWidth",
             "render": {
                 "en": "Maximum width: {maxwidth:physical} m",
                 "nl": "Maximumbreedte: {maxwidth:physical} m"
@@ -213,10 +212,10 @@
                     "20",
                     "map"
                 ]
-            }
+            },
+            "id": "MaxWidth"
         },
         {
-            "#": "Space between barrier (cyclebarrier)",
             "render": {
                 "en": "Space between barriers (along the length of the road): {width:separation} m",
                 "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m"
@@ -238,10 +237,10 @@
                     "21",
                     "map"
                 ]
-            }
+            },
+            "id": "Space between barrier (cyclebarrier)"
         },
         {
-            "#": "Width of opening (cyclebarrier)",
             "render": {
                 "en": "Width of opening: {width:opening} m",
                 "nl": "Breedte van de opening: {width:opening} m"
@@ -263,10 +262,10 @@
                     "21",
                     "map"
                 ]
-            }
+            },
+            "id": "Width of opening (cyclebarrier)"
         },
         {
-            "#": "Overlap (cyclebarrier)",
             "render": {
                 "en": "Overlap: {overlap} m"
             },
@@ -287,7 +286,8 @@
                     "21",
                     "map"
                 ]
-            }
+            },
+            "id": "Overlap (cyclebarrier)"
         }
     ]
 }

@@ -187,6 +187,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "bike_shop-is-bicycle_shop",
             "condition": {
                 "and": [
                     "shop~*",
@@ -225,7 +226,8 @@
             },
             "freeform": {
                 "key": "name"
-            }
+            },
+            "id": "bike_shop-name"
         },
         {
             "question": {
@@ -243,7 +245,8 @@
             "freeform": {
                 "key": "website",
                 "type": "url"
-            }
+            },
+            "id": "bike_shop-website"
         },
         {
             "question": {
@@ -260,7 +263,8 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "bike_shop-phone"
         },
         {
             "question": {
@@ -277,7 +281,8 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "bike_shop-email"
         },
         {
             "render": "{opening_hours_table(opening_hours)}",
@@ -285,16 +290,19 @@
             "freeform": {
                 "key": "opening_hours",
                 "type": "opening_hours"
-            }
+            },
+            "id": "bike_shop-opening_hours"
         },
         "description",
         {
             "render": "Enkel voor {access}",
             "freeform": {
                 "key": "access"
-            }
+            },
+            "id": "bike_shop-access"
         },
         {
+            "id": "bike_repair_sells-bikes",
             "question": {
                 "en": "Does this shop sell bikes?",
                 "nl": "Verkoopt deze fietszaak fietsen?",
@@ -335,6 +343,7 @@
             ]
         },
         {
+            "id": "bike_repair_repairs-bikes",
             "question": {
                 "en": "Does this shop repair bikes?",
                 "nl": "Herstelt deze winkel fietsen?",
@@ -401,6 +410,7 @@
             ]
         },
         {
+            "id": "bike_repair_rents-bikes",
             "question": {
                 "en": "Does this shop rent out bikes?",
                 "nl": "Verhuurt deze winkel fietsen?",
@@ -441,6 +451,7 @@
             ]
         },
         {
+            "id": "bike_repair_second-hand-bikes",
             "question": {
                 "en": "Does this shop sell second-hand bikes?",
                 "nl": "Verkoopt deze winkel tweedehands fietsen?",
@@ -490,6 +501,7 @@
             ]
         },
         {
+            "id": "bike_repair_bike-pump-service",
             "question": {
                 "en": "Does this shop offer a bike pump for use by anyone?",
                 "nl": "Biedt deze winkel een fietspomp aan voor iedereen?",
@@ -536,6 +548,7 @@
             ]
         },
         {
+            "id": "bike_repair_tools-service",
             "question": {
                 "en": "Are there tools here to repair your own bike?",
                 "nl": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?",
@@ -582,6 +595,7 @@
             ]
         },
         {
+            "id": "bike_repair_bike-wash",
             "question": {
                 "en": "Are bicycles washed here?",
                 "nl": "Biedt deze winkel een fietsschoonmaak aan?",

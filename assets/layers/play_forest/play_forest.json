@@ -51,9 +51,11 @@
                     "if": "operator=Agenstchap Natuur en Bos",
                     "then": "Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>"
                 }
-            ]
+            ],
+            "id": "play_forest-operator"
         },
         {
+            "id": "play_forest-opening_hours",
             "question": "Wanneer is deze speelzone toegankelijk?",
             "mappings": [
                 {
@@ -72,7 +74,8 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "play_forest-email"
         },
         {
             "question": "Wie kan men bellen indien er problemen zijn met de speelzone?",
@@ -80,10 +83,12 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "play_forest-phone"
         },
         "questions",
         {
+            "id": "play_forest-reviews",
             "render": "{reviews(name, play_forest)}"
         }
     ],

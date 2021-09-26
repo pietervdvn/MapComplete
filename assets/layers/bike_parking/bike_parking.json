@@ -66,7 +66,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "Bicycle parking type",
             "question": {
                 "en": "What is the type of this bicycle parking?",
                 "nl": "Van welk type is deze fietsparking?",
@@ -201,10 +200,10 @@
                         "zh_Hant": "樓層當中標示為單車停車場的區域"
                     }
                 }
-            ]
+            ],
+            "id": "Bicycle parking type"
         },
         {
-            "#": "Underground?",
             "question": {
                 "en": "What is the relative location of this bicycle parking?",
                 "nl": "Wat is de relatieve locatie van deze parking??",
@@ -281,10 +280,10 @@
                         "pt_BR": "Estacionamento no telhado"
                     }
                 }
-            ]
+            ],
+            "id": "Underground?"
         },
         {
-            "#": "Is covered?",
             "question": {
                 "en": "Is this parking covered? Also select \"covered\" for indoor parkings.",
                 "nl": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw.",
@@ -333,10 +332,10 @@
                         "pt_BR": "Este estacionamento não é coberto"
                     }
                 }
-            ]
+            ],
+            "id": "Is covered?"
         },
         {
-            "#": "Capacity",
             "question": {
                 "en": "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
                 "fr": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
@@ -360,10 +359,10 @@
             "freeform": {
                 "key": "capacity",
                 "type": "nat"
-            }
+            },
+            "id": "Capacity"
         },
         {
-            "#": "Access",
             "question": {
                 "en": "Who can use this bicycle parking?",
                 "nl": "Wie mag er deze fietsenstalling gebruiken?",
@@ -427,10 +426,10 @@
                         "pt_BR": "Acesso é limitado aos membros de uma escola, companhia ou organização"
                     }
                 }
-            ]
+            ],
+            "id": "Access"
         },
         {
-            "#": "Cargo bike spaces?",
             "question": {
                 "en": "Does this bicycle parking have spots for cargo bikes?",
                 "nl": "Heeft deze fietsparking plaats voor bakfietsen?",
@@ -480,10 +479,10 @@
                         "pt_BR": "Você não tem permissão para estacionar bicicletas de carga"
                     }
                 }
-            ]
+            ],
+            "id": "Cargo bike spaces?"
         },
         {
-            "#": "Cargo bike capacity?",
             "question": {
                 "en": "How many cargo bicycles fit in this bicycle parking?",
                 "nl": "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
@@ -506,7 +505,8 @@
             "freeform": {
                 "key": "capacity:cargo_bike",
                 "type": "nat"
-            }
+            },
+            "id": "Cargo bike capacity?"
         }
     ]
 }

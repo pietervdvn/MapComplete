@@ -97,9 +97,11 @@
             },
             "freeform": {
                 "key": "name"
-            }
+            },
+            "id": "bike_cafe-name"
         },
         {
+            "id": "bike_cafe-bike-pump",
             "question": {
                 "en": "Does this bike cafe offer a bike pump for use by anyone?",
                 "nl": "Biedt dit fietscafé een fietspomp aan voor iedereen?",
@@ -143,6 +145,7 @@
             ]
         },
         {
+            "id": "bike_cafe-repair-tools",
             "question": {
                 "en": "Are there tools here to repair your own bike?",
                 "nl": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
@@ -189,6 +192,7 @@
             ]
         },
         {
+            "id": "bike_cafe-repair-service",
             "question": {
                 "en": "Does this bike cafe repair bikes?",
                 "nl": "Herstelt dit fietscafé fietsen?",
@@ -250,7 +254,8 @@
             "render": "<a href='{website}' target='_blank'>{website}</a>",
             "freeform": {
                 "key": "website"
-            }
+            },
+            "id": "bike_cafe-website"
         },
         {
             "question": {
@@ -269,7 +274,8 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "bike_cafe-phone"
         },
         {
             "question": {
@@ -288,7 +294,8 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "bike_cafe-email"
         },
         {
             "question": {
@@ -305,7 +312,8 @@
             "freeform": {
                 "key": "opening_hours",
                 "type": "opening_hours"
-            }
+            },
+            "id": "bike_cafe-opening_hours"
         }
     ],
     "icon": {

@@ -76,6 +76,7 @@
       },
       "tagRenderings": [
         {
+          "id": "hydrant-color",
           "question": {
             "en": "What color is the hydrant?",
             "ja": "消火栓の色は何色ですか?",
@@ -138,6 +139,7 @@
           ]
         },
         {
+          "id": "hydrant-type",
           "question": {
             "en": "What type of hydrant is it?",
             "ja": "どんな消火栓なんですか?",
@@ -224,6 +226,7 @@
           ]
         },
         {
+          "id": "hydrant-state",
           "question": {
             "en": "Update the lifecycle status of the hydrant.",
             "ja": "消火栓のライフサイクルステータスを更新します。",
@@ -351,6 +354,7 @@
       },
       "tagRenderings": [
         {
+          "id": "extinguisher-location",
           "render": {
             "en": "Location: {location}",
             "ja": "場所:{location}",
@@ -469,6 +473,7 @@
       },
       "tagRenderings": [
         {
+          "id": "station-name",
           "freeform": {
             "key": "name"
           },
@@ -488,6 +493,7 @@
           }
         },
         {
+          "id": "station-street",
           "freeform": {
             "key": "addr:street"
           },
@@ -506,6 +512,7 @@
           }
         },
         {
+          "id": "station-place",
           "question": {
             "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
             "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
@@ -523,6 +530,7 @@
           }
         },
         {
+          "id": "station-agency",
           "question": {
             "en": "What agency operates this station?",
             "ja": "このステーションを運営しているのはどこですか?",
@@ -553,6 +561,7 @@
           ]
         },
         {
+          "id": "station-operator",
           "question": {
             "en": "How is the station operator classified?",
             "ja": "ステーションの運営の分類は?",
@@ -681,6 +690,7 @@
       },
       "tagRenderings": [
         {
+          "id": "ambulance-name",
           "freeform": {
             "key": "name"
           },
@@ -698,6 +708,7 @@
           }
         },
         {
+          "id": "ambulance-street",
           "freeform": {
             "key": "addr:street"
           },
@@ -715,6 +726,7 @@
           }
         },
         {
+          "id": "ambulance-place",
           "question": {
             "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
             "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
@@ -731,6 +743,7 @@
           }
         },
         {
+          "id": "ambulance-agency",
           "question": {
             "en": "What agency operates this station?",
             "ja": "このステーションを運営しているのはどこですか?",
@@ -747,6 +760,7 @@
           "mappings": []
         },
         {
+          "id": "ambulance-operator-type",
           "question": {
             "en": "How is the station operator classified?",
             "ja": "ステーションの運営の分類は?",

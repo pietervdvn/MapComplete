@@ -19,7 +19,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "Welke kunstenaar creëerde dit kunstwerk?",
+                        "render": "Gecreëerd door {artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "Architectuur"
@@ -61,15 +65,11 @@
                         "question": "Wat voor soort kunstwerk is dit?",
                         "render": "Dit is een {artwork_type}"
                     },
-                    "2": {
-                        "question": "Welke kunstenaar creëerde dit kunstwerk?",
-                        "render": "Gecreëerd door {artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "Is er een website met meer informatie over dit kunstwerk?",
                         "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
                         "render": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
@@ -94,11 +94,6 @@
     "bicyclelib": {
         "description": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",
         "title": "Fietsbibliotheken"
-    },
-    "bike_monitoring_stations": {
-        "description": "Dit thema toont fietstelstations met live data",
-        "shortDescription": "Fietstelstations met live data van Brussel Mobiliteit",
-        "title": "Fietstelstations"
     },
     "binoculars": {
         "description": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd",
@@ -254,11 +249,11 @@
                 "description": "camperplaatsen",
                 "name": "Camperplaatsen",
                 "tagRenderings": {
-                    "1": {
-                        "question": "Wat is de naam van deze plaats?",
-                        "render": "Deze plaats heet {name}"
+                    "caravansites-charge": {
+                        "question": "Hoeveel kost deze plaats?",
+                        "render": "Deze plaats vraagt {charge}"
                     },
-                    "2": {
+                    "caravansites-fee": {
                         "mappings": {
                             "0": {
                                 "then": "Gebruik is betalend"
@@ -269,11 +264,11 @@
                         },
                         "question": "Moet men betalen om deze camperplaats te gebruiken?"
                     },
-                    "3": {
-                        "question": "Hoeveel kost deze plaats?",
-                        "render": "Deze plaats vraagt {charge}"
+                    "caravansites-name": {
+                        "question": "Wat is de naam van deze plaats?",
+                        "render": "Deze plaats heet {name}"
                     },
-                    "9": {
+                    "caravansites-website": {
                         "render": "Officiële website: : <a href='{website}'>{website}</a>"
                     }
                 },
@@ -312,7 +307,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "climbing_club-name": {
                         "question": "Wat is de naam van deze klimclub?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -330,7 +325,7 @@
                 "description": "Een klimzaal",
                 "name": "Klimzalen",
                 "tagRenderings": {
-                    "3": {
+                    "name": {
                         "question": "Wat is de naam van dit Klimzaal?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -352,7 +347,15 @@
                     }
                 },
                 "tagRenderings": {
-                    "3": {
+                    "Difficulty": {
+                        "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
+                        "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+                    },
+                    "Length": {
+                        "question": "Hoe lang is deze klimroute (in meters)?",
+                        "render": "Deze klimroute is {canonical(climbing:length)} lang"
+                    },
+                    "Name": {
                         "mappings": {
                             "0": {
                                 "then": "Deze klimroute heeft geen naam"
@@ -360,14 +363,6 @@
                         },
                         "question": "Hoe heet deze klimroute?",
                         "render": "<strong>{name}</strong>"
-                    },
-                    "4": {
-                        "question": "Hoe lang is deze klimroute (in meters)?",
-                        "render": "Deze klimroute is {canonical(climbing:length)} lang"
-                    },
-                    "5": {
-                        "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
-                        "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
                     }
                 },
                 "title": {
@@ -389,7 +384,14 @@
                     }
                 },
                 "tagRenderings": {
-                    "6": {
+                    "Rock type (crag/rock/cliff only)": {
+                        "mappings": {
+                            "0": {
+                                "then": "Kalksteen"
+                            }
+                        }
+                    },
+                    "name": {
                         "mappings": {
                             "0": {
                                 "then": "Dit Klimgelegenheid heeft geen naam"
@@ -397,13 +399,6 @@
                         },
                         "question": "Wat is de naam van dit Klimgelegenheid?",
                         "render": "<strong>{name}</strong>"
-                    },
-                    "8": {
-                        "mappings": {
-                            "0": {
-                                "then": "Kalksteen"
-                            }
-                        }
                     }
                 },
                 "title": {
@@ -425,10 +420,10 @@
                 "description": "Een klimgelegenheid?",
                 "name": "Klimgelegenheiden?",
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "2": {
+                    "climbing-possible": {
                         "mappings": {
                             "0": {
                                 "then": "Klimmen is hier niet mogelijk"
@@ -642,40 +637,15 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "facadegardens-description": {
+                        "question": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
+                        "render": "Meer details: {description}"
+                    },
+                    "facadegardens-direction": {
                         "question": "Hoe is de tuin georiënteerd?",
                         "render": "Oriëntatie: {direction} (waarbij 0=N en 90=O)"
                     },
-                    "2": {
-                        "mappings": {
-                            "0": {
-                                "then": "Het is een volle zon tuintje"
-                            },
-                            "1": {
-                                "then": "Het is een halfschaduw tuintje"
-                            },
-                            "2": {
-                                "then": "Het is een schaduw tuintje"
-                            }
-                        },
-                        "question": "Ligt de tuin in zon/half schaduw of schaduw?"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "Er is een regenton"
-                            },
-                            "1": {
-                                "then": "Er is geen regenton"
-                            }
-                        },
-                        "question": "Is er een regenton voorzien bij het tuintje?"
-                    },
-                    "4": {
-                        "question": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
-                        "render": "Aanlegdatum van de tuin: {start_date}"
-                    },
-                    "5": {
+                    "facadegardens-edible": {
                         "mappings": {
                             "0": {
                                 "then": "Er staan eetbare planten"
@@ -686,7 +656,7 @@
                         },
                         "question": "Staan er eetbare planten?"
                     },
-                    "6": {
+                    "facadegardens-plants": {
                         "mappings": {
                             "0": {
                                 "then": "Er staat een klimplant"
@@ -703,9 +673,34 @@
                         },
                         "question": "Wat voor planten staan hier?"
                     },
-                    "7": {
-                        "question": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
-                        "render": "Meer details: {description}"
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "Er is een regenton"
+                            },
+                            "1": {
+                                "then": "Er is geen regenton"
+                            }
+                        },
+                        "question": "Is er een regenton voorzien bij het tuintje?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
+                        "render": "Aanlegdatum van de tuin: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "Het is een volle zon tuintje"
+                            },
+                            "1": {
+                                "then": "Het is een halfschaduw tuintje"
+                            },
+                            "2": {
+                                "then": "Het is een schaduw tuintje"
+                            }
+                        },
+                        "question": "Ligt de tuin in zon/half schaduw of schaduw?"
                     }
                 },
                 "title": {
@@ -756,21 +751,21 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
-                        "question": "Wat is de soort van deze boom (in het Nederlands)?",
-                        "render": "De soort is {species:nl}"
-                    },
-                    "1": {
-                        "question": "Wat is het taxon (ras) van deze boom?",
-                        "render": "Het ras (taxon) van deze boom is <b>{taxon}</b>"
-                    },
-                    "2": {
+                    "fruitboom-description": {
                         "question": "Welke beschrijving past bij deze boom?",
                         "render": "Beschrijving: <i>{description}</i>"
                     },
-                    "3": {
+                    "fruitboom-ref": {
                         "question": "Is er een refernetienummer?",
                         "render": "Referentienummer: <b>{ref}</b>"
+                    },
+                    "fruitboom-species:nl": {
+                        "question": "Wat is de soort van deze boom (in het Nederlands)?",
+                        "render": "De soort is {species:nl}"
+                    },
+                    "fruitboom-taxon": {
+                        "question": "Wat is het taxon (ras) van deze boom?",
+                        "render": "Het ras (taxon) van deze boom is <b>{taxon}</b>"
                     }
                 },
                 "title": {
@@ -792,23 +787,7 @@
                 "description": "Dit gebouw heeft een foutmelding",
                 "name": "Fixmes op gebouwen",
                 "tagRenderings": {
-                    "0": {
-                        "mappings": {
-                            "0": {
-                                "then": "Geen huisnummer"
-                            }
-                        },
-                        "question": "Wat is het huisnummer?",
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
-                    },
-                    "1": {
-                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
-                    },
-                    "2": {
-                        "question": "Wat is de straat?",
-                        "render": "De straat is <b>{addr:street}</b>"
-                    },
-                    "3": {
+                    "grb-fixme": {
                         "mappings": {
                             "0": {
                                 "then": "Geen fixme"
@@ -817,9 +796,25 @@
                         "question": "Wat zegt de fixme?",
                         "render": "De fixme is <b>{fixme}</b>"
                     },
-                    "4": {
+                    "grb-housenumber": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen huisnummer"
+                            }
+                        },
+                        "question": "Wat is het huisnummer?",
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+                    },
+                    "grb-min-level": {
                         "question": "Hoeveel verdiepingen ontbreken?",
                         "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
+                    },
+                    "grb-street": {
+                        "question": "Wat is de straat?",
+                        "render": "De straat is <b>{addr:street}</b>"
+                    },
+                    "grb-unit": {
+                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
                     }
                 },
                 "title": {
@@ -926,10 +921,19 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "shops-email": {
+                        "question": "Wat is het e-mailadres van deze winkel?"
+                    },
+                    "shops-name": {
                         "question": "Wat is de naam van deze winkel?"
                     },
-                    "2": {
+                    "shops-opening_hours": {
+                        "question": "Wat zijn de openingsuren van deze winkel?"
+                    },
+                    "shops-phone": {
+                        "question": "Wat is het telefoonnummer?"
+                    },
+                    "shops-shop": {
                         "mappings": {
                             "1": {
                                 "then": "Supermarkt"
@@ -942,17 +946,8 @@
                             }
                         }
                     },
-                    "3": {
-                        "question": "Wat is het telefoonnummer?"
-                    },
-                    "4": {
+                    "shops-website": {
                         "question": "Wat is de website van deze winkel?"
-                    },
-                    "5": {
-                        "question": "Wat is het e-mailadres van deze winkel?"
-                    },
-                    "6": {
-                        "question": "Wat zijn de openingsuren van deze winkel?"
                     }
                 },
                 "title": {
@@ -967,10 +962,20 @@
             "7": {
                 "name": "Wandelroutes van provincie Antwerpen",
                 "tagRenderings": {
-                    "0": {
+                    "walk-description": {
+                        "render": "<h3>Korte beschrijving:</h3>{description}"
+                    },
+                    "walk-length": {
                         "render": "Deze wandeling is <b>{_length:km}km</b> lang"
                     },
-                    "1": {
+                    "walk-operator": {
+                        "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
+                    },
+                    "walk-operator-email": {
+                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?",
+                        "render": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
+                    },
+                    "walk-type": {
                         "mappings": {
                             "0": {
                                 "then": "Dit is een internationale wandelroute"
@@ -985,63 +990,12 @@
                                 "then": "Dit is een lokale wandelroute"
                             }
                         }
-                    },
-                    "2": {
-                        "render": "<h3>Korte beschrijving:</h3>{description}"
-                    },
-                    "3": {
-                        "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
-                    },
-                    "4": {
-                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?",
-                        "render": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
                     }
                 }
             }
         },
         "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
         "title": "Welkom bij de groendoener!"
-    },
-    "speelplekken_temp": {
-        "description": "Speelplekken in de Antwerpse Zuidrand. Een project van Provincie Antwerpen, in samenwerking met Createlli, Sportpret en OpenStreetMap België",
-        "layers": {
-            "6": {
-                "name": "Wandelroutes van provincie Antwerpen",
-                "tagRenderings": {
-                    "0": {
-                        "render": "Deze wandeling is <b>{_length:km}km</b> lang"
-                    },
-                    "1": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dit is een internationale wandelroute"
-                            },
-                            "1": {
-                                "then": "Dit is een nationale wandelroute"
-                            },
-                            "2": {
-                                "then": "Dit is een regionale wandelroute"
-                            },
-                            "3": {
-                                "then": "Dit is een lokale wandelroute"
-                            }
-                        }
-                    },
-                    "2": {
-                        "render": "<h3>Korte beschrijving:</h3>{description}"
-                    },
-                    "3": {
-                        "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
-                    },
-                    "4": {
-                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?",
-                        "render": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
-                    }
-                }
-            }
-        },
-        "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
-        "title": "Speelplekken in de Antwerpse Zuidrand"
     },
     "sport_pitches": {
         "description": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
@@ -1071,23 +1025,5 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
-    },
-    "width": {
-        "description": " <h3>De straat is opgebruikt</h3>\n <p>Er is steeds meer druk op de openbare ruimte. Voetgangers, fietsers, steps, auto's, bussen, bestelwagens, buggies, cargobikes, ... willen allemaal hun deel van de openbare ruimte.</p>\n <p>In deze studie nemen we Brugge onder de loep en kijken we hoe breed elke straat is én hoe breed elke straat zou moeten zijn voor een veilig én vlot verkeer.</p>\n <h3>Legende</h3>\n <span style='background: red'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat te smal voor veilig verkeer<br/>\n <span style='background: #0f0'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat is breed genoeg veilig verkeer<br/>\n <span style='background: orange'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat zonder voetpad, te smal als ook voetgangers plaats krijgen<br/>\n <span style='background: lightgrey'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Woonerf, autoluw, autoloos of enkel plaatselijk verkeer<br/>\n <br/>\n <br/>\n Een gestippelde lijn is een straat waar ook voor fietsers éénrichtingsverkeer geldt.<br/>\n Klik op een straat om meer informatie te zien.\n <h3>Hoe gaan we verder?</h3>\n Verschillende ingrepen kunnen de stad teruggeven aan de inwoners en de stad leefbaarder en levendiger maken.<br/>\n Denk aan:\n <ul>\n <li>De autovrije zone's uitbreiden</li>\n <li>De binnenstad fietszone maken</li>\n <li>Het aantal woonerven uitbreiden</li>\n <li>Grotere auto's meer belasten - ze nemen immers meer parkeerruimte in.</li>\n <li>Laat toeristen verplicht parkeren onder het zand; een (fiets)taxi kan hen naar hun hotel brengen</li>\n <li>Voorzie in elke straat enkele parkeerplaatsen voor kortparkeren. Zo kunnen leveringen, iemand afzetten,... gebeuren zonder op het voetpad en fietspad te parkeren</li>\n </ul>",
-        "layers": {
-            "0": {
-                "name": "Straten met een breedte",
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Naamloos segmet"
-                        }
-                    },
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Is de straat breed genoeg?",
-        "title": "Straatbreedtes"
     }
 }

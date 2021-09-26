@@ -161,9 +161,11 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "playground-surface"
         },
         {
+            "id": "playground-lit",
             "question": {
                 "nl": "Is deze speeltuin 's nachts verlicht?",
                 "en": "Is this playground lit at night?",
@@ -215,7 +217,8 @@
             "freeform": {
                 "key": "min_age",
                 "type": "pnat"
-            }
+            },
+            "id": "playground-min_age"
         },
         {
             "render": {
@@ -234,7 +237,8 @@
             "freeform": {
                 "key": "max_age",
                 "type": "pnat"
-            }
+            },
+            "id": "playground-max_age"
         },
         {
             "question": {
@@ -253,9 +257,11 @@
             },
             "freeform": {
                 "key": "operator"
-            }
+            },
+            "id": "playground-operator"
         },
         {
+            "id": "playground-access",
             "question": {
                 "nl": "Is deze speeltuin vrij toegankelijk voor het publiek?",
                 "en": "Is this playground accessible to the general public?",
@@ -339,7 +345,8 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "playground-email"
         },
         {
             "question": {
@@ -361,9 +368,11 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "playground-phone"
         },
         {
+            "id": "Playground-wheelchair",
             "question": {
                 "nl": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?",
                 "en": "Is this playground accessible to wheelchair users?",
@@ -453,10 +462,12 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "playground-opening_hours"
         },
         "questions",
         {
+            "id": "playground-reviews",
             "render": "{reviews(name, playground)}"
         }
     ],

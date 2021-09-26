@@ -33,14 +33,16 @@
           "question": "What is the name of this cycle highway?",
           "freeform": {
             "key": "name"
-          }
+          },
+          "id": "cycle_highways-name"
         },
         {
           "render": "Referentienummer is <b>{ref}</b>",
           "question": "What is the reference number of this cycle highway?",
           "freeform": {
             "key": "ref"
-          }
+          },
+          "id": "cycle_highways-ref"
         },
         {
           "render": "The current state of this link is {state}",
@@ -84,15 +86,15 @@
               "if": "state=",
               "then": "This link is operational and signposted"
             }
-          ]
+          ],
+          "id": "cycle_highways-state"
         },
         {
+          "id": "cycle-highway-length",
           "render": "This part is {_length:km}km long"
         },
         "website",
-        {
-          "render": "{all_tags()}"
-        }
+        "all_tags"
       ],
       "name": {
         "en": "cycle highways"

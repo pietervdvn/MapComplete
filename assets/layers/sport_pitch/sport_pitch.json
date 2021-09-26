@@ -140,7 +140,8 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "sport_pitch-sport"
         },
         {
             "question": {
@@ -211,9 +212,11 @@
                         "it": "La superficie è <b>calcestruzzo</b>"
                     }
                 }
-            ]
+            ],
+            "id": "sport_pitch-surface"
         },
         {
+            "id": "sport-pitch-access",
             "question": {
                 "nl": "Is dit sportterrein publiek toegankelijk?",
                 "fr": "Est-ce que ce terrain de sport est accessible au public ?",
@@ -264,6 +267,7 @@
             ]
         },
         {
+            "id": "sport-pitch-reservation",
             "question": {
                 "nl": "Moet men reserveren om gebruik te maken van dit sportveld?",
                 "fr": "Doit-on réserver pour utiliser ce terrain de sport ?",
@@ -331,7 +335,8 @@
                 "key": "phone",
                 "type": "phone"
             },
-            "render": "<a href='tel:{phone}'>{phone}</a>"
+            "render": "<a href='tel:{phone}'>{phone}</a>",
+            "id": "sport_pitch-phone"
         },
         {
             "question": {
@@ -344,7 +349,8 @@
                 "key": "email",
                 "type": "email"
             },
-            "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+            "id": "sport_pitch-email"
         },
         {
             "question": {
@@ -376,10 +382,12 @@
                     }
                 }
             ],
-            "condition": "access~*"
+            "condition": "access~*",
+            "id": "sport_pitch-opening_hours"
         },
         "questions",
         {
+            "id": "sport-pitch-reviews",
             "render": "{reviews(name, sportpitch)}"
         }
     ],

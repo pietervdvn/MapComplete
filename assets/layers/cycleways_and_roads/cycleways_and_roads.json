@@ -81,7 +81,6 @@
     "description": {},
     "tagRenderings": [
         {
-            "#": "Cycleway type for a road",
             "question": {
                 "en": "What kind of cycleway is here?",
                 "nl": "Wat voor fietspad is hier?"
@@ -141,10 +140,10 @@
                         "fixme=Changed from cycleway=opposite"
                     ]
                 }
-            ]
+            ],
+            "id": "Cycleway type for a road"
         },
         {
-            "#": "is lit?",
             "question": {
                 "en": "Is this street lit?",
                 "nl": "Is deze weg verlicht?"
@@ -179,10 +178,10 @@
                         "nl": "Deze weg is 24/7 verlicht"
                     }
                 }
-            ]
+            ],
+            "id": "is lit?"
         },
         {
-            "#": "Is this a cyclestreet? (For a road)",
             "question": {
                 "en": "Is this a cyclestreet?",
                 "nl": "Is dit een fietsstraat?"
@@ -224,10 +223,10 @@
                         "overtaking:motor_vehicle="
                     ]
                 }
-            ]
+            ],
+            "id": "Is this a cyclestreet? (For a road)"
         },
         {
-            "#": "Maxspeed (for road)",
             "render": {
                 "en": "The maximum speed on this road is {maxspeed} km/h",
                 "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u"
@@ -282,10 +281,10 @@
             "question": {
                 "en": "What is the maximum speed in this street?",
                 "nl": "Wat is de maximumsnelheid in deze straat?"
-            }
+            },
+            "id": "Maxspeed (for road)"
         },
         {
-            "#": "Cycleway:surface",
             "render": {
                 "en": "This cyleway is made of {cycleway:surface}",
                 "nl": "Dit fietspad is gemaakt van {cycleway:surface}"
@@ -399,10 +398,10 @@
             "question": {
                 "en": "What is the surface of the cycleway made from?",
                 "nl": "Waaruit is het oppervlak van het fietspad van gemaakt?"
-            }
+            },
+            "id": "Cycleway:surface"
         },
         {
-            "#": "Cycleway:smoothness",
             "question": {
                 "en": "What is the smoothness of this cycleway?",
                 "nl": "Wat is de kwaliteit van dit fietspad?"
@@ -471,10 +470,10 @@
                         "nl": "Niet geschikt voor voertuigen met wielen"
                     }
                 }
-            ]
+            ],
+            "id": "Cycleway:smoothness"
         },
         {
-            "#": "Surface of the road",
             "render": {
                 "en": "This road is made of {surface}",
                 "nl": "Deze weg is gemaakt van {surface}"
@@ -581,10 +580,10 @@
             "question": {
                 "en": "What is the surface of the street made from?",
                 "nl": "Waaruit is het oppervlak van de straat gemaakt?"
-            }
+            },
+            "id": "Surface of the road"
         },
         {
-            "#": "Surface of the street",
             "question": {
                 "en": "What is the smoothness of this street?",
                 "nl": "Wat is de kwaliteit van deze straat?"
@@ -644,10 +643,10 @@
                         "en": "Impassable / No wheeled vehicle"
                     }
                 }
-            ]
+            ],
+            "id": "Surface of the street"
         },
         {
-            "#": "width:carriageway",
             "condition": {
                 "and": [
                     "highway!=cycleway",
@@ -669,9 +668,11 @@
             "question": {
                 "en": "What is the carriage width of this road (in meters)?",
                 "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
-            }
+            },
+            "id": "width:carriageway"
         },
         {
+            "id": "cycleway-lane-track-traffic-signs",
             "question": {
                 "en": "What traffic sign does this cycleway have?",
                 "nl": "Welk verkeersbord heeft dit fietspad?"
@@ -733,6 +734,7 @@
             ]
         },
         {
+            "id": "cycleway-traffic-signs",
             "question": {
                 "en": "What traffic sign does this cycleway have?",
                 "nl": "Welk verkeersbord heeft dit fietspad?"
@@ -808,6 +810,7 @@
             ]
         },
         {
+            "id": "cycleway-traffic-signs-supplementary",
             "question": {
                 "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
                 "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
@@ -897,6 +900,7 @@
             ]
         },
         {
+            "id": "cycleway-traffic-signs-D7-supplementary",
             "question": {
                 "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
                 "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
@@ -1007,9 +1011,11 @@
                     "20",
                     "map"
                 ]
-            }
+            },
+            "id": "cycleways_and_roads-cycleway:buffer"
         },
         {
+            "id": "cyclelan-segregation",
             "question": {
                 "en": "How is this cycleway separated from the road?",
                 "nl": "Hoe is dit fietspad gescheiden van de weg?"
@@ -1052,6 +1058,7 @@
             ]
         },
         {
+            "id": "cycleway-segregation",
             "question": {
                 "en": "How is this cycleway separated from the road?",
                 "nl": "Hoe is dit fietspad gescheiden van de weg?"

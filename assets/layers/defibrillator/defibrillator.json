@@ -68,6 +68,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "defibrillator-indoors",
             "question": {
                 "en": "Is this defibrillator located indoors?",
                 "ca": "Està el desfibril·lador a l'interior?",
@@ -191,7 +192,8 @@
                         "it": "Non accessibile, potrebbe essere solo per uso professionale"
                     }
                 }
-            ]
+            ],
+            "id": "defibrillator-access"
         },
         {
             "render": {
@@ -236,7 +238,8 @@
                         "ru": "Это обычный автоматический дефибриллятор"
                     }
                 }
-            ]
+            ],
+            "id": "defibrillator-defibrillator"
         },
         {
             "question": {
@@ -287,7 +290,8 @@
                         "de": "Dieser Defibrillator befindet sich in der <b>ersten Etage</b>"
                     }
                 }
-            ]
+            ],
+            "id": "defibrillator-level"
         },
         {
             "render": {
@@ -309,7 +313,8 @@
             "freeform": {
                 "type": "text",
                 "key": "defibrillator:location"
-            }
+            },
+            "id": "defibrillator-defibrillator:location"
         },
         {
             "render": {
@@ -331,7 +336,8 @@
             "freeform": {
                 "type": "text",
                 "key": "defibrillator:location:en"
-            }
+            },
+            "id": "defibrillator-defibrillator:location:en"
         },
         {
             "render": {
@@ -353,7 +359,8 @@
             "freeform": {
                 "type": "text",
                 "key": "defibrillator:location:fr"
-            }
+            },
+            "id": "defibrillator-defibrillator:location:fr"
         },
         "wheelchair-access",
         {
@@ -374,7 +381,8 @@
             "freeform": {
                 "type": "text",
                 "key": "ref"
-            }
+            },
+            "id": "defibrillator-ref"
         },
         {
             "render": {
@@ -394,7 +402,8 @@
             "freeform": {
                 "key": "email",
                 "type": "email"
-            }
+            },
+            "id": "defibrillator-email"
         },
         {
             "render": {
@@ -414,7 +423,8 @@
             "freeform": {
                 "key": "phone",
                 "type": "phone"
-            }
+            },
+            "id": "defibrillator-phone"
         },
         {
             "render": {
@@ -447,7 +457,8 @@
                         "de": "24/7 geöffnet (auch an Feiertagen)"
                     }
                 }
-            ]
+            ],
+            "id": "defibrillator-opening_hours"
         },
         {
             "render": {
@@ -469,7 +480,8 @@
             "freeform": {
                 "key": "description",
                 "type": "text"
-            }
+            },
+            "id": "defibrillator-description"
         },
         {
             "question": {
@@ -502,7 +514,8 @@
                         "de": "Heute überprüft!"
                     }
                 }
-            ]
+            ],
+            "id": "defibrillator-survey:date"
         },
         {
             "render": {
@@ -523,7 +536,8 @@
             "freeform": {
                 "key": "fixme",
                 "type": "text"
-            }
+            },
+            "id": "defibrillator-fixme"
         }
     ]
 }

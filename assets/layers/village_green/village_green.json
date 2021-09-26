@@ -28,9 +28,11 @@
     "tagRenderings": [
         "images",
         {
+            "id": "village_green-explanation",
             "render": "Dit is een klein stukje openbaar groen waar je mag spelen, picnicken, zitten, ..."
         },
         {
+            "id": "village_green-reviews",
             "render": "{reviews(name, landuse=village_green )}"
         }
     ]

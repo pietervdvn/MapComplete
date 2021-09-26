@@ -8,7 +8,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "bench-backrest": {
                 "mappings": {
                     "0": {
                         "then": "靠背：有"
@@ -20,38 +20,7 @@
                 "question": "这个长椅有靠背吗？",
                 "render": "靠背"
             },
-            "2": {
-                "question": "这个长椅有几个座位？"
-            },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "材质：木"
-                    },
-                    "1": {
-                        "then": "材质：金属"
-                    },
-                    "2": {
-                        "then": "材质：石头"
-                    },
-                    "3": {
-                        "then": "材质：混凝土"
-                    },
-                    "4": {
-                        "then": "材质：塑料"
-                    },
-                    "5": {
-                        "then": "材质：不锈钢"
-                    }
-                },
-                "question": "这个长椅（或座椅）是用什么材料做的？",
-                "render": "材质: {material}"
-            },
-            "4": {
-                "question": "坐在长椅上的时候你目视的方向是哪边？",
-                "render": "坐在长椅上的时候目视方向为 {direction}°方位。"
-            },
-            "5": {
+            "bench-colour": {
                 "mappings": {
                     "0": {
                         "then": "颜色：棕"
@@ -81,7 +50,38 @@
                 "question": "这个长椅是什么颜色的？",
                 "render": "颜色： {colour}"
             },
-            "6": {
+            "bench-direction": {
+                "question": "坐在长椅上的时候你目视的方向是哪边？",
+                "render": "坐在长椅上的时候目视方向为 {direction}°方位。"
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "材质：木"
+                    },
+                    "1": {
+                        "then": "材质：金属"
+                    },
+                    "2": {
+                        "then": "材质：石头"
+                    },
+                    "3": {
+                        "then": "材质：混凝土"
+                    },
+                    "4": {
+                        "then": "材质：塑料"
+                    },
+                    "5": {
+                        "then": "材质：不锈钢"
+                    }
+                },
+                "question": "这个长椅（或座椅）是用什么材料做的？",
+                "render": "材质: {material}"
+            },
+            "bench-seats": {
+                "question": "这个长椅有几个座位？"
+            },
+            "bench-survey:date": {
                 "question": "上次对这个长椅实地调查是什么时候？",
                 "render": "这个长椅于 {survey:date}最后一次实地调查"
             }
@@ -93,11 +93,11 @@
     "bench_at_pt": {
         "name": "在公交站点的长椅",
         "tagRenderings": {
-            "1": {
-                "render": "{name}"
-            },
-            "2": {
+            "bench_at_pt-bench": {
                 "render": "站立长凳"
+            },
+            "bench_at_pt-name": {
+                "render": "{name}"
             }
         },
         "title": {
@@ -114,14 +114,14 @@
     },
     "bicycle_library": {
         "tagRenderings": {
-            "7": {
+            "bicycle-library-target-group": {
                 "question": "谁可以从这里借自行车？"
             }
         }
     },
     "bicycle_tube_vending_machine": {
         "tagRenderings": {
-            "1": {
+            "Still in use?": {
                 "mappings": {
                     "0": {
                         "then": "这个借还机正常工作"
@@ -144,11 +144,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "question": "这个自行车咖啡的名字是什么？",
-                "render": "这家自行车咖啡叫做 {name}"
-            },
-            "2": {
+            "bike_cafe-bike-pump": {
                 "mappings": {
                     "0": {
                         "then": "这家自行车咖啡为每个人提供打气筒"
@@ -159,18 +155,20 @@
                 },
                 "question": "这家自行车咖啡为每个使用者提供打气筒吗？"
             },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "这家自行车咖啡为DIY修理者提供工具"
-                    },
-                    "1": {
-                        "then": "这家自行车咖啡不为DIY修理者提供工具"
-                    }
-                },
-                "question": "这里有供你修车用的工具吗？"
+            "bike_cafe-email": {
+                "question": "{name}的电子邮箱是什么？"
             },
-            "4": {
+            "bike_cafe-name": {
+                "question": "这个自行车咖啡的名字是什么？",
+                "render": "这家自行车咖啡叫做 {name}"
+            },
+            "bike_cafe-opening_hours": {
+                "question": "这家自行车咖啡什么时候开门营业？"
+            },
+            "bike_cafe-phone": {
+                "question": "{name}的电话号码是什么？"
+            },
+            "bike_cafe-repair-service": {
                 "mappings": {
                     "0": {
                         "then": "这家自行车咖啡可以修车"
@@ -181,17 +179,19 @@
                 },
                 "question": "这家自行车咖啡t提供修车服务吗？"
             },
-            "5": {
+            "bike_cafe-repair-tools": {
+                "mappings": {
+                    "0": {
+                        "then": "这家自行车咖啡为DIY修理者提供工具"
+                    },
+                    "1": {
+                        "then": "这家自行车咖啡不为DIY修理者提供工具"
+                    }
+                },
+                "question": "这里有供你修车用的工具吗？"
+            },
+            "bike_cafe-website": {
                 "question": "{name}的网站是什么？"
-            },
-            "6": {
-                "question": "{name}的电话号码是什么？"
-            },
-            "7": {
-                "question": "{name}的电子邮箱是什么？"
-            },
-            "8": {
-                "question": "这家自行车咖啡什么时候开门营业？"
             }
         },
         "title": {

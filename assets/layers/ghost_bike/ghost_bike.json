@@ -78,6 +78,7 @@
     ],
     "tagRenderings": [
         {
+            "id": "ghost-bike-explanation",
             "render": {
                 "en": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
                 "nl": "Een Witte Fiets (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval.",
@@ -117,7 +118,8 @@
                         "fr": "Aucun nom n'est marqué sur le vélo"
                     }
                 }
-            ]
+            ],
+            "id": "ghost_bike-name"
         },
         {
             "question": {
@@ -139,7 +141,8 @@
             "freeform": {
                 "type": "url",
                 "key": "source"
-            }
+            },
+            "id": "ghost_bike-source"
         },
         {
             "question": {
@@ -161,7 +164,8 @@
             },
             "freeform": {
                 "key": "inscription"
-            }
+            },
+            "id": "ghost_bike-inscription"
         },
         {
             "question": {
@@ -180,7 +184,8 @@
             "freeform": {
                 "key": "start_date",
                 "type": "date"
-            }
+            },
+            "id": "ghost_bike-start_date"
         }
     ]
 }

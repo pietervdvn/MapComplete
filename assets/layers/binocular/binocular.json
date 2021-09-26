@@ -45,7 +45,8 @@
             "question": {
                 "en": "How much does one have to pay to use these binoculars?",
                 "nl": "Hoeveel moet men betalen om deze verrekijker te gebruiken?"
-            }
+            },
+            "id": "binocular-charge"
         },
         {
             "question": {
@@ -59,7 +60,8 @@
             "freeform": {
                 "key": "direction",
                 "type": "direction"
-            }
+            },
+            "id": "binocular-direction"
         }
     ],
     "icon": {

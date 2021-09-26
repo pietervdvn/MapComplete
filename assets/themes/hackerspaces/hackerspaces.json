@@ -49,6 +49,7 @@
       },
       "tagRenderings": [
         {
+          "id": "is_makerspace",
           "question": {
             "en": "Is this a hackerspace or a makerspace?"
           },
@@ -76,7 +77,8 @@
           },
           "freeform": {
             "key": "name"
-          }
+          },
+          "id": "hackerspaces-name"
         },
         "website",
         "email",
@@ -103,10 +105,12 @@
                 "en": "Opened 24/7"
               }
             }
-          ]
+          ],
+          "id": "hackerspaces-opening_hours"
         },
         "wheelchair-access",
         {
+          "id": "hs-club-mate",
           "question": {
             "en": "Does this hackerspace serve Club Mate?"
           },
@@ -128,7 +132,7 @@
                 ]
               },
               "then": {
-                "en": "This hackerspace is not worthy of the name hackerspace as it does not serve club mate"
+                "en": "This hackerspace does not serve club mate"
               }
             }
           ]
@@ -143,7 +147,8 @@
           "freeform": {
             "key": "start_date",
             "type": "date"
-          }
+          },
+          "id": "hackerspaces-start_date"
         }
       ],
       "icon": {

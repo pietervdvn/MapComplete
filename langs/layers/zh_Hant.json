@@ -8,7 +8,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "bench-backrest": {
                 "mappings": {
                     "0": {
                         "then": "靠背：有"
@@ -20,39 +20,7 @@
                 "question": "這個長椅是否有靠背？",
                 "render": "靠背"
             },
-            "2": {
-                "question": "這個長椅有幾個位子？",
-                "render": "{seats} 座位數"
-            },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "材質：木頭"
-                    },
-                    "1": {
-                        "then": "材質：金屬"
-                    },
-                    "2": {
-                        "then": "材質：石頭"
-                    },
-                    "3": {
-                        "then": "材質：水泥"
-                    },
-                    "4": {
-                        "then": "材質：塑膠"
-                    },
-                    "5": {
-                        "then": "材質：鋼鐵"
-                    }
-                },
-                "question": "這個長椅 (座位) 是什麼做的？",
-                "render": "材質：{material}"
-            },
-            "4": {
-                "question": "坐在長椅時是面對那個方向？",
-                "render": "當坐在長椅時，那個人朝向 {direction}°。"
-            },
-            "5": {
+            "bench-colour": {
                 "mappings": {
                     "0": {
                         "then": "顏色：棕色"
@@ -82,7 +50,39 @@
                 "question": "這個長椅是什麼顏色的？",
                 "render": "顏色：{colour}"
             },
-            "6": {
+            "bench-direction": {
+                "question": "坐在長椅時是面對那個方向？",
+                "render": "當坐在長椅時，那個人朝向 {direction}°。"
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "材質：木頭"
+                    },
+                    "1": {
+                        "then": "材質：金屬"
+                    },
+                    "2": {
+                        "then": "材質：石頭"
+                    },
+                    "3": {
+                        "then": "材質：水泥"
+                    },
+                    "4": {
+                        "then": "材質：塑膠"
+                    },
+                    "5": {
+                        "then": "材質：鋼鐵"
+                    }
+                },
+                "question": "這個長椅 (座位) 是什麼做的？",
+                "render": "材質：{material}"
+            },
+            "bench-seats": {
+                "question": "這個長椅有幾個位子？",
+                "render": "{seats} 座位數"
+            },
+            "bench-survey:date": {
                 "question": "上一次探察長椅是什麼時候？",
                 "render": "這個長椅最後是在 {survey:date} 探查的"
             }
@@ -94,11 +94,11 @@
     "bench_at_pt": {
         "name": "大眾運輸站點的長椅",
         "tagRenderings": {
-            "1": {
-                "render": "{name}"
-            },
-            "2": {
+            "bench_at_pt-bench": {
                 "render": "站立長椅"
+            },
+            "bench_at_pt-name": {
+                "render": "{name}"
             }
         },
         "title": {
@@ -123,23 +123,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "question": "這個單車圖書館的名稱是？",
-                "render": "這個單車圖書館叫做 {name}"
-            },
-            "6": {
-                "mappings": {
-                    "0": {
-                        "then": "租借單車免費"
-                    },
-                    "1": {
-                        "then": "租借單車價錢 €20/year 與 €20 保證金"
-                    }
-                },
-                "question": "租用單車的費用多少？",
-                "render": "租借單車需要 {charge}"
-            },
-            "7": {
+            "bicycle-library-target-group": {
                 "mappings": {
                     "0": {
                         "then": "提供兒童單車"
@@ -152,6 +136,22 @@
                     }
                 },
                 "question": "誰可以在這裡租單車？"
+            },
+            "bicycle_library-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "租借單車免費"
+                    },
+                    "1": {
+                        "then": "租借單車價錢 €20/year 與 €20 保證金"
+                    }
+                },
+                "question": "租用單車的費用多少？",
+                "render": "租借單車需要 {charge}"
+            },
+            "bicycle_library-name": {
+                "question": "這個單車圖書館的名稱是？",
+                "render": "這個單車圖書館叫做 {name}"
             }
         },
         "title": {
@@ -166,7 +166,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "Still in use?": {
                 "mappings": {
                     "0": {
                         "then": "這個自動販賣機仍運作"
@@ -194,11 +194,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "question": "這個單車咖啡廳的名稱是？",
-                "render": "這個單車咖啡廳叫做 {name}"
-            },
-            "2": {
+            "bike_cafe-bike-pump": {
                 "mappings": {
                     "0": {
                         "then": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬"
@@ -209,18 +205,20 @@
                 },
                 "question": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬嗎？"
             },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "這個單車咖啡廳提供工具讓你修理"
-                    },
-                    "1": {
-                        "then": "這個單車咖啡廳並沒有提供工具讓你修理"
-                    }
-                },
-                "question": "這裡是否有工具修理你的單車嗎？"
+            "bike_cafe-email": {
+                "question": "{name} 的電子郵件地址是？"
             },
-            "4": {
+            "bike_cafe-name": {
+                "question": "這個單車咖啡廳的名稱是？",
+                "render": "這個單車咖啡廳叫做 {name}"
+            },
+            "bike_cafe-opening_hours": {
+                "question": "何時這個單車咖啡廳營運？"
+            },
+            "bike_cafe-phone": {
+                "question": "{name} 的電話號碼是？"
+            },
+            "bike_cafe-repair-service": {
                 "mappings": {
                     "0": {
                         "then": "這個單車咖啡廳修理單車"
@@ -231,17 +229,19 @@
                 },
                 "question": "這個單車咖啡廳是否能修理單車？"
             },
-            "5": {
+            "bike_cafe-repair-tools": {
+                "mappings": {
+                    "0": {
+                        "then": "這個單車咖啡廳提供工具讓你修理"
+                    },
+                    "1": {
+                        "then": "這個單車咖啡廳並沒有提供工具讓你修理"
+                    }
+                },
+                "question": "這裡是否有工具修理你的單車嗎？"
+            },
+            "bike_cafe-website": {
                 "question": "{name} 的網站是？"
-            },
-            "6": {
-                "question": "{name} 的電話號碼是？"
-            },
-            "7": {
-                "question": "{name} 的電子郵件地址是？"
-            },
-            "8": {
-                "question": "何時這個單車咖啡廳營運？"
             }
         },
         "title": {
@@ -269,20 +269,6 @@
             "render": "單車清理服務"
         }
     },
-    "bike_monitoring_station": {
-        "name": "監視站",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "單車計數站 {name}"
-                },
-                "1": {
-                    "then": "單車計數站 {ref}"
-                }
-            },
-            "render": "單車計數站"
-        }
-    },
     "bike_parking": {
         "name": "單車停車場",
         "presets": {
@@ -291,7 +277,22 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "Access": {
+                "mappings": {
+                    "0": {
+                        "then": "公開可用"
+                    },
+                    "1": {
+                        "then": "通行性主要是為了企業的顧客"
+                    },
+                    "2": {
+                        "then": "通行性僅限學校、公司或組織的成員"
+                    }
+                },
+                "question": "誰可以使用這個單車停車場？",
+                "render": "{access}"
+            },
+            "Bicycle parking type": {
                 "mappings": {
                     "0": {
                         "then": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
@@ -321,7 +322,33 @@
                 "question": "這是那種類型的單車停車場？",
                 "render": "這個單車停車場的類型是：{bicycle_parking}"
             },
-            "2": {
+            "Capacity": {
+                "question": "這個單車停車場能放幾台單車 (包括裝箱單車)？",
+                "render": "{capacity} 單車的地方"
+            },
+            "Cargo bike spaces?": {
+                "mappings": {
+                    "0": {
+                        "then": "這個停車場有地方可以放裝箱單車"
+                    },
+                    "1": {
+                        "then": "這停車場有設計 (官方) 空間給裝箱的單車。"
+                    }
+                },
+                "question": "這個單車停車場有地方放裝箱的單車嗎？"
+            },
+            "Is covered?": {
+                "mappings": {
+                    "0": {
+                        "then": "這個停車場有遮蔽 (有屋頂)"
+                    },
+                    "1": {
+                        "then": "這個停車場沒有遮蔽"
+                    }
+                },
+                "question": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。"
+            },
+            "Underground?": {
                 "mappings": {
                     "0": {
                         "then": "地下停車場"
@@ -340,47 +367,6 @@
                     }
                 },
                 "question": "這個單車停車場的相對位置是？"
-            },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "這個停車場有遮蔽 (有屋頂)"
-                    },
-                    "1": {
-                        "then": "這個停車場沒有遮蔽"
-                    }
-                },
-                "question": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。"
-            },
-            "4": {
-                "question": "這個單車停車場能放幾台單車 (包括裝箱單車)？",
-                "render": "{capacity} 單車的地方"
-            },
-            "5": {
-                "mappings": {
-                    "0": {
-                        "then": "公開可用"
-                    },
-                    "1": {
-                        "then": "通行性主要是為了企業的顧客"
-                    },
-                    "2": {
-                        "then": "通行性僅限學校、公司或組織的成員"
-                    }
-                },
-                "question": "誰可以使用這個單車停車場？",
-                "render": "{access}"
-            },
-            "6": {
-                "mappings": {
-                    "0": {
-                        "then": "這個停車場有地方可以放裝箱單車"
-                    },
-                    "1": {
-                        "then": "這停車場有設計 (官方) 空間給裝箱的單車。"
-                    }
-                },
-                "question": "這個單車停車場有地方放裝箱的單車嗎？"
             }
         },
         "title": {
@@ -391,12 +377,12 @@
         "description": "充電站",
         "name": "充電站",
         "tagRenderings": {
-            "41": {
-                "question": "何時是充電站開放使用的時間？"
-            },
-            "42": {
+            "Auth phone": {
                 "question": "充電站所屬的網路是？",
                 "render": "{network}"
+            },
+            "Authentication": {
+                "question": "何時是充電站開放使用的時間？"
             }
         },
         "title": {

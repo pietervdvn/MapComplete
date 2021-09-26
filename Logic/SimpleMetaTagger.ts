@@ -261,116 +261,7 @@ export default class SimpleMetaTagger {
             return true;
         })
     )
-    private static carriageWayWidth = new SimpleMetaTagger(
-        {
-            keys: ["_width:needed", "_width:needed:no_pedestrians", "_width:difference"],
-            doc: "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present"
-        },
-        feature => {
 
-            const properties = feature.properties;
-            if (properties["width:carriageway"] === undefined) {
-                return false;
-            }
-
-            const carWidth = 2;
-            const cyclistWidth = 1.5;
-            const pedestrianWidth = 0.75;
-
-
-            const _leftSideParking =
-                new And([new Tag("parking:lane:left", "parallel"), new Tag("parking:lane:right", "no_parking")]);
-            const _rightSideParking =
-                new And([new Tag("parking:lane:right", "parallel"), new Tag("parking:lane:left", "no_parking")]);
-
-            const _bothSideParking = new Tag("parking:lane:both", "parallel");
-            const _noSideParking = new Tag("parking:lane:both", "no_parking");
-            const _otherParkingMode =
-                new Or([
-                    new Tag("parking:lane:both", "perpendicular"),
-                    new Tag("parking:lane:left", "perpendicular"),
-                    new Tag("parking:lane:right", "perpendicular"),
-                    new Tag("parking:lane:both", "diagonal"),
-                    new Tag("parking:lane:left", "diagonal"),
-                    new Tag("parking:lane:right", "diagonal"),
-                ])
-
-            const _sidewalkBoth = new Tag("sidewalk", "both");
-            const _sidewalkLeft = new Tag("sidewalk", "left");
-            const _sidewalkRight = new Tag("sidewalk", "right");
-            const _sidewalkNone = new Tag("sidewalk", "none");
-
-
-            let parallelParkingCount = 0;
-
-
-            const _oneSideParking = new Or([_leftSideParking, _rightSideParking]);
-
-            if (_oneSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 1;
-            } else if (_bothSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 2;
-            } else if (_noSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 0;
-            } else if (_otherParkingMode.matchesProperties(properties)) {
-                parallelParkingCount = 0;
-            } else {
-                console.log("No parking data for ", properties.name, properties.id)
-            }
-
-
-            let pedestrianFlowNeeded;
-            if (_sidewalkBoth.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 0;
-            } else if (_sidewalkNone.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 2;
-            } else if (_sidewalkLeft.matchesProperties(properties) || _sidewalkRight.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 1;
-            } else {
-                pedestrianFlowNeeded = -1;
-            }
-
-
-            let onewayCar = properties.oneway === "yes";
-            let onewayBike = properties["oneway:bicycle"] === "yes" ||
-                (onewayCar && properties["oneway:bicycle"] === undefined)
-
-            let cyclingAllowed =
-                !(properties.bicycle === "use_sidepath"
-                    || properties.bicycle === "no");
-
-            let carWidthUsed = (onewayCar ? 1 : 2) * carWidth;
-            properties["_width:needed:cars"] = Utils.Round(carWidthUsed);
-            properties["_width:needed:parking"] = Utils.Round(parallelParkingCount * carWidth)
-
-
-            let cyclistWidthUsed = 0;
-            if (cyclingAllowed) {
-                cyclistWidthUsed = (onewayBike ? 1 : 2) * cyclistWidth;
-            }
-            properties["_width:needed:cyclists"] = Utils.Round(cyclistWidthUsed)
-
-
-            const width = parseFloat(properties["width:carriageway"]);
-
-
-            const targetWidthIgnoringPedestrians =
-                carWidthUsed +
-                cyclistWidthUsed +
-                parallelParkingCount * carWidthUsed;
-            properties["_width:needed:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians);
-
-            const pedestriansNeed = Math.max(0, pedestrianFlowNeeded) * pedestrianWidth;
-            const targetWidth = targetWidthIgnoringPedestrians + pedestriansNeed;
-            properties["_width:needed"] = Utils.Round(targetWidth);
-            properties["_width:needed:pedestrians"] = Utils.Round(pedestriansNeed)
-
-
-            properties["_width:difference"] = Utils.Round(targetWidth - width);
-            properties["_width:difference:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians - width);
-            return true;
-        }
-    );
     private static currentTime = new SimpleMetaTagger(
         {
             keys: ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
@@ -406,7 +297,6 @@ export default class SimpleMetaTagger {
         SimpleMetaTagger.canonicalize,
         SimpleMetaTagger.country,
         SimpleMetaTagger.isOpen,
-        SimpleMetaTagger.carriageWayWidth,
         SimpleMetaTagger.directionSimplified,
         SimpleMetaTagger.currentTime,
         SimpleMetaTagger.objectMetaInfo

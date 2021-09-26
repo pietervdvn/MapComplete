@@ -167,9 +167,11 @@
                     },
                     "hideInAnswer": true
                 }
-            ]
+            ],
+            "id": "toilet-access"
         },
         {
+            "id": "toilets-fee",
             "question": {
                 "en": "Are these toilets free to use?",
                 "de": "Können diese Toiletten kostenlos benutzt werden?",
@@ -222,9 +224,11 @@
             "freeform": {
                 "key": "charge",
                 "type": "string"
-            }
+            },
+            "id": "toilet-charge"
         },
         {
+            "id": "toilets-wheelchair",
             "question": {
                 "en": "Is there a dedicated toilet for wheelchair users",
                 "de": "Gibt es eine Toilette für Rollstuhlfahrer?",
@@ -257,6 +261,7 @@
             ]
         },
         {
+            "id": "toilets-type",
             "question": {
                 "en": "Which kind of toilets are this?",
                 "de": "Welche Art von Toiletten sind das?",
@@ -309,6 +314,7 @@
             ]
         },
         {
+            "id": "toilets-changing-table",
             "question": {
                 "en": "Is a changing table (to change diapers) available?",
                 "de": "Ist ein Wickeltisch (zum Wechseln der Windeln) vorhanden?",
@@ -399,7 +405,8 @@
                         "it": "Il fasciatoio è in una stanza dedicata. "
                     }
                 }
-            ]
+            ],
+            "id": "toilet-changing_table:location"
         }
     ],
     "filter": [

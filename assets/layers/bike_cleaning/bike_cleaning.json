@@ -114,7 +114,8 @@
                     "then": "The cleaning service has a fee"
                 }
             ],
-            "roaming": true
+            "roaming": true,
+            "id": "bike_cleaning-service:bicycle:cleaning:charge"
         },
         {
             "question": "How much does it cost to use the cleaning service?",
@@ -141,7 +142,8 @@
                     "then": "The cleaning service has a fee"
                 }
             ],
-            "roaming": false
+            "roaming": false,
+            "id": "bike_cleaning-charge"
         }
     ]
 }

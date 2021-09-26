@@ -8,7 +8,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "bench-backrest": {
                 "mappings": {
                     "0": {
                         "then": "Schienale: Sì"
@@ -20,39 +20,7 @@
                 "question": "Questa panchina ha lo schienale?",
                 "render": "Schienale"
             },
-            "2": {
-                "question": "Quanti posti ha questa panchina?",
-                "render": "{seats} posti"
-            },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "Materiale: legno"
-                    },
-                    "1": {
-                        "then": "Materiale: metallo"
-                    },
-                    "2": {
-                        "then": "Materiale: pietra"
-                    },
-                    "3": {
-                        "then": "Materiale: cemento"
-                    },
-                    "4": {
-                        "then": "Materiale: plastica"
-                    },
-                    "5": {
-                        "then": "Materiale: acciaio"
-                    }
-                },
-                "question": "Di che materiale è fatta questa panchina?",
-                "render": "Materiale: {material}"
-            },
-            "4": {
-                "question": "In che direzione si guarda quando si è seduti su questa panchina?",
-                "render": "Quando si è seduti su questa panchina, si guarda verso {direction}°."
-            },
-            "5": {
+            "bench-colour": {
                 "mappings": {
                     "0": {
                         "then": "Colore: marrone"
@@ -82,7 +50,39 @@
                 "question": "Di che colore è questa panchina?",
                 "render": "Colore: {colour}"
             },
-            "6": {
+            "bench-direction": {
+                "question": "In che direzione si guarda quando si è seduti su questa panchina?",
+                "render": "Quando si è seduti su questa panchina, si guarda verso {direction}°."
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Materiale: legno"
+                    },
+                    "1": {
+                        "then": "Materiale: metallo"
+                    },
+                    "2": {
+                        "then": "Materiale: pietra"
+                    },
+                    "3": {
+                        "then": "Materiale: cemento"
+                    },
+                    "4": {
+                        "then": "Materiale: plastica"
+                    },
+                    "5": {
+                        "then": "Materiale: acciaio"
+                    }
+                },
+                "question": "Di che materiale è fatta questa panchina?",
+                "render": "Materiale: {material}"
+            },
+            "bench-seats": {
+                "question": "Quanti posti ha questa panchina?",
+                "render": "{seats} posti"
+            },
+            "bench-survey:date": {
                 "question": "Quando è stata verificata l’ultima volta questa panchina?",
                 "render": "Questa panchina è stata controllata l’ultima volta in data {survey:date}"
             }
@@ -94,11 +94,11 @@
     "bench_at_pt": {
         "name": "Panchine alle fermate del trasporto pubblico",
         "tagRenderings": {
-            "1": {
-                "render": "{name}"
-            },
-            "2": {
+            "bench_at_pt-bench": {
                 "render": "Panca in piedi"
+            },
+            "bench_at_pt-name": {
+                "render": "{name}"
             }
         },
         "title": {
@@ -123,23 +123,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "question": "Qual è il nome di questo “bici in prestito”?",
-                "render": "Il “bici in prestito” è chiamato {name}"
-            },
-            "6": {
-                "mappings": {
-                    "0": {
-                        "then": "Il prestito di una bicicletta è gratuito"
-                    },
-                    "1": {
-                        "then": "Il prestito di una bicicletta costa 20 €/anno più 20 € di garanzia"
-                    }
-                },
-                "question": "Quanto costa il prestito di una bicicletta?",
-                "render": "Il prestito di una bicicletta costa {charge}"
-            },
-            "7": {
+            "bicycle-library-target-group": {
                 "mappings": {
                     "0": {
                         "then": "Sono disponibili biciclette per bambini"
@@ -152,6 +136,22 @@
                     }
                 },
                 "question": "Chi può prendere in prestito le biciclette qua?"
+            },
+            "bicycle_library-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Il prestito di una bicicletta è gratuito"
+                    },
+                    "1": {
+                        "then": "Il prestito di una bicicletta costa 20 €/anno più 20 € di garanzia"
+                    }
+                },
+                "question": "Quanto costa il prestito di una bicicletta?",
+                "render": "Il prestito di una bicicletta costa {charge}"
+            },
+            "bicycle_library-name": {
+                "question": "Qual è il nome di questo “bici in prestito”?",
+                "render": "Il “bici in prestito” è chiamato {name}"
             }
         },
         "title": {
@@ -166,7 +166,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "Still in use?": {
                 "mappings": {
                     "0": {
                         "then": "Il distributore automatico funziona"
@@ -194,11 +194,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "question": "Qual è il nome di questo caffè in bici?",
-                "render": "Questo caffè in bici è chiamato {name}"
-            },
-            "2": {
+            "bike_cafe-bike-pump": {
                 "mappings": {
                     "0": {
                         "then": "Questo caffè in bici offre una pompa per bici liberamente utilizzabile"
@@ -209,18 +205,20 @@
                 },
                 "question": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?"
             },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo caffè in bici fornisce degli attrezzi per la riparazione fai-da-te"
-                    },
-                    "1": {
-                        "then": "Questo caffè in bici non fornisce degli attrezzi per la riparazione fai-da-te"
-                    }
-                },
-                "question": "Ci sono degli strumenti per riparare la propria bicicletta?"
+            "bike_cafe-email": {
+                "question": "Qual è l’indirizzo email di {name}?"
             },
-            "4": {
+            "bike_cafe-name": {
+                "question": "Qual è il nome di questo caffè in bici?",
+                "render": "Questo caffè in bici è chiamato {name}"
+            },
+            "bike_cafe-opening_hours": {
+                "question": "Quando è aperto questo caffè in bici?"
+            },
+            "bike_cafe-phone": {
+                "question": "Qual è il numero di telefono di {name}?"
+            },
+            "bike_cafe-repair-service": {
                 "mappings": {
                     "0": {
                         "then": "Questo caffè in bici ripara le bici"
@@ -231,17 +229,19 @@
                 },
                 "question": "Questo caffè in bici ripara le bici?"
             },
-            "5": {
+            "bike_cafe-repair-tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo caffè in bici fornisce degli attrezzi per la riparazione fai-da-te"
+                    },
+                    "1": {
+                        "then": "Questo caffè in bici non fornisce degli attrezzi per la riparazione fai-da-te"
+                    }
+                },
+                "question": "Ci sono degli strumenti per riparare la propria bicicletta?"
+            },
+            "bike_cafe-website": {
                 "question": "Qual è il sito web di {name}?"
-            },
-            "6": {
-                "question": "Qual è il numero di telefono di {name}?"
-            },
-            "7": {
-                "question": "Qual è l’indirizzo email di {name}?"
-            },
-            "8": {
-                "question": "Quando è aperto questo caffè in bici?"
             }
         },
         "title": {
@@ -269,20 +269,6 @@
             "render": "Servizio lavaggio bici"
         }
     },
-    "bike_monitoring_station": {
-        "name": "Stazioni di monitoraggio",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Contabiciclette {name}"
-                },
-                "1": {
-                    "then": "Contabiciclette {ref}"
-                }
-            },
-            "render": "Contabiciclette"
-        }
-    },
     "bike_parking": {
         "name": "Parcheggio bici",
         "presets": {
@@ -291,7 +277,22 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "Access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accessibile pubblicamente"
+                    },
+                    "1": {
+                        "then": "Accesso destinato principalmente ai visitatori di un’attività"
+                    },
+                    "2": {
+                        "then": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione"
+                    }
+                },
+                "question": "Chi può usare questo parcheggio bici?",
+                "render": "{access}"
+            },
+            "Bicycle parking type": {
                 "mappings": {
                     "0": {
                         "then": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
@@ -321,7 +322,40 @@
                 "question": "Di che tipo di parcheggio bici si tratta?",
                 "render": "È un parcheggio bici del tipo: {bicycle_parking}"
             },
-            "2": {
+            "Capacity": {
+                "question": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici da trasporto)?",
+                "render": "Posti per {capacity} bici"
+            },
+            "Cargo bike capacity?": {
+                "question": "Quante bici da trasporto entrano in questo parcheggio per bici?",
+                "render": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto"
+            },
+            "Cargo bike spaces?": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo parcheggio ha posto per bici da trasporto"
+                    },
+                    "1": {
+                        "then": "Questo parcheggio ha posti destinati (ufficialmente) alle bici da trasporto."
+                    },
+                    "2": {
+                        "then": "Il parcheggio delle bici da trasporto è proibito"
+                    }
+                },
+                "question": "Questo parcheggio dispone di posti specifici per le bici da trasporto?"
+            },
+            "Is covered?": {
+                "mappings": {
+                    "0": {
+                        "then": "È un parcheggio coperto (ha un tetto)"
+                    },
+                    "1": {
+                        "then": "Non è un parcheggio coperto"
+                    }
+                },
+                "question": "È un parcheggio coperto? Indicare “coperto” per parcheggi all’interno."
+            },
+            "Underground?": {
                 "mappings": {
                     "0": {
                         "then": "Parcheggio sotterraneo"
@@ -340,54 +374,6 @@
                     }
                 },
                 "question": "Qual è la posizione relativa di questo parcheggio bici?"
-            },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "È un parcheggio coperto (ha un tetto)"
-                    },
-                    "1": {
-                        "then": "Non è un parcheggio coperto"
-                    }
-                },
-                "question": "È un parcheggio coperto? Indicare “coperto” per parcheggi all’interno."
-            },
-            "4": {
-                "question": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici da trasporto)?",
-                "render": "Posti per {capacity} bici"
-            },
-            "5": {
-                "mappings": {
-                    "0": {
-                        "then": "Accessibile pubblicamente"
-                    },
-                    "1": {
-                        "then": "Accesso destinato principalmente ai visitatori di un’attività"
-                    },
-                    "2": {
-                        "then": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione"
-                    }
-                },
-                "question": "Chi può usare questo parcheggio bici?",
-                "render": "{access}"
-            },
-            "6": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo parcheggio ha posto per bici da trasporto"
-                    },
-                    "1": {
-                        "then": "Questo parcheggio ha posti destinati (ufficialmente) alle bici da trasporto."
-                    },
-                    "2": {
-                        "then": "Il parcheggio delle bici da trasporto è proibito"
-                    }
-                },
-                "question": "Questo parcheggio dispone di posti specifici per le bici da trasporto?"
-            },
-            "7": {
-                "question": "Quante bici da trasporto entrano in questo parcheggio per bici?",
-                "render": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto"
             }
         },
         "title": {
@@ -413,7 +399,18 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "La pompa per bici è guasta"
+                    },
+                    "1": {
+                        "then": "La pompa per bici funziona"
+                    }
+                },
+                "question": "La pompa per bici è sempre funzionante?"
+            },
+            "bike_repair_station-available-services": {
                 "mappings": {
                     "0": {
                         "then": "C’è solamente una pompa presente"
@@ -427,22 +424,7 @@
                 },
                 "question": "Quali servizi sono disponibili in questa stazione per bici?"
             },
-            "2": {
-                "question": "Chi gestisce questa pompa per bici?",
-                "render": "Manutenuta da {operator}"
-            },
-            "5": {
-                "mappings": {
-                    "0": {
-                        "then": "Sempre aperto"
-                    },
-                    "1": {
-                        "then": "Sempre aperto"
-                    }
-                },
-                "question": "Quando è aperto questo punto riparazione bici?"
-            },
-            "6": {
+            "bike_repair_station-bike-chain-tool": {
                 "mappings": {
                     "0": {
                         "then": "È presente un utensile per riparare la catena"
@@ -453,7 +435,7 @@
                 },
                 "question": "Questa stazione di riparazione bici ha un attrezzo speciale per riparare la catena della bici?"
             },
-            "7": {
+            "bike_repair_station-bike-stand": {
                 "mappings": {
                     "0": {
                         "then": "C’è un gancio o un supporto"
@@ -464,18 +446,47 @@
                 },
                 "question": "Questa stazione bici ha un gancio per tenere sospesa la bici o un supporto per alzarla?"
             },
-            "8": {
+            "bike_repair_station-electrical_pump": {
                 "mappings": {
                     "0": {
-                        "then": "La pompa per bici è guasta"
+                        "then": "Pompa manuale"
                     },
                     "1": {
-                        "then": "La pompa per bici funziona"
+                        "then": "Pompa elettrica"
                     }
                 },
-                "question": "La pompa per bici è sempre funzionante?"
+                "question": "Questa pompa per bici è elettrica?"
             },
-            "10": {
+            "bike_repair_station-manometer": {
+                "mappings": {
+                    "0": {
+                        "then": "C’è un manometro"
+                    },
+                    "1": {
+                        "then": "Non c’è un manometro"
+                    },
+                    "2": {
+                        "then": "C’è un manometro ma è rotto"
+                    }
+                },
+                "question": "Questa pompa ha l’indicatore della pressione o il manometro?"
+            },
+            "bike_repair_station-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Sempre aperto"
+                    },
+                    "1": {
+                        "then": "Sempre aperto"
+                    }
+                },
+                "question": "Quando è aperto questo punto riparazione bici?"
+            },
+            "bike_repair_station-operator": {
+                "question": "Chi gestisce questa pompa per bici?",
+                "render": "Manutenuta da {operator}"
+            },
+            "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
                         "then": "Sclaverand (detta anche Presta)"
@@ -489,31 +500,6 @@
                 },
                 "question": "Quali valvole sono supportate?",
                 "render": "Questa pompa è compatibile con le seguenti valvole: {valves}"
-            },
-            "11": {
-                "mappings": {
-                    "0": {
-                        "then": "Pompa manuale"
-                    },
-                    "1": {
-                        "then": "Pompa elettrica"
-                    }
-                },
-                "question": "Questa pompa per bici è elettrica?"
-            },
-            "12": {
-                "mappings": {
-                    "0": {
-                        "then": "C’è un manometro"
-                    },
-                    "1": {
-                        "then": "Non c’è un manometro"
-                    },
-                    "2": {
-                        "then": "C’è un manometro ma è rotto"
-                    }
-                },
-                "question": "Questa pompa ha l’indicatore della pressione o il manometro?"
             }
         },
         "title": {
@@ -546,34 +532,46 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "render": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette"
-            },
-            "2": {
-                "question": "Qual è il nome di questo negozio di biciclette?",
-                "render": "Questo negozio di biciclette è chiamato {name}"
-            },
-            "3": {
-                "question": "Qual è il sito web di {name}?"
-            },
-            "4": {
-                "question": "Qual è il numero di telefono di {name}?"
-            },
-            "5": {
-                "question": "Qual è l’indirizzo email di {name}?"
-            },
-            "9": {
+            "bike_repair_bike-pump-service": {
                 "mappings": {
                     "0": {
-                        "then": "Questo negozio vende bici"
+                        "then": "Questo negozio offre l’uso pubblico di una pompa per bici"
                     },
                     "1": {
-                        "then": "Questo negozio non vende bici"
+                        "then": "Questo negozio non offre l’uso pubblico di una pompa per bici"
+                    },
+                    "2": {
+                        "then": "C’è una pompa per bici, è mostrata come punto separato "
                     }
                 },
-                "question": "Questo negozio vende bici?"
+                "question": "Questo negozio offre l’uso a chiunque di una pompa per bici?"
             },
-            "10": {
+            "bike_repair_bike-wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo negozio lava le biciclette"
+                    },
+                    "1": {
+                        "then": "Questo negozio ha una struttura dove è possibile pulire la propria bici"
+                    },
+                    "2": {
+                        "then": "Questo negozio non offre la pulizia della bicicletta"
+                    }
+                },
+                "question": "Vengono lavate le bici qua?"
+            },
+            "bike_repair_rents-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo negozio noleggia le bici"
+                    },
+                    "1": {
+                        "then": "Questo negozio non noleggia le bici"
+                    }
+                },
+                "question": "Questo negozio noleggia le bici?"
+            },
+            "bike_repair_repairs-bikes": {
                 "mappings": {
                     "0": {
                         "then": "Questo negozio ripara bici"
@@ -590,18 +588,7 @@
                 },
                 "question": "Questo negozio ripara bici?"
             },
-            "11": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio noleggia le bici"
-                    },
-                    "1": {
-                        "then": "Questo negozio non noleggia le bici"
-                    }
-                },
-                "question": "Questo negozio noleggia le bici?"
-            },
-            "12": {
+            "bike_repair_second-hand-bikes": {
                 "mappings": {
                     "0": {
                         "then": "Questo negozio vende bici usate"
@@ -615,21 +602,18 @@
                 },
                 "question": "Questo negozio vende bici usate?"
             },
-            "13": {
+            "bike_repair_sells-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Questo negozio offre l’uso pubblico di una pompa per bici"
+                        "then": "Questo negozio vende bici"
                     },
                     "1": {
-                        "then": "Questo negozio non offre l’uso pubblico di una pompa per bici"
-                    },
-                    "2": {
-                        "then": "C’è una pompa per bici, è mostrata come punto separato "
+                        "then": "Questo negozio non vende bici"
                     }
                 },
-                "question": "Questo negozio offre l’uso a chiunque di una pompa per bici?"
+                "question": "Questo negozio vende bici?"
             },
-            "14": {
+            "bike_repair_tools-service": {
                 "mappings": {
                     "0": {
                         "then": "Questo negozio offre degli attrezzi per la riparazione fai-da-te"
@@ -643,19 +627,21 @@
                 },
                 "question": "Sono presenti degli attrezzi per riparare la propria bici?"
             },
-            "15": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio lava le biciclette"
-                    },
-                    "1": {
-                        "then": "Questo negozio ha una struttura dove è possibile pulire la propria bici"
-                    },
-                    "2": {
-                        "then": "Questo negozio non offre la pulizia della bicicletta"
-                    }
-                },
-                "question": "Vengono lavate le bici qua?"
+            "bike_shop-email": {
+                "question": "Qual è l’indirizzo email di {name}?"
+            },
+            "bike_shop-is-bicycle_shop": {
+                "render": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette"
+            },
+            "bike_shop-name": {
+                "question": "Qual è il nome di questo negozio di biciclette?",
+                "render": "Questo negozio di biciclette è chiamato {name}"
+            },
+            "bike_shop-phone": {
+                "question": "Qual è il numero di telefono di {name}?"
+            },
+            "bike_shop-website": {
+                "question": "Qual è il sito web di {name}?"
             }
         },
         "title": {
@@ -694,12 +680,12 @@
         "description": "Una stazione di ricarica",
         "name": "Stazioni di ricarica",
         "tagRenderings": {
-            "41": {
-                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
-            },
-            "42": {
+            "Auth phone": {
                 "question": "A quale rete appartiene questa stazione di ricarica?",
                 "render": "{network}"
+            },
+            "Authentication": {
+                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
             }
         },
         "title": {
@@ -721,18 +707,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo defibrillatore si trova all’interno"
-                    },
-                    "1": {
-                        "then": "Questo defibrillatore si trova all’esterno"
-                    }
-                },
-                "question": "Questo defibrillatore si trova all’interno?"
-            },
-            "2": {
+            "defibrillator-access": {
                 "mappings": {
                     "0": {
                         "then": "Pubblicamente accessibile"
@@ -753,7 +728,7 @@
                 "question": "Questo defibrillatore è liberamente accessibile?",
                 "render": "Accesso è {access}"
             },
-            "3": {
+            "defibrillator-defibrillator": {
                 "mappings": {
                     "0": {
                         "then": "Questo è un defibrillatore manuale per professionisti"
@@ -765,7 +740,42 @@
                 "question": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
                 "render": "Non vi sono informazioni riguardanti il tipo di questo dispositivo"
             },
-            "4": {
+            "defibrillator-defibrillator:location": {
+                "question": "Indica più precisamente dove si trova il defibrillatore (in lingua locale)",
+                "render": "<i>Informazioni supplementari circa la posizione (in lingua locale):</i><br/>{defibrillator:location}"
+            },
+            "defibrillator-defibrillator:location:en": {
+                "question": "Indica più precisamente dove si trova il defibrillatore (in inglese)",
+                "render": "<i>Informazioni supplementari circa la posizione (in inglese):</i><br/>{defibrillator:location:en}"
+            },
+            "defibrillator-defibrillator:location:fr": {
+                "question": "Indica più precisamente dove si trova il defibrillatore (in francese)",
+                "render": "<i>Informazioni supplementari circa la posizione (in francese):</i><br/>{defibrillator:location:fr}"
+            },
+            "defibrillator-description": {
+                "question": "Vi sono altre informazioni utili agli utenti che non è stato possibile aggiungere prima? (lasciare vuoto in caso negativo)",
+                "render": "Informazioni supplementari: {description}"
+            },
+            "defibrillator-email": {
+                "question": "Qual è l’indirizzo email per le domande riguardanti questo defibrillatore?",
+                "render": "Indirizzo email per le domande su questo defibrillatore:<a href='mailto:{email}'>{email}</a>"
+            },
+            "defibrillator-fixme": {
+                "question": "C’è qualcosa di sbagliato riguardante come è stato mappato, che non si è potuto correggere qua? (lascia una nota agli esperti di OpenStreetMap)",
+                "render": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}"
+            },
+            "defibrillator-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo defibrillatore si trova all’interno"
+                    },
+                    "1": {
+                        "then": "Questo defibrillatore si trova all’esterno"
+                    }
+                },
+                "question": "Questo defibrillatore si trova all’interno?"
+            },
+            "defibrillator-level": {
                 "mappings": {
                     "0": {
                         "then": "Questo defibrillatore è al <b>pian terreno</b>"
@@ -777,31 +787,7 @@
                 "question": "A che piano si trova questo defibrillatore?",
                 "render": "Questo defibrillatore è al piano {level}"
             },
-            "5": {
-                "question": "Indica più precisamente dove si trova il defibrillatore (in lingua locale)",
-                "render": "<i>Informazioni supplementari circa la posizione (in lingua locale):</i><br/>{defibrillator:location}"
-            },
-            "6": {
-                "question": "Indica più precisamente dove si trova il defibrillatore (in inglese)",
-                "render": "<i>Informazioni supplementari circa la posizione (in inglese):</i><br/>{defibrillator:location:en}"
-            },
-            "7": {
-                "question": "Indica più precisamente dove si trova il defibrillatore (in francese)",
-                "render": "<i>Informazioni supplementari circa la posizione (in francese):</i><br/>{defibrillator:location:fr}"
-            },
-            "9": {
-                "question": "Qual è il numero identificativo ufficiale di questo dispositivo? (se visibile sul dispositivo)",
-                "render": "Numero identificativo ufficiale di questo dispositivo:<i>{ref}</i>"
-            },
-            "10": {
-                "question": "Qual è l’indirizzo email per le domande riguardanti questo defibrillatore?",
-                "render": "Indirizzo email per le domande su questo defibrillatore:<a href='mailto:{email}'>{email}</a>"
-            },
-            "11": {
-                "question": "Qual è il numero di telefono per le domande riguardanti questo defibrillatore?",
-                "render": "Numero di telefono per le domande su questo defibrillatore:<a href='tel:{phone}'>{phone}</a>"
-            },
-            "12": {
+            "defibrillator-opening_hours": {
                 "mappings": {
                     "0": {
                         "then": "Aperto 24/7 (festivi inclusi)"
@@ -810,11 +796,15 @@
                 "question": "In quali orari è disponibile questo defibrillatore?",
                 "render": "{opening_hours_table(opening_hours)}"
             },
-            "13": {
-                "question": "Vi sono altre informazioni utili agli utenti che non è stato possibile aggiungere prima? (lasciare vuoto in caso negativo)",
-                "render": "Informazioni supplementari: {description}"
+            "defibrillator-phone": {
+                "question": "Qual è il numero di telefono per le domande riguardanti questo defibrillatore?",
+                "render": "Numero di telefono per le domande su questo defibrillatore:<a href='tel:{phone}'>{phone}</a>"
             },
-            "14": {
+            "defibrillator-ref": {
+                "question": "Qual è il numero identificativo ufficiale di questo dispositivo? (se visibile sul dispositivo)",
+                "render": "Numero identificativo ufficiale di questo dispositivo:<i>{ref}</i>"
+            },
+            "defibrillator-survey:date": {
                 "mappings": {
                     "0": {
                         "then": "Verificato oggi!"
@@ -822,10 +812,6 @@
                 },
                 "question": "Quando è stato verificato per l’ultima volta questo defibrillatore?",
                 "render": "Questo defibrillatore è stato verificato per l‘ultima volta in data {survey:date}"
-            },
-            "15": {
-                "question": "C’è qualcosa di sbagliato riguardante come è stato mappato, che non si è potuto correggere qua? (lascia una nota agli esperti di OpenStreetMap)",
-                "render": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}"
             }
         },
         "title": {
@@ -844,7 +830,18 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "Bottle refill": {
+                "mappings": {
+                    "0": {
+                        "then": "È facile riempire d’acqua le bottiglie"
+                    },
+                    "1": {
+                        "then": "Le bottiglie d’acqua potrebbero non entrare"
+                    }
+                },
+                "question": "Quanto è facile riempire d’acqua le bottiglie?"
+            },
+            "Still in use?": {
                 "mappings": {
                     "0": {
                         "then": "La fontanella funziona"
@@ -859,18 +856,7 @@
                 "question": "Questo punto di acqua potabile è sempre funzionante?",
                 "render": "Lo stato operativo è <i>{operational_status}</i>"
             },
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "È facile riempire d’acqua le bottiglie"
-                    },
-                    "1": {
-                        "then": "Le bottiglie d’acqua potrebbero non entrare"
-                    }
-                },
-                "question": "Quanto è facile riempire d’acqua le bottiglie?"
-            },
-            "3": {
+            "render-closest-drinking-water": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>C’è un’altra fontanella a {_closest_other_drinking_water_distance} metri</a>"
             }
         },
@@ -886,10 +872,14 @@
             }
         },
         "tagRenderings": {
-            "0": {
+            "ghost-bike-explanation": {
                 "render": "Una <b>bici fantasma</b> è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente."
             },
-            "2": {
+            "ghost_bike-inscription": {
+                "question": "Che cosa è scritto sulla bici fantasma?",
+                "render": "<i>{inscription}</i>"
+            },
+            "ghost_bike-name": {
                 "mappings": {
                     "0": {
                         "then": "Nessun nome scritto sulla bici"
@@ -898,15 +888,11 @@
                 "question": "A chi è dedicata questa bici fantasma?<span class='question-subtext'><br/>Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.</span>",
                 "render": "In ricordo di {name}"
             },
-            "3": {
+            "ghost_bike-source": {
                 "question": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
                 "render": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>"
             },
-            "4": {
-                "question": "Che cosa è scritto sulla bici fantasma?",
-                "render": "<i>{inscription}</i>"
-            },
-            "5": {
+            "ghost_bike-start_date": {
                 "question": "Quando è stata installata questa bici fantasma?",
                 "render": "Piazzata in data {start_date}"
             }
@@ -941,16 +927,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Questa mappa si basa su OpenStreetMap"
-                    }
-                },
-                "question": "Su quali dati si basa questa mappa?",
-                "render": "Questa mappa si basa su {map_source}"
-            },
-            "2": {
+            "map-attribution": {
                 "mappings": {
                     "0": {
                         "then": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL"
@@ -969,6 +946,15 @@
                     }
                 },
                 "question": "L’attribuzione a OpenStreetMap è presente?"
+            },
+            "map-map_source": {
+                "mappings": {
+                    "0": {
+                        "then": "Questa mappa si basa su OpenStreetMap"
+                    }
+                },
+                "question": "Su quali dati si basa questa mappa?",
+                "render": "Questa mappa si basa su {map_source}"
             }
         },
         "title": {
@@ -977,7 +963,11 @@
     },
     "nature_reserve": {
         "tagRenderings": {
-            "5": {
+            "Curator": {
+                "question": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
+                "render": "{curator} è il curatore di questa riserva naturale"
+            },
+            "Dogs?": {
                 "mappings": {
                     "0": {
                         "then": "I cani devono essere tenuti al guinzaglio"
@@ -991,23 +981,19 @@
                 },
                 "question": "I cani sono ammessi in questa riserva naturale?"
             },
-            "6": {
-                "question": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?"
-            },
-            "7": {
-                "question": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
-                "render": "{curator} è il curatore di questa riserva naturale"
-            },
-            "8": {
+            "Email": {
                 "question": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
-            "9": {
+            "Surface area": {
+                "render": "Area: {_surface:ha} ha"
+            },
+            "Website": {
+                "question": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?"
+            },
+            "phone": {
                 "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "12": {
-                "render": "Area: {_surface:ha} ha"
             }
         }
     },
@@ -1020,7 +1006,7 @@
             }
         },
         "tagRenderings": {
-            "0": {
+            "picnic_table-material": {
                 "mappings": {
                     "0": {
                         "then": "È un tavolo da picnic in legno"
@@ -1046,7 +1032,86 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "Playground-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Completamente accessibile in sedia a rotelle"
+                    },
+                    "1": {
+                        "then": "Accesso limitato in sedia a rotelle"
+                    },
+                    "2": {
+                        "then": "Non accessibile in sedia a rotelle"
+                    }
+                },
+                "question": "Il campetto è accessibile a persone in sedia a rotelle?"
+            },
+            "playground-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accessibile pubblicamente"
+                    },
+                    "1": {
+                        "then": "Accessibile pubblicamente"
+                    },
+                    "2": {
+                        "then": "Accessibile solamente ai clienti dell’attività che lo gestisce"
+                    },
+                    "3": {
+                        "then": "Accessibile solamente agli studenti della scuola"
+                    },
+                    "4": {
+                        "then": "Non accessibile"
+                    }
+                },
+                "question": "Questo parco giochi è pubblicamente accessibile?"
+            },
+            "playground-email": {
+                "question": "Qual è l’indirizzo email del gestore di questo parco giochi?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "playground-lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo parco giochi è illuminato di notte"
+                    },
+                    "1": {
+                        "then": "Questo parco giochi non è illuminato di notte"
+                    }
+                },
+                "question": "È illuminato di notte questo parco giochi?"
+            },
+            "playground-max_age": {
+                "question": "Qual è l’età massima per accedere a questo parco giochi?",
+                "render": "Accessibile ai bambini di età inferiore a {max_age}"
+            },
+            "playground-min_age": {
+                "question": "Qual è l’età minima per accedere a questo parco giochi?",
+                "render": "Accessibile ai bambini di almeno {min_age} anni"
+            },
+            "playground-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Si può accedere dall'alba al tramonto"
+                    },
+                    "1": {
+                        "then": "Si può sempre accedere"
+                    },
+                    "2": {
+                        "then": "Si può sempre accedere"
+                    }
+                },
+                "question": "Quando si può accedere a questo campetto?"
+            },
+            "playground-operator": {
+                "question": "Chi è il responsabile di questo parco giochi?",
+                "render": "Gestito da {operator}"
+            },
+            "playground-phone": {
+                "question": "Qual è il numero di telefono del gestore del campetto?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "playground-surface": {
                 "mappings": {
                     "0": {
                         "then": "La superficie è <b>prato</b>"
@@ -1075,85 +1140,6 @@
                 },
                 "question": "Qual è la superficie di questo parco giochi?<br/><i>Se ve ne è più di una, seleziona quella predominante</i>",
                 "render": "La superficie è <b>{surface}</b>"
-            },
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo parco giochi è illuminato di notte"
-                    },
-                    "1": {
-                        "then": "Questo parco giochi non è illuminato di notte"
-                    }
-                },
-                "question": "È illuminato di notte questo parco giochi?"
-            },
-            "3": {
-                "question": "Qual è l’età minima per accedere a questo parco giochi?",
-                "render": "Accessibile ai bambini di almeno {min_age} anni"
-            },
-            "4": {
-                "question": "Qual è l’età massima per accedere a questo parco giochi?",
-                "render": "Accessibile ai bambini di età inferiore a {max_age}"
-            },
-            "5": {
-                "question": "Chi è il responsabile di questo parco giochi?",
-                "render": "Gestito da {operator}"
-            },
-            "6": {
-                "mappings": {
-                    "0": {
-                        "then": "Accessibile pubblicamente"
-                    },
-                    "1": {
-                        "then": "Accessibile pubblicamente"
-                    },
-                    "2": {
-                        "then": "Accessibile solamente ai clienti dell’attività che lo gestisce"
-                    },
-                    "3": {
-                        "then": "Accessibile solamente agli studenti della scuola"
-                    },
-                    "4": {
-                        "then": "Non accessibile"
-                    }
-                },
-                "question": "Questo parco giochi è pubblicamente accessibile?"
-            },
-            "7": {
-                "question": "Qual è l’indirizzo email del gestore di questo parco giochi?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "8": {
-                "question": "Qual è il numero di telefono del gestore del campetto?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "9": {
-                "mappings": {
-                    "0": {
-                        "then": "Completamente accessibile in sedia a rotelle"
-                    },
-                    "1": {
-                        "then": "Accesso limitato in sedia a rotelle"
-                    },
-                    "2": {
-                        "then": "Non accessibile in sedia a rotelle"
-                    }
-                },
-                "question": "Il campetto è accessibile a persone in sedia a rotelle?"
-            },
-            "10": {
-                "mappings": {
-                    "0": {
-                        "then": "Si può accedere dall'alba al tramonto"
-                    },
-                    "1": {
-                        "then": "Si può sempre accedere"
-                    },
-                    "2": {
-                        "then": "Si può sempre accedere"
-                    }
-                },
-                "question": "Quando si può accedere a questo campetto?"
             }
         },
         "title": {
@@ -1174,20 +1160,7 @@
             }
         },
         "tagRenderings": {
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "Questa microbiblioteca non ha un nome proprio"
-                    }
-                },
-                "question": "Come si chiama questa microbiblioteca pubblica?",
-                "render": "Questa microbiblioteca si chiama {name}"
-            },
-            "3": {
-                "question": "Quanti libri può contenere questa microbiblioteca?",
-                "render": "Questa microbiblioteca può contenere fino a {capacity} libri"
-            },
-            "4": {
+            "bookcase-booktypes": {
                 "mappings": {
                     "0": {
                         "then": "Principalmente libri per l'infanzia"
@@ -1201,7 +1174,18 @@
                 },
                 "question": "Che tipo di libri si possono trovare in questa microbiblioteca?"
             },
-            "5": {
+            "bookcase-is-accessible": {
+                "mappings": {
+                    "0": {
+                        "then": "È ad accesso libero"
+                    },
+                    "1": {
+                        "then": "L'accesso è riservato ai clienti"
+                    }
+                },
+                "question": "Questa microbiblioteca è ad accesso libero?"
+            },
+            "bookcase-is-indoors": {
                 "mappings": {
                     "0": {
                         "then": "Questa microbiblioteca si trova al chiuso"
@@ -1215,22 +1199,7 @@
                 },
                 "question": "Questa microbiblioteca si trova all'aperto?"
             },
-            "6": {
-                "mappings": {
-                    "0": {
-                        "then": "È ad accesso libero"
-                    },
-                    "1": {
-                        "then": "L'accesso è riservato ai clienti"
-                    }
-                },
-                "question": "Questa microbiblioteca è ad accesso libero?"
-            },
-            "7": {
-                "question": "Chi mantiene questa microbiblioteca?",
-                "render": "È gestita da {operator}"
-            },
-            "8": {
+            "public_bookcase-brand": {
                 "mappings": {
                     "0": {
                         "then": "Fa parte della rete 'Little Free Library'"
@@ -1242,7 +1211,24 @@
                 "question": "Questa microbiblioteca fa parte di una rete?",
                 "render": "Questa microbiblioteca fa parte di {brand}"
             },
-            "9": {
+            "public_bookcase-capacity": {
+                "question": "Quanti libri può contenere questa microbiblioteca?",
+                "render": "Questa microbiblioteca può contenere fino a {capacity} libri"
+            },
+            "public_bookcase-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Questa microbiblioteca non ha un nome proprio"
+                    }
+                },
+                "question": "Come si chiama questa microbiblioteca pubblica?",
+                "render": "Questa microbiblioteca si chiama {name}"
+            },
+            "public_bookcase-operator": {
+                "question": "Chi mantiene questa microbiblioteca?",
+                "render": "È gestita da {operator}"
+            },
+            "public_bookcase-ref": {
                 "mappings": {
                     "0": {
                         "then": "Questa microbiblioteca non fa parte di una rete"
@@ -1251,11 +1237,11 @@
                 "question": "Qual è il numero identificativo di questa microbiblioteca?",
                 "render": "Il numero identificativo di questa microbiblioteca nella rete {brand} è {ref}"
             },
-            "10": {
+            "public_bookcase-start_date": {
                 "question": "Quando è stata inaugurata questa microbiblioteca?",
                 "render": "È stata inaugurata il {start_date}"
             },
-            "11": {
+            "public_bookcase-website": {
                 "question": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
                 "render": "Maggiori informazioni sul <a href='{website}' target='_blank'>sito web</a>"
             }
@@ -1271,7 +1257,7 @@
     },
     "slow_roads": {
         "tagRenderings": {
-            "2": {
+            "slow_roads-surface": {
                 "mappings": {
                     "0": {
                         "then": "La superficie è <b>erba</b>"
@@ -1314,7 +1300,55 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "sport-pitch-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Aperto al pubblico"
+                    },
+                    "1": {
+                        "then": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)"
+                    },
+                    "2": {
+                        "then": "Accesso limitato ai membri dell'associazione"
+                    },
+                    "3": {
+                        "then": "Privato - non aperto al pubblico"
+                    }
+                },
+                "question": "Questo campo sportivo è aperto al pubblico?"
+            },
+            "sport-pitch-reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "La prenotazione è obbligatoria per usare questo campo sportivo"
+                    },
+                    "1": {
+                        "then": "La prenotazione è consigliata per usare questo campo sportivo"
+                    },
+                    "2": {
+                        "then": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo"
+                    },
+                    "3": {
+                        "then": "Non è possibile prenotare"
+                    }
+                },
+                "question": "È necessario prenotarsi per usare questo campo sportivo?"
+            },
+            "sport_pitch-email": {
+                "question": "Qual è l'indirizzo email del gestore?"
+            },
+            "sport_pitch-opening_hours": {
+                "mappings": {
+                    "1": {
+                        "then": "Sempre aperto"
+                    }
+                },
+                "question": "Quando è aperto questo campo sportivo?"
+            },
+            "sport_pitch-phone": {
+                "question": "Qual è il numero di telefono del gestore?"
+            },
+            "sport_pitch-sport": {
                 "mappings": {
                     "0": {
                         "then": "Qui si gioca a basket"
@@ -1338,7 +1372,7 @@
                 "question": "Quale sport si gioca qui?",
                 "render": "Qui si gioca a {sport}"
             },
-            "2": {
+            "sport_pitch-surface": {
                 "mappings": {
                     "0": {
                         "then": "La superficie è <b>erba</b>"
@@ -1358,54 +1392,6 @@
                 },
                 "question": "Qual è la superficie di questo campo sportivo?",
                 "render": "La superficie è <b>{surface}</b>"
-            },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "Aperto al pubblico"
-                    },
-                    "1": {
-                        "then": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)"
-                    },
-                    "2": {
-                        "then": "Accesso limitato ai membri dell'associazione"
-                    },
-                    "3": {
-                        "then": "Privato - non aperto al pubblico"
-                    }
-                },
-                "question": "Questo campo sportivo è aperto al pubblico?"
-            },
-            "4": {
-                "mappings": {
-                    "0": {
-                        "then": "La prenotazione è obbligatoria per usare questo campo sportivo"
-                    },
-                    "1": {
-                        "then": "La prenotazione è consigliata per usare questo campo sportivo"
-                    },
-                    "2": {
-                        "then": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo"
-                    },
-                    "3": {
-                        "then": "Non è possibile prenotare"
-                    }
-                },
-                "question": "È necessario prenotarsi per usare questo campo sportivo?"
-            },
-            "5": {
-                "question": "Qual è il numero di telefono del gestore?"
-            },
-            "6": {
-                "question": "Qual è l'indirizzo email del gestore?"
-            },
-            "7": {
-                "mappings": {
-                    "1": {
-                        "then": "Sempre aperto"
-                    }
-                },
-                "question": "Quando è aperto questo campo sportivo?"
             }
         },
         "title": {
@@ -1415,7 +1401,7 @@
     "surveillance_camera": {
         "name": "Videocamere di sorveglianza",
         "tagRenderings": {
-            "1": {
+            "Camera type: fixed; panning; dome": {
                 "mappings": {
                     "0": {
                         "then": "Una videocamera fissa (non semovente)"
@@ -1429,34 +1415,7 @@
                 },
                 "question": "Di che tipo di videocamera si tratta?"
             },
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "Punta in direzione {direction}"
-                    }
-                },
-                "question": "In quale direzione geografica punta questa videocamera?",
-                "render": "Punta in direzione {camera:direction}"
-            },
-            "3": {
-                "question": "Chi gestisce questa videocamera a circuito chiuso?",
-                "render": "È gestita da {operator}"
-            },
-            "4": {
-                "mappings": {
-                    "0": {
-                        "then": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, ..."
-                    },
-                    "1": {
-                        "then": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)"
-                    },
-                    "2": {
-                        "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
-                    }
-                },
-                "question": "Che cosa sorveglia questa videocamera"
-            },
-            "5": {
+            "Indoor camera? This isn't clear for 'public'-cameras": {
                 "mappings": {
                     "0": {
                         "then": "Questa videocamera si trova al chiuso"
@@ -1470,11 +1429,29 @@
                 },
                 "question": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?"
             },
-            "6": {
+            "Level": {
                 "question": "A che piano si trova questa videocamera?",
                 "render": "Si trova al piano {level}"
             },
-            "7": {
+            "Operator": {
+                "question": "Chi gestisce questa videocamera a circuito chiuso?",
+                "render": "È gestita da {operator}"
+            },
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, ..."
+                    },
+                    "1": {
+                        "then": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)"
+                    },
+                    "2": {
+                        "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
+                    }
+                },
+                "question": "Che cosa sorveglia questa videocamera"
+            },
+            "Surveillance:zone": {
                 "mappings": {
                     "0": {
                         "then": "Sorveglia un parcheggio"
@@ -1498,7 +1475,7 @@
                 "question": "Che cosa è sorvegliato qui?",
                 "render": " Sorveglia una {surveillance:zone}"
             },
-            "8": {
+            "camera:mount": {
                 "mappings": {
                     "0": {
                         "then": "Questa telecamera è posizionata contro un muro"
@@ -1512,6 +1489,15 @@
                 },
                 "question": "Com'è posizionata questa telecamera?",
                 "render": "Metodo di montaggio: {mount}"
+            },
+            "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
+                "mappings": {
+                    "0": {
+                        "then": "Punta in direzione {direction}"
+                    }
+                },
+                "question": "In quale direzione geografica punta questa videocamera?",
+                "render": "Punta in direzione {camera:direction}"
             }
         },
         "title": {
@@ -1531,7 +1517,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "toilet-access": {
                 "mappings": {
                     "0": {
                         "then": "Accesso pubblico"
@@ -1552,61 +1538,7 @@
                 "question": "Questi servizi igienici sono aperti al pubblico?",
                 "render": "L'accesso è {access}"
             },
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "Questi servizi igienici sono a pagamento"
-                    },
-                    "1": {
-                        "then": "Gratis"
-                    }
-                },
-                "question": "Questi servizi igienici sono gratuiti?"
-            },
-            "3": {
-                "question": "Quanto costa l'accesso a questi servizi igienici?",
-                "render": "La tariffa è {charge}"
-            },
-            "4": {
-                "mappings": {
-                    "0": {
-                        "then": "C'è un WC riservato alle persone in sedia a rotelle"
-                    },
-                    "1": {
-                        "then": "Non accessibile in sedia a rotelle"
-                    }
-                },
-                "question": "C'è un WC riservato alle persone in sedia a rotelle"
-            },
-            "5": {
-                "mappings": {
-                    "0": {
-                        "then": "Ci sono solo WC con sedile"
-                    },
-                    "1": {
-                        "then": "Ci sono solo urinali"
-                    },
-                    "2": {
-                        "then": "Ci sono solo turche"
-                    },
-                    "3": {
-                        "then": "Ci sono sia sedili, sia urinali"
-                    }
-                },
-                "question": "Di che tipo di servizi igienici si tratta?"
-            },
-            "6": {
-                "mappings": {
-                    "0": {
-                        "then": "È disponibile un fasciatoio"
-                    },
-                    "1": {
-                        "then": "Non è disponibile un fasciatoio"
-                    }
-                },
-                "question": "È disponibile un fasciatoio (per cambiare i pannolini)?"
-            },
-            "7": {
+            "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
                         "then": "Il fasciatoio è nei servizi igienici femminili. "
@@ -1623,6 +1555,60 @@
                 },
                 "question": "Dove si trova il fasciatoio?",
                 "render": "Il fasciatoio si trova presso {changing_table:location}"
+            },
+            "toilet-charge": {
+                "question": "Quanto costa l'accesso a questi servizi igienici?",
+                "render": "La tariffa è {charge}"
+            },
+            "toilets-changing-table": {
+                "mappings": {
+                    "0": {
+                        "then": "È disponibile un fasciatoio"
+                    },
+                    "1": {
+                        "then": "Non è disponibile un fasciatoio"
+                    }
+                },
+                "question": "È disponibile un fasciatoio (per cambiare i pannolini)?"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Questi servizi igienici sono a pagamento"
+                    },
+                    "1": {
+                        "then": "Gratis"
+                    }
+                },
+                "question": "Questi servizi igienici sono gratuiti?"
+            },
+            "toilets-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Ci sono solo WC con sedile"
+                    },
+                    "1": {
+                        "then": "Ci sono solo urinali"
+                    },
+                    "2": {
+                        "then": "Ci sono solo turche"
+                    },
+                    "3": {
+                        "then": "Ci sono sia sedili, sia urinali"
+                    }
+                },
+                "question": "Di che tipo di servizi igienici si tratta?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "C'è un WC riservato alle persone in sedia a rotelle"
+                    },
+                    "1": {
+                        "then": "Non accessibile in sedia a rotelle"
+                    }
+                },
+                "question": "C'è un WC riservato alle persone in sedia a rotelle"
             }
         },
         "title": {
@@ -1646,29 +1632,18 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "tree-decidouous": {
                 "mappings": {
                     "0": {
-                        "then": "Altezza: {height}&nbsp;m"
-                    }
-                },
-                "render": "Altezza: {height}"
-            },
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Latifoglia"
+                        "then": "Caduco: l’albero perde le sue foglie per un periodo dell’anno."
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Aghifoglia"
-                    },
-                    "2": {
-                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Privo di foglie (permanente)"
+                        "then": "Sempreverde."
                     }
                 },
-                "question": "Si tratta di un albero latifoglia o aghifoglia?"
+                "question": "È un sempreverde o caduco?"
             },
-            "3": {
+            "tree-denotation": {
                 "mappings": {
                     "0": {
                         "then": "È un albero notevole per le sue dimensioni o per la posizione prominente. È utile alla navigazione."
@@ -1697,27 +1672,15 @@
                 },
                 "question": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde."
             },
-            "4": {
+            "tree-height": {
                 "mappings": {
                     "0": {
-                        "then": "Caduco: l’albero perde le sue foglie per un periodo dell’anno."
-                    },
-                    "1": {
-                        "then": "Sempreverde."
+                        "then": "Altezza: {height}&nbsp;m"
                     }
                 },
-                "question": "È un sempreverde o caduco?"
+                "render": "Altezza: {height}"
             },
-            "5": {
-                "mappings": {
-                    "0": {
-                        "then": "L’albero non ha un nome."
-                    }
-                },
-                "question": "L’albero ha un nome?",
-                "render": "Nome: {name}"
-            },
-            "6": {
+            "tree-heritage": {
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders"
@@ -1737,11 +1700,34 @@
                 },
                 "question": "Quest’albero è registrato come patrimonio?"
             },
-            "7": {
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Latifoglia"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Aghifoglia"
+                    },
+                    "2": {
+                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Privo di foglie (permanente)"
+                    }
+                },
+                "question": "Si tratta di un albero latifoglia o aghifoglia?"
+            },
+            "tree_node-name": {
+                "mappings": {
+                    "0": {
+                        "then": "L’albero non ha un nome."
+                    }
+                },
+                "question": "L’albero ha un nome?",
+                "render": "Nome: {name}"
+            },
+            "tree_node-ref:OnroerendErfgoed": {
                 "question": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?",
                 "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
             },
-            "8": {
+            "tree_node-wikidata": {
                 "question": "Qual è l’ID Wikidata per questo albero?",
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
             }
@@ -1764,7 +1750,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "viewpoint-description": {
                 "question": "Vuoi aggiungere una descrizione?"
             }
         },

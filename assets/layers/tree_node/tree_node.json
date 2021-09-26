@@ -42,6 +42,7 @@
     "tagRenderings": [
         "images",
         {
+            "id": "tree-height",
             "render": {
                 "nl": "Hoogte: {height}",
                 "en": "Height: {height}",
@@ -72,6 +73,7 @@
             ]
         },
         {
+            "id": "tree-leaf_type",
             "question": {
                 "nl": "Is dit een naald- of loofboom?",
                 "en": "Is this a broadleaved or needleleaved tree?",
@@ -122,6 +124,7 @@
             ]
         },
         {
+            "id": "tree-denotation",
             "question": {
                 "nl": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
                 "en": "How significant is this tree? Choose the first answer that applies.",
@@ -236,6 +239,7 @@
             ]
         },
         {
+            "id": "tree-decidouous",
             "question": {
                 "nl": "Is deze boom groenblijvend of bladverliezend?",
                 "en": "Is this tree evergreen or deciduous?",
@@ -324,9 +328,11 @@
                     "denotation=natural_monument",
                     "name~*"
                 ]
-            }
+            },
+            "id": "tree_node-name"
         },
         {
+            "id": "tree-heritage",
             "question": {
                 "nl": "Is deze boom erkend als erfgoed?",
                 "en": "Is this tree registered heritage?",
@@ -435,7 +441,8 @@
                     "heritage=4",
                     "heritage:operator=OnroerendErfgoed"
                 ]
-            }
+            },
+            "id": "tree_node-ref:OnroerendErfgoed"
         },
         {
             "render": {
@@ -461,7 +468,8 @@
                     "denotation=natural_monument",
                     "wikidata~*"
                 ]
-            }
+            },
+            "id": "tree_node-wikidata"
         }
     ],
     "icon": {

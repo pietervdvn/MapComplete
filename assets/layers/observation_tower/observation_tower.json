@@ -27,7 +27,6 @@
     "tagRenderings": [
         "images",
         {
-            "#": "name",
             "question": {
                 "en": "What is the name of this tower?",
                 "nl": "Heeft deze toren een naam?"
@@ -47,10 +46,10 @@
                         "nl": "Deze toren heeft geen specifieke naam"
                     }
                 }
-            ]
+            ],
+            "id": "name"
         },
         {
-            "#": "Height",
             "question": {
                 "en": "What is the height of this tower?",
                 "nl": "Hoe hoog is deze toren?"
@@ -62,10 +61,10 @@
             "freeform": {
                 "key": "height",
                 "type": "pfloat"
-            }
+            },
+            "id": "Height"
         },
         {
-            "#": "Operator",
             "question": {
                 "en": "Who maintains this tower?",
                 "nl": "Wie onderhoudt deze toren?"
@@ -76,11 +75,11 @@
             },
             "freeform": {
                 "key": "operator"
-            }
+            },
+            "id": "Operator"
         },
         "website",
         {
-            "#": "Fee",
             "question": {
                 "en": "How much does one have to pay to enter this tower?",
                 "nl": "Hoeveel moet men betalen om deze toren te bezoeken?"
@@ -108,10 +107,10 @@
                         "nl": "Gratis te bezoeken"
                     }
                 }
-            ]
+            ],
+            "id": "Fee"
         },
         {
-            "#": "Payment methods",
             "builtin": "payment-options",
             "override": {
                 "condition": {
@@ -120,7 +119,8 @@
                         "charge~*"
                     ]
                 }
-            }
+            },
+            "id": "Payment methods"
         },
         "wheelchair-access"
     ],
