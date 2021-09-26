@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
         "layers": {
-            "0": {
+            "artwork": {
                 "description": "Verschiedene Kunstwerke",
                 "name": "Kunstwerke",
                 "presets": {
@@ -15,7 +15,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "Welcher Künstler hat das geschaffen?",
+                        "render": "Erstellt von {artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "Architektur"
@@ -57,15 +61,11 @@
                         "question": "Was ist die Art dieses Kunstwerks?",
                         "render": "Dies ist ein {artwork_type}"
                     },
-                    "2": {
-                        "question": "Welcher Künstler hat das geschaffen?",
-                        "render": "Erstellt von {artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
                         "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
                         "render": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
@@ -98,81 +98,7 @@
         "description": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
         "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
         "layers": {
-            "0": {
-                "description": "Ein Kletterverein oder eine Organisation",
-                "name": "Kletterverein",
-                "presets": {
-                    "0": {
-                        "description": "Ein Kletterverein",
-                        "title": "Kletterverein"
-                    },
-                    "1": {
-                        "description": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
-                        "title": "Eine Kletter-Organisation"
-                    }
-                },
-                "tagRenderings": {
-                    "0": {
-                        "question": "Wie lautet der Name dieses Vereins oder Organisation?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Kletter-Organisation"
-                        }
-                    },
-                    "render": "Kletterverein"
-                }
-            },
-            "1": {
-                "description": "Eine Kletterhalle",
-                "name": "Kletterhallen",
-                "tagRenderings": {
-                    "3": {
-                        "question": "Wie heißt diese Kletterhalle?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Kletterhalle <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Kletterhalle"
-                }
-            },
-            "2": {
-                "name": "Kletterrouten",
-                "tagRenderings": {
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "Diese Kletterroute hat keinen Namen"
-                            }
-                        },
-                        "question": "Wie heißt diese Kletterroute?",
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "4": {
-                        "render": "Diese Route ist {canonical(climbing:length)} lang"
-                    },
-                    "5": {
-                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Kleterroute <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Kleterroute"
-                }
-            },
-            "3": {
+            "climbing": {
                 "description": "Eine Klettergelegenheit",
                 "name": "Klettermöglichkeiten",
                 "presets": {
@@ -182,7 +108,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "6": {
+                    "name": {
                         "mappings": {
                             "0": {
                                 "then": "Diese Klettergelegenheit hat keinen Namen"
@@ -196,14 +122,88 @@
                     "render": "Klettermöglichkeit"
                 }
             },
-            "4": {
+            "climbing_club": {
+                "description": "Ein Kletterverein oder eine Organisation",
+                "name": "Kletterverein",
+                "presets": {
+                    "0": {
+                        "description": "Ein Kletterverein",
+                        "title": "Kletterverein"
+                    },
+                    "1": {
+                        "description": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
+                        "title": "Eine Kletter-Organisation"
+                    }
+                },
+                "tagRenderings": {
+                    "climbing_club-name": {
+                        "question": "Wie lautet der Name dieses Vereins oder Organisation?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Kletter-Organisation"
+                        }
+                    },
+                    "render": "Kletterverein"
+                }
+            },
+            "climbing_gym": {
+                "description": "Eine Kletterhalle",
+                "name": "Kletterhallen",
+                "tagRenderings": {
+                    "name": {
+                        "question": "Wie heißt diese Kletterhalle?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Kletterhalle <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Kletterhalle"
+                }
+            },
+            "climbing_route": {
+                "name": "Kletterrouten",
+                "tagRenderings": {
+                    "Difficulty": {
+                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
+                    },
+                    "Length": {
+                        "render": "Diese Route ist {canonical(climbing:length)} lang"
+                    },
+                    "Name": {
+                        "mappings": {
+                            "0": {
+                                "then": "Diese Kletterroute hat keinen Namen"
+                            }
+                        },
+                        "question": "Wie heißt diese Kletterroute?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Kleterroute <strong>{name}</strong>"
+                        }
+                    },
+                    "render": "Kleterroute"
+                }
+            },
+            "maybe_climbing": {
                 "description": "Eine Klettergelegenheit?",
                 "name": "Klettermöglichkeiten?",
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "2": {
+                    "climbing-possible": {
                         "mappings": {
                             "0": {
                                 "then": "Hier kann nicht geklettert werden"

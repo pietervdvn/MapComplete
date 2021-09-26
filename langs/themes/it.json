@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
         "layers": {
-            "0": {
+            "artwork": {
                 "description": "Diverse opere d’arte",
                 "name": "Opere d’arte",
                 "presets": {
@@ -15,7 +15,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "Quale artista ha creato quest’opera?",
+                        "render": "Creato da {artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "Architettura"
@@ -57,15 +61,11 @@
                         "question": "Che tipo di opera d’arte è questo?",
                         "render": "Si tratta di un {artwork_type}"
                     },
-                    "2": {
-                        "question": "Quale artista ha creato quest’opera?",
-                        "render": "Creato da {artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "Esiste un sito web con maggiori informazioni su quest’opera?",
                         "render": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?",
                         "render": "Corrisponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
@@ -98,7 +98,7 @@
     "campersite": {
         "description": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "Aree camper",
                 "name": "Aree camper",
                 "presets": {
@@ -108,11 +108,19 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "question": "Come viene chiamato questo luogo?",
-                        "render": "Questo luogo è chiamato {name}"
+                    "caravansites-capacity": {
+                        "question": "Quanti camper possono stare qua? (non rispondere se non c’è un numero chario di spazi o veicoli ammessi)",
+                        "render": "{capacity} camper possono usare questo luogo al contempo"
                     },
-                    "2": {
+                    "caravansites-charge": {
+                        "question": "Quanto costa questo luogo?",
+                        "render": "Questo luogo costa {charge}"
+                    },
+                    "caravansites-description": {
+                        "question": "Desideri aggiungere una descrizione del luogo? (Non vanno ripetute informazioni già richieste e mostrate precedentemente. Si prega di attenersi a dati oggettivi - le opinioni vanno nelle recensioni)",
+                        "render": "Maggiori dettagli su questo luogo: {description}"
+                    },
+                    "caravansites-fee": {
                         "mappings": {
                             "0": {
                                 "then": "Devi pagare per usarlo"
@@ -123,26 +131,7 @@
                         },
                         "question": "Ha una tariffa questo luogo?"
                     },
-                    "3": {
-                        "question": "Quanto costa questo luogo?",
-                        "render": "Questo luogo costa {charge}"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "Questo luogo ha una stazione per lo scarico delle acque"
-                            },
-                            "1": {
-                                "then": "Questo luogo non ha una stazione per lo scarico delle acque"
-                            }
-                        },
-                        "question": "Questo luogo ha una stazione per lo scarico delle acque?"
-                    },
-                    "5": {
-                        "question": "Quanti camper possono stare qua? (non rispondere se non c’è un numero chario di spazi o veicoli ammessi)",
-                        "render": "{capacity} camper possono usare questo luogo al contempo"
-                    },
-                    "6": {
+                    "caravansites-internet": {
                         "mappings": {
                             "0": {
                                 "then": "C’è l’accesso a internet"
@@ -156,7 +145,7 @@
                         },
                         "question": "Questo luogo ha l’accesso a internet?"
                     },
-                    "7": {
+                    "caravansites-internet-fee": {
                         "mappings": {
                             "0": {
                                 "then": "Occorre pagare un extra per avere l’accesso a internet"
@@ -167,22 +156,7 @@
                         },
                         "question": "Occorre pagare per avere l’accesso a internet?"
                     },
-                    "8": {
-                        "mappings": {
-                            "0": {
-                                "then": "Questo luogo ha i servizi igienici"
-                            },
-                            "1": {
-                                "then": "Questo luogo non ha i servizi igienici"
-                            }
-                        },
-                        "question": "Questo luogo dispone di servizi igienici?"
-                    },
-                    "9": {
-                        "question": "Questo luogo ha un sito web?",
-                        "render": "Sito web ufficiale: <a href='{website}'>{website}</a>"
-                    },
-                    "10": {
+                    "caravansites-long-term": {
                         "mappings": {
                             "0": {
                                 "then": "Sì, ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata"
@@ -196,9 +170,35 @@
                         },
                         "question": "Questo luogo offre spazi per il noleggio a lungo termine?"
                     },
-                    "11": {
-                        "question": "Desideri aggiungere una descrizione del luogo? (Non vanno ripetute informazioni già richieste e mostrate precedentemente. Si prega di attenersi a dati oggettivi - le opinioni vanno nelle recensioni)",
-                        "render": "Maggiori dettagli su questo luogo: {description}"
+                    "caravansites-name": {
+                        "question": "Come viene chiamato questo luogo?",
+                        "render": "Questo luogo è chiamato {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Questo luogo ha una stazione per lo scarico delle acque"
+                            },
+                            "1": {
+                                "then": "Questo luogo non ha una stazione per lo scarico delle acque"
+                            }
+                        },
+                        "question": "Questo luogo ha una stazione per lo scarico delle acque?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Questo luogo ha i servizi igienici"
+                            },
+                            "1": {
+                                "then": "Questo luogo non ha i servizi igienici"
+                            }
+                        },
+                        "question": "Questo luogo dispone di servizi igienici?"
+                    },
+                    "caravansites-website": {
+                        "question": "Questo luogo ha un sito web?",
+                        "render": "Sito web ufficiale: <a href='{website}'>{website}</a>"
                     }
                 },
                 "title": {
@@ -210,7 +210,7 @@
                     "render": "Area camper {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "Luoghi di sversamento delle acque reflue",
                 "name": "Luoghi di sversamento delle acque reflue",
                 "presets": {
@@ -220,55 +220,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "mappings": {
-                            "0": {
-                                "then": "A pagamento"
-                            },
-                            "1": {
-                                "then": "È gratuito"
-                            }
-                        },
-                        "question": "Questo luogo è a pagamento?"
-                    },
-                    "2": {
-                        "question": "Qual è la tariffa di questo luogo?",
-                        "render": "Ha una tariffa di {charge}"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "Questo luogo ha un punto per l'approvvigionamento di acqua"
-                            },
-                            "1": {
-                                "then": "Questo luogo non ha un punto per l'approvvigionamento di acqua"
-                            }
-                        },
-                        "question": "Questo luogo ha un punto per l'approvvigionamento di acqua?"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "Si possono smaltire le acque grigie qui"
-                            },
-                            "1": {
-                                "then": "Non si possono smaltire le acque grigie qui"
-                            }
-                        },
-                        "question": "Si possono smaltire le acque grigie qui?"
-                    },
-                    "5": {
-                        "mappings": {
-                            "0": {
-                                "then": "È possibile smaltire le acque del WC chimico qui"
-                            },
-                            "1": {
-                                "then": "Non è possibile smaltire le acque del WC chimico qui"
-                            }
-                        },
-                        "question": "È possibile smaltire le acque del WC chimico qui?"
-                    },
-                    "6": {
+                    "dumpstations-access": {
                         "mappings": {
                             "0": {
                                 "then": "Servono una chiave o un codice di accesso"
@@ -285,9 +237,57 @@
                         },
                         "question": "Chi può utilizzare questo luogo di sversamento?"
                     },
-                    "7": {
+                    "dumpstations-charge": {
+                        "question": "Qual è la tariffa di questo luogo?",
+                        "render": "Ha una tariffa di {charge}"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "È possibile smaltire le acque del WC chimico qui"
+                            },
+                            "1": {
+                                "then": "Non è possibile smaltire le acque del WC chimico qui"
+                            }
+                        },
+                        "question": "È possibile smaltire le acque del WC chimico qui?"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "A pagamento"
+                            },
+                            "1": {
+                                "then": "È gratuito"
+                            }
+                        },
+                        "question": "Questo luogo è a pagamento?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Si possono smaltire le acque grigie qui"
+                            },
+                            "1": {
+                                "then": "Non si possono smaltire le acque grigie qui"
+                            }
+                        },
+                        "question": "Si possono smaltire le acque grigie qui?"
+                    },
+                    "dumpstations-network": {
                         "question": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)",
                         "render": "Questo luogo è parte della rete {network}"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Questo luogo ha un punto per l'approvvigionamento di acqua"
+                            },
+                            "1": {
+                                "then": "Questo luogo non ha un punto per l'approvvigionamento di acqua"
+                            }
+                        },
+                        "question": "Questo luogo ha un punto per l'approvvigionamento di acqua?"
                     }
                 },
                 "title": {
@@ -327,9 +327,17 @@
     },
     "climbing": {
         "layers": {
-            "2": {
+            "climbing_route": {
                 "tagRenderings": {
-                    "3": {
+                    "Difficulty": {
+                        "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
+                        "render": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
+                    },
+                    "Length": {
+                        "question": "Quanto è lunga questa via di arrampicata (in metri)?",
+                        "render": "Questo percorso è lungo {canonical(climbing:length)}"
+                    },
+                    "Name": {
                         "mappings": {
                             "0": {
                                 "then": "Questa via di arrampicata non ha un nome"
@@ -337,14 +345,6 @@
                         },
                         "question": "Come si chiama questa via di arrampicata?",
                         "render": "<strong>{name}</strong>"
-                    },
-                    "4": {
-                        "question": "Quanto è lunga questa via di arrampicata (in metri)?",
-                        "render": "Questo percorso è lungo {canonical(climbing:length)}"
-                    },
-                    "5": {
-                        "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
-                        "render": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
                     }
                 },
                 "title": {
@@ -361,11 +361,18 @@
     },
     "cyclestreets": {
         "layers": {
-            "0": {
+            "all_streets": {
+                "description": "Livello per contrassegnare tutte le strade come strade ciclabili",
+                "name": "Tutte le strade",
+                "title": {
+                    "render": "Strada"
+                }
+            },
+            "fietsstraat": {
                 "description": "Una strada ciclabile è una strada in cui i veicoli a motore non possono sorpassare le persone in bicicletta",
                 "name": "Strade ciclabili"
             },
-            "1": {
+            "toekomstige_fietsstraat": {
                 "description": "Questa strada diventerà presto una strada ciclabile",
                 "name": "Futura strada ciclabile",
                 "title": {
@@ -375,13 +382,6 @@
                         }
                     },
                     "render": "Futura strada ciclabile"
-                }
-            },
-            "2": {
-                "description": "Livello per contrassegnare tutte le strade come strade ciclabili",
-                "name": "Tutte le strade",
-                "title": {
-                    "render": "Strada"
                 }
             }
         },
@@ -409,7 +409,7 @@
     },
     "facadegardens": {
         "layers": {
-            "0": {
+            "facadegardens": {
                 "presets": {
                     "0": {
                         "description": "Aggiungi un giardino verticale",
@@ -417,35 +417,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "2": {
-                        "mappings": {
-                            "0": {
-                                "then": "Il giardino è completamente illuminato dal sole"
-                            },
-                            "1": {
-                                "then": "Il giardino è parzialmente in ombra"
-                            },
-                            "2": {
-                                "then": "Il giardino è in ombra"
-                            }
-                        },
-                        "question": "Il giardino è al sole o in ombra?"
+                    "facadegardens-description": {
+                        "question": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)",
+                        "render": "Maggiori dettagli: {description}"
                     },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "C'è un contenitore per raccogliere la pioggia"
-                            },
-                            "1": {
-                                "then": "Non c'è un contenitore per raccogliere la pioggia"
-                            }
-                        }
-                    },
-                    "4": {
-                        "question": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
-                        "render": "Data di realizzazione del giardino: {start_date}"
-                    },
-                    "5": {
+                    "facadegardens-edible": {
                         "mappings": {
                             "0": {
                                 "then": "Ci sono piante commestibili"
@@ -456,7 +432,7 @@
                         },
                         "question": "Ci sono piante commestibili?"
                     },
-                    "6": {
+                    "facadegardens-plants": {
                         "mappings": {
                             "0": {
                                 "then": "Ci sono viti"
@@ -473,9 +449,33 @@
                         },
                         "question": "Che tipi di piante sono presenti qui?"
                     },
-                    "7": {
-                        "question": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)",
-                        "render": "Maggiori dettagli: {description}"
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "C'è un contenitore per raccogliere la pioggia"
+                            },
+                            "1": {
+                                "then": "Non c'è un contenitore per raccogliere la pioggia"
+                            }
+                        }
+                    },
+                    "facadegardens-start_date": {
+                        "question": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
+                        "render": "Data di realizzazione del giardino: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "Il giardino è completamente illuminato dal sole"
+                            },
+                            "1": {
+                                "then": "Il giardino è parzialmente in ombra"
+                            },
+                            "2": {
+                                "then": "Il giardino è in ombra"
+                            }
+                        },
+                        "question": "Il giardino è al sole o in ombra?"
                     }
                 }
             }
@@ -488,16 +488,32 @@
     },
     "hailhydrant": {
         "layers": {
-            "0": {
+            "fire_stations": {
+                "description": "Livello che mostra le caserme dei vigili del fuoco.",
+                "name": "Mappa delle caserme dei vigili del fuoco",
                 "tagRenderings": {
-                    "0": {
+                    "station-name": {
+                        "question": "Come si chiama questa caserma dei vigili del fuoco?",
+                        "render": "Questa caserma si chiama {name}."
+                    },
+                    "station-street": {
+                        "question": " Qual è il nome della via in cui si trova la caserma?"
+                    }
+                },
+                "title": {
+                    "render": "Caserma dei vigili del fuoco"
+                }
+            },
+            "hydrants": {
+                "tagRenderings": {
+                    "hydrant-color": {
                         "mappings": {
                             "2": {
                                 "then": "L'idrante è rosso."
                             }
                         }
                     },
-                    "1": {
+                    "hydrant-type": {
                         "mappings": {
                             "0": {
                                 "then": "Il tipo di idrante è sconosciuto."
@@ -506,22 +522,6 @@
                         "question": "Di che tipo è questo idrante?",
                         "render": " Tipo di idrante: {fire_hydrant:type}"
                     }
-                }
-            },
-            "2": {
-                "description": "Livello che mostra le caserme dei vigili del fuoco.",
-                "name": "Mappa delle caserme dei vigili del fuoco",
-                "tagRenderings": {
-                    "0": {
-                        "question": "Come si chiama questa caserma dei vigili del fuoco?",
-                        "render": "Questa caserma si chiama {name}."
-                    },
-                    "1": {
-                        "question": " Qual è il nome della via in cui si trova la caserma?"
-                    }
-                },
-                "title": {
-                    "render": "Caserma dei vigili del fuoco"
                 }
             }
         }

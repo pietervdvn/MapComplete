@@ -8,7 +8,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "bench-backrest": {
                 "mappings": {
                     "0": {
                         "then": "Oparcie: Tak"
@@ -20,39 +20,7 @@
                 "question": "Czy ta ławka ma oparcie?",
                 "render": "Oparcie"
             },
-            "2": {
-                "question": "Ile siedzeń ma ta ławka?",
-                "render": "{seats} siedzeń"
-            },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "Materiał: drewno"
-                    },
-                    "1": {
-                        "then": "Materiał: metal"
-                    },
-                    "2": {
-                        "then": "Materiał: kamień"
-                    },
-                    "3": {
-                        "then": "Materiał: beton"
-                    },
-                    "4": {
-                        "then": "Materiał: plastik"
-                    },
-                    "5": {
-                        "then": "Materiał: stal"
-                    }
-                },
-                "question": "Z czego wykonana jest ławka (siedzisko)?",
-                "render": "Materiał: {material}"
-            },
-            "4": {
-                "question": "W jakim kierunku patrzysz siedząc na ławce?",
-                "render": "Siedząc na ławce, patrzy się w kierunku {direction}°."
-            },
-            "5": {
+            "bench-colour": {
                 "mappings": {
                     "0": {
                         "then": "Kolor: brązowy"
@@ -82,7 +50,39 @@
                 "question": "Jaki kolor ma ta ławka?",
                 "render": "Kolor: {colour}"
             },
-            "6": {
+            "bench-direction": {
+                "question": "W jakim kierunku patrzysz siedząc na ławce?",
+                "render": "Siedząc na ławce, patrzy się w kierunku {direction}°."
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Materiał: drewno"
+                    },
+                    "1": {
+                        "then": "Materiał: metal"
+                    },
+                    "2": {
+                        "then": "Materiał: kamień"
+                    },
+                    "3": {
+                        "then": "Materiał: beton"
+                    },
+                    "4": {
+                        "then": "Materiał: plastik"
+                    },
+                    "5": {
+                        "then": "Materiał: stal"
+                    }
+                },
+                "question": "Z czego wykonana jest ławka (siedzisko)?",
+                "render": "Materiał: {material}"
+            },
+            "bench-seats": {
+                "question": "Ile siedzeń ma ta ławka?",
+                "render": "{seats} siedzeń"
+            },
+            "bench-survey:date": {
                 "question": "Kiedy ostatnio badano tę ławkę?",
                 "render": "Ławka ta była ostatnio badana w dniu {survey:date}"
             }
@@ -94,7 +94,7 @@
     "bench_at_pt": {
         "name": "Ławki na przystankach komunikacji miejskiej",
         "tagRenderings": {
-            "1": {
+            "bench_at_pt-name": {
                 "render": "{name}"
             }
         },
@@ -118,11 +118,11 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "Bicycle parking type": {
                 "question": "Jaki jest typ tego parkingu dla rowerów?",
                 "render": "Jest to parking rowerowy typu: {bicycle_parking}"
             },
-            "2": {
+            "Underground?": {
                 "question": "Jaka jest względna lokalizacja tego parkingu rowerowego?"
             }
         },
@@ -141,7 +141,7 @@
             }
         },
         "tagRenderings": {
-            "8": {
+            "Operational status": {
                 "mappings": {
                     "0": {
                         "then": "Pompka rowerowa jest zepsuta"
@@ -152,11 +152,7 @@
                 },
                 "question": "Czy pompka rowerowa jest nadal sprawna?"
             },
-            "10": {
-                "question": "Jakie zawory są obsługiwane?",
-                "render": "Ta pompka obsługuje następujące zawory: {valves}"
-            },
-            "11": {
+            "bike_repair_station-electrical_pump": {
                 "mappings": {
                     "0": {
                         "then": "Pompa ręczna"
@@ -167,7 +163,7 @@
                 },
                 "question": "Czy jest to elektryczna pompka do roweru?"
             },
-            "12": {
+            "bike_repair_station-manometer": {
                 "mappings": {
                     "0": {
                         "then": "Jest manometr"
@@ -180,6 +176,10 @@
                     }
                 },
                 "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
+            },
+            "bike_repair_station-valves": {
+                "question": "Jakie zawory są obsługiwane?",
+                "render": "Ta pompka obsługuje następujące zawory: {valves}"
             }
         }
     },

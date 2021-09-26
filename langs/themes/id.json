@@ -6,10 +6,10 @@
     "artwork": {
         "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
         "layers": {
-            "0": {
+            "artwork": {
                 "name": "Karya seni",
                 "tagRenderings": {
-                    "3": {
+                    "artwork-website": {
                         "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
                     }
                 },
@@ -27,19 +27,16 @@
     },
     "campersite": {
         "layers": {
-            "0": {
+            "caravansites": {
                 "tagRenderings": {
-                    "1": {
-                        "question": "Apakah nama tempat ini?"
-                    },
-                    "2": {
+                    "caravansites-fee": {
                         "mappings": {
                             "1": {
                                 "then": "Boleh digunakan tanpa bayaran"
                             }
                         }
                     },
-                    "6": {
+                    "caravansites-internet": {
                         "mappings": {
                             "0": {
                                 "then": "Akses Web tersedia"
@@ -53,7 +50,10 @@
                         },
                         "question": "Tempat ini berbagi akses Web?"
                     },
-                    "8": {
+                    "caravansites-name": {
+                        "question": "Apakah nama tempat ini?"
+                    },
+                    "caravansites-toilets": {
                         "mappings": {
                             "0": {
                                 "then": "Tempat sini ada tandas"
@@ -63,7 +63,7 @@
                             }
                         }
                     },
-                    "9": {
+                    "caravansites-website": {
                         "question": "Tempat sini terada situs web?",
                         "render": "Situs resmi: <a href='{website}'>{website}</a>"
                     }
@@ -88,37 +88,37 @@
     },
     "climbing": {
         "layers": {
-            "0": {
+            "climbing": {
                 "tagRenderings": {
-                    "0": {
+                    "name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "1": {
+            "climbing_club": {
                 "tagRenderings": {
-                    "3": {
+                    "climbing_club-name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "2": {
+            "climbing_gym": {
                 "tagRenderings": {
-                    "3": {
+                    "name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "3": {
+            "climbing_route": {
                 "tagRenderings": {
-                    "6": {
+                    "Name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "4": {
+            "maybe_climbing": {
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
@@ -127,9 +127,9 @@
     },
     "hailhydrant": {
         "layers": {
-            "0": {
+            "hydrants": {
                 "tagRenderings": {
-                    "1": {
+                    "hydrant-type": {
                         "mappings": {
                             "3": {
                                 "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
@@ -142,16 +142,16 @@
     },
     "shops": {
         "layers": {
-            "0": {
+            "shops": {
                 "tagRenderings": {
-                    "3": {
+                    "shops-email": {
+                        "render": "<a href='mailto:{email}'>{email}</a>"
+                    },
+                    "shops-phone": {
                         "render": "<a href='tel:{phone}'>{phone}</a>"
                     },
-                    "4": {
+                    "shops-website": {
                         "render": "<a href='{website}'>{website}</a>"
-                    },
-                    "5": {
-                        "render": "<a href='mailto:{email}'>{email}</a>"
                     }
                 }
             }

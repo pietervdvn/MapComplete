@@ -4,7 +4,7 @@
     },
     "artwork": {
         "layers": {
-            "0": {
+            "artwork": {
                 "name": "Kunstverk",
                 "presets": {
                     "0": {
@@ -12,7 +12,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "Hvilken artist lagde dette?",
+                        "render": "Laget av {artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "Arkitektur"
@@ -54,15 +58,11 @@
                         "question": "Hvilken type kunstverk er dette?",
                         "render": "Dette er et kunstverk av typen {artwork_type}"
                     },
-                    "2": {
-                        "question": "Hvilken artist lagde dette?",
-                        "render": "Laget av {artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "Finnes det en nettside med mer info om dette kunstverket?",
                         "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
                         "render": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
@@ -82,20 +82,23 @@
     },
     "campersite": {
         "layers": {
-            "0": {
+            "caravansites": {
                 "tagRenderings": {
-                    "2": {
+                    "caravansites-charge": {
+                        "question": "pø",
+                        "render": "Dette stedet tar {charge}"
+                    },
+                    "caravansites-description": {
+                        "render": "Flere detaljer om dette stedet: {description}"
+                    },
+                    "caravansites-fee": {
                         "mappings": {
                             "1": {
                                 "then": "Kan brukes gratis"
                             }
                         }
                     },
-                    "3": {
-                        "question": "pø",
-                        "render": "Dette stedet tar {charge}"
-                    },
-                    "8": {
+                    "caravansites-toilets": {
                         "mappings": {
                             "0": {
                                 "then": "Dette stedet har toalettfasiliteter"
@@ -106,12 +109,9 @@
                         },
                         "question": "Har dette stedet toaletter?"
                     },
-                    "9": {
+                    "caravansites-website": {
                         "question": "Har dette stedet en nettside?",
                         "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
-                    },
-                    "11": {
-                        "render": "Flere detaljer om dette stedet: {description}"
                     }
                 }
             }
@@ -119,7 +119,19 @@
     },
     "climbing": {
         "layers": {
-            "0": {
+            "climbing": {
+                "description": "En klatremulighet",
+                "presets": {
+                    "0": {
+                        "description": "En klatremulighet",
+                        "title": "Klatremulighet"
+                    }
+                },
+                "title": {
+                    "render": "Klatremulighet"
+                }
+            },
+            "climbing_club": {
                 "description": "En klatreklubb eller organisasjoner",
                 "name": "Klatreklubb",
                 "presets": {
@@ -132,10 +144,10 @@
                     "render": "Klatreklubb"
                 }
             },
-            "2": {
+            "climbing_route": {
                 "name": "Klatreruter",
                 "tagRenderings": {
-                    "4": {
+                    "Length": {
                         "render": "Denne ruten er {canonical(climbing:length)} lang"
                     }
                 },
@@ -143,23 +155,11 @@
                     "render": "Klatrerute"
                 }
             },
-            "3": {
-                "description": "En klatremulighet",
-                "presets": {
-                    "0": {
-                        "description": "En klatremulighet",
-                        "title": "Klatremulighet"
-                    }
-                },
-                "title": {
-                    "render": "Klatremulighet"
-                }
-            },
-            "4": {
+            "maybe_climbing": {
                 "description": "En klatremulighet?",
                 "name": "Klatremuligheter?",
                 "tagRenderings": {
-                    "2": {
+                    "climbing-possible": {
                         "mappings": {
                             "0": {
                                 "then": "Klatring er ikke mulig her"
@@ -196,15 +196,15 @@
     },
     "cyclestreets": {
         "layers": {
-            "1": {
+            "all_streets": {
+                "description": "Lag for å markere hvilken som helst gate som sykkelvei",
+                "name": "Alle gater"
+            },
+            "toekomstige_fietsstraat": {
                 "name": "Fremtidig sykkelvei",
                 "title": {
                     "render": "Fremtidig sykkelvei"
                 }
-            },
-            "2": {
-                "description": "Lag for å markere hvilken som helst gate som sykkelvei",
-                "name": "Alle gater"
             }
         },
         "roamingRenderings": {
@@ -230,9 +230,9 @@
     },
     "facadegardens": {
         "layers": {
-            "0": {
+            "facadegardens": {
                 "tagRenderings": {
-                    "2": {
+                    "facadegardens-sunshine": {
                         "mappings": {
                             "1": {
                                 "then": "Denne hagen er i delvis skygge"
@@ -248,25 +248,7 @@
     },
     "hailhydrant": {
         "layers": {
-            "0": {
-                "description": "Kartlag for å vise brannhydranter.",
-                "name": "Kart over brannhydranter",
-                "presets": {
-                    "0": {
-                        "title": "Brannhydrant"
-                    }
-                },
-                "tagRenderings": {
-                    "0": {
-                        "question": "Hvilken farge har brannhydranten?",
-                        "render": "Brannhydranter er {colour}"
-                    }
-                },
-                "title": {
-                    "render": "Brannhydrant"
-                }
-            },
-            "1": {
+            "extinguisher": {
                 "description": "Kartlag for å vise brannslokkere.",
                 "name": "Kart over brannhydranter",
                 "presets": {
@@ -278,10 +260,28 @@
                     "render": "Brannslokkere"
                 }
             },
-            "2": {
+            "fire_stations": {
                 "name": "Kart over brannstasjoner",
                 "title": {
                     "render": "Brannstasjon"
+                }
+            },
+            "hydrants": {
+                "description": "Kartlag for å vise brannhydranter.",
+                "name": "Kart over brannhydranter",
+                "presets": {
+                    "0": {
+                        "title": "Brannhydrant"
+                    }
+                },
+                "tagRenderings": {
+                    "hydrant-color": {
+                        "question": "Hvilken farge har brannhydranten?",
+                        "render": "Brannhydranter er {colour}"
+                    }
+                },
+                "title": {
+                    "render": "Brannhydrant"
                 }
             }
         }

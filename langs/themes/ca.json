@@ -5,37 +5,37 @@
     },
     "climbing": {
         "layers": {
-            "0": {
+            "climbing": {
                 "tagRenderings": {
-                    "0": {
+                    "name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "1": {
+            "climbing_club": {
                 "tagRenderings": {
-                    "3": {
+                    "climbing_club-name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "2": {
+            "climbing_gym": {
                 "tagRenderings": {
-                    "3": {
+                    "name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "3": {
+            "climbing_route": {
                 "tagRenderings": {
-                    "6": {
+                    "Name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
-            "4": {
+            "maybe_climbing": {
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
@@ -48,12 +48,12 @@
     },
     "shops": {
         "layers": {
-            "0": {
+            "shops": {
                 "tagRenderings": {
-                    "3": {
+                    "shops-phone": {
                         "render": "<a href='tel:{phone}'>{phone}</a>"
                     },
-                    "4": {
+                    "shops-website": {
                         "render": "<a href='{website}'>{website}</a>"
                     }
                 }

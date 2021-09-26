@@ -6,7 +6,7 @@
     "artwork": {
         "description": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo",
         "layers": {
-            "0": {
+            "artwork": {
                 "description": "Diversas piezas de obras de arte",
                 "name": "Obras de arte",
                 "presets": {
@@ -15,7 +15,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artwork_type": {
                         "question": "Cuál es el tipo de esta obra de arte?",
                         "render": "Esta es un {artwork_type}"
                     }

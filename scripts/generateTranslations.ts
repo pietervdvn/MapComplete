@@ -55,18 +55,25 @@ class TranslationPart {
             }
 
             const v = object[key]
-            
-            if(typeof key === "number" && v["id"] !== undefined){
-                // We use the embedded id as key instead of the index as this is more stable
-               // key = v["id"]
-                if(typeof key !== "string"){
-                    throw "Panic: found a non-string ID at"+context
-                }
-            }
-            
+
             if (v == null) {
                 console.warn("Got a null value for key ", key)
                 continue
+            }
+
+            if (v["id"] !== undefined) {
+                // We use the embedded id as key instead of the index as this is more stable
+                // Note: indonesian is shortened as 'id' as well!
+                if (v["en"] !== undefined || v["nl"] !== undefined) {
+                    // This is probably a translation already!
+                    // pass
+                } else {
+                    
+                    key = v["id"]
+                    if (typeof key !== "string") {
+                        throw "Panic: found a non-string ID at" + context
+                    }
+                }
             }
 
             if (typeof v !== "object") {
@@ -230,6 +237,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
         }
         let json = tr.toJson(lang)
         try {
+
             json = JSON.stringify(JSON.parse(json), null, "    ");
         } catch (e) {
             console.error(e)
@@ -245,7 +253,7 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         if (!source.hasOwnProperty(key)) {
             continue
         }
-        
+
         const sourceV = source[key];
         const targetV = target[key]
         if (typeof sourceV === "string") {
@@ -305,9 +313,9 @@ function loadTranslationFilesFrom(target: string): Map<string, any> {
     for (const translationFilePath of translationFilePaths) {
         let language = translationFilePath.substr(translationFilePath.lastIndexOf("/") + 1)
         language = language.substr(0, language.length - 5)
-        try{
+        try {
             translationFiles.set(language, JSON.parse(readFileSync(translationFilePath, "utf8")))
-        }catch(e){
+        } catch (e) {
             console.error("Invalid JSON file or file does not exist", translationFilePath)
             throw e;
         }
