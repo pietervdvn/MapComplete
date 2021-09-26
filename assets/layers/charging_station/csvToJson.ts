@@ -229,7 +229,7 @@ function run(file, protojson) {
     const stringified = questions.map(q => JSON.stringify(q, null, "  "))
     let protoString = readFileSync(protojson, "utf8")
 
-    protoString = protoString.replace("{\"#\": \"$$$\"}", stringified.join(",\n"))
+    protoString = protoString.replace("{\"id\": \"$$$\"}", stringified.join(",\n"))
     const proto = <LayerConfigJson> JSON.parse(protoString)
     proto.tagRenderings.forEach(tr => {
         if(typeof tr === "string"){
