@@ -111,13 +111,11 @@ export default class MetaTagging {
                                     d = JSON.stringify(d);
                                 }
                                 feature.properties[key] = d;
-                                console.log("Written a delayed calculated tag onto ", feature.properties.id, ": ", key, ":==", d)
                             })
                             result = result.data
                         }
 
                         if (result === undefined || result === "") {
-                            console.log("Calculated tag for", key, "gave undefined", feature.properties.id)
                             return;
                         }
                         if (typeof result !== "string") {
@@ -125,10 +123,9 @@ export default class MetaTagging {
                             result = JSON.stringify(result);
                         }
                         feature.properties[key] = result;
-                        console.log("Written a calculated tag onto ", feature.properties.id, ": ", key, ":==", result)
                     } catch (e) {
                         if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
-                            console.warn("Could not calculate a calculated tag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e)
+                            console.warn("Could not calculate a calculated tag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e,e.stack)
                             MetaTagging.errorPrintCount++;
                             if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
                                 console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
