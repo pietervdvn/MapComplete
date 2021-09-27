@@ -388,10 +388,10 @@ export class BBox {
     static global: BBox = new BBox([[-180, -90], [180, 90]]);
 
     constructor(coordinates) {
-        this.maxLat = Number.MIN_VALUE;
-        this.maxLon = Number.MIN_VALUE;
-        this.minLat = Number.MAX_VALUE;
-        this.minLon = Number.MAX_VALUE;
+        this.maxLat = -90;
+        this.maxLon = -180;
+        this.minLat = 90;
+        this.minLon = 180;
 
 
         for (const coordinate of coordinates) {
@@ -490,5 +490,24 @@ export class BBox {
 
     toLeaflet() {
        return [[this.minLat, this.minLon], [this.maxLat, this.maxLon]]
+    }
+
+    asGeoJson(properties: any) : any{
+        return {
+            type:"Feature",
+            properties: properties,
+            geometry:{
+                type:"Polygon",
+                coordinates:[[
+                    
+                    [this.minLon, this.minLat],
+                        [this.maxLon, this.minLat],
+                        [this.maxLon, this.maxLat],
+                        [this.minLon, this.maxLat],
+                        [this.minLon, this.minLat],
+
+                ]]
+            }
+        }
     }
 }

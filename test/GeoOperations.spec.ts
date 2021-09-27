@@ -1,7 +1,8 @@
 import {Utils} from "../Utils";
 import * as Assert from "assert";
 import T from "./TestHelper";
-import {GeoOperations} from "../Logic/GeoOperations";
+import {BBox, GeoOperations} from "../Logic/GeoOperations";
+import {equal} from "assert";
 
 Utils.runningFromConsole = true;
 
@@ -176,7 +177,16 @@ export default class GeoOperationsSpec extends T {
 
                     const overlap = GeoOperations.calculateOverlap(point, [GeoOperationsSpec.polygon]);
                     Assert.equal(1, overlap.length)
-                }]
+                }],
+                ["bbox bounds test",
+                    () => {
+                        const bbox = BBox.fromTile(16, 32754, 21785)
+                        equal(-0.0714111328125, bbox.minLon)
+                        equal(-0.076904296875, bbox.maxLon)
+                        equal(51.53266860674158, bbox.minLat)
+                        equal(51.5292513551899, bbox.maxLat)
+                    }
+                ]
             ]
         )
 

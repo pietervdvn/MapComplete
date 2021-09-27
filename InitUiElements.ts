@@ -41,6 +41,7 @@ import ShowTileInfo from "./UI/ShowDataLayer/ShowTileInfo";
 import {Tiles} from "./Models/TileRange";
 import {TileHierarchyAggregator} from "./UI/ShowDataLayer/PerTileCountAggregator";
 import {BBox} from "./Logic/GeoOperations";
+import StaticFeatureSource from "./Logic/FeatureSource/Sources/StaticFeatureSource";
 
 export class InitUiElements {
     static InitAll(
@@ -421,9 +422,6 @@ export class InitUiElements {
                 const flayer = {
                     isDisplayed: isDisplayed,
                     layerDef: layer,
-                    isSufficientlyZoomed: state.locationControl.map(l => {
-                        return l.zoom >= (layer.minzoomVisible ?? layer.minzoom)
-                    }),
                     appliedFilters: new UIEventSource<TagsFilter>(undefined),
                 };
                 flayers.push(flayer);
@@ -491,7 +489,7 @@ export class InitUiElements {
                         return true
                     }, [State.state.locationControl, State.state.currentBounds]
                 )
-               
+                
                 new ShowDataLayer(
                     {
                         features: source,
@@ -502,7 +500,6 @@ export class InitUiElements {
                 );
             }, state
         );
-
     }
 
     private static setupAllLayerElements() {

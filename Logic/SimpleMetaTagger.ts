@@ -97,6 +97,9 @@ export default class SimpleMetaTagger {
                     continue;
                 }
                 for (const unit of units) {
+                    if(unit === undefined){
+                        continue
+                    }
                     if (unit.appliesToKeys === undefined) {
                         console.error("The unit ", unit, "has no appliesToKey defined")
                         continue
