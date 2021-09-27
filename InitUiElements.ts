@@ -39,7 +39,8 @@ import Combine from "./UI/Base/Combine";
 import {SubtleButton} from "./UI/Base/SubtleButton";
 import ShowTileInfo from "./UI/ShowDataLayer/ShowTileInfo";
 import {Tiles} from "./Models/TileRange";
-import PerTileCountAggregator from "./UI/ShowDataLayer/PerTileCountAggregator";
+import {TileHierarchyAggregator} from "./UI/ShowDataLayer/PerTileCountAggregator";
+import {BBox} from "./Logic/GeoOperations";
 
 export class InitUiElements {
     static InitAll(
@@ -430,48 +431,67 @@ export class InitUiElements {
             return flayers;
         });
 
-        const clusterCounter = new PerTileCountAggregator(State.state.locationControl.map(l => {
-            const z = l.zoom + 1
-            if(z < 7){
-                return 7
-            }
-            return z
-        }))
-        const clusterShow = Math.min(...State.state.layoutToUse.data.layers.map(layer => layer.minzoomVisible ?? layer.minzoom))
+        const layers = State.state.layoutToUse.data.layers
+        const clusterShow = Math.min(...layers.map(layer => layer.minzoom))
+        
+        
+        const clusterCounter = TileHierarchyAggregator.createHierarchy()
         new ShowDataLayer({
-            features: clusterCounter,
+            features: clusterCounter.getCountsForZoom(State.state.locationControl, State.state.layoutToUse.data.clustering.minNeededElements),
             leafletMap: State.state.leafletMap,
             layerToShow: ShowTileInfo.styling,
-            doShowLayer: State.state.locationControl.map(l => l.zoom < clusterShow)
+            doShowLayer: layers.length === 1 ? undefined : State.state.locationControl.map(l => l.zoom < clusterShow)
         })
+
         State.state.featurePipeline = new FeaturePipeline(
             source => {
+
+                clusterCounter.addTile(source)
+                
                 const clustering = State.state.layoutToUse.data.clustering
                 const doShowFeatures = source.features.map(
                     f => {
                         const z = State.state.locationControl.data.zoom
-                        if(z >= clustering.maxZoom){
-                            return true
-                        }
-                        if(z < source.layer.layerDef.minzoom){
+
+                        if (z < source.layer.layerDef.minzoom) {
+                            // Layer is always hidden for this zoom level
                             return false;
                         }
-                        if(f.length > clustering.minNeededElements){
-                            console.log("Activating clustering for tile ", Tiles.tile_from_index(source.tileIndex)," as it has ", f.length, "features (clustering starts at)", clustering.minNeededElements)
+
+                        if (z >= clustering.maxZoom) {
+                            return true
+                        }
+
+                        if (f.length > clustering.minNeededElements) {
+                            // This tile alone has too much features
                             return false
                         }
-                        
+
+                        let [tileZ, tileX, tileY] = Tiles.tile_from_index(source.tileIndex);
+                        if (tileZ >= z) {
+
+                            while (tileZ > z) {
+                                tileZ--
+                                tileX = Math.floor(tileX / 2)
+                                tileY = Math.floor(tileY / 2)
+                            }
+
+                            if (clusterCounter.getTile(Tiles.tile_index(tileZ, tileX, tileY))?.totalValue > clustering.minNeededElements) {
+                                return false
+                            }
+                        }
+
+
+                        const bounds = State.state.currentBounds.data
+                        const tilebbox = BBox.fromTileIndex(source.tileIndex)
+                        if (!tilebbox.overlapsWith(bounds)) {
+                            return false
+                        }
+
                         return true
-                    }, [State.state.locationControl]
+                    }, [State.state.locationControl, State.state.currentBounds]
                 )
-                clusterCounter.addTile(source, doShowFeatures.map(b => !b))
-                
-                /*
-                new ShowTileInfo({source: source, 
-                    leafletMap: State.state.leafletMap, 
-                    layer: source.layer.layerDef,
-                    doShowLayer: doShowFeatures.map(b => !b)
-                })*/
+               
                 new ShowDataLayer(
                     {
                         features: source,

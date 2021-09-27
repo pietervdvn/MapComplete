@@ -134,6 +134,8 @@ export default class FeaturePipeline implements FeatureSourceState {
                 layer: source.layer,
                 minZoomLevel: 14,
                 dontEnforceMinZoom: true,
+                maxFeatureCount: state.layoutToUse.data.clustering.minNeededElements,
+                maxZoomLevel: state.layoutToUse.data.clustering.maxZoom,
                 registerTile: (tile) => {
                     // We save the tile data for the given layer to local storage
                     new SaveTileToLocalStorageActor(tile, tile.tileIndex)
@@ -171,20 +173,26 @@ export default class FeaturePipeline implements FeatureSourceState {
     
     private applyMetaTags(src: FeatureSourceForLayer){
         const self = this
-        console.log("Applying metatagging onto ", src.name)
-        MetaTagging.addMetatags(
-            src.features.data,
-            {
-                memberships: this.relationTracker,
-                getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox)
+        console.debug("Applying metatagging onto ", src.name)
+        window.setTimeout(
+            () => {
+                MetaTagging.addMetatags(
+                    src.features.data,
+                    {
+                        memberships: this.relationTracker,
+                        getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox)
+                    },
+                    src.layer.layerDef,
+                    {
+                        includeDates: true,
+                        // We assume that the non-dated metatags are already set by the cache generator
+                        includeNonDates: !src.layer.layerDef.source.isOsmCacheLayer
+                    }
+                )
             },
-            src.layer.layerDef,
-            {
-                includeDates: true,
-                // We assume that the non-dated metatags are already set by the cache generator
-                includeNonDates: !src.layer.layerDef.source.isOsmCacheLayer
-            }
+            15
         )
+       
     }
 
     private updateAllMetaTagging() {

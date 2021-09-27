@@ -45,10 +45,11 @@
   "startLat": 50.642,
   "startLon": 4.482,
   "startZoom": 8,
-  "widenFactor": 1.5,
+  "widenFactor": 1.01,
   "socialImage": "./assets/themes/trees/logo.svg",
   "clustering": {
-    "maxZoom": 18
+    "maxZoom": 19,
+    "minNeededElements": 25
   },
   "layers": [
     "tree_node"

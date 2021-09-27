@@ -17,6 +17,7 @@ export default class ShowDataLayer {
     // Used to generate a fresh ID when needed
     private _cleanCount = 0;
     private geoLayer = undefined;
+    private isDirty = false;
 
     /**
      * If the selected element triggers, this is used to lookup the correct layer and to open the popup
@@ -37,9 +38,30 @@ export default class ShowDataLayer {
         this._layerToShow = options.layerToShow;
         const self = this;
 
+        options.leafletMap.addCallbackAndRunD(_ => {
+                self.update(options)
+            }
+        );
+
         features.addCallback(_ => self.update(options));
-        options.leafletMap.addCallback(_ => self.update(options));
-        this.update(options);
+        options.doShowLayer?.addCallbackAndRun(doShow => {
+            const mp = options.leafletMap.data;
+            if (mp == undefined) {
+                return;
+            }
+            if (doShow) {
+                if (self.isDirty) {
+                    self.update(options)
+                } else {
+                    mp.addLayer(this.geoLayer)
+                }
+            } else {
+                if(this.geoLayer !== undefined){
+                    mp.removeLayer(this.geoLayer)
+                }
+            }
+
+        })
 
         State.state.selectedElement.addCallbackAndRunD(selected => {
             if (self._leafletMap.data === undefined) {
@@ -68,24 +90,14 @@ export default class ShowDataLayer {
             }
         })
 
-        options.doShowLayer?.addCallbackAndRun(doShow => {
-            const mp = options.leafletMap.data;
-            if (this.geoLayer == undefined || mp == undefined) {
-                return;
-            }
-            if (doShow) {
-                mp.addLayer(this.geoLayer)
-            } else {
-                mp.removeLayer(this.geoLayer)
-            }
-
-
-        })
-
     }
 
-    private update(options) {
+    private update(options: ShowDataLayerOptions) {
         if (this._features.data === undefined) {
+            return;
+        }
+        this.isDirty = true;
+        if (options?.doShowLayer?.data === false) {
             return;
         }
         const mp = options.leafletMap.data;
@@ -99,7 +111,18 @@ export default class ShowDataLayer {
             mp.removeLayer(this.geoLayer);
         }
 
-        this.geoLayer = this.CreateGeojsonLayer()
+        const self = this;
+        const data = {
+            type: "FeatureCollection",
+            features: []
+        }
+        // @ts-ignore
+        this.geoLayer = L.geoJSON(data, {
+            style: feature => self.createStyleFor(feature),
+            pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
+            onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
+        });
+
         const allFeats = this._features.data;
         for (const feat of allFeats) {
             if (feat === undefined) {
@@ -123,6 +146,7 @@ export default class ShowDataLayer {
         if (options.doShowLayer?.data ?? true) {
             mp.addLayer(this.geoLayer)
         }
+        this.isDirty = false;
     }
 
 
@@ -143,7 +167,7 @@ export default class ShowDataLayer {
             return;
         }
 
-        const tagSource = feature.properties.id === undefined ? new UIEventSource<any>(feature.properties) : 
+        const tagSource = feature.properties.id === undefined ? new UIEventSource<any>(feature.properties) :
             State.state.allElements.getEventSourceById(feature.properties.id)
         const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
         const style = layer.GenerateLeafletStyle(tagSource, clickable);
@@ -215,21 +239,6 @@ export default class ShowDataLayer {
 
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(feature.properties.id, {feature: feature, leafletlayer: leafletLayer})
-
-    }
-
-    private CreateGeojsonLayer(): L.Layer {
-        const self = this;
-        const data = {
-            type: "FeatureCollection",
-            features: []
-        }
-        // @ts-ignore
-        return L.geoJSON(data, {
-            style: feature => self.createStyleFor(feature),
-            pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
-            onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
-        });
 
     }
 

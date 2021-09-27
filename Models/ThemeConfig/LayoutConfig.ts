@@ -129,17 +129,12 @@ export default class LayoutConfig {
 
         this.clustering = {
             maxZoom: 16,
-            minNeededElements: 500
+            minNeededElements: 25
         };
         if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
-                minNeededElements: json.clustering.minNeededElements ?? 1
-            }
-            for (const layer of this.layers) {
-                if (layer.wayHandling !== LayerConfig.WAYHANDLING_CENTER_ONLY) {
-                    console.debug("WARNING: In order to allow clustering, every layer must be set to CENTER_ONLY. Layer", layer.id, "does not respect this for layout", this.id);
-                }
+                minNeededElements: json.clustering.minNeededElements ?? 25
             }
         }
 

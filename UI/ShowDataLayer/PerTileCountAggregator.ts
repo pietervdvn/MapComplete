@@ -3,120 +3,178 @@ import {BBox} from "../../Logic/GeoOperations";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Tiles} from "../../Models/TileRange";
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 
+export class TileHierarchyAggregator implements FeatureSource {
+    private _parent: TileHierarchyAggregator;
+    private _root: TileHierarchyAggregator;
+    private _z: number;
+    private _x: number;
+    private _y: number;
+    private _tileIndex: number
+    private _counter: SingleTileCounter
 
-/**
- * A feature source containing meta features.
- * It will contain exactly one point for every tile of the specified (dynamic) zoom level
- */
-export default class PerTileCountAggregator implements FeatureSource {
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
-    public readonly name: string = "PerTileCountAggregator"
+    private _subtiles: [TileHierarchyAggregator, TileHierarchyAggregator, TileHierarchyAggregator, TileHierarchyAggregator] = [undefined, undefined, undefined, undefined]
+    public totalValue: number = 0
 
-    private readonly perTile: Map<number, SingleTileCounter> = new Map<number, SingleTileCounter>()
-    private readonly _requestedZoomLevel: UIEventSource<number>;
+    private static readonly empty = []
+    public readonly features = new UIEventSource<{ feature: any, freshness: Date }[]>(TileHierarchyAggregator.empty)
+    public readonly name;
 
-    constructor(requestedZoomLevel: UIEventSource<number>) {
-        this._requestedZoomLevel = requestedZoomLevel;
-        const self = this;
-        this._requestedZoomLevel.addCallbackAndRun(_ => self.update())
+    private readonly featuresStatic = []
+    private readonly featureProperties: { count: number, tileId: number };
+
+    private constructor(parent: TileHierarchyAggregator, z: number, x: number, y: number) {
+        this._parent = parent;
+        this._root = parent?._root ?? this
+        this._z = z;
+        this._x = x;
+        this._y = y;
+        this._tileIndex = Tiles.tile_index(z, x, y)
+        this.name = "Count(" + this._tileIndex + ")"
+
+        const totals = {
+            tileId: this._tileIndex,
+            count: 0
+        }
+        this.featureProperties = totals
+
+        const now = new Date()
+        const feature = {
+            "type": "Feature",
+            "properties": totals,
+            "geometry": {
+                "type": "Point",
+                "coordinates": Tiles.centerPointOf(z, x, y)
+            }
+        }
+        this.featuresStatic.push({feature: feature, freshness: now})
+
+        const bbox = BBox.fromTile(z, x, y)
+        const box = {
+            "type": "Feature",
+            "properties": totals,
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [bbox.minLon, bbox.minLat],
+                        [bbox.minLon, bbox.maxLat],
+                        [bbox.maxLon, bbox.maxLat],
+                        [bbox.maxLon, bbox.minLat],
+                        [bbox.minLon, bbox.minLat]
+                    ]
+                ]
+            }
+        }
+        this.featuresStatic.push({feature: box, freshness: now})
+    }
+
+    public getTile(tileIndex): TileHierarchyAggregator {
+        if (tileIndex === this._tileIndex) {
+            return this;
+        }
+        let [tileZ, tileX, tileY] = Tiles.tile_from_index(tileIndex)
+        while (tileZ - 1 > this._z) {
+            tileX = Math.floor(tileX / 2)
+            tileY = Math.floor(tileY / 2)
+            tileZ--
+        }
+        const xDiff = tileX - (2 * this._x)
+        const yDiff = tileY - (2 * this._y)
+        const subtileIndex = yDiff * 2 + xDiff;
+        return this._subtiles[subtileIndex]?.getTile(tileIndex)
     }
 
     private update() {
-        const now = new Date()
-        const allCountsAsFeatures : {feature: any, freshness: Date}[] = []
-        const aggregate = this.calculatePerTileCount()
-        aggregate.forEach((totalsPerLayer, tileIndex) => {
-            const totals = {}
-            let totalCount = 0
-            totalsPerLayer.forEach((total, layerId) => {
-                totals[layerId] = total
-                totalCount += total
-            })
-            totals["tileId"] = tileIndex
-            totals["count"] = totalCount
-            const feature = {
-                "type": "Feature",
-                "properties": totals,
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": Tiles.centerPointOf(...Tiles.tile_from_index(tileIndex))
-                }
-            }
-            allCountsAsFeatures.push({feature: feature, freshness: now})
-
-            const bbox=  BBox.fromTileIndex(tileIndex)
-            const box = {
-                "type": "Feature",
-                "properties":totals,
-                "geometry": {
-                    "type": "Polygon",
-                    "coordinates": [
-                        [
-                            [bbox.minLon, bbox.minLat],
-                            [bbox.minLon, bbox.maxLat],
-                            [bbox.maxLon, bbox.maxLat],
-                            [bbox.maxLon, bbox.minLat],
-                            [bbox.minLon, bbox.minLat]
-                        ]
-                    ]
-                }
-            }
-            allCountsAsFeatures.push({feature:box, freshness: now})
+        const newMap = new Map<string, number>()
+        let total = 0
+        this?._counter?.countsPerLayer?.data?.forEach((count, layerId) => {
+            newMap.set(layerId, count)
+            total += count
         })
-        this.features.setData(allCountsAsFeatures)
-    }
 
-    /**
-     * Calculates an aggregate count per tile and per subtile
-     * @private
-     */
-    private calculatePerTileCount() {
-        const perTileCount = new Map<number, Map<string, number>>()
-        const targetZoom = this._requestedZoomLevel.data;
-        // We only search for tiles of the same zoomlevel or a higher zoomlevel, which is embedded
-        for (const singleTileCounter of Array.from(this.perTile.values())) {
-
-            let tileZ = singleTileCounter.z
-            let tileX = singleTileCounter.x
-            let tileY = singleTileCounter.y
-            if (tileZ < targetZoom) {
+        for (const tile of this._subtiles) {
+            if (tile === undefined) {
                 continue;
             }
+            total += tile.totalValue
+        }
+        this.totalValue = total
+        this._parent?.update()
+        
+        if (total === 0) {
+            this.features.setData(TileHierarchyAggregator.empty)
+        } else {
+            this.featureProperties.count = total;
+            this.features.data = this.featuresStatic
+            this.features.ping()
+        }
+    }
 
-            while (tileZ > targetZoom) {
+    public addTile(source: FeatureSourceForLayer & Tiled) {
+        const self = this;
+        if (source.tileIndex === this._tileIndex) {
+            if (this._counter === undefined) {
+                this._counter = new SingleTileCounter(this._tileIndex)
+                this._counter.countsPerLayer.addCallbackAndRun(_ => self.update())
+            }
+            this._counter.addTileCount(source)
+        } else {
+
+            // We have to give it to one of the subtiles
+            let [tileZ, tileX, tileY] = Tiles.tile_from_index(source.tileIndex)
+            while (tileZ - 1 > this._z) {
                 tileX = Math.floor(tileX / 2)
                 tileY = Math.floor(tileY / 2)
                 tileZ--
             }
-            const tileI = Tiles.tile_index(tileZ, tileX, tileY)
-            let counts = perTileCount.get(tileI)
-            if (counts === undefined) {
-                counts = new Map<string, number>()
-                perTileCount.set(tileI, counts)
+            const xDiff = tileX - (2 * this._x)
+            const yDiff = tileY - (2 * this._y)
+
+            const subtileIndex = yDiff * 2 + xDiff;
+            if (this._subtiles[subtileIndex] === undefined) {
+                this._subtiles[subtileIndex] = new TileHierarchyAggregator(this, tileZ, tileX, tileY)
             }
-            singleTileCounter.countsPerLayer.data.forEach((count, layerId) => {
-                if (counts.has(layerId)) {
-                    counts.set(layerId, count + counts.get(layerId))
-                } else {
-                    counts.set(layerId, count)
-                }
+            this._subtiles[subtileIndex].addTile(source)
+        }
+
+    }
+
+    public static createHierarchy() {
+        return new TileHierarchyAggregator(undefined, 0, 0, 0)
+    }
+
+
+    private visitSubTiles(f : (aggr: TileHierarchyAggregator) => boolean){
+        const visitFurther = f(this)
+        if(visitFurther){
+            this._subtiles.forEach(tile => tile?.visitSubTiles(f))
+        }
+    }
+    
+    getCountsForZoom(locationControl: UIEventSource<{ zoom : number }>, cutoff: number) : FeatureSource{
+        const self = this
+        return new StaticFeatureSource(
+            locationControl.map(loc => {
+                const features = []
+                const targetZoom = loc.zoom
+                self.visitSubTiles(aggr => {
+                    if(aggr.totalValue < cutoff) {
+                        return false
+                    }
+                    if(aggr._z === targetZoom){
+                        features.push(...aggr.features.data)
+                        return false
+                    }
+                    return aggr._z <= targetZoom;
+                    
+                })
+                
+                return features
             })
-        }
-        return perTileCount;
+            , true);
     }
-
-    public addTile(tile: FeatureSourceForLayer & Tiled, shouldBeCounted: UIEventSource<boolean>) {
-        let counter = this.perTile.get(tile.tileIndex)
-        if (counter === undefined) {
-            counter = new SingleTileCounter(tile.tileIndex)
-            this.perTile.set(tile.tileIndex, counter)
-            // We do **NOT** add a callback on the perTile index, even though we could! It'll update just fine without it
-        }
-        counter.addTileCount(tile, shouldBeCounted)
-    }
-
-
 }
 
 /**
@@ -131,6 +189,7 @@ class SingleTileCounter implements Tiled {
     public readonly x: number
     public readonly y: number
 
+
     constructor(tileIndex: number) {
         this.tileIndex = tileIndex
         this.bbox = BBox.fromTileIndex(tileIndex)
@@ -140,17 +199,16 @@ class SingleTileCounter implements Tiled {
         this.y = y
     }
 
-    public addTileCount(source: FeatureSourceForLayer, shouldBeCounted: UIEventSource<boolean>) {
+    public addTileCount(source: FeatureSourceForLayer) {
         const layer = source.layer.layerDef
         this.registeredLayers.set(layer.id, layer)
         const self = this
+
         source.features.map(f => {
-            /*if (!shouldBeCounted.data) {
-                return;
-            }*/
             self.countsPerLayer.data.set(layer.id, f.length)
             self.countsPerLayer.ping()
-        }, [shouldBeCounted])
+        })
+
     }
 
 }

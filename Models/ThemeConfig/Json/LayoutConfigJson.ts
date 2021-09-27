@@ -228,8 +228,8 @@ export interface LayoutConfigJson {
          */
         maxZoom?: number,
         /**
-         * The number of elements that should be showed (in total) before clustering starts to happen.
-         * If clustering is defined, defaults to 0
+         * The number of elements per tile needed to start clustering 
+         * If clustering is defined, defaults to 25
          */
         minNeededElements?: number
     },
