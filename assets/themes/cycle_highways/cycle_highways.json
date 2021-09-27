@@ -143,6 +143,7 @@
       },
       "filter": [
         {
+          "id": "name-alt",
           "options": [
             {
               "question": "Name contains 'alt'",
@@ -151,6 +152,7 @@
           ]
         },
         {
+          "id": "name-wenslijn",
           "options": [
             {
               "question": "Name contains 'wenslijn'",
@@ -159,6 +161,7 @@
           ]
         },
         {
+          "id": "name-omleiding",
           "options": [
             {
               "question": "Name contains 'omleiding'",
@@ -167,6 +170,7 @@
           ]
         },
         {
+          "id":"ref-alt",
           "options": [
             {
               "question": "Reference contains 'alt'",
@@ -175,6 +179,7 @@
           ]
         },
         {
+          "id": "missing_link",
           "options": [
             {
               "question": "No filter"
@@ -194,6 +199,7 @@
           ]
         },
         {
+          "id": "proposed",
           "options": [
             {
               "question": "No filter"

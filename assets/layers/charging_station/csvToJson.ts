@@ -242,6 +242,7 @@ function run(file, protojson) {
     })
     
     proto["filter"].push({
+        id:"connection_type",
         options: filterOptions
     })
 

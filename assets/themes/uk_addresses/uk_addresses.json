@@ -15,11 +15,15 @@
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
   "version": "2021-09-17",
-  "startLat": -0.08528530407,
-  "startLon": 51.52103754846,
-  "startZoom": 18,
-  "widenFactor": 1.5,
+  "startLat": -0.08706,
+  "startLon": 51.52224,
+  "startZoom": 17,
+  "widenFactor": 1.01,
   "socialImage": "",
+  "clustering": {
+    "minNeededFeatures": 25,
+    "maxZoom": 17
+  },
   "layers": [
     {
       "id": "to_import",
@@ -34,20 +38,20 @@
       "minzoom": 12,
       "wayHandling": 1,
       "icon": {
-        "render": "./assets/themes/uk_addresses/housenumber_unknown.svg"
-      },
-      "iconSize": {
-        "render": "40,40,center",
+        "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
         "mappings": [
           {
             "if": "_embedding_object:id~*",
-            "then": "15,15,center"
+            "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
           },
           {
             "if": "_imported=yes",
-            "then": "8,8,center"
+            "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
           }
         ]
+      },
+      "iconSize": {
+        "render": "40,40,center"
       },
       "title": {
         "render": "Address to be determined"
@@ -73,6 +77,22 @@
         "_embedding_object:addr:housenumber=JSON.parse(feat.properties._embedding_object)?.['addr:housenumber']",
         "_embedding_object:addr:street=JSON.parse(feat.properties._embedding_object)?.['addr:street']",
         "_embedding_object:id=JSON.parse(feat.properties._embedding_object)?.id"
+      ],
+      "filter": [
+        {
+          "id": "to_handle",
+          "options": [
+            {
+              "question": "Only show non-matched objects",
+              "osmTags": {
+                "and": [
+                  "_imported=",
+                  "_embedding_object:id="
+                ]
+              }
+            }
+          ]
+        }
       ]
     },
     {

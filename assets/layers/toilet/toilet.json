@@ -411,6 +411,7 @@
     ],
     "filter": [
         {
+            "id": "wheelchair",
             "options": [
                 {
                     "question": {
@@ -421,6 +422,7 @@
             ]
         },
         {
+            "id": "changing_table",
             "options": [
                 {
                     "question": {
@@ -431,6 +433,7 @@
             ]
         },
         {
+            "id": "free",
             "options": [
                 {
                     "question": {

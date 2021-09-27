@@ -181,10 +181,10 @@ export default class GeoOperationsSpec extends T {
                 ["bbox bounds test",
                     () => {
                         const bbox = BBox.fromTile(16, 32754, 21785)
-                        equal(-0.0714111328125, bbox.minLon)
-                        equal(-0.076904296875, bbox.maxLon)
-                        equal(51.53266860674158, bbox.minLat)
-                        equal(51.5292513551899, bbox.maxLat)
+                        equal(-0.076904296875, bbox.minLon)
+                        equal(-0.0714111328125, bbox.maxLon)
+                        equal(51.5292513551899, bbox.minLat)
+                        equal(51.53266860674158, bbox.maxLat)
                     }
                 ]
             ]

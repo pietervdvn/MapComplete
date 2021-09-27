@@ -560,6 +560,7 @@
     ],
     "filter": [
         {
+            "id": "opened-now",
             "options": [
                 {
                     "question": {
@@ -571,6 +572,7 @@
             ]
         },
         {
+            "id": "vegetarian",
             "options": [
                 {
                     "question": {
@@ -589,6 +591,7 @@
             ]
         },
         {
+            "id": "vegan",
             "options": [
                 {
                     "question": {
@@ -605,6 +608,7 @@
             ]
         },
         {
+            "id": "halal",
             "options": [
                 {
                     "question": {

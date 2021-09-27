@@ -42,6 +42,8 @@ import {Tiles} from "./Models/TileRange";
 import {TileHierarchyAggregator} from "./UI/ShowDataLayer/PerTileCountAggregator";
 import {BBox} from "./Logic/GeoOperations";
 import StaticFeatureSource from "./Logic/FeatureSource/Sources/StaticFeatureSource";
+import FilterConfig from "./Models/ThemeConfig/FilterConfig";
+import FilteredLayer from "./Models/FilteredLayer";
 
 export class InitUiElements {
     static InitAll(
@@ -406,8 +408,10 @@ export class InitUiElements {
 
     private static InitLayers(): void {
         const state = State.state;
+        const empty = []
+
         state.filteredLayers = state.layoutToUse.map((layoutToUse) => {
-            const flayers = [];
+            const flayers: FilteredLayer[] = [];
 
             for (const layer of layoutToUse.layers) {
                 const isDisplayed = QueryParameters.GetQueryParameter(
@@ -422,30 +426,47 @@ export class InitUiElements {
                 const flayer = {
                     isDisplayed: isDisplayed,
                     layerDef: layer,
-                    appliedFilters: new UIEventSource<TagsFilter>(undefined),
+                    appliedFilters: new UIEventSource<{ filter: FilterConfig, selected: number }[]>([]),
                 };
+
+                if (layer.filters.length > 0) {
+                    const filtersPerName = new Map<string, FilterConfig>()
+                    layer.filters.forEach(f => filtersPerName.set(f.id, f))
+                    const qp = QueryParameters.GetQueryParameter("filter-" + layer.id, "","Filtering state for a layer")
+                    flayer.appliedFilters.map(filters => {
+                        filters = filters ?? []
+                        return filters.map(f => f.filter.id + "." + f.selected).join(",")
+                    }, [], textual => {
+                        if(textual.length === 0){
+                            return empty
+                        }
+                        return textual.split(",").map(part => {
+                            const [filterId, selected] = part.split(".");
+                            return {filter: filtersPerName.get(filterId), selected: Number(selected)}
+                        }).filter(f => f.filter !== undefined && !isNaN(f.selected))
+                    }).syncWith(qp, true)
+                }
+
                 flayers.push(flayer);
             }
             return flayers;
         });
 
+
         const layers = State.state.layoutToUse.data.layers
-        const clusterShow = Math.min(...layers.map(layer => layer.minzoom))
-        
-        
+
         const clusterCounter = TileHierarchyAggregator.createHierarchy()
         new ShowDataLayer({
             features: clusterCounter.getCountsForZoom(State.state.locationControl, State.state.layoutToUse.data.clustering.minNeededElements),
             leafletMap: State.state.leafletMap,
             layerToShow: ShowTileInfo.styling,
-            doShowLayer: layers.length === 1 ? undefined : State.state.locationControl.map(l => l.zoom < clusterShow)
         })
 
         State.state.featurePipeline = new FeaturePipeline(
             source => {
 
                 clusterCounter.addTile(source)
-                
+
                 const clustering = State.state.layoutToUse.data.clustering
                 const doShowFeatures = source.features.map(
                     f => {
@@ -489,7 +510,7 @@ export class InitUiElements {
                         return true
                     }, [State.state.locationControl, State.state.currentBounds]
                 )
-                
+
                 new ShowDataLayer(
                     {
                         features: source,

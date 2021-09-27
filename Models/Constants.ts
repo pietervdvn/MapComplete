@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.10.0-alpha-2";
+    public static vNumber = "0.10.0-alpha-3";
     public static ImgurApiKey = '7070e7167f0a25a'
 
     // The user journey states thresholds when a new feature gets unlocked

@@ -170,6 +170,7 @@
     ],
     "filter": [
         {
+            "id": "opened-now",
             "options": [
                 {
                     "question": {

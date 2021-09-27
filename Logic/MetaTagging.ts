@@ -150,6 +150,7 @@ export default class MetaTagging {
                 for (const f of functions) {
                     f(params, feature);
                 }
+                 State.state.allElements.getEventSourceById(feature.properties.id).ping();
             } catch (e) {
                 console.error("While calculating a tag value: ", e)
             }

@@ -7,19 +7,12 @@ import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import {Translation} from "../i18n/Translation";
 import Svg from "../../Svg";
-import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import {And} from "../../Logic/Tags/And";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import State from "../../State";
 import FilteredLayer from "../../Models/FilteredLayer";
 import BackgroundSelector from "./BackgroundSelector";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
-
-
-/**
- * Shows the filter
- */
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>) {
@@ -101,26 +94,52 @@ export default class FilterView extends VariableUiElement {
             return undefined;
         }
 
-        let listFilterElements: [BaseUIElement, UIEventSource<TagsFilter>][] = layer.filters.map(
+        const filterIndexes = new Map<string, number>()
+        layer.filters.forEach((f, i) => filterIndexes.set(f.id, i))
+
+        let listFilterElements: [BaseUIElement, UIEventSource<{ filter: FilterConfig, selected: number }>][] = layer.filters.map(
             FilterView.createFilter
         );
 
-        const update = () => {
-            let listTagsFilters = Utils.NoNull(
-                listFilterElements.map((input) => input[1].data)
-            );
-            flayer.appliedFilters.setData(new And(listTagsFilters));
-        };
+        listFilterElements.forEach((inputElement, i) =>
+            inputElement[1].addCallback((changed) => {
+                const oldValue = flayer.appliedFilters.data
+                
+                if(changed === undefined){
+                    // Lets figure out which filter should be removed
+                    // We know this inputElement corresponds with layer.filters[i]
+                    // SO, if there is a value in 'oldValue' with this filter, we have to recalculated
+                    if(!oldValue.some(f => f.filter === layer.filters[i])){
+                        // The filter to remove is already gone, we can stop
+                        return;
+                    }
+                }else if(oldValue.some(f => f.filter === changed.filter && f.selected === changed.selected)){
+                    // The changed value is already there
+                    return;
+                }
+                const listTagsFilters = Utils.NoNull(
+                    listFilterElements.map((input) => input[1].data)
+                );
 
-        listFilterElements.forEach((inputElement) =>
-            inputElement[1].addCallback((_) => update())
+                console.log(listTagsFilters, oldValue)
+                flayer.appliedFilters.setData(listTagsFilters);
+            })
         );
 
         flayer.appliedFilters.addCallbackAndRun(appliedFilters => {
-            if (appliedFilters === undefined || appliedFilters.and.length === 0) {
-                listFilterElements.forEach(filter => filter[1].setData(undefined))
-                return
+            for (let i = 0; i < layer.filters.length; i++){
+                const filter = layer.filters[i];
+                let foundMatch = undefined
+                for (const appliedFilter of appliedFilters) {
+                    if(appliedFilter.filter === filter){
+                        foundMatch = appliedFilter
+                     break;   
+                    }
+                }
+                
+                listFilterElements[i][1].setData(foundMatch)
             }
+
         })
 
         return new Combine(listFilterElements.map(input => input[0].SetClass("mt-3")))
@@ -128,7 +147,7 @@ export default class FilterView extends VariableUiElement {
 
     }
 
-    private static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<TagsFilter>] {
+    private static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<{ filter: FilterConfig, selected: number }>] {
         if (filterConfig.options.length === 1) {
             let option = filterConfig.options[0];
 
@@ -142,20 +161,36 @@ export default class FilterView extends VariableUiElement {
                 .ToggleOnClick()
                 .SetClass("block m-1")
 
-            return [toggle, toggle.isEnabled.map(enabled => enabled ? option.osmTags : undefined, [], tags => tags !== undefined)]
+            const selected = {
+                filter: filterConfig,
+                selected: 0
+            }
+            return [toggle, toggle.isEnabled.map(enabled => enabled ? selected : undefined, [],
+                f => f?.filter === filterConfig && f?.selected === 0)
+            ]
         }
 
         let options = filterConfig.options;
 
+        const values = options.map((f, i) => ({
+           filter: filterConfig, selected: i 
+        }))
         const radio = new RadioButton(
             options.map(
-                (option) =>
-                    new FixedInputElement(option.question.Clone(), option.osmTags)
+                (option, i) =>
+                    new FixedInputElement(option.question.Clone(), i)
             ),
             {
                 dontStyle: true
             }
         );
-        return [radio, radio.GetValue()]
+        return [radio, 
+            radio.GetValue().map(
+            i => values[i], 
+                [],
+            selected => {
+                return selected?.selected
+            }
+        )]
     }
 }

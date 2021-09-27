@@ -223,14 +223,14 @@ export default class SimpleAddUI extends Toggle {
                 ]
             ).SetClass("flex flex-col")
         ).onClick(() => {
-            preset.layerToAddTo.appliedFilters.setData(new And([]))
+            preset.layerToAddTo.appliedFilters.setData([])
             cancel()
         })
 
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
             disableFilter,
-            preset.layerToAddTo.appliedFilters.map(filters => filters === undefined || filters.normalize().and.length === 0)
+            preset.layerToAddTo.appliedFilters.map(filters => filters === undefined || filters.length === 0)
         )
 
 
