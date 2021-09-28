@@ -3,9 +3,9 @@ import {UIEventSource} from "../../UIEventSource";
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {Utils} from "../../../Utils";
-import {BBox} from "../../GeoOperations";
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger";
 import {Tiles} from "../../../Models/TileRange";
+import {BBox} from "../../BBox";
 
 export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     public readonly loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();

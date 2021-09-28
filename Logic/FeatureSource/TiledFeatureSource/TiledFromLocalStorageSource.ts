@@ -5,12 +5,13 @@ import Loc from "../../../Models/Loc";
 import TileHierarchy from "./TileHierarchy";
 import {Utils} from "../../../Utils";
 import SaveTileToLocalStorageActor from "../Actors/SaveTileToLocalStorageActor";
-import {BBox} from "../../GeoOperations";
 import {Tiles} from "../../../Models/TileRange";
+import {BBox} from "../../BBox";
 
 export default class TiledFromLocalStorageSource implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     public loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
-
+public tileFreshness : Map<number, Date> = new Map<number, Date>()
+    
     constructor(layer: FilteredLayer,
                 handleFeatureSource: (src: FeatureSourceForLayer & Tiled, index: number) => void,
                 state: {
@@ -29,7 +30,14 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                 return Number(key.substring(prefix.length));
             })
 
-        console.log("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
+        console.debug("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
+        for (const index of indexes) {
+            const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" +index+"-time";
+            const data = Number(localStorage.getItem(prefix))
+            const freshness = new Date()
+            freshness.setTime(data)
+            this.tileFreshness.set(index, freshness)
+        }
 
         const zLevels = indexes.map(i => i % 100)
         const indexesSet = new Set(indexes)
@@ -72,7 +80,7 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
             }
             , [layer.isDisplayed, state.leafletMap]).stabilized(50);
 
-        neededTiles.addCallbackAndRun(t => console.log("Tiles to load from localstorage:", t))
+        neededTiles.addCallbackAndRun(t => console.debug("Tiles to load from localstorage:", t))
 
         neededTiles.addCallbackAndRunD(neededIndexes => {
             for (const neededIndex of neededIndexes) {

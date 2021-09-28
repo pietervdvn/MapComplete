@@ -5,9 +5,9 @@
 import {UIEventSource} from "../../UIEventSource";
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
-import {BBox} from "../../GeoOperations";
 import {Utils} from "../../../Utils";
 import {Tiles} from "../../../Models/TileRange";
+import {BBox} from "../../BBox";
 
 export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled, IndexedFeatureSource {
 

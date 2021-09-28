@@ -5,8 +5,8 @@ import {UIEventSource} from "../../UIEventSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {Utils} from "../../../Utils";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
-import {BBox} from "../../GeoOperations";
 import {Tiles} from "../../../Models/TileRange";
+import {BBox} from "../../BBox";
 
 
 export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {

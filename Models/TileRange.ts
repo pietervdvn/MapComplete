@@ -86,7 +86,7 @@ export class Tiles {
     static embedded_tile(lat: number, lon: number, z: number): { x: number, y: number, z: number } {
         return {x: Tiles.lon2tile(lon, z), y: Tiles.lat2tile(lat, z), z: z}
     }
-
+    
     static TileRangeBetween(zoomlevel: number, lat0: number, lon0: number, lat1: number, lon1: number): TileRange {
         const t0 = Tiles.embedded_tile(lat0, lon0, zoomlevel)
         const t1 = Tiles.embedded_tile(lat1, lon1, zoomlevel)

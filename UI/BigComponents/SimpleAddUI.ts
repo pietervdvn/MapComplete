@@ -20,7 +20,7 @@ import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {And} from "../../Logic/Tags/And";
-import {BBox} from "../../Logic/GeoOperations";
+import {BBox} from "../../Logic/BBox";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:

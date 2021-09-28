@@ -192,11 +192,12 @@ export class Utils {
     }
 
     /**
-     * Copies all key-value pairs of the source into the target.
+     * Copies all key-value pairs of the source into the target. This will change the target
      * If the key starts with a '+', the values of the list will be appended to the target instead of overwritten
      * @param source
      * @param target
      * @constructor
+     * @return the second parameter as is
      */
     static Merge(source: any, target: any) {
         for (const key in source) {
@@ -288,15 +289,13 @@ export class Utils {
     }
 
 
-
     private static injectedDownloads = {}
 
     public static injectJsonDownloadForTests(url: string, data) {
         Utils.injectedDownloads[url] = data
     }
 
-    public static downloadJson(url: string, headers?: any): Promise<any> {
-
+    public static download(url: string, headers?: any): Promise<string> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
             console.log("Using injected resource for test for URL", url)
@@ -311,17 +310,14 @@ export class Utils {
                 const xhr = new XMLHttpRequest();
                 xhr.onload = () => {
                     if (xhr.status == 200) {
-                        try {
-                            resolve(JSON.parse(xhr.response))
-                        } catch (e) {
-                            reject("Not a valid json: " + xhr.response)
-                        }
+                        resolve(xhr.response)
+                    } else if (xhr.status === 509 || xhr.status === 429){
+                      reject("rate limited")  
                     } else {
                         reject(xhr.statusText)
                     }
                 };
                 xhr.open('GET', url);
-                xhr.setRequestHeader("accept", "application/json")
                 if (headers !== undefined) {
 
                     for (const key in headers) {
@@ -332,6 +328,11 @@ export class Utils {
                 xhr.send();
             }
         )
+    }
+
+    public static async downloadJson(url: string, headers?: any): Promise<any> {
+        const data = await Utils.download(url, Utils.Merge({"accept": "application/json"}, headers ?? {}))
+        return JSON.parse(data)
     }
 
     /**

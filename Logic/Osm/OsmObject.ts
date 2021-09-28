@@ -1,7 +1,7 @@
 import {Utils} from "../../Utils";
 import * as polygon_features from "../../assets/polygon-features.json";
 import {UIEventSource} from "../UIEventSource";
-import {BBox} from "../GeoOperations";
+import {BBox} from "../BBox";
 
 
 export abstract class OsmObject {

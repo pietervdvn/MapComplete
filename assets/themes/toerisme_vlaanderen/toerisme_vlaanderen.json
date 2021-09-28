@@ -20,7 +20,7 @@
   "startZoom": 8,
   "startLat": 50.8536,
   "startLon": 4.433,
-  "widenFactor": 2,
+  "widenFactor": 1.5,
   "layers": [
     {
       "builtin": [

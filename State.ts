@@ -17,7 +17,7 @@ import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import FilteredLayer from "./Models/FilteredLayer";
 import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
-import {BBox} from "./Logic/GeoOperations";
+import {BBox} from "./Logic/BBox";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -83,7 +83,7 @@ export default class State {
     public readonly featureSwitchExportAsPdf: UIEventSource<boolean>;
     public readonly overpassUrl: UIEventSource<string>;
     public readonly overpassTimeout: UIEventSource<number>;
-    public readonly overpassMaxZoom: UIEventSource<number> = new UIEventSource<number>(undefined);
+    public readonly overpassMaxZoom: UIEventSource<number> = new UIEventSource<number>(20);
 
     public featurePipeline: FeaturePipeline;
 
@@ -97,7 +97,7 @@ export default class State {
      * The current visible extent of the screen
      */
     public readonly currentBounds = new UIEventSource<BBox>(undefined)
-    
+
     public backgroundLayer;
     public readonly backgroundLayerId: UIEventSource<string>;
 
@@ -372,23 +372,21 @@ export default class State {
             return;
         }
 
-        this.osmConnection = new OsmConnection(
-            this.featureSwitchIsTesting.data,
-            this.featureSwitchFakeUser.data,
-            this.allElements, 
-            this.changes,
-            QueryParameters.GetQueryParameter(
+        this.osmConnection = new OsmConnection({
+            changes: this.changes,
+            dryRun: this.featureSwitchIsTesting.data,
+            fakeUser: this.featureSwitchFakeUser.data,
+            allElements: this.allElements,
+            oauth_token: QueryParameters.GetQueryParameter(
                 "oauth_token",
                 undefined,
                 "Used to complete the login"
             ),
-            layoutToUse?.id,
-            true,
-            // @ts-ignore
-            this.featureSwitchApiURL.data
-        );
+            layoutName: layoutToUse?.id,
+            osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data
+        })
 
-      
+
         new ChangeToElementsActor(this.changes, this.allElements)
 
         new PendingChangesUploader(this.changes, this.selectedElement);

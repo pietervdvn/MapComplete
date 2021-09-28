@@ -1,8 +1,9 @@
 import {Utils} from "../Utils";
 import * as Assert from "assert";
 import T from "./TestHelper";
-import {BBox, GeoOperations} from "../Logic/GeoOperations";
+import {GeoOperations} from "../Logic/GeoOperations";
 import {equal} from "assert";
+import {BBox} from "../Logic/BBox";
 
 Utils.runningFromConsole = true;
 

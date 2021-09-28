@@ -1,10 +1,10 @@
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
 import {Utils} from "../../../Utils";
-import {BBox} from "../../GeoOperations";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import TileHierarchy from "./TileHierarchy";
 import {Tiles} from "../../../Models/TileRange";
+import {BBox} from "../../BBox";
 
 /**
  * Contains all features in a tiled fashion.
@@ -109,7 +109,6 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
         // To much features - we split
         return featureCount > this.maxFeatureCount
         
-        
     }
     
     /***
@@ -143,7 +142,20 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
 
         for (const feature of features) {
             const bbox = BBox.get(feature.feature)
-            if (this.options.dontEnforceMinZoom || this.options.minZoomLevel === undefined) {
+
+            if (this.options.dontEnforceMinZoom) {
+                if (bbox.overlapsWith(this.upper_left.bbox)) {
+                    ulf.push(feature)
+                } else if (bbox.overlapsWith(this.upper_right.bbox)) {
+                    urf.push(feature)
+                } else if (bbox.overlapsWith(this.lower_left.bbox)) {
+                    llf.push(feature)
+                } else if (bbox.overlapsWith(this.lower_right.bbox)) {
+                    lrf.push(feature)
+                } else {
+                    overlapsboundary.push(feature)
+                }
+            }else if (this.options.minZoomLevel === undefined) {
                 if (bbox.isContainedIn(this.upper_left.bbox)) {
                     ulf.push(feature)
                 } else if (bbox.isContainedIn(this.upper_right.bbox)) {

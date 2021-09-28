@@ -1,4 +1,4 @@
-import {BBox, GeoOperations} from "./GeoOperations";
+import {GeoOperations} from "./GeoOperations";
 import Combine from "../UI/Base/Combine";
 import RelationsTracker from "./Osm/RelationsTracker";
 import State from "../State";
@@ -7,6 +7,7 @@ import List from "../UI/Base/List";
 import Title from "../UI/Base/Title";
 import {UIEventSourceTools} from "./UIEventSource";
 import AspectedRouting from "./Osm/aspectedRouting";
+import {BBox} from "./BBox";
 
 export interface ExtraFuncParams {
     /**

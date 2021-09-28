@@ -1,9 +1,9 @@
 import FeatureSource, {FeatureSourceForLayer, Tiled} from "../../Logic/FeatureSource/FeatureSource";
-import {BBox} from "../../Logic/GeoOperations";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Tiles} from "../../Models/TileRange";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
+import {BBox} from "../../Logic/BBox";
 
 export class TileHierarchyAggregator implements FeatureSource {
     private _parent: TileHierarchyAggregator;

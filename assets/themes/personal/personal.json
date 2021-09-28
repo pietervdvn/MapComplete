@@ -12,7 +12,7 @@
     "zh_Hant": "個人化主題"
   },
   "description": {
-    "en": "Create a personal theme based on all the available layers of all themes",
+    "en": "Create a personal theme based on all the available layers of all themes. Open the layer selection to select one or more layers.",
     "nl": "Stel je eigen thema samen door lagen te combineren van alle andere themas",
     "es": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
     "ca": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
@@ -37,11 +37,14 @@
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/svg/addSmall.svg",
+  "clustering": {
+    "maxZoom": 19
+  },
   "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 16,
-  "widenFactor": 3,
+  "widenFactor": 1.2,
   "layers": [],
   "roamingRenderings": []
 }

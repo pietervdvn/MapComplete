@@ -7,11 +7,12 @@ import Combine from "../Base/Combine";
 import Svg from "../../Svg";
 import State from "../../State";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
-import {BBox, GeoOperations} from "../../Logic/GeoOperations";
+import {GeoOperations} from "../../Logic/GeoOperations";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import {BBox} from "../../Logic/BBox";
 
 export default class LocationInput extends InputElement<Loc> {
 

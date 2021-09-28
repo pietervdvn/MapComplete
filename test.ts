@@ -1,33 +1,35 @@
-import SplitRoadWizard from "./UI/Popup/SplitRoadWizard";
-import State from "./State";
+import {Tiles} from "./Models/TileRange";
+import OsmFeatureSource from "./Logic/FeatureSource/TiledFeatureSource/OsmFeatureSource";
+import {Utils} from "./Utils";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import MinimapImplementation from "./UI/Base/MinimapImplementation";
-import {UIEventSource} from "./Logic/UIEventSource";
-import FilteredLayer from "./Models/FilteredLayer";
-import {And} from "./Logic/Tags/And";
-import ShowDataLayer from "./UI/ShowDataLayer/ShowDataLayer";
-import ShowTileInfo from "./UI/ShowDataLayer/ShowTileInfo";
-import StaticFeatureSource from "./Logic/FeatureSource/Sources/StaticFeatureSource";
-import {BBox} from "./Logic/GeoOperations";
-import Minimap from "./UI/Base/Minimap";
+import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 
-State.state = new State(undefined)
+const allLayers: LayerConfig[] = []
+const seenIds = new Set<string>()
+for (const layoutConfig of AllKnownLayouts.layoutsList) {
+    if (layoutConfig.hideFromOverview) {
+        continue
+    }
+    for (const layer of layoutConfig.layers) {
+        if (seenIds.has(layer.id)) {
+            continue
+        }
+        seenIds.add(layer.id)
+        allLayers.push(layer)
+    }
+}
 
-const leafletMap = new UIEventSource(undefined)
-MinimapImplementation.initialize()
-Minimap.createMiniMap({
-    leafletMap: leafletMap,
-}).SetStyle("height: 600px; width: 600px")
-    .AttachTo("maindiv")
+console.log("All layer ids", allLayers.map(l => l.id))
 
-const bbox = BBox.fromTile(16,32754,21785).asGeoJson({
-    count: 42,
-    tileId: 42
+const src = new OsmFeatureSource({
+    backend: "https://www.openstreetmap.org",
+    handleTile: tile => console.log("Got tile", tile),
+    allLayers: allLayers
 })
-
-console.log(bbox)
-new ShowDataLayer({
-    layerToShow: ShowTileInfo.styling,
-    leafletMap: leafletMap,
-    features: new StaticFeatureSource([ bbox], false)
+src.LoadTile(16, 33354, 21875).then(geojson => {
+    console.log("Got geojson", geojson);
+    Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson), "test.geojson", {
+        mimetype: "application/vnd.geo+json"
+    })
 })
+//*/

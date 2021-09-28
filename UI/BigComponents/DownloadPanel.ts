@@ -5,7 +5,7 @@ import State from "../../State";
 import {Utils} from "../../Utils";
 import Combine from "../Base/Combine";
 import CheckBoxes from "../Input/Checkboxes";
-import {BBox, GeoOperations} from "../../Logic/GeoOperations";
+import {GeoOperations} from "../../Logic/GeoOperations";
 import Toggle from "../Input/Toggle";
 import Title from "../Base/Title";
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
@@ -13,6 +13,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import SimpleMetaTagger from "../../Logic/SimpleMetaTagger";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {meta} from "@turf/turf";
+import {BBox} from "../../Logic/BBox";
 
 export class DownloadPanel extends Toggle {
     

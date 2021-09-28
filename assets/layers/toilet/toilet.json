@@ -27,7 +27,7 @@
         "mappings": [
             {
                 "if": "wheelchair=yes",
-                "then": "./assets/layers/toilet/wheelchair.svg"
+                "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
             },
             {
                 "if": {

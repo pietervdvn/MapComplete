@@ -4,7 +4,7 @@
  */
 import FeatureSource, {Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
-import {BBox} from "../../GeoOperations";
+import {BBox} from "../../BBox";
 
 export default class RememberingSource implements FeatureSource , Tiled{
 

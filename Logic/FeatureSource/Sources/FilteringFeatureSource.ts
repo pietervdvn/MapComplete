@@ -3,7 +3,7 @@ import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import Hash from "../../Web/Hash";
-import {BBox} from "../../GeoOperations";
+import {BBox} from "../../BBox";
 
 export default class FilteringFeatureSource implements FeatureSourceForLayer, Tiled {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> =

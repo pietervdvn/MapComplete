@@ -9,9 +9,10 @@ import {TagsFilter} from "../Tags/TagsFilter";
 import SimpleMetaTagger from "../SimpleMetaTagger";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import RelationsTracker from "../Osm/RelationsTracker";
+import {BBox} from "../BBox";
 
 
-export default class OverpassFeatureSource implements FeatureSource, FeatureSourceState {
+export default class OverpassFeatureSource implements FeatureSource {
 
     public readonly name = "OverpassFeatureSource"
 
@@ -21,7 +22,6 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
     public readonly features: UIEventSource<{ feature: any, freshness: Date }[]> = new UIEventSource<any[]>(undefined);
 
 
-    public readonly sufficientlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0);
 
@@ -40,10 +40,12 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
     private readonly state: {
         readonly locationControl: UIEventSource<Loc>,
         readonly layoutToUse: UIEventSource<LayoutConfig>,
-        readonly leafletMap: any,
         readonly overpassUrl: UIEventSource<string>;
         readonly overpassTimeout: UIEventSource<number>;
+        readonly currentBounds :UIEventSource<BBox>
     }
+    private readonly _isActive: UIEventSource<boolean>;
+    private _onUpdated?: (bbox: BBox, dataFreshness: Date) => void;
     /**
      * The most important layer should go first, as that one gets first pick for the questions
      */
@@ -51,33 +53,24 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
         state: {
             readonly locationControl: UIEventSource<Loc>,
             readonly layoutToUse: UIEventSource<LayoutConfig>,
-            readonly leafletMap: any,
             readonly overpassUrl: UIEventSource<string>;
             readonly overpassTimeout: UIEventSource<number>;
-            readonly overpassMaxZoom: UIEventSource<number>
-        }) {
+            readonly overpassMaxZoom: UIEventSource<number>,
+            readonly currentBounds :UIEventSource<BBox>
+        },   
+        
+       options?: {
+            isActive?: UIEventSource<boolean>,
+           onUpdated?:  (bbox: BBox, freshness: Date) => void,
+       relationTracker: RelationsTracker}) {
 
         this.state = state
-        this.relationsTracker = new RelationsTracker()
+        this._isActive = options.isActive;
+        this._onUpdated =options. onUpdated;
+        this.relationsTracker = options.relationTracker
         const location = state.locationControl
         const self = this;
 
-        this.sufficientlyZoomed = location.map(location => {
-                if (location?.zoom === undefined) {
-                    return false;
-                }
-                let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
-                if (location.zoom < minzoom) {
-                    return false;
-                }
-                const maxZoom = state.overpassMaxZoom.data
-                if (maxZoom !== undefined && location.zoom > maxZoom) {
-                    return false;
-                }
-
-                return true;
-            }, [state.layoutToUse]
-        );
         for (let i = 0; i < 25; i++) {
             // This update removes all data on all layers -> erase the map on lower levels too
             this._previousBounds.set(i, []);
@@ -89,16 +82,11 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
         location.addCallback(() => {
             self.update()
         });
-        state.leafletMap.addCallbackAndRunD(_ => {
-            self.update();
+        
+        state.currentBounds.addCallback(_ => {
+            self.update()
         })
-    }
-
-    public ForceRefresh() {
-        for (let i = 0; i < 25; i++) {
-            this._previousBounds.set(i, []);
-        }
-        this.update();
+       
     }
 
     private GetFilter(): Overpass {
@@ -152,24 +140,34 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
     }
 
     private update() {
-        this.updateAsync().then(_ => {
+        if(!this._isActive.data){
+            return;
+        }
+        const self = this
+        this.updateAsync().then(bboxAndDate => {
+            if(bboxAndDate === undefined || self._onUpdated === undefined){
+                return;
+            }
+            const [bbox, date] = bboxAndDate
+            self._onUpdated(bbox, date);
         })
     }
 
-    private async updateAsync(): Promise<void> {
+    private async updateAsync(): Promise<[BBox, Date]> {
         if (this.runningQuery.data) {
             console.log("Still running a query, not updating");
-            return;
+            return undefined;
         }
 
         if (this.timeout.data > 0) {
             console.log("Still in timeout - not updating")
-            return;
+            return undefined;
         }
 
-        const bounds = this.state.leafletMap.data?.getBounds()?.pad(this.state.layoutToUse.data.widenFactor);
+        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.data.widenFactor)?.expandToTileBounds(14);
+        
         if (bounds === undefined) {
-            return;
+            return undefined;
         }
 
         const n = Math.min(90, bounds.getNorth());
@@ -178,13 +176,12 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
         const w = Math.max(-180, bounds.getWest());
         const queryBounds = {north: n, east: e, south: s, west: w};
 
-        const z = Math.floor(this.state.locationControl.data.zoom ?? 0);
 
         const self = this;
         const overpass = this.GetFilter();
 
         if (overpass === undefined) {
-            return;
+            return undefined;
         }
         this.runningQuery.setData(true);
 
@@ -195,15 +192,14 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
 
             try {
                 [data, date] = await overpass.queryGeoJson(queryBounds)
+                console.log("Querying overpass is done", data)
             } catch (e) {
-                console.error(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to`, e);
-
                 self.retries.data++;
                 self.retries.ping();
+                console.error(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to`, e);
 
                 self.timeout.setData(self.retries.data * 5);
-                self.runningQuery.setData(false);
-
+                
                 while (self.timeout.data > 0) {
                     await Utils.waitFor(1000)
                     self.timeout.data--
@@ -212,16 +208,20 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
             }
         } while (data === undefined);
 
+        const z = Math.floor(this.state.locationControl.data.zoom ?? 0);
         self._previousBounds.get(z).push(queryBounds);
         self.retries.setData(0);
 
         try {
             data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date));
             self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
+            return [bounds, date];
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)
+        }finally {
+            self.runningQuery.setData(false);
         }
-        self.runningQuery.setData(false);
+        
 
 
     }
@@ -231,7 +231,7 @@ export default class OverpassFeatureSource implements FeatureSource, FeatureSour
             return false;
         }
 
-        const b = this.state.leafletMap.data.getBounds();
+        const b = this.state.currentBounds.data;
         return b.getSouth() >= bounds.south &&
             b.getNorth() <= bounds.north &&
             b.getEast() <= bounds.east &&

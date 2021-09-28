@@ -16,8 +16,8 @@ export class Overpass {
     private readonly _extraScripts: string[];
     private _includeMeta: boolean;
     private _relationTracker: RelationsTracker;
-    
-   
+
+
     constructor(filter: TagsFilter, extraScripts: string[],
                 interpreterUrl: UIEventSource<string>,
                 timeout: UIEventSource<number>,
@@ -41,10 +41,13 @@ export class Overpass {
         }
         const self = this;
         const json = await Utils.downloadJson(query)
-        
-        if (json.elements === [] && ((json.remarks ?? json.remark).indexOf("runtime error") >= 0)) {
-            console.log("Timeout or other runtime error");
-            throw("Runtime error (timeout)")
+        console.log("Got json!", json)
+        if (json.elements.length === 0 && json.remark !== undefined) {
+            console.warn("Timeout or other runtime error while querying overpass", json.remark);
+            throw `Runtime error (timeout or similar)${json.remark}`
+        }
+        if(json.elements.length === 0){
+         console.warn("No features for" ,json)   
         }
 
         self._relationTracker.RegisterRelations(json)

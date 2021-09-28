@@ -7,7 +7,7 @@ import Constants from "../../Models/Constants";
 import Loc from "../../Models/Loc";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import {BBox} from "../../Logic/GeoOperations";
+import {BBox} from "../../Logic/BBox";
 
 /**
  * The bottom right attribution panel in the leaflet map

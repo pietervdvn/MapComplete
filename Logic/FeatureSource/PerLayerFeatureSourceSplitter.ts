@@ -15,6 +15,7 @@ export default class PerLayerFeatureSourceSplitter {
                 handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
                 upstream: FeatureSource,
                 options?:{
+        tileIndex?: number,
         handleLeftovers?: (featuresWithoutLayer: any[]) => void
                 }) {
 
@@ -71,7 +72,7 @@ export default class PerLayerFeatureSourceSplitter {
                 let featureSource = knownLayers.get(id)
                 if (featureSource === undefined) {
                     // Not yet initialized - now is a good time
-                    featureSource = new SimpleFeatureSource(layer)
+                    featureSource = new SimpleFeatureSource(layer, options?.tileIndex)
                     featureSource.features.setData(features)
                     knownLayers.set(id, featureSource)
                     handleLayerData(featureSource)

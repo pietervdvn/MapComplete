@@ -5,7 +5,6 @@ import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
 import {UIEventSource} from "../Logic/UIEventSource";
 import Minimap from "./Base/Minimap";
 import Loc from "../Models/Loc";
-import {BBox} from "../Logic/GeoOperations";
 import BaseLayer from "../Models/BaseLayer";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import Translations from "./i18n/Translations";
@@ -14,6 +13,7 @@ import Constants from "../Models/Constants";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import FeaturePipeline from "../Logic/FeatureSource/FeaturePipeline";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
+import {BBox} from "../Logic/BBox";
 /**
  * Creates screenshoter to take png screenshot
  * Creates jspdf and downloads it

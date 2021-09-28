@@ -27,7 +27,6 @@ import MapControlButton from "./UI/MapControlButton";
 import LZString from "lz-string";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-import {TagsFilter} from "./Logic/Tags/TagsFilter";
 import LeftControls from "./UI/BigComponents/LeftControls";
 import RightControls from "./UI/BigComponents/RightControls";
 import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
@@ -40,10 +39,10 @@ import {SubtleButton} from "./UI/Base/SubtleButton";
 import ShowTileInfo from "./UI/ShowDataLayer/ShowTileInfo";
 import {Tiles} from "./Models/TileRange";
 import {TileHierarchyAggregator} from "./UI/ShowDataLayer/PerTileCountAggregator";
-import {BBox} from "./Logic/GeoOperations";
-import StaticFeatureSource from "./Logic/FeatureSource/Sources/StaticFeatureSource";
 import FilterConfig from "./Models/ThemeConfig/FilterConfig";
 import FilteredLayer from "./Models/FilteredLayer";
+import {BBox} from "./Logic/BBox";
+import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 
 export class InitUiElements {
     static InitAll(
@@ -70,10 +69,24 @@ export class InitUiElements {
             "LayoutFromBase64 is ",
             layoutFromBase64
         );
+        
+        if(layoutToUse.id === personal.id){
+            layoutToUse.layers = AllKnownLayouts.AllPublicLayers()
+            for (const layer of layoutToUse.layers) {
+                layer.minzoomVisible = Math.max(layer.minzoomVisible, layer.minzoom)
+                layer.minzoom = Math.max(16, layer.minzoom)
+            }
+        }
 
         State.state = new State(layoutToUse);
 
-        // This 'leaks' the global state via the window object, useful for debugging
+        if(layoutToUse.id === personal.id) {
+            // Disable overpass all together
+            State.state.overpassMaxZoom.setData(0)
+            
+        }
+
+            // This 'leaks' the global state via the window object, useful for debugging
         // @ts-ignore
         window.mapcomplete_state = State.state;
 
@@ -99,45 +112,6 @@ export class InitUiElements {
                 console.warn(
                     "NOT saving custom layout to OSM as we are tesing -> probably in an iFrame"
                 );
-            }
-        }
-
-        function updateFavs() {
-            // This is purely for the personal theme to load the layers there
-            const favs = State.state.favouriteLayers.data ?? [];
-
-            const neededLayers = new Set<LayerConfig>();
-
-            console.log("Favourites are: ", favs);
-            layoutToUse.layers.splice(0, layoutToUse.layers.length);
-            let somethingChanged = false;
-            for (const fav of favs) {
-                if (AllKnownLayers.sharedLayers.has(fav)) {
-                    const layer = AllKnownLayers.sharedLayers.get(fav);
-                    if (!neededLayers.has(layer)) {
-                        neededLayers.add(layer);
-                        somethingChanged = true;
-                    }
-                }
-
-                for (const layouts of State.state.installedThemes.data) {
-                    for (const layer of layouts.layout.layers) {
-                        if (typeof layer === "string") {
-                            continue;
-                        }
-                        if (layer.id === fav) {
-                            if (!neededLayers.has(layer)) {
-                                neededLayers.add(layer);
-                                somethingChanged = true;
-                            }
-                        }
-                    }
-                }
-            }
-            if (somethingChanged) {
-                State.state.layoutToUse.data.layers = Array.from(neededLayers);
-                State.state.layoutToUse.ping();
-                State.state.featurePipeline?.ForceRefresh();
             }
         }
 
@@ -206,18 +180,9 @@ export class InitUiElements {
             .addCallbackAndRunD(_ => addHomeMarker());
         State.state.leafletMap.addCallbackAndRunD(_ => addHomeMarker())
 
-        if (layoutToUse.id === personal.id) {
-            updateFavs();
-        }
 
         InitUiElements.setupAllLayerElements();
-
-        if (layoutToUse.id === personal.id) {
-            State.state.favouriteLayers.addCallback(updateFavs);
-            State.state.installedThemes.addCallback(updateFavs);
-        } else {
             State.state.locationControl.ping();
-        }
 
         new SelectedFeatureHandler(Hash.hash, State.state)
 
@@ -414,15 +379,29 @@ export class InitUiElements {
             const flayers: FilteredLayer[] = [];
 
             for (const layer of layoutToUse.layers) {
-                const isDisplayed = QueryParameters.GetQueryParameter(
-                    "layer-" + layer.id,
-                    "true",
-                    "Wether or not layer " + layer.id + " is shown"
-                ).map<boolean>(
-                    (str) => str !== "false",
-                    [],
-                    (b) => b.toString()
-                );
+                let defaultShown = "true"
+                if(layoutToUse.id === personal.id){
+                    defaultShown = "false"
+                }
+
+                let isDisplayed: UIEventSource<boolean>
+                if(layoutToUse.id === personal.id){
+                    isDisplayed = State.state.osmConnection.GetPreference("personal-theme-layer-" + layer.id + "-enabled")
+                        .map(value => value === "yes", [], enabled => {
+                            return enabled ? "yes" : "";
+                        })
+                    isDisplayed.addCallbackAndRun(d =>console.log("IsDisplayed for layer", layer.id, "is currently", d) )
+                }else{
+                    isDisplayed = QueryParameters.GetQueryParameter(
+                        "layer-" + layer.id,
+                        defaultShown,
+                        "Wether or not layer " + layer.id + " is shown"
+                    ).map<boolean>(
+                        (str) => str !== "false",
+                        [],
+                        (b) => b.toString()
+                    );
+                }
                 const flayer = {
                     isDisplayed: isDisplayed,
                     layerDef: layer,
@@ -453,8 +432,6 @@ export class InitUiElements {
         });
 
 
-        const layers = State.state.layoutToUse.data.layers
-
         const clusterCounter = TileHierarchyAggregator.createHierarchy()
         new ShowDataLayer({
             features: clusterCounter.getCountsForZoom(State.state.locationControl, State.state.layoutToUse.data.clustering.minNeededElements),
@@ -471,6 +448,10 @@ export class InitUiElements {
                 const doShowFeatures = source.features.map(
                     f => {
                         const z = State.state.locationControl.data.zoom
+                        
+                        if(!source.layer.isDisplayed.data){
+                            return false;
+                        }
 
                         if (z < source.layer.layerDef.minzoom) {
                             // Layer is always hidden for this zoom level
@@ -482,7 +463,7 @@ export class InitUiElements {
                         }
 
                         if (f.length > clustering.minNeededElements) {
-                            // This tile alone has too much features
+                            // This tile alone already has too much features
                             return false
                         }
 
@@ -504,11 +485,12 @@ export class InitUiElements {
                         const bounds = State.state.currentBounds.data
                         const tilebbox = BBox.fromTileIndex(source.tileIndex)
                         if (!tilebbox.overlapsWith(bounds)) {
+                            // Not within range
                             return false
                         }
 
                         return true
-                    }, [State.state.locationControl, State.state.currentBounds]
+                    }, [State.state.currentBounds]
                 )
 
                 new ShowDataLayer(
