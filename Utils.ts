@@ -296,12 +296,6 @@ export class Utils {
     }
 
     public static download(url: string, headers?: any): Promise<string> {
-        const injected = Utils.injectedDownloads[url]
-        if (injected !== undefined) {
-            console.log("Using injected resource for test for URL", url)
-            return new Promise((resolve, _) => resolve(injected))
-        }
-
         if (this.externalDownloadFunction !== undefined) {
             return this.externalDownloadFunction(url, headers)
         }
@@ -311,8 +305,8 @@ export class Utils {
                 xhr.onload = () => {
                     if (xhr.status == 200) {
                         resolve(xhr.response)
-                    } else if (xhr.status === 509 || xhr.status === 429){
-                      reject("rate limited")  
+                    } else if (xhr.status === 509 || xhr.status === 429) {
+                        reject("rate limited")
                     } else {
                         reject(xhr.statusText)
                     }
@@ -331,8 +325,18 @@ export class Utils {
     }
 
     public static async downloadJson(url: string, headers?: any): Promise<any> {
+        const injected = Utils.injectedDownloads[url]
+        if (injected !== undefined) {
+            console.log("Using injected resource for test for URL", url)
+            return new Promise((resolve, _) => resolve(injected))
+        }
         const data = await Utils.download(url, Utils.Merge({"accept": "application/json"}, headers ?? {}))
-        return JSON.parse(data)
+        try {
+            return JSON.parse(data)
+        } catch (e) {
+            console.error("Could not parse ", data, "due to", e, "\n", e.stack)
+            throw e;
+        }
     }
 
     /**
