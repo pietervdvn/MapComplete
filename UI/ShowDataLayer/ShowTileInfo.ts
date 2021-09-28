@@ -1,32 +1,14 @@
 import FeatureSource, {Tiled} from "../../Logic/FeatureSource/FeatureSource";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {Utils} from "../../Utils";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import ShowDataLayer from "./ShowDataLayer";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {Tiles} from "../../Models/TileRange";
-
+import * as clusterstyle from "../../assets/layers/cluster_style/cluster_style.json"
 export default class ShowTileInfo {
-    public static readonly styling = new LayerConfig({
-        id: "tileinfo_styling",
-        title: {
-            render: "Tile {z}/{x}/{y}"
-        },
-        tagRenderings: [
-            "all_tags"
-        ],
-        source: {
-            osmTags: "tileId~*"
-        },
-        color: {"render": "#3c3"},
-        width: {
-            "render": "1"
-        },
-        label: {
-            render: "<div class='rounded-full text-xl font-bold' style='width: 2rem; height: 2rem; background: white'>{count}</div>"
-        }
-    }, "tileinfo", true)
+    public static readonly styling = new LayerConfig(
+        clusterstyle, "tileinfo", true)
 
     constructor(options: {
         source: FeatureSource & Tiled, leafletMap: UIEventSource<any>, layer?: LayerConfig,

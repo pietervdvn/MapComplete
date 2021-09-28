@@ -63,6 +63,7 @@ export default class ShowDataLayer {
 
         })
 
+        
         State.state.selectedElement.addCallbackAndRunD(selected => {
             if (self._leafletMap.data === undefined) {
                 return;
@@ -76,17 +77,20 @@ export default class ShowDataLayer {
             if (leafletLayer.getPopup().isOpen()) {
                 return;
             }
-            if (selected.properties.id === feature.properties.id) {
-                // A small sanity check to prevent infinite loops:
-                if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
-                    && feature.id === feature.properties.id // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
-                ) {
-                    leafletLayer.openPopup()
-                }
-                if (feature.id !== feature.properties.id) {
-                    console.trace("Not opening the popup for", feature)
-                }
-
+            if (selected.properties.id !== feature.properties.id) {
+                return;
+            }
+            
+            if (feature.id !== feature.properties.id) {
+                // Probably a feature which has renamed
+                console.trace("Not opening the popup for", feature)
+                return;
+            }
+            if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
+                && feature.id === feature.properties.id // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
+            ) {
+                console.log("Opening popup of feature", feature)
+                leafletLayer.openPopup()
             }
         })
 
@@ -167,8 +171,10 @@ export default class ShowDataLayer {
             return;
         }
 
-        const tagSource = feature.properties.id === undefined ? new UIEventSource<any>(feature.properties) :
-            State.state.allElements.getEventSourceById(feature.properties.id)
+        let tagSource = State.state.allElements.getEventSourceById(feature.properties.id)
+        if(tagSource === undefined){
+           tagSource = new UIEventSource<any>(feature.properties) 
+        }
         const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
         const style = layer.GenerateLeafletStyle(tagSource, clickable);
         const baseElement = style.icon.html;

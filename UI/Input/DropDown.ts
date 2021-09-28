@@ -47,7 +47,7 @@ export class DropDown<T> extends InputElement<T> {
         }
 
         options = options ?? {}
-        options.select_class = options.select_class ?? 'bg-indigo-100 p-1 rounded hover:bg-indigo-200 w-full'
+        options.select_class = options.select_class ?? 'bg-indigo-100 p-1 rounded hover:bg-indigo-200'
 
 
         {

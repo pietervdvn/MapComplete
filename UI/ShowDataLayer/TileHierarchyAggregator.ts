@@ -22,7 +22,7 @@ export class TileHierarchyAggregator implements FeatureSource {
     public readonly name;
 
     private readonly featuresStatic = []
-    private readonly featureProperties: { count: number, tileId: number };
+    private readonly featureProperties: { count: string, tileId: string, id: string };
 
     private constructor(parent: TileHierarchyAggregator, z: number, x: number, y: number) {
         this._parent = parent;
@@ -34,8 +34,9 @@ export class TileHierarchyAggregator implements FeatureSource {
         this.name = "Count(" + this._tileIndex + ")"
 
         const totals = {
-            tileId: this._tileIndex,
-            count: 0
+            id: ""+this._tileIndex,
+            tileId: ""+this._tileIndex,
+            count: ""+0
         }
         this.featureProperties = totals
 
@@ -106,7 +107,7 @@ export class TileHierarchyAggregator implements FeatureSource {
         if (total === 0) {
             this.features.setData(TileHierarchyAggregator.empty)
         } else {
-            this.featureProperties.count = total;
+            this.featureProperties.count = "" + total;
             this.features.data = this.featuresStatic
             this.features.ping()
         }
@@ -145,7 +146,6 @@ export class TileHierarchyAggregator implements FeatureSource {
         return new TileHierarchyAggregator(undefined, 0, 0, 0)
     }
 
-
     private visitSubTiles(f : (aggr: TileHierarchyAggregator) => boolean){
         const visitFurther = f(this)
         if(visitFurther){
@@ -153,8 +153,9 @@ export class TileHierarchyAggregator implements FeatureSource {
         }
     }
     
-    getCountsForZoom(locationControl: UIEventSource<{ zoom : number }>, cutoff: number) : FeatureSource{
+    getCountsForZoom(locationControl: UIEventSource<{ zoom : number }>, cutoff: number = 0) : FeatureSource{
         const self = this
+        
         return new StaticFeatureSource(
             locationControl.map(loc => {
                 const features = []
@@ -205,9 +206,11 @@ class SingleTileCounter implements Tiled {
         const self = this
 
         source.features.map(f => {
-            self.countsPerLayer.data.set(layer.id, f.length)
+            const isDisplayed = source.layer.isDisplayed.data
+            self.countsPerLayer.data.set(layer.id, isDisplayed ? f.length : 0)
             self.countsPerLayer.ping()
-        })
+        }, [source.layer.isDisplayed])
+        
 
     }
 

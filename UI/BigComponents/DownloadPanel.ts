@@ -20,7 +20,7 @@ export class DownloadPanel extends Toggle {
     constructor() {
         const state: {
             featurePipeline: FeaturePipeline,
-            layoutToUse: UIEventSource<LayoutConfig>,
+            layoutToUse: LayoutConfig,
             currentBounds: UIEventSource<BBox>
         } = State.state
         

@@ -29,10 +29,10 @@ export class ImageUploadFlow extends Toggle {
                 key = imagePrefix + ":" + freeIndex;
             }
             console.log("Adding image:" + key, url);
-            State.state.changes
+           Promise.resolve(State.state.changes
                 .applyAction(new ChangeTagAction(
                     tags.id, new Tag(key, url), tagsSource.data
-                ))
+                )))
         })
 
 
