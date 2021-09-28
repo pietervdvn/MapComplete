@@ -39,5 +39,9 @@
     "binocular",
     "observation_tower"
   ],
+  "overiddeAll": {
+    "minZoomVisible": 0 
+  },
+  
   "hideFromOverview": true
 }
