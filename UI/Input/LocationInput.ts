@@ -39,7 +39,7 @@ export default class LocationInput extends InputElement<Loc> {
     private readonly _maxSnapDistance: number
     private readonly _snappedPointTags: any;
     private readonly _bounds: UIEventSource<BBox>;
-    public readonly _matching_layer: UIEventSource<LayerConfig>;
+    public readonly _matching_layer: LayerConfig;
 
     constructor(options: {
         mapBackground?: UIEventSource<BaseLayer>,
@@ -63,18 +63,17 @@ export default class LocationInput extends InputElement<Loc> {
 
 
             if (self._snappedPointTags !== undefined) {
-                this._matching_layer = State.state.layoutToUse.map(layout => {
+                const layout = State.state.layoutToUse
 
-                    for (const layer of layout.layers) {
-                        if (layer.source.osmTags.matchesProperties(self._snappedPointTags)) {
-                            return layer
-                        }
+                let matchingLayer = LocationInput.matchLayer
+                for (const layer of layout.layers) {
+                    if (layer.source.osmTags.matchesProperties(self._snappedPointTags)) {
+                        matchingLayer = layer
                     }
-                    console.error("No matching layer found for tags ", self._snappedPointTags)
-                    return LocationInput.matchLayer
-                })
+                }
+                this._matching_layer = matchingLayer;
             } else {
-               this._matching_layer = new UIEventSource<LayerConfig>(LocationInput.matchLayer)
+               this._matching_layer = LocationInput.matchLayer
             }
 
             this._snappedPoint = options.centerLocation.map(loc => {
@@ -176,7 +175,7 @@ export default class LocationInput extends InputElement<Loc> {
                         enablePopups: false,
                         zoomToFeatures: false,
                         leafletMap: map.leafletMap,
-                        layerToShow: this._matching_layer.data
+                        layerToShow: this._matching_layer
                     })
                     
             }

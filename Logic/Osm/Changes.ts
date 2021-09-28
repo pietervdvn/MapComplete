@@ -131,7 +131,7 @@ export class Changes {
             }
 
             await State.state.osmConnection.UploadChangeset(
-                State.state.layoutToUse.data,
+                State.state.layoutToUse,
                 State.state.allElements,
                 (csId) => Changes.createChangesetFor(csId, changes),
             )

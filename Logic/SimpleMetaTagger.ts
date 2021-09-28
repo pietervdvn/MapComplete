@@ -87,7 +87,7 @@ export default class SimpleMetaTagger {
 
         },
         (feature => {
-            const units = Utils.NoNull([].concat(...State.state?.layoutToUse?.data?.layers?.map(layer => layer.units ?? [])));
+            const units = Utils.NoNull([].concat(...State.state?.layoutToUse?.layers?.map(layer => layer.units ?? [])));
             if (units.length == 0) {
                 return;
             }

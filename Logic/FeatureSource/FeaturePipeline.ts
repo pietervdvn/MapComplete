@@ -1,7 +1,7 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import FilteringFeatureSource from "./Sources/FilteringFeatureSource";
 import PerLayerFeatureSourceSplitter from "./PerLayerFeatureSourceSplitter";
-import FeatureSource, {FeatureSourceForLayer, FeatureSourceState, IndexedFeatureSource, Tiled} from "./FeatureSource";
+import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "./FeatureSource";
 import TiledFeatureSource from "./TiledFeatureSource/TiledFeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import {TileHierarchyTools} from "./TiledFeatureSource/TileHierarchy";
@@ -48,7 +48,7 @@ export default class FeaturePipeline {
             readonly locationControl: UIEventSource<Loc>,
             readonly selectedElement: UIEventSource<any>,
             readonly changes: Changes,
-            readonly  layoutToUse: UIEventSource<LayoutConfig>,
+            readonly  layoutToUse: LayoutConfig,
             readonly leafletMap: any,
             readonly overpassUrl: UIEventSource<string>;
             readonly overpassTimeout: UIEventSource<number>;
@@ -86,7 +86,7 @@ export default class FeaturePipeline {
                 if (location?.zoom === undefined) {
                     return false;
                 }
-                let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
+                let minzoom = Math.min(...state.layoutToUse.layers.map(layer => layer.minzoom ?? 18));
                 return location.zoom >= minzoom;
             }
         );
@@ -223,8 +223,8 @@ export default class FeaturePipeline {
                 layer: source.layer,
                 minZoomLevel: 14,
                 dontEnforceMinZoom: true,
-                maxFeatureCount: state.layoutToUse.data.clustering.minNeededElements,
-                maxZoomLevel: state.layoutToUse.data.clustering.maxZoom,
+                maxFeatureCount: state.layoutToUse.clustering.minNeededElements,
+                maxZoomLevel: state.layoutToUse.clustering.maxZoom,
                 registerTile: (tile) => {
                     // We save the tile data for the given layer to local storage
                     new SaveTileToLocalStorageActor(tile, tile.tileIndex)

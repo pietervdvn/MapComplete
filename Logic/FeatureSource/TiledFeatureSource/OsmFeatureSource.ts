@@ -65,7 +65,7 @@ export default class OsmFeatureSource {
     }
 
     private async LoadTile(z, x, y): Promise<void> {
-        if (z > 18) {
+        if (z > 20) {
             throw "This is an absurd high zoom level"
         }
 

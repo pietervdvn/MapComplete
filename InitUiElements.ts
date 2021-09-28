@@ -323,9 +323,7 @@ export class InitUiElements {
             State.state.backgroundLayer,
             State.state.locationControl,
             State.state.availableBackgroundLayers,
-            State.state.layoutToUse.map(
-                (layout: LayoutConfig) => layout.defaultBackgroundId
-            )
+            State.state.layoutToUse.defaultBackgroundId
         );
 
         const attr = new Attribution(
@@ -345,7 +343,7 @@ export class InitUiElements {
         }).SetClass("w-full h-full")
             .AttachTo("leafletDiv")
 
-        const layout = State.state.layoutToUse.data;
+        const layout = State.state.layoutToUse;
         if (layout.lockLocation) {
             if (layout.lockLocation === true) {
                 const tile = Tiles.embedded_tile(
@@ -375,66 +373,66 @@ export class InitUiElements {
         const state = State.state;
         const empty = []
 
-        state.filteredLayers = state.layoutToUse.map((layoutToUse) => {
-            const flayers: FilteredLayer[] = [];
+        const flayers: FilteredLayer[] = [];
 
-            for (const layer of layoutToUse.layers) {
-                let defaultShown = "true"
-                if(layoutToUse.id === personal.id){
-                    defaultShown = "false"
-                }
-
-                let isDisplayed: UIEventSource<boolean>
-                if(layoutToUse.id === personal.id){
-                    isDisplayed = State.state.osmConnection.GetPreference("personal-theme-layer-" + layer.id + "-enabled")
-                        .map(value => value === "yes", [], enabled => {
-                            return enabled ? "yes" : "";
-                        })
-                    isDisplayed.addCallbackAndRun(d =>console.log("IsDisplayed for layer", layer.id, "is currently", d) )
-                }else{
-                    isDisplayed = QueryParameters.GetQueryParameter(
-                        "layer-" + layer.id,
-                        defaultShown,
-                        "Wether or not layer " + layer.id + " is shown"
-                    ).map<boolean>(
-                        (str) => str !== "false",
-                        [],
-                        (b) => b.toString()
-                    );
-                }
-                const flayer = {
-                    isDisplayed: isDisplayed,
-                    layerDef: layer,
-                    appliedFilters: new UIEventSource<{ filter: FilterConfig, selected: number }[]>([]),
-                };
-
-                if (layer.filters.length > 0) {
-                    const filtersPerName = new Map<string, FilterConfig>()
-                    layer.filters.forEach(f => filtersPerName.set(f.id, f))
-                    const qp = QueryParameters.GetQueryParameter("filter-" + layer.id, "","Filtering state for a layer")
-                    flayer.appliedFilters.map(filters => {
-                        filters = filters ?? []
-                        return filters.map(f => f.filter.id + "." + f.selected).join(",")
-                    }, [], textual => {
-                        if(textual.length === 0){
-                            return empty
-                        }
-                        return textual.split(",").map(part => {
-                            const [filterId, selected] = part.split(".");
-                            return {filter: filtersPerName.get(filterId), selected: Number(selected)}
-                        }).filter(f => f.filter !== undefined && !isNaN(f.selected))
-                    }).syncWith(qp, true)
-                }
-
-                flayers.push(flayer);
+        for (const layer of state.layoutToUse.layers) {
+            let defaultShown = "true"
+            if(state.layoutToUse.id === personal.id){
+                defaultShown = "false"
             }
-            return flayers;
-        });
+
+            let isDisplayed: UIEventSource<boolean>
+            if(state.layoutToUse.id === personal.id){
+                isDisplayed = State.state.osmConnection.GetPreference("personal-theme-layer-" + layer.id + "-enabled")
+                    .map(value => value === "yes", [], enabled => {
+                        return enabled ? "yes" : "";
+                    })
+                isDisplayed.addCallbackAndRun(d =>console.log("IsDisplayed for layer", layer.id, "is currently", d) )
+            }else{
+                isDisplayed = QueryParameters.GetQueryParameter(
+                    "layer-" + layer.id,
+                    defaultShown,
+                    "Wether or not layer " + layer.id + " is shown"
+                ).map<boolean>(
+                    (str) => str !== "false",
+                    [],
+                    (b) => b.toString()
+                );
+            }
+            const flayer = {
+                isDisplayed: isDisplayed,
+                layerDef: layer,
+                appliedFilters: new UIEventSource<{ filter: FilterConfig, selected: number }[]>([]),
+            };
+
+            if (layer.filters.length > 0) {
+                const filtersPerName = new Map<string, FilterConfig>()
+                layer.filters.forEach(f => filtersPerName.set(f.id, f))
+                const qp = QueryParameters.GetQueryParameter("filter-" + layer.id, "","Filtering state for a layer")
+                flayer.appliedFilters.map(filters => {
+                    filters = filters ?? []
+                    return filters.map(f => f.filter.id + "." + f.selected).join(",")
+                }, [], textual => {
+                    if(textual.length === 0){
+                        return empty
+                    }
+                    return textual.split(",").map(part => {
+                        const [filterId, selected] = part.split(".");
+                        return {filter: filtersPerName.get(filterId), selected: Number(selected)}
+                    }).filter(f => f.filter !== undefined && !isNaN(f.selected))
+                }).syncWith(qp, true)
+            }
+
+            flayers.push(flayer);
+        }
+        state.filteredLayers = new UIEventSource<FilteredLayer[]>(flayers);
+        
+        
 
 
         const clusterCounter = TileHierarchyAggregator.createHierarchy()
         new ShowDataLayer({
-            features: clusterCounter.getCountsForZoom(State.state.locationControl, State.state.layoutToUse.data.clustering.minNeededElements),
+            features: clusterCounter.getCountsForZoom(State.state.locationControl, State.state.layoutToUse.clustering.minNeededElements),
             leafletMap: State.state.leafletMap,
             layerToShow: ShowTileInfo.styling,
         })
@@ -444,7 +442,7 @@ export class InitUiElements {
 
                 clusterCounter.addTile(source)
 
-                const clustering = State.state.layoutToUse.data.clustering
+                const clustering = State.state.layoutToUse.clustering
                 const doShowFeatures = source.features.map(
                     f => {
                         const z = State.state.locationControl.data.zoom

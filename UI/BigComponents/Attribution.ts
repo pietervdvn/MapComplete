@@ -16,13 +16,13 @@ export default class Attribution extends Combine {
 
      constructor(location: UIEventSource<Loc>,
                 userDetails: UIEventSource<UserDetails>,
-                layoutToUse: UIEventSource<LayoutConfig>,
+                layoutToUse: LayoutConfig,
                 currentBounds: UIEventSource<BBox>) {
 
         const mapComplete = new Link(`Mapcomplete ${Constants.vNumber}`, 'https://github.com/pietervdvn/MapComplete', true);
         const reportBug = new Link(Svg.bug_ui().SetClass("small-image"), "https://github.com/pietervdvn/MapComplete/issues", true);
 
-        const layoutId = layoutToUse?.data?.id;
+        const layoutId = layoutToUse?.id;
         const now = new Date()
         // Note: getMonth is zero-index, we want 1-index but with one substracted, so it checks out!
         const startDate = now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate()

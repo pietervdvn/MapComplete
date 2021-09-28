@@ -316,10 +316,10 @@ export default class SpecialVisualizations {
                         const generateShareData = () => {
 
 
-                            const title = state?.layoutToUse?.data?.title?.txt ?? "MapComplete";
+                            const title = state?.layoutToUse?.title?.txt ?? "MapComplete";
 
                             let matchingLayer: LayerConfig = undefined;
-                            for (const layer of (state?.layoutToUse?.data?.layers ?? [])) {
+                            for (const layer of (state?.layoutToUse?.layers ?? [])) {
                                 if (layer.source.osmTags.matchesProperties(tagSource?.data)) {
                                     matchingLayer = layer
                                 }
@@ -337,7 +337,7 @@ export default class SpecialVisualizations {
                             return {
                                 title: name,
                                 url: url,
-                                text: state?.layoutToUse?.data?.shortDescription?.txt ?? "MapComplete"
+                                text: state?.layoutToUse?.shortDescription?.txt ?? "MapComplete"
                             }
                         }
 
@@ -363,15 +363,14 @@ export default class SpecialVisualizations {
                                 if (value === undefined) {
                                     return undefined
                                 }
-                                const allUnits = [].concat(...state.layoutToUse.data.layers.map(lyr => lyr.units))
+                                const allUnits = [].concat(...state.layoutToUse.layers.map(lyr => lyr.units))
                                 const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
                                 if (unit === undefined) {
                                     return value;
                                 }
                                 return unit.asHumanLongValue(value);
 
-                            },
-                            [state.layoutToUse])
+                            })
                     )
                 }
             },
@@ -410,7 +409,7 @@ There are also some technicalities in your theme to keep in mind:
     A reference number to the original dataset is an excellen way to do this    
 `,
                 constr: (state, tagSource, args) => {
-                    if (!state.layoutToUse.data.official && !state.featureSwitchIsTesting.data) {
+                    if (!state.layoutToUse.official && !state.featureSwitchIsTesting.data) {
                         return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),
                             new FixedUiElement("To test, add 'test=true' to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
                     }

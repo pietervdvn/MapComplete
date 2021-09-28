@@ -55,7 +55,7 @@ export class ImageUploadFlow extends Toggle {
 
             const tags = tagsSource.data;
 
-            const layout = State.state?.layoutToUse?.data
+            const layout = State.state?.layoutToUse
             let matchingLayer: LayerConfig = undefined
             for (const layer of layout?.layers ?? []) {
                 if (layer.source.osmTags.matchesProperties(tags)) {

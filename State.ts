@@ -27,7 +27,7 @@ export default class State {
     // The singleton of the global state
     public static state: State;
 
-    public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined, "layoutToUse");
+    public readonly layoutToUse : LayoutConfig;
 
     /**
      The mapping from id -> UIEventSource<properties>
@@ -83,7 +83,9 @@ export default class State {
     public readonly featureSwitchExportAsPdf: UIEventSource<boolean>;
     public readonly overpassUrl: UIEventSource<string>;
     public readonly overpassTimeout: UIEventSource<number>;
-    public readonly overpassMaxZoom: UIEventSource<number> = new UIEventSource<number>(20);
+    
+    
+    public readonly overpassMaxZoom: UIEventSource<number> = new UIEventSource<number>(17, "overpass-max-zoom: point to switch between OSM-api and overpass");
 
     public featurePipeline: FeaturePipeline;
 
@@ -155,7 +157,7 @@ export default class State {
 
     constructor(layoutToUse: LayoutConfig) {
         const self = this;
-        this.layoutToUse.setData(layoutToUse);
+        this.layoutToUse  = layoutToUse;
 
         // -- Location control initialization
         {
@@ -192,14 +194,7 @@ export default class State {
                 lat.setData(latlonz.lat);
                 lon.setData(latlonz.lon);
             });
-
-            this.layoutToUse.addCallback((layoutToUse) => {
-                const lcd = self.locationControl.data;
-                lcd.zoom = lcd.zoom ?? layoutToUse?.startZoom;
-                lcd.lat = lcd.lat ?? layoutToUse?.startLat;
-                lcd.lon = lcd.lon ?? layoutToUse?.startLon;
-                self.locationControl.ping();
-            });
+            
         }
 
         // Helper function to initialize feature switches
@@ -208,28 +203,19 @@ export default class State {
             deflt: (layout: LayoutConfig) => boolean,
             documentation: string
         ): UIEventSource<boolean> {
-            const queryParameterSource = QueryParameters.GetQueryParameter(
+            
+            const defaultValue = deflt(self.layoutToUse);
+            const queryParam = QueryParameters.GetQueryParameter(
                 key,
-                undefined,
+                "" + defaultValue,
                 documentation
             );
-            // I'm so sorry about someone trying to decipher this
 
             // It takes the current layout, extracts the default value for this query parameter. A query parameter event source is then retrieved and flattened
-            return UIEventSource.flatten(
-                self.layoutToUse.map((layout) => {
-                    const defaultValue = deflt(layout);
-                    const queryParam = QueryParameters.GetQueryParameter(
-                        key,
-                        "" + defaultValue,
-                        documentation
-                    );
-                    return queryParam.map((str) =>
-                        str === undefined ? defaultValue : str !== "false"
-                    );
-                }),
-                [queryParameterSource]
-            );
+            return queryParam.map((str) =>
+                str === undefined ? defaultValue : str !== "false"
+            )
+   
         }
 
         // Feature switch initialization - not as a function as the UIEventSources are readonly
@@ -412,11 +398,11 @@ export default class State {
 
         Locale.language
             .addCallback((currentLanguage) => {
-                const layoutToUse = self.layoutToUse.data;
+                const layoutToUse = self.layoutToUse;
                 if (layoutToUse === undefined) {
                     return;
                 }
-                if (this.layoutToUse.data.language.indexOf(currentLanguage) < 0) {
+                if (this.layoutToUse.language.indexOf(currentLanguage) < 0) {
                     console.log(
                         "Resetting language to",
                         layoutToUse.language[0],

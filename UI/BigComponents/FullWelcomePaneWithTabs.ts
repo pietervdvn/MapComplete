@@ -19,7 +19,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
 
     constructor(isShown: UIEventSource<boolean>) {
-        const layoutToUse = State.state.layoutToUse.data;
+        const layoutToUse = State.state.layoutToUse;
         super(
             () => layoutToUse.title.Clone(),
             () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails, isShown),

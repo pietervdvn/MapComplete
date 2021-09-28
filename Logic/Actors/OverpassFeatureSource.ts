@@ -3,7 +3,7 @@ import Loc from "../../Models/Loc";
 import {Or} from "../Tags/Or";
 import {Overpass} from "../Osm/Overpass";
 import Bounds from "../../Models/Bounds";
-import FeatureSource, {FeatureSourceState} from "../FeatureSource/FeatureSource";
+import FeatureSource from "../FeatureSource/FeatureSource";
 import {Utils} from "../../Utils";
 import {TagsFilter} from "../Tags/TagsFilter";
 import SimpleMetaTagger from "../SimpleMetaTagger";
@@ -39,7 +39,7 @@ export default class OverpassFeatureSource implements FeatureSource {
     private readonly _previousBounds: Map<number, Bounds[]> = new Map<number, Bounds[]>();
     private readonly state: {
         readonly locationControl: UIEventSource<Loc>,
-        readonly layoutToUse: UIEventSource<LayoutConfig>,
+        readonly layoutToUse: LayoutConfig,
         readonly overpassUrl: UIEventSource<string>;
         readonly overpassTimeout: UIEventSource<number>;
         readonly currentBounds :UIEventSource<BBox>
@@ -52,7 +52,7 @@ export default class OverpassFeatureSource implements FeatureSource {
     constructor(
         state: {
             readonly locationControl: UIEventSource<Loc>,
-            readonly layoutToUse: UIEventSource<LayoutConfig>,
+            readonly layoutToUse: LayoutConfig,
             readonly overpassUrl: UIEventSource<string>;
             readonly overpassTimeout: UIEventSource<number>;
             readonly overpassMaxZoom: UIEventSource<number>,
@@ -76,9 +76,6 @@ export default class OverpassFeatureSource implements FeatureSource {
             this._previousBounds.set(i, []);
         }
 
-        state.layoutToUse.addCallback(() => {
-            self.update()
-        });
         location.addCallback(() => {
             self.update()
         });
@@ -92,7 +89,7 @@ export default class OverpassFeatureSource implements FeatureSource {
     private GetFilter(): Overpass {
         let filters: TagsFilter[] = [];
         let extraScripts: string[] = [];
-        for (const layer of this.state.layoutToUse.data.layers) {
+        for (const layer of this.state.layoutToUse.layers) {
             if (typeof (layer) === "string") {
                 throw "A layer was not expanded!"
             }
@@ -164,7 +161,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             return undefined;
         }
 
-        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.data.widenFactor)?.expandToTileBounds(14);
+        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(14);
         
         if (bounds === undefined) {
             return undefined;
