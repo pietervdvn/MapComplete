@@ -62,11 +62,35 @@ export default class FeaturePipeline {
         /**
          * Maps tileid onto last download moment
          */
-        const tileFreshnesses = new Map<number, Date>()
+        const tileFreshnesses = new UIEventSource<Map<number, Date>>(new Map<number, Date>())
         const osmSourceZoomLevel = 14
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
         this.relationTracker = new RelationsTracker()
 
+        console.log("Tilefreshnesses are", tileFreshnesses.data)
+        const oldestAllowedDate = new Date(new Date().getTime() - (60 * 60 * 24 * 30 * 1000));
+        const neededTilesFromOsm = state.currentBounds.map(bbox => {
+            if (bbox === undefined) {
+                return
+            }
+            const range = bbox.containingTileRange(osmSourceZoomLevel)
+            const tileIndexes = []
+            if (range.total > 100) {
+                // Too much tiles!
+                return []
+            }
+            Tiles.MapRange(range, (x, y) => {
+                const i = Tiles.tile_index(osmSourceZoomLevel, x, y);
+                if (tileFreshnesses.data.get(i) > oldestAllowedDate) {
+                    console.debug("Skipping tile", osmSourceZoomLevel, x, y, "as a decently fresh one is available")
+                    // The cached tiles contain decently fresh data
+                    return;
+                }
+                tileIndexes.push(i)
+            })
+            return tileIndexes
+        }, [tileFreshnesses])
+        
         const updater = new OverpassFeatureSource(state,
             {
                 relationTracker: this.relationTracker,
@@ -75,8 +99,9 @@ export default class FeaturePipeline {
                     // This callback contains metadata of the overpass call
                     const range = bbox.containingTileRange(osmSourceZoomLevel)
                     Tiles.MapRange(range, (x, y) => {
-                        tileFreshnesses.set(Tiles.tile_index(osmSourceZoomLevel, x, y), freshness)
+                        tileFreshnesses.data.set(Tiles.tile_index(osmSourceZoomLevel, x, y), freshness)
                     })
+                    tileFreshnesses.ping();
 
                 }
             });
@@ -137,16 +162,16 @@ export default class FeaturePipeline {
                     }, state)
 
                 localStorage.tileFreshness.forEach((value, key) => {
-                    if (tileFreshnesses.has(key)) {
-                        const previous = tileFreshnesses.get(key)
+                    if (tileFreshnesses.data.has(key)) {
+                        const previous = tileFreshnesses.data.get(key)
                         if (value < previous) {
-                            tileFreshnesses.set(key, value)
+                            tileFreshnesses.data.set(key, value)
                         }
                     } else {
-                        tileFreshnesses.set(key, value)
+                        tileFreshnesses.data.set(key, value)
                     }
+                    tileFreshnesses.ping()
                 })
-
 
                 continue
             }
@@ -178,30 +203,7 @@ export default class FeaturePipeline {
             }
         }
 
-        console.log("Tilefreshnesses are", tileFreshnesses)
-        const oldestAllowedDate = new Date(new Date().getTime() - (60 * 60 * 24 * 30 * 1000));
-
-        const neededTilesFromOsm = state.currentBounds.map(bbox => {
-            if (bbox === undefined) {
-                return
-            }
-            const range = bbox.containingTileRange(osmSourceZoomLevel)
-            const tileIndexes = []
-            if (range.total > 100) {
-                // Too much tiles!
-                return []
-            }
-            Tiles.MapRange(range, (x, y) => {
-                const i = Tiles.tile_index(osmSourceZoomLevel, x, y);
-                if (tileFreshnesses.get(i) > oldestAllowedDate) {
-                    console.debug("Skipping tile", osmSourceZoomLevel, x, y, "as a decently fresh one is available")
-                    // The cached tiles contain decently fresh data
-                    return;
-                }
-                tileIndexes.push(i)
-            })
-            return tileIndexes
-        })
+        
 
        const osmFeatureSource = new OsmFeatureSource({
             isActive: useOsmApi,

@@ -25,20 +25,18 @@ import ScrollableFullScreen from "./UI/Base/ScrollableFullScreen";
 import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
 import LZString from "lz-string";
-import AllKnownLayers from "./Customizations/AllKnownLayers";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LeftControls from "./UI/BigComponents/LeftControls";
 import RightControls from "./UI/BigComponents/RightControls";
 import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
-import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 import Minimap from "./UI/Base/Minimap";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import Combine from "./UI/Base/Combine";
 import {SubtleButton} from "./UI/Base/SubtleButton";
 import ShowTileInfo from "./UI/ShowDataLayer/ShowTileInfo";
 import {Tiles} from "./Models/TileRange";
-import {TileHierarchyAggregator} from "./UI/ShowDataLayer/PerTileCountAggregator";
+import {TileHierarchyAggregator} from "./UI/ShowDataLayer/TileHierarchyAggregator";
 import FilterConfig from "./Models/ThemeConfig/FilterConfig";
 import FilteredLayer from "./Models/FilteredLayer";
 import {BBox} from "./Logic/BBox";
@@ -435,6 +433,7 @@ export class InitUiElements {
             features: clusterCounter.getCountsForZoom(State.state.locationControl, State.state.layoutToUse.clustering.minNeededElements),
             leafletMap: State.state.leafletMap,
             layerToShow: ShowTileInfo.styling,
+            enablePopups: false
         })
 
         State.state.featurePipeline = new FeaturePipeline(

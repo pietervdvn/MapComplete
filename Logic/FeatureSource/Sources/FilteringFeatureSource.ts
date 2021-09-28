@@ -28,8 +28,9 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
 
         this.layer = upstream.layer;
         const layer = upstream.layer;
-
+        
         function update() {
+            
             const features: { feature: any; freshness: Date }[] = upstream.features.data;
             const newFeatures = features.filter((f) => {
                 if (
@@ -60,11 +61,6 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
                 }
 
 
-                if (!layer.isDisplayed) {
-                    // The layer itself is either disabled or hidden due to zoom constraints
-                    // We should return true, but it might still match some other layer
-                    return false;
-                }
                 return true;
             });
 
@@ -75,20 +71,8 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             update();
         });
 
-        layer.isDisplayed.addCallback(isShown => {
-            if (isShown) {
-                update();
-            } else {
-                self.features.setData([])
-            }
-        });
 
         layer.appliedFilters.addCallback(_ => {
-            if (!layer.isDisplayed.data) {
-                // Currently not shown.
-                // Note that a change in 'isSHown' will trigger an update as well, so we don't have to watch it another time
-                return;
-            }
             update()
         })
 

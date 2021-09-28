@@ -149,14 +149,13 @@ export class Changes {
 
     }
 
-    public applyAction(action: OsmChangeAction) {
-        action.Perform(this).then(changes => {
-            console.log("Received changes:", changes)
-            this.pendingChanges.data.push(...changes);
-            this.pendingChanges.ping();
-            this.allChanges.data.push(...changes)
-            this.allChanges.ping()
-        })
+    public async applyAction(action: OsmChangeAction): Promise<void> {
+        const changes = await action.Perform(this)
+        console.log("Received changes:", changes)
+        this.pendingChanges.data.push(...changes);
+        this.pendingChanges.ping();
+        this.allChanges.data.push(...changes)
+        this.allChanges.ping()
     }
 
     private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {

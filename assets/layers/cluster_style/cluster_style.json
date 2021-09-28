@@ -1,0 +1,36 @@
+{
+  "id": "cluster_style",
+  "description": "The style for the clustering in all themes.",
+  "source": {
+    "osmTags": "tileId~*"
+  },
+  "color": {
+    "render": "#3c3",
+    "mappings": [
+      {
+        "if": "count>200",
+        "then": "#f33"
+      },
+      {
+        "if": "count>100",
+        "then": "#c93"
+      },
+      {
+        "if": "count>50",
+        "then": "#cc3"
+      }
+    ]
+  },
+  "width": {
+    "render": "1"
+  },
+  "label": {
+    "render": "<div class='rounded-full text-xl font-bold' style='width: 2rem; height: 2rem; background: white'>{count}</div>",
+    "mappings": [
+      {
+        "if": "count>99",
+        "then": "<div class='rounded-full text-xl font-bold flex flex-col' style='width: 2.5rem; height: 2.5rem; background: white'>&gt;99</div>"
+      }
+    ]
+  }
+}

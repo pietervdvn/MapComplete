@@ -63,7 +63,7 @@ export default class MetaTagging {
                         }
                         somethingChanged = somethingChanged || metatag.applyMetaTagsOnFeature(feature, freshness)
                     } catch (e) {
-                        console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e)
+                        console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e, e.stack)
                     }
                 }
                 
