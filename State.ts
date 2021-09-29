@@ -321,7 +321,7 @@ export default class State {
             );
 
             this.overpassUrl = QueryParameters.GetQueryParameter("overpassUrl",
-                layoutToUse?.overpassUrl.join(","),
+                (layoutToUse?.overpassUrl ?? Constants.defaultOverpassUrls).join(",") ,
                 "Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter"
             ).map(param => param.split(","), [], urls => urls.join(","))
 
