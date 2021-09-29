@@ -2903,7 +2903,7 @@
     },
     "parking": {
         "description": "Parking",
-        "name": "parking",
+        "name": "Parking",
         "presets": {
             "0": {
                 "description": "Voeg een ontbrekend, erkend pad toe.",
@@ -3920,7 +3920,7 @@
     },
     "watermill": {
         "description": "Watermolens",
-        "name": "watermolens",
+        "name": "Watermolens",
         "tagRenderings": {
             "Access tag": {
                 "mappings": {
