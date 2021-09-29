@@ -94,8 +94,7 @@
         "name": "Benches",
         "presets": {
             "0": {
-                "description": "Add a new bench",
-                "title": "Bench"
+                "title": "bench"
             }
         },
         "tagRenderings": {
@@ -2375,7 +2374,7 @@
         "name": "Drinking water",
         "presets": {
             "0": {
-                "title": "Drinking water"
+                "title": "drinking water"
             }
         },
         "tagRenderings": {
@@ -2587,7 +2586,7 @@
         "name": "Information boards",
         "presets": {
             "0": {
-                "title": "Information board"
+                "title": "information board"
             }
         },
         "title": {
@@ -2733,7 +2732,7 @@
         "name": "Picnic tables",
         "presets": {
             "0": {
-                "title": "Picnic table"
+                "title": "picnic table"
             }
         },
         "tagRenderings": {
@@ -3263,11 +3262,11 @@
         "presets": {
             "0": {
                 "description": "A publicly accessible toilet or restroom",
-                "title": "Toilet"
+                "title": "toilet"
             },
             "1": {
                 "description": "A restroom which has at least one wheelchair-accessible toilet",
-                "title": "Toilets with wheelchair accessible toilet"
+                "title": "toilets with wheelchair accessible toilet"
             }
         },
         "tagRenderings": {

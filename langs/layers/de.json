@@ -3,8 +3,7 @@
         "name": "Sitzbänke",
         "presets": {
             "0": {
-                "description": "Neue Sitzbank eintragen",
-                "title": "Sitzbank"
+                "title": "sitzbank"
             }
         },
         "tagRenderings": {
@@ -754,7 +753,7 @@
         "name": "Trinkwasser",
         "presets": {
             "0": {
-                "title": "Trinkwasser"
+                "title": "trinkwasser"
             }
         },
         "tagRenderings": {
@@ -823,7 +822,7 @@
         "name": "Informationstafeln",
         "presets": {
             "0": {
-                "title": "Informationstafel"
+                "title": "informationstafel"
             }
         },
         "title": {
@@ -904,7 +903,7 @@
         "name": "Picknick-Tische",
         "presets": {
             "0": {
-                "title": "Picknicktisch"
+                "title": "picknicktisch"
             }
         },
         "tagRenderings": {
@@ -1134,11 +1133,11 @@
         "presets": {
             "0": {
                 "description": "Eine öffentlich zugängliche Toilette",
-                "title": "Toilette"
+                "title": "toilette"
             },
             "1": {
                 "description": "Eine Toilettenanlage mit mindestens einer rollstuhlgerechten Toilette",
-                "title": "Toiletten mit rollstuhlgerechter Toilette"
+                "title": "toiletten mit rollstuhlgerechter Toilette"
             }
         },
         "tagRenderings": {

@@ -1,11 +1,6 @@
 {
     "bench": {
         "name": "Padok",
-        "presets": {
-            "0": {
-                "description": "Pad hozzáadása"
-            }
-        },
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {

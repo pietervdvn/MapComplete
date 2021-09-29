@@ -3,7 +3,7 @@
         "name": "Bangku",
         "presets": {
             "0": {
-                "title": "Bangku"
+                "title": "bangku"
             }
         },
         "tagRenderings": {
@@ -65,7 +65,7 @@
         "name": "Air minum",
         "presets": {
             "0": {
-                "title": "Air minum"
+                "title": "air minum"
             }
         },
         "title": {

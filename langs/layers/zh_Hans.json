@@ -3,7 +3,6 @@
         "name": "长椅",
         "presets": {
             "0": {
-                "description": "增加一个新的长椅",
                 "title": "长椅"
             }
         },

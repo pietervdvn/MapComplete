@@ -3,7 +3,6 @@
         "name": "Ławki",
         "presets": {
             "0": {
-                "description": "Dodaj nową ławkę",
                 "title": "Ławka"
             }
         },
