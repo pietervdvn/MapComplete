@@ -32,8 +32,18 @@ public tileFreshness : Map<number, Date> = new Map<number, Date>()
 
         console.debug("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
         for (const index of indexes) {
-            const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" +index+"-time";
-            const data = Number(localStorage.getItem(prefix))
+            
+            const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" +index;
+            const version = localStorage.getItem(prefix+"-format")
+            if(version === undefined || version !== SaveTileToLocalStorageActor.formatVersion){
+                // Invalid version! Remove this tile from local storage
+                localStorage.removeItem(prefix)
+                undefinedTiles.add(index)
+                console.log("Dropped old format tile", prefix)
+                continue
+            }
+            
+            const data = Number(localStorage.getItem(prefix+"-time"))
             const freshness = new Date()
             freshness.setTime(data)
             this.tileFreshness.set(index, freshness)
