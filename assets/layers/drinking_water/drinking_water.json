@@ -57,14 +57,14 @@
     "presets": [
         {
             "title": {
-                "en": "Drinking water",
-                "nl": "Drinkbaar water",
-                "fr": "Eau potable",
-                "gl": "Auga potábel",
-                "de": "Trinkwasser",
-                "it": "Acqua potabile",
+                "en": "drinking water",
+                "nl": "drinkbaar water",
+                "fr": "eau potable",
+                "gl": "auga potábel",
+                "de": "trinkwasser",
+                "it": "acqua potabile",
                 "ru": "Питьевая вода",
-                "id": "Air minum"
+                "id": "air minum"
             },
             "tags": [
                 "amenity=drinking_water"

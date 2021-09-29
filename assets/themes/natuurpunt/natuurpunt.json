@@ -29,6 +29,10 @@
   "enablePdfDownload": true,
   "enableDownload": true,
   "hideFromOverview": true,
+  "clustering": {
+    "#": "Disable clustering for this theme",
+    "maxZoom": 0
+  },
   "layers": [
     {
       "#": "Nature reserve with geometry, z>=13",
@@ -70,7 +74,8 @@
         "minzoom": 1,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
-        }
+        },
+        "presets": null
       }
     },
     {
