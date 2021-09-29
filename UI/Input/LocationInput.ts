@@ -8,11 +8,12 @@ import Svg from "../../Svg";
 import State from "../../State";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {GeoOperations} from "../../Logic/GeoOperations";
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {BBox} from "../../Logic/BBox";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 
 export default class LocationInput extends InputElement<Loc> {
 
@@ -124,7 +125,7 @@ export default class LocationInput extends InputElement<Loc> {
             })
 
         }
-        this.mapBackground = options.mapBackground ?? State.state.backgroundLayer ?? new UIEventSource(AvailableBaseLayers.osmCarto)
+        this.mapBackground = options.mapBackground ?? State.state?.backgroundLayer ?? new UIEventSource(AvailableBaseLayers.osmCarto)
         this.SetClass("block h-full")
     }
 
@@ -143,7 +144,7 @@ export default class LocationInput extends InputElement<Loc> {
                 {
                     location: this._centerLocation,
                     background: this.mapBackground,
-                    attribution: this.mapBackground !== State.state.backgroundLayer,
+                    attribution: this.mapBackground !== State.state?.backgroundLayer,
                     lastClickLocation: clickLocation,
                     bounds: this._bounds
                 }
@@ -179,7 +180,6 @@ export default class LocationInput extends InputElement<Loc> {
                     })
                     
             }
-
             this.mapBackground.map(layer => {
                 const leaflet = map.leafletMap.data
                 if (leaflet === undefined || layer === undefined) {
@@ -191,20 +191,31 @@ export default class LocationInput extends InputElement<Loc> {
                 leaflet.setZoom(layer.max_zoom - 1)
 
             }, [map.leafletMap])
+            
+            const animatedHand = Svg.hand_ui()
+                .SetStyle("width: 2rem; height: unset;")
+                .SetClass("hand-drag-animation block pointer-events-none")
+            
             return new Combine([
                 new Combine([
                     Svg.move_arrows_ui()
                         .SetClass("block relative pointer-events-none")
                         .SetStyle("left: -2.5rem; top: -2.5rem; width: 5rem; height: 5rem")
-                ]).SetClass("block w-0 h-0 z-10 relative")
-                    .SetStyle("background: rgba(255, 128, 128, 0.21); left: 50%; top: 50%"),
+                    ]).SetClass("block w-0 h-0 z-10 relative")
+                    .SetStyle("background: rgba(255, 128, 128, 0.21); left: 50%; top: 50%; opacity: 0.5"),
+                
+                new Combine([
+                    animatedHand])
+                    .SetClass("block w-0 h-0 z-10 relative")
+                    .SetStyle("left: calc(50% + 3rem); top: calc(50% + 2rem); opacity: 0.7"),
+
                 map
                     .SetClass("z-0 relative block w-full h-full bg-gray-100")
 
             ]).ConstructElement();
         } catch (e) {
             console.error("Could not generate LocationInputElement:", e)
-            return undefined;
+            return new FixedUiElement("Constructing a locationInput failed due to" + e).SetClass("alert").ConstructElement();
         }
     }
 

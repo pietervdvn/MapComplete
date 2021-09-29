@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {Tiles} from "./Models/TileRange";
 import OsmFeatureSource from "./Logic/FeatureSource/TiledFeatureSource/OsmFeatureSource";
 import {Utils} from "./Utils";
@@ -33,3 +34,17 @@ src.LoadTile(16, 33354, 21875).then(geojson => {
     })
 })
 //*/
+=======
+import LocationInput from "./UI/Input/LocationInput";
+import Loc from "./Models/Loc";
+import {UIEventSource} from "./Logic/UIEventSource";
+
+new LocationInput({
+    centerLocation: new UIEventSource<Loc>({
+        lat: 51.1110,
+        lon: 3.3701,
+        zoom : 14
+    })
+}).SetStyle("height: 500px")
+    .AttachTo("maindiv");
+>>>>>>> feature/animated-precise-input
