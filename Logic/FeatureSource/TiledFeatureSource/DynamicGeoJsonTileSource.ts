@@ -37,6 +37,8 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
             console.warn("No whitelist found for ", layer.layerDef.id, err)
         })
 
+        const seenIds = new Set<string>();
+        const blackList = new UIEventSource(seenIds)
         super(
             layer,
             source.geojsonZoomLevel,
@@ -50,8 +52,15 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                 
                 const src = new GeoJsonSource(
                     layer,
-                    zxy
+                    zxy,
+                    {
+                        featureIdBlacklist: blackList
+                    }
                 )
+                src.features.addCallbackAndRunD(feats => {
+                    feats.forEach(feat => seenIds.add(feat.feature.properties.id))
+                    blackList.ping();
+                })
                 registerLayer(src)
                 return src
             },

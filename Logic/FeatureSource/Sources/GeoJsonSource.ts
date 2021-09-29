@@ -21,14 +21,26 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
     public readonly tileIndex
     public readonly bbox;
 
+    /**
+     * Only used if the actual source is a tiled geojson.
+     * A big feature might be contained in multiple tiles.
+     * However, we only want to load them once. The blacklist thus contains all ids of all features previously seen
+     * @private
+     */
+    private readonly featureIdBlacklist?: UIEventSource<Set<string>>
+
     public constructor(flayer: FilteredLayer,
-                       zxy?: [number, number, number]) {
+                       zxy?: [number, number, number],
+                       options?: {
+                        featureIdBlacklist?: UIEventSource<Set<string>>
+                       }) {
 
         if (flayer.layerDef.source.geojsonZoomLevel !== undefined && zxy === undefined) {
             throw "Dynamic layers are not supported. Use 'DynamicGeoJsonTileSource instead"
         }
 
         this.layer = flayer;
+        this.featureIdBlacklist = options?.featureIdBlacklist
         let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         if (zxy !== undefined) {
             const [z, x, y] = zxy;
@@ -68,6 +80,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                     const props = feature.properties
                     for (const key in props) {
                         if (typeof props[key] !== "string") {
+                            // Make sure all the values are string, it crashes stuff otherwise
                             props[key] = "" + props[key]
                         }
                     }
@@ -82,6 +95,10 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                         continue;
                     }
                     self.seenids.add(props.id)
+                    
+                    if(self.featureIdBlacklist?.data?.has(props.id)){
+                        continue;
+                    }
 
                     let freshness: Date = time;
                     if (feature.properties["_last_edit:timestamp"] !== undefined) {
