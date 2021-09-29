@@ -1,1 +1,27 @@
-{}
+{
+    "undefined": {
+        "level": {
+            "question": "Em que nível se encontra este elemento?",
+            "mappings": {
+                "3": {
+                    "then": "Está no primeiro andar"
+                },
+                "2": {
+                    "then": "Está ao nível do rés-do-chão"
+                },
+                "1": {
+                    "then": "Está ao nível do rés-do-chão"
+                },
+                "0": {
+                    "then": "Está no subsolo"
+                }
+            }
+        },
+        "email": {
+            "question": "Qual é o endereço de e-mail de {name}?"
+        },
+        "description": {
+            "question": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>"
+        }
+    }
+}
