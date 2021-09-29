@@ -15,13 +15,52 @@
                 "0": {
                     "then": "Está no subsolo"
                 }
-            }
+            },
+            "render": "Está no {nível}º andar"
         },
         "email": {
             "question": "Qual é o endereço de e-mail de {name}?"
         },
         "description": {
             "question": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>"
+        },
+        "wheelchair-access": {
+            "question": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+            "mappings": {
+                "3": {
+                    "then": "Este lugar não é acessível com uma cadeira de rodas"
+                },
+                "2": {
+                    "then": "É possível chegar a este local em cadeira de rodas, mas não é fácil"
+                },
+                "1": {
+                    "then": "Este lugar é de fácil acesso com uma cadeira de rodas"
+                },
+                "0": {
+                    "then": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas"
+                }
+            }
+        },
+        "website": {
+            "question": "Qual é o sítio web de {name}?"
+        },
+        "phone": {
+            "question": "Qual é o número de telefone de {name}?"
+        },
+        "payment-options": {
+            "question": "Que métodos de pagamento são aceites aqui?",
+            "mappings": {
+                "1": {
+                    "then": "Aceitam pagamento com cartões bancários aqui"
+                },
+                "0": {
+                    "then": "Aceitam pagamento com dinheiro aqui"
+                }
+            }
+        },
+        "opening_hours": {
+            "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "question": "Qual é o horário de funcionamento de {name}?"
         }
     }
 }
