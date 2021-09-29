@@ -1,7 +1,7 @@
 {
     "id": "parking",
     "name": {
-        "nl": "parking"
+        "nl": "Parking"
     },
     "minzoom": 12,
     "source": {
