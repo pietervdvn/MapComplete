@@ -1,18 +1,18 @@
-import {LicenseInfo} from "./Wikimedia";
-import ImageAttributionSource from "./ImageAttributionSource";
+import ImageProvider, {ProvidedImage} from "./ImageProvider";
 import BaseUIElement from "../../UI/BaseUIElement";
 import {UIEventSource} from "../UIEventSource";
 import Svg from "../../Svg";
 import {Utils} from "../../Utils";
+import {LicenseInfo} from "./LicenseInfo";
+import Constants from "../../Models/Constants";
 
-export class Mapillary extends ImageAttributionSource {
+export class Mapillary extends ImageProvider {
 
+    defaultKeyPrefixes = ["mapillary"]
+    
     public static readonly singleton = new Mapillary();
 
     private static readonly v4_cached_urls = new Map<string, UIEventSource<string>>();
-
-    private static readonly client_token_v3 = 'TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2'
-    private static readonly client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
 
     private constructor() {
         super();
@@ -56,29 +56,34 @@ export class Mapillary extends ImageAttributionSource {
         return Svg.mapillary_svg();
     }
 
-    PrepareUrl(value: string): string | UIEventSource<string> {
-        const keyV = Mapillary.ExtractKeyFromURL(value)
-        if (!keyV.isApiv4) {
-            return `https://images.mapillary.com/${keyV.key}/thumb-640.jpg?client_id=${Mapillary.client_token_v3}`
-        } else {
-            const key = keyV.key;
-            if (Mapillary.v4_cached_urls.has(key)) {
-                return Mapillary.v4_cached_urls.get(key)
-            }
-
-            const metadataUrl = 'https://graph.mapillary.com/' + key + '?fields=thumb_1024_url&&access_token=' + Mapillary.client_token_v4;
-            const source = new UIEventSource<string>(undefined)
-            Mapillary.v4_cached_urls.set(key, source)
-            Utils.downloadJson(metadataUrl).then(
-                json => {
-                    console.warn("Got response on mapillary image", json, json["thumb_1024_url"])
-                    return source.setData(json["thumb_1024_url"]);
-                }
-            )
-            return source
-        }
+    async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+       return [this.PrepareUrlAsync(key, value)]
     }
 
+    private async PrepareUrlAsync(key: string, value: string): Promise<ProvidedImage> {
+        const keyV = Mapillary.ExtractKeyFromURL(value)
+        if (!keyV.isApiv4) {
+            const url = `https://images.mapillary.com/${keyV.key}/thumb-640.jpg?client_id=${Constants.mapillary_client_token_v3}`
+            return {
+                url: url,
+                provider: this,
+                key: key
+            }
+        } else {
+            const key = keyV.key;
+            const metadataUrl = 'https://graph.mapillary.com/' + key + '?fields=thumb_1024_url&&access_token=' + Constants.mapillary_client_token_v4;
+            const source = new UIEventSource<string>(undefined)
+            Mapillary.v4_cached_urls.set(key, source)
+            const response = await Utils.downloadJson(metadataUrl)
+            const url = <string> response["thumb_1024_url"];
+            return {
+                url: url,
+                provider: this,
+                key: key
+            }
+        }
+    }
+    
     protected async DownloadAttribution(url: string): Promise<LicenseInfo> {
 
         const keyV = Mapillary.ExtractKeyFromURL(url)

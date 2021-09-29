@@ -75,7 +75,7 @@
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
         },
-        "presets": null
+        "presets": []
       }
     },
     {

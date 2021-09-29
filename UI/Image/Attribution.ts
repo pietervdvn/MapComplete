@@ -3,7 +3,7 @@ import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {LicenseInfo} from "../../Logic/ImageProviders/Wikimedia";
+import {LicenseInfo} from "../../Logic/ImageProviders/LicenseInfo";
 
 export default class Attribution extends VariableUiElement {
 

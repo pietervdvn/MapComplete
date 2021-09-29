@@ -24,11 +24,12 @@ public tileFreshness : Map<number, Date> = new Map<number, Date>()
         // @ts-ignore
         const indexes: number[] = Object.keys(localStorage)
             .filter(key => {
-                return key.startsWith(prefix) && !key.endsWith("-time");
+                return key.startsWith(prefix) && !key.endsWith("-time") && !key.endsWith("-format");
             })
             .map(key => {
                 return Number(key.substring(prefix.length));
             })
+            .filter(i => !isNaN(i))
 
         console.debug("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
         for (const index of indexes) {

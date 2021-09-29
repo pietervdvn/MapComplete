@@ -1,12 +1,14 @@
-// @ts-ignore
 import $ from "jquery"
-import {LicenseInfo} from "./Wikimedia";
-import ImageAttributionSource from "./ImageAttributionSource";
+import ImageProvider, {ProvidedImage} from "./ImageProvider";
 import BaseUIElement from "../../UI/BaseUIElement";
 import {Utils} from "../../Utils";
 import Constants from "../../Models/Constants";
+import {LicenseInfo} from "./LicenseInfo";
 
-export class Imgur extends ImageAttributionSource {
+export class Imgur extends ImageProvider {
+
+    public static readonly defaultValuePrefix = ["https://i.imgur.com"] 
+    public readonly defaultKeyPrefixes: string[] = ["image"];
 
     public static readonly singleton = new Imgur();
 
@@ -87,7 +89,7 @@ export class Imgur extends ImageAttributionSource {
         return undefined;
     }
 
-    protected async DownloadAttribution(url: string): Promise<LicenseInfo> {
+    protected DownloadAttribution: (url: string) => Promise<LicenseInfo> = async (url: string) => {
         const hash = url.substr("https://i.imgur.com/".length).split(".jpg")[0];
 
         const apiUrl = 'https://api.imgur.com/3/image/' + hash;
@@ -110,5 +112,16 @@ export class Imgur extends ImageAttributionSource {
         return licenseInfo
     }
 
+    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+        if (Imgur.defaultValuePrefix.some(prefix => value.startsWith(prefix))) {
+            return [Promise.resolve({
+                url: value,
+                key: key,
+                provider: this
+            })]
+        }
+        return []
+    }
 
+  
 }

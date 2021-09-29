@@ -13,20 +13,19 @@ import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
 import State from "../State";
-import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 import BaseUIElement from "./BaseUIElement";
 import Title from "./Base/Title";
 import Table from "./Base/Table";
 import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
-import BaseLayer from "../Models/BaseLayer";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import ImportButton from "./BigComponents/ImportButton";
 import {Tag} from "../Logic/Tags/Tag";
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
 import Minimap from "./Base/Minimap";
+import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -76,9 +75,7 @@ export default class SpecialVisualizations {
                 constr: (state: State, tags, args) => {
                     const imagePrefix = args[0];
                     const loadSpecial = args[1].toLowerCase() === "true";
-                    const searcher: UIEventSource<{ key: string, url: string }[]> = ImageSearcher.construct(tags, imagePrefix, loadSpecial);
-
-                    return new ImageCarousel(searcher, tags);
+                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefix, loadSpecial), tags);
                 }
             },
             {

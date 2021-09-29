@@ -1,9 +1,59 @@
 import {Mapillary} from "./Mapillary";
-import {Wikimedia} from "./Wikimedia";
+import {WikimediaImageProvider} from "./WikimediaImageProvider";
 import {Imgur} from "./Imgur";
+import GenericImageProvider from "./GenericImageProvider";
+import {UIEventSource} from "../UIEventSource";
+import ImageProvider, {ProvidedImage} from "./ImageProvider";
+import {WikidataImageProvider} from "./WikidataImageProvider";
+import {Utils} from "../../Utils";
 
+/**
+ * A generic 'from the interwebz' image picker, without attribution
+ */
 export default class AllImageProviders {
 
-    public static ImageAttributionSource = [Imgur.singleton, Mapillary.singleton, Wikimedia.singleton]
+    public static ImageAttributionSource: ImageProvider[] = [
+        Imgur.singleton,
+        Mapillary.singleton,
+        WikidataImageProvider.singleton,
+        WikimediaImageProvider.singleton,
+        new GenericImageProvider(Imgur.defaultValuePrefix)]
+
+
+    private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()
+
+    public static LoadImagesFor(tags: UIEventSource<any>, imagePrefix: string, loadSpecialSource: boolean): UIEventSource<ProvidedImage[]> {
+        const id = tags.data.id
+        if (id === undefined) {
+            return undefined;
+        }
+
+        const cached = this._cache.get(tags.data.id)
+        if (cached !== undefined) {
+            return cached
+        }
+
+        const source = new UIEventSource([])
+        this._cache.set(id, source)
+        const allSources = []
+        for (const imageProvider of AllImageProviders.ImageAttributionSource) {
+            const singleSource = imageProvider.GetRelevantUrls(tags)
+            allSources.push(singleSource)
+            singleSource.addCallbackAndRunD(_ => {
+                const all : ProvidedImage[] = [].concat(...allSources.map(source => source.data))
+                const uniq = []
+                const seen = new Set<string>()
+                for (const img of all) {
+                    if(seen.has(img.url)){
+                        continue
+                    }
+                    seen.add(img.url)
+                    uniq.push(img)
+                }
+                source.setData(uniq)
+            })
+        }
+        return source;
+    }
 
 }
