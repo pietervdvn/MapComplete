@@ -6,6 +6,7 @@ import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
+import Constants from "../Constants";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -50,7 +51,7 @@ export default class LayoutConfig {
     How long is the cache valid, in seconds?
      */
     public readonly cacheTimeout?: number;
-    public readonly overpassUrl: string;
+    public readonly overpassUrl: string[];
     public readonly overpassTimeout: number;
     public readonly official: boolean;
 
@@ -157,7 +158,14 @@ export default class LayoutConfig {
         this.enablePdfDownload = json.enablePdfDownload ?? false;
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
-        this.overpassUrl = json.overpassUrl ?? "https://overpass-api.de/api/interpreter"
+        this.overpassUrl = Constants.defaultOverpassUrls
+        if(json.overpassUrl !== undefined){
+            if(typeof json.overpassUrl === "string"){
+                this.overpassUrl = [json.overpassUrl]
+            }else{
+                this.overpassUrl = json.overpassUrl
+            }
+        }
         this.overpassTimeout = json.overpassTimeout ?? 30
 
     }

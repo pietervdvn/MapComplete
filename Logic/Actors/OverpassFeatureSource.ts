@@ -2,7 +2,6 @@ import {UIEventSource} from "../UIEventSource";
 import Loc from "../../Models/Loc";
 import {Or} from "../Tags/Or";
 import {Overpass} from "../Osm/Overpass";
-import Bounds from "../../Models/Bounds";
 import FeatureSource from "../FeatureSource/FeatureSource";
 import {Utils} from "../../Utils";
 import {TagsFilter} from "../Tags/TagsFilter";
@@ -36,16 +35,17 @@ export default class OverpassFeatureSource implements FeatureSource {
      * If the map location changes, we check for each layer if it is loaded:
      * we start checking the bounds at the first zoom level the layer might operate. If in bounds - no reload needed, otherwise we continue walking down
      */
-    private readonly _previousBounds: Map<number, Bounds[]> = new Map<number, Bounds[]>();
+    private readonly _previousBounds: Map<number, BBox[]> = new Map<number, BBox[]>();
     private readonly state: {
         readonly locationControl: UIEventSource<Loc>,
         readonly layoutToUse: LayoutConfig,
-        readonly overpassUrl: UIEventSource<string>;
+        readonly overpassUrl: UIEventSource<string[]>;
         readonly overpassTimeout: UIEventSource<number>;
-        readonly currentBounds :UIEventSource<BBox>
+        readonly currentBounds: UIEventSource<BBox>
     }
     private readonly _isActive: UIEventSource<boolean>;
     private _onUpdated?: (bbox: BBox, dataFreshness: Date) => void;
+
     /**
      * The most important layer should go first, as that one gets first pick for the questions
      */
@@ -53,20 +53,20 @@ export default class OverpassFeatureSource implements FeatureSource {
         state: {
             readonly locationControl: UIEventSource<Loc>,
             readonly layoutToUse: LayoutConfig,
-            readonly overpassUrl: UIEventSource<string>;
+            readonly overpassUrl: UIEventSource<string[]>;
             readonly overpassTimeout: UIEventSource<number>;
             readonly overpassMaxZoom: UIEventSource<number>,
-            readonly currentBounds :UIEventSource<BBox>
-        },   
-        
-       options?: {
+            readonly currentBounds: UIEventSource<BBox>
+        },
+        options?: {
             isActive?: UIEventSource<boolean>,
-           onUpdated?:  (bbox: BBox, freshness: Date) => void,
-       relationTracker: RelationsTracker}) {
+            onUpdated?: (bbox: BBox, freshness: Date) => void,
+            relationTracker: RelationsTracker
+        }) {
 
         this.state = state
         this._isActive = options.isActive;
-        this._onUpdated =options. onUpdated;
+        this._onUpdated = options.onUpdated;
         this.relationsTracker = options.relationTracker
         const location = state.locationControl
         const self = this;
@@ -79,14 +79,14 @@ export default class OverpassFeatureSource implements FeatureSource {
         location.addCallback(() => {
             self.update()
         });
-        
+
         state.currentBounds.addCallback(_ => {
             self.update()
         })
-       
+
     }
 
-    private GetFilter(): Overpass {
+    private GetFilter(interpreterUrl: string): Overpass {
         let filters: TagsFilter[] = [];
         let extraScripts: string[] = [];
         for (const layer of this.state.layoutToUse.layers) {
@@ -113,7 +113,7 @@ export default class OverpassFeatureSource implements FeatureSource {
                     continue;
                 }
                 for (const previousLoadedBound of previousLoadedBounds) {
-                    previouslyLoaded = previouslyLoaded || this.IsInBounds(previousLoadedBound);
+                    previouslyLoaded = previouslyLoaded || this.state.currentBounds.data.isContainedIn(previousLoadedBound);
                     if (previouslyLoaded) {
                         break;
                     }
@@ -133,16 +133,16 @@ export default class OverpassFeatureSource implements FeatureSource {
         if (filters.length + extraScripts.length === 0) {
             return undefined;
         }
-        return new Overpass(new Or(filters), extraScripts, this.state.overpassUrl, this.state.overpassTimeout, this.relationsTracker);
+        return new Overpass(new Or(filters), extraScripts, interpreterUrl, this.state.overpassTimeout, this.relationsTracker);
     }
 
     private update() {
-        if(!this._isActive.data){
+        if (!this._isActive.data) {
             return;
         }
         const self = this
         this.updateAsync().then(bboxAndDate => {
-            if(bboxAndDate === undefined || self._onUpdated === undefined){
+            if (bboxAndDate === undefined || self._onUpdated === undefined) {
                 return;
             }
             const [bbox, date] = bboxAndDate
@@ -162,51 +162,54 @@ export default class OverpassFeatureSource implements FeatureSource {
         }
 
         const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(14);
-        
+
         if (bounds === undefined) {
             return undefined;
         }
-
-        const n = Math.min(90, bounds.getNorth());
-        const e = Math.min(180, bounds.getEast());
-        const s = Math.max(-90, bounds.getSouth());
-        const w = Math.max(-180, bounds.getWest());
-        const queryBounds = {north: n, east: e, south: s, west: w};
-
-
         const self = this;
-        const overpass = this.GetFilter();
-
-        if (overpass === undefined) {
-            return undefined;
-        }
-        this.runningQuery.setData(true);
 
         let data: any = undefined
         let date: Date = undefined
+        const overpassUrls = self.state.overpassUrl.data
+        let lastUsed = 0;
 
         do {
-
             try {
-                [data, date] = await overpass.queryGeoJson(queryBounds)
+                const overpass = this.GetFilter(overpassUrls[lastUsed]);
+
+                if (overpass === undefined) {
+                    return undefined;
+                }
+                this.runningQuery.setData(true);
+
+                [data, date] = await overpass.queryGeoJson(bounds)
                 console.log("Querying overpass is done", data)
             } catch (e) {
                 self.retries.data++;
                 self.retries.ping();
-                console.error(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to`, e);
+                console.error(`QUERY FAILED due to`, e);
 
-                self.timeout.setData(self.retries.data * 5);
-                
-                while (self.timeout.data > 0) {
-                    await Utils.waitFor(1000)
-                    self.timeout.data--
-                    self.timeout.ping();
+                await Utils.waitFor(1000)
+
+                if (lastUsed + 1 < overpassUrls.length) {
+                    lastUsed++
+                    console.log("Trying next time with", overpassUrls[lastUsed])
+                } else {
+                    lastUsed = 0
+                    self.timeout.setData(self.retries.data * 5);
+
+                    while (self.timeout.data > 0) {
+                        await Utils.waitFor(1000)
+                        console.log(self.timeout.data)
+                        self.timeout.data--
+                        self.timeout.ping();
+                    }
                 }
             }
         } while (data === undefined);
 
         const z = Math.floor(this.state.locationControl.data.zoom ?? 0);
-        self._previousBounds.get(z).push(queryBounds);
+        self._previousBounds.get(z).push(bounds);
         self.retries.setData(0);
 
         try {
@@ -215,25 +218,10 @@ export default class OverpassFeatureSource implements FeatureSource {
             return [bounds, date];
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)
-        }finally {
+        } finally {
             self.runningQuery.setData(false);
         }
-        
 
 
     }
-
-    private IsInBounds(bounds: Bounds): boolean {
-        if (this._previousBounds === undefined) {
-            return false;
-        }
-
-        const b = this.state.currentBounds.data;
-        return b.getSouth() >= bounds.south &&
-            b.getNorth() <= bounds.north &&
-            b.getEast() <= bounds.east &&
-            b.getWest() >= bounds.west;
-    }
-
-
 }

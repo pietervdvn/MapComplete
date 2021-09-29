@@ -4,6 +4,16 @@ export default class Constants {
 
     public static vNumber = "0.10.0-alpha-4";
     public static ImgurApiKey = '7070e7167f0a25a'
+    public static defaultOverpassUrls = [
+        // The official instance, 10000 queries per day per project allowed
+        "https://overpass-api.de/api/interpreter",
+        // 'Fair usage'
+        "https://overpass.kumi.systems/api/interpreter",
+        // "https://overpass.nchc.org.tw/api/interpreter",
+        "https://overpass.openstreetmap.ru/cgi/interpreter",
+        // The french api, only 1000 per day per project allowed, so we put it as last resort
+        "https://overpass.openstreetmap.fr/api/interpreter"
+    ]
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {

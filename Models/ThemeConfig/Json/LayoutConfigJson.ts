@@ -263,9 +263,9 @@ export interface LayoutConfigJson {
     enablePdfDownload?: boolean;
 
     /**
-     * Set a different overpass URL. Default: https://overpass-api.de/api/interpreter
+     * Set one or more overpass URLs to use for this theme..
      */
-    overpassUrl?: string;
+    overpassUrl?: string | string[];
     /**
      * Set a different timeout for overpass queries - in seconds. Default: 30s
      */

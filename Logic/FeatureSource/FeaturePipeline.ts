@@ -30,10 +30,10 @@ import {Tiles} from "../../Models/TileRange";
 export default class FeaturePipeline {
 
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
-    
+
     public readonly runningQuery: UIEventSource<boolean>;
     public readonly timeout: UIEventSource<number>;
-    
+
     public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
 
@@ -50,7 +50,7 @@ export default class FeaturePipeline {
             readonly changes: Changes,
             readonly  layoutToUse: LayoutConfig,
             readonly leafletMap: any,
-            readonly overpassUrl: UIEventSource<string>;
+            readonly overpassUrl: UIEventSource<string[]>;
             readonly overpassTimeout: UIEventSource<number>;
             readonly overpassMaxZoom: UIEventSource<number>;
             readonly osmConnection: OsmConnection
@@ -66,6 +66,7 @@ export default class FeaturePipeline {
         const osmSourceZoomLevel = 14
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
         this.relationTracker = new RelationsTracker()
+
 
         console.log("Tilefreshnesses are", tileFreshnesses.data)
         const oldestAllowedDate = new Date(new Date().getTime() - (60 * 60 * 24 * 30 * 1000));
@@ -90,7 +91,7 @@ export default class FeaturePipeline {
             })
             return tileIndexes
         }, [tileFreshnesses])
-        
+
         const updater = new OverpassFeatureSource(state,
             {
                 relationTracker: this.relationTracker,
@@ -105,8 +106,10 @@ export default class FeaturePipeline {
 
                 }
             });
-        
+
         this.overpassUpdater = updater;
+        this.timeout = updater.timeout
+
         this.sufficientlyZoomed = state.locationControl.map(location => {
                 if (location?.zoom === undefined) {
                     return false;
@@ -115,10 +118,10 @@ export default class FeaturePipeline {
                 return location.zoom >= minzoom;
             }
         );
-        
+
         this.timeout = updater.timeout
-        
-        
+
+
         // Register everything in the state' 'AllElements'
         new RegisteringAllFromFeatureSourceActor(updater)
 
@@ -203,9 +206,8 @@ export default class FeaturePipeline {
             }
         }
 
-        
 
-       const osmFeatureSource = new OsmFeatureSource({
+        const osmFeatureSource = new OsmFeatureSource({
             isActive: useOsmApi,
             neededTiles: neededTilesFromOsm,
             handleTile: tile => {

@@ -81,7 +81,7 @@ export default class State {
     public readonly featureSwitchEnableExport: UIEventSource<boolean>;
     public readonly featureSwitchFakeUser: UIEventSource<boolean>;
     public readonly featureSwitchExportAsPdf: UIEventSource<boolean>;
-    public readonly overpassUrl: UIEventSource<string>;
+    public readonly overpassUrl: UIEventSource<string[]>;
     public readonly overpassTimeout: UIEventSource<number>;
     
     
@@ -321,9 +321,9 @@ export default class State {
             );
 
             this.overpassUrl = QueryParameters.GetQueryParameter("overpassUrl",
-                layoutToUse?.overpassUrl,
+                layoutToUse?.overpassUrl.join(","),
                 "Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter"
-            )
+            ).map(param => param.split(","), [], urls => urls.join(","))
 
             this.overpassTimeout = QueryParameters.GetQueryParameter("overpassTimeout",
                 "" + layoutToUse?.overpassTimeout,
