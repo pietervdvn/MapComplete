@@ -66,16 +66,10 @@ export default class SpecialVisualizations {
                     name: "image key/prefix",
                     defaultValue: "image",
                     doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
-                },
-                    {
-                        name: "smart search",
-                        defaultValue: "true",
-                        doc: "Also include images given via 'Wikidata', 'wikimedia_commons' and 'mapillary"
-                    }],
+                }],
                 constr: (state: State, tags, args) => {
                     const imagePrefix = args[0];
-                    const loadSpecial = args[1].toLowerCase() === "true";
-                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefix, loadSpecial), tags);
+                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefix), tags);
                 }
             },
             {

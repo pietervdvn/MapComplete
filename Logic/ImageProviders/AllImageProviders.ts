@@ -5,7 +5,6 @@ import GenericImageProvider from "./GenericImageProvider";
 import {UIEventSource} from "../UIEventSource";
 import ImageProvider, {ProvidedImage} from "./ImageProvider";
 import {WikidataImageProvider} from "./WikidataImageProvider";
-import {Utils} from "../../Utils";
 
 /**
  * A generic 'from the interwebz' image picker, without attribution
@@ -17,12 +16,12 @@ export default class AllImageProviders {
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
-        new GenericImageProvider(Imgur.defaultValuePrefix)]
+        new GenericImageProvider([].concat(...Imgur.defaultValuePrefix, WikimediaImageProvider.commonsPrefix))]
 
 
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()
 
-    public static LoadImagesFor(tags: UIEventSource<any>, imagePrefix: string, loadSpecialSource: boolean): UIEventSource<ProvidedImage[]> {
+    public static LoadImagesFor(tags: UIEventSource<any>, imagePrefix?: string): UIEventSource<ProvidedImage[]> {
         const id = tags.data.id
         if (id === undefined) {
             return undefined;
@@ -33,11 +32,14 @@ export default class AllImageProviders {
             return cached
         }
 
+
         const source = new UIEventSource([])
         this._cache.set(id, source)
         const allSources = []
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
-            const singleSource = imageProvider.GetRelevantUrls(tags)
+            const singleSource = imageProvider.GetRelevantUrls(tags, {
+                prefixes: imagePrefix !== undefined ? [imagePrefix] : undefined
+            })
             allSources.push(singleSource)
             singleSource.addCallbackAndRunD(_ => {
                 const all : ProvidedImage[] = [].concat(...allSources.map(source => source.data))

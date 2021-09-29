@@ -19,7 +19,6 @@ import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
-import {And} from "../../Logic/Tags/And";
 import {BBox} from "../../Logic/BBox";
 
 /*
@@ -230,7 +229,25 @@ export default class SimpleAddUI extends Toggle {
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
             disableFilter,
-            preset.layerToAddTo.appliedFilters.map(filters => filters === undefined || filters.length === 0)
+            preset.layerToAddTo.appliedFilters.map(filters => {
+                if(filters === undefined || filters.length === 0){
+                    return true;
+                }
+                for (const filter of filters) {
+                    if(filter.selected === 0 && filter.filter.options.length === 1){
+                        return false;
+                    }
+                    if(filter.selected !== undefined){
+                        const tags = filter.filter.options[filter.selected].osmTags
+                        if(tags !== undefined && tags["and"]?.length !== 0){
+                            // This actually doesn't filter anything at all
+                            return false;
+                        }
+                    }
+                }
+                return true
+                
+            })
         )
 
 

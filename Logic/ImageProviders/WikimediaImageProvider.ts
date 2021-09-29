@@ -11,12 +11,15 @@ import {LicenseInfo} from "./LicenseInfo";
 export class WikimediaImageProvider extends ImageProvider {
 
 
-    public readonly defaultKeyPrefixes = ["wikimedia_commons"]
+    private readonly commons_key = "wikimedia_commons"
+    public readonly defaultKeyPrefixes = [this.commons_key,"image"]
     public static readonly singleton = new WikimediaImageProvider();
+    public static readonly commonsPrefix = "https://commons.wikimedia.org/wiki/"
 
     private constructor() {
         super();
     }
+
     /**
      * Recursively walks a wikimedia commons category in order to search for (image) files
      * Returns (a promise of) a list of URLS
@@ -124,38 +127,42 @@ export class WikimediaImageProvider extends ImageProvider {
 
     }
 
-    private async UrlForImage(image: string): Promise<ProvidedImage>{
-        if(!image.startsWith("File:")){
-            image = "File:"+image
+    private async UrlForImage(image: string): Promise<ProvidedImage> {
+        if (!image.startsWith("File:")) {
+            image = "File:" + image
         }
         return {url: this.PrepareUrl(image), key: undefined, provider: this}
     }
-    
+
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        const commonsPrefix = "https://commons.wikimedia.org/wiki/"
-        if(value.startsWith(commonsPrefix)){
-            value = value.substring(commonsPrefix.length)
-        } else       if(value.startsWith("https://upload.wikimedia.org")){
-            const result : ProvidedImage = {
+        
+        if(key !== this.commons_key && !value.startsWith(WikimediaImageProvider.commonsPrefix)){
+            return []
+        }
+        
+        if (value.startsWith(WikimediaImageProvider.commonsPrefix)) {
+            value = value.substring(WikimediaImageProvider.commonsPrefix.length)
+        } else if (value.startsWith("https://upload.wikimedia.org")) {
+            const result: ProvidedImage = {
                 key: undefined,
                 url: value,
                 provider: this
             }
             return [Promise.resolve(result)]
         }
-        if(value.startsWith("Category:")){
+        if (value.startsWith("Category:")) {
             const urls = await WikimediaImageProvider.GetImagesInCategory(value)
             return urls.map(image => this.UrlForImage(image))
         }
-        if(value.startsWith("File:")){
+        if (value.startsWith("File:")) {
             return [this.UrlForImage(value)]
         }
-        if(value.startsWith("http")){
+        if (value.startsWith("http")) {
             // PRobably an error
             return []
         }
         // We do a last effort and assume this is a file
-        return [this.UrlForImage("File:"+value)]
+        return [this.UrlForImage("File:" + value)]
     }
 
 

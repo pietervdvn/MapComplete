@@ -42,5 +42,9 @@ export default class FilterConfig {
 
             return {question: question, osmTags: osmTags};
         });
+        
+        if(this.options.length > 1 && this.options[0].osmTags["and"]?.length !== 0){
+            throw "Error in "+context+"."+this.id+": the first option of a multi-filter should always be the 'reset' option and not have any filters"
+        }
     }
 }

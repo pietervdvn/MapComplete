@@ -465,9 +465,9 @@
             "id": "inside",
             "options": [
                 {
-                    "question": "Binnen of buiten",
-                    "osmTags": {
-                        "and": []
+                    "question": {
+                        "nl": "Binnen of buiten",
+                        "en": "Indoor or outdoor"
                     }
                 },
                 {
