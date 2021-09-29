@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.10.0-alpha-4";
+    public static vNumber = "0.10.0-rc0";
     public static ImgurApiKey = '7070e7167f0a25a'
     public static defaultOverpassUrls = [
         // The official instance, 10000 queries per day per project allowed
