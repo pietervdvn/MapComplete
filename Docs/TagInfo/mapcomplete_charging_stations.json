@@ -106,84 +106,84 @@
     },
     {
       "key": "socket:schuko",
-      "description": "Layer 'Charging stations' shows socket:schuko=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:schuko=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:schuko",
-      "description": "Layer 'Charging stations' shows socket:schuko~^..*$&socket:schuko!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:schuko~^..*$&socket:schuko!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:typee",
-      "description": "Layer 'Charging stations' shows socket:typee=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:typee=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:typee",
-      "description": "Layer 'Charging stations' shows socket:typee~^..*$&socket:typee!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:typee~^..*$&socket:typee!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:chademo",
-      "description": "Layer 'Charging stations' shows socket:chademo=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:chademo=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:chademo",
-      "description": "Layer 'Charging stations' shows socket:chademo~^..*$&socket:chademo!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:chademo~^..*$&socket:chademo!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type1_cable",
-      "description": "Layer 'Charging stations' shows socket:type1_cable=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:type1_cable=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:type1_cable",
-      "description": "Layer 'Charging stations' shows socket:type1_cable~^..*$&socket:type1_cable!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type1_cable~^..*$&socket:type1_cable!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type1",
-      "description": "Layer 'Charging stations' shows socket:type1=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:type1=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:type1",
-      "description": "Layer 'Charging stations' shows socket:type1~^..*$&socket:type1!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type1~^..*$&socket:type1!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type1_combo",
-      "description": "Layer 'Charging stations' shows socket:type1_combo=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:type1_combo=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:type1_combo",
-      "description": "Layer 'Charging stations' shows socket:type1_combo~^..*$&socket:type1_combo!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type1_combo~^..*$&socket:type1_combo!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:tesla_supercharger",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:tesla_supercharger",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type2",
-      "description": "Layer 'Charging stations' shows socket:type2=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:type2=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:type2",
-      "description": "Layer 'Charging stations' shows socket:type2~^..*$&socket:type2!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type2~^..*$&socket:type2!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type2_combo",
-      "description": "Layer 'Charging stations' shows socket:type2_combo=1 with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:type2_combo=1 with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:type2_combo",
-      "description": "Layer 'Charging stations' shows socket:type2_combo~^..*$&socket:type2_combo!~^1$ with a fixed text, namely '<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type2_combo~^..*$&socket:type2_combo!~^1$ with a fixed text, namely '<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:schuko",

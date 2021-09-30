@@ -151,8 +151,8 @@
           "if": "socket:schuko=1",
           "ifnot": "socket:schuko=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
           }
         },
         {
@@ -163,8 +163,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
           },
           "hideInAnswer": true
         },
@@ -172,8 +172,8 @@
           "if": "socket:typee=1",
           "ifnot": "socket:typee=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
           }
         },
         {
@@ -184,8 +184,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
           },
           "hideInAnswer": true
         },
@@ -193,8 +193,8 @@
           "if": "socket:chademo=1",
           "ifnot": "socket:chademo=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
           }
         },
         {
@@ -205,8 +205,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
           },
           "hideInAnswer": true
         },
@@ -214,8 +214,8 @@
           "if": "socket:type1_cable=1",
           "ifnot": "socket:type1_cable=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
           }
         },
         {
@@ -226,8 +226,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
           },
           "hideInAnswer": true
         },
@@ -235,8 +235,8 @@
           "if": "socket:type1=1",
           "ifnot": "socket:type1=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
           }
         },
         {
@@ -247,8 +247,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
           },
           "hideInAnswer": true
         },
@@ -256,8 +256,8 @@
           "if": "socket:type1_combo=1",
           "ifnot": "socket:type1_combo=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
           }
         },
         {
@@ -268,8 +268,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
           },
           "hideInAnswer": true
         },
@@ -277,8 +277,8 @@
           "if": "socket:tesla_supercharger=1",
           "ifnot": "socket:tesla_supercharger=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
           }
         },
         {
@@ -289,8 +289,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
           },
           "hideInAnswer": true
         },
@@ -298,8 +298,8 @@
           "if": "socket:type2=1",
           "ifnot": "socket:type2=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> "
           }
         },
         {
@@ -310,8 +310,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> "
           },
           "hideInAnswer": true
         },
@@ -319,8 +319,8 @@
           "if": "socket:type2_combo=1",
           "ifnot": "socket:type2_combo=",
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
           }
         },
         {
@@ -331,8 +331,8 @@
             ]
           },
           "then": {
-            "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)",
-            "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+            "en": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)",
+            "nl": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
           },
           "hideInAnswer": true
         }

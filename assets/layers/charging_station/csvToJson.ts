@@ -64,8 +64,8 @@ function run(file, protojson) {
     const entries = loadCsv(file)
     for (const e of entries) {
         const txt = {
-            en: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("en")}`,
-            nl: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("nl")}`
+            en: `<img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("en")}`,
+            nl: `<img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("nl")}`
         }
         const json = {
             if: `${e.key}=1`,
@@ -220,8 +220,8 @@ function run(file, protojson) {
         options: filterOptions
     })
 
-  
-    
+
+
     const extraUnits = [
         {
             appliesToKey: entries.map(e => e.key + ":voltage"),
@@ -273,7 +273,7 @@ function run(file, protojson) {
         proto["units"] = []
     }
     proto["units"].push(...extraUnits)
-    
+
     writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "  "))
 }
 

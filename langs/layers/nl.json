@@ -1036,58 +1036,58 @@
             "4": {
                 "mappings": {
                     "0": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
                     },
                     "1": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
                     },
                     "2": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
                     },
                     "3": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
                     },
                     "4": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
                     },
                     "5": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
                     },
                     "6": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
                     },
                     "7": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
                     },
                     "8": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
                     },
                     "9": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
                     },
                     "10": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
                     },
                     "11": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
                     },
                     "12": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
                     },
                     "13": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
                     },
                     "14": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> "
                     },
                     "15": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> "
                     },
                     "16": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
                     },
                     "17": {
-                        "then": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
                     }
                 }
             },
