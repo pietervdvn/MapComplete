@@ -839,6 +839,11 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .-ml-1 {
   margin-left: -0.25rem;
 }
@@ -905,6 +910,10 @@ video {
 
 .mr-0 {
   margin-right: 0px;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .mb-4 {
@@ -1147,12 +1156,12 @@ video {
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.cursor-wait {
-  cursor: wait;
-}
-
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-wait {
+  cursor: wait;
 }
 
 .resize {

@@ -68,8 +68,8 @@ function run(file, protojson) {
     for (let i = 0; i < entries.length; i++){
         const e = entries[i];
         const txt = {
-            en: `<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("en")}</span></div>`,
-            nl: `<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("nl")}</span></div`
+            en: `<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("en")}</span></div>`,
+            nl: `<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("nl")}</span></div>`
         }
         const json = {
             if: `${e.key}=1`,
@@ -258,8 +258,8 @@ function run(file, protojson) {
         options: filterOptions
     })
 
-  
-    
+
+
     const extraUnits = [
         {
             appliesToKey: entries.map(e => e.key + ":voltage"),
@@ -311,10 +311,7 @@ function run(file, protojson) {
         proto["units"] = []
     }
     proto["units"].push(...extraUnits)
-    
-   // mergeTranslations("charging_station.json",proto)
-    
-    writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "    "))
+    writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "  "))
 }
 
 
