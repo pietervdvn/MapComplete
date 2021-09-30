@@ -131,8 +131,7 @@ export default abstract class BaseUIElement {
                     // @ts-ignore
                     e.consumed = true;
                 }
-                el.style.pointerEvents = "all";
-                el.style.cursor = "pointer";
+                el.classList.add("pointer-events-none", "cursor-pointer");
             }
 
             if (this._onHover !== undefined) {
