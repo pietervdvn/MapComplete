@@ -1322,6 +1322,11 @@ video {
   background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
 }
 
+.bg-indigo-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(224, 231, 255, var(--tw-bg-opacity));
+}
+
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
@@ -1335,11 +1340,6 @@ video {
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
-}
-
-.bg-indigo-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(224, 231, 255, var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -1571,10 +1571,6 @@ video {
 
 .underline {
   text-decoration: underline;
-}
-
-.line-through {
-  text-decoration: line-through;
 }
 
 .opacity-0 {
@@ -1992,6 +1988,8 @@ li::marker {
 }
 
 @-webkit-keyframes slide {
+  /* This is the animation on the marker to add a new point - it slides through all the possible presets */
+
   from {
     transform: translateX(0%);
   }
@@ -2002,12 +2000,98 @@ li::marker {
 }
 
 @keyframes slide {
+  /* This is the animation on the marker to add a new point - it slides through all the possible presets */
+
   from {
     transform: translateX(0%);
   }
 
   to {
     transform: translateX(calc(-100% + 42px));
+  }
+}
+
+.hand-drag-animation {
+  -webkit-animation: hand-drag-animation 6s ease-in-out infinite;
+          animation: hand-drag-animation 6s ease-in-out infinite;
+  transform-origin: 50% 125%;
+}
+
+@-webkit-keyframes hand-drag-animation {
+  /* This is the animation on the little extra hand on the location input. If fades in, invites the user to interact/drag the map */
+
+  0% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+
+  6% {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
+
+  12% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+
+  24% {
+    opacity: 1;
+    transform: rotate(-00deg);
+  }
+
+  30% {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
+
+  36% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes hand-drag-animation {
+  /* This is the animation on the little extra hand on the location input. If fades in, invites the user to interact/drag the map */
+
+  0% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+
+  6% {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
+
+  12% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+
+  24% {
+    opacity: 1;
+    transform: rotate(-00deg);
+  }
+
+  30% {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
+
+  36% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-30deg);
   }
 }
 
