@@ -64,7 +64,7 @@ export default class CheckBoxes extends InputElement<number[]> {
                 "w-full",
                 "border",
                 "border-gray-400",
-                "m-1"
+                "mb-1"
             );
             wrapper.appendChild(input);
             wrapper.appendChild(label);
