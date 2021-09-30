@@ -31,14 +31,14 @@ export default class ImportButton extends Toggle {
         const button = new SubtleButton(imageUrl, message)
 
 
-        button.onClick(() => {
+        button.onClick(async () => {
             if (isImported.data) {
                 return
             }
             originalTags.data["_imported"] = "yes"
             originalTags.ping() // will set isImported as per its definition
             const newElementAction = new CreateNewNodeAction(newTags.data, lat, lon)
-            State.state.changes.applyAction(newElementAction)
+            await State.state.changes.applyAction(newElementAction)
             State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))

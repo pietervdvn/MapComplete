@@ -3,12 +3,11 @@
         "name": "Bancos",
         "presets": {
             "0": {
-                "description": "Añadir un nuevo banco",
-                "title": "Banco"
+                "title": "banco"
             }
         },
         "tagRenderings": {
-            "1": {
+            "bench-backrest": {
                 "mappings": {
                     "0": {
                         "then": "Respaldo: Si"
@@ -20,11 +19,7 @@
                 "question": "¿Este banco tiene un respaldo?",
                 "render": "Respaldo"
             },
-            "2": {
-                "question": "¿Cuántos asientos tiene este banco?",
-                "render": "{seats} asientos"
-            },
-            "3": {
+            "bench-material": {
                 "mappings": {
                     "0": {
                         "then": "Material: madera"
@@ -46,6 +41,10 @@
                     }
                 },
                 "render": "Material: {material}"
+            },
+            "bench-seats": {
+                "question": "¿Cuántos asientos tiene este banco?",
+                "render": "{seats} asientos"
             }
         },
         "title": {
@@ -66,18 +65,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Este desfibrilador está en interior"
-                    },
-                    "1": {
-                        "then": "Este desfibrilador está en exterior"
-                    }
-                },
-                "question": "¿Esté el desfibrilador en interior?"
-            },
-            "2": {
+            "defibrillator-access": {
                 "mappings": {
                     "0": {
                         "then": "Acceso libre"
@@ -95,18 +83,29 @@
                 "question": "¿Está el desfibrilador accesible libremente?",
                 "render": "El acceso es {access}"
             },
-            "4": {
-                "question": "¿En qué planta se encuentra el defibrilador localizado?",
-                "render": "El desfibrilador se encuentra en la planta {level}"
-            },
-            "5": {
+            "defibrillator-defibrillator:location": {
                 "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)"
             },
-            "6": {
+            "defibrillator-defibrillator:location:en": {
                 "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)"
             },
-            "7": {
+            "defibrillator-defibrillator:location:fr": {
                 "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
+            },
+            "defibrillator-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Este desfibrilador está en interior"
+                    },
+                    "1": {
+                        "then": "Este desfibrilador está en exterior"
+                    }
+                },
+                "question": "¿Esté el desfibrilador en interior?"
+            },
+            "defibrillator-level": {
+                "question": "¿En qué planta se encuentra el defibrilador localizado?",
+                "render": "El desfibrilador se encuentra en la planta {level}"
             }
         },
         "title": {

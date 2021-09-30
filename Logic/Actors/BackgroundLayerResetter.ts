@@ -11,8 +11,8 @@ export default class BackgroundLayerResetter {
     constructor(currentBackgroundLayer: UIEventSource<BaseLayer>,
                 location: UIEventSource<Loc>,
                 availableLayers: UIEventSource<BaseLayer[]>,
-                defaultLayerId: UIEventSource<string> = undefined) {
-        defaultLayerId = defaultLayerId ?? new UIEventSource<string>(AvailableBaseLayers.osmCarto.id);
+                defaultLayerId: string = undefined) {
+        defaultLayerId = defaultLayerId ?? AvailableBaseLayers.osmCarto.id;
 
         // Change the baselayer back to OSM if we go out of the current range of the layer
         availableLayers.addCallbackAndRun(availableLayers => {
@@ -28,7 +28,7 @@ export default class BackgroundLayerResetter {
                     if (availableLayer.min_zoom > location.data.zoom) {
                         break;
                     }
-                    if (availableLayer.id === defaultLayerId.data) {
+                    if (availableLayer.id === defaultLayerId) {
                         defaultLayer = availableLayer;
                     }
                     return; // All good - the current layer still works!

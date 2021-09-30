@@ -108,5 +108,15 @@
     "sources": [
       "https://upload.wikimedia.org/wikipedia/commons/2/20/UnderCon_icon.svg"
     ]
+  },
+  {
+    "path": "usb_port.svg",
+    "license": "CC-BY",
+    "authors": [
+      "Ryan Dardis"
+    ],
+    "sources": [
+      "https://thenounproject.com/term/usb-port/94768/"
+    ]
   }
 ]

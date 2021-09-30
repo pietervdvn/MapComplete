@@ -19,8 +19,7 @@ import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
-import {And} from "../../Logic/Tags/And";
-import {BBox} from "../../Logic/GeoOperations";
+import {BBox} from "../../Logic/BBox";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -56,10 +55,9 @@ export default class SimpleAddUI extends Toggle {
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset)
 
 
-        function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
-            console.trace("Creating a new point")
+       async function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {snapOnto: snapOntoWay})
-            State.state.changes.applyAction(newElementAction)
+            await State.state.changes.applyAction(newElementAction)
             selectedPreset.setData(undefined)
             isShown.setData(false)
             State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
@@ -224,14 +222,32 @@ export default class SimpleAddUI extends Toggle {
                 ]
             ).SetClass("flex flex-col")
         ).onClick(() => {
-            preset.layerToAddTo.appliedFilters.setData(new And([]))
+            preset.layerToAddTo.appliedFilters.setData([])
             cancel()
         })
 
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
             disableFilter,
-            preset.layerToAddTo.appliedFilters.map(filters => filters === undefined || filters.normalize().and.length === 0)
+            preset.layerToAddTo.appliedFilters.map(filters => {
+                if(filters === undefined || filters.length === 0){
+                    return true;
+                }
+                for (const filter of filters) {
+                    if(filter.selected === 0 && filter.filter.options.length === 1){
+                        return false;
+                    }
+                    if(filter.selected !== undefined){
+                        const tags = filter.filter.options[filter.selected].osmTags
+                        if(tags !== undefined && tags["and"]?.length !== 0){
+                            // This actually doesn't filter anything at all
+                            return false;
+                        }
+                    }
+                }
+                return true
+                
+            })
         )
 
 

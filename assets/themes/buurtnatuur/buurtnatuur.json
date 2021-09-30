@@ -25,7 +25,7 @@
   "startLat": 50.8435,
   "startLon": 4.3688,
   "startZoom": 16,
-  "widenFactor": 0.01,
+  "widenFactor": 1.2,
   "socialImage": "./assets/themes/buurtnatuur/social_image.jpg",
   "layers": [
     {

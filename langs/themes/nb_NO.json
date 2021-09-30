@@ -12,7 +12,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "Hvilken artist lagde dette?",
+                        "render": "Laget av {artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "Arkitektur"
@@ -54,15 +58,11 @@
                         "question": "Hvilken type kunstverk er dette?",
                         "render": "Dette er et kunstverk av typen {artwork_type}"
                     },
-                    "2": {
-                        "question": "Hvilken artist lagde dette?",
-                        "render": "Laget av {artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "Finnes det en nettside med mer info om dette kunstverket?",
                         "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
                         "render": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
@@ -84,18 +84,21 @@
         "layers": {
             "0": {
                 "tagRenderings": {
-                    "2": {
+                    "caravansites-charge": {
+                        "question": "pø",
+                        "render": "Dette stedet tar {charge}"
+                    },
+                    "caravansites-description": {
+                        "render": "Flere detaljer om dette stedet: {description}"
+                    },
+                    "caravansites-fee": {
                         "mappings": {
                             "1": {
                                 "then": "Kan brukes gratis"
                             }
                         }
                     },
-                    "3": {
-                        "question": "pø",
-                        "render": "Dette stedet tar {charge}"
-                    },
-                    "8": {
+                    "caravansites-toilets": {
                         "mappings": {
                             "0": {
                                 "then": "Dette stedet har toalettfasiliteter"
@@ -106,12 +109,9 @@
                         },
                         "question": "Har dette stedet toaletter?"
                     },
-                    "9": {
+                    "caravansites-website": {
                         "question": "Har dette stedet en nettside?",
                         "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
-                    },
-                    "11": {
-                        "render": "Flere detaljer om dette stedet: {description}"
                     }
                 }
             }
@@ -135,7 +135,7 @@
             "2": {
                 "name": "Klatreruter",
                 "tagRenderings": {
-                    "4": {
+                    "Length": {
                         "render": "Denne ruten er {canonical(climbing:length)} lang"
                     }
                 },
@@ -159,7 +159,7 @@
                 "description": "En klatremulighet?",
                 "name": "Klatremuligheter?",
                 "tagRenderings": {
-                    "2": {
+                    "climbing-possible": {
                         "mappings": {
                             "0": {
                                 "then": "Klatring er ikke mulig her"
@@ -232,7 +232,7 @@
         "layers": {
             "0": {
                 "tagRenderings": {
-                    "2": {
+                    "facadegardens-sunshine": {
                         "mappings": {
                             "1": {
                                 "then": "Denne hagen er i delvis skygge"
@@ -257,7 +257,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "hydrant-color": {
                         "question": "Hvilken farge har brannhydranten?",
                         "render": "Brannhydranter er {colour}"
                     }

@@ -9,6 +9,7 @@ import Img from "../../UI/Base/Img";
 import {Utils} from "../../Utils";
 import {OsmObject} from "./OsmObject";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Changes} from "./Changes";
 
 export default class UserDetails {
 
@@ -54,31 +55,33 @@ export class OsmConnection {
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
     private readonly _iframeMode: Boolean | boolean;
     private readonly _singlePage: boolean;
-    private readonly _oauth_config: {
+    public readonly _oauth_config: {
         oauth_consumer_key: string,
         oauth_secret: string,
         url: string
     };
     private isChecking = false;
 
-    constructor(dryRun: boolean,
-                fakeUser: boolean,
-                oauth_token: UIEventSource<string>,
+    constructor(options:{dryRun?: false | boolean,
+                fakeUser?: false | boolean,
+                allElements: ElementStorage,
+                changes: Changes,
+                oauth_token?: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
                 layoutName: string,
-                singlePage: boolean = true,
-                osmConfiguration: "osm" | "osm-test" = 'osm'
+                singlePage?: boolean,
+                osmConfiguration?: "osm" | "osm-test" }
     ) {
-        this.fakeUser = fakeUser;
-        this._singlePage = singlePage;
-        this._oauth_config = OsmConnection.oauth_configs[osmConfiguration] ?? OsmConnection.oauth_configs.osm;
+        this.fakeUser = options.fakeUser ?? false;
+        this._singlePage = options.singlePage ?? true;
+        this._oauth_config = OsmConnection.oauth_configs[options.osmConfiguration ?? 'osm'] ?? OsmConnection.oauth_configs.osm;
         console.debug("Using backend", this._oauth_config.url)
         OsmObject.SetBackendUrl(this._oauth_config.url + "/")
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(this._oauth_config.url), "userDetails");
-        this.userDetails.data.dryRun = dryRun || fakeUser;
-        if (fakeUser) {
+        this.userDetails.data.dryRun = (options.dryRun ?? false) || (options.fakeUser ?? false) ;
+        if (options.fakeUser) {
             const ud = this.userDetails.data;
             ud.csCount = 5678
             ud.loggedIn = true;
@@ -94,23 +97,24 @@ export class OsmConnection {
                 self.AttemptLogin()
             }
         });
-        this._dryRun = dryRun;
+        this.isLoggedIn.addCallbackAndRunD(li => console.log("User is logged in!", li))
+        this._dryRun = options.dryRun;
 
         this.updateAuthObject();
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
 
-        this.changesetHandler = new ChangesetHandler(layoutName, dryRun, this, this.auth);
-        if (oauth_token.data !== undefined) {
-            console.log(oauth_token.data)
+        this.changesetHandler = new ChangesetHandler(options.layoutName, options.dryRun, this, options.allElements, options.changes, this.auth);
+        if (options.oauth_token?.data !== undefined) {
+            console.log(options.oauth_token.data)
             const self = this;
-            this.auth.bootstrapToken(oauth_token.data,
+            this.auth.bootstrapToken(options.oauth_token.data,
                 (x) => {
                     console.log("Called back: ", x)
                     self.AttemptLogin();
                 }, this.auth);
 
-            oauth_token.setData(undefined);
+            options.   oauth_token.setData(undefined);
 
         }
         if (this.auth.authenticated()) {
@@ -123,10 +127,8 @@ export class OsmConnection {
     public UploadChangeset(
         layout: LayoutConfig,
         allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string,
-        whenDone: (csId: string) => void,
-        onFail: () => {}) {
-        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, whenDone, onFail);
+        generateChangeXML: (csid: string) => string): Promise<void> {
+        return this.changesetHandler.UploadChangeset(layout, generateChangeXML);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

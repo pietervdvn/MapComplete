@@ -2,7 +2,23 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.10.0-alpha-0";
+    public static vNumber = "0.10.0-rc2";
+    public static ImgurApiKey = '7070e7167f0a25a'
+    public static readonly mapillary_client_token_v3 = 'TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2'
+    public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
+
+    public static defaultOverpassUrls = [
+        // The official instance, 10000 queries per day per project allowed
+        "https://overpass-api.de/api/interpreter",
+        // 'Fair usage'
+        "https://overpass.kumi.systems/api/interpreter",
+        // "https://overpass.nchc.org.tw/api/interpreter",
+        "https://overpass.openstreetmap.ru/cgi/interpreter",
+        // The french api, only 1000 per day per project allowed, so we put it as last resort
+        "https://overpass.openstreetmap.fr/api/interpreter"
+    ]
+
+    
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {

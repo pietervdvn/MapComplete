@@ -1,50 +1,50 @@
-import SplitRoadWizard from "./UI/Popup/SplitRoadWizard";
-import State from "./State";
+<<<<<<< HEAD
+import {Tiles} from "./Models/TileRange";
+import OsmFeatureSource from "./Logic/FeatureSource/TiledFeatureSource/OsmFeatureSource";
+import {Utils} from "./Utils";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import MinimapImplementation from "./UI/Base/MinimapImplementation";
-import {UIEventSource} from "./Logic/UIEventSource";
-import FilteredLayer from "./Models/FilteredLayer";
-import {And} from "./Logic/Tags/And";
+import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 
-const layout = AllKnownLayouts.allKnownLayouts.get("cyclestreets")
-State.state = new State(layout)
-MinimapImplementation.initialize()
-const feature = {
-    "type": "Feature",
-    "properties": {
-        id: "way/1234",
-        "highway":"residential",
-        "cyclestreet":"yes"
-    },
-    "geometry": {
-        "type": "LineString",
-        "coordinates": [
-            [
-                3.2207107543945312,
-                51.21978729870313
-            ],
-            [
-                3.2198524475097656,
-                51.21899435057332
-            ],
-            [
-                3.2155394554138184,
-                51.21617188199714
-            ]
-        ]
+const allLayers: LayerConfig[] = []
+const seenIds = new Set<string>()
+for (const layoutConfig of AllKnownLayouts.layoutsList) {
+    if (layoutConfig.hideFromOverview) {
+        continue
+    }
+    for (const layer of layoutConfig.layers) {
+        if (seenIds.has(layer.id)) {
+            continue
+        }
+        seenIds.add(layer.id)
+        allLayers.push(layer)
     }
 }
 
-State.state.allElements.addOrGetElement(feature)
-State.state.filteredLayers = new UIEventSource<FilteredLayer[]>(
-    layout.layers.map( l => ({
-        layerDef :l,
-        appliedFilters: new UIEventSource<And>(undefined),
-        isDisplayed: new UIEventSource<boolean>(undefined)
-    }))
-)
+console.log("All layer ids", allLayers.map(l => l.id))
 
-const splitroad = new SplitRoadWizard("way/1234")
-    splitroad.AttachTo("maindiv")
+const src = new OsmFeatureSource({
+    backend: "https://www.openstreetmap.org",
+    handleTile: tile => console.log("Got tile", tile),
+    allLayers: allLayers
+})
+src.LoadTile(16, 33354, 21875).then(geojson => {
+    console.log("Got geojson", geojson);
+    Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson), "test.geojson", {
+        mimetype: "application/vnd.geo+json"
+    })
+})
+//*/
+=======
+import LocationInput from "./UI/Input/LocationInput";
+import Loc from "./Models/Loc";
+import {UIEventSource} from "./Logic/UIEventSource";
 
-splitroad.dialogIsOpened.setData(true)
+new LocationInput({
+    centerLocation: new UIEventSource<Loc>({
+        lat: 51.1110,
+        lon: 3.3701,
+        zoom : 14
+    })
+}).SetStyle("height: 500px")
+    .AttachTo("maindiv");
+>>>>>>> feature/animated-precise-input

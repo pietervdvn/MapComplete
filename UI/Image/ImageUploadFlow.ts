@@ -29,10 +29,10 @@ export class ImageUploadFlow extends Toggle {
                 key = imagePrefix + ":" + freeIndex;
             }
             console.log("Adding image:" + key, url);
-            State.state.changes
+           Promise.resolve(State.state.changes
                 .applyAction(new ChangeTagAction(
                     tags.id, new Tag(key, url), tagsSource.data
-                ))
+                )))
         })
 
 
@@ -55,7 +55,7 @@ export class ImageUploadFlow extends Toggle {
 
             const tags = tagsSource.data;
 
-            const layout = State.state?.layoutToUse?.data
+            const layout = State.state?.layoutToUse
             let matchingLayer: LayerConfig = undefined
             for (const layer of layout?.layers ?? []) {
                 if (layer.source.osmTags.matchesProperties(tags)) {

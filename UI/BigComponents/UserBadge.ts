@@ -47,7 +47,7 @@ export default class UserBadge extends Toggle {
                 });
 
                 const linkStyle = "flex items-baseline"
-                const languagePicker = (LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.language) ?? new FixedUiElement(""))
+                const languagePicker = (LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.language) ?? new FixedUiElement(""))
                     .SetStyle("width:min-content;");
 
                 let messageSpan =

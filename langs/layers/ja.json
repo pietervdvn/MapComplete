@@ -3,12 +3,12 @@
         "description": "充電ステーション",
         "name": "充電ステーション",
         "tagRenderings": {
-            "41": {
-                "question": "この充電ステーションはいつオープンしますか?"
-            },
-            "42": {
+            "Auth phone": {
                 "question": "この充電ステーションの運営チェーンはどこですか?",
                 "render": "{network}"
+            },
+            "Authentication": {
+                "question": "この充電ステーションはいつオープンしますか?"
             }
         },
         "title": {
@@ -17,7 +17,7 @@
     },
     "food": {
         "tagRenderings": {
-            "17": {
+            "friture-take-your-container": {
                 "mappings": {
                     "0": {
                         "then": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます"

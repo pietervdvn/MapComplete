@@ -63,6 +63,7 @@
       },
       "tagRenderings": [
         {
+          "id": "turbine-output",
           "render": {
             "en": "The power output of this wind turbine is {generator:output:electricity}.",
             "fr": "La puissance générée par cette éolienne est de {generator:output:electricity}."
@@ -77,6 +78,7 @@
           }
         },
         {
+          "id": "turbine-operator",
           "render": {
             "en": "This wind turbine is operated by {operator}.",
             "fr": "Cette éolienne est opérée par {operator}."
@@ -90,6 +92,7 @@
           }
         },
         {
+          "id": "turbine-height",
           "render": {
             "en": "The total height (including rotor radius) of this wind turbine is {height} metres.",
             "fr": "La hauteur totale, incluant les pales, est de {height} mètres."
@@ -104,6 +107,7 @@
           }
         },
         {
+          "id": "turbine-diameter",
           "render": {
             "en": "The rotor diameter of this wind turbine is {rotor:diameter} metres.",
             "fr": "Le diamètre du rotor est de {rotor:diameter} mètres."
@@ -118,6 +122,7 @@
           }
         },
         {
+          "id": "turbine-start-date",
           "render": {
             "en": "This wind turbine went into operation on/in {start_date}.",
             "fr": "L’éolienne est active depuis {start_date}."

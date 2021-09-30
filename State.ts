@@ -17,7 +17,7 @@ import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import FilteredLayer from "./Models/FilteredLayer";
 import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
-import {BBox} from "./Logic/GeoOperations";
+import {BBox} from "./Logic/BBox";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -27,16 +27,16 @@ export default class State {
     // The singleton of the global state
     public static state: State;
 
-    public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined, "layoutToUse");
+    public readonly layoutToUse : LayoutConfig;
 
     /**
      The mapping from id -> UIEventSource<properties>
      */
-    public allElements: ElementStorage;
+    public allElements: ElementStorage = new ElementStorage();
     /**
      THe change handler
      */
-    public changes: Changes;
+    public changes: Changes = new Changes();
     /**
      The leaflet instance of the big basemap
      */
@@ -81,9 +81,11 @@ export default class State {
     public readonly featureSwitchEnableExport: UIEventSource<boolean>;
     public readonly featureSwitchFakeUser: UIEventSource<boolean>;
     public readonly featureSwitchExportAsPdf: UIEventSource<boolean>;
-    public readonly overpassUrl: UIEventSource<string>;
+    public readonly overpassUrl: UIEventSource<string[]>;
     public readonly overpassTimeout: UIEventSource<number>;
-    public readonly overpassMaxZoom: UIEventSource<number> = new UIEventSource<number>(undefined);
+    
+    
+    public readonly overpassMaxZoom: UIEventSource<number> = new UIEventSource<number>(17, "overpass-max-zoom: point to switch between OSM-api and overpass");
 
     public featurePipeline: FeaturePipeline;
 
@@ -97,7 +99,7 @@ export default class State {
      * The current visible extent of the screen
      */
     public readonly currentBounds = new UIEventSource<BBox>(undefined)
-    
+
     public backgroundLayer;
     public readonly backgroundLayerId: UIEventSource<string>;
 
@@ -155,8 +157,7 @@ export default class State {
 
     constructor(layoutToUse: LayoutConfig) {
         const self = this;
-
-        this.layoutToUse.setData(layoutToUse);
+        this.layoutToUse  = layoutToUse;
 
         // -- Location control initialization
         {
@@ -193,14 +194,7 @@ export default class State {
                 lat.setData(latlonz.lat);
                 lon.setData(latlonz.lon);
             });
-
-            this.layoutToUse.addCallback((layoutToUse) => {
-                const lcd = self.locationControl.data;
-                lcd.zoom = lcd.zoom ?? layoutToUse?.startZoom;
-                lcd.lat = lcd.lat ?? layoutToUse?.startLat;
-                lcd.lon = lcd.lon ?? layoutToUse?.startLon;
-                self.locationControl.ping();
-            });
+            
         }
 
         // Helper function to initialize feature switches
@@ -209,28 +203,19 @@ export default class State {
             deflt: (layout: LayoutConfig) => boolean,
             documentation: string
         ): UIEventSource<boolean> {
-            const queryParameterSource = QueryParameters.GetQueryParameter(
+            
+            const defaultValue = deflt(self.layoutToUse);
+            const queryParam = QueryParameters.GetQueryParameter(
                 key,
-                undefined,
+                "" + defaultValue,
                 documentation
             );
-            // I'm so sorry about someone trying to decipher this
 
             // It takes the current layout, extracts the default value for this query parameter. A query parameter event source is then retrieved and flattened
-            return UIEventSource.flatten(
-                self.layoutToUse.map((layout) => {
-                    const defaultValue = deflt(layout);
-                    const queryParam = QueryParameters.GetQueryParameter(
-                        key,
-                        "" + defaultValue,
-                        documentation
-                    );
-                    return queryParam.map((str) =>
-                        str === undefined ? defaultValue : str !== "false"
-                    );
-                }),
-                [queryParameterSource]
-            );
+            return queryParam.map((str) =>
+                str === undefined ? defaultValue : str !== "false"
+            )
+   
         }
 
         // Feature switch initialization - not as a function as the UIEventSources are readonly
@@ -336,9 +321,9 @@ export default class State {
             );
 
             this.overpassUrl = QueryParameters.GetQueryParameter("overpassUrl",
-                layoutToUse?.overpassUrl,
+                (layoutToUse?.overpassUrl ?? Constants.defaultOverpassUrls).join(",") ,
                 "Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter"
-            )
+            ).map(param => param.split(","), [], urls => urls.join(","))
 
             this.overpassTimeout = QueryParameters.GetQueryParameter("overpassTimeout",
                 "" + layoutToUse?.overpassTimeout,
@@ -373,22 +358,20 @@ export default class State {
             return;
         }
 
-        this.osmConnection = new OsmConnection(
-            this.featureSwitchIsTesting.data,
-            this.featureSwitchFakeUser.data,
-            QueryParameters.GetQueryParameter(
+        this.osmConnection = new OsmConnection({
+            changes: this.changes,
+            dryRun: this.featureSwitchIsTesting.data,
+            fakeUser: this.featureSwitchFakeUser.data,
+            allElements: this.allElements,
+            oauth_token: QueryParameters.GetQueryParameter(
                 "oauth_token",
                 undefined,
                 "Used to complete the login"
             ),
-            layoutToUse?.id,
-            true,
-            // @ts-ignore
-            this.featureSwitchApiURL.data
-        );
+            layoutName: layoutToUse?.id,
+            osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data
+        })
 
-        this.allElements = new ElementStorage();
-        this.changes = new Changes();
 
         new ChangeToElementsActor(this.changes, this.allElements)
 
@@ -415,11 +398,11 @@ export default class State {
 
         Locale.language
             .addCallback((currentLanguage) => {
-                const layoutToUse = self.layoutToUse.data;
+                const layoutToUse = self.layoutToUse;
                 if (layoutToUse === undefined) {
                     return;
                 }
-                if (this.layoutToUse.data.language.indexOf(currentLanguage) < 0) {
+                if (this.layoutToUse.language.indexOf(currentLanguage) < 0) {
                     console.log(
                         "Resetting language to",
                         layoutToUse.language[0],

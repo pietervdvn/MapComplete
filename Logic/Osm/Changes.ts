@@ -14,7 +14,7 @@ import {LocalStorageSource} from "../Web/LocalStorageSource";
 export class Changes {
 
 
-    private _nextId : number = -1; // Newly assigned ID's are negative
+    private _nextId: number = -1; // Newly assigned ID's are negative
     public readonly name = "Newly added features"
     /**
      * All the newly created features as featureSource + all the modified features
@@ -31,7 +31,10 @@ export class Changes {
         // We keep track of all changes just as well
         this.allChanges.setData([...this.pendingChanges.data])
         // If a pending change contains a negative ID, we save that
-       this._nextId = Math.min(-1, ...this.pendingChanges.data?.map(pch => pch.id) ?? [])
+        this._nextId = Math.min(-1, ...this.pendingChanges.data?.map(pch => pch.id) ?? [])
+
+        // Note: a changeset might be reused which was opened just before and might have already used some ids
+        // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
     }
 
     private static createChangesetFor(csId: string,
@@ -90,74 +93,69 @@ export class Changes {
         if (this.pendingChanges.data.length === 0) {
             return;
         }
-
         if (this.isUploading.data) {
             console.log("Is already uploading... Abort")
             return;
         }
-
-
         this.isUploading.setData(true)
 
+        this.flushChangesAsync(flushreason)
+            .then(_ => {
+                this.isUploading.setData(false)
+                console.log("Changes flushed!");
+            })
+            .catch(e => {
+                this.isUploading.setData(false)
+                console.error("Flushing changes failed due to", e);
+            })
+    }
+
+    private async flushChangesAsync(flushreason: string = undefined): Promise<void> {
         console.log("Beginning upload... " + flushreason ?? "");
         // At last, we build the changeset and upload
         const self = this;
         const pending = self.pendingChanges.data;
         const neededIds = Changes.GetNeededIds(pending)
-        console.log("Needed ids", neededIds)
-        OsmObject.DownloadAll(neededIds, true).addCallbackAndRunD(osmObjects => {
-            console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
-            try {
-
-
-                const changes: {
-                    newObjects: OsmObject[],
-                    modifiedObjects: OsmObject[]
-                    deletedObjects: OsmObject[]
-
-                } = self.CreateChangesetObjects(pending, osmObjects)
-                if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
-                    console.log("No changes to be made")
-                    self.pendingChanges.setData([])
-                    self.isUploading.setData(false)
-                    return true; // Unregister the callback
-                }
-
-
-                State.state.osmConnection.UploadChangeset(
-                    State.state.layoutToUse.data,
-                    State.state.allElements,
-                    (csId) => Changes.createChangesetFor(csId, changes),
-                    () => {
-                        console.log("Upload successfull!")
-                        self.pendingChanges.setData([]);
-                        self.isUploading.setData(false)
-                    },
-                    () => {
-                        console.log("Upload failed - trying again later")
-                        return self.isUploading.setData(false);
-                    } // Failed - mark to try again
-                )
-            } catch (e) {
-                console.error("Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those", e)
+        const osmObjects = await Promise.all(neededIds.map(id => OsmObject.DownloadObjectAsync(id)));
+        console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
+        try {
+            const changes: {
+                newObjects: OsmObject[],
+                modifiedObjects: OsmObject[]
+                deletedObjects: OsmObject[]
+            } = self.CreateChangesetObjects(pending, osmObjects)
+            if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
+                console.log("No changes to be made")
                 self.pendingChanges.setData([])
                 self.isUploading.setData(false)
             }
-            return true;
 
-        });
+            await State.state.osmConnection.UploadChangeset(
+                State.state.layoutToUse,
+                State.state.allElements,
+                (csId) => Changes.createChangesetFor(csId, changes),
+            )
+
+            console.log("Upload successfull!")
+            this.pendingChanges.setData([]);
+            this.isUploading.setData(false)
+
+        } catch (e) {
+            console.error("Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those", e)
+            self.pendingChanges.setData([])
+            self.isUploading.setData(false)
+        }
 
 
     }
 
-    public applyAction(action: OsmChangeAction) {
-        action.Perform(this).then(changes => {
-            console.log("Received changes:", changes)
-            this.pendingChanges.data.push(...changes);
-            this.pendingChanges.ping();
-            this.allChanges.data.push(...changes)
-            this.allChanges.ping()
-        })
+    public async applyAction(action: OsmChangeAction): Promise<void> {
+        const changes = await action.Perform(this)
+        console.log("Received changes:", changes)
+        this.pendingChanges.data.push(...changes);
+        this.pendingChanges.ping();
+        this.allChanges.data.push(...changes)
+        this.allChanges.ping()
     }
 
     private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
@@ -310,5 +308,9 @@ export class Changes {
         })
 
         return result
+    }
+
+    public registerIdRewrites(mappings: Map<string, string>): void {
+        
     }
 }

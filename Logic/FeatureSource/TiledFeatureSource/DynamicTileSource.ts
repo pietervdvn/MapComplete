@@ -6,6 +6,7 @@ import {Utils} from "../../../Utils";
 import {UIEventSource} from "../../UIEventSource";
 import Loc from "../../../Models/Loc";
 import TileHierarchy from "./TileHierarchy";
+import {Tiles} from "../../../Models/TileRange";
 
 /***
  * A tiled source which dynamically loads the required tiles at a fixed zoom level
@@ -46,9 +47,9 @@ export default class DynamicTileSource implements TileHierarchy<FeatureSourceFor
                     // We'll retry later
                     return undefined
                 }
-                const tileRange = Utils.TileRangeBetween(zoomlevel, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
+                const tileRange = Tiles.TileRangeBetween(zoomlevel, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
 
-                const needed = Utils.MapRange(tileRange, (x, y) => Utils.tile_index(zoomlevel, x, y)).filter(i => !self._loadedTiles.has(i))
+                const needed = Tiles.MapRange(tileRange, (x, y) => Tiles.tile_index(zoomlevel, x, y)).filter(i => !self._loadedTiles.has(i))
                 if (needed.length === 0) {
                     return undefined
                 }
@@ -63,7 +64,7 @@ export default class DynamicTileSource implements TileHierarchy<FeatureSourceFor
             }
             for (const neededIndex of neededIndexes) {
                 self._loadedTiles.add(neededIndex)
-                const src = constructTile( Utils.tile_from_index(neededIndex))
+                const src = constructTile(Tiles.tile_from_index(neededIndex))
                 if(src !== undefined){
                     self.loadedTiles.set(neededIndex, src)
                 }

@@ -20,11 +20,11 @@ export default class AttributionPanel extends Combine {
 
     private static LicenseObject = AttributionPanel.GenerateLicenses();
 
-    constructor(layoutToUse: UIEventSource<LayoutConfig>, contributions: UIEventSource<Map<string, number>>) {
+    constructor(layoutToUse: LayoutConfig, contributions: UIEventSource<Map<string, number>>) {
         super([
             Translations.t.general.attribution.attributionContent,
-            ((layoutToUse.data.maintainer ?? "") == "") ? "" : Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.data.maintainer}),
-            layoutToUse.data.credits,
+            ((layoutToUse.maintainer ?? "") == "") ? "" : Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.maintainer}),
+            layoutToUse.credits,
             "<br/>",
             new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.currentBounds),
             "<br/>",
@@ -65,7 +65,7 @@ export default class AttributionPanel extends Combine {
             "<br/>",
             AttributionPanel.CodeContributors(),
             "<h3>", Translations.t.general.attribution.iconAttribution.title.Clone().SetClass("pt-6 pb-3"), "</h3>",
-            ...Utils.NoNull(Array.from(layoutToUse.data.ExtractImages()))
+            ...Utils.NoNull(Array.from(layoutToUse.ExtractImages()))
                 .map(AttributionPanel.IconAttribution)
         ]);
         this.SetClass("flex flex-col link-underline overflow-hidden")

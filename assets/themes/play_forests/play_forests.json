@@ -19,7 +19,7 @@
   "startLon": 0,
   "startZoom": 1,
   "hideFromOverview": true,
-  "widenFactor": 0.05,
+  "widenFactor": 3,
   "socialImage": "",
   "layers": [
     "play_forest"

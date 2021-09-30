@@ -58,10 +58,10 @@ export default class TagRenderingQuestion extends Combine {
             console.error("MultiAnswer failed - probably not a single option was possible", configuration)
             throw "MultiAnswer failed - probably not a single option was possible"
         }
-        const save = () => {
+        const save = async () => {
             const selection = inputElement.GetValue().data;
             if (selection) {
-                (State.state?.changes ?? new Changes())
+               await (State.state?.changes ?? new Changes())
                     .applyAction(new ChangeTagAction(
                         tags.data.id, selection, tags.data
                     ))

@@ -33,7 +33,7 @@ class TranslationPart {
             }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
-                console.error("Non-string object in translation: ", translations[translationsKey])
+                console.error("Non-string object in translation while trying to add more translations to '", translationsKey ,"': ", v)
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
             this.contents.set(translationsKey, v)
@@ -41,23 +41,37 @@ class TranslationPart {
     }
 
     recursiveAdd(object: any, context: string) {
-
-
-        const isProbablyTranslationObject = knownLanguages.map(l => object.hasOwnProperty(l)).filter(x => x).length > 0;
+        const isProbablyTranslationObject = knownLanguages.some(l => object.hasOwnProperty(l));
         if (isProbablyTranslationObject) {
             this.addTranslationObject(object, context)
             return;
         }
 
-        for (const key in object) {
+        for (let key in object) {
             if (!object.hasOwnProperty(key)) {
                 continue;
             }
 
             const v = object[key]
+
             if (v == null) {
                 console.warn("Got a null value for key ", key)
                 continue
+            }
+
+            if (v["id"] !== undefined && context.endsWith("tagRenderings")) {
+                // We use the embedded id as key instead of the index as this is more stable
+                // Note: indonesian is shortened as 'id' as well!
+                if (v["en"] !== undefined || v["nl"] !== undefined) {
+                    // This is probably a translation already!
+                    // pass
+                } else {
+
+                    key = v["id"]
+                    if (typeof key !== "string") {
+                        throw "Panic: found a non-string ID at" + context
+                    }
+                }
             }
 
             if (typeof v !== "object") {
@@ -120,7 +134,10 @@ class TranslationPart {
     }
 }
 
-
+/**
+ * Checks that the given object only contains string-values
+ * @param tr
+ */
 function isTranslation(tr: any): boolean {
     for (const key in tr) {
         if (typeof tr[key] !== "string") {
@@ -130,6 +147,11 @@ function isTranslation(tr: any): boolean {
     return true;
 }
 
+/**
+ * Converts a translation object into something that can be added to the 'generated translations'
+ * @param obj
+ * @param depth
+ */
 function transformTranslation(obj: any, depth = 1) {
 
     if (isTranslation(obj)) {
@@ -150,6 +172,9 @@ function transformTranslation(obj: any, depth = 1) {
 
 }
 
+/**
+ * Generates the big compiledTranslations file
+ */
 function genTranslations() {
     const translations = JSON.parse(fs.readFileSync("./assets/generated/translations.json", "utf-8"))
     const transformed = transformTranslation(translations);
@@ -163,7 +188,10 @@ function genTranslations() {
 
 }
 
-// Read 'lang/*.json', writes to 'assets/generated/translations.json'
+/**
+ * Reads 'lang/*.json', writes them into to 'assets/generated/translations.json'.
+ * This is only for the core translations
+ */
 function compileTranslationsFromWeblate() {
     const translations = ScriptUtils.readDirRecSync("./langs", 1)
         .filter(path => path.indexOf(".json") > 0)
@@ -181,7 +209,11 @@ function compileTranslationsFromWeblate() {
 
 }
 
-// Get all the strings out of the layers; writes them onto the weblate paths
+/**
+ * Get all the strings out of the layers; writes them onto the weblate paths
+ * @param objects
+ * @param target
+ */
 function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: string } }[], target: string) {
     const tr = new TranslationPart();
 
@@ -203,6 +235,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
         }
         let json = tr.toJson(lang)
         try {
+
             json = JSON.stringify(JSON.parse(json), null, "    ");
         } catch (e) {
             console.error(e)
@@ -212,15 +245,34 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
     }
 }
 
+/**
+ * Merge two objects together
+ * @param source: where the tranlations come from
+ * @param target: the object in which the translations should be merged
+ * @param language: the language code
+ * @param context: context for error handling
+ * @constructor
+ */
 function MergeTranslation(source: any, target: any, language: string, context: string = "") {
+
+    let keyRemapping: Map<string, string> = undefined
+    if (context.endsWith(".tagRenderings")) {
+        keyRemapping = new Map<string, string>()
+        for (const key in target) {
+            keyRemapping.set(target[key].id, key)
+        }
+    }
 
     for (const key in source) {
         if (!source.hasOwnProperty(key)) {
             continue
         }
+
         const sourceV = source[key];
-        const targetV = target[key]
+        const targetV = target[keyRemapping?.get(key) ?? key]
+
         if (typeof sourceV === "string") {
+            // Add the translation
             if (targetV === undefined) {
                 if (typeof target === "string") {
                     throw "Trying to merge a translation into a fixed string at " + context + " for key " + key;
@@ -281,9 +333,9 @@ function loadTranslationFilesFrom(target: string): Map<string, any> {
     for (const translationFilePath of translationFilePaths) {
         let language = translationFilePath.substr(translationFilePath.lastIndexOf("/") + 1)
         language = language.substr(0, language.length - 5)
-        try{
+        try {
             translationFiles.set(language, JSON.parse(readFileSync(translationFilePath, "utf8")))
-        }catch(e){
+        } catch (e) {
             console.error("Invalid JSON file or file does not exist", translationFilePath)
             throw e;
         }
@@ -299,10 +351,13 @@ function mergeLayerTranslations() {
     const layerFiles = ScriptUtils.getLayerFiles();
     for (const layerFile of layerFiles) {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, loadTranslationFilesFrom("layers"))
-        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
+        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "    "))
     }
 }
 
+/**
+ * Load the translations into the theme files
+ */
 function mergeThemeTranslations() {
     const themeFiles = ScriptUtils.getThemeFiles();
     for (const themeFile of themeFiles) {

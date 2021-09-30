@@ -38,7 +38,7 @@
   "startLat": 51.02768,
   "startLon": 4.480705,
   "startZoom": 15,
-  "widenFactor": 0.05,
+  "widenFactor": 1.5,
   "socialImage": "",
   "layers": [
     {
@@ -125,9 +125,11 @@
           "freeform": {
             "type": "direction",
             "key": "direction"
-          }
+          },
+          "id": "facadegardens-direction"
         },
         {
+          "id": "facadegardens-sunshine",
           "mappings": [
             {
               "if": {
@@ -183,6 +185,7 @@
           }
         },
         {
+          "id": "facadegardens-rainbarrel",
           "question": {
             "nl": "Is er een regenton voorzien bij het tuintje?",
             "en": "Is there a water barrel installed for the garden?",
@@ -241,9 +244,11 @@
           "freeform": {
             "key": "start_date",
             "type": "text"
-          }
+          },
+          "id": "facadegardens-start_date"
         },
         {
+          "id": "facadegardens-edible",
           "mappings": [
             {
               "if": {
@@ -283,6 +288,7 @@
           }
         },
         {
+          "id": "facadegardens-plants",
           "question": {
             "nl": "Wat voor planten staan hier?",
             "en": "What kinds of plants grow here?",
@@ -355,7 +361,8 @@
           "freeform": {
             "key": "description",
             "type": "text"
-          }
+          },
+          "id": "facadegardens-description"
         }
       ],
       "icon": {

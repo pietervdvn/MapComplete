@@ -18,7 +18,7 @@
   "startLat": 51.20875,
   "startLon": 3.22435,
   "startZoom": 12,
-  "widenFactor": 0.05,
+  "widenFactor": 2,
   "socialImage": "",
   "layers": [
     "drinking_water",

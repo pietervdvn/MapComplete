@@ -56,7 +56,8 @@
       "de": "Was ist die Mail-Adresse von {name}?",
       "pt_BR": "Qual o endereço de e-mail de {name}?",
       "pl": "Jaki jest adres e-mail do {name}?",
-      "sv": "Vad är e-postadressen till {name}?"
+      "sv": "Vad är e-postadressen till {name}?",
+      "pt": "Qual é o endereço de e-mail de {name}?"
     },
     "freeform": {
       "key": "email",
@@ -184,7 +185,8 @@
       "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>",
       "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>",
       "pl": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>",
-      "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
+      "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>",
+      "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -266,7 +268,8 @@
       "fr": "À quel étage se situe l’élément ?",
       "pl": "Na jakim poziomie znajduje się ta funkcja?",
       "pt_BR": "Em que nível esse recurso está localizado?",
-      "ru": "На каком этаже находится этот объект?"
+      "ru": "На каком этаже находится этот объект?",
+      "pt": "Em que nível se encontra este elemento?"
     },
     "render": {
       "en": "Located on the {level}th floor",
@@ -294,7 +297,8 @@
           "zh_Hant": "位於地下",
           "fr": "En sous-sol",
           "pl": "Znajduje się pod ziemią",
-          "sv": "Ligger under jorden"
+          "sv": "Ligger under jorden",
+          "pt": "Está no subsolo"
         },
         "hideInAnswer": true
       },
@@ -309,7 +313,8 @@
           "zh_Hant": "位於 1 樓",
           "fr": "Rez-de-chaussée",
           "pl": "Znajduje się na parterze",
-          "sv": "Ligger på bottenvåningen"
+          "sv": "Ligger på bottenvåningen",
+          "pt": "Está ao nível do rés-do-chão"
         }
       },
       {
@@ -324,7 +329,8 @@
           "zh_Hant": "位於 1 樓",
           "fr": "Rez-de-chaussée",
           "pl": "Znajduje się na parterze",
-          "sv": "Ligger på bottenvåningen"
+          "sv": "Ligger på bottenvåningen",
+          "pt": "Está ao nível do rés-do-chão"
         }
       },
       {
@@ -338,7 +344,8 @@
           "zh_Hant": "位於 2 樓",
           "fr": "Premier étage",
           "pl": "Znajduje się na pierwszym piętrze",
-          "sv": "Ligger på första våningen"
+          "sv": "Ligger på första våningen",
+          "pt": "Está no primeiro andar"
         }
       }
     ]

@@ -52,7 +52,7 @@
   "startZoom": 1,
   "startLat": 0,
   "startLon": 0,
-  "widenFactor": 0.1,
+  "widenFactor": 5,
   "layers": [
     "ghost_bike"
   ],

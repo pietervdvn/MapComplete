@@ -2,7 +2,7 @@
 import {UIEventSource} from "./UIEventSource";
 import FeaturePipeline from "./FeatureSource/FeaturePipeline";
 import Loc from "../Models/Loc";
-import {BBox} from "./GeoOperations";
+import {BBox} from "./BBox";
 
 export default class ContributorCount {
 

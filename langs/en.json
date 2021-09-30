@@ -13,7 +13,8 @@
     "uploadDone": "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>",
     "dontDelete": "Cancel",
     "doDelete": "Remove image",
-    "isDeleted": "Deleted"
+    "isDeleted": "Deleted",
+    "hasBeenImported": "This feature has been imported"
   },
   "centerMessage": {
     "loadingData": "Loading data…",

@@ -228,8 +228,8 @@ export interface LayoutConfigJson {
          */
         maxZoom?: number,
         /**
-         * The number of elements that should be showed (in total) before clustering starts to happen.
-         * If clustering is defined, defaults to 0
+         * The number of elements per tile needed to start clustering 
+         * If clustering is defined, defaults to 25
          */
         minNeededElements?: number
     },
@@ -263,9 +263,9 @@ export interface LayoutConfigJson {
     enablePdfDownload?: boolean;
 
     /**
-     * Set a different overpass URL. Default: https://overpass-api.de/api/interpreter
+     * Set one or more overpass URLs to use for this theme..
      */
-    overpassUrl?: string;
+    overpassUrl?: string | string[];
     /**
      * Set a different timeout for overpass queries - in seconds. Default: 30s
      */

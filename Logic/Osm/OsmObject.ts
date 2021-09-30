@@ -1,7 +1,7 @@
 import {Utils} from "../../Utils";
 import * as polygon_features from "../../assets/polygon-features.json";
 import {UIEventSource} from "../UIEventSource";
-import {BBox} from "../GeoOperations";
+import {BBox} from "../BBox";
 
 
 export abstract class OsmObject {
@@ -157,23 +157,6 @@ export abstract class OsmObject {
         const elements: any[] = data.elements;
         return OsmObject.ParseObjects(elements);
     }
-
-    public static DownloadAll(neededIds, forceRefresh = true): UIEventSource<OsmObject[]> {
-        // local function which downloads all the objects one by one
-        // this is one big loop, running one download, then rerunning the entire function
-
-        const allSources: UIEventSource<OsmObject> [] = neededIds.map(id => OsmObject.DownloadObject(id, forceRefresh))
-        const allCompleted = new UIEventSource(undefined).map(_ => {
-            return !allSources.some(uiEventSource => uiEventSource.data === undefined)
-        }, allSources)
-        return allCompleted.map(completed => {
-            if (completed) {
-                return allSources.map(src => src.data)
-            }
-            return undefined
-        });
-    }
-
     protected static isPolygon(tags: any): boolean {
         for (const tagsKey in tags) {
             if (!tags.hasOwnProperty(tagsKey)) {

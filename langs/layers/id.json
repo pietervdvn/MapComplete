@@ -3,11 +3,11 @@
         "name": "Bangku",
         "presets": {
             "0": {
-                "title": "Bangku"
+                "title": "bangku"
             }
         },
         "tagRenderings": {
-            "1": {
+            "bench-backrest": {
                 "mappings": {
                     "0": {
                         "then": "Sandaran: Ya"
@@ -19,11 +19,11 @@
                 "question": "Apakah bangku ini memiliki sandaran?",
                 "render": "Sandaran"
             },
-            "2": {
-                "render": "{seats} kursi"
-            },
-            "5": {
+            "bench-colour": {
                 "render": "Warna: {colour}"
+            },
+            "bench-seats": {
+                "render": "{seats} kursi"
             }
         },
         "title": {
@@ -32,7 +32,7 @@
     },
     "bench_at_pt": {
         "tagRenderings": {
-            "1": {
+            "bench_at_pt-name": {
                 "render": "{name}"
             }
         },
@@ -42,21 +42,21 @@
     },
     "bike_parking": {
         "tagRenderings": {
-            "5": {
+            "Access": {
                 "render": "{access}"
             }
         }
     },
     "bike_shop": {
         "tagRenderings": {
-            "3": {
+            "bike_shop-website": {
                 "question": "URL {name} apa?"
             }
         }
     },
     "defibrillator": {
         "tagRenderings": {
-            "13": {
+            "defibrillator-description": {
                 "render": "Informasi tambahan: {description}"
             }
         }
@@ -65,7 +65,7 @@
         "name": "Air minum",
         "presets": {
             "0": {
-                "title": "Air minum"
+                "title": "air minum"
             }
         },
         "title": {
@@ -74,30 +74,30 @@
     },
     "ghost_bike": {
         "tagRenderings": {
-            "3": {
-                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
-            },
-            "4": {
+            "ghost_bike-inscription": {
                 "render": "<i>{inscription}</i>"
+            },
+            "ghost_bike-source": {
+                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
             }
         }
     },
     "nature_reserve": {
         "tagRenderings": {
-            "8": {
+            "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
-            "9": {
+            "phone": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
             }
         }
     },
     "playground": {
         "tagRenderings": {
-            "7": {
+            "playground-email": {
                 "render": "<a href='mailto:{email}'>{email}</a>"
             },
-            "8": {
+            "playground-phone": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
             }
         }
@@ -109,7 +109,7 @@
             }
         },
         "tagRenderings": {
-            "5": {
+            "tree_node-name": {
                 "render": "Nama: {name}"
             }
         },
@@ -129,7 +129,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "viewpoint-description": {
                 "question": "Apakah Anda ingin menambahkan deskripsi?"
             }
         },

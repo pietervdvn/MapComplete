@@ -17,6 +17,7 @@ export default class ShowDataLayer {
     // Used to generate a fresh ID when needed
     private _cleanCount = 0;
     private geoLayer = undefined;
+    private isDirty = false;
 
     /**
      * If the selected element triggers, this is used to lookup the correct layer and to open the popup
@@ -37,39 +38,70 @@ export default class ShowDataLayer {
         this._layerToShow = options.layerToShow;
         const self = this;
 
+        options.leafletMap.addCallbackAndRunD(_ => {
+                self.update(options)
+            }
+        );
+
         features.addCallback(_ => self.update(options));
-        options.leafletMap.addCallback(_ => self.update(options));
-        this.update(options);
+        options.doShowLayer?.addCallbackAndRun(doShow => {
+            const mp = options.leafletMap.data;
+            if (mp == undefined) {
+                return;
+            }
+            if (doShow) {
+                if (self.isDirty) {
+                    self.update(options)
+                } else {
+                    mp.addLayer(this.geoLayer)
+                }
+            } else {
+                if(this.geoLayer !== undefined){
+                    mp.removeLayer(this.geoLayer)
+                }
+            }
 
+        })
 
+        
         State.state.selectedElement.addCallbackAndRunD(selected => {
             if (self._leafletMap.data === undefined) {
                 return;
             }
             const v = self.leafletLayersPerId.get(selected.properties.id)
-            if(v === undefined){return;}
+            if (v === undefined) {
+                return;
+            }
             const leafletLayer = v.leafletlayer
             const feature = v.feature
             if (leafletLayer.getPopup().isOpen()) {
                 return;
             }
-            if (selected.properties.id === feature.properties.id) {
-                // A small sanity check to prevent infinite loops:
-                if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
-                    && feature.id === feature.properties.id // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
-                ) {
-                    leafletLayer.openPopup()
-                }
-                if (feature.id !== feature.properties.id) {
-                    console.trace("Not opening the popup for", feature)
-                }
-
+            if (selected.properties.id !== feature.properties.id) {
+                return;
+            }
+            
+            if (feature.id !== feature.properties.id) {
+                // Probably a feature which has renamed
+                console.trace("Not opening the popup for", feature)
+                return;
+            }
+            if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
+                && feature.id === feature.properties.id // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
+            ) {
+                console.log("Opening popup of feature", feature)
+                leafletLayer.openPopup()
             }
         })
+
     }
 
-    private update(options) {
+    private update(options: ShowDataLayerOptions) {
         if (this._features.data === undefined) {
+            return;
+        }
+        this.isDirty = true;
+        if (options?.doShowLayer?.data === false) {
             return;
         }
         const mp = options.leafletMap.data;
@@ -83,20 +115,29 @@ export default class ShowDataLayer {
             mp.removeLayer(this.geoLayer);
         }
 
-        this.geoLayer= this.CreateGeojsonLayer()
+        const self = this;
+        const data = {
+            type: "FeatureCollection",
+            features: []
+        }
+        // @ts-ignore
+        this.geoLayer = L.geoJSON(data, {
+            style: feature => self.createStyleFor(feature),
+            pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
+            onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
+        });
+
         const allFeats = this._features.data;
         for (const feat of allFeats) {
             if (feat === undefined) {
                 continue
             }
-            try{
+            try {
                 this.geoLayer.addData(feat);
-            }catch(e){
+            } catch (e) {
                 console.error("Could not add ", feat, "to the geojson layer in leaflet")
             }
         }
-
-        mp.addLayer(this.geoLayer)
 
         if (options.zoomToFeatures ?? false) {
             try {
@@ -105,6 +146,11 @@ export default class ShowDataLayer {
                 console.error(e)
             }
         }
+
+        if (options.doShowLayer?.data ?? true) {
+            mp.addLayer(this.geoLayer)
+        }
+        this.isDirty = false;
     }
 
 
@@ -125,7 +171,10 @@ export default class ShowDataLayer {
             return;
         }
 
-        const tagSource = feature.properties.id === undefined ? new UIEventSource<any>(feature.properties) : State.state.allElements.getEventSourceById(feature.properties.id)
+        let tagSource = State.state.allElements.getEventSourceById(feature.properties.id)
+        if(tagSource === undefined){
+           tagSource = new UIEventSource<any>(feature.properties) 
+        }
         const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
         const style = layer.GenerateLeafletStyle(tagSource, clickable);
         const baseElement = style.icon.html;
@@ -193,22 +242,9 @@ export default class ShowDataLayer {
             infobox.Activate();
         });
 
+
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(feature.properties.id, {feature: feature, leafletlayer: leafletLayer})
-    }
-
-    private CreateGeojsonLayer(): L.Layer {
-        const self = this;
-        const data = {
-            type: "FeatureCollection",
-            features: []
-        }
-        // @ts-ignore
-        return L.geoJSON(data, {
-            style: feature => self.createStyleFor(feature),
-            pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
-            onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
-        });
 
     }
 

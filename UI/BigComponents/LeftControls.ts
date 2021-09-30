@@ -11,8 +11,8 @@ import AllDownloads from "./AllDownloads";
 import FilterView from "./FilterView";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
-import {BBox} from "../../Logic/GeoOperations";
 import Loc from "../../Models/Loc";
+import {BBox} from "../../Logic/BBox";
 
 export default class LeftControls extends Combine {
 

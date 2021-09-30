@@ -15,7 +15,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "Welcher Künstler hat das geschaffen?",
+                        "render": "Erstellt von {artist_name}"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "Architektur"
@@ -57,15 +61,11 @@
                         "question": "Was ist die Art dieses Kunstwerks?",
                         "render": "Dies ist ein {artwork_type}"
                     },
-                    "2": {
-                        "question": "Welcher Künstler hat das geschaffen?",
-                        "render": "Erstellt von {artist_name}"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
                         "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
                         "render": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
@@ -112,7 +112,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "0": {
+                    "climbing_club-name": {
                         "question": "Wie lautet der Name dieses Vereins oder Organisation?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -130,7 +130,7 @@
                 "description": "Eine Kletterhalle",
                 "name": "Kletterhallen",
                 "tagRenderings": {
-                    "3": {
+                    "name": {
                         "question": "Wie heißt diese Kletterhalle?",
                         "render": "<strong>{name}</strong>"
                     }
@@ -147,7 +147,13 @@
             "2": {
                 "name": "Kletterrouten",
                 "tagRenderings": {
-                    "3": {
+                    "Difficulty": {
+                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
+                    },
+                    "Length": {
+                        "render": "Diese Route ist {canonical(climbing:length)} lang"
+                    },
+                    "Name": {
                         "mappings": {
                             "0": {
                                 "then": "Diese Kletterroute hat keinen Namen"
@@ -155,12 +161,6 @@
                         },
                         "question": "Wie heißt diese Kletterroute?",
                         "render": "<strong>{name}</strong>"
-                    },
-                    "4": {
-                        "render": "Diese Route ist {canonical(climbing:length)} lang"
-                    },
-                    "5": {
-                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
                     }
                 },
                 "title": {
@@ -182,7 +182,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "6": {
+                    "name": {
                         "mappings": {
                             "0": {
                                 "then": "Diese Klettergelegenheit hat keinen Namen"
@@ -200,10 +200,10 @@
                 "description": "Eine Klettergelegenheit?",
                 "name": "Klettermöglichkeiten?",
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "2": {
+                    "climbing-possible": {
                         "mappings": {
                             "0": {
                                 "then": "Hier kann nicht geklettert werden"

@@ -342,7 +342,8 @@
                 "nb_NO": "Flisarbeid"
               }
             }
-          ]
+          ],
+          "id": "artwork-artwork_type"
         },
         {
           "question": {
@@ -369,7 +370,8 @@
           },
           "freeform": {
             "key": "artist_name"
-          }
+          },
+          "id": "artwork-artist_name"
         },
         {
           "question": {
@@ -398,7 +400,8 @@
           "freeform": {
             "key": "website",
             "type": "url"
-          }
+          },
+          "id": "artwork-website"
         },
         {
           "question": {
@@ -426,7 +429,8 @@
           "freeform": {
             "key": "wikidata",
             "type": "wikidata"
-          }
+          },
+          "id": "artwork-wikidata"
         }
       ]
     }

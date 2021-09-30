@@ -31,7 +31,7 @@ export default class SimpleMetaTagger {
                 "_version_number"],
             doc: "Information about the last edit of this object."
         },
-        (feature) => {/*Note: also handled by 'UpdateTagsFromOsmAPI'*/
+        (feature) => {/*Note: also called by 'UpdateTagsFromOsmAPI'*/
 
             const tgs = feature.properties;
 
@@ -48,6 +48,7 @@ export default class SimpleMetaTagger {
             move("changeset", "_last_edit:changeset")
             move("timestamp", "_last_edit:timestamp")
             move("version", "_version_number")
+            return true;
         }
     )
     private static latlon = new SimpleMetaTagger({
@@ -62,6 +63,7 @@ export default class SimpleMetaTagger {
             feature.properties["_lon"] = "" + lon;
             feature._lon = lon; // This is dirty, I know
             feature._lat = lat;
+            return true;
         })
     );
     private static surfaceArea = new SimpleMetaTagger(
@@ -74,6 +76,7 @@ export default class SimpleMetaTagger {
             feature.properties["_surface"] = "" + sqMeters;
             feature.properties["_surface:ha"] = "" + Math.floor(sqMeters / 1000) / 10;
             feature.area = sqMeters;
+            return true;
         })
     );
 
@@ -84,7 +87,7 @@ export default class SimpleMetaTagger {
 
         },
         (feature => {
-            const units = Utils.NoNull([].concat(...State.state?.layoutToUse?.data?.layers?.map(layer => layer.units ?? [])));
+            const units = Utils.NoNull([].concat(...State.state?.layoutToUse?.layers?.map(layer => layer.units ?? [])));
             if (units.length == 0) {
                 return;
             }
@@ -94,6 +97,9 @@ export default class SimpleMetaTagger {
                     continue;
                 }
                 for (const unit of units) {
+                    if (unit === undefined) {
+                        continue
+                    }
                     if (unit.appliesToKeys === undefined) {
                         console.error("The unit ", unit, "has no appliesToKey defined")
                         continue
@@ -102,7 +108,12 @@ export default class SimpleMetaTagger {
                         continue;
                     }
                     const value = feature.properties[key]
-                    const [, denomination] = unit.findDenomination(value)
+                    const denom = unit.findDenomination(value)
+                    if (denom === undefined) {
+                        // no valid value found
+                        break;
+                    }
+                    const [, denomination] = denom;
                     let canonical = denomination?.canonicalValue(value) ?? undefined;
                     if (canonical === value) {
                         break;
@@ -118,9 +129,7 @@ export default class SimpleMetaTagger {
                 }
 
             }
-            if (rewritten) {
-                State.state.allElements.getEventSourceById(feature.id).ping();
-            }
+            return rewritten
         })
     )
 
@@ -135,6 +144,7 @@ export default class SimpleMetaTagger {
             const km = Math.floor(l / 1000)
             const kmRest = Math.round((l - km * 1000) / 100)
             feature.properties["_length:km"] = "" + km + "." + kmRest
+            return true;
         })
     )
     private static country = new SimpleMetaTagger(
@@ -143,7 +153,6 @@ export default class SimpleMetaTagger {
             doc: "The country code of the property (with latlon2country)"
         },
         feature => {
-
 
             let centerPoint: any = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];
@@ -157,11 +166,11 @@ export default class SimpleMetaTagger {
                         const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
                         tagsSource.ping();
                     }
-
                 } catch (e) {
                     console.warn(e)
                 }
             })
+            return false;
         }
     )
     private static isOpen = new SimpleMetaTagger(
@@ -174,7 +183,7 @@ export default class SimpleMetaTagger {
             if (Utils.runningFromConsole) {
                 // We are running from console, thus probably creating a cache
                 // isOpen is irrelevant
-                return
+                return false
             }
 
             const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
@@ -199,7 +208,7 @@ export default class SimpleMetaTagger {
                         if (oldNextChange > (new Date()).getTime() &&
                             tags["_isOpen:oldvalue"] === tags["opening_hours"]) {
                             // Already calculated and should not yet be triggered
-                            return;
+                            return false;
                         }
 
                         tags["_isOpen"] = oh.getState() ? "yes" : "no";
@@ -227,6 +236,7 @@ export default class SimpleMetaTagger {
                         }
                     }
                     updateTags();
+                    return true;
                 } catch (e) {
                     console.warn("Error while parsing opening hours of ", tags.id, e);
                     tags["_isOpen"] = "parse_error";
@@ -244,11 +254,11 @@ export default class SimpleMetaTagger {
             const tags = feature.properties;
             const direction = tags["camera:direction"] ?? tags["direction"];
             if (direction === undefined) {
-                return;
+                return false;
             }
             const n = cardinalDirections[direction] ?? Number(direction);
             if (isNaN(n)) {
-                return;
+                return false;
             }
 
             // The % operator has range (-360, 360). We apply a trick to get [0, 360).
@@ -256,126 +266,17 @@ export default class SimpleMetaTagger {
 
             tags["_direction:numerical"] = normalized;
             tags["_direction:leftright"] = normalized <= 180 ? "right" : "left";
-
+            return true;
         })
     )
-    private static carriageWayWidth = new SimpleMetaTagger(
-        {
-            keys: ["_width:needed", "_width:needed:no_pedestrians", "_width:difference"],
-            doc: "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present"
-        },
-        feature => {
 
-            const properties = feature.properties;
-            if (properties["width:carriageway"] === undefined) {
-                return;
-            }
-
-            const carWidth = 2;
-            const cyclistWidth = 1.5;
-            const pedestrianWidth = 0.75;
-
-
-            const _leftSideParking =
-                new And([new Tag("parking:lane:left", "parallel"), new Tag("parking:lane:right", "no_parking")]);
-            const _rightSideParking =
-                new And([new Tag("parking:lane:right", "parallel"), new Tag("parking:lane:left", "no_parking")]);
-
-            const _bothSideParking = new Tag("parking:lane:both", "parallel");
-            const _noSideParking = new Tag("parking:lane:both", "no_parking");
-            const _otherParkingMode =
-                new Or([
-                    new Tag("parking:lane:both", "perpendicular"),
-                    new Tag("parking:lane:left", "perpendicular"),
-                    new Tag("parking:lane:right", "perpendicular"),
-                    new Tag("parking:lane:both", "diagonal"),
-                    new Tag("parking:lane:left", "diagonal"),
-                    new Tag("parking:lane:right", "diagonal"),
-                ])
-
-            const _sidewalkBoth = new Tag("sidewalk", "both");
-            const _sidewalkLeft = new Tag("sidewalk", "left");
-            const _sidewalkRight = new Tag("sidewalk", "right");
-            const _sidewalkNone = new Tag("sidewalk", "none");
-
-
-            let parallelParkingCount = 0;
-
-
-            const _oneSideParking = new Or([_leftSideParking, _rightSideParking]);
-
-            if (_oneSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 1;
-            } else if (_bothSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 2;
-            } else if (_noSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 0;
-            } else if (_otherParkingMode.matchesProperties(properties)) {
-                parallelParkingCount = 0;
-            } else {
-                console.log("No parking data for ", properties.name, properties.id)
-            }
-
-
-            let pedestrianFlowNeeded;
-            if (_sidewalkBoth.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 0;
-            } else if (_sidewalkNone.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 2;
-            } else if (_sidewalkLeft.matchesProperties(properties) || _sidewalkRight.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 1;
-            } else {
-                pedestrianFlowNeeded = -1;
-            }
-
-
-            let onewayCar = properties.oneway === "yes";
-            let onewayBike = properties["oneway:bicycle"] === "yes" ||
-                (onewayCar && properties["oneway:bicycle"] === undefined)
-
-            let cyclingAllowed =
-                !(properties.bicycle === "use_sidepath"
-                    || properties.bicycle === "no");
-
-            let carWidthUsed = (onewayCar ? 1 : 2) * carWidth;
-            properties["_width:needed:cars"] = Utils.Round(carWidthUsed);
-            properties["_width:needed:parking"] = Utils.Round(parallelParkingCount * carWidth)
-
-
-            let cyclistWidthUsed = 0;
-            if (cyclingAllowed) {
-                cyclistWidthUsed = (onewayBike ? 1 : 2) * cyclistWidth;
-            }
-            properties["_width:needed:cyclists"] = Utils.Round(cyclistWidthUsed)
-
-
-            const width = parseFloat(properties["width:carriageway"]);
-
-
-            const targetWidthIgnoringPedestrians =
-                carWidthUsed +
-                cyclistWidthUsed +
-                parallelParkingCount * carWidthUsed;
-            properties["_width:needed:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians);
-
-            const pedestriansNeed = Math.max(0, pedestrianFlowNeeded) * pedestrianWidth;
-            const targetWidth = targetWidthIgnoringPedestrians + pedestriansNeed;
-            properties["_width:needed"] = Utils.Round(targetWidth);
-            properties["_width:needed:pedestrians"] = Utils.Round(pedestriansNeed)
-
-
-            properties["_width:difference"] = Utils.Round(targetWidth - width);
-            properties["_width:difference:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians - width);
-
-        }
-    );
     private static currentTime = new SimpleMetaTagger(
         {
             keys: ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
             doc: "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
             includesDates: true
         },
-        (feature, _, freshness) => {
+        (feature, freshness) => {
             const now = new Date();
 
             if (typeof freshness === "string") {
@@ -394,7 +295,7 @@ export default class SimpleMetaTagger {
             feature.properties["_now:datetime"] = datetime(now);
             feature.properties["_loaded:date"] = date(freshness);
             feature.properties["_loaded:datetime"] = datetime(freshness);
-
+            return true;
         }
     )
     public static metatags = [
@@ -404,7 +305,6 @@ export default class SimpleMetaTagger {
         SimpleMetaTagger.canonicalize,
         SimpleMetaTagger.country,
         SimpleMetaTagger.isOpen,
-        SimpleMetaTagger.carriageWayWidth,
         SimpleMetaTagger.directionSimplified,
         SimpleMetaTagger.currentTime,
         SimpleMetaTagger.objectMetaInfo
@@ -413,12 +313,18 @@ export default class SimpleMetaTagger {
     public readonly keys: string[];
     public readonly doc: string;
     public readonly includesDates: boolean
-    private readonly _f: (feature: any, index: number, freshness: Date) => void;
+    public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date) => boolean;
 
-    constructor(docs: { keys: string[], doc: string, includesDates?: boolean }, f: ((feature: any, index: number, freshness: Date) => void)) {
+    /***
+     * A function that adds some extra data to a feature
+     * @param docs: what does this extra data do?
+     * @param f: apply the changes. Returns true if something changed
+     */
+    constructor(docs: { keys: string[], doc: string, includesDates?: boolean },
+                f: ((feature: any, freshness: Date) => boolean)) {
         this.keys = docs.keys;
         this.doc = docs.doc;
-        this._f = f;
+        this.applyMetaTagsOnFeature = f;
         this.includesDates = docs.includesDates ?? false;
         for (const key of docs.keys) {
             if (!key.startsWith('_') && key.toLowerCase().indexOf("theme") < 0) {
@@ -449,13 +355,5 @@ export default class SimpleMetaTagger {
 
         return new Combine(subElements).SetClass("flex-col")
     }
-
-    public addMetaTags(features: { feature: any, freshness: Date }[]) {
-        for (let i = 0; i < features.length; i++) {
-            let feature = features[i];
-            this._f(feature.feature, i, feature.freshness);
-        }
-    }
-
 
 }

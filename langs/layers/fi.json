@@ -3,12 +3,11 @@
         "name": "Penkit",
         "presets": {
             "0": {
-                "description": "Lisää uusi penkki",
-                "title": "Penkki"
+                "title": "penkki"
             }
         },
         "tagRenderings": {
-            "1": {
+            "bench-backrest": {
                 "mappings": {
                     "0": {
                         "then": "Selkänoja: kyllä"
@@ -19,27 +18,7 @@
                 },
                 "render": "Selkänoja"
             },
-            "3": {
-                "mappings": {
-                    "0": {
-                        "then": "Materiaali: puu"
-                    },
-                    "2": {
-                        "then": "Materiaali: kivi"
-                    },
-                    "3": {
-                        "then": "Materiaali: betoni"
-                    },
-                    "4": {
-                        "then": "Materiaali: muovi"
-                    },
-                    "5": {
-                        "then": "Materiaali: teräs"
-                    }
-                },
-                "render": "Materiaali: {material}"
-            },
-            "5": {
+            "bench-colour": {
                 "mappings": {
                     "0": {
                         "then": "Väri: ruskea"
@@ -67,6 +46,26 @@
                     }
                 },
                 "render": "Väri: {colour}"
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Materiaali: puu"
+                    },
+                    "2": {
+                        "then": "Materiaali: kivi"
+                    },
+                    "3": {
+                        "then": "Materiaali: betoni"
+                    },
+                    "4": {
+                        "then": "Materiaali: muovi"
+                    },
+                    "5": {
+                        "then": "Materiaali: teräs"
+                    }
+                },
+                "render": "Materiaali: {material}"
             }
         },
         "title": {
@@ -75,7 +74,7 @@
     },
     "bench_at_pt": {
         "tagRenderings": {
-            "1": {
+            "bench_at_pt-name": {
                 "render": "{name}"
             }
         },
@@ -85,7 +84,7 @@
     },
     "bike_parking": {
         "tagRenderings": {
-            "5": {
+            "Access": {
                 "render": "{access}"
             }
         }

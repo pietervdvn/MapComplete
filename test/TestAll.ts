@@ -1,7 +1,6 @@
 import TagSpec from "./Tag.spec";
 import ImageAttributionSpec from "./ImageAttribution.spec";
 import GeoOperationsSpec from "./GeoOperations.spec";
-import ImageSearcherSpec from "./ImageSearcher.spec";
 import ThemeSpec from "./Theme.spec";
 import UtilsSpec from "./Utils.spec";
 import OsmObjectSpec from "./OsmObject.spec";
@@ -10,6 +9,7 @@ import UnitsSpec from "./Units.spec";
 import RelationSplitHandlerSpec from "./RelationSplitHandler.spec";
 import SplitActionSpec from "./SplitAction.spec";
 import {Utils} from "../Utils";
+import TileFreshnessCalculatorSpec from "./TileFreshnessCalculator.spec";
 
 
 ScriptUtils.fixUtils()
@@ -18,12 +18,12 @@ const allTests = [
     new TagSpec(),
     new ImageAttributionSpec(),
     new GeoOperationsSpec(),
-    new ImageSearcherSpec(),
     new ThemeSpec(),
     new UtilsSpec(),
     new UnitsSpec(),
     new RelationSplitHandlerSpec(),
-    new SplitActionSpec()
+    new SplitActionSpec(),
+    new TileFreshnessCalculatorSpec()
 ]
 
 Utils.externalDownloadFunction = async (url) => {

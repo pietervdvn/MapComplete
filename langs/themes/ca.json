@@ -7,35 +7,35 @@
         "layers": {
             "0": {
                 "tagRenderings": {
-                    "0": {
+                    "climbing_club-name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
             "1": {
                 "tagRenderings": {
-                    "3": {
+                    "name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
             "2": {
                 "tagRenderings": {
-                    "3": {
+                    "Name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
             "3": {
                 "tagRenderings": {
-                    "6": {
+                    "name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
             "4": {
                 "tagRenderings": {
-                    "1": {
+                    "climbing-opportunity-name": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
@@ -50,10 +50,10 @@
         "layers": {
             "0": {
                 "tagRenderings": {
-                    "3": {
+                    "shops-phone": {
                         "render": "<a href='tel:{phone}'>{phone}</a>"
                     },
-                    "4": {
+                    "shops-website": {
                         "render": "<a href='{website}'>{website}</a>"
                     }
                 }

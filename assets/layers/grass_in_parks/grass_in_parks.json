@@ -1,53 +1,55 @@
 {
-  "id": "grass_in_parks",
-  "name": {
-    "nl": "Toegankelijke grasvelden in parken"
-  },
-  "source": {
-    "osmTags": {
-      "or": [
-        "name=Park Oude God",
-        {
-          "and": [
-            "landuse=grass",
+    "id": "grass_in_parks",
+    "name": {
+        "nl": "Toegankelijke grasvelden in parken"
+    },
+    "source": {
+        "osmTags": {
+            "or": [
+                "name=Park Oude God",
+                {
+                    "and": [
+                        "landuse=grass",
+                        {
+                            "or": [
+                                "access=public",
+                                "access=yes"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "overpassScript": "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );"
+    },
+    "minzoom": 0,
+    "title": {
+        "render": {
+            "nl": "Speelweide in een park"
+        },
+        "mappings": [
             {
-              "or": [
-                "access=public",
-                "access=yes"
-              ]
+                "if": "name~*",
+                "then": {
+                    "nl": "{name}"
+                }
             }
-          ]
-        }
-      ]
+        ]
     },
-    "overpassScript": "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );"
-  },
-  "minzoom": 0,
-  "title": {
-    "render": {
-      "nl": "Speelweide in een park"
-    },
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": {
-          "nl": "{name}"
+    "icon": "./assets/themes/playgrounds/playground.svg",
+    "iconSize": "40,40,center",
+    "width": "1",
+    "color": "#0f0",
+    "wayHandling": 2,
+    "tagRenderings": [
+        "images",
+        {
+            "id": "explanation",
+            "render": "Op dit grasveld in het park mag je spelen, picnicken, zitten, ..."
+        },
+        {
+            "id": "grass-in-parks-reviews",
+            "render": "{reviews(name, landuse=grass )}"
         }
-      }
     ]
-  },
-  "icon": "./assets/themes/playgrounds/playground.svg",
-  "iconSize": "40,40,center",
-  "width": "1",
-  "color": "#0f0",
-  "wayHandling": 2,
-  "tagRenderings": [
-    "images",
-    {
-      "render": "Op dit grasveld in het park mag je spelen, picnicken, zitten, ..."
-    },
-    {
-      "render": "{reviews(name, landuse=grass )}"
-    }
-  ]
 }

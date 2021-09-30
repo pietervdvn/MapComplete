@@ -5,7 +5,7 @@ import {SubtleButton} from "../Base/SubtleButton";
 import Minimap from "../Base/Minimap";
 import State from "../../State";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
-import {BBox, GeoOperations} from "../../Logic/GeoOperations";
+import {GeoOperations} from "../../Logic/GeoOperations";
 import {LeafletMouseEvent} from "leaflet";
 import Combine from "../Base/Combine";
 import {Button} from "../Base/Button";
@@ -15,6 +15,7 @@ import Title from "../Base/Title";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import {BBox} from "../../Logic/BBox";
 
 export default class SplitRoadWizard extends Toggle {
     private static splitLayerStyling = new LayerConfig({
@@ -71,7 +72,7 @@ export default class SplitRoadWizard extends Toggle {
         })
 
         new ShowDataMultiLayer({
-            features: new StaticFeatureSource([roadElement]),
+            features: new StaticFeatureSource([roadElement], false),
             layers: State.state.filteredLayers,
             leafletMap: miniMap.leafletMap,
             enablePopups: false,

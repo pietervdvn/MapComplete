@@ -39,5 +39,13 @@
       "https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics",
       "https://f-droid.org/packages/de.westnordost.streetcomplete/"
     ]
+  },
+  {
+    "path": "housenumber_unknown_small.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
   }
 ]

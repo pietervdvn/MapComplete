@@ -60,12 +60,12 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _previousLocationGrant: UIEventSource<string>;
-    private readonly _layoutToUse: UIEventSource<LayoutConfig>;
+    private readonly _layoutToUse: LayoutConfig;
 
     constructor(
         currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
         leafletMap: UIEventSource<L.Map>,
-        layoutToUse: UIEventSource<LayoutConfig>
+        layoutToUse: LayoutConfig
     ) {
         const hasLocation = currentGPSLocation.map(
             (location) => location !== undefined
@@ -207,6 +207,9 @@ export default class GeoLocationHandler extends VariableUiElement {
             });
 
             const map = self._leafletMap.data;
+            if(map === undefined){
+                return;
+            }
 
             const newMarker = L.marker(location.latlng, {icon: icon});
             newMarker.addTo(map);
@@ -264,7 +267,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         }
 
         // We check that the GPS location is not out of bounds
-        const b = this._layoutToUse.data.lockLocation;
+        const b = this._layoutToUse.lockLocation;
         let inRange = true;
         if (b) {
             if (b !== true) {

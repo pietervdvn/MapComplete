@@ -18,7 +18,7 @@
   "startLat": 51.2132,
   "startLon": 3.231,
   "startZoom": 14,
-  "widenFactor": 0.05,
+  "widenFactor": 2,
   "cacheTimeout": 3600,
   "socialImage": "",
   "layers": [
@@ -61,6 +61,7 @@
       },
       "tagRenderings": [
         {
+          "id": "grb-housenumber",
           "render": {
             "nl": "Het huisnummer is <b>{addr:housenumber}</b>"
           },
@@ -112,6 +113,7 @@
           ]
         },
         {
+          "id": "grb-unit",
           "question": "Wat is de wooneenheid-aanduiding?",
           "render": {
             "nl": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
@@ -127,6 +129,7 @@
           ]
         },
         {
+          "id": "grb-street",
           "render": {
             "nl": "De straat is <b>{addr:street}</b>"
           },
@@ -138,6 +141,7 @@
           }
         },
         {
+          "id": "grb-fixme",
           "render": {
             "nl": "De fixme is <b>{fixme}</b>"
           },
@@ -161,6 +165,7 @@
           ]
         },
         {
+          "id": "grb-min-level",
           "render": {
             "nl": "Dit gebouw begint maar op de {building:min_level} verdieping"
           },
