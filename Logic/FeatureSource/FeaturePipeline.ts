@@ -82,8 +82,6 @@ export default class FeaturePipeline {
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
         this.relationTracker = new RelationsTracker()
 
-        const neededTilesFromOsm = this.getNeededTilesFromOsm()
-
 
         this.sufficientlyZoomed = state.locationControl.map(location => {
                 if (location?.zoom === undefined) {
@@ -94,6 +92,7 @@ export default class FeaturePipeline {
             }
         );
 
+        const neededTilesFromOsm = this.getNeededTilesFromOsm(this.sufficientlyZoomed)
 
         const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
         this.perLayerHierarchy = perLayerHierarchy
@@ -260,11 +259,14 @@ export default class FeaturePipeline {
         return oldestDate
     }
 
-    private getNeededTilesFromOsm(): UIEventSource<number[]> {
+    private getNeededTilesFromOsm(isSufficientlyZoomed: UIEventSource<boolean>): UIEventSource<number[]> {
         const self = this
         return this.state.currentBounds.map(bbox => {
             if (bbox === undefined) {
                 return
+            }
+            if (!isSufficientlyZoomed.data) {
+                return;
             }
             const osmSourceZoomLevel = self.osmSourceZoomLevel
             const range = bbox.containingTileRange(osmSourceZoomLevel)
@@ -299,6 +301,9 @@ export default class FeaturePipeline {
         const allUpToDateAndZoomSufficient = state.currentBounds.map(bbox => {
             if (bbox === undefined) {
                 return true
+            }
+            if (!this.sufficientlyZoomed?.data) {
+                return true;
             }
             let zoom = state.locationControl.data.zoom
             if (zoom < minzoom) {
