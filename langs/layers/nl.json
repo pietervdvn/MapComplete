@@ -1036,58 +1036,58 @@
             "4": {
                 "mappings": {
                     "0": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/CEE7_4F.svg'/><p><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</p></div>"
                     },
                     "1": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/CEE7_4F.svg'/><p><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</p></div>"
                     },
                     "2": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/TypeE.svg'/><p><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</p></div>"
                     },
                     "3": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/TypeE.svg'/><p><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</p></div>"
                     },
                     "4": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Chademo_type4.svg'/><p> </p></div>"
                     },
                     "5": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Chademo_type4.svg'/><p> </p></div>"
                     },
                     "6": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type1_J1772.svg'/><p><b>Type 1 met kabel</b> (J1772)</p></div>"
                     },
                     "7": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type1_J1772.svg'/><p><b>Type 1 met kabel</b> (J1772)</p></div>"
                     },
                     "8": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type1_J1772.svg'/><p><b>Type 1 <i>zonder</i> kabel</b> (J1772)</p></div>"
                     },
                     "9": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type1_J1772.svg'/><p><b>Type 1 <i>zonder</i> kabel</b> (J1772)</p></div>"
                     },
                     "10": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type1-ccs.svg'/><p> </p></div>"
                     },
                     "11": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type1-ccs.svg'/><p> </p></div>"
                     },
                     "12": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/><p> </p></div>"
                     },
                     "13": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/><p> </p></div>"
                     },
                     "14": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type2_socket.svg'/><p> </p></div>"
                     },
                     "15": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type2_socket.svg'/><p> </p></div>"
                     },
                     "16": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type2_CCS.svg'/><p> </p></div>"
                     },
                     "17": {
-                        "then": "<img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                        "then": "<div class='flex gap-4'><img class='w-12' src='./assets/layers/charging_station/Type2_CCS.svg'/><p> </p></div>"
                     }
                 }
             },
