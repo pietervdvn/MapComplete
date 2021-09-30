@@ -26,15 +26,17 @@ Devcontainer (see more details later).
 
 To develop and build MapComplete, you
 
-0. Make sure you have a recent version of nodejs - at least 12.0, preferably 15
 0. Make a fork and clone the repository.
-1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install
+0. Install the nodejs version specified in [.tool-versions](./.tool-versions)
+   - You can [use asdf to manage your runtime versions](https://asdf-vm.com/).
+0. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install
    nodeJS: https://nodejs.org/en/download/
-0. Install `wget`, `brew install wget`
-3. Run `npm run init` and generate some additional dependencies and generated files. Note that it'll install the
-   dependencies too
-4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-5. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
+0. On iOS, install `wget` (`brew install wget`)
+0. Run `npm run init` which …
+   - runs `npm install`
+   - generates some additional dependencies and files
+0. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
+0. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
 
