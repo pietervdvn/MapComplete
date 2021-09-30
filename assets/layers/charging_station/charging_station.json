@@ -157,8 +157,8 @@
                     "if": "socket:schuko=1",
                     "ifnot": "socket:schuko=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <span><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <span><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</span></div"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -181,8 +181,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <span><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/CEE7_4F.svg'/> <span><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -190,8 +190,8 @@
                     "if": "socket:typee=1",
                     "ifnot": "socket:typee=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/TypeE.svg'/> <span><b>European wall plug</b> with ground pin (CEE7/4 type E)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/TypeE.svg'/> <span><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</span></div"
                     }
                 },
                 {
@@ -202,8 +202,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>European wall plug</b> with ground pin (CEE7/4 type E)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/TypeE.svg'/> <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/TypeE.svg'/> <span><b>European wall plug</b> with ground pin (CEE7/4 type E)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/TypeE.svg'/> <span><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -211,8 +211,20 @@
                     "if": "socket:chademo=1",
                     "ifnot": "socket:chademo=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -223,8 +235,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <b>Chademo</b>",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -232,8 +244,20 @@
                     "if": "socket:type1_cable=1",
                     "ifnot": "socket:type1_cable=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 with cable</b> (J1772)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 met kabel</b> (J1772)</span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -244,8 +268,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 with cable</b> (J1772)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 met kabel</b> (J1772)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 with cable</b> (J1772)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 met kabel</b> (J1772)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -253,8 +277,20 @@
                     "if": "socket:type1=1",
                     "ifnot": "socket:type1=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>without</i> cable</b> (J1772)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>zonder</i> kabel</b> (J1772)</span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -265,8 +301,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>without</i> cable</b> (J1772)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>without</i> cable</b> (J1772)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>zonder</i> kabel</b> (J1772)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -274,8 +310,20 @@
                     "if": "socket:type1_combo=1",
                     "ifnot": "socket:type1_combo=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (aka Type 1 Combo)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -286,8 +334,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <b>Type 1 CCS</b> (aka Type 1 Combo)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (aka Type 1 Combo)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -295,8 +343,20 @@
                     "if": "socket:tesla_supercharger=1",
                     "ifnot": "socket:tesla_supercharger=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -307,8 +367,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger</b>",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -316,8 +376,20 @@
                     "if": "socket:type2=1",
                     "ifnot": "socket:type2=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -328,8 +400,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <b>Type 2</b> (mennekes)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_socket.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -337,8 +409,20 @@
                     "if": "socket:type2_combo=1",
                     "ifnot": "socket:type2_combo=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -349,8 +433,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Type 2 CCS</b> (mennekes)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -358,8 +442,20 @@
                     "if": "socket:type2_cable=1",
                     "ifnot": "socket:type2_cable=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Type 2 with cable</b> (mennekes)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Type 2 met kabel</b> (J1772)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 with cable</b> (mennekes)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 met kabel</b> (J1772)</span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -370,8 +466,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Type 2 with cable</b> (mennekes)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Type 2 met kabel</b> (J1772)"
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 with cable</b> (mennekes)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 met kabel</b> (J1772)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -379,8 +475,20 @@
                     "if": "socket:tesla_supercharger_ccs=1",
                     "ifnot": "socket:tesla_supercharger_ccs=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Tesla Supercharger CCS</b> (a branded type2_css)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (a branded type2_css)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</span></div"
+                    },
+                    "hideInAnswer": {
+                        "and": [
+                            "car~*",
+                            "car!=yes",
+                            "motorcar~*",
+                            "motorcar!=yes",
+                            "hgv~*",
+                            "hgv!=yes",
+                            "bus~*",
+                            "bus!=yes"
+                        ]
                     }
                 },
                 {
@@ -391,8 +499,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <b>Tesla Supercharger CCS</b> (a branded type2_css)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (a branded type2_css)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -400,12 +508,28 @@
                     "if": "socket:tesla_destination=1",
                     "ifnot": "socket:tesla_destination=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger (destination)</b>",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div"
                     },
                     "hideInAnswer": {
                         "or": [
-                            "_country!=us"
+                            {
+                                "or": [
+                                    "_country!=us"
+                                ]
+                            },
+                            {
+                                "and": [
+                                    "car~*",
+                                    "car!=yes",
+                                    "motorcar~*",
+                                    "motorcar!=yes",
+                                    "hgv~*",
+                                    "hgv!=yes",
+                                    "bus~*",
+                                    "bus!=yes"
+                                ]
+                            }
                         ]
                     }
                 },
@@ -417,8 +541,8 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <b>Tesla Supercharger (destination)</b>",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div"
                     },
                     "hideInAnswer": true
                 },
@@ -426,12 +550,28 @@
                     "if": "socket:tesla_destination=1",
                     "ifnot": "socket:tesla_destination=",
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</span></div"
                     },
                     "hideInAnswer": {
                         "or": [
-                            "_country=us"
+                            {
+                                "or": [
+                                    "_country=us"
+                                ]
+                            },
+                            {
+                                "and": [
+                                    "car~*",
+                                    "car!=yes",
+                                    "motorcar~*",
+                                    "motorcar!=yes",
+                                    "hgv~*",
+                                    "hgv!=yes",
+                                    "bus~*",
+                                    "bus!=yes"
+                                ]
+                            }
                         ]
                     }
                 },
@@ -443,8 +583,29 @@
                         ]
                     },
                     "then": {
-                        "en": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)",
-                        "nl": "<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> "
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</span></div"
+                    },
+                    "hideInAnswer": true
+                },
+                {
+                    "if": "socket:USB-A=1",
+                    "ifnot": "socket:USB-A=",
+                    "then": {
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> to charge phones and small electronics</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> om GSMs en kleine electronica op te laden</span></div"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "socket:USB-A~*",
+                            "socket:USB-A!=1"
+                        ]
+                    },
+                    "then": {
+                        "en": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> to charge phones and small electronics</span></div>",
+                        "nl": "<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> om GSMs en kleine electronica op te laden</span></div"
                     },
                     "hideInAnswer": true
                 }
@@ -683,11 +844,11 @@
             "id": "plugs-2",
             "question": {
                 "en": "How much plugs of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> are available here?",
-                "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft dit oplaadpunt?"
+                "nl": "Hoeveel stekkers van type  <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft dit oplaadpunt?"
             },
             "render": {
                 "en": "There are <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> plugs of type <b>Chademo</b> available here",
-                "nl": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> stekkers van het type "
+                "nl": "Hier zijn <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> stekkers van het type <b>Chademo</b>"
             },
             "freeform": {
                 "key": "socket:chademo",
@@ -704,11 +865,11 @@
             "id": "voltage-2",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
-                "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>"
+                "nl": "Welke spanning levert de stekker van type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>"
             },
             "render": {
                 "en": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs {socket:chademo:voltage} volt",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft een spanning van {socket:chademo:voltage} volt"
+                "nl": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft een spanning van {socket:chademo:voltage} volt"
             },
             "freeform": {
                 "key": "socket:chademo:voltage",
@@ -719,7 +880,7 @@
                     "if": "socket:socket:chademo:voltage=500 V",
                     "then": {
                         "en": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs 500 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft een spanning van 500 volt"
+                        "nl": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> heeft een spanning van 500 volt"
                     }
                 }
             ],
@@ -734,11 +895,11 @@
             "id": "current-2",
             "question": {
                 "en": "What current do the plugs with <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
-                "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>?"
+                "nl": "Welke stroom levert de stekker van type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most {socket:chademo:current}A",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een stroom van maximaal {socket:chademo:current}A"
+                "nl": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een stroom van maximaal {socket:chademo:current}A"
             },
             "freeform": {
                 "key": "socket:chademo:current",
@@ -749,7 +910,7 @@
                     "if": "socket:socket:chademo:current=120 A",
                     "then": {
                         "en": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most 120 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een stroom van maximaal 120 A"
+                        "nl": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een stroom van maximaal 120 A"
                     }
                 }
             ],
@@ -764,11 +925,11 @@
             "id": "power-output-2",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>?"
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most {socket:chademo:output}",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een vermogen van maximaal {socket:chademo:output}"
+                "nl": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een vermogen van maximaal {socket:chademo:output}"
             },
             "freeform": {
                 "key": "socket:chademo:output",
@@ -779,7 +940,7 @@
                     "if": "socket:socket:chademo:output=50 kw",
                     "then": {
                         "en": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> outputs at most 50 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een vermogen van maximaal 50 kw"
+                        "nl": "<b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> levert een vermogen van maximaal 50 kw"
                     }
                 }
             ],
@@ -1058,11 +1219,11 @@
             "id": "plugs-5",
             "question": {
                 "en": "How much plugs of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> are available here?",
-                "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft dit oplaadpunt?"
+                "nl": "Hoeveel stekkers van type  <b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft dit oplaadpunt?"
             },
             "render": {
                 "en": "There are <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here",
-                "nl": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> stekkers van het type "
+                "nl": "Hier zijn <b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> stekkers van het type <b>Type 1 CCS</b> (ook gekend als Type 1 Combo)"
             },
             "freeform": {
                 "key": "socket:type1_combo",
@@ -1079,11 +1240,11 @@
             "id": "voltage-5",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
-                "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>"
+                "nl": "Welke spanning levert de stekker van type <b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>"
             },
             "render": {
                 "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs {socket:type1_combo:voltage} volt",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van {socket:type1_combo:voltage} volt"
+                "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van {socket:type1_combo:voltage} volt"
             },
             "freeform": {
                 "key": "socket:type1_combo:voltage",
@@ -1094,14 +1255,14 @@
                     "if": "socket:socket:type1_combo:voltage=400 V",
                     "then": {
                         "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs 400 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van 400 volt"
+                        "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van 400 volt"
                     }
                 },
                 {
                     "if": "socket:socket:type1_combo:voltage=1000 V",
                     "then": {
                         "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs 1000 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van 1000 volt"
+                        "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> heeft een spanning van 1000 volt"
                     }
                 }
             ],
@@ -1116,11 +1277,11 @@
             "id": "current-5",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
-                "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>?"
+                "nl": "Welke stroom levert de stekker van type <b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most {socket:type1_combo:current}A",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal {socket:type1_combo:current}A"
+                "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal {socket:type1_combo:current}A"
             },
             "freeform": {
                 "key": "socket:type1_combo:current",
@@ -1131,14 +1292,14 @@
                     "if": "socket:socket:type1_combo:current=50 A",
                     "then": {
                         "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 50 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal 50 A"
+                        "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal 50 A"
                     }
                 },
                 {
                     "if": "socket:socket:type1_combo:current=125 A",
                     "then": {
                         "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 125 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal 125 A"
+                        "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een stroom van maximaal 125 A"
                     }
                 }
             ],
@@ -1153,11 +1314,11 @@
             "id": "power-output-5",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>?"
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most {socket:type1_combo:output}",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal {socket:type1_combo:output}"
+                "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal {socket:type1_combo:output}"
             },
             "freeform": {
                 "key": "socket:type1_combo:output",
@@ -1168,28 +1329,28 @@
                     "if": "socket:socket:type1_combo:output=50 kw",
                     "then": {
                         "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 50 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 50 kw"
+                        "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 50 kw"
                     }
                 },
                 {
                     "if": "socket:socket:type1_combo:output=62.5 kw",
                     "then": {
                         "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 62.5 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 62.5 kw"
+                        "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 62.5 kw"
                     }
                 },
                 {
                     "if": "socket:socket:type1_combo:output=150 kw",
                     "then": {
                         "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 150 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 150 kw"
+                        "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 150 kw"
                     }
                 },
                 {
                     "if": "socket:socket:type1_combo:output=350 kw",
                     "then": {
                         "en": "<b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> outputs at most 350 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 350 kw"
+                        "nl": "<b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> levert een vermogen van maximaal 350 kw"
                     }
                 }
             ],
@@ -1204,11 +1365,11 @@
             "id": "plugs-6",
             "question": {
                 "en": "How much plugs of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?",
-                "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft dit oplaadpunt?"
+                "nl": "Hoeveel stekkers van type  <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft dit oplaadpunt?"
             },
             "render": {
                 "en": "There are <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> plugs of type <b>Tesla Supercharger</b> available here",
-                "nl": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> stekkers van het type "
+                "nl": "Hier zijn <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> stekkers van het type <b>Tesla Supercharger</b>"
             },
             "freeform": {
                 "key": "socket:tesla_supercharger",
@@ -1225,11 +1386,11 @@
             "id": "voltage-6",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
+                "nl": "Welke spanning levert de stekker van type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs {socket:tesla_supercharger:voltage} volt",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van {socket:tesla_supercharger:voltage} volt"
+                "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van {socket:tesla_supercharger:voltage} volt"
             },
             "freeform": {
                 "key": "socket:tesla_supercharger:voltage",
@@ -1240,7 +1401,7 @@
                     "if": "socket:socket:tesla_supercharger:voltage=480 V",
                     "then": {
                         "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs 480 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van 480 volt"
+                        "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van 480 volt"
                     }
                 }
             ],
@@ -1255,11 +1416,11 @@
             "id": "current-6",
             "question": {
                 "en": "What current do the plugs with <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
+                "nl": "Welke stroom levert de stekker van type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_supercharger:current}A",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal {socket:tesla_supercharger:current}A"
+                "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal {socket:tesla_supercharger:current}A"
             },
             "freeform": {
                 "key": "socket:tesla_supercharger:current",
@@ -1270,14 +1431,14 @@
                     "if": "socket:socket:tesla_supercharger:current=125 A",
                     "then": {
                         "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 125 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 125 A"
+                        "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 125 A"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_supercharger:current=350 A",
                     "then": {
                         "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 350 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 350 A"
+                        "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 350 A"
                     }
                 }
             ],
@@ -1292,11 +1453,11 @@
             "id": "power-output-6",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_supercharger:output}",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal {socket:tesla_supercharger:output}"
+                "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal {socket:tesla_supercharger:output}"
             },
             "freeform": {
                 "key": "socket:tesla_supercharger:output",
@@ -1307,21 +1468,21 @@
                     "if": "socket:socket:tesla_supercharger:output=120 kw",
                     "then": {
                         "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 120 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 120 kw"
+                        "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 120 kw"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_supercharger:output=150 kw",
                     "then": {
                         "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 150 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 150 kw"
+                        "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 150 kw"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_supercharger:output=250 kw",
                     "then": {
                         "en": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 250 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 250 kw"
+                        "nl": "<b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 250 kw"
                     }
                 }
             ],
@@ -1336,11 +1497,11 @@
             "id": "plugs-7",
             "question": {
                 "en": "How much plugs of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> are available here?",
-                "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft dit oplaadpunt?"
+                "nl": "Hoeveel stekkers van type  <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft dit oplaadpunt?"
             },
             "render": {
                 "en": "There are <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> plugs of type <b>Type 2</b> (mennekes) available here",
-                "nl": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> stekkers van het type "
+                "nl": "Hier zijn <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> stekkers van het type <b>Type 2</b> (mennekes)"
             },
             "freeform": {
                 "key": "socket:type2",
@@ -1357,11 +1518,11 @@
             "id": "voltage-7",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
-                "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>"
+                "nl": "Welke spanning levert de stekker van type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>"
             },
             "render": {
                 "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs {socket:type2:voltage} volt",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van {socket:type2:voltage} volt"
+                "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van {socket:type2:voltage} volt"
             },
             "freeform": {
                 "key": "socket:type2:voltage",
@@ -1372,14 +1533,14 @@
                     "if": "socket:socket:type2:voltage=230 V",
                     "then": {
                         "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs 230 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van 230 volt"
+                        "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van 230 volt"
                     }
                 },
                 {
                     "if": "socket:socket:type2:voltage=400 V",
                     "then": {
                         "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs 400 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van 400 volt"
+                        "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> heeft een spanning van 400 volt"
                     }
                 }
             ],
@@ -1394,11 +1555,11 @@
             "id": "current-7",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
-                "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>?"
+                "nl": "Welke stroom levert de stekker van type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most {socket:type2:current}A",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal {socket:type2:current}A"
+                "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal {socket:type2:current}A"
             },
             "freeform": {
                 "key": "socket:type2:current",
@@ -1409,14 +1570,14 @@
                     "if": "socket:socket:type2:current=16 A",
                     "then": {
                         "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 16 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal 16 A"
+                        "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal 16 A"
                     }
                 },
                 {
                     "if": "socket:socket:type2:current=32 A",
                     "then": {
                         "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 32 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal 32 A"
+                        "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een stroom van maximaal 32 A"
                     }
                 }
             ],
@@ -1431,11 +1592,11 @@
             "id": "power-output-7",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>?"
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most {socket:type2:output}",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal {socket:type2:output}"
+                "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal {socket:type2:output}"
             },
             "freeform": {
                 "key": "socket:type2:output",
@@ -1446,14 +1607,14 @@
                     "if": "socket:socket:type2:output=11 kw",
                     "then": {
                         "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 11 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal 11 kw"
+                        "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal 11 kw"
                     }
                 },
                 {
                     "if": "socket:socket:type2:output=22 kw",
                     "then": {
                         "en": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> outputs at most 22 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal 22 kw"
+                        "nl": "<b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> levert een vermogen van maximaal 22 kw"
                     }
                 }
             ],
@@ -1468,11 +1629,11 @@
             "id": "plugs-8",
             "question": {
                 "en": "How much plugs of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?",
-                "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft dit oplaadpunt?"
+                "nl": "Hoeveel stekkers van type  <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft dit oplaadpunt?"
             },
             "render": {
                 "en": "There are <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> plugs of type <b>Type 2 CCS</b> (mennekes) available here",
-                "nl": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> stekkers van het type "
+                "nl": "Hier zijn <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> stekkers van het type <b>Type 2 CCS</b> (mennekes)"
             },
             "freeform": {
                 "key": "socket:type2_combo",
@@ -1489,11 +1650,11 @@
             "id": "voltage-8",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
+                "nl": "Welke spanning levert de stekker van type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
             },
             "render": {
                 "en": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs {socket:type2_combo:voltage} volt",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van {socket:type2_combo:voltage} volt"
+                "nl": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van {socket:type2_combo:voltage} volt"
             },
             "freeform": {
                 "key": "socket:type2_combo:voltage",
@@ -1504,14 +1665,14 @@
                     "if": "socket:socket:type2_combo:voltage=500 V",
                     "then": {
                         "en": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 500 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 500 volt"
+                        "nl": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 500 volt"
                     }
                 },
                 {
                     "if": "socket:socket:type2_combo:voltage=920 V",
                     "then": {
                         "en": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 920 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 920 volt"
+                        "nl": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 920 volt"
                     }
                 }
             ],
@@ -1526,11 +1687,11 @@
             "id": "current-8",
             "question": {
                 "en": "What current do the plugs with <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
+                "nl": "Welke stroom levert de stekker van type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:current}A",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal {socket:type2_combo:current}A"
+                "nl": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal {socket:type2_combo:current}A"
             },
             "freeform": {
                 "key": "socket:type2_combo:current",
@@ -1541,14 +1702,14 @@
                     "if": "socket:socket:type2_combo:current=125 A",
                     "then": {
                         "en": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 125 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 125 A"
+                        "nl": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 125 A"
                     }
                 },
                 {
                     "if": "socket:socket:type2_combo:current=350 A",
                     "then": {
                         "en": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 350 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 350 A"
+                        "nl": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 350 A"
                     }
                 }
             ],
@@ -1563,11 +1724,11 @@
             "id": "power-output-8",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:type2_combo:output}",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal {socket:type2_combo:output}"
+                "nl": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal {socket:type2_combo:output}"
             },
             "freeform": {
                 "key": "socket:type2_combo:output",
@@ -1578,7 +1739,7 @@
                     "if": "socket:socket:type2_combo:output=50 kw",
                     "then": {
                         "en": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 50 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal 50 kw"
+                        "nl": "<b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal 50 kw"
                     }
                 }
             ],
@@ -1725,11 +1886,11 @@
             "id": "plugs-10",
             "question": {
                 "en": "How much plugs of type <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> are available here?",
-                "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft dit oplaadpunt?"
+                "nl": "Hoeveel stekkers van type  <b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft dit oplaadpunt?"
             },
             "render": {
                 "en": "There are <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) available here",
-                "nl": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> stekkers van het type "
+                "nl": "Hier zijn <b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> stekkers van het type <b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)"
             },
             "freeform": {
                 "key": "socket:tesla_supercharger_ccs",
@@ -1746,11 +1907,11 @@
             "id": "voltage-10",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
+                "nl": "Welke spanning levert de stekker van type <b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs {socket:tesla_supercharger_ccs:voltage} volt",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van {socket:tesla_supercharger_ccs:voltage} volt"
+                "nl": "<b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van {socket:tesla_supercharger_ccs:voltage} volt"
             },
             "freeform": {
                 "key": "socket:tesla_supercharger_ccs:voltage",
@@ -1761,14 +1922,14 @@
                     "if": "socket:socket:tesla_supercharger_ccs:voltage=500 V",
                     "then": {
                         "en": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 500 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 500 volt"
+                        "nl": "<b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 500 volt"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_supercharger_ccs:voltage=920 V",
                     "then": {
                         "en": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs 920 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 920 volt"
+                        "nl": "<b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> heeft een spanning van 920 volt"
                     }
                 }
             ],
@@ -1783,11 +1944,11 @@
             "id": "current-10",
             "question": {
                 "en": "What current do the plugs with <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
+                "nl": "Welke stroom levert de stekker van type <b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:tesla_supercharger_ccs:current}A",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal {socket:tesla_supercharger_ccs:current}A"
+                "nl": "<b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal {socket:tesla_supercharger_ccs:current}A"
             },
             "freeform": {
                 "key": "socket:tesla_supercharger_ccs:current",
@@ -1798,14 +1959,14 @@
                     "if": "socket:socket:tesla_supercharger_ccs:current=125 A",
                     "then": {
                         "en": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 125 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 125 A"
+                        "nl": "<b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 125 A"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_supercharger_ccs:current=350 A",
                     "then": {
                         "en": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 350 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 350 A"
+                        "nl": "<b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een stroom van maximaal 350 A"
                     }
                 }
             ],
@@ -1820,11 +1981,11 @@
             "id": "power-output-10",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most {socket:tesla_supercharger_ccs:output}",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal {socket:tesla_supercharger_ccs:output}"
+                "nl": "<b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal {socket:tesla_supercharger_ccs:output}"
             },
             "freeform": {
                 "key": "socket:tesla_supercharger_ccs:output",
@@ -1835,7 +1996,7 @@
                     "if": "socket:socket:tesla_supercharger_ccs:output=50 kw",
                     "then": {
                         "en": "<b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> outputs at most 50 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal 50 kw"
+                        "nl": "<b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> levert een vermogen van maximaal 50 kw"
                     }
                 }
             ],
@@ -1850,11 +2011,11 @@
             "id": "plugs-11",
             "question": {
                 "en": "How much plugs of type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> are available here?",
-                "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft dit oplaadpunt?"
+                "nl": "Hoeveel stekkers van type  <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft dit oplaadpunt?"
             },
             "render": {
                 "en": "There are <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> plugs of type <b>Tesla Supercharger (destination)</b> available here",
-                "nl": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> stekkers van het type "
+                "nl": "Hier zijn <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> stekkers van het type <b>Tesla Supercharger (destination)</b>"
             },
             "freeform": {
                 "key": "socket:tesla_destination",
@@ -1871,11 +2032,11 @@
             "id": "voltage-11",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
+                "nl": "Welke spanning levert de stekker van type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs {socket:tesla_destination:voltage} volt",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van {socket:tesla_destination:voltage} volt"
+                "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van {socket:tesla_destination:voltage} volt"
             },
             "freeform": {
                 "key": "socket:tesla_destination:voltage",
@@ -1886,7 +2047,7 @@
                     "if": "socket:socket:tesla_destination:voltage=480 V",
                     "then": {
                         "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs 480 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van 480 volt"
+                        "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> heeft een spanning van 480 volt"
                     }
                 }
             ],
@@ -1901,11 +2062,11 @@
             "id": "current-11",
             "question": {
                 "en": "What current do the plugs with <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
+                "nl": "Welke stroom levert de stekker van type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_destination:current}A",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal {socket:tesla_destination:current}A"
+                "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal {socket:tesla_destination:current}A"
             },
             "freeform": {
                 "key": "socket:tesla_destination:current",
@@ -1916,14 +2077,14 @@
                     "if": "socket:socket:tesla_destination:current=125 A",
                     "then": {
                         "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 125 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 125 A"
+                        "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 125 A"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_destination:current=350 A",
                     "then": {
                         "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 350 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 350 A"
+                        "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een stroom van maximaal 350 A"
                     }
                 }
             ],
@@ -1938,11 +2099,11 @@
             "id": "power-output-11",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most {socket:tesla_destination:output}",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal {socket:tesla_destination:output}"
+                "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal {socket:tesla_destination:output}"
             },
             "freeform": {
                 "key": "socket:tesla_destination:output",
@@ -1953,21 +2114,21 @@
                     "if": "socket:socket:tesla_destination:output=120 kw",
                     "then": {
                         "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 120 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 120 kw"
+                        "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 120 kw"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_destination:output=150 kw",
                     "then": {
                         "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 150 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 150 kw"
+                        "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 150 kw"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_destination:output=250 kw",
                     "then": {
                         "en": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> outputs at most 250 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 250 kw"
+                        "nl": "<b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> levert een vermogen van maximaal 250 kw"
                     }
                 }
             ],
@@ -1982,11 +2143,11 @@
             "id": "plugs-12",
             "question": {
                 "en": "How much plugs of type <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> are available here?",
-                "nl": "Hoeveel stekkers van type  <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft dit oplaadpunt?"
+                "nl": "Hoeveel stekkers van type  <b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft dit oplaadpunt?"
             },
             "render": {
                 "en": "There are <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> plugs of type <b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla) available here",
-                "nl": "Hier zijn <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> stekkers van het type "
+                "nl": "Hier zijn <b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> stekkers van het type <b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)"
             },
             "freeform": {
                 "key": "socket:tesla_destination",
@@ -2003,11 +2164,11 @@
             "id": "voltage-12",
             "question": {
                 "en": "What voltage do the plugs with <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
-                "nl": "Welke spanning levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>"
+                "nl": "Welke spanning levert de stekker van type <b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>"
             },
             "render": {
                 "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs {socket:tesla_destination:voltage} volt",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van {socket:tesla_destination:voltage} volt"
+                "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van {socket:tesla_destination:voltage} volt"
             },
             "freeform": {
                 "key": "socket:tesla_destination:voltage",
@@ -2018,14 +2179,14 @@
                     "if": "socket:socket:tesla_destination:voltage=230 V",
                     "then": {
                         "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs 230 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van 230 volt"
+                        "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van 230 volt"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_destination:voltage=400 V",
                     "then": {
                         "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs 400 volt",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van 400 volt"
+                        "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> heeft een spanning van 400 volt"
                     }
                 }
             ],
@@ -2040,11 +2201,11 @@
             "id": "current-12",
             "question": {
                 "en": "What current do the plugs with <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
-                "nl": "Welke stroom levert de stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?"
+                "nl": "Welke stroom levert de stekker van type <b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most {socket:tesla_destination:current}A",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal {socket:tesla_destination:current}A"
+                "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal {socket:tesla_destination:current}A"
             },
             "freeform": {
                 "key": "socket:tesla_destination:current",
@@ -2055,14 +2216,14 @@
                     "if": "socket:socket:tesla_destination:current=16 A",
                     "then": {
                         "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 16 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal 16 A"
+                        "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal 16 A"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_destination:current=32 A",
                     "then": {
                         "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 32 A",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal 32 A"
+                        "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een stroom van maximaal 32 A"
                     }
                 }
             ],
@@ -2077,11 +2238,11 @@
             "id": "power-output-12",
             "question": {
                 "en": "What power output does a single plug of type <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?"
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>?"
             },
             "render": {
                 "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most {socket:tesla_destination:output}",
-                "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal {socket:tesla_destination:output}"
+                "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal {socket:tesla_destination:output}"
             },
             "freeform": {
                 "key": "socket:tesla_destination:output",
@@ -2092,14 +2253,14 @@
                     "if": "socket:socket:tesla_destination:output=11 kw",
                     "then": {
                         "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 11 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal 11 kw"
+                        "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal 11 kw"
                     }
                 },
                 {
                     "if": "socket:socket:tesla_destination:output=22 kw",
                     "then": {
                         "en": "<b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> outputs at most 22 kw",
-                        "nl": "<b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal 22 kw"
+                        "nl": "<b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> levert een vermogen van maximaal 22 kw"
                     }
                 }
             ],
@@ -2107,6 +2268,131 @@
                 "and": [
                     "socket:tesla_destination~*",
                     "socket:tesla_destination!=0"
+                ]
+            }
+        },
+        {
+            "id": "plugs-13",
+            "question": {
+                "en": "How much plugs of type <b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> are available here?",
+                "nl": "Hoeveel stekkers van type  <b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> heeft dit oplaadpunt?"
+            },
+            "render": {
+                "en": "There are <b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> plugs of type <b>USB</b> to charge phones and small electronics available here",
+                "nl": "Hier zijn <b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> stekkers van het type <b>USB</b> om GSMs en kleine electronica op te laden"
+            },
+            "freeform": {
+                "key": "socket:USB-A",
+                "type": "pnat"
+            },
+            "condition": {
+                "and": [
+                    "socket:USB-A~*",
+                    "socket:USB-A!=0"
+                ]
+            }
+        },
+        {
+            "id": "voltage-13",
+            "question": {
+                "en": "What voltage do the plugs with <b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> offer?",
+                "nl": "Welke spanning levert de stekker van type <b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/>"
+            },
+            "render": {
+                "en": "<b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> outputs {socket:USB-A:voltage} volt",
+                "nl": "<b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> heeft een spanning van {socket:USB-A:voltage} volt"
+            },
+            "freeform": {
+                "key": "socket:USB-A:voltage",
+                "type": "pfloat"
+            },
+            "mappings": [
+                {
+                    "if": "socket:socket:USB-A:voltage=5 V",
+                    "then": {
+                        "en": "<b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> outputs 5 volt",
+                        "nl": "<b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> heeft een spanning van 5 volt"
+                    }
+                }
+            ],
+            "condition": {
+                "and": [
+                    "socket:USB-A~*",
+                    "socket:USB-A!=0"
+                ]
+            }
+        },
+        {
+            "id": "current-13",
+            "question": {
+                "en": "What current do the plugs with <b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> offer?",
+                "nl": "Welke stroom levert de stekker van type <b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/>?"
+            },
+            "render": {
+                "en": "<b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> outputs at most {socket:USB-A:current}A",
+                "nl": "<b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> levert een stroom van maximaal {socket:USB-A:current}A"
+            },
+            "freeform": {
+                "key": "socket:USB-A:current",
+                "type": "pfloat"
+            },
+            "mappings": [
+                {
+                    "if": "socket:socket:USB-A:current=1 A",
+                    "then": {
+                        "en": "<b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> outputs at most 1 A",
+                        "nl": "<b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> levert een stroom van maximaal 1 A"
+                    }
+                },
+                {
+                    "if": "socket:socket:USB-A:current=2 A",
+                    "then": {
+                        "en": "<b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> outputs at most 2 A",
+                        "nl": "<b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> levert een stroom van maximaal 2 A"
+                    }
+                }
+            ],
+            "condition": {
+                "and": [
+                    "socket:USB-A~*",
+                    "socket:USB-A!=0"
+                ]
+            }
+        },
+        {
+            "id": "power-output-13",
+            "question": {
+                "en": "What power output does a single plug of type <b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> offer?",
+                "nl": "Welk vermogen levert een enkele stekker van type <b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/>?"
+            },
+            "render": {
+                "en": "<b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> outputs at most {socket:USB-A:output}",
+                "nl": "<b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> levert een vermogen van maximaal {socket:USB-A:output}"
+            },
+            "freeform": {
+                "key": "socket:USB-A:output",
+                "type": "pfloat"
+            },
+            "mappings": [
+                {
+                    "if": "socket:socket:USB-A:output=5w",
+                    "then": {
+                        "en": "<b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> outputs at most 5w",
+                        "nl": "<b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> levert een vermogen van maximaal 5w"
+                    }
+                },
+                {
+                    "if": "socket:socket:USB-A:output=10w",
+                    "then": {
+                        "en": "<b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> outputs at most 10w",
+                        "nl": "<b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> levert een vermogen van maximaal 10w"
+                    }
+                }
+            ],
+            "condition": {
+                "and": [
+                    "socket:USB-A~*",
+                    "socket:USB-A!=0"
                 ]
             }
         },
@@ -2289,24 +2575,6 @@
                     ]
                 },
                 "mappings+": [
-                    {
-                        "if": "payment:app=yes",
-                        "ifnot": "payment:app=no",
-                        "then": {
-                            "en": "Payment is done using a dedicated app",
-                            "nl": "Betalen via een app van het netwerk"
-                        }
-                    },
-                    {
-                        "if": "payment:membership_card=yes",
-                        "ifnot": "payment:membership_card=no",
-                        "then": {
-                            "en": "Payment is done using a membership card",
-                            "nl": "Betalen via een lidkaart van het netwerk"
-                        }
-                    }
-                ],
-                "mappings": [
                     {
                         "if": "payment:app=yes",
                         "ifnot": "payment:app=no",
@@ -2519,7 +2787,12 @@
                     }
                 },
                 {
-                    "if": "amenity=charging_station",
+                    "if": {
+                        "and": [
+                            "amenity=charging_station",
+                            "operational_status="
+                        ]
+                    },
                     "then": {
                         "en": "This charging station works",
                         "nl": "Dit oplaadpunt werkt"
@@ -2698,7 +2971,7 @@
                 {
                     "question": {
                         "en": "Has a <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/> connector",
-                        "nl": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>"
+                        "nl": "Heeft een <b><b>Chademo</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Chademo_type4.svg'/>"
                     },
                     "osmTags": "socket:chademo~*"
                 },
@@ -2719,28 +2992,28 @@
                 {
                     "question": {
                         "en": "Has a <b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/> connector",
-                        "nl": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>"
+                        "nl": "Heeft een <b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type1-ccs.svg'/>"
                     },
                     "osmTags": "socket:type1_combo~*"
                 },
                 {
                     "question": {
                         "en": "Has a <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> connector",
-                        "nl": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
+                        "nl": "Heeft een <b><b>Tesla Supercharger</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
                     },
                     "osmTags": "socket:tesla_supercharger~*"
                 },
                 {
                     "question": {
                         "en": "Has a <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/> connector",
-                        "nl": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>"
+                        "nl": "Heeft een <b><b>Type 2</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_socket.svg'/>"
                     },
                     "osmTags": "socket:type2~*"
                 },
                 {
                     "question": {
                         "en": "Has a <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> connector",
-                        "nl": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
+                        "nl": "Heeft een <b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
                     },
                     "osmTags": "socket:type2_combo~*"
                 },
@@ -2754,23 +3027,30 @@
                 {
                     "question": {
                         "en": "Has a <b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/> connector",
-                        "nl": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
+                        "nl": "Heeft een <b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_CCS.svg'/>"
                     },
                     "osmTags": "socket:tesla_supercharger_ccs~*"
                 },
                 {
                     "question": {
                         "en": "Has a <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> connector",
-                        "nl": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
+                        "nl": "Heeft een <b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/>"
                     },
                     "osmTags": "socket:tesla_destination~*"
                 },
                 {
                     "question": {
                         "en": "Has a <b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/> connector",
-                        "nl": "Heeft een <b></b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>"
+                        "nl": "Heeft een <b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem;' src='./assets/layers/charging_station/Type2_tethered.svg'/>"
                     },
                     "osmTags": "socket:tesla_destination~*"
+                },
+                {
+                    "question": {
+                        "en": "Has a <b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/> connector",
+                        "nl": "Heeft een <b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem;' src='./assets/layers/charging_station/usb_port.svg'/>"
+                    },
+                    "osmTags": "socket:USB-A~*"
                 }
             ]
         }
@@ -2853,7 +3133,8 @@
                 "socket:type2_cable:voltage",
                 "socket:tesla_supercharger_ccs:voltage",
                 "socket:tesla_destination:voltage",
-                "socket:tesla_destination:voltage"
+                "socket:tesla_destination:voltage",
+                "socket:USB-A:voltage"
             ],
             "applicableUnits": [
                 {
@@ -2887,7 +3168,8 @@
                 "socket:type2_cable:current",
                 "socket:tesla_supercharger_ccs:current",
                 "socket:tesla_destination:current",
-                "socket:tesla_destination:current"
+                "socket:tesla_destination:current",
+                "socket:USB-A:current"
             ],
             "applicableUnits": [
                 {
@@ -2920,7 +3202,8 @@
                 "socket:type2_cable:output",
                 "socket:tesla_supercharger_ccs:output",
                 "socket:tesla_destination:output",
-                "socket:tesla_destination:output"
+                "socket:tesla_destination:output",
+                "socket:USB-A:output"
             ],
             "applicableUnits": [
                 {

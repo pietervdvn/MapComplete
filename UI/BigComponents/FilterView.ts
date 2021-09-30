@@ -155,8 +155,8 @@ export default class FilterView extends VariableUiElement {
             const iconUnselected = Svg.checkbox_empty_svg().SetClass("block mr-2");
 
             const toggle = new Toggle(
-                new Combine([icon, option.question.Clone()]).SetClass("flex"),
-                new Combine([iconUnselected, option.question.Clone()]).SetClass("flex")
+                new Combine([icon, option.question.Clone().SetClass("block")]).SetClass("flex"),
+                new Combine([iconUnselected, option.question.Clone().SetClass("block")]).SetClass("flex")
             )
                 .ToggleOnClick()
                 .SetClass("block m-1")
@@ -178,7 +178,7 @@ export default class FilterView extends VariableUiElement {
         const radio = new RadioButton(
             options.map(
                 (option, i) =>
-                    new FixedInputElement(option.question.Clone(), i)
+                    new FixedInputElement(option.question.Clone().SetClass("block"), i)
             ),
             {
                 dontStyle: true

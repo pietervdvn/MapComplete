@@ -17,7 +17,8 @@ function loadCsv(file): {
     countryBlackList?: string[],
     commonVoltages?: number[],
     commonCurrents?: number[],
-    commonOutputs?: string[]
+    commonOutputs?: string[],
+    associatedVehicleTypes?:string[]
 }[] {
     const entries: string[] = Utils.NoNull(readFileSync(file, "utf8").split("\n").map(str => str.trim()))
     const header = entries.shift().split(",")
@@ -29,7 +30,7 @@ function loadCsv(file): {
         }
 
         const v = {}
-        const colonSeperated = ["commonVoltages", "commonOutputs", "commonCurrents", "countryWhiteList","countryBlackList"]
+        const colonSeperated = ["commonVoltages", "commonOutputs", "commonCurrents", "countryWhiteList","countryBlackList","associatedVehicleTypes"]
         const descriptionTranslations = new Map<string, string>()
         for (let j = 0; j < header.length; j++) {
             const key = header[j];
@@ -67,8 +68,8 @@ function run(file, protojson) {
     for (let i = 0; i < entries.length; i++){
         const e = entries[i];
         const txt = {
-            en: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("en")}`,
-            nl: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("nl")}`
+            en: `<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("en")}</span></div>`,
+            nl: `<div class='flex'><img style='width:3rem; margin-left: 1rem; margin-right: 0.5rem' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("nl")}</span></div`
         }
         const json = {
             if: `${e.key}=1`,
@@ -80,11 +81,22 @@ function run(file, protojson) {
             throw "Error for type "+e.key+": don't defined both a whitelist and a blacklist"
         }
         if (e.countryWhiteList.length > 0) {
+            // This is a 'hideInAnswer', thus _reverse_ logic!
             const countries = e.countryWhiteList.map(country => "_country!=" + country) //HideInAnswer if it is in the wrong country
             json["hideInAnswer"] = {or: countries}
         }else if (e.countryBlackList .length > 0) {
             const countries = e.countryBlackList.map(country => "_country=" + country) //HideInAnswer if it is in the wrong country
             json["hideInAnswer"] = {or: countries}
+        }
+        
+        if(e.associatedVehicleTypes?.length > 0 && e.associatedVehicleTypes.indexOf("*") < 0){
+            // This plug only occurs if some vehicle specific vehicle type is present.
+            // IF all of the needed vehicle types are explicitly NO, then we hide this type as well
+            let hideInAnswer : any = {and: [].concat(...e.associatedVehicleTypes.map(neededVehicle => [neededVehicle+"~*", neededVehicle+"!=yes"]))}
+            if(json["hideInAnswer"] !== undefined){
+                hideInAnswer = {or: [json["hideInAnswer"], hideInAnswer]}
+            }
+            json["hideInAnswer"] = hideInAnswer
         }
 
         overview_question_answers.push(json)
@@ -300,7 +312,8 @@ function run(file, protojson) {
     }
     proto["units"].push(...extraUnits)
     
-    mergeTranslations("charging_station.json",proto)
+   // mergeTranslations("charging_station.json",proto)
+    
     writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "    "))
 }
 
@@ -330,7 +343,6 @@ async function queryTagInfo(file, type, clean: ((s: string) => string)) {
         const countsArray = Array.from(counts.keys())
         countsArray.sort()
         console.log(`${e.key}:${type} = ${countsArray.join(";")}`)
-        // console.log(`${countsArray.join(";")}`)
     }
 }
 
@@ -362,6 +374,7 @@ function mergeTranslations(origPath, newConfig: LayerConfigJson){
 }
 
 try {
+    console.log("Generating the charging_station.json file")
     run("types.csv", "charging_station.protojson")
     /*/
     queryTagInfo("types.csv","voltage", s => s.trim())
