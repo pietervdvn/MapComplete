@@ -41,6 +41,4 @@ export class FixedInputElement<T> extends InputElement<T> {
     protected InnerConstructElement(): HTMLElement {
         return this._el;
     }
-
-
 }
