@@ -912,12 +912,12 @@ video {
   margin-right: 0px;
 }
 
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .box-border {
@@ -1156,12 +1156,12 @@ video {
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .cursor-wait {
   cursor: wait;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .resize {
