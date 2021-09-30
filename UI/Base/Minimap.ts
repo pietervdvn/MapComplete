@@ -1,8 +1,8 @@
 import BaseUIElement from "../BaseUIElement";
 import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
-import {BBox} from "../../Logic/GeoOperations";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import {BBox} from "../../Logic/BBox";
 
 export interface MinimapOptions {
     background?: UIEventSource<BaseLayer>,
@@ -30,6 +30,8 @@ export default class Minimap {
     /**
      * Construct a minimap
      */
-    public static createMiniMap: (options: MinimapOptions) => (BaseUIElement & MinimapObj)
+    public static createMiniMap: (options: MinimapOptions) => (BaseUIElement & MinimapObj) = (_) => {
+        throw "CreateMinimap hasn't been initialized yet. Please call MinimapImplementation.initialize()"
+    }
 
 }

@@ -7,18 +7,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquest desfibril·lador està a l'interior"
-                    },
-                    "1": {
-                        "then": "Aquest desfibril·lador està a l'exterior"
-                    }
-                },
-                "question": "Està el desfibril·lador a l'interior?"
-            },
-            "2": {
+            "defibrillator-access": {
                 "mappings": {
                     "0": {
                         "then": "Accés lliure"
@@ -36,18 +25,29 @@
                 "question": "Està el desfibril·lador accessible lliurement?",
                 "render": "L'accés és {access}"
             },
-            "4": {
+            "defibrillator-defibrillator:location": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            },
+            "defibrillator-defibrillator:location:en": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            },
+            "defibrillator-defibrillator:location:fr": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            },
+            "defibrillator-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest desfibril·lador està a l'interior"
+                    },
+                    "1": {
+                        "then": "Aquest desfibril·lador està a l'exterior"
+                    }
+                },
+                "question": "Està el desfibril·lador a l'interior?"
+            },
+            "defibrillator-level": {
                 "question": "A quina planta està el desfibril·lador localitzat?",
                 "render": "Aquest desfibril·lador és a la planta {level}"
-            },
-            "5": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
-            },
-            "6": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
-            },
-            "7": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
             }
         },
         "title": {
@@ -56,27 +56,27 @@
     },
     "ghost_bike": {
         "tagRenderings": {
-            "4": {
+            "ghost_bike-inscription": {
                 "render": "<i>{inscription}</i>"
             }
         }
     },
     "nature_reserve": {
         "tagRenderings": {
-            "8": {
+            "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
-            "9": {
+            "phone": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
             }
         }
     },
     "playground": {
         "tagRenderings": {
-            "7": {
+            "playground-email": {
                 "render": "<a href='mailto:{email}'>{email}</a>"
             },
-            "8": {
+            "playground-phone": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
             }
         }

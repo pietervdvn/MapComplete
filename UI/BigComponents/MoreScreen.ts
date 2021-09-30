@@ -126,7 +126,7 @@ export default class MoreScreen extends Combine {
         if (layout.hideFromOverview) {
             return undefined;
         }
-        if (layout.id === State.state.layoutToUse.data?.id) {
+        if (layout.id === State.state.layoutToUse?.id) {
             return undefined;
         }
 

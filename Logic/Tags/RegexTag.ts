@@ -19,6 +19,9 @@ export class RegexTag extends TagsFilter {
         if (fromTag === undefined) {
             return;
         }
+        if(typeof fromTag === "number"){
+            fromTag = "" + fromTag;
+        }
         if (typeof possibleRegex === "string") {
             return fromTag === possibleRegex;
         }

@@ -1,5 +1,5 @@
 import FeatureSource, {Tiled} from "../FeatureSource";
-import {BBox} from "../../GeoOperations";
+import {BBox} from "../../BBox";
 
 export default interface TileHierarchy<T extends FeatureSource & Tiled> {
 

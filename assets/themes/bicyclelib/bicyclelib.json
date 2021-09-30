@@ -40,9 +40,14 @@
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
-  "widenFactor": 0.05,
+  "widenFactor": 1.5,
   "roamingRenderings": [],
   "layers": [
-    "bicycle_library"
+    {
+      "builtin": "bicycle_library",
+      "override": {
+        "minZoom": 0
+      }
+    }
   ]
 }

@@ -23,12 +23,16 @@
   "startLat": 51.20875,
   "startLon": 3.22435,
   "startZoom": 15,
-  "widenFactor": 0.05,
+  "widenFactor": 2,
   "socialImage": "",
   "defaultBackgroundId": "CartoDB.Positron",
   "enablePdfDownload": true,
   "enableDownload": true,
   "hideFromOverview": true,
+  "clustering": {
+    "#": "Disable clustering for this theme",
+    "maxZoom": 0
+  },
   "layers": [
     {
       "#": "Nature reserve with geometry, z>=13",
@@ -70,7 +74,8 @@
         "minzoom": 1,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
-        }
+        },
+        "presets": []
       }
     },
     {

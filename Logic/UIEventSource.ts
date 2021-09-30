@@ -64,7 +64,7 @@ export class UIEventSource<T> {
     
     public static FromPromise<T>(promise : Promise<T>): UIEventSource<T>{
         const src = new UIEventSource<T>(undefined)
-        promise.then(d => src.setData(d))
+        promise?.then(d => src.setData(d))
         return src
     }
 

@@ -14,7 +14,7 @@ import RelationsTracker from "../Logic/Osm/RelationsTracker";
 import * as OsmToGeoJson from "osmtogeojson";
 import MetaTagging from "../Logic/MetaTagging";
 import {UIEventSource} from "../Logic/UIEventSource";
-import {TileRange} from "../Models/TileRange";
+import {TileRange, Tiles} from "../Models/TileRange";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import ScriptUtils from "./ScriptUtils";
 import PerLayerFeatureSourceSplitter from "../Logic/FeatureSource/PerLayerFeatureSourceSplitter";
@@ -86,7 +86,7 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
             }
             console.log("x:", (x - r.xstart), "/", (r.xend - r.xstart), "; y:", (y - r.ystart), "/", (r.yend - r.ystart), "; total: ", downloaded, "/", r.total, "failed: ", failed, "skipped: ", skipped)
 
-            const boundsArr = Utils.tile_bounds(r.zoomlevel, x, y)
+            const boundsArr = Tiles.tile_bounds(r.zoomlevel, x, y)
             const bounds = {
                 north: Math.max(boundsArr[0][0], boundsArr[1][0]),
                 south: Math.min(boundsArr[0][0], boundsArr[1][0]),
@@ -174,7 +174,7 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
             allFeatures.push(...geojson.features)
         }
     }
-    return new StaticFeatureSource(allFeatures)
+    return new StaticFeatureSource(allFeatures, false)
 }
 
 /**
@@ -225,7 +225,7 @@ function postProcess(allFeatures: FeatureSource, theme: LayoutConfig, relationsT
                     delete feature.feature["bbox"]
                 }
                 // Lets save this tile!
-                const [z, x, y] = Utils.tile_from_index(tile.tileIndex)
+                const [z, x, y] = Tiles.tile_from_index(tile.tileIndex)
                 console.log("Writing tile ", z, x, y, layerId)
                 const targetPath = geoJsonName(targetdir + "_" + layerId, x, y, z)
                 createdTiles.push(tile.tileIndex)
@@ -241,7 +241,7 @@ function postProcess(allFeatures: FeatureSource, theme: LayoutConfig, relationsT
         // Only thing left to do is to create the index
         const path = targetdir + "_" + layerId + "_overview.json"
         const perX = {}
-        createdTiles.map(i => Utils.tile_from_index(i)).forEach(([z, x, y]) => {
+        createdTiles.map(i => Tiles.tile_from_index(i)).forEach(([z, x, y]) => {
             const key = "" + x
             if (perX[key] === undefined) {
                 perX[key] = []
@@ -279,7 +279,7 @@ async function main(args: string[]) {
     const lat1 = Number(args[5])
     const lon1 = Number(args[6])
 
-    const tileRange = Utils.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
+    const tileRange = Tiles.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
 
     const theme = AllKnownLayouts.allKnownLayouts.get(themeName)
     if (theme === undefined) {

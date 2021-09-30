@@ -1,30 +1,19 @@
 import Combine from "../Base/Combine";
 import Attribution from "./Attribution";
 import Img from "../Base/Img";
-import ImageAttributionSource from "../../Logic/ImageProviders/ImageAttributionSource";
+import {ProvidedImage} from "../../Logic/ImageProviders/ImageProvider";
 import BaseUIElement from "../BaseUIElement";
-import {VariableUiElement} from "../Base/VariableUIElement";
-import Loading from "../Base/Loading";
 
 
 export class AttributedImage extends Combine {
 
-    constructor(urlSource: string, imgSource: ImageAttributionSource) {
-        const preparedUrl = imgSource.PrepareUrl(urlSource)
+    constructor(imageInfo: ProvidedImage) {
         let img: BaseUIElement;
         let attr: BaseUIElement
-        if (typeof preparedUrl === "string") {
-            img = new Img(urlSource);
-            attr = new Attribution(imgSource.GetAttributionFor(urlSource), imgSource.SourceIcon())
-        } else {
-            img = new VariableUiElement(preparedUrl.map(url => {
-                if(url === undefined){
-                    return new Loading()
-                }
-                return new Img(url, false, {fallbackImage: './assets/svg/blocked.svg'});
-            }))
-            attr = new VariableUiElement(preparedUrl.map(_ => new Attribution(imgSource.GetAttributionFor(urlSource), imgSource.SourceIcon())))
-        }
+        img = new Img(imageInfo.url);
+        attr = new Attribution(imageInfo.provider.GetAttributionFor(imageInfo.url),
+                imageInfo.provider.SourceIcon(),
+        )
 
 
         super([img, attr]);

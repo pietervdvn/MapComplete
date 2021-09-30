@@ -10,9 +10,17 @@ import LZString from "lz-string";
 import BaseUIElement from "./UI/BaseUIElement";
 import Table from "./UI/Base/Table";
 import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
+import {Changes} from "./Logic/Osm/Changes";
+import {ElementStorage} from "./Logic/ElementStorage";
 
 
-const connection = new OsmConnection(false, false, new UIEventSource<string>(undefined), "");
+const connection = new OsmConnection({
+    osmConfiguration: 'osm',
+    changes: new Changes(),
+    layoutName: '',
+    allElements: new ElementStorage()
+});
+
 
 let rendered = false;
 
@@ -20,6 +28,7 @@ function salvageThemes(preferences: any) {
     const knownThemeNames = new Set<string>();
     const correctThemeNames = []
     for (const key in preferences) {
+            try{
         if (!(typeof key === "string")) {
             continue;
         }
@@ -36,7 +45,7 @@ function salvageThemes(preferences: any) {
         } else {
             knownThemeNames.add(theme);
         }
-    }
+    }catch(e){console.error(e)}}
 
     for (const correctThemeName of correctThemeNames) {
         knownThemeNames.delete(correctThemeName);
@@ -65,8 +74,13 @@ function salvageThemes(preferences: any) {
         try {
             jsonObject = JSON.parse(atob(combined));
         } catch (e) {
+            try{
+                
             // We try to decode with lz-string
             jsonObject = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(combined))) as LayoutConfigJson;
+            }catch(e0){
+                console.log("Could not salvage theme. Initial parsing failed due to:", e,"\nWith LZ failed due ", e0)
+            }
 
         }
 

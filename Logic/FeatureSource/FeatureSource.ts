@@ -1,7 +1,7 @@
 import {UIEventSource} from "../UIEventSource";
 import {Utils} from "../../Utils";
 import FilteredLayer from "../../Models/FilteredLayer";
-import {BBox} from "../GeoOperations";
+import {BBox} from "../BBox";
 
 export default interface FeatureSource {
     features: UIEventSource<{ feature: any, freshness: Date }[]>;

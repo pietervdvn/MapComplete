@@ -48,7 +48,7 @@
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
-  "widenFactor": 0.05,
+  "widenFactor": 1.5,
   "socialImage": "",
   "layers": [
     {
@@ -138,9 +138,11 @@
           },
           "freeform": {
             "key": "name"
-          }
+          },
+          "id": "climbing_club-name"
         },
         {
+          "id": "minimap",
           "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
         },
         "website",
@@ -265,10 +267,10 @@
         "images",
         "questions",
         {
+          "id": "minimap",
           "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
         },
         {
-          "#": "name",
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
@@ -288,7 +290,8 @@
           },
           "freeform": {
             "key": "name"
-          }
+          },
+          "id": "name"
         },
         "website",
         "phone",
@@ -358,10 +361,10 @@
         "images",
         "questions",
         {
+          "id": "minimap",
           "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
         },
         {
-          "#": "Name",
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
@@ -401,10 +404,10 @@
                 "fr": "Cette voie n’a pas de nom"
               }
             }
-          ]
+          ],
+          "id": "Name"
         },
         {
-          "#": "Length",
           "question": {
             "en": "How long is this climbing route (in meters)?",
             "nl": "Hoe lang is deze klimroute (in meters)?",
@@ -423,10 +426,10 @@
           "freeform": {
             "key": "climbing:length",
             "type": "pnat"
-          }
+          },
+          "id": "Length"
         },
         {
-          "#": "Difficulty",
           "question": {
             "en": "What is the difficulty of this climbing route according to the french/belgian system?",
             "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
@@ -443,10 +446,10 @@
           },
           "freeform": {
             "key": "climbing:grade:french"
-          }
+          },
+          "id": "Difficulty"
         },
         {
-          "#": "Bolts",
           "question": {
             "en": "How much bolts does this route have before reaching the moulinette?",
             "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?"
@@ -478,25 +481,26 @@
                 "fr": "Cette voie n’a pas de prises"
               }
             }
-          ]
+          ],
+          "id": "Bolts"
         },
         {
-          "#": "Description",
           "question": "Is there other relevant info?",
           "render": "<h3>Description</h3><br/>{description}",
           "freeform": {
             "key": "description"
-          }
+          },
+          "id": "Description"
         },
         {
-          "#": "Rock type",
           "render": {
             "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>",
             "fr": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>"
           },
           "freeform": {
             "key": "_embedding_features_with_rock:rock"
-          }
+          },
+          "id": "Rock type"
         },
         "reviews"
       ],
@@ -618,34 +622,34 @@
         "images",
         "questions",
         {
+          "id": "minimap",
           "render": "{minimap(18, id, _contained_climbing_route_ids): height: 9rem; overflow: hidden; border-radius:3rem; }"
         },
         {
-          "#": "Contained routes length hist",
           "render": {
             "en": "<h3>Length overview</h3>{histogram(_length_hist)}",
             "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}"
           },
-          "condition": "_length_hist!~\\[\\]"
+          "condition": "_length_hist!~\\[\\]",
+          "id": "Contained routes length hist"
         },
         {
-          "#": "Contained routes hist",
           "render": {
             "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}",
             "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}"
           },
-          "condition": "_difficulty_hist!~\\[\\]"
+          "condition": "_difficulty_hist!~\\[\\]",
+          "id": "Contained routes hist"
         },
         {
-          "#": "Containe {_contained_climbing_routes_count} routes",
           "render": {
             "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>",
             "fr": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>"
           },
-          "condition": "_contained_climbing_routes~*"
+          "condition": "_contained_climbing_routes~*",
+          "id": "Containe {_contained_climbing_routes_count} routes"
         },
         {
-          "#": "name",
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
@@ -682,10 +686,10 @@
                 "fr": "Ce site n’a pas de nom"
               }
             }
-          ]
+          ],
+          "id": "name"
         },
         {
-          "#": "Type",
           "question": "What kind of climbing opportunity is this?",
           "mappings": [
             {
@@ -706,10 +710,10 @@
               "if": "climbing=area",
               "then": "A climbing area with one or more climbing crags and/or boulders"
             }
-          ]
+          ],
+          "id": "Type"
         },
         {
-          "#": "Rock type (crag/rock/cliff only)",
           "question": {
             "en": "What is the rock type here?",
             "fr": "Quel est le type de roche ?"
@@ -737,7 +741,8 @@
               "natural=cliff",
               "natural=bare_rock"
             ]
-          }
+          },
+          "id": "Rock type (crag/rock/cliff only)"
         },
         "reviews"
       ],
@@ -834,9 +839,11 @@
       },
       "tagRenderings": [
         {
+          "id": "minimap",
           "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
         },
         {
+          "id": "climbing-opportunity-name",
           "render": {
             "en": "<strong>{name}</strong>",
             "de": "<strong>{name}</strong>",
@@ -850,6 +857,7 @@
           "condition": "name~*"
         },
         {
+          "id": "climbing-possible",
           "question": {
             "en": "Is climbing possible here?",
             "de": "Kann hier geklettert werden?",

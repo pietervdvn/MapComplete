@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1.2.0
         with:
-          node-version: '15'
+          node-version: '16'
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 

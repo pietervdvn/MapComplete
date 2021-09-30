@@ -48,13 +48,10 @@ export default class ScriptUtils {
         })
     }
 
-    public static DownloadJSON(url, options?: {
-        headers: any
-    }): Promise<any> {
+    public static DownloadJSON(url, headers?: any): Promise<any> {
         return new Promise((resolve, reject) => {
             try {
-
-                const headers = options?.headers ?? {}
+                headers = headers ?? {}
                 headers.accept = "application/json"
                 console.log("Fetching", url)
                 const urlObj = new URL(url)

@@ -1,183 +1,183 @@
 {
-  "id": "observation_tower",
-  "name": {
-    "en": "Observation towers",
-    "nl": "Uitkijktorens"
-  },
-  "minzoom": 8,
-  "title": {
-    "render": {
-      "en": "Observation tower",
-      "nl": "Uitkijktoren"
+    "id": "observation_tower",
+    "name": {
+        "en": "Observation towers",
+        "nl": "Uitkijktorens"
     },
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": {
-          "en": "<b>{name}</b>",
-          "nl": "<b>{name}</b>"
-        }
-      }
-    ]
-  },
-  "description": {
-    "en": "Towers with a panoramic view",
-    "nl": "Torens om van het uitzicht te genieten"
-  },
-  "tagRenderings": [
-    "images",
-    {
-      "#": "name",
-      "question": {
-        "en": "What is the name of this tower?",
-        "nl": "Heeft deze toren een naam?"
-      },
-      "render": {
-        "en": "This tower is called <b>{name}</b>",
-        "nl": "Deze toren heet <b>{name}</b>"
-      },
-      "freeform": {
-        "key": "name"
-      },
-      "mappings": [
-        {
-          "if": "noname=yes",
-          "then": {
-            "en": "This tower doesn't have a specific name",
-            "nl": "Deze toren heeft geen specifieke naam"
-          }
-        }
-      ]
-    },
-    {
-      "#": "Height",
-      "question": {
-        "en": "What is the height of this tower?",
-        "nl": "Hoe hoog is deze toren?"
-      },
-      "render": {
-        "en": "This tower is {height} high",
-        "nl": "Deze toren is {height} hoog"
-      },
-      "freeform": {
-        "key": "height",
-        "type": "pfloat"
-      }
-    },
-    {
-      "#": "Operator",
-      "question": {
-        "en": "Who maintains this tower?",
-        "nl": "Wie onderhoudt deze toren?"
-      },
-      "render": {
-        "nl": "Wordt onderhouden door <b>{operator}</b>",
-        "en": "Maintained by <b>{operator}</b>"
-      },
-      "freeform": {
-        "key": "operator"
-      }
-    },
-    "website",
-    {
-      "#": "Fee",
-      "question": {
-        "en": "How much does one have to pay to enter this tower?",
-        "nl": "Hoeveel moet men betalen om deze toren te bezoeken?"
-      },
-      "render": {
-        "en": "Visiting this tower costs <b>{charge}</b>",
-        "nl": "Deze toren bezoeken kost <b>{charge}</b>"
-      },
-      "freeform": {
-        "key": "charge",
-        "addExtraTags": [
-          "fee=yes"
+    "minzoom": 8,
+    "title": {
+        "render": {
+            "en": "Observation tower",
+            "nl": "Uitkijktoren"
+        },
+        "mappings": [
+            {
+                "if": "name~*",
+                "then": {
+                    "en": "<b>{name}</b>",
+                    "nl": "<b>{name}</b>"
+                }
+            }
         ]
-      },
-      "mappings": [
+    },
+    "description": {
+        "en": "Towers with a panoramic view",
+        "nl": "Torens om van het uitzicht te genieten"
+    },
+    "tagRenderings": [
+        "images",
         {
-          "if": {
+            "question": {
+                "en": "What is the name of this tower?",
+                "nl": "Heeft deze toren een naam?"
+            },
+            "render": {
+                "en": "This tower is called <b>{name}</b>",
+                "nl": "Deze toren heet <b>{name}</b>"
+            },
+            "freeform": {
+                "key": "name"
+            },
+            "mappings": [
+                {
+                    "if": "noname=yes",
+                    "then": {
+                        "en": "This tower doesn't have a specific name",
+                        "nl": "Deze toren heeft geen specifieke naam"
+                    }
+                }
+            ],
+            "id": "name"
+        },
+        {
+            "question": {
+                "en": "What is the height of this tower?",
+                "nl": "Hoe hoog is deze toren?"
+            },
+            "render": {
+                "en": "This tower is {height} high",
+                "nl": "Deze toren is {height} hoog"
+            },
+            "freeform": {
+                "key": "height",
+                "type": "pfloat"
+            },
+            "id": "Height"
+        },
+        {
+            "question": {
+                "en": "Who maintains this tower?",
+                "nl": "Wie onderhoudt deze toren?"
+            },
+            "render": {
+                "nl": "Wordt onderhouden door <b>{operator}</b>",
+                "en": "Maintained by <b>{operator}</b>"
+            },
+            "freeform": {
+                "key": "operator"
+            },
+            "id": "Operator"
+        },
+        "website",
+        {
+            "question": {
+                "en": "How much does one have to pay to enter this tower?",
+                "nl": "Hoeveel moet men betalen om deze toren te bezoeken?"
+            },
+            "render": {
+                "en": "Visiting this tower costs <b>{charge}</b>",
+                "nl": "Deze toren bezoeken kost <b>{charge}</b>"
+            },
+            "freeform": {
+                "key": "charge",
+                "addExtraTags": [
+                    "fee=yes"
+                ]
+            },
+            "mappings": [
+                {
+                    "if": {
+                        "and": [
+                            "fee=no",
+                            "charge="
+                        ]
+                    },
+                    "then": {
+                        "en": "Free to visit",
+                        "nl": "Gratis te bezoeken"
+                    }
+                }
+            ],
+            "id": "Fee"
+        },
+        {
+            "builtin": "payment-options",
+            "override": {
+                "condition": {
+                    "or": [
+                        "fee=yes",
+                        "charge~*"
+                    ]
+                }
+            },
+            "id": "Payment methods"
+        },
+        "wheelchair-access"
+    ],
+    "wayHandling": 1,
+    "icon": {
+        "render": "circle:white;./assets/layers/observation_tower/Tower_observation.svg"
+    },
+    "width": {
+        "render": "2"
+    },
+    "iconSize": {
+        "render": "40,40,center"
+    },
+    "color": {
+        "render": "#00f"
+    },
+    "presets": [
+        {
+            "tags": [
+                "man_made=tower",
+                "tower:type=observation"
+            ],
+            "title": {
+                "en": "observation tower",
+                "nl": "Uitkijktoren"
+            },
+            "description": {
+                "nl": "Een publiek toegankelijke uitkijktoren"
+            }
+        }
+    ],
+    "source": {
+        "osmTags": {
             "and": [
-              "fee=no",
-              "charge="
+                "tower:type=observation"
             ]
-          },
-          "then": {
-            "en": "Free to visit",
-            "nl": "Gratis te bezoeken"
-          }
         }
-      ]
     },
-    {
-      "#": "Payment methods",
-      "builtin": "payment-options",
-      "override": {
-        "condition": {
-          "or": [
-            "fee=yes",
-            "charge~*"
-          ]
-        }
-      }
-    },
-    "wheelchair-access"
-  ],
-  "wayHandling": 1,
-  "icon": {
-    "render": "circle:white;./assets/layers/observation_tower/Tower_observation.svg"
-  },
-  "width": {
-    "render": "2"
-  },
-  "iconSize": {
-    "render": "40,40,center"
-  },
-  "color": {
-    "render": "#00f"
-  },
-  "presets": [
-    {
-      "tags": [
-        "man_made=tower",
-        "tower:type=observation"
-      ],
-      "title": {
-        "en": "observation tower",
-        "nl": "Uitkijktoren"
-      },
-      "description": {
-        "nl": "Een publiek toegankelijke uitkijktoren"
-      }
-    }
-  ],
-  "source": {
-    "osmTags": {
-      "and": [
-        "tower:type=observation"
-      ]
-    }
-  },
-  "units": [
-    {
-      "appliesToKey": [
-        "height"
-      ],
-      "applicableUnits": [
+    "units": [
         {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter",
-            "mtr"
-          ],
-          "human": {
-            "nl": " meter",
-            "en": " meter"
-          }
+            "appliesToKey": [
+                "height"
+            ],
+            "applicableUnits": [
+                {
+                    "canonicalDenomination": "m",
+                    "alternativeDenomination": [
+                        "meter",
+                        "mtr"
+                    ],
+                    "human": {
+                        "nl": " meter",
+                        "en": " meter"
+                    }
+                }
+            ],
+            "eraseInvalidValues": true
         }
-      ],
-      "eraseInvalidValues": true
-    }
-  ]
+    ]
 }

@@ -22,7 +22,7 @@
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
-  "widenFactor": 0.05,
+  "widenFactor": 5,
   "socialImage": "",
   "layers": [
     "observation_tower"

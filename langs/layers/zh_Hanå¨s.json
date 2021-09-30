@@ -1,7 +1,7 @@
 {
     "bench": {
         "tagRenderings": {
-            "3": {
+            "bench-material": {
                 "render": "材质: {material}"
             }
         }

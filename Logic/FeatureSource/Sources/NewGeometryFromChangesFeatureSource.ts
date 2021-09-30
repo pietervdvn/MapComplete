@@ -3,6 +3,7 @@ import {OsmNode, OsmRelation, OsmWay} from "../../Osm/OsmObject";
 import FeatureSource from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
 import {ChangeDescription} from "../../Osm/Actions/ChangeDescription";
+import State from "../../../State";
 
 export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
@@ -54,6 +55,9 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                             tags[kv.k] = kv.v
                         }
                         tags["id"] = change.type+"/"+change.id
+                        
+                        tags["_backend"] = State.state.osmConnection._oauth_config.url
+                        
                         switch (change.type) {
                             case "node":
                                 const n = new OsmNode(change.id)

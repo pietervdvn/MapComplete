@@ -1,5 +1,5 @@
 import FilteredLayer from "../../../Models/FilteredLayer";
-import {FeatureSourceForLayer} from "../FeatureSource";
+import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
 import Loc from "../../../Models/Loc";
 import DynamicTileSource from "./DynamicTileSource";
@@ -8,7 +8,7 @@ import GeoJsonSource from "../Sources/GeoJsonSource";
 
 export default class DynamicGeoJsonTileSource extends DynamicTileSource {
     constructor(layer: FilteredLayer,
-                registerLayer: (layer: FeatureSourceForLayer) => void,
+                registerLayer: (layer: FeatureSourceForLayer & Tiled) => void,
                 state: {
                     locationControl: UIEventSource<Loc>
                     leafletMap: any
@@ -37,6 +37,8 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
             console.warn("No whitelist found for ", layer.layerDef.id, err)
         })
 
+        const seenIds = new Set<string>();
+        const blackList = new UIEventSource(seenIds)
         super(
             layer,
             source.geojsonZoomLevel,
@@ -50,8 +52,15 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                 
                 const src = new GeoJsonSource(
                     layer,
-                    zxy
+                    zxy,
+                    {
+                        featureIdBlacklist: blackList
+                    }
                 )
+                src.features.addCallbackAndRunD(feats => {
+                    feats.forEach(feat => seenIds.add(feat.feature.properties.id))
+                    blackList.ping();
+                })
                 registerLayer(src)
                 return src
             },

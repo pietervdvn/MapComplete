@@ -34,7 +34,7 @@
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
-  "widenFactor": 0.05,
+  "widenFactor": 3,
   "socialImage": "",
   "layers": [
     {
@@ -111,7 +111,8 @@
           "render": "This shop is called <i>{name}</i>",
           "freeform": {
             "key": "name"
-          }
+          },
+          "id": "shops-name"
         },
         {
           "render": {
@@ -220,7 +221,8 @@
                 "ja": "自動車ディーラー"
               }
             }
-          ]
+          ],
+          "id": "shops-shop"
         },
         {
           "render": {
@@ -241,7 +243,8 @@
           "freeform": {
             "key": "phone",
             "type": "phone"
-          }
+          },
+          "id": "shops-phone"
         },
         {
           "render": {
@@ -262,7 +265,8 @@
           "freeform": {
             "key": "website",
             "type": "url"
-          }
+          },
+          "id": "shops-website"
         },
         {
           "render": {
@@ -282,7 +286,8 @@
           "freeform": {
             "key": "email",
             "type": "email"
-          }
+          },
+          "id": "shops-email"
         },
         {
           "render": {
@@ -301,7 +306,8 @@
           "freeform": {
             "key": "opening_hours",
             "type": "opening_hours"
-          }
+          },
+          "id": "shops-opening_hours"
         },
         "questions",
         "reviews"

@@ -15,15 +15,15 @@ export default class DeleteImage extends Toggle {
         const isDeletedBadge = Translations.t.image.isDeleted.Clone()
             .SetClass("rounded-full p-1")
             .SetStyle("color:white;background:#ff8c8c")
-            .onClick(() => {
-                State.state?.changes?.applyAction(new ChangeTagAction(tags.data.id, new Tag(key, oldValue), tags.data))
+            .onClick(async() => {
+               await State.state?.changes?.applyAction(new ChangeTagAction(tags.data.id, new Tag(key, oldValue), tags.data))
             });
 
         const deleteButton = Translations.t.image.doDelete.Clone()
             .SetClass("block w-full pl-4 pr-4")
             .SetStyle("color:white;background:#ff8c8c; border-top-left-radius:30rem; border-top-right-radius: 30rem;")
-            .onClick(() => {
-                State.state?.changes?.applyAction(
+            .onClick( async() => {
+             await   State.state?.changes?.applyAction(
                     new ChangeTagAction(tags.data.id, new Tag(key, ""), tags.data)
                 )
             });
@@ -48,7 +48,7 @@ export default class DeleteImage extends Toggle {
                 tags.map(tags => (tags[key] ?? "") !== "")
             ),
             undefined /*Login (and thus editing) is disabled*/,
-            State.state?.featureSwitchUserbadge ?? new UIEventSource<boolean>(true)
+            State.state.osmConnection.isLoggedIn
         )
         this.SetClass("cursor-pointer")
     }

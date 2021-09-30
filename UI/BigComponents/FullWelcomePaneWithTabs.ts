@@ -1,7 +1,5 @@
 import State from "../../State";
 import ThemeIntroductionPanel from "./ThemeIntroductionPanel";
-import * as personal from "../../assets/themes/personal/personal.json";
-import PersonalLayersPanel from "./PersonalLayersPanel";
 import Svg from "../../Svg";
 import Translations from "../i18n/Translations";
 import ShareScreen from "./ShareScreen";
@@ -21,7 +19,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
 
     constructor(isShown: UIEventSource<boolean>) {
-        const layoutToUse = State.state.layoutToUse.data;
+        const layoutToUse = State.state.layoutToUse;
         super(
             () => layoutToUse.title.Clone(),
             () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails, isShown),
@@ -32,9 +30,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
     private static ConstructBaseTabs(layoutToUse: LayoutConfig, isShown: UIEventSource<boolean>): { header: string | BaseUIElement; content: BaseUIElement }[] {
 
         let welcome: BaseUIElement = new ThemeIntroductionPanel(isShown);
-        if (layoutToUse.id === personal.id) {
-            welcome = new PersonalLayersPanel();
-        }
+       
         const tabs: { header: string | BaseUIElement, content: BaseUIElement }[] = [
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {

@@ -7,26 +7,30 @@ import {FeatureSourceForLayer} from "../FeatureSource";
 
 export default class SaveTileToLocalStorageActor {
     public static readonly storageKey: string = "cached-features";
+    public static readonly formatVersion: string = "1"
 
     constructor(source: FeatureSourceForLayer, tileIndex: number) {
         source.features.addCallbackAndRunD(features => {
             const key = `${SaveTileToLocalStorageActor.storageKey}-${source.layer.layerDef.id}-${tileIndex}`
-            const now = new Date().getTime()
-
-            if (features.length == 0) {
-                return;
-            }
+            const now = new Date()
 
             try {
-                localStorage.setItem(key, JSON.stringify(features));
-                localStorage.setItem(key + "-time", JSON.stringify(now))
+                if (features.length > 0) {
+                    localStorage.setItem(key, JSON.stringify(features));
+                }
+                // We _still_ write the time to know that this tile is empty!
+                SaveTileToLocalStorageActor.MarkVisited(source.layer.layerDef.id, tileIndex, now)
             } catch (e) {
                 console.warn("Could not save the features to local storage:", e)
             }
         })
-
-
     }
 
 
+    public static MarkVisited(layerId: string, tileId: number, freshness: Date){
+        const key = `${SaveTileToLocalStorageActor.storageKey}-${layerId}-${tileId}`
+        localStorage.setItem(key + "-time", JSON.stringify(freshness.getTime()))
+        localStorage.setItem(key + "-format", SaveTileToLocalStorageActor.formatVersion)
+
+    }
 }

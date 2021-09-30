@@ -62,7 +62,7 @@ export default class DeleteAction {
                     }
                     State.state.osmConnection.changesetHandler.DeleteElement(
                         obj,
-                        State.state.layoutToUse.data,
+                        State.state.layoutToUse,
                         reason,
                         State.state.allElements,
                         () => {

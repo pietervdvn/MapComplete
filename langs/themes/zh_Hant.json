@@ -15,7 +15,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
+                    "artwork-artist_name": {
+                        "question": "創造這個的藝術家是誰？",
+                        "render": "{artist_name} 創作"
+                    },
+                    "artwork-artwork_type": {
                         "mappings": {
                             "0": {
                                 "then": "建築物"
@@ -57,15 +61,11 @@
                         "question": "這是什麼類型的藝術品？",
                         "render": "這是 {artwork_type}"
                     },
-                    "2": {
-                        "question": "創造這個的藝術家是誰？",
-                        "render": "{artist_name} 創作"
-                    },
-                    "3": {
+                    "artwork-website": {
                         "question": "在那個網站能夠找到更多藝術品的資訊？",
                         "render": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊"
                     },
-                    "4": {
+                    "artwork-wikidata": {
                         "question": "<b>這個藝術品</b>有那個對應的 Wikidata 項目？",
                         "render": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應"
                     }
@@ -91,11 +91,6 @@
         "description": "單車圖書館是指每年支付小額費用，然後可以租用單車的地方。最有名的單車圖書館案例是給小孩的，能夠讓長大的小孩用目前的單車換成比較大的單車",
         "title": "單車圖書館"
     },
-    "bike_monitoring_stations": {
-        "description": "這個主題顯示單車監視站的即時資料",
-        "shortDescription": "布魯塞爾車行資料的即時單車監視站資料",
-        "title": "自行車監視站"
-    },
     "bookcases": {
         "description": "公共書架是街邊箱子、盒子、舊的電話亭或是其他存放書本的物件，每一個人都能放置或拿取書本。這份地圖收集所有類型的書架，你可以探索你附近新的書架，同時也能用免費的開放街圖帳號來快速新增你最愛的書架。",
         "title": "開放書架地圖"
@@ -112,11 +107,19 @@
                     }
                 },
                 "tagRenderings": {
-                    "1": {
-                        "question": "這個地方叫做什麼？",
-                        "render": "這個地方叫做 {name}"
+                    "caravansites-capacity": {
+                        "question": "多少露營者能夠待在這裡？(如果沒有明顯的空間數字或是允許車輛則可以跳過)",
+                        "render": "{capacity} 露營者能夠同時使用這個地方"
                     },
-                    "2": {
+                    "caravansites-charge": {
+                        "question": "這個地方收多少費用？",
+                        "render": "這個地方收費 {charge}"
+                    },
+                    "caravansites-description": {
+                        "question": "你想要為這個地方加一般的敘述嗎？(不要重覆加先前問過或提供的資訊，請保持敘述性-請將意見留在評價)",
+                        "render": "這個地方更詳細的資訊： {description}"
+                    },
+                    "caravansites-fee": {
                         "mappings": {
                             "0": {
                                 "then": "你要付費才能使用"
@@ -127,26 +130,7 @@
                         },
                         "question": "這個地方收費嗎？"
                     },
-                    "3": {
-                        "question": "這個地方收多少費用？",
-                        "render": "這個地方收費 {charge}"
-                    },
-                    "4": {
-                        "mappings": {
-                            "0": {
-                                "then": "這個地方有衛生設施"
-                            },
-                            "1": {
-                                "then": "這個地方沒有衛生設施"
-                            }
-                        },
-                        "question": "這個地方有衛生設施嗎？"
-                    },
-                    "5": {
-                        "question": "多少露營者能夠待在這裡？(如果沒有明顯的空間數字或是允許車輛則可以跳過)",
-                        "render": "{capacity} 露營者能夠同時使用這個地方"
-                    },
-                    "6": {
+                    "caravansites-internet": {
                         "mappings": {
                             "0": {
                                 "then": "這裡有網路連線"
@@ -160,7 +144,7 @@
                         },
                         "question": "這個地方有提網路連線嗎？"
                     },
-                    "7": {
+                    "caravansites-internet-fee": {
                         "mappings": {
                             "0": {
                                 "then": "你需要額外付費來使用網路連線"
@@ -171,22 +155,7 @@
                         },
                         "question": "你需要為網路連線付費嗎？"
                     },
-                    "8": {
-                        "mappings": {
-                            "0": {
-                                "then": "這個地方有廁所"
-                            },
-                            "1": {
-                                "then": "這個地方並沒有廁所"
-                            }
-                        },
-                        "question": "這個地方有廁所嗎？"
-                    },
-                    "9": {
-                        "question": "這個地方有網站嗎？",
-                        "render": "官方網站：<a href='{website}'>{website}</a>"
-                    },
-                    "10": {
+                    "caravansites-long-term": {
                         "mappings": {
                             "0": {
                                 "then": "有，這個地方有提供長期租用，但你也可以用天計算費用"
@@ -200,9 +169,35 @@
                         },
                         "question": "這個地方有提供長期租用嗎？"
                     },
-                    "11": {
-                        "question": "你想要為這個地方加一般的敘述嗎？(不要重覆加先前問過或提供的資訊，請保持敘述性-請將意見留在評價)",
-                        "render": "這個地方更詳細的資訊： {description}"
+                    "caravansites-name": {
+                        "question": "這個地方叫做什麼？",
+                        "render": "這個地方叫做 {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "這個地方有衛生設施"
+                            },
+                            "1": {
+                                "then": "這個地方沒有衛生設施"
+                            }
+                        },
+                        "question": "這個地方有衛生設施嗎？"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "這個地方有廁所"
+                            },
+                            "1": {
+                                "then": "這個地方並沒有廁所"
+                            }
+                        },
+                        "question": "這個地方有廁所嗎？"
+                    },
+                    "caravansites-website": {
+                        "question": "這個地方有網站嗎？",
+                        "render": "官方網站：<a href='{website}'>{website}</a>"
                     }
                 },
                 "title": {
@@ -216,7 +211,7 @@
             },
             "1": {
                 "tagRenderings": {
-                    "5": {
+                    "dumpstations-chemical-waste": {
                         "mappings": {
                             "0": {
                                 "then": "你可以在這邊丟棄廁所化學廢棄物"
@@ -246,7 +241,7 @@
                 "description": "攀岩社團或組織",
                 "name": "攀岩社團",
                 "tagRenderings": {
-                    "0": {
+                    "climbing_club-name": {
                         "render": "<strong>{name}</strong>"
                     }
                 },

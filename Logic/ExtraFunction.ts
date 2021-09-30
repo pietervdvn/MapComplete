@@ -1,4 +1,4 @@
-import {BBox, GeoOperations} from "./GeoOperations";
+import {GeoOperations} from "./GeoOperations";
 import Combine from "../UI/Base/Combine";
 import RelationsTracker from "./Osm/RelationsTracker";
 import State from "../State";
@@ -7,6 +7,7 @@ import List from "../UI/Base/List";
 import Title from "../UI/Base/Title";
 import {UIEventSourceTools} from "./UIEventSource";
 import AspectedRouting from "./Osm/aspectedRouting";
+import {BBox} from "./BBox";
 
 export interface ExtraFuncParams {
     /**
@@ -134,11 +135,18 @@ export class ExtraFunction {
             args: ["list of features or layer name", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
         },
         (params, feature) => {
-            return (features, amount, uniqueTag, maxDistanceInMeters) => ExtraFunction.GetClosestNFeatures(params, feature, features, {
-                maxFeatures: Number(amount),
-                uniqueTag: uniqueTag,
-                maxDistance: Number(maxDistanceInMeters)
-            })
+           
+            return (features, amount, uniqueTag, maxDistanceInMeters) => {
+                let distance : number = Number(maxDistanceInMeters)
+                if(isNaN(distance)){
+                    distance = undefined
+                }
+                return ExtraFunction.GetClosestNFeatures(params, feature, features, {
+                    maxFeatures: Number(amount),
+                    uniqueTag: uniqueTag,
+                    maxDistance: distance
+                });
+            }
         }
     )
 
@@ -249,7 +257,7 @@ export class ExtraFunction {
         let closestFeatures: { feat: any, distance: number }[] = [];
         for(const featureList of features) {
             for (const otherFeature of featureList) {
-                if (otherFeature == feature || otherFeature.id == feature.id) {
+                if (otherFeature === feature || otherFeature.id === feature.id) {
                     continue; // We ignore self
                 }
                 let distance = undefined;
@@ -261,7 +269,8 @@ export class ExtraFunction {
                         [feature._lon, feature._lat]
                     )
                 }
-                if (distance === undefined) {
+                if (distance === undefined || distance === null) {
+                    console.error("Could not calculate the distance between", feature, "and", otherFeature)
                     throw "Undefined distance!"
                 }
                 if (distance > maxDistance) {

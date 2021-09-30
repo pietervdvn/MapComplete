@@ -12,10 +12,11 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSourceFo
     public readonly layer;
 
     constructor(upstream: FeatureSourceForLayer) {
-        this.name = "Wayhandling(" + upstream.name+")";
+        
+        this.name = "Wayhandling(" + upstream.name + ")";
         this.layer = upstream.layer
         const layer = upstream.layer.layerDef;
-        
+
         if (layer.wayHandling === LayerConfig.WAYHANDLING_DEFAULT) {
             // We don't have to do anything fancy
             // lets just wire up the upstream
