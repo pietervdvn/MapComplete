@@ -3,15 +3,29 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
 import Loc from "../../../Models/Loc";
 import TileHierarchy from "./TileHierarchy";
-import {Utils} from "../../../Utils";
 import SaveTileToLocalStorageActor from "../Actors/SaveTileToLocalStorageActor";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
 
 export default class TiledFromLocalStorageSource implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     public loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
-public tileFreshness : Map<number, Date> = new Map<number, Date>()
-    
+
+    public static GetFreshnesses(layerId: string): Map<number, Date> {
+        const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layerId + "-"
+        const freshnesses = new Map<number, Date>()
+        for (const key of Object.keys(localStorage)) {
+            if(!(key.startsWith(prefix) && key.endsWith("-time"))){
+                continue
+            }
+            const index = Number(key.substring(prefix.length, key.length - "-time".length))
+            const time = Number(localStorage.getItem(key))
+            const freshness = new Date()
+            freshness.setTime(time)
+            freshnesses.set(index, freshness)
+        }
+        return freshnesses
+    }
+
     constructor(layer: FilteredLayer,
                 handleFeatureSource: (src: FeatureSourceForLayer & Tiled, index: number) => void,
                 state: {
@@ -33,21 +47,17 @@ public tileFreshness : Map<number, Date> = new Map<number, Date>()
 
         console.debug("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
         for (const index of indexes) {
-            
-            const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" +index;
-            const version = localStorage.getItem(prefix+"-format")
-            if(version === undefined || version !== SaveTileToLocalStorageActor.formatVersion){
+
+            const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" + index;
+            const version = localStorage.getItem(prefix + "-format")
+            if (version === undefined || version !== SaveTileToLocalStorageActor.formatVersion) {
                 // Invalid version! Remove this tile from local storage
                 localStorage.removeItem(prefix)
+                localStorage.removeItem(prefix+"-time")
+                localStorage.removeItem(prefix+"-format")
                 undefinedTiles.add(index)
                 console.log("Dropped old format tile", prefix)
-                continue
             }
-            
-            const data = Number(localStorage.getItem(prefix+"-time"))
-            const freshness = new Date()
-            freshness.setTime(data)
-            this.tileFreshness.set(index, freshness)
         }
 
         const zLevels = indexes.map(i => i % 100)
@@ -90,8 +100,6 @@ public tileFreshness : Map<number, Date> = new Map<number, Date>()
                 return needed
             }
             , [layer.isDisplayed, state.leafletMap]).stabilized(50);
-
-        neededTiles.addCallbackAndRun(t => console.debug("Tiles to load from localstorage:", t))
 
         neededTiles.addCallbackAndRunD(neededIndexes => {
             for (const neededIndex of neededIndexes) {

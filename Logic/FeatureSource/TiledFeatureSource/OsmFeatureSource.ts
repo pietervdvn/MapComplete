@@ -22,7 +22,8 @@ export default class OsmFeatureSource {
         neededTiles: UIEventSource<number[]>,
         state: {
             readonly osmConnection: OsmConnection;
-        };
+        },
+        markTileVisited?: (tileId: number) => void
     };
     private readonly downloadedTiles = new Set<number>()
 
@@ -33,7 +34,8 @@ export default class OsmFeatureSource {
         state: {
             readonly filteredLayers: UIEventSource<FilteredLayer[]>;
             readonly osmConnection: OsmConnection;
-        };
+        },
+        markTileVisited?: (tileId: number) => void
     }) {
         this.options = options;
         this._backend = options.state.osmConnection._oauth_config.url;
@@ -84,13 +86,17 @@ export default class OsmFeatureSource {
                         flatProperties: true
                     });
                 console.log("Tile geojson:", z, x, y, "is", geojson)
+                const index =  Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,
                     this.handleTile,
                     new StaticFeatureSource(geojson.features, false),
                     {
-                        tileIndex: Tiles.tile_index(z, x, y)
+                        tileIndex:index
                     }
                 );
+                if(this.options.markTileVisited){
+                    this.options.markTileVisited(index)
+                }
             } catch (e) {
                 console.error("Weird error: ", e)
             }

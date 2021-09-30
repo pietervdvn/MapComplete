@@ -97,7 +97,7 @@ export default class SimpleMetaTagger {
                     continue;
                 }
                 for (const unit of units) {
-                    if(unit === undefined){
+                    if (unit === undefined) {
                         continue
                     }
                     if (unit.appliesToKeys === undefined) {
@@ -108,7 +108,12 @@ export default class SimpleMetaTagger {
                         continue;
                     }
                     const value = feature.properties[key]
-                    const [, denomination] = unit.findDenomination(value)
+                    const denom = unit.findDenomination(value)
+                    if (denom === undefined) {
+                        // no valid value found
+                        break;
+                    }
+                    const [, denomination] = denom;
                     let canonical = denomination?.canonicalValue(value) ?? undefined;
                     if (canonical === value) {
                         break;

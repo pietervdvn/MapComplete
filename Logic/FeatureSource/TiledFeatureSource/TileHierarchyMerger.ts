@@ -2,7 +2,6 @@ import TileHierarchy from "./TileHierarchy";
 import {UIEventSource} from "../../UIEventSource";
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
-import {Utils} from "../../../Utils";
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";

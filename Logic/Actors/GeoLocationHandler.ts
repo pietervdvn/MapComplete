@@ -207,6 +207,9 @@ export default class GeoLocationHandler extends VariableUiElement {
             });
 
             const map = self._leafletMap.data;
+            if(map === undefined){
+                return;
+            }
 
             const newMarker = L.marker(location.latlng, {icon: icon});
             newMarker.addTo(map);

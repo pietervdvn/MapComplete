@@ -9,6 +9,7 @@ import UnitsSpec from "./Units.spec";
 import RelationSplitHandlerSpec from "./RelationSplitHandler.spec";
 import SplitActionSpec from "./SplitAction.spec";
 import {Utils} from "../Utils";
+import TileFreshnessCalculatorSpec from "./TileFreshnessCalculator.spec";
 
 
 ScriptUtils.fixUtils()
@@ -21,7 +22,8 @@ const allTests = [
     new UtilsSpec(),
     new UnitsSpec(),
     new RelationSplitHandlerSpec(),
-    new SplitActionSpec()
+    new SplitActionSpec(),
+    new TileFreshnessCalculatorSpec()
 ]
 
 Utils.externalDownloadFunction = async (url) => {

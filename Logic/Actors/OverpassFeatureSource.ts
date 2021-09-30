@@ -1,5 +1,4 @@
 import {UIEventSource} from "../UIEventSource";
-import Loc from "../../Models/Loc";
 import {Or} from "../Tags/Or";
 import {Overpass} from "../Osm/Overpass";
 import FeatureSource from "../FeatureSource/FeatureSource";
@@ -9,6 +8,8 @@ import SimpleMetaTagger from "../SimpleMetaTagger";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import RelationsTracker from "../Osm/RelationsTracker";
 import {BBox} from "../BBox";
+import Loc from "../../Models/Loc";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 
 export default class OverpassFeatureSource implements FeatureSource {
@@ -28,14 +29,7 @@ export default class OverpassFeatureSource implements FeatureSource {
 
 
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
-    /**
-     * The previous bounds for which the query has been run at the given zoom level
-     *
-     * Note that some layers only activate on a certain zoom level.
-     * If the map location changes, we check for each layer if it is loaded:
-     * we start checking the bounds at the first zoom level the layer might operate. If in bounds - no reload needed, otherwise we continue walking down
-     */
-    private readonly _previousBounds: Map<number, BBox[]> = new Map<number, BBox[]>();
+    
     private readonly state: {
         readonly locationControl: UIEventSource<Loc>,
         readonly layoutToUse: LayoutConfig,
@@ -44,11 +38,8 @@ export default class OverpassFeatureSource implements FeatureSource {
         readonly currentBounds: UIEventSource<BBox>
     }
     private readonly _isActive: UIEventSource<boolean>;
-    private _onUpdated?: (bbox: BBox, dataFreshness: Date) => void;
+    private readonly onBboxLoaded: (bbox: BBox, date: Date, layers: LayerConfig[]) => void;
 
-    /**
-     * The most important layer should go first, as that one gets first pick for the questions
-     */
     constructor(
         state: {
             readonly locationControl: UIEventSource<Loc>,
@@ -60,68 +51,25 @@ export default class OverpassFeatureSource implements FeatureSource {
         },
         options?: {
             isActive?: UIEventSource<boolean>,
-            onUpdated?: (bbox: BBox, freshness: Date) => void,
-            relationTracker: RelationsTracker
+            relationTracker: RelationsTracker,
+            onBboxLoaded?: (bbox: BBox, date: Date, layers: LayerConfig[]) => void
         }) {
 
         this.state = state
         this._isActive = options.isActive;
-        this._onUpdated = options.onUpdated;
+        this.onBboxLoaded = options.onBboxLoaded
         this.relationsTracker = options.relationTracker
-        const location = state.locationControl
         const self = this;
-
-        for (let i = 0; i < 25; i++) {
-            // This update removes all data on all layers -> erase the map on lower levels too
-            this._previousBounds.set(i, []);
-        }
-
-        location.addCallback(() => {
-            self.update()
-        });
-
         state.currentBounds.addCallback(_ => {
             self.update()
         })
 
     }
 
-    private GetFilter(interpreterUrl: string): Overpass {
+    private GetFilter(interpreterUrl: string, layersToDownload: LayerConfig[]): Overpass {
         let filters: TagsFilter[] = [];
         let extraScripts: string[] = [];
-        for (const layer of this.state.layoutToUse.layers) {
-            if (typeof (layer) === "string") {
-                throw "A layer was not expanded!"
-            }
-            if (this.state.locationControl.data.zoom < layer.minzoom) {
-                continue;
-            }
-            if (layer.doNotDownload) {
-                continue;
-            }
-            if (layer.source.geojsonSource !== undefined) {
-                // Not our responsibility to download this layer!
-                continue;
-            }
-
-
-            // Check if data for this layer has already been loaded
-            let previouslyLoaded = false;
-            for (let z = layer.minzoom; z < 25 && !previouslyLoaded; z++) {
-                const previousLoadedBounds = this._previousBounds.get(z);
-                if (previousLoadedBounds === undefined) {
-                    continue;
-                }
-                for (const previousLoadedBound of previousLoadedBounds) {
-                    previouslyLoaded = previouslyLoaded || this.state.currentBounds.data.isContainedIn(previousLoadedBound);
-                    if (previouslyLoaded) {
-                        break;
-                    }
-                }
-            }
-            if (previouslyLoaded) {
-                continue;
-            }
+        for (const layer of layersToDownload) {
             if (layer.source.overpassScript !== undefined) {
                 extraScripts.push(layer.source.overpassScript)
             } else {
@@ -140,17 +88,17 @@ export default class OverpassFeatureSource implements FeatureSource {
         if (!this._isActive.data) {
             return;
         }
-        const self = this
-        this.updateAsync().then(bboxAndDate => {
-            if (bboxAndDate === undefined || self._onUpdated === undefined) {
+        const self = this;
+        this.updateAsync().then(bboxDate => {
+            if(bboxDate === undefined || self.onBboxLoaded === undefined){
                 return;
             }
-            const [bbox, date] = bboxAndDate
-            self._onUpdated(bbox, date);
+            const [bbox, date, layers] = bboxDate
+            self.onBboxLoaded(bbox, date, layers)
         })
     }
 
-    private async updateAsync(): Promise<[BBox, Date]> {
+    private async updateAsync(): Promise<[BBox, Date, LayerConfig[]]> {
         if (this.runningQuery.data) {
             console.log("Still running a query, not updating");
             return undefined;
@@ -167,6 +115,26 @@ export default class OverpassFeatureSource implements FeatureSource {
             return undefined;
         }
         const self = this;
+        
+        
+        const layersToDownload = []
+        for (const layer of this.state.layoutToUse.layers) {
+            
+        if (typeof (layer) === "string") {
+            throw "A layer was not expanded!"
+        }
+        if(this.state.locationControl.data.zoom < layer.minzoom){
+            continue;
+        }
+        if (layer.doNotDownload) {
+            continue;
+        }
+        if (layer.source.geojsonSource !== undefined) {
+            // Not our responsibility to download this layer!
+            continue;
+        }
+        layersToDownload.push(layer)
+        }
 
         let data: any = undefined
         let date: Date = undefined
@@ -175,7 +143,8 @@ export default class OverpassFeatureSource implements FeatureSource {
 
         do {
             try {
-                const overpass = this.GetFilter(overpassUrls[lastUsed]);
+                
+                const overpass = this.GetFilter(overpassUrls[lastUsed], layersToDownload);
 
                 if (overpass === undefined) {
                     return undefined;
@@ -208,14 +177,11 @@ export default class OverpassFeatureSource implements FeatureSource {
             }
         } while (data === undefined);
 
-        const z = Math.floor(this.state.locationControl.data.zoom ?? 0);
-        self._previousBounds.get(z).push(bounds);
         self.retries.setData(0);
-
         try {
             data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date));
             self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
-            return [bounds, date];
+            return [bounds, date, layersToDownload];
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)
         } finally {
