@@ -22,6 +22,13 @@ export class BBox {
             this.minLon = Math.min(this.minLon, coordinate[0]);
             this.minLat = Math.min(this.minLat, coordinate[1]);
         }
+        
+        this.maxLon = Math.min(this.maxLon, 180)
+        this.maxLat = Math.min(this.maxLat, 90)
+        this.minLon = Math.max(this.minLon, -180)
+        this.minLat = Math.max(this.minLat, -90)
+
+
         this.check();
     }
 
@@ -41,10 +48,10 @@ export class BBox {
      * Constructs a tilerange which fully contains this bbox (thus might be a bit larger)
      * @param zoomlevel
      */
-    public containingTileRange(zoomlevel): TileRange{
-     return   Tiles.TileRangeBetween(zoomlevel, this.minLat, this.minLon, this.maxLat, this.maxLon)
+    public containingTileRange(zoomlevel): TileRange {
+        return Tiles.TileRangeBetween(zoomlevel, this.minLat, this.minLon, this.maxLat, this.maxLon)
     }
-    
+
     public overlapsWith(other: BBox) {
         if (this.maxLon < other.minLon) {
             return false;
@@ -148,7 +155,7 @@ export class BBox {
      * Expands the BBOx so that it contains complete tiles for the given zoomlevel
      * @param zoomlevel
      */
-    expandToTileBounds(zoomlevel: number) : BBox{
+    expandToTileBounds(zoomlevel: number): BBox {
         const ul = Tiles.embedded_tile(this.minLat, this.minLon, zoomlevel)
         const lr = Tiles.embedded_tile(this.maxLat, this.maxLon, zoomlevel)
         const boundsul = Tiles.tile_bounds_lon_lat(ul.z, ul.x, ul.y)
