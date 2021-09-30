@@ -407,6 +407,52 @@
                 }
             ],
             "id": "toilet-changing_table:location"
+        },
+        {
+            "id": "toilet-handwashing",
+            "question": {
+                "en": "Do these toilets have a sink to wash your hands?",
+                "nl": "Hebben deze toiletten een lavabo om de handen te wassen?"
+            },
+            "mappings": [
+                {
+                    "if": "toilets:handwashing=yes",
+                    "then": {
+                        "en": "This toilets have a sink to wash your hands",
+                        "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen"
+                    }
+                },
+                {
+                    "if": "toilets:handwashing=no",
+                    "then": {
+                        "en": "This toilets <b>don't</b> have a sink to wash your hands",
+                        "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "toilet-has-paper",
+            "question": {
+                "en": "Does one have to bring their own toilet paper to this toilet?",
+                "nl": "Moet je je eigen toiletpappier meenemen naar deze toilet?"
+            },
+            "mappings": [
+                {
+                    "if": "toilets:paper_supplied=yes",
+                    "then": {
+                        "en": "Toilet paper is equipped with toilet paper",
+                        "nl": "Deze toilet is voorzien van toiletpapier"
+                    }
+                },
+                {
+                    "if": "toilets:paper_supplied=no",
+                    "then": {
+                        "en": "You have to bring your own toilet paper to this toilet",
+                        "nl": "Je moet je eigen toiletpapier meebrengen naar deze toilet"
+                    }
+                }
+            ]
         }
     ],
     "filter": [

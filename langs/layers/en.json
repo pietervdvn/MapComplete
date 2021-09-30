@@ -2883,6 +2883,15 @@
     },
     "public_bookcase": {
         "description": "A streetside cabinet with books, accessible to anyone",
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Indoor or outdoor"
+                    }
+                }
+            }
+        },
         "name": "Bookcases",
         "presets": {
             "0": {
@@ -3312,6 +3321,28 @@
             "toilet-charge": {
                 "question": "How much does one have to pay for these toilets?",
                 "render": "The fee is {charge}"
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": "This toilets have a sink to wash your hands"
+                    },
+                    "1": {
+                        "then": "This toilets <b>don't</b> have a sink to wash your hands"
+                    }
+                },
+                "question": "Do these toilets have a sink to wash your hands?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "0": {
+                        "then": "Toilet paper is equipped with toilet paper"
+                    },
+                    "1": {
+                        "then": "You have to bring your own toilet paper to this toilet"
+                    }
+                },
+                "question": "Does one have to bring their own toilet paper to this toilet?"
             },
             "toilets-changing-table": {
                 "mappings": {

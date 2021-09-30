@@ -3099,6 +3099,15 @@
     },
     "public_bookcase": {
         "description": "Een straatkastje met boeken voor iedereen",
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Binnen of buiten"
+                    }
+                }
+            }
+        },
         "name": "Boekenruilkastjes",
         "presets": {
             "0": {
@@ -3546,6 +3555,28 @@
             "toilet-charge": {
                 "question": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
                 "render": "De toiletten gebruiken kost {charge}"
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze toiletten hebben een lavabo waar men de handen kan wassen"
+                    },
+                    "1": {
+                        "then": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen"
+                    }
+                },
+                "question": "Hebben deze toiletten een lavabo om de handen te wassen?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze toilet is voorzien van toiletpapier"
+                    },
+                    "1": {
+                        "then": "Je moet je eigen toiletpapier meebrengen naar deze toilet"
+                    }
+                },
+                "question": "Moet je je eigen toiletpappier meenemen naar deze toilet?"
             },
             "toilets-changing-table": {
                 "mappings": {
