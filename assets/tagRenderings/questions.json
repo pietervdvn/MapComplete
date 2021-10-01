@@ -21,7 +21,8 @@
       "it": "Qual è il numero di telefono di {name}?",
       "pt_BR": "Qual o número de telefone de {name}?",
       "id": "Nomor telepon dari {name|?",
-      "pl": "Jaki jest numer telefonu do {name}?"
+      "pl": "Jaki jest numer telefonu do {name}?",
+      "pt": "Qual é o número de telefone de {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "freeform": {
@@ -78,7 +79,8 @@
       "de": "Was ist die Website von {name}?",
       "pt_BR": "Qual o site de {name}?",
       "pl": "Jaka jest strona internetowa {name}?",
-      "sv": "Vad är webbplatsen för {name}?"
+      "sv": "Vad är webbplatsen för {name}?",
+      "pt": "Qual é o sítio web de {name}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -89,7 +91,9 @@
   "wheelchair-access": {
     "question": {
       "nl": "Is deze plaats rolstoeltoegankelijk?",
-      "en": "Is this place accessible with a wheelchair?"
+      "en": "Is this place accessible with a wheelchair?",
+      "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+      "pt_BR": "Este lugar é acessível com uma cadeira de rodas?"
     },
     "mappings": [
       {
@@ -100,7 +104,9 @@
         },
         "then": {
           "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
-          "en": "This place is specially adapated for wheelchair users"
+          "en": "This place is specially adapated for wheelchair users",
+          "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
+          "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas"
         }
       },
       {
@@ -111,7 +117,9 @@
         },
         "then": {
           "nl": "Deze plaats is vlot bereikbaar met een rolstoel",
-          "en": "This place is easily reachable with a wheelchair"
+          "en": "This place is easily reachable with a wheelchair",
+          "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
+          "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas"
         }
       },
       {
@@ -122,7 +130,9 @@
         },
         "then": {
           "nl": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk",
-          "en": "It is possible to reach this place in a wheelchair, but it is not easy"
+          "en": "It is possible to reach this place in a wheelchair, but it is not easy",
+          "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
+          "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil"
         }
       },
       {
@@ -133,7 +143,9 @@
         },
         "then": {
           "nl": "Niet rolstoeltoegankelijk",
-          "en": "This place is not reachable with a wheelchair"
+          "en": "This place is not reachable with a wheelchair",
+          "pt": "Este lugar não é acessível com uma cadeira de rodas",
+          "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas"
         }
       }
     ]
@@ -205,7 +217,8 @@
       "it": "Quali sono gli orari di apertura di {name}?",
       "pt_BR": "Qual o horário de funcionamento de {name}?",
       "pl": "Jakie są godziny otwarcia {name}?",
-      "sv": "Vilka är öppettiderna för {name}?"
+      "sv": "Vilka är öppettiderna för {name}?",
+      "pt": "Qual é o horário de funcionamento de {name}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -218,7 +231,8 @@
       "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
       "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
       "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
-      "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
+      "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+      "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -228,7 +242,9 @@
   "payment-options": {
     "question": {
       "en": "Which methods of payment are accepted here?",
-      "nl": "Welke betaalmiddelen worden hier geaccepteerd?"
+      "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+      "pt": "Que métodos de pagamento são aceites aqui?",
+      "pt_BR": "Quais métodos de pagamento são aceitos aqui?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -237,7 +253,9 @@
         "ifnot": "payment:cash=no",
         "then": {
           "en": "Cash is accepted here",
-          "nl": "Cash geld wordt hier aanvaard"
+          "nl": "Cash geld wordt hier aanvaard",
+          "pt": "Aceitam pagamento com dinheiro aqui",
+          "pt_BR": "Dinheiro é aceito aqui"
         }
       },
       {
@@ -245,7 +263,9 @@
         "ifnot": "payment:cards=no",
         "then": {
           "en": "Payment cards are accepted here",
-          "nl": "Betalen met bankkaarten kan hier"
+          "nl": "Betalen met bankkaarten kan hier",
+          "pt": "Aceitam pagamento com cartões bancários aqui",
+          "pt_BR": "Cartões de pagamento são aceitos aqui"
         }
       }
     ]
@@ -280,7 +300,8 @@
       "zh_Hant": "位於 {level} 樓",
       "fr": "Étage {level}",
       "pl": "Znajduje się na {level} piętrze",
-      "sv": "Ligger på {level}:e våningen"
+      "sv": "Ligger på {level}:e våningen",
+      "pt": "Está no {nível}º andar"
     },
     "freeform": {
       "key": "level",
