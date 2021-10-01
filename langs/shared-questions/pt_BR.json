@@ -33,6 +33,34 @@
         },
         "website": {
             "question": "Qual o site de {name}?"
+        },
+        "wheelchair-access": {
+            "question": "Este lugar é acessível com uma cadeira de rodas?",
+            "mappings": {
+                "3": {
+                    "then": "Este lugar não é alcançável com uma cadeira de rodas"
+                },
+                "2": {
+                    "then": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil"
+                },
+                "1": {
+                    "then": "Este lugar é facilmente acessível com uma cadeira de rodas"
+                },
+                "0": {
+                    "then": "Este lugar é especialmente adaptado para usuários de cadeira de rodas"
+                }
+            }
+        },
+        "payment-options": {
+            "question": "Quais métodos de pagamento são aceitos aqui?",
+            "mappings": {
+                "1": {
+                    "then": "Cartões de pagamento são aceitos aqui"
+                },
+                "0": {
+                    "then": "Dinheiro é aceito aqui"
+                }
+            }
         }
     }
 }

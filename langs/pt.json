@@ -1,1 +1,24 @@
-{}
+{
+    "centerMessage": {
+        "retrying": "Surgiu uma falha ao carregar os dados. A tentar novamente dentro de {count} segundos…",
+        "ready": "Concluído!",
+        "zoomIn": "Amplie para ver ou editar os dados",
+        "loadingData": "A carregar os dados…"
+    },
+    "image": {
+        "isDeleted": "Eliminada",
+        "doDelete": "Remover imagem",
+        "dontDelete": "Cancelar",
+        "uploadDone": "<span class=\"thanks\">A sua imagem foi adicionada. Obrigado pela ajuda!</span>",
+        "respectPrivacy": "Não fotografe pessoas nem placas de veículos. Não envie imagens do Google Maps, do Google Streetview ou outras fontes protegidas por direitos de autor.",
+        "uploadFailed": "Não foi possível enviar a sua imagem. Está conectado à Internet e permite APIs de terceiros? O navegador \"Brave\" ou o plugin \"uMatrix\" podem estar a bloqueá-los.",
+        "ccb": "sob a licença CC-BY",
+        "ccbs": "sob a licença CC-BY-SA",
+        "cco": "no domínio público",
+        "willBePublished": "A sua imagem será publicada: ",
+        "pleaseLogin": "Entre na sua conta para adicionar uma imagem",
+        "uploadingMultiple": "A enviar {count} imagens…",
+        "uploadingPicture": "A enviar a sua imagem…",
+        "addPicture": "Adicionar imagem"
+    }
+}
