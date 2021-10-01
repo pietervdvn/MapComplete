@@ -102,6 +102,11 @@ Weird errors
 
 Try removing `node_modules`, `package-lock.json` and `.cache`
 
+Misc setup
+----------
+
+The json-git-merger is used to quickly merge translation files, [documentation here](https://github.com/jonatanpedersen/git-json-merge#single-project--directory)
+
 Overview of package.json-scripts
 --------------------------------
 
