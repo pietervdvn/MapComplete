@@ -9,6 +9,7 @@
   "scripts": {
     "increase-memory": "export NODE_OPTIONS=--max_old_space_size=6182",
     "start": "npm run start:prepare && npm-run-all --parallel start:parallel:*",
+    "strt": "npm run start:prepare && npm run start:parallel:parcel",
     "start:prepare": "ts-node scripts/generateLayerOverview.ts --no-fail && npm run increase-memory",
     "start:parallel:parcel": "parcel *.html UI/** Logic/** assets/*.json assets/svg/* assets/generated/* assets/layers/*/*.svg assets/tagRenderings/*.json assets/themes/*/*.svg assets/themes/*/*.png vendor/* vendor/*/*",
     "start:parallel:tailwindcli": "tailwindcss -i index.css -o css/index-tailwind-output.css --watch",
