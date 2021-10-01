@@ -34,9 +34,19 @@ export default class SelectedFeatureHandler {
             }else{
                 // we search the element to select
                 const feature = state.allElements.ContainingFeatures.get(h)
-                if(feature !== undefined){
-                    state.selectedElement.setData(feature)
+                if(feature === undefined){
+                    return;
                 }
+                const currentlySeleced = state.selectedElement.data
+                if(currentlySeleced === undefined){
+                    state.selectedElement.setData(feature)
+                    return;
+                }
+                if(currentlySeleced.properties?.id === feature.properties.id){
+                    // We already have the right feature
+                    return;
+                }
+                state.selectedElement.setData(feature)
             }
         }
 

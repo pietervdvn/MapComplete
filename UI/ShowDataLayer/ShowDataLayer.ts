@@ -22,7 +22,7 @@ export default class ShowDataLayer {
     /**
      * If the selected element triggers, this is used to lookup the correct layer and to open the popup
      * Used to avoid a lot of callbacks on the selected element
-     * 
+     *
      * Note: the key of this dictionary is 'feature.properties.id+features.geometry.type' as one feature might have multiple presentations
      * @private
      */
@@ -58,19 +58,19 @@ export default class ShowDataLayer {
                     mp.addLayer(this.geoLayer)
                 }
             } else {
-                if(this.geoLayer !== undefined){
+                if (this.geoLayer !== undefined) {
                     mp.removeLayer(this.geoLayer)
                 }
             }
 
         })
 
-        
+
         State.state.selectedElement.addCallbackAndRunD(selected => {
             if (self._leafletMap.data === undefined) {
                 return;
             }
-            const v = self.leafletLayersPerId.get(selected.properties.id+selected.geometry.type)
+            const v = self.leafletLayersPerId.get(selected.properties.id + selected.geometry.type)
             if (v === undefined) {
                 return;
             }
@@ -82,14 +82,14 @@ export default class ShowDataLayer {
             if (selected.properties.id !== feature.properties.id) {
                 return;
             }
-            
+
             if (feature.id !== feature.properties.id) {
                 // Probably a feature which has renamed
+                // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
                 console.log("Not opening the popup for", feature, "as probably renamed")
                 return;
             }
             if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
-                && feature.id === feature.properties.id // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
             ) {
                 console.log("Opening popup of feature", feature)
                 leafletLayer.openPopup()
@@ -174,8 +174,8 @@ export default class ShowDataLayer {
         }
 
         let tagSource = State.state.allElements.getEventSourceById(feature.properties.id)
-        if(tagSource === undefined){
-           tagSource = new UIEventSource<any>(feature.properties) 
+        if (tagSource === undefined) {
+            tagSource = new UIEventSource<any>(feature.properties)
         }
         const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
         const style = layer.GenerateLeafletStyle(tagSource, clickable);
@@ -221,10 +221,11 @@ export default class ShowDataLayer {
 
         let infobox: FeatureInfoBox = undefined;
 
-        const id = `popup-${feature.properties.id}-${this._cleanCount}`
-        popup.setContent(`<div style='height: 65vh' id='${id}'>Rendering</div>`)
+        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this._cleanCount}`
+        popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type}</div>`)
 
         leafletLayer.on("popupopen", () => {
+            console.trace(`Opening the popup for ${feature.properties.id} ${feature.geometry.type}`)
             if (infobox === undefined) {
                 const tags = State.state.allElements.getEventSourceById(feature.properties.id);
                 infobox = new FeatureInfoBox(tags, layer);
@@ -236,20 +237,18 @@ export default class ShowDataLayer {
                     }
                 });
             }
-
-
             infobox.AttachTo(id)
             infobox.Activate();
-            
-            
-            if(State.state.selectedElement.data?.properties?.id !== feature.properties.id){
-               // x State.state.selectedElement.setData(feature)
-            }
+            State.state.selectedElement.setData(feature)
+
         });
 
 
         // Add the feature to the index to open the popup when needed
-        this.leafletLayersPerId.set(feature.properties.id+feature.geometry.type, {feature: feature, leafletlayer: leafletLayer})
+        this.leafletLayersPerId.set(feature.properties.id + feature.geometry.type, {
+            feature: feature,
+            leafletlayer: leafletLayer
+        })
 
     }
 
