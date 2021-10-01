@@ -5,6 +5,8 @@ import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {Translation} from "../UI/i18n/Translation";
+import {Utils} from "../Utils";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -139,6 +141,16 @@ class LayerOverviewUtils {
                     }
                 }
             }
+            
+            const referencedLayers = Utils.NoNull(themeFile.layers.map(layer => {
+                if(typeof  layer === "string"){
+                    return layer
+                }
+                if(layer["builtin"] !== undefined){
+                    return layer["builtin"]
+                }
+                return undefined
+            }))
 
             themeFile.layers = themeFile.layers
                 .filter(l => typeof l != "string") // We remove all the builtin layer references as they don't work with ts-node for some weird reason
@@ -153,6 +165,20 @@ class LayerOverviewUtils {
                 let filename = themePath.substring(themePath.lastIndexOf("/") + 1, themePath.length - 5)
                 if (theme.id !== filename) {
                     themeErrorCount.push("Theme ids should be the same as the name.json, but we got id: " + theme.id + " and filename " + filename + " (" + themePath + ")")
+                }
+                const neededLanguages = themeFile["mustHaveLanguage"]
+                if (neededLanguages !== undefined) {
+                    console.log("Checking language requerements for ", theme.id, "as it must have", neededLanguages.join(", "))
+                    const allTranslations = [].concat(Translation.ExtractAllTranslationsFrom(theme, theme.id),   ...referencedLayers.map(layerId => Translation.ExtractAllTranslationsFrom(knownLayerIds.get(layerId), theme.id+"->"+layerId)))
+                    for (const neededLanguage of neededLanguages) {
+                        allTranslations
+                            .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
+                            .forEach(missing => {
+                                themeErrorCount.push("The theme " + theme.id + " should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context)
+                            })
+                    }
+
+
                 }
 
             } catch (e) {

@@ -53,6 +53,11 @@ export interface LayoutConfigJson {
     language: string | string[];
 
     /**
+     * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated
+     */
+    mustHaveLanguage?: string[]
+
+    /**
      * The title, as shown in the welcome message and the more-screen
      */
     title: string | any;

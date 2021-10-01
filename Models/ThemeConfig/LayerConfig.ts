@@ -302,6 +302,10 @@ export default class LayerConfig {
         this.filters = (json.filter ?? []).map((option, i) => {
             return new FilterConfig(option, `${context}.filter-[${i}]`)
         });
+       
+       if(json["filters"] !== undefined){
+           throw "Error in "+context+": use 'filter' instead of 'filters'"
+       }
 
         const titleIcons = [];
         const defaultIcons = [

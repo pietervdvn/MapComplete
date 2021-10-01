@@ -196,4 +196,22 @@ export class Translation extends BaseUIElement {
         return allIcons.filter(icon => icon != undefined)
     }
 
+    static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
+        const allTranslations: { context: string, tr: Translation }[] = []
+        for (const key in object) {
+            const v = object[key]
+            if (v === undefined || v === null) {
+                continue
+            }
+            if (v instanceof Translation) {
+                allTranslations.push({context: context +"." + key, tr: v})
+                continue
+            }
+            if (typeof v === "object") {
+                allTranslations.push(...Translation.ExtractAllTranslationsFrom(v, context + "." + key))
+                continue
+            }
+        }
+        return allTranslations
+    }
 }

@@ -17,6 +17,9 @@
     "nl",
     "en"
   ],
+  "mustHaveLanguage": [
+    "nl"
+  ],
   "maintainer": "",
   "icon": "./assets/themes/natuurpunt/natuurpunt.png",
   "version": "0",

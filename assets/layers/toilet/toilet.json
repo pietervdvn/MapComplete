@@ -461,7 +461,8 @@
             "options": [
                 {
                     "question": {
-                        "en": "Wheelchair accessible"
+                        "en": "Wheelchair accessible",
+                        "nl": "Rolstoel toegankelijk"
                     },
                     "osmTags": "wheelchair=yes"
                 }
@@ -472,7 +473,8 @@
             "options": [
                 {
                     "question": {
-                        "en": "Has a changing table"
+                        "en": "Has a changing table",
+                        "nl": "Heeft een luiertafel"
                     },
                     "osmTags": "changing_table=yes"
                 }
@@ -483,7 +485,8 @@
             "options": [
                 {
                     "question": {
-                        "en": "Free to use"
+                        "en": "Free to use",
+                        "nl": "Gratis toegankelijk"
                     },
                     "osmTags": {
                         "or": [
