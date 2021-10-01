@@ -9,6 +9,7 @@ import Toggle from "../Input/Toggle";
 import BaseUIElement from "../BaseUIElement";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {Unit} from "../../Models/Unit";
+import Lazy from "../Base/Lazy";
 
 export default class EditableTagRendering extends Toggle {
 
@@ -44,14 +45,14 @@ export default class EditableTagRendering extends Toggle {
                         editMode.setData(false)
                     });
 
-            const question = new TagRenderingQuestion(tags, configuration,
+            const question = new Lazy(() => new TagRenderingQuestion(tags, configuration,
                 {
                     units: units,
                     cancelButton: cancelbutton,
                     afterSave: () => {
                         editMode.setData(false)
                     }
-                })
+                }))
 
 
             rendering = new Toggle(
