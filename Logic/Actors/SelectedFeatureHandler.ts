@@ -46,7 +46,7 @@ export default class SelectedFeatureHandler {
         // IF the selected element changes, set the hash correctly
         state.selectedElement.addCallback(feature => {
             if (feature === undefined) {
-                if (SelectedFeatureHandler._no_trigger_on.has(hash.data)) {
+                if (!SelectedFeatureHandler._no_trigger_on.has(hash.data)) {
                     hash.setData("")
                 }
             }

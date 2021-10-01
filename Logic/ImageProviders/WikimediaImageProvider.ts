@@ -44,7 +44,7 @@ export class WikimediaImageProvider extends ImageProvider {
         if (continueParameter !== undefined) {
             url = `${url}&cmcontinue=${continueParameter}`;
         }
-        console.log("Loading a wikimedia category: ", url)
+        console.debug("Loading a wikimedia category: ", url)
         const response = await Utils.downloadJson(url)
         const members = response.query?.categorymembers ?? [];
         const imageOverview: string[] = members.map(member => member.title);
@@ -55,7 +55,7 @@ export class WikimediaImageProvider extends ImageProvider {
         }
 
         if (maxLoad - imageOverview.length <= 0) {
-            console.log(`Recursive wikimedia category load stopped for ${categoryName}`)
+            console.debug(`Recursive wikimedia category load stopped for ${categoryName}`)
             return imageOverview;
         }
 

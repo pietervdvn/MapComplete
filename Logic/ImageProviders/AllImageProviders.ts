@@ -16,7 +16,7 @@ export default class AllImageProviders {
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
-        new GenericImageProvider([].concat(...Imgur.defaultValuePrefix, WikimediaImageProvider.commonsPrefix))]
+        new GenericImageProvider([].concat(...Imgur.defaultValuePrefix, WikimediaImageProvider.commonsPrefix, ...Mapillary.valuePrefixes))]
 
 
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()
@@ -37,8 +37,18 @@ export default class AllImageProviders {
         this._cache.set(id, source)
         const allSources = []
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
+            
+            let prefixes = imageProvider.defaultKeyPrefixes
+            if(imagePrefix !== undefined){
+                prefixes = [...prefixes]
+                if(prefixes.indexOf("image") >= 0){
+                    prefixes.splice(prefixes.indexOf("image"), 1)
+                }
+                prefixes.push(imagePrefix)
+            }
+            
             const singleSource = imageProvider.GetRelevantUrls(tags, {
-                prefixes: imagePrefix !== undefined ? [imagePrefix] : undefined
+                prefixes: prefixes
             })
             allSources.push(singleSource)
             singleSource.addCallbackAndRunD(_ => {

@@ -5,24 +5,25 @@ import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import {LicenseInfo} from "./LicenseInfo";
 import Constants from "../../Models/Constants";
+import {fail} from "assert";
 
 export class Mapillary extends ImageProvider {
 
-    defaultKeyPrefixes = ["mapillary"]
+    defaultKeyPrefixes = ["mapillary","image"]
     
     public static readonly singleton = new Mapillary();
-
-    private static readonly v4_cached_urls = new Map<string, UIEventSource<string>>();
+    private static readonly valuePrefix = "https://a.mapillary.com"
+    public static readonly valuePrefixes = [Mapillary.valuePrefix, "http://mapillary.com","https://mapillary.com"]
 
     private constructor() {
         super();
     }
 
-    private static ExtractKeyFromURL(value: string): {
+    private static ExtractKeyFromURL(value: string, failIfNoMath = false): {
         key: string,
         isApiv4?: boolean
     } {
-        if (value.startsWith("https://a.mapillary.com")) {
+        if (value.startsWith(Mapillary.valuePrefix)) {
             const key = value.substring(0, value.lastIndexOf("?")).substring(value.lastIndexOf("/") + 1)
             return {key: key, isApiv4: !isNaN(Number(key))};
         }
@@ -47,8 +48,11 @@ export class Mapillary extends ImageProvider {
         if (matchApi !== null) {
             return {key: matchApi[1]};
         }
-
-
+        
+        if(failIfNoMath){
+            return undefined;
+        }
+        
         return {key: value, isApiv4: !isNaN(Number(value))};
     }
 
@@ -61,7 +65,12 @@ export class Mapillary extends ImageProvider {
     }
 
     private async PrepareUrlAsync(key: string, value: string): Promise<ProvidedImage> {
-        const keyV = Mapillary.ExtractKeyFromURL(value)
+        const failIfNoMatch = key.indexOf("mapillary") < 0
+        const keyV = Mapillary.ExtractKeyFromURL(value, failIfNoMatch)
+        if(keyV === undefined){
+            return undefined;
+        }
+        
         if (!keyV.isApiv4) {
             const url = `https://images.mapillary.com/${keyV.key}/thumb-640.jpg?client_id=${Constants.mapillary_client_token_v3}`
             return {
@@ -70,10 +79,8 @@ export class Mapillary extends ImageProvider {
                 key: key
             }
         } else {
-            const key = keyV.key;
-            const metadataUrl = 'https://graph.mapillary.com/' + key + '?fields=thumb_1024_url&&access_token=' + Constants.mapillary_client_token_v4;
-            const source = new UIEventSource<string>(undefined)
-            Mapillary.v4_cached_urls.set(key, source)
+            const mapillaryId = keyV.key;
+            const metadataUrl = 'https://graph.mapillary.com/' + mapillaryId + '?fields=thumb_1024_url&&access_token=' + Constants.mapillary_client_token_v4;
             const response = await Utils.downloadJson(metadataUrl)
             const url = <string> response["thumb_1024_url"];
             return {

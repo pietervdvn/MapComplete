@@ -13,9 +13,7 @@ export class ImageCarousel extends Toggle {
         const uiElements = images.map((imageURLS: { key: string, url: string, provider: ImageProvider }[]) => {
             const uiElements: BaseUIElement[] = [];
             for (const url of imageURLS) {
-
                 try {
-
                     let image = new AttributedImage(url)
 
                     if (url.key !== undefined) {

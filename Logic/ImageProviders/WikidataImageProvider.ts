@@ -26,6 +26,10 @@ export class WikidataImageProvider extends ImageProvider {
         if (value.startsWith(wikidataUrl)) {
             value = value.substring(wikidataUrl.length)
         }
+        if(value.startsWith("http")){
+            // Probably some random link in the image field - we skip it
+            return undefined
+        }
         if (!value.startsWith("Q")) {
             value = "Q" + value
         }

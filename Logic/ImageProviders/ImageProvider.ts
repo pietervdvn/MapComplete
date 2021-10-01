@@ -8,7 +8,7 @@ export interface ProvidedImage {
 
 export default abstract class ImageProvider {
     
-    protected abstract readonly defaultKeyPrefixes : string[]
+    public abstract readonly defaultKeyPrefixes : string[] = ["mapillary", "image"]
     
     private _cache = new Map<string, UIEventSource<LicenseInfo>>()
     
@@ -33,6 +33,9 @@ export default abstract class ImageProvider {
         prefixes?: string[]
     }):UIEventSource<ProvidedImage[]> {
         const prefixes = options?.prefixes ?? this.defaultKeyPrefixes
+        if(prefixes === undefined){
+            throw "The image provider"+this.constructor.name+" doesn't define `defaultKeyPrefixes`"
+        }
         const relevantUrls = new UIEventSource<{ url: string; key: string; provider: ImageProvider }[]>([])
         const seenValues = new Set<string>()
         allTags.addCallbackAndRunD(tags => {
@@ -45,10 +48,15 @@ export default abstract class ImageProvider {
                     continue
                 }
                 seenValues.add(value)
-
                 this.ExtractUrls(key, value).then(promises => {
-                    for (const promise of promises) {
+                    for (const promise of promises ?? []) {
+                        if(promise === undefined){
+                            continue
+                        }
                         promise.then(providedImage => {
+                            if(providedImage === undefined){
+                                return
+                            }
                             relevantUrls.data.push(providedImage)
                             relevantUrls.ping()
                         })
