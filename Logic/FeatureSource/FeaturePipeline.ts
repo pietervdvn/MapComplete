@@ -298,16 +298,13 @@ export default class FeaturePipeline {
         readonly overpassMaxZoom: UIEventSource<number>,
     }, useOsmApi: UIEventSource<boolean>): OverpassFeatureSource {
         const minzoom = Math.min(...state.layoutToUse.layers.map(layer => layer.minzoom))
-        const allUpToDateAndZoomSufficient = state.currentBounds.map(bbox => {
+        const overpassIsActive = state.currentBounds.map(bbox => {
             if (bbox === undefined) {
-                return true
-            }
-            if (!this.sufficientlyZoomed?.data) {
-                return true;
+                return false
             }
             let zoom = state.locationControl.data.zoom
             if (zoom < minzoom) {
-                return true;
+                return false;
             }
             if (zoom > 16) {
                 zoom = 16
@@ -315,19 +312,22 @@ export default class FeaturePipeline {
             if (zoom < 8) {
                 zoom = zoom + 2
             }
+            
             const range = bbox.containingTileRange(zoom)
+            if(range.total > 100){
+                return false
+            }
             const self = this;
             const allFreshnesses = Tiles.MapRange(range, (x, y) => self.freshnessForVisibleLayers(zoom, x, y))
-            return !allFreshnesses.some(freshness => freshness === undefined || freshness < this.oldestAllowedDate)
+            return allFreshnesses.some(freshness => freshness === undefined || freshness < this.oldestAllowedDate)
 
         }, [state.locationControl])
 
-        allUpToDateAndZoomSufficient.addCallbackAndRunD(allUpToDate => console.log("All up to data is: ", allUpToDate))
         const self = this;
         const updater = new OverpassFeatureSource(state,
             {
                 relationTracker: this.relationTracker,
-                isActive: useOsmApi.map(b => !b && !allUpToDateAndZoomSufficient.data, [allUpToDateAndZoomSufficient]),
+                isActive: useOsmApi.map(b => !b && overpassIsActive.data, [overpassIsActive]),
                 onBboxLoaded: ((bbox, date, downloadedLayers) => {
                     Tiles.MapRange(bbox.containingTileRange(self.osmSourceZoomLevel), (x, y) => {
                         downloadedLayers.forEach(layer => {

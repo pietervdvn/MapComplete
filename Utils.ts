@@ -1,5 +1,4 @@
 import * as colors from "./assets/colors.json"
-import {TileRange} from "./Models/TileRange";
 
 export class Utils {
 
@@ -238,7 +237,7 @@ export class Utils {
         }
         return target;
     }
-
+    
     static getOrSetDefault<K, V>(dict: Map<K, V>, k: K, v: () => V) {
         let found = dict.get(k);
         if (found !== undefined) {

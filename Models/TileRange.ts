@@ -14,6 +14,10 @@ export class Tiles {
 
     public static MapRange<T>(tileRange: TileRange, f: (x: number, y: number) => T): T[] {
         const result: T[] = []
+        const total = tileRange.total
+        if(total > 5000){
+            throw "Tilerange too big"
+        }
         for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
             for (let y = tileRange.ystart; y <= tileRange.yend; y++) {
                 const t = f(x, y);
@@ -99,12 +103,6 @@ export class Tiles {
         const ystart = Math.min(t0.y, t1.y)
         const yend = Math.max(t0.y, t1.y)
         const total = (1 + xend - xstart) * (1 + yend - ystart)
-        if(total > 1000){
-            console.trace("Detected a big tilerange which'll be iterated over: zoomlevel", zoomlevel, "bounds:", [[lon0, lat0], [lon1, lat1]])
-        }
-        if(total > 10000){
-            throw "Tilerange too big"
-        }
 
         return {
             xstart: xstart,

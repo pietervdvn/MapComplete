@@ -12,7 +12,7 @@ export default class ThemeIntroductionPanel extends Combine {
     constructor(isShown: UIEventSource<boolean>) {
         const layout = State.state.layoutToUse
 
-        const languagePicker =                LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone())
+        const languagePicker = LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone())
 
         const toTheMap = new SubtleButton(
             undefined,
@@ -54,7 +54,7 @@ export default class ThemeIntroductionPanel extends Combine {
             "<br/><br/>",
             toTheMap,
             loginStatus,
-            layout.descriptionTail.Clone(),
+            layout.descriptionTail?.Clone(),
             "<br/>",
             languagePicker,
             ...layout.CustomCodeSnippets()
