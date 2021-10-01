@@ -223,7 +223,9 @@ export default class ShowDataLayer {
         popup.setContent(`<div style='height: 65vh' id='${id}'>Rendering</div>`)
 
         leafletLayer.on("popupopen", () => {
-            State.state.selectedElement.setData(feature)
+            if(State.state.selectedElement.data?.properties?.id !== feature.properties.id){
+                State.state.selectedElement.setData(feature)
+            }
 
             if (infobox === undefined) {
                 const tags = State.state.allElements.getEventSourceById(feature.properties.id);
