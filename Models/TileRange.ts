@@ -1,3 +1,6 @@
+import {control} from "leaflet";
+import zoom = control.zoom;
+
 export interface TileRange {
     xstart: number,
     ystart: number,
@@ -96,6 +99,12 @@ export class Tiles {
         const ystart = Math.min(t0.y, t1.y)
         const yend = Math.max(t0.y, t1.y)
         const total = (1 + xend - xstart) * (1 + yend - ystart)
+        if(total > 1000){
+            console.trace("Detected a big tilerange which'll be iterated over: zoomlevel", zoomlevel, "bounds:", [[lon0, lat0], [lon1, lat1]])
+        }
+        if(total > 10000){
+            throw "Tilerange too big"
+        }
 
         return {
             xstart: xstart,
