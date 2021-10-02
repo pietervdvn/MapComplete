@@ -77,7 +77,7 @@ export default class MetaTagging {
                 }
                 
                 if(somethingChanged){
-                    State.state.allElements.getEventSourceById(feature.properties.id).ping()
+                    State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping()
                 }
             }
     }
@@ -150,7 +150,7 @@ export default class MetaTagging {
                 for (const f of functions) {
                     f(params, feature);
                 }
-                 State.state.allElements.getEventSourceById(feature.properties.id).ping();
+                 State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping();
             } catch (e) {
                 console.error("While calculating a tag value: ", e)
             }

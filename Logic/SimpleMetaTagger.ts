@@ -1,15 +1,11 @@
 import {GeoOperations} from "./GeoOperations";
 import State from "../State";
-import {And} from "./Tags/And";
-import {Tag} from "./Tags/Tag";
-import {Or} from "./Tags/Or";
 import {Utils} from "../Utils";
 import opening_hours from "opening_hours";
 import Combine from "../UI/Base/Combine";
 import BaseUIElement from "../UI/BaseUIElement";
 import Title from "../UI/Base/Title";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
-import CountryCoder from "latlon2country/index";
 
 
 const cardinalDirections = {
@@ -21,7 +17,7 @@ const cardinalDirections = {
 
 
 export default class SimpleMetaTagger {
-    private static coder: CountryCoder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
+    public static coder: any;
     public static readonly objectMetaInfo = new SimpleMetaTagger(
         {
             keys: ["_last_edit:contributor",

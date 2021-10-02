@@ -177,7 +177,6 @@ export abstract class OsmObject {
 
     private static constructPolygonFeatures(): Map<string, { values: Set<string>, blacklist: boolean }> {
         const result = new Map<string, { values: Set<string>, blacklist: boolean }>();
-
         for (const polygonFeature of polygon_features) {
             const key = polygonFeature.key;
 

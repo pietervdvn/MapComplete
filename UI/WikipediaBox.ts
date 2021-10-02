@@ -66,6 +66,7 @@ export default class WikipediaBox extends Toggle {
             new Combine([Svg.wikipedia_ui().SetStyle("width: 1.5rem").SetClass("mr-3"),
                 new Title(Translations.t.general.wikipedia.wikipediaboxTitle.Clone(), 2)]).SetClass("flex"),
             contents]).SetClass("block rounded-xl subtle-background m-1 p-2 flex flex-col")
+            .SetStyle("max-height: inherit")
         super(
             mainContent,
             undefined,

@@ -13,11 +13,14 @@ import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import Constants from "./Models/Constants";
 import MinimapImplementation from "./UI/Base/MinimapImplementation";
+import CountryCoder from "latlon2country/index";
+import SimpleMetaTagger from "./Logic/SimpleMetaTagger";
 
 MinimapImplementation.initialize()
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts
 ValidatedTextField.bestLayerAt = (location, layerPref) => AvailableBaseLayers.SelectBestLayerAccordingTo(location, layerPref)
-
+  
+  SimpleMetaTagger.coder  = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
 
 let defaultLayout = ""
 // --------------------- Special actions based on the parameters -----------------
