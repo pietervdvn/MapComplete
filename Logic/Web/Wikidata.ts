@@ -1,4 +1,5 @@
 import {Utils} from "../../Utils";
+import {UIEventSource} from "../UIEventSource";
 
 
 export interface WikidataResponse {
@@ -62,15 +63,23 @@ export default class Wikidata {
         }
     }
 
-    /**
-     * Loads a wikidata page
-     * @returns the entity of the given value
-     */
-    public static async LoadWikidataEntry(value: string | number): Promise<WikidataResponse> {
-        const wikidataUrl = "https://www.wikidata.org/wiki/"
-        if (typeof value === "number") {
-            value = "Q" + value
+    private static readonly _cache = new Map<number, UIEventSource<{success: WikidataResponse} | {error: any}>>()
+    public static LoadWikidataEntry(value: string | number): UIEventSource<{success: WikidataResponse} | {error: any}> {
+        const key = this.ExtractKey(value)
+        const cached = Wikidata._cache.get(key)
+        if(cached !== undefined){
+            return cached
         }
+        const src = UIEventSource.FromPromiseWithErr(Wikidata.LoadWikidataEntryAsync(key))
+        Wikidata._cache.set(key, src)
+        return src;
+    }
+    
+    private static ExtractKey(value: string | number) : number{
+        if (typeof value === "number") {
+           return value
+        }
+        const wikidataUrl = "https://www.wikidata.org/wiki/"
         if (value.startsWith(wikidataUrl)) {
             value = value.substring(wikidataUrl.length)
         }
@@ -78,12 +87,30 @@ export default class Wikidata {
             // Probably some random link in the image field - we skip it
             return undefined
         }
-        if (!value.startsWith("Q")) {
-            value = "Q" + value
+        if (value.startsWith("Q")) {
+            value = value.substring(1)
         }
-        const url = "https://www.wikidata.org/wiki/Special:EntityData/" + value + ".json";
+        const n = Number(value)
+        if(isNaN(n)){
+            return undefined
+        }
+        return n;
+    }
+
+    /**
+     * Loads a wikidata page
+     * @returns the entity of the given value
+     */
+    public static async LoadWikidataEntryAsync(value: string | number): Promise<WikidataResponse> {
+        const id = Wikidata.ExtractKey(value)
+        if(id === undefined){
+            console.warn("Could not extract a wikidata entry from", value)
+            return undefined;
+        }
+        console.log("Requesting wikidata with id", id)
+        const url = "https://www.wikidata.org/wiki/Special:EntityData/Q" + id + ".json";
         const response = await Utils.downloadJson(url)
-        return Wikidata.ParseResponse(response.entities[value]);
+        return Wikidata.ParseResponse(response.entities["Q" + id])
     }
 
 }

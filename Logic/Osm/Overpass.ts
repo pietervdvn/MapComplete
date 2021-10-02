@@ -18,7 +18,8 @@ export class Overpass {
     private _relationTracker: RelationsTracker;
 
 
-    constructor(filter: TagsFilter, extraScripts: string[],
+    constructor(filter: TagsFilter,
+                extraScripts: string[],
                 interpreterUrl: string,
                 timeout: UIEventSource<number>,
                 relationTracker: RelationsTracker,

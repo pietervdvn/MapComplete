@@ -61,7 +61,6 @@ export default class Wikipedia {
 
         const links = Array.from(content.getElementsByTagName("a"))
 
-        console.log("Links are", links)
         // Rewrite relative links to absolute links + open them in a new tab
         links.filter(link => link.getAttribute("href")?.startsWith("/") ?? false).
         forEach(link => {

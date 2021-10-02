@@ -32,7 +32,7 @@ export default class ExportPDF {
     private readonly mapH = 210;
     private readonly scaling = 2
     private readonly freeDivId: string;
-    private readonly _layout: UIEventSource<LayoutConfig>;
+    private readonly _layout: LayoutConfig;
     private _screenhotTaken = false;
 
     constructor(
@@ -41,7 +41,7 @@ export default class ExportPDF {
             location: UIEventSource<Loc>,
             background?: UIEventSource<BaseLayer>
             features: FeaturePipeline,
-            layout: UIEventSource<LayoutConfig>
+            layout: LayoutConfig
         }
     ) {
 
@@ -87,7 +87,6 @@ export default class ExportPDF {
         minimap.leafletMap .addCallbackAndRunD(leaflet => {
             const bounds = BBox.fromLeafletBounds(leaflet.getBounds().pad(0.2))
             options.features.GetTilesPerLayerWithin(bounds, tile => {
-                console.log("REndering", tile.name)
                 new ShowDataLayer(
                     {
                         features: tile,
@@ -108,13 +107,13 @@ export default class ExportPDF {
     }
 
     private async CreatePdf(leaflet: L.Map) {
+        console.log("PDF creation started")
         const t = Translations.t.general.pdf;
-        const layout = this._layout.data
+        const layout = this._layout
         const screenshotter = new SimpleMapScreenshoter();
         //minimap op index.html -> hidden daar alles op doen en dan weg
         //minimap - leaflet map ophalen - boundaries ophalen - State.state.featurePipeline
         screenshotter.addTo(leaflet);
-        console.log("Taking screenshot")
 
 
         let doc = new jsPDF('landscape');
@@ -164,7 +163,6 @@ export default class ExportPDF {
         const imgSource = layout.icon
         const imgType = imgSource.substr(imgSource.lastIndexOf(".") + 1);
         img.src = imgSource
-        console.log(imgType)
         if (imgType.toLowerCase() === "svg") {
             new FixedUiElement("").AttachTo(this.freeDivId)
 

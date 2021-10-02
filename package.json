@@ -11,7 +11,7 @@
     "start": "npm run start:prepare && npm-run-all --parallel start:parallel:*",
     "strt": "npm run start:prepare && npm run start:parallel:parcel",
     "start:prepare": "ts-node scripts/generateLayerOverview.ts --no-fail && npm run increase-memory",
-    "start:parallel:parcel": "parcel *.html UI/** Logic/** assets/*.json assets/svg/* assets/generated/* assets/layers/*/*.svg assets/tagRenderings/*.json assets/themes/*/*.svg assets/themes/*/*.png vendor/* vendor/*/*",
+    "start:parallel:parcel": "parcel *.html UI/** Logic/** assets/*.json assets/svg/* assets/generated/* assets/layers/*/*.svg assets/layers/*/*.jpg   assets/layers/*/*.png assets/tagRenderings/*.json assets/themes/*/*.svg assets/themes/*/*.jpg assets/themes/*/*.png vendor/* vendor/*/*",
     "start:parallel:tailwindcli": "tailwindcss -i index.css -o css/index-tailwind-output.css --watch",
     "test": "ts-node test/TestAll.ts",
     "init": "npm ci && npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean",

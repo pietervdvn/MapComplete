@@ -8,78 +8,69 @@ import BaseUIElement from "./BaseUIElement";
 import Title from "./Base/Title";
 import Translations from "./i18n/Translations";
 import Svg from "../Svg";
-import Wikidata from "../Logic/Web/Wikidata";
+import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
 import Locale from "./i18n/Locale";
+import Toggle from "./Input/Toggle";
 
-export default class WikipediaBox extends Combine {
+export default class WikipediaBox extends Toggle {
 
-    private static async ExtractWikiPages(wikidata): Promise<Map<string, string>> {
-        return (await Wikidata.LoadWikidataEntry(wikidata)).wikisites
-    }
-    
-    
-    private static _cache = new Map()
 
     constructor(wikidataId: string | UIEventSource<string>) {
         const wp = Translations.t.general.wikipedia;
-        if(typeof wikidataId === "string"){
+        if (typeof wikidataId === "string") {
             wikidataId = new UIEventSource(wikidataId)
         }
-        
-        const knownPages = new UIEventSource<{success:Map<string, string>}|{error:any}>(undefined)
-            
-        wikidataId.addCallbackAndRunD(wikidataId => {
-            WikipediaBox.ExtractWikiPages(wikidataId).then(pages => {
-                knownPages.setData({success:pages})
-            }).catch(err=> {
-                knownPages.setData({error: err})
-            })
-        })
-        
-        const cachedPages = new Map<string, BaseUIElement>()
-        
-        const contents = new VariableUiElement(
-            knownPages.map(pages => {
 
-                if (pages === undefined) {
+
+        const wikibox = wikidataId
+            .bind(id => {
+                console.log("Wikidata is", id)
+                if(id === undefined){
+                    return undefined
+                }
+                console.log("Initing load WIkidataentry with id", id)
+                return Wikidata.LoadWikidataEntry(id);
+            })
+            .map(maybewikidata => {
+                if (maybewikidata === undefined) {
                     return new Loading(wp.loading.Clone())
                 }
-                if (pages["error"] !== undefined) {
+                if (maybewikidata["error"] !== undefined) {
                     return wp.failed.Clone().SetClass("alert p-4")
                 }
-                const dict: Map<string, string> = pages["success"]
+                const wikidata = <WikidataResponse>maybewikidata["success"]
+                console.log("Got wikidata response", wikidata)
+                if (wikidata.wikisites.size === 0) {
+                    return wp.noWikipediaPage.Clone()
+                }
 
-                const preferredLanguage = [Locale.language.data, "en", Array.from(dict.keys())[0]]
+                const preferredLanguage = [Locale.language.data, "en", Array.from(wikidata.wikisites.keys())[0]]
                 let language
                 let pagetitle;
                 let i = 0
                 do {
                     language = preferredLanguage[i]
-                    pagetitle = dict.get(language)
+                    pagetitle = wikidata.wikisites.get(language)
                     i++;
-                    if(i >= preferredLanguage.length){
-                        return wp.noWikipediaPage.Clone()
-                    }
                 } while (pagetitle === undefined)
-                
-                if(cachedPages.has(language)){
-                    return cachedPages.get(language)
-                }
-
-                const page = WikipediaBox.createContents(pagetitle, language);
-                cachedPages.set(language, page)
-                return page
+                return WikipediaBox.createContents(pagetitle, language)
             }, [Locale.language])
+
+
+        const contents = new VariableUiElement(
+            wikibox
         ).SetClass("overflow-auto normal-background rounded-lg")
 
 
-        super([
+        const mainContent = new Combine([
             new Combine([Svg.wikipedia_ui().SetStyle("width: 1.5rem").SetClass("mr-3"),
                 new Title(Translations.t.general.wikipedia.wikipediaboxTitle.Clone(), 2)]).SetClass("flex"),
-            contents])
-
-        this
-            .SetClass("block rounded-xl subtle-background m-1 p-2 flex flex-col")
+            contents]).SetClass("block rounded-xl subtle-background m-1 p-2 flex flex-col")
+        super(
+            mainContent,
+            undefined,
+            wikidataId.map(id => id !== undefined)
+        )
     }
 
     /**
@@ -103,6 +94,7 @@ export default class WikipediaBox extends Combine {
                 return new FixedUiElement(htmlContent["success"]).SetClass("wikipedia-article")
             }
             if (htmlContent["error"]) {
+                console.warn("Loading wikipage failed due to", htmlContent["error"])
                 return wp.failed.Clone().SetClass("alert p-4")
             }
 

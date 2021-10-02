@@ -150,7 +150,6 @@ export class InitUiElements {
             if (userDetails === undefined) {
                 return false;
             }
-            console.log("Adding home location of ", userDetails)
             const home = userDetails.home;
             if (home === undefined) {
                 return userDetails.loggedIn; // If logged in, the home is not set and we unregister. If not logged in, we stay registered if a login still comes

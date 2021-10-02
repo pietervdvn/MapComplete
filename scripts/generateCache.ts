@@ -2,9 +2,6 @@
  * Generates a collection of geojson files based on an overpass query for a given theme
  */
 import {Utils} from "../Utils";
-
-Utils.runningFromConsole = true
-
 import {Overpass} from "../Logic/Osm/Overpass";
 import {existsSync, readFileSync, writeFileSync} from "fs";
 import {TagsFilter} from "../Logic/Tags/TagsFilter";
@@ -22,12 +19,13 @@ import FilteredLayer from "../Models/FilteredLayer";
 import FeatureSource, {FeatureSourceForLayer} from "../Logic/FeatureSource/FeatureSource";
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource";
+import Constants from "../Models/Constants";
 
 
 ScriptUtils.fixUtils()
 
 
-function createOverpassObject(theme: LayoutConfig, relationTracker: RelationsTracker) {
+function createOverpassObject(theme: LayoutConfig, relationTracker: RelationsTracker, backend: string) {
     let filters: TagsFilter[] = [];
     let extraScripts: string[] = [];
     for (const layer of theme.layers) {
@@ -58,7 +56,7 @@ function createOverpassObject(theme: LayoutConfig, relationTracker: RelationsTra
     if (filters.length + extraScripts.length === 0) {
         throw "Nothing to download! The theme doesn't declare anything to download"
     }
-    return new Overpass(new Or(filters), extraScripts, new UIEventSource<string>("https://overpass.kumi.systems/api/interpreter"), //https://overpass-api.de/api/interpreter"),
+    return new Overpass(new Or(filters), extraScripts, backend,
         new UIEventSource<number>(60), relationTracker);
 }
 
@@ -71,7 +69,7 @@ function geoJsonName(targetDir: string, x: number, y: number, z: number): string
 }
 
 /// Downloads the given feature and saves them to disk
-async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/* : {failed: number, skipped :number} */ {
+async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig, relationTracker: RelationsTracker)/* : {failed: number, skipped :number} */ {
     let downloaded = 0
     let failed = 0
     let skipped = 0
@@ -93,35 +91,28 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
                 east: Math.max(boundsArr[0][1], boundsArr[1][1]),
                 west: Math.min(boundsArr[0][1], boundsArr[1][1])
             }
+            const overpass = createOverpassObject(theme, relationTracker, Constants.defaultOverpassUrls[(downloaded + failed) % Constants.defaultOverpassUrls.length])
             const url = overpass.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
-            await ScriptUtils.DownloadJSON(url)
-                .then(json => {
-                        if (json.elements.length === 0) {
-                            console.log("Got an empty response!")
-                            if ((<string>json.remark ?? "").startsWith("runtime error")) {
-                                console.error("Got a runtime error: ", json.remark)
-                                failed++;
-                                return
-                            }
+            try {
 
-                        }
-
-
-                        console.log("Got the response - writing to ", filename)
-                        writeFileSync(filename, JSON.stringify(json, null, "  "));
+                const json = await ScriptUtils.DownloadJSON(url)
+                if (json.elements.length === 0) {
+                    console.log("Got an empty response!")
+                    if ((<string>json.remark ?? "").startsWith("runtime error")) {
+                        console.error("Got a runtime error: ", json.remark)
+                        failed++;
                     }
-                )
-                .catch(err => {
-                    console.log(url)
-                    console.log("Could not download - probably hit the rate limit; waiting a bit. (" + err + ")")
-                    failed++;
-                    return ScriptUtils.sleep(60000).then(() => console.log("Waiting is done"))
-                })
 
-            if (x < r.xend || y < r.yend) {
-                console.debug("Cooling down 10s")
-                await ScriptUtils.sleep(10000)
+                } else {
+                    console.log("Got the response - writing to ", filename)
+                    writeFileSync(filename, JSON.stringify(json, null, "  "));
+                }
+            } catch (err) {
+                console.log(url)
+                console.log("Could not download - probably hit the rate limit; waiting a bit. (" + err + ")")
+                failed++;
+                await ScriptUtils.sleep(1000)
             }
         }
     }
@@ -291,11 +282,10 @@ async function main(args: string[]) {
         return
     }
     const relationTracker = new RelationsTracker()
-    const overpass = createOverpassObject(theme, relationTracker)
 
     let failed = 0;
     do {
-        const cachingResult = await downloadRaw(targetdir, tileRange, overpass)
+        const cachingResult = await downloadRaw(targetdir, tileRange, theme, relationTracker)
         failed = cachingResult.failed
         if (failed > 0) {
             await ScriptUtils.sleep(30000)

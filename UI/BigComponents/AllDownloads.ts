@@ -39,13 +39,13 @@ export default class AllDownloads extends ScrollableFullScreen {
 
         const loading = Svg.loading_svg().SetClass("animate-rotate");
 
+        const dloadTrans = Translations.t.general.download
         const icon = new Toggle(loading, Svg.floppy_ui(), isExporting);
         const text = new Toggle(
-            new FixedUiElement("Exporting..."),
-
+            dloadTrans.exporting.Clone(),
             new Combine([
-                Translations.t.general.download.downloadAsPdf.Clone().SetClass("font-bold"),
-                Translations.t.general.download.downloadAsPdfHelper.Clone()]
+                dloadTrans.downloadAsPdf.Clone().SetClass("font-bold"),
+                dloadTrans.downloadAsPdfHelper.Clone()]
             ).SetClass("flex flex-col")
                 .onClick(() => {
                     generatePdf()

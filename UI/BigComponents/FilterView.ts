@@ -121,7 +121,6 @@ export default class FilterView extends VariableUiElement {
                     listFilterElements.map((input) => input[1].data)
                 );
 
-                console.log(listTagsFilters, oldValue)
                 flayer.appliedFilters.setData(listTagsFilters);
             })
         );

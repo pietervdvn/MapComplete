@@ -23,7 +23,10 @@ export class WikidataImageProvider extends ImageProvider {
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        const entity = await Wikidata.LoadWikidataEntry(value)
+        const entity = await Wikidata.LoadWikidataEntryAsync(value)
+        if(entity === undefined){
+            return []
+        }
        
         const allImages : Promise<ProvidedImage>[] = []
         // P18 is the claim 'depicted in this image'
@@ -32,7 +35,7 @@ export class WikidataImageProvider extends ImageProvider {
             allImages.push(...promises)
         }
         
-        const commons =entity.wikisites.get("commons")
+        const commons = entity.commons
         if (commons !== undefined) {
             const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined , commons)
             allImages.push(...promises)

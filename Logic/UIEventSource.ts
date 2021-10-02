@@ -1,4 +1,5 @@
 import {Utils} from "../Utils";
+import * as Events from "events";
 
 export class UIEventSource<T> {
 
@@ -32,14 +33,14 @@ export class UIEventSource<T> {
         return [];
     }
 
-    public static flatten<X>(source: UIEventSource<UIEventSource<X>>, possibleSources: UIEventSource<any>[]): UIEventSource<X> {
+    public static flatten<X>(source: UIEventSource<UIEventSource<X>>, possibleSources?: UIEventSource<any>[]): UIEventSource<X> {
         const sink = new UIEventSource<X>(source.data?.data);
 
         source.addCallback((latestData) => {
             sink.setData(latestData?.data);
         });
 
-        for (const possibleSource of possibleSources) {
+        for (const possibleSource of possibleSources ?? []) {
             possibleSource?.addCallback(() => {
                 sink.setData(source.data?.data);
             })
@@ -185,6 +186,25 @@ export class UIEventSource<T> {
             }
         }
     }
+
+    /**
+     * Monadic bind function
+     */
+    public bind<X>(f: ((t: T) => UIEventSource<X>)): UIEventSource<X>{
+        const sink = new UIEventSource<X>( undefined )
+        const seenEventSources = new Set<UIEventSource<X>>();
+        this.addCallbackAndRun(data => {
+            const eventSource = f(data)
+            if(eventSource === undefined){
+                sink.setData(undefined)
+            }else if(!seenEventSources.has(eventSource)){
+                eventSource.addCallbackAndRun(mappedData => sink.setData(mappedData))
+                seenEventSources.add(eventSource)
+            }
+        })
+        
+        return sink;
+    } 
 
     /**
      * Monoidal map:
