@@ -92,6 +92,7 @@ svg, img {
     width: 100%;
     height: 100%;
     display: unset;
+    vertical-align: unset;
 }
 
 .mapcontrol svg path {
@@ -177,6 +178,11 @@ li::marker {
 .subtle-background {
     background: var(--subtle-detail-color);
     color: var(--subtle-detail-color-contrast);
+}
+
+.normal-background {
+    background: var(--background-color);
+    color: var(--foreground-color)
 }
 
 .subtle-lighter {

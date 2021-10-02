@@ -61,10 +61,30 @@ export class UIEventSource<T> {
         run();
         return source;
     }
-    
+
+    /**
+     * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
+     * If the promise fails, the value will stay undefined
+     * @param promise
+     * @constructor
+     */
     public static FromPromise<T>(promise : Promise<T>): UIEventSource<T>{
         const src = new UIEventSource<T>(undefined)
         promise?.then(d => src.setData(d))
+        promise?.catch(err => console.warn("Promise failed:", err))
+        return src
+    }
+
+    /**
+     * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
+     * If the promise fails, the value will stay undefined
+     * @param promise
+     * @constructor
+     */
+    public static FromPromiseWithErr<T>(promise : Promise<T>): UIEventSource<{success: T} | {error: any}>{
+        const src = new UIEventSource<{success: T}|{error: any}>(undefined)
+        promise?.then(d => src.setData({success:d}))
+        promise?.catch(err => src.setData({error: err}))
         return src
     }
 

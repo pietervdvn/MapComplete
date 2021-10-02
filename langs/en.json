@@ -62,6 +62,7 @@
         "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback"
     },
     "general": {
+        "loading": "Loading...",
         "pdf": {
             "generatedWith": "Generated with MapComplete.osm.be",
             "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
@@ -215,6 +216,9 @@
         },
         "histogram": {
             "error_loading": "Could not load the histogram"
+        },
+        "wikipedia": {
+            "wikipediaboxTitle": "Wikipedia"
         }
     },
     "favourite": {
