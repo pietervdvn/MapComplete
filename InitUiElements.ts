@@ -480,8 +480,11 @@ export class InitUiElements {
 
 
                         const bounds = State.state.currentBounds.data
-                        const tilebbox = BBox.fromTileIndex(source.tileIndex)
-                        if (!tilebbox.overlapsWith(bounds)) {
+                        if(bounds === undefined){
+                            // Map is not yet displayed
+                            return false;
+                        }
+                        if (!source.bbox.overlapsWith(bounds)) {
                             // Not within range
                             return false
                         }

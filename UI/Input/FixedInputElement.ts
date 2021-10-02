@@ -11,11 +11,15 @@ export class FixedInputElement<T> extends InputElement<T> {
     private readonly _el: HTMLElement;
 
     constructor(rendering: BaseUIElement | string,
-                value: T,
+                value: T | UIEventSource<T>,
                 comparator: ((t0: T, t1: T) => boolean) = undefined) {
         super();
         this._comparator = comparator ?? ((t0, t1) => t0 == t1);
-        this.value = new UIEventSource<T>(value);
+        if(value instanceof UIEventSource){
+            this.value = value
+        }else{
+            this.value = new UIEventSource<T>(value);
+        }
 
         const selected = this.IsSelected;
         this._el = document.createElement("span")

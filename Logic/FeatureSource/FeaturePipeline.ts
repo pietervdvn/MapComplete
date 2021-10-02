@@ -141,18 +141,25 @@ export default class FeaturePipeline {
 
             if (source.geojsonZoomLevel === undefined) {
                 // This is a 'load everything at once' geojson layer
-                // We split them up into tiles anyway
                 const src = new GeoJsonSource(filteredLayer)
-                TiledFeatureSource.createHierarchy(src, {
-                    layer: src.layer,
-                    minZoomLevel: 14,
-                    dontEnforceMinZoom: true,
-                    registerTile: (tile) => {
-                        new RegisteringAllFromFeatureSourceActor(tile)
-                        perLayerHierarchy.get(id).registerTile(tile)
-                        tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
-                    }
-                })
+
+                if (source.isOsmCacheLayer) {
+                    // We split them up into tiles anyway as it is an OSM source
+                    TiledFeatureSource.createHierarchy(src, {
+                        layer: src.layer,
+                        minZoomLevel: 14,
+                        dontEnforceMinZoom: true,
+                        registerTile: (tile) => {
+                            new RegisteringAllFromFeatureSourceActor(tile)
+                            perLayerHierarchy.get(id).registerTile(tile)
+                            tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                        }
+                    })
+                }else{
+                    new RegisteringAllFromFeatureSourceActor(src)
+                    perLayerHierarchy.get(id).registerTile(src)
+                    src.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(src))
+                }
             } else {
                 new DynamicGeoJsonTileSource(
                     filteredLayer,
@@ -312,9 +319,9 @@ export default class FeaturePipeline {
             if (zoom < 8) {
                 zoom = zoom + 2
             }
-            
+
             const range = bbox.containingTileRange(zoom)
-            if(range.total > 100){
+            if (range.total > 100) {
                 return false
             }
             const self = this;

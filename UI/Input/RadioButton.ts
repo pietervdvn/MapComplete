@@ -179,26 +179,4 @@ export class RadioButton<T> extends InputElement<T> {
         return form;
     }
 
-    /*
-      public ShowValue(t: T): boolean {
-          if (t === undefined) {
-              return false;
-          }
-          if (!this.IsValid(t)) {
-              return false;
-          }
-          // We check that what is selected matches the previous rendering
-          for (let i = 0; i < this._elements.length; i++) {
-              const e = this._elements[i];
-              if (e.IsValid(t)) {
-                  this._selectedElementIndex.setData(i);
-                  e.GetValue().setData(t);
-                  const radio = document.getElementById(this.IdFor(i));
-                  // @ts-ignore
-                  radio?.checked = true;
-                  return;
-              }
-  
-          }
-      }*/
 }

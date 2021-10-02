@@ -69,6 +69,50 @@ export class UIEventSource<T> {
     }
 
     /**
+     * Given a UIEVentSource with a list, returns a new UIEventSource which is only updated if the _contents_ of the list are different.
+     * E.g.
+     * const src = new UIEventSource([1,2,3])
+     * const stable = UIEventSource.ListStabilized(src)
+     * src.addCallback(_ => console.log("src pinged"))
+     * stable.addCallback(_ => console.log("stable pinged))
+     * src.setDate([...src.data])
+     * 
+     * This will only trigger 'src pinged'
+     * 
+     * @param src
+     * @constructor
+     */
+    public static ListStabilized<T>(src: UIEventSource<T[]>) : UIEventSource<T[]>{
+        
+        const stable = new UIEventSource<T[]>(src.data)
+        src.addCallback(list => {
+            if(list === undefined){
+                stable.setData(undefined)
+                return;
+            }
+            const oldList = stable.data
+            if(oldList === list){
+                return;
+            }
+            if(oldList.length !== list.length){
+                stable.setData(list);
+                return;
+            }
+
+            for (let i = 0; i < list.length; i++) {
+                if(oldList[i] !== list[i]){
+                    stable.setData(list);
+                    return;
+                }
+            }
+            
+            // No actual changes, so we don't do anything
+            return;
+        })
+        return stable
+    }
+    
+    /**
      * Adds a callback
      *
      * If the result of the callback is 'true', the callback is considered finished and will be removed again
@@ -88,7 +132,7 @@ export class UIEventSource<T> {
 
     public addCallbackAndRun(callback: ((latestData: T) => (boolean | void | any))): UIEventSource<T> {
         const doDeleteCallback = callback(this.data);
-        if (!doDeleteCallback) {
+        if (doDeleteCallback !== true) {
             this.addCallback(callback);
         }
         return this;
