@@ -44,7 +44,6 @@ export class WikimediaImageProvider extends ImageProvider {
         if (continueParameter !== undefined) {
             url = `${url}&cmcontinue=${continueParameter}`;
         }
-        console.debug("Loading a wikimedia category: ", url)
         const response = await Utils.downloadJson(url)
         const members = response.query?.categorymembers ?? [];
         const imageOverview: string[] = members.map(member => member.title);
@@ -135,8 +134,7 @@ export class WikimediaImageProvider extends ImageProvider {
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        
-        if(key !== this.commons_key && !value.startsWith(WikimediaImageProvider.commonsPrefix)){
+        if(key !== undefined && key !== this.commons_key && !value.startsWith(WikimediaImageProvider.commonsPrefix)){
             return []
         }
         

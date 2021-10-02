@@ -218,7 +218,10 @@
             "error_loading": "Could not load the histogram"
         },
         "wikipedia": {
-            "wikipediaboxTitle": "Wikipedia"
+            "wikipediaboxTitle": "Wikipedia",
+            "failed":"Loading the wikipedia entry failed",
+            "loading": "Loading Wikipedia...",
+            "noWikipediaPage": "This wikidata item has no corresponding wikipedia page yet."
         }
     },
     "favourite": {

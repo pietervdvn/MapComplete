@@ -225,7 +225,6 @@ export default class ShowDataLayer {
         popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type}</div>`)
 
         leafletLayer.on("popupopen", () => {
-            console.trace(`Opening the popup for ${feature.properties.id} ${feature.geometry.type}`)
             if (infobox === undefined) {
                 const tags = State.state.allElements.getEventSourceById(feature.properties.id);
                 infobox = new FeatureInfoBox(tags, layer);
@@ -239,7 +238,9 @@ export default class ShowDataLayer {
             }
             infobox.AttachTo(id)
             infobox.Activate();
-            State.state.selectedElement.setData(feature)
+            if (State.state?.selectedElement?.data?.properties?.id !== feature.properties.id) {
+                State.state.selectedElement.setData(feature)
+            }
 
         });
 

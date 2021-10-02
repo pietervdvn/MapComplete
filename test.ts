@@ -1,14 +1,8 @@
-import Wikipedia from "./Logic/Web/Wikipedia";
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
+import Wikidata from "./Logic/Web/Wikidata";
 import WikipediaBox from "./UI/WikipediaBox";
-import Loading from "./UI/Base/Loading";
+import Locale from "./UI/i18n/Locale";
+import LanguagePicker from "./UI/LanguagePicker";
 
-
-new WikipediaBox({
-    pagename: "Poertoren",
-    language: "nl"
-})
-    .SetStyle("max-height: 20rem;")
+new WikipediaBox("Q177").SetStyle("max-height: 25rem")
     .AttachTo("maindiv")
-
-
+LanguagePicker.CreateLanguagePicker(["en","nl","fr","de"]).AttachTo("extradiv")

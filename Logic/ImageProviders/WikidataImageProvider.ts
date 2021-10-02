@@ -3,6 +3,7 @@ import ImageProvider, {ProvidedImage} from "./ImageProvider";
 import BaseUIElement from "../../UI/BaseUIElement";
 import Svg from "../../Svg";
 import {WikimediaImageProvider} from "./WikimediaImageProvider";
+import Wikidata from "../Web/Wikidata";
 
 export class WikidataImageProvider extends ImageProvider {
 
@@ -22,31 +23,18 @@ export class WikidataImageProvider extends ImageProvider {
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        const wikidataUrl = "https://www.wikidata.org/wiki/"
-        if (value.startsWith(wikidataUrl)) {
-            value = value.substring(wikidataUrl.length)
-        }
-        if(value.startsWith("http")){
-            // Probably some random link in the image field - we skip it
-            return undefined
-        }
-        if (!value.startsWith("Q")) {
-            value = "Q" + value
-        }
-        const url = "https://www.wikidata.org/wiki/Special:EntityData/" + value + ".json";
-        const response = await Utils.downloadJson(url)
-        const entity = response.entities[value];
-        const commons = entity.sitelinks.commonswiki;
+        const entity = await Wikidata.LoadWikidataEntry(value)
+       
+        const allImages : Promise<ProvidedImage>[] = []
         // P18 is the claim 'depicted in this image'
-        const image = entity.claims.P18?.[0]?.mainsnak?.datavalue?.value;
-        const allImages = []
-        if (image !== undefined) {
-            // We found a 'File://' 
-            const promises = await WikimediaImageProvider.singleton.ExtractUrls(key, image)
+        for (const img of Array.from(entity.claims.get("P18") ?? [])) {
+            const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined, img)
             allImages.push(...promises)
         }
+        
+        const commons =entity.wikisites.get("commons")
         if (commons !== undefined) {
-            const promises = await WikimediaImageProvider.singleton.ExtractUrls(commons, image)
+            const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined , commons)
             allImages.push(...promises)
         }
         return allImages

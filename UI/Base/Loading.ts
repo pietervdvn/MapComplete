@@ -9,9 +9,9 @@ export default class Loading extends Combine {
         const t = Translations.T(msg ) ?? Translations.t.general.loading.Clone();
         t.SetClass("pl-2")
         super([
-            Svg.loading_svg().SetClass("animate-spin").SetStyle("width: 1.5rem; height: 1.5rem; margin-bottom: 4px;"),
+            Svg.loading_svg().SetClass("animate-spin").SetStyle("width: 1.5rem; height: 1.5rem;"),
             t 
         ])
-        this.SetClass("flex m-1")
+        this.SetClass("flex p-1")
     }
 }

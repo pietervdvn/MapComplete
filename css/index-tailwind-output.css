@@ -812,10 +812,6 @@ video {
   margin: 0px;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .m-2 {
   margin: 0.5rem;
 }
@@ -824,8 +820,8 @@ video {
   margin: 0.75rem;
 }
 
-.m-6 {
-  margin: 1.5rem;
+.m-4 {
+  margin: 1rem;
 }
 
 .my-2 {
@@ -852,8 +848,8 @@ video {
   margin-left: 0.75rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mb-2 {
@@ -892,6 +888,10 @@ video {
   margin-top: 0px;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -912,16 +912,8 @@ video {
   margin-bottom: 0.25rem;
 }
 
-.mr-3 {
-  margin-right: 0.75rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
 }
 
 .box-border {
@@ -1794,8 +1786,6 @@ svg, img {
   box-sizing: content-box;
   width: 100%;
   height: 100%;
-  display: unset;
-  vertical-align: unset;
 }
 
 .mapcontrol svg path {

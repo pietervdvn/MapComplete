@@ -26,6 +26,7 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
 import Minimap from "./Base/Minimap";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
+import WikipediaBox from "./WikipediaBox";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -83,6 +84,20 @@ export default class SpecialVisualizations {
                 constr: (state: State, tags, args) => {
                     return new ImageUploadFlow(tags, args[0])
                 }
+            },
+            {
+                funcName: "wikipedia",
+                docs: "A box showing the corresponding wikipedia article - based on the wikidata tag",
+                args: [
+                    {
+                        name: "keyToShowWikipediaFor",
+                        doc: "Use the wikidata entry from this key to show the wikipedia article for",
+                        defaultValue: "wikidata"
+                    }
+                ],
+                example: "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
+                constr: (_, tagsSource, args) =>
+                      new WikipediaBox( tagsSource.map(tags => tags[args[0]]))
             },
             {
                 funcName: "minimap",
@@ -153,10 +168,10 @@ export default class SpecialVisualizations {
                         }
                     })
 
-                   new ShowDataMultiLayer(
+                    new ShowDataMultiLayer(
                         {
                             leafletMap: minimap["leafletMap"],
-                            enablePopups : false,
+                            enablePopups: false,
                             zoomToFeatures: true,
                             layers: State.state.filteredLayers,
                             features: new StaticFeatureSource(featuresToShow, true)
@@ -351,17 +366,17 @@ export default class SpecialVisualizations {
                     const key = args [0]
                     return new VariableUiElement(
                         tagSource.map(tags => tags[key]).map(value => {
-                                if (value === undefined) {
-                                    return undefined
-                                }
-                                const allUnits = [].concat(...state.layoutToUse.layers.map(lyr => lyr.units))
-                                const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
-                                if (unit === undefined) {
-                                    return value;
-                                }
-                                return unit.asHumanLongValue(value);
+                            if (value === undefined) {
+                                return undefined
+                            }
+                            const allUnits = [].concat(...state.layoutToUse.layers.map(lyr => lyr.units))
+                            const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
+                            if (unit === undefined) {
+                                return value;
+                            }
+                            return unit.asHumanLongValue(value);
 
-                            })
+                        })
                     )
                 }
             },
@@ -411,8 +426,8 @@ There are also some technicalities in your theme to keep in mind:
                         }
                         return kv
                     })
-                    const rewrittenTags : UIEventSource<Tag[]> = tagSource.map(tags => {
-                        const newTags : Tag [] = []
+                    const rewrittenTags: UIEventSource<Tag[]> = tagSource.map(tags => {
+                        const newTags: Tag [] = []
                         for (const [key, value] of tgsSpec) {
                             if (value.startsWith('$')) {
                                 const origKey = value.substring(1)
@@ -446,9 +461,9 @@ There are also some technicalities in your theme to keep in mind:
                 [
                     new Title(viz.funcName, 3),
                     viz.docs,
-                    new Table(["name", "default", "description"],
+                    viz.args.length > 0 ? new Table(["name", "default", "description"],
                         viz.args.map(arg => [arg.name, arg.defaultValue ?? "undefined", arg.doc])
-                    ),
+                    ) : undefined,
                     new Title("Example usage", 4),
                     new FixedUiElement(
                         viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
