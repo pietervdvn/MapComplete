@@ -1,0 +1,86 @@
+{
+  "id": "etymology",
+  "title": {
+    "en": "Open Etymology Map",
+    "nl": "Open Etymology-kaart"
+  },
+  "shortDescription": {
+    "en": "What is the origin of a toponym?",
+    "nl": "Wat is de oorsprong van een plaatsnaam?"
+  },
+  "description": {
+    "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. The information comes from Wpikipedia.",
+    "nl": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. De informatie komt uit wikipedia."
+  },
+  "language": [
+    "en",
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/svg/bug.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 2,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "has_a_name",
+      "name": {
+        "en": "Has etymolgy",
+        "nl": "Heeft etymology info"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "or": [
+            "name:etymology:wikidata~*",
+            "name:etymology~*"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "*": "{name}"
+        }
+      },
+      "description": {
+        "en": "All objects which have an etymology known",
+        "nl": "Alle lagen met een gelinkt etymology"
+      },
+      "tagRenderings": [
+        {
+          "id": "simple etymology",
+          "render": {
+            "en": "Named after {name:etymology}",
+            "nl": "Vernoemd naar {name:etymology}"
+          },
+          "freeform": {
+            "key": "name:etymology"
+          }
+        },
+        {
+          "id": "wikipedia-etymology",
+          "render": {
+            "*": "{wikipedia(name:etymology:wikidata):max-height:20rem}"
+          }
+        }
+      ],
+      "icon": {
+        "render": "./assets/svg/bug.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": []
+    }
+  ],
+  "roamingRenderings": []
+}
