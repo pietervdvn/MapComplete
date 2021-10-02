@@ -48,7 +48,7 @@ export default class TagRenderingQuestion extends VariableUiElement {
         const applicableMappings =
             UIEventSource.ListStabilized(tags.map(tags => {
                 const applicableMappings : {if: TagsFilter, then: any, ifnot?: TagsFilter}[] = []
-                for (const mapping of configuration.mappings) {
+                for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
                     }
