@@ -111,14 +111,14 @@ export class Changes {
     }
 
     private async flushChangesAsync(flushreason: string = undefined): Promise<void> {
-        console.log("Beginning upload... " + flushreason ?? "");
-        // At last, we build the changeset and upload
         const self = this;
-        const pending = self.pendingChanges.data;
-        const neededIds = Changes.GetNeededIds(pending)
-        const osmObjects = await Promise.all(neededIds.map(id => OsmObject.DownloadObjectAsync(id)));
-        console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
         try {
+            console.log("Beginning upload... " + flushreason ?? "");
+            // At last, we build the changeset and upload
+            const pending = self.pendingChanges.data;
+            const neededIds = Changes.GetNeededIds(pending)
+            const osmObjects = await Promise.all(neededIds.map(id => OsmObject.DownloadObjectAsync(id)));
+            console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
             const changes: {
                 newObjects: OsmObject[],
                 modifiedObjects: OsmObject[]
@@ -311,6 +311,6 @@ export class Changes {
     }
 
     public registerIdRewrites(mappings: Map<string, string>): void {
-        
+
     }
 }

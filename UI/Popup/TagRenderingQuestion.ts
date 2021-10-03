@@ -66,9 +66,6 @@ export default class TagRenderingQuestion extends Combine {
                 return applicableMappings
             }));
 
-        applicableMappingsSrc.addCallbackAndRun(appl => console.log("Currently applicable renderings are:", appl.map(m => m.then.txt).join(", ")))
-
-
         if (configuration === undefined) {
             throw "A question is needed for a question visualization"
         }
@@ -84,12 +81,8 @@ export default class TagRenderingQuestion extends Combine {
             ))
 
 
-        //  inputElement.GetValue().addCallbackAndRun(s => console.trace(configuration.question.txt, "Current selection is ", s))
-
         const save = () => {
-            console.log("OnSaveTriggered", inputElement)
             const selection = inputElement.GetValue().data;
-            console.log("Saving changes", selection)
             if (selection) {
                 (State.state?.changes ?? new Changes())
                     .applyAction(new ChangeTagAction(
