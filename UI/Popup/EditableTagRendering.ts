@@ -25,6 +25,7 @@ export default class EditableTagRendering extends Toggle {
         const renderingIsShown = tags.map(tags =>
             configuration.IsKnown(tags) &&
             (configuration?.condition?.matchesProperties(tags) ?? true))
+        
         super(
             new Lazy(() => EditableTagRendering.CreateRendering(tags, configuration, units, editMode)),
             undefined,
@@ -49,8 +50,8 @@ export default class EditableTagRendering extends Toggle {
             ]).SetClass("flex justify-between w-full")
 
 
-            const question = new Lazy(() => {
-                return new TagRenderingQuestion(tags, configuration,
+            const question = new Lazy(() =>
+                new TagRenderingQuestion(tags, configuration,
                     {
                         units: units,
                         cancelButton: Translations.t.general.cancel.Clone()
@@ -61,10 +62,7 @@ export default class EditableTagRendering extends Toggle {
                         afterSave: () => {
                             editMode.setData(false)
                         }
-                    })
-
-
-            })
+                    }))
 
 
             rendering = new Toggle(

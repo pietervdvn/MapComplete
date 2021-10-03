@@ -7,7 +7,6 @@ export class VariableUiElement extends BaseUIElement {
     constructor(contents: UIEventSource<string | BaseUIElement | BaseUIElement[]>) {
         super();
         this._contents = contents;
-
     }
 
     protected InnerConstructElement(): HTMLElement {

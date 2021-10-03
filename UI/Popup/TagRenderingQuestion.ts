@@ -26,6 +26,7 @@ import InputElementWrapper from "../Input/InputElementWrapper";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {Unit} from "../../Models/Unit";
+import VariableInputElement from "../Input/VariableInputElement";
 
 /**
  * Shows the question element.
@@ -45,48 +46,29 @@ export default class TagRenderingQuestion extends Combine {
     ) {
 
 
-      /*  const applicableMappings =
+        const applicableMappingsSrc =
             UIEventSource.ListStabilized(tags.map(tags => {
-                const applicableMappings : {if: TagsFilter, then: any, ifnot?: TagsFilter}[] = []
+                const applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter }[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
                     }
                     if (mapping.hideInAnswer === false || mapping.hideInAnswer === undefined) {
-                       applicableMappings.push(mapping)
+                        applicableMappings.push(mapping)
                         continue
                     }
-                    const condition = <TagsFilter> mapping.hideInAnswer;
+                    const condition = <TagsFilter>mapping.hideInAnswer;
                     const isShown = !condition.matchesProperties(tags)
-                    if(isShown){
+                    if (isShown) {
                         applicableMappings.push(mapping)
                     }
                 }
                 return applicableMappings
             }));
 
-        super(
-            applicableMappings.map(applicableMappings => {
-                return TagRenderingQuestion.GenerateFullQuestion(tags, applicableMappings, configuration, options)
-            })
-        )*/
-        
-        const applicableMappings =  Utils.NoNull((configuration.mappings??[]).filter(mapping => mapping.hideInAnswer !== undefined))
-        
-        super([TagRenderingQuestion.GenerateFullQuestion(tags, applicableMappings, configuration, options)])
-    }
-    
-    private static GenerateFullQuestion(tags: UIEventSource<any>,
-                                        applicableMappings:  {if: TagsFilter, then: any, ifnot?: TagsFilter}[],
-                                        configuration: TagRenderingConfig,
-                                        options?: {
-                                            units?: Unit[],
-                                            afterSave?: () => void,
-                                            cancelButton?: BaseUIElement,
-                                            saveButtonConstr?: (src: UIEventSource<TagsFilter>) => BaseUIElement,
-                                            bottomText?: (src: UIEventSource<TagsFilter>) => BaseUIElement
-                                        }
-    ) {
+        applicableMappingsSrc.addCallbackAndRun(appl => console.log("Currently applicable renderings are:", appl.map(m => m.then.txt).join(", ")))
+
+
         if (configuration === undefined) {
             throw "A question is needed for a question visualization"
         }
@@ -96,13 +78,14 @@ export default class TagRenderingQuestion extends Combine {
             .SetClass("question-text");
 
 
-        const inputElement: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableMappings, applicableUnit, tags)
+        const inputElement: InputElement<TagsFilter> =
+            new VariableInputElement(applicableMappingsSrc.map(applicableMappings => 
+                TagRenderingQuestion.GenerateInputElement(configuration, applicableMappings, applicableUnit, tags)
+            ))
 
-        if (inputElement === undefined) {
-            console.error("MultiAnswer failed - probably not a single option was possible", configuration)
-            throw "MultiAnswer failed - probably not a single option was possible"
-        }
-        inputElement.GetValue().addCallbackAndRun(s => console.trace("Current selection is ", s))
+
+        //  inputElement.GetValue().addCallbackAndRun(s => console.trace(configuration.question.txt, "Current selection is ", s))
+
         const save = () => {
             console.log("OnSaveTriggered", inputElement)
             const selection = inputElement.GetValue().data;
@@ -112,7 +95,7 @@ export default class TagRenderingQuestion extends Combine {
                     .applyAction(new ChangeTagAction(
                         tags.data.id, selection, tags.data
                     )).then(_ => {
-                        console.log("Tagchanges applied")
+                    console.log("Tagchanges applied")
                 })
                 if (options.afterSave) {
                     options.afterSave();
@@ -151,25 +134,24 @@ export default class TagRenderingQuestion extends Combine {
                 )
             ).SetClass("block break-all")
         }
-        return new Combine([
+        super([
             question,
             inputElement,
             options.cancelButton,
             saveButton,
-            bottomTags]
-        ).SetClass("question")
-
+            bottomTags])
+        this.SetClass("question")
     }
 
-    private static GenerateInputElement(configuration: TagRenderingConfig, 
-                                        applicableMappings: {if: TagsFilter, then: any, ifnot?: TagsFilter}[],
+
+    private static GenerateInputElement(configuration: TagRenderingConfig,
+                                        applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter }[],
                                         applicableUnit: Unit,
                                         tagsSource: UIEventSource<any>)
-            : InputElement<TagsFilter> {
+        : InputElement<TagsFilter> {
 
         // FreeForm input will be undefined if not present; will already contain a special input element if applicable
         const ff = TagRenderingQuestion.GenerateFreeform(configuration, applicableUnit, tagsSource);
-
 
 
         const hasImages = applicableMappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
@@ -189,7 +171,7 @@ export default class TagRenderingQuestion extends Combine {
                 // The multianswer will do the ifnot configuration themself
                 return []
             }
-                
+
             const negativeMappings = []
 
             for (let i = 0; i < applicableMappings.length; i++) {
@@ -203,7 +185,7 @@ export default class TagRenderingQuestion extends Combine {
 
         }
 
-     
+
         if (applicableMappings.length < 8 || configuration.multiAnswer || hasImages || ifNotsPresent) {
             inputEls = (applicableMappings ?? []).map((mapping, i) => TagRenderingQuestion.GenerateMappingElement(tagsSource, mapping, allIfNotsExcept(i)));
             inputEls = Utils.NoNull(inputEls);
@@ -226,6 +208,9 @@ export default class TagRenderingQuestion extends Combine {
 
 
         if (inputEls.length == 0) {
+            if(ff === undefined){
+                throw "Error: could not generate a question: freeform and all mappings are undefined"
+            }
             return ff;
         }
 
@@ -358,7 +343,7 @@ export default class TagRenderingQuestion extends Combine {
 
         let tagging: TagsFilter = mapping.if;
         if (ifNot !== undefined) {
-            tagging =  new And([mapping.if, ...ifNot])
+            tagging = new And([mapping.if, ...ifNot])
         }
 
         return new FixedInputElement(
