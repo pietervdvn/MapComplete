@@ -70,7 +70,10 @@ export default class TagRenderingQuestion extends Combine {
                 return TagRenderingQuestion.GenerateFullQuestion(tags, applicableMappings, configuration, options)
             })
         )*/
-        super([TagRenderingQuestion.GenerateFullQuestion(tags, (configuration.mappings??[]).filter(mapping => mapping.hideInAnswer !== undefined), configuration, options)])
+        
+        const applicableMappings =  Utils.NoNull((configuration.mappings??[]).filter(mapping => mapping.hideInAnswer !== undefined))
+        
+        super([TagRenderingQuestion.GenerateFullQuestion(tags, applicableMappings, configuration, options)])
     }
     
     private static GenerateFullQuestion(tags: UIEventSource<any>,
@@ -163,6 +166,13 @@ export default class TagRenderingQuestion extends Combine {
                                         applicableUnit: Unit,
                                         tagsSource: UIEventSource<any>)
             : InputElement<TagsFilter> {
+
+        // FreeForm input will be undefined if not present; will already contain a special input element if applicable
+        const ff = TagRenderingQuestion.GenerateFreeform(configuration, applicableUnit, tagsSource);
+
+
+
+        const hasImages = applicableMappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
         let inputEls: InputElement<TagsFilter>[];
 
 
@@ -173,11 +183,11 @@ export default class TagRenderingQuestion extends Combine {
                 return undefined
             }
             if (!ifNotsPresent) {
-                return undefined
+                return []
             }
             if (configuration.multiAnswer) {
                 // The multianswer will do the ifnot configuration themself
-                return undefined
+                return []
             }
                 
             const negativeMappings = []
@@ -193,9 +203,7 @@ export default class TagRenderingQuestion extends Combine {
 
         }
 
-        const ff = TagRenderingQuestion.GenerateFreeform(configuration, applicableUnit, tagsSource);
-        const hasImages = applicableMappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
-
+     
         if (applicableMappings.length < 8 || configuration.multiAnswer || hasImages || ifNotsPresent) {
             inputEls = (applicableMappings ?? []).map((mapping, i) => TagRenderingQuestion.GenerateMappingElement(tagsSource, mapping, allIfNotsExcept(i)));
             inputEls = Utils.NoNull(inputEls);
@@ -226,7 +234,7 @@ export default class TagRenderingQuestion extends Combine {
         }
 
         if (configuration.multiAnswer) {
-            return TagRenderingQuestion.GenerateMultiAnswer(configuration, inputEls, ff, configuration.mappings.map(mp => mp.ifnot))
+            return TagRenderingQuestion.GenerateMultiAnswer(configuration, inputEls, ff, applicableMappings.map(mp => mp.ifnot))
         } else {
             return new RadioButton(inputEls, {selectFirstAsDefault: false})
         }

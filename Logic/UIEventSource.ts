@@ -69,7 +69,7 @@ export class UIEventSource<T> {
      * @param promise
      * @constructor
      */
-    public static FromPromise<T>(promise : Promise<T>): UIEventSource<T>{
+    public static FromPromise<T>(promise: Promise<T>): UIEventSource<T> {
         const src = new UIEventSource<T>(undefined)
         promise?.then(d => src.setData(d))
         promise?.catch(err => console.warn("Promise failed:", err))
@@ -82,9 +82,9 @@ export class UIEventSource<T> {
      * @param promise
      * @constructor
      */
-    public static FromPromiseWithErr<T>(promise : Promise<T>): UIEventSource<{success: T} | {error: any}>{
-        const src = new UIEventSource<{success: T}|{error: any}>(undefined)
-        promise?.then(d => src.setData({success:d}))
+    public static FromPromiseWithErr<T>(promise: Promise<T>): UIEventSource<{ success: T } | { error: any }> {
+        const src = new UIEventSource<{ success: T } | { error: any }>(undefined)
+        promise?.then(d => src.setData({success: d}))
         promise?.catch(err => src.setData({error: err}))
         return src
     }
@@ -97,42 +97,42 @@ export class UIEventSource<T> {
      * src.addCallback(_ => console.log("src pinged"))
      * stable.addCallback(_ => console.log("stable pinged))
      * src.setDate([...src.data])
-     * 
+     *
      * This will only trigger 'src pinged'
-     * 
+     *
      * @param src
      * @constructor
      */
-    public static ListStabilized<T>(src: UIEventSource<T[]>) : UIEventSource<T[]>{
-        
+    public static ListStabilized<T>(src: UIEventSource<T[]>): UIEventSource<T[]> {
+
         const stable = new UIEventSource<T[]>(src.data)
         src.addCallback(list => {
-            if(list === undefined){
+            if (list === undefined) {
                 stable.setData(undefined)
                 return;
             }
             const oldList = stable.data
-            if(oldList === list){
+            if (oldList === list) {
                 return;
             }
-            if(oldList.length !== list.length){
+            if (oldList.length !== list.length) {
                 stable.setData(list);
                 return;
             }
 
             for (let i = 0; i < list.length; i++) {
-                if(oldList[i] !== list[i]){
+                if (oldList[i] !== list[i]) {
                     stable.setData(list);
                     return;
                 }
             }
-            
+
             // No actual changes, so we don't do anything
             return;
         })
         return stable
     }
-    
+
     /**
      * Adds a callback
      *
@@ -190,21 +190,26 @@ export class UIEventSource<T> {
     /**
      * Monadic bind function
      */
-    public bind<X>(f: ((t: T) => UIEventSource<X>)): UIEventSource<X>{
-        const sink = new UIEventSource<X>( undefined )
+    public bind<X>(f: ((t: T) => UIEventSource<X>)): UIEventSource<X> {
+        const mapped = this.map(f)
+        const sink = new UIEventSource<X>(undefined)
         const seenEventSources = new Set<UIEventSource<X>>();
-        this.addCallbackAndRun(data => {
-            const eventSource = f(data)
-            if(eventSource === undefined){
+        mapped.addCallbackAndRun(newEventSource => {
+            
+            if (newEventSource === undefined) {
                 sink.setData(undefined)
-            }else if(!seenEventSources.has(eventSource)){
-                eventSource.addCallbackAndRun(mappedData => sink.setData(mappedData))
-                seenEventSources.add(eventSource)
+            } else if (!seenEventSources.has(newEventSource)) {
+                seenEventSources.add(newEventSource)
+                newEventSource.addCallbackAndRun(resultData => {
+                    if (mapped.data === newEventSource) {
+                        sink.setData(resultData);
+                    }
+                })
             }
         })
-        
+
         return sink;
-    } 
+    }
 
     /**
      * Monoidal map:
