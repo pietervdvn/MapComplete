@@ -13,6 +13,7 @@
     "start:prepare": "ts-node scripts/generateLayerOverview.ts --no-fail && npm run increase-memory",
     "start:parallel:parcel": "parcel *.html UI/** Logic/** assets/*.json assets/svg/* assets/generated/* assets/layers/*/*.svg assets/layers/*/*.jpg   assets/layers/*/*.png assets/tagRenderings/*.json assets/themes/*/*.svg assets/themes/*/*.jpg assets/themes/*/*.png vendor/* vendor/*/*",
     "start:parallel:tailwindcli": "tailwindcss -i index.css -o css/index-tailwind-output.css --watch",
+    "generate:css": "tailwindcss -i index.css -o css/index-tailwind-output.css",
     "test": "ts-node test/TestAll.ts",
     "init": "npm ci && npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean",
     "add-weblate-upstream": "git remote add weblate-layers https://hosted.weblate.org/git/mapcomplete/layer-translations/ ; git remote update weblate-layers",

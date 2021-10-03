@@ -50,7 +50,7 @@ export default class EditableTagRendering extends Toggle {
 
 
             const question = new Lazy(() => {
-                return   new TagRenderingQuestion(tags, configuration,
+                return new TagRenderingQuestion(tags, configuration,
                     {
                         units: units,
                         cancelButton: Translations.t.general.cancel.Clone()

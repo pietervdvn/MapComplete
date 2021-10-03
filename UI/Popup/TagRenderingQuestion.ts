@@ -31,7 +31,7 @@ import {Unit} from "../../Models/Unit";
  * Shows the question element.
  * Note that the value _migh_ already be known, e.g. when selected or when changing the value
  */
-export default class TagRenderingQuestion extends VariableUiElement {
+export default class TagRenderingQuestion extends Combine {
 
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
@@ -45,7 +45,7 @@ export default class TagRenderingQuestion extends VariableUiElement {
     ) {
 
 
-        const applicableMappings =
+      /*  const applicableMappings =
             UIEventSource.ListStabilized(tags.map(tags => {
                 const applicableMappings : {if: TagsFilter, then: any, ifnot?: TagsFilter}[] = []
                 for (const mapping of configuration.mappings ?? []) {
@@ -69,7 +69,8 @@ export default class TagRenderingQuestion extends VariableUiElement {
             applicableMappings.map(applicableMappings => {
                 return TagRenderingQuestion.GenerateFullQuestion(tags, applicableMappings, configuration, options)
             })
-        )
+        )*/
+        super([TagRenderingQuestion.GenerateFullQuestion(tags, (configuration.mappings??[]).filter(mapping => mapping.hideInAnswer !== undefined), configuration, options)])
     }
     
     private static GenerateFullQuestion(tags: UIEventSource<any>,
@@ -98,17 +99,21 @@ export default class TagRenderingQuestion extends VariableUiElement {
             console.error("MultiAnswer failed - probably not a single option was possible", configuration)
             throw "MultiAnswer failed - probably not a single option was possible"
         }
-        const save = async () => {
+        inputElement.GetValue().addCallbackAndRun(s => console.trace("Current selection is ", s))
+        const save = () => {
+            console.log("OnSaveTriggered", inputElement)
             const selection = inputElement.GetValue().data;
+            console.log("Saving changes", selection)
             if (selection) {
-                await (State.state?.changes ?? new Changes())
+                (State.state?.changes ?? new Changes())
                     .applyAction(new ChangeTagAction(
                         tags.data.id, selection, tags.data
-                    ))
-            }
-
-            if (options.afterSave) {
-                options.afterSave();
+                    )).then(_ => {
+                        console.log("Tagchanges applied")
+                })
+                if (options.afterSave) {
+                    options.afterSave();
+                }
             }
         }
 
@@ -155,13 +160,15 @@ export default class TagRenderingQuestion extends VariableUiElement {
 
     private static GenerateInputElement(configuration: TagRenderingConfig, 
                                         applicableMappings: {if: TagsFilter, then: any, ifnot?: TagsFilter}[],
-                                        applicableUnit: Unit, tagsSource: UIEventSource<any>): InputElement<TagsFilter> {
+                                        applicableUnit: Unit,
+                                        tagsSource: UIEventSource<any>)
+            : InputElement<TagsFilter> {
         let inputEls: InputElement<TagsFilter>[];
 
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
 
-        function allIfNotsExcept(excludeIndex: number): UIEventSource<TagsFilter[]> {
+        function allIfNotsExcept(excludeIndex: number): TagsFilter[] {
             if (configuration.mappings === undefined || configuration.mappings.length === 0) {
                 return undefined
             }
@@ -172,34 +179,17 @@ export default class TagRenderingQuestion extends VariableUiElement {
                 // The multianswer will do the ifnot configuration themself
                 return undefined
             }
-            return tagsSource.map(currentTags => {
-                const negativeMappings = []
+                
+            const negativeMappings = []
 
-                for (let i = 0; i < configuration.mappings.length; i++) {
-                    const mapping = configuration.mappings[i];
-                    if (i === excludeIndex || mapping.ifnot === undefined) {
-                        continue
-                    }
-
-                    const hidden = mapping.hideInAnswer
-                    if (hidden === undefined) {
-                        negativeMappings.push(mapping.ifnot)
-                        continue
-                    }
-                    if (hidden === true) {
-                        continue
-                    }
-
-                    if ((<TagsFilter>hidden).matchesProperties(currentTags)) {
-                        // This option is currently hidden
-                        continue
-                    }
-                    negativeMappings.push(mapping.ifnot)
-
+            for (let i = 0; i < applicableMappings.length; i++) {
+                const mapping = applicableMappings[i];
+                if (i === excludeIndex || mapping.ifnot === undefined) {
+                    continue
                 }
-
-                return Utils.NoNull(negativeMappings)
-            })
+                negativeMappings.push(mapping.ifnot)
+            }
+            return Utils.NoNull(negativeMappings)
 
         }
 
@@ -213,7 +203,7 @@ export default class TagRenderingQuestion extends VariableUiElement {
             const dropdown: InputElement<TagsFilter> = new DropDown("",
                 applicableMappings.map((mapping, i) => {
                     return {
-                        value: new And([mapping.if, ...allIfNotsExcept(i).data]),
+                        value: new And([mapping.if, ...allIfNotsExcept(i)]),
                         shown: Translations.WT(mapping.then).Clone()
                     }
                 })
@@ -356,11 +346,11 @@ export default class TagRenderingQuestion extends VariableUiElement {
         mapping: {
             if: TagsFilter,
             then: Translation,
-        }, ifNot?: UIEventSource<TagsFilter[]>): InputElement<TagsFilter> {
+        }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
 
-        let tagging: TagsFilter | UIEventSource<TagsFilter> = mapping.if;
+        let tagging: TagsFilter = mapping.if;
         if (ifNot !== undefined) {
-            tagging = ifNot.map(ifNots => new And([mapping.if, ...ifNots]))
+            tagging =  new And([mapping.if, ...ifNot])
         }
 
         return new FixedInputElement(
