@@ -133,7 +133,7 @@ export default class UserBadge extends Toggle {
         )
 
 
-        this.SetClass("shadow rounded-full h-min overflow-hidden block w-max")
+        this.SetClass("shadow rounded-full h-min overflow-hidden block w-full md:w-max")
 
     }
 

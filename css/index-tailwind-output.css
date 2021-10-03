@@ -1062,18 +1062,18 @@ video {
   width: min-content;
 }
 
-.w-max {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
 .w-6 {
   width: 1.5rem;
 }
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .min-w-min {
@@ -2337,6 +2337,12 @@ li::marker {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-max {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
 
   .md\:grid-flow-row {

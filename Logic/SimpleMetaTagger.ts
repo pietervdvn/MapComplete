@@ -146,14 +146,14 @@ export default class SimpleMetaTagger {
     private static country = new SimpleMetaTagger(
         {
             keys: ["_country"],
-            doc: "The country code of the property (with latlon2country)"
+            doc: "The country code of the property (with latlon2country)",
+            includesDates: false
         },
-        feature => {
-
+        ((feature, _) => {
             let centerPoint: any = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];
             const lon = centerPoint.geometry.coordinates[0];
-
+            
             SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, (countries: string[]) => {
                 try {
                     const oldCountry = feature.properties["_country"];
@@ -167,7 +167,7 @@ export default class SimpleMetaTagger {
                 }
             })
             return false;
-        }
+        })
     )
     private static isOpen = new SimpleMetaTagger(
         {

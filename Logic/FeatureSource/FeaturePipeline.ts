@@ -353,20 +353,21 @@ export default class FeaturePipeline {
 
     private applyMetaTags(src: FeatureSourceForLayer) {
         const self = this
-        console.debug("Applying metatagging onto ", src.name)
         window.setTimeout(
             () => {
+                console.debug("Applying metatagging onto ", src.name)
+                const layerDef = src.layer.layerDef;
                 MetaTagging.addMetatags(
                     src.features.data,
                     {
                         memberships: this.relationTracker,
                         getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox)
                     },
-                    src.layer.layerDef,
+                    layerDef,
                     {
                         includeDates: true,
                         // We assume that the non-dated metatags are already set by the cache generator
-                        includeNonDates: !src.layer.layerDef.source.isOsmCacheLayer
+                        includeNonDates: layerDef.source.geojsonSource === undefined || !layerDef.source.isOsmCacheLayer
                     }
                 )
             },

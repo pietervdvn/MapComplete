@@ -61,7 +61,15 @@ export default class MetaTagging {
                             // All keys are already defined, we probably already ran this one
                             continue
                         }
-                        somethingChanged = somethingChanged || metatag.applyMetaTagsOnFeature(feature, freshness)
+                        const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness)
+                        /* Note that the expression:
+                        * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
+                        * Is WRONG
+                        * 
+                        * IF something changed is `true` due to an earlier run, it will short-circuit and _not_ evaluate the right hand of the OR, 
+                        * thus not running an update!
+                        */
+                        somethingChanged = newValueAdded || somethingChanged
                     } catch (e) {
                         console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e, e.stack)
                     }

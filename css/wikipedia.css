@@ -9,7 +9,7 @@
     clear: right;
 }
 
-.wikipedia-article svg, img {
+.wikipedia-article svg, .wikipedia-article img {
     width: unset;
     height: unset;
     display: unset;
