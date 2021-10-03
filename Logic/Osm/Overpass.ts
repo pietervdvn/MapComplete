@@ -42,7 +42,7 @@ export class Overpass {
         }
         const self = this;
         const json = await Utils.downloadJson(query)
-        console.log("Got json!", json)
+        
         if (json.elements.length === 0 && json.remark !== undefined) {
             console.warn("Timeout or other runtime error while querying overpass", json.remark);
             throw `Runtime error (timeout or similar)${json.remark}`

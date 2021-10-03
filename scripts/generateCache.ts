@@ -97,17 +97,16 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
             try {
 
                 const json = await ScriptUtils.DownloadJSON(url)
-                if (json.elements.length === 0) {
-                    console.log("Got an empty response!")
-                    if ((<string>json.remark ?? "").startsWith("runtime error")) {
-                        console.error("Got a runtime error: ", json.remark)
-                        failed++;
-                    }
+                if ((<string>json.remark ?? "").startsWith("runtime error")) {
+                    console.error("Got a runtime error: ", json.remark)
+                    failed++;
+                }else if (json.elements.length === 0) {
+                    console.log("Got an empty response! Writing anyway")
+                }
+                   
 
-                } else {
                     console.log("Got the response - writing to ", filename)
                     writeFileSync(filename, JSON.stringify(json, null, "  "));
-                }
             } catch (err) {
                 console.log(url)
                 console.log("Could not download - probably hit the rate limit; waiting a bit. (" + err + ")")

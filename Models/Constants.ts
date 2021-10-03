@@ -12,10 +12,9 @@ export default class Constants {
         "https://overpass-api.de/api/interpreter",
         // 'Fair usage'
         "https://overpass.kumi.systems/api/interpreter",
-        // "https://overpass.nchc.org.tw/api/interpreter",
+        // Offline: "https://overpass.nchc.org.tw/api/interpreter",
         "https://overpass.openstreetmap.ru/cgi/interpreter",
-        // The french api, only 1000 per day per project allowed, so we put it as last resort
-        "https://overpass.openstreetmap.fr/api/interpreter"
+        // Doesn't support nwr "https://overpass.openstreetmap.fr/api/interpreter"
     ]
 
     
