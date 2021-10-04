@@ -37,7 +37,10 @@ export default class ImportButton extends Toggle {
             }
             originalTags.data["_imported"] = "yes"
             originalTags.ping() // will set isImported as per its definition
-            const newElementAction = new CreateNewNodeAction(newTags.data, lat, lon)
+            const newElementAction = new CreateNewNodeAction(newTags.data, lat, lon, {
+                theme: State.state.layoutToUse.id,
+                changeType: "import"
+            })
             await State.state.changes.applyAction(newElementAction)
             State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId

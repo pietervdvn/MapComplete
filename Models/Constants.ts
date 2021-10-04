@@ -14,7 +14,7 @@ export default class Constants {
         "https://overpass.kumi.systems/api/interpreter",
         // Offline: "https://overpass.nchc.org.tw/api/interpreter",
         "https://overpass.openstreetmap.ru/cgi/interpreter",
-        // Doesn't support nwr "https://overpass.openstreetmap.fr/api/interpreter"
+        // Doesn't support nwr: "https://overpass.openstreetmap.fr/api/interpreter"
     ]
 
     

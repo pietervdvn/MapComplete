@@ -14,8 +14,14 @@ export default class CreateNewNodeAction extends OsmChangeAction {
     private readonly _lon: number;
     private readonly _snapOnto: OsmWay;
     private readonly _reusePointDistance: number;
+    private meta: { changeType: "create" | "import"; theme: string };
 
-    constructor(basicTags: Tag[], lat: number, lon: number, options?: { snapOnto: OsmWay, reusePointWithinMeters?: number }) {
+    constructor(basicTags: Tag[],
+                lat: number, lon: number,
+                options: {
+                    snapOnto?: OsmWay, 
+                    reusePointWithinMeters?: number, 
+                    theme: string, changeType: "create" | "import" }) {
         super()
         this._basicTags = basicTags;
         this._lat = lat;
@@ -25,6 +31,10 @@ export default class CreateNewNodeAction extends OsmChangeAction {
         }
         this._snapOnto = options?.snapOnto;
         this._reusePointDistance = options?.reusePointWithinMeters ?? 1
+        this.meta = {
+            theme: options.theme,
+            changeType: options.changeType
+        }
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
@@ -47,7 +57,8 @@ export default class CreateNewNodeAction extends OsmChangeAction {
             changes: {
                 lat: this._lat,
                 lon: this._lon
-            }
+            },
+            meta: this.meta
         }
         if (this._snapOnto === undefined) {
             return [newPointChange]
@@ -78,7 +89,8 @@ export default class CreateNewNodeAction extends OsmChangeAction {
             return [{
                 tags: new And(this._basicTags).asChange(properties),
                 type: "node",
-                id: reusedPointId
+                id: reusedPointId,
+                meta: this.meta
             }]
         }
 
@@ -99,7 +111,8 @@ export default class CreateNewNodeAction extends OsmChangeAction {
                 changes: {
                     coordinates: locations,
                     nodes: ids
-                }
+                },
+                meta:this.meta
             }
         ]
     }

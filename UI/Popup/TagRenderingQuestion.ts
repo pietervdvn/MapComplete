@@ -86,7 +86,10 @@ export default class TagRenderingQuestion extends Combine {
             if (selection) {
                 (State.state?.changes ?? new Changes())
                     .applyAction(new ChangeTagAction(
-                        tags.data.id, selection, tags.data
+                        tags.data.id, selection, tags.data, {
+                            theme: State.state?.layoutToUse?.id ?? "unkown",
+                            changeType: "answer",
+                        }
                     )).then(_ => {
                     console.log("Tagchanges applied")
                 })

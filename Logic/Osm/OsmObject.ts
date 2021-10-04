@@ -11,7 +11,7 @@ export abstract class OsmObject {
     private static polygonFeatures = OsmObject.constructPolygonFeatures()
     private static objectCache = new Map<string, UIEventSource<OsmObject>>();
     private static historyCache = new Map<string, UIEventSource<OsmObject[]>>();
-    type: string;
+    type: "node" | "way" | "relation";
     id: number;
     /**
      * The OSM tags as simple object
@@ -23,6 +23,7 @@ export abstract class OsmObject {
 
     protected constructor(type: string, id: number) {
         this.id = id;
+        // @ts-ignore
         this.type = type;
         this.tags = {
             id: `${this.type}/${id}`

@@ -101,6 +101,14 @@ export class Utils {
         return ls;
     }
 
+    public static Hist(array: string[]): Map<string, number>{
+        const hist = new Map<string, number>();
+        for (const s of array) {
+            hist.set(s, 1 + (hist.get(s) ?? 0))
+        }
+        return hist;
+    }
+    
     public static NoEmpty(array: string[]): string[] {
         const ls: string[] = [];
         for (const t of array) {

@@ -64,9 +64,9 @@ export class Changes {
 
         if (deletedElements.length > 0) {
             changes +=
-                "\n<deleted>\n" +
+                "\n<delete>\n" +
                 deletedElements.map(e => e.ChangesetXML(csId)).join("\n") +
-                "\n</deleted>"
+                "\n</delete>"
         }
 
         changes += "</osmChange>";
@@ -99,7 +99,7 @@ export class Changes {
         }
         this.isUploading.setData(true)
 
-        this.flushChangesAsync(flushreason)
+        this.flushChangesAsync()
             .then(_ => {
                 this.isUploading.setData(false)
                 console.log("Changes flushed!");
@@ -110,39 +110,94 @@ export class Changes {
             })
     }
 
-    private async flushChangesAsync(flushreason: string = undefined): Promise<void> {
+    /**
+     * UPload the selected changes to OSM.
+     * Returns 'true' if successfull and if they can be removed
+     * @param pending
+     * @private
+     */
+    private async flushSelectChanges(pending: ChangeDescription[]): Promise<boolean>{
+        const self = this;
+        const neededIds = Changes.GetNeededIds(pending)
+        const osmObjects = await Promise.all(neededIds.map(id => OsmObject.DownloadObjectAsync(id)));
+        console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
+        const changes: {
+            newObjects: OsmObject[],
+            modifiedObjects: OsmObject[]
+            deletedObjects: OsmObject[]
+        } = self.CreateChangesetObjects(pending, osmObjects)
+        if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
+            console.log("No changes to be made")
+           return true
+        }
+
+        const meta = pending[0].meta
+        
+        const perType = Array.from(Utils.Hist(pending.map(descr => descr.meta.changeType)), ([key, count]) => ({
+            key: key,
+                value: count, 
+                aggregate: true
+        }))
+        const motivations = pending.filter(descr => descr.meta.specialMotivation !== undefined)
+            .map(descr => ({
+                key: descr.meta.changeType+":"+descr.type+"/"+descr.id,
+                    value: descr.meta.specialMotivation
+            }))
+        const metatags = [{
+            key: "comment",
+            value: "Adding data with #MapComplete for theme #"+meta.theme
+        },
+            {
+                key:"theme",
+                value:meta.theme
+            },
+            ...perType,
+            ...motivations
+        ]
+        
+        await State.state.osmConnection.changesetHandler.UploadChangeset(
+            (csId) => Changes.createChangesetFor(""+csId, changes),
+            metatags
+        )
+
+        console.log("Upload successfull!")
+        return true;
+    }
+
+    private async flushChangesAsync(): Promise<void> {
         const self = this;
         try {
-            console.log("Beginning upload... " + flushreason ?? "");
             // At last, we build the changeset and upload
             const pending = self.pendingChanges.data;
-            const neededIds = Changes.GetNeededIds(pending)
-            const osmObjects = await Promise.all(neededIds.map(id => OsmObject.DownloadObjectAsync(id)));
-            console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
-            const changes: {
-                newObjects: OsmObject[],
-                modifiedObjects: OsmObject[]
-                deletedObjects: OsmObject[]
-            } = self.CreateChangesetObjects(pending, osmObjects)
-            if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
-                console.log("No changes to be made")
-                self.pendingChanges.setData([])
-                self.isUploading.setData(false)
+            
+            const pendingPerTheme = new Map<string, ChangeDescription[]>()
+            for (const changeDescription of pending) {
+                const theme = changeDescription.meta.theme
+                if(!pendingPerTheme.has(theme)){
+                    pendingPerTheme.set(theme, [])
+                }
+                pendingPerTheme.get(theme).push(changeDescription)
             }
-
-            await State.state.osmConnection.UploadChangeset(
-                State.state.layoutToUse,
-                State.state.allElements,
-                (csId) => Changes.createChangesetFor(csId, changes),
-            )
-
-            console.log("Upload successfull!")
-            this.pendingChanges.setData([]);
-            this.isUploading.setData(false)
+            
+          const successes =  await Promise.all(Array.from(pendingPerTheme, ([key , value]) => value)
+                .map(async pendingChanges => {
+                    try{
+                        return await self.flushSelectChanges(pendingChanges);
+                    }catch(e){
+                        console.error("Could not upload some changes:",e)
+                        return false
+                    }
+                }))
+            
+            if(!successes.some(s => s == false)){
+                // All changes successfull, we clear the data!
+                this.pendingChanges.setData([]);
+            }
 
         } catch (e) {
             console.error("Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those", e)
             self.pendingChanges.setData([])
+        }finally {
             self.isUploading.setData(false)
         }
 
