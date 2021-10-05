@@ -754,6 +754,49 @@
             "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> om GSMs en kleine electronica op te laden</span></div>"
           },
           "hideInAnswer": true
+        },
+        {
+          "if": "socket:bosch_3pin=1",
+          "ifnot": "socket:bosch_3pin=",
+          "then": {
+            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect</b> with cable</span></div>",
+            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect</b> aan een kabel</span></div>"
+          },
+          "hideInAnswer": {
+            "or": [
+              {
+                "and": [
+                  "bicycle=no"
+                ]
+              },
+              {
+                "and": [
+                  {
+                    "or": [
+                      "car=yes",
+                      "motorcar=yes",
+                      "hgv=yes",
+                      "bus=yes"
+                    ]
+                  },
+                  "bicycle!=yes"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "socket:bosch_3pin~*",
+              "socket:bosch_3pin!=1"
+            ]
+          },
+          "then": {
+            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect</b> with cable</span></div>",
+            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect</b> aan een kabel</span></div>"
+          },
+          "hideInAnswer": true
         }
       ]
     },
@@ -764,8 +807,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> stekkers van het type <b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+        "en": "There are <b class='text-xl'>{socket:schuko}</b> plugs of type <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:schuko}</b> stekkers van het type <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
       },
       "freeform": {
         "key": "socket:schuko",
@@ -875,8 +918,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> stekkers van het type <b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+        "en": "There are <b class='text-xl'>{socket:typee}</b> plugs of type <div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:typee}</b> stekkers van het type <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
       },
       "freeform": {
         "key": "socket:typee",
@@ -993,8 +1036,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> plugs of type <b>Chademo</b> available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> stekkers van het type <b>Chademo</b>"
+        "en": "There are <b class='text-xl'>{socket:chademo}</b> plugs of type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:chademo}</b> stekkers van het type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
       },
       "freeform": {
         "key": "socket:chademo",
@@ -1104,8 +1147,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> plugs of type <b>Type 1 with cable</b> (J1772) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> stekkers van het type <b>Type 1 met kabel</b> (J1772)"
+        "en": "There are <b class='text-xl'>{socket:type1_cable}</b> plugs of type <div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:type1_cable}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
       },
       "freeform": {
         "key": "socket:type1_cable",
@@ -1229,8 +1272,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> stekkers van het type <b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+        "en": "There are <b class='text-xl'>{socket:type1}</b> plugs of type <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:type1}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
       },
       "freeform": {
         "key": "socket:type1",
@@ -1368,8 +1411,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> stekkers van het type <b>Type 1 CCS</b> (ook gekend als Type 1 Combo)"
+        "en": "There are <b class='text-xl'>{socket:type1_combo}</b> plugs of type <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:type1_combo}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
       },
       "freeform": {
         "key": "socket:type1_combo",
@@ -1514,8 +1557,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> plugs of type <b>Tesla Supercharger</b> available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> stekkers van het type <b>Tesla Supercharger</b>"
+        "en": "There are <b class='text-xl'>{socket:tesla_supercharger}</b> plugs of type <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:tesla_supercharger}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
       },
       "freeform": {
         "key": "socket:tesla_supercharger",
@@ -1646,8 +1689,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> plugs of type <b>Type 2</b> (mennekes) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> stekkers van het type <b>Type 2</b> (mennekes)"
+        "en": "There are <b class='text-xl'>{socket:type2}</b> plugs of type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:type2}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
       },
       "freeform": {
         "key": "socket:type2",
@@ -1778,8 +1821,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> plugs of type <b>Type 2 CCS</b> (mennekes) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> stekkers van het type <b>Type 2 CCS</b> (mennekes)"
+        "en": "There are <b class='text-xl'>{socket:type2_combo}</b> plugs of type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:type2_combo}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
       },
       "freeform": {
         "key": "socket:type2_combo",
@@ -1903,8 +1946,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> plugs of type <b>Type 2 with cable</b> (mennekes) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stekkers van het type <b>Type 2 met kabel</b> (J1772)"
+        "en": "There are <b class='text-xl'>{socket:type2_cable}</b> plugs of type <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:type2_cable}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
       },
       "freeform": {
         "key": "socket:type2_cable",
@@ -2035,8 +2078,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> stekkers van het type <b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)"
+        "en": "There are <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> plugs of type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
       },
       "freeform": {
         "key": "socket:tesla_supercharger_ccs",
@@ -2160,8 +2203,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> plugs of type <b>Tesla Supercharger (destination)</b> available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> stekkers van het type <b>Tesla Supercharger (destination)</b>"
+        "en": "There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
       },
       "freeform": {
         "key": "socket:tesla_destination",
@@ -2292,8 +2335,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> plugs of type <b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla) available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stekkers van het type <b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)"
+        "en": "There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
       },
       "freeform": {
         "key": "socket:tesla_destination",
@@ -2424,8 +2467,8 @@
         "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> heeft dit oplaadpunt?"
       },
       "render": {
-        "en": "There are <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> plugs of type <b>USB</b> to charge phones and small electronics available here",
-        "nl": "Hier zijn <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> stekkers van het type <b>USB</b> om GSMs en kleine electronica op te laden"
+        "en": "There are <b class='text-xl'>{socket:USB-A}</b> plugs of type <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:USB-A}</b> stekkers van het type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
       },
       "freeform": {
         "key": "socket:USB-A",
@@ -2539,6 +2582,93 @@
         "and": [
           "socket:USB-A~*",
           "socket:USB-A!=0"
+        ]
+      }
+    },
+    {
+      "id": "plugs-14",
+      "question": {
+        "en": "How much plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> are available here?",
+        "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> heeft dit oplaadpunt?"
+      },
+      "render": {
+        "en": "There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> available here",
+        "nl": "Hier zijn <b class='text-xl'>{socket:bosch_3pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+      },
+      "freeform": {
+        "key": "socket:bosch_3pin",
+        "type": "pnat"
+      },
+      "condition": {
+        "and": [
+          "socket:bosch_3pin~*",
+          "socket:bosch_3pin!=0"
+        ]
+      }
+    },
+    {
+      "id": "voltage-14",
+      "question": {
+        "en": "What voltage do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
+        "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+      },
+      "render": {
+        "en": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs {socket:bosch_3pin:voltage} volt",
+        "nl": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> heeft een spanning van {socket:bosch_3pin:voltage} volt"
+      },
+      "freeform": {
+        "key": "socket:bosch_3pin:voltage",
+        "type": "pfloat"
+      },
+      "mappings": [],
+      "condition": {
+        "and": [
+          "socket:bosch_3pin~*",
+          "socket:bosch_3pin!=0"
+        ]
+      }
+    },
+    {
+      "id": "current-14",
+      "question": {
+        "en": "What current do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
+        "nl": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
+      },
+      "render": {
+        "en": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs at most {socket:bosch_3pin:current}A",
+        "nl": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> levert een stroom van maximaal {socket:bosch_3pin:current}A"
+      },
+      "freeform": {
+        "key": "socket:bosch_3pin:current",
+        "type": "pfloat"
+      },
+      "mappings": [],
+      "condition": {
+        "and": [
+          "socket:bosch_3pin~*",
+          "socket:bosch_3pin!=0"
+        ]
+      }
+    },
+    {
+      "id": "power-output-14",
+      "question": {
+        "en": "What power output does a single plug of type <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
+        "nl": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
+      },
+      "render": {
+        "en": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs at most {socket:bosch_3pin:output}",
+        "nl": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_3pin:output}"
+      },
+      "freeform": {
+        "key": "socket:bosch_3pin:output",
+        "type": "pfloat"
+      },
+      "mappings": [],
+      "condition": {
+        "and": [
+          "socket:bosch_3pin~*",
+          "socket:bosch_3pin!=0"
         ]
       }
     },
@@ -3197,6 +3327,13 @@
             "nl": "Heeft een <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
           },
           "osmTags": "socket:USB-A~*"
+        },
+        {
+          "question": {
+            "en": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> connector",
+            "nl": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+          },
+          "osmTags": "socket:bosch_3pin~*"
         }
       ]
     }
@@ -3280,7 +3417,8 @@
         "socket:tesla_supercharger_ccs:voltage",
         "socket:tesla_destination:voltage",
         "socket:tesla_destination:voltage",
-        "socket:USB-A:voltage"
+        "socket:USB-A:voltage",
+        "socket:bosch_3pin:voltage"
       ],
       "applicableUnits": [
         {
@@ -3315,7 +3453,8 @@
         "socket:tesla_supercharger_ccs:current",
         "socket:tesla_destination:current",
         "socket:tesla_destination:current",
-        "socket:USB-A:current"
+        "socket:USB-A:current",
+        "socket:bosch_3pin:current"
       ],
       "applicableUnits": [
         {
@@ -3349,7 +3488,8 @@
         "socket:tesla_supercharger_ccs:output",
         "socket:tesla_destination:output",
         "socket:tesla_destination:output",
-        "socket:USB-A:output"
+        "socket:USB-A:output",
+        "socket:bosch_3pin:output"
       ],
       "applicableUnits": [
         {

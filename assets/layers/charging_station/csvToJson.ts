@@ -137,8 +137,8 @@ function run(file, protojson) {
                 nl: `Hoeveel stekkers van type  ${descrWithImage_nl} heeft dit oplaadpunt?`,
             },
             render: {
-                en: `There are ${descrWithImage_en} plugs of type ${e.description.get("en")} available here`,
-                nl: `Hier zijn ${descrWithImage_nl} stekkers van het type ${e.description.get("nl")}`
+                en: `There are <b class='text-xl'>{${e.key}}</b> plugs of type ${descrWithImage_en} available here`,
+                nl: `Hier zijn <b class='text-xl'>{${e.key}}</b> stekkers van het type ${descrWithImage_nl}`
             },
             freeform: {
                 key: e.key,
