@@ -23,9 +23,6 @@ jobs:
       - name: create generated dir
         run: mkdir ./assets/generated
 
-      - name: create stub themes
-        run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
-
       - name: Prepare deploy
         run: npm run prepare-deploy
 
