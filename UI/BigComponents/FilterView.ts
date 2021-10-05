@@ -33,7 +33,7 @@ export default class FilterView extends VariableUiElement {
             // Name is not defined: we hide this one
             return undefined;
         }
-        const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem";
+        const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem;flex-shrink: 0;";
 
         const icon = new Combine([Svg.checkbox_filled]).SetStyle(iconStyle);
         const iconUnselected = new Combine([Svg.checkbox_empty]).SetStyle(

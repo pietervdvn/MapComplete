@@ -127,8 +127,8 @@ function run(file, protojson) {
         }
         overview_question_answers.push(no_ask_json)
 
-        const descrWithImage_en = `<b>${e.description.get("en")}</b> <img style='width:1rem;' src='./assets/layers/charging_station/${e.image}'/>`
-        const descrWithImage_nl = `<b>${e.description.get("nl")}</b> <img style='width:1rem;' src='./assets/layers/charging_station/${e.image}'/>`
+        const descrWithImage_en = `<div style='display: inline-block'><b>${e.description.get("en")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
+        const descrWithImage_nl = `<div style='display: inline-block'><b>${e.description.get("nl")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
 
         questions.push({
             "id": "plugs-" + i,
@@ -137,8 +137,8 @@ function run(file, protojson) {
                 nl: `Hoeveel stekkers van type  ${descrWithImage_nl} heeft dit oplaadpunt?`,
             },
             render: {
-                en: `There are ${descrWithImage_en} plugs of type ${e.description.get("en")} available here`,
-                nl: `Hier zijn ${descrWithImage_nl} stekkers van het type ${e.description.get("nl")}`
+                en: `There are <b class='text-xl'>{${e.key}}</b> plugs of type ${descrWithImage_en} available here`,
+                nl: `Hier zijn <b class='text-xl'>{${e.key}}</b> stekkers van het type ${descrWithImage_nl}`
             },
             freeform: {
                 key: e.key,
