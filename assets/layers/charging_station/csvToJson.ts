@@ -127,8 +127,8 @@ function run(file, protojson) {
         }
         overview_question_answers.push(no_ask_json)
 
-        const descrWithImage_en = `<div><b>${e.description.get("en")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
-        const descrWithImage_nl = `<div><b>${e.description.get("nl")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
+        const descrWithImage_en = `<div style='display: inline-block'><b>${e.description.get("en")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
+        const descrWithImage_nl = `<div style='display: inline-block'><b>${e.description.get("nl")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
 
         questions.push({
             "id": "plugs-" + i,
