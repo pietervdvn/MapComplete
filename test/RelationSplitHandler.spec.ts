@@ -2,7 +2,6 @@ import T from "./TestHelper";
 import {InPlaceReplacedmentRTSH} from "../Logic/Osm/Actions/RelationSplitHandler";
 import {OsmObject, OsmRelation} from "../Logic/Osm/OsmObject";
 import {Changes} from "../Logic/Osm/Changes";
-import {equal} from "assert";
 import {Utils} from "../Utils";
 
 export default class RelationSplitHandlerSpec extends T {
@@ -49,7 +48,7 @@ export default class RelationSplitHandlerSpec extends T {
                 allWayIdsInOrder: [295132739, -1],
                 originalNodes: originalNodeIds,
                 allWaysNodesInOrder: withSplit
-            })
+            },"no-theme")
         const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
         const allIds = changeDescription[0].changes["members"].map(m => m.ref).join(",")
         const expected = "687866206,295132739,-1,690497698"
