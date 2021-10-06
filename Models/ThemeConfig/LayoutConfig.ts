@@ -5,8 +5,8 @@ import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
-import {Unit} from "../Unit";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
+import Constants from "../Constants";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -51,12 +51,12 @@ export default class LayoutConfig {
     How long is the cache valid, in seconds?
      */
     public readonly cacheTimeout?: number;
-    public readonly overpassUrl: string;
+    public readonly overpassUrl: string[];
     public readonly overpassTimeout: number;
-    private readonly _official: boolean;
+    public readonly official: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
-        this._official = official;
+        this.official = official;
         this.id = json.id;
         context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
@@ -81,13 +81,16 @@ export default class LayoutConfig {
         this.title = new Translation(json.title, context + ".title");
         this.description = new Translation(json.description, context + ".description");
         this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
-        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*": ""}, context + ".descriptionTail") : new Translation(json.descriptionTail, context + ".descriptionTail");
+        this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, context + ".descriptionTail");
         this.icon = json.icon;
         this.socialImage = json.socialImage;
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;
-        this.widenFactor = json.widenFactor ?? 0.05;
+        if(json.widenFactor < 1){
+            throw "Widenfactor too small"
+        }
+        this.widenFactor = json.widenFactor ?? 1.5;
         this.roamingRenderings = (json.roamingRenderings ?? []).map((tr, i) => {
                 if (typeof tr === "string") {
                     if (SharedTagRenderings.SharedTagRendering.get(tr) !== undefined) {
@@ -127,17 +130,12 @@ export default class LayoutConfig {
 
         this.clustering = {
             maxZoom: 16,
-            minNeededElements: 500
+            minNeededElements: 25
         };
         if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
-                minNeededElements: json.clustering.minNeededElements ?? 1
-            }
-            for (const layer of this.layers) {
-                if (layer.wayHandling !== LayerConfig.WAYHANDLING_CENTER_ONLY) {
-                    console.debug("WARNING: In order to allow clustering, every layer must be set to CENTER_ONLY. Layer", layer.id, "does not respect this for layout", this.id);
-                }
+                minNeededElements: json.clustering.minNeededElements ?? 25
             }
         }
 
@@ -160,7 +158,14 @@ export default class LayoutConfig {
         this.enablePdfDownload = json.enablePdfDownload ?? false;
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
-        this.overpassUrl = json.overpassUrl ?? "https://overpass-api.de/api/interpreter"
+        this.overpassUrl = Constants.defaultOverpassUrls
+        if(json.overpassUrl !== undefined){
+            if(typeof json.overpassUrl === "string"){
+                this.overpassUrl = [json.overpassUrl]
+            }else{
+                this.overpassUrl = json.overpassUrl
+            }
+        }
         this.overpassTimeout = json.overpassTimeout ?? 30
 
     }
@@ -221,7 +226,7 @@ export default class LayoutConfig {
     }
 
     public CustomCodeSnippets(): string[] {
-        if (this._official) {
+        if (this.official) {
             return [];
         }
         const msg = "<br/><b>This layout uses <span class='alert'>custom javascript</span>, loaded for the wide internet. The code is printed below, please report suspicious code on the issue tracker of MapComplete:</b><br/>"
@@ -244,14 +249,6 @@ export default class LayoutConfig {
         icons.add(this.icon)
         icons.add(this.socialImage)
         return icons
-    }
-
-    public LayerIndex(): Map<string, LayerConfig> {
-        const index = new Map<string, LayerConfig>();
-        for (const layer of this.layers) {
-            index.set(layer.id, layer)
-        }
-        return index;
     }
 
     /**

@@ -1,9 +1,10 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+    mode: 'jit',
     purge: [
-        // './**/*.html',
-        // './**/*.js',
+        './**/*.html',
+        './**/*.ts',
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
@@ -20,9 +21,9 @@ module.exports = {
         }
     },
     plugins: [
-        plugin(function ({addVariant, e}) {
-            addVariant('landscape', ({modifySelectors, separator}) => {
-                modifySelectors(({className}) => {
+        plugin(function ({ addVariant, e }) {
+            addVariant('landscape', ({ modifySelectors, separator }) => {
+                modifySelectors(({ className }) => {
                     return `.${e(`landscape${separator}${className}`)}:landscape`
                 })
             })

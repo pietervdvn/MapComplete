@@ -25,7 +25,9 @@ export default class BackgroundSelector extends VariableUiElement {
                     if (baseLayers.length <= 1) {
                         return undefined;
                     }
-                    return new DropDown(Translations.t.general.backgroundMap.Clone(), baseLayers, State.state.backgroundLayer)
+                    return new DropDown(Translations.t.general.backgroundMap.Clone(), baseLayers, State.state.backgroundLayer, {
+                        select_class: 'bg-indigo-100 p-1 rounded hover:bg-indigo-200 w-full'
+                    })
                 }
             )
         )

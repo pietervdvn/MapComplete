@@ -18,6 +18,7 @@ import FilterConfig from "./FilterConfig";
 import {Unit} from "../Unit";
 import DeleteConfig from "./DeleteConfig";
 import Svg from "../../Svg";
+import Img from "../../UI/Base/Img";
 
 export default class LayerConfig {
     static WAYHANDLING_DEFAULT = 0;
@@ -104,6 +105,10 @@ export default class LayerConfig {
                 throw context + "Use 'geoJson' instead of 'geoJsonSource'";
             }
 
+            if (json.source["geojson"] !== undefined) {
+                throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)";
+            }
+
             this.source = new SourceConfig(
                 {
                     osmTags: osmTags,
@@ -133,6 +138,14 @@ export default class LayerConfig {
                 const key = kv.substring(0, index);
                 const code = kv.substring(index + 1);
 
+                try{
+                    
+                new Function("feat", "return " + code + ";");
+                }catch(e){
+                 throw `Invalid function definition: code ${code} is invalid:${e} (at ${context})`   
+                }
+
+
                 this.calculatedTags.push([key, code]);
             }
         }
@@ -142,6 +155,9 @@ export default class LayerConfig {
         this.minzoom = json.minzoom ?? 0;
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.wayHandling = json.wayHandling ?? 0;
+        if(json.presets !== undefined && json.presets?.map === undefined){
+            throw "Presets should be a list of items (at "+context+")"
+        }
         this.presets = (json.presets ?? []).map((pr, i) => {
 
             let preciseInput = undefined;
@@ -286,6 +302,10 @@ export default class LayerConfig {
         this.filters = (json.filter ?? []).map((option, i) => {
             return new FilterConfig(option, `${context}.filter-[${i}]`)
         });
+       
+       if(json["filters"] !== undefined){
+           throw "Error in "+context+": use 'filter' instead of 'filters'"
+       }
 
         const titleIcons = [];
         const defaultIcons = [
@@ -494,12 +514,13 @@ export default class LayerConfig {
             );
             const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/);
             if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
-                html = new Combine([
+                html = new Img(
                     (Svg.All[match[1] + ".svg"] as string).replace(
                         /#000000/g,
                         match[2]
                     ),
-                ]).SetStyle(style);
+                    true
+                ).SetStyle(style);
             }
             return html;
         }

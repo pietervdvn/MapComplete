@@ -14,6 +14,36 @@
       "key": "amenity",
       "description": "The MapComplete theme Waste Basket has a layer Waste Basket showing features with this tag",
       "value": "waste_basket"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste= with a fixed text, namely 'A waste basket for general waste' (in the MapComplete.osm.be theme 'Waste Basket') Picking this answer will delete the key waste.",
+      "value": ""
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=trash with a fixed text, namely 'A waste basket for general waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste Basket')",
+      "value": "trash"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=dog_excrement with a fixed text, namely 'A waste basket for dog excrements' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste Basket')",
+      "value": "dog_excrement"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=cigarettes with a fixed text, namely 'A waste basket for cigarettes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste Basket')",
+      "value": "cigarettes"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=drugs with a fixed text, namely 'A waste basket for drugs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste Basket')",
+      "value": "drugs"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=sharps with a fixed text, namely 'A waste basket for needles and other sharp objects' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste Basket')",
+      "value": "sharps"
     }
   ]
 }

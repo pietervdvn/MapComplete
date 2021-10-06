@@ -31,7 +31,7 @@ export class TabbedComponent extends Combine {
             tabs.push(tab)
         }
 
-        const header = new Combine(tabs).SetClass("block tabs-header-bar")
+        const header = new Combine(tabs).SetClass("tabs-header-bar")
         const actualContent = new VariableUiElement(
             openedTabSrc.map(i => contentElements[i])
         )

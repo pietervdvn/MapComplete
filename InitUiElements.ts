@@ -1,7 +1,6 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Toggle from "./UI/Input/Toggle";
 import State from "./State";
-import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
@@ -16,31 +15,32 @@ import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personal/personal.json";
 import * as L from "leaflet";
 import Img from "./UI/Base/Img";
-import UserDetails from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/BigComponents/Attribution";
-import LayerResetter from "./Logic/Actors/LayerResetter";
+import BackgroundLayerResetter from "./Logic/Actors/BackgroundLayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
-import ShowDataLayer from "./UI/ShowDataLayer";
+import ShowDataLayer from "./UI/ShowDataLayer/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import ScrollableFullScreen from "./UI/Base/ScrollableFullScreen";
 import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
-import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
-import FeatureSource from "./Logic/FeatureSource/FeatureSource";
-import AllKnownLayers from "./Customizations/AllKnownLayers";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-import {TagsFilter} from "./Logic/Tags/TagsFilter";
 import LeftControls from "./UI/BigComponents/LeftControls";
 import RightControls from "./UI/BigComponents/RightControls";
 import {LayoutConfigJson} from "./Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
-import LayerConfig from "./Models/ThemeConfig/LayerConfig";
 import Minimap from "./UI/Base/Minimap";
-import Constants from "./Models/Constants";
+import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import Combine from "./UI/Base/Combine";
 import {SubtleButton} from "./UI/Base/SubtleButton";
+import ShowTileInfo from "./UI/ShowDataLayer/ShowTileInfo";
+import {Tiles} from "./Models/TileRange";
+import {TileHierarchyAggregator} from "./UI/ShowDataLayer/TileHierarchyAggregator";
+import FilterConfig from "./Models/ThemeConfig/FilterConfig";
+import FilteredLayer from "./Models/FilteredLayer";
+import {BBox} from "./Logic/BBox";
+import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 
 export class InitUiElements {
     static InitAll(
@@ -67,10 +67,24 @@ export class InitUiElements {
             "LayoutFromBase64 is ",
             layoutFromBase64
         );
+        
+        if(layoutToUse.id === personal.id){
+            layoutToUse.layers = AllKnownLayouts.AllPublicLayers()
+            for (const layer of layoutToUse.layers) {
+                layer.minzoomVisible = Math.max(layer.minzoomVisible, layer.minzoom)
+                layer.minzoom = Math.max(16, layer.minzoom)
+            }
+        }
 
         State.state = new State(layoutToUse);
 
-        // This 'leaks' the global state via the window object, useful for debugging
+        if(layoutToUse.id === personal.id) {
+            // Disable overpass all together
+            State.state.overpassMaxZoom.setData(0)
+            
+        }
+
+            // This 'leaks' the global state via the window object, useful for debugging
         // @ts-ignore
         window.mapcomplete_state = State.state;
 
@@ -96,46 +110,6 @@ export class InitUiElements {
                 console.warn(
                     "NOT saving custom layout to OSM as we are tesing -> probably in an iFrame"
                 );
-            }
-        }
-
-        function updateFavs() {
-            // This is purely for the personal theme to load the layers there
-            const favs = State.state.favouriteLayers.data ?? [];
-
-            const neededLayers = new Set<LayerConfig>();
-
-            console.log("Favourites are: ", favs);
-            layoutToUse.layers.splice(0, layoutToUse.layers.length);
-            let somethingChanged = false;
-            for (const fav of favs) {
-                if (AllKnownLayers.sharedLayers.has(fav)) {
-                    const layer = AllKnownLayers.sharedLayers.get(fav);
-                    if (!neededLayers.has(layer)) {
-                        neededLayers.add(layer);
-                        somethingChanged = true;
-                    }
-                }
-
-                for (const layouts of State.state.installedThemes.data) {
-                    for (const layer of layouts.layout.layers) {
-                        if (typeof layer === "string") {
-                            continue;
-                        }
-                        if (layer.id === fav) {
-                            if (!neededLayers.has(layer)) {
-                                neededLayers.add(layer);
-                                somethingChanged = true;
-                            }
-                        }
-                    }
-                }
-            }
-            if (somethingChanged) {
-                console.log("layoutToUse.layers:", layoutToUse.layers);
-                State.state.layoutToUse.data.layers = Array.from(neededLayers);
-                State.state.layoutToUse.ping();
-                State.state.layerUpdater?.ForceRefresh();
             }
         }
 
@@ -171,35 +145,43 @@ export class InitUiElements {
             ).AttachTo("messagesbox");
         }
 
-        State.state.osmConnection.userDetails
-            .map((userDetails: UserDetails) => userDetails?.home)
-            .addCallbackAndRunD((home) => {
-                const color = getComputedStyle(document.body).getPropertyValue(
-                    "--subtle-detail-color"
-                );
-                const icon = L.icon({
-                    iconUrl: Img.AsData(
-                        Svg.home_white_bg.replace(/#ffffff/g, color)
-                    ),
-                    iconSize: [30, 30],
-                    iconAnchor: [15, 15],
-                });
-                const marker = L.marker([home.lat, home.lon], {icon: icon});
-                marker.addTo(State.state.leafletMap.data);
+        function addHomeMarker() {
+            const userDetails = State.state.osmConnection.userDetails.data;
+            if (userDetails === undefined) {
+                return false;
+            }
+            const home = userDetails.home;
+            if (home === undefined) {
+                return userDetails.loggedIn; // If logged in, the home is not set and we unregister. If not logged in, we stay registered if a login still comes
+            }
+            const leaflet = State.state.leafletMap.data;
+            if (leaflet === undefined) {
+                return false;
+            }
+            const color = getComputedStyle(document.body).getPropertyValue(
+                "--subtle-detail-color"
+            );
+            const icon = L.icon({
+                iconUrl: Img.AsData(
+                    Svg.home_white_bg.replace(/#ffffff/g, color)
+                ),
+                iconSize: [30, 30],
+                iconAnchor: [15, 15],
             });
-
-        if (layoutToUse.id === personal.id) {
-            updateFavs();
+            const marker = L.marker([home.lat, home.lon], {icon: icon});
+            marker.addTo(leaflet);
+            return true;
         }
+
+        State.state.osmConnection.userDetails
+            .addCallbackAndRunD(_ => addHomeMarker());
+        State.state.leafletMap.addCallbackAndRunD(_ => addHomeMarker())
+
 
         InitUiElements.setupAllLayerElements();
-
-        if (layoutToUse.id === personal.id) {
-            State.state.favouriteLayers.addCallback(updateFavs);
-            State.state.installedThemes.addCallback(updateFavs);
-        } else {
             State.state.locationControl.ping();
-        }
+
+        new SelectedFeatureHandler(Hash.hash, State.state)
 
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
@@ -211,7 +193,7 @@ export class InitUiElements {
     static LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
     ): [LayoutConfig, string] {
-            let hash = location.hash.substr(1);
+        let hash = location.hash.substr(1);
         try {
             const layoutFromBase64 = userLayoutParam.data;
             // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
@@ -251,18 +233,18 @@ export class InitUiElements {
             userLayoutParam.setData(layoutToUse.id);
             return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
         } catch (e) {
-            
-            if(hash === undefined || hash.length < 10){
+
+            if (hash === undefined || hash.length < 10) {
                 e = "Did you effectively add a theme? It seems no data could be found."
             }
-            
+
             new Combine([
                 "Error: could not parse the custom layout:",
-                new FixedUiElement(""+e).SetClass("alert"),
-                new SubtleButton("./assets/svg/mapcomplete_logo.svg", 
-                    "Go back to the theme overview", 
-                    {url: window.location.protocol+"//"+ window.location.hostname+"/index.html", newTab: false})
-                
+                new FixedUiElement("" + e).SetClass("alert"),
+                new SubtleButton("./assets/svg/mapcomplete_logo.svg",
+                    "Go back to the theme overview",
+                    {url: window.location.protocol + "//" + window.location.hostname + "/index.html", newTab: false})
+
             ])
                 .SetClass("flex flex-col")
                 .AttachTo("centermessage");
@@ -334,40 +316,39 @@ export class InitUiElements {
             (layer) => layer.id
         );
 
-        new LayerResetter(
+        new BackgroundLayerResetter(
             State.state.backgroundLayer,
             State.state.locationControl,
             State.state.availableBackgroundLayers,
-            State.state.layoutToUse.map(
-                (layout: LayoutConfig) => layout.defaultBackgroundId
-            )
+            State.state.layoutToUse.defaultBackgroundId
         );
 
         const attr = new Attribution(
             State.state.locationControl,
             State.state.osmConnection.userDetails,
             State.state.layoutToUse,
-            State.state.leafletMap
+            State.state.currentBounds
         );
 
-        new Minimap({
+        Minimap.createMiniMap({
             background: State.state.backgroundLayer,
             location: State.state.locationControl,
             leafletMap: State.state.leafletMap,
+            bounds: State.state.currentBounds,
             attribution: attr,
             lastClickLocation: State.state.LastClickLocation
         }).SetClass("w-full h-full")
             .AttachTo("leafletDiv")
 
-        const layout = State.state.layoutToUse.data;
+        const layout = State.state.layoutToUse;
         if (layout.lockLocation) {
             if (layout.lockLocation === true) {
-                const tile = Utils.embedded_tile(
+                const tile = Tiles.embedded_tile(
                     layout.startLat,
                     layout.startLon,
                     layout.startZoom - 1
                 );
-                const bounds = Utils.tile_bounds(tile.z, tile.x, tile.y);
+                const bounds = Tiles.tile_bounds(tile.z, tile.x, tile.y);
                 // We use the bounds to get a sense of distance for this zoom level
                 const latDiff = bounds[0][0] - bounds[1][0];
                 const lonDiff = bounds[0][1] - bounds[1][1];
@@ -385,76 +366,150 @@ export class InitUiElements {
         }
     }
 
-    private static InitLayers(): FeatureSource {
+    private static InitLayers(): void {
         const state = State.state;
-        state.filteredLayers = state.layoutToUse.map((layoutToUse) => {
-            const flayers = [];
+        const empty = []
 
-            for (const layer of layoutToUse.layers) {
-                const isDisplayed = QueryParameters.GetQueryParameter(
+        const flayers: FilteredLayer[] = [];
+
+        for (const layer of state.layoutToUse.layers) {
+            let defaultShown = "true"
+            if(state.layoutToUse.id === personal.id){
+                defaultShown = "false"
+            }
+
+            let isDisplayed: UIEventSource<boolean>
+            if(state.layoutToUse.id === personal.id){
+                isDisplayed = State.state.osmConnection.GetPreference("personal-theme-layer-" + layer.id + "-enabled")
+                    .map(value => value === "yes", [], enabled => {
+                        return enabled ? "yes" : "";
+                    })
+                isDisplayed.addCallbackAndRun(d =>console.log("IsDisplayed for layer", layer.id, "is currently", d) )
+            }else{
+                isDisplayed = QueryParameters.GetQueryParameter(
                     "layer-" + layer.id,
-                    "true",
+                    defaultShown,
                     "Wether or not layer " + layer.id + " is shown"
                 ).map<boolean>(
                     (str) => str !== "false",
                     [],
                     (b) => b.toString()
                 );
-                const flayer = {
-                    isDisplayed: isDisplayed,
-                    layerDef: layer,
-                    appliedFilters: new UIEventSource<TagsFilter>(undefined),
-                };
-                flayers.push(flayer);
             }
-            return flayers;
-        });
+            const flayer = {
+                isDisplayed: isDisplayed,
+                layerDef: layer,
+                appliedFilters: new UIEventSource<{ filter: FilterConfig, selected: number }[]>([]),
+            };
 
-        const updater = new LoadFromOverpass(
-            state.locationControl,
-            state.layoutToUse,
-            state.leafletMap,
-            state.overpassUrl,
-            state.overpassTimeout,
-            Constants.useOsmApiAt
-        );
-        State.state.layerUpdater = updater;
+            if (layer.filters.length > 0) {
+                const filtersPerName = new Map<string, FilterConfig>()
+                layer.filters.forEach(f => filtersPerName.set(f.id, f))
+                const qp = QueryParameters.GetQueryParameter("filter-" + layer.id, "","Filtering state for a layer")
+                flayer.appliedFilters.map(filters => {
+                    filters = filters ?? []
+                    return filters.map(f => f.filter.id + "." + f.selected).join(",")
+                }, [], textual => {
+                    if(textual.length === 0){
+                        return empty
+                    }
+                    return textual.split(",").map(part => {
+                        const [filterId, selected] = part.split(".");
+                        return {filter: filtersPerName.get(filterId), selected: Number(selected)}
+                    }).filter(f => f.filter !== undefined && !isNaN(f.selected))
+                }).syncWith(qp, true)
+            }
 
-        const source = new FeaturePipeline(
-            state.filteredLayers,
-            State.state.changes,
-            updater,
-            state.osmApiFeatureSource,
-            state.layoutToUse,
-            state.locationControl,
-            state.selectedElement
-        );
+            flayers.push(flayer);
+        }
+        state.filteredLayers = new UIEventSource<FilteredLayer[]>(flayers);
+        
+        
 
-        State.state.featurePipeline = source;
-        new ShowDataLayer(
-            source.features,
-            State.state.leafletMap,
-            State.state.layoutToUse
-        );
 
-        const selectedFeatureHandler = new SelectedFeatureHandler(
-            Hash.hash,
-            State.state.selectedElement,
-            source,
-            State.state.osmApiFeatureSource
+        const clusterCounter = TileHierarchyAggregator.createHierarchy()
+        new ShowDataLayer({
+            features: clusterCounter.getCountsForZoom(State.state.locationControl, State.state.layoutToUse.clustering.minNeededElements),
+            leafletMap: State.state.leafletMap,
+            layerToShow: ShowTileInfo.styling,
+            enablePopups: false
+        })
+
+        State.state.featurePipeline = new FeaturePipeline(
+            source => {
+
+                clusterCounter.addTile(source)
+
+                const clustering = State.state.layoutToUse.clustering
+                const doShowFeatures = source.features.map(
+                    f => {
+                        const z = State.state.locationControl.data.zoom
+                        
+                        if(!source.layer.isDisplayed.data){
+                            return false;
+                        }
+
+                        if (z < source.layer.layerDef.minzoom) {
+                            // Layer is always hidden for this zoom level
+                            return false;
+                        }
+
+                        if (z >= clustering.maxZoom) {
+                            return true
+                        }
+
+                        if (f.length > clustering.minNeededElements) {
+                            // This tile alone already has too much features
+                            return false
+                        }
+
+                        let [tileZ, tileX, tileY] = Tiles.tile_from_index(source.tileIndex);
+                        if (tileZ >= z) {
+
+                            while (tileZ > z) {
+                                tileZ--
+                                tileX = Math.floor(tileX / 2)
+                                tileY = Math.floor(tileY / 2)
+                            }
+
+                            if (clusterCounter.getTile(Tiles.tile_index(tileZ, tileX, tileY))?.totalValue > clustering.minNeededElements) {
+                                return false
+                            }
+                        }
+
+
+                        const bounds = State.state.currentBounds.data
+                        if(bounds === undefined){
+                            // Map is not yet displayed
+                            return false;
+                        }
+                        if (!source.bbox.overlapsWith(bounds)) {
+                            // Not within range
+                            return false
+                        }
+
+                        return true
+                    }, [State.state.currentBounds]
+                )
+
+                new ShowDataLayer(
+                    {
+                        features: source,
+                        leafletMap: State.state.leafletMap,
+                        layerToShow: source.layer.layerDef,
+                        doShowLayer: doShowFeatures
+                    }
+                );
+            }, state
         );
-        selectedFeatureHandler.zoomToSelectedFeature(
-            State.state.locationControl
-        );
-        return source;
     }
 
     private static setupAllLayerElements() {
         // ------------- Setup the layers -------------------------------
 
-        const source = InitUiElements.InitLayers();
+        InitUiElements.InitLayers();
 
-        new LeftControls(source).AttachTo("bottom-left");
+        new LeftControls(State.state).AttachTo("bottom-left");
         new RightControls().AttachTo("bottom-right");
 
         // ------------------ Setup various other UI elements ------------

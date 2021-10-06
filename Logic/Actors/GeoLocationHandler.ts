@@ -60,12 +60,12 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _previousLocationGrant: UIEventSource<string>;
-    private readonly _layoutToUse: UIEventSource<LayoutConfig>;
+    private readonly _layoutToUse: LayoutConfig;
 
     constructor(
         currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
         leafletMap: UIEventSource<L.Map>,
-        layoutToUse: UIEventSource<LayoutConfig>
+        layoutToUse: LayoutConfig
     ) {
         const hasLocation = currentGPSLocation.map(
             (location) => location !== undefined
@@ -207,6 +207,9 @@ export default class GeoLocationHandler extends VariableUiElement {
             });
 
             const map = self._leafletMap.data;
+            if(map === undefined){
+                return;
+            }
 
             const newMarker = L.marker(location.latlng, {icon: icon});
             newMarker.addTo(map);
@@ -230,7 +233,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             navigator?.permissions
                 ?.query({name: "geolocation"})
                 ?.then(function (status) {
-                    console.log("Geolocation is already", status);
+                    console.log("Geolocation permission is ", status.state);
                     if (status.state === "granted") {
                         self.StartGeolocating(forceZoom);
                     }
@@ -264,7 +267,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         }
 
         // We check that the GPS location is not out of bounds
-        const b = this._layoutToUse.data.lockLocation;
+        const b = this._layoutToUse.lockLocation;
         let inRange = true;
         if (b) {
             if (b !== true) {
@@ -289,7 +292,6 @@ export default class GeoLocationHandler extends VariableUiElement {
 
     private StartGeolocating(zoomToGPS = true) {
         const self = this;
-        console.log("Starting geolocation");
 
         this._lastUserRequest = zoomToGPS ? new Date() : new Date(0);
         if (self._permission.data === "denied") {
@@ -300,8 +302,6 @@ export default class GeoLocationHandler extends VariableUiElement {
         if (this._currentGPSLocation.data !== undefined) {
             this.MoveToCurrentLoction(16);
         }
-
-        console.log("Searching location using GPS");
 
         if (self._isActive.data) {
             return;

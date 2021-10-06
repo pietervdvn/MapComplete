@@ -12,6 +12,7 @@
             ]
         }
     },
+    "minzoom": 12,
     "wayHandling": 1,
     "icon": {
         "render": "circle:white;./assets/layers/food/restaurant.svg",
@@ -554,10 +555,12 @@
                 }
             ],
             "condition": "cuisine=friture"
-        }
+        },
+        "dog-access"
     ],
     "filter": [
         {
+            "id": "opened-now",
             "options": [
                 {
                     "question": {
@@ -569,6 +572,7 @@
             ]
         },
         {
+            "id": "vegetarian",
             "options": [
                 {
                     "question": {
@@ -587,6 +591,7 @@
             ]
         },
         {
+            "id": "vegan",
             "options": [
                 {
                     "question": {
@@ -603,6 +608,7 @@
             ]
         },
         {
+            "id": "halal",
             "options": [
                 {
                     "question": {

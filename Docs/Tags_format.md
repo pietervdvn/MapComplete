@@ -31,6 +31,8 @@ Strict not equals
 To check if a key does _not_ equal a certain value, use `key!=value`. This is converted behind the scenes
 to `key!~^value$`
 
+If `key` is not present or empty, this will match too.
+
 ### If key is present
 
 This implies that, to check if a key is present, `key!=` can be used. This will only match if the key is present and not

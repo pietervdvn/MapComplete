@@ -3,8 +3,7 @@
         "name": "Bancs",
         "presets": {
             "0": {
-                "description": "Ajouter un nouveau banc",
-                "title": "Banc"
+                "title": "banc"
             }
         },
         "tagRenderings": {
@@ -810,7 +809,7 @@
         "name": "Eau potable",
         "presets": {
             "0": {
-                "title": "Eau potable"
+                "title": "eau potable"
             }
         },
         "tagRenderings": {
@@ -951,7 +950,7 @@
         "name": "Panneaux d'informations",
         "presets": {
             "0": {
-                "title": "Panneau d'informations"
+                "title": "panneau d'informations"
             }
         },
         "title": {
@@ -1043,7 +1042,7 @@
         "name": "Tables de pique-nique",
         "presets": {
             "0": {
-                "title": "Table de pique-nique"
+                "title": "table de pique-nique"
             }
         },
         "tagRenderings": {
@@ -1550,11 +1549,11 @@
         "presets": {
             "0": {
                 "description": "Des toilettes",
-                "title": "Toilettes"
+                "title": "toilettes"
             },
             "1": {
                 "description": "Toilettes avec au moins un WC accessible aux personnes à mobilité réduite",
-                "title": "Toilettes accessible aux personnes à mobilité réduite"
+                "title": "toilettes accessible aux personnes à mobilité réduite"
             }
         },
         "tagRenderings": {

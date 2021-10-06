@@ -3,6 +3,23 @@
         "description": {
             "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
         },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "honden zijn toegelaten"
+                },
+                "1": {
+                    "then": "honden zijn <b>niet</b> toegelaten"
+                },
+                "2": {
+                    "then": "honden zijn <b>enkel aan de leiband</b> welkom"
+                },
+                "3": {
+                    "then": "honden zijn welkom en mogen vrij rondlopen"
+                }
+            },
+            "question": "Zijn honden toegelaten in deze zaak?"
+        },
         "email": {
             "question": "Wat is het e-mailadres van {name}?"
         },

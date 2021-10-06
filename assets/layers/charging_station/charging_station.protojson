@@ -538,7 +538,9 @@
           }
         },
         {
-          "if": "amenity=charging_station",
+          "if": {
+          "and":  ["amenity=charging_station","operational_status="]
+          },
           "then": {
             "en": "This charging station works",
             "nl": "Dit oplaadpunt werkt"
@@ -646,6 +648,7 @@
   "wayHandling": 1,
   "filter": [
     {
+      "id": "vehicle-type",
       "options": [
         {
           "question": {
@@ -675,6 +678,7 @@
       ]
     },
     {
+      "id": "working",
       "options": [
         {
           "question": {

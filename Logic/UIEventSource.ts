@@ -1,4 +1,5 @@
 import {Utils} from "../Utils";
+import * as Events from "events";
 
 export class UIEventSource<T> {
 
@@ -32,14 +33,14 @@ export class UIEventSource<T> {
         return [];
     }
 
-    public static flatten<X>(source: UIEventSource<UIEventSource<X>>, possibleSources: UIEventSource<any>[]): UIEventSource<X> {
+    public static flatten<X>(source: UIEventSource<UIEventSource<X>>, possibleSources?: UIEventSource<any>[]): UIEventSource<X> {
         const sink = new UIEventSource<X>(source.data?.data);
 
         source.addCallback((latestData) => {
             sink.setData(latestData?.data);
         });
 
-        for (const possibleSource of possibleSources) {
+        for (const possibleSource of possibleSources ?? []) {
             possibleSource?.addCallback(() => {
                 sink.setData(source.data?.data);
             })
@@ -60,7 +61,76 @@ export class UIEventSource<T> {
 
         run();
         return source;
+    }
 
+    /**
+     * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
+     * If the promise fails, the value will stay undefined
+     * @param promise
+     * @constructor
+     */
+    public static FromPromise<T>(promise: Promise<T>): UIEventSource<T> {
+        const src = new UIEventSource<T>(undefined)
+        promise?.then(d => src.setData(d))
+        promise?.catch(err => console.warn("Promise failed:", err))
+        return src
+    }
+
+    /**
+     * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
+     * If the promise fails, the value will stay undefined
+     * @param promise
+     * @constructor
+     */
+    public static FromPromiseWithErr<T>(promise: Promise<T>): UIEventSource<{ success: T } | { error: any }> {
+        const src = new UIEventSource<{ success: T } | { error: any }>(undefined)
+        promise?.then(d => src.setData({success: d}))
+        promise?.catch(err => src.setData({error: err}))
+        return src
+    }
+
+    /**
+     * Given a UIEVentSource with a list, returns a new UIEventSource which is only updated if the _contents_ of the list are different.
+     * E.g.
+     * const src = new UIEventSource([1,2,3])
+     * const stable = UIEventSource.ListStabilized(src)
+     * src.addCallback(_ => console.log("src pinged"))
+     * stable.addCallback(_ => console.log("stable pinged))
+     * src.setDate([...src.data])
+     *
+     * This will only trigger 'src pinged'
+     *
+     * @param src
+     * @constructor
+     */
+    public static ListStabilized<T>(src: UIEventSource<T[]>): UIEventSource<T[]> {
+
+        const stable = new UIEventSource<T[]>(src.data)
+        src.addCallback(list => {
+            if (list === undefined) {
+                stable.setData(undefined)
+                return;
+            }
+            const oldList = stable.data
+            if (oldList === list) {
+                return;
+            }
+            if (oldList.length !== list.length) {
+                stable.setData(list);
+                return;
+            }
+
+            for (let i = 0; i < list.length; i++) {
+                if (oldList[i] !== list[i]) {
+                    stable.setData(list);
+                    return;
+                }
+            }
+
+            // No actual changes, so we don't do anything
+            return;
+        })
+        return stable
     }
 
     /**
@@ -81,9 +151,12 @@ export class UIEventSource<T> {
         return this;
     }
 
-    public addCallbackAndRun(callback: ((latestData: T) => void)): UIEventSource<T> {
-        callback(this.data);
-        return this.addCallback(callback);
+    public addCallbackAndRun(callback: ((latestData: T) => (boolean | void | any))): UIEventSource<T> {
+        const doDeleteCallback = callback(this.data);
+        if (doDeleteCallback !== true) {
+            this.addCallback(callback);
+        }
+        return this;
     }
 
     public setData(t: T): UIEventSource<T> {
@@ -112,6 +185,30 @@ export class UIEventSource<T> {
                 this._callbacks.splice(this._callbacks.indexOf(toDeleteElement), 1)
             }
         }
+    }
+
+    /**
+     * Monadic bind function
+     */
+    public bind<X>(f: ((t: T) => UIEventSource<X>)): UIEventSource<X> {
+        const mapped = this.map(f)
+        const sink = new UIEventSource<X>(undefined)
+        const seenEventSources = new Set<UIEventSource<X>>();
+        mapped.addCallbackAndRun(newEventSource => {
+            
+            if (newEventSource === undefined) {
+                sink.setData(undefined)
+            } else if (!seenEventSources.has(newEventSource)) {
+                seenEventSources.add(newEventSource)
+                newEventSource.addCallbackAndRun(resultData => {
+                    if (mapped.data === newEventSource) {
+                        sink.setData(resultData);
+                    }
+                })
+            }
+        })
+
+        return sink;
     }
 
     /**
@@ -183,6 +280,14 @@ export class UIEventSource<T> {
 
     addCallbackAndRunD(callback: (data: T) => void) {
         this.addCallbackAndRun(data => {
+            if (data !== undefined && data !== null) {
+                return callback(data)
+            }
+        })
+    }
+
+    addCallbackD(callback: (data: T) => void) {
+        this.addCallback(data => {
             if (data !== undefined && data !== null) {
                 return callback(data)
             }

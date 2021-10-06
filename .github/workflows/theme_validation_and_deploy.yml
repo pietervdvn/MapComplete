@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1.2.0
         with:
-          node-version: '15'
+          node-version: '16'
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
@@ -22,9 +22,6 @@ jobs:
 
       - name: create generated dir
         run: mkdir ./assets/generated
-
-      - name: create stub themes
-        run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
 
       - name: Prepare deploy
         run: npm run prepare-deploy

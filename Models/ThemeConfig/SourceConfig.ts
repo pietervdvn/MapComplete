@@ -2,18 +2,18 @@ import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 
 export default class SourceConfig {
 
-    osmTags?: TagsFilter;
-    overpassScript?: string;
-    geojsonSource?: string;
-    geojsonZoomLevel?: number;
-    isOsmCacheLayer: boolean;
+    public readonly osmTags?: TagsFilter;
+    public readonly overpassScript?: string;
+    public readonly geojsonSource?: string;
+    public readonly geojsonZoomLevel?: number;
+    public readonly isOsmCacheLayer: boolean;
 
     constructor(params: {
         osmTags?: TagsFilter,
         overpassScript?: string,
         geojsonSource?: string,
         isOsmCache?: boolean,
-        geojsonSourceLevel?: number
+        geojsonSourceLevel?: number,
     }, context?: string) {
 
         let defined = 0;

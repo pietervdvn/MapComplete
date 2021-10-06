@@ -19,7 +19,7 @@
     "source": {
         "osmTags": "amenity=public_bookcase"
     },
-    "minzoom": 12,
+    "minzoom": 10,
     "wayHandling": 2,
     "title": {
         "render": {
@@ -444,6 +444,7 @@
     },
     "filter": [
         {
+            "id": "kid-books",
             "options": [
                 {
                     "question": "Kinderboeken aanwezig?",
@@ -452,6 +453,7 @@
             ]
         },
         {
+            "id": "adult-books",
             "options": [
                 {
                     "question": "Boeken voor volwassenen aanwezig?",
@@ -460,11 +462,12 @@
             ]
         },
         {
+            "id": "inside",
             "options": [
                 {
-                    "question": "Binnen of buiten",
-                    "osmTags": {
-                        "and": []
+                    "question": {
+                        "nl": "Binnen of buiten",
+                        "en": "Indoor or outdoor"
                     }
                 },
                 {

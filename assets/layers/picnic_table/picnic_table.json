@@ -92,12 +92,12 @@
                 "leisure=picnic_table"
             ],
             "title": {
-                "en": "Picnic table",
-                "nl": "Picnic-tafel",
-                "it": "Tavolo da picnic",
+                "en": "picnic table",
+                "nl": "picnic-tafel",
+                "it": "tavolo da picnic",
                 "ru": "Стол для пикника",
-                "de": "Picknicktisch",
-                "fr": "Table de pique-nique"
+                "de": "picknicktisch",
+                "fr": "table de pique-nique"
             }
         }
     ],

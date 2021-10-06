@@ -1,0 +1,40 @@
+/* This stylesheet reimplements a few classes from wikipedia to show their articles prettily */
+
+.wikipedia-article {
+    font-family: sans-serif !important;
+}
+
+.wikipedia-article .tright {
+    float: right;
+    clear: right;
+}
+
+.wikipedia-article svg, .wikipedia-article img {
+    width: unset;
+    height: unset;
+    display: unset;
+}
+
+.wikipedia-article .thumb {
+    background: var(--subtle-detail-color);
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--subtle-detail-color-light-contrast);
+    border-radius: 0.5rem;
+}
+
+.wikipedia-article a:hover a:focus {
+    text-decoration: underline !important;
+}
+
+.wikipedia-article a {
+    color: #0645ad !important;
+    background: none !important;
+    text-decoration: none;
+}
+
+
+.wikipedia-article p {
+    margin-bottom: 0.5rem;
+}
+

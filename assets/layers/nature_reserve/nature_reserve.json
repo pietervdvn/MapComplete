@@ -151,7 +151,7 @@
                         ]
                     },
                     "then": {
-                        "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                        "nl": "<img src=\"./assets/layers/nature_reserve/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
                     }
                 },
                 {
@@ -161,7 +161,7 @@
                         ]
                     },
                     "then": {
-                        "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                        "nl": "<img src=\"./assets/layers/nature_reserve/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
                     },
                     "hideInAnswer": true
                 },
@@ -172,7 +172,7 @@
                         ]
                     },
                     "then": {
-                        "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+                        "nl": "<img src=\"./assets/layers/nature_reserve/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
                     }
                 }
             ],
@@ -392,11 +392,12 @@
                 }
             ],
             "id": "Surface area"
-        }
+        },
+        "wikipedia"
     ],
     "wayHandling": 2,
     "icon": {
-        "render": "./assets/themes/buurtnatuur/nature_reserve.svg"
+        "render": "./assets/layers/nature_reserve/nature_reserve.svg"
     },
     "width": {
         "render": "1"
@@ -414,7 +415,7 @@
                 "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
             ],
             "title": {
-                "nl": "Natuurreservaat"
+                "nl": "natuurreservaat"
             },
             "description": {
                 "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
@@ -423,6 +424,7 @@
     ],
     "filter": [
         {
+            "id": "access",
             "options": [
                 {
                     "question": {
@@ -433,6 +435,7 @@
             ]
         },
         {
+            "id": "dogs",
             "options": [
                 {
                     "question": {

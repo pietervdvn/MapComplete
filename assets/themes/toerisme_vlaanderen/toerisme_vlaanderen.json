@@ -14,13 +14,13 @@
     "nl": "Een kaart om toeristisch relevante info op aan te duiden"
   },
   "description": {
-    "nl": "Op deze kaart kan je info zien voor toeristen en zelf aanpasingen maken, zichtbaar voor iedereen"
+    "nl": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken.<br/><br/>Met de steun van Toerisme Vlaanderen<img src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
   "icon": "./assets/svg/star.svg",
   "startZoom": 8,
   "startLat": 50.8536,
   "startLon": 4.433,
-  "widenFactor": 0.2,
+  "widenFactor": 1.5,
   "layers": [
     {
       "builtin": [

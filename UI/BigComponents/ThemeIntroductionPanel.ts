@@ -2,21 +2,17 @@ import State from "../../State";
 import Combine from "../Base/Combine";
 import LanguagePicker from "../LanguagePicker";
 import Translations from "../i18n/Translations";
-import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import {UIEventSource} from "../../Logic/UIEventSource";
 
-export default class ThemeIntroductionPanel extends VariableUiElement {
+export default class ThemeIntroductionPanel extends Combine {
 
     constructor(isShown: UIEventSource<boolean>) {
+        const layout = State.state.layoutToUse
 
-        const languagePicker =
-            new VariableUiElement(
-                State.state.layoutToUse.map(layout => LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone()))
-            )
-        ;
+        const languagePicker = LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone())
 
         const toTheMap = new SubtleButton(
             undefined,
@@ -53,17 +49,16 @@ export default class ThemeIntroductionPanel extends VariableUiElement {
                 State.state.featureSwitchUserbadge
             )
 
-
-        super(State.state.layoutToUse.map(layout => new Combine([
+        super([
             layout.description.Clone(),
             "<br/><br/>",
             toTheMap,
             loginStatus,
-            layout.descriptionTail.Clone(),
+            layout.descriptionTail?.Clone(),
             "<br/>",
             languagePicker,
             ...layout.CustomCodeSnippets()
-        ])))
+        ])
 
         this.SetClass("link-underline")
     }

@@ -1,4 +1,5 @@
 import * as turf from '@turf/turf'
+import {BBox} from "./BBox";
 
 export class GeoOperations {
 
@@ -7,7 +8,7 @@ export class GeoOperations {
     }
 
     /**
-     * Converts a GeoJSon feature to a point feature
+     * Converts a GeoJson feature to a point GeoJson feature
      * @param feature
      */
     static centerpoint(feature: any) {
@@ -185,8 +186,51 @@ export class GeoOperations {
         return turf.length(feature) * 1000
     }
 
+    static buffer(feature: any, bufferSizeInMeter: number) {
+        return turf.buffer(feature, bufferSizeInMeter / 1000, {
+            units: 'kilometers'
+        })
+    }
+
+    static bbox(feature: any) {
+        const [lon, lat, lon0, lat0] = turf.bbox(feature)
+        return {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        lon,
+                        lat
+                    ],
+                    [
+                        lon0,
+                        lat
+                    ],
+                    [
+                        lon0,
+                        lat0
+                    ],
+                    [
+                        lon,
+                        lat0
+                    ],
+                    [
+                        lon,
+                        lat
+                    ],
+                ]
+            }
+        }
+    }
+
     /**
      * Generates the closest point on a way from a given point
+     * 
+     *  The properties object will contain three values:
+     // - `index`: closest point was found on nth line part,
+     // - `dist`: distance between pt and the closest point (in kilometer),
+     // `location`: distance along the line between start and the closest point.
      * @param way The road on which you want to find a point
      * @param point Point defined as [lon, lat]
      */
@@ -334,77 +378,3 @@ export class GeoOperations {
 }
 
 
-export class BBox {
-
-    readonly maxLat: number;
-    readonly maxLon: number;
-    readonly minLat: number;
-    readonly minLon: number;
-
-    constructor(coordinates) {
-        this.maxLat = Number.MIN_VALUE;
-        this.maxLon = Number.MIN_VALUE;
-        this.minLat = Number.MAX_VALUE;
-        this.minLon = Number.MAX_VALUE;
-
-
-        for (const coordinate of coordinates) {
-            this.maxLon = Math.max(this.maxLon, coordinate[0]);
-            this.maxLat = Math.max(this.maxLat, coordinate[1]);
-            this.minLon = Math.min(this.minLon, coordinate[0]);
-            this.minLat = Math.min(this.minLat, coordinate[1]);
-        }
-        this.check();
-    }
-
-    static fromLeafletBounds(bounds) {
-        return new BBox([[bounds.getWest(), bounds.getNorth()], [bounds.getEast(), bounds.getSouth()]])
-    }
-
-    static get(feature) {
-        if (feature.bbox?.overlapsWith === undefined) {
-            const turfBbox: number[] = turf.bbox(feature)
-            feature.bbox = new BBox([[turfBbox[0], turfBbox[1]], [turfBbox[2], turfBbox[3]]]);
-        }
-
-        return feature.bbox;
-    }
-
-    public overlapsWith(other: BBox) {
-        if (this.maxLon < other.minLon) {
-            return false;
-        }
-        if (this.maxLat < other.minLat) {
-            return false;
-        }
-        if (this.minLon > other.maxLon) {
-            return false;
-        }
-        return this.minLat <= other.maxLat;
-
-    }
-
-    public isContainedIn(other: BBox) {
-        if (this.maxLon > other.maxLon) {
-            return false;
-        }
-        if (this.maxLat > other.maxLat) {
-            return false;
-        }
-        if (this.minLon < other.minLon) {
-            return false;
-        }
-        if (this.minLat < other.minLat) {
-            return false
-        }
-        return true;
-    }
-
-    private check() {
-        if (isNaN(this.maxLon) || isNaN(this.maxLat) || isNaN(this.minLon) || isNaN(this.minLat)) {
-            console.log(this);
-            throw  "BBOX has NAN";
-        }
-    }
-
-}

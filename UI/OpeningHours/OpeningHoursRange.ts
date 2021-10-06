@@ -37,7 +37,7 @@ export default class OpeningHoursRange extends BaseUIElement {
 
         let content: BaseUIElement;
         if (height > 2) {
-            content = new Combine([startTime, deleteRange, endTime]).SetClass("flex flex-col h-full").SetStyle("justify-content: space-between;");
+            content = new Combine([startTime, deleteRange, endTime]).SetClass("flex flex-col h-full justify-between");
         } else {
             content = new Combine([deleteRange]).SetClass("flex flex-col h-full").SetStyle("flex-content: center; overflow-x: unset;")
         }

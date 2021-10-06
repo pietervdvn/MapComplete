@@ -18,7 +18,7 @@ export default class UserBadge extends Toggle {
 
         const loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
-            .SetClass("userbadge-login pt-3 w-full h-full")
+            .SetClass("userbadge-login inline-flex justify-center items-center w-full h-full text-lg font-bold min-w-[20em]")
             .onClick(() => State.state.osmConnection.AttemptLogin());
 
 
@@ -47,7 +47,7 @@ export default class UserBadge extends Toggle {
                 });
 
                 const linkStyle = "flex items-baseline"
-                const languagePicker = (LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.language) ?? new FixedUiElement(""))
+                const languagePicker = (LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.language) ?? new FixedUiElement(""))
                     .SetStyle("width:min-content;");
 
                 let messageSpan =
@@ -133,7 +133,7 @@ export default class UserBadge extends Toggle {
         )
 
 
-        this.SetClass("shadow rounded-full h-min overflow-hidden block w-max")
+        this.SetClass("shadow rounded-full h-min overflow-hidden block w-full md:w-max")
 
     }
 

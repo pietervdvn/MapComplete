@@ -1,16 +1,26 @@
-const client_token = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
+import FeatureInfoBox from "./UI/Popup/FeatureInfoBox";
+import {UIEventSource} from "./Logic/UIEventSource";
+import AllKnownLayers from "./Customizations/AllKnownLayers";
+import State from "./State";
+import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 
-const image_id = '196804715753265';
-const api_url = 'https://graph.mapillary.com/' + image_id + '?fields=thumb_1024_url&&access_token=' + client_token;
-fetch(api_url,
-    {
-        headers: {'Authorization': 'OAuth ' + client_token}
-    }
-).then(response => {
-    return response.json()
-}).then(
-    json => {
-        const thumbnail_url = json["thumb_1024"]
-        console.log(thumbnail_url)
-    }
-)
+State.state = new State(AllKnownLayouts.allKnownLayouts.get("charging_stations"))
+State.state.changes.pendingChanges.setData([])
+const geojson = {
+    type: "Feature",
+    geometry: {
+        type: "Point",
+        coordinates: [51.0, 4]
+    },
+    properties:
+        {
+            id: "node/42",
+            amenity: "charging_station",
+        }
+}
+State.state.allElements.addOrGetElement(geojson)
+const tags = State.state.allElements.getEventSourceById("node/42")
+new FeatureInfoBox(
+    tags,
+    AllKnownLayers.sharedLayers.get("charging_station")
+).AttachTo("maindiv")

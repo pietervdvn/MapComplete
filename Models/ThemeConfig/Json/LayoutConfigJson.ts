@@ -53,6 +53,11 @@ export interface LayoutConfigJson {
     language: string | string[];
 
     /**
+     * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated
+     */
+    mustHaveLanguage?: string[]
+
+    /**
      * The title, as shown in the welcome message and the more-screen
      */
     title: string | any;
@@ -100,7 +105,7 @@ export interface LayoutConfigJson {
      * However, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.
      * For this, the bounds are widened in order to make a small pan still within bounds of the loaded data.
      *
-     * IF widenfactor is 0, this feature is disabled. A recommended value is between 0.5 and 0.01 (the latter for very dense queries)
+     * IF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3
      */
     widenFactor?: number;
 
@@ -228,8 +233,8 @@ export interface LayoutConfigJson {
          */
         maxZoom?: number,
         /**
-         * The number of elements that should be showed (in total) before clustering starts to happen.
-         * If clustering is defined, defaults to 0
+         * The number of elements per tile needed to start clustering 
+         * If clustering is defined, defaults to 25
          */
         minNeededElements?: number
     },
@@ -263,9 +268,9 @@ export interface LayoutConfigJson {
     enablePdfDownload?: boolean;
 
     /**
-     * Set a different overpass URL. Default: https://overpass-api.de/api/interpreter
+     * Set one or more overpass URLs to use for this theme..
      */
-    overpassUrl?: string;
+    overpassUrl?: string | string[];
     /**
      * Set a different timeout for overpass queries - in seconds. Default: 30s
      */

@@ -1,8 +1,5 @@
 import {GeoOperations} from "./GeoOperations";
 import State from "../State";
-import {And} from "./Tags/And";
-import {Tag} from "./Tags/Tag";
-import {Or} from "./Tags/Or";
 import {Utils} from "../Utils";
 import opening_hours from "opening_hours";
 import Combine from "../UI/Base/Combine";
@@ -20,7 +17,7 @@ const cardinalDirections = {
 
 
 export default class SimpleMetaTagger {
-    static coder: any;
+    public static coder: any;
     public static readonly objectMetaInfo = new SimpleMetaTagger(
         {
             keys: ["_last_edit:contributor",
@@ -30,7 +27,7 @@ export default class SimpleMetaTagger {
                 "_version_number"],
             doc: "Information about the last edit of this object."
         },
-        (feature) => {/*Note: also handled by 'UpdateTagsFromOsmAPI'*/
+        (feature) => {/*Note: also called by 'UpdateTagsFromOsmAPI'*/
 
             const tgs = feature.properties;
 
@@ -47,6 +44,7 @@ export default class SimpleMetaTagger {
             move("changeset", "_last_edit:changeset")
             move("timestamp", "_last_edit:timestamp")
             move("version", "_version_number")
+            return true;
         }
     )
     private static latlon = new SimpleMetaTagger({
@@ -61,6 +59,7 @@ export default class SimpleMetaTagger {
             feature.properties["_lon"] = "" + lon;
             feature._lon = lon; // This is dirty, I know
             feature._lat = lat;
+            return true;
         })
     );
     private static surfaceArea = new SimpleMetaTagger(
@@ -73,6 +72,7 @@ export default class SimpleMetaTagger {
             feature.properties["_surface"] = "" + sqMeters;
             feature.properties["_surface:ha"] = "" + Math.floor(sqMeters / 1000) / 10;
             feature.area = sqMeters;
+            return true;
         })
     );
 
@@ -83,18 +83,33 @@ export default class SimpleMetaTagger {
 
         },
         (feature => {
-            const units = Utils.NoNull([].concat(State.state?.layoutToUse?.data?.layers?.map(layer => layer.units ?? [])));
+            const units = Utils.NoNull([].concat(...State.state?.layoutToUse?.layers?.map(layer => layer.units ?? [])));
+            if (units.length == 0) {
+                return;
+            }
             let rewritten = false;
             for (const key in feature.properties) {
                 if (!feature.properties.hasOwnProperty(key)) {
                     continue;
                 }
                 for (const unit of units) {
+                    if (unit === undefined) {
+                        continue
+                    }
+                    if (unit.appliesToKeys === undefined) {
+                        console.error("The unit ", unit, "has no appliesToKey defined")
+                        continue
+                    }
                     if (!unit.appliesToKeys.has(key)) {
                         continue;
                     }
                     const value = feature.properties[key]
-                    const [, denomination] = unit.findDenomination(value)
+                    const denom = unit.findDenomination(value)
+                    if (denom === undefined) {
+                        // no valid value found
+                        break;
+                    }
+                    const [, denomination] = denom;
                     let canonical = denomination?.canonicalValue(value) ?? undefined;
                     if (canonical === value) {
                         break;
@@ -110,9 +125,7 @@ export default class SimpleMetaTagger {
                 }
 
             }
-            if (rewritten) {
-                State.state.allElements.getEventSourceById(feature.id).ping();
-            }
+            return rewritten
         })
     )
 
@@ -127,21 +140,21 @@ export default class SimpleMetaTagger {
             const km = Math.floor(l / 1000)
             const kmRest = Math.round((l - km * 1000) / 100)
             feature.properties["_length:km"] = "" + km + "." + kmRest
+            return true;
         })
     )
     private static country = new SimpleMetaTagger(
         {
             keys: ["_country"],
-            doc: "The country code of the property (with latlon2country)"
+            doc: "The country code of the property (with latlon2country)",
+            includesDates: false
         },
-        feature => {
-
-
+        ((feature, _) => {
             let centerPoint: any = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];
             const lon = centerPoint.geometry.coordinates[0];
-
-            SimpleMetaTagger.GetCountryCodeFor(lon, lat, (countries) => {
+            
+            SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, (countries: string[]) => {
                 try {
                     const oldCountry = feature.properties["_country"];
                     feature.properties["_country"] = countries[0].trim().toLowerCase();
@@ -149,12 +162,12 @@ export default class SimpleMetaTagger {
                         const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
                         tagsSource.ping();
                     }
-
                 } catch (e) {
                     console.warn(e)
                 }
-            });
-        }
+            })
+            return false;
+        })
     )
     private static isOpen = new SimpleMetaTagger(
         {
@@ -166,7 +179,7 @@ export default class SimpleMetaTagger {
             if (Utils.runningFromConsole) {
                 // We are running from console, thus probably creating a cache
                 // isOpen is irrelevant
-                return
+                return false
             }
 
             const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
@@ -191,7 +204,7 @@ export default class SimpleMetaTagger {
                         if (oldNextChange > (new Date()).getTime() &&
                             tags["_isOpen:oldvalue"] === tags["opening_hours"]) {
                             // Already calculated and should not yet be triggered
-                            return;
+                            return false;
                         }
 
                         tags["_isOpen"] = oh.getState() ? "yes" : "no";
@@ -219,6 +232,7 @@ export default class SimpleMetaTagger {
                         }
                     }
                     updateTags();
+                    return true;
                 } catch (e) {
                     console.warn("Error while parsing opening hours of ", tags.id, e);
                     tags["_isOpen"] = "parse_error";
@@ -236,11 +250,11 @@ export default class SimpleMetaTagger {
             const tags = feature.properties;
             const direction = tags["camera:direction"] ?? tags["direction"];
             if (direction === undefined) {
-                return;
+                return false;
             }
             const n = cardinalDirections[direction] ?? Number(direction);
             if (isNaN(n)) {
-                return;
+                return false;
             }
 
             // The % operator has range (-360, 360). We apply a trick to get [0, 360).
@@ -248,16 +262,17 @@ export default class SimpleMetaTagger {
 
             tags["_direction:numerical"] = normalized;
             tags["_direction:leftright"] = normalized <= 180 ? "right" : "left";
-
+            return true;
         })
     )
+
     private static currentTime = new SimpleMetaTagger(
         {
             keys: ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
             doc: "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
             includesDates: true
         },
-        (feature, _, freshness) => {
+        (feature, freshness) => {
             const now = new Date();
 
             if (typeof freshness === "string") {
@@ -276,7 +291,7 @@ export default class SimpleMetaTagger {
             feature.properties["_now:datetime"] = datetime(now);
             feature.properties["_loaded:date"] = date(freshness);
             feature.properties["_loaded:datetime"] = datetime(freshness);
-
+            return true;
         }
     )
     public static metatags = [
@@ -294,12 +309,18 @@ export default class SimpleMetaTagger {
     public readonly keys: string[];
     public readonly doc: string;
     public readonly includesDates: boolean
-    private readonly _f: (feature: any, index: number, freshness: Date) => void;
+    public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date) => boolean;
 
-    constructor(docs: { keys: string[], doc: string, includesDates?: boolean }, f: ((feature: any, index: number, freshness: Date) => void)) {
+    /***
+     * A function that adds some extra data to a feature
+     * @param docs: what does this extra data do?
+     * @param f: apply the changes. Returns true if something changed
+     */
+    constructor(docs: { keys: string[], doc: string, includesDates?: boolean },
+                f: ((feature: any, freshness: Date) => boolean)) {
         this.keys = docs.keys;
         this.doc = docs.doc;
-        this._f = f;
+        this.applyMetaTagsOnFeature = f;
         this.includesDates = docs.includesDates ?? false;
         for (const key of docs.keys) {
             if (!key.startsWith('_') && key.toLowerCase().indexOf("theme") < 0) {
@@ -308,11 +329,7 @@ export default class SimpleMetaTagger {
         }
     }
 
-    static GetCountryCodeFor(lon: number, lat: number, callback: (country: string) => void) {
-        SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, callback)
-    }
-
-    static HelpText(): BaseUIElement {
+    public static HelpText(): BaseUIElement {
         const subElements: (string | BaseUIElement)[] = [
             new Combine([
                 new Title("Metatags", 1),
@@ -334,13 +351,5 @@ export default class SimpleMetaTagger {
 
         return new Combine(subElements).SetClass("flex-col")
     }
-
-    addMetaTags(features: { feature: any, freshness: Date }[]) {
-        for (let i = 0; i < features.length; i++) {
-            let feature = features[i];
-            this._f(feature.feature, i, feature.freshness);
-        }
-    }
-
 
 }

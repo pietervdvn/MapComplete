@@ -1,6 +1,7 @@
 import {Utils} from "../../Utils";
 import * as polygon_features from "../../assets/polygon-features.json";
 import {UIEventSource} from "../UIEventSource";
+import {BBox} from "../BBox";
 
 
 export abstract class OsmObject {
@@ -9,11 +10,12 @@ export abstract class OsmObject {
     protected static backendURL = OsmObject.defaultBackend;
     private static polygonFeatures = OsmObject.constructPolygonFeatures()
     private static objectCache = new Map<string, UIEventSource<OsmObject>>();
-    private static referencingWaysCache = new Map<string, UIEventSource<OsmWay[]>>();
-    private static referencingRelationsCache = new Map<string, UIEventSource<OsmRelation[]>>();
     private static historyCache = new Map<string, UIEventSource<OsmObject[]>>();
     type: string;
     id: number;
+    /**
+     * The OSM tags as simple object
+     */
     tags: {} = {};
     version: number;
     public changed: boolean = false;
@@ -37,7 +39,7 @@ export abstract class OsmObject {
         this.backendURL = url;
     }
 
-    static DownloadObject(id: string, forceRefresh: boolean = false): UIEventSource<OsmObject> {
+    public static DownloadObject(id: string, forceRefresh: boolean = false): UIEventSource<OsmObject> {
         let src: UIEventSource<OsmObject>;
         if (OsmObject.objectCache.has(id)) {
             src = OsmObject.objectCache.get(id)
@@ -47,80 +49,71 @@ export abstract class OsmObject {
                 return src;
             }
         } else {
-            src = new UIEventSource<OsmObject>(undefined)
+            src = UIEventSource.FromPromise(OsmObject.DownloadObjectAsync(id))
         }
+
+        OsmObject.objectCache.set(id, src);
+        return src;
+    }
+
+    static async DownloadObjectAsync(id: string): Promise<OsmObject> {
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = Number(splitted[1]);
         if (idN < 0) {
-            return;
+            return undefined;
         }
 
-        OsmObject.objectCache.set(id, src);
-        const newContinuation = (element: OsmObject) => {
-            src.setData(element)
+        const full = !id.startsWith("way") ? "" : "/full";
+        const url = `${OsmObject.backendURL}api/0.6/${id}${full}`;
+        const rawData = await Utils.downloadJson(url)
+        // A full query might contain more then just the requested object (e.g. nodes that are part of a way, where we only want the way)
+        const parsed = OsmObject.ParseObjects(rawData.elements);
+        // Lets fetch the object we need
+        for (const osmObject of parsed) {
+            if(osmObject.type !== type){
+                continue;
+            }
+            if(osmObject.id !== idN){
+                continue
+            }
+            // Found the one!
+            return osmObject
         }
-
-        switch (type) {
-            case("node"):
-                new OsmNode(idN).Download(newContinuation);
-                break;
-            case("way"):
-                new OsmWay(idN).Download(newContinuation);
-                break;
-            case("relation"):
-                new OsmRelation(idN).Download(newContinuation);
-                break;
-            default:
-                throw "Invalid object type:" + type + id;
-
-        }
-        return src;
+        throw "PANIC: requested object is not part of the response"
+        
+        
     }
+
 
     /**
      * Downloads the ways that are using this node.
      * Beware: their geometry will be incomplete!
      */
-    public static DownloadReferencingWays(id: string): UIEventSource<OsmWay[]> {
-        if (OsmObject.referencingWaysCache.has(id)) {
-            return OsmObject.referencingWaysCache.get(id);
-        }
-        const waysSrc = new UIEventSource<OsmWay[]>([])
-        OsmObject.referencingWaysCache.set(id, waysSrc);
-        Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${id}/ways`)
-            .then(data => {
-                const ways = data.elements.map(wayInfo => {
+    public static DownloadReferencingWays(id: string): Promise<OsmWay[]> {
+        return Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${id}/ways`).then(
+            data => {
+                return data.elements.map(wayInfo => {
                     const way = new OsmWay(wayInfo.id)
                     way.LoadData(wayInfo)
                     return way
                 })
-                waysSrc.setData(ways)
-            })
-        return waysSrc;
+            }
+        )
     }
 
     /**
      * Downloads the relations that are using this feature.
      * Beware: their geometry will be incomplete!
      */
-    public static DownloadReferencingRelations(id: string): UIEventSource<OsmRelation[]> {
-        if (OsmObject.referencingRelationsCache.has(id)) {
-            return OsmObject.referencingRelationsCache.get(id);
-        }
-        const relsSrc = new UIEventSource<OsmRelation[]>(undefined)
-        OsmObject.referencingRelationsCache.set(id, relsSrc);
-        Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${id}/relations`)
-            .then(data => {
-                const rels = data.elements.map(wayInfo => {
-                    const rel = new OsmRelation(wayInfo.id)
-                    rel.LoadData(wayInfo)
-                    rel.SaveExtraData(wayInfo)
-                    return rel
-                })
-                relsSrc.setData(rels)
-            })
-        return relsSrc;
+    public static async DownloadReferencingRelations(id: string): Promise<OsmRelation[]> {
+        const data = await Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${id}/relations`)
+        return data.elements.map(wayInfo => {
+            const rel = new OsmRelation(wayInfo.id)
+            rel.LoadData(wayInfo)
+            rel.SaveExtraData(wayInfo)
+            return rel
+        })
     }
 
     public static DownloadHistory(id: string): UIEventSource<OsmObject []> {
@@ -158,36 +151,12 @@ export abstract class OsmObject {
     }
 
     // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
-    public static LoadArea(bounds: [[number, number], [number, number]], callback: (objects: OsmObject[]) => void) {
-        const minlon = bounds[0][1]
-        const maxlon = bounds[1][1]
-        const minlat = bounds[1][0]
-        const maxlat = bounds[0][0];
-        const url = `${OsmObject.backendURL}api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
-        Utils.downloadJson(url).then(data => {
-            const elements: any[] = data.elements;
-            const objects = OsmObject.ParseObjects(elements)
-            callback(objects);
-
-        })
+    public static async LoadArea(bbox: BBox): Promise<OsmObject[]> {
+        const url = `${OsmObject.backendURL}api/0.6/map.json?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
+        const data = await Utils.downloadJson(url)
+        const elements: any[] = data.elements;
+        return OsmObject.ParseObjects(elements);
     }
-
-    public static DownloadAll(neededIds, forceRefresh = true): UIEventSource<OsmObject[]> {
-        // local function which downloads all the objects one by one
-        // this is one big loop, running one download, then rerunning the entire function
-
-        const allSources: UIEventSource<OsmObject> [] = neededIds.map(id => OsmObject.DownloadObject(id, forceRefresh))
-        const allCompleted = new UIEventSource(undefined).map(_ => {
-            return !allSources.some(uiEventSource => uiEventSource.data === undefined)
-        }, allSources)
-        return allCompleted.map(completed => {
-            if (completed) {
-                return allSources.map(src => src.data)
-            }
-            return undefined
-        });
-    }
-
     protected static isPolygon(tags: any): boolean {
         for (const tagsKey in tags) {
             if (!tags.hasOwnProperty(tagsKey)) {
@@ -208,7 +177,6 @@ export abstract class OsmObject {
 
     private static constructPolygonFeatures(): Map<string, { values: Set<string>, blacklist: boolean }> {
         const result = new Map<string, { values: Set<string>, blacklist: boolean }>();
-
         for (const polygonFeature of polygon_features) {
             const key = polygonFeature.key;
 
@@ -228,6 +196,7 @@ export abstract class OsmObject {
     private static ParseObjects(elements: any[]): OsmObject[] {
         const objects: OsmObject[] = [];
         const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
+
         for (const element of elements) {
             const type = element.type;
             const idN = element.id;
@@ -249,6 +218,11 @@ export abstract class OsmObject {
                     osmObject.SaveExtraData(element, [])
                     break;
             }
+            
+            if (osmObject !== undefined && OsmObject.backendURL !== OsmObject.defaultBackend) {
+                osmObject.tags["_backend"] = OsmObject.backendURL
+            }
+            
             osmObject?.LoadData(element)
             objects.push(osmObject)
         }
@@ -260,7 +234,7 @@ export abstract class OsmObject {
 
     public abstract asGeoJson(): any;
 
-    abstract SaveExtraData(element: any, allElements: any[]);
+    abstract SaveExtraData(element: any, allElements: OsmObject[]);
 
     /**
      * Generates the changeset-XML for tags
@@ -282,42 +256,6 @@ export abstract class OsmObject {
         }
         return tags;
     }
-
-    Download(continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
-        const self = this;
-        const full = this.type !== "way" ? "" : "/full";
-        const url = `${OsmObject.backendURL}api/0.6/${this.type}/${this.id}${full}`;
-        Utils.downloadJson(url).then(data => {
-
-                const element = data.elements.pop();
-
-                let nodes = []
-                if (self.type === "way" && data.elements.length >= 0) {
-                    nodes = OsmObject.ParseObjects(data.elements)
-                }
-
-                self.LoadData(element)
-                self.SaveExtraData(element, nodes);
-
-                const meta = {
-                    "_last_edit:contributor": element.user,
-                    "_last_edit:contributor:uid": element.uid,
-                    "_last_edit:changeset": element.changeset,
-                    "_last_edit:timestamp": new Date(element.timestamp),
-                    "_version_number": element.version
-                }
-
-                if (OsmObject.backendURL !== OsmObject.defaultBackend) {
-                    self.tags["_backend"] = OsmObject.backendURL
-                    meta["_backend"] = OsmObject.backendURL;
-                }
-
-                continuation(self, meta);
-            }
-        );
-        return this;
-    }
-
 
     abstract ChangesetXML(changesetId: string): string;
 
@@ -389,18 +327,10 @@ export class OsmNode extends OsmObject {
     }
 }
 
-export interface OsmObjectMeta {
-    "_last_edit:contributor": string,
-    "_last_edit:contributor:uid": number,
-    "_last_edit:changeset": number,
-    "_last_edit:timestamp": Date,
-    "_version_number": number
-
-}
-
 export class OsmWay extends OsmObject {
 
-    nodes: number[];
+    nodes: number[] = [];
+    // The coordinates of the way, [lat, lon][]
     coordinates: [number, number][] = []
     lat: number;
     lon: number;
@@ -436,6 +366,10 @@ export class OsmWay extends OsmObject {
             nodeDict.set(node.id, node)
         }
 
+        if (element.nodes === undefined) {
+            console.log("PANIC")
+        }
+
         for (const nodeId of element.nodes) {
             const node = nodeDict.get(nodeId)
             if (node === undefined) {
@@ -455,12 +389,16 @@ export class OsmWay extends OsmObject {
     }
 
     public asGeoJson() {
+        let coordinates: ([number, number][] | [number, number][][]) = this.coordinates.map(c => [c[1], c[0]]);
+        if (this.isPolygon()) {
+            coordinates = [coordinates]
+        }
         return {
             "type": "Feature",
             "properties": this.tags,
             "geometry": {
                 "type": this.isPolygon() ? "Polygon" : "LineString",
-                "coordinates": this.coordinates.map(c => [c[1], c[0]])
+                "coordinates": coordinates
             }
         }
     }
@@ -511,7 +449,7 @@ ${members}${tags}        </relation>
         this.members = element.members;
     }
 
-    asGeoJson() {
+    asGeoJson(): any {
         throw "Not Implemented"
     }
 }

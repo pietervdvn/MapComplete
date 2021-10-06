@@ -22,7 +22,7 @@
   "startLat": 51.17174,
   "startLon": 4.449462,
   "startZoom": 12,
-  "widenFactor": 0.05,
+  "widenFactor": 1.2,
   "socialImage": "./assets/themes/speelplekken/social_image.jpg",
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
@@ -152,7 +152,7 @@
           ]
         },
         "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-        "geoJsonZoomLevel": 14,
+        "geoJsonZoomLevel": 11,
         "isOsmCache": true
       },
       "title": {

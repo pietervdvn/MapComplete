@@ -3,8 +3,7 @@
         "name": "Penkit",
         "presets": {
             "0": {
-                "description": "Lisää uusi penkki",
-                "title": "Penkki"
+                "title": "penkki"
             }
         },
         "tagRenderings": {

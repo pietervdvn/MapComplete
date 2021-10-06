@@ -51,14 +51,14 @@ export default class DeleteWizard extends Toggle {
         const confirm = new UIEventSource<boolean>(false)
 
 
-        function softDelete(reason: string, tagsToApply: { k: string, v: string }[]) {
+        async function softDelete(reason: string, tagsToApply: { k: string, v: string }[]) {
             if (reason !== undefined) {
                 tagsToApply.splice(0, 0, {
                     k: "fixme",
                     v: `A mapcomplete user marked this feature to be deleted (${reason})`
                 })
             }
-            (State.state?.changes ?? new Changes())
+            await (State.state?.changes ?? new Changes())
                 .applyAction(new ChangeTagAction(
                     id, new And(tagsToApply.map(kv => new Tag(kv.k, kv.v))), tagsSource.data
                 ))

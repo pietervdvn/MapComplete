@@ -1,0 +1,270 @@
+{
+  "id": "uk_addresses",
+  "title": {
+    "en": "UK Addresses"
+  },
+  "shortDescription": {
+    "en": "Help to build an open dataset of UK addresses"
+  },
+  "description": {
+    "en": "Contribute to OpenStreetMap by filling out address information"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
+  "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+  "version": "2021-09-17",
+  "startLat": -0.08706,
+  "startLon": 51.52224,
+  "startZoom": 17,
+  "widenFactor": 1.01,
+  "socialImage": "",
+  "clustering": {
+    "minNeededFeatures": 25,
+    "maxZoom": 17
+  },
+  "layers": [
+    {
+      "id": "to_import",
+      "source": {
+        "#geoJson": "http://127.0.0.1:8080/islington_small_piece.geojson",
+        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/assets/themes/uk_addresses/islington_small_piece.geojson",
+        "##geoJson": "https://raw.githubusercontent.com/russss/osm-uk-addresses/main/output/islington.geojson",
+        "osmTags": "inspireid~*",
+        "isOsmCache": false
+      },
+      "name": "Addresses to check",
+      "minzoom": 12,
+      "wayHandling": 1,
+      "icon": {
+        "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+        "mappings": [
+          {
+            "if": "_embedding_object:id~*",
+            "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+          },
+          {
+            "if": "_imported=yes",
+            "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+          }
+        ]
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "title": {
+        "render": "Address to be determined"
+      },
+      "tagRenderings": [
+        {
+          "id": "uk_addresses_explanation",
+          "render": "There probably is an address here"
+        },
+        {
+          "id": "uk_addresses_embedding_outline",
+          "render": "An outline embedding this point with an address already exists in OpenStreetMap.<br>This <a href='https://openstreetmap.org/{_embedding_object:id}' target='blank'>object</a> has address <b>{_embedding_object:addr:street} {_embedding_object:addr:housenumber}</b>",
+          "condition": "_embedding_object:id~*"
+        },
+        {
+          "id": "uk_addresses_import_button",
+          "render": "{import_button(ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
+        },
+        "all_tags"
+      ],
+      "calculatedTags": [
+        "_embedding_object=feat.overlapWith('addresses')[0]?.feat?.properties ?? null",
+        "_embedding_object:addr:housenumber=JSON.parse(feat.properties._embedding_object)?.['addr:housenumber']",
+        "_embedding_object:addr:street=JSON.parse(feat.properties._embedding_object)?.['addr:street']",
+        "_embedding_object:id=JSON.parse(feat.properties._embedding_object)?.id"
+      ],
+      "filter": [
+        {
+          "id": "to_handle",
+          "options": [
+            {
+              "question": "Only show non-matched objects",
+              "osmTags": {
+                "and": [
+                  "_imported=",
+                  "_embedding_object:id="
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "addresses",
+      "name": {
+        "en": "Known addresses in OSM"
+      },
+      "minzoom": 18,
+      "source": {
+        "osmTags": {
+          "or": [
+            "addr:housenumber~*",
+            "addr:street~*",
+            "ref:inspireid~*"
+          ]
+        }
+      },
+      "calculatedTags": [
+        "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => ({name: f.feat.properties.name, distance: Math.round(1000*f.distance), id: f.id}))",
+        "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]?.name",
+        "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]?.name",
+        "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]?.name",
+        "_closest_street:0:distance=JSON.parse(feat.properties._closest_3_street_names)[0]?.distance",
+        "_closest_street:1:distance=JSON.parse(feat.properties._closest_3_street_names)[1]?.distance",
+        "_closest_street:2:distance=JSON.parse(feat.properties._closest_3_street_names)[2]?.distance",
+        "_closest_street:0:id=JSON.parse(feat.properties._closest_3_street_names)[0]?.id",
+        "_closest_street:1:id=JSON.parse(feat.properties._closest_3_street_names)[1]?.id",
+        "_closest_street:2:id=JSON.parse(feat.properties._closest_3_street_names)[2]?.id"
+      ],
+      "title": {
+        "render": {
+          "en": "Known address"
+        }
+      },
+      "description": {
+        "en": "Addresses"
+      },
+      "tagRenderings": [
+        {
+          "id": "uk_addresses_explanation_osm",
+          "render": {
+            "en": "This address is saved in OpenStreetMap"
+          }
+        },
+        {
+          "id": "uk_addresses_housenumber",
+          "render": {
+            "en": "The housenumber is <b>{addr:housenumber}</b>"
+          },
+          "question": {
+            "en": "What is the number of this house?"
+          },
+          "freeform": {
+            "key": "addr:housenumber"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "nohousenumber=yes"
+                ]
+              },
+              "then": {
+                "en": "This building has no house number"
+              }
+            }
+          ]
+        },
+        {
+          "id": "uk_addresses_street",
+          "render": {
+            "en": "This address is in street <b>{addr:street}</b>"
+          },
+          "question": {
+            "en": "What street is this address located in?"
+          },
+          "freeform": {
+            "key": "addr:street"
+          },
+          "mappings": [
+            {
+              "if": "addr:street:={_closest_street:0:name}",
+              "then": "Located in <b>{_closest_street:0:name}</b> (~{_closest_street:0:distance}m away)",
+              "hideInAnswer": "_closest_street:0:name="
+            },
+            {
+              "if": "addr:street:={_closest_street:1:name}",
+              "then": "Located in <b>{_closest_street:1:name}</b> (~{_closest_street:1:distance}m away)",
+              "hideInAnswer": "_closest_street:1:name="
+            },
+            {
+              "if": "addr:street:={_closest_street:2:name}",
+              "then": "Located in <b>{_closest_street:2:name}</b> (~{_closest_street:2:distance}m away)",
+              "hideInAnswer": "_closest_street:2:name="
+            }
+          ],
+          "condition": {
+            "and": [
+              "nohousenumber!~yes"
+            ]
+          }
+        }
+      ],
+      "icon": {
+        "render": "./assets/themes/uk_addresses/housenumber_ok.svg",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                {
+                  "and": [
+                    "addr:housenumber=",
+                    "nohousenumber!=yes"
+                  ]
+                },
+                "addr:street="
+              ]
+            },
+            "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+          }
+        ]
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                {
+                  "and": [
+                    "addr:housenumber=",
+                    "nohousenumber!=yes"
+                  ]
+                },
+                "addr:street="
+              ]
+            },
+            "then": "#ff0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "named_streets",
+      "name": "Named streets",
+      "minzoom": 18,
+      "source": {
+        "osmTags": {
+          "and": [
+            "highway~*",
+            "name~*"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "{name}"
+        }
+      },
+      "color": {
+        "render": "#ccc"
+      },
+      "width": {
+        "render": "3"
+      }
+    }
+  ],
+  "roamingRenderings": []
+}

@@ -10,6 +10,9 @@ export default class Img extends BaseUIElement {
         fallbackImage?: string
     }) {
         super();
+        if(src === undefined || src === "undefined"){
+            throw "Undefined src for image"
+        }
         this._src = src;
         this._rawSvg = rawSvg;
         this._options = options;

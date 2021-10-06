@@ -624,6 +624,22 @@
         "description": "Op deze kaart staan publiek toegankelijke drinkwaterpunten en kan je makkelijk een nieuw drinkwaterpunt toevoegen",
         "title": "Drinkwaterpunten"
     },
+    "etymology": {
+        "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. De informatie komt uit wikipedia.",
+        "layers": {
+            "0": {
+                "description": "Alle lagen met een gelinkt etymology",
+                "name": "Heeft etymology info",
+                "tagRenderings": {
+                    "simple etymology": {
+                        "render": "Vernoemd naar {name:etymology}"
+                    }
+                }
+            }
+        },
+        "shortDescription": "Wat is de oorsprong van een plaatsnaam?",
+        "title": "Open Etymology-kaart"
+    },
     "facadegardens": {
         "description": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
@@ -1008,7 +1024,7 @@
         "title": "Surveillance under Surveillance"
     },
     "toerisme_vlaanderen": {
-        "description": "Op deze kaart kan je info zien voor toeristen en zelf aanpasingen maken, zichtbaar voor iedereen",
+        "description": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken.<br/><br/>Met de steun van Toerisme Vlaanderen<img src='./assets/themes/toerisme_vlaanderen/logo.png' />",
         "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
         "title": "Toeristisch relevante info"
     },

@@ -19,7 +19,7 @@ import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
-import {And} from "../../Logic/Tags/And";
+import {BBox} from "../../Logic/BBox";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -39,8 +39,6 @@ interface PresetInfo extends PresetConfig {
 export default class SimpleAddUI extends Toggle {
 
     constructor(isShown: UIEventSource<boolean>) {
-
-
         const loginButton = new SubtleButton(Svg.osm_logo_ui(), Translations.t.general.add.pleaseLogin.Clone())
             .onClick(() => State.state.osmConnection.AttemptLogin());
         const readYourMessages = new Combine([
@@ -52,23 +50,19 @@ export default class SimpleAddUI extends Toggle {
 
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
-
+        State.state.LastClickLocation.addCallback( _ => selectedPreset.setData(undefined))
+        
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset)
 
 
-        function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
-            console.trace("Creating a new point")
+       async function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {snapOnto: snapOntoWay})
-            State.state.changes.applyAction(newElementAction)
+            await State.state.changes.applyAction(newElementAction)
             selectedPreset.setData(undefined)
             isShown.setData(false)
             State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
-            console.log("Did set selected element to", State.state.allElements.ContainingFeatures.get(
-                newElementAction.newElementId
-            ))
-
         }
 
         const addUi = new VariableUiElement(
@@ -86,11 +80,7 @@ export default class SimpleAddUI extends Toggle {
                                     return true;
                                 })
                             }
-
-
                         },
-
-
                         () => {
                             selectedPreset.setData(undefined)
                         })
@@ -102,9 +92,9 @@ export default class SimpleAddUI extends Toggle {
             new Toggle(
                 new Toggle(
                     new Toggle(
-                        Translations.t.general.add.stillLoading.Clone().SetClass("alert"),
                         addUi,
-                        State.state.layerUpdater.runningQuery
+                        Translations.t.general.add.stillLoading.Clone().SetClass("alert"),
+                        State.state.featurePipeline.somethingLoaded
                     ),
                     Translations.t.general.add.zoomInFurther.Clone().SetClass("alert"),
                     State.state.locationControl.map(loc => loc.zoom >= Constants.userJourney.minZoomLevelToAddNewPoints)
@@ -130,6 +120,7 @@ export default class SimpleAddUI extends Toggle {
         let location = State.state.LastClickLocation;
         let preciseInput: LocationInput = undefined
         if (preset.preciseInput !== undefined) {
+            // We uncouple the event source
             const locationSrc = new UIEventSource({
                 lat: location.data.lat,
                 lon: location.data.lon,
@@ -141,25 +132,48 @@ export default class SimpleAddUI extends Toggle {
                 backgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
             }
 
-            let features: UIEventSource<{ feature: any }[]> = undefined
+            let snapToFeatures: UIEventSource<{ feature: any }[]> = undefined
+            let mapBounds: UIEventSource<BBox> = undefined
             if (preset.preciseInput.snapToLayers) {
-                // We have to snap to certain layers.
-                // Lets fetch tehm
-                const asSet = new Set(preset.preciseInput.snapToLayers)
-                features = State.state.featurePipeline.features.map(f => f.filter(feat => asSet.has(feat.feature._matching_layer_id)))
+                snapToFeatures = new UIEventSource<{ feature: any }[]>([])
+                mapBounds = new UIEventSource<BBox>(undefined)
             }
 
+
+
             const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-            console.log("Opening precise input ", preset.preciseInput, "with tags", tags)
             preciseInput = new LocationInput({
                 mapBackground: backgroundLayer,
                 centerLocation: locationSrc,
-                snapTo: features,
+                snapTo: snapToFeatures,
                 snappedPointTags: tags,
-                maxSnapDistance: preset.preciseInput.maxSnapDistance
-
+                maxSnapDistance: preset.preciseInput.maxSnapDistance,
+                bounds: mapBounds
             })
             preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
+
+
+            if (preset.preciseInput.snapToLayers) {
+                // We have to snap to certain layers.
+                // Lets fetch them
+                
+                let loadedBbox : BBox= undefined
+                mapBounds?.addCallbackAndRunD(bbox => {
+                    if(loadedBbox !== undefined && bbox.isContainedIn(loadedBbox)){
+                        // All is already there
+                        // return;
+                    }
+
+                    bbox = bbox.pad(2);
+                    loadedBbox = bbox;
+                    const allFeatures: {feature: any}[] = []
+                    preset.preciseInput.snapToLayers.forEach(layerId => {
+                       State.state.featurePipeline.GetFeaturesWithin(layerId, bbox).forEach(feats => allFeatures.push(...feats.map(f => ({feature :f}))))
+                    })
+                    snapToFeatures.setData(allFeatures)
+                })
+            }
+            
         }
 
 
@@ -208,7 +222,7 @@ export default class SimpleAddUI extends Toggle {
                 ]
             ).SetClass("flex flex-col")
         ).onClick(() => {
-            preset.layerToAddTo.appliedFilters.setData(new And([]))
+            preset.layerToAddTo.appliedFilters.setData([])
             cancel()
         })
 
@@ -216,8 +230,23 @@ export default class SimpleAddUI extends Toggle {
             openLayerOrConfirm,
             disableFilter,
             preset.layerToAddTo.appliedFilters.map(filters => {
-                console.log("Current filters are ", filters)
-                return filters === undefined || filters.normalize().and.length === 0;
+                if(filters === undefined || filters.length === 0){
+                    return true;
+                }
+                for (const filter of filters) {
+                    if(filter.selected === 0 && filter.filter.options.length === 1){
+                        return false;
+                    }
+                    if(filter.selected !== undefined){
+                        const tags = filter.filter.options[filter.selected].osmTags
+                        if(tags !== undefined && tags["and"]?.length !== 0){
+                            // This actually doesn't filter anything at all
+                            return false;
+                        }
+                    }
+                }
+                return true
+                
             })
         )
 

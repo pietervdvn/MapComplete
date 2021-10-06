@@ -165,10 +165,12 @@
         "email",
         "phone",
         "payment-options",
-        "wheelchair-access"
+        "wheelchair-access",
+        "dog-access"
     ],
     "filter": [
         {
+            "id": "opened-now",
             "options": [
                 {
                     "question": {

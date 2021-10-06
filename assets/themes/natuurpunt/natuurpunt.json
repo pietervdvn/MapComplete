@@ -17,18 +17,25 @@
     "nl",
     "en"
   ],
+  "mustHaveLanguage": [
+    "nl"
+  ],
   "maintainer": "",
   "icon": "./assets/themes/natuurpunt/natuurpunt.png",
   "version": "0",
   "startLat": 51.20875,
   "startLon": 3.22435,
   "startZoom": 15,
-  "widenFactor": 0.05,
+  "widenFactor": 2,
   "socialImage": "",
   "defaultBackgroundId": "CartoDB.Positron",
   "enablePdfDownload": true,
   "enableDownload": true,
   "hideFromOverview": true,
+  "clustering": {
+    "#": "Disable clustering for this theme",
+    "maxZoom": 0
+  },
   "layers": [
     {
       "#": "Nature reserve with geometry, z>=13",
@@ -55,6 +62,7 @@
     {
       "#": "Nature reserve overview from cache, points only, z < 13",
       "builtin": "nature_reserve",
+      "wayHandling": 1,
       "override": {
         "source": {
           "osmTags": {
@@ -63,12 +71,14 @@
             ]
           },
           "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson",
+          "geoJsonZoomLevel": 0,
           "isOsmCache": "duplicate"
         },
         "minzoom": 1,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
-        }
+        },
+        "presets": []
       }
     },
     {

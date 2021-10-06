@@ -20,8 +20,8 @@ function generateWikiEntry(layout: LayoutConfig) {
 |name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
-|descr= A MapComplete theme: ${Translations.W(layout.description)
-        .InnerRenderAsString()
+|descr= A MapComplete theme: ${Translations.WT(layout.description)
+        .textFor("en")
         .replace("<a href='", "[[")
         .replace(/'>.*<\/a>/, "]]")
     }

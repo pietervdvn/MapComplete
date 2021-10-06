@@ -38,7 +38,7 @@
   "startLat": 50.535,
   "startLon": 4.399,
   "startZoom": 13,
-  "widenFactor": 0.05,
+  "widenFactor": 5,
   "socialImage": "",
   "layers": [
     "playground"

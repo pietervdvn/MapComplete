@@ -7,6 +7,7 @@ import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {Unit} from "../../Models/Unit";
+import Lazy from "../Base/Lazy";
 
 
 /**
@@ -27,7 +28,8 @@ export default class QuestionBox extends VariableUiElement {
                 }
 
                 const tagRenderingQuestions = tagRenderings
-                    .map((tagRendering, i) => new TagRenderingQuestion(tagsSource, tagRendering,
+                    .map((tagRendering, i) =>
+                        new Lazy(() => new TagRenderingQuestion(tagsSource, tagRendering,
                         {
                             units: units,
                             afterSave: () => {
@@ -41,7 +43,7 @@ export default class QuestionBox extends VariableUiElement {
                                     skippedQuestions.ping();
                                 })
                         }
-                    ));
+                    )));
 
                 const skippedQuestionsButton = Translations.t.general.skippedQuestions.Clone()
                     .onClick(() => {

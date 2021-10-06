@@ -11,7 +11,7 @@ export class Geocoding {
                       osm_type: string, osm_id: string
                   }[]) => void),
                   onFail: (() => void)) {
-        const b = State.state.leafletMap.data.getBounds();
+        const b = State.state.currentBounds.data;
         const url = Geocoding.host + "format=json&limit=1&viewbox=" +
             `${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}` +
             "&accept-language=nl&q=" + query;

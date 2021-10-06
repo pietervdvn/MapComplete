@@ -1,0 +1,39 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete UK Addresses",
+    "description": "Help to build an open dataset of UK addresses",
+    "project_url": "https://mapcomplete.osm.be/uk_addresses",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/uk_addresses/housenumber_unknown.svg",
+    "contact_name": "Pieter Vander Vennet, Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "inspireid",
+      "description": "The MapComplete theme UK Addresses has a layer Addresses to check showing features with this tag"
+    },
+    {
+      "key": "addr:housenumber",
+      "description": "The MapComplete theme UK Addresses has a layer Known addresses in OSM showing features with this tag"
+    },
+    {
+      "key": "addr:street",
+      "description": "The MapComplete theme UK Addresses has a layer Known addresses in OSM showing features with this tag"
+    },
+    {
+      "key": "addr:housenumber",
+      "description": "Layer 'Known addresses in OSM' shows and asks freeform values for key 'addr:housenumber' (in the MapComplete.osm.be theme 'UK Addresses')"
+    },
+    {
+      "key": "nohousenumber",
+      "description": "Layer 'Known addresses in OSM' shows nohousenumber=yes with a fixed text, namely 'This building has no house number' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'UK Addresses')",
+      "value": "yes"
+    },
+    {
+      "key": "addr:street",
+      "description": "Layer 'Known addresses in OSM' shows and asks freeform values for key 'addr:street' (in the MapComplete.osm.be theme 'UK Addresses')"
+    }
+  ]
+}

@@ -59,10 +59,9 @@ export interface LayerConfigJson {
      * NOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
      *  While still supported, this is considered deprecated
      */
-    source: { osmTags: AndOrTagConfigJson | string } |
-        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean } |
-        { osmTags: AndOrTagConfigJson | string, overpassScript: string }
-
+    source: { osmTags: AndOrTagConfigJson | string, overpassScript?: string  } |
+        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean }
+    
     /**
      *
      * A list of extra tags to calculate, specified as "keyToAssignTo=javascript-expression".
@@ -84,7 +83,9 @@ export interface LayerConfigJson {
 
     /**
      * This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
-     * This is useful to hide certain features from view. Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
+     * This is useful to hide certain features from view. 
+     * 
+     * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
      * This implies that it is not possible to hide a feature after a tagging change
      *
      * The default value is 'yes'

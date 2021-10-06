@@ -235,7 +235,7 @@
                 "amenity=shelter"
             ],
             "title": {
-                "nl": "Vogelkijkhut"
+                "nl": "vogelkijkhut"
             },
             "description": {
                 "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden"
@@ -248,7 +248,7 @@
                 "shelter=no"
             ],
             "title": {
-                "nl": "Vogelkijkwand"
+                "nl": "vogelkijkwand"
             },
             "description": {
                 "nl": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
@@ -258,6 +258,7 @@
     "wayHandling": 1,
     "filter": [
         {
+            "id": "wheelchair",
             "options": [
                 {
                     "question": {
@@ -275,6 +276,7 @@
             ]
         },
         {
+            "id": "shelter",
             "options": [
                 {
                     "question": {

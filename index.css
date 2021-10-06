@@ -1,17 +1,18 @@
+/*
+    TailwindCSS JIT-Mode Input file.
+    Use TailwindCSS functions and directives here – https://tailwindcss.com/docs/functions-and-directives
+    About JIT-Mode: https://tailwindcss.com/docs/just-in-time-mode#styles-rebuild-in-an-infinite-loop
+
+    TailwindCSS CLI generates the css/index-tailwind-output.css file based on this file.
+    It is not used directly in the app.
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
     @variants responsive {
-        .max-h-65vh {
-            max-height: 65vh;
-        }
-
-        .max-h-20vh {
-            max-height: 20vh;
-        }
-
         .z-above-map {
             z-index: 10000
         }
@@ -19,7 +20,6 @@
         .z-above-controls {
             z-index: 10001
         }
-
     }
 
     .btn {
@@ -91,7 +91,6 @@ svg, img {
     box-sizing: content-box;
     width: 100%;
     height: 100%;
-    display: unset;
 }
 
 .mapcontrol svg path {
@@ -128,10 +127,6 @@ btn {
 
 .w-16-imp {
     width: 4rem !important;
-}
-
-.space-between {
-    justify-content: space-between;
 }
 
 .link-underline a {
@@ -181,6 +176,11 @@ li::marker {
 .subtle-background {
     background: var(--subtle-detail-color);
     color: var(--subtle-detail-color-contrast);
+}
+
+.normal-background {
+    background: var(--background-color);
+    color: var(--foreground-color)
 }
 
 .subtle-lighter {
@@ -307,6 +307,7 @@ li::marker {
 
 
 @keyframes slide {
+    /* This is the animation on the marker to add a new point - it slides through all the possible presets */
     from {
         transform: translateX(0%);
     }
@@ -314,6 +315,51 @@ li::marker {
     to {
         transform: translateX(calc(-100% + 42px));
     }
+}
+
+.hand-drag-animation {
+    animation: hand-drag-animation 6s ease-in-out infinite;
+    transform-origin: 50% 125%;
+}
+
+@keyframes hand-drag-animation {
+    /* This is the animation on the little extra hand on the location input. If fades in, invites the user to interact/drag the map */
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg);
+    }
+    
+    6% {
+        opacity: 1;
+        transform: rotate(-30deg);
+    }
+    
+    12% {
+        opacity: 1;
+        transform: rotate(-45deg);
+    }
+
+    24% {
+        opacity: 1;
+        transform: rotate(-00deg);
+    }
+
+    30% {
+        opacity: 1;
+        transform: rotate(-30deg);
+    }
+
+
+    36% {
+        opacity: 0;
+        transform: rotate(-30deg);
+    }
+    
+    100% {
+        opacity: 0;
+        transform: rotate(-30deg);
+    }
+
 }
 
 /**************************************/

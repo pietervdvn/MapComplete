@@ -34,7 +34,11 @@
   "startZoom": 14,
   "startLon": 3.2228,
   "maintainer": "MapComplete",
-  "widenfactor": 0.01,
+  "widenfactor": 2,
+  "clustering": {
+    "maxZoom": 12,
+    "minNeededElements": 200
+  },
   "roamingRenderings": [
     {
       "question": {
@@ -276,8 +280,10 @@
       },
       "tagRenderings": [
         "images"
-      ],
-      "allowSplit": false
+      ]
     }
-  ]
+  ],
+  "overrideAll": {
+    "allowSplit": true
+  }
 }

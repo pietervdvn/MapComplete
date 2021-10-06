@@ -10,7 +10,7 @@ Utils.runningFromConsole = true;
 export default class ImageAttributionSpec extends T {
     constructor() {
         super(
-            "ImageAttribution Tests", [
+            "imageattribution", [
                 [
                     "Should find all the images",
                     () => {

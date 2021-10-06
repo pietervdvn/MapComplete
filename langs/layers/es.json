@@ -3,8 +3,7 @@
         "name": "Bancos",
         "presets": {
             "0": {
-                "description": "Añadir un nuevo banco",
-                "title": "Banco"
+                "title": "banco"
             }
         },
         "tagRenderings": {

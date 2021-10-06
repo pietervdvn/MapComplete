@@ -3,8 +3,7 @@
         "name": "Benker",
         "presets": {
             "0": {
-                "description": "Legg til en ny benk",
-                "title": "Benk"
+                "title": "benk"
             }
         },
         "tagRenderings": {

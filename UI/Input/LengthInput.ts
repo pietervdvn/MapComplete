@@ -5,7 +5,7 @@ import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
 import {GeoOperations} from "../../Logic/GeoOperations";
-import DirectionInput from "./DirectionInput";
+import Minimap from "../Base/Minimap";
 
 
 /**
@@ -41,7 +41,7 @@ export default class LengthInput extends InputElement<string> {
         // @ts-ignore
         let map = undefined
         if (!Utils.runningFromConsole) {
-            map = DirectionInput.constructMinimap({
+            map = Minimap.createMiniMap({
                 background: this.background,
                 allowMoving: false,
                 location: this._location,

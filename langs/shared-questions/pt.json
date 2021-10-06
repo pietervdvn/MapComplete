@@ -1,66 +1,66 @@
 {
     "undefined": {
-        "level": {
-            "question": "Em que nível se encontra este elemento?",
-            "mappings": {
-                "3": {
-                    "then": "Está no primeiro andar"
-                },
-                "2": {
-                    "then": "Está ao nível do rés-do-chão"
-                },
-                "1": {
-                    "then": "Está ao nível do rés-do-chão"
-                },
-                "0": {
-                    "then": "Está no subsolo"
-                }
-            },
-            "render": "Está no {nível}º andar"
+        "description": {
+            "question": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>"
         },
         "email": {
             "question": "Qual é o endereço de e-mail de {name}?"
         },
-        "description": {
-            "question": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>"
-        },
-        "wheelchair-access": {
-            "question": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+        "level": {
             "mappings": {
-                "3": {
-                    "then": "Este lugar não é acessível com uma cadeira de rodas"
-                },
-                "2": {
-                    "then": "É possível chegar a este local em cadeira de rodas, mas não é fácil"
+                "0": {
+                    "then": "Está no subsolo"
                 },
                 "1": {
-                    "then": "Este lugar é de fácil acesso com uma cadeira de rodas"
+                    "then": "Está ao nível do rés-do-chão"
                 },
-                "0": {
-                    "then": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas"
+                "2": {
+                    "then": "Está ao nível do rés-do-chão"
+                },
+                "3": {
+                    "then": "Está no primeiro andar"
                 }
-            }
+            },
+            "question": "Em que nível se encontra este elemento?",
+            "render": "Está no {nível}º andar"
         },
-        "website": {
-            "question": "Qual é o sítio web de {name}?"
+        "opening_hours": {
+            "question": "Qual é o horário de funcionamento de {name}?",
+            "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Aceitam pagamento com dinheiro aqui"
+                },
+                "1": {
+                    "then": "Aceitam pagamento com cartões bancários aqui"
+                }
+            },
+            "question": "Que métodos de pagamento são aceites aqui?"
         },
         "phone": {
             "question": "Qual é o número de telefone de {name}?"
         },
-        "payment-options": {
-            "question": "Que métodos de pagamento são aceites aqui?",
-            "mappings": {
-                "1": {
-                    "then": "Aceitam pagamento com cartões bancários aqui"
-                },
-                "0": {
-                    "then": "Aceitam pagamento com dinheiro aqui"
-                }
-            }
+        "website": {
+            "question": "Qual é o sítio web de {name}?"
         },
-        "opening_hours": {
-            "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
-            "question": "Qual é o horário de funcionamento de {name}?"
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas"
+                },
+                "1": {
+                    "then": "Este lugar é de fácil acesso com uma cadeira de rodas"
+                },
+                "2": {
+                    "then": "É possível chegar a este local em cadeira de rodas, mas não é fácil"
+                },
+                "3": {
+                    "then": "Este lugar não é acessível com uma cadeira de rodas"
+                }
+            },
+            "question": "Este lugar é acessível a utilizadores de cadeiras de rodas?"
         }
     }
 }

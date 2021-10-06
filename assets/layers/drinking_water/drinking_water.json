@@ -48,22 +48,23 @@
         }
     },
     "calculatedTags": [
-        "_closest_other_drinking_water_id=feat.closest('drinking_water').id",
-        "_closest_other_drinking_water_distance=Math.floor(feat.distanceTo(feat.closest('drinking_water')) * 1000)"
+        "_closest_other_drinking_water=feat.closestn('drinking_water', 1, undefined, 5000).map(f => ({id: f.feat.id, distance: ''+f.distance}))[0]",
+        "_closest_other_drinking_water_id=JSON.parse(feat.properties._closest_other_drinking_water)?.id",
+        "_closest_other_drinking_water_distance=Math.floor(Number(JSON.parse(feat.properties._closest_other_drinking_water)?.distance) * 1000)"
     ],
     "minzoom": 13,
     "wayHandling": 1,
     "presets": [
         {
             "title": {
-                "en": "Drinking water",
-                "nl": "Drinkbaar water",
-                "fr": "Eau potable",
-                "gl": "Auga potábel",
-                "de": "Trinkwasser",
-                "it": "Acqua potabile",
+                "en": "drinking water",
+                "nl": "drinkbaar water",
+                "fr": "eau potable",
+                "gl": "auga potábel",
+                "de": "trinkwasser",
+                "it": "acqua potabile",
                 "ru": "Питьевая вода",
-                "id": "Air minum"
+                "id": "air minum"
             },
             "tags": [
                 "amenity=drinking_water"

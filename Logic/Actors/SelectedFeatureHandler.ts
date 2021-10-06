@@ -1,50 +1,62 @@
 import {UIEventSource} from "../UIEventSource";
-import FeatureSource from "../FeatureSource/FeatureSource";
 import {OsmObject} from "../Osm/OsmObject";
 import Loc from "../../Models/Loc";
+import {ElementStorage} from "../ElementStorage";
 import FeaturePipeline from "../FeatureSource/FeaturePipeline";
-import OsmApiFeatureSource from "../FeatureSource/OsmApiFeatureSource";
 
 /**
  * Makes sure the hash shows the selected element and vice-versa.
  */
 export default class SelectedFeatureHandler {
-    private static readonly _no_trigger_on = ["welcome", "copyright", "layers", "new"]
-    private readonly _featureSource: FeatureSource;
-    private readonly _hash: UIEventSource<string>;
-    private readonly _selectedFeature: UIEventSource<any>;
-    private readonly _osmApiSource: OsmApiFeatureSource;
+    private static readonly _no_trigger_on = new Set(["welcome", "copyright", "layers", "new", "", undefined])
+    hash: UIEventSource<string>;
+    private readonly state: {
+        selectedElement: UIEventSource<any>
+    }
 
-    constructor(hash: UIEventSource<string>,
-                selectedFeature: UIEventSource<any>,
-                featureSource: FeaturePipeline,
-                osmApiSource: OsmApiFeatureSource) {
-        this._hash = hash;
-        this._selectedFeature = selectedFeature;
-        this._featureSource = featureSource;
-        this._osmApiSource = osmApiSource;
-        const self = this;
-        hash.addCallback(h => {
+    constructor(
+        hash: UIEventSource<string>,
+        state: {
+            selectedElement: UIEventSource<any>,
+            allElements: ElementStorage,
+            featurePipeline: FeaturePipeline
+        }
+    ) {
+        this.hash = hash;
+        this.state = state
+
+
+        // If the hash changes, set the selected element correctly
+        function setSelectedElementFromHash(h){
             if (h === undefined || h === "") {
-                selectedFeature.setData(undefined);
-            } else {
-                self.selectFeature();
+                // Hash has been cleared - we clear the selected element
+                state.selectedElement.setData(undefined);
+            }else{
+                // we search the element to select
+                const feature = state.allElements.ContainingFeatures.get(h)
+                if(feature === undefined){
+                    return;
+                }
+                const currentlySeleced = state.selectedElement.data
+                if(currentlySeleced === undefined){
+                    state.selectedElement.setData(feature)
+                    return;
+                }
+                if(currentlySeleced.properties?.id === feature.properties.id){
+                    // We already have the right feature
+                    return;
+                }
+                state.selectedElement.setData(feature)
             }
-        })
+        }
 
-        hash.addCallbackAndRunD(h => {
-            try {
-                self.downloadFeature(h)
-            } catch (e) {
-                console.error("Could not download feature, probably a weird hash")
-            }
-        })
+        hash.addCallback(setSelectedElementFromHash)
 
-        featureSource.features.addCallback(_ => self.selectFeature());
 
-        selectedFeature.addCallback(feature => {
+        // IF the selected element changes, set the hash correctly
+        state.selectedElement.addCallback(feature => {
             if (feature === undefined) {
-                if (SelectedFeatureHandler._no_trigger_on.indexOf(hash.data) < 0) {
+                if (!SelectedFeatureHandler._no_trigger_on.has(hash.data)) {
                     hash.setData("")
                 }
             }
@@ -54,15 +66,26 @@ export default class SelectedFeatureHandler {
                 hash.setData(h)
             }
         })
-
-        this.selectFeature();
+        
+        state.featurePipeline.newDataLoadedSignal.addCallbackAndRunD(_ => {
+            // New data was loaded. In initial startup, the hash might be set (via the URL) but might not be selected yet
+            if(hash.data === undefined || SelectedFeatureHandler._no_trigger_on.has(hash.data)){
+                // This is an invalid hash anyway
+                return;
+            }
+            if(state.selectedElement.data !== undefined){
+                // We already have something selected
+                return;
+            }
+            setSelectedElementFromHash(hash.data)
+        })
 
     }
 
     // If a feature is selected via the hash, zoom there
     public zoomToSelectedFeature(location: UIEventSource<Loc>) {
-        const hash = this._hash.data;
-        if (hash === undefined || SelectedFeatureHandler._no_trigger_on.indexOf(hash) >= 0) {
+        const hash = this.hash.data;
+        if (hash === undefined || SelectedFeatureHandler._no_trigger_on.has(hash)) {
             return; // No valid feature selected
         }
         // We should have a valid osm-ID and zoom to it... But we wrap it in try-catch to be sure
@@ -77,44 +100,6 @@ export default class SelectedFeatureHandler {
             })
         } catch (e) {
             console.error("Could not download OSM-object with id", hash, " - probably a weird hash")
-        }
-    }
-
-    private downloadFeature(hash: string) {
-        if (hash === undefined || hash === "") {
-            return;
-        }
-        if (SelectedFeatureHandler._no_trigger_on.indexOf(hash) >= 0) {
-            return;
-        }
-        try {
-
-            this._osmApiSource.load(hash)
-        } catch (e) {
-            console.log("Could not download feature, probably a weird hash:", hash)
-        }
-    }
-
-    private selectFeature() {
-        const features = this._featureSource?.features?.data;
-        if (features === undefined) {
-            return;
-        }
-        if (this._selectedFeature.data?.properties?.id === this._hash.data) {
-            // Feature already selected
-            return;
-        }
-
-        const hash = this._hash.data;
-        if (hash === undefined || hash === "" || hash === "#") {
-            return;
-        }
-        for (const feature of features) {
-            const id = feature.feature?.properties?.id;
-            if (id === hash) {
-                this._selectedFeature.setData(feature.feature);
-                break;
-            }
         }
     }
 

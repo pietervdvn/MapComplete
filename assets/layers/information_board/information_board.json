@@ -45,11 +45,11 @@
                 "information=board"
             ],
             "title": {
-                "nl": "Informatiebord",
-                "en": "Information board",
-                "it": "Pannello informativo",
-                "fr": "Panneau d'informations",
-                "de": "Informationstafel",
+                "nl": "informatiebord",
+                "en": "information board",
+                "it": "pannello informativo",
+                "fr": "panneau d'informations",
+                "de": "informationstafel",
                 "ru": "Информационный щит"
             }
         }

@@ -49,122 +49,7 @@
         "nl": "Parking"
     },
     "tagRenderings": [
-        "images",
-        {
-            "render": {
-                "nl": "De toegankelijkheid van dit gebied is: {access:description}"
-            },
-            "question": {
-                "nl": "Is dit gebied toegankelijk?"
-            },
-            "freeform": {
-                "key": "access:description"
-            },
-            "mappings": [
-                {
-                    "if": {
-                        "and": [
-                            "access=yes",
-                            "fee="
-                        ]
-                    },
-                    "then": {
-                        "nl": "Vrij toegankelijk"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "access=no",
-                            "fee="
-                        ]
-                    },
-                    "then": {
-                        "nl": "Niet toegankelijk"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "access=private",
-                            "fee="
-                        ]
-                    },
-                    "then": {
-                        "nl": "Niet toegankelijk, want privégebied"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "access=permissive",
-                            "fee="
-                        ]
-                    },
-                    "then": {
-                        "nl": "Toegankelijk, ondanks dat het privegebied is"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "access=guided",
-                            "fee="
-                        ]
-                    },
-                    "then": {
-                        "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "access=yes",
-                            "fee=yes"
-                        ]
-                    },
-                    "then": {
-                        "nl": "Toegankelijk mits betaling"
-                    }
-                }
-            ],
-            "id": "Access tag"
-        },
-        {
-            "render": {
-                "nl": "Beheer door {operator}"
-            },
-            "question": {
-                "nl": "Wie beheert dit pad?"
-            },
-            "freeform": {
-                "key": "operator"
-            },
-            "mappings": [
-                {
-                    "if": {
-                        "and": [
-                            "operator=Natuurpunt"
-                        ]
-                    },
-                    "then": {
-                        "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "operator~(n|N)atuurpunt.*"
-                        ]
-                    },
-                    "then": {
-                        "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
-                    },
-                    "hideInAnswer": true
-                }
-            ],
-            "id": "Operator tag"
-        }
+        "images"
     ],
     "wayHandling": 1,
     "iconSize": {
@@ -176,16 +61,24 @@
     "presets": [
         {
             "tags": [
-                "amenity=parking",
-                "amenity=motorcycle_parking",
-                "amenity=bicycle_parking",
-                "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+                "amenity=bicycle_parking"
             ],
             "title": {
-                "nl": "Paden"
+                "nl": "fietsparking"
             },
             "description": {
-                "nl": "Voeg een ontbrekend, erkend pad toe."
+                "nl": "Voeg hier een fietsenstalling toe"
+            }
+        },
+        {
+            "tags": [
+                "amenity=parking"
+            ],
+            "title": {
+                "nl": "parking"
+            },
+            "description": {
+                "nl": "Voeg hier een parking voor auto's toe"
             }
         }
     ]

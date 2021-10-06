@@ -10,4 +10,3 @@ export abstract class InputElement<T> extends BaseUIElement {
     abstract IsValid(t: T): boolean;
 
 }
-

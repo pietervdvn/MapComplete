@@ -4,19 +4,28 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {SubtleButton} from "../Base/SubtleButton";
 import Minimap from "../Base/Minimap";
 import State from "../../State";
-import ShowDataLayer from "../ShowDataLayer";
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {LeafletMouseEvent} from "leaflet";
 import Combine from "../Base/Combine";
 import {Button} from "../Base/Button";
 import Translations from "../i18n/Translations";
 import SplitAction from "../../Logic/Osm/Actions/SplitAction";
-import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import Title from "../Base/Title";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
+import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import {BBox} from "../../Logic/BBox";
 
 export default class SplitRoadWizard extends Toggle {
-    private static splitLayout = new UIEventSource(SplitRoadWizard.GetSplitLayout())
+    private static splitLayerStyling = new LayerConfig({
+        id: "splitpositions",
+        source: {osmTags: "_cutposition=yes"},
+        icon: {render: "circle:white;./assets/svg/scissors.svg"},
+        iconSize: {render: "30,30,center"},
+    }, "(BUILTIN) SplitRoadWizard.ts", true)
+
+    public dialogIsOpened: UIEventSource<boolean>
 
     /**
      * A UI Element used for splitting roads
@@ -34,19 +43,41 @@ export default class SplitRoadWizard extends Toggle {
 
         // Toggle variable between show split button and map
         const splitClicked = new UIEventSource<boolean>(false);
+        // Load the road with given id on the minimap
+        const roadElement = State.state.allElements.ContainingFeatures.get(id)
 
         // Minimap on which you can select the points to be splitted
-        const miniMap = new Minimap({background: State.state.backgroundLayer, allowMoving: false});
-        miniMap.SetStyle("width: 100%; height: 24rem;");
+        const miniMap = Minimap.createMiniMap(
+            {
+                background: State.state.backgroundLayer,
+                allowMoving: true,
+                leafletOptions: {
+                    minZoom: 14
+                }
+            });
+        miniMap.SetStyle("width: 100%; height: 24rem")
+            .SetClass("rounded-xl overflow-hidden");
+
+        miniMap.installBounds(BBox.get(roadElement))
 
         // Define how a cut is displayed on the map
 
-        // Load the road with given id on the minimap
-        const roadElement = State.state.allElements.ContainingFeatures.get(id)
-        const roadEventSource = new UIEventSource([{feature: roadElement, freshness: new Date()}]);
         // Datalayer displaying the road and the cut points (if any)
-        new ShowDataLayer(roadEventSource, miniMap.leafletMap, State.state.layoutToUse, false, true);
-        new ShowDataLayer(splitPoints, miniMap.leafletMap, SplitRoadWizard.splitLayout, false, false)
+        new ShowDataLayer({
+            features: new StaticFeatureSource(splitPoints, true),
+            leafletMap: miniMap.leafletMap,
+            zoomToFeatures: false,
+            enablePopups: false,
+            layerToShow: SplitRoadWizard.splitLayerStyling
+        })
+
+        new ShowDataMultiLayer({
+            features: new StaticFeatureSource([roadElement], false),
+            layers: State.state.filteredLayers,
+            leafletMap: miniMap.leafletMap,
+            enablePopups: false,
+            zoomToFeatures: true
+        })
 
         /**
          * Handles a click on the overleaf map.
@@ -54,12 +85,25 @@ export default class SplitRoadWizard extends Toggle {
          * @param coordinates Clicked location, [lon, lat]
          */
         function onMapClick(coordinates) {
+            // First, we check if there is another, already existing point nearby
+            const points = splitPoints.data.map((f, i) => [f.feature, i])
+                .filter(p => GeoOperations.distanceBetween(p[0].geometry.coordinates, coordinates) * 1000 < 5)
+                .map(p => p[1])
+                .sort()
+                .reverse()
+            if (points.length > 0) {
+                for (const point of points) {
+                    splitPoints.data.splice(point, 1)
+                }
+                splitPoints.ping()
+                return;
+            }
+
             // Get nearest point on the road
             const pointOnRoad = GeoOperations.nearestPoint(roadElement, coordinates); // pointOnRoad is a geojson
 
             // Update point properties to let it match the layer
             pointOnRoad.properties._cutposition = "yes";
-            pointOnRoad["_matching_layer_id"] = "splitpositions";
 
             // let the state remember the point, to be able to retrieve it later by id
             State.state.allElements.addOrGetElement(pointOnRoad);
@@ -76,7 +120,7 @@ export default class SplitRoadWizard extends Toggle {
             }))
 
         // Toggle between splitmap
-        const splitButton = new SubtleButton(Svg.scissors_ui(), t.inviteToSplit.Clone());
+        const splitButton = new SubtleButton(Svg.scissors_ui(), t.inviteToSplit.Clone().SetClass("text-lg font-bold"));
         splitButton.onClick(
             () => {
                 splitClicked.setData(true)
@@ -92,27 +136,9 @@ export default class SplitRoadWizard extends Toggle {
         // Save button
         const saveButton = new Button(t.split.Clone(), () => {
             hasBeenSplit.setData(true)
-            const way = OsmObject.DownloadObject(id)
-            const partOfSrc = OsmObject.DownloadReferencingRelations(id);
-            let hasRun = false
-            way.map(way => {
-                const partOf = partOfSrc.data
-                if (way === undefined || partOf === undefined) {
-                    return;
-                }
-                if (hasRun) {
-                    return
-                }
-                hasRun = true
-                const splitAction = new SplitAction(
-                    <OsmWay>way, way.asGeoJson(), partOf, splitPoints.data.map(ff => ff.feature)
-                )
-                State.state.changes.applyAction(splitAction)
+            State.state.changes.applyAction(new SplitAction(id, splitPoints.data.map(ff => ff.feature.geometry.coordinates)))
+        })
 
-            }, [partOfSrc])
-
-
-        });
         saveButton.SetClass("btn btn-primary mr-3");
         const disabledSaveButton = new Button("Split", undefined);
         disabledSaveButton.SetClass("btn btn-disabled mr-3");
@@ -134,22 +160,6 @@ export default class SplitRoadWizard extends Toggle {
         mapView.SetClass("question")
         const confirm = new Toggle(mapView, splitToggle, splitClicked);
         super(t.hasBeenSplit.Clone(), confirm, hasBeenSplit)
-    }
-
-    private static GetSplitLayout(): LayoutConfig {
-        return new LayoutConfig({
-            maintainer: "mapcomplete",
-            language: ["en"],
-            startLon: 0,
-            startLat: 0,
-            description: "Split points visualisations - built in at SplitRoadWizard.ts",
-            icon: "", startZoom: 0,
-            title: "Split locations",
-            version: "",
-
-            id: "splitpositions",
-            layers: [{id: "splitpositions", source: {osmTags: "_cutposition=yes"}, icon: "./assets/svg/plus.svg"}]
-        }, true, "(BUILTIN) SplitRoadWizard.ts")
-
+        this.dialogIsOpened = splitClicked
     }
 }

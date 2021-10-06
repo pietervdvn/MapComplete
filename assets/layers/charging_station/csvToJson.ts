@@ -17,7 +17,9 @@ function loadCsv(file): {
     countryBlackList?: string[],
     commonVoltages?: number[],
     commonCurrents?: number[],
-    commonOutputs?: string[]
+    commonOutputs?: string[],
+    associatedVehicleTypes?: string[],
+    neverAssociatedWith?: string[]
 }[] {
     const entries: string[] = Utils.NoNull(readFileSync(file, "utf8").split("\n").map(str => str.trim()))
     const header = entries.shift().split(",")
@@ -29,7 +31,7 @@ function loadCsv(file): {
         }
 
         const v = {}
-        const colonSeperated = ["commonVoltages", "commonOutputs", "commonCurrents", "countryWhiteList","countryBlackList"]
+        const colonSeperated = ["commonVoltages", "commonOutputs", "commonCurrents", "countryWhiteList", "countryBlackList", "associatedVehicleTypes", "neverAssociatedWith"]
         const descriptionTranslations = new Map<string, string>()
         for (let j = 0; j < header.length; j++) {
             const key = header[j];
@@ -53,7 +55,7 @@ function loadCsv(file): {
 function run(file, protojson) {
 
     const overview_question_answers = []
-    const questions: (TagRenderingConfigJson & {"id": string})[] = []
+    const questions: (TagRenderingConfigJson & { "id": string })[] = []
     const filterOptions: { question: any, osmTags?: string } [] = [
         {
             question: {
@@ -64,11 +66,11 @@ function run(file, protojson) {
     ]
 
     const entries = loadCsv(file)
-    for (let i = 0; i < entries.length; i++){
+    for (let i = 0; i < entries.length; i++) {
         const e = entries[i];
         const txt = {
-            en: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("en")}`,
-            nl: `<img style='width:3rem; margin-left: 1rem; margin-right: 1rem' src='./assets/layers/charging_station/${e.image}'/> ${e.description.get("nl")}`
+            en: `<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("en")}</span></div>`,
+            nl: `<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("nl")}</span></div>`
         }
         const json = {
             if: `${e.key}=1`,
@@ -76,16 +78,42 @@ function run(file, protojson) {
             then: txt,
         }
 
-        if(e.countryWhiteList.length > 0 && e.countryBlackList.length > 0){
-            throw "Error for type "+e.key+": don't defined both a whitelist and a blacklist"
+        if (e.countryWhiteList.length > 0 && e.countryBlackList.length > 0) {
+            throw "Error for type " + e.key + ": don't defined both a whitelist and a blacklist"
         }
         if (e.countryWhiteList.length > 0) {
+            // This is a 'hideInAnswer', thus _reverse_ logic!
             const countries = e.countryWhiteList.map(country => "_country!=" + country) //HideInAnswer if it is in the wrong country
             json["hideInAnswer"] = {or: countries}
-        }else if (e.countryBlackList .length > 0) {
+        } else if (e.countryBlackList.length > 0) {
             const countries = e.countryBlackList.map(country => "_country=" + country) //HideInAnswer if it is in the wrong country
             json["hideInAnswer"] = {or: countries}
         }
+
+        if (e.associatedVehicleTypes?.length > 0 && e.associatedVehicleTypes.indexOf("*") < 0 && e.neverAssociatedWith?.length > 0) {
+            // This plug only occurs if some vehicle specific vehicle type is present.
+            // IF all of the needed vehicle types are explicitly NO, then we hide this type as well
+            let associatedWith = {and: [].concat(...e.associatedVehicleTypes.map(neededVehicle => [neededVehicle + "=no"]))}
+
+            // We also hide if:
+            // - One of the neverAssociatedVehiclesTYpes is set to 'yes' AND none of the associated types are set/yes
+            let neverAssociatedIsSet = {
+                and: [{
+                    or: e.neverAssociatedWith.map(vehicleType => vehicleType + "=yes")
+                },
+                    ...e.associatedVehicleTypes.map(associated => associated + "!=yes")
+                ]
+            }
+
+            let conditions = [associatedWith, neverAssociatedIsSet]
+            if (json["hideInAnswer"] !== undefined) {
+                conditions.push(json["hideInAnswer"])
+            }
+            json["hideInAnswer"] = {or: conditions}
+
+        }
+
+
 
         overview_question_answers.push(json)
 
@@ -99,18 +127,18 @@ function run(file, protojson) {
         }
         overview_question_answers.push(no_ask_json)
 
-        const descrWithImage_en = `<b>${e.description.get("en")}</b> <img style='width:1rem;' src='./assets/layers/charging_station/${e.image}'/>`
-        const descrWithImage_nl = `<b>${e.description.get("nl")}</b> <img style='width:1rem;' src='./assets/layers/charging_station/${e.image}'/>`
+        const descrWithImage_en = `<div style='display: inline-block'><b>${e.description.get("en")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
+        const descrWithImage_nl = `<div style='display: inline-block'><b>${e.description.get("nl")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
 
         questions.push({
-            "id":"plugs-"+i,
+            "id": "plugs-" + i,
             question: {
                 en: `How much plugs of type ${descrWithImage_en} are available here?`,
                 nl: `Hoeveel stekkers van type  ${descrWithImage_nl} heeft dit oplaadpunt?`,
             },
             render: {
-                en: `There are ${descrWithImage_en} plugs of type ${e.description.get("en")} available here`,
-                nl: `Hier zijn ${descrWithImage_nl} stekkers van het type ${e.description.get("nl")}`
+                en: `There are <b class='text-xl'>{${e.key}}</b> plugs of type ${descrWithImage_en} available here`,
+                nl: `Hier zijn <b class='text-xl'>{${e.key}}</b> stekkers van het type ${descrWithImage_nl}`
             },
             freeform: {
                 key: e.key,
@@ -122,7 +150,7 @@ function run(file, protojson) {
         })
 
         questions.push({
-            "id":"voltage-"+i,
+            "id": "voltage-" + i,
             question: {
                 en: `What voltage do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke spanning levert de stekker van type ${descrWithImage_nl}`
@@ -151,7 +179,7 @@ function run(file, protojson) {
 
 
         questions.push({
-            "id":"current-"+i,
+            "id": "current-" + i,
             question: {
                 en: `What current do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke stroom levert de stekker van type ${descrWithImage_nl}?`,
@@ -180,7 +208,7 @@ function run(file, protojson) {
 
 
         questions.push({
-            "id":"power-output-"+i,
+            "id": "power-output-" + i,
             question: {
                 en: `What power output does a single plug of type ${descrWithImage_en} offer?`,
                 nl: `Welk vermogen levert een enkele stekker van type ${descrWithImage_nl}?`,
@@ -217,7 +245,7 @@ function run(file, protojson) {
     }
 
     const toggles = {
-        "id":"Available_charging_stations (generated)",
+        "id": "Available_charging_stations (generated)",
         "question": {
             "en": "Which charging stations are available here?"
         },
@@ -230,29 +258,29 @@ function run(file, protojson) {
     let protoString = readFileSync(protojson, "utf8")
 
     protoString = protoString.replace("{\"id\": \"$$$\"}", stringified.join(",\n"))
-    const proto = <LayerConfigJson> JSON.parse(protoString)
+    const proto = <LayerConfigJson>JSON.parse(protoString)
     proto.tagRenderings.forEach(tr => {
-        if(typeof tr === "string"){
+        if (typeof tr === "string") {
             return;
         }
-        if(tr["id"] === undefined || typeof tr["id"] !== "string"){
+        if (tr["id"] === undefined || typeof tr["id"] !== "string") {
             console.error(tr)
             throw "Every tagrendering should have an id, acting as comment"
         }
     })
-    
+
     proto["filter"].push({
+        id: "connection_type",
         options: filterOptions
     })
 
-  
-    
+
     const extraUnits = [
         {
             appliesToKey: entries.map(e => e.key + ":voltage"),
             applicableUnits: [{
                 canonicalDenomination: 'V',
-                alternativeDenomination: ["v", "volt", "voltage",'V','Volt'],
+                alternativeDenomination: ["v", "volt", "voltage", 'V', 'Volt'],
                 human: {
                     en: "Volts",
                     nl: "volt"
@@ -264,7 +292,7 @@ function run(file, protojson) {
             appliesToKey: entries.map(e => e.key + ":current"),
             applicableUnits: [{
                 canonicalDenomination: 'A',
-                alternativeDenomination: ["a", "amp", "amperage",'A'],
+                alternativeDenomination: ["a", "amp", "amperage", 'A'],
                 human: {
                     en: "A",
                     nl: "A"
@@ -294,13 +322,11 @@ function run(file, protojson) {
         },
     ];
 
-    if(proto["units"] == undefined){
+    if (proto["units"] == undefined) {
         proto["units"] = []
     }
     proto["units"].push(...extraUnits)
-    
-    mergeTranslations("charging_station.json",proto)
-    writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "    "))
+    writeFileSync("charging_station.json", JSON.stringify(proto, undefined, "  "))
 }
 
 
@@ -329,7 +355,6 @@ async function queryTagInfo(file, type, clean: ((s: string) => string)) {
         const countsArray = Array.from(counts.keys())
         countsArray.sort()
         console.log(`${e.key}:${type} = ${countsArray.join(";")}`)
-        // console.log(`${countsArray.join(";")}`)
     }
 }
 
@@ -338,22 +363,22 @@ async function queryTagInfo(file, type, clean: ((s: string) => string)) {
  * @param origPath
  * @param newConfig
  */
-function mergeTranslations(origPath, newConfig: LayerConfigJson){
-    const oldFile = <LayerConfigJson> JSON.parse(readFileSync(origPath, "utf-8"))
-    const newFile =<LayerConfigJson> newConfig
+function mergeTranslations(origPath, newConfig: LayerConfigJson) {
+    const oldFile = <LayerConfigJson>JSON.parse(readFileSync(origPath, "utf-8"))
+    const newFile = <LayerConfigJson>newConfig
     const renderingsOld = oldFile.tagRenderings
     delete oldFile.tagRenderings
     const newRenderings = newFile.tagRenderings
     Utils.Merge(oldFile, newFile)
 
     for (const oldRendering of renderingsOld) {
-        
+
         const oldRenderingName = oldRendering["id"]
-        if(oldRenderingName === undefined){
+        if (oldRenderingName === undefined) {
             continue
         }
         const applicable = newRenderings.filter(r => r["id"] === oldRenderingName)[0]
-        if(applicable === undefined){
+        if (applicable === undefined) {
             continue;
         }
         Utils.Merge(oldRendering, applicable)
@@ -361,6 +386,7 @@ function mergeTranslations(origPath, newConfig: LayerConfigJson){
 }
 
 try {
+    console.log("Generating the charging_station.json file")
     run("types.csv", "charging_station.protojson")
     /*/
     queryTagInfo("types.csv","voltage", s => s.trim())

@@ -743,6 +743,22 @@
         "description": "On this map, publicly accessible drinking water spots are shown and can be easily added",
         "title": "Drinking Water"
     },
+    "etymology": {
+        "description": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. The information comes from Wpikipedia.",
+        "layers": {
+            "0": {
+                "description": "All objects which have an etymology known",
+                "name": "Has etymolgy",
+                "tagRenderings": {
+                    "simple etymology": {
+                        "render": "Named after {name:etymology}"
+                    }
+                }
+            }
+        },
+        "shortDescription": "What is the origin of a toponym?",
+        "title": "Open Etymology Map"
+    },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facade gardens</a>, green facades and trees in the city not only bring peace and quiet, but also a more beautiful city, greater biodiversity, a cooling effect and better air quality. <br/> Klimaan VZW and Mechelen Klimaatneutraal want to map existing and new facade gardens as an example for people who want to build their own garden or for city walkers who love nature.<br/>More info about the project at <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
@@ -1216,7 +1232,7 @@
         "title": "Parking"
     },
     "personal": {
-        "description": "Create a personal theme based on all the available layers of all themes",
+        "description": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",
         "title": "Personal theme"
     },
     "playgrounds": {
@@ -1318,6 +1334,43 @@
         "description": "Map all the trees!",
         "shortDescription": "Map all the trees",
         "title": "Trees"
+    },
+    "uk_addresses": {
+        "description": "Contribute to OpenStreetMap by filling out address information",
+        "layers": {
+            "1": {
+                "description": "Addresses",
+                "name": "Known addresses in OSM",
+                "tagRenderings": {
+                    "uk_addresses_explanation_osm": {
+                        "render": "This address is saved in OpenStreetMap"
+                    },
+                    "uk_addresses_housenumber": {
+                        "mappings": {
+                            "0": {
+                                "then": "This building has no house number"
+                            }
+                        },
+                        "question": "What is the number of this house?",
+                        "render": "The housenumber is <b>{addr:housenumber}</b>"
+                    },
+                    "uk_addresses_street": {
+                        "question": "What street is this address located in?",
+                        "render": "This address is in street <b>{addr:street}</b>"
+                    }
+                },
+                "title": {
+                    "render": "Known address"
+                }
+            },
+            "2": {
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "shortDescription": "Help to build an open dataset of UK addresses",
+        "title": "UK Addresses"
     },
     "waste_basket": {
         "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",

@@ -27,7 +27,7 @@
         "mappings": [
             {
                 "if": "wheelchair=yes",
-                "then": "./assets/layers/toilet/wheelchair.svg"
+                "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
             },
             {
                 "if": {
@@ -47,12 +47,12 @@
     "presets": [
         {
             "title": {
-                "en": "Toilet",
-                "de": "Toilette",
-                "fr": "Toilettes",
-                "nl": "Toilet",
-                "ru": "Туалет",
-                "it": "Servizi igienici"
+                "en": "toilet",
+                "de": "toilette",
+                "fr": "toilettes",
+                "nl": "toilet",
+                "ru": "tуалет",
+                "it": "servizi igienici"
             },
             "tags": [
                 "amenity=toilets"
@@ -68,12 +68,12 @@
         },
         {
             "title": {
-                "en": "Toilets with wheelchair accessible toilet",
-                "de": "Toiletten mit rollstuhlgerechter Toilette",
-                "fr": "Toilettes accessible aux personnes à mobilité réduite",
-                "nl": "Een rolstoeltoegankelijke toilet",
-                "it": "Servizi igienici accessibili per persone in sedia a rotelle",
-                "ru": "Туалет с доступом для пользователей кресел-колясок"
+                "en": "toilets with wheelchair accessible toilet",
+                "de": "toiletten mit rollstuhlgerechter Toilette",
+                "fr": "toilettes accessible aux personnes à mobilité réduite",
+                "nl": "een rolstoeltoegankelijke toilet",
+                "it": "servizi igienici accessibili per persone in sedia a rotelle",
+                "ru": "tуалет с доступом для пользователей кресел-колясок"
             },
             "tags": [
                 "amenity=toilets",
@@ -407,6 +407,96 @@
                 }
             ],
             "id": "toilet-changing_table:location"
+        },
+        {
+            "id": "toilet-handwashing",
+            "question": {
+                "en": "Do these toilets have a sink to wash your hands?",
+                "nl": "Hebben deze toiletten een lavabo om de handen te wassen?"
+            },
+            "mappings": [
+                {
+                    "if": "toilets:handwashing=yes",
+                    "then": {
+                        "en": "This toilets have a sink to wash your hands",
+                        "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen"
+                    }
+                },
+                {
+                    "if": "toilets:handwashing=no",
+                    "then": {
+                        "en": "This toilets <b>don't</b> have a sink to wash your hands",
+                        "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "toilet-has-paper",
+            "question": {
+                "en": "Does one have to bring their own toilet paper to this toilet?",
+                "nl": "Moet je je eigen toiletpappier meenemen naar deze toilet?"
+            },
+            "mappings": [
+                {
+                    "if": "toilets:paper_supplied=yes",
+                    "then": {
+                        "en": "Toilet paper is equipped with toilet paper",
+                        "nl": "Deze toilet is voorzien van toiletpapier"
+                    }
+                },
+                {
+                    "if": "toilets:paper_supplied=no",
+                    "then": {
+                        "en": "You have to bring your own toilet paper to this toilet",
+                        "nl": "Je moet je eigen toiletpapier meebrengen naar deze toilet"
+                    }
+                }
+            ]
+        }
+    ],
+    "filter": [
+        {
+            "id": "wheelchair",
+            "options": [
+                {
+                    "question": {
+                        "en": "Wheelchair accessible",
+                        "nl": "Rolstoel toegankelijk"
+                    },
+                    "osmTags": "wheelchair=yes"
+                }
+            ]
+        },
+        {
+            "id": "changing_table",
+            "options": [
+                {
+                    "question": {
+                        "en": "Has a changing table",
+                        "nl": "Heeft een luiertafel"
+                    },
+                    "osmTags": "changing_table=yes"
+                }
+            ]
+        },
+        {
+            "id": "free",
+            "options": [
+                {
+                    "question": {
+                        "en": "Free to use",
+                        "nl": "Gratis toegankelijk"
+                    },
+                    "osmTags": {
+                        "or": [
+                            "fee=no",
+                            "fee=0",
+                            "charge=0"
+                        ]
+                    }
+                }
+            ]
         }
     ]
 }

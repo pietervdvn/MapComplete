@@ -1,7 +1,5 @@
 import State from "../../State";
 import ThemeIntroductionPanel from "./ThemeIntroductionPanel";
-import * as personal from "../../assets/themes/personal/personal.json";
-import PersonalLayersPanel from "./PersonalLayersPanel";
 import Svg from "../../Svg";
 import Translations from "../i18n/Translations";
 import ShareScreen from "./ShareScreen";
@@ -15,12 +13,13 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Utils} from "../../Utils";
 
 export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
 
     constructor(isShown: UIEventSource<boolean>) {
-        const layoutToUse = State.state.layoutToUse.data;
+        const layoutToUse = State.state.layoutToUse;
         super(
             () => layoutToUse.title.Clone(),
             () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails, isShown),
@@ -31,9 +30,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
     private static ConstructBaseTabs(layoutToUse: LayoutConfig, isShown: UIEventSource<boolean>): { header: string | BaseUIElement; content: BaseUIElement }[] {
 
         let welcome: BaseUIElement = new ThemeIntroductionPanel(isShown);
-        if (layoutToUse.id === personal.id) {
-            welcome = new PersonalLayersPanel();
-        }
+       
         const tabs: { header: string | BaseUIElement, content: BaseUIElement }[] = [
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {
@@ -62,9 +59,16 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
         const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse, isShown)
         const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse, isShown)]
+
+        const now = new Date()
+        const lastWeek = new Date(now.getDate() - 7 * 24 * 60 * 60 * 1000)
+        const date = lastWeek.getFullYear()+"-"+Utils.TwoDigits(lastWeek.getMonth()+1)+"-"+Utils.TwoDigits(lastWeek.getDate())
+        const osmcha_link = `https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%22${date}%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D`
+        
         tabsWithAboutMc.push({
                 header: Svg.help,
-                content: new Combine([Translations.t.general.aboutMapcomplete.Clone(), "<br/>Version " + Constants.vNumber])
+                content: new Combine([Translations.t.general.aboutMapcomplete.Clone()
+                    .Subs({"osmcha_link": osmcha_link}), "<br/>Version " + Constants.vNumber])
                     .SetClass("link-underline")
             }
         );

@@ -3,8 +3,7 @@
         "name": "Panchine",
         "presets": {
             "0": {
-                "description": "Aggiungi una nuova panchina",
-                "title": "Panchina"
+                "title": "panchina"
             }
         },
         "tagRenderings": {
@@ -826,7 +825,7 @@
         "name": "Acqua potabile",
         "presets": {
             "0": {
-                "title": "Acqua potabile"
+                "title": "acqua potabile"
             }
         },
         "tagRenderings": {
@@ -910,7 +909,7 @@
         "name": "Pannelli informativi",
         "presets": {
             "0": {
-                "title": "Pannello informativo"
+                "title": "pannello informativo"
             }
         },
         "title": {
@@ -1002,7 +1001,7 @@
         "name": "Tavoli da picnic",
         "presets": {
             "0": {
-                "title": "Tavolo da picnic"
+                "title": "tavolo da picnic"
             }
         },
         "tagRenderings": {
@@ -1509,11 +1508,11 @@
         "presets": {
             "0": {
                 "description": "Servizi igienici aperti al pubblico",
-                "title": "Servizi igienici"
+                "title": "servizi igienici"
             },
             "1": {
                 "description": "Servizi igienici che hanno almeno una toilette accessibile a persone in sedia a rotelle",
-                "title": "Servizi igienici accessibili per persone in sedia a rotelle"
+                "title": "servizi igienici accessibili per persone in sedia a rotelle"
             }
         },
         "tagRenderings": {

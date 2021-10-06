@@ -18,7 +18,7 @@
   "startLat": 51.2132,
   "startLon": 3.231,
   "startZoom": 14,
-  "widenFactor": 0.05,
+  "widenFactor": 2,
   "cacheTimeout": 3600,
   "socialImage": "",
   "layers": [

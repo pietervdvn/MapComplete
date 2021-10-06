@@ -1,0 +1,51 @@
+[
+  {
+    "path": "housenumber_add.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "housenumber_ok.svg",
+    "license": "CC0",
+    "authors": [
+      "Tobias Zwick (westnordost)"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics",
+      "https://f-droid.org/packages/de.westnordost.streetcomplete/"
+    ]
+  },
+  {
+    "path": "housenumber_text.svg",
+    "license": "CC0",
+    "authors": [
+      "Tobias Zwick (westnordost)"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics",
+      "https://f-droid.org/packages/de.westnordost.streetcomplete/"
+    ]
+  },
+  {
+    "path": "housenumber_unknown.svg",
+    "license": "CC0",
+    "authors": [
+      "Tobias Zwick (westnordost)"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics",
+      "https://f-droid.org/packages/de.westnordost.streetcomplete/"
+    ]
+  },
+  {
+    "path": "housenumber_unknown_small.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  }
+]

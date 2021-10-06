@@ -145,14 +145,14 @@ export class OsmPreferences {
 
     private SetPreference(k: string, v: string) {
         if (!this.userDetails.data.loggedIn) {
-            console.log(`Not saving preference ${k}: user not logged in`);
+            console.debug(`Not saving preference ${k}: user not logged in`);
             return;
         }
 
         if (this.preferences.data[k] === v) {
             return;
         }
-        console.log("Updating preference", k, " to ", Utils.EllipsesAfter(v, 15));
+        console.debug("Updating preference", k, " to ", Utils.EllipsesAfter(v, 15));
 
         if (v === undefined || v === "") {
             this.auth.xhr({
@@ -161,10 +161,10 @@ export class OsmPreferences {
                 options: {header: {'Content-Type': 'text/plain'}},
             }, function (error) {
                 if (error) {
-                    console.log("Could not remove preference", error);
+                    console.warn("Could not remove preference", error);
                     return;
                 }
-                console.log("Preference ", k, "removed!");
+                console.debug("Preference ", k, "removed!");
 
             });
             return;

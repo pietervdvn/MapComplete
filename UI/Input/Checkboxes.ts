@@ -31,7 +31,7 @@ export default class CheckBoxes extends InputElement<number[]> {
     }
 
     protected InnerConstructElement(): HTMLElement {
-        const el = document.createElement("form");
+        const formTag = document.createElement("form");
 
         const value = this.value;
         const elements = this._elements;
@@ -57,18 +57,18 @@ export default class CheckBoxes extends InputElement<number[]> {
                 "bg-red"
             );
 
-            const wrapper = document.createElement("span");
+            const wrapper = document.createElement("div");
             wrapper.classList.add(
                 "wrapper",
                 "flex",
                 "w-full",
                 "border",
                 "border-gray-400",
-                "m-1"
+                "mb-1"
             );
             wrapper.appendChild(input);
             wrapper.appendChild(label);
-            el.appendChild(wrapper);
+            formTag.appendChild(wrapper);
 
             value.addCallbackAndRunD((selectedValues) => {
                 if (selectedValues.indexOf(i) >= 0) {
@@ -97,6 +97,6 @@ export default class CheckBoxes extends InputElement<number[]> {
             };
         }
 
-        return el;
+        return formTag;
     }
 }

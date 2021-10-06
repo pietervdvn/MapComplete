@@ -9,18 +9,21 @@ import MapControlButton from "../MapControlButton";
 import Svg from "../../Svg";
 import AllDownloads from "./AllDownloads";
 import FilterView from "./FilterView";
-import FeatureSource from "../../Logic/FeatureSource/FeatureSource";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
+import Loc from "../../Models/Loc";
+import {BBox} from "../../Logic/BBox";
 
 export default class LeftControls extends Combine {
 
-    constructor(featureSource: FeatureSource) {
+    constructor(state: {featurePipeline: FeaturePipeline, currentBounds: UIEventSource<BBox>, locationControl: UIEventSource<Loc>}) {
 
         const toggledCopyright = new ScrollableFullScreen(
             () => Translations.t.general.attribution.attributionTitle.Clone(),
             () =>
                 new AttributionPanel(
                     State.state.layoutToUse,
-                    new ContributorCount(featureSource).Contributors
+                    new ContributorCount(state).Contributors
                 ),
             undefined
         );

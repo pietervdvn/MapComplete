@@ -8,40 +8,39 @@ import Svg from "../../Svg";
 import State from "../../State";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {GeoOperations} from "../../Logic/GeoOperations";
-import ShowDataLayer from "../ShowDataLayer";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import * as L from "leaflet";
+import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import {BBox} from "../../Logic/BBox";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 
 export default class LocationInput extends InputElement<Loc> {
 
-    private static readonly matchLayout = new UIEventSource(new LayoutConfig({
-        description: "Matchpoint style",
-        icon: "./assets/svg/crosshair-empty.svg",
-        id: "matchpoint",
-        language: ["en"],
-        layers: [{
+    private static readonly matchLayer = new LayerConfig(
+        {
             id: "matchpoint", source: {
                 osmTags: {and: []}
             },
             icon: "./assets/svg/crosshair-empty.svg"
-        }],
-        maintainer: "MapComplete",
-        startLat: 0,
-        startLon: 0,
-        startZoom: 0,
-        title: "Location input",
-        version: "0"
-
-    }));
+        }, "matchpoint icon", true
+    )
+    
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
     private _centerLocation: UIEventSource<Loc>;
     private readonly mapBackground: UIEventSource<BaseLayer>;
+    /**
+     * The features to which the input should be snapped
+     * @private
+     */
     private readonly _snapTo: UIEventSource<{ feature: any }[]>
     private readonly _value: UIEventSource<Loc>
     private readonly _snappedPoint: UIEventSource<any>
     private readonly _maxSnapDistance: number
     private readonly _snappedPointTags: any;
+    private readonly _bounds: UIEventSource<BBox>;
+    public readonly _matching_layer: LayerConfig;
 
     constructor(options: {
         mapBackground?: UIEventSource<BaseLayer>,
@@ -50,32 +49,32 @@ export default class LocationInput extends InputElement<Loc> {
         snappedPointTags?: any,
         requiresSnapping?: boolean,
         centerLocation: UIEventSource<Loc>,
+        bounds?: UIEventSource<BBox>
     }) {
         super();
         this._snapTo = options.snapTo?.map(features => features?.filter(feat => feat.feature.geometry.type !== "Point"))
         this._maxSnapDistance = options.maxSnapDistance
         this._centerLocation = options.centerLocation;
         this._snappedPointTags = options.snappedPointTags
+        this._bounds = options.bounds;
         if (this._snapTo === undefined) {
             this._value = this._centerLocation;
         } else {
             const self = this;
 
-            let matching_layer: UIEventSource<string>
 
             if (self._snappedPointTags !== undefined) {
-                matching_layer = State.state.layoutToUse.map(layout => {
+                const layout = State.state.layoutToUse
 
-                    for (const layer of layout.layers) {
-                        if (layer.source.osmTags.matchesProperties(self._snappedPointTags)) {
-                            return layer.id
-                        }
+                let matchingLayer = LocationInput.matchLayer
+                for (const layer of layout.layers) {
+                    if (layer.source.osmTags.matchesProperties(self._snappedPointTags)) {
+                        matchingLayer = layer
                     }
-                    console.error("No matching layer found for tags ", self._snappedPointTags)
-                    return "matchpoint"
-                })
+                }
+                this._matching_layer = matchingLayer;
             } else {
-                matching_layer = new UIEventSource<string>("matchpoint")
+               this._matching_layer = LocationInput.matchLayer
             }
 
             this._snappedPoint = options.centerLocation.map(loc => {
@@ -87,7 +86,7 @@ export default class LocationInput extends InputElement<Loc> {
 
                 let min = undefined;
                 let matchedWay = undefined;
-                for (const feature of self._snapTo.data) {
+                for (const feature of self._snapTo.data ?? []) {
                     const nearestPointOnLine = GeoOperations.nearestPoint(feature.feature, [loc.lon, loc.lat])
                     if (min === undefined) {
                         min = nearestPointOnLine
@@ -102,19 +101,17 @@ export default class LocationInput extends InputElement<Loc> {
                     }
                 }
 
-                if (min.properties.dist * 1000 > self._maxSnapDistance) {
+                if (min === undefined || min.properties.dist * 1000 > self._maxSnapDistance) {
                     if (options.requiresSnapping) {
                         return undefined
                     } else {
                         return {
                             "type": "Feature",
-                            "_matching_layer_id": matching_layer.data,
                             "properties": options.snappedPointTags ?? min.properties,
                             "geometry": {"type": "Point", "coordinates": [loc.lon, loc.lat]}
                         }
                     }
                 }
-                min._matching_layer_id = matching_layer?.data ?? "matchpoint"
                 min.properties = options.snappedPointTags ?? min.properties
                 self.snappedOnto.setData(matchedWay)
                 return min
@@ -128,7 +125,7 @@ export default class LocationInput extends InputElement<Loc> {
             })
 
         }
-        this.mapBackground = options.mapBackground ?? State.state.backgroundLayer ?? new UIEventSource(AvailableBaseLayers.osmCarto)
+        this.mapBackground = options.mapBackground ?? State.state?.backgroundLayer ?? new UIEventSource(AvailableBaseLayers.osmCarto)
         this.SetClass("block h-full")
     }
 
@@ -143,83 +140,46 @@ export default class LocationInput extends InputElement<Loc> {
     protected InnerConstructElement(): HTMLElement {
         try {
             const clickLocation = new UIEventSource<Loc>(undefined);
-            const map = new Minimap(
+            const map = Minimap.createMiniMap(
                 {
                     location: this._centerLocation,
                     background: this.mapBackground,
-                    attribution: this.mapBackground !== State.state.backgroundLayer,
-                    lastClickLocation: clickLocation
+                    attribution: this.mapBackground !== State.state?.backgroundLayer,
+                    lastClickLocation: clickLocation,
+                    bounds: this._bounds
                 }
             )
             clickLocation.addCallbackAndRunD(location => this._centerLocation.setData(location))
-            map.leafletMap.addCallbackAndRunD(leaflet => {
-                const bounds = leaflet.getBounds()
-                leaflet.setMaxBounds(bounds.pad(0.15))
-                const data = {
-                    type: "FeatureCollection",
-                    features: [{
-                        "type": "Feature",
-                        "geometry": {
-                            "type": "LineString",
-                            "coordinates": [
-                                [
-                                    bounds.getEast(),
-                                    bounds.getNorth()
-                                ],
-                                [
-                                    bounds.getWest(),
-                                    bounds.getNorth()
-                                ],
-                                [
-                                    bounds.getWest(),
-                                    bounds.getSouth()
-                                ],
 
-                                [
-                                    bounds.getEast(),
-                                    bounds.getSouth()
-                                ],
-                                [
-                                    bounds.getEast(),
-                                    bounds.getNorth()
-                                ]
-                            ]
-                        }
-                    }]
-                }
-                // @ts-ignore
-                L.geoJSON(data, {
-                    style: {
-                        color: "#f00",
-                        weight: 2,
-                        opacity: 0.4
-                    }
-                }).addTo(leaflet)
-            })
+            map.installBounds(0.15, true);
 
             if (this._snapTo !== undefined) {
-                new ShowDataLayer(this._snapTo, map.leafletMap, State.state.layoutToUse, false, false)
-
+                
+                // Show the lines to snap to
+                new ShowDataMultiLayer({
+                        features: new StaticFeatureSource(this._snapTo, true),
+                        enablePopups: false,
+                        zoomToFeatures: false,
+                        leafletMap: map.leafletMap,
+                        layers: State.state.filteredLayers
+                    }
+                )
+                // Show the central point
                 const matchPoint = this._snappedPoint.map(loc => {
                     if (loc === undefined) {
                         return []
                     }
                     return [{feature: loc}];
                 })
-                if (this._snapTo) {
-                    let layout = LocationInput.matchLayout
-                    if (this._snappedPointTags !== undefined) {
-                        layout = State.state.layoutToUse
-                    }
-                    new ShowDataLayer(
-                        matchPoint,
-                        map.leafletMap,
-                        layout,
-                        false, false
-                    )
-                }
+                    new ShowDataLayer({
+                        features: new StaticFeatureSource(matchPoint, true),
+                        enablePopups: false,
+                        zoomToFeatures: false,
+                        leafletMap: map.leafletMap,
+                        layerToShow: this._matching_layer
+                    })
+                    
             }
-
             this.mapBackground.map(layer => {
                 const leaflet = map.leafletMap.data
                 if (leaflet === undefined || layer === undefined) {
@@ -231,20 +191,31 @@ export default class LocationInput extends InputElement<Loc> {
                 leaflet.setZoom(layer.max_zoom - 1)
 
             }, [map.leafletMap])
+            
+            const animatedHand = Svg.hand_ui()
+                .SetStyle("width: 2rem; height: unset;")
+                .SetClass("hand-drag-animation block pointer-events-none")
+            
             return new Combine([
                 new Combine([
                     Svg.move_arrows_ui()
                         .SetClass("block relative pointer-events-none")
                         .SetStyle("left: -2.5rem; top: -2.5rem; width: 5rem; height: 5rem")
-                ]).SetClass("block w-0 h-0 z-10 relative")
-                    .SetStyle("background: rgba(255, 128, 128, 0.21); left: 50%; top: 50%"),
+                    ]).SetClass("block w-0 h-0 z-10 relative")
+                    .SetStyle("background: rgba(255, 128, 128, 0.21); left: 50%; top: 50%; opacity: 0.5"),
+                
+                new Combine([
+                    animatedHand])
+                    .SetClass("block w-0 h-0 z-10 relative")
+                    .SetStyle("left: calc(50% + 3rem); top: calc(50% + 2rem); opacity: 0.7"),
+
                 map
                     .SetClass("z-0 relative block w-full h-full bg-gray-100")
 
             ]).ConstructElement();
         } catch (e) {
             console.error("Could not generate LocationInputElement:", e)
-            return undefined;
+            return new FixedUiElement("Constructing a locationInput failed due to" + e).SetClass("alert").ConstructElement();
         }
     }
 

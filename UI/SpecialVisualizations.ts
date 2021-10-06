@@ -5,7 +5,6 @@ import {ImageCarousel} from "./Image/ImageCarousel";
 import Combine from "./Base/Combine";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {ImageUploadFlow} from "./Image/ImageUploadFlow";
-
 import ShareButton from "./BigComponents/ShareButton";
 import Svg from "../Svg";
 import ReviewElement from "./Reviews/ReviewElement";
@@ -13,17 +12,21 @@ import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
-
 import State from "../State";
-import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 import BaseUIElement from "./BaseUIElement";
 import Title from "./Base/Title";
 import Table from "./Base/Table";
 import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
-import BaseLayer from "../Models/BaseLayer";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import ImportButton from "./BigComponents/ImportButton";
+import {Tag} from "../Logic/Tags/Tag";
+import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
+import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
+import Minimap from "./Base/Minimap";
+import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
+import WikipediaBox from "./WikipediaBox";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -35,14 +38,6 @@ export interface SpecialVisualization {
 
 export default class SpecialVisualizations {
 
-
-    static constructMiniMap: (options?: {
-        background?: UIEventSource<BaseLayer>,
-        location?: UIEventSource<Loc>,
-        allowMoving?: boolean,
-        leafletOptions?: any
-    }) => BaseUIElement;
-    static constructShowDataLayer: (features: UIEventSource<{ feature: any; freshness: Date }[]>, leafletMap: UIEventSource<any>, layoutToUse: UIEventSource<any>, enablePopups?: boolean, zoomToFeatures?: boolean) => any;
     public static specialVisualizations: SpecialVisualization[] =
         [
             {
@@ -65,7 +60,6 @@ export default class SpecialVisualizations {
                     })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
                 })
             },
-
             {
                 funcName: "image_carousel",
                 docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
@@ -73,21 +67,12 @@ export default class SpecialVisualizations {
                     name: "image key/prefix",
                     defaultValue: "image",
                     doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
-                },
-                    {
-                        name: "smart search",
-                        defaultValue: "true",
-                        doc: "Also include images given via 'Wikidata', 'wikimedia_commons' and 'mapillary"
-                    }],
+                }],
                 constr: (state: State, tags, args) => {
                     const imagePrefix = args[0];
-                    const loadSpecial = args[1].toLowerCase() === "true";
-                    const searcher: UIEventSource<{ key: string, url: string }[]> = ImageSearcher.construct(tags, imagePrefix, loadSpecial);
-
-                    return new ImageCarousel(searcher, tags);
+                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefix), tags);
                 }
             },
-
             {
                 funcName: "image_upload",
                 docs: "Creates a button where a user can upload an image to IMGUR",
@@ -99,6 +84,20 @@ export default class SpecialVisualizations {
                 constr: (state: State, tags, args) => {
                     return new ImageUploadFlow(tags, args[0])
                 }
+            },
+            {
+                funcName: "wikipedia",
+                docs: "A box showing the corresponding wikipedia article - based on the wikidata tag",
+                args: [
+                    {
+                        name: "keyToShowWikipediaFor",
+                        doc: "Use the wikidata entry from this key to show the wikipedia article for",
+                        defaultValue: "wikidata"
+                    }
+                ],
+                example: "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
+                constr: (_, tagsSource, args) =>
+                      new WikipediaBox( tagsSource.map(tags => tags[args[0]]))
             },
             {
                 funcName: "minimap",
@@ -153,7 +152,7 @@ export default class SpecialVisualizations {
                         lon: Number(properties._lon),
                         zoom: zoom
                     })
-                    const minimap = SpecialVisualizations.constructMiniMap(
+                    const minimap = Minimap.createMiniMap(
                         {
                             background: state.backgroundLayer,
                             location: locationSource,
@@ -169,12 +168,14 @@ export default class SpecialVisualizations {
                         }
                     })
 
-                    SpecialVisualizations.constructShowDataLayer(
-                        featuresToShow,
-                        minimap["leafletMap"],
-                        State.state.layoutToUse,
-                        false,
-                        true
+                    new ShowDataMultiLayer(
+                        {
+                            leafletMap: minimap["leafletMap"],
+                            enablePopups: false,
+                            zoomToFeatures: true,
+                            layers: State.state.filteredLayers,
+                            features: new StaticFeatureSource(featuresToShow, true)
+                        }
                     )
 
 
@@ -185,7 +186,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
-                example: "<b>{reviews()}<b> for a vanilla review, <b>{reviews(name, play_forest)}</b> to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
+                example: "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
                 args: [{
                     name: "subjectKey",
                     defaultValue: "name",
@@ -222,7 +223,6 @@ export default class SpecialVisualizations {
                     return new OpeningHoursVisualization(tagSource, args[0])
                 }
             },
-
             {
                 funcName: "live",
                 docs: "Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)}",
@@ -243,7 +243,6 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(source.map(data => data[neededValue] ?? "Loading..."));
                 }
             },
-
             {
                 funcName: "histogram",
                 docs: "Create a histogram for a list of given values, read from the properties.",
@@ -323,10 +322,10 @@ export default class SpecialVisualizations {
                         const generateShareData = () => {
 
 
-                            const title = state?.layoutToUse?.data?.title?.txt ?? "MapComplete";
+                            const title = state?.layoutToUse?.title?.txt ?? "MapComplete";
 
                             let matchingLayer: LayerConfig = undefined;
-                            for (const layer of (state?.layoutToUse?.data?.layers ?? [])) {
+                            for (const layer of (state?.layoutToUse?.layers ?? [])) {
                                 if (layer.source.osmTags.matchesProperties(tagSource?.data)) {
                                     matchingLayer = layer
                                 }
@@ -344,7 +343,7 @@ export default class SpecialVisualizations {
                             return {
                                 title: name,
                                 url: url,
-                                text: state?.layoutToUse?.data?.shortDescription?.txt ?? "MapComplete"
+                                text: state?.layoutToUse?.shortDescription?.txt ?? "MapComplete"
                             }
                         }
 
@@ -367,18 +366,86 @@ export default class SpecialVisualizations {
                     const key = args [0]
                     return new VariableUiElement(
                         tagSource.map(tags => tags[key]).map(value => {
-                                if (value === undefined) {
-                                    return undefined
-                                }
-                                const allUnits = [].concat(...state.layoutToUse.data.layers.map(lyr => lyr.units))
-                                const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
-                                if (unit === undefined) {
-                                    return value;
-                                }
-                                return unit.asHumanLongValue(value);
+                            if (value === undefined) {
+                                return undefined
+                            }
+                            const allUnits = [].concat(...state.layoutToUse.layers.map(lyr => lyr.units))
+                            const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
+                            if (unit === undefined) {
+                                return value;
+                            }
+                            return unit.asHumanLongValue(value);
 
-                            },
-                            [state.layoutToUse])
+                        })
+                    )
+                }
+            },
+            {
+                funcName: "import_button",
+                args: [
+                    {
+                        name: "tags",
+                        doc: "Tags to copy-specification. This contains one or more pairs (seperated by a `;`), e.g. `amenity=fast_food; addr:housenumber=$number`. This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. (Hint: prepare these values, e.g. with calculatedTags)"
+                    },
+                    {
+                        name: "text",
+                        doc: "The text to show on the button",
+                        defaultValue: "Import this data into OpenStreetMap"
+                    },
+                    {
+                        name: "icon",
+                        doc: "A nice icon to show in the button",
+                        defaultValue: "./assets/svg/addSmall.svg"
+                    }],
+                docs: `This button will copy the data from an external dataset into OpenStreetMap. It is only functional in official themes but can be tested in unofficial themes.
+
+If you want to import a dataset, make sure that:
+
+1. The dataset to import has a suitable license
+2. The community has been informed of the import
+3. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed
+
+There are also some technicalities in your theme to keep in mind:
+
+1. The new point will be added and will flow through the program as any other new point as if it came from OSM.
+    This means that there should be a layer which will match the new tags and which will display it.
+2. The original point from your geojson layer will gain the tag '_imported=yes'.
+    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
+3. There should be a way for the theme to detect previously imported points, even after reloading.
+    A reference number to the original dataset is an excellen way to do this    
+`,
+                constr: (state, tagSource, args) => {
+                    if (!state.layoutToUse.official && !state.featureSwitchIsTesting.data) {
+                        return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),
+                            new FixedUiElement("To test, add 'test=true' to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
+                    }
+                    const tgsSpec = args[0].split(",").map(spec => {
+                        const kv = spec.split("=").map(s => s.trim());
+                        if (kv.length != 2) {
+                            throw "Invalid key spec: multiple '=' found in " + spec
+                        }
+                        return kv
+                    })
+                    const rewrittenTags: UIEventSource<Tag[]> = tagSource.map(tags => {
+                        const newTags: Tag [] = []
+                        for (const [key, value] of tgsSpec) {
+                            if (value.startsWith('$')) {
+                                const origKey = value.substring(1)
+                                newTags.push(new Tag(key, tags[origKey]))
+                            } else {
+                                newTags.push(new Tag(key, value))
+                            }
+                        }
+                        return newTags
+                    })
+                    const id = tagSource.data.id;
+                    const feature = State.state.allElements.ContainingFeatures.get(id)
+                    if (feature.geometry.type !== "Point") {
+                        return new FixedUiElement("Error: can only import point objects").SetClass("alert")
+                    }
+                    const [lon, lat] = feature.geometry.coordinates;
+                    return new ImportButton(
+                        args[2], args[1], tagSource, rewrittenTags, lat, lon
                     )
                 }
             }
@@ -394,12 +461,12 @@ export default class SpecialVisualizations {
                 [
                     new Title(viz.funcName, 3),
                     viz.docs,
-                    new Table(["name", "default", "description"],
+                    viz.args.length > 0 ? new Table(["name", "default", "description"],
                         viz.args.map(arg => [arg.name, arg.defaultValue ?? "undefined", arg.doc])
-                    ),
+                    ) : undefined,
                     new Title("Example usage", 4),
                     new FixedUiElement(
-                        viz.example ?? "{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}"
+                        viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
                     ).SetClass("literal-code"),
 
                 ]

@@ -130,7 +130,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 if (!userbadge) {
                     return undefined
                 }
-                return new Combine(editElements)
+                return new Combine(editElements).SetClass("flex flex-col")
             }
         ))
         renderings.push(editors)

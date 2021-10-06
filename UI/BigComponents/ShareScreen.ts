@@ -17,7 +17,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 export default class ShareScreen extends Combine {
 
     constructor(layout: LayoutConfig = undefined, layoutDefinition: string = undefined) {
-        layout = layout ?? State.state?.layoutToUse?.data;
+        layout = layout ?? State.state?.layoutToUse;
         layoutDefinition = layoutDefinition ?? State.state?.layoutDefinition;
         const tr = Translations.t.general.sharescreen;
 

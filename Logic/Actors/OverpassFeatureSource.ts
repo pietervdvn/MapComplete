@@ -1,13 +1,15 @@
 import {UIEventSource} from "../UIEventSource";
-import Loc from "../../Models/Loc";
 import {Or} from "../Tags/Or";
 import {Overpass} from "../Osm/Overpass";
-import Bounds from "../../Models/Bounds";
 import FeatureSource from "../FeatureSource/FeatureSource";
 import {Utils} from "../../Utils";
 import {TagsFilter} from "../Tags/TagsFilter";
 import SimpleMetaTagger from "../SimpleMetaTagger";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import RelationsTracker from "../Osm/RelationsTracker";
+import {BBox} from "../BBox";
+import Loc from "../../Models/Loc";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 
 export default class OverpassFeatureSource implements FeatureSource {
@@ -20,116 +22,54 @@ export default class OverpassFeatureSource implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any, freshness: Date }[]> = new UIEventSource<any[]>(undefined);
 
 
-    public readonly sufficientlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0);
-    
+
+    public readonly relationsTracker: RelationsTracker;
+
+
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
-    /**
-     * The previous bounds for which the query has been run at the given zoom level
-     *
-     * Note that some layers only activate on a certain zoom level.
-     * If the map location changes, we check for each layer if it is loaded:
-     * we start checking the bounds at the first zoom level the layer might operate. If in bounds - no reload needed, otherwise we continue walking down
-     */
-    private readonly _previousBounds: Map<number, Bounds[]> = new Map<number, Bounds[]>();
-    private readonly _location: UIEventSource<Loc>;
-    private readonly _layoutToUse: UIEventSource<LayoutConfig>;
-    private readonly _leafletMap: UIEventSource<L.Map>;
-    private readonly _interpreterUrl: UIEventSource<string>;
-    private readonly _timeout: UIEventSource<number>;
+    
+    private readonly state: {
+        readonly locationControl: UIEventSource<Loc>,
+        readonly layoutToUse: LayoutConfig,
+        readonly overpassUrl: UIEventSource<string[]>;
+        readonly overpassTimeout: UIEventSource<number>;
+        readonly currentBounds: UIEventSource<BBox>
+    }
+    private readonly _isActive: UIEventSource<boolean>;
+    private readonly onBboxLoaded: (bbox: BBox, date: Date, layers: LayerConfig[]) => void;
 
-    /**
-     * The most important layer should go first, as that one gets first pick for the questions
-     */
     constructor(
-        location: UIEventSource<Loc>,
-        layoutToUse: UIEventSource<LayoutConfig>,
-        leafletMap: UIEventSource<L.Map>,
-        interpreterUrl: UIEventSource<string>,
-        timeout: UIEventSource<number>,
-        maxZoom = undefined) {
-        this._location = location;
-        this._layoutToUse = layoutToUse;
-        this._leafletMap = leafletMap;
-        this._interpreterUrl = interpreterUrl;
-        this._timeout = timeout;
+        state: {
+            readonly locationControl: UIEventSource<Loc>,
+            readonly layoutToUse: LayoutConfig,
+            readonly overpassUrl: UIEventSource<string[]>;
+            readonly overpassTimeout: UIEventSource<number>;
+            readonly overpassMaxZoom: UIEventSource<number>,
+            readonly currentBounds: UIEventSource<BBox>
+        },
+        options?: {
+            isActive?: UIEventSource<boolean>,
+            relationTracker: RelationsTracker,
+            onBboxLoaded?: (bbox: BBox, date: Date, layers: LayerConfig[]) => void
+        }) {
+
+        this.state = state
+        this._isActive = options.isActive;
+        this.onBboxLoaded = options.onBboxLoaded
+        this.relationsTracker = options.relationTracker
         const self = this;
-
-        this.sufficientlyZoomed = location.map(location => {
-                if (location?.zoom === undefined) {
-                    return false;
-                }
-                let minzoom = Math.min(...layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
-                if(location.zoom < minzoom){
-                    return false;
-                }
-                if(maxZoom !== undefined && location.zoom > maxZoom){
-                    return false;
-                }
-                
-                return true;
-            }, [layoutToUse]
-        );
-        for (let i = 0; i < 25; i++) {
-            // This update removes all data on all layers -> erase the map on lower levels too
-            this._previousBounds.set(i, []);
-        }
-
-        layoutToUse.addCallback(() => {
+        state.currentBounds.addCallback(_ => {
             self.update()
-        });
-        location.addCallback(() => {
-            self.update()
-        });
-        leafletMap.addCallbackAndRunD(_ => {
-            self.update();
         })
+
     }
 
-    public ForceRefresh() {
-        for (let i = 0; i < 25; i++) {
-            this._previousBounds.set(i, []);
-        }
-        this.update();
-    }
-
-    private GetFilter(): Overpass {
+    private GetFilter(interpreterUrl: string, layersToDownload: LayerConfig[]): Overpass {
         let filters: TagsFilter[] = [];
         let extraScripts: string[] = [];
-        for (const layer of this._layoutToUse.data.layers) {
-            if (typeof (layer) === "string") {
-                throw "A layer was not expanded!"
-            }
-            if (this._location.data.zoom < layer.minzoom) {
-                continue;
-            }
-            if (layer.doNotDownload) {
-                continue;
-            }
-            if (layer.source.geojsonSource !== undefined) {
-                // Not our responsibility to download this layer!
-                continue;
-            }
-
-
-            // Check if data for this layer has already been loaded
-            let previouslyLoaded = false;
-            for (let z = layer.minzoom; z < 25 && !previouslyLoaded; z++) {
-                const previousLoadedBounds = this._previousBounds.get(z);
-                if (previousLoadedBounds === undefined) {
-                    continue;
-                }
-                for (const previousLoadedBound of previousLoadedBounds) {
-                    previouslyLoaded = previouslyLoaded || this.IsInBounds(previousLoadedBound);
-                    if (previouslyLoaded) {
-                        break;
-                    }
-                }
-            }
-            if (previouslyLoaded) {
-                continue;
-            }
+        for (const layer of layersToDownload) {
             if (layer.source.overpassScript !== undefined) {
                 extraScripts.push(layer.source.overpassScript)
             } else {
@@ -141,95 +81,113 @@ export default class OverpassFeatureSource implements FeatureSource {
         if (filters.length + extraScripts.length === 0) {
             return undefined;
         }
-        return new Overpass(new Or(filters), extraScripts, this._interpreterUrl, this._timeout);
+        return new Overpass(new Or(filters), extraScripts, interpreterUrl, this.state.overpassTimeout, this.relationsTracker);
     }
 
-    private update(): void {
+    private update() {
+        if (!this._isActive.data) {
+            return;
+        }
+        const self = this;
+        this.updateAsync().then(bboxDate => {
+            if(bboxDate === undefined || self.onBboxLoaded === undefined){
+                return;
+            }
+            const [bbox, date, layers] = bboxDate
+            self.onBboxLoaded(bbox, date, layers)
+        })
+    }
+
+    private async updateAsync(): Promise<[BBox, Date, LayerConfig[]]> {
         if (this.runningQuery.data) {
             console.log("Still running a query, not updating");
-            return;
+            return undefined;
         }
 
         if (this.timeout.data > 0) {
             console.log("Still in timeout - not updating")
-            return;
+            return undefined;
         }
 
-        const bounds = this._leafletMap.data?.getBounds();
+        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(14);
+
         if (bounds === undefined) {
-            return;
+            return undefined;
         }
-
-        const diff = this._layoutToUse.data.widenFactor;
-
-        const n = Math.min(90, bounds.getNorth() + diff);
-        const e = Math.min(180, bounds.getEast() + diff);
-        const s = Math.max(-90, bounds.getSouth() - diff);
-        const w = Math.max(-180, bounds.getWest() - diff);
-        const queryBounds = {north: n, east: e, south: s, west: w};
-
-        const z = Math.floor(this._location.data.zoom ?? 0);
-
         const self = this;
-        const overpass = this.GetFilter();
-        if (overpass === undefined) {
-            return;
+        
+        
+        const layersToDownload = []
+        for (const layer of this.state.layoutToUse.layers) {
+            
+        if (typeof (layer) === "string") {
+            throw "A layer was not expanded!"
         }
-        this.runningQuery.setData(true);
-        overpass.queryGeoJson(queryBounds,
-            function (data, date) {
-                self._previousBounds.get(z).push(queryBounds);
-                self.retries.setData(0);
-                const features = data.features.map(f => ({feature: f, freshness: date}));
-                SimpleMetaTagger.objectMetaInfo.addMetaTags(features)
+        if(this.state.locationControl.data.zoom < layer.minzoom){
+            continue;
+        }
+        if (layer.doNotDownload) {
+            continue;
+        }
+        if (layer.source.geojsonSource !== undefined) {
+            // Not our responsibility to download this layer!
+            continue;
+        }
+        layersToDownload.push(layer)
+        }
 
-                self.features.setData(features);
-                self.runningQuery.setData(false);
-            },
-            function (reason) {
-                self.retries.data++;
-                self.ForceRefresh();
-                self.timeout.setData(self.retries.data * 5);
-                console.log(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to ${reason}`);
-                self.retries.ping();
-                self.runningQuery.setData(false);
+        let data: any = undefined
+        let date: Date = undefined
+        const overpassUrls = self.state.overpassUrl.data
+        let lastUsed = 0;
 
-                function countDown() {
-                    window?.setTimeout(
-                        function () {
-                            if (self.timeout.data > 1) {
-                                self.timeout.setData(self.timeout.data - 1);
-                                window.setTimeout(
-                                    countDown,
-                                    1000
-                                )
-                            } else {
-                                self.timeout.setData(0);
-                                self.update()
-                            }
-                        }, 1000
-                    )
+        do {
+            try {
+                
+                const overpass = this.GetFilter(overpassUrls[lastUsed], layersToDownload);
+
+                if (overpass === undefined) {
+                    return undefined;
                 }
+                this.runningQuery.setData(true);
 
-                countDown();
+                [data, date] = await overpass.queryGeoJson(bounds)
+                console.log("Querying overpass is done", data)
+            } catch (e) {
+                self.retries.data++;
+                self.retries.ping();
+                console.error(`QUERY FAILED due to`, e);
 
+                await Utils.waitFor(1000)
+
+                if (lastUsed + 1 < overpassUrls.length) {
+                    lastUsed++
+                    console.log("Trying next time with", overpassUrls[lastUsed])
+                } else {
+                    lastUsed = 0
+                    self.timeout.setData(self.retries.data * 5);
+
+                    while (self.timeout.data > 0) {
+                        await Utils.waitFor(1000)
+                        console.log(self.timeout.data)
+                        self.timeout.data--
+                        self.timeout.ping();
+                    }
+                }
             }
-        );
+        } while (data === undefined);
 
-
-    }
-
-    private IsInBounds(bounds: Bounds): boolean {
-        if (this._previousBounds === undefined) {
-            return false;
+        self.retries.setData(0);
+        try {
+            data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date));
+            self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
+            return [bounds, date, layersToDownload];
+        } catch (e) {
+            console.error("Got the overpass response, but could not process it: ", e, e.stack)
+        } finally {
+            self.runningQuery.setData(false);
         }
 
-        const b = this._leafletMap.data.getBounds();
-        return b.getSouth() >= bounds.south &&
-            b.getNorth() <= bounds.north &&
-            b.getEast() <= bounds.east &&
-            b.getWest() >= bounds.west;
+
     }
-
-
 }

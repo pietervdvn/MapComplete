@@ -1,3 +1,19 @@
+
+
+import jsPDF from "jspdf";
+import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
+import {UIEventSource} from "../Logic/UIEventSource";
+import Minimap from "./Base/Minimap";
+import Loc from "../Models/Loc";
+import BaseLayer from "../Models/BaseLayer";
+import {FixedUiElement} from "./Base/FixedUiElement";
+import Translations from "./i18n/Translations";
+import State from "../State";
+import Constants from "../Models/Constants";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import FeaturePipeline from "../Logic/FeatureSource/FeaturePipeline";
+import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
+import {BBox} from "../Logic/BBox";
 /**
  * Creates screenshoter to take png screenshot
  * Creates jspdf and downloads it
@@ -8,21 +24,6 @@
  *        -    add new layout in "PDFLayout"
  *                -> in there are more instructions
  */
-
-import jsPDF from "jspdf";
-import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
-import {UIEventSource} from "../Logic/UIEventSource";
-import Minimap from "./Base/Minimap";
-import Loc from "../Models/Loc";
-import {BBox} from "../Logic/GeoOperations";
-import ShowDataLayer from "./ShowDataLayer";
-import BaseLayer from "../Models/BaseLayer";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import Translations from "./i18n/Translations";
-import State from "../State";
-import Constants from "../Models/Constants";
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
-
 export default class ExportPDF {
     // dimensions of the map in milimeter
     public isRunning = new UIEventSource(true)
@@ -31,7 +32,7 @@ export default class ExportPDF {
     private readonly mapH = 210;
     private readonly scaling = 2
     private readonly freeDivId: string;
-    private readonly _layout: UIEventSource<LayoutConfig>;
+    private readonly _layout: LayoutConfig;
     private _screenhotTaken = false;
 
     constructor(
@@ -39,8 +40,8 @@ export default class ExportPDF {
             freeDivId: string,
             location: UIEventSource<Loc>,
             background?: UIEventSource<BaseLayer>
-            features: UIEventSource<{ feature: any }[]>,
-            layout: UIEventSource<LayoutConfig>
+            features: FeaturePipeline,
+            layout: LayoutConfig
         }
     ) {
 
@@ -57,7 +58,7 @@ export default class ExportPDF {
             zoom: l.zoom + 1
         }
 
-        const minimap = new Minimap({
+        const minimap = Minimap.createMiniMap({
             location: new UIEventSource<Loc>(loc), // We remove the link between the old and the new UI-event source as moving the map while the export is running fucks up the screenshot
             background: options.background,
             allowMoving: false,
@@ -83,24 +84,20 @@ export default class ExportPDF {
         minimap.AttachTo(options.freeDivId)
 
         // Next: we prepare the features. Only fully contained features are shown
-        const bounded = options.features.map(feats => {
-
-            const leaflet = minimap.leafletMap.data;
-            if (leaflet === undefined) {
-                return feats
-            }
+        minimap.leafletMap .addCallbackAndRunD(leaflet => {
             const bounds = BBox.fromLeafletBounds(leaflet.getBounds().pad(0.2))
-            return feats.filter(f => BBox.get(f.feature).isContainedIn(bounds))
-
-        }, [minimap.leafletMap])
-
-        // Add the features to the minimap
-        new ShowDataLayer(
-            bounded,
-            minimap.leafletMap,
-            options.layout,
-            false
-        )
+            options.features.GetTilesPerLayerWithin(bounds, tile => {
+                new ShowDataLayer(
+                    {
+                        features: tile,
+                        leafletMap: minimap.leafletMap,
+                        layerToShow: tile.layer.layerDef,
+                        enablePopups: false
+                    }
+                )
+            })
+            
+        })
 
     }
 
@@ -110,13 +107,13 @@ export default class ExportPDF {
     }
 
     private async CreatePdf(leaflet: L.Map) {
+        console.log("PDF creation started")
         const t = Translations.t.general.pdf;
-        const layout = this._layout.data
+        const layout = this._layout
         const screenshotter = new SimpleMapScreenshoter();
         //minimap op index.html -> hidden daar alles op doen en dan weg
         //minimap - leaflet map ophalen - boundaries ophalen - State.state.featurePipeline
         screenshotter.addTo(leaflet);
-        console.log("Taking screenshot")
 
 
         let doc = new jsPDF('landscape');
@@ -166,7 +163,6 @@ export default class ExportPDF {
         const imgSource = layout.icon
         const imgType = imgSource.substr(imgSource.lastIndexOf(".") + 1);
         img.src = imgSource
-        console.log(imgType)
         if (imgType.toLowerCase() === "svg") {
             new FixedUiElement("").AttachTo(this.freeDivId)
 

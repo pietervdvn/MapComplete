@@ -3,6 +3,23 @@
         "description": {
             "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
         },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Dogs are allowed"
+                },
+                "1": {
+                    "then": "Dogs are <b>not</b> allowed"
+                },
+                "2": {
+                    "then": "Dogs are allowed, but they have to be leashed"
+                },
+                "3": {
+                    "then": "Dogs are allowed and can run around freely"
+                }
+            },
+            "question": "Are dogs allowed in this business?"
+        },
         "email": {
             "question": "What is the email address of {name}?"
         },
