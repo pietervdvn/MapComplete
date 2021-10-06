@@ -20,6 +20,7 @@
   "startZoom": 17,
   "widenFactor": 1.01,
   "socialImage": "",
+  "hideFromOverview": true,
   "clustering": {
     "minNeededFeatures": 25,
     "maxZoom": 17

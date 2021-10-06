@@ -16,6 +16,7 @@
     "en",
     "nl"
   ],
+  "hideFromOverview": true,
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
   "version": "0",
