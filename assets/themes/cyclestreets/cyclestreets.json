@@ -284,6 +284,6 @@
     }
   ],
   "overrideAll": {
-    "allowSplit": true
+    "allowSplit": false
   }
 }
