@@ -17,7 +17,7 @@ export default abstract class ImageProvider {
         if (cached !== undefined) {
             return cached;
         }
-        const src =UIEventSource.FromPromise(this.DownloadAttribution(url))
+        const src = UIEventSource.FromPromise(this.DownloadAttribution(url))
         this._cache.set(url, src)
         return src;
     }
@@ -38,6 +38,7 @@ export default abstract class ImageProvider {
         }
         const relevantUrls = new UIEventSource<{ url: string; key: string; provider: ImageProvider }[]>([])
         const seenValues = new Set<string>()
+        const self = this
         allTags.addCallbackAndRunD(tags => {
             for (const key in tags) {
                 if(!prefixes.some(prefix => key.startsWith(prefix))){

@@ -51,6 +51,12 @@
       },
       "tagRenderings": [
         {
+          "id": "etymology_wikidata_image",
+          "render": {
+            "*": "{image_carousel(name:etymology:wikidata)}"
+          }
+        },
+        {
           "id": "simple etymology",
           "render": {
             "en": "Named after {name:etymology}",
@@ -63,7 +69,7 @@
         {
           "id": "wikipedia-etymology",
           "render": {
-            "*": "{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            "*": "{wikipedia(name:etymology:wikidata):max-height:30rem}"
           }
         }
       ],

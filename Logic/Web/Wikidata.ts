@@ -42,7 +42,7 @@ export default class Wikidata {
         sitelinks.delete("commons")
 
         const claims = new Map<string, Set<string>>();
-        for (const claimId of entity.claims) {
+        for (const claimId in entity.claims) {
 
             const claimsList: any[] = entity.claims[claimId]
             const values = new Set<string>()

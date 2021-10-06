@@ -4,6 +4,7 @@ import Svg from "../../Svg";
 import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
 import {LicenseInfo} from "./LicenseInfo";
+import Wikimedia from "../Web/Wikimedia";
 
 /**
  * This module provides endpoints for wikimedia and others
@@ -18,50 +19,6 @@ export class WikimediaImageProvider extends ImageProvider {
 
     private constructor() {
         super();
-    }
-
-    /**
-     * Recursively walks a wikimedia commons category in order to search for (image) files
-     * Returns (a promise of) a list of URLS
-     * @param categoryName The name of the wikimedia category
-     * @param maxLoad: the maximum amount of images to return
-     * @param continueParameter: if the page indicates that more pages should be loaded, this uses a token to continue. Provided by wikimedia
-     */
-    private static async GetImagesInCategory(categoryName: string,
-                                             maxLoad = 10,
-                                             continueParameter: string = undefined): Promise<string[]> {
-        if (categoryName === undefined || categoryName === null || categoryName === "") {
-            return [];
-        }
-        if (!categoryName.startsWith("Category:")) {
-            categoryName = "Category:" + categoryName;
-        }
-
-        let url = "https://commons.wikimedia.org/w/api.php?" +
-            "action=query&list=categorymembers&format=json&" +
-            "&origin=*" +
-            "&cmtitle=" + encodeURIComponent(categoryName);
-        if (continueParameter !== undefined) {
-            url = `${url}&cmcontinue=${continueParameter}`;
-        }
-        const response = await Utils.downloadJson(url)
-        const members = response.query?.categorymembers ?? [];
-        const imageOverview: string[] = members.map(member => member.title);
-
-        if (response.continue === undefined) {
-            // We are done crawling through the category - no continuation in sight
-            return imageOverview;
-        }
-
-        if (maxLoad - imageOverview.length <= 0) {
-            console.debug(`Recursive wikimedia category load stopped for ${categoryName}`)
-            return imageOverview;
-        }
-
-        // We do have a continue token - let's load the next page
-        const recursive = await this.GetImagesInCategory(categoryName, maxLoad - imageOverview.length, response.continue.cmcontinue)
-        imageOverview.push(...recursive)
-        return imageOverview
     }
 
     private static ExtractFileName(url: string) {
@@ -110,7 +67,7 @@ export class WikimediaImageProvider extends ImageProvider {
         const licenseInfo = new LicenseInfo();
         const license = (data.query.pages[-1].imageinfo ?? [])[0]?.extmetadata;
         if (license === undefined) {
-            console.error("This file has no usable metedata or license attached... Please fix the license info file yourself!")
+            console.warn("The file", filename ,"has no usable metedata or license attached... Please fix the license info file yourself!")
             return undefined;
         }
 
@@ -149,8 +106,8 @@ export class WikimediaImageProvider extends ImageProvider {
             return [Promise.resolve(result)]
         }
         if (value.startsWith("Category:")) {
-            const urls = await WikimediaImageProvider.GetImagesInCategory(value)
-            return urls.map(image => this.UrlForImage(image))
+            const urls = await Wikimedia.GetCategoryContents(value)
+            return urls.filter(url => url.startsWith("File:")).map(image => this.UrlForImage(image))
         }
         if (value.startsWith("File:")) {
             return [this.UrlForImage(value)]

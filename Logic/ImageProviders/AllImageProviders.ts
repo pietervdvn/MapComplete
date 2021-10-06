@@ -21,7 +21,7 @@ export default class AllImageProviders {
 
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()
 
-    public static LoadImagesFor(tags: UIEventSource<any>, imagePrefix?: string): UIEventSource<ProvidedImage[]> {
+    public static LoadImagesFor(tags: UIEventSource<any>, tagKey?: string): UIEventSource<ProvidedImage[]> {
         const id = tags.data.id
         if (id === undefined) {
             return undefined;
@@ -39,12 +39,8 @@ export default class AllImageProviders {
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
             
             let prefixes = imageProvider.defaultKeyPrefixes
-            if(imagePrefix !== undefined){
-                prefixes = [...prefixes]
-                if(prefixes.indexOf("image") >= 0){
-                    prefixes.splice(prefixes.indexOf("image"), 1)
-                }
-                prefixes.push(imagePrefix)
+            if(tagKey !== undefined){
+                prefixes = [tagKey]
             }
             
             const singleSource = imageProvider.GetRelevantUrls(tags, {

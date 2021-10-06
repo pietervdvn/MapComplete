@@ -27,6 +27,7 @@ export class WikidataImageProvider extends ImageProvider {
         if(entity === undefined){
             return []
         }
+        console.log("Entity:", entity)
        
         const allImages : Promise<ProvidedImage>[] = []
         // P18 is the claim 'depicted in this image'
@@ -34,9 +35,17 @@ export class WikidataImageProvider extends ImageProvider {
             const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined, img)
             allImages.push(...promises)
         }
+        // P373 is 'commons category'
+        for (let cat of Array.from(entity.claims.get("P373") ?? [])) {
+            if(!cat.startsWith("Category:")){
+                cat = "Category:"+cat
+            }
+            const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined, cat)
+            allImages.push(...promises)
+        }
         
         const commons = entity.commons
-        if (commons !== undefined) {
+        if (commons !== undefined && (commons.startsWith("Category:") || commons.startsWith("File:"))) {
             const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined , commons)
             allImages.push(...promises)
         }

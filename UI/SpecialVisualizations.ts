@@ -64,13 +64,16 @@ export default class SpecialVisualizations {
                 funcName: "image_carousel",
                 docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
                 args: [{
-                    name: "image key/prefix",
+                    name: "image key/prefix (multiple values allowed if comma-seperated)",
                     defaultValue: "image",
                     doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
                 }],
                 constr: (state: State, tags, args) => {
-                    const imagePrefix = args[0];
-                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefix), tags);
+                    let imagePrefixes = undefined;
+                    if(args.length > 0){
+                        imagePrefixes = args;
+                    }
+                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags);
                 }
             },
             {
