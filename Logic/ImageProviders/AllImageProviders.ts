@@ -16,7 +16,11 @@ export default class AllImageProviders {
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
-        new GenericImageProvider([].concat(...Imgur.defaultValuePrefix, WikimediaImageProvider.commonsPrefix, ...Mapillary.valuePrefixes))]
+        new GenericImageProvider(
+            [].concat(...Imgur.defaultValuePrefix, ...WikimediaImageProvider.commonsPrefixes, ...Mapillary.valuePrefixes)
+        )
+            
+    ]
 
 
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()

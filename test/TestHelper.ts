@@ -40,6 +40,14 @@ export default class T {
             throw "Expected true, but got false: " + msg
         }
     }
+    
+    static equals(a, b, msg?){
+        if(a !== b){
+            throw "Not the same: "+(msg??"")+"\n" +
+            "Expcected: "+a+"\n" +
+            "Got      : "+b
+        }
+    }
 
     static isFalse(b: boolean, msg: string) {
         if (b) {
