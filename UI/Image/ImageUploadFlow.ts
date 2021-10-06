@@ -31,7 +31,11 @@ export class ImageUploadFlow extends Toggle {
             console.log("Adding image:" + key, url);
            Promise.resolve(State.state.changes
                 .applyAction(new ChangeTagAction(
-                    tags.id, new Tag(key, url), tagsSource.data
+                    tags.id, new Tag(key, url), tagsSource.data,
+                    {
+                        changeType: "add-image",
+                        theme: State.state.layoutToUse.id
+                    }
                 )))
         })
 
