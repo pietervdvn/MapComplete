@@ -47,8 +47,10 @@ export default class Wikidata {
             const claimsList: any[] = entity.claims[claimId]
             const values = new Set<string>()
             for (const claim of claimsList) {
-                const value = claim.mainsnak.datavalue.value;
-                values.add(value)
+                const value = claim.mainsnak?.datavalueq?.value;
+                if(value !== undefined){
+                    values.add(value)
+                }
             }
             claims.set(claimId, values);
         }

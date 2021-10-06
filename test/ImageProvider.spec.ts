@@ -57,6 +57,10 @@ export default class ImageProviderSpec extends T {
                 expects("https://commons.wikimedia.org/wiki/Special:FilePath/File%3ABrugge_Leeuwstraat_zonder_nummer_Leeuwbrug_-_119334_-_onroerenderfgoed.jpg?width=500&height=400",{
                     image:"File:Brugge_Leeuwstraat_zonder_nummer_Leeuwbrug_-_119334_-_onroerenderfgoed.jpg"
                 }, "WikimediaImageProvider")
+
+                expects("https://commons.wikimedia.org/wiki/Special:FilePath/File%3APapageno_Jef_Claerhout.jpg?width=500&height=400",{
+                    "wikimedia_commons":	"File:Papageno_Jef_Claerhout.jpg"
+                }, "WikimediaImageProvider")
                
             
             }]
