@@ -20,5 +20,9 @@
         "uploadingMultiple": "A enviar {count} imagens…",
         "uploadingPicture": "A enviar a sua imagem…",
         "addPicture": "Adicionar imagem"
+    },
+    "index": {
+        "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
+        "title": "Bem-vindo(a) ao MapComplete"
     }
 }
