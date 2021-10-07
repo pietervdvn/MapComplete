@@ -28,6 +28,7 @@ To develop and build MapComplete, you
 
 0. Make a fork and clone the repository.
 0. Install the nodejs version specified in [.tool-versions](./.tool-versions)
+   - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can then install node with `n install <node-version>`
    - You can [use asdf to manage your runtime versions](https://asdf-vm.com/).
 0. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install
    nodeJS: https://nodejs.org/en/download/
