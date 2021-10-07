@@ -12,6 +12,7 @@ import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
 import Locale from "./i18n/Locale";
 import Link from "./Base/Link";
 import {TabbedComponent} from "./Base/TabbedComponent";
+import {Translation} from "./i18n/Translation";
 
 export default class WikipediaBox extends Combine {
 
@@ -75,7 +76,7 @@ export default class WikipediaBox extends Combine {
 
         const wp = Translations.t.general.wikipedia;
 
-        const wikiLink: UIEventSource<[string, string] | "loading" | "failed" | "no page"> =
+        const wikiLink: UIEventSource<[string, string, WikidataResponse] | "loading" | "failed" | ["no page", WikidataResponse]> =
             Wikidata.LoadWikidataEntry(wikidataId)
                 .map(maybewikidata => {
                     if (maybewikidata === undefined) {
@@ -87,7 +88,7 @@ export default class WikipediaBox extends Combine {
                     }
                     const wikidata = <WikidataResponse>maybewikidata["success"]
                     if (wikidata.wikisites.size === 0) {
-                        return "no page"
+                        return ["no page", wikidata]
                     }
 
                     const preferredLanguage = [Locale.language.data, "en", Array.from(wikidata.wikisites.keys())[0]]
@@ -99,7 +100,7 @@ export default class WikipediaBox extends Combine {
                         pagetitle = wikidata.wikisites.get(language)
                         i++;
                     } while (pagetitle === undefined)
-                    return [pagetitle, language]
+                    return [pagetitle, language, wikidata]
                 }, [Locale.language])
 
 
@@ -112,12 +113,15 @@ export default class WikipediaBox extends Combine {
                 if (status === "failed") {
                     return wp.failed.Clone().SetClass("alert p-4")
                 }
-                if (status == "no page") {
-                    return wp.noWikipediaPage.Clone()
+                if (status[0] == "no page") {
+                    const [_, wd] = <[string, WikidataResponse]> status
+                    return new Combine([
+                        Translation.fromMap(wd.descriptions) ,
+                        wp.noWikipediaPage.Clone().SetClass("subtle")]).SetClass("flex flex-col p-4")
                 }
 
-                const [pagetitle, language] = status
-                return WikipediaBox.createContents(pagetitle, language)
+                const [pagetitle, language, wd] = <[string, string, WikidataResponse]> status
+                return WikipediaBox.createContents(pagetitle, language, wd)
 
             })
         ).SetClass("overflow-auto normal-background rounded-lg")
@@ -125,7 +129,11 @@ export default class WikipediaBox extends Combine {
 
         const titleElement = new VariableUiElement(wikiLink.map(state => {
             if (typeof state !== "string") {
-                const [pagetitle, language] = state
+                const [pagetitle, _] = state
+                if(pagetitle === "no page"){
+                    const wd = <WikidataResponse> state[1]
+                    return new Title( Translation.fromMap(wd.labels),3)
+                }
                 return new Title(pagetitle, 3)
             }
             //return new Title(Translations.t.general.wikipedia.wikipediaboxTitle.Clone(), 2)
@@ -136,6 +144,13 @@ export default class WikipediaBox extends Combine {
         const linkElement = new VariableUiElement(wikiLink.map(state => {
             if (typeof state !== "string") {
                 const [pagetitle, language] = state
+                if(pagetitle === "no page"){
+                    const wd = <WikidataResponse> state[1]
+                    return new Link(Svg.pop_out_ui().SetStyle("width: 1.2rem").SetClass("block  "), 
+                        "https://www.wikidata.org/wiki/"+wd.id
+                        , true)
+                }
+                
                 const url = `https://${language}.wikipedia.org/wiki/${pagetitle}`
                 return new Link(Svg.pop_out_ui().SetStyle("width: 1.2rem").SetClass("block  "), url, true)
             }
@@ -157,7 +172,7 @@ export default class WikipediaBox extends Combine {
      * @param language
      * @private
      */
-    private static createContents(pagename: string, language: string): BaseUIElement {
+    private static createContents(pagename: string, language: string, wikidata: WikidataResponse): BaseUIElement {
         const htmlContent = Wikipedia.GetArticle({
             pageName: pagename,
             language: language
