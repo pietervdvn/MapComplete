@@ -8,6 +8,9 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
 import {OsmConnection} from "../../Osm/OsmConnection";
+import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
+import {Or} from "../../Tags/Or";
+import {TagsFilter} from "../../Tags/TagsFilter";
 
 export default class OsmFeatureSource {
     private readonly _backend: string;
@@ -26,6 +29,7 @@ export default class OsmFeatureSource {
         markTileVisited?: (tileId: number) => void
     };
     private readonly downloadedTiles = new Set<number>()
+    private readonly allowedTags: TagsFilter;
 
     constructor(options: {
         handleTile: (tile: FeatureSourceForLayer & Tiled) => void;
@@ -34,6 +38,7 @@ export default class OsmFeatureSource {
         state: {
             readonly filteredLayers: UIEventSource<FilteredLayer[]>;
             readonly osmConnection: OsmConnection;
+            readonly layoutToUse: LayoutConfig
         },
         markTileVisited?: (tileId: number) => void
     }) {
@@ -64,6 +69,12 @@ export default class OsmFeatureSource {
             }
             self.isRunning.setData(false)
         })
+        
+        
+        const neededLayers = options.state.layoutToUse.layers
+            .filter(            layer => !layer.doNotDownload        )
+            .filter(layer => layer.source.geojsonSource === undefined || layer.source.isOsmCacheLayer)
+        this.allowedTags = new Or(neededLayers.map(l => l.source.osmTags))
     }
 
     private async LoadTile(z, x, y): Promise<void> {
@@ -85,6 +96,12 @@ export default class OsmFeatureSource {
                     {
                         flatProperties: true
                     });
+                
+                // The geojson contains _all_ features at the given location
+                // We only keep what is needed
+                
+                geojson.features = geojson.features.filter(feature => this.allowedTags.matchesProperties(feature.properties))
+                
                 console.log("Tile geojson:", z, x, y, "is", geojson)
                 const index =  Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,
