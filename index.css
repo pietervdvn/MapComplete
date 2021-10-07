@@ -93,6 +93,10 @@ svg, img {
     height: 100%;
 }
 
+.no-images img {
+    display: none;
+}
+
 .mapcontrol svg path {
     fill: var(--subtle-detail-color-contrast) !important;
 }

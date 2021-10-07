@@ -100,7 +100,16 @@ export default class SpecialVisualizations {
                 ],
                 example: "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
                 constr: (_, tagsSource, args) =>
-                      new WikipediaBox( tagsSource.map(tags => tags[args[0]]))
+                    new VariableUiElement(
+                        tagsSource.map(tags => tags[args[0]])
+                            .map(wikidata => {
+                                const wikidatas : string[] = 
+                                    Utils.NoEmpty(wikidata?.split(";")?.map(wd => wd.trim()) ?? [])
+                                return new WikipediaBox(wikidatas)
+                            })
+                        
+                    )
+                  
             },
             {
                 funcName: "minimap",

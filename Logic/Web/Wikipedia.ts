@@ -22,6 +22,10 @@ export default class Wikipedia {
         "mw-selflink",
         "hatnote" // Often redirects
     ]
+    
+    private static readonly idsToRemove = [
+        "sjabloon_zie"
+    ]
 
     private static readonly _cache = new Map<string, UIEventSource<{ success: string } | { error: any }>>()
     
@@ -58,6 +62,13 @@ export default class Wikipedia {
                 toRemoveElement.parentElement?.removeChild(toRemoveElement)
             }
         }
+
+        for (const forbiddenId of Wikipedia.idsToRemove) {
+            const toRemove = content.querySelector("#"+forbiddenId)
+            toRemove?.parentElement?.removeChild(toRemove)
+        }
+        
+        
 
         const links = Array.from(content.getElementsByTagName("a"))
 

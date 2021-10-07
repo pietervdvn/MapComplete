@@ -65,12 +65,26 @@ export class WikimediaImageProvider extends ImageProvider {
             "&format=json&origin=*";
         const data = await Utils.downloadJson(url)
         const licenseInfo = new LicenseInfo();
-        const license = (data.query.pages[-1].imageinfo ?? [])[0]?.extmetadata;
+        const pageInfo = data.query.pages[-1]
+        if(pageInfo === undefined){
+            return undefined;
+        }
+        
+        const license = (pageInfo.imageinfo ?? [])[0]?.extmetadata;
         if (license === undefined) {
             console.warn("The file", filename ,"has no usable metedata or license attached... Please fix the license info file yourself!")
             return undefined;
         }
 
+        let title = pageInfo.title
+        if(title.startsWith("File:")){
+            title=  title.substr("File:".length)
+        }
+        if(title.endsWith(".jpg") || title.endsWith(".png")){
+            title = title.substring(0, title.length - 4)
+        }
+        
+        licenseInfo.title = title
         licenseInfo.artist = license.Artist?.value;
         licenseInfo.license = license.License?.value;
         licenseInfo.copyrighted = license.Copyrighted?.value;

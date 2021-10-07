@@ -10,27 +10,73 @@ import Translations from "./i18n/Translations";
 import Svg from "../Svg";
 import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
 import Locale from "./i18n/Locale";
-import Toggle from "./Input/Toggle";
 import Link from "./Base/Link";
+import {TabbedComponent} from "./Base/TabbedComponent";
 
-export default class WikipediaBox extends Toggle {
+export default class WikipediaBox extends Combine {
 
 
-    constructor(wikidataId: string | UIEventSource<string>) {
-        const wp = Translations.t.general.wikipedia;
-        if (typeof wikidataId === "string") {
-            wikidataId = new UIEventSource(wikidataId)
+    constructor(wikidataIds: string[]) {
+
+        const mainContents = []
+
+        const pages = wikidataIds.map(wdId => WikipediaBox.createLinkedContent(wdId))
+        if (wikidataIds.length == 1) {
+            const page = pages[0]
+            mainContents.push(
+                new Combine([
+                    new Combine([Svg.wikipedia_ui()
+                        .SetStyle("width: 1.5rem").SetClass("inline-block mr-3"), page.titleElement])
+                        .SetClass("flex"),
+                    page.linkElement
+                ]).SetClass("flex justify-between align-middle"),
+            )
+            mainContents.push(page.contents)
+        } else if (wikidataIds.length > 1) {
+
+            const tabbed = new TabbedComponent(
+                pages.map(page => {
+                    const contents = page.contents.SetClass("block").SetStyle("max-height: inherit; height: inherit; padding-bottom: 3.3rem")
+                    return {
+                        header: page.titleElement.SetClass("pl-2 pr-2"),
+                        content: new Combine([
+                            page.linkElement
+                                .SetStyle("top: 2rem; right: 2.5rem;")
+                                .SetClass("absolute subtle-background rounded-full p-3 opacity-50 hover:opacity-100 transition-opacity"),
+                            contents
+                        ]).SetStyle("max-height: inherit; height: inherit").SetClass("relative")
+                    }
+
+                }),
+                0,
+                {
+                    leftOfHeader: Svg.wikipedia_ui().SetStyle("width: 1.5rem; align-self: center;").SetClass("mr-4"),
+                    styleHeader: header => header.SetClass("subtle-background").SetStyle("height: 3.3rem")
+                }
+            )
+            tabbed.SetStyle("height: inherit; max-height: inherit; overflow: hidden")
+            mainContents.push(tabbed)
+
         }
 
 
+        super(mainContents)
+
+
+        this.SetClass("block rounded-xl subtle-background m-1 p-2 flex flex-col")
+            .SetStyle("max-height: inherit")
+    }
+
+    private static createLinkedContent(wikidataId: string): {
+        titleElement: BaseUIElement,
+        contents: BaseUIElement,
+        linkElement: BaseUIElement
+    } {
+
+        const wp = Translations.t.general.wikipedia;
+
         const wikiLink: UIEventSource<[string, string] | "loading" | "failed" | "no page"> =
-            wikidataId
-                .bind(id => {
-                    if (id === undefined) {
-                        return undefined
-                    }
-                    return Wikidata.LoadWikidataEntry(id);
-                })
+            Wikidata.LoadWikidataEntry(wikidataId)
                 .map(maybewikidata => {
                     if (maybewikidata === undefined) {
                         return "loading"
@@ -72,37 +118,38 @@ export default class WikipediaBox extends Toggle {
 
                 const [pagetitle, language] = status
                 return WikipediaBox.createContents(pagetitle, language)
-               
+
             })
         ).SetClass("overflow-auto normal-background rounded-lg")
 
 
-      const linkElement = new VariableUiElement(wikiLink.map(state => {
+        const titleElement = new VariableUiElement(wikiLink.map(state => {
             if (typeof state !== "string") {
                 const [pagetitle, language] = state
-                const url=  `https://${language}.wikipedia.org/wiki/${pagetitle}`
+                return new Title(pagetitle, 3)
+            }
+            //return new Title(Translations.t.general.wikipedia.wikipediaboxTitle.Clone(), 2)
+            return new Title(wikidataId,3)
+
+        }))
+
+        const linkElement = new VariableUiElement(wikiLink.map(state => {
+            if (typeof state !== "string") {
+                const [pagetitle, language] = state
+                const url = `https://${language}.wikipedia.org/wiki/${pagetitle}`
                 return new Link(Svg.pop_out_ui().SetStyle("width: 1.2rem").SetClass("block  "), url, true)
             }
-            return undefined}))
-                    .SetClass("flex items-center")
+            return undefined
+        }))
+            .SetClass("flex items-center")
 
-        const mainContent = new Combine([
-           new Combine([
-               new Combine([
-                Svg.wikipedia_ui().SetStyle("width: 1.5rem").SetClass("mr-3"),
-                new Title(Translations.t.general.wikipedia.wikipediaboxTitle.Clone(), 2),
-               ]).SetClass("flex"),
-                
-               linkElement
-            ]).SetClass("flex justify-between"),
-            contents]).SetClass("block rounded-xl subtle-background m-1 p-2 flex flex-col")
-            .SetStyle("max-height: inherit")
-        super(
-            mainContent,
-            undefined,
-            wikidataId.map(id => id !== undefined)
-        )
+        return {
+            contents: contents,
+            linkElement: linkElement,
+            titleElement: titleElement
+        }
     }
+
 
     /**
      * Returns the actual content in a scrollable way

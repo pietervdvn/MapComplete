@@ -8,7 +8,7 @@
     justify-content: flex-start;
     align-items: start;
     background-color: var(--background-color);
-    max-width: 100vw;
+    max-width: 100%;
     overflow-x: auto;
 }
 
