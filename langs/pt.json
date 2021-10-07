@@ -23,6 +23,17 @@
     },
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
-        "title": "Bem-vindo(a) ao MapComplete"
+        "title": "Bem-vindo(a) ao MapComplete",
+        "intro": "O MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
+        "pickTheme": "Escolha um tema abaixo para começar."
+    },
+    "delete": {
+        "reasons": {
+            "notFound": "Não foi possível encontrar este elemento"
+        },
+        "explanations": {
+            "selectReason": "Por favor, selecione a razão porque este elemento deve ser eliminado",
+            "hardDelete": "Este ponto será eliminado no OpenStreetMap. Pode ser recuperado por um contribuidor com experiência"
+        }
     }
 }
