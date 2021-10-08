@@ -13,8 +13,7 @@
         "uploadDone": "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>",
         "dontDelete": "Cancel",
         "doDelete": "Remove image",
-        "isDeleted": "Deleted",
-        "hasBeenImported": "This feature has been imported"
+        "isDeleted": "Deleted"
     },
     "centerMessage": {
         "loadingData": "Loading data…",
@@ -103,7 +102,8 @@
             "confirmButton": "Add a {category} here.<br/><div class='alert'>Your addition is visible for everyone</div>",
             "openLayerControl": "Open the layer control box",
             "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point",
-            "hasBeenImported": "This point has already been imported"
+            "hasBeenImported": "This point has already been imported",
+            "zoomInMore": "Zoom in more to import this feature"
         },
         "pickLanguage": "Choose a language: ",
         "about": "Easily edit and add OpenStreetMap for a certain theme",

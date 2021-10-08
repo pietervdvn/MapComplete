@@ -396,7 +396,10 @@ export default class SpecialVisualizations {
                         name: "icon",
                         doc: "A nice icon to show in the button",
                         defaultValue: "./assets/svg/addSmall.svg"
-                    }],
+                    },
+                    {name:"minzoom",
+                    doc: "How far the contributor must zoom in before being able to import the point",
+                    defaultValue: "18"}],
                 docs: `This button will copy the data from an external dataset into OpenStreetMap. It is only functional in official themes but can be tested in unofficial themes.
 
 If you want to import a dataset, make sure that:
@@ -439,13 +442,13 @@ There are also some technicalities in your theme to keep in mind:
                         return newTags
                     })
                     const id = tagSource.data.id;
-                    const feature = State.state.allElements.ContainingFeatures.get(id)
+                    const feature = state.allElements.ContainingFeatures.get(id)
                     if (feature.geometry.type !== "Point") {
                         return new FixedUiElement("Error: can only import point objects").SetClass("alert")
                     }
                     const [lon, lat] = feature.geometry.coordinates;
                     return new ImportButton(
-                        args[2], args[1], tagSource, rewrittenTags, lat, lon
+                        args[2], args[1], tagSource, rewrittenTags, lat, lon, Number(args[3]), state
                     )
                 }
             }

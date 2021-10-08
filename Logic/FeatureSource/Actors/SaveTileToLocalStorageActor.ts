@@ -29,8 +29,12 @@ export default class SaveTileToLocalStorageActor {
 
     public static MarkVisited(layerId: string, tileId: number, freshness: Date){
         const key = `${SaveTileToLocalStorageActor.storageKey}-${layerId}-${tileId}`
-        localStorage.setItem(key + "-time", JSON.stringify(freshness.getTime()))
-        localStorage.setItem(key + "-format", SaveTileToLocalStorageActor.formatVersion)
+        try{
+            localStorage.setItem(key + "-time", JSON.stringify(freshness.getTime()))
+            localStorage.setItem(key + "-format", SaveTileToLocalStorageActor.formatVersion)
+        }catch(e){
+            console.error("Could not mark tile ", key, "as visited")
+        }
 
     }
 }

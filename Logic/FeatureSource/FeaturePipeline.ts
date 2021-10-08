@@ -206,7 +206,9 @@ export default class FeaturePipeline {
                 maxZoomLevel: state.layoutToUse.clustering.maxZoom,
                 registerTile: (tile) => {
                     // We save the tile data for the given layer to local storage
-                    new SaveTileToLocalStorageActor(tile, tile.tileIndex)
+                    if(source.layer.layerDef.source.geojsonSource === undefined || source.layer.layerDef.source.isOsmCacheLayer == true){
+                        new SaveTileToLocalStorageActor(tile, tile.tileIndex)
+                    }
                     perLayerHierarchy.get(source.layer.layerDef.id).registerTile(new RememberingSource(tile))
                     tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
 
@@ -239,7 +241,11 @@ export default class FeaturePipeline {
 
 
         this.runningQuery = updater.runningQuery.map(
-            overpass => overpass || osmFeatureSource.isRunning.data, [osmFeatureSource.isRunning]
+            overpass => {
+                console.log("FeaturePipeline: runningQuery state changed. Overpass", overpass ? "is querying," : "is idle,",
+                    "osmFeatureSource is", osmFeatureSource.isRunning ? "is running ("+  +")" : "is idle")
+                return overpass || osmFeatureSource.isRunning.data;
+            }, [osmFeatureSource.isRunning]
         )
 
 
