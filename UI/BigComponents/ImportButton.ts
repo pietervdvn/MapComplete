@@ -57,6 +57,19 @@ export default class ImportButton extends Toggle {
             new Combine([button, appliedTags]).SetClass("flex flex-col"),
             State.state.featurePipeline.runningQuery
         )
-        super(t.hasBeenImported, withLoadingCheck, isImported)
+        const importButton = new Toggle(t.hasBeenImported, withLoadingCheck, isImported)
+
+        const pleaseLoginButton =
+            new Toggle(t.pleaseLogin.Clone()
+                    .onClick(() => State.state.osmConnection.AttemptLogin())
+                    .SetClass("login-button-friendly"),
+                undefined,
+                State.state.featureSwitchUserbadge)
+            
+
+        super(importButton,
+            pleaseLoginButton,
+            State.state.osmConnection.isLoggedIn
+        )
     }
 }

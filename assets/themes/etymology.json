@@ -103,112 +103,61 @@
       "presets": []
     },
     {
-      "id": "etymology_missing",
+      "id": "has_a_name",
       "name": {
-        "en": "No etymology data yet",
-        "nl": "Zonder etymology"
+        "en": "Has etymolgy",
+        "nl": "Heeft etymology info"
       },
+      "minzoom": 12,
       "source": {
         "osmTags": {
-          "and": [
-            "name~*",
-            {
-              "or": [
-                "highway~*",
-                "building~*",
-                "amenity=place_of_worship",
-                "man_made=bridge",
-                "heritage~*",
-                "leisure=park",
-                "leisure=nature_reserve",
-                "landuse=forest",
-                "natural=water"
-              ]
-            },
-            {
-              "#": "We remove various features which often are too big and clutter the map",
-              "and": [
-                "healtcare=",
-                "shop=",
-                "school=",
-                "place=",
-                "landuse!=residential"
-              ]
-            }
+          "or": [
+            "name:etymology:wikidata~*",
+            "name:etymology~*"
           ]
         }
       },
-      "minZoom": 16,
       "title": {
         "render": {
           "*": "{name}"
         }
       },
+      "description": {
+        "en": "All objects which have an etymology known",
+        "nl": "Alle lagen met een gelinkt etymology"
+      },
       "tagRenderings": [
         {
-          "id": "name-origin-wikidata",
-          "question": {
-            "en": "What is the wikidata entry for the thing this feature is named after?",
-            "nl": "Wat is de wikidata-entry voor het object waarnaar dit vernoemd is?<br /><span class='subtle'>Plak hier de wikidata entry of sla over</span>"
-          },
+          "id": "simple etymology",
           "render": {
-            "*": "{name:etymology:wikidata}"
-          },
-          "freeform": {
-            "key": "name:etymology:wikidata",
-            "type": "wikidata",
-            "helperArgs": [
-              "name",
-              {
-                "removePostfixes": [
-                  "steenweg",
-                  "heirbaan",
-                  "baan",
-                  "straat",
-                  "street",
-                  "weg",
-                  "dreef",
-                  "laan",
-                  "boulevard",
-                  "pad",
-                  "path",
-                  "plein",
-                  "square",
-                  "plaza",
-                  "wegel",
-                  "kerk",
-                  "church",
-                  "kaai"
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "id": "name-origin",
-          "question": {
-            "en": "What is the origin of this name?",
-            "nl": "Naar wat is dit vernoemd?"
-          },
-          "render": {
-            "en": "<div class='subtle'>This feature is named after</div><br />{name:etymology{",
-            "nl": "<div class='subtle'>Dit is vernoemd naar</div><br />{name:etymology{"
+            "en": "Named after {name:etymology}",
+            "nl": "Vernoemd naar {name:etymology}"
           },
           "freeform": {
             "key": "name:etymology"
-          },
-          "condition": "name:etymology:wikidata="
+          }
         },
-        "wikipedia",
         {
-          "id": "street-name-sign-image",
+          "id": "wikipedia-etymology",
           "render": {
-            "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
-            "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+            "*": "{wikipedia(name:etymology:wikidata):max-height:20rem}"
           }
         }
       ],
-      "color": "#fcb35388"
+      "icon": {
+        "render": "./assets/svg/bug.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": []
     }
-  ]
+  ],
+  "hideFromOverview": true
 }
