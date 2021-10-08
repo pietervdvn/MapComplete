@@ -3,7 +3,8 @@
     "render": "{image_carousel()}{image_upload()}"
   },
   "wikipedia": {
-    "render": "{wikipedia():max-height:25rem}"
+    "render": "{wikipedia():max-height:25rem}",
+    "condition": "wikidata~*"
   },
   "reviews": {
     "render": "{reviews()}"

@@ -12,10 +12,11 @@ import ImgurUploader from "../../Logic/ImageProviders/ImgurUploader";
 import UploadFlowStateUI from "../BigComponents/UploadFlowStateUI";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export class ImageUploadFlow extends Toggle {
 
-    constructor(tagsSource: UIEventSource<any>, imagePrefix: string = "image") {
+    constructor(tagsSource: UIEventSource<any>, imagePrefix: string = "image", text: string = undefined) {
         const uploader = new ImgurUploader(url => {
             // A file was uploaded - we add it to the tags of the object
 
@@ -43,10 +44,17 @@ export class ImageUploadFlow extends Toggle {
         const licensePicker = new LicensePicker()
 
         const t = Translations.t.image;
+        
+        let labelContent : BaseUIElement
+            if(text === undefined) {
+                labelContent = Translations.t.image.addPicture.Clone().SetClass("block align-middle mt-1 ml-3 text-4xl ")
+            }else{
+                labelContent = new FixedUiElement(text).SetClass("block align-middle mt-1 ml-3 text-2xl ")
+            }
         const label = new Combine([
-            Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1"),
-            Translations.t.image.addPicture.Clone().SetClass("block align-middle mt-1 ml-3")
-        ]).SetClass("p-2 border-4 border-black rounded-full text-4xl font-bold h-full align-middle w-full flex justify-center")
+            Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
+            labelContent
+        ]).SetClass("p-2 border-4 border-black rounded-full font-bold h-full align-middle w-full flex justify-center")
 
         const fileSelector = new FileSelectorButton(label)
         fileSelector.GetValue().addCallback(filelist => {

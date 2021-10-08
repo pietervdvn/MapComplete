@@ -195,6 +195,10 @@ li::marker {
     border: 5px solid var(--catch-detail-color);
 }
 
+.border-attention {
+    border-color: var(--catch-detail-color);
+}
+
 .direction-svg svg path {
     fill: var(--catch-detail-color) !important;
 }

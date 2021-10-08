@@ -1,18 +1,19 @@
-import {UIEventSource} from "../Logic/UIEventSource";
-import {VariableUiElement} from "./Base/VariableUIElement";
-import Wikipedia from "../Logic/Web/Wikipedia";
-import Loading from "./Base/Loading";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import Combine from "./Base/Combine";
-import BaseUIElement from "./BaseUIElement";
-import Title from "./Base/Title";
-import Translations from "./i18n/Translations";
-import Svg from "../Svg";
-import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
-import Locale from "./i18n/Locale";
-import Link from "./Base/Link";
-import {TabbedComponent} from "./Base/TabbedComponent";
-import {Translation} from "./i18n/Translation";
+import BaseUIElement from "../BaseUIElement";
+import Locale from "../i18n/Locale";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {Translation} from "../i18n/Translation";
+import Svg from "../../Svg";
+import Combine from "../Base/Combine";
+import Title from "../Base/Title";
+import Wikipedia from "../../Logic/Web/Wikipedia";
+import Wikidata, {WikidataResponse} from "../../Logic/Web/Wikidata";
+import {TabbedComponent} from "../Base/TabbedComponent";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import Loading from "../Base/Loading";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
+import Link from "../Base/Link";
+import WikidataPreviewBox from "./WikidataPreviewBox";
 
 export default class WikipediaBox extends Combine {
 
@@ -116,7 +117,7 @@ export default class WikipediaBox extends Combine {
                 if (status[0] == "no page") {
                     const [_, wd] = <[string, WikidataResponse]> status
                     return new Combine([
-                        Translation.fromMap(wd.descriptions) ,
+                        WikidataPreviewBox.WikidataResponsePreview(wd),
                         wp.noWikipediaPage.Clone().SetClass("subtle")]).SetClass("flex flex-col p-4")
                 }
 

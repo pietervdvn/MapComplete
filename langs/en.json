@@ -222,7 +222,11 @@
             "wikipediaboxTitle": "Wikipedia",
             "failed":"Loading the wikipedia entry failed",
             "loading": "Loading Wikipedia...",
-            "noWikipediaPage": "This wikidata item has no corresponding wikipedia page yet."
+            "noWikipediaPage": "This wikidata item has no corresponding wikipedia page yet.",
+            "searchWikidata": "Search on wikidata",
+            "doSearch": "Search above to see results",
+            "noResults": "Nothing found for <i>{search}</i>",
+            "createNewWikidata": "Create a new wikidata item"
         }
     },
     "favourite": {

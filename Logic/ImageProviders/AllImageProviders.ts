@@ -26,19 +26,19 @@ export default class AllImageProviders {
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()
 
     public static LoadImagesFor(tags: UIEventSource<any>, tagKey?: string): UIEventSource<ProvidedImage[]> {
-        const id = tags.data.id
-        if (id === undefined) {
+        if (tags.data.id === undefined) {
             return undefined;
         }
 
-        const cached = this._cache.get(tags.data.id)
+        const cacheKey = tags.data.id+tagKey
+        const cached = this._cache.get(cacheKey)
         if (cached !== undefined) {
             return cached
         }
 
 
         const source = new UIEventSource([])
-        this._cache.set(id, source)
+        this._cache.set(cacheKey, source)
         const allSources = []
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
             

@@ -26,7 +26,7 @@
   "socialImage": "",
   "layers": [
     {
-      "id": "has_a_name",
+      "id": "has_etymology",
       "name": {
         "en": "Has etymolgy",
         "nl": "Heeft etymology info"
@@ -71,6 +71,21 @@
           "render": {
             "*": "{wikipedia(name:etymology:wikidata):max-height:30rem}"
           }
+        },
+        {
+          "id": "wikidata-embed",
+          "render": {
+            "*": "<iframe src='https://m.wikidata.org/wiki/{name:etymology:wikidata}' style='width: 100%; height: 25rem'></iframe>"
+          },
+          "condition": "name:etymology:wikidata~*"
+        },
+        "wikipedia",
+        {
+          "id": "street-name-sign-image",
+          "render": {
+            "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
+            "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+          }
         }
       ],
       "icon": {
@@ -86,7 +101,114 @@
         "render": "#00f"
       },
       "presets": []
+    },
+    {
+      "id": "etymology_missing",
+      "name": {
+        "en": "No etymology data yet",
+        "nl": "Zonder etymology"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "name~*",
+            {
+              "or": [
+                "highway~*",
+                "building~*",
+                "amenity=place_of_worship",
+                "man_made=bridge",
+                "heritage~*",
+                "leisure=park",
+                "leisure=nature_reserve",
+                "landuse=forest",
+                "natural=water"
+              ]
+            },
+            {
+              "#": "We remove various features which often are too big and clutter the map",
+              "and": [
+                "healtcare=",
+                "shop=",
+                "school=",
+                "place=",
+                "landuse!=residential"
+              ]
+            }
+          ]
+        }
+      },
+      "minZoom": 16,
+      "title": {
+        "render": {
+          "*": "{name}"
+        }
+      },
+      "tagRenderings": [
+        {
+          "id": "name-origin-wikidata",
+          "question": {
+            "en": "What is the wikidata entry for the thing this feature is named after?",
+            "nl": "Wat is de wikidata-entry voor het object waarnaar dit vernoemd is?<br /><span class='subtle'>Plak hier de wikidata entry of sla over</span>"
+          },
+          "render": {
+            "*": "{name:etymology:wikidata}"
+          },
+          "freeform": {
+            "key": "name:etymology:wikidata",
+            "type": "wikidata",
+            "helperArgs": [
+              "name",
+              {
+                "removePostfixes": [
+                  "steenweg",
+                  "heirbaan",
+                  "baan",
+                  "straat",
+                  "street",
+                  "weg",
+                  "dreef",
+                  "laan",
+                  "boulevard",
+                  "pad",
+                  "path",
+                  "plein",
+                  "square",
+                  "plaza",
+                  "wegel",
+                  "kerk",
+                  "church",
+                  "kaai"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "name-origin",
+          "question": {
+            "en": "What is the origin of this name?",
+            "nl": "Naar wat is dit vernoemd?"
+          },
+          "render": {
+            "en": "<div class='subtle'>This feature is named after</div><br />{name:etymology{",
+            "nl": "<div class='subtle'>Dit is vernoemd naar</div><br />{name:etymology{"
+          },
+          "freeform": {
+            "key": "name:etymology"
+          },
+          "condition": "name:etymology:wikidata="
+        },
+        "wikipedia",
+        {
+          "id": "street-name-sign-image",
+          "render": {
+            "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
+            "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+          }
+        }
+      ],
+      "color": "#fcb35388"
     }
-  ],
-  "roamingRenderings": []
+  ]
 }

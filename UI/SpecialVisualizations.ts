@@ -26,7 +26,7 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
 import Minimap from "./Base/Minimap";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
-import WikipediaBox from "./WikipediaBox";
+import WikipediaBox from "./Wikipedia/WikipediaBox";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -83,9 +83,13 @@ export default class SpecialVisualizations {
                     name: "image-key",
                     doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
                     defaultValue: "image"
+                },{
+                    name:"label",
+                    doc:"The text to show on the button",
+                    defaultValue: "Add image"
                 }],
                 constr: (state: State, tags, args) => {
-                    return new ImageUploadFlow(tags, args[0])
+                    return new ImageUploadFlow(tags, args[0], args[1])
                 }
             },
             {
