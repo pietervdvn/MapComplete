@@ -18,6 +18,7 @@ import FilteredLayer from "./Models/FilteredLayer";
 import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import {BBox} from "./Logic/BBox";
+import SelectedElementTagsUpdater from "./Logic/Actors/SelectedElementTagsUpdater";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -376,6 +377,8 @@ export default class State {
         new ChangeToElementsActor(this.changes, this.allElements)
 
         new PendingChangesUploader(this.changes, this.selectedElement);
+        
+        new SelectedElementTagsUpdater(this)
 
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
