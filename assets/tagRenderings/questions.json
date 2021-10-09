@@ -4,7 +4,24 @@
   },
   "wikipedia": {
     "render": "{wikipedia():max-height:25rem}",
-    "condition": "wikidata~*"
+    "question": {
+      "en": "What is the corresponding Wikidata entity?",
+      "nl": "Welk Wikidata-item komt overeen met dit object?"
+    },
+    "freeform": {
+      "key": "wikidata",
+      "type": "wikidata"
+    },
+    "mappings": [
+      {
+        "if": "wikidata=",
+        "then": {
+          "en": "No Wikipedia page has been linked yet",
+          "nl": "Er werd nog geen Wikipedia-pagina gekoppeld"
+        },
+        "hideInAnswer": true
+      }
+    ]
   },
   "reviews": {
     "render": "{reviews()}"
@@ -50,7 +67,7 @@
       "type": "wikidata"
     },
     "question": {
-      "en":       "What is the corresponding item on Wikipedia?",
+      "en": "What is the corresponding item on Wikipedia?",
       "nl": "Welk Wikipedia-artikel beschrijft dit object?"
     },
     "mappings": [
