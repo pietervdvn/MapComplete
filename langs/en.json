@@ -13,7 +13,8 @@
         "uploadDone": "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>",
         "dontDelete": "Cancel",
         "doDelete": "Remove image",
-        "isDeleted": "Deleted"
+        "isDeleted": "Deleted",
+        "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}"
     },
     "centerMessage": {
         "loadingData": "Loading data…",

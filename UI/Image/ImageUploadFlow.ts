@@ -39,7 +39,10 @@ export class ImageUploadFlow extends Toggle {
                     }
                 )))
         })
-
+        
+        uploader.queue.addCallbackD(q => console.log("Image upload queue is ", q))
+        uploader.failed.addCallbackD(q => console.log("Image upload fail list is ", q))
+        uploader.success.addCallbackD(q => console.log("Image upload success list is ", q))
 
         const licensePicker = new LicensePicker()
 
@@ -58,10 +61,23 @@ export class ImageUploadFlow extends Toggle {
 
         const fileSelector = new FileSelectorButton(label)
         fileSelector.GetValue().addCallback(filelist => {
-            if (filelist === undefined) {
+            if (filelist === undefined || filelist.length === 0) {
                 return;
             }
 
+
+            for (var i = 0; i < filelist.length; i++) {
+                const sizeInBytes=  filelist[i].size
+                console.log(filelist[i].name + " has a size of " + sizeInBytes + " Bytes");
+                if(sizeInBytes > uploader.maxFileSizeInMegabytes * 1000000){
+                    alert(Translations.t.image.toBig.Subs({
+                        actual_size: (Math.floor(sizeInBytes / 1000000)) + "MB",
+                        max_size: uploader.maxFileSizeInMegabytes+"MB"
+                    }).txt)
+                    return;
+                }
+            }
+            
             console.log("Received images from the user, starting upload")
             const license = licensePicker.GetValue()?.data ?? "CC0"
 
@@ -77,7 +93,7 @@ export class ImageUploadFlow extends Toggle {
             }
 
 
-            const title = matchingLayer?.title?.GetRenderValue(tags)?.ConstructElement().innerText ?? tags.name ?? "Unknown area";
+            const title = matchingLayer?.title?.GetRenderValue(tags)?.ConstructElement()?.innerText ?? tags.name ?? "Unknown area";
             const description = [
                 "author:" + State.state.osmConnection.userDetails.data.name,
                 "license:" + license,
@@ -92,10 +108,10 @@ export class ImageUploadFlow extends Toggle {
         const uploadStateUi = new UploadFlowStateUI(uploader.queue, uploader.failed, uploader.success)
 
         const uploadFlow: BaseUIElement = new Combine([
+            uploadStateUi,
             fileSelector,
             Translations.t.image.respectPrivacy.Clone().SetStyle("font-size:small;"),
-            licensePicker,
-            uploadStateUi
+            licensePicker
         ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center")
 
 

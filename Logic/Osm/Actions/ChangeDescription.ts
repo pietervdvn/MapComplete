@@ -36,6 +36,8 @@ export interface ChangeDescription {
     /**
      * All changes to tags
      * v = "" or v = undefined to erase this tag
+     * 
+     * Note that this list will only contain the _changes_ to the tags, not the full set of tags
      */
     tags?: { k: string, v: string }[],
 
