@@ -24,6 +24,12 @@
         "nl": "Alle lagen met een gelinkt etymology"
     },
     "tagRenderings": [
+    	{
+    		"id":"etymology-images-from-wikipedia",
+    		"render": {
+    			"*": "{image_carousel(name:etymology:wikidata)}"
+    		}
+    	},
         {
             "id": "wikipedia-etymology",
             "question": {
