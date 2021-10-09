@@ -78,6 +78,14 @@
                 }
             },
             "question": "Is deze plaats rolstoeltoegankelijk?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Nog geen Wikipedia-artikel bekend"
+                }
+            },
+            "question": "Welk Wikipedia-artikel beschrijft dit object?"
         }
     }
 }

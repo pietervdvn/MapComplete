@@ -746,25 +746,9 @@
     "etymology": {
         "description": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. The information comes from Wpikipedia.",
         "layers": {
-            "0": {
-                "description": "All objects which have an etymology known",
-                "name": "Has etymolgy",
-                "tagRenderings": {
-                    "simple etymology": {
-                        "render": "Named after {name:etymology}"
-                    },
-                    "street-name-sign-image": {
-                        "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
-                    }
-                }
-            },
             "1": {
-                "description": "All objects which have an etymology known",
-                "name": "Has etymolgy",
-                "tagRenderings": {
-                    "simple etymology": {
-                        "render": "Named after {name:etymology}"
-                    }
+                "override": {
+                    "name": "Streets without etymology information"
                 }
             }
         },

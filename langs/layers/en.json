@@ -2475,6 +2475,26 @@
             "render": "Drinking water"
         }
     },
+    "etymology": {
+        "description": "All objects which have an etymology known",
+        "name": "Has etymolgy",
+        "tagRenderings": {
+            "simple etymology": {
+                "question": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
+                "render": "Named after {name:etymology}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
+            },
+            "wikipedia-etymology": {
+                "question": "What is the Wikidata-item that this object is named after?",
+                "render": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            },
+            "zoeken op inventaris onroerend erfgoed": {
+                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
+            }
+        }
+    },
     "food": {
         "filter": {
             "0": {

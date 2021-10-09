@@ -627,25 +627,9 @@
     "etymology": {
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. De informatie komt uit wikipedia.",
         "layers": {
-            "0": {
-                "description": "Alle lagen met een gelinkt etymology",
-                "name": "Heeft etymology info",
-                "tagRenderings": {
-                    "simple etymology": {
-                        "render": "Vernoemd naar {name:etymology}"
-                    },
-                    "street-name-sign-image": {
-                        "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
-                    }
-                }
-            },
             "1": {
-                "description": "Alle lagen met een gelinkt etymology",
-                "name": "Heeft etymology info",
-                "tagRenderings": {
-                    "simple etymology": {
-                        "render": "Vernoemd naar {name:etymology}"
-                    }
+                "override": {
+                    "name": "Straten zonder etymologische informatie"
                 }
             }
         },

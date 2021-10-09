@@ -2421,6 +2421,26 @@
             "render": "Drinkbaar water"
         }
     },
+    "etymology": {
+        "description": "Alle lagen met een gelinkt etymology",
+        "name": "Heeft etymology info",
+        "tagRenderings": {
+            "simple etymology": {
+                "question": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
+                "render": "Vernoemd naar {name:etymology}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+            },
+            "wikipedia-etymology": {
+                "question": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
+                "render": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            },
+            "zoeken op inventaris onroerend erfgoed": {
+                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>"
+            }
+        }
+    },
     "food": {
         "filter": {
             "0": {

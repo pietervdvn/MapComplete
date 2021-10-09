@@ -78,6 +78,14 @@
                 }
             },
             "question": "Is this place accessible with a wheelchair?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Not linked with Wikipedia"
+                }
+            },
+            "question": "What is the corresponding item on Wikipedia?"
         }
     }
 }
