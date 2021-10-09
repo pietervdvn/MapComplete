@@ -1881,6 +1881,52 @@ export default class WikidataSpecTest extends T {
                     )
 
                     const wikidata = await Wikidata.LoadWikidataEntryAsync("2747456")
+                }],
+                ["Extract key from a lexeme", () => {
+                    Utils.injectJsonDownloadForTests(
+                        "https://www.wikidata.org/wiki/Special:EntityData/L614072.json" ,
+                        {
+                            "entities": {
+                                "L614072": {
+                                    "pageid": 104085278,
+                                    "ns": 146,
+                                    "title": "Lexeme:L614072",
+                                    "lastrevid": 1509989280,
+                                    "modified": "2021-10-09T18:43:52Z",
+                                    "type": "lexeme",
+                                    "id": "L614072",
+                                    "lemmas": {"nl": {"language": "nl", "value": "Groen"}},
+                                    "lexicalCategory": "Q34698",
+                                    "language": "Q7411",
+                                    "claims": {},
+                                    "forms": [],
+                                    "senses": [{
+                                        "id": "L614072-S1",
+                                        "glosses": {"nl": {"language": "nl", "value": "Nieuw"}},
+                                        "claims": {}
+                                    }, {
+                                        "id": "L614072-S2",
+                                        "glosses": {"nl": {"language": "nl", "value": "Jong"}},
+                                        "claims": {}
+                                    }, {
+                                        "id": "L614072-S3",
+                                        "glosses": {"nl": {"language": "nl", "value": "Pril"}},
+                                        "claims": {}
+                                    }]
+                                }
+                            }
+                        }
+                    )
+
+                    const key = Wikidata.ExtractKey("https://www.wikidata.org/wiki/Lexeme:L614072")
+                    T.equals("L614072", key)
+            
+                }],
+                ["Download a lexeme", async () => {
+
+                    const response = await Wikidata.LoadWikidataEntryAsync("https://www.wikidata.org/wiki/Lexeme:L614072")
+                    T.isTrue(response !== undefined, "Response is undefined")
+
                 }]
                
             ]);

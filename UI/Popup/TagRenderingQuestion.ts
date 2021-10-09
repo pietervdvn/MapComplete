@@ -136,7 +136,7 @@ export default class TagRenderingQuestion extends Combine {
             options.cancelButton,
             saveButton,
             bottomTags])
-        this.SetClass("question")
+        this.SetClass("question disable-links")
     }
 
 

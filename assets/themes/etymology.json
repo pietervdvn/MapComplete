@@ -17,7 +17,7 @@
     "nl"
   ],
   "maintainer": "",
-  "icon": "./assets/svg/bug.svg",
+  "icon": "./assets/layers/etymology/logo.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -25,138 +25,26 @@
   "widenFactor": 2,
   "socialImage": "",
   "layers": [
+    "etymology",
     {
-      "id": "has_etymology",
-      "name": {
-        "en": "Has etymolgy",
-        "nl": "Heeft etymology info"
-      },
-      "minzoom": 12,
-      "source": {
-        "osmTags": {
-          "or": [
-            "name:etymology:wikidata~*",
-            "name:etymology~*"
-          ]
-        }
-      },
-      "title": {
-        "render": {
-          "*": "{name}"
-        }
-      },
-      "description": {
-        "en": "All objects which have an etymology known",
-        "nl": "Alle lagen met een gelinkt etymology"
-      },
-      "tagRenderings": [
-        {
-          "id": "etymology_wikidata_image",
-          "render": {
-            "*": "{image_carousel(name:etymology:wikidata)}"
-          }
+      "builtin": "etymology",
+      "override": {
+        "id": "streets_without_etymology",
+        "name": {
+          "en": "Streets without etymology information",
+          "nl": "Straten zonder etymologische informatie"
         },
-        {
-          "id": "simple etymology",
-          "render": {
-            "en": "Named after {name:etymology}",
-            "nl": "Vernoemd naar {name:etymology}"
-          },
-          "freeform": {
-            "key": "name:etymology"
-          }
-        },
-        {
-          "id": "wikipedia-etymology",
-          "render": {
-            "*": "{wikipedia(name:etymology:wikidata):max-height:30rem}"
-          }
-        },
-        {
-          "id": "wikidata-embed",
-          "render": {
-            "*": "<iframe src='https://m.wikidata.org/wiki/{name:etymology:wikidata}' style='width: 100%; height: 25rem'></iframe>"
-          },
-          "condition": "name:etymology:wikidata~*"
-        },
-        "wikipedia",
-        {
-          "id": "street-name-sign-image",
-          "render": {
-            "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
-            "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              "highway~*",
+              "highway!=bus_stop"
+            ]
           }
         }
-      ],
-      "icon": {
-        "render": "./assets/svg/bug.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
-      "presets": []
-    },
-    {
-      "id": "has_a_name",
-      "name": {
-        "en": "Has etymolgy",
-        "nl": "Heeft etymology info"
-      },
-      "minzoom": 12,
-      "source": {
-        "osmTags": {
-          "or": [
-            "name:etymology:wikidata~*",
-            "name:etymology~*"
-          ]
-        }
-      },
-      "title": {
-        "render": {
-          "*": "{name}"
-        }
-      },
-      "description": {
-        "en": "All objects which have an etymology known",
-        "nl": "Alle lagen met een gelinkt etymology"
-      },
-      "tagRenderings": [
-        {
-          "id": "simple etymology",
-          "render": {
-            "en": "Named after {name:etymology}",
-            "nl": "Vernoemd naar {name:etymology}"
-          },
-          "freeform": {
-            "key": "name:etymology"
-          }
-        },
-        {
-          "id": "wikipedia-etymology",
-          "render": {
-            "*": "{wikipedia(name:etymology:wikidata):max-height:20rem}"
-          }
-        }
-      ],
-      "icon": {
-        "render": "./assets/svg/bug.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
-      "presets": []
+      }
     }
   ],
   "hideFromOverview": true

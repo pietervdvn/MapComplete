@@ -45,7 +45,23 @@
   },
   "wikipedialink": {
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "condition": "wikipedia~*"
+    "freeform": {
+      "key": "wikidata",
+      "type": "wikidata"
+    },
+    "question": {
+      "en":       "What is the corresponding item on Wikipedia?",
+      "nl": "Welk Wikipedia-artikel beschrijft dit object?"
+    },
+    "mappings": [
+      {
+        "if": "wikidata=",
+        "then": {
+          "en": "Not linked with Wikipedia",
+          "nl": "Nog geen Wikipedia-artikel bekend"
+        }
+      }
+    ]
   },
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",

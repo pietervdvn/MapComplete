@@ -51,8 +51,9 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 wikidata.id,
                 Svg.wikidata_ui().SetStyle("width: 2.5rem").SetClass("block")
             ]).SetClass("flex"), 
-            "https://wikidata.org/wiki/"+wikidata.id ,true)
+            "https://wikidata.org/wiki/"+wikidata.id ,true).SetClass("must-link")
     
+        console.log(wikidata)
         let info = new Combine( [
             new Combine([Translation.fromMap(wikidata.labels).SetClass("font-bold"), 
                 link]).SetClass("flex justify-between"),

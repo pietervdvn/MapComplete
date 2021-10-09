@@ -1,6 +1,3 @@
-import WikidataPreviewBox from "./UI/Wikipedia/WikidataPreviewBox";
-import {UIEventSource} from "./Logic/UIEventSource";
-import Wikidata from "./Logic/Web/Wikidata";
-import WikidataSearchBox from "./UI/Wikipedia/WikidataSearchBox";
+import WikipediaBox from "./UI/Wikipedia/WikipediaBox";
 
-new WikidataSearchBox({searchText: new UIEventSource("Brugge")}).AttachTo("maindiv")
+new WikipediaBox(["L614072"]).AttachTo("maindiv")

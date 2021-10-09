@@ -16,3 +16,4 @@ missing_translations.txt
 *.swp
 .DS_Store
 Svg.ts
+data/

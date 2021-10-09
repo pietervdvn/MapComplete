@@ -22,7 +22,7 @@ export default class WikipediaBox extends Combine {
 
         const mainContents = []
 
-        const pages = wikidataIds.map(wdId => WikipediaBox.createLinkedContent(wdId))
+        const pages = wikidataIds.map(wdId => WikipediaBox.createLinkedContent(wdId.trim()))
         if (wikidataIds.length == 1) {
             const page = pages[0]
             mainContents.push(
@@ -88,6 +88,9 @@ export default class WikipediaBox extends Combine {
 
                     }
                     const wikidata = <WikidataResponse>maybewikidata["success"]
+                    if(wikidata === undefined){
+                        return "failed"
+                    }
                     if (wikidata.wikisites.size === 0) {
                         return ["no page", wikidata]
                     }
@@ -157,7 +160,7 @@ export default class WikipediaBox extends Combine {
             }
             return undefined
         }))
-            .SetClass("flex items-center")
+            .SetClass("flex items-center enable-links")
 
         return {
             contents: contents,

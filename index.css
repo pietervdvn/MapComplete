@@ -243,6 +243,27 @@ li::marker {
 }
 
 
+.block-ruby {
+    display: block ruby;
+}
+
+.disable-links a {
+    pointer-events: none;
+    text-decoration: none !important;
+    color: var(--subtle-detail-color-contrast) !important;
+}
+
+.enable-links a {
+    pointer-events: unset;
+    text-decoration: underline !important;
+    color: unset !important;
+}
+
+.disable-links a.must-link, .disable-links .must-link a {
+    /* Hide links if they are disabled */
+    display: none;
+}
+
 /**************** GENERIC ****************/
 
 

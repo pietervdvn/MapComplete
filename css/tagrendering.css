@@ -20,12 +20,6 @@
     height: 100%;
 }
 
-.question a {
-    pointer-events: none;
-    text-decoration: none;
-    color: var(--subtle-detail-color-contrast)
-}
-
 .question-text {
     font-size: larger;
     font-weight: bold;

@@ -17,6 +17,7 @@ import {GeoOperations} from "../../Logic/GeoOperations";
 import {Unit} from "../../Models/Unit";
 import {FixedInputElement} from "./FixedInputElement";
 import WikidataSearchBox from "../Wikipedia/WikidataSearchBox";
+import Wikidata from "../../Logic/Web/Wikidata";
 
 interface TextFieldDef {
     name: string,
@@ -153,20 +154,23 @@ export default class ValidatedTextField {
                 if (str === undefined) {
                     return false;
                 }
-                return (str.length > 1 && (str.startsWith("q") || str.startsWith("Q")) || str.startsWith("https://www.wikidata.org/wiki/Q"))
+                if(str.length <= 2){
+                    return false;
+                }
+                return !str.split(";").some(str => Wikidata.ExtractKey(str) === undefined)
             },
             (str) => {
                 if (str === undefined) {
                     return undefined;
                 }
-                const wd = "https://www.wikidata.org/wiki/";
-                if (str.startsWith(wd)) {
-                    str = str.substr(wd.length)
+                let out = str.split(";").map(str => Wikidata.ExtractKey(str)).join("; ")
+                if(str.endsWith(";")){
+                    out = out + ";"
                 }
-                return str.toUpperCase();
+                return out;
             },
             (currentValue, inputHelperOptions) => {
-                const args = inputHelperOptions.args
+                const args = inputHelperOptions.args ?? []
                 const searchKey = args[0] ?? "name"
 
                 let searchFor = <string>inputHelperOptions.feature?.properties[searchKey]?.toLowerCase()
@@ -175,7 +179,6 @@ export default class ValidatedTextField {
                 if (searchFor !== undefined && options !== undefined) {
                     const prefixes = <string[]>options["removePrefixes"]
                     const postfixes = <string[]>options["removePostfixes"]
-
                     for (const postfix of postfixes ?? []) {
                         if (searchFor.endsWith(postfix)) {
                             searchFor = searchFor.substring(0, searchFor.length - postfix.length)

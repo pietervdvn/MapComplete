@@ -6,12 +6,10 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Wikidata, {WikidataResponse} from "../../Logic/Web/Wikidata";
 import Locale from "../i18n/Locale";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import WikidataPreviewBox from "./WikidataPreviewBox";
 import Title from "../Base/Title";
 import WikipediaBox from "./WikipediaBox";
 import Svg from "../../Svg";
-import Link from "../Base/Link";
 
 export default class WikidataSearchBox extends InputElement<string> {
 
@@ -104,7 +102,7 @@ export default class WikidataSearchBox extends InputElement<string> {
                 if (wid === undefined) {
                     return undefined
                 }
-                return new WikipediaBox([wid]);
+                return new WikipediaBox(wid.split(";"));
             })).SetStyle("max-height:12.5rem"),
             full
         ]).ConstructElement();

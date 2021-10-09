@@ -1958,6 +1958,27 @@ li::marker {
   max-width: 2em !important;
 }
 
+.block-ruby {
+  display: block ruby;
+}
+
+.disable-links a {
+  pointer-events: none;
+  text-decoration: none !important;
+  color: var(--subtle-detail-color-contrast) !important;
+}
+
+.enable-links a {
+  pointer-events: unset;
+  text-decoration: underline !important;
+  color: unset !important;
+}
+
+.disable-links a.must-link, .disable-links .must-link a {
+  /* Hide links if they are disabled */
+  display: none;
+}
+
 /**************** GENERIC ****************/
 
 .alert {
@@ -2237,10 +2258,6 @@ li::marker {
 }
 
 @media (min-width: 640px) {
-  .sm\:m-1 {
-    margin: 0.25rem;
-  }
-
   .sm\:mx-auto {
     margin-left: auto;
     margin-right: auto;
