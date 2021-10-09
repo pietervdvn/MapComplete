@@ -19,6 +19,14 @@
                 }
             },
             "question": "Metode pembayaran manakah yang di terima disini?"
+        },
+        "level": {
+            "question": "Pada tingkat apa fitur ini diletakkan?",
+            "mappings": {
+                "3": {
+                    "then": "Berlokasi di lantai pertama"
+                }
+            }
         }
     }
 }
