@@ -58,21 +58,25 @@ export default class OsmFeatureSource {
 
                 for (const neededTile of neededTiles) {
                     if (self.downloadedTiles.has(neededTile)) {
-                        return;
+                        continue;
                     }
+                    console.log("Tile download", Tiles.tile_from_index(neededTile).join("/"), "started")
                     self.downloadedTiles.add(neededTile)
-                    Promise.resolve(self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {
-                    }))
+                    self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {
+                        console.log("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded")
+                    })
                 }
             } catch (e) {
                 console.error(e)
+            }finally {
+                console.log("Done")
+                self.isRunning.setData(false)
             }
-            self.isRunning.setData(false)
         })
-        
-        
+
+
         const neededLayers = options.state.layoutToUse.layers
-            .filter(            layer => !layer.doNotDownload        )
+            .filter(layer => !layer.doNotDownload)
             .filter(layer => layer.source.geojsonSource === undefined || layer.source.isOsmCacheLayer)
         this.allowedTags = new Or(neededLayers.map(l => l.source.osmTags))
     }
@@ -96,22 +100,22 @@ export default class OsmFeatureSource {
                     {
                         flatProperties: true
                     });
-                
+
                 // The geojson contains _all_ features at the given location
                 // We only keep what is needed
-                
+
                 geojson.features = geojson.features.filter(feature => this.allowedTags.matchesProperties(feature.properties))
-                
+
                 console.log("Tile geojson:", z, x, y, "is", geojson)
-                const index =  Tiles.tile_index(z, x, y);
+                const index = Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,
                     this.handleTile,
                     new StaticFeatureSource(geojson.features, false),
                     {
-                        tileIndex:index
+                        tileIndex: index
                     }
                 );
-                if(this.options.markTileVisited){
+                if (this.options.markTileVisited) {
                     this.options.markTileVisited(index)
                 }
             } catch (e) {

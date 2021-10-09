@@ -924,7 +924,10 @@
                         "question": "Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector"
                     },
                     "15": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> connector"
+                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> connector"
+                    },
+                    "16": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector"
                     }
                 }
             }
@@ -1056,10 +1059,16 @@
                         "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> to charge phones and small electronics</span></div>"
                     },
                     "28": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect</b> with cable</span></div>"
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect with 3 pins</b> and cable</span></div>"
                     },
                     "29": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect</b> with cable</span></div>"
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect with 3 pins</b> and cable</span></div>"
+                    },
+                    "30": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect with 5 pins</b> and cable</span></div>"
+                    },
+                    "31": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect with 5 pins</b> and cable</span></div>"
                     }
                 },
                 "question": "Which charging stations are available here?"
@@ -1219,8 +1228,8 @@
                 "render": "<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most {socket:USB-A:current}A"
             },
             "current-14": {
-                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs at most {socket:bosch_3pin:current}A"
+                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs at most {socket:bosch_3pin:current}A"
             },
             "current-2": {
                 "mappings": {
@@ -1372,8 +1381,8 @@
                 "render": "There are <b class='text-xl'>{socket:USB-A}</b> plugs of type <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> available here"
             },
             "plugs-14": {
-                "question": "How much plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> are available here?",
-                "render": "There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> available here"
+                "question": "How much plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> are available here?",
+                "render": "There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> available here"
             },
             "plugs-2": {
                 "question": "How much plugs of type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> are available here?",
@@ -1477,8 +1486,8 @@
                 "render": "<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most {socket:USB-A:output}"
             },
             "power-output-14": {
-                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs at most {socket:bosch_3pin:output}"
+                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs at most {socket:bosch_3pin:output}"
             },
             "power-output-2": {
                 "mappings": {
@@ -1650,8 +1659,8 @@
                 "render": "<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs {socket:USB-A:voltage} volt"
             },
             "voltage-14": {
-                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect</b> with cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs {socket:bosch_3pin:voltage} volt"
+                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs {socket:bosch_3pin:voltage} volt"
             },
             "voltage-2": {
                 "mappings": {
@@ -1746,6 +1755,22 @@
             "website": {
                 "question": "What is the website of the operator?",
                 "render": "More info on <a href='{website}'>{website}</a>"
+            },
+            "voltage-15": {
+                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs {socket:bosch_5pin:voltage} volt"
+            },
+            "power-output-15": {
+                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:output}"
+            },
+            "plugs-15": {
+                "question": "How much plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> are available here?",
+                "render": "There are <b class='text-xl'>{socket:bosch_5pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> available here"
+            },
+            "current-15": {
+                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:current}A"
             }
         },
         "title": {
@@ -2473,26 +2498,6 @@
         },
         "title": {
             "render": "Drinking water"
-        }
-    },
-    "etymology": {
-        "description": "All objects which have an etymology known",
-        "name": "Has etymolgy",
-        "tagRenderings": {
-            "simple etymology": {
-                "question": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
-                "render": "Named after {name:etymology}"
-            },
-            "street-name-sign-image": {
-                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
-            },
-            "wikipedia-etymology": {
-                "question": "What is the Wikidata-item that this object is named after?",
-                "render": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
-            },
-            "zoeken op inventaris onroerend erfgoed": {
-                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
-            }
         }
     },
     "food": {
@@ -3710,5 +3715,25 @@
     },
     "watermill": {
         "name": "Watermill"
+    },
+    "etymology": {
+        "description": "All objects which have an etymology known",
+        "name": "Has etymolgy",
+        "tagRenderings": {
+            "simple etymology": {
+                "question": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
+                "render": "Named after {name:etymology}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
+            },
+            "wikipedia-etymology": {
+                "question": "What is the Wikidata-item that this object is named after?",
+                "render": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            },
+            "zoeken op inventaris onroerend erfgoed": {
+                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
+            }
+        }
     }
 }

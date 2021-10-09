@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   sodipodi:docname="bosch-3pin.svg">
+   sodipodi:docname="bosch-5pin.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,14 +26,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="70.652971"
+     inkscape:cx="2.2601139"
      inkscape:cy="63.253829"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -107,6 +107,22 @@
        height="8.281888"
        x="-91.173843"
        y="223.57133"
+       transform="scale(-1,1)" />
+    <rect
+       style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.51650959;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.92222218"
+       id="rect927-7-53-5"
+       width="2.0247746"
+       height="8.281888"
+       x="-81.017601"
+       y="225.57587"
+       transform="scale(-1,1)" />
+    <rect
+       style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.51650959;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.92222218"
+       id="rect927-7-53-5-6"
+       width="2.0247746"
+       height="8.281888"
+       x="-94.935867"
+       y="215.15581"
        transform="scale(-1,1)" />
   </g>
 </svg>

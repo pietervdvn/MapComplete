@@ -108,6 +108,14 @@
     "sources": []
   },
   {
+    "path": "bosch-5pin.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "under_construction.svg",
     "license": "Public domain",
     "authors": [

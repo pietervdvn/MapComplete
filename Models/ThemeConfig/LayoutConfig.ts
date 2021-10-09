@@ -86,7 +86,16 @@ export default class LayoutConfig {
         this.startLat = json.startLat;
         this.startLon = json.startLon;
         if(json.widenFactor < 1){
-            throw "Widenfactor too small"
+            if(official){
+                throw "Widenfactor too small"
+            }else{
+                // Unofficial themes get away with this
+                console.warn("Detected a very small widenfactor, bumping this above 1.")
+                json.widenFactor = json.widenFactor + 1
+            }
+        }
+        if(json.widenFactor > 20){
+            throw "Widenfactor is very big, use a value between 1 and 5 (current value is "+json.widenFactor+") at "+context
         }
         this.widenFactor = json.widenFactor ?? 1.5;
         this.roamingRenderings = (json.roamingRenderings ?? []).map((tr, i) => {

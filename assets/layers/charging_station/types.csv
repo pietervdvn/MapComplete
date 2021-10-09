@@ -13,4 +13,5 @@ socket:tesla_supercharger_ccs,Type2_CCS.svg,<b>Tesla Supercharger CCS</b> (a bra
 socket:tesla_destination,Tesla-hpwc-model-s.svg,<b>Tesla Supercharger (destination)</b>,us,,480,125;350,120 kW;150 kW;250 kW,<b>Tesla Supercharger (destination)</b>,car;motorcar;hgv;bus,bicycle;scooter
 socket:tesla_destination,Type2_tethered.svg,<b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla),,us,230;400,16;32,11 kW;22 kW,<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo),car;motorcar;hgv;bus,bicycle;scooter
 socket:USB-A,usb_port.svg,<b>USB</b> to charge phones and small electronics,,,5,1;2,5W;10W,<b>USB</b> om GSMs en kleine electronica op te laden,*,
-socket:bosch_3pin,bosch-3pin.svg,<b>Bosch Active Connect</b> with cable,,,,,,<b>Bosch Active Connect</b> aan een kabel,bicycle,car;motorcar;hgv;bus
+socket:bosch_3pin,bosch-3pin.svg,<b>Bosch Active Connect with 3 pins</b> and cable,,,,,,<b>Bosch Active Connect met 3 pinnen</b> aan een kabel,bicycle,car;motorcar;hgv;bus
+socket:bosch_5pin,bosch-5pin.svg,<b>Bosch Active Connect with 5 pins</b> and cable,,,,,,<b>Bosch Active Connect met 5 pinnen</b> aan een kabel,bicycle,car;motorcar;hgv;bus

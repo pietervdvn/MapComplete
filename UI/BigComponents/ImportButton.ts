@@ -9,11 +9,17 @@ import Constants from "../../Models/Constants";
 import Toggle from "../Input/Toggle";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import {Tag} from "../../Logic/Tags/Tag";
+import Loading from "../Base/Loading";
 
 export default class ImportButton extends Toggle {
     constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement,
                 originalTags: UIEventSource<any>,
-                newTags: UIEventSource<Tag[]>, lat: number, lon: number) {
+                newTags: UIEventSource<Tag[]>, 
+                lat: number, lon: number,
+                minZoom: number,
+                state: {   
+                    locationControl: UIEventSource<{ zoom: number }>
+                }) {
         const t = Translations.t.general.add;
         const isImported = originalTags.map(tags => tags._imported === "yes")
         const appliedTags = new Toggle(
@@ -30,6 +36,7 @@ export default class ImportButton extends Toggle {
         )
         const button = new SubtleButton(imageUrl, message)
 
+        minZoom = Math.max(16, minZoom ?? 19)
 
         button.onClick(async () => {
             if (isImported.data) {
@@ -52,11 +59,13 @@ export default class ImportButton extends Toggle {
 
         })
 
-        const withLoadingCheck = new Toggle(
-            t.stillLoading,
+        const withLoadingCheck = new Toggle(new Toggle(
+            new Loading(t.stillLoading.Clone()),
             new Combine([button, appliedTags]).SetClass("flex flex-col"),
             State.state.featurePipeline.runningQuery
-        )
+        ),t.zoomInFurther.Clone(),
+                state.locationControl.map(l => l.zoom >= minZoom)    
+            )
         const importButton = new Toggle(t.hasBeenImported, withLoadingCheck, isImported)
 
         const pleaseLoginButton =
