@@ -62,7 +62,8 @@
             "render": {
                 "en": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
                 "nl": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
-            }
+            },
+            "condition":"name:etymology!=unknown"
         },
         {
             "id": "zoeken op inventaris onroerend erfgoed",
@@ -85,6 +86,13 @@
             "freeform": {
                 "key": "name:etymology"
             },
+            "mappings": [
+                {"if":"name:etymology=unknown",
+                "then": {
+                    "en": "The origin of this name is unknown in all literature",
+                    "nl": "De oorsprong van deze naam is onbekend in de literatuur"
+                }}
+            ],
             "condition": {
                 "or": [
                     "name:etymology~*",
