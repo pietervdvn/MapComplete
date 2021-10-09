@@ -759,17 +759,11 @@
                 }
             },
             "1": {
-                "name": "No etymology data yet",
+                "description": "All objects which have an etymology known",
+                "name": "Has etymolgy",
                 "tagRenderings": {
-                    "name-origin": {
-                        "question": "What is the origin of this name?",
-                        "render": "<div class='subtle'>This feature is named after</div><br />{name:etymology{"
-                    },
-                    "name-origin-wikidata": {
-                        "question": "What is the wikidata entry for the thing this feature is named after?"
-                    },
-                    "street-name-sign-image": {
-                        "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
+                    "simple etymology": {
+                        "render": "Named after {name:etymology}"
                     }
                 }
             }

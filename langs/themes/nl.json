@@ -640,17 +640,11 @@
                 }
             },
             "1": {
-                "name": "Zonder etymology",
+                "description": "Alle lagen met een gelinkt etymology",
+                "name": "Heeft etymology info",
                 "tagRenderings": {
-                    "name-origin": {
-                        "question": "Naar wat is dit vernoemd?",
-                        "render": "<div class='subtle'>Dit is vernoemd naar</div><br />{name:etymology{"
-                    },
-                    "name-origin-wikidata": {
-                        "question": "Wat is de wikidata-entry voor het object waarnaar dit vernoemd is?<br /><span class='subtle'>Plak hier de wikidata entry of sla over</span>"
-                    },
-                    "street-name-sign-image": {
-                        "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+                    "simple etymology": {
+                        "render": "Vernoemd naar {name:etymology}"
                     }
                 }
             }
