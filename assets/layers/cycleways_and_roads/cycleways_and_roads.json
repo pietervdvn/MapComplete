@@ -27,9 +27,6 @@
             ]
         }
     },
-    "calculatedTags": [
-        "_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')"
-    ],
     "title": {
         "render": {
             "en": "Cycleways",

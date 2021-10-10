@@ -224,6 +224,7 @@ export class ExtraFunction {
         const maxFeatures = options?.maxFeatures ?? 1
         const maxDistance = options?.maxDistance ?? 500
         const uniqueTag: string | undefined = options?.uniqueTag
+        console.log("Requested closestN")
         if (typeof features === "string") {
             const name = features
             const bbox = GeoOperations.bbox(GeoOperations.buffer(GeoOperations.bbox(feature), maxDistance))

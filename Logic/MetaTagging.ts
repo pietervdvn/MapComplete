@@ -1,6 +1,5 @@
 import SimpleMetaTagger from "./SimpleMetaTagger";
 import {ExtraFuncParams, ExtraFunction} from "./ExtraFunction";
-import {UIEventSource} from "./UIEventSource";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import State from "../State";
 
@@ -33,34 +32,43 @@ export default class MetaTagging {
         }
 
 
-            const metatagsToApply: SimpleMetaTagger [] = []
-            for (const metatag of SimpleMetaTagger.metatags) {
-                if (metatag.includesDates) {
-                    if (options.includeDates ?? true) {
-                        metatagsToApply.push(metatag)
-                    }
-                } else {
-                    if (options.includeNonDates ?? true) {
-                        metatagsToApply.push(metatag)
-                    }
+        const metatagsToApply: SimpleMetaTagger [] = []
+        for (const metatag of SimpleMetaTagger.metatags) {
+            if (metatag.includesDates) {
+                if (options.includeDates ?? true) {
+                    metatagsToApply.push(metatag)
+                }
+            } else {
+                if (options.includeNonDates ?? true) {
+                    metatagsToApply.push(metatag)
                 }
             }
+        }
 
         // The calculated functions - per layer - which add the new keys
         const layerFuncs = this.createRetaggingFunc(layer)
 
 
         for (let i = 0; i < features.length; i++) {
-                const ff = features[i];
-                const feature = ff.feature
-                const freshness = ff.freshness
-                let somethingChanged = false
-                for (const metatag of metatagsToApply) {
-                    try {
-                        if(!metatag.keys.some(key => feature.properties[key] === undefined)){
-                            // All keys are already defined, we probably already ran this one
-                            continue
-                        }
+            const ff = features[i];
+            const feature = ff.feature
+            const freshness = ff.freshness
+            let somethingChanged = false
+            for (const metatag of metatagsToApply) {
+                try {
+                    if (!metatag.keys.some(key => feature.properties[key] === undefined)) {
+                        // All keys are already defined, we probably already ran this one
+                        continue
+                    }
+                    
+                    if(metatag.isLazy){
+                        somethingChanged = true;
+                        
+                        metatag.applyMetaTagsOnFeature(feature, freshness)
+                        
+                    }else{
+                        
+                    
                         const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness)
                         /* Note that the expression:
                         * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
@@ -70,35 +78,30 @@ export default class MetaTagging {
                         * thus not running an update!
                         */
                         somethingChanged = newValueAdded || somethingChanged
-                    } catch (e) {
-                        console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e, e.stack)
                     }
-                }
-                
-                if(layerFuncs !== undefined){
-                    try {
-                        layerFuncs(params, feature)
-                    } catch (e) {
-                        console.error(e)
-                    }
-                    somethingChanged = true
-                }
-                
-                if(somethingChanged){
-                    State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping()
+                } catch (e) {
+                    console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e, e.stack)
                 }
             }
+
+            if (layerFuncs !== undefined) {
+                try {
+                    layerFuncs(params, feature)
+                } catch (e) {
+                    console.error(e)
+                }
+                somethingChanged = true
+            }
+
+            if (somethingChanged) {
+                State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping()
+            }
+        }
     }
 
 
-    private static createRetaggingFunc(layer: LayerConfig):
-        ((params: ExtraFuncParams, feature: any) => void) {
-        const calculatedTags: [string, string][] = layer.calculatedTags;
-        if (calculatedTags === undefined) {
-            return undefined;
-        }
-
-        const functions: ((params: ExtraFuncParams, feature: any) => void)[] = [];
+    private static createFunctionsForFeature(calculatedTags: [string, string][]): ((feature: any) => void)[] {
+        const functions: ((feature: any) => void)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]
             const code = entry[1];
@@ -108,59 +111,72 @@ export default class MetaTagging {
 
             const func = new Function("feat", "return " + code + ";");
 
-            try {
-                const f = (featuresPerLayer, feature: any) => {
-                    try {
-                        let result = func(feature);
-                        if (result instanceof UIEventSource) {
-                            result.addCallbackAndRunD(d => {
-                                if (typeof d !== "string") {
-                                    // Make sure it is a string!
-                                    d = JSON.stringify(d);
-                                }
-                                feature.properties[key] = d;
-                            })
-                            result = result.data
-                        }
+            const f = (feature: any) => {
+                delete feature.properties[key]
 
-                        if (result === undefined || result === "") {
-                            return;
-                        }
-                        if (typeof result !== "string") {
-                            // Make sure it is a string!
-                            result = JSON.stringify(result);
-                        }
-                        feature.properties[key] = result;
-                    } catch (e) {
-                        if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
-                            console.warn("Could not calculate a calculated tag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e,e.stack)
-                            MetaTagging.errorPrintCount++;
-                            if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
-                                console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
+                Object.defineProperty(feature.properties, key, {
+                    configurable: true,
+                    enumerable: false, // By setting this as not enumerable, the localTileSaver will _not_ calculate this
+                    get: function () {
+                        try {
+                            // Lazyness for the win!
+                            let result = func(feature);
+
+                            if (result === "") {
+                                result === undefined
+                            }
+                            if (result !== undefined && typeof result !== "string") {
+                                // Make sure it is a string!
+                                result = JSON.stringify(result);
+                            }
+                            delete feature.properties[key]
+                            feature.properties[key] = result;
+                            return result;
+                        } catch (e) {
+                            if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
+                                console.warn("Could not calculate a calculated tag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
+                                MetaTagging.errorPrintCount++;
+                                if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
+                                    console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
+                                }
                             }
                         }
-                    }
+                        
+                    }} )
 
-                }
-                functions.push(f)
-            } catch (e) {
-                console.error("Could not create a dynamic function: ", e)
             }
+            
+            
+            functions.push(f)
         }
+        return functions;
+    }
+
+    private static createRetaggingFunc(layer: LayerConfig):
+        ((params: ExtraFuncParams, feature: any) => void) {
+
+        const calculatedTags: [string, string][] = layer.calculatedTags;
+        if (calculatedTags === undefined || calculatedTags.length === 0) {
+            return undefined;
+        }
+
         return (params: ExtraFuncParams, feature) => {
             const tags = feature.properties
             if (tags === undefined) {
                 return;
             }
 
-            ExtraFunction.FullPatchFeature(params, feature);
             try {
+                const functions = MetaTagging.createFunctionsForFeature(calculatedTags)
+
+
+                ExtraFunction.FullPatchFeature(params, feature);
                 for (const f of functions) {
-                    f(params, feature);
+                    f(feature);
                 }
-                 State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping();
+                State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping();
             } catch (e) {
-                console.error("While calculating a tag value: ", e)
+                console.error("Invalid syntax in calculated tags or some other error: ", e)
             }
         }
     }

@@ -243,7 +243,7 @@ export default class FeaturePipeline {
         this.runningQuery = updater.runningQuery.map(
             overpass => {
                 console.log("FeaturePipeline: runningQuery state changed. Overpass", overpass ? "is querying," : "is idle,",
-                    "osmFeatureSource is", osmFeatureSource.isRunning ? "is running ("+  +")" : "is idle")
+                    "osmFeatureSource is", osmFeatureSource.isRunning ? "is running and needs "+neededTilesFromOsm.data?.length+" tiles (already got "+ osmFeatureSource.downloadedTiles.size  +" tiles )" : "is idle")
                 return overpass || osmFeatureSource.isRunning.data;
             }, [osmFeatureSource.isRunning]
         )
@@ -361,7 +361,6 @@ export default class FeaturePipeline {
         const self = this
         window.setTimeout(
             () => {
-                console.debug("Applying metatagging onto ", src.name)
                 const layerDef = src.layer.layerDef;
                 MetaTagging.addMetatags(
                     src.features.data,
@@ -384,7 +383,6 @@ export default class FeaturePipeline {
 
     private updateAllMetaTagging() {
         const self = this;
-        console.log("Reupdating all metatagging")
         this.perLayerHierarchy.forEach(hierarchy => {
             hierarchy.loadedTiles.forEach(src => {
                 self.applyMetaTags(src)
