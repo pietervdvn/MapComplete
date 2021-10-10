@@ -273,6 +273,15 @@ export default class Wikidata {
         return undefined;
     }
 
+    public static IdToArticle(id: string){
+        if(id.startsWith("Q")){
+            return "https://wikidata.org/wiki/"+id
+        }
+        if(id.startsWith("L")){
+            return "https://wikidata.org/wiki/Lexeme:"+id
+        }
+        throw "Unknown id type: "+id
+    }
 
     /**
      * Loads a wikidata page

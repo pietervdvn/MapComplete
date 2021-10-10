@@ -51,7 +51,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 wikidata.id,
                 Svg.wikidata_ui().SetStyle("width: 2.5rem").SetClass("block")
             ]).SetClass("flex"), 
-            "https://wikidata.org/wiki/"+wikidata.id ,true).SetClass("must-link")
+            Wikidata.IdToArticle(wikidata.id) ,true).SetClass("must-link")
     
         console.log(wikidata)
         let info = new Combine( [
