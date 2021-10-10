@@ -26,7 +26,8 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
 import Minimap from "./Base/Minimap";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
-import WikipediaBox from "./Wikipedia/WikipediaBox";
+import WikipediaBox from "./WikipediaBox";
+import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -45,14 +46,26 @@ export default class SpecialVisualizations {
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
                 constr: ((state: State, tags: UIEventSource<any>) => {
+                    const calculatedTags = [].concat(
+                        SimpleMetaTagger.lazyTags,
+                        ... state.layoutToUse.layers.map(l => l.calculatedTags?.map(c => c[0]) ?? []))
                     return new VariableUiElement(tags.map(tags => {
                         const parts = [];
                         for (const key in tags) {
                             if (!tags.hasOwnProperty(key)) {
-                                continue;
+                                continue
                             }
                             parts.push([key, tags[key] ?? "<b>undefined</b>"]);
                         }
+                        
+                        for(const key of calculatedTags){
+                            const value = tags[key]
+                            if(value === undefined){
+                                continue
+                            }
+                            parts.push([ "<i>"+key+"</i>", value ])
+                        }
+                        
                         return new Table(
                             ["key", "value"],
                             parts

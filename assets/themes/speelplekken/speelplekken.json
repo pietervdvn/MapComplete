@@ -152,7 +152,7 @@
           ]
         },
         "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-        "geoJsonZoomLevel": 11,
+        "geoJsonZoomLevel": 14,
         "isOsmCache": true
       },
       "title": {

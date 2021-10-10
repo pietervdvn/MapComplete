@@ -28,7 +28,7 @@ export default class OsmFeatureSource {
         },
         markTileVisited?: (tileId: number) => void
     };
-    private readonly downloadedTiles = new Set<number>()
+    public readonly downloadedTiles = new Set<number>()
     private readonly allowedTags: TagsFilter;
 
     constructor(options: {
@@ -52,14 +52,17 @@ export default class OsmFeatureSource {
             if (options.isActive?.data === false) {
                 return;
             }
+            
+            neededTiles = neededTiles.filter(tile => !self.downloadedTiles.has(tile))
 
+            if(neededTiles.length == 0){
+                return;
+            }
+            
             self.isRunning.setData(true)
             try {
 
                 for (const neededTile of neededTiles) {
-                    if (self.downloadedTiles.has(neededTile)) {
-                        continue;
-                    }
                     console.log("Tile download", Tiles.tile_from_index(neededTile).join("/"), "started")
                     self.downloadedTiles.add(neededTile)
                     self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {

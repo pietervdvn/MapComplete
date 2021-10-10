@@ -135,10 +135,10 @@ export class ExtraFunction {
             args: ["list of features or layer name", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
         },
         (params, feature) => {
-           
+
             return (features, amount, uniqueTag, maxDistanceInMeters) => {
-                let distance : number = Number(maxDistanceInMeters)
-                if(isNaN(distance)){
+                let distance: number = Number(maxDistanceInMeters)
+                if (isNaN(distance)) {
                     distance = undefined
                 }
                 return ExtraFunction.GetClosestNFeatures(params, feature, features, {
@@ -164,32 +164,13 @@ export class ExtraFunction {
 
         }
     )
-    private static readonly AspectedRouting = new ExtraFunction(
-        {
-            name: "score",
-            doc: "Given the path of an aspected routing json file, will calculate the score. This score is wrapped in a UIEventSource, so for further calculations, use `.map(score => ...)`" +
-                "\n\n" +
-                "For example: `_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')`",
-            args: ["path"]
-        },
-        (_, feature) => {
-            return (path) => {
-                return UIEventSourceTools.downloadJsonCached(path).map(config => {
-                    if (config === undefined) {
-                        return
-                    }
-                    return new AspectedRouting(config).evaluate(feature.properties)
-                })
-            }
-        }
-    )
+
     private static readonly allFuncs: ExtraFunction[] = [
         ExtraFunction.DistanceToFunc,
         ExtraFunction.OverlapFunc,
         ExtraFunction.ClosestObjectFunc,
         ExtraFunction.ClosestNObjectFunc,
-        ExtraFunction.Memberships,
-        ExtraFunction.AspectedRouting
+        ExtraFunction.Memberships
     ];
     private readonly _name: string;
     private readonly _args: string[];
@@ -243,33 +224,30 @@ export class ExtraFunction {
         const maxFeatures = options?.maxFeatures ?? 1
         const maxDistance = options?.maxDistance ?? 500
         const uniqueTag: string | undefined = options?.uniqueTag
+        console.log("Requested closestN")
         if (typeof features === "string") {
             const name = features
             const bbox = GeoOperations.bbox(GeoOperations.buffer(GeoOperations.bbox(feature), maxDistance))
             features = params.getFeaturesWithin(name, new BBox(bbox.geometry.coordinates))
-        }else{
+        } else {
             features = [features]
         }
         if (features === undefined) {
             return;
         }
 
+        const selfCenter = GeoOperations.centerpointCoordinates(feature)
         let closestFeatures: { feat: any, distance: number }[] = [];
-        for(const featureList of features) {
+        for (const featureList of features) {
             for (const otherFeature of featureList) {
                 if (otherFeature === feature || otherFeature.id === feature.id) {
                     continue; // We ignore self
                 }
-                let distance = undefined;
-                if (otherFeature._lon !== undefined && otherFeature._lat !== undefined) {
-                    distance = GeoOperations.distanceBetween([otherFeature._lon, otherFeature._lat], [feature._lon, feature._lat]);
-                } else {
-                    distance = GeoOperations.distanceBetween(
-                        GeoOperations.centerpointCoordinates(otherFeature),
-                        [feature._lon, feature._lat]
-                    )
-                }
-                if (distance === undefined || distance === null) {
+                const distance = GeoOperations.distanceBetween(
+                    GeoOperations.centerpointCoordinates(otherFeature),
+                    selfCenter
+                )
+                if (distance === undefined || distance === null || isNaN(distance)) {
                     console.error("Could not calculate the distance between", feature, "and", otherFeature)
                     throw "Undefined distance!"
                 }

@@ -65,13 +65,34 @@ export default class SimpleMetaTagger {
     private static surfaceArea = new SimpleMetaTagger(
         {
             keys: ["_surface", "_surface:ha"],
-            doc: "The surface area of the feature, in square meters and in hectare. Not set on points and ways"
+            doc: "The surface area of the feature, in square meters and in hectare. Not set on points and ways",
+            isLazy: true
         },
         (feature => {
-            const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature);
-            feature.properties["_surface"] = "" + sqMeters;
-            feature.properties["_surface:ha"] = "" + Math.floor(sqMeters / 1000) / 10;
-            feature.area = sqMeters;
+            
+            Object.defineProperty(feature.properties, "_surface", {
+                enumerable: false,
+                configurable: true,
+                get: () => {
+                    const sqMeters = ""+ GeoOperations.surfaceAreaInSqMeters(feature);
+                    delete feature.properties["_surface"]
+                    feature.properties["_surface"] = sqMeters;
+                    return sqMeters
+                }
+            })
+
+            Object.defineProperty(feature.properties, "_surface:ha", {
+                enumerable: false,
+                configurable: true,
+                get: () => {
+                    const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature);
+                    const sqMetersHa = "" + Math.floor(sqMeters / 1000) / 10;
+                    delete feature.properties["_surface:ha"]
+                    feature.properties["_surface:ha"] = sqMetersHa;
+                    return sqMetersHa
+                }
+            })
+            
             return true;
         })
     );
@@ -153,7 +174,7 @@ export default class SimpleMetaTagger {
             let centerPoint: any = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];
             const lon = centerPoint.geometry.coordinates[0];
-            
+
             SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, (countries: string[]) => {
                 try {
                     const oldCountry = feature.properties["_country"];
@@ -173,7 +194,8 @@ export default class SimpleMetaTagger {
         {
             keys: ["_isOpen", "_isOpen:description"],
             doc: "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
-            includesDates: true
+            includesDates: true,
+            isLazy: true
         },
         (feature => {
             if (Utils.runningFromConsole) {
@@ -181,64 +203,74 @@ export default class SimpleMetaTagger {
                 // isOpen is irrelevant
                 return false
             }
+            
+            Object.defineProperty(feature.properties, "_isOpen",{
+                enumerable: false,
+                configurable: true,
+                get: () => {
+                    delete feature.properties._isOpen
+                    feature.properties._isOpen = ""
+                    const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
+                    tagsSource.addCallbackAndRunD(tags => {
+                        if (tags.opening_hours === undefined || tags._country === undefined) {
+                            return;
+                        }
+                        try {
+                            const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                            const oh = new opening_hours(tags["opening_hours"], {
+                                lat: lat,
+                                lon: lon,
+                                address: {
+                                    country_code: tags._country.toLowerCase()
+                                }
+                            }, {tag_key: "opening_hours"});
+                            // AUtomatically triggered on the next change
+                            const updateTags = () => {
+                                const oldValueIsOpen = tags["_isOpen"];
+                                const oldNextChange = tags["_isOpen:nextTrigger"] ?? 0;
 
-            const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
-            tagsSource.addCallbackAndRunD(tags => {
-                if (tags.opening_hours === undefined || tags._country === undefined) {
-                    return;
+                                if (oldNextChange > (new Date()).getTime() &&
+                                    tags["_isOpen:oldvalue"] === tags["opening_hours"]) {
+                                    // Already calculated and should not yet be triggered
+                                    return false;
+                                }
+
+                                tags["_isOpen"] = oh.getState() ? "yes" : "no";
+                                const comment = oh.getComment();
+                                if (comment) {
+                                    tags["_isOpen:description"] = comment;
+                                }
+
+                                if (oldValueIsOpen !== tags._isOpen) {
+                                    tagsSource.ping();
+                                }
+
+                                const nextChange = oh.getNextChange();
+                                if (nextChange !== undefined) {
+                                    const timeout = nextChange.getTime() - (new Date()).getTime();
+                                    tags["_isOpen:nextTrigger"] = nextChange.getTime();
+                                    tags["_isOpen:oldvalue"] = tags.opening_hours
+                                    window.setTimeout(
+                                        () => {
+                                            console.log("Updating the _isOpen tag for ", tags.id, ", it's timer expired after", timeout);
+                                            updateTags();
+                                        },
+                                        timeout
+                                    )
+                                }
+                            }
+                            updateTags();
+                            return true; // Our job is done, lets unregister!
+                        } catch (e) {
+                            console.warn("Error while parsing opening hours of ", tags.id, e);
+                            tags["_isOpen"] = "parse_error";
+                        }
+
+                    })
+                    return feature.properties["_isOpen"]
                 }
-                try {
-
-                    const oh = new opening_hours(tags["opening_hours"], {
-                        lat: tags._lat,
-                        lon: tags._lon,
-                        address: {
-                            country_code: tags._country.toLowerCase()
-                        }
-                    }, {tag_key: "opening_hours"});
-                    // AUtomatically triggered on the next change
-                    const updateTags = () => {
-                        const oldValueIsOpen = tags["_isOpen"];
-                        const oldNextChange = tags["_isOpen:nextTrigger"] ?? 0;
-
-                        if (oldNextChange > (new Date()).getTime() &&
-                            tags["_isOpen:oldvalue"] === tags["opening_hours"]) {
-                            // Already calculated and should not yet be triggered
-                            return false;
-                        }
-
-                        tags["_isOpen"] = oh.getState() ? "yes" : "no";
-                        const comment = oh.getComment();
-                        if (comment) {
-                            tags["_isOpen:description"] = comment;
-                        }
-
-                        if (oldValueIsOpen !== tags._isOpen) {
-                            tagsSource.ping();
-                        }
-
-                        const nextChange = oh.getNextChange();
-                        if (nextChange !== undefined) {
-                            const timeout = nextChange.getTime() - (new Date()).getTime();
-                            tags["_isOpen:nextTrigger"] = nextChange.getTime();
-                            tags["_isOpen:oldvalue"] = tags.opening_hours
-                            window.setTimeout(
-                                () => {
-                                    console.log("Updating the _isOpen tag for ", tags.id, ", it's timer expired after", timeout);
-                                    updateTags();
-                                },
-                                timeout
-                            )
-                        }
-                    }
-                    updateTags();
-                    return true;
-                } catch (e) {
-                    console.warn("Error while parsing opening hours of ", tags.id, e);
-                    tags["_isOpen"] = "parse_error";
-                }
-
             })
+
         })
     )
     private static directionSimplified = new SimpleMetaTagger(
@@ -306,20 +338,25 @@ export default class SimpleMetaTagger {
         SimpleMetaTagger.objectMetaInfo
 
     ];
+    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTagger.metatags.filter(tagger => tagger.isLazy)
+        .map(tagger => tagger.keys));
+
     public readonly keys: string[];
     public readonly doc: string;
+    public readonly isLazy: boolean;
     public readonly includesDates: boolean
     public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date) => boolean;
-
+    
     /***
      * A function that adds some extra data to a feature
      * @param docs: what does this extra data do?
      * @param f: apply the changes. Returns true if something changed
      */
-    constructor(docs: { keys: string[], doc: string, includesDates?: boolean },
+    constructor(docs: { keys: string[], doc: string, includesDates?: boolean, isLazy?: boolean },
                 f: ((feature: any, freshness: Date) => boolean)) {
         this.keys = docs.keys;
         this.doc = docs.doc;
+        this.isLazy = docs.isLazy
         this.applyMetaTagsOnFeature = f;
         this.includesDates = docs.includesDates ?? false;
         for (const key of docs.keys) {
@@ -345,7 +382,8 @@ export default class SimpleMetaTagger {
         for (const metatag of SimpleMetaTagger.metatags) {
             subElements.push(
                 new Title(metatag.keys.join(", "), 3),
-                metatag.doc
+                metatag.doc,
+                metatag.isLazy ? "This is a lazy metatag and is only calculated when needed" : ""
             )
         }
 

@@ -35,9 +35,20 @@ export default class SelectedElementTagsUpdater {
 
 
         state.selectedElement.addCallbackAndRunD(s => {
-            const id = s.properties?.id
-            OsmObject.DownloadObjectAsync(id).then(obj => {
-                SelectedElementTagsUpdater.applyUpdate(state, obj, id)
+            let id = s.properties?.id
+            
+            const backendUrl = state.osmConnection._oauth_config.url
+            if(id.startsWith(backendUrl)){
+                id = id.substring(backendUrl.length)
+            }
+            
+            if(!(id.startsWith("way") || id.startsWith("node") || id.startsWith("relation"))){
+                // This object is _not_ from OSM, so we skip it!
+                return;
+            }
+            
+            OsmObject.DownloadPropertiesOf(id).then(tags => {
+                SelectedElementTagsUpdater.applyUpdate(state, tags, id)
             }).catch(e => {
                 console.error("Could not update tags of ", id, "due to", e)
             })
@@ -50,14 +61,12 @@ export default class SelectedElementTagsUpdater {
                                    allElements: ElementStorage,
                                    changes: Changes,
                                    osmConnection: OsmConnection
-                               }, obj: OsmObject, id: string
+                               }, latestTags: any, id: string
     ) {
         const pendingChanges = state.changes.pendingChanges.data
-            .filter(change => change.type === obj.type && change.id === obj.id)
+            .filter(change => change.type +"/"+ change.id === id)
             .filter(change => change.tags !== undefined);
-        const latestTags = obj.tags
-        console.log("Applying updates of ", id, " got tags", latestTags, "and still have to apply changes: ", pendingChanges)
-
+       
         for (const pendingChange of pendingChanges) {
             const tagChanges = pendingChange.tags;
             for (const tagChange of tagChanges) {
@@ -84,7 +93,7 @@ export default class SelectedElementTagsUpdater {
             
             const localValue = currentTags[key]
             if (localValue !== osmValue) {
-                console.log("Local value:", localValue, "upstream", osmValue)
+                console.log("Local value for ", key ,":", localValue, "upstream", osmValue)
                 somethingChanged = true;
                 currentTags[key] = osmValue
             }
@@ -92,6 +101,8 @@ export default class SelectedElementTagsUpdater {
         if (somethingChanged) {
             console.log("Detected upstream changes to the object when opening it, updating...")
             currentTagsSource.ping()
+        }else{
+            console.debug("Fetched latest tags for ", id, "but detected no changes")
         }
 
     }
