@@ -47,6 +47,11 @@ export class RegexTag extends TagsFilter {
     }
 
     matchesProperties(tags: any): boolean {
+        if(typeof this.key === "string"){
+            const value = tags[this.key] ?? ""
+            return RegexTag.doesMatch(value, this.value) != this.invert;
+        }
+        
         for (const key in tags) {
             if (key === undefined) {
                 continue;

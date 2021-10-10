@@ -9,6 +9,7 @@ import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
 import {TagUtils} from "../Logic/Tags/TagUtils";
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
+import {RegexTag} from "../Logic/Tags/RegexTag";
 
 
 Utils.runningFromConsole = true;
@@ -173,7 +174,6 @@ export default class TagSpec extends T {
                 equal(undefined, tr.GetRenderValue({"foo": "bar"}));
 
             })],
-
             [
                 "Empty match test",
                 () => {
@@ -214,7 +214,8 @@ export default class TagSpec extends T {
                     const overpassOrInor = TagUtils.Tag(orInOr).asOverpass()
                     equal(3, overpassOrInor.length)
                 }
-            ], [
+            ],
+            [
                 "Merge touching opening hours",
                 () => {
                     const oh1: OpeningHour = {
@@ -239,7 +240,8 @@ export default class TagSpec extends T {
                     equal(r.endHour, 12)
 
                 }
-            ], [
+            ],
+            [
                 "Merge overlapping opening hours",
                 () => {
                     const oh1: OpeningHour = {
@@ -394,7 +396,8 @@ export default class TagSpec extends T {
 
                     ]));
                 equal(rules, "Tu 23:00-00:00");
-            }], ["JOIN OH with overflowed hours", () => {
+            }],
+            ["JOIN OH with overflowed hours", () => {
                 const rules = OH.ToString(
                     OH.MergeTimes([
 
@@ -483,7 +486,41 @@ export default class TagSpec extends T {
                 const tagRendering = new TagRenderingConfig(config, null, "test");
                 equal(true, tagRendering.IsKnown({bottle: "yes"}))
                 equal(false, tagRendering.IsKnown({}))
-            }]]);
+            }],
+            [
+                "Tag matches a lazy property",
+                () => {
+                    const properties = {}
+                    const key = "_key"
+                    Object.defineProperty(properties, key, {
+                        configurable: true,
+                        get: function () {
+                            delete properties[key]
+                            properties[key] = "yes"
+                            return "yes"
+                        }
+                    })
+                    const filter = new Tag("_key", "yes")
+                    T.isTrue(filter.matchesProperties(properties), "Lazy value not matched")
+                }
+            ],
+            [
+                "RegextTag matches a lazy property",
+                () => {
+                    const properties = {}
+                    const key = "_key"
+                    Object.defineProperty(properties, key, {
+                        configurable: true,
+                        get: function () {
+                            delete properties[key]
+                            properties[key] = "yes"
+                            return "yes"
+                        }
+                    })
+                    const filter = TagUtils.Tag("_key~*")
+                    T.isTrue(filter.matchesProperties(properties), "Lazy value not matched")
+                }
+            ]]);
     }
 
 }
