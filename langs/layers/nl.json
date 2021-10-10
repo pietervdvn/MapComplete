@@ -1229,6 +1229,10 @@
                 "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> levert een stroom van maximaal {socket:bosch_3pin:current}A"
             },
+            "current-15": {
+                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een stroom van maximaal {socket:bosch_5pin:current}A"
+            },
             "current-2": {
                 "mappings": {
                     "0": {
@@ -1374,6 +1378,10 @@
                 "question": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> heeft dit oplaadpunt?",
                 "render": "Hier zijn <b class='text-xl'>{socket:bosch_3pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
             },
+            "plugs-15": {
+                "question": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b class='text-xl'>{socket:bosch_5pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+            },
             "plugs-2": {
                 "question": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> heeft dit oplaadpunt?",
                 "render": "Hier zijn <b class='text-xl'>{socket:chademo}</b> stekkers van het type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
@@ -1478,6 +1486,10 @@
             "power-output-14": {
                 "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_3pin:output}"
+            },
+            "power-output-15": {
+                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_5pin:output}"
             },
             "power-output-2": {
                 "mappings": {
@@ -1648,6 +1660,10 @@
                 "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>",
                 "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> heeft een spanning van {socket:bosch_3pin:voltage} volt"
             },
+            "voltage-15": {
+                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft een spanning van {socket:bosch_5pin:voltage} volt"
+            },
             "voltage-2": {
                 "mappings": {
                     "0": {
@@ -1737,22 +1753,6 @@
                 },
                 "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>",
                 "render": "<div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:type2_cable:voltage} volt"
-            },
-            "voltage-15": {
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft een spanning van {socket:bosch_5pin:voltage} volt"
-            },
-            "power-output-15": {
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_5pin:output}"
-            },
-            "plugs-15": {
-                "question": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:bosch_5pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-            },
-            "current-15": {
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een stroom van maximaal {socket:bosch_5pin:current}A"
             }
         },
         "units": {
@@ -2444,6 +2444,31 @@
         },
         "title": {
             "render": "Drinkbaar water"
+        }
+    },
+    "etymology": {
+        "description": "Alle lagen met een gelinkt etymology",
+        "name": "Heeft etymology info",
+        "tagRenderings": {
+            "simple etymology": {
+                "mappings": {
+                    "0": {
+                        "then": "De oorsprong van deze naam is onbekend in de literatuur"
+                    }
+                },
+                "question": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
+                "render": "Vernoemd naar {name:etymology}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+            },
+            "wikipedia-etymology": {
+                "question": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
+                "render": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            },
+            "zoeken op inventaris onroerend erfgoed": {
+                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>"
+            }
         }
     },
     "food": {
@@ -4076,26 +4101,6 @@
                 }
             },
             "render": "Watermolens"
-        }
-    },
-    "etymology": {
-        "description": "Alle lagen met een gelinkt etymology",
-        "name": "Heeft etymology info",
-        "tagRenderings": {
-            "simple etymology": {
-                "question": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
-                "render": "Vernoemd naar {name:etymology}"
-            },
-            "street-name-sign-image": {
-                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
-            },
-            "wikipedia-etymology": {
-                "question": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
-                "render": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
-            },
-            "zoeken op inventaris onroerend erfgoed": {
-                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>"
-            }
         }
     }
 }
