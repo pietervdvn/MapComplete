@@ -956,6 +956,16 @@
     "sources": []
   },
   {
+    "path": "move.svg",
+    "license": "CC-BY-SA 3.0 Unported",
+    "authors": [
+      "MGalloway (WMF)"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Move_icon.svg"
+    ]
+  },
+  {
     "path": "no_checkmark.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -1135,6 +1145,14 @@
     "path": "reload.svg",
     "license": "CC0; trivial",
     "authors": [],
+    "sources": []
+  },
+  {
+    "path": "relocation.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "sources": []
   },
   {

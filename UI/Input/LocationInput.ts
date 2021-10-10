@@ -1,7 +1,7 @@
 import {InputElement} from "./InputElement";
 import Loc from "../../Models/Loc";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import Minimap from "../Base/Minimap";
+import Minimap, {MinimapObj} from "../Base/Minimap";
 import BaseLayer from "../../Models/BaseLayer";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
@@ -14,8 +14,9 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {BBox} from "../../Logic/BBox";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
+import BaseUIElement from "../BaseUIElement";
 
-export default class LocationInput extends InputElement<Loc> {
+export default class LocationInput extends InputElement<Loc> implements MinimapObj {
 
     private static readonly matchLayer = new LayerConfig(
         {
@@ -41,6 +42,8 @@ export default class LocationInput extends InputElement<Loc> {
     private readonly _snappedPointTags: any;
     private readonly _bounds: UIEventSource<BBox>;
     public readonly _matching_layer: LayerConfig;
+    private readonly map: BaseUIElement & MinimapObj;
+    private readonly clickLocation: UIEventSource<Loc>;
 
     constructor(options: {
         mapBackground?: UIEventSource<BaseLayer>,
@@ -127,6 +130,18 @@ export default class LocationInput extends InputElement<Loc> {
         }
         this.mapBackground = options.mapBackground ?? State.state?.backgroundLayer ?? new UIEventSource(AvailableBaseLayers.osmCarto)
         this.SetClass("block h-full")
+
+
+        this.clickLocation = new UIEventSource<Loc>(undefined);
+        this.map = Minimap.createMiniMap(
+            {
+                location: this._centerLocation,
+                background: this.mapBackground,
+                attribution: this.mapBackground !== State.state?.backgroundLayer,
+                lastClickLocation: this.clickLocation,
+                bounds: this._bounds
+            }
+        )
     }
 
     GetValue(): UIEventSource<Loc> {
@@ -139,19 +154,8 @@ export default class LocationInput extends InputElement<Loc> {
 
     protected InnerConstructElement(): HTMLElement {
         try {
-            const clickLocation = new UIEventSource<Loc>(undefined);
-            const map = Minimap.createMiniMap(
-                {
-                    location: this._centerLocation,
-                    background: this.mapBackground,
-                    attribution: this.mapBackground !== State.state?.backgroundLayer,
-                    lastClickLocation: clickLocation,
-                    bounds: this._bounds
-                }
-            )
-            clickLocation.addCallbackAndRunD(location => this._centerLocation.setData(location))
-
-            map.installBounds(0.15, true);
+            this.clickLocation.addCallbackAndRunD(location => this._centerLocation.setData(location))
+            this.map.installBounds(0.15, true);
 
             if (this._snapTo !== undefined) {
                 
@@ -160,7 +164,7 @@ export default class LocationInput extends InputElement<Loc> {
                         features: new StaticFeatureSource(this._snapTo, true),
                         enablePopups: false,
                         zoomToFeatures: false,
-                        leafletMap: map.leafletMap,
+                        leafletMap: this.map.leafletMap,
                         layers: State.state.filteredLayers
                     }
                 )
@@ -175,13 +179,13 @@ export default class LocationInput extends InputElement<Loc> {
                         features: new StaticFeatureSource(matchPoint, true),
                         enablePopups: false,
                         zoomToFeatures: false,
-                        leafletMap: map.leafletMap,
+                        leafletMap: this.map.leafletMap,
                         layerToShow: this._matching_layer
                     })
                     
             }
             this.mapBackground.map(layer => {
-                const leaflet = map.leafletMap.data
+                const leaflet = this.map.leafletMap.data
                 if (leaflet === undefined || layer === undefined) {
                     return;
                 }
@@ -190,7 +194,7 @@ export default class LocationInput extends InputElement<Loc> {
                 leaflet.setMinZoom(layer.max_zoom - 2)
                 leaflet.setZoom(layer.max_zoom - 1)
 
-            }, [map.leafletMap])
+            }, [this.map.leafletMap])
             
             const animatedHand = Svg.hand_ui()
                 .SetStyle("width: 2rem; height: unset;")
@@ -209,7 +213,7 @@ export default class LocationInput extends InputElement<Loc> {
                     .SetClass("block w-0 h-0 z-10 relative")
                     .SetStyle("left: calc(50% + 3rem); top: calc(50% + 2rem); opacity: 0.7"),
 
-                map
+                this.map
                     .SetClass("z-0 relative block w-full h-full bg-gray-100")
 
             ]).ConstructElement();
@@ -217,6 +221,12 @@ export default class LocationInput extends InputElement<Loc> {
             console.error("Could not generate LocationInputElement:", e)
             return new FixedUiElement("Constructing a locationInput failed due to" + e).SetClass("alert").ConstructElement();
         }
+    }
+
+    readonly leafletMap: UIEventSource<any> = this.map.leafletMap
+
+    installBounds(factor: number | BBox, showRange?: boolean): void {
+        this.map.installBounds(factor, showRange)
     }
 
 }

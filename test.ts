@@ -1,26 +1,22 @@
-import FeatureInfoBox from "./UI/Popup/FeatureInfoBox";
-import {UIEventSource} from "./Logic/UIEventSource";
-import AllKnownLayers from "./Customizations/AllKnownLayers";
+import MoveWizard from "./UI/Popup/MoveWizard";
 import State from "./State";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import MinimapImplementation from "./UI/Base/MinimapImplementation";
 
-State.state = new State(AllKnownLayouts.allKnownLayouts.get("charging_stations"))
-State.state.changes.pendingChanges.setData([])
-const geojson = {
-    type: "Feature",
-    geometry: {
-        type: "Point",
-        coordinates: [51.0, 4]
-    },
-    properties:
-        {
-            id: "node/42",
-            amenity: "charging_station",
-        }
+
+State.state = new State(AllKnownLayouts.allKnownLayouts.get("bookcases"))
+const feature = {
+    "type": "Feature",
+    "properties": {},
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            4.21875,
+            50.958426723359935
+        ]
+    }
 }
-State.state.allElements.addOrGetElement(geojson)
-const tags = State.state.allElements.getEventSourceById("node/42")
-new FeatureInfoBox(
-    tags,
-    AllKnownLayers.sharedLayers.get("charging_station")
-).AttachTo("maindiv")
+MinimapImplementation.initialize()
+new MoveWizard(
+    feature,
+    State.state).AttachTo("maindiv")

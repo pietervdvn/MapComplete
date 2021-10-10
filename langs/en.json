@@ -36,6 +36,16 @@
         "splitTitle": "Choose on the map where to split this road",
         "hasBeenSplit": "This way has been split"
     },
+    "move": {
+        "loginToMove": "You must be logged in to move a point",
+        "inviteToMove": "Move this point",
+        "selectReason": "Why do you move this object?",
+        "reasonRelocation": "The object has been relocated to a totally different location",
+        "reasonInaccurate": "The location of this object is inaccurate and should be moved a few meter",
+        "onlyPoints": "Only points can be moved",
+        "isWay": "This feature is a way",
+        "cancel": "Cancel move"
+    },
     "delete": {
         "delete": "Delete",
         "cancel": "Cancel",

@@ -151,7 +151,9 @@
           },
           "freeform": {
             "key": "addr:housenumber",
-            "addExtraTags": ["nohousenumber="]
+            "addExtraTags": [
+              "nohousenumber="
+            ]
           },
           "mappings": [
             {
