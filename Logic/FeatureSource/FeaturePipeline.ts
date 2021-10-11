@@ -155,7 +155,7 @@ export default class FeaturePipeline {
                             tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
                         }
                     })
-                }else{
+                } else {
                     new RegisteringAllFromFeatureSourceActor(src)
                     perLayerHierarchy.get(id).registerTile(src)
                     src.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(src))
@@ -200,7 +200,7 @@ export default class FeaturePipeline {
         new PerLayerFeatureSourceSplitter(state.filteredLayers,
             (source) => TiledFeatureSource.createHierarchy(source, {
                 layer: source.layer,
-                minZoomLevel: this.osmSourceZoomLevel,
+                minZoomLevel: source.layer.layerDef.minzoom,
                 dontEnforceMinZoom: true,
                 maxFeatureCount: state.layoutToUse.clustering.minNeededElements,
                 maxZoomLevel: state.layoutToUse.clustering.maxZoom,
@@ -233,7 +233,7 @@ export default class FeaturePipeline {
 
 
         // Whenever fresh data comes in, we need to update the metatagging
-        self.newDataLoadedSignal.stabilized(1000).addCallback(src => {
+        self.newDataLoadedSignal.stabilized(1000).addCallback(_ => {
             self.updateAllMetaTagging()
         })
 
@@ -270,15 +270,15 @@ export default class FeaturePipeline {
         const self = this
         return this.state.currentBounds.map(bbox => {
             if (bbox === undefined) {
-                return
+                return undefined
             }
             if (!isSufficientlyZoomed.data) {
-                return;
+                return undefined;
             }
             const osmSourceZoomLevel = self.osmSourceZoomLevel
             const range = bbox.containingTileRange(osmSourceZoomLevel)
             const tileIndexes = []
-            if (range.total > 100) {
+            if (range.total >= 100) {
                 // Too much tiles!
                 return []
             }
@@ -288,7 +288,7 @@ export default class FeaturePipeline {
                 if (oldestDate !== undefined && oldestDate > this.oldestAllowedDate) {
                     console.debug("Skipping tile", osmSourceZoomLevel, x, y, "as a decently fresh one is available")
                     // The cached tiles contain decently fresh data
-                    return;
+                    return undefined;
                 }
                 tileIndexes.push(i)
             })
@@ -321,29 +321,30 @@ export default class FeaturePipeline {
             }
 
             const range = bbox.containingTileRange(zoom)
-            if (range.total > 100) {
+            if (range.total >= 5000) {
                 return false
             }
             const self = this;
             const allFreshnesses = Tiles.MapRange(range, (x, y) => self.freshnessForVisibleLayers(zoom, x, y))
             return allFreshnesses.some(freshness => freshness === undefined || freshness < this.oldestAllowedDate)
-
         }, [state.locationControl])
 
         const self = this;
         const updater = new OverpassFeatureSource(state,
             {
-                padToTiles: this.osmSourceZoomLevel,
+                padToTiles: state.locationControl.map(l => Math.min(15, l.zoom + 1)),
                 relationTracker: this.relationTracker,
                 isActive: useOsmApi.map(b => !b && overpassIsActive.data, [overpassIsActive]),
-                onBboxLoaded: ((bbox, date, downloadedLayers) => {
-                    Tiles.MapRange(bbox.containingTileRange(self.osmSourceZoomLevel), (x, y) => {
+                onBboxLoaded: (bbox, date, downloadedLayers, paddedToZoomLevel) => {
+                    Tiles.MapRange(bbox.containingTileRange(paddedToZoomLevel), (x, y) => {
+                       const tileIndex =  Tiles.tile_index(paddedToZoomLevel, x, y)
                         downloadedLayers.forEach(layer => {
-                            SaveTileToLocalStorageActor.MarkVisited(layer.id, Tiles.tile_index(this.osmSourceZoomLevel, x, y), date)
+                            self.freshnesses.get(layer.id).addTileLoad(tileIndex, date)
+                            SaveTileToLocalStorageActor.MarkVisited(layer.id, tileIndex, date)
                         })
                     })
 
-                })
+                }
             });
 
 
@@ -379,7 +380,6 @@ export default class FeaturePipeline {
 
     private updateAllMetaTagging() {
         const self = this;
-        console.log("Reupdating all metatagging")
         this.perLayerHierarchy.forEach(hierarchy => {
             hierarchy.loadedTiles.forEach(src => {
                 self.applyMetaTags(src)

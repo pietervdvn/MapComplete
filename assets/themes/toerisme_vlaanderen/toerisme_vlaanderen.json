@@ -37,6 +37,7 @@
     {
       "builtin": [
         "bench",
+        "picnic_table",
         "waste_basket"
       ],
       "override": {

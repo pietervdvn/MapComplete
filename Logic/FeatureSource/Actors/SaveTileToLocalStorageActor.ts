@@ -7,7 +7,7 @@ import {FeatureSourceForLayer} from "../FeatureSource";
 
 export default class SaveTileToLocalStorageActor {
     public static readonly storageKey: string = "cached-features";
-    public static readonly formatVersion: string = "1"
+    public static readonly formatVersion: string = "2"
 
     constructor(source: FeatureSourceForLayer, tileIndex: number) {
         source.features.addCallbackAndRunD(features => {
@@ -31,6 +31,6 @@ export default class SaveTileToLocalStorageActor {
         const key = `${SaveTileToLocalStorageActor.storageKey}-${layerId}-${tileId}`
         localStorage.setItem(key + "-time", JSON.stringify(freshness.getTime()))
         localStorage.setItem(key + "-format", SaveTileToLocalStorageActor.formatVersion)
-
+        console.log("Marked ", key, "as visited")
     }
 }

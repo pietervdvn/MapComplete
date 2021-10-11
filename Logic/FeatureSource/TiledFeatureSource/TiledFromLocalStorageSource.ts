@@ -1,14 +1,16 @@
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
-import Loc from "../../../Models/Loc";
 import TileHierarchy from "./TileHierarchy";
 import SaveTileToLocalStorageActor from "../Actors/SaveTileToLocalStorageActor";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
 
 export default class TiledFromLocalStorageSource implements TileHierarchy<FeatureSourceForLayer & Tiled> {
-    public loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
+    public readonly loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
+    private readonly layer: FilteredLayer;
+    private readonly handleFeatureSource: (src: FeatureSourceForLayer & Tiled, index: number) => void;
+    private readonly undefinedTiles: Set<number>;
 
     public static GetFreshnesses(layerId: string): Map<number, Date> {
         const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layerId + "-"
@@ -29,14 +31,15 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
     constructor(layer: FilteredLayer,
                 handleFeatureSource: (src: FeatureSourceForLayer & Tiled, index: number) => void,
                 state: {
-                    locationControl: UIEventSource<Loc>
-                    leafletMap: any
+                    currentBounds: UIEventSource<BBox>
                 }) {
+        this.layer = layer;
+        this.handleFeatureSource = handleFeatureSource;
 
-        const undefinedTiles = new Set<number>()
+        
+        this.undefinedTiles = new Set<number>()
         const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-"
-        // @ts-ignore
-        const indexes: number[] = Object.keys(localStorage)
+        const knownTiles: number[] = Object.keys(localStorage)
             .filter(key => {
                 return key.startsWith(prefix) && !key.endsWith("-time") && !key.endsWith("-format");
             })
@@ -45,8 +48,8 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
             })
             .filter(i => !isNaN(i))
 
-        console.debug("Layer", layer.layerDef.id, "has following tiles in available in localstorage", indexes.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
-        for (const index of indexes) {
+        console.debug("Layer", layer.layerDef.id, "has following tiles in available in localstorage", knownTiles.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
+        for (const index of knownTiles) {
 
             const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" + index;
             const version = localStorage.getItem(prefix + "-format")
@@ -55,77 +58,53 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                 localStorage.removeItem(prefix)
                 localStorage.removeItem(prefix+"-time")
                 localStorage.removeItem(prefix+"-format")
-                undefinedTiles.add(index)
+              this.  undefinedTiles.add(index)
                 console.log("Dropped old format tile", prefix)
             }
         }
 
-        const zLevels = indexes.map(i => i % 100)
-        const indexesSet = new Set(indexes)
-        const maxZoom = Math.max(...zLevels)
-        const minZoom = Math.min(...zLevels)
-        const self = this;
+        const self = this
+        state.currentBounds.map(bounds => {
 
-        const neededTiles = state.locationControl.map(
-            location => {
-                if (!layer.isDisplayed.data) {
-                    // No need to download! - the layer is disabled
-                    return undefined;
-                }
-
-                if (location.zoom < layer.layerDef.minzoom) {
-                    // No need to download! - the layer is disabled
-                    return undefined;
-                }
-
-                // Yup, this is cheating to just get the bounds here
-                const bounds = state.leafletMap.data?.getBounds()
-                if (bounds === undefined) {
-                    // We'll retry later
-                    return undefined
-                }
-
-                const needed = []
-                for (let z = minZoom; z <= maxZoom; z++) {
-
-                    const tileRange = Tiles.TileRangeBetween(z, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
-                    const neededZ = Tiles.MapRange(tileRange, (x, y) => Tiles.tile_index(z, x, y))
-                        .filter(i => !self.loadedTiles.has(i) && !undefinedTiles.has(i) && indexesSet.has(i))
-                    needed.push(...neededZ)
-                }
-
-                if (needed.length === 0) {
-                    return undefined
-                }
-                return needed
+            if(bounds === undefined){
+                return;
             }
-            , [layer.isDisplayed, state.leafletMap]).stabilized(50);
-
-        neededTiles.addCallbackAndRunD(neededIndexes => {
-            for (const neededIndex of neededIndexes) {
-                // We load the features from localStorage
-                try {
-                    const key = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" + neededIndex
-                    const data = localStorage.getItem(key)
-                    const features = JSON.parse(data)
-                    const src = {
-                        layer: layer,
-                        features: new UIEventSource<{ feature: any; freshness: Date }[]>(features),
-                        name: "FromLocalStorage(" + key + ")",
-                        tileIndex: neededIndex,
-                        bbox: BBox.fromTileIndex(neededIndex)
-                    }
-                    handleFeatureSource(src, neededIndex)
-                    self.loadedTiles.set(neededIndex, src)
-                } catch (e) {
-                    console.error("Could not load data tile from local storage due to", e)
-                    undefinedTiles.add(neededIndex)
+            for (const knownTile of knownTiles) {
+                
+                if(this.loadedTiles.has(knownTile)){
+                    continue;
                 }
+                if(this.undefinedTiles.has(knownTile)){
+                    continue;
+                }
+                
+                if(!bounds.overlapsWith(BBox.fromTileIndex(knownTile))){
+                    continue;
+                }
+                self.loadTile(knownTile)
             }
-
-
         })
 
+    }
+    
+    private loadTile( neededIndex: number){
+        try {
+            const key = SaveTileToLocalStorageActor.storageKey + "-" + this.layer.layerDef.id + "-" + neededIndex
+            const data = localStorage.getItem(key)
+            const features = JSON.parse(data)
+            const src = {
+                layer: this.layer,
+                features: new UIEventSource<{ feature: any; freshness: Date }[]>(features),
+                name: "FromLocalStorage(" + key + ")",
+                tileIndex: neededIndex,
+                bbox: BBox.fromTileIndex(neededIndex)
+            }
+            this.handleFeatureSource(src, neededIndex)
+            this.loadedTiles.set(neededIndex, src)
+        } catch (e) {
+            console.error("Could not load data tile from local storage due to", e)
+            this.undefinedTiles.add(neededIndex)
+        }
     }
 
 
