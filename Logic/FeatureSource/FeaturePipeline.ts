@@ -58,7 +58,7 @@ export default class FeaturePipeline {
     private readonly freshnesses = new Map<string, TileFreshnessCalculator>();
 
     private readonly oldestAllowedDate: Date = new Date(new Date().getTime() - 60 * 60 * 24 * 30 * 1000);
-    private readonly osmSourceZoomLevel = 14
+    private readonly osmSourceZoomLevel = 15
 
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
@@ -147,7 +147,7 @@ export default class FeaturePipeline {
                     // We split them up into tiles anyway as it is an OSM source
                     TiledFeatureSource.createHierarchy(src, {
                         layer: src.layer,
-                        minZoomLevel: 14,
+                        minZoomLevel: this.osmSourceZoomLevel,
                         dontEnforceMinZoom: true,
                         registerTile: (tile) => {
                             new RegisteringAllFromFeatureSourceActor(tile)
@@ -200,7 +200,7 @@ export default class FeaturePipeline {
         new PerLayerFeatureSourceSplitter(state.filteredLayers,
             (source) => TiledFeatureSource.createHierarchy(source, {
                 layer: source.layer,
-                minZoomLevel: 14,
+                minZoomLevel: this.osmSourceZoomLevel,
                 dontEnforceMinZoom: true,
                 maxFeatureCount: state.layoutToUse.clustering.minNeededElements,
                 maxZoomLevel: state.layoutToUse.clustering.maxZoom,
@@ -333,6 +333,7 @@ export default class FeaturePipeline {
         const self = this;
         const updater = new OverpassFeatureSource(state,
             {
+                padToTiles: this.osmSourceZoomLevel,
                 relationTracker: this.relationTracker,
                 isActive: useOsmApi.map(b => !b && overpassIsActive.data, [overpassIsActive]),
                 onBboxLoaded: ((bbox, date, downloadedLayers) => {

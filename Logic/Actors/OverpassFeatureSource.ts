@@ -39,7 +39,7 @@ export default class OverpassFeatureSource implements FeatureSource {
     }
     private readonly _isActive: UIEventSource<boolean>;
     private readonly onBboxLoaded: (bbox: BBox, date: Date, layers: LayerConfig[]) => void;
-
+    private readonly padToTiles : number
     constructor(
         state: {
             readonly locationControl: UIEventSource<Loc>,
@@ -49,7 +49,8 @@ export default class OverpassFeatureSource implements FeatureSource {
             readonly overpassMaxZoom: UIEventSource<number>,
             readonly currentBounds: UIEventSource<BBox>
         },
-        options?: {
+        options: {
+            padToTiles: number,
             isActive?: UIEventSource<boolean>,
             relationTracker: RelationsTracker,
             onBboxLoaded?: (bbox: BBox, date: Date, layers: LayerConfig[]) => void
@@ -57,6 +58,7 @@ export default class OverpassFeatureSource implements FeatureSource {
 
         this.state = state
         this._isActive = options.isActive;
+        this.padToTiles = options.padToTiles;
         this.onBboxLoaded = options.onBboxLoaded
         this.relationsTracker = options.relationTracker
         const self = this;
@@ -109,11 +111,14 @@ export default class OverpassFeatureSource implements FeatureSource {
             return undefined;
         }
 
-        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(14);
+        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(this.padToTiles);
 
         if (bounds === undefined) {
             return undefined;
         }
+        console.log("Current bounds are", this.state.currentBounds.data," padded with",this.state.layoutToUse.widenFactor+":", 
+            this.state.currentBounds.data.pad(this.state.layoutToUse.widenFactor),
+            "Tileexpanded: ",this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(this.padToTiles) )
         const self = this;
         
         
