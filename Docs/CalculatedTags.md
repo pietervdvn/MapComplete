@@ -26,11 +26,15 @@ The following values are always calculated, by default, by MapComplete and are a
 The latitude and longitude of the point (or centerpoint in the case of a way/area)
 
 
+
+
 ### _surface, _surface:ha 
 
 
 
 The surface area of the feature, in square meters and in hectare. Not set on points and ways
+
+This is a lazy metatag and is only calculated when needed
 
 
 ### _length, _length:km 
@@ -40,11 +44,15 @@ The surface area of the feature, in square meters and in hectare. Not set on poi
 The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter
 
 
+
+
 ### Theme-defined keys 
 
 
 
 If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)
+
+
 
 
 ### _country 
@@ -54,18 +62,15 @@ If 'units' is defined in the layoutConfig, then this metatagger will rewrite the
 The country code of the property (with latlon2country)
 
 
+
+
 ### _isOpen, _isOpen:description 
 
 
 
 If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')
 
-
-### _width:needed, _width:needed:no_pedestrians, _width:difference 
-
-
-
-Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present
+This is a lazy metatag and is only calculated when needed
 
 
 ### _direction:numerical, _direction:leftright 
@@ -75,6 +80,8 @@ Legacy for a specific project calculating the needed width for safe traffic on a
 _direction:numerical is a normalized, numerical direction based on 'camera:direction' or on 'direction'; it is only present if a valid direction is found (e.g. 38.5 or NE). _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map
 
 
+
+
 ### _now:date, _now:datetime, _loaded:date, _loaded:_datetime 
 
 
@@ -82,11 +89,15 @@ _direction:numerical is a normalized, numerical direction based on 'camera:direc
 Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely
 
 
+
+
 ### _last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number 
 
 
 
 Information about the last edit of this object.
+
+
 
 
  Calculating tags with Javascript 
@@ -140,15 +151,15 @@ Some advanced functions are available on **feat** as well:
   - distanceTo
   - overlapWith
   - closest
+  - closestn
   - memberships
-  - score
  
 ### distanceTo 
 
  Calculates the distance between the feature and a specified point in kilometer. The input should either be a pair of coordinates, a geojson feature or the ID of an object 
 
-  0. longitude
-  1. latitude
+  0. feature OR featureID OR longitude
+  1. undefined OR latitude
  
 ### overlapWith 
 
@@ -160,9 +171,20 @@ For example to get all objects which overlap or embed from a layer, use `_contai
  
 ### closest 
 
- Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. 
+ Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet laoded) 
 
   0. list of features
+ 
+### closestn 
+
+ Given either a list of geojson features or a single layer name, gives the n closest objects which are nearest to the feature (excluding the feature itself). In the case of ways/polygons, only the centerpoint is considered. Returns a list of `{feat: geojson, distance:number}` the empty list if nothing is found (or not yet loaded)
+
+If a 'unique tag key' is given, the tag with this key will only appear once (e.g. if 'name' is given, all features will have a different name) 
+
+  0. list of features or layer name
+  1. amount of features
+  2. unique tag key (optional)
+  3. maxDistanceInMeters (optional)
  
 ### memberships 
 
@@ -171,12 +193,4 @@ For example to get all objects which overlap or embed from a layer, use `_contai
 For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')` 
 
 
- 
-### score 
-
- Given the path of an aspected routing json file, will calculate the score. This score is wrapped in a UIEventSource, so for further calculations, use `.map(score => ...)`
-
-For example: `_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')` 
-
-  0. path
  Generated from SimpleMetaTagger, ExtraFunction

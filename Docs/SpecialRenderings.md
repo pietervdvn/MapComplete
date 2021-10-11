@@ -5,11 +5,6 @@
 ### all_tags 
 
  Prints all key-value pairs of the object - used for debugging 
-
-name | default | description
------- | --------- | -------------
-
- 
 #### Example usage 
 
  `{all_tags()}` 
@@ -20,11 +15,10 @@ name | default | description
 name | default | description
 ------ | --------- | -------------
 image key/prefix | image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... 
-smart search | true | Also include images given via 'Wikidata', 'wikimedia_commons' and 'mapillary
  
 #### Example usage 
 
- `{image_carousel(image,true)}` 
+ `{image_carousel(image)}` 
 ### image_upload 
 
  Creates a button where a user can upload an image to IMGUR 
@@ -36,6 +30,17 @@ image-key | image | Image tag to add the URL to (or image-tag:0, image-tag:1 whe
 #### Example usage 
 
  `{image_upload(image)}` 
+### wikipedia 
+
+ A box showing the corresponding wikipedia article - based on the wikidata tag 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikipediaFor | wikidata | Use the wikidata entry from this key to show the wikipedia article for
+ 
+#### Example usage 
+
+ `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height 
 ### minimap 
 
  A small map showing the selected feature. Note that no styling is applied, wrap this in a div 
@@ -128,16 +133,25 @@ If you want to import a dataset, make sure that:
 
 1. The dataset to import has a suitable license
 2. The community has been informed of the import
-3. The theme will filter out duplicate nodes4. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed 
+3. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed
+
+There are also some technicalities in your theme to keep in mind:
+
+1. The new point will be added and will flow through the program as any other new point as if it came from OSM.
+    This means that there should be a layer which will match the new tags and which will display it.
+2. The original point from your geojson layer will gain the tag '_imported=yes'.
+    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
+3. There should be a way for the theme to detect previously imported points, even after reloading.
+    A reference number to the original dataset is an excellen way to do this    
+ 
 
 name | default | description
 ------ | --------- | -------------
-tags | undefined | Tags to copy-specification. This contains one or more pairs (seperated by a `;`), e.g. `amenity=fast_food; addr:housenumber={number}`. This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. (Hint: prepare these values, e.g. with calculatedTags)
+tags | undefined | Tags to copy-specification. This contains one or more pairs (seperated by a `;`), e.g. `amenity=fast_food; addr:housenumber=$number`. This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. (Hint: prepare these values, e.g. with calculatedTags)
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
+minzoom | 18 | How far the contributor must zoom in before being able to import the point
  
 #### Example usage 
 
- `{import_button(,Import this data into OpenStreetMap,./assets/svg/addSmall.svg)}`
- 
-Generated from UI/SpecialVisualisations.ts
+ `{import_button(,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,18)}` Generated from UI/SpecialVisualisations.ts
