@@ -31,7 +31,12 @@
         "minzoom": 16
       }
     },
-    "charging_station",
+    {
+      "builtin":  "charging_station",
+      "override": {
+        "minzoom": 16
+      }
+    },
     "toilet",
     "bench",
     "waste_basket",
