@@ -26,7 +26,7 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
 import Minimap from "./Base/Minimap";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
-import WikipediaBox from "./WikipediaBox";
+import WikipediaBox from "./Wikipedia/WikipediaBox";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 
 export interface SpecialVisualization {
