@@ -3,6 +3,23 @@
         "description": {
             "question": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>"
         },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Os cães são permitidos"
+                },
+                "1": {
+                    "then": "Os cães <b>não</b> são permitidos"
+                },
+                "2": {
+                    "then": "Os cães são permitidos, mas têm de ser presos pela trela"
+                },
+                "3": {
+                    "then": "Os cães são permitidos e podem correr livremente"
+                }
+            },
+            "question": "Os cães são permitidos neste estabelecimento?"
+        },
         "email": {
             "question": "Qual é o endereço de e-mail de {name}?"
         },
@@ -61,23 +78,6 @@
                 }
             },
             "question": "Este lugar é acessível a utilizadores de cadeiras de rodas?"
-        },
-        "dog-access": {
-            "mappings": {
-                "0": {
-                    "then": "Os cães são permitidos"
-                },
-                "1": {
-                    "then": "Os cães <b>não</b> são permitidos"
-                },
-                "2": {
-                    "then": "Os cães são permitidos, mas têm de ser presos pela trela"
-                },
-                "3": {
-                    "then": "Os cães são permitidos e podem correr livremente"
-                }
-            },
-            "question": "Os cães são permitidos neste estabelecimento?"
         }
     }
 }

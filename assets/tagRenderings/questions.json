@@ -8,10 +8,6 @@
       "en": "What is the corresponding Wikidata entity?",
       "nl": "Welk Wikidata-item komt overeen met dit object?"
     },
-    "freeform": {
-      "key": "wikidata",
-      "type": "wikidata"
-    },
     "mappings": [
       {
         "if": "wikidata=",
@@ -21,7 +17,11 @@
         },
         "hideInAnswer": true
       }
-    ]
+    ],
+    "freeform": {
+      "key": "wikidata",
+      "type": "wikidata"
+    }
   },
   "reviews": {
     "render": "{reviews()}"
@@ -62,10 +62,6 @@
   },
   "wikipedialink": {
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "freeform": {
-      "key": "wikidata",
-      "type": "wikidata"
-    },
     "question": {
       "en": "What is the corresponding item on Wikipedia?",
       "nl": "Welk Wikipedia-artikel beschrijft dit object?"
@@ -78,7 +74,11 @@
           "nl": "Nog geen Wikipedia-artikel bekend"
         }
       }
-    ]
+    ],
+    "freeform": {
+      "key": "wikidata",
+      "type": "wikidata"
+    }
   },
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
@@ -190,7 +190,8 @@
   "dog-access": {
     "question": {
       "en": "Are dogs allowed in this business?",
-      "nl": "Zijn honden toegelaten in deze zaak?"
+      "nl": "Zijn honden toegelaten in deze zaak?",
+      "pt": "Os cães são permitidos neste estabelecimento?"
     },
     "mappings": [
       {
@@ -281,7 +282,8 @@
       "en": "Which methods of payment are accepted here?",
       "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
       "pt": "Que métodos de pagamento são aceites aqui?",
-      "pt_BR": "Quais métodos de pagamento são aceitos aqui?"
+      "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+      "id": "Metode pembayaran manakah yang di terima disini?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -326,7 +328,8 @@
       "pl": "Na jakim poziomie znajduje się ta funkcja?",
       "pt_BR": "Em que nível esse recurso está localizado?",
       "ru": "На каком этаже находится этот объект?",
-      "pt": "Em que nível se encontra este elemento?"
+      "pt": "Em que nível se encontra este elemento?",
+      "id": "Pada tingkat apa fitur ini diletakkan?"
     },
     "render": {
       "en": "Located on the {level}th floor",

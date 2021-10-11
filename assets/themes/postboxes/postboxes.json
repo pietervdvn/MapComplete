@@ -73,7 +73,7 @@
       ],
       "wayHandling": 2,
       "deletion": {
-        "softDeletion": {
+        "softDeletionTags": {
           "and": [
             "amenity=",
             "razed:amenity=post_box"

@@ -161,7 +161,7 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  overpassUrl 
 -------------
 
- Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter The default value is _https://overpass-api.de/api/interpreter_
+ Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter The default value is _https://overpass-api.de/api/interpreter,https://overpass.kumi.systems/api/interpreter,https://overpass.openstreetmap.ru/cgi/interpreter_
 
 
  overpassTimeout 
