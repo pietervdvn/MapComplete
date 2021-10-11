@@ -19,16 +19,16 @@
   "startLon": 9.9937,
   "startZoom": 13,
   "widenFactor": 1.0,
-  "socialImage": "",
+  "defaultBackgroundId": "CartoDB.Voyager",
   "clustering": {
-    "minNeededFeatures": 100,
-    "maxZoom": 14
+    "maxZoom": 14,
+    "minNeededObjects": 100
   },
   "layers": [
     {
       "id": "postboxes",
       "name": {
-        "en": "Postbox"
+        "en": "Postboxes"
       },
       "minzoom": 12,
       "source": {
@@ -71,12 +71,20 @@
           }
         }
       ],
-      "wayHandling": 2
+      "wayHandling": 2,
+      "deletion": {
+        "softDeletion": {
+          "and": [
+            "amenity=",
+            "razed:amenity=post_box"
+          ]
+        }
+      }
     },
     {
       "id": "postoffices",
       "name": {
-        "en": "A layer containing post offices"
+        "en": "Post offices"
       },
       "minzoom": 12,
       "source": {
