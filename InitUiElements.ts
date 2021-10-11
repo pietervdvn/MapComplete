@@ -454,7 +454,7 @@ export class InitUiElements {
                             return false;
                         }
 
-                        if (z >= clustering.maxZoom) {
+                        if (z > clustering.maxZoom) {
                             return true
                         }
 
