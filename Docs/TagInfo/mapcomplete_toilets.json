@@ -139,23 +139,24 @@
       "value": "dedicated_room"
     },
     {
-      "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Open Toilet Map')"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Toilets' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "no&service:bicycle:cleaning:charge="
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Toilets' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "no&"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Toilets' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "key": "toilets:handwashing",
+      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "yes"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "no"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'Toilet paper is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "no"
     }
   ]
 }

@@ -63,6 +63,7 @@ export class AllKnownLayouts {
     private static AllLayouts(): Map<string, LayoutConfig> {
         const dict: Map<string, LayoutConfig> = new Map();
         for (const layoutConfigJson of known_themes.themes) {
+            // @ts-ignore
             const layout = new LayoutConfig(layoutConfigJson, true)
 
             if (layout.id === "cyclofix") {
