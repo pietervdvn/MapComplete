@@ -1,0 +1,174 @@
+{
+  "id": "postboxes",
+  "title": {
+    "en": "Postbox and Post Office Map"
+  },
+  "shortDescription": {
+    "en": "A map showing postboxes and post offices"
+  },
+  "description": {
+    "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. "
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/postboxes/postbox.svg",
+  "version": "0",
+  "startLat": 53.5511,
+  "startLon": 9.9937,
+  "startZoom": 13,
+  "widenFactor": 1.5,
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "clustering": {
+    "maxZoom": 14,
+    "minNeededElements": 100
+  },
+  "layers": [
+    {
+      "id": "postboxes",
+      "name": {
+        "en": "Postboxes"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": "amenity=post_box"
+      },
+      "title": {
+        "render": {
+          "en": "Postbox"
+        }
+      },
+      "description": {
+        "en": "The layer showing postboxes."
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "id": "minimap",
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        }
+      ],
+      "icon": {
+        "render": "./assets/themes/postboxes/postbox.svg"
+      },
+      "width": {
+        "render": "1"
+      },
+      "iconSize": {
+        "render": "40,40,bottom"
+      },
+      "color": {
+        "render": "#DADADA"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=post_box"
+          ],
+          "title": {
+            "en": "postbox"
+          }
+        }
+      ],
+      "wayHandling": 2,
+      "deletion": {
+        "softDeletion": {
+          "and": [
+            "amenity=",
+            "razed:amenity=post_box"
+          ]
+        }
+      }
+    },
+    {
+      "id": "postoffices",
+      "name": {
+        "en": "Post offices"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": "amenity=post_office"
+      },
+      "title": {
+        "render": {
+          "en": "Post Office"
+        }
+      },
+      "description": {
+        "en": "A layer showing post offices."
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "id": "minimap",
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        },
+        {
+          "render": {
+            "en": "Opening Hours: {opening_hours_table()}"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours"
+          },
+          "question": {
+            "en": "What are the opening hours for this post office?"
+          },
+          "mappings": [
+            {
+              "if": "opening_hours=24/7",
+              "then": {
+                "en": "24/7 opened (including holidays)"
+              }
+            }
+          ],
+          "id": "OH"
+        }
+      ],
+      "icon": {
+        "render": "square:white;./assets/themes/postboxes/post_office.svg"
+      },
+      "iconOverlays": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen",
+          "badge": true
+        }
+      ],
+      "width": {
+        "render": "1"
+      },
+      "iconSize": {
+        "render": "40,40,bottom"
+      },
+      "color": {
+        "render": "#DADADA"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=post_office"
+          ],
+          "title": {
+            "en": "Post Office"
+          }
+        }
+      ],
+      "wayHandling": 2,
+      "filter": [
+        {
+          "id": "is_open",
+          "options": [
+            {
+              "question": {
+                "en": "Currently open"
+              },
+              "osmTags": "_isOpen=yes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

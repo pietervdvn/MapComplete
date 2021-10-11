@@ -15,7 +15,7 @@ export class Tiles {
     public static MapRange<T>(tileRange: TileRange, f: (x: number, y: number) => T): T[] {
         const result: T[] = []
         const total = tileRange.total
-        if(total > 5000){
+        if(total > 100000){
             throw "Tilerange too big"
         }
         for (let x = tileRange.xstart; x <= tileRange.xend; x++) {

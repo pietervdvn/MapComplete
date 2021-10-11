@@ -1358,11 +1358,6 @@
                 "title": {
                     "render": "Known address"
                 }
-            },
-            "2": {
-                "title": {
-                    "render": "{name}"
-                }
             }
         },
         "shortDescription": "Help to build an open dataset of UK addresses",

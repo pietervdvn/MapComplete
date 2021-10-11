@@ -55,7 +55,11 @@ export default class SpecialVisualizations {
                             if (!tags.hasOwnProperty(key)) {
                                 continue
                             }
-                            parts.push([key, tags[key] ?? "<b>undefined</b>"]);
+                            let v = tags[key]
+                            if(v === ""){
+                                v = "<b>empty string</b>"
+                            }
+                            parts.push([key, v ?? "<b>undefined</b>"]);
                         }
                         
                         for(const key of calculatedTags){

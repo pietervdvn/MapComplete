@@ -8,6 +8,25 @@
         },
         "website": {
             "question": "Apa situs web dari {name}?"
+        },
+        "payment-options": {
+            "mappings": {
+                "1": {
+                    "then": "Disini menerima pembayaran dengan kartu"
+                },
+                "0": {
+                    "then": "Disini menerima pembayaran tunai"
+                }
+            },
+            "question": "Metode pembayaran manakah yang di terima disini?"
+        },
+        "level": {
+            "question": "Pada tingkat apa fitur ini diletakkan?",
+            "mappings": {
+                "3": {
+                    "then": "Berlokasi di lantai pertama"
+                }
+            }
         }
     }
 }

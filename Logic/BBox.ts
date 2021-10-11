@@ -116,16 +116,15 @@ export class BBox {
         return this.minLat
     }
 
-    pad(factor: number): BBox {
-        const latDiff = this.maxLat - this.minLat
-        const lat = (this.maxLat + this.minLat) / 2
-        const lonDiff = this.maxLon - this.minLon
-        const lon = (this.maxLon + this.minLon) / 2
+    pad(factor: number, maxIncrease = 2): BBox {
+        
+        const latDiff = Math.min(maxIncrease / 2, Math.abs(this.maxLat - this.minLat) * factor)
+        const lonDiff =Math.min(maxIncrease / 2, Math.abs(this.maxLon - this.minLon) * factor)
         return new BBox([[
-            lon - lonDiff * factor,
-            lat - latDiff * factor
-        ], [lon + lonDiff * factor,
-            lat + latDiff * factor]])
+            this.minLon - lonDiff,
+            this.minLat  - latDiff
+        ], [this.maxLon + lonDiff,
+            this.maxLat + latDiff]])
     }
 
     toLeaflet() {

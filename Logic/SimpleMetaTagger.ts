@@ -209,7 +209,7 @@ export default class SimpleMetaTagger {
                 configurable: true,
                 get: () => {
                     delete feature.properties._isOpen
-                    feature.properties._isOpen = ""
+                    feature.properties._isOpen = undefined
                     const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
                     tagsSource.addCallbackAndRunD(tags => {
                         if (tags.opening_hours === undefined || tags._country === undefined) {
@@ -230,7 +230,8 @@ export default class SimpleMetaTagger {
                                 const oldNextChange = tags["_isOpen:nextTrigger"] ?? 0;
 
                                 if (oldNextChange > (new Date()).getTime() &&
-                                    tags["_isOpen:oldvalue"] === tags["opening_hours"]) {
+                                    tags["_isOpen:oldvalue"] === tags["opening_hours"]
+                                && tags["_isOpen"] !== undefined) {
                                     // Already calculated and should not yet be triggered
                                     return false;
                                 }
@@ -267,7 +268,7 @@ export default class SimpleMetaTagger {
                         }
 
                     })
-                    return feature.properties["_isOpen"]
+                    return undefined
                 }
             })
 

@@ -90,7 +90,7 @@ export default class LayoutConfig {
                 throw "Widenfactor too small"
             }else{
                 // Unofficial themes get away with this
-                console.warn("Detected a very small widenfactor, bumping this above 1.")
+                console.warn("Detected a very small widenfactor for theme ", this.id ,", bumping this above 1.")
                 json.widenFactor = json.widenFactor + 1
             }
         }

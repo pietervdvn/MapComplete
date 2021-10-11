@@ -454,7 +454,7 @@ export class InitUiElements {
                             return false;
                         }
 
-                        if (z >= clustering.maxZoom) {
+                        if (z > clustering.maxZoom) {
                             return true
                         }
 
@@ -489,7 +489,7 @@ export class InitUiElements {
                         }
 
                         return true
-                    }, [State.state.currentBounds]
+                    }, [State.state.currentBounds, source.layer.isDisplayed]
                 )
 
                 new ShowDataLayer(
