@@ -13,13 +13,17 @@
     "en"
   ],
   "maintainer": "",
-  "icon": "./assets/themes/postboxes_postoffices/postbox.svg",
+  "icon": "./assets/themes/postboxes/postbox.svg",
   "version": "0",
   "startLat": 53.5511,
   "startLon": 9.9937,
   "startZoom": 13,
-  "widenFactor": 0.05,
+  "widenFactor": 1.0,
   "socialImage": "",
+  "clustering": {
+    "minNeededFeatures": 100,
+    "maxZoom": 14
+  },
   "layers": [
     {
       "id": "postboxes",
@@ -27,10 +31,8 @@
         "en": "Postbox"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "and": [
-          "amenity=post_box"
-        ]
+      "source": {
+        "osmTags": "amenity=post_box"
       },
       "title": {
         "render": {
@@ -43,11 +45,12 @@
       "tagRenderings": [
         "images",
         {
+          "id": "minimap",
           "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
         }
       ],
       "icon": {
-        "render": "./assets/themes/postboxes_postoffices/postbox.svg"
+        "render": "./assets/themes/postboxes/postbox.svg"
       },
       "width": {
         "render": "1"
@@ -64,11 +67,11 @@
             "amenity=post_box"
           ],
           "title": {
-            "en": "Postbox"
+            "en": "postbox"
           }
         }
       ],
-      "wayHandling": "both outline and center"
+      "wayHandling": 2
     },
     {
       "id": "postoffices",
@@ -76,10 +79,8 @@
         "en": "A layer containing post offices"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "and": [
-          "amenity=post_office"
-        ]
+      "source": {
+        "osmTags": "amenity=post_office"
       },
       "title": {
         "render": {
@@ -92,11 +93,12 @@
       "tagRenderings": [
         "images",
         {
+          "id": "minimap",
           "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
         },
         {
           "render": {
-            "en": "Opening Hours: {opening_hours}"
+            "en": "Opening Hours: {opening_hours_table()}"
           },
           "freeform": {
             "key": "opening_hours",
@@ -117,7 +119,7 @@
         }
       ],
       "icon": {
-        "render": "./assets/themes/postboxes_postoffices/post_office.svg"
+        "render": "./assets/themes/postboxes/post_office.svg"
       },
       "width": {
         "render": "1"
@@ -140,6 +142,5 @@
       ],
       "wayHandling": 2
     }
-  ],
-  "roamingRenderings": []
+  ]
 }
