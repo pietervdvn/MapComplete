@@ -1,138 +1,145 @@
 {
-	"id": "postboxes",
-	"title": {
-		"en": "Postbox and Post Office Map"
-	},
-	"shortDescription": {
-		"en": "A map showing postboxes and post offices"
-	},
-	"description": {
-		"en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :) "
-	},
-	"language": [
-		"en"
-	],
-	"maintainer": "",
-	"icon": "./assets/themes/postboxes_postoffices/postbox.svg",
-	"version": "0",
-	"startLat": 53.5511,
-	"startLon": 9.9937,
-	"startZoom": 13,
-	"widenFactor": 0.05,
-	"socialImage": "",
-	"layers": [{
-			"id": "postboxes",
-			"name": {
-				"en": "Postbox"
-			},
-			"minzoom": 12,
-			"overpassTags": {
-				"and": [
-					"amenity=post_box"
-				]
-			},
-			"title": {
-				"render": {
-					"en": "Postbox"
-				}
-			},
-			"description": {
-				"en": "The layer showing postboxes."
-			},
-			"tagRenderings": [
-				"images",
-                {
-					"render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
-				}
-			],
-			"icon": {
-				"render": "./assets/themes/postboxes_postoffices/postbox.svg"
-			},
-			"width": {
-				"render": "1"
-			},
-			"iconSize": {
-				"render": "40,40,bottom"
-			},
-			"color": {
-				"render": "#DADADA"
-			},
-			"presets": [{
-				"tags": [
-					"amenity=post_box"
-				],
-				"title": {
-					"en": "Postbox"
-				}
-			}],
-			"wayHandling": "both outline and center"
-		},
-		{
-			"id": "postoffices",
-			"name": {
-				"en": "A layer containing post offices"
-			},
-			"minzoom": 12,
-			"overpassTags": {
-				"and": [
-					"amenity=post_office"
-				]
-			},
-			"title": {
-				"render": {
-					"en": "Post Office"
-				}
-			},
-			"description": {
-				"en": "A layer showing post offices."
-			},
-			"tagRenderings": [
-                "images",
-                {
-                	"render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
-                },
-                {
-				"#": "OH",
-				"render": {
-					"en": "Opening Hours: {opening_hours}"
-				},
-				"freeform": {
-					"key": "opening_hours",
-					"type": "opening_hours"
-				},
-				"question": {
-					"en": "What are the opening hours for this post office?"
-				},
-                "mappings": [{
-                    "if": "opening_hours=24/7",
-                    "then": {
-						"en": "24/7 opened (including holidays)"
-					}
-				}]
-				}
-			],
-			"icon": {
-				"render": "./assets/themes/postboxes_postoffices/post_office.svg"
-			},
-			"width": {
-				"render": "1"
-			},
-			"iconSize": {
-				"render": "40,40,bottom"
-			},
-			"color": {
-				"render": "#DADADA"
-			},
-			"presets": [{
-				"tags": [
-					"amenity=post_office"
-				],
-				"title": {
-					"en": "Post Office"
-				}
-			}],
-			"wayHandling": 2
-		}
-	],
-	"roamingRenderings": []
+  "id": "postboxes",
+  "title": {
+    "en": "Postbox and Post Office Map"
+  },
+  "shortDescription": {
+    "en": "A map showing postboxes and post offices"
+  },
+  "description": {
+    "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :) "
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/postboxes_postoffices/postbox.svg",
+  "version": "0",
+  "startLat": 53.5511,
+  "startLon": 9.9937,
+  "startZoom": 13,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "postboxes",
+      "name": {
+        "en": "Postbox"
+      },
+      "minzoom": 12,
+      "overpassTags": {
+        "and": [
+          "amenity=post_box"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Postbox"
+        }
+      },
+      "description": {
+        "en": "The layer showing postboxes."
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        }
+      ],
+      "icon": {
+        "render": "./assets/themes/postboxes_postoffices/postbox.svg"
+      },
+      "width": {
+        "render": "1"
+      },
+      "iconSize": {
+        "render": "40,40,bottom"
+      },
+      "color": {
+        "render": "#DADADA"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=post_box"
+          ],
+          "title": {
+            "en": "Postbox"
+          }
+        }
+      ],
+      "wayHandling": "both outline and center"
+    },
+    {
+      "id": "postoffices",
+      "name": {
+        "en": "A layer containing post offices"
+      },
+      "minzoom": 12,
+      "overpassTags": {
+        "and": [
+          "amenity=post_office"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Post Office"
+        }
+      },
+      "description": {
+        "en": "A layer showing post offices."
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        },
+        {
+          "render": {
+            "en": "Opening Hours: {opening_hours}"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours"
+          },
+          "question": {
+            "en": "What are the opening hours for this post office?"
+          },
+          "mappings": [
+            {
+              "if": "opening_hours=24/7",
+              "then": {
+                "en": "24/7 opened (including holidays)"
+              }
+            }
+          ],
+          "id": "OH"
+        }
+      ],
+      "icon": {
+        "render": "./assets/themes/postboxes_postoffices/post_office.svg"
+      },
+      "width": {
+        "render": "1"
+      },
+      "iconSize": {
+        "render": "40,40,bottom"
+      },
+      "color": {
+        "render": "#DADADA"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=post_office"
+          ],
+          "title": {
+            "en": "Post Office"
+          }
+        }
+      ],
+      "wayHandling": 2
+    }
+  ],
+  "roamingRenderings": []
 }

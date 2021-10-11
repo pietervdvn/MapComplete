@@ -4,7 +4,6 @@
  * Technically, more an Actor then a featuresource, but it fits more neatly this ay
  */
 import {FeatureSourceForLayer} from "../FeatureSource";
-import SimpleMetaTagger from "../../SimpleMetaTagger";
 
 export default class SaveTileToLocalStorageActor {
     public static readonly storageKey: string = "cached-features";
