@@ -489,7 +489,7 @@ export class InitUiElements {
                         }
 
                         return true
-                    }, [State.state.currentBounds]
+                    }, [State.state.currentBounds, source.layer.isDisplayed]
                 )
 
                 new ShowDataLayer(

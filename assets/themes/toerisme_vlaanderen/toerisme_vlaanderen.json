@@ -14,7 +14,10 @@
     "nl": "Een kaart om toeristisch relevante info op aan te duiden"
   },
   "description": {
-    "nl": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken.<br/><br/>Met de steun van Toerisme Vlaanderen<img src='./assets/themes/toerisme_vlaanderen/logo.png' />"
+    "nl": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken."
+  },
+  "descriptionTail": {
+    "nl": "Met de steun van Toerisme Vlaanderen<img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
   "icon": "./assets/svg/star.svg",
   "startZoom": 8,
@@ -28,16 +31,38 @@
         "cafe_pub"
       ],
       "override": {
-        "minzoom": 16
+        "minzoom": 17
       }
     },
-    "charging_station",
-    "toilet",
-    "bench",
-    "waste_basket",
-    "bike_repair_station",
-    "binocular",
-    "observation_tower"
+    {
+      "builtin": [
+        "bench",
+        "picnic_table",
+        "waste_basket"
+      ],
+      "override": {
+        "minzoom": 19
+      }
+    },
+    {
+      "builtin": [
+        "charging_station",
+        "toilet",
+        "bike_repair_station"
+      ],
+      "override": {
+        "minzoom": 14
+      }
+    },
+    {
+      "builtin": [
+        "binocular",
+        "observation_tower"
+      ],
+      "override": {
+        "minzoom": 10
+      }
+    }
   ],
   "hideFromOverview": true
 }
