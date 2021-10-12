@@ -34,7 +34,8 @@
   "hideFromOverview": true,
   "clustering": {
     "#": "Disable clustering for this theme",
-    "maxZoom": 1
+    "maxZoom": 1,
+    "hideBoxesAboveMinZoom": true
   },
   "layers": [
     {
@@ -109,7 +110,7 @@
             ]
           },
           "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 12,
+          "geoJsonZoomLevel": 10,
           "isOsmCache": true
         },
         "minzoom": "13",

@@ -237,6 +237,12 @@ export interface LayoutConfigJson {
          * If clustering is defined, defaults to 25
          */
         minNeededElements?: number
+        /**
+         * By default, a box is shown indicating the number of features even if the map is zoomed out beyond the minzoom of the layer.
+         * This flag switches this behaviour to not show these boxes.
+         */
+        hideClustersAboveMinZoom?: boolean;
+
     },
 
     /**
@@ -253,7 +259,7 @@ export interface LayoutConfigJson {
      * If set to [[lat0, lon0], [lat1, lon1]], the map will not scroll outside of those bounds.
      * Off by default, which will enable panning to the entire world
      */
-    lockLocation?: boolean | [[number, number], [number, number]];
+    lockLocation?: boolean | [[number, number], [number, number]] | number[][];
 
     enableUserBadge?: boolean;
     enableShareScreen?: boolean;

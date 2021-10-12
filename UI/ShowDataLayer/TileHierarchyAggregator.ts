@@ -153,13 +153,18 @@ export class TileHierarchyAggregator implements FeatureSource {
         }
     }
     
-    getCountsForZoom(locationControl: UIEventSource<{ zoom : number }>, cutoff: number = 0) : FeatureSource{
+    getCountsForZoom(clusteringConfig: {maxZoom: number}, locationControl: UIEventSource<{ zoom : number }>, cutoff: number = 0) : FeatureSource{
         const self = this
-        
+        const empty = []
         return new StaticFeatureSource(
             locationControl.map(loc => {
-                const features = []
                 const targetZoom = loc.zoom
+                
+                if(targetZoom > clusteringConfig.maxZoom){
+                    return empty
+                }
+                
+                const features = []
                 self.visitSubTiles(aggr => {
                     if(aggr.totalValue < cutoff) {
                         return false
