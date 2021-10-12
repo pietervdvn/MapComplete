@@ -423,13 +423,13 @@ export class InitUiElements {
             flayers.push(flayer);
         }
         state.filteredLayers = new UIEventSource<FilteredLayer[]>(flayers);
-        
-        
 
 
+
+        const clustering = State.state.layoutToUse.clustering
         const clusterCounter = TileHierarchyAggregator.createHierarchy()
         new ShowDataLayer({
-            features: clusterCounter.getCountsForZoom(State.state.locationControl, State.state.layoutToUse.clustering.minNeededElements),
+            features: clusterCounter.getCountsForZoom(clustering, State.state.locationControl, State.state.layoutToUse.clustering.minNeededElements),
             leafletMap: State.state.leafletMap,
             layerToShow: ShowTileInfo.styling,
             enablePopups: false
@@ -440,7 +440,7 @@ export class InitUiElements {
 
                 clusterCounter.addTile(source)
 
-                const clustering = State.state.layoutToUse.clustering
+                // Do show features indicates if the 'showDataLayer' should be shown
                 const doShowFeatures = source.features.map(
                     f => {
                         const z = State.state.locationControl.data.zoom
@@ -448,6 +448,18 @@ export class InitUiElements {
                         if(!source.layer.isDisplayed.data){
                             return false;
                         }
+
+                        const bounds = State.state.currentBounds.data
+                        if(bounds === undefined){
+                            // Map is not yet displayed
+                            return false;
+                        }
+
+                        if (!source.bbox.overlapsWith(bounds)) {
+                            // Not within range -> features are hidden
+                            return false
+                        }
+
 
                         if (z < source.layer.layerDef.minzoom) {
                             // Layer is always hidden for this zoom level
@@ -473,21 +485,13 @@ export class InitUiElements {
                             }
 
                             if (clusterCounter.getTile(Tiles.tile_index(tileZ, tileX, tileY))?.totalValue > clustering.minNeededElements) {
+                                // To much elements
                                 return false
                             }
                         }
 
 
-                        const bounds = State.state.currentBounds.data
-                        if(bounds === undefined){
-                            // Map is not yet displayed
-                            return false;
-                        }
-                        if (!source.bbox.overlapsWith(bounds)) {
-                            // Not within range
-                            return false
-                        }
-
+                      
                         return true
                     }, [State.state.currentBounds, source.layer.isDisplayed]
                 )

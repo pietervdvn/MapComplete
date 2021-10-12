@@ -29,7 +29,7 @@ export default class LayoutConfig {
     public layers: LayerConfig[];
     public readonly clustering?: {
         maxZoom: number,
-        minNeededElements: number
+        minNeededElements: number,
     };
     public readonly hideFromOverview: boolean;
     public lockLocation: boolean | [[number, number], [number, number]];
@@ -137,12 +137,17 @@ export default class LayoutConfig {
 
         this.clustering = {
             maxZoom: 16,
-            minNeededElements: 25
+            minNeededElements: 25,
         };
-        if (json.clustering) {
+        if(json.clustering === false){
+            this.clustering = {
+                maxZoom: 0,
+                minNeededElements: 100000,
+            };
+        }else         if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
-                minNeededElements: json.clustering.minNeededElements ?? 25
+                minNeededElements: json.clustering.minNeededElements ?? 25,
             }
         }
 
@@ -151,7 +156,7 @@ export default class LayoutConfig {
         if (json.hideInOverview) {
             throw "The json for " + this.id + " contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
         }
-        this.lockLocation = json.lockLocation ?? undefined;
+        this.lockLocation = <[[number, number], [number, number]]> json.lockLocation ?? undefined;
         this.enableUserBadge = json.enableUserBadge ?? true;
         this.enableShareScreen = json.enableShareScreen ?? true;
         this.enableMoreQuests = json.enableMoreQuests ?? true;

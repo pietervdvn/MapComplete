@@ -36,9 +36,6 @@
         "splitTitle": "Choose on the map where to split this road",
         "hasBeenSplit": "This way has been split"
     },
-    "multi_apply": {
-        "autoApply": "When changing the attributes {attr_names}, these attributes will automatically be changed on {count} other objects too"
-    },
     "delete": {
         "delete": "Delete",
         "cancel": "Cancel",
@@ -123,7 +120,7 @@
         },
         "morescreen": {
             "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
-            "requestATheme": "If you want a custom-built quest, request it in the issue tracker",
+            "requestATheme": "If you want a custom-built theme, request it in the issue tracker",
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Create your own MapComplete theme from scratch"
         },
@@ -253,5 +250,8 @@
         "tos": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>",
         "attribution": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
         "plz_login": "Login to leave a review"
+    },
+    "multi_apply": {
+        "autoApply": "When changing the attributes {attr_names}, these attributes will automatically be changed on {count} other objects too"
     }
 }

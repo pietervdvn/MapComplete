@@ -32,8 +32,8 @@
   "enablePdfDownload": true,
   "enableDownload": true,
   "hideFromOverview": true,
-  "clustering": {
     "#": "Disable clustering for this theme",
+  "clustering": {
     "maxZoom": 0
   },
   "layers": [
@@ -112,7 +112,7 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "minzoom": "13",
+        "minzoom": 10,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/trail.svg",
           "mappings": [

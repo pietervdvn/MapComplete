@@ -28,8 +28,8 @@
         "render": "<div class='rounded-full text-xl font-bold' style='width: 2rem; height: 2rem; background: white'>{count}</div>",
         "mappings": [
             {
-                "if": "count>99",
-                "then": "<div class='rounded-full text-xl font-bold flex flex-col' style='width: 2.5rem; height: 2.5rem; background: white'>&gt;99</div>"
+                "if": "count>1000",
+                "then": "<div class='rounded-full text-xl font-bold flex flex-col' style='width: 2.5rem; height: 2.5rem; background: white'>{kilocount}K</div>"
             }
         ]
     }

@@ -20,6 +20,7 @@ import FeatureSource, {FeatureSourceForLayer} from "../Logic/FeatureSource/Featu
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource";
 import Constants from "../Models/Constants";
+import {GeoOperations} from "../Logic/GeoOperations";
 
 
 ScriptUtils.fixUtils()
@@ -73,6 +74,7 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
     let downloaded = 0
     let failed = 0
     let skipped = 0
+    const startTime = new Date().getTime()
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
             downloaded++;
@@ -82,7 +84,11 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
                 skipped++
                 continue;
             }
-            console.log("x:", (x - r.xstart), "/", (r.xend - r.xstart), "; y:", (y - r.ystart), "/", (r.yend - r.ystart), "; total: ", downloaded, "/", r.total, "failed: ", failed, "skipped: ", skipped)
+            const runningSeconds = (new Date().getTime() - startTime) / 1000
+            const resting = failed + (r.total - downloaded)
+            const perTile=   (runningSeconds / (downloaded - skipped))
+            const estimated =Math.floor(resting * perTile)
+            console.log("total: ", downloaded, "/", r.total, "failed: ", failed, "skipped: ", skipped, "running time: ",Utils.toHumanTime(runningSeconds)+"s", "estimated left: ", Utils.toHumanTime(estimated), "("+Math.floor(perTile)+"s/tile)")
 
             const boundsArr = Tiles.tile_bounds(r.zoomlevel, x, y)
             const bounds = {
@@ -91,7 +97,7 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
                 east: Math.max(boundsArr[0][1], boundsArr[1][1]),
                 west: Math.min(boundsArr[0][1], boundsArr[1][1])
             }
-            const overpass = createOverpassObject(theme, relationTracker, Constants.defaultOverpassUrls[(downloaded + failed) % Constants.defaultOverpassUrls.length])
+            const overpass = createOverpassObject(theme, relationTracker, Constants.defaultOverpassUrls[(failed) % Constants.defaultOverpassUrls.length])
             const url = overpass.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
             try {
@@ -170,11 +176,11 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
 /**
  * Load all the tiles into memory from disk
  */
-function postProcess(allFeatures: FeatureSource, theme: LayoutConfig, relationsTracker: RelationsTracker, targetdir: string) {
-
-
+function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relationsTracker: RelationsTracker, targetdir: string, pointsOnlyLayers: string[]) {
     function handleLayer(source: FeatureSourceForLayer) {
         const layer = source.layer.layerDef;
+        const targetZoomLevel = layer.source.geojsonZoomLevel ?? 0
+        
         const layerId = layer.id
         if (layer.source.isOsmCacheLayer !== true) {
             return;
@@ -200,13 +206,10 @@ function postProcess(allFeatures: FeatureSource, theme: LayoutConfig, relationsT
         // At this point, we have all the features of the entire area.
         // However, we want to export them per tile of a fixed size, so we use a dynamicTileSOurce to split it up
         TiledFeatureSource.createHierarchy(source, {
-            minZoomLevel: 14,
-            maxZoomLevel: 14,
+            minZoomLevel: targetZoomLevel,
+            maxZoomLevel: targetZoomLevel,
             maxFeatureCount: undefined,
             registerTile: tile => {
-                if (tile.z < 12) {
-                    return;
-                }
                 if (tile.features.data.length === 0) {
                     return
                 }
@@ -229,7 +232,7 @@ function postProcess(allFeatures: FeatureSource, theme: LayoutConfig, relationsT
 
         // All the tiles are written at this point
         // Only thing left to do is to create the index
-        const path = targetdir + "_" + layerId + "_overview.json"
+        const path = targetdir + "_" + layerId + "_" + targetZoomLevel + "_overview.json"
         const perX = {}
         createdTiles.map(i => Tiles.tile_from_index(i)).forEach(([z, x, y]) => {
             const key = "" + x
@@ -240,7 +243,18 @@ function postProcess(allFeatures: FeatureSource, theme: LayoutConfig, relationsT
         })
         writeFileSync(path, JSON.stringify(perX))
 
-
+        // And, if needed, to create a points-only layer
+        if(pointsOnlyLayers.indexOf(layer.id) >= 0){
+            const features = source.features.data.map(f => f.feature)
+            const points = features.map(feature => GeoOperations.centerpoint(feature))
+            console.log("Writing points overview for ", layerId)
+            const targetPath = targetdir+"_"+layerId+"_points.geojson"
+            // This is the geojson file containing all features for this tile
+            writeFileSync(targetPath, JSON.stringify({
+                type: "FeatureCollection",
+                features: points
+            }, null, " "))
+        }
     }
 
     new PerLayerFeatureSourceSplitter(
@@ -255,10 +269,11 @@ function postProcess(allFeatures: FeatureSource, theme: LayoutConfig, relationsT
 }
 
 
+
 async function main(args: string[]) {
 
     if (args.length == 0) {
-        console.error("Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name]")
+        console.error("Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...]")
         return;
     }
     const themeName = args[0]
@@ -268,6 +283,12 @@ async function main(args: string[]) {
     const lon0 = Number(args[4])
     const lat1 = Number(args[5])
     const lon1 = Number(args[6])
+    
+    let generatePointLayersFor = []
+    if(args[7] == "--generate-point-overview"){
+        generatePointLayersFor = args[8].split(",")
+    }
+    
 
     const tileRange = Tiles.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
 
@@ -293,7 +314,7 @@ async function main(args: string[]) {
 
     const extraFeatures = await downloadExtraData(theme);
     const allFeaturesSource = loadAllTiles(targetdir, tileRange, theme, extraFeatures)
-    postProcess(allFeaturesSource, theme, relationTracker, targetdir)
+    sliceToTiles(allFeaturesSource, theme, relationTracker, targetdir, generatePointLayersFor)
 
 }
 
