@@ -23,6 +23,10 @@
         "en": "All objects which have an etymology known",
         "nl": "Alle lagen met een gelinkt etymology"
     },
+    "calculatedTags": [
+        "_same_name_ids=feat.closestn('*', 250, undefined, 2500)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]",
+        "_total_segments=JSON.parse(feat.properties._same_name_ids).length + 1 // Plus one for the feature itself"
+    ],
     "tagRenderings": [
         {
             "id": "etymology-images-from-wikipedia",
@@ -113,6 +117,18 @@
             "render": {
                 "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
                 "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+            }
+        },
+        {
+            "id": "minimap",
+            "render": {
+                "*": "{minimap(18, id, _same_name_ids):height:10rem}"
+            }
+        },
+        {
+            "id": "etymology_multi_apply",
+            "render": {
+                "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
             }
         },
         "wikipedia"

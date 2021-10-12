@@ -217,7 +217,7 @@ export class Translation extends BaseUIElement {
 
     static fromMap(transl: Map<string, string>) {
         const translations = {}
-        transl.forEach((value, key) => {
+        transl?.forEach((value, key) => {
             translations[key] = value
         })
         return new Translation(translations);

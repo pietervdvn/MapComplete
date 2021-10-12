@@ -27,7 +27,6 @@ export class WikidataImageProvider extends ImageProvider {
         if(entity === undefined){
             return []
         }
-        console.log("Entity:", entity)
        
         const allImages : Promise<ProvidedImage>[] = []
         // P18 is the claim 'depicted in this image'

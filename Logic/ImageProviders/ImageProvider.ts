@@ -55,7 +55,6 @@ export default abstract class ImageProvider {
                     }
                     seenValues.add(value)
                     this.ExtractUrls(key, value).then(promises => {
-                        console.log("Got ", promises.length, "promises for", value,"by",self.constructor.name)
                         for (const promise of promises ?? []) {
                             if (promise === undefined) {
                                 continue

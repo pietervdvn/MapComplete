@@ -2504,6 +2504,9 @@
         "description": "All objects which have an etymology known",
         "name": "Has etymolgy",
         "tagRenderings": {
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
+            },
             "simple etymology": {
                 "mappings": {
                     "0": {

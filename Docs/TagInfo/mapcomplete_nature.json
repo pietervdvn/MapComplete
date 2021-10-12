@@ -498,6 +498,15 @@
       "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'description:0' (in the MapComplete.osm.be theme 'De Natuur in')"
     },
     {
+      "key": "wikidata",
+      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'De Natuur in')"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'Natuurgebied' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key wikidata.",
+      "value": ""
+    },
+    {
       "key": "service:bicycle:cleaning:charge",
       "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
     },

@@ -53,7 +53,6 @@ export default class WikidataPreviewBox extends VariableUiElement {
             ]).SetClass("flex"), 
             Wikidata.IdToArticle(wikidata.id) ,true).SetClass("must-link")
     
-        console.log(wikidata)
         let info = new Combine( [
             new Combine([Translation.fromMap(wikidata.labels).SetClass("font-bold"), 
                 link]).SetClass("flex justify-between"),

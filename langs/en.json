@@ -36,6 +36,9 @@
         "splitTitle": "Choose on the map where to split this road",
         "hasBeenSplit": "This way has been split"
     },
+    "multi_apply": {
+        "autoApply": "When changing the attributes {attr_names}, these attributes will automatically be changed on {count} other objects too"
+    },
     "delete": {
         "delete": "Delete",
         "cancel": "Cancel",
