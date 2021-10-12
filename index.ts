@@ -63,7 +63,7 @@ if (path !== "index.html" && path !== "") {
 defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout, "The layout to load into MapComplete").data;
 let layoutToUse: LayoutConfig = AllKnownLayouts.allKnownLayouts.get(defaultLayout.toLowerCase());
 
-if(layoutToUse.id === "natuurpunt"){
+if(layoutToUse?.id === "natuurpunt"){
     localStorage.clear()
 }
 
