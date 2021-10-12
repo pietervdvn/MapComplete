@@ -74,6 +74,7 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
     let downloaded = 0
     let failed = 0
     let skipped = 0
+    const startTime = new Date().getTime()
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
             downloaded++;
@@ -83,7 +84,11 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
                 skipped++
                 continue;
             }
-            console.log("x:", (x - r.xstart), "/", (r.xend - r.xstart), "; y:", (y - r.ystart), "/", (r.yend - r.ystart), "; total: ", downloaded, "/", r.total, "failed: ", failed, "skipped: ", skipped)
+            const runningSeconds = (new Date().getTime() - startTime) / 1000
+            const resting = failed + (r.total - downloaded)
+            const perTile=   (runningSeconds / (downloaded - skipped))
+            const estimated =Math.floor(resting * perTile)
+            console.log("total: ", downloaded, "/", r.total, "failed: ", failed, "skipped: ", skipped, "running time: ",Utils.toHumanTime(runningSeconds)+"s", "estimated left: ", Utils.toHumanTime(estimated), "("+Math.floor(perTile)+"s/tile)")
 
             const boundsArr = Tiles.tile_bounds(r.zoomlevel, x, y)
             const bounds = {
@@ -92,7 +97,7 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
                 east: Math.max(boundsArr[0][1], boundsArr[1][1]),
                 west: Math.min(boundsArr[0][1], boundsArr[1][1])
             }
-            const overpass = createOverpassObject(theme, relationTracker, Constants.defaultOverpassUrls[(downloaded + failed) % Constants.defaultOverpassUrls.length])
+            const overpass = createOverpassObject(theme, relationTracker, Constants.defaultOverpassUrls[(failed) % Constants.defaultOverpassUrls.length])
             const url = overpass.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
             try {
