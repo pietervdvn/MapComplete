@@ -34,7 +34,7 @@
   "hideFromOverview": true,
   "clustering": {
     "#": "Disable clustering for this theme",
-    "maxZoom": 0
+    "maxZoom": 1
   },
   "layers": [
     {
