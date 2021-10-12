@@ -21,7 +21,9 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
             throw "Invalid layer: geojsonSource expected"
         }
         
-        const whitelistUrl = source.geojsonSource.replace("{z}_{x}_{y}.geojson", "overview.json")
+        const whitelistUrl = source.geojsonSource
+            .replace("{z}", ""+source.geojsonZoomLevel)
+            .replace("{x}_{y}.geojson", "overview.json")
             .replace("{layer}",layer.layerDef.id)
         
         let whitelist = undefined
