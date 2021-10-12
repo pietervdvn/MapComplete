@@ -36,16 +36,6 @@
         "splitTitle": "Choose on the map where to split this road",
         "hasBeenSplit": "This way has been split"
     },
-    "move": {
-        "loginToMove": "You must be logged in to move a point",
-        "inviteToMove": "Move this point",
-        "selectReason": "Why do you move this object?",
-        "reasonRelocation": "The object has been relocated to a totally different location",
-        "reasonInaccurate": "The location of this object is inaccurate and should be moved a few meter",
-        "onlyPoints": "Only points can be moved",
-        "isWay": "This feature is a way",
-        "cancel": "Cancel move"
-    },
     "delete": {
         "delete": "Delete",
         "cancel": "Cancel",
@@ -130,7 +120,7 @@
         },
         "morescreen": {
             "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
-            "requestATheme": "If you want a custom-built quest, request it in the issue tracker",
+            "requestATheme": "If you want a custom-built theme, request it in the issue tracker",
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Create your own MapComplete theme from scratch"
         },
@@ -231,7 +221,7 @@
         },
         "wikipedia": {
             "wikipediaboxTitle": "Wikipedia",
-            "failed":"Loading the wikipedia entry failed",
+            "failed": "Loading the wikipedia entry failed",
             "loading": "Loading Wikipedia...",
             "noWikipediaPage": "This wikidata item has no corresponding wikipedia page yet."
         }
@@ -256,5 +246,15 @@
         "tos": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>",
         "attribution": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
         "plz_login": "Login to leave a review"
+    },
+    "move": {
+        "loginToMove": "You must be logged in to move a point",
+        "inviteToMove": "Move this point",
+        "selectReason": "Why do you move this object?",
+        "reasonRelocation": "The object has been relocated to a totally different location",
+        "reasonInaccurate": "The location of this object is inaccurate and should be moved a few meter",
+        "onlyPoints": "Only points can be moved",
+        "isWay": "This feature is a way",
+        "cancel": "Cancel move"
     }
 }

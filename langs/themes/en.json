@@ -1371,5 +1371,56 @@
         "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
         "shortDescription": "A map with waste baskets",
         "title": "Waste Basket"
+    },
+    "postboxes": {
+        "description": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
+        "layers": {
+            "0": {
+                "description": "The layer showing postboxes.",
+                "name": "Postboxes",
+                "presets": {
+                    "0": {
+                        "title": "postbox"
+                    }
+                },
+                "title": {
+                    "render": "Postbox"
+                }
+            },
+            "1": {
+                "description": "A layer showing post offices.",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Currently open"
+                            }
+                        }
+                    }
+                },
+                "name": "Post offices",
+                "presets": {
+                    "0": {
+                        "title": "Post Office"
+                    }
+                },
+                "tagRenderings": {
+                    "OH": {
+                        "mappings": {
+                            "0": {
+                                "then": "24/7 opened (including holidays)"
+                            }
+                        },
+                        "question": "What are the opening hours for this post office?",
+                        "render": "Opening Hours: {opening_hours_table()}"
+                    }
+                },
+                "title": {
+                    "render": "Post Office"
+                }
+            }
+        },
+        "shortDescription": "A map showing postboxes and post offices",
+        "title": "Postbox and Post Office Map"
     }
 }

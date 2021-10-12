@@ -50,13 +50,11 @@ export default class ThemeIntroductionPanel extends Combine {
             )
 
         super([
-            layout.description.Clone(),
-            "<br/><br/>",
+            layout.description.Clone().SetClass("blcok mb-4"),
             toTheMap,
-            loginStatus,
-            layout.descriptionTail?.Clone(),
-            "<br/>",
-            languagePicker,
+            loginStatus.SetClass("block"),
+            layout.descriptionTail?.Clone().SetClass("block mt-4"),
+            languagePicker?.SetClass("block mt-4"),
             ...layout.CustomCodeSnippets()
         ])
 

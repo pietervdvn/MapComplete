@@ -38,8 +38,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         readonly currentBounds: UIEventSource<BBox>
     }
     private readonly _isActive: UIEventSource<boolean>;
-    private readonly onBboxLoaded: (bbox: BBox, date: Date, layers: LayerConfig[]) => void;
-
+    private readonly onBboxLoaded: (bbox: BBox, date: Date, layers: LayerConfig[], zoomlevel: number) => void;
     constructor(
         state: {
             readonly locationControl: UIEventSource<Loc>,
@@ -49,10 +48,11 @@ export default class OverpassFeatureSource implements FeatureSource {
             readonly overpassMaxZoom: UIEventSource<number>,
             readonly currentBounds: UIEventSource<BBox>
         },
-        options?: {
+        options: {
+            padToTiles: UIEventSource<number>,
             isActive?: UIEventSource<boolean>,
             relationTracker: RelationsTracker,
-            onBboxLoaded?: (bbox: BBox, date: Date, layers: LayerConfig[]) => void
+            onBboxLoaded?: (bbox: BBox, date: Date, layers: LayerConfig[], zoomlevel: number) => void
         }) {
 
         this.state = state
@@ -61,7 +61,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         this.relationsTracker = options.relationTracker
         const self = this;
         state.currentBounds.addCallback(_ => {
-            self.update()
+            self.update(options.padToTiles.data)
         })
 
     }
@@ -84,21 +84,21 @@ export default class OverpassFeatureSource implements FeatureSource {
         return new Overpass(new Or(filters), extraScripts, interpreterUrl, this.state.overpassTimeout, this.relationsTracker);
     }
 
-    private update() {
+    private update(paddedZoomLevel: number) {
         if (!this._isActive.data) {
             return;
         }
         const self = this;
-        this.updateAsync().then(bboxDate => {
+        this.updateAsync(paddedZoomLevel).then(bboxDate => {
             if(bboxDate === undefined || self.onBboxLoaded === undefined){
                 return;
             }
             const [bbox, date, layers] = bboxDate
-            self.onBboxLoaded(bbox, date, layers)
+            self.onBboxLoaded(bbox, date, layers, paddedZoomLevel)
         })
     }
 
-    private async updateAsync(): Promise<[BBox, Date, LayerConfig[]]> {
+    private async updateAsync(padToZoomLevel: number): Promise<[BBox, Date, LayerConfig[]]> {
         if (this.runningQuery.data) {
             console.log("Still running a query, not updating");
             return undefined;
@@ -109,7 +109,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             return undefined;
         }
 
-        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(14);
+        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(padToZoomLevel);
 
         if (bounds === undefined) {
             return undefined;

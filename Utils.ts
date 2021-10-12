@@ -78,18 +78,6 @@ export class Utils {
         return res;
     }
 
-    static DoEvery(millis: number, f: (() => void)) {
-        if (Utils.runningFromConsole) {
-            return;
-        }
-        window.setTimeout(
-            function () {
-                f();
-                Utils.DoEvery(millis, f);
-            }
-            , millis)
-    }
-
     public static NoNull<T>(array: T[]): T[] {
         const ls: T[] = [];
         for (const t of array) {
@@ -439,6 +427,20 @@ export class Utils {
         return new Promise((resolve) => {
             window.setTimeout(resolve, timeMillis);
         })
+    }
+    
+    public static toHumanTime(seconds): string{
+        seconds = Math.floor(seconds)
+        let minutes = Math.floor(seconds / 60)
+        seconds = seconds % 60
+        let hours = Math.floor(minutes / 60)
+        minutes = minutes % 60
+        let days = Math.floor(hours / 24)
+        hours = hours % 24
+        if(days > 0){
+            return days+"days"+" "+hours+"h"
+        }
+            return hours+":"+Utils.TwoDigits(minutes)+":"+Utils.TwoDigits(seconds)
     }
 }
 

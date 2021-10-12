@@ -4,11 +4,10 @@
  * Technically, more an Actor then a featuresource, but it fits more neatly this ay
  */
 import {FeatureSourceForLayer} from "../FeatureSource";
-import SimpleMetaTagger from "../../SimpleMetaTagger";
 
 export default class SaveTileToLocalStorageActor {
     public static readonly storageKey: string = "cached-features";
-    public static readonly formatVersion: string = "1"
+    public static readonly formatVersion: string = "2"
 
     constructor(source: FeatureSourceForLayer, tileIndex: number) {
         
@@ -37,6 +36,5 @@ export default class SaveTileToLocalStorageActor {
         }catch(e){
             console.error("Could not mark tile ", key, "as visited")
         }
-
     }
 }

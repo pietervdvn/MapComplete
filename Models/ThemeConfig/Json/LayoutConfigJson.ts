@@ -1,6 +1,5 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {LayerConfigJson} from "./LayerConfigJson";
-import UnitConfigJson from "./UnitConfigJson";
 
 /**
  * Defines the entire theme.
@@ -253,7 +252,7 @@ export interface LayoutConfigJson {
      * If set to [[lat0, lon0], [lat1, lon1]], the map will not scroll outside of those bounds.
      * Off by default, which will enable panning to the entire world
      */
-    lockLocation?: boolean | [[number, number], [number, number]];
+    lockLocation?: boolean | [[number, number], [number, number]] | number[][];
 
     enableUserBadge?: boolean;
     enableShareScreen?: boolean;

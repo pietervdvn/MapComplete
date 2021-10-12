@@ -156,35 +156,40 @@
   "dog-access": {
     "question": {
       "en": "Are dogs allowed in this business?",
-      "nl": "Zijn honden toegelaten in deze zaak?"
+      "nl": "Zijn honden toegelaten in deze zaak?",
+      "pt": "Os cães são permitidos neste estabelecimento?"
     },
     "mappings": [
       {
         "if": "dog=yes",
         "then": {
           "en": "Dogs are allowed",
-          "nl": "honden zijn toegelaten"
+          "nl": "honden zijn toegelaten",
+          "pt": "Os cães são permitidos"
         }
       },
       {
         "if": "dog=no",
         "then": {
           "en": "Dogs are <b>not</b> allowed",
-          "nl": "honden zijn <b>niet</b> toegelaten"
+          "nl": "honden zijn <b>niet</b> toegelaten",
+          "pt": "Os cães <b>não</b> são permitidos"
         }
       },
       {
         "if": "dog=leashed",
         "then": {
           "en": "Dogs are allowed, but they have to be leashed",
-          "nl": "honden zijn <b>enkel aan de leiband</b> welkom"
+          "nl": "honden zijn <b>enkel aan de leiband</b> welkom",
+          "pt": "Os cães são permitidos, mas têm de ser presos pela trela"
         }
       },
       {
         "if": "dog=unleashed",
         "then": {
           "en": "Dogs are allowed and can run around freely",
-          "nl": "honden zijn welkom en mogen vrij rondlopen"
+          "nl": "honden zijn welkom en mogen vrij rondlopen",
+          "pt": "Os cães são permitidos e podem correr livremente"
         }
       }
     ]
@@ -247,7 +252,8 @@
       "en": "Which methods of payment are accepted here?",
       "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
       "pt": "Que métodos de pagamento são aceites aqui?",
-      "pt_BR": "Quais métodos de pagamento são aceitos aqui?"
+      "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+      "id": "Metode pembayaran manakah yang di terima disini?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -258,7 +264,8 @@
           "en": "Cash is accepted here",
           "nl": "Cash geld wordt hier aanvaard",
           "pt": "Aceitam pagamento com dinheiro aqui",
-          "pt_BR": "Dinheiro é aceito aqui"
+          "pt_BR": "Dinheiro é aceito aqui",
+          "id": "Disini menerima pembayaran tunai"
         }
       },
       {
@@ -268,7 +275,8 @@
           "en": "Payment cards are accepted here",
           "nl": "Betalen met bankkaarten kan hier",
           "pt": "Aceitam pagamento com cartões bancários aqui",
-          "pt_BR": "Cartões de pagamento são aceitos aqui"
+          "pt_BR": "Cartões de pagamento são aceitos aqui",
+          "id": "Disini menerima pembayaran dengan kartu"
         }
       }
     ]
@@ -292,7 +300,8 @@
       "pl": "Na jakim poziomie znajduje się ta funkcja?",
       "pt_BR": "Em que nível esse recurso está localizado?",
       "ru": "На каком этаже находится этот объект?",
-      "pt": "Em que nível se encontra este elemento?"
+      "pt": "Em que nível se encontra este elemento?",
+      "id": "Pada tingkat apa fitur ini diletakkan?"
     },
     "render": {
       "en": "Located on the {level}th floor",
@@ -369,7 +378,8 @@
           "fr": "Premier étage",
           "pl": "Znajduje się na pierwszym piętrze",
           "sv": "Ligger på första våningen",
-          "pt": "Está no primeiro andar"
+          "pt": "Está no primeiro andar",
+          "id": "Berlokasi di lantai pertama"
         }
       }
     ]
