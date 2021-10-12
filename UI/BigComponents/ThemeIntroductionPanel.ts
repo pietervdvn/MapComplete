@@ -54,7 +54,7 @@ export default class ThemeIntroductionPanel extends Combine {
             toTheMap,
             loginStatus.SetClass("block"),
             layout.descriptionTail?.Clone().SetClass("block mt-4"),
-            languagePicker.SetClass("block mt-4"),
+            languagePicker?.SetClass("block mt-4"),
             ...layout.CustomCodeSnippets()
         ])
 
