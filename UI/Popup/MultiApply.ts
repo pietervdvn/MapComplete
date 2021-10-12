@@ -48,9 +48,8 @@ class MultiApplyExecutor {
             const self = this;
             const relevantValues = p.tagsSource.map(tags => {
                 const currentValues = p.keysToApply.map(key => tags[key])
-                const v = JSON.stringify(currentValues) // By stringifying, we have a very clear ping when they changec
-                console.log("Values are", v)
-                return v;
+                 // By stringifying, we have a very clear ping when they changec
+                return JSON.stringify(currentValues);
             })
             relevantValues.addCallbackD(_ => {
                 self.applyTaggingOnOtherFeatures()
@@ -134,7 +133,7 @@ export default class MultiApply extends Toggle {
 
         const elems: (string | BaseUIElement)[] = []
         if (p.autoapply) {
-            elems.push(new Combine([new FixedUiElement(p.text).SetClass("block")            ]).SetClass("flex"))
+            elems.push(new FixedUiElement(p.text).SetClass("block"))
             elems.push(new VariableUiElement(p.featureIds.map(featureIds =>
                 t.autoApply.Subs({
                     attr_names: p.keysToApply.join(", "),

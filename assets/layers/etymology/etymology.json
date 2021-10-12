@@ -24,8 +24,7 @@
         "nl": "Alle lagen met een gelinkt etymology"
     },
     "calculatedTags": [
-        "_same_name_ids=feat.closestn('*', 250, undefined, 2500)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]",
-        "_total_segments=JSON.parse(feat.properties._same_name_ids).length + 1 // Plus one for the feature itself"
+        "_same_name_ids=feat.closestn('*', 250, undefined, 2500)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
     ],
     "tagRenderings": [
         {

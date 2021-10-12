@@ -45,6 +45,30 @@
           }
         }
       }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "parks_and_forests_without_etymology",
+        "name": {
+          "en": "Parks and forests without etymology information",
+          "nl": "Parken en bossen zonder etymologische informatie"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "leisure=park",
+                  "landuse=forest"
+                ]
+              }
+            ]
+          }
+        }
+      }
     }
   ],
   "hideFromOverview": true
