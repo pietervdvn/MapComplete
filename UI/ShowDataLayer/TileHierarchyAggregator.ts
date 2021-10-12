@@ -22,7 +22,7 @@ export class TileHierarchyAggregator implements FeatureSource {
     public readonly name;
 
     private readonly featuresStatic = []
-    private readonly featureProperties: { count: string, tileId: string, id: string };
+    private readonly featureProperties: { count: string, kilocount: string, tileId: string, id: string };
 
     private constructor(parent: TileHierarchyAggregator, z: number, x: number, y: number) {
         this._parent = parent;
@@ -36,7 +36,8 @@ export class TileHierarchyAggregator implements FeatureSource {
         const totals = {
             id: ""+this._tileIndex,
             tileId: ""+this._tileIndex,
-            count: ""+0
+            count: `0`,
+            kilocount: "0"
         }
         this.featureProperties = totals
 
@@ -108,6 +109,7 @@ export class TileHierarchyAggregator implements FeatureSource {
             this.features.setData(TileHierarchyAggregator.empty)
         } else {
             this.featureProperties.count = "" + total;
+            this.featureProperties.kilocount = "" +Math.floor(total/1000);
             this.features.data = this.featuresStatic
             this.features.ping()
         }

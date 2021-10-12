@@ -32,10 +32,9 @@
   "enablePdfDownload": true,
   "enableDownload": true,
   "hideFromOverview": true,
-  "clustering": {
     "#": "Disable clustering for this theme",
-    "maxZoom": 1,
-    "hideBoxesAboveMinZoom": true
+  "clustering": {
+    "maxZoom": 0
   },
   "layers": [
     {
@@ -110,10 +109,10 @@
             ]
           },
           "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 10,
+          "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "minzoom": "13",
+        "minzoom": 10,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/trail.svg",
           "mappings": [

@@ -31,7 +31,6 @@ export default class LayoutConfig {
     public readonly clustering?: {
         maxZoom: number,
         minNeededElements: number,
-        hideClustersAboveMinzoom: boolean
     };
     public readonly hideFromOverview: boolean;
     public lockLocation: boolean | [[number, number], [number, number]];
@@ -141,13 +140,16 @@ export default class LayoutConfig {
         this.clustering = {
             maxZoom: 16,
             minNeededElements: 25,
-            hideClustersAboveMinzoom: false
         };
-        if (json.clustering) {
+        if(json.clustering === false){
+            this.clustering = {
+                maxZoom: 0,
+                minNeededElements: 100000,
+            };
+        }else         if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
                 minNeededElements: json.clustering.minNeededElements ?? 25,
-                hideClustersAboveMinzoom: json.clustering.hideClustersAboveMinZoom ?? false
             }
         }
 

@@ -1,6 +1,5 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {LayerConfigJson} from "./LayerConfigJson";
-import UnitConfigJson from "./UnitConfigJson";
 
 /**
  * Defines the entire theme.
@@ -237,12 +236,6 @@ export interface LayoutConfigJson {
          * If clustering is defined, defaults to 25
          */
         minNeededElements?: number
-        /**
-         * By default, a box is shown indicating the number of features even if the map is zoomed out beyond the minzoom of the layer.
-         * This flag switches this behaviour to not show these boxes.
-         */
-        hideClustersAboveMinZoom?: boolean;
-
     },
 
     /**
