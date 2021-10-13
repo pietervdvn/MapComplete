@@ -295,7 +295,9 @@ export default class Wikidata {
         }
 
         const url = "https://www.wikidata.org/wiki/Special:EntityData/" + id + ".json";
-        const response = (await Utils.downloadJson(url)).entities[id]
+        const entities = (await Utils.downloadJson(url)).entities
+        const firstKey = <string> Array.from(Object.keys(entities))[0] // Roundabout way to fetch the entity; it might have been a redirect
+        const response = entities[firstKey]
 
         if (id.startsWith("L")) {
             // This is a lexeme:
