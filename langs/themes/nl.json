@@ -1024,7 +1024,7 @@
         "title": "Surveillance under Surveillance"
     },
     "toerisme_vlaanderen": {
-        "description": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken.<br/><br/>Met de steun van Toerisme Vlaanderen<img src='./assets/themes/toerisme_vlaanderen/logo.png' />",
+        "description": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken.",
         "descriptionTail": "Met de steun van Toerisme Vlaanderen<img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />",
         "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
         "title": "Toeristisch relevante info"
