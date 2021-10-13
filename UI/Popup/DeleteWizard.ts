@@ -240,6 +240,15 @@ export default class DeleteWizard extends Toggle {
                             ]
                         },
                         then: t.reasons.notFound
+                    },
+                    {
+                        if: {
+                            and: [
+                                "_delete_reason=duplicate",
+                                ...softDeletionTagsStr
+                            ]
+                        },
+                        then: t.reasons.duplicate
                     }
                 ]
 

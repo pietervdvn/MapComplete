@@ -52,7 +52,8 @@
         "reasons": {
             "test": "This was a testing point - the feature was never actually there",
             "disused": "This feature is disused or removed",
-            "notFound": "This feature couldn't be found"
+            "notFound": "This feature couldn't be found",
+            "duplicate": "This point is a duplicate of another feature"
         },
         "explanations": {
             "selectReason": "Please, select why this feature should be deleted",
