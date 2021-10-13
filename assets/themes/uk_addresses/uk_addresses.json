@@ -21,19 +21,9 @@
   "widenFactor": 1.01,
   "socialImage": "",
   "hideFromOverview": true,
-  "lockLocation": [
-    [
-      51.51818357322121,
-      -0.09293317794799805
-    ],
-    [
-      51.52898437160955,
-      -0.08147478103637695
-    ]
-  ],
   "clustering": {
     "minNeededFeatures": 25,
-    "maxZoom": 17
+    "maxZoom": 16
   },
   "layers": [
     {

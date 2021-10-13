@@ -219,7 +219,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                 }
                 // Lets save this tile!
                 const [z, x, y] = Tiles.tile_from_index(tile.tileIndex)
-                console.log("Writing tile ", z, x, y, layerId)
+                // console.log("Writing tile ", z, x, y, layerId)
                 const targetPath = geoJsonName(targetdir + "_" + layerId, x, y, z)
                 createdTiles.push(tile.tileIndex)
                 // This is the geojson file containing all features for this tile
@@ -241,6 +241,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
             }
             perX[key].push(y)
         })
+        console.log("Written overview: ", path, "with ", createdTiles.length, "tiles")
         writeFileSync(path, JSON.stringify(perX))
 
         // And, if needed, to create a points-only layer
