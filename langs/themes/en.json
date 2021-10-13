@@ -750,6 +750,11 @@
                 "override": {
                     "name": "Streets without etymology information"
                 }
+            },
+            "2": {
+                "override": {
+                    "name": "Parks and forests without etymology information"
+                }
             }
         },
         "shortDescription": "What is the origin of a toponym?",
