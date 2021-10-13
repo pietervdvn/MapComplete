@@ -3,7 +3,25 @@
     "render": "{image_carousel()}{image_upload()}"
   },
   "wikipedia": {
-    "render": "{wikipedia():max-height:25rem}"
+    "render": "{wikipedia():max-height:25rem}",
+    "question": {
+      "en": "What is the corresponding Wikidata entity?",
+      "nl": "Welk Wikidata-item komt overeen met dit object?"
+    },
+    "mappings": [
+      {
+        "if": "wikidata=",
+        "then": {
+          "en": "No Wikipedia page has been linked yet",
+          "nl": "Er werd nog geen Wikipedia-pagina gekoppeld"
+        },
+        "hideInAnswer": true
+      }
+    ],
+    "freeform": {
+      "key": "wikidata",
+      "type": "wikidata"
+    }
   },
   "reviews": {
     "render": "{reviews()}"
@@ -44,7 +62,23 @@
   },
   "wikipedialink": {
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "condition": "wikipedia~*"
+    "question": {
+      "en": "What is the corresponding item on Wikipedia?",
+      "nl": "Welk Wikipedia-artikel beschrijft dit object?"
+    },
+    "mappings": [
+      {
+        "if": "wikidata=",
+        "then": {
+          "en": "Not linked with Wikipedia",
+          "nl": "Nog geen Wikipedia-artikel bekend"
+        }
+      }
+    ],
+    "freeform": {
+      "key": "wikidata",
+      "type": "wikidata"
+    }
   },
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",

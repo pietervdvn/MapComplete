@@ -82,6 +82,11 @@
       "value": "yes"
     },
     {
+      "key": "payment:membership_card",
+      "description": "Layer 'Observation towers' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Observation towers' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
       "value": "designated"
@@ -102,23 +107,13 @@
       "value": "no"
     },
     {
-      "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Observation towers' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Observation towers')"
+      "key": "wikidata",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Observation towers')"
     },
     {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Observation towers' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
-      "value": "no&service:bicycle:cleaning:charge="
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Observation towers' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Observation towers')",
-      "value": "no&"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Observation towers' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
-      "value": "yes"
+      "key": "wikidata",
+      "description": "Layer 'Observation towers' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Observation towers') Picking this answer will delete the key wikidata.",
+      "value": ""
     }
   ]
 }

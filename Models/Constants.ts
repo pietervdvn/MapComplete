@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.10.5";
+    public static vNumber = "0.11.0-alpha-2";
     public static ImgurApiKey = '7070e7167f0a25a'
     public static readonly mapillary_client_token_v3 = 'TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
@@ -14,7 +14,7 @@ export default class Constants {
         "https://overpass.kumi.systems/api/interpreter",
         // Offline: "https://overpass.nchc.org.tw/api/interpreter",
         "https://overpass.openstreetmap.ru/cgi/interpreter",
-        // Doesn't support nwr "https://overpass.openstreetmap.fr/api/interpreter"
+        // Doesn't support nwr: "https://overpass.openstreetmap.fr/api/interpreter"
     ]
 
     

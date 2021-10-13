@@ -13,6 +13,7 @@ export default class AllKnownLayers {
         const sharedLayers = new Map<string, LayerConfig>();
         for (const layer of known_layers.layers) {
             try {
+                // @ts-ignore
                 const parsed = new LayerConfig(layer, "shared_layers")
                 sharedLayers.set(layer.id, parsed);
                 sharedLayers[layer.id] = parsed;

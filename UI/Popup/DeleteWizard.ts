@@ -4,7 +4,6 @@ import Toggle from "../Input/Toggle";
 import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
 import DeleteAction from "../../Logic/Osm/Actions/DeleteAction";
-import {Tag} from "../../Logic/Tags/Tag";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import TagRenderingQuestion from "./TagRenderingQuestion";
@@ -13,13 +12,11 @@ import {SubtleButton} from "../Base/SubtleButton";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {Translation} from "../i18n/Translation";
 import BaseUIElement from "../BaseUIElement";
-import {Changes} from "../../Logic/Osm/Changes";
-import {And} from "../../Logic/Tags/And";
 import Constants from "../../Models/Constants";
-import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
 import DeleteConfig from "../../Models/ThemeConfig/DeleteConfig";
+import {OsmObject} from "../../Logic/Osm/OsmObject";
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -43,44 +40,32 @@ export default class DeleteWizard extends Toggle {
     constructor(id: string,
                 options: DeleteConfig) {
 
-        const deleteAction = new DeleteAction(id, options.neededChangesets);
+        const deleteAbility = new DeleteabilityChecker(id, options.neededChangesets)
         const tagsSource = State.state.allElements.getEventSourceById(id)
 
+        const isDeleted = new UIEventSource(false)
         const allowSoftDeletion = !!options.softDeletionTags
 
         const confirm = new UIEventSource<boolean>(false)
 
 
-        async function softDelete(reason: string, tagsToApply: { k: string, v: string }[]) {
-            if (reason !== undefined) {
-                tagsToApply.splice(0, 0, {
-                    k: "fixme",
-                    v: `A mapcomplete user marked this feature to be deleted (${reason})`
-                })
-            }
-            await (State.state?.changes ?? new Changes())
-                .applyAction(new ChangeTagAction(
-                    id, new And(tagsToApply.map(kv => new Tag(kv.k, kv.v))), tagsSource.data
-                ))
-        }
-
         function doDelete(selected: TagsFilter) {
+            // Selected == the reasons, not the tags of the object
             const tgs = selected.asChange(tagsSource.data)
             const deleteReasonMatch = tgs.filter(kv => kv.k === "_delete_reason")
-            if (deleteReasonMatch.length > 0) {
-                // We should actually delete!
-                const deleteReason = deleteReasonMatch[0].v
-                deleteAction.DoDelete(deleteReason, () => {
-                    // The user doesn't have sufficient permissions to _actually_ delete the feature
-                    // We 'soft delete' instead (and add a fixme)
-                    softDelete(deleteReason, tgs.filter(kv => kv.k !== "_delete_reason"))
-
-                });
-                return
-            } else {
-                // This is a 'non-delete'-option that was selected
-                softDelete(undefined, tgs)
+            if (deleteReasonMatch.length === 0) {
+                return;
             }
+            const deleteAction = new DeleteAction(id,
+                options.softDeletionTags,
+                {
+                    theme: State.state?.layoutToUse?.id ?? "unkown",
+                    specialMotivation: deleteReasonMatch[0]?.v
+                },
+                deleteAbility.canBeDeleted.data.canBeDeleted
+            )
+            State.state.changes.applyAction(deleteAction)
+            isDeleted.setData(true)
 
         }
 
@@ -98,7 +83,7 @@ export default class DeleteWizard extends Toggle {
                     saveButtonConstr: (v) => DeleteWizard.constructConfirmButton(v).onClick(() => {
                         doDelete(v.data)
                     }),
-                    bottomText: (v) => DeleteWizard.constructExplanation(v, deleteAction)
+                    bottomText: (v) => DeleteWizard.constructExplanation(v, deleteAbility)
                 }
             )
         }))
@@ -110,7 +95,7 @@ export default class DeleteWizard extends Toggle {
         const deleteButton = new SubtleButton(
             Svg.delete_icon_ui().SetStyle("width: 2rem; height: 2rem;"), t.delete.Clone()).onClick(
             () => {
-                deleteAction.CheckDeleteability(true)
+                deleteAbility.CheckDeleteability(true)
                 confirm.setData(true);
             }
         ).SetClass("w-1/2 float-right");
@@ -132,13 +117,13 @@ export default class DeleteWizard extends Toggle {
 
                             deleteButton,
                             confirm),
-                        new VariableUiElement(deleteAction.canBeDeleted.map(cbd => new Combine([cbd.reason.Clone(), t.useSomethingElse.Clone()]))),
-                        deleteAction.canBeDeleted.map(cbd => allowSoftDeletion || cbd.canBeDeleted !== false)),
+                        new VariableUiElement(deleteAbility.canBeDeleted.map(cbd => new Combine([cbd.reason.Clone(), t.useSomethingElse.Clone()]))),
+                        deleteAbility.canBeDeleted.map(cbd => allowSoftDeletion || cbd.canBeDeleted !== false)),
 
                     t.loginToDelete.Clone().onClick(State.state.osmConnection.AttemptLogin),
                     State.state.osmConnection.isLoggedIn
                 ),
-                deleteAction.isDeleted),
+                isDeleted),
             undefined,
             isShown)
 
@@ -167,7 +152,7 @@ export default class DeleteWizard extends Toggle {
     }
 
 
-    private static constructExplanation(tags: UIEventSource<TagsFilter>, deleteAction: DeleteAction) {
+    private static constructExplanation(tags: UIEventSource<TagsFilter>, deleteAction: DeleteabilityChecker) {
         const t = Translations.t.delete;
         return new VariableUiElement(tags.map(
             currentTags => {
@@ -262,5 +247,173 @@ export default class DeleteWizard extends Toggle {
             }, undefined, "Delete wizard"
         )
     }
+
+}
+
+class DeleteabilityChecker {
+
+    public readonly canBeDeleted: UIEventSource<{ canBeDeleted?: boolean, reason: Translation }>;
+    private readonly _id: string;
+    private readonly _allowDeletionAtChangesetCount: number;
+
+
+    constructor(id: string,
+                allowDeletionAtChangesetCount?: number) {
+        this._id = id;
+        this._allowDeletionAtChangesetCount = allowDeletionAtChangesetCount ?? Number.MAX_VALUE;
+
+        this.canBeDeleted = new UIEventSource<{ canBeDeleted?: boolean; reason: Translation }>({
+            canBeDeleted: undefined,
+            reason: Translations.t.delete.loading
+        })
+        this.CheckDeleteability(false)
+    }
+
+    /**
+     * Checks if the currently logged in user can delete the current point.
+     * State is written into this._canBeDeleted
+     * @constructor
+     * @private
+     */
+    public CheckDeleteability(useTheInternet: boolean): void {
+        const t = Translations.t.delete;
+        const id = this._id;
+        const state = this.canBeDeleted
+        if (!id.startsWith("node")) {
+            this.canBeDeleted.setData({
+                canBeDeleted: false,
+                reason: t.isntAPoint
+            })
+            return;
+        }
+
+        // Does the currently logged in user have enough experience to delete this point?
+
+        const deletingPointsOfOtherAllowed = State.state.osmConnection.userDetails.map(ud => {
+            if (ud === undefined) {
+                return undefined;
+            }
+            if (!ud.loggedIn) {
+                return false;
+            }
+            return ud.csCount >= Math.min(Constants.userJourney.deletePointsOfOthersUnlock, this._allowDeletionAtChangesetCount);
+        })
+
+        const previousEditors = new UIEventSource<number[]>(undefined)
+
+        const allByMyself = previousEditors.map(previous => {
+            if (previous === null || previous === undefined) {
+                // Not yet downloaded
+                return null;
+            }
+            const userId = State.state.osmConnection.userDetails.data.uid;
+            return !previous.some(editor => editor !== userId)
+        }, [State.state.osmConnection.userDetails])
+
+
+        // User allowed OR only edited by self?
+        const deletetionAllowed = deletingPointsOfOtherAllowed.map(isAllowed => {
+            if (isAllowed === undefined) {
+                // No logged in user => definitively not allowed to delete!
+                return false;
+            }
+            if (isAllowed === true) {
+                return true;
+            }
+
+            // At this point, the logged in user is not allowed to delete points created/edited by _others_
+            // however, we query OSM and if it turns out the current point has only be edited by the current user, deletion is allowed after all!
+
+            if (allByMyself.data === null && useTheInternet) {
+                // We kickoff the download here as it hasn't yet been downloaded. Note that this is mapped onto 'all by myself' above
+                OsmObject.DownloadHistory(id).map(versions => versions.map(version => version.tags["_last_edit:contributor:uid"])).syncWith(previousEditors)
+            }
+            if (allByMyself.data === true) {
+                // Yay! We can download!
+                return true;
+            }
+            if (allByMyself.data === false) {
+                // Nope, downloading not allowed...
+                return false;
+            }
+
+
+            // At this point, we don't have enough information yet to decide if the user is allowed to delete the current point...
+            return undefined;
+        }, [allByMyself])
+
+
+        const hasRelations: UIEventSource<boolean> = new UIEventSource<boolean>(null)
+        const hasWays: UIEventSource<boolean> = new UIEventSource<boolean>(null)
+        deletetionAllowed.addCallbackAndRunD(deletetionAllowed => {
+
+            if (deletetionAllowed === false) {
+                // Nope, we are not allowed to delete
+                state.setData({
+                    canBeDeleted: false,
+                    reason: t.notEnoughExperience
+                })
+                return true; // unregister this caller!
+            }
+
+            if (!useTheInternet) {
+                return;
+            }
+
+            // All right! We have arrived at a point that we should query OSM again to check that the point isn't a part of ways or relations
+            OsmObject.DownloadReferencingRelations(id).then(rels => {
+                hasRelations.setData(rels.length > 0)
+            })
+
+            OsmObject.DownloadReferencingWays(id).then(ways => {
+                hasWays.setData(ways.length > 0)
+            })
+            return true; // unregister to only run once
+        })
+
+
+        const hasWaysOrRelations = hasRelations.map(hasRelationsData => {
+            if (hasRelationsData === true) {
+                return true;
+            }
+            if (hasWays.data === true) {
+                return true;
+            }
+            if (hasWays.data === null || hasRelationsData === null) {
+                return null;
+            }
+            if (hasWays.data === false && hasRelationsData === false) {
+                return false;
+            }
+            return null;
+        }, [hasWays])
+
+        hasWaysOrRelations.addCallbackAndRun(
+            waysOrRelations => {
+                if (waysOrRelations == null) {
+                    // Not yet loaded - we still wait a little bit
+                    return;
+                }
+                if (waysOrRelations) {
+                    // not deleteble by mapcomplete
+                    state.setData({
+                        canBeDeleted: false,
+                        reason: t.partOfOthers
+                    })
+                } else {
+                    // alright, this point can be safely deleted!
+                    state.setData({
+                        canBeDeleted: true,
+                        reason: allByMyself.data === true ? t.onlyEditedByLoggedInUser : t.safeDelete
+                    })
+                }
+
+
+            }
+        )
+
+
+    }
+
 
 }

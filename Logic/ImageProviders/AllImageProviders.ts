@@ -16,35 +16,35 @@ export default class AllImageProviders {
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
-        new GenericImageProvider([].concat(...Imgur.defaultValuePrefix, WikimediaImageProvider.commonsPrefix, ...Mapillary.valuePrefixes))]
+        new GenericImageProvider(
+            [].concat(...Imgur.defaultValuePrefix, ...WikimediaImageProvider.commonsPrefixes, ...Mapillary.valuePrefixes)
+        )
+            
+    ]
 
 
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()
 
-    public static LoadImagesFor(tags: UIEventSource<any>, imagePrefix?: string): UIEventSource<ProvidedImage[]> {
-        const id = tags.data.id
-        if (id === undefined) {
+    public static LoadImagesFor(tags: UIEventSource<any>, tagKey?: string): UIEventSource<ProvidedImage[]> {
+        if (tags.data.id === undefined) {
             return undefined;
         }
 
-        const cached = this._cache.get(tags.data.id)
+        const cacheKey = tags.data.id+tagKey
+        const cached = this._cache.get(cacheKey)
         if (cached !== undefined) {
             return cached
         }
 
 
         const source = new UIEventSource([])
-        this._cache.set(id, source)
+        this._cache.set(cacheKey, source)
         const allSources = []
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
             
             let prefixes = imageProvider.defaultKeyPrefixes
-            if(imagePrefix !== undefined){
-                prefixes = [...prefixes]
-                if(prefixes.indexOf("image") >= 0){
-                    prefixes.splice(prefixes.indexOf("image"), 1)
-                }
-                prefixes.push(imagePrefix)
+            if(tagKey !== undefined){
+                prefixes = [tagKey]
             }
             
             const singleSource = imageProvider.GetRelevantUrls(tags, {

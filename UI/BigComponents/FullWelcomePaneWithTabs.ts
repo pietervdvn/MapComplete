@@ -73,6 +73,9 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             }
         );
 
+        tabs.forEach(c => c.content.SetClass("p-4"))
+        tabsWithAboutMc.forEach(c => c.content.SetClass("p-4"))
+        
         return new Toggle(
             new TabbedComponent(tabsWithAboutMc, State.state.welcomeMessageOpenedTab),
             new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab),

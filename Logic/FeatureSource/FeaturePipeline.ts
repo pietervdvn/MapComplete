@@ -402,6 +402,9 @@ export default class FeaturePipeline {
     }
 
     public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
+        if(layerId === "*"){
+            return this.GetAllFeaturesWithin(bbox)
+        }
         const requestedHierarchy = this.perLayerHierarchy.get(layerId)
         if (requestedHierarchy === undefined) {
             console.warn("Layer ", layerId, "is not defined. Try one of ", Array.from(this.perLayerHierarchy.keys()))

@@ -22,3 +22,4 @@ MinimapImplementation.initialize()
 new MoveWizard(
     feature,
     State.state).AttachTo("maindiv")
+

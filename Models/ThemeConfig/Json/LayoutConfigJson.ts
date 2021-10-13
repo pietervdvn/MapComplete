@@ -35,10 +35,7 @@ export interface LayoutConfigJson {
      * Who does maintian this preset?
      */
     maintainer: string;
-    /**
-     * Extra piece of text that can be added to the changeset
-     */
-    changesetmessage?: string;
+
     /**
      * A version number, either semantically or by date.
      * Should be sortable, where the higher value is the later version

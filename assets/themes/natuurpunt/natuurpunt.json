@@ -32,7 +32,7 @@
   "enablePdfDownload": true,
   "enableDownload": true,
   "hideFromOverview": true,
-    "#": "Disable clustering for this theme",
+  "#": "Disable clustering for this theme",
   "clustering": {
     "maxZoom": 0
   },
@@ -71,7 +71,6 @@
             ]
           },
           "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson",
-          "geoJsonZoomLevel": 0,
           "isOsmCache": "duplicate"
         },
         "minzoom": 1,

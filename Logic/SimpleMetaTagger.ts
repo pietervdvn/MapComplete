@@ -6,6 +6,7 @@ import Combine from "../UI/Base/Combine";
 import BaseUIElement from "../UI/BaseUIElement";
 import Title from "../UI/Base/Title";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 
 const cardinalDirections = {
@@ -62,6 +63,20 @@ export default class SimpleMetaTagger {
             return true;
         })
     );
+    private static layerInfo = new SimpleMetaTagger(
+        {
+            doc: "The layer-id to which this feature belongs. Note that this might be return any applicable if `passAllFeatures` is defined.",
+            keys:["_layer"],
+            includesDates: false,
+        },
+        (feature, freshness, layer) => {
+            if(feature.properties._layer === layer.id){
+                return false;
+            }
+            feature.properties._layer = layer.id
+            return true;
+        }
+    )
     private static surfaceArea = new SimpleMetaTagger(
         {
             keys: ["_surface", "_surface:ha"],
@@ -329,6 +344,7 @@ export default class SimpleMetaTagger {
     )
     public static metatags = [
         SimpleMetaTagger.latlon,
+        SimpleMetaTagger.layerInfo,
         SimpleMetaTagger.surfaceArea,
         SimpleMetaTagger.lngth,
         SimpleMetaTagger.canonicalize,
@@ -346,7 +362,7 @@ export default class SimpleMetaTagger {
     public readonly doc: string;
     public readonly isLazy: boolean;
     public readonly includesDates: boolean
-    public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date) => boolean;
+    public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date, layer: LayerConfig) => boolean;
     
     /***
      * A function that adds some extra data to a feature
@@ -354,7 +370,7 @@ export default class SimpleMetaTagger {
      * @param f: apply the changes. Returns true if something changed
      */
     constructor(docs: { keys: string[], doc: string, includesDates?: boolean, isLazy?: boolean },
-                f: ((feature: any, freshness: Date) => boolean)) {
+                f: ((feature: any, freshness: Date, layer: LayerConfig) => boolean)) {
         this.keys = docs.keys;
         this.doc = docs.doc;
         this.isLazy = docs.isLazy

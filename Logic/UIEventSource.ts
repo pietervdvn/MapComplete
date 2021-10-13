@@ -75,6 +75,27 @@ export class UIEventSource<T> {
         promise?.catch(err => console.warn("Promise failed:", err))
         return src
     }
+    
+    public AsPromise(): Promise<T>{
+        const self = this;
+        return new Promise((resolve, reject) => {
+            if(self.data !== undefined){
+                resolve(self.data)
+            }else{
+                self.addCallbackD(data => {
+                    resolve(data)
+                    return true; // return true to unregister as we only need to be called once
+                })
+            }
+        })
+    }
+
+    public WaitForPromise(promise: Promise<T>, onFail: ((any) => void)): UIEventSource<T> {
+        const self = this;
+        promise?.then(d => self.setData(d))
+        promise?.catch(err =>onFail(err))
+        return this
+    }
 
     /**
      * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
@@ -195,16 +216,20 @@ export class UIEventSource<T> {
         const sink = new UIEventSource<X>(undefined)
         const seenEventSources = new Set<UIEventSource<X>>();
         mapped.addCallbackAndRun(newEventSource => {
-            
-            if (newEventSource === undefined) {
+            if (newEventSource === null) {
+                sink.setData(null)
+            } else if (newEventSource === undefined) {
                 sink.setData(undefined)
-            } else if (!seenEventSources.has(newEventSource)) {
+            }else if (!seenEventSources.has(newEventSource)) {
                 seenEventSources.add(newEventSource)
                 newEventSource.addCallbackAndRun(resultData => {
                     if (mapped.data === newEventSource) {
                         sink.setData(resultData);
                     }
                 })
+            }else{
+                // Already seen, so we don't have to add a callback, just update the value
+                sink.setData(newEventSource.data)
             }
         })
 

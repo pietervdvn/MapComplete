@@ -24,7 +24,7 @@ A geographical length in meters (rounded at two points). Will give an extra mini
 
 ## wikidata
 
-A wikidata identifier, e.g. Q42
+A wikidata identifier, e.g. Q42. Input helper arguments: [ key: the value of this tag will initialize search (default: name), options: { removePrefixes: string[], removePostfixes: string[] }  these prefixes and postfixes will be removed from the initial search value]
 
 ## int
 

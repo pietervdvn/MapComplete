@@ -16,6 +16,8 @@ import LengthInput from "./LengthInput";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {Unit} from "../../Models/Unit";
 import {FixedInputElement} from "./FixedInputElement";
+import WikidataSearchBox from "../Wikipedia/WikidataSearchBox";
+import Wikidata from "../../Logic/Web/Wikidata";
 
 interface TextFieldDef {
     name: string,
@@ -147,23 +149,58 @@ export default class ValidatedTextField {
         ),
         ValidatedTextField.tp(
             "wikidata",
-            "A wikidata identifier, e.g. Q42",
+            "A wikidata identifier, e.g. Q42. Input helper arguments: [ key: the value of this tag will initialize search (default: name), options: { removePrefixes: string[], removePostfixes: string[] }  these prefixes and postfixes will be removed from the initial search value]",
             (str) => {
                 if (str === undefined) {
                     return false;
                 }
-                return (str.length > 1 && (str.startsWith("q") || str.startsWith("Q")) || str.startsWith("https://www.wikidata.org/wiki/Q"))
+                if(str.length <= 2){
+                    return false;
+                }
+                return !str.split(";").some(str => Wikidata.ExtractKey(str) === undefined)
             },
             (str) => {
                 if (str === undefined) {
                     return undefined;
                 }
-                const wd = "https://www.wikidata.org/wiki/";
-                if (str.startsWith(wd)) {
-                    str = str.substr(wd.length)
+                let out = str.split(";").map(str => Wikidata.ExtractKey(str)).join("; ")
+                if(str.endsWith(";")){
+                    out = out + ";"
                 }
-                return str.toUpperCase();
-            }),
+                return out;
+            },
+            (currentValue, inputHelperOptions) => {
+                const args = inputHelperOptions.args ?? []
+                const searchKey = args[0] ?? "name"
+
+                let searchFor = <string>inputHelperOptions.feature?.properties[searchKey]?.toLowerCase()
+
+                const options = args[1]
+                if (searchFor !== undefined && options !== undefined) {
+                    const prefixes = <string[]>options["removePrefixes"]
+                    const postfixes = <string[]>options["removePostfixes"]
+                    for (const postfix of postfixes ?? []) {
+                        if (searchFor.endsWith(postfix)) {
+                            searchFor = searchFor.substring(0, searchFor.length - postfix.length)
+                            break;
+                        }
+                    }
+
+                    for (const prefix of prefixes ?? []) {
+                        if (searchFor.startsWith(prefix)) {
+                            searchFor = searchFor.substring(prefix.length)
+                            break;
+                        }
+                    }
+
+                }
+
+                return new WikidataSearchBox({
+                    value: currentValue,
+                    searchText: new UIEventSource<string>(searchFor)
+                })
+            }
+        ),
 
         ValidatedTextField.tp(
             "int",
@@ -361,13 +398,13 @@ export default class ValidatedTextField {
             // This implies:
             // We have to create a dropdown with applicable denominations, and fuse those values
             const unit = options.unit
-            
-            
+
+
             const isSingular = input.GetValue().map(str => str?.trim() === "1")
 
             const unitDropDown =
                 unit.denominations.length === 1 ?
-                    new FixedInputElement( unit.denominations[0].getToggledHuman(isSingular), unit.denominations[0])
+                    new FixedInputElement(unit.denominations[0].getToggledHuman(isSingular), unit.denominations[0])
                     : new DropDown("",
                         unit.denominations.map(denom => {
                             return {
@@ -378,17 +415,17 @@ export default class ValidatedTextField {
                     )
             unitDropDown.GetValue().setData(unit.defaultDenom)
             unitDropDown.SetClass("w-min")
-            
-            const fixedDenom =  unit.denominations.length === 1 ? unit.denominations[0] : undefined
+
+            const fixedDenom = unit.denominations.length === 1 ? unit.denominations[0] : undefined
             input = new CombinedInputElement(
                 input,
                 unitDropDown,
                 // combine the value from the textfield and the dropdown into the resulting value that should go into OSM
                 (text, denom) => {
-                    if(denom === undefined){
+                    if (denom === undefined) {
                         return text
                     }
-                    return denom?.canonicalValue(text, true) 
+                    return denom?.canonicalValue(text, true)
                 },
                 (valueWithDenom: string) => {
                     // Take the value from OSM and feed it into the textfield and the dropdown

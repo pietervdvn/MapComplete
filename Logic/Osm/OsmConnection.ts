@@ -124,13 +124,6 @@ export class OsmConnection {
         }
     }
 
-    public UploadChangeset(
-        layout: LayoutConfig,
-        allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string): Promise<void> {
-        return this.changesetHandler.UploadChangeset(layout, generateChangeXML);
-    }
-
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
         return this.preferencesHandler.GetPreference(key, prefix);
     }

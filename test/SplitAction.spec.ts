@@ -191,7 +191,9 @@ export default class SplitActionSpec extends T {
         // Lets split road https://www.openstreetmap.org/way/295132739
         const id = "way/295132739"
         const splitPoint: [number, number] = [3.246733546257019, 51.181710380278176]
-        const splitter = new SplitAction(id, [splitPoint])
+        const splitter = new SplitAction(id, [splitPoint], {
+            theme: "test"
+        })
         const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
 
         equal(changeDescription[0].type, "node")
@@ -235,7 +237,9 @@ export default class SplitActionSpec extends T {
         
         const id = "way/61435323"
         const splitPoint: [number, number] = [ 3.2021324336528774,            51.2170001600597]
-        const splitter = new SplitAction(id, [splitPoint])
+        const splitter = new SplitAction(id, [splitPoint], {
+            theme: "test"
+        })
         const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
 
         // Should be a new node
@@ -247,7 +251,9 @@ export default class SplitActionSpec extends T {
         // Lets split road near an already existing point https://www.openstreetmap.org/way/295132739
         const id = "way/295132739"
         const splitPoint: [number, number] = [3.2451081275939937, 51.18116898253599]
-        const splitter = new SplitAction(id, [splitPoint])
+        const splitter = new SplitAction(id, [splitPoint], {
+            theme: "test"
+        })
         const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
 
         equal(2, changeDescription.length)

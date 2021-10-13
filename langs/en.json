@@ -223,7 +223,11 @@
             "wikipediaboxTitle": "Wikipedia",
             "failed": "Loading the wikipedia entry failed",
             "loading": "Loading Wikipedia...",
-            "noWikipediaPage": "This wikidata item has no corresponding wikipedia page yet."
+            "noWikipediaPage": "This wikidata item has no corresponding wikipedia page yet.",
+            "searchWikidata": "Search on wikidata",
+            "noResults": "Nothing found for <i>{search}</i>",
+            "doSearch": "Search above to see results",
+            "createNewWikidata": "Create a new wikidata item"
         }
     },
     "favourite": {
@@ -246,6 +250,9 @@
         "tos": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>",
         "attribution": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
         "plz_login": "Login to leave a review"
+    },
+    "multi_apply": {
+        "autoApply": "When changing the attributes {attr_names}, these attributes will automatically be changed on {count} other objects too"
     },
     "move": {
         "loginToMove": "You must be logged in to move a point",

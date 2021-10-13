@@ -26,8 +26,9 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
 import Minimap from "./Base/Minimap";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
-import WikipediaBox from "./WikipediaBox";
+import WikipediaBox from "./Wikipedia/WikipediaBox";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
+import MultiApply from "./Popup/MultiApply";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -81,13 +82,16 @@ export default class SpecialVisualizations {
                 funcName: "image_carousel",
                 docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
                 args: [{
-                    name: "image key/prefix",
+                    name: "image key/prefix (multiple values allowed if comma-seperated)",
                     defaultValue: "image",
                     doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
                 }],
                 constr: (state: State, tags, args) => {
-                    const imagePrefix = args[0];
-                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefix), tags);
+                    let imagePrefixes = undefined;
+                    if(args.length > 0){
+                        imagePrefixes = args;
+                    }
+                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags);
                 }
             },
             {
@@ -97,9 +101,13 @@ export default class SpecialVisualizations {
                     name: "image-key",
                     doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
                     defaultValue: "image"
+                },{
+                    name:"label",
+                    doc:"The text to show on the button",
+                    defaultValue: "Add image"
                 }],
                 constr: (state: State, tags, args) => {
-                    return new ImageUploadFlow(tags, args[0])
+                    return new ImageUploadFlow(tags, args[0], args[1])
                 }
             },
             {
@@ -114,7 +122,16 @@ export default class SpecialVisualizations {
                 ],
                 example: "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
                 constr: (_, tagsSource, args) =>
-                      new WikipediaBox( tagsSource.map(tags => tags[args[0]]))
+                    new VariableUiElement(
+                        tagsSource.map(tags => tags[args[0]])
+                            .map(wikidata => {
+                                const wikidatas : string[] = 
+                                    Utils.NoEmpty(wikidata?.split(";")?.map(wd => wd.trim()) ?? [])
+                                return new WikipediaBox(wikidatas)
+                            })
+                        
+                    )
+                  
             },
             {
                 funcName: "minimap",
@@ -468,8 +485,49 @@ There are also some technicalities in your theme to keep in mind:
                         args[2], args[1], tagSource, rewrittenTags, lat, lon, Number(args[3]), state
                     )
                 }
+            },
+            {funcName: "multi_apply",
+                docs: "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags",
+                args:[
+                    {name: "feature_ids", doc: "A JSOn-serialized list of IDs of features to apply the tagging on"},
+                    {name: "keys", doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features."                    },
+                    {name: "text", doc: "The text to show on the button"},
+                    {name:"autoapply",doc:"A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown"},
+                    {name:"overwrite",doc:"If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change"}
+                ],
+                example: "{multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}",
+                constr: (state, tagsSource, args) => {
+                    const featureIdsKey = args[0]
+                    const keysToApply = args[1].split(";")
+                    const text = args[2]
+                    const autoapply = args[3]?.toLowerCase() === "true"
+                    const overwrite = args[4]?.toLowerCase() === "true"
+                    const featureIds : UIEventSource<string[]> = tagsSource.map(tags => {
+                          const ids =  tags[featureIdsKey]
+                        try{
+                            if(ids === undefined){
+                                return []
+                            }
+                            return JSON.parse(ids);
+                        }catch(e){
+                            console.warn("Could not parse ", ids, "as JSON to extract IDS which should be shown on the map.")
+                            return []
+                        }
+                    })
+                    return new MultiApply(
+                        {
+                            featureIds,
+                            keysToApply,
+                            text,
+                            autoapply,
+                            overwrite,
+                            tagsSource,
+                            state
+                        }
+                    );
+                
+                }
             }
-
         ]
 
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();

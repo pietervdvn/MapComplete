@@ -52,7 +52,7 @@ export interface TagRenderingConfigJson {
          * Extra parameters to initialize the input helper arguments.
          * For semantics, see the 'SpecialInputElements.md'
          */
-        helperArgs?: (string | number | boolean)[];
+        helperArgs?: (string | number | boolean | any)[];
         /**
          * If a value is added with the textfield, these extra tag is addded.
          * Useful to add a 'fixme=freeform textfield used - to be checked'

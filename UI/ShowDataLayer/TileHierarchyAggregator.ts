@@ -159,10 +159,8 @@ export class TileHierarchyAggregator implements FeatureSource {
         const self = this
         const empty = []
         return new StaticFeatureSource(
-            locationControl.map(loc => {
-                const targetZoom = loc.zoom
-                
-                if(targetZoom > clusteringConfig.maxZoom){
+            locationControl.map(loc => loc.zoom).map(targetZoom => {
+                if(targetZoom-1 > clusteringConfig.maxZoom){
                     return empty
                 }
                 

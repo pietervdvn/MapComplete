@@ -7,12 +7,17 @@ export default class ChangeTagAction extends OsmChangeAction {
     private readonly _elementId: string;
     private readonly _tagsFilter: TagsFilter;
     private readonly _currentTags: any;
+    private readonly _meta: {theme: string, changeType: string};
 
-    constructor(elementId: string, tagsFilter: TagsFilter, currentTags: any) {
+    constructor(elementId: string, tagsFilter: TagsFilter, currentTags: any, meta: {
+        theme: string,
+        changeType: "answer" | "soft-delete" | "add-image"
+    }) {
         super();
         this._elementId = elementId;
         this._tagsFilter = tagsFilter;
         this._currentTags = currentTags;
+        this._meta = meta;
     }
 
     /**
@@ -43,10 +48,10 @@ export default class ChangeTagAction extends OsmChangeAction {
         const type = typeId[0]
         const id = Number(typeId  [1])
         return [{
-            // @ts-ignore
-            type: type,
+            type: <"node"|"way"|"relation"> type,
             id: id,
-            tags: changedTags
+            tags: changedTags,
+            meta: this._meta
         }]
     }
 }

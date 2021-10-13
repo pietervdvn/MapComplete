@@ -120,6 +120,26 @@
       "key": "wheelchair",
       "description": "Layer 'Cafés and pubs' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Cafés and pubs' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Cafés and pubs' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Cafés and pubs' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Cafés and pubs' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "unleashed"
     }
   ]
 }

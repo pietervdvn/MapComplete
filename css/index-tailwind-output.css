@@ -828,6 +828,10 @@ video {
   margin: 1rem;
 }
 
+.m-px {
+  margin: 1px;
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -850,10 +854,6 @@ video {
 
 .ml-3 {
   margin-left: 0.75rem;
-}
-
-.mr-3 {
-  margin-right: 0.75rem;
 }
 
 .mb-2 {
@@ -918,6 +918,10 @@ video {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .box-border {
@@ -1390,14 +1394,6 @@ video {
   padding: 0px;
 }
 
-.pl-6 {
-  padding-left: 1.5rem;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
-}
-
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -1464,6 +1460,14 @@ video {
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .text-center {
@@ -1590,6 +1594,10 @@ video {
   opacity: 0;
 }
 
+.opacity-50 {
+  opacity: 0.5;
+}
+
 .opacity-40 {
   opacity: 0.4;
 }
@@ -1628,6 +1636,18 @@ video {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1792,6 +1812,10 @@ svg, img {
   height: 100%;
 }
 
+.no-images img {
+  display: none;
+}
+
 .mapcontrol svg path {
   fill: var(--subtle-detail-color-contrast) !important;
 }
@@ -1892,6 +1916,10 @@ li::marker {
   border: 5px solid var(--catch-detail-color);
 }
 
+.border-attention {
+  border-color: var(--catch-detail-color);
+}
+
 .direction-svg svg path {
   fill: var(--catch-detail-color) !important;
 }
@@ -1932,6 +1960,27 @@ li::marker {
 .single-layer-selection-toggle svg {
   max-height: 2em !important;
   max-width: 2em !important;
+}
+
+.block-ruby {
+  display: block ruby;
+}
+
+.disable-links a {
+  pointer-events: none;
+  text-decoration: none !important;
+  color: var(--subtle-detail-color-contrast) !important;
+}
+
+.enable-links a {
+  pointer-events: unset;
+  text-decoration: underline !important;
+  color: unset !important;
+}
+
+.disable-links a.must-link, .disable-links .must-link a {
+  /* Hide links if they are disabled */
+  display: none;
 }
 
 /**************** GENERIC ****************/
@@ -2193,6 +2242,10 @@ li::marker {
   color: rgba(30, 64, 175, var(--tw-text-opacity));
 }
 
+.hover\:opacity-100:hover {
+  opacity: 1;
+}
+
 .hover\:shadow-xl:hover {
   --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -2254,6 +2307,10 @@ li::marker {
     justify-content: space-between;
   }
 
+  .sm\:border-4 {
+    border-width: 4px;
+  }
+
   .sm\:p-0\.5 {
     padding: 0.125rem;
   }
@@ -2268,6 +2325,10 @@ li::marker {
 
   .sm\:p-1 {
     padding: 0.25rem;
+  }
+
+  .sm\:p-2 {
+    padding: 0.5rem;
   }
 
   .sm\:pl-2 {
@@ -2371,6 +2432,10 @@ li::marker {
 
   .md\:p-4 {
     padding: 1rem;
+  }
+
+  .md\:p-3 {
+    padding: 0.75rem;
   }
 
   .md\:pt-4 {

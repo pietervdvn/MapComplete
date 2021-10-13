@@ -311,6 +311,26 @@
       "value": "only"
     },
     {
+      "key": "dog",
+      "description": "Layer 'Fries shop' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Fries shop' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Fries shop' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Fries shop' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "unleashed"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Friturenkaart has a layer Restaurants and fast food showing features with this tag",
       "value": "fast_food"
@@ -604,6 +624,26 @@
       "key": "reusable_packaging:accept",
       "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "only"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "unleashed"
     }
   ]
 }
