@@ -14,7 +14,7 @@
 
 name | default | description
 ------ | --------- | -------------
-image key/prefix | image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... 
+image key/prefix (multiple values allowed if comma-seperated) | image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... 
  
 #### Example usage 
 
@@ -26,10 +26,11 @@ image key/prefix | image | The keys given to the images, e.g. if <span class='li
 name | default | description
 ------ | --------- | -------------
 image-key | image | Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)
+label | Add image | The text to show on the button
  
 #### Example usage 
 
- `{image_upload(image)}` 
+ `{image_upload(image,Add image)}` 
 ### wikipedia 
 
  A box showing the corresponding wikipedia article - based on the wikidata tag 
@@ -154,4 +155,19 @@ minzoom | 18 | How far the contributor must zoom in before being able to import 
  
 #### Example usage 
 
- `{import_button(,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,18)}` Generated from UI/SpecialVisualisations.ts
+ `{import_button(,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,18)}` 
+### multi_apply 
+
+ A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags 
+
+name | default | description
+------ | --------- | -------------
+feature_ids | undefined | A JSOn-serialized list of IDs of features to apply the tagging on
+keys | undefined | One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features.
+text | undefined | The text to show on the button
+autoapply | undefined | A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown
+overwrite | undefined | If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change
+ 
+#### Example usage 
+
+ {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)} Generated from UI/SpecialVisualisations.ts

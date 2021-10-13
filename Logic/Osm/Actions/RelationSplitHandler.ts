@@ -16,14 +16,16 @@ export interface RelationSplitInput {
  */
 export default class RelationSplitHandler extends OsmChangeAction {
     private readonly _input: RelationSplitInput;
+    private readonly _theme: string;
 
-    constructor(input: RelationSplitInput) {
+    constructor(input: RelationSplitInput, theme: string) {
         super()
         this._input = input;
+        this._theme = theme;
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-       return new InPlaceReplacedmentRTSH(this._input).CreateChangeDescriptions(changes)
+       return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(changes)
     }
 
 
@@ -39,10 +41,12 @@ export default class RelationSplitHandler extends OsmChangeAction {
  */
 export class InPlaceReplacedmentRTSH extends OsmChangeAction {
     private readonly _input: RelationSplitInput;
+    private readonly _theme: string;
 
-    constructor(input: RelationSplitInput) {
+    constructor(input: RelationSplitInput, theme: string) {
         super();
         this._input = input;
+        this._theme = theme;
     }
 
     /**
@@ -137,7 +141,11 @@ export class InPlaceReplacedmentRTSH extends OsmChangeAction {
         return [{
             id: relation.id,
             type: "relation",
-            changes: {members: newMembers}
+            changes: {members: newMembers},
+            meta:{
+                changeType: "relation-fix",
+                theme: this._theme
+            }
         }];
     }
 

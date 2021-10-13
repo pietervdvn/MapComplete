@@ -28,6 +28,15 @@ The latitude and longitude of the point (or centerpoint in the case of a way/are
 
 
 
+### _layer 
+
+
+
+The layer-id to which this feature belongs. Note that this might be return any applicable if `passAllFeatures` is defined.
+
+
+
+
 ### _surface, _surface:ha 
 
 
@@ -173,7 +182,7 @@ For example to get all objects which overlap or embed from a layer, use `_contai
 
  Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet laoded) 
 
-  0. list of features
+  0. list of features or a layer name or '*' to get all features
  
 ### closestn 
 
@@ -181,7 +190,7 @@ For example to get all objects which overlap or embed from a layer, use `_contai
 
 If a 'unique tag key' is given, the tag with this key will only appear once (e.g. if 'name' is given, all features will have a different name) 
 
-  0. list of features or layer name
+  0. list of features or layer name or '*' to get all features
   1. amount of features
   2. unique tag key (optional)
   3. maxDistanceInMeters (optional)

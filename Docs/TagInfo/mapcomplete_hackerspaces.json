@@ -77,7 +77,7 @@
     },
     {
       "key": "drink:club-mate",
-      "description": "Layer 'Hackerspace' shows drink:club-mate=no with a fixed text, namely 'This hackerspace is not worthy of the name hackerspace as it does not serve club mate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "description": "Layer 'Hackerspace' shows drink:club-mate=no with a fixed text, namely 'This hackerspace does not serve club mate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
       "value": "no"
     },
     {

@@ -1,4 +1,5 @@
 export class LicenseInfo {
+    title: string = ""
     artist: string = "";
     license: string = "";
     licenseShortName: string = "";

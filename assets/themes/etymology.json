@@ -16,9 +16,8 @@
     "en",
     "nl"
   ],
-  "hideFromOverview": true,
   "maintainer": "",
-  "icon": "./assets/svg/bug.svg",
+  "icon": "./assets/layers/etymology/logo.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -26,62 +25,51 @@
   "widenFactor": 2,
   "socialImage": "",
   "layers": [
+    "etymology",
     {
-      "id": "has_a_name",
-      "name": {
-        "en": "Has etymolgy",
-        "nl": "Heeft etymology info"
-      },
-      "minzoom": 12,
-      "source": {
-        "osmTags": {
-          "or": [
-            "name:etymology:wikidata~*",
-            "name:etymology~*"
-          ]
-        }
-      },
-      "title": {
-        "render": {
-          "*": "{name}"
-        }
-      },
-      "description": {
-        "en": "All objects which have an etymology known",
-        "nl": "Alle lagen met een gelinkt etymology"
-      },
-      "tagRenderings": [
-        {
-          "id": "simple etymology",
-          "render": {
-            "en": "Named after {name:etymology}",
-            "nl": "Vernoemd naar {name:etymology}"
-          },
-          "freeform": {
-            "key": "name:etymology"
-          }
+      "builtin": "etymology",
+      "override": {
+        "id": "streets_without_etymology",
+        "name": {
+          "en": "Streets without etymology information",
+          "nl": "Straten zonder etymologische informatie"
         },
-        {
-          "id": "wikipedia-etymology",
-          "render": {
-            "*": "{wikipedia(name:etymology:wikidata):max-height:20rem}"
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              "highway~*",
+              "highway!=bus_stop"
+            ]
           }
         }
-      ],
-      "icon": {
-        "render": "./assets/svg/bug.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
-      "presets": []
+      }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "parks_and_forests_without_etymology",
+        "name": {
+          "en": "Parks and forests without etymology information",
+          "nl": "Parken en bossen zonder etymologische informatie"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "leisure=park",
+                  "landuse=forest"
+                ]
+              }
+            ]
+          }
+        }
+      }
     }
   ],
-  "roamingRenderings": []
+  "hideFromOverview": true
 }

@@ -136,7 +136,9 @@ export default class SplitRoadWizard extends Toggle {
         // Save button
         const saveButton = new Button(t.split.Clone(), () => {
             hasBeenSplit.setData(true)
-            State.state.changes.applyAction(new SplitAction(id, splitPoints.data.map(ff => ff.feature.geometry.coordinates)))
+            State.state.changes.applyAction(new SplitAction(id, splitPoints.data.map(ff => ff.feature.geometry.coordinates), {
+                theme: State.state?.layoutToUse?.id
+            }))
         })
 
         saveButton.SetClass("btn btn-primary mr-3");

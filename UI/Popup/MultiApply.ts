@@ -1,0 +1,157 @@
+import {UIEventSource} from "../../Logic/UIEventSource";
+import BaseUIElement from "../BaseUIElement";
+import Combine from "../Base/Combine";
+import {SubtleButton} from "../Base/SubtleButton";
+import {Changes} from "../../Logic/Osm/Changes";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
+import {Tag} from "../../Logic/Tags/Tag";
+import {ElementStorage} from "../../Logic/ElementStorage";
+import {And} from "../../Logic/Tags/And";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import Toggle from "../Input/Toggle";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+
+
+export interface MultiApplyParams {
+    featureIds: UIEventSource<string[]>,
+    keysToApply: string[],
+    text: string,
+    autoapply: boolean,
+    overwrite: boolean,
+    tagsSource: UIEventSource<any>,
+    state: {
+        changes: Changes,
+        allElements: ElementStorage,
+        layoutToUse: LayoutConfig,
+        osmConnection: OsmConnection
+    }
+}
+
+class MultiApplyExecutor {
+
+    private readonly originalValues = new Map<string, string>()
+    private readonly params: MultiApplyParams;
+
+    private constructor(params: MultiApplyParams) {
+        this.params = params;
+        const p = params
+
+        for (const key of p.keysToApply) {
+            this.originalValues.set(key, p.tagsSource.data[key])
+        }
+
+        if (p.autoapply) {
+
+            const self = this;
+            const relevantValues = p.tagsSource.map(tags => {
+                const currentValues = p.keysToApply.map(key => tags[key])
+                 // By stringifying, we have a very clear ping when they changec
+                return JSON.stringify(currentValues);
+            })
+            relevantValues.addCallbackD(_ => {
+                self.applyTaggingOnOtherFeatures()
+            })
+        }
+    }
+
+    public applyTaggingOnOtherFeatures() {
+        console.log("Multi-applying changes...")
+        const featuresToChange = this.params.featureIds.data
+        const changes = this.params.state.changes
+        const allElements = this.params.state.allElements
+        const keysToChange = this.params.keysToApply
+        const overwrite = this.params.overwrite
+        const selfTags = this.params.tagsSource.data;
+        const theme = this.params.state.layoutToUse.id
+        for (const id of featuresToChange) {
+            const tagsToApply: Tag[] = []
+            const otherFeatureTags = allElements.getEventSourceById(id).data
+            for (const key of keysToChange) {
+                const newValue = selfTags[key]
+                if (newValue === undefined) {
+                    continue
+                }
+                const otherValue = otherFeatureTags[key]
+                if (newValue === otherValue) {
+                    continue;// No changes to be made
+                }
+
+                if (overwrite) {
+                    tagsToApply.push(new Tag(key, newValue))
+                    continue;
+                }
+
+
+                if (otherValue === undefined || otherValue === "" || otherValue === this.originalValues.get(key)) {
+                    tagsToApply.push(new Tag(key, newValue))
+                }
+            }
+
+            if (tagsToApply.length == 0) {
+                continue;
+            }
+
+
+            changes.applyAction(
+                new ChangeTagAction(id, new And(tagsToApply), otherFeatureTags, {
+                    theme,
+                    changeType: "answer"
+                }))
+        }
+    }
+
+    private static executorCache = new Map<string, MultiApplyExecutor>()
+
+    public static GetApplicator(id: string, params: MultiApplyParams): MultiApplyExecutor {
+        if (MultiApplyExecutor.executorCache.has(id)) {
+            return MultiApplyExecutor.executorCache.get(id)
+        }
+        const applicator = new MultiApplyExecutor(params)
+        MultiApplyExecutor.executorCache.set(id, applicator)
+        return applicator
+    }
+
+}
+
+export default class MultiApply extends Toggle {
+
+    constructor(params: MultiApplyParams) {
+        const p = params
+        const t = Translations.t.multi_apply
+
+
+        const featureId = p.tagsSource.data.id
+
+        if (featureId === undefined) {
+            throw "MultiApply needs a feature id"
+        }
+
+        const applicator = MultiApplyExecutor.GetApplicator(featureId, params)
+
+        const elems: (string | BaseUIElement)[] = []
+        if (p.autoapply) {
+            elems.push(new FixedUiElement(p.text).SetClass("block"))
+            elems.push(new VariableUiElement(p.featureIds.map(featureIds =>
+                t.autoApply.Subs({
+                    attr_names: p.keysToApply.join(", "),
+                    count: "" + featureIds.length
+                }))).SetClass("block subtle text-sm"))
+        } else {
+            elems.push(
+                new SubtleButton(undefined, p.text).onClick(() => applicator.applyTaggingOnOtherFeatures())
+            )
+        }
+
+
+        const isShown: UIEventSource<boolean> = p.state.osmConnection.isLoggedIn.map(loggedIn => {
+            return loggedIn && p.featureIds.data.length > 0
+        }, [p.featureIds])
+        super(new Combine(elems), undefined, isShown);
+
+    }
+
+
+}

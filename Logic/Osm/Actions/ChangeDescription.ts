@@ -6,6 +6,24 @@ import {OsmNode, OsmRelation, OsmWay} from "../OsmObject";
 export interface ChangeDescription {
 
     /**
+     * Metadata to be included in the changeset
+     */
+    meta: {
+        /*
+        * The theme with which this changeset was made
+        */
+        theme: string,
+        /**
+         * The type of the change
+         */
+        changeType:  "answer" | "create" | "split" | "delete" | string
+        /**
+         * THe motivation for the change, e.g. 'deleted because does not exist anymore'
+         */
+        specialMotivation?: string
+    },
+    
+    /**
      * Identifier of the object
      */
     type: "node" | "way" | "relation",

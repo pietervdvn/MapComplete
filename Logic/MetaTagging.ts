@@ -64,12 +64,12 @@ export default class MetaTagging {
                     if(metatag.isLazy){
                         somethingChanged = true;
                         
-                        metatag.applyMetaTagsOnFeature(feature, freshness)
+                        metatag.applyMetaTagsOnFeature(feature, freshness, layer)
                         
                     }else{
                         
                     
-                        const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness)
+                        const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness, layer)
                         /* Note that the expression:
                         * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
                         * Is WRONG

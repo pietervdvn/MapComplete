@@ -16,7 +16,10 @@ export default class DeleteImage extends Toggle {
             .SetClass("rounded-full p-1")
             .SetStyle("color:white;background:#ff8c8c")
             .onClick(async() => {
-               await State.state?.changes?.applyAction(new ChangeTagAction(tags.data.id, new Tag(key, oldValue), tags.data))
+               await State.state?.changes?.applyAction(new ChangeTagAction(tags.data.id, new Tag(key, oldValue), tags.data, {
+                   changeType: "answer",
+                   theme: "test"
+               }))
             });
 
         const deleteButton = Translations.t.image.doDelete.Clone()
@@ -24,7 +27,10 @@ export default class DeleteImage extends Toggle {
             .SetStyle("color:white;background:#ff8c8c; border-top-left-radius:30rem; border-top-right-radius: 30rem;")
             .onClick( async() => {
              await   State.state?.changes?.applyAction(
-                    new ChangeTagAction(tags.data.id, new Tag(key, ""), tags.data)
+                    new ChangeTagAction(tags.data.id, new Tag(key, ""), tags.data,{
+                        changeType: "answer",
+                        theme: "test"
+                    })
                 )
             });
 

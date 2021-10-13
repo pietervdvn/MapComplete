@@ -12,7 +12,6 @@ export default class LayoutConfig {
     public readonly id: string;
     public readonly maintainer: string;
     public readonly credits?: string;
-    public readonly changesetmessage?: string;
     public readonly version: string;
     public readonly language: string[];
     public readonly title: Translation;
@@ -61,7 +60,6 @@ export default class LayoutConfig {
         context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
         this.credits = json.credits;
-        this.changesetmessage = json.changesetmessage;
         this.version = json.version;
         this.language = [];
         if (typeof json.language === "string") {

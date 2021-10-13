@@ -20,7 +20,14 @@ export default class GenericImageProvider extends ImageProvider {
         if (this._valuePrefixBlacklist.some(prefix => value.startsWith(prefix))) {
             return []
         }
-
+        
+        try{
+            new URL(value)
+        }catch (_){
+            // Not a valid URL
+            return []
+        }
+        
         return [Promise.resolve({
             key: key,
             url: value,

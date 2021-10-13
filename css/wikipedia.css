@@ -33,6 +33,12 @@
     text-decoration: none;
 }
 
+.disable-links .wikipedia-article a {
+    color: black !important;
+    background: none !important;
+    text-decoration: none;
+}
+
 
 .wikipedia-article p {
     margin-bottom: 0.5rem;

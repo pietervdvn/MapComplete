@@ -4,6 +4,7 @@ import Svg from "../../Svg";
 import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
 import {LicenseInfo} from "./LicenseInfo";
+import Wikimedia from "../Web/Wikimedia";
 
 /**
  * This module provides endpoints for wikimedia and others
@@ -14,54 +15,10 @@ export class WikimediaImageProvider extends ImageProvider {
     private readonly commons_key = "wikimedia_commons"
     public readonly defaultKeyPrefixes = [this.commons_key,"image"]
     public static readonly singleton = new WikimediaImageProvider();
-    public static readonly commonsPrefix = "https://commons.wikimedia.org/wiki/"
+    public static readonly commonsPrefixes = ["https://commons.wikimedia.org/wiki/", "https://upload.wikimedia.org", "File:"]
 
     private constructor() {
         super();
-    }
-
-    /**
-     * Recursively walks a wikimedia commons category in order to search for (image) files
-     * Returns (a promise of) a list of URLS
-     * @param categoryName The name of the wikimedia category
-     * @param maxLoad: the maximum amount of images to return
-     * @param continueParameter: if the page indicates that more pages should be loaded, this uses a token to continue. Provided by wikimedia
-     */
-    private static async GetImagesInCategory(categoryName: string,
-                                             maxLoad = 10,
-                                             continueParameter: string = undefined): Promise<string[]> {
-        if (categoryName === undefined || categoryName === null || categoryName === "") {
-            return [];
-        }
-        if (!categoryName.startsWith("Category:")) {
-            categoryName = "Category:" + categoryName;
-        }
-
-        let url = "https://commons.wikimedia.org/w/api.php?" +
-            "action=query&list=categorymembers&format=json&" +
-            "&origin=*" +
-            "&cmtitle=" + encodeURIComponent(categoryName);
-        if (continueParameter !== undefined) {
-            url = `${url}&cmcontinue=${continueParameter}`;
-        }
-        const response = await Utils.downloadJson(url)
-        const members = response.query?.categorymembers ?? [];
-        const imageOverview: string[] = members.map(member => member.title);
-
-        if (response.continue === undefined) {
-            // We are done crawling through the category - no continuation in sight
-            return imageOverview;
-        }
-
-        if (maxLoad - imageOverview.length <= 0) {
-            console.debug(`Recursive wikimedia category load stopped for ${categoryName}`)
-            return imageOverview;
-        }
-
-        // We do have a continue token - let's load the next page
-        const recursive = await this.GetImagesInCategory(categoryName, maxLoad - imageOverview.length, response.continue.cmcontinue)
-        imageOverview.push(...recursive)
-        return imageOverview
     }
 
     private static ExtractFileName(url: string) {
@@ -87,7 +44,7 @@ export class WikimediaImageProvider extends ImageProvider {
 
     }
 
-    private PrepareUrl(value: string): string {
+    private static PrepareUrl(value: string): string {
 
         if (value.toLowerCase().startsWith("https://commons.wikimedia.org/wiki/")) {
             return value;
@@ -108,12 +65,26 @@ export class WikimediaImageProvider extends ImageProvider {
             "&format=json&origin=*";
         const data = await Utils.downloadJson(url)
         const licenseInfo = new LicenseInfo();
-        const license = (data.query.pages[-1].imageinfo ?? [])[0]?.extmetadata;
+        const pageInfo = data.query.pages[-1]
+        if(pageInfo === undefined){
+            return undefined;
+        }
+        
+        const license = (pageInfo.imageinfo ?? [])[0]?.extmetadata;
         if (license === undefined) {
-            console.error("This file has no usable metedata or license attached... Please fix the license info file yourself!")
+            console.warn("The file", filename ,"has no usable metedata or license attached... Please fix the license info file yourself!")
             return undefined;
         }
 
+        let title = pageInfo.title
+        if(title.startsWith("File:")){
+            title=  title.substr("File:".length)
+        }
+        if(title.endsWith(".jpg") || title.endsWith(".png")){
+            title = title.substring(0, title.length - 4)
+        }
+        
+        licenseInfo.title = title
         licenseInfo.artist = license.Artist?.value;
         licenseInfo.license = license.License?.value;
         licenseInfo.copyrighted = license.Copyrighted?.value;
@@ -126,41 +97,71 @@ export class WikimediaImageProvider extends ImageProvider {
 
     }
 
-    private async UrlForImage(image: string): Promise<ProvidedImage> {
+    private UrlForImage(image: string): ProvidedImage {
         if (!image.startsWith("File:")) {
             image = "File:" + image
         }
-        return {url: this.PrepareUrl(image), key: undefined, provider: this}
+        return {url: WikimediaImageProvider.PrepareUrl(image), key: undefined, provider: this}
+    }
+    
+    private static startsWithCommonsPrefix(value: string): boolean{
+        return  WikimediaImageProvider.commonsPrefixes.some(prefix => value.startsWith(prefix))
+    }
+    
+    private static removeCommonsPrefix(value: string): string{
+        if(value.startsWith("https://upload.wikimedia.org/")){
+            value = value.substring(value.lastIndexOf("/") + 1)
+            value = decodeURIComponent(value)
+            if(!value.startsWith("File:")){
+                value = "File:"+value
+            }
+            return value;
+        }
+        
+        for (const prefix of WikimediaImageProvider.commonsPrefixes) {
+            if(value.startsWith(prefix)){
+                let part = value.substr(prefix.length)
+                if(prefix.startsWith("http")){
+                    part = decodeURIComponent(part)
+                }
+                return part
+            }
+        }
+        return value;
+    }
+
+    public PrepUrl(value: string): ProvidedImage {
+        const hasCommonsPrefix = WikimediaImageProvider.startsWithCommonsPrefix(value)
+        value = WikimediaImageProvider.removeCommonsPrefix(value)
+
+        if (value.startsWith("File:")) {
+            return this.UrlForImage(value)
+        }
+
+        // We do a last effort and assume this is a file
+        return this.UrlForImage("File:" + value)
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        if(key !== undefined && key !== this.commons_key && !value.startsWith(WikimediaImageProvider.commonsPrefix)){
+        const hasCommonsPrefix = WikimediaImageProvider.startsWithCommonsPrefix(value)
+        if(key !== undefined && key !== this.commons_key && !hasCommonsPrefix){
             return []
         }
         
-        if (value.startsWith(WikimediaImageProvider.commonsPrefix)) {
-            value = value.substring(WikimediaImageProvider.commonsPrefix.length)
-        } else if (value.startsWith("https://upload.wikimedia.org")) {
-            const result: ProvidedImage = {
-                key: undefined,
-                url: value,
-                provider: this
-            }
-            return [Promise.resolve(result)]
-        }
+        value = WikimediaImageProvider.removeCommonsPrefix(value)
         if (value.startsWith("Category:")) {
-            const urls = await WikimediaImageProvider.GetImagesInCategory(value)
-            return urls.map(image => this.UrlForImage(image))
+            const urls = await Wikimedia.GetCategoryContents(value)
+            return urls.filter(url => url.startsWith("File:")).map(image => Promise.resolve(this.UrlForImage(image)))
         }
         if (value.startsWith("File:")) {
-            return [this.UrlForImage(value)]
+            return [Promise.resolve(this.UrlForImage(value))]
         }
         if (value.startsWith("http")) {
             // PRobably an error
             return []
         }
         // We do a last effort and assume this is a file
-        return [this.UrlForImage("File:" + value)]
+        return [Promise.resolve(this.UrlForImage("File:" + value))]
     }
 
 
