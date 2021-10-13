@@ -7,7 +7,9 @@ import MinimapImplementation from "./UI/Base/MinimapImplementation";
 State.state = new State(AllKnownLayouts.allKnownLayouts.get("bookcases"))
 const feature = {
     "type": "Feature",
-    "properties": {},
+    "properties": {
+        id: "node/14925464"
+    },
     "geometry": {
         "type": "Point",
         "coordinates": [

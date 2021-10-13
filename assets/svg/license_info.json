@@ -966,6 +966,22 @@
     ]
   },
   {
+    "path": "move_confirm.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "move_not_allowed.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "no_checkmark.svg",
     "license": "CC0; trivial",
     "authors": [],

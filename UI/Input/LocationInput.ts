@@ -43,9 +43,13 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     private readonly _bounds: UIEventSource<BBox>;
     public readonly _matching_layer: LayerConfig;
     private readonly map: BaseUIElement & MinimapObj;
+    public readonly leafletMap: UIEventSource<any>
+
     private readonly clickLocation: UIEventSource<Loc>;
+    private readonly _minZoom: number;
 
     constructor(options: {
+        minZoom?: number,
         mapBackground?: UIEventSource<BaseLayer>,
         snapTo?: UIEventSource<{ feature: any }[]>,
         maxSnapDistance?: number,
@@ -60,6 +64,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
         this._centerLocation = options.centerLocation;
         this._snappedPointTags = options.snappedPointTags
         this._bounds = options.bounds;
+        this._minZoom = options.minZoom
         if (this._snapTo === undefined) {
             this._value = this._centerLocation;
         } else {
@@ -142,6 +147,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 bounds: this._bounds
             }
         )
+        this.leafletMap = this.map.leafletMap
     }
 
     GetValue(): UIEventSource<Loc> {
@@ -154,10 +160,9 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
 
     protected InnerConstructElement(): HTMLElement {
         try {
+            const self = this;
             this.clickLocation.addCallbackAndRunD(location => this._centerLocation.setData(location))
-            this.map.installBounds(0.15, true);
-
-            if (this._snapTo !== undefined) {
+             if (this._snapTo !== undefined) {
                 
                 // Show the lines to snap to
                 new ShowDataMultiLayer({
@@ -191,7 +196,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 }
 
                 leaflet.setMaxZoom(layer.max_zoom)
-                leaflet.setMinZoom(layer.max_zoom - 2)
+                leaflet.setMinZoom(self._minZoom ?? layer.max_zoom - 2)
                 leaflet.setZoom(layer.max_zoom - 1)
 
             }, [this.map.leafletMap])
@@ -223,8 +228,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
         }
     }
 
-    readonly leafletMap: UIEventSource<any> = this.map.leafletMap
-
+   
     installBounds(factor: number | BBox, showRange?: boolean): void {
         this.map.installBounds(factor, showRange)
     }
