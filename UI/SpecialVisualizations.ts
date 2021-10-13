@@ -502,7 +502,18 @@ There are also some technicalities in your theme to keep in mind:
                     const text = args[2]
                     const autoapply = args[3]?.toLowerCase() === "true"
                     const overwrite = args[4]?.toLowerCase() === "true"
-                    const featureIds : UIEventSource<string[]> = tagsSource.map(tags => JSON.parse(tags[featureIdsKey]))
+                    const featureIds : UIEventSource<string[]> = tagsSource.map(tags => {
+                          const ids =  tags[featureIdsKey]
+                        try{
+                            if(ids === undefined){
+                                return []
+                            }
+                            return JSON.parse(ids);
+                        }catch(e){
+                            console.warn("Could not parse ", ids, "as JSON to extract IDS which should be shown on the map.")
+                            return []
+                        }
+                    })
                     return new MultiApply(
                         {
                             featureIds,

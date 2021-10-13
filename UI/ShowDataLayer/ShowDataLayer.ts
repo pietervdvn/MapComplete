@@ -6,6 +6,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import State from "../../State";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class ShowDataLayer {
 
@@ -28,9 +29,13 @@ export default class ShowDataLayer {
      */
     private readonly leafletLayersPerId = new Map<string, { feature: any, leafletlayer: any }>()
 
+    private readonly showDataLayerid : number;
+    private static dataLayerIds = 0
 
     constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
         this._leafletMap = options.leafletMap;
+        this.showDataLayerid = ShowDataLayer.dataLayerIds;
+        ShowDataLayer.dataLayerIds++
         this._enablePopups = options.enablePopups ?? true;
         if (options.features === undefined) {
             throw "Invalid ShowDataLayer invocation"
@@ -221,9 +226,8 @@ export default class ShowDataLayer {
 
         let infobox: FeatureInfoBox = undefined;
 
-        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this._cleanCount}`
-        popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type}</div>`)
-
+        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}`
+        popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type} ${id} is loading</div>`)
         leafletLayer.on("popupopen", () => {
             if (infobox === undefined) {
                 const tags = State.state.allElements.getEventSourceById(feature.properties.id);
