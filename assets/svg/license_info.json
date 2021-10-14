@@ -506,6 +506,14 @@
     ]
   },
   {
+    "path": "delete_not_allowed.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "direction.svg",
     "license": "CC0; trivial",
     "authors": [],
