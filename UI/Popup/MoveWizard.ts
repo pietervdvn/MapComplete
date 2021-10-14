@@ -18,11 +18,12 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {ElementStorage} from "../../Logic/ElementStorage";
+import Img from "../Base/Img";
 
 interface MoveReason {
     text: Translation | string,
     invitingText: Translation | string,
-    icon: string | BaseUIElement,
+    icon: BaseUIElement,
     changesetCommentValue: string,
     lockBounds: true | boolean,
     background: undefined | "map" | "photo" | string | string[],
@@ -84,14 +85,14 @@ export default class MoveWizard extends Toggle {
             const reason = reasons[0]
             moveReason.setData(reason)
             moveButton = new SubtleButton(
-                reason.icon,
+                reason.icon.SetStyle("height: 1.5rem; width: auto;"),
                 Translations.WT(reason.invitingText).Clone()
             ).onClick(() => {
                 currentStep.setData("pick_location")
             })
         }else{
             moveButton = new SubtleButton(
-                Svg.move_ui(),
+                Svg.move_ui().SetStyle("height: 1.5rem; width: auto"),
                 t.inviteToMove.generic.Clone()
             ).onClick(() => {
                 currentStep.setData("reason")
