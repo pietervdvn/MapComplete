@@ -56,6 +56,15 @@
     },
     {
       "builtin": [
+        "playground"
+      ],
+      "override": {
+        "minzoom": 14,
+        "iconSize": "25,25,center"
+      }
+    },
+    {
+      "builtin": [
         "binocular",
         "observation_tower"
       ],

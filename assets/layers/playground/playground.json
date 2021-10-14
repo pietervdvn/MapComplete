@@ -527,5 +527,13 @@
             }
         }
     ],
-    "wayHandling": 2
+    "wayHandling": 2,
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "disused:leisure=playground",
+                "leisure="
+            ]
+        }
+    }
 }

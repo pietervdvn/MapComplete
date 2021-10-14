@@ -117,7 +117,18 @@ export default class DeleteWizard extends Toggle {
 
                             deleteButton,
                             confirm),
-                        new VariableUiElement(deleteAbility.canBeDeleted.map(cbd => new Combine([cbd.reason.Clone(), t.useSomethingElse.Clone()]))),
+                        new VariableUiElement(deleteAbility.canBeDeleted.map(cbd =>
+
+                            new Combine([
+                                Svg.delete_not_allowed_svg().SetStyle("height: 2rem; width: auto").SetClass("mr-2"),
+                                new Combine([
+                                    t.cannotBeDeleted.Clone(),
+                                    cbd.reason.Clone().SetClass("subtle"),
+                                    t.useSomethingElse.Clone().SetClass("subtle")]).SetClass("flex flex-col")
+                            ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200 bg-gray-200")))
+
+
+                        ,
                         deleteAbility.canBeDeleted.map(cbd => allowSoftDeletion || cbd.canBeDeleted !== false)),
 
                     t.loginToDelete.Clone().onClick(State.state.osmConnection.AttemptLogin),

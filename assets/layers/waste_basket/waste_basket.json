@@ -75,6 +75,50 @@
                     }
                 }
             ]
+        },
+        {
+            "id": "dispensing_dog_bags",
+            "question": {
+                "en": "Does this waste basket have a dispenser for dog excrement bags?"
+            },
+            "condition": {
+                "or": [
+                    "waste=dog_excrement",
+                    "waste=trash",
+                    "waste="
+                ]
+            },
+            "mappings": [
+                {
+                    "if": {
+                        "and": [
+                            "vending=dog_excrement_bag",
+                            "not:vending="
+                        ]
+                    },
+                    "then": {
+                        "en": "This waste basket has a dispenser for (dog) excrement bags"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "not:vending=dog_excrement_bag",
+                            "vending="
+                        ]
+                    },
+                    "then": {
+                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags"
+                    }
+                },
+                {
+                    "if": "vending=",
+                    "then": {
+                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags"
+                    },
+                    "hideInAnwer": true
+                }
+            ]
         }
     ],
     "icon": {

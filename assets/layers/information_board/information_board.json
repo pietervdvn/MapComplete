@@ -58,7 +58,7 @@
         "softDeletionTags": {
             "and": [
                 "disused:tourism:=information",
-                "tourism=" ,
+                "tourism=",
                 "razed:information=board",
                 "information="
             ]

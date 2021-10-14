@@ -210,11 +210,11 @@ export default class MoveWizard extends Toggle {
         super(
             moveFlow,
             new Combine([
-                Svg.move_not_allowed_svg().SetStyle("height: 2rem"),
+                Svg.move_not_allowed_svg().SetStyle("height: 2rem").SetClass("m-2"),
                 new Combine([t.cannotBeMoved.Clone(),
                     new VariableUiElement(moveDisallowedReason).SetClass("subtle")
                 ]).SetClass("flex flex-col")
-            ]).SetClass("flex"),
+            ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200"),
             moveDisallowedReason.map(r => r === undefined)
         )
     }

@@ -40,6 +40,7 @@
         "delete": "Delete",
         "cancel": "Cancel",
         "isDeleted": "This feature is deleted",
+        "cannotBeDeleted": "This feature can not be deleted",
         "loginToDelete": "You must be logged in to delete a point",
         "safeDelete": "This point can be safely deleted.",
         "isntAPoint": "Only points can be deleted, the selected feature is a way, area or relation.",
