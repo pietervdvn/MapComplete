@@ -264,6 +264,7 @@ export default class SimpleMetaTagger {
                             return true; // Our job is done, lets unregister!
                         } catch (e) {
                             console.warn("Error while parsing opening hours of ", tags.id, e);
+                            delete tags._isOpen
                             tags["_isOpen"] = "parse_error";
                         }
 
