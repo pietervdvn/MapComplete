@@ -120,7 +120,7 @@ export default class SplitRoadWizard extends Toggle {
             }))
 
         // Toggle between splitmap
-        const splitButton = new SubtleButton(Svg.scissors_ui(), t.inviteToSplit.Clone().SetClass("text-lg font-bold"));
+        const splitButton = new SubtleButton(Svg.scissors_ui().SetStyle("height: 1.5rem; width: auto"), t.inviteToSplit.Clone().SetClass("text-lg font-bold"));
         splitButton.onClick(
             () => {
                 splitClicked.setData(true)

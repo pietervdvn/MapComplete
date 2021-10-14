@@ -539,5 +539,18 @@
             },
             "id": "defibrillator-fixme"
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "disused:emergency:=defibrillator}",
+                "emergency="
+            ]
+        },
+        "neededChangesets": 5
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

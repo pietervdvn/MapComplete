@@ -81,5 +81,18 @@
                 "nl": "Voeg hier een parking voor auto's toe"
             }
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "disused:amenity:={amenity}",
+                "amenity="
+            ]
+        },
+        "neededChangesets": 1
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

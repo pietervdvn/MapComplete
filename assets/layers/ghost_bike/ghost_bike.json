@@ -187,5 +187,18 @@
             },
             "id": "ghost_bike-start_date"
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "razed:memorial:=ghost_bike",
+                "memorial="
+            ]
+        },
+        "neededChangesets": 50
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

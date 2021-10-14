@@ -181,5 +181,11 @@
                 }
             ]
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": ["amenity=","disused:amenity:={amenity}"]
+        }
+    },
+    "allowMove": true
 }

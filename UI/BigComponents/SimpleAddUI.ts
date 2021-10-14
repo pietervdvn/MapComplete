@@ -153,6 +153,7 @@ export default class SimpleAddUI extends Toggle {
                 maxSnapDistance: preset.preciseInput.maxSnapDistance,
                 bounds: mapBounds
             })
+            preciseInput.installBounds(0.15, true)
             preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
 
 

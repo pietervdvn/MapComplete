@@ -101,5 +101,18 @@
             }
         }
     ],
-    "wayHandling": 1
+    "wayHandling": 1,
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "disused:amenity:={amenity}",
+                "amenity="
+            ]
+        },
+        "neededChangesets": 1
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

@@ -3,6 +3,7 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import FilterConfigJson from "./FilterConfigJson";
 import {DeleteConfigJson} from "./DeleteConfigJson";
 import UnitConfigJson from "./UnitConfigJson";
+import MoveConfigJson from "./MoveConfigJson";
 
 /**
  * Configuration for a single layer
@@ -313,6 +314,18 @@ export interface LayerConfigJson {
 
      */
     deletion?: boolean | DeleteConfigJson
+
+    /**
+     * Indicates if a point can be moved and configures the modalities.
+     * 
+     * A feature can be moved by MapComplete if:
+     * 
+     * - It is a point
+     * - The point is _not_ part of a way or a a relation.
+     * 
+     * Off by default. Can be enabled by setting this flag or by configuring.
+     */
+    allowMove?: boolean | MoveConfigJson 
 
     /**
      * IF set, a 'split this road' button is shown

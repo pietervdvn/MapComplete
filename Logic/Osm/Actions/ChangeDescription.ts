@@ -16,7 +16,7 @@ export interface ChangeDescription {
         /**
          * The type of the change
          */
-        changeType:  "answer" | "create" | "split" | "delete" | string
+        changeType:  "answer" | "create" | "split" | "delete" | "move" | string
         /**
          * THe motivation for the change, e.g. 'deleted because does not exist anymore'
          */
