@@ -134,7 +134,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             })
 
         }
-        this.mapBackground = options.mapBackground ?? State.state?.backgroundLayer ?? new UIEventSource(AvailableBaseLayers.osmCarto)
+        this.mapBackground = options.mapBackground ?? State.state?.backgroundLayer
         this.SetClass("block h-full")
 
 
