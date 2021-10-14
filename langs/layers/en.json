@@ -1040,7 +1040,7 @@
                         "then": "Authentication via debit card is available"
                     },
                     "7": {
-                        "then": "No authentication is needed"
+                        "then": "Charging here is (also) possible without authentication"
                     }
                 },
                 "question": "What kind of authentication is available at the charging station?"

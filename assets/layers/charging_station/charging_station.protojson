@@ -37,9 +37,6 @@
     "ru": "Зарядная станция",
     "zh_Hant": "充電站"
   },
-  "calculatedTags": [
-    "motorcar=feat.properties.motorcar ?? feat.properties.car"
-  ],
   "tagRenderings": [
     "images",
     {
@@ -58,13 +55,7 @@
         },
         {
           "if": "motorcar=yes",
-          "extraTags": "car=",
-          "ifnot": {
-            "and": [
-              "car=",
-              "motorcar=no"
-            ]
-          },
+          "ifnot":  "motorcar=no",
           "then": {
             "en": "<b>Cars</b> can be charged here"
           }
@@ -212,7 +203,7 @@
           "if": "authentication:none=yes",
           "ifnot": "authentication:none=no",
           "then": {
-            "en": "No authentication is needed"
+            "en": "Charging here is (also) possible without authentication"
           }
         }
       ]

@@ -47,6 +47,11 @@ export default class SelectedElementTagsUpdater {
                 return;
             }
             
+            if(id.indexOf("-") >= 0){
+                // This is a new object
+                return;
+            }
+            
             OsmObject.DownloadPropertiesOf(id).then(tags => {
                 SelectedElementTagsUpdater.applyUpdate(state, tags, id)
             }).catch(e => {
