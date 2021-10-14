@@ -141,6 +141,8 @@ export default class GeoLocationHandler extends VariableUiElement {
             [this._hasLocation]
         );
         currentPointer.addCallbackAndRun((pointerClass) => {
+            self.RemoveClass("cursor-wait")
+            self.RemoveClass("cursor-pointer")
             self.SetClass(pointerClass);
         });
 
