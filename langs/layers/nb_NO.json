@@ -1,4 +1,71 @@
 {
+    "artwork": {
+        "name": "Kunstverk",
+        "presets": {
+            "0": {
+                "title": "Kunstverk"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Hvilken artist lagde dette?",
+                "render": "Laget av {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Arkitektur"
+                    },
+                    "1": {
+                        "then": "Veggmaleri"
+                    },
+                    "2": {
+                        "then": "Maleri"
+                    },
+                    "3": {
+                        "then": "Skulptur"
+                    },
+                    "4": {
+                        "then": "Statue"
+                    },
+                    "5": {
+                        "then": "Byste"
+                    },
+                    "6": {
+                        "then": "Stein"
+                    },
+                    "7": {
+                        "then": "Installasjon"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Relieff"
+                    },
+                    "10": {
+                        "then": "Azulejo (Spansk dekorativt flisverk)"
+                    },
+                    "11": {
+                        "then": "Flisarbeid"
+                    }
+                },
+                "question": "Hvilken type kunstverk er dette?",
+                "render": "Dette er et kunstverk av typen {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Finnes det en nettside med mer info om dette kunstverket?",
+                "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
+                "render": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
+        },
+        "title": {
+            "render": "Kunstverk"
+        }
+    },
     "bench": {
         "name": "Benker",
         "presets": {

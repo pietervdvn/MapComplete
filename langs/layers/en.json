@@ -1,4 +1,77 @@
 {
+    "artwork": {
+        "description": "Diverse pieces of artwork",
+        "name": "Artworks",
+        "presets": {
+            "0": {
+                "title": "Artwork"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Which artist created this?",
+                "render": "Created by {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Architecture"
+                    },
+                    "1": {
+                        "then": "Mural"
+                    },
+                    "2": {
+                        "then": "Painting"
+                    },
+                    "3": {
+                        "then": "Sculpture"
+                    },
+                    "4": {
+                        "then": "Statue"
+                    },
+                    "5": {
+                        "then": "Bust"
+                    },
+                    "6": {
+                        "then": "Stone"
+                    },
+                    "7": {
+                        "then": "Installation"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Relief"
+                    },
+                    "10": {
+                        "then": "Azulejo (Spanish decorative tilework)"
+                    },
+                    "11": {
+                        "then": "Tilework"
+                    }
+                },
+                "question": "What is the type of this artwork?",
+                "render": "This is a {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Is there a website with more information about this artwork?",
+                "render": "More information on <a href='{website}' target='_blank'>this website</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Which Wikidata-entry corresponds with <b>this artwork</b>?",
+                "render": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Artwork <i>{name}</i>"
+                }
+            },
+            "render": "Artwork"
+        }
+    },
     "barrier": {
         "description": "Obstacles while cycling, such as bollards and cycle barriers",
         "name": "Barriers",
@@ -3108,6 +3181,75 @@
                 }
             },
             "render": "Bookcase"
+        }
+    },
+    "shops": {
+        "description": "A shop",
+        "name": "Shop",
+        "presets": {
+            "0": {
+                "description": "Add a new shop",
+                "title": "Shop"
+            }
+        },
+        "tagRenderings": {
+            "shops-email": {
+                "question": "What is the email address of this shop?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "shops-name": {
+                "question": "What is the name of this shop?"
+            },
+            "shops-opening_hours": {
+                "question": "What are the opening hours of this shop?",
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "shops-phone": {
+                "question": "What is the phone number?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Convenience store"
+                    },
+                    "1": {
+                        "then": "Supermarket"
+                    },
+                    "2": {
+                        "then": "Clothing store"
+                    },
+                    "3": {
+                        "then": "Hairdresser"
+                    },
+                    "4": {
+                        "then": "Bakery"
+                    },
+                    "5": {
+                        "then": "Car repair (garage)"
+                    },
+                    "6": {
+                        "then": "Car dealer"
+                    }
+                },
+                "question": "What does this shop sell?",
+                "render": "This shop sells {shop}"
+            },
+            "shops-website": {
+                "question": "What is the website of this shop?",
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
+                }
+            },
+            "render": "Shop"
         }
     },
     "slow_roads": {

@@ -5,24 +5,6 @@
     },
     "artwork": {
         "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
-        "layers": {
-            "0": {
-                "name": "Karya seni",
-                "tagRenderings": {
-                    "artwork-website": {
-                        "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Karya seni <i>{name}</i>"
-                        }
-                    },
-                    "render": "Karya seni"
-                }
-            }
-        },
         "title": "Buka Peta Karya Seni"
     },
     "campersite": {
@@ -135,23 +117,6 @@
                                 "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
                             }
                         }
-                    }
-                }
-            }
-        }
-    },
-    "shops": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "shops-email": {
-                        "render": "<a href='mailto:{email}'>{email}</a>"
-                    },
-                    "shops-phone": {
-                        "render": "<a href='tel:{phone}'>{phone}</a>"
-                    },
-                    "shops-website": {
-                        "render": "<a href='{website}'>{website}</a>"
                     }
                 }
             }

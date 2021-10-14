@@ -81,6 +81,16 @@
             }
         }
     },
+    "shops": {
+        "tagRenderings": {
+            "shops-phone": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-website": {
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        }
+    },
     "tree_node": {
         "title": {
             "mappings": {

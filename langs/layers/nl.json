@@ -1,4 +1,77 @@
 {
+    "artwork": {
+        "description": "Verschillende soorten kunstwerken",
+        "name": "Kunstwerken",
+        "presets": {
+            "0": {
+                "title": "Kunstwerk"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Welke kunstenaar creëerde dit kunstwerk?",
+                "render": "Gecreëerd door {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Architectuur"
+                    },
+                    "1": {
+                        "then": "Muurschildering"
+                    },
+                    "2": {
+                        "then": "Schilderij"
+                    },
+                    "3": {
+                        "then": "Beeldhouwwerk"
+                    },
+                    "4": {
+                        "then": "Standbeeld"
+                    },
+                    "5": {
+                        "then": "Buste"
+                    },
+                    "6": {
+                        "then": "Steen"
+                    },
+                    "7": {
+                        "then": "Installatie"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Reliëf"
+                    },
+                    "10": {
+                        "then": "Azulejo (Spaanse siertegels)"
+                    },
+                    "11": {
+                        "then": "Tegelwerk"
+                    }
+                },
+                "question": "Wat voor soort kunstwerk is dit?",
+                "render": "Dit is een {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Is er een website met meer informatie over dit kunstwerk?",
+                "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
+                "render": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kunstwerk <i>{name}</i>"
+                }
+            },
+            "render": "Kunstwerk"
+        }
+    },
     "barrier": {
         "description": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
         "name": "Barrières",
@@ -3321,6 +3394,49 @@
                 }
             },
             "render": "Boekenruilkast"
+        }
+    },
+    "shops": {
+        "description": "Een winkel",
+        "name": "Winkel",
+        "presets": {
+            "0": {
+                "description": "Voeg een nieuwe winkel toe",
+                "title": "Winkel"
+            }
+        },
+        "tagRenderings": {
+            "shops-email": {
+                "question": "Wat is het e-mailadres van deze winkel?"
+            },
+            "shops-name": {
+                "question": "Wat is de naam van deze winkel?"
+            },
+            "shops-opening_hours": {
+                "question": "Wat zijn de openingsuren van deze winkel?"
+            },
+            "shops-phone": {
+                "question": "Wat is het telefoonnummer?"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "1": {
+                        "then": "Supermarkt"
+                    },
+                    "3": {
+                        "then": "Kapper"
+                    },
+                    "4": {
+                        "then": "Bakkerij"
+                    }
+                }
+            },
+            "shops-website": {
+                "question": "Wat is de website van deze winkel?"
+            }
+        },
+        "title": {
+            "render": "Winkel"
         }
     },
     "slow_roads": {

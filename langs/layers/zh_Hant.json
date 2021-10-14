@@ -1,4 +1,77 @@
 {
+    "artwork": {
+        "description": "不同類型的藝術品",
+        "name": "藝術品",
+        "presets": {
+            "0": {
+                "title": "藝術品"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "創造這個的藝術家是誰？",
+                "render": "{artist_name} 創作"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "建築物"
+                    },
+                    "1": {
+                        "then": "壁畫"
+                    },
+                    "2": {
+                        "then": "繪畫"
+                    },
+                    "3": {
+                        "then": "雕塑"
+                    },
+                    "4": {
+                        "then": "雕像"
+                    },
+                    "5": {
+                        "then": "半身像"
+                    },
+                    "6": {
+                        "then": "石頭"
+                    },
+                    "7": {
+                        "then": "安裝"
+                    },
+                    "8": {
+                        "then": "塗鴨"
+                    },
+                    "9": {
+                        "then": "寬慰"
+                    },
+                    "10": {
+                        "then": "Azulejo (西班牙雕塑作品名稱)"
+                    },
+                    "11": {
+                        "then": "瓷磚"
+                    }
+                },
+                "question": "這是什麼類型的藝術品？",
+                "render": "這是 {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "在那個網站能夠找到更多藝術品的資訊？",
+                "render": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊"
+            },
+            "artwork-wikidata": {
+                "question": "<b>這個藝術品</b>有那個對應的 Wikidata 項目？",
+                "render": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "藝術品<i>{name}</i>"
+                }
+            },
+            "render": "藝術品"
+        }
+    },
     "bench": {
         "name": "長椅",
         "presets": {

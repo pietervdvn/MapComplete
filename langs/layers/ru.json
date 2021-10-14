@@ -1,4 +1,77 @@
 {
+    "artwork": {
+        "description": "Разнообразные произведения искусства",
+        "name": "Произведения искусства",
+        "presets": {
+            "0": {
+                "title": "Художественная работа"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Какой художник создал это?",
+                "render": "Создано {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Архитектура"
+                    },
+                    "1": {
+                        "then": "Фреска"
+                    },
+                    "2": {
+                        "then": "Живопись"
+                    },
+                    "3": {
+                        "then": "Скульптура"
+                    },
+                    "4": {
+                        "then": "Статуя"
+                    },
+                    "5": {
+                        "then": "Бюст"
+                    },
+                    "6": {
+                        "then": "Камень"
+                    },
+                    "7": {
+                        "then": "Инсталляция"
+                    },
+                    "8": {
+                        "then": "Граффити"
+                    },
+                    "9": {
+                        "then": "Рельеф"
+                    },
+                    "10": {
+                        "then": "Азуле́жу (испанская роспись глазурованной керамической плитки)"
+                    },
+                    "11": {
+                        "then": "Плитка (мозаика)"
+                    }
+                },
+                "question": "К какому типу относится эта работа?",
+                "render": "Это {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Есть ли сайт с более подробной информацией об этой работе?",
+                "render": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Какая запись в Wikidata соответсвует <b>этой работе</b>?",
+                "render": "Запись об этой работе в wikidata: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Художественная работа <i>{name}</i>"
+                }
+            },
+            "render": "Художественная работа"
+        }
+    },
     "bench": {
         "name": "Скамейки",
         "presets": {
@@ -860,6 +933,65 @@
                 }
             },
             "render": "Книжный шкаф"
+        }
+    },
+    "shops": {
+        "description": "Магазин",
+        "name": "Магазин",
+        "presets": {
+            "0": {
+                "description": "Добавить новый магазин",
+                "title": "Магазин"
+            }
+        },
+        "tagRenderings": {
+            "shops-email": {
+                "question": "Каков адрес электронной почты этого магазина?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "shops-name": {
+                "question": "Как называется этот магазин?"
+            },
+            "shops-opening_hours": {
+                "question": "Каковы часы работы этого магазина?",
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "shops-phone": {
+                "question": "Какой телефон?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "1": {
+                        "then": "Супермаркет"
+                    },
+                    "2": {
+                        "then": "Магазин одежды"
+                    },
+                    "3": {
+                        "then": "Парикмахерская"
+                    },
+                    "6": {
+                        "then": "Автосалон"
+                    }
+                },
+                "question": "Что продаётся в этом магазине?"
+            },
+            "shops-website": {
+                "question": "Какой веб-сайт у этого магазина?",
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
+                }
+            },
+            "render": "Магазин"
         }
     },
     "slow_roads": {

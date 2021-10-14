@@ -9,81 +9,6 @@
     },
     "artwork": {
         "description": "Welkom op de open kunstwerken-kaart, een kaart van standbeelden, bustes, graffiti en andere kunstwerken over de hele wereld",
-        "layers": {
-            "0": {
-                "description": "Verschillende soorten kunstwerken",
-                "name": "Kunstwerken",
-                "presets": {
-                    "0": {
-                        "title": "Kunstwerk"
-                    }
-                },
-                "tagRenderings": {
-                    "artwork-artist_name": {
-                        "question": "Welke kunstenaar creëerde dit kunstwerk?",
-                        "render": "Gecreëerd door {artist_name}"
-                    },
-                    "artwork-artwork_type": {
-                        "mappings": {
-                            "0": {
-                                "then": "Architectuur"
-                            },
-                            "1": {
-                                "then": "Muurschildering"
-                            },
-                            "2": {
-                                "then": "Schilderij"
-                            },
-                            "3": {
-                                "then": "Beeldhouwwerk"
-                            },
-                            "4": {
-                                "then": "Standbeeld"
-                            },
-                            "5": {
-                                "then": "Buste"
-                            },
-                            "6": {
-                                "then": "Steen"
-                            },
-                            "7": {
-                                "then": "Installatie"
-                            },
-                            "8": {
-                                "then": "Graffiti"
-                            },
-                            "9": {
-                                "then": "Reliëf"
-                            },
-                            "10": {
-                                "then": "Azulejo (Spaanse siertegels)"
-                            },
-                            "11": {
-                                "then": "Tegelwerk"
-                            }
-                        },
-                        "question": "Wat voor soort kunstwerk is dit?",
-                        "render": "Dit is een {artwork_type}"
-                    },
-                    "artwork-website": {
-                        "question": "Is er een website met meer informatie over dit kunstwerk?",
-                        "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
-                    },
-                    "artwork-wikidata": {
-                        "question": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
-                        "render": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Kunstwerk <i>{name}</i>"
-                        }
-                    },
-                    "render": "Kunstwerk"
-                }
-            }
-        },
         "title": "Open kunstwerken-kaart"
     },
     "benches": {
@@ -925,53 +850,6 @@
         "description": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
         "shortDescription": "Een kaart met speeltuinen",
         "title": "Speelplekken"
-    },
-    "shops": {
-        "layers": {
-            "0": {
-                "description": "Een winkel",
-                "name": "Winkel",
-                "presets": {
-                    "0": {
-                        "description": "Voeg een nieuwe winkel toe",
-                        "title": "Winkel"
-                    }
-                },
-                "tagRenderings": {
-                    "shops-email": {
-                        "question": "Wat is het e-mailadres van deze winkel?"
-                    },
-                    "shops-name": {
-                        "question": "Wat is de naam van deze winkel?"
-                    },
-                    "shops-opening_hours": {
-                        "question": "Wat zijn de openingsuren van deze winkel?"
-                    },
-                    "shops-phone": {
-                        "question": "Wat is het telefoonnummer?"
-                    },
-                    "shops-shop": {
-                        "mappings": {
-                            "1": {
-                                "then": "Supermarkt"
-                            },
-                            "3": {
-                                "then": "Kapper"
-                            },
-                            "4": {
-                                "then": "Bakkerij"
-                            }
-                        }
-                    },
-                    "shops-website": {
-                        "question": "Wat is de website van deze winkel?"
-                    }
-                },
-                "title": {
-                    "render": "Winkel"
-                }
-            }
-        }
     },
     "speelplekken": {
         "description": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>",

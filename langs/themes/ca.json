@@ -45,19 +45,5 @@
     "personal": {
         "description": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
         "title": "Interfície personal"
-    },
-    "shops": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "shops-phone": {
-                        "render": "<a href='tel:{phone}'>{phone}</a>"
-                    },
-                    "shops-website": {
-                        "render": "<a href='{website}'>{website}</a>"
-                    }
-                }
-            }
-        }
     }
 }

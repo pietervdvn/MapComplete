@@ -1,4 +1,77 @@
 {
+    "artwork": {
+        "description": "Diverses œuvres d'art",
+        "name": "Œuvres d'art",
+        "presets": {
+            "0": {
+                "title": "Œuvre d'art"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Quel artiste a créé cette œuvre ?",
+                "render": "Créé par {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Architecture"
+                    },
+                    "1": {
+                        "then": "Peinture murale"
+                    },
+                    "2": {
+                        "then": "Peinture"
+                    },
+                    "3": {
+                        "then": "Sculpture"
+                    },
+                    "4": {
+                        "then": "Statue"
+                    },
+                    "5": {
+                        "then": "Buste"
+                    },
+                    "6": {
+                        "then": "Rocher"
+                    },
+                    "7": {
+                        "then": "Installation"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Relief"
+                    },
+                    "10": {
+                        "then": "Azulejo (faïence latine)"
+                    },
+                    "11": {
+                        "then": "Carrelage"
+                    }
+                },
+                "question": "Quel est le type de cette œuvre d'art?",
+                "render": "Type d'œuvre : {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
+                "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Quelle entrée Wikidata correspond à <b>cette œuvre d'art</b> ?",
+                "render": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Œuvre d'art <i>{name}</i>"
+                }
+            },
+            "render": "Œuvre d'art"
+        }
+    },
     "bench": {
         "name": "Bancs",
         "presets": {
@@ -1293,6 +1366,75 @@
                 }
             },
             "render": "Microbibliothèque"
+        }
+    },
+    "shops": {
+        "description": "Un magasin",
+        "name": "Magasin",
+        "presets": {
+            "0": {
+                "description": "Ajouter un nouveau magasin",
+                "title": "Magasin"
+            }
+        },
+        "tagRenderings": {
+            "shops-email": {
+                "question": "Quelle est l'adresse électronique de ce magasin ?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "shops-name": {
+                "question": "Qu'est-ce que le nom de ce magasin?"
+            },
+            "shops-opening_hours": {
+                "question": "Quels sont les horaires d'ouverture de ce magasin ?",
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "shops-phone": {
+                "question": "Quel est le numéro de téléphone ?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Épicerie/superette"
+                    },
+                    "1": {
+                        "then": "Supermarché"
+                    },
+                    "2": {
+                        "then": "Magasin de vêtements"
+                    },
+                    "3": {
+                        "then": "Coiffeur"
+                    },
+                    "4": {
+                        "then": "Boulangerie"
+                    },
+                    "5": {
+                        "then": "Garagiste"
+                    },
+                    "6": {
+                        "then": "Concessionnaire"
+                    }
+                },
+                "question": "Que vends ce magasin ?",
+                "render": "Ce magasin vends {shop}"
+            },
+            "shops-website": {
+                "question": "Quel est le site internet de ce magasin ?",
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
+                }
+            },
+            "render": "Magasin"
         }
     },
     "slow_roads": {

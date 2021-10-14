@@ -1,4 +1,77 @@
 {
+    "artwork": {
+        "description": "Verschiedene Kunstwerke",
+        "name": "Kunstwerke",
+        "presets": {
+            "0": {
+                "title": "Kunstwerk"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Welcher Künstler hat das geschaffen?",
+                "render": "Erstellt von {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Architektur"
+                    },
+                    "1": {
+                        "then": "Wandbild"
+                    },
+                    "2": {
+                        "then": "Malerei"
+                    },
+                    "3": {
+                        "then": "Skulptur"
+                    },
+                    "4": {
+                        "then": "Statue"
+                    },
+                    "5": {
+                        "then": "Büste"
+                    },
+                    "6": {
+                        "then": "Stein"
+                    },
+                    "7": {
+                        "then": "Installation"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Relief"
+                    },
+                    "10": {
+                        "then": "Azulejo (spanische dekorative Fliesenarbeit)"
+                    },
+                    "11": {
+                        "then": "Fliesenarbeit"
+                    }
+                },
+                "question": "Was ist die Art dieses Kunstwerks?",
+                "render": "Dies ist ein {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
+                "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
+                "render": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kunstwerk <i>{name}</i>"
+                }
+            },
+            "render": "Kunstwerk"
+        }
+    },
     "bench": {
         "name": "Sitzbänke",
         "presets": {
