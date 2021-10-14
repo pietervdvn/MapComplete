@@ -15,13 +15,17 @@ import {OsmObject} from "../../Logic/Osm/OsmObject";
 import {Changes} from "../../Logic/Osm/Changes";
 import ChangeLocationAction from "../../Logic/Osm/Actions/ChangeLocationAction";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import MoveConfig from "../../Models/ThemeConfig/MoveConfig";
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
+import {ElementStorage} from "../../Logic/ElementStorage";
 
 interface MoveReason {
     text: Translation | string,
+    invitingText: Translation | string,
     icon: string | BaseUIElement,
     changesetCommentValue: string,
     lockBounds: true | boolean,
-    background: undefined | "map" | "photo",
+    background: undefined | "map" | "photo" | string | string[],
     startZoom: number,
     minZoom: number
 }
@@ -36,13 +40,9 @@ export default class MoveWizard extends Toggle {
             osmConnection: OsmConnection,
             featureSwitchUserbadge: UIEventSource<boolean>,
             changes: Changes,
-            layoutToUse: LayoutConfig
-        }, options?: {
-            reasons?: MoveReason[]
-            disableDefaultReasons?: false | boolean
-
-        }) {
-        options = options ?? {}
+            layoutToUse: LayoutConfig,
+            allElements: ElementStorage
+        }, options : MoveConfig) {
 
         const t = Translations.t.move
         const loginButton = new Toggle(
@@ -51,14 +51,53 @@ export default class MoveWizard extends Toggle {
             state.featureSwitchUserbadge
         )
 
+        const reasons: MoveReason[] = []
+        if (options.enableRelocation) {
+            reasons.push({
+                text: t.reasons.reasonRelocation.Clone(),
+                invitingText: t.inviteToMove.reasonRelocation.Clone(),
+                icon: Svg.relocation_svg(),
+                changesetCommentValue: "relocated",
+                lockBounds: false,
+                background: undefined,
+                startZoom: 12,
+                minZoom: 6
+            })
+        }
+        if(options.enableImproveAccuracy){
+            reasons.push({
+                text: t.reasons.reasonInaccurate.Clone(),
+                invitingText: t.inviteToMove.reasonInaccurate,
+                icon: Svg.crosshair_svg(),
+                changesetCommentValue: "improve_accuracy",
+                lockBounds: true,
+                background: "photo",
+                startZoom: 17,
+                minZoom: 16
+            })
+        }
+
         const currentStep = new UIEventSource<"start" | "reason" | "pick_location" | "moved">("start")
         const moveReason = new UIEventSource<MoveReason>(undefined)
-        const moveButton = new SubtleButton(
-            Svg.move_ui(),
-            t.inviteToMove.Clone()
-        ).onClick(() => {
-            currentStep.setData("reason")
-        })
+        let moveButton : BaseUIElement;
+        if(reasons.length === 1){
+            const reason = reasons[0]
+            moveReason.setData(reason)
+            moveButton = new SubtleButton(
+                reason.icon,
+                Translations.WT(reason.invitingText).Clone()
+            ).onClick(() => {
+                currentStep.setData("pick_location")
+            })
+        }else{
+            moveButton = new SubtleButton(
+                Svg.move_ui(),
+                t.inviteToMove.generic.Clone()
+            ).onClick(() => {
+                currentStep.setData("reason")
+            })
+        }
+        
 
         const moveAgainButton = new SubtleButton(
             Svg.move_ui(),
@@ -68,40 +107,8 @@ export default class MoveWizard extends Toggle {
         })
 
 
-        const reasons: MoveReason[] = []
-        if (!options.disableDefaultReasons) {
-            reasons.push({
-                text: t.reasonRelocation.Clone(),
-                icon: Svg.relocation_svg(),
-                changesetCommentValue: "relocated",
-                lockBounds: false,
-                background: undefined,
-                startZoom: 12,
-                minZoom: 6
-            })
-
-            reasons.push({
-                text: t.reasonInaccurate.Clone(),
-                icon: Svg.crosshair_svg(),
-                changesetCommentValue: "improve_accuracy",
-                lockBounds: true,
-                background: "photo",
-                startZoom: 17,
-                minZoom: 16
-            })
-        }
-        for (const reason of options.reasons ?? []) {
-            reasons.push({
-                text: reason.text,
-                icon: reason.icon,
-                changesetCommentValue: reason.changesetCommentValue,
-                lockBounds: reason.lockBounds ?? true,
-                background: reason.background,
-                startZoom: reason.startZoom ?? 15,
-                minZoom: reason.minZoom
-            })
-        }
-
+        
+        
         const selectReason = new Combine(reasons.map(r => new SubtleButton(r.icon, r.text).onClick(() => {
             moveReason.setData(r)
             currentStep.setData("pick_location")
@@ -124,7 +131,8 @@ export default class MoveWizard extends Toggle {
 
             const locationInput = new LocationInput({
                 minZoom: reason.minZoom,
-                centerLocation: loc
+                centerLocation: loc,
+                mapBackground: AvailableBaseLayers.SelectBestLayerAccordingTo(loc,  new UIEventSource(reason.background))
             })
 
             if (reason.lockBounds) {
@@ -135,10 +143,14 @@ export default class MoveWizard extends Toggle {
 
             const confirmMove = new SubtleButton(Svg.move_confirm_svg(), t.confirmMove)
             confirmMove.onClick(() => {
-                state.changes.applyAction(new ChangeLocationAction(featureToMove.properties.id, [locationInput.GetValue().data.lon, locationInput.GetValue().data.lat], {
+                const loc = locationInput.GetValue().data
+                state.changes.applyAction(new ChangeLocationAction(featureToMove.properties.id, [loc.lon, loc.lat], {
                     reason: Translations.WT(reason.text).textFor("en"),
-                    theme: state.layoutToUse.icon
+                    theme: state.layoutToUse.id
                 }))
+                featureToMove.properties._lat = loc.lat
+                featureToMove.properties._lon = loc.lon
+                state.allElements.getEventSourceById(id).ping()
                 currentStep.setData("moved")
             })
             const zoomInFurhter = t.zoomInFurther.Clone().SetClass("alert block m-6")

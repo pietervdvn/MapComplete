@@ -227,5 +227,18 @@
             }
         }
     ],
-    "wayHandling": 2
+    "wayHandling": 2,
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "razed:tourism:=information",
+                "tourism="
+            ]
+        },
+        "neededChangesets": 1
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

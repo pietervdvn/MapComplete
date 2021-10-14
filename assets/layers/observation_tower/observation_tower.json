@@ -180,5 +180,9 @@
             ],
             "eraseInvalidValues": true
         }
-    ]
+    ],
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

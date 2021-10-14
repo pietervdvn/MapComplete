@@ -296,5 +296,17 @@
                 }
             ]
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "disused:amenity:={amenity}",
+                "amenity="
+            ]
+        }
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

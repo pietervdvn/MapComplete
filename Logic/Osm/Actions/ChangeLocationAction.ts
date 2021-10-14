@@ -18,7 +18,6 @@ export default class ChangeLocationAction extends OsmChangeAction {
         this._id = Number(id.substring("node/".length))
         this._newLonLat = newLonLat;
         this._meta = meta;
-        throw "TODO"
     }
 
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {

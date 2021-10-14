@@ -600,5 +600,18 @@
                 "preferredBackground": "photo"
             }
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "disused:amenity=bench",
+                "amenity="
+            ]
+        },
+        "neededChangesets": 1
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

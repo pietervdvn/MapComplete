@@ -15,6 +15,7 @@ import {BBox} from "../../Logic/BBox";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import BaseUIElement from "../BaseUIElement";
+import Toggle from "./Toggle";
 
 export default class LocationInput extends InputElement<Loc> implements MinimapObj {
 
@@ -157,10 +158,15 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     IsValid(t: Loc): boolean {
         return t !== undefined;
     }
-
+    
     protected InnerConstructElement(): HTMLElement {
         try {
             const self = this;
+            const hasMoved = new UIEventSource(false)
+            this.GetValue().addCallbackAndRunD(_ => {
+                hasMoved.setData(true)
+                return true;
+            })
             this.clickLocation.addCallbackAndRunD(location => this._centerLocation.setData(location))
              if (this._snapTo !== undefined) {
                 
@@ -213,8 +219,8 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                     ]).SetClass("block w-0 h-0 z-10 relative")
                     .SetStyle("background: rgba(255, 128, 128, 0.21); left: 50%; top: 50%; opacity: 0.5"),
                 
-                new Combine([
-                    animatedHand])
+                new Toggle(undefined,
+                    animatedHand, hasMoved)
                     .SetClass("block w-0 h-0 z-10 relative")
                     .SetStyle("left: calc(50% + 3rem); top: calc(50% + 2rem); opacity: 0.7"),
 

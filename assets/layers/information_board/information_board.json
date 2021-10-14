@@ -53,5 +53,20 @@
                 "ru": "Информационный щит"
             }
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "disused:tourism:=information",
+                "tourism=" ,
+                "razed:information=board",
+                "information="
+            ]
+        },
+        "neededChangesets": 1
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

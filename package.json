@@ -7,7 +7,7 @@
   "homepage": "https://mapcomplete.osm.be",
   "main": "index.js",
   "scripts": {
-    "increase-memory": "export NODE_OPTIONS=--max_old_space_size=6182",
+    "increase-memory": "export NODE_OPTIONS=--max_old_space_size=8364",
     "start": "npm run start:prepare && npm-run-all --parallel start:parallel:*",
     "strt": "npm run start:prepare && npm run start:parallel:parcel",
     "start:prepare": "ts-node scripts/generateLayerOverview.ts --no-fail && npm run increase-memory",

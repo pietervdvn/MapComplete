@@ -498,5 +498,18 @@
                 }
             ]
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "disused:amenity:={amenity}",
+                "amenity="
+            ]
+        },
+        "neededChangesets": 1
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    }
 }

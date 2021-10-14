@@ -256,7 +256,6 @@
     },
     "move": {
         "loginToMove": "You must be logged in to move a point",
-        "inviteToMove": "Move this point",
         "inviteToMoveAgain": "Move this point again",
         "moveTitle": "Move this point",
         "whyMove": "Why do you want to move this point?",
@@ -264,8 +263,15 @@
         "pointIsMoved": "The point has been moved",
         "zoomInFurther": "Zoom in further to confirm this move",
         "selectReason": "Why do you move this object?",
-        "reasonRelocation": "The object has been relocated to a totally different location",
-        "reasonInaccurate": "The location of this object is inaccurate and should be moved a few meter",
+        "reasons": {
+            "reasonRelocation": "The object has been relocated to a totally different location",
+            "reasonInaccurate": "The location of this object is inaccurate and should be moved a few meter"
+        },
+        "inviteToMove": {
+            "generic": "Move this point",
+            "reasonInaccurate": "Improve the accuracy of this point",
+            "reasonRelocation": "Move this object to a another place because it has relocated"
+        },
         "cannotBeMoved": "This feature cannot be moved.",
         "isWay": "This feature is a way. Use another OpenStreetMap editor to move it.",
         "isRelation": "This feature is a relation and can not be moved",

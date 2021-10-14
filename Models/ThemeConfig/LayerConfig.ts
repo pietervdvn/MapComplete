@@ -19,6 +19,7 @@ import {Unit} from "../Unit";
 import DeleteConfig from "./DeleteConfig";
 import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
+import MoveConfig from "./MoveConfig";
 
 export default class LayerConfig {
     static WAYHANDLING_DEFAULT = 0;
@@ -49,6 +50,7 @@ export default class LayerConfig {
     wayHandling: number;
     public readonly units: Unit[];
     public readonly deletion: DeleteConfig | null;
+    public readonly allowMove: MoveConfig | null
     public readonly allowSplit: boolean
 
     presets: PresetConfig[];
@@ -67,7 +69,7 @@ export default class LayerConfig {
         this.id = json.id;
         this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, context + ".name");
-        this.units =   (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
+        this.units = (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
 
         if (json.description !== undefined) {
             if (Object.keys(json.description).length === 0) {
@@ -138,11 +140,11 @@ export default class LayerConfig {
                 const key = kv.substring(0, index);
                 const code = kv.substring(index + 1);
 
-                try{
-                    
-                new Function("feat", "return " + code + ";");
-                }catch(e){
-                 throw `Invalid function definition: code ${code} is invalid:${e} (at ${context})`   
+                try {
+
+                    new Function("feat", "return " + code + ";");
+                } catch (e) {
+                    throw `Invalid function definition: code ${code} is invalid:${e} (at ${context})`
                 }
 
 
@@ -155,8 +157,8 @@ export default class LayerConfig {
         this.minzoom = json.minzoom ?? 0;
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.wayHandling = json.wayHandling ?? 0;
-        if(json.presets !== undefined && json.presets?.map === undefined){
-            throw "Presets should be a list of items (at "+context+")"
+        if (json.presets !== undefined && json.presets?.map === undefined) {
+            throw "Presets should be a list of items (at " + context + ")"
         }
         this.presets = (json.presets ?? []).map((pr, i) => {
 
@@ -291,21 +293,21 @@ export default class LayerConfig {
         }
 
         this.tagRenderings = trs(json.tagRenderings, false);
-        
-       const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined) ?? [];
 
-       if(missingIds.length > 0 && official){
-           console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
-           throw "Missing ids in tagrenderings"
-       }
-       
+        const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined) ?? [];
+
+        if (missingIds.length > 0 && official) {
+            console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
+            throw "Missing ids in tagrenderings"
+        }
+
         this.filters = (json.filter ?? []).map((option, i) => {
             return new FilterConfig(option, `${context}.filter-[${i}]`)
         });
-       
-       if(json["filters"] !== undefined){
-           throw "Error in "+context+": use 'filter' instead of 'filters'"
-       }
+
+        if (json["filters"] !== undefined) {
+            throw "Error in " + context + ": use 'filter' instead of 'filters'"
+        }
 
         const titleIcons = [];
         const defaultIcons = [
@@ -368,6 +370,16 @@ export default class LayerConfig {
         if (json.deletion !== undefined && json.deletion !== false) {
             this.deletion = new DeleteConfig(json.deletion, `${context}.deletion`);
         }
+
+        this.allowMove = null
+        if (json.allowMove === false) {
+            this.allowMove = null;
+        } else if (json.allowMove === true) {
+            this.allowMove = new MoveConfig({}, context + ".allowMove")
+        } else if (json.allowMove !== undefined && json.allowMove !== false) {
+            this.allowMove = new MoveConfig(json.allowMove, context + ".allowMove")
+        }
+
 
         if (json["showIf"] !== undefined) {
             throw (

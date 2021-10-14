@@ -2,6 +2,9 @@ import MoveWizard from "./UI/Popup/MoveWizard";
 import State from "./State";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import MinimapImplementation from "./UI/Base/MinimapImplementation";
+import MoveConfig from "./Models/ThemeConfig/MoveConfig";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
+import Combine from "./UI/Base/Combine";
 
 
 State.state = new State(AllKnownLayouts.allKnownLayouts.get("bookcases"))
@@ -18,8 +21,14 @@ const feature = {
         ]
     }
 }
+/*
 MinimapImplementation.initialize()
 new MoveWizard(
     feature,
-    State.state).AttachTo("maindiv")
+    State.state,
+    new MoveConfig({
+        enableRelocation: false,
+        enableImproveAccuracy: true
+    }, "test")).AttachTo("maindiv")
 
+*/

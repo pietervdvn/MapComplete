@@ -320,6 +320,19 @@ export class Utils {
         )
     }
 
+    private static _download_cache = new Map<string, {promise: Promise<any>, timestamp: number}>()
+    public static async downloadJsonCached(url: string, maxCacheTimeMs: number, headers?: any): Promise<any> {
+        const cached = Utils._download_cache.get(url)
+        if(cached !== undefined){
+            if((new Date().getTime() - cached.timestamp) <= maxCacheTimeMs){
+                return cached.promise
+            }
+        }
+        const promise = Utils.downloadJson(url, headers)
+        Utils._download_cache.set(url, {promise, timestamp: new Date().getTime()})
+        return await promise
+    }
+
     public static async downloadJson(url: string, headers?: any): Promise<any> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
