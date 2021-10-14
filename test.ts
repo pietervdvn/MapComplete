@@ -1,34 +1,26 @@
-import MoveWizard from "./UI/Popup/MoveWizard";
-import State from "./State";
-import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import MinimapImplementation from "./UI/Base/MinimapImplementation";
-import MoveConfig from "./Models/ThemeConfig/MoveConfig";
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import Combine from "./UI/Base/Combine";
+import Minimap from "./UI/Base/Minimap";
+import ShowOverlayLayer from "./UI/ShowDataLayer/ShowOverlayLayer";
+import TilesourceConfig from "./Models/ThemeConfig/TilesourceConfig";
+import Loc from "./Models/Loc";
+import {UIEventSource} from "./Logic/UIEventSource";
 
-
-State.state = new State(AllKnownLayouts.allKnownLayouts.get("bookcases"))
-const feature = {
-    "type": "Feature",
-    "properties": {
-        id: "node/14925464"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [
-            4.21875,
-            50.958426723359935
-        ]
-    }
-}
-/*
 MinimapImplementation.initialize()
-new MoveWizard(
-    feature,
-    State.state,
-    new MoveConfig({
-        enableRelocation: false,
-        enableImproveAccuracy: true
-    }, "test")).AttachTo("maindiv")
 
-*/
+const map = Minimap.createMiniMap({
+    location: new UIEventSource<Loc>({
+        zoom: 19,
+        lat: 51.51896,
+        lon: -0.11267
+    })
+
+})
+map.SetStyle("height: 50rem")
+map.AttachTo("maindiv")
+
+new ShowOverlayLayer(new TilesourceConfig({
+    "source": "https://tiles.osmuk.org/PropertyBoundaries/{z}/{x}/{y}.png",
+    "isOverlay": true,
+    minZoom: 18,
+    maxZoom: 20
+}), map)

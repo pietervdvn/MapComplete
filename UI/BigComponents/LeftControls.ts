@@ -16,7 +16,7 @@ import {BBox} from "../../Logic/BBox";
 
 export default class LeftControls extends Combine {
 
-    constructor(state: {featurePipeline: FeaturePipeline, currentBounds: UIEventSource<BBox>, locationControl: UIEventSource<Loc>}) {
+    constructor(state: {featurePipeline: FeaturePipeline, currentBounds: UIEventSource<BBox>, locationControl: UIEventSource<Loc>, overlayToggles: any}) {
 
         const toggledCopyright = new ScrollableFullScreen(
             () => Translations.t.general.attribution.attributionTitle.Clone(),
@@ -52,12 +52,11 @@ export default class LeftControls extends Combine {
                 [State.state.featureSwitchExportAsPdf])
         );
 
-
         const toggledFilter = new Toggle(
             new ScrollableFullScreen(
                 () => Translations.t.general.layerSelection.title.Clone(),
                 () =>
-                    new FilterView(State.state.filteredLayers).SetClass(
+                    new FilterView(State.state.filteredLayers, state.overlayToggles).SetClass(
                         "block p-1 rounded-full"
                     ),
                 undefined,

@@ -1,5 +1,7 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {LayerConfigJson} from "./LayerConfigJson";
+import TilesourceConfig from "../TilesourceConfig";
+import TilesourceConfigJson from "./TilesourceConfigJson";
 
 /**
  * Defines the entire theme.
@@ -154,6 +156,11 @@ export interface LayoutConfigJson {
      * The id of the default background. BY default: vanilla OSM
      */
     defaultBackgroundId?: string;
+
+    /**
+     * Define some (overlay) slippy map tilesources
+     */
+    tileLayerSources?: TilesourceConfigJson[]
 
     /**
      * The number of seconds that a feature is allowed to stay in the cache.

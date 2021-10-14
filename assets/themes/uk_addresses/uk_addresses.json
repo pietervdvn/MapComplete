@@ -25,6 +25,18 @@
     "minNeededFeatures": 25,
     "maxZoom": 16
   },
+  "tileLayerSources": [
+    {
+      "source": "https://tiles.osmuk.org/PropertyBoundaries/{z}/{x}/{y}.png",
+      "isOverlay": true,
+      "minZoom": 18,
+      "maxZoom": 20,
+      "defaultState": false,
+      "name": {
+        "en": "Parcel boundaries"
+      }
+    }
+  ],
   "layers": [
     {
       "id": "to_import",

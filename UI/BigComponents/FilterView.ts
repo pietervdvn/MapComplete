@@ -13,18 +13,68 @@ import State from "../../State";
 import FilteredLayer from "../../Models/FilteredLayer";
 import BackgroundSelector from "./BackgroundSelector";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
+import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig";
 
 export default class FilterView extends VariableUiElement {
-    constructor(filteredLayer: UIEventSource<FilteredLayer[]>) {
+    constructor(filteredLayer: UIEventSource<FilteredLayer[]>, tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]) {
         const backgroundSelector = new Toggle(
             new BackgroundSelector(),
             undefined,
             State.state.featureSwitchBackgroundSlection
         )
         super(
-            filteredLayer.map((filteredLayers) =>
-                filteredLayers?.map(l => FilterView.createOneFilteredLayerElement(l)).concat(backgroundSelector)
+            filteredLayer.map((filteredLayers) => {
+                    let elements = filteredLayers?.map(l => FilterView.createOneFilteredLayerElement(l))
+                    elements = elements.concat(tileLayers.map(tl => FilterView.createOverlayToggle(tl)))
+                    return elements.concat(backgroundSelector);
+                }
             )
+        );
+    }
+
+    private static createOverlayToggle(config: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }) {
+
+        const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem;flex-shrink: 0;";
+
+        const icon = new Combine([Svg.checkbox_filled]).SetStyle(iconStyle);
+        const iconUnselected = new Combine([Svg.checkbox_empty]).SetStyle(
+            iconStyle
+        );
+        const name: Translation = config.config.name.Clone();
+
+        const styledNameChecked = name
+            .Clone()
+            .SetStyle("font-size:large;padding-left:1.25rem");
+
+        const styledNameUnChecked = name
+            .Clone()
+            .SetStyle("font-size:large;padding-left:1.25rem");
+
+        const zoomStatus =
+            new Toggle(
+                undefined,
+                Translations.t.general.layerSelection.zoomInToSeeThisLayer.Clone()
+                    .SetClass("alert")
+                    .SetStyle("display: block ruby;width:min-content;"),
+                State.state.locationControl.map(location => location.zoom >= config.config.minzoom)
+            )
+
+
+        const style =
+            "display:flex;align-items:center;padding:0.5rem 0;";
+        const layerChecked = new Combine([icon, styledNameChecked, zoomStatus])
+            .SetStyle(style)
+            .onClick(() => config.isDisplayed.setData(false));
+
+        const layerNotChecked = new Combine([iconUnselected, styledNameUnChecked])
+            .SetStyle(style)
+            .onClick(() => config.isDisplayed.setData(true));
+
+
+        return new Toggle(
+            layerChecked,
+            layerNotChecked,
+            config.isDisplayed
         );
     }
 
@@ -104,16 +154,16 @@ export default class FilterView extends VariableUiElement {
         listFilterElements.forEach((inputElement, i) =>
             inputElement[1].addCallback((changed) => {
                 const oldValue = flayer.appliedFilters.data
-                
-                if(changed === undefined){
+
+                if (changed === undefined) {
                     // Lets figure out which filter should be removed
                     // We know this inputElement corresponds with layer.filters[i]
                     // SO, if there is a value in 'oldValue' with this filter, we have to recalculated
-                    if(!oldValue.some(f => f.filter === layer.filters[i])){
+                    if (!oldValue.some(f => f.filter === layer.filters[i])) {
                         // The filter to remove is already gone, we can stop
                         return;
                     }
-                }else if(oldValue.some(f => f.filter === changed.filter && f.selected === changed.selected)){
+                } else if (oldValue.some(f => f.filter === changed.filter && f.selected === changed.selected)) {
                     // The changed value is already there
                     return;
                 }
@@ -126,16 +176,16 @@ export default class FilterView extends VariableUiElement {
         );
 
         flayer.appliedFilters.addCallbackAndRun(appliedFilters => {
-            for (let i = 0; i < layer.filters.length; i++){
+            for (let i = 0; i < layer.filters.length; i++) {
                 const filter = layer.filters[i];
                 let foundMatch = undefined
                 for (const appliedFilter of appliedFilters) {
-                    if(appliedFilter.filter === filter){
+                    if (appliedFilter.filter === filter) {
                         foundMatch = appliedFilter
-                     break;   
+                        break;
                     }
                 }
-                
+
                 listFilterElements[i][1].setData(foundMatch)
             }
 
@@ -172,7 +222,7 @@ export default class FilterView extends VariableUiElement {
         let options = filterConfig.options;
 
         const values = options.map((f, i) => ({
-           filter: filterConfig, selected: i 
+            filter: filterConfig, selected: i
         }))
         const radio = new RadioButton(
             options.map(
@@ -183,13 +233,13 @@ export default class FilterView extends VariableUiElement {
                 dontStyle: true
             }
         );
-        return [radio, 
+        return [radio,
             radio.GetValue().map(
-            i => values[i], 
+                i => values[i],
                 [],
-            selected => {
-                return selected?.selected
-            }
-        )]
+                selected => {
+                    return selected?.selected
+                }
+            )]
     }
 }

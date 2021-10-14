@@ -7,6 +7,7 @@ import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Constants from "../Constants";
+import TilesourceConfig from "./TilesourceConfig";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -27,6 +28,7 @@ export default class LayoutConfig {
     public readonly roamingRenderings: TagRenderingConfig[];
     public readonly defaultBackgroundId?: string;
     public layers: LayerConfig[];
+    public tileLayerSources: TilesourceConfig[]
     public readonly clustering?: {
         maxZoom: number,
         minNeededElements: number,
@@ -108,6 +110,7 @@ export default class LayoutConfig {
             }
         );
         this.defaultBackgroundId = json.defaultBackgroundId;
+        this.tileLayerSources = (json.tileLayerSources??[]).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
         this.layers = LayoutConfig.ExtractLayers(json, official, context);
 
         // ALl the layers are constructed, let them share tagRenderings now!

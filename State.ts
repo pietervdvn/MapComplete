@@ -19,6 +19,7 @@ import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import {BBox} from "./Logic/BBox";
 import SelectedElementTagsUpdater from "./Logic/Actors/SelectedElementTagsUpdater";
+import TilesourceConfig from "./Models/ThemeConfig/TilesourceConfig";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -57,6 +58,8 @@ export default class State {
 
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([], "filteredLayers");
 
+    public  overlayToggles : { config: TilesourceConfig, isDisplayed: UIEventSource<boolean>}[]
+    
     /**
      The latest element that was selected
      */
@@ -420,6 +423,11 @@ export default class State {
             .ping();
 
         new TitleHandler(this);
+        
+        this.overlayToggles = this.layoutToUse.tileLayerSources.filter(c => c.name !== undefined).map(c => ({
+            config: c,
+            isDisplayed: new UIEventSource<boolean>(c.defaultState)
+        }))
     }
 
     private static asFloat(source: UIEventSource<string>): UIEventSource<number> {

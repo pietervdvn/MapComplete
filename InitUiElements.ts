@@ -39,8 +39,8 @@ import {Tiles} from "./Models/TileRange";
 import {TileHierarchyAggregator} from "./UI/ShowDataLayer/TileHierarchyAggregator";
 import FilterConfig from "./Models/ThemeConfig/FilterConfig";
 import FilteredLayer from "./Models/FilteredLayer";
-import {BBox} from "./Logic/BBox";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import ShowOverlayLayer from "./UI/ShowDataLayer/ShowOverlayLayer";
 
 export class InitUiElements {
     static InitAll(
@@ -176,10 +176,9 @@ export class InitUiElements {
         State.state.osmConnection.userDetails
             .addCallbackAndRunD(_ => addHomeMarker());
         State.state.leafletMap.addCallbackAndRunD(_ => addHomeMarker())
-
-
+   
         InitUiElements.setupAllLayerElements();
-            State.state.locationControl.ping();
+        State.state.locationControl.ping();
 
         new SelectedFeatureHandler(Hash.hash, State.state)
 
@@ -506,6 +505,21 @@ export class InitUiElements {
                 );
             }, state
         );
+
+
+        const initialized =new Set()
+
+        for (const overlayToggle of State.state.overlayToggles) {
+            new ShowOverlayLayer(overlayToggle.config, state.leafletMap, overlayToggle.isDisplayed)
+            initialized.add(overlayToggle.config)
+        }
+        
+        for (const tileLayerSource of state.layoutToUse.tileLayerSources) {
+            if (initialized.has(tileLayerSource)) {
+                continue
+            }
+            new ShowOverlayLayer(tileLayerSource, state.leafletMap)
+        }
     }
 
     private static setupAllLayerElements() {
