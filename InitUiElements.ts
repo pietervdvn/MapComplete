@@ -508,7 +508,6 @@ export class InitUiElements {
 
 
         const initialized =new Set()
-
         for (const overlayToggle of State.state.overlayToggles) {
             new ShowOverlayLayer(overlayToggle.config, state.leafletMap, overlayToggle.isDisplayed)
             initialized.add(overlayToggle.config)

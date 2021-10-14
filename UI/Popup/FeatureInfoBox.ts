@@ -133,7 +133,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 State.state.featureSwitchIsDebugging.map(isDebugging => {
                     if (isDebugging) {
                         const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
-                        return new TagRenderingAnswer(tags, config)
+                        return new TagRenderingAnswer(tags, config, "all_tags")
                     }
                 })
             )

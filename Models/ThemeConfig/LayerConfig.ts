@@ -254,7 +254,7 @@ export default class LayerConfig {
                                 )}`;
                             }
 
-                            return new TagRenderingConfig("questions", undefined);
+                            return new TagRenderingConfig("questions", undefined, context);
                         }
 
                         if (renderingJson["override"] !== undefined) {

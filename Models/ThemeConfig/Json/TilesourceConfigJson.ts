@@ -3,12 +3,17 @@
  */
 export default interface TilesourceConfigJson {
 
-
+    /**
+     * Id of this overlay, used in the URL-parameters to set the state
+     */
+    id: string,
     /**
      * The path, where {x}, {y} and {z} will be substituted
      */
     source: string,
-    
+    /**
+     * Wether or not this is an overlay. Default: true
+     */
     isOverlay?: boolean,
 
     /**

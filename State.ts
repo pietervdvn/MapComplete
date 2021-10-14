@@ -426,7 +426,7 @@ export default class State {
         
         this.overlayToggles = this.layoutToUse.tileLayerSources.filter(c => c.name !== undefined).map(c => ({
             config: c,
-            isDisplayed: new UIEventSource<boolean>(c.defaultState)
+            isDisplayed: QueryParameters.GetQueryParameter("overlay-"+c.id, ""+c.defaultState,"Wether or not the overlay "+c.id+" is shown").map(str => str === "true", [], b => ""+b)
         }))
     }
 

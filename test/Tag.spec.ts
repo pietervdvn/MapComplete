@@ -166,7 +166,7 @@ export default class TagSpec extends T {
                         }
                     ],
                     condition: "x="
-                }, undefined, "");
+                }, undefined, "Tests");
 
                 equal(undefined, tr.GetRenderValue({"foo": "bar"}));
                 equal("Has no name", tr.GetRenderValue({"noname": "yes"})?.txt);
