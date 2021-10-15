@@ -162,7 +162,9 @@ export default class LayerConfig {
         }
         this.presets = (json.presets ?? []).map((pr, i) => {
 
-            let preciseInput = undefined;
+            let preciseInput = {
+                preferredBackground: "photo"
+            };
             if (pr.preciseInput !== undefined) {
                 if (pr.preciseInput === true) {
                     pr.preciseInput = {

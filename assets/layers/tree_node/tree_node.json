@@ -521,6 +521,9 @@
                 "en": "A tree of a species with leaves, such as oak or populus.",
                 "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
                 "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier."
+            },
+            "preciseInput": {
+                "preferredBackground": "photo"
             }
         },
         {
@@ -541,6 +544,9 @@
                 "it": "Un albero di una specie con aghi come il pino o l’abete.",
                 "ru": "Дерево с хвоей (иглами), например, сосна или ель.",
                 "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa."
+            },
+            "preciseInput": {
+                "preferredBackground": "photo"
             }
         },
         {
@@ -561,6 +567,9 @@
                 "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
                 "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
                 "ru": "Если вы не уверены в том, лиственное это дерево или хвойное."
+            },
+            "preciseInput": {
+                "preferredBackground": "photo"
             }
         }
     ],

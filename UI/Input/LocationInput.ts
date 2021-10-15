@@ -16,6 +16,7 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "./Toggle";
+import {start} from "repl";
 
 export default class LocationInput extends InputElement<Loc> implements MinimapObj {
 
@@ -70,7 +71,6 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             this._value = this._centerLocation;
         } else {
             const self = this;
-
 
             if (self._snappedPointTags !== undefined) {
                 const layout = State.state.layoutToUse
@@ -163,7 +163,14 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
         try {
             const self = this;
             const hasMoved = new UIEventSource(false)
-            this.GetValue().addCallbackAndRunD(_ => {
+            const startLocation = {                ...this._centerLocation.data            }
+            this._centerLocation. addCallbackD(newLocation => {
+                const f = 100000
+                console.log(newLocation.lon, startLocation.lon)
+                const diff = (Math.abs(newLocation.lon * f - startLocation.lon* f ) + Math.abs(newLocation.lat* f  - startLocation.lat* f ))
+                if(diff < 1){
+                    return;
+                }
                 hasMoved.setData(true)
                 return true;
             })

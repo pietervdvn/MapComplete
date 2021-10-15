@@ -43,52 +43,63 @@ export default class MoreScreen extends Combine {
         super([
             intro,
             MoreScreen.createOfficialThemesList(state, themeButtonStyle).SetClass(themeListStyle),
-            MoreScreen.createPreviouslyVistedHiddenList(state, themeButtonStyle).SetClass(themeListStyle),
-            MoreScreen.createUnofficialThemeList(themeButtonStyle, state)?.SetClass(themeListStyle),
+            MoreScreen.createPreviouslyVistedHiddenList(state, themeButtonStyle, themeListStyle),
+            MoreScreen.createUnofficialThemeList(themeButtonStyle, state, themeListStyle),
             tr.streetcomplete.Clone().SetClass("block text-base mx-10 my-3 mb-10")
         ]);
     }
 
 
-    private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState): BaseUIElement {
+    private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
         return new VariableUiElement(state.installedThemes.map(customThemes => {
             const els: BaseUIElement[] = []
             if (customThemes.length > 0) {
-                els.push(Translations.t.general.customThemeIntro.Clone())
-
                 const customThemesElement = new Combine(
                     customThemes.map(theme => MoreScreen.createLinkButton(state, theme.layout, theme.definition)?.SetClass(buttonClass))
                 )
                 els.push(customThemesElement)
             }
-            return els;
+            return new Combine([
+                Translations.t.general.customThemeIntro.Clone(),
+                new Combine(els).SetClass(themeListClasses)
+            ]);
         }));
     }
-    
-    private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string){
-        const  t= Translations.t.general.morescreen
+
+    private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string) {
+        const t = Translations.t.general.morescreen
+        console.log("Hidden themes init...")
+        const prefix = "mapcomplete-hidden-theme-"
+        const hiddenTotal = AllKnownLayouts.layoutsList.filter(layout => layout.hideFromOverview).length
         return new Toggle(
-                new Combine([
-                   new Title(t.previouslyHiddenTitle.Clone()),
-            t.hiddenExplanation,
-                    
-                    
             new VariableUiElement(
                 state.osmConnection.preferencesHandler.preferences.map(allPreferences => {
-                    const knownThemes = Utils.NoNull( Object.keys(allPreferences).filter(key => key.startsWith("hidden-theme-"))
-                        .map(key => key.substr("hidden-theme-".length, key.length - "-enabled".length))
-                        .map(theme => AllKnownLayouts.allKnownLayouts.get(theme) ))
-                    return new Combine(knownThemes.map(layout => 
-                        MoreScreen.createLinkButton(state, layout ).SetClass(buttonClass)
-                    ))
-                    
+                    const knownThemes = Utils.NoNull(Object.keys(allPreferences)
+                        .filter(key => key.startsWith(prefix))
+                        .map(key => key.substring(prefix.length, key.length - "-enabled".length))
+                        .map(theme => {
+                            return AllKnownLayouts.allKnownLayouts.get(theme);
+                        }))
+                    if (knownThemes.length === 0) {
+                        return undefined
+                    }
+
+                    const knownLayouts = new Combine(knownThemes.map(layout =>
+                        MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass)
+                    )).SetClass(themeListStyle)
+
+                    return new Combine([
+                        new Title(t.previouslyHiddenTitle),
+                        t.hiddenExplanation.Subs({hidden_discovered: ""+knownThemes.length,total_hidden: ""+hiddenTotal}),
+                        knownLayouts
+                    ])
+
                 })
-                
-            )]).SetClass("flex flex-col"),
+            ).SetClass("flex flex-col"),
             undefined,
             state.osmConnection.isLoggedIn
         )
-        
+
 
     }
 
@@ -99,6 +110,9 @@ export default class MoreScreen extends Combine {
             if (layout === undefined) {
                 console.trace("Layout is undefined")
                 return undefined
+            }
+            if(layout.hideFromOverview){
+                return undefined;
             }
             const button = MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass);
             if (layout.id === personal.id) {
@@ -154,21 +168,14 @@ export default class MoreScreen extends Combine {
         }, layout: LayoutConfig, customThemeDefinition: string = undefined
     ):
         BaseUIElement {
-        if (layout
-
-            ===
-            undefined
-        ) {
-            return
-            undefined;
+        if (layout === undefined) {
+            return undefined;
         }
         if (layout.id === undefined) {
             console.error("ID is undefined for layout", layout);
             return undefined;
         }
-        if (layout.hideFromOverview) {
-            return undefined;
-        }
+        
         if (layout.id === state?.layoutToUse?.id) {
             return undefined;
         }

@@ -63,9 +63,14 @@ export default class UserRelatedState extends ElementsState {
         );
 
         if (layoutToUse?.hideFromOverview) {
-            this.osmConnection
-                .GetPreference("hidden-theme-" + layoutToUse?.id + "-enabled")
-                .setData("true");
+            this.osmConnection.isLoggedIn.addCallbackAndRunD(loggedIn => {
+                if(loggedIn){
+                    this.osmConnection
+                        .GetPreference("hidden-theme-" + layoutToUse?.id + "-enabled")
+                        .setData("true");
+                    return true;
+                }
+            })
         }
 
         this.installedThemes = new InstalledThemes(
