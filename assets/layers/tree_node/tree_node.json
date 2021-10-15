@@ -563,5 +563,12 @@
                 "ru": "Если вы не уверены в том, лиственное это дерево или хвойное."
             }
         }
-    ]
+    ],
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+    },
+    "deletion": {
+        "minNeededChangesets": 5
+    }
 }

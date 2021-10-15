@@ -168,7 +168,12 @@ export class Utils {
             if (!tags.hasOwnProperty(key)) {
                 continue
             }
+            try{
             txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key] ?? "")
+            }catch(e){
+                console.error("WEIRD" , e)
+                throw e
+            }
         }
         txt = txt.replace(new RegExp('{.*}', "g"), "")
         return txt;

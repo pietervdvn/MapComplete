@@ -106,7 +106,7 @@ DetermineLayout.GetLayout().then(value => {
     console.log("Got ", value)
     Init.Init(value[0], value[1])
 }).catch(err => {
-    console.error(err)
+    console.error("Error while initializing: ", err, err.stack)
 })
 
 

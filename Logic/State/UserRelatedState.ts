@@ -83,6 +83,7 @@ export default class UserRelatedState extends ElementsState {
 
 
         this.InitializeLanguage();
+        this.initHomeLocation()
         new SelectedElementTagsUpdater(this)
 
     }

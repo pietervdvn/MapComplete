@@ -38,7 +38,8 @@ export default class ShowDataLayer {
         ShowDataLayer.dataLayerIds++
         this._enablePopups = options.enablePopups ?? true;
         if (options.features === undefined) {
-            throw "Invalid ShowDataLayer invocation"
+            console.error("Invalid ShowDataLayer invocation: options.features is undefed")
+            throw "Invalid ShowDataLayer invocation: options.features is undefed"
         }
         const features = options.features.features.map(featFreshes => featFreshes.map(ff => ff.feature));
         this._features = features;
@@ -166,7 +167,7 @@ export default class ShowDataLayer {
 
 
     private createStyleFor(feature) {
-        const tagsSource = this.allElements?.addOrGetElement(feature) ?? new UIEventSource<any>(feature.properties.id);
+        const tagsSource = this.allElements?.addOrGetElement(feature) ?? new UIEventSource<any>(feature.properties);
         // Every object is tied to exactly one layer
         const layer = this._layerToShow
         return layer?.GenerateLeafletStyle(tagsSource, true);

@@ -8,10 +8,6 @@ import {UIEventSource} from "../UIEventSource";
 import MapState from "./MapState";
 import SelectedFeatureHandler from "../Actors/SelectedFeatureHandler";
 import Hash from "../Web/Hash";
-import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen";
-import Translations from "../../UI/i18n/Translations";
-import SimpleAddUI from "../../UI/BigComponents/SimpleAddUI";
-import StrayClickHandler from "../Actors/StrayClickHandler";
 
 export default class FeaturePipelineState extends MapState {
 
@@ -25,7 +21,7 @@ export default class FeaturePipelineState extends MapState {
         super(layoutToUse);
 
         const clustering = layoutToUse.clustering
-        this.featureAggregator = TileHierarchyAggregator.createHierarchy();
+        this.featureAggregator = TileHierarchyAggregator.createHierarchy(this);
         const clusterCounter = this.featureAggregator
         const self = this;
         this.featurePipeline = new FeaturePipeline(
@@ -117,12 +113,9 @@ export default class FeaturePipelineState extends MapState {
             features: this.featureAggregator.getCountsForZoom(clustering, this.locationControl, clustering.minNeededElements),
             leafletMap: leafletMap,
             layerToShow: ShowTileInfo.styling,
-            enablePopups: false,
+            enablePopups: this.featureSwitchIsDebugging.data,
         })
     }
-
-  
-
 
 
 }

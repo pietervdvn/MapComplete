@@ -90,7 +90,7 @@ export default class LayoutConfig {
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;
-        if(json.widenFactor < 1){
+        if(json.widenFactor < 0.02){
             if(official){
                 throw "Widenfactor too small"
             }else{

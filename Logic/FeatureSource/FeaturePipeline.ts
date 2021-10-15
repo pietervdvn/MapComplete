@@ -58,7 +58,7 @@ export default class FeaturePipeline {
     private readonly freshnesses = new Map<string, TileFreshnessCalculator>();
 
     private readonly oldestAllowedDate: Date = new Date(new Date().getTime() - 60 * 60 * 24 * 30 * 1000);
-    private readonly osmSourceZoomLevel = 15
+    private readonly osmSourceZoomLevel
 
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
@@ -74,10 +74,12 @@ export default class FeaturePipeline {
             readonly overpassMaxZoom: UIEventSource<number>;
             readonly osmConnection: OsmConnection
             readonly currentBounds: UIEventSource<BBox>,
+            readonly osmApiTileSize: UIEventSource<number>
         }) {
         this.state = state;
 
         const self = this
+        this.osmSourceZoomLevel = state.osmApiTileSize.data;
         // milliseconds
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
         this.relationTracker = new RelationsTracker()
@@ -275,18 +277,19 @@ export default class FeaturePipeline {
     private getNeededTilesFromOsm(isSufficientlyZoomed: UIEventSource<boolean>): UIEventSource<number[]> {
         const self = this
         return this.state.currentBounds.map(bbox => {
+            console.log("Current bbox is", bbox)
             if (bbox === undefined) {
-                return undefined
+                return []
             }
             if (!isSufficientlyZoomed.data) {
-                return undefined;
+                return [];
             }
             const osmSourceZoomLevel = self.osmSourceZoomLevel
             const range = bbox.containingTileRange(osmSourceZoomLevel)
             const tileIndexes = []
             if (range.total >= 100) {
                 // Too much tiles!
-                return []
+                return undefined
             }
             Tiles.MapRange(range, (x, y) => {
                 const i = Tiles.tile_index(osmSourceZoomLevel, x, y);
@@ -299,7 +302,7 @@ export default class FeaturePipeline {
                 tileIndexes.push(i)
             })
             return tileIndexes
-        })
+        }, [isSufficientlyZoomed])
     }
 
     private initOverpassUpdater(state: {
