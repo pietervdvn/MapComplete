@@ -1271,6 +1271,11 @@
             }
         },
         "shortDescription": "Help to build an open dataset of UK addresses",
+        "tileLayerSources": {
+            "0": {
+                "name": "Property boundaries by osmuk.org"
+            }
+        },
         "title": "UK Addresses"
     },
     "waste_basket": {

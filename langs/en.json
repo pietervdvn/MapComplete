@@ -124,7 +124,9 @@
             "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
             "requestATheme": "If you want a custom-built theme, request it in the issue tracker",
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
-            "createYourOwnTheme": "Create your own MapComplete theme from scratch"
+            "createYourOwnTheme": "Create your own MapComplete theme from scratch",
+            "previouslyHiddenTitle": "Previously visited hidden themes",
+            "hiddenExplanation": "These themes are only visible if you know the link..."
         },
         "sharescreen": {
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",

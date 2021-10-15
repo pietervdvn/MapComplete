@@ -68,7 +68,7 @@ export default class SplitRoadWizard extends Toggle {
             leafletMap: miniMap.leafletMap,
             zoomToFeatures: false,
             enablePopups: false,
-            layerToShow: SplitRoadWizard.splitLayerStyling
+            layerToShow: SplitRoadWizard.splitLayerStyling,
         })
 
         new ShowDataMultiLayer({
@@ -76,7 +76,8 @@ export default class SplitRoadWizard extends Toggle {
             layers: State.state.filteredLayers,
             leafletMap: miniMap.leafletMap,
             enablePopups: false,
-            zoomToFeatures: true
+            zoomToFeatures: true,
+            allElements: State.state.allElements,
         })
 
         /**

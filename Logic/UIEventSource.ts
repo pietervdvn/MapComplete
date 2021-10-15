@@ -318,6 +318,22 @@ export class UIEventSource<T> {
             }
         })
     }
+
+    public static asFloat(source: UIEventSource<string>): UIEventSource<number> {
+        return source.map(
+            (str) => {
+                let parsed = parseFloat(str);
+                return isNaN(parsed) ? undefined : parsed;
+            },
+            [],
+            (fl) => {
+                if (fl === undefined || isNaN(fl)) {
+                    return undefined;
+                }
+                return ("" + fl).substr(0, 8);
+            }
+        )
+    }
 }
 
 export class UIEventSourceTools {

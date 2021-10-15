@@ -1,8 +1,5 @@
-
-import State from "../../../State";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
-import {Utils} from "../../../Utils";
 import {UIEventSource} from "../../UIEventSource";
 import Loc from "../../../Models/Loc";
 import TileHierarchy from "./TileHierarchy";
@@ -25,7 +22,6 @@ export default class DynamicTileSource implements TileHierarchy<FeatureSourceFor
             leafletMap: any
         }
     ) {
-        state = State.state
         const self = this;
 
         this.loadedTiles = new Map<number,FeatureSourceForLayer & Tiled>()

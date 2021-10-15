@@ -4,7 +4,6 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Svg from "../../Svg";
 import {SubtleButton} from "../Base/SubtleButton";
-import State from "../../State";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
@@ -12,7 +11,7 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
-import UserDetails from "../../Logic/Osm/OsmConnection";
+import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import LocationInput from "../Input/LocationInput";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
@@ -20,6 +19,11 @@ import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {BBox} from "../../Logic/BBox";
+import Loc from "../../Models/Loc";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Changes} from "../../Logic/Osm/Changes";
+import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
+import {ElementStorage} from "../../Logic/ElementStorage";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -38,9 +42,22 @@ interface PresetInfo extends PresetConfig {
 
 export default class SimpleAddUI extends Toggle {
 
-    constructor(isShown: UIEventSource<boolean>) {
+    constructor(isShown: UIEventSource<boolean>,
+                filterViewIsOpened: UIEventSource<boolean>,
+                state: {
+                    layoutToUse: LayoutConfig,
+                    osmConnection: OsmConnection,
+                    changes: Changes,
+                    allElements: ElementStorage,
+                    LastClickLocation: UIEventSource<{ lat: number, lon: number }>,
+                    featurePipeline: FeaturePipeline,
+                    selectedElement: UIEventSource<any>,
+                    locationControl: UIEventSource<Loc>,
+                    filteredLayers: UIEventSource<FilteredLayer[]>,
+                    featureSwitchFilter: UIEventSource<boolean>,
+                }) {
         const loginButton = new SubtleButton(Svg.osm_logo_ui(), Translations.t.general.add.pleaseLogin.Clone())
-            .onClick(() => State.state.osmConnection.AttemptLogin());
+            .onClick(() => state.osmConnection.AttemptLogin());
         const readYourMessages = new Combine([
             Translations.t.general.readYourMessages.Clone().SetClass("alert"),
             new SubtleButton(Svg.envelope_ui(),
@@ -50,20 +67,21 @@ export default class SimpleAddUI extends Toggle {
 
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
-        State.state.LastClickLocation.addCallback( _ => selectedPreset.setData(undefined))
-        
-        const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset)
+        state.LastClickLocation.addCallback(_ => selectedPreset.setData(undefined))
+
+        const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset, state)
 
 
-       async function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
+        async function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
-                theme: State.state?.layoutToUse?.id ?? "unkown",
+                theme: state.layoutToUse?.id ?? "unkown",
                 changeType: "create",
-                snapOnto: snapOntoWay})
-            await State.state.changes.applyAction(newElementAction)
+                snapOnto: snapOntoWay
+            })
+            await state.changes.applyAction(newElementAction)
             selectedPreset.setData(undefined)
             isShown.setData(false)
-            State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
+            state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
         }
@@ -73,7 +91,7 @@ export default class SimpleAddUI extends Toggle {
                     if (preset === undefined) {
                         return presetsOverview
                     }
-                    return SimpleAddUI.CreateConfirmButton(preset,
+                    return SimpleAddUI.CreateConfirmButton(state, filterViewIsOpened, preset,
                         (tags, location, snapOntoWayId?: string) => {
                             if (snapOntoWayId === undefined) {
                                 createNewPoint(tags, location, undefined)
@@ -97,18 +115,18 @@ export default class SimpleAddUI extends Toggle {
                     new Toggle(
                         addUi,
                         Translations.t.general.add.stillLoading.Clone().SetClass("alert"),
-                        State.state.featurePipeline.somethingLoaded
+                        state.featurePipeline.somethingLoaded
                     ),
                     Translations.t.general.add.zoomInFurther.Clone().SetClass("alert"),
-                    State.state.locationControl.map(loc => loc.zoom >= Constants.userJourney.minZoomLevelToAddNewPoints)
+                    state.locationControl.map(loc => loc.zoom >= Constants.userJourney.minZoomLevelToAddNewPoints)
                 ),
                 readYourMessages,
-                State.state.osmConnection.userDetails.map((userdetails: UserDetails) =>
+                state.osmConnection.userDetails.map((userdetails: UserDetails) =>
                     userdetails.csCount >= Constants.userJourney.addNewPointWithUnreadMessagesUnlock ||
                     userdetails.unreadMessages == 0)
             ),
             loginButton,
-            State.state.osmConnection.isLoggedIn
+            state.osmConnection.isLoggedIn
         )
 
 
@@ -116,11 +134,18 @@ export default class SimpleAddUI extends Toggle {
     }
 
 
-    private static CreateConfirmButton(preset: PresetInfo,
+    private static CreateConfirmButton(
+        state: {
+          LastClickLocation: UIEventSource<{ lat: number, lon: number }>,
+          osmConnection: OsmConnection,
+          featurePipeline: FeaturePipeline  
+        },
+            filterViewIsOpened: UIEventSource<boolean>,
+        preset: PresetInfo,
                                        confirm: (tags: any[], location: { lat: number, lon: number }, snapOntoWayId: string) => void,
                                        cancel: () => void): BaseUIElement {
 
-        let location = State.state.LastClickLocation;
+        let location = state.LastClickLocation;
         let preciseInput: LocationInput = undefined
         if (preset.preciseInput !== undefined) {
             // We uncouple the event source
@@ -143,7 +168,6 @@ export default class SimpleAddUI extends Toggle {
             }
 
 
-
             const tags = TagUtils.KVtoProperties(preset.tags ?? []);
             preciseInput = new LocationInput({
                 mapBackground: backgroundLayer,
@@ -160,24 +184,24 @@ export default class SimpleAddUI extends Toggle {
             if (preset.preciseInput.snapToLayers) {
                 // We have to snap to certain layers.
                 // Lets fetch them
-                
-                let loadedBbox : BBox= undefined
+
+                let loadedBbox: BBox = undefined
                 mapBounds?.addCallbackAndRunD(bbox => {
-                    if(loadedBbox !== undefined && bbox.isContainedIn(loadedBbox)){
+                    if (loadedBbox !== undefined && bbox.isContainedIn(loadedBbox)) {
                         // All is already there
                         // return;
                     }
 
                     bbox = bbox.pad(2);
                     loadedBbox = bbox;
-                    const allFeatures: {feature: any}[] = []
+                    const allFeatures: { feature: any }[] = []
                     preset.preciseInput.snapToLayers.forEach(layerId => {
-                       State.state.featurePipeline.GetFeaturesWithin(layerId, bbox).forEach(feats => allFeatures.push(...feats.map(f => ({feature :f}))))
+                        state.featurePipeline.GetFeaturesWithin(layerId, bbox).forEach(feats => allFeatures.push(...feats.map(f => ({feature: f}))))
                     })
                     snapToFeatures.setData(allFeatures)
                 })
             }
-            
+
         }
 
 
@@ -205,7 +229,7 @@ export default class SimpleAddUI extends Toggle {
                     Translations.t.general.add.openLayerControl
                 ])
             )
-                .onClick(() => State.state.filterIsOpened.setData(true))
+                .onClick(() => filterViewIsOpened.setData(true))
 
 
         const openLayerOrConfirm = new Toggle(
@@ -234,36 +258,35 @@ export default class SimpleAddUI extends Toggle {
             openLayerOrConfirm,
             disableFilter,
             preset.layerToAddTo.appliedFilters.map(filters => {
-                if(filters === undefined || filters.length === 0){
+                if (filters === undefined || filters.length === 0) {
                     return true;
                 }
                 for (const filter of filters) {
-                    if(filter.selected === 0 && filter.filter.options.length === 1){
+                    if (filter.selected === 0 && filter.filter.options.length === 1) {
                         return false;
                     }
-                    if(filter.selected !== undefined){
+                    if (filter.selected !== undefined) {
                         const tags = filter.filter.options[filter.selected].osmTags
-                        if(tags !== undefined && tags["and"]?.length !== 0){
+                        if (tags !== undefined && tags["and"]?.length !== 0) {
                             // This actually doesn't filter anything at all
                             return false;
                         }
                     }
                 }
                 return true
-                
+
             })
         )
 
 
-        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset);
+        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, state.osmConnection);
 
         const cancelButton = new SubtleButton(Svg.close_ui(),
             Translations.t.general.cancel
         ).onClick(cancel)
 
         return new Combine([
-            // Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
-            State.state.osmConnection.userDetails.data.dryRun ?
+            state.osmConnection.userDetails.data.dryRun ?
                 Translations.t.general.testing.Clone().SetClass("alert") : undefined,
             disableFiltersOrConfirm,
             cancelButton,
@@ -274,24 +297,29 @@ export default class SimpleAddUI extends Toggle {
 
     }
 
-    private static CreateTagInfoFor(preset: PresetInfo, optionallyLinkToWiki = true) {
-        const csCount = State.state.osmConnection.userDetails.data.csCount;
+    private static CreateTagInfoFor(preset: PresetInfo, osmConnection: OsmConnection, optionallyLinkToWiki = true) {
+        const csCount = osmConnection.userDetails.data.csCount;
         return new Toggle(
             Translations.t.general.add.presetInfo.Subs({
                 tags: preset.tags.map(t => t.asHumanString(optionallyLinkToWiki && csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&"),
             }).SetStyle("word-break: break-all"),
 
             undefined,
-            State.state.osmConnection.userDetails.map(userdetails => userdetails.csCount >= Constants.userJourney.tagsVisibleAt)
+            osmConnection.userDetails.map(userdetails => userdetails.csCount >= Constants.userJourney.tagsVisibleAt)
         );
     }
 
-    private static CreateAllPresetsPanel(selectedPreset: UIEventSource<PresetInfo>): BaseUIElement {
-        const presetButtons = SimpleAddUI.CreatePresetButtons(selectedPreset)
+    private static CreateAllPresetsPanel(selectedPreset: UIEventSource<PresetInfo>,
+                                         state: {
+                                             filteredLayers: UIEventSource<FilteredLayer[]>,
+                                             featureSwitchFilter: UIEventSource<boolean>,
+                                             osmConnection: OsmConnection
+                                         }): BaseUIElement {
+        const presetButtons = SimpleAddUI.CreatePresetButtons(state, selectedPreset)
         let intro: BaseUIElement = Translations.t.general.add.intro;
 
         let testMode: BaseUIElement = undefined;
-        if (State.state.osmConnection?.userDetails?.data?.dryRun) {
+        if (state.osmConnection?.userDetails?.data?.dryRun) {
             testMode = Translations.t.general.testing.Clone().SetClass("alert")
         }
 
@@ -299,9 +327,9 @@ export default class SimpleAddUI extends Toggle {
 
     }
 
-    private static CreatePresetSelectButton(preset: PresetInfo) {
+    private static CreatePresetSelectButton(preset: PresetInfo, osmConnection: OsmConnection) {
 
-        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, false);
+        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, osmConnection ,false);
         return new SubtleButton(
             preset.icon(),
             new Combine([
@@ -316,11 +344,17 @@ export default class SimpleAddUI extends Toggle {
 
     /*
     * Generates the list with all the buttons.*/
-    private static CreatePresetButtons(selectedPreset: UIEventSource<PresetInfo>): BaseUIElement {
+    private static CreatePresetButtons(
+        state: {
+            filteredLayers: UIEventSource<FilteredLayer[]>,
+            featureSwitchFilter: UIEventSource<boolean>,
+            osmConnection: OsmConnection
+        },
+        selectedPreset: UIEventSource<PresetInfo>): BaseUIElement {
         const allButtons = [];
-        for (const layer of State.state.filteredLayers.data) {
+        for (const layer of state.filteredLayers.data) {
 
-            if (layer.isDisplayed.data === false && !State.state.featureSwitchFilter.data) {
+            if (layer.isDisplayed.data === false && !state.featureSwitchFilter.data) {
                 // The layer is not displayed and we cannot enable the layer control -> we skip
                 continue;
             }
@@ -346,7 +380,7 @@ export default class SimpleAddUI extends Toggle {
                     preciseInput: preset.preciseInput
                 }
 
-                const button = SimpleAddUI.CreatePresetSelectButton(presetInfo);
+                const button = SimpleAddUI.CreatePresetSelectButton(presetInfo, state.osmConnection);
                 button.onClick(() => {
                     selectedPreset.setData(presetInfo)
                 })

@@ -2,7 +2,6 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {Translation} from "../i18n/Translation";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Svg from "../../Svg";
-import State from "../../State";
 import {TextField} from "../Input/TextField";
 import {Geocoding} from "../../Logic/Osm/Geocoding";
 import Translations from "../i18n/Translations";
@@ -10,7 +9,10 @@ import Hash from "../../Logic/Web/Hash";
 import Combine from "../Base/Combine";
 
 export default class SearchAndGo extends Combine {
-    constructor() {
+    constructor(state: {
+        leafletMap: UIEventSource<any>,
+        selectedElement: UIEventSource<any>
+    }) {
         const goButton = Svg.search_ui().SetClass(
             "w-8 h-8 full-rounded border-black float-right"
         );
@@ -64,9 +66,9 @@ export default class SearchAndGo extends Combine {
                         [bb[0], bb[2]],
                         [bb[1], bb[3]],
                     ];
-                    State.state.selectedElement.setData(undefined);
+                    state.selectedElement.setData(undefined);
                     Hash.hash.setData(poi.osm_type + "/" + poi.osm_id);
-                    State.state.leafletMap.data.fitBounds(bounds);
+                    state.leafletMap.data.fitBounds(bounds);
                     placeholder.setData(Translations.t.general.search.search);
                 },
                 () => {

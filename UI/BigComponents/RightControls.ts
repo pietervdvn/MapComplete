@@ -2,38 +2,38 @@ import Combine from "../Base/Combine";
 import Toggle from "../Input/Toggle";
 import MapControlButton from "../MapControlButton";
 import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler";
-import State from "../../State";
 import Svg from "../../Svg";
+import MapState from "../../Logic/State/MapState";
 
 export default class RightControls extends Combine {
 
-    constructor() {
+    constructor(state:MapState) {
         const geolocationButton = new Toggle(
             new MapControlButton(
                 new GeoLocationHandler(
-                    State.state.currentGPSLocation,
-                    State.state.leafletMap,
-                    State.state.layoutToUse
+                    state.currentGPSLocation,
+                    state.leafletMap,
+                    state.layoutToUse
                 ), {
                     dontStyle: true
                 }
             ),
             undefined,
-            State.state.featureSwitchGeolocation
+            state.featureSwitchGeolocation
         );
 
         const plus = new MapControlButton(
             Svg.plus_svg()
         ).onClick(() => {
-            State.state.locationControl.data.zoom++;
-            State.state.locationControl.ping();
+            state.locationControl.data.zoom++;
+            state.locationControl.ping();
         });
 
         const min = new MapControlButton(
             Svg.min_svg()
         ).onClick(() => {
-            State.state.locationControl.data.zoom--;
-            State.state.locationControl.ping();
+            state.locationControl.data.zoom--;
+            state.locationControl.ping();
         });
 
         super([plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))

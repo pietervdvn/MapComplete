@@ -208,7 +208,8 @@ export default class SpecialVisualizations {
                             enablePopups: false,
                             zoomToFeatures: true,
                             layers: State.state.filteredLayers,
-                            features: new StaticFeatureSource(featuresToShow, true)
+                            features: new StaticFeatureSource(featuresToShow, true),
+                            allElements: State.state.allElements
                         }
                     )
 

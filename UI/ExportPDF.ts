@@ -104,19 +104,7 @@ export default class ExportPDF {
             
         })
 
-        const initialized =new Set()
-        for (const overlayToggle of State.state.overlayToggles) {
-            new ShowOverlayLayer(overlayToggle.config, minimap.leafletMap, overlayToggle.isDisplayed)
-            initialized.add(overlayToggle.config)
-        }
-
-        for (const tileLayerSource of State.state.layoutToUse.tileLayerSources) {
-            if (initialized.has(tileLayerSource)) {
-                continue
-            }
-            new ShowOverlayLayer(tileLayerSource, minimap.leafletMap)
-        }
-
+        State.state.AddAllOverlaysToMap(minimap.leafletMap)
     }
 
     private cleanup() {

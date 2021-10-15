@@ -263,5 +263,6 @@
         }
       }
     }
-  ]
+  ],
+  "enableIframePopout": false
 }

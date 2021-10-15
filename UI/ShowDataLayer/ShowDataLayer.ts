@@ -4,9 +4,9 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
-import State from "../../State";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
-import {FixedUiElement} from "../Base/FixedUiElement";
+import {ElementStorage} from "../../Logic/ElementStorage";
+import Hash from "../../Logic/Web/Hash";
 
 export default class ShowDataLayer {
 
@@ -14,7 +14,8 @@ export default class ShowDataLayer {
     private readonly _enablePopups: boolean;
     private readonly _features: UIEventSource<{ feature: any }[]>
     private readonly _layerToShow: LayerConfig;
-
+    private readonly _selectedElement: UIEventSource<any>
+    private readonly allElements : ElementStorage
     // Used to generate a fresh ID when needed
     private _cleanCount = 0;
     private geoLayer = undefined;
@@ -43,6 +44,8 @@ export default class ShowDataLayer {
         const features = options.features.features.map(featFreshes => featFreshes.map(ff => ff.feature));
         this._features = features;
         this._layerToShow = options.layerToShow;
+        this._selectedElement = options.selectedElement
+        this.allElements = options.allElements;
         const self = this;
 
         options.leafletMap.addCallbackAndRunD(_ => {
@@ -71,7 +74,7 @@ export default class ShowDataLayer {
         })
 
 
-        State.state.selectedElement.addCallbackAndRunD(selected => {
+        this._selectedElement?.addCallbackAndRunD(selected => {
             if (self._leafletMap.data === undefined) {
                 return;
             }
@@ -162,7 +165,7 @@ export default class ShowDataLayer {
 
 
     private createStyleFor(feature) {
-        const tagsSource = State.state.allElements.addOrGetElement(feature);
+        const tagsSource = this.allElements?.addOrGetElement(feature) ?? new UIEventSource<any>(feature.properties.id);
         // Every object is tied to exactly one layer
         const layer = this._layerToShow
         return layer?.GenerateLeafletStyle(tagsSource, true);
@@ -178,10 +181,7 @@ export default class ShowDataLayer {
             return;
         }
 
-        let tagSource = State.state.allElements.getEventSourceById(feature.properties.id)
-        if (tagSource === undefined) {
-            tagSource = new UIEventSource<any>(feature.properties)
-        }
+        let tagSource = this.allElements?.getEventSourceById(feature.properties.id) ?? new UIEventSource<any>(feature.properties)
         const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
         const style = layer.GenerateLeafletStyle(tagSource, clickable);
         const baseElement = style.icon.html;
@@ -230,20 +230,20 @@ export default class ShowDataLayer {
         popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type} ${id} is loading</div>`)
         leafletLayer.on("popupopen", () => {
             if (infobox === undefined) {
-                const tags = State.state.allElements.getEventSourceById(feature.properties.id);
+                const tags = this.allElements?.getEventSourceById(feature.properties.id) ?? new UIEventSource<any>(feature.properties);
                 infobox = new FeatureInfoBox(tags, layer);
 
                 infobox.isShown.addCallback(isShown => {
                     if (!isShown) {
-                        State.state.selectedElement.setData(undefined);
+                        this._selectedElement?.setData(undefined);
                         leafletLayer.closePopup()
                     }
                 });
             }
             infobox.AttachTo(id)
             infobox.Activate();
-            if (State.state?.selectedElement?.data?.properties?.id !== feature.properties.id) {
-                State.state.selectedElement.setData(feature)
+            if (this._selectedElement?.data?.properties?.id !== feature.properties.id) {
+                this._selectedElement?.setData(feature)
             }
 
         });
@@ -254,6 +254,7 @@ export default class ShowDataLayer {
             feature: feature,
             leafletlayer: leafletLayer
         })
+        
 
     }
 

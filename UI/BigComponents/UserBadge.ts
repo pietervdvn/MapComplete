@@ -1,6 +1,5 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Svg from "../../Svg";
-import State from "../../State";
 import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import LanguagePicker from "../LanguagePicker";
@@ -8,24 +7,25 @@ import Translations from "../i18n/Translations";
 import Link from "../Base/Link";
 import Toggle from "../Input/Toggle";
 import Img from "../Base/Img";
+import MapState from "../../Logic/State/MapState";
 
 export default class UserBadge extends Toggle {
 
-    constructor() {
+    constructor(state: MapState) {
 
 
-        const userDetails = State.state.osmConnection.userDetails;
+        const userDetails = state.osmConnection.userDetails;
 
         const loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
             .SetClass("userbadge-login inline-flex justify-center items-center w-full h-full text-lg font-bold min-w-[20em]")
-            .onClick(() => State.state.osmConnection.AttemptLogin());
+            .onClick(() => state.osmConnection.AttemptLogin());
 
 
         const logout =
             Svg.logout_svg()
                 .onClick(() => {
-                    State.state.osmConnection.LogOut();
+                    state.osmConnection.LogOut();
                 });
 
 
@@ -39,15 +39,15 @@ export default class UserBadge extends Toggle {
                         return " ";
                     })
                 ).onClick(() => {
-                    const home = State.state.osmConnection.userDetails.data?.home;
+                    const home = state.osmConnection.userDetails.data?.home;
                     if (home === undefined) {
                         return;
                     }
-                    State.state.leafletMap.data.setView([home.lat, home.lon], 16);
+                    state.leafletMap.data.setView([home.lat, home.lon], 16);
                 });
 
                 const linkStyle = "flex items-baseline"
-                const languagePicker = (LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.language) ?? new FixedUiElement(""))
+                const languagePicker = (LanguagePicker.CreateLanguagePicker(state.layoutToUse.language) ?? new FixedUiElement(""))
                     .SetStyle("width:min-content;");
 
                 let messageSpan =
@@ -129,7 +129,7 @@ export default class UserBadge extends Toggle {
         super(
             userBadge,
             loginButton,
-            State.state.osmConnection.isLoggedIn
+            state.osmConnection.isLoggedIn
         )
 
 

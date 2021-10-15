@@ -73,7 +73,7 @@ export default class FeaturePipeline {
             readonly overpassTimeout: UIEventSource<number>;
             readonly overpassMaxZoom: UIEventSource<number>;
             readonly osmConnection: OsmConnection
-            readonly currentBounds: UIEventSource<BBox>
+            readonly currentBounds: UIEventSource<BBox>,
         }) {
         this.state = state;
 

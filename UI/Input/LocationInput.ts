@@ -176,7 +176,8 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                         enablePopups: false,
                         zoomToFeatures: false,
                         leafletMap: this.map.leafletMap,
-                        layers: State.state.filteredLayers
+                        layers: State.state.filteredLayers,
+                    allElements: State.state.allElements
                     }
                 )
                 // Show the central point
@@ -191,7 +192,9 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                         enablePopups: false,
                         zoomToFeatures: false,
                         leafletMap: this.map.leafletMap,
-                        layerToShow: this._matching_layer
+                        layerToShow: this._matching_layer,
+                        allElements: State.state.allElements,
+                        selectedElement: State.state.selectedElement
                     })
                     
             }

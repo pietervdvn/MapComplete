@@ -46,6 +46,7 @@ export default class LayoutConfig {
     public readonly enableShowAllQuestions: boolean;
     public readonly enableExportButton: boolean;
     public readonly enablePdfDownload: boolean;
+    public readonly enableIframePopout: boolean;
 
     public readonly customCss?: string;
     /*
@@ -54,8 +55,10 @@ export default class LayoutConfig {
     public readonly cacheTimeout?: number;
     public readonly overpassUrl: string[];
     public readonly overpassTimeout: number;
+    public readonly overpassMaxZoom: number
+    public readonly osmApiTileSize: number
     public readonly official: boolean;
-
+ 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
         this.id = json.id;
@@ -171,6 +174,7 @@ export default class LayoutConfig {
         this.enableShowAllQuestions = json.enableShowAllQuestions ?? false;
         this.enableExportButton = json.enableDownload ?? false;
         this.enablePdfDownload = json.enablePdfDownload ?? false;
+        this.enableIframePopout = json.enableIframePopout ?? true
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
         this.overpassUrl = Constants.defaultOverpassUrls
@@ -182,6 +186,8 @@ export default class LayoutConfig {
             }
         }
         this.overpassTimeout = json.overpassTimeout ?? 30
+        this.overpassMaxZoom = json.overpassMaxZoom ?? 17
+        this.osmApiTileSize = json.osmApiTileSize ?? this.overpassMaxZoom + 1
 
     }
 

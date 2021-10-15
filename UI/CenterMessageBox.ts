@@ -1,12 +1,11 @@
 import Translations from "./i18n/Translations";
-import State from "../State";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
 
 export default class CenterMessageBox extends VariableUiElement {
 
-    constructor() {
-        const state = State.state;
-        const updater = State.state.featurePipeline;
+    constructor(state: FeaturePipelineState) {
+        const updater = state.featurePipeline;
         const t = Translations.t.centerMessage;
         const message = updater.runningQuery.map(
             isRunning => {
