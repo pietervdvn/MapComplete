@@ -162,8 +162,10 @@ export default class LayerConfig {
         }
         this.presets = (json.presets ?? []).map((pr, i) => {
 
-            let preciseInput = {
-                preferredBackground: ["photo"]
+            let preciseInput: any = {
+                preferredBackground: ["photo"],
+                snapToLayers: undefined,
+                maxSnapDistance: undefined
             };
             if (pr.preciseInput !== undefined) {
                 if (pr.preciseInput === true) {
@@ -564,11 +566,11 @@ export default class LayerConfig {
                     const renderValue = iconOverlay
                         .then
                         .GetRenderValue(tgs)
-                     
-                    if(renderValue === undefined){
+
+                    if (renderValue === undefined) {
                         continue;
                     }
-                    
+
                     const partDefs = renderValue.txt.split(";")
                         .filter((prt) => prt != "");
 
