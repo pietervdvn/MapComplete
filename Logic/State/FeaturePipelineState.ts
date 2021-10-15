@@ -1,6 +1,5 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import FeaturePipeline from "../FeatureSource/FeaturePipeline";
-import State from "../../State";
 import {Tiles} from "../../Models/TileRange";
 import ShowDataLayer from "../../UI/ShowDataLayer/ShowDataLayer";
 import {TileHierarchyAggregator} from "../../UI/ShowDataLayer/TileHierarchyAggregator";
@@ -37,13 +36,13 @@ export default class FeaturePipelineState extends MapState {
                 // Do show features indicates if the 'showDataLayer' should be shown
                 const doShowFeatures = source.features.map(
                     f => {
-                        const z = State.state.locationControl.data.zoom
+                        const z = self.locationControl.data.zoom
 
                         if (!source.layer.isDisplayed.data) {
                             return false;
                         }
 
-                        const bounds = State.state.currentBounds.data
+                        const bounds = self.currentBounds.data
                         if (bounds === undefined) {
                             // Map is not yet displayed
                             return false;
@@ -86,7 +85,7 @@ export default class FeaturePipelineState extends MapState {
 
 
                         return true
-                    }, [State.state.currentBounds, source.layer.isDisplayed]
+                    }, [this.currentBounds, source.layer.isDisplayed]
                 )
 
                 new ShowDataLayer(

@@ -6,7 +6,6 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
 import {ElementStorage} from "../../Logic/ElementStorage";
-import Hash from "../../Logic/Web/Hash";
 
 export default class ShowDataLayer {
 
@@ -48,13 +47,13 @@ export default class ShowDataLayer {
         this.allElements = options.allElements;
         const self = this;
 
-        options.leafletMap.addCallbackAndRunD(_ => {
+        options.leafletMap.addCallback(_ => {
                 self.update(options)
             }
         );
 
         features.addCallback(_ => self.update(options));
-        options.doShowLayer?.addCallbackAndRun(doShow => {
+        options.doShowLayer?.addCallback(doShow => {
             const mp = options.leafletMap.data;
             if (mp == undefined) {
                 return;
@@ -103,6 +102,8 @@ export default class ShowDataLayer {
                 leafletLayer.openPopup()
             }
         })
+        
+        this.update(options)
 
     }
 
