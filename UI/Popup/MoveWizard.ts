@@ -18,6 +18,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import ValidatedTextField from "../Input/ValidatedTextField";
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 
 interface MoveReason {
     text: Translation | string,
@@ -138,7 +139,7 @@ export default class MoveWizard extends Toggle {
             const locationInput = new LocationInput({
                 minZoom: reason.minZoom,
                 centerLocation: loc,
-                mapBackground: ValidatedTextField.bestLayerAt(loc, new UIEventSource(background))
+                mapBackground:AvailableBaseLayers.SelectBestLayerAccordingTo(loc, new UIEventSource(background))
             })
 
             if (reason.lockBounds) {

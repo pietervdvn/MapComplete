@@ -117,7 +117,7 @@ export interface LayoutConfigJson {
      * These tiles are using a ceratin zoom level, that can be controlled here
      * Default: overpassMaxZoom + 1
      */
-    osmApiTileSize: number
+    osmApiTileSize?: number
     
     /**
      * A tagrendering depicts how to show some tags or how to show a question for it.

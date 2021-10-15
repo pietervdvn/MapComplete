@@ -7,9 +7,6 @@ import BackgroundLayerResetter from "../Actors/BackgroundLayerResetter";
 import Attribution from "../../UI/BigComponents/Attribution";
 import Minimap, {MinimapObj} from "../../UI/Base/Minimap";
 import {Tiles} from "../../Models/TileRange";
-import * as L from "leaflet";
-import Img from "../../UI/Base/Img";
-import Svg from "../../Svg";
 import BaseUIElement from "../../UI/BaseUIElement";
 import FilteredLayer from "../../Models/FilteredLayer";
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig";
@@ -26,7 +23,7 @@ export default class MapState extends UserRelatedState {
     /**
      The leaflet instance of the big basemap
      */
-    public leafletMap = new UIEventSource<L.Map>(undefined, "leafletmap");
+    public leafletMap = new UIEventSource<any /*L.Map*/>(undefined, "leafletmap");
     /**
      * A list of currently available background layers
      */
@@ -67,7 +64,6 @@ export default class MapState extends UserRelatedState {
      */
     public overlayToggles: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]
 
-    
 
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
@@ -120,57 +116,19 @@ export default class MapState extends UserRelatedState {
             lastClickLocation: this.LastClickLocation
         })
 
-       
+
         this.overlayToggles = this.layoutToUse.tileLayerSources.filter(c => c.name !== undefined).map(c => ({
             config: c,
             isDisplayed: QueryParameters.GetQueryParameter("overlay-" + c.id, "" + c.defaultState, "Wether or not the overlay " + c.id + " is shown").map(str => str === "true", [], b => "" + b)
         }))
         this.filteredLayers = this.InitializeFilteredLayers()
-        
-        
+
+
         this.lockBounds()
         this.AddAllOverlaysToMap(this.leafletMap)
-        this.addHomeMarker()
-
-
-
     }
 
-    private addHomeMarker() {
-        const leafletMap = this.leafletMap
-        const osmConnection = this.osmConnection
 
-        function addHomeMarker() {
-            const userDetails = osmConnection.userDetails.data;
-            if (userDetails === undefined) {
-                return false;
-            }
-            const home = userDetails.home;
-            if (home === undefined) {
-                return userDetails.loggedIn; // If logged in, the home is not set and we unregister. If not logged in, we stay registered if a login still comes
-            }
-            const leaflet = leafletMap.data;
-            if (leaflet === undefined) {
-                return false;
-            }
-            const color = getComputedStyle(document.body).getPropertyValue(
-                "--subtle-detail-color"
-            );
-            const icon = L.icon({
-                iconUrl: Img.AsData(
-                    Svg.home_white_bg.replace(/#ffffff/g, color)
-                ),
-                iconSize: [30, 30],
-                iconAnchor: [15, 15],
-            });
-            const marker = L.marker([home.lat, home.lon], {icon: icon});
-            marker.addTo(leaflet);
-            return true;
-        }
-
-        osmConnection.userDetails.addCallbackAndRunD(_ => addHomeMarker());
-        leafletMap.addCallbackAndRunD(_ => addHomeMarker())
-    }
 
     private lockBounds() {
         const layout = this.layoutToUse;
@@ -198,6 +156,7 @@ export default class MapState extends UserRelatedState {
             })
         }
     }
+
     private InitializeFilteredLayers() {
         // Initialize the filtered layers state
 
@@ -252,8 +211,8 @@ export default class MapState extends UserRelatedState {
         return new UIEventSource<FilteredLayer[]>(flayers);
     }
 
-    public AddAllOverlaysToMap(leafletMap: UIEventSource<any>){
-        const initialized =new Set()
+    public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
+        const initialized = new Set()
         for (const overlayToggle of this.overlayToggles) {
             new ShowOverlayLayer(overlayToggle.config, leafletMap, overlayToggle.isDisplayed)
             initialized.add(overlayToggle.config)

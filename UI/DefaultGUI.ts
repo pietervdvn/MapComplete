@@ -17,6 +17,12 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import LeftControls from "./BigComponents/LeftControls";
 import RightControls from "./BigComponents/RightControls";
 import CenterMessageBox from "./CenterMessageBox";
+import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
+import AllKnownLayers from "../Customizations/AllKnownLayers";
+import ScrollableFullScreen from "./Base/ScrollableFullScreen";
+import Translations from "./i18n/Translations";
+import SimpleAddUI from "./BigComponents/SimpleAddUI";
+import StrayClickHandler from "../Logic/Actors/StrayClickHandler";
 
 export class DefaultGuiState {
     public readonly welcomeMessageIsOpened;
@@ -85,9 +91,9 @@ export default class DefaultGUI {
         state.mainMapObject.SetClass("w-full h-full")
             .AttachTo("leafletDiv")
 
-        state.setupClickDialogOnMap(
+        this.setupClickDialogOnMap(
             guiState.filterViewIsOpened,
-            state.leafletMap
+            state
         )
 
         this.InitWelcomeMessage();
@@ -125,6 +131,14 @@ export default class DefaultGUI {
         document
             .getElementById("centermessage")
             .classList.add("pointer-events-none");
+        
+        
+        new ShowDataLayer({
+            leafletMap: state.leafletMap,
+            layerToShow: AllKnownLayers.sharedLayers.get("home_location"),
+            features:            state.homeLocation,
+            enablePopups: false,
+        })
 
     }
 
@@ -155,6 +169,50 @@ export default class DefaultGUI {
             help.SetClass("pointer-events-auto"),
             isOpened
         )
+
+    }
+
+    public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, state: FeaturePipelineState) {
+
+        function setup(){
+            let presetCount = 0;
+            for (const layer of state.layoutToUse.layers) {
+                for (const preset of layer.presets) {
+                    presetCount++;
+                }
+            }
+            if (presetCount == 0) {
+                return;
+            }
+
+            const newPointDialogIsShown = new UIEventSource<boolean>(false);
+            const addNewPoint = new ScrollableFullScreen(
+                () => Translations.t.general.add.title.Clone(),
+                () => new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, state),
+                "new",
+                newPointDialogIsShown
+            );
+            addNewPoint.isShown.addCallback((isShown) => {
+                if (!isShown) {
+                    state.LastClickLocation.setData(undefined);
+                }
+            });
+
+            new StrayClickHandler(
+                state.LastClickLocation,
+                state.selectedElement,
+                state.filteredLayers,
+                state.leafletMap,
+                addNewPoint
+            );
+        }
+
+        state.featureSwitchAddNew.addCallbackAndRunD(addNewAllowed => {
+            if (addNewAllowed) {
+                setup()
+                return true;
+            }
+        })
 
     }
 

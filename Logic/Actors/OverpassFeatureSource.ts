@@ -179,7 +179,7 @@ export default class OverpassFeatureSource implements FeatureSource {
 
         self.retries.setData(0);
         try {
-            data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date));
+            data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date, undefined));
             self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
             return [bounds, date, layersToDownload];
         } catch (e) {

@@ -121,50 +121,7 @@ export default class FeaturePipelineState extends MapState {
         })
     }
 
-    public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, leafletMap: UIEventSource<any>) {
-
-        const self = this
-        function setup(){
-            let presetCount = 0;
-            for (const layer of self.layoutToUse.layers) {
-                for (const preset of layer.presets) {
-                    presetCount++;
-                }
-            }
-            if (presetCount == 0) {
-                return;
-            }
-
-            const newPointDialogIsShown = new UIEventSource<boolean>(false);
-            const addNewPoint = new ScrollableFullScreen(
-                () => Translations.t.general.add.title.Clone(),
-                () => new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, self),
-                "new",
-                newPointDialogIsShown
-            );
-            addNewPoint.isShown.addCallback((isShown) => {
-                if (!isShown) {
-                    self.LastClickLocation.setData(undefined);
-                }
-            });
-
-            new StrayClickHandler(
-                self.LastClickLocation,
-                self.selectedElement,
-                self.filteredLayers,
-                leafletMap,
-                addNewPoint
-            );
-        }
-
-        this.featureSwitchAddNew.addCallbackAndRunD(addNewAllowed => {
-            if (addNewAllowed) {
-                setup()
-                return true;
-            }
-        })
-
-    }
+  
 
 
 

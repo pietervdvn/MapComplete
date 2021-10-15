@@ -12,11 +12,16 @@ import DetermineLayout from "./Logic/DetermineLayout";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import DefaultGUI, {DefaultGuiState} from "./UI/DefaultGUI";
 import State from "./State";
+import AvailableBaseLayersImplementation from "./Logic/Actors/AvailableBaseLayersImplementation";
+import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerImplementation";
 
+// Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()
-// Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts
-ValidatedTextField.bestLayerAt = (location, layerPref) => AvailableBaseLayers.SelectBestLayerAccordingTo(location, layerPref)
+AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
 SimpleMetaTagger.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
+ShowOverlayLayerImplementation.Implement();
+// Miscelleanous
+
 Utils.DisableLongPresses()
 
 // --------------------- Special actions based on the parameters -----------------

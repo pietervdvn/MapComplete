@@ -18,6 +18,7 @@ import {Unit} from "../../Models/Unit";
 import {FixedInputElement} from "./FixedInputElement";
 import WikidataSearchBox from "../Wikipedia/WikidataSearchBox";
 import Wikidata from "../../Logic/Web/Wikidata";
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 
 interface TextFieldDef {
     name: string,
@@ -34,8 +35,6 @@ interface TextFieldDef {
 }
 
 export default class ValidatedTextField {
-
-    public static bestLayerAt: (location: UIEventSource<Loc>, preferences: UIEventSource<string[]>) => any
 
     public static tpList: TextFieldDef[] = [
         ValidatedTextField.tp(
@@ -93,7 +92,7 @@ export default class ValidatedTextField {
                 })
                 if (args[1]) {
                     // We have a prefered map!
-                    options.mapBackgroundLayer = ValidatedTextField.bestLayerAt(
+                    options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
                         location, new UIEventSource<string[]>(args[1].split(","))
                     )
                 }
@@ -137,7 +136,7 @@ export default class ValidatedTextField {
                 })
                 if (args[1]) {
                     // We have a prefered map!
-                    options.mapBackgroundLayer = ValidatedTextField.bestLayerAt(
+                    options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
                         location, new UIEventSource<string[]>(args[1].split(","))
                     )
                 }

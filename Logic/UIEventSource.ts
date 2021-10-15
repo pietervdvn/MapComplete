@@ -136,7 +136,7 @@ export class UIEventSource<T> {
             if (oldList === list) {
                 return;
             }
-            if (oldList.length !== list.length) {
+            if (oldList === undefined || oldList.length !== list.length) {
                 stable.setData(list);
                 return;
             }
