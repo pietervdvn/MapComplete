@@ -559,9 +559,15 @@ export default class LayerConfig {
                 }
                 if (iconOverlay.badge) {
                     const badgeParts: BaseUIElement[] = [];
-                    const partDefs = iconOverlay.then
+                    const renderValue = iconOverlay
+                        .then
                         .GetRenderValue(tgs)
-                        .txt.split(";")
+                     
+                    if(renderValue === undefined){
+                        continue;
+                    }
+                    
+                    const partDefs = renderValue.txt.split(";")
                         .filter((prt) => prt != "");
 
                     for (const badgePartStr of partDefs) {

@@ -146,7 +146,7 @@ export default class ShowDataLayer {
             try {
                 this.geoLayer.addData(feat);
             } catch (e) {
-                console.error("Could not add ", feat, "to the geojson layer in leaflet")
+                console.error("Could not add ", feat, "to the geojson layer in leaflet due to", e, e.stack)
             }
         }
 

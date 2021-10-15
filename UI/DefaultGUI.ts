@@ -139,6 +139,12 @@ export default class DefaultGUI {
             features:            state.homeLocation,
             enablePopups: false,
         })
+        
+        state.leafletMap.addCallbackAndRunD(_ => {
+            // Lets assume that all showDataLayers are initialized at this point
+            state.selectedElement.ping()
+            return true;
+        })
 
     }
 

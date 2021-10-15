@@ -1,17 +1,17 @@
 {
-  "id": "home_location",
-  "description": "Meta layer showing the home location of the user",
-  "minzoom": 0,
-  "source": {
-    "osmTags": "user:home=yes"
-  },
-  "icon": {
-    "render": "circle:white;./assets/svg/home.svg"
-  },
-  "iconSize": {
-    "render": "20,20,center"
-  },
-  "color": {
-    "render": "#00f"
-  }
+    "id": "home_location",
+    "description": "Meta layer showing the home location of the user",
+    "minzoom": 0,
+    "source": {
+        "osmTags": "user:home=yes"
+    },
+    "icon": {
+        "render": "circle:white;./assets/svg/home.svg"
+    },
+    "iconSize": {
+        "render": "20,20,center"
+    },
+    "color": {
+        "render": "#00f"
+    }
 }
