@@ -48,6 +48,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                 if(whitelist !== undefined){
                     const isWhiteListed = whitelist.get(zxy[1])?.has(zxy[2])
                     if(!isWhiteListed){
+                        console.log("Not downloading tile", ...zxy, "as it is not on the whitelist")
                         return undefined;
                     }
                 }

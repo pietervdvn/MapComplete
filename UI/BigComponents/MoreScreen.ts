@@ -52,23 +52,19 @@ export default class MoreScreen extends Combine {
 
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
         return new VariableUiElement(state.installedThemes.map(customThemes => {
-            const els: BaseUIElement[] = []
-            if (customThemes.length > 0) {
-                const customThemesElement = new Combine(
-                    customThemes.map(theme => MoreScreen.createLinkButton(state, theme.layout, theme.definition)?.SetClass(buttonClass))
-                )
-                els.push(customThemesElement)
+            if (customThemes.length <= 0) {
+                return undefined;
             }
+            const customThemeButtons = customThemes.map(theme => MoreScreen.createLinkButton(state, theme.layout, theme.definition)?.SetClass(buttonClass))
             return new Combine([
                 Translations.t.general.customThemeIntro.Clone(),
-                new Combine(els).SetClass(themeListClasses)
+                new Combine(customThemeButtons).SetClass(themeListClasses)
             ]);
         }));
     }
 
     private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string) {
         const t = Translations.t.general.morescreen
-        console.log("Hidden themes init...")
         const prefix = "mapcomplete-hidden-theme-"
         const hiddenTotal = AllKnownLayouts.layoutsList.filter(layout => layout.hideFromOverview).length
         return new Toggle(

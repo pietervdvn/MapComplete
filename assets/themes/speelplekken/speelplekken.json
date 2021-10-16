@@ -256,7 +256,7 @@
     }
   ],
   "clustering": {
-    "maxZoom": 16,
+    "maxZoom": 6,
     "minNeededElements": 100
   },
   "overrideAll": {

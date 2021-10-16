@@ -90,14 +90,8 @@ export default class LayoutConfig {
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;
-        if(json.widenFactor < 0.02){
-            if(official){
-                throw "Widenfactor too small"
-            }else{
-                // Unofficial themes get away with this
-                console.warn("Detected a very small widenfactor for theme ", this.id ,", bumping this above 1.")
-                json.widenFactor = json.widenFactor + 1
-            }
+        if(json.widenFactor <= 0){
+                throw "Widenfactor too small, shoud be > 0"
         }
         if(json.widenFactor > 20){
             throw "Widenfactor is very big, use a value between 1 and 5 (current value is "+json.widenFactor+") at "+context

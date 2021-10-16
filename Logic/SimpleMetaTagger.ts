@@ -25,7 +25,8 @@ export default class SimpleMetaTagger {
                 "_last_edit:contributor:uid",
                 "_last_edit:changeset",
                 "_last_edit:timestamp",
-                "_version_number"],
+                "_version_number",
+            "_backend"],
             doc: "Information about the last edit of this object."
         },
         (feature) => {/*Note: also called by 'UpdateTagsFromOsmAPI'*/

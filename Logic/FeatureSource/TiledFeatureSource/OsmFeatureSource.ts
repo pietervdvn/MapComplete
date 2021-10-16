@@ -109,6 +109,8 @@ export default class OsmFeatureSource {
 
                 geojson.features = geojson.features.filter(feature => this.allowedTags.matchesProperties(feature.properties))
 
+                geojson.features.forEach(f => f.properties["_backend"] = this._backend)
+                
                 console.log("Tile geojson:", z, x, y, "is", geojson)
                 const index = Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,

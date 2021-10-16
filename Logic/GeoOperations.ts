@@ -230,7 +230,7 @@ export class GeoOperations {
      *  The properties object will contain three values:
      // - `index`: closest point was found on nth line part,
      // - `dist`: distance between pt and the closest point (in kilometer),
-     // `location`: distance along the line between start and the closest point.
+     // `location`: distance along the line between start (of the line) and the closest point.
      * @param way The road on which you want to find a point
      * @param point Point defined as [lon, lat]
      */

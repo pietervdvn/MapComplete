@@ -58,10 +58,10 @@ export default class SplitRoadWizard extends Toggle {
         miniMap.SetStyle("width: 100%; height: 24rem")
             .SetClass("rounded-xl overflow-hidden");
 
-        miniMap.installBounds(BBox.get(roadElement))
+        miniMap.installBounds(BBox.get(roadElement).pad(0.25), false)
 
         // Define how a cut is displayed on the map
-
+        
         // Datalayer displaying the road and the cut points (if any)
         new ShowDataLayer({
             features: new StaticFeatureSource(splitPoints, true),
