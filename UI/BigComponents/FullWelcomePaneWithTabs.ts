@@ -79,15 +79,11 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown)
         const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown)]
 
-        const now = new Date()
-        const lastWeek = new Date(now.getDate() - 7 * 24 * 60 * 60 * 1000)
-        const date = lastWeek.getFullYear() + "-" + Utils.TwoDigits(lastWeek.getMonth() + 1) + "-" + Utils.TwoDigits(lastWeek.getDate())
-        const osmcha_link = `https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%22${date}%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D`
-
+       
         tabsWithAboutMc.push({
                 header: Svg.help,
                 content: new Combine([Translations.t.general.aboutMapcomplete.Clone()
-                    .Subs({"osmcha_link": osmcha_link}), "<br/>Version " + Constants.vNumber])
+                    .Subs({"osmcha_link": Utils.OsmChaLinkFor(7)}), "<br/>Version " + Constants.vNumber])
                     .SetClass("link-underline")
             }
         );

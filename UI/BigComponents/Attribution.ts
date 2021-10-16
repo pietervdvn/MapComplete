@@ -8,6 +8,7 @@ import Loc from "../../Models/Loc";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {BBox} from "../../Logic/BBox";
+import {Utils} from "../../Utils";
 
 /**
  * The bottom right attribution panel in the leaflet map
@@ -23,11 +24,7 @@ export default class Attribution extends Combine {
         const reportBug = new Link(Svg.bug_ui().SetClass("small-image"), "https://github.com/pietervdvn/MapComplete/issues", true);
 
         const layoutId = layoutToUse?.id;
-        const now = new Date()
-        // Note: getMonth is zero-index, we want 1-index but with one substracted, so it checks out!
-        const startDate = now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate()
-        const osmChaLink = `https://osmcha.org/?filters=%7B%22comment%22%3A%5B%7B%22label%22%3A%22%23${layoutId}%22%2C%22value%22%3A%22%23${layoutId}%22%7D%5D%2C%22date__gte%22%3A%5B%7B%22label%22%3A%22${startDate}%22%2C%22value%22%3A%222020-07-05%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22MapComplete%22%2C%22value%22%3A%22MapComplete%22%7D%5D%7D`
-        const stats = new Link(Svg.statistics_ui().SetClass("small-image"), osmChaLink, true)
+        const stats = new Link(Svg.statistics_ui().SetClass("small-image"), Utils.OsmChaLinkFor(31, layoutId), true)
 
 
         const idLink = location.map(location => `https://www.openstreetmap.org/edit?editor=id#map=${location?.zoom ?? 0}/${location?.lat ?? 0}/${location?.lon ?? 0}`)
