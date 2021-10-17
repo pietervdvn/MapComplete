@@ -26,22 +26,14 @@ export default class MoreScreen extends Combine {
         layoutToUse?: LayoutConfig
     }, onMainScreen: boolean = false) {
         const tr = Translations.t.general.morescreen;
-        let intro: BaseUIElement = tr.intro.Clone();
         let themeButtonStyle = ""
         let themeListStyle = ""
         if (onMainScreen) {
-            intro = new Combine([
-                LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
-                    .SetClass("absolute top-2 right-3"),
-                new IndexText()
-            ]);
-
             themeButtonStyle = "h-32 min-h-32 max-h-32 overflow-ellipsis overflow-hidden"
             themeListStyle = "md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-g4 gap-4"
         }
 
         super([
-            intro,
             MoreScreen.createOfficialThemesList(state, themeButtonStyle).SetClass(themeListStyle),
             MoreScreen.createPreviouslyVistedHiddenList(state, themeButtonStyle, themeListStyle),
             MoreScreen.createUnofficialThemeList(themeButtonStyle, state, themeListStyle),
@@ -157,7 +149,7 @@ export default class MoreScreen extends Combine {
      * Creates a button linking to the given theme
      * @private
      */
-    private static createLinkButton(
+    public static createLinkButton(
         state: {
             locationControl?: UIEventSource<Loc>,
             layoutToUse?: LayoutConfig

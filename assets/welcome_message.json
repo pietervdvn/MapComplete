@@ -1,0 +1,53 @@
+[
+  {
+    "start_date": "2022-04-18",
+    "end_date": "2022-04-24",
+    "message": "The 23rd of april is <b><a href=https://en.wikipedia.org/wiki/World_Book_Day' target='_blank'>World Book Day</a></b>. Go grab a book in a public bookcase (which is a piece of street furniture containing books where books can be taken and exchanged). Or alternative, search and map all of them in your neighbourhood!",
+    "featured_theme": "bookcases"
+  },
+  {
+    "start_date": "2022-04-11",
+    "end_date": "2022-04-17",
+    "message": "The 15th of april is <b><a href=https://en.wikipedia.org/wiki/World_Art_Day' target='_blank'>World Art Day</a></b> - the ideal moment to go out, enjoy some artwork and add missing artwork to the map. And of course, you can snap some pictures",
+    "featured_theme": "artwork"
+  },
+  {
+    "start_date": "2022-03-24",
+    "end_date": "2022-01-30",
+    "message": "The 22nd of March is <b><a href='https://www.un.org/en/observances/water-day' target='_blank'>World Water Day</a></b>. Time to go out and find all the public drinking water spots!",
+    "featured_theme": "drinking_water"
+  },
+  {
+    "start_date": "2022-01-24",
+    "end_date": "2022-01-30",
+    "message": "The 28th of January is <b><a href='https://en.wikipedia.org/wiki/Data_Privacy_Day' target='_blank'>International Privacy Day</a></b>. Do you want to know where all the surveillance cameras are? Go find out!",
+    "featured_theme": "surveillance"
+  },
+  {
+    "start_date": "2021-12-27",
+    "end_date": "2021-12-30",
+    "message": "In more normal circumstances, there would be a very cool gathering in Leipzig around this time with thousands of tech-minded people. However, due to some well-known circumstances, it is a virtual-only event this year as well. However, there might be a local hackerspace nearby to fill in this void",
+    "featured_theme": "hackerspaces"
+  },
+
+
+  
+  {
+    "start_date": "2021-11-01",
+    "end_date": "2021-11-07",
+    "message": "The first days of november is, in many European traditions, a moment that we remember our deceased. That is why this week the <b>ghost bikes</b> are featured. A ghost bike is a memorial in the form of a bicycle painted white which is placed to remember a cyclist whom was killed in a traffic accident. The ghostbike-theme shows such memorials. Even though there are already too much such memorials on the map, please add missing ones if you encounter them.",
+    "featured_theme": "ghostbikes"
+  },
+  {
+    "start_date": "2021-10-25",
+    "end_date": "2021-10-31",
+    "message": "Did you know you could link OpenStreetMap with Wikidata? With <i>name:etymology:wikidata</i>, it is even possible to link to whom or what a feature is <i>named after</i>. Quite some volunteers have done this - because it is interesting or for the <a href='https://equalstreetnames.org/' target='_blank'>Equal Street Names-project</a>. For this, a new theme has been created which shows the Wikipedia page and Wikimedia-images of this tag and which makes it easy to link them both with the search box. Give it a try!",
+    "featured_theme": "etymology"
+  },
+  {
+    "start_date": "2021-10-17",
+    "end_date": "2021-10-24",
+    "message": "<p>Hi all!</p><p>Thanks for using MapComplete. It has been quite a ride since it's inception, a bit over a year ago. MapComplete has grown significantly recently, which you can read more about on <a href='https://www.openstreetmap.org/user/Pieter%20Vander%20Vennet/diary/397796' target='_blank'>in my diary entry</a>.<p>Furthermore, <a target='_blank' href='https://www.openstreetmap.org/user/Nicolelaine'>NicoleLaine</a> made a really cool new theme about postboxes, so make sure to check it out!</p>",
+    "featured_theme": "postboxes"
+  }
+]

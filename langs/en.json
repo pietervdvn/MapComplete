@@ -25,7 +25,8 @@
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
         "title": "Welcome to MapComplete",
-        "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about a specific theme.",
+        "featuredThemeTitle": "Featured this week",
+        "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about features of a specific theme and allows to update it.",
         "pickTheme": "Pick a theme below to get started."
     },
     "split": {

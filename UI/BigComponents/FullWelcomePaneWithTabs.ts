@@ -59,10 +59,13 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         }
 
         if (state.featureSwitchMoreQuests.data) {
-
             tabs.push({
                 header: Svg.add_img,
-                content: new MoreScreen(state)
+                content:
+                new Combine([
+                    Translations.t.general.morescreen.intro.Clone(),
+                    new MoreScreen(state)
+                ]).SetClass("flex flex-col")
             });
         }
 

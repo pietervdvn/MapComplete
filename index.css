@@ -20,6 +20,10 @@
         .z-above-controls {
             z-index: 10001
         }
+        
+        .w-160 {
+            width: 40rem;
+        }
     }
 
     .btn {

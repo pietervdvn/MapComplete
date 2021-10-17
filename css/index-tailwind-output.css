@@ -740,6 +740,14 @@ video {
   top: 14rem;
 }
 
+.top-2 {
+  top: 0.5rem;
+}
+
+.right-3 {
+  right: 0.75rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -750,14 +758,6 @@ video {
 
 .right-0 {
   right: 0px;
-}
-
-.top-2 {
-  top: 0.5rem;
-}
-
-.right-3 {
-  right: 0.75rem;
 }
 
 .bottom-0 {
@@ -816,16 +816,16 @@ video {
   margin: 0.5rem;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .m-3 {
   margin: 0.75rem;
 }
 
 .m-6 {
   margin: 1.5rem;
-}
-
-.m-4 {
-  margin: 1rem;
 }
 
 .m-px {
@@ -968,12 +968,12 @@ video {
   display: none;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-24 {
   height: 6rem;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .h-10 {
@@ -1204,6 +1204,10 @@ video {
   gap: 1rem;
 }
 
+.self-center {
+  align-self: center;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -1362,20 +1366,20 @@ video {
   background-color: rgba(254, 202, 202, var(--tw-bg-opacity));
 }
 
-.p-1\.5 {
-  padding: 0.375rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-3 {
   padding: 0.75rem;
 }
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-1\.5 {
+  padding: 0.375rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .p-2 {
@@ -2414,6 +2418,10 @@ li::marker {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:p-0 {
     padding: 0px;
   }
@@ -2456,6 +2464,10 @@ li::marker {
   .md\:shadow-none {
     --tw-shadow: 0 0 #0000;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .md\:w-160 {
+    width: 40rem;
   }
 }
 
