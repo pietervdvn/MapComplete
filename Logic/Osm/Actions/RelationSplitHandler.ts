@@ -10,13 +10,9 @@ export interface RelationSplitInput {
     originalNodes: number[],
     allWaysNodesInOrder: number[][]
 }
-
-/**
- * When a way is split and this way is part of a relation, the relation should be updated too to have the new segment if relevant.
- */
-export default class RelationSplitHandler extends OsmChangeAction {
-    private readonly _input: RelationSplitInput;
-    private readonly _theme: string;
+abstract class AbstractRelationSplitHandler extends OsmChangeAction {
+    protected readonly _input: RelationSplitInput;
+    protected readonly _theme: string;
 
     constructor(input: RelationSplitInput, theme: string) {
         super()
@@ -24,35 +20,10 @@ export default class RelationSplitHandler extends OsmChangeAction {
         this._theme = theme;
     }
 
-    async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-       return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(changes)
-    }
-
-
-}
-
-
-/**
- * A simple strategy to split relations:
- * -> Download the way members just before and just after the original way
- * -> Make sure they are still aligned
- *
- * Note that the feature might appear multiple times.
- */
-export class InPlaceReplacedmentRTSH extends OsmChangeAction {
-    private readonly _input: RelationSplitInput;
-    private readonly _theme: string;
-
-    constructor(input: RelationSplitInput, theme: string) {
-        super();
-        this._input = input;
-        this._theme = theme;
-    }
-
     /**
      * Returns which node should border the member at the given index
      */
-    private async targetNodeAt(i: number, first: boolean) {
+    protected async targetNodeAt(i: number, first: boolean) {
         const member = this._input.relation.members[i]
         if (member === undefined) {
             return undefined
@@ -73,6 +44,124 @@ export class InPlaceReplacedmentRTSH extends OsmChangeAction {
             return undefined
         }
         return undefined;
+    }
+}
+
+/**
+ * When a way is split and this way is part of a relation, the relation should be updated too to have the new segment if relevant.
+ */
+export default class RelationSplitHandler extends AbstractRelationSplitHandler {
+
+    constructor(input: RelationSplitInput, theme: string) {
+        super(input, theme)
+    }
+
+    async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+        if(this._input.relation.tags["type"] === "restriction"){
+            // This is a turn restriction
+            return new TurnRestrictionRSH(this._input, this._theme).CreateChangeDescriptions(changes)
+        }
+       return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(changes)
+    }
+
+
+}
+
+export class TurnRestrictionRSH extends AbstractRelationSplitHandler {
+
+    constructor(input: RelationSplitInput, theme: string) {
+        super(input, theme);
+    }
+    
+    public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+
+        const relation = this._input.relation
+        const members = relation.members
+        
+        const selfMembers = members.filter(m => m.type === "way" && m.ref === this._input.originalWayId)
+        
+        if(selfMembers.length > 1){
+            console.warn("Detected a turn restriction where this way has multiple occurances. This is an error")
+        }
+        const selfMember = selfMembers[0]
+        
+        if(selfMember.role === "via"){
+            // A via way can be replaced in place
+            return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(changes);
+        }
+        
+       
+        // We have to keep only the way with a common point with the rest of the relation
+        // Let's figure out which member is neighbouring our way
+        
+        let commonStartPoint : number = await this.targetNodeAt(members.indexOf(selfMember), true)
+        let commonEndPoint : number = await this.targetNodeAt(members.indexOf(selfMember), false)
+        
+        // In normal circumstances, only one of those should be defined
+        let commonPoint = commonStartPoint ?? commonEndPoint
+        
+        // Let's select the way to keep
+      const idToKeep : {id: number} =  this._input.allWaysNodesInOrder.map((nodes, i) => ({nodes: nodes, id: this._input.allWayIdsInOrder[i]}))
+            .filter(nodesId => {
+                const nds = nodesId.nodes
+              return nds[0] == commonPoint || nds[nds.length - 1] == commonPoint
+            })[0]
+        
+        if(idToKeep === undefined){
+            console.error("No common point found, this was a broken turn restriction!", relation.id)
+            return []
+        }
+        
+        const originalWayId = this._input.originalWayId
+        if(idToKeep.id === originalWayId){
+            console.log("Turn_restriction fixer: the original ID can be kept, nothing to do")
+            return []
+        }
+        
+        const newMembers : {
+            ref:number,
+            type:"way" | "node" | "relation",
+            role:string
+        } [] = relation.members.map(m => {
+            if(m.type === "way" && m.ref === originalWayId){
+                return {
+                    ref: idToKeep.id,
+                    type:"way",
+                    role: m.role
+                }
+            }
+            return m
+        })
+        
+        
+        return [
+            {
+                type: "relation",
+                id: relation.id,
+                changes: {
+                    members: newMembers
+                },
+                meta: {
+                    theme: this._theme,
+                    changeType: "relation-fix:turn_restriction"
+                }
+            }
+        ];
+    }
+    
+}
+
+/**
+ * A simple strategy to split relations:
+ * -> Download the way members just before and just after the original way
+ * -> Make sure they are still aligned
+ *
+ * Note that the feature might appear multiple times.
+ */
+export class InPlaceReplacedmentRTSH extends AbstractRelationSplitHandler {
+
+    constructor(input: RelationSplitInput, theme: string) {
+        super(input, theme);
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
