@@ -15,7 +15,8 @@
         "nb_NO": "Benker",
         "fi": "Penkit",
         "pl": "Ławki",
-        "pt_BR": "Bancos"
+        "pt_BR": "Bancos",
+        "pt": "Bancos"
     },
     "minzoom": 17,
     "source": {
@@ -38,7 +39,8 @@
             "nb_NO": "Benk",
             "fi": "Penkki",
             "pl": "Ławka",
-            "pt_BR": "Banco"
+            "pt_BR": "Banco",
+            "pt": "Banco"
         }
     },
     "tagRenderings": [
@@ -59,7 +61,8 @@
                 "nb_NO": "Rygglene",
                 "fi": "Selkänoja",
                 "pl": "Oparcie",
-                "pt_BR": "Encosto"
+                "pt_BR": "Encosto",
+                "pt": "Encosto"
             },
             "freeform": {
                 "key": "backrest"
@@ -82,7 +85,8 @@
                         "nb_NO": "Rygglene: Ja",
                         "fi": "Selkänoja: kyllä",
                         "pl": "Oparcie: Tak",
-                        "pt_BR": "Encosto: Sim"
+                        "pt_BR": "Encosto: Sim",
+                        "pt": "Encosto: Sim"
                     }
                 },
                 {
@@ -102,7 +106,8 @@
                         "nb_NO": "Rygglene: Nei",
                         "fi": "Selkänoja: ei",
                         "pl": "Oparcie: Nie",
-                        "pt_BR": "Encosto: Não"
+                        "pt_BR": "Encosto: Não",
+                        "pt": "Encosto: Não"
                     }
                 }
             ],
@@ -120,7 +125,8 @@
                 "zh_Hant": "這個長椅是否有靠背？",
                 "nb_NO": "Har denne beken et rygglene?",
                 "pl": "Czy ta ławka ma oparcie?",
-                "pt_BR": "Este assento tem um escosto?"
+                "pt_BR": "Este assento tem um escosto?",
+                "pt": "Este assento tem um escosto?"
             },
             "id": "bench-backrest"
         },
@@ -138,7 +144,8 @@
                 "zh_Hant": "{seats} 座位數",
                 "nb_NO": "{seats} seter",
                 "pl": "{seats} siedzeń",
-                "pt_BR": "{seats} assentos"
+                "pt_BR": "{seats} assentos",
+                "pt": "{seats} assentos"
             },
             "freeform": {
                 "key": "seats",
@@ -157,7 +164,8 @@
                 "zh_Hant": "這個長椅有幾個位子？",
                 "nb_NO": "Hvor mange sitteplasser har denne benken?",
                 "pl": "Ile siedzeń ma ta ławka?",
-                "pt_BR": "Quantos assentos este banco tem?"
+                "pt_BR": "Quantos assentos este banco tem?",
+                "pt": "Quantos assentos este banco tem?"
             },
             "id": "bench-seats"
         },
@@ -177,7 +185,8 @@
                 "fi": "Materiaali: {material}",
                 "zh_Hans": "材质: {material}",
                 "pl": "Materiał: {material}",
-                "pt_BR": "Material: {material}"
+                "pt_BR": "Material: {material}",
+                "pt": "Material: {material}"
             },
             "freeform": {
                 "key": "material",
@@ -200,7 +209,8 @@
                         "zh_Hant": "材質：木頭",
                         "pt_BR": "Material: madeira",
                         "fi": "Materiaali: puu",
-                        "pl": "Materiał: drewno"
+                        "pl": "Materiał: drewno",
+                        "pt": "Material: madeira"
                     }
                 },
                 {
@@ -218,7 +228,8 @@
                         "nb_NO": "Materiale: metall",
                         "zh_Hant": "材質：金屬",
                         "pl": "Materiał: metal",
-                        "pt_BR": "Material: metal"
+                        "pt_BR": "Material: metal",
+                        "pt": "Material: metal"
                     }
                 },
                 {
@@ -237,7 +248,8 @@
                         "zh_Hant": "材質：石頭",
                         "pt_BR": "Material: pedra",
                         "fi": "Materiaali: kivi",
-                        "pl": "Materiał: kamień"
+                        "pl": "Materiał: kamień",
+                        "pt": "Material: pedra"
                     }
                 },
                 {
@@ -256,7 +268,8 @@
                         "zh_Hant": "材質：水泥",
                         "pt_BR": "Material: concreto",
                         "fi": "Materiaali: betoni",
-                        "pl": "Materiał: beton"
+                        "pl": "Materiał: beton",
+                        "pt": "Material: concreto"
                     }
                 },
                 {
@@ -275,7 +288,8 @@
                         "zh_Hant": "材質：塑膠",
                         "pt_BR": "Material: plástico",
                         "fi": "Materiaali: muovi",
-                        "pl": "Materiał: plastik"
+                        "pl": "Materiał: plastik",
+                        "pt": "Material: plástico"
                     }
                 },
                 {
@@ -294,7 +308,8 @@
                         "zh_Hant": "材質：鋼鐵",
                         "pt_BR": "Material: aço",
                         "fi": "Materiaali: teräs",
-                        "pl": "Materiał: stal"
+                        "pl": "Materiał: stal",
+                        "pt": "Material: aço"
                     }
                 }
             ],
@@ -309,7 +324,8 @@
                 "ru": "Из какого материала сделана скамейка?",
                 "zh_Hant": "這個長椅 (座位) 是什麼做的？",
                 "pt_BR": "De que é feito o banco (assento)?",
-                "pl": "Z czego wykonana jest ławka (siedzisko)?"
+                "pl": "Z czego wykonana jest ławka (siedzisko)?",
+                "pt": "De que é feito o banco (assento)?"
             },
             "id": "bench-material"
         },
@@ -325,7 +341,8 @@
                 "zh_Hans": "坐在长椅上的时候你目视的方向是哪边？",
                 "zh_Hant": "坐在長椅時是面對那個方向？",
                 "pt_BR": "Em que direção você olha quando está sentado no banco?",
-                "pl": "W jakim kierunku patrzysz siedząc na ławce?"
+                "pl": "W jakim kierunku patrzysz siedząc na ławce?",
+                "pt": "Em que direção olha quando está sentado no banco?"
             },
             "render": {
                 "en": "When sitting on the bench, one looks towards {direction}°.",
@@ -338,7 +355,8 @@
                 "ru": "Сидя на скамейке, вы смотрите в сторону {direction}°.",
                 "zh_Hant": "當坐在長椅時，那個人朝向 {direction}°。",
                 "pl": "Siedząc na ławce, patrzy się w kierunku {direction}°.",
-                "pt_BR": "Ao sentar-se no banco, olha-se para {direction} °."
+                "pt_BR": "Ao sentar-se no banco, olha-se para {direction} °.",
+                "pt": "Ao sentar-se no banco, olha-se para {direction} °."
             },
             "freeform": {
                 "key": "direction",
@@ -361,7 +379,8 @@
                 "nb_NO": "Farge: {colour}",
                 "pt_BR": "Cor: {colour}",
                 "fi": "Väri: {colour}",
-                "pl": "Kolor: {colour}"
+                "pl": "Kolor: {colour}",
+                "pt": "Cor: {colour}"
             },
             "question": {
                 "en": "Which colour does this bench have?",
@@ -374,7 +393,8 @@
                 "zh_Hans": "这个长椅是什么颜色的？",
                 "zh_Hant": "這個長椅是什麼顏色的？",
                 "pt_BR": "Qual a cor dessa bancada?",
-                "pl": "Jaki kolor ma ta ławka?"
+                "pl": "Jaki kolor ma ta ławka?",
+                "pt": "Qual a cor dessa bancada?"
             },
             "freeform": {
                 "key": "colour",
@@ -396,7 +416,8 @@
                         "nb_NO": "Farge: brun",
                         "pt_BR": "Cor: marrom",
                         "fi": "Väri: ruskea",
-                        "pl": "Kolor: brązowy"
+                        "pl": "Kolor: brązowy",
+                        "pt": "Cor: castanho"
                     }
                 },
                 {
@@ -414,7 +435,8 @@
                         "nb_NO": "Farge: grønn",
                         "pt_BR": "Cor: verde",
                         "fi": "Väri: vihreä",
-                        "pl": "Kolor: zielony"
+                        "pl": "Kolor: zielony",
+                        "pt": "Cor: verde"
                     }
                 },
                 {
@@ -432,7 +454,8 @@
                         "nb_NO": "Farge: grå",
                         "pt_BR": "Cor: cinza",
                         "fi": "Väri: harmaa",
-                        "pl": "Kolor: szary"
+                        "pl": "Kolor: szary",
+                        "pt": "Cor: cinzento"
                     }
                 },
                 {
@@ -450,7 +473,8 @@
                         "nb_NO": "Farge: hvit",
                         "pt_BR": "Cor: branco",
                         "fi": "Väri: valkoinen",
-                        "pl": "Kolor: biały"
+                        "pl": "Kolor: biały",
+                        "pt": "Cor: branco"
                     }
                 },
                 {
@@ -468,7 +492,8 @@
                         "nb_NO": "Farge: rød",
                         "pt_BR": "Cor: vermelho",
                         "fi": "Väri: punainen",
-                        "pl": "Kolor: czerwony"
+                        "pl": "Kolor: czerwony",
+                        "pt": "Cor: vermelho"
                     }
                 },
                 {
@@ -486,7 +511,8 @@
                         "nb_NO": "Farge: svart",
                         "pt_BR": "Cor: preto",
                         "fi": "Väri: musta",
-                        "pl": "Kolor: czarny"
+                        "pl": "Kolor: czarny",
+                        "pt": "Cor: preto"
                     }
                 },
                 {
@@ -504,7 +530,8 @@
                         "nb_NO": "Farge: blå",
                         "pt_BR": "Cor: azul",
                         "fi": "Väri: sininen",
-                        "pl": "Kolor: niebieski"
+                        "pl": "Kolor: niebieski",
+                        "pt": "Cor: azul"
                     }
                 },
                 {
@@ -522,7 +549,8 @@
                         "nb_NO": "Farge: gul",
                         "pt_BR": "Cor: amarelo",
                         "fi": "Väri: keltainen",
-                        "pl": "Kolor: żółty"
+                        "pl": "Kolor: żółty",
+                        "pt": "Cor: amarelo"
                     }
                 }
             ],
@@ -539,7 +567,8 @@
                 "ru": "Когда последний раз обследовали эту скамейку?",
                 "zh_Hant": "上一次探察長椅是什麼時候？",
                 "pt_BR": "Quando esta bancada foi pesquisada pela última vez?",
-                "pl": "Kiedy ostatnio badano tę ławkę?"
+                "pl": "Kiedy ostatnio badano tę ławkę?",
+                "pt": "Quando esta bancada foi pesquisada pela última vez?"
             },
             "render": {
                 "en": "This bench was last surveyed on {survey:date}",
@@ -551,7 +580,8 @@
                 "ru": "Последний раз обследование этой скамейки проводилось {survey:date}",
                 "zh_Hant": "這個長椅最後是在 {survey:date} 探查的",
                 "pt_BR": "Esta bancada foi pesquisada pela última vez em {survey:date}",
-                "pl": "Ławka ta była ostatnio badana w dniu {survey:date}"
+                "pl": "Ławka ta była ostatnio badana w dniu {survey:date}",
+                "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}"
             },
             "freeform": {
                 "key": "survey:date",
@@ -587,14 +617,15 @@
                 "nl": "zitbank",
                 "es": "banco",
                 "it": "panchina",
-                "ru": "Скамейка",
+                "ru": "cкамейка",
                 "id": "bangku",
                 "zh_Hans": "长椅",
                 "nb_NO": "benk",
                 "zh_Hant": "長椅",
                 "pt_BR": "banco",
                 "fi": "penkki",
-                "pl": "Ławka"
+                "pl": "Ławka",
+                "pt": "banco"
             },
             "presiceInput": {
                 "preferredBackground": "photo"

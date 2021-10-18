@@ -1,4 +1,93 @@
 {
+    "artwork": {
+        "description": "Разнообразные произведения искусства",
+        "name": "Произведения искусства",
+        "presets": {
+            "0": {
+                "title": "Художественная работа"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Какой художник создал это?",
+                "render": "Создано {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Архитектура"
+                    },
+                    "1": {
+                        "then": "Фреска"
+                    },
+                    "2": {
+                        "then": "Живопись"
+                    },
+                    "3": {
+                        "then": "Скульптура"
+                    },
+                    "4": {
+                        "then": "Статуя"
+                    },
+                    "5": {
+                        "then": "Бюст"
+                    },
+                    "6": {
+                        "then": "Камень"
+                    },
+                    "7": {
+                        "then": "Инсталляция"
+                    },
+                    "8": {
+                        "then": "Граффити"
+                    },
+                    "9": {
+                        "then": "Рельеф"
+                    },
+                    "10": {
+                        "then": "Азуле́жу (испанская роспись глазурованной керамической плитки)"
+                    },
+                    "11": {
+                        "then": "Плитка (мозаика)"
+                    }
+                },
+                "question": "К какому типу относится эта работа?",
+                "render": "Это {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Есть ли сайт с более подробной информацией об этой работе?",
+                "render": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Какая запись в Wikidata соответсвует <b>этой работе</b>?",
+                "render": "Запись об этой работе в wikidata: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Художественная работа <i>{name}</i>"
+                }
+            },
+            "render": "Художественная работа"
+        }
+    },
+    "barrier": {
+        "name": "Препятствия",
+        "presets": {
+            "0": {
+                "title": "Прикол"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Прикол"
+                }
+            },
+            "render": "Препятствие"
+        }
+    },
     "bench": {
         "name": "Скамейки",
         "presets": {
@@ -513,9 +602,46 @@
             "render": "Обслуживание велосипедов/магазин"
         }
     },
+    "binocular": {
+        "description": "Бинокли",
+        "name": "Бинокль",
+        "presets": {
+            "0": {
+                "title": "бинокль"
+            }
+        },
+        "title": {
+            "render": "Бинокль"
+        }
+    },
+    "cafe_pub": {
+        "presets": {
+            "0": {
+                "title": "паб"
+            },
+            "1": {
+                "title": "бар"
+            },
+            "2": {
+                "title": "кафе"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        }
+    },
     "charging_station": {
         "description": "Зарядная станция",
         "name": "Зарядные станции",
+        "presets": {
+            "0": {
+                "title": "Зарядная станция"
+            }
+        },
         "tagRenderings": {
             "Auth phone": {
                 "question": "К какой сети относится эта станция?",
@@ -562,11 +688,30 @@
                     }
                 }
             }
-        },
+        }
+    },
+    "crossings": {
         "presets": {
-            "0": {
-                "title": "Зарядная станция"
+            "1": {
+                "title": "Светофор"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Светофор"
+                }
+            }
+        }
+    },
+    "cycleways_and_roads": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Велосипедная дорожка"
+                }
+            },
+            "render": "Велосипедные дорожки"
         }
     },
     "defibrillator": {
@@ -641,6 +786,14 @@
         }
     },
     "food": {
+        "presets": {
+            "0": {
+                "title": "ресторан"
+            },
+            "1": {
+                "title": "быстрое питание"
+            }
+        },
         "tagRenderings": {
             "friture-take-your-container": {
                 "mappings": {
@@ -648,14 +801,6 @@
                         "then": "Приносить свою тару <b>не разрешено</b>"
                     }
                 }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "ресторан"
-            },
-            "1": {
-                "title": "быстрое питание"
             }
         }
     },
@@ -718,6 +863,31 @@
             },
             "phone": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            }
+        }
+    },
+    "observation_tower": {
+        "name": "Смотровые башни",
+        "presets": {
+            "0": {
+                "title": "смотровая башня"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            },
+            "render": "Смотровая башня"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " метр"
+                    }
+                }
             }
         }
     },
@@ -908,6 +1078,65 @@
                 }
             },
             "render": "Книжный шкаф"
+        }
+    },
+    "shops": {
+        "description": "Магазин",
+        "name": "Магазин",
+        "presets": {
+            "0": {
+                "description": "Добавить новый магазин",
+                "title": "Магазин"
+            }
+        },
+        "tagRenderings": {
+            "shops-email": {
+                "question": "Каков адрес электронной почты этого магазина?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "shops-name": {
+                "question": "Как называется этот магазин?"
+            },
+            "shops-opening_hours": {
+                "question": "Каковы часы работы этого магазина?",
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "shops-phone": {
+                "question": "Какой телефон?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "1": {
+                        "then": "Супермаркет"
+                    },
+                    "2": {
+                        "then": "Магазин одежды"
+                    },
+                    "3": {
+                        "then": "Парикмахерская"
+                    },
+                    "6": {
+                        "then": "Автосалон"
+                    }
+                },
+                "question": "Что продаётся в этом магазине?"
+            },
+            "shops-website": {
+                "question": "Какой веб-сайт у этого магазина?",
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
+                }
+            },
+            "render": "Магазин"
         }
     },
     "slow_roads": {
@@ -1117,6 +1346,12 @@
             "render": "Туалет"
         }
     },
+    "trail": {
+        "name": "Тропы",
+        "title": {
+            "render": "Тропа"
+        }
+    },
     "tree_node": {
         "name": "Дерево",
         "presets": {
@@ -1193,8 +1428,15 @@
             "render": "Смотровая площадка"
         }
     },
-    "watermill": {
-        "name": "Водяная мельница"
+    "visitor_information_centre": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
+        }
     },
     "waste_basket": {
         "iconSize": {
@@ -1214,249 +1456,7 @@
             "render": "Контейнер для мусора"
         }
     },
-    "visitor_information_centre": {
-        "title": {
-            "render": "{name}",
-            "mappings": {
-                "1": {
-                    "then": "{name}"
-                }
-            }
-        }
-    },
-    "trail": {
-        "name": "Тропы",
-        "title": {
-            "render": "Тропа"
-        }
-    },
-    "shops": {
-        "description": "Магазин",
-        "name": "Магазин",
-        "presets": {
-            "0": {
-                "description": "Добавить новый магазин",
-                "title": "Магазин"
-            }
-        },
-        "tagRenderings": {
-            "shops-email": {
-                "question": "Каков адрес электронной почты этого магазина?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "shops-name": {
-                "question": "Как называется этот магазин?"
-            },
-            "shops-opening_hours": {
-                "question": "Каковы часы работы этого магазина?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "Какой телефон?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "1": {
-                        "then": "Супермаркет"
-                    },
-                    "2": {
-                        "then": "Магазин одежды"
-                    },
-                    "3": {
-                        "then": "Парикмахерская"
-                    },
-                    "6": {
-                        "then": "Автосалон"
-                    }
-                },
-                "question": "Что продаётся в этом магазине?"
-            },
-            "shops-website": {
-                "question": "Какой веб-сайт у этого магазина?",
-                "render": "<a href='{website}'>{website}</a>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
-                "1": {
-                    "then": "{shop}"
-                }
-            },
-            "render": "Магазин"
-        }
-    },
-    "observation_tower": {
-        "name": "Смотровые башни",
-        "presets": {
-            "0": {
-                "title": "смотровая башня"
-            }
-        },
-        "title": {
-            "render": "Смотровая башня",
-            "mappings": {
-                "0": {
-                    "then": "<b>{name}</b>"
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " метр"
-                    }
-                }
-            }
-        }
-    },
-    "cycleways_and_roads": {
-        "title": {
-            "render": "Велосипедные дорожки",
-            "mappings": {
-                "0": {
-                    "then": "Велосипедная дорожка"
-                }
-            }
-        }
-    },
-    "crossings": {
-        "presets": {
-            "1": {
-                "title": "Светофор"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Светофор"
-                }
-            }
-        }
-    },
-    "cafe_pub": {
-        "presets": {
-            "0": {
-                "title": "паб"
-            },
-            "1": {
-                "title": "бар"
-            },
-            "2": {
-                "title": "кафе"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            }
-        }
-    },
-    "binocular": {
-        "description": "Бинокли",
-        "name": "Бинокль",
-        "presets": {
-            "0": {
-                "title": "бинокль"
-            }
-        },
-        "title": {
-            "render": "Бинокль"
-        }
-    },
-    "barrier": {
-        "presets": {
-            "0": {
-                "title": "Прикол"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Прикол"
-                }
-            },
-            "render": "Препятствие"
-        },
-        "name": "Препятствия"
-    },
-    "artwork": {
-        "description": "Разнообразные произведения искусства",
-        "name": "Произведения искусства",
-        "presets": {
-            "0": {
-                "title": "Художественная работа"
-            }
-        },
-        "tagRenderings": {
-            "artwork-artist_name": {
-                "question": "Какой художник создал это?",
-                "render": "Создано {artist_name}"
-            },
-            "artwork-artwork_type": {
-                "mappings": {
-                    "0": {
-                        "then": "Архитектура"
-                    },
-                    "1": {
-                        "then": "Фреска"
-                    },
-                    "2": {
-                        "then": "Живопись"
-                    },
-                    "3": {
-                        "then": "Скульптура"
-                    },
-                    "4": {
-                        "then": "Статуя"
-                    },
-                    "5": {
-                        "then": "Бюст"
-                    },
-                    "6": {
-                        "then": "Камень"
-                    },
-                    "7": {
-                        "then": "Инсталляция"
-                    },
-                    "8": {
-                        "then": "Граффити"
-                    },
-                    "9": {
-                        "then": "Рельеф"
-                    },
-                    "10": {
-                        "then": "Азуле́жу (испанская роспись глазурованной керамической плитки)"
-                    },
-                    "11": {
-                        "then": "Плитка (мозаика)"
-                    }
-                },
-                "question": "К какому типу относится эта работа?",
-                "render": "Это {artwork_type}"
-            },
-            "artwork-website": {
-                "question": "Есть ли сайт с более подробной информацией об этой работе?",
-                "render": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Какая запись в Wikidata соответсвует <b>этой работе</b>?",
-                "render": "Запись об этой работе в wikidata: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Художественная работа <i>{name}</i>"
-                }
-            },
-            "render": "Художественная работа"
-        }
+    "watermill": {
+        "name": "Водяная мельница"
     }
 }

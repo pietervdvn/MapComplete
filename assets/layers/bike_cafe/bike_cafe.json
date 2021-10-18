@@ -10,7 +10,8 @@
         "zh_Hans": "自行车咖啡",
         "ru": "Велосипедное кафе",
         "zh_Hant": "單車咖啡廳",
-        "pt_BR": "Café de bicicletas"
+        "pt_BR": "Café de bicicletas",
+        "pt": "Café de bicicletas"
     },
     "minzoom": 13,
     "source": {
@@ -48,7 +49,8 @@
             "zh_Hans": "自行车咖啡",
             "ru": "Велосипедное кафе",
             "zh_Hant": "單車咖啡廳",
-            "pt_BR": "Café de bicicleta"
+            "pt_BR": "Café de bicicleta",
+            "pt": "Café de bicicleta"
         },
         "mappings": [
             {
@@ -63,7 +65,8 @@
                     "zh_Hans": "自行车咖啡 <i>{name}</i>",
                     "ru": "Велосипедное кафе <i>{name}</i>",
                     "zh_Hant": "單車咖啡廳<i>{name}</i>",
-                    "pt_BR": "Café de bicicleta <i>{name}</i>"
+                    "pt_BR": "Café de bicicleta <i>{name}</i>",
+                    "pt": "Café de bicicleta <i>{name}</i>"
                 }
             }
         ]
@@ -81,7 +84,8 @@
                 "zh_Hans": "这个自行车咖啡的名字是什么？",
                 "ru": "Как называется это байк-кафе?",
                 "zh_Hant": "這個單車咖啡廳的名稱是？",
-                "pt_BR": "Qual o nome deste café de bicicleta?"
+                "pt_BR": "Qual o nome deste café de bicicleta?",
+                "pt": "Qual o nome deste café de bicicleta?"
             },
             "render": {
                 "en": "This bike cafe is called {name}",
@@ -93,7 +97,8 @@
                 "zh_Hans": "这家自行车咖啡叫做 {name}",
                 "ru": "Это велосипедное кафе называется {name}",
                 "zh_Hant": "這個單車咖啡廳叫做 {name}",
-                "pt_BR": "Este café de bicicleta se chama {name}"
+                "pt_BR": "Este café de bicicleta se chama {name}",
+                "pt": "Este café de bicicleta se chama {name}"
             },
             "freeform": {
                 "key": "name"
@@ -156,7 +161,8 @@
                 "zh_Hans": "这里有供你修车用的工具吗？",
                 "zh_Hant": "這裡是否有工具修理你的單車嗎？",
                 "ru": "Есть ли здесь инструменты для починки вашего велосипеда?",
-                "pt_BR": "Há ferramentas aqui para consertar sua bicicleta?"
+                "pt_BR": "Há ferramentas aqui para consertar sua bicicleta?",
+                "pt": "Há ferramentas aqui para consertar a sua própria bicicleta?"
             },
             "mappings": [
                 {
@@ -171,7 +177,8 @@
                         "zh_Hans": "这家自行车咖啡为DIY修理者提供工具",
                         "zh_Hant": "這個單車咖啡廳提供工具讓你修理",
                         "ru": "В этом велосипедном кафе есть инструменты для починки своего велосипеда",
-                        "pt_BR": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo"
+                        "pt_BR": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
+                        "pt": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo"
                     }
                 },
                 {
@@ -186,7 +193,8 @@
                         "zh_Hans": "这家自行车咖啡不为DIY修理者提供工具",
                         "zh_Hant": "這個單車咖啡廳並沒有提供工具讓你修理",
                         "ru": "В этом велосипедном кафе нет инструментов для починки своего велосипеда",
-                        "pt_BR": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo"
+                        "pt_BR": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
+                        "pt": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo"
                     }
                 }
             ]
@@ -203,7 +211,8 @@
                 "zh_Hans": "这家自行车咖啡t提供修车服务吗？",
                 "zh_Hant": "這個單車咖啡廳是否能修理單車？",
                 "ru": "Есть ли услуги ремонта велосипедов в этом велосипедном кафе?",
-                "pt_BR": "Este café de bicicleta conserta bicicletas?"
+                "pt_BR": "Este café de bicicleta conserta bicicletas?",
+                "pt": "Este café de bicicleta conserta bicicletas?"
             },
             "mappings": [
                 {
@@ -218,7 +227,8 @@
                         "zh_Hans": "这家自行车咖啡可以修车",
                         "zh_Hant": "這個單車咖啡廳修理單車",
                         "ru": "В этом велосипедном кафе есть услуги ремонта велосипедов",
-                        "pt_BR": "Este café de bicicleta conserta bicicletas"
+                        "pt_BR": "Este café de bicicleta conserta bicicletas",
+                        "pt": "Este café de bicicleta conserta bicicletas"
                     }
                 },
                 {
@@ -233,7 +243,8 @@
                         "zh_Hans": "这家自行车咖啡不能修车",
                         "zh_Hant": "這個單車咖啡廳並不修理單車",
                         "ru": "В этом велосипедном кафе нет услуг ремонта велосипедов",
-                        "pt_BR": "Este café de bicicleta não conserta bicicletas"
+                        "pt_BR": "Este café de bicicleta não conserta bicicletas",
+                        "pt": "Este café de bicicleta não conserta bicicletas"
                     }
                 }
             ]
@@ -249,7 +260,8 @@
                 "ru": "Какой сайт у {name}?",
                 "zh_Hans": "{name}的网站是什么？",
                 "zh_Hant": "{name} 的網站是？",
-                "pt_BR": "Qual o website de {name}?"
+                "pt_BR": "Qual o website de {name}?",
+                "pt": "Qual o website de {name}?"
             },
             "render": "<a href='{website}' target='_blank'>{website}</a>",
             "freeform": {
@@ -268,7 +280,8 @@
                 "ru": "Какой номер телефона у {name}?",
                 "zh_Hans": "{name}的电话号码是什么？",
                 "zh_Hant": "{name} 的電話號碼是？",
-                "pt_BR": "Qual o número de telefone de {name}?"
+                "pt_BR": "Qual o número de telefone de {name}?",
+                "pt": "Qual é o número de telefone de {name}?"
             },
             "render": "<a href='tel:{phone}'>{phone}</a>",
             "freeform": {
@@ -288,7 +301,8 @@
                 "ru": "Какой адрес электронной почты у {name}?",
                 "zh_Hans": "{name}的电子邮箱是什么？",
                 "zh_Hant": "{name} 的電子郵件地址是？",
-                "pt_BR": "Qual o endereço de email de {name}?"
+                "pt_BR": "Qual o endereço de email de {name}?",
+                "pt": "Qual o endereço de email de {name}?"
             },
             "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
             "freeform": {
@@ -306,7 +320,9 @@
                 "zh_Hans": "这家自行车咖啡什么时候开门营业？",
                 "zh_Hant": "何時這個單車咖啡廳營運？",
                 "ru": "Каков режим работы этого велосипедного кафе?",
-                "pt_BR": "Quando este café de bicicleta abre?"
+                "pt_BR": "Quando este café de bicicleta abre?",
+                "de": "Wann ist dieses Fahrradcafé geöffnet?",
+                "pt": "Quando este café de bicicleta abre?"
             },
             "render": "{opening_hours_table(opening_hours)}",
             "freeform": {
@@ -340,7 +356,8 @@
                 "zh_Hans": "自行车咖啡",
                 "zh_Hant": "單車咖啡廳",
                 "ru": "Велосипедное кафе",
-                "pt_BR": "Café de bicicleta"
+                "pt_BR": "Café de bicicleta",
+                "pt": "Café de bicicleta"
             },
             "tags": [
                 "amenity=pub",

@@ -432,7 +432,8 @@
                 "nl": "{opening_hours_table(opening_hours)}",
                 "fr": "{opening_hours_table(opening_hours)}",
                 "it": "{opening_hours_table(opening_hours)}",
-                "ru": "{opening_hours_table(opening_hours)}"
+                "ru": "{opening_hours_table(opening_hours)}",
+                "de": "{opening_hours_table(opening_hours)}"
             },
             "question": {
                 "en": "At what times is this defibrillator available?",

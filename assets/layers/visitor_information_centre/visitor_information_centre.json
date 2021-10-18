@@ -2,7 +2,8 @@
     "id": "visitor_information_centre",
     "name": {
         "en": "Visitor Information Centre",
-        "nl": "Bezoekerscentrum"
+        "nl": "Bezoekerscentrum",
+        "de": "Besucherinformationszentrum"
     },
     "minzoom": 12,
     "source": {
@@ -20,7 +21,9 @@
     "title": {
         "render": {
             "nl": "{name}",
-            "en": "{name}"
+            "en": "{name}",
+            "de": "{name}",
+            "ru": "{name}"
         },
         "mappings": [
             {
@@ -41,7 +44,9 @@
                 },
                 "then": {
                     "nl": "{name}",
-                    "en": "{name}"
+                    "en": "{name}",
+                    "de": "{name}",
+                    "ru": "{name}"
                 }
             }
         ]

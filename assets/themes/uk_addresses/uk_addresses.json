@@ -7,10 +7,12 @@
     "en": "Help to build an open dataset of UK addresses"
   },
   "description": {
-    "en": "Contribute to OpenStreetMap by filling out address information"
+    "en": "Contribute to OpenStreetMap by filling out address information",
+    "nl": "Draag bij aan OpenStreetMap door adresinformatie in te vullen"
   },
   "language": [
-    "en"
+    "en",
+    "nl"
   ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
@@ -135,7 +137,8 @@
         }
       },
       "description": {
-        "en": "Addresses"
+        "en": "Addresses",
+        "nl": "Adressen"
       },
       "tagRenderings": [
         {
@@ -147,7 +150,8 @@
         {
           "id": "uk_addresses_housenumber",
           "render": {
-            "en": "The housenumber is <b>{addr:housenumber}</b>"
+            "en": "The housenumber is <b>{addr:housenumber}</b>",
+            "nl": "Het huisnummer is <b>{addr:housenumber}</b>"
           },
           "question": {
             "en": "What is the number of this house?"
@@ -166,7 +170,8 @@
                 ]
               },
               "then": {
-                "en": "This building has no house number"
+                "en": "This building has no house number",
+                "nl": "Dit gebouw heeft geen huisnummer"
               }
             }
           ]

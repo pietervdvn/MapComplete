@@ -917,27 +917,27 @@
         "shortDescription": "Breng bomen in kaart",
         "title": "Bomen"
     },
-    "waste_basket": {
-        "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
-        "shortDescription": "Een kaart met vuilnisbakken",
-        "title": "Vuilnisbak"
-    },
     "uk_addresses": {
+        "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
         "layers": {
             "1": {
+                "description": "Adressen",
                 "tagRenderings": {
                     "uk_addresses_housenumber": {
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>",
                         "mappings": {
                             "0": {
                                 "then": "Dit gebouw heeft geen huisnummer"
                             }
-                        }
+                        },
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
                     }
-                },
-                "description": "Adressen"
+                }
             }
-        },
-        "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen"
+        }
+    },
+    "waste_basket": {
+        "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
+        "shortDescription": "Een kaart met vuilnisbakken",
+        "title": "Vuilnisbak"
     }
 }

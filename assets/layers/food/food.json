@@ -63,7 +63,8 @@
         {
             "title": {
                 "en": "restaurant",
-                "nl": "restaurant"
+                "nl": "restaurant",
+                "ru": "ресторан"
             },
             "tags": [
                 "amenity=restaurant"
@@ -79,7 +80,8 @@
         {
             "title": {
                 "en": "fastfood",
-                "nl": "fastfood-zaak"
+                "nl": "fastfood-zaak",
+                "ru": "быстрое питание"
             },
             "tags": [
                 "amenity=fast_food"

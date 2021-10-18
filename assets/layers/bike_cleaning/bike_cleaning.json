@@ -7,7 +7,8 @@
         "it": "Servizio lavaggio bici",
         "de": "Fahrrad-Reinigungsdienst",
         "zh_Hant": "單車清理服務",
-        "pt_BR": "Serviço de limpeza de bicicletas"
+        "pt_BR": "Serviço de limpeza de bicicletas",
+        "pt": "Serviço de limpeza de bicicletas"
     },
     "title": {
         "render": {
@@ -17,7 +18,8 @@
             "it": "Servizio lavaggio bici",
             "de": "Fahrrad-Reinigungsdienst",
             "zh_Hant": "單車清理服務",
-            "pt_BR": "Serviço de limpeza de bicicletas"
+            "pt_BR": "Serviço de limpeza de bicicletas",
+            "pt": "Serviço de limpeza de bicicletas"
         },
         "mappings": [
             {
@@ -29,7 +31,8 @@
                     "it": "Servizio lavaggio bici <i>{name}</i>",
                     "de": "Fahrrad-Reinigungsdienst<i>{name}</i>",
                     "zh_Hant": "單車清理服務 <i>{name}</i>",
-                    "pt_BR": "Serviço de limpeza de bicicletas <i>{name}</i>"
+                    "pt_BR": "Serviço de limpeza de bicicletas <i>{name}</i>",
+                    "pt": "Serviço de limpeza de bicicletas <i>{name}</i>"
                 }
             }
         ]
@@ -58,7 +61,8 @@
                 "it": "Servizio lavaggio bici",
                 "de": "Fahrrad-Reinigungsdienst",
                 "zh_Hant": "單車清理服務",
-                "pt_BR": "Serviço de limpeza de bicicletas"
+                "pt_BR": "Serviço de limpeza de bicicletas",
+                "pt": "Serviço de limpeza de bicicletas"
             },
             "tags": [
                 "amenity=bicycle_wash"

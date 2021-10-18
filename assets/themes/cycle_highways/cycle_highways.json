@@ -1,7 +1,8 @@
 {
   "id": "cycle_highways",
   "title": {
-    "en": "Cycle highways"
+    "en": "Cycle highways",
+    "de": "Radschnellwege"
   },
   "hideFromOverview": true,
   "maintainer": "L'imaginaire",
@@ -9,10 +10,12 @@
   "#overpassUrl": "https://overpass.kumi.systems/api/interpreter",
   "overpassTimeout": 60,
   "description": {
-    "en": "This map shows cycle highways"
+    "en": "This map shows cycle highways",
+    "de": "Diese Karte zeigt Radschnellwege"
   },
   "language": [
-    "en"
+    "en",
+    "de"
   ],
   "version": "2021-08-23",
   "startLat": 51.1599,
@@ -97,7 +100,8 @@
         "all_tags"
       ],
       "name": {
-        "en": "cycle highways"
+        "en": "cycle highways",
+        "de": "Radschnellwege"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -105,7 +109,8 @@
       "minzoom": 8,
       "title": {
         "render": {
-          "en": "cycle highway"
+          "en": "cycle highway",
+          "de": "Radschnellweg"
         }
       },
       "width": {

@@ -5,7 +5,8 @@
         "en": "Tree",
         "it": "Albero",
         "ru": "Дерево",
-        "fr": "Arbre"
+        "fr": "Arbre",
+        "de": "Baum"
     },
     "minzoom": 16,
     "source": {
@@ -21,7 +22,8 @@
             "en": "Tree",
             "it": "Albero",
             "ru": "Дерево",
-            "fr": "Arbre"
+            "fr": "Arbre",
+            "de": "Baum"
         },
         "mappings": [
             {
@@ -559,7 +561,8 @@
                 "it": "Albero",
                 "ru": "Дерево",
                 "fr": "Arbre",
-                "id": "Pohon"
+                "id": "Pohon",
+                "de": "Baum"
             },
             "description": {
                 "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",

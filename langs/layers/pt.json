@@ -1,16 +1,31 @@
 {
     "bench": {
+        "name": "Bancos",
+        "presets": {
+            "0": {
+                "title": "banco"
+            }
+        },
         "tagRenderings": {
+            "bench-backrest": {
+                "mappings": {
+                    "0": {
+                        "then": "Encosto: Sim"
+                    },
+                    "1": {
+                        "then": "Encosto: Não"
+                    }
+                },
+                "question": "Este assento tem um escosto?",
+                "render": "Encosto"
+            },
             "bench-colour": {
                 "mappings": {
-                    "7": {
-                        "then": "Cor: amarelo"
+                    "0": {
+                        "then": "Cor: castanho"
                     },
                     "1": {
                         "then": "Cor: verde"
-                    },
-                    "0": {
-                        "then": "Cor: castanho"
                     },
                     "2": {
                         "then": "Cor: cinzento"
@@ -26,6 +41,9 @@
                     },
                     "6": {
                         "then": "Cor: azul"
+                    },
+                    "7": {
+                        "then": "Cor: amarelo"
                     }
                 },
                 "question": "Qual a cor dessa bancada?",
@@ -37,6 +55,9 @@
             },
             "bench-material": {
                 "mappings": {
+                    "0": {
+                        "then": "Material: madeira"
+                    },
                     "1": {
                         "then": "Material: metal"
                     },
@@ -51,9 +72,6 @@
                     },
                     "5": {
                         "then": "Material: aço"
-                    },
-                    "0": {
-                        "then": "Material: madeira"
                     }
                 },
                 "question": "De que é feito o banco (assento)?",
@@ -66,24 +84,6 @@
             "bench-survey:date": {
                 "question": "Quando esta bancada foi pesquisada pela última vez?",
                 "render": "Esta bancada foi pesquisada pela última vez em {survey:date}"
-            },
-            "bench-backrest": {
-                "mappings": {
-                    "0": {
-                        "then": "Encosto: Sim"
-                    },
-                    "1": {
-                        "then": "Encosto: Não"
-                    }
-                },
-                "question": "Este assento tem um escosto?",
-                "render": "Encosto"
-            }
-        },
-        "name": "Bancos",
-        "presets": {
-            "0": {
-                "title": "banco"
             }
         },
         "title": {
@@ -112,6 +112,11 @@
     "bicycle_library": {
         "description": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
         "name": "Biblioteca de bicicleta",
+        "presets": {
+            "0": {
+                "title": "Biblioteca de bicicletas"
+            }
+        },
         "tagRenderings": {
             "bicycle-library-target-group": {
                 "mappings": {
@@ -146,11 +151,6 @@
         },
         "title": {
             "render": "Biblioteca de bicicleta"
-        },
-        "presets": {
-            "0": {
-                "title": "Biblioteca de bicicletas"
-            }
         }
     },
     "bicycle_tube_vending_machine": {
@@ -254,6 +254,7 @@
         }
     },
     "bike_parking": {
+        "name": "Estacionamento de bicicletas",
         "presets": {
             "0": {
                 "title": "Estacionamento de bicicletas"
@@ -334,8 +335,7 @@
         },
         "title": {
             "render": "Estacionamento de bicicletas"
-        },
-        "name": "Estacionamento de bicicletas"
+        }
     },
     "bike_repair_station": {
         "icon": {
@@ -383,11 +383,11 @@
             },
             "bike_repair_station-electrical_pump": {
                 "mappings": {
-                    "1": {
-                        "then": "Bomba elétrica"
-                    },
                     "0": {
                         "then": "Bomba manual"
+                    },
+                    "1": {
+                        "then": "Bomba elétrica"
                     }
                 }
             },
@@ -415,8 +415,8 @@
                 }
             },
             "bike_repair_station-operator": {
-                "render": "Mantida por {operator}",
-                "question": "Quem faz a manutenção desta bomba de ciclo?"
+                "question": "Quem faz a manutenção desta bomba de ciclo?",
+                "render": "Mantida por {operator}"
             }
         },
         "title": {

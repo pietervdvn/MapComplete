@@ -2,7 +2,8 @@
     "id": "trail",
     "name": {
         "en": "Trails",
-        "nl": "Wandeltochten"
+        "nl": "Wandeltochten",
+        "ru": "Тропы"
     },
     "minzoom": 12,
     "source": {
@@ -21,7 +22,8 @@
     "title": {
         "render": {
             "en": "Trail",
-            "nl": "Wandeltocht"
+            "nl": "Wandeltocht",
+            "ru": "Тропа"
         },
         "mappings": [
             {

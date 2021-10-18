@@ -263,7 +263,8 @@
                 {
                     "question": {
                         "nl": "Rolstoeltoegankelijk",
-                        "en": "Wheelchair accessible"
+                        "en": "Wheelchair accessible",
+                        "de": "Zugänglich für Rollstuhlfahrer"
                     },
                     "osmTags": {
                         "or": [

@@ -6,7 +6,8 @@
         "ja": "充電ステーション",
         "nb_NO": "Ladestasjoner",
         "ru": "Зарядные станции",
-        "zh_Hant": "充電站"
+        "zh_Hant": "充電站",
+        "de": "Ladestationen"
     },
     "minzoom": 10,
     "source": {
@@ -35,14 +36,16 @@
         "ja": "充電ステーション",
         "nb_NO": "En ladestasjon",
         "ru": "Зарядная станция",
-        "zh_Hant": "充電站"
+        "zh_Hant": "充電站",
+        "de": "Eine Ladestation"
     },
     "tagRenderings": [
         "images",
         {
             "id": "Type",
             "question": {
-                "en": "Which vehicles are allowed to charge here?"
+                "en": "Which vehicles are allowed to charge here?",
+                "de": "Welche Fahrzeuge dürfen hier geladen werden?"
             },
             "multiAnswer": true,
             "mappings": [
@@ -50,35 +53,40 @@
                     "if": "bicycle=yes",
                     "ifnot": "bicycle=no",
                     "then": {
-                        "en": "<b>bicycles</b> can be charged here"
+                        "en": "<b>bicycles</b> can be charged here",
+                        "de": "<b>Fahrräder</b> können hier geladen werden"
                     }
                 },
                 {
                     "if": "motorcar=yes",
                     "ifnot": "motorcar=no",
                     "then": {
-                        "en": "<b>Cars</b> can be charged here"
+                        "en": "<b>Cars</b> can be charged here",
+                        "de": "<b>Autos</b> können hier geladen werden"
                     }
                 },
                 {
                     "if": "scooter=yes",
                     "ifnot": "scooter=no",
                     "then": {
-                        "en": "<b>Scooters</b> can be charged here"
+                        "en": "<b>Scooters</b> can be charged here",
+                        "de": "<b> Roller</b> können hier geladen werden"
                     }
                 },
                 {
                     "if": "hgv=yes",
                     "ifnot": "hgv=no",
                     "then": {
-                        "en": "<b>Heavy good vehicles</b> (such as trucks) can be charged here"
+                        "en": "<b>Heavy good vehicles</b> (such as trucks) can be charged here",
+                        "de": "<b>Lastkraftwagen</b> (LKW) können hier geladen werden"
                     }
                 },
                 {
                     "if": "bus=yes",
                     "ifnot": "bus=no",
                     "then": {
-                        "en": "<b>Buses</b> can be charged here"
+                        "en": "<b>Buses</b> can be charged here",
+                        "de": "<b>Busse</b> können hier geladen werden"
                     }
                 }
             ]
@@ -86,10 +94,12 @@
         {
             "id": "access",
             "question": {
-                "en": "Who is allowed to use this charging station?"
+                "en": "Who is allowed to use this charging station?",
+                "de": "Wer darf diese Ladestation benutzen?"
             },
             "render": {
-                "en": "Access is {access}"
+                "en": "Access is {access}",
+                "de": "Zugang ist {access}"
             },
             "freeform": {
                 "key": "access",
@@ -126,11 +136,13 @@
             "id": "capacity",
             "render": {
                 "en": "{capacity} vehicles can be charged here at the same time",
-                "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden"
+                "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden",
+                "de": "{capacity} Fahrzeuge können hier gleichzeitig geladen werden"
             },
             "question": {
                 "en": "How much vehicles can be charged here at the same time?",
-                "nl": "Hoeveel voertuigen kunnen hier opgeladen worden?"
+                "nl": "Hoeveel voertuigen kunnen hier opgeladen worden?",
+                "de": "Wie viele Fahrzeuge können hier gleichzeitig geladen werden?"
             },
             "freeform": {
                 "key": "capacity",
@@ -140,7 +152,8 @@
         {
             "id": "Available_charging_stations (generated)",
             "question": {
-                "en": "Which charging stations are available here?"
+                "en": "Which charging stations are available here?",
+                "de": "Welche Ladestationen gibt es hier?"
             },
             "multiAnswer": true,
             "mappings": [
@@ -241,7 +254,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -250,7 +264,8 @@
                     "ifnot": "socket:type1_cable=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 with cable</b> (J1772)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 met kabel</b> (J1772)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 met kabel</b> (J1772)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -288,7 +303,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 with cable</b> (J1772)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 met kabel</b> (J1772)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 met kabel</b> (J1772)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -297,7 +313,8 @@
                     "ifnot": "socket:type1=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>without</i> cable</b> (J1772)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>zonder</i> kabel</b> (J1772)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>zonder</i> kabel</b> (J1772)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -335,7 +352,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>without</i> cable</b> (J1772)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>zonder</i> kabel</b> (J1772)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>zonder</i> kabel</b> (J1772)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -344,7 +362,8 @@
                     "ifnot": "socket:type1_combo=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (aka Type 1 Combo)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -382,7 +401,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (aka Type 1 Combo)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -391,7 +411,8 @@
                     "ifnot": "socket:tesla_supercharger=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -429,7 +450,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -438,7 +460,8 @@
                     "ifnot": "socket:type2=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -476,7 +499,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -485,7 +509,8 @@
                     "ifnot": "socket:type2_combo=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -523,7 +548,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -532,7 +558,8 @@
                     "ifnot": "socket:type2_cable=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 with cable</b> (mennekes)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 met kabel</b> (J1772)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 met kabel</b> (J1772)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -570,7 +597,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 with cable</b> (mennekes)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 met kabel</b> (J1772)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 met kabel</b> (J1772)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -579,7 +607,8 @@
                     "ifnot": "socket:tesla_supercharger_ccs=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (a branded type2_css)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -617,7 +646,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (a branded type2_css)</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -730,7 +760,8 @@
                     "ifnot": "socket:USB-A=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> to charge phones and small electronics</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> om GSMs en kleine electronica op te laden</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> om GSMs en kleine electronica op te laden</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones oder Elektrokleingeräten</span></div>"
                     }
                 },
                 {
@@ -742,7 +773,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> to charge phones and small electronics</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> om GSMs en kleine electronica op te laden</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> om GSMs en kleine electronica op te laden</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones und Elektrokleingeräten</span></div>"
                     },
                     "hideInAnswer": true
                 },
@@ -794,7 +826,8 @@
                     "ifnot": "socket:bosch_5pin=",
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect with 5 pins</b> and cable</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
                     },
                     "hideInAnswer": {
                         "or": [
@@ -828,7 +861,8 @@
                     },
                     "then": {
                         "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect with 5 pins</b> and cable</span></div>",
-                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</span></div>"
+                        "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</span></div>",
+                        "de": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
                     },
                     "hideInAnswer": true
                 }
@@ -2801,7 +2835,8 @@
                 "ja": "この充電ステーションはいつオープンしますか?",
                 "nb_NO": "Når åpnet denne ladestasjonen?",
                 "ru": "В какое время работает эта зарядная станция?",
-                "zh_Hant": "何時是充電站開放使用的時間？"
+                "zh_Hant": "何時是充電站開放使用的時間？",
+                "de": "Welche Authentifizierung ist an der Ladestation möglich?"
             },
             "multiAnswer": true,
             "mappings": [
@@ -2809,56 +2844,64 @@
                     "if": "authentication:membership_card=yes",
                     "ifnot": "authentication:membership_card=no",
                     "then": {
-                        "en": "Authentication by a membership card"
+                        "en": "Authentication by a membership card",
+                        "de": "Authentifizierung durch eine Mitgliedskarte"
                     }
                 },
                 {
                     "if": "authentication:app=yes",
                     "ifnot": "authentication:app=no",
                     "then": {
-                        "en": "Authentication by an app"
+                        "en": "Authentication by an app",
+                        "de": "Authentifizierung durch eine App"
                     }
                 },
                 {
                     "if": "authentication:phone_call=yes",
                     "ifnot": "authentication:phone_call=no",
                     "then": {
-                        "en": "Authentication via phone call is available"
+                        "en": "Authentication via phone call is available",
+                        "de": "Authentifizierung per Anruf ist möglich"
                     }
                 },
                 {
                     "if": "authentication:short_message=yes",
                     "ifnot": "authentication:short_message=no",
                     "then": {
-                        "en": "Authentication via phone call is available"
+                        "en": "Authentication via phone call is available",
+                        "de": "Authentifizierung per Anruf ist möglich"
                     }
                 },
                 {
                     "if": "authentication:nfc=yes",
                     "ifnot": "authentication:nfc=no",
                     "then": {
-                        "en": "Authentication via NFC is available"
+                        "en": "Authentication via NFC is available",
+                        "de": "Authentifizierung über NFC ist möglich"
                     }
                 },
                 {
                     "if": "authentication:money_card=yes",
                     "ifnot": "authentication:money_card=no",
                     "then": {
-                        "en": "Authentication via Money Card is available"
+                        "en": "Authentication via Money Card is available",
+                        "de": "Authentifizierung über Geldkarte ist möglich"
                     }
                 },
                 {
                     "if": "authentication:debit_card=yes",
                     "ifnot": "authentication:debit_card=no",
                     "then": {
-                        "en": "Authentication via debit card is available"
+                        "en": "Authentication via debit card is available",
+                        "de": "Authentifizierung per Debitkarte ist möglich"
                     }
                 },
                 {
                     "if": "authentication:none=yes",
                     "ifnot": "authentication:none=no",
                     "then": {
-                        "en": "Charging here is (also) possible without authentication"
+                        "en": "Charging here is (also) possible without authentication",
+                        "de": "Keine Authentifizierung erforderlich"
                     }
                 }
             ]
@@ -2871,14 +2914,16 @@
                 "ja": "{network}",
                 "nb_NO": "{network}",
                 "ru": "{network}",
-                "zh_Hant": "{network}"
+                "zh_Hant": "{network}",
+                "de": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
             },
             "question": {
                 "en": "What's the phone number for authentication call or SMS?",
                 "it": "A quale rete appartiene questa stazione di ricarica?",
                 "ja": "この充電ステーションの運営チェーンはどこですか?",
                 "ru": "К какой сети относится эта станция?",
-                "zh_Hant": "充電站所屬的網路是？"
+                "zh_Hant": "充電站所屬的網路是？",
+                "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?"
             },
             "freeform": {
                 "key": "authentication:phone_call:number",
@@ -2919,13 +2964,15 @@
                 "type": "opening_hours"
             },
             "question": {
-                "en": "When is this charging station opened?"
+                "en": "When is this charging station opened?",
+                "de": "Wann ist diese Ladestation geöffnet?"
             },
             "mappings": [
                 {
                     "if": "opening_hours=24/7",
                     "then": {
-                        "en": "24/7 opened (including holidays)"
+                        "en": "24/7 opened (including holidays)",
+                        "de": "durchgehend geöffnet (auch an Feiertagen)"
                     }
                 }
             ]
@@ -3017,10 +3064,12 @@
         {
             "id": "Network",
             "render": {
-                "en": "Part of the network <b>{network}</b>"
+                "en": "Part of the network <b>{network}</b>",
+                "de": "Teil des Netzwerks <b>{network}</b>"
             },
             "question": {
-                "en": "Is this charging station part of a network?"
+                "en": "Is this charging station part of a network?",
+                "de": "Ist diese Ladestation Teil eines Netzwerks?"
             },
             "freeform": {
                 "key": "network"
@@ -3029,13 +3078,15 @@
                 {
                     "if": "no:network=yes",
                     "then": {
-                        "en": "Not part of a bigger network"
+                        "en": "Not part of a bigger network",
+                        "de": "Nicht Teil eines größeren Netzwerks"
                     }
                 },
                 {
                     "if": "network=none",
                     "then": {
-                        "en": "Not part of a bigger network"
+                        "en": "Not part of a bigger network",
+                        "de": "Nicht Teil eines größeren Netzwerks"
                     },
                     "hideInAnswer": true
                 },
@@ -3056,10 +3107,12 @@
         {
             "id": "Operator",
             "question": {
-                "en": "Who is the operator of this charging station?"
+                "en": "Who is the operator of this charging station?",
+                "de": "Wer ist der Betreiber dieser Ladestation?"
             },
             "render": {
-                "en": "This charging station is operated by {operator}"
+                "en": "This charging station is operated by {operator}",
+                "de": "Diese Ladestation wird betrieben von {operator}"
             },
             "freeform": {
                 "key": "operator"
@@ -3072,7 +3125,8 @@
                         ]
                     },
                     "then": {
-                        "en": "Actually, {operator} is the network"
+                        "en": "Actually, {operator} is the network",
+                        "de": "Eigentlich ist {operator} das Netzwerk"
                     },
                     "addExtraTags": [
                         "operator="
@@ -3137,14 +3191,16 @@
             "id": "Operational status",
             "question": {
                 "en": "Is this charging point in use?",
-                "nl": "Is dit oplaadpunt operationeel?"
+                "nl": "Is dit oplaadpunt operationeel?",
+                "de": "Ist dieser Ladepunkt in Betrieb?"
             },
             "mappings": [
                 {
                     "if": "operational_status=broken",
                     "then": {
                         "en": "This charging station is broken",
-                        "nl": "Dit oplaadpunt is kapot"
+                        "nl": "Dit oplaadpunt is kapot",
+                        "de": "Diese Ladestation ist kaputt"
                     }
                 },
                 {
@@ -3156,7 +3212,8 @@
                     },
                     "then": {
                         "en": "A charging station is planned here",
-                        "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden"
+                        "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden",
+                        "de": "Hier ist eine Ladestation geplant"
                     }
                 },
                 {
@@ -3168,7 +3225,8 @@
                     },
                     "then": {
                         "en": "A charging station is constructed here",
-                        "nl": "Hier wordt op dit moment een oplaadpunt gebouwd"
+                        "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
+                        "de": "Hier wird eine Ladestation gebaut"
                     }
                 },
                 {
@@ -3180,7 +3238,8 @@
                     },
                     "then": {
                         "en": "This charging station has beed permanently disabled and is not in use anymore but is still visible",
-                        "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
+                        "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig",
+                        "de": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
                     }
                 },
                 {
@@ -3192,7 +3251,8 @@
                     },
                     "then": {
                         "en": "This charging station works",
-                        "nl": "Dit oplaadpunt werkt"
+                        "nl": "Dit oplaadpunt werkt",
+                        "de": "Diese Ladestation funktioniert"
                     }
                 }
             ]
@@ -3200,19 +3260,22 @@
         {
             "id": "Parking:fee",
             "question": {
-                "en": "Does one have to pay a parking fee while charging?"
+                "en": "Does one have to pay a parking fee while charging?",
+                "de": "Muss man beim Laden eine Parkgebühr bezahlen?"
             },
             "mappings": [
                 {
                     "if": "parking:fee=no",
                     "then": {
-                        "en": "No additional parking cost while charging"
+                        "en": "No additional parking cost while charging",
+                        "de": "Keine zusätzlichen Parkgebühren beim Laden"
                     }
                 },
                 {
                     "if": "parking:fee=yes",
                     "then": {
-                        "en": "An additional parking fee should be paid while charging"
+                        "en": "An additional parking fee should be paid while charging",
+                        "de": "Beim Laden ist eine zusätzliche Parkgebühr zu entrichten"
                     }
                 }
             ]
@@ -3287,7 +3350,9 @@
                 "amenity=charging_station"
             ],
             "title": {
-                "en": "Charging station"
+                "en": "Charging station",
+                "de": "Ladestation",
+                "ru": "Зарядная станция"
             },
             "preciseInput": {
                 "preferredBackground": "map"
@@ -3302,20 +3367,23 @@
                 {
                     "question": {
                         "en": "All vehicle types",
-                        "nl": "Alle voertuigen"
+                        "nl": "Alle voertuigen",
+                        "de": "Alle Fahrzeugtypen"
                     }
                 },
                 {
                     "question": {
                         "en": "Charging station for bicycles",
-                        "nl": "Oplaadpunten voor fietsen"
+                        "nl": "Oplaadpunten voor fietsen",
+                        "de": "Ladestation für Fahrräder"
                     },
                     "osmTags": "bicycle=yes"
                 },
                 {
                     "question": {
                         "en": "Charging station for cars",
-                        "nl": "Oplaadpunten voor auto's"
+                        "nl": "Oplaadpunten voor auto's",
+                        "de": "Ladestation für Autos"
                     },
                     "osmTags": {
                         "or": [
@@ -3331,7 +3399,8 @@
             "options": [
                 {
                     "question": {
-                        "en": "Only working charging stations"
+                        "en": "Only working charging stations",
+                        "de": "Nur funktionierende Ladestationen"
                     },
                     "osmTags": {
                         "and": [
@@ -3348,7 +3417,8 @@
                 {
                     "question": {
                         "en": "All connectors",
-                        "nl": "Alle types"
+                        "nl": "Alle types",
+                        "de": "Alle Anschlüsse"
                     }
                 },
                 {
@@ -3484,11 +3554,15 @@
                     ],
                     "human": {
                         "en": " minutes",
-                        "nl": " minuten"
+                        "nl": " minuten",
+                        "de": " Minuten",
+                        "ru": " минут"
                     },
                     "humanSingular": {
                         "en": " minute",
-                        "nl": " minuut"
+                        "nl": " minuut",
+                        "de": " Minute",
+                        "ru": " минута"
                     }
                 },
                 {
@@ -3504,11 +3578,14 @@
                     ],
                     "human": {
                         "en": " hours",
-                        "nl": " uren"
+                        "nl": " uren",
+                        "de": " Stunden",
+                        "ru": " часов"
                     },
                     "humanSingular": {
                         "en": " hour",
-                        "nl": " uur"
+                        "nl": " uur",
+                        "ru": " час"
                     }
                 },
                 {
@@ -3521,11 +3598,14 @@
                     ],
                     "human": {
                         "en": " days",
-                        "nl": " day"
+                        "nl": " day",
+                        "de": " Tage",
+                        "ru": " дней"
                     },
                     "humanSingular": {
                         "en": " day",
-                        "nl": " dag"
+                        "nl": " dag",
+                        "ru": " день"
                     }
                 }
             ]
@@ -3561,7 +3641,8 @@
                     ],
                     "human": {
                         "en": "Volts",
-                        "nl": "volt"
+                        "nl": "volt",
+                        "ru": "Вольт"
                     }
                 }
             ],
@@ -3630,7 +3711,8 @@
                     ],
                     "human": {
                         "en": "kilowatt",
-                        "nl": "kilowatt"
+                        "nl": "kilowatt",
+                        "ru": "киловатт"
                     }
                 },
                 {
@@ -3640,7 +3722,8 @@
                     ],
                     "human": {
                         "en": "megawatt",
-                        "nl": "megawatt"
+                        "nl": "megawatt",
+                        "ru": "мегаватт"
                     }
                 }
             ],

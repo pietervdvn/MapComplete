@@ -2,7 +2,9 @@
     "id": "watermill",
     "name": {
         "nl": "Watermolens",
-        "en": "Watermill"
+        "en": "Watermill",
+        "de": "Wassermühle",
+        "ru": "Водяная мельница"
     },
     "minzoom": 12,
     "source": {

@@ -2,7 +2,8 @@
     "id": "crossings",
     "name": {
         "en": "Crossings",
-        "nl": "Oversteekplaatsen"
+        "nl": "Oversteekplaatsen",
+        "de": "Kreuzungen"
     },
     "description": {
         "en": "Crossings for pedestrians and cyclists",
@@ -27,7 +28,8 @@
                 "if": "highway=traffic_signals",
                 "then": {
                     "en": "Traffic signal",
-                    "nl": "Verkeerslicht"
+                    "nl": "Verkeerslicht",
+                    "ru": "Светофор"
                 }
             },
             {
@@ -78,7 +80,8 @@
         {
             "title": {
                 "en": "Traffic signal",
-                "nl": "Verkeerslicht"
+                "nl": "Verkeerslicht",
+                "ru": "Светофор"
             },
             "tags": [
                 "highway=traffic_signals"

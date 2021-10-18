@@ -13,7 +13,8 @@
         "nb_NO": "Benker",
         "zh_Hant": "大眾運輸站點的長椅",
         "pt_BR": "Bancos em pontos de transporte público",
-        "pl": "Ławki na przystankach komunikacji miejskiej"
+        "pl": "Ławki na przystankach komunikacji miejskiej",
+        "pt": "Bancos em pontos de transporte público"
     },
     "minzoom": 14,
     "source": {
@@ -40,7 +41,8 @@
             "zh_Hant": "長椅",
             "pt_BR": "Banco",
             "fi": "Penkki",
-            "pl": "Ławka"
+            "pl": "Ławka",
+            "pt": "Banco"
         },
         "mappings": [
             {
@@ -62,7 +64,8 @@
                     "zh_Hans": "在公交站点的长椅",
                     "zh_Hant": "大眾運輸站點的長椅",
                     "pt_BR": "Banco em ponto de transporte público",
-                    "pl": "Ławka na przystanku komunikacji miejskiej"
+                    "pl": "Ławka na przystanku komunikacji miejskiej",
+                    "pt": "Banco em ponto de transporte público"
                 }
             },
             {
@@ -81,7 +84,8 @@
                     "zh_Hans": "在庇护所的长椅",
                     "ru": "Скамейка в укрытии",
                     "zh_Hant": "涼亭內的長椅",
-                    "pt_BR": "Banco em abrigo"
+                    "pt_BR": "Banco em abrigo",
+                    "pt": "Banco em abrigo"
                 }
             }
         ]
@@ -102,7 +106,8 @@
                 "zh_Hant": "{name}",
                 "pt_BR": "{name}",
                 "fi": "{name}",
-                "pl": "{name}"
+                "pl": "{name}",
+                "pt": "{name}"
             },
             "freeform": {
                 "key": "name"

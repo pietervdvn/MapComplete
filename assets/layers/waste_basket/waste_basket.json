@@ -2,7 +2,8 @@
     "id": "waste_basket",
     "name": {
         "en": "Waste Basket",
-        "nl": "Vuilnisbak"
+        "nl": "Vuilnisbak",
+        "ru": "Контейнер для мусора"
     },
     "minzoom": 17,
     "source": {
@@ -15,12 +16,14 @@
     "title": {
         "render": {
             "en": "Waste Basket",
-            "nl": "Vuilnisbak"
+            "nl": "Vuilnisbak",
+            "ru": "Контейнер для мусора"
         }
     },
     "description": {
         "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
-        "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien."
+        "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+        "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können."
     },
     "tagRenderings": [
         {
@@ -138,7 +141,8 @@
                 },
                 "then": {
                     "en": "Waste Basket",
-                    "nl": "Vuilnisbak"
+                    "nl": "Vuilnisbak",
+                    "ru": "Контейнер для мусора"
                 }
             }
         ]
@@ -153,7 +157,8 @@
             ],
             "title": {
                 "en": "Waste Basket",
-                "nl": "Vuilnisbak"
+                "nl": "Vuilnisbak",
+                "ru": "Контейнер для мусора"
             },
             "presiceInput": {
                 "preferredBackground": "photo"

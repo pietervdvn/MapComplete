@@ -2,20 +2,23 @@
     "id": "observation_tower",
     "name": {
         "en": "Observation towers",
-        "nl": "Uitkijktorens"
+        "nl": "Uitkijktorens",
+        "ru": "Смотровые башни"
     },
     "minzoom": 8,
     "title": {
         "render": {
             "en": "Observation tower",
-            "nl": "Uitkijktoren"
+            "nl": "Uitkijktoren",
+            "ru": "Смотровая башня"
         },
         "mappings": [
             {
                 "if": "name~*",
                 "then": {
                     "en": "<b>{name}</b>",
-                    "nl": "<b>{name}</b>"
+                    "nl": "<b>{name}</b>",
+                    "ru": "<b>{name}</b>"
                 }
             }
         ]
@@ -146,7 +149,8 @@
             ],
             "title": {
                 "en": "observation tower",
-                "nl": "Uitkijktoren"
+                "nl": "Uitkijktoren",
+                "ru": "смотровая башня"
             },
             "description": {
                 "nl": "Een publiek toegankelijke uitkijktoren"
@@ -174,7 +178,8 @@
                     ],
                     "human": {
                         "nl": " meter",
-                        "en": " meter"
+                        "en": " meter",
+                        "ru": " метр"
                     }
                 }
             ],

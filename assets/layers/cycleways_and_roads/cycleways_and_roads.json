@@ -30,7 +30,9 @@
     "title": {
         "render": {
             "en": "Cycleways",
-            "nl": "Fietspaden"
+            "nl": "Fietspaden",
+            "de": "Radwege",
+            "ru": "Велосипедные дорожки"
         },
         "mappings": [
             {
@@ -42,7 +44,9 @@
                 },
                 "then": {
                     "nl": "Fietsweg",
-                    "en": "Cycleway"
+                    "en": "Cycleway",
+                    "de": "Radweg",
+                    "ru": "Велосипедная дорожка"
                 }
             },
             {
@@ -70,7 +74,8 @@
                 "if": "cyclestreet=yes",
                 "then": {
                     "nl": "Fietsstraat",
-                    "en": "Cyclestreet"
+                    "en": "Cyclestreet",
+                    "de": "Fahrradstraße"
                 }
             }
         ]

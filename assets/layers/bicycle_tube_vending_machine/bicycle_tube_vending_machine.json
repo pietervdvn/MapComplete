@@ -8,7 +8,8 @@
         "de": "Fahrradschlauch-Automat",
         "ru": "Торговый автомат для велосипедистов",
         "zh_Hant": "自行車內胎自動售貨機",
-        "pt_BR": "Máquina de venda automática de tubos de bicicleta"
+        "pt_BR": "Máquina de venda automática de tubos de bicicleta",
+        "pt": "Máquina de venda automática de tubos de bicicleta"
     },
     "title": {
         "render": {
@@ -19,7 +20,8 @@
             "de": "Fahrradschlauch-Automat",
             "ru": "Торговый автомат для велосипедистов",
             "zh_Hant": "自行車內胎自動售貨機",
-            "pt_BR": "Máquina de venda automática de tubos de bicicleta"
+            "pt_BR": "Máquina de venda automática de tubos de bicicleta",
+            "pt": "Máquina de venda automática de tubos de bicicleta"
         },
         "mappings": [
             {
@@ -71,7 +73,8 @@
                 "de": "Fahrradschlauch-Automat",
                 "ru": "Торговый автомат для велосипедистов",
                 "zh_Hant": "自行車內胎自動售貨機",
-                "pt_BR": "Máquina de venda automática de tubos de bicicleta"
+                "pt_BR": "Máquina de venda automática de tubos de bicicleta",
+                "pt": "Máquina de venda automática de tubos de bicicleta"
             },
             "tags": [
                 "amenity=vending_machine",
@@ -92,7 +95,8 @@
                 "ru": "Этот торговый автомат все еще работает?",
                 "de": "Ist dieser Automat noch in Betrieb?",
                 "zh_Hant": "這個自動販賣機仍有運作嗎？",
-                "pt_BR": "Esta máquina de venda automática ainda está operacional?"
+                "pt_BR": "Esta máquina de venda automática ainda está operacional?",
+                "pt": "Esta máquina de venda automática ainda está operacional?"
             },
             "render": {
                 "en": "The operational status is <i>{operational_status</i>",
@@ -102,7 +106,8 @@
                 "de": "Der Betriebszustand ist <i>{operational_status</i>",
                 "ru": "Рабочий статус: <i> {operational_status</i>",
                 "zh_Hant": "運作狀態是 <i>{operational_status</i>",
-                "pt_BR": "O estado operacional é: <i>{operational_status</i>"
+                "pt_BR": "O estado operacional é: <i>{operational_status</i>",
+                "pt": "O estado operacional é: <i>{operational_status</i>"
             },
             "freeform": {
                 "key": "operational_status"
@@ -120,7 +125,8 @@
                         "zh_Hans": "这个借还机正常工作",
                         "de": "Dieser Automat funktioniert",
                         "zh_Hant": "這個自動販賣機仍運作",
-                        "pt_BR": "Esta máquina de venda automática funciona"
+                        "pt_BR": "Esta máquina de venda automática funciona",
+                        "pt": "Esta máquina de venda automática funciona"
                     }
                 },
                 {
@@ -135,7 +141,8 @@
                         "zh_Hans": "这个借还机已经损坏",
                         "de": "Dieser Automat ist kaputt",
                         "zh_Hant": "這個自動販賣機沒有運作了",
-                        "pt_BR": "Esta máquina de venda automática está quebrada"
+                        "pt_BR": "Esta máquina de venda automática está quebrada",
+                        "pt": "Esta máquina de venda automática está quebrada"
                     }
                 },
                 {
@@ -150,7 +157,8 @@
                         "zh_Hans": "这个借还机被关闭了",
                         "de": "Dieser Automat ist geschlossen",
                         "zh_Hant": "這個自動販賣機已經關閉了",
-                        "pt_BR": "Esta máquina de venda automática está fechada"
+                        "pt_BR": "Esta máquina de venda automática está fechada",
+                        "pt": "Esta máquina de venda automática está fechada"
                     }
                 }
             ],

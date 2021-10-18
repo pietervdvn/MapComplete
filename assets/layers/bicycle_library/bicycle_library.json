@@ -7,7 +7,9 @@
         "it": "Bici in prestito",
         "ru": "Велосипедная библиотека",
         "zh_Hant": "單車圖書館",
-        "pt_BR": "Biblioteca de bicicleta"
+        "pt_BR": "Biblioteca de bicicleta",
+        "de": "Fahrradbibliothek",
+        "pt": "Biblioteca de bicicleta"
     },
     "minzoom": 8,
     "source": {
@@ -21,7 +23,9 @@
             "it": "Bici in prestito",
             "ru": "Велосипедная библиотека",
             "zh_Hant": "單車圖書館",
-            "pt_BR": "Biblioteca de bicicleta"
+            "pt_BR": "Biblioteca de bicicleta",
+            "de": "Fahrradbibliothek",
+            "pt": "Biblioteca de bicicleta"
         },
         "mappings": [
             {
@@ -52,7 +56,8 @@
         "ru": "Учреждение, где велосипед может быть арендован на более длительный срок",
         "zh_Hant": "能夠長期租用單車的設施",
         "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-        "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
+        "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
+        "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos"
     },
     "tagRenderings": [
         "images",
@@ -65,7 +70,9 @@
                 "ru": "Как называется эта велосипедная библиотека?",
                 "nb_NO": "Hva heter dette sykkelbiblioteket?",
                 "zh_Hant": "這個單車圖書館的名稱是？",
-                "pt_BR": "Qual o nome desta biblioteca de bicicleta?"
+                "pt_BR": "Qual o nome desta biblioteca de bicicleta?",
+                "de": "Wie lautet der Name dieser Fahrradbibliothek?",
+                "pt": "Qual o nome desta biblioteca de bicicleta?"
             },
             "render": {
                 "en": "This bicycle library is called {name}",
@@ -75,7 +82,9 @@
                 "ru": "Эта велосипедная библиотека называется {name}",
                 "nb_NO": "Dette sykkelbiblioteket heter {name}",
                 "zh_Hant": "這個單車圖書館叫做 {name}",
-                "pt_BR": "Esta biblioteca de bicicleta é chamada de {name}"
+                "pt_BR": "Esta biblioteca de bicicleta é chamada de {name}",
+                "de": "Diese Fahrradbibliothek heißt {name}",
+                "pt": "Esta biblioteca de bicicleta é chamada de {name}"
             },
             "freeform": {
                 "key": "name"
@@ -97,7 +106,8 @@
                 "de": "Wie viel kostet das Ausleihen eines Fahrrads?",
                 "nb_NO": "Hvor mye koster det å leie en sykkel?",
                 "zh_Hant": "租用單車的費用多少？",
-                "pt_BR": "Quanto custa um empréstimo de bicicleta?"
+                "pt_BR": "Quanto custa um empréstimo de bicicleta?",
+                "pt": "Quanto custa um empréstimo de bicicleta?"
             },
             "render": {
                 "en": "Lending a bicycle costs {charge}",
@@ -109,7 +119,8 @@
                 "de": "Das Ausleihen eines Fahrrads kostet {charge}",
                 "nb_NO": "Sykkelleie koster {charge}",
                 "zh_Hant": "租借單車需要 {charge}",
-                "pt_BR": "Custos de empréstimo de bicicleta {charge}"
+                "pt_BR": "Custos de empréstimo de bicicleta {charge}",
+                "pt": "Custos de empréstimo de bicicleta {charge}"
             },
             "freeform": {
                 "key": "charge",
@@ -135,7 +146,8 @@
                         "ru": "Прокат велосипедов бесплатен",
                         "nb_NO": "Det er gratis å leie en sykkel",
                         "zh_Hant": "租借單車免費",
-                        "pt_BR": "Emprestar uma bicicleta é grátis"
+                        "pt_BR": "Emprestar uma bicicleta é grátis",
+                        "pt": "Emprestar uma bicicleta é grátis"
                     }
                 },
                 {
@@ -153,7 +165,8 @@
                         "de": "Das Ausleihen eines Fahrrads kostet 20€ pro Jahr und 20€ Gebühr",
                         "zh_Hant": "租借單車價錢 €20/year 與 €20 保證金",
                         "ru": "Прокат велосипеда стоит €20/год и €20 залог",
-                        "pt_BR": "Emprestar uma bicicleta custa €20/ano e €20 de garantia"
+                        "pt_BR": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
+                        "pt": "Emprestar uma bicicleta custa €20/ano e €20 de garantia"
                     }
                 }
             ],
@@ -171,7 +184,8 @@
                 "de": "Wer kann hier Fahrräder ausleihen?",
                 "ru": "Кто здесь может арендовать велосипед?",
                 "zh_Hant": "誰可以在這裡租單車？",
-                "pt_BR": "Quem pode emprestar bicicletas aqui?"
+                "pt_BR": "Quem pode emprestar bicicletas aqui?",
+                "pt": "Quem pode emprestar bicicletas aqui?"
             },
             "multiAnswer": true,
             "mappings": [
@@ -186,7 +200,8 @@
                         "de": "Fahrräder für Kinder verfügbar",
                         "ru": "Доступны детские велосипеды",
                         "zh_Hant": "提供兒童單車",
-                        "pt_BR": "Bicicletas para crianças disponíveis"
+                        "pt_BR": "Bicicletas para crianças disponíveis",
+                        "pt": "Bicicletas para crianças disponíveis"
                     }
                 },
                 {
@@ -199,7 +214,8 @@
                         "de": "Fahrräder für Erwachsene verfügbar",
                         "ru": "Доступны велосипеды для взрослых",
                         "zh_Hant": "有提供成人單車",
-                        "pt_BR": "Bicicletas para adulto disponíveis"
+                        "pt_BR": "Bicicletas para adulto disponíveis",
+                        "pt": "Bicicletas para adulto disponíveis"
                     }
                 },
                 {
@@ -212,7 +228,8 @@
                         "de": "Fahrräder für Behinderte verfügbar",
                         "ru": "Доступны велосипеды для людей с ограниченными возможностями",
                         "zh_Hant": "有提供行動不便人士的單車",
-                        "pt_BR": "Bicicletas para deficientes físicos disponíveis"
+                        "pt_BR": "Bicicletas para deficientes físicos disponíveis",
+                        "pt": "Bicicletas para deficientes físicos disponíveis"
                     }
                 }
             ]
@@ -228,7 +245,9 @@
                 "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)",
                 "it": "Bici in prestito",
                 "fr": "Vélothèque",
-                "pt_BR": "Biblioteca de bicicletas"
+                "pt_BR": "Biblioteca de bicicletas",
+                "de": "Fahrradbibliothek",
+                "pt": "Biblioteca de bicicletas"
             },
             "tags": [
                 "amenity=bicycle_library"
@@ -239,7 +258,8 @@
                 "fr": "Une vélothèque a une flotte de vélos qui peuvent être empruntés",
                 "it": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate",
                 "ru": "В велосипедной библиотеке есть велосипеды для аренды",
-                "zh_Hant": "單車圖書館有一大批單車供人租借"
+                "zh_Hant": "單車圖書館有一大批單車供人租借",
+                "de": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können"
             }
         }
     ],

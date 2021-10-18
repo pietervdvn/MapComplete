@@ -412,7 +412,8 @@
             "en": "How long is this climbing route (in meters)?",
             "nl": "Hoe lang is deze klimroute (in meters)?",
             "it": "Quanto è lunga questa via di arrampicata (in metri)?",
-            "fr": "Quelle est la longueur de cette voie (en mètres) ?"
+            "fr": "Quelle est la longueur de cette voie (en mètres) ?",
+            "de": "Wie lang ist diese Kletterroute (in Metern)?"
           },
           "render": {
             "de": "Diese Route ist {canonical(climbing:length)} lang",
@@ -434,7 +435,8 @@
             "en": "What is the difficulty of this climbing route according to the french/belgian system?",
             "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
             "it": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
-            "fr": "Quelle est la difficulté de cette voie selon le système franco-belge ?"
+            "fr": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
+            "de": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?"
           },
           "render": {
             "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
@@ -521,7 +523,8 @@
           "title": {
             "en": "Climbing route",
             "nl": "Klimroute",
-            "fr": "Voie d’escalade"
+            "fr": "Voie d’escalade",
+            "de": "Kletterroute"
           },
           "tags": [
             "sport=climbing",
@@ -584,7 +587,8 @@
             "then": {
               "en": "Climbing area <b>{name}</b>",
               "nl": "Klimsite <b>{name}</b>",
-              "fr": "Zone d’escalade <b>{name}</b>"
+              "fr": "Zone d’escalade <b>{name}</b>",
+              "de": "Klettergebiet <b>{name}</b>"
             }
           },
           {
@@ -597,7 +601,8 @@
             "then": {
               "en": "Climbing site",
               "nl": "Klimsite",
-              "fr": "Site d’escalade"
+              "fr": "Site d’escalade",
+              "de": "Klettergebiet"
             }
           },
           {
@@ -605,7 +610,8 @@
             "then": {
               "nl": "Klimgelegenheid <b>{name}</b>",
               "en": "Climbing opportunity <b>{name}</b>",
-              "fr": "Opportunité d’escalade <b>{name}</b>"
+              "fr": "Opportunité d’escalade <b>{name}</b>",
+              "de": "Klettermöglichkeit <b>{name}</b>"
             }
           }
         ]
@@ -628,7 +634,8 @@
         {
           "render": {
             "en": "<h3>Length overview</h3>{histogram(_length_hist)}",
-            "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}"
+            "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}",
+            "de": "<h3>Längenübersicht</h3>{histogramm(_length_hist)}"
           },
           "condition": "_length_hist!~\\[\\]",
           "id": "Contained routes length hist"
@@ -636,7 +643,8 @@
         {
           "render": {
             "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}",
-            "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}"
+            "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}",
+            "de": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}"
           },
           "condition": "_difficulty_hist!~\\[\\]",
           "id": "Contained routes hist"
@@ -696,7 +704,8 @@
               "if": "climbing=boulder",
               "then": {
                 "en": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope",
-                "fr": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde"
+                "fr": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde",
+                "de": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
               }
             },
             {
@@ -716,11 +725,13 @@
         {
           "question": {
             "en": "What is the rock type here?",
-            "fr": "Quel est le type de roche ?"
+            "fr": "Quel est le type de roche ?",
+            "de": "Welchen Gesteinstyp gibt es hier?"
           },
           "render": {
             "en": "The rock type is {rock}",
-            "fr": "La roche est du {rock}"
+            "fr": "La roche est du {rock}",
+            "de": "Der Gesteinstyp ist {rock}"
           },
           "freeform": {
             "key": "rock"
@@ -731,7 +742,8 @@
               "then": {
                 "en": "Limestone",
                 "nl": "Kalksteen",
-                "fr": "Calcaire"
+                "fr": "Calcaire",
+                "de": "Kalkstein"
               }
             }
           ],
@@ -990,28 +1002,32 @@
       "#": "Access",
       "question": {
         "en": "Who can access here?",
-        "fr": "Qui peut y accéder ?"
+        "fr": "Qui peut y accéder ?",
+        "de": "Wer hat hier Zugang?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
             "en": "Publicly accessible to anyone",
-            "fr": "Libre d’accès"
+            "fr": "Libre d’accès",
+            "de": "Öffentlich zugänglich für jedermann"
           }
         },
         {
           "if": "access=permit",
           "then": {
             "en": "You need a permit to access here",
-            "fr": "Une autorisation est nécessaire"
+            "fr": "Une autorisation est nécessaire",
+            "de": "Zugang nur mit Genehmigung"
           }
         },
         {
           "if": "access=customers",
           "then": {
             "en": "Only custumers",
-            "fr": "Réservé aux clients"
+            "fr": "Réservé aux clients",
+            "de": "Nur für Kunden"
           }
         },
         {
@@ -1019,7 +1035,8 @@
           "then": {
             "en": "Only club members",
             "ru": "Только членам клуба",
-            "fr": "Réservé aux membres"
+            "fr": "Réservé aux membres",
+            "de": "Nur für Vereinsmitglieder"
           }
         },
         {
@@ -1487,7 +1504,8 @@
             "human": {
               "en": " meter",
               "nl": " meter",
-              "fr": " mètres"
+              "fr": " mètres",
+              "de": " Meter"
             },
             "default": true
           },
@@ -1500,7 +1518,8 @@
             "human": {
               "en": " feet",
               "nl": " voet",
-              "fr": " pieds"
+              "fr": " pieds",
+              "de": " Fuß"
             }
           }
         ]

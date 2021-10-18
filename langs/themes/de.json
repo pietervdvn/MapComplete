@@ -13,12 +13,250 @@
         "title": "Sitzbänke"
     },
     "bicyclelib": {
-        "title": "Fahrradbibliothek",
-        "description": "Eine Fahrradbibliothek ist ein Ort, an dem Fahrräder ausgeliehen werden können, oft gegen eine geringe Jahresgebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind"
+        "description": "Eine Fahrradbibliothek ist ein Ort, an dem Fahrräder ausgeliehen werden können, oft gegen eine geringe Jahresgebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind",
+        "title": "Fahrradbibliothek"
+    },
+    "binoculars": {
+        "description": "Eine Karte mit festinstallierten Ferngläsern. Man findet sie typischerweise an touristischen Orten, Aussichtspunkten, auf Aussichtstürmen oder gelegentlich in einem Naturschutzgebiet.",
+        "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
+        "title": "Ferngläser"
     },
     "bookcases": {
         "description": "Ein öffentlicher Bücherschrank ist ein kleiner Bücherschrank am Straßenrand, ein Kasten, eine alte Telefonzelle oder andere Gegenstände, in denen Bücher aufbewahrt werden. Jeder kann ein Buch hinstellen oder mitnehmen. Diese Karte zielt darauf ab, all diese Bücherschränke zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Account schnell Ihre Lieblingsbücherschränke hinzufügen.",
         "title": "Öffentliche Bücherschränke Karte"
+    },
+    "cafes_and_pubs": {
+        "title": "Cafés und Kneipen"
+    },
+    "campersite": {
+        "description": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
+        "layers": {
+            "0": {
+                "description": "Wohnmobilstellplätze",
+                "name": "Wohnmobilstellplätze",
+                "presets": {
+                    "0": {
+                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+                        "title": "Wohnmobilstellplatz"
+                    }
+                },
+                "tagRenderings": {
+                    "caravansites-capacity": {
+                        "question": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
+                        "render": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen"
+                    },
+                    "caravansites-charge": {
+                        "question": "Wie hoch ist die Gebühr an diesem Ort?",
+                        "render": "Die Gebühr beträgt {charge}"
+                    },
+                    "caravansites-description": {
+                        "question": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
+                        "render": "Mehr Details über diesen Ort: {description}"
+                    },
+                    "caravansites-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Sie müssen für die Nutzung bezahlen"
+                            },
+                            "1": {
+                                "then": "Nutzung kostenlos"
+                            }
+                        },
+                        "question": "Wird hier eine Gebühr erhoben?"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Internetzugang ist vorhanden"
+                            },
+                            "1": {
+                                "then": "Internetzugang ist vorhanden"
+                            },
+                            "2": {
+                                "then": "Kein Internetzugang vorhanden"
+                            }
+                        },
+                        "question": "Ist an diesem Ort ein Internetzugang vorhanden?"
+                    },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Der Internetzugang ist gebührenpflichtig"
+                            },
+                            "1": {
+                                "then": "Der Internetzugang ist kostenlos"
+                            }
+                        },
+                        "question": "Ist der Internetzugang gebührenpflichtig?"
+                    },
+                    "caravansites-long-term": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben"
+                            },
+                            "1": {
+                                "then": "Nein, hier gibt es keine Dauergäste"
+                            },
+                            "2": {
+                                "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)"
+                            }
+                        },
+                        "question": "Gibt es a diesem Ort Plätze für Dauercamper?"
+                    },
+                    "caravansites-name": {
+                        "question": "Wie heißt dieser Ort?",
+                        "render": "Dieser Ort heißt {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dieser Ort hat eine sanitäre Entsorgungsstation"
+                            },
+                            "1": {
+                                "then": "Dieser Ort hat keine sanitäre Entsorgungsstation"
+                            }
+                        },
+                        "question": "Hat dieser Ort eine sanitäre Entsorgungsstation?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dieser Ort verfügt über Toiletten"
+                            },
+                            "1": {
+                                "then": "Dieser Ort verfügt nicht über Toiletten"
+                            }
+                        },
+                        "question": "Verfügt dieser Ort über Toiletten?"
+                    },
+                    "caravansites-website": {
+                        "question": "Hat dieser Ort eine Webseite?",
+                        "render": "Offizielle Webseite: <a href='{website}'>{website}</a>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Unbenannter Wohnmobilstellplatz"
+                        }
+                    },
+                    "render": "Wohnmobilstellplatz {name}"
+                }
+            },
+            "1": {
+                "description": "Sanitäre Entsorgungsstationen",
+                "name": "Sanitäre Entsorgungsstationen",
+                "presets": {
+                    "0": {
+                        "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
+                        "title": "Sanitäre Entsorgungsstation"
+                    }
+                },
+                "tagRenderings": {
+                    "dumpstations-access": {
+                        "mappings": {
+                            "0": {
+                                "then": "Sie benötigen einen Schlüssel/Code zur Benutzung"
+                            },
+                            "1": {
+                                "then": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können"
+                            },
+                            "2": {
+                                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
+                            },
+                            "3": {
+                                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
+                            }
+                        },
+                        "question": "Wer darf diese sanitäre Entsorgungsstation nutzen?"
+                    },
+                    "dumpstations-charge": {
+                        "question": "Wie hoch ist die Gebühr an diesem Ort?",
+                        "render": "Die Gebühr beträgt {charge}"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "Hier können Sie chemische Toilettenabfälle entsorgen"
+                            },
+                            "1": {
+                                "then": "Hier können Sie keine chemischen Toilettenabfälle entsorgen"
+                            }
+                        },
+                        "question": "Können Sie hier chemische Toilettenabfälle entsorgen?"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Sie müssen für die Nutzung bezahlen"
+                            },
+                            "1": {
+                                "then": "Nutzung kostenlos"
+                            }
+                        },
+                        "question": "Wird hier eine Gebühr erhoben?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Hier können Sie Brauch-/Grauwasser entsorgen"
+                            },
+                            "1": {
+                                "then": "Hier können Sie kein Brauch-/Grauwasser entsorgen"
+                            }
+                        },
+                        "question": "Können Sie hier Brauch-/Grauwasser entsorgen?"
+                    },
+                    "dumpstations-network": {
+                        "question": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
+                        "render": "Diese Station gehört zum Verbund/Netzwerk {network}"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dieser Ort hat eine Wasserstelle"
+                            },
+                            "1": {
+                                "then": "Dieser Ort hat keine Wasserstelle"
+                            }
+                        },
+                        "question": "Hat dieser Ort eine Wasserstelle?"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Entsorgungsstation"
+                        }
+                    },
+                    "render": "Entsorgungsstation {name}"
+                }
+            }
+        },
+        "roamingRenderings": {
+            "0": {
+                "question": "Wer betreibt diesen Ort?",
+                "render": "Dieser Ort wird betrieben von {operator}"
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Ort hat eine Stromversorgung"
+                    },
+                    "1": {
+                        "then": "Dieser Ort hat keine Stromversorgung"
+                    }
+                },
+                "question": "Hat dieser Ort eine Stromversorgung?"
+            }
+        },
+        "shortDescription": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
+        "title": "Wohnmobilstellplätze"
+    },
+    "charging_stations": {
+        "description": "Auf dieser freien Karte kann man Informationen über Ladestationen finden und hinzufügen",
+        "shortDescription": "Eine weltweite Karte mit Ladestationen",
+        "title": "Ladestationen"
     },
     "climbing": {
         "description": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
@@ -72,14 +310,19 @@
             },
             "2": {
                 "name": "Kletterrouten",
+                "presets": {
+                    "0": {
+                        "title": "Kletterroute"
+                    }
+                },
                 "tagRenderings": {
                     "Difficulty": {
-                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
-                        "question": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?"
+                        "question": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
+                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
                     },
                     "Length": {
-                        "render": "Diese Route ist {canonical(climbing:length)} lang",
-                        "question": "Wie lang ist diese Kletterroute (in Metern)?"
+                        "question": "Wie lang ist diese Kletterroute (in Metern)?",
+                        "render": "Diese Route ist {canonical(climbing:length)} lang"
                     },
                     "Name": {
                         "mappings": {
@@ -98,11 +341,6 @@
                         }
                     },
                     "render": "Kleterroute"
-                },
-                "presets": {
-                    "0": {
-                        "title": "Kletterroute"
-                    }
                 }
             },
             "3": {
@@ -115,21 +353,11 @@
                     }
                 },
                 "tagRenderings": {
-                    "name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Diese Klettergelegenheit hat keinen Namen"
-                            }
-                        },
-                        "question": "Wie heißt diese Klettergelegenheit?",
-                        "render": "<strong>{name}</strong>"
+                    "Contained routes hist": {
+                        "render": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}"
                     },
-                    "Type": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
-                            }
-                        }
+                    "Contained routes length hist": {
+                        "render": "<h3>Längenübersicht</h3>{histogramm(_length_hist)}"
                     },
                     "Rock type (crag/rock/cliff only)": {
                         "mappings": {
@@ -140,15 +368,24 @@
                         "question": "Welchen Gesteinstyp gibt es hier?",
                         "render": "Der Gesteinstyp ist {rock}"
                     },
-                    "Contained routes length hist": {
-                        "render": "<h3>Längenübersicht</h3>{histogramm(_length_hist)}"
+                    "Type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
+                            }
+                        }
                     },
-                    "Contained routes hist": {
-                        "render": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}"
+                    "name": {
+                        "mappings": {
+                            "0": {
+                                "then": "Diese Klettergelegenheit hat keinen Namen"
+                            }
+                        },
+                        "question": "Wie heißt diese Klettergelegenheit?",
+                        "render": "<strong>{name}</strong>"
                     }
                 },
                 "title": {
-                    "render": "Klettermöglichkeit",
                     "mappings": {
                         "1": {
                             "then": "Klettergebiet <b>{name}</b>"
@@ -159,7 +396,8 @@
                         "3": {
                             "then": "Klettermöglichkeit <b>{name}</b>"
                         }
-                    }
+                    },
+                    "render": "Klettermöglichkeit"
                 }
             },
             "4": {
@@ -186,6 +424,20 @@
                 },
                 "title": {
                     "render": "Klettermöglichkeit?"
+                }
+            }
+        },
+        "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " Meter"
+                        },
+                        "1": {
+                            "human": " Fuß"
+                        }
+                    }
                 }
             }
         },
@@ -296,162 +548,110 @@
                 "question": "Gibt es hier eine Speedkletter-Wand?"
             }
         },
-        "title": "Offene Kletterkarte",
-        "overrideAll": {
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " Meter"
-                        },
-                        "1": {
-                            "human": " Fuß"
-                        }
-                    }
+        "title": "Offene Kletterkarte"
+    },
+    "cycle_highways": {
+        "description": "Diese Karte zeigt Radschnellwege",
+        "layers": {
+            "0": {
+                "name": "Radschnellwege",
+                "title": {
+                    "render": "Radschnellweg"
                 }
             }
-        }
+        },
+        "title": "Radschnellwege"
+    },
+    "cycle_infra": {
+        "description": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur. Erstellt während #osoc21.",
+        "shortDescription": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur.",
+        "title": "Fahrradinfrastruktur"
+    },
+    "cyclestreets": {
+        "description": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
+        "layers": {
+            "0": {
+                "description": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf",
+                "name": "Fahrradstraßen"
+            },
+            "1": {
+                "description": "Diese Straße wird bald eine Fahrradstraße sein",
+                "name": "Zukünftige Fahrradstraße",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} wird bald eine Fahrradstraße werden"
+                        }
+                    },
+                    "render": "Zukünftige Fahrradstraße"
+                }
+            },
+            "2": {
+                "description": "Ebene zur Kennzeichnung einer Straße als Fahrradstraße",
+                "name": "Alle Straßen",
+                "title": {
+                    "render": "Straße"
+                }
+            }
+        },
+        "roamingRenderings": {
+            "0": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
+                    },
+                    "1": {
+                        "then": "Diese Straße ist eine Fahrradstraße"
+                    },
+                    "2": {
+                        "then": "Diese Straße wird bald eine Fahrradstraße sein"
+                    },
+                    "3": {
+                        "then": "Diese Straße ist keine Fahrradstraße"
+                    }
+                },
+                "question": "Ist diese Straße eine Fahrradstraße?"
+            },
+            "1": {
+                "question": "Wann wird diese Straße eine Fahrradstraße?",
+                "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
+            }
+        },
+        "shortDescription": "Eine Karte von Fahrradstraßen",
+        "title": "Fahrradstraßen"
     },
     "cyclofix": {
         "description": "Das Ziel dieser Karte ist es, den Radfahrern eine einfach zu benutzende Lösung zu präsentieren, um die geeignete Infrastruktur für ihre Bedürfnisse zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>Alle Änderungen, die Sie vornehmen, werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei wiederverwendet werden.<br><br>Weitere Informationen über das Projekt Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
         "title": "Cyclofix - eine offene Karte für Radfahrer"
     },
-    "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap kennt. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
-        "title": "Geisterrad"
+    "drinking_water": {
+        "description": "Auf dieser Karte sind öffentlich zugängliche Trinkwasserstellen eingezeichnet und können leicht hinzugefügt werden",
+        "title": "Trinkwasser"
     },
-    "personal": {
-        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
-        "title": "Persönliches Thema"
-    },
-    "toilets": {
-        "description": "Eine Karte der öffentlichen Toiletten",
-        "title": "Offene Toilette Karte"
-    },
-    "waste_basket": {
-        "title": "Abfalleimer"
-    },
-    "hackerspaces": {
-        "shortDescription": "Eine Karte von Hackerspaces",
-        "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
-        "layers": {
-            "0": {
-                "description": "Hackerspace",
-                "tagRenderings": {
-                    "hackerspaces-opening_hours": {
-                        "mappings": {
-                            "0": {
-                                "then": "durchgehend geöffnet"
-                            }
-                        },
-                        "question": "Wann hat dieser Hackerspace geöffnet?",
-                        "render": "{opening_hours_table()}"
-                    },
-                    "is_makerspace": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dies ist ein Makerspace"
-                            },
-                            "1": {
-                                "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
-                            }
-                        },
-                        "question": "Ist dies ein Hackerspace oder ein Makerspace?"
-                    },
-                    "hackerspaces-name": {
-                        "question": "Wie lautet der Name dieses Hackerspace?",
-                        "render": "Dieser Hackerspace heißt <b>{name}</b>"
-                    },
-                    "hs-club-mate": {
-                        "mappings": {
-                            "0": {
-                                "then": "In diesem Hackerspace gibt es Club Mate"
-                            },
-                            "1": {
-                                "then": "In diesem Hackerspace gibt es kein Club Mate"
-                            }
-                        },
-                        "question": "Gibt es in diesem Hackerspace Club Mate?"
-                    },
-                    "hackerspaces-start_date": {
-                        "question": "Wann wurde dieser Hackerspace gegründet?",
-                        "render": "Dieser Hackerspace wurde gegründet am {start_date}"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": " {name}"
-                        }
-                    },
-                    "render": "Hackerspace"
-                },
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/themes/hackerspaces/led.png"
-                        }
-                    }
-                },
-                "name": "Hackerspace",
-                "presets": {
-                    "0": {
-                        "description": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
-                        "title": "Hackerspace"
-                    },
-                    "1": {
-                        "description": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
-                        "title": "Makerspace"
-                    }
-                }
-            }
-        },
-        "title": "Hackerspaces"
-    },
-    "fritures": {
-        "layers": {
-            "0": {
-                "override": {
-                    "name": "Pommesbude"
-                }
-            }
-        }
-    },
-    "food": {
-        "title": "Restaurants und Schnellimbisse"
+    "etymology": {
+        "description": "Auf dieser Karte können Sie sehen, nach was ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. Die Informationen stammen aus Wikipedia.",
+        "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
+        "title": "Open Etymology Map"
     },
     "facadegardens": {
         "layers": {
             "0": {
+                "description": "Fassadenbegrünung",
+                "name": "Fassadenbegrünung",
+                "presets": {
+                    "0": {
+                        "description": "Eine Fassadenbegrünung hinzufügen",
+                        "title": "Fassadenbegrünung"
+                    }
+                },
                 "tagRenderings": {
-                    "facadegardens-rainbarrel": {
-                        "mappings": {
-                            "0": {
-                                "then": "Es gibt eine Regentonne"
-                            },
-                            "1": {
-                                "then": "Es gibt keine Regentonne"
-                            }
-                        },
-                        "question": "Gibt es ein Wasserfass für den Garten?"
-                    },
-                    "facadegardens-sunshine": {
-                        "mappings": {
-                            "0": {
-                                "then": "Der Garten liegt in voller Sonne"
-                            },
-                            "1": {
-                                "then": "Der Garten liegt im Halbschatten"
-                            },
-                            "2": {
-                                "then": "Der Garten liegt im Schatten"
-                            }
-                        },
-                        "question": "Ist der Garten schattig oder sonnig?"
-                    },
                     "facadegardens-description": {
                         "question": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)",
                         "render": "Weitere Details: {description}"
+                    },
+                    "facadegardens-direction": {
+                        "question": "Wie ist der Garten ausgerichtet?",
+                        "render": "Ausrichtung: {direction} (wobei 0=N und 90=O)"
                     },
                     "facadegardens-edible": {
                         "mappings": {
@@ -481,357 +681,146 @@
                         },
                         "question": "Welche Pflanzen wachsen hier?"
                     },
-                    "facadegardens-direction": {
-                        "question": "Wie ist der Garten ausgerichtet?",
-                        "render": "Ausrichtung: {direction} (wobei 0=N und 90=O)"
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "Es gibt eine Regentonne"
+                            },
+                            "1": {
+                                "then": "Es gibt keine Regentonne"
+                            }
+                        },
+                        "question": "Gibt es ein Wasserfass für den Garten?"
                     },
                     "facadegardens-start_date": {
                         "question": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
                         "render": "Errichtungsdatum des Gartens: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "Der Garten liegt in voller Sonne"
+                            },
+                            "1": {
+                                "then": "Der Garten liegt im Halbschatten"
+                            },
+                            "2": {
+                                "then": "Der Garten liegt im Schatten"
+                            }
+                        },
+                        "question": "Ist der Garten schattig oder sonnig?"
                     }
                 },
-                "presets": {
-                    "0": {
-                        "description": "Eine Fassadenbegrünung hinzufügen",
-                        "title": "Fassadenbegrünung"
-                    }
-                },
-                "name": "Fassadenbegrünung",
                 "title": {
                     "render": "Fassadenbegrünung"
-                },
-                "description": "Fassadenbegrünung"
-            }
-        },
-        "title": "Fassadenbegrünung",
-        "shortDescription": "Diese Karte zeigt Fassadenbegrünungen mit Bildern und nützlichen Informationen über Ausrichtung, Sonneneinstrahlung und Pflanzenarten."
-    },
-    "etymology": {
-        "description": "Auf dieser Karte können Sie sehen, nach was ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. Die Informationen stammen aus Wikipedia.",
-        "layers": {
-            "0": {
-                "description": "Alle Objekte, die eine bekannte Namensherkunft haben",
-                "name": "Hat eine Namensherkunft",
-                "tagRenderings": {
-                    "simple etymology": {
-                        "render": "Benannt nach {name:etymology}"
-                    }
                 }
             }
         },
-        "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
-        "title": "Open Etymology Map"
+        "shortDescription": "Diese Karte zeigt Fassadenbegrünungen mit Bildern und nützlichen Informationen über Ausrichtung, Sonneneinstrahlung und Pflanzenarten.",
+        "title": "Fassadenbegrünung"
     },
-    "drinking_water": {
-        "description": "Auf dieser Karte sind öffentlich zugängliche Trinkwasserstellen eingezeichnet und können leicht hinzugefügt werden",
-        "title": "Trinkwasser"
+    "food": {
+        "title": "Restaurants und Schnellimbisse"
     },
-    "cyclestreets": {
+    "fritures": {
         "layers": {
             "0": {
-                "name": "Fahrradstraßen",
-                "description": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf"
-            },
-            "1": {
-                "title": {
-                    "render": "Zukünftige Fahrradstraße",
-                    "mappings": {
-                        "0": {
-                            "then": "{name} wird bald eine Fahrradstraße werden"
-                        }
-                    }
-                },
-                "description": "Diese Straße wird bald eine Fahrradstraße sein",
-                "name": "Zukünftige Fahrradstraße"
-            },
-            "2": {
-                "title": {
-                    "render": "Straße"
-                },
-                "name": "Alle Straßen",
-                "description": "Ebene zur Kennzeichnung einer Straße als Fahrradstraße"
-            }
-        },
-        "roamingRenderings": {
-            "0": {
-                "mappings": {
-                    "0": {
-                        "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
-                    },
-                    "1": {
-                        "then": "Diese Straße ist eine Fahrradstraße"
-                    },
-                    "2": {
-                        "then": "Diese Straße wird bald eine Fahrradstraße sein"
-                    },
-                    "3": {
-                        "then": "Diese Straße ist keine Fahrradstraße"
-                    }
-                },
-                "question": "Ist diese Straße eine Fahrradstraße?"
-            },
-            "1": {
-                "question": "Wann wird diese Straße eine Fahrradstraße?",
-                "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
-            }
-        },
-        "shortDescription": "Eine Karte von Fahrradstraßen",
-        "title": "Fahrradstraßen",
-        "description": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. "
-    },
-    "cycle_infra": {
-        "description": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur. Erstellt während #osoc21.",
-        "shortDescription": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur.",
-        "title": "Fahrradinfrastruktur"
-    },
-    "cycle_highways": {
-        "description": "Diese Karte zeigt Radschnellwege",
-        "layers": {
-            "0": {
-                "name": "Radschnellwege",
-                "title": {
-                    "render": "Radschnellweg"
+                "override": {
+                    "name": "Pommesbude"
                 }
             }
-        },
-        "title": "Radschnellwege"
+        }
     },
-    "charging_stations": {
-        "description": "Auf dieser freien Karte kann man Informationen über Ladestationen finden und hinzufügen",
-        "shortDescription": "Eine weltweite Karte mit Ladestationen",
-        "title": "Ladestationen"
+    "ghostbikes": {
+        "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap kennt. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
+        "title": "Geisterrad"
     },
-    "campersite": {
+    "hackerspaces": {
+        "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
         "layers": {
             "0": {
-                "title": {
+                "description": "Hackerspace",
+                "icon": {
                     "mappings": {
                         "0": {
-                            "then": "Unbenannter Wohnmobilstellplatz"
+                            "then": "./assets/themes/hackerspaces/led.png"
                         }
-                    },
-                    "render": "Wohnmobilstellplatz {name}"
+                    }
                 },
-                "description": "Wohnmobilstellplätze",
-                "name": "Wohnmobilstellplätze",
+                "name": "Hackerspace",
                 "presets": {
                     "0": {
-                        "title": "Wohnmobilstellplatz",
-                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. "
+                        "description": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
+                        "title": "Hackerspace"
+                    },
+                    "1": {
+                        "description": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
+                        "title": "Makerspace"
                     }
                 },
                 "tagRenderings": {
-                    "caravansites-charge": {
-                        "question": "Wie hoch ist die Gebühr an diesem Ort?",
-                        "render": "Die Gebühr beträgt {charge}"
+                    "hackerspaces-name": {
+                        "question": "Wie lautet der Name dieses Hackerspace?",
+                        "render": "Dieser Hackerspace heißt <b>{name}</b>"
                     },
-                    "caravansites-description": {
-                        "question": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
-                        "render": "Mehr Details über diesen Ort: {description}"
-                    },
-                    "caravansites-fee": {
+                    "hackerspaces-opening_hours": {
                         "mappings": {
                             "0": {
-                                "then": "Sie müssen für die Nutzung bezahlen"
-                            },
-                            "1": {
-                                "then": "Nutzung kostenlos"
+                                "then": "durchgehend geöffnet"
                             }
                         },
-                        "question": "Wird hier eine Gebühr erhoben?"
+                        "question": "Wann hat dieser Hackerspace geöffnet?",
+                        "render": "{opening_hours_table()}"
                     },
-                    "caravansites-internet": {
+                    "hackerspaces-start_date": {
+                        "question": "Wann wurde dieser Hackerspace gegründet?",
+                        "render": "Dieser Hackerspace wurde gegründet am {start_date}"
+                    },
+                    "hs-club-mate": {
                         "mappings": {
                             "0": {
-                                "then": "Internetzugang ist vorhanden"
+                                "then": "In diesem Hackerspace gibt es Club Mate"
                             },
                             "1": {
-                                "then": "Internetzugang ist vorhanden"
-                            },
-                            "2": {
-                                "then": "Kein Internetzugang vorhanden"
+                                "then": "In diesem Hackerspace gibt es kein Club Mate"
                             }
                         },
-                        "question": "Ist an diesem Ort ein Internetzugang vorhanden?"
+                        "question": "Gibt es in diesem Hackerspace Club Mate?"
                     },
-                    "caravansites-internet-fee": {
+                    "is_makerspace": {
                         "mappings": {
                             "0": {
-                                "then": "Der Internetzugang ist gebührenpflichtig"
+                                "then": "Dies ist ein Makerspace"
                             },
                             "1": {
-                                "then": "Der Internetzugang ist kostenlos"
+                                "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
                             }
                         },
-                        "question": "Ist der Internetzugang gebührenpflichtig?"
-                    },
-                    "caravansites-long-term": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben"
-                            },
-                            "1": {
-                                "then": "Nein, hier gibt es keine Dauergäste"
-                            },
-                            "2": {
-                                "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)"
-                            }
-                        },
-                        "question": "Gibt es a diesem Ort Plätze für Dauercamper?"
-                    },
-                    "caravansites-name": {
-                        "render": "Dieser Ort heißt {name}",
-                        "question": "Wie heißt dieser Ort?"
-                    },
-                    "caravansites-sanitary-dump": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort hat eine sanitäre Entsorgungsstation"
-                            },
-                            "1": {
-                                "then": "Dieser Ort hat keine sanitäre Entsorgungsstation"
-                            }
-                        },
-                        "question": "Hat dieser Ort eine sanitäre Entsorgungsstation?"
-                    },
-                    "caravansites-toilets": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort verfügt über Toiletten"
-                            },
-                            "1": {
-                                "then": "Dieser Ort verfügt nicht über Toiletten"
-                            }
-                        },
-                        "question": "Verfügt dieser Ort über Toiletten?"
-                    },
-                    "caravansites-website": {
-                        "render": "Offizielle Webseite: <a href='{website}'>{website}</a>",
-                        "question": "Hat dieser Ort eine Webseite?"
-                    },
-                    "caravansites-capacity": {
-                        "question": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
-                        "render": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen"
+                        "question": "Ist dies ein Hackerspace oder ein Makerspace?"
                     }
-                }
-            },
-            "1": {
-                "name": "Sanitäre Entsorgungsstationen",
+                },
                 "title": {
                     "mappings": {
                         "0": {
-                            "then": "Entsorgungsstation"
+                            "then": " {name}"
                         }
                     },
-                    "render": "Entsorgungsstation {name}"
-                },
-                "description": "Sanitäre Entsorgungsstationen",
-                "presets": {
-                    "0": {
-                        "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
-                        "title": "Sanitäre Entsorgungsstation"
-                    }
-                },
-                "tagRenderings": {
-                    "dumpstations-access": {
-                        "mappings": {
-                            "0": {
-                                "then": "Sie benötigen einen Schlüssel/Code zur Benutzung"
-                            },
-                            "1": {
-                                "then": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können"
-                            },
-                            "2": {
-                                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
-                            },
-                            "3": {
-                                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
-                            }
-                        },
-                        "question": "Wer darf diese sanitäre Entsorgungsstation nutzen?"
-                    },
-                    "dumpstations-charge": {
-                        "question": "Wie hoch ist die Gebühr an diesem Ort?",
-                        "render": "Die Gebühr beträgt {charge}"
-                    },
-                    "dumpstations-chemical-waste": {
-                        "mappings": {
-                            "0": {
-                                "then": "Hier können Sie chemische Toilettenabfälle entsorgen"
-                            },
-                            "1": {
-                                "then": "Hier können Sie keine chemischen Toilettenabfälle entsorgen"
-                            }
-                        },
-                        "question": "Können Sie hier chemische Toilettenabfälle entsorgen?"
-                    },
-                    "dumpstations-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "Sie müssen für die Nutzung bezahlen"
-                            },
-                            "1": {
-                                "then": "Nutzung kostenlos"
-                            }
-                        },
-                        "question": "Wird hier eine Gebühr erhoben?"
-                    },
-                    "dumpstations-network": {
-                        "question": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
-                        "render": "Diese Station gehört zum Verbund/Netzwerk {network}"
-                    },
-                    "dumpstations-waterpoint": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort hat eine Wasserstelle"
-                            },
-                            "1": {
-                                "then": "Dieser Ort hat keine Wasserstelle"
-                            }
-                        },
-                        "question": "Hat dieser Ort eine Wasserstelle?"
-                    },
-                    "dumpstations-grey-water": {
-                        "question": "Können Sie hier Brauch-/Grauwasser entsorgen?",
-                        "mappings": {
-                            "0": {
-                                "then": "Hier können Sie Brauch-/Grauwasser entsorgen"
-                            },
-                            "1": {
-                                "then": "Hier können Sie kein Brauch-/Grauwasser entsorgen"
-                            }
-                        }
-                    }
+                    "render": "Hackerspace"
                 }
             }
         },
-        "shortDescription": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
-        "roamingRenderings": {
-            "0": {
-                "render": "Dieser Ort wird betrieben von {operator}",
-                "question": "Wer betreibt diesen Ort?"
-            },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Dieser Ort hat eine Stromversorgung"
-                    },
-                    "1": {
-                        "then": "Dieser Ort hat keine Stromversorgung"
-                    }
-                },
-                "question": "Hat dieser Ort eine Stromversorgung?"
-            }
-        },
-        "description": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
-        "title": "Wohnmobilstellplätze"
+        "shortDescription": "Eine Karte von Hackerspaces",
+        "title": "Hackerspaces"
     },
-    "cafes_and_pubs": {
-        "title": "Cafés und Kneipen"
+    "personal": {
+        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
+        "title": "Persönliches Thema"
     },
-    "binoculars": {
-        "title": "Ferngläser",
-        "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
-        "description": "Eine Karte mit festinstallierten Ferngläsern. Man findet sie typischerweise an touristischen Orten, Aussichtspunkten, auf Aussichtstürmen oder gelegentlich in einem Naturschutzgebiet."
+    "toilets": {
+        "description": "Eine Karte der öffentlichen Toiletten",
+        "title": "Offene Toilette Karte"
+    },
+    "waste_basket": {
+        "title": "Abfalleimer"
     }
 }

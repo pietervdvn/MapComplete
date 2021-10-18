@@ -2,19 +2,23 @@
   "id": "cycle_infra",
   "title": {
     "en": "Bicycle infrastructure",
-    "nl": "Fietsinfrastructuur"
+    "nl": "Fietsinfrastructuur",
+    "de": "Fahrradinfrastruktur"
   },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",
-    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken."
+    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken.",
+    "de": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur."
   },
   "description": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
-    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21."
+    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21.",
+    "de": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur. Erstellt während #osoc21."
   },
   "language": [
     "en",
-    "nl"
+    "nl",
+    "de"
   ],
   "maintainer": "MapComplete",
   "hideFromOverview": false,

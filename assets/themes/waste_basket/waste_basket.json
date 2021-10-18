@@ -2,7 +2,8 @@
   "id": "waste_basket",
   "title": {
     "en": "Waste Basket",
-    "nl": "Vuilnisbak"
+    "nl": "Vuilnisbak",
+    "de": "Abfalleimer"
   },
   "shortDescription": {
     "en": "A map with waste baskets",
@@ -14,7 +15,8 @@
   },
   "language": [
     "en",
-    "nl"
+    "nl",
+    "de"
   ],
   "maintainer": "",
   "icon": "./assets/themes/waste_basket/waste_basket.svg",

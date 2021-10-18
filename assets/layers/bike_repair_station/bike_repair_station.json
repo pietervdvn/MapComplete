@@ -42,7 +42,8 @@
                     "gl": "Estación de arranxo de bicicletas",
                     "de": "Fahrrad-Reparaturstation",
                     "it": "Stazione riparazione bici",
-                    "pt_BR": "Estação de reparo de bicicletas"
+                    "pt_BR": "Estação de reparo de bicicletas",
+                    "pt": "Estação de reparo de bicicletas"
                 }
             },
             {
@@ -59,7 +60,8 @@
                     "gl": "Estación de arranxo de bicicletas",
                     "de": "Fahrrad-Reparaturstation",
                     "it": "Stazione riparazione bici",
-                    "pt_BR": "Estação de reparo de bicicletas"
+                    "pt_BR": "Estação de reparo de bicicletas",
+                    "pt": "Estação de reparo de bicicletas"
                 }
             },
             {
@@ -143,7 +145,8 @@
                 "gl": "Que servizos están dispoñíbeis nesta estación de bicicletas?",
                 "de": "Welche Einrichtungen stehen an dieser Fahrradstation zur Verfügung?",
                 "it": "Quali servizi sono disponibili in questa stazione per bici?",
-                "pt_BR": "Quais serviços estão disponíveis nesta estação de bicicletas?"
+                "pt_BR": "Quais serviços estão disponíveis nesta estação de bicicletas?",
+                "pt": "Quais serviços estão disponíveis nesta estação de bicicletas?"
             },
             "mappings": [
                 {
@@ -160,7 +163,8 @@
                         "gl": "Só hai unha bomba de ar presente",
                         "de": "Es ist nur eine Pumpe vorhanden",
                         "it": "C’è solamente una pompa presente",
-                        "pt_BR": "Há somente uma bomba presente"
+                        "pt_BR": "Há somente uma bomba presente",
+                        "pt": "Há somente uma bomba presente"
                     }
                 },
                 {
@@ -177,7 +181,8 @@
                         "gl": "Só hai ferramentas (desaparafusadores, alicates...) presentes",
                         "de": "Es sind nur Werkzeuge (Schraubenzieher, Zangen...) vorhanden",
                         "it": "Ci sono solo degli attrezzi (cacciaviti, pinze…) presenti",
-                        "pt_BR": "Há somente ferramentas (chaves de fenda, alicates...) presentes"
+                        "pt_BR": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
+                        "pt": "Há somente ferramentas (chaves de fenda, alicates...) presentes"
                     }
                 },
                 {
@@ -194,7 +199,8 @@
                         "gl": "Hai ferramentas e unha bomba de ar presentes",
                         "de": "Es sind sowohl Werkzeuge als auch eine Pumpe vorhanden",
                         "it": "Ci sono sia attrezzi che pompa presenti",
-                        "pt_BR": "Há tanto ferramentas e uma bomba presente"
+                        "pt_BR": "Há tanto ferramentas e uma bomba presente",
+                        "pt": "Há tanto ferramentas e uma bomba presente"
                     }
                 }
             ]
@@ -206,7 +212,8 @@
                 "fr": "Qui maintient cette pompe à vélo ?",
                 "it": "Chi gestisce questa pompa per bici?",
                 "de": "Wer wartet diese Fahrradpumpe?",
-                "pt_BR": "Quem faz a manutenção desta bomba de ciclo?"
+                "pt_BR": "Quem faz a manutenção desta bomba de ciclo?",
+                "pt": "Quem faz a manutenção desta bomba de ciclo?"
             },
             "render": {
                 "nl": "Beheer door {operator}",
@@ -214,7 +221,8 @@
                 "fr": "Mantenue par {operator}",
                 "it": "Manutenuta da {operator}",
                 "de": "Gewartet von {operator}",
-                "pt_BR": "Mantida por {operator}"
+                "pt_BR": "Mantida por {operator}",
+                "pt": "Mantida por {operator}"
             },
             "freeform": {
                 "key": "operator"
@@ -231,7 +239,8 @@
         {
             "question": {
                 "en": "What is the email address of the maintainer?",
-                "nl": "Wat is het email-adres van de beheerder?"
+                "nl": "Wat is het email-adres van de beheerder?",
+                "de": "Wie lautet die E-Mail-Adresse des Betreuers?"
             },
             "freeform": {
                 "key": "email",
@@ -243,7 +252,8 @@
         {
             "question": {
                 "en": "What is the phone number of the maintainer?",
-                "nl": "Wat is het telefoonnummer van de beheerder?"
+                "nl": "Wat is het telefoonnummer van de beheerder?",
+                "de": "Wie lautet die Telefonnummer des Betreibers?"
             },
             "freeform": {
                 "key": "phone",
@@ -276,7 +286,8 @@
                         "it": "Sempre aperto",
                         "de": "Immer geöffnet",
                         "ru": "Всегда открыто",
-                        "pt_BR": "Sempre aberto"
+                        "pt_BR": "Sempre aberto",
+                        "pt": "Sempre aberto"
                     }
                 },
                 {
@@ -287,7 +298,8 @@
                         "fr": "Ouvert en permanence",
                         "it": "Sempre aperto",
                         "de": "Immer geöffnet",
-                        "pt_BR": "Sempre aberto"
+                        "pt_BR": "Sempre aberto",
+                        "pt": "Sempre aberto"
                     },
                     "hideInAnswer": true
                 }
@@ -315,7 +327,8 @@
                         "gl": "Hai unha ferramenta para a cadea",
                         "de": "Es gibt ein Kettenwerkzeug",
                         "it": "È presente un utensile per riparare la catena",
-                        "pt_BR": "Há uma ferramenta de corrente"
+                        "pt_BR": "Há uma ferramenta de corrente",
+                        "pt": "Há uma ferramenta de corrente"
                     }
                 },
                 {
@@ -327,7 +340,8 @@
                         "gl": "Non hai unha ferramenta para a cadea",
                         "de": "Es gibt kein Kettenwerkzeug",
                         "it": "Non è presente un utensile per riparare la catena",
-                        "pt_BR": "Não há uma ferramenta de corrente"
+                        "pt_BR": "Não há uma ferramenta de corrente",
+                        "pt": "Não há uma ferramenta de corrente"
                     }
                 }
             ]
@@ -353,7 +367,8 @@
                         "gl": "Hai un guindastre ou soporte",
                         "de": "Es gibt einen Haken oder Ständer",
                         "it": "C’è un gancio o un supporto",
-                        "pt_BR": "Há um gancho ou um suporte"
+                        "pt_BR": "Há um gancho ou um suporte",
+                        "pt": "Há um gancho ou um suporte"
                     }
                 },
                 {
@@ -365,7 +380,8 @@
                         "gl": "Non hai un guindastre ou soporte",
                         "de": "Es gibt keinen Haken oder Ständer",
                         "it": "Non c’è né un gancio né un supporto",
-                        "pt_BR": "Não há um gancho ou um suporte"
+                        "pt_BR": "Não há um gancho ou um suporte",
+                        "pt": "Não há um gancho ou um suporte"
                     }
                 }
             ]
@@ -516,7 +532,8 @@
                         "it": "Pompa manuale",
                         "ru": "Ручной насос",
                         "pl": "Pompa ręczna",
-                        "pt_BR": "Bomba manual"
+                        "pt_BR": "Bomba manual",
+                        "pt": "Bomba manual"
                     }
                 },
                 {
@@ -530,7 +547,8 @@
                         "it": "Pompa elettrica",
                         "ru": "Электрический насос",
                         "pl": "Pompka elektryczna",
-                        "pt_BR": "Bomba elétrica"
+                        "pt_BR": "Bomba elétrica",
+                        "pt": "Bomba elétrica"
                     }
                 }
             ]
@@ -559,7 +577,8 @@
                         "it": "C’è un manometro",
                         "ru": "Есть манометр",
                         "pl": "Jest manometr",
-                        "pt_BR": "Há um manômetro"
+                        "pt_BR": "Há um manômetro",
+                        "pt": "Há um manômetro"
                     }
                 },
                 {
@@ -573,7 +592,8 @@
                         "it": "Non c’è un manometro",
                         "ru": "Нет манометра",
                         "pl": "Nie ma manometru",
-                        "pt_BR": "Não há um manômetro"
+                        "pt_BR": "Não há um manômetro",
+                        "pt": "Não há um manômetro"
                     }
                 },
                 {
@@ -587,7 +607,8 @@
                         "it": "C’è un manometro ma è rotto",
                         "ru": "Есть манометр, но он сломан",
                         "pl": "Jest manometr, ale jest uszkodzony",
-                        "pt_BR": "Há um manômetro mas está quebrado"
+                        "pt_BR": "Há um manômetro mas está quebrado",
+                        "pt": "Há um manômetro mas está quebrado"
                     }
                 }
             ]
@@ -601,7 +622,9 @@
             "it": "./assets/layers/bike_repair_station/repair_station.svg",
             "fi": "./assets/layers/bike_repair_station/repair_station.svg",
             "fr": "./assets/layers/bike_repair_station/repair_station.svg",
-            "pt_BR": "./assets/layers/bike_repair_station/repair_station.svg"
+            "pt_BR": "./assets/layers/bike_repair_station/repair_station.svg",
+            "de": "./assets/layers/bike_repair_station/repair_station.svg",
+            "pt": "./assets/layers/bike_repair_station/repair_station.svg"
         },
         "mappings": [
             {
@@ -690,7 +713,8 @@
                 "fr": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.<h3>Exemples de pompes à vélo</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
                 "de": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.<h3>Beispiele für Fahrradpumpen</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
                 "pl": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.<h3>Przykłady pompek rowerowych</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-                "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público<h3>Exemplos de bombas de bicicletas</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
+                "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público<h3>Exemplos de bombas de bicicletas</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público<h3>Exemplos de bombas de bicicletas</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
             }
         },
         {

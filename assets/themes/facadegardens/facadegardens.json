@@ -6,7 +6,8 @@
     "ja": "ファサード庭園",
     "zh_Hant": "立面花園",
     "it": "Giardini verticali",
-    "fr": "Facade gardens"
+    "fr": "Facade gardens",
+    "de": "Fassadenbegrünung"
   },
   "shortDescription": {
     "nl": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
@@ -14,7 +15,8 @@
     "ja": "このマップには、ファサード庭園が図とともに表示され、方向、日照、植物のタイプに関する有用な情報が示されます。",
     "zh_Hant": "這地圖顯示立面花園的照片以及其他像是方向、日照以及植栽種類等實用訊息。",
     "it": "Questa mappa mostra i giardini verticali, con foto e informazioni utili sulla loro orientazione, sull'illuminazione solare e sui tipi di piante.",
-    "fr": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes."
+    "fr": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes.",
+    "de": "Diese Karte zeigt Fassadenbegrünungen mit Bildern und nützlichen Informationen über Ausrichtung, Sonneneinstrahlung und Pflanzenarten."
   },
   "description": {
     "nl": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -29,6 +31,7 @@
     "zh_Hant",
     "it",
     "fr",
+    "de",
     "nb_NO",
     "ru"
   ],
@@ -48,7 +51,8 @@
         "en": "Facade gardens",
         "ja": "ファサード庭園",
         "zh_Hant": "立面花園",
-        "fr": "Jardins muraux"
+        "fr": "Jardins muraux",
+        "de": "Fassadenbegrünung"
       },
       "minzoom": 12,
       "source": {
@@ -65,7 +69,8 @@
           "en": "Facade garden",
           "ja": "ファサード庭園",
           "zh_Hant": "立面花園",
-          "fr": "Jardin mural"
+          "fr": "Jardin mural",
+          "de": "Fassadenbegrünung"
         }
       },
       "description": {
@@ -73,7 +78,8 @@
         "en": "Facade gardens",
         "ja": "ファサード庭園",
         "zh_Hant": "立面花園",
-        "fr": "Jardins muraux"
+        "fr": "Jardins muraux",
+        "de": "Fassadenbegrünung"
       },
       "iconOverlays": [
         {
@@ -114,13 +120,15 @@
             "nl": "Oriëntatie: {direction} (waarbij 0=N en 90=O)",
             "en": "Orientation: {direction} (where 0=N and 90=O)",
             "ja": "方向: {direction} (0=N で 90=O)",
-            "fr": "Orientation : {direction} (0 pour le Nord et 90 pour l’Ouest)"
+            "fr": "Orientation : {direction} (0 pour le Nord et 90 pour l’Ouest)",
+            "de": "Ausrichtung: {direction} (wobei 0=N und 90=O)"
           },
           "question": {
             "nl": "Hoe is de tuin georiënteerd?",
             "en": "What is the orientation of the garden?",
             "ja": "庭の向きはどうなっていますか?",
-            "fr": "Quelle est l’orientation du jardin ?"
+            "fr": "Quelle est l’orientation du jardin ?",
+            "de": "Wie ist der Garten ausgerichtet?"
           },
           "freeform": {
             "type": "direction",
@@ -142,7 +150,8 @@
                 "en": "The garden is in full sun",
                 "ja": "庭は日があたっている",
                 "it": "Il giardino è completamente illuminato dal sole",
-                "fr": "Le jardin est en plein soleil"
+                "fr": "Le jardin est en plein soleil",
+                "de": "Der Garten liegt in voller Sonne"
               }
             },
             {
@@ -157,7 +166,8 @@
                 "ja": "庭は部分的に日陰である",
                 "nb_NO": "Denne hagen er i delvis skygge",
                 "it": "Il giardino è parzialmente in ombra",
-                "fr": "Le jardin est partiellement ensoleillé"
+                "fr": "Le jardin est partiellement ensoleillé",
+                "de": "Der Garten liegt im Halbschatten"
               }
             },
             {
@@ -171,7 +181,8 @@
                 "en": "The garden is in the shade",
                 "ja": "庭は日陰である",
                 "it": "Il giardino è in ombra",
-                "fr": "Le jardin est à l’ombre"
+                "fr": "Le jardin est à l’ombre",
+                "de": "Der Garten liegt im Schatten"
               }
             }
           ],
@@ -181,7 +192,8 @@
             "ja": "庭は日陰ですか、日当たりがいいですか?",
             "it": "Il giardino è al sole o in ombra?",
             "ru": "Сад расположен на солнечной стороне или в тени?",
-            "fr": "Quel est l’ensoleillement du jardin ?"
+            "fr": "Quel est l’ensoleillement du jardin ?",
+            "de": "Ist der Garten schattig oder sonnig?"
           }
         },
         {
@@ -190,7 +202,8 @@
             "nl": "Is er een regenton voorzien bij het tuintje?",
             "en": "Is there a water barrel installed for the garden?",
             "ja": "庭に水桶が設置されているのですか?",
-            "fr": "Des réserves d’eau ont-elles été installées pour le jardin ?"
+            "fr": "Des réserves d’eau ont-elles été installées pour le jardin ?",
+            "de": "Gibt es ein Wasserfass für den Garten?"
           },
           "mappings": [
             {
@@ -205,7 +218,8 @@
                 "ja": "雨樽がある",
                 "it": "C'è un contenitore per raccogliere la pioggia",
                 "ru": "Есть бочка с дождевой водой",
-                "fr": "Il y a des réserves"
+                "fr": "Il y a des réserves",
+                "de": "Es gibt eine Regentonne"
               }
             },
             {
@@ -220,7 +234,8 @@
                 "ja": "雨樽はありません",
                 "it": "Non c'è un contenitore per raccogliere la pioggia",
                 "ru": "Нет бочки с дождевой водой",
-                "fr": "Il n’y a pas de réserves"
+                "fr": "Il n’y a pas de réserves",
+                "de": "Es gibt keine Regentonne"
               }
             }
           ]
@@ -232,14 +247,16 @@
             "ru": "Дата строительства сада: {start_date}",
             "ja": "庭園の建設日: {start_date}",
             "it": "Data di realizzazione del giardino: {start_date}",
-            "fr": "Date de construction du jardin : {start_date}"
+            "fr": "Date de construction du jardin : {start_date}",
+            "de": "Errichtungsdatum des Gartens: {start_date}"
           },
           "question": {
             "nl": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
             "en": "When was the garden constructed? (a year is sufficient)",
             "ja": "その庭園はいつ造られたのですか?(建設年で十分です)",
             "it": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
-            "fr": "Quand le jardin a-t’il été construit ? (L’année suffit)"
+            "fr": "Quand le jardin a-t’il été construit ? (L’année suffit)",
+            "de": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)"
           },
           "freeform": {
             "key": "start_date",
@@ -261,7 +278,8 @@
                 "en": "There are edible plants",
                 "ja": "食用の植物がある",
                 "it": "Ci sono piante commestibili",
-                "fr": "Il y a des plantes comestibles"
+                "fr": "Il y a des plantes comestibles",
+                "de": "Es gibt essbare Pflanzen"
               }
             },
             {
@@ -275,7 +293,8 @@
                 "en": "There are no edible plants",
                 "ja": "食用植物は存在しない",
                 "it": "Non ci sono piante commestibili",
-                "fr": "Il n’y a pas de plantes comestibles"
+                "fr": "Il n’y a pas de plantes comestibles",
+                "de": "Es gibt keine essbaren Pflanzen"
               }
             }
           ],
@@ -284,7 +303,8 @@
             "en": "Are there any edible plants?",
             "ja": "食用の植物はありますか?",
             "it": "Ci sono piante commestibili?",
-            "fr": "Y-a-t’il des plantes comestibles ?"
+            "fr": "Y-a-t’il des plantes comestibles ?",
+            "de": "Gibt es essbare Pflanzen?"
           }
         },
         {
@@ -295,7 +315,8 @@
             "ja": "ここではどんな植物が育つんですか?",
             "it": "Che tipi di piante sono presenti qui?",
             "ru": "Какие виды растений обитают здесь?",
-            "fr": "Quel type de plantes pousse ici ?"
+            "fr": "Quel type de plantes pousse ici ?",
+            "de": "Welche Pflanzen wachsen hier?"
           },
           "mappings": [
             {
@@ -305,7 +326,8 @@
                 "en": "There are vines",
                 "ja": "つるがある",
                 "it": "Ci sono viti",
-                "fr": "Il y a des plantes grimpantes"
+                "fr": "Il y a des plantes grimpantes",
+                "de": "Es gibt Weinreben"
               }
             },
             {
@@ -315,7 +337,8 @@
                 "en": "There are flowering plants",
                 "ja": "花を咲かせる植物がある",
                 "it": "Ci sono piante da fiore",
-                "fr": "Il y a des fleurs"
+                "fr": "Il y a des fleurs",
+                "de": "Es gibt blühende Pflanzen"
               }
             },
             {
@@ -325,7 +348,8 @@
                 "en": "There are shrubs",
                 "ja": "低木がある",
                 "it": "Ci sono arbusti",
-                "fr": "Il y a des buissons"
+                "fr": "Il y a des buissons",
+                "de": "Es gibt Sträucher"
               }
             },
             {
@@ -335,7 +359,8 @@
                 "en": "There are groundcovering plants",
                 "ja": "地をはう植物がある",
                 "it": "Ci sono piante tappezzanti",
-                "fr": "Il y a des plantes couvre-sol"
+                "fr": "Il y a des plantes couvre-sol",
+                "de": "Es gibt Bodendecker"
               }
             }
           ],
@@ -348,7 +373,8 @@
             "ja": "詳細情報: {description}",
             "it": "Maggiori dettagli: {description}",
             "ru": "Подробнее: {description}",
-            "fr": "Plus de détails : {description}"
+            "fr": "Plus de détails : {description}",
+            "de": "Weitere Details: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
@@ -356,7 +382,8 @@
             "ja": "庭園に関する追加の説明情報(必要な場合でまだ上記に記載されていない場合)",
             "it": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)",
             "ru": "Дополнительная информация о саде (если требуется или еще не указана выше)",
-            "fr": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)"
+            "fr": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)",
+            "de": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)"
           },
           "freeform": {
             "key": "description",
@@ -414,14 +441,16 @@
             "en": "facade garden",
             "ja": "ファサード庭園",
             "it": "giardino verticale",
-            "fr": "jardin mural"
+            "fr": "jardin mural",
+            "de": "Fassadenbegrünung"
           },
           "description": {
             "nl": "Voeg geveltuintje toe",
             "en": "Add a facade garden",
             "ja": "ファサード庭園を追加する",
             "it": "Aggiungi un giardino verticale",
-            "fr": "Ajouter un jardin mural"
+            "fr": "Ajouter un jardin mural",
+            "de": "Eine Fassadenbegrünung hinzufügen"
           }
         }
       ],
