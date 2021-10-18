@@ -52,11 +52,11 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 wikidata.id,
                 Svg.wikidata_ui().SetStyle("width: 2.5rem").SetClass("block")
             ]).SetClass("flex"),
-            Wikidata.IdToArticle(wikidata.id), true).SetClass("must-link")
+            Wikidata.IdToArticle(wikidata.id), true)?.SetClass("must-link")
 
         let info = new Combine([
             new Combine(
-                [Translation.fromMap(wikidata.labels).SetClass("font-bold"),
+                [Translation.fromMap(wikidata.labels)?.SetClass("font-bold"),
                 link]).SetClass("flex justify-between"),
             Translation.fromMap(wikidata.descriptions),
             WikidataPreviewBox.QuickFacts(wikidata)
@@ -147,7 +147,6 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 els.push(display.Subs({value: value.join(", ")}).SetClass("m-2"))
                 continue
             }
-            console.log("Display:", display, "key:",key)
             const constructors = Utils.NoNull(value.map(property => display.get(property)))
             const elems = constructors.map(v => {
                 if(typeof v === "string"){

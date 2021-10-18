@@ -43,9 +43,7 @@ export default abstract class ImageProvider {
         const seenValues = new Set<string>()
         allTags.addCallbackAndRunD(tags => {
             for (const key in tags) {
-                console.log("Does ", key,"have images?")
                 if (!prefixes.some(prefix => key.startsWith(prefix))) {
-                    console.log(key,": NO", this.constructor.name, "prefixes are", prefixes)
                     continue
                 }
                 const values = Utils.NoEmpty(tags[key]?.split(";")?.map(v => v.trim()) ?? [])
