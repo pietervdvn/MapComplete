@@ -1175,5 +1175,6 @@
                 "then": ""
             }
         ]
-    }
+    },
+    "allowSplit": true
 }
