@@ -921,5 +921,23 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
+    },
+    "uk_addresses": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "uk_addresses_housenumber": {
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>",
+                        "mappings": {
+                            "0": {
+                                "then": "Dit gebouw heeft geen huisnummer"
+                            }
+                        }
+                    }
+                },
+                "description": "Adressen"
+            }
+        },
+        "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen"
     }
 }
