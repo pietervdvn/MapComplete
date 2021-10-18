@@ -1,5 +1,6 @@
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
+import * as wds from "wikibase-sdk"
 
 export class WikidataResponse {
     public readonly id: string
@@ -63,22 +64,15 @@ export class WikidataResponse {
     }
 
     static extractClaims(claimsJson: any): Map<string, Set<string>> {
+        
+       const simplified = wds.simplify.claims(claimsJson, {
+            timeConverter: 'simple-day'
+        })
+        
         const claims = new Map<string, Set<string>>();
-        for (const claimId in claimsJson) {
-
-            const claimsList: any[] = claimsJson[claimId]
-            const values = new Set<string>()
-            for (const claim of claimsList) {
-                let value = claim.mainsnak?.datavalue?.value;
-                if (value === undefined) {
-                    continue;
-                }
-                if (value.id !== undefined) {
-                    value = value.id
-                }
-                values.add(value)
-            }
-            claims.set(claimId, values);
+        for (const claimId in simplified) {
+            const claimsList: any[] = simplified[claimId]
+            claims.set(claimId, new Set(claimsList));
         }
         return claims
     }

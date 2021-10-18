@@ -20,6 +20,7 @@ export default class Wikipedia {
         "ambox",
         "mw-editsection",
         "mw-selflink",
+        "mw-empty-elt",
         "hatnote" // Often redirects
     ]
     

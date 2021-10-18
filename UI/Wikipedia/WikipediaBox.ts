@@ -182,6 +182,7 @@ export default class WikipediaBox extends Combine {
             language: language
         })
         const wp = Translations.t.general.wikipedia
+        const quickFacts = WikidataPreviewBox.QuickFacts(wikidata);
         const contents: UIEventSource<string | BaseUIElement> = htmlContent.map(htmlContent => {
             if (htmlContent === undefined) {
                 // Still loading
@@ -198,7 +199,9 @@ export default class WikipediaBox extends Combine {
             return undefined
         })
 
-        return new Combine([new VariableUiElement(contents)
+        return new Combine([
+            quickFacts?.SetClass("border-2 border-grey rounded-lg m-1 mb-0"),
+            new VariableUiElement(contents)
             .SetClass("block pl-6 pt-2")])
     }
 

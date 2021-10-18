@@ -680,6 +680,90 @@
     "sources": []
   },
   {
+    "path": "gender_bi.svg",
+    "license": "CC0",
+    "authors": [
+      "Gender Icon Pack"
+    ],
+    "sources": [
+      "https://www.iconpacks.net/free-icon-pack/gender-107.html"
+    ]
+  },
+  {
+    "path": "gender_female.svg",
+    "license": "CC0",
+    "authors": [],
+    "sources": []
+  },
+  {
+    "path": "gender_female.svg",
+    "license": "CC0",
+    "authors": [
+      "Gender Icon Pack"
+    ],
+    "sources": [
+      "https://www.iconpacks.net/free-icon-pack/gender-107.html"
+    ]
+  },
+  {
+    "path": "gender_inter.svg",
+    "license": "CC0",
+    "authors": [
+      "Gender Icon Pack"
+    ],
+    "sources": [
+      "https://www.iconpacks.net/free-icon-pack/gender-107.html"
+    ]
+  },
+  {
+    "path": "gender_intersekse.svg",
+    "license": "CC0",
+    "authors": [],
+    "sources": []
+  },
+  {
+    "path": "gender_male.svg",
+    "license": "CC0",
+    "authors": [],
+    "sources": []
+  },
+  {
+    "path": "gender_male.svg",
+    "license": "CC0",
+    "authors": [
+      "Gender Icon Pack"
+    ],
+    "sources": [
+      "https://www.iconpacks.net/free-icon-pack/gender-107.html"
+    ]
+  },
+  {
+    "path": "gender_queer.svg",
+    "license": "CC0",
+    "authors": [
+      "Gender Icon Pack"
+    ],
+    "sources": [
+      "https://www.iconpacks.net/free-icon-pack/gender-107.html"
+    ]
+  },
+  {
+    "path": "gender_trans.svg",
+    "license": "CC0",
+    "authors": [],
+    "sources": []
+  },
+  {
+    "path": "gender_trans.svg",
+    "license": "CC0",
+    "authors": [
+      "Gender Icon Pack"
+    ],
+    "sources": [
+      "https://www.iconpacks.net/free-icon-pack/gender-107.html"
+    ]
+  },
+  {
     "path": "hand.svg",
     "license": "CC0",
     "authors": [
