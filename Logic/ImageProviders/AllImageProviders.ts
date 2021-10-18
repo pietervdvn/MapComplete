@@ -44,7 +44,7 @@ export default class AllImageProviders {
             
             let prefixes = imageProvider.defaultKeyPrefixes
             if(tagKey !== undefined){
-                prefixes = [tagKey]
+                prefixes = [...prefixes, tagKey]
             }
             
             const singleSource = imageProvider.GetRelevantUrls(tags, {

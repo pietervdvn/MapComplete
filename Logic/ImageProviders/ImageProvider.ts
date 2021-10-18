@@ -11,10 +11,10 @@ export interface ProvidedImage {
 
 export default abstract class ImageProvider {
 
-    public abstract readonly defaultKeyPrefixes: string[] = ["mapillary", "image"]
+    public abstract readonly defaultKeyPrefixes: string[]
 
     private _cache = new Map<string, UIEventSource<LicenseInfo>>()
-
+    
     GetAttributionFor(url: string): UIEventSource<LicenseInfo> {
         const cached = this._cache.get(url);
         if (cached !== undefined) {
@@ -41,10 +41,11 @@ export default abstract class ImageProvider {
         }
         const relevantUrls = new UIEventSource<{ url: string; key: string; provider: ImageProvider }[]>([])
         const seenValues = new Set<string>()
-        const self =this
         allTags.addCallbackAndRunD(tags => {
             for (const key in tags) {
+                console.log("Does ", key,"have images?")
                 if (!prefixes.some(prefix => key.startsWith(prefix))) {
+                    console.log(key,": NO", this.constructor.name, "prefixes are", prefixes)
                     continue
                 }
                 const values = Utils.NoEmpty(tags[key]?.split(";")?.map(v => v.trim()) ?? [])
