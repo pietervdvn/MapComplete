@@ -140,6 +140,20 @@
                 },
                 "question": "Wie viel kostet das Ausleihen eines Fahrrads?",
                 "render": "Das Ausleihen eines Fahrrads kostet {charge}"
+            },
+            "bicycle_library-name": {
+                "question": "Wie lautet der Name dieser Fahrradbibliothek?",
+                "render": "Diese Fahrradbibliothek heißt {name}"
+            }
+        },
+        "title": {
+            "render": "Fahrradbibliothek"
+        },
+        "name": "Fahrradbibliothek",
+        "presets": {
+            "0": {
+                "title": "Fahrradbibliothek",
+                "description": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können"
             }
         }
     },
@@ -224,6 +238,9 @@
             },
             "bike_cafe-website": {
                 "question": "Was ist die Webseite von {name}?"
+            },
+            "bike_cafe-opening_hours": {
+                "question": "Wann ist dieses Fahrradcafé geöffnet?"
             }
         },
         "title": {
@@ -263,6 +280,12 @@
                 "mappings": {
                     "0": {
                         "then": "Öffentlich zugänglich"
+                    },
+                    "1": {
+                        "then": "Der Zugang ist in erster Linie für Besucher eines Unternehmens bestimmt"
+                    },
+                    "2": {
+                        "then": "Der Zugang ist beschränkt auf Mitglieder einer Schule, eines Unternehmens oder einer Organisation"
                     }
                 },
                 "question": "Wer kann diesen Fahrradparplatz nutzen?",
@@ -344,8 +367,12 @@
                     },
                     "3": {
                         "then": "Ebenerdiges Parken"
+                    },
+                    "4": {
+                        "then": "Parkplatz auf dem Dach"
                     }
-                }
+                },
+                "question": "Wo befinden sich diese Fahrradabstellplätze?"
             }
         },
         "title": {
@@ -469,6 +496,12 @@
                 },
                 "question": "Welche Ventile werden unterstützt?",
                 "render": "Diese Pumpe unterstützt die folgenden Ventile: {valves}"
+            },
+            "bike_repair_station-email": {
+                "question": "Wie lautet die E-Mail-Adresse des Betreuers?"
+            },
+            "bike_repair_station-phone": {
+                "question": "Wie lautet die Telefonnummer des Betreibers?"
             }
         },
         "title": {
@@ -490,6 +523,9 @@
                 }
             },
             "render": "Fahrradstation (Pumpe & Reparatur)"
+        },
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
         }
     },
     "bike_shop": {
@@ -507,6 +543,9 @@
                     },
                     "1": {
                         "then": "Dieses Geschäft bietet für niemanden eine Fahrradpumpe an"
+                    },
+                    "2": {
+                        "then": "Es gibt eine Fahrradpumpe, sie wird als separater Punkt angezeigt "
                     }
                 },
                 "question": "Bietet dieses Geschäft eine Fahrradpumpe zur Benutzung für alle an?"
@@ -604,6 +643,9 @@
             },
             "bike_shop-website": {
                 "question": "Was ist die Webseite von {name}?"
+            },
+            "bike_shop-is-bicycle_shop": {
+                "render": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig"
             }
         },
         "title": {
@@ -625,7 +667,8 @@
                 }
             },
             "render": "Fahrradwerkstatt/geschäft"
-        }
+        },
+        "description": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft"
     },
     "bike_themed_object": {
         "name": "Mit Fahrrad zusammenhängendes Objekt",
@@ -725,7 +768,8 @@
                         "then": "24/7 geöffnet (auch an Feiertagen)"
                     }
                 },
-                "question": "Zu welchen Zeiten ist dieser Defibrillator verfügbar?"
+                "question": "Zu welchen Zeiten ist dieser Defibrillator verfügbar?",
+                "render": "{opening_hours_table(opening_hours)}"
             },
             "defibrillator-phone": {
                 "question": "Wie lautet die Telefonnummer für Fragen zu diesem Defibrillator?",
@@ -1245,6 +1289,13 @@
                 "0": {
                     "then": "<i>{name}</i>"
                 }
+            },
+            "render": "Baum"
+        },
+        "name": "Baum",
+        "presets": {
+            "2": {
+                "title": "Baum"
             }
         }
     },
@@ -1264,5 +1315,449 @@
         "title": {
             "render": "Aussichtspunkt"
         }
+    },
+    "barrier": {
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "1": {
+                        "then": "Feststehender Poller"
+                    },
+                    "0": {
+                        "then": "Entfernbarer Poller"
+                    },
+                    "2": {
+                        "then": "Umlegbarer Poller"
+                    },
+                    "3": {
+                        "then": "Flexibler Poller, meist aus Kunststoff"
+                    },
+                    "4": {
+                        "then": "Ausfahrender Poller"
+                    }
+                },
+                "question": "Um was für einen Poller handelt es sich?"
+            },
+            "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": "Einfach, nur zwei Barrieren mit einem Zwischenraum <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+                    },
+                    "1": {
+                        "then": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>"
+                    },
+                    "2": {
+                        "then": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                    }
+                },
+                "question": "Um welche Art Fahrradhindernis handelt es sich?"
+            },
+            "MaxWidth": {
+                "question": "Welche Durchfahrtsbreite hat das Hindernis?",
+                "render": "Maximale Durchfahrtsbreite: {maxwidth:physical} m"
+            },
+            "Overlap (cyclebarrier)": {
+                "question": "Wie stark überschneiden sich die Barrieren?",
+                "render": "Überschneidung: {overlap} m"
+            },
+            "Space between barrier (cyclebarrier)": {
+                "render": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m",
+                "question": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?"
+            },
+            "Width of opening (cyclebarrier)": {
+                "question": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
+                "render": "Breite der Öffnung: {width:opening} m"
+            },
+            "bicycle=yes/no": {
+                "question": "Kann ein Radfahrer das Hindernis passieren?",
+                "mappings": {
+                    "0": {
+                        "then": "Ein Radfahrer kann hindurchfahren."
+                    },
+                    "1": {
+                        "then": "Ein Radfahrer kann nicht hindurchfahren."
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Poller"
+                },
+                "1": {
+                    "then": "Barriere für Radfahrer"
+                }
+            },
+            "render": "Hindernis"
+        },
+        "presets": {
+            "1": {
+                "description": "Fahrradhindernis, das Radfahrer abbremst",
+                "title": "Fahrradhindernis"
+            },
+            "0": {
+                "description": "Ein Poller auf der Straße",
+                "title": "Poller"
+            }
+        },
+        "description": "Hindernisse beim Fahrradfahren, wie zum Beispiel Poller und Fahrrad Barrieren",
+        "name": "Hindernisse"
+    },
+    "binocular": {
+        "description": "Fernglas",
+        "name": "Ferngläser",
+        "presets": {
+            "0": {
+                "title": "Ferngläser",
+                "description": "Ein fest installiertes Teleskop oder Fernglas, für die öffentliche Nutzung. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
+            }
+        },
+        "tagRenderings": {
+            "binocular-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Kostenlose Nutzung"
+                    }
+                },
+                "render": "Die Benutzung dieses Fernglases kostet {charge}",
+                "question": "Wie viel muss man für die Nutzung dieser Ferngläser bezahlen?"
+            },
+            "binocular-direction": {
+                "question": "In welche Richtung blickt man, wenn man durch dieses Fernglas schaut?",
+                "render": "Blick in Richtung {direction}°"
+            }
+        },
+        "title": {
+            "render": "Ferngläser"
+        }
+    },
+    "cafe_pub": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Jetzt geöffnet"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "2": {
+                "title": "Café"
+            },
+            "0": {
+                "title": "Kneipe"
+            },
+            "1": {
+                "title": "Bar"
+            }
+        },
+        "name": "Cafés und Kneipen",
+        "tagRenderings": {
+            "Classification": {
+                "question": "Was ist das für ein Café"
+            },
+            "Name": {
+                "question": "Wie heißt diese Kneipe?",
+                "render": "Diese Kneipe heißt {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        }
+    },
+    "charging_station": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Nur funktionierende Ladestationen"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle Fahrzeugtypen"
+                    },
+                    "1": {
+                        "question": "Ladestation für Fahrräder"
+                    },
+                    "2": {
+                        "question": "Ladestation für Autos"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Alle Anschlüsse"
+                    }
+                }
+            }
+        },
+        "name": "Ladestationen",
+        "presets": {
+            "0": {
+                "title": "Ladestation"
+            }
+        },
+        "description": "Eine Ladestation",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "2": {
+                        "human": " Tage"
+                    },
+                    "1": {
+                        "human": " Stunden"
+                    },
+                    "0": {
+                        "human": " Minuten",
+                        "humanSingular": " Minute"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "Type": {
+                "mappings": {
+                    "2": {
+                        "then": "<b> Roller</b> können hier geladen werden"
+                    },
+                    "0": {
+                        "then": "<b>Fahrräder</b> können hier geladen werden"
+                    },
+                    "1": {
+                        "then": "<b>Autos</b> können hier geladen werden"
+                    },
+                    "3": {
+                        "then": "<b>Lastkraftwagen</b> (LKW) können hier geladen werden"
+                    },
+                    "4": {
+                        "then": "<b>Busse</b> können hier geladen werden"
+                    }
+                },
+                "question": "Welche Fahrzeuge dürfen hier geladen werden?"
+            },
+            "Available_charging_stations (generated)": {
+                "question": "Welche Ladestationen gibt es hier?",
+                "mappings": {
+                    "9": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
+                    },
+                    "5": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>"
+                    },
+                    "11": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
+                    },
+                    "17": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
+                    },
+                    "6": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
+                    },
+                    "7": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
+                    },
+                    "12": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
+                    },
+                    "13": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
+                    },
+                    "16": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
+                    },
+                    "8": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
+                    },
+                    "10": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
+                    },
+                    "14": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
+                    },
+                    "15": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
+                    },
+                    "19": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
+                    },
+                    "21": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
+                    },
+                    "18": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
+                    },
+                    "20": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
+                    },
+                    "26": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones oder Elektrokleingeräten</span></div>"
+                    },
+                    "27": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones und Elektrokleingeräten</span></div>"
+                    },
+                    "30": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
+                    },
+                    "31": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
+                    }
+                }
+            },
+            "Parking:fee": {
+                "question": "Muss man beim Laden eine Parkgebühr bezahlen?",
+                "mappings": {
+                    "0": {
+                        "then": "Keine zusätzlichen Parkgebühren beim Laden"
+                    },
+                    "1": {
+                        "then": "Beim Laden ist eine zusätzliche Parkgebühr zu entrichten"
+                    }
+                }
+            },
+            "Auth phone": {
+                "question": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
+                "render": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
+            "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Authentifizierung durch eine Mitgliedskarte"
+                    },
+                    "1": {
+                        "then": "Authentifizierung durch eine App"
+                    },
+                    "2": {
+                        "then": "Authentifizierung per Anruf ist möglich"
+                    },
+                    "3": {
+                        "then": "Authentifizierung per Anruf ist möglich"
+                    },
+                    "4": {
+                        "then": "Authentifizierung über NFC ist möglich"
+                    },
+                    "5": {
+                        "then": "Authentifizierung über Geldkarte ist möglich"
+                    },
+                    "6": {
+                        "then": "Authentifizierung per Debitkarte ist möglich"
+                    },
+                    "7": {
+                        "then": "Keine Authentifizierung erforderlich"
+                    }
+                },
+                "question": "Welche Authentifizierung ist an der Ladestation möglich?"
+            },
+            "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Eigentlich ist {operator} das Netzwerk"
+                    }
+                },
+                "question": "Wer ist der Betreiber dieser Ladestation?",
+                "render": "Diese Ladestation wird betrieben von {operator}"
+            },
+            "Network": {
+                "mappings": {
+                    "0": {
+                        "then": "Nicht Teil eines größeren Netzwerks"
+                    },
+                    "1": {
+                        "then": "Nicht Teil eines größeren Netzwerks"
+                    }
+                },
+                "question": "Ist diese Ladestation Teil eines Netzwerks?",
+                "render": "Teil des Netzwerks <b>{network}</b>"
+            },
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "durchgehend geöffnet (auch an Feiertagen)"
+                    }
+                },
+                "question": "Wann ist diese Ladestation geöffnet?"
+            },
+            "Operational status": {
+                "mappings": {
+                    "4": {
+                        "then": "Diese Ladestation funktioniert"
+                    },
+                    "0": {
+                        "then": "Diese Ladestation ist kaputt"
+                    },
+                    "1": {
+                        "then": "Hier ist eine Ladestation geplant"
+                    },
+                    "2": {
+                        "then": "Hier wird eine Ladestation gebaut"
+                    },
+                    "3": {
+                        "then": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
+                    }
+                },
+                "question": "Ist dieser Ladepunkt in Betrieb?"
+            },
+            "access": {
+                "question": "Wer darf diese Ladestation benutzen?",
+                "render": "Zugang ist {access}"
+            },
+            "capacity": {
+                "question": "Wie viele Fahrzeuge können hier gleichzeitig geladen werden?",
+                "render": "{capacity} Fahrzeuge können hier gleichzeitig geladen werden"
+            }
+        }
+    },
+    "crossings": {
+        "name": "Kreuzungen"
+    },
+    "visitor_information_centre": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
+        },
+        "name": "Besucherinformationszentrum"
+    },
+    "birdhide": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Zugänglich für Rollstuhlfahrer"
+                    }
+                }
+            }
+        }
+    },
+    "cycleways_and_roads": {
+        "title": {
+            "mappings": {
+                "4": {
+                    "then": "Fahrradstraße"
+                },
+                "0": {
+                    "then": "Radweg"
+                }
+            },
+            "render": "Radwege"
+        }
+    },
+    "watermill": {
+        "name": "Wassermühle"
+    },
+    "waste_basket": {
+        "description": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können."
     }
 }

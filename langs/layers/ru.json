@@ -3,7 +3,7 @@
         "name": "Скамейки",
         "presets": {
             "0": {
-                "title": "Скамейка"
+                "title": "cкамейка"
             }
         },
         "tagRenderings": {
@@ -527,6 +527,46 @@
         },
         "title": {
             "render": "Зарядная станция"
+        },
+        "presets": {
+            "0": {
+                "title": "Зарядная станция"
+            }
+        },
+        "units": {
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "киловатт"
+                    },
+                    "1": {
+                        "human": "мегаватт"
+                    }
+                }
+            },
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " минут",
+                        "humanSingular": " минута"
+                    },
+                    "1": {
+                        "human": " часов",
+                        "humanSingular": " час"
+                    },
+                    "2": {
+                        "human": " дней",
+                        "humanSingular": " день"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Вольт"
+                    }
+                }
+            }
         }
     },
     "defibrillator": {
@@ -593,7 +633,7 @@
         "name": "Питьевая вода",
         "presets": {
             "0": {
-                "title": "Питьевая вода"
+                "title": "питьевая вода"
             }
         },
         "title": {
@@ -608,6 +648,14 @@
                         "then": "Приносить свою тару <b>не разрешено</b>"
                     }
                 }
+            }
+        },
+        "presets": {
+            "1": {
+                "title": "быстрое питание"
+            },
+            "0": {
+                "title": "ресторан"
             }
         }
     },
@@ -635,7 +683,7 @@
         "name": "Информационные щиты",
         "presets": {
             "0": {
-                "title": "Информационный щит"
+                "title": "информационный щит"
             }
         },
         "title": {
@@ -678,7 +726,7 @@
         "name": "Столы для пикника",
         "presets": {
             "0": {
-                "title": "Стол для пикника"
+                "title": "стол для пикника"
             }
         },
         "tagRenderings": {
@@ -1143,6 +1191,140 @@
         },
         "title": {
             "render": "Смотровая площадка"
+        }
+    },
+    "barrier": {
+        "presets": {
+            "0": {
+                "title": "Прикол"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Прикол"
+                }
+            },
+            "render": "Препятствие"
+        },
+        "name": "Препятствия"
+    },
+    "cafe_pub": {
+        "presets": {
+            "0": {
+                "title": "паб"
+            },
+            "1": {
+                "title": "бар"
+            },
+            "2": {
+                "title": "кафе"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        }
+    },
+    "crossings": {
+        "presets": {
+            "1": {
+                "title": "Светофор"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Светофор"
+                }
+            }
+        }
+    },
+    "observation_tower": {
+        "name": "Смотровые башни",
+        "presets": {
+            "0": {
+                "title": "смотровая башня"
+            }
+        },
+        "title": {
+            "render": "Смотровая башня",
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " метр"
+                    }
+                }
+            }
+        }
+    },
+    "waste_basket": {
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Контейнер для мусора"
+                }
+            }
+        },
+        "name": "Контейнер для мусора",
+        "presets": {
+            "0": {
+                "title": "Контейнер для мусора"
+            }
+        },
+        "title": {
+            "render": "Контейнер для мусора"
+        }
+    },
+    "cycleways_and_roads": {
+        "title": {
+            "render": "Велосипедные дорожки",
+            "mappings": {
+                "0": {
+                    "then": "Велосипедная дорожка"
+                }
+            }
+        }
+    },
+    "trail": {
+        "name": "Тропы",
+        "title": {
+            "render": "Тропа"
+        }
+    },
+    "visitor_information_centre": {
+        "title": {
+            "render": "{name}",
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            }
+        }
+    },
+    "watermill": {
+        "name": "Водяная мельница"
+    },
+    "binocular": {
+        "description": "Бинокли",
+        "name": "Бинокль",
+        "presets": {
+            "0": {
+                "title": "бинокль"
+            }
+        },
+        "title": {
+            "render": "Бинокль"
         }
     }
 }
