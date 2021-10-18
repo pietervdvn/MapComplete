@@ -48,7 +48,7 @@
         "wheelchair-access": {
             "mappings": {
                 "0": {
-                    "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet."
+                    "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet"
                 },
                 "1": {
                     "then": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen"
@@ -74,7 +74,7 @@
                     "then": "Hunde sind <b>nicht</b> erlaubt"
                 },
                 "2": {
-                    "then": "Hunde sind erlaubt, müssen aber angeleint sein."
+                    "then": "Hunde sind erlaubt, müssen aber angeleint sein"
                 }
             },
             "question": "Sind Hunde in diesem Geschäft erlaubt?"
