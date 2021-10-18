@@ -28,6 +28,17 @@ import {Tiles} from "../../Models/TileRange";
 import TileFreshnessCalculator from "./TileFreshnessCalculator";
 
 
+/**
+ * The features pipeline ties together a myriad of various datasources:
+ * 
+ * - The Overpass-API
+ * - The OSM-API
+ * - Third-party geojson files, either sliced or directly.
+ * 
+ * In order to truly understand this class, please have a look at the following diagram: https://cdn-images-1.medium.com/fit/c/800/618/1*qTK1iCtyJUr4zOyw4IFD7A.jpeg
+ * 
+ * 
+ */
 export default class FeaturePipeline {
 
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
@@ -110,7 +121,7 @@ export default class FeaturePipeline {
 
             handleFeatureSource(srcFiltered)
             self.somethingLoaded.setData(true)
-            self.freshnesses.get(src.layer.layerDef.id).addTileLoad(src.tileIndex, new Date())
+            // We do not mark as visited here, this is the responsability of the code near the actual loader (e.g. overpassLoader and OSMApiFeatureLoader)
         };
 
 
@@ -190,6 +201,7 @@ export default class FeaturePipeline {
             markTileVisited: (tileId) =>
                 state.filteredLayers.data.forEach(flayer => {
                     SaveTileToLocalStorageActor.MarkVisited(flayer.layerDef.id, tileId, new Date())
+                    self.freshnesses.get(flayer.layerDef.id).addTileLoad(tileId, new Date())
                 })
         })
 
@@ -277,7 +289,6 @@ export default class FeaturePipeline {
     private getNeededTilesFromOsm(isSufficientlyZoomed: UIEventSource<boolean>): UIEventSource<number[]> {
         const self = this
         return this.state.currentBounds.map(bbox => {
-            console.log("Current bbox is", bbox)
             if (bbox === undefined) {
                 return []
             }
@@ -320,18 +331,14 @@ export default class FeaturePipeline {
             }
             let zoom = state.locationControl.data.zoom
             if (zoom < minzoom) {
+                // We are zoomed out over the zoomlevel of any layer
                 return false;
-            }
-            if (zoom > 16) {
-                zoom = 16
-            }
-            if (zoom < 8) {
-                zoom = zoom + 2
             }
 
             const range = bbox.containingTileRange(zoom)
             if (range.total >= 5000) {
-                return false
+                // Let's assume we don't have so much data cached
+                return true
             }
             const self = this;
             const allFreshnesses = Tiles.MapRange(range, (x, y) => self.freshnessForVisibleLayers(zoom, x, y))

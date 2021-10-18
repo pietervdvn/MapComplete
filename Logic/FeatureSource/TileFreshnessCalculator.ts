@@ -19,7 +19,6 @@ export default class TileFreshnessCalculator {
             return;
         }
         this.freshnesses.set(tileId, freshness)
-       
         
         // Do we have freshness for the neighbouring tiles? If so, we can mark the tile above as loaded too!
         let [z, x, y] = Tiles.tile_from_index(tileId)

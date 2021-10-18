@@ -1,7 +1,6 @@
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 
-
 export class WikidataResponse {
     public readonly id: string
     public readonly labels: Map<string, string>
@@ -60,7 +59,6 @@ export class WikidataResponse {
             sitelinks,
             commons
         )
-
 
     }
 
