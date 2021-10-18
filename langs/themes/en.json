@@ -1227,6 +1227,157 @@
         "shortDescription": "A map showing sport pitches",
         "title": "Sport pitches"
     },
+    "street_lighting": {
+        "description": "A theme showing information about street lamps, like light type, mounting, light colour and much more.",
+        "layers": {
+            "0": {
+                "name": "Street Lamps",
+                "presets": {
+                    "0": {
+                        "title": "street lamp"
+                    }
+                },
+                "tagRenderings": {
+                    "lamp_mount": {
+                        "mappings": {
+                            "0": {
+                                "then": "This lamp sits atop of a straight mast"
+                            },
+                            "1": {
+                                "then": "This lamp sits at the end of a bent mast"
+                            }
+                        },
+                        "question": "How is this lamp mounted to the pole?"
+                    },
+                    "method": {
+                        "mappings": {
+                            "0": {
+                                "then": "This lamp is lit electrically"
+                            },
+                            "1": {
+                                "then": "This lamp uses LEDs"
+                            },
+                            "2": {
+                                "then": "This lamp uses incandescent lighting"
+                            },
+                            "3": {
+                                "then": "This lamp uses halogen lighting"
+                            },
+                            "4": {
+                                "then": "This lamp uses discharge lamps (unknown type)"
+                            },
+                            "5": {
+                                "then": "This lamp uses a mercury-vapour lamp (lightly blueish)"
+                            },
+                            "6": {
+                                "then": "This lamp uses metal-halide lamps (bright white)"
+                            },
+                            "7": {
+                                "then": "This lamp uses fluorescent lighting"
+                            },
+                            "8": {
+                                "then": "This lamp uses sodium lamps (unknown type)"
+                            },
+                            "9": {
+                                "then": "This lamp uses low pressure sodium lamps (monochrome orange)"
+                            },
+                            "10": {
+                                "then": "This lamp uses high pressure sodium lamps (orange with white)"
+                            },
+                            "11": {
+                                "then": "This lamp is lit using gas"
+                            }
+                        },
+                        "question": "What kind of lighting does this lamp use?"
+                    },
+                    "ref": {
+                        "question": "What is the reference number of this street lamp?",
+                        "render": "This street lamp has the reference number {ref}"
+                    },
+                    "support": {
+                        "mappings": {
+                            "0": {
+                                "then": "This lamp is suspended using cables"
+                            },
+                            "1": {
+                                "then": "This lamp is mounted on a ceiling"
+                            },
+                            "2": {
+                                "then": "This lamp is mounted in the ground"
+                            },
+                            "3": {
+                                "then": "This lamp is mounted on a short pole (mostly < 1.5m)"
+                            },
+                            "4": {
+                                "then": "This lamp is mounted on a pole"
+                            },
+                            "5": {
+                                "then": "This lamp is mounted directly to the wall"
+                            },
+                            "6": {
+                                "then": "This lamp is mounted to the wall using a metal bar"
+                            }
+                        },
+                        "question": "How is this street lamp mounted?"
+                    }
+                },
+                "title": {
+                    "render": "Street Lamp"
+                }
+            },
+            "1": {
+                "name": "Lit streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This road is not lit"
+                            },
+                            "2": {
+                                "then": "This road is lit at night"
+                            },
+                            "3": {
+                                "then": "This road is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Lit street"
+                }
+            },
+            "2": {
+                "name": "All streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This road is not lit"
+                            },
+                            "2": {
+                                "then": "This road is lit at night"
+                            },
+                            "3": {
+                                "then": "This road is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Street"
+                }
+            }
+        },
+        "title": "Street Lighting"
+    },
     "surveillance": {
         "description": "On this open map, you can find surveillance cameras.",
         "shortDescription": "Surveillance cameras and other means of surveillance",
