@@ -12,6 +12,8 @@ export class Utils {
     public static externalDownloadFunction: (url: string, headers?: any) => Promise<any>;
     private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
     private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
+    private static injectedDownloads = {}
+    private static _download_cache = new Map<string, { promise: Promise<any>, timestamp: number }>()
 
     static EncodeXmlValue(str) {
         if (typeof str !== "string") {
@@ -89,14 +91,14 @@ export class Utils {
         return ls;
     }
 
-    public static Hist(array: string[]): Map<string, number>{
+    public static Hist(array: string[]): Map<string, number> {
         const hist = new Map<string, number>();
         for (const s of array) {
             hist.set(s, 1 + (hist.get(s) ?? 0))
         }
         return hist;
     }
-    
+
     public static NoEmpty(array: string[]): string[] {
         const ls: string[] = [];
         for (const t of array) {
@@ -164,18 +166,17 @@ export class Utils {
     }
 
     public static SubstituteKeys(txt: string, tags: any) {
-        for (const key in tags) {
-            if (!tags.hasOwnProperty(key)) {
-                continue
-            }
-            try{
-            txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key] ?? "")
-            }catch(e){
-                console.error("WEIRD" , e)
-                throw e
-            }
+
+        const regex = /.*{([^}]*)}.*/
+
+        let match = txt.match(regex)
+
+        while (match) {
+            const key = match[1]
+            txt = txt.replace("{" + key + "}", tags[key] ?? "")
+            match = txt.match(regex)
         }
-        txt = txt.replace(new RegExp('{.*}', "g"), "")
+      
         return txt;
     }
 
@@ -238,7 +239,7 @@ export class Utils {
         }
         return target;
     }
-    
+
     static getOrSetDefault<K, V>(dict: Map<K, V>, k: K, v: () => V) {
         let found = dict.get(k);
         if (found !== undefined) {
@@ -288,9 +289,6 @@ export class Utils {
         return result;
     }
 
-
-    private static injectedDownloads = {}
-
     public static injectJsonDownloadForTests(url: string, data) {
         Utils.injectedDownloads[url] = data
     }
@@ -325,11 +323,10 @@ export class Utils {
         )
     }
 
-    private static _download_cache = new Map<string, {promise: Promise<any>, timestamp: number}>()
     public static async downloadJsonCached(url: string, maxCacheTimeMs: number, headers?: any): Promise<any> {
         const cached = Utils._download_cache.get(url)
-        if(cached !== undefined){
-            if((new Date().getTime() - cached.timestamp) <= maxCacheTimeMs){
+        if (cached !== undefined) {
+            if ((new Date().getTime() - cached.timestamp) <= maxCacheTimeMs) {
                 return cached.promise
             }
         }
@@ -407,6 +404,63 @@ export class Utils {
         return bestColor ?? hex;
     }
 
+    static sortKeys(o: any) {
+        const copy = {}
+        let keys = Object.keys(o)
+        keys = keys.sort()
+        for (const key of keys) {
+            let v = o[key]
+            if (typeof v === "object") {
+                v = Utils.sortKeys(v)
+            }
+            copy[key] = v
+        }
+        return copy
+    }
+
+    public static async waitFor(timeMillis: number): Promise<void> {
+        return new Promise((resolve) => {
+            window.setTimeout(resolve, timeMillis);
+        })
+    }
+
+    public static toHumanTime(seconds): string {
+        seconds = Math.floor(seconds)
+        let minutes = Math.floor(seconds / 60)
+        seconds = seconds % 60
+        let hours = Math.floor(minutes / 60)
+        minutes = minutes % 60
+        let days = Math.floor(hours / 24)
+        hours = hours % 24
+        if (days > 0) {
+            return days + "days" + " " + hours + "h"
+        }
+        return hours + ":" + Utils.TwoDigits(minutes) + ":" + Utils.TwoDigits(seconds)
+    }
+
+    public static DisableLongPresses() {
+        // Remove all context event listeners on mobile to prevent long presses
+        window.addEventListener('contextmenu', (e) => { // Not compatible with IE < 9
+
+            if (e.target["nodeName"] === "INPUT") {
+                return;
+            }
+            e.preventDefault();
+            return false;
+        }, false);
+
+    }
+
+    public static OsmChaLinkFor(daysInThePast, theme = undefined): string {
+        const now = new Date()
+        const lastWeek = new Date(now.getTime() - daysInThePast * 24 * 60 * 60 * 1000)
+        const date = lastWeek.getFullYear() + "-" + Utils.TwoDigits(lastWeek.getMonth() + 1) + "-" + Utils.TwoDigits(lastWeek.getDate())
+        let osmcha_link = `{"date__gte":[{"label":"${date}","value":"${date}"}],"editor":[{"label":"mapcomplete","value":"mapcomplete"}]}`
+        if (theme !== undefined) {
+            osmcha_link = osmcha_link + "," + `{"comment":[{"label":"#${theme}","value":"#${theme}"}]`
+        }
+        return "https://osmcha.org/?filters=" + encodeURIComponent(osmcha_link)
+    }
 
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
@@ -433,64 +487,6 @@ export class Utils {
             g: parseInt(hex.substr(3, 2), 16),
             b: parseInt(hex.substr(5, 2), 16),
         }
-    }
-
-    static sortKeys(o: any) {
-        const copy = {}
-        let keys = Object.keys(o)
-        keys = keys.sort()
-        for (const key of keys) {
-            let v = o[key]
-            if (typeof v === "object") {
-                v = Utils.sortKeys(v)
-            }
-            copy[key] = v
-        }
-        return copy
-    }
-
-    public static async waitFor(timeMillis: number): Promise<void> {
-        return new Promise((resolve) => {
-            window.setTimeout(resolve, timeMillis);
-        })
-    }
-    
-    public static toHumanTime(seconds): string{
-        seconds = Math.floor(seconds)
-        let minutes = Math.floor(seconds / 60)
-        seconds = seconds % 60
-        let hours = Math.floor(minutes / 60)
-        minutes = minutes % 60
-        let days = Math.floor(hours / 24)
-        hours = hours % 24
-        if(days > 0){
-            return days+"days"+" "+hours+"h"
-        }
-            return hours+":"+Utils.TwoDigits(minutes)+":"+Utils.TwoDigits(seconds)
-    }
-    
-    public static DisableLongPresses(){
-        // Remove all context event listeners on mobile to prevent long presses
-        window.addEventListener('contextmenu', (e) => { // Not compatible with IE < 9
-
-            if (e.target["nodeName"] === "INPUT") {
-                return;
-            }
-            e.preventDefault();
-            return false;
-        }, false);
-
-    }
-    
-    public static OsmChaLinkFor(daysInThePast, theme = undefined) : string {
-        const now = new Date()
-        const lastWeek = new Date(now.getTime() - daysInThePast * 24 * 60 * 60 * 1000)
-        const date = lastWeek.getFullYear() + "-" + Utils.TwoDigits(lastWeek.getMonth() + 1) + "-" + Utils.TwoDigits(lastWeek.getDate())
-        let osmcha_link = `{"date__gte":[{"label":"${date}","value":"${date}"}],"editor":[{"label":"mapcomplete","value":"mapcomplete"}]}`
-        if(theme !== undefined){
-            osmcha_link = osmcha_link + "," + `{"comment":[{"label":"#${theme}","value":"#${theme}"}]`
-        }
-        return  "https://osmcha.org/?filters="+ encodeURIComponent(osmcha_link)
     }
 }
 
