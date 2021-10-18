@@ -1,11 +1,12 @@
 [
   {
     "path": "street_lamp.svg",
+    "license": "CC0",
     "authors": [
       "Yohan Boniface"
     ],
     "sources": [
-      "https://raw.githubusercontent.com/hotosm/HDM-CartoCSS/master/icons/poi/street_lamp.svg"
+      "https://github.com/hotosm/HDM-CartoCSS/blob/master/icons/poi/street_lamp.svg"
     ]
   }
 ]
