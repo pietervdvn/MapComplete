@@ -43,7 +43,6 @@ export default class ImageAttributionSpec extends T {
                     }
                 ]
 
-
             ]);
     }
 }

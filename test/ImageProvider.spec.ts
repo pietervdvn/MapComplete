@@ -1,6 +1,7 @@
 import T from "./TestHelper";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 import {UIEventSource} from "../Logic/UIEventSource";
+import {Utils} from "../Utils";
 
 export default class ImageProviderSpec extends T {
     
@@ -61,11 +62,18 @@ export default class ImageProviderSpec extends T {
                 expects("https://commons.wikimedia.org/wiki/Special:FilePath/File%3APapageno_Jef_Claerhout.jpg?width=500&height=400",{
                     "wikimedia_commons":	"File:Papageno_Jef_Claerhout.jpg"
                 }, "WikimediaImageProvider")
+
+                Utils.injectJsonDownloadForTests(
+                    "https://graph.mapillary.com/196804715753265?fields=thumb_1024_url&&access_token=MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85" ,
+                    {"thumb_1024_url":"https://scontent-bru2-1.xx.fbcdn.net/m1/v/t6/An8HQ3DrfU76tWMC602spvM_e_rqOHyiUcYUTetXM7K52DDBEY5J4FWg4WKQqVUlMsWJn4nLXk0pxlBLx31146FqZ2Kg65z7lJUfR6wpW6WPSR5_y7RKdv4YEuzPjwIN0lagBnQONV3UjmXnEGpMouU?stp=s1024x768&ccb=10-5&oh=d460b401c505714ee1cb8bd6baf8ae5d&oe=61731FC3&_nc_sid=122ab1","id":"196804715753265"}
+                )
+
+                expects("https://scontent-bru2-1.xx.fbcdn.net/m1/v/t6/An8HQ3DrfU76tWMC602spvM_e_rqOHyiUcYUTetXM7K52DDBEY5J4FWg4WKQqVUlMsWJn4nLXk0pxlBLx31146FqZ2Kg65z7lJUfR6wpW6WPSR5_y7RKdv4YEuzPjwIN0lagBnQONV3UjmXnEGpMouU?stp=s1024x768&ccb=10-5&oh=d460b401c505714ee1cb8bd6baf8ae5d&oe=61731FC3&_nc_sid=122ab1", {
+                    "mapillary":"https://www.mapillary.com/app/?pKey=196804715753265"
+                })
                
             
             }]
-            
-            
         ]);
     }
     

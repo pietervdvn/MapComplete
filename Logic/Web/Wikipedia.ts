@@ -3,7 +3,6 @@
  */
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
-import Wikidata from "./Wikidata";
 
 export default class Wikipedia {
 
