@@ -1,7 +1,7 @@
 {
   "id": "street_lighting",
   "maintainer": "Robin van der Linde",
-  "version": "20211018",
+  "version": "20211019",
   "language": [
     "en",
     "nl"
@@ -33,9 +33,35 @@
         "render": {
           "en": "Street Lamp",
           "nl": "Straatlantaarn"
-        }
+        },
+        "mappings": [
+          {
+            "if": "ref~*",
+            "then": {
+              "en": "Street Lamp {ref}",
+              "nl": "Straatlantaarn {ref}"
+            }
+          }
+        ]
       },
       "icon": "./assets/themes/street_lighting/street_lamp.svg",
+      "iconOverlays": [
+        {
+          "if": "light:colour=white",
+          "then": "circle:white",
+          "badge": true
+        },
+        {
+          "if": "light:colour=orange",
+          "then": "circle:#FFB000",
+          "badge": true
+        },
+        {
+          "if": "light:colour=green",
+          "then": "circle:#55FF55",
+          "badge": true
+        }
+      ],
       "presets": [
         {
           "title": {

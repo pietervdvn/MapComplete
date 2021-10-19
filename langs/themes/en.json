@@ -1370,6 +1370,11 @@
                     }
                 },
                 "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Street Lamp {ref}"
+                        }
+                    },
                     "render": "Street Lamp"
                 }
             },

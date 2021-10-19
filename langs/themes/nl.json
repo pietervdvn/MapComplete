@@ -1040,6 +1040,11 @@
                     }
                 },
                 "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Straatlantaarn {ref}"
+                        }
+                    },
                     "render": "Straatlantaarn"
                 }
             },
