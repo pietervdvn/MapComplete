@@ -62,6 +62,9 @@ export default class TagRenderingConfig {
         this.render = Translations.T(json.render, context + ".render");
         this.question = Translations.T(json.question, context + ".question");
         this.roaming = json.roaming ?? false;
+        if(this.roaming){
+            console.warn("Deprecation notice: roaming renderings will be scrapped.", this.id, context)
+        }
         const condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (this.roaming && conditionIfRoaming !== undefined) {
             this.condition = new And([condition, conditionIfRoaming]);

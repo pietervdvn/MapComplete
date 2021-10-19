@@ -79,16 +79,13 @@
                 ]
             },
             "then": {
-                "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
-                "roaming": true
-            },
-            "badge": true
+                "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
+            }
         }
     ],
     "titleIcons": [
         {
-            "render": "<img src='./assets/layers/bike_cleaning/bike_cleaning_icon.svg'/>",
-            "roaming": true
+            "render": "<img src='./assets/layers/bike_cleaning/bike_cleaning_icon.svg'/>"
         }
     ],
     "tagRenderings": [
@@ -118,7 +115,6 @@
                     "then": "The cleaning service has a fee"
                 }
             ],
-            "roaming": true,
             "id": "bike_cleaning-service:bicycle:cleaning:charge"
         },
         {
@@ -146,7 +142,6 @@
                     "then": "The cleaning service has a fee"
                 }
             ],
-            "roaming": false,
             "id": "bike_cleaning-charge"
         }
     ],
