@@ -276,7 +276,8 @@
             "nl": "Deze lantaarn geeft {light:colour} licht"
           },
           "freeform": {
-            "key": "light:colour"
+            "key": "light:colour",
+            "type": "color"
           },
           "mappings": [
             {
