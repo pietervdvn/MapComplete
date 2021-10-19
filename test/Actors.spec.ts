@@ -5,11 +5,15 @@ import SelectedElementTagsUpdater from "../Logic/Actors/SelectedElementTagsUpdat
 import UserRelatedState from "../Logic/State/UserRelatedState";
 import {Utils} from "../Utils";
 import ScriptUtils from "../scripts/ScriptUtils";
+import SelectedFeatureHandler from "../Logic/Actors/SelectedFeatureHandler";
+import {UIEventSource} from "../Logic/UIEventSource";
+import {ElementStorage} from "../Logic/ElementStorage";
+import Loc from "../Models/Loc";
 
 export default class ActorsSpec extends T {
 
     constructor() {
-        
+
         const latestTags = {
             "amenity": "public_bookcase",
             "books": "children;adults",
@@ -22,7 +26,7 @@ export default class ActorsSpec extends T {
             "operator": "Huisbewoner",
             "public_bookcase:type": "reading_box"
         }
-        
+
         Utils.injectJsonDownloadForTests(
             "https://www.openstreetmap.org/api/0.6/node/5568693115",
             {
@@ -92,7 +96,7 @@ export default class ActorsSpec extends T {
                     // THis should trigger a download of the latest feaures and update the tags
                     // However, this doesn't work with ts-node for some reason
                     state.selectedElement.setData(feature)
-                    
+
                     SelectedElementTagsUpdater.applyUpdate(state, latestTags, feature.properties.id)
 
                     // The name should be updated
@@ -100,7 +104,35 @@ export default class ActorsSpec extends T {
                     // The fixme should be removed
                     T.equals(undefined, feature.properties.fixme)
 
-                }]
+                }],
+            ["Hash without selected element should download geojson from OSM-API", async () => {
+                const hash = new UIEventSource("node/5568693115")
+                const selected = new UIEventSource(undefined)
+                const loc = new UIEventSource<Loc>({
+                    lat: 0,
+                    lon: 0,
+                    zoom: 0
+                })
+                
+                
+                loc.addCallback(_ => {
+                    T.equals("node/5568693115", selected.data.properties.id)
+                    T.equals(14, loc.data.zoom)
+                    T.equals( 51.2179199, loc.data.lat)
+                })
+                
+                new SelectedFeatureHandler(hash, {
+                    selectedElement: selected,
+                    allElements: new ElementStorage(),
+                    featurePipeline: undefined,
+                    locationControl: loc,
+                    layoutToUse: undefined
+                })
+                
+                
+                
+
+            }]
 
 
         ]);
