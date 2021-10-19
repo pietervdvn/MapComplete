@@ -170,9 +170,4 @@ export interface TagRenderingConfigJson {
 
     }[]
 
-    /**
-     * If set to true, this tagRendering will escape the current layer and attach itself to all the other layers too.
-     * However, it will _only_ be shown if it matches the overpass-tags of the layer it was originally defined in.
-     */
-    roaming?: boolean
 }

@@ -454,7 +454,78 @@
           }
         }
       ],
-      "wayHandling": 1
+      "wayHandling": 1,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/themes/facadegardens/geveltuin.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "direct_sunlight=yes"
+                  ]
+                },
+                "then": "circle:white;./assets/themes/facadegardens/zon.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "direct_sunlight=partial"
+                  ]
+                },
+                "then": "circle:white;./assets/themes/facadegardens/halfzon.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "direct_sunlight=no"
+                  ]
+                },
+                "then": "circle:white;./assets/themes/facadegardens/schaduw.svg"
+              }
+            ]
+          },
+          "iconOverlays": [
+            {
+              "if": "plant~.*vine.*",
+              "then": "circle:white;./assets/themes/facadegardens/klimplant.svg",
+              "badge": true
+            },
+            {
+              "if": "plant~.*groundcover.*",
+              "then": "circle:white;./assets/themes/facadegardens/bodembedekker.svg",
+              "badge": true
+            },
+            {
+              "if": "edible=true",
+              "then": "circle:white;./assets/themes/facadegardens/eetbaar.svg",
+              "badge": true
+            },
+            {
+              "if": "rain_barel=yes",
+              "then": "circle:white;./assets/themes/facadegardens/gevelton.svg",
+              "badge": true
+            },
+            {
+              "if": "plant~.*shrub.*",
+              "then": "circle:white;./assets/themes/facadegardens/struik.svg",
+              "badge": true
+            },
+            {
+              "if": "plant~.*flower.*",
+              "then": "circle:white;./assets/themes/facadegardens/bloei.svg",
+              "badge": true
+            }
+          ],
+          "iconSize": {
+            "render": "50,50,center"
+          },
+          "location": [
+            "point"
+          ]
+        }
+      ]
     }
   ]
 }

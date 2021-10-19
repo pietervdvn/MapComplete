@@ -118,18 +118,6 @@ export interface LayoutConfigJson {
      * Default: overpassMaxZoom + 1
      */
     osmApiTileSize?: number
-    
-    /**
-     * A tagrendering depicts how to show some tags or how to show a question for it.
-     *
-     * These tagrenderings are applied to _all_ the loaded layers and are a way to reuse tagrenderings.
-     * Note that if multiple themes are loaded (e.g. via the personal theme)
-     * that these roamingRenderings are applied to the layers of the OTHER themes too!
-     *
-     * In order to prevent them to do too much damage, all the overpass-tags of the layers are taken and combined as OR.
-     * These tag renderings will only show up if the object matches this filter.
-     */
-    roamingRenderings?: (TagRenderingConfigJson | string)[],
 
     /**
      * An override applied on all layers of the theme.

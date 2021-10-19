@@ -750,6 +750,11 @@
                     "badge": true
                 },
                 {
+                    "if": "opening_hours~*",
+                    "then": "isOpen",
+                    "badge": true
+                },
+                {
                     "if": "service:bicycle:pump=yes",
                     "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
                     "badge": true
