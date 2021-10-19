@@ -46,6 +46,5 @@
   "startZoom": 16,
   "widenFactor": 1.2,
   "overpassMaxZoom": 0,
-  "layers": [],
-  "roamingRenderings": []
+  "layers": []
 }

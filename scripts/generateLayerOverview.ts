@@ -118,6 +118,9 @@ class LayerOverviewUtils {
             if (themeFile["units"] !== undefined) {
                 themeErrorCount.push("The theme " + themeFile.id + " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) ")
             }
+            if (themeFile["roamingRenderings"] !== undefined) {
+                themeErrorCount.push("Theme " + themeFile.id + " contains an old 'roamingRenderings'. Use an 'overrideAll' instead")    
+            }
             for (const layer of themeFile.layers) {
                 if (typeof layer === "string") {
                     if (!knownLayerIds.has(layer)) {
