@@ -9,7 +9,9 @@ import ImageProvider from "../../Logic/ImageProviders/ImageProvider";
 
 export class ImageCarousel extends Toggle {
 
-    constructor(images: UIEventSource<{ key: string, url: string, provider: ImageProvider }[]>, tags: UIEventSource<any>) {
+    constructor(images: UIEventSource<{ key: string, url: string, provider: ImageProvider }[]>, 
+                tags: UIEventSource<any>,
+                keys: string[]) {
         const uiElements = images.map((imageURLS: { key: string, url: string, provider: ImageProvider }[]) => {
             const uiElements: BaseUIElement[] = [];
             for (const url of imageURLS) {
