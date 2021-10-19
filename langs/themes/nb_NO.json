@@ -108,17 +108,19 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "7": {
-                "mappings": {
-                    "0": {
-                        "then": "Buldring er mulig her"
+        "overrideAll": {
+            "tagRenderings+": {
+                "7": {
+                    "mappings": {
+                        "0": {
+                            "then": "Buldring er mulig her"
+                        },
+                        "1": {
+                            "then": "Buldring er ikke mulig her"
+                        }
                     },
-                    "1": {
-                        "then": "Buldring er ikke mulig her"
-                    }
-                },
-                "question": "Er buldring mulig her?"
+                    "question": "Er buldring mulig her?"
+                }
             }
         },
         "title": "Åpent klatrekart"
@@ -136,23 +138,25 @@
                 "name": "Alle gater"
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
+                        },
+                        "1": {
+                            "then": "Denne gaten er en sykkelvei"
+                        },
+                        "2": {
+                            "then": "Denne gaten vil bli sykkelvei ganske snart"
+                        },
+                        "3": {
+                            "then": "Denne gaten er ikke en sykkelvei"
+                        }
                     },
-                    "1": {
-                        "then": "Denne gaten er en sykkelvei"
-                    },
-                    "2": {
-                        "then": "Denne gaten vil bli sykkelvei ganske snart"
-                    },
-                    "3": {
-                        "then": "Denne gaten er ikke en sykkelvei"
-                    }
-                },
-                "question": "Er denne gaten en sykkelvei?"
+                    "question": "Er denne gaten en sykkelvei?"
+                }
             }
         },
         "shortDescription": "Et kart over sykkelveier"

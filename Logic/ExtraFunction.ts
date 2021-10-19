@@ -5,8 +5,6 @@ import State from "../State";
 import BaseUIElement from "../UI/BaseUIElement";
 import List from "../UI/Base/List";
 import Title from "../UI/Base/Title";
-import {UIEventSourceTools} from "./UIEventSource";
-import AspectedRouting from "./Osm/aspectedRouting";
 import {BBox} from "./BBox";
 
 export interface ExtraFuncParams {

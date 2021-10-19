@@ -8,7 +8,6 @@ import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {Utils} from "../../Utils";
 import {OsmObject} from "./OsmObject";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {Changes} from "./Changes";
 
 export default class UserDetails {
@@ -97,7 +96,6 @@ export class OsmConnection {
                 self.AttemptLogin()
             }
         });
-        this.isLoggedIn.addCallbackAndRunD(li => console.log("User is logged in!", li))
         this._dryRun = options.dryRun;
 
         this.updateAuthObject();

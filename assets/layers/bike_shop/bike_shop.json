@@ -162,10 +162,6 @@
             "condition": "operator=De Fietsambassade Gent"
         },
         {
-            "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
-            "condition": "operator=De Fietsambassade Gent"
-        },
-        {
             "condition": {
                 "or": [
                     "service:bicycle:pump=yes",
@@ -177,6 +173,10 @@
         {
             "condition": "service:bicycle:diy=yes",
             "render": "<img src='./assets/layers/bike_shop/tools.svg'/>"
+        },
+        {
+            "condition": "service:bicycle:cleaning=yes",
+            "render": "<img src='./assets/layers/bike_cleaning/bike_cleaning_icon.svg'/>"
         },
         "defaults"
     ],
@@ -307,13 +307,6 @@
             "id": "bike_shop-opening_hours"
         },
         "description",
-        {
-            "render": "Enkel voor {access}",
-            "freeform": {
-                "key": "access"
-            },
-            "id": "bike_shop-access"
-        },
         {
             "render": "Enkel voor {access}",
             "freeform": {
@@ -670,6 +663,32 @@
                     }
                 }
             ]
+        },
+        {
+            "question": "How much does it cost to use the cleaning service?",
+            "render": "Using the cleaning service costs {charge}",
+            "freeform": {
+                "key": "service:bicycle:cleaning:charge",
+                "addExtraTags": [
+                    "service:bicycle:cleaning:fee=yes"
+                ]
+            },
+            "mappings": [
+                {
+                    "if": "service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge=",
+                    "then": "The cleaning service is free to use"
+                },
+                {
+                    "if": "service:bicycle:cleaning:fee=no&",
+                    "then": "Free to use",
+                    "hideInAnswer": true
+                },
+                {
+                    "if": "service:bicycle:cleaning:fee=yes",
+                    "then": "The cleaning service has a fee"
+                }
+            ],
+            "id": "bike_cleaning-service:bicycle:cleaning:charge"
         }
     ],
     "presets": [
@@ -708,13 +727,19 @@
             "badge": true
         },
         {
-            "if": "opening_hours~*",
-            "then": "isOpen",
+            "if": "service:bicycle:pump=yes",
+            "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
             "badge": true
         },
         {
-            "if": "service:bicycle:pump=yes",
-            "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
+            "if": {
+                "and": [
+                    "service:bicycle:cleaning~*"
+                ]
+            },
+            "then": {
+                "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
+            },
             "badge": true
         }
     ],

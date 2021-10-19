@@ -2329,7 +2329,7 @@
                 "question": "Is deze weg verlicht?"
             },
             "width:carriageway": {
-                "question": "Hoe breed is de rijbaan in deze straat (in meters)?",
+                "question": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is </span><br/><span class='subtle'>Meet dit van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>",
                 "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
             }
         },

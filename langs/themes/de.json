@@ -233,21 +233,23 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "question": "Wer betreibt diesen Ort?",
-                "render": "Dieser Ort wird betrieben von {operator}"
-            },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Dieser Ort hat eine Stromversorgung"
-                    },
-                    "1": {
-                        "then": "Dieser Ort hat keine Stromversorgung"
-                    }
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Wer betreibt diesen Ort?",
+                    "render": "Dieser Ort wird betrieben von {operator}"
                 },
-                "question": "Hat dieser Ort eine Stromversorgung?"
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Dieser Ort hat eine Stromversorgung"
+                        },
+                        "1": {
+                            "then": "Dieser Ort hat keine Stromversorgung"
+                        }
+                    },
+                    "question": "Hat dieser Ort eine Stromversorgung?"
+                }
             }
         },
         "shortDescription": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
@@ -428,6 +430,113 @@
             }
         },
         "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
+                },
+                "2": {
+                    "mappings": {
+                        "0": {
+                            "then": "Öffentlich zugänglich für jedermann"
+                        },
+                        "1": {
+                            "then": "Zugang nur mit Genehmigung"
+                        },
+                        "2": {
+                            "then": "Nur für Kunden"
+                        },
+                        "3": {
+                            "then": "Nur für Vereinsmitglieder"
+                        }
+                    },
+                    "question": "Wer hat hier Zugang?"
+                },
+                "4": {
+                    "question": "Wie lang sind die Routen (durchschnittlich) in Metern?",
+                    "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang"
+                },
+                "5": {
+                    "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
+                    "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
+                },
+                "6": {
+                    "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
+                    "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
+                },
+                "7": {
+                    "mappings": {
+                        "0": {
+                            "then": "Hier kann gebouldert werden"
+                        },
+                        "1": {
+                            "then": "Hier kann nicht gebouldert werden"
+                        },
+                        "2": {
+                            "then": "Bouldern ist hier nur an wenigen Routen möglich"
+                        },
+                        "3": {
+                            "then": "Hier gibt es {climbing:boulder} Boulder-Routen"
+                        }
+                    },
+                    "question": "Kann hier gebouldert werden?"
+                },
+                "8": {
+                    "mappings": {
+                        "0": {
+                            "then": "Toprope-Klettern ist hier möglich"
+                        },
+                        "1": {
+                            "then": "Toprope-Climbing ist hier nicht möglich"
+                        },
+                        "2": {
+                            "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
+                        }
+                    },
+                    "question": "Ist Toprope-Klettern hier möglich?"
+                },
+                "9": {
+                    "mappings": {
+                        "0": {
+                            "then": "Sportklettern ist hier möglich"
+                        },
+                        "1": {
+                            "then": "Sportklettern ist hier nicht möglich"
+                        },
+                        "2": {
+                            "then": "Hier gibt es {climbing:sport} Sportkletter-Routen"
+                        }
+                    },
+                    "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?"
+                },
+                "10": {
+                    "mappings": {
+                        "0": {
+                            "then": "Traditionelles Klettern ist hier möglich"
+                        },
+                        "1": {
+                            "then": "Traditionelles Klettern ist hier nicht möglich"
+                        },
+                        "2": {
+                            "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
+                        }
+                    },
+                    "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?"
+                },
+                "11": {
+                    "mappings": {
+                        "0": {
+                            "then": "Hier gibt es eine Speedkletter-Wand"
+                        },
+                        "1": {
+                            "then": "Hier gibt es keine Speedkletter-Wand"
+                        },
+                        "2": {
+                            "then": "Hier gibt es {climbing:speed} Speedkletter-Routen"
+                        }
+                    },
+                    "question": "Gibt es hier eine Speedkletter-Wand?"
+                }
+            },
             "units+": {
                 "0": {
                     "applicableUnits": {
@@ -439,113 +548,6 @@
                         }
                     }
                 }
-            }
-        },
-        "roamingRenderings": {
-            "0": {
-                "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
-            },
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "Öffentlich zugänglich für jedermann"
-                    },
-                    "1": {
-                        "then": "Zugang nur mit Genehmigung"
-                    },
-                    "2": {
-                        "then": "Nur für Kunden"
-                    },
-                    "3": {
-                        "then": "Nur für Vereinsmitglieder"
-                    }
-                },
-                "question": "Wer hat hier Zugang?"
-            },
-            "4": {
-                "question": "Wie lang sind die Routen (durchschnittlich) in Metern?",
-                "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang"
-            },
-            "5": {
-                "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
-                "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
-            },
-            "6": {
-                "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-                "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
-            },
-            "7": {
-                "mappings": {
-                    "0": {
-                        "then": "Hier kann gebouldert werden"
-                    },
-                    "1": {
-                        "then": "Hier kann nicht gebouldert werden"
-                    },
-                    "2": {
-                        "then": "Bouldern ist hier nur an wenigen Routen möglich"
-                    },
-                    "3": {
-                        "then": "Hier gibt es {climbing:boulder} Boulder-Routen"
-                    }
-                },
-                "question": "Kann hier gebouldert werden?"
-            },
-            "8": {
-                "mappings": {
-                    "0": {
-                        "then": "Toprope-Klettern ist hier möglich"
-                    },
-                    "1": {
-                        "then": "Toprope-Climbing ist hier nicht möglich"
-                    },
-                    "2": {
-                        "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
-                    }
-                },
-                "question": "Ist Toprope-Klettern hier möglich?"
-            },
-            "9": {
-                "mappings": {
-                    "0": {
-                        "then": "Sportklettern ist hier möglich"
-                    },
-                    "1": {
-                        "then": "Sportklettern ist hier nicht möglich"
-                    },
-                    "2": {
-                        "then": "Hier gibt es {climbing:sport} Sportkletter-Routen"
-                    }
-                },
-                "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?"
-            },
-            "10": {
-                "mappings": {
-                    "0": {
-                        "then": "Traditionelles Klettern ist hier möglich"
-                    },
-                    "1": {
-                        "then": "Traditionelles Klettern ist hier nicht möglich"
-                    },
-                    "2": {
-                        "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
-                    }
-                },
-                "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?"
-            },
-            "11": {
-                "mappings": {
-                    "0": {
-                        "then": "Hier gibt es eine Speedkletter-Wand"
-                    },
-                    "1": {
-                        "then": "Hier gibt es keine Speedkletter-Wand"
-                    },
-                    "2": {
-                        "then": "Hier gibt es {climbing:speed} Speedkletter-Routen"
-                    }
-                },
-                "question": "Gibt es hier eine Speedkletter-Wand?"
             }
         },
         "title": "Offene Kletterkarte"
@@ -594,27 +596,29 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "mappings": {
-                    "0": {
-                        "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
+                        },
+                        "1": {
+                            "then": "Diese Straße ist eine Fahrradstraße"
+                        },
+                        "2": {
+                            "then": "Diese Straße wird bald eine Fahrradstraße sein"
+                        },
+                        "3": {
+                            "then": "Diese Straße ist keine Fahrradstraße"
+                        }
                     },
-                    "1": {
-                        "then": "Diese Straße ist eine Fahrradstraße"
-                    },
-                    "2": {
-                        "then": "Diese Straße wird bald eine Fahrradstraße sein"
-                    },
-                    "3": {
-                        "then": "Diese Straße ist keine Fahrradstraße"
-                    }
+                    "question": "Ist diese Straße eine Fahrradstraße?"
                 },
-                "question": "Ist diese Straße eine Fahrradstraße?"
-            },
-            "1": {
-                "question": "Wann wird diese Straße eine Fahrradstraße?",
-                "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
+                "1": {
+                    "question": "Wann wird diese Straße eine Fahrradstraße?",
+                    "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
+                }
             }
         },
         "shortDescription": "Eine Karte von Fahrradstraßen",

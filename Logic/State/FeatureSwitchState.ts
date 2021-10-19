@@ -5,6 +5,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {UIEventSource} from "../UIEventSource";
 import {QueryParameters} from "../Web/QueryParameters";
 import Constants from "../../Models/Constants";
+import {Utils} from "../../Utils";
 
 export default class FeatureSwitchState {
 
@@ -137,7 +138,7 @@ export default class FeatureSwitchState {
 
 
         let testingDefaultValue = false;
-        if (this.featureSwitchApiURL.data !== "osm-test" &&
+        if (this.featureSwitchApiURL.data !== "osm-test" && !Utils.runningFromConsole &&
             (location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
             testingDefaultValue = true
         }

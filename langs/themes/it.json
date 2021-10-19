@@ -225,21 +225,23 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "question": "Chi gestisce questo luogo?",
-                "render": "Questo luogo è gestito da {operator}"
-            },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo luogo fornisce corrente elettrica"
-                    },
-                    "1": {
-                        "then": "Questo luogo non fornisce corrente elettrica"
-                    }
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Chi gestisce questo luogo?",
+                    "render": "Questo luogo è gestito da {operator}"
                 },
-                "question": "Questo luogo fornisce corrente elettrica?"
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Questo luogo fornisce corrente elettrica"
+                        },
+                        "1": {
+                            "then": "Questo luogo non fornisce corrente elettrica"
+                        }
+                    },
+                    "question": "Questo luogo fornisce corrente elettrica?"
+                }
             }
         },
         "shortDescription": "Trova aree dove passare la notte con il tuo camper",
@@ -310,17 +312,19 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "mappings": {
-                    "3": {
-                        "then": "Questa strada non è una strada ciclabile"
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "3": {
+                            "then": "Questa strada non è una strada ciclabile"
+                        }
                     }
+                },
+                "1": {
+                    "question": "Questa strada diventerà una strada ciclabile quando?",
+                    "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
                 }
-            },
-            "1": {
-                "question": "Questa strada diventerà una strada ciclabile quando?",
-                "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
             }
         }
     },

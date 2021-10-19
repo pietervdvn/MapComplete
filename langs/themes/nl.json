@@ -97,67 +97,69 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit gebied is vrij toegankelijk"
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Dit gebied is vrij toegankelijk"
+                        },
+                        "1": {
+                            "then": "Vrij toegankelijk"
+                        },
+                        "2": {
+                            "then": "Niet toegankelijk"
+                        },
+                        "3": {
+                            "then": "Niet toegankelijk, want privégebied"
+                        },
+                        "4": {
+                            "then": "Toegankelijk, ondanks dat het privegebied is"
+                        },
+                        "5": {
+                            "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
+                        },
+                        "6": {
+                            "then": "Toegankelijk mits betaling"
+                        }
                     },
-                    "1": {
-                        "then": "Vrij toegankelijk"
-                    },
-                    "2": {
-                        "then": "Niet toegankelijk"
-                    },
-                    "3": {
-                        "then": "Niet toegankelijk, want privégebied"
-                    },
-                    "4": {
-                        "then": "Toegankelijk, ondanks dat het privegebied is"
-                    },
-                    "5": {
-                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
-                    },
-                    "6": {
-                        "then": "Toegankelijk mits betaling"
-                    }
+                    "question": "Is dit gebied toegankelijk?",
+                    "render": "De toegankelijkheid van dit gebied is: {access:description}"
                 },
-                "question": "Is dit gebied toegankelijk?",
-                "render": "De toegankelijkheid van dit gebied is: {access:description}"
-            },
-            "1": {
-                "mappings": {
-                    "1": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                "1": {
+                    "mappings": {
+                        "1": {
+                            "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                        },
+                        "2": {
+                            "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                        },
+                        "3": {
+                            "then": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+                        }
                     },
-                    "2": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                    "question": "Wie beheert dit gebied?",
+                    "render": "Beheer door {operator}"
+                },
+                "2": {
+                    "render": "Extra info: <i>{description}</i>"
+                },
+                "3": {
+                    "render": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
+                },
+                "4": {
+                    "question": "Wat is de Nederlandstalige naam van dit gebied?",
+                    "render": "Dit gebied heet {name:nl}"
+                },
+                "5": {
+                    "mappings": {
+                        "0": {
+                            "then": "Dit gebied heeft geen naam"
+                        }
                     },
-                    "3": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
-                    }
-                },
-                "question": "Wie beheert dit gebied?",
-                "render": "Beheer door {operator}"
-            },
-            "2": {
-                "render": "Extra info: <i>{description}</i>"
-            },
-            "3": {
-                "render": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
-            },
-            "4": {
-                "question": "Wat is de Nederlandstalige naam van dit gebied?",
-                "render": "Dit gebied heet {name:nl}"
-            },
-            "5": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit gebied heeft geen naam"
-                    }
-                },
-                "question": "Wat is de naam van dit gebied?",
-                "render": "Dit gebied heet {name}"
+                    "question": "Wat is de naam van dit gebied?",
+                    "render": "Dit gebied heet {name}"
+                }
             }
         },
         "shortDescription": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje",
@@ -368,6 +370,106 @@
             }
         },
         "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
+                        },
+                        "1": {
+                            "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
+                        }
+                    }
+                },
+                "4": {
+                    "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
+                    "render": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang"
+                },
+                "5": {
+                    "question": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
+                    "render": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem"
+                },
+                "6": {
+                    "question": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
+                    "render": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem"
+                },
+                "7": {
+                    "mappings": {
+                        "0": {
+                            "then": "Bolderen kan hier"
+                        },
+                        "1": {
+                            "then": "Bolderen kan hier niet"
+                        },
+                        "2": {
+                            "then": "Bolderen kan hier, maar er zijn niet zoveel routes"
+                        },
+                        "3": {
+                            "then": "Er zijn hier {climbing:boulder} bolderroutes"
+                        }
+                    },
+                    "question": "Is het mogelijk om hier te bolderen?"
+                },
+                "8": {
+                    "mappings": {
+                        "0": {
+                            "then": "Toprope-klimmen kan hier"
+                        },
+                        "1": {
+                            "then": "Toprope-klimmen kan hier niet"
+                        },
+                        "2": {
+                            "then": "Er zijn hier {climbing:toprope} toprope routes"
+                        }
+                    },
+                    "question": "Is het mogelijk om hier te toprope-klimmen?"
+                },
+                "9": {
+                    "mappings": {
+                        "0": {
+                            "then": "Sportklimmen/voorklimmen kan hier"
+                        },
+                        "1": {
+                            "then": "Sportklimmen/voorklimmen kan hier niet"
+                        },
+                        "2": {
+                            "then": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes"
+                        }
+                    },
+                    "question": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?"
+                },
+                "10": {
+                    "mappings": {
+                        "0": {
+                            "then": "Traditioneel klimmen kan hier"
+                        },
+                        "1": {
+                            "then": "Traditioneel klimmen kan hier niet"
+                        },
+                        "2": {
+                            "then": "Er zijn hier {climbing:traditional} traditionele klimroutes"
+                        }
+                    },
+                    "question": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>"
+                },
+                "11": {
+                    "mappings": {
+                        "0": {
+                            "then": "Er is een snelklimmuur voor speed climbing"
+                        },
+                        "1": {
+                            "then": "Er is geen snelklimmuur voor speed climbing"
+                        },
+                        "2": {
+                            "then": "Er zijn hier {climbing:speed} snelklimmuren"
+                        }
+                    },
+                    "question": "Is er een snelklimmuur (speed climbing)?"
+                }
+            },
             "units+": {
                 "0": {
                     "applicableUnits": {
@@ -379,106 +481,6 @@
                         }
                     }
                 }
-            }
-        },
-        "roamingRenderings": {
-            "0": {
-                "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
-            },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
-                    },
-                    "1": {
-                        "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
-                    }
-                }
-            },
-            "4": {
-                "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
-                "render": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang"
-            },
-            "5": {
-                "question": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
-                "render": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem"
-            },
-            "6": {
-                "question": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
-                "render": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem"
-            },
-            "7": {
-                "mappings": {
-                    "0": {
-                        "then": "Bolderen kan hier"
-                    },
-                    "1": {
-                        "then": "Bolderen kan hier niet"
-                    },
-                    "2": {
-                        "then": "Bolderen kan hier, maar er zijn niet zoveel routes"
-                    },
-                    "3": {
-                        "then": "Er zijn hier {climbing:boulder} bolderroutes"
-                    }
-                },
-                "question": "Is het mogelijk om hier te bolderen?"
-            },
-            "8": {
-                "mappings": {
-                    "0": {
-                        "then": "Toprope-klimmen kan hier"
-                    },
-                    "1": {
-                        "then": "Toprope-klimmen kan hier niet"
-                    },
-                    "2": {
-                        "then": "Er zijn hier {climbing:toprope} toprope routes"
-                    }
-                },
-                "question": "Is het mogelijk om hier te toprope-klimmen?"
-            },
-            "9": {
-                "mappings": {
-                    "0": {
-                        "then": "Sportklimmen/voorklimmen kan hier"
-                    },
-                    "1": {
-                        "then": "Sportklimmen/voorklimmen kan hier niet"
-                    },
-                    "2": {
-                        "then": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes"
-                    }
-                },
-                "question": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?"
-            },
-            "10": {
-                "mappings": {
-                    "0": {
-                        "then": "Traditioneel klimmen kan hier"
-                    },
-                    "1": {
-                        "then": "Traditioneel klimmen kan hier niet"
-                    },
-                    "2": {
-                        "then": "Er zijn hier {climbing:traditional} traditionele klimroutes"
-                    }
-                },
-                "question": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>"
-            },
-            "11": {
-                "mappings": {
-                    "0": {
-                        "then": "Er is een snelklimmuur voor speed climbing"
-                    },
-                    "1": {
-                        "then": "Er is geen snelklimmuur voor speed climbing"
-                    },
-                    "2": {
-                        "then": "Er zijn hier {climbing:speed} snelklimmuren"
-                    }
-                },
-                "question": "Is er een snelklimmuur (speed climbing)?"
             }
         },
         "title": "Open klimkaart"
@@ -515,27 +517,29 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze straat is een fietsstraat (en dus zone 30)"
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Deze straat is een fietsstraat (en dus zone 30)"
+                        },
+                        "1": {
+                            "then": "Deze straat i een fietsstraat"
+                        },
+                        "2": {
+                            "then": "Deze straat wordt binnenkort een fietsstraat"
+                        },
+                        "3": {
+                            "then": "Deze straat is geen fietsstraat"
+                        }
                     },
-                    "1": {
-                        "then": "Deze straat i een fietsstraat"
-                    },
-                    "2": {
-                        "then": "Deze straat wordt binnenkort een fietsstraat"
-                    },
-                    "3": {
-                        "then": "Deze straat is geen fietsstraat"
-                    }
+                    "question": "Is deze straat een fietsstraat?"
                 },
-                "question": "Is deze straat een fietsstraat?"
-            },
-            "1": {
-                "question": "Wanneer wordt deze straat een fietsstraat?",
-                "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
+                "1": {
+                    "question": "Wanneer wordt deze straat een fietsstraat?",
+                    "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
+                }
             }
         },
         "shortDescription": "Een kaart met alle gekende fietsstraten",

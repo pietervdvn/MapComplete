@@ -1,7 +1,6 @@
 {
   "id": "buurtnatuur",
   "title": {
-    "#": "DO NOT TRANSLATE THIS THEME - this one is only meant to be in dutch!",
     "nl": "Breng jouw buurtnatuur in kaart"
   },
   "shortDescription": {
@@ -124,19 +123,6 @@
             "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
           }
         }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg"
-          },
-          "iconSize": {
-            "render": "50,50,center"
-          },
-          "location": [
-            "point"
-          ]
-        }
       ]
     },
     {
@@ -234,19 +220,6 @@
           "description": {
             "nl": "Voeg een ontbrekend park toe"
           }
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
         }
       ]
     },
@@ -364,19 +337,6 @@
           "description": {
             "nl": "Voeg een ontbrekend bos toe aan de kaart"
           }
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
         }
       ]
     },

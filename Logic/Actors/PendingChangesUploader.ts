@@ -1,6 +1,7 @@
 import {Changes} from "../Osm/Changes";
 import Constants from "../../Models/Constants";
 import {UIEventSource} from "../UIEventSource";
+import {Utils} from "../../Utils";
 
 export default class PendingChangesUploader {
 
@@ -30,6 +31,10 @@ export default class PendingChangesUploader {
                 }
             });
 
+        if(Utils.runningFromConsole){
+            return;
+        }
+        
         document.addEventListener('mouseout', e => {
             // @ts-ignore
             if (!e.toElement && !e.relatedTarget) {

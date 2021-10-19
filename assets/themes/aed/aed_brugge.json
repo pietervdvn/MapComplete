@@ -42,26 +42,12 @@
       "iconSize": "20,20,center",
       "tagRenderings": [
         "all_tags"
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:red",
-            "mappings": [
-              {
-                "if": "_has_closeby_feature=yes",
-                "then": "circle:#008000aa"
-              }
-            ]
-          },
-          "iconSize": "20,20,center",
-          "location": [
-            "point"
-          ]
-        }
       ]
     }
   ],
   "hideFromOverview": true,
-  "defaultBackgroundId": "HDM_HOT"
+  "defaultBackgroundId": "HDM_HOT",
+  "clustering": {
+    "maxZoom": 0
+  }
 }

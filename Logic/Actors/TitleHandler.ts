@@ -5,6 +5,7 @@ import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer";
 import Combine from "../../UI/Base/Combine";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {ElementStorage} from "../ElementStorage";
+import {Utils} from "../../Utils";
 
 export default class TitleHandler {
     constructor(state : {
@@ -38,6 +39,9 @@ export default class TitleHandler {
 
 
         currentTitle.addCallbackAndRunD(title => {
+            if(Utils.runningFromConsole){
+                return
+            }
             document.title = title
         })
     }
