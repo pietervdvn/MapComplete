@@ -16,8 +16,16 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 
 export class ImageUploadFlow extends Toggle {
 
+    
+    private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
+    
     constructor(tagsSource: UIEventSource<any>, imagePrefix: string = "image", text: string = undefined) {
-        const uploadedCount = new UIEventSource<number>(0)
+        const perId = ImageUploadFlow.uploadCountsPerId
+        const id = tagsSource.data.id
+        if(!perId.has(id)){
+            perId.set(id, new UIEventSource<number>(0))
+        }
+        const uploadedCount = perId.get(id)
         const uploader = new ImgurUploader(url => {
             // A file was uploaded - we add it to the tags of the object
 
@@ -125,7 +133,10 @@ export class ImageUploadFlow extends Toggle {
                 if(l == 0){
                     return  undefined;
                 }
-                return t.uploadDone.Clone().SetClass("thanks");
+                if(l == 1){
+                    return t.uploadDone.Clone().SetClass("thanks");
+                }
+                return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks")
             })),
             
             fileSelector,
