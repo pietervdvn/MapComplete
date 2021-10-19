@@ -251,7 +251,8 @@
         "osmTags": {
           "and": [
             "highway!=",
-            "lit!=no"
+            "lit!=no",
+            "lit!="
           ]
         }
       },
