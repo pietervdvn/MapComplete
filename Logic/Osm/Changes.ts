@@ -97,6 +97,7 @@ export class Changes {
             console.log("Is already uploading... Abort")
             return;
         }
+        console.log("Uploading changes due to: ", flushreason)
         this.isUploading.setData(true)
 
         this.flushChangesAsync()
@@ -287,7 +288,7 @@ export class Changes {
                     v = undefined;
                 }
 
-                const oldV = obj.type[k]
+                const oldV = obj.tags[k]
                 if (oldV === v) {
                     continue;
                 }

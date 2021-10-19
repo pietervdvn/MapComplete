@@ -286,6 +286,9 @@ export class UIEventSource<T> {
     }
 
     public stabilized(millisToStabilize): UIEventSource<T> {
+        if(Utils.runningFromConsole){
+            return this;
+        }
 
         const newSource = new UIEventSource<T>(this.data);
 

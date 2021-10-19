@@ -66,7 +66,9 @@ export abstract class OsmObject {
 
         const url = `${OsmObject.backendURL}api/0.6/${id}`;
         const rawData = await Utils.downloadJsonCached(url, 1000)
-        return rawData.elements[0].tags
+        const tags = rawData.elements[0].tags
+        console.log("Tags are", tags)
+        return tags
     }
 
     static async DownloadObjectAsync(id: string): Promise<OsmObject> {
@@ -263,7 +265,7 @@ export abstract class OsmObject {
                 continue;
             }
             const v = this.tags[key];
-            if (v !== "") {
+            if (v !== "" && v !== undefined) {
                 tags += '        <tag k="' + Utils.EncodeXmlValue(key) + '" v="' + Utils.EncodeXmlValue(this.tags[key]) + '"/>\n'
             }
         }
