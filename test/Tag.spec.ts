@@ -166,7 +166,7 @@ export default class TagSpec extends T {
                         }
                     ],
                     condition: "x="
-                }, undefined, "Tests");
+                }, "Tests");
 
                 equal(undefined, tr.GetRenderValue({"foo": "bar"}));
                 equal("Has no name", tr.GetRenderValue({"noname": "yes"})?.txt);
@@ -483,7 +483,7 @@ export default class TagSpec extends T {
                     ]
                 };
 
-                const tagRendering = new TagRenderingConfig(config, null, "test");
+                const tagRendering = new TagRenderingConfig(config, "test");
                 equal(true, tagRendering.IsKnown({bottle: "yes"}))
                 equal(false, tagRendering.IsKnown({}))
             }],

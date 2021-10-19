@@ -3729,5 +3729,69 @@
             ],
             "eraseInvalidValues": true
         }
+    ],
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
+                "mappings": [
+                    {
+                        "if": "bicycle=yes",
+                        "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
+                    },
+                    {
+                        "if": {
+                            "or": [
+                                "car=yes",
+                                "motorcar=yes"
+                            ]
+                        },
+                        "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
+                    }
+                ]
+            },
+            "iconOverlays": [
+                {
+                    "if": {
+                        "or": [
+                            "disused:amenity=charging_station",
+                            "operational_status=broken"
+                        ]
+                    },
+                    "then": "cross_bottom_right:#c22;"
+                },
+                {
+                    "if": {
+                        "or": [
+                            "proposed:amenity=charging_station",
+                            "planned:amenity=charging_station"
+                        ]
+                    },
+                    "then": "./assets/layers/charging_station/under_construction.svg",
+                    "badge": true
+                },
+                {
+                    "if": {
+                        "and": [
+                            "bicycle=yes",
+                            {
+                                "or": [
+                                    "motorcar=yes",
+                                    "car=yes"
+                                ]
+                            }
+                        ]
+                    },
+                    "then": "circle:#fff;./assets/themes/charging_stations/car.svg",
+                    "badge": true
+                }
+            ],
+            "iconSize": {
+                "render": "50,50,bottom"
+            },
+            "location": [
+                "point"
+            ]
+        }
     ]
 }

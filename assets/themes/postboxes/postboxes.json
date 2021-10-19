@@ -79,7 +79,21 @@
             "razed:amenity=post_box"
           ]
         }
-      }
+      },
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/postboxes/postbox.svg"
+          },
+          "iconSize": {
+            "render": "40,40,bottom"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
     },
     {
       "id": "postoffices",
@@ -166,6 +180,27 @@
               },
               "osmTags": "_isOpen=yes"
             }
+          ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "square:white;./assets/themes/postboxes/post_office.svg"
+          },
+          "iconOverlays": [
+            {
+              "if": "opening_hours~*",
+              "then": "isOpen",
+              "badge": true
+            }
+          ],
+          "iconSize": {
+            "render": "40,40,bottom"
+          },
+          "location": [
+            "point",
+            "centroid"
           ]
         }
       ]

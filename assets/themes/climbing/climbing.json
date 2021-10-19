@@ -215,7 +215,27 @@
           }
         }
       ],
-      "wayHandling": 1
+      "wayHandling": 1,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/climbing/club.svg"
+          },
+          "iconOverlays": [
+            {
+              "if": "opening_hours~*",
+              "then": "isOpen",
+              "badge": true
+            }
+          ],
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point"
+          ]
+        }
+      ]
     },
     {
       "id": "climbing_gym",
@@ -313,7 +333,27 @@
       "iconSize": {
         "render": "40,40,center"
       },
-      "wayHandling": 1
+      "wayHandling": 1,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/climbing/climbing_gym.svg"
+          },
+          "iconOverlays": [
+            {
+              "if": "opening_hours~*",
+              "then": "isOpen",
+              "badge": true
+            }
+          ],
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point"
+          ]
+        }
+      ]
     },
     {
       "id": "climbing_route",
@@ -532,7 +572,21 @@
           ]
         }
       ],
-      "wayHandling": 2
+      "wayHandling": 2,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/themes/climbing/climbing_route.svg"
+          },
+          "iconSize": {
+            "render": "28,28,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
     },
     {
       "id": "climbing",
@@ -801,6 +855,20 @@
         "_difficulty_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:grade:french'])",
         "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])",
         "_contained_climbing_routes_count=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').length"
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/climbing/climbing_no_rope.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
       ]
     },
     {
@@ -930,7 +998,15 @@
       "color": {
         "render": "#ddff55AA"
       },
-      "wayHandling": 0
+      "wayHandling": 0,
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/climbing/climbing_unknown.svg",
+          "location": [
+            "point"
+          ]
+        }
+      ]
     }
   ],
   "roamingRenderings": [

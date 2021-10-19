@@ -553,5 +553,26 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/aed/aed.svg",
+                "mappings": [
+                    {
+                        "if": "_recently_surveyed=true",
+                        "then": {
+                            "en": "./assets/layers/defibrillator/aed_checked.svg",
+                            "ru": "./assets/layers/defibrillator/aed_checked.svg",
+                            "it": "./assets/layers/defibrillator/aed_checked.svg",
+                            "fr": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

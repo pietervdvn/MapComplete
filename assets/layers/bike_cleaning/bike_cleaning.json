@@ -162,5 +162,31 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
+            },
+            "iconOverlays": [
+                {
+                    "if": {
+                        "and": [
+                            "service:bicycle:cleaning~*",
+                            "amenity!=bike_wash"
+                        ]
+                    },
+                    "then": {
+                        "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
+                        "roaming": true
+                    },
+                    "badge": true
+                }
+            ],
+            "iconSize": "50,50,bottom",
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

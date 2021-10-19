@@ -768,5 +768,78 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": {
+                    "en": "./assets/layers/bike_repair_station/repair_station.svg",
+                    "ru": "./assets/layers/bike_repair_station/repair_station.svg",
+                    "it": "./assets/layers/bike_repair_station/repair_station.svg",
+                    "fi": "./assets/layers/bike_repair_station/repair_station.svg",
+                    "fr": "./assets/layers/bike_repair_station/repair_station.svg",
+                    "pt_BR": "./assets/layers/bike_repair_station/repair_station.svg",
+                    "de": "./assets/layers/bike_repair_station/repair_station.svg",
+                    "pt": "./assets/layers/bike_repair_station/repair_station.svg"
+                },
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "service:bicycle:pump=no",
+                                "service:bicycle:pump:operational_status=broken"
+                            ]
+                        },
+                        "then": "./assets/layers/bike_repair_station/repair_station.svg"
+                    },
+                    {
+                        "if": {
+                            "and": [
+                                "service:bicycle:pump=yes",
+                                "service:bicycle:tools=yes"
+                            ]
+                        },
+                        "then": "./assets/layers/bike_repair_station/repair_station_pump.svg"
+                    },
+                    {
+                        "if": {
+                            "and": [
+                                "service:bicycle:pump:operational_status=broken",
+                                "service:bicycle:tools=no"
+                            ]
+                        },
+                        "then": "./assets/layers/bike_repair_station/broken_pump_2.svg"
+                    },
+                    {
+                        "if": {
+                            "and": [
+                                "service:bicycle:pump=yes",
+                                {
+                                    "or": [
+                                        "service:bicycle:tools=no",
+                                        "service:bicycle:tools="
+                                    ]
+                                }
+                            ]
+                        },
+                        "then": "./assets/layers/bike_repair_station/pump.svg"
+                    }
+                ]
+            },
+            "iconOverlays": [
+                {
+                    "if": "operator=De Fietsambassade Gent",
+                    "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg",
+                    "badge": true
+                }
+            ],
+            "iconSize": {
+                "render": "50,50,bottom"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        }
+    ]
 }

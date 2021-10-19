@@ -322,5 +322,26 @@
             ]
         }
     },
-    "allowMove": true
+    "allowMove": true,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/shops/shop.svg"
+            },
+            "iconOverlays": [
+                {
+                    "if": "opening_hours~*",
+                    "then": "isOpen",
+                    "badge": true
+                }
+            ],
+            "iconSize": {
+                "render": "40,40,center"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        }
+    ]
 }

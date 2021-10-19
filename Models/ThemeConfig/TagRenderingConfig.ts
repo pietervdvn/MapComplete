@@ -37,9 +37,8 @@ export default class TagRenderingConfig {
         readonly then: Translation
         readonly hideInAnswer: boolean | TagsFilter
     }[]
-    readonly roaming: boolean;
 
-    constructor(json: string | TagRenderingConfigJson, conditionIfRoaming: TagsFilter, context?: string) {
+    constructor(json: string | TagRenderingConfigJson, context?: string) {
 
         if (json === "questions") {
             // Very special value
@@ -61,13 +60,7 @@ export default class TagRenderingConfig {
         this.id = json.id ?? "";
         this.render = Translations.T(json.render, context + ".render");
         this.question = Translations.T(json.question, context + ".question");
-        this.roaming = json.roaming ?? false;
-        const condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);
-        if (this.roaming && conditionIfRoaming !== undefined) {
-            this.condition = new And([condition, conditionIfRoaming]);
-        } else {
-            this.condition = condition;
-        }
+        this.condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (json.freeform) {
 
             if(json.freeform.addExtraTags !== undefined && json.freeform.addExtraTags.map === undefined){

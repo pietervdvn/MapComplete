@@ -37,7 +37,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateTitleBar(tags: UIEventSource<any>,
                                     layerConfig: LayerConfig): BaseUIElement {
-        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
+        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"))
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon,
@@ -132,7 +132,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             new VariableUiElement(
                 State.state.featureSwitchIsDebugging.map(isDebugging => {
                     if (isDebugging) {
-                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
+                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"},  "");
                         return new TagRenderingAnswer(tags, config, "all_tags")
                     }
                 })

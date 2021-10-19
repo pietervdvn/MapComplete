@@ -36,7 +36,14 @@
       "color": "#444444",
       "width": {
         "render": "1"
-      }
+      },
+      "mapRendering": [
+        {
+          "location": [
+            "point"
+          ]
+        }
+      ]
     },
     {
       "builtin": "play_forest",
@@ -252,7 +259,15 @@
       },
       "width": {
         "render": "9"
-      }
+      },
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/speelplekken/walking_route.svg",
+          "location": [
+            "point"
+          ]
+        }
+      ]
     }
   ],
   "clustering": {

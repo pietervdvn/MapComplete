@@ -365,5 +365,19 @@
             ]
         }
     ],
-    "wayHandling": 2
+    "wayHandling": 2,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/bike_cafe/bike_cafe.svg"
+            },
+            "iconSize": {
+                "render": "50,50,bottom"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        }
+    ]
 }

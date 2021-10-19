@@ -582,5 +582,36 @@
     },
     "deletion": {
         "minNeededChangesets": 5
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "circle:#ffffff;./assets/themes/trees/unknown.svg",
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "leaf_type=broadleaved"
+                            ]
+                        },
+                        "then": "circle:#ffffff;./assets/themes/trees/broadleaved.svg"
+                    },
+                    {
+                        "if": {
+                            "and": [
+                                "leaf_type=needleleaved"
+                            ]
+                        },
+                        "then": "circle:#ffffff;./assets/themes/trees/needleleaved.svg"
+                    }
+                ]
+            },
+            "iconSize": {
+                "render": "40,40,bottom"
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

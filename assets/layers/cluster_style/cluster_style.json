@@ -36,5 +36,21 @@
                 "then": "<div class='rounded-full text-xl font-bold flex flex-col' style='width: 2.5rem; height: 2.5rem; background: white'>{kilocount}K</div>"
             }
         ]
-    }
+    },
+    "mapRendering": [
+        {
+            "label": {
+                "render": "<div class='rounded-full text-xl font-bold' style='width: 2rem; height: 2rem; background: white'>{showCount}</div>",
+                "mappings": [
+                    {
+                        "if": "showCount>1000",
+                        "then": "<div class='rounded-full text-xl font-bold flex flex-col' style='width: 2.5rem; height: 2.5rem; background: white'>{kilocount}K</div>"
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

@@ -206,5 +206,28 @@
     },
     "dashArray": {
         "render": "5 5"
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/trail/trail.svg",
+                "mappings": [
+                    {
+                        "if": "wheelchair=yes",
+                        "then": "./assets/layers/trail/wheelchair.svg"
+                    },
+                    {
+                        "if": "pushchair=yes",
+                        "then": "./assets/layers/trail/pushchair.svg"
+                    }
+                ]
+            },
+            "iconSize": {
+                "render": "35,35,center"
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

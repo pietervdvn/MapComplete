@@ -13,5 +13,18 @@
     },
     "color": {
         "render": "#00f"
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "circle:white;./assets/svg/home.svg"
+            },
+            "iconSize": {
+                "render": "20,20,center"
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

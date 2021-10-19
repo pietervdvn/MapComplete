@@ -635,5 +635,57 @@
             ]
         }
     },
-    "allowMove": true
+    "allowMove": true,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "circle:white;./assets/layers/food/restaurant.svg",
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "amenity=fast_food",
+                                "cuisine=friture"
+                            ]
+                        },
+                        "then": "circle:white;./assets/layers/food/fries.svg"
+                    },
+                    {
+                        "if": "amenity=fast_food",
+                        "then": "circle:white;./assets/layers/food/fastfood.svg"
+                    }
+                ]
+            },
+            "iconOverlays": [
+                {
+                    "if": "opening_hours~*",
+                    "then": "isOpen",
+                    "badge": true
+                },
+                {
+                    "if": {
+                        "or": [
+                            "diet:vegetarian=yes",
+                            "diet:vegan=yes"
+                        ]
+                    },
+                    "then": {
+                        "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
+                    },
+                    "badge": true
+                }
+            ],
+            "label": {
+                "mappings": [
+                    {
+                        "if": "name~*",
+                        "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

@@ -183,6 +183,14 @@
       "width": "10",
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/cyclestreets/F111.svg",
+          "location": [
+            "point"
+          ]
+        }
       ]
     },
     {
@@ -235,6 +243,14 @@
       "width": "5",
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/cyclestreets/F113.svg",
+          "location": [
+            "point"
+          ]
+        }
       ]
     },
     {
@@ -300,6 +316,14 @@
       },
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/svg/pencil.svg",
+          "location": [
+            "point"
+          ]
+        }
       ]
     }
   ],

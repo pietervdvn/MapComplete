@@ -1176,5 +1176,18 @@
             }
         ]
     },
-    "allowSplit": true
+    "allowSplit": true,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/cycle_infra/bicycleway.svg"
+            },
+            "iconSize": {
+                "render": "40,40,center"
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

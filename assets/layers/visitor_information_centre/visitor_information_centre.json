@@ -66,5 +66,18 @@
         "render": "#E64C00"
     },
     "presets": [],
-    "wayHandling": 1
+    "wayHandling": 1,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/visitor_information_centre/information.svg"
+            },
+            "iconSize": {
+                "render": "40,40,center"
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

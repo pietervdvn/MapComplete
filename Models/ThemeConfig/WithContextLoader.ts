@@ -24,7 +24,6 @@ export default class WithContextLoader {
             }
             return new TagRenderingConfig(
                 deflt,
-                undefined,
                 `${this._context}.${key}.default value`
             );
         }
@@ -36,7 +35,6 @@ export default class WithContextLoader {
         }
         return new TagRenderingConfig(
             v,
-            undefined,
             `${this._context}.${key}`
         );
     }
@@ -72,7 +70,7 @@ export default class WithContextLoader {
                         )}`;
                     }
 
-                    const tr = new TagRenderingConfig("questions", undefined, context);
+                    const tr = new TagRenderingConfig("questions",  context);
                 renderings.push(tr)
                     continue;
                 }
@@ -81,7 +79,6 @@ export default class WithContextLoader {
                     const sharedJson = SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
                     const tr = new TagRenderingConfig(
                         Utils.Merge(renderingJson["override"], sharedJson),
-                        undefined,
                         `${context}.tagrendering[${i}]+override`
                     );
                     renderings.push(tr)
@@ -106,7 +103,6 @@ export default class WithContextLoader {
 
             const tr = new TagRenderingConfig(
                 <TagRenderingConfigJson>renderingJson,
-                undefined,
                 `${context}.tagrendering[${i}]`
             );
             renderings.push(tr)

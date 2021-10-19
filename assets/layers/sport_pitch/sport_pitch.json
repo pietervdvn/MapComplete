@@ -490,5 +490,78 @@
                 "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
             ]
         }
+    ],
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "circle:white;./assets/layers/sport_pitch/sport_pitch.svg",
+                "mappings": [
+                    {
+                        "if": {
+                            "or": [
+                                "sport=baseball",
+                                "sport=basketball",
+                                "sport=beachvolleyball",
+                                "sport=boules",
+                                "sport=skateboard",
+                                "sport=soccer",
+                                "sport=table_tennis",
+                                "sport=tennis",
+                                "sport=volleyball"
+                            ]
+                        },
+                        "then": "circle:white;./assets/layers/sport_pitch/{sport}.svg"
+                    }
+                ]
+            },
+            "iconOverlays": [
+                {
+                    "if": {
+                        "and": [
+                            "opening_hours!=24/7",
+                            "opening_hours~*"
+                        ]
+                    },
+                    "then": "isOpen",
+                    "badge": true
+                },
+                {
+                    "if": {
+                        "or": [
+                            "access=customers",
+                            "access=private",
+                            "access=no"
+                        ]
+                    },
+                    "then": "circle:white;./assets/layers/sport_pitch/lock.svg",
+                    "badge": true
+                }
+            ],
+            "iconSize": {
+                "render": "25,25,center",
+                "mappings": [
+                    {
+                        "if": {
+                            "or": [
+                                "_size_classification=medium",
+                                "id~node/.*"
+                            ]
+                        },
+                        "then": "40,40,center"
+                    },
+                    {
+                        "if": "_size_classification=small",
+                        "then": "25,25,center"
+                    },
+                    {
+                        "if": "_size_classification=large",
+                        "then": "50,50,center"
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        }
     ]
 }

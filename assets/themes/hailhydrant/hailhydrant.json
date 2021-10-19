@@ -316,7 +316,21 @@
           }
         }
       ],
-      "wayHandling": 2
+      "wayHandling": 2,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/hydrant.svg"
+          },
+          "iconSize": {
+            "render": "20,20,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
     },
     {
       "id": "extinguisher",
@@ -433,7 +447,20 @@
           }
         }
       ],
-      "wayHandling": 1
+      "wayHandling": 1,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
+          },
+          "iconSize": {
+            "render": "20,20,center"
+          },
+          "location": [
+            "point"
+          ]
+        }
+      ]
     },
     {
       "id": "fire_stations",
@@ -657,6 +684,20 @@
             "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions."
           }
         }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+          },
+          "iconSize": {
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
       ]
     },
     {
@@ -858,7 +899,21 @@
           }
         }
       ],
-      "wayHandling": 2
+      "wayHandling": 2,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
+          },
+          "iconSize": {
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
     }
   ],
   "defaultBackgroundId": "HDM_HOT"

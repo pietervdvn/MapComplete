@@ -27,7 +27,6 @@ export default class PointRenderingConfig extends WithContextLoader {
         this.iconOverlays = (json.iconOverlays ?? []).map((overlay, i) => {
             let tr = new TagRenderingConfig(
                 overlay.then,
-                undefined,
                 `iconoverlays.${i}`
             );
             if (
@@ -86,15 +85,6 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
      {
         function num(str, deflt = 40) {
-            const n = Number(str);
-            if (isNaN(n)) {
-                return deflt;
-            }
-            return n;
-        }
-
-        function rendernum(tr: TagRenderingConfig, deflt: number) {
-            const str = Number(render(tr, "" + deflt));
             const n = Number(str);
             if (isNaN(n)) {
                 return deflt;

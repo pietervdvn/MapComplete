@@ -6,7 +6,6 @@ import BaseLayer from "../../Models/BaseLayer";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
 import State from "../../State";
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
@@ -16,7 +15,6 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "./Toggle";
-import {start} from "repl";
 
 export default class LocationInput extends InputElement<Loc> implements MinimapObj {
 
@@ -25,12 +23,17 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             id: "matchpoint", source: {
                 osmTags: {and: []}
             },
-            icon: "./assets/svg/crosshair-empty.svg"
+            mapRendering: [{
+                location: ["point"],
+                icon: "./assets/svg/crosshair-empty.svg"
+            }]
         }, "matchpoint icon", true
     )
-    
+
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
+    public readonly _matching_layer: LayerConfig;
+    public readonly leafletMap: UIEventSource<any>
     private _centerLocation: UIEventSource<Loc>;
     private readonly mapBackground: UIEventSource<BaseLayer>;
     /**
@@ -43,10 +46,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     private readonly _maxSnapDistance: number
     private readonly _snappedPointTags: any;
     private readonly _bounds: UIEventSource<BBox>;
-    public readonly _matching_layer: LayerConfig;
     private readonly map: BaseUIElement & MinimapObj;
-    public readonly leafletMap: UIEventSource<any>
-
     private readonly clickLocation: UIEventSource<Loc>;
     private readonly _minZoom: number;
 
@@ -83,7 +83,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 }
                 this._matching_layer = matchingLayer;
             } else {
-               this._matching_layer = LocationInput.matchLayer
+                this._matching_layer = LocationInput.matchLayer
             }
 
             this._snappedPoint = options.centerLocation.map(loc => {
@@ -158,25 +158,29 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     IsValid(t: Loc): boolean {
         return t !== undefined;
     }
-    
+
+    installBounds(factor: number | BBox, showRange?: boolean): void {
+        this.map.installBounds(factor, showRange)
+    }
+
     protected InnerConstructElement(): HTMLElement {
         try {
             const self = this;
             const hasMoved = new UIEventSource(false)
-            const startLocation = {                ...this._centerLocation.data            }
-            this._centerLocation. addCallbackD(newLocation => {
+            const startLocation = {...this._centerLocation.data}
+            this._centerLocation.addCallbackD(newLocation => {
                 const f = 100000
                 console.log(newLocation.lon, startLocation.lon)
-                const diff = (Math.abs(newLocation.lon * f - startLocation.lon* f ) + Math.abs(newLocation.lat* f  - startLocation.lat* f ))
-                if(diff < 1){
+                const diff = (Math.abs(newLocation.lon * f - startLocation.lon * f) + Math.abs(newLocation.lat * f - startLocation.lat * f))
+                if (diff < 1) {
                     return;
                 }
                 hasMoved.setData(true)
                 return true;
             })
             this.clickLocation.addCallbackAndRunD(location => this._centerLocation.setData(location))
-             if (this._snapTo !== undefined) {
-                
+            if (this._snapTo !== undefined) {
+
                 // Show the lines to snap to
                 new ShowDataMultiLayer({
                         features: new StaticFeatureSource(this._snapTo, true),
@@ -184,7 +188,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                         zoomToFeatures: false,
                         leafletMap: this.map.leafletMap,
                         layers: State.state.filteredLayers,
-                    allElements: State.state.allElements
+                        allElements: State.state.allElements
                     }
                 )
                 // Show the central point
@@ -194,16 +198,16 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                     }
                     return [{feature: loc}];
                 })
-                    new ShowDataLayer({
-                        features: new StaticFeatureSource(matchPoint, true),
-                        enablePopups: false,
-                        zoomToFeatures: false,
-                        leafletMap: this.map.leafletMap,
-                        layerToShow: this._matching_layer,
-                        allElements: State.state.allElements,
-                        selectedElement: State.state.selectedElement
-                    })
-                    
+                new ShowDataLayer({
+                    features: new StaticFeatureSource(matchPoint, true),
+                    enablePopups: false,
+                    zoomToFeatures: false,
+                    leafletMap: this.map.leafletMap,
+                    layerToShow: this._matching_layer,
+                    allElements: State.state.allElements,
+                    selectedElement: State.state.selectedElement
+                })
+
             }
             this.mapBackground.map(layer => {
                 const leaflet = this.map.leafletMap.data
@@ -216,19 +220,19 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 leaflet.setZoom(layer.max_zoom - 1)
 
             }, [this.map.leafletMap])
-            
+
             const animatedHand = Svg.hand_ui()
                 .SetStyle("width: 2rem; height: unset;")
                 .SetClass("hand-drag-animation block pointer-events-none")
-            
+
             return new Combine([
                 new Combine([
                     Svg.move_arrows_ui()
                         .SetClass("block relative pointer-events-none")
                         .SetStyle("left: -2.5rem; top: -2.5rem; width: 5rem; height: 5rem")
-                    ]).SetClass("block w-0 h-0 z-10 relative")
+                ]).SetClass("block w-0 h-0 z-10 relative")
                     .SetStyle("background: rgba(255, 128, 128, 0.21); left: 50%; top: 50%; opacity: 0.5"),
-                
+
                 new Toggle(undefined,
                     animatedHand, hasMoved)
                     .SetClass("block w-0 h-0 z-10 relative")
@@ -242,11 +246,6 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             console.error("Could not generate LocationInputElement:", e)
             return new FixedUiElement("Constructing a locationInput failed due to" + e).SetClass("alert").ConstructElement();
         }
-    }
-
-   
-    installBounds(factor: number | BBox, showRange?: boolean): void {
-        this.map.installBounds(factor, showRange)
     }
 
 }

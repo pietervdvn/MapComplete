@@ -233,6 +233,13 @@
             }
           ]
         }
+      ],
+      "mapRendering": [
+        {
+          "location": [
+            "point"
+          ]
+        }
       ]
     }
   ],

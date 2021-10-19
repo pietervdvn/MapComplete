@@ -252,5 +252,13 @@
     "color": {
         "render": "#eaba2a"
     },
-    "presets": []
+    "presets": [],
+    "mapRendering": [
+        {
+            "icon": "./assets/layers/slow_roads/slow_road.svg",
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

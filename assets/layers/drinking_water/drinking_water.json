@@ -179,5 +179,28 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg"
+            },
+            "iconOverlays": [
+                {
+                    "if": {
+                        "or": [
+                            "operational_status=broken",
+                            "operational_status=closed"
+                        ]
+                    },
+                    "then": "close:#c33",
+                    "badge": true
+                }
+            ],
+            "iconSize": "40,40,bottom",
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }
