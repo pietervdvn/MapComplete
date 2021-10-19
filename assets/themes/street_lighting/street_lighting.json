@@ -282,29 +282,29 @@
               "if": "lit=yes",
               "then": {
                 "en": "This street is lit",
-                "nl": "Deze weg is verlicht"
+                "nl": "Deze straat is verlicht"
               }
             },
             {
               "if": "lit=no",
               "then": {
-                "en": "This road is not lit",
-                "nl": "Deze weg is niet verlicht"
+                "en": "This street is not lit",
+                "nl": "Deze straat is niet verlicht"
               }
             },
             {
               "if": "lit=sunset-sunrise",
               "then": {
-                "en": "This road is lit at night",
-                "nl": "Deze weg is 's nachts verlicht"
+                "en": "This street is lit at night",
+                "nl": "Deze straat is 's nachts verlicht"
               },
               "hideInAnswer": true
             },
             {
               "if": "lit=24/7",
               "then": {
-                "en": "This road is lit 24/7",
-                "nl": "Deze weg is 24/7 verlicht"
+                "en": "This street is lit 24/7",
+                "nl": "Deze straat is 24/7 verlicht"
               }
             }
           ]
@@ -347,29 +347,29 @@
               "if": "lit=yes",
               "then": {
                 "en": "This street is lit",
-                "nl": "Deze weg is verlicht"
+                "nl": "Deze straat is verlicht"
               }
             },
             {
               "if": "lit=no",
               "then": {
-                "en": "This road is not lit",
-                "nl": "Deze weg is niet verlicht"
+                "en": "This street is not lit",
+                "nl": "Deze straat is niet verlicht"
               }
             },
             {
               "if": "lit=sunset-sunrise",
               "then": {
-                "en": "This road is lit at night",
-                "nl": "Deze weg is 's nachts verlicht"
+                "en": "This street is lit at night",
+                "nl": "Deze straat is 's nachts verlicht"
               },
               "hideInAnswer": true
             },
             {
               "if": "lit=24/7",
               "then": {
-                "en": "This road is lit 24/7",
-                "nl": "Deze weg is 24/7 verlicht"
+                "en": "This street is lit 24/7",
+                "nl": "Deze straat is 24/7 verlicht"
               }
             }
           ]
