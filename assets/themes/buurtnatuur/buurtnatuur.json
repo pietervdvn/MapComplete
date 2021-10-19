@@ -124,19 +124,6 @@
             "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
           }
         }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg"
-          },
-          "iconSize": {
-            "render": "50,50,center"
-          },
-          "location": [
-            "point"
-          ]
-        }
       ]
     },
     {
@@ -234,19 +221,6 @@
           "description": {
             "nl": "Voeg een ontbrekend park toe"
           }
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
         }
       ]
     },
@@ -365,280 +339,269 @@
             "nl": "Voeg een ontbrekend bos toe aan de kaart"
           }
         }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
-        }
       ]
     },
     "viewpoint"
   ],
-  "roamingRenderings": [
-    {
-      "#": "Access tag",
-      "condition": {
-        "and": [
-          "tourism!~viewpoint"
+  "overrideAll": {
+    "tagRenderings+": [
+      {
+        "id": "Access tag",
+        "condition": {
+          "and": [
+            "tourism!~viewpoint"
+          ]
+        },
+        "render": {
+          "nl": "De toegankelijkheid van dit gebied is: {access:description}"
+        },
+        "question": {
+          "nl": "Is dit gebied toegankelijk?"
+        },
+        "freeform": {
+          "key": "access:description",
+          "addExtraTags": [
+            "access="
+          ]
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "access:description=",
+                "access=",
+                "leisure=park"
+              ]
+            },
+            "then": {
+              "nl": "Dit gebied is vrij toegankelijk"
+            },
+            "hideInAnswer": true
+          },
+          {
+            "if": {
+              "and": [
+                "access:description=",
+                "access=yes",
+                "fee="
+              ]
+            },
+            "then": {
+              "nl": "Vrij toegankelijk"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "access:description=",
+                "access=no",
+                "fee="
+              ]
+            },
+            "then": {
+              "nl": "Niet toegankelijk"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "access:description=",
+                "access=private",
+                "fee="
+              ]
+            },
+            "then": {
+              "nl": "Niet toegankelijk, want privégebied"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "access:description=",
+                "access=permissive",
+                "fee="
+              ]
+            },
+            "then": {
+              "nl": "Toegankelijk, ondanks dat het privegebied is"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "access:description=",
+                "access=guided",
+                "fee="
+              ]
+            },
+            "then": {
+              "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "access:description=",
+                "access=yes",
+                "fee=yes"
+              ]
+            },
+            "then": {
+              "nl": "Toegankelijk mits betaling"
+            }
+          }
         ]
       },
-      "render": {
-        "nl": "De toegankelijkheid van dit gebied is: {access:description}"
-      },
-      "question": {
-        "nl": "Is dit gebied toegankelijk?"
-      },
-      "freeform": {
-        "key": "access:description",
-        "addExtraTags": [
-          "access="
-        ]
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "access:description=",
-              "access=",
-              "leisure=park"
-            ]
-          },
-          "then": {
-            "nl": "Dit gebied is vrij toegankelijk"
-          },
-          "hideInAnswer": true
+      {
+        "id": "Operator tag",
+        "render": {
+          "nl": "Beheer door {operator}"
         },
-        {
-          "if": {
-            "and": [
-              "access:description=",
-              "access=yes",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Vrij toegankelijk"
-          }
+        "question": {
+          "nl": "Wie beheert dit gebied?"
         },
-        {
-          "if": {
-            "and": [
-              "access:description=",
-              "access=no",
-              "fee="
-            ]
-          },
-          "then": {
-            "nl": "Niet toegankelijk"
-          }
+        "freeform": {
+          "key": "operator"
         },
-        {
-          "if": {
-            "and": [
-              "access:description=",
-              "access=private",
-              "fee="
-            ]
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "leisure=park",
+                "operator="
+              ]
+            },
+            "then": "Beheer door de gemeente",
+            "hideInAnswer": true
           },
-          "then": {
-            "nl": "Niet toegankelijk, want privégebied"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access:description=",
-              "access=permissive",
-              "fee="
-            ]
+          {
+            "if": {
+              "and": [
+                "operator=Natuurpunt"
+              ]
+            },
+            "then": {
+              "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+            }
           },
-          "then": {
-            "nl": "Toegankelijk, ondanks dat het privegebied is"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access:description=",
-              "access=guided",
-              "fee="
-            ]
+          {
+            "if": {
+              "and": [
+                "operator~(n|N)atuurpunt.*"
+              ]
+            },
+            "then": {
+              "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+            },
+            "hideInAnswer": true
           },
-          "then": {
-            "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "access:description=",
-              "access=yes",
-              "fee=yes"
-            ]
+          {
+            "if": {
+              "and": [
+                "operator=Agentschap Natuur en Bos"
+              ]
+            },
+            "then": {
+              "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+            }
           },
-          "then": {
-            "nl": "Toegankelijk mits betaling"
+          {
+            "if": {
+              "and": [
+                "operator:type=private"
+              ]
+            },
+            "then": "Beheer door een privépersoon",
+            "hideInAnswer": true
+          },
+          {
+            "if": {
+              "and": [
+                "operator:type=private",
+                "operator="
+              ]
+            },
+            "then": "Beheer door een privépersoon"
           }
+        ],
+        "condition": {
+          "and": [
+            "leisure!~park",
+            "tourism!~viewpoint"
+          ]
         }
-      ]
-    },
-    {
-      "#": "Operator tag",
-      "render": {
-        "nl": "Beheer door {operator}"
       },
-      "question": {
-        "nl": "Wie beheert dit gebied?"
-      },
-      "freeform": {
-        "key": "operator"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "leisure=park",
-              "operator="
-            ]
-          },
-          "then": "Beheer door de gemeente",
-          "hideInAnswer": true
+      {
+        "id": "Non-editable description {description}",
+        "render": {
+          "nl": "Extra info: <i>{description}</i>"
         },
-        {
-          "if": {
-            "and": [
-              "operator=Natuurpunt"
-            ]
-          },
-          "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "operator~(n|N)atuurpunt.*"
-            ]
-          },
-          "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
-          },
-          "hideInAnswer": true
-        },
-        {
-          "if": {
-            "and": [
-              "operator=Agentschap Natuur en Bos"
-            ]
-          },
-          "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "operator:type=private"
-            ]
-          },
-          "then": "Beheer door een privépersoon",
-          "hideInAnswer": true
-        },
-        {
-          "if": {
-            "and": [
-              "operator:type=private",
-              "operator="
-            ]
-          },
-          "then": "Beheer door een privépersoon"
+        "freeform": {
+          "key": "description"
         }
-      ],
-      "condition": {
-        "and": [
-          "leisure!~park",
-          "tourism!~viewpoint"
-        ]
-      }
-    },
-    {
-      "#": "Non-editable description {description}",
-      "render": {
-        "nl": "Extra info: <i>{description}</i>"
       },
-      "freeform": {
-        "key": "description"
-      }
-    },
-    {
-      "#": "Editable description {description:0}",
-      "question": "Is er extra info die je kwijt wil?<br/><span class='subtle'>De <i>naam</i> van het gebied wordt in de volgende vraag gesteld</span>",
-      "render": {
-        "nl": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
-      },
-      "freeform": {
-        "key": "description:0"
-      }
-    },
-    {
-      "#": "Name:nl-tag",
-      "render": {
-        "nl": "Dit gebied heet {name:nl}"
-      },
-      "question": {
-        "nl": "Wat is de Nederlandstalige naam van dit gebied?"
-      },
-      "freeform": {
-        "key": "name:nl"
-      },
-      "condition": {
-        "and": [
-          "name:nl~*",
-          "viewpoint!~tourism"
-        ]
-      }
-    },
-    {
-      "#": "Name tag",
-      "render": {
-        "nl": "Dit gebied heet {name}"
-      },
-      "question": {
-        "nl": "Wat is de naam van dit gebied?"
-      },
-      "freeform": {
-        "key": "name",
-        "addExtraTags": [
-          "noname="
-        ]
-      },
-      "condition": {
-        "and": [
-          "name:nl=",
-          "tourism!~viewpoint"
-        ]
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "noname=yes",
-              "name="
-            ]
-          },
-          "then": {
-            "nl": "Dit gebied heeft geen naam"
-          }
+      {
+        "id": "Editable description {description:0}",
+        "question": "Is er extra info die je kwijt wil?<br/><span class='subtle'>De <i>naam</i> van het gebied wordt in de volgende vraag gesteld</span>",
+        "render": {
+          "nl": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
+        },
+        "freeform": {
+          "key": "description:0"
         }
-      ]
-    }
-  ]
+      },
+      {
+        "id": "Name:nl-tag",
+        "render": {
+          "nl": "Dit gebied heet {name:nl}"
+        },
+        "question": {
+          "nl": "Wat is de Nederlandstalige naam van dit gebied?"
+        },
+        "freeform": {
+          "key": "name:nl"
+        },
+        "condition": {
+          "and": [
+            "name:nl~*",
+            "viewpoint!~tourism"
+          ]
+        }
+      },
+      {
+        "id": "Name tag",
+        "render": {
+          "nl": "Dit gebied heet {name}"
+        },
+        "question": {
+          "nl": "Wat is de naam van dit gebied?"
+        },
+        "freeform": {
+          "key": "name",
+          "addExtraTags": [
+            "noname="
+          ]
+        },
+        "condition": {
+          "and": [
+            "name:nl=",
+            "tourism!~viewpoint"
+          ]
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "noname=yes",
+                "name="
+              ]
+            },
+            "then": {
+              "nl": "Dit gebied heeft geen naam"
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

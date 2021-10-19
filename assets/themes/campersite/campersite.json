@@ -676,31 +676,7 @@
           }
         }
       ],
-      "wayHandling": 2,
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:white;./assets/themes/campersite/caravan.svg",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "fee=no"
-                  ]
-                },
-                "then": "circle:white;./assets/themes/campersite/caravan_green.svg"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        }
-      ]
+      "wayHandling": 2
     },
     {
       "id": "dumpstations",
@@ -1099,82 +1075,73 @@
             "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom."
           }
         }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg"
-          },
-          "iconSize": {
-            "render": "32,32,center"
-          },
-          "location": [
-            "point"
-          ]
-        }
       ]
     }
   ],
-  "roamingRenderings": [
-    {
-      "render": {
-        "en": "This place is operated by {operator}",
-        "ja": "この場所は{operator}によって運営されます",
-        "it": "Questo luogo è gestito da {operator}",
-        "fr": "Ce site est exploité par {operator}",
-        "de": "Dieser Ort wird betrieben von {operator}"
-      },
-      "question": {
-        "en": "Who operates this place?",
-        "ja": "この店は誰が経営しているんですか?",
-        "it": "Chi gestisce questo luogo?",
-        "fr": "Qui est l’exploitant du site ?",
-        "de": "Wer betreibt diesen Ort?"
-      },
-      "freeform": {
-        "key": "operator"
-      }
-    },
-    {
-      "question": {
-        "en": "Does this place have a power supply?",
-        "ja": "この場所に電源はありますか?",
-        "it": "Questo luogo fornisce corrente elettrica?",
-        "fr": "Ce site a-t’il une source d’électricité ?",
-        "de": "Hat dieser Ort eine Stromversorgung?"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "power_supply=yes"
-            ]
-          },
-          "then": {
-            "en": "This place has a power supply",
-            "id": "Tempat ini memiliki catu daya",
-            "ja": "この場所には電源があります",
-            "it": "Questo luogo fornisce corrente elettrica",
-            "fr": "Ce site a une source d’alimentation",
-            "de": "Dieser Ort hat eine Stromversorgung"
-          }
+  "overrideAll": {
+    "tagRenderings+": [
+      {
+        "id": "operator",
+        "render": {
+          "en": "This place is operated by {operator}",
+          "ja": "この場所は{operator}によって運営されます",
+          "it": "Questo luogo è gestito da {operator}",
+          "fr": "Ce site est exploité par {operator}",
+          "de": "Dieser Ort wird betrieben von {operator}"
         },
-        {
-          "if": {
-            "and": [
-              "power_supply=no"
-            ]
-          },
-          "then": {
-            "en": "This place does not have power supply",
-            "id": "Tempat ini tidak memiliki sumber listrik",
-            "ja": "この場所には電源がありません",
-            "it": "Questo luogo non fornisce corrente elettrica",
-            "fr": "Ce site n’a pas de source d’alimentation",
-            "de": "Dieser Ort hat keine Stromversorgung"
-          }
+        "question": {
+          "en": "Who operates this place?",
+          "ja": "この店は誰が経営しているんですか?",
+          "it": "Chi gestisce questo luogo?",
+          "fr": "Qui est l’exploitant du site ?",
+          "de": "Wer betreibt diesen Ort?"
+        },
+        "freeform": {
+          "key": "operator"
         }
-      ]
-    }
-  ]
+      },
+      {
+        "id": "power_supply",
+        "question": {
+          "en": "Does this place have a power supply?",
+          "ja": "この場所に電源はありますか?",
+          "it": "Questo luogo fornisce corrente elettrica?",
+          "fr": "Ce site a-t’il une source d’électricité ?",
+          "de": "Hat dieser Ort eine Stromversorgung?"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "power_supply=yes"
+              ]
+            },
+            "then": {
+              "en": "This place has a power supply",
+              "id": "Tempat ini memiliki catu daya",
+              "ja": "この場所には電源があります",
+              "it": "Questo luogo fornisce corrente elettrica",
+              "fr": "Ce site a une source d’alimentation",
+              "de": "Dieser Ort hat eine Stromversorgung"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "power_supply=no"
+              ]
+            },
+            "then": {
+              "en": "This place does not have power supply",
+              "id": "Tempat ini tidak memiliki sumber listrik",
+              "ja": "この場所には電源がありません",
+              "it": "Questo luogo non fornisce corrente elettrica",
+              "fr": "Ce site n’a pas de source d’alimentation",
+              "de": "Dieser Ort hat keine Stromversorgung"
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

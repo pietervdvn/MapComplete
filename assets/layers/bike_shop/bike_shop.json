@@ -162,6 +162,10 @@
             "condition": "operator=De Fietsambassade Gent"
         },
         {
+            "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
+            "condition": "operator=De Fietsambassade Gent"
+        },
+        {
             "condition": {
                 "or": [
                     "service:bicycle:pump=yes",
@@ -303,6 +307,13 @@
             "id": "bike_shop-opening_hours"
         },
         "description",
+        {
+            "render": "Enkel voor {access}",
+            "freeform": {
+                "key": "access"
+            },
+            "id": "bike_shop-access"
+        },
         {
             "render": "Enkel voor {access}",
             "freeform": {
@@ -691,6 +702,11 @@
         ]
     },
     "iconOverlays": [
+        {
+            "if": "opening_hours~*",
+            "then": "isOpen",
+            "badge": true
+        },
         {
             "if": "opening_hours~*",
             "then": "isOpen",

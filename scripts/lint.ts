@@ -63,6 +63,11 @@ for (const themeFile of themeFiles) {
         // @ts-ignore
         fixLayerConfig(layerConfig)
     }
+    
+    if(themeFile.parsed["roamingRenderings"] !== undefined && themeFile.parsed["roamingRenderings"].length == 0){
+        delete themeFile.parsed["roamingRenderings"]
+    }
+    
     writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "  "))
 }
 //*/
