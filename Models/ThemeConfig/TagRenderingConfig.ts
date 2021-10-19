@@ -221,7 +221,6 @@ export default class TagRenderingConfig {
         }
     }
 
-
     /**
      * Returns true if it is known or not shown, false if the question should be asked
      * @constructor

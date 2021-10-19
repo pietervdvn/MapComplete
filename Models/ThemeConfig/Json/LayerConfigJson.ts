@@ -4,6 +4,7 @@ import FilterConfigJson from "./FilterConfigJson";
 import {DeleteConfigJson} from "./DeleteConfigJson";
 import UnitConfigJson from "./UnitConfigJson";
 import MoveConfigJson from "./MoveConfigJson";
+import PointRenderingConfigJson from "./PointRenderingConfigJson";
 
 /**
  * Configuration for a single layer
@@ -119,47 +120,8 @@ export interface LayerConfigJson {
      */
     titleIcons?: (string | TagRenderingConfigJson)[];
 
-    /**
-     * The icon for an element.
-     * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
-     *
-     * The result of the icon is rendered as follows:
-     * the resulting string is interpreted as a _list_ of items, separated by ";". The bottommost layer is the first layer.
-     * As a result, on could use a generic pin, then overlay it with a specific icon.
-     * To make things even more practical, one can use all SVG's from the folder "assets/svg" and _substitute the color_ in it.
-     * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
-     *
-     */
-    icon?: string | TagRenderingConfigJson;
 
-    /**
-     * IconsOverlays are a list of extra icons/badges to overlay over the icon.
-     * The 'badge'-toggle changes their behaviour.
-     * If badge is set, it will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
-     * If badges is false, it'll be a simple overlay
-     *
-     * Note: strings are interpreted as icons, so layering and substituting is supported
-     */
-    iconOverlays?: { if: string | AndOrTagConfigJson, then: string | TagRenderingConfigJson, badge?: boolean }[]
-
-    /**
-     * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ...
-     * Default is '40,40,center'
-     */
-    iconSize?: string | TagRenderingConfigJson;
-    /**
-     * The rotation of an icon, useful for e.g. directions.
-     * Usage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
-     */
-    rotation?: string | TagRenderingConfigJson;
-    /**
-     * A HTML-fragment that is shown below the icon, for example:
-     * <div style="background: white; display: block">{name}</div>
-     *
-     * If the icon is undefined, then the label is shown in the center of the feature.
-     * Note that, if the wayhandling hides the icon then no label is shown as well.
-     */
-    label?: string | TagRenderingConfigJson;
+    mapRendering: PointRenderingConfigJson[]
 
     /**
      * The color for way-elements and SVG-elements.

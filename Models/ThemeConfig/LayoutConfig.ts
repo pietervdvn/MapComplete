@@ -25,7 +25,6 @@ export default class LayoutConfig {
     public readonly startLat: number;
     public readonly startLon: number;
     public readonly widenFactor: number;
-    public readonly roamingRenderings: TagRenderingConfig[];
     public readonly defaultBackgroundId?: string;
     public layers: LayerConfig[];
     public tileLayerSources: TilesourceConfig[]
@@ -97,43 +96,10 @@ export default class LayoutConfig {
             throw "Widenfactor is very big, use a value between 1 and 5 (current value is "+json.widenFactor+") at "+context
         }
         this.widenFactor = json.widenFactor ?? 1.5;
-        this.roamingRenderings = (json.roamingRenderings ?? []).map((tr, i) => {
-                if (typeof tr === "string") {
-                    if (SharedTagRenderings.SharedTagRendering.get(tr) !== undefined) {
-                        return SharedTagRenderings.SharedTagRendering.get(tr);
-                    }
-                }
-                return new TagRenderingConfig(tr, undefined, `${this.id}.roaming_renderings[${i}]`);
-            }
-        );
+     
         this.defaultBackgroundId = json.defaultBackgroundId;
         this.tileLayerSources = (json.tileLayerSources??[]).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
         this.layers = LayoutConfig.ExtractLayers(json, official, context);
-
-        // ALl the layers are constructed, let them share tagRenderings now!
-        const roaming: { r, source: LayerConfig }[] = []
-        for (const layer of this.layers) {
-            roaming.push({r: layer.GetRoamingRenderings(), source: layer});
-        }
-
-        for (const layer of this.layers) {
-            for (const r of roaming) {
-                if (r.source == layer) {
-                    continue;
-                }
-                layer.AddRoamingRenderings(r.r);
-            }
-        }
-
-        for (const layer of this.layers) {
-            layer.AddRoamingRenderings(
-                {
-                    titleIcons: [],
-                    iconOverlays: [],
-                    tagRenderings: this.roamingRenderings
-                }
-            );
-        }
 
         this.clustering = {
             maxZoom: 16,
