@@ -43,105 +43,6 @@
     "maxZoom": 12,
     "minNeededElements": 200
   },
-  "roamingRenderings": [
-    {
-      "question": {
-        "nl": "Is deze straat een fietsstraat?",
-        "en": "Is this street a cyclestreet?",
-        "ja": "この通りはcyclestreetですか?",
-        "nb_NO": "Er denne gaten en sykkelvei?",
-        "de": "Ist diese Straße eine Fahrradstraße?"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "cyclestreet=yes",
-              "maxspeed=30",
-              "overtaking:motor_vehicle=no",
-              "proposed:cyclestreet="
-            ]
-          },
-          "then": {
-            "nl": "Deze straat is een fietsstraat (en dus zone 30)",
-            "en": "This street is a cyclestreet (and has a speed limit of 30 km/h)",
-            "ja": "cyclestreet(最高速度は30km/h)",
-            "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)",
-            "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "cyclestreet=yes",
-              "proposed:cyclestreet="
-            ]
-          },
-          "then": {
-            "nl": "Deze straat i een fietsstraat",
-            "en": "This street is a cyclestreet",
-            "ja": "この通りはcyclestreetだ",
-            "nb_NO": "Denne gaten er en sykkelvei",
-            "de": "Diese Straße ist eine Fahrradstraße"
-          },
-          "hideInAnswer": true
-        },
-        {
-          "if": {
-            "and": [
-              "cyclestreet=",
-              "proposed:cyclestreet=yes"
-            ]
-          },
-          "then": {
-            "nl": "Deze straat wordt binnenkort een fietsstraat",
-            "en": "This street will become a cyclstreet soon",
-            "ja": "この通りはまもなくcyclstreetになるだろう",
-            "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
-            "de": "Diese Straße wird bald eine Fahrradstraße sein"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "cyclestreet=",
-              "proposed:cyclestreet=",
-              "overtaking:motor_vehicle="
-            ]
-          },
-          "then": {
-            "nl": "Deze straat is geen fietsstraat",
-            "en": "This street is not a cyclestreet",
-            "ja": "この通りはcyclestreetではない",
-            "nb_NO": "Denne gaten er ikke en sykkelvei",
-            "it": "Questa strada non è una strada ciclabile",
-            "de": "Diese Straße ist keine Fahrradstraße"
-          }
-        }
-      ]
-    },
-    {
-      "question": {
-        "nl": "Wanneer wordt deze straat een fietsstraat?",
-        "en": "When will this street become a cyclestreet?",
-        "ja": "この通りはいつcyclestreetになるんですか?",
-        "it": "Questa strada diventerà una strada ciclabile quando?",
-        "de": "Wann wird diese Straße eine Fahrradstraße?"
-      },
-      "render": {
-        "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
-        "en": "This street will become a cyclestreet at {cyclestreet:start_date}",
-        "ja": "この通りは{cyclestreet:start_date}に、cyclestreetになります",
-        "it": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}",
-        "de": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
-      },
-      "condition": "proposed:cyclestreet=yes",
-      "freeform": {
-        "type": "date",
-        "key": "cyclestreet:start_date"
-      }
-    }
-  ],
   "layers": [
     {
       "id": "fietsstraat",
@@ -304,6 +205,105 @@
     }
   ],
   "overrideAll": {
-    "allowSplit": true
+    "allowSplit": true,
+    "tagRenderings+": [
+      {"id": "is_cyclestreet",
+        "question": {
+          "nl": "Is deze straat een fietsstraat?",
+          "en": "Is this street a cyclestreet?",
+          "ja": "この通りはcyclestreetですか?",
+          "nb_NO": "Er denne gaten en sykkelvei?",
+          "de": "Ist diese Straße eine Fahrradstraße?"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "cyclestreet=yes",
+                "maxspeed=30",
+                "overtaking:motor_vehicle=no",
+                "proposed:cyclestreet="
+              ]
+            },
+            "then": {
+              "nl": "Deze straat is een fietsstraat (en dus zone 30)",
+              "en": "This street is a cyclestreet (and has a speed limit of 30 km/h)",
+              "ja": "cyclestreet(最高速度は30km/h)",
+              "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)",
+              "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "cyclestreet=yes",
+                "proposed:cyclestreet="
+              ]
+            },
+            "then": {
+              "nl": "Deze straat i een fietsstraat",
+              "en": "This street is a cyclestreet",
+              "ja": "この通りはcyclestreetだ",
+              "nb_NO": "Denne gaten er en sykkelvei",
+              "de": "Diese Straße ist eine Fahrradstraße"
+            },
+            "hideInAnswer": true
+          },
+          {
+            "if": {
+              "and": [
+                "cyclestreet=",
+                "proposed:cyclestreet=yes"
+              ]
+            },
+            "then": {
+              "nl": "Deze straat wordt binnenkort een fietsstraat",
+              "en": "This street will become a cyclstreet soon",
+              "ja": "この通りはまもなくcyclstreetになるだろう",
+              "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
+              "de": "Diese Straße wird bald eine Fahrradstraße sein"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "cyclestreet=",
+                "proposed:cyclestreet=",
+                "overtaking:motor_vehicle="
+              ]
+            },
+            "then": {
+              "nl": "Deze straat is geen fietsstraat",
+              "en": "This street is not a cyclestreet",
+              "ja": "この通りはcyclestreetではない",
+              "nb_NO": "Denne gaten er ikke en sykkelvei",
+              "it": "Questa strada non è una strada ciclabile",
+              "de": "Diese Straße ist keine Fahrradstraße"
+            }
+          }
+        ]
+      },
+      {"id": "future_cyclestreet",
+        "question": {
+          "nl": "Wanneer wordt deze straat een fietsstraat?",
+          "en": "When will this street become a cyclestreet?",
+          "ja": "この通りはいつcyclestreetになるんですか?",
+          "it": "Questa strada diventerà una strada ciclabile quando?",
+          "de": "Wann wird diese Straße eine Fahrradstraße?"
+        },
+        "render": {
+          "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
+          "en": "This street will become a cyclestreet at {cyclestreet:start_date}",
+          "ja": "この通りは{cyclestreet:start_date}に、cyclestreetになります",
+          "it": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}",
+          "de": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
+        },
+        "condition": "proposed:cyclestreet=yes",
+        "freeform": {
+          "type": "date",
+          "key": "cyclestreet:start_date"
+        }
+      }
+    ]
   }
 }
