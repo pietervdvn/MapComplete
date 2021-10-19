@@ -24,9 +24,6 @@ import Translations from "./i18n/Translations";
 import SimpleAddUI from "./BigComponents/SimpleAddUI";
 import StrayClickHandler from "../Logic/Actors/StrayClickHandler";
 import Lazy from "./Base/Lazy";
-import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
-import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
-import FilteredLayer from "../Models/FilteredLayer";
 
 export class DefaultGuiState {
     public readonly welcomeMessageIsOpened;
