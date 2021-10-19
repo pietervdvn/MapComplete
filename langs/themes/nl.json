@@ -908,6 +908,37 @@
                     }
                 },
                 "tagRenderings": {
+                    "colour": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze lantaarn geeft wit licht"
+                            },
+                            "1": {
+                                "then": "Deze lantaarn geeft groen licht"
+                            },
+                            "2": {
+                                "then": "Deze lantaarn geeft oranje licht"
+                            }
+                        },
+                        "question": "Wat voor kleur licht geeft deze lantaarn?",
+                        "render": "Deze lantaarn geeft {light:colour} licht"
+                    },
+                    "count": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze lantaarn heeft 1 lamp"
+                            },
+                            "1": {
+                                "then": "Deze lantaarn heeft 2 lampen"
+                            }
+                        },
+                        "question": "Hoeveel lampen heeft deze lantaarn?",
+                        "render": "Deze lantaarn heeft {light:count} lampen"
+                    },
+                    "direction": {
+                        "question": "Waar is deze lamp heengericht?",
+                        "render": "Deze lantaarn is gericht naar {light:direction}"
+                    },
                     "lamp_mount": {
                         "mappings": {
                             "0": {
@@ -918,6 +949,23 @@
                             }
                         },
                         "question": "Hoe zit deze lantaarn aan de paal?"
+                    },
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze lantaarn is 's nachts verlicht"
+                            },
+                            "1": {
+                                "then": "Deze lantaarn is 24/7 verlicht"
+                            },
+                            "2": {
+                                "then": "Deze lantaarn is verlicht op basis van beweging"
+                            },
+                            "3": {
+                                "then": "Deze lantaarn is verlicht op verzoek (bijv. met een drukknop)"
+                            }
+                        },
+                        "question": "Wanneer is deze lantaarn verlicht?"
                     },
                     "method": {
                         "mappings": {
@@ -1001,16 +1049,16 @@
                     "lit": {
                         "mappings": {
                             "0": {
-                                "then": "Deze weg is verlicht"
+                                "then": "Deze straat is verlicht"
                             },
                             "1": {
-                                "then": "Deze weg is niet verlicht"
+                                "then": "Deze straat is niet verlicht"
                             },
                             "2": {
-                                "then": "Deze weg is 's nachts verlicht"
+                                "then": "Deze straat is 's nachts verlicht"
                             },
                             "3": {
-                                "then": "Deze weg is 24/7 verlicht"
+                                "then": "Deze straat is 24/7 verlicht"
                             }
                         },
                         "question": "Is deze straat verlicht?"
@@ -1026,16 +1074,16 @@
                     "lit": {
                         "mappings": {
                             "0": {
-                                "then": "Deze weg is verlicht"
+                                "then": "Deze straat is verlicht"
                             },
                             "1": {
-                                "then": "Deze weg is niet verlicht"
+                                "then": "Deze straat is niet verlicht"
                             },
                             "2": {
-                                "then": "Deze weg is 's nachts verlicht"
+                                "then": "Deze straat is 's nachts verlicht"
                             },
                             "3": {
-                                "then": "Deze weg is 24/7 verlicht"
+                                "then": "Deze straat is 24/7 verlicht"
                             }
                         },
                         "question": "Is deze straat verlicht?"

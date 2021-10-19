@@ -1238,6 +1238,37 @@
                     }
                 },
                 "tagRenderings": {
+                    "colour": {
+                        "mappings": {
+                            "0": {
+                                "then": "This lamp emits white light"
+                            },
+                            "1": {
+                                "then": "This lamp emits green light"
+                            },
+                            "2": {
+                                "then": "This lamp emits orange light"
+                            }
+                        },
+                        "question": "What colour light does this lamp emit?",
+                        "render": "This lamp emits {light:colour} light"
+                    },
+                    "count": {
+                        "mappings": {
+                            "0": {
+                                "then": "This lamp has 1 fixture"
+                            },
+                            "1": {
+                                "then": "This lamp has 2 fixtures"
+                            }
+                        },
+                        "question": "How many fixtures does this light have?",
+                        "render": "This lamp has {light:count} fixtures"
+                    },
+                    "direction": {
+                        "question": "Where does this lamp point to?",
+                        "render": "This lamp points towards {light:direction}"
+                    },
                     "lamp_mount": {
                         "mappings": {
                             "0": {
@@ -1248,6 +1279,23 @@
                             }
                         },
                         "question": "How is this lamp mounted to the pole?"
+                    },
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This lamp is lit at night"
+                            },
+                            "1": {
+                                "then": "This lamp is lit 24/7"
+                            },
+                            "2": {
+                                "then": "This lamp is lit based on motion"
+                            },
+                            "3": {
+                                "then": "This lamp is lit based on demand (e.g. with a pushbutton)"
+                            }
+                        },
+                        "question": "When is this lamp lit?"
                     },
                     "method": {
                         "mappings": {
@@ -1337,10 +1385,10 @@
                                 "then": "This road is not lit"
                             },
                             "2": {
-                                "then": "This road is lit at night"
+                                "then": "This street is lit at night"
                             },
                             "3": {
-                                "then": "This road is lit 24/7"
+                                "then": "This street is lit 24/7"
                             }
                         },
                         "question": "Is this street lit?"
@@ -1362,10 +1410,10 @@
                                 "then": "This road is not lit"
                             },
                             "2": {
-                                "then": "This road is lit at night"
+                                "then": "This street is lit at night"
                             },
                             "3": {
-                                "then": "This road is lit 24/7"
+                                "then": "This street is lit 24/7"
                             }
                         },
                         "question": "Is this street lit?"

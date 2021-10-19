@@ -238,6 +238,128 @@
               }
             }
           ]
+        },
+        {
+          "id": "colour",
+          "question": {
+            "en": "What colour light does this lamp emit?",
+            "nl": "Wat voor kleur licht geeft deze lantaarn?"
+          },
+          "render": {
+            "en": "This lamp emits {light:colour} light",
+            "nl": "Deze lantaarn geeft {light:colour} licht"
+          },
+          "freeform": {
+            "key": "light:colour"
+          },
+          "mappings": [
+            {
+              "if": "light:colour=white",
+              "then": {
+                "en": "This lamp emits white light",
+                "nl": "Deze lantaarn geeft wit licht"
+              }
+            },
+            {
+              "if": "light:colour=green",
+              "then": {
+                "en": "This lamp emits green light",
+                "nl": "Deze lantaarn geeft groen licht"
+              }
+            },
+            {
+              "if": "light:colour=orange",
+              "then": {
+                "en": "This lamp emits orange light",
+                "nl": "Deze lantaarn geeft oranje licht"
+              }
+            }
+          ]
+        },
+        {
+          "id": "count",
+          "render": {
+            "en": "This lamp has {light:count} fixtures",
+            "nl": "Deze lantaarn heeft {light:count} lampen"
+          },
+          "question": {
+            "en": "How many fixtures does this light have?",
+            "nl": "Hoeveel lampen heeft deze lantaarn?"
+          },
+          "condition": "support=pole",
+          "freeform": {
+            "key": "light:count",
+            "type": "pnat"
+          },
+          "mappings": [
+            {
+              "if": "light:count=1",
+              "then": {
+                "en": "This lamp has 1 fixture",
+                "nl": "Deze lantaarn heeft 1 lamp"
+              }
+            },
+            {
+              "if": "light:count=2",
+              "then": {
+                "en": "This lamp has 2 fixtures",
+                "nl": "Deze lantaarn heeft 2 lampen"
+              }
+            }
+          ]
+        },
+        {
+          "id": "lit",
+          "question": {
+            "en": "When is this lamp lit?",
+            "nl": "Wanneer is deze lantaarn verlicht?"
+          },
+          "mappings": [
+            {
+              "if": "light:lit=dusk-dawn",
+              "then": {
+                "en": "This lamp is lit at night",
+                "nl": "Deze lantaarn is 's nachts verlicht"
+              }
+            },
+            {
+              "if": "light:lit=24/7",
+              "then": {
+                "en": "This lamp is lit 24/7",
+                "nl": "Deze lantaarn is 24/7 verlicht"
+              }
+            },
+            {
+              "if": "light:lit=motion",
+              "then": {
+                "en": "This lamp is lit based on motion",
+                "nl": "Deze lantaarn is verlicht op basis van beweging"
+              }
+            },
+            {
+              "if": "light:lit=demand",
+              "then": {
+                "en": "This lamp is lit based on demand (e.g. with a pushbutton)",
+                "nl": "Deze lantaarn is verlicht op verzoek (bijv. met een drukknop)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "direction",
+          "render": {
+            "en": "This lamp points towards {light:direction}",
+            "nl": "Deze lantaarn is gericht naar {light:direction}"
+          },
+          "question": {
+            "en": "Where does this lamp point to?",
+            "nl": "Waar is deze lamp heengericht?"
+          },
+          "condition": "light:count=1",
+          "freeform": {
+            "key": "light:direction",
+            "type": "direction"
+          }
         }
       ]
     },
@@ -288,7 +410,7 @@
             {
               "if": "lit=no",
               "then": {
-                "en": "This street is not lit",
+                "en": "This road is not lit",
                 "nl": "Deze straat is niet verlicht"
               }
             },
@@ -353,7 +475,7 @@
             {
               "if": "lit=no",
               "then": {
-                "en": "This street is not lit",
+                "en": "This road is not lit",
                 "nl": "Deze straat is niet verlicht"
               }
             },
