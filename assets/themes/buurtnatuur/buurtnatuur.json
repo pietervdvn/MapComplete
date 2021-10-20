@@ -123,6 +123,51 @@
             "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
           }
         }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg"
+          },
+          "iconSize": {
+            "render": "50,50,center"
+          },
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#3c3",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "name=",
+                    "noname=",
+                    "operator=",
+                    "access=",
+                    "access:description=",
+                    "leisure=park"
+                  ]
+                },
+                "then": "#cc1100"
+              },
+              {
+                "if": {
+                  "and": [
+                    "name=",
+                    "noname="
+                  ]
+                },
+                "then": "#fccb37"
+              }
+            ]
+          },
+          "width": {
+            "render": "5"
+          }
+        }
       ]
     },
     {
@@ -219,6 +264,38 @@
           },
           "description": {
             "nl": "Voeg een ontbrekend park toe"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#3c3",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "name=",
+                    "noname="
+                  ]
+                },
+                "then": "#fccb37"
+              }
+            ]
+          },
+          "width": {
+            "render": "5"
           }
         }
       ]
@@ -336,6 +413,56 @@
           },
           "description": {
             "nl": "Voeg een ontbrekend bos toe aan de kaart"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#3a3",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "operator=",
+                    "access=",
+                    "access:description="
+                  ]
+                },
+                "then": "#cc1100"
+              },
+              {
+                "if": {
+                  "and": [
+                    "operator="
+                  ]
+                },
+                "then": "#cccc00"
+              },
+              {
+                "if": {
+                  "and": [
+                    "name=",
+                    "noname="
+                  ]
+                },
+                "then": "#fccb37"
+              }
+            ]
+          },
+          "width": {
+            "render": "5"
           }
         }
       ]

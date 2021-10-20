@@ -699,6 +699,14 @@
             "point",
             "centroid"
           ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
         }
       ]
     },
@@ -1111,6 +1119,14 @@
           "location": [
             "point"
           ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
         }
       ]
     }

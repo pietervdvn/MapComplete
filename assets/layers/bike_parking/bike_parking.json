@@ -562,6 +562,10 @@
                 "point",
                 "centroid"
             ]
+        },
+        {
+            "color": "#00f",
+            "width": "1"
         }
     ]
 }

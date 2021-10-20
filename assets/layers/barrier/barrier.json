@@ -330,6 +330,9 @@
             "location": [
                 "point"
             ]
+        },
+        {
+            "width": "5"
         }
     ]
 }

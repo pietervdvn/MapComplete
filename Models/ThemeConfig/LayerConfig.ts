@@ -15,6 +15,9 @@ import DeleteConfig from "./DeleteConfig";
 import MoveConfig from "./MoveConfig";
 import PointRenderingConfig from "./PointRenderingConfig";
 import WithContextLoader from "./WithContextLoader";
+import LineRenderingConfig from "./LineRenderingConfig";
+import PointRenderingConfigJson from "./Json/PointRenderingConfigJson";
+import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
 
 export default class LayerConfig extends WithContextLoader{
     static WAYHANDLING_DEFAULT = 0;
@@ -36,10 +39,8 @@ export default class LayerConfig extends WithContextLoader{
     titleIcons: TagRenderingConfig[];
     
     public readonly mapRendering: PointRenderingConfig[]
+    public readonly lineRendering: LineRenderingConfig[]
 
-    color: TagRenderingConfig;
-    width: TagRenderingConfig;
-    dashArray: TagRenderingConfig;
     wayHandling: number;
     public readonly units: Unit[];
     public readonly deletion: DeleteConfig | null;
@@ -200,8 +201,15 @@ export default class LayerConfig extends WithContextLoader{
 
       
 
-        this.mapRendering = json.mapRendering.map((r, i) => new PointRenderingConfig(r, context+".mapRendering["+i+"]"))
-      
+        this.mapRendering = json.mapRendering
+            .filter(r => r["icon"] !== undefined || r["label"] !== undefined)
+            .map((r, i) => new PointRenderingConfig(<PointRenderingConfigJson>r, context+".mapRendering["+i+"]"))
+
+        this.lineRendering = json.mapRendering
+            .filter(r => r["icon"] === undefined && r["label"] === undefined)
+            .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context+".mapRendering["+i+"]"))
+
+
         if(this.mapRendering.length > 1){
             throw "Invalid maprendering for "+this.id+", currently only one mapRendering is supported!"
         }
@@ -243,10 +251,7 @@ export default class LayerConfig extends WithContextLoader{
 
         this.title = this.tr("title", undefined);
         this.isShown = this.tr("isShown", "yes");
-        this.color = this.tr("color", "#0000ff");
-        this.width = this.tr("width", "7");
-        this.dashArray = this.tr("dashArray", "");
-
+     
         this.deletion = null;
         if (json.deletion === true) {
             json.deletion = {};
@@ -299,41 +304,12 @@ export default class LayerConfig extends WithContextLoader{
         dashArray: number[];
     } {
 
-        function rendernum(tr: TagRenderingConfig, deflt: number) {
-            const str = Number(render(tr, "" + deflt));
-            const n = Number(str);
-            if (isNaN(n)) {
-                return deflt;
-            }
-            return n;
-        }
-
-        function render(tr: TagRenderingConfig, deflt?: string) {
-            if (tags === undefined) {
-                return deflt
-            }
-            const str = tr?.GetRenderValue(tags.data)?.txt ?? deflt;
-            return Utils.SubstituteKeys(str, tags.data).replace(/{.*}/g, "");
-        }
-
-        const dashArray = render(this.dashArray)?.split(" ")?.map(Number);
-        let color = render(this.color, "#00f");
-
-        if (color.startsWith("--")) {
-            color = getComputedStyle(document.body).getPropertyValue(
-                "--catch-detail-color"
-            );
-        }
-
-        const weight = rendernum(this.width, 5);
 
         const icon = this.mapRendering[0].GenerateLeafletStyle(tags, clickable)
-        
+        const lineStyle = this.lineRendering[0].GenerateLeafletStyle(tags)
         return {
             icon,
-            color: color,
-            weight: weight,
-            dashArray: dashArray,
+            ...lineStyle
         };
     }
 

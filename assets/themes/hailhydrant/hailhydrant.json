@@ -329,6 +329,14 @@
             "point",
             "centroid"
           ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
         }
       ]
     },
@@ -697,6 +705,14 @@
             "point",
             "centroid"
           ]
+        },
+        {
+          "color": {
+            "render": "#c22"
+          },
+          "width": {
+            "render": "1"
+          }
         }
       ]
     },
@@ -912,6 +928,14 @@
             "point",
             "centroid"
           ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "1"
+          }
         }
       ]
     }

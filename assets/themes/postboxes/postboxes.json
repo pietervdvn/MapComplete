@@ -92,6 +92,14 @@
             "point",
             "centroid"
           ]
+        },
+        {
+          "color": {
+            "render": "#DADADA"
+          },
+          "width": {
+            "render": "1"
+          }
         }
       ]
     },
@@ -202,6 +210,14 @@
             "point",
             "centroid"
           ]
+        },
+        {
+          "color": {
+            "render": "#DADADA"
+          },
+          "width": {
+            "render": "1"
+          }
         }
       ]
     }

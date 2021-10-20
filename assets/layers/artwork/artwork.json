@@ -404,6 +404,14 @@
                 "point",
                 "centroid"
             ]
+        },
+        {
+            "color": {
+                "render": "#0000ff"
+            },
+            "width": {
+                "render": "10"
+            }
         }
     ]
 }

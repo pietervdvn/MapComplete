@@ -190,6 +190,25 @@
             "location": [
                 "point"
             ]
+        },
+        {
+            "color": {
+                "render": "#05d7fcaa",
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "name:etymology=",
+                                "name:etymology:wikidata="
+                            ]
+                        },
+                        "then": "#fcca05aa"
+                    }
+                ]
+            },
+            "width": {
+                "render": "8"
+            }
         }
     ]
 }

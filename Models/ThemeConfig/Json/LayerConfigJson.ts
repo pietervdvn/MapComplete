@@ -5,6 +5,7 @@ import {DeleteConfigJson} from "./DeleteConfigJson";
 import UnitConfigJson from "./UnitConfigJson";
 import MoveConfigJson from "./MoveConfigJson";
 import PointRenderingConfigJson from "./PointRenderingConfigJson";
+import LineRenderingConfigJson from "./LineRenderingConfigJson";
 
 /**
  * Configuration for a single layer
@@ -121,24 +122,8 @@ export interface LayerConfigJson {
     titleIcons?: (string | TagRenderingConfigJson)[];
 
 
-    mapRendering: PointRenderingConfigJson[]
+    mapRendering: (PointRenderingConfigJson | LineRenderingConfigJson)[]
 
-    /**
-     * The color for way-elements and SVG-elements.
-     * If the value starts with "--", the style of the body element will be queried for the corresponding variable instead
-     */
-    color?: string | TagRenderingConfigJson;
-    /**
-     * The stroke-width for way-elements
-     */
-    width?: string | TagRenderingConfigJson;
-
-    /**
-     * A dasharray, e.g. "5 6"
-     * The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap',
-     * Default value: "" (empty string == full line)
-     */
-    dashArray?: string | TagRenderingConfigJson
 
     /**
      * Wayhandling: should a way/area be displayed as:

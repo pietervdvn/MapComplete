@@ -78,6 +78,10 @@
             "location": [
                 "point"
             ]
+        },
+        {
+            "color": "#ffffff",
+            "width": "5"
         }
     ]
 }

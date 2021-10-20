@@ -228,6 +228,23 @@
             "location": [
                 "point"
             ]
+        },
+        {
+            "color": {
+                "render": "#335D9F",
+                "mappings": [
+                    {
+                        "if": "colour~*",
+                        "then": "{colour}"
+                    }
+                ]
+            },
+            "width": {
+                "render": "3"
+            },
+            "dashArray": {
+                "render": "5 5"
+            }
         }
     ]
 }

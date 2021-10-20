@@ -80,6 +80,11 @@
             "location": [
                 "point"
             ]
+        },
+        {
+            "color": {
+                "render": "#00f"
+            }
         }
     ]
 }

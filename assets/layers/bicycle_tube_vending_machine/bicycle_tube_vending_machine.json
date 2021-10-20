@@ -299,6 +299,9 @@
                 "point",
                 "centroid"
             ]
+        },
+        {
+            "color": "#6bc4f7"
         }
     ]
 }

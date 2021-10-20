@@ -573,6 +573,9 @@
             "location": [
                 "point"
             ]
+        },
+        {
+            "color": "#0000ff"
         }
     ]
 }

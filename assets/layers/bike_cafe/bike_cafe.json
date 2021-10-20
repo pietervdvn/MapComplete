@@ -378,6 +378,14 @@
                 "point",
                 "centroid"
             ]
+        },
+        {
+            "color": {
+                "render": "#694E2D"
+            },
+            "width": {
+                "render": "2"
+            }
         }
     ]
 }

@@ -775,13 +775,19 @@
                     "badge": true
                 },
                 {
-                    "if": "opening_hours~*",
-                    "then": "isOpen",
+                    "if": "service:bicycle:pump=yes",
+                    "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
                     "badge": true
                 },
                 {
-                    "if": "service:bicycle:pump=yes",
-                    "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
+                    "if": {
+                        "and": [
+                            "service:bicycle:cleaning~*"
+                        ]
+                    },
+                    "then": {
+                        "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
+                    },
                     "badge": true
                 }
             ],
@@ -792,6 +798,14 @@
                 "point",
                 "centroid"
             ]
+        },
+        {
+            "color": {
+                "render": "#c00"
+            },
+            "width": {
+                "render": "1"
+            }
         }
     ]
 }

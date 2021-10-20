@@ -259,6 +259,40 @@
             "location": [
                 "point"
             ]
+        },
+        {
+            "color": {
+                "render": "#eaba2a"
+            },
+            "width": {
+                "render": "7"
+            },
+            "dashArray": {
+                "render": "",
+                "mappings": [
+                    {
+                        "if": "highway=cycleway",
+                        "then": ""
+                    },
+                    {
+                        "if": "highway=path",
+                        "then": "0 12"
+                    },
+                    {
+                        "if": {
+                            "or": [
+                                "highway=footway",
+                                "highway=pedestrian"
+                            ]
+                        },
+                        "then": "12 18"
+                    },
+                    {
+                        "if": "highway=living_street",
+                        "then": "12 12 0 12"
+                    }
+                ]
+            }
         }
     ]
 }

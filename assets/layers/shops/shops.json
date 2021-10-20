@@ -342,6 +342,14 @@
                 "point",
                 "centroid"
             ]
+        },
+        {
+            "color": {
+                "render": "#00f"
+            },
+            "width": {
+                "render": "8"
+            }
         }
     ]
 }

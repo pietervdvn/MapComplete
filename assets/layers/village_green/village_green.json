@@ -44,6 +44,10 @@
                 "point",
                 "centroid"
             ]
+        },
+        {
+            "color": "#937f20",
+            "width": "1"
         }
     ]
 }

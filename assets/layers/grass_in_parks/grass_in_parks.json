@@ -60,6 +60,10 @@
                 "point",
                 "centroid"
             ]
+        },
+        {
+            "color": "#0f0",
+            "width": "1"
         }
     ]
 }

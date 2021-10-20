@@ -64,6 +64,9 @@
             "rotation": {
                 "render": "{_direction:numerical}deg"
             }
+        },
+        {
+            "color": "--catch-detail-color"
         }
     ]
 }

@@ -7,6 +7,8 @@
 import ScriptUtils from "./ScriptUtils";
 import {writeFileSync} from "fs";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
+import LineRenderingConfig from "../Models/ThemeConfig/LineRenderingConfig";
+import LineRenderingConfigJson from "../Models/ThemeConfig/Json/LineRenderingConfigJson";
 
 /**
  * In place fix
@@ -26,10 +28,11 @@ function fixLayerConfig(config: LayerConfigJson): void {
         }
     }
     
-    if(config.mapRendering === undefined){
+    if(config.mapRendering === undefined || true){
         // This is a legacy format, lets create a pointRendering
         let location: ("point"|"centroid")[] = ["point"]
-        if(config.wayHandling === 2){
+        let wayHandling: number = config.wayHandling
+        if(wayHandling === 2){
             location = ["point", "centroid"]
         }
         config.mapRendering = [
@@ -42,6 +45,27 @@ function fixLayerConfig(config: LayerConfigJson): void {
                 rotation: config["rotation"]
             }
         ]
+        
+        if(wayHandling !== 1){
+            const lineRenderConfig = <LineRenderingConfigJson>{
+                color: config["color"],
+                width: config["width"],
+                dashArray: config["dashArray"]
+            }
+            if(Object.keys(lineRenderConfig).length > 0){
+                config.mapRendering.push(lineRenderConfig)
+            }
+        }
+        /*delete config["color"]
+        delete config["width"]
+        delete config["dashArray"]
+
+        delete config["icon"]
+        delete config["iconOverlays"]
+        delete config["label"]
+        delete config["iconSize"]
+        delete config["rotation"]
+        */
         
         
     }

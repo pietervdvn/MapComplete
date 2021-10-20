@@ -305,6 +305,30 @@
           "location": [
             "point"
           ]
+        },
+        {
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "#ff0"
+              }
+            ]
+          },
+          "width": {
+            "render": "8"
+          }
         }
       ]
     },
@@ -330,6 +354,14 @@
           "location": [
             "point"
           ]
+        },
+        {
+          "color": {
+            "render": "#ccc"
+          },
+          "width": {
+            "render": "0"
+          }
         }
       ]
     }

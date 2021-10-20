@@ -51,6 +51,28 @@
             "location": [
                 "point"
             ]
+        },
+        {
+            "color": {
+                "render": "#3c3",
+                "mappings": [
+                    {
+                        "if": "showCount>200",
+                        "then": "#f33"
+                    },
+                    {
+                        "if": "showCount>100",
+                        "then": "#c93"
+                    },
+                    {
+                        "if": "showCount>50",
+                        "then": "#cc3"
+                    }
+                ]
+            },
+            "width": {
+                "render": "1"
+            }
         }
     ]
 }
