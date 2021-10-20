@@ -544,6 +544,13 @@
         "icon": {
             "render": "./assets/layers/bike_repair_station/repair_station.svg"
         },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
+                }
+            }
+        },
         "name": "Fahrradstationen (Reparatur, Pumpe oder beides)",
         "presets": {
             "0": {

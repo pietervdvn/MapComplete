@@ -896,6 +896,13 @@
         "icon": {
             "render": "./assets/layers/birdhide/birdhide.svg"
         },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/birdhide/birdhide.svg"
+                }
+            }
+        },
         "name": "Vogelkijkhutten",
         "presets": {
             "0": {
@@ -4128,6 +4135,17 @@
             "mappings": {
                 "0": {
                     "then": "Vuilnisbak"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Vuilnisbak"
+                        }
+                    }
                 }
             }
         },

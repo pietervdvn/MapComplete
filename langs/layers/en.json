@@ -547,6 +547,13 @@
         "icon": {
             "render": "./assets/layers/bike_repair_station/repair_station.svg"
         },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
+                }
+            }
+        },
         "name": "Bike stations (repair, pump or both)",
         "presets": {
             "0": {
@@ -2409,6 +2416,17 @@
                 }
             }
         },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Defibrillators",
         "presets": {
             "0": {
@@ -3845,6 +3863,17 @@
             "mappings": {
                 "0": {
                     "then": "Waste Basket"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Waste Basket"
+                        }
+                    }
                 }
             }
         },

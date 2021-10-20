@@ -199,7 +199,9 @@ export default class LayerConfig extends WithContextLoader{
             return config;
         });
 
-      
+        if(json.mapRendering === undefined){
+            throw "MapRendering is undefined in "+context
+        }
 
         this.mapRendering = json.mapRendering
             .filter(r => r["icon"] !== undefined || r["label"] !== undefined)

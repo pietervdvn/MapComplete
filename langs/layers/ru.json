@@ -403,6 +403,13 @@
         "icon": {
             "render": "./assets/layers/bike_repair_station/repair_station.svg"
         },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
+                }
+            }
+        },
         "presets": {
             "0": {
                 "title": "Велосипедный насос"
@@ -719,6 +726,17 @@
             "mappings": {
                 "0": {
                     "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
                 }
             }
         },
@@ -1443,6 +1461,17 @@
             "mappings": {
                 "0": {
                     "then": "Контейнер для мусора"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Контейнер для мусора"
+                        }
+                    }
                 }
             }
         },

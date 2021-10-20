@@ -751,6 +751,17 @@
                         }
                     }
                 },
+                "mapRendering": {
+                    "0": {
+                        "icon": {
+                            "mappings": {
+                                "0": {
+                                    "then": "./assets/themes/hackerspaces/led.png"
+                                }
+                            }
+                        }
+                    }
+                },
                 "name": "Hackerspace",
                 "presets": {
                     "0": {

@@ -341,6 +341,13 @@
         "icon": {
             "render": "./assets/layers/bike_repair_station/repair_station.svg"
         },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
+                }
+            }
+        },
         "name": "Estações de bicicletas (reparo, bomba ou ambos)",
         "presets": {
             "0": {

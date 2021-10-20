@@ -456,6 +456,13 @@
         "icon": {
             "render": "./assets/layers/bike_repair_station/repair_station.svg"
         },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
+                }
+            }
+        },
         "name": "Station velo (réparation, pompe à vélo)",
         "presets": {
             "0": {
@@ -753,6 +760,17 @@
             "mappings": {
                 "0": {
                     "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
                 }
             }
         },
