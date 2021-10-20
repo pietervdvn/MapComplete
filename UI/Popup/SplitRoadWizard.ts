@@ -23,7 +23,7 @@ export default class SplitRoadWizard extends Toggle {
         source: {osmTags: "_cutposition=yes"},
         mapRendering: [
             {
-                location: ["point"],
+                location: ["point","centroid"],
                 icon: {render: "circle:white;./assets/svg/scissors.svg"},
                 iconSize: {render: "30,30,center"}
             }

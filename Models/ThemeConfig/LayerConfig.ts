@@ -306,9 +306,9 @@ export default class LayerConfig extends WithContextLoader{
 
 
         const icon = this.mapRendering[0].GenerateLeafletStyle(tags, clickable)
-        const lineStyle = this.lineRendering[0].GenerateLeafletStyle(tags)
+        const lineStyle = (this.lineRendering[0] ?? new LineRenderingConfig({}, "default"))?.GenerateLeafletStyle(tags)
         return {
-            icon,
+            icon: icon,
             ...lineStyle
         };
     }

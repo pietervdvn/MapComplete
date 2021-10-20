@@ -7,7 +7,6 @@
 import ScriptUtils from "./ScriptUtils";
 import {writeFileSync} from "fs";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-import LineRenderingConfig from "../Models/ThemeConfig/LineRenderingConfig";
 import LineRenderingConfigJson from "../Models/ThemeConfig/Json/LineRenderingConfigJson";
 
 /**
