@@ -368,7 +368,7 @@ export default class SimpleAddUI extends Toggle {
             for (const preset of presets) {
 
                 const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-                let icon: () => BaseUIElement = () => layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html
+                let icon: () => BaseUIElement = () => layer.layerDef.mapRendering[0]. GenerateLeafletStyle(new UIEventSource<any>(tags), false).html
                     .SetClass("w-12 h-12 block relative");
                 const presetInfo: PresetInfo = {
                     tags: preset.tags,

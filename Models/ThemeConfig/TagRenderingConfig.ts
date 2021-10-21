@@ -47,6 +47,12 @@ export default class TagRenderingConfig {
             this.condition = null;
         }
 
+        if(typeof json === "number"){
+            this.render =Translations.WT( ""+json)
+            return;
+        }
+        
+        
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context;
         }

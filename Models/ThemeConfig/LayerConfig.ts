@@ -6,9 +6,6 @@ import PresetConfig from "./PresetConfig";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
-import {Utils} from "../../Utils";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import BaseUIElement from "../../UI/BaseUIElement";
 import FilterConfig from "./FilterConfig";
 import {Unit} from "../Unit";
 import DeleteConfig from "./DeleteConfig";
@@ -207,10 +204,6 @@ export default class LayerConfig extends WithContextLoader{
             .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context+".mapRendering["+i+"]"))
 
 
-        if(this.mapRendering.length > 1){
-            throw "Invalid maprendering for "+this.id+", currently only one mapRendering is supported!"
-        }
-
         this.tagRenderings = this.trs(json.tagRenderings, false);
 
         const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined) ?? [];
@@ -284,31 +277,7 @@ export default class LayerConfig extends WithContextLoader{
     }
 
 
-    public GenerateLeafletStyle(
-        tags: UIEventSource<any>,
-        clickable: boolean
-    ): {
-        icon: {
-            html: BaseUIElement;
-            iconSize: [number, number];
-            iconAnchor: [number, number];
-            popupAnchor: [number, number];
-            iconUrl: string;
-            className: string;
-        };
-        color: string;
-        weight: number;
-        dashArray: number[];
-    } {
-
-
-        const icon = this.mapRendering[0].GenerateLeafletStyle(tags, clickable)
-        const lineStyle = (this.lineRendering[0] ?? new LineRenderingConfig({}, "default"))?.GenerateLeafletStyle(tags)
-        return {
-            icon: icon,
-            ...lineStyle
-        };
-    }
+    
 
     public ExtractImages(): Set<string> {
         const parts: Set<string>[] = [];

@@ -114,9 +114,7 @@ export default class FeaturePipeline {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
             const srcFiltered =
                 new FilteringFeatureSource(state, src.tileIndex,
-                    new WayHandlingApplyingFeatureSource(
                         new ChangeGeometryApplicator(src, state.changes)
-                    )
                 )
 
             handleFeatureSource(srcFiltered)

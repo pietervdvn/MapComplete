@@ -165,8 +165,10 @@ export class Utils {
         return [a.substr(0, index), a.substr(index + sep.length)];
     }
 
-    public static SubstituteKeys(txt: string, tags: any) {
-
+    public static SubstituteKeys(txt: string | undefined, tags: any): string | undefined {
+        if (txt === undefined) {
+            return undefined
+        }
         const regex = /.*{([^}]*)}.*/
 
         let match = txt.match(regex)
@@ -176,7 +178,7 @@ export class Utils {
             txt = txt.replace("{" + key + "}", tags[key] ?? "")
             match = txt.match(regex)
         }
-      
+
         return txt;
     }
 

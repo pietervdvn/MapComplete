@@ -1,0 +1,61 @@
+{
+  "id": "sidewalks",
+  "title": {
+    "en": "Sidewalks"
+  },
+  "shortDescription": {
+    "en": "Sidewalk mapping"
+  },
+  "description": {
+    "en": "Experimental theme"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/svg/bug.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "sidewalks",
+      "name": {
+        "en": "Sidewalks"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": "highway=residential"
+      },
+      "title": {
+        "render": {
+          "en": "Street {name}"
+        }
+      },
+      "description": {
+        "en": "Layer showing sidewalks of highways"
+      },
+      "tagRenderings": [],
+      "mapRendering": [
+        {
+          "color": "#ddd",
+          "width": 8
+        },
+        {
+          "color": "#888",
+          "width": 8,
+          "offset": -8
+        },
+        {
+          "color": "#888",
+          "width": 8,
+          "offset": 8
+        }
+      ],
+  "allowSplit": true
+    }
+  ]
+}

@@ -1,58 +1,62 @@
 /**
- * This is the part of the pipeline which introduces extra points at the center of an area (but only if this is demanded by the wayhandling)
+ * This feature source helps the ShowDataLayer class: it introduces the necessary extra features and indiciates with what renderConfig it should be rendered.
  */
 import {UIEventSource} from "../../UIEventSource";
-import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 import {GeoOperations} from "../../GeoOperations";
-import {FeatureSourceForLayer} from "../FeatureSource";
+import FeatureSource from "../FeatureSource";
+import PointRenderingConfig from "../../../Models/ThemeConfig/PointRenderingConfig";
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 
-export default class WayHandlingApplyingFeatureSource implements FeatureSourceForLayer {
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
-    public readonly name;
-    public readonly layer;
 
-    constructor(upstream: FeatureSourceForLayer) {
-        
-        this.name = "Wayhandling(" + upstream.name + ")";
-        this.layer = upstream.layer
-        const layer = upstream.layer.layerDef;
+export default class RenderingMultiPlexerFeatureSource  {
+    public readonly features: UIEventSource<(any & {pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined})[]>;
 
-        if (layer.wayHandling === LayerConfig.WAYHANDLING_DEFAULT) {
-            // We don't have to do anything fancy
-            // lets just wire up the upstream
-            this.features = upstream.features;
-            return;
-        }
-
+    constructor(upstream: FeatureSource, layer: LayerConfig) {
         this.features = upstream.features.map(
             features => {
                 if (features === undefined) {
                     return;
                 }
-                const newFeatures: { feature: any, freshness: Date }[] = [];
+                
+                const pointRenderObjects: { rendering: PointRenderingConfig, index: number }[] = layer.mapRendering.map((r, i) => ({rendering: r, index: i}))
+                const pointRenderings = pointRenderObjects.filter(r => r.rendering.location.has("point"))
+                const centroidRenderings = pointRenderObjects.filter(r => r.rendering.location.has("centroid"))
+                
+                const lineRenderObjects = layer.lineRendering
+                
+                const withIndex : (any & {pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined})[] = [];
+                
                 for (const f of features) {
                     const feat = f.feature;
+                    
+                    if(feat.geometry.type === "Point"){
 
-                    if (layer.wayHandling === LayerConfig.WAYHANDLING_DEFAULT) {
-                        newFeatures.push(f);
-                        continue;
-                    }
+                        for (const rendering of pointRenderings) {
+                            withIndex.push({
+                                ...feat,
+                                pointRenderingIndex: rendering.index
+                            })
+                        }
+                    }else{
+                        // This is a a line
+                        for (const rendering of centroidRenderings) {
+                            withIndex.push({
+                                ...GeoOperations.centerpoint(feat),
+                                pointRenderingIndex: rendering.index
+                            })
+                        }
+                        
+                        
+                        for (let i = 0; i < lineRenderObjects.length; i++){
+                            withIndex.push({
+                                ...feat,
+                                lineRenderingIndex:i
+                            })
+                        }
 
-                    if (feat.geometry.type === "Point") {
-                        newFeatures.push(f);
-                        // feature is a point, nothing to do here
-                        continue;
-                    }
-
-                    // Create the copy
-                    const centerPoint = GeoOperations.centerpoint(feat);
-
-                    newFeatures.push({feature: centerPoint, freshness: f.freshness});
-                    if (layer.wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY) {
-                        newFeatures.push(f);
                     }
                 }
-                return newFeatures;
+                return withIndex;
             }
         );
 

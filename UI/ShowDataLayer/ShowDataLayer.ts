@@ -6,12 +6,14 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
 import {ElementStorage} from "../../Logic/ElementStorage";
+import RenderingMultiPlexerFeatureSource from "../../Logic/FeatureSource/Sources/WayHandlingApplyingFeatureSource";
+import 'leaflet-polylineoffset';
 
 export default class ShowDataLayer {
 
     private readonly _leafletMap: UIEventSource<L.Map>;
     private readonly _enablePopups: boolean;
-    private readonly _features: UIEventSource<{ feature: any }[]>
+    private readonly _features: RenderingMultiPlexerFeatureSource
     private readonly _layerToShow: LayerConfig;
     private readonly _selectedElement: UIEventSource<any>
     private readonly allElements : ElementStorage
@@ -41,8 +43,7 @@ export default class ShowDataLayer {
             console.error("Invalid ShowDataLayer invocation: options.features is undefed")
             throw "Invalid ShowDataLayer invocation: options.features is undefed"
         }
-        const features = options.features.features.map(featFreshes => featFreshes.map(ff => ff.feature));
-        this._features = features;
+        this._features = new RenderingMultiPlexerFeatureSource(options.features, options.layerToShow);
         this._layerToShow = options.layerToShow;
         this._selectedElement = options.selectedElement
         this.allElements = options.allElements;
@@ -53,7 +54,7 @@ export default class ShowDataLayer {
             }
         );
 
-        features.addCallback(_ => self.update(options));
+        this._features.features.addCallback(_ => self.update(options));
         options.doShowLayer?.addCallback(doShow => {
             const mp = options.leafletMap.data;
             if (mp == undefined) {
@@ -109,7 +110,7 @@ export default class ShowDataLayer {
     }
 
     private update(options: ShowDataLayerOptions) {
-        if (this._features.data === undefined) {
+        if (this._features.features.data === undefined) {
             return;
         }
         this.isDirty = true;
@@ -139,13 +140,25 @@ export default class ShowDataLayer {
             onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
         });
 
-        const allFeats = this._features.data;
+        const allFeats = this._features.features.data;
         for (const feat of allFeats) {
             if (feat === undefined) {
                 continue
             }
             try {
-                this.geoLayer.addData(feat);
+                
+                if((feat.geometry.type === "LineString" || feat.geometry.type === "MultiLineString")) {
+                    const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
+                    const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
+                    const lineStyle = this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tagsSource)
+                    const offsettedLine = L.polyline(coords, lineStyle);
+                    
+                    this.postProcessFeature(feat, offsettedLine)
+                    
+                    offsettedLine.addTo(this.geoLayer)
+                }else{
+                    this.geoLayer.addData(feat);
+                }
             } catch (e) {
                 console.error("Could not add ", feat, "to the geojson layer in leaflet due to", e, e.stack)
             }
@@ -170,7 +183,20 @@ export default class ShowDataLayer {
         const tagsSource = this.allElements?.addOrGetElement(feature) ?? new UIEventSource<any>(feature.properties);
         // Every object is tied to exactly one layer
         const layer = this._layerToShow
-        return layer?.GenerateLeafletStyle(tagsSource, true);
+        
+        const pointRenderingIndex = feature.pointRenderingIndex
+        const lineRenderingIndex = feature.lineRenderingIndex
+        
+        if(pointRenderingIndex !== undefined){
+            return {
+                icon: layer.mapRendering[pointRenderingIndex].GenerateLeafletStyle(tagsSource, this._enablePopups)
+            }
+        }
+        if(lineRenderingIndex !== undefined){
+            return layer.lineRendering[lineRenderingIndex].GenerateLeafletStyle(tagsSource)
+        }
+
+        throw "Neither lineRendering nor mapRendering defined for "+feature
     }
 
     private pointToLayer(feature, latLng): L.Layer {
@@ -185,20 +211,14 @@ export default class ShowDataLayer {
 
         let tagSource = this.allElements?.getEventSourceById(feature.properties.id) ?? new UIEventSource<any>(feature.properties)
         const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
-        const style = layer.GenerateLeafletStyle(tagSource, clickable);
-        const baseElement = style.icon.html;
+        let style : any = layer.mapRendering[feature.pointRenderingIndex].GenerateLeafletStyle(tagSource, clickable);
+        const baseElement = style.html;
         if (!this._enablePopups) {
             baseElement.SetStyle("cursor: initial !important")
         }
+        style.html = style.html.ConstructElement()
         return L.marker(latLng, {
-            icon: L.divIcon({
-                html: baseElement.ConstructElement(),
-                className: style.icon.className,
-                iconAnchor: style.icon.iconAnchor,
-                iconUrl: style.icon.iconUrl ?? "./assets/svg/bug.svg",
-                popupAnchor: style.icon.popupAnchor,
-                iconSize: style.icon.iconSize
-            })
+            icon: L.divIcon(style)
         });
     }
 
@@ -228,7 +248,7 @@ export default class ShowDataLayer {
 
         let infobox: FeatureInfoBox = undefined;
 
-        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}`
+        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}-${feature.pointerRenderingIndex ?? feature.lineRenderingIndex}`
         popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type} ${id} is loading</div>`)
         leafletLayer.on("popupopen", () => {
             if (infobox === undefined) {

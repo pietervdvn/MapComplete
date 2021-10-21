@@ -15,6 +15,8 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 
 export default class PointRenderingConfig extends WithContextLoader {
 
+    public readonly location: Set<"point" | "centroid">
+
     public readonly icon: TagRenderingConfig;
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[];
     public readonly iconSize: TagRenderingConfig;
@@ -23,6 +25,11 @@ export default class PointRenderingConfig extends WithContextLoader {
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
+        this.location = new Set(json.location)
+
+        if(this.location.size == 0){
+            throw "A pointRendering should have at least one 'location' to defined where it should be rendered. (At "+context+".location)"
+        }
         this.icon = this.tr("icon", "");
         this.iconBadges = (json.iconBadges ?? []).map((overlay, i) => {
             let tr : TagRenderingConfig;
@@ -114,7 +121,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         return new VariableUiElement(tags.map(tags => {
             const rotation = self.rotation?.GetRenderValue(tags)?.txt ?? "0deg"
             
-            const htmlDefs = self.icon.GetRenderValue(tags)?.txt
+            const htmlDefs = Utils.SubstituteKeys(self.icon.GetRenderValue(tags)?.txt, tags)
             let defaultPin : BaseUIElement = undefined
             if(self.label === undefined){
                 defaultPin =  Svg.teardrop_with_hole_green_svg()
@@ -137,7 +144,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                         return undefined
                     }
 
-                    const htmlDefs = badge.then.GetRenderValue(tags)?.txt
+                    const htmlDefs = Utils.SubstituteKeys(badge.then.GetRenderValue(tags)?.txt, tags)
                     const badgeElement= PointRenderingConfig.FromHtmlMulti(htmlDefs, "0", true)?.SetClass("block relative")
                     if(badgeElement === undefined){
                         return undefined;

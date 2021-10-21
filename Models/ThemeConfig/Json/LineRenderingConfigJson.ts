@@ -1,5 +1,4 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
-import {AndOrTagConfigJson} from "./TagConfigJson";
 
 /**
  * The LineRenderingConfig gives all details onto how to render a single line of a feature.
@@ -27,4 +26,10 @@ export default interface LineRenderingConfigJson {
      * Default value: "" (empty string == full line)
      */
     dashArray?: string | TagRenderingConfigJson
+
+    /**
+     * The number of pixels this line should be moved. 
+     * Use a positive numbe to move to the right, a negative to move to the left (left/right as defined by the drawing direction of the line)
+     */
+    offset?: number | TagRenderingConfigJson
 }

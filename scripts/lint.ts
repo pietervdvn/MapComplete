@@ -13,6 +13,11 @@ import LineRenderingConfigJson from "../Models/ThemeConfig/Json/LineRenderingCon
  * In place fix
  */
 function fixLayerConfig(config: LayerConfigJson): void {
+    if(config["overpassTags"]){
+        config.source.osmTags = config["overpassTags"]
+        delete config["overpassTags"]
+    }
+    
     if (config.tagRenderings !== undefined) {
         for (const tagRendering of config.tagRenderings) {
             if (tagRendering["#"] !== undefined) {
