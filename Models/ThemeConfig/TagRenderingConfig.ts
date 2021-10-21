@@ -246,11 +246,6 @@ export default class TagRenderingConfig {
 
         return false;
     }
-
-    public IsQuestionBoxElement(): boolean {
-        return this.question === null && this.condition === null;
-    }
-
     /**
      * Gets all the render values. Will return multiple render values if 'multianswer' is enabled.
      * The result will equal [GetRenderValue] if not 'multiAnswer'
@@ -295,7 +290,7 @@ export default class TagRenderingConfig {
      * Not compatible with multiAnswer - use GetRenderValueS instead in that case
      * @constructor
      */
-    public GetRenderValue(tags: any): Translation {
+    public GetRenderValue(tags: any, defltValue: any = undefined): Translation {
         if (this.mappings !== undefined && !this.multiAnswer) {
             for (const mapping of this.mappings) {
                 if (mapping.if === undefined) {
@@ -315,7 +310,7 @@ export default class TagRenderingConfig {
         if (tags[this.freeform.key] !== undefined) {
             return this.render;
         }
-        return undefined;
+        return defltValue;
     }
 
     public ExtractImages(isIcon: boolean): Set<string> {

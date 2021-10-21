@@ -420,8 +420,7 @@
                     "opening_hours~*"
                 ]
             },
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         },
         {
             "if": {
@@ -431,8 +430,7 @@
                     "access=no"
                 ]
             },
-            "then": "circle:white;./assets/layers/sport_pitch/lock.svg",
-            "badge": true
+            "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
         }
     ],
     "width": {
@@ -514,7 +512,7 @@
                     }
                 ]
             },
-            "iconOverlays": [
+            "iconBadges": [
                 {
                     "if": {
                         "and": [
@@ -522,8 +520,7 @@
                             "opening_hours~*"
                         ]
                     },
-                    "then": "isOpen",
-                    "badge": true
+                    "then": "isOpen"
                 },
                 {
                     "if": {
@@ -533,8 +530,7 @@
                             "access=no"
                         ]
                     },
-                    "then": "circle:white;./assets/layers/sport_pitch/lock.svg",
-                    "badge": true
+                    "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
                 }
             ],
             "iconSize": {

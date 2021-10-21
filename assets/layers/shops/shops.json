@@ -279,8 +279,7 @@
     "iconOverlays": [
         {
             "if": "opening_hours~*",
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         }
     ],
     "width": {
@@ -328,11 +327,10 @@
             "icon": {
                 "render": "./assets/themes/shops/shop.svg"
             },
-            "iconOverlays": [
+            "iconBadges": [
                 {
                     "if": "opening_hours~*",
-                    "then": "isOpen",
-                    "badge": true
+                    "then": "isOpen"
                 }
             ],
             "iconSize": {

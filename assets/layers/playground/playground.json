@@ -482,8 +482,7 @@
                     "opening_hours~*"
                 ]
             },
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         }
     ],
     "width": {
@@ -541,7 +540,7 @@
             "icon": {
                 "render": "./assets/themes/playgrounds/playground.svg"
             },
-            "iconOverlays": [
+            "iconBadges": [
                 {
                     "if": {
                         "and": [
@@ -549,8 +548,7 @@
                             "opening_hours~*"
                         ]
                     },
-                    "then": "isOpen",
-                    "badge": true
+                    "then": "isOpen"
                 }
             ],
             "iconSize": {

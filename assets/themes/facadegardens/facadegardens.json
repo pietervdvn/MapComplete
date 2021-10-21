@@ -84,33 +84,27 @@
       "iconOverlays": [
         {
           "if": "plant~.*vine.*",
-          "then": "circle:white;./assets/themes/facadegardens/klimplant.svg",
-          "badge": true
+          "then": "circle:white;./assets/themes/facadegardens/klimplant.svg"
         },
         {
           "if": "plant~.*groundcover.*",
-          "then": "circle:white;./assets/themes/facadegardens/bodembedekker.svg",
-          "badge": true
+          "then": "circle:white;./assets/themes/facadegardens/bodembedekker.svg"
         },
         {
           "if": "edible=true",
-          "then": "circle:white;./assets/themes/facadegardens/eetbaar.svg",
-          "badge": true
+          "then": "circle:white;./assets/themes/facadegardens/eetbaar.svg"
         },
         {
           "if": "rain_barel=yes",
-          "then": "circle:white;./assets/themes/facadegardens/gevelton.svg",
-          "badge": true
+          "then": "circle:white;./assets/themes/facadegardens/gevelton.svg"
         },
         {
           "if": "plant~.*shrub.*",
-          "then": "circle:white;./assets/themes/facadegardens/struik.svg",
-          "badge": true
+          "then": "circle:white;./assets/themes/facadegardens/struik.svg"
         },
         {
           "if": "plant~.*flower.*",
-          "then": "circle:white;./assets/themes/facadegardens/bloei.svg",
-          "badge": true
+          "then": "circle:white;./assets/themes/facadegardens/bloei.svg"
         }
       ],
       "tagRenderings": [
@@ -486,36 +480,30 @@
               }
             ]
           },
-          "iconOverlays": [
+          "iconBadges": [
             {
               "if": "plant~.*vine.*",
-              "then": "circle:white;./assets/themes/facadegardens/klimplant.svg",
-              "badge": true
+              "then": "circle:white;./assets/themes/facadegardens/klimplant.svg"
             },
             {
               "if": "plant~.*groundcover.*",
-              "then": "circle:white;./assets/themes/facadegardens/bodembedekker.svg",
-              "badge": true
+              "then": "circle:white;./assets/themes/facadegardens/bodembedekker.svg"
             },
             {
               "if": "edible=true",
-              "then": "circle:white;./assets/themes/facadegardens/eetbaar.svg",
-              "badge": true
+              "then": "circle:white;./assets/themes/facadegardens/eetbaar.svg"
             },
             {
               "if": "rain_barel=yes",
-              "then": "circle:white;./assets/themes/facadegardens/gevelton.svg",
-              "badge": true
+              "then": "circle:white;./assets/themes/facadegardens/gevelton.svg"
             },
             {
               "if": "plant~.*shrub.*",
-              "then": "circle:white;./assets/themes/facadegardens/struik.svg",
-              "badge": true
+              "then": "circle:white;./assets/themes/facadegardens/struik.svg"
             },
             {
               "if": "plant~.*flower.*",
-              "then": "circle:white;./assets/themes/facadegardens/bloei.svg",
-              "badge": true
+              "then": "circle:white;./assets/themes/facadegardens/bloei.svg"
             }
           ],
           "iconSize": {

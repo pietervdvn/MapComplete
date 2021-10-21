@@ -26,35 +26,37 @@ function fixLayerConfig(config: LayerConfigJson): void {
             }
         }
     }
-    
-    if(config.mapRendering === undefined || true){
+
+    if (config.mapRendering === undefined || true) {
         // This is a legacy format, lets create a pointRendering
-        let location: ("point"|"centroid")[] = ["point"]
-        let wayHandling: number = config.wayHandling
-        if(wayHandling === 2){
+        let location: ("point" | "centroid")[] = ["point"]
+        let wayHandling: number = config["wayHandling"] ?? 0
+        if (wayHandling === 2) {
             location = ["point", "centroid"]
         }
         config.mapRendering = [
             {
                 icon: config["icon"],
-                iconOverlays: config["iconOverlays"],
+                iconBadges: config["iconOverlays"],
                 label: config["label"],
                 iconSize: config["iconSize"],
                 location,
                 rotation: config["rotation"]
             }
         ]
-        
-        if(wayHandling !== 1){
+
+        if (wayHandling !== 1) {
             const lineRenderConfig = <LineRenderingConfigJson>{
                 color: config["color"],
                 width: config["width"],
                 dashArray: config["dashArray"]
             }
-            if(Object.keys(lineRenderConfig).length > 0){
+            if (Object.keys(lineRenderConfig).length > 0) {
                 config.mapRendering.push(lineRenderConfig)
             }
         }
+
+
         /*delete config["color"]
         delete config["width"]
         delete config["dashArray"]
@@ -64,11 +66,23 @@ function fixLayerConfig(config: LayerConfigJson): void {
         delete config["label"]
         delete config["iconSize"]
         delete config["rotation"]
+         delete config["wayHandling"]
         */
-        
-        
+
     }
-    
+
+    for (const mapRenderingElement of config.mapRendering) {
+        if (mapRenderingElement["iconOverlays"] !== undefined) {
+            mapRenderingElement["iconBadges"] = mapRenderingElement["iconOverlays"]
+        }
+        for (const overlay of mapRenderingElement["iconBadges"] ?? []) {
+            if (overlay["badge"] !== true) {
+                console.log("Warning: non-overlay element for ", config.id)
+            }
+            delete overlay["badge"]
+        }
+    }
+
 }
 
 const layerFiles = ScriptUtils.getLayerFiles();
@@ -86,11 +100,11 @@ for (const themeFile of themeFiles) {
         // @ts-ignore
         fixLayerConfig(layerConfig)
     }
-    
-    if(themeFile.parsed["roamingRenderings"] !== undefined && themeFile.parsed["roamingRenderings"].length == 0){
+
+    if (themeFile.parsed["roamingRenderings"] !== undefined && themeFile.parsed["roamingRenderings"].length == 0) {
         delete themeFile.parsed["roamingRenderings"]
     }
-    
+
     writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "  "))
 }
 //*/

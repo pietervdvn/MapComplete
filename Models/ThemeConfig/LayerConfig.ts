@@ -20,9 +20,6 @@ import PointRenderingConfigJson from "./Json/PointRenderingConfigJson";
 import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
 
 export default class LayerConfig extends WithContextLoader{
-    static WAYHANDLING_DEFAULT = 0;
-    static WAYHANDLING_CENTER_ONLY = 1;
-    static WAYHANDLING_CENTER_AND_WAY = 2;
 
     id: string;
     name: Translation;
@@ -41,7 +38,6 @@ export default class LayerConfig extends WithContextLoader{
     public readonly mapRendering: PointRenderingConfig[]
     public readonly lineRendering: LineRenderingConfig[]
 
-    wayHandling: number;
     public readonly units: Unit[];
     public readonly deletion: DeleteConfig | null;
     public readonly allowMove: MoveConfig | null
@@ -153,7 +149,6 @@ export default class LayerConfig extends WithContextLoader{
         this.passAllFeatures = json.passAllFeatures ?? false;
         this.minzoom = json.minzoom ?? 0;
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
-        this.wayHandling = json.wayHandling ?? 0;
         if (json.presets !== undefined && json.presets?.map === undefined) {
             throw "Presets should be a list of items (at " + context + ")"
         }

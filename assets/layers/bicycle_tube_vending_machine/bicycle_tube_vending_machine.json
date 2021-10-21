@@ -48,8 +48,7 @@
                     "operational_status=closed"
                 ]
             },
-            "then": "close:#c33",
-            "badge": true
+            "then": "close:#c33"
         }
     ],
     "iconSize": "50,50,bottom",
@@ -282,7 +281,7 @@
             "icon": {
                 "render": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
             },
-            "iconOverlays": [
+            "iconBadges": [
                 {
                     "if": {
                         "or": [
@@ -290,8 +289,7 @@
                             "operational_status=closed"
                         ]
                     },
-                    "then": "close:#c33",
-                    "badge": true
+                    "then": "close:#c33"
                 }
             ],
             "iconSize": "50,50,bottom",

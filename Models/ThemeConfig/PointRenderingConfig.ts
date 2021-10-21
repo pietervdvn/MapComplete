@@ -16,7 +16,7 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 export default class PointRenderingConfig extends WithContextLoader {
 
     public readonly icon: TagRenderingConfig;
-    public readonly iconOverlays: { if: TagsFilter; then: TagRenderingConfig; badge: boolean }[];
+    public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[];
     public readonly iconSize: TagRenderingConfig;
     public readonly label: TagRenderingConfig;
     public readonly rotation: TagRenderingConfig;
@@ -24,21 +24,20 @@ export default class PointRenderingConfig extends WithContextLoader {
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
         this.icon = this.tr("icon", "");
-        this.iconOverlays = (json.iconOverlays ?? []).map((overlay, i) => {
-            let tr = new TagRenderingConfig(
-                overlay.then,
-                `iconoverlays.${i}`
-            );
-            if (
-                typeof overlay.then === "string" &&
-                SharedTagRenderings.SharedIcons.get(overlay.then) !== undefined
-            ) {
+        this.iconBadges = (json.iconBadges ?? []).map((overlay, i) => {
+            let tr : TagRenderingConfig;
+            if (typeof overlay.then === "string" &&
+                SharedTagRenderings.SharedIcons.get(overlay.then) !== undefined) {
                 tr = SharedTagRenderings.SharedIcons.get(overlay.then);
+            }else{
+                tr = new TagRenderingConfig(
+                    overlay.then,
+                    `iconBadges.${i}`
+                );
             }
             return {
                 if: TagUtils.Tag(overlay.if),
-                then: tr,
-                badge: overlay.badge ?? false,
+                then: tr
             };
         });
 
@@ -50,7 +49,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             }
         }
         this.iconSize = this.tr("iconSize", "40,40,center");
-        this.label = this.tr("label", "");
+        this.label = this.tr("label", undefined);
         this.rotation = this.tr("rotation", "0");
     }
 
@@ -59,7 +58,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         const parts: Set<string>[] = [];
         parts.push(this.icon?.ExtractImages(true));
         parts.push(
-            ...this.iconOverlays?.map((overlay) => overlay.then.ExtractImages(true))
+            ...this.iconBadges?.map((overlay) => overlay.then.ExtractImages(true))
         );
 
         const allIcons = new Set<string>();
@@ -69,21 +68,115 @@ export default class PointRenderingConfig extends WithContextLoader {
         return allIcons;
     }
 
+    /**
+     * Given a single HTML spec (either a single image path OR "image_path_to_known_svg:fill-colour", returns a fixedUIElement containing that
+     * The element will fill 100% and be positioned absolutely with top:0 and left: 0
+     */
+    private static FromHtmlSpec(htmlSpec: string, style: string, isBadge = false): BaseUIElement {
+        if (htmlSpec === undefined) {
+            return undefined;
+        }
+        const match = htmlSpec.match(/([a-zA-Z0-9_]*):([^;]*)/);
+        if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
+            const svg = (Svg.All[match[1] + ".svg"] as string)
+            const targetColor = match[2]
+            const img = new Img(svg.replace(/#000000/g, targetColor), true)
+                .SetStyle(style)
+            if(isBadge){
+                img.SetClass("badge")
+            }
+            return img
+        } else {
+            return new FixedUiElement(`<img src="${htmlSpec}" style="${style}" />`);
+        }
+    }
+    
+    private static FromHtmlMulti(multiSpec: string, rotation: string , isBadge: boolean, defaultElement: BaseUIElement = undefined){
+        if(multiSpec === undefined){
+            return defaultElement
+        }
+        const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
 
+        const htmlDefs = multiSpec.trim()?.split(";") ?? []
+        const elements = Utils.NoEmpty(htmlDefs).map(def => PointRenderingConfig.FromHtmlSpec(def, style, isBadge))
+        if (elements.length === 0) {
+            return defaultElement
+        } else {
+            return new Combine(elements).SetClass("relative block w-full h-full")
+        }
+    }
+
+    public GetSimpleIcon(tags: UIEventSource<any>): BaseUIElement {
+        const self = this;
+        if (this.icon === undefined) {
+            return undefined;
+        }
+        return new VariableUiElement(tags.map(tags => {
+            const rotation = self.rotation?.GetRenderValue(tags)?.txt ?? "0deg"
+            
+            const htmlDefs = self.icon.GetRenderValue(tags)?.txt
+            let defaultPin : BaseUIElement = undefined
+            if(self.label === undefined){
+                defaultPin =  Svg.teardrop_with_hole_green_svg()
+            }
+            return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation,false, defaultPin)
+        })).SetClass("w-full h-full block")
+    }
+
+    private GetBadges(tags: UIEventSource<any>): BaseUIElement {
+        if (this.iconBadges.length === 0) {
+            return undefined
+        }
+        return new VariableUiElement(
+            tags.map(tags => {
+
+                const badgeElements = this.iconBadges.map(badge => {
+
+                    if (!badge.if.matchesProperties(tags)) {
+                        // Doesn't match...
+                        return undefined
+                    }
+
+                    const htmlDefs = badge.then.GetRenderValue(tags)?.txt
+                    const badgeElement= PointRenderingConfig.FromHtmlMulti(htmlDefs, "0", true)?.SetClass("block relative")
+                    if(badgeElement === undefined){
+                        return undefined;
+                    }
+                    return new Combine([badgeElement]).SetStyle("width: 1.5rem").SetClass("block")
+                    
+                })
+
+                return new Combine(badgeElements).SetClass("inline-flex h-full")
+            })).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
+    }
+
+    private GetLabel(tags: UIEventSource<any>): BaseUIElement {
+        if (this.label === undefined) {
+            return undefined;
+        }
+        const self = this;
+        return new VariableUiElement(tags.map(tags => {
+            const label = self.label
+                ?.GetRenderValue(tags)
+                ?.Subs(tags)
+                ?.SetClass("block text-center")
+            return new Combine([label]).SetClass("flex flex-col items-center mt-1")
+        }))
+
+    }
 
     public GenerateLeafletStyle(
         tags: UIEventSource<any>,
         clickable: boolean
-    ): 
-       {
+    ):
+        {
             html: BaseUIElement;
             iconSize: [number, number];
             iconAnchor: [number, number];
             popupAnchor: [number, number];
             iconUrl: string;
             className: string;
-        }
-     {
+        } {
         function num(str, deflt = 40) {
             const n = Number(str);
             if (isNaN(n)) {
@@ -122,113 +215,22 @@ export default class PointRenderingConfig extends WithContextLoader {
             anchorH = iconH;
         }
 
-        const iconUrlStatic = render(this.icon);
-        const self = this;
 
-        function genHtmlFromString(sourcePart: string, rotation: string): BaseUIElement {
-            const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
-            let html: BaseUIElement = new FixedUiElement(
-                `<img src="${sourcePart}" style="${style}" />`
-            );
-            const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/);
-            if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
-                html = new Img(
-                    (Svg.All[match[1] + ".svg"] as string).replace(
-                        /#000000/g,
-                        match[2]
-                    ),
-                    true
-                ).SetStyle(style);
-            }
-            return html;
-        }
+        const iconAndBadges = new Combine([this.GetSimpleIcon(tags), this.GetBadges(tags)])
+            .SetStyle(`width: ${iconW}px; height: ${iconH}px`)
+            .SetClass("block relative")
 
-
-        const mappedHtml = tags?.map((tgs) => {
-            // What do you mean, 'tgs' is never read?
-            // It is read implicitly in the 'render' method
-            const iconUrl = render(self.icon);
-            const rotation = render(self.rotation, "0deg");
-
-            let htmlParts: BaseUIElement[] = [];
-            let sourceParts = Utils.NoNull(
-                iconUrl.split(";").filter((prt) => prt != "")
-            );
-            for (const sourcePart of sourceParts) {
-                htmlParts.push(genHtmlFromString(sourcePart, rotation));
-            }
-
-            let badges = [];
-            for (const iconOverlay of self.iconOverlays) {
-                if (!iconOverlay.if.matchesProperties(tgs)) {
-                    continue;
-                }
-                if (iconOverlay.badge) {
-                    const badgeParts: BaseUIElement[] = [];
-                    const renderValue = iconOverlay
-                        .then
-                        .GetRenderValue(tgs)
-
-                    if (renderValue === undefined) {
-                        continue;
-                    }
-
-                    const partDefs = renderValue.txt.split(";")
-                        .filter((prt) => prt != "");
-
-                    for (const badgePartStr of partDefs) {
-                        badgeParts.push(genHtmlFromString(badgePartStr, "0"));
-                    }
-
-                    const badgeCompound = new Combine(badgeParts).SetStyle(
-                        "display:flex;position:relative;width:100%;height:100%;"
-                    );
-
-                    badges.push(badgeCompound);
-                } else {
-                    htmlParts.push(
-                        genHtmlFromString(iconOverlay.then.GetRenderValue(tgs).txt, "0")
-                    );
-                }
-            }
-
-            if (badges.length > 0) {
-                const badgesComponent = new Combine(badges).SetStyle(
-                    "display:flex;height:50%;width:100%;position:absolute;top:50%;left:50%;"
-                );
-                htmlParts.push(badgesComponent);
-            }
-
-            if (sourceParts.length == 0) {
-                iconH = 0;
-            }
-            try {
-                const label = self.label
-                    ?.GetRenderValue(tgs)
-                    ?.Subs(tgs)
-                    ?.SetClass("block text-center")
-                    ?.SetStyle("margin-top: " + (iconH + 2) + "px");
-                if (label !== undefined) {
-                    htmlParts.push(
-                        new Combine([label]).SetClass("flex flex-col items-center")
-                    );
-                }
-            } catch (e) {
-                console.error(e, tgs);
-            }
-            return new Combine(htmlParts);
-        });
 
         return {
-                html: mappedHtml === undefined ? new FixedUiElement(self.icon.render.txt) : new VariableUiElement(mappedHtml),
-                iconSize: [iconW, iconH],
-                iconAnchor: [anchorW, anchorH],
-                popupAnchor: [0, 3 - anchorH],
-                iconUrl: iconUrlStatic,
-                className: clickable
-                    ? "leaflet-div-icon"
-                    : "leaflet-div-icon unclickable",
+            html: new Combine([iconAndBadges, this.GetLabel(tags)]).SetStyle("flex flex-col"),
+            iconSize: [iconW, iconH],
+            iconAnchor: [anchorW, anchorH],
+            popupAnchor: [0, 3 - anchorH],
+            iconUrl: undefined,
+            className: clickable
+                ? "leaflet-div-icon"
+                : "leaflet-div-icon unclickable",
         };
     }
-    
+
 }

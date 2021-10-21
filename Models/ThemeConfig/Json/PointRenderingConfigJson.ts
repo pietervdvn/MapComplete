@@ -31,14 +31,12 @@ export default interface PointRenderingConfigJson {
     icon?: string | TagRenderingConfigJson;
 
     /**
-     * IconsOverlays are a list of extra icons/badges to overlay over the icon.
-     * The 'badge'-toggle changes their behaviour.
-     * If badge is set, it will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
-     * If badges is false, it'll be a simple overlay
+     * A list of extra badges to show next to the icon as small badge
+     * They will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
      *
-     * Note: strings are interpreted as icons, so layering and substituting is supported
+     * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
      */
-    iconOverlays?: { if: string | AndOrTagConfigJson, then: string | TagRenderingConfigJson, badge?: boolean }[]
+    iconBadges?: { if: string | AndOrTagConfigJson, then: string | TagRenderingConfigJson }[]
 
 
     /**

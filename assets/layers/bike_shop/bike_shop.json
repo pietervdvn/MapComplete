@@ -723,13 +723,11 @@
     "iconOverlays": [
         {
             "if": "opening_hours~*",
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         },
         {
             "if": "service:bicycle:pump=yes",
-            "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
-            "badge": true
+            "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
         },
         {
             "if": {
@@ -739,8 +737,7 @@
             },
             "then": {
                 "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
-            },
-            "badge": true
+            }
         }
     ],
     "width": {
@@ -768,16 +765,14 @@
                     }
                 ]
             },
-            "iconOverlays": [
+            "iconBadges": [
                 {
                     "if": "opening_hours~*",
-                    "then": "isOpen",
-                    "badge": true
+                    "then": "isOpen"
                 },
                 {
                     "if": "service:bicycle:pump=yes",
-                    "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
-                    "badge": true
+                    "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
                 },
                 {
                     "if": {
@@ -787,8 +782,7 @@
                     },
                     "then": {
                         "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
-                    },
-                    "badge": true
+                    }
                 }
             ],
             "iconSize": {

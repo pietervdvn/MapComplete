@@ -1412,6 +1412,26 @@
     ]
   },
   {
+    "path": "teardrop_with_hole_green.svg",
+    "license": "CC-BY-SA 3.0 Unported",
+    "authors": [
+      "Mono, derivated work User:Benoit Rochon"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Map_pin_icon_green.svg"
+    ]
+  },
+    {
+    "path": "teardrop.svg",
+    "license": "CC-BY-SA 3.0 Unported",
+    "authors": [
+      "Mono, derivated work User:Benoit Rochon"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Map_pin_icon_green.svg"
+    ]
+  },
+  {
     "path": "translate.svg",
     "license": "CC-BY-SA 3.0",
     "authors": [

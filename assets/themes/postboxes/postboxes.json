@@ -154,8 +154,7 @@
       "iconOverlays": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen",
-          "badge": true
+          "then": "isOpen"
         }
       ],
       "width": {
@@ -196,11 +195,10 @@
           "icon": {
             "render": "square:white;./assets/themes/postboxes/post_office.svg"
           },
-          "iconOverlays": [
+          "iconBadges": [
             {
               "if": "opening_hours~*",
-              "then": "isOpen",
-              "badge": true
+              "then": "isOpen"
             }
           ],
           "iconSize": {

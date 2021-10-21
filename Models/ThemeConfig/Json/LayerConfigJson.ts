@@ -124,15 +124,6 @@ export interface LayerConfigJson {
 
     mapRendering: (PointRenderingConfigJson | LineRenderingConfigJson)[]
 
-
-    /**
-     * Wayhandling: should a way/area be displayed as:
-     * 0) The way itself
-     * 1) Only the centerpoint
-     * 2) The centerpoint and the way
-     */
-    wayHandling?: number;
-
     /**
      * If set, this layer will pass all the features it receives onto the next layer.
      * This is ideal for decoration, e.g. directionss on cameras

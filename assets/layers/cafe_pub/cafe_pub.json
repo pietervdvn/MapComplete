@@ -28,8 +28,7 @@
     "iconOverlays": [
         {
             "if": "opening_hours~*",
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         }
     ],
     "label": {
@@ -215,11 +214,10 @@
                     }
                 ]
             },
-            "iconOverlays": [
+            "iconBadges": [
                 {
                     "if": "opening_hours~*",
-                    "then": "isOpen",
-                    "badge": true
+                    "then": "isOpen"
                 }
             ],
             "label": {

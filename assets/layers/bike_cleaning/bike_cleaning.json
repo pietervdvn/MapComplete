@@ -81,8 +81,7 @@
             "then": {
                 "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
                 "roaming": true
-            },
-            "badge": true
+            }
         }
     ],
     "titleIcons": [
@@ -168,7 +167,7 @@
             "icon": {
                 "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
             },
-            "iconOverlays": [
+            "iconBadges": [
                 {
                     "if": {
                         "and": [
@@ -179,8 +178,7 @@
                     "then": {
                         "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
                         "roaming": true
-                    },
-                    "badge": true
+                    }
                 }
             ],
             "iconSize": "50,50,bottom",

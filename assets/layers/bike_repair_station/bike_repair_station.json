@@ -673,8 +673,7 @@
     "iconOverlays": [
         {
             "if": "operator=De Fietsambassade Gent",
-            "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg",
-            "badge": true
+            "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
         }
     ],
     "iconSize": {
@@ -826,11 +825,10 @@
                     }
                 ]
             },
-            "iconOverlays": [
+            "iconBadges": [
                 {
                     "if": "operator=De Fietsambassade Gent",
-                    "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg",
-                    "badge": true
+                    "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
                 }
             ],
             "iconSize": {
