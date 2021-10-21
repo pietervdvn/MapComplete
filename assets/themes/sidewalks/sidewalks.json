@@ -45,8 +45,23 @@
           "width": 8
         },
         {
-          "color": "#888",
-          "width": 8,
+          "color": {
+            "render": "#888"
+          },
+          "width": {
+            "render": "8",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sidewalk:left=no",
+                    "sidewalk:left=separate"
+                  ]
+                },
+                "then": 0
+              }
+            ]
+          },
           "offset": -8
         },
         {
@@ -55,7 +70,7 @@
           "offset": 8
         }
       ],
-  "allowSplit": true
+      "allowSplit": true
     }
   ]
 }
