@@ -175,7 +175,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             // Note: if layer.geometry is null, there is global coverage for this layer
             layers.push({
                 id: props.id,
-                max_zoom: props.max_zoom ?? 25,
+                max_zoom: props.max_zoom ?? 19,
                 min_zoom: props.min_zoom ?? 1,
                 name: props.name,
                 layer: leafletLayer,

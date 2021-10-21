@@ -1,0 +1,22 @@
+digraph G {
+   init [shape=box]
+   denied
+   init -> denied [label="geolocation permanently denied"]
+   init -> getting_location [label="previously granted flag set"]
+   init -> idle [label="previously granted flag unset"]
+   idle
+   idle -> request_permission [label="on click"]
+   request_permission
+   request_permission -> getting_location [label="granted (sets flag)"]
+   request_permission -> idle [label="not granted"]
+   request_permission -> denied [label="permanently denied"]
+   getting_location
+   location_found
+   getting_location -> location_found [label="location found"]
+   location_found -> open_lock [label="on click (zooms to location)"]
+   open_lock
+   open_lock -> location_found [label="after 3 sec"]
+   closed_lock
+   open_lock -> closed_lock [label="on click (locks zoom to location)"]
+   closed_lock -> location_found [label="on click"]
+}
