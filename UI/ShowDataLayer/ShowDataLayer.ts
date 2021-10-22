@@ -16,7 +16,7 @@ export default class ShowDataLayer {
     private readonly _features: RenderingMultiPlexerFeatureSource
     private readonly _layerToShow: LayerConfig;
     private readonly _selectedElement: UIEventSource<any>
-    private readonly allElements : ElementStorage
+    private readonly allElements: ElementStorage
     // Used to generate a fresh ID when needed
     private _cleanCount = 0;
     private geoLayer = undefined;
@@ -31,7 +31,7 @@ export default class ShowDataLayer {
      */
     private readonly leafletLayersPerId = new Map<string, { feature: any, leafletlayer: any }>()
 
-    private readonly showDataLayerid : number;
+    private readonly showDataLayerid: number;
     private static dataLayerIds = 0
 
     constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
@@ -104,7 +104,7 @@ export default class ShowDataLayer {
                 leafletLayer.openPopup()
             }
         })
-        
+
         this.update(options)
 
     }
@@ -146,17 +146,21 @@ export default class ShowDataLayer {
                 continue
             }
             try {
-                
-                if((feat.geometry.type === "LineString" || feat.geometry.type === "MultiLineString")) {
+
+                if ((feat.geometry.type === "LineString" || feat.geometry.type === "MultiLineString")) {
+                    const self = this;
                     const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
                     const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
-                    const lineStyle = this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tagsSource)
-                    const offsettedLine = L.polyline(coords, lineStyle);
-                    
-                    this.postProcessFeature(feat, offsettedLine)
-                    
-                    offsettedLine.addTo(this.geoLayer)
-                }else{
+                    let offsettedLine;
+                    tagsSource.map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags)).addCallbackAndRunD(lineStyle => {
+                        if (offsettedLine !== undefined) {
+                            self.geoLayer.removeLayer(offsettedLine)
+                        }
+                        offsettedLine = L.polyline(coords, lineStyle);
+                        this.postProcessFeature(feat, offsettedLine)
+                        offsettedLine.addTo(this.geoLayer)
+                    })
+                } else {
                     this.geoLayer.addData(feat);
                 }
             } catch (e) {
@@ -183,20 +187,20 @@ export default class ShowDataLayer {
         const tagsSource = this.allElements?.addOrGetElement(feature) ?? new UIEventSource<any>(feature.properties);
         // Every object is tied to exactly one layer
         const layer = this._layerToShow
-        
+
         const pointRenderingIndex = feature.pointRenderingIndex
         const lineRenderingIndex = feature.lineRenderingIndex
-        
-        if(pointRenderingIndex !== undefined){
+
+        if (pointRenderingIndex !== undefined) {
             return {
                 icon: layer.mapRendering[pointRenderingIndex].GenerateLeafletStyle(tagsSource, this._enablePopups)
             }
         }
-        if(lineRenderingIndex !== undefined){
+        if (lineRenderingIndex !== undefined) {
             return layer.lineRendering[lineRenderingIndex].GenerateLeafletStyle(tagsSource)
         }
 
-        throw "Neither lineRendering nor mapRendering defined for "+feature
+        throw "Neither lineRendering nor mapRendering defined for " + feature
     }
 
     private pointToLayer(feature, latLng): L.Layer {
@@ -211,7 +215,7 @@ export default class ShowDataLayer {
 
         let tagSource = this.allElements?.getEventSourceById(feature.properties.id) ?? new UIEventSource<any>(feature.properties)
         const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
-        let style : any = layer.mapRendering[feature.pointRenderingIndex].GenerateLeafletStyle(tagSource, clickable);
+        let style: any = layer.mapRendering[feature.pointRenderingIndex].GenerateLeafletStyle(tagSource, clickable);
         const baseElement = style.html;
         if (!this._enablePopups) {
             baseElement.SetStyle("cursor: initial !important")
@@ -276,7 +280,7 @@ export default class ShowDataLayer {
             feature: feature,
             leafletlayer: leafletLayer
         })
-        
+
 
     }
 

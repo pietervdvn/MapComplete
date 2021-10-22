@@ -97,9 +97,9 @@ export default class SimpleMetaTagger {
             /**
              * Sets the key onto the properties (but doesn't overwrite if already existing)
              */
-            function set(key, value) {
-                if (tgs[key] === undefined || tgs[key] === "") {
-                    tgs[key] = value
+            function set(k, value) {
+                if (tgs[k] === undefined || tgs[k] === "") {
+                    tgs[k] = value
                     somethingChanged = true
                 }
             }

@@ -25,10 +25,7 @@ export default class LineRenderingConfig extends WithContextLoader {
         this.offset = this.tr("offset", "0");
     }
 
-
-    public GenerateLeafletStyle(
-        tags: UIEventSource<any>
-    ):
+public GenerateLeafletStyle(        tags: {}    ):
         {
             color: string,
             weight: number,
@@ -48,8 +45,8 @@ export default class LineRenderingConfig extends WithContextLoader {
             if (tags === undefined) {
                 return deflt
             }
-            const str = tr?.GetRenderValue(tags.data)?.txt ?? deflt;
-            return Utils.SubstituteKeys(str, tags.data)?.replace(/{.*}/g, "");
+            const str = tr?.GetRenderValue(tags)?.txt ?? deflt;
+            return Utils.SubstituteKeys(str, tags)?.replace(/{.*}/g, "");
         }
 
         const dashArray = render(this.dashArray)?.split(" ")?.map(Number);
@@ -62,7 +59,6 @@ export default class LineRenderingConfig extends WithContextLoader {
 
         const weight = rendernum(this.width, 5);
         const offset = rendernum(this.offset, 0)
-        console.log("Calculated offset:", offset, "for", this.offset)
         return {
             color,
             weight,

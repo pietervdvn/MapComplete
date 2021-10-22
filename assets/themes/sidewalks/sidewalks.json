@@ -41,7 +41,7 @@
       "tagRenderings": [],
       "mapRendering": [
         {
-          "color": "#ddd",
+          "color": "#ffffff55",
           "width": 8
         },
         {
@@ -49,11 +49,12 @@
             "render": "#888"
           },
           "width": {
-            "render": "8",
+            "render": 6,
             "mappings": [
               {
                 "if": {
                   "or": [
+                    "sidewalk:left=",
                     "sidewalk:left=no",
                     "sidewalk:left=separate"
                   ]
@@ -62,12 +63,26 @@
               }
             ]
           },
-          "offset": -8
+          "offset": -6
         },
         {
           "color": "#888",
-          "width": 8,
-          "offset": 8
+          "width": {
+            "render": 6,
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sidewalk:right=",
+                    "sidewalk:right=no",
+                    "sidewalk:right=separate"
+                  ]
+                },
+                "then": 0
+              }
+            ]
+          },
+          "offset": 6
         }
       ],
       "allowSplit": true

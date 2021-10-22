@@ -141,7 +141,7 @@ export default class TagRenderingConfig {
                 const mp = {
                     if: TagUtils.Tag(mapping.if, `${mappingContext}.if`),
                     ifnot: (mapping.ifnot !== undefined ? TagUtils.Tag(mapping.ifnot, `${mappingContext}.ifnot`) : undefined),
-                    then: Translations.T(mapping.then, `{mappingContext}.then`),
+                    then: Translations.T(mapping.then, `${mappingContext}.then`),
                     hideInAnswer: hideInAnswer
                 };
                 if (this.question) {
