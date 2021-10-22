@@ -900,154 +900,6 @@
     "street_lighting": {
         "description": "Een thema met details over straatlantaarns zoals verlichtingstype, montage, lichtkleur en veel meer.",
         "layers": {
-            "0": {
-                "name": "Straatlantaarns",
-                "presets": {
-                    "0": {
-                        "title": "straatlantaarn"
-                    }
-                },
-                "tagRenderings": {
-                    "colour": {
-                        "mappings": {
-                            "0": {
-                                "then": "Deze lantaarn geeft wit licht"
-                            },
-                            "1": {
-                                "then": "Deze lantaarn geeft groen licht"
-                            },
-                            "2": {
-                                "then": "Deze lantaarn geeft oranje licht"
-                            }
-                        },
-                        "question": "Wat voor kleur licht geeft deze lantaarn?",
-                        "render": "Deze lantaarn geeft {light:colour} licht"
-                    },
-                    "count": {
-                        "mappings": {
-                            "0": {
-                                "then": "Deze lantaarn heeft 1 lamp"
-                            },
-                            "1": {
-                                "then": "Deze lantaarn heeft 2 lampen"
-                            }
-                        },
-                        "question": "Hoeveel lampen heeft deze lantaarn?",
-                        "render": "Deze lantaarn heeft {light:count} lampen"
-                    },
-                    "direction": {
-                        "question": "Waar is deze lamp heengericht?",
-                        "render": "Deze lantaarn is gericht naar {light:direction}"
-                    },
-                    "lamp_mount": {
-                        "mappings": {
-                            "0": {
-                                "then": "Deze lantaarn zit boven op een rechte paal"
-                            },
-                            "1": {
-                                "then": "Deze lantaarn zit aan het eind van een gebogen paal"
-                            }
-                        },
-                        "question": "Hoe zit deze lantaarn aan de paal?"
-                    },
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Deze lantaarn is 's nachts verlicht"
-                            },
-                            "1": {
-                                "then": "Deze lantaarn is 24/7 verlicht"
-                            },
-                            "2": {
-                                "then": "Deze lantaarn is verlicht op basis van beweging"
-                            },
-                            "3": {
-                                "then": "Deze lantaarn is verlicht op verzoek (bijv. met een drukknop)"
-                            }
-                        },
-                        "question": "Wanneer is deze lantaarn verlicht?"
-                    },
-                    "method": {
-                        "mappings": {
-                            "0": {
-                                "then": "Deze lantaarn is elektrisch verlicht"
-                            },
-                            "1": {
-                                "then": "Deze lantaarn gebruikt LEDs"
-                            },
-                            "2": {
-                                "then": "Deze lantaarn gebruikt gloeilampen"
-                            },
-                            "3": {
-                                "then": "Deze lantaarn gebruikt halogeen verlichting"
-                            },
-                            "4": {
-                                "then": "Deze lantaarn gebruikt gasontladingslampen (onbekend type)"
-                            },
-                            "5": {
-                                "then": "Deze lantaarn gebruikt een kwiklamp (enigszins blauwachtig)"
-                            },
-                            "6": {
-                                "then": "Deze lantaarn gebruikt metaalhalidelampen"
-                            },
-                            "7": {
-                                "then": "Deze lantaarn gebruikt fluorescentieverlichting (TL en spaarlamp)"
-                            },
-                            "8": {
-                                "then": "Deze lantaarn gebruikt natriumlampen (onbekend type)"
-                            },
-                            "9": {
-                                "then": "Deze lantaarn gebruikt lagedruknatriumlampen (monochroom oranje)"
-                            },
-                            "10": {
-                                "then": "Deze lantaarn gebruikt hogedruknatriumlampen (oranje met wit)"
-                            },
-                            "11": {
-                                "then": "Deze lantaarn wordt verlicht met gas"
-                            }
-                        },
-                        "question": "Wat voor verlichting gebruikt deze lantaarn?"
-                    },
-                    "ref": {
-                        "question": "Wat is het nummer van deze straatlantaarn?",
-                        "render": "Deze straatlantaarn heeft het nummer {ref}"
-                    },
-                    "support": {
-                        "mappings": {
-                            "0": {
-                                "then": "Deze lantaarn hangt aan kabels"
-                            },
-                            "1": {
-                                "then": "Deze lantaarn hangt aan een plafond"
-                            },
-                            "2": {
-                                "then": "Deze lantaarn zit in de grond"
-                            },
-                            "3": {
-                                "then": "Deze lantaarn zit op een korte paal (meestal < 1.5m)"
-                            },
-                            "4": {
-                                "then": "Deze lantaarn zit op een paal"
-                            },
-                            "5": {
-                                "then": "Deze lantaarn hangt direct aan de muur"
-                            },
-                            "6": {
-                                "then": "Deze lantaarn hangt aan de muur met een metalen balk"
-                            }
-                        },
-                        "question": "Hoe is deze straatlantaarn gemonteerd?"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Straatlantaarn {ref}"
-                        }
-                    },
-                    "render": "Straatlantaarn"
-                }
-            },
             "1": {
                 "name": "Verlichte straten",
                 "tagRenderings": {
@@ -1100,6 +952,10 @@
             }
         },
         "title": "Straatverlichting"
+    },
+    "street_lighting_assen": {
+        "description": "Straatverlichtingkaart met dataset Assen",
+        "title": "Straatverlichting Assen"
     },
     "surveillance": {
         "description": "Op deze open kaart kan je bewakingscamera's vinden.",
