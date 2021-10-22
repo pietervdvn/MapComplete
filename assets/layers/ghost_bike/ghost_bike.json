@@ -174,7 +174,8 @@
                 "nl": "Wanneer werd deze witte fiets geplaatst?",
                 "en": "When was this Ghost bike installed?",
                 "it": "Quando è stata installata questa bici fantasma?",
-                "fr": "Quand ce vélo fantôme a-t-il été installée ?"
+                "fr": "Quand ce vélo fantôme a-t-il été installée ?",
+                "de": "Wann wurde dieses Geisterrad aufgestellt?"
             },
             "render": {
                 "nl": "Geplaatst op {start_date}",

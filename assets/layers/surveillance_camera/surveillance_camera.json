@@ -5,7 +5,8 @@
         "nl": "Bewakingscamera's",
         "ru": "Камеры наблюдения",
         "fr": "Caméras de surveillance",
-        "it": "Videocamere di sorveglianza"
+        "it": "Videocamere di sorveglianza",
+        "de": "Überwachungskameras"
     },
     "minzoom": 12,
     "source": {
@@ -28,7 +29,8 @@
             "nl": "Bewakingscamera",
             "ru": "Камера наблюдения",
             "fr": "Caméra de surveillance",
-            "it": "Videocamera di sorveglianza"
+            "it": "Videocamera di sorveglianza",
+            "de": "Überwachungskamera"
         }
     },
     "tagRenderings": [
@@ -39,7 +41,8 @@
                 "nl": "Wat voor soort camera is dit?",
                 "fr": "Quel genre de caméra est-ce ?",
                 "it": "Di che tipo di videocamera si tratta?",
-                "ru": "Какая это камера?"
+                "ru": "Какая это камера?",
+                "de": "Um welche Kameratyp handelt se sich?"
             },
             "mappings": [
                 {
@@ -52,7 +55,8 @@
                         "en": "A fixed (non-moving) camera",
                         "nl": "Een vaste camera",
                         "fr": "Une caméra fixe (non mobile)",
-                        "it": "Una videocamera fissa (non semovente)"
+                        "it": "Una videocamera fissa (non semovente)",
+                        "de": "Eine fest montierte (nicht bewegliche) Kamera"
                     }
                 },
                 {
@@ -66,7 +70,8 @@
                         "nl": "Een dome (bolvormige camera die kan draaien)",
                         "fr": "Une caméra dôme (qui peut tourner)",
                         "it": "Una videocamera a cupola (che può ruotare)",
-                        "ru": "Камера с поворотным механизмом"
+                        "ru": "Камера с поворотным механизмом",
+                        "de": "Eine Kuppelkamera (drehbar)"
                     }
                 },
                 {
@@ -80,7 +85,8 @@
                         "nl": "Een camera die (met een motor) van links naar rechts kan draaien",
                         "ru": "Панорамная камера",
                         "fr": "Une caméra panoramique",
-                        "it": "Una videocamera panoramica"
+                        "it": "Una videocamera panoramica",
+                        "de": "Eine bewegliche Kamera"
                     }
                 }
             ],
@@ -143,13 +149,15 @@
                 "en": "Who operates this CCTV?",
                 "nl": "Wie beheert deze bewakingscamera?",
                 "fr": "Qui exploite ce système de vidéosurveillance ?",
-                "it": "Chi gestisce questa videocamera a circuito chiuso?"
+                "it": "Chi gestisce questa videocamera a circuito chiuso?",
+                "de": "Wer betreibt diese CCTV Kamera?"
             },
             "render": {
                 "en": "Operated by {operator}",
                 "nl": "Beheer door {operator}",
                 "fr": "Exploité par {operator}",
-                "it": "È gestita da {operator}"
+                "it": "È gestita da {operator}",
+                "de": "Betrieben von {operator}"
             },
             "id": "Operator"
         },
@@ -222,7 +230,8 @@
                         "en": "This camera is located indoors",
                         "nl": "Deze camera bevindt zich binnen",
                         "fr": "Cette caméra est située à l'intérieur",
-                        "it": "Questa videocamera si trova al chiuso"
+                        "it": "Questa videocamera si trova al chiuso",
+                        "de": "Diese Kamera befindet sich im Innenraum"
                     }
                 },
                 {
@@ -232,7 +241,8 @@
                         "nl": "Deze camera bevindt zich buiten",
                         "fr": "Cette caméra est située à l'extérieur",
                         "it": "Questa videocamera si trova all'aperto",
-                        "ru": "Эта камера расположена снаружи"
+                        "ru": "Эта камера расположена снаружи",
+                        "de": "Diese Kamera befindet sich im Freien"
                     }
                 },
                 {
@@ -242,7 +252,8 @@
                         "nl": "Deze camera bevindt zich waarschijnlijk buiten",
                         "fr": "Cette caméra est probablement située à l'extérieur",
                         "it": "Questa videocamera si trova probabilmente all'esterno",
-                        "ru": "Возможно, эта камера расположена снаружи"
+                        "ru": "Возможно, эта камера расположена снаружи",
+                        "de": "Diese Kamera ist möglicherweise im Freien"
                     },
                     "hideInAnswer": true
                 }
@@ -254,13 +265,15 @@
                 "en": "On which level is this camera located?",
                 "nl": "Op welke verdieping bevindt deze camera zich?",
                 "fr": "À quel niveau se trouve cette caméra ?",
-                "it": "A che piano si trova questa videocamera?"
+                "it": "A che piano si trova questa videocamera?",
+                "de": "Auf welcher Ebene befindet sich diese Kamera?"
             },
             "render": {
                 "en": "Located on level {level}",
                 "nl": "Bevindt zich op verdieping {level}",
                 "fr": "Situé au niveau {level}",
-                "it": "Si trova al piano {level}"
+                "it": "Si trova al piano {level}",
+                "de": "Befindet sich auf Ebene {level}"
             },
             "freeform": {
                 "key": "level",
@@ -279,7 +292,8 @@
                 "en": "What exactly is surveilled here?",
                 "nl": "Wat wordt hier precies bewaakt?",
                 "fr": "Qu'est-ce qui est surveillé ici ?",
-                "it": "Che cosa è sorvegliato qui?"
+                "it": "Che cosa è sorvegliato qui?",
+                "de": "Was genau wird hier überwacht?"
             },
             "freeform": {
                 "key": "surveillance:zone"
@@ -288,7 +302,8 @@
                 "en": " Surveills a {surveillance:zone}",
                 "nl": "Bewaakt een {surveillance:zone}",
                 "fr": " Surveille un(e) {surveillance:zone}",
-                "it": " Sorveglia una {surveillance:zone}"
+                "it": " Sorveglia una {surveillance:zone}",
+                "de": " Überwacht ein/e {surveillance:zone}"
             },
             "mappings": [
                 {
@@ -301,7 +316,8 @@
                         "en": "Surveills a parking",
                         "nl": "Bewaakt een parking",
                         "fr": "Surveille un parking",
-                        "it": "Sorveglia un parcheggio"
+                        "it": "Sorveglia un parcheggio",
+                        "de": "Überwacht einen Parkplatz"
                     }
                 },
                 {
@@ -314,7 +330,8 @@
                         "en": "Surveills the traffic",
                         "nl": "Bewaakt het verkeer",
                         "fr": "Surveille la circulation",
-                        "it": "Sorveglia il traffico"
+                        "it": "Sorveglia il traffico",
+                        "de": "Überwacht den Verkehr"
                     }
                 },
                 {
@@ -327,7 +344,8 @@
                         "en": "Surveills an entrance",
                         "nl": "Bewaakt een ingang",
                         "fr": "Surveille une entrée",
-                        "it": "Sorveglia un ingresso"
+                        "it": "Sorveglia un ingresso",
+                        "de": "Überwacht einen Eingang"
                     }
                 },
                 {
@@ -340,7 +358,8 @@
                         "en": "Surveills a corridor",
                         "nl": "Bewaakt een gang",
                         "fr": "Surveille un couloir",
-                        "it": "Sorveglia un corridoio"
+                        "it": "Sorveglia un corridoio",
+                        "de": "Überwacht einen Gang"
                     }
                 },
                 {
@@ -353,7 +372,8 @@
                         "en": "Surveills a public tranport platform",
                         "nl": "Bewaakt een perron of bushalte",
                         "fr": "Surveille un quai de transport public",
-                        "it": "Sorveglia una pensilina del trasporto pubblico"
+                        "it": "Sorveglia una pensilina del trasporto pubblico",
+                        "de": "Überwacht eine Haltestelle"
                     }
                 },
                 {
@@ -366,7 +386,8 @@
                         "en": "Surveills a shop",
                         "nl": "Bewaakt een winkel",
                         "fr": "Surveille un magasin",
-                        "it": "Sorveglia un negozio"
+                        "it": "Sorveglia un negozio",
+                        "de": "Überwacht ein Geschäft"
                     }
                 }
             ],
@@ -378,13 +399,15 @@
                 "nl": "Hoe is deze camera geplaatst?",
                 "fr": "Comment cette caméra est-elle placée ?",
                 "it": "Com'è posizionata questa telecamera?",
-                "ru": "Как расположена эта камера?"
+                "ru": "Как расположена эта камера?",
+                "de": "Wie ist diese Kamera montiert?"
             },
             "render": {
                 "en": "Mounting method: {mount}",
                 "nl": "Montage: {camera:mount}",
                 "fr": "Méthode de montage : {mount}",
-                "it": "Metodo di montaggio: {mount}"
+                "it": "Metodo di montaggio: {mount}",
+                "de": "Montageart: {mount}"
             },
             "freeform": {
                 "key": "camera:mount"

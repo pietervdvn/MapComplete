@@ -108,7 +108,8 @@
                         "en": "This drinking water is broken",
                         "nl": "Deze drinkwaterfontein is kapot",
                         "it": "La fontanella è guasta",
-                        "fr": "Cette fontaine est cassée"
+                        "fr": "Cette fontaine est cassée",
+                        "de": "Diese Trinkwasserstelle ist kaputt"
                     }
                 },
                 {
@@ -117,7 +118,8 @@
                         "en": "This drinking water is closed",
                         "nl": "Deze drinkwaterfontein is afgesloten",
                         "it": "La fontanella è chiusa",
-                        "fr": "Cette fontaine est fermée"
+                        "fr": "Cette fontaine est fermée",
+                        "de": "Diese Trinkwasserstelle wurde geschlossen"
                     }
                 }
             ],

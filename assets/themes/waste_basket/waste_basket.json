@@ -7,11 +7,13 @@
   },
   "shortDescription": {
     "en": "A map with waste baskets",
-    "nl": "Een kaart met vuilnisbakken"
+    "nl": "Een kaart met vuilnisbakken",
+    "de": "Eine Karte mit Abfalleimern"
   },
   "description": {
     "en": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
-    "nl": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen"
+    "nl": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
+    "de": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen"
   },
   "language": [
     "en",

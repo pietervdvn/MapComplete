@@ -3,14 +3,16 @@
     "name": {
         "en": "Observation towers",
         "nl": "Uitkijktorens",
-        "ru": "Смотровые башни"
+        "ru": "Смотровые башни",
+        "de": "Beobachtungstürme"
     },
     "minzoom": 8,
     "title": {
         "render": {
             "en": "Observation tower",
             "nl": "Uitkijktoren",
-            "ru": "Смотровая башня"
+            "ru": "Смотровая башня",
+            "de": "Beobachtungsturm"
         },
         "mappings": [
             {
@@ -18,25 +20,29 @@
                 "then": {
                     "en": "<b>{name}</b>",
                     "nl": "<b>{name}</b>",
-                    "ru": "<b>{name}</b>"
+                    "ru": "<b>{name}</b>",
+                    "de": "<b>{name}</b>"
                 }
             }
         ]
     },
     "description": {
         "en": "Towers with a panoramic view",
-        "nl": "Torens om van het uitzicht te genieten"
+        "nl": "Torens om van het uitzicht te genieten",
+        "de": "Türme mit Panoramablick"
     },
     "tagRenderings": [
         "images",
         {
             "question": {
                 "en": "What is the name of this tower?",
-                "nl": "Heeft deze toren een naam?"
+                "nl": "Heeft deze toren een naam?",
+                "de": "Wie heißt dieser Turm?"
             },
             "render": {
                 "en": "This tower is called <b>{name}</b>",
-                "nl": "Deze toren heet <b>{name}</b>"
+                "nl": "Deze toren heet <b>{name}</b>",
+                "de": "Der Name dieses Turms lautet <b>{name}</b>"
             },
             "freeform": {
                 "key": "name"
@@ -46,7 +52,8 @@
                     "if": "noname=yes",
                     "then": {
                         "en": "This tower doesn't have a specific name",
-                        "nl": "Deze toren heeft geen specifieke naam"
+                        "nl": "Deze toren heeft geen specifieke naam",
+                        "de": "Dieser Turm hat keinen eigenen Namen"
                     }
                 }
             ],
@@ -55,11 +62,13 @@
         {
             "question": {
                 "en": "What is the height of this tower?",
-                "nl": "Hoe hoog is deze toren?"
+                "nl": "Hoe hoog is deze toren?",
+                "de": "Wie hoch ist dieser Turm?"
             },
             "render": {
                 "en": "This tower is {height} high",
-                "nl": "Deze toren is {height} hoog"
+                "nl": "Deze toren is {height} hoog",
+                "de": "Dieser Turm ist {height} hoch"
             },
             "freeform": {
                 "key": "height",
@@ -70,11 +79,13 @@
         {
             "question": {
                 "en": "Who maintains this tower?",
-                "nl": "Wie onderhoudt deze toren?"
+                "nl": "Wie onderhoudt deze toren?",
+                "de": "Wer betreibt diesen Turm?"
             },
             "render": {
                 "nl": "Wordt onderhouden door <b>{operator}</b>",
-                "en": "Maintained by <b>{operator}</b>"
+                "en": "Maintained by <b>{operator}</b>",
+                "de": "Betrieben von <b>{operator}</b>"
             },
             "freeform": {
                 "key": "operator"
@@ -89,7 +100,8 @@
             },
             "render": {
                 "en": "Visiting this tower costs <b>{charge}</b>",
-                "nl": "Deze toren bezoeken kost <b>{charge}</b>"
+                "nl": "Deze toren bezoeken kost <b>{charge}</b>",
+                "de": "Der Besuch des Turms kostet <b>{charge}</b>"
             },
             "freeform": {
                 "key": "charge",
@@ -107,7 +119,8 @@
                     },
                     "then": {
                         "en": "Free to visit",
-                        "nl": "Gratis te bezoeken"
+                        "nl": "Gratis te bezoeken",
+                        "de": "Eintritt kostenlos"
                     }
                 }
             ],
@@ -150,7 +163,8 @@
             "title": {
                 "en": "observation tower",
                 "nl": "Uitkijktoren",
-                "ru": "смотровая башня"
+                "ru": "смотровая башня",
+                "de": "Beobachtungsturm"
             },
             "description": {
                 "nl": "Een publiek toegankelijke uitkijktoren"
@@ -179,7 +193,8 @@
                     "human": {
                         "nl": " meter",
                         "en": " meter",
-                        "ru": " метр"
+                        "ru": " метр",
+                        "de": " Meter"
                     }
                 }
             ],

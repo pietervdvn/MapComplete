@@ -3,7 +3,8 @@
     "name": {
         "en": "Trails",
         "nl": "Wandeltochten",
-        "ru": "Тропы"
+        "ru": "Тропы",
+        "de": "Wanderwege"
     },
     "minzoom": 12,
     "source": {
@@ -23,7 +24,8 @@
         "render": {
             "en": "Trail",
             "nl": "Wandeltocht",
-            "ru": "Тропа"
+            "ru": "Тропа",
+            "de": "Wanderweg"
         },
         "mappings": [
             {
@@ -38,7 +40,8 @@
             "id": "trail-length",
             "render": {
                 "en": "The trail is {_length:km} kilometers long",
-                "nl": "Deze wandeling is {_length:km} kilometer lang"
+                "nl": "Deze wandeling is {_length:km} kilometer lang",
+                "de": "Der Wanderweg ist {_length:km} Kilometer lang"
             }
         },
         {
@@ -104,28 +107,32 @@
                     "if": "colour=blue",
                     "then": {
                         "nl": "Blauwe wandeling",
-                        "en": "Blue trail"
+                        "en": "Blue trail",
+                        "de": "Blauer Weg"
                     }
                 },
                 {
                     "if": "colour=red",
                     "then": {
                         "nl": "Rode wandeling",
-                        "en": "Red trail"
+                        "en": "Red trail",
+                        "de": "Roter Weg"
                     }
                 },
                 {
                     "if": "colour=green",
                     "then": {
                         "nl": "Groene wandeling",
-                        "en": "Green trail"
+                        "en": "Green trail",
+                        "de": "Grüner Weg"
                     }
                 },
                 {
                     "if": "colour=yellow",
                     "then": {
                         "nl": "Gele wandeling",
-                        "en": "Yellow trail"
+                        "en": "Yellow trail",
+                        "de": "Gelber Weg"
                     }
                 }
             ],

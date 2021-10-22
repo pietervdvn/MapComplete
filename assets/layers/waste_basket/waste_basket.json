@@ -3,7 +3,8 @@
     "name": {
         "en": "Waste Basket",
         "nl": "Vuilnisbak",
-        "ru": "Контейнер для мусора"
+        "ru": "Контейнер для мусора",
+        "de": "Abfalleimer"
     },
     "minzoom": 17,
     "source": {
@@ -17,7 +18,8 @@
         "render": {
             "en": "Waste Basket",
             "nl": "Vuilnisbak",
-            "ru": "Контейнер для мусора"
+            "ru": "Контейнер для мусора",
+            "de": "Abfalleimer"
         }
     },
     "description": {
@@ -38,7 +40,8 @@
                     "if": "waste=",
                     "then": {
                         "en": "A waste basket for general waste",
-                        "nl": "Een vuilnisbak voor zwerfvuil"
+                        "nl": "Een vuilnisbak voor zwerfvuil",
+                        "de": "Ein Abfalleimer für allgemeinen Müll"
                     },
                     "hideInAnswer": true
                 },
@@ -46,28 +49,32 @@
                     "if": "waste=trash",
                     "then": {
                         "en": "A waste basket for general waste",
-                        "nl": "Een vuilnisbak voor zwerfvuil"
+                        "nl": "Een vuilnisbak voor zwerfvuil",
+                        "de": "Ein Abfalleimer für allgemeinen Müll"
                     }
                 },
                 {
                     "if": "waste=dog_excrement",
                     "then": {
                         "en": "A waste basket for dog excrements",
-                        "nl": "Een vuilnisbak specifiek voor hondenuitwerpselen"
+                        "nl": "Een vuilnisbak specifiek voor hondenuitwerpselen",
+                        "de": "Ein Abfalleimer für Hundekot"
                     }
                 },
                 {
                     "if": "waste=cigarettes",
                     "then": {
                         "en": "A waste basket for cigarettes",
-                        "nl": "Een vuilnisbak voor sigarettenpeuken"
+                        "nl": "Een vuilnisbak voor sigarettenpeuken",
+                        "de": "Mülleimer für Zigaretten"
                     }
                 },
                 {
                     "if": "waste=drugs",
                     "then": {
                         "en": "A waste basket for drugs",
-                        "nl": "Een vuilnisbak voor (vervallen) medicatie en drugs"
+                        "nl": "Een vuilnisbak voor (vervallen) medicatie en drugs",
+                        "de": "Mülleimer für Drogen"
                     }
                 },
                 {
@@ -142,7 +149,8 @@
                 "then": {
                     "en": "Waste Basket",
                     "nl": "Vuilnisbak",
-                    "ru": "Контейнер для мусора"
+                    "ru": "Контейнер для мусора",
+                    "de": "Abfalleimer"
                 }
             }
         ]
@@ -158,7 +166,8 @@
             "title": {
                 "en": "Waste Basket",
                 "nl": "Vuilnisbak",
-                "ru": "Контейнер для мусора"
+                "ru": "Контейнер для мусора",
+                "de": "Abfalleimer"
             },
             "presiceInput": {
                 "preferredBackground": "photo"
