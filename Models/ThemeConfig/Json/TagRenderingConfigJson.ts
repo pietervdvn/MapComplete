@@ -11,6 +11,12 @@ export interface TagRenderingConfigJson {
      * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise
      */
     id?: string,
+
+    /**
+     * Optional: this can group questions together in one question box.
+     * Written by 'left-right'-keys automatically
+     */
+    group?: string
     
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.

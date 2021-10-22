@@ -1,0 +1,41 @@
+{
+  "id": "left_right_style",
+  "description": "Special meta-style which will show one single line, either on the left or on the right depending on the id. This is used in the small popups with left_right roads",
+  "source": {
+    "osmTags": {
+      "or": [
+        "id=left",
+        "id=right"
+      ]
+    }
+  },
+  "mapRendering": [
+    {
+      "width": 6,
+      "offset": {
+        "mappings": [
+          {
+            "if": "id=left",
+            "then": "-5"
+          },
+          {
+            "if": "id=right",
+            "then": "5"
+          }
+        ]
+      },
+      "color": {
+        "mappings": [
+          {
+            "if": "id=left",
+            "then": "#00f"
+          },
+          {
+            "if": "id=right",
+            "then": "#f00"
+          }
+        ]
+      }
+    }
+  ]
+}

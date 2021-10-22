@@ -32,7 +32,7 @@ function fixLayerConfig(config: LayerConfigJson): void {
         }
     }
 
-    if (config.mapRendering === undefined || true) {
+    if (config.mapRendering === undefined) {
         // This is a legacy format, lets create a pointRendering
         let location: ("point" | "centroid")[] = ["point"]
         let wayHandling: number = config["wayHandling"] ?? 0

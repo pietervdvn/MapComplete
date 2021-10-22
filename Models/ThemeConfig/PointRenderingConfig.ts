@@ -15,7 +15,7 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 
 export default class PointRenderingConfig extends WithContextLoader {
 
-    public readonly location: Set<"point" | "centroid">
+    public readonly location: Set<"point" | "centroid" | "start" | "end">
 
     public readonly icon: TagRenderingConfig;
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[];

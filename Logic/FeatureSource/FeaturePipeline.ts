@@ -12,7 +12,7 @@ import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
 import {Changes} from "../Osm/Changes";
 import GeoJsonSource from "./Sources/GeoJsonSource";
 import Loc from "../../Models/Loc";
-import WayHandlingApplyingFeatureSource from "./Sources/WayHandlingApplyingFeatureSource";
+import WayHandlingApplyingFeatureSource from "./Sources/RenderingMultiPlexerFeatureSource";
 import RegisteringAllFromFeatureSourceActor from "./Actors/RegisteringAllFromFeatureSourceActor";
 import TiledFromLocalStorageSource from "./TiledFeatureSource/TiledFromLocalStorageSource";
 import SaveTileToLocalStorageActor from "./Actors/SaveTileToLocalStorageActor";

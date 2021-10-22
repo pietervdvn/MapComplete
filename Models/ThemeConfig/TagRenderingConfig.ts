@@ -14,6 +14,7 @@ import {Utils} from "../../Utils";
 export default class TagRenderingConfig {
 
     readonly id: string;
+    readonly group: string;
     readonly render?: Translation;
     readonly question?: Translation;
     readonly condition?: TagsFilter;
@@ -46,7 +47,8 @@ export default class TagRenderingConfig {
             this.question = null;
             this.condition = null;
         }
-
+        
+       
         if(typeof json === "number"){
             this.render = Translations.WT( ""+json)
             return;
@@ -64,6 +66,7 @@ export default class TagRenderingConfig {
 
         
         this.id = json.id ?? "";
+        this.group = json.group ?? "";
         this.render = Translations.T(json.render, context + ".render");
         this.question = Translations.T(json.question, context + ".question");
         this.condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);

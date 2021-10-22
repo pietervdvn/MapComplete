@@ -117,7 +117,8 @@ export default class ValidatedTextField {
                 if (args[0]) {
                     zoom = Number(args[0])
                     if (isNaN(zoom)) {
-                        throw "Invalid zoom level for argument at 'length'-input"
+                        console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ",args[0]," (using 19 instead)")
+                        zoom = 19
                     }
                 }
 

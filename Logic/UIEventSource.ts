@@ -109,6 +109,20 @@ export class UIEventSource<T> {
         promise?.catch(err => src.setData({error: err}))
         return src
     }
+    
+    public withEqualityStabilized(comparator: (t:T | undefined, t1:T | undefined) => boolean): UIEventSource<T>{
+        let oldValue = undefined;
+        return this.map(v => {
+            if(v == oldValue){
+                return oldValue
+            }
+            if(comparator(oldValue, v)){
+                return oldValue
+            }
+            oldValue = v;
+            return v;
+        })
+    }
 
     /**
      * Given a UIEVentSource with a list, returns a new UIEventSource which is only updated if the _contents_ of the list are different.

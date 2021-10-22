@@ -49,7 +49,7 @@ export default class ElementsState extends FeatureSwitchState {
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
 
-        this.changes = new Changes(layoutToUse.isLeftRightSensitive())
+        this.changes = new Changes(layoutToUse?.isLeftRightSensitive() ?? false)
 
         {
             // -- Location control initialization

@@ -4,7 +4,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
 import {ElementStorage} from "../../Logic/ElementStorage";
-import RenderingMultiPlexerFeatureSource from "../../Logic/FeatureSource/Sources/WayHandlingApplyingFeatureSource";
+import RenderingMultiPlexerFeatureSource from "../../Logic/FeatureSource/Sources/RenderingMultiPlexerFeatureSource";
 /*
 // import 'leaflet-polylineoffset'; 
 We don't actually import it here. It is imported in the 'MinimapImplementation'-class, which'll result in a patched 'L' object.
@@ -161,7 +161,18 @@ export default class ShowDataLayer {
                     const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
                     const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
                     let offsettedLine;
-                    tagsSource.map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags)).addCallbackAndRunD(lineStyle => {
+                    tagsSource
+                         .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags))
+                        .withEqualityStabilized((a, b) => {
+                            if(a === b){
+                                return true
+                            }
+                            if(a === undefined || b === undefined){
+                                return false
+                            }
+                            return a.offset === b.offset && a.color === b.color && a.weight === b.weight && a.dashArray === b.dashArray
+                        })
+                        .addCallbackAndRunD(lineStyle => {
                         if (offsettedLine !== undefined) {
                             self.geoLayer.removeLayer(offsettedLine)
                         }
@@ -261,7 +272,7 @@ export default class ShowDataLayer {
 
         let infobox: FeatureInfoBox = undefined;
 
-        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}-${feature.pointerRenderingIndex ?? feature.lineRenderingIndex}`
+        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}-${feature.pointRenderingIndex ?? feature.lineRenderingIndex}`
         popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type} ${id} is loading</div>`)
         leafletLayer.on("popupopen", () => {
             if (infobox === undefined) {

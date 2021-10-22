@@ -18,6 +18,7 @@ import {Translation} from "../i18n/Translation";
 import {Utils} from "../../Utils";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import MoveWizard from "./MoveWizard";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -52,26 +53,33 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): BaseUIElement {
-        let questionBox: BaseUIElement = undefined;
+        let questionBoxes: Map<string, BaseUIElement> = new Map<string, BaseUIElement>();
 
         if (State.state.featureSwitchUserbadge.data) {
-            questionBox = new QuestionBox(tags, layerConfig.tagRenderings, layerConfig.units);
+            const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map(tr => tr.group))
+            for (const groupName of allGroupNames) {
+                const questions = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
+                const questionBox = new QuestionBox(tags, questions, layerConfig.units);
+                console.log("Groupname:", groupName)
+                questionBoxes.set(groupName, questionBox)
+            }
         }
 
-        let questionBoxIsUsed = false;
         const renderings: BaseUIElement[] = layerConfig.tagRenderings.map(tr => {
-            if (tr.question === null) {
-                // This is the question box!
-                questionBoxIsUsed = true;
+            if (tr.question === null || tr.id === "questions") {
+                console.log("Rendering is", tr)
+                // This is a question box!
+                const questionBox = questionBoxes.get(tr.group)
+                questionBoxes.delete(tr.group)
                 return questionBox;
             }
             return new EditableTagRendering(tags, tr, layerConfig.units);
         });
 
         let editElements: BaseUIElement[] = []
-        if (!questionBoxIsUsed) {
+        questionBoxes.forEach(questionBox => {
             editElements.push(questionBox);
-        }
+        })
 
         if(layerConfig.allowMove) {
             editElements.push(

@@ -15,8 +15,9 @@ import WithContextLoader from "./WithContextLoader";
 import LineRenderingConfig from "./LineRenderingConfig";
 import PointRenderingConfigJson from "./Json/PointRenderingConfigJson";
 import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
+import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 
-export default class LayerConfig extends WithContextLoader{
+export default class LayerConfig extends WithContextLoader {
 
     id: string;
     name: Translation;
@@ -31,7 +32,7 @@ export default class LayerConfig extends WithContextLoader{
     maxzoom: number;
     title?: TagRenderingConfig;
     titleIcons: TagRenderingConfig[];
-    
+
     public readonly mapRendering: PointRenderingConfig[]
     public readonly lineRendering: LineRenderingConfig[]
 
@@ -82,7 +83,7 @@ export default class LayerConfig extends WithContextLoader{
                 throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)";
             }
 
-           this. source = new SourceConfig(
+            this.source = new SourceConfig(
                 {
                     osmTags: osmTags,
                     geojsonSource: json.source["geoJson"],
@@ -92,14 +93,15 @@ export default class LayerConfig extends WithContextLoader{
                 },
                 json.id
             );
+        }else if(legacy === undefined){
+            throw "No valid source defined ("+context+")"
         } else {
-           this. source = new SourceConfig({
+            this.source = new SourceConfig({
                 osmTags: legacy,
             });
         }
 
 
-       
         this.id = json.id;
         this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, context + ".name");
@@ -191,22 +193,21 @@ export default class LayerConfig extends WithContextLoader{
             return config;
         });
 
-        if(json.mapRendering === undefined){
-            throw "MapRendering is undefined in "+context
+        if (json.mapRendering === undefined) {
+            throw "MapRendering is undefined in " + context
         }
 
         this.mapRendering = json.mapRendering
             .filter(r => r["icon"] !== undefined || r["label"] !== undefined)
-            .map((r, i) => new PointRenderingConfig(<PointRenderingConfigJson>r, context+".mapRendering["+i+"]"))
+            .map((r, i) => new PointRenderingConfig(<PointRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
 
         this.lineRendering = json.mapRendering
             .filter(r => r["icon"] === undefined && r["label"] === undefined)
-            .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context+".mapRendering["+i+"]"))
+            .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
 
 
-        this.tagRenderings = this.trs(json.tagRenderings, false);
-
-        const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined) ?? [];
+        this.tagRenderings = this.ExtractLayerTagRenderings(json)
+        const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined && tr["leftRightKeys"] === undefined) ?? [];
 
         if (missingIds.length > 0 && official) {
             console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
@@ -237,11 +238,11 @@ export default class LayerConfig extends WithContextLoader{
             }
         }
 
-        this.titleIcons = this.trs(titleIcons, true);
+        this.titleIcons = this.ParseTagRenderings(titleIcons, true);
 
         this.title = this.tr("title", undefined);
         this.isShown = this.tr("isShown", "yes");
-     
+
         this.deletion = null;
         if (json.deletion === true) {
             json.deletion = {};
@@ -269,6 +270,98 @@ export default class LayerConfig extends WithContextLoader{
         }
     }
 
+    public ExtractLayerTagRenderings(json: LayerConfigJson): TagRenderingConfig[] {
+
+        if (json.tagRenderings === undefined) {
+            return []
+        }
+
+        const normalTagRenderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[] = []
+        const leftRightRenderings: ({ leftRightKeys: string[], renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[] })[] = []
+        for (let i = 0; i < json.tagRenderings.length; i++) {
+            const tr = json.tagRenderings[i];
+            const lrkDefined = tr["leftRightKeys"] !== undefined
+            const renderingsDefined = tr["renderings"]
+
+            if (!lrkDefined && !renderingsDefined) {
+                // @ts-ignore
+                normalTagRenderings.push(tr)
+                continue
+            }
+            if (lrkDefined && renderingsDefined) {
+                // @ts-ignore
+                leftRightRenderings.push(tr)
+                continue
+            }
+            throw `Error in ${this._context}.tagrenderings[${i}]: got a value which defines either \`leftRightKeys\` or \`renderings\`, but not both. Either define both or move the \`renderings\`  out of this scope`
+        }
+
+        const allRenderings = this.ParseTagRenderings(normalTagRenderings, false);
+
+        if(leftRightRenderings.length === 0){
+            return allRenderings
+        }
+        
+        const leftRenderings : TagRenderingConfig[] = []
+        const rightRenderings : TagRenderingConfig[] = []
+        
+        function prepConfig(target:string, tr: TagRenderingConfigJson){
+            
+            function replaceRecursive(transl: string | any){
+                if(typeof transl === "string"){
+                    return  transl.replace("left|right", target)
+                }
+                if(transl.map !== undefined){
+                    return transl.map(o => replaceRecursive(o))
+                }
+                transl = {...transl}
+                for (const key in transl) {
+                    transl[key] = replaceRecursive(transl[key])
+                }
+                return transl
+            }
+            
+            const orig = tr;
+            tr = replaceRecursive(tr)
+            
+            tr.id = target+"-"+orig.id
+            tr.group = target
+            return tr
+        }
+        
+        
+        for (const leftRightRendering of leftRightRenderings) {
+            
+            const keysToRewrite = leftRightRendering.leftRightKeys
+            const tagRenderings = leftRightRendering.renderings
+            
+            const left = this.ParseTagRenderings(tagRenderings, false, tr => prepConfig("left", tr))
+            const right = this.ParseTagRenderings(tagRenderings, false, tr => prepConfig("right", tr))
+
+            leftRenderings.push(...left)
+            rightRenderings.push(...right)
+
+        }
+        
+        leftRenderings.push(new TagRenderingConfig(<TagRenderingConfigJson>{
+            id: "questions",
+            group:"left",
+        }, "layerConfig.ts.leftQuestionBox"))
+
+        rightRenderings.push(new TagRenderingConfig(<TagRenderingConfigJson>{
+            id: "questions",
+            group:"right",
+        }, "layerConfig.ts.rightQuestionBox"))
+        
+        allRenderings.push(...leftRenderings)
+        allRenderings.push(...rightRenderings)
+
+
+        return allRenderings;
+
+    }
+
+
     public CustomCodeSnippets(): string[] {
         if (this.calculatedTags === undefined) {
             return [];
@@ -276,8 +369,6 @@ export default class LayerConfig extends WithContextLoader{
         return this.calculatedTags.map((code) => code[1]);
     }
 
-
-    
 
     public ExtractImages(): Set<string> {
         const parts: Set<string>[] = [];
@@ -293,12 +384,11 @@ export default class LayerConfig extends WithContextLoader{
         for (const part of parts) {
             part?.forEach(allIcons.add, allIcons);
         }
-  
 
         return allIcons;
     }
-    
-    public isLeftRightSensitive() : boolean{
+
+    public isLeftRightSensitive(): boolean {
         return this.lineRendering.some(lr => lr.leftRightSensitive)
     }
 }

@@ -5,8 +5,8 @@ import {Utils} from "../../Utils";
 
 export default class WithContextLoader {
     private readonly _json: any;
-    private readonly _context: string;
-    
+    protected readonly _context: string;
+
     constructor(json: any, context: string) {
         this._json = json;
         this._context = context;
@@ -43,20 +43,22 @@ export default class WithContextLoader {
      * Converts a list of tagRenderingCOnfigJSON in to TagRenderingConfig
      * A string is interpreted as a name to call
      */
-    public trs(
+    public ParseTagRenderings(
         tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson)[],
-        readOnly = false
+        readOnly = false,
+        prepConfig: ((config: TagRenderingConfigJson) => TagRenderingConfigJson) = undefined
     ) {
         if (tagRenderings === undefined) {
             return [];
         }
-        
-        const context = this._context
-        
-        const renderings: TagRenderingConfig[] = []
 
+        const context = this._context
+        const renderings: TagRenderingConfig[] = []
+        if (prepConfig === undefined) {
+            prepConfig = c => c
+        }
         for (let i = 0; i < tagRenderings.length; i++) {
-           let renderingJson=  tagRenderings[i]
+            let renderingJson = tagRenderings[i]
             if (typeof renderingJson === "string") {
                 renderingJson = {builtin: renderingJson, override: undefined}
             }
@@ -70,41 +72,29 @@ export default class WithContextLoader {
                         )}`;
                     }
 
-                    const tr = new TagRenderingConfig("questions",  context);
-                renderings.push(tr)
+                    const tr = new TagRenderingConfig("questions", context);
+                    renderings.push(tr)
                     continue;
                 }
 
                 if (renderingJson["override"] !== undefined) {
-                    const sharedJson = SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
-                    const tr = new TagRenderingConfig(
-                        Utils.Merge(renderingJson["override"], sharedJson),
-                        `${context}.tagrendering[${i}]+override`
-                    );
-                    renderings.push(tr)
-                    continue
-                }
+                    let sharedJson = SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
 
-                const shared = SharedTagRenderings.SharedTagRendering.get(renderingId);
+                    if (sharedJson === undefined) {
+                        const keys = Array.from(SharedTagRenderings.SharedTagRenderingJson.keys());
+                        throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(
+                            ", "
+                        )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
+                    }
 
-                if (shared !== undefined) {
-                    renderings.push( shared)
-                    continue
+                    renderingJson = Utils.Merge(renderingJson["override"], sharedJson)
                 }
-                if (Utils.runningFromConsole) {
-                   continue
-                }
-
-                const keys = Array.from(                    SharedTagRenderings.SharedTagRendering.keys()                );
-                throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(
-                    ", "
-                )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
             }
 
-            const tr = new TagRenderingConfig(
-                <TagRenderingConfigJson>renderingJson,
-                `${context}.tagrendering[${i}]`
-            );
+
+            const patchedConfig = prepConfig(<TagRenderingConfigJson>renderingJson)
+
+            const tr = new TagRenderingConfig(patchedConfig, `${context}.tagrendering[${i}]`);
             renderings.push(tr)
         }
 
