@@ -297,4 +297,8 @@ export default class LayerConfig extends WithContextLoader{
 
         return allIcons;
     }
+    
+    public isLeftRightSensitive() : boolean{
+        return this.lineRendering.some(lr => lr.leftRightSensitive)
+    }
 }

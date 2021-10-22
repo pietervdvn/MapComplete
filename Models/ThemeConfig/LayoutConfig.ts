@@ -279,5 +279,9 @@ export default class LayoutConfig {
         })
         return new LayoutConfig(JSON.parse(originalJson), false, "Layout rewriting")
     }
+    
+    public isLeftRightSensitive(){
+        return this.layers.some(l => l.isLeftRightSensitive())
+    }
 
 }

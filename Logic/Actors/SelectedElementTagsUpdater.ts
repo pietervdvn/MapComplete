@@ -80,7 +80,7 @@ export default class SelectedElementTagsUpdater {
     ) {
         try {
 
-            const leftRightSensitive = state.layoutToUse.layers.some(layer => layer.lineRendering.some(lr => lr.leftRightSensitive))
+            const leftRightSensitive = state.layoutToUse.isLeftRightSensitive()
 
             if (leftRightSensitive) {
                 SimpleMetaTagger.removeBothTagging(latestTags)

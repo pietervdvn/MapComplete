@@ -6,6 +6,7 @@ import OsmChangeAction from "./Actions/OsmChangeAction";
 import {ChangeDescription} from "./Actions/ChangeDescription";
 import {Utils} from "../../Utils";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
+import SimpleMetaTagger from "../SimpleMetaTagger";
 
 /**
  * Handles all changes made to OSM.
@@ -26,8 +27,10 @@ export class Changes {
     private readonly isUploading = new UIEventSource(false);
 
     private readonly previouslyCreated: OsmObject[] = []
+    private readonly _leftRightSensitive: boolean;
 
-    constructor() {
+    constructor(leftRightSensitive : boolean = false) {
+        this._leftRightSensitive = leftRightSensitive;
         // We keep track of all changes just as well
         this.allChanges.setData([...this.pendingChanges.data])
         // If a pending change contains a negative ID, we save that
@@ -121,6 +124,11 @@ export class Changes {
         const self = this;
         const neededIds = Changes.GetNeededIds(pending)
         const osmObjects = await Promise.all(neededIds.map(id => OsmObject.DownloadObjectAsync(id)));
+        
+        if(this._leftRightSensitive){
+            osmObjects.forEach(obj => SimpleMetaTagger.removeBothTagging(obj.tags))
+        }
+        
         console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
         const changes: {
             newObjects: OsmObject[],
