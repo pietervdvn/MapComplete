@@ -2,6 +2,7 @@ import {UIEventSource} from "../UIEventSource";
 import BaseLayer from "../../Models/BaseLayer";
 import AvailableBaseLayers from "./AvailableBaseLayers";
 import Loc from "../../Models/Loc";
+import {Utils} from "../../Utils";
 
 /**
  * Sets the current background layer to a layer that is actually available
@@ -12,6 +13,11 @@ export default class BackgroundLayerResetter {
                 location: UIEventSource<Loc>,
                 availableLayers: UIEventSource<BaseLayer[]>,
                 defaultLayerId: string = undefined) {
+        
+        if(Utils.runningFromConsole){
+            return
+        }
+        
         defaultLayerId = defaultLayerId ?? AvailableBaseLayers.osmCarto.id;
 
         // Change the baselayer back to OSM if we go out of the current range of the layer

@@ -113,9 +113,9 @@ export default class SimpleAddUI extends Toggle {
             new Toggle(
                 new Toggle(
                     new Toggle(
-                        addUi,
                         Translations.t.general.add.stillLoading.Clone().SetClass("alert"),
-                        state.featurePipeline.somethingLoaded
+                        addUi,
+                        state.featurePipeline.runningQuery
                     ),
                     Translations.t.general.add.zoomInFurther.Clone().SetClass("alert"),
                     state.locationControl.map(loc => loc.zoom >= Constants.userJourney.minZoomLevelToAddNewPoints)

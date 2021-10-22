@@ -225,21 +225,23 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "question": "この店は誰が経営しているんですか?",
-                "render": "この場所は{operator}によって運営されます"
-            },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "この場所には電源があります"
-                    },
-                    "1": {
-                        "then": "この場所には電源がありません"
-                    }
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "この店は誰が経営しているんですか?",
+                    "render": "この場所は{operator}によって運営されます"
                 },
-                "question": "この場所に電源はありますか?"
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "この場所には電源があります"
+                        },
+                        "1": {
+                            "then": "この場所には電源がありません"
+                        }
+                    },
+                    "question": "この場所に電源はありますか?"
+                }
             }
         },
         "shortDescription": "キャンパーと夜を共にするキャンプサイトを見つける",
@@ -379,94 +381,96 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "question": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?"
-            },
-            "4": {
-                "question": "ルートの(平均)長さはメートル単位でいくつですか?",
-                "render": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です"
-            },
-            "5": {
-                "question": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
-                "render": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です"
-            },
-            "6": {
-                "question": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
-                "render": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です"
-            },
-            "7": {
-                "mappings": {
-                    "0": {
-                        "then": "ボルダリングはここで可能です"
-                    },
-                    "1": {
-                        "then": "ここではボルダリングはできません"
-                    },
-                    "2": {
-                        "then": "ボルダリングは可能ですが、少しのルートしかありません"
-                    },
-                    "3": {
-                        "then": "{climbing:boulder} ボルダールートがある"
-                    }
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?"
                 },
-                "question": "ここでボルダリングはできますか?"
-            },
-            "8": {
-                "mappings": {
-                    "0": {
-                        "then": "ここでToprope登坂ができます"
-                    },
-                    "1": {
-                        "then": "ここではToprope登坂はできません"
-                    },
-                    "2": {
-                        "then": "{climbing:toprope} 登坂ルートがある"
-                    }
+                "4": {
+                    "question": "ルートの(平均)長さはメートル単位でいくつですか?",
+                    "render": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です"
                 },
-                "question": "ここでtoprope登坂はできますか?"
-            },
-            "9": {
-                "mappings": {
-                    "0": {
-                        "then": "ここでスポーツクライミングができます"
-                    },
-                    "1": {
-                        "then": "ここではスポーツクライミングはできません"
-                    },
-                    "2": {
-                        "then": "スポーツクライミングの {climbing:sport} ルートがある"
-                    }
+                "5": {
+                    "question": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
+                    "render": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です"
                 },
-                "question": "ここでは固定アンカー式のスポーツクライミングはできますか?"
-            },
-            "10": {
-                "mappings": {
-                    "0": {
-                        "then": "ここでは伝統的な登山が可能です"
-                    },
-                    "1": {
-                        "then": "伝統的な登山はここではできない"
-                    },
-                    "2": {
-                        "then": "{climbing:traditional} の伝統的な登山ルートがある"
-                    }
+                "6": {
+                    "question": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
+                    "render": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です"
                 },
-                "question": "伝統的な登山はここで可能ですか(例えば、チョックのような独自のギアを使用して)？"
-            },
-            "11": {
-                "mappings": {
-                    "0": {
-                        "then": "スピードクライミングウォールがある"
+                "7": {
+                    "mappings": {
+                        "0": {
+                            "then": "ボルダリングはここで可能です"
+                        },
+                        "1": {
+                            "then": "ここではボルダリングはできません"
+                        },
+                        "2": {
+                            "then": "ボルダリングは可能ですが、少しのルートしかありません"
+                        },
+                        "3": {
+                            "then": "{climbing:boulder} ボルダールートがある"
+                        }
                     },
-                    "1": {
-                        "then": "スピードクライミングウォールがない"
-                    },
-                    "2": {
-                        "then": "{climbing:speed} のスピードクライミングウォールがある"
-                    }
+                    "question": "ここでボルダリングはできますか?"
                 },
-                "question": "スピードクライミングウォールはありますか?"
+                "8": {
+                    "mappings": {
+                        "0": {
+                            "then": "ここでToprope登坂ができます"
+                        },
+                        "1": {
+                            "then": "ここではToprope登坂はできません"
+                        },
+                        "2": {
+                            "then": "{climbing:toprope} 登坂ルートがある"
+                        }
+                    },
+                    "question": "ここでtoprope登坂はできますか?"
+                },
+                "9": {
+                    "mappings": {
+                        "0": {
+                            "then": "ここでスポーツクライミングができます"
+                        },
+                        "1": {
+                            "then": "ここではスポーツクライミングはできません"
+                        },
+                        "2": {
+                            "then": "スポーツクライミングの {climbing:sport} ルートがある"
+                        }
+                    },
+                    "question": "ここでは固定アンカー式のスポーツクライミングはできますか?"
+                },
+                "10": {
+                    "mappings": {
+                        "0": {
+                            "then": "ここでは伝統的な登山が可能です"
+                        },
+                        "1": {
+                            "then": "伝統的な登山はここではできない"
+                        },
+                        "2": {
+                            "then": "{climbing:traditional} の伝統的な登山ルートがある"
+                        }
+                    },
+                    "question": "伝統的な登山はここで可能ですか(例えば、チョックのような独自のギアを使用して)？"
+                },
+                "11": {
+                    "mappings": {
+                        "0": {
+                            "then": "スピードクライミングウォールがある"
+                        },
+                        "1": {
+                            "then": "スピードクライミングウォールがない"
+                        },
+                        "2": {
+                            "then": "{climbing:speed} のスピードクライミングウォールがある"
+                        }
+                    },
+                    "question": "スピードクライミングウォールはありますか?"
+                }
             }
         },
         "title": "登山地図を開く"
@@ -498,27 +502,29 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "mappings": {
-                    "0": {
-                        "then": "cyclestreet(最高速度は30km/h)"
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "cyclestreet(最高速度は30km/h)"
+                        },
+                        "1": {
+                            "then": "この通りはcyclestreetだ"
+                        },
+                        "2": {
+                            "then": "この通りはまもなくcyclstreetになるだろう"
+                        },
+                        "3": {
+                            "then": "この通りはcyclestreetではない"
+                        }
                     },
-                    "1": {
-                        "then": "この通りはcyclestreetだ"
-                    },
-                    "2": {
-                        "then": "この通りはまもなくcyclstreetになるだろう"
-                    },
-                    "3": {
-                        "then": "この通りはcyclestreetではない"
-                    }
+                    "question": "この通りはcyclestreetですか?"
                 },
-                "question": "この通りはcyclestreetですか?"
-            },
-            "1": {
-                "question": "この通りはいつcyclestreetになるんですか?",
-                "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
+                "1": {
+                    "question": "この通りはいつcyclestreetになるんですか?",
+                    "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
+                }
             }
         },
         "shortDescription": "cyclestreetsの地図",

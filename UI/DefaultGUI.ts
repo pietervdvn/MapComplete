@@ -23,6 +23,7 @@ import ScrollableFullScreen from "./Base/ScrollableFullScreen";
 import Translations from "./i18n/Translations";
 import SimpleAddUI from "./BigComponents/SimpleAddUI";
 import StrayClickHandler from "../Logic/Actors/StrayClickHandler";
+import Lazy from "./Base/Lazy";
 
 export class DefaultGuiState {
     public readonly welcomeMessageIsOpened;
@@ -81,11 +82,21 @@ export default class DefaultGUI {
     constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
         this.state = state;
         this._guiState = guiState;
-        const self = this;
 
         if (state.layoutToUse.customCss !== undefined) {
             Utils.LoadCustomCss(state.layoutToUse.customCss);
         }
+
+
+        this.SetupUIElements();
+        this.SetupMap()
+
+    }
+
+
+    private SetupMap(){
+        const state = this.state;
+        const guiState = this._guiState;
 
         // Attach the map
         state.mainMapObject.SetClass("w-full h-full")
@@ -96,8 +107,28 @@ export default class DefaultGUI {
             state
         )
 
-        this.InitWelcomeMessage();
 
+        new ShowDataLayer({
+            leafletMap: state.leafletMap,
+            layerToShow: AllKnownLayers.sharedLayers.get("home_location"),
+            features: state.homeLocation,
+            enablePopups: false,
+        })
+
+        state.leafletMap.addCallbackAndRunD(_ => {
+            // Lets assume that all showDataLayers are initialized at this point
+            state.selectedElement.ping()
+            State.state.locationControl.ping();
+            return true;
+        })
+
+    }
+    
+    private SetupUIElements(){
+        const state = this.state;
+        const guiState = this._guiState;
+
+        const self =this
         Toggle.If(state.featureSwitchUserbadge,
             () => new UserBadge(state)
         ).AttachTo("userbadge")
@@ -119,36 +150,21 @@ export default class DefaultGUI {
 
         }
 
-        new Toggle(self.InitWelcomeMessage(),
-            Toggle.If(state.featureSwitchIframePopoutEnabled,  iframePopout),
+        new Toggle(new Lazy(() => self.InitWelcomeMessage()),
+            Toggle.If(state.featureSwitchIframePopoutEnabled, iframePopout),
             state.featureSwitchWelcomeMessage
         ).AttachTo("messagesbox");
 
         new LeftControls(state, guiState).AttachTo("bottom-left");
         new RightControls(state).AttachTo("bottom-right");
-        State.state.locationControl.ping();
+
         new CenterMessageBox(state).AttachTo("centermessage");
         document
             .getElementById("centermessage")
             .classList.add("pointer-events-none");
-        
-        
-        new ShowDataLayer({
-            leafletMap: state.leafletMap,
-            layerToShow: AllKnownLayers.sharedLayers.get("home_location"),
-            features:            state.homeLocation,
-            enablePopups: false,
-        })
-        
-        state.leafletMap.addCallbackAndRunD(_ => {
-            // Lets assume that all showDataLayers are initialized at this point
-            state.selectedElement.ping()
-            return true;
-        })
-
     }
 
-    private InitWelcomeMessage() {
+    private InitWelcomeMessage() : BaseUIElement{
         const isOpened = this._guiState.welcomeMessageIsOpened
         const fullOptions = new FullWelcomePaneWithTabs(isOpened, this._guiState.welcomeMessageOpenedTab, this.state);
 
@@ -180,7 +196,7 @@ export default class DefaultGUI {
 
     public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, state: FeaturePipelineState) {
 
-        function setup(){
+        function setup() {
             let presetCount = 0;
             for (const layer of state.layoutToUse.layers) {
                 for (const preset of layer.presets) {

@@ -29,7 +29,7 @@ export default class OverpassFeatureSource implements FeatureSource {
 
 
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
-    
+
     private readonly state: {
         readonly locationControl: UIEventSource<Loc>,
         readonly layoutToUse: LayoutConfig,
@@ -39,6 +39,7 @@ export default class OverpassFeatureSource implements FeatureSource {
     }
     private readonly _isActive: UIEventSource<boolean>;
     private readonly onBboxLoaded: (bbox: BBox, date: Date, layers: LayerConfig[], zoomlevel: number) => void;
+
     constructor(
         state: {
             readonly locationControl: UIEventSource<Loc>,
@@ -90,7 +91,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         }
         const self = this;
         this.updateAsync(paddedZoomLevel).then(bboxDate => {
-            if(bboxDate === undefined || self.onBboxLoaded === undefined){
+            if (bboxDate === undefined || self.onBboxLoaded === undefined) {
                 return;
             }
             const [bbox, date, layers] = bboxDate
@@ -109,41 +110,43 @@ export default class OverpassFeatureSource implements FeatureSource {
             return undefined;
         }
 
-        const bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(padToZoomLevel);
-
-        if (bounds === undefined) {
-            return undefined;
-        }
-        const self = this;
-        
-        
-        const layersToDownload = []
-        for (const layer of this.state.layoutToUse.layers) {
-            
-        if (typeof (layer) === "string") {
-            throw "A layer was not expanded!"
-        }
-        if(this.state.locationControl.data.zoom < layer.minzoom){
-            continue;
-        }
-        if (layer.doNotDownload) {
-            continue;
-        }
-        if (layer.source.geojsonSource !== undefined) {
-            // Not our responsibility to download this layer!
-            continue;
-        }
-        layersToDownload.push(layer)
-        }
-
         let data: any = undefined
         let date: Date = undefined
-        const overpassUrls = self.state.overpassUrl.data
         let lastUsed = 0;
+        
+        
 
+        const layersToDownload = []
+        for (const layer of this.state.layoutToUse.layers) {
+
+            if (typeof (layer) === "string") {
+                throw "A layer was not expanded!"
+            }
+            if (this.state.locationControl.data.zoom < layer.minzoom) {
+                continue;
+            }
+            if (layer.doNotDownload) {
+                continue;
+            }
+            if (layer.source.geojsonSource !== undefined) {
+                // Not our responsibility to download this layer!
+                continue;
+            }
+            layersToDownload.push(layer)
+        }
+
+        const self = this;
+        const overpassUrls = self.state.overpassUrl.data
+        let bounds : BBox 
         do {
             try {
-                
+
+                bounds = this.state.currentBounds.data?.pad(this.state.layoutToUse.widenFactor)?.expandToTileBounds(padToZoomLevel);
+
+                if (bounds === undefined) {
+                    return undefined;
+                }
+
                 const overpass = this.GetFilter(overpassUrls[lastUsed], layersToDownload);
 
                 if (overpass === undefined) {
@@ -175,16 +178,21 @@ export default class OverpassFeatureSource implements FeatureSource {
                     }
                 }
             }
-        } while (data === undefined);
+        } while (data === undefined && this._isActive.data);
 
-        self.retries.setData(0);
+        
         try {
+            if(data === undefined){
+                return undefined
+            }
             data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date, undefined));
             self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
             return [bounds, date, layersToDownload];
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)
+            return undefined
         } finally {
+            self.retries.setData(0);
             self.runningQuery.setData(false);
         }
 

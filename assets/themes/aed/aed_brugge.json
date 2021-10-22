@@ -15,6 +15,9 @@
   "startLat": 51.25634,
   "startLon": 3.195682,
   "startZoom": 12,
+  "clustering": {
+    "maxZoom": 0
+  },
   "layers": [
     "defibrillator",
     {

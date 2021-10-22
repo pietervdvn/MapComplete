@@ -2376,7 +2376,7 @@
                 "question": "Is this street lit?"
             },
             "width:carriageway": {
-                "question": "What is the carriage width of this road (in meters)?",
+                "question": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured curb to curb and thus includes the width of parallell parking lanes</span>",
                 "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>"
             }
         },

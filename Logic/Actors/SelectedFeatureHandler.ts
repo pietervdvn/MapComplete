@@ -3,15 +3,20 @@ import {OsmObject} from "../Osm/OsmObject";
 import Loc from "../../Models/Loc";
 import {ElementStorage} from "../ElementStorage";
 import FeaturePipeline from "../FeatureSource/FeaturePipeline";
+import {GeoOperations} from "../GeoOperations";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 /**
  * Makes sure the hash shows the selected element and vice-versa.
  */
 export default class SelectedFeatureHandler {
     private static readonly _no_trigger_on = new Set(["welcome", "copyright", "layers", "new", "", undefined])
-    hash: UIEventSource<string>;
+    private readonly hash: UIEventSource<string>;
     private readonly state: {
-        selectedElement: UIEventSource<any>
+        selectedElement: UIEventSource<any>,
+        allElements: ElementStorage,
+        locationControl: UIEventSource<Loc>,
+        layoutToUse: LayoutConfig
     }
 
     constructor(
@@ -19,7 +24,9 @@ export default class SelectedFeatureHandler {
         state: {
             selectedElement: UIEventSource<any>,
             allElements: ElementStorage,
-            featurePipeline: FeaturePipeline
+            featurePipeline: FeaturePipeline,
+            locationControl: UIEventSource<Loc>,
+            layoutToUse: LayoutConfig
         }
     ) {
         this.hash = hash;
@@ -27,30 +34,9 @@ export default class SelectedFeatureHandler {
 
 
         // If the hash changes, set the selected element correctly
-        function setSelectedElementFromHash(h){
-            if (h === undefined || h === "") {
-                // Hash has been cleared - we clear the selected element
-                state.selectedElement.setData(undefined);
-            }else{
-                // we search the element to select
-                const feature = state.allElements.ContainingFeatures.get(h)
-                if(feature === undefined){
-                    return;
-                }
-                const currentlySeleced = state.selectedElement.data
-                if(currentlySeleced === undefined){
-                    state.selectedElement.setData(feature)
-                    return;
-                }
-                if(currentlySeleced.properties?.id === feature.properties.id){
-                    // We already have the right feature
-                    return;
-                }
-                state.selectedElement.setData(feature)
-            }
-        }
 
-        hash.addCallback(setSelectedElementFromHash)
+        const self = this;
+        hash.addCallback(() => self.setSelectedElementFromHash())
 
 
         // IF the selected element changes, set the hash correctly
@@ -66,41 +52,103 @@ export default class SelectedFeatureHandler {
                 hash.setData(h)
             }
         })
-        
-        state.featurePipeline.newDataLoadedSignal.addCallbackAndRunD(_ => {
+
+        state.featurePipeline?.newDataLoadedSignal?.addCallbackAndRunD(_ => {
             // New data was loaded. In initial startup, the hash might be set (via the URL) but might not be selected yet
-            if(hash.data === undefined || SelectedFeatureHandler._no_trigger_on.has(hash.data)){
+            if (hash.data === undefined || SelectedFeatureHandler._no_trigger_on.has(hash.data)) {
                 // This is an invalid hash anyway
                 return;
             }
-            if(state.selectedElement.data !== undefined){
+            if (state.selectedElement.data !== undefined) {
                 // We already have something selected
                 return;
             }
-            setSelectedElementFromHash(hash.data)
+            self.setSelectedElementFromHash()
+        })
+
+
+        this.initialLoad()
+
+    }
+    
+
+    /**
+     * On startup: check if the hash is loaded and eventually zoom to it
+     * @private
+     */
+    private initialLoad() {
+        const hash = this.hash.data
+        if (hash === undefined || hash === "" || hash.indexOf("-") >= 0) {
+            return;
+        }
+        if (SelectedFeatureHandler._no_trigger_on.has(hash)) {
+            return;
+        }
+
+        OsmObject.DownloadObjectAsync(hash).then(obj => {
+
+            try {
+
+                console.log("Downloaded selected object from OSM-API for initial load: ", hash)
+                const geojson = obj.asGeoJson()
+                this.state.allElements.addOrGetElement(geojson)
+                this.state.selectedElement.setData(geojson)
+                this.zoomToSelectedFeature()
+            } catch (e) {
+                console.error(e)
+            }
+
         })
 
     }
 
-    // If a feature is selected via the hash, zoom there
-    public zoomToSelectedFeature(location: UIEventSource<Loc>) {
-        const hash = this.hash.data;
-        if (hash === undefined || SelectedFeatureHandler._no_trigger_on.has(hash)) {
-            return; // No valid feature selected
+    private setSelectedElementFromHash() {
+        const state = this.state
+        const h = this.hash.data
+        if (h === undefined || h === "") {
+            // Hash has been cleared - we clear the selected element
+            state.selectedElement.setData(undefined);
+        } else {
+            // we search the element to select
+            const feature = state.allElements.ContainingFeatures.get(h)
+            if (feature === undefined) {
+                return;
+            }
+            const currentlySeleced = state.selectedElement.data
+            if (currentlySeleced === undefined) {
+                state.selectedElement.setData(feature)
+                return;
+            }
+            if (currentlySeleced.properties?.id === feature.properties.id) {
+                // We already have the right feature
+                return;
+            }
+            state.selectedElement.setData(feature)
         }
-        // We should have a valid osm-ID and zoom to it... But we wrap it in try-catch to be sure
-        try {
+    }
 
-            OsmObject.DownloadObject(hash).addCallbackAndRunD(element => {
-                const centerpoint = element.centerpoint();
-                console.log("Zooming to location for select point: ", centerpoint)
-                location.data.lat = centerpoint[0]
-                location.data.lon = centerpoint[1]
-                location.ping();
-            })
-        } catch (e) {
-            console.error("Could not download OSM-object with id", hash, " - probably a weird hash")
+    // If a feature is selected via the hash, zoom there
+    private zoomToSelectedFeature() {
+        
+        const selected = this.state.selectedElement.data
+        if(selected === undefined){
+            return
         }
+        
+        const centerpoint= GeoOperations.centerpointCoordinates(selected)
+        const location = this.state.locationControl;
+        location.data.lon = centerpoint[0]
+        location.data.lat = centerpoint[1]
+        
+        const minZoom = Math.max(14, ...(this.state.layoutToUse?.layers?.map(l => l.minzoomVisible) ?? []))
+        if(location.data.zoom < minZoom  ){
+            location.data.zoom = minZoom
+        }
+        
+        location.ping();
+        
+        
+  
     }
 
 }

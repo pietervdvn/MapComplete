@@ -1,11 +1,9 @@
 import ImageProvider, {ProvidedImage} from "./ImageProvider";
 import BaseUIElement from "../../UI/BaseUIElement";
-import {UIEventSource} from "../UIEventSource";
 import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import {LicenseInfo} from "./LicenseInfo";
 import Constants from "../../Models/Constants";
-import {fail} from "assert";
 
 export class Mapillary extends ImageProvider {
 
@@ -13,7 +11,7 @@ export class Mapillary extends ImageProvider {
     
     public static readonly singleton = new Mapillary();
     private static readonly valuePrefix = "https://a.mapillary.com"
-    public static readonly valuePrefixes = [Mapillary.valuePrefix, "http://mapillary.com","https://mapillary.com"]
+    public static readonly valuePrefixes = [Mapillary.valuePrefix, "http://mapillary.com","https://mapillary.com","http://www.mapillary.com","https://www.mapillary.com"]
 
     private static ExtractKeyFromURL(value: string, failIfNoMath = false): {
         key: string,

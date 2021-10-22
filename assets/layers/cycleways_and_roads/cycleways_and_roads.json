@@ -668,8 +668,8 @@
                 ]
             },
             "question": {
-                "en": "What is the carriage width of this road (in meters)?",
-                "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
+                "en": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured curb to curb and thus includes the width of parallell parking lanes</span>",
+                "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is </span><br/><span class='subtle'>Meet dit van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>"
             },
             "id": "width:carriageway"
         },

@@ -52,14 +52,16 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Tempat ini memiliki catu daya"
-                    },
-                    "1": {
-                        "then": "Tempat ini tidak memiliki sumber listrik"
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Tempat ini memiliki catu daya"
+                        },
+                        "1": {
+                            "then": "Tempat ini tidak memiliki sumber listrik"
+                        }
                     }
                 }
             }

@@ -207,7 +207,8 @@
   "overrideAll": {
     "allowSplit": true,
     "tagRenderings+": [
-      {"id": "is_cyclestreet",
+      {
+        "id": "is_cyclestreet",
         "question": {
           "nl": "Is deze straat een fietsstraat?",
           "en": "Is this street a cyclestreet?",
@@ -283,7 +284,8 @@
           }
         ]
       },
-      {"id": "future_cyclestreet",
+      {
+        "id": "future_cyclestreet",
         "question": {
           "nl": "Wanneer wordt deze straat een fietsstraat?",
           "en": "When will this street become a cyclestreet?",
