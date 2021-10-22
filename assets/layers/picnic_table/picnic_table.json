@@ -27,7 +27,8 @@
         "nl": "Deze laag toont picnictafels",
         "it": "Il livello che mostra i tavoli da picnic",
         "fr": "La couche montrant les tables de pique-nique",
-        "ru": "Слой, отображающий столы для пикника"
+        "ru": "Слой, отображающий столы для пикника",
+        "de": "Die Ebene zeigt Picknicktische an"
     },
     "tagRenderings": [
         {

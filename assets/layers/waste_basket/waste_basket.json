@@ -3,7 +3,8 @@
     "name": {
         "en": "Waste Basket",
         "nl": "Vuilnisbak",
-        "ru": "Контейнер для мусора"
+        "ru": "Контейнер для мусора",
+        "de": "Abfalleimer"
     },
     "minzoom": 17,
     "source": {
@@ -17,7 +18,8 @@
         "render": {
             "en": "Waste Basket",
             "nl": "Vuilnisbak",
-            "ru": "Контейнер для мусора"
+            "ru": "Контейнер для мусора",
+            "de": "Abfalleimer"
         }
     },
     "description": {

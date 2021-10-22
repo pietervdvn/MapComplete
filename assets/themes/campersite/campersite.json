@@ -2,7 +2,7 @@
   "id": "campersite",
   "title": {
     "en": "Campersites",
-    "nl": "Kampeersite",
+    "nl": "Camperplaatsen",
     "it": "Aree camper",
     "ru": "Кемпинги",
     "ja": "キャンプサイト",
@@ -676,39 +676,7 @@
           }
         }
       ],
-      "wayHandling": 2,
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:white;./assets/themes/campersite/caravan.svg",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "fee=no"
-                  ]
-                },
-                "then": "circle:white;./assets/themes/campersite/caravan_green.svg"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "8"
-          }
-        }
-      ]
+      "wayHandling": 2
     },
     {
       "id": "dumpstations",
@@ -1105,27 +1073,6 @@
             "it": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
             "fr": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires) généralement alimenté en eau potable et électricité.",
             "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom."
-          }
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg"
-          },
-          "iconSize": {
-            "render": "32,32,center"
-          },
-          "location": [
-            "point"
-          ]
-        },
-        {
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "8"
           }
         }
       ]

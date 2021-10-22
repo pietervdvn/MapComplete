@@ -10,7 +10,8 @@
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. "
   },
   "language": [
-    "en"
+    "en",
+    "de"
   ],
   "maintainer": "",
   "icon": "./assets/themes/postboxes/postbox.svg",
@@ -79,29 +80,7 @@
             "razed:amenity=post_box"
           ]
         }
-      },
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/postboxes/postbox.svg"
-          },
-          "iconSize": {
-            "render": "40,40,bottom"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#DADADA"
-          },
-          "width": {
-            "render": "1"
-          }
-        }
-      ]
+      }
     },
     {
       "id": "postoffices",
@@ -154,7 +133,8 @@
       "iconOverlays": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen"
+          "then": "isOpen",
+          "badge": true
         }
       ],
       "width": {
@@ -188,34 +168,6 @@
               "osmTags": "_isOpen=yes"
             }
           ]
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "square:white;./assets/themes/postboxes/post_office.svg"
-          },
-          "iconBadges": [
-            {
-              "if": "opening_hours~*",
-              "then": "isOpen"
-            }
-          ],
-          "iconSize": {
-            "render": "40,40,bottom"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#DADADA"
-          },
-          "width": {
-            "render": "1"
-          }
         }
       ]
     }

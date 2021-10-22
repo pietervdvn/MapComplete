@@ -8,11 +8,13 @@
   "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
   "description": {
     "en": "A map for showing and editing wind turbines.",
-    "fr": "Une carte indiquant les éoliennes et permettant leur édition."
+    "fr": "Une carte indiquant les éoliennes et permettant leur édition.",
+    "de": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen."
   },
   "language": [
     "en",
     "fr",
+    "de",
     "nl"
   ],
   "version": "2021-06-18",
@@ -225,23 +227,6 @@
                 "fr": " mètres"
               }
             }
-          ]
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
-          "label": {
-            "mappings": [
-              {
-                "if": "generator:output:electricity~^[0-9]+.*[W]$",
-                "then": "<div style='background-color: rgba(0,0,0,0.3); color: white; font-size: 8px; padding: 0.25em; border-radius:0.5em'>{generator:output:electricity}</div>"
-              }
-            ]
-          },
-          "iconSize": "40, 40, bottom",
-          "location": [
-            "point"
           ]
         }
       ]

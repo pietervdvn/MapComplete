@@ -7,7 +7,8 @@
     },
     "description": {
         "en": "Crossings for pedestrians and cyclists",
-        "nl": "Oversteekplaatsen voor voetgangers en fietsers"
+        "nl": "Oversteekplaatsen voor voetgangers en fietsers",
+        "de": "Übergänge für Fußgänger und Radfahrer"
     },
     "source": {
         "osmTags": {
@@ -21,7 +22,8 @@
     "title": {
         "render": {
             "en": "Crossing",
-            "nl": "Oversteekplaats"
+            "nl": "Oversteekplaats",
+            "de": "Kreuzung"
         },
         "mappings": [
             {

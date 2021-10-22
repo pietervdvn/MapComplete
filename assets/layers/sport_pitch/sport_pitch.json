@@ -5,7 +5,8 @@
         "fr": "Terrains de sport",
         "en": "Sport pitches",
         "ru": "Спортивные площадки",
-        "it": "Campi sportivi"
+        "it": "Campi sportivi",
+        "de": "Sportplätze"
     },
     "wayHandling": 1,
     "minzoom": 12,
@@ -25,7 +26,8 @@
             "fr": "Terrain de sport",
             "en": "Sport pitch",
             "ru": "Спортивная площадка",
-            "it": "Campo sportivo"
+            "it": "Campo sportivo",
+            "de": "Sportplatz"
         }
     },
     "description": {
@@ -33,7 +35,8 @@
         "fr": "Un terrain de sport",
         "en": "A sport pitch",
         "it": "Un campo sportivo",
-        "ru": "Спортивная площадка"
+        "ru": "Спортивная площадка",
+        "de": "Ein Sportplatz"
     },
     "tagRenderings": [
         "images",
@@ -420,7 +423,8 @@
                     "opening_hours~*"
                 ]
             },
-            "then": "isOpen"
+            "then": "isOpen",
+            "badge": true
         },
         {
             "if": {
@@ -430,7 +434,8 @@
                     "access=no"
                 ]
             },
-            "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
+            "then": "circle:white;./assets/layers/sport_pitch/lock.svg",
+            "badge": true
         }
     ],
     "width": {

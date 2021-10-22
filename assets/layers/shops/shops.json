@@ -21,7 +21,8 @@
             "fr": "Magasin",
             "ru": "Магазин",
             "ja": "店",
-            "nl": "Winkel"
+            "nl": "Winkel",
+            "de": "Geschäft"
         },
         "mappings": [
             {
@@ -279,7 +280,8 @@
     "iconOverlays": [
         {
             "if": "opening_hours~*",
-            "then": "isOpen"
+            "then": "isOpen",
+            "badge": true
         }
     ],
     "width": {

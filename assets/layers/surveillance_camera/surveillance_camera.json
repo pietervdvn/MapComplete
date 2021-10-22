@@ -5,7 +5,8 @@
         "nl": "Bewakingscamera's",
         "ru": "Камеры наблюдения",
         "fr": "Caméras de surveillance",
-        "it": "Videocamere di sorveglianza"
+        "it": "Videocamere di sorveglianza",
+        "de": "Überwachungskameras"
     },
     "minzoom": 12,
     "source": {
@@ -28,7 +29,8 @@
             "nl": "Bewakingscamera",
             "ru": "Камера наблюдения",
             "fr": "Caméra de surveillance",
-            "it": "Videocamera di sorveglianza"
+            "it": "Videocamera di sorveglianza",
+            "de": "Überwachungskamera"
         }
     },
     "tagRenderings": [

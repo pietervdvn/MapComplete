@@ -31,7 +31,8 @@
         "en": "A map, meant for tourists which is permanently installed in the public space",
         "nl": "Een permantent geinstalleerde kaart",
         "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
-        "fr": "Une carte, destinée aux touristes, installée en permanence dans l'espace public"
+        "fr": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
+        "de": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist"
     },
     "tagRenderings": [
         "images",

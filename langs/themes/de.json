@@ -36,7 +36,7 @@
                 "name": "Wohnmobilstellplätze",
                 "presets": {
                     "0": {
-                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem Übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
                         "title": "Wohnmobilstellplatz"
                     }
                 },
@@ -751,17 +751,6 @@
                         }
                     }
                 },
-                "mapRendering": {
-                    "0": {
-                        "icon": {
-                            "mappings": {
-                                "0": {
-                                    "then": "./assets/themes/hackerspaces/led.png"
-                                }
-                            }
-                        }
-                    }
-                },
                 "name": "Hackerspace",
                 "presets": {
                     "0": {
@@ -821,6 +810,17 @@
                         }
                     },
                     "render": "Hackerspace"
+                },
+                "mapRendering": {
+                    "0": {
+                        "icon": {
+                            "mappings": {
+                                "0": {
+                                    "then": "./assets/themes/hackerspaces/led.png"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -836,6 +836,198 @@
         "title": "Offene Toilette Karte"
     },
     "waste_basket": {
-        "title": "Abfalleimer"
+        "title": "Abfalleimer",
+        "shortDescription": "Eine Karte mit Abfalleimern",
+        "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen"
+    },
+    "uk_addresses": {
+        "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
+        "layers": {
+            "1": {
+                "description": "Adressen",
+                "name": "Bekannte Adressen in OSM",
+                "tagRenderings": {
+                    "uk_addresses_explanation_osm": {
+                        "render": "Diese Adresse ist in OpenStreetMap gespeichert"
+                    },
+                    "uk_addresses_housenumber": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dieses Gebäude hat keine Hausnummer"
+                            }
+                        },
+                        "question": "Wie lautet die Nummer dieses Hauses?",
+                        "render": "Die Hausnummer ist <b>{addr:housenumber}</b>"
+                    },
+                    "uk_addresses_street": {
+                        "question": "In welcher Straße befindet sich diese Adresse?",
+                        "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
+                    }
+                },
+                "title": {
+                    "render": "Bekannte Adresse"
+                }
+            }
+        },
+        "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
+        "title": "Adressen in Großbritannien"
+    },
+    "trees": {
+        "description": "Kartieren Sie alle Bäume!",
+        "shortDescription": "Kartieren Sie alle Bäume",
+        "title": "Bäume"
+    },
+    "surveillance": {
+        "description": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
+        "shortDescription": "Überwachungskameras und andere Mittel zur Überwachung",
+        "title": "Überwachung unter Überwachung"
+    },
+    "sport_pitches": {
+        "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
+        "shortDescription": "Eine Karte mit Sportplätzen",
+        "title": "Sportplätze"
+    },
+    "shops": {
+        "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
+        "title": "Freie Geschäftskarte"
+    },
+    "postboxes": {
+        "layers": {
+            "1": {
+                "description": "Eine Ebene mit Postämtern.",
+                "tagRenderings": {
+                    "OH": {
+                        "mappings": {
+                            "0": {
+                                "then": "durchgehend geöffnet (auch an Feiertagen)"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "openwindpowermap": {
+        "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen."
+    },
+    "hailhydrant": {
+        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
+        "layers": {
+            "0": {
+                "description": "Kartenebene zur Anzeige von Hydranten.",
+                "name": "Karte der Hydranten",
+                "presets": {
+                    "0": {
+                        "description": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
+                        "title": "Löschwasser-Hydrant"
+                    }
+                },
+                "tagRenderings": {
+                    "hydrant-color": {
+                        "mappings": {
+                            "0": {
+                                "then": "Die Farbe des Hydranten ist unbekannt."
+                            },
+                            "1": {
+                                "then": "Die Farbe des Hydranten ist gelb."
+                            },
+                            "2": {
+                                "then": "Die Farbe des Hydranten ist rot."
+                            }
+                        },
+                        "question": "Welche Farbe hat der Hydrant?",
+                        "render": "Der Hydrant hat die Farbe {colour}"
+                    },
+                    "hydrant-state": {
+                        "mappings": {
+                            "0": {
+                                "then": "Der Hydrant ist (ganz oder teilweise) in Betrieb."
+                            },
+                            "1": {
+                                "then": "Der Hydrant ist nicht verfügbar."
+                            },
+                            "2": {
+                                "then": "Der Hydrant wurde entfernt."
+                            }
+                        },
+                        "question": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten.",
+                        "render": "Lebenszyklus-Status"
+                    },
+                    "hydrant-type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Der Typ des Hydranten ist unbekannt."
+                            },
+                            "1": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
+                            },
+                            "2": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
+                            },
+                            "3": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
+                            },
+                            "4": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
+                            }
+                        },
+                        "question": "Um welche Art von Hydrant handelt es sich?",
+                        "render": " Hydranten-Typ: {fire_hydrant:type}"
+                    }
+                },
+                "title": {
+                    "render": "Hydrant"
+                }
+            },
+            "1": {
+                "description": "Kartenebene zur Anzeige von Hydranten.",
+                "name": "Karte mit Feuerlöschern.",
+                "presets": {
+                    "0": {
+                        "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
+                        "title": "Feuerlöscher"
+                    }
+                },
+                "tagRenderings": {
+                    "extinguisher-location": {
+                        "mappings": {
+                            "0": {
+                                "then": "Im Innenraum vorhanden."
+                            },
+                            "1": {
+                                "then": "Im Außenraum vorhanden."
+                            }
+                        },
+                        "question": "Wo befindet er sich?",
+                        "render": "Standort: {location}"
+                    }
+                },
+                "title": {
+                    "render": "Feuerlöscher"
+                }
+            },
+            "2": {
+                "description": "Kartenebene zur Darstellung von Feuerwachen.",
+                "name": "Karte der Feuerwachen",
+                "presets": {
+                    "0": {
+                        "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+                        "title": "Feuerwache"
+                    }
+                },
+                "tagRenderings": {
+                    "station-name": {
+                        "question": "Wie lautet der Name dieser Feuerwache?"
+                    }
+                }
+            },
+            "3": {
+                "presets": {
+                    "0": {
+                        "description": "Eine Rettungsstation der Karte hinzufügen"
+                    }
+                }
+            }
+        }
     }
 }

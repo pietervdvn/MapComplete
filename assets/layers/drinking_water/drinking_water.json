@@ -33,7 +33,8 @@
                     "operational_status=closed"
                 ]
             },
-            "then": "close:#c33"
+            "then": "close:#c33",
+            "badge": true
         }
     ],
     "iconSize": "40,40,bottom",

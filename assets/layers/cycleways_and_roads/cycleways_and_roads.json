@@ -2,7 +2,8 @@
     "id": "cycleways_and_roads",
     "name": {
         "en": "Cycleways and roads",
-        "nl": "Fietspaden, straten en wegen"
+        "nl": "Fietspaden, straten en wegen",
+        "de": "Radwege und Straßen"
     },
     "minzoom": 16,
     "source": {

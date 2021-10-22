@@ -131,7 +131,8 @@
       "en": "Is this place accessible with a wheelchair?",
       "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
       "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
-      "de": "Ist dieser Ort mit einem Rollstuhl zugänglich?"
+      "de": "Ist dieser Ort mit einem Rollstuhl zugänglich?",
+      "fr": "Est-ce que cet endroit est accessible en chaise roulante ?"
     },
     "mappings": [
       {
@@ -145,7 +146,7 @@
           "en": "This place is specially adapated for wheelchair users",
           "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
           "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
-          "de": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet."
+          "de": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet"
         }
       },
       {
@@ -173,7 +174,8 @@
           "en": "It is possible to reach this place in a wheelchair, but it is not easy",
           "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
           "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
-          "de": "Es ist möglich, diesen Ort mit einem Rollstuhl zu erreichen, aber es ist nicht einfach"
+          "de": "Es ist möglich, diesen Ort mit einem Rollstuhl zu erreichen, aber es ist nicht einfach",
+          "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
         }
       },
       {
@@ -187,7 +189,8 @@
           "en": "This place is not reachable with a wheelchair",
           "pt": "Este lugar não é acessível com uma cadeira de rodas",
           "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
-          "de": "Dieser Ort ist nicht mit einem Rollstuhl erreichbar"
+          "de": "Dieser Ort ist nicht mit einem Rollstuhl erreichbar",
+          "fr": "Cet endroit n'est pas accessible en chaise roulante"
         }
       }
     ]
@@ -197,7 +200,8 @@
       "en": "Are dogs allowed in this business?",
       "nl": "Zijn honden toegelaten in deze zaak?",
       "pt": "Os cães são permitidos neste estabelecimento?",
-      "de": "Sind Hunde in diesem Geschäft erlaubt?"
+      "de": "Sind Hunde in diesem Geschäft erlaubt?",
+      "fr": "Est-ce que les chiens sont admis ici ?"
     },
     "mappings": [
       {
@@ -206,7 +210,8 @@
           "en": "Dogs are allowed",
           "nl": "honden zijn toegelaten",
           "pt": "Os cães são permitidos",
-          "de": "Hunde sind erlaubt"
+          "de": "Hunde sind erlaubt",
+          "fr": "Chiens admis"
         }
       },
       {
@@ -215,7 +220,8 @@
           "en": "Dogs are <b>not</b> allowed",
           "nl": "honden zijn <b>niet</b> toegelaten",
           "pt": "Os cães <b>não</b> são permitidos",
-          "de": "Hunde sind <b>nicht</b> erlaubt"
+          "de": "Hunde sind <b>nicht</b> erlaubt",
+          "fr": "Les chiens <b>ne</b> sont <b>pas</b> admis"
         }
       },
       {
@@ -224,7 +230,8 @@
           "en": "Dogs are allowed, but they have to be leashed",
           "nl": "honden zijn <b>enkel aan de leiband</b> welkom",
           "pt": "Os cães são permitidos, mas têm de ser presos pela trela",
-          "de": "Hunde sind erlaubt, müssen aber angeleint sein."
+          "de": "Hunde sind erlaubt, müssen aber angeleint sein",
+          "fr": "Les chiens sont admis, mais ils doivent être tenus en laisse"
         }
       },
       {
@@ -233,7 +240,8 @@
           "en": "Dogs are allowed and can run around freely",
           "nl": "honden zijn welkom en mogen vrij rondlopen",
           "pt": "Os cães são permitidos e podem correr livremente",
-          "de": "Hunde sind erlaubt und können frei herumlaufen"
+          "de": "Hunde sind erlaubt und können frei herumlaufen",
+          "fr": "Les chiens sont admis et peuvent circuler librement"
         }
       }
     ]
@@ -298,7 +306,8 @@
       "pt": "Que métodos de pagamento são aceites aqui?",
       "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
       "id": "Metode pembayaran manakah yang di terima disini?",
-      "de": "Welche Zahlungsmethoden werden hier akzeptiert?"
+      "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+      "fr": "Quelles sont les méthodes de paiement acceptées ici ?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -311,7 +320,8 @@
           "pt": "Aceitam pagamento com dinheiro aqui",
           "pt_BR": "Dinheiro é aceito aqui",
           "id": "Disini menerima pembayaran tunai",
-          "de": "Hier wird Bargeld akzeptiert"
+          "de": "Hier wird Bargeld akzeptiert",
+          "fr": "Paiement en liquide accepté"
         }
       },
       {
@@ -323,7 +333,8 @@
           "pt": "Aceitam pagamento com cartões bancários aqui",
           "pt_BR": "Cartões de pagamento são aceitos aqui",
           "id": "Disini menerima pembayaran dengan kartu",
-          "de": "Hier werden Zahlungskarten akzeptiert"
+          "de": "Hier werden Zahlungskarten akzeptiert",
+          "fr": "Paiement par carte accepté"
         }
       }
     ]
