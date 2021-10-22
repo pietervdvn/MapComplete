@@ -80,7 +80,29 @@
             "razed:amenity=post_box"
           ]
         }
-      }
+      },
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/postboxes/postbox.svg"
+          },
+          "iconSize": {
+            "render": "40,40,bottom"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#DADADA"
+          },
+          "width": {
+            "render": "1"
+          }
+        }
+      ]
     },
     {
       "id": "postoffices",
@@ -133,8 +155,7 @@
       "iconOverlays": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen",
-          "badge": true
+          "then": "isOpen"
         }
       ],
       "width": {
@@ -168,6 +189,34 @@
               "osmTags": "_isOpen=yes"
             }
           ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "square:white;./assets/themes/postboxes/post_office.svg"
+          },
+          "iconBadges": [
+            {
+              "if": "opening_hours~*",
+              "then": "isOpen"
+            }
+          ],
+          "iconSize": {
+            "render": "40,40,bottom"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#DADADA"
+          },
+          "width": {
+            "render": "1"
+          }
         }
       ]
     }

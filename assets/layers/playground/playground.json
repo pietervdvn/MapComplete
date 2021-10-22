@@ -482,8 +482,7 @@
                     "opening_hours~*"
                 ]
             },
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         }
     ],
     "width": {
