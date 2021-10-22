@@ -13,8 +13,8 @@ export interface TagRenderingConfigJson {
     id?: string,
 
     /**
-     * Optional: this can group questions together in one question box.
-     * Written by 'left-right'-keys automatically
+     * If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.
+     * The first tagRendering of a group will always be a sticky element.
      */
     group?: string
     
@@ -173,7 +173,5 @@ export interface TagRenderingConfigJson {
          * If this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`
          */
         ifnot?: AndOrTagConfigJson | string
-
     }[]
-
 }

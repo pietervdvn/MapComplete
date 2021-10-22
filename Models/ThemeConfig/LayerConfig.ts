@@ -207,7 +207,7 @@ export default class LayerConfig extends WithContextLoader {
 
 
         this.tagRenderings = this.ExtractLayerTagRenderings(json)
-        const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined && tr["leftRightKeys"] === undefined) ?? [];
+        const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined && tr["rewrite"] === undefined) ?? [];
 
         if (missingIds.length > 0 && official) {
             console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
@@ -277,39 +277,41 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         const normalTagRenderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[] = []
-        const leftRightRenderings: ({ leftRightKeys: string[], renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[] })[] = []
+
+        
+        const renderingsToRewrite: ({ rewrite:{
+                sourceString: string,
+                into: string[]
+            }, renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[] })[] = []
         for (let i = 0; i < json.tagRenderings.length; i++) {
             const tr = json.tagRenderings[i];
-            const lrkDefined = tr["leftRightKeys"] !== undefined
+            const rewriteDefined = tr["rewrite"] !== undefined
             const renderingsDefined = tr["renderings"]
 
-            if (!lrkDefined && !renderingsDefined) {
+            if (!rewriteDefined && !renderingsDefined) {
                 // @ts-ignore
                 normalTagRenderings.push(tr)
                 continue
             }
-            if (lrkDefined && renderingsDefined) {
+            if (rewriteDefined && renderingsDefined) {
                 // @ts-ignore
-                leftRightRenderings.push(tr)
+                renderingsToRewrite.push(tr)
                 continue
             }
-            throw `Error in ${this._context}.tagrenderings[${i}]: got a value which defines either \`leftRightKeys\` or \`renderings\`, but not both. Either define both or move the \`renderings\`  out of this scope`
+            throw `Error in ${this._context}.tagrenderings[${i}]: got a value which defines either \`rewrite\` or \`renderings\`, but not both. Either define both or move the \`renderings\`  out of this scope`
         }
 
         const allRenderings = this.ParseTagRenderings(normalTagRenderings, false);
 
-        if(leftRightRenderings.length === 0){
+        if(renderingsToRewrite.length === 0){
             return allRenderings
         }
         
-        const leftRenderings : TagRenderingConfig[] = []
-        const rightRenderings : TagRenderingConfig[] = []
-        
-        function prepConfig(target:string, tr: TagRenderingConfigJson){
+        function prepConfig(keyToRewrite: string, target:string, tr: TagRenderingConfigJson){
             
             function replaceRecursive(transl: string | any){
                 if(typeof transl === "string"){
-                    return  transl.replace("left|right", target)
+                    return transl.replace(keyToRewrite, target)
                 }
                 if(transl.map !== undefined){
                     return transl.map(o => replaceRecursive(o))
@@ -328,33 +330,34 @@ export default class LayerConfig extends WithContextLoader {
             tr.group = target
             return tr
         }
-        
-        
-        for (const leftRightRendering of leftRightRenderings) {
-            
-            const keysToRewrite = leftRightRendering.leftRightKeys
-            const tagRenderings = leftRightRendering.renderings
-            
-            const left = this.ParseTagRenderings(tagRenderings, false, tr => prepConfig("left", tr))
-            const right = this.ParseTagRenderings(tagRenderings, false, tr => prepConfig("right", tr))
 
-            leftRenderings.push(...left)
-            rightRenderings.push(...right)
-
+        const rewriteGroups: Map<string, TagRenderingConfig[]> = new Map<string, TagRenderingConfig[]>()
+        for (const rewriteGroup of renderingsToRewrite) {
+            
+            const tagRenderings = rewriteGroup.renderings
+            const textToReplace = rewriteGroup.rewrite.sourceString
+            const targets = rewriteGroup.rewrite.into
+            for (const target of targets) {
+                const parsedRenderings = this.ParseTagRenderings(tagRenderings, false, tr => prepConfig(textToReplace, target, tr))
+                
+                if(!rewriteGroups.has(target)){
+                    rewriteGroups.set(target, [])
+                }
+                rewriteGroups.get(target).push(... parsedRenderings)
+            }
         }
         
-        leftRenderings.push(new TagRenderingConfig(<TagRenderingConfigJson>{
-            id: "questions",
-            group:"left",
-        }, "layerConfig.ts.leftQuestionBox"))
-
-        rightRenderings.push(new TagRenderingConfig(<TagRenderingConfigJson>{
-            id: "questions",
-            group:"right",
-        }, "layerConfig.ts.rightQuestionBox"))
         
-        allRenderings.push(...leftRenderings)
-        allRenderings.push(...rightRenderings)
+        rewriteGroups.forEach((group, groupName) => {
+            group.push(new TagRenderingConfig({
+                id:"questions",
+                group:groupName
+            }))
+        })
+        
+        rewriteGroups.forEach(group => {
+            allRenderings.push(...group)
+        })
 
 
         return allRenderings;

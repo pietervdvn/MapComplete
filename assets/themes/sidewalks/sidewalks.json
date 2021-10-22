@@ -54,7 +54,10 @@
         },
         
         {
-        "leftRightKeys": "sidewalk:left|right",
+        "rewrite": {
+          "sourceString": "left|right",
+          "into": ["left","right"]
+        },
         "renderings": [
           {
             "id": "sidewalk_minimap",

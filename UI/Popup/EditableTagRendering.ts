@@ -71,7 +71,6 @@ export default class EditableTagRendering extends Toggle {
                 editMode
             )
         }
-        rendering.SetClass("block w-full break-word text-default m-1 p-1 border-b border-gray-200 mb-2 pb-2")
         return rendering;
     }
 

@@ -5,7 +5,6 @@ import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
-import {Tag} from "../../Logic/Tags/Tag";
 import Constants from "../../Models/Constants";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import BaseUIElement from "../BaseUIElement";
@@ -18,7 +17,6 @@ import {Translation} from "../i18n/Translation";
 import {Utils} from "../../Utils";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import MoveWizard from "./MoveWizard";
-import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -55,8 +53,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                                    layerConfig: LayerConfig): BaseUIElement {
         let questionBoxes: Map<string, BaseUIElement> = new Map<string, BaseUIElement>();
 
+        const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map(tr => tr.group))
         if (State.state.featureSwitchUserbadge.data) {
-            const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map(tr => tr.group))
             for (const groupName of allGroupNames) {
                 const questions = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
                 const questionBox = new QuestionBox(tags, questions, layerConfig.units);
@@ -65,23 +63,45 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             }
         }
 
-        const renderings: BaseUIElement[] = layerConfig.tagRenderings.map(tr => {
-            if (tr.question === null || tr.id === "questions") {
-                console.log("Rendering is", tr)
-                // This is a question box!
-                const questionBox = questionBoxes.get(tr.group)
-                questionBoxes.delete(tr.group)
-                return questionBox;
+        const allRenderings = []
+        for (let i = 0; i < allGroupNames.length; i++) {
+            const groupName = allGroupNames[i];
+
+            const trs = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
+            const renderingsForGroup: BaseUIElement[] = []
+            for (const tr of trs) {
+                if (tr.question === null || tr.id === "questions") {
+                    // This is a question box!
+                    const questionBox = questionBoxes.get(tr.group)
+                    questionBoxes.delete(tr.group)
+                    renderingsForGroup.push(questionBox)
+                } else {
+                    const etr = new EditableTagRendering(tags, tr, layerConfig.units).SetClass("editable-tag-rendering")
+                        
+                    renderingsForGroup.push(etr)
+                }
             }
-            return new EditableTagRendering(tags, tr, layerConfig.units);
-        });
+            let j = 0
+            if (i !== 0) {
+                renderingsForGroup[0]?.SetStyle("position: sticky; top: -5px")
+                j = 1
+            }
+            for (/* j = 0 or 1 */; j < renderingsForGroup.length; j++) {
+                renderingsForGroup[j].SetClass("block w-full break-word text-default m-1 p-1 border-b border-gray-200 mb-2 pb-2")
+            }
+            
+            
+            
+            allRenderings.push(...renderingsForGroup)
+        }
+
 
         let editElements: BaseUIElement[] = []
         questionBoxes.forEach(questionBox => {
             editElements.push(questionBox);
         })
 
-        if(layerConfig.allowMove) {
+        if (layerConfig.allowMove) {
             editElements.push(
                 new VariableUiElement(tags.map(tags => tags.id).map(id => {
                         const feature = State.state.allElements.ContainingFeatures.get(id)
@@ -115,7 +135,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
         const hasMinimap = layerConfig.tagRenderings.some(tr => FeatureInfoBox.hasMinimap(tr))
         if (!hasMinimap) {
-            renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
+            allRenderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
 
         editElements.push(
@@ -140,7 +160,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             new VariableUiElement(
                 State.state.featureSwitchIsDebugging.map(isDebugging => {
                     if (isDebugging) {
-                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"},  "");
+                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, "");
                         return new TagRenderingAnswer(tags, config, "all_tags")
                     }
                 })
@@ -155,9 +175,9 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 return new Combine(editElements).SetClass("flex flex-col")
             }
         ))
-        renderings.push(editors)
+        allRenderings.push(editors)
 
-        return new Combine(renderings).SetClass("block")
+        return new Combine(allRenderings).SetClass("block")
 
     }
 

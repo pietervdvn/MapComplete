@@ -196,9 +196,15 @@ export interface LayerConfigJson {
      *
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
      *
+     * At last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.
+     * This is mainly create questions for a 'left' and a 'right' side of the road.
+     * These will be grouped and questions will be asked together
      */
     tagRenderings?: (string | {builtin: string, override: any} | TagRenderingConfigJson | {
-        leftRightKeys: string[],
+        rewrite: {
+            sourceString: string,
+            into: string[]
+        }[],
         renderings: (string | {builtin: string, override: any} | TagRenderingConfigJson)[]
     }) [],
     

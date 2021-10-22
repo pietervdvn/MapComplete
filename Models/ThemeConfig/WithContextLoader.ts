@@ -47,7 +47,7 @@ export default class WithContextLoader {
         tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson)[],
         readOnly = false,
         prepConfig: ((config: TagRenderingConfigJson) => TagRenderingConfigJson) = undefined
-    ) {
+    ) : TagRenderingConfig[]{
         if (tagRenderings === undefined) {
             return [];
         }
@@ -77,18 +77,17 @@ export default class WithContextLoader {
                     continue;
                 }
 
-                if (renderingJson["override"] !== undefined) {
-                    let sharedJson = SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
-
-                    if (sharedJson === undefined) {
-                        const keys = Array.from(SharedTagRenderings.SharedTagRenderingJson.keys());
-                        throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(
-                            ", "
-                        )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
-                    }
-
-                    renderingJson = Utils.Merge(renderingJson["override"], sharedJson)
+                let sharedJson = SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
+                if (sharedJson === undefined) {
+                    const keys = Array.from(SharedTagRenderings.SharedTagRenderingJson.keys());
+                    throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(
+                        ", "
+                    )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
                 }
+                if (renderingJson["override"] !== undefined) {
+                    sharedJson = Utils.Merge(renderingJson["override"], sharedJson)
+                }
+                renderingJson = sharedJson
             }
 
 
