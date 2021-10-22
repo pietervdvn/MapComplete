@@ -3,23 +3,6 @@
         "description": {
             "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
         },
-        "dog-access": {
-            "mappings": {
-                "0": {
-                    "then": "Hunde sind erlaubt"
-                },
-                "1": {
-                    "then": "Hunde sind <b>nicht</b> erlaubt"
-                },
-                "2": {
-                    "then": "Hunde sind erlaubt, müssen aber angeleint sein."
-                },
-                "3": {
-                    "then": "Hunde sind erlaubt und können frei herumlaufen"
-                }
-            },
-            "question": "Sind Hunde in diesem Geschäft erlaubt?"
-        },
         "email": {
             "question": "Was ist die Mail-Adresse von {name}?"
         },
@@ -45,7 +28,14 @@
             "question": "Was sind die Öffnungszeiten von {name}?",
             "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
         },
+        "phone": {
+            "question": "Was ist die Telefonnummer von {name}?"
+        },
+        "website": {
+            "question": "Was ist die Website von {name}?"
+        },
         "payment-options": {
+            "question": "Welche Zahlungsmethoden werden hier akzeptiert?",
             "mappings": {
                 "0": {
                     "then": "Hier wird Bargeld akzeptiert"
@@ -53,19 +43,12 @@
                 "1": {
                     "then": "Hier werden Zahlungskarten akzeptiert"
                 }
-            },
-            "question": "Welche Zahlungsmethoden werden hier akzeptiert?"
-        },
-        "phone": {
-            "question": "Was ist die Telefonnummer von {name}?"
-        },
-        "website": {
-            "question": "Was ist die Website von {name}?"
+            }
         },
         "wheelchair-access": {
             "mappings": {
                 "0": {
-                    "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet."
+                    "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet"
                 },
                 "1": {
                     "then": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen"
@@ -78,6 +61,23 @@
                 }
             },
             "question": "Ist dieser Ort mit einem Rollstuhl zugänglich?"
+        },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Hunde sind erlaubt"
+                },
+                "1": {
+                    "then": "Hunde sind <b>nicht</b> erlaubt"
+                },
+                "2": {
+                    "then": "Hunde sind erlaubt, müssen aber angeleint sein"
+                },
+                "3": {
+                    "then": "Hunde sind erlaubt und können frei herumlaufen"
+                }
+            },
+            "question": "Sind Hunde in diesem Geschäft erlaubt?"
         }
     }
 }

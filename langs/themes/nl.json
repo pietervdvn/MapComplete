@@ -97,6 +97,8 @@
                 }
             }
         },
+        "shortDescription": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje",
+        "title": "Breng jouw buurtnatuur in kaart",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -161,9 +163,7 @@
                     "render": "Dit gebied heet {name}"
                 }
             }
-        },
-        "shortDescription": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje",
-        "title": "Breng jouw buurtnatuur in kaart"
+        }
     },
     "cafes_and_pubs": {
         "description": "Cafés, kroegen en drinkgelegenheden",
@@ -197,6 +197,24 @@
                     },
                     "caravansites-website": {
                         "render": "Officiële website: : <a href='{website}'>{website}</a>"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Er is internettoegang"
+                            },
+                            "1": {
+                                "then": "Er is internettoegang"
+                            }
+                        }
+                    },
+                    "caravansites-description": {
+                        "question": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)",
+                        "render": "Meer details over deze plaats: {description}"
+                    },
+                    "caravansites-capacity": {
+                        "question": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)",
+                        "render": "{capacity} campers kunnen deze plaats tegelijk gebruiken"
                     }
                 },
                 "title": {
@@ -206,11 +224,17 @@
                         }
                     },
                     "render": "Camperplaats {name}"
+                },
+                "presets": {
+                    "0": {
+                        "description": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
+                        "title": "camperplaats"
+                    }
                 }
             }
         },
         "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
-        "title": "Kampeersite"
+        "title": "Camperplaatsen"
     },
     "charging_stations": {
         "shortDescription": "Een wereldwijde kaart van oplaadpunten",
@@ -370,6 +394,18 @@
             }
         },
         "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " meter"
+                        },
+                        "1": {
+                            "human": " voet"
+                        }
+                    }
+                }
+            },
             "tagRenderings+": {
                 "0": {
                     "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
@@ -469,18 +505,6 @@
                     },
                     "question": "Is er een snelklimmuur (speed climbing)?"
                 }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " meter"
-                        },
-                        "1": {
-                            "human": " voet"
-                        }
-                    }
-                }
             }
         },
         "title": "Open klimkaart"
@@ -517,6 +541,8 @@
                 }
             }
         },
+        "shortDescription": "Een kaart met alle gekende fietsstraten",
+        "title": "Fietsstraten",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -541,9 +567,7 @@
                     "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
                 }
             }
-        },
-        "shortDescription": "Een kaart met alle gekende fietsstraten",
-        "title": "Fietsstraten"
+        }
     },
     "cyclofix": {
         "description": "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
@@ -921,27 +945,27 @@
         "shortDescription": "Breng bomen in kaart",
         "title": "Bomen"
     },
-    "uk_addresses": {
-        "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
-        "layers": {
-            "1": {
-                "description": "Adressen",
-                "tagRenderings": {
-                    "uk_addresses_housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dit gebouw heeft geen huisnummer"
-                            }
-                        },
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
-                    }
-                }
-            }
-        }
-    },
     "waste_basket": {
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
+    },
+    "uk_addresses": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "uk_addresses_housenumber": {
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>",
+                        "mappings": {
+                            "0": {
+                                "then": "Dit gebouw heeft geen huisnummer"
+                            }
+                        }
+                    }
+                },
+                "description": "Adressen"
+            }
+        },
+        "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen"
     }
 }

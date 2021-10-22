@@ -33,6 +33,45 @@
         },
         "website": {
             "question": "Quel est le site web de {name} ?"
+        },
+        "payment-options": {
+            "mappings": {
+                "1": {
+                    "then": "Paiement par carte accepté"
+                },
+                "0": {
+                    "then": "Paiement en liquide accepté"
+                }
+            },
+            "question": "Quelles sont les méthodes de paiement acceptées ici ?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "2": {
+                    "then": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
+                },
+                "3": {
+                    "then": "Cet endroit n'est pas accessible en chaise roulante"
+                }
+            },
+            "question": "Est-ce que cet endroit est accessible en chaise roulante ?"
+        },
+        "dog-access": {
+            "mappings": {
+                "1": {
+                    "then": "Les chiens <b>ne</b> sont <b>pas</b> admis"
+                },
+                "2": {
+                    "then": "Les chiens sont admis, mais ils doivent être tenus en laisse"
+                },
+                "3": {
+                    "then": "Les chiens sont admis et peuvent circuler librement"
+                },
+                "0": {
+                    "then": "Chiens admis"
+                }
+            },
+            "question": "Est-ce que les chiens sont admis ici ?"
         }
     }
 }
