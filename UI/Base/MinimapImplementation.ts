@@ -8,6 +8,7 @@ import * as L from "leaflet";
 import {Map} from "leaflet";
 import Minimap, {MinimapObj, MinimapOptions} from "./Minimap";
 import {BBox} from "../../Logic/BBox";
+import 'leaflet-polylineoffset'
 
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0;

@@ -1,14 +1,23 @@
-/**
- * The data layer shows all the given geojson elements with the appropriate icon etc
- */
+
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import RenderingMultiPlexerFeatureSource from "../../Logic/FeatureSource/Sources/WayHandlingApplyingFeatureSource";
-import 'leaflet-polylineoffset';
+/*
+// import 'leaflet-polylineoffset'; 
+We don't actually import it here. It is imported in the 'MinimapImplementation'-class, which'll result in a patched 'L' object.
+ Even though actually importing this here would seem cleaner, we don't do this as this breaks some scripts:
+ - Scripts are ran in ts-node
+ - ts-node doesn't define the 'window'-object
+ - Importing this will execute some code which needs the window object
 
+ */
+
+/**
+ * The data layer shows all the given geojson elements with the appropriate icon etc
+ */
 export default class ShowDataLayer {
 
     private readonly _leafletMap: UIEventSource<L.Map>;

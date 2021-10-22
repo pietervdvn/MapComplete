@@ -1237,6 +1237,20 @@
         "shortDescription": "An editable map with basic shop information",
         "title": "Open Shop Map"
     },
+    "sidewalks": {
+        "description": "Experimental theme",
+        "layers": {
+            "0": {
+                "description": "Layer showing sidewalks of highways",
+                "name": "Sidewalks",
+                "title": {
+                    "render": "Street {name}"
+                }
+            }
+        },
+        "shortDescription": "Sidewalk mapping",
+        "title": "Sidewalks"
+    },
     "sport_pitches": {
         "description": "A sport pitch is an area where sports are played",
         "shortDescription": "A map showing sport pitches",

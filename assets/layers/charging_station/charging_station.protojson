@@ -55,7 +55,7 @@
         },
         {
           "if": "motorcar=yes",
-          "ifnot":  "motorcar=no",
+          "ifnot": "motorcar=no",
           "then": {
             "en": "<b>Cars</b> can be charged here"
           }
@@ -137,7 +137,9 @@
         "type": "pnat"
       }
     },
-    {"id": "$$$"},
+    {
+      "id": "$$$"
+    },
     {
       "id": "Authentication",
       "question": {
@@ -356,7 +358,7 @@
             "en": "No timelimit on leaving your vehicle here",
             "nl": "Geen maximum parkeertijd"
           }
-        }  
+        }
       ]
     },
     {
@@ -530,7 +532,10 @@
         },
         {
           "if": {
-          "and":  ["amenity=charging_station","operational_status="]
+            "and": [
+              "amenity=charging_station",
+              "operational_status="
+            ]
           },
           "then": {
             "en": "This charging station works",
@@ -562,6 +567,10 @@
   ],
   "mapRendering": [
     {
+      "location": [
+        "point",
+        "centroid"
+      ],
       "icon": {
         "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
         "mappings": [
@@ -580,7 +589,7 @@
           }
         ]
       },
-      "iconOverlays": [
+      "iconBadges": [
         {
           "if": {
             "or": [
@@ -588,7 +597,7 @@
               "operational_status=broken"
             ]
           },
-          "then": "cross_bottom_right:#c22;"
+          "then": "cross:#c22;"
         },
         {
           "if": {
@@ -597,8 +606,7 @@
               "planned:amenity=charging_station"
             ]
           },
-          "then": "./assets/layers/charging_station/under_construction.svg",
-          "badge": true
+          "then": "./assets/layers/charging_station/under_construction.svg"
         },
         {
           "if": {
@@ -612,8 +620,7 @@
               }
             ]
           },
-          "then": "circle:#fff;./assets/themes/charging_stations/car.svg",
-          "badge": true
+          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
         }
       ],
       "iconSize": {
@@ -740,7 +747,7 @@
             "en": " days",
             "nl": " day"
           },
-          "humanSingular":{
+          "humanSingular": {
             "en": " day",
             "nl": " dag"
           }
