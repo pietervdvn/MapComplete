@@ -9,12 +9,11 @@ import {DownloadPanel} from "./DownloadPanel";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import ExportPDF from "../ExportPDF";
-import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class AllDownloads extends ScrollableFullScreen {
 
     constructor(isShown: UIEventSource<boolean>) {
-        super(AllDownloads.GenTitle, AllDownloads.GeneratePanel, "layers", isShown);
+        super(AllDownloads.GenTitle, AllDownloads.GeneratePanel, isShown);
     }
 
     private static GenTitle(): BaseUIElement {

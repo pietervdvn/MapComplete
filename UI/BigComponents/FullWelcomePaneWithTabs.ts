@@ -30,7 +30,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         super(
             () => layoutToUse.title.Clone(),
             () => FullWelcomePaneWithTabs.GenerateContents(state, currentTab, isShown),
-            undefined, isShown
+            isShown
         )
     }
 
