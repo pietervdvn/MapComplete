@@ -3,13 +3,14 @@
   "maintainer": "Robin van der Linde",
   "version": "2021-10-22",
   "language": [
-    "nl"
+    "nl",
+    "en"
   ],
   "title": {
-    "nl": "Straatverlichting Assen"
+    "nl": "Straatverlichting - Assen"
   },
   "description": {
-    "nl": "Straatverlichtingkaart met dataset Assen"
+    "nl": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
@@ -22,7 +23,9 @@
       "name": "Dataset Assen",
       "source": {
         "osmTags": "Lichtmastnummer~*",
-        "geoJson": "https://opendata.arcgis.com/datasets/ba37cdb372064b3199c548b75d16a609_0.geojson",
+        "#geoJson": "https://opendata.arcgis.com/datasets/ba37cdb372064b3199c548b75d16a609_0.geojson",
+        "geoJson": "https://robinlinde.github.io/tiles/assen_street_lighting/{z}/{x}/{y}.json",
+        "geoJsonZoomLevel": 16,
         "isOsmCache": false
       },
       "calculatedTags": [

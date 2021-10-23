@@ -11,8 +11,8 @@
     "nl": "Straatverlichting"
   },
   "description": {
-    "en": "A theme showing information about street lamps, like light type, mounting, light colour and much more.",
-    "nl": "Een thema met details over straatlantaarns zoals verlichtingstype, montage, lichtkleur en veel meer."
+    "en": "On this map you can find everything about street lighting",
+    "nl": "Op deze kaart vind je alles over straatlantaarns"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,

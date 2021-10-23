@@ -1228,7 +1228,7 @@
         "title": "Sport pitches"
     },
     "street_lighting": {
-        "description": "A theme showing information about street lamps, like light type, mounting, light colour and much more.",
+        "description": "On this map you can find everything about street lighting",
         "layers": {
             "1": {
                 "name": "Lit streets",

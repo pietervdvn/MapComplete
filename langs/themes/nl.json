@@ -898,7 +898,7 @@
         "title": "Sportvelden"
     },
     "street_lighting": {
-        "description": "Een thema met details over straatlantaarns zoals verlichtingstype, montage, lichtkleur en veel meer.",
+        "description": "Op deze kaart vind je alles over straatlantaarns",
         "layers": {
             "1": {
                 "name": "Verlichte straten",
@@ -954,8 +954,8 @@
         "title": "Straatverlichting"
     },
     "street_lighting_assen": {
-        "description": "Straatverlichtingkaart met dataset Assen",
-        "title": "Straatverlichting Assen"
+        "description": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen",
+        "title": "Straatverlichting - Assen"
     },
     "surveillance": {
         "description": "Op deze open kaart kan je bewakingscamera's vinden.",
