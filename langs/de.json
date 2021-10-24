@@ -17,7 +17,7 @@
     },
     "centerMessage": {
         "loadingData": "Daten werden geladen…",
-        "zoomIn": "Vergrößern, um die Daten anzuzeigen oder zu bearbeiten",
+        "zoomIn": "Ausschnitt vergrößern, um Daten anzuzeigen oder zu bearbeiten",
         "ready": "Erledigt!",
         "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden …"
     },
@@ -28,7 +28,7 @@
         "pickTheme": "Wähle unten ein Thema, um zu starten."
     },
     "general": {
-        "loginWithOpenStreetMap": "Anmeldung mit OpenStreetMap",
+        "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
         "welcomeBack": "Sie sind eingeloggt, willkommen zurück!",
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "search": {
@@ -61,7 +61,7 @@
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
             "disableFilters": "Alle Filter deaktivieren"
         },
-        "pickLanguage": "Wählen Sie eine Sprache: ",
+        "pickLanguage": "Sprache wählen: ",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
         "nameInlineQuestion": "Der Name dieser {category} ist $$$",
         "noNameCategory": "{category} ohne Namen",
@@ -76,7 +76,7 @@
         "openStreetMapIntro": "<h3>Eine freie Karte</h3><p>Wäre es nicht toll, wenn es eine freie Karte gäbe, die von jedem angepasst und genutzt werden könnte? Eine Karte, zu der jeder Informationen hinzufügen kann? Dann bräuchte man all diese Webseiten mit unterschiedlichen, eingeschränkten und veralteten Karten nicht mehr.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> ist diese freie Karte. Alle Kartendaten können kostenlos verwendet werden (mit <a href=\"https://osm.org/copyright\" target=\"_blank\">Attribution und Veröffentlichung von Änderungen an diesen Daten</a>). Darüber hinaus können Sie die Karte kostenlos ändern und Fehler beheben, wenn Sie ein Konto erstellen. Diese Webseite basiert ebenfalls auf OpenStreetMap. Wenn Sie eine Frage hier beantworten, geht die Antwort auch dorthin.</p>Viele Menschen und Anwendungen nutzen OpenStreetMap bereits: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, verschiedene spezialisierte Routenplaner, die Hintergrundkarten auf Facebook, Instagram, ...&lt;br/&gt;Sogar Apple Maps und Bing Maps verwenden OpenStreetMap in ihren Karten!<p></p><p></p><p>Wenn Sie hier einen Punkt hinzufügen oder eine Frage beantworten, wird er nach einer Weile in all diesen Anwendungen sichtbar sein.</p>",
         "sharescreen": {
             "intro": "<h3>Diese Karte teilen</h3> Sie können diese Karte teilen, indem Sie den untenstehenden Link kopieren und an Freunde und Familie schicken:",
-            "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Website einfach zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der URL-Leiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
+            "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
             "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte betten Sie diese Karte in Ihre Webseite ein. <br>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
             "copiedToClipboard": "Link in die Zwischenablage kopiert",
             "thanksForSharing": "Danke für das Teilen!",
@@ -109,7 +109,7 @@
         "aboutMapcomplete": "<h3>Über MapComplete</h3><p>Mit MapComplete können Sie OpenStreetMap mit Informationen zu einem <b>einzigen Thema</b> anreichern. Beantworten Sie ein paar Fragen, und innerhalb von Minuten werden Ihre Beiträge rund um den Globus verfügbar sein! Der <b>Themen-Maintainer</b> definiert Elemente, Fragen und Sprachen für das Thema.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>Wenn es in eine Website eingebettet wird, verlinkt der Iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Login, aber das Bearbeiten erfordert ein OSM-Login.</li><li>Wenn Sie nicht eingeloggt sind, werden Sie aufgefordert, sich anzumelden</li><li>Nach der Beantwortung einer einzelnen Frage können Sie der Karte neue Punkte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt sind</li></ul><p></p><br><p>Haben Sie <b>ein Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie <b>bei der Übersetzung helfen</b>? Besuchen Sie den <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">Quellcode</a> oder den <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">Issue Tracker</a> </p><p>Möchten Sie <b>Ihren Fortschritt</b> sehen? Verfolgen Sie die Anzahl der Änderungen auf <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "backgroundMap": "Hintergrundkarte",
         "layerSelection": {
-            "zoomInToSeeThisLayer": "Vergrößern, um diese Ebene zu sehen",
+            "zoomInToSeeThisLayer": "Ausschnitt vergrößern, um diese Ebene anzuzeigen",
             "title": "Ebenen auswählen"
         },
         "weekdays": {
@@ -170,7 +170,7 @@
         "pdf": {
             "versionInfo": "v{version} - erstellt am {date}"
         },
-        "loginOnlyNeededToEdit": "wenn du die Karte bearbeiten willst"
+        "loginOnlyNeededToEdit": "zum Bearbeiten der Karte"
     },
     "favourite": {
         "panelIntro": "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen",
