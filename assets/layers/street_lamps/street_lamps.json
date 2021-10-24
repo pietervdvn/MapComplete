@@ -41,6 +41,7 @@
             "badge": true
         }
     ],
+    "iconSize": "40,40,bottom",
     "presets": [
         {
             "title": {
@@ -367,5 +368,10 @@
                 "type": "direction"
             }
         }
-    ]
+    ],
+    "deletion": true,
+    "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": false
+    }
 }
