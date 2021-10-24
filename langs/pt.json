@@ -9,7 +9,7 @@
         "isDeleted": "Eliminada",
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
-        "uploadDone": "<span class=\"thanks\">A sua imagem foi adicionada. Obrigado pela ajuda!</span>",
+        "uploadDone": "A sua imagem foi adicionada. Obrigado pela ajuda!",
         "respectPrivacy": "Não fotografe pessoas nem placas de veículos. Não envie imagens do Google Maps, do Google Streetview ou outras fontes protegidas por direitos de autor.",
         "uploadFailed": "Não foi possível enviar a sua imagem. Está conectado à Internet e permite APIs de terceiros? O navegador \"Brave\" ou o plugin \"uMatrix\" podem estar a bloqueá-los.",
         "ccb": "sob a licença CC-BY",
