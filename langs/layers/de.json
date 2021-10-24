@@ -986,7 +986,7 @@
                         "then": "Authentifizierung per Debitkarte ist möglich"
                     },
                     "7": {
-                        "then": "Keine Authentifizierung erforderlich"
+                        "then": "Das Aufladen ist hier (auch) ohne Authentifizierung möglich"
                     }
                 },
                 "question": "Welche Authentifizierung ist an der Ladestation möglich?"
