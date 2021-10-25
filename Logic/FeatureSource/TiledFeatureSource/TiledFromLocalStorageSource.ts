@@ -47,7 +47,6 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                 localStorage.removeItem(k)
                 localStorage.removeItem(k+"-format")
                 localStorage.removeItem(k+"-time")
-                console.debug("Removed "+k+" from local storage: too old")
             }
         }
     }

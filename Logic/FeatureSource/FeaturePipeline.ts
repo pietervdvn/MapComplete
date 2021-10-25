@@ -91,14 +91,22 @@ export default class FeaturePipeline {
 
         const self = this
         const expiryInSeconds = Math.min(...state.layoutToUse.layers.map(l => l.maxAgeOfCache))
-        this.oldestAllowedDate = new Date(new Date().getTime() - expiryInSeconds);
         for (const layer of state.layoutToUse.layers) {
             TiledFromLocalStorageSource.cleanCacheForLayer(layer)
         }
+        this.oldestAllowedDate = new Date(new Date().getTime() - expiryInSeconds);
         this.osmSourceZoomLevel = state.osmApiTileSize.data;
-        // milliseconds
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
         this.relationTracker = new RelationsTracker()
+        
+        state.changes.allChanges.addCallbackAndRun(allChanges => {
+            allChanges.filter(ch => ch.id < 0)
+                .map(ch => ch.changes)
+                .filter(coor => coor["lat"] !== undefined && coor["lon"] !== undefined)
+                .forEach(coor => {
+                    SaveTileToLocalStorageActor.poison(state.layoutToUse.layers.map(l => l.id), coor["lon"], coor["lat"])
+                })
+        })
 
 
         this.sufficientlyZoomed = state.locationControl.map(location => {

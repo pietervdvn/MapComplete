@@ -4,13 +4,14 @@
  * Technically, more an Actor then a featuresource, but it fits more neatly this ay
  */
 import {FeatureSourceForLayer} from "../FeatureSource";
+import {Tiles} from "../../../Models/TileRange";
 
 export default class SaveTileToLocalStorageActor {
     public static readonly storageKey: string = "cached-features";
     public static readonly formatVersion: string = "2"
 
     constructor(source: FeatureSourceForLayer, tileIndex: number) {
-        
+
         source.features.addCallbackAndRunD(features => {
             const key = `${SaveTileToLocalStorageActor.storageKey}-${source.layer.layerDef.id}-${tileIndex}`
             const now = new Date()
@@ -28,13 +29,30 @@ export default class SaveTileToLocalStorageActor {
     }
 
 
-    public static MarkVisited(layerId: string, tileId: number, freshness: Date){
+    public static MarkVisited(layerId: string, tileId: number, freshness: Date) {
         const key = `${SaveTileToLocalStorageActor.storageKey}-${layerId}-${tileId}`
-        try{
+        try {
             localStorage.setItem(key + "-time", JSON.stringify(freshness.getTime()))
             localStorage.setItem(key + "-format", SaveTileToLocalStorageActor.formatVersion)
-        }catch(e){
+        } catch (e) {
             console.error("Could not mark tile ", key, "as visited")
         }
+    }
+
+   public static poison(layers: string[], lon: number, lat: number) {
+        for (let z = 0; z < 25; z++) {
+
+            const {x, y} = Tiles.embedded_tile(lat, lon, z)
+            const tileId = Tiles.tile_index(z, x, y)
+
+            for (const layerId of layers) {
+
+                const key = `${SaveTileToLocalStorageActor.storageKey}-${layerId}-${tileId}`
+                localStorage.removeItem(key + "-time");
+                localStorage.removeItem(key + "-format")
+                localStorage.removeItem(key)
+            }
+        }
+
     }
 }
