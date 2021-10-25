@@ -334,6 +334,18 @@
                         },
                         "question": "Wie heißt diese Kletterroute?",
                         "render": "<strong>{name}</strong>"
+                    },
+                    "Bolts": {
+                        "render": "Diese Kletterroute hat {climbing:bolts} Haken",
+                        "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
+                        "mappings": {
+                            "1": {
+                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                            },
+                            "0": {
+                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                            }
+                        }
                     }
                 },
                 "title": {
@@ -625,17 +637,29 @@
         "title": "Fahrradstraßen"
     },
     "cyclofix": {
-        "description": "Das Ziel dieser Karte ist es, den Radfahrern eine einfach zu benutzende Lösung zu präsentieren, um die geeignete Infrastruktur für ihre Bedürfnisse zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>Alle Änderungen, die Sie vornehmen, werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei wiederverwendet werden.<br><br>Weitere Informationen über das Projekt Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - eine offene Karte für Radfahrer"
+        "description": "Mit dieser Karte soll Radfahrern eine einfache Lösung bereitgestellt werden, um die passende Farradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in der Datenbank von OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "title": "Cyclofix - eine freie Karte für Radfahrer"
     },
     "drinking_water": {
-        "description": "Auf dieser Karte sind öffentlich zugängliche Trinkwasserstellen eingezeichnet und können leicht hinzugefügt werden",
-        "title": "Trinkwasser"
+        "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
+        "title": "Trinkwasserstelle"
     },
     "etymology": {
-        "description": "Auf dieser Karte können Sie sehen, nach was ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. Die Informationen stammen aus Wikipedia.",
+        "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. In dem Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Zoomen Sie genug hinein und <i>alle</i> Straßen werden angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
         "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
-        "title": "Open Etymology Map"
+        "title": "Open Etymology Map",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Straßen ohne Informationen zur Namensherkunft"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
+                }
+            }
+        }
     },
     "facadegardens": {
         "layers": {
@@ -736,8 +760,8 @@
         }
     },
     "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap kennt. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
-        "title": "Geisterrad"
+        "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
+        "title": "Geisterräder"
     },
     "hackerspaces": {
         "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
@@ -925,6 +949,9 @@
                     "station-name": {
                         "question": "Wie lautet der Name dieser Feuerwache?"
                     }
+                },
+                "title": {
+                    "render": "Feuerwache"
                 }
             },
             "3": {
@@ -937,7 +964,46 @@
         }
     },
     "openwindpowermap": {
-        "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen."
+        "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
+        "layers": {
+            "0": {
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " Megawatt"
+                            },
+                            "1": {
+                                "human": " Kilowatt"
+                            },
+                            "2": {
+                                "human": " Watt"
+                            },
+                            "3": {
+                                "human": " Gigawatt"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " Meter"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "render": "Windrad"
+                },
+                "name": "Windrad",
+                "presets": {
+                    "0": {
+                        "title": "Windrad"
+                    }
+                }
+            }
+        },
+        "title": "OpenWindPowerMap"
     },
     "personal": {
         "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
@@ -955,9 +1021,41 @@
                             }
                         }
                     }
+                },
+                "title": {
+                    "render": "Poststelle"
+                },
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Aktuell geöffnet"
+                            }
+                        }
+                    }
+                },
+                "name": "Poststellen",
+                "presets": {
+                    "0": {
+                        "title": "Poststelle"
+                    }
                 }
+            },
+            "0": {
+                "name": "Brieflästen",
+                "presets": {
+                    "0": {
+                        "title": "Briefkasten"
+                    }
+                },
+                "title": {
+                    "render": "Briefkasten"
+                },
+                "description": "Die Ebene zeigt Briefkästen."
             }
-        }
+        },
+        "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
+        "title": "Karte mit Briefkästen und Poststellen"
     },
     "shops": {
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
@@ -974,8 +1072,8 @@
         "title": "Überwachung unter Überwachung"
     },
     "toilets": {
-        "description": "Eine Karte der öffentlichen Toiletten",
-        "title": "Offene Toilette Karte"
+        "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
+        "title": "Freie Toilettenkarte"
     },
     "trees": {
         "description": "Kartieren Sie alle Bäume!",
@@ -1012,11 +1110,37 @@
             }
         },
         "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
-        "title": "Adressen in Großbritannien"
+        "title": "Adressen in Großbritannien",
+        "tileLayerSources": {
+            "0": {
+                "name": "Grenzverläufe gemäß osmuk.org"
+            }
+        }
     },
     "waste_basket": {
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "maps": {
+        "title": "Eine Karte der Karten"
+    },
+    "playgrounds": {
+        "title": "Spielpläzte",
+        "shortDescription": "Eine Karte mit Spielplätzen"
+    },
+    "parkings": {
+        "title": "Parken",
+        "shortDescription": "Diese Karte zeigt Parkplätze",
+        "description": "Diese Karte zeigt Parkplätze"
+    },
+    "natuurpunt": {
+        "title": "Naturschutzgebiete",
+        "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt"
+    },
+    "observation_towers": {
+        "title": "Aussichtstürme",
+        "description": "Öffentlich zugänglicher Aussichtsturm",
+        "shortDescription": "Öffentlich zugänglicher Aussichtsturm"
     }
 }

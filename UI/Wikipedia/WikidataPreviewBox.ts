@@ -122,13 +122,13 @@ export default class WikidataPreviewBox extends VariableUiElement {
         
         const els : BaseUIElement[] = []
         for (const extraProperty of WikidataPreviewBox.extraProperties) {
-            let hasAllRequirements =true
+            let hasAllRequirements = true
             for (const requirement of extraProperty.requires) {
-                if(!wikidata.claims.has("P"+requirement.p)){
+                if(!wikidata.claims?.has("P"+requirement.p)){
                     hasAllRequirements = false;
                     break
                 }
-                if(!wikidata.claims.get("P"+requirement.p).has("Q"+requirement.q)){
+                if(!wikidata.claims?.get("P"+requirement.p).has("Q"+requirement.q)){
                     hasAllRequirements = false;
                     break
                 }

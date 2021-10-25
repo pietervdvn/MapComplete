@@ -78,6 +78,22 @@
                 }
             },
             "question": "Este lugar é acessível a utilizadores de cadeiras de rodas?"
+        },
+        "wikipedialink": {
+            "question": "Qual é o item correspondente na Wikipédia?",
+            "mappings": {
+                "0": {
+                    "then": "Não vinculado à Wikipédia"
+                }
+            }
+        },
+        "wikipedia": {
+            "question": "Qual é a entidade Wikidata correspondente?",
+            "mappings": {
+                "0": {
+                    "then": "Ainda não foi vinculada nenhuma página da Wikipédia"
+                }
+            }
         }
     }
 }
