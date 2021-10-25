@@ -896,13 +896,6 @@
         "icon": {
             "render": "./assets/layers/birdhide/birdhide.svg"
         },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/birdhide/birdhide.svg"
-                }
-            }
-        },
         "name": "Vogelkijkhutten",
         "presets": {
             "0": {
@@ -981,6 +974,13 @@
                 }
             },
             "render": "Vogelkijkplaats"
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/birdhide/birdhide.svg"
+                }
+            }
         }
     },
     "cafe_pub": {
@@ -1131,35 +1131,22 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "Dit oplaadpunt is kapot"
+                        "then": "Dit oplaadpunt werkt"
                     },
                     "1": {
-                        "then": "Hier zal binnenkort een oplaadpunt gebouwd worden"
+                        "then": "Dit oplaadpunt is kapot"
                     },
                     "2": {
-                        "then": "Hier wordt op dit moment een oplaadpunt gebouwd"
+                        "then": "Hier zal binnenkort een oplaadpunt gebouwd worden"
                     },
                     "3": {
-                        "then": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
+                        "then": "Hier wordt op dit moment een oplaadpunt gebouwd"
                     },
                     "4": {
-                        "then": "Dit oplaadpunt werkt"
+                        "then": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
                     }
                 },
                 "question": "Is dit oplaadpunt operationeel?"
-            },
-            "current-15": {
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een stroom van maximaal {socket:bosch_5pin:current}A"
-            },
-            "fee/charge": {
-                "mappings": {
-                    "0": {
-                        "then": "Gratis te gebruiken"
-                    }
-                },
-                "question": "Hoeveel kost het gebruik van dit oplaadpunt?",
-                "render": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
             },
             "maxstay": {
                 "mappings": {
@@ -1186,13 +1173,26 @@
                 "question": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft dit oplaadpunt?",
                 "render": "Hier zijn <b class='text-xl'>{socket:bosch_5pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
             },
+            "voltage-15": {
+                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft een spanning van {socket:bosch_5pin:voltage} volt"
+            },
             "power-output-15": {
                 "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_5pin:output}"
             },
-            "voltage-15": {
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft een spanning van {socket:bosch_5pin:voltage} volt"
+            "fee/charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis te gebruiken"
+                    }
+                },
+                "question": "Hoeveel kost het gebruik van dit oplaadpunt?",
+                "render": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
+            },
+            "current-15": {
+                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een stroom van maximaal {socket:bosch_5pin:current}A"
             }
         },
         "title": {
@@ -3501,17 +3501,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Vuilnisbak"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Vuilnisbak",
         "presets": {
             "0": {
@@ -3545,6 +3534,17 @@
         },
         "title": {
             "render": "Vuilnisbak"
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Vuilnisbak"
+                        }
+                    }
+                }
+            }
         }
     },
     "watermill": {

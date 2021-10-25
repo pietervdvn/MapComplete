@@ -2,13 +2,13 @@
     "id": "charging_station",
     "name": {
         "en": "Charging stations",
+        "nl": "Oplaadpunten",
+        "de": "Ladestationen",
         "it": "Stazioni di ricarica",
         "ja": "充電ステーション",
         "nb_NO": "Ladestasjoner",
         "ru": "Зарядные станции",
-        "zh_Hant": "充電站",
-        "de": "Ladestationen",
-        "nl": "Oplaadpunten"
+        "zh_Hant": "充電站"
     },
     "minzoom": 10,
     "source": {
@@ -24,27 +24,69 @@
     "title": {
         "render": {
             "en": "Charging station",
+            "nl": "Oplaadpunten",
+            "de": "Ladestation",
             "it": "Stazione di ricarica",
             "ja": "充電ステーション",
             "nb_NO": "Ladestasjon",
             "ru": "Зарядная станция",
-            "zh_Hant": "充電站",
-            "de": "Ladestation",
-            "nl": "Oplaadpunten"
+            "zh_Hant": "充電站"
         }
     },
     "description": {
         "en": "A charging station",
+        "nl": "Oplaadpunten",
+        "de": "Eine Ladestation",
         "it": "Una stazione di ricarica",
         "ja": "充電ステーション",
         "nb_NO": "En ladestasjon",
         "ru": "Зарядная станция",
-        "zh_Hant": "充電站",
-        "de": "Eine Ladestation",
-        "nl": "Oplaadpunten"
+        "zh_Hant": "充電站"
     },
     "tagRenderings": [
         "images",
+        {
+            "id": "plugs-13",
+            "question": {
+                "en": "How much plugs of type <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> are available here?",
+                "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> heeft dit oplaadpunt?"
+            },
+            "render": {
+                "en": "There are <b class='text-xl'>{socket:USB-A}</b> plugs of type <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> available here",
+                "nl": "Hier zijn <b class='text-xl'>{socket:USB-A}</b> stekkers van het type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+            },
+            "freeform": {
+                "key": "socket:USB-A",
+                "type": "pnat"
+            },
+            "condition": {
+                "and": [
+                    "socket:USB-A~*",
+                    "socket:USB-A!=0"
+                ]
+            }
+        },
+        {
+            "id": "plugs-14",
+            "question": {
+                "en": "How much plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> are available here?",
+                "nl": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> heeft dit oplaadpunt?"
+            },
+            "render": {
+                "en": "There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> available here",
+                "nl": "Hier zijn <b class='text-xl'>{socket:bosch_3pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+            },
+            "freeform": {
+                "key": "socket:bosch_3pin",
+                "type": "pnat"
+            },
+            "condition": {
+                "and": [
+                    "socket:bosch_3pin~*",
+                    "socket:bosch_3pin!=0"
+                ]
+            }
+        },
         {
             "id": "plugs-15",
             "question": {
@@ -67,201 +109,6 @@
             }
         },
         {
-            "id": "voltage-15",
-            "question": {
-                "en": "What voltage do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
-                "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-            },
-            "render": {
-                "en": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs {socket:bosch_5pin:voltage} volt",
-                "nl": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft een spanning van {socket:bosch_5pin:voltage} volt"
-            },
-            "freeform": {
-                "key": "socket:bosch_5pin:voltage",
-                "type": "pfloat"
-            },
-            "mappings": [],
-            "condition": {
-                "and": [
-                    "socket:bosch_5pin~*",
-                    "socket:bosch_5pin!=0"
-                ]
-            }
-        },
-        {
-            "id": "current-15",
-            "question": {
-                "en": "What current do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
-                "nl": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?"
-            },
-            "render": {
-                "en": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:current}A",
-                "nl": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een stroom van maximaal {socket:bosch_5pin:current}A"
-            },
-            "freeform": {
-                "key": "socket:bosch_5pin:current",
-                "type": "pfloat"
-            },
-            "mappings": [],
-            "condition": {
-                "and": [
-                    "socket:bosch_5pin~*",
-                    "socket:bosch_5pin!=0"
-                ]
-            }
-        },
-        {
-            "id": "power-output-15",
-            "question": {
-                "en": "What power output does a single plug of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
-                "nl": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?"
-            },
-            "render": {
-                "en": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:output}",
-                "nl": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_5pin:output}"
-            },
-            "freeform": {
-                "key": "socket:bosch_5pin:output",
-                "type": "pfloat"
-            },
-            "mappings": [],
-            "condition": {
-                "and": [
-                    "socket:bosch_5pin~*",
-                    "socket:bosch_5pin!=0"
-                ]
-            }
-        },
-        {
-            "id": "Authentication",
-            "question": {
-                "en": "What kind of authentication is available at the charging station?",
-                "it": "Quali sono gli orari di apertura di questa stazione di ricarica?",
-                "ja": "この充電ステーションはいつオープンしますか?",
-                "nb_NO": "Når åpnet denne ladestasjonen?",
-                "ru": "В какое время работает эта зарядная станция?",
-                "zh_Hant": "何時是充電站開放使用的時間？",
-                "de": "Welche Authentifizierung ist an der Ladestation möglich?"
-            },
-            "multiAnswer": true,
-            "mappings": [
-                {
-                    "if": "authentication:membership_card=yes",
-                    "ifnot": "authentication:membership_card=no",
-                    "then": {
-                        "en": "Authentication by a membership card",
-                        "de": "Authentifizierung durch eine Mitgliedskarte"
-                    }
-                },
-                {
-                    "if": "authentication:app=yes",
-                    "ifnot": "authentication:app=no",
-                    "then": {
-                        "en": "Authentication by an app",
-                        "de": "Authentifizierung durch eine App"
-                    }
-                },
-                {
-                    "if": "authentication:phone_call=yes",
-                    "ifnot": "authentication:phone_call=no",
-                    "then": {
-                        "en": "Authentication via phone call is available",
-                        "de": "Authentifizierung per Anruf ist möglich"
-                    }
-                },
-                {
-                    "if": "authentication:short_message=yes",
-                    "ifnot": "authentication:short_message=no",
-                    "then": {
-                        "en": "Authentication via phone call is available",
-                        "de": "Authentifizierung per Anruf ist möglich"
-                    }
-                },
-                {
-                    "if": "authentication:nfc=yes",
-                    "ifnot": "authentication:nfc=no",
-                    "then": {
-                        "en": "Authentication via NFC is available",
-                        "de": "Authentifizierung über NFC ist möglich"
-                    }
-                },
-                {
-                    "if": "authentication:money_card=yes",
-                    "ifnot": "authentication:money_card=no",
-                    "then": {
-                        "en": "Authentication via Money Card is available",
-                        "de": "Authentifizierung über Geldkarte ist möglich"
-                    }
-                },
-                {
-                    "if": "authentication:debit_card=yes",
-                    "ifnot": "authentication:debit_card=no",
-                    "then": {
-                        "en": "Authentication via debit card is available",
-                        "de": "Authentifizierung per Debitkarte ist möglich"
-                    }
-                },
-                {
-                    "if": "authentication:none=yes",
-                    "ifnot": "authentication:none=no",
-                    "then": {
-                        "en": "Charging here is (also) possible without authentication",
-                        "de": "Keine Authentifizierung erforderlich"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "Auth phone",
-            "render": {
-                "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
-                "it": "{network}",
-                "ja": "{network}",
-                "nb_NO": "{network}",
-                "ru": "{network}",
-                "zh_Hant": "{network}",
-                "de": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
-            },
-            "question": {
-                "en": "What's the phone number for authentication call or SMS?",
-                "it": "A quale rete appartiene questa stazione di ricarica?",
-                "ja": "この充電ステーションの運営チェーンはどこですか?",
-                "ru": "К какой сети относится эта станция?",
-                "zh_Hant": "充電站所屬的網路是？",
-                "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?"
-            },
-            "freeform": {
-                "key": "authentication:phone_call:number",
-                "type": "phone"
-            },
-            "condition": {
-                "or": [
-                    "authentication:phone_call=yes",
-                    "authentication:short_message=yes"
-                ]
-            },
-            "it": {
-                "0": {
-                    "then": "Non appartiene a una rete"
-                }
-            },
-            "ja": {
-                "0": {
-                    "then": "大規模な運営チェーンの一部ではない"
-                }
-            },
-            "ru": {
-                "0": {
-                    "then": "Не является частью более крупной сети"
-                }
-            },
-            "zh_Hant": {
-                "0": {
-                    "then": "不屬於大型網路"
-                }
-            }
-        },
-        {
             "id": "OH",
             "render": "{opening_hours_table(opening_hours)}",
             "freeform": {
@@ -270,50 +117,112 @@
             },
             "question": {
                 "en": "When is this charging station opened?",
-                "de": "Wann ist diese Ladestation geöffnet?"
+                "nl": "Wanneer is dit oplaadpunt beschikbaar??",
+                "de": "Wann ist diese Ladestation geöffnet?",
+                "it": "Quali sono gli orari di apertura di questa stazione di ricarica?",
+                "ja": "この充電ステーションはいつオープンしますか?",
+                "nb_NO": "Når åpnet denne ladestasjonen?",
+                "ru": "В какое время работает эта зарядная станция?",
+                "zh_Hant": "何時是充電站開放使用的時間？"
             },
             "mappings": [
                 {
                     "if": "opening_hours=24/7",
                     "then": {
                         "en": "24/7 opened (including holidays)",
+                        "nl": "24/7 open - ook tijdens vakanties",
                         "de": "durchgehend geöffnet (auch an Feiertagen)"
                     }
                 }
             ]
         },
         {
-            "id": "fee/charge",
+            "id": "fee",
             "question": {
-                "en": "How much does one have to pay to use this charging station?",
-                "nl": "Hoeveel kost het gebruik van dit oplaadpunt?"
-            },
-            "freeform": {
-                "key": "charge",
-                "addExtraTags": [
-                    "fee=yes"
-                ]
-            },
-            "render": {
-                "en": "Using this charging station costs <b>{charge}</b>",
-                "nl": "Dit oplaadpunt gebruiken kost <b>{charge}</b>",
-                "de": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
+                "en": "Does one have to pay to use this charging station?",
+                "nl": "Moet men betalen om dit oplaadpunt te gebruiken?"
             },
             "mappings": [
                 {
                     "if": {
                         "and": [
-                            "fee=no",
-                            "charge="
+                            "fee=no"
                         ]
                     },
                     "then": {
                         "nl": "Gratis te gebruiken",
-                        "en": "Free to use",
-                        "de": "Nutzung kostenlos"
+                        "en": "Free to use"
+                    },
+                    "hideInAnswer": true
+                },
+                {
+                    "if": {
+                        "and": [
+                            "fee=no",
+                            "fee:conditional=",
+                            "charge=",
+                            "authentication:none=yes"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Gratis te gebruiken (zonder aan te melden)",
+                        "en": "Free to use (without authenticating)"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "fee=no",
+                            "fee:conditional=",
+                            "charge=",
+                            "authentication:none=no"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Gratis te gebruiken, maar aanmelden met een applicatie is verplicht",
+                        "en": "Free to use, but one has to authenticate"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "fee=yes",
+                            "fee:conditional=no @ customers"
+                        ]
+                    },
+                    "then": {
+                        "nl": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/...",
+                        "en": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "fee=yes",
+                            "fee:conditional="
+                        ]
+                    },
+                    "then": {
+                        "nl": "Betalend",
+                        "en": "Paid use"
                     }
                 }
             ]
+        },
+        {
+            "id": "charge",
+            "question": {
+                "en": "How much does one have to pay to use this charging station?",
+                "nl": "Hoeveel moet men betalen om dit oplaadpunt te gebruiken?"
+            },
+            "render": {
+                "en": "Using this charging station costs <b>{charge}</b>",
+                "nl": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
+            },
+            "freeform": {
+                "key": "charge"
+            },
+            "condition": "fee=yes"
         },
         {
             "id": "payment-options",
@@ -331,7 +240,8 @@
                         "ifnot": "payment:app=no",
                         "then": {
                             "en": "Payment is done using a dedicated app",
-                            "nl": "Betalen via een app van het netwerk"
+                            "nl": "Betalen via een app van het netwerk",
+                            "de": "Bezahlung mit einer speziellen App"
                         }
                     },
                     {
@@ -339,9 +249,123 @@
                         "ifnot": "payment:membership_card=no",
                         "then": {
                             "en": "Payment is done using a membership card",
-                            "nl": "Betalen via een lidkaart van het netwerk"
+                            "nl": "Betalen via een lidkaart van het netwerk",
+                            "de": "Bezahlung mit einer Mitgliedskarte"
                         }
                     }
+                ]
+            }
+        },
+        {
+            "id": "Authentication",
+            "#": "In some cases, charging is free but one has to be authenticated. We only ask for authentication if fee is no (or unset). By default one sees the questions for either the payment options or the authentication options, but normally not both",
+            "question": {
+                "en": "What kind of authentication is available at the charging station?",
+                "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?",
+                "de": "Welche Authentifizierung ist an der Ladestation möglich?"
+            },
+            "multiAnswer": true,
+            "mappings": [
+                {
+                    "if": "authentication:membership_card=yes",
+                    "ifnot": "authentication:membership_card=no",
+                    "then": {
+                        "en": "Authentication by a membership card",
+                        "nl": "Aanmelden met een lidkaart is mogelijk",
+                        "de": "Authentifizierung durch eine Mitgliedskarte"
+                    }
+                },
+                {
+                    "if": "authentication:app=yes",
+                    "ifnot": "authentication:app=no",
+                    "then": {
+                        "en": "Authentication by an app",
+                        "nl": "Aanmelden via een applicatie is mogelijk",
+                        "de": "Authentifizierung durch eine App"
+                    }
+                },
+                {
+                    "if": "authentication:phone_call=yes",
+                    "ifnot": "authentication:phone_call=no",
+                    "then": {
+                        "en": "Authentication via phone call is available",
+                        "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
+                        "de": "Authentifizierung per Anruf ist möglich"
+                    }
+                },
+                {
+                    "if": "authentication:short_message=yes",
+                    "ifnot": "authentication:short_message=no",
+                    "then": {
+                        "en": "Authentication via phone call is available",
+                        "nl": "Aanmelden via SMS is mogelijk",
+                        "de": "Authentifizierung per Anruf ist möglich"
+                    }
+                },
+                {
+                    "if": "authentication:nfc=yes",
+                    "ifnot": "authentication:nfc=no",
+                    "then": {
+                        "en": "Authentication via NFC is available",
+                        "nl": "Aanmelden via NFC is mogelijk",
+                        "de": "Authentifizierung über NFC ist möglich"
+                    }
+                },
+                {
+                    "if": "authentication:money_card=yes",
+                    "ifnot": "authentication:money_card=no",
+                    "then": {
+                        "en": "Authentication via Money Card is available",
+                        "nl": "Aanmelden met Money Card is mogelijk",
+                        "de": "Authentifizierung über Geldkarte ist möglich"
+                    }
+                },
+                {
+                    "if": "authentication:debit_card=yes",
+                    "ifnot": "authentication:debit_card=no",
+                    "then": {
+                        "en": "Authentication via debit card is available",
+                        "nl": "Aanmelden met een betaalkaart is mogelijk",
+                        "de": "Authentifizierung per Debitkarte ist möglich"
+                    }
+                },
+                {
+                    "if": "authentication:none=yes",
+                    "ifnot": "authentication:none=no",
+                    "then": {
+                        "en": "Charging here is (also) possible without authentication",
+                        "nl": "Hier opladen is (ook) mogelijk zonder aan te melden",
+                        "de": "Das Aufladen ist hier (auch) ohne Authentifizierung möglich"
+                    }
+                }
+            ],
+            "condition": {
+                "or": [
+                    "fee=no",
+                    "fee="
+                ]
+            }
+        },
+        {
+            "id": "Auth phone",
+            "render": {
+                "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+                "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+                "de": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
+            "question": {
+                "en": "What's the phone number for authentication call or SMS?",
+                "nl": "Wat is het telefoonnummer dat men moet bellen of SMS'en om zich aan te melden?",
+                "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?"
+            },
+            "freeform": {
+                "key": "authentication:phone_call:number",
+                "type": "phone"
+            },
+            "condition": {
+                "or": [
+                    "authentication:phone_call=yes",
+                    "authentication:short_message=yes"
                 ]
             }
         },
@@ -349,7 +373,8 @@
             "id": "maxstay",
             "question": {
                 "en": "What is the maximum amount of time one is allowed to stay here?",
-                "nl": "Hoelang mag een voertuig hier blijven staan?"
+                "nl": "Hoelang mag een voertuig hier blijven staan?",
+                "de": "Was ist die Höchstdauer des Aufenthalts hier?"
             },
             "freeform": {
                 "key": "maxstay"
@@ -364,20 +389,40 @@
                     "if": "maxstay=unlimited",
                     "then": {
                         "en": "No timelimit on leaving your vehicle here",
-                        "nl": "Geen maximum parkeertijd"
+                        "nl": "Geen maximum parkeertijd",
+                        "de": "Keine Höchstparkdauer"
                     }
                 }
-            ]
+            ],
+            "condition": {
+                "or": [
+                    "maxstay~*",
+                    "motorcar=yes",
+                    "hgv=yes",
+                    "bus=yes"
+                ]
+            }
         },
         {
             "id": "Network",
             "render": {
                 "en": "Part of the network <b>{network}</b>",
-                "de": "Teil des Netzwerks <b>{network}</b>"
+                "nl": "Maakt deel uit van het <b>{network}</b>-netwerk",
+                "de": "Teil des Netzwerks <b>{network}</b>",
+                "it": "{network}",
+                "ja": "{network}",
+                "nb_NO": "{network}",
+                "ru": "{network}",
+                "zh_Hant": "{network}"
             },
             "question": {
                 "en": "Is this charging station part of a network?",
-                "de": "Ist diese Ladestation Teil eines Netzwerks?"
+                "nl": "Is dit oplaadpunt deel van een groter netwerk?",
+                "de": "Ist diese Ladestation Teil eines Netzwerks?",
+                "it": "A quale rete appartiene questa stazione di ricarica?",
+                "ja": "この充電ステーションの運営チェーンはどこですか?",
+                "ru": "К какой сети относится эта станция?",
+                "zh_Hant": "充電站所屬的網路是？"
             },
             "freeform": {
                 "key": "network"
@@ -387,6 +432,7 @@
                     "if": "no:network=yes",
                     "then": {
                         "en": "Not part of a bigger network",
+                        "nl": "Maakt geen deel uit van een groter netwerk",
                         "de": "Nicht Teil eines größeren Netzwerks"
                     }
                 },
@@ -394,6 +440,7 @@
                     "if": "network=none",
                     "then": {
                         "en": "Not part of a bigger network",
+                        "nl": "Maakt geen deel uit van een groter netwerk",
                         "de": "Nicht Teil eines größeren Netzwerks"
                     },
                     "hideInAnswer": true
@@ -416,10 +463,12 @@
             "id": "Operator",
             "question": {
                 "en": "Who is the operator of this charging station?",
+                "nl": "Wie beheert dit oplaadpunt?",
                 "de": "Wer ist der Betreiber dieser Ladestation?"
             },
             "render": {
                 "en": "This charging station is operated by {operator}",
+                "nl": "Wordt beheerd door {operator}",
                 "de": "Diese Ladestation wird betrieben von {operator}"
             },
             "freeform": {
@@ -434,6 +483,7 @@
                     },
                     "then": {
                         "en": "Actually, {operator} is the network",
+                        "nl": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt",
                         "de": "Eigentlich ist {operator} das Netzwerk"
                     },
                     "addExtraTags": [
@@ -446,10 +496,14 @@
         {
             "id": "phone",
             "question": {
-                "en": "What number can one call if there is a problem with this charging station?"
+                "en": "What number can one call if there is a problem with this charging station?",
+                "nl": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
+                "de": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?"
             },
             "render": {
-                "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
+                "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
+                "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>",
+                "de": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
             },
             "freeform": {
                 "key": "phone",
@@ -459,10 +513,14 @@
         {
             "id": "email",
             "question": {
-                "en": "What is the email address of the operator?"
+                "en": "What is the email address of the operator?",
+                "nl": "Wat is het email-adres van de operator?",
+                "de": "Wie ist die Email-Adresse des Betreibers?"
             },
             "render": {
-                "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
+                "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>",
+                "nl": "Bij problemen, email naar <a href='mailto:{email}'>{email}</a>",
+                "de": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
             },
             "freeform": {
                 "key": "email",
@@ -472,10 +530,13 @@
         {
             "id": "website",
             "question": {
-                "en": "What is the website of the operator?"
+                "en": "What is the website of the operator?",
+                "nl": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?",
+                "de": "Wie ist die Webseite des Betreibers?"
             },
             "render": {
                 "en": "More info on <a href='{website}'>{website}</a>",
+                "nl": "Meer informatie op <a href='{website}'>{website}</a>",
                 "de": "Weitere Informationen auf <a href='{website}'>{website}</a>"
             },
             "freeform": {
@@ -487,15 +548,20 @@
         {
             "id": "ref",
             "question": {
-                "en": "What is the reference number of this charging station?"
+                "en": "What is the reference number of this charging station?",
+                "nl": "Wat is het referentienummer van dit oplaadstation?",
+                "de": "Wie lautet die Kennung dieser Ladestation?"
             },
             "render": {
                 "en": "Reference number is <b>{ref}</b>",
+                "nl": "Het referentienummer van dit oplaadpunt is <b>{ref}</b>",
                 "de": "Die Kennziffer ist <b>{ref}</b>"
             },
             "freeform": {
                 "key": "ref"
-            }
+            },
+            "#": "Only asked if part of a bigger network. Small operators typically don't have a reference number",
+            "condition": "network!="
         },
         {
             "id": "Operational status",
@@ -506,7 +572,15 @@
             },
             "mappings": [
                 {
-                    "if": "operational_status=broken",
+                    "if": {
+                        "and": [
+                            "planned:amenity=",
+                            "construction:amenity=",
+                            "disused:amenity=",
+                            "operational_status=",
+                            "amenity=charging_station"
+                        ]
+                    },
                     "then": {
                         "en": "This charging station is broken",
                         "nl": "Dit oplaadpunt is kapot",
@@ -516,8 +590,11 @@
                 {
                     "if": {
                         "and": [
-                            "planned:amenity=charging_station",
-                            "amenity="
+                            "planned:amenity=",
+                            "construction:amenity=",
+                            "disused:amenity=",
+                            "operational_status=broken",
+                            "amenity=charging_station"
                         ]
                     },
                     "then": {
@@ -529,7 +606,10 @@
                 {
                     "if": {
                         "and": [
-                            "construction:amenity=charging_station",
+                            "planned:amenity=charging_station",
+                            "construction:amenity=",
+                            "disused:amenity=",
+                            "operational_status=",
                             "amenity="
                         ]
                     },
@@ -542,7 +622,10 @@
                 {
                     "if": {
                         "and": [
-                            "disused:amenity=charging_station",
+                            "planned:amenity=",
+                            "construction:amenity=charging_station",
+                            "disused:amenity=",
+                            "operational_status=broken",
                             "amenity="
                         ]
                     },
@@ -555,8 +638,11 @@
                 {
                     "if": {
                         "and": [
-                            "amenity=charging_station",
-                            "operational_status="
+                            "planned:amenity=",
+                            "construction:amenity=",
+                            "disused:amenity=charging_station",
+                            "operational_status=broken",
+                            "amenity="
                         ]
                     },
                     "then": {
@@ -571,6 +657,7 @@
             "id": "Parking:fee",
             "question": {
                 "en": "Does one have to pay a parking fee while charging?",
+                "nl": "Moet men parkeergeld betalen tijdens het opladen?",
                 "de": "Muss man beim Laden eine Parkgebühr bezahlen?"
             },
             "mappings": [
@@ -578,6 +665,7 @@
                     "if": "parking:fee=no",
                     "then": {
                         "en": "No additional parking cost while charging",
+                        "nl": "Geen extra parkeerkost tijdens het opladen",
                         "de": "Keine zusätzlichen Parkgebühren beim Laden"
                     }
                 },
@@ -585,10 +673,20 @@
                     "if": "parking:fee=yes",
                     "then": {
                         "en": "An additional parking fee should be paid while charging",
+                        "nl": "Tijdens het opladen moet er parkeergeld betaald worden",
                         "de": "Beim Laden ist eine zusätzliche Parkgebühr zu entrichten"
                     }
                 }
-            ]
+            ],
+            "condition": {
+                "or": [
+                    "motor_vehicle=yes",
+                    "hgv=yes",
+                    "bus=yes",
+                    "bicycle=no",
+                    "bicycle="
+                ]
+            }
         }
     ],
     "presets": [
@@ -642,9 +740,8 @@
                 "amenity=charging_station"
             ],
             "title": {
-                "en": "Charging station",
-                "de": "Ladestation",
-                "ru": "Зарядная станция"
+                "en": "charging station",
+                "nl": "oplaadstation"
             },
             "preciseInput": {
                 "preferredBackground": "map"
@@ -692,6 +789,7 @@
                 {
                     "question": {
                         "en": "Only working charging stations",
+                        "nl": "Enkel werkende oplaadpunten",
                         "de": "Nur funktionierende Ladestationen"
                     },
                     "osmTags": {
@@ -730,7 +828,8 @@
                 {
                     "question": {
                         "en": "Has a <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> connector",
-                        "nl": "Heeft een <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+                        "nl": "Heeft een <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
+                        "de": "Hat einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
                     },
                     "osmTags": "socket:chademo~*"
                 },
@@ -758,7 +857,8 @@
                 {
                     "question": {
                         "en": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector",
-                        "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                        "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
+                        "de": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
                     },
                     "osmTags": "socket:tesla_supercharger~*"
                 },
@@ -877,8 +977,8 @@
                     "humanSingular": {
                         "en": " hour",
                         "nl": " uur",
-                        "ru": " час",
-                        "de": " Stunde"
+                        "de": " Stunde",
+                        "ru": " час"
                     }
                 },
                 {
@@ -898,8 +998,8 @@
                     "humanSingular": {
                         "en": " day",
                         "nl": " dag",
-                        "ru": " день",
-                        "de": " Tag"
+                        "de": " Tag",
+                        "ru": " день"
                     }
                 }
             ]
@@ -936,8 +1036,8 @@
                     "human": {
                         "en": "Volts",
                         "nl": "volt",
-                        "ru": "Вольт",
-                        "de": "Volt"
+                        "de": "Volt",
+                        "ru": "Вольт"
                     }
                 }
             ],
@@ -1007,8 +1107,8 @@
                     "human": {
                         "en": "kilowatt",
                         "nl": "kilowatt",
-                        "ru": "киловатт",
-                        "de": "Kilowatt"
+                        "de": "Kilowatt",
+                        "ru": "киловатт"
                     }
                 },
                 {
@@ -1019,21 +1119,18 @@
                     "human": {
                         "en": "megawatt",
                         "nl": "megawatt",
-                        "ru": "мегаватт",
-                        "de": "Megawatt"
+                        "de": "Megawatt",
+                        "ru": "мегаватт"
                     }
                 }
             ],
             "eraseInvalidValues": true
         }
     ],
-    "mapRendering": [
-        {
-            "location": [
-                "point"
-            ]
-        }
-    ],
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuracy": true
+    },
     "deletion": {
         "softDeletionTags": {
             "and": [
@@ -1043,8 +1140,11 @@
         },
         "neededChangesets": 10
     },
-    "allowMove": {
-        "enableRelocation": false,
-        "enableImproveAccuracy": true
-    }
+    "mapRendering": [
+        {
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

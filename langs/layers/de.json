@@ -1014,19 +1014,19 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "Diese Ladestation ist kaputt"
+                        "then": "Diese Ladestation funktioniert"
                     },
                     "1": {
-                        "then": "Hier ist eine Ladestation geplant"
+                        "then": "Diese Ladestation ist kaputt"
                     },
                     "2": {
-                        "then": "Hier wird eine Ladestation gebaut"
+                        "then": "Hier ist eine Ladestation geplant"
                     },
                     "3": {
-                        "then": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
+                        "then": "Hier wird eine Ladestation gebaut"
                     },
                     "4": {
-                        "then": "Diese Ladestation funktioniert"
+                        "then": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
                     }
                 },
                 "question": "Ist dieser Ladepunkt in Betrieb?"
@@ -1051,14 +1051,6 @@
                 },
                 "question": "Muss man beim Laden eine Parkgebühr bezahlen?"
             },
-            "fee/charge": {
-                "mappings": {
-                    "0": {
-                        "then": "Nutzung kostenlos"
-                    }
-                },
-                "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
-            },
             "maxstay": {
                 "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>"
             },
@@ -1067,6 +1059,14 @@
             },
             "website": {
                 "render": "Weitere Informationen auf <a href='{website}'>{website}</a>"
+            },
+            "fee/charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Nutzung kostenlos"
+                    }
+                },
+                "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
             }
         },
         "title": {
@@ -1423,24 +1423,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Defibrillatoren",
         "presets": {
             "0": {
@@ -1556,6 +1538,24 @@
         },
         "title": {
             "render": "Defibrillator"
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                }
+            }
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
         }
     },
     "direction": {
@@ -2596,17 +2596,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Abfalleimer"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Abfalleimer",
         "presets": {
             "0": {
@@ -2636,6 +2625,17 @@
         },
         "title": {
             "render": "Abfalleimer"
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Abfalleimer"
+                        }
+                    }
+                }
+            }
         }
     },
     "watermill": {

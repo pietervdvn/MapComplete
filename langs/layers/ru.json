@@ -643,12 +643,12 @@
             }
         },
         "tagRenderings": {
+            "Authentication": {
+                "question": "В какое время работает эта зарядная станция?"
+            },
             "Auth phone": {
                 "question": "К какой сети относится эта станция?",
                 "render": "{network}"
-            },
-            "Authentication": {
-                "question": "В какое время работает эта зарядная станция?"
             }
         },
         "title": {
@@ -715,24 +715,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Дефибрилляторы",
         "presets": {
             "0": {
@@ -780,6 +762,24 @@
         },
         "title": {
             "render": "Дефибриллятор"
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                }
+            }
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
         }
     },
     "direction": {
@@ -1450,12 +1450,14 @@
         }
     },
     "waste_basket": {
-        "iconSize": {
-            "mappings": {
-                "0": {
-                    "then": "Контейнер для мусора"
-                }
+        "name": "Контейнер для мусора",
+        "presets": {
+            "0": {
+                "title": "Контейнер для мусора"
             }
+        },
+        "title": {
+            "render": "Контейнер для мусора"
         },
         "mapRendering": {
             "0": {
@@ -1468,14 +1470,12 @@
                 }
             }
         },
-        "name": "Контейнер для мусора",
-        "presets": {
-            "0": {
-                "title": "Контейнер для мусора"
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Контейнер для мусора"
+                }
             }
-        },
-        "title": {
-            "render": "Контейнер для мусора"
         }
     },
     "watermill": {

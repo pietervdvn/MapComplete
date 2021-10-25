@@ -1074,19 +1074,19 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "This charging station is broken"
+                        "then": "This charging station works"
                     },
                     "1": {
-                        "then": "A charging station is planned here"
+                        "then": "This charging station is broken"
                     },
                     "2": {
-                        "then": "A charging station is constructed here"
+                        "then": "A charging station is planned here"
                     },
                     "3": {
-                        "then": "This charging station has beed permanently disabled and is not in use anymore but is still visible"
+                        "then": "A charging station is constructed here"
                     },
                     "4": {
-                        "then": "This charging station works"
+                        "then": "This charging station has beed permanently disabled and is not in use anymore but is still visible"
                     }
                 },
                 "question": "Is this charging point in use?"
@@ -1111,22 +1111,9 @@
                 },
                 "question": "Does one have to pay a parking fee while charging?"
             },
-            "current-15": {
-                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:current}A"
-            },
             "email": {
                 "question": "What is the email address of the operator?",
                 "render": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
-            },
-            "fee/charge": {
-                "mappings": {
-                    "0": {
-                        "then": "Free to use"
-                    }
-                },
-                "question": "How much does one have to pay to use this charging station?",
-                "render": "Using this charging station costs <b>{charge}</b>"
             },
             "maxstay": {
                 "mappings": {
@@ -1157,21 +1144,34 @@
                 "question": "How much plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> are available here?",
                 "render": "There are <b class='text-xl'>{socket:bosch_5pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> available here"
             },
-            "power-output-15": {
-                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:output}"
-            },
             "ref": {
                 "question": "What is the reference number of this charging station?",
                 "render": "Reference number is <b>{ref}</b>"
+            },
+            "website": {
+                "question": "What is the website of the operator?",
+                "render": "More info on <a href='{website}'>{website}</a>"
             },
             "voltage-15": {
                 "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
                 "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs {socket:bosch_5pin:voltage} volt"
             },
-            "website": {
-                "question": "What is the website of the operator?",
-                "render": "More info on <a href='{website}'>{website}</a>"
+            "power-output-15": {
+                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:output}"
+            },
+            "fee/charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Free to use"
+                    }
+                },
+                "question": "How much does one have to pay to use this charging station?",
+                "render": "Using this charging station costs <b>{charge}</b>"
+            },
+            "current-15": {
+                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:current}A"
             }
         },
         "title": {
@@ -1730,24 +1730,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Defibrillators",
         "presets": {
             "0": {
@@ -1864,6 +1846,24 @@
         },
         "title": {
             "render": "Defibrillator"
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                }
+            }
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
         }
     },
     "direction": {
@@ -3187,17 +3187,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Waste Basket"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Waste Basket",
         "presets": {
             "0": {
@@ -3245,6 +3234,17 @@
         },
         "title": {
             "render": "Waste Basket"
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Waste Basket"
+                        }
+                    }
+                }
+            }
         }
     },
     "watermill": {
