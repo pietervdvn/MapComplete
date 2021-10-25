@@ -1282,6 +1282,9 @@
                     },
                     "1": {
                         "then": "Diese Kreuzung hat kein Blindenleitsystem"
+                    },
+                    "2": {
+                        "then": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt"
                     }
                 },
                 "question": "Gibt es an dieser Kreuzung ein Blindenleitsystem?"
@@ -1344,6 +1347,9 @@
                 "mappings": {
                     "1": {
                         "then": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern."
+                    },
+                    "0": {
+                        "then": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
                     }
                 }
             }
@@ -1651,14 +1657,16 @@
                     "6": {
                         "then": "Kein zusätzliches Verkehrszeichen vorhanden"
                     }
-                }
+                },
+                "question": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
             },
             "cycleway-traffic-signs-supplementary": {
                 "mappings": {
                     "6": {
                         "then": "Kein zusätzliches Verkehrszeichen vorhanden"
                     }
-                }
+                },
+                "question": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
             },
             "is lit?": {
                 "mappings": {
@@ -1680,6 +1688,10 @@
             "cycleways_and_roads-cycleway:buffer": {
                 "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
                 "render": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
+            },
+            "width:carriageway": {
+                "render": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>",
+                "question": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?<br/><span class='subtle'>Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein</span>"
             }
         },
         "title": {
@@ -1695,6 +1707,9 @@
                 },
                 "4": {
                     "then": "Fahrradstraße"
+                },
+                "1": {
+                    "then": "Gemeinsame Fahrspur"
                 }
             },
             "render": "Radwege"
@@ -1888,7 +1903,8 @@
                 "question": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
                 "render": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             }
-        }
+        },
+        "name": "Hat eine Namensherkunft"
     },
     "food": {
         "filter": {
@@ -1927,7 +1943,8 @@
                 "description": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden"
             },
             "1": {
-                "title": "Schnellimbiss"
+                "title": "Schnellimbiss",
+                "description": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert"
             },
             "2": {
                 "title": "Pommesbude"
@@ -1994,6 +2011,12 @@
                 "mappings": {
                     "0": {
                         "then": "Sie können <b>ihre eigenen Behälter</b> mitbringen, um Ihre Bestellung zu erhalten, was Einwegverpackungsmaterial und damit Abfall spart"
+                    },
+                    "2": {
+                        "then": "Sie <b>müssen</b> Ihren eigenen Behälter mitbringen, um hier zu bestellen."
+                    },
+                    "1": {
+                        "then": "Das Mitbringen eines eigenen Containers ist <b>nicht erlaubt</b>"
                     }
                 },
                 "question": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
@@ -2125,16 +2148,19 @@
                 "question": "Sind Hunde in diesem Naturschutzgebiet erlaubt?"
             },
             "Email": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
             },
             "Website": {
                 "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
             },
             "phone": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
             },
             "Curator": {
-                "question": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist"
+                "question": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
+                "render": "{curator} ist der Pfleger dieses Naturschutzgebietes"
             },
             "Surface area": {
                 "render": "Grundfläche: {_surface:ha}ha"
@@ -2758,6 +2784,9 @@
                     },
                     "1": {
                         "then": "Ein privater Außenbereich wird überwacht (z. B. ein Parkplatz, eine Tankstelle, ein Innenhof, ein Eingang, eine private Einfahrt, ...)"
+                    },
+                    "0": {
+                        "then": "Überwacht wird ein öffentlicher Bereich, z. B. eine Straße, eine Brücke, ein Platz, ein Park, ein Bahnhof, ein öffentlicher Korridor oder Tunnel,..."
                     }
                 }
             },
@@ -2995,6 +3024,12 @@
                     },
                     "1": {
                         "then": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel"
+                    },
+                    "4": {
+                        "then": "Von einer anderen Organisation als Denkmal registriert"
+                    },
+                    "2": {
+                        "then": "Von einer anderen Organisation als Denkmal registriert"
                     }
                 },
                 "question": "Ist dieser Baum ein Naturdenkmal?"
@@ -3023,7 +3058,8 @@
                 "render": "Name: {name}"
             },
             "tree_node-ref:OnroerendErfgoed": {
-                "question": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?"
+                "question": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
+                "render": ""
             },
             "tree_node-wikidata": {
                 "question": "Was ist das passende Wikidata Element zu diesem Baum?"
@@ -3122,6 +3158,9 @@
                     },
                     "4": {
                         "then": "Mülleimer für Drogen"
+                    },
+                    "5": {
+                        "then": "Ein Abfalleimer für Nadeln und andere scharfe Gegenstände"
                     }
                 },
                 "question": "Um was für einen Abfalleimer handelt es sich?"
