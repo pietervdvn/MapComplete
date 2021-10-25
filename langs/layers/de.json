@@ -917,197 +917,6 @@
             }
         }
     },
-    "charging_station": {
-        "description": "Eine Ladestation",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Alle Fahrzeugtypen"
-                    },
-                    "1": {
-                        "question": "Ladestation für Fahrräder"
-                    },
-                    "2": {
-                        "question": "Ladestation für Autos"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Nur funktionierende Ladestationen"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Alle Anschlüsse"
-                    }
-                }
-            }
-        },
-        "name": "Ladestationen",
-        "presets": {
-            "0": {
-                "title": "Ladestation"
-            },
-            "3": {
-                "title": "Ladestation"
-            }
-        },
-        "tagRenderings": {
-            "Auth phone": {
-                "question": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
-                "render": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
-            },
-            "Authentication": {
-                "mappings": {
-                    "0": {
-                        "then": "Authentifizierung durch eine Mitgliedskarte"
-                    },
-                    "1": {
-                        "then": "Authentifizierung durch eine App"
-                    },
-                    "2": {
-                        "then": "Authentifizierung per Anruf ist möglich"
-                    },
-                    "3": {
-                        "then": "Authentifizierung per Anruf ist möglich"
-                    },
-                    "4": {
-                        "then": "Authentifizierung über NFC ist möglich"
-                    },
-                    "5": {
-                        "then": "Authentifizierung über Geldkarte ist möglich"
-                    },
-                    "6": {
-                        "then": "Authentifizierung per Debitkarte ist möglich"
-                    },
-                    "7": {
-                        "then": "Keine Authentifizierung erforderlich"
-                    }
-                },
-                "question": "Welche Authentifizierung ist an der Ladestation möglich?"
-            },
-            "Network": {
-                "mappings": {
-                    "0": {
-                        "then": "Nicht Teil eines größeren Netzwerks"
-                    },
-                    "1": {
-                        "then": "Nicht Teil eines größeren Netzwerks"
-                    }
-                },
-                "question": "Ist diese Ladestation Teil eines Netzwerks?",
-                "render": "Teil des Netzwerks <b>{network}</b>"
-            },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "durchgehend geöffnet (auch an Feiertagen)"
-                    }
-                },
-                "question": "Wann ist diese Ladestation geöffnet?"
-            },
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Diese Ladestation funktioniert"
-                    },
-                    "1": {
-                        "then": "Diese Ladestation ist kaputt"
-                    },
-                    "2": {
-                        "then": "Hier ist eine Ladestation geplant"
-                    },
-                    "3": {
-                        "then": "Hier wird eine Ladestation gebaut"
-                    },
-                    "4": {
-                        "then": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
-                    }
-                },
-                "question": "Ist dieser Ladepunkt in Betrieb?"
-            },
-            "Operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Eigentlich ist {operator} das Netzwerk"
-                    }
-                },
-                "question": "Wer ist der Betreiber dieser Ladestation?",
-                "render": "Diese Ladestation wird betrieben von {operator}"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Keine zusätzlichen Parkgebühren beim Laden"
-                    },
-                    "1": {
-                        "then": "Beim Laden ist eine zusätzliche Parkgebühr zu entrichten"
-                    }
-                },
-                "question": "Muss man beim Laden eine Parkgebühr bezahlen?"
-            },
-            "maxstay": {
-                "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>"
-            },
-            "ref": {
-                "render": "Die Kennziffer ist <b>{ref}</b>"
-            },
-            "website": {
-                "render": "Weitere Informationen auf <a href='{website}'>{website}</a>"
-            },
-            "fee/charge": {
-                "mappings": {
-                    "0": {
-                        "then": "Nutzung kostenlos"
-                    }
-                },
-                "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
-            }
-        },
-        "title": {
-            "render": "Ladestation"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " Minuten",
-                        "humanSingular": " Minute"
-                    },
-                    "1": {
-                        "human": " Stunden",
-                        "humanSingular": " Stunde"
-                    },
-                    "2": {
-                        "human": " Tage",
-                        "humanSingular": " Tag"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Volt"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Kilowatt"
-                    },
-                    "1": {
-                        "human": "Megawatt"
-                    }
-                }
-            }
-        }
-    },
     "crossings": {
         "description": "Übergänge für Fußgänger und Radfahrer",
         "name": "Kreuzungen",
@@ -1423,6 +1232,13 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
         "name": "Defibrillatoren",
         "presets": {
             "0": {
@@ -1538,24 +1354,6 @@
         },
         "title": {
             "render": "Defibrillator"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
-        },
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
         }
     },
     "direction": {
@@ -2596,6 +2394,17 @@
                 }
             }
         },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Abfalleimer"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Abfalleimer",
         "presets": {
             "0": {
@@ -2625,17 +2434,6 @@
         },
         "title": {
             "render": "Abfalleimer"
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Abfalleimer"
-                        }
-                    }
-                }
-            }
         }
     },
     "watermill": {

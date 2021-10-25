@@ -745,38 +745,11 @@
             "render": "Oggetto relativo alle bici"
         }
     },
-    "charging_station": {
-        "description": "Una stazione di ricarica",
-        "name": "Stazioni di ricarica",
-        "tagRenderings": {
-            "Auth phone": {
-                "question": "A quale rete appartiene questa stazione di ricarica?",
-                "render": "{network}"
-            },
-            "Authentication": {
-                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
-            }
-        },
-        "title": {
-            "render": "Stazione di ricarica"
-        }
-    },
     "defibrillator": {
         "icon": {
             "mappings": {
                 "0": {
                     "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
                 }
             }
         },

@@ -631,65 +631,6 @@
             }
         }
     },
-    "charging_station": {
-        "description": "Зарядная станция",
-        "name": "Зарядные станции",
-        "presets": {
-            "0": {
-                "title": "Зарядная станция"
-            },
-            "3": {
-                "title": "Зарядная станция"
-            }
-        },
-        "tagRenderings": {
-            "Authentication": {
-                "question": "В какое время работает эта зарядная станция?"
-            },
-            "Auth phone": {
-                "question": "К какой сети относится эта станция?",
-                "render": "{network}"
-            }
-        },
-        "title": {
-            "render": "Зарядная станция"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " минут",
-                        "humanSingular": " минута"
-                    },
-                    "1": {
-                        "human": " часов",
-                        "humanSingular": " час"
-                    },
-                    "2": {
-                        "human": " дней",
-                        "humanSingular": " день"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Вольт"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "киловатт"
-                    },
-                    "1": {
-                        "human": "мегаватт"
-                    }
-                }
-            }
-        }
-    },
     "crossings": {
         "presets": {
             "1": {
@@ -715,6 +656,13 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
         "name": "Дефибрилляторы",
         "presets": {
             "0": {
@@ -762,24 +710,6 @@
         },
         "title": {
             "render": "Дефибриллятор"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
-        },
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
         }
     },
     "direction": {
@@ -1450,14 +1380,12 @@
         }
     },
     "waste_basket": {
-        "name": "Контейнер для мусора",
-        "presets": {
-            "0": {
-                "title": "Контейнер для мусора"
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Контейнер для мусора"
+                }
             }
-        },
-        "title": {
-            "render": "Контейнер для мусора"
         },
         "mapRendering": {
             "0": {
@@ -1470,12 +1398,14 @@
                 }
             }
         },
-        "iconSize": {
-            "mappings": {
-                "0": {
-                    "then": "Контейнер для мусора"
-                }
+        "name": "Контейнер для мусора",
+        "presets": {
+            "0": {
+                "title": "Контейнер для мусора"
             }
+        },
+        "title": {
+            "render": "Контейнер для мусора"
         }
     },
     "watermill": {
