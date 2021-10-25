@@ -6,7 +6,6 @@ import BaseUIElement from "../BaseUIElement";
 export default class Translations {
 
     static t = AllTranslationAssets.t;
-    private static wtcache = {}
 
     constructor() {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"
@@ -48,15 +47,10 @@ export default class Translations {
             return undefined;
         }
         if (typeof (s) === "string") {
-            if (Translations.wtcache[s]) {
-                return Translations.wtcache[s];
-            }
-            const tr = new Translation({en: s});
-            Translations.wtcache[s] = tr;
-            return tr;
+            return new Translation({en: s});
         }
         if (s instanceof Translation) {
-            return s;
+            return s.Clone() /* MUST CLONE HERE! */;
         }
         console.error("Trying to Translation.WT, but got ", s)
         throw "??? Not a valid translation"

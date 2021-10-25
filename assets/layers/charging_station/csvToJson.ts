@@ -56,6 +56,7 @@ function run(file, protojson) {
 
     const overview_question_answers = []
     const questions: (TagRenderingConfigJson & { "id": string })[] = []
+    const technicalQuestions: (TagRenderingConfigJson & { "id": string })[] = []
     const filterOptions: { question: any, osmTags?: string } [] = [
         {
             question: {
@@ -149,7 +150,7 @@ function run(file, protojson) {
             }
         })
 
-        questions.push({
+        technicalQuestions.push({
             "id": "voltage-" + i,
             question: {
                 en: `What voltage do the plugs with ${descrWithImage_en} offer?`,
@@ -178,7 +179,7 @@ function run(file, protojson) {
         })
 
 
-        questions.push({
+        technicalQuestions.push({
             "id": "current-" + i,
             question: {
                 en: `What current do the plugs with ${descrWithImage_en} offer?`,
@@ -207,7 +208,7 @@ function run(file, protojson) {
         })
 
 
-        questions.push({
+        technicalQuestions.push({
             "id": "power-output-" + i,
             question: {
                 en: `What power output does a single plug of type ${descrWithImage_en} offer?`,
@@ -247,7 +248,8 @@ function run(file, protojson) {
     const toggles = {
         "id": "Available_charging_stations (generated)",
         "question": {
-            "en": "Which charging stations are available here?"
+            "en": "Which charging connections are available here?",
+            "nl": "Welke aansluitingen zijn hier beschikbaar?"
         },
         "multiAnswer": true,
         "mappings": overview_question_answers
@@ -257,7 +259,7 @@ function run(file, protojson) {
     const stringified = questions.map(q => JSON.stringify(q, null, "  "))
     let protoString = readFileSync(protojson, "utf8")
 
-    protoString = protoString.replace("{\"id\": \"$$$\"}", stringified.join(",\n"))
+    protoString = protoString.replace(/{[ \t\n]*"id"[ \t\n]*:[ \t\n]*"\$\$\$"[ \t\n]*}/, stringified.join(",\n"))
     const proto = <LayerConfigJson>JSON.parse(protoString)
     proto.tagRenderings.forEach(tr => {
         if (typeof tr === "string") {

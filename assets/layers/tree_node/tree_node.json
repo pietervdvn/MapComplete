@@ -50,7 +50,8 @@
                 "en": "Height: {height}",
                 "it": "Altezza: {height}",
                 "ru": "Высота: {height}",
-                "fr": "Hauteur : {height}"
+                "fr": "Hauteur : {height}",
+                "de": "Höhe: {height}"
             },
             "condition": {
                 "and": [
@@ -69,7 +70,8 @@
                         "en": "Height: {height}&nbsp;m",
                         "it": "Altezza: {height}&nbsp;m",
                         "ru": "Высота: {height}&nbsp;м",
-                        "fr": "Hauteur&nbsp;: {height}&nbsp;m"
+                        "fr": "Hauteur&nbsp;: {height}&nbsp;m",
+                        "de": "Höhe: {height}&nbsp;m"
                     }
                 }
             ]
@@ -93,7 +95,8 @@
                         "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom",
                         "en": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved",
                         "it": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Latifoglia",
-                        "fr": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Feuillu"
+                        "fr": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Feuillu",
+                        "de": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Laubbaum"
                     }
                 },
                 {
@@ -106,7 +109,8 @@
                         "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Naaldboom",
                         "en": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved",
                         "it": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Aghifoglia",
-                        "fr": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Résineux"
+                        "fr": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Résineux",
+                        "de": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Nadelbaum"
                     }
                 },
                 {
@@ -119,7 +123,8 @@
                         "nl": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos",
                         "en": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless",
                         "it": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Privo di foglie (permanente)",
-                        "fr": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Sans feuilles (Permanent)"
+                        "fr": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Sans feuilles (Permanent)",
+                        "de": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Dauerhaft blattlos"
                     },
                     "hideInAnswer": true
                 }
@@ -247,7 +252,8 @@
                 "en": "Is this tree evergreen or deciduous?",
                 "it": "È un sempreverde o caduco?",
                 "ru": "Это дерево вечнозелёное или листопадное?",
-                "fr": "L’arbre est-il à feuillage persistant ou caduc ?"
+                "fr": "L’arbre est-il à feuillage persistant ou caduc ?",
+                "de": "Ist dies ein Nadelbaum oder ein Laubbaum?"
             },
             "mappings": [
                 {
@@ -275,7 +281,8 @@
                         "en": "Evergreen.",
                         "it": "Sempreverde.",
                         "fr": "À feuilles persistantes.",
-                        "ru": "Вечнозелёное."
+                        "ru": "Вечнозелёное.",
+                        "de": "immergrüner Baum."
                     }
                 }
             ],
@@ -292,14 +299,16 @@
                 "it": "Nome: {name}",
                 "ru": "Название: {name}",
                 "fr": "Nom : {name}",
-                "id": "Nama: {name}"
+                "id": "Nama: {name}",
+                "de": "Name: {name}"
             },
             "question": {
                 "nl": "Heeft de boom een naam?",
                 "en": "Does the tree have a name?",
                 "it": "L’albero ha un nome?",
                 "fr": "L'arbre a-t-il un nom ?",
-                "ru": "Есть ли у этого дерева название?"
+                "ru": "Есть ли у этого дерева название?",
+                "de": "Hat der Baum einen Namen?"
             },
             "freeform": {
                 "key": "name",
@@ -320,7 +329,8 @@
                         "en": "The tree does not have a name.",
                         "it": "L’albero non ha un nome.",
                         "fr": "L'arbre n'a pas de nom.",
-                        "ru": "У этого дерева нет названия."
+                        "ru": "У этого дерева нет названия.",
+                        "de": "Der Baum hat keinen Namen."
                     }
                 }
             ],
@@ -339,7 +349,8 @@
                 "nl": "Is deze boom erkend als erfgoed?",
                 "en": "Is this tree registered heritage?",
                 "it": "Quest’albero è registrato come patrimonio?",
-                "fr": "Cet arbre est-il inscrit au patrimoine ?"
+                "fr": "Cet arbre est-il inscrit au patrimoine ?",
+                "de": "Ist dieser Baum ein Naturdenkmal?"
             },
             "mappings": [
                 {
@@ -395,7 +406,8 @@
                         "nl": "Niet erkend als erfgoed",
                         "en": "Not registered as heritage",
                         "it": "Non è registrato come patrimonio",
-                        "fr": "Non enregistré comme patrimoine"
+                        "fr": "Non enregistré comme patrimoine",
+                        "de": "Nicht als Denkmal registriert"
                     }
                 },
                 {
@@ -516,13 +528,15 @@
                 "en": "Broadleaved tree",
                 "it": "Albero latifoglia",
                 "fr": "Arbre feuillu",
-                "ru": "Лиственное дерево"
+                "ru": "Лиственное дерево",
+                "de": "Laubbaum"
             },
             "description": {
                 "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
                 "en": "A tree of a species with leaves, such as oak or populus.",
                 "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
-                "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier."
+                "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier.",
+                "de": "Ein Baum mit Blättern, z. B. Eiche oder Buche."
             },
             "preciseInput": {
                 "preferredBackground": "photo"
@@ -538,14 +552,16 @@
                 "en": "Needleleaved tree",
                 "it": "Albero aghifoglia",
                 "ru": "Хвойное дерево",
-                "fr": "Arbre résineux"
+                "fr": "Arbre résineux",
+                "de": "Nadelbaum"
             },
             "description": {
                 "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
                 "en": "A tree of a species with needles, such as pine or spruce.",
                 "it": "Un albero di una specie con aghi come il pino o l’abete.",
                 "ru": "Дерево с хвоей (иглами), например, сосна или ель.",
-                "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa."
+                "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
+                "de": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte."
             },
             "preciseInput": {
                 "preferredBackground": "photo"
@@ -569,7 +585,8 @@
                 "en": "If you're not sure whether it's a broadleaved or needleleaved tree.",
                 "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
                 "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
-                "ru": "Если вы не уверены в том, лиственное это дерево или хвойное."
+                "ru": "Если вы не уверены в том, лиственное это дерево или хвойное.",
+                "de": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt."
             },
             "preciseInput": {
                 "preferredBackground": "photo"

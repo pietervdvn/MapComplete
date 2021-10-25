@@ -1,10 +1,12 @@
 {
   "id": "postboxes",
   "title": {
-    "en": "Postbox and Post Office Map"
+    "en": "Postbox and Post Office Map",
+    "de": "Karte mit Briefkästen und Poststellen"
   },
   "shortDescription": {
-    "en": "A map showing postboxes and post offices"
+    "en": "A map showing postboxes and post offices",
+    "de": "Eine Karte die Briefkästen und Poststellen anzeigt"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. "
@@ -80,29 +82,7 @@
             "razed:amenity=post_box"
           ]
         }
-      },
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/postboxes/postbox.svg"
-          },
-          "iconSize": {
-            "render": "40,40,bottom"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#DADADA"
-          },
-          "width": {
-            "render": "1"
-          }
-        }
-      ]
+      }
     },
     {
       "id": "postoffices",
@@ -119,7 +99,8 @@
         }
       },
       "description": {
-        "en": "A layer showing post offices."
+        "en": "A layer showing post offices.",
+        "de": "Eine Ebene mit Postämtern."
       },
       "tagRenderings": [
         "images",
@@ -142,7 +123,8 @@
             {
               "if": "opening_hours=24/7",
               "then": {
-                "en": "24/7 opened (including holidays)"
+                "en": "24/7 opened (including holidays)",
+                "de": "durchgehend geöffnet (auch an Feiertagen)"
               }
             }
           ],
@@ -155,7 +137,8 @@
       "iconOverlays": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen"
+          "then": "isOpen",
+          "badge": true
         }
       ],
       "width": {
@@ -189,34 +172,6 @@
               "osmTags": "_isOpen=yes"
             }
           ]
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "square:white;./assets/themes/postboxes/post_office.svg"
-          },
-          "iconBadges": [
-            {
-              "if": "opening_hours~*",
-              "then": "isOpen"
-            }
-          ],
-          "iconSize": {
-            "render": "40,40,bottom"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#DADADA"
-          },
-          "width": {
-            "render": "1"
-          }
         }
       ]
     }

@@ -144,31 +144,20 @@ export default class FeatureSwitchState {
         }
 
 
-        this.featureSwitchIsTesting = QueryParameters.GetQueryParameter(
+        this.featureSwitchIsTesting = QueryParameters.GetBooleanQueryParameter(
             "test",
             ""+testingDefaultValue,
             "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org"
-        ).map(
-            (str) => str === "true",
-            [],
-            (b) => "" + b
-        );
+        )
 
-        this.featureSwitchIsDebugging = QueryParameters.GetQueryParameter(
+        this.featureSwitchIsDebugging = QueryParameters.GetBooleanQueryParameter(
             "debug",
             "false",
             "If true, shows some extra debugging help such as all the available tags on every object"
-        ).map(
-            (str) => str === "true",
-            [],
-            (b) => "" + b
-        );
+        )
 
-        this.featureSwitchFakeUser = QueryParameters.GetQueryParameter("fake-user", "false",
+        this.featureSwitchFakeUser = QueryParameters.GetBooleanQueryParameter("fake-user", "false",
             "If true, 'dryrun' mode is activated and a fake user account is loaded")
-            .map(str => str === "true", [], b => "" + b);
-
-
       
 
         this.overpassUrl = QueryParameters.GetQueryParameter("overpassUrl",

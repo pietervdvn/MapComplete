@@ -119,7 +119,7 @@ export default class MapState extends UserRelatedState {
 
         this.overlayToggles = this.layoutToUse.tileLayerSources.filter(c => c.name !== undefined).map(c => ({
             config: c,
-            isDisplayed: QueryParameters.GetQueryParameter("overlay-" + c.id, "" + c.defaultState, "Wether or not the overlay " + c.id + " is shown").map(str => str === "true", [], b => "" + b)
+            isDisplayed: QueryParameters.GetBooleanQueryParameter("overlay-" + c.id, "" + c.defaultState, "Wether or not the overlay " + c.id + " is shown")
         }))
         this.filteredLayers = this.InitializeFilteredLayers()
 
@@ -170,17 +170,12 @@ export default class MapState extends UserRelatedState {
                     .map(value => value === "yes", [], enabled => {
                         return enabled ? "yes" : "";
                     })
-                isDisplayed.addCallbackAndRun(d => console.log("IsDisplayed for layer", layer.id, "is currently", d))
             } else {
-                isDisplayed = QueryParameters.GetQueryParameter(
+                isDisplayed = QueryParameters.GetBooleanQueryParameter(
                     "layer-" + layer.id,
                     "true",
                     "Wether or not layer " + layer.id + " is shown"
-                ).map<boolean>(
-                    (str) => str !== "false",
-                    [],
-                    (b) => b.toString()
-                );
+                )
             }
             const flayer = {
                 isDisplayed: isDisplayed,

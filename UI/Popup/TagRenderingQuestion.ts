@@ -26,6 +26,7 @@ import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {Unit} from "../../Models/Unit";
 import VariableInputElement from "../Input/VariableInputElement";
+import Toggle from "../Input/Toggle";
 
 /**
  * Shows the question element.
@@ -75,7 +76,7 @@ export default class TagRenderingQuestion extends Combine {
 
 
         const inputElement: InputElement<TagsFilter> =
-            new VariableInputElement(applicableMappingsSrc.map(applicableMappings => 
+            new VariableInputElement(applicableMappingsSrc.map(applicableMappings =>
                 TagRenderingQuestion.GenerateInputElement(configuration, applicableMappings, applicableUnit, tags)
             ))
 
@@ -104,8 +105,11 @@ export default class TagRenderingQuestion extends Combine {
                 .onClick(save)
         }
 
-        const saveButton = options.saveButtonConstr(inputElement.GetValue())
-
+        const saveButton = new Combine([
+            options.saveButtonConstr(inputElement.GetValue()),
+            new Toggle(Translations.t.general.testing, undefined, State.state.featureSwitchIsTesting).SetClass("alert")
+        ])
+        
         let bottomTags: BaseUIElement;
         if (options.bottomText !== undefined) {
             bottomTags = options.bottomText(inputElement.GetValue())
@@ -118,7 +122,7 @@ export default class TagRenderingQuestion extends Combine {
                             return "";
                         }
                         if (tagsFilter === undefined) {
-                            return Translations.t.general.noTagsSelected.Clone().SetClass("subtle");
+                            return Translations.t.general.noTagsSelected.SetClass("subtle");
                         }
                         if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
                             const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
@@ -135,6 +139,8 @@ export default class TagRenderingQuestion extends Combine {
             options.cancelButton,
             saveButton,
             bottomTags])
+
+
         this.SetClass("question disable-links")
     }
 
@@ -189,7 +195,7 @@ export default class TagRenderingQuestion extends Combine {
                 applicableMappings.map((mapping, i) => {
                     return {
                         value: new And([mapping.if, ...allIfNotsExcept(i)]),
-                        shown: Translations.WT(mapping.then).Clone()
+                        shown: Translations.WT(mapping.then)
                     }
                 })
             )
@@ -203,7 +209,7 @@ export default class TagRenderingQuestion extends Combine {
 
 
         if (inputEls.length == 0) {
-            if(ff === undefined){
+            if (ff === undefined) {
                 throw "Error: could not generate a question: freeform and all mappings are undefined"
             }
             return ff;

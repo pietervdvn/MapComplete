@@ -7,7 +7,8 @@
         "nb_NO": "Ladestasjoner",
         "ru": "Зарядные станции",
         "zh_Hant": "充電站",
-        "de": "Ladestationen"
+        "de": "Ladestationen",
+        "nl": "Oplaadpunten"
     },
     "minzoom": 10,
     "source": {
@@ -28,7 +29,8 @@
             "nb_NO": "Ladestasjon",
             "ru": "Зарядная станция",
             "zh_Hant": "充電站",
-            "de": "Ladestation"
+            "de": "Ladestation",
+            "nl": "Oplaadpunten"
         }
     },
     "description": {
@@ -38,7 +40,8 @@
         "nb_NO": "En ladestasjon",
         "ru": "Зарядная станция",
         "zh_Hant": "充電站",
-        "de": "Eine Ladestation"
+        "de": "Eine Ladestation",
+        "nl": "Oplaadpunten"
     },
     "tagRenderings": [
         "images",
@@ -293,7 +296,8 @@
             },
             "render": {
                 "en": "Using this charging station costs <b>{charge}</b>",
-                "nl": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
+                "nl": "Dit oplaadpunt gebruiken kost <b>{charge}</b>",
+                "de": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
             },
             "mappings": [
                 {
@@ -305,7 +309,8 @@
                     },
                     "then": {
                         "nl": "Gratis te gebruiken",
-                        "en": "Free to use"
+                        "en": "Free to use",
+                        "de": "Nutzung kostenlos"
                     }
                 }
             ]
@@ -351,7 +356,8 @@
             },
             "render": {
                 "en": "One can stay at most <b>{canonical(maxstay)}</b>",
-                "nl": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
+                "nl": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>",
+                "de": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>"
             },
             "mappings": [
                 {
@@ -469,7 +475,8 @@
                 "en": "What is the website of the operator?"
             },
             "render": {
-                "en": "More info on <a href='{website}'>{website}</a>"
+                "en": "More info on <a href='{website}'>{website}</a>",
+                "de": "Weitere Informationen auf <a href='{website}'>{website}</a>"
             },
             "freeform": {
                 "key": "website",
@@ -483,7 +490,8 @@
                 "en": "What is the reference number of this charging station?"
             },
             "render": {
-                "en": "Reference number is <b>{ref}</b>"
+                "en": "Reference number is <b>{ref}</b>",
+                "de": "Die Kennziffer ist <b>{ref}</b>"
             },
             "freeform": {
                 "key": "ref"
@@ -584,6 +592,51 @@
         }
     ],
     "presets": [
+        {
+            "tags": [
+                "amenity=charging_station",
+                "motorcar=no",
+                "bicycle=yes",
+                "socket:typee=1"
+            ],
+            "title": {
+                "en": "Charging station",
+                "nl": "gewone stekker <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)",
+                "de": "Ladestation",
+                "ru": "Зарядная станция"
+            },
+            "preciseInput": {
+                "preferredBackground": "map"
+            }
+        },
+        {
+            "tags": [
+                "amenity=charging_station",
+                "motorcar=no",
+                "bicycle=yes"
+            ],
+            "title": {
+                "en": "charging station for e-bikes",
+                "nl": "oplaadpunt voor elektrische fietsen"
+            },
+            "preciseInput": {
+                "preferredBackground": "map"
+            }
+        },
+        {
+            "tags": [
+                "amenity=charging_station",
+                "motorcar=yes",
+                "bicycle=no"
+            ],
+            "title": {
+                "en": "charging station for cars",
+                "nl": "oplaadstation voor elektrische auto's"
+            },
+            "preciseInput": {
+                "preferredBackground": "map"
+            }
+        },
         {
             "tags": [
                 "amenity=charging_station"
@@ -824,7 +877,8 @@
                     "humanSingular": {
                         "en": " hour",
                         "nl": " uur",
-                        "ru": " час"
+                        "ru": " час",
+                        "de": " Stunde"
                     }
                 },
                 {
@@ -844,7 +898,8 @@
                     "humanSingular": {
                         "en": " day",
                         "nl": " dag",
-                        "ru": " день"
+                        "ru": " день",
+                        "de": " Tag"
                     }
                 }
             ]
@@ -881,7 +936,8 @@
                     "human": {
                         "en": "Volts",
                         "nl": "volt",
-                        "ru": "Вольт"
+                        "ru": "Вольт",
+                        "de": "Volt"
                     }
                 }
             ],
@@ -951,7 +1007,8 @@
                     "human": {
                         "en": "kilowatt",
                         "nl": "kilowatt",
-                        "ru": "киловатт"
+                        "ru": "киловатт",
+                        "de": "Kilowatt"
                     }
                 },
                 {
@@ -962,7 +1019,8 @@
                     "human": {
                         "en": "megawatt",
                         "nl": "megawatt",
-                        "ru": "мегаватт"
+                        "ru": "мегаватт",
+                        "de": "Megawatt"
                     }
                 }
             ],
@@ -975,5 +1033,18 @@
                 "point"
             ]
         }
-    ]
+    ],
+    "deletion": {
+        "softDeletionTags": {
+            "and": [
+                "amenity=",
+                "disused:amenity=charging_station"
+            ]
+        },
+        "neededChangesets": 10
+    },
+    "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuracy": true
+    }
 }

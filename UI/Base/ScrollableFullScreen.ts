@@ -1,11 +1,11 @@
 import {UIElement} from "../UIElement";
 import Svg from "../../Svg";
 import Combine from "./Combine";
-import Ornament from "./Ornament";
 import {FixedUiElement} from "./FixedUiElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Hash from "../../Logic/Web/Hash";
 import BaseUIElement from "../BaseUIElement";
+import Img from "./Img";
 
 /**
  *
@@ -18,33 +18,42 @@ import BaseUIElement from "../BaseUIElement";
  */
 export default class ScrollableFullScreen extends UIElement {
     private static readonly empty = new FixedUiElement("");
-    private static readonly _actor = ScrollableFullScreen.InitActor();
     private static _currentlyOpen: ScrollableFullScreen;
     public isShown: UIEventSource<boolean>;
     private _component: BaseUIElement;
     private _fullscreencomponent: BaseUIElement;
-    private _hashToSet: string;
 
     constructor(title: ((mode: string) => BaseUIElement), content: ((mode: string) => BaseUIElement),
-                hashToSet: string,
+                hashToShow: string,
                 isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     ) {
         super();
         this.isShown = isShown;
-        this._hashToSet = hashToSet;
+
+        if (hashToShow === undefined) {
+            throw "HashToShow should be defined as it is vital for the 'back' key functionality"
+        }
 
         this._component = this.BuildComponent(title("desktop"), content("desktop"), isShown)
             .SetClass("hidden md:block");
-        this._fullscreencomponent = this.BuildComponent(title("mobile"), content("mobile"), isShown);
+        this._fullscreencomponent = this.BuildComponent(title("mobile"), content("mobile").SetClass("pb-20"), isShown);
 
-        
+
         const self = this;
         isShown.addCallback(isShown => {
             if (isShown) {
                 self.Activate();
+                Hash.hash.setData(hashToShow)
             } else {
                 ScrollableFullScreen.clear();
             }
+        })
+
+        Hash.hash.addCallback(hash => {
+            if (hash === hashToShow) {
+                return
+            }
+            isShown.setData(false)
         })
     }
 
@@ -56,15 +65,6 @@ export default class ScrollableFullScreen extends UIElement {
         Hash.hash.setData(undefined);
     }
 
-    private static InitActor() {
-        Hash.hash.addCallback(hash => {
-            if (hash === undefined || hash === "") {
-                ScrollableFullScreen.clear()
-            }
-        });
-        return true;
-    }
-
     InnerRender(): BaseUIElement {
         return this._component;
     }
@@ -72,9 +72,6 @@ export default class ScrollableFullScreen extends UIElement {
     Activate(): void {
         this.isShown.setData(true)
         this._fullscreencomponent.AttachTo("fullscreen");
-        if (this._hashToSet != undefined) {
-            Hash.hash.setData(this._hashToSet)
-        }
         const fs = document.getElementById("fullscreen");
         ScrollableFullScreen._currentlyOpen = this;
         fs.classList.remove("hidden")
@@ -83,25 +80,26 @@ export default class ScrollableFullScreen extends UIElement {
     private BuildComponent(title: BaseUIElement, content: BaseUIElement, isShown: UIEventSource<boolean>) {
         const returnToTheMap =
             new Combine([
-                Svg.back_svg().SetClass("block md:hidden"),
-                Svg.close_svg().SetClass("hidden md:block")
-            ])
-                .onClick(() => {
-                    isShown.setData(false)
-                }).SetClass("mb-2 bg-blue-50 rounded-full w-12 h-12 p-1.5 flex-shrink-0")
+                new Img(Svg.back.replace(/#000000/g, "#cccccc"), true)
+                    .SetClass("block md:hidden w-12 h-12 p-2"),
+                new Img(Svg.close.replace(/#000000/g, "#cccccc"), true)
+                    .SetClass("hidden md:block  w-12 h-12  p-3")
+            ]).SetClass("rounded-full p-0 flex-shrink-0 self-center")
 
-        title.SetClass("block text-l sm:text-xl md:text-2xl w-full font-bold p-2 pl-4 max-h-20vh overflow-y-auto")
-        const ornament = new Combine([new Ornament().SetStyle("height:5em;")])
-            .SetClass("md:hidden h-5")
+        returnToTheMap.onClick(() => {
+            isShown.setData(false)
+        })
+
+        title.SetClass("block text-l sm:text-xl md:text-2xl w-full font-bold p-0 max-h-20vh overflow-y-auto")
         return new Combine([
             new Combine([
                 new Combine([returnToTheMap, title])
-                    .SetClass("border-b-2 border-black shadow md:shadow-none bg-white p-2 pb-0 md:p-0 flex flex-shrink-0"),
-                new Combine([content, ornament])
+                    .SetClass("border-b-1 border-black shadow bg-white flex flex-shrink-0 pt-1 pb-1 md:pt-0 md:pb-0"),
+                new Combine([content])
                     .SetClass("block p-2 md:pt-4 w-full h-full overflow-y-auto md:max-h-65vh"),
                 // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
             ]).SetClass("flex flex-col h-full relative bg-white")
-        ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative z-above-controls");
+        ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative z-above-controls md:rounded-xl overflow-hidden");
 
     }
 

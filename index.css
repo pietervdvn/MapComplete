@@ -433,6 +433,7 @@ li::marker {
 
 .leaflet-popup-content {
     width: 45em !important;
+    margin: 0.25rem !important;
 }
 
 .leaflet-div-icon {

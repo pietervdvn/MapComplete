@@ -864,10 +864,6 @@ video {
   margin-top: 0.25rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .mr-4 {
   margin-right: 1rem;
 }
@@ -926,6 +922,10 @@ video {
 
 .mr-3 {
   margin-right: 0.75rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mb-0 {
@@ -998,10 +998,6 @@ video {
 
 .h-12 {
   height: 3rem;
-}
-
-.h-5 {
-  height: 1.25rem;
 }
 
 .h-screen {
@@ -1291,10 +1287,6 @@ video {
   border-width: 2px;
 }
 
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1326,11 +1318,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-}
-
-.bg-blue-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(239, 246, 255, var(--tw-bg-opacity));
 }
 
 .bg-blue-100 {
@@ -1398,32 +1385,28 @@ video {
   padding: 0.5rem;
 }
 
-.p-0\.5 {
-  padding: 0.125rem;
-}
-
 .p-0 {
   padding: 0px;
+}
+
+.p-0\.5 {
+  padding: 0.125rem;
 }
 
 .pl-2 {
   padding-left: 0.5rem;
 }
 
-.pt-3 {
-  padding-top: 0.75rem;
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
-.pb-3 {
-  padding-bottom: 0.75rem;
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
-}
-
-.pb-0 {
-  padding-bottom: 0px;
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .pl-1 {
@@ -1438,12 +1421,20 @@ video {
   padding-top: 1.5rem;
 }
 
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .pl-5 {
   padding-left: 1.25rem;
 }
 
 .pr-3 {
   padding-right: 0.75rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .pr-4 {
@@ -1458,16 +1449,16 @@ video {
   padding-right: 0px;
 }
 
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-
 .pt-0\.5 {
   padding-top: 0.125rem;
 }
 
 .pt-0 {
   padding-top: 0px;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pr-2 {
@@ -2208,6 +2199,7 @@ li::marker {
 
 .leaflet-popup-content {
   width: 45em !important;
+  margin: 0.25rem !important;
 }
 
 .leaflet-div-icon {
@@ -2443,8 +2435,8 @@ li::marker {
     flex-direction: row;
   }
 
-  .md\:p-0 {
-    padding: 0px;
+  .md\:rounded-xl {
+    border-radius: 0.75rem;
   }
 
   .md\:p-1 {
@@ -2461,6 +2453,14 @@ li::marker {
 
   .md\:p-3 {
     padding: 0.75rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .md\:pt-4 {
@@ -2480,11 +2480,6 @@ li::marker {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:shadow-none {
-    --tw-shadow: 0 0 #0000;
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
   .md\:w-160 {

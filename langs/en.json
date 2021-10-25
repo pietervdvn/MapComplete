@@ -33,7 +33,7 @@
     "split": {
         "split": "Split",
         "cancel": "Cancel",
-        "inviteToSplit": "Split this road",
+        "inviteToSplit": "Split this road in smaller segments. This allows to give different properties to parts of the road.",
         "loginToSplit": "You must be logged in to split a road",
         "splitTitle": "Choose on the map where to split this road",
         "hasBeenSplit": "This way has been split"
@@ -229,11 +229,11 @@
             "wikipediaboxTitle": "Wikipedia",
             "failed": "Loading the wikipedia entry failed",
             "loading": "Loading Wikipedia...",
-            "noWikipediaPage": "This wikidata item has no corresponding wikipedia page yet.",
-            "searchWikidata": "Search on wikidata",
+            "noWikipediaPage": "This Wikidata item has no corresponding Wikipedia page yet.",
+            "searchWikidata": "Search on Wikidata",
             "noResults": "Nothing found for <i>{search}</i>",
             "doSearch": "Search above to see results",
-            "createNewWikidata": "Create a new wikidata item"
+            "createNewWikidata": "Create a new Wikidata item"
         }
     },
     "favourite": {

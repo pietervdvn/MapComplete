@@ -453,16 +453,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
-                }
-            }
-        },
         "name": "Station velo (réparation, pompe à vélo)",
         "presets": {
             "0": {
@@ -600,6 +590,13 @@
                 }
             },
             "render": "Point station velo avec pompe"
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
+                }
+            }
         }
     },
     "bike_shop": {
@@ -756,24 +753,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Défibrillateurs",
         "presets": {
             "0": {
@@ -890,6 +869,17 @@
         },
         "title": {
             "render": "Défibrillateur"
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                }
+            }
         }
     },
     "direction": {

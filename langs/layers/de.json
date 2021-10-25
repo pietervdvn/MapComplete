@@ -541,9 +541,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "name": "Fahrradstationen (Reparatur, Pumpe oder beides)",
         "presets": {
             "0": {
@@ -954,6 +951,12 @@
                 "options": {
                     "0": {
                         "question": "Alle Anschlüsse"
+                    },
+                    "3": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
+                    },
+                    "7": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
                     }
                 }
             }
@@ -993,7 +996,7 @@
                         "then": "Authentifizierung per Debitkarte ist möglich"
                     },
                     "7": {
-                        "then": "Keine Authentifizierung erforderlich"
+                        "then": "Das Aufladen ist hier (auch) ohne Authentifizierung möglich"
                     }
                 },
                 "question": "Welche Authentifizierung ist an der Ladestation möglich?"
@@ -1086,23 +1089,46 @@
                 "question": "Wie viele Fahrzeuge können hier gleichzeitig geladen werden?",
                 "render": "{capacity} Fahrzeuge können hier gleichzeitig geladen werden"
             },
-            "website": {
-                "render": "Weitere Informationen auf <a href='{website}'>{website}</a>"
-            },
-            "ref": {
-                "render": "Die Kennziffer ist <b>{ref}</b>"
-            },
             "maxstay": {
-                "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>"
-            },
-            "fee/charge": {
+                "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>",
+                "question": "Was ist die Höchstdauer des Aufenthalts hier?",
                 "mappings": {
                     "0": {
-                        "then": "Nutzung kostenlos"
+                        "then": "Keine Höchstparkdauer"
                     }
-                },
-                "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
+                }
+            },
+            "ref": {
+                "render": "Die Kennziffer ist <b>{ref}</b>",
+                "question": "Wie lautet die Kennung dieser Ladestation?"
+            },
+            "website": {
+                "render": "Weitere Informationen auf <a href='{website}'>{website}</a>",
+                "question": "Wie ist die Webseite des Betreibers?"
+            },
+            "phone": {
+                "question": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
+                "render": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Bezahlung mit einer speziellen App"
+                        },
+                        "1": {
+                            "then": "Bezahlung mit einer Mitgliedskarte"
+                        }
+                    }
+                }
+            },
+            "email": {
+                "question": "Wie ist die Email-Adresse des Betreibers?",
+                "render": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
             }
+        },
+        "title": {
+            "render": "Ladestation"
         },
         "units": {
             "0": {
@@ -1138,23 +1164,20 @@
                     }
                 }
             }
-        },
-        "title": {
-            "render": "Ladestation"
         }
     },
     "crossings": {
+        "description": "Übergänge für Fußgänger und Radfahrer",
         "name": "Kreuzungen",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Ampel"
-                },
-                "1": {
-                    "then": "Kreuzung mit Ampeln"
-                }
+        "presets": {
+            "0": {
+                "description": "Kreuzung für Fußgänger und/oder Radfahrer",
+                "title": "Kreuzung"
             },
-            "render": "Kreuzung"
+            "1": {
+                "description": "Ampel an einer Straße",
+                "title": "Ampel"
+            }
         },
         "tagRenderings": {
             "crossing-bicycle-allowed": {
@@ -1203,41 +1226,81 @@
                     }
                 },
                 "question": "Was ist das für eine Kreuzung?"
-            }
-        },
-        "presets": {
-            "0": {
-                "description": "Kreuzung für Fußgänger und/oder Radfahrer",
-                "title": "Kreuzung"
             },
-            "1": {
-                "description": "Ampel an einer Straße",
-                "title": "Ampel"
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
+                    },
+                    "2": {
+                        "then": "Ein Radfahrer kann bei roter Ampel nicht rechts abbiegen"
+                    }
+                },
+                "question": "Kann ein Radfahrer bei roter Ampel rechts abbiegen?"
+            },
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Übergang hat eine Verkehrsinsel"
+                    },
+                    "1": {
+                        "then": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
+                    }
+                },
+                "question": "Gibt es an diesem Übergang eine Verkehrsinsel?"
+            },
+            "crossing-continue-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
+                    },
+                    "2": {
+                        "then": "Ein Radfahrer kann bei roter Ampel nicht geradeaus fahren"
+                    }
+                },
+                "question": "Kann ein Radfahrer bei roter Ampel geradeaus fahren?"
+            },
+            "crossing-button": {
+                "mappings": {
+                    "1": {
+                        "then": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern."
+                    }
+                },
+                "question": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?"
             }
         },
-        "description": "Übergänge für Fußgänger und Radfahrer"
-    },
-    "cycleways_and_roads": {
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Radweg"
+                    "then": "Ampel"
                 },
-                "2": {
-                    "then": "Fahrradspur"
-                },
-                "3": {
-                    "then": "Radweg neben der Straße"
-                },
-                "4": {
-                    "then": "Fahrradstraße"
+                "1": {
+                    "then": "Kreuzung mit Ampeln"
                 }
             },
-            "render": "Radwege"
-        },
+            "render": "Kreuzung"
+        }
+    },
+    "cycleways_and_roads": {
+        "name": "Radwege und Straßen",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
+                    "0": {
+                        "then": "Es gibt eine geteilte Fahrspur"
+                    },
+                    "1": {
+                        "then": "Es gibt eine Spur neben der Straße (getrennt durch eine Straßenmarkierung)"
+                    },
+                    "2": {
+                        "then": "Es gibt einen Weg, aber keinen Radweg, der auf der Karte getrennt von dieser Straße eingezeichnet ist."
+                    },
                     "3": {
                         "then": "Hier ist ein getrennter Radweg vorhanden"
                     },
@@ -1257,6 +1320,18 @@
                     },
                     "1": {
                         "then": "Geeignet für dünne Reifen: Rennrad"
+                    },
+                    "2": {
+                        "then": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter"
+                    },
+                    "3": {
+                        "then": "Geeignet für breite Reifen: Trekkingfahrrad, Auto, Rikscha"
+                    },
+                    "4": {
+                        "then": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen"
+                    },
+                    "5": {
+                        "then": "Geeignet für Geländefahrzeuge: schwerer Geländewagen"
                     },
                     "6": {
                         "then": "Geeignet für Geländefahrzeuge: Traktor, ATV"
@@ -1278,8 +1353,20 @@
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
+                    "3": {
+                        "then": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen"
+                    },
                     "4": {
                         "then": "Der Radweg ist aus Beton"
+                    },
+                    "5": {
+                        "then": "Dieser Radweg besteht aus Kopfsteinpflaster"
+                    },
+                    "6": {
+                        "then": "Dieser Fahrradweg besteht aus unregelmäßigem, unbehauenem Kopfsteinpflaster"
+                    },
+                    "7": {
+                        "then": "Dieser Fahrradweg besteht aus regelmäßigem, behauenem Kopfsteinpflaster"
                     },
                     "8": {
                         "then": "Der Radweg ist aus Holz"
@@ -1297,10 +1384,14 @@
                         "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
-                "render": "Der Radweg ist aus {cycleway:surface}"
+                "render": "Der Radweg ist aus {cycleway:surface}",
+                "question": "Was ist der Belag dieses Radwegs?"
             },
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Fahrradstraße in einer 30km/h Zone."
+                    },
                     "1": {
                         "then": "Dies ist eine Fahrradstraße"
                     },
@@ -1327,18 +1418,35 @@
                     "4": {
                         "then": "Die Höchstgeschwindigkeit ist 90 km/h"
                     }
-                }
+                },
+                "render": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h",
+                "question": "Was ist die Höchstgeschwindigkeit auf dieser Straße?"
             },
             "Surface of the road": {
                 "mappings": {
+                    "0": {
+                        "then": "Dieser Radweg ist nicht befestigt"
+                    },
                     "1": {
                         "then": "Dieser Radweg hat einen festen Belag"
                     },
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
+                    "3": {
+                        "then": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen"
+                    },
                     "4": {
                         "then": "Der Radweg ist aus Beton"
+                    },
+                    "5": {
+                        "then": "Dieser Radweg besteht aus Kopfsteinpflaster"
+                    },
+                    "6": {
+                        "then": "Dieser Fahrradweg besteht aus unregelmäßigem, unbehauenem Kopfsteinpflaster"
+                    },
+                    "7": {
+                        "then": "Dieser Fahrradweg besteht aus regelmäßigem, behauenem Kopfsteinpflaster"
                     },
                     "8": {
                         "then": "Der Radweg ist aus Holz"
@@ -1356,7 +1464,8 @@
                         "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
-                "render": "Der Radweg ist aus {surface}"
+                "render": "Der Radweg ist aus {surface}",
+                "question": "Was ist der Belag dieser Straße?"
             },
             "Surface of the street": {
                 "mappings": {
@@ -1365,6 +1474,18 @@
                     },
                     "1": {
                         "then": "Geeignet für dünne Reifen: Rennrad"
+                    },
+                    "2": {
+                        "then": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter"
+                    },
+                    "3": {
+                        "then": "Geeignet für breite Reifen: Trekkingfahrrad, Auto, Rikscha"
+                    },
+                    "4": {
+                        "then": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen"
+                    },
+                    "5": {
+                        "then": "Geeignet für Geländefahrzeuge: schwerer Geländewagen"
                     },
                     "6": {
                         "then": "Geeignet für spezielle Geländewagen: Traktor, ATV"
@@ -1377,15 +1498,28 @@
             },
             "cyclelan-segregation": {
                 "mappings": {
+                    "0": {
+                        "then": "Der Radweg ist abgegrenzt durch eine gestrichelte Linie"
+                    },
+                    "1": {
+                        "then": "Der Radweg ist abgegrenzt durch eine durchgezogene Linie"
+                    },
+                    "2": {
+                        "then": "Der Radweg ist abgegrenzt durch eine Parkspur"
+                    },
                     "3": {
                         "then": "Dieser Radweg ist getrennt durch einen Bordstein"
                     }
-                }
+                },
+                "question": "Wie ist der Radweg von der Straße abgegrenzt?"
             },
             "cycleway-lane-track-traffic-signs": {
                 "mappings": {
                     "0": {
                         "then": "Vorgeschriebener Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
                     },
                     "2": {
                         "then": "Getrennter Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
@@ -1401,15 +1535,28 @@
             },
             "cycleway-segregation": {
                 "mappings": {
+                    "0": {
+                        "then": "Der Radweg ist abgegrenzt durch eine gestrichelte Linie"
+                    },
+                    "1": {
+                        "then": "Der Radweg ist abgegrenzt durch eine durchgezogene Linie"
+                    },
+                    "2": {
+                        "then": "Der Radweg ist abgegrenzt durch eine Parkspur"
+                    },
                     "3": {
                         "then": "Dieser Radweg ist getrennt durch einen Bordstein"
                     }
-                }
+                },
+                "question": "Wie ist der Radweg von der Straße abgegrenzt?"
             },
             "cycleway-traffic-signs": {
                 "mappings": {
                     "0": {
                         "then": "Vorgeschriebener Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
                     },
                     "2": {
                         "then": "Getrennter Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
@@ -1442,6 +1589,9 @@
             },
             "is lit?": {
                 "mappings": {
+                    "0": {
+                        "then": "Diese Straße ist beleuchtet"
+                    },
                     "1": {
                         "then": "Diese Straße ist nicht beleuchtet"
                     },
@@ -1453,9 +1603,29 @@
                     }
                 },
                 "question": "Ist diese Straße beleuchtet?"
+            },
+            "cycleways_and_roads-cycleway:buffer": {
+                "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
+                "render": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
             }
         },
-        "name": "Radwege und Straßen"
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Radweg"
+                },
+                "2": {
+                    "then": "Fahrradspur"
+                },
+                "3": {
+                    "then": "Radweg neben der Straße"
+                },
+                "4": {
+                    "then": "Fahrradstraße"
+                }
+            },
+            "render": "Radwege"
+        }
     },
     "defibrillator": {
         "name": "Defibrillatoren",
@@ -1495,7 +1665,8 @@
                         "then": "Dies ist ein normaler automatischer Defibrillator"
                     }
                 },
-                "render": "Es gibt keine Informationen über den Gerätetyp"
+                "render": "Es gibt keine Informationen über den Gerätetyp",
+                "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
             },
             "defibrillator-defibrillator:location": {
                 "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)",
@@ -1573,20 +1744,17 @@
         },
         "title": {
             "render": "Defibrillator"
-        },
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
         }
     },
+    "direction": {
+        "description": "Diese Ebene visualisiert Richtungen",
+        "name": "Visualisierung der Richtung"
+    },
     "drinking_water": {
-        "name": "Trinkwasser",
+        "name": "Trinkwasserstelle",
         "presets": {
             "0": {
-                "title": "trinkwasser"
+                "title": "Trinkwasserstelle"
             }
         },
         "tagRenderings": {
@@ -1602,35 +1770,169 @@
                 "question": "Wie einfach ist es, Wasserflaschen zu füllen?"
             },
             "Still in use?": {
-                "question": "Ist diese Trinkwasserstelle noch in Betrieb?",
-                "render": "Der Betriebsstatus ist <i>{operational_status</i>",
                 "mappings": {
+                    "0": {
+                        "then": "Diese Trinkwasserstelle funktioniert"
+                    },
                     "1": {
                         "then": "Diese Trinkwasserstelle ist kaputt"
                     },
                     "2": {
                         "then": "Diese Trinkwasserstelle wurde geschlossen"
                     }
-                }
+                },
+                "question": "Ist diese Trinkwasserstelle noch in Betrieb?",
+                "render": "Der Betriebsstatus ist <i>{operational_status</i>"
             },
             "render-closest-drinking-water": {
-                "render": "<a href='#{_closest_other_drinking_water_id}'>Ein weiterer Trinkwasserbrunnen befindet sich in {_closest_other_drinking_water_distance} Meter</a>"
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Eine weitere Trinkwasserstelle liegt {_closest_other_drinking_water_distance} Meter entfernt</a>"
             }
         },
         "title": {
-            "render": "Trinkwasser"
+            "render": "Trinkwasserstelle"
         }
     },
     "etymology": {
         "description": "Alle Objekte, die eine bekannte Namensherkunft haben",
         "tagRenderings": {
             "simple etymology": {
-                "render": "Benannt nach {name:etymology}"
+                "render": "Benannt nach {name:etymology}",
+                "question": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>",
+                "mappings": {
+                    "0": {
+                        "then": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt"
+                    }
+                }
+            },
+            "wikipedia-etymology": {
+                "question": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
+                "render": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             }
         }
     },
+    "food": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aktuell geöffnet"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Hat vegetarische Speisen"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Bietet vegan Speisen an"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Hat halal Speisen"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Restaurant",
+                "description": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden"
+            },
+            "1": {
+                "title": "Schnellimbiss"
+            },
+            "2": {
+                "title": "Pommesbude"
+            }
+        },
+        "tagRenderings": {
+            "Cuisine": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Pizzeria"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Pommesbude"
+                    },
+                    "2": {
+                        "then": "Bietet vorwiegend Pastagerichte an"
+                    }
+                },
+                "question": "Welches Essen gibt es hier?",
+                "render": "An diesem Ort gibt es hauptsächlich {cuisine}"
+            },
+            "Fastfood vs restaurant": {
+                "question": "Um was für ein Geschäft handelt es sich?"
+            },
+            "Name": {
+                "question": "Wie heißt dieses Restaurant?",
+                "render": "Das Restaurant heißt {name}"
+            },
+            "Takeaway": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Geschäft bietet nur Artikel zur Mitnahme an"
+                    },
+                    "1": {
+                        "then": "Mitnahme möglich"
+                    },
+                    "2": {
+                        "then": "Mitnahme nicht möglich"
+                    }
+                },
+                "question": "Ist an diesem Ort Mitnahme möglich?"
+            },
+            "halal (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier gibt es keine halal Speisen"
+                    },
+                    "1": {
+                        "then": "Hier gibt es wenige halal Speisen"
+                    },
+                    "2": {
+                        "then": "Es gibt halal Speisen"
+                    },
+                    "3": {
+                        "then": "Es gibt ausschließlich halal Speisen"
+                    }
+                },
+                "question": "Gibt es im das Restaurant halal Speisen?"
+            },
+            "friture-take-your-container": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können <b>ihre eigenen Behälter</b> mitbringen, um Ihre Bestellung zu erhalten, was Einwegverpackungsmaterial und damit Abfall spart"
+                    }
+                },
+                "question": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
+            },
+            "Vegetarian (no friture)": {
+                "question": "Gibt es im das Restaurant vegetarische Speisen?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Restaurant <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Schnellrestaurant<i>{name}</i>"
+                }
+            }
+        },
+        "name": "Restaurants und Fast Food"
+    },
     "ghost_bike": {
-        "name": "Geisterrad",
+        "name": "Geisterräder",
         "presets": {
             "0": {
                 "title": "Geisterrad"
@@ -1638,7 +1940,7 @@
         },
         "tagRenderings": {
             "ghost-bike-explanation": {
-                "render": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt wird."
+                "render": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde."
             },
             "ghost_bike-inscription": {
                 "question": "Wie lautet die Inschrift auf diesem Geisterrad?",
@@ -1658,7 +1960,8 @@
                 "render": "<a href='{source}' target='_blank'>Mehr Informationen</a>"
             },
             "ghost_bike-start_date": {
-                "question": "Wann wurde dieses Geisterrad aufgestellt?"
+                "question": "Wann wurde dieses Geisterrad aufgestellt?",
+                "render": "Aufgestellt am {start_date}"
             }
         },
         "title": {
@@ -1682,6 +1985,7 @@
         }
     },
     "map": {
+        "description": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
         "name": "Karten",
         "presets": {
             "0": {
@@ -1722,8 +2026,7 @@
         },
         "title": {
             "render": "Karte"
-        },
-        "description": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist"
+        }
     },
     "nature_reserve": {
         "tagRenderings": {
@@ -1749,10 +2052,71 @@
             },
             "phone": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "Surface area": {
+                "render": "Grundfläche: {_surface:ha}ha"
+            },
+            "Curator": {
+                "question": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist"
+            }
+        }
+    },
+    "observation_tower": {
+        "description": "Türme zur Aussicht auf die umgebende Landschaft",
+        "name": "Aussichtstürme",
+        "presets": {
+            "0": {
+                "title": "Beobachtungsturm"
+            }
+        },
+        "tagRenderings": {
+            "Fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Eintritt kostenlos"
+                    }
+                },
+                "render": "Der Besuch des Turms kostet <b>{charge}</b>",
+                "question": "Was kostet der Zugang zu diesem Turm?"
+            },
+            "Height": {
+                "question": "Wie hoch ist dieser Turm?",
+                "render": "Dieser Turm ist {height} hoch"
+            },
+            "Operator": {
+                "question": "Wer betreibt diesen Turm?",
+                "render": "Betrieben von <b>{operator}</b>"
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Turm hat keinen eigenen Namen"
+                    }
+                },
+                "question": "Wie heißt dieser Turm?",
+                "render": "Der Name dieses Turms lautet <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            },
+            "render": "Beobachtungsturm"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " Meter"
+                    }
+                }
             }
         }
     },
     "picnic_table": {
+        "description": "Die Ebene zeigt Picknicktische an",
         "name": "Picknick-Tische",
         "presets": {
             "0": {
@@ -1775,12 +2139,16 @@
         },
         "title": {
             "render": "Picknick-Tisch"
-        },
-        "description": "Die Ebene zeigt Picknicktische an"
+        }
     },
     "playground": {
         "description": "Spielplätze",
         "name": "Spielplätze",
+        "presets": {
+            "0": {
+                "title": "Spielplatz"
+            }
+        },
         "tagRenderings": {
             "Playground-wheelchair": {
                 "mappings": {
@@ -1831,12 +2199,35 @@
                 },
                 "question": "Ist dieser Spielplatz nachts beleuchtet?"
             },
+            "playground-max_age": {
+                "render": "Zugang nur für Kinder bis maximal {max_age}",
+                "question": "Bis zu welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
+            },
+            "playground-min_age": {
+                "render": "Zugang nur für Kinder ab {min_age} Jahren",
+                "question": "Ab welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
+            },
+            "playground-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Zugänglich von Sonnenaufgang bis Sonnenuntergang"
+                    },
+                    "1": {
+                        "then": "Immer zugänglich"
+                    },
+                    "2": {
+                        "then": "Immer zugänglich"
+                    }
+                },
+                "question": "Wann ist dieser Spielplatz zugänglich?"
+            },
             "playground-operator": {
                 "question": "Wer betreibt diesen Spielplatz?",
                 "render": "Betrieben von {operator}"
             },
             "playground-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
+                "render": "<a href='tel:{phone}'>{phone}</a>",
+                "question": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?"
             },
             "playground-surface": {
                 "mappings": {
@@ -1867,26 +2258,6 @@
                 },
                 "question": "Welche Oberfläche hat dieser Spielplatz?<br/><i>Wenn es mehrere gibt, wähle die am häufigsten vorkommende aus</i>",
                 "render": "Die Oberfläche ist <b>{surface}</b>"
-            },
-            "playground-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Zugänglich von Sonnenaufgang bis Sonnenuntergang"
-                    },
-                    "1": {
-                        "then": "Immer zugänglich"
-                    },
-                    "2": {
-                        "then": "Immer zugänglich"
-                    }
-                },
-                "question": "Wann ist dieser Spielplatz zugänglich?"
-            },
-            "playground-min_age": {
-                "render": "Zugang nur für Kinder ab {min_age} Jahren"
-            },
-            "playground-max_age": {
-                "render": "Zugang nur für Kinder bis maximal {max_age}"
             }
         },
         "title": {
@@ -1896,15 +2267,19 @@
                 }
             },
             "render": "Spielplatz"
-        },
-        "presets": {
-            "0": {
-                "title": "Spielplatz"
-            }
         }
     },
     "public_bookcase": {
         "description": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Innen oder Außen"
+                    }
+                }
+            }
+        },
         "name": "Bücherschränke",
         "presets": {
             "0": {
@@ -2005,18 +2380,339 @@
                 }
             },
             "render": "Bücherschrank"
+        }
+    },
+    "shops": {
+        "presets": {
+            "0": {
+                "description": "Ein neues Geschäft hinzufügen",
+                "title": "Geschäft"
+            }
         },
-        "filter": {
-            "2": {
-                "options": {
+        "tagRenderings": {
+            "shops-phone": {
+                "render": "<a href='tel:{phone}'>{phone}</a>",
+                "question": "Wie ist die Telefonnummer?"
+            },
+            "shops-shop": {
+                "mappings": {
                     "0": {
-                        "question": "Innen oder Außen"
+                        "then": "Lebensmittelladen"
+                    },
+                    "1": {
+                        "then": "Supermarkt"
+                    },
+                    "2": {
+                        "then": "Bekleidungsgeschäft"
+                    },
+                    "3": {
+                        "then": "Friseur"
+                    },
+                    "4": {
+                        "then": "Bäckerei"
+                    },
+                    "5": {
+                        "then": "Autoreparatur (Werkstatt)"
+                    },
+                    "6": {
+                        "then": "Autohändler"
                     }
+                },
+                "question": "Was wird in diesem Geschäft verkauft?",
+                "render": "Dieses Geschäft verkauft {shop}"
+            },
+            "shops-website": {
+                "question": "Wie lautet die Webseite dieses Geschäfts?",
+                "render": "<a href='{website}'>{website}</a>"
+            },
+            "shops-opening_hours": {
+                "question": "Wie sind die Öffnungszeiten dieses Geschäfts?"
+            },
+            "shops-name": {
+                "question": "Wie ist der Name dieses Geschäfts?"
+            },
+            "shops-email": {
+                "question": "Wie ist die Email-Adresse dieses Geschäfts?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
                 }
+            },
+            "render": "Geschäft"
+        },
+        "name": "Geschäft",
+        "description": "Ein Geschäft"
+    },
+    "slow_roads": {
+        "tagRenderings": {
+            "slow_roads-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Oberfläche ist <b>Gras</b>"
+                    },
+                    "1": {
+                        "then": "Die Oberfläche ist <b>Erde</b>"
+                    },
+                    "2": {
+                        "then": "Die Oberfläche ist <b>ohne festen Belag</b>"
+                    },
+                    "3": {
+                        "then": "Die Oberfläche ist <b>Sand</b>"
+                    },
+                    "4": {
+                        "then": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
+                    },
+                    "5": {
+                        "then": "Die Oberfläche ist <b>Asphalt</b>"
+                    },
+                    "6": {
+                        "then": "Die Oberfläche ist <b>Beton</b>"
+                    },
+                    "7": {
+                        "then": "Die Oberfläche ist <b>gepflastert</b>"
+                    }
+                },
+                "render": "Die Oberfläche ist <b>{surface}</b>"
             }
         }
     },
+    "sport_pitch": {
+        "description": "Ein Sportplatz",
+        "name": "Sportplätze",
+        "presets": {
+            "0": {
+                "title": "Tischtennisplatte"
+            },
+            "1": {
+                "title": "Sportplatz"
+            }
+        },
+        "tagRenderings": {
+            "sport-pitch-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Öffentlicher Zugang"
+                    },
+                    "1": {
+                        "then": "Eingeschränkter Zugang (z. B. nur mit Termin, zu bestimmten Zeiten, ...)"
+                    },
+                    "2": {
+                        "then": "Zugang nur für Vereinsmitglieder"
+                    },
+                    "3": {
+                        "then": "Privat - kein öffentlicher Zugang"
+                    }
+                },
+                "question": "Ist dieser Sportplatz öffentlich zugänglich?"
+            },
+            "sport-pitch-reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "Für die Nutzung des Sportplatzes ist eine Voranmeldung erforderlich"
+                    },
+                    "1": {
+                        "then": "Für die Nutzung des Sportplatzes wird eine Voranmeldung empfohlen"
+                    },
+                    "2": {
+                        "then": "Eine Voranmeldung ist möglich, aber nicht notwendig, um diesen Sportplatz zu nutzen"
+                    },
+                    "3": {
+                        "then": "Termine nach Vereinbarung nicht möglich"
+                    }
+                },
+                "question": "Muss man einen Termin vereinbaren, um diesen Sportplatz zu benutzen?"
+            },
+            "sport_pitch-opening_hours": {
+                "mappings": {
+                    "1": {
+                        "then": "Immer zugänglich"
+                    }
+                },
+                "question": "Wann ist dieser Sportplatz zugänglich?"
+            },
+            "sport_pitch-sport": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier wird Basketball gespielt"
+                    },
+                    "1": {
+                        "then": "Hier wird Fußball gespielt"
+                    },
+                    "2": {
+                        "then": "Dies ist eine Tischtennisplatte"
+                    },
+                    "3": {
+                        "then": "Hier wird Tennis gespielt"
+                    },
+                    "4": {
+                        "then": "Hier wird Kopfball gespielt"
+                    },
+                    "5": {
+                        "then": "Hier wird Basketball gespielt"
+                    }
+                },
+                "question": "Welche Sportarten können hier gespielt werden?",
+                "render": "Hier wird {sport} gespielt"
+            },
+            "sport_pitch-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Oberfläche ist <b>Gras</b>"
+                    },
+                    "1": {
+                        "then": "Die Oberfläche ist <b>Sand</b>"
+                    },
+                    "2": {
+                        "then": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
+                    },
+                    "3": {
+                        "then": "Die Oberfläche ist <b>Asphalt</b>"
+                    },
+                    "4": {
+                        "then": "Die Oberfläche ist <b>Beton</b>"
+                    }
+                },
+                "render": "Die Oberfläche ist <b>{surface}</b>",
+                "question": "Was ist die Oberfläche dieses Sportplatzes?"
+            },
+            "sport_pitch-phone": {
+                "question": "Wie ist die Telefonnummer des Betreibers?"
+            },
+            "sport_pitch-email": {
+                "question": "Wie ist die Email-Adresse des Betreibers?"
+            }
+        },
+        "title": {
+            "render": "Sportplatz"
+        }
+    },
+    "surveillance_camera": {
+        "name": "Überwachungskameras",
+        "tagRenderings": {
+            "Camera type: fixed; panning; dome": {
+                "mappings": {
+                    "0": {
+                        "then": "Eine fest montierte (nicht bewegliche) Kamera"
+                    },
+                    "1": {
+                        "then": "Eine Kuppelkamera (drehbar)"
+                    },
+                    "2": {
+                        "then": "Eine bewegliche Kamera"
+                    }
+                },
+                "question": "Um welche Kameratyp handelt se sich?"
+            },
+            "Indoor camera? This isn't clear for 'public'-cameras": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Kamera befindet sich im Innenraum"
+                    },
+                    "1": {
+                        "then": "Diese Kamera befindet sich im Freien"
+                    },
+                    "2": {
+                        "then": "Diese Kamera ist möglicherweise im Freien"
+                    }
+                },
+                "question": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?"
+            },
+            "Level": {
+                "question": "Auf welcher Ebene befindet sich diese Kamera?",
+                "render": "Befindet sich auf Ebene {level}"
+            },
+            "Operator": {
+                "question": "Wer betreibt diese CCTV Kamera?",
+                "render": "Betrieben von {operator}"
+            },
+            "Surveillance:zone": {
+                "mappings": {
+                    "0": {
+                        "then": "Überwacht einen Parkplatz"
+                    },
+                    "1": {
+                        "then": "Überwacht den Verkehr"
+                    },
+                    "2": {
+                        "then": "Überwacht einen Eingang"
+                    },
+                    "3": {
+                        "then": "Überwacht einen Gang"
+                    },
+                    "4": {
+                        "then": "Überwacht eine Haltestelle"
+                    },
+                    "5": {
+                        "then": "Überwacht ein Geschäft"
+                    }
+                },
+                "question": "Was genau wird hier überwacht?",
+                "render": " Überwacht ein/e {surveillance:zone}"
+            },
+            "camera:mount": {
+                "question": "Wie ist diese Kamera montiert?",
+                "render": "Montageart: {mount}",
+                "mappings": {
+                    "0": {
+                        "then": "Diese Kamera ist an einer Wand montiert"
+                    },
+                    "1": {
+                        "then": "Diese Kamera ist an einer Stange montiert"
+                    },
+                    "2": {
+                        "then": "Diese Kamera ist an der Decke montiert"
+                    }
+                }
+            },
+            "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
+                "question": "In welche Himmelsrichtung ist diese Kamera ausgerichtet?"
+            },
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "1": {
+                        "then": "Ein privater Außenbereich wird überwacht (z. B. ein Parkplatz, eine Tankstelle, ein Innenhof, ein Eingang, eine private Einfahrt, ...)"
+                    },
+                    "2": {
+                        "then": "Ein privater Innenbereich wird überwacht, z. B. ein Geschäft, eine private Tiefgarage, ..."
+                    }
+                },
+                "question": "Um was für eine Überwachungskamera handelt es sich"
+            }
+        },
+        "title": {
+            "render": "Überwachungskamera"
+        }
+    },
     "toilet": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Rollstuhlgerecht"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Hat einen Wickeltisch"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Nutzung kostenlos"
+                    }
+                }
+            }
+        },
         "name": "Toiletten",
         "presets": {
             "0": {
@@ -2121,178 +2817,30 @@
                     }
                 },
                 "question": "Gibt es eine Toilette für Rollstuhlfahrer?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "1": {
+                        "then": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
+                    }
+                },
+                "question": "Muss man für diese Toilette sein eigenes Toilettenpapier mitbringen?"
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Toilette verfügt über ein Waschbecken"
+                    },
+                    "1": {
+                        "then": "Diese Toilette verfügt über <b>kein</b> Waschbecken"
+                    }
+                },
+                "question": "Verfügt diese Toilette über ein Waschbecken?"
             }
         },
         "title": {
             "render": "Toilette"
-        },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Rollstuhlgerecht"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Hat einen Wickeltisch"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Nutzung kostenlos"
-                    }
-                }
-            }
         }
-    },
-    "tree_node": {
-        "name": "Baum",
-        "presets": {
-            "0": {
-                "description": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
-                "title": "Laubbaum"
-            },
-            "1": {
-                "description": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
-                "title": "Nadelbaum"
-            },
-            "2": {
-                "title": "Baum",
-                "description": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt."
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
-            "render": "Baum"
-        },
-        "tagRenderings": {
-            "tree-decidouous": {
-                "mappings": {
-                    "1": {
-                        "then": "immergrüner Baum."
-                    }
-                },
-                "question": "Ist dies ein Nadelbaum oder ein Laubbaum?"
-            },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Höhe: {height}&nbsp;m"
-                    }
-                },
-                "render": "Höhe: {height}"
-            },
-            "tree-heritage": {
-                "mappings": {
-                    "3": {
-                        "then": "Nicht als Denkmal registriert"
-                    }
-                },
-                "question": "Ist dieser Baum ein Naturdenkmal?"
-            },
-            "tree-leaf_type": {
-                "mappings": {
-                    "0": {
-                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Laubbaum"
-                    },
-                    "1": {
-                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Nadelbaum"
-                    },
-                    "2": {
-                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Dauerhaft blattlos"
-                    }
-                }
-            },
-            "tree_node-name": {
-                "mappings": {
-                    "0": {
-                        "then": "Der Baum hat keinen Namen."
-                    }
-                },
-                "question": "Hat der Baum einen Namen?",
-                "render": "Name: {name}"
-            }
-        }
-    },
-    "viewpoint": {
-        "description": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
-        "name": "Aussichtspunkt",
-        "presets": {
-            "0": {
-                "title": "Aussichtspunkt"
-            }
-        },
-        "tagRenderings": {
-            "viewpoint-description": {
-                "question": "Möchten Sie eine Beschreibung hinzufügen?"
-            }
-        },
-        "title": {
-            "render": "Aussichtspunkt"
-        }
-    },
-    "visitor_information_centre": {
-        "name": "Besucherinformationszentrum",
-        "title": {
-            "mappings": {
-                "1": {
-                    "then": "{name}"
-                }
-            },
-            "render": "{name}"
-        }
-    },
-    "waste_basket": {
-        "description": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
-        "title": {
-            "render": "Abfalleimer"
-        },
-        "tagRenderings": {
-            "waste-basket-waste-types": {
-                "mappings": {
-                    "0": {
-                        "then": "Ein Abfalleimer für allgemeinen Müll"
-                    },
-                    "1": {
-                        "then": "Ein Abfalleimer für allgemeinen Müll"
-                    },
-                    "2": {
-                        "then": "Ein Abfalleimer für Hundekot"
-                    },
-                    "3": {
-                        "then": "Mülleimer für Zigaretten"
-                    },
-                    "4": {
-                        "then": "Mülleimer für Drogen"
-                    }
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Abfalleimer"
-            }
-        },
-        "name": "Abfalleimer",
-        "iconSize": {
-            "mappings": {
-                "0": {
-                    "then": "Abfalleimer"
-                }
-            }
-        }
-    },
-    "watermill": {
-        "name": "Wassermühle"
     },
     "trail": {
         "name": "Wanderwege",
@@ -2321,396 +2869,203 @@
             "render": "Wanderweg"
         }
     },
-    "surveillance_camera": {
-        "name": "Überwachungskameras",
-        "tagRenderings": {
-            "Camera type: fixed; panning; dome": {
-                "mappings": {
-                    "0": {
-                        "then": "Eine fest montierte (nicht bewegliche) Kamera"
-                    },
-                    "1": {
-                        "then": "Eine Kuppelkamera (drehbar)"
-                    },
-                    "2": {
-                        "then": "Eine bewegliche Kamera"
-                    }
-                },
-                "question": "Um welche Kameratyp handelt se sich?"
-            },
-            "Indoor camera? This isn't clear for 'public'-cameras": {
-                "mappings": {
-                    "0": {
-                        "then": "Diese Kamera befindet sich im Innenraum"
-                    },
-                    "1": {
-                        "then": "Diese Kamera befindet sich im Freien"
-                    },
-                    "2": {
-                        "then": "Diese Kamera ist möglicherweise im Freien"
-                    }
-                }
-            },
-            "Level": {
-                "question": "Auf welcher Ebene befindet sich diese Kamera?",
-                "render": "Befindet sich auf Ebene {level}"
-            },
-            "Operator": {
-                "question": "Wer betreibt diese CCTV Kamera?",
-                "render": "Betrieben von {operator}"
-            },
-            "Surveillance:zone": {
-                "mappings": {
-                    "0": {
-                        "then": "Überwacht einen Parkplatz"
-                    },
-                    "1": {
-                        "then": "Überwacht den Verkehr"
-                    },
-                    "2": {
-                        "then": "Überwacht einen Eingang"
-                    },
-                    "3": {
-                        "then": "Überwacht einen Gang"
-                    },
-                    "4": {
-                        "then": "Überwacht eine Haltestelle"
-                    },
-                    "5": {
-                        "then": "Überwacht ein Geschäft"
-                    }
-                },
-                "question": "Was genau wird hier überwacht?",
-                "render": " Überwacht ein/e {surveillance:zone}"
-            },
-            "camera:mount": {
-                "question": "Wie ist diese Kamera montiert?",
-                "render": "Montageart: {mount}"
-            }
-        },
-        "title": {
-            "render": "Überwachungskamera"
-        }
-    },
-    "sport_pitch": {
-        "description": "Ein Sportplatz",
-        "name": "Sportplätze",
+    "tree_node": {
+        "name": "Baum",
         "presets": {
             "0": {
-                "title": "Tischtennisplatte"
+                "description": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
+                "title": "Laubbaum"
             },
             "1": {
-                "title": "Sportplatz"
+                "description": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
+                "title": "Nadelbaum"
+            },
+            "2": {
+                "description": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt.",
+                "title": "Baum"
             }
         },
         "tagRenderings": {
-            "sport-pitch-access": {
+            "tree-decidouous": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlicher Zugang"
+                        "then": "Laubabwerfend: Der Baum verliert für eine gewisse Zeit des Jahres seine Blätter."
                     },
-                    "2": {
-                        "then": "Zugang nur für Vereinsmitglieder"
-                    },
-                    "3": {
-                        "then": "Privat - kein öffentlicher Zugang"
-                    }
-                },
-                "question": "Ist dieser Sportplatz öffentlich zugänglich?"
-            },
-            "sport-pitch-reservation": {
-                "mappings": {
-                    "3": {
-                        "then": "Termine nach Vereinbarung nicht möglich"
-                    }
-                }
-            },
-            "sport_pitch-opening_hours": {
-                "mappings": {
                     "1": {
-                        "then": "Immer zugänglich"
+                        "then": "immergrüner Baum."
                     }
                 },
-                "question": "Wann ist dieser Sportplatz zugänglich?"
+                "question": "Ist dies ein Nadelbaum oder ein Laubbaum?"
             },
-            "sport_pitch-sport": {
+            "tree-height": {
                 "mappings": {
                     "0": {
-                        "then": "Hier wird Basketball gespielt"
+                        "then": "Höhe: {height}&nbsp;m"
+                    }
+                },
+                "render": "Höhe: {height}"
+            },
+            "tree-heritage": {
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern"
                     },
                     "1": {
-                        "then": "Hier wird Fußball gespielt"
-                    },
-                    "2": {
-                        "then": "Dies ist eine Tischtennisplatte"
+                        "then": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel"
                     },
                     "3": {
-                        "then": "Hier wird Tennis gespielt"
+                        "then": "Nicht als Denkmal registriert"
+                    }
+                },
+                "question": "Ist dieser Baum ein Naturdenkmal?"
+            },
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Laubbaum"
                     },
-                    "4": {
-                        "then": "Hier wird Kopfball gespielt"
+                    "1": {
+                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Nadelbaum"
+                    },
+                    "2": {
+                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Dauerhaft blattlos"
+                    }
+                },
+                "question": "Ist dies ein Laub- oder Nadelbaum?"
+            },
+            "tree_node-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Baum hat keinen Namen."
+                    }
+                },
+                "question": "Hat der Baum einen Namen?",
+                "render": "Name: {name}"
+            },
+            "tree_node-wikidata": {
+                "question": "Was ist das passende Wikidata Element zu diesem Baum?"
+            },
+            "tree_node-ref:OnroerendErfgoed": {
+                "question": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?"
+            },
+            "tree-denotation": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Baum ist aufgrund seiner Größe oder seiner markanten Lage bedeutsam. Er ist nützlich zur Orientierung."
+                    },
+                    "1": {
+                        "then": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört."
+                    },
+                    "2": {
+                        "then": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage."
+                    },
+                    "3": {
+                        "then": "Der Baum steht in einem Park oder ähnlichem (Friedhof, Schulgelände, ...)."
                     },
                     "5": {
-                        "then": "Hier wird Basketball gespielt"
-                    }
-                },
-                "question": "Welche Sportarten können hier gespielt werden?",
-                "render": "Hier wird {sport} gespielt"
-            },
-            "sport_pitch-surface": {
-                "mappings": {
-                    "0": {
-                        "then": "Die Oberfläche ist <b>Gras</b>"
-                    },
-                    "1": {
-                        "then": "Die Oberfläche ist <b>Sand</b>"
-                    },
-                    "2": {
-                        "then": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
-                    },
-                    "3": {
-                        "then": "Die Oberfläche ist <b>Asphalt</b>"
-                    },
-                    "4": {
-                        "then": "Die Oberfläche ist <b>Beton</b>"
-                    }
-                },
-                "render": "Die Oberfläche ist <b>{surface}</b>"
-            }
-        },
-        "title": {
-            "render": "Sportplatz"
-        }
-    },
-    "slow_roads": {
-        "tagRenderings": {
-            "slow_roads-surface": {
-                "mappings": {
-                    "0": {
-                        "then": "Die Oberfläche ist <b>Gras</b>"
-                    },
-                    "1": {
-                        "then": "Die Oberfläche ist <b>Erde</b>"
-                    },
-                    "2": {
-                        "then": "Die Oberfläche ist <b>ohne festen Belag</b>"
-                    },
-                    "3": {
-                        "then": "Die Oberfläche ist <b>Sand</b>"
-                    },
-                    "4": {
-                        "then": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
-                    },
-                    "5": {
-                        "then": "Die Oberfläche ist <b>Asphalt</b>"
-                    },
-                    "6": {
-                        "then": "Die Oberfläche ist <b>Beton</b>"
+                        "then": "Dieser Baum steht entlang einer Straße."
                     },
                     "7": {
-                        "then": "Die Oberfläche ist <b>gepflastert</b>"
+                        "then": "Dieser Baum steht außerhalb eines städtischen Gebiets."
                     }
                 },
-                "render": "Die Oberfläche ist <b>{surface}</b>"
+                "question": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft."
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Baum"
         }
     },
-    "shops": {
+    "viewpoint": {
+        "description": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
+        "name": "Aussichtspunkt",
         "presets": {
             "0": {
-                "description": "Ein neues Geschäft hinzufügen"
+                "title": "Aussichtspunkt"
             }
         },
         "tagRenderings": {
-            "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
+            "viewpoint-description": {
+                "question": "Möchten Sie eine Beschreibung hinzufügen?"
+            }
+        },
+        "title": {
+            "render": "Aussichtspunkt"
+        }
+    },
+    "visitor_information_centre": {
+        "name": "Besucherinformationszentrum",
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
             },
-            "shops-shop": {
+            "render": "{name}"
+        },
+        "description": "Ein Besucherzentrum bietet Informationen über eine bestimmte Attraktion oder Sehenswürdigkeit, an der es sich befindet."
+    },
+    "waste_basket": {
+        "description": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Abfalleimer"
+                }
+            }
+        },
+        "name": "Abfalleimer",
+        "presets": {
+            "0": {
+                "title": "Abfalleimer"
+            }
+        },
+        "tagRenderings": {
+            "waste-basket-waste-types": {
                 "mappings": {
                     "0": {
-                        "then": "Lebensmittelladen"
+                        "then": "Ein Abfalleimer für allgemeinen Müll"
                     },
                     "1": {
-                        "then": "Supermarkt"
+                        "then": "Ein Abfalleimer für allgemeinen Müll"
                     },
                     "2": {
-                        "then": "Bekleidungsgeschäft"
+                        "then": "Ein Abfalleimer für Hundekot"
                     },
                     "3": {
-                        "then": "Friseur"
+                        "then": "Mülleimer für Zigaretten"
                     },
                     "4": {
-                        "then": "Bäckerei"
-                    },
-                    "5": {
-                        "then": "Autoreparatur (Werkstatt)"
-                    },
-                    "6": {
-                        "then": "Autohändler"
+                        "then": "Mülleimer für Drogen"
                     }
                 },
-                "question": "Was wird in diesem Geschäft verkauft?",
-                "render": "Dieses Geschäft verkauft {shop}"
+                "question": "Um was für einen Abfalleimer handelt es sich?"
             },
-            "shops-website": {
-                "question": "Wie lautet die Webseite dieses Geschäfts?",
-                "render": "<a href='{website}'>{website}</a>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
-                "1": {
-                    "then": "{shop}"
-                }
-            },
-            "render": "Geschäft"
-        }
-    },
-    "observation_tower": {
-        "description": "Türme mit Panoramablick",
-        "name": "Beobachtungstürme",
-        "presets": {
-            "0": {
-                "title": "Beobachtungsturm"
-            }
-        },
-        "tagRenderings": {
-            "Fee": {
+            "dispensing_dog_bags": {
                 "mappings": {
                     "0": {
-                        "then": "Eintritt kostenlos"
-                    }
-                },
-                "render": "Der Besuch des Turms kostet <b>{charge}</b>"
-            },
-            "Height": {
-                "question": "Wie hoch ist dieser Turm?",
-                "render": "Dieser Turm ist {height} hoch"
-            },
-            "Operator": {
-                "question": "Wer betreibt diesen Turm?",
-                "render": "Betrieben von <b>{operator}</b>"
-            },
-            "name": {
-                "mappings": {
-                    "0": {
-                        "then": "Dieser Turm hat keinen eigenen Namen"
-                    }
-                },
-                "question": "Wie heißt dieser Turm?",
-                "render": "Der Name dieses Turms lautet <b>{name}</b>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<b>{name}</b>"
-                }
-            },
-            "render": "Beobachtungsturm"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " Meter"
-                    }
-                }
-            }
-        }
-    },
-    "food": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aktuell geöffnet"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Bietet vegan Speisen an"
-                    }
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Restaurant"
-            },
-            "1": {
-                "title": "Schnellimbiss"
-            },
-            "2": {
-                "title": "Pommesbude"
-            }
-        },
-        "tagRenderings": {
-            "Cuisine": {
-                "mappings": {
-                    "2": {
-                        "then": "Bietet vorwiegend Pastagerichte an"
-                    }
-                },
-                "question": "Welches Essen gibt es hier?",
-                "render": "An diesem Ort gibt es hauptsächlich {cuisine}"
-            },
-            "Fastfood vs restaurant": {
-                "question": "Um was für ein Geschäft handelt es sich?"
-            },
-            "Name": {
-                "question": "Wie heißt dieses Restaurant?",
-                "render": "Das Restaurant heißt {name}"
-            },
-            "Takeaway": {
-                "mappings": {
-                    "0": {
-                        "then": "Dieses Geschäft bietet nur Artikel zur Mitnahme an"
+                        "then": "Dieser Abfalleimer verfügt über einen Spender für (Hunde-)Kotbeutel"
                     },
                     "1": {
-                        "then": "Mitnahme möglich"
+                        "then": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     },
                     "2": {
-                        "then": "Mitnahme nicht möglich"
+                        "then": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     }
                 },
-                "question": "Ist an diesem Ort Mitnahme möglich?"
-            },
-            "halal (no friture)": {
-                "mappings": {
-                    "0": {
-                        "then": "Hier gibt es keine halal Speisen"
-                    },
-                    "1": {
-                        "then": "Hier gibt es wenige halal Speisen"
-                    },
-                    "2": {
-                        "then": "Es gibt halal Speisen"
-                    },
-                    "3": {
-                        "then": "Es gibt ausschließlich halal Speisen"
-                    }
-                }
+                "question": "Verfügt dieser Abfalleimer über einen Spender für (Hunde-)Kotbeutel?"
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "Restaurant <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Schnellrestaurant<i>{name}</i>"
-                }
-            }
+            "render": "Abfalleimer"
         }
     },
-    "direction": {
-        "description": "Diese Ebene visualisiert Richtungen",
-        "name": "Visualisierung der Richtung"
+    "watermill": {
+        "name": "Wassermühle"
     }
 }

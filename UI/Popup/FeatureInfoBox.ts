@@ -26,7 +26,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     ) {
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig),
-            undefined);
+            tags.data.id);
 
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
@@ -178,7 +178,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         allRenderings.push(editors)
 
         return new Combine(allRenderings).SetClass("block")
-
     }
 
     /**

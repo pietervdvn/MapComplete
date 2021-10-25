@@ -334,6 +334,18 @@
                         },
                         "question": "Wie heißt diese Kletterroute?",
                         "render": "<strong>{name}</strong>"
+                    },
+                    "Bolts": {
+                        "mappings": {
+                            "0": {
+                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                            },
+                            "1": {
+                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                            }
+                        },
+                        "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
+                        "render": "Diese Kletterroute hat {climbing:bolts} Haken"
                     }
                 },
                 "title": {
@@ -625,17 +637,29 @@
         "title": "Fahrradstraßen"
     },
     "cyclofix": {
-        "description": "Das Ziel dieser Karte ist es, den Radfahrern eine einfach zu benutzende Lösung zu präsentieren, um die geeignete Infrastruktur für ihre Bedürfnisse zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>Alle Änderungen, die Sie vornehmen, werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei wiederverwendet werden.<br><br>Weitere Informationen über das Projekt Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - eine offene Karte für Radfahrer"
+        "description": "Mit dieser Karte soll Radfahrern eine einfache Lösung bereitgestellt werden, um die passende Farradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in der Datenbank von OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "title": "Cyclofix - eine freie Karte für Radfahrer"
     },
     "drinking_water": {
-        "description": "Auf dieser Karte sind öffentlich zugängliche Trinkwasserstellen eingezeichnet und können leicht hinzugefügt werden",
-        "title": "Trinkwasser"
+        "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
+        "title": "Trinkwasserstelle"
     },
     "etymology": {
-        "description": "Auf dieser Karte können Sie sehen, nach was ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. Die Informationen stammen aus Wikipedia.",
+        "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. In dem Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Zoomen Sie genug hinein und <i>alle</i> Straßen werden angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
         "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
-        "title": "Open Etymology Map"
+        "title": "Open Etymology Map",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Straßen ohne Informationen zur Namensherkunft"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
+                }
+            }
+        }
     },
     "facadegardens": {
         "layers": {
@@ -736,8 +760,8 @@
         }
     },
     "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap kennt. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
-        "title": "Geisterrad"
+        "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
+        "title": "Geisterräder"
     },
     "hackerspaces": {
         "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
@@ -826,89 +850,6 @@
         },
         "shortDescription": "Eine Karte von Hackerspaces",
         "title": "Hackerspaces"
-    },
-    "personal": {
-        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
-        "title": "Persönliches Thema"
-    },
-    "toilets": {
-        "description": "Eine Karte der öffentlichen Toiletten",
-        "title": "Offene Toilette Karte"
-    },
-    "waste_basket": {
-        "title": "Abfalleimer",
-        "shortDescription": "Eine Karte mit Abfalleimern",
-        "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen"
-    },
-    "uk_addresses": {
-        "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
-        "layers": {
-            "1": {
-                "description": "Adressen",
-                "name": "Bekannte Adressen in OSM",
-                "tagRenderings": {
-                    "uk_addresses_explanation_osm": {
-                        "render": "Diese Adresse ist in OpenStreetMap gespeichert"
-                    },
-                    "uk_addresses_housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieses Gebäude hat keine Hausnummer"
-                            }
-                        },
-                        "question": "Wie lautet die Nummer dieses Hauses?",
-                        "render": "Die Hausnummer ist <b>{addr:housenumber}</b>"
-                    },
-                    "uk_addresses_street": {
-                        "question": "In welcher Straße befindet sich diese Adresse?",
-                        "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
-                    }
-                },
-                "title": {
-                    "render": "Bekannte Adresse"
-                }
-            }
-        },
-        "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
-        "title": "Adressen in Großbritannien"
-    },
-    "trees": {
-        "description": "Kartieren Sie alle Bäume!",
-        "shortDescription": "Kartieren Sie alle Bäume",
-        "title": "Bäume"
-    },
-    "surveillance": {
-        "description": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
-        "shortDescription": "Überwachungskameras und andere Mittel zur Überwachung",
-        "title": "Überwachung unter Überwachung"
-    },
-    "sport_pitches": {
-        "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
-        "shortDescription": "Eine Karte mit Sportplätzen",
-        "title": "Sportplätze"
-    },
-    "shops": {
-        "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
-        "title": "Freie Geschäftskarte"
-    },
-    "postboxes": {
-        "layers": {
-            "1": {
-                "description": "Eine Ebene mit Postämtern.",
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "durchgehend geöffnet (auch an Feiertagen)"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "openwindpowermap": {
-        "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen."
     },
     "hailhydrant": {
         "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
@@ -1019,6 +960,9 @@
                     "station-name": {
                         "question": "Wie lautet der Name dieser Feuerwache?"
                     }
+                },
+                "title": {
+                    "render": "Feuerwache"
                 }
             },
             "3": {
@@ -1029,5 +973,185 @@
                 }
             }
         }
+    },
+    "openwindpowermap": {
+        "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
+        "title": "OpenWindPowerMap",
+        "layers": {
+            "0": {
+                "name": "Windrad",
+                "presets": {
+                    "0": {
+                        "title": "Windrad"
+                    }
+                },
+                "title": {
+                    "render": "Windrad"
+                },
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " Megawatt"
+                            },
+                            "1": {
+                                "human": " Kilowatt"
+                            },
+                            "2": {
+                                "human": " Watt"
+                            },
+                            "3": {
+                                "human": " Gigawatt"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " Meter"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "personal": {
+        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
+        "title": "Persönliches Thema"
+    },
+    "postboxes": {
+        "layers": {
+            "0": {
+                "description": "Die Ebene zeigt Briefkästen.",
+                "name": "Brieflästen",
+                "presets": {
+                    "0": {
+                        "title": "Briefkasten"
+                    }
+                },
+                "title": {
+                    "render": "Briefkasten"
+                }
+            },
+            "1": {
+                "description": "Eine Ebene mit Postämtern.",
+                "tagRenderings": {
+                    "OH": {
+                        "mappings": {
+                            "0": {
+                                "then": "durchgehend geöffnet (auch an Feiertagen)"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "render": "Poststelle"
+                },
+                "presets": {
+                    "0": {
+                        "title": "Poststelle"
+                    }
+                },
+                "name": "Poststellen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Aktuell geöffnet"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Karte mit Briefkästen und Poststellen",
+        "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt"
+    },
+    "shops": {
+        "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
+        "title": "Freie Geschäftskarte"
+    },
+    "sport_pitches": {
+        "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
+        "shortDescription": "Eine Karte mit Sportplätzen",
+        "title": "Sportplätze"
+    },
+    "surveillance": {
+        "description": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
+        "shortDescription": "Überwachungskameras und andere Mittel zur Überwachung",
+        "title": "Überwachung unter Überwachung"
+    },
+    "toilets": {
+        "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
+        "title": "Freie Toilettenkarte"
+    },
+    "trees": {
+        "description": "Kartieren Sie alle Bäume!",
+        "shortDescription": "Kartieren Sie alle Bäume",
+        "title": "Bäume"
+    },
+    "uk_addresses": {
+        "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
+        "layers": {
+            "1": {
+                "description": "Adressen",
+                "name": "Bekannte Adressen in OSM",
+                "tagRenderings": {
+                    "uk_addresses_explanation_osm": {
+                        "render": "Diese Adresse ist in OpenStreetMap gespeichert"
+                    },
+                    "uk_addresses_housenumber": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dieses Gebäude hat keine Hausnummer"
+                            }
+                        },
+                        "question": "Wie lautet die Nummer dieses Hauses?",
+                        "render": "Die Hausnummer ist <b>{addr:housenumber}</b>"
+                    },
+                    "uk_addresses_street": {
+                        "question": "In welcher Straße befindet sich diese Adresse?",
+                        "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
+                    }
+                },
+                "title": {
+                    "render": "Bekannte Adresse"
+                }
+            }
+        },
+        "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
+        "title": "Adressen in Großbritannien",
+        "tileLayerSources": {
+            "0": {
+                "name": "Grenzverläufe gemäß osmuk.org"
+            }
+        }
+    },
+    "waste_basket": {
+        "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
+        "shortDescription": "Eine Karte mit Abfalleimern",
+        "title": "Abfalleimer"
+    },
+    "playgrounds": {
+        "shortDescription": "Eine Karte mit Spielplätzen",
+        "title": "Spielpläzte"
+    },
+    "parkings": {
+        "description": "Diese Karte zeigt Parkplätze",
+        "shortDescription": "Diese Karte zeigt Parkplätze",
+        "title": "Parken"
+    },
+    "observation_towers": {
+        "description": "Öffentlich zugänglicher Aussichtsturm",
+        "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
+        "title": "Aussichtstürme"
+    },
+    "natuurpunt": {
+        "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
+        "title": "Naturschutzgebiete"
+    },
+    "maps": {
+        "title": "Eine Karte der Karten"
     }
 }

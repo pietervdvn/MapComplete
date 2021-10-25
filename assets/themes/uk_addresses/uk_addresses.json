@@ -112,35 +112,13 @@
             }
           ]
         }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
-            "mappings": [
-              {
-                "if": "_embedding_object:id~*",
-                "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-              },
-              {
-                "if": "_imported=yes",
-                "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
-        }
       ]
     },
     {
       "id": "addresses",
       "name": {
-        "en": "Known addresses in OSM"
+        "en": "Known addresses in OSM",
+        "de": "Bekannte Adressen in OSM"
       },
       "minzoom": 18,
       "source": {
@@ -160,28 +138,33 @@
       ],
       "title": {
         "render": {
-          "en": "Known address"
+          "en": "Known address",
+          "de": "Bekannte Adresse"
         }
       },
       "description": {
         "en": "Addresses",
-        "nl": "Adressen"
+        "nl": "Adressen",
+        "de": "Adressen"
       },
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation_osm",
           "render": {
-            "en": "This address is saved in OpenStreetMap"
+            "en": "This address is saved in OpenStreetMap",
+            "de": "Diese Adresse ist in OpenStreetMap gespeichert"
           }
         },
         {
           "id": "uk_addresses_housenumber",
           "render": {
             "en": "The housenumber is <b>{addr:housenumber}</b>",
-            "nl": "Het huisnummer is <b>{addr:housenumber}</b>"
+            "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
+            "de": "Die Hausnummer ist <b>{addr:housenumber}</b>"
           },
           "question": {
-            "en": "What is the number of this house?"
+            "en": "What is the number of this house?",
+            "de": "Wie lautet die Nummer dieses Hauses?"
           },
           "freeform": {
             "key": "addr:housenumber",
@@ -198,7 +181,8 @@
               },
               "then": {
                 "en": "This building has no house number",
-                "nl": "Dit gebouw heeft geen huisnummer"
+                "nl": "Dit gebouw heeft geen huisnummer",
+                "de": "Dieses Gebäude hat keine Hausnummer"
               }
             }
           ]
@@ -206,10 +190,12 @@
         {
           "id": "uk_addresses_street",
           "render": {
-            "en": "This address is in street <b>{addr:street}</b>"
+            "en": "This address is in street <b>{addr:street}</b>",
+            "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
           },
           "question": {
-            "en": "What street is this address located in?"
+            "en": "What street is this address located in?",
+            "de": "In welcher Straße befindet sich diese Adresse?"
           },
           "freeform": {
             "key": "addr:street"
@@ -281,60 +267,7 @@
             "then": "#ff0"
           }
         ]
-      },
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/uk_addresses/housenumber_ok.svg",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
-                  ]
-                },
-                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
-        },
-        {
-          "color": {
-            "render": "#00f",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
-                  ]
-                },
-                "then": "#ff0"
-              }
-            ]
-          },
-          "width": {
-            "render": "8"
-          }
-        }
-      ]
+      }
     },
     {
       "id": "named_streets",
@@ -352,22 +285,7 @@
       },
       "width": {
         "render": "0"
-      },
-      "mapRendering": [
-        {
-          "location": [
-            "point"
-          ]
-        },
-        {
-          "color": {
-            "render": "#ccc"
-          },
-          "width": {
-            "render": "0"
-          }
-        }
-      ]
+      }
     }
   ]
 }

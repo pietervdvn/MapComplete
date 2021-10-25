@@ -5,7 +5,7 @@
         "nl": "Drinkbaar water",
         "fr": "Eau potable",
         "gl": "Auga potábel",
-        "de": "Trinkwasser",
+        "de": "Trinkwasserstelle",
         "it": "Acqua potabile",
         "ru": "Питьевая вода",
         "id": "Air minum"
@@ -16,7 +16,7 @@
             "nl": "Drinkbaar water",
             "fr": "Eau potable",
             "gl": "Auga potábel",
-            "de": "Trinkwasser",
+            "de": "Trinkwasserstelle",
             "it": "Acqua potabile",
             "ru": "Питьевая вода",
             "id": "Air minum"
@@ -33,7 +33,8 @@
                     "operational_status=closed"
                 ]
             },
-            "then": "close:#c33"
+            "then": "close:#c33",
+            "badge": true
         }
     ],
     "iconSize": "40,40,bottom",
@@ -107,7 +108,8 @@
                         "en": "This drinking water is broken",
                         "nl": "Deze drinkwaterfontein is kapot",
                         "it": "La fontanella è guasta",
-                        "fr": "Cette fontaine est cassée"
+                        "fr": "Cette fontaine est cassée",
+                        "de": "Diese Trinkwasserstelle ist kaputt"
                     }
                 },
                 {
@@ -116,7 +118,8 @@
                         "en": "This drinking water is closed",
                         "nl": "Deze drinkwaterfontein is afgesloten",
                         "it": "La fontanella è chiusa",
-                        "fr": "Cette fontaine est fermée"
+                        "fr": "Cette fontaine est fermée",
+                        "de": "Diese Trinkwasserstelle wurde geschlossen"
                     }
                 }
             ],

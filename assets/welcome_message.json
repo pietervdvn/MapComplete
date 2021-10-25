@@ -7,13 +7,13 @@
   },
   {
     "start_date": "2022-04-11",
-    "end_date": "2022-04-17",
+    "end_date": "2022-04-18",
     "message": "The 15th of april is <b><a href=https://en.wikipedia.org/wiki/World_Art_Day' target='_blank'>World Art Day</a></b> - the ideal moment to go out, enjoy some artwork and add missing artwork to the map. And of course, you can snap some pictures",
     "featured_theme": "artwork"
   },
   {
     "start_date": "2022-03-24",
-    "end_date": "2022-01-30",
+    "end_date": "2022-03-31",
     "message": "The 22nd of March is <b><a href='https://www.un.org/en/observances/water-day' target='_blank'>World Water Day</a></b>. Time to go out and find all the public drinking water spots!",
     "featured_theme": "drinking_water"
   },
@@ -40,13 +40,13 @@
   },
   {
     "start_date": "2021-10-25",
-    "end_date": "2021-10-31",
+    "end_date": "2021-11-01",
     "message": "Did you know you could link OpenStreetMap with Wikidata? With <i>name:etymology:wikidata</i>, it is even possible to link to whom or what a feature is <i>named after</i>. Quite some volunteers have done this - because it is interesting or for the <a href='https://equalstreetnames.org/' target='_blank'>Equal Street Names-project</a>. For this, a new theme has been created which shows the Wikipedia page and Wikimedia-images of this tag and which makes it easy to link them both with the search box. Give it a try!",
     "featured_theme": "etymology"
   },
   {
     "start_date": "2021-10-17",
-    "end_date": "2021-10-24",
+    "end_date": "2021-10-25",
     "message": "<p>Hi all!</p><p>Thanks for using MapComplete. It has been quite a ride since it's inception, a bit over a year ago. MapComplete has grown significantly recently, which you can read more about on <a href='https://www.openstreetmap.org/user/Pieter%20Vander%20Vennet/diary/397796' target='_blank'>in my diary entry</a>.<p>Furthermore, <a target='_blank' href='https://www.openstreetmap.org/user/Nicolelaine'>NicoleLaine</a> made a really cool new theme about postboxes, so make sure to check it out!</p>",
     "featured_theme": "postboxes"
   }

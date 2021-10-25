@@ -39,7 +39,8 @@
                     "en": "./assets/layers/defibrillator/aed_checked.svg",
                     "ru": "./assets/layers/defibrillator/aed_checked.svg",
                     "it": "./assets/layers/defibrillator/aed_checked.svg",
-                    "fr": "./assets/layers/defibrillator/aed_checked.svg"
+                    "fr": "./assets/layers/defibrillator/aed_checked.svg",
+                    "de": "./assets/layers/defibrillator/aed_checked.svg"
                 }
             }
         ]
@@ -189,7 +190,8 @@
                         "en": "Not accessible, possibly only for professional use",
                         "nl": "Niet toegankelijk, mogelijk enkel voor professionals",
                         "fr": "Pas accessible, peut-être uniquement à usage professionnel",
-                        "it": "Non accessibile, potrebbe essere solo per uso professionale"
+                        "it": "Non accessibile, potrebbe essere solo per uso professionale",
+                        "de": "Nicht zugänglich, möglicherweise nur für betriebliche Nutzung"
                     }
                 }
             ],
@@ -235,7 +237,8 @@
                         "nl": "Dit is een gewone automatische defibrillator",
                         "fr": "C'est un défibrillateur automatique manuel",
                         "it": "È un normale defibrillatore automatico",
-                        "ru": "Это обычный автоматический дефибриллятор"
+                        "ru": "Это обычный автоматический дефибриллятор",
+                        "de": "Dies ist ein normaler automatischer Defibrillator"
                     }
                 }
             ],

@@ -40,6 +40,10 @@ export default class LayerConfig extends WithContextLoader {
     public readonly deletion: DeleteConfig | null;
     public readonly allowMove: MoveConfig | null
     public readonly allowSplit: boolean
+    /**
+     * In seconds
+     */
+    public readonly maxAgeOfCache: number
 
     presets: PresetConfig[];
 
@@ -59,7 +63,9 @@ export default class LayerConfig extends WithContextLoader {
             // @ts-ignore
             legacy = TagUtils.Tag(json["overpassTags"], context + ".overpasstags");
         }
+
         if (json.source !== undefined) {
+            this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
             if (legacy !== undefined) {
                 throw (
                     context +
@@ -102,7 +108,6 @@ export default class LayerConfig extends WithContextLoader {
         }
 
 
-        this.id = json.id;
         this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, context + ".name");
         this.units = (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))

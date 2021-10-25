@@ -2,7 +2,8 @@
     "id": "food",
     "name": {
         "nl": "Eetgelegenheden",
-        "en": "Restaurants and fast food"
+        "en": "Restaurants and fast food",
+        "de": "Restaurants und Fast Food"
     },
     "source": {
         "osmTags": {
@@ -35,7 +36,8 @@
     "iconOverlays": [
         {
             "if": "opening_hours~*",
-            "then": "isOpen"
+            "then": "isOpen",
+            "badge": true
         },
         {
             "if": {
@@ -46,7 +48,8 @@
             },
             "then": {
                 "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
-            }
+            },
+            "badge": true
         }
     ],
     "label": {
@@ -62,7 +65,8 @@
             "title": {
                 "en": "restaurant",
                 "nl": "restaurant",
-                "ru": "ресторан"
+                "ru": "ресторан",
+                "de": "Restaurant"
             },
             "tags": [
                 "amenity=restaurant"
@@ -79,7 +83,8 @@
             "title": {
                 "en": "fastfood",
                 "nl": "fastfood-zaak",
-                "ru": "быстрое питание"
+                "ru": "быстрое питание",
+                "de": "Schnellimbiss"
             },
             "tags": [
                 "amenity=fast_food"
@@ -95,7 +100,8 @@
         {
             "title": {
                 "en": "fries shop",
-                "nl": "frituur"
+                "nl": "frituur",
+                "de": "Pommesbude"
             },
             "tags": [
                 "amenity=fast_food",
@@ -123,7 +129,8 @@
                 },
                 "then": {
                     "nl": "Restaurant <i>{name}</i>",
-                    "en": "Restaurant <i>{name}</i>"
+                    "en": "Restaurant <i>{name}</i>",
+                    "de": "Restaurant <i>{name}</i>"
                 }
             },
             {
@@ -135,7 +142,8 @@
                 },
                 "then": {
                     "nl": "Fastfood-zaak <i>{name}</i>",
-                    "en": "Fastfood <i>{name}</i>"
+                    "en": "Fastfood <i>{name}</i>",
+                    "de": "Schnellrestaurant<i>{name}</i>"
                 }
             }
         ]
@@ -145,11 +153,13 @@
         {
             "question": {
                 "nl": "Wat is de naam van deze eetgelegenheid?",
-                "en": "What is the name of this restaurant?"
+                "en": "What is the name of this restaurant?",
+                "de": "Wie heißt dieses Restaurant?"
             },
             "render": {
                 "nl": "De naam van deze eetgelegeheid is {name}",
-                "en": "The name of this restaurant is {name}"
+                "en": "The name of this restaurant is {name}",
+                "de": "Das Restaurant heißt {name}"
             },
             "freeform": {
                 "key": "name"
@@ -159,7 +169,8 @@
         {
             "question": {
                 "en": "What type of business is this?",
-                "nl": "Wat voor soort zaak is dit?"
+                "nl": "Wat voor soort zaak is dit?",
+                "de": "Um was für ein Geschäft handelt es sich?"
             },
             "mappings": [
                 {
@@ -186,11 +197,13 @@
         {
             "question": {
                 "nl": "Welk soort gerechten worden hier geserveerd?",
-                "en": "Which food is served here?"
+                "en": "Which food is served here?",
+                "de": "Welches Essen gibt es hier?"
             },
             "render": {
                 "nl": "Deze plaats serveert vooral {cuisine}",
-                "en": "This place mostly serves {cuisine}"
+                "en": "This place mostly serves {cuisine}",
+                "de": "An diesem Ort gibt es hauptsächlich {cuisine}"
             },
             "freeform": {
                 "key": "cuisine",
@@ -217,7 +230,8 @@
                     "if": "cuisine=pasta",
                     "then": {
                         "en": "Mainly serves pasta",
-                        "nl": "Dit is een pastazaak"
+                        "nl": "Dit is een pastazaak",
+                        "de": "Bietet vorwiegend Pastagerichte an"
                     }
                 },
                 {
@@ -298,28 +312,32 @@
         {
             "question": {
                 "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
-                "en": "Does this place offer takea-way?"
+                "en": "Does this place offer takea-way?",
+                "de": "Ist an diesem Ort Mitnahme möglich?"
             },
             "mappings": [
                 {
                     "if": "takeaway=only",
                     "then": {
                         "en": "This is a take-away only business",
-                        "nl": "Hier is enkel afhaal mogelijk"
+                        "nl": "Hier is enkel afhaal mogelijk",
+                        "de": "Dieses Geschäft bietet nur Artikel zur Mitnahme an"
                     }
                 },
                 {
                     "if": "takeaway=yes",
                     "then": {
                         "en": "Take-away is possible here",
-                        "nl": "Eten kan hier afgehaald worden"
+                        "nl": "Eten kan hier afgehaald worden",
+                        "de": "Mitnahme möglich"
                     }
                 },
                 {
                     "if": "takeaway=no",
                     "then": {
                         "en": "Take-away is not possible here",
-                        "nl": "Hier is geen afhaalmogelijkheid"
+                        "nl": "Hier is geen afhaalmogelijkheid",
+                        "de": "Mitnahme nicht möglich"
                     }
                 }
             ],
@@ -402,28 +420,32 @@
                     "if": "diet:halal=no",
                     "then": {
                         "en": "There are no halal options available",
-                        "nl": "Er zijn geen halal opties aanwezig"
+                        "nl": "Er zijn geen halal opties aanwezig",
+                        "de": "Hier gibt es keine halal Speisen"
                     }
                 },
                 {
                     "if": "diet:halal=limited",
                     "then": {
                         "en": "There is a small halal menu",
-                        "nl": "Er zijn een beperkt aantal halal opties"
+                        "nl": "Er zijn een beperkt aantal halal opties",
+                        "de": "Hier gibt es wenige halal Speisen"
                     }
                 },
                 {
                     "if": "diet:halal=yes",
                     "then": {
                         "nl": "Halal menu verkrijgbaar",
-                        "en": "There is a halal menu"
+                        "en": "There is a halal menu",
+                        "de": "Es gibt halal Speisen"
                     }
                 },
                 {
                     "if": "diet:halal=only",
                     "then": {
                         "nl": "Enkel halal opties zijn beschikbaar",
-                        "en": "Only halal options are available"
+                        "en": "Only halal options are available",
+                        "de": "Es gibt ausschließlich halal Speisen"
                     }
                 }
             ],
@@ -565,7 +587,8 @@
                 {
                     "question": {
                         "en": "Opened now",
-                        "nl": "Nu geopened"
+                        "nl": "Nu geopened",
+                        "de": "Aktuell geöffnet"
                     },
                     "osmTags": "_isOpen=yes"
                 }
@@ -596,7 +619,8 @@
                 {
                     "question": {
                         "en": "Has a vegan menu",
-                        "nl": "Heeft een veganistisch menu"
+                        "nl": "Heeft een veganistisch menu",
+                        "de": "Bietet vegan Speisen an"
                     },
                     "osmTags": {
                         "or": [

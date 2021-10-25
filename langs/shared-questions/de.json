@@ -78,6 +78,22 @@
                 }
             },
             "question": "Ist dieser Ort mit einem Rollstuhl zugänglich?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
+                }
+            },
+            "question": "Was ist das entsprechende Wikidata Element?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Nicht mit Wikipedia verknüpft"
+                }
+            },
+            "question": "Was ist der entsprechende Artikel auf Wikipedia?"
         }
     }
 }

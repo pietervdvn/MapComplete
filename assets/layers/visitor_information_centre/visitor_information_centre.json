@@ -53,7 +53,8 @@
     },
     "description": {
         "en": "A visitor center offers information about a specific attraction or place of interest where it is located.",
-        "nl": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
+        "nl": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
+        "de": "Ein Besucherzentrum bietet Informationen über eine bestimmte Attraktion oder Sehenswürdigkeit, an der es sich befindet."
     },
     "tagRenderings": [],
     "icon": {

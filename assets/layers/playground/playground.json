@@ -205,7 +205,8 @@
                 "en": "Accessible to kids older than {min_age} years",
                 "it": "Accessibile ai bambini di almeno {min_age} anni",
                 "ru": "Доступно для детей старше {min_age} лет",
-                "fr": "Accessible aux enfants de plus de {min_age} ans"
+                "fr": "Accessible aux enfants de plus de {min_age} ans",
+                "de": "Zugang nur für Kinder ab {min_age} Jahren"
             },
             "question": {
                 "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",
@@ -226,7 +227,8 @@
                 "en": "Accessible to kids of at most {max_age}",
                 "it": "Accessibile ai bambini di età inferiore a {max_age}",
                 "fr": "Accessible aux enfants de {max_age} au maximum",
-                "ru": "Доступно детям до {max_age}"
+                "ru": "Доступно детям до {max_age}",
+                "de": "Zugang nur für Kinder bis maximal {max_age}"
             },
             "question": {
                 "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
@@ -428,7 +430,8 @@
                 "en": "When is this playground accessible?",
                 "fr": "Quand ce terrain de jeux est-il accessible ?",
                 "it": "Quando si può accedere a questo campetto?",
-                "ru": "Когда открыта эта игровая площадка?"
+                "ru": "Когда открыта эта игровая площадка?",
+                "de": "Wann ist dieser Spielplatz zugänglich?"
             },
             "mappings": [
                 {
@@ -438,7 +441,8 @@
                         "en": "Accessible from sunrise till sunset",
                         "fr": "Accessible du lever au coucher du soleil",
                         "it": "Si può accedere dall'alba al tramonto",
-                        "ru": "Открыто от рассвета до заката"
+                        "ru": "Открыто от рассвета до заката",
+                        "de": "Zugänglich von Sonnenaufgang bis Sonnenuntergang"
                     }
                 },
                 {
@@ -448,7 +452,8 @@
                         "en": "Always accessible",
                         "fr": "Toujours accessible",
                         "ru": "Всегда доступен",
-                        "it": "Si può sempre accedere"
+                        "it": "Si può sempre accedere",
+                        "de": "Immer zugänglich"
                     }
                 },
                 {
@@ -458,7 +463,8 @@
                         "en": "Always accessible",
                         "ru": "Всегда доступен",
                         "fr": "Toujours accessible",
-                        "it": "Si può sempre accedere"
+                        "it": "Si può sempre accedere",
+                        "de": "Immer zugänglich"
                     },
                     "hideInAnswer": true
                 }
@@ -482,7 +488,8 @@
                     "opening_hours~*"
                 ]
             },
-            "then": "isOpen"
+            "then": "isOpen",
+            "badge": true
         }
     ],
     "width": {
@@ -522,7 +529,8 @@
                 "en": "Playground",
                 "ru": "Детская площадка",
                 "fr": "Terrain de jeux",
-                "it": "Campetto"
+                "it": "Campetto",
+                "de": "Spielplatz"
             }
         }
     ],

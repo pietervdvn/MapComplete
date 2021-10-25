@@ -62,8 +62,13 @@ export interface LayerConfigJson {
      * NOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
      *  While still supported, this is considered deprecated
      */
-    source: { osmTags: AndOrTagConfigJson | string, overpassScript?: string  } |
-        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean }
+    source: ({ osmTags: AndOrTagConfigJson | string, overpassScript?: string  } |
+        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean }) & ({
+        /**
+         * The maximum amount of seconds that a tile is allowed to linger in the cache
+         */
+        maxCacheAge?: number
+    })
     
     /**
      *

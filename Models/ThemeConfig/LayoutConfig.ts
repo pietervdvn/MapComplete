@@ -48,10 +48,7 @@ export default class LayoutConfig {
     public readonly enableIframePopout: boolean;
 
     public readonly customCss?: string;
-    /*
-    How long is the cache valid, in seconds?
-     */
-    public readonly cacheTimeout?: number;
+
     public readonly overpassUrl: string[];
     public readonly overpassTimeout: number;
     public readonly overpassMaxZoom: number
@@ -136,7 +133,6 @@ export default class LayoutConfig {
         this.enablePdfDownload = json.enablePdfDownload ?? false;
         this.enableIframePopout = json.enableIframePopout ?? true
         this.customCss = json.customCss;
-        this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
         this.overpassUrl = Constants.defaultOverpassUrls
         if(json.overpassUrl !== undefined){
             if(typeof json.overpassUrl === "string"){

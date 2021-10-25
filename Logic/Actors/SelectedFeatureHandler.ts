@@ -10,7 +10,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
  * Makes sure the hash shows the selected element and vice-versa.
  */
 export default class SelectedFeatureHandler {
-    private static readonly _no_trigger_on = new Set(["welcome", "copyright", "layers", "new", "", undefined])
+    private static readonly _no_trigger_on = new Set(["welcome", "copyright", "layers", "new", "filter","", undefined])
     private readonly hash: UIEventSource<string>;
     private readonly state: {
         selectedElement: UIEventSource<any>,
@@ -70,7 +70,7 @@ export default class SelectedFeatureHandler {
         this.initialLoad()
 
     }
-    
+
 
     /**
      * On startup: check if the hash is loaded and eventually zoom to it
@@ -84,6 +84,11 @@ export default class SelectedFeatureHandler {
         if (SelectedFeatureHandler._no_trigger_on.has(hash)) {
             return;
         }
+
+        if (!(hash.startsWith("node") || hash.startsWith("way") || hash.startsWith("relation"))) {
+            return;
+        }
+     
 
         OsmObject.DownloadObjectAsync(hash).then(obj => {
 
@@ -129,26 +134,25 @@ export default class SelectedFeatureHandler {
 
     // If a feature is selected via the hash, zoom there
     private zoomToSelectedFeature() {
-        
+
         const selected = this.state.selectedElement.data
-        if(selected === undefined){
+        if (selected === undefined) {
             return
         }
-        
-        const centerpoint= GeoOperations.centerpointCoordinates(selected)
+
+        const centerpoint = GeoOperations.centerpointCoordinates(selected)
         const location = this.state.locationControl;
         location.data.lon = centerpoint[0]
         location.data.lat = centerpoint[1]
-        
+
         const minZoom = Math.max(14, ...(this.state.layoutToUse?.layers?.map(l => l.minzoomVisible) ?? []))
-        if(location.data.zoom < minZoom  ){
+        if (location.data.zoom < minZoom) {
             location.data.zoom = minZoom
         }
-        
+
         location.ping();
-        
-        
-  
+
+
     }
 
 }
