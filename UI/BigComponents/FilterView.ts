@@ -40,20 +40,16 @@ export default class FilterView extends VariableUiElement {
         const iconUnselected = new Combine([Svg.checkbox_empty]).SetStyle(
             iconStyle
         );
-        const name: Translation = config.config.name.Clone();
+        const name: Translation = config.config.name;
 
-        const styledNameChecked = name
-            .Clone()
-            .SetStyle("font-size:large;padding-left:1.25rem");
+        const styledNameChecked = name.Clone().SetStyle("font-size:large;padding-left:1.25rem");
 
-        const styledNameUnChecked = name
-            .Clone()
-            .SetStyle("font-size:large;padding-left:1.25rem");
+        const styledNameUnChecked = name.Clone().SetStyle("font-size:large;padding-left:1.25rem");
 
         const zoomStatus =
             new Toggle(
                 undefined,
-                Translations.t.general.layerSelection.zoomInToSeeThisLayer.Clone()
+                Translations.t.general.layerSelection.zoomInToSeeThisLayer
                     .SetClass("alert")
                     .SetStyle("display: block ruby;width:min-content;"),
                 State.state.locationControl.map(location => location.zoom >= config.config.minzoom)
@@ -97,20 +93,16 @@ export default class FilterView extends VariableUiElement {
 
         const name: Translation = Translations.WT(
             filteredLayer.layerDef.name
-        )?.Clone();
+        );
 
-        const styledNameChecked = name
-            .Clone()
-            .SetStyle("font-size:large;padding-left:1.25rem");
+        const styledNameChecked = name.Clone().SetStyle("font-size:large;padding-left:1.25rem");
 
-        const styledNameUnChecked = name
-            .Clone()
-            .SetStyle("font-size:large;padding-left:1.25rem");
+        const styledNameUnChecked = name.Clone().SetStyle("font-size:large;padding-left:1.25rem");
 
         const zoomStatus =
             new Toggle(
                 undefined,
-                Translations.t.general.layerSelection.zoomInToSeeThisLayer.Clone()
+                Translations.t.general.layerSelection.zoomInToSeeThisLayer
                     .SetClass("alert")
                     .SetStyle("display: block ruby;width:min-content;"),
                 State.state.locationControl.map(location => location.zoom >= filteredLayer.layerDef.minzoom)

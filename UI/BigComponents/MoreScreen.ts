@@ -6,8 +6,6 @@ import {SubtleButton} from "../Base/SubtleButton";
 import Translations from "../i18n/Translations";
 import * as personal from "../../assets/themes/personal/personal.json"
 import Constants from "../../Models/Constants";
-import LanguagePicker from "../LanguagePicker";
-import IndexText from "./IndexText";
 import BaseUIElement from "../BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
@@ -201,14 +199,13 @@ export default class MoreScreen extends Combine {
         }) ?? new UIEventSource<string>(`${linkPrefix}${linkSuffix}`)
 
 
-        let description = Translations.WT(layout.shortDescription).Clone();
         return new SubtleButton(layout.icon,
             new Combine([
                 `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
-                Translations.WT(layout.title).Clone(),
+                Translations.WT(layout.title),
                 `</dt>`,
                 `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
-                description.Clone().SetClass("subtle") ?? "",
+                Translations.WT(layout.shortDescription)?.SetClass("subtle") ?? "",
                 `</dd>`,
             ]), {url: linkText, newTab: false});
     }

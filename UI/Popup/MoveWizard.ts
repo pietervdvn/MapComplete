@@ -46,7 +46,7 @@ export default class MoveWizard extends Toggle {
 
         const t = Translations.t.move
         const loginButton = new Toggle(
-            t.loginToMove.Clone().SetClass("btn").onClick(() => state.osmConnection.AttemptLogin()),
+            t.loginToMove.SetClass("btn").onClick(() => state.osmConnection.AttemptLogin()),
             undefined,
             state.featureSwitchUserbadge
         )
@@ -54,8 +54,8 @@ export default class MoveWizard extends Toggle {
         const reasons: MoveReason[] = []
         if (options.enableRelocation) {
             reasons.push({
-                text: t.reasons.reasonRelocation.Clone(),
-                invitingText: t.inviteToMove.reasonRelocation.Clone(),
+                text: t.reasons.reasonRelocation,
+                invitingText: t.inviteToMove.reasonRelocation,
                 icon: Svg.relocation_svg(),
                 changesetCommentValue: "relocated",
                 lockBounds: false,
@@ -66,7 +66,7 @@ export default class MoveWizard extends Toggle {
         }
         if(options.enableImproveAccuracy){
             reasons.push({
-                text: t.reasons.reasonInaccurate.Clone(),
+                text: t.reasons.reasonInaccurate,
                 invitingText: t.inviteToMove.reasonInaccurate,
                 icon: Svg.crosshair_svg(),
                 changesetCommentValue: "improve_accuracy",
@@ -85,14 +85,14 @@ export default class MoveWizard extends Toggle {
             moveReason.setData(reason)
             moveButton = new SubtleButton(
                 reason.icon.SetStyle("height: 1.5rem; width: auto;"),
-                Translations.WT(reason.invitingText).Clone()
+                Translations.WT(reason.invitingText)
             ).onClick(() => {
                 currentStep.setData("pick_location")
             })
         }else{
             moveButton = new SubtleButton(
                 Svg.move_ui().SetStyle("height: 1.5rem; width: auto"),
-                t.inviteToMove.generic.Clone()
+                t.inviteToMove.generic
             ).onClick(() => {
                 currentStep.setData("reason")
             })
@@ -101,7 +101,7 @@ export default class MoveWizard extends Toggle {
 
         const moveAgainButton = new SubtleButton(
             Svg.move_ui(),
-            t.inviteToMoveAgain.Clone()
+            t.inviteToMoveAgain
         ).onClick(() => {
             currentStep.setData("reason")
         })
@@ -159,7 +159,7 @@ export default class MoveWizard extends Toggle {
                 state.allElements.getEventSourceById(id).ping()
                 currentStep.setData("moved")
             })
-            const zoomInFurhter = t.zoomInFurther.Clone().SetClass("alert block m-6")
+            const zoomInFurhter = t.zoomInFurther.SetClass("alert block m-6")
             return new Combine([
                 locationInput,
                 new Toggle(confirmMove, zoomInFurhter, locationInput.GetValue().map(l => l.zoom >= 19))
@@ -174,11 +174,11 @@ export default class MoveWizard extends Toggle {
                     case "start":
                         return moveButton;
                     case "reason":
-                        return new Combine([t.whyMove.Clone().SetClass("text-lg font-bold"), selectReason, cancelButton]).SetClass(dialogClasses);
+                        return new Combine([t.whyMove.SetClass("text-lg font-bold"), selectReason, cancelButton]).SetClass(dialogClasses);
                     case "pick_location":
-                        return new Combine([t.moveTitle.Clone().SetClass("text-lg font-bold"), new VariableUiElement(locationInput), cancelButton]).SetClass(dialogClasses)
+                        return new Combine([t.moveTitle.SetClass("text-lg font-bold"), new VariableUiElement(locationInput), cancelButton]).SetClass(dialogClasses)
                     case "moved":
-                        return new Combine([t.pointIsMoved.Clone().SetClass("thanks"), moveAgainButton]).SetClass("flex flex-col");
+                        return new Combine([t.pointIsMoved.SetClass("thanks"), moveAgainButton]).SetClass("flex flex-col");
 
                 }
 
@@ -195,20 +195,20 @@ export default class MoveWizard extends Toggle {
 
         const moveDisallowedReason = new UIEventSource<BaseUIElement>(undefined)
         if (id.startsWith("way")) {
-            moveDisallowedReason.setData(t.isWay.Clone())
+            moveDisallowedReason.setData(t.isWay)
         } else if (id.startsWith("relation")) {
-            moveDisallowedReason.setData(t.isRelation.Clone())
+            moveDisallowedReason.setData(t.isRelation)
         } else {
             
             OsmObject.DownloadReferencingWays(id).then(referencing => {
                 if (referencing.length > 0) {
                     console.log("Got a referencing way, move not allowed")
-                    moveDisallowedReason.setData(t.partOfAWay.Clone())
+                    moveDisallowedReason.setData(t.partOfAWay)
                 }
             })
             OsmObject.DownloadReferencingRelations(id).then(partOf => {
                 if(partOf.length > 0){
-                moveDisallowedReason.setData(t.partOfRelation.Clone())
+                moveDisallowedReason.setData(t.partOfRelation)
                 }
             })
         }
@@ -216,7 +216,7 @@ export default class MoveWizard extends Toggle {
             moveFlow,
             new Combine([
                 Svg.move_not_allowed_svg().SetStyle("height: 2rem").SetClass("m-2"),
-                new Combine([t.cannotBeMoved.Clone(),
+                new Combine([t.cannotBeMoved,
                     new VariableUiElement(moveDisallowedReason).SetClass("subtle")
                 ]).SetClass("flex flex-col")
             ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200"),
