@@ -453,9 +453,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "name": "Stazioni bici (riparazione, gonfiaggio o entrambi)",
         "presets": {
             "0": {
@@ -765,13 +762,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
         "name": "Defibrillatori",
         "presets": {
             "0": {

@@ -338,9 +338,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "presets": {
             "0": {
                 "description": "Um aparelho para encher os seus pneus num local fixa no espaço público<h3>Exemplos de bombas de bicicletas</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"

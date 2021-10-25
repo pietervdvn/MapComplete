@@ -541,9 +541,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "name": "Fahrradstationen (Reparatur, Pumpe oder beides)",
         "presets": {
             "0": {
@@ -1157,15 +1154,6 @@
                 "question": "Wie ist die Email-Adresse des Betreibers?",
                 "render": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
             },
-            "fee/charge": {
-                "mappings": {
-                    "0": {
-                        "then": "Nutzung kostenlos"
-                    }
-                },
-                "question": "Wie viel muss man für die Nutzung dieser Ladestation bezahlen?",
-                "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
-            },
             "maxstay": {
                 "mappings": {
                     "0": {
@@ -1701,13 +1689,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
         "name": "Defibrillatoren",
         "presets": {
             "0": {

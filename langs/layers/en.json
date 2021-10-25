@@ -544,9 +544,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "name": "Bike stations (repair, pump or both)",
         "presets": {
             "0": {
@@ -1009,6 +1006,15 @@
         "presets": {
             "0": {
                 "title": "Charging station"
+            },
+            "1": {
+                "title": "charging station for e-bikes"
+            },
+            "2": {
+                "title": "charging station for cars"
+            },
+            "3": {
+                "title": "charging station"
             }
         },
         "tagRenderings": {
@@ -1248,18 +1254,33 @@
                 "question": "How much vehicles can be charged here at the same time?",
                 "render": "{capacity} vehicles can be charged here at the same time"
             },
+            "charge": {
+                "question": "How much does one have to pay to use this charging station?",
+                "render": "Using this charging station costs <b>{charge}</b>"
+            },
             "email": {
                 "question": "What is the email address of the operator?",
                 "render": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
             },
-            "fee/charge": {
+            "fee": {
                 "mappings": {
                     "0": {
                         "then": "Free to use"
+                    },
+                    "1": {
+                        "then": "Free to use (without authenticating)"
+                    },
+                    "2": {
+                        "then": "Free to use, but one has to authenticate"
+                    },
+                    "3": {
+                        "then": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station"
+                    },
+                    "4": {
+                        "then": "Paid use"
                     }
                 },
-                "question": "How much does one have to pay to use this charging station?",
-                "render": "Using this charging station costs <b>{charge}</b>"
+                "question": "Does one have to pay to use this charging station?"
             },
             "maxstay": {
                 "mappings": {
@@ -1915,13 +1936,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
         "name": "Defibrillators",
         "presets": {
             "0": {

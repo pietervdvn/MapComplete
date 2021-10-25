@@ -453,9 +453,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "name": "Station velo (réparation, pompe à vélo)",
         "presets": {
             "0": {
@@ -749,13 +746,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
         "name": "Défibrillateurs",
         "presets": {
             "0": {
