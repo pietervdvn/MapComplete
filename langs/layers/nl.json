@@ -896,6 +896,13 @@
         "icon": {
             "render": "./assets/layers/birdhide/birdhide.svg"
         },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/birdhide/birdhide.svg"
+                }
+            }
+        },
         "name": "Vogelkijkhutten",
         "presets": {
             "0": {
@@ -974,13 +981,6 @@
                 }
             },
             "render": "Vogelkijkplaats"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/birdhide/birdhide.svg"
-                }
-            }
         }
     },
     "cafe_pub": {
@@ -1044,6 +1044,7 @@
         }
     },
     "charging_station": {
+        "description": "Oplaadpunten",
         "filter": {
             "0": {
                 "options": {
@@ -1055,13 +1056,6 @@
                     },
                     "2": {
                         "question": "Oplaadpunten voor auto's"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Enkel werkende oplaadpunten"
                     }
                 }
             },
@@ -1121,6 +1115,18 @@
                 }
             }
         },
+        "name": "Oplaadpunten",
+        "presets": {
+            "0": {
+                "title": "gewone stekker <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
+            },
+            "1": {
+                "title": "oplaadpunt voor elektrische fietsen"
+            },
+            "2": {
+                "title": "oplaadstation voor elektrische auto's"
+            }
+        },
         "tagRenderings": {
             "Operational status": {
                 "mappings": {
@@ -1142,9 +1148,18 @@
                 },
                 "question": "Is dit oplaadpunt operationeel?"
             },
-            "capacity": {
-                "question": "Hoeveel voertuigen kunnen hier opgeladen worden?",
-                "render": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden"
+            "current-15": {
+                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een stroom van maximaal {socket:bosch_5pin:current}A"
+            },
+            "fee/charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis te gebruiken"
+                    }
+                },
+                "question": "Hoeveel kost het gebruik van dit oplaadpunt?",
+                "render": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
             },
             "maxstay": {
                 "mappings": {
@@ -1167,157 +1182,21 @@
                     }
                 }
             },
-            "website": {
-                "question": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?",
-                "render": "Meer informatie op <a href='{website}'>{website}</a>"
+            "plugs-15": {
+                "question": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft dit oplaadpunt?",
+                "render": "Hier zijn <b class='text-xl'>{socket:bosch_5pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
             },
-            "ref": {
-                "question": "Wat is het referentienummer van dit oplaadstation?",
-                "render": "Het referentienummer van dit oplaadpunt is <b>{ref}</b>"
+            "power-output-15": {
+                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_5pin:output}"
             },
-            "phone": {
-                "question": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
-                "render": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Gratis te gebruiken"
-                    },
-                    "1": {
-                        "then": "Gratis te gebruiken (zonder aan te melden)"
-                    },
-                    "2": {
-                        "then": "Gratis te gebruiken, maar aanmelden met een applicatie is verplicht"
-                    },
-                    "3": {
-                        "then": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/..."
-                    },
-                    "4": {
-                        "then": "Betalend"
-                    }
-                },
-                "question": "Moet men betalen om dit oplaadpunt te gebruiken?"
-            },
-            "email": {
-                "question": "Wat is het email-adres van de operator?",
-                "render": "Bij problemen, email naar <a href='mailto:{email}'>{email}</a>"
-            },
-            "charge": {
-                "question": "Hoeveel moet men betalen om dit oplaadpunt te gebruiken?",
-                "render": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
-            },
-            "access": {
-                "mappings": {
-                    "0": {
-                        "then": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
-                    },
-                    "1": {
-                        "then": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
-                    },
-                    "2": {
-                        "then": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bijvoorbeeld een oplaadpunt op de parking van een restaurant dat enkel door klanten van het restaurant gebruikt mag worden</span>"
-                    },
-                    "3": {
-                        "then": "Niet toegankelijk voor het publiek <span class='subtle'>Enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
-                    }
-                },
-                "question": "Wie mag er dit oplaadpunt gebruiken?",
-                "render": "Toegang voor {access}"
-            },
-            "Type": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Fietsen</b> kunnen hier opgeladen worden"
-                    },
-                    "1": {
-                        "then": "<b>Elektrische auto's</b> kunnen hier opgeladen worden"
-                    },
-                    "2": {
-                        "then": "<b>Electrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden"
-                    },
-                    "3": {
-                        "then": "<b>Vrachtwagens</b> kunnen hier opgeladen worden"
-                    },
-                    "4": {
-                        "then": "<b>Bussen</b> kunnen hier opgeladen worden"
-                    }
-                },
-                "question": "Welke voertuigen kunnen hier opgeladen worden?"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Geen extra parkeerkost tijdens het opladen"
-                    },
-                    "1": {
-                        "then": "Tijdens het opladen moet er parkeergeld betaald worden"
-                    }
-                },
-                "question": "Moet men parkeergeld betalen tijdens het opladen?"
-            },
-            "Operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt"
-                    }
-                },
-                "question": "Wie beheert dit oplaadpunt?",
-                "render": "Wordt beheerd door {operator}"
-            },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 open - ook tijdens vakanties"
-                    }
-                },
-                "question": "Wanneer is dit oplaadpunt beschikbaar??"
-            },
-            "Network": {
-                "mappings": {
-                    "0": {
-                        "then": "Maakt geen deel uit van een groter netwerk"
-                    },
-                    "1": {
-                        "then": "Maakt geen deel uit van een groter netwerk"
-                    }
-                },
-                "question": "Is dit oplaadpunt deel van een groter netwerk?",
-                "render": "Maakt deel uit van het <b>{network}</b>-netwerk"
-            },
-            "Authentication": {
-                "mappings": {
-                    "0": {
-                        "then": "Aanmelden met een lidkaart is mogelijk"
-                    },
-                    "1": {
-                        "then": "Aanmelden via een applicatie is mogelijk"
-                    },
-                    "2": {
-                        "then": "Aanmelden door te bellen naar een telefoonnummer is mogelijk"
-                    },
-                    "3": {
-                        "then": "Aanmelden via SMS is mogelijk"
-                    },
-                    "4": {
-                        "then": "Aanmelden via NFC is mogelijk"
-                    },
-                    "5": {
-                        "then": "Aanmelden met Money Card is mogelijk"
-                    },
-                    "6": {
-                        "then": "Aanmelden met een betaalkaart is mogelijk"
-                    },
-                    "7": {
-                        "then": "Hier opladen is (ook) mogelijk zonder aan te melden"
-                    }
-                },
-                "question": "Hoe kan men zich aanmelden aan dit oplaadstation?"
-            },
-            "Auth phone": {
-                "question": "Wat is het telefoonnummer dat men moet bellen of SMS'en om zich aan te melden?",
-                "render": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            "voltage-15": {
+                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft een spanning van {socket:bosch_5pin:voltage} volt"
             }
+        },
+        "title": {
+            "render": "Oplaadpunten"
         },
         "units": {
             "0": {
@@ -1360,26 +1239,7 @@
                     }
                 }
             }
-        },
-        "title": {
-            "render": "Oplaadpunten"
-        },
-        "presets": {
-            "0": {
-                "title": "gewone stekker <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
-            },
-            "1": {
-                "title": "oplaadpunt voor elektrische fietsen"
-            },
-            "2": {
-                "title": "oplaadstation voor elektrische auto's"
-            },
-            "3": {
-                "title": "oplaadstation"
-            }
-        },
-        "name": "Oplaadpunten",
-        "description": "Oplaadpunten"
+        }
     },
     "crossings": {
         "description": "Oversteekplaatsen voor voetgangers en fietsers",
@@ -3641,6 +3501,17 @@
                 }
             }
         },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Vuilnisbak"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Vuilnisbak",
         "presets": {
             "0": {
@@ -3670,35 +3541,10 @@
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"
-            },
-            "dispensing_dog_bags": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes"
-                    },
-                    "1": {
-                        "then": "Deze vuilbak heeft <b>geen</b> verdeler voor hondenpoepzakjes"
-                    },
-                    "2": {
-                        "then": "Deze vuilnisbak heeft <b>geen</b> verdeler voor hondenpoepzakjes"
-                    }
-                },
-                "question": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?"
             }
         },
         "title": {
             "render": "Vuilnisbak"
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Vuilnisbak"
-                        }
-                    }
-                }
-            }
         }
     },
     "watermill": {

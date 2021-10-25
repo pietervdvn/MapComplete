@@ -174,10 +174,10 @@
         "description": "En ladestasjon",
         "name": "Ladestasjoner",
         "tagRenderings": {
-            "Network": {
+            "Auth phone": {
                 "render": "{network}"
             },
-            "OH": {
+            "Authentication": {
                 "question": "Når åpnet denne ladestasjonen?"
             }
         },

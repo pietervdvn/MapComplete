@@ -175,24 +175,10 @@
             "0": {
                 "description": "camperplaatsen",
                 "name": "Camperplaatsen",
-                "presets": {
-                    "0": {
-                        "description": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
-                        "title": "camperplaats"
-                    }
-                },
                 "tagRenderings": {
-                    "caravansites-capacity": {
-                        "question": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)",
-                        "render": "{capacity} campers kunnen deze plaats tegelijk gebruiken"
-                    },
                     "caravansites-charge": {
                         "question": "Hoeveel kost deze plaats?",
                         "render": "Deze plaats vraagt {charge}"
-                    },
-                    "caravansites-description": {
-                        "question": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)",
-                        "render": "Meer details over deze plaats: {description}"
                     },
                     "caravansites-fee": {
                         "mappings": {
@@ -204,16 +190,6 @@
                             }
                         },
                         "question": "Moet men betalen om deze camperplaats te gebruiken?"
-                    },
-                    "caravansites-internet": {
-                        "mappings": {
-                            "0": {
-                                "then": "Er is internettoegang"
-                            },
-                            "1": {
-                                "then": "Er is internettoegang"
-                            }
-                        }
                     },
                     "caravansites-name": {
                         "question": "Wat is de naam van deze plaats?",

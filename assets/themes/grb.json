@@ -196,7 +196,34 @@
         "render": "#00f"
       },
       "wayHandling": 2,
-      "presets": []
+      "presets": [],
+      "mapRendering": [
+        {
+          "label": {
+            "mappings": [
+              {
+                "if": "addr:housenumber~*",
+                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "2"
+          }
+        }
+      ]
     }
   ],
   "hideFromOverview": true,

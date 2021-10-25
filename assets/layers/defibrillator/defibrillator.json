@@ -568,7 +568,8 @@
                             "en": "./assets/layers/defibrillator/aed_checked.svg",
                             "ru": "./assets/layers/defibrillator/aed_checked.svg",
                             "it": "./assets/layers/defibrillator/aed_checked.svg",
-                            "fr": "./assets/layers/defibrillator/aed_checked.svg"
+                            "fr": "./assets/layers/defibrillator/aed_checked.svg",
+                            "de": "./assets/layers/defibrillator/aed_checked.svg"
                         }
                     }
                 ]

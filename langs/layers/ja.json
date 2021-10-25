@@ -76,11 +76,11 @@
         "description": "充電ステーション",
         "name": "充電ステーション",
         "tagRenderings": {
-            "Network": {
+            "Auth phone": {
                 "question": "この充電ステーションの運営チェーンはどこですか?",
                 "render": "{network}"
             },
-            "OH": {
+            "Authentication": {
                 "question": "この充電ステーションはいつオープンしますか?"
             }
         },

@@ -204,7 +204,8 @@
                         "then": {
                             "en": "Waste Basket",
                             "nl": "Vuilnisbak",
-                            "ru": "Контейнер для мусора"
+                            "ru": "Контейнер для мусора",
+                            "de": "Abfalleimer"
                         }
                     }
                 ]

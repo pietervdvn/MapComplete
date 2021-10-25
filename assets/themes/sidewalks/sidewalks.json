@@ -45,54 +45,62 @@
         "en": "Layer showing sidewalks of highways"
       },
       "tagRenderings": [
-
         {
           "id": "streetname",
           "render": {
             "en": "This street is named {name}"
           }
         },
-        
         {
-        "rewrite": {
-          "sourceString": "left|right",
-          "into": ["left","right"]
-        },
-        "renderings": [
-          {
-            "id": "sidewalk_minimap",
-            "render": "{sided_minimap(left|right):height:3rem;border-radius:0.5rem;overflow:hidden}"
+          "rewrite": {
+            "sourceString": "left|right",
+            "into": [
+              "left",
+              "right"
+            ]
           },
-          {
-            "id": "has_sidewalk",
-            "question": "Is there a sidewalk on the left|right side of the road?",
-            "mappings": [{
-              "if": "sidewalk:left|right=yes",
-              "then": "Yes, there is a sidewalk on this side of the road"
+          "renderings": [
+            {
+              "id": "sidewalk_minimap",
+              "render": "{sided_minimap(left|right):height:3rem;border-radius:0.5rem;overflow:hidden}"
             },
-              {
-                "if": "sidewalk:left|right=no",
-                "then": "No, there is no seperated sidewalk to walk on"
-              }]
-          },
-          {
-            "id": "sidewalk_width",
-            "question": "What is the width of the sidewalk on this side of the road?",
-            "render": "This sidewalk is {sidewalk:left|right:width}m wide",
-            "condition": "sidewalk:left|right=yes",
-            "freeform": {
-              "key": "sidewalk:left|right:width",
-              "type": "length",
-              "helperArgs": ["21", "map"]
+            {
+              "id": "has_sidewalk",
+              "question": "Is there a sidewalk on the left|right side of the road?",
+              "mappings": [
+                {
+                  "if": "sidewalk:left|right=yes",
+                  "then": "Yes, there is a sidewalk on this side of the road"
+                },
+                {
+                  "if": "sidewalk:left|right=no",
+                  "then": "No, there is no seperated sidewalk to walk on"
+                }
+              ]
+            },
+            {
+              "id": "sidewalk_width",
+              "question": "What is the width of the sidewalk on this side of the road?",
+              "render": "This sidewalk is {sidewalk:left|right:width}m wide",
+              "condition": "sidewalk:left|right=yes",
+              "freeform": {
+                "key": "sidewalk:left|right:width",
+                "type": "length",
+                "helperArgs": [
+                  "21",
+                  "map"
+                ]
+              }
             }
-          }
-        ]
-        
-        
-      }],
+          ]
+        }
+      ],
       "mapRendering": [
         {
-          "location": ["start","end"],
+          "location": [
+            "start",
+            "end"
+          ],
           "icon": "circle:#ccc",
           "iconSize": "20,20,center"
         },

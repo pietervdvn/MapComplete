@@ -36,7 +36,7 @@
                 "name": "Wohnmobilstellplätze",
                 "presets": {
                     "0": {
-                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem Übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
                         "title": "Wohnmobilstellplatz"
                     }
                 },
@@ -334,18 +334,6 @@
                         },
                         "question": "Wie heißt diese Kletterroute?",
                         "render": "<strong>{name}</strong>"
-                    },
-                    "Bolts": {
-                        "mappings": {
-                            "0": {
-                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
-                            },
-                            "1": {
-                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
-                            }
-                        },
-                        "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
-                        "render": "Diese Kletterroute hat {climbing:bolts} Haken"
                     }
                 },
                 "title": {
@@ -646,8 +634,6 @@
     },
     "etymology": {
         "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. In dem Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Zoomen Sie genug hinein und <i>alle</i> Straßen werden angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
-        "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
-        "title": "Open Etymology Map",
         "layers": {
             "1": {
                 "override": {
@@ -659,7 +645,9 @@
                     "name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
                 }
             }
-        }
+        },
+        "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
+        "title": "Open Etymology Map"
     },
     "facadegardens": {
         "layers": {
@@ -775,6 +763,17 @@
                         }
                     }
                 },
+                "mapRendering": {
+                    "0": {
+                        "icon": {
+                            "mappings": {
+                                "0": {
+                                    "then": "./assets/themes/hackerspaces/led.png"
+                                }
+                            }
+                        }
+                    }
+                },
                 "name": "Hackerspace",
                 "presets": {
                     "0": {
@@ -834,17 +833,6 @@
                         }
                     },
                     "render": "Hackerspace"
-                },
-                "mapRendering": {
-                    "0": {
-                        "icon": {
-                            "mappings": {
-                                "0": {
-                                    "then": "./assets/themes/hackerspaces/led.png"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -960,9 +948,6 @@
                     "station-name": {
                         "question": "Wie lautet der Name dieser Feuerwache?"
                     }
-                },
-                "title": {
-                    "render": "Feuerwache"
                 }
             },
             "3": {
@@ -974,66 +959,37 @@
             }
         }
     },
+    "maps": {
+        "title": "Eine Karte der Karten"
+    },
+    "natuurpunt": {
+        "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
+        "title": "Naturschutzgebiete"
+    },
+    "observation_towers": {
+        "description": "Öffentlich zugänglicher Aussichtsturm",
+        "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
+        "title": "Aussichtstürme"
+    },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
-        "title": "OpenWindPowerMap",
-        "layers": {
-            "0": {
-                "name": "Windrad",
-                "presets": {
-                    "0": {
-                        "title": "Windrad"
-                    }
-                },
-                "title": {
-                    "render": "Windrad"
-                },
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " Megawatt"
-                            },
-                            "1": {
-                                "human": " Kilowatt"
-                            },
-                            "2": {
-                                "human": " Watt"
-                            },
-                            "3": {
-                                "human": " Gigawatt"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " Meter"
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        "title": "OpenWindPowerMap"
+    },
+    "parkings": {
+        "description": "Diese Karte zeigt Parkplätze",
+        "shortDescription": "Diese Karte zeigt Parkplätze",
+        "title": "Parken"
     },
     "personal": {
         "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
         "title": "Persönliches Thema"
     },
+    "playgrounds": {
+        "shortDescription": "Eine Karte mit Spielplätzen",
+        "title": "Spielpläzte"
+    },
     "postboxes": {
         "layers": {
-            "0": {
-                "description": "Die Ebene zeigt Briefkästen.",
-                "name": "Brieflästen",
-                "presets": {
-                    "0": {
-                        "title": "Briefkasten"
-                    }
-                },
-                "title": {
-                    "render": "Briefkasten"
-                }
-            },
             "1": {
                 "description": "Eine Ebene mit Postämtern.",
                 "tagRenderings": {
@@ -1044,29 +1000,11 @@
                             }
                         }
                     }
-                },
-                "title": {
-                    "render": "Poststelle"
-                },
-                "presets": {
-                    "0": {
-                        "title": "Poststelle"
-                    }
-                },
-                "name": "Poststellen",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Aktuell geöffnet"
-                            }
-                        }
-                    }
                 }
             }
         },
-        "title": "Karte mit Briefkästen und Poststellen",
-        "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt"
+        "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
+        "title": "Karte mit Briefkästen und Poststellen"
     },
     "shops": {
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
@@ -1121,37 +1059,11 @@
             }
         },
         "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
-        "title": "Adressen in Großbritannien",
-        "tileLayerSources": {
-            "0": {
-                "name": "Grenzverläufe gemäß osmuk.org"
-            }
-        }
+        "title": "Adressen in Großbritannien"
     },
     "waste_basket": {
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
-    },
-    "playgrounds": {
-        "shortDescription": "Eine Karte mit Spielplätzen",
-        "title": "Spielpläzte"
-    },
-    "parkings": {
-        "description": "Diese Karte zeigt Parkplätze",
-        "shortDescription": "Diese Karte zeigt Parkplätze",
-        "title": "Parken"
-    },
-    "observation_towers": {
-        "description": "Öffentlich zugänglicher Aussichtsturm",
-        "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
-        "title": "Aussichtstürme"
-    },
-    "natuurpunt": {
-        "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
-        "title": "Naturschutzgebiete"
-    },
-    "maps": {
-        "title": "Eine Karte der Karten"
     }
 }

@@ -1243,8 +1243,13 @@
             "0": {
                 "description": "Layer showing sidewalks of highways",
                 "name": "Sidewalks",
+                "tagRenderings": {
+                    "streetname": {
+                        "render": "This street is named {name}"
+                    }
+                },
                 "title": {
-                    "render": "Street {name}"
+                    "render": "{name}"
                 }
             }
         },

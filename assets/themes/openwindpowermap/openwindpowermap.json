@@ -230,6 +230,23 @@
             }
           ]
         }
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
+          "label": {
+            "mappings": [
+              {
+                "if": "generator:output:electricity~^[0-9]+.*[W]$",
+                "then": "<div style='background-color: rgba(0,0,0,0.3); color: white; font-size: 8px; padding: 0.25em; border-radius:0.5em'>{generator:output:electricity}</div>"
+              }
+            ]
+          },
+          "iconSize": "40, 40, bottom",
+          "location": [
+            "point"
+          ]
+        }
       ]
     }
   ],

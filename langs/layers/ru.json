@@ -473,13 +473,6 @@
                     "then": "Велосипедный насос"
                 }
             }
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
-                }
-            }
         }
     },
     "bike_shop": {
@@ -644,15 +637,18 @@
         "presets": {
             "0": {
                 "title": "Зарядная станция"
+            },
+            "3": {
+                "title": "Зарядная станция"
             }
         },
         "tagRenderings": {
-            "OH": {
-                "question": "В какое время работает эта зарядная станция?"
-            },
-            "Network": {
+            "Auth phone": {
                 "question": "К какой сети относится эта станция?",
                 "render": "{network}"
+            },
+            "Authentication": {
+                "question": "В какое время работает эта зарядная станция?"
             }
         },
         "title": {
@@ -719,6 +715,24 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Дефибрилляторы",
         "presets": {
             "0": {
@@ -766,17 +780,6 @@
         },
         "title": {
             "render": "Дефибриллятор"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
         }
     },
     "direction": {
@@ -1447,14 +1450,12 @@
         }
     },
     "waste_basket": {
-        "name": "Контейнер для мусора",
-        "presets": {
-            "0": {
-                "title": "Контейнер для мусора"
+        "iconSize": {
+            "mappings": {
+                "0": {
+                    "then": "Контейнер для мусора"
+                }
             }
-        },
-        "title": {
-            "render": "Контейнер для мусора"
         },
         "mapRendering": {
             "0": {
@@ -1466,6 +1467,15 @@
                     }
                 }
             }
+        },
+        "name": "Контейнер для мусора",
+        "presets": {
+            "0": {
+                "title": "Контейнер для мусора"
+            }
+        },
+        "title": {
+            "render": "Контейнер для мусора"
         }
     },
     "watermill": {

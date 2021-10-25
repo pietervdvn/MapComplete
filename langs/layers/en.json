@@ -690,13 +690,6 @@
                 }
             },
             "render": "Bike station (pump & repair)"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
-                }
-            }
         }
     },
     "bike_shop": {
@@ -1021,7 +1014,7 @@
                 "title": "charging station for cars"
             },
             "3": {
-                "title": "charging station"
+                "title": "Charging station"
             }
         },
         "tagRenderings": {
@@ -1118,51 +1111,22 @@
                 },
                 "question": "Does one have to pay a parking fee while charging?"
             },
-            "Type": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>bicycles</b> can be charged here"
-                    },
-                    "1": {
-                        "then": "<b>Cars</b> can be charged here"
-                    },
-                    "2": {
-                        "then": "<b>Scooters</b> can be charged here"
-                    },
-                    "3": {
-                        "then": "<b>Heavy good vehicles</b> (such as trucks) can be charged here"
-                    },
-                    "4": {
-                        "then": "<b>Buses</b> can be charged here"
-                    }
-                },
-                "question": "Which vehicles are allowed to charge here?"
-            },
-            "access": {
-                "question": "Who is allowed to use this charging station?",
-                "render": "Access is {access}",
-                "mappings": {
-                    "0": {
-                        "then": "Anyone can use this charging station (payment might be needed)"
-                    },
-                    "1": {
-                        "then": "Anyone can use this charging station (payment might be needed)"
-                    },
-                    "2": {
-                        "then": "Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>"
-                    },
-                    "3": {
-                        "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)"
-                    }
-                }
-            },
-            "capacity": {
-                "question": "How much vehicles can be charged here at the same time?",
-                "render": "{capacity} vehicles can be charged here at the same time"
+            "current-15": {
+                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:current}A"
             },
             "email": {
                 "question": "What is the email address of the operator?",
                 "render": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
+            },
+            "fee/charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Free to use"
+                    }
+                },
+                "question": "How much does one have to pay to use this charging station?",
+                "render": "Using this charging station costs <b>{charge}</b>"
             },
             "maxstay": {
                 "mappings": {
@@ -1189,37 +1153,25 @@
                 "question": "What number can one call if there is a problem with this charging station?",
                 "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
             },
+            "plugs-15": {
+                "question": "How much plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> are available here?",
+                "render": "There are <b class='text-xl'>{socket:bosch_5pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> available here"
+            },
+            "power-output-15": {
+                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs at most {socket:bosch_5pin:output}"
+            },
             "ref": {
                 "question": "What is the reference number of this charging station?",
                 "render": "Reference number is <b>{ref}</b>"
             },
+            "voltage-15": {
+                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> outputs {socket:bosch_5pin:voltage} volt"
+            },
             "website": {
                 "question": "What is the website of the operator?",
                 "render": "More info on <a href='{website}'>{website}</a>"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Free to use"
-                    },
-                    "1": {
-                        "then": "Free to use (without authenticating)"
-                    },
-                    "2": {
-                        "then": "Free to use, but one has to authenticate"
-                    },
-                    "3": {
-                        "then": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station"
-                    },
-                    "4": {
-                        "then": "Paid use"
-                    }
-                },
-                "question": "Does one have to pay to use this charging station?"
-            },
-            "charge": {
-                "question": "How much does one have to pay to use this charging station?",
-                "render": "Using this charging station costs <b>{charge}</b>"
             }
         },
         "title": {
@@ -1778,6 +1730,24 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Defibrillators",
         "presets": {
             "0": {
@@ -1894,17 +1864,6 @@
         },
         "title": {
             "render": "Defibrillator"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
         }
     },
     "direction": {
@@ -3228,6 +3187,17 @@
                 }
             }
         },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Waste Basket"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Waste Basket",
         "presets": {
             "0": {
@@ -3275,17 +3245,6 @@
         },
         "title": {
             "render": "Waste Basket"
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Waste Basket"
-                        }
-                    }
-                }
-            }
         }
     },
     "watermill": {

@@ -94,13 +94,6 @@
             "0": {
                 "title": "Pyöräpumppu"
             }
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
-                }
-            }
         }
     },
     "ghost_bike": {

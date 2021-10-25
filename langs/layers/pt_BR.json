@@ -437,13 +437,6 @@
                 }
             },
             "render": "Estação de bicicletas (bomba e reparo)"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
-                }
-            }
         }
     },
     "bike_shop": {

@@ -590,13 +590,6 @@
                 }
             },
             "render": "Stazione bici (gonfiaggio & riparazione)"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/bike_repair_station/repair_station.svg"
-                }
-            }
         }
     },
     "bike_shop": {
@@ -756,12 +749,12 @@
         "description": "Una stazione di ricarica",
         "name": "Stazioni di ricarica",
         "tagRenderings": {
-            "OH": {
-                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
-            },
-            "Network": {
+            "Auth phone": {
                 "question": "A quale rete appartiene questa stazione di ricarica?",
                 "render": "{network}"
+            },
+            "Authentication": {
+                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
             }
         },
         "title": {
@@ -769,6 +762,24 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/layers/defibrillator/aed_checked.svg"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Defibrillatori",
         "presets": {
             "0": {
@@ -885,17 +896,6 @@
         },
         "title": {
             "render": "Defibrillatore"
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/layers/defibrillator/aed_checked.svg"
-                        }
-                    }
-                }
-            }
         }
     },
     "direction": {
