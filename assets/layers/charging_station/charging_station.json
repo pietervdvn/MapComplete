@@ -2902,7 +2902,7 @@
                     "ifnot": "authentication:none=no",
                     "then": {
                         "en": "Charging here is (also) possible without authentication",
-                        "de": "Keine Authentifizierung erforderlich"
+                        "de": "Das Aufladen ist hier (auch) ohne Authentifizierung möglich"
                     }
                 }
             ]
@@ -2982,7 +2982,8 @@
             "id": "fee/charge",
             "question": {
                 "en": "How much does one have to pay to use this charging station?",
-                "nl": "Hoeveel kost het gebruik van dit oplaadpunt?"
+                "nl": "Hoeveel kost het gebruik van dit oplaadpunt?",
+                "de": "Wie viel muss man für die Nutzung dieser Ladestation bezahlen?"
             },
             "freeform": {
                 "key": "charge",
@@ -3027,7 +3028,8 @@
                         "ifnot": "payment:app=no",
                         "then": {
                             "en": "Payment is done using a dedicated app",
-                            "nl": "Betalen via een app van het netwerk"
+                            "nl": "Betalen via een app van het netwerk",
+                            "de": "Bezahlung mit einer speziellen App"
                         }
                     },
                     {
@@ -3035,7 +3037,8 @@
                         "ifnot": "payment:membership_card=no",
                         "then": {
                             "en": "Payment is done using a membership card",
-                            "nl": "Betalen via een lidkaart van het netwerk"
+                            "nl": "Betalen via een lidkaart van het netwerk",
+                            "de": "Bezahlung mit einer Mitgliedskarte"
                         }
                     }
                 ]
@@ -3045,7 +3048,8 @@
             "id": "maxstay",
             "question": {
                 "en": "What is the maximum amount of time one is allowed to stay here?",
-                "nl": "Hoelang mag een voertuig hier blijven staan?"
+                "nl": "Hoelang mag een voertuig hier blijven staan?",
+                "de": "Was ist die Höchstdauer des Aufenthalts hier?"
             },
             "freeform": {
                 "key": "maxstay"
@@ -3060,7 +3064,8 @@
                     "if": "maxstay=unlimited",
                     "then": {
                         "en": "No timelimit on leaving your vehicle here",
-                        "nl": "Geen maximum parkeertijd"
+                        "nl": "Geen maximum parkeertijd",
+                        "de": "Keine Höchstparkdauer"
                     }
                 }
             ]
@@ -3142,10 +3147,12 @@
         {
             "id": "phone",
             "question": {
-                "en": "What number can one call if there is a problem with this charging station?"
+                "en": "What number can one call if there is a problem with this charging station?",
+                "de": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?"
             },
             "render": {
-                "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
+                "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
+                "de": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
             },
             "freeform": {
                 "key": "phone",
@@ -3155,10 +3162,12 @@
         {
             "id": "email",
             "question": {
-                "en": "What is the email address of the operator?"
+                "en": "What is the email address of the operator?",
+                "de": "Wie ist die Email-Adresse des Betreibers?"
             },
             "render": {
-                "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
+                "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>",
+                "de": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
             },
             "freeform": {
                 "key": "email",
@@ -3168,7 +3177,8 @@
         {
             "id": "website",
             "question": {
-                "en": "What is the website of the operator?"
+                "en": "What is the website of the operator?",
+                "de": "Wie ist die Webseite des Betreibers?"
             },
             "render": {
                 "en": "More info on <a href='{website}'>{website}</a>",
@@ -3183,7 +3193,8 @@
         {
             "id": "ref",
             "question": {
-                "en": "What is the reference number of this charging station?"
+                "en": "What is the reference number of this charging station?",
+                "de": "Wie lautet die Kennung dieser Ladestation?"
             },
             "render": {
                 "en": "Reference number is <b>{ref}</b>",
@@ -3444,7 +3455,8 @@
                 {
                     "question": {
                         "en": "Has a <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> connector",
-                        "nl": "Heeft een <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+                        "nl": "Heeft een <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
+                        "de": "Hat einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
                     },
                     "osmTags": "socket:chademo~*"
                 },
@@ -3472,7 +3484,8 @@
                 {
                     "question": {
                         "en": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector",
-                        "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                        "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
+                        "de": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
                     },
                     "osmTags": "socket:tesla_supercharger~*"
                 },

@@ -6,7 +6,8 @@
     "fr": "Aires de jeux",
     "ja": "遊び場",
     "zh_Hant": "遊樂場",
-    "ru": "Игровые площадки"
+    "ru": "Игровые площадки",
+    "de": "Spielpläzte"
   },
   "shortDescription": {
     "nl": "Een kaart met speeltuinen",
@@ -14,7 +15,8 @@
     "fr": "Une carte des aires de jeux",
     "ja": "遊び場のある地図",
     "zh_Hant": "遊樂場的地圖",
-    "ru": "Карта игровых площадок"
+    "ru": "Карта игровых площадок",
+    "de": "Eine Karte mit Spielplätzen"
   },
   "description": {
     "nl": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
@@ -30,7 +32,8 @@
     "fr",
     "ja",
     "zh_Hant",
-    "ru"
+    "ru",
+    "de"
   ],
   "maintainer": "",
   "icon": "./assets/themes/playgrounds/playground.svg",

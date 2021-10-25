@@ -160,7 +160,8 @@
                 "fr": "De quelle surface est fait ce terrain de sport ?",
                 "en": "Which is the surface of this sport pitch?",
                 "it": "Qual è la superficie di questo campo sportivo?",
-                "ru": "Какое покрытие на этой спортивной площадке?"
+                "ru": "Какое покрытие на этой спортивной площадке?",
+                "de": "Was ist die Oberfläche dieses Sportplatzes?"
             },
             "render": {
                 "nl": "De ondergrond is <b>{surface}</b>",
@@ -261,7 +262,8 @@
                         "fr": "Accès limité (par exemple uniquement sur réservation, à certains horaires…)",
                         "en": "Limited access (e.g. only with an appointment, during certain hours, ...)",
                         "it": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)",
-                        "ru": "Ограниченный доступ (напр., только по записи, в определённые часы, ...)"
+                        "ru": "Ограниченный доступ (напр., только по записи, в определённые часы, ...)",
+                        "de": "Eingeschränkter Zugang (z. B. nur mit Termin, zu bestimmten Zeiten, ...)"
                     }
                 },
                 {
@@ -294,7 +296,8 @@
                 "fr": "Doit-on réserver pour utiliser ce terrain de sport ?",
                 "en": "Does one have to make an appointment to use this sport pitch?",
                 "it": "È necessario prenotarsi per usare questo campo sportivo?",
-                "ru": "Нужна ли предварительная запись для доступа на эту спортивную площадку?"
+                "ru": "Нужна ли предварительная запись для доступа на эту спортивную площадку?",
+                "de": "Muss man einen Termin vereinbaren, um diesen Sportplatz zu benutzen?"
             },
             "condition": {
                 "and": [
@@ -310,7 +313,8 @@
                         "nl": "Reserveren is verplicht om gebruik te maken van dit sportterrein",
                         "fr": "Il est obligatoire de réserver pour utiliser ce terrain de sport",
                         "en": "Making an appointment is obligatory to use this sport pitch",
-                        "it": "La prenotazione è obbligatoria per usare questo campo sportivo"
+                        "it": "La prenotazione è obbligatoria per usare questo campo sportivo",
+                        "de": "Für die Nutzung des Sportplatzes ist eine Voranmeldung erforderlich"
                     }
                 },
                 {
@@ -320,7 +324,8 @@
                         "fr": "Il est recommendé de réserver pour utiliser ce terrain de sport",
                         "en": "Making an appointment is recommended when using this sport pitch",
                         "it": "La prenotazione è consigliata per usare questo campo sportivo",
-                        "ru": "Желательна предварительная запись для доступа на эту спортивную площадку"
+                        "ru": "Желательна предварительная запись для доступа на эту спортивную площадку",
+                        "de": "Für die Nutzung des Sportplatzes wird eine Voranmeldung empfohlen"
                     }
                 },
                 {
@@ -330,7 +335,8 @@
                         "fr": "Il est possible de réserver, mais ce n'est pas nécéssaire pour utiliser ce terrain de sport",
                         "en": "Making an appointment is possible, but not necessary to use this sport pitch",
                         "it": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo",
-                        "ru": "Предварительная запись для доступа на эту спортивную площадку возможна, но не обязательна"
+                        "ru": "Предварительная запись для доступа на эту спортивную площадку возможна, но не обязательна",
+                        "de": "Eine Voranmeldung ist möglich, aber nicht notwendig, um diesen Sportplatz zu nutzen"
                     }
                 },
                 {
@@ -351,7 +357,8 @@
                 "nl": "Wat is het telefoonnummer van de bevoegde dienst of uitbater?",
                 "fr": "Quel est le numéro de téléphone du gérant ?",
                 "en": "What is the phone number of the operator?",
-                "it": "Qual è il numero di telefono del gestore?"
+                "it": "Qual è il numero di telefono del gestore?",
+                "de": "Wie ist die Telefonnummer des Betreibers?"
             },
             "freeform": {
                 "key": "phone",
@@ -365,7 +372,8 @@
                 "nl": "Wat is het email-adres van de bevoegde dienst of uitbater?",
                 "fr": "Quelle est l'adresse courriel du gérant ?",
                 "en": "What is the email address of the operator?",
-                "it": "Qual è l'indirizzo email del gestore?"
+                "it": "Qual è l'indirizzo email del gestore?",
+                "de": "Wie ist die Email-Adresse des Betreibers?"
             },
             "freeform": {
                 "key": "email",

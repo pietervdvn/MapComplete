@@ -412,21 +412,24 @@
             "id": "toilet-handwashing",
             "question": {
                 "en": "Do these toilets have a sink to wash your hands?",
-                "nl": "Hebben deze toiletten een lavabo om de handen te wassen?"
+                "nl": "Hebben deze toiletten een lavabo om de handen te wassen?",
+                "de": "Verfügt diese Toilette über ein Waschbecken?"
             },
             "mappings": [
                 {
                     "if": "toilets:handwashing=yes",
                     "then": {
                         "en": "This toilets have a sink to wash your hands",
-                        "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen"
+                        "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen",
+                        "de": "Diese Toilette verfügt über ein Waschbecken"
                     }
                 },
                 {
                     "if": "toilets:handwashing=no",
                     "then": {
                         "en": "This toilets <b>don't</b> have a sink to wash your hands",
-                        "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen"
+                        "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen",
+                        "de": "Diese Toilette verfügt über <b>kein</b> Waschbecken"
                     }
                 }
             ]
@@ -435,7 +438,8 @@
             "id": "toilet-has-paper",
             "question": {
                 "en": "Does one have to bring their own toilet paper to this toilet?",
-                "nl": "Moet je je eigen toiletpappier meenemen naar deze toilet?"
+                "nl": "Moet je je eigen toiletpappier meenemen naar deze toilet?",
+                "de": "Muss man für diese Toilette sein eigenes Toilettenpapier mitbringen?"
             },
             "mappings": [
                 {
@@ -449,7 +453,8 @@
                     "if": "toilets:paper_supplied=no",
                     "then": {
                         "en": "You have to bring your own toilet paper to this toilet",
-                        "nl": "Je moet je eigen toiletpapier meebrengen naar deze toilet"
+                        "nl": "Je moet je eigen toiletpapier meebrengen naar deze toilet",
+                        "de": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
                     }
                 }
             ]

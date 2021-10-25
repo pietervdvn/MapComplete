@@ -13,7 +13,7 @@
   "description": {
     "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
     "nl": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
-    "de": "Auf dieser Karte können Sie sehen, nach was ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. Die Informationen stammen aus Wikipedia."
+    "de": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. In dem Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Zoomen Sie genug hinein und <i>alle</i> Straßen werden angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen."
   },
   "language": [
     "en",
@@ -40,7 +40,8 @@
         "id": "streets_without_etymology",
         "name": {
           "en": "Streets without etymology information",
-          "nl": "Straten zonder etymologische informatie"
+          "nl": "Straten zonder etymologische informatie",
+          "de": "Straßen ohne Informationen zur Namensherkunft"
         },
         "minzoom": 18,
         "source": {
@@ -60,7 +61,8 @@
         "id": "parks_and_forests_without_etymology",
         "name": {
           "en": "Parks and forests without etymology information",
-          "nl": "Parken en bossen zonder etymologische informatie"
+          "nl": "Parken en bossen zonder etymologische informatie",
+          "de": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
         },
         "minzoom": 18,
         "source": {

@@ -4,7 +4,7 @@
         "en": "Observation towers",
         "nl": "Uitkijktorens",
         "ru": "Смотровые башни",
-        "de": "Beobachtungstürme"
+        "de": "Aussichtstürme"
     },
     "minzoom": 8,
     "title": {
@@ -29,7 +29,7 @@
     "description": {
         "en": "Towers with a panoramic view",
         "nl": "Torens om van het uitzicht te genieten",
-        "de": "Türme mit Panoramablick"
+        "de": "Türme zur Aussicht auf die umgebende Landschaft"
     },
     "tagRenderings": [
         "images",
@@ -96,7 +96,8 @@
         {
             "question": {
                 "en": "How much does one have to pay to enter this tower?",
-                "nl": "Hoeveel moet men betalen om deze toren te bezoeken?"
+                "nl": "Hoeveel moet men betalen om deze toren te bezoeken?",
+                "de": "Was kostet der Zugang zu diesem Turm?"
             },
             "render": {
                 "en": "Visiting this tower costs <b>{charge}</b>",

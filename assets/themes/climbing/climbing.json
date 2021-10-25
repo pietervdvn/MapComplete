@@ -454,11 +454,13 @@
         {
           "question": {
             "en": "How much bolts does this route have before reaching the moulinette?",
-            "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?"
+            "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
+            "de": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?"
           },
           "render": {
             "en": "This route has {climbing:bolts} bolts",
-            "fr": "Cette voie a {climbing:bolts} prises"
+            "fr": "Cette voie a {climbing:bolts} prises",
+            "de": "Diese Kletterroute hat {climbing:bolts} Haken"
           },
           "freeform": {
             "key": "climbing:bolts",
@@ -472,7 +474,8 @@
               "if": "climbing:bolted=no",
               "then": {
                 "en": "This route is not bolted",
-                "fr": "Cette voie n’a pas de prises"
+                "fr": "Cette voie n’a pas de prises",
+                "de": "Auf dieser Kletterroute sind keine Haken vorhanden"
               },
               "hideInAnswer": true
             },
@@ -480,7 +483,8 @@
               "if": "climbing:bolted=no&climbing:bolts=",
               "then": {
                 "en": "This route is not bolted",
-                "fr": "Cette voie n’a pas de prises"
+                "fr": "Cette voie n’a pas de prises",
+                "de": "Auf dieser Kletterroute sind keine Haken vorhanden"
               }
             }
           ],

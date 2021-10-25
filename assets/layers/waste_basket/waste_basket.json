@@ -32,7 +32,8 @@
             "id": "waste-basket-waste-types",
             "question": {
                 "en": "What kind of waste basket is this?",
-                "nl": "Wat voor soort vuilnisbak is dit?"
+                "nl": "Wat voor soort vuilnisbak is dit?",
+                "de": "Um was für einen Abfalleimer handelt es sich?"
             },
             "multiAnswer": true,
             "mappings": [
@@ -89,7 +90,8 @@
         {
             "id": "dispensing_dog_bags",
             "question": {
-                "en": "Does this waste basket have a dispenser for dog excrement bags?"
+                "en": "Does this waste basket have a dispenser for dog excrement bags?",
+                "de": "Verfügt dieser Abfalleimer über einen Spender für (Hunde-)Kotbeutel?"
             },
             "condition": {
                 "or": [
@@ -107,7 +109,8 @@
                         ]
                     },
                     "then": {
-                        "en": "This waste basket has a dispenser for (dog) excrement bags"
+                        "en": "This waste basket has a dispenser for (dog) excrement bags",
+                        "de": "Dieser Abfalleimer verfügt über einen Spender für (Hunde-)Kotbeutel"
                     }
                 },
                 {
@@ -118,13 +121,15 @@
                         ]
                     },
                     "then": {
-                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags"
+                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
+                        "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     }
                 },
                 {
                     "if": "vending=",
                     "then": {
-                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags"
+                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
+                        "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     },
                     "hideInAnwer": true
                 }

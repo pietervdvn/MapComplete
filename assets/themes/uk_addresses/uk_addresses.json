@@ -40,7 +40,8 @@
       "maxZoom": 20,
       "defaultState": false,
       "name": {
-        "en": "Property boundaries by osmuk.org"
+        "en": "Property boundaries by osmuk.org",
+        "de": "Grenzverläufe gemäß osmuk.org"
       }
     }
   ],

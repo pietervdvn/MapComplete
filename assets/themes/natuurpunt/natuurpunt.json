@@ -3,11 +3,13 @@
   "customCss": "./assets/themes/natuurpunt/natuurpunt.css",
   "title": {
     "nl": "Natuurgebieden",
-    "en": "Nature Reserves"
+    "en": "Nature Reserves",
+    "de": "Naturschutzgebiete"
   },
   "shortDescription": {
     "nl": "Deze kaart toont de natuurgebieden van Natuurpunt",
-    "en": "This map shows the nature reserves of Natuurpunt"
+    "en": "This map shows the nature reserves of Natuurpunt",
+    "de": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt"
   },
   "description": {
     "nl": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt",
@@ -15,7 +17,8 @@
   },
   "language": [
     "nl",
-    "en"
+    "en",
+    "de"
   ],
   "mustHaveLanguage": [
     "nl"

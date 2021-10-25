@@ -495,7 +495,8 @@
           "ru": "Пожарная часть",
           "nb_NO": "Brannstasjon",
           "it": "Caserma dei vigili del fuoco",
-          "fr": "Station de pompiers"
+          "fr": "Station de pompiers",
+          "de": "Feuerwache"
         }
       },
       "description": {

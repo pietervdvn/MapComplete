@@ -209,7 +209,8 @@
                 "en": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
                 "nl": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
                 "fr": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
-                "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?"
+                "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
+                "de": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
             },
             "freeform": {
                 "key": "defibrillator"

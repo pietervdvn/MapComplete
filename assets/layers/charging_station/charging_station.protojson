@@ -749,5 +749,15 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "deletion": {
+    "softDeletionTags": {
+      "and": ["amenity=","disused:amenity=charging_station"]
+    },
+    "neededChangesets": 10
+  }
 }
