@@ -46,7 +46,7 @@
         },
         {
           "if": "motorcar=yes",
-          "ifnot":  "motorcar=no",
+          "ifnot": "motorcar=no",
           "then": {
             "en": "<b>Cars</b> can be charged here",
             "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden"
@@ -98,7 +98,7 @@
         {
           "if": "access=yes",
           "then": {
-            "en":"Anyone can use this charging station (payment might be needed)",
+            "en": "Anyone can use this charging station (payment might be needed)",
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
           }
         },
@@ -110,7 +110,7 @@
             ]
           },
           "then": {
-            "en":"Anyone can use this charging station (payment might be needed)",
+            "en": "Anyone can use this charging station (payment might be needed)",
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
           },
           "hideInAnswer": true
@@ -125,7 +125,7 @@
         {
           "if": "access=private",
           "then": {
-            "en":"Not accessible to the general public (e.g. only accessible to the owners, employees, ...)",
+            "en": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)",
             "nl": "Niet toegankelijk voor het publiek <span class='subtle'>Enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
           }
         }
@@ -146,9 +146,151 @@
         "type": "pnat"
       }
     },
-    {"id": "$$$"},
+    {
+      "id": "$$$"
+    },
+    {
+      "id": "OH",
+      "render": "{opening_hours_table(opening_hours)}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "question": {
+        "en": "When is this charging station opened?",
+        "nl": "Wanneer is dit oplaadpunt beschikbaar??"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "nl": "24/7 open - ook tijdens vakanties"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fee",
+      "question": {
+        "en": "Does one have to pay to use this charging station?",
+        "nl": "Moet men betalen om dit oplaadpunt te gebruiken?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "fee=no"
+            ]
+          },
+          "then": {
+            "nl": "Gratis te gebruiken",
+            "en": "Free to use"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "fee=no",
+              "fee:conditional=",
+              "charge=",
+              "authentication:none=yes"
+            ]
+          },
+          "then": {
+            "nl": "Gratis te gebruiken (zonder aan te melden)",
+            "en": "Free to use (without authenticating)"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=no",
+              "fee:conditional=",
+              "charge=",
+              "authentication:none=no"
+            ]
+          },
+          "then": {
+            "nl": "Gratis te gebruiken, maar aanmelden met een applicatie is verplicht",
+            "en": "Free to use, but one has to authenticate"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=yes",
+              "fee:conditional=no @ customers"
+            ]
+          },
+          "then": {
+            "nl": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/...",
+            "en": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=yes",
+              "fee:conditional="
+            ]
+          },
+          "then": {
+            "nl": "Betalend",
+            "en": "Paid use"
+          }
+        }
+      ]
+    },
+    {
+      "id": "charge",
+      "question": {
+        "en": "How much does one have to pay to use this charging station?",
+        "nl": "Hoeveel moet men betalen om dit oplaadpunt te gebruiken?"
+      },
+      "render": {
+        "en": "Using this charging station costs <b>{charge}</b>",
+        "nl": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
+      },
+      "freeform": {
+        "key": "charge"
+      },
+      "condition": "fee=yes"
+    },
+    {
+      "id": "payment-options",
+      "builtin": "payment-options",
+      "override": {
+        "condition": {
+          "or": [
+            "fee=yes",
+            "charge~*"
+          ]
+        },
+        "mappings+": [
+          {
+            "if": "payment:app=yes",
+            "ifnot": "payment:app=no",
+            "then": {
+              "en": "Payment is done using a dedicated app",
+              "nl": "Betalen via een app van het netwerk"
+            }
+          },
+          {
+            "if": "payment:membership_card=yes",
+            "ifnot": "payment:membership_card=no",
+            "then": {
+              "en": "Payment is done using a membership card",
+              "nl": "Betalen via een lidkaart van het netwerk"
+            }
+          }
+        ]
+      }
+    },
     {
       "id": "Authentication",
+      "#": "In some cases, charging is free but one has to be authenticated. We only ask for authentication if fee is no (or unset). By default one sees the questions for either the payment options or the authentication options, but normally not both",
       "question": {
         "en": "What kind of authentication is available at the charging station?",
         "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?"
@@ -219,14 +361,19 @@
             "nl": "Hier opladen is (ook) mogelijk zonder aan te melden"
           }
         }
-      ]
+      ],
+      "condition": {
+        "or": [
+          "fee=no",
+          "fee="
+        ]
+      }
     },
     {
       "id": "Auth phone",
       "render": {
         "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
-  
       },
       "question": {
         "en": "What's the phone number for authentication call or SMS?",
@@ -240,88 +387,6 @@
         "or": [
           "authentication:phone_call=yes",
           "authentication:short_message=yes"
-        ]
-      }
-    },
-    {
-      "id": "OH",
-      "render": "{opening_hours_table(opening_hours)}",
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "question": {
-        "en": "When is this charging station opened?",
-        "nl": "Wanneer is dit oplaadpunt beschikbaar??"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "en": "24/7 opened (including holidays)",
-            "nl": "24/7 open - ook tijdens vakanties"
-          }
-        }
-      ]
-    },
-    {
-      "id": "fee/charge",
-      "question": {
-        "en": "How much does one have to pay to use this charging station?",
-        "nl": "Hoeveel kost het gebruik van dit oplaadpunt?"
-      },
-      "freeform": {
-        "key": "charge",
-        "addExtraTags": [
-          "fee=yes"
-        ]
-      },
-      "render": {
-        "en": "Using this charging station costs <b>{charge}</b>",
-        "nl": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "fee=no",
-              "charge="
-            ]
-          },
-          "then": {
-            "nl": "Gratis te gebruiken",
-            "en": "Free to use"
-          }
-        }
-      ]
-    },
-    {
-      "id": "payment-options",
-      "builtin": "payment-options",
-      "override": {
-        "condition": {
-          "or": [
-            "fee=yes",
-            "charge~*"
-          ]
-        },
-        "mappings+": [
-          {
-            "if": "payment:app=yes",
-            "ifnot": "payment:app=no",
-            "then": {
-              "en": "Payment is done using a dedicated app",
-              "nl": "Betalen via een app van het netwerk"
-            }
-          },
-          {
-            "if": "payment:membership_card=yes",
-            "ifnot": "payment:membership_card=no",
-            "then": {
-              "en": "Payment is done using a membership card",
-              "nl": "Betalen via een lidkaart van het netwerk"
-            }
-          }
         ]
       }
     },
@@ -345,8 +410,11 @@
             "en": "No timelimit on leaving your vehicle here",
             "nl": "Geen maximum parkeertijd"
           }
-        }  
-      ]
+        }
+      ],
+      "condition": {
+        "or": ["maxstay~*","motorcar=yes","hgv=yes","bus=yes"]
+      }
     },
     {
       "id": "Network",
@@ -466,7 +534,9 @@
       },
       "freeform": {
         "key": "ref"
-      }
+      },
+        "#": "Only asked if part of a bigger network. Small operators typically don't have a reference number",
+      "condition":"network!="
     },
     {
       "id": "Operational status",
@@ -476,7 +546,30 @@
       },
       "mappings": [
         {
-          "if": "operational_status=broken",
+          "if": {
+            "and": [
+              "planned:amenity=",
+              "construction:amenity=",
+              "disused:amenity=",
+              "operational_status=",
+              "amenity=charging_station"
+            ]
+          },
+          "then": {
+            "en": "This charging station works",
+            "nl": "Dit oplaadpunt werkt"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "planned:amenity=",
+              "construction:amenity=",
+              "disused:amenity=",
+              "operational_status=broken",
+              "amenity=charging_station"
+            ]
+          },
           "then": {
             "en": "This charging station is broken",
             "nl": "Dit oplaadpunt is kapot"
@@ -486,6 +579,9 @@
           "if": {
             "and": [
               "planned:amenity=charging_station",
+              "construction:amenity=",
+              "disused:amenity=",
+              "operational_status=",
               "amenity="
             ]
           },
@@ -495,9 +591,12 @@
           }
         },
         {
-          "if": {
+          "if":{
             "and": [
+              "planned:amenity=",
               "construction:amenity=charging_station",
+              "disused:amenity=",
+              "operational_status=broken",
               "amenity="
             ]
           },
@@ -509,22 +608,16 @@
         {
           "if": {
             "and": [
+              "planned:amenity=",
+              "construction:amenity=",
               "disused:amenity=charging_station",
+              "operational_status=broken",
               "amenity="
             ]
           },
           "then": {
             "en": "This charging station has beed permanently disabled and is not in use anymore but is still visible",
             "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
-          }
-        },
-        {
-          "if": {
-          "and":  ["amenity=charging_station","operational_status="]
-          },
-          "then": {
-            "en": "This charging station works",
-            "nl": "Dit oplaadpunt werkt"
           }
         }
       ]
@@ -741,7 +834,7 @@
             "en": " days",
             "nl": " day"
           },
-          "humanSingular":{
+          "humanSingular": {
             "en": " day",
             "nl": " dag"
           }
@@ -755,7 +848,10 @@
   },
   "deletion": {
     "softDeletionTags": {
-      "and": ["amenity=","disused:amenity=charging_station"]
+      "and": [
+        "amenity=",
+        "disused:amenity=charging_station"
+      ]
     },
     "neededChangesets": 10
   }
