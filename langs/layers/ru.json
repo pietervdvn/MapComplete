@@ -643,11 +643,11 @@
             }
         },
         "tagRenderings": {
-            "Auth phone": {
+            "Network": {
                 "question": "К какой сети относится эта станция?",
                 "render": "{network}"
             },
-            "Authentication": {
+            "OH": {
                 "question": "В какое время работает эта зарядная станция?"
             }
         },

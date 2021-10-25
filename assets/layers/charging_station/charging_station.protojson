@@ -2,11 +2,7 @@
   "id": "charging_station",
   "name": {
     "en": "Charging stations",
-    "it": "Stazioni di ricarica",
-    "ja": "充電ステーション",
-    "nb_NO": "Ladestasjoner",
-    "ru": "Зарядные станции",
-    "zh_Hant": "充電站"
+    "nl": "Oplaadpunten"
   },
   "minzoom": 10,
   "source": {
@@ -22,27 +18,21 @@
   "title": {
     "render": {
       "en": "Charging station",
-      "it": "Stazione di ricarica",
-      "ja": "充電ステーション",
-      "nb_NO": "Ladestasjon",
-      "ru": "Зарядная станция",
-      "zh_Hant": "充電站"
+      "nl": "Oplaadpunten"
     }
   },
   "description": {
     "en": "A charging station",
-    "it": "Una stazione di ricarica",
-    "ja": "充電ステーション",
-    "nb_NO": "En ladestasjon",
-    "ru": "Зарядная станция",
-    "zh_Hant": "充電站"
+    "nl": "Oplaadpunten"
   },
   "tagRenderings": [
     "images",
     {
       "id": "Type",
+      "#": "Allowed vehicle types",
       "question": {
-        "en": "Which vehicles are allowed to charge here?"
+        "en": "Which vehicles are allowed to charge here?",
+        "nl": "Welke voertuigen kunnen hier opgeladen worden?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -50,35 +40,40 @@
           "if": "bicycle=yes",
           "ifnot": "bicycle=no",
           "then": {
-            "en": "<b>bicycles</b> can be charged here"
+            "en": "<b>Bcycles</b> can be charged here",
+            "nl": "<b>Fietsen</b> kunnen hier opgeladen worden"
           }
         },
         {
           "if": "motorcar=yes",
           "ifnot":  "motorcar=no",
           "then": {
-            "en": "<b>Cars</b> can be charged here"
+            "en": "<b>Cars</b> can be charged here",
+            "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden"
           }
         },
         {
           "if": "scooter=yes",
           "ifnot": "scooter=no",
           "then": {
-            "en": "<b>Scooters</b> can be charged here"
+            "en": "<b>Scooters</b> can be charged here",
+            "nl": "<b>Electrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden"
           }
         },
         {
           "if": "hgv=yes",
           "ifnot": "hgv=no",
           "then": {
-            "en": "<b>Heavy good vehicles</b> (such as trucks) can be charged here"
+            "en": "<b>Heavy good vehicles</b> (such as trucks) can be charged here",
+            "nl": "<b>Vrachtwagens</b> kunnen hier opgeladen worden"
           }
         },
         {
           "if": "bus=yes",
           "ifnot": "bus=no",
           "then": {
-            "en": "<b>Buses</b> can be charged here"
+            "en": "<b>Buses</b> can be charged here",
+            "nl": "<b>Bussen</b> kunnen hier opgeladen worden"
           }
         }
       ]
@@ -86,10 +81,12 @@
     {
       "id": "access",
       "question": {
-        "en": "Who is allowed to use this charging station?"
+        "en": "Who is allowed to use this charging station?",
+        "nl": "Wie mag er dit oplaadpunt gebruiken?"
       },
       "render": {
-        "en": "Access is {access}"
+        "en": "Access is {access}",
+        "nl": "Toegang voor {access}"
       },
       "freeform": {
         "key": "access",
@@ -100,7 +97,10 @@
       "mappings": [
         {
           "if": "access=yes",
-          "then": "Anyone can use this charging station (payment might be needed)"
+          "then": {
+            "en":"Anyone can use this charging station (payment might be needed)",
+            "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
+          }
         },
         {
           "if": {
@@ -109,16 +109,25 @@
               "access=public"
             ]
           },
-          "then": "Anyone can use this charging station (payment might be needed)",
+          "then": {
+            "en":"Anyone can use this charging station (payment might be needed)",
+            "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
+          },
           "hideInAnswer": true
         },
         {
           "if": "access=customers",
-          "then": "Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span> "
+          "then": {
+            "en": "Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>",
+            "nl": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bijvoorbeeld een oplaadpunt op de parking van een restaurant dat enkel door klanten van het restaurant gebruikt mag worden</span>"
+          }
         },
         {
           "if": "access=private",
-          "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)"
+          "then": {
+            "en":"Not accessible to the general public (e.g. only accessible to the owners, employees, ...)",
+            "nl": "Niet toegankelijk voor het publiek <span class='subtle'>Enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
+          }
         }
       ]
     },
@@ -142,11 +151,7 @@
       "id": "Authentication",
       "question": {
         "en": "What kind of authentication is available at the charging station?",
-        "it": "Quali sono gli orari di apertura di questa stazione di ricarica?",
-        "ja": "この充電ステーションはいつオープンしますか?",
-        "nb_NO": "Når åpnet denne ladestasjonen?",
-        "ru": "В какое время работает эта зарядная станция?",
-        "zh_Hant": "何時是充電站開放使用的時間？"
+        "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -154,56 +159,64 @@
           "if": "authentication:membership_card=yes",
           "ifnot": "authentication:membership_card=no",
           "then": {
-            "en": "Authentication by a membership card"
+            "en": "Authentication by a membership card",
+            "nl": "Aanmelden met een lidkaart is mogelijk"
           }
         },
         {
           "if": "authentication:app=yes",
           "ifnot": "authentication:app=no",
           "then": {
-            "en": "Authentication by an app"
+            "en": "Authentication by an app",
+            "nl": "Aanmelden via een applicatie is mogelijk"
           }
         },
         {
           "if": "authentication:phone_call=yes",
           "ifnot": "authentication:phone_call=no",
           "then": {
-            "en": "Authentication via phone call is available"
+            "en": "Authentication via phone call is available",
+            "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk"
           }
         },
         {
           "if": "authentication:short_message=yes",
           "ifnot": "authentication:short_message=no",
           "then": {
-            "en": "Authentication via phone call is available"
+            "en": "Authentication via SMS is available",
+            "nl": "Aanmelden via SMS is mogelijk"
           }
         },
         {
           "if": "authentication:nfc=yes",
           "ifnot": "authentication:nfc=no",
           "then": {
-            "en": "Authentication via NFC is available"
+            "en": "Authentication via NFC is available",
+            "nl": "Aanmelden via NFC is mogelijk"
           }
         },
         {
           "if": "authentication:money_card=yes",
           "ifnot": "authentication:money_card=no",
           "then": {
-            "en": "Authentication via Money Card is available"
+            "en": "Authentication via Money Card is available",
+            "nl": "Aanmelden met Money Card is mogelijk"
           }
         },
         {
           "if": "authentication:debit_card=yes",
           "ifnot": "authentication:debit_card=no",
           "then": {
-            "en": "Authentication via debit card is available"
+            "en": "Authentication via debit card is available",
+            "nl": "Aanmelden met een betaalkaart is mogelijk"
           }
         },
         {
           "if": "authentication:none=yes",
           "ifnot": "authentication:none=no",
           "then": {
-            "en": "Charging here is (also) possible without authentication"
+            "en": "Charging here is (also) possible without authentication",
+            "nl": "Hier opladen is (ook) mogelijk zonder aan te melden"
           }
         }
       ]
@@ -212,18 +225,12 @@
       "id": "Auth phone",
       "render": {
         "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
-        "it": "{network}",
-        "ja": "{network}",
-        "nb_NO": "{network}",
-        "ru": "{network}",
-        "zh_Hant": "{network}"
+        "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+  
       },
       "question": {
         "en": "What's the phone number for authentication call or SMS?",
-        "it": "A quale rete appartiene questa stazione di ricarica?",
-        "ja": "この充電ステーションの運営チェーンはどこですか?",
-        "ru": "К какой сети относится эта станция?",
-        "zh_Hant": "充電站所屬的網路是？"
+        "nl": "Wat is het telefoonnummer dat men moet bellen of SMS'en om zich aan te melden?"
       },
       "freeform": {
         "key": "authentication:phone_call:number",
@@ -234,26 +241,6 @@
           "authentication:phone_call=yes",
           "authentication:short_message=yes"
         ]
-      },
-      "it": {
-        "0": {
-          "then": "Non appartiene a una rete"
-        }
-      },
-      "ja": {
-        "0": {
-          "then": "大規模な運営チェーンの一部ではない"
-        }
-      },
-      "ru": {
-        "0": {
-          "then": "Не является частью более крупной сети"
-        }
-      },
-      "zh_Hant": {
-        "0": {
-          "then": "不屬於大型網路"
-        }
       }
     },
     {
@@ -264,13 +251,15 @@
         "type": "opening_hours"
       },
       "question": {
-        "en": "When is this charging station opened?"
+        "en": "When is this charging station opened?",
+        "nl": "Wanneer is dit oplaadpunt beschikbaar??"
       },
       "mappings": [
         {
           "if": "opening_hours=24/7",
           "then": {
-            "en": "24/7 opened (including holidays)"
+            "en": "24/7 opened (including holidays)",
+            "nl": "24/7 open - ook tijdens vakanties"
           }
         }
       ]
@@ -472,7 +461,8 @@
         "en": "What is the reference number of this charging station?"
       },
       "render": {
-        "en": "Reference number is <b>{ref}</b>"
+        "en": "Reference number is <b>{ref}</b>",
+        "nl": "Het referentienummer van dit oplaadpunt is <b>{ref}</b>"
       },
       "freeform": {
         "key": "ref"
@@ -557,7 +547,16 @@
             "en": "An additional parking fee should be paid while charging"
           }
         }
-      ]
+      ],
+      "condition": {
+        "or": [
+          "motor_vehicle=yes",
+          "hgv=yes",
+          "bus=yes",
+          "bicycle=no",
+          "bicycle="
+        ]
+      }
     }
   ],
   "icon": {
