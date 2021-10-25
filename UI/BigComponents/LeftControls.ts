@@ -41,6 +41,7 @@ export default class LeftControls extends Combine {
                     state.layoutToUse,
                     new ContributorCount(state).Contributors
                 ),
+             "copyright",
              guiState.copyrightViewIsOpened
         );
 
@@ -74,6 +75,7 @@ export default class LeftControls extends Combine {
                     new FilterView(state.filteredLayers, state.overlayToggles).SetClass(
                         "block p-1"
                     ),
+                "filters",
                 guiState.filterViewIsOpened
             ).SetClass("rounded-lg"),
             new MapControlButton(Svg.filter_svg())

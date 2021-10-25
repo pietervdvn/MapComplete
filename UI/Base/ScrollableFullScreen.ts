@@ -24,10 +24,15 @@ export default class ScrollableFullScreen extends UIElement {
     private _fullscreencomponent: BaseUIElement;
 
     constructor(title: ((mode: string) => BaseUIElement), content: ((mode: string) => BaseUIElement),
+                hashToShow: string,
                 isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     ) {
         super();
         this.isShown = isShown;
+
+        if (hashToShow === undefined) {
+            throw "HashToShow should be defined as it is vital for the 'back' key functionality"
+        }
 
         this._component = this.BuildComponent(title("desktop"), content("desktop"), isShown)
             .SetClass("hidden md:block");
@@ -38,9 +43,17 @@ export default class ScrollableFullScreen extends UIElement {
         isShown.addCallback(isShown => {
             if (isShown) {
                 self.Activate();
+                Hash.hash.setData(hashToShow)
             } else {
                 ScrollableFullScreen.clear();
             }
+        })
+
+        Hash.hash.addCallback(hash => {
+            if (hash === hashToShow) {
+                return
+            }
+            isShown.setData(false)
         })
     }
 
@@ -67,10 +80,10 @@ export default class ScrollableFullScreen extends UIElement {
     private BuildComponent(title: BaseUIElement, content: BaseUIElement, isShown: UIEventSource<boolean>) {
         const returnToTheMap =
             new Combine([
-                new Img(Svg.back.replace(/#000000/g,"#cccccc"),true)
+                new Img(Svg.back.replace(/#000000/g, "#cccccc"), true)
                     .SetClass("block md:hidden w-12 h-12 p-2"),
-               new Img(Svg.close.replace(/#000000/g,"#cccccc"),true)
-                   .SetClass("hidden md:block  w-12 h-12  p-3")
+                new Img(Svg.close.replace(/#000000/g, "#cccccc"), true)
+                    .SetClass("hidden md:block  w-12 h-12  p-3")
             ]).SetClass("rounded-full p-0 flex-shrink-0 self-center")
 
         returnToTheMap.onClick(() => {

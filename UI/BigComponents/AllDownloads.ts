@@ -13,7 +13,7 @@ import ExportPDF from "../ExportPDF";
 export default class AllDownloads extends ScrollableFullScreen {
 
     constructor(isShown: UIEventSource<boolean>) {
-        super(AllDownloads.GenTitle, AllDownloads.GeneratePanel, isShown);
+        super(AllDownloads.GenTitle, AllDownloads.GeneratePanel, "downloads", isShown);
     }
 
     private static GenTitle(): BaseUIElement {

@@ -254,6 +254,7 @@ export default class DefaultGUI {
             const addNewPoint = new ScrollableFullScreen(
                 () => Translations.t.general.add.title.Clone(),
                 () => new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, state),
+                "new",
                 newPointDialogIsShown
             );
             addNewPoint.isShown.addCallback((isShown) => {
