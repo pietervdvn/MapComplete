@@ -1704,9 +1704,9 @@
                         ]
                     },
                     "then": {
-                        "en": "This charging station is broken",
-                        "nl": "Dit oplaadpunt is kapot",
-                        "de": "Diese Ladestation ist kaputt"
+                        "en": "This charging station works",
+                        "nl": "Dit oplaadpunt werkt",
+                        "de": "Diese Ladestation funktioniert"
                     }
                 },
                 {
@@ -1720,6 +1720,22 @@
                         ]
                     },
                     "then": {
+                        "en": "This charging station is broken",
+                        "nl": "Dit oplaadpunt is kapot",
+                        "de": "Diese Ladestation ist kaputt"
+                    }
+                },
+                {
+                    "if": {
+                        "and": [
+                            "planned:amenity=charging_station",
+                            "construction:amenity=",
+                            "disused:amenity=",
+                            "operational_status=",
+                            "amenity="
+                        ]
+                    },
+                    "then": {
                         "en": "A charging station is planned here",
                         "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden",
                         "de": "Hier ist eine Ladestation geplant"
@@ -1728,8 +1744,8 @@
                 {
                     "if": {
                         "and": [
-                            "planned:amenity=charging_station",
-                            "construction:amenity=",
+                            "planned:amenity=",
+                            "construction:amenity=charging_station",
                             "disused:amenity=",
                             "operational_status=",
                             "amenity="
@@ -1745,9 +1761,9 @@
                     "if": {
                         "and": [
                             "planned:amenity=",
-                            "construction:amenity=charging_station",
-                            "disused:amenity=",
-                            "operational_status=broken",
+                            "construction:amenity=",
+                            "disused:amenity=charging_station",
+                            "operational_status=",
                             "amenity="
                         ]
                     },
@@ -1755,22 +1771,6 @@
                         "en": "This charging station has beed permanently disabled and is not in use anymore but is still visible",
                         "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig",
                         "de": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "planned:amenity=",
-                            "construction:amenity=",
-                            "disused:amenity=charging_station",
-                            "operational_status=broken",
-                            "amenity="
-                        ]
-                    },
-                    "then": {
-                        "en": "This charging station works",
-                        "nl": "Dit oplaadpunt werkt",
-                        "de": "Diese Ladestation funktioniert"
                     }
                 }
             ]

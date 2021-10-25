@@ -1288,19 +1288,19 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "Dit oplaadpunt is kapot"
+                        "then": "Dit oplaadpunt werkt"
                     },
                     "1": {
-                        "then": "Hier zal binnenkort een oplaadpunt gebouwd worden"
+                        "then": "Dit oplaadpunt is kapot"
                     },
                     "2": {
-                        "then": "Hier wordt op dit moment een oplaadpunt gebouwd"
+                        "then": "Hier zal binnenkort een oplaadpunt gebouwd worden"
                     },
                     "3": {
-                        "then": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
+                        "then": "Hier wordt op dit moment een oplaadpunt gebouwd"
                     },
                     "4": {
-                        "then": "Dit oplaadpunt werkt"
+                        "then": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
                     }
                 },
                 "question": "Is dit oplaadpunt operationeel?"

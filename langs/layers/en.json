@@ -1175,19 +1175,19 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "This charging station is broken"
+                        "then": "This charging station works"
                     },
                     "1": {
-                        "then": "A charging station is planned here"
+                        "then": "This charging station is broken"
                     },
                     "2": {
-                        "then": "A charging station is constructed here"
+                        "then": "A charging station is planned here"
                     },
                     "3": {
-                        "then": "This charging station has beed permanently disabled and is not in use anymore but is still visible"
+                        "then": "A charging station is constructed here"
                     },
                     "4": {
-                        "then": "This charging station works"
+                        "then": "This charging station has beed permanently disabled and is not in use anymore but is still visible"
                     }
                 },
                 "question": "Is this charging point in use?"

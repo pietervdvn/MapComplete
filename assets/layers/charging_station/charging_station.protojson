@@ -609,7 +609,7 @@
               "planned:amenity=",
               "construction:amenity=charging_station",
               "disused:amenity=",
-              "operational_status=broken",
+              "operational_status=",
               "amenity="
             ]
           },
@@ -624,7 +624,7 @@
               "planned:amenity=",
               "construction:amenity=",
               "disused:amenity=charging_station",
-              "operational_status=broken",
+              "operational_status=",
               "amenity="
             ]
           },
