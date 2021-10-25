@@ -100,7 +100,7 @@ export default class FeaturePipeline {
         this.relationTracker = new RelationsTracker()
         
         state.changes.allChanges.addCallbackAndRun(allChanges => {
-            allChanges.filter(ch => ch.id < 0)
+            allChanges.filter(ch => ch.id < 0 && ch.changes !== undefined)
                 .map(ch => ch.changes)
                 .filter(coor => coor["lat"] !== undefined && coor["lon"] !== undefined)
                 .forEach(coor => {

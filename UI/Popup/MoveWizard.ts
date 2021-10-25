@@ -198,7 +198,7 @@ export default class MoveWizard extends Toggle {
             moveDisallowedReason.setData(t.isWay)
         } else if (id.startsWith("relation")) {
             moveDisallowedReason.setData(t.isRelation)
-        } else {
+        } else if(id.indexOf("-") < 0) {
             
             OsmObject.DownloadReferencingWays(id).then(referencing => {
                 if (referencing.length > 0) {
@@ -207,8 +207,8 @@ export default class MoveWizard extends Toggle {
                 }
             })
             OsmObject.DownloadReferencingRelations(id).then(partOf => {
-                if(partOf.length > 0){
-                moveDisallowedReason.setData(t.partOfRelation)
+                if(partOf.length > 0){ 
+                    moveDisallowedReason.setData(t.partOfRelation)
                 }
             })
         }

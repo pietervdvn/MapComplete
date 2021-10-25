@@ -119,14 +119,14 @@
           "if": "access=customers",
           "then": {
             "en": "Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>",
-            "nl": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bijvoorbeeld een oplaadpunt op de parking van een restaurant dat enkel door klanten van het restaurant gebruikt mag worden</span>"
+            "nl": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bv. op de parking van een hotel en enkel toegankelijk voor klanten van dit hotel</span>"
           }
         },
         {
           "if": "access=private",
           "then": {
             "en": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)",
-            "nl": "Niet toegankelijk voor het publiek <span class='subtle'>Enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
+            "nl": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
           }
         }
       ]
@@ -419,10 +419,12 @@
     {
       "id": "Network",
       "render": {
-        "en": "Part of the network <b>{network}</b>"
+        "en": "Part of the network <b>{network}</b>",
+        "nl": "Maakt deel uit van het <b>{network}</b>-netwerk"
       },
       "question": {
-        "en": "Is this charging station part of a network?"
+        "en": "Is this charging station part of a network?",
+        "nl": "Is dit oplaadpunt deel van een groter netwerk?"
       },
       "freeform": {
         "key": "network"
@@ -431,13 +433,15 @@
         {
           "if": "no:network=yes",
           "then": {
-            "en": "Not part of a bigger network"
+            "en": "Not part of a bigger network",
+            "nl": "Maakt geen deel uit van een groter netwerk"
           }
         },
         {
           "if": "network=none",
           "then": {
-            "en": "Not part of a bigger network"
+            "en": "Not part of a bigger network",
+            "nl": "Maakt geen deel uit van een groter netwerk"
           },
           "hideInAnswer": true
         },
@@ -458,10 +462,12 @@
     {
       "id": "Operator",
       "question": {
-        "en": "Who is the operator of this charging station?"
+        "en": "Who is the operator of this charging station?",
+        "nl": "Wie beheert dit oplaadpunt?"
       },
       "render": {
-        "en": "This charging station is operated by {operator}"
+        "en": "This charging station is operated by {operator}",
+        "nl": "Wordt beheerd door {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -474,7 +480,8 @@
             ]
           },
           "then": {
-            "en": "Actually, {operator} is the network"
+            "en": "Actually, {operator} is the network",
+            "nl": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt"
           },
           "addExtraTags": [
             "operator="
@@ -486,10 +493,11 @@
     {
       "id": "phone",
       "question": {
-        "en": "What number can one call if there is a problem with this charging station?"
+        "en": "What number can one call if there is a problem with this charging station?",
+        "nl": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?"
       },
       "render": {
-        "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
+        "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>", "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -499,10 +507,12 @@
     {
       "id": "email",
       "question": {
-        "en": "What is the email address of the operator?"
+        "en": "What is the email address of the operator?",
+        "nl": "Wat is het email-adres van de operator?"
       },
       "render": {
-        "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>"
+        "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>",
+        "nl": "Bij problemen, email naar <a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -512,10 +522,12 @@
     {
       "id": "website",
       "question": {
-        "en": "What is the website of the operator?"
+        "en": "What is the website where one can find more information about this charging station?",
+        "nl": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?"
       },
       "render": {
-        "en": "More info on <a href='{website}'>{website}</a>"
+        "en": "More info on <a href='{website}'>{website}</a>",
+        "nl": "Meer informatie op <a href='{website}'>{website}</a>"
       },
       "freeform": {
         "key": "website",
@@ -526,7 +538,8 @@
     {
       "id": "ref",
       "question": {
-        "en": "What is the reference number of this charging station?"
+        "en": "What is the reference number of this charging station?",
+        "nl": "Wat is het referentienummer van dit oplaadstation?"
       },
       "render": {
         "en": "Reference number is <b>{ref}</b>",
@@ -625,19 +638,22 @@
     {
       "id": "Parking:fee",
       "question": {
-        "en": "Does one have to pay a parking fee while charging?"
+        "en": "Does one have to pay a parking fee while charging?",
+        "nl": "Moet men parkeergeld betalen tijdens het opladen?"
       },
       "mappings": [
         {
           "if": "parking:fee=no",
           "then": {
-            "en": "No additional parking cost while charging"
+            "en": "No additional parking cost while charging",
+            "nl": "Geen extra parkeerkost tijdens het opladen"
           }
         },
         {
           "if": "parking:fee=yes",
           "then": {
-            "en": "An additional parking fee should be paid while charging"
+            "en": "An additional parking fee should be paid while charging",
+            "nl": "Tijdens het opladen moet er parkeergeld betaald worden"
           }
         }
       ],
@@ -718,10 +734,54 @@
   "presets": [
     {
       "tags": [
+        "amenity=charging_station",
+        "motorcar=no",
+        "bicycle=yes",
+        "socket:typee=1"
+      ],
+      "title": {
+        "en": "electrical outlet to charge e-bikes",
+        "nl": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    },
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=no",
+        "bicycle=yes"
+      ],
+      "title": {
+        "en": "charging station for e-bikes",
+        "nl": "oplaadpunt voor elektrische fietsen"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    },
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=yes",
+        "bicycle=no"
+      ],
+      "title": {
+        "en": "charging station for cars",
+        "nl": "oplaadstation voor elektrische auto's"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    },
+    {
+      "tags": [
         "amenity=charging_station"
       ],
       "title": {
-        "en": "Charging station"
+        "en": "charging station",
+        "nl": "oplaadstation"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -765,7 +825,8 @@
       "options": [
         {
           "question": {
-            "en": "Only working charging stations"
+            "en": "Only working charging stations",
+            "nl": "Enkel werkende oplaadpunten"
           },
           "osmTags": {
             "and": [

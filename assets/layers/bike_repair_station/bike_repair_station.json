@@ -615,16 +615,7 @@
         "level"
     ],
     "icon": {
-        "render": {
-            "en": "./assets/layers/bike_repair_station/repair_station.svg",
-            "ru": "./assets/layers/bike_repair_station/repair_station.svg",
-            "it": "./assets/layers/bike_repair_station/repair_station.svg",
-            "fi": "./assets/layers/bike_repair_station/repair_station.svg",
-            "fr": "./assets/layers/bike_repair_station/repair_station.svg",
-            "pt_BR": "./assets/layers/bike_repair_station/repair_station.svg",
-            "de": "./assets/layers/bike_repair_station/repair_station.svg",
-            "pt": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
+        "render": "./assets/layers/bike_repair_station/repair_station.svg",
         "mappings": [
             {
                 "if": {

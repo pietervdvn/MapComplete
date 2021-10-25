@@ -91,6 +91,7 @@
             "id": "dispensing_dog_bags",
             "question": {
                 "en": "Does this waste basket have a dispenser for dog excrement bags?",
+                "nl": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?",
                 "de": "Verfügt dieser Abfalleimer über einen Spender für (Hunde-)Kotbeutel?"
             },
             "condition": {
@@ -110,6 +111,7 @@
                     },
                     "then": {
                         "en": "This waste basket has a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes",
                         "de": "Dieser Abfalleimer verfügt über einen Spender für (Hunde-)Kotbeutel"
                     }
                 },
@@ -122,6 +124,7 @@
                     },
                     "then": {
                         "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
                         "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     }
                 },
@@ -129,6 +132,7 @@
                     "if": "vending=",
                     "then": {
                         "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilnisbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
                         "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     },
                     "hideInAnwer": true
