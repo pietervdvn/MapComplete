@@ -30,14 +30,14 @@ import TileFreshnessCalculator from "./TileFreshnessCalculator";
 
 /**
  * The features pipeline ties together a myriad of various datasources:
- * 
+ *
  * - The Overpass-API
  * - The OSM-API
  * - Third-party geojson files, either sliced or directly.
- * 
+ *
  * In order to truly understand this class, please have a look at the following diagram: https://cdn-images-1.medium.com/fit/c/800/618/1*qTK1iCtyJUr4zOyw4IFD7A.jpeg
- * 
- * 
+ *
+ *
  */
 export default class FeaturePipeline {
 
@@ -68,7 +68,7 @@ export default class FeaturePipeline {
 
     private readonly freshnesses = new Map<string, TileFreshnessCalculator>();
 
-    private readonly oldestAllowedDate: Date = new Date(new Date().getTime() - 60 * 60 * 24 * 30 * 1000);
+    private readonly oldestAllowedDate: Date;
     private readonly osmSourceZoomLevel
 
     constructor(
@@ -90,6 +90,11 @@ export default class FeaturePipeline {
         this.state = state;
 
         const self = this
+        const expiryInSeconds = Math.min(...state.layoutToUse.layers.map(l => l.maxAgeOfCache))
+        this.oldestAllowedDate = new Date(new Date().getTime() - expiryInSeconds);
+        for (const layer of state.layoutToUse.layers) {
+            TiledFromLocalStorageSource.cleanCacheForLayer(layer)
+        }
         this.osmSourceZoomLevel = state.osmApiTileSize.data;
         // milliseconds
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
@@ -220,7 +225,7 @@ export default class FeaturePipeline {
                 maxZoomLevel: state.layoutToUse.clustering.maxZoom,
                 registerTile: (tile) => {
                     // We save the tile data for the given layer to local storage
-                    if(source.layer.layerDef.source.geojsonSource === undefined || source.layer.layerDef.source.isOsmCacheLayer == true){
+                    if (source.layer.layerDef.source.geojsonSource === undefined || source.layer.layerDef.source.isOsmCacheLayer == true) {
                         new SaveTileToLocalStorageActor(tile, tile.tileIndex)
                     }
                     perLayerHierarchy.get(source.layer.layerDef.id).registerTile(new RememberingSource(tile))
@@ -257,7 +262,7 @@ export default class FeaturePipeline {
         this.runningQuery = updater.runningQuery.map(
             overpass => {
                 console.log("FeaturePipeline: runningQuery state changed. Overpass", overpass ? "is querying," : "is idle,",
-                    "osmFeatureSource is", osmFeatureSource.isRunning ? "is running and needs "+neededTilesFromOsm.data?.length+" tiles (already got "+ osmFeatureSource.downloadedTiles.size  +" tiles )" : "is idle")
+                    "osmFeatureSource is", osmFeatureSource.isRunning ? "is running and needs " + neededTilesFromOsm.data?.length + " tiles (already got " + osmFeatureSource.downloadedTiles.size + " tiles )" : "is idle")
                 return overpass || osmFeatureSource.isRunning.data;
             }, [osmFeatureSource.isRunning]
         )
@@ -353,7 +358,7 @@ export default class FeaturePipeline {
                 isActive: useOsmApi.map(b => !b && overpassIsActive.data, [overpassIsActive]),
                 onBboxLoaded: (bbox, date, downloadedLayers, paddedToZoomLevel) => {
                     Tiles.MapRange(bbox.containingTileRange(paddedToZoomLevel), (x, y) => {
-                       const tileIndex =  Tiles.tile_index(paddedToZoomLevel, x, y)
+                        const tileIndex = Tiles.tile_index(paddedToZoomLevel, x, y)
                         downloadedLayers.forEach(layer => {
                             self.freshnesses.get(layer.id).addTileLoad(tileIndex, date)
                             SaveTileToLocalStorageActor.MarkVisited(layer.id, tileIndex, date)
@@ -412,7 +417,7 @@ export default class FeaturePipeline {
     }
 
     public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
-        if(layerId === "*"){
+        if (layerId === "*") {
             return this.GetAllFeaturesWithin(bbox)
         }
         const requestedHierarchy = this.perLayerHierarchy.get(layerId)

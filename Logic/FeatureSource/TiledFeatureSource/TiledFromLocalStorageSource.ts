@@ -5,6 +5,7 @@ import TileHierarchy from "./TileHierarchy";
 import SaveTileToLocalStorageActor from "../Actors/SaveTileToLocalStorageActor";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 
 export default class TiledFromLocalStorageSource implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     public readonly loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
@@ -16,7 +17,7 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
         const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layerId + "-"
         const freshnesses = new Map<number, Date>()
         for (const key of Object.keys(localStorage)) {
-            if(!(key.startsWith(prefix) && key.endsWith("-time"))){
+            if (!(key.startsWith(prefix) && key.endsWith("-time"))) {
                 continue
             }
             const index = Number(key.substring(prefix.length, key.length - "-time".length))
@@ -28,6 +29,29 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
         return freshnesses
     }
 
+
+    static cleanCacheForLayer(layer: LayerConfig) {
+        const now = new Date()
+        const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.id + "-"
+        console.log("Cleaning tiles of ", prefix, "with max age",layer.maxAgeOfCache)
+        for (const key of Object.keys(localStorage)) {
+            if (!(key.startsWith(prefix) && key.endsWith("-time"))) {
+                continue
+            }
+            const index = Number(key.substring(prefix.length, key.length - "-time".length))
+            const time = Number(localStorage.getItem(key))
+            const timeDiff = (now.getTime() - time) / 1000
+            
+            if(timeDiff >= layer.maxAgeOfCache){
+                const k = prefix+index;
+                localStorage.removeItem(k)
+                localStorage.removeItem(k+"-format")
+                localStorage.removeItem(k+"-time")
+                console.debug("Removed "+k+" from local storage: too old")
+            }
+        }
+    }
+
     constructor(layer: FilteredLayer,
                 handleFeatureSource: (src: FeatureSourceForLayer & Tiled, index: number) => void,
                 state: {
@@ -36,7 +60,7 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
         this.layer = layer;
         this.handleFeatureSource = handleFeatureSource;
 
-        
+
         this.undefinedTiles = new Set<number>()
         const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-"
         const knownTiles: number[] = Object.keys(localStorage)
@@ -56,9 +80,9 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
             if (version === undefined || version !== SaveTileToLocalStorageActor.formatVersion) {
                 // Invalid version! Remove this tile from local storage
                 localStorage.removeItem(prefix)
-                localStorage.removeItem(prefix+"-time")
-                localStorage.removeItem(prefix+"-format")
-              this.  undefinedTiles.add(index)
+                localStorage.removeItem(prefix + "-time")
+                localStorage.removeItem(prefix + "-format")
+                this.undefinedTiles.add(index)
                 console.log("Dropped old format tile", prefix)
             }
         }
@@ -66,19 +90,19 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
         const self = this
         state.currentBounds.map(bounds => {
 
-            if(bounds === undefined){
+            if (bounds === undefined) {
                 return;
             }
             for (const knownTile of knownTiles) {
-                
-                if(this.loadedTiles.has(knownTile)){
+
+                if (this.loadedTiles.has(knownTile)) {
                     continue;
                 }
-                if(this.undefinedTiles.has(knownTile)){
+                if (this.undefinedTiles.has(knownTile)) {
                     continue;
                 }
-                
-                if(!bounds.overlapsWith(BBox.fromTileIndex(knownTile))){
+
+                if (!bounds.overlapsWith(BBox.fromTileIndex(knownTile))) {
                     continue;
                 }
                 self.loadTile(knownTile)
@@ -86,8 +110,8 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
         })
 
     }
-    
-    private loadTile( neededIndex: number){
+
+    private loadTile(neededIndex: number) {
         try {
             const key = SaveTileToLocalStorageActor.storageKey + "-" + this.layer.layerDef.id + "-" + neededIndex
             const data = localStorage.getItem(key)

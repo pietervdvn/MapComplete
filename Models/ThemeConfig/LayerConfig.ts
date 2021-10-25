@@ -52,6 +52,10 @@ export default class LayerConfig {
     public readonly deletion: DeleteConfig | null;
     public readonly allowMove: MoveConfig | null
     public readonly allowSplit: boolean
+    /**
+     * In seconds
+     */
+    public readonly maxAgeOfCache: number
 
     presets: PresetConfig[];
 
@@ -87,7 +91,9 @@ export default class LayerConfig {
             // @ts-ignore
             legacy = TagUtils.Tag(json["overpassTags"], context + ".overpasstags");
         }
+
         if (json.source !== undefined) {
+            this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
             if (legacy !== undefined) {
                 throw (
                     context +
@@ -126,7 +132,7 @@ export default class LayerConfig {
                 osmTags: legacy,
             });
         }
-
+        
         this.calculatedTags = undefined;
         if (json.calculatedTags !== undefined) {
             if (!official) {
