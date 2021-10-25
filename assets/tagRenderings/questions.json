@@ -6,14 +6,18 @@
     "render": "{wikipedia():max-height:25rem}",
     "question": {
       "en": "What is the corresponding Wikidata entity?",
-      "nl": "Welk Wikidata-item komt overeen met dit object?"
+      "nl": "Welk Wikidata-item komt overeen met dit object?",
+      "de": "Was ist das entsprechende Wikidata Element?",
+      "pt": "Qual é a entidade Wikidata correspondente?"
     },
     "mappings": [
       {
         "if": "wikidata=",
         "then": {
           "en": "No Wikipedia page has been linked yet",
-          "nl": "Er werd nog geen Wikipedia-pagina gekoppeld"
+          "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+          "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+          "pt": "Ainda não foi vinculada nenhuma página da Wikipédia"
         },
         "hideInAnswer": true
       }
@@ -64,14 +68,18 @@
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
     "question": {
       "en": "What is the corresponding item on Wikipedia?",
-      "nl": "Welk Wikipedia-artikel beschrijft dit object?"
+      "nl": "Welk Wikipedia-artikel beschrijft dit object?",
+      "de": "Was ist der entsprechende Artikel auf Wikipedia?",
+      "pt": "Qual é o item correspondente na Wikipédia?"
     },
     "mappings": [
       {
         "if": "wikidata=",
         "then": {
           "en": "Not linked with Wikipedia",
-          "nl": "Nog geen Wikipedia-artikel bekend"
+          "nl": "Nog geen Wikipedia-artikel bekend",
+          "de": "Nicht mit Wikipedia verknüpft",
+          "pt": "Não vinculado à Wikipédia"
         }
       }
     ],
