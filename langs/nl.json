@@ -10,10 +10,12 @@
         "ccb": "onder de CC-BY-licentie",
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
         "respectPrivacy": "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
-        "uploadDone": "<span class='thanks'>Je afbeelding is toegevoegd. Bedankt om te helpen!</span>",
+        "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
         "dontDelete": "Terug",
         "doDelete": "Verwijder afbeelding",
-        "isDeleted": "Verwijderd"
+        "isDeleted": "Verwijderd",
+        "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
+        "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken"
     },
     "centerMessage": {
         "loadingData": "Data wordt geladen...",
@@ -24,8 +26,9 @@
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
         "title": "Welkom bij MapComplete",
-        "intro": "MapComplete is een OpenStreetMap applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
-        "pickTheme": "Kies hieronder een thema om te beginnen."
+        "intro": "MapComplete is een OpenStreetMap-applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
+        "pickTheme": "Kies hieronder een thema om te beginnen.",
+        "featuredThemeTitle": "Thema van de week"
     },
     "general": {
         "loginWithOpenStreetMap": "Aanmelden met OpenStreetMap",
@@ -51,7 +54,10 @@
             "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
             "presetInfo": "Het nieuwe punt krijgt de attributen {tags}",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
-            "disableFilters": "Zet alle filters af"
+            "disableFilters": "Zet alle filters af",
+            "hasBeenImported": "Dit punt is reeds geimporteerd",
+            "warnVisibleForEveryone": "Je toevoeging is voor iedereen zichtbaar",
+            "zoomInMore": "Zoom meer in om dit punt te importeren"
         },
         "pickLanguage": "Kies je taal: ",
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
@@ -128,7 +134,9 @@
             "intro": "<h3>Meer thematische kaarten</h3>Vind je het leuk om geodata te verzamelen? <br/> Hier vind je meer kaartthemas.",
             "requestATheme": "Wil je een eigen kaartthema, vraag dit in de issue tracker.",
             "streetcomplete": "Een andere, gelijkaardige Android-applicatie is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
-            "createYourOwnTheme": "Maak je eigen MapComplete-kaart"
+            "createYourOwnTheme": "Maak je eigen MapComplete-kaart",
+            "previouslyHiddenTitle": "Eerder bezochte verborgen themas",
+            "hiddenExplanation": "Deze thema's zijn enkel zichtbaar indien je de link kent. Je hebt {hidden_discovered} van {total_hidden} verborgen thema's ontdekt"
         },
         "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
         "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen.",
@@ -181,7 +189,10 @@
         "save": "Opslaan",
         "returnToTheMap": "Ga terug naar de kaart",
         "pdf": {
-            "versionInfo": "v{version} - gemaakt op {date}"
+            "versionInfo": "v{version} - gemaakt op {date}",
+            "attr": "Kaartgegevens © OpenStreetMap-bijdragers, herbruikbaar volgens ODbL",
+            "generatedWith": "Gemaakt met MapComplete.osm.be",
+            "attrBackground": "Achtergrondlaag: {background}"
         },
         "osmLinkTooltip": "Bekijk dit object op OpenStreetMap om de geschiedenis te zien en meer te kunnen aanpassen",
         "oneSkippedQuestion": "Een vraag werd overgeslaan",
@@ -196,9 +207,27 @@
             "downloadGeoJsonHelper": "Compatibel met QGIS, ArcGIS, ESRI, ...",
             "downloadGeojson": "Download de zichtbare data als geojson",
             "downloadAsPdfHelper": "Perfect om de huidige kaart af te printen",
-            "downloadAsPdf": "Download een PDF van de huidig zichtbare kaart"
+            "downloadAsPdf": "Download een PDF van de huidig zichtbare kaart",
+            "title": "Download de zichtbare data",
+            "exporting": "Aan het exporteren..."
         },
-        "cancel": "Annuleren"
+        "cancel": "Annuleren",
+        "testing": "Testmode - wijzigingen worden niet opgeslaan",
+        "openTheMap": "Naar de kaart",
+        "wikipedia": {
+            "failed": "Het wikipedia-artikel inladen is mislukt",
+            "wikipediaboxTitle": "Wikipedia",
+            "loading": "Wikipedia aan het laden...",
+            "noWikipediaPage": "Dit Wikidata-item heeft nog geen overeenkomstig Wikipedia-artikel",
+            "createNewWikidata": "Maak een nieuw Wikidata-item",
+            "searchWikidata": "Zoek op Wikidata",
+            "noResults": "Niet gevonden voor <i>{search}</i>",
+            "doSearch": "Zoek hierboven om resultaten te zien"
+        },
+        "histogram": {
+            "error_loading": "Kan het histogram niet laden"
+        },
+        "loading": "Aan het laden..."
     },
     "reviews": {
         "title": "{count} beoordelingen",
@@ -231,7 +260,57 @@
         "reasons": {
             "notFound": "Het kon niet gevonden worden",
             "disused": "Het wordt niet meer onderhouden of is verwijderd",
-            "test": "Dit punt was een test en was nooit echt aanwezig"
-        }
+            "test": "Dit punt was een test en was nooit echt aanwezig",
+            "duplicate": "Dit punt is een duplicaat van een ander punt"
+        },
+        "cancel": "Annuleer",
+        "isDeleted": "Dit object is verwijderd",
+        "delete": "Verwijder",
+        "partOfOthers": "Dit punt maakt deel uit van een lijn, oppervlakte of een relatie en kan niet verwijderd worden.",
+        "whyDelete": "Waarom moet dit punt van de kaart verwijderd worden?",
+        "loginToDelete": "Je moet aangemeld zijn om een object van de kaart te verwijderen",
+        "onlyEditedByLoggedInUser": "Dit punt is enkel door jezelf bewerkt, je kan dit veilig verwijderen.",
+        "cannotBeDeleted": "Dit object kan niet van de kaart verwijderd worden",
+        "safeDelete": "Dit punt kan veilig verwijderd worden van de kaart.",
+        "isntAPoint": "Enkel punten kunnen verwijderd worden, het geselecteerde object is een lijn, een oppervlakte of een relatie.",
+        "notEnoughExperience": "Dit punt is door iemand anders gemaakt.",
+        "useSomethingElse": "Gebruik een ander OpenStreetMap-editeerprogramma om dit object te verwijderen",
+        "loading": "Aan het bekijken of dit object veilig verwijderd kan worden."
+    },
+    "move": {
+        "cannotBeMoved": "Dit object kan niet verplaatst worden.",
+        "inviteToMove": {
+            "reasonRelocation": "Verplaats dit punt naar een andere locatie omdat het verhuisd is",
+            "reasonInaccurate": "Verbeter de precieze locatie van dit punt",
+            "generic": "Verplaats dit punt"
+        },
+        "pointIsMoved": "Dit punt is verplaatst",
+        "confirmMove": "Verplaats",
+        "reasons": {
+            "reasonRelocation": "Dit object is verhuisd naar een andere locatie",
+            "reasonInaccurate": "De locatie van dit object is niet accuraat en moet een paar meter verschoven worden"
+        },
+        "partOfAWay": "Dit punt is deel van een lijn of een oppervlakte. Gebruik een ander OpenStreetMap-bewerkprogramma om het te verplaatsen",
+        "partOfRelation": "Dit punt maakt deel uit van een relatie. Gebruik een ander OpenStreetMap-bewerkprogramma om het te verplaatsen",
+        "cancel": "Annuleer verplaatsing",
+        "loginToMove": "Je moet aangemeld zijn om een punt te verplaatsen",
+        "zoomInFurther": "Zoom verder in om de verplaatsing te bevestigen",
+        "isRelation": "Dit object is een relatie en kan niet verplaatst worden",
+        "inviteToMoveAgain": "Verplaats dit punt opnieuw",
+        "moveTitle": "Verplaats dit punt",
+        "whyMove": "Waarom verplaats je dit punt?",
+        "selectReason": "Waarom verplaats je dit object?",
+        "isWay": "Dit object is een lijn of een oppervlakte. Gebruik een ander OpenStreetMap-bewerkprogramma op het te verplaatsen."
+    },
+    "split": {
+        "cancel": "Annuleer knippen",
+        "split": "Knip weg",
+        "splitTitle": "Duid op de kaart aan waar de weg geknipt moet worden",
+        "inviteToSplit": "Knip deze weg in kleinere segmenten (om andere eigenschappen per segment toe te kennen)",
+        "loginToSplit": "Je moet aangemeld zijn om een weg te knippen",
+        "hasBeenSplit": "Deze weg is verknipt"
+    },
+    "multi_apply": {
+        "autoApply": "Wijzigingen aan eigenschappen {attr_names} zullen ook worden uitgevoerd op {count} andere objecten."
     }
 }
