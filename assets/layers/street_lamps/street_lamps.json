@@ -23,7 +23,29 @@
             }
         ]
     },
-    "icon": "./assets/layers/street_lamps/street_lamp.svg",
+    "icon": {
+        "render": "./assets/layers/street_lamps/straight_pole.svg",
+        "mappings": [
+            {
+                "if": {
+                    "and": [
+                        "lamp_mount=bent_mast",
+                        "light:count=1"
+                    ]
+                },
+                "then": "./assets/layers/street_lamps/bent_pole_1.svg"
+            },
+            {
+                "if": {
+                    "and": [
+                        "lamp_mount=bent_mast",
+                        "light:count=2"
+                    ]
+                },
+                "then": "./assets/layers/street_lamps/bent_pole_2.svg"
+            }
+        ]
+    },
     "iconOverlays": [
         {
             "if": "light:colour=white",
