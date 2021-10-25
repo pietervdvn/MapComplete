@@ -2,7 +2,7 @@
   "id": "toilets",
   "title": {
     "en": "Open Toilet Map",
-    "de": "Offene Toilette Karte",
+    "de": "Freie Toilettenkarte",
     "fr": "Carte des WC et toilettes publiques",
     "nl": "Open Toilettenkaart",
     "ru": "Открытая карта туалетов",
@@ -12,7 +12,7 @@
   },
   "description": {
     "en": "A map of public toilets",
-    "de": "Eine Karte der öffentlichen Toiletten",
+    "de": "Eine Karte mit öffentlich zugänglichen Toiletten",
     "fr": "Carte affichant les WC et toilettes publiques",
     "nl": "Een kaart met openbare toiletten",
     "ru": "Карта общественных туалетов",

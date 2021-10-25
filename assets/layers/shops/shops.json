@@ -5,7 +5,8 @@
         "fr": "Magasin",
         "ru": "Магазин",
         "ja": "店",
-        "nl": "Winkel"
+        "nl": "Winkel",
+        "de": "Geschäft"
     },
     "minzoom": 16,
     "source": {
@@ -21,7 +22,8 @@
             "fr": "Magasin",
             "ru": "Магазин",
             "ja": "店",
-            "nl": "Winkel"
+            "nl": "Winkel",
+            "de": "Geschäft"
         },
         "mappings": [
             {
@@ -34,7 +36,8 @@
                     "en": "{name}",
                     "fr": "{name}",
                     "ru": "{name}",
-                    "ja": "{name}"
+                    "ja": "{name}",
+                    "de": "{name}"
                 }
             },
             {
@@ -47,7 +50,8 @@
                     "en": "{shop}",
                     "fr": "{shop}",
                     "ru": "{shop}",
-                    "ja": "{shop}"
+                    "ja": "{shop}",
+                    "de": "{shop}"
                 }
             }
         ]
@@ -57,7 +61,8 @@
         "fr": "Un magasin",
         "ja": "ショップ",
         "nl": "Een winkel",
-        "ru": "Магазин"
+        "ru": "Магазин",
+        "de": "Ein Geschäft"
     },
     "tagRenderings": [
         "images",
@@ -67,7 +72,8 @@
                 "fr": "Qu'est-ce que le nom de ce magasin?",
                 "ru": "Как называется этот магазин?",
                 "ja": "このお店の名前は何ですか?",
-                "nl": "Wat is de naam van deze winkel?"
+                "nl": "Wat is de naam van deze winkel?",
+                "de": "Wie ist der Name dieses Geschäfts?"
             },
             "render": "This shop is called <i>{name}</i>",
             "freeform": {
@@ -79,13 +85,15 @@
             "render": {
                 "en": "This shop sells {shop}",
                 "fr": "Ce magasin vends {shop}",
-                "ja": "こちらのお店では{shop}を販売しております"
+                "ja": "こちらのお店では{shop}を販売しております",
+                "de": "Dieses Geschäft verkauft {shop}"
             },
             "question": {
                 "en": "What does this shop sell?",
                 "fr": "Que vends ce magasin ?",
                 "ja": "このお店では何を売っていますか?",
-                "ru": "Что продаётся в этом магазине?"
+                "ru": "Что продаётся в этом магазине?",
+                "de": "Was wird in diesem Geschäft verkauft?"
             },
             "freeform": {
                 "key": "shop"
@@ -100,7 +108,8 @@
                     "then": {
                         "en": "Convenience store",
                         "fr": "Épicerie/superette",
-                        "ja": "コンビニエンスストア"
+                        "ja": "コンビニエンスストア",
+                        "de": "Lebensmittelladen"
                     }
                 },
                 {
@@ -114,7 +123,8 @@
                         "fr": "Supermarché",
                         "ru": "Супермаркет",
                         "ja": "スーパーマーケット",
-                        "nl": "Supermarkt"
+                        "nl": "Supermarkt",
+                        "de": "Supermarkt"
                     }
                 },
                 {
@@ -127,7 +137,8 @@
                         "en": "Clothing store",
                         "fr": "Magasin de vêtements",
                         "ru": "Магазин одежды",
-                        "ja": "衣料品店"
+                        "ja": "衣料品店",
+                        "de": "Bekleidungsgeschäft"
                     }
                 },
                 {
@@ -141,7 +152,8 @@
                         "fr": "Coiffeur",
                         "ru": "Парикмахерская",
                         "ja": "理容師",
-                        "nl": "Kapper"
+                        "nl": "Kapper",
+                        "de": "Friseur"
                     }
                 },
                 {
@@ -154,7 +166,8 @@
                         "en": "Bakery",
                         "fr": "Boulangerie",
                         "ja": "ベーカリー",
-                        "nl": "Bakkerij"
+                        "nl": "Bakkerij",
+                        "de": "Bäckerei"
                     }
                 },
                 {
@@ -166,7 +179,8 @@
                     "then": {
                         "en": "Car repair (garage)",
                         "fr": "Garagiste",
-                        "ja": "自動車修理(ガレージ)"
+                        "ja": "自動車修理(ガレージ)",
+                        "de": "Autoreparatur (Werkstatt)"
                     }
                 },
                 {
@@ -179,7 +193,8 @@
                         "en": "Car dealer",
                         "fr": "Concessionnaire",
                         "ru": "Автосалон",
-                        "ja": "自動車ディーラー"
+                        "ja": "自動車ディーラー",
+                        "de": "Autohändler"
                     }
                 }
             ],
@@ -192,14 +207,16 @@
                 "ca": "<a href='tel:{phone}'>{phone}</a>",
                 "id": "<a href='tel:{phone}'>{phone}</a>",
                 "ru": "<a href='tel:{phone}'>{phone}</a>",
-                "ja": "<a href='tel:{phone}'>{phone}</a>"
+                "ja": "<a href='tel:{phone}'>{phone}</a>",
+                "de": "<a href='tel:{phone}'>{phone}</a>"
             },
             "question": {
                 "en": "What is the phone number?",
                 "fr": "Quel est le numéro de téléphone ?",
                 "ja": "電話番号は何番ですか?",
                 "nl": "Wat is het telefoonnummer?",
-                "ru": "Какой телефон?"
+                "ru": "Какой телефон?",
+                "de": "Wie ist die Telefonnummer?"
             },
             "freeform": {
                 "key": "phone",
@@ -214,14 +231,16 @@
                 "ca": "<a href='{website}'>{website}</a>",
                 "id": "<a href='{website}'>{website}</a>",
                 "ru": "<a href='{website}'>{website}</a>",
-                "ja": "<a href='{website}'>{website}</a>"
+                "ja": "<a href='{website}'>{website}</a>",
+                "de": "<a href='{website}'>{website}</a>"
             },
             "question": {
                 "en": "What is the website of this shop?",
                 "fr": "Quel est le site internet de ce magasin ?",
                 "ja": "このお店のホームページは何ですか?",
                 "nl": "Wat is de website van deze winkel?",
-                "ru": "Какой веб-сайт у этого магазина?"
+                "ru": "Какой веб-сайт у этого магазина?",
+                "de": "Wie lautet die Webseite dieses Geschäfts?"
             },
             "freeform": {
                 "key": "website",
@@ -242,7 +261,8 @@
                 "fr": "Quelle est l'adresse électronique de ce magasin ?",
                 "ja": "このお店のメールアドレスは何ですか?",
                 "ru": "Каков адрес электронной почты этого магазина?",
-                "nl": "Wat is het e-mailadres van deze winkel?"
+                "nl": "Wat is het e-mailadres van deze winkel?",
+                "de": "Wie ist die Email-Adresse dieses Geschäfts?"
             },
             "freeform": {
                 "key": "email",
@@ -262,7 +282,8 @@
                 "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
                 "ja": "この店の営業時間は何時から何時までですか?",
                 "nl": "Wat zijn de openingsuren van deze winkel?",
-                "ru": "Каковы часы работы этого магазина?"
+                "ru": "Каковы часы работы этого магазина?",
+                "de": "Wie sind die Öffnungszeiten dieses Geschäfts?"
             },
             "freeform": {
                 "key": "opening_hours",
@@ -302,14 +323,16 @@
                 "fr": "Magasin",
                 "ru": "Магазин",
                 "ja": "店",
-                "nl": "Winkel"
+                "nl": "Winkel",
+                "de": "Geschäft"
             },
             "description": {
                 "en": "Add a new shop",
                 "fr": "Ajouter un nouveau magasin",
                 "ru": "Добавить новый магазин",
                 "ja": "新しい店を追加する",
-                "nl": "Voeg een nieuwe winkel toe"
+                "nl": "Voeg een nieuwe winkel toe",
+                "de": "Ein neues Geschäft hinzufügen"
             }
         }
     ],

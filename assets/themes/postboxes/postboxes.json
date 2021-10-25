@@ -1,16 +1,19 @@
 {
   "id": "postboxes",
   "title": {
-    "en": "Postbox and Post Office Map"
+    "en": "Postbox and Post Office Map",
+    "de": "Karte mit Briefkästen und Poststellen"
   },
   "shortDescription": {
-    "en": "A map showing postboxes and post offices"
+    "en": "A map showing postboxes and post offices",
+    "de": "Eine Karte die Briefkästen und Poststellen anzeigt"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. "
   },
   "language": [
-    "en"
+    "en",
+    "de"
   ],
   "maintainer": "",
   "icon": "./assets/themes/postboxes/postbox.svg",
@@ -28,7 +31,8 @@
     {
       "id": "postboxes",
       "name": {
-        "en": "Postboxes"
+        "en": "Postboxes",
+        "de": "Brieflästen"
       },
       "minzoom": 12,
       "source": {
@@ -36,11 +40,13 @@
       },
       "title": {
         "render": {
-          "en": "Postbox"
+          "en": "Postbox",
+          "de": "Briefkasten"
         }
       },
       "description": {
-        "en": "The layer showing postboxes."
+        "en": "The layer showing postboxes.",
+        "de": "Die Ebene zeigt Briefkästen."
       },
       "tagRenderings": [
         "images",
@@ -67,7 +73,8 @@
             "amenity=post_box"
           ],
           "title": {
-            "en": "postbox"
+            "en": "postbox",
+            "de": "Briefkasten"
           }
         }
       ],
@@ -84,7 +91,8 @@
     {
       "id": "postoffices",
       "name": {
-        "en": "Post offices"
+        "en": "Post offices",
+        "de": "Poststellen"
       },
       "minzoom": 12,
       "source": {
@@ -92,11 +100,13 @@
       },
       "title": {
         "render": {
-          "en": "Post Office"
+          "en": "Post Office",
+          "de": "Poststelle"
         }
       },
       "description": {
-        "en": "A layer showing post offices."
+        "en": "A layer showing post offices.",
+        "de": "Eine Ebene mit Postämtern."
       },
       "tagRenderings": [
         "images",
@@ -119,7 +129,8 @@
             {
               "if": "opening_hours=24/7",
               "then": {
-                "en": "24/7 opened (including holidays)"
+                "en": "24/7 opened (including holidays)",
+                "de": "durchgehend geöffnet (auch an Feiertagen)"
               }
             }
           ],
@@ -151,7 +162,8 @@
             "amenity=post_office"
           ],
           "title": {
-            "en": "Post Office"
+            "en": "Post Office",
+            "de": "Poststelle"
           }
         }
       ],
@@ -162,7 +174,8 @@
           "options": [
             {
               "question": {
-                "en": "Currently open"
+                "en": "Currently open",
+                "de": "Aktuell geöffnet"
               },
               "osmTags": "_isOpen=yes"
             }

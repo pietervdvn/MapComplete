@@ -50,7 +50,8 @@
                 "en": "Height: {height}",
                 "it": "Altezza: {height}",
                 "ru": "Высота: {height}",
-                "fr": "Hauteur : {height}"
+                "fr": "Hauteur : {height}",
+                "de": "Höhe: {height}"
             },
             "condition": {
                 "and": [
@@ -69,7 +70,8 @@
                         "en": "Height: {height}&nbsp;m",
                         "it": "Altezza: {height}&nbsp;m",
                         "ru": "Высота: {height}&nbsp;м",
-                        "fr": "Hauteur&nbsp;: {height}&nbsp;m"
+                        "fr": "Hauteur&nbsp;: {height}&nbsp;m",
+                        "de": "Höhe: {height}&nbsp;m"
                     }
                 }
             ]
@@ -80,7 +82,8 @@
                 "nl": "Is dit een naald- of loofboom?",
                 "en": "Is this a broadleaved or needleleaved tree?",
                 "it": "Si tratta di un albero latifoglia o aghifoglia?",
-                "fr": "Cet arbre est-il un feuillu ou un résineux ?"
+                "fr": "Cet arbre est-il un feuillu ou un résineux ?",
+                "de": "Ist dies ein Laub- oder Nadelbaum?"
             },
             "mappings": [
                 {
@@ -93,7 +96,8 @@
                         "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom",
                         "en": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved",
                         "it": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Latifoglia",
-                        "fr": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Feuillu"
+                        "fr": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Feuillu",
+                        "de": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Laubbaum"
                     }
                 },
                 {
@@ -106,7 +110,8 @@
                         "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Naaldboom",
                         "en": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved",
                         "it": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Aghifoglia",
-                        "fr": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Résineux"
+                        "fr": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Résineux",
+                        "de": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Nadelbaum"
                     }
                 },
                 {
@@ -119,7 +124,8 @@
                         "nl": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos",
                         "en": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless",
                         "it": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Privo di foglie (permanente)",
-                        "fr": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Sans feuilles (Permanent)"
+                        "fr": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Sans feuilles (Permanent)",
+                        "de": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Dauerhaft blattlos"
                     },
                     "hideInAnswer": true
                 }
@@ -131,7 +137,8 @@
                 "nl": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
                 "en": "How significant is this tree? Choose the first answer that applies.",
                 "it": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde.",
-                "fr": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique."
+                "fr": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique.",
+                "de": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft."
             },
             "mappings": [
                 {
@@ -144,7 +151,8 @@
                         "nl": "De boom valt op door zijn grootte of prominente locatie. Hij is nuttig voor navigatie.",
                         "en": "The tree is remarkable due to its size or prominent location. It is useful for navigation.",
                         "it": "È un albero notevole per le sue dimensioni o per la posizione prominente. È utile alla navigazione.",
-                        "fr": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation."
+                        "fr": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation.",
+                        "de": "Der Baum ist aufgrund seiner Größe oder seiner markanten Lage bedeutsam. Er ist nützlich zur Orientierung."
                     }
                 },
                 {
@@ -157,7 +165,8 @@
                         "nl": "De boom is een natuurlijk monument, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
                         "en": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species.",
                         "it": "L’albero è un monumento naturale, ad esempio perché specialmente antico o appartenente a specie importanti.",
-                        "fr": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)"
+                        "fr": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)",
+                        "de": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört."
                     }
                 },
                 {
@@ -170,7 +179,8 @@
                         "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
                         "en": "The tree is used for agricultural purposes, e.g. in an orchard.",
                         "it": "L’albero è usato per scopi agricoli, ad esempio in un frutteto.",
-                        "fr": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)"
+                        "fr": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)",
+                        "de": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage."
                     }
                 },
                 {
@@ -183,7 +193,8 @@
                         "nl": "De boom staat in een park of dergelijke (begraafplaats, schoolterrein, …).",
                         "en": "The tree is in a park or similar (cemetery, school grounds, …).",
                         "it": "L’albero è in un parco o qualcosa di simile (cimitero, aree didattiche, etc.).",
-                        "fr": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …)."
+                        "fr": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …).",
+                        "de": "Der Baum steht in einem Park oder ähnlichem (Friedhof, Schulgelände, ...)."
                     }
                 },
                 {
@@ -209,7 +220,8 @@
                         "nl": "Dit is een laanboom.",
                         "en": "This is a tree along an avenue.",
                         "it": "Fa parte di un viale alberato.",
-                        "fr": "C'est un arbre le long d'une avenue."
+                        "fr": "C'est un arbre le long d'une avenue.",
+                        "de": "Dieser Baum steht entlang einer Straße."
                     }
                 },
                 {
@@ -235,7 +247,8 @@
                         "nl": "De boom staat buiten een woonkern.",
                         "en": "The tree is outside of an urban area.",
                         "it": "L’albero si trova fuori dall’area urbana.",
-                        "fr": "Cet arbre est en zone rurale."
+                        "fr": "Cet arbre est en zone rurale.",
+                        "de": "Dieser Baum steht außerhalb eines städtischen Gebiets."
                     }
                 }
             ]
@@ -247,7 +260,8 @@
                 "en": "Is this tree evergreen or deciduous?",
                 "it": "È un sempreverde o caduco?",
                 "ru": "Это дерево вечнозелёное или листопадное?",
-                "fr": "L’arbre est-il à feuillage persistant ou caduc ?"
+                "fr": "L’arbre est-il à feuillage persistant ou caduc ?",
+                "de": "Ist dies ein Nadelbaum oder ein Laubbaum?"
             },
             "mappings": [
                 {
@@ -261,7 +275,8 @@
                         "en": "Deciduous: the tree loses its leaves for some time of the year.",
                         "it": "Caduco: l’albero perde le sue foglie per un periodo dell’anno.",
                         "ru": "Листопадное: у дерева опадают листья в определённое время года.",
-                        "fr": "Caduc : l’arbre perd son feuillage une partie de l’année."
+                        "fr": "Caduc : l’arbre perd son feuillage une partie de l’année.",
+                        "de": "Laubabwerfend: Der Baum verliert für eine gewisse Zeit des Jahres seine Blätter."
                     }
                 },
                 {
@@ -275,7 +290,8 @@
                         "en": "Evergreen.",
                         "it": "Sempreverde.",
                         "fr": "À feuilles persistantes.",
-                        "ru": "Вечнозелёное."
+                        "ru": "Вечнозелёное.",
+                        "de": "immergrüner Baum."
                     }
                 }
             ],
@@ -292,14 +308,16 @@
                 "it": "Nome: {name}",
                 "ru": "Название: {name}",
                 "fr": "Nom : {name}",
-                "id": "Nama: {name}"
+                "id": "Nama: {name}",
+                "de": "Name: {name}"
             },
             "question": {
                 "nl": "Heeft de boom een naam?",
                 "en": "Does the tree have a name?",
                 "it": "L’albero ha un nome?",
                 "fr": "L'arbre a-t-il un nom ?",
-                "ru": "Есть ли у этого дерева название?"
+                "ru": "Есть ли у этого дерева название?",
+                "de": "Hat der Baum einen Namen?"
             },
             "freeform": {
                 "key": "name",
@@ -320,7 +338,8 @@
                         "en": "The tree does not have a name.",
                         "it": "L’albero non ha un nome.",
                         "fr": "L'arbre n'a pas de nom.",
-                        "ru": "У этого дерева нет названия."
+                        "ru": "У этого дерева нет названия.",
+                        "de": "Der Baum hat keinen Namen."
                     }
                 }
             ],
@@ -339,7 +358,8 @@
                 "nl": "Is deze boom erkend als erfgoed?",
                 "en": "Is this tree registered heritage?",
                 "it": "Quest’albero è registrato come patrimonio?",
-                "fr": "Cet arbre est-il inscrit au patrimoine ?"
+                "fr": "Cet arbre est-il inscrit au patrimoine ?",
+                "de": "Ist dieser Baum ein Naturdenkmal?"
             },
             "mappings": [
                 {
@@ -353,7 +373,8 @@
                         "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
                         "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders",
                         "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
-                        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
+                        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Fait partie du patrimoine par <i>Onroerend Erfgoed</i>",
+                        "de": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern"
                     }
                 },
                 {
@@ -367,7 +388,8 @@
                         "nl": "Erkend als natuurlijk erfgoed door Directie Cultureel Erfgoed Brussel",
                         "en": "Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels",
                         "it": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles",
-                        "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles"
+                        "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles",
+                        "de": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel"
                     }
                 },
                 {
@@ -395,7 +417,8 @@
                         "nl": "Niet erkend als erfgoed",
                         "en": "Not registered as heritage",
                         "it": "Non è registrato come patrimonio",
-                        "fr": "Non enregistré comme patrimoine"
+                        "fr": "Non enregistré comme patrimoine",
+                        "de": "Nicht als Denkmal registriert"
                     }
                 },
                 {
@@ -432,7 +455,8 @@
                 "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
                 "en": "What is the ID issued by Onroerend Erfgoed Flanders?",
                 "it": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?",
-                "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?"
+                "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?",
+                "de": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?"
             },
             "freeform": {
                 "key": "ref:OnroerendErfgoed",
@@ -458,7 +482,8 @@
                 "nl": "Wat is het Wikidata-ID van deze boom?",
                 "en": "What is the Wikidata ID for this tree?",
                 "it": "Qual è l’ID Wikidata per questo albero?",
-                "fr": "Quel est l'identifiant Wikidata de cet arbre ?"
+                "fr": "Quel est l'identifiant Wikidata de cet arbre ?",
+                "de": "Was ist das passende Wikidata Element zu diesem Baum?"
             },
             "freeform": {
                 "key": "wikidata",
@@ -516,13 +541,15 @@
                 "en": "Broadleaved tree",
                 "it": "Albero latifoglia",
                 "fr": "Arbre feuillu",
-                "ru": "Лиственное дерево"
+                "ru": "Лиственное дерево",
+                "de": "Laubbaum"
             },
             "description": {
                 "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
                 "en": "A tree of a species with leaves, such as oak or populus.",
                 "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
-                "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier."
+                "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier.",
+                "de": "Ein Baum mit Blättern, z. B. Eiche oder Buche."
             },
             "preciseInput": {
                 "preferredBackground": "photo"
@@ -538,14 +565,16 @@
                 "en": "Needleleaved tree",
                 "it": "Albero aghifoglia",
                 "ru": "Хвойное дерево",
-                "fr": "Arbre résineux"
+                "fr": "Arbre résineux",
+                "de": "Nadelbaum"
             },
             "description": {
                 "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
                 "en": "A tree of a species with needles, such as pine or spruce.",
                 "it": "Un albero di una specie con aghi come il pino o l’abete.",
                 "ru": "Дерево с хвоей (иглами), например, сосна или ель.",
-                "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa."
+                "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
+                "de": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte."
             },
             "preciseInput": {
                 "preferredBackground": "photo"
@@ -569,7 +598,8 @@
                 "en": "If you're not sure whether it's a broadleaved or needleleaved tree.",
                 "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
                 "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
-                "ru": "Если вы не уверены в том, лиственное это дерево или хвойное."
+                "ru": "Если вы не уверены в том, лиственное это дерево или хвойное.",
+                "de": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt."
             },
             "preciseInput": {
                 "preferredBackground": "photo"

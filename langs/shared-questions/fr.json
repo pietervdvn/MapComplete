@@ -3,6 +3,23 @@
         "description": {
             "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>"
         },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Chiens admis"
+                },
+                "1": {
+                    "then": "Les chiens <b>ne</b> sont <b>pas</b> admis"
+                },
+                "2": {
+                    "then": "Les chiens sont admis, mais ils doivent être tenus en laisse"
+                },
+                "3": {
+                    "then": "Les chiens sont admis et peuvent circuler librement"
+                }
+            },
+            "question": "Est-ce que les chiens sont admis ici ?"
+        },
         "email": {
             "question": "Quelle est l'adresse courriel de {name} ?"
         },
@@ -28,11 +45,33 @@
             "question": "Quelles sont les horaires d'ouverture de {name} ?",
             "render": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}"
         },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Paiement en liquide accepté"
+                },
+                "1": {
+                    "then": "Paiement par carte accepté"
+                }
+            },
+            "question": "Quelles sont les méthodes de paiement acceptées ici ?"
+        },
         "phone": {
             "question": "Quel est le numéro de téléphone de {name} ?"
         },
         "website": {
             "question": "Quel est le site web de {name} ?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "2": {
+                    "then": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
+                },
+                "3": {
+                    "then": "Cet endroit n'est pas accessible en chaise roulante"
+                }
+            },
+            "question": "Est-ce que cet endroit est accessible en chaise roulante ?"
         }
     }
 }

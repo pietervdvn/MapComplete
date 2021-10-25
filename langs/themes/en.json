@@ -233,25 +233,27 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "question": "Who operates this place?",
-                "render": "This place is operated by {operator}"
-            },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "This place has a power supply"
-                    },
-                    "1": {
-                        "then": "This place does not have power supply"
-                    }
-                },
-                "question": "Does this place have a power supply?"
-            }
-        },
         "shortDescription": "Find sites to spend the night with your camper",
-        "title": "Campersites"
+        "title": "Campersites",
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Who operates this place?",
+                    "render": "This place is operated by {operator}"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "This place has a power supply"
+                        },
+                        "1": {
+                            "then": "This place does not have power supply"
+                        }
+                    },
+                    "question": "Does this place have a power supply?"
+                }
+            }
+        }
     },
     "charging_stations": {
         "description": "On this open map, one can find and mark information about charging stations",
@@ -463,129 +465,129 @@
                         }
                     }
                 }
-            }
-        },
-        "roamingRenderings": {
-            "0": {
-                "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
             },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
-                    },
-                    "1": {
-                        "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
-                    },
-                    "2": {
-                        "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
-                    },
-                    "3": {
-                        "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
+            "tagRenderings+": {
+                "0": {
+                    "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
+                        },
+                        "1": {
+                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
+                        },
+                        "2": {
+                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
+                        },
+                        "3": {
+                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
+                        }
                     }
+                },
+                "2": {
+                    "mappings": {
+                        "0": {
+                            "then": "Publicly accessible to anyone"
+                        },
+                        "1": {
+                            "then": "You need a permit to access here"
+                        },
+                        "2": {
+                            "then": "Only custumers"
+                        },
+                        "3": {
+                            "then": "Only club members"
+                        }
+                    },
+                    "question": "Who can access here?"
+                },
+                "4": {
+                    "question": "What is the (average) length of the routes in meters?",
+                    "render": "The routes are <b>{canonical(climbing:length)}</b> long on average"
+                },
+                "5": {
+                    "question": "What is the level of the easiest route here, accoring to the french classification system?",
+                    "render": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system"
+                },
+                "6": {
+                    "question": "What is the level of the most difficult route here, accoring to the french classification system?",
+                    "render": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system"
+                },
+                "7": {
+                    "mappings": {
+                        "0": {
+                            "then": "Bouldering is possible here"
+                        },
+                        "1": {
+                            "then": "Bouldering is not possible here"
+                        },
+                        "2": {
+                            "then": "Bouldering is possible, allthough there are only a few routes"
+                        },
+                        "3": {
+                            "then": "There are {climbing:boulder} boulder routes"
+                        }
+                    },
+                    "question": "Is bouldering possible here?"
+                },
+                "8": {
+                    "mappings": {
+                        "0": {
+                            "then": "Toprope climbing is possible here"
+                        },
+                        "1": {
+                            "then": "Toprope climbing is not possible here"
+                        },
+                        "2": {
+                            "then": "There are {climbing:toprope} toprope routes"
+                        }
+                    },
+                    "question": "Is toprope climbing possible here?"
+                },
+                "9": {
+                    "mappings": {
+                        "0": {
+                            "then": "Sport climbing is possible here"
+                        },
+                        "1": {
+                            "then": "Sport climbing is not possible here"
+                        },
+                        "2": {
+                            "then": "There are {climbing:sport} sport climbing routes"
+                        }
+                    },
+                    "question": "Is sport climbing possible here on fixed anchors?"
+                },
+                "10": {
+                    "mappings": {
+                        "0": {
+                            "then": "Traditional climbing is possible here"
+                        },
+                        "1": {
+                            "then": "Traditional climbing is not possible here"
+                        },
+                        "2": {
+                            "then": "There are {climbing:traditional} traditional climbing routes"
+                        }
+                    },
+                    "question": "Is traditional climbing possible here (using own gear e.g. chocks)?"
+                },
+                "11": {
+                    "mappings": {
+                        "0": {
+                            "then": "There is a speed climbing wall"
+                        },
+                        "1": {
+                            "then": "There is no speed climbing wall"
+                        },
+                        "2": {
+                            "then": "There are {climbing:speed} speed climbing walls"
+                        }
+                    },
+                    "question": "Is there a speed climbing wall?"
                 }
-            },
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "Publicly accessible to anyone"
-                    },
-                    "1": {
-                        "then": "You need a permit to access here"
-                    },
-                    "2": {
-                        "then": "Only custumers"
-                    },
-                    "3": {
-                        "then": "Only club members"
-                    }
-                },
-                "question": "Who can access here?"
-            },
-            "4": {
-                "question": "What is the (average) length of the routes in meters?",
-                "render": "The routes are <b>{canonical(climbing:length)}</b> long on average"
-            },
-            "5": {
-                "question": "What is the level of the easiest route here, accoring to the french classification system?",
-                "render": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system"
-            },
-            "6": {
-                "question": "What is the level of the most difficult route here, accoring to the french classification system?",
-                "render": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system"
-            },
-            "7": {
-                "mappings": {
-                    "0": {
-                        "then": "Bouldering is possible here"
-                    },
-                    "1": {
-                        "then": "Bouldering is not possible here"
-                    },
-                    "2": {
-                        "then": "Bouldering is possible, allthough there are only a few routes"
-                    },
-                    "3": {
-                        "then": "There are {climbing:boulder} boulder routes"
-                    }
-                },
-                "question": "Is bouldering possible here?"
-            },
-            "8": {
-                "mappings": {
-                    "0": {
-                        "then": "Toprope climbing is possible here"
-                    },
-                    "1": {
-                        "then": "Toprope climbing is not possible here"
-                    },
-                    "2": {
-                        "then": "There are {climbing:toprope} toprope routes"
-                    }
-                },
-                "question": "Is toprope climbing possible here?"
-            },
-            "9": {
-                "mappings": {
-                    "0": {
-                        "then": "Sport climbing is possible here"
-                    },
-                    "1": {
-                        "then": "Sport climbing is not possible here"
-                    },
-                    "2": {
-                        "then": "There are {climbing:sport} sport climbing routes"
-                    }
-                },
-                "question": "Is sport climbing possible here on fixed anchors?"
-            },
-            "10": {
-                "mappings": {
-                    "0": {
-                        "then": "Traditional climbing is possible here"
-                    },
-                    "1": {
-                        "then": "Traditional climbing is not possible here"
-                    },
-                    "2": {
-                        "then": "There are {climbing:traditional} traditional climbing routes"
-                    }
-                },
-                "question": "Is traditional climbing possible here (using own gear e.g. chocks)?"
-            },
-            "11": {
-                "mappings": {
-                    "0": {
-                        "then": "There is a speed climbing wall"
-                    },
-                    "1": {
-                        "then": "There is no speed climbing wall"
-                    },
-                    "2": {
-                        "then": "There are {climbing:speed} speed climbing walls"
-                    }
-                },
-                "question": "Is there a speed climbing wall?"
             }
         },
         "title": "Open Climbing Map"
@@ -634,31 +636,33 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "mappings": {
-                    "0": {
-                        "then": "This street is a cyclestreet (and has a speed limit of 30 km/h)"
-                    },
-                    "1": {
-                        "then": "This street is a cyclestreet"
-                    },
-                    "2": {
-                        "then": "This street will become a cyclstreet soon"
-                    },
-                    "3": {
-                        "then": "This street is not a cyclestreet"
-                    }
-                },
-                "question": "Is this street a cyclestreet?"
-            },
-            "1": {
-                "question": "When will this street become a cyclestreet?",
-                "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
-            }
-        },
         "shortDescription": "A map of cyclestreets",
-        "title": "Cyclestreets"
+        "title": "Cyclestreets",
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "This street is a cyclestreet (and has a speed limit of 30 km/h)"
+                        },
+                        "1": {
+                            "then": "This street is a cyclestreet"
+                        },
+                        "2": {
+                            "then": "This street will become a cyclstreet soon"
+                        },
+                        "3": {
+                            "then": "This street is not a cyclestreet"
+                        }
+                    },
+                    "question": "Is this street a cyclestreet?"
+                },
+                "1": {
+                    "question": "When will this street become a cyclestreet?",
+                    "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
+                }
+            }
+        }
     },
     "cyclofix": {
         "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
@@ -1227,62 +1231,6 @@
         "shortDescription": "A map showing sport pitches",
         "title": "Sport pitches"
     },
-    "street_lighting": {
-        "description": "On this map you can find everything about street lighting",
-        "layers": {
-            "1": {
-                "name": "Lit streets",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "This street is lit"
-                            },
-                            "1": {
-                                "then": "This road is not lit"
-                            },
-                            "2": {
-                                "then": "This street is lit at night"
-                            },
-                            "3": {
-                                "then": "This street is lit 24/7"
-                            }
-                        },
-                        "question": "Is this street lit?"
-                    }
-                },
-                "title": {
-                    "render": "Lit street"
-                }
-            },
-            "2": {
-                "name": "All streets",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "This street is lit"
-                            },
-                            "1": {
-                                "then": "This road is not lit"
-                            },
-                            "2": {
-                                "then": "This street is lit at night"
-                            },
-                            "3": {
-                                "then": "This street is lit 24/7"
-                            }
-                        },
-                        "question": "Is this street lit?"
-                    }
-                },
-                "title": {
-                    "render": "Street"
-                }
-            }
-        },
-        "title": "Street Lighting"
-    },
     "surveillance": {
         "description": "On this open map, you can find surveillance cameras.",
         "shortDescription": "Surveillance cameras and other means of surveillance",
@@ -1338,5 +1286,61 @@
         "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
         "shortDescription": "A map with waste baskets",
         "title": "Waste Basket"
+    },
+    "street_lighting": {
+        "description": "On this map you can find everything about street lighting",
+        "layers": {
+            "1": {
+                "name": "Lit streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This road is not lit"
+                            },
+                            "2": {
+                                "then": "This street is lit at night"
+                            },
+                            "3": {
+                                "then": "This street is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Lit street"
+                }
+            },
+            "2": {
+                "name": "All streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This road is not lit"
+                            },
+                            "2": {
+                                "then": "This street is lit at night"
+                            },
+                            "3": {
+                                "then": "This street is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Street"
+                }
+            }
+        },
+        "title": "Street Lighting"
     }
 }

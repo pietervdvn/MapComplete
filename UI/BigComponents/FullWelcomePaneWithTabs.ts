@@ -30,7 +30,8 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         super(
             () => layoutToUse.title.Clone(),
             () => FullWelcomePaneWithTabs.GenerateContents(state, currentTab, isShown),
-            undefined, isShown
+            "welcome",
+            isShown
         )
     }
 
@@ -49,7 +50,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             {header: `<img src='${state.layoutToUse.icon}'>`, content: welcome},
             {
                 header: Svg.osm_logo_img,
-                content: Translations.t.general.openStreetMapIntro.Clone().SetClass("link-underline")
+                content: Translations.t.general.openStreetMapIntro.SetClass("link-underline")
             },
 
         ]
@@ -63,7 +64,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                 header: Svg.add_img,
                 content:
                 new Combine([
-                    Translations.t.general.morescreen.intro.Clone(),
+                    Translations.t.general.morescreen.intro,
                     new MoreScreen(state)
                 ]).SetClass("flex flex-col")
             });
@@ -85,7 +86,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
        
         tabsWithAboutMc.push({
                 header: Svg.help,
-                content: new Combine([Translations.t.general.aboutMapcomplete.Clone()
+                content: new Combine([Translations.t.general.aboutMapcomplete
                     .Subs({"osmcha_link": Utils.OsmChaLinkFor(7)}), "<br/>Version " + Constants.vNumber])
                     .SetClass("link-underline")
             }

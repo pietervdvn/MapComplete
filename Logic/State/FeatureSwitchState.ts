@@ -5,6 +5,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {UIEventSource} from "../UIEventSource";
 import {QueryParameters} from "../Web/QueryParameters";
 import Constants from "../../Models/Constants";
+import {Utils} from "../../Utils";
 
 export default class FeatureSwitchState {
 
@@ -137,37 +138,26 @@ export default class FeatureSwitchState {
 
 
         let testingDefaultValue = false;
-        if (this.featureSwitchApiURL.data !== "osm-test" &&
+        if (this.featureSwitchApiURL.data !== "osm-test" && !Utils.runningFromConsole &&
             (location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
             testingDefaultValue = true
         }
 
 
-        this.featureSwitchIsTesting = QueryParameters.GetQueryParameter(
+        this.featureSwitchIsTesting = QueryParameters.GetBooleanQueryParameter(
             "test",
             ""+testingDefaultValue,
             "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org"
-        ).map(
-            (str) => str === "true",
-            [],
-            (b) => "" + b
-        );
+        )
 
-        this.featureSwitchIsDebugging = QueryParameters.GetQueryParameter(
+        this.featureSwitchIsDebugging = QueryParameters.GetBooleanQueryParameter(
             "debug",
             "false",
             "If true, shows some extra debugging help such as all the available tags on every object"
-        ).map(
-            (str) => str === "true",
-            [],
-            (b) => "" + b
-        );
+        )
 
-        this.featureSwitchFakeUser = QueryParameters.GetQueryParameter("fake-user", "false",
+        this.featureSwitchFakeUser = QueryParameters.GetBooleanQueryParameter("fake-user", "false",
             "If true, 'dryrun' mode is activated and a fake user account is loaded")
-            .map(str => str === "true", [], b => "" + b);
-
-
       
 
         this.overpassUrl = QueryParameters.GetQueryParameter("overpassUrl",

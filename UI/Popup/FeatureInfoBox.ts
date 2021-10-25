@@ -27,7 +27,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     ) {
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig),
-            undefined);
+            tags.data.id);
 
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
@@ -73,7 +73,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             editElements.push(questionBox);
         }
 
-        if(layerConfig.allowMove) {
+        if (layerConfig.allowMove) {
             editElements.push(
                 new VariableUiElement(tags.map(tags => tags.id).map(id => {
                         const feature = State.state.allElements.ContainingFeatures.get(id)
@@ -149,8 +149,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         ))
         renderings.push(editors)
 
-        return new Combine(renderings).SetClass("block")
 
+        return new Combine(renderings).SetClass("block")
     }
 
     /**

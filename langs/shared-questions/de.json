@@ -12,7 +12,7 @@
                     "then": "Hunde sind <b>nicht</b> erlaubt"
                 },
                 "2": {
-                    "then": "Hunde sind erlaubt, müssen aber angeleint sein."
+                    "then": "Hunde sind erlaubt, müssen aber angeleint sein"
                 },
                 "3": {
                     "then": "Hunde sind erlaubt und können frei herumlaufen"
@@ -65,7 +65,7 @@
         "wheelchair-access": {
             "mappings": {
                 "0": {
-                    "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet."
+                    "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet"
                 },
                 "1": {
                     "then": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen"
@@ -78,6 +78,22 @@
                 }
             },
             "question": "Ist dieser Ort mit einem Rollstuhl zugänglich?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
+                }
+            },
+            "question": "Was ist das entsprechende Wikidata Element?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Nicht mit Wikipedia verknüpft"
+                }
+            },
+            "question": "Was ist der entsprechende Artikel auf Wikipedia?"
         }
     }
 }

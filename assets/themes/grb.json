@@ -19,7 +19,6 @@
   "startLon": 3.231,
   "startZoom": 14,
   "widenFactor": 2,
-  "cacheTimeout": 3600,
   "socialImage": "",
   "layers": [
     {
@@ -29,6 +28,7 @@
       },
       "minzoom": 12,
       "source": {
+        "maxCacheAge": 0,
         "osmTags": {
           "and": [
             "fixme~*",
@@ -201,6 +201,5 @@
     }
   ],
   "hideFromOverview": true,
-  "roamingRenderings": [],
   "defaultBackgroundId": "AGIVFlandersGRB"
 }

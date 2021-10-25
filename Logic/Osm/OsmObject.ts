@@ -263,7 +263,7 @@ export abstract class OsmObject {
                 continue;
             }
             const v = this.tags[key];
-            if (v !== "") {
+            if (v !== "" && v !== undefined) {
                 tags += '        <tag k="' + Utils.EncodeXmlValue(key) + '" v="' + Utils.EncodeXmlValue(this.tags[key]) + '"/>\n'
             }
         }

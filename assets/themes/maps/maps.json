@@ -6,7 +6,8 @@
     "fr": "Carte des cartes",
     "ja": "マップのマップ",
     "zh_Hant": "地圖的地圖",
-    "ru": "Карта карт"
+    "ru": "Карта карт",
+    "de": "Eine Karte der Karten"
   },
   "shortDescription": {
     "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",
@@ -28,7 +29,8 @@
     "fr",
     "ja",
     "zh_Hant",
-    "ru"
+    "ru",
+    "de"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/maps/logo.svg",
@@ -40,6 +42,5 @@
   "socialImage": "",
   "layers": [
     "map"
-  ],
-  "roamingRenderings": []
+  ]
 }

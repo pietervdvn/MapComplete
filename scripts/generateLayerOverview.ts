@@ -118,6 +118,9 @@ class LayerOverviewUtils {
             if (themeFile["units"] !== undefined) {
                 themeErrorCount.push("The theme " + themeFile.id + " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) ")
             }
+            if (themeFile["roamingRenderings"] !== undefined) {
+                themeErrorCount.push("Theme " + themeFile.id + " contains an old 'roamingRenderings'. Use an 'overrideAll' instead")    
+            }
             for (const layer of themeFile.layers) {
                 if (typeof layer === "string") {
                     if (!knownLayerIds.has(layer)) {
@@ -142,7 +145,7 @@ class LayerOverviewUtils {
                 }
             }
             
-            const referencedLayers = Utils.NoNull(themeFile.layers.map(layer => {
+            const referencedLayers = Utils.NoNull([].concat(...themeFile.layers.map(layer => {
                 if(typeof  layer === "string"){
                     return layer
                 }
@@ -150,7 +153,12 @@ class LayerOverviewUtils {
                     return layer["builtin"]
                 }
                 return undefined
-            }))
+            }).map(layerName => {
+                if(typeof layerName === "string"){
+                    return [layerName]
+                }
+                return layerName
+            })))
 
             themeFile.layers = themeFile.layers
                 .filter(l => typeof l != "string") // We remove all the builtin layer references as they don't work with ts-node for some weird reason
@@ -169,7 +177,8 @@ class LayerOverviewUtils {
                 const neededLanguages = themeFile["mustHaveLanguage"]
                 if (neededLanguages !== undefined) {
                     console.log("Checking language requerements for ", theme.id, "as it must have", neededLanguages.join(", "))
-                    const allTranslations = [].concat(Translation.ExtractAllTranslationsFrom(theme, theme.id),   ...referencedLayers.map(layerId => Translation.ExtractAllTranslationsFrom(knownLayerIds.get(layerId), theme.id+"->"+layerId)))
+                    const allTranslations = [].concat(Translation.ExtractAllTranslationsFrom(theme, theme.id),  
+                        ...referencedLayers.map(layerId => Translation.ExtractAllTranslationsFrom(knownLayerIds.get(layerId), theme.id+"->"+layerId)))
                     for (const neededLanguage of neededLanguages) {
                         allTranslations
                             .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)

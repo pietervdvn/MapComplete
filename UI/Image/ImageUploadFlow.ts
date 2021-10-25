@@ -9,14 +9,23 @@ import LicensePicker from "../BigComponents/LicensePicker";
 import Toggle from "../Input/Toggle";
 import FileSelectorButton from "../Input/FileSelectorButton";
 import ImgurUploader from "../../Logic/ImageProviders/ImgurUploader";
-import UploadFlowStateUI from "../BigComponents/UploadFlowStateUI";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
 
 export class ImageUploadFlow extends Toggle {
 
+    
+    private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
+    
     constructor(tagsSource: UIEventSource<any>, imagePrefix: string = "image", text: string = undefined) {
+        const perId = ImageUploadFlow.uploadCountsPerId
+        const id = tagsSource.data.id
+        if(!perId.has(id)){
+            perId.set(id, new UIEventSource<number>(0))
+        }
+        const uploadedCount = perId.get(id)
         const uploader = new ImgurUploader(url => {
             // A file was uploaded - we add it to the tags of the object
 
@@ -30,7 +39,9 @@ export class ImageUploadFlow extends Toggle {
                 key = imagePrefix + ":" + freeIndex;
             }
             console.log("Adding image:" + key, url);
-           Promise.resolve(State.state.changes
+            uploadedCount.data ++
+            uploadedCount.ping()
+            Promise.resolve(State.state.changes
                 .applyAction(new ChangeTagAction(
                     tags.id, new Tag(key, url), tagsSource.data,
                     {
@@ -40,10 +51,6 @@ export class ImageUploadFlow extends Toggle {
                 )))
         })
         
-        uploader.queue.addCallbackD(q => console.log("Image upload queue is ", q))
-        uploader.failed.addCallbackD(q => console.log("Image upload fail list is ", q))
-        uploader.success.addCallbackD(q => console.log("Image upload success list is ", q))
-
         const licensePicker = new LicensePicker()
 
         const t = Translations.t.image;
@@ -105,10 +112,33 @@ export class ImageUploadFlow extends Toggle {
         })
 
 
-        const uploadStateUi = new UploadFlowStateUI(uploader.queue, uploader.failed, uploader.success)
-
         const uploadFlow: BaseUIElement = new Combine([
-            uploadStateUi,
+            new VariableUiElement(uploader.queue.map(q => q.length).map(l => {
+                if(l == 0){
+                    return undefined;
+                }
+                if(l == 1){
+                   return t.uploadingPicture.Clone().SetClass("alert")
+                }else{
+                    return t.uploadingMultiple.Subs({count: "" + l}).SetClass("alert")
+                }
+            })),
+            new VariableUiElement(uploader.failed.map(q => q.length).map(l => {
+                if(l==0){
+                    return undefined
+                }
+                return t.uploadFailed.Clone().SetClass("alert");
+            })),
+            new VariableUiElement(uploadedCount.map(l => {
+                if(l == 0){
+                    return  undefined;
+                }
+                if(l == 1){
+                    return t.uploadDone.Clone().SetClass("thanks");
+                }
+                return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks")
+            })),
+            
             fileSelector,
             Translations.t.image.respectPrivacy.Clone().SetStyle("font-size:small;"),
             licensePicker

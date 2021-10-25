@@ -7,6 +7,9 @@
     "en",
     "nl"
   ],
+  "mustHaveLanguage": [
+    "nl"
+  ],
   "title": {
     "nl": "Toeristisch relevante info"
   },

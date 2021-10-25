@@ -33,7 +33,7 @@ class TranslationPart {
             }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
-                console.error("Non-string object in translation while trying to add more translations to '", translationsKey ,"': ", v)
+                console.error("Non-string object in translation while trying to add more translations to '", translationsKey, "': ", v)
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
             this.contents.set(translationsKey, v)
@@ -166,7 +166,13 @@ function transformTranslation(obj: any, depth = 1) {
         if (key.match("^[a-zA-Z0-9_]*$") === null) {
             throw "Invalid character in key: " + key
         }
-        values += (Utils.Times((_) => "  ", depth)) + key + ": " + transformTranslation(obj[key], depth + 1) + ",\n"
+        const value = obj[key]
+
+        if (isTranslation(value)) {
+            values += (Utils.Times((_) => "  ", depth)) + "get " + key + "() { return new Translation(" + JSON.stringify(value) + ") }" + ",\n"
+        } else {
+            values += (Utils.Times((_) => "  ", depth)) + key + ": " + transformTranslation(value, depth + 1) + ",\n"
+        }
     }
     return `{${values}}`;
 
@@ -300,9 +306,9 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         }
         if (typeof sourceV === "object") {
             if (targetV === undefined) {
-                try{
-                target[language] = sourceV;
-                }catch(e){
+                try {
+                    target[language] = sourceV;
+                } catch (e) {
                     throw `At context${context}: Could not add a translation in language ${language} due to ${e}`
                 }
             } else {

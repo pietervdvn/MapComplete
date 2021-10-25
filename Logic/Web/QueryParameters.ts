@@ -55,6 +55,10 @@ export class QueryParameters {
         return source;
     }
 
+    public static GetBooleanQueryParameter(key: string, deflt: string, documentation?: string): UIEventSource<boolean>{
+        return QueryParameters.GetQueryParameter(key, deflt, documentation).map(str => str === "true", [], b => ""+b)
+    }
+
     public static GenerateQueryParameterDocs(): string {
         const docs = [QueryParameters.QueryParamDocsIntro];
         for (const key in QueryParameters.documentation) {

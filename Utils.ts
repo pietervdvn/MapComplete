@@ -330,7 +330,7 @@ export class Utils {
                 return cached.promise
             }
         }
-        const promise = Utils.downloadJson(url, headers)
+        const promise = /*NO AWAIT as we work with the promise directly */Utils.downloadJson(url, headers)
         Utils._download_cache.set(url, {promise, timestamp: new Date().getTime()})
         return await promise
     }

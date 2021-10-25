@@ -40,7 +40,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 1,
-  "roamingRenderings": [],
   "layers": [
     "public_bookcase"
   ]

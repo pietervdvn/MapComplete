@@ -23,11 +23,11 @@ export default class AvailableBaseLayers {
     private static implementation: AvailableBaseLayersObj
     
     static AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
-        return AvailableBaseLayers.implementation.AvailableLayersAt(location);
+        return AvailableBaseLayers.implementation?.AvailableLayersAt(location) ?? new UIEventSource<BaseLayer[]>([]);
     }
 
     static SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> {
-        return AvailableBaseLayers.implementation.SelectBestLayerAccordingTo(location, preferedCategory);
+        return AvailableBaseLayers.implementation?.SelectBestLayerAccordingTo(location, preferedCategory) ?? new UIEventSource<BaseLayer>(undefined);
 
     }
 

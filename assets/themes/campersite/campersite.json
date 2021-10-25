@@ -2,7 +2,7 @@
   "id": "campersite",
   "title": {
     "en": "Campersites",
-    "nl": "Kampeersite",
+    "nl": "Camperplaatsen",
     "it": "Aree camper",
     "ru": "Кемпинги",
     "ja": "キャンプサイト",
@@ -304,7 +304,8 @@
             "zh_Hant": "{capacity} 露營者能夠同時使用這個地方",
             "fr": "{capacity} personnes peuvent utiliser cet espace en même temps",
             "pt_BR": "{capacity} campistas podem usar este lugar ao mesmo tempo",
-            "de": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen"
+            "de": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen",
+            "nl": "{capacity} campers kunnen deze plaats tegelijk gebruiken"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
@@ -314,7 +315,8 @@
             "zh_Hant": "多少露營者能夠待在這裡？(如果沒有明顯的空間數字或是允許車輛則可以跳過)",
             "fr": "Combien de personnes peuvent camper ici ? (Passez s’il n’y a pas de places délimitées)",
             "pt_BR": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)",
-            "de": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)"
+            "de": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
+            "nl": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)"
           },
           "freeform": {
             "key": "capacity",
@@ -351,7 +353,8 @@
                 "zh_Hant": "這裡有網路連線",
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à internet",
-                "de": "Internetzugang ist vorhanden"
+                "de": "Internetzugang ist vorhanden",
+                "nl": "Er is internettoegang"
               }
             },
             {
@@ -370,7 +373,8 @@
                 "zh_Hant": "這裡有網路連線",
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à Internet",
-                "de": "Internetzugang ist vorhanden"
+                "de": "Internetzugang ist vorhanden",
+                "nl": "Er is internettoegang"
               },
               "hideInAnswer": true
             },
@@ -609,7 +613,8 @@
             "it": "Maggiori dettagli su questo luogo: {description}",
             "fr": "Plus de détails à propos du site : {description}",
             "pt_BR": "Mais detalhes sobre este lugar: {description}",
-            "de": "Mehr Details über diesen Ort: {description}"
+            "de": "Mehr Details über diesen Ort: {description}",
+            "nl": "Meer details over deze plaats: {description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
@@ -618,7 +623,8 @@
             "zh_Hant": "你想要為這個地方加一般的敘述嗎？(不要重覆加先前問過或提供的資訊，請保持敘述性-請將意見留在評價)",
             "it": "Desideri aggiungere una descrizione del luogo? (Non vanno ripetute informazioni già richieste e mostrate precedentemente. Si prega di attenersi a dati oggettivi - le opinioni vanno nelle recensioni)",
             "fr": "Souhaitez-vous ajouter une description générale du lieu ? (Ne pas répéter les informations précédentes et rester neutre, les opinions vont dans les avis)",
-            "de": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)"
+            "de": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
+            "nl": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)"
           },
           "freeform": {
             "key": "description",
@@ -664,7 +670,8 @@
             "it": "luogo di campeggio",
             "fr": "Aire de camping",
             "pt_BR": "local de acampamento",
-            "de": "Wohnmobilstellplatz"
+            "de": "Wohnmobilstellplatz",
+            "nl": "camperplaats"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
@@ -672,7 +679,8 @@
             "ja": "新しい公式キャンプサイトを追加します。お客様のキャンピングカーで一泊する指定の場所です。本物のキャンプのように見えるかもしれないし、単なる駐車場のように見えるかもしれない。それらは全く署名されていないかもしれませんが、自治体の決定で定義されているだけです。夜を過ごすことが予想されないキャンパー向けの通常の駐車場は、キャンプサイトではない ",
             "it": "Aggiungi una nuova area di sosta ufficiale per camper. Si tratta di aree destinate alla sosta notturna dei camper. Potrebbe trattarsi di luoghi di campeggio o semplici parcheggi. Potrebbero anche non essere segnalati sul posto, ma semplicemente indicati in una delibera comunale. Un parcheggio destinato ai camper in cui non è però consentito trascorrere la notte -non- va considerato un'area di sosta per camper. ",
             "fr": "Ajouter une nouvelle aire de camping officielle, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking ne suffit pas à rentrer dans cette catégorie ",
-            "de": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. "
+            "de": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem Übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+            "nl": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. "
           }
         }
       ],
@@ -1078,66 +1086,70 @@
       ]
     }
   ],
-  "roamingRenderings": [
-    {
-      "render": {
-        "en": "This place is operated by {operator}",
-        "ja": "この場所は{operator}によって運営されます",
-        "it": "Questo luogo è gestito da {operator}",
-        "fr": "Ce site est exploité par {operator}",
-        "de": "Dieser Ort wird betrieben von {operator}"
-      },
-      "question": {
-        "en": "Who operates this place?",
-        "ja": "この店は誰が経営しているんですか?",
-        "it": "Chi gestisce questo luogo?",
-        "fr": "Qui est l’exploitant du site ?",
-        "de": "Wer betreibt diesen Ort?"
-      },
-      "freeform": {
-        "key": "operator"
-      }
-    },
-    {
-      "question": {
-        "en": "Does this place have a power supply?",
-        "ja": "この場所に電源はありますか?",
-        "it": "Questo luogo fornisce corrente elettrica?",
-        "fr": "Ce site a-t’il une source d’électricité ?",
-        "de": "Hat dieser Ort eine Stromversorgung?"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "power_supply=yes"
-            ]
-          },
-          "then": {
-            "en": "This place has a power supply",
-            "id": "Tempat ini memiliki catu daya",
-            "ja": "この場所には電源があります",
-            "it": "Questo luogo fornisce corrente elettrica",
-            "fr": "Ce site a une source d’alimentation",
-            "de": "Dieser Ort hat eine Stromversorgung"
-          }
+  "overrideAll": {
+    "tagRenderings+": [
+      {
+        "id": "operator",
+        "render": {
+          "en": "This place is operated by {operator}",
+          "ja": "この場所は{operator}によって運営されます",
+          "it": "Questo luogo è gestito da {operator}",
+          "fr": "Ce site est exploité par {operator}",
+          "de": "Dieser Ort wird betrieben von {operator}"
         },
-        {
-          "if": {
-            "and": [
-              "power_supply=no"
-            ]
-          },
-          "then": {
-            "en": "This place does not have power supply",
-            "id": "Tempat ini tidak memiliki sumber listrik",
-            "ja": "この場所には電源がありません",
-            "it": "Questo luogo non fornisce corrente elettrica",
-            "fr": "Ce site n’a pas de source d’alimentation",
-            "de": "Dieser Ort hat keine Stromversorgung"
-          }
+        "question": {
+          "en": "Who operates this place?",
+          "ja": "この店は誰が経営しているんですか?",
+          "it": "Chi gestisce questo luogo?",
+          "fr": "Qui est l’exploitant du site ?",
+          "de": "Wer betreibt diesen Ort?"
+        },
+        "freeform": {
+          "key": "operator"
         }
-      ]
-    }
-  ]
+      },
+      {
+        "id": "power_supply",
+        "question": {
+          "en": "Does this place have a power supply?",
+          "ja": "この場所に電源はありますか?",
+          "it": "Questo luogo fornisce corrente elettrica?",
+          "fr": "Ce site a-t’il une source d’électricité ?",
+          "de": "Hat dieser Ort eine Stromversorgung?"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "power_supply=yes"
+              ]
+            },
+            "then": {
+              "en": "This place has a power supply",
+              "id": "Tempat ini memiliki catu daya",
+              "ja": "この場所には電源があります",
+              "it": "Questo luogo fornisce corrente elettrica",
+              "fr": "Ce site a une source d’alimentation",
+              "de": "Dieser Ort hat eine Stromversorgung"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "power_supply=no"
+              ]
+            },
+            "then": {
+              "en": "This place does not have power supply",
+              "id": "Tempat ini tidak memiliki sumber listrik",
+              "ja": "この場所には電源がありません",
+              "it": "Questo luogo non fornisce corrente elettrica",
+              "fr": "Ce site n’a pas de source d’alimentation",
+              "de": "Dieser Ort hat keine Stromversorgung"
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

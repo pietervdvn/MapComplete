@@ -83,15 +83,15 @@ export default class SpecialVisualizations {
                 docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
                 args: [{
                     name: "image key/prefix (multiple values allowed if comma-seperated)",
-                    defaultValue: "image",
+                    defaultValue: AllImageProviders.defaultKeys.join(","),
                     doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
                 }],
                 constr: (state: State, tags, args) => {
-                    let imagePrefixes = undefined;
+                    let imagePrefixes: string[] = undefined;
                     if(args.length > 0){
-                        imagePrefixes = args;
+                        imagePrefixes = [].concat(...args.map(a => a.split(",")));
                     }
-                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags);
+                    return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags, imagePrefixes);
                 }
             },
             {

@@ -3,7 +3,8 @@
     "name": {
         "en": "Waste Basket",
         "nl": "Vuilnisbak",
-        "ru": "Контейнер для мусора"
+        "ru": "Контейнер для мусора",
+        "de": "Abfalleimer"
     },
     "minzoom": 17,
     "source": {
@@ -17,7 +18,8 @@
         "render": {
             "en": "Waste Basket",
             "nl": "Vuilnisbak",
-            "ru": "Контейнер для мусора"
+            "ru": "Контейнер для мусора",
+            "de": "Abfalleimer"
         }
     },
     "description": {
@@ -30,7 +32,8 @@
             "id": "waste-basket-waste-types",
             "question": {
                 "en": "What kind of waste basket is this?",
-                "nl": "Wat voor soort vuilnisbak is dit?"
+                "nl": "Wat voor soort vuilnisbak is dit?",
+                "de": "Um was für einen Abfalleimer handelt es sich?"
             },
             "multiAnswer": true,
             "mappings": [
@@ -38,7 +41,8 @@
                     "if": "waste=",
                     "then": {
                         "en": "A waste basket for general waste",
-                        "nl": "Een vuilnisbak voor zwerfvuil"
+                        "nl": "Een vuilnisbak voor zwerfvuil",
+                        "de": "Ein Abfalleimer für allgemeinen Müll"
                     },
                     "hideInAnswer": true
                 },
@@ -46,28 +50,32 @@
                     "if": "waste=trash",
                     "then": {
                         "en": "A waste basket for general waste",
-                        "nl": "Een vuilnisbak voor zwerfvuil"
+                        "nl": "Een vuilnisbak voor zwerfvuil",
+                        "de": "Ein Abfalleimer für allgemeinen Müll"
                     }
                 },
                 {
                     "if": "waste=dog_excrement",
                     "then": {
                         "en": "A waste basket for dog excrements",
-                        "nl": "Een vuilnisbak specifiek voor hondenuitwerpselen"
+                        "nl": "Een vuilnisbak specifiek voor hondenuitwerpselen",
+                        "de": "Ein Abfalleimer für Hundekot"
                     }
                 },
                 {
                     "if": "waste=cigarettes",
                     "then": {
                         "en": "A waste basket for cigarettes",
-                        "nl": "Een vuilnisbak voor sigarettenpeuken"
+                        "nl": "Een vuilnisbak voor sigarettenpeuken",
+                        "de": "Mülleimer für Zigaretten"
                     }
                 },
                 {
                     "if": "waste=drugs",
                     "then": {
                         "en": "A waste basket for drugs",
-                        "nl": "Een vuilnisbak voor (vervallen) medicatie en drugs"
+                        "nl": "Een vuilnisbak voor (vervallen) medicatie en drugs",
+                        "de": "Mülleimer für Drogen"
                     }
                 },
                 {
@@ -82,7 +90,9 @@
         {
             "id": "dispensing_dog_bags",
             "question": {
-                "en": "Does this waste basket have a dispenser for dog excrement bags?"
+                "en": "Does this waste basket have a dispenser for dog excrement bags?",
+                "nl": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?",
+                "de": "Verfügt dieser Abfalleimer über einen Spender für (Hunde-)Kotbeutel?"
             },
             "condition": {
                 "or": [
@@ -100,7 +110,9 @@
                         ]
                     },
                     "then": {
-                        "en": "This waste basket has a dispenser for (dog) excrement bags"
+                        "en": "This waste basket has a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes",
+                        "de": "Dieser Abfalleimer verfügt über einen Spender für (Hunde-)Kotbeutel"
                     }
                 },
                 {
@@ -111,13 +123,17 @@
                         ]
                     },
                     "then": {
-                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags"
+                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
+                        "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     }
                 },
                 {
                     "if": "vending=",
                     "then": {
-                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags"
+                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilnisbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
+                        "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     },
                     "hideInAnwer": true
                 }
@@ -142,7 +158,8 @@
                 "then": {
                     "en": "Waste Basket",
                     "nl": "Vuilnisbak",
-                    "ru": "Контейнер для мусора"
+                    "ru": "Контейнер для мусора",
+                    "de": "Abfalleimer"
                 }
             }
         ]
@@ -158,7 +175,8 @@
             "title": {
                 "en": "Waste Basket",
                 "nl": "Vuilnisbak",
-                "ru": "Контейнер для мусора"
+                "ru": "Контейнер для мусора",
+                "de": "Abfalleimer"
             },
             "presiceInput": {
                 "preferredBackground": "photo"

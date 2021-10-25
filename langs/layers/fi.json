@@ -90,9 +90,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "presets": {
             "0": {
                 "title": "Pyöräpumppu"

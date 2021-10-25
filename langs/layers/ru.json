@@ -400,9 +400,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "presets": {
             "0": {
                 "title": "Велосипедный насос"
@@ -643,11 +640,11 @@
             }
         },
         "tagRenderings": {
-            "Auth phone": {
+            "Network": {
                 "question": "К какой сети относится эта станция?",
                 "render": "{network}"
             },
-            "Authentication": {
+            "OH": {
                 "question": "В какое время работает эта зарядная станция?"
             }
         },
@@ -715,13 +712,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
         "name": "Дефибрилляторы",
         "presets": {
             "0": {

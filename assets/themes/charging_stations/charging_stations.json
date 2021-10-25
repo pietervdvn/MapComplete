@@ -46,6 +46,5 @@
   "defaultBackgroundId": "CartoDB.Voyager",
   "layers": [
     "charging_station"
-  ],
-  "roamingRenderings": []
+  ]
 }

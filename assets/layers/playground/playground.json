@@ -205,14 +205,16 @@
                 "en": "Accessible to kids older than {min_age} years",
                 "it": "Accessibile ai bambini di almeno {min_age} anni",
                 "ru": "Доступно для детей старше {min_age} лет",
-                "fr": "Accessible aux enfants de plus de {min_age} ans"
+                "fr": "Accessible aux enfants de plus de {min_age} ans",
+                "de": "Zugang nur für Kinder ab {min_age} Jahren"
             },
             "question": {
                 "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",
                 "en": "What is the minimum age required to access this playground?",
                 "it": "Qual è l’età minima per accedere a questo parco giochi?",
                 "fr": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?",
-                "ru": "С какого возраста доступна эта детская площадка?"
+                "ru": "С какого возраста доступна эта детская площадка?",
+                "de": "Ab welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
             },
             "freeform": {
                 "key": "min_age",
@@ -226,13 +228,15 @@
                 "en": "Accessible to kids of at most {max_age}",
                 "it": "Accessibile ai bambini di età inferiore a {max_age}",
                 "fr": "Accessible aux enfants de {max_age} au maximum",
-                "ru": "Доступно детям до {max_age}"
+                "ru": "Доступно детям до {max_age}",
+                "de": "Zugang nur für Kinder bis maximal {max_age}"
             },
             "question": {
                 "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
                 "en": "What is the maximum age allowed to access this playground?",
                 "it": "Qual è l’età massima per accedere a questo parco giochi?",
-                "fr": "Quel est l’âge maximum autorisé pour utiliser l’aire de jeu ?"
+                "fr": "Quel est l’âge maximum autorisé pour utiliser l’aire de jeu ?",
+                "de": "Bis zu welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
             },
             "freeform": {
                 "key": "max_age",
@@ -353,7 +357,8 @@
                 "nl": "Wie kan men bellen indien er problemen zijn met de speeltuin?",
                 "en": "What is the phone number of the playground maintainer?",
                 "fr": "Quel est le numéro de téléphone du responsable du terrain de jeux ?",
-                "it": "Qual è il numero di telefono del gestore del campetto?"
+                "it": "Qual è il numero di telefono del gestore del campetto?",
+                "de": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?"
             },
             "render": {
                 "nl": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>",
@@ -428,7 +433,8 @@
                 "en": "When is this playground accessible?",
                 "fr": "Quand ce terrain de jeux est-il accessible ?",
                 "it": "Quando si può accedere a questo campetto?",
-                "ru": "Когда открыта эта игровая площадка?"
+                "ru": "Когда открыта эта игровая площадка?",
+                "de": "Wann ist dieser Spielplatz zugänglich?"
             },
             "mappings": [
                 {
@@ -438,7 +444,8 @@
                         "en": "Accessible from sunrise till sunset",
                         "fr": "Accessible du lever au coucher du soleil",
                         "it": "Si può accedere dall'alba al tramonto",
-                        "ru": "Открыто от рассвета до заката"
+                        "ru": "Открыто от рассвета до заката",
+                        "de": "Zugänglich von Sonnenaufgang bis Sonnenuntergang"
                     }
                 },
                 {
@@ -448,7 +455,8 @@
                         "en": "Always accessible",
                         "fr": "Toujours accessible",
                         "ru": "Всегда доступен",
-                        "it": "Si può sempre accedere"
+                        "it": "Si può sempre accedere",
+                        "de": "Immer zugänglich"
                     }
                 },
                 {
@@ -458,7 +466,8 @@
                         "en": "Always accessible",
                         "ru": "Всегда доступен",
                         "fr": "Toujours accessible",
-                        "it": "Si può sempre accedere"
+                        "it": "Si può sempre accedere",
+                        "de": "Immer zugänglich"
                     },
                     "hideInAnswer": true
                 }
@@ -523,7 +532,8 @@
                 "en": "Playground",
                 "ru": "Детская площадка",
                 "fr": "Terrain de jeux",
-                "it": "Campetto"
+                "it": "Campetto",
+                "de": "Spielplatz"
             }
         }
     ],

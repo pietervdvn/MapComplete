@@ -453,9 +453,6 @@
         }
     },
     "bike_repair_station": {
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
         "name": "Stazioni bici (riparazione, gonfiaggio o entrambi)",
         "presets": {
             "0": {
@@ -752,11 +749,11 @@
         "description": "Una stazione di ricarica",
         "name": "Stazioni di ricarica",
         "tagRenderings": {
-            "Auth phone": {
+            "Network": {
                 "question": "A quale rete appartiene questa stazione di ricarica?",
                 "render": "{network}"
             },
-            "Authentication": {
+            "OH": {
                 "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
             }
         },
@@ -765,13 +762,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
         "name": "Defibrillatori",
         "presets": {
             "0": {

@@ -129,8 +129,7 @@
     "titleIcons": [
         {
             "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
-            "condition": "operator=De Fietsambassade Gent",
-            "roaming": true
+            "condition": "operator=De Fietsambassade Gent"
         },
         "defaults"
     ],
@@ -616,16 +615,7 @@
         "level"
     ],
     "icon": {
-        "render": {
-            "en": "./assets/layers/bike_repair_station/repair_station.svg",
-            "ru": "./assets/layers/bike_repair_station/repair_station.svg",
-            "it": "./assets/layers/bike_repair_station/repair_station.svg",
-            "fi": "./assets/layers/bike_repair_station/repair_station.svg",
-            "fr": "./assets/layers/bike_repair_station/repair_station.svg",
-            "pt_BR": "./assets/layers/bike_repair_station/repair_station.svg",
-            "de": "./assets/layers/bike_repair_station/repair_station.svg",
-            "pt": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
+        "render": "./assets/layers/bike_repair_station/repair_station.svg",
         "mappings": [
             {
                 "if": {

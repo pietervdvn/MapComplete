@@ -225,21 +225,23 @@
                 }
             }
         },
-        "roamingRenderings": {
-            "0": {
-                "question": "Qui est l’exploitant du site ?",
-                "render": "Ce site est exploité par {operator}"
-            },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce site a une source d’alimentation"
-                    },
-                    "1": {
-                        "then": "Ce site n’a pas de source d’alimentation"
-                    }
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Qui est l’exploitant du site ?",
+                    "render": "Ce site est exploité par {operator}"
                 },
-                "question": "Ce site a-t’il une source d’électricité ?"
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Ce site a une source d’alimentation"
+                        },
+                        "1": {
+                            "then": "Ce site n’a pas de source d’alimentation"
+                        }
+                    },
+                    "question": "Ce site a-t’il une source d’électricité ?"
+                }
             }
         },
         "shortDescription": "Trouver des sites pour passer la nuit avec votre camping-car",
@@ -439,6 +441,87 @@
             }
         },
         "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Existe-t’il un site avec plus d’informations (ex : topographie) ?"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}"
+                        },
+                        "1": {
+                            "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}"
+                        },
+                        "2": {
+                            "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}"
+                        },
+                        "3": {
+                            "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}"
+                        }
+                    }
+                },
+                "2": {
+                    "mappings": {
+                        "0": {
+                            "then": "Libre d’accès"
+                        },
+                        "1": {
+                            "then": "Une autorisation est nécessaire"
+                        },
+                        "2": {
+                            "then": "Réservé aux clients"
+                        },
+                        "3": {
+                            "then": "Réservé aux membres"
+                        }
+                    },
+                    "question": "Qui peut y accéder ?"
+                },
+                "4": {
+                    "question": "Quelle est la longueur moyenne des voies en mètres ?",
+                    "render": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne"
+                },
+                "5": {
+                    "question": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
+                    "render": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge"
+                },
+                "6": {
+                    "question": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
+                    "render": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge"
+                },
+                "7": {
+                    "mappings": {
+                        "0": {
+                            "then": "L’escalade de bloc est possible"
+                        },
+                        "1": {
+                            "then": "L’escalade de bloc n’est pas possible"
+                        },
+                        "2": {
+                            "then": "L’escalade de bloc est possible sur des voies précises"
+                        },
+                        "3": {
+                            "then": "Il y a {climbing:boulder} voies d’escalade de bloc"
+                        }
+                    },
+                    "question": "L’escalade de bloc est-elle possible ici ?"
+                },
+                "8": {
+                    "mappings": {
+                        "0": {
+                            "then": "L’escalade à la moulinette est possible"
+                        },
+                        "1": {
+                            "then": "L’escalade à la moulinette n’est pas possible"
+                        },
+                        "2": {
+                            "then": "{climbing:toprope} voies sont équipées de moulinettes"
+                        }
+                    },
+                    "question": "Est-il possible d’escalader à la moulinette ?"
+                }
+            },
             "units+": {
                 "0": {
                     "applicableUnits": {
@@ -450,87 +533,6 @@
                         }
                     }
                 }
-            }
-        },
-        "roamingRenderings": {
-            "0": {
-                "question": "Existe-t’il un site avec plus d’informations (ex : topographie) ?"
-            },
-            "1": {
-                "mappings": {
-                    "0": {
-                        "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}"
-                    },
-                    "1": {
-                        "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}"
-                    },
-                    "2": {
-                        "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}"
-                    },
-                    "3": {
-                        "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}"
-                    }
-                }
-            },
-            "2": {
-                "mappings": {
-                    "0": {
-                        "then": "Libre d’accès"
-                    },
-                    "1": {
-                        "then": "Une autorisation est nécessaire"
-                    },
-                    "2": {
-                        "then": "Réservé aux clients"
-                    },
-                    "3": {
-                        "then": "Réservé aux membres"
-                    }
-                },
-                "question": "Qui peut y accéder ?"
-            },
-            "4": {
-                "question": "Quelle est la longueur moyenne des voies en mètres ?",
-                "render": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne"
-            },
-            "5": {
-                "question": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
-                "render": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge"
-            },
-            "6": {
-                "question": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
-                "render": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge"
-            },
-            "7": {
-                "mappings": {
-                    "0": {
-                        "then": "L’escalade de bloc est possible"
-                    },
-                    "1": {
-                        "then": "L’escalade de bloc n’est pas possible"
-                    },
-                    "2": {
-                        "then": "L’escalade de bloc est possible sur des voies précises"
-                    },
-                    "3": {
-                        "then": "Il y a {climbing:boulder} voies d’escalade de bloc"
-                    }
-                },
-                "question": "L’escalade de bloc est-elle possible ici ?"
-            },
-            "8": {
-                "mappings": {
-                    "0": {
-                        "then": "L’escalade à la moulinette est possible"
-                    },
-                    "1": {
-                        "then": "L’escalade à la moulinette n’est pas possible"
-                    },
-                    "2": {
-                        "then": "{climbing:toprope} voies sont équipées de moulinettes"
-                    }
-                },
-                "question": "Est-il possible d’escalader à la moulinette ?"
             }
         },
         "title": "Open Climbing Map"

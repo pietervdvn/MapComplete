@@ -5,12 +5,14 @@
     "fr": "Carte des magasins",
     "ja": "オープン ショップ マップ",
     "zh_Hant": "開放商店地圖",
-    "ru": "Открыть карту магазинов"
+    "ru": "Открыть карту магазинов",
+    "de": "Freie Geschäftskarte"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",
     "fr": "Carte modifiable affichant les informations de base des magasins",
-    "ja": "基本的なショップ情報を含む編集可能なマップ"
+    "ja": "基本的なショップ情報を含む編集可能なマップ",
+    "de": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
@@ -24,9 +26,7 @@
     "ja",
     "zh_Hant",
     "ru",
-    "nl",
-    "ca",
-    "id"
+    "de"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/shops/shop.svg",

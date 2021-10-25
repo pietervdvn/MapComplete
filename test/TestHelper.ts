@@ -19,6 +19,7 @@ export default class T {
             try {
                 test();
             } catch (e) {
+                console.log("ERROR: ", e, e.stack)
                 failures.push({testsuite: this.name, name: name, msg: "" + e});
             }
         }

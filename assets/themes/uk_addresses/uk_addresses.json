@@ -1,17 +1,21 @@
 {
   "id": "uk_addresses",
   "title": {
-    "en": "UK Addresses"
+    "en": "UK Addresses",
+    "de": "Adressen in Großbritannien"
   },
   "shortDescription": {
-    "en": "Help to build an open dataset of UK addresses"
+    "en": "Help to build an open dataset of UK addresses",
+    "de": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen"
   },
   "description": {
     "en": "Contribute to OpenStreetMap by filling out address information",
-    "nl": "Draag bij aan OpenStreetMap door adresinformatie in te vullen"
+    "nl": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
+    "de": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen"
   },
   "language": [
     "en",
+    "de",
     "nl"
   ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
@@ -36,7 +40,8 @@
       "maxZoom": 20,
       "defaultState": false,
       "name": {
-        "en": "Property boundaries by osmuk.org"
+        "en": "Property boundaries by osmuk.org",
+        "de": "Grenzverläufe gemäß osmuk.org"
       }
     }
   ],
@@ -113,7 +118,8 @@
     {
       "id": "addresses",
       "name": {
-        "en": "Known addresses in OSM"
+        "en": "Known addresses in OSM",
+        "de": "Bekannte Adressen in OSM"
       },
       "minzoom": 18,
       "source": {
@@ -133,28 +139,33 @@
       ],
       "title": {
         "render": {
-          "en": "Known address"
+          "en": "Known address",
+          "de": "Bekannte Adresse"
         }
       },
       "description": {
         "en": "Addresses",
-        "nl": "Adressen"
+        "nl": "Adressen",
+        "de": "Adressen"
       },
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation_osm",
           "render": {
-            "en": "This address is saved in OpenStreetMap"
+            "en": "This address is saved in OpenStreetMap",
+            "de": "Diese Adresse ist in OpenStreetMap gespeichert"
           }
         },
         {
           "id": "uk_addresses_housenumber",
           "render": {
             "en": "The housenumber is <b>{addr:housenumber}</b>",
-            "nl": "Het huisnummer is <b>{addr:housenumber}</b>"
+            "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
+            "de": "Die Hausnummer ist <b>{addr:housenumber}</b>"
           },
           "question": {
-            "en": "What is the number of this house?"
+            "en": "What is the number of this house?",
+            "de": "Wie lautet die Nummer dieses Hauses?"
           },
           "freeform": {
             "key": "addr:housenumber",
@@ -171,7 +182,8 @@
               },
               "then": {
                 "en": "This building has no house number",
-                "nl": "Dit gebouw heeft geen huisnummer"
+                "nl": "Dit gebouw heeft geen huisnummer",
+                "de": "Dieses Gebäude hat keine Hausnummer"
               }
             }
           ]
@@ -179,10 +191,12 @@
         {
           "id": "uk_addresses_street",
           "render": {
-            "en": "This address is in street <b>{addr:street}</b>"
+            "en": "This address is in street <b>{addr:street}</b>",
+            "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
           },
           "question": {
-            "en": "What street is this address located in?"
+            "en": "What street is this address located in?",
+            "de": "In welcher Straße befindet sich diese Adresse?"
           },
           "freeform": {
             "key": "addr:street"
@@ -274,6 +288,5 @@
         "render": "0"
       }
     }
-  ],
-  "roamingRenderings": []
+  ]
 }

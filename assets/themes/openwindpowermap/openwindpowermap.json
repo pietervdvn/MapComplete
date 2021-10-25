@@ -2,17 +2,20 @@
   "id": "openwindpowermap",
   "title": {
     "en": "OpenWindPowerMap",
-    "fr": "OpenWindPowerMap"
+    "fr": "OpenWindPowerMap",
+    "de": "OpenWindPowerMap"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
   "description": {
     "en": "A map for showing and editing wind turbines.",
-    "fr": "Une carte indiquant les éoliennes et permettant leur édition."
+    "fr": "Une carte indiquant les éoliennes et permettant leur édition.",
+    "de": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen."
   },
   "language": [
     "en",
     "fr",
+    "de",
     "nl"
   ],
   "version": "2021-06-18",
@@ -28,7 +31,8 @@
       "name": {
         "en": "wind turbine",
         "nl": "windturbine",
-        "fr": "Éolienne"
+        "fr": "Éolienne",
+        "de": "Windrad"
       },
       "source": {
         "osmTags": "generator:source=wind"
@@ -39,7 +43,8 @@
         "render": {
           "en": "wind turbine",
           "nl": "windturbine",
-          "fr": "éolienne"
+          "fr": "éolienne",
+          "de": "Windrad"
         },
         "mappings": [
           {
@@ -147,7 +152,8 @@
           "title": {
             "en": "wind turbine",
             "nl": "windturbine",
-            "fr": "Éolienne"
+            "fr": "Éolienne",
+            "de": "Windrad"
           }
         }
       ],
@@ -166,7 +172,8 @@
               "human": {
                 "en": " megawatts",
                 "nl": " megawatt",
-                "fr": " megawatts"
+                "fr": " megawatts",
+                "de": " Megawatt"
               }
             },
             {
@@ -178,7 +185,8 @@
               "human": {
                 "en": " kilowatts",
                 "nl": " kilowatt",
-                "fr": " kilowatts"
+                "fr": " kilowatts",
+                "de": " Kilowatt"
               }
             },
             {
@@ -190,7 +198,8 @@
               "human": {
                 "en": " watts",
                 "nl": " watt",
-                "fr": " watts"
+                "fr": " watts",
+                "de": " Watt"
               }
             },
             {
@@ -202,7 +211,8 @@
               "human": {
                 "en": " gigawatts",
                 "nl": " gigawatt",
-                "fr": " gigawatts"
+                "fr": " gigawatts",
+                "de": " Gigawatt"
               }
             }
           ],
@@ -222,7 +232,8 @@
               "human": {
                 "en": " meter",
                 "nl": " meter",
-                "fr": " mètres"
+                "fr": " mètres",
+                "de": " Meter"
               }
             }
           ]

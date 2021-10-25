@@ -2,7 +2,8 @@
     "id": "food",
     "name": {
         "nl": "Eetgelegenheden",
-        "en": "Restaurants and fast food"
+        "en": "Restaurants and fast food",
+        "de": "Restaurants und Fast Food"
     },
     "source": {
         "osmTags": {
@@ -64,14 +65,16 @@
             "title": {
                 "en": "restaurant",
                 "nl": "restaurant",
-                "ru": "ресторан"
+                "ru": "ресторан",
+                "de": "Restaurant"
             },
             "tags": [
                 "amenity=restaurant"
             ],
             "description": {
                 "nl": "Een eetgegelegenheid waar je aan tafel wordt bediend",
-                "en": "A formal eating place with sit-down facilities selling full meals served by waiters"
+                "en": "A formal eating place with sit-down facilities selling full meals served by waiters",
+                "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden"
             },
             "preciseInput": {
                 "preferredBackground": "map"
@@ -81,7 +84,8 @@
             "title": {
                 "en": "fastfood",
                 "nl": "fastfood-zaak",
-                "ru": "быстрое питание"
+                "ru": "быстрое питание",
+                "de": "Schnellimbiss"
             },
             "tags": [
                 "amenity=fast_food"
@@ -97,7 +101,8 @@
         {
             "title": {
                 "en": "fries shop",
-                "nl": "frituur"
+                "nl": "frituur",
+                "de": "Pommesbude"
             },
             "tags": [
                 "amenity=fast_food",
@@ -125,7 +130,8 @@
                 },
                 "then": {
                     "nl": "Restaurant <i>{name}</i>",
-                    "en": "Restaurant <i>{name}</i>"
+                    "en": "Restaurant <i>{name}</i>",
+                    "de": "Restaurant <i>{name}</i>"
                 }
             },
             {
@@ -137,7 +143,8 @@
                 },
                 "then": {
                     "nl": "Fastfood-zaak <i>{name}</i>",
-                    "en": "Fastfood <i>{name}</i>"
+                    "en": "Fastfood <i>{name}</i>",
+                    "de": "Schnellrestaurant<i>{name}</i>"
                 }
             }
         ]
@@ -147,11 +154,13 @@
         {
             "question": {
                 "nl": "Wat is de naam van deze eetgelegenheid?",
-                "en": "What is the name of this restaurant?"
+                "en": "What is the name of this restaurant?",
+                "de": "Wie heißt dieses Restaurant?"
             },
             "render": {
                 "nl": "De naam van deze eetgelegeheid is {name}",
-                "en": "The name of this restaurant is {name}"
+                "en": "The name of this restaurant is {name}",
+                "de": "Das Restaurant heißt {name}"
             },
             "freeform": {
                 "key": "name"
@@ -161,7 +170,8 @@
         {
             "question": {
                 "en": "What type of business is this?",
-                "nl": "Wat voor soort zaak is dit?"
+                "nl": "Wat voor soort zaak is dit?",
+                "de": "Um was für ein Geschäft handelt es sich?"
             },
             "mappings": [
                 {
@@ -188,11 +198,13 @@
         {
             "question": {
                 "nl": "Welk soort gerechten worden hier geserveerd?",
-                "en": "Which food is served here?"
+                "en": "Which food is served here?",
+                "de": "Welches Essen gibt es hier?"
             },
             "render": {
                 "nl": "Deze plaats serveert vooral {cuisine}",
-                "en": "This place mostly serves {cuisine}"
+                "en": "This place mostly serves {cuisine}",
+                "de": "An diesem Ort gibt es hauptsächlich {cuisine}"
             },
             "freeform": {
                 "key": "cuisine",
@@ -205,21 +217,24 @@
                     "if": "cuisine=pizza",
                     "then": {
                         "en": "This is a pizzeria",
-                        "nl": "Dit is een pizzeria"
+                        "nl": "Dit is een pizzeria",
+                        "de": "Dies ist eine Pizzeria"
                     }
                 },
                 {
                     "if": "cuisine=friture",
                     "then": {
                         "en": "This is a friture",
-                        "nl": "Dit is een frituur"
+                        "nl": "Dit is een frituur",
+                        "de": "Dies ist eine Pommesbude"
                     }
                 },
                 {
                     "if": "cuisine=pasta",
                     "then": {
                         "en": "Mainly serves pasta",
-                        "nl": "Dit is een pastazaak"
+                        "nl": "Dit is een pastazaak",
+                        "de": "Bietet vorwiegend Pastagerichte an"
                     }
                 },
                 {
@@ -300,28 +315,32 @@
         {
             "question": {
                 "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
-                "en": "Does this place offer takea-way?"
+                "en": "Does this place offer takea-way?",
+                "de": "Ist an diesem Ort Mitnahme möglich?"
             },
             "mappings": [
                 {
                     "if": "takeaway=only",
                     "then": {
                         "en": "This is a take-away only business",
-                        "nl": "Hier is enkel afhaal mogelijk"
+                        "nl": "Hier is enkel afhaal mogelijk",
+                        "de": "Dieses Geschäft bietet nur Artikel zur Mitnahme an"
                     }
                 },
                 {
                     "if": "takeaway=yes",
                     "then": {
                         "en": "Take-away is possible here",
-                        "nl": "Eten kan hier afgehaald worden"
+                        "nl": "Eten kan hier afgehaald worden",
+                        "de": "Mitnahme möglich"
                     }
                 },
                 {
                     "if": "takeaway=no",
                     "then": {
                         "en": "Take-away is not possible here",
-                        "nl": "Hier is geen afhaalmogelijkheid"
+                        "nl": "Hier is geen afhaalmogelijkheid",
+                        "de": "Mitnahme nicht möglich"
                     }
                 }
             ],
@@ -330,7 +349,8 @@
         {
             "question": {
                 "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
-                "en": "Does this restaurant have a vegetarian option?"
+                "en": "Does this restaurant have a vegetarian option?",
+                "de": "Gibt es im das Restaurant vegetarische Speisen?"
             },
             "mappings": [
                 {
@@ -397,35 +417,40 @@
         {
             "question": {
                 "en": "Does this restaurant offer a halal menu?",
-                "nl": "Heeft dit restaurant halal opties?"
+                "nl": "Heeft dit restaurant halal opties?",
+                "de": "Gibt es im das Restaurant halal Speisen?"
             },
             "mappings": [
                 {
                     "if": "diet:halal=no",
                     "then": {
                         "en": "There are no halal options available",
-                        "nl": "Er zijn geen halal opties aanwezig"
+                        "nl": "Er zijn geen halal opties aanwezig",
+                        "de": "Hier gibt es keine halal Speisen"
                     }
                 },
                 {
                     "if": "diet:halal=limited",
                     "then": {
                         "en": "There is a small halal menu",
-                        "nl": "Er zijn een beperkt aantal halal opties"
+                        "nl": "Er zijn een beperkt aantal halal opties",
+                        "de": "Hier gibt es wenige halal Speisen"
                     }
                 },
                 {
                     "if": "diet:halal=yes",
                     "then": {
                         "nl": "Halal menu verkrijgbaar",
-                        "en": "There is a halal menu"
+                        "en": "There is a halal menu",
+                        "de": "Es gibt halal Speisen"
                     }
                 },
                 {
                     "if": "diet:halal=only",
                     "then": {
                         "nl": "Enkel halal opties zijn beschikbaar",
-                        "en": "Only halal options are available"
+                        "en": "Only halal options are available",
+                        "de": "Es gibt ausschließlich halal Speisen"
                     }
                 }
             ],
@@ -524,7 +549,8 @@
                 "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
                 "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
                 "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
-                "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>"
+                "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>",
+                "de": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
             },
             "mappings": [
                 {
@@ -533,7 +559,8 @@
                         "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
                         "fr": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets",
                         "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste",
-                        "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます"
+                        "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます",
+                        "de": "Sie können <b>ihre eigenen Behälter</b> mitbringen, um Ihre Bestellung zu erhalten, was Einwegverpackungsmaterial und damit Abfall spart"
                     }
                 },
                 {
@@ -567,7 +594,8 @@
                 {
                     "question": {
                         "en": "Opened now",
-                        "nl": "Nu geopened"
+                        "nl": "Nu geopened",
+                        "de": "Aktuell geöffnet"
                     },
                     "osmTags": "_isOpen=yes"
                 }
@@ -579,7 +607,8 @@
                 {
                     "question": {
                         "en": "Has a vegetarian menu",
-                        "nl": "Heeft een vegetarisch menu"
+                        "nl": "Heeft een vegetarisch menu",
+                        "de": "Hat vegetarische Speisen"
                     },
                     "osmTags": {
                         "or": [
@@ -598,7 +627,8 @@
                 {
                     "question": {
                         "en": "Has a vegan menu",
-                        "nl": "Heeft een veganistisch menu"
+                        "nl": "Heeft een veganistisch menu",
+                        "de": "Bietet vegan Speisen an"
                     },
                     "osmTags": {
                         "or": [
@@ -615,7 +645,8 @@
                 {
                     "question": {
                         "en": "Has a halal menu",
-                        "nl": "Heeft een halal menu"
+                        "nl": "Heeft een halal menu",
+                        "de": "Hat halal Speisen"
                     },
                     "osmTags": {
                         "or": [

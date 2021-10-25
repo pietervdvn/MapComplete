@@ -449,11 +449,11 @@
         "description": "充電站",
         "name": "充電站",
         "tagRenderings": {
-            "Auth phone": {
+            "Network": {
                 "question": "充電站所屬的網路是？",
                 "render": "{network}"
             },
-            "Authentication": {
+            "OH": {
                 "question": "何時是充電站開放使用的時間？"
             }
         },

@@ -18,7 +18,8 @@
     "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
     "ja": "このマップでは、お気に入りの近隣にある消火栓、消防署、救急ステーション、消火器を検索して更新できます。\n\n正確な位置を追跡し(モバイルのみ)、左下コーナーで関連するレイヤを選択できます。このツールを使用して、マップにピン(注視点)を追加または編集したり、利用可能な質問に答えることによって追加の詳細を提供することもできます。\n\nすべての変更は自動的にOpenStreetMapのグローバルデータベースに保存され、他のユーザが自由に再利用できます。",
     "zh_Hant": "在這份地圖上面你可以在你喜愛的社區尋找與更新消防栓、消防隊、急救站與滅火器。\n\n你可以追蹤確切位置 (只有行動版) 以及在左下角選擇與你相關的圖層。你也可以使用這工具新增或編輯地圖上的釘子 (興趣點)，以及透過回答一些問題提供額外的資訊。\n\n所有你做出的變動都會自動存到開放街圖這個全球資料庫，而且能自由讓其他人取用。",
-    "fr": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.<br/>Les options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.<br/>Toutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres."
+    "fr": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.<br/>Les options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.<br/>Toutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres.",
+    "de": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden."
   },
   "language": [
     "en",
@@ -26,6 +27,7 @@
     "zh_Hant",
     "ru",
     "fr",
+    "de",
     "nb_NO",
     "it",
     "id"
@@ -47,7 +49,8 @@
         "zh_Hant": "消防栓地圖",
         "nb_NO": "Kart over brannhydranter",
         "ru": "Карта пожарных гидрантов",
-        "fr": "Carte des bornes incendie"
+        "fr": "Carte des bornes incendie",
+        "de": "Karte der Hydranten"
       },
       "minzoom": 14,
       "source": {
@@ -63,7 +66,8 @@
           "ru": "Гидрант",
           "ja": "消火栓",
           "nb_NO": "Brannhydrant",
-          "fr": "Bornes incendie"
+          "fr": "Bornes incendie",
+          "de": "Hydrant"
         }
       },
       "description": {
@@ -72,7 +76,8 @@
         "zh_Hant": "顯示消防栓的地圖圖層。",
         "nb_NO": "Kartlag for å vise brannhydranter.",
         "ru": "Слой карты, отображающий пожарные гидранты.",
-        "fr": "Couche des bornes incendie."
+        "fr": "Couche des bornes incendie.",
+        "de": "Kartenebene zur Anzeige von Hydranten."
       },
       "tagRenderings": [
         {
@@ -82,14 +87,16 @@
             "ja": "消火栓の色は何色ですか?",
             "nb_NO": "Hvilken farge har brannhydranten?",
             "ru": "Какого цвета гидрант?",
-            "fr": "Quelle est la couleur de la borne ?"
+            "fr": "Quelle est la couleur de la borne ?",
+            "de": "Welche Farbe hat der Hydrant?"
           },
           "render": {
             "en": "The hydrant color is {colour}",
             "ja": "消火栓の色は{color}です",
             "nb_NO": "Brannhydranter er {colour}",
             "ru": "Цвет гидранта {colour}",
-            "fr": "La borne est {colour}"
+            "fr": "La borne est {colour}",
+            "de": "Der Hydrant hat die Farbe {colour}"
           },
           "freeform": {
             "key": "colour"
@@ -105,7 +112,8 @@
                 "en": "The hydrant color is unknown.",
                 "ja": "消火栓の色は不明です。",
                 "ru": "Цвет гидранта не определён.",
-                "fr": "La borne est de couleur inconnue."
+                "fr": "La borne est de couleur inconnue.",
+                "de": "Die Farbe des Hydranten ist unbekannt."
               },
               "hideInAnswer": true
             },
@@ -119,7 +127,8 @@
                 "en": "The hydrant color is yellow.",
                 "ja": "消火栓の色は黄色です。",
                 "ru": "Гидрант жёлтого цвета.",
-                "fr": "La borne est jaune."
+                "fr": "La borne est jaune.",
+                "de": "Die Farbe des Hydranten ist gelb."
               }
             },
             {
@@ -133,7 +142,8 @@
                 "ja": "消火栓の色は赤です。",
                 "it": "L'idrante è rosso.",
                 "ru": "Гидрант красного цвета.",
-                "fr": "La borne est rouge."
+                "fr": "La borne est rouge.",
+                "de": "Die Farbe des Hydranten ist rot."
               }
             }
           ]
@@ -145,7 +155,8 @@
             "ja": "どんな消火栓なんですか?",
             "it": "Di che tipo è questo idrante?",
             "ru": "К какому типу относится этот гидрант?",
-            "fr": "De quel type de borne s’agit-il ?"
+            "fr": "De quel type de borne s’agit-il ?",
+            "de": "Um welche Art von Hydrant handelt es sich?"
           },
           "freeform": {
             "key": "fire_hydrant:type"
@@ -155,7 +166,8 @@
             "ru": " Тип гидранта: {fire_hydrant:type}",
             "ja": " 消火栓のタイプ:{fire_hydrant:type}",
             "it": " Tipo di idrante: {fire_hydrant:type}",
-            "fr": " Type de borne : {fire_hydrant:type}"
+            "fr": " Type de borne : {fire_hydrant:type}",
+            "de": " Hydranten-Typ: {fire_hydrant:type}"
           },
           "mappings": [
             {
@@ -169,7 +181,8 @@
                 "ja": "消火栓の種類は不明です。",
                 "it": "Il tipo di idrante è sconosciuto.",
                 "ru": "Тип гидранта не определён.",
-                "fr": "La borne est de type inconnu."
+                "fr": "La borne est de type inconnu.",
+                "de": "Der Typ des Hydranten ist unbekannt."
               },
               "hideInAnswer": true
             },
@@ -182,7 +195,8 @@
               "then": {
                 "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pillar type.",
                 "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> ピラー型。",
-                "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier."
+                "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier.",
+                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
               }
             },
             {
@@ -194,7 +208,8 @@
               "then": {
                 "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Pipe type.",
                 "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> パイプ型。",
-                "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau."
+                "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau.",
+                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
               }
             },
             {
@@ -208,7 +223,8 @@
                 "id": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding.",
                 "ru": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Тип стены.",
                 "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> 壁型。",
-                "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural."
+                "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural.",
+                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
               }
             },
             {
@@ -220,7 +236,8 @@
               "then": {
                 "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Underground type.",
                 "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" />地下式。",
-                "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré."
+                "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré.",
+                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
               }
             }
           ]
@@ -230,12 +247,14 @@
           "question": {
             "en": "Update the lifecycle status of the hydrant.",
             "ja": "消火栓のライフサイクルステータスを更新します。",
-            "fr": "Mettre à jour l’état de la borne."
+            "fr": "Mettre à jour l’état de la borne.",
+            "de": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten."
           },
           "render": {
             "en": "Lifecycle status",
             "ja": "ライフサイクルステータス",
-            "fr": "État"
+            "fr": "État",
+            "de": "Lebenszyklus-Status"
           },
           "freeform": {
             "key": "disused:emergency"
@@ -251,7 +270,8 @@
                 "en": "The hydrant is (fully or partially) working.",
                 "ja": "消火栓は(完全にまたは部分的に)機能しています。",
                 "ru": "Гидрант (полностью или частично) в рабочем состоянии.",
-                "fr": "La borne est en état, ou partiellement en état, de fonctionner."
+                "fr": "La borne est en état, ou partiellement en état, de fonctionner.",
+                "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb."
               }
             },
             {
@@ -264,7 +284,8 @@
               "then": {
                 "en": "The hydrant is unavailable.",
                 "ja": "消火栓は使用できません。",
-                "fr": "La borne est hors-service."
+                "fr": "La borne est hors-service.",
+                "de": "Der Hydrant ist nicht verfügbar."
               }
             },
             {
@@ -278,7 +299,8 @@
                 "en": "The hydrant has been removed.",
                 "ja": "消火栓が撤去されました。",
                 "ru": "Гидрант демонтирован.",
-                "fr": "La borne a été retirée."
+                "fr": "La borne a été retirée.",
+                "de": "Der Hydrant wurde entfernt."
               }
             }
           ]
@@ -307,12 +329,14 @@
             "ru": "Пожарный гидрант",
             "ja": "消火栓",
             "nb_NO": "Brannhydrant",
-            "fr": "Borne incendie"
+            "fr": "Borne incendie",
+            "de": "Löschwasser-Hydrant"
           },
           "description": {
             "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
             "ja": "消火栓は消防士が水を汲み上げることができる接続点です。地下にあるかもしれません。",
-            "fr": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée."
+            "fr": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
+            "de": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden."
           }
         }
       ],
@@ -325,7 +349,8 @@
         "ja": "消火器の地図です。",
         "nb_NO": "Kart over brannhydranter",
         "ru": "Карта огнетушителей.",
-        "fr": "Couche des extincteurs."
+        "fr": "Couche des extincteurs.",
+        "de": "Karte mit Feuerlöschern."
       },
       "minzoom": 14,
       "source": {
@@ -341,7 +366,8 @@
           "ru": "Огнетушители",
           "ja": "消火器",
           "nb_NO": "Brannslokkere",
-          "fr": "Exctincteurs"
+          "fr": "Exctincteurs",
+          "de": "Feuerlöscher"
         }
       },
       "description": {
@@ -350,7 +376,8 @@
         "zh_Hant": "顯示消防栓的地圖圖層。",
         "nb_NO": "Kartlag for å vise brannslokkere.",
         "ru": "Слой карты, отображающий огнетушители.",
-        "fr": "Couche des lances à incendie."
+        "fr": "Couche des lances à incendie.",
+        "de": "Kartenebene zur Anzeige von Hydranten."
       },
       "tagRenderings": [
         {
@@ -359,13 +386,15 @@
             "en": "Location: {location}",
             "ja": "場所:{location}",
             "ru": "Местоположение: {location}",
-            "fr": "Emplacement : {location}"
+            "fr": "Emplacement : {location}",
+            "de": "Standort: {location}"
           },
           "question": {
             "en": "Where is it positioned?",
             "ja": "どこにあるんですか?",
             "ru": "Где это расположено?",
-            "fr": "Où est-elle positionnée ?"
+            "fr": "Où est-elle positionnée ?",
+            "de": "Wo befindet er sich?"
           },
           "mappings": [
             {
@@ -378,7 +407,8 @@
                 "en": "Found indoors.",
                 "ja": "屋内にある。",
                 "ru": "Внутри.",
-                "fr": "Intérieur."
+                "fr": "Intérieur.",
+                "de": "Im Innenraum vorhanden."
               }
             },
             {
@@ -391,7 +421,8 @@
                 "en": "Found outdoors.",
                 "ja": "屋外にある。",
                 "ru": "Снаружи.",
-                "fr": "Extérieur."
+                "fr": "Extérieur.",
+                "de": "Im Außenraum vorhanden."
               }
             }
           ],
@@ -423,13 +454,15 @@
             "ja": "消火器",
             "nb_NO": "Brannslukker",
             "ru": "Огнетушитель",
-            "fr": "Extincteur"
+            "fr": "Extincteur",
+            "de": "Feuerlöscher"
           },
           "description": {
             "en": "A fire extinguisher is a small, portable device used to stop a fire",
             "ja": "消火器は、火災を止めるために使用される小型で携帯可能な装置である",
             "ru": "Огнетушитель - небольшое переносное устройство для тушения огня",
-            "fr": "Un extincteur est un appareil portatif servant à éteindre un feu"
+            "fr": "Un extincteur est un appareil portatif servant à éteindre un feu",
+            "de": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen"
           }
         }
       ],
@@ -443,7 +476,8 @@
         "nb_NO": "Kart over brannstasjoner",
         "it": "Mappa delle caserme dei vigili del fuoco",
         "ru": "Карта пожарных частей",
-        "fr": "Couche des stations de pompiers"
+        "fr": "Couche des stations de pompiers",
+        "de": "Karte der Feuerwachen"
       },
       "minzoom": 12,
       "source": {
@@ -461,7 +495,8 @@
           "ru": "Пожарная часть",
           "nb_NO": "Brannstasjon",
           "it": "Caserma dei vigili del fuoco",
-          "fr": "Station de pompiers"
+          "fr": "Station de pompiers",
+          "de": "Feuerwache"
         }
       },
       "description": {
@@ -469,7 +504,8 @@
         "ja": "消防署を表示するためのマップレイヤ。",
         "it": "Livello che mostra le caserme dei vigili del fuoco.",
         "ru": "Слой карты, отображающий пожарные части.",
-        "fr": "Couche des stations de pompiers."
+        "fr": "Couche des stations de pompiers.",
+        "de": "Kartenebene zur Darstellung von Feuerwachen."
       },
       "tagRenderings": [
         {
@@ -482,7 +518,8 @@
             "ja": "この消防署の名前は何ですか?",
             "ru": "Как называется эта пожарная часть?",
             "it": "Come si chiama questa caserma dei vigili del fuoco?",
-            "fr": "Quel est le nom de la station ?"
+            "fr": "Quel est le nom de la station ?",
+            "de": "Wie lautet der Name dieser Feuerwache?"
           },
           "render": {
             "en": "This station is called {name}.",
@@ -649,12 +686,14 @@
             "en": "Fire station",
             "ja": "消防署",
             "ru": "Пожарная часть",
-            "fr": "Caserne de pompiers"
+            "fr": "Caserne de pompiers",
+            "de": "Feuerwache"
           },
           "description": {
             "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
             "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
-            "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions."
+            "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
+            "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind."
           }
         }
       ]
@@ -854,7 +893,8 @@
             "en": "Add an ambulance station to the map",
             "ja": "救急ステーション(消防署)をマップに追加する",
             "ru": "Добавить станцию скорой помощи на карту",
-            "fr": "Ajouter une station d’ambulances à la carte"
+            "fr": "Ajouter une station d’ambulances à la carte",
+            "de": "Eine Rettungsstation der Karte hinzufügen"
           }
         }
       ],
