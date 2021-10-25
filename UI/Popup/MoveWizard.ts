@@ -17,7 +17,6 @@ import ChangeLocationAction from "../../Logic/Osm/Actions/ChangeLocationAction";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig";
 import {ElementStorage} from "../../Logic/ElementStorage";
-import ValidatedTextField from "../Input/ValidatedTextField";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 
 interface MoveReason {
@@ -152,7 +151,7 @@ export default class MoveWizard extends Toggle {
             confirmMove.onClick(() => {
                 const loc = locationInput.GetValue().data
                 state.changes.applyAction(new ChangeLocationAction(featureToMove.properties.id, [loc.lon, loc.lat], {
-                    reason: Translations.WT(reason.text).textFor("en"),
+                    reason: reason.changesetCommentValue,
                     theme: state.layoutToUse.id
                 }))
                 featureToMove.properties._lat = loc.lat
