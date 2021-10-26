@@ -108,7 +108,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const saveButton = new Combine([
             options.saveButtonConstr(inputElement.GetValue()),
-            new Toggle(Translations.t.general.testing, undefined, State.state.featureSwitchIsTesting).SetClass("alert")
+            new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, State.state.featureSwitchIsTesting)
         ])
         
         let bottomTags: BaseUIElement;
