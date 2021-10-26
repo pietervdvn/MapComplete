@@ -745,7 +745,8 @@
             }
         },
         "shortDescription": "Diese Karte zeigt Fassadenbegrünungen mit Bildern und nützlichen Informationen über Ausrichtung, Sonneneinstrahlung und Pflanzenarten.",
-        "title": "Fassadenbegrünung"
+        "title": "Fassadenbegrünung",
+        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
     },
     "food": {
         "title": "Restaurants und Schnellimbisse"
@@ -948,6 +949,13 @@
                 "tagRenderings": {
                     "station-name": {
                         "question": "Wie lautet der Name dieser Feuerwache?"
+                    },
+                    "station-agency": {
+                        "mappings": {
+                            "0": {
+                                "then": "Brandschutzbehörde"
+                            }
+                        }
                     }
                 },
                 "title": {
@@ -957,18 +965,28 @@
             "3": {
                 "presets": {
                     "0": {
-                        "description": "Eine Rettungsstation der Karte hinzufügen"
+                        "description": "Eine Rettungsstation der Karte hinzufügen",
+                        "title": "Rettungswache"
                     }
+                },
+                "description": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
+                "name": "Karte der Rettungswachen",
+                "title": {
+                    "render": "Rettungswache"
                 }
             }
-        }
+        },
+        "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
     },
     "maps": {
-        "title": "Eine Karte der Karten"
+        "title": "Eine Karte der Karten",
+        "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
+        "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren."
     },
     "natuurpunt": {
         "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
-        "title": "Naturschutzgebiete"
+        "title": "Naturschutzgebiete",
+        "description": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden "
     },
     "observation_towers": {
         "description": "Öffentlich zugänglicher Aussichtsturm",
@@ -1028,7 +1046,8 @@
     },
     "playgrounds": {
         "shortDescription": "Eine Karte mit Spielplätzen",
-        "title": "Spielpläzte"
+        "title": "Spielpläzte",
+        "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen"
     },
     "postboxes": {
         "layers": {
@@ -1080,7 +1099,8 @@
     },
     "shops": {
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
-        "title": "Freie Geschäftskarte"
+        "title": "Freie Geschäftskarte",
+        "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen"
     },
     "sport_pitches": {
         "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
