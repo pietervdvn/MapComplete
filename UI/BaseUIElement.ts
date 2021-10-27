@@ -45,6 +45,7 @@ export default abstract class BaseUIElement {
      * Adds all the relevant classes, space separated
      */
     public SetClass(clss: string) {
+        if(clss == undefined){return }
         const all = clss.split(" ").map(clsName => clsName.trim());
         let recordedChange = false;
         for (let c of all) {

@@ -68,7 +68,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             const groupName = allGroupNames[i];
 
             const trs = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
-            const renderingsForGroup: BaseUIElement[] = []
+            const renderingsForGroup: (EditableTagRendering | BaseUIElement)[] = []
+            const innerClasses = "block w-full break-word text-default m-1 p-1 border-b border-gray-200 mb-2 pb-2";
             for (const tr of trs) {
                 if (tr.question === null || tr.id === "questions") {
                     // This is a question box!
@@ -76,21 +77,19 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                     questionBoxes.delete(tr.group)
                     renderingsForGroup.push(questionBox)
                 } else {
-                    const etr = new EditableTagRendering(tags, tr, layerConfig.units).SetClass("editable-tag-rendering")
-                        
+                    let classes = innerClasses
+                    if(renderingsForGroup.length === 0 && i > 0){
+                        // This is the first element of a group!
+                        // It should act as header and be sticky
+                        classes= "sticky top-0"
+                    }
+                    
+                    const etr = new EditableTagRendering(tags, tr, layerConfig.units,{
+                        innerElementClasses: innerClasses
+                    })
                     renderingsForGroup.push(etr)
                 }
             }
-            let j = 0
-            if (i !== 0) {
-                renderingsForGroup[0]?.SetStyle("position: sticky; top: -5px")
-                j = 1
-            }
-            for (/* j = 0 or 1 */; j < renderingsForGroup.length; j++) {
-                renderingsForGroup[j].SetClass("block w-full break-word text-default m-1 p-1 border-b border-gray-200 mb-2 pb-2")
-            }
-            
-            
             
             allRenderings.push(...renderingsForGroup)
         }
