@@ -7,6 +7,7 @@ import {Utils} from "../../../Utils";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
+import {GeoOperations} from "../../GeoOperations";
 
 
 export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
@@ -14,7 +15,6 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name;
     public readonly isOsmCache: boolean
-    private onFail: ((errorMsg: any, url: string) => void) = undefined;
     private readonly seenids: Set<string> = new Set<string>()
     public readonly layer: FilteredLayer;
 
@@ -44,10 +44,20 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         if (zxy !== undefined) {
             const [z, x, y] = zxy;
+            let tile_bbox = BBox.fromTile(z, x, y)
+            let bounds  : { minLat: number, maxLat: number, minLon: number, maxLon: number } = tile_bbox
+            if(this.layer.layerDef.source.mercatorCrs){
+                bounds = tile_bbox.toMercator()
+            }
             url = url
                 .replace('{z}', "" + z)
                 .replace('{x}', "" + x)
                 .replace('{y}', "" + y)
+                .replace('{y_min}',""+bounds.minLat)
+                .replace('{y_max}',""+bounds.maxLat)
+                .replace('{x_min}',""+bounds.minLon)
+                .replace('{x_max}',""+bounds.maxLon)
+
             this.tileIndex = Tiles.tile_index(z, x, y)
             this.bbox = BBox.fromTile(z, x, y)
         } else {
@@ -70,6 +80,10 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
             .then(json => {
                 if(json.features === undefined || json.features === null){
                     return;
+                }
+                
+                if(self.layer.layerDef.source.mercatorCrs){
+                    json = GeoOperations.GeoJsonToWGS84(json)
                 }
 
                 const time = new Date();

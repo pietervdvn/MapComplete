@@ -98,7 +98,7 @@ export default class FeaturePipeline {
         this.osmSourceZoomLevel = state.osmApiTileSize.data;
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
         this.relationTracker = new RelationsTracker()
-        
+
         state.changes.allChanges.addCallbackAndRun(allChanges => {
             allChanges.filter(ch => ch.id < 0 && ch.changes !== undefined)
                 .map(ch => ch.changes)
@@ -205,7 +205,9 @@ export default class FeaturePipeline {
             neededTiles: neededTilesFromOsm,
             handleTile: tile => {
                 new RegisteringAllFromFeatureSourceActor(tile)
-                new SaveTileToLocalStorageActor(tile, tile.tileIndex)
+                if (tile.layer.layerDef.maxAgeOfCache > 0) {
+                    new SaveTileToLocalStorageActor(tile, tile.tileIndex)
+                }
                 perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
                 tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
 
@@ -213,7 +215,9 @@ export default class FeaturePipeline {
             state: state,
             markTileVisited: (tileId) =>
                 state.filteredLayers.data.forEach(flayer => {
-                    SaveTileToLocalStorageActor.MarkVisited(flayer.layerDef.id, tileId, new Date())
+                    if (flayer.layerDef.maxAgeOfCache > 0) {
+                        SaveTileToLocalStorageActor.MarkVisited(flayer.layerDef.id, tileId, new Date())
+                    }
                     self.freshnesses.get(flayer.layerDef.id).addTileLoad(tileId, new Date())
                 })
         })

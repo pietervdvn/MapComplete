@@ -53,6 +53,8 @@ export interface LayerConfigJson {
      * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
      *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
      *
+     * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
+     * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
      *
      * Note that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too
      *
@@ -61,7 +63,7 @@ export interface LayerConfigJson {
      *  While still supported, this is considered deprecated
      */
     source: ({ osmTags: AndOrTagConfigJson | string, overpassScript?: string  } |
-        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean }) & ({
+        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean, mercatorCrs?: boolean }) & ({
         /**
          * The maximum amount of seconds that a tile is allowed to linger in the cache
          */

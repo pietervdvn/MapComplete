@@ -33,8 +33,6 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
 
 
 class Init {
-
-
     public static Init(layoutToUse: LayoutConfig, encoded: string) {
 
         if(layoutToUse === null){

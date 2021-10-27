@@ -304,7 +304,6 @@ export default class LayoutConfig {
         }
         rewriting.forEach((value, key) => {
             console.log("Rewriting", key, "==>", value)
-
             originalJson = originalJson.replace(new RegExp(key, "g"), value)
         })
         return new LayoutConfig(JSON.parse(originalJson), false, "Layout rewriting")
