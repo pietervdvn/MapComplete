@@ -28,7 +28,13 @@
       },
       "minzoom": 12,
       "source": {
-        "osmTags": "highway=residential"
+        "osmTags": {
+          "or": [
+            "highway=residential",
+            "highway=tertiary",
+            "highway=secondary"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -112,6 +118,15 @@
           "color": {
             "render": "#888"
           },
+          "dasharray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": "sidewalk:right=",
+                "then": "6,6"
+              }
+            ]
+          },
           "width": {
             "render": 6,
             "mappings": [
@@ -131,6 +146,15 @@
         },
         {
           "color": "#888",
+          "dasharray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": "sidewalk:right=",
+                "then": "6,6"
+              }
+            ]
+          },
           "width": {
             "render": 6,
             "mappings": [
