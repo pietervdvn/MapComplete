@@ -31,7 +31,6 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                 // Already handled
                 !seenChanges.has(ch)))
             .addCallbackAndRunD(changes => {
-
                 if (changes.length === 0) {
                     return;
                 }

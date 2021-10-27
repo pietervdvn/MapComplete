@@ -16,6 +16,7 @@ import Lazy from "../Base/Lazy";
 export default class QuestionBox extends VariableUiElement {
 
     constructor(tagsSource: UIEventSource<any>, tagRenderings: TagRenderingConfig[], units: Unit[]) {
+        
         const skippedQuestions: UIEventSource<number[]> = new UIEventSource<number[]>([])
 
         tagRenderings = tagRenderings
@@ -33,7 +34,7 @@ export default class QuestionBox extends VariableUiElement {
                         {
                             units: units,
                             afterSave: () => {
-                                // We save
+                                // We save and indicate progress by pinging and recalculating
                                 skippedQuestions.ping();
                             },
                             cancelButton: Translations.t.general.skip.Clone()
@@ -45,7 +46,7 @@ export default class QuestionBox extends VariableUiElement {
                         }
                     )));
 
-                const skippedQuestionsButton = Translations.t.general.skippedQuestions.Clone()
+                const skippedQuestionsButton = Translations.t.general.skippedQuestions
                     .onClick(() => {
                         skippedQuestions.setData([]);
                     })

@@ -89,6 +89,7 @@ export interface TagRenderingConfigJson {
      * Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes
      */
     mappings?: {
+        
         /**
          * If this condition is met, then the text under `then` will be shown.
          * If no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.
@@ -173,5 +174,12 @@ export interface TagRenderingConfigJson {
          * If this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`
          */
         ifnot?: AndOrTagConfigJson | string
+
+        /**
+         * If chosen as answer, these tags will be applied as well onto the object.
+         * Not compatible with multiAnswer
+         */
+        addExtraTags: string[]
+
     }[]
 }

@@ -222,7 +222,6 @@ export class ExtraFunction {
         const maxFeatures = options?.maxFeatures ?? 1
         const maxDistance = options?.maxDistance ?? 500
         const uniqueTag: string | undefined = options?.uniqueTag
-        console.log("Requested closestN")
         if (typeof features === "string") {
             const name = features
             const bbox = GeoOperations.bbox(GeoOperations.buffer(GeoOperations.bbox(feature), maxDistance))
@@ -238,7 +237,7 @@ export class ExtraFunction {
         let closestFeatures: { feat: any, distance: number }[] = [];
         for (const featureList of features) {
             for (const otherFeature of featureList) {
-                if (otherFeature === feature || otherFeature.id === feature.id) {
+                if (otherFeature === feature || otherFeature.properties.id === feature.properties.id) {
                     continue; // We ignore self
                 }
                 const distance = GeoOperations.distanceBetween(
@@ -249,6 +248,11 @@ export class ExtraFunction {
                     console.error("Could not calculate the distance between", feature, "and", otherFeature)
                     throw "Undefined distance!"
                 }
+                
+                if(distance === 0){
+                    console.trace("Got a suspiciously zero distance between", otherFeature, "and self-feature",feature)
+                }
+                
                 if (distance > maxDistance) {
                     continue
                 }

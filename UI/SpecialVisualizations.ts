@@ -508,7 +508,7 @@ There are also some technicalities in your theme to keep in mind:
                         return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),
                             new FixedUiElement("To test, add 'test=true' to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
                     }
-                    const tgsSpec = args[0].split(",").map(spec => {
+                    const tgsSpec = args[0].split(";").map(spec => {
                         const kv = spec.split("=").map(s => s.trim());
                         if (kv.length != 2) {
                             throw "Invalid key spec: multiple '=' found in " + spec

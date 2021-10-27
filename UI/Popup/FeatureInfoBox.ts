@@ -111,7 +111,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                             layerConfig.allowMove
                         );
                     })
-                )
+                ).SetClass("text-base")
             );
         }
 
@@ -122,14 +122,14 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                         id,
                         layerConfig.deletion
                     ))
-                ))
+                ).SetClass("text-base"))
         }
 
         if (layerConfig.allowSplit) {
             editElements.push(
                 new VariableUiElement(tags.map(tags => tags.id).map(id =>
                     new SplitRoadWizard(id))
-                ))
+                ).SetClass("text-base"))
         }
 
 

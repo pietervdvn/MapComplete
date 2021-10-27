@@ -281,7 +281,6 @@ export default class ShowDataLayer {
 
                 infobox.isShown.addCallback(isShown => {
                     if (!isShown) {
-                        this._selectedElement?.setData(undefined);
                         leafletLayer.closePopup()
                     }
                 });
@@ -293,7 +292,7 @@ export default class ShowDataLayer {
             }
 
         });
-
+        
 
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(feature.properties.id + feature.geometry.type, {

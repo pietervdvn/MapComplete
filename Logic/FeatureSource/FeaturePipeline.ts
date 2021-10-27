@@ -98,7 +98,7 @@ export default class FeaturePipeline {
         this.osmSourceZoomLevel = state.osmApiTileSize.data;
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
         this.relationTracker = new RelationsTracker()
-        
+
         state.changes.allChanges.addCallbackAndRun(allChanges => {
             allChanges.filter(ch => ch.id < 0 && ch.changes !== undefined)
                 .map(ch => ch.changes)
@@ -203,7 +203,9 @@ export default class FeaturePipeline {
             neededTiles: neededTilesFromOsm,
             handleTile: tile => {
                 new RegisteringAllFromFeatureSourceActor(tile)
-                new SaveTileToLocalStorageActor(tile, tile.tileIndex)
+                if (tile.layer.layerDef.maxAgeOfCache > 0) {
+                    new SaveTileToLocalStorageActor(tile, tile.tileIndex)
+                }
                 perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
                 tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
 
@@ -211,7 +213,9 @@ export default class FeaturePipeline {
             state: state,
             markTileVisited: (tileId) =>
                 state.filteredLayers.data.forEach(flayer => {
-                    SaveTileToLocalStorageActor.MarkVisited(flayer.layerDef.id, tileId, new Date())
+                    if (flayer.layerDef.maxAgeOfCache > 0) {
+                        SaveTileToLocalStorageActor.MarkVisited(flayer.layerDef.id, tileId, new Date())
+                    }
                     self.freshnesses.get(flayer.layerDef.id).addTileLoad(tileId, new Date())
                 })
         })
@@ -260,7 +264,7 @@ export default class FeaturePipeline {
 
 
         // Whenever fresh data comes in, we need to update the metatagging
-        self.newDataLoadedSignal.stabilized(1000).addCallback(_ => {
+        self.newDataLoadedSignal.stabilized(250).addCallback(src => {
             self.updateAllMetaTagging()
         })
 
@@ -385,7 +389,7 @@ export default class FeaturePipeline {
         window.setTimeout(
             () => {
                 const layerDef = src.layer.layerDef;
-                MetaTagging.addMetatags(
+                const somethingChanged = MetaTagging.addMetatags(
                     src.features.data,
                     {
                         memberships: this.relationTracker,
@@ -406,9 +410,10 @@ export default class FeaturePipeline {
 
     private updateAllMetaTagging() {
         const self = this;
+        console.debug("Updating the meta tagging of all tiles as new data got loaded")
         this.perLayerHierarchy.forEach(hierarchy => {
-            hierarchy.loadedTiles.forEach(src => {
-                self.applyMetaTags(src)
+            hierarchy.loadedTiles.forEach(tile => {
+                self.applyMetaTags(tile)
             })
         })
 

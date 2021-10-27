@@ -6,6 +6,7 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 import {Utils} from "../../Utils";
+import {Tag} from "../../Logic/Tags/Tag";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -37,6 +38,7 @@ export default class TagRenderingConfig {
         readonly ifnot?: TagsFilter,
         readonly then: Translation
         readonly hideInAnswer: boolean | TagsFilter
+        readonly addExtraTags: Tag[]
     }[]
 
     constructor(json: string | TagRenderingConfigJson, context?: string) {
@@ -118,21 +120,24 @@ export default class TagRenderingConfig {
 
             this.mappings = json.mappings.map((mapping, i) => {
 
-
+                const ctx = `${context}.mapping[${i}]`
                 if (mapping.then === undefined) {
-                    throw `${context}.mapping[${i}]: Invalid mapping: if without body`
+                    throw `${ctx}: Invalid mapping: if without body`
                 }
                 if (mapping.ifnot !== undefined && !this.multiAnswer) {
-                    throw `${context}.mapping[${i}]: Invalid mapping: ifnot defined, but the tagrendering is not a multianswer`
+                    throw `${ctx}: Invalid mapping: ifnot defined, but the tagrendering is not a multianswer`
                 }
 
                 if (mapping.if === undefined) {
-                    throw `${context}.mapping[${i}]: Invalid mapping: "if" is not defined, but the tagrendering is not a multianswer`
+                    throw `${ctx}: Invalid mapping: "if" is not defined, but the tagrendering is not a multianswer`
                 }
                 if (typeof mapping.if !== "string" && mapping.if["length"] !== undefined) {
-                    throw `${context}.mapping[${i}]: Invalid mapping: "if" is defined as an array. Use {"and": <your conditions>} or {"or": <your conditions>} instead`
+                    throw `${ctx}: Invalid mapping: "if" is defined as an array. Use {"and": <your conditions>} or {"or": <your conditions>} instead`
                 }
-
+                
+                if(mapping.addExtraTags !== undefined && this.multiAnswer){
+                    throw `${ctx}: Invalid mapping: got a multi-Answer with addExtraTags; this is not allowed`
+                }
 
                 let hideInAnswer: boolean | TagsFilter = false;
                 if (typeof mapping.hideInAnswer === "boolean") {
@@ -140,12 +145,12 @@ export default class TagRenderingConfig {
                 } else if (mapping.hideInAnswer !== undefined) {
                     hideInAnswer = TagUtils.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
                 }
-                const mappingContext = `${context}.mapping[${i}]`
                 const mp = {
-                    if: TagUtils.Tag(mapping.if, `${mappingContext}.if`),
-                    ifnot: (mapping.ifnot !== undefined ? TagUtils.Tag(mapping.ifnot, `${mappingContext}.ifnot`) : undefined),
-                    then: Translations.T(mapping.then, `${mappingContext}.then`),
-                    hideInAnswer: hideInAnswer
+                    if: TagUtils.Tag(mapping.if, `${ctx}.if`),
+                    ifnot: (mapping.ifnot !== undefined ? TagUtils.Tag(mapping.ifnot, `${ctx}.ifnot`) : undefined),
+                    then: Translations.T(mapping.then, `${ctx}.then`),
+                    hideInAnswer: hideInAnswer,
+                    addExtraTags: (mapping.addExtraTags??[]).map((str, j) => TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`))
                 };
                 if (this.question) {
                     if (hideInAnswer !== true && mp.if !== undefined && !mp.if.isUsableAsAnswer()) {

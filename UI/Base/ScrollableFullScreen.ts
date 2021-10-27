@@ -19,6 +19,7 @@ import Img from "./Img";
 export default class ScrollableFullScreen extends UIElement {
     private static readonly empty = new FixedUiElement("");
     private static _currentlyOpen: ScrollableFullScreen;
+    private hashToShow: string;
     public isShown: UIEventSource<boolean>;
     private _component: BaseUIElement;
     private _fullscreencomponent: BaseUIElement;
@@ -28,6 +29,7 @@ export default class ScrollableFullScreen extends UIElement {
                 isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     ) {
         super();
+        this.hashToShow = hashToShow;
         this.isShown = isShown;
 
         if (hashToShow === undefined) {
@@ -45,24 +47,25 @@ export default class ScrollableFullScreen extends UIElement {
                 self.Activate();
                 Hash.hash.setData(hashToShow)
             } else {
-                ScrollableFullScreen.clear();
+                self.clear();
             }
         })
 
         Hash.hash.addCallback(hash => {
-            if (hash === hashToShow) {
-                return
+            if (!isShown.data) {
+                return;
             }
-            isShown.setData(false)
+            if (hash === undefined || hash === "") {
+                isShown.setData(false)
+            }
         })
     }
 
-    private static clear() {
+    private clear() {
         ScrollableFullScreen.empty.AttachTo("fullscreen")
         const fs = document.getElementById("fullscreen");
         ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
         fs.classList.add("hidden")
-        Hash.hash.setData(undefined);
     }
 
     InnerRender(): BaseUIElement {

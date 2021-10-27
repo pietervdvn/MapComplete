@@ -83,7 +83,6 @@
             }
         ]
     },
-    "description": {},
     "tagRenderings": [
         {
             "question": {
@@ -102,21 +101,24 @@
                     "if": "cycleway=shared_lane",
                     "then": {
                         "en": "There is a shared lane",
-                        "nl": "Er is een fietssuggestiestrook"
+                        "nl": "Er is een fietssuggestiestrook",
+                        "de": "Es gibt eine geteilte Fahrspur"
                     }
                 },
                 {
                     "if": "cycleway=lane",
                     "then": {
                         "en": "There is a lane next to the road (separated with paint)",
-                        "nl": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)"
+                        "nl": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)",
+                        "de": "Es gibt eine Spur neben der Straße (getrennt durch eine Straßenmarkierung)"
                     }
                 },
                 {
                     "if": "cycleway=track",
                     "then": {
                         "en": "There is a track, but no cycleway drawn separately from this road on the map.",
-                        "nl": "Er is een fietspad (los van de weg), maar geen fietspad afzonderlijk getekend naast deze weg."
+                        "nl": "Er is een fietspad (los van de weg), maar geen fietspad afzonderlijk getekend naast deze weg.",
+                        "de": "Es gibt einen Weg, aber keinen Radweg, der auf der Karte getrennt von dieser Straße eingezeichnet ist."
                     }
                 },
                 {
@@ -163,7 +165,8 @@
                     "if": "lit=yes",
                     "then": {
                         "en": "This street is lit",
-                        "nl": "Deze weg is verlicht"
+                        "nl": "Deze weg is verlicht",
+                        "de": "Diese Straße ist beleuchtet"
                     }
                 },
                 {
@@ -211,7 +214,8 @@
                     "if": "cyclestreet=yes",
                     "then": {
                         "en": "This is a cyclestreet, and a 30km/h zone.",
-                        "nl": "Dit is een fietsstraat, en dus een 30km/h zone"
+                        "nl": "Dit is een fietsstraat, en dus een 30km/h zone",
+                        "de": "Dies ist eine Fahrradstraße in einer 30km/h Zone."
                     },
                     "addExtraTags": [
                         "overtaking:motor_vehicle=no",
@@ -245,7 +249,8 @@
         {
             "render": {
                 "en": "The maximum speed on this road is {maxspeed} km/h",
-                "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u"
+                "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u",
+                "de": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h"
             },
             "freeform": {
                 "key": "maxspeed",
@@ -301,7 +306,8 @@
             ],
             "question": {
                 "en": "What is the maximum speed in this street?",
-                "nl": "Wat is de maximumsnelheid in deze straat?"
+                "nl": "Wat is de maximumsnelheid in deze straat?",
+                "de": "Was ist die Höchstgeschwindigkeit auf dieser Straße?"
             },
             "id": "Maxspeed (for road)"
         },
@@ -352,7 +358,8 @@
                     "if": "cycleway:surface=paving_stones",
                     "then": {
                         "en": "This cycleway is made of smooth paving stones",
-                        "nl": "Dit fietspad is gemaakt van straatstenen"
+                        "nl": "Dit fietspad is gemaakt van straatstenen",
+                        "de": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen"
                     }
                 },
                 {
@@ -367,7 +374,8 @@
                     "if": "cycleway:surface=cobblestone",
                     "then": {
                         "en": "This cycleway is made of cobblestone (unhewn or sett)",
-                        "nl": "Dit fietspad is gemaakt van kasseien (natuurlijk of verwerkt)"
+                        "nl": "Dit fietspad is gemaakt van kasseien (natuurlijk of verwerkt)",
+                        "de": "Dieser Radweg besteht aus Kopfsteinpflaster"
                     },
                     "hideInAnswer": true
                 },
@@ -375,14 +383,16 @@
                     "if": "cycleway:surface=unhewn_cobblestone",
                     "then": {
                         "en": "This cycleway is made of raw, natural cobblestone",
-                        "nl": "Dit fietspad is gemaakt van ruwe, natuurlijke kasseien"
+                        "nl": "Dit fietspad is gemaakt van ruwe, natuurlijke kasseien",
+                        "de": "Dieser Fahrradweg besteht aus unregelmäßigem, unbehauenem Kopfsteinpflaster"
                     }
                 },
                 {
                     "if": "cycleway:surface=sett",
                     "then": {
                         "en": "This cycleway is made of flat, square cobblestone",
-                        "nl": "Dit fietspad is gemaakt van vlakke, rechthoekige kasseien"
+                        "nl": "Dit fietspad is gemaakt van vlakke, rechthoekige kasseien",
+                        "de": "Dieser Fahrradweg besteht aus regelmäßigem, behauenem Kopfsteinpflaster"
                     }
                 },
                 {
@@ -428,7 +438,8 @@
             ],
             "question": {
                 "en": "What is the surface of the cycleway made from?",
-                "nl": "Waaruit is het oppervlak van het fietspad van gemaakt?"
+                "nl": "Waaruit is het oppervlak van het fietspad van gemaakt?",
+                "de": "Was ist der Belag dieses Radwegs?"
             },
             "id": "Cycleway:surface"
         },
@@ -466,28 +477,32 @@
                     "if": "cycleway:smoothness=intermediate",
                     "then": {
                         "en": "Usable for normal wheels: city bike, wheelchair, scooter",
-                        "nl": "Geschikt voor normale wielen: stadsfiets, rolstoel, scooter"
+                        "nl": "Geschikt voor normale wielen: stadsfiets, rolstoel, scooter",
+                        "de": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter"
                     }
                 },
                 {
                     "if": "cycleway:smoothness=bad",
                     "then": {
                         "en": "Usable for robust wheels: trekking bike, car, rickshaw",
-                        "nl": "Geschikt voor brede wielen: trekfiets, auto, rickshaw"
+                        "nl": "Geschikt voor brede wielen: trekfiets, auto, rickshaw",
+                        "de": "Geeignet für breite Reifen: Trekkingfahrrad, Auto, Rikscha"
                     }
                 },
                 {
                     "if": "cycleway:smoothness=very_bad",
                     "then": {
                         "en": "Usable for vehicles with high clearance: light duty off-road vehicle",
-                        "nl": "Geschikt voor voertuigen met hoge banden: lichte terreinwagen"
+                        "nl": "Geschikt voor voertuigen met hoge banden: lichte terreinwagen",
+                        "de": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen"
                     }
                 },
                 {
                     "if": "cycleway:smoothness=horrible",
                     "then": {
                         "en": "Usable for off-road vehicles: heavy duty off-road vehicle",
-                        "nl": "Geschikt voor terreinwagens: zware terreinwagen"
+                        "nl": "Geschikt voor terreinwagens: zware terreinwagen",
+                        "de": "Geeignet für Geländefahrzeuge: schwerer Geländewagen"
                     }
                 },
                 {
@@ -523,7 +538,8 @@
                     "if": "surface=unpaved",
                     "then": {
                         "en": "This cycleway is unhardened",
-                        "nl": "Dit fietspad is onverhard"
+                        "nl": "Dit fietspad is onverhard",
+                        "de": "Dieser Radweg ist nicht befestigt"
                     },
                     "hideInAnswer": true
                 },
@@ -548,7 +564,8 @@
                     "if": "surface=paving_stones",
                     "then": {
                         "en": "This cycleway is made of smooth paving stones",
-                        "nl": "Dit fietspad is gemaakt van straatstenen"
+                        "nl": "Dit fietspad is gemaakt van straatstenen",
+                        "de": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen"
                     }
                 },
                 {
@@ -563,7 +580,8 @@
                     "if": "surface=cobblestone",
                     "then": {
                         "en": "This cycleway is made of cobblestone (unhewn or sett)",
-                        "nl": "Dit fietspad is gemaakt van kasseien (natuurlijk of verwerkt)"
+                        "nl": "Dit fietspad is gemaakt van kasseien (natuurlijk of verwerkt)",
+                        "de": "Dieser Radweg besteht aus Kopfsteinpflaster"
                     },
                     "hideInAnswer": true
                 },
@@ -571,14 +589,16 @@
                     "if": "surface=unhewn_cobblestone",
                     "then": {
                         "en": "This cycleway is made of raw, natural cobblestone",
-                        "nl": "Dit fietspad is gemaakt van ruwe, natuurlijke kasseien"
+                        "nl": "Dit fietspad is gemaakt van ruwe, natuurlijke kasseien",
+                        "de": "Dieser Fahrradweg besteht aus unregelmäßigem, unbehauenem Kopfsteinpflaster"
                     }
                 },
                 {
                     "if": "surface=sett",
                     "then": {
                         "en": "This cycleway is made of flat, square cobblestone",
-                        "nl": "Dit fietspad is gemaakt van vlakke, rechthoekige kasseien"
+                        "nl": "Dit fietspad is gemaakt van vlakke, rechthoekige kasseien",
+                        "de": "Dieser Fahrradweg besteht aus regelmäßigem, behauenem Kopfsteinpflaster"
                     }
                 },
                 {
@@ -624,7 +644,8 @@
             ],
             "question": {
                 "en": "What is the surface of the street made from?",
-                "nl": "Waaruit is het oppervlak van de straat gemaakt?"
+                "nl": "Waaruit is het oppervlak van de straat gemaakt?",
+                "de": "Was ist der Belag dieser Straße?"
             },
             "id": "Surface of the road"
         },
@@ -658,25 +679,29 @@
                 {
                     "if": "smoothness=intermediate",
                     "then": {
-                        "en": "Usable for normal wheels: city bike, wheelchair, scooter"
+                        "en": "Usable for normal wheels: city bike, wheelchair, scooter",
+                        "de": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter"
                     }
                 },
                 {
                     "if": "smoothness=bad",
                     "then": {
-                        "en": "Usable for robust wheels: trekking bike, car, rickshaw"
+                        "en": "Usable for robust wheels: trekking bike, car, rickshaw",
+                        "de": "Geeignet für breite Reifen: Trekkingfahrrad, Auto, Rikscha"
                     }
                 },
                 {
                     "if": "smoothness=very_bad",
                     "then": {
-                        "en": "Usable for vehicles with high clearance: light duty off-road vehicle"
+                        "en": "Usable for vehicles with high clearance: light duty off-road vehicle",
+                        "de": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen"
                     }
                 },
                 {
                     "if": "smoothness=horrible",
                     "then": {
-                        "en": "Usable for off-road vehicles: heavy duty off-road vehicle"
+                        "en": "Usable for off-road vehicles: heavy duty off-road vehicle",
+                        "de": "Geeignet für Geländefahrzeuge: schwerer Geländewagen"
                     }
                 },
                 {
@@ -748,7 +773,8 @@
                     "if": "cycleway:traffic_sign~BE:D7;.*",
                     "then": {
                         "en": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
-                        "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
+                        "de": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
                     },
                     "hideInAnswer": true
                 },
@@ -821,7 +847,8 @@
                     "if": "traffic_sign~BE:D7;.*",
                     "then": {
                         "en": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
-                        "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
+                        "de": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
                     },
                     "hideInAnswer": true
                 },
@@ -1055,11 +1082,13 @@
         {
             "render": {
                 "en": "The buffer besides this cycleway is {cycleway:buffer} m",
-                "nl": "De schrikafstand van dit fietspad is {cycleway:buffer} m"
+                "nl": "De schrikafstand van dit fietspad is {cycleway:buffer} m",
+                "de": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
             },
             "question": {
                 "en": "How wide is the gap between the cycleway and the road?",
-                "nl": "Hoe breed is de ruimte tussen het fietspad en de weg?"
+                "nl": "Hoe breed is de ruimte tussen het fietspad en de weg?",
+                "de": "Wie breit ist der Abstand zwischen Radweg und Straße?"
             },
             "condition": {
                 "or": [
@@ -1081,7 +1110,8 @@
             "id": "cyclelan-segregation",
             "question": {
                 "en": "How is this cycleway separated from the road?",
-                "nl": "Hoe is dit fietspad gescheiden van de weg?"
+                "nl": "Hoe is dit fietspad gescheiden van de weg?",
+                "de": "Wie ist der Radweg von der Straße abgegrenzt?"
             },
             "condition": {
                 "or": [
@@ -1094,21 +1124,24 @@
                     "if": "cycleway:separation=dashed_line",
                     "then": {
                         "en": "This cycleway is separated by a dashed line",
-                        "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
+                        "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep",
+                        "de": "Der Radweg ist abgegrenzt durch eine gestrichelte Linie"
                     }
                 },
                 {
                     "if": "cycleway:separation=solid_line",
                     "then": {
                         "en": "This cycleway is separated by a solid line",
-                        "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep"
+                        "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep",
+                        "de": "Der Radweg ist abgegrenzt durch eine durchgezogene Linie"
                     }
                 },
                 {
                     "if": "cycleway:separation=parking_lane",
                     "then": {
                         "en": "This cycleway is separated by a parking lane",
-                        "nl": "Dit fietspad is gescheiden van de weg met parkeervakken"
+                        "nl": "Dit fietspad is gescheiden van de weg met parkeervakken",
+                        "de": "Der Radweg ist abgegrenzt durch eine Parkspur"
                     }
                 },
                 {
@@ -1125,7 +1158,8 @@
             "id": "cycleway-segregation",
             "question": {
                 "en": "How is this cycleway separated from the road?",
-                "nl": "Hoe is dit fietspad gescheiden van de weg?"
+                "nl": "Hoe is dit fietspad gescheiden van de weg?",
+                "de": "Wie ist der Radweg von der Straße abgegrenzt?"
             },
             "condition": {
                 "or": [
@@ -1138,21 +1172,24 @@
                     "if": "separation=dashed_line",
                     "then": {
                         "en": "This cycleway is separated by a dashed line",
-                        "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
+                        "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep",
+                        "de": "Der Radweg ist abgegrenzt durch eine gestrichelte Linie"
                     }
                 },
                 {
                     "if": "separation=solid_line",
                     "then": {
                         "en": "This cycleway is separated by a solid line",
-                        "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep"
+                        "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep",
+                        "de": "Der Radweg ist abgegrenzt durch eine durchgezogene Linie"
                     }
                 },
                 {
                     "if": "separation=parking_lane",
                     "then": {
                         "en": "This cycleway is separated by a parking lane",
-                        "nl": "Dit fietspad is gescheiden van de weg met parkeervakken"
+                        "nl": "Dit fietspad is gescheiden van de weg met parkeervakken",
+                        "de": "Der Radweg ist abgegrenzt durch eine Parkspur"
                     }
                 },
                 {

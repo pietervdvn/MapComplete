@@ -96,6 +96,7 @@ export default class LayerConfig extends WithContextLoader {
                     geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                     overpassScript: json.source["overpassScript"],
                     isOsmCache: json.source["isOsmCache"],
+                    mercatorCrs: json.source["mercatorCrs"]
                 },
                 json.id
             );
