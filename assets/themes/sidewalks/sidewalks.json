@@ -20,6 +20,7 @@
   "startZoom": 1,
   "widenFactor": 0.05,
   "socialImage": "",
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "sidewalks",
@@ -68,11 +69,11 @@
           "renderings": [
             {
               "id": "sidewalk_minimap",
-              "render": "{sided_minimap(left|right):height:3rem;border-radius:0.5rem;overflow:hidden}"
+              "render": "{sided_minimap(left|right):height:8rem;border-radius:0.5rem;overflow:hidden}"
             },
             {
               "id": "has_sidewalk",
-              "question": "Is there a sidewalk on the left|right side of the road?",
+              "question": "Is there a sidewalk on this side of the road?",
               "mappings": [
                 {
                   "if": "sidewalk:left|right=yes",
@@ -111,19 +112,21 @@
           "iconSize": "20,20,center"
         },
         {
+          "#": "The center line",
           "color": "#ffffff55",
           "width": 8
         },
         {
+          "#": "left",
           "color": {
             "render": "#888"
           },
-          "dasharray": {
+          "dashArray": {
             "render": "",
             "mappings": [
               {
-                "if": "sidewalk:right=",
-                "then": "6,6"
+                "if": "sidewalk:left=",
+                "then": "1,12"
               }
             ]
           },
@@ -133,7 +136,6 @@
               {
                 "if": {
                   "or": [
-                    "sidewalk:left=",
                     "sidewalk:left=no",
                     "sidewalk:left=separate"
                   ]
@@ -146,12 +148,12 @@
         },
         {
           "color": "#888",
-          "dasharray": {
+          "dashArray": {
             "render": "",
             "mappings": [
               {
                 "if": "sidewalk:right=",
-                "then": "6,6"
+                "then": "1,12"
               }
             ]
           },
@@ -161,7 +163,6 @@
               {
                 "if": {
                   "or": [
-                    "sidewalk:right=",
                     "sidewalk:right=no",
                     "sidewalk:right=separate"
                   ]

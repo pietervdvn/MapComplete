@@ -29,35 +29,39 @@
         "maxCacheAge": 0
       },
       "minzoom": 18,
-      "width": {
-        "render": "2"
-      },
-      "color": {
-        "render": "#00c",
-        "mappings": [
-          {
-            "if": "building=house",
-            "then": "#a00"
+      "mapRendering": [
+        {
+          "width": {
+            "render": "2"
           },
-          {
-            "if": "building=shed",
-            "then": "#563e02"
-          },
-          {
-            "if": {
-              "or": [
-                "building=garage",
-                "building=garages"
-              ]
-            },
-            "then": "#f9bfbb"
-          },
-          {
-            "if": "building=yes",
-            "then": "#0774f2"
+          "color": {
+            "render": "#00c",
+            "mappings": [
+              {
+                "if": "building=house",
+                "then": "#a00"
+              },
+              {
+                "if": "building=shed",
+                "then": "#563e02"
+              },
+              {
+                "if": {
+                  "or": [
+                    "building=garage",
+                    "building=garages"
+                  ]
+                },
+                "then": "#f9bfbb"
+              },
+              {
+                "if": "building=yes",
+                "then": "#0774f2"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "title": "OSM-gebouw",
       "tagRenderings": [
         "all_tags"
@@ -93,12 +97,16 @@
         "maxCacheAge": 0
       },
       "minzoom": 18,
-      "color": {
-        "render": "#00c"
-      },
-      "width": {
-        "render": "1"
-      },
+      "mapRendering": [
+        {
+          "color": {
+            "render": "#00c"
+          },
+          "width": {
+            "render": "1"
+          }
+        }
+      ],
       "title": {
         "render": {
           "*": "OSM-Object"
@@ -265,26 +273,34 @@
           }
         }
       ],
-      "label": {
-        "mappings": [
-          {
-            "if": "addr:housenumber~*",
-            "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
+      "mapRendering": [
+        {
+          "location": [
+            "point",
+            "center"
+          ],
+          "label": {
+            "mappings": [
+              {
+                "if": "addr:housenumber~*",
+                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center"
           }
-        ]
-      },
-      "width": {
-        "render": "2"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "dashes": "2 2",
-      "color": {
-        "render": "#00f"
-      },
-      "wayHandling": 2,
-      "presets": []
+        },
+        {
+          "dashes": "2 2",
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "2"
+          }
+        }
+      ]
     },
     {
       "id": "crab-addresses 2021-10-26",
@@ -298,8 +314,13 @@
       "minzoom": 19,
       "name": "CRAB-addressen",
       "title": "CRAB-adres",
-      "icon": "circle:#bb3322",
-      "iconSize": "15,15,center",
+      "mapRendering": [
+        {
+          "location": "point",
+          "icon": "circle:#bb3322",
+          "iconSize": "15,15,center"
+        }
+      ],
       "tagRenderings": [
         "all_tags",
         {
@@ -465,25 +486,33 @@
           }
         }
       ],
-      "label": {
-        "mappings": [
-          {
-            "if": "addr:housenumber~*",
-            "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
+      "mapRendering": [
+        {
+          "location": [
+            "point",
+            "center"
+          ],
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "label": {
+            "mappings": [
+              {
+                "if": "addr:housenumber~*",
+                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
+              }
+            ]
           }
-        ]
-      },
-      "width": {
-        "render": "2"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "dashes": "2 2",
-      "color": {
-        "render": "#00f"
-      },
-      "wayHandling": 2,
+        },
+        {
+          "width": {
+            "render": "2"
+          },
+          "color": {
+            "render": "#00f"
+          }
+        }
+      ],
       "presets": []
     }
   ],

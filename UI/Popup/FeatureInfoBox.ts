@@ -78,15 +78,19 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                     renderingsForGroup.push(questionBox)
                 } else {
                     let classes = innerClasses
-                    if(renderingsForGroup.length === 0 && i > 0){
+                    let isHeader  = renderingsForGroup.length === 0 && i > 0
+                    if(isHeader){
                         // This is the first element of a group!
                         // It should act as header and be sticky
-                        classes= "sticky top-0"
+                        classes= ""
                     }
                     
                     const etr = new EditableTagRendering(tags, tr, layerConfig.units,{
                         innerElementClasses: innerClasses
                     })
+                    if(isHeader){
+                        etr.SetClass("sticky top-0")
+                    }
                     renderingsForGroup.push(etr)
                 }
             }

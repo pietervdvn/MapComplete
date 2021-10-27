@@ -29,7 +29,7 @@ public GenerateLeafletStyle(        tags: {}    ):
         {
             color: string,
             weight: number,
-            dashArray: number[],
+            dashArray: string,
             offset: number
         } {
         function rendernum(tr: TagRenderingConfig, deflt: number) {
@@ -49,7 +49,7 @@ public GenerateLeafletStyle(        tags: {}    ):
             return Utils.SubstituteKeys(str, tags)?.replace(/{.*}/g, "");
         }
 
-        const dashArray = render(this.dashArray)?.split(" ")?.map(Number);
+        const dashArray = render(this.dashArray);
         let color = render(this.color, "#00f");
         if (color.startsWith("--")) {
             color = getComputedStyle(document.body).getPropertyValue(
