@@ -20,24 +20,28 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
         if (source.geojsonSource === undefined) {
             throw "Invalid layer: geojsonSource expected"
         }
-        
-        const whitelistUrl = source.geojsonSource
-            .replace("{z}", ""+source.geojsonZoomLevel)
-            .replace("{x}_{y}.geojson", "overview.json")
-            .replace("{layer}",layer.layerDef.id)
-        
+
         let whitelist = undefined
-        Utils.downloadJson(whitelistUrl).then(
-            json => {
-                const data = new Map<number, Set<number>>();
-                for (const x in json) {
-                    data.set(Number(x), new Set(json[x]))
+        if (source.geojsonSource.indexOf("{x}_{y}.geojson") > 0) {
+
+            const whitelistUrl = source.geojsonSource
+                .replace("{z}", "" + source.geojsonZoomLevel)
+                .replace("{x}_{y}.geojson", "overview.json")
+                .replace("{layer}", layer.layerDef.id)
+
+            Utils.downloadJson(whitelistUrl).then(
+                json => {
+                    const data = new Map<number, Set<number>>();
+                    for (const x in json) {
+                        data.set(Number(x), new Set(json[x]))
+                    }
+                    console.log("The whitelist is", data, "based on ", json, "from", whitelistUrl)
+                    whitelist = data
                 }
-                whitelist = data
-            }
-        ).catch(err => {
-            console.warn("No whitelist found for ", layer.layerDef.id, err)
-        })
+            ).catch(err => {
+                console.warn("No whitelist found for ", layer.layerDef.id, err)
+            })
+        }
 
         const seenIds = new Set<string>();
         const blackList = new UIEventSource(seenIds)
@@ -45,14 +49,14 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
             layer,
             source.geojsonZoomLevel,
             (zxy) => {
-                if(whitelist !== undefined){
+                if (whitelist !== undefined) {
                     const isWhiteListed = whitelist.get(zxy[1])?.has(zxy[2])
-                    if(!isWhiteListed){
+                    if (!isWhiteListed) {
                         console.log("Not downloading tile", ...zxy, "as it is not on the whitelist")
                         return undefined;
                     }
                 }
-                
+
                 const src = new GeoJsonSource(
                     layer,
                     zxy,

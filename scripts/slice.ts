@@ -4,11 +4,84 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import * as readline from "readline";
 import ScriptUtils from "./ScriptUtils";
 
+async function readFeaturesFromLineDelimitedJsonFile(inputFile: string): Promise<any[]> {
+    const fileStream = fs.createReadStream(inputFile);
+
+    const rl = readline.createInterface({
+        input: fileStream,
+        crlfDelay: Infinity
+    });
+    // Note: we use the crlfDelay option to recognize all instances of CR LF
+    // ('\r\n') in input.txt as a single line break.
+
+    const allFeatures: any[] = []
+    // @ts-ignore
+    for await (const line of rl) {
+        try {
+            allFeatures.push(JSON.parse(line))
+        } catch (e) {
+            console.error("Could not parse", line)
+            break
+        }
+        if (allFeatures.length % 10000 === 0) {
+            ScriptUtils.erasableLog("Loaded ", allFeatures.length, "features up till now")
+        }
+    }
+    return allFeatures
+}
+
+async function readGeojsonLineByLine(inputFile: string): Promise<any[]> {
+    const fileStream = fs.createReadStream(inputFile);
+
+    const rl = readline.createInterface({
+        input: fileStream,
+        crlfDelay: Infinity
+    });
+    // Note: we use the crlfDelay option to recognize all instances of CR LF
+    // ('\r\n') in input.txt as a single line break.
+
+    const allFeatures: any[] = []
+    let featuresSeen = false
+    // @ts-ignore
+    for await (let line: string of rl) {
+        if (!featuresSeen && line.startsWith("\"features\":")) {
+            featuresSeen = true;
+            continue;
+        }
+        if (!featuresSeen) {
+            continue
+        }
+        if (line.endsWith(",")) {
+            line = line.substring(0, line.length - 1)
+        }
+
+        try {
+            allFeatures.push(JSON.parse(line))
+        } catch (e) {
+            console.error("Could not parse", line)
+            break
+        }
+        if (allFeatures.length % 10000 === 0) {
+            ScriptUtils.erasableLog("Loaded ", allFeatures.length, "features up till now")
+        }
+    }
+    return allFeatures
+}
+
+async function readFeaturesFromGeoJson(inputFile: string): Promise<any[]> {
+    try {
+        return JSON.parse(fs.readFileSync(inputFile, "UTF-8")).features
+    } catch (e) {
+        // We retry, but with a line-by-line approach
+        return await readGeojsonLineByLine(inputFile)
+    }
+}
+
 async function main(args: string[]) {
 
     console.log("GeoJSON slicer")
     if (args.length < 3) {
-        console.log("USAGE: <input-file.line-delimited-geojson> <target-zoom-level> <output-directory>")
+        console.log("USAGE: <input-file.geojson> <target-zoom-level> <output-directory>")
         return
     }
 
@@ -23,39 +96,24 @@ async function main(args: string[]) {
     console.log("Using directory ", outputDirectory)
 
 
-    const fileStream = fs.createReadStream(inputFile);
-
-    const rl = readline.createInterface({
-        input: fileStream,
-        crlfDelay: Infinity
-    });
-    // Note: we use the crlfDelay option to recognize all instances of CR LF
-    // ('\r\n') in input.txt as a single line break.
-
-    const allFeatures = []
-    // @ts-ignore
-    for await (const line of rl) {
-        // Each line in input.txt will be successively available here as `line`.
-        try{
-            allFeatures.push(JSON.parse(line))
-        }catch (e) {
-            console.error("Could not parse", line)
-            break
-        }
-        if(allFeatures.length % 10000 === 0){
-            ScriptUtils.erasableLog("Loaded ", allFeatures.length, "features up till now")
-        }
+    let allFeatures: any [];
+    if (inputFile.endsWith(".geojson")) {
+        allFeatures = await readFeaturesFromGeoJson(inputFile)
+    } else {
+        allFeatures = await readFeaturesFromLineDelimitedJsonFile(inputFile)
     }
-    
+
+
     console.log("Loaded all", allFeatures.length, "points")
-   
-    const keysToRemove = ["ID","STRAATNMID","NISCODE","GEMEENTE","POSTCODE","HERKOMST","APPTNR"]
+
+    const keysToRemove = ["ID", "STRAATNMID", "NISCODE", "GEMEENTE", "POSTCODE", "HERKOMST"]
     for (const f of allFeatures) {
         for (const keyToRm of keysToRemove) {
             delete f.properties[keyToRm]
         }
+        delete f.bbox
     }
-    
+
     //const knownKeys = Utils.Dedup([].concat(...allFeatures.map(f => Object.keys(f.properties))))
     //console.log("Kept keys: ", knownKeys)
 
@@ -67,11 +125,15 @@ async function main(args: string[]) {
             maxFeatureCount: Number.MAX_VALUE,
             registerTile: tile => {
                 const path = `${outputDirectory}/tile_${tile.z}_${tile.x}_${tile.y}.geojson`
+                const features = tile.features.data.map(ff => ff.feature)
+                features.forEach(f => {
+                    delete f.bbox
+                })
                 fs.writeFileSync(path, JSON.stringify({
                     "type": "FeatureCollection",
-                    "features": tile.features.data.map(ff => ff.feature)
+                    "features": features
                 }, null, "  "))
-                console.log("Written ", path, "which has ", tile.features.data.length, "features")
+                ScriptUtils.erasableLog("Written ", path, "which has ", tile.features.data.length, "features")
             }
         }
     )

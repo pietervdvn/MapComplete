@@ -22,7 +22,7 @@
   "socialImage": "",
   "layers": [
     {
-      "id": "grb-fixmes",
+      "id": "osm-fixmes",
       "name": {
         "nl": "Fixmes op gebouwen"
       },
@@ -198,6 +198,43 @@
       },
       "wayHandling": 2,
       "presets": []
+    },
+    {
+      "id": "crab-addresses 2021-10-26",
+      "source": {
+        "osmTags": "HUISNR~*",
+        "geoJson": "https://raw.githubusercontent.com/pietervdvn/pietervdvn.github.io/master/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
+        "#geoJson": "https://pietervdvn.github.io/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
+        "geoJsonZoomLevel": 18,
+        "maxCacheAge": 0
+      },
+      "minzoom": 19,
+      "name": "CRAB-addressen",
+      "title": "CRAB-adres",
+      "icon": "circle:#bb3322",
+      "iconSize": "15,15,center",
+      "tagRenderings": [
+        "all_tags",
+        {
+          "id": "import-button",
+          "render": "{import_button(addr:street=$STRAATNM; addr:housenumber=$HUISNR)}"
+        }
+      ]
+    },
+    {
+      "id": "GRB",
+      "source": {
+        "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 18,
+        "mercatorCrs": true,
+        "maxCacheAge": 0
+      },
+      "name": "GRB geometries",
+      "title": "GRB outline",
+      "minzoom": 19,
+      "tagRenderings": [
+        "all_tags"
+      ]
     }
   ],
   "hideFromOverview": true,

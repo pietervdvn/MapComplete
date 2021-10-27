@@ -124,6 +124,7 @@ export default class LayerConfig {
                     geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                     overpassScript: json.source["overpassScript"],
                     isOsmCache: json.source["isOsmCache"],
+                    mercatorCrs: json.source["mercatorCrs"]
                 },
                 this.id
             );
