@@ -89,7 +89,9 @@
         {
             "id": "dispensing_dog_bags",
             "question": {
-                "en": "Does this waste basket have a dispenser for dog excrement bags?"
+                "en": "Does this waste basket have a dispenser for dog excrement bags?",
+                "nl": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?",
+                "then": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?"
             },
             "condition": {
                 "or": [
@@ -107,7 +109,8 @@
                         ]
                     },
                     "then": {
-                        "en": "This waste basket has a dispenser for (dog) excrement bags"
+                        "en": "This waste basket has a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes"
                     }
                 },
                 {
@@ -118,13 +121,15 @@
                         ]
                     },
                     "then": {
-                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags"
+                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilnisbak heeft <i>geen</i>verdeler voor hondenpoepzakjes"
                     }
                 },
                 {
                     "if": "vending=",
                     "then": {
-                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags"
+                        "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
+                        "nl": "Deze vuilnisbaak heeft waarschijnlijk geen verdeler voor hondenpoepzakjes"
                     },
                     "hideInAnwer": true
                 }

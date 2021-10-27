@@ -3824,6 +3824,20 @@
             }
         },
         "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes"
+                    },
+                    "1": {
+                        "then": "Deze vuilnisbak heeft <i>geen</i>verdeler voor hondenpoepzakjes"
+                    },
+                    "2": {
+                        "then": "Deze vuilnisbaak heeft waarschijnlijk geen verdeler voor hondenpoepzakjes"
+                    }
+                },
+                "question": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?"
+            },
             "waste-basket-waste-types": {
                 "mappings": {
                     "0": {
@@ -3846,14 +3860,6 @@
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"
-            },
-            "dispensing_dog_bags": {
-                "question": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?",
-                "mappings": {
-                    "0": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes",
-                    "1": "Deze vuilnisbak heeft <i>geen</i>verdeler voor hondenpoepzakjes",
-                    "2": "Deze vuilnisbaak heeft waarschijnlijk geen verdeler voor hondenpoepzakjes"
-                }
             }
         },
         "title": {
