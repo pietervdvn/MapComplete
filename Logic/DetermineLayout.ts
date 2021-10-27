@@ -87,7 +87,7 @@ export default class DetermineLayout {
             }
 
         } catch (e) {
-            console.erorr(e)
+            console.error(e)
             DetermineLayout.ShowErrorOnCustomTheme(
                 `<a href="${link}">${link}</a> is invalid - probably not found or invalid JSON:`,
                 new FixedUiElement(e)

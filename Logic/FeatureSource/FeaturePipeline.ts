@@ -266,7 +266,7 @@ export default class FeaturePipeline {
 
 
         // Whenever fresh data comes in, we need to update the metatagging
-        self.newDataLoadedSignal.stabilized(1000).addCallback(_ => {
+        self.newDataLoadedSignal.stabilized(250).addCallback(src => {
             self.updateAllMetaTagging()
         })
 
@@ -391,7 +391,7 @@ export default class FeaturePipeline {
         window.setTimeout(
             () => {
                 const layerDef = src.layer.layerDef;
-                MetaTagging.addMetatags(
+                const somethingChanged = MetaTagging.addMetatags(
                     src.features.data,
                     {
                         memberships: this.relationTracker,
@@ -412,9 +412,10 @@ export default class FeaturePipeline {
 
     private updateAllMetaTagging() {
         const self = this;
+        console.debug("Updating the meta tagging of all tiles as new data got loaded")
         this.perLayerHierarchy.forEach(hierarchy => {
-            hierarchy.loadedTiles.forEach(src => {
-                self.applyMetaTags(src)
+            hierarchy.loadedTiles.forEach(tile => {
+                self.applyMetaTags(tile)
             })
         })
 

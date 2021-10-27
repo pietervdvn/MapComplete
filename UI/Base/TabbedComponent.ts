@@ -21,6 +21,9 @@ export class TabbedComponent extends Combine {
             let element = elements[i];
             const header = Translations.W(element.header).onClick(() => openedTabSrc.setData(i))
             openedTabSrc.addCallbackAndRun(selected => {
+                if(selected >= elements.length){
+                    selected = 0
+                }
                 if (selected === i) {
                     header.SetClass("tab-active")
                     header.RemoveClass("tab-non-active")

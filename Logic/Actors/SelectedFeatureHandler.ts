@@ -114,6 +114,7 @@ export default class SelectedFeatureHandler {
             // Hash has been cleared - we clear the selected element
             state.selectedElement.setData(undefined);
         } else {
+            
             // we search the element to select
             const feature = state.allElements.ContainingFeatures.get(h)
             if (feature === undefined) {

@@ -20,13 +20,99 @@
   "startZoom": 14,
   "widenFactor": 2,
   "socialImage": "",
+  "overpassMaxZoom": 18,
+  "osmApiTileSize": 17,
   "layers": [
+    {
+      "id": "OSM-buildings",
+      "name": "All OSM-buildings",
+      "source": {
+        "osmTags": "building~*",
+        "maxCacheAge": 0
+      },
+      "minzoom": 18,
+      "width": {
+        "render": "2"
+      },
+      "color": {
+        "render": "#00c",
+        "mappings": [
+          {
+            "if": "building=house",
+            "then": "#a00"
+          },
+          {
+            "if": "building=shed",
+            "then": "#563e02"
+          },
+          {
+            "if": {
+             "or": ["building=garage","building=garages"]
+            },
+            "then": "#f9bfbb"
+          },
+          {
+            "if": "building=yes",
+            "then": "#0774f2"
+          }
+        ]
+      },
+      "title": "OSM-gebouw",
+      "tagRenderings": [
+        "all_tags"
+      ]
+    },
+    {
+      "id": "All OSM objects",
+      "name": "All OSM Objects",
+      "source": {
+        "osmTags":{
+          "and": [
+            "id~*",
+            "landuse=",
+            "place=",
+            "disused:power=",
+            "power=",
+            "type!=boundary",
+            "boundary=",
+            {
+              "or": [
+                "level=",
+                "level=0"
+              ]
+            },
+            {
+              "or": [
+                "layer=0",
+                "layer="
+              ]
+            }
+          ]
+        },
+        "maxCacheAge": 0
+      },
+      "minzoom": 18,
+      "color": {
+        "render": "#00c"
+      },
+      "width": {
+        "render": "1"
+      },
+      "title": {
+        "render": {
+          "*": "OSM-Object"
+        }
+      },
+      "tagRenderings": [
+        "all_tags"
+      ]
+    },
     {
       "id": "osm-fixmes",
       "name": {
         "nl": "Fixmes op gebouwen"
       },
-      "minzoom": 12,
+      "minzoom": 21,
       "source": {
         "maxCacheAge": 0,
         "osmTags": {
@@ -232,9 +318,29 @@
       "name": "GRB geometries",
       "title": "GRB outline",
       "minzoom": 19,
+      "calculatedTags": [
+        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 && feat.properties._surface - f.overlap < 5)[0]",
+        "_osm_obj:source:ref=JSON.parse(feat.properties._overlaps_with).feat.properties['source:geometry:ref']",
+        "_osm_obj:source:date=JSON.parse(feat.properties._overlaps_with).feat.properties['source:geometry:date']",
+        "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
+        "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
+        "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date"
+
+      ],
       "tagRenderings": [
         "all_tags"
-      ]
+      ],
+      "color": {
+        "render": "#00a",
+        "mappings": [
+          {
+            "if": {
+              "and": ["_imported_osm_object_found=true","_imported_osm_still_fresh=true"]
+            },
+            "then": "#0f0"
+          }
+        ]
+      }
     }
   ],
   "hideFromOverview": true,

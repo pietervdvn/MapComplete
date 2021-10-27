@@ -6,6 +6,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
 import {ElementStorage} from "../../Logic/ElementStorage";
+import Hash from "../../Logic/Web/Hash";
 
 export default class ShowDataLayer {
 
@@ -237,7 +238,6 @@ export default class ShowDataLayer {
 
                 infobox.isShown.addCallback(isShown => {
                     if (!isShown) {
-                        this._selectedElement?.setData(undefined);
                         leafletLayer.closePopup()
                     }
                 });
@@ -249,7 +249,7 @@ export default class ShowDataLayer {
             }
 
         });
-
+        
 
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(feature.properties.id + feature.geometry.type, {

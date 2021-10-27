@@ -27,6 +27,9 @@
   "widenFactor": 1.01,
   "socialImage": "",
   "hideFromOverview": true,
+  "enableShareScreen": false,
+  "enableMoreQuests": false,
+  
   "clustering": {
     "minNeededFeatures": 25,
     "maxZoom": 16
@@ -52,11 +55,12 @@
         "#geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/assets/themes/uk_addresses/islington_small_piece.geojson",
         "geoJson": "https://osm-uk-addresses.russss.dev/addresses/{z}/{x}/{y}.json",
         "osmTags": "inspireid~*",
-        "geoJsonZoomLevel": 16,
-        "isOsmCache": false
+        "geoJsonZoomLevel": 18,
+        "isOsmCache": false,
+        "maxCacheAge": 0
       },
       "name": "Addresses to check",
-      "minzoom": 14,
+      "minzoom": 18,
       "wayHandling": 1,
       "icon": {
         "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
@@ -123,6 +127,7 @@
       },
       "minzoom": 18,
       "source": {
+        "maxCacheAge": 0,
         "osmTags": {
           "or": [
             "addr:housenumber~*",
@@ -189,6 +194,33 @@
           ]
         },
         {
+          "id": "uk_addresses_housename",
+          "question": "What is the name of this house?<br/>This is normally indicated on a plaque.<br><div class='subtle'>Do NOT add names of inhabitants!</div>",
+          "render": "This house is named <b>{addr:housename}</b>",
+          "freeform": {
+            "key": "addr:housename",
+            "addExtraTags": [
+              "nohousename="
+            ]
+          },
+          "mappings": [
+            {
+              "if": "nohousename=yes",
+              "then": "This building has no housename"
+            },
+            {
+              "if": {
+                "and": [
+                  "addr:housename=",
+                  "nohousenumber!=yes"
+                ]
+              },
+              "then": "This building has no housename",
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
           "id": "uk_addresses_street",
           "render": {
             "en": "This address is in street <b>{addr:street}</b>",
@@ -219,9 +251,39 @@
             }
           ],
           "condition": {
-            "and": [
-              "nohousenumber!~yes"
+            "or": [
+              "nohousenumber!=yes",
+              "nohousename!=yes"
             ]
+          }
+        },
+        {
+          "id": "fixme",
+          "render": "<b>Fixme description</b>{render}",
+          "question": {
+            "en": "What should be fixed here? Please explain"
+          },
+          "freeform": {
+            "key": "fixme"
+          },
+          "mappings": [
+            {
+              "if": "fixme=",
+              "then": "No fixme - write something here to explain complicated cases"
+            }
+          ]
+        },
+        "questions",
+        {
+          "id": "address-sign-image",
+          "render": {
+            "en": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
+          }
+        },
+        {
+          "id": "general_images",
+          "render": {
+            "en": "{image_carousel()}"
           }
         }
       ],
@@ -245,7 +307,7 @@
         ]
       },
       "width": {
-        "render": "8"
+        "render": "1"
       },
       "iconSize": {
         "render": "40,40,center"
@@ -274,6 +336,7 @@
       "id": "named_streets",
       "minzoom": 18,
       "source": {
+        "maxCacheAge": 0,
         "osmTags": {
           "and": [
             "highway~*",

@@ -114,10 +114,8 @@ export default class DefaultGUI {
             Utils.LoadCustomCss(state.layoutToUse.customCss);
         }
 
-
         this.SetupUIElements();
         this.SetupMap()
-
     }
 
 

@@ -106,7 +106,7 @@ async function main(args: string[]) {
 
     console.log("Loaded all", allFeatures.length, "points")
 
-    const keysToRemove = ["ID", "STRAATNMID", "NISCODE", "GEMEENTE", "POSTCODE", "HERKOMST"]
+    const keysToRemove = ["STRAATNMID", "GEMEENTE", "POSTCODE"]
     for (const f of allFeatures) {
         for (const keyToRm of keysToRemove) {
             delete f.properties[keyToRm]
