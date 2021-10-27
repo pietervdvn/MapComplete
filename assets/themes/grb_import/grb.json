@@ -309,6 +309,7 @@
     },
     {
       "id": "GRB",
+      "wayHandling": 1,
       "source": {
         "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
         "geoJsonZoomLevel": 18,
@@ -321,13 +322,22 @@
       "calculatedTags": [
         "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 && feat.properties._surface - f.overlap < 5)[0]",
         "_osm_obj:source:ref=JSON.parse(feat.properties._overlaps_with).feat.properties['source:geometry:ref']",
-        "_osm_obj:source:date=JSON.parse(feat.properties._overlaps_with).feat.properties['source:geometry:date']",
+        "_osm_obj:source:date=JSON.parse(feat.properties._overlaps_with).feat.properties['source:geometry:date'].replace(/\\//g,'-')",
         "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
-        "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date"
-
+        "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
+        "_grb_synced=feat.properties._imported_osm_object_found == 'true' && feat.properties._imported_osm_still_fresh == 'true'"
       ],
       "tagRenderings": [
+        {
+          "id": "sync_status",
+          "mappings": [
+            {
+              "if": "_grb_synced=true",
+              "then": "OSM has the latest data!"
+            }
+          ]
+        },
         "all_tags"
       ],
       "color": {
@@ -335,7 +345,7 @@
         "mappings": [
           {
             "if": {
-              "and": ["_imported_osm_object_found=true","_imported_osm_still_fresh=true"]
+              "and": ["_grb_synced=true"]
             },
             "then": "#0f0"
           }
