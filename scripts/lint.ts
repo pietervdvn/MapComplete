@@ -62,7 +62,7 @@ function fixLayerConfig(config: LayerConfigJson): void {
         }
 
 
-        /*delete config["color"]
+        delete config["color"]
         delete config["width"]
         delete config["dashArray"]
 
@@ -72,7 +72,6 @@ function fixLayerConfig(config: LayerConfigJson): void {
         delete config["iconSize"]
         delete config["rotation"]
          delete config["wayHandling"]
-        */
 
     }
 

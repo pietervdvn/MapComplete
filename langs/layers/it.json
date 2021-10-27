@@ -745,6 +745,17 @@
             "render": "Oggetto relativo alle bici"
         }
     },
+    "charging_station": {
+        "tagRenderings": {
+            "Network": {
+                "question": "A quale rete appartiene questa stazione di ricarica?",
+                "render": "{network}"
+            },
+            "OH": {
+                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
+            }
+        }
+    },
     "defibrillator": {
         "icon": {
             "mappings": {

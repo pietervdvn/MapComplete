@@ -1059,6 +1059,11 @@
             }
         },
         "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
+        "tileLayerSources": {
+            "0": {
+                "name": "Grenzverläufe gemäß osmuk.org"
+            }
+        },
         "title": "Adressen in Großbritannien"
     },
     "waste_basket": {

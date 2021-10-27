@@ -1125,7 +1125,7 @@
         "name": "Oplaadpunten",
         "presets": {
             "0": {
-                "title": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
+                "title": "gewone stekker <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
             },
             "1": {
                 "title": "oplaadpunt voor elektrische fietsen"
@@ -1361,10 +1361,10 @@
                         "then": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
                     },
                     "2": {
-                        "then": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bv. op de parking van een hotel en enkel toegankelijk voor klanten van dit hotel</span>"
+                        "then": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bijvoorbeeld een oplaadpunt op de parking van een restaurant dat enkel door klanten van het restaurant gebruikt mag worden</span>"
                     },
                     "3": {
-                        "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
+                        "then": "Niet toegankelijk voor het publiek <span class='subtle'>Enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
                     }
                 },
                 "question": "Wie mag er dit oplaadpunt gebruiken?",

@@ -917,6 +917,311 @@
             }
         }
     },
+    "charging_station": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle Fahrzeugtypen"
+                    },
+                    "1": {
+                        "question": "Ladestation für Fahrräder"
+                    },
+                    "2": {
+                        "question": "Ladestation für Autos"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Nur funktionierende Ladestationen"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Alle Anschlüsse"
+                    },
+                    "3": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
+                    },
+                    "7": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Ladestation"
+            }
+        },
+        "tagRenderings": {
+            "Auth phone": {
+                "question": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
+                "render": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
+            "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Authentifizierung durch eine Mitgliedskarte"
+                    },
+                    "1": {
+                        "then": "Authentifizierung durch eine App"
+                    },
+                    "2": {
+                        "then": "Authentifizierung per Anruf ist möglich"
+                    },
+                    "3": {
+                        "then": "Authentifizierung per Anruf ist möglich"
+                    },
+                    "4": {
+                        "then": "Authentifizierung über NFC ist möglich"
+                    },
+                    "5": {
+                        "then": "Authentifizierung über Geldkarte ist möglich"
+                    },
+                    "6": {
+                        "then": "Authentifizierung per Debitkarte ist möglich"
+                    },
+                    "7": {
+                        "then": "Das Aufladen ist hier (auch) ohne Authentifizierung möglich"
+                    }
+                },
+                "question": "Welche Authentifizierung ist an der Ladestation möglich?"
+            },
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "5": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>"
+                    },
+                    "6": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
+                    },
+                    "7": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
+                    },
+                    "8": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
+                    },
+                    "9": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
+                    },
+                    "10": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
+                    },
+                    "11": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
+                    },
+                    "12": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
+                    },
+                    "13": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
+                    },
+                    "14": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
+                    },
+                    "15": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
+                    },
+                    "16": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
+                    },
+                    "17": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
+                    },
+                    "18": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
+                    },
+                    "19": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
+                    },
+                    "20": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
+                    },
+                    "21": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
+                    },
+                    "26": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones oder Elektrokleingeräten</span></div>"
+                    },
+                    "27": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones und Elektrokleingeräten</span></div>"
+                    },
+                    "30": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
+                    },
+                    "31": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
+                    }
+                },
+                "question": "Welche Ladestationen gibt es hier?"
+            },
+            "Network": {
+                "mappings": {
+                    "0": {
+                        "then": "Nicht Teil eines größeren Netzwerks"
+                    },
+                    "1": {
+                        "then": "Nicht Teil eines größeren Netzwerks"
+                    }
+                },
+                "question": "Ist diese Ladestation Teil eines Netzwerks?",
+                "render": "Teil des Netzwerks <b>{network}</b>"
+            },
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "durchgehend geöffnet (auch an Feiertagen)"
+                    }
+                },
+                "question": "Wann ist diese Ladestation geöffnet?"
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Ladestation funktioniert"
+                    },
+                    "1": {
+                        "then": "Diese Ladestation ist kaputt"
+                    },
+                    "2": {
+                        "then": "Hier ist eine Ladestation geplant"
+                    },
+                    "3": {
+                        "then": "Hier wird eine Ladestation gebaut"
+                    },
+                    "4": {
+                        "then": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
+                    }
+                },
+                "question": "Ist dieser Ladepunkt in Betrieb?"
+            },
+            "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Eigentlich ist {operator} das Netzwerk"
+                    }
+                },
+                "question": "Wer ist der Betreiber dieser Ladestation?",
+                "render": "Diese Ladestation wird betrieben von {operator}"
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Keine zusätzlichen Parkgebühren beim Laden"
+                    },
+                    "1": {
+                        "then": "Beim Laden ist eine zusätzliche Parkgebühr zu entrichten"
+                    }
+                },
+                "question": "Muss man beim Laden eine Parkgebühr bezahlen?"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Fahrräder</b> können hier geladen werden"
+                    },
+                    "1": {
+                        "then": "<b>Autos</b> können hier geladen werden"
+                    },
+                    "2": {
+                        "then": "<b> Roller</b> können hier geladen werden"
+                    },
+                    "3": {
+                        "then": "<b>Lastkraftwagen</b> (LKW) können hier geladen werden"
+                    },
+                    "4": {
+                        "then": "<b>Busse</b> können hier geladen werden"
+                    }
+                },
+                "question": "Welche Fahrzeuge dürfen hier geladen werden?"
+            },
+            "access": {
+                "question": "Wer darf diese Ladestation benutzen?",
+                "render": "Zugang ist {access}"
+            },
+            "capacity": {
+                "question": "Wie viele Fahrzeuge können hier gleichzeitig geladen werden?",
+                "render": "{capacity} Fahrzeuge können hier gleichzeitig geladen werden"
+            },
+            "email": {
+                "question": "Wie ist die Email-Adresse des Betreibers?",
+                "render": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "Keine Höchstparkdauer"
+                    }
+                },
+                "question": "Was ist die Höchstdauer des Aufenthalts hier?",
+                "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Bezahlung mit einer speziellen App"
+                        },
+                        "1": {
+                            "then": "Bezahlung mit einer Mitgliedskarte"
+                        }
+                    }
+                }
+            },
+            "phone": {
+                "question": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
+                "render": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
+            },
+            "ref": {
+                "question": "Wie lautet die Kennung dieser Ladestation?",
+                "render": "Die Kennziffer ist <b>{ref}</b>"
+            },
+            "website": {
+                "question": "Wie ist die Webseite des Betreibers?",
+                "render": "Weitere Informationen auf <a href='{website}'>{website}</a>"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " Minuten",
+                        "humanSingular": " Minute"
+                    },
+                    "1": {
+                        "human": " Stunden",
+                        "humanSingular": " Stunde"
+                    },
+                    "2": {
+                        "human": " Tage",
+                        "humanSingular": " Tag"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Volt"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Kilowatt"
+                    },
+                    "1": {
+                        "human": "Megawatt"
+                    }
+                }
+            }
+        }
+    },
     "crossings": {
         "description": "Übergänge für Fußgänger und Radfahrer",
         "name": "Kreuzungen",
@@ -996,6 +1301,15 @@
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
+                    "0": {
+                        "then": "Es gibt eine geteilte Fahrspur"
+                    },
+                    "1": {
+                        "then": "Es gibt eine Spur neben der Straße (getrennt durch eine Straßenmarkierung)"
+                    },
+                    "2": {
+                        "then": "Es gibt einen Weg, aber keinen Radweg, der auf der Karte getrennt von dieser Straße eingezeichnet ist."
+                    },
                     "3": {
                         "then": "Hier ist ein getrennter Radweg vorhanden"
                     },
@@ -1015,6 +1329,18 @@
                     },
                     "1": {
                         "then": "Geeignet für dünne Reifen: Rennrad"
+                    },
+                    "2": {
+                        "then": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter"
+                    },
+                    "3": {
+                        "then": "Geeignet für breite Reifen: Trekkingfahrrad, Auto, Rikscha"
+                    },
+                    "4": {
+                        "then": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen"
+                    },
+                    "5": {
+                        "then": "Geeignet für Geländefahrzeuge: schwerer Geländewagen"
                     },
                     "6": {
                         "then": "Geeignet für Geländefahrzeuge: Traktor, ATV"
@@ -1036,8 +1362,20 @@
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
+                    "3": {
+                        "then": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen"
+                    },
                     "4": {
                         "then": "Der Radweg ist aus Beton"
+                    },
+                    "5": {
+                        "then": "Dieser Radweg besteht aus Kopfsteinpflaster"
+                    },
+                    "6": {
+                        "then": "Dieser Fahrradweg besteht aus unregelmäßigem, unbehauenem Kopfsteinpflaster"
+                    },
+                    "7": {
+                        "then": "Dieser Fahrradweg besteht aus regelmäßigem, behauenem Kopfsteinpflaster"
                     },
                     "8": {
                         "then": "Der Radweg ist aus Holz"
@@ -1055,10 +1393,14 @@
                         "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
+                "question": "Was ist der Belag dieses Radwegs?",
                 "render": "Der Radweg ist aus {cycleway:surface}"
             },
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Fahrradstraße in einer 30km/h Zone."
+                    },
                     "1": {
                         "then": "Dies ist eine Fahrradstraße"
                     },
@@ -1085,18 +1427,35 @@
                     "4": {
                         "then": "Die Höchstgeschwindigkeit ist 90 km/h"
                     }
-                }
+                },
+                "question": "Was ist die Höchstgeschwindigkeit auf dieser Straße?",
+                "render": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h"
             },
             "Surface of the road": {
                 "mappings": {
+                    "0": {
+                        "then": "Dieser Radweg ist nicht befestigt"
+                    },
                     "1": {
                         "then": "Dieser Radweg hat einen festen Belag"
                     },
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
+                    "3": {
+                        "then": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen"
+                    },
                     "4": {
                         "then": "Der Radweg ist aus Beton"
+                    },
+                    "5": {
+                        "then": "Dieser Radweg besteht aus Kopfsteinpflaster"
+                    },
+                    "6": {
+                        "then": "Dieser Fahrradweg besteht aus unregelmäßigem, unbehauenem Kopfsteinpflaster"
+                    },
+                    "7": {
+                        "then": "Dieser Fahrradweg besteht aus regelmäßigem, behauenem Kopfsteinpflaster"
                     },
                     "8": {
                         "then": "Der Radweg ist aus Holz"
@@ -1114,6 +1473,7 @@
                         "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
+                "question": "Was ist der Belag dieser Straße?",
                 "render": "Der Radweg ist aus {surface}"
             },
             "Surface of the street": {
@@ -1123,6 +1483,18 @@
                     },
                     "1": {
                         "then": "Geeignet für dünne Reifen: Rennrad"
+                    },
+                    "2": {
+                        "then": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter"
+                    },
+                    "3": {
+                        "then": "Geeignet für breite Reifen: Trekkingfahrrad, Auto, Rikscha"
+                    },
+                    "4": {
+                        "then": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen"
+                    },
+                    "5": {
+                        "then": "Geeignet für Geländefahrzeuge: schwerer Geländewagen"
                     },
                     "6": {
                         "then": "Geeignet für spezielle Geländewagen: Traktor, ATV"
@@ -1135,15 +1507,28 @@
             },
             "cyclelan-segregation": {
                 "mappings": {
+                    "0": {
+                        "then": "Der Radweg ist abgegrenzt durch eine gestrichelte Linie"
+                    },
+                    "1": {
+                        "then": "Der Radweg ist abgegrenzt durch eine durchgezogene Linie"
+                    },
+                    "2": {
+                        "then": "Der Radweg ist abgegrenzt durch eine Parkspur"
+                    },
                     "3": {
                         "then": "Dieser Radweg ist getrennt durch einen Bordstein"
                     }
-                }
+                },
+                "question": "Wie ist der Radweg von der Straße abgegrenzt?"
             },
             "cycleway-lane-track-traffic-signs": {
                 "mappings": {
                     "0": {
                         "then": "Vorgeschriebener Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
                     },
                     "2": {
                         "then": "Getrennter Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
@@ -1159,15 +1544,28 @@
             },
             "cycleway-segregation": {
                 "mappings": {
+                    "0": {
+                        "then": "Der Radweg ist abgegrenzt durch eine gestrichelte Linie"
+                    },
+                    "1": {
+                        "then": "Der Radweg ist abgegrenzt durch eine durchgezogene Linie"
+                    },
+                    "2": {
+                        "then": "Der Radweg ist abgegrenzt durch eine Parkspur"
+                    },
                     "3": {
                         "then": "Dieser Radweg ist getrennt durch einen Bordstein"
                     }
-                }
+                },
+                "question": "Wie ist der Radweg von der Straße abgegrenzt?"
             },
             "cycleway-traffic-signs": {
                 "mappings": {
                     "0": {
                         "then": "Vorgeschriebener Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
                     },
                     "2": {
                         "then": "Getrennter Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
@@ -1198,8 +1596,15 @@
                     }
                 }
             },
+            "cycleways_and_roads-cycleway:buffer": {
+                "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
+                "render": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
+            },
             "is lit?": {
                 "mappings": {
+                    "0": {
+                        "then": "Diese Straße ist beleuchtet"
+                    },
                     "1": {
                         "then": "Diese Straße ist nicht beleuchtet"
                     },
@@ -1824,6 +2229,15 @@
     },
     "public_bookcase": {
         "description": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Innen oder Außen"
+                    }
+                }
+            }
+        },
         "name": "Bücherschränke",
         "presets": {
             "0": {

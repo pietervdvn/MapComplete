@@ -631,6 +631,57 @@
             }
         }
     },
+    "charging_station": {
+        "presets": {
+            "0": {
+                "title": "Зарядная станция"
+            }
+        },
+        "tagRenderings": {
+            "Network": {
+                "question": "К какой сети относится эта станция?",
+                "render": "{network}"
+            },
+            "OH": {
+                "question": "В какое время работает эта зарядная станция?"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " минут",
+                        "humanSingular": " минута"
+                    },
+                    "1": {
+                        "human": " часов",
+                        "humanSingular": " час"
+                    },
+                    "2": {
+                        "human": " дней",
+                        "humanSingular": " день"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Вольт"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "киловатт"
+                    },
+                    "1": {
+                        "human": "мегаватт"
+                    }
+                }
+            }
+        }
+    },
     "crossings": {
         "presets": {
             "1": {
