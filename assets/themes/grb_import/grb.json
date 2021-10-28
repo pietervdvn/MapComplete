@@ -319,7 +319,9 @@
       "title": "CRAB-adres",
       "mapRendering": [
         {
-          "location": ["point"],
+          "location": [
+            "point"
+          ],
           "icon": "circle:#bb3322",
           "iconSize": "15,15,center"
         }
@@ -334,14 +336,16 @@
         "mappings": [
           {
             "if": {
-              "and":["_embedding_nr:={HUISNR}","_embedding_street:={STRAATNM}"]
+              "and": [
+                "_embedding_nr:={HUISNR}",
+                "_embedding_street:={STRAATNM}"
+              ]
             },
             "then": "no"
           }
         ]
       },
       "tagRenderings": [
-
         {
           "id": "render_crab",
           "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
@@ -350,10 +354,12 @@
           "id": "render_embedded",
           "render": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}",
           "condition": {
-            "and": ["_embedding_street~*","_embedding_nr~*"]
+            "and": [
+              "_embedding_street~*",
+              "_embedding_nr~*"
+            ]
           }
         },
-        
         "all_tags",
         {
           "id": "import-button",

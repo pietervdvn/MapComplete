@@ -14,17 +14,21 @@
             "width": 15,
             "color": {
                 "render": "#ff000088",
-                "mappings": [{
-                    "if": "id=left",
-                    "then": "#0000ff88"
-                }]
+                "mappings": [
+                    {
+                        "if": "id=left",
+                        "then": "#0000ff88"
+                    }
+                ]
             },
             "offset": {
                 "render": "-15",
-                "mappings": [{
-                    "if": "id=right",
-                    "then": "15"
-                }]
+                "mappings": [
+                    {
+                        "if": "id=right",
+                        "then": "15"
+                    }
+                ]
             }
         }
     ]
