@@ -254,8 +254,8 @@
           "iconSize": {
             "render": "40,40,center"
           }
-         
-        }, {
+        },
+        {
           "color": {
             "render": "#00f",
             "mappings": [
