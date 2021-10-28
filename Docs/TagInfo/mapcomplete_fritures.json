@@ -82,6 +82,16 @@
       "value": "yes"
     },
     {
+      "key": "payment:app",
+      "description": "Layer 'Fries shop' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Fries shop' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Fries shop' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "designated"
@@ -394,6 +404,16 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Restaurants and fast food' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:app",
+      "description": "Layer 'Restaurants and fast food' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Restaurants and fast food' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
       "value": "yes"
     },
     {

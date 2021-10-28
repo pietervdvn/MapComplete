@@ -14,11 +14,11 @@
 
 name | default | description
 ------ | --------- | -------------
-image key/prefix (multiple values allowed if comma-seperated) | image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... 
+image key/prefix (multiple values allowed if comma-seperated) | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... 
  
 #### Example usage 
 
- `{image_carousel(image)}` 
+ `{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}` 
 ### image_upload 
 
  Creates a button where a user can upload an image to IMGUR 
@@ -44,7 +44,7 @@ keyToShowWikipediaFor | wikidata | Use the wikidata entry from this key to show 
  `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height 
 ### minimap 
 
- A small map showing the selected feature. Note that no styling is applied, wrap this in a div 
+ A small map showing the selected feature. 
 
 name | default | description
 ------ | --------- | -------------
@@ -54,6 +54,17 @@ idKey | id | (Matches all resting arguments) This argument should be the key of 
 #### Example usage 
 
  `{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}` 
+### sided_minimap 
+
+ A small map showing _only one side_ the selected feature. *This features requires to have linerenderings with offset* as only linerenderings with a postive or negative offset will be shown. Note: in most cases, this map will be automatically introduced 
+
+name | default | description
+------ | --------- | -------------
+side | undefined | The side to show, either `left` or `right`
+ 
+#### Example usage 
+
+ `{sided_minimap(left)}` 
 ### reviews 
 
  Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten 

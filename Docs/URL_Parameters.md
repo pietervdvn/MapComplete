@@ -20,42 +20,6 @@ the URL-parameters are stated in the part between the `?` and the `#`. There are
 Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 
 
- download-control-toggle 
--------------------------
-
- Whether or not the download panel is shown The default value is _false_
-
-
- filter-toggle 
----------------
-
- Whether or not the filter view is shown The default value is _false_
-
-
- tab 
------
-
- The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >50 changesets) The default value is _0_
-
-
- z 
----
-
- The initial/current zoom level The default value is _0_
-
-
- lat 
------
-
- The initial/current latitude The default value is _0_
-
-
- lon 
------
-
- The initial/current longitude of the app The default value is _0_
-
-
  fs-userbadge 
 --------------
 
@@ -92,10 +56,10 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  Disables/enables the help menu or welcome message The default value is _true_
 
 
- fs-iframe 
------------
+ fs-iframe-popout 
+------------------
 
- Disables/Enables the iframe-popup The default value is _false_
+ Disables/Enables the iframe-popout button. If in iframe mode and the welcome message is hidden, a popout button to the full mapcomplete instance is shown instead (unless disabled with this switch) The default value is _true_
 
 
  fs-more-quests 
@@ -134,6 +98,12 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  Enable the PDF download button The default value is _false_
 
 
+ backend 
+---------
+
+ The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test' The default value is _osm_
+
+
  test 
 ------
 
@@ -152,12 +122,6 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  If true, 'dryrun' mode is activated and a fake user account is loaded The default value is _false_
 
 
- backend 
----------
-
- The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test' The default value is _osm_
-
-
  overpassUrl 
 -------------
 
@@ -170,10 +134,16 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  Set a different timeout (in seconds) for queries in overpass The default value is _30_
 
 
- custom-css 
-------------
+ overpassMaxZoom 
+-----------------
 
- If specified, the custom css from the given link will be loaded additionaly The default value is __
+  point to switch between OSM-api and overpass The default value is _17_
+
+
+ osmApiTileSize 
+----------------
+
+ Tilesize when the OSM-API is used to fetch data within a BBOX The default value is _18_
 
 
  background 

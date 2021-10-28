@@ -100,11 +100,20 @@ Adds the time that the data got loaded - pretty much the time of downloading fro
 
 
 
-### _last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number 
+### _last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend 
 
 
 
 Information about the last edit of this object.
+
+
+
+
+### sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property 
+
+
+
+Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' and 'generic_key:right:property' (and similar for sidewalk tagging). Note that this rewritten tags _will be reuploaded on a change_. To prevent to much unrelated retagging, this is only enabled if the layer has at least some lineRenderings with offset defined
 
 
 
@@ -162,6 +171,7 @@ Some advanced functions are available on **feat** as well:
   - closest
   - closestn
   - memberships
+  - get
  
 ### distanceTo 
 
@@ -202,4 +212,10 @@ If a 'unique tag key' is given, the tag with this key will only appear once (e.g
 For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')` 
 
 
+ 
+### get 
+
+ Gets the property of the feature, parses it (as JSON) and returns it. Might return 'undefined' if not defined, null, ... 
+
+  0. key
  Generated from SimpleMetaTagger, ExtraFunction

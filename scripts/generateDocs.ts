@@ -1,4 +1,5 @@
 import {Utils} from "../Utils";
+
 Utils.runningFromConsole = true;
 import SpecialVisualizations from "../UI/SpecialVisualizations";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
@@ -11,7 +12,8 @@ import {writeFileSync} from "fs";
 import State from "../State";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
-
+import Minimap from "../UI/Base/Minimap";
+import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
 
 
 function WriteFile(filename, html: string | BaseUIElement, autogenSource: string[]): void {
@@ -25,8 +27,13 @@ WriteFile("./Docs/CalculatedTags.md", new Combine([SimpleMetaTagger.HelpText(), 
     ["SimpleMetaTagger", "ExtraFunction"])
 WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), ["ValidatedTextField.ts"]);
 
+Minimap.createMiniMap = _ => {
+    console.log("Not creating a minimap, it is disabled");
+    return undefined
+}
 
-new State(new LayoutConfig({
+
+const dummyLayout = new LayoutConfig({
     language: ["en"],
     id: "<theme>",
     maintainer: "pietervdvn",
@@ -43,11 +50,15 @@ new State(new LayoutConfig({
             id: "<layer>",
             source: {
                 osmTags: "id~*"
-            }
+            },
+            mapRendering: []
         }
     ]
 
-}))
+})
+
+new FeatureSwitchState(dummyLayout)
+
 QueryParameters.GetQueryParameter("layer-<layer-id>", "true", "Wether or not the layer with id <layer-id> is shown")
 
 WriteFile("./Docs/URL_Parameters.md", QueryParameters.GenerateQueryParameterDocs(), ["QueryParameters"])
