@@ -179,7 +179,7 @@ export interface TagRenderingConfigJson {
          * If chosen as answer, these tags will be applied as well onto the object.
          * Not compatible with multiAnswer
          */
-        addExtraTags: string[]
+        addExtraTags?: string[]
 
     }[]
 }
