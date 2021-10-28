@@ -20,6 +20,9 @@
   "startZoom": 14,
   "widenFactor": 2,
   "socialImage": "",
+  "clustering": {
+    "maxZoom": 15
+  },
   "layers": [
     {
       "id": "OSM-buildings",
@@ -28,7 +31,7 @@
         "osmTags": "building~*",
         "maxCacheAge": 0
       },
-      "minzoom": 18,
+      "minzoom": 16,
       "mapRendering": [
         {
           "width": {
@@ -277,7 +280,7 @@
         {
           "location": [
             "point",
-            "center"
+            "centroid"
           ],
           "label": {
             "mappings": [
@@ -311,17 +314,46 @@
         "geoJsonZoomLevel": 18,
         "maxCacheAge": 0
       },
-      "minzoom": 19,
+      "minzoom": 16,
       "name": "CRAB-addressen",
       "title": "CRAB-adres",
       "mapRendering": [
         {
-          "location": "point",
+          "location": ["point"],
           "icon": "circle:#bb3322",
           "iconSize": "15,15,center"
         }
       ],
+      "calculatedTags": [
+        "_embedded_in=feat.overlapWith('OSM-buildings').filter(f => f.feat.properties['addr:housenumber'] !== undefined)[0]?.feat?.properties ",
+        "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']",
+        "_embedding_street=feat.get('_embedded_in')['addr:street']"
+      ],
+      "isShown": {
+        "render": "yes",
+        "mappings": [
+          {
+            "if": {
+              "and":["_embedding_nr:={HUISNR}","_embedding_street:={STRAATNM}"]
+            },
+            "then": "no"
+          }
+        ]
+      },
       "tagRenderings": [
+
+        {
+          "id": "render_crab",
+          "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
+        },
+        {
+          "id": "render_embedded",
+          "render": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}",
+          "condition": {
+            "and": ["_embedding_street~*","_embedding_nr~*"]
+          }
+        },
+        
         "all_tags",
         {
           "id": "import-button",
@@ -334,7 +366,7 @@
       "name": {
         "nl": "Fixmes op gebouwen"
       },
-      "minzoom": 12,
+      "minzoom": 16,
       "source": {
         "maxCacheAge": 0,
         "osmTags": {
@@ -490,7 +522,7 @@
         {
           "location": [
             "point",
-            "center"
+            "centroid"
           ],
           "iconSize": {
             "render": "40,40,center"
@@ -512,12 +544,66 @@
             "render": "#00f"
           }
         }
+      ]
+    },
+    {
+      "id": "GRB",
+      "source": {
+        "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 18,
+        "mercatorCrs": true,
+        "maxCacheAge": 0
+      },
+      "name": "GRB geometries",
+      "title": "GRB outline",
+      "minzoom": 16,
+      "calculatedTags": [
+        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 && feat.properties._surface - f.overlap < 5)[0] ?? null",
+        "_osm_obj:source:ref=JSON.parse(feat.properties._overlaps_with)?.feat?.properties['source:geometry:ref']",
+        "_osm_obj:source:date=JSON.parse(feat.properties._overlaps_with)?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
+        "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
+        "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
+        "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date"
       ],
-      "presets": []
+      "tagRenderings": [
+        "all_tags"
+      ],
+      "isShown": {
+        "render": "yes",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "_imported_osm_object_found=true",
+                "_imported_osm_still_fresh=true"
+              ]
+            },
+            "then": "no"
+          }
+        ]
+      },
+      "mapRendering": [
+        {
+          "color": {
+            "render": "#00a",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "_imported_osm_object_found=true",
+                    "_imported_osm_still_fresh=true"
+                  ]
+                },
+                "then": "#0f0"
+              }
+            ]
+          }
+        }
+      ]
     }
   ],
   "hideFromOverview": true,
   "defaultBackgroundId": "AGIVFlandersGRB",
-  "overpassMaxZoom": 18,
+  "overpassMaxZoom": 15,
   "osmApiTileSize": 17
 }

@@ -57,9 +57,13 @@
         },
         "minzoom": 13,
         "minzoomVisible": 0,
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
-        }
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
+            }
+          }
+        ]
       }
     },
     {
@@ -77,9 +81,13 @@
           "isOsmCache": "duplicate"
         },
         "minzoom": 1,
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
-        },
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
+            }
+          }
+        ],
         "presets": []
       }
     },
@@ -96,9 +104,13 @@
           "isOsmCache": true
         },
         "minzoom": 1,
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/information.svg"
-        }
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/information.svg"
+            }
+          }
+        ]
       }
     },
     {
@@ -115,19 +127,23 @@
           "isOsmCache": true
         },
         "minzoom": 10,
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/trail.svg",
-          "mappings": [
-            {
-              "if": "wheelchair=yes",
-              "then": "circle:#FE6F32;./assets/themes/natuurpunt/walk_wheelchair.svg"
-            },
-            {
-              "if": "pushchair=yes",
-              "then": "circle:#FE6F32;./assets/themes/natuurpunt/pushchair.svg"
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/trail.svg",
+              "mappings": [
+                {
+                  "if": "wheelchair=yes",
+                  "then": "circle:#FE6F32;./assets/themes/natuurpunt/walk_wheelchair.svg"
+                },
+                {
+                  "if": "pushchair=yes",
+                  "then": "circle:#FE6F32;./assets/themes/natuurpunt/pushchair.svg"
+                }
+              ]
             }
-          ]
-        }
+          }
+        ]
       }
     },
     {
@@ -139,19 +155,23 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/toilets.svg",
-          "mappings": [
-            {
-              "if": "wheelchair=yes",
-              "then": "circle:#FE6F32;./assets/themes/natuurpunt/wheelchair.svg"
-            },
-            {
-              "if": "toilets:position=urinals",
-              "then": "circle:#FE6F32;./assets/themes/natuurpunt/urinal.svg"
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/toilets.svg",
+              "mappings": [
+                {
+                  "if": "wheelchair=yes",
+                  "then": "circle:#FE6F32;./assets/themes/natuurpunt/wheelchair.svg"
+                },
+                {
+                  "if": "toilets:position=urinals",
+                  "then": "circle:#FE6F32;./assets/themes/natuurpunt/urinal.svg"
+                }
+              ]
             }
-          ]
-        }
+          }
+        ]
       }
     },
     {
@@ -163,10 +183,14 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg",
-          "mappings": null
-        }
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg",
+              "mappings": null
+            }
+          }
+        ]
       }
     },
     {
@@ -178,9 +202,13 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/picnic_table.svg"
-        }
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/picnic_table.svg"
+            }
+          }
+        ]
       }
     },
     {
@@ -192,34 +220,42 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/drips.svg"
-        }
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/drips.svg"
+            }
+          }
+        ]
       }
     },
     {
       "builtin": "parking",
       "override": {
         "minzoom": "16",
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/parking.svg",
-          "mappings": [
-            {
-              "if": "amenity=bicycle_parking",
-              "then": "circle:#FE6F32;./assets/themes/natuurpunt/parkingbike.svg"
-            }
-          ]
-        },
-        "iconOverlays": [
+        "mapRendering": [
           {
-            "if": "amenity=motorcycle_parking",
-            "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingmotor.svg",
-            "badge": true
-          },
-          {
-            "if": "capacity:disabled=yes",
-            "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingwheels.svg",
-            "badge": true
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/parking.svg",
+              "mappings": [
+                {
+                  "if": "amenity=bicycle_parking",
+                  "then": "circle:#FE6F32;./assets/themes/natuurpunt/parkingbike.svg"
+                }
+              ]
+            },
+            "iconOverlays": [
+              {
+                "if": "amenity=motorcycle_parking",
+                "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingmotor.svg",
+                "badge": true
+              },
+              {
+                "if": "capacity:disabled=yes",
+                "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingwheels.svg",
+                "badge": true
+              }
+            ]
           }
         ]
       }
@@ -233,9 +269,13 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/information_board.svg"
-        }
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/information_board.svg"
+            }
+          }
+        ]
       }
     },
     {
@@ -247,9 +287,13 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/bench.svg"
-        }
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/bench.svg"
+            }
+          }
+        ]
       }
     },
     {
@@ -261,9 +305,13 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/watermill.svg"
-        }
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "circle:#FE6F32;./assets/themes/natuurpunt/watermill.svg"
+            }
+          }
+        ]
       }
     }
   ],

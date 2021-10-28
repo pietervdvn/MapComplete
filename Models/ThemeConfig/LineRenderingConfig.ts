@@ -13,19 +13,19 @@ export default class LineRenderingConfig extends WithContextLoader {
     public readonly dashArray: TagRenderingConfig;
     public readonly offset: TagRenderingConfig;
     public readonly leftRightSensitive: boolean
-    
+
     constructor(json: LineRenderingConfigJson, context: string) {
         super(json, context)
         this.color = this.tr("color", "#0000ff");
         this.width = this.tr("width", "7");
         this.dashArray = this.tr("dashArray", "");
-        
-            this.leftRightSensitive = json.offset !== undefined && json.offset !== 0 && json.offset !== "0"
-        
+
+        this.leftRightSensitive = json.offset !== undefined && json.offset !== 0 && json.offset !== "0"
+
         this.offset = this.tr("offset", "0");
     }
 
-public GenerateLeafletStyle(        tags: {}    ):
+    public GenerateLeafletStyle(tags: {}):
         {
             color: string,
             weight: number,

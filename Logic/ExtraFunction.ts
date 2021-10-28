@@ -163,12 +163,41 @@ export class ExtraFunction {
         }
     )
 
+    private static readonly GetParsed = new ExtraFunction(
+        {
+            name: "get",
+            doc: "Gets the property of the feature, parses it (as JSON) and returns it. Might return 'undefined' if not defined, null, ...",
+            args: ["key"]
+        },
+        (params, feat) => {
+            return key => {
+                const value = feat.properties[key]
+                if (value === undefined) {
+                    return undefined;
+                }
+                try {
+                    const parsed = JSON.parse(value)
+                    if(parsed === null){
+                        return undefined;
+                    }
+                    return parsed;
+                } catch (e) {
+                    console.warn("Could not parse property " + key + " due to: " + e + ", the value is " + value)
+                    return undefined;
+                }
+
+            }
+
+        }
+    )
+
     private static readonly allFuncs: ExtraFunction[] = [
         ExtraFunction.DistanceToFunc,
         ExtraFunction.OverlapFunc,
         ExtraFunction.ClosestObjectFunc,
         ExtraFunction.ClosestNObjectFunc,
-        ExtraFunction.Memberships
+        ExtraFunction.Memberships,
+        ExtraFunction.GetParsed
     ];
     private readonly _name: string;
     private readonly _args: string[];
@@ -248,11 +277,11 @@ export class ExtraFunction {
                     console.error("Could not calculate the distance between", feature, "and", otherFeature)
                     throw "Undefined distance!"
                 }
-                
-                if(distance === 0){
-                    console.trace("Got a suspiciously zero distance between", otherFeature, "and self-feature",feature)
+
+                if (distance === 0) {
+                    console.trace("Got a suspiciously zero distance between", otherFeature, "and self-feature", feature)
                 }
-                
+
                 if (distance > maxDistance) {
                     continue
                 }

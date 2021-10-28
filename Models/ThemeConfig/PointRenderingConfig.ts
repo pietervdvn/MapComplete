@@ -15,6 +15,7 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 
 export default class PointRenderingConfig extends WithContextLoader {
 
+    private static readonly  allowed_location_codes = new Set<string>(["point", "centroid","start","end"])
     public readonly location: Set<"point" | "centroid" | "start" | "end">
 
     public readonly icon: TagRenderingConfig;
@@ -25,7 +26,19 @@ export default class PointRenderingConfig extends WithContextLoader {
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
+        
+        if(typeof json.location === "string"){
+            json.location = [json.location]
+        }
+        
         this.location = new Set(json.location)
+        
+        this.location.forEach(l => {
+            const allowed = PointRenderingConfig.allowed_location_codes
+            if(!allowed.has(l)){
+                throw `A point rendering has an invalid location: '${l}' is not one of ${Array.from(allowed).join(", ")} (at ${context}.location)`
+            }
+        })
 
         if(this.location.size == 0){
             throw "A pointRendering should have at least one 'location' to defined where it should be rendered. (At "+context+".location)"

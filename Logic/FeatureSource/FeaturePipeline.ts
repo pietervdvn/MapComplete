@@ -12,7 +12,6 @@ import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
 import {Changes} from "../Osm/Changes";
 import GeoJsonSource from "./Sources/GeoJsonSource";
 import Loc from "../../Models/Loc";
-import WayHandlingApplyingFeatureSource from "./Sources/RenderingMultiPlexerFeatureSource";
 import RegisteringAllFromFeatureSourceActor from "./Actors/RegisteringAllFromFeatureSourceActor";
 import TiledFromLocalStorageSource from "./TiledFeatureSource/TiledFromLocalStorageSource";
 import SaveTileToLocalStorageActor from "./Actors/SaveTileToLocalStorageActor";
@@ -26,6 +25,7 @@ import OsmFeatureSource from "./TiledFeatureSource/OsmFeatureSource";
 import {OsmConnection} from "../Osm/OsmConnection";
 import {Tiles} from "../../Models/TileRange";
 import TileFreshnessCalculator from "./TileFreshnessCalculator";
+import {ElementStorage} from "../ElementStorage";
 
 
 /**
@@ -85,7 +85,8 @@ export default class FeaturePipeline {
             readonly overpassMaxZoom: UIEventSource<number>;
             readonly osmConnection: OsmConnection
             readonly currentBounds: UIEventSource<BBox>,
-            readonly osmApiTileSize: UIEventSource<number>
+            readonly osmApiTileSize: UIEventSource<number>,
+            readonly allElements: ElementStorage
         }) {
         this.state = state;
 

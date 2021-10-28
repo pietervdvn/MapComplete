@@ -212,12 +212,13 @@ export default class ShowDataLayer {
         const lineRenderingIndex = feature.lineRenderingIndex
 
         if (pointRenderingIndex !== undefined) {
+            const style = layer.mapRendering[pointRenderingIndex].GenerateLeafletStyle(tagsSource, this._enablePopups)
             return {
-                icon: layer.mapRendering[pointRenderingIndex].GenerateLeafletStyle(tagsSource, this._enablePopups)
+                icon: style
             }
         }
         if (lineRenderingIndex !== undefined) {
-            return layer.lineRendering[lineRenderingIndex].GenerateLeafletStyle(tagsSource)
+            return layer.lineRendering[lineRenderingIndex].GenerateLeafletStyle(tagsSource.data)
         }
 
         throw "Neither lineRendering nor mapRendering defined for " + feature
@@ -232,9 +233,8 @@ export default class ShowDataLayer {
         if (layer === undefined) {
             return;
         }
-
         let tagSource = this.allElements?.getEventSourceById(feature.properties.id) ?? new UIEventSource<any>(feature.properties)
-        const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0)
+        const clickable = !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0) && this._enablePopups
         let style: any = layer.mapRendering[feature.pointRenderingIndex].GenerateLeafletStyle(tagSource, clickable);
         const baseElement = style.html;
         if (!this._enablePopups) {

@@ -251,12 +251,11 @@
               }
             ]
           },
-          "width": {
-            "render": "8"
-          },
           "iconSize": {
             "render": "40,40,center"
-          },
+          }
+         
+        }, {
           "color": {
             "render": "#00f",
             "mappings": [
@@ -275,6 +274,9 @@
                 "then": "#ff0"
               }
             ]
+          },
+          "width": {
+            "render": "8"
           }
         }
       ]
@@ -290,17 +292,7 @@
           ]
         }
       },
-      "mapRendering": [
-        {
-          "location": "point",
-          "color": {
-            "render": "#ccc"
-          },
-          "width": {
-            "render": "0"
-          }
-        }
-      ]
+      "mapRendering": []
     }
   ],
   "enableShareScreen": false,
