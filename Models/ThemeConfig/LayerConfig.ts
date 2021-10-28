@@ -1,7 +1,6 @@
 import {Translation} from "../../UI/i18n/Translation";
 import SourceConfig from "./SourceConfig";
 import TagRenderingConfig from "./TagRenderingConfig";
-import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import PresetConfig from "./PresetConfig";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Translations from "../../UI/i18n/Translations";
@@ -58,55 +57,42 @@ export default class LayerConfig extends WithContextLoader {
         context = context + "." + json.id;
         super(json, context)
         this.id = json.id;
-        let legacy = undefined;
-        if (json["overpassTags"] !== undefined) {
-            // @ts-ignore
-            legacy = TagUtils.Tag(json["overpassTags"], context + ".overpasstags");
+
+        if (json.source === undefined) {
+            throw "Layer " + this.id + " does not define a source section ("+context+")"
         }
 
-        if (json.source !== undefined) {
-            this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
-            if (legacy !== undefined) {
-                throw (
-                    context +
-                    "Both the legacy 'layer.overpasstags' and the new 'layer.source'-field are defined"
-                );
-            }
+        if (json.source.osmTags === undefined) {
+            throw "Layer " + this.id + " does not define a osmTags in the source section - these should always be present, even for geojson layers ("+context+")"
 
-            let osmTags: TagsFilter = legacy;
-            if (json.source["osmTags"]) {
-                osmTags = TagUtils.Tag(
-                    json.source["osmTags"],
-                    context + "source.osmTags"
-                );
-            }
-
-            if (json.source["geoJsonSource"] !== undefined) {
-                throw context + "Use 'geoJson' instead of 'geoJsonSource'";
-            }
-
-            if (json.source["geojson"] !== undefined) {
-                throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)";
-            }
-
-            this.source = new SourceConfig(
-                {
-                    osmTags: osmTags,
-                    geojsonSource: json.source["geoJson"],
-                    geojsonSourceLevel: json.source["geoJsonZoomLevel"],
-                    overpassScript: json.source["overpassScript"],
-                    isOsmCache: json.source["isOsmCache"],
-                    mercatorCrs: json.source["mercatorCrs"]
-                },
-                json.id
-            );
-        }else if(legacy === undefined){
-            throw "No valid source defined ("+context+")"
-        } else {
-            this.source = new SourceConfig({
-                osmTags: legacy,
-            });
         }
+
+        this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
+
+        const osmTags = TagUtils.Tag(
+            json.source.osmTags,
+            context + "source.osmTags"
+        );
+
+        if (json.source["geoJsonSource"] !== undefined) {
+            throw context + "Use 'geoJson' instead of 'geoJsonSource'";
+        }
+
+        if (json.source["geojson"] !== undefined) {
+            throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)";
+        }
+
+        this.source = new SourceConfig(
+            {
+                osmTags: osmTags,
+                geojsonSource: json.source["geoJson"],
+                geojsonSourceLevel: json.source["geoJsonZoomLevel"],
+                overpassScript: json.source["overpassScript"],
+                isOsmCache: json.source["isOsmCache"],
+                mercatorCrs: json.source["mercatorCrs"]
+            },
+            json.id
+        );
 
 
         this.allowSplit = json.allowSplit ?? false;
@@ -284,11 +270,13 @@ export default class LayerConfig extends WithContextLoader {
 
         const normalTagRenderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[] = []
 
-        
-        const renderingsToRewrite: ({ rewrite:{
+
+        const renderingsToRewrite: ({
+            rewrite: {
                 sourceString: string,
                 into: string[]
-            }, renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[] })[] = []
+            }, renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[]
+        })[] = []
         for (let i = 0; i < json.tagRenderings.length; i++) {
             const tr = json.tagRenderings[i];
             const rewriteDefined = tr["rewrite"] !== undefined
@@ -309,17 +297,17 @@ export default class LayerConfig extends WithContextLoader {
 
         const allRenderings = this.ParseTagRenderings(normalTagRenderings, false);
 
-        if(renderingsToRewrite.length === 0){
+        if (renderingsToRewrite.length === 0) {
             return allRenderings
         }
-        
-        function prepConfig(keyToRewrite: string, target:string, tr: TagRenderingConfigJson){
-            
-            function replaceRecursive(transl: string | any){
-                if(typeof transl === "string"){
+
+        function prepConfig(keyToRewrite: string, target: string, tr: TagRenderingConfigJson) {
+
+            function replaceRecursive(transl: string | any) {
+                if (typeof transl === "string") {
                     return transl.replace(keyToRewrite, target)
                 }
-                if(transl.map !== undefined){
+                if (transl.map !== undefined) {
                     return transl.map(o => replaceRecursive(o))
                 }
                 transl = {...transl}
@@ -328,39 +316,39 @@ export default class LayerConfig extends WithContextLoader {
                 }
                 return transl
             }
-            
+
             const orig = tr;
             tr = replaceRecursive(tr)
-            
-            tr.id = target+"-"+orig.id
+
+            tr.id = target + "-" + orig.id
             tr.group = target
             return tr
         }
 
         const rewriteGroups: Map<string, TagRenderingConfig[]> = new Map<string, TagRenderingConfig[]>()
         for (const rewriteGroup of renderingsToRewrite) {
-            
+
             const tagRenderings = rewriteGroup.renderings
             const textToReplace = rewriteGroup.rewrite.sourceString
             const targets = rewriteGroup.rewrite.into
             for (const target of targets) {
                 const parsedRenderings = this.ParseTagRenderings(tagRenderings, false, tr => prepConfig(textToReplace, target, tr))
-                
-                if(!rewriteGroups.has(target)){
+
+                if (!rewriteGroups.has(target)) {
                     rewriteGroups.set(target, [])
                 }
-                rewriteGroups.get(target).push(... parsedRenderings)
+                rewriteGroups.get(target).push(...parsedRenderings)
             }
         }
-        
-        
+
+
         rewriteGroups.forEach((group, groupName) => {
             group.push(new TagRenderingConfig({
-                id:"questions",
-                group:groupName
+                id: "questions",
+                group: groupName
             }))
         })
-        
+
         rewriteGroups.forEach(group => {
             allRenderings.push(...group)
         })

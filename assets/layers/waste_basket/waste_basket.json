@@ -90,8 +90,7 @@
             "id": "dispensing_dog_bags",
             "question": {
                 "en": "Does this waste basket have a dispenser for dog excrement bags?",
-                "nl": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?",
-                "then": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?"
+                "nl": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?"
             },
             "condition": {
                 "or": [

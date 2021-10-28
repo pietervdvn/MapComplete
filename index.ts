@@ -1,7 +1,6 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import Combine from "./UI/Base/Combine";
-import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import MinimapImplementation from "./UI/Base/MinimapImplementation";
 import CountryCoder from "latlon2country/index";
@@ -70,7 +69,6 @@ class Init {
         window.mapcomplete_state = State.state;
         new DefaultGUI(State.state, guiState)
 
-
         if (encoded !== undefined && encoded.length > 10) {
             // We save the layout to the user settings and local storage
             State.state.osmConnection.OnLoggedIn(() => {
@@ -78,13 +76,8 @@ class Init {
                     .GetLongPreference("installed-theme-" + layoutToUse.id)
                     .setData(encoded);
             });
-
         }
-
-
     }
-
-
 }
 
 

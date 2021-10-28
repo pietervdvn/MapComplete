@@ -555,6 +555,7 @@
     {
       "id": "GRB",
       "source": {
+        "osmTags": "HUISNR~*",
         "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
         "geoJsonZoomLevel": 18,
         "mercatorCrs": true,

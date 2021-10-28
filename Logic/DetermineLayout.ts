@@ -10,6 +10,7 @@ import {UIEventSource} from "./UIEventSource";
 import {LocalStorageSource} from "./Web/LocalStorageSource";
 import LZString from "lz-string";
 import * as personal from "../assets/themes/personal/personal.json";
+import LegacyJsonConvert from "../Models/ThemeConfig/LegacyJsonConvert";
 
 export default class DetermineLayout {
 
@@ -74,6 +75,7 @@ export default class DetermineLayout {
 
             const parsed = await Utils.downloadJson(link)
             console.log("Got ", parsed)
+            LegacyJsonConvert.fixThemeConfig(parsed)
             try {
                 parsed.id = link;
                 return new LayoutConfig(parsed, false).patchImages(link, JSON.stringify(parsed));
@@ -136,6 +138,7 @@ export default class DetermineLayout {
                 }
             }
 
+            LegacyJsonConvert.fixThemeConfig(json)
             const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);
             return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
