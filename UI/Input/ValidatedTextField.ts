@@ -552,7 +552,11 @@ export default class ValidatedTextField {
 
     public static HelpText(): string {
         const explanations = ValidatedTextField.tpList.map(type => ["## " + type.name, "", type.explanation].join("\n")).join("\n\n")
-        return "# Available types for text fields\n\nThe listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them\n\n" + explanations
+        return new Combine([
+            new Title("Available types for text fields", 1),
+            "The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them",
+            explanations
+        ]).SetClass("flex flex-col").AsMarkdown()
     }
 
     private static tp(name: string,

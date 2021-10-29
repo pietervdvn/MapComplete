@@ -573,6 +573,9 @@
         "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date"
       ],
       "tagRenderings": [
+        {
+          "render": "{import_button(Upload this geometry to OpenStreetMap)}"
+        },
         "all_tags"
       ],
       "isShown": {
