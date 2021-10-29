@@ -183,7 +183,7 @@ Some advanced functions are available on **feat** as well:
 ### overlapWith 
 
  Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.
-
+The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list
 For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')` 
 
   0. ...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)

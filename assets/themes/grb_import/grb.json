@@ -7,7 +7,8 @@
     "nl": "Grb Fixup"
   },
   "description": {
-    "nl": "GRB Fixup"
+    "nl": "GRB Fixup",
+    "en": "This theme is an attempt to help automating the GRB import.<br/>Note that this is very hacky and 'steals' the GRB data from an external site; in order to do this, you need to install and activate <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>this firefox extension</a> for it to work."
   },
   "language": [
     "nl"
@@ -23,6 +24,9 @@
   "clustering": {
     "maxZoom": 15
   },
+  "overrideAll": {
+    "minzoom": 18
+  },
   "layers": [
     {
       "id": "OSM-buildings",
@@ -31,7 +35,6 @@
         "osmTags": "building~*",
         "maxCacheAge": 0
       },
-      "minzoom": 16,
       "mapRendering": [
         {
           "width": {
@@ -67,6 +70,55 @@
       ],
       "title": "OSM-gebouw",
       "tagRenderings": [
+        {
+          "id": "building type",
+          "freeform": {
+            "key": "building"
+          },
+          "render": "The building type is <b>{building}</b>",
+          "mappings": [
+            {
+              "if": "building=house",
+              "then": "A normal house"
+            },
+            {
+              "if": "building=detached",
+              "then": "A house detached from other building"
+            },
+            {
+              "if": "building=semidetached_house",
+              "then": "A house sharing only one wall with another house"
+            },
+            {
+              "if": "building=apartments",
+              "then": "An apartment building - highrise for living"
+            },
+            {
+              "if": "building=office",
+              "then": "An office building - highrise for work"
+            },
+            {
+              "if": "building=apartments",
+              "then": "An apartment building"
+            },
+            {
+              "if": "building=shed",
+              "then": "A small shed, e.g. in a garden"
+            },
+            {
+              "if": "building=garage",
+              "then": "A single garage to park a car"
+            },
+            {
+              "if": "building=garages",
+              "then": "A building containing only garages; typically they are all identical"
+            },
+            {
+              "if": "building=yes",
+              "then": "A building - no specification"
+            }
+          ]
+        },
         "all_tags"
       ]
     },
@@ -99,7 +151,6 @@
         },
         "maxCacheAge": 0
       },
-      "minzoom": 18,
       "mapRendering": [
         {
           "color": {
@@ -124,7 +175,6 @@
       "name": {
         "nl": "Fixmes op gebouwen"
       },
-      "minzoom": 21,
       "source": {
         "maxCacheAge": 0,
         "osmTags": {
@@ -314,7 +364,6 @@
         "geoJsonZoomLevel": 18,
         "maxCacheAge": 0
       },
-      "minzoom": 16,
       "name": "CRAB-addressen",
       "title": "CRAB-adres",
       "mapRendering": [
@@ -372,7 +421,6 @@
       "name": {
         "nl": "Fixmes op gebouwen"
       },
-      "minzoom": 16,
       "source": {
         "maxCacheAge": 0,
         "osmTags": {
@@ -563,7 +611,6 @@
       },
       "name": "GRB geometries",
       "title": "GRB outline",
-      "minzoom": 16,
       "calculatedTags": [
         "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.9)[0] ?? null",
         "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
@@ -588,13 +635,34 @@
           "condition": "_overlaps_with!=null"
         },
         {
+          "id": "apply-id",
+          "render": "{tag_apply(source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref,Mark the OSM-building as imported,,_osm_obj:id)}",
+          "condition": {
+            "and": [
+              "_overlaps_with!=null"
+            ]
+          }
+        },
+        {
+          "id": "apply-building-type",
+          "render": "{tag_apply(building=$building,Use the building type from GRB,,_osm_obj:id)}",
+          "condition": {
+            "and": [
+              "_overlaps_with!=null",
+              "_osm_obj:building=yes",
+              "building!=yes"
+            ]
+          }
+        },
+        {
           "id": "Import-button",
           "render": "{import_button(building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Upload this building to OpenStreetMap)}",
           "mappings": [
             {
               "if": "_overlaps_with!=null",
               "then": "Cannot be imported directly, there is a nearly identical building geometry in OpenStreetMap"
-            }]
+            }
+          ]
         },
         "all_tags"
       ],

@@ -22,7 +22,7 @@ function WriteFile(filename, html: string | BaseUIElement, autogenSource: string
     ]).AsMarkdown());
 }
 
-WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage, ["UI/SpecialVisualisations.ts"])
+WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), ["UI/SpecialVisualisations.ts"])
 WriteFile("./Docs/CalculatedTags.md", new Combine([SimpleMetaTagger.HelpText(), ExtraFunction.HelpText()]).SetClass("flex-col"),
     ["SimpleMetaTagger", "ExtraFunction"])
 WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), ["ValidatedTextField.ts"]);

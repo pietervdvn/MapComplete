@@ -131,6 +131,10 @@
             "previouslyHiddenTitle": "Previously visited hidden themes",
             "hiddenExplanation": "These themes are only visible if you know the link. You have discovered {hidden_discovered} out of {total_hidden} hidden themes"
         },
+        "apply_button": {
+            "isApplied": "The changes are applied",
+            "appliedOnAnotherObject": "The object {id} will receive {tags}"
+        },
         "sharescreen": {
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
             "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen' button in the URL bar to do this.",

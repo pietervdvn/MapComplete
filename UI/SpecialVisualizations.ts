@@ -34,6 +34,10 @@ import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import Link from "./Base/Link";
 import List from "./Base/List";
 import {OsmConnection} from "../Logic/Osm/OsmConnection";
+import {SubtleButton} from "./Base/SubtleButton";
+import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
+import {And} from "../Logic/Tags/And";
+import Toggle from "./Input/Toggle";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -45,6 +49,17 @@ export interface SpecialVisualization {
 
 export default class SpecialVisualizations {
 
+    private static tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
+This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. \`ref=$source:geometry:type/$source:geometry:ref\`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with \`[a-zA-Z0-9_:]*\`). Sadly, delimiting with \`{}\` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+ `
     public static specialVisualizations: SpecialVisualization[] =
         [
             {
@@ -222,7 +237,6 @@ export default class SpecialVisualizations {
                     return minimap;
                 }
             },
-
             {
                 funcName: "sided_minimap",
                 docs: "A small map showing _only one side_ the selected feature. *This features requires to have linerenderings with offset* as only linerenderings with a postive or negative offset will be shown. Note: in most cases, this map will be automatically introduced",
@@ -305,14 +319,14 @@ export default class SpecialVisualizations {
                     name: "key",
                     defaultValue: "opening_hours",
                     doc: "The tagkey from which the table is constructed."
-                },{
+                }, {
                     name: "prefix",
                     defaultValue: "",
-                    doc:"Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__"
-                },{
+                    doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__"
+                }, {
                     name: "postfix",
                     defaultValue: "",
-                    doc:"Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
+                    doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
                 }],
                 example: "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                 constr: (state: State, tagSource: UIEventSource<any>, args) => {
@@ -529,57 +543,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
 The first argument of the import button takes a \`;\`-seperated list of tags to add.
 
-These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
-This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
-
-If a value to substitute is undefined, empty string will be used instead.
-
-This supports multiple values, e.g. \`ref=$source:geometry:type/$source:geometry:ref\`
-
-Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with \`[a-zA-Z0-9_:]*\`). Sadly, delimiting with \`{}\` as these already mark the boundaries of the special rendering...
-
-Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
-   
+${SpecialVisualizations.tagsToApplyHelpText}
+  
 `,
                 constr: (state, tagSource, args) => {
                     if (!state.layoutToUse.official && !(state.featureSwitchIsTesting.data || state.osmConnection._oauth_config.url === OsmConnection.oauth_configs["osm-test"].url)) {
                         return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),
                             new FixedUiElement("To test, add <b>test=true</b> or <b>backend=osm-test</b> to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
                     }
-                    const tgsSpec = args[0].split(";").map(spec => {
-                        const kv = spec.split("=").map(s => s.trim());
-                        if (kv.length != 2) {
-                            throw "Invalid key spec: multiple '=' found in " + spec
-                        }
-                        return kv
-                    })
-                    const rewrittenTags: UIEventSource<Tag[]> = tagSource.map(tags => {
-                        const newTags: Tag [] = []
-                        for (const [key, value] of tgsSpec) {
-                            if (value.indexOf('$') >= 0) {
-                                
-                                let parts = value.split("$")
-                                // THe first of the split won't start with a '$', so no substitution needed
-                                let actualValue = parts[0]
-                                parts.shift()
-
-                                for (const part of parts) {
-                                    const [_, varName, leftOver] = part.match(/([a-zA-Z0-9_:]*)(.*)/)
-                                    actualValue += (tags[varName] ?? "") + leftOver
-                                }
-                                newTags.push(new Tag(key, actualValue))
-                            } else {
-                                newTags.push(new Tag(key, value))
-                            }
-                        }
-                        return newTags
-                    })
+                    const rewrittenTags = SpecialVisualizations.generateTagsToApply(args[0], tagSource)
                     const id = tagSource.data.id;
                     const feature = state.allElements.ContainingFeatures.get(id)
                     const minzoom = Number(args[3])
-                    const message =  args[1]
+                    const message = args[1]
                     const image = args[2]
-                    
+
                     return new ImportButton(
                         image, message, tagSource, rewrittenTags, feature, minzoom, state
                     )
@@ -636,12 +614,113 @@ Note that these values can be prepare with javascript in the theme by using a [c
                     );
 
                 }
+            },
+            {
+                funcName: "tag_apply",
+                docs: "Shows a big button; clicking this button will apply certain tags onto the feature.\n\nThe first argument takes a specification of which tags to add.\n" + SpecialVisualizations.tagsToApplyHelpText,
+                args: [
+                    {
+                        name: "tags_to_apply",
+                        doc: "A specification of the tags to apply"
+                    },
+                    {
+                        name: "message",
+                        doc: "The text to show to the contributor"
+                    },
+                    {
+                        name: "image",
+                        doc: "An image to show to the contributor on the button"
+                    },
+                    {
+                        name: "id_of_object_to_apply_this_one",
+                        defaultValue: undefined,
+                        doc: "If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element"
+                    }
+                ],
+                example: "`{tag_apply(survey_date:=$_now:date, Surveyed today!)}`",
+                constr: (state, tags, args) => {
+                    const tagsToApply = SpecialVisualizations.generateTagsToApply(args[0], tags)
+                    const msg = args[1]
+                    let image = args[2]?.trim()
+                    if (image === "" || image === "undefined") {
+                        image = undefined
+                    }
+                    const targetIdKey = args[3]
+                    const t = Translations.t.general.apply_button
+                    
+                    const tagsExplanation = new VariableUiElement(tagsToApply.map(tagsToApply => {
+                            const tagsStr = tagsToApply.map(t => t.asHumanString(false, true)).join("&");
+                            let el: BaseUIElement = new FixedUiElement(tagsStr)
+                            if(targetIdKey !== undefined){
+                                 const targetId = tags.data[targetIdKey] ?? tags.data.id
+                                el = t.appliedOnAnotherObject.Subs({tags: tagsStr , id: targetId })
+                            }
+                            return el;
+                        }
+                    )).SetClass("subtle")
+                    
+                    const applied = new UIEventSource(false)
+                    const applyButton = new SubtleButton(image, new Combine([msg, tagsExplanation]).SetClass("flex flex-col"))
+                        .onClick(() => {
+                            const targetId = tags.data[ targetIdKey] ?? tags.data.id
+                            const changeAction = new ChangeTagAction(targetId,
+                                new And(tagsToApply.data),
+                                tags.data, // We pass in the tags of the selected element, not the tags of the target element!
+                                {
+                                    theme: state.layoutToUse.id,
+                                    changeType: "answer"
+                                }
+                            )
+                            state.changes.applyAction(changeAction)
+                            applied.setData(true)
+                        })
+
+                    
+                    return new Toggle(
+                        new Toggle(
+                         t.isApplied.SetClass("thanks"),   
+                        applyButton,
+                            applied
+                        )
+                        , undefined, state.osmConnection.isLoggedIn)
+                }
             }
         ]
 
-    static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
+    private static generateTagsToApply(spec: string, tagSource: UIEventSource<any>): UIEventSource<Tag[]> {
 
-    private static GenHelpMessage() {
+        const tgsSpec = spec.split(";").map(spec => {
+            const kv = spec.split("=").map(s => s.trim());
+            if (kv.length != 2) {
+                throw "Invalid key spec: multiple '=' found in " + spec
+            }
+            return kv
+        })
+        return tagSource.map(tags => {
+            const newTags: Tag [] = []
+            for (const [key, value] of tgsSpec) {
+                if (value.indexOf('$') >= 0) {
+
+                    let parts = value.split("$")
+                    // THe first of the split won't start with a '$', so no substitution needed
+                    let actualValue = parts[0]
+                    parts.shift()
+
+                    for (const part of parts) {
+                        const [_, varName, leftOver] = part.match(/([a-zA-Z0-9_:]*)(.*)/)
+                        actualValue += (tags[varName] ?? "") + leftOver
+                    }
+                    newTags.push(new Tag(key, actualValue))
+                } else {
+                    newTags.push(new Tag(key, value))
+                }
+            }
+            return newTags
+        })
+
+    }
+
+    public static HelpMessage() {
 
         const helpTexts =
             SpecialVisualizations.specialVisualizations.map(viz => new Combine(
@@ -651,7 +730,7 @@ Note that these values can be prepare with javascript in the theme by using a [c
                     viz.args.length > 0 ? new Table(["name", "default", "description"],
                         viz.args.map(arg => {
                             let defaultArg = arg.defaultValue ?? "_undefined_"
-                            if(defaultArg == ""){
+                            if (defaultArg == "") {
                                 defaultArg = "_empty string_"
                             }
                             return [arg.name, defaultArg, arg.doc];
@@ -665,9 +744,9 @@ Note that these values can be prepare with javascript in the theme by using a [c
                 ]
             ));
 
-        
+
         const toc = new List(
-            SpecialVisualizations.specialVisualizations.map(viz => new Link(viz.funcName, "#"+viz.funcName))
+            SpecialVisualizations.specialVisualizations.map(viz => new Link(viz.funcName, "#" + viz.funcName))
         )
 
         return new Combine([
@@ -679,4 +758,5 @@ Note that these values can be prepare with javascript in the theme by using a [c
             ]
         ).SetClass("flex flex-col");
     }
+
 }

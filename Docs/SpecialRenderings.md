@@ -23,6 +23,7 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
   - [canonical](#canonical)
   - [import_button](#import_button)
   - [multi_apply](#multi_apply)
+  - [tag_apply](#tag_apply)
 
 
 
@@ -191,6 +192,8 @@ key | _undefined_ | The key of the tag to give the canonical text for
 
  This button will copy the data from an external dataset into OpenStreetMap. It is only functional in official themes but can be tested in unofficial themes.
 
+#### Importing a dataset into OpenStreetMap: requirements
+
 If you want to import a dataset, make sure that:
 
 1. The dataset to import has a suitable license
@@ -199,17 +202,42 @@ If you want to import a dataset, make sure that:
 
 There are also some technicalities in your theme to keep in mind:
 
-1. The new point will be added and will flow through the program as any other new point as if it came from OSM.
+1. The new feature will be added and will flow through the program as any other new point as if it came from OSM.
     This means that there should be a layer which will match the new tags and which will display it.
-2. The original point from your geojson layer will gain the tag '_imported=yes'.
+2. The original feature from your geojson layer will gain the tag '_imported=yes'.
     This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
 3. There should be a way for the theme to detect previously imported points, even after reloading.
-    A reference number to the original dataset is an excellen way to do this    
+    A reference number to the original dataset is an excellent way to do this
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
+    
+#### Disabled in unofficial themes
+
+The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md). 
+The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
+In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
+
+
+#### Specifying which tags to copy or add
+
+The first argument of the import button takes a `;`-seperated list of tags to add.
+
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. `ref=$source:geometry:type/$source:geometry:ref`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with `[a-zA-Z0-9_:]*`). Sadly, delimiting with `{}` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+ 
+  
  
 
 name | default | description
 ------ | --------- | -------------
-tags | _undefined_ | Tags to copy-specification. This contains one or more pairs (seperated by a `;`), e.g. `amenity=fast_food; addr:housenumber=$number`. This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. (Hint: prepare these values, e.g. with calculatedTags)
+tags | _undefined_ | The tags to add onto the new object - see specification above
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 minzoom | 18 | How far the contributor must zoom in before being able to import the point
@@ -233,4 +261,33 @@ overwrite | _undefined_ | If set to 'true', the tags on the other objects will a
  
 #### Example usage 
 
- {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)} Generated from UI/SpecialVisualisations.ts
+ {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}
+
+
+### tag_apply 
+
+ Shows a big button; clicking this button will apply certain tags onto the feature.
+
+The first argument takes a specification of which tags to add.
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. `ref=$source:geometry:type/$source:geometry:ref`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with `[a-zA-Z0-9_:]*`). Sadly, delimiting with `{}` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+  
+
+name | default | description
+------ | --------- | -------------
+tags_to_apply | _undefined_ | A specification of the tags to apply
+message | _undefined_ | The text to show to the contributor
+image | _undefined_ | An image to show to the contributor on the button
+id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element
+ 
+#### Example usage 
+
+ `{tag_apply(survey_date:=$_now:date, Surveyed today!)}` Generated from UI/SpecialVisualisations.ts
