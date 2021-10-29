@@ -24,7 +24,40 @@ A geographical length in meters (rounded at two points). Will give an extra mini
 
 ## wikidata
 
-A wikidata identifier, e.g. Q42. Input helper arguments: [ key: the value of this tag will initialize search (default: name), options: { removePrefixes: string[], removePostfixes: string[] }  these prefixes and postfixes will be removed from the initial search value]
+A wikidata identifier, e.g. Q42. 
+### Helper arguments 
+
+ 
+
+name | doc
+------ | -----
+key | the value of this tag will initialize search (default: name)
+options | A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`. 
+
+subarg | doc
+-------- | -----
+removePrefixes | remove these snippets of text from the start of the passed string to search
+removePostfixes | remove these snippets of text from the end of the passed string to search
+
+ 
+### Example usage 
+
+ The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name```"freeform": {
+                "key": "name:etymology:wikidata",
+                "type": "wikidata",
+                "helperArgs": [
+                    "name",
+                    {
+                        "removePostfixes": [
+                            "street",
+                            "boulevard",
+                            "path",
+                            "square",
+                            "plaza",
+                        ]
+                    }
+                ]
+            },```
 
 ## int
 
@@ -60,7 +93,38 @@ A phone number
 
 ## opening_hours
 
-Has extra elements to easily input when a POI is opened
+Has extra elements to easily input when a POI is opened. 
+### Helper arguments 
+
+ 
+
+name | doc
+------ | -----
+options | A JSON-object of type `{ prefix: string, postfix: string }`.  
+
+subarg | doc
+-------- | -----
+prefix | Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse
+postfix | Piece of text that will always be added to the end of the generated opening hours
+
+ 
+### Example usage 
+
+ To add a conditional (based on time) access restriction:
+
+```
+            "freeform": {
+                "key": "access:conditional",
+                "type": "opening_hours",
+                "helperArgs": [
+                    {
+                      "prefix":"no @ (",
+                      "postfix":")"
+                    }
+                ]
+            },```
+
+*Don't forget to pass these in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`
 
 ## color
 

@@ -298,7 +298,7 @@
             "id": "bike_shop-email"
         },
         {
-            "render": "{opening_hours_table(opening_hours)}",
+            "render": "{opening_hours_table()}",
             "question": "When is this shop opened?",
             "freeform": {
                 "key": "opening_hours",

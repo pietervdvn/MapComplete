@@ -14,11 +14,11 @@
 
 name | default | description
 ------ | --------- | -------------
-image key/prefix (multiple values allowed if comma-seperated) | image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... 
+image key/prefix (multiple values allowed if comma-seperated) | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... 
  
 #### Example usage 
 
- `{image_carousel(image)}` 
+ `{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}` 
 ### image_upload 
 
  Creates a button where a user can upload an image to IMGUR 
@@ -73,10 +73,12 @@ fallback | undefined | The identifier to use, if <i>tags[subjectKey]</i> as spec
 name | default | description
 ------ | --------- | -------------
 key | opening_hours | The tagkey from which the table is constructed.
+prefix |  | Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__
+postfix |  | Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__
  
 #### Example usage 
 
- `{opening_hours_table(opening_hours)}` 
+ A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}` 
 ### live 
 
  Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)} 
