@@ -59,22 +59,22 @@ class WikidataTextField implements TextFieldDef {
 
 \`\`\`
 "freeform": {
-                "key": "name:etymology:wikidata",
-                "type": "wikidata",
-                "helperArgs": [
-                    "name",
-                    {
-                        "removePostfixes": [
-                            "street",
-                            "boulevard",
-                            "path",
-                            "square",
-                            "plaza",
-                        ]
-                    }
-                ]
-            }
-            \`\`\``
+    "key": "name:etymology:wikidata",
+    "type": "wikidata",
+    "helperArgs": [
+        "name",
+        {
+            "removePostfixes": [
+                "street",
+                "boulevard",
+                "path",
+                "square",
+                "plaza",
+            ]
+        }
+    ]
+}
+\`\`\``
         ]).AsMarkdown()
 
 
@@ -154,16 +154,16 @@ class OpeningHoursTextField implements TextFieldDef {
                 ]),
             new Title("Example usage"),
             "To add a conditional (based on time) access restriction:\n\n```\n" + `
-            "freeform": {
-                "key": "access:conditional",
-                "type": "opening_hours",
-                "helperArgs": [
-                    {
-                      "prefix":"no @ (",
-                      "postfix":")"
-                    }
-                ]
-            }` + "```\n\n*Don't forget to pass these in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]).AsMarkdown()
+"freeform": {
+    "key": "access:conditional",
+    "type": "opening_hours",
+    "helperArgs": [
+        {
+          "prefix":"no @ (",
+          "postfix":")"
+        }
+    ]
+}` + "\n```\n\n*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]).AsMarkdown()
 
 
     isValid() {

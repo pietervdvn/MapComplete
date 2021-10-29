@@ -46,22 +46,22 @@ removePostfixes | remove these snippets of text from the end of the passed strin
 
 ```
 "freeform": {
-                "key": "name:etymology:wikidata",
-                "type": "wikidata",
-                "helperArgs": [
-                    "name",
-                    {
-                        "removePostfixes": [
-                            "street",
-                            "boulevard",
-                            "path",
-                            "square",
-                            "plaza",
-                        ]
-                    }
-                ]
-            }
-            ```
+    "key": "name:etymology:wikidata",
+    "type": "wikidata",
+    "helperArgs": [
+        "name",
+        {
+            "removePostfixes": [
+                "street",
+                "boulevard",
+                "path",
+                "square",
+                "plaza",
+            ]
+        }
+    ]
+}
+```
 
 ## int
 
@@ -118,18 +118,19 @@ postfix | Piece of text that will always be added to the end of the generated op
 
 ```
 
-            "freeform": {
-                "key": "access:conditional",
-                "type": "opening_hours",
-                "helperArgs": [
-                    {
-                      "prefix":"no @ (",
-                      "postfix":")"
-                    }
-                ]
-            }```
+"freeform": {
+    "key": "access:conditional",
+    "type": "opening_hours",
+    "helperArgs": [
+        {
+          "prefix":"no @ (",
+          "postfix":")"
+        }
+    ]
+}
+```
 
-*Don't forget to pass these in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`
+*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`
 
 ## color
 
