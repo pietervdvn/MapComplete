@@ -44,7 +44,7 @@ It is possible to quickly make and distribute your own theme
 - [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=maps&z=14&lat=50.650&lon=4.2668#element),
   after a tweet
 
-There are plenty more. [Discover them in the app](https://pietervdvn.github.io/mc/develop/index.html).
+There are plenty more. [Discover them in the app](https://mapcomplete.osm.be/index.html).
 
 ### Statistics
 
