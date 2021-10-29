@@ -33,6 +33,7 @@ It is possible to quickly make and distribute your own theme
 
 ## Examples
 
+- [An overview of all official themes](https://pietervdvn.github.io/mc/develop/index.html).
 - [Buurtnatuur.be](http://buurtnatuur.be), developed for the Belgian [Green party](https://www.groen.be/). They also
   funded the initial development!
 - [Cyclofix](https://pietervdvn.github.io/MapComplete/index.html?layout=cyclofix), further development
@@ -43,7 +44,7 @@ It is possible to quickly make and distribute your own theme
 - [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=maps&z=14&lat=50.650&lon=4.2668#element),
   after a tweet
 
-There are plenty more. Discover them in the app.
+There are plenty more. [Discover them in the app](https://pietervdvn.github.io/mc/develop/index.html).
 
 ### Statistics
 
