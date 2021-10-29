@@ -10,7 +10,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
  * Makes sure the hash shows the selected element and vice-versa.
  */
 export default class SelectedFeatureHandler {
-    private static readonly _no_trigger_on = new Set(["welcome", "copyright", "layers", "new", "filter","", undefined])
+    private static readonly _no_trigger_on = new Set(["welcome", "copyright", "layers", "new", "filters","", undefined])
     private readonly hash: UIEventSource<string>;
     private readonly state: {
         selectedElement: UIEventSource<any>,

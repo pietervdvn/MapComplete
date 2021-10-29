@@ -161,6 +161,14 @@
             "iconAttribution": {
                 "title": "Used icons"
             },
+            "openIssueTracker": "File a bug",
+            "editJosm": "Edit here with JOSM",
+            "josmOpened": "JOSM is opened",
+            "josmNotOpened": "JOSM could not be reached. Make sure it is opened and remote control is enabled",
+            "editId": "Open the OpenStreetMap online editor here",
+            "openMapillary": "Open Mapillary here",
+            "donate": "Support MapComplete financially",
+            "openOsmcha": "See latest edits made with {theme}",
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
             "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"

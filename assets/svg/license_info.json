@@ -880,6 +880,16 @@
     "sources": []
   },
   {
+    "path": "liberapay.svg",
+    "license": "Logo (all rights reserved)",
+    "authors": [
+      "LiberaPay"
+    ],
+    "sources": [
+      "https://liberapay.com/"
+    ]
+  },
+  {
     "path": "loading.svg",
     "license": "CC0; trivial",
     "authors": [],

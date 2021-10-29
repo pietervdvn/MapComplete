@@ -1,7 +1,7 @@
 import Combine from "../Base/Combine";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Translations from "../i18n/Translations";
-import AttributionPanel from "./AttributionPanel";
+import CopyrightPanel from "./CopyrightPanel";
 import ContributorCount from "../../Logic/ContributorCount";
 import Toggle from "../Input/Toggle";
 import MapControlButton from "../MapControlButton";
@@ -37,8 +37,8 @@ export default class LeftControls extends Combine {
         const toggledCopyright = new ScrollableFullScreen(
             () => Translations.t.general.attribution.attributionTitle.Clone(),
             () =>
-                new AttributionPanel(
-                    state.layoutToUse,
+                new CopyrightPanel(
+                    state,
                     new ContributorCount(state).Contributors
                 ),
              "copyright",

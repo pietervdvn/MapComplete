@@ -65,7 +65,7 @@ export class DefaultGuiState {
         if(Hash.hash.data === "download"){
             this.downloadControlIsOpened.setData(true)
         }
-        if(Hash.hash.data === "filter"){
+        if(Hash.hash.data === "filters"){
             this.filterViewIsOpened.setData(true)
         }
         if(Hash.hash.data === "copyright"){
