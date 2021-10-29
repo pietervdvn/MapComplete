@@ -1,6 +1,7 @@
 {
     "aed": {
-        "title": "Åpne AED-kart"
+        "title": "Åpent AED-kart",
+        "description": "Defibrillatorer i nærheten"
     },
     "benches": {
         "shortDescription": "Et benkekart",
@@ -24,6 +25,9 @@
                         "mappings": {
                             "1": {
                                 "then": "Kan brukes gratis"
+                            },
+                            "0": {
+                                "then": "Man må betale for bruk"
                             }
                         }
                     },
@@ -41,6 +45,31 @@
                     "caravansites-website": {
                         "question": "Har dette stedet en nettside?",
                         "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "2": {
+                                "then": "Det er tilgang til Internett"
+                            },
+                            "0": {
+                                "then": "Det finnes tilgang til Internett"
+                            },
+                            "1": {
+                                "then": "Det er tilgang til Internett"
+                            }
+                        },
+                        "question": "Tilbyr dette stedet tilgang til Internett?"
+                    },
+                    "caravansites-internet-fee": {
+                        "question": "Må man betale for tilgang til Internett?",
+                        "mappings": {
+                            "1": {
+                                "then": "Man må ikke betale ekstra for tilgang til Internett"
+                            },
+                            "0": {
+                                "then": "Man må betale ekstra for tilgang til Internett"
+                            }
+                        }
                     }
                 }
             }
@@ -65,7 +94,17 @@
                 "name": "Klatreruter",
                 "tagRenderings": {
                     "Length": {
-                        "render": "Denne ruten er {canonical(climbing:length)} lang"
+                        "render": "Denne ruten er {canonical(climbing:length)} lang",
+                        "question": "Hvor mange meter er klatreruten?"
+                    },
+                    "Name": {
+                        "mappings": {
+                            "0": {
+                                "then": "Denne klatreruten har ikke noe navn"
+                            }
+                        },
+                        "question": "Hva er navnet på denne klatreruten?",
+                        "render": "<strong>{name}</strong>"
                     }
                 },
                 "title": {
@@ -130,12 +169,24 @@
             "1": {
                 "name": "Fremtidig sykkelvei",
                 "title": {
-                    "render": "Fremtidig sykkelvei"
-                }
+                    "render": "Fremtidig sykkelvei",
+                    "mappings": {
+                        "0": {
+                            "then": "{name} vil bli sykkelgate snart"
+                        }
+                    }
+                },
+                "description": "Denne gaten vil bli sykkelgate snart"
             },
             "2": {
                 "description": "Lag for å markere hvilken som helst gate som sykkelvei",
-                "name": "Alle gater"
+                "name": "Alle gater",
+                "title": {
+                    "render": "Gate"
+                }
+            },
+            "0": {
+                "name": "Sykkelgater"
             }
         },
         "overrideAll": {
@@ -159,7 +210,8 @@
                 }
             }
         },
-        "shortDescription": "Et kart over sykkelveier"
+        "shortDescription": "Et kart over sykkelveier",
+        "title": "Sykkelgater"
     },
     "facadegardens": {
         "layers": {
@@ -215,8 +267,140 @@
                 "name": "Kart over brannstasjoner",
                 "title": {
                     "render": "Brannstasjon"
+                },
+                "presets": {
+                    "0": {
+                        "title": "Brannstasjon"
+                    }
+                },
+                "tagRenderings": {
+                    "station-name": {
+                        "render": "Denne stasjonen heter {name}."
+                    },
+                    "station-operator": {
+                        "mappings": {
+                            "0": {
+                                "then": "Stasjonen drives av myndighetene."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
+    },
+    "cafes_and_pubs": {
+        "title": "Kafeer og kneiper"
+    },
+    "charging_stations": {
+        "title": "Ladestasjoner",
+        "shortDescription": "Et verdensomspennende kart over ladestasjoner"
+    },
+    "drinking_water": {
+        "title": "Drikkevann",
+        "description": "Offentlig tilgjengelig drikkevannssteder"
+    },
+    "food": {
+        "title": "Restauranter og søppelmat"
+    },
+    "parkings": {
+        "shortDescription": "Dette kartet viser forskjellige parkeringsplasser",
+        "title": "Parkering"
+    },
+    "postboxes": {
+        "layers": {
+            "0": {
+                "title": {
+                    "render": "Postboks"
+                },
+                "description": "Laget viser postbokser.",
+                "name": "Postbokser",
+                "presets": {
+                    "0": {
+                        "title": "postboks"
+                    }
+                }
+            },
+            "1": {
+                "description": "Et lag som viser postkontor.",
+                "name": "Postkontor",
+                "presets": {
+                    "0": {
+                        "title": "Postkontor"
+                    }
+                },
+                "title": {
+                    "render": "Postkontor"
+                }
+            }
+        },
+        "title": "Postboks og postkontor-kart"
+    },
+    "artwork": {
+        "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden"
+    },
+    "binoculars": {
+        "title": "Kikkerter",
+        "shortDescription": "Et kart over fastmonterte kikkerter"
+    },
+    "cyclofix": {
+        "title": "Cyclofix — et åpent kart for syklister"
+    },
+    "trees": {
+        "title": "Trær",
+        "description": "Kartlegg trærne.",
+        "shortDescription": "Kartlegg alle trærne"
+    },
+    "shops": {
+        "title": "Kart over åpne butikker"
+    },
+    "bookcases": {
+        "title": "Kart over åpne bokhyller"
+    },
+    "maps": {
+        "title": "Et kart over kart"
+    },
+    "natuurpunt": {
+        "title": "Naturreservater"
+    },
+    "openwindpowermap": {
+        "layers": {
+            "0": {
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "1": {
+                                "human": " kilowatt"
+                            }
+                        }
+                    }
                 }
             }
         }
+    },
+    "personal": {
+        "title": "Personlig tema"
+    },
+    "playgrounds": {
+        "shortDescription": "Et kart med lekeplasser",
+        "title": "Lekeplasser"
+    },
+    "toilets": {
+        "title": "Åpent toalettkart"
+    },
+    "uk_addresses": {
+        "layers": {
+            "1": {
+                "description": "Adresser",
+                "name": "Kjente adresser i OSM",
+                "title": {
+                    "render": "Kjent adresse"
+                }
+            }
+        }
+    },
+    "cycle_infra": {
+        "title": "Sykkelinfrastruktur",
+        "shortDescription": "Alt relatert til sykkelinfrastruktur."
     }
 }

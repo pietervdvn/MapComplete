@@ -610,7 +610,7 @@
         "title": "Bicycle infrastructure"
     },
     "cyclestreets": {
-        "description": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
+        "description": "A cyclestreet is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
         "layers": {
             "0": {
                 "description": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",
@@ -666,14 +666,14 @@
     },
     "cyclofix": {
         "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - an open map for cyclists"
+        "title": "Cyclofix — an open map for cyclists"
     },
     "drinking_water": {
         "description": "On this map, publicly accessible drinking water spots are shown and can be easily added",
         "title": "Drinking Water"
     },
     "etymology": {
-        "description": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
+        "description": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a Wikidata box of what the object is named after. If the object itself has a Wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
         "layers": {
             "1": {
                 "override": {
@@ -708,7 +708,7 @@
                     },
                     "facadegardens-direction": {
                         "question": "What is the orientation of the garden?",
-                        "render": "Orientation: {direction} (where 0=N and 90=O)"
+                        "render": "Orientation: {direction} (where 0=N and 90=E)"
                     },
                     "facadegardens-edible": {
                         "mappings": {
@@ -870,7 +870,7 @@
         "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
+        "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.\n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.\n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
         "layers": {
             "0": {
                 "description": "Map layer to show fire hydrants.",

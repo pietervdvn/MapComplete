@@ -160,9 +160,9 @@
             "downloadCSVHelper": "Kompatibel mit LibreOffice Calc, Excel, …",
             "downloadCSV": "Sichtbare Daten als CSV herunterladen",
             "downloadAsPdfHelper": "Ideal zum Drucken der aktuellen Karte",
-            "downloadGeoJsonHelper": "Kompatibel mit QGIS, ArcGIS, ESRI, ...",
+            "downloadGeoJsonHelper": "Kompatibel mit QGIS, ArcGIS, ESRI, …",
             "downloadAsPdf": "PDF der aktuellen Karte herunterladen",
-            "downloadGeojson": "Sichtbare Daten als geojson herunterladen",
+            "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
             "noDataLoaded": "Noch keine Daten geladen. Download ist in Kürze verfügbar",
             "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung dieser Daten ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist erforderlich</li><li>Jede Änderung dieser Daten muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details"
