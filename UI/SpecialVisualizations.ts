@@ -33,6 +33,7 @@ import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import Link from "./Base/Link";
 import List from "./Base/List";
+import {OsmConnection} from "../Logic/Osm/OsmConnection";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -480,7 +481,7 @@ export default class SpecialVisualizations {
                 args: [
                     {
                         name: "tags",
-                        doc: "Tags to copy-specification. This contains one or more pairs (seperated by a `;`), e.g. `amenity=fast_food; addr:housenumber=$number`. This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. (Hint: prepare these values, e.g. with calculatedTags)"
+                        doc: "The tags to add onto the new object - see specification above"
                     },
                     {
                         name: "text",
@@ -499,6 +500,8 @@ export default class SpecialVisualizations {
                     }],
                 docs: `This button will copy the data from an external dataset into OpenStreetMap. It is only functional in official themes but can be tested in unofficial themes.
 
+#### Importing a dataset into OpenStreetMap: requirements
+
 If you want to import a dataset, make sure that:
 
 1. The dataset to import has a suitable license
@@ -507,17 +510,41 @@ If you want to import a dataset, make sure that:
 
 There are also some technicalities in your theme to keep in mind:
 
-1. The new point will be added and will flow through the program as any other new point as if it came from OSM.
+1. The new feature will be added and will flow through the program as any other new point as if it came from OSM.
     This means that there should be a layer which will match the new tags and which will display it.
-2. The original point from your geojson layer will gain the tag '_imported=yes'.
+2. The original feature from your geojson layer will gain the tag '_imported=yes'.
     This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
 3. There should be a way for the theme to detect previously imported points, even after reloading.
-    A reference number to the original dataset is an excellen way to do this    
+    A reference number to the original dataset is an excellent way to do this
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
+    
+#### Disabled in unofficial themes
+
+The import button can be tested in an unofficial theme by adding \`test=true\` or \`backend=osm-test\` as [URL-paramter](URL_Parameters.md). 
+The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
+In the case that MapComplete is pointed to the testing grounds, the edit will be made on ${OsmConnection.oauth_configs["osm-test"].url}
+
+
+#### Specifying which tags to copy or add
+
+The first argument of the import button takes a \`;\`-seperated list of tags to add.
+
+These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
+This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. \`ref=$source:geometry:type/$source:geometry:ref\`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with \`[a-zA-Z0-9_:]*\`). Sadly, delimiting with \`{}\` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+   
 `,
                 constr: (state, tagSource, args) => {
-                    if (!state.layoutToUse.official && !state.featureSwitchIsTesting.data) {
+                    if (!state.layoutToUse.official && !(state.featureSwitchIsTesting.data || state.osmConnection._oauth_config.url === OsmConnection.oauth_configs["osm-test"].url)) {
                         return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),
-                            new FixedUiElement("To test, add 'test=true' to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
+                            new FixedUiElement("To test, add <b>test=true</b> or <b>backend=osm-test</b> to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
                     }
                     const tgsSpec = args[0].split(";").map(spec => {
                         const kv = spec.split("=").map(s => s.trim());
@@ -529,9 +556,18 @@ There are also some technicalities in your theme to keep in mind:
                     const rewrittenTags: UIEventSource<Tag[]> = tagSource.map(tags => {
                         const newTags: Tag [] = []
                         for (const [key, value] of tgsSpec) {
-                            if (value.startsWith('$')) {
-                                const origKey = value.substring(1)
-                                newTags.push(new Tag(key, tags[origKey]))
+                            if (value.indexOf('$') >= 0) {
+                                
+                                let parts = value.split("$")
+                                // THe first of the split won't start with a '$', so no substitution needed
+                                let actualValue = parts[0]
+                                parts.shift()
+
+                                for (const part of parts) {
+                                    const [_, varName, leftOver] = part.match(/([a-zA-Z0-9_:]*)(.*)/)
+                                    actualValue += (tags[varName] ?? "") + leftOver
+                                }
+                                newTags.push(new Tag(key, actualValue))
                             } else {
                                 newTags.push(new Tag(key, value))
                             }
@@ -540,12 +576,12 @@ There are also some technicalities in your theme to keep in mind:
                     })
                     const id = tagSource.data.id;
                     const feature = state.allElements.ContainingFeatures.get(id)
-                    if (feature.geometry.type !== "Point") {
-                        return new FixedUiElement("Error: can only import point objects").SetClass("alert")
-                    }
-                    const [lon, lat] = feature.geometry.coordinates;
+                    const minzoom = Number(args[3])
+                    const message =  args[1]
+                    const image = args[2]
+                    
                     return new ImportButton(
-                        args[2], args[1], tagSource, rewrittenTags, lat, lon, Number(args[3]), state
+                        image, message, tagSource, rewrittenTags, feature, minzoom, state
                     )
                 }
             },

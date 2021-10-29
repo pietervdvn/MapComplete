@@ -4,20 +4,34 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
-import State from "../../State";
 import Constants from "../../Models/Constants";
 import Toggle from "../Input/Toggle";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import {Tag} from "../../Logic/Tags/Tag";
 import Loading from "../Base/Loading";
+import OsmChangeAction from "../../Logic/Osm/Actions/OsmChangeAction";
+import CreateNewWayAction from "../../Logic/Osm/Actions/CreateNewWayAction";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import {Changes} from "../../Logic/Osm/Changes";
+import {ElementStorage} from "../../Logic/ElementStorage";
+import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
 
 export default class ImportButton extends Toggle {
-    constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement,
+    constructor(imageUrl: string | BaseUIElement, 
+                message: string | BaseUIElement,
                 originalTags: UIEventSource<any>,
-                newTags: UIEventSource<Tag[]>, 
-                lat: number, lon: number,
+                newTags: UIEventSource<Tag[]>,
+                feature: any,
                 minZoom: number,
-                state: {   
+                state: {
+                    featureSwitchUserbadge: UIEventSource<boolean>;
+                    featurePipeline: FeaturePipeline;
+                    allElements: ElementStorage;
+                    selectedElement: UIEventSource<any>;
+                    layoutToUse: LayoutConfig,
+                    osmConnection: OsmConnection,
+                    changes: Changes,
                     locationControl: UIEventSource<{ zoom: number }>
                 }) {
         const t = Translations.t.general.add;
@@ -32,7 +46,7 @@ export default class ImportButton extends Toggle {
                     const txt = parts.join(" & ")
                     return t.presetInfo.Subs({tags: txt}).SetClass("subtle")
                 })), undefined,
-            State.state.osmConnection.userDetails.map(ud => ud.csCount >= Constants.userJourney.tagsVisibleAt)
+            state.osmConnection.userDetails.map(ud => ud.csCount >= Constants.userJourney.tagsVisibleAt)
         )
         const button = new SubtleButton(imageUrl, message)
 
@@ -44,15 +58,12 @@ export default class ImportButton extends Toggle {
             }
             originalTags.data["_imported"] = "yes"
             originalTags.ping() // will set isImported as per its definition
-            const newElementAction = new CreateNewNodeAction(newTags.data, lat, lon, {
-                theme: State.state.layoutToUse.id,
-                changeType: "import"
-            })
-            await State.state.changes.applyAction(newElementAction)
-            State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
+            const newElementAction = ImportButton.createAddActionForFeature(newTags.data, feature, state.layoutToUse.id)
+            await state.changes.applyAction(newElementAction)
+            state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
-            console.log("Did set selected element to", State.state.allElements.ContainingFeatures.get(
+            console.log("Did set selected element to", state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
 
@@ -60,25 +71,70 @@ export default class ImportButton extends Toggle {
         })
 
         const withLoadingCheck = new Toggle(new Toggle(
-            new Loading(t.stillLoading.Clone()),
-            new Combine([button, appliedTags]).SetClass("flex flex-col"),
-            State.state.featurePipeline.runningQuery
-        ),t.zoomInFurther.Clone(),
-                state.locationControl.map(l => l.zoom >= minZoom)    
-            )
+                new Loading(t.stillLoading.Clone()),
+                new Combine([button, appliedTags]).SetClass("flex flex-col"),
+                state.featurePipeline.runningQuery
+            ), t.zoomInFurther.Clone(),
+            state.locationControl.map(l => l.zoom >= minZoom)
+        )
         const importButton = new Toggle(t.hasBeenImported, withLoadingCheck, isImported)
 
         const pleaseLoginButton =
             new Toggle(t.pleaseLogin.Clone()
-                    .onClick(() => State.state.osmConnection.AttemptLogin())
+                    .onClick(() => state.osmConnection.AttemptLogin())
                     .SetClass("login-button-friendly"),
                 undefined,
-                State.state.featureSwitchUserbadge)
-            
+                state.featureSwitchUserbadge)
 
-        super(importButton,
-            pleaseLoginButton,
-            State.state.osmConnection.isLoggedIn
+
+        super(new Toggle(importButton,
+                pleaseLoginButton,
+                state.osmConnection.isLoggedIn
+            ),
+            t.wrongType,
+            new UIEventSource(ImportButton.canBeImported(feature))
         )
+    }
+
+
+    private static canBeImported(feature: any) {
+        const type = feature.geometry.type
+        return type === "Point" || type === "LineString" || (type === "Polygon" && feature.geometry.coordinates.length === 1)
+    }
+
+    private static createAddActionForFeature(newTags: Tag[], feature: any, theme: string): OsmChangeAction & { newElementId: string } {
+        const geometry = feature.geometry
+        const type = geometry.type
+        if (type === "Point") {
+            const lat = geometry.coordinates[1]
+            const lon = geometry.coordinates[0];
+            return new CreateNewNodeAction(newTags, lat, lon, {
+                theme,
+                changeType: "import"
+            })
+        }
+
+        if (type === "LineString") {
+            return new CreateNewWayAction(
+                newTags,
+                geometry.coordinates.map(coor => ({lon: coor[0], lat: coor[1]})),
+                {
+                    theme
+                }
+            )
+        }
+
+        if (type === "Polygon") {
+            return new CreateNewWayAction(
+                newTags,
+                geometry.coordinates[0].map(coor => ({lon: coor[0], lat: coor[1]})),
+                {
+                    theme
+                }
+            )
+        }
+
+        return undefined;
+
     }
 }

@@ -565,16 +565,36 @@
       "title": "GRB outline",
       "minzoom": 16,
       "calculatedTags": [
-        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 && feat.properties._surface - f.overlap < 5)[0] ?? null",
-        "_osm_obj:source:ref=JSON.parse(feat.properties._overlaps_with)?.feat?.properties['source:geometry:ref']",
-        "_osm_obj:source:date=JSON.parse(feat.properties._overlaps_with)?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
-        "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
+        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.9)[0] ?? null",
+        "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
+        "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface')) ",
+        "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
+        "_osm_obj:source:date=feat.get('_overlaps_with')?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
+        "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties.building",
+        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties.id",
+        "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
+        "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
         "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date"
       ],
       "tagRenderings": [
         {
-          "render": "{import_button(Upload this geometry to OpenStreetMap)}"
+          "id": "Building info",
+          "render": "This is a <b>{building}</b> <span class='subtle'>detected by {detection_method}</span>"
+        },
+        {
+          "id": "overlapping building type",
+          "render": "<div>The overlapping openstreetmap-building is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
+          "condition": "_overlaps_with!=null"
+        },
+        {
+          "id": "Import-button",
+          "render": "{import_button(building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Upload this building to OpenStreetMap)}",
+          "mappings": [
+            {
+              "if": "_overlaps_with!=null",
+              "then": "Cannot be imported directly, there is a nearly identical building geometry in OpenStreetMap"
+            }]
         },
         "all_tags"
       ],

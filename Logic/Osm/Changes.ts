@@ -7,6 +7,7 @@ import {ChangeDescription} from "./Actions/ChangeDescription";
 import {Utils} from "../../Utils";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import SimpleMetaTagger from "../SimpleMetaTagger";
+import CreateNewNodeAction from "./Actions/CreateNewNodeAction";
 
 /**
  * Handles all changes made to OSM.
@@ -14,22 +15,20 @@ import SimpleMetaTagger from "../SimpleMetaTagger";
  */
 export class Changes {
 
-
-    private _nextId: number = -1; // Newly assigned ID's are negative
     public readonly name = "Newly added features"
     /**
      * All the newly created features as featureSource + all the modified features
      */
     public features = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
-
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
+    private _nextId: number = -1; // Newly assigned ID's are negative
     private readonly isUploading = new UIEventSource(false);
 
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean;
 
-    constructor(leftRightSensitive : boolean = false) {
+    constructor(leftRightSensitive: boolean = false) {
         this._leftRightSensitive = leftRightSensitive;
         // We keep track of all changes just as well
         this.allChanges.setData([...this.pendingChanges.data])
@@ -114,21 +113,34 @@ export class Changes {
             })
     }
 
+    public async applyAction(action: OsmChangeAction): Promise<void> {
+        const changes = await action.Perform(this)
+        console.log("Received changes:", changes)
+        this.pendingChanges.data.push(...changes);
+        this.pendingChanges.ping();
+        this.allChanges.data.push(...changes)
+        this.allChanges.ping()
+    }
+
+    public registerIdRewrites(mappings: Map<string, string>): void {
+        CreateNewNodeAction.registerIdRewrites(mappings)
+    }
+
     /**
      * UPload the selected changes to OSM.
      * Returns 'true' if successfull and if they can be removed
      * @param pending
      * @private
      */
-    private async flushSelectChanges(pending: ChangeDescription[]): Promise<boolean>{
+    private async flushSelectChanges(pending: ChangeDescription[]): Promise<boolean> {
         const self = this;
         const neededIds = Changes.GetNeededIds(pending)
         const osmObjects = await Promise.all(neededIds.map(id => OsmObject.DownloadObjectAsync(id)));
-        
-        if(this._leftRightSensitive){
+
+        if (this._leftRightSensitive) {
             osmObjects.forEach(obj => SimpleMetaTagger.removeBothTagging(obj.tags))
         }
-        
+
         console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
         const changes: {
             newObjects: OsmObject[],
@@ -137,35 +149,38 @@ export class Changes {
         } = self.CreateChangesetObjects(pending, osmObjects)
         if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
             console.log("No changes to be made")
-           return true
+            return true
         }
 
         const meta = pending[0].meta
-        
-        const perType = Array.from(Utils.Hist(pending.map(descr => descr.meta.changeType)), ([key, count]) => ({
-            key: key,
-                value: count, 
-                aggregate: true
-        }))
+
+        const perType = Array.from(
+            Utils.Hist(pending.filter(descr => descr.meta.changeType !== undefined && descr.meta.changeType !== null)
+                .map(descr => descr.meta.changeType)), ([key, count]) => (
+                {
+                    key: key,
+                    value: count,
+                    aggregate: true
+                }))
         const motivations = pending.filter(descr => descr.meta.specialMotivation !== undefined)
             .map(descr => ({
-                key: descr.meta.changeType+":"+descr.type+"/"+descr.id,
-                    value: descr.meta.specialMotivation
+                key: descr.meta.changeType + ":" + descr.type + "/" + descr.id,
+                value: descr.meta.specialMotivation
             }))
         const metatags = [{
             key: "comment",
-            value: "Adding data with #MapComplete for theme #"+meta.theme
+            value: "Adding data with #MapComplete for theme #" + meta.theme
         },
             {
-                key:"theme",
-                value:meta.theme
+                key: "theme",
+                value: meta.theme
             },
             ...perType,
             ...motivations
         ]
-        
+
         await State.state.osmConnection.changesetHandler.UploadChangeset(
-            (csId) => Changes.createChangesetFor(""+csId, changes),
+            (csId) => Changes.createChangesetFor("" + csId, changes),
             metatags
         )
 
@@ -178,27 +193,27 @@ export class Changes {
         try {
             // At last, we build the changeset and upload
             const pending = self.pendingChanges.data;
-            
+
             const pendingPerTheme = new Map<string, ChangeDescription[]>()
             for (const changeDescription of pending) {
                 const theme = changeDescription.meta.theme
-                if(!pendingPerTheme.has(theme)){
+                if (!pendingPerTheme.has(theme)) {
                     pendingPerTheme.set(theme, [])
                 }
                 pendingPerTheme.get(theme).push(changeDescription)
             }
-            
-          const successes =  await Promise.all(Array.from(pendingPerTheme, ([key , value]) => value)
+
+            const successes = await Promise.all(Array.from(pendingPerTheme, ([key, value]) => value)
                 .map(async pendingChanges => {
-                    try{
+                    try {
                         return await self.flushSelectChanges(pendingChanges);
-                    }catch(e){
-                        console.error("Could not upload some changes:",e)
+                    } catch (e) {
+                        console.error("Could not upload some changes:", e)
                         return false
                     }
                 }))
-            
-            if(!successes.some(s => s == false)){
+
+            if (!successes.some(s => s == false)) {
                 // All changes successfull, we clear the data!
                 this.pendingChanges.setData([]);
             }
@@ -206,20 +221,11 @@ export class Changes {
         } catch (e) {
             console.error("Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those", e)
             self.pendingChanges.setData([])
-        }finally {
+        } finally {
             self.isUploading.setData(false)
         }
 
 
-    }
-
-    public async applyAction(action: OsmChangeAction): Promise<void> {
-        const changes = await action.Perform(this)
-        console.log("Received changes:", changes)
-        this.pendingChanges.data.push(...changes);
-        this.pendingChanges.ping();
-        this.allChanges.data.push(...changes)
-        this.allChanges.ping()
     }
 
     private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
@@ -372,9 +378,5 @@ export class Changes {
         })
 
         return result
-    }
-
-    public registerIdRewrites(mappings: Map<string, string>): void {
-
     }
 }
