@@ -55,7 +55,10 @@ class WikidataTextField implements TextFieldDef {
                         )])
                     ]]),
             new Title("Example usage"),
-            "The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name```" + `"freeform": {
+            `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
+
+\`\`\`
+"freeform": {
                 "key": "name:etymology:wikidata",
                 "type": "wikidata",
                 "helperArgs": [
@@ -70,7 +73,8 @@ class WikidataTextField implements TextFieldDef {
                         ]
                     }
                 ]
-            },` + "```"
+            }
+            \`\`\``
         ]).AsMarkdown()
 
 
@@ -149,7 +153,7 @@ class OpeningHoursTextField implements TextFieldDef {
                     ]
                 ]),
             new Title("Example usage"),
-            "To add a conditional (based on time) access restriction:\n\n```" + `
+            "To add a conditional (based on time) access restriction:\n\n```\n" + `
             "freeform": {
                 "key": "access:conditional",
                 "type": "opening_hours",
@@ -159,7 +163,7 @@ class OpeningHoursTextField implements TextFieldDef {
                       "postfix":")"
                     }
                 ]
-            },` + "```\n\n*Don't forget to pass these in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]).AsMarkdown()
+            }` + "```\n\n*Don't forget to pass these in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]).AsMarkdown()
 
 
     isValid() {

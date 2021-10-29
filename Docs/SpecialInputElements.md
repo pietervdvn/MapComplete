@@ -42,7 +42,10 @@ removePostfixes | remove these snippets of text from the end of the passed strin
  
 ### Example usage 
 
- The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name```"freeform": {
+ The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
+
+```
+"freeform": {
                 "key": "name:etymology:wikidata",
                 "type": "wikidata",
                 "helperArgs": [
@@ -57,7 +60,8 @@ removePostfixes | remove these snippets of text from the end of the passed strin
                         ]
                     }
                 ]
-            },```
+            }
+            ```
 
 ## int
 
@@ -113,6 +117,7 @@ postfix | Piece of text that will always be added to the end of the generated op
  To add a conditional (based on time) access restriction:
 
 ```
+
             "freeform": {
                 "key": "access:conditional",
                 "type": "opening_hours",
@@ -122,7 +127,7 @@ postfix | Piece of text that will always be added to the end of the generated op
                       "postfix":")"
                     }
                 ]
-            },```
+            }```
 
 *Don't forget to pass these in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`
 
