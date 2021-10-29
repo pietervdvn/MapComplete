@@ -457,11 +457,11 @@ export class Utils {
         const now = new Date()
         const lastWeek = new Date(now.getTime() - daysInThePast * 24 * 60 * 60 * 1000)
         const date = lastWeek.getFullYear() + "-" + Utils.TwoDigits(lastWeek.getMonth() + 1) + "-" + Utils.TwoDigits(lastWeek.getDate())
-        let osmcha_link = `{"date__gte":[{"label":"${date}","value":"${date}"}],"editor":[{"label":"mapcomplete","value":"mapcomplete"}]}`
+        let osmcha_link = `"date__gte":[{"label":"${date}","value":"${date}"}],"editor":[{"label":"mapcomplete","value":"mapcomplete"}]`
         if (theme !== undefined) {
-            osmcha_link = osmcha_link + "," + `{"comment":[{"label":"#${theme}","value":"#${theme}"}]`
+            osmcha_link = osmcha_link + "," + `"comment":[{"label":"#${theme}","value":"#${theme}"}]`
         }
-        return "https://osmcha.org/?filters=" + encodeURIComponent(osmcha_link)
+        return "https://osmcha.org/?filters=" + encodeURIComponent("{"+osmcha_link+"}")
     }
 
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
