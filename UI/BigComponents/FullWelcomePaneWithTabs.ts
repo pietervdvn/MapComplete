@@ -56,7 +56,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         ]
 
         if (state.featureSwitchShareScreen.data) {
-            tabs.push({header: Svg.share_img, content: new ShareScreen()});
+            tabs.push({header: Svg.share_img, content: new ShareScreen(state)});
         }
 
         if (state.featureSwitchMoreQuests.data) {
