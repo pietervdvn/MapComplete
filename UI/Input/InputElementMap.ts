@@ -25,8 +25,8 @@ export default class InputElementMap<T, X> extends InputElement<X> {
         const self = this;
         this._value = inputElement.GetValue().map(
             (t => {
-                const currentX = self.GetValue()?.data;
                 const newX = toX(t);
+                const currentX = self.GetValue()?.data;
                 if (isSame(currentX, newX)) {
                     return currentX;
                 }

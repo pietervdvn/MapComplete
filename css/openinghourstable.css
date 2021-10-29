@@ -16,6 +16,8 @@
     border-collapse: collapse;
     background-clip: padding-box;
     border-right: 1px solid #ccc;
+    /* Somthing sets linehight to 1.5, but the leaflet-popup-content sets it to 1.4, throwing of the calculations... */
+    line-height: 1.5 !important;
 }
 
 .oh-timecell {

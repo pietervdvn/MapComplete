@@ -302,9 +302,18 @@ export default class SpecialVisualizations {
                     name: "key",
                     defaultValue: "opening_hours",
                     doc: "The tagkey from which the table is constructed."
+                },{
+                    name: "prefix",
+                    defaultValue: "",
+                    doc:"Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__"
+                },{
+                    name: "postfix",
+                    defaultValue: "",
+                    doc:"Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
                 }],
+                example: "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                 constr: (state: State, tagSource: UIEventSource<any>, args) => {
-                    return new OpeningHoursVisualization(tagSource, args[0])
+                    return new OpeningHoursVisualization(tagSource, args[0], args[1], args[2])
                 }
             },
             {

@@ -23,10 +23,16 @@ export default class OpeningHoursVisualization extends Toggle {
         Translations.t.general.weekdays.abbreviations.sunday,
     ]
 
-    constructor(tags: UIEventSource<any>, key: string) {
+    constructor(tags: UIEventSource<any>, key: string, prefix = "", postfix = "") {
         const tagsDirect = tags.data;
         const ohTable = new VariableUiElement(tags
-            .map(tags => tags[key]) // This mapping will absorb all other changes to tags in order to prevent regeneration
+            .map(tags => {
+                const value : string = tags[key];
+                if(value.startsWith(prefix) && value.endsWith(postfix)){
+                    return value.substring(prefix.length, value.length - postfix.length)
+                }
+                return value;
+            }) // This mapping will absorb all other changes to tags in order to prevent regeneration
             .map(ohtext => {
                     try {
                         // noinspection JSPotentiallyInvalidConstructorUsage
