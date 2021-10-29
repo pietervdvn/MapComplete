@@ -19,13 +19,16 @@
         "pleaseLogin": "Entre na sua conta para adicionar uma imagem",
         "uploadingMultiple": "A enviar {count} imagens…",
         "uploadingPicture": "A enviar a sua imagem…",
-        "addPicture": "Adicionar imagem"
+        "addPicture": "Adicionar imagem",
+        "uploadMultipleDone": "Foram adicionadas {count} fotografias. Obrigado por ajudar!",
+        "toBig": "A sua imagem é muito grande porque tem {actual_size}. Use imagens com o máximo {max_size}"
     },
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
         "title": "Bem-vindo(a) ao MapComplete",
         "intro": "O MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
-        "pickTheme": "Escolha um tema abaixo para começar."
+        "pickTheme": "Escolha um tema abaixo para começar.",
+        "featuredThemeTitle": "Destaque desta semana"
     },
     "delete": {
         "reasons": {
