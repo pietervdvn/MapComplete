@@ -664,12 +664,12 @@
     "facadegardens": {
         "layers": {
             "0": {
-                "description": "Fassadenbegrünung",
-                "name": "Fassadenbegrünung",
+                "description": "Fassadengärten",
+                "name": "Fassadengärten",
                 "presets": {
                     "0": {
-                        "description": "Eine Fassadenbegrünung hinzufügen",
-                        "title": "Fassadenbegrünung"
+                        "description": "Einen Fassadengarten hinzufügen",
+                        "title": "Fassadengarten"
                     }
                 },
                 "tagRenderings": {
@@ -740,12 +740,12 @@
                     }
                 },
                 "title": {
-                    "render": "Fassadenbegrünung"
+                    "render": "Fassadengarten"
                 }
             }
         },
-        "shortDescription": "Diese Karte zeigt Fassadenbegrünungen mit Bildern und nützlichen Informationen über Ausrichtung, Sonneneinstrahlung und Pflanzenarten.",
-        "title": "Fassadenbegrünung",
+        "shortDescription": "Diese Karte zeigt Fassadengärten mit Bildern und nützlichen Informationen über Ausrichtung, Sonneneinstrahlung und Pflanzenarten.",
+        "title": "Fassadengärten",
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
     },
     "food": {
