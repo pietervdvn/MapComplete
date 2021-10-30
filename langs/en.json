@@ -75,8 +75,8 @@
         },
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "welcomeBack": "You are logged in, welcome back!",
-        "loginToStart": "Login to answer this question",
-        "openStreetMapIntro": "<h3>An Open Map</h3><p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit? A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p><p>A ton of people and application already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap. If you change something here, it'll be reflected in those applications too - after their next update!</p>",
+        "loginToStart": "Log in to answer this question",
+        "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
         "search": {
             "search": "Search a location",
             "searching": "Searching…",
@@ -90,7 +90,7 @@
         "oneSkippedQuestion": "One question is skipped",
         "skippedQuestions": "Some questions are skipped",
         "number": "number",
-        "osmLinkTooltip": "See this object on OpenStreetMap for history and more editing options",
+        "osmLinkTooltip": "Browse this object on OpenStreetMap for history and more editing options",
         "add": {
             "addNewMapLabel": "Add new item",
             "disableFiltersExplanation": "Some features might be hidden by a filter",
@@ -129,15 +129,11 @@
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Create your own MapComplete theme from scratch",
             "previouslyHiddenTitle": "Previously visited hidden themes",
-            "hiddenExplanation": "These themes are only visible if you know the link. You have discovered {hidden_discovered} out of {total_hidden} hidden themes"
-        },
-        "apply_button": {
-            "isApplied": "The changes are applied",
-            "appliedOnAnotherObject": "The object {id} will receive {tags}"
+            "hiddenExplanation": "These themes are only accessible to those with the link. You have discovered {hidden_discovered} of {total_hidden} hidden themes."
         },
         "sharescreen": {
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
-            "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen' button in the URL bar to do this.",
+            "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'Add to home screen' button in the URL bar to do this.",
             "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people are using this, the more valuable it becomes.",
             "copiedToClipboard": "Link copied to clipboard",
             "thanksForSharing": "Thanks for sharing!",
@@ -161,27 +157,27 @@
             "iconAttribution": {
                 "title": "Used icons"
             },
-            "openIssueTracker": "File a bug",
-            "editJosm": "Edit here with JOSM",
-            "josmOpened": "JOSM is opened",
-            "josmNotOpened": "JOSM could not be reached. Make sure it is opened and remote control is enabled",
-            "editId": "Open the OpenStreetMap online editor here",
-            "openMapillary": "Open Mapillary here",
-            "donate": "Support MapComplete financially",
-            "openOsmcha": "See latest edits made with {theme}",
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
-            "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
+            "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>",
+            "openOsmcha": "See latest edits made with {theme}",
+            "openMapillary": "Open Mapillary here",
+            "openIssueTracker": "File a bug",
+            "josmOpened": "JOSM is opened",
+            "josmNotOpened": "JOSM could not be reached. Make sure it is opened and remote control is enabled",
+            "editJosm": "Edit here with JOSM",
+            "editId": "Open the OpenStreetMap online editor here",
+            "donate": "Support MapComplete financially"
         },
         "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new point.",
         "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",
         "goToInbox": "Open inbox",
-        "getStartedLogin": "Login with OpenStreetMap to get started",
+        "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
         "noTagsSelected": "No tags selected",
         "testing": "Testing - changes won't be saved",
         "customThemeIntro": "<h3>Custom themes</h3>These are previously visited user-generated themes.",
-        "aboutMapcomplete": "<h3>About MapComplete</h3><p>With MapComplete you can enrich OpenStreetMap with information on a <b>single theme.</b> Answer a few questions, and within minutes your contributions will be available around the globe! The <b>theme maintainer</b> defines elements, questions and languages for the theme.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete</li><li>The full-screen version offers information about OpenStreetMap</li><li>Viewing works without login, but editing requires an OSM login.</li><li>If you are not logged in, you are asked to log in</li><li>Once you answered a single question, you can add new points to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>About MapComplete</h3><p>Use it to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. The <b>theme maintainer</b> defines elements, questions and languages for it.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete</li><li>The fullscreen version offers info about OpenStreetMap</li><li>Viewing works without login, but editing requires an OSM account.</li><li>If you are not logged in, you are asked to do so</li><li>Once you answered a single question, you can add new points to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "backgroundMap": "Background map",
         "openTheMap": "Open the map",
         "loginOnlyNeededToEdit": "if you want to edit the map",
@@ -193,13 +189,13 @@
             "title": "Download visible data",
             "downloadAsPdf": "Download a PDF of the current map",
             "downloadAsPdfHelper": "Ideal to print the current map",
-            "downloadGeojson": "Download visible data as geojson",
-            "exporting": "Exporting...",
-            "downloadGeoJsonHelper": "Compatible with QGIS, ArcGIS, ESRI, ...",
+            "downloadGeojson": "Download visible data as GeoJSON",
+            "exporting": "Exporting…",
+            "downloadGeoJsonHelper": "Compatible with QGIS, ArcGIS, ESRI, …",
             "downloadCSV": "Download visible data as CSV",
             "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, …",
             "includeMetaData": "Include metadata (last editor, calculated values, …)",
-            "licenseInfo": "<h3>Copyright notice</h3>The provided is available under ODbL. Reusing this data is free for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> is required</li><li>Any change to this data must be republished under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details",
+            "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> is required</li><li>Any change must be use the license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
             "noDataLoaded": "No data is loaded yet. Download will be available soon"
         },
         "weekdays": {
@@ -240,13 +236,17 @@
         },
         "wikipedia": {
             "wikipediaboxTitle": "Wikipedia",
-            "failed": "Loading the wikipedia entry failed",
+            "failed": "Loading the Wikipedia entry failed",
             "loading": "Loading Wikipedia...",
             "noWikipediaPage": "This Wikidata item has no corresponding Wikipedia page yet.",
             "searchWikidata": "Search on Wikidata",
             "noResults": "Nothing found for <i>{search}</i>",
             "doSearch": "Search above to see results",
             "createNewWikidata": "Create a new Wikidata item"
+        },
+        "apply_button": {
+            "isApplied": "The changes are applied",
+            "appliedOnAnotherObject": "The object {id} will receive {tags}"
         }
     },
     "favourite": {
@@ -268,7 +268,7 @@
         "saved": "<span class='thanks'>Review saved. Thanks for sharing!</span>",
         "tos": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>",
         "attribution": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
-        "plz_login": "Login to leave a review"
+        "plz_login": "Log in to leave a review"
     },
     "multi_apply": {
         "autoApply": "When changing the attributes {attr_names}, these attributes will automatically be changed on {count} other objects too"
@@ -294,8 +294,8 @@
         "cannotBeMoved": "This feature cannot be moved.",
         "isWay": "This feature is a way. Use another OpenStreetMap editor to move it.",
         "isRelation": "This feature is a relation and can not be moved",
-        "partOfAWay": "This feature is part of another way. Use another editor to move it",
-        "partOfRelation": "This feature is part of a relation. Use another editor to move it",
+        "partOfAWay": "This feature is part of another way. Use another editor to move it.",
+        "partOfRelation": "This feature is part of a relation. Use another editor to move it.",
         "cancel": "Cancel move"
     }
 }
