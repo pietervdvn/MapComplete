@@ -759,6 +759,35 @@
         },
         "title": {
             "render": "Stazione di ricarica"
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tutti i veicoli"
+                    },
+                    "1": {
+                        "question": "Stazione di ricarica per biciclette"
+                    },
+                    "2": {
+                        "question": "Stazione di ricarica per auto"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Tutte le connessioni"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Solo stazioni di ricarica funzionanti"
+                    }
+                }
+            }
         }
     },
     "defibrillator": {
