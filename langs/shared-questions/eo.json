@@ -1,1 +1,40 @@
-{}
+{
+    "undefined": {
+        "phone": {
+            "question": "Kio estas la telefonnumero de {name}?"
+        },
+        "website": {
+            "question": "Kie estas la retejo de {name}?"
+        },
+        "opening_hours": {
+            "render": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}"
+        },
+        "email": {
+            "question": "Kio estas la retpoŝta adreso de {name}?"
+        },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Hundoj estas permesataj"
+                },
+                "1": {
+                    "then": "Hundoj estas <b>malpermesataj</b>"
+                }
+            }
+        },
+        "level": {
+            "render": "En la {level}a etaĝo",
+            "mappings": {
+                "3": {
+                    "then": "En la unua etaĝo"
+                },
+                "2": {
+                    "then": "En la teretaĝo"
+                },
+                "1": {
+                    "then": "En la teretaĝo"
+                }
+            }
+        }
+    }
+}
