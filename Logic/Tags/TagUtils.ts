@@ -19,16 +19,6 @@ export class TagUtils {
         [">", (a, b) => a > b],
     ]
 
-    static ApplyTemplate(template: string, tags: any): string {
-        for (const k in tags) {
-            while (template.indexOf("{" + k + "}") >= 0) {
-                const escaped = tags[k].replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                template = template.replace("{" + k + "}", escaped);
-            }
-        }
-        return template;
-    }
-
     static KVtoProperties(tags: Tag[]): any {
         const properties = {};
         for (const tag of tags) {
@@ -37,6 +27,14 @@ export class TagUtils {
         return properties;
     }
 
+    static changeAsProperties(kvs : {k: string, v: string}[]): any {
+        const tags = {}
+        for (const kv of kvs) {
+            tags[kv.k] = kv.v
+        }
+        return tags
+    }
+    
     /**
      * Given two hashes of {key --> values[]}, makes sure that every neededTag is present in availableTags
      */

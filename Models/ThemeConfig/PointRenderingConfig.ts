@@ -187,7 +187,10 @@ export default class PointRenderingConfig extends WithContextLoader {
 
     public GenerateLeafletStyle(
         tags: UIEventSource<any>,
-        clickable: boolean
+        clickable: boolean,
+        options?: {
+            noSize: false | boolean
+        }
     ):
         {
             html: BaseUIElement;
@@ -237,9 +240,13 @@ export default class PointRenderingConfig extends WithContextLoader {
 
 
         const iconAndBadges = new Combine([this.GetSimpleIcon(tags), this.GetBadges(tags)])
-            .SetStyle(`width: ${iconW}px; height: ${iconH}px`)
             .SetClass("block relative")
 
+        if(!options?.noSize){
+            iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
+        }else{
+            iconAndBadges.SetClass("w-full h-full")
+        }
 
         return {
             html: new Combine([iconAndBadges, this.GetLabel(tags)]).SetStyle("flex flex-col"),

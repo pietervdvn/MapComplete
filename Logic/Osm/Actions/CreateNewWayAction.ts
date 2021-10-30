@@ -39,6 +39,7 @@ export default class CreateNewWayAction extends OsmChangeAction {
             }
 
             const newPoint = new CreateNewNodeAction([], coordinate.lat, coordinate.lon, {
+                allowReuseOfPreviouslyCreatedPoints: true,
                 changeType: null,
                 theme: this._options.theme
             })
