@@ -1,7 +1,5 @@
 import {Translation} from "../../UI/i18n/Translation";
-import TagRenderingConfig from "./TagRenderingConfig";
 import {LayoutConfigJson} from "./Json/LayoutConfigJson";
-import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
@@ -54,6 +52,7 @@ export default class LayoutConfig {
     public readonly overpassMaxZoom: number
     public readonly osmApiTileSize: number
     public readonly official: boolean;
+    public readonly trackAllNodes : boolean;
  
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
@@ -63,6 +62,8 @@ export default class LayoutConfig {
         this.credits = json.credits;
         this.version = json.version;
         this.language = [];
+        this.trackAllNodes = false
+        
         if (typeof json.language === "string") {
             this.language = [json.language];
         } else {
@@ -92,12 +93,16 @@ export default class LayoutConfig {
         if(json.widenFactor > 20){
             throw "Widenfactor is very big, use a value between 1 and 5 (current value is "+json.widenFactor+") at "+context
         }
+        
         this.widenFactor = json.widenFactor ?? 1.5;
      
         this.defaultBackgroundId = json.defaultBackgroundId;
         this.tileLayerSources = (json.tileLayerSources??[]).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
-        this.layers = LayoutConfig.ExtractLayers(json, official, context);
-
+        const layerInfo  = LayoutConfig.ExtractLayers(json, official, context);
+        this.layers = layerInfo.layers
+        this.trackAllNodes = layerInfo.extractAllNodes
+        
+        
         this.clustering = {
             maxZoom: 16,
             minNeededElements: 25,
@@ -147,10 +152,11 @@ export default class LayoutConfig {
 
     }
 
-    private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): LayerConfig[] {
+    private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): {layers: LayerConfig[], extractAllNodes: boolean} {
         const result: LayerConfig[] = []
-
+        let exportAllNodes = false
         json.layers.forEach((layer, i) => {
+            
             if (typeof layer === "string") {
                 if (AllKnownLayers.sharedLayersJson.get(layer) !== undefined) {
                     if (json.overrideAll !== undefined) {
@@ -177,12 +183,19 @@ export default class LayoutConfig {
                 result.push(newLayer)
                 return
             }
+            
             // @ts-ignore
             let names = layer.builtin;
             if (typeof names === "string") {
                 names = [names]
             }
             names.forEach(name => {
+
+                if(name === "type_node"){
+                    // This is a very special layer which triggers special behaviour
+                    exportAllNodes = true;
+                }
+                
                 const shared = AllKnownLayers.sharedLayersJson.get(name);
                 if (shared === undefined) {
                     throw `Unknown shared/builtin layer ${name} at ${context}.layers[${i}]. Available layers are ${Array.from(AllKnownLayers.sharedLayersJson.keys()).join(", ")}`;
@@ -199,7 +212,7 @@ export default class LayoutConfig {
 
         });
 
-        return result
+        return {layers: result, extractAllNodes: exportAllNodes}
     }
 
     public CustomCodeSnippets(): string[] {

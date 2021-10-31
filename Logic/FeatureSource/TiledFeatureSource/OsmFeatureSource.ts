@@ -30,6 +30,8 @@ export default class OsmFeatureSource {
     };
     public readonly downloadedTiles = new Set<number>()
     private readonly allowedTags: TagsFilter;
+    
+    public rawDataHandlers: ((osmJson: any, tileId: number) => void)[] = []
 
     constructor(options: {
         handleTile: (tile: FeatureSourceForLayer & Tiled) => void;
@@ -94,11 +96,11 @@ export default class OsmFeatureSource {
         try {
 
             console.log("Attempting to get tile", z, x, y, "from the osm api")
-            const osmXml = await Utils.download(url, {"accept": "application/xml"})
+            const osmJson = await Utils.downloadJson(url)
             try {
-                const parsed = new DOMParser().parseFromString(osmXml, "text/xml");
                 console.log("Got tile", z, x, y, "from the osm api")
-                const geojson = OsmToGeoJson.default(parsed,
+                this.rawDataHandlers.forEach(handler => handler(osmJson, Tiles.tile_index(z, x, y)))
+                const geojson = OsmToGeoJson.default(osmJson,
                     // @ts-ignore
                     {
                         flatProperties: true

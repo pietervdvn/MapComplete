@@ -20,7 +20,7 @@ import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import ImportButton from "./BigComponents/ImportButton";
+import ImportButton, {ImportButtonSpecialViz} from "./BigComponents/ImportButton";
 import {Tag} from "../Logic/Tags/Tag";
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
@@ -38,10 +38,13 @@ import {SubtleButton} from "./Base/SubtleButton";
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
 import {And} from "../Logic/Tags/And";
 import Toggle from "./Input/Toggle";
+import {DefaultGuiState} from "./DefaultGUI";
+import Img from "./Base/Img";
+import FilteredLayer from "../Models/FilteredLayer";
 
 export interface SpecialVisualization {
     funcName: string,
-    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
+    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState) => BaseUIElement),
     docs: string,
     example?: string,
     args: { name: string, defaultValue?: string, doc: string }[]
@@ -49,17 +52,7 @@ export interface SpecialVisualization {
 
 export default class SpecialVisualizations {
 
-    private static tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
-This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
-
-If a value to substitute is undefined, empty string will be used instead.
-
-This supports multiple values, e.g. \`ref=$source:geometry:type/$source:geometry:ref\`
-
-Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with \`[a-zA-Z0-9_:]*\`). Sadly, delimiting with \`{}\` as these already mark the boundaries of the special rendering...
-
-Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
- `
+    static tagsToApplyHelpText = Utils.Special_visualizations_tagsToApplyHelpText
     public static specialVisualizations: SpecialVisualization[] =
         [
             {
@@ -490,79 +483,7 @@ Note that these values can be prepare with javascript in the theme by using a [c
                     )
                 }
             },
-            {
-                funcName: "import_button",
-                args: [
-                    {
-                        name: "tags",
-                        doc: "The tags to add onto the new object - see specification above"
-                    },
-                    {
-                        name: "text",
-                        doc: "The text to show on the button",
-                        defaultValue: "Import this data into OpenStreetMap"
-                    },
-                    {
-                        name: "icon",
-                        doc: "A nice icon to show in the button",
-                        defaultValue: "./assets/svg/addSmall.svg"
-                    },
-                    {
-                        name: "minzoom",
-                        doc: "How far the contributor must zoom in before being able to import the point",
-                        defaultValue: "18"
-                    }],
-                docs: `This button will copy the data from an external dataset into OpenStreetMap. It is only functional in official themes but can be tested in unofficial themes.
-
-#### Importing a dataset into OpenStreetMap: requirements
-
-If you want to import a dataset, make sure that:
-
-1. The dataset to import has a suitable license
-2. The community has been informed of the import
-3. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed
-
-There are also some technicalities in your theme to keep in mind:
-
-1. The new feature will be added and will flow through the program as any other new point as if it came from OSM.
-    This means that there should be a layer which will match the new tags and which will display it.
-2. The original feature from your geojson layer will gain the tag '_imported=yes'.
-    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
-3. There should be a way for the theme to detect previously imported points, even after reloading.
-    A reference number to the original dataset is an excellent way to do this
-4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
-    
-#### Disabled in unofficial themes
-
-The import button can be tested in an unofficial theme by adding \`test=true\` or \`backend=osm-test\` as [URL-paramter](URL_Parameters.md). 
-The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
-In the case that MapComplete is pointed to the testing grounds, the edit will be made on ${OsmConnection.oauth_configs["osm-test"].url}
-
-
-#### Specifying which tags to copy or add
-
-The first argument of the import button takes a \`;\`-seperated list of tags to add.
-
-${SpecialVisualizations.tagsToApplyHelpText}
-  
-`,
-                constr: (state, tagSource, args) => {
-                    if (!state.layoutToUse.official && !(state.featureSwitchIsTesting.data || state.osmConnection._oauth_config.url === OsmConnection.oauth_configs["osm-test"].url)) {
-                        return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),
-                            new FixedUiElement("To test, add <b>test=true</b> or <b>backend=osm-test</b> to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
-                    }
-                    const rewrittenTags = SpecialVisualizations.generateTagsToApply(args[0], tagSource)
-                    const id = tagSource.data.id;
-                    const feature = state.allElements.ContainingFeatures.get(id)
-                    const minzoom = Number(args[3])
-                    const message = args[1]
-                    const image = args[2]
-
-                    return new ImportButton(
-                        image, message, tagSource, rewrittenTags, feature, minzoom, state
-                    )
-                }
-            },
+            new ImportButtonSpecialViz(),
             {
                 funcName: "multi_apply",
                 docs: "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags",
@@ -687,7 +608,7 @@ ${SpecialVisualizations.tagsToApplyHelpText}
             }
         ]
 
-    private static generateTagsToApply(spec: string, tagSource: UIEventSource<any>): UIEventSource<Tag[]> {
+    static generateTagsToApply(spec: string, tagSource: UIEventSource<any>): UIEventSource<Tag[]> {
 
         const tgsSpec = spec.split(";").map(spec => {
             const kv = spec.split("=").map(s => s.trim());

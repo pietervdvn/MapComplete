@@ -235,6 +235,13 @@ export class GeoOperations {
      * @param point Point defined as [lon, lat]
      */
     public static nearestPoint(way, point: [number, number]) {
+        if(way.geometry.type === "Polygon"){
+            way = {...way}
+            way.geometry = {...way.geometry}
+            way.geometry.type = "LineString"
+            way.geometry.coordinates = way.geometry.coordinates[0]
+        }
+        
         return turf.nearestPointOnLine(way, point, {units: "kilometers"});
     }
 

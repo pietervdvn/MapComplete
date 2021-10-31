@@ -26,6 +26,7 @@ import {OsmConnection} from "../Osm/OsmConnection";
 import {Tiles} from "../../Models/TileRange";
 import TileFreshnessCalculator from "./TileFreshnessCalculator";
 import {ElementStorage} from "../ElementStorage";
+import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
 
 
 /**
@@ -146,6 +147,11 @@ export default class FeaturePipeline {
 
             this.freshnesses.set(id, new TileFreshnessCalculator())
 
+            if(id === "type_node"){
+                // Handles by the 'FullNodeDatabaseSource'
+                continue;
+            }
+
             if (source.geojsonSource === undefined) {
                 // This is an OSM layer
                 // We load the cached values and register them
@@ -220,6 +226,14 @@ export default class FeaturePipeline {
                     self.freshnesses.get(flayer.layerDef.id).addTileLoad(tileId, new Date())
                 })
         })
+        
+        if(state.layoutToUse.trackAllNodes){
+             new FullNodeDatabaseSource(state, osmFeatureSource, tile => {
+                 new RegisteringAllFromFeatureSourceActor(tile)
+                 perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
+                 tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+             })
+        }
 
 
         const updater = this.initOverpassUpdater(state, useOsmApi)

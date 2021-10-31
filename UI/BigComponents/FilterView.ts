@@ -14,7 +14,6 @@ import FilteredLayer from "../../Models/FilteredLayer";
 import BackgroundSelector from "./BackgroundSelector";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig";
-import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>, tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]) {
@@ -83,7 +82,7 @@ export default class FilterView extends VariableUiElement {
 
         const icon = new Combine([Svg.checkbox_filled]).SetStyle(iconStyle);
         const layer = filteredLayer.layerDef
-       
+
         const iconUnselected = new Combine([Svg.checkbox_empty]).SetStyle(
             iconStyle
         );
@@ -113,18 +112,8 @@ export default class FilterView extends VariableUiElement {
 
         const style =
             "display:flex;align-items:center;padding:0.5rem 0;";
-        const mapRendering = layer.mapRendering.filter(r => r.location.has("point"))[0]
-        let layerIcon = undefined
-        let layerIconUnchecked = undefined
-        try {
-            if (mapRendering !== undefined) {
-                const defaultTags = new UIEventSource( TagUtils.changeAsProperties(layer.source.osmTags.asChange({id: "node/-1"})))
-                layerIcon = mapRendering.GenerateLeafletStyle(defaultTags, false, {noSize: true}).html.SetClass("w-8 h-8 ml-2")
-                layerIconUnchecked = mapRendering.GenerateLeafletStyle(defaultTags, false, {noSize: true}).html.SetClass("opacity-50  w-8 h-8 ml-2")
-            }
-        } catch (e) {
-            console.error(e)
-        }
+        const layerIcon = layer.defaultIcon()?.SetClass("w-8 h-8 ml-2")
+        const layerIconUnchecked = layer.defaultIcon()?.SetClass("opacity-50  w-8 h-8 ml-2")
 
         const layerChecked = new Combine([icon, layerIcon, styledNameChecked, zoomStatus])
             .SetStyle(style)

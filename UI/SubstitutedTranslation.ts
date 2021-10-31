@@ -8,6 +8,7 @@ import {Utils} from "../Utils";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
 import BaseUIElement from "./BaseUIElement";
+import {DefaultGuiState} from "./DefaultGUI";
 
 export class SubstitutedTranslation extends VariableUiElement {
 
@@ -49,7 +50,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                         }
                         const viz = proto.special;
                         try {
-                            return viz.func.constr(State.state, tagsSource, proto.special.args).SetStyle(proto.special.style);
+                            return viz.func.constr(State.state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
                         } catch (e) {
                             console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
                             return new FixedUiElement(`Could not generate special rendering for ${viz.func}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")

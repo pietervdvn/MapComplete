@@ -28,7 +28,20 @@
   "overrideAll": {
     "minzoom": 18
   },
+  "trackAllNodes": true,
   "layers": [
+    {
+     "builtin": "type_node",
+      "isShown": {
+        "render": "no"
+      },
+      "override": {
+        "calculatedTags": [
+          "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
+          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false"
+        ]
+      }
+    },
     {
       "id": "OSM-buildings",
       "name": "All OSM-buildings",
@@ -413,7 +426,7 @@
         "all_tags",
         {
           "id": "import-button",
-          "render": "{import_button(addr:street=$STRAATNM; addr:housenumber=$HUISNR)}"
+          "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Import this address,,,OSM-buildings,5)}"
         }
       ]
     },
@@ -657,7 +670,7 @@
         },
         {
           "id": "Import-button",
-          "render": "{import_button(building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Upload this building to OpenStreetMap)}",
+          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Upload this building to OpenStreetMap)}",
           "mappings": [
             {
               "if": "_overlaps_with!=null",

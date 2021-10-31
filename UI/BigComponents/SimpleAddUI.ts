@@ -12,18 +12,16 @@ import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
 import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
-import LocationInput from "../Input/LocationInput";
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
-import {BBox} from "../../Logic/BBox";
 import Loc from "../../Models/Loc";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {Changes} from "../../Logic/Osm/Changes";
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
 import {ElementStorage} from "../../Logic/ElementStorage";
+import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -33,8 +31,7 @@ import {ElementStorage} from "../../Logic/ElementStorage";
 * - A 'read your unread messages before adding a point'
  */
 
-/*private*/
-interface PresetInfo extends PresetConfig {
+export interface PresetInfo extends PresetConfig {
     name: string | BaseUIElement,
     icon: () => BaseUIElement,
     layerToAddTo: FilteredLayer
@@ -91,20 +88,29 @@ export default class SimpleAddUI extends Toggle {
                     if (preset === undefined) {
                         return presetsOverview
                     }
-                    return SimpleAddUI.CreateConfirmButton(state, filterViewIsOpened, preset,
-                        (tags, location, snapOntoWayId?: string) => {
-                            if (snapOntoWayId === undefined) {
-                                createNewPoint(tags, location, undefined)
-                            } else {
-                                OsmObject.DownloadObject(snapOntoWayId).addCallbackAndRunD(way => {
-                                    createNewPoint(tags, location, <OsmWay>way)
-                                    return true;
-                                })
-                            }
-                        },
-                        () => {
-                            selectedPreset.setData(undefined)
-                        })
+
+
+                    function confirm(tags, location, snapOntoWayId?: string) {
+                        if (snapOntoWayId === undefined) {
+                            createNewPoint(tags, location, undefined)
+                        } else {
+                            OsmObject.DownloadObject(snapOntoWayId).addCallbackAndRunD(way => {
+                                createNewPoint(tags, location, <OsmWay>way)
+                                return true;
+                            })
+                        }
+                    }
+
+                    function cancel() {
+                        selectedPreset.setData(undefined)
+                    }
+
+                    const message =Translations.t.general.add.addNew.Subs({category: preset.name});
+                    return new ConfirmLocationOfPoint(state, filterViewIsOpened, preset,
+                        message,
+                        state.LastClickLocation.data,
+                        confirm,
+                        cancel)
                 }
             ))
 
@@ -134,170 +140,7 @@ export default class SimpleAddUI extends Toggle {
     }
 
 
-    private static CreateConfirmButton(
-        state: {
-          LastClickLocation: UIEventSource<{ lat: number, lon: number }>,
-          osmConnection: OsmConnection,
-          featurePipeline: FeaturePipeline  
-        },
-            filterViewIsOpened: UIEventSource<boolean>,
-        preset: PresetInfo,
-                                       confirm: (tags: any[], location: { lat: number, lon: number }, snapOntoWayId: string) => void,
-                                       cancel: () => void): BaseUIElement {
-
-        let location = state.LastClickLocation;
-        let preciseInput: LocationInput = undefined
-        if (preset.preciseInput !== undefined) {
-            // We uncouple the event source
-            const locationSrc = new UIEventSource({
-                lat: location.data.lat,
-                lon: location.data.lon,
-                zoom: 19
-            });
-
-            let backgroundLayer = undefined;
-            if (preset.preciseInput.preferredBackground) {
-                backgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
-            }
-
-            let snapToFeatures: UIEventSource<{ feature: any }[]> = undefined
-            let mapBounds: UIEventSource<BBox> = undefined
-            if (preset.preciseInput.snapToLayers) {
-                snapToFeatures = new UIEventSource<{ feature: any }[]>([])
-                mapBounds = new UIEventSource<BBox>(undefined)
-            }
-
-
-            const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-            preciseInput = new LocationInput({
-                mapBackground: backgroundLayer,
-                centerLocation: locationSrc,
-                snapTo: snapToFeatures,
-                snappedPointTags: tags,
-                maxSnapDistance: preset.preciseInput.maxSnapDistance,
-                bounds: mapBounds
-            })
-            preciseInput.installBounds(0.15, true)
-            preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
-
-
-            if (preset.preciseInput.snapToLayers) {
-                // We have to snap to certain layers.
-                // Lets fetch them
-
-                let loadedBbox: BBox = undefined
-                mapBounds?.addCallbackAndRunD(bbox => {
-                    if (loadedBbox !== undefined && bbox.isContainedIn(loadedBbox)) {
-                        // All is already there
-                        // return;
-                    }
-
-                    bbox = bbox.pad(2);
-                    loadedBbox = bbox;
-                    const allFeatures: { feature: any }[] = []
-                    preset.preciseInput.snapToLayers.forEach(layerId => {
-                        state.featurePipeline.GetFeaturesWithin(layerId, bbox).forEach(feats => allFeatures.push(...feats.map(f => ({feature: f}))))
-                    })
-                    snapToFeatures.setData(allFeatures)
-                })
-            }
-
-        }
-
-
-        let confirmButton: BaseUIElement = new SubtleButton(preset.icon(),
-            new Combine([
-                Translations.t.general.add.addNew.Subs({category: preset.name}),
-                Translations.t.general.add.warnVisibleForEveryone.Clone().SetClass("alert")
-            ]).SetClass("flex flex-col")
-        ).SetClass("font-bold break-words")
-            .onClick(() => {
-                confirm(preset.tags, (preciseInput?.GetValue() ?? location).data, preciseInput?.snappedOnto?.data?.properties?.id);
-            });
-
-        if (preciseInput !== undefined) {
-            confirmButton = new Combine([preciseInput, confirmButton])
-        }
-
-        const openLayerControl =
-            new SubtleButton(
-                Svg.layers_ui(),
-                new Combine([
-                    Translations.t.general.add.layerNotEnabled
-                        .Subs({layer: preset.layerToAddTo.layerDef.name})
-                        .SetClass("alert"),
-                    Translations.t.general.add.openLayerControl
-                ])
-            )
-                .onClick(() => filterViewIsOpened.setData(true))
-
-
-        const openLayerOrConfirm = new Toggle(
-            confirmButton,
-            openLayerControl,
-            preset.layerToAddTo.isDisplayed
-        )
-
-        const disableFilter = new SubtleButton(
-            new Combine([
-                Svg.filter_ui().SetClass("absolute w-full"),
-                Svg.cross_bottom_right_svg().SetClass("absolute red-svg")
-            ]).SetClass("relative"),
-            new Combine(
-                [
-                    Translations.t.general.add.disableFiltersExplanation.Clone(),
-                    Translations.t.general.add.disableFilters.Clone().SetClass("text-xl")
-                ]
-            ).SetClass("flex flex-col")
-        ).onClick(() => {
-            preset.layerToAddTo.appliedFilters.setData([])
-            cancel()
-        })
-
-        const disableFiltersOrConfirm = new Toggle(
-            openLayerOrConfirm,
-            disableFilter,
-            preset.layerToAddTo.appliedFilters.map(filters => {
-                if (filters === undefined || filters.length === 0) {
-                    return true;
-                }
-                for (const filter of filters) {
-                    if (filter.selected === 0 && filter.filter.options.length === 1) {
-                        return false;
-                    }
-                    if (filter.selected !== undefined) {
-                        const tags = filter.filter.options[filter.selected].osmTags
-                        if (tags !== undefined && tags["and"]?.length !== 0) {
-                            // This actually doesn't filter anything at all
-                            return false;
-                        }
-                    }
-                }
-                return true
-
-            })
-        )
-
-
-        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, state.osmConnection);
-
-        const cancelButton = new SubtleButton(Svg.close_ui(),
-            Translations.t.general.cancel
-        ).onClick(cancel)
-
-        return new Combine([
-            state.osmConnection.userDetails.data.dryRun ?
-                Translations.t.general.testing.Clone().SetClass("alert") : undefined,
-            disableFiltersOrConfirm,
-            cancelButton,
-            preset.description,
-            tagInfo
-
-        ]).SetClass("flex flex-col")
-
-    }
-
-    private static CreateTagInfoFor(preset: PresetInfo, osmConnection: OsmConnection, optionallyLinkToWiki = true) {
+    public static CreateTagInfoFor(preset: PresetInfo, osmConnection: OsmConnection, optionallyLinkToWiki = true) {
         const csCount = osmConnection.userDetails.data.csCount;
         return new Toggle(
             Translations.t.general.add.presetInfo.Subs({
@@ -329,7 +172,7 @@ export default class SimpleAddUI extends Toggle {
 
     private static CreatePresetSelectButton(preset: PresetInfo, osmConnection: OsmConnection) {
 
-        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, osmConnection ,false);
+        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, osmConnection, false);
         return new SubtleButton(
             preset.icon(),
             new Combine([
@@ -368,7 +211,7 @@ export default class SimpleAddUI extends Toggle {
             for (const preset of presets) {
 
                 const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-                let icon: () => BaseUIElement = () => layer.layerDef.mapRendering[0]. GenerateLeafletStyle(new UIEventSource<any>(tags), false).html
+                let icon: () => BaseUIElement = () => layer.layerDef.mapRendering[0].GenerateLeafletStyle(new UIEventSource<any>(tags), false).html
                     .SetClass("w-12 h-12 block relative");
                 const presetInfo: PresetInfo = {
                     tags: preset.tags,

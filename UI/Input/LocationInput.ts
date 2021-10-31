@@ -96,6 +96,8 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 let min = undefined;
                 let matchedWay = undefined;
                 for (const feature of self._snapTo.data ?? []) {
+                    try{
+                        
                     const nearestPointOnLine = GeoOperations.nearestPoint(feature.feature, [loc.lon, loc.lat])
                     if (min === undefined) {
                         min = nearestPointOnLine
@@ -107,6 +109,9 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                         min = nearestPointOnLine
                         matchedWay = feature.feature;
 
+                    }
+                    }catch(e){
+                        console.log("Snapping to a nearest point failed for ", feature.feature,"due to ", e)
                     }
                 }
 

@@ -15,6 +15,8 @@ import LineRenderingConfig from "./LineRenderingConfig";
 import PointRenderingConfigJson from "./Json/PointRenderingConfigJson";
 import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
 import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import BaseUIElement from "../../UI/BaseUIElement";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -59,11 +61,11 @@ export default class LayerConfig extends WithContextLoader {
         this.id = json.id;
 
         if (json.source === undefined) {
-            throw "Layer " + this.id + " does not define a source section ("+context+")"
+            throw "Layer " + this.id + " does not define a source section (" + context + ")"
         }
 
         if (json.source.osmTags === undefined) {
-            throw "Layer " + this.id + " does not define a osmTags in the source section - these should always be present, even for geojson layers ("+context+")"
+            throw "Layer " + this.id + " does not define a osmTags in the source section - these should always be present, even for geojson layers (" + context + ")"
 
         }
 
@@ -262,6 +264,15 @@ export default class LayerConfig extends WithContextLoader {
         }
     }
 
+    public defaultIcon() : BaseUIElement | undefined{
+        const mapRendering = this.mapRendering.filter(r => r.location.has("point"))[0]
+        if (mapRendering === undefined) {
+            return undefined
+        }
+        const defaultTags = new UIEventSource(TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"})))
+        return mapRendering.GenerateLeafletStyle(defaultTags, false, {noSize: true}).html
+    }
+
     public ExtractLayerTagRenderings(json: LayerConfigJson): TagRenderingConfig[] {
 
         if (json.tagRenderings === undefined) {
@@ -358,14 +369,12 @@ export default class LayerConfig extends WithContextLoader {
 
     }
 
-
     public CustomCodeSnippets(): string[] {
         if (this.calculatedTags === undefined) {
             return [];
         }
         return this.calculatedTags.map((code) => code[1]);
     }
-
 
     public ExtractImages(): Set<string> {
         const parts: Set<string>[] = [];

@@ -32,6 +32,7 @@ export class DefaultGuiState {
     public readonly copyrightViewIsOpened: UIEventSource<boolean>;
     public readonly welcomeMessageOpenedTab: UIEventSource<number>
     public readonly allFullScreenStates: UIEventSource<boolean>[] = []
+    static state: DefaultGuiState;
 
     constructor() {
 

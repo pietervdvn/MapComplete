@@ -15,6 +15,18 @@ export class Utils {
     private static injectedDownloads = {}
     private static _download_cache = new Map<string, { promise: Promise<any>, timestamp: number }>()
 
+   public  static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
+This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. \`ref=$source:geometry:type/$source:geometry:ref\`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with \`[a-zA-Z0-9_:]*\`). Sadly, delimiting with \`{}\` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+ `
+    
     static EncodeXmlValue(str) {
         if (typeof str !== "string") {
             str = "" + str
