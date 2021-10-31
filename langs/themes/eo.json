@@ -1,5 +1,119 @@
 {
     "ghostbikes": {
-        "title": "Fantombiciklo"
+        "title": "Fantombicikloj"
+    },
+    "openwindpowermap": {
+        "layers": {
+            "0": {
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "3": {
+                                "human": " gigavatoj"
+                            },
+                            "2": {
+                                "human": " vatoj"
+                            },
+                            "1": {
+                                "human": " kilovatoj"
+                            },
+                            "0": {
+                                "human": " megavatoj"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " metro"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "cyclestreets": {
+        "layers": {
+            "2": {
+                "title": {
+                    "render": "Strato"
+                },
+                "name": "Ĉiuj stratoj"
+            }
+        }
+    },
+    "hailhydrant": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "extinguisher-location": {
+                        "render": "Loko: {location}"
+                    }
+                }
+            }
+        }
+    },
+    "climbing": {
+        "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " metro"
+                        },
+                        "1": {
+                            "human": " futo"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "facadegardens": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "facadegardens-description": {
+                        "render": "Pliaj detaloj: {description}"
+                    }
+                }
+            }
+        }
+    },
+    "hackerspaces": {
+        "layers": {
+            "0": {
+                "icon": {
+                    "mappings": {
+                        "0": {
+                            "then": "./assets/themes/hackerspaces/led.png"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": " {name}"
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "hackerspaces-opening_hours": {
+                        "render": "{opening_hours_table()}"
+                    }
+                }
+            }
+        }
+    },
+    "maps": {
+        "title": "Mapo de mapoj"
     }
 }
