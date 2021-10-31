@@ -49,7 +49,7 @@
         "images",
         {
          
-          "render": "{minimap(17): height: 10rem; overflow: hidden; border: 1px solid DADADA; border-radius: 0.5rem; }"
+          "render": "{minimap(17): height: 10rem; overflow: hidden; border: 1px solid black; border-radius: 0.5rem; }"
         }
       ],
       "icon": {
