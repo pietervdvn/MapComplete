@@ -49,7 +49,7 @@
         "images",
         {
           "id": "minimap",
-          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+          "render": "{minimap(18): height: 10rem; overflow: hidden; border-radius:1rem; }"
         }
       ],
       "icon": {
@@ -128,7 +128,7 @@
         "images",
         {
           "id": "minimap",
-          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+          "render": "{minimap(18): height: 10rem; overflow: hidden; border-radius:1rem; }"
         },
         {
           "render": {
