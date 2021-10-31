@@ -49,7 +49,7 @@
         "images",
         {
          
-          "render": "{minimap(17): height: 10rem; overflow: hidden; }"
+          "render": "{minimap(17): height: 10rem; overflow: hidden; border-radius:3rem }"
         }
       ],
       "icon": {
