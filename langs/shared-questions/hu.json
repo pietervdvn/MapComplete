@@ -72,7 +72,7 @@
             "question": "Be lehet-e vinni kutyát ebbe az üzletbe?"
         },
         "email": {
-            "question": "Mi az e-mail-címe ennek: {name}?"
+            "question": "Mi a(z) {name} e-mail címe?"
         },
         "opening_hours": {
             "question": "Mikor van nyitva ez: {name}?",
