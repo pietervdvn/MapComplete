@@ -128,7 +128,9 @@
         "images",
         {
           "id": "minimap",
-          "render": "{minimap(18): height: 10rem; overflow: hidden; border-radius:1rem; }"
+          
+   
+          "render": "{minimap(17): height: 10rem; overflow: hidden; border: 2px solid black; }"
         },
         {
           "render": {
