@@ -46,7 +46,11 @@
         "en": "The layer showing postboxes."
       },
       "tagRenderings": [
-        "images"
+        "images",
+        {
+          "id": "minimap",
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        }
       ],
       "icon": {
         "render": "./assets/themes/postboxes/postbox.svg"
@@ -121,7 +125,11 @@
         "de": "Eine Ebene mit Postämtern."
       },
       "tagRenderings": [
-        "images"
+        "images",
+         {
+          "id": "minimap",
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        }
         {
           "render": {
             "en": "Opening Hours: {opening_hours_table()}"
