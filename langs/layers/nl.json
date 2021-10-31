@@ -3075,16 +3075,19 @@
         },
         "tagRenderings": {
             "shops-email": {
-                "question": "Wat is het e-mailadres van deze winkel?"
+                "question": "Wat is het e-mailadres van deze winkel?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
             },
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?"
             },
             "shops-opening_hours": {
-                "question": "Wat zijn de openingsuren van deze winkel?"
+                "question": "Wat zijn de openingsuren van deze winkel?",
+                "render": "{opening_hours_table(opening_hours)}"
             },
             "shops-phone": {
-                "question": "Wat is het telefoonnummer?"
+                "question": "Wat is het telefoonnummer?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "shops-shop": {
                 "mappings": {
@@ -3096,6 +3099,18 @@
                     },
                     "4": {
                         "then": "Bakkerij"
+                    },
+                    "2": {
+                        "then": "Kledingwinkel"
+                    },
+                    "5": {
+                        "then": "Autogarage"
+                    },
+                    "6": {
+                        "then": "Autodealer"
+                    },
+                    "0": {
+                        "then": "Gemakswinkel"
                     }
                 }
             },
