@@ -46,7 +46,7 @@
         "en": "The layer showing postboxes."
       },
       "tagRenderings": [
-        "images",
+        "images"
       ],
       "icon": {
         "render": "./assets/themes/postboxes/postbox.svg"
@@ -121,7 +121,7 @@
         "de": "Eine Ebene mit Postämtern."
       },
       "tagRenderings": [
-        "images",
+        "images"
         {
           "render": {
             "en": "Opening Hours: {opening_hours_table()}"
