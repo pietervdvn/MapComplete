@@ -729,7 +729,7 @@
     "grb": {
         "description": "GRB Fixup",
         "layers": {
-            "2": {
+            "3": {
                 "description": "Dit gebouw heeft een foutmelding",
                 "name": "Fixmes op gebouwen",
                 "tagRenderings": {
@@ -772,7 +772,7 @@
                     "render": "{addr:street} {addr:housenumber}"
                 }
             },
-            "4": {
+            "5": {
                 "description": "Dit gebouw heeft een foutmelding",
                 "name": "Fixmes op gebouwen",
                 "tagRenderings": {

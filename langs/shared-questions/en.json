@@ -65,7 +65,7 @@
         "wheelchair-access": {
             "mappings": {
                 "0": {
-                    "then": "This place is specially adapted for wheelchair users"
+                    "then": "This place is specially adapated for wheelchair users"
                 },
                 "1": {
                     "then": "This place is easily reachable with a wheelchair"

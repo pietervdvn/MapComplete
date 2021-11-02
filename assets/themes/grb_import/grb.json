@@ -31,7 +31,7 @@
   "trackAllNodes": true,
   "layers": [
     {
-     "builtin": "type_node",
+      "builtin": "type_node",
       "isShown": {
         "render": "no"
       },
@@ -40,7 +40,7 @@
           "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
           "_is_part_of_building_passage=feat.get('parent_ways')?.some(p => p.tunnel === 'building_passage') ?? false",
           "_is_part_of_highway=!feat.get('is_part_of_building_passage') && (feat.get('parent_ways')?.some(p => p.highway !== undefined && p.highway !== '') ?? false)",
-          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false" 
+          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false"
         ]
       }
     },
