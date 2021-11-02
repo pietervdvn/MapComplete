@@ -27,13 +27,19 @@ export default class OpeningHoursVisualization extends Toggle {
         const tagsDirect = tags.data;
         const ohTable = new VariableUiElement(tags
             .map(tags => {
-                const value : string = tags[key];
-                if(value.startsWith(prefix) && value.endsWith(postfix)){
-                    return value.substring(prefix.length, value.length - postfix.length)
+                const value: string = tags[key];
+                if (value === undefined) {
+                    return undefined
+                }
+                if (value.startsWith(prefix) && value.endsWith(postfix)) {
+                    return value.substring(prefix.length, value.length - postfix.length).trim()
                 }
                 return value;
             }) // This mapping will absorb all other changes to tags in order to prevent regeneration
             .map(ohtext => {
+                    if (ohtext === undefined) {
+                        return new FixedUiElement("No opening hours defined with key " + key).SetClass("alert")
+                    }
                     try {
                         // noinspection JSPotentiallyInvalidConstructorUsage
                         const oh = new opening_hours(ohtext, {
@@ -41,12 +47,12 @@ export default class OpeningHoursVisualization extends Toggle {
                             lon: tagsDirect._lon,
                             address: {
                                 country_code: tagsDirect._country
-                            }
-                        }, {tag_key: key});
+                            },
+                        }, {tag_key: "opening_hours"});
 
                         return OpeningHoursVisualization.CreateFullVisualisation(oh)
                     } catch (e) {
-                        console.log(e);
+                        console.warn(e, e.stack);
                         return new Combine([Translations.t.general.opening_hours.error_loading,
                             new Toggle(
                                 new FixedUiElement(e).SetClass("subtle"),
