@@ -273,7 +273,9 @@ export default class GeoLocationHandler extends VariableUiElement {
                 location
             );
         } else {
-            this._leafletMap.data.setView([location.latitude, location.longitude], targetZoom);
+            const currentZoom = this._leafletMap.data.getZoom()
+            
+            this._leafletMap.data.setView([location.latitude, location.longitude], Math.max(targetZoom ?? 0, currentZoom));
         }
     }
 
