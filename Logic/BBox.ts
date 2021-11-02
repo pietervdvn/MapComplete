@@ -116,6 +116,11 @@ export class BBox {
     getSouth() {
         return this.minLat
     }
+    
+    contains(lonLat: [number, number]){
+        return this.minLat <= lonLat[1] && lonLat[1] <= this.maxLat
+        && this.minLon<= lonLat[0] && lonLat[0] <= this.maxLon
+    }
 
     pad(factor: number, maxIncrease = 2): BBox {
 

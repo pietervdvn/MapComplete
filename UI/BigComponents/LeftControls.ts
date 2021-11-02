@@ -14,6 +14,8 @@ import Loc from "../../Models/Loc";
 import {BBox} from "../../Logic/BBox";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
+import BaseLayer from "../../Models/BaseLayer";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 
 export default class LeftControls extends Combine {
 
@@ -26,7 +28,9 @@ export default class LeftControls extends Combine {
                     featureSwitchEnableExport: UIEventSource<boolean>,
                     featureSwitchExportAsPdf: UIEventSource<boolean>,
                     filteredLayers: UIEventSource<FilteredLayer[]>,
-                    featureSwitchFilter: UIEventSource<boolean>
+                    featureSwitchFilter: UIEventSource<boolean>,
+                    backgroundLayer: UIEventSource<BaseLayer>,
+                    osmConnection: OsmConnection
                 },
                 guiState: {
                     downloadControlIsOpened: UIEventSource<boolean>,

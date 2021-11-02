@@ -58,7 +58,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             for (const groupName of allGroupNames) {
                 const questions = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
                 const questionBox = new QuestionBox(tags, questions, layerConfig.units);
-                console.log("Groupname:", groupName)
                 questionBoxes.set(groupName, questionBox)
             }
         }

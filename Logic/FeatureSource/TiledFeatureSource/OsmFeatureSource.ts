@@ -68,7 +68,7 @@ export default class OsmFeatureSource {
                     console.log("Tile download", Tiles.tile_from_index(neededTile).join("/"), "started")
                     self.downloadedTiles.add(neededTile)
                     self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {
-                        console.log("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded")
+                        console.debug("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded")
                     })
                 }
             } catch (e) {
@@ -98,7 +98,7 @@ export default class OsmFeatureSource {
             console.log("Attempting to get tile", z, x, y, "from the osm api")
             const osmJson = await Utils.downloadJson(url)
             try {
-                console.log("Got tile", z, x, y, "from the osm api")
+                console.debug("Got tile", z, x, y, "from the osm api")
                 this.rawDataHandlers.forEach(handler => handler(osmJson, Tiles.tile_index(z, x, y)))
                 const geojson = OsmToGeoJson.default(osmJson,
                     // @ts-ignore
@@ -110,10 +110,8 @@ export default class OsmFeatureSource {
                 // We only keep what is needed
 
                 geojson.features = geojson.features.filter(feature => this.allowedTags.matchesProperties(feature.properties))
-
                 geojson.features.forEach(f => f.properties["_backend"] = this._backend)
                 
-                console.log("Tile geojson:", z, x, y, "is", geojson)
                 const index = Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,
                     this.handleTile,

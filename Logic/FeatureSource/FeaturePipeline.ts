@@ -228,11 +228,15 @@ export default class FeaturePipeline {
         })
         
         if(state.layoutToUse.trackAllNodes){
-             new FullNodeDatabaseSource(state, osmFeatureSource, tile => {
+             const fullNodeDb = new FullNodeDatabaseSource(
+                 state.filteredLayers.data.filter(l => l.layerDef.id === "type_node")[0],
+                 tile => {
                  new RegisteringAllFromFeatureSourceActor(tile)
                  perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
                  tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
              })
+
+            osmFeatureSource.rawDataHandlers.push((osmJson, tileId) => fullNodeDb.handleOsmJson(osmJson, tileId))
         }
 
 

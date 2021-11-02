@@ -167,6 +167,9 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     installBounds(factor: number | BBox, showRange?: boolean): void {
         this.map.installBounds(factor, showRange)
     }
+    TakeScreenshot(): Promise<any> {
+       return this.map.TakeScreenshot()
+    }
 
     protected InnerConstructElement(): HTMLElement {
         try {

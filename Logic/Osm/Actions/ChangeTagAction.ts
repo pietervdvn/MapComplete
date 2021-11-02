@@ -11,7 +11,7 @@ export default class ChangeTagAction extends OsmChangeAction {
 
     constructor(elementId: string, tagsFilter: TagsFilter, currentTags: any, meta: {
         theme: string,
-        changeType: "answer" | "soft-delete" | "add-image"
+        changeType: "answer" | "soft-delete" | "add-image" | string
     }) {
         super();
         this._elementId = elementId;
@@ -27,11 +27,16 @@ export default class ChangeTagAction extends OsmChangeAction {
         const key = kv.k;
         const value = kv.v;
         if (key === undefined || key === null) {
-            console.log("Invalid key");
+            console.error("Invalid key:", key);
             return undefined;
         }
         if (value === undefined || value === null) {
-            console.log("Invalid value for ", key);
+            console.error("Invalid value for ", key,":", value);
+            return undefined;
+        }
+        
+        if(typeof value !== "string"){
+            console.error("Invalid value for ", key, "as it is not a string:", value)
             return undefined;
         }
 

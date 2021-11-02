@@ -32,7 +32,7 @@ export default class RenderingMultiPlexerFeatureSource {
                 const withIndex: (any & { pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined })[] = [];
 
 
-                function addAsPoint(feat, rendering, coordinate) {
+                function addAsPoint(feat, rendering, coordinate)     {
                     const patched = {
                         ...feat,
                         pointRenderingIndex: rendering.index
@@ -46,8 +46,6 @@ export default class RenderingMultiPlexerFeatureSource {
 
                 for (const f of features) {
                     const feat = f.feature;
-
-
                     if (feat.geometry.type === "Point") {
 
                         for (const rendering of pointRenderings) {

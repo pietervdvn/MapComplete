@@ -8,7 +8,7 @@ import {Utils} from "../Utils";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
 import BaseUIElement from "./BaseUIElement";
-import {DefaultGuiState} from "./DefaultGUI";
+import {DefaultGuiState} from "./DefaultGuiState";
 
 export class SubstitutedTranslation extends VariableUiElement {
 

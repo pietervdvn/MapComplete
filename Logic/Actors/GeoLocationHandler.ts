@@ -1,13 +1,16 @@
-import * as L from "leaflet";
 import {UIEventSource} from "../UIEventSource";
 import Svg from "../../Svg";
-import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
+import FeatureSource from "../FeatureSource/FeatureSource";
+import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
 
 export default class GeoLocationHandler extends VariableUiElement {
+    
+    public readonly currentLocation : FeatureSource
+    
     /**
      * Wether or not the geolocation is active, aka the user requested the current location
      * @private
@@ -25,20 +28,12 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _permission: UIEventSource<string>;
-    /***
-     * The marker on the map, in order to update it
-     * @private
-     */
-    private _marker: L.Marker;
     /**
      * Literally: _currentGPSLocation.data != undefined
      * @private
      */
     private readonly _hasLocation: UIEventSource<boolean>;
-    private readonly _currentGPSLocation: UIEventSource<{
-        latlng: any;
-        accuracy: number;
-    }>;
+    private readonly _currentGPSLocation: UIEventSource<Coordinates>;
     /**
      * Kept in order to update the marker
      * @private
@@ -63,8 +58,8 @@ export default class GeoLocationHandler extends VariableUiElement {
     private readonly _layoutToUse: LayoutConfig;
 
     constructor(
-        currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
-        leafletMap: UIEventSource<L.Map>,
+        currentGPSLocation: UIEventSource<Coordinates>,
+        leafletMap: UIEventSource<any>,
         layoutToUse: LayoutConfig
     ) {
         const hasLocation = currentGPSLocation.map(
@@ -182,10 +177,25 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
         })
 
-
+        this.currentLocation  = new StaticFeatureSource([], false)
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
 
+            const feature = {
+                "type": "Feature",
+                properties: {
+                    "user:location":"yes",
+                    "accuracy":location.accuracy,
+                    "speed":location.speed,
+                },
+                geometry:{
+                    type:"Point",
+                    coordinates: [location.longitude, location.latitude],
+                }
+            }
+            
+            self.currentLocation.features.setData([{feature, freshness: new Date()}])
+            
             const timeSinceRequest =
                 (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
             if (timeSinceRequest < 30) {
@@ -194,33 +204,8 @@ export default class GeoLocationHandler extends VariableUiElement {
                 self.MoveToCurrentLoction();
             }
 
-            let color = "#1111cc";
-            try {
-                color = getComputedStyle(document.body).getPropertyValue(
-                    "--catch-detail-color"
-                );
-            } catch (e) {
-                console.error(e);
-            }
-            const icon = L.icon({
-                iconUrl: Img.AsData(Svg.location.replace(/#000000/g, color).replace(/#000/g, color)),
-                iconSize: [40, 40], // size of the icon
-                iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
-            });
-
-            const map = self._leafletMap.data;
-            if(map === undefined){
-                return;
-            }
-
-            const newMarker = L.marker(location.latlng, {icon: icon});
-            newMarker.addTo(map);
-
-            if (self._marker !== undefined) {
-                map.removeLayer(self._marker);
-            }
-            self._marker = newMarker;
         });
+  
     }
 
     private init(askPermission: boolean, forceZoom: boolean) {
@@ -261,8 +246,8 @@ export default class GeoLocationHandler extends VariableUiElement {
         this._lastUserRequest = undefined;
 
         if (
-            this._currentGPSLocation.data.latlng[0] === 0 &&
-            this._currentGPSLocation.data.latlng[1] === 0
+            this._currentGPSLocation.data.latitude === 0 &&
+            this._currentGPSLocation.data.longitude === 0
         ) {
             console.debug("Not moving to GPS-location: it is null island");
             return;
@@ -275,20 +260,20 @@ export default class GeoLocationHandler extends VariableUiElement {
             if (b !== true) {
                 // B is an array with our locklocation
                 inRange =
-                    b[0][0] <= location.latlng[0] &&
-                    location.latlng[0] <= b[1][0] &&
-                    b[0][1] <= location.latlng[1] &&
-                    location.latlng[1] <= b[1][1];
+                    b[0][0] <= location.latitude &&
+                    location.latitude <= b[1][0] &&
+                    b[0][1] <= location.longitude &&
+                    location.longitude <= b[1][1];
             }
         }
         if (!inRange) {
             console.log(
                 "Not zooming to GPS location: out of bounds",
                 b,
-                location.latlng
+                location
             );
         } else {
-            this._leafletMap.data.setView(location.latlng, targetZoom);
+            this._leafletMap.data.setView([location.latitude, location.longitude], targetZoom);
         }
     }
 
@@ -312,10 +297,7 @@ export default class GeoLocationHandler extends VariableUiElement {
 
         navigator.geolocation.watchPosition(
             function (position) {
-                self._currentGPSLocation.setData({
-                    latlng: [position.coords.latitude, position.coords.longitude],
-                    accuracy: position.coords.accuracy,
-                });
+                self._currentGPSLocation.setData(position.coords);
             },
             function () {
                 console.warn("Could not get location with navigator.geolocation");

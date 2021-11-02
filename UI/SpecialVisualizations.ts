@@ -20,7 +20,7 @@ import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import ImportButton, {ImportButtonSpecialViz} from "./BigComponents/ImportButton";
+import {ImportButtonSpecialViz} from "./BigComponents/ImportButton";
 import {Tag} from "../Logic/Tags/Tag";
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
@@ -38,9 +38,9 @@ import {SubtleButton} from "./Base/SubtleButton";
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
 import {And} from "../Logic/Tags/And";
 import Toggle from "./Input/Toggle";
-import {DefaultGuiState} from "./DefaultGUI";
 import Img from "./Base/Img";
 import FilteredLayer from "../Models/FilteredLayer";
+import {DefaultGuiState} from "./DefaultGuiState";
 
 export interface SpecialVisualization {
     funcName: string,

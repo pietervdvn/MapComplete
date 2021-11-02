@@ -4,39 +4,25 @@ import {Changes} from "../Changes";
 import {Tag} from "../../Tags/Tag";
 import CreateNewNodeAction from "./CreateNewNodeAction";
 import {And} from "../../Tags/And";
-import {TagsFilter} from "../../Tags/TagsFilter";
 
 export default class CreateNewWayAction extends OsmChangeAction {
     public newElementId: string = undefined
     private readonly coordinates: ({ nodeId?: number, lat: number, lon: number })[];
     private readonly tags: Tag[];
     private readonly _options: {
-        theme: string, existingPointHandling?: {
-            withinRangeOfM: number,
-            ifMatches?: TagsFilter,
-            mode: "reuse_osm_point" | "move_osm_point"
-        } []
+        theme: string
     };
 
 
     /***
      * Creates a new way to upload to OSM
-     * @param tags: the tags to apply to the wya
+     * @param tags: the tags to apply to the way
      * @param coordinates: the coordinates. Might have a nodeId, in this case, this node will be used
      * @param options
      */
     constructor(tags: Tag[], coordinates: ({ nodeId?: number, lat: number, lon: number })[],
                 options: {
-                    theme: string,
-                    /**
-                     * IF specified, an existing OSM-point within this range and satisfying the condition 'ifMatches' will be used instead of a new coordinate.
-                     * If multiple points are possible, only the closest point is considered
-                     */
-                    existingPointHandling?: {
-                        withinRangeOfM: number,
-                        ifMatches?: TagsFilter,
-                        mode: "reuse_osm_point" | "move_osm_point"
-                    } []
+                    theme: string
                 }) {
         super()
         this.coordinates = coordinates;

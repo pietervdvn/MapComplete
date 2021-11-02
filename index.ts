@@ -9,10 +9,11 @@ import {Utils} from "./Utils";
 import AllThemesGui from "./UI/AllThemesGui";
 import DetermineLayout from "./Logic/DetermineLayout";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
-import DefaultGUI, {DefaultGuiState} from "./UI/DefaultGUI";
+import DefaultGUI from "./UI/DefaultGUI";
 import State from "./State";
 import AvailableBaseLayersImplementation from "./Logic/Actors/AvailableBaseLayersImplementation";
 import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerImplementation";
+import {DefaultGuiState} from "./UI/DefaultGuiState";
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()

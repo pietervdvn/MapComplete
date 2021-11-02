@@ -155,7 +155,6 @@ export default class ShowDataLayer {
                 continue
             }
             try {
-
                 if ((feat.geometry.type === "LineString" || feat.geometry.type === "MultiLineString")) {
                     const self = this;
                     const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
@@ -190,9 +189,10 @@ export default class ShowDataLayer {
 
         if (options.zoomToFeatures ?? false) {
             try {
-                mp.fitBounds(this.geoLayer.getBounds(), {animate: false})
+                const bounds = this.geoLayer.getBounds()
+                mp.fitBounds(bounds, {animate: false})
             } catch (e) {
-                console.error(e)
+                console.debug("Invalid bounds",e)
             }
         }
 

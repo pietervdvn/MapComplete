@@ -114,7 +114,16 @@ export class Changes {
     }
 
     public async applyAction(action: OsmChangeAction): Promise<void> {
-        const changes = await action.Perform(this)
+        this.applyChanges(await action.Perform(this))
+    }
+
+    public async applyActions(actions: OsmChangeAction[]) {
+        for (const action of actions) {
+            await this.applyAction(action)
+        }
+    }
+
+    public applyChanges(changes: ChangeDescription[]) {
         console.log("Received changes:", changes)
         this.pendingChanges.data.push(...changes);
         this.pendingChanges.ping();
@@ -125,6 +134,7 @@ export class Changes {
     public registerIdRewrites(mappings: Map<string, string>): void {
         CreateNewNodeAction.registerIdRewrites(mappings)
     }
+
 
     /**
      * UPload the selected changes to OSM.
