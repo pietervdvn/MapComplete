@@ -11,7 +11,7 @@
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
         "respectPrivacy": "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
         "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
-        "dontDelete": "Terug",
+        "dontDelete": "Annuleren",
         "doDelete": "Verwijder afbeelding",
         "isDeleted": "Verwijderd",
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
@@ -263,7 +263,7 @@
             "test": "Dit punt was een test en was nooit echt aanwezig",
             "duplicate": "Dit punt is een duplicaat van een ander punt"
         },
-        "cancel": "Annuleer",
+        "cancel": "Annuleren",
         "isDeleted": "Dit object is verwijderd",
         "delete": "Verwijder",
         "partOfOthers": "Dit punt maakt deel uit van een lijn, oppervlakte of een relatie en kan niet verwijderd worden.",
@@ -303,7 +303,7 @@
         "isWay": "Dit object is een lijn of een oppervlakte. Gebruik een ander OpenStreetMap-bewerkprogramma op het te verplaatsen."
     },
     "split": {
-        "cancel": "Annuleer knippen",
+        "cancel": "Annuleren",
         "split": "Knip weg",
         "splitTitle": "Duid op de kaart aan waar de weg geknipt moet worden",
         "inviteToSplit": "Knip deze weg in kleinere segmenten (om andere eigenschappen per segment toe te kennen)",

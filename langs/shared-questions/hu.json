@@ -1,1 +1,99 @@
-{}
+{
+    "undefined": {
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Nincs belinkelve a Wikipédiához"
+                }
+            },
+            "question": "Mi a megfelelő szócikk a Wikipédián?"
+        },
+        "wikipedia": {
+            "question": "Mi a megfelelő Wikidata-elem?",
+            "mappings": {
+                "0": {
+                    "then": "Még nincs Wikipédia-oldal belinkelve"
+                }
+            }
+        },
+        "description": {
+            "question": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>"
+        },
+        "level": {
+            "mappings": {
+                "1": {
+                    "then": "A földszinten található"
+                },
+                "0": {
+                    "then": "A föld alatt található"
+                },
+                "2": {
+                    "then": "A földszinten található"
+                },
+                "3": {
+                    "then": "Az első emeleten található"
+                }
+            },
+            "question": "Melyik szinten található ez a létesítmény?",
+            "render": "{level}. emeleten található"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "1": {
+                    "then": "Ez a hely könnyedén elérhető kerekesszékkel"
+                },
+                "2": {
+                    "then": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen"
+                },
+                "0": {
+                    "then": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva"
+                },
+                "3": {
+                    "then": "Ez a hely kerekesszékkel elérhetetlen"
+                }
+            },
+            "question": "Akadálymentes-e ez a hely?"
+        },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Kutya bevihető"
+                },
+                "1": {
+                    "then": "Kutya <b>nem</b> vihető be"
+                },
+                "2": {
+                    "then": "Kutya bevihető, de csak pórázon"
+                },
+                "3": {
+                    "then": "Kutya bevihető és szabadon szaladgálhat"
+                }
+            },
+            "question": "Be lehet-e vinni kutyát ebbe az üzletbe?"
+        },
+        "email": {
+            "question": "Mi a(z) {name} e-mail címe?"
+        },
+        "opening_hours": {
+            "question": "Mikor van nyitva ez: {name}?",
+            "render": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Itt készpénzzel is lehet fizetni"
+                },
+                "1": {
+                    "then": "Itt fizetőkártyákkal is lehet fizetni"
+                }
+            },
+            "question": "Milyen fizetési módokat fogadnak el itt?"
+        },
+        "phone": {
+            "question": "Mi a telefonszáma ennek: {name}?"
+        },
+        "website": {
+            "question": "Mi a weboldala ennek: {name}?"
+        }
+    }
+}
