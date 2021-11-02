@@ -9,10 +9,15 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Karya seni <i>{name}</i>"
+                    "then": "Karya Seni <i>{name}</i>"
                 }
             },
-            "render": "Karya seni"
+            "render": "Karya Seni"
+        },
+        "presets": {
+            "0": {
+                "title": "Karya Seni"
+            }
         }
     },
     "bench": {
@@ -128,6 +133,13 @@
             },
             "shops-website": {
                 "render": "<a href='{website}'>{website}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Bengkel Mobil"
+                    }
+                }
             }
         }
     },

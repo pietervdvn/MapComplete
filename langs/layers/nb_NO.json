@@ -63,7 +63,12 @@
             }
         },
         "title": {
-            "render": "Kunstverk"
+            "render": "Kunstverk",
+            "mappings": {
+                "0": {
+                    "then": "Kunstverk <i>{name}</i>"
+                }
+            }
         }
     },
     "bench": {
@@ -189,6 +194,17 @@
         "name": "Spøkelsessykler",
         "title": {
             "render": "Spøkelsessykler"
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Bilverksted"
+                    }
+                }
+            }
         }
     }
 }

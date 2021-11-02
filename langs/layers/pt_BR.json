@@ -525,5 +525,31 @@
         "title": {
             "render": "Bicicleta fantasma"
         }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Oficina Mecânica"
+                    }
+                }
+            }
+        }
+    },
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Obra de arte"
+            }
+        },
+        "title": {
+            "render": "Obra de arte",
+            "mappings": {
+                "0": {
+                    "then": "Obra de arte <i>{name}</i>"
+                }
+            }
+        }
     }
 }

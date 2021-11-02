@@ -384,5 +384,20 @@
         "title": {
             "render": "Bicicleta pantasma"
         }
+    },
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Obra de arte"
+            }
+        },
+        "title": {
+            "render": "Obra de arte",
+            "mappings": {
+                "0": {
+                    "then": "Obra de arte <i>{name}</i>"
+                }
+            }
+        }
     }
 }

@@ -1848,5 +1848,16 @@
         "title": {
             "render": "Punto panoramico"
         }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Autofficina"
+                    }
+                }
+            }
+        }
     }
 }

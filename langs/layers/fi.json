@@ -101,5 +101,31 @@
         "title": {
             "render": "Haamupyörä"
         }
+    },
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Taideteos"
+            }
+        },
+        "title": {
+            "render": "Taideteos",
+            "mappings": {
+                "0": {
+                    "then": "Taideteos <i>{name}</i>"
+                }
+            }
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Autokorjaamo"
+                    }
+                }
+            }
+        }
     }
 }
