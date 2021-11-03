@@ -13,6 +13,7 @@ import TileFreshnessCalculatorSpec from "./TileFreshnessCalculator.spec";
 import WikidataSpecTest from "./Wikidata.spec.test";
 import ImageProviderSpec from "./ImageProvider.spec";
 import ActorsSpec from "./Actors.spec";
+import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
 
 
 ScriptUtils.fixUtils()
@@ -29,7 +30,8 @@ const allTests = [
     new TileFreshnessCalculatorSpec(),
     new WikidataSpecTest(),
     new ImageProviderSpec(),
-    new ActorsSpec()
+    new ActorsSpec(),
+    new ReplaceGeometrySpec()
 ]
 
 Utils.externalDownloadFunction = async (url) => {

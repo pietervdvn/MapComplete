@@ -14,6 +14,7 @@ import {QueryParameters} from "../Web/QueryParameters";
 import * as personal from "../../assets/themes/personal/personal.json";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
+import {Coord} from "@turf/turf";
 
 /**
  * Contains all the leaflet-map related state
@@ -44,13 +45,7 @@ export default class MapState extends UserRelatedState {
     /**
      * The location as delivered by the GPS
      */
-    public currentGPSLocation: UIEventSource<{
-        latlng: { lat: number; lng: number };
-        accuracy: number;
-    }> = new UIEventSource<{
-        latlng: { lat: number; lng: number };
-        accuracy: number;
-    }>(undefined);
+    public currentGPSLocation: UIEventSource<Coordinates> = new UIEventSource<Coordinates>(undefined);
 
     public readonly mainMapObject: BaseUIElement & MinimapObj;
 

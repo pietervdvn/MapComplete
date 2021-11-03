@@ -36,7 +36,7 @@
                 "name": "Wohnmobilstellplätze",
                 "presets": {
                     "0": {
-                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem Übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
                         "title": "Wohnmobilstellplatz"
                     }
                 },
@@ -318,18 +318,6 @@
                     }
                 },
                 "tagRenderings": {
-                    "Bolts": {
-                        "mappings": {
-                            "0": {
-                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
-                            },
-                            "1": {
-                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
-                            }
-                        },
-                        "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
-                        "render": "Diese Kletterroute hat {climbing:bolts} Haken"
-                    },
                     "Difficulty": {
                         "question": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
                         "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
@@ -775,6 +763,17 @@
                         }
                     }
                 },
+                "mapRendering": {
+                    "0": {
+                        "icon": {
+                            "mappings": {
+                                "0": {
+                                    "then": "./assets/themes/hackerspaces/led.png"
+                                }
+                            }
+                        }
+                    }
+                },
                 "name": "Hackerspace",
                 "presets": {
                     "0": {
@@ -949,9 +948,6 @@
                     "station-name": {
                         "question": "Wie lautet der Name dieser Feuerwache?"
                     }
-                },
-                "title": {
-                    "render": "Feuerwache"
                 }
             },
             "3": {
@@ -977,44 +973,6 @@
     },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
-        "layers": {
-            "0": {
-                "name": "Windrad",
-                "presets": {
-                    "0": {
-                        "title": "Windrad"
-                    }
-                },
-                "title": {
-                    "render": "Windrad"
-                },
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " Megawatt"
-                            },
-                            "1": {
-                                "human": " Kilowatt"
-                            },
-                            "2": {
-                                "human": " Watt"
-                            },
-                            "3": {
-                                "human": " Gigawatt"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " Meter"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "title": "OpenWindPowerMap"
     },
     "parkings": {
@@ -1032,35 +990,8 @@
     },
     "postboxes": {
         "layers": {
-            "0": {
-                "description": "Die Ebene zeigt Briefkästen.",
-                "name": "Brieflästen",
-                "presets": {
-                    "0": {
-                        "title": "Briefkasten"
-                    }
-                },
-                "title": {
-                    "render": "Briefkasten"
-                }
-            },
             "1": {
                 "description": "Eine Ebene mit Postämtern.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Aktuell geöffnet"
-                            }
-                        }
-                    }
-                },
-                "name": "Poststellen",
-                "presets": {
-                    "0": {
-                        "title": "Poststelle"
-                    }
-                },
                 "tagRenderings": {
                     "OH": {
                         "mappings": {
@@ -1069,9 +1000,6 @@
                             }
                         }
                     }
-                },
-                "title": {
-                    "render": "Poststelle"
                 }
             }
         },

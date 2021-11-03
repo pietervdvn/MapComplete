@@ -35,7 +35,13 @@
         "mappings": [
             {
                 "if": "_recently_surveyed=true",
-                "then": "./assets/layers/defibrillator/aed_checked.svg"
+                "then": {
+                    "en": "./assets/layers/defibrillator/aed_checked.svg",
+                    "ru": "./assets/layers/defibrillator/aed_checked.svg",
+                    "it": "./assets/layers/defibrillator/aed_checked.svg",
+                    "fr": "./assets/layers/defibrillator/aed_checked.svg",
+                    "de": "./assets/layers/defibrillator/aed_checked.svg"
+                }
             }
         ]
     },
@@ -203,8 +209,7 @@
                 "en": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
                 "nl": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
                 "fr": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
-                "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
-                "de": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
+                "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?"
             },
             "freeform": {
                 "key": "defibrillator"
@@ -551,5 +556,24 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/aed/aed.svg",
+                "mappings": [
+                    {
+                        "if": "_recently_surveyed=true",
+                        "then": "./assets/layers/defibrillator/aed_checked.svg"
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "color": "#0000ff"
+        }
+    ]
 }

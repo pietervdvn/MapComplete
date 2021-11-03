@@ -171,8 +171,6 @@
         }
     },
     "charging_station": {
-        "description": "En ladestasjon",
-        "name": "Ladestasjoner",
         "tagRenderings": {
             "Network": {
                 "render": "{network}"
@@ -180,9 +178,6 @@
             "OH": {
                 "question": "Når åpnet denne ladestasjonen?"
             }
-        },
-        "title": {
-            "render": "Ladestasjon"
         }
     },
     "ghost_bike": {

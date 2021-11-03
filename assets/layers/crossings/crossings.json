@@ -202,8 +202,7 @@
             "id": "crossing-has-island",
             "question": {
                 "en": "Does this crossing have an island in the middle?",
-                "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?",
-                "de": "Gibt es an diesem Übergang eine Verkehrsinsel?"
+                "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
             },
             "condition": "highway=crossing",
             "mappings": [
@@ -211,16 +210,14 @@
                     "if": "crossing:island=yes",
                     "then": {
                         "en": "This crossing has an island in the middle",
-                        "nl": "Deze oversteekplaats heeft een verkeerseiland in het midden",
-                        "de": "Der Übergang hat eine Verkehrsinsel"
+                        "nl": "Deze oversteekplaats heeft een verkeerseiland in het midden"
                     }
                 },
                 {
                     "if": "crossing:island=no",
                     "then": {
                         "en": "This crossing does not have an island in the middle",
-                        "nl": "Deze oversteekplaats heeft geen verkeerseiland in het midden",
-                        "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
+                        "nl": "Deze oversteekplaats heeft geen verkeerseiland in het midden"
                     }
                 }
             ]
@@ -264,8 +261,7 @@
             "id": "crossing-button",
             "question": {
                 "en": "Does this traffic light have a button to request green light?",
-                "nl": "Heeft dit verkeerslicht een knop voor groen licht?",
-                "de": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?"
+                "nl": "Heeft dit verkeerslicht een knop voor groen licht?"
             },
             "condition": {
                 "or": [
@@ -285,8 +281,7 @@
                     "if": "button_operated=no",
                     "then": {
                         "en": "This traffic light does not have a button to request green light",
-                        "nl": "Dit verkeerlicht heeft geen knop voor groen licht",
-                        "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern."
+                        "nl": "Dit verkeerlicht heeft geen knop voor groen licht"
                     }
                 }
             ]
@@ -295,8 +290,7 @@
             "id": "crossing-right-turn-through-red",
             "question": {
                 "en": "Can a cyclist turn right when the light is red?",
-                "nl": "Mag een fietser rechtsaf slaan als het licht rood is?",
-                "de": "Kann ein Radfahrer bei roter Ampel rechts abbiegen?"
+                "nl": "Mag een fietser rechtsaf slaan als het licht rood is?"
             },
             "condition": "highway=traffic_signals",
             "mappings": [
@@ -304,8 +298,7 @@
                     "if": "red_turn:right:bicycle=yes",
                     "then": {
                         "en": "A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>",
-                        "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>",
-                        "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                        "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
                     },
                     "hideInAnswer": "_country!=be"
                 },
@@ -313,8 +306,7 @@
                     "if": "red_turn:right:bicycle=yes",
                     "then": {
                         "en": "A cyclist can turn right if the light is red",
-                        "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is",
-                        "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
+                        "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is"
                     },
                     "hideInAnswer": "_country=be"
                 },
@@ -322,8 +314,7 @@
                     "if": "red_turn:right:bicycle=no",
                     "then": {
                         "en": "A cyclist can not turn right if the light is red",
-                        "nl": "Een fietser mag niet rechtsaf slaan als het licht rood is",
-                        "de": "Ein Radfahrer kann bei roter Ampel nicht rechts abbiegen"
+                        "nl": "Een fietser mag niet rechtsaf slaan als het licht rood is"
                     }
                 }
             ]
@@ -332,8 +323,7 @@
             "id": "crossing-continue-through-red",
             "question": {
                 "en": "Can a cyclist go straight on when the light is red?",
-                "nl": "Mag een fietser rechtdoor gaan als het licht rood is?",
-                "de": "Kann ein Radfahrer bei roter Ampel geradeaus fahren?"
+                "nl": "Mag een fietser rechtdoor gaan als het licht rood is?"
             },
             "condition": "highway=traffic_signals",
             "mappings": [
@@ -341,8 +331,7 @@
                     "if": "red_turn:straight:bicycle=yes",
                     "then": {
                         "en": "A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>",
-                        "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>",
-                        "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                        "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
                     },
                     "hideInAnswer": "_country!=be"
                 },
@@ -350,8 +339,7 @@
                     "if": "red_turn:straight:bicycle=yes",
                     "then": {
                         "en": "A cyclist can go straight on if the light is red",
-                        "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is",
-                        "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
+                        "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is"
                     },
                     "hideInAnswer": "_country=be"
                 },
@@ -359,11 +347,34 @@
                     "if": "red_turn:straight:bicycle=no",
                     "then": {
                         "en": "A cyclist can not go straight on if the light is red",
-                        "nl": "Een fietser mag niet rechtdoor gaan als het licht rood is",
-                        "de": "Ein Radfahrer kann bei roter Ampel nicht geradeaus fahren"
+                        "nl": "Een fietser mag niet rechtdoor gaan als het licht rood is"
                     }
                 }
             ]
+        }
+    ],
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/crossings/pedestrian_crossing.svg",
+                "mappings": [
+                    {
+                        "if": {
+                            "or": [
+                                "highway=traffic_signals",
+                                "crossing=traffic_signals"
+                            ]
+                        },
+                        "then": "./assets/layers/crossings/traffic_lights.svg"
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "width": "5"
         }
     ]
 }

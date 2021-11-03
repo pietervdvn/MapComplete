@@ -37,7 +37,7 @@ export default class FeatureSwitchState {
     public readonly osmApiTileSize: UIEventSource<number>;
     public readonly backgroundLayerId: UIEventSource<string>;
 
-    protected constructor(layoutToUse: LayoutConfig) {
+    public constructor(layoutToUse: LayoutConfig) {
         this.layoutToUse = layoutToUse;
 
 

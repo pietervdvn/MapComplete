@@ -35,5 +35,19 @@
             "id": "village_green-reviews",
             "render": "{reviews(name, landuse=village_green )}"
         }
+    ],
+    "mapRendering": [
+        {
+            "icon": "./assets/themes/playgrounds/playground.svg",
+            "iconSize": "40,40,center",
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": "#937f20",
+            "width": "1"
+        }
     ]
 }

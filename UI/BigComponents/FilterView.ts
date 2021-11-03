@@ -42,9 +42,8 @@ export default class FilterView extends VariableUiElement {
         );
         const name: Translation = config.config.name;
 
-        const styledNameChecked = name.Clone().SetStyle("font-size:large;padding-left:1.25rem");
-
-        const styledNameUnChecked = name.Clone().SetStyle("font-size:large;padding-left:1.25rem");
+        const styledNameChecked = name.Clone().SetStyle("font-size:large").SetClass("ml-2");
+        const styledNameUnChecked = name.Clone().SetStyle("font-size:large").SetClass("ml-2");
 
         const zoomStatus =
             new Toggle(
@@ -82,6 +81,8 @@ export default class FilterView extends VariableUiElement {
         const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem;flex-shrink: 0;";
 
         const icon = new Combine([Svg.checkbox_filled]).SetStyle(iconStyle);
+        const layer = filteredLayer.layerDef
+
         const iconUnselected = new Combine([Svg.checkbox_empty]).SetStyle(
             iconStyle
         );
@@ -95,9 +96,9 @@ export default class FilterView extends VariableUiElement {
             filteredLayer.layerDef.name
         );
 
-        const styledNameChecked = name.Clone().SetStyle("font-size:large;padding-left:1.25rem");
+        const styledNameChecked = name.Clone().SetStyle("font-size:large").SetClass("ml-3");
 
-        const styledNameUnChecked = name.Clone().SetStyle("font-size:large;padding-left:1.25rem");
+        const styledNameUnChecked = name.Clone().SetStyle("font-size:large").SetClass("ml-3");
 
         const zoomStatus =
             new Toggle(
@@ -111,11 +112,14 @@ export default class FilterView extends VariableUiElement {
 
         const style =
             "display:flex;align-items:center;padding:0.5rem 0;";
-        const layerChecked = new Combine([icon, styledNameChecked, zoomStatus])
+        const layerIcon = layer.defaultIcon()?.SetClass("w-8 h-8 ml-2")
+        const layerIconUnchecked = layer.defaultIcon()?.SetClass("opacity-50  w-8 h-8 ml-2")
+
+        const layerChecked = new Combine([icon, layerIcon, styledNameChecked, zoomStatus])
             .SetStyle(style)
             .onClick(() => filteredLayer.isDisplayed.setData(false));
 
-        const layerNotChecked = new Combine([iconUnselected, styledNameUnChecked])
+        const layerNotChecked = new Combine([iconUnselected, layerIconUnchecked, styledNameUnChecked])
             .SetStyle(style)
             .onClick(() => filteredLayer.isDisplayed.setData(true));
 

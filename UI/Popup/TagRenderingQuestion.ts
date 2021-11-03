@@ -9,7 +9,6 @@ import CheckBoxes from "../Input/Checkboxes";
 import InputElementMap from "../Input/InputElementMap";
 import {SaveButton} from "./SaveButton";
 import State from "../../State";
-import {Changes} from "../../Logic/Osm/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
@@ -49,7 +48,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const applicableMappingsSrc =
             UIEventSource.ListStabilized(tags.map(tags => {
-                const applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter }[] = []
+                const applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
@@ -85,7 +84,7 @@ export default class TagRenderingQuestion extends Combine {
         const save = () => {
             const selection = inputElement.GetValue().data;
             if (selection) {
-                (State.state?.changes ?? new Changes())
+                (State.state?.changes)
                     .applyAction(new ChangeTagAction(
                         tags.data.id, selection, tags.data, {
                             theme: State.state?.layoutToUse?.id ?? "unkown",
@@ -108,9 +107,9 @@ export default class TagRenderingQuestion extends Combine {
 
         const saveButton = new Combine([
             options.saveButtonConstr(inputElement.GetValue()),
-            new Toggle(Translations.t.general.testing, undefined, State.state.featureSwitchIsTesting).SetClass("alert")
+            new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, State.state.featureSwitchIsTesting)
         ])
-        
+
         let bottomTags: BaseUIElement;
         if (options.bottomText !== undefined) {
             bottomTags = options.bottomText(inputElement.GetValue())
@@ -147,7 +146,7 @@ export default class TagRenderingQuestion extends Combine {
 
 
     private static GenerateInputElement(configuration: TagRenderingConfig,
-                                        applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter }[],
+                                        applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
                                         applicableUnit: Unit,
                                         tagsSource: UIEventSource<any>)
         : InputElement<TagsFilter> {
@@ -341,11 +340,15 @@ export default class TagRenderingQuestion extends Combine {
         mapping: {
             if: TagsFilter,
             then: Translation,
+            addExtraTags: Tag[]
         }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
 
         let tagging: TagsFilter = mapping.if;
         if (ifNot !== undefined) {
             tagging = new And([mapping.if, ...ifNot])
+        }
+        if (mapping.addExtraTags) {
+            tagging = new And([tagging, ...mapping.addExtraTags])
         }
 
         return new FixedInputElement(

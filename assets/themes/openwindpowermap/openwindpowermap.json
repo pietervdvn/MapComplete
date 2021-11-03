@@ -31,8 +31,7 @@
       "name": {
         "en": "wind turbine",
         "nl": "windturbine",
-        "fr": "Éolienne",
-        "de": "Windrad"
+        "fr": "Éolienne"
       },
       "source": {
         "osmTags": "generator:source=wind"
@@ -43,8 +42,7 @@
         "render": {
           "en": "wind turbine",
           "nl": "windturbine",
-          "fr": "éolienne",
-          "de": "Windrad"
+          "fr": "éolienne"
         },
         "mappings": [
           {
@@ -152,8 +150,7 @@
           "title": {
             "en": "wind turbine",
             "nl": "windturbine",
-            "fr": "Éolienne",
-            "de": "Windrad"
+            "fr": "Éolienne"
           }
         }
       ],
@@ -172,8 +169,7 @@
               "human": {
                 "en": " megawatts",
                 "nl": " megawatt",
-                "fr": " megawatts",
-                "de": " Megawatt"
+                "fr": " megawatts"
               }
             },
             {
@@ -185,8 +181,7 @@
               "human": {
                 "en": " kilowatts",
                 "nl": " kilowatt",
-                "fr": " kilowatts",
-                "de": " Kilowatt"
+                "fr": " kilowatts"
               }
             },
             {
@@ -198,8 +193,7 @@
               "human": {
                 "en": " watts",
                 "nl": " watt",
-                "fr": " watts",
-                "de": " Watt"
+                "fr": " watts"
               }
             },
             {
@@ -211,8 +205,7 @@
               "human": {
                 "en": " gigawatts",
                 "nl": " gigawatt",
-                "fr": " gigawatts",
-                "de": " Gigawatt"
+                "fr": " gigawatts"
               }
             }
           ],
@@ -232,10 +225,26 @@
               "human": {
                 "en": " meter",
                 "nl": " meter",
-                "fr": " mètres",
-                "de": " Meter"
+                "fr": " mètres"
               }
             }
+          ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
+          "label": {
+            "mappings": [
+              {
+                "if": "generator:output:electricity~^[0-9]+.*[W]$",
+                "then": "<div style='background-color: rgba(0,0,0,0.3); color: white; font-size: 8px; padding: 0.25em; border-radius:0.5em'>{generator:output:electricity}</div>"
+              }
+            ]
+          },
+          "iconSize": "40, 40, bottom",
+          "location": [
+            "point"
           ]
         }
       ]

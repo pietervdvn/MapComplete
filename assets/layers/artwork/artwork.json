@@ -394,5 +394,24 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/artwork/artwork.svg"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": {
+                "render": "#0000ff"
+            },
+            "width": {
+                "render": "10"
+            }
+        }
+    ]
 }

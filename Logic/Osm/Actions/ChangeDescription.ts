@@ -16,7 +16,7 @@ export interface ChangeDescription {
         /**
          * The type of the change
          */
-        changeType:  "answer" | "create" | "split" | "delete" | "move" | string
+        changeType:  "answer" | "create" | "split" | "delete" | "move" | "import" | string | null
         /**
          * THe motivation for the change, e.g. 'deleted because does not exist anymore'
          */
@@ -51,7 +51,8 @@ export interface ChangeDescription {
         lat: number,
         lon: number
     } | {
-        // Coordinates are only used for rendering. They should be LAT, LON
+        /* Coordinates are only used for rendering. They should be LON, LAT
+        * */
         coordinates: [number, number][]
         nodes: number[],
     } | {

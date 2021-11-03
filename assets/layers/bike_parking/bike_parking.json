@@ -551,5 +551,21 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/bike_parking/parking.svg"
+            },
+            "iconSize": "40,40,bottom",
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": "#00f",
+            "width": "1"
+        }
+    ]
 }

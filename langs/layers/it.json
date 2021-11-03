@@ -746,8 +746,6 @@
         }
     },
     "charging_station": {
-        "description": "Una stazione di ricarica",
-        "name": "Stazioni di ricarica",
         "tagRenderings": {
             "Network": {
                 "question": "A quale rete appartiene questa stazione di ricarica?",
@@ -756,12 +754,16 @@
             "OH": {
                 "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
             }
-        },
-        "title": {
-            "render": "Stazione di ricarica"
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
         "name": "Defibrillatori",
         "presets": {
             "0": {

@@ -297,8 +297,7 @@
                 "nl": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
                 "en": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
                 "it": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
-                "fr": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public",
-                "de": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist"
+                "fr": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public"
             },
             "render": {
                 "nl": "{curator} is de beheerder van dit gebied",
@@ -382,8 +381,7 @@
                 "en": "Surface area: {_surface:ha}Ha",
                 "nl": "Totale oppervlakte: {_surface:ha}Ha",
                 "it": "Area: {_surface:ha} ha",
-                "fr": "Superficie : {_surface:ha}&nbsp;ha",
-                "de": "Grundfläche: {_surface:ha}ha"
+                "fr": "Superficie : {_surface:ha}&nbsp;ha"
             },
             "mappings": [
                 {
@@ -462,6 +460,28 @@
                     }
                 }
             ]
+        }
+    ],
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/nature_reserve/nature_reserve.svg"
+            },
+            "iconSize": {
+                "render": "50,50,center"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": {
+                "render": "#3c3"
+            },
+            "width": {
+                "render": "1"
+            }
         }
     ]
 }

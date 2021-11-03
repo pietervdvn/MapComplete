@@ -1936,6 +1936,13 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
         "name": "Defibrillators",
         "presets": {
             "0": {
@@ -3372,6 +3379,17 @@
             "mappings": {
                 "0": {
                     "then": "Waste Basket"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Waste Basket"
+                        }
+                    }
                 }
             }
         },

@@ -25,6 +25,9 @@ export default class Translations {
         if (t === undefined || t === null) {
             return undefined;
         }
+        if(typeof t === "number"){
+            t = ""+t
+        }
         if (typeof t === "string") {
             return new Translation({"*": t}, context);
         }

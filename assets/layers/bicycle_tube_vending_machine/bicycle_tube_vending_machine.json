@@ -48,8 +48,7 @@
                     "operational_status=closed"
                 ]
             },
-            "then": "close:#c33",
-            "badge": true
+            "then": "close:#c33"
         }
     ],
     "iconSize": "50,50,bottom",
@@ -276,5 +275,31 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
+            },
+            "iconBadges": [
+                {
+                    "if": {
+                        "or": [
+                            "operational_status=broken",
+                            "operational_status=closed"
+                        ]
+                    },
+                    "then": "close:#c33"
+                }
+            ],
+            "iconSize": "50,50,bottom",
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": "#6bc4f7"
+        }
+    ]
 }

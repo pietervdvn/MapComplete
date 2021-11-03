@@ -15,7 +15,7 @@ import TitleHandler from "../Actors/TitleHandler";
 /**
  * The part of the state keeping track of where the elements, loading them, configuring the feature pipeline etc
  */
-export default class ElementsState extends FeatureSwitchState{
+export default class ElementsState extends FeatureSwitchState {
 
     /**
      The mapping from id -> UIEventSource<properties>
@@ -24,7 +24,7 @@ export default class ElementsState extends FeatureSwitchState{
     /**
      THe change handler
      */
-    public changes: Changes = new Changes();
+    public changes: Changes;
 
     /**
      The latest element that was selected
@@ -34,7 +34,7 @@ export default class ElementsState extends FeatureSwitchState{
         "Selected element"
     );
 
-    
+
     /**
      * The map location: currently centered lat, lon and zoom
      */
@@ -48,6 +48,9 @@ export default class ElementsState extends FeatureSwitchState{
 
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
+
+        this.changes = new Changes(layoutToUse?.isLeftRightSensitive() ?? false)
+
         {
             // -- Location control initialization
             const zoom = UIEventSource.asFloat(
@@ -84,10 +87,10 @@ export default class ElementsState extends FeatureSwitchState{
                 lon.setData(latlonz.lon);
             });
         }
-        
+
         new ChangeToElementsActor(this.changes, this.allElements)
         new PendingChangesUploader(this.changes, this.selectedElement);
         new TitleHandler(this);
-    
+
     }
 }

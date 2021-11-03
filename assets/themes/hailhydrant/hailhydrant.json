@@ -340,7 +340,29 @@
           }
         }
       ],
-      "wayHandling": 2
+      "wayHandling": 2,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/hydrant.svg"
+          },
+          "iconSize": {
+            "render": "20,20,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
+        }
+      ]
     },
     {
       "id": "extinguisher",
@@ -466,7 +488,20 @@
           }
         }
       ],
-      "wayHandling": 1
+      "wayHandling": 1,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
+          },
+          "iconSize": {
+            "render": "20,20,center"
+          },
+          "location": [
+            "point"
+          ]
+        }
+      ]
     },
     {
       "id": "fire_stations",
@@ -495,8 +530,7 @@
           "ru": "Пожарная часть",
           "nb_NO": "Brannstasjon",
           "it": "Caserma dei vigili del fuoco",
-          "fr": "Station de pompiers",
-          "de": "Feuerwache"
+          "fr": "Station de pompiers"
         }
       },
       "description": {
@@ -694,6 +728,28 @@
             "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
             "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
             "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind."
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+          },
+          "iconSize": {
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#c22"
+          },
+          "width": {
+            "render": "1"
           }
         }
       ]
@@ -898,7 +954,29 @@
           }
         }
       ],
-      "wayHandling": 2
+      "wayHandling": 2,
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
+          },
+          "iconSize": {
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "1"
+          }
+        }
+      ]
     }
   ],
   "defaultBackgroundId": "HDM_HOT"

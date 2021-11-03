@@ -116,5 +116,27 @@
             "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de overeenkomstige borden.<br/><img src='./assets/layers/play_forest/icon.svg'/>"
         }
     ],
-    "wayHandling": 2
+    "wayHandling": 2,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/play_forest/icon.svg"
+            },
+            "iconSize": {
+                "render": "40,40,center"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": {
+                "render": "#007055"
+            },
+            "width": {
+                "render": "2"
+            }
+        }
+    ]
 }

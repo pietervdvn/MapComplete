@@ -14,6 +14,9 @@ import Toggle from "../Input/Toggle";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {Utils} from "../../Utils";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
+import Loc from "../../Models/Loc";
+import BaseLayer from "../../Models/BaseLayer";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
@@ -24,7 +27,10 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                     layoutToUse: LayoutConfig,
                     osmConnection: OsmConnection,
                     featureSwitchShareScreen: UIEventSource<boolean>,
-                    featureSwitchMoreQuests: UIEventSource<boolean>
+                    featureSwitchMoreQuests: UIEventSource<boolean>,
+                    locationControl: UIEventSource<Loc>, 
+                    backgroundLayer: UIEventSource<BaseLayer>, 
+                    filteredLayers: UIEventSource<FilteredLayer[]>
                 } & UserRelatedState) {
         const layoutToUse = state.layoutToUse;
         super(
@@ -39,7 +45,8 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                                          layoutToUse: LayoutConfig,
                                          osmConnection: OsmConnection,
                                          featureSwitchShareScreen: UIEventSource<boolean>,
-                                         featureSwitchMoreQuests: UIEventSource<boolean>
+                                         featureSwitchMoreQuests: UIEventSource<boolean>,
+                                         locationControl: UIEventSource<Loc>, backgroundLayer: UIEventSource<BaseLayer>, filteredLayers: UIEventSource<FilteredLayer[]>
                                      } & UserRelatedState,
                                      isShown: UIEventSource<boolean>):
         { header: string | BaseUIElement; content: BaseUIElement }[] {
@@ -56,7 +63,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         ]
 
         if (state.featureSwitchShareScreen.data) {
-            tabs.push({header: Svg.share_img, content: new ShareScreen()});
+            tabs.push({header: Svg.share_img, content: new ShareScreen(state)});
         }
 
         if (state.featureSwitchMoreQuests.data) {
@@ -77,7 +84,8 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         layoutToUse: LayoutConfig,
         osmConnection: OsmConnection,
         featureSwitchShareScreen: UIEventSource<boolean>,
-        featureSwitchMoreQuests: UIEventSource<boolean>
+        featureSwitchMoreQuests: UIEventSource<boolean>,
+        locationControl: UIEventSource<Loc>, backgroundLayer: UIEventSource<BaseLayer>, filteredLayers: UIEventSource<FilteredLayer[]>
     } & UserRelatedState, currentTab: UIEventSource<number>, isShown: UIEventSource<boolean>) {
 
         const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown)

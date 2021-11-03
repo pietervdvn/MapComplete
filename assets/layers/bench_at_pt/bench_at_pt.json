@@ -148,5 +148,26 @@
     },
     "color": {
         "render": "#00f"
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/benches/bench_public_transport.svg"
+            },
+            "iconSize": {
+                "render": "35,35,center"
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "color": {
+                "render": "#00f"
+            },
+            "width": {
+                "render": "8"
+            }
+        }
+    ]
 }

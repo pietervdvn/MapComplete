@@ -31,7 +31,6 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                 // Already handled
                 !seenChanges.has(ch)))
             .addCallbackAndRunD(changes => {
-
                 if (changes.length === 0) {
                     return;
                 }
@@ -71,7 +70,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                                 const w = new OsmWay(change.id)
                                 w.tags = tags
                                 w.nodes = change.changes["nodes"]
-                                w.coordinates = change.changes["coordinates"].map(coor => coor.reverse())
+                                w.coordinates = change.changes["coordinates"].map(coor => [coor[1], coor[0]])
                                 add(w.asGeoJson())
                                 break;
                             case "relation":

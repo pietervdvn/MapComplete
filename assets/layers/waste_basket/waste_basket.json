@@ -32,8 +32,7 @@
             "id": "waste-basket-waste-types",
             "question": {
                 "en": "What kind of waste basket is this?",
-                "nl": "Wat voor soort vuilnisbak is dit?",
-                "de": "Um was für einen Abfalleimer handelt es sich?"
+                "nl": "Wat voor soort vuilnisbak is dit?"
             },
             "multiAnswer": true,
             "mappings": [
@@ -91,8 +90,7 @@
             "id": "dispensing_dog_bags",
             "question": {
                 "en": "Does this waste basket have a dispenser for dog excrement bags?",
-                "nl": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?",
-                "de": "Verfügt dieser Abfalleimer über einen Spender für (Hunde-)Kotbeutel?"
+                "nl": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?"
             },
             "condition": {
                 "or": [
@@ -111,8 +109,7 @@
                     },
                     "then": {
                         "en": "This waste basket has a dispenser for (dog) excrement bags",
-                        "nl": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes",
-                        "de": "Dieser Abfalleimer verfügt über einen Spender für (Hunde-)Kotbeutel"
+                        "nl": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes"
                     }
                 },
                 {
@@ -124,16 +121,14 @@
                     },
                     "then": {
                         "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
-                        "nl": "Deze vuilbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
-                        "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
+                        "nl": "Deze vuilnisbak heeft <i>geen</i>verdeler voor hondenpoepzakjes"
                     }
                 },
                 {
                     "if": "vending=",
                     "then": {
                         "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
-                        "nl": "Deze vuilnisbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
-                        "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
+                        "nl": "Deze vuilnisbaak heeft waarschijnlijk geen verdeler voor hondenpoepzakjes"
                     },
                     "hideInAnwer": true
                 }
@@ -195,5 +190,41 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/waste_basket/waste_basket.svg"
+            },
+            "iconSize": {
+                "render": "40,40,center",
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "amenity=waste_basket"
+                            ]
+                        },
+                        "then": {
+                            "en": "Waste Basket",
+                            "nl": "Vuilnisbak",
+                            "ru": "Контейнер для мусора",
+                            "de": "Abfalleimer"
+                        }
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "color": {
+                "render": "#00f"
+            },
+            "width": {
+                "render": "8"
+            }
+        }
+    ]
 }

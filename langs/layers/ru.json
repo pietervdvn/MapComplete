@@ -632,8 +632,6 @@
         }
     },
     "charging_station": {
-        "description": "Зарядная станция",
-        "name": "Зарядные станции",
         "presets": {
             "0": {
                 "title": "Зарядная станция"
@@ -647,9 +645,6 @@
             "OH": {
                 "question": "В какое время работает эта зарядная станция?"
             }
-        },
-        "title": {
-            "render": "Зарядная станция"
         },
         "units": {
             "0": {
@@ -712,6 +707,13 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
         "name": "Дефибрилляторы",
         "presets": {
             "0": {
@@ -1433,6 +1435,17 @@
             "mappings": {
                 "0": {
                     "then": "Контейнер для мусора"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Контейнер для мусора"
+                        }
+                    }
                 }
             }
         },

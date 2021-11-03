@@ -38,8 +38,7 @@
             "id": "wikipedia-etymology",
             "question": {
                 "en": "What is the Wikidata-item that this object is named after?",
-                "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
-                "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?"
+                "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?"
             },
             "freeform": {
                 "key": "name:etymology:wikidata",
@@ -72,8 +71,7 @@
             },
             "render": {
                 "en": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-                "nl": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-                "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+                "nl": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             },
             "condition": "name:etymology!=unknown"
         },
@@ -89,8 +87,7 @@
             "id": "simple etymology",
             "question": {
                 "en": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
-                "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
-                "de": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>"
+                "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>"
             },
             "render": {
                 "en": "Named after {name:etymology}",
@@ -105,8 +102,7 @@
                     "if": "name:etymology=unknown",
                     "then": {
                         "en": "The origin of this name is unknown in all literature",
-                        "nl": "De oorsprong van deze naam is onbekend in de literatuur",
-                        "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt"
+                        "nl": "De oorsprong van deze naam is onbekend in de literatuur"
                     }
                 }
             ],
@@ -171,5 +167,48 @@
                 "then": "#fcca05aa"
             }
         ]
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "pin:#05d7fcaa;./assets/layers/etymology/logo.svg",
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "name:etymology=",
+                                "name:etymology:wikidata="
+                            ]
+                        },
+                        "then": "pin:#fcca05aa;./assets/layers/etymology/logo.svg"
+                    }
+                ]
+            },
+            "iconSize": {
+                "render": "40,40,center"
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "color": {
+                "render": "#05d7fcaa",
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "name:etymology=",
+                                "name:etymology:wikidata="
+                            ]
+                        },
+                        "then": "#fcca05aa"
+                    }
+                ]
+            },
+            "width": {
+                "render": "8"
+            }
+        }
+    ]
 }

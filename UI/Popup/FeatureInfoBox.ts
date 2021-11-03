@@ -5,7 +5,6 @@ import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
-import {Tag} from "../../Logic/Tags/Tag";
 import Constants from "../../Models/Constants";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import BaseUIElement from "../BaseUIElement";
@@ -37,7 +36,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateTitleBar(tags: UIEventSource<any>,
                                     layerConfig: LayerConfig): BaseUIElement {
-        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
+        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"))
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon,
@@ -52,26 +51,57 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): BaseUIElement {
-        let questionBox: BaseUIElement = undefined;
+        let questionBoxes: Map<string, BaseUIElement> = new Map<string, BaseUIElement>();
 
+        const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map(tr => tr.group))
         if (State.state.featureSwitchUserbadge.data) {
-            questionBox = new QuestionBox(tags, layerConfig.tagRenderings, layerConfig.units);
+            for (const groupName of allGroupNames) {
+                const questions = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
+                const questionBox = new QuestionBox(tags, questions, layerConfig.units);
+                questionBoxes.set(groupName, questionBox)
+            }
         }
 
-        let questionBoxIsUsed = false;
-        const renderings: BaseUIElement[] = layerConfig.tagRenderings.map(tr => {
-            if (tr.question === null) {
-                // This is the question box!
-                questionBoxIsUsed = true;
-                return questionBox;
+        const allRenderings = []
+        for (let i = 0; i < allGroupNames.length; i++) {
+            const groupName = allGroupNames[i];
+
+            const trs = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
+            const renderingsForGroup: (EditableTagRendering | BaseUIElement)[] = []
+            const innerClasses = "block w-full break-word text-default m-1 p-1 border-b border-gray-200 mb-2 pb-2";
+            for (const tr of trs) {
+                if (tr.question === null || tr.id === "questions") {
+                    // This is a question box!
+                    const questionBox = questionBoxes.get(tr.group)
+                    questionBoxes.delete(tr.group)
+                    renderingsForGroup.push(questionBox)
+                } else {
+                    let classes = innerClasses
+                    let isHeader  = renderingsForGroup.length === 0 && i > 0
+                    if(isHeader){
+                        // This is the first element of a group!
+                        // It should act as header and be sticky
+                        classes= ""
+                    }
+                    
+                    const etr = new EditableTagRendering(tags, tr, layerConfig.units,{
+                        innerElementClasses: innerClasses
+                    })
+                    if(isHeader){
+                        etr.SetClass("sticky top-0")
+                    }
+                    renderingsForGroup.push(etr)
+                }
             }
-            return new EditableTagRendering(tags, tr, layerConfig.units);
-        });
+            
+            allRenderings.push(...renderingsForGroup)
+        }
+
 
         let editElements: BaseUIElement[] = []
-        if (!questionBoxIsUsed) {
+        questionBoxes.forEach(questionBox => {
             editElements.push(questionBox);
-        }
+        })
 
         if (layerConfig.allowMove) {
             editElements.push(
@@ -83,7 +113,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                             layerConfig.allowMove
                         );
                     })
-                )
+                ).SetClass("text-base")
             );
         }
 
@@ -94,20 +124,20 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                         id,
                         layerConfig.deletion
                     ))
-                ))
+                ).SetClass("text-base"))
         }
 
         if (layerConfig.allowSplit) {
             editElements.push(
                 new VariableUiElement(tags.map(tags => tags.id).map(id =>
                     new SplitRoadWizard(id))
-                ))
+                ).SetClass("text-base"))
         }
 
 
         const hasMinimap = layerConfig.tagRenderings.some(tr => FeatureInfoBox.hasMinimap(tr))
         if (!hasMinimap) {
-            renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
+            allRenderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
 
         editElements.push(
@@ -132,7 +162,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             new VariableUiElement(
                 State.state.featureSwitchIsDebugging.map(isDebugging => {
                     if (isDebugging) {
-                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
+                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, "");
                         return new TagRenderingAnswer(tags, config, "all_tags")
                     }
                 })
@@ -147,10 +177,9 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 return new Combine(editElements).SetClass("flex flex-col")
             }
         ))
-        renderings.push(editors)
+        allRenderings.push(editors)
 
-
-        return new Combine(renderings).SetClass("block")
+        return new Combine(allRenderings).SetClass("block")
     }
 
     /**

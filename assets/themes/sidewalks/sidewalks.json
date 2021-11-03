@@ -1,0 +1,180 @@
+{
+  "id": "sidewalks",
+  "title": {
+    "en": "Sidewalks"
+  },
+  "shortDescription": {
+    "en": "Sidewalk mapping"
+  },
+  "description": {
+    "en": "Experimental theme"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/svg/bug.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "hideFromOverview": true,
+  "layers": [
+    {
+      "id": "sidewalks",
+      "name": {
+        "en": "Sidewalks"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "or": [
+            "highway=residential",
+            "highway=tertiary",
+            "highway=secondary"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "{name}"
+        },
+        "mappings": [
+          {
+            "if": "name=",
+            "then": "Nameless street"
+          }
+        ]
+      },
+      "description": {
+        "en": "Layer showing sidewalks of highways"
+      },
+      "tagRenderings": [
+        {
+          "id": "streetname",
+          "render": {
+            "en": "This street is named {name}"
+          }
+        },
+        {
+          "rewrite": {
+            "sourceString": "left|right",
+            "into": [
+              "left",
+              "right"
+            ]
+          },
+          "renderings": [
+            {
+              "id": "sidewalk_minimap",
+              "render": "{sided_minimap(left|right):height:8rem;border-radius:0.5rem;overflow:hidden}"
+            },
+            {
+              "id": "has_sidewalk",
+              "question": "Is there a sidewalk on this side of the road?",
+              "mappings": [
+                {
+                  "if": "sidewalk:left|right=yes",
+                  "then": "Yes, there is a sidewalk on this side of the road"
+                },
+                {
+                  "if": "sidewalk:left|right=no",
+                  "then": "No, there is no seperated sidewalk to walk on"
+                }
+              ]
+            },
+            {
+              "id": "sidewalk_width",
+              "question": "What is the width of the sidewalk on this side of the road?",
+              "render": "This sidewalk is {sidewalk:left|right:width}m wide",
+              "condition": "sidewalk:left|right=yes",
+              "freeform": {
+                "key": "sidewalk:left|right:width",
+                "type": "length",
+                "helperArgs": [
+                  "21",
+                  "map"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "location": [
+            "start",
+            "end"
+          ],
+          "icon": "circle:#ccc",
+          "iconSize": "20,20,center"
+        },
+        {
+          "#": "The center line",
+          "color": "#ffffff55",
+          "width": 8
+        },
+        {
+          "#": "left",
+          "color": {
+            "render": "#888"
+          },
+          "dashArray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": "sidewalk:left=",
+                "then": "1,12"
+              }
+            ]
+          },
+          "width": {
+            "render": 6,
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sidewalk:left=no",
+                    "sidewalk:left=separate"
+                  ]
+                },
+                "then": 0
+              }
+            ]
+          },
+          "offset": -6
+        },
+        {
+          "color": "#888",
+          "dashArray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": "sidewalk:right=",
+                "then": "1,12"
+              }
+            ]
+          },
+          "width": {
+            "render": 6,
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sidewalk:right=no",
+                    "sidewalk:right=separate"
+                  ]
+                },
+                "then": 0
+              }
+            ]
+          },
+          "offset": 6
+        }
+      ],
+      "allowSplit": true
+    }
+  ]
+}

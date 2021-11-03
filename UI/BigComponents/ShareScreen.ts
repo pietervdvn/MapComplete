@@ -2,23 +2,21 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {Translation} from "../i18n/Translation";
 import Svg from "../../Svg";
 import Combine from "../Base/Combine";
-import {SubtleButton} from "../Base/SubtleButton";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
-import State from "../../State";
 import Toggle from "../Input/Toggle";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
-import Constants from "../../Models/Constants";
 import BaseUIElement from "../BaseUIElement";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import Loc from "../../Models/Loc";
+import BaseLayer from "../../Models/BaseLayer";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 export default class ShareScreen extends Combine {
 
-    constructor(layout: LayoutConfig = undefined, layoutDefinition: string = undefined) {
-        layout = layout ?? State.state?.layoutToUse;
-        layoutDefinition = layoutDefinition ?? State.state?.layoutDefinition;
+    constructor(state: {layoutToUse: LayoutConfig, locationControl: UIEventSource<Loc>, backgroundLayer: UIEventSource<BaseLayer>, filteredLayers: UIEventSource<FilteredLayer[]>}) {
+        const layout = state?.layoutToUse;
         const tr = Translations.t.general.sharescreen;
 
         const optionCheckboxes: BaseUIElement[] = []
@@ -39,7 +37,7 @@ export default class ShareScreen extends Combine {
         ).ToggleOnClick()
         optionCheckboxes.push(includeLocation);
 
-        const currentLocation = State.state?.locationControl;
+        const currentLocation = state.locationControl;
 
         optionParts.push(includeLocation.isEnabled.map((includeL) => {
             if (currentLocation === undefined) {
@@ -64,9 +62,8 @@ export default class ShareScreen extends Combine {
         }
 
 
-        if (State.state !== undefined) {
 
-            const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = State.state.backgroundLayer;
+            const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = state.backgroundLayer;
             const currentBackground = new VariableUiElement(currentLayer.map(layer => {
                 return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""});
             }));
@@ -94,13 +91,12 @@ export default class ShareScreen extends Combine {
 
             optionParts.push(includeLayerChoices.isEnabled.map((includeLayerSelection) => {
                 if (includeLayerSelection) {
-                    return Utils.NoNull(State.state.filteredLayers.data.map(fLayerToParam)).join("&")
+                    return Utils.NoNull(state.filteredLayers.data.map(fLayerToParam)).join("&")
                 } else {
                     return null
                 }
-            }, State.state.filteredLayers.data.map((flayer) => flayer.isDisplayed)));
+            }, state.filteredLayers.data.map((flayer) => flayer.isDisplayed)));
 
-        }
 
         const switches = [
             {urlName: "fs-userbadge", human: tr.fsUserbadge},
@@ -148,55 +144,21 @@ export default class ShareScreen extends Combine {
             let literalText = `https://${host}${path}/${layout.id.toLowerCase()}`
 
             const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
-
-            let hash = "";
-            if (layoutDefinition !== undefined) {
-                literalText = `https://${host}${path}/`
-                if (layout.id.startsWith("http")) {
-                    parts.push("userlayout=" + encodeURIComponent(layout.id))
-                } else {
-                    hash = ("#" + layoutDefinition)
-                    parts.push("userlayout=true");
-                }
-            }
-
-
             if (parts.length === 0) {
-                return literalText + hash;
+                return literalText;
             }
-
-            return literalText + "?" + parts.join("&") + hash;
+            return literalText + "?" + parts.join("&");
         }, optionParts);
 
 
         const iframeCode = new VariableUiElement(
             url.map((url) => {
                 return `<span class='literal-code iframe-code-block'>
-                         &lt;iframe src="${url}" allow="geolocation" width="100%" height="100%" style="min-width: 25Opx; min-height: 250ox" title="${layout.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt 
+                         &lt;iframe src="${url}" allow="geolocation" width="100%" height="100%" style="min-width: 250px; min-height: 250px" title="${layout.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt 
                     </span>`
             })
         );
 
-
-        let editLayout: BaseUIElement = new FixedUiElement("");
-        if ((layoutDefinition !== undefined && State.state?.osmConnection !== undefined)) {
-            editLayout =
-                new VariableUiElement(
-                    State.state.osmConnection.userDetails.map(
-                        userDetails => {
-                            if (userDetails.csCount <= Constants.userJourney.themeGeneratorReadOnlyUnlock) {
-                                return "";
-                            }
-
-                            return new SubtleButton(Svg.pencil_ui(),
-                                new Combine([tr.editThisTheme.Clone().SetClass("bold"), "<br/>",
-                                    tr.editThemeDescription.Clone()]),
-                                {url: `./customGenerator.html#${State.state.layoutDefinition}`, newTab: true});
-
-                        }
-                    ));
-
-        }
 
         const linkStatus = new UIEventSource<string | Translation>("");
         const link = new VariableUiElement(
@@ -239,7 +201,6 @@ export default class ShareScreen extends Combine {
 
 
         super([
-            editLayout,
             tr.intro.Clone(),
             link,
             new VariableUiElement(linkStatus),

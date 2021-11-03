@@ -57,13 +57,14 @@ export class ExtraFunction {
             doc: "Gives a list of features from the specified layer which this feature (partly) overlaps with. " +
                 "If the current feature is a point, all features that embed the point are given. " +
                 "The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.\n" +
+                "The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list" +
                 "\n" +
                 "For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`",
             args: ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"]
         },
         (params, feat) => {
             return (...layerIds: string[]) => {
-                const result = []
+                const result : {feat:any, overlap: number}[]= []
 
                 const bbox = BBox.get(feat)
 
@@ -79,6 +80,9 @@ export class ExtraFunction {
                         result.push(...GeoOperations.calculateOverlap(feat, otherLayer));
                     }
                 }
+                
+                result.sort((a, b) => b.overlap - a.overlap)
+                
                 return result;
             }
         }
@@ -163,12 +167,41 @@ export class ExtraFunction {
         }
     )
 
+    private static readonly GetParsed = new ExtraFunction(
+        {
+            name: "get",
+            doc: "Gets the property of the feature, parses it (as JSON) and returns it. Might return 'undefined' if not defined, null, ...",
+            args: ["key"]
+        },
+        (params, feat) => {
+            return key => {
+                const value = feat.properties[key]
+                if (value === undefined) {
+                    return undefined;
+                }
+                try {
+                    const parsed = JSON.parse(value)
+                    if(parsed === null){
+                        return undefined;
+                    }
+                    return parsed;
+                } catch (e) {
+                    console.warn("Could not parse property " + key + " due to: " + e + ", the value is " + value)
+                    return undefined;
+                }
+
+            }
+
+        }
+    )
+
     private static readonly allFuncs: ExtraFunction[] = [
         ExtraFunction.DistanceToFunc,
         ExtraFunction.OverlapFunc,
         ExtraFunction.ClosestObjectFunc,
         ExtraFunction.ClosestNObjectFunc,
-        ExtraFunction.Memberships
+        ExtraFunction.Memberships,
+        ExtraFunction.GetParsed
     ];
     private readonly _name: string;
     private readonly _args: string[];
@@ -222,7 +255,6 @@ export class ExtraFunction {
         const maxFeatures = options?.maxFeatures ?? 1
         const maxDistance = options?.maxDistance ?? 500
         const uniqueTag: string | undefined = options?.uniqueTag
-        console.log("Requested closestN")
         if (typeof features === "string") {
             const name = features
             const bbox = GeoOperations.bbox(GeoOperations.buffer(GeoOperations.bbox(feature), maxDistance))
@@ -238,7 +270,7 @@ export class ExtraFunction {
         let closestFeatures: { feat: any, distance: number }[] = [];
         for (const featureList of features) {
             for (const otherFeature of featureList) {
-                if (otherFeature === feature || otherFeature.id === feature.id) {
+                if (otherFeature === feature || otherFeature.properties.id === feature.properties.id) {
                     continue; // We ignore self
                 }
                 const distance = GeoOperations.distanceBetween(
@@ -249,6 +281,11 @@ export class ExtraFunction {
                     console.error("Could not calculate the distance between", feature, "and", otherFeature)
                     throw "Undefined distance!"
                 }
+
+                if (distance === 0) {
+                    console.trace("Got a suspiciously zero distance between", otherFeature, "and self-feature", feature)
+                }
+
                 if (distance > maxDistance) {
                     continue
                 }

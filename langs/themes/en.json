@@ -792,6 +792,9 @@
         "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account.",
         "title": "Ghost bikes"
     },
+    "grb": {
+        "description": "This theme is an attempt to help automating the GRB import.<br/>Note that this is very hacky and 'steals' the GRB data from an external site; in order to do this, you need to install and activate <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>this firefox extension</a> for it to work."
+    },
     "hackerspaces": {
         "description": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
         "layers": {
@@ -801,6 +804,17 @@
                     "mappings": {
                         "0": {
                             "then": "./assets/themes/hackerspaces/led.png"
+                        }
+                    }
+                },
+                "mapRendering": {
+                    "0": {
+                        "icon": {
+                            "mappings": {
+                                "0": {
+                                    "then": "./assets/themes/hackerspaces/led.png"
+                                }
+                            }
                         }
                     }
                 },
@@ -1225,6 +1239,25 @@
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
         "shortDescription": "An editable map with basic shop information",
         "title": "Open Shop Map"
+    },
+    "sidewalks": {
+        "description": "Experimental theme",
+        "layers": {
+            "0": {
+                "description": "Layer showing sidewalks of highways",
+                "name": "Sidewalks",
+                "tagRenderings": {
+                    "streetname": {
+                        "render": "This street is named {name}"
+                    }
+                },
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "shortDescription": "Sidewalk mapping",
+        "title": "Sidewalks"
     },
     "sport_pitches": {
         "description": "A sport pitch is an area where sports are played",

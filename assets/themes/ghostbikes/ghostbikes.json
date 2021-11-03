@@ -53,6 +53,9 @@
   "startLat": 0,
   "startLon": 0,
   "widenFactor": 5,
+  "clustering": {
+    "maxZoom": 0
+  },
   "layers": [
     "ghost_bike"
   ],

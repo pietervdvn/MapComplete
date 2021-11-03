@@ -91,6 +91,15 @@ html, body {
     display: block ruby;
 }
 
+.badge {
+}
+
+.badge svg {
+    /*Workaround for leaflet*/
+    width: unset !important;
+    height: 100% !important;
+}
+
 svg, img {
     box-sizing: content-box;
     width: 100%;

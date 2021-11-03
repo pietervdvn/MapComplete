@@ -100,11 +100,20 @@ Adds the time that the data got loaded - pretty much the time of downloading fro
 
 
 
-### _last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number 
+### _last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend 
 
 
 
 Information about the last edit of this object.
+
+
+
+
+### sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property 
+
+
+
+Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' and 'generic_key:right:property' (and similar for sidewalk tagging). Note that this rewritten tags _will be reuploaded on a change_. To prevent to much unrelated retagging, this is only enabled if the layer has at least some lineRenderings with offset defined
 
 
 
@@ -162,6 +171,7 @@ Some advanced functions are available on **feat** as well:
   - closest
   - closestn
   - memberships
+  - get
  
 ### distanceTo 
 
@@ -173,7 +183,7 @@ Some advanced functions are available on **feat** as well:
 ### overlapWith 
 
  Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.
-
+The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list
 For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')` 
 
   0. ...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)
@@ -202,4 +212,10 @@ If a 'unique tag key' is given, the tag with this key will only appear once (e.g
 For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')` 
 
 
+ 
+### get 
+
+ Gets the property of the feature, parses it (as JSON) and returns it. Might return 'undefined' if not defined, null, ... 
+
+  0. key
  Generated from SimpleMetaTagger, ExtraFunction

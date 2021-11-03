@@ -8,6 +8,8 @@ import * as L from "leaflet";
 import {Map} from "leaflet";
 import Minimap, {MinimapObj, MinimapOptions} from "./Minimap";
 import {BBox} from "../../Logic/BBox";
+import 'leaflet-polylineoffset'
+import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
 
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0;
@@ -276,5 +278,11 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         }
 
         this.leafletMap.setData(map)
+    }
+    
+    public async TakeScreenshot(){
+        const screenshotter = new SimpleMapScreenshoter();
+        screenshotter.addTo(this.leafletMap.data);
+        return await screenshotter.takeScreen('image')
     }
 }

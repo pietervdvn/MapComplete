@@ -19,6 +19,9 @@ import {FixedInputElement} from "./FixedInputElement";
 import WikidataSearchBox from "../Wikipedia/WikidataSearchBox";
 import Wikidata from "../../Logic/Web/Wikidata";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
+import Table from "../Base/Table";
+import Combine from "../Base/Combine";
+import Title from "../Base/Title";
 
 interface TextFieldDef {
     name: string,
@@ -28,10 +31,161 @@ interface TextFieldDef {
     inputHelper?: (value: UIEventSource<string>, options?: {
         location: [number, number],
         mapBackgroundLayer?: UIEventSource<any>,
-        args: (string | number | boolean)[]
+        args: (string | number | boolean | any)[]
         feature?: any
     }) => InputElement<string>,
     inputmode?: string
+}
+
+class WikidataTextField implements TextFieldDef {
+    name = "wikidata"
+    explanation =
+        new Combine([
+            "A wikidata identifier, e.g. Q42.",
+            new Title("Helper arguments"),
+            new Table(["name", "doc"],
+                [
+                    ["key", "the value of this tag will initialize search (default: name)"],
+                    ["options", new Combine(["A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
+                        new Table(
+                            ["subarg", "doc"],
+                            [["removePrefixes", "remove these snippets of text from the start of the passed string to search"],
+                                ["removePostfixes", "remove these snippets of text from the end of the passed string to search"],
+                            ]
+                        )])
+                    ]]),
+            new Title("Example usage"),
+            `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
+
+\`\`\`
+"freeform": {
+    "key": "name:etymology:wikidata",
+    "type": "wikidata",
+    "helperArgs": [
+        "name",
+        {
+            "removePostfixes": [
+                "street",
+                "boulevard",
+                "path",
+                "square",
+                "plaza",
+            ]
+        }
+    ]
+}
+\`\`\``
+        ]).AsMarkdown()
+
+
+    public isValid(str) {
+
+        if (str === undefined) {
+            return false;
+        }
+        if (str.length <= 2) {
+            return false;
+        }
+        return !str.split(";").some(str => Wikidata.ExtractKey(str) === undefined)
+    }
+
+    public reformat(str) {
+        if (str === undefined) {
+            return undefined;
+        }
+        let out = str.split(";").map(str => Wikidata.ExtractKey(str)).join("; ")
+        if (str.endsWith(";")) {
+            out = out + ";"
+        }
+        return out;
+    }
+
+    public inputHelper(currentValue, inputHelperOptions) {
+        const args = inputHelperOptions.args ?? []
+        const searchKey = args[0] ?? "name"
+
+        let searchFor = <string>inputHelperOptions.feature?.properties[searchKey]?.toLowerCase()
+
+        const options = args[1]
+        if (searchFor !== undefined && options !== undefined) {
+            const prefixes = <string[]>options["removePrefixes"]
+            const postfixes = <string[]>options["removePostfixes"]
+            for (const postfix of postfixes ?? []) {
+                if (searchFor.endsWith(postfix)) {
+                    searchFor = searchFor.substring(0, searchFor.length - postfix.length)
+                    break;
+                }
+            }
+
+            for (const prefix of prefixes ?? []) {
+                if (searchFor.startsWith(prefix)) {
+                    searchFor = searchFor.substring(prefix.length)
+                    break;
+                }
+            }
+
+        }
+
+        return new WikidataSearchBox({
+            value: currentValue,
+            searchText: new UIEventSource<string>(searchFor)
+        })
+    }
+}
+
+class OpeningHoursTextField implements TextFieldDef {
+    name = "opening_hours"
+    explanation =
+        new Combine([
+            "Has extra elements to easily input when a POI is opened.",
+            new Title("Helper arguments"),
+            new Table(["name", "doc"],
+                [
+                    ["options", new Combine([
+                        "A JSON-object of type `{ prefix: string, postfix: string }`. ",
+                        new Table(["subarg", "doc"],
+                            [
+                                ["prefix", "Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse"],
+                                ["postfix", "Piece of text that will always be added to the end of the generated opening hours"],
+                            ])
+
+                    ])
+                    ]
+                ]),
+            new Title("Example usage"),
+            "To add a conditional (based on time) access restriction:\n\n```\n" + `
+"freeform": {
+    "key": "access:conditional",
+    "type": "opening_hours",
+    "helperArgs": [
+        {
+          "prefix":"no @ (",
+          "postfix":")"
+        }
+    ]
+}` + "\n```\n\n*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]).AsMarkdown()
+
+
+    isValid() {
+        return true
+    }
+
+    reformat(str) {
+        return str
+    }
+
+    inputHelper(value: UIEventSource<string>, inputHelperOptions: {
+        location: [number, number],
+        mapBackgroundLayer?: UIEventSource<any>,
+        args: (string | number | boolean | any)[]
+        feature?: any
+    }) {
+        const args = (inputHelperOptions.args ?? [])[0]
+        const prefix = <string>args?.prefix ?? ""
+        const postfix = <string>args?.postfix ?? ""
+
+        return new OpeningHoursInput(value, prefix, postfix)
+    }
 }
 
 export default class ValidatedTextField {
@@ -117,7 +271,8 @@ export default class ValidatedTextField {
                 if (args[0]) {
                     zoom = Number(args[0])
                     if (isNaN(zoom)) {
-                        throw "Invalid zoom level for argument at 'length'-input"
+                        console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ",args[0]," (using 19 instead)")
+                        zoom = 19
                     }
                 }
 
@@ -146,60 +301,7 @@ export default class ValidatedTextField {
             },
             "decimal"
         ),
-        ValidatedTextField.tp(
-            "wikidata",
-            "A wikidata identifier, e.g. Q42. Input helper arguments: [ key: the value of this tag will initialize search (default: name), options: { removePrefixes: string[], removePostfixes: string[] }  these prefixes and postfixes will be removed from the initial search value]",
-            (str) => {
-                if (str === undefined) {
-                    return false;
-                }
-                if(str.length <= 2){
-                    return false;
-                }
-                return !str.split(";").some(str => Wikidata.ExtractKey(str) === undefined)
-            },
-            (str) => {
-                if (str === undefined) {
-                    return undefined;
-                }
-                let out = str.split(";").map(str => Wikidata.ExtractKey(str)).join("; ")
-                if(str.endsWith(";")){
-                    out = out + ";"
-                }
-                return out;
-            },
-            (currentValue, inputHelperOptions) => {
-                const args = inputHelperOptions.args ?? []
-                const searchKey = args[0] ?? "name"
-
-                let searchFor = <string>inputHelperOptions.feature?.properties[searchKey]?.toLowerCase()
-
-                const options = args[1]
-                if (searchFor !== undefined && options !== undefined) {
-                    const prefixes = <string[]>options["removePrefixes"]
-                    const postfixes = <string[]>options["removePostfixes"]
-                    for (const postfix of postfixes ?? []) {
-                        if (searchFor.endsWith(postfix)) {
-                            searchFor = searchFor.substring(0, searchFor.length - postfix.length)
-                            break;
-                        }
-                    }
-
-                    for (const prefix of prefixes ?? []) {
-                        if (searchFor.startsWith(prefix)) {
-                            searchFor = searchFor.substring(prefix.length)
-                            break;
-                        }
-                    }
-
-                }
-
-                return new WikidataSearchBox({
-                    value: currentValue,
-                    searchText: new UIEventSource<string>(searchFor)
-                })
-            }
-        ),
+        new WikidataTextField(),
 
         ValidatedTextField.tp(
             "int",
@@ -299,15 +401,7 @@ export default class ValidatedTextField {
             undefined,
             "tel"
         ),
-        ValidatedTextField.tp(
-            "opening_hours",
-            "Has extra elements to easily input when a POI is opened",
-            () => true,
-            str => str,
-            (value) => {
-                return new OpeningHoursInput(value);
-            }
-        ),
+        new OpeningHoursTextField(),
         ValidatedTextField.tp(
             "color",
             "Shows a color picker",
@@ -458,7 +552,11 @@ export default class ValidatedTextField {
 
     public static HelpText(): string {
         const explanations = ValidatedTextField.tpList.map(type => ["## " + type.name, "", type.explanation].join("\n")).join("\n\n")
-        return "# Available types for text fields\n\nThe listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them\n\n" + explanations
+        return new Combine([
+            new Title("Available types for text fields", 1),
+            "The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them",
+            explanations
+        ]).SetClass("flex flex-col").AsMarkdown()
     }
 
     private static tp(name: string,

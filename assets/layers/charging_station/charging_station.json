@@ -2,13 +2,7 @@
     "id": "charging_station",
     "name": {
         "en": "Charging stations",
-        "nl": "Oplaadpunten",
-        "de": "Ladestationen",
-        "it": "Stazioni di ricarica",
-        "ja": "充電ステーション",
-        "nb_NO": "Ladestasjoner",
-        "ru": "Зарядные станции",
-        "zh_Hant": "充電站"
+        "nl": "Oplaadpunten"
     },
     "minzoom": 10,
     "source": {
@@ -24,24 +18,12 @@
     "title": {
         "render": {
             "en": "Charging station",
-            "nl": "Oplaadpunten",
-            "de": "Ladestation",
-            "it": "Stazione di ricarica",
-            "ja": "充電ステーション",
-            "nb_NO": "Ladestasjon",
-            "ru": "Зарядная станция",
-            "zh_Hant": "充電站"
+            "nl": "Oplaadpunten"
         }
     },
     "description": {
         "en": "A charging station",
-        "nl": "Oplaadpunten",
-        "de": "Eine Ladestation",
-        "it": "Una stazione di ricarica",
-        "ja": "充電ステーション",
-        "nb_NO": "En ladestasjon",
-        "ru": "Зарядная станция",
-        "zh_Hant": "充電站"
+        "nl": "Oplaadpunten"
     },
     "tagRenderings": [
         "images",
@@ -1699,7 +1681,7 @@
                             "planned:amenity=",
                             "construction:amenity=",
                             "disused:amenity=",
-                            "operational_status=",
+                            "operational_status=broken",
                             "amenity=charging_station"
                         ]
                     },
@@ -1712,11 +1694,11 @@
                 {
                     "if": {
                         "and": [
-                            "planned:amenity=",
+                            "planned:amenity=charging_station",
                             "construction:amenity=",
                             "disused:amenity=",
-                            "operational_status=broken",
-                            "amenity=charging_station"
+                            "operational_status=",
+                            "amenity="
                         ]
                     },
                     "then": {
@@ -1728,8 +1710,8 @@
                 {
                     "if": {
                         "and": [
-                            "planned:amenity=charging_station",
-                            "construction:amenity=",
+                            "planned:amenity=",
+                            "construction:amenity=charging_station",
                             "disused:amenity=",
                             "operational_status=",
                             "amenity="
@@ -1745,8 +1727,8 @@
                     "if": {
                         "and": [
                             "planned:amenity=",
-                            "construction:amenity=charging_station",
-                            "disused:amenity=",
+                            "construction:amenity=",
+                            "disused:amenity=charging_station",
                             "operational_status=",
                             "amenity="
                         ]
@@ -1762,9 +1744,9 @@
                         "and": [
                             "planned:amenity=",
                             "construction:amenity=",
-                            "disused:amenity=charging_station",
+                            "disused:amenity=",
                             "operational_status=",
-                            "amenity="
+                            "amenity=charging_station"
                         ]
                     },
                     "then": {
@@ -1811,69 +1793,69 @@
             }
         }
     ],
-    "icon": {
-        "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
-        "mappings": [
-            {
-                "if": "bicycle=yes",
-                "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
-            },
-            {
-                "if": {
-                    "or": [
-                        "car=yes",
-                        "motorcar=yes"
-                    ]
-                },
-                "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
-            }
-        ]
-    },
-    "iconOverlays": [
+    "mapRendering": [
         {
-            "if": {
-                "or": [
-                    "disused:amenity=charging_station",
-                    "operational_status=broken"
-                ]
-            },
-            "then": "cross_bottom_right:#c22;"
-        },
-        {
-            "if": {
-                "or": [
-                    "proposed:amenity=charging_station",
-                    "planned:amenity=charging_station"
-                ]
-            },
-            "then": "./assets/layers/charging_station/under_construction.svg",
-            "badge": true
-        },
-        {
-            "if": {
-                "and": [
-                    "bicycle=yes",
+            "location": [
+                "point",
+                "centroid"
+            ],
+            "icon": {
+                "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
+                "mappings": [
                     {
-                        "or": [
-                            "motorcar=yes",
-                            "car=yes"
-                        ]
+                        "if": "bicycle=yes",
+                        "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
+                    },
+                    {
+                        "if": {
+                            "or": [
+                                "car=yes",
+                                "motorcar=yes"
+                            ]
+                        },
+                        "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
                     }
                 ]
             },
-            "then": "circle:#fff;./assets/themes/charging_stations/car.svg",
-            "badge": true
+            "iconBadges": [
+                {
+                    "if": {
+                        "or": [
+                            "disused:amenity=charging_station",
+                            "operational_status=broken"
+                        ]
+                    },
+                    "then": "cross:#c22;"
+                },
+                {
+                    "if": {
+                        "or": [
+                            "proposed:amenity=charging_station",
+                            "planned:amenity=charging_station"
+                        ]
+                    },
+                    "then": "./assets/layers/charging_station/under_construction.svg"
+                },
+                {
+                    "if": {
+                        "and": [
+                            "bicycle=yes",
+                            {
+                                "or": [
+                                    "motorcar=yes",
+                                    "car=yes"
+                                ]
+                            }
+                        ]
+                    },
+                    "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
+                }
+            ],
+            "iconSize": {
+                "render": "50,50,bottom"
+            }
         }
     ],
-    "width": {
-        "render": "8"
-    },
-    "iconSize": {
-        "render": "50,50,bottom"
-    },
-    "color": {
-        "render": "#00f"
-    },
     "presets": [
         {
             "tags": [

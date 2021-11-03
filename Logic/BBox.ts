@@ -1,5 +1,6 @@
 import * as turf from "@turf/turf";
 import {TileRange, Tiles} from "../Models/TileRange";
+import {GeoOperations} from "./GeoOperations";
 
 export class BBox {
 
@@ -22,7 +23,7 @@ export class BBox {
             this.minLon = Math.min(this.minLon, coordinate[0]);
             this.minLat = Math.min(this.minLat, coordinate[1]);
         }
-        
+
         this.maxLon = Math.min(this.maxLon, 180)
         this.maxLat = Math.min(this.maxLat, 90)
         this.minLon = Math.max(this.minLon, -180)
@@ -115,14 +116,19 @@ export class BBox {
     getSouth() {
         return this.minLat
     }
+    
+    contains(lonLat: [number, number]){
+        return this.minLat <= lonLat[1] && lonLat[1] <= this.maxLat
+        && this.minLon<= lonLat[0] && lonLat[0] <= this.maxLon
+    }
 
     pad(factor: number, maxIncrease = 2): BBox {
-        
+
         const latDiff = Math.min(maxIncrease / 2, Math.abs(this.maxLat - this.minLat) * factor)
-        const lonDiff =Math.min(maxIncrease / 2, Math.abs(this.maxLon - this.minLon) * factor)
+        const lonDiff = Math.min(maxIncrease / 2, Math.abs(this.maxLon - this.minLon) * factor)
         return new BBox([[
             this.minLon - lonDiff,
-            this.minLat  - latDiff
+            this.minLat - latDiff
         ], [this.maxLon + lonDiff,
             this.maxLat + latDiff]])
     }
@@ -160,5 +166,17 @@ export class BBox {
         const boundsul = Tiles.tile_bounds_lon_lat(ul.z, ul.x, ul.y)
         const boundslr = Tiles.tile_bounds_lon_lat(lr.z, lr.x, lr.y)
         return new BBox([].concat(boundsul, boundslr))
+    }
+
+    toMercator(): { minLat: number, maxLat: number, minLon: number, maxLon: number } {
+        const [minLon, minLat] = GeoOperations.ConvertWgs84To900913([this.minLon, this.minLat])
+        const [maxLon, maxLat] = GeoOperations.ConvertWgs84To900913([this.maxLon, this.maxLat])
+
+        return {
+            minLon, maxLon,
+            minLat, maxLat
+        }
+
+
     }
 }

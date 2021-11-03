@@ -1,8 +1,6 @@
 import {UIEventSource} from "../../UIEventSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
-import {Utils} from "../../../Utils";
-import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
 
 export default class SimpleFeatureSource implements FeatureSourceForLayer, Tiled {

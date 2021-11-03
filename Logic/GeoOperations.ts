@@ -226,7 +226,7 @@ export class GeoOperations {
 
     /**
      * Generates the closest point on a way from a given point
-     * 
+     *
      *  The properties object will contain three values:
      // - `index`: closest point was found on nth line part,
      // - `dist`: distance between pt and the closest point (in kilometer),
@@ -235,6 +235,13 @@ export class GeoOperations {
      * @param point Point defined as [lon, lat]
      */
     public static nearestPoint(way, point: [number, number]) {
+        if(way.geometry.type === "Polygon"){
+            way = {...way}
+            way.geometry = {...way.geometry}
+            way.geometry.type = "LineString"
+            way.geometry.coordinates = way.geometry.coordinates[0]
+        }
+        
         return turf.nearestPointOnLine(way, point, {units: "kilometers"});
     }
 
@@ -281,6 +288,34 @@ export class GeoOperations {
         }
 
         return headerValuesOrdered.map(v => JSON.stringify(v)).join(",") + "\n" + lines.join("\n")
+    }
+
+
+    private static readonly _earthRadius = 6378137;
+    private static readonly _originShift = 2 * Math.PI * GeoOperations._earthRadius / 2;
+
+    //Converts given lat/lon in WGS84 Datum to XY in Spherical Mercator EPSG:900913
+    public static ConvertWgs84To900913(lonLat: [number, number]): [number, number] {
+        const lon = lonLat[0];
+        const lat = lonLat[1];
+        const x = lon * GeoOperations._originShift / 180;
+        let y = Math.log(Math.tan((90 + lat) * Math.PI / 360)) / (Math.PI / 180);
+        y = y * GeoOperations._originShift / 180;
+        return [x, y];
+    }
+
+//Converts XY point from (Spherical) Web Mercator EPSG:3785 (unofficially EPSG:900913) to lat/lon in WGS84 Datum
+    public static Convert900913ToWgs84(lonLat: [number, number]): [number, number] {
+        const lon = lonLat[0]
+        const lat = lonLat[1]
+        const x = 180 * lon / GeoOperations._originShift;
+        let y = 180 * lat / GeoOperations._originShift;
+        y = 180 / Math.PI * (2 * Math.atan(Math.exp(y * Math.PI / 180)) - Math.PI / 2);
+        return [x, y];
+    }
+    
+    public static GeoJsonToWGS84(geojson){
+        return turf.toWgs84(geojson)
     }
 
     /**

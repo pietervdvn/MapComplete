@@ -72,8 +72,7 @@
                 "fr": "Qu'est-ce que le nom de ce magasin?",
                 "ru": "Как называется этот магазин?",
                 "ja": "このお店の名前は何ですか?",
-                "nl": "Wat is de naam van deze winkel?",
-                "de": "Wie ist der Name dieses Geschäfts?"
+                "nl": "Wat is de naam van deze winkel?"
             },
             "render": "This shop is called <i>{name}</i>",
             "freeform": {
@@ -215,8 +214,7 @@
                 "fr": "Quel est le numéro de téléphone ?",
                 "ja": "電話番号は何番ですか?",
                 "nl": "Wat is het telefoonnummer?",
-                "ru": "Какой телефон?",
-                "de": "Wie ist die Telefonnummer?"
+                "ru": "Какой телефон?"
             },
             "freeform": {
                 "key": "phone",
@@ -261,8 +259,7 @@
                 "fr": "Quelle est l'adresse électronique de ce magasin ?",
                 "ja": "このお店のメールアドレスは何ですか?",
                 "ru": "Каков адрес электронной почты этого магазина?",
-                "nl": "Wat is het e-mailadres van deze winkel?",
-                "de": "Wie ist die Email-Adresse dieses Geschäfts?"
+                "nl": "Wat is het e-mailadres van deze winkel?"
             },
             "freeform": {
                 "key": "email",
@@ -282,8 +279,7 @@
                 "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
                 "ja": "この店の営業時間は何時から何時までですか?",
                 "nl": "Wat zijn de openingsuren van deze winkel?",
-                "ru": "Каковы часы работы этого магазина?",
-                "de": "Wie sind die Öffnungszeiten dieses Geschäfts?"
+                "ru": "Каковы часы работы этого магазина?"
             },
             "freeform": {
                 "key": "opening_hours",
@@ -300,8 +296,7 @@
     "iconOverlays": [
         {
             "if": "opening_hours~*",
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         }
     ],
     "width": {
@@ -323,8 +318,7 @@
                 "fr": "Magasin",
                 "ru": "Магазин",
                 "ja": "店",
-                "nl": "Winkel",
-                "de": "Geschäft"
+                "nl": "Winkel"
             },
             "description": {
                 "en": "Add a new shop",
@@ -345,5 +339,33 @@
             ]
         }
     },
-    "allowMove": true
+    "allowMove": true,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/shops/shop.svg"
+            },
+            "iconBadges": [
+                {
+                    "if": "opening_hours~*",
+                    "then": "isOpen"
+                }
+            ],
+            "iconSize": {
+                "render": "40,40,center"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": {
+                "render": "#00f"
+            },
+            "width": {
+                "render": "8"
+            }
+        }
+    ]
 }
