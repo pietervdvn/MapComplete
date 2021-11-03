@@ -48,7 +48,11 @@
           }
         ]
       },
-      "color": "#ff0",
+      "mapRendering": [
+        {
+          "color": "#ff0"
+        }
+      ],
       "tagRenderings": [
         {
           "id": "lit",
@@ -113,7 +117,11 @@
           }
         ]
       },
-      "color": "#a9a9a9",
+      "mapRendering": [
+        {
+          "color": "#a9a9a9"
+        }
+      ],
       "tagRenderings": [
         {
           "id": "lit",

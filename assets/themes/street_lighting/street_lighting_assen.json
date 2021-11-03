@@ -34,16 +34,21 @@
         "_has_closeby_feature=Number(feat.properties._closest_osm_street_lamp_distance) < 5 ? 'yes' : 'no'"
       ],
       "title": "Straatlantaarn in dataset",
-      "icon": {
-        "render": "circle:red",
-        "mappings": [
-          {
-            "if": "_has_closeby_feature=yes",
-            "then": "circle:#008000aa"
-          }
-        ]
-      },
-      "iconSize": "20,20,center",
+      "mapRendering": [
+        {
+          "location": "point",
+          "icon": {
+            "render": "circle:red",
+            "mappings": [
+              {
+                "if": "_has_closeby_feature=yes",
+                "then": "circle:#008000aa"
+              }
+            ]
+          },
+          "iconSize": "20,20,center"
+        }
+      ],
       "tagRenderings": [
         "all_tags"
       ]
