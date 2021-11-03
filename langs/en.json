@@ -218,10 +218,10 @@
         },
         "opening_hours": {
             "error_loading": "Error: could not visualize these opening hours.",
-            "open_during_ph": "During a public holiday, this amenity is",
+            "open_during_ph": "During a public holiday, this is",
             "opensAt": "from",
             "openTill": "till",
-            "not_all_rules_parsed": "The opening hours of this shop are complicated. The following rules are ignored in the input element:",
+            "not_all_rules_parsed": "These opening hours are complicated. The following rules are ignored in the input element:",
             "closed_until": "Closed until {date}",
             "closed_permanently": "Closed for an unkown duration",
             "open_24_7": "Opened around the clock",
