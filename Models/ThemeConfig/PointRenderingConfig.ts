@@ -132,7 +132,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             return undefined;
         }
         return new VariableUiElement(tags.map(tags => {
-            const rotation = self.rotation?.GetRenderValue(tags)?.txt ?? "0deg"
+            const rotation = Utils.SubstituteKeys(self.rotation?.GetRenderValue(tags)?.txt ?? "0deg", tags)
             
             const htmlDefs = Utils.SubstituteKeys(self.icon.GetRenderValue(tags)?.txt, tags)
             let defaultPin : BaseUIElement = undefined
