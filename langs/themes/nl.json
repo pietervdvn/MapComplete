@@ -97,6 +97,8 @@
                 }
             }
         },
+        "shortDescription": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje",
+        "title": "Breng jouw buurtnatuur in kaart",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -161,9 +163,7 @@
                     "render": "Dit gebied heet {name}"
                 }
             }
-        },
-        "shortDescription": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje",
-        "title": "Breng jouw buurtnatuur in kaart"
+        }
     },
     "cafes_and_pubs": {
         "description": "Cafés, kroegen en drinkgelegenheden",
@@ -206,6 +206,12 @@
                         }
                     },
                     "render": "Camperplaats {name}"
+                },
+                "presets": {
+                    "0": {
+                        "description": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
+                        "title": "camperplaats"
+                    }
                 }
             }
         },
@@ -370,6 +376,18 @@
             }
         },
         "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " meter"
+                        },
+                        "1": {
+                            "human": " voet"
+                        }
+                    }
+                }
+            },
             "tagRenderings+": {
                 "0": {
                     "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
@@ -469,18 +487,6 @@
                     },
                     "question": "Is er een snelklimmuur (speed climbing)?"
                 }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " meter"
-                        },
-                        "1": {
-                            "human": " voet"
-                        }
-                    }
-                }
             }
         },
         "title": "Open klimkaart"
@@ -517,6 +523,8 @@
                 }
             }
         },
+        "shortDescription": "Een kaart met alle gekende fietsstraten",
+        "title": "Fietsstraten",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -541,9 +549,7 @@
                     "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
                 }
             }
-        },
-        "shortDescription": "Een kaart met alle gekende fietsstraten",
-        "title": "Fietsstraten"
+        }
     },
     "cyclofix": {
         "description": "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
@@ -986,5 +992,65 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
+    },
+    "street_lighting_assen": {
+        "description": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen",
+        "title": "Straatverlichting - Assen"
+    },
+    "street_lighting": {
+        "description": "Op deze kaart vind je alles over straatlantaarns",
+        "layers": {
+            "1": {
+                "name": "Verlichte straten",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze straat is verlicht"
+                            },
+                            "1": {
+                                "then": "Deze straat is niet verlicht"
+                            },
+                            "2": {
+                                "then": "Deze straat is 's nachts verlicht"
+                            },
+                            "3": {
+                                "then": "Deze straat is 24/7 verlicht"
+                            }
+                        },
+                        "question": "Is deze straat verlicht?"
+                    }
+                },
+                "title": {
+                    "render": "Verlichte straat"
+                }
+            },
+            "2": {
+                "name": "Alle straten",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze straat is verlicht"
+                            },
+                            "1": {
+                                "then": "Deze straat is niet verlicht"
+                            },
+                            "2": {
+                                "then": "Deze straat is 's nachts verlicht"
+                            },
+                            "3": {
+                                "then": "Deze straat is 24/7 verlicht"
+                            }
+                        },
+                        "question": "Is deze straat verlicht?"
+                    }
+                },
+                "title": {
+                    "render": "Straat"
+                }
+            }
+        },
+        "title": "Straatverlichting"
     }
 }

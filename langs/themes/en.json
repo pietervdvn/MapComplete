@@ -233,6 +233,8 @@
                 }
             }
         },
+        "shortDescription": "Find sites to spend the night with your camper",
+        "title": "Campersites",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -251,9 +253,7 @@
                     "question": "Does this place have a power supply?"
                 }
             }
-        },
-        "shortDescription": "Find sites to spend the night with your camper",
-        "title": "Campersites"
+        }
     },
     "charging_stations": {
         "description": "On this open map, one can find and mark information about charging stations",
@@ -454,6 +454,18 @@
             }
         },
         "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " meter"
+                        },
+                        "1": {
+                            "human": " feet"
+                        }
+                    }
+                }
+            },
             "tagRenderings+": {
                 "0": {
                     "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
@@ -576,18 +588,6 @@
                     },
                     "question": "Is there a speed climbing wall?"
                 }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " meter"
-                        },
-                        "1": {
-                            "human": " feet"
-                        }
-                    }
-                }
             }
         },
         "title": "Open Climbing Map"
@@ -636,6 +636,8 @@
                 }
             }
         },
+        "shortDescription": "A map of cyclestreets",
+        "title": "Cyclestreets",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -660,9 +662,7 @@
                     "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
                 }
             }
-        },
-        "shortDescription": "A map of cyclestreets",
-        "title": "Cyclestreets"
+        }
     },
     "cyclofix": {
         "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
@@ -1328,5 +1328,61 @@
         "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
         "shortDescription": "A map with waste baskets",
         "title": "Waste Basket"
+    },
+    "street_lighting": {
+        "description": "On this map you can find everything about street lighting",
+        "layers": {
+            "1": {
+                "name": "Lit streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This street is not lit"
+                            },
+                            "2": {
+                                "then": "This street is lit at night"
+                            },
+                            "3": {
+                                "then": "This street is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Lit street"
+                }
+            },
+            "2": {
+                "name": "All streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This road is not lit"
+                            },
+                            "2": {
+                                "then": "This street is lit at night"
+                            },
+                            "3": {
+                                "then": "This street is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Street"
+                }
+            }
+        },
+        "title": "Street Lighting"
     }
 }

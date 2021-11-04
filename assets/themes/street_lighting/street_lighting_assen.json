@@ -1,0 +1,58 @@
+{
+  "id": "street_lighting_assen",
+  "maintainer": "Robin van der Linde",
+  "version": "2021-10-22",
+  "language": [
+    "nl",
+    "en"
+  ],
+  "title": {
+    "nl": "Straatverlichting - Assen"
+  },
+  "description": {
+    "nl": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen"
+  },
+  "icon": "./assets/layers/street_lamps/street_lamp.svg",
+  "startZoom": 19,
+  "startLat": 52.99319,
+  "startLon": 6.56113,
+  "layers": [
+    "street_lamps",
+    {
+      "id": "Assen",
+      "name": "Dataset Assen",
+      "source": {
+        "osmTags": "Lichtmastnummer~*",
+        "#geoJson": "https://opendata.arcgis.com/datasets/ba37cdb372064b3199c548b75d16a609_0.geojson",
+        "geoJson": "https://robinlinde.github.io/tiles/assen_street_lighting/{z}/{x}/{y}.json",
+        "geoJsonZoomLevel": 16,
+        "isOsmCache": false
+      },
+      "calculatedTags": [
+        "_closest_osm_street_lamp=feat.closest('street_lamps')?.properties?.id",
+        "_closest_osm_street_lamp_distance=feat.distanceTo(feat.properties._closest_osm_street_lamp) * 1000",
+        "_has_closeby_feature=Number(feat.properties._closest_osm_street_lamp_distance) < 5 ? 'yes' : 'no'"
+      ],
+      "title": "Straatlantaarn in dataset",
+      "mapRendering": [
+        {
+          "location": "point",
+          "icon": {
+            "render": "circle:red",
+            "mappings": [
+              {
+                "if": "_has_closeby_feature=yes",
+                "then": "circle:#008000aa"
+              }
+            ]
+          },
+          "iconSize": "20,20,center"
+        }
+      ],
+      "tagRenderings": [
+        "all_tags"
+      ]
+    }
+  ],
+  "hideFromOverview": true
+}
