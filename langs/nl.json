@@ -171,7 +171,7 @@
         },
         "opening_hours": {
             "error_loading": "Sorry, deze openingsuren kunnen niet getoond worden",
-            "open_during_ph": "Op een feestdag is deze zaak",
+            "open_during_ph": "Op een feestdag is dit",
             "opensAt": "vanaf",
             "openTill": "tot",
             "closed_until": "Gesloten - open op {date}",
@@ -181,7 +181,7 @@
             "ph_closed": "gesloten",
             "ph_open": "open",
             "ph_open_as_usual": "geopend zoals gewoonlijk",
-            "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:",
+            "not_all_rules_parsed": "De openingsuren zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:",
             "loadingCountry": "Het land wordt nog bepaald…"
         },
         "skippedQuestions": "Enkele vragen werden overgeslaan",
