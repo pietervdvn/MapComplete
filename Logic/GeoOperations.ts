@@ -304,7 +304,7 @@ export class GeoOperations {
         return [x, y];
     }
 
-//Converts XY point from (Spherical) Web Mercator EPSG:3785 (unofficially EPSG:900913) to lat/lon in WGS84 Datum
+    //Converts XY point from (Spherical) Web Mercator EPSG:3785 (unofficially EPSG:900913) to lat/lon in WGS84 Datum
     public static Convert900913ToWgs84(lonLat: [number, number]): [number, number] {
         const lon = lonLat[0]
         const lat = lonLat[1]
@@ -410,6 +410,31 @@ export class GeoOperations {
         return undefined;
     }
 
+    /**
+     * Tries to remove points which do not contribute much to the general outline.
+     * Points for which the angle is ~ 180° are removed
+     * @param coordinates
+     * @constructor
+     */
+    public static SimplifyCoordinates(coordinates: [number, number][]){
+        const newCoordinates = []
+        for (let i = 1; i < coordinates.length - 1; i++){
+            const coordinate = coordinates[i];
+            const prev = coordinates[i - 1]
+            const next = coordinates[i + 1]
+            const b0 = turf.bearing(prev, coordinate, {final: true})
+            const b1 = turf.bearing(coordinate, next)
+            
+            const diff = Math.abs(b1 - b0)
+            if(diff < 2){
+                continue
+            }
+            newCoordinates.push(coordinate)
+        }
+        return newCoordinates
+
+    }
+    
 }
 
 

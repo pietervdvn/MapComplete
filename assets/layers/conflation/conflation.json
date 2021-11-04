@@ -30,7 +30,16 @@
         },
         {
             "width": "3",
-            "color": "#00f"
+            "color": "#00f",
+            "dasharray": {
+                "render": "",
+                "mappings": [
+                    {
+                        "if": "resulting-geometry=yes",
+                        "then": "6 6"
+                    }
+                ]
+            }
         }
     ]
 }

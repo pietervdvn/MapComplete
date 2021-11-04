@@ -58,10 +58,15 @@ export default class GeoLocationHandler extends VariableUiElement {
     private readonly _layoutToUse: LayoutConfig;
 
     constructor(
-        currentGPSLocation: UIEventSource<Coordinates>,
-        leafletMap: UIEventSource<any>,
-        layoutToUse: LayoutConfig
+        state: {
+            currentGPSLocation: UIEventSource<Coordinates>,
+            leafletMap: UIEventSource<any>,
+            layoutToUse: LayoutConfig,
+            featureSwitchGeolocation: UIEventSource<boolean>
+        }
     ) {
+        const currentGPSLocation = state.currentGPSLocation
+        const leafletMap = state.leafletMap
         const hasLocation = currentGPSLocation.map(
             (location) => location !== undefined
         );
@@ -122,7 +127,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         this._previousLocationGrant = previousLocationGrant;
         this._currentGPSLocation = currentGPSLocation;
         this._leafletMap = leafletMap;
-        this._layoutToUse = layoutToUse;
+        this._layoutToUse = state.layoutToUse;
         this._hasLocation = hasLocation;
         const self = this;
 
@@ -167,7 +172,7 @@ export default class GeoLocationHandler extends VariableUiElement {
 
         const latLonGiven = QueryParameters.wasInitialized("lat") && QueryParameters.wasInitialized("lon")
 
-        this.init(false, !latLonGiven);
+        this.init(false, !latLonGiven && state.featureSwitchGeolocation.data);
 
         isLocked.addCallbackAndRunD(isLocked => {
             if (isLocked) {
@@ -208,7 +213,7 @@ export default class GeoLocationHandler extends VariableUiElement {
   
     }
 
-    private init(askPermission: boolean, forceZoom: boolean) {
+    private init(askPermission: boolean, zoomToLocation: boolean) {
         const self = this;
 
         if (self._isActive.data) {
@@ -222,7 +227,7 @@ export default class GeoLocationHandler extends VariableUiElement {
                 ?.then(function (status) {
                     console.log("Geolocation permission is ", status.state);
                     if (status.state === "granted") {
-                        self.StartGeolocating(forceZoom);
+                        self.StartGeolocating(zoomToLocation);
                     }
                     self._permission.setData(status.state);
                     status.onchange = function () {
@@ -234,10 +239,10 @@ export default class GeoLocationHandler extends VariableUiElement {
         }
 
         if (askPermission) {
-            self.StartGeolocating(forceZoom);
+            self.StartGeolocating(zoomToLocation);
         } else if (this._previousLocationGrant.data === "granted") {
             this._previousLocationGrant.setData("");
-            self.StartGeolocating(forceZoom);
+            self.StartGeolocating(zoomToLocation);
         }
     }
 

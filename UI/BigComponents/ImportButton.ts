@@ -32,6 +32,10 @@ import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeature
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import BaseLayer from "../../Models/BaseLayer";
 import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction";
+import FullNodeDatabaseSource from "../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
+import CreateWayWithPointReuseAction from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
+import OsmChangeAction from "../../Logic/Osm/Actions/OsmChangeAction";
+import FeatureSource from "../../Logic/FeatureSource/FeatureSource";
 
 
 export interface ImportButtonState {
@@ -282,7 +286,7 @@ export default class ImportButton extends Toggle {
                                             importClicked: UIEventSource<boolean>): BaseUIElement {
 
         const confirmationMap = Minimap.createMiniMap({
-            allowMoving: false,
+            allowMoving: true,
             background: o.state.backgroundLayer
         })
         confirmationMap.SetStyle("height: 20rem; overflow: hidden").SetClass("rounded-xl")
@@ -297,15 +301,15 @@ export default class ImportButton extends Toggle {
             allElements: o.state.allElements,
             layers: o.state.filteredLayers
         })
+        
+        let action : OsmChangeAction & {getPreview() : Promise<FeatureSource>}
 
         const theme = o.state.layoutToUse.id
-
-
         const changes = o.state.changes
         let confirm: () => Promise<string>
         if (o.conflationSettings !== undefined) {
 
-            let replaceGeometryAction = new ReplaceGeometryAction(
+            action = new ReplaceGeometryAction(
                 o.state,
                 o.feature,
                 o.conflationSettings.conflateWayId,
@@ -314,40 +318,53 @@ export default class ImportButton extends Toggle {
                     newTags: o.newTags.data
                 }
             )
-            
-            replaceGeometryAction.GetPreview().then(changePreview => {
-                new ShowDataLayer({
-                    leafletMap: confirmationMap.leafletMap,
-                    enablePopups: false,
-                    zoomToFeatures: false,
-                    features: changePreview,
-                    allElements: o.state.allElements,
-                    layerToShow: AllKnownLayers.sharedLayers.get("conflation")
-                })
-            })
 
             confirm = async () => {
-                changes.applyAction (replaceGeometryAction)
+                changes.applyAction (action)
                 return o.feature.properties.id
             }
 
         } else {
+            const geom = o.feature.geometry
+            let coordinates: [number, number][]
+            if (geom.type === "LineString") {
+                coordinates = geom.coordinates
+            } else if (geom.type === "Polygon") {
+                coordinates = geom.coordinates[0]
+            }
+            
+            
+            action = new CreateWayWithPointReuseAction(
+                o.newTags.data,
+                coordinates,
+                // @ts-ignore
+                o.state,
+                [{
+                    withinRangeOfM: 1,
+                    ifMatches: new Tag("_is_part_of_building","true"),
+                    mode:"move_osm_point"
+                    
+                }]
+            )
+            
+            
             confirm = async () => {
-                const geom = o.feature.geometry
-                let coordinates: [number, number][]
-                if (geom.type === "LineString") {
-                    coordinates = geom.coordinates
-                } else if (geom.type === "Polygon") {
-                    coordinates = geom.coordinates[0]
-                }
-                const action = new CreateNewWayAction(o.newTags.data, coordinates.map(lngLat => ({
-                    lat: lngLat[1],
-                    lon: lngLat[0]
-                })), {theme})
-                return action.newElementId
+                changes.applyAction(action)
+                return undefined
             }
         }
 
+
+        action.getPreview().then(changePreview => {
+            new ShowDataLayer({
+                leafletMap: confirmationMap.leafletMap,
+                enablePopups: false,
+                zoomToFeatures: false,
+                features: changePreview,
+                allElements: o.state.allElements,
+                layerToShow: AllKnownLayers.sharedLayers.get("conflation")
+            })
+        })
 
         const confirmButton = new SubtleButton(o.image(), o.message)
         confirmButton.onClick(async () => {

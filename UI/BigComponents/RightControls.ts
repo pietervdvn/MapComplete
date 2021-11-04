@@ -12,9 +12,7 @@ export default class RightControls extends Combine {
     constructor(state:MapState) {
         
         const geolocatioHandler = new GeoLocationHandler(
-            state.currentGPSLocation,
-            state.leafletMap,
-            state.layoutToUse
+            state
         )
         
         new ShowDataLayer({
