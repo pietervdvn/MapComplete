@@ -47,7 +47,8 @@
                     "nl": "{name}",
                     "en": "{name}",
                     "de": "{name}",
-                    "ru": "{name}"
+                    "ru": "{name}",
+                    "eo": "{name}"
                 }
             }
         ]

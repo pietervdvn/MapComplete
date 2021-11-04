@@ -37,7 +37,8 @@
                     "fr": "<i>{name}</i>",
                     "it": "<i>{name}</i>",
                     "ru": "<i>{name}</i>",
-                    "id": "<i>{name}</i>"
+                    "id": "<i>{name}</i>",
+                    "eo": "<i>{name}</i>"
                 }
             }
         ]
@@ -310,7 +311,8 @@
                 "ru": "Название: {name}",
                 "fr": "Nom : {name}",
                 "id": "Nama: {name}",
-                "de": "Name: {name}"
+                "de": "Name: {name}",
+                "eo": "Nomo: {name}"
             },
             "question": {
                 "nl": "Heeft de boom een naam?",

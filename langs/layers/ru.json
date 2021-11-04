@@ -707,6 +707,13 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
         "name": "Дефибрилляторы",
         "presets": {
             "0": {
@@ -754,13 +761,6 @@
         },
         "title": {
             "render": "Дефибриллятор"
-        },
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
         }
     },
     "direction": {
@@ -1441,15 +1441,6 @@
                 }
             }
         },
-        "name": "Контейнер для мусора",
-        "presets": {
-            "0": {
-                "title": "Контейнер для мусора"
-            }
-        },
-        "title": {
-            "render": "Контейнер для мусора"
-        },
         "mapRendering": {
             "0": {
                 "iconSize": {
@@ -1460,6 +1451,15 @@
                     }
                 }
             }
+        },
+        "name": "Контейнер для мусора",
+        "presets": {
+            "0": {
+                "title": "Контейнер для мусора"
+            }
+        },
+        "title": {
+            "render": "Контейнер для мусора"
         }
     },
     "watermill": {

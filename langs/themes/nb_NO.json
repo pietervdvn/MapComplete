@@ -1,6 +1,10 @@
 {
     "aed": {
+        "description": "Defibrillatorer i nærheten",
         "title": "Åpne AED-kart"
+    },
+    "artwork": {
+        "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden"
     },
     "benches": {
         "shortDescription": "Et benkekart",
@@ -8,6 +12,16 @@
     },
     "bicyclelib": {
         "title": "Sykkelbibliotek"
+    },
+    "binoculars": {
+        "shortDescription": "Et kart over fastmonterte kikkerter",
+        "title": "Kikkerter"
+    },
+    "bookcases": {
+        "title": "Kart over åpne bokhyller"
+    },
+    "cafes_and_pubs": {
+        "title": "Kafeer og kneiper"
     },
     "campersite": {
         "layers": {
@@ -45,6 +59,10 @@
                 }
             }
         }
+    },
+    "charging_stations": {
+        "shortDescription": "Et verdensomspennende kart over ladestasjoner",
+        "title": "Ladestasjoner"
     },
     "climbing": {
         "layers": {
@@ -125,6 +143,10 @@
         },
         "title": "Åpent klatrekart"
     },
+    "cycle_infra": {
+        "shortDescription": "Alt relatert til sykkelinfrastruktur.",
+        "title": "Sykkelinfrastruktur"
+    },
     "cyclestreets": {
         "layers": {
             "1": {
@@ -159,7 +181,15 @@
                 }
             }
         },
-        "shortDescription": "Et kart over sykkelveier"
+        "shortDescription": "Et kart over sykkelveier",
+        "title": "Sykkelgater"
+    },
+    "cyclofix": {
+        "title": "Cyclofix — et åpent kart for syklister"
+    },
+    "drinking_water": {
+        "description": "Offentlig tilgjengelig drikkevannssteder",
+        "title": "Drikkevann"
     },
     "facadegardens": {
         "layers": {
@@ -175,6 +205,9 @@
                 }
             }
         }
+    },
+    "food": {
+        "title": "Restauranter og søppelmat"
     },
     "ghostbikes": {
         "title": "Spøkelsessykler"
@@ -217,6 +250,38 @@
                     "render": "Brannstasjon"
                 }
             }
-        }
+        },
+        "title": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
+    },
+    "maps": {
+        "title": "Et kart over kart"
+    },
+    "natuurpunt": {
+        "title": "Naturreservater"
+    },
+    "parkings": {
+        "shortDescription": "Dette kartet viser forskjellige parkeringsplasser",
+        "title": "Parkering"
+    },
+    "personal": {
+        "title": "Personlig tema"
+    },
+    "playgrounds": {
+        "shortDescription": "Et kart med lekeplasser",
+        "title": "Lekeplasser"
+    },
+    "postboxes": {
+        "title": "Postboks og postkontor-kart"
+    },
+    "shops": {
+        "title": "Kart over åpne butikker"
+    },
+    "toilets": {
+        "title": "Åpent toalettkart"
+    },
+    "trees": {
+        "description": "Kartlegg trærne.",
+        "shortDescription": "Kartlegg alle trærne",
+        "title": "Trær"
     }
 }

@@ -318,6 +318,18 @@
                     }
                 },
                 "tagRenderings": {
+                    "Bolts": {
+                        "mappings": {
+                            "0": {
+                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                            },
+                            "1": {
+                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                            }
+                        },
+                        "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
+                        "render": "Diese Kletterroute hat {climbing:bolts} Haken"
+                    },
                     "Difficulty": {
                         "question": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
                         "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
@@ -650,6 +662,7 @@
         "title": "Open Etymology Map"
     },
     "facadegardens": {
+        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
             "0": {
                 "description": "Fassadengärten",
@@ -822,17 +835,6 @@
                         }
                     },
                     "render": "Hackerspace"
-                },
-                "mapRendering": {
-                    "0": {
-                        "icon": {
-                            "mappings": {
-                                "0": {
-                                    "then": "./assets/themes/hackerspaces/led.png"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -840,7 +842,7 @@
         "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
+        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
         "layers": {
             "0": {
                 "description": "Kartenebene zur Anzeige von Hydranten.",
@@ -948,6 +950,9 @@
                     "station-name": {
                         "question": "Wie lautet der Name dieser Feuerwache?"
                     }
+                },
+                "title": {
+                    "render": "Feuerwache"
                 }
             },
             "3": {
@@ -957,12 +962,16 @@
                     }
                 }
             }
-        }
+        },
+        "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
     },
     "maps": {
+        "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
+        "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
         "title": "Eine Karte der Karten"
     },
     "natuurpunt": {
+        "description": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
         "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
         "title": "Naturschutzgebiete"
     },
@@ -973,7 +982,45 @@
     },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
-        "title": "Freie Windenergie-Karte"
+        "layers": {
+            "0": {
+                "name": "Windrad",
+                "presets": {
+                    "0": {
+                        "title": "Windrad"
+                    }
+                },
+                "title": {
+                    "render": "Windrad"
+                },
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " Megawatt"
+                            },
+                            "1": {
+                                "human": " Kilowatt"
+                            },
+                            "2": {
+                                "human": " Watt"
+                            },
+                            "3": {
+                                "human": " Gigawatt"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " Meter"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OpenWindPowerMap"
     },
     "parkings": {
         "description": "Diese Karte zeigt Parkplätze",
@@ -981,17 +1028,45 @@
         "title": "Parken"
     },
     "personal": {
-        "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
+        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
         "title": "Persönliches Thema"
     },
     "playgrounds": {
+        "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",
         "shortDescription": "Eine Karte mit Spielplätzen",
-        "title": "Spielplätze"
+        "title": "Spielpläzte"
     },
     "postboxes": {
         "layers": {
+            "0": {
+                "description": "Die Ebene zeigt Briefkästen.",
+                "name": "Brieflästen",
+                "presets": {
+                    "0": {
+                        "title": "Briefkasten"
+                    }
+                },
+                "title": {
+                    "render": "Briefkasten"
+                }
+            },
             "1": {
                 "description": "Eine Ebene mit Postämtern.",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Aktuell geöffnet"
+                            }
+                        }
+                    }
+                },
+                "name": "Poststellen",
+                "presets": {
+                    "0": {
+                        "title": "Poststelle"
+                    }
+                },
                 "tagRenderings": {
                     "OH": {
                         "mappings": {
@@ -1000,6 +1075,9 @@
                             }
                         }
                     }
+                },
+                "title": {
+                    "render": "Poststelle"
                 }
             }
         },
@@ -1007,6 +1085,7 @@
         "title": "Karte mit Briefkästen und Poststellen"
     },
     "shops": {
+        "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
         "title": "Freie Geschäftskarte"
     },

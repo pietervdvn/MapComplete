@@ -39,7 +39,8 @@
                     "fr": "{name}",
                     "ru": "{name}",
                     "ja": "{name}",
-                    "de": "{name}"
+                    "de": "{name}",
+                    "eo": "{name}"
                 }
             },
             {
@@ -53,7 +54,8 @@
                     "fr": "{shop}",
                     "ru": "{shop}",
                     "ja": "{shop}",
-                    "de": "{shop}"
+                    "de": "{shop}",
+                    "eo": "{shop}"
                 }
             }
         ]
@@ -89,14 +91,16 @@
                 "en": "This shop sells {shop}",
                 "fr": "Ce magasin vends {shop}",
                 "ja": "こちらのお店では{shop}を販売しております",
-                "de": "Dieses Geschäft verkauft {shop}"
+                "de": "Dieses Geschäft verkauft {shop}",
+                "eo": "Ĉi tiu butiko vendas {shop}"
             },
             "question": {
                 "en": "What does this shop sell?",
                 "fr": "Que vends ce magasin ?",
                 "ja": "このお店では何を売っていますか?",
                 "ru": "Что продаётся в этом магазине?",
-                "de": "Was wird in diesem Geschäft verkauft?"
+                "de": "Was wird in diesem Geschäft verkauft?",
+                "eo": "Kion vendas ĉi tiu butiko?"
             },
             "freeform": {
                 "key": "shop"
@@ -112,7 +116,8 @@
                         "en": "Convenience store",
                         "fr": "Épicerie/superette",
                         "ja": "コンビニエンスストア",
-                        "de": "Lebensmittelladen"
+                        "de": "Lebensmittelladen",
+                        "nl": "Gemakswinkel"
                     }
                 },
                 {
@@ -141,7 +146,8 @@
                         "fr": "Magasin de vêtements",
                         "ru": "Магазин одежды",
                         "ja": "衣料品店",
-                        "de": "Bekleidungsgeschäft"
+                        "de": "Bekleidungsgeschäft",
+                        "nl": "Kledingwinkel"
                     }
                 },
                 {
@@ -170,7 +176,8 @@
                         "fr": "Boulangerie",
                         "ja": "ベーカリー",
                         "nl": "Bakkerij",
-                        "de": "Bäckerei"
+                        "de": "Bäckerei",
+                        "eo": "Bakejo"
                     }
                 },
                 {
@@ -181,9 +188,20 @@
                     },
                     "then": {
                         "en": "Car repair (garage)",
-                        "fr": "Garagiste",
+                        "fr": "Garage de réparation automobile",
                         "ja": "自動車修理(ガレージ)",
-                        "de": "Autoreparatur (Werkstatt)"
+                        "de": "Autowerkstatt",
+                        "fi": "Autokorjaamo",
+                        "hu": "Autószerelő",
+                        "id": "Bengkel Mobil",
+                        "it": "Autofficina",
+                        "nb_NO": "Bilverksted",
+                        "nl": "Autogarage",
+                        "pl": "Warsztat samochodowy",
+                        "pt": "Oficina de automóveis",
+                        "pt_BR": "Oficina Mecânica",
+                        "ru": "Автомастерская",
+                        "sv": "Bilverkstad"
                     }
                 },
                 {
@@ -197,7 +215,8 @@
                         "fr": "Concessionnaire",
                         "ru": "Автосалон",
                         "ja": "自動車ディーラー",
-                        "de": "Autohändler"
+                        "de": "Autohändler",
+                        "nl": "Autodealer"
                     }
                 }
             ],
@@ -211,7 +230,9 @@
                 "id": "<a href='tel:{phone}'>{phone}</a>",
                 "ru": "<a href='tel:{phone}'>{phone}</a>",
                 "ja": "<a href='tel:{phone}'>{phone}</a>",
-                "de": "<a href='tel:{phone}'>{phone}</a>"
+                "de": "<a href='tel:{phone}'>{phone}</a>",
+                "eo": "<a href='tel:{phone}'>{phone}</a>",
+                "nl": "<a href='tel:{phone}'>{phone}</a>"
             },
             "question": {
                 "en": "What is the phone number?",
@@ -219,7 +240,8 @@
                 "ja": "電話番号は何番ですか?",
                 "nl": "Wat is het telefoonnummer?",
                 "ru": "Какой телефон?",
-                "de": "Wie ist die Telefonnummer?"
+                "de": "Wie ist die Telefonnummer?",
+                "eo": "Kio estas la telefonnumero?"
             },
             "freeform": {
                 "key": "phone",
@@ -235,7 +257,8 @@
                 "id": "<a href='{website}'>{website}</a>",
                 "ru": "<a href='{website}'>{website}</a>",
                 "ja": "<a href='{website}'>{website}</a>",
-                "de": "<a href='{website}'>{website}</a>"
+                "de": "<a href='{website}'>{website}</a>",
+                "eo": "<a href='{website}'>{website}</a>"
             },
             "question": {
                 "en": "What is the website of this shop?",
@@ -257,7 +280,9 @@
                 "fr": "<a href='mailto:{email}'>{email}</a>",
                 "id": "<a href='mailto:{email}'>{email}</a>",
                 "ru": "<a href='mailto:{email}'>{email}</a>",
-                "ja": "<a href='mailto:{email}'>{email}</a>"
+                "ja": "<a href='mailto:{email}'>{email}</a>",
+                "eo": "<a href='mailto:{email}'>{email}</a>",
+                "nl": "<a href='mailto:{email}'>{email}</a>"
             },
             "question": {
                 "en": "What is the email address of this shop?",
@@ -265,7 +290,8 @@
                 "ja": "このお店のメールアドレスは何ですか?",
                 "ru": "Каков адрес электронной почты этого магазина?",
                 "nl": "Wat is het e-mailadres van deze winkel?",
-                "de": "Wie ist die Email-Adresse dieses Geschäfts?"
+                "de": "Wie ist die Email-Adresse dieses Geschäfts?",
+                "eo": "Kio estas la retpoŝta adreso de ĉi tiu butiko?"
             },
             "freeform": {
                 "key": "email",
@@ -278,7 +304,8 @@
                 "en": "{opening_hours_table(opening_hours)}",
                 "fr": "{opening_hours_table(opening_hours)}",
                 "ru": "{opening_hours_table(opening_hours)}",
-                "ja": "{opening_hours_table(opening_hours)}"
+                "ja": "{opening_hours_table(opening_hours)}",
+                "nl": "{opening_hours_table(opening_hours)}"
             },
             "question": {
                 "en": "What are the opening hours of this shop?",
@@ -327,7 +354,8 @@
                 "ru": "Магазин",
                 "ja": "店",
                 "nl": "Winkel",
-                "de": "Geschäft"
+                "de": "Geschäft",
+                "eo": "Butiko"
             },
             "description": {
                 "en": "Add a new shop",
@@ -335,7 +363,8 @@
                 "ru": "Добавить новый магазин",
                 "ja": "新しい店を追加する",
                 "nl": "Voeg een nieuwe winkel toe",
-                "de": "Ein neues Geschäft hinzufügen"
+                "de": "Ein neues Geschäft hinzufügen",
+                "eo": "Enmeti novan butikon"
             }
         }
     ],

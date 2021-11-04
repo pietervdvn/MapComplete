@@ -63,12 +63,12 @@
             }
         },
         "title": {
-            "render": "Kunstverk",
             "mappings": {
                 "0": {
                     "then": "Kunstverk <i>{name}</i>"
                 }
-            }
+            },
+            "render": "Kunstverk"
         }
     },
     "bench": {

@@ -107,7 +107,8 @@
                 "pt_BR": "{name}",
                 "fi": "{name}",
                 "pl": "{name}",
-                "pt": "{name}"
+                "pt": "{name}",
+                "eo": "{name}"
             },
             "freeform": {
                 "key": "name"

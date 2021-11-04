@@ -201,7 +201,7 @@
             "question": {
                 "en": "Is this a cyclestreet?",
                 "nl": "Is dit een fietsstraat?",
-                "de": "Ist das eine Fahrradstraße"
+                "de": "Ist das eine Fahrradstraße?"
             },
             "condition": {
                 "and": [

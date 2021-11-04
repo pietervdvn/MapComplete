@@ -816,17 +816,6 @@
                         }
                     }
                 },
-                "mapRendering": {
-                    "0": {
-                        "icon": {
-                            "mappings": {
-                                "0": {
-                                    "then": "./assets/themes/hackerspaces/led.png"
-                                }
-                            }
-                        }
-                    }
-                },
                 "name": "Hackerspace",
                 "presets": {
                     "0": {
@@ -893,7 +882,7 @@
         "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
+        "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.\n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.\n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
         "layers": {
             "0": {
                 "description": "Map layer to show fire hydrants.",
@@ -1273,6 +1262,62 @@
         "shortDescription": "A map showing sport pitches",
         "title": "Sport pitches"
     },
+    "street_lighting": {
+        "description": "On this map you can find everything about street lighting",
+        "layers": {
+            "1": {
+                "name": "Lit streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This street is not lit"
+                            },
+                            "2": {
+                                "then": "This street is lit at night"
+                            },
+                            "3": {
+                                "then": "This street is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Lit street"
+                }
+            },
+            "2": {
+                "name": "All streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This street is not lit"
+                            },
+                            "2": {
+                                "then": "This street is lit at night"
+                            },
+                            "3": {
+                                "then": "This street is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Street"
+                }
+            }
+        },
+        "title": "Street Lighting"
+    },
     "surveillance": {
         "description": "On this open map, you can find surveillance cameras.",
         "shortDescription": "Surveillance cameras and other means of surveillance",
@@ -1328,61 +1373,5 @@
         "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
         "shortDescription": "A map with waste baskets",
         "title": "Waste Basket"
-    },
-    "street_lighting": {
-        "description": "On this map you can find everything about street lighting",
-        "layers": {
-            "1": {
-                "name": "Lit streets",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "This street is lit"
-                            },
-                            "1": {
-                                "then": "This street is not lit"
-                            },
-                            "2": {
-                                "then": "This street is lit at night"
-                            },
-                            "3": {
-                                "then": "This street is lit 24/7"
-                            }
-                        },
-                        "question": "Is this street lit?"
-                    }
-                },
-                "title": {
-                    "render": "Lit street"
-                }
-            },
-            "2": {
-                "name": "All streets",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "This street is lit"
-                            },
-                            "1": {
-                                "then": "This road is not lit"
-                            },
-                            "2": {
-                                "then": "This street is lit at night"
-                            },
-                            "3": {
-                                "then": "This street is lit 24/7"
-                            }
-                        },
-                        "question": "Is this street lit?"
-                    }
-                },
-                "title": {
-                    "render": "Street"
-                }
-            }
-        },
-        "title": "Street Lighting"
     }
 }
