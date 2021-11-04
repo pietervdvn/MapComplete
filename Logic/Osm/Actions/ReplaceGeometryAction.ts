@@ -19,7 +19,15 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     };
     private readonly wayToReplaceId: string;
     private readonly theme: string;
+    /**
+     * The target coordinates that should end up in OpenStreetMap
+     */
     private readonly targetCoordinates: [number, number][];
+    /**
+     * If a target coordinate is close to another target coordinate, 'identicalTo' will point to the first index.
+     * @private
+     */
+    private readonly identicalTo: number[]
     private readonly newTags: Tag[] | undefined;
 
     constructor(
@@ -46,13 +54,36 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         } else if (geom.type === "Polygon") {
             coordinates = geom.coordinates[0]
         }
+
+        this.identicalTo = coordinates.map(_ => undefined)
+
+        for (let i = 0; i < coordinates.length; i++) {
+            if (this.identicalTo[i] !== undefined) {
+                continue
+            }
+            for (let j = i + 1; j < coordinates.length; j++) {
+                const d = 1000 * GeoOperations.distanceBetween(coordinates[i], coordinates[j])
+                if (d < 0.1) {
+                    console.log("Identical coordinates detected: ", i, " and ", j, ": ", coordinates[i], coordinates[j], "distance is", d)
+                    this.identicalTo[j] = i
+                }
+            }
+        }
+
+
         this.targetCoordinates = coordinates
         this.newTags = options.newTags
     }
 
-    public async GetPreview(): Promise<FeatureSource> {
+    public async getPreview(): Promise<FeatureSource> {
         const {closestIds, allNodesById} = await this.GetClosestIds();
+        console.log("Generating preview, identicals are ", )
         const preview = closestIds.map((newId, i) => {
+            if(this.identicalTo[i] !== undefined){
+                return undefined
+            }
+            
+            
             if (newId === undefined) {
                 return {
                     type: "Feature",
@@ -80,7 +111,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                 }
             };
         })
-        return new StaticFeatureSource(preview, false)
+        return new StaticFeatureSource(Utils.NoNull(preview), false)
 
     }
 
@@ -92,6 +123,11 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         const {closestIds, osmWay} = await this.GetClosestIds()
 
         for (let i = 0; i < closestIds.length; i++) {
+            if(this.identicalTo[i] !== undefined){
+                const j = this.identicalTo[i]
+                actualIdsToUse.push(actualIdsToUse[j])
+                continue
+            }
             const closestId = closestIds[i];
             const [lon, lat] = this.targetCoordinates[i]
             if (closestId === undefined) {
@@ -161,7 +197,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     private async GetClosestIds(): Promise<{ closestIds: number[], allNodesById: Map<number, OsmNode>, osmWay: OsmWay }> {
         // TODO FIXME: cap move length on points which are embedded into other ways (ev. disconnect them)
         // TODO FIXME: if a new point has to be created, snap to already existing ways
-        // TODO FIXME: reuse points if they are the same in the target coordinates
+        // TODO FIXME: detect intersections with other ways if moved
         const splitted = this.wayToReplaceId.split("/");
         const type = splitted[0];
         const idN = Number(splitted[1]);
@@ -185,7 +221,8 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
         const closestIds = []
         const distances = []
-        for (const target of this.targetCoordinates) {
+        for (let i = 0; i < this.targetCoordinates.length; i++){
+            const target = this.targetCoordinates[i];
             let closestDistance = undefined
             let closestId = undefined;
             for (const osmNode of allNodes) {
@@ -202,9 +239,18 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         }
 
         // Next step: every closestId can only occur once in the list
+        // We skip the ones which are identical
+            console.log("Erasing double ids")
         for (let i = 0; i < closestIds.length; i++) {
+            if(this.identicalTo[i] !== undefined){
+                closestIds[i] = closestIds[this.identicalTo[i]]
+                continue
+            }
             const closestId = closestIds[i]
             for (let j = i + 1; j < closestIds.length; j++) {
+                if(this.identicalTo[j] !== undefined){
+                    continue
+                }
                 const otherClosestId = closestIds[j]
                 if (closestId !== otherClosestId) {
                     continue

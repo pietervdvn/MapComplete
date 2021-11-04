@@ -29,6 +29,7 @@
     "minzoom": 18
   },
   "trackAllNodes": true,
+  "enableGeolocation": false,
   "layers": [
     {
       "builtin": "type_node",
@@ -41,6 +42,13 @@
           "_is_part_of_building_passage=feat.get('parent_ways')?.some(p => p.tunnel === 'building_passage') ?? false",
           "_is_part_of_highway=!feat.get('is_part_of_building_passage') && (feat.get('parent_ways')?.some(p => p.highway !== undefined && p.highway !== '') ?? false)",
           "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false"
+        ],
+        "mapRendering": [
+          {
+            "icon": "square:#00f",
+            "iconSize": "5,5,center",
+            "location": "point"
+          }
         ]
       }
     },
@@ -638,7 +646,8 @@
         "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
         "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
-        "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date"
+        "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
+        "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)"
       ],
       "tagRenderings": [
         {
@@ -676,7 +685,7 @@
           "mappings": [
             {
               "if": "_overlaps_with!=null",
-              "then": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,,_osm_obj:id)}"
+              "then": "{import_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,,_osm_obj:id)}"
             }
           ]
         },
