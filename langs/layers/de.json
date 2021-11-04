@@ -2863,5 +2863,17 @@
     },
     "watermill": {
         "name": "Wassermühle"
+    },
+    "charging_station": {
+        "description": "Eine Ladestation",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle Fahrzeugtypen"
+                    }
+                }
+            }
+        }
     }
 }
