@@ -4,7 +4,7 @@
         "title": "AED-Karte öffnen"
     },
     "artwork": {
-        "description": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
+        "description": "Willkommen bei der Freien Kunst-Karte, einer Karte mit Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
         "title": "Freie Kunstwerk-Karte"
     },
     "benches": {
@@ -13,7 +13,7 @@
         "title": "Sitzbänke"
     },
     "bicyclelib": {
-        "description": "Eine Fahrradbibliothek ist ein Ort, an dem Fahrräder ausgeliehen werden können, oft gegen eine geringe Jahresgebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind",
+        "description": "Fahrradbibliotheken sind Orte, um Fahrräder auszuleihen, oft gegen eine geringe Gebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind",
         "title": "Fahrradbibliothek"
     },
     "binoculars": {
@@ -22,7 +22,7 @@
         "title": "Ferngläser"
     },
     "bookcases": {
-        "description": "Ein öffentlicher Bücherschrank ist ein kleiner Bücherschrank am Straßenrand, ein Kasten, eine alte Telefonzelle oder andere Gegenstände, in denen Bücher aufbewahrt werden. Jeder kann ein Buch hinstellen oder mitnehmen. Diese Karte zielt darauf ab, all diese Bücherschränke zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Account schnell Ihre Lieblingsbücherschränke hinzufügen.",
+        "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen, zur Aufbewahrung von Büchern. Jeder kann Bücher abstellen oder mitnehmen. Die Karte zielt darauf ab, alle Orte mit Bücherschränken zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Konto schnell Ihre Lieblingsbücherschränke hinzufügen.",
         "title": "Öffentliche Bücherschränke Karte"
     },
     "cafes_and_pubs": {
@@ -261,7 +261,7 @@
         "title": "Ladestationen"
     },
     "climbing": {
-        "description": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
+        "description": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
         "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
         "layers": {
             "0": {
@@ -625,8 +625,8 @@
         "title": "Fahrradstraßen"
     },
     "cyclofix": {
-        "description": "Mit dieser Karte soll Radfahrern eine einfache Lösung bereitgestellt werden, um die passende Farradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in der Datenbank von OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - eine freie Karte für Radfahrer"
+        "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können auch interessante Orte zur Karte hinzuzufügen oder bearbeiten und weitere Daten durch Beantwortung von Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "title": "Cyclofix — eine freie Karte für Radfahrer"
     },
     "drinking_water": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
@@ -652,12 +652,12 @@
     "facadegardens": {
         "layers": {
             "0": {
-                "description": "Fassadenbegrünung",
-                "name": "Fassadenbegrünung",
+                "description": "Fassadengärten",
+                "name": "Fassadengärten",
                 "presets": {
                     "0": {
-                        "description": "Eine Fassadenbegrünung hinzufügen",
-                        "title": "Fassadenbegrünung"
+                        "description": "Einen Fassadengarten hinzufügen",
+                        "title": "Fassadengarten"
                     }
                 },
                 "tagRenderings": {
@@ -728,12 +728,12 @@
                     }
                 },
                 "title": {
-                    "render": "Fassadenbegrünung"
+                    "render": "Fassadengarten"
                 }
             }
         },
-        "shortDescription": "Diese Karte zeigt Fassadenbegrünungen mit Bildern und nützlichen Informationen über Ausrichtung, Sonneneinstrahlung und Pflanzenarten.",
-        "title": "Fassadenbegrünung"
+        "shortDescription": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen.",
+        "title": "Fassadengärten"
     },
     "food": {
         "title": "Restaurants und Schnellimbisse"
@@ -748,7 +748,7 @@
         }
     },
     "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt ist.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
+        "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
         "title": "Geisterräder"
     },
     "hackerspaces": {
@@ -760,17 +760,6 @@
                     "mappings": {
                         "0": {
                             "then": "./assets/themes/hackerspaces/led.png"
-                        }
-                    }
-                },
-                "mapRendering": {
-                    "0": {
-                        "icon": {
-                            "mappings": {
-                                "0": {
-                                    "then": "./assets/themes/hackerspaces/led.png"
-                                }
-                            }
                         }
                     }
                 },
@@ -833,6 +822,17 @@
                         }
                     },
                     "render": "Hackerspace"
+                },
+                "mapRendering": {
+                    "0": {
+                        "icon": {
+                            "mappings": {
+                                "0": {
+                                    "then": "./assets/themes/hackerspaces/led.png"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -840,7 +840,7 @@
         "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
+        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
         "layers": {
             "0": {
                 "description": "Kartenebene zur Anzeige von Hydranten.",
@@ -973,7 +973,7 @@
     },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
-        "title": "OpenWindPowerMap"
+        "title": "Freie Windenergie-Karte"
     },
     "parkings": {
         "description": "Diese Karte zeigt Parkplätze",
@@ -981,12 +981,12 @@
         "title": "Parken"
     },
     "personal": {
-        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
+        "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
         "title": "Persönliches Thema"
     },
     "playgrounds": {
         "shortDescription": "Eine Karte mit Spielplätzen",
-        "title": "Spielpläzte"
+        "title": "Spielplätze"
     },
     "postboxes": {
         "layers": {

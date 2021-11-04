@@ -1,4 +1,19 @@
 {
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Obra de arte"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Obra de arte <i>{name}</i>"
+                }
+            },
+            "render": "Obra de arte"
+        }
+    },
     "bench": {
         "name": "Bancos",
         "presets": {
@@ -512,6 +527,17 @@
         "name": "Bicicleta fantasma",
         "title": {
             "render": "Bicicleta fantasma"
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Oficina de automóveis"
+                    }
+                }
+            }
         }
     }
 }

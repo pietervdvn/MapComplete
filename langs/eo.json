@@ -1,1 +1,104 @@
-{}
+{
+    "image": {
+        "ccb": "laŭ la permesilo CC-BY",
+        "addPicture": "Aldoni bildon",
+        "uploadingPicture": "Alŝutante vian bildon…",
+        "dontDelete": "Nuligi",
+        "ccbs": "laŭ la permesilo CC-BY-SA",
+        "cco": "kiel publika havaĵo",
+        "pleaseLogin": "Bonvolu saluti por aldoni bildon",
+        "uploadingMultiple": "Alŝutante {count} bildojn…"
+    },
+    "general": {
+        "opening_hours": {
+            "ph_open": "malfermita",
+            "opensAt": "ekde",
+            "openTill": "ĝis",
+            "ph_closed": "fermita",
+            "ph_not_known": " "
+        },
+        "questions": {
+            "websiteIs": "Retejo: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+        },
+        "weekdays": {
+            "sunday": "dimanĉo",
+            "abbreviations": {
+                "friday": "ve",
+                "saturday": "sa",
+                "tuesday": "ma",
+                "wednesday": "me",
+                "thursday": "ĵa",
+                "sunday": "di",
+                "monday": "lu"
+            },
+            "thursday": "ĵaŭdo",
+            "friday": "vendredo",
+            "saturday": "sabato",
+            "tuesday": "mardo",
+            "wednesday": "merkredo",
+            "monday": "lundo"
+        },
+        "loading": "Ŝargante…",
+        "pdf": {
+            "generatedWith": "Generita per MapComplete.osm.be",
+            "versionInfo": "v{version} - generita je {date}",
+            "attrBackground": "Fona tavolo: {background}",
+            "attr": "Mapaj datenoj © Kontribuintoj al OpenStreetMap, reuzeblaj laŭ ODbL"
+        },
+        "loginWithOpenStreetMap": "Saluti per OpenStreetMap",
+        "search": {
+            "search": "Serĉi lokon",
+            "nothing": "Nenio troviĝis…",
+            "error": "Io fiaskis…",
+            "searching": "Serĉante…"
+        },
+        "returnToTheMap": "Reen al la mapo",
+        "save": "Konservi",
+        "skip": "Preterpasi ĉi tiun demandon",
+        "add": {
+            "title": "Enmeti novan punkton?"
+        },
+        "pickLanguage": "Elektu lingvon: ",
+        "noNameCategory": "{category} sen nomo",
+        "sharescreen": {
+            "editThisTheme": "Modifi ĉi tiun etoson",
+            "fsSearch": "Ŝalti la serĉbreton",
+            "fsUserbadge": "Ŝalti la salutbutonon"
+        },
+        "backgroundMap": "Fona mapo",
+        "openTheMap": "Malfermi la mapon",
+        "wikipedia": {
+            "wikipediaboxTitle": "Vikipedio",
+            "loading": "Ŝargante Vikipedion…",
+            "searchWikidata": "Serĉi Vikidatumojn",
+            "noResults": "Nenio troviĝis pri <i>{search}</i>"
+        },
+        "cancel": "Nuligi",
+        "attribution": {
+            "iconAttribution": {
+                "title": "Uzitaj piktogramoj"
+            }
+        },
+        "download": {
+            "exporting": "Elportante…"
+        }
+    },
+    "favourite": {
+        "reload": "Reŝargi la datenojn"
+    },
+    "reviews": {
+        "saving_review": "Konservante…",
+        "title": "{count} recenzoj",
+        "title_singular": "Unu recenzo"
+    },
+    "centerMessage": {
+        "ready": "Farite!",
+        "loadingData": "Ŝargante datenojn…"
+    },
+    "index": {
+        "title": "Bonvenon al MapComplete"
+    },
+    "delete": {
+        "cancel": "Nuligi"
+    }
+}

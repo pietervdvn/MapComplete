@@ -8,7 +8,10 @@
       "en": "What is the corresponding Wikidata entity?",
       "nl": "Welk Wikidata-item komt overeen met dit object?",
       "de": "Was ist das entsprechende Wikidata Element?",
-      "pt": "Qual é a entidade Wikidata correspondente?"
+      "pt": "Qual é a entidade Wikidata correspondente?",
+      "hu": "Mi a megfelelő Wikidata-elem?",
+      "it": "Qual è l’elemento Wikidata corrispondente?",
+      "nb_NO": "Hva er respektivt Wikipedia-element?"
     },
     "mappings": [
       {
@@ -17,7 +20,10 @@
           "en": "No Wikipedia page has been linked yet",
           "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
           "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
-          "pt": "Ainda não foi vinculada nenhuma página da Wikipédia"
+          "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+          "hu": "Még nincs Wikipédia-oldal belinkelve",
+          "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+          "nb_NO": "Ingen Wikipedia-side lenket enda"
         },
         "hideInAnswer": true
       }
@@ -47,7 +53,9 @@
       "pt_BR": "Qual o número de telefone de {name}?",
       "id": "Nomor telepon dari {name|?",
       "pl": "Jaki jest numer telefonu do {name}?",
-      "pt": "Qual é o número de telefone de {name}?"
+      "pt": "Qual é o número de telefone de {name}?",
+      "eo": "Kio estas la telefonnumero de {name}?",
+      "hu": "Mi a telefonszáma ennek: {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "freeform": {
@@ -70,7 +78,10 @@
       "en": "What is the corresponding item on Wikipedia?",
       "nl": "Welk Wikipedia-artikel beschrijft dit object?",
       "de": "Was ist der entsprechende Artikel auf Wikipedia?",
-      "pt": "Qual é o item correspondente na Wikipédia?"
+      "pt": "Qual é o item correspondente na Wikipédia?",
+      "hu": "Mi a megfelelő szócikk a Wikipédián?",
+      "it": "Qual è il corrispondente elemento su Wikipedia?",
+      "nb_NO": "Hva er respektivt element på Wikipedia?"
     },
     "mappings": [
       {
@@ -79,7 +90,10 @@
           "en": "Not linked with Wikipedia",
           "nl": "Nog geen Wikipedia-artikel bekend",
           "de": "Nicht mit Wikipedia verknüpft",
-          "pt": "Não vinculado à Wikipédia"
+          "pt": "Não vinculado à Wikipédia",
+          "hu": "Nincs belinkelve a Wikipédiához",
+          "it": "Non collegato a Wikipedia",
+          "nb_NO": "Ikke lenket med Wikipedia"
         }
       }
     ],
@@ -103,7 +117,9 @@
       "pt_BR": "Qual o endereço de e-mail de {name}?",
       "pl": "Jaki jest adres e-mail do {name}?",
       "sv": "Vad är e-postadressen till {name}?",
-      "pt": "Qual é o endereço de e-mail de {name}?"
+      "pt": "Qual é o endereço de e-mail de {name}?",
+      "eo": "Kio estas la retpoŝta adreso de {name}?",
+      "hu": "Mi a(z) {name} e-mail címe?"
     },
     "freeform": {
       "key": "email",
@@ -125,7 +141,9 @@
       "pt_BR": "Qual o site de {name}?",
       "pl": "Jaka jest strona internetowa {name}?",
       "sv": "Vad är webbplatsen för {name}?",
-      "pt": "Qual é o sítio web de {name}?"
+      "pt": "Qual é o sítio web de {name}?",
+      "eo": "Kie estas la retejo de {name}?",
+      "hu": "Mi a weboldala ennek: {name}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -140,7 +158,10 @@
       "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
       "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
       "de": "Ist dieser Ort mit einem Rollstuhl zugänglich?",
-      "fr": "Est-ce que cet endroit est accessible en chaise roulante ?"
+      "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
+      "hu": "Akadálymentes-e ez a hely?",
+      "it": "Questo luogo è accessibile con una sedia a rotelle?",
+      "nb_NO": "Er dette stedet tilgjengelig for rullestoler?"
     },
     "mappings": [
       {
@@ -151,10 +172,13 @@
         },
         "then": {
           "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
-          "en": "This place is specially adapated for wheelchair users",
+          "en": "This place is specially adapted for wheelchair users",
           "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
           "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
-          "de": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet"
+          "de": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet",
+          "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
+          "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
+          "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere"
         }
       },
       {
@@ -168,7 +192,10 @@
           "en": "This place is easily reachable with a wheelchair",
           "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
           "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas",
-          "de": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen"
+          "de": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen",
+          "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
+          "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
+          "nb_NO": "Dette stedet kan enkelt besøkes med rullestol"
         }
       },
       {
@@ -183,7 +210,10 @@
           "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
           "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
           "de": "Es ist möglich, diesen Ort mit einem Rollstuhl zu erreichen, aber es ist nicht einfach",
-          "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
+          "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
+          "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
+          "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
+          "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett"
         }
       },
       {
@@ -198,7 +228,10 @@
           "pt": "Este lugar não é acessível com uma cadeira de rodas",
           "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
           "de": "Dieser Ort ist nicht mit einem Rollstuhl erreichbar",
-          "fr": "Cet endroit n'est pas accessible en chaise roulante"
+          "fr": "Cet endroit n'est pas accessible en chaise roulante",
+          "hu": "Ez a hely kerekesszékkel elérhetetlen",
+          "it": "Questo luogo non è accessibile con una sedia a rotelle",
+          "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol"
         }
       }
     ]
@@ -209,7 +242,10 @@
       "nl": "Zijn honden toegelaten in deze zaak?",
       "pt": "Os cães são permitidos neste estabelecimento?",
       "de": "Sind Hunde in diesem Geschäft erlaubt?",
-      "fr": "Est-ce que les chiens sont admis ici ?"
+      "fr": "Est-ce que les chiens sont admis ici ?",
+      "hu": "Be lehet-e vinni kutyát ebbe az üzletbe?",
+      "it": "I cani sono ammessi in quest’attività?",
+      "nb_NO": "Tillates hunder i denne forretningen?"
     },
     "mappings": [
       {
@@ -219,7 +255,11 @@
           "nl": "honden zijn toegelaten",
           "pt": "Os cães são permitidos",
           "de": "Hunde sind erlaubt",
-          "fr": "Chiens admis"
+          "fr": "Chiens admis",
+          "eo": "Hundoj estas permesataj",
+          "hu": "Kutya bevihető",
+          "it": "Cani ammessi",
+          "nb_NO": "Hunder tillates"
         }
       },
       {
@@ -229,7 +269,11 @@
           "nl": "honden zijn <b>niet</b> toegelaten",
           "pt": "Os cães <b>não</b> são permitidos",
           "de": "Hunde sind <b>nicht</b> erlaubt",
-          "fr": "Les chiens <b>ne</b> sont <b>pas</b> admis"
+          "fr": "Les chiens <b>ne</b> sont <b>pas</b> admis",
+          "eo": "Hundoj estas <b>malpermesataj</b>",
+          "hu": "Kutya <b>nem</b> vihető be",
+          "it": "I cani <b>non</b> sono ammessi",
+          "nb_NO": "Hunder tillates <b>ikke</b>"
         }
       },
       {
@@ -239,7 +283,10 @@
           "nl": "honden zijn <b>enkel aan de leiband</b> welkom",
           "pt": "Os cães são permitidos, mas têm de ser presos pela trela",
           "de": "Hunde sind erlaubt, müssen aber angeleint sein",
-          "fr": "Les chiens sont admis, mais ils doivent être tenus en laisse"
+          "fr": "Les chiens sont admis, mais ils doivent être tenus en laisse",
+          "hu": "Kutya bevihető, de csak pórázon",
+          "it": "Cani ammessi ma solo se tenuti al guinzaglio",
+          "nb_NO": "Hunder tillates, men de må være i bånd"
         }
       },
       {
@@ -249,7 +296,10 @@
           "nl": "honden zijn welkom en mogen vrij rondlopen",
           "pt": "Os cães são permitidos e podem correr livremente",
           "de": "Hunde sind erlaubt und können frei herumlaufen",
-          "fr": "Les chiens sont admis et peuvent circuler librement"
+          "fr": "Les chiens sont admis et peuvent circuler librement",
+          "hu": "Kutya bevihető és szabadon szaladgálhat",
+          "it": "I cani sono ammessi e possono andare in giro liberamente",
+          "nb_NO": "Hunder tillates og kan gå fritt"
         }
       }
     ]
@@ -266,7 +316,8 @@
       "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>",
       "pl": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>",
       "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>",
-      "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>"
+      "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>",
+      "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -286,7 +337,8 @@
       "pt_BR": "Qual o horário de funcionamento de {name}?",
       "pl": "Jakie są godziny otwarcia {name}?",
       "sv": "Vilka är öppettiderna för {name}?",
-      "pt": "Qual é o horário de funcionamento de {name}?"
+      "pt": "Qual é o horário de funcionamento de {name}?",
+      "hu": "Mikor van nyitva ez: {name}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -300,7 +352,9 @@
       "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
       "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
       "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
-      "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
+      "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+      "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+      "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -315,7 +369,10 @@
       "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
       "id": "Metode pembayaran manakah yang di terima disini?",
       "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
-      "fr": "Quelles sont les méthodes de paiement acceptées ici ?"
+      "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+      "hu": "Milyen fizetési módokat fogadnak el itt?",
+      "it": "Quali metodi di pagamento sono accettati qui?",
+      "nb_NO": "Hvilke betalingsmetoder godtas her?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -329,7 +386,10 @@
           "pt_BR": "Dinheiro é aceito aqui",
           "id": "Disini menerima pembayaran tunai",
           "de": "Hier wird Bargeld akzeptiert",
-          "fr": "Paiement en liquide accepté"
+          "fr": "Paiement en liquide accepté",
+          "hu": "Itt készpénzzel is lehet fizetni",
+          "it": "I contanti sono accettati",
+          "nb_NO": "Kontanter godtas her"
         }
       },
       {
@@ -342,7 +402,10 @@
           "pt_BR": "Cartões de pagamento são aceitos aqui",
           "id": "Disini menerima pembayaran dengan kartu",
           "de": "Hier werden Zahlungskarten akzeptiert",
-          "fr": "Paiement par carte accepté"
+          "fr": "Paiement par carte accepté",
+          "hu": "Itt fizetőkártyákkal is lehet fizetni",
+          "it": "I pagamenti con la carta sono accettati",
+          "nb_NO": "Betalingskort godtas her"
         }
       }
     ]
@@ -367,7 +430,9 @@
       "pt_BR": "Em que nível esse recurso está localizado?",
       "ru": "На каком этаже находится этот объект?",
       "pt": "Em que nível se encontra este elemento?",
-      "id": "Pada tingkat apa fitur ini diletakkan?"
+      "id": "Pada tingkat apa fitur ini diletakkan?",
+      "hu": "Melyik szinten található ez a létesítmény?",
+      "it": "A quale piano si trova questo elemento?"
     },
     "render": {
       "en": "Located on the {level}th floor",
@@ -379,7 +444,10 @@
       "fr": "Étage {level}",
       "pl": "Znajduje się na {level} piętrze",
       "sv": "Ligger på {level}:e våningen",
-      "pt": "Está no {nível}º andar"
+      "pt": "Está no {nível}º andar",
+      "eo": "En la {level}a etaĝo",
+      "hu": "{level}. emeleten található",
+      "it": "Si trova al piano numero {level}"
     },
     "freeform": {
       "key": "level",
@@ -398,7 +466,10 @@
           "pl": "Znajduje się pod ziemią",
           "sv": "Ligger under jorden",
           "pt": "Está no subsolo",
-          "de": "Unterirdisch gelegen"
+          "de": "Unterirdisch gelegen",
+          "hu": "A föld alatt található",
+          "it": "Si trova sotto il livello stradale",
+          "nb_NO": "Under bakken"
         },
         "hideInAnswer": true
       },
@@ -414,7 +485,11 @@
           "fr": "Rez-de-chaussée",
           "pl": "Znajduje się na parterze",
           "sv": "Ligger på bottenvåningen",
-          "pt": "Está ao nível do rés-do-chão"
+          "pt": "Está ao nível do rés-do-chão",
+          "eo": "En la teretaĝo",
+          "hu": "A földszinten található",
+          "it": "Si trova al pianoterra",
+          "nb_NO": "På gateplan"
         }
       },
       {
@@ -430,7 +505,11 @@
           "fr": "Rez-de-chaussée",
           "pl": "Znajduje się na parterze",
           "sv": "Ligger på bottenvåningen",
-          "pt": "Está ao nível do rés-do-chão"
+          "pt": "Está ao nível do rés-do-chão",
+          "eo": "En la teretaĝo",
+          "hu": "A földszinten található",
+          "it": "Si trova al pianoterra",
+          "nb_NO": "På gateplan"
         }
       },
       {
@@ -446,7 +525,11 @@
           "pl": "Znajduje się na pierwszym piętrze",
           "sv": "Ligger på första våningen",
           "pt": "Está no primeiro andar",
-          "id": "Berlokasi di lantai pertama"
+          "id": "Berlokasi di lantai pertama",
+          "eo": "En la unua etaĝo",
+          "hu": "Az első emeleten található",
+          "it": "Si trova al primo piano",
+          "nb_NO": "I andre etasje"
         }
       }
     ]

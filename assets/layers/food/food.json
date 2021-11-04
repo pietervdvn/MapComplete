@@ -36,7 +36,8 @@
     "iconOverlays": [
         {
             "if": "opening_hours~*",
-            "then": "isOpen"
+            "then": "isOpen",
+            "badge": true
         },
         {
             "if": {
@@ -47,7 +48,8 @@
             },
             "then": {
                 "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
-            }
+            },
+            "badge": true
         }
     ],
     "label": {
@@ -71,7 +73,8 @@
             ],
             "description": {
                 "nl": "Een eetgegelegenheid waar je aan tafel wordt bediend",
-                "en": "A formal eating place with sit-down facilities selling full meals served by waiters"
+                "en": "A formal eating place with sit-down facilities selling full meals served by waiters",
+                "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden"
             },
             "preciseInput": {
                 "preferredBackground": "map"
@@ -214,14 +217,16 @@
                     "if": "cuisine=pizza",
                     "then": {
                         "en": "This is a pizzeria",
-                        "nl": "Dit is een pizzeria"
+                        "nl": "Dit is een pizzeria",
+                        "de": "Dies ist eine Pizzeria"
                     }
                 },
                 {
                     "if": "cuisine=friture",
                     "then": {
                         "en": "This is a friture",
-                        "nl": "Dit is een frituur"
+                        "nl": "Dit is een frituur",
+                        "de": "Dies ist eine Pommesbude"
                     }
                 },
                 {
@@ -344,7 +349,8 @@
         {
             "question": {
                 "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
-                "en": "Does this restaurant have a vegetarian option?"
+                "en": "Does this restaurant have a vegetarian option?",
+                "de": "Gibt es im das Restaurant vegetarische Speisen?"
             },
             "mappings": [
                 {
@@ -411,7 +417,8 @@
         {
             "question": {
                 "en": "Does this restaurant offer a halal menu?",
-                "nl": "Heeft dit restaurant halal opties?"
+                "nl": "Heeft dit restaurant halal opties?",
+                "de": "Gibt es im das Restaurant halal Speisen?"
             },
             "mappings": [
                 {
@@ -542,7 +549,8 @@
                 "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
                 "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
                 "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
-                "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>"
+                "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>",
+                "de": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
             },
             "mappings": [
                 {
@@ -551,7 +559,8 @@
                         "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
                         "fr": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets",
                         "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste",
-                        "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます"
+                        "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます",
+                        "de": "Sie können <b>ihre eigenen Behälter</b> mitbringen, um Ihre Bestellung zu erhalten, was Einwegverpackungsmaterial und damit Abfall spart"
                     }
                 },
                 {
@@ -598,7 +607,8 @@
                 {
                     "question": {
                         "en": "Has a vegetarian menu",
-                        "nl": "Heeft een vegetarisch menu"
+                        "nl": "Heeft een vegetarisch menu",
+                        "de": "Hat vegetarische Speisen"
                     },
                     "osmTags": {
                         "or": [
@@ -635,7 +645,8 @@
                 {
                     "question": {
                         "en": "Has a halal menu",
-                        "nl": "Heeft een halal menu"
+                        "nl": "Heeft een halal menu",
+                        "de": "Hat halal Speisen"
                     },
                     "osmTags": {
                         "or": [

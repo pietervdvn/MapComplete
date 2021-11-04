@@ -1,56 +1,63 @@
 {
-  "general": {
-    "opening_hours": {
-      "ph_open": "öppet",
-      "ph_closed": "stängt",
-      "ph_not_known": " ",
-      "open_24_7": "Öppet dygnet runt",
-      "closed_permanently": "Stängt tills vidare",
-      "closed_until": "Stängt till",
-      "openTill": "till",
-      "opensAt": "från",
-      "open_during_ph": "Om det är en röd dag är det här stället",
-      "error_loading": "Fel: kunde inte visualisera öppettiderna."
+    "general": {
+        "opening_hours": {
+            "ph_open": "öppet",
+            "ph_closed": "stängt",
+            "ph_not_known": " ",
+            "open_24_7": "Öppet dygnet runt",
+            "closed_permanently": "Stängt tills vidare",
+            "closed_until": "Stängt till",
+            "openTill": "till",
+            "opensAt": "från",
+            "open_during_ph": "Om det är en röd dag är det här stället",
+            "error_loading": "Fel: kunde inte visualisera öppettiderna."
+        },
+        "weekdays": {
+            "sunday": "Söndag",
+            "saturday": "Lördag",
+            "friday": "Fredag",
+            "thursday": "Torsdag",
+            "wednesday": "Onsdag",
+            "tuesday": "Tisdag",
+            "monday": "Måndag",
+            "abbreviations": {
+                "friday": "Fre",
+                "wednesday": "Ons",
+                "tuesday": "Tis",
+                "thursday": "Tor",
+                "sunday": "Sön",
+                "saturday": "Lör",
+                "monday": "Mån"
+            }
+        },
+        "cancel": "Avbryt"
     },
-    "weekdays": {
-      "sunday": "Söndag",
-      "saturday": "Lördag",
-      "friday": "Fredag",
-      "thursday": "Torsdag",
-      "wednesday": "Onsdag",
-      "tuesday": "Tisdag",
-      "monday": "Måndag",
-      "abbreviations": {
-        "friday": "Fre",
-        "wednesday": "Ons",
-        "tuesday": "Tis",
-        "thursday": "Tor",
-        "sunday": "Sön",
-        "saturday": "Lör",
-        "monday": "Mån"
-      }
+    "centerMessage": {
+        "ready": "Klar!",
+        "zoomIn": "Zooma in för att visa eller redigera data",
+        "loadingData": "Laddar data…",
+        "retrying": "Det gick inte att ladda in data. Försöker igen om {count} sekunder…"
+    },
+    "image": {
+        "isDeleted": "Borttagen",
+        "doDelete": "Ta bort bild",
+        "dontDelete": "Avbryt",
+        "uploadDone": "<span class=\"thanks\">Din bild har lagts till. Tack för att du bidrar!</span>",
+        "respectPrivacy": "Fotografera inte personer eller registreringsskyltar. Ladda inte upp från Google Maps, Google Streetview eller andra upphovsrättsskyddade källor.",
+        "uploadFailed": "Misslyckades med att ladda upp din bild. Är du säker på att du är uppkopplad och tredjeparts-API:er tillåts? Brave eller uMatrix kanske blockerar dem.",
+        "ccb": "under CC-BY-licensen",
+        "ccbs": "under CC-BY-SA-licensen",
+        "cco": "med fri användning (public domain)",
+        "willBePublished": "Din bild kommer att publiceras: ",
+        "pleaseLogin": "Logga in för att lägga till en bild",
+        "uploadingMultiple": "Laddar upp {count} bilder…",
+        "uploadingPicture": "Laddar upp din bild…",
+        "addPicture": "Lägg till bild"
+    },
+    "split": {
+        "cancel": "Avbryt"
+    },
+    "delete": {
+        "cancel": "Avbryt"
     }
-  },
-  "centerMessage": {
-    "ready": "Klar!",
-    "zoomIn": "Zooma in för att visa eller redigera data",
-    "loadingData": "Laddar data…",
-    "retrying": "Det gick inte att ladda in data. Försöker igen om {count} sekunder…"
-  },
-  "image": {
-    "isDeleted": "Borttagen",
-    "doDelete": "Ta bort bild",
-    "dontDelete": "Avbryt",
-    "uploadDone": "<span class=\"thanks\">Din bild har lagts till. Tack för att du bidrar!</span>",
-    "respectPrivacy": "Fotografera inte personer eller registreringsskyltar. Ladda inte upp från Google Maps, Google Streetview eller andra upphovsrättsskyddade källor.",
-    "uploadFailed": "Misslyckades med att ladda upp din bild. Är du säker på att du är uppkopplad och tredjeparts-API:er tillåts? Brave eller uMatrix kanske blockerar dem.",
-    "ccb": "under CC-BY-licensen",
-    "ccbs": "under CC-BY-SA-licensen",
-    "cco": "med fri användning (public domain)",
-    "willBePublished": "Din bild kommer att publiceras: ",
-    "pleaseLogin": "Logga in för att lägga till en bild",
-    "uploadingMultiple": "Laddar upp {count} bilder…",
-    "uploadingPicture": "Laddar upp din bild…",
-    "addPicture": "Lägg till bild"
-  }
 }

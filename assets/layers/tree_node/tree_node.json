@@ -23,7 +23,8 @@
             "it": "Albero",
             "ru": "Дерево",
             "fr": "Arbre",
-            "de": "Baum"
+            "de": "Baum",
+            "eo": "Arbo"
         },
         "mappings": [
             {
@@ -82,7 +83,8 @@
                 "nl": "Is dit een naald- of loofboom?",
                 "en": "Is this a broadleaved or needleleaved tree?",
                 "it": "Si tratta di un albero latifoglia o aghifoglia?",
-                "fr": "Cet arbre est-il un feuillu ou un résineux ?"
+                "fr": "Cet arbre est-il un feuillu ou un résineux ?",
+                "de": "Ist dies ein Laub- oder Nadelbaum?"
             },
             "mappings": [
                 {
@@ -136,7 +138,8 @@
                 "nl": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
                 "en": "How significant is this tree? Choose the first answer that applies.",
                 "it": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde.",
-                "fr": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique."
+                "fr": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique.",
+                "de": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft."
             },
             "mappings": [
                 {
@@ -149,7 +152,8 @@
                         "nl": "De boom valt op door zijn grootte of prominente locatie. Hij is nuttig voor navigatie.",
                         "en": "The tree is remarkable due to its size or prominent location. It is useful for navigation.",
                         "it": "È un albero notevole per le sue dimensioni o per la posizione prominente. È utile alla navigazione.",
-                        "fr": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation."
+                        "fr": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation.",
+                        "de": "Der Baum ist aufgrund seiner Größe oder seiner markanten Lage bedeutsam. Er ist nützlich zur Orientierung."
                     }
                 },
                 {
@@ -162,7 +166,8 @@
                         "nl": "De boom is een natuurlijk monument, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
                         "en": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species.",
                         "it": "L’albero è un monumento naturale, ad esempio perché specialmente antico o appartenente a specie importanti.",
-                        "fr": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)"
+                        "fr": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)",
+                        "de": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört."
                     }
                 },
                 {
@@ -175,7 +180,8 @@
                         "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
                         "en": "The tree is used for agricultural purposes, e.g. in an orchard.",
                         "it": "L’albero è usato per scopi agricoli, ad esempio in un frutteto.",
-                        "fr": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)"
+                        "fr": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)",
+                        "de": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage."
                     }
                 },
                 {
@@ -188,7 +194,8 @@
                         "nl": "De boom staat in een park of dergelijke (begraafplaats, schoolterrein, …).",
                         "en": "The tree is in a park or similar (cemetery, school grounds, …).",
                         "it": "L’albero è in un parco o qualcosa di simile (cimitero, aree didattiche, etc.).",
-                        "fr": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …)."
+                        "fr": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …).",
+                        "de": "Der Baum steht in einem Park oder ähnlichem (Friedhof, Schulgelände, ...)."
                     }
                 },
                 {
@@ -214,7 +221,8 @@
                         "nl": "Dit is een laanboom.",
                         "en": "This is a tree along an avenue.",
                         "it": "Fa parte di un viale alberato.",
-                        "fr": "C'est un arbre le long d'une avenue."
+                        "fr": "C'est un arbre le long d'une avenue.",
+                        "de": "Dieser Baum steht entlang einer Straße."
                     }
                 },
                 {
@@ -240,7 +248,8 @@
                         "nl": "De boom staat buiten een woonkern.",
                         "en": "The tree is outside of an urban area.",
                         "it": "L’albero si trova fuori dall’area urbana.",
-                        "fr": "Cet arbre est en zone rurale."
+                        "fr": "Cet arbre est en zone rurale.",
+                        "de": "Dieser Baum steht außerhalb eines städtischen Gebiets."
                     }
                 }
             ]
@@ -267,7 +276,8 @@
                         "en": "Deciduous: the tree loses its leaves for some time of the year.",
                         "it": "Caduco: l’albero perde le sue foglie per un periodo dell’anno.",
                         "ru": "Листопадное: у дерева опадают листья в определённое время года.",
-                        "fr": "Caduc : l’arbre perd son feuillage une partie de l’année."
+                        "fr": "Caduc : l’arbre perd son feuillage une partie de l’année.",
+                        "de": "Laubabwerfend: Der Baum verliert für eine gewisse Zeit des Jahres seine Blätter."
                     }
                 },
                 {
@@ -364,7 +374,8 @@
                         "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
                         "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders",
                         "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
-                        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
+                        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Fait partie du patrimoine par <i>Onroerend Erfgoed</i>",
+                        "de": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern"
                     }
                 },
                 {
@@ -378,7 +389,8 @@
                         "nl": "Erkend als natuurlijk erfgoed door Directie Cultureel Erfgoed Brussel",
                         "en": "Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels",
                         "it": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles",
-                        "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles"
+                        "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles",
+                        "de": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel"
                     }
                 },
                 {
@@ -444,7 +456,8 @@
                 "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
                 "en": "What is the ID issued by Onroerend Erfgoed Flanders?",
                 "it": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?",
-                "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?"
+                "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?",
+                "de": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?"
             },
             "freeform": {
                 "key": "ref:OnroerendErfgoed",
@@ -470,7 +483,8 @@
                 "nl": "Wat is het Wikidata-ID van deze boom?",
                 "en": "What is the Wikidata ID for this tree?",
                 "it": "Qual è l’ID Wikidata per questo albero?",
-                "fr": "Quel est l'identifiant Wikidata de cet arbre ?"
+                "fr": "Quel est l'identifiant Wikidata de cet arbre ?",
+                "de": "Was ist das passende Wikidata Element zu diesem Baum?"
             },
             "freeform": {
                 "key": "wikidata",

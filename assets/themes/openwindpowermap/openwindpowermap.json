@@ -3,20 +3,25 @@
   "title": {
     "en": "OpenWindPowerMap",
     "fr": "OpenWindPowerMap",
-    "de": "OpenWindPowerMap"
+    "de": "OpenWindPowerMap",
+    "it": "OpenWindPowerMap"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
   "description": {
     "en": "A map for showing and editing wind turbines.",
     "fr": "Une carte indiquant les éoliennes et permettant leur édition.",
-    "de": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen."
+    "de": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
+    "it": "Una cartina per la visione e la modifica delle turbine eoliche."
   },
   "language": [
     "en",
     "fr",
     "de",
-    "nl"
+    "it",
+    "nl",
+    "eo",
+    "nb_NO"
   ],
   "version": "2021-06-18",
   "startLat": 50.52,
@@ -31,7 +36,8 @@
       "name": {
         "en": "wind turbine",
         "nl": "windturbine",
-        "fr": "Éolienne"
+        "fr": "Éolienne",
+        "de": "Windrad"
       },
       "source": {
         "osmTags": "generator:source=wind"
@@ -42,7 +48,8 @@
         "render": {
           "en": "wind turbine",
           "nl": "windturbine",
-          "fr": "éolienne"
+          "fr": "éolienne",
+          "de": "Windrad"
         },
         "mappings": [
           {
@@ -150,7 +157,8 @@
           "title": {
             "en": "wind turbine",
             "nl": "windturbine",
-            "fr": "Éolienne"
+            "fr": "Éolienne",
+            "de": "Windrad"
           }
         }
       ],
@@ -169,7 +177,8 @@
               "human": {
                 "en": " megawatts",
                 "nl": " megawatt",
-                "fr": " megawatts"
+                "fr": " megawatts",
+                "de": " Megawatt"
               }
             },
             {
@@ -181,7 +190,8 @@
               "human": {
                 "en": " kilowatts",
                 "nl": " kilowatt",
-                "fr": " kilowatts"
+                "fr": " kilowatts",
+                "de": " Kilowatt"
               }
             },
             {
@@ -193,7 +203,8 @@
               "human": {
                 "en": " watts",
                 "nl": " watt",
-                "fr": " watts"
+                "fr": " watts",
+                "de": " Watt"
               }
             },
             {
@@ -205,7 +216,8 @@
               "human": {
                 "en": " gigawatts",
                 "nl": " gigawatt",
-                "fr": " gigawatts"
+                "fr": " gigawatts",
+                "de": " Gigawatt"
               }
             }
           ],
@@ -225,26 +237,10 @@
               "human": {
                 "en": " meter",
                 "nl": " meter",
-                "fr": " mètres"
+                "fr": " mètres",
+                "de": " Meter"
               }
             }
-          ]
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
-          "label": {
-            "mappings": [
-              {
-                "if": "generator:output:electricity~^[0-9]+.*[W]$",
-                "then": "<div style='background-color: rgba(0,0,0,0.3); color: white; font-size: 8px; padding: 0.25em; border-radius:0.5em'>{generator:output:electricity}</div>"
-              }
-            ]
-          },
-          "iconSize": "40, 40, bottom",
-          "location": [
-            "point"
           ]
         }
       ]

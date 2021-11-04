@@ -7,7 +7,8 @@
         "fr": "Point de vue",
         "it": "Punto panoramico",
         "ru": "Смотровая площадка",
-        "id": "Sudut pandang"
+        "id": "Sudut pandang",
+        "eo": "Vidpunkto"
     },
     "description": {
         "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
@@ -49,7 +50,8 @@
             "fr": "Point de vue",
             "ru": "Смотровая площадка",
             "it": "Punto panoramico",
-            "id": "Sudut pandang"
+            "id": "Sudut pandang",
+            "eo": "Vidpunkto"
         }
     },
     "tagRenderings": [

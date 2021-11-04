@@ -2,7 +2,8 @@
   "id": "cycle_highways",
   "title": {
     "en": "Cycle highways",
-    "de": "Radschnellwege"
+    "de": "Radschnellwege",
+    "it": "Strade per velocipedi"
   },
   "hideFromOverview": true,
   "maintainer": "L'imaginaire",
@@ -11,11 +12,13 @@
   "overpassTimeout": 60,
   "description": {
     "en": "This map shows cycle highways",
-    "de": "Diese Karte zeigt Radschnellwege"
+    "de": "Diese Karte zeigt Radschnellwege",
+    "it": "Questa cartina mostra le strade per velocipedi"
   },
   "language": [
     "en",
-    "de"
+    "de",
+    "it"
   ],
   "version": "2021-08-23",
   "startLat": 51.1599,
@@ -232,43 +235,6 @@
               }
             }
           ]
-        }
-      ],
-      "mapRendering": [
-        {
-          "color": {
-            "render": "#ff7392",
-            "mappings": [
-              {
-                "if": "state=",
-                "then": "#00acfc"
-              },
-              {
-                "if": "state=temporary",
-                "then": "#00acfc"
-              }
-            ]
-          },
-          "width": {
-            "render": "4"
-          },
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": "state=temporary",
-                "then": "12 10"
-              },
-              {
-                "if": "note:state=has_highway_no",
-                "then": "0 8"
-              },
-              {
-                "if": "note:state=has_highway_under_construction",
-                "then": "12 10"
-              }
-            ]
-          }
         }
       ]
     }

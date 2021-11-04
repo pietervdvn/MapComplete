@@ -10,7 +10,7 @@
         "ccb": "sous la license CC-BY",
         "uploadFailed": "L'ajout de la photo a échoué. Avez-vous accès à Internet ? Les API tierces sont-elles autorisées ? Le navigateur Brave ou UMatrix peuvent les bloquer.",
         "respectPrivacy": "Merci de respecter la vie privée. Ne publiez pas les plaques d'immatriculation.",
-        "uploadDone": "<span class=\"thanks\">Votre photo est ajoutée. Merci beaucoup !</span>",
+        "uploadDone": "Votre photo est ajoutée. Merci beaucoup !",
         "dontDelete": "Annuler",
         "doDelete": "Supprimer l'image",
         "isDeleted": "Supprimé"
@@ -171,5 +171,11 @@
         "tos": "En publiant un avis, vous êtes d'accord avec <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">les conditions d'utilisation et la politique de confidentialité de Mangrove.reviews</a>",
         "attribution": "Les avis sont fournis par <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> et sont disponibles sous licence <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "plz_login": "Connectez vous pour laisser un avis"
+    },
+    "split": {
+        "cancel": "Annuler"
+    },
+    "delete": {
+        "cancel": "Annuler"
     }
 }

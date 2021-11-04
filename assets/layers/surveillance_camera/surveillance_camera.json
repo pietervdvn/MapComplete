@@ -97,7 +97,8 @@
                 "en": "In which geographical direction does this camera film?",
                 "nl": "In welke geografische richting filmt deze camera?",
                 "fr": "Dans quelle direction géographique cette caméra filme-t-elle ?",
-                "it": "In quale direzione geografica punta questa videocamera?"
+                "it": "In quale direzione geografica punta questa videocamera?",
+                "de": "In welche Himmelsrichtung ist diese Kamera ausgerichtet?"
             },
             "render": {
                 "en": "Films to a compass heading of {camera:direction}",
@@ -166,7 +167,8 @@
                 "en": "What kind of surveillance is this camera",
                 "nl": "Wat soort bewaking wordt hier uitgevoerd?",
                 "fr": "Quel genre de surveillance est cette caméra",
-                "it": "Che cosa sorveglia questa videocamera"
+                "it": "Che cosa sorveglia questa videocamera",
+                "de": "Um was für eine Überwachungskamera handelt es sich"
             },
             "mappings": [
                 {
@@ -192,7 +194,8 @@
                         "en": "An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, ...)",
                         "nl": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, ...)",
                         "fr": "Une zone extérieure, mais privée, est surveillée (par exemple, un parking, une station-service, une cour, une entrée, une allée privée, etc.)",
-                        "it": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)"
+                        "it": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)",
+                        "de": "Ein privater Außenbereich wird überwacht (z. B. ein Parkplatz, eine Tankstelle, ein Innenhof, ein Eingang, eine private Einfahrt, ...)"
                     }
                 },
                 {
@@ -205,7 +208,8 @@
                         "nl": "Een private binnenruimte wordt bewaakt, bv. een winkel, een parkeergarage, ...",
                         "en": "A private indoor area is surveilled, e.g. a shop, a private underground parking, ...",
                         "fr": "Une zone intérieure privée est surveillée, par exemple un magasin, un parking souterrain privé…",
-                        "it": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
+                        "it": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ...",
+                        "de": "Ein privater Innenbereich wird überwacht, z. B. ein Geschäft, eine private Tiefgarage, ..."
                     }
                 }
             ],
@@ -216,7 +220,8 @@
                 "en": "Is the public space surveilled by this camera an indoor or outdoor space?",
                 "nl": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?",
                 "fr": "L'espace public surveillé par cette caméra est-il un espace intérieur ou extérieur ?",
-                "it": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?"
+                "it": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?",
+                "de": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?"
             },
             "condition": {
                 "and": [
@@ -419,7 +424,8 @@
                         "en": "This camera is placed against a wall",
                         "nl": "Deze camera hangt aan een muur",
                         "fr": "Cette caméra est placée contre un mur",
-                        "it": "Questa telecamera è posizionata contro un muro"
+                        "it": "Questa telecamera è posizionata contro un muro",
+                        "de": "Diese Kamera ist an einer Wand montiert"
                     }
                 },
                 {
@@ -428,7 +434,8 @@
                         "en": "This camera is placed one a pole",
                         "nl": "Deze camera staat op een paal",
                         "fr": "Cette caméra est placée sur un poteau",
-                        "it": "Questa telecamera è posizionata su un palo"
+                        "it": "Questa telecamera è posizionata su un palo",
+                        "de": "Diese Kamera ist an einer Stange montiert"
                     }
                 },
                 {
@@ -437,7 +444,8 @@
                         "en": "This camera is placed on the ceiling",
                         "nl": "Deze camera hangt aan het plafond",
                         "fr": "Cette caméra est placée au plafond",
-                        "it": "Questa telecamera è posizionata sul soffitto"
+                        "it": "Questa telecamera è posizionata sul soffitto",
+                        "de": "Diese Kamera ist an der Decke montiert"
                     }
                 }
             ],

@@ -22,13 +22,20 @@
             "nl": "Kunstwerk",
             "fr": "Œuvre d'art",
             "de": "Kunstwerk",
-            "id": "Karya seni",
+            "id": "Karya Seni",
             "it": "Opera d’arte",
             "ru": "Художественная работа",
             "es": "Obra de arte",
             "ja": "アートワーク",
             "zh_Hant": "藝術品",
-            "nb_NO": "Kunstverk"
+            "nb_NO": "Kunstverk",
+            "sv": "Konstverk",
+            "pt_BR": "Obra de arte",
+            "pt": "Obra de arte",
+            "pl": "Dzieło sztuki",
+            "hu": "Műalkotás",
+            "gl": "Obra de arte",
+            "fi": "Taideteos"
         },
         "mappings": [
             {

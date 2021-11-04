@@ -1,7 +1,7 @@
 {
   "id": "cyclofix",
   "title": {
-    "en": "Cyclofix - an open map for cyclists",
+    "en": "Cyclofix — an open map for cyclists",
     "nl": "Cyclofix - een open kaart voor fietsers",
     "fr": "Cyclofix - Une carte ouverte pour les cyclistes",
     "gl": "Cyclofix - Un mapa aberto para os ciclistas",
@@ -9,7 +9,8 @@
     "ru": "Cyclofix - открытая карта для велосипедистов",
     "ja": "Cyclofix - サイクリストのためのオープンマップ",
     "zh_Hant": "單車修正 - 單車騎士的開放地圖",
-    "it": "Cyclofix - una mappa libera per chi va in bici"
+    "it": "Cyclofix — una mappa libera per chi va in bici",
+    "nb_NO": "Cyclofix — et åpent kart for syklister"
   },
   "description": {
     "en": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
@@ -30,7 +31,8 @@
     "ru",
     "ja",
     "zh_Hant",
-    "it"
+    "it",
+    "nb_NO"
   ],
   "maintainer": "MapComplete",
   "credits": "Originally created during Open Summer of Code by Pieter Fiers, Thibault Declercq, Pierre Barban, Joost Schouppe and Pieter Vander Vennet",

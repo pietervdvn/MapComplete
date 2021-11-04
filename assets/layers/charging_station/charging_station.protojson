@@ -740,7 +740,7 @@
         "socket:typee=1"
       ],
       "title": {
-        "en": "electrical outlet to charge e-bikes",
+        "en": "charging station with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
         "nl": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
       },
       "preciseInput": {

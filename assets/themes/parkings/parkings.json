@@ -3,22 +3,29 @@
   "title": {
     "nl": "Parking",
     "en": "Parking",
-    "de": "Parken"
+    "de": "Parken",
+    "it": "Parcheggio",
+    "nb_NO": "Parkering"
   },
   "shortDescription": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
     "en": "This map shows different parking spots",
-    "de": "Diese Karte zeigt Parkplätze"
+    "de": "Diese Karte zeigt Parkplätze",
+    "it": "Questa cartina mostra diversi posti dove parcheggiare",
+    "nb_NO": "Dette kartet viser forskjellige parkeringsplasser"
   },
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
     "en": "This map shows different parking spots",
-    "de": "Diese Karte zeigt Parkplätze"
+    "de": "Diese Karte zeigt Parkplätze",
+    "it": "Questa cartina mostra diversi posti dove parcheggiare"
   },
   "language": [
     "nl",
     "en",
-    "de"
+    "de",
+    "it",
+    "nb_NO"
   ],
   "maintainer": "",
   "icon": "./assets/themes/parkings/parkings.svg",

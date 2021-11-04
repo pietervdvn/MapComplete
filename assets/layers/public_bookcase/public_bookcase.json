@@ -433,6 +433,7 @@
             "id": "public_bookcase-website"
         }
     ],
+    "allowMove": true,
     "deletion": {
         "softDeletionTags": {
             "and": [
@@ -513,6 +514,5 @@
                 "render": "8"
             }
         }
-    ],
-    "allowMove": true
+    ]
 }

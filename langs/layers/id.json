@@ -1,6 +1,11 @@
 {
     "artwork": {
         "name": "Karya seni",
+        "presets": {
+            "0": {
+                "title": "Karya Seni"
+            }
+        },
         "tagRenderings": {
             "artwork-website": {
                 "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
@@ -9,10 +14,10 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Karya seni <i>{name}</i>"
+                    "then": "Karya Seni <i>{name}</i>"
                 }
             },
-            "render": "Karya seni"
+            "render": "Karya Seni"
         }
     },
     "bench": {
@@ -125,6 +130,13 @@
             },
             "shops-phone": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Bengkel Mobil"
+                    }
+                }
             },
             "shops-website": {
                 "render": "<a href='{website}'>{website}</a>"

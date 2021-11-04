@@ -116,6 +116,9 @@
                     },
                     "2": {
                         "then": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                    },
+                    "3": {
+                        "then": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
                     }
                 },
                 "question": "Um welche Art Fahrradhindernis handelt es sich?"
@@ -663,6 +666,9 @@
                 },
                 "question": "Welche Ventile werden unterstützt?",
                 "render": "Diese Pumpe unterstützt die folgenden Ventile: {valves}"
+            },
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
             }
         },
         "title": {
@@ -1148,18 +1154,22 @@
                 "question": "Wie viele Fahrzeuge können hier gleichzeitig geladen werden?",
                 "render": "{capacity} Fahrzeuge können hier gleichzeitig geladen werden"
             },
-            "email": {
-                "question": "Wie ist die Email-Adresse des Betreibers?",
-                "render": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
-            },
             "maxstay": {
+                "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>",
+                "question": "Was ist die Höchstdauer des Aufenthalts hier?",
                 "mappings": {
                     "0": {
                         "then": "Keine Höchstparkdauer"
                     }
-                },
-                "question": "Was ist die Höchstdauer des Aufenthalts hier?",
-                "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>"
+                }
+            },
+            "ref": {
+                "render": "Die Kennziffer ist <b>{ref}</b>",
+                "question": "Wie lautet die Kennung dieser Ladestation?"
+            },
+            "website": {
+                "render": "Weitere Informationen auf <a href='{website}'>{website}</a>",
+                "question": "Wie ist die Webseite des Betreibers?"
             },
             "payment-options": {
                 "override": {
@@ -1173,17 +1183,13 @@
                     }
                 }
             },
+            "email": {
+                "question": "Wie ist die Email-Adresse des Betreibers?",
+                "render": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
+            },
             "phone": {
-                "question": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
-                "render": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
-            },
-            "ref": {
-                "question": "Wie lautet die Kennung dieser Ladestation?",
-                "render": "Die Kennziffer ist <b>{ref}</b>"
-            },
-            "website": {
-                "question": "Wie ist die Webseite des Betreibers?",
-                "render": "Weitere Informationen auf <a href='{website}'>{website}</a>"
+                "render": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>",
+                "question": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?"
             }
         },
         "units": {
@@ -1393,8 +1399,8 @@
                         "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
-                "question": "Was ist der Belag dieses Radwegs?",
-                "render": "Der Radweg ist aus {cycleway:surface}"
+                "render": "Der Radweg ist aus {cycleway:surface}",
+                "question": "Was ist der Belag dieses Radwegs?"
             },
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
@@ -1408,7 +1414,7 @@
                         "then": "Dies ist keine Fahrradstraße."
                     }
                 },
-                "question": "Ist das eine Fahrradstraße"
+                "question": "Ist das eine Fahrradstraße?"
             },
             "Maxspeed (for road)": {
                 "mappings": {
@@ -1428,8 +1434,8 @@
                         "then": "Die Höchstgeschwindigkeit ist 90 km/h"
                     }
                 },
-                "question": "Was ist die Höchstgeschwindigkeit auf dieser Straße?",
-                "render": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h"
+                "render": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h",
+                "question": "Was ist die Höchstgeschwindigkeit auf dieser Straße?"
             },
             "Surface of the road": {
                 "mappings": {
@@ -1473,8 +1479,8 @@
                         "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
-                "question": "Was ist der Belag dieser Straße?",
-                "render": "Der Radweg ist aus {surface}"
+                "render": "Der Radweg ist aus {surface}",
+                "question": "Was ist der Belag dieser Straße?"
             },
             "Surface of the street": {
                 "mappings": {
@@ -1596,10 +1602,6 @@
                     }
                 }
             },
-            "cycleways_and_roads-cycleway:buffer": {
-                "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
-                "render": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
-            },
             "is lit?": {
                 "mappings": {
                     "0": {
@@ -1616,6 +1618,10 @@
                     }
                 },
                 "question": "Ist diese Straße beleuchtet?"
+            },
+            "cycleways_and_roads-cycleway:buffer": {
+                "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
+                "render": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
             }
         },
         "title": {
@@ -1637,13 +1643,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
         "name": "Defibrillatoren",
         "presets": {
             "0": {
@@ -1759,6 +1758,13 @@
         },
         "title": {
             "render": "Defibrillator"
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
         }
     },
     "direction": {
@@ -1829,7 +1835,6 @@
                 }
             }
         },
-        "name": "Restaurants und Fast Food",
         "presets": {
             "0": {
                 "title": "Restaurant"
@@ -1898,7 +1903,8 @@
                     "then": "Schnellrestaurant<i>{name}</i>"
                 }
             }
-        }
+        },
+        "name": "Restaurants und Fast Food"
     },
     "ghost_bike": {
         "name": "Geisterräder",
@@ -2341,8 +2347,6 @@
         }
     },
     "shops": {
-        "description": "Ein Geschäft",
-        "name": "Geschäft",
         "presets": {
             "0": {
                 "description": "Ein neues Geschäft hinzufügen"
@@ -2370,7 +2374,7 @@
                         "then": "Bäckerei"
                     },
                     "5": {
-                        "then": "Autoreparatur (Werkstatt)"
+                        "then": "Autowerkstatt"
                     },
                     "6": {
                         "then": "Autohändler"
@@ -2394,7 +2398,9 @@
                 }
             },
             "render": "Geschäft"
-        }
+        },
+        "name": "Geschäft",
+        "description": "Ein Geschäft"
     },
     "sport_pitch": {
         "description": "Ein Sportplatz",
@@ -2788,7 +2794,6 @@
         }
     },
     "visitor_information_centre": {
-        "description": "Ein Besucherzentrum bietet Informationen über eine bestimmte Attraktion oder Sehenswürdigkeit, an der es sich befindet.",
         "name": "Besucherinformationszentrum",
         "title": {
             "mappings": {
@@ -2797,7 +2802,8 @@
                 }
             },
             "render": "{name}"
-        }
+        },
+        "description": "Ein Besucherzentrum bietet Informationen über eine bestimmte Attraktion oder Sehenswürdigkeit, an der es sich befindet."
     },
     "waste_basket": {
         "description": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
@@ -2805,17 +2811,6 @@
             "mappings": {
                 "0": {
                     "then": "Abfalleimer"
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Abfalleimer"
-                        }
-                    }
                 }
             }
         },
@@ -2848,6 +2843,17 @@
         },
         "title": {
             "render": "Abfalleimer"
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Abfalleimer"
+                        }
+                    }
+                }
+            }
         }
     },
     "watermill": {

@@ -13,7 +13,9 @@
         "uploadDone": "Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!",
         "dontDelete": "Abbrechen",
         "doDelete": "Bild entfernen",
-        "isDeleted": "Gelöscht"
+        "isDeleted": "Gelöscht",
+        "uploadMultipleDone": "{count} Bilder wurden hinzugefügt. Vielen Dank für die Hilfe!",
+        "toBig": "Ihr Bild ist zu groß, da es {actual_size} ist. Bitte verwenden Sie Bilder von höchstens {max_size}"
     },
     "centerMessage": {
         "loadingData": "Daten werden geladen…",
@@ -25,7 +27,8 @@
         "#": "Dieser Text wird über die Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
         "title": "Willkommen bei MapComplete",
         "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu Objekten eines bestimmten Themas angezeigt und angepasst werden können.",
-        "pickTheme": "Wähle unten ein Thema, um zu starten."
+        "pickTheme": "Wähle unten ein Thema, um zu starten.",
+        "featuredThemeTitle": "Diese Woche im Blickpunkt"
     },
     "general": {
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
@@ -44,7 +47,7 @@
         "oneSkippedQuestion": "Eine Frage wurde übersprungen",
         "skippedQuestions": "Einige Fragen wurden übersprungen",
         "number": "Zahl",
-        "osmLinkTooltip": "Dieses Objekt auf OpenStreetMap anschauen für dessen Verlauf und weitere Bearbeitungsmöglichkeiten",
+        "osmLinkTooltip": "Dieses Element auf OpenStreetMap durchsuchen für den Verlauf und weitere Bearbeitungsmöglichkeiten",
         "add": {
             "addNew": "Hier eine neue {category} hinzufügen",
             "title": "Punkt hinzufügen?",
@@ -59,7 +62,10 @@
             "addNewMapLabel": "Neues Element hinzufügen",
             "presetInfo": "Der neue POI hat {tags}",
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
-            "disableFilters": "Alle Filter deaktivieren"
+            "disableFilters": "Alle Filter deaktivieren",
+            "hasBeenImported": "Dieser Punkt wurde bereits importiert",
+            "zoomInMore": "Vergrößern Sie die Ansicht, um dieses Element zu importieren",
+            "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein"
         },
         "pickLanguage": "Sprache wählen: ",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
@@ -94,15 +100,17 @@
             "fsIncludeCurrentLocation": "Aktuelle Position einbeziehen"
         },
         "morescreen": {
-            "intro": "<h3>Weitere Quests</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar.",
-            "requestATheme": "Wünschst du ein benutzerdefiniertes Thema, kannst du es im Issue Tracker anfordern.",
+            "intro": "<h3>Mehr thematische Karten?</h3>Sammeln Sie gerne Geodaten? <br>Es sind weitere Themen verfügbar.",
+            "requestATheme": "Wenn Sie ein benutzerdefiniertes Thema wünschen, fordern Sie es im Issue Tracker an",
             "streetcomplete": "Eine andere, ähnliche Anwendung ist <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
-            "createYourOwnTheme": "Erstellen Sie Ihr eigenes MapComplete-Thema von Grund auf neu"
+            "createYourOwnTheme": "Erstellen Sie Ihr eigenes MapComplete-Thema von Grund auf neu",
+            "previouslyHiddenTitle": "Zuvor besuchte versteckte Themen",
+            "hiddenExplanation": "Diese Themen sind nur für Personen zugänglich, die einen Link erhalten haben. Sie haben {hidden_discovered} von {total_hidden} versteckten Themen entdeckt."
         },
         "readYourMessages": "Bitte lesen Sie alle Ihre OpenStreetMap-Nachrichten, bevor Sie einen neuen Punkt hinzufügen.",
         "fewChangesBefore": "Bitte beantworten Sie ein paar Fragen zu bestehenden Punkten, bevor Sie einen neuen Punkt hinzufügen.",
         "goToInbox": "Posteingang öffnen",
-        "getStartedLogin": "Mit OpenStreetMap einloggen und loslegen",
+        "getStartedLogin": "Bei OpenStreetMap anmelden, um loszulegen",
         "getStartedNewAccount": " oder <a href='https://www.openstreetmap.org/user/new' target='_blank'>ein neues Konto anlegen</a>",
         "noTagsSelected": "Keine Tags ausgewählt",
         "customThemeIntro": "<h3>Benutzerdefinierte Themes</h3>Dies sind zuvor besuchte benutzergenerierte Themen.",
@@ -165,12 +173,33 @@
             "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
             "noDataLoaded": "Noch keine Daten geladen. Download ist in Kürze verfügbar",
-            "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung dieser Daten ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist erforderlich</li><li>Jede Änderung dieser Daten muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details"
+            "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist erforderlich</li><li>Jede Änderung unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
+            "title": "Sichtbare Daten herunterladen",
+            "exporting": "Exportieren…"
         },
         "pdf": {
-            "versionInfo": "v{version} - erstellt am {date}"
+            "versionInfo": "v{version} - erstellt am {date}",
+            "attr": "Kartendaten © OpenStreetMap Contributors, wiederverwendbar unter ODbL",
+            "generatedWith": "Erstellt mit MapComplete.osm.be",
+            "attrBackground": "Hintergrund-Ebene: {background}"
         },
-        "loginOnlyNeededToEdit": "zum Bearbeiten der Karte"
+        "loginOnlyNeededToEdit": "zum Bearbeiten der Karte",
+        "wikipedia": {
+            "wikipediaboxTitle": "Wikipedia",
+            "searchWikidata": "Suche auf Wikidata",
+            "loading": "Wikipedia laden...",
+            "noResults": "Nichts gefunden für <i>{search}</i>",
+            "doSearch": "Suche oben, um Ergebnisse zu sehen",
+            "noWikipediaPage": "Dieses Wikidata-Element hat noch keine entsprechende Wikipedia-Seite.",
+            "createNewWikidata": "Einen neuen Wikidata-Eintrag erstellen",
+            "failed": "Laden des Wikipedia-Eintrags fehlgeschlagen"
+        },
+        "testing": "Testen - Änderungen werden nicht gespeichert",
+        "openTheMap": "Karte öffnen",
+        "loading": "Laden...",
+        "histogram": {
+            "error_loading": "Das Histogramm konnte nicht geladen werden"
+        }
     },
     "favourite": {
         "panelIntro": "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen",
@@ -187,9 +216,9 @@
         "posting_as": "Angemeldet als",
         "i_am_affiliated": "<span>Ich bin angehörig</span><br/><span class='subtle'>Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>",
         "saving_review": "Speichern…",
-        "saved": "<span class='thanks'>Rezension gespeichert. Vielen Dank für den Beitrag!</span>",
+        "saved": "<span class=\"thanks\">Bewertung gespeichert. Danke fürs Teilen!</span>",
         "tos": "Mit deiner Rezension stimmst du den <a href='https://mangrove.reviews/terms' target='_blank'>AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
-        "plz_login": "Melde dich an, um eine Rezension zu vergeben",
+        "plz_login": "Anmelden, um eine Bewertung abzugeben",
         "affiliated_reviewer_warning": "(Partner-Rezension)",
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar."
     },
@@ -202,8 +231,58 @@
         "reasons": {
             "test": "Dies war ein Testpunkt - das Element war nie wirklich vorhanden",
             "notFound": "Dieses Element konnte nicht gefunden werden",
-            "disused": "Dieses Element wird nicht mehr verwendet oder entfernt"
+            "disused": "Dieses Element wird nicht mehr verwendet oder entfernt",
+            "duplicate": "Dieser Punkt ist ein Duplikat eines anderen Elements"
         },
-        "readMessages": "Du hast ungelesene Nachrichten. Bitte beachte diese, bevor Du einen Punkt löschst - vielleicht hat jemand eine Rückmeldung"
+        "readMessages": "Du hast ungelesene Nachrichten. Bitte beachte diese, bevor Du einen Punkt löschst - vielleicht hat jemand eine Rückmeldung",
+        "loginToDelete": "Sie müssen angemeldet sein, um einen Punkt zu löschen",
+        "useSomethingElse": "Verwenden Sie zum Löschen stattdessen einen anderen OpenStreetMap-Editor",
+        "partOfOthers": "Dieser Punkt ist Teil eines Weges oder einer Relation und kann nicht direkt gelöscht werden.",
+        "loading": "Untersuchung der Eigenschaften, um zu prüfen, ob dieses Element gelöscht werden kann.",
+        "onlyEditedByLoggedInUser": "Dieser Punkt wurde nur von Ihnen selbst bearbeitet, Sie können ihn sicher löschen.",
+        "isntAPoint": "Es können nur Punkte gelöscht werden, das ausgewählte Element ist ein Weg, eine Fläche oder eine Relation.",
+        "cannotBeDeleted": "Dieses Element kann nicht gelöscht werden",
+        "delete": "Löschen",
+        "isDeleted": "Dieses Element wurde gelöscht",
+        "whyDelete": "Warum sollte dieser Punkt gelöscht werden?",
+        "cancel": "Abbrechen",
+        "safeDelete": "Dieser Punkt kann sicher gelöscht werden.",
+        "notEnoughExperience": "Dieser Punkt wurde von jemand anderem erstellt."
+    },
+    "move": {
+        "inviteToMove": {
+            "reasonRelocation": "Dieses Element an einen anderen Ort verschieben, weil es sich verlagert hat",
+            "generic": "Verschiebe diesen Punkt",
+            "reasonInaccurate": "Genauigkeit dieses Punktes verbessern"
+        },
+        "partOfAWay": "Dieses Element ist Teil eines anderen Weges. Verwenden Sie einen anderen Editor, um es zu verschieben.",
+        "cannotBeMoved": "Dieses Element kann nicht verschoben werden.",
+        "cancel": "Verschieben abbrechen",
+        "whyMove": "Warum wollen Sie diesen Punkt verschieben?",
+        "pointIsMoved": "Der Punkt wurde verschoben",
+        "reasons": {
+            "reasonRelocation": "Das Element wurde an einen völlig anderen Ort verlegt",
+            "reasonInaccurate": "Der Standort dieses Elements ist ungenau und sollte um einige Meter verschoben werden"
+        },
+        "loginToMove": "Sie müssen eingeloggt sein, um einen Punkt zu verschieben",
+        "zoomInFurther": "Weiter vergrößern, um die Verschiebung zu bestätigen",
+        "selectReason": "Warum verschieben Sie dieses Element?",
+        "inviteToMoveAgain": "Diesen Punkt erneut verschieben",
+        "moveTitle": "Diesen Punkt verschieben",
+        "confirmMove": "Hierhin verschieben",
+        "partOfRelation": "Dieses Element ist Teil einer Relation. Verwenden Sie einen anderen Editor, um es zu verschieben.",
+        "isWay": "Dieses Element ist ein Weg. Verwenden Sie einen anderen OpenStreetMap-Editor, um ihn zu verschieben.",
+        "isRelation": "Dieses Element ist eine Relation und kann nicht verschoben werden"
+    },
+    "split": {
+        "split": "Teilen",
+        "cancel": "Abbrechen",
+        "loginToSplit": "Sie müssen angemeldet sein, um eine Straße aufzuteilen",
+        "splitTitle": "Wählen Sie auf der Karte aus, wo die Straße geteilt werden soll",
+        "hasBeenSplit": "Dieser Weg wurde geteilt",
+        "inviteToSplit": "Teilen Sie diese Straße in kleinere Segmente auf. Dies ermöglicht es, Straßenabschnitten unterschiedliche Eigenschaften zu geben."
+    },
+    "multi_apply": {
+        "autoApply": "Wenn Sie die Attribute {attr_names} ändern, werden diese Attribute automatisch auch auf {count} anderen Objekten geändert"
     }
 }

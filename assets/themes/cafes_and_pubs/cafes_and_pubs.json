@@ -3,7 +3,9 @@
   "title": {
     "nl": "Cafés",
     "en": "Cafés and pubs",
-    "de": "Cafés und Kneipen"
+    "de": "Cafés und Kneipen",
+    "it": "Caffè e pub",
+    "nb_NO": "Kafeer og kneiper"
   },
   "description": {
     "nl": "Cafés, kroegen en drinkgelegenheden"
@@ -11,7 +13,9 @@
   "language": [
     "nl",
     "en",
-    "de"
+    "de",
+    "it",
+    "nb_NO"
   ],
   "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",

@@ -757,13 +757,6 @@
         }
     },
     "defibrillator": {
-        "icon": {
-            "mappings": {
-                "0": {
-                    "then": "./assets/layers/defibrillator/aed_checked.svg"
-                }
-            }
-        },
         "name": "Defibrillatori",
         "presets": {
             "0": {
@@ -880,6 +873,13 @@
         },
         "title": {
             "render": "Defibrillatore"
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
         }
     },
     "direction": {
@@ -1820,6 +1820,17 @@
         },
         "title": {
             "render": "Punto panoramico"
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Autofficina"
+                    }
+                }
+            }
         }
     }
 }

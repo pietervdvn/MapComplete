@@ -2,18 +2,24 @@
   "id": "postboxes",
   "title": {
     "en": "Postbox and Post Office Map",
-    "de": "Karte mit Briefkästen und Poststellen"
+    "de": "Karte mit Briefkästen und Poststellen",
+    "nb_NO": "Postboks og postkontor-kart",
+    "it": "Buche delle lettere e uffici postali"
   },
   "shortDescription": {
     "en": "A map showing postboxes and post offices",
-    "de": "Eine Karte die Briefkästen und Poststellen anzeigt"
+    "de": "Eine Karte die Briefkästen und Poststellen anzeigt",
+    "it": "Una cartina che mostra le buche delle lettere e gli uffici postali"
   },
   "description": {
-    "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. "
+    "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
+    "it": "In questa cartina puoi veder e modificare gli uffici postali e le buche delle lettere. Puoi usare questa cartina per trovare dove imbucare la tua prossima cartolina! :)<br/>Hai trovato un errore o una buca delle lettere mancante? Puoi modificare questa cartina con un account gratuito su OpenStreetMap. "
   },
   "language": [
     "en",
-    "de"
+    "de",
+    "it",
+    "nb_NO"
   ],
   "maintainer": "",
   "icon": "./assets/themes/postboxes/postbox.svg",
@@ -31,7 +37,8 @@
     {
       "id": "postboxes",
       "name": {
-        "en": "Postboxes"
+        "en": "Postboxes",
+        "de": "Brieflästen"
       },
       "minzoom": 12,
       "source": {
@@ -39,17 +46,19 @@
       },
       "title": {
         "render": {
-          "en": "Postbox"
+          "en": "Postbox",
+          "de": "Briefkasten"
         }
       },
       "description": {
-        "en": "The layer showing postboxes."
+        "en": "The layer showing postboxes.",
+        "de": "Die Ebene zeigt Briefkästen."
       },
       "tagRenderings": [
         "images",
         {
-          "id": "Minimap",
-          "render": "{minimap(17): height: 10rem; overflow: hidden; border: 1px solid #DADADA; border-radius: 0.5rem; }"
+          "id": "minimap",
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
         }
       ],
       "icon": {
@@ -70,7 +79,8 @@
             "amenity=post_box"
           ],
           "title": {
-            "en": "postbox"
+            "en": "postbox",
+            "de": "Briefkasten"
           }
         }
       ],
@@ -82,34 +92,13 @@
             "razed:amenity=post_box"
           ]
         }
-      },
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/postboxes/postbox.svg"
-          },
-          "iconSize": {
-            "render": "40,40,bottom"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#DADADA"
-          },
-          "width": {
-            "render": "1"
-          }
-        }
-      ]
+      }
     },
     {
       "id": "postoffices",
       "name": {
-        "en": "Post offices"
+        "en": "Post offices",
+        "de": "Poststellen"
       },
       "minzoom": 12,
       "source": {
@@ -117,7 +106,8 @@
       },
       "title": {
         "render": {
-          "en": "Post Office"
+          "en": "Post Office",
+          "de": "Poststelle"
         }
       },
       "description": {
@@ -128,7 +118,7 @@
         "images",
         {
           "id": "minimap",
-          "render": "{minimap(17): height: 10rem; overflow: hidden; border: 1px solid #DADADA; border-radius: 0.5rem; }"
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
         },
         {
           "render": {
@@ -159,7 +149,8 @@
       "iconOverlays": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen"
+          "then": "isOpen",
+          "badge": true
         }
       ],
       "width": {
@@ -177,7 +168,8 @@
             "amenity=post_office"
           ],
           "title": {
-            "en": "Post Office"
+            "en": "Post Office",
+            "de": "Poststelle"
           }
         }
       ],
@@ -188,39 +180,12 @@
           "options": [
             {
               "question": {
-                "en": "Currently open"
+                "en": "Currently open",
+                "de": "Aktuell geöffnet"
               },
               "osmTags": "_isOpen=yes"
             }
           ]
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "square:white;./assets/themes/postboxes/post_office.svg"
-          },
-          "iconBadges": [
-            {
-              "if": "opening_hours~*",
-              "then": "isOpen"
-            }
-          ],
-          "iconSize": {
-            "render": "40,40,bottom"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#DADADA"
-          },
-          "width": {
-            "render": "1"
-          }
         }
       ]
     }

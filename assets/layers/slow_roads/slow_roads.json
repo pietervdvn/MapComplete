@@ -116,7 +116,8 @@
                 "en": "The surface is <b>{surface}</b>",
                 "ru": "Поверхность - <b>{surface}</b>",
                 "fr": "La surface en <b>{surface}</b>",
-                "it": "La superficie è <b>{surface}</b>"
+                "it": "La superficie è <b>{surface}</b>",
+                "de": "Die Oberfläche ist <b>{surface}</b>"
             },
             "freeform": {
                 "key": "surface"
@@ -129,7 +130,8 @@
                         "en": "The surface is <b>grass</b>",
                         "ru": "Поверхность - <b>трава</b>",
                         "fr": "La surface est en <b>herbe</b>",
-                        "it": "La superficie è <b>erba</b>"
+                        "it": "La superficie è <b>erba</b>",
+                        "de": "Die Oberfläche ist <b>Gras</b>"
                     }
                 },
                 {
@@ -139,7 +141,8 @@
                         "en": "The surface is <b>ground</b>",
                         "ru": "Поверхность - <b>земля</b>",
                         "fr": "La surface est en <b>terre</b>",
-                        "it": "La superficie è <b>terreno</b>"
+                        "it": "La superficie è <b>terreno</b>",
+                        "de": "Die Oberfläche ist <b>Erde</b>"
                     }
                 },
                 {
@@ -148,7 +151,8 @@
                         "nl": "De ondergrond is <b>onverhard</b>",
                         "en": "The surface is <b>unpaved</b>",
                         "fr": "La surface est <b>non pavée</b>",
-                        "it": "La superficie è <b>non pavimentata</b>"
+                        "it": "La superficie è <b>non pavimentata</b>",
+                        "de": "Die Oberfläche ist <b>ohne festen Belag</b>"
                     },
                     "hideInAnswer": true
                 },
@@ -159,7 +163,8 @@
                         "en": "The surface is <b>sand</b>",
                         "ru": "Поверхность - <b>песок</b>",
                         "fr": "La surface est en <b>sable</b>",
-                        "it": "La superficie è <b>sabbia</b>"
+                        "it": "La superficie è <b>sabbia</b>",
+                        "de": "Die Oberfläche ist <b>Sand</b>"
                     }
                 },
                 {
@@ -169,7 +174,8 @@
                         "en": "The surface is <b>paving stones</b>",
                         "ru": "Поверхность - <b>брусчатка</b>",
                         "it": "La superficie è <b>pietre irregolari</b>",
-                        "fr": "La surface est en <b>pierres pavées</b>"
+                        "fr": "La surface est en <b>pierres pavées</b>",
+                        "de": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
                     }
                 },
                 {
@@ -179,7 +185,8 @@
                         "en": "The surface is <b>asphalt</b>",
                         "ru": "Поверхность - <b>асфальт</b>",
                         "it": "La superficie è <b>asfalto</b>",
-                        "fr": "La surface est en <b>bitume</b>"
+                        "fr": "La surface est en <b>bitume</b>",
+                        "de": "Die Oberfläche ist <b>Asphalt</b>"
                     }
                 },
                 {
@@ -189,7 +196,8 @@
                         "en": "The surface is <b>concrete</b>",
                         "ru": "Поверхность - <b>бетон</b>",
                         "fr": "La surface est en <b>béton</b>",
-                        "it": "La superficie è <b>calcestruzzo</b>"
+                        "it": "La superficie è <b>calcestruzzo</b>",
+                        "de": "Die Oberfläche ist <b>Beton</b>"
                     }
                 },
                 {
@@ -198,7 +206,8 @@
                         "nl": "De ondergrond is <b>verhard</b>",
                         "en": "The surface is <b>paved</b>",
                         "fr": "La surface est <b>pavée</b>",
-                        "it": "La superficie è <b>pavimentata</b>"
+                        "it": "La superficie è <b>pavimentata</b>",
+                        "de": "Die Oberfläche ist <b>gepflastert</b>"
                     },
                     "hideInAnswer": true
                 }

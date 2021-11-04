@@ -1,4 +1,19 @@
 {
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Taideteos"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Taideteos <i>{name}</i>"
+                }
+            },
+            "render": "Taideteos"
+        }
+    },
     "bench": {
         "name": "Penkit",
         "presets": {
@@ -100,6 +115,17 @@
         "name": "Haamupyörä",
         "title": {
             "render": "Haamupyörä"
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Autokorjaamo"
+                    }
+                }
+            }
         }
     }
 }

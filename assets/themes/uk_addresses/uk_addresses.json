@@ -2,21 +2,26 @@
   "id": "uk_addresses",
   "title": {
     "en": "UK Addresses",
-    "de": "Adressen in Großbritannien"
+    "de": "Adressen in Großbritannien",
+    "it": "Indirizzi UK"
   },
   "shortDescription": {
     "en": "Help to build an open dataset of UK addresses",
-    "de": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen"
+    "de": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
+    "it": "Aiuta a costruire un dataset libero per gli indirizzi nel Regno Unito"
   },
   "description": {
     "en": "Contribute to OpenStreetMap by filling out address information",
     "nl": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
-    "de": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen"
+    "de": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
+    "it": "Contribuisci a OpenStreetMap inserendo le informazioni sull’indirizzo"
   },
   "language": [
     "en",
     "de",
-    "nl"
+    "it",
+    "nl",
+    "nb_NO"
   ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
@@ -57,27 +62,23 @@
       },
       "name": "Addresses to check",
       "minzoom": 14,
-      "mapRendering": [
-        {
-          "location": "point",
-          "icon": {
-            "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
-            "mappings": [
-              {
-                "if": "_embedding_object:id~*",
-                "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-              },
-              {
-                "if": "_imported=yes",
-                "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-              }
-            ]
+      "wayHandling": 1,
+      "icon": {
+        "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+        "mappings": [
+          {
+            "if": "_embedding_object:id~*",
+            "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
           },
-          "iconSize": {
-            "render": "40,40,center"
+          {
+            "if": "_imported=yes",
+            "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
           }
-        }
-      ],
+        ]
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
       "title": {
         "render": "Address to be determined"
       },
@@ -93,7 +94,7 @@
         },
         {
           "id": "uk_addresses_import_button",
-          "render": "{import_button(addresses, ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
+          "render": "{import_button(ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
         }
       ],
       "calculatedTags": [
@@ -229,57 +230,50 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "location": "point",
-          "icon": {
-            "render": "./assets/themes/uk_addresses/housenumber_ok.svg",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
+      "icon": {
+        "render": "./assets/themes/uk_addresses/housenumber_ok.svg",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                {
+                  "and": [
+                    "addr:housenumber=",
+                    "nohousenumber!=yes"
                   ]
                 },
-                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center"
+                "addr:street="
+              ]
+            },
+            "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
           }
-        },
-        {
-          "color": {
-            "render": "#00f",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
+        ]
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                {
+                  "and": [
+                    "addr:housenumber=",
+                    "nohousenumber!=yes"
                   ]
                 },
-                "then": "#ff0"
-              }
-            ]
-          },
-          "width": {
-            "render": "8"
+                "addr:street="
+              ]
+            },
+            "then": "#ff0"
           }
-        }
-      ]
+        ]
+      }
     },
     {
       "id": "named_streets",
@@ -292,7 +286,12 @@
           ]
         }
       },
-      "mapRendering": []
+      "color": {
+        "render": "#ccc"
+      },
+      "width": {
+        "render": "0"
+      }
     }
   ],
   "enableShareScreen": false,

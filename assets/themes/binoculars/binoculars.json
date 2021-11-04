@@ -3,22 +3,29 @@
   "title": {
     "en": "Binoculars",
     "nl": "Verrekijkers",
-    "de": "Ferngläser"
+    "de": "Ferngläser",
+    "it": "Binocoli",
+    "nb_NO": "Kikkerter"
   },
   "shortDescription": {
     "en": "A map with fixed binoculars",
     "nl": "Een kaart met publieke verrekijker",
-    "de": "Eine Karte mit festinstallierten Ferngläsern"
+    "de": "Eine Karte mit festinstallierten Ferngläsern",
+    "it": "Una cartina dei binocoli pubblici fissi",
+    "nb_NO": "Et kart over fastmonterte kikkerter"
   },
   "description": {
     "en": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
     "nl": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd",
-    "de": "Eine Karte mit festinstallierten Ferngläsern. Man findet sie typischerweise an touristischen Orten, Aussichtspunkten, auf Aussichtstürmen oder gelegentlich in einem Naturschutzgebiet."
+    "de": "Eine Karte mit festinstallierten Ferngläsern. Man findet sie typischerweise an touristischen Orten, Aussichtspunkten, auf Aussichtstürmen oder gelegentlich in einem Naturschutzgebiet.",
+    "it": "Una cartina dei binocoli su un palo fissi in un luogo. Si trovano tipicamente nei luoghi turistici, nei belvedere, in cima a torri panoramiche oppure occasionalmente nelle riserve naturali."
   },
   "language": [
     "en",
     "nl",
-    "de"
+    "de",
+    "it",
+    "nb_NO"
   ],
   "maintainer": "",
   "icon": "./assets/layers/binocular/telescope.svg",

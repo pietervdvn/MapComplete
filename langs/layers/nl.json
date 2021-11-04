@@ -896,13 +896,6 @@
         "icon": {
             "render": "./assets/layers/birdhide/birdhide.svg"
         },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/birdhide/birdhide.svg"
-                }
-            }
-        },
         "name": "Vogelkijkhutten",
         "presets": {
             "0": {
@@ -981,6 +974,13 @@
                 }
             },
             "render": "Vogelkijkplaats"
+        },
+        "mapRendering": {
+            "0": {
+                "icon": {
+                    "render": "./assets/layers/birdhide/birdhide.svg"
+                }
+            }
         }
     },
     "cafe_pub": {
@@ -1125,7 +1125,7 @@
         "name": "Oplaadpunten",
         "presets": {
             "0": {
-                "title": "gewone stekker <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
+                "title": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
             },
             "1": {
                 "title": "oplaadpunt voor elektrische fietsen"
@@ -1361,10 +1361,10 @@
                         "then": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
                     },
                     "2": {
-                        "then": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bijvoorbeeld een oplaadpunt op de parking van een restaurant dat enkel door klanten van het restaurant gebruikt mag worden</span>"
+                        "then": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bv. op de parking van een hotel en enkel toegankelijk voor klanten van dit hotel</span>"
                     },
                     "3": {
-                        "then": "Niet toegankelijk voor het publiek <span class='subtle'>Enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
+                        "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
                     }
                 },
                 "question": "Wie mag er dit oplaadpunt gebruiken?",
@@ -3082,27 +3082,42 @@
         },
         "tagRenderings": {
             "shops-email": {
-                "question": "Wat is het e-mailadres van deze winkel?"
+                "question": "Wat is het e-mailadres van deze winkel?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
             },
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?"
             },
             "shops-opening_hours": {
-                "question": "Wat zijn de openingsuren van deze winkel?"
+                "question": "Wat zijn de openingsuren van deze winkel?",
+                "render": "{opening_hours_table(opening_hours)}"
             },
             "shops-phone": {
-                "question": "Wat is het telefoonnummer?"
+                "question": "Wat is het telefoonnummer?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "shops-shop": {
                 "mappings": {
+                    "0": {
+                        "then": "Gemakswinkel"
+                    },
                     "1": {
                         "then": "Supermarkt"
+                    },
+                    "2": {
+                        "then": "Kledingwinkel"
                     },
                     "3": {
                         "then": "Kapper"
                     },
                     "4": {
                         "then": "Bakkerij"
+                    },
+                    "5": {
+                        "then": "Autogarage"
+                    },
+                    "6": {
+                        "then": "Autodealer"
                     }
                 }
             },
@@ -3806,17 +3821,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Vuilnisbak"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Vuilnisbak",
         "presets": {
             "0": {
@@ -3864,6 +3868,17 @@
         },
         "title": {
             "render": "Vuilnisbak"
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Vuilnisbak"
+                        }
+                    }
+                }
+            }
         }
     },
     "watermill": {

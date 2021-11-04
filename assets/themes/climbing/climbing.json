@@ -13,12 +13,13 @@
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
-    "de": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
+    "de": "Eine Karte mit verschiedenen Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen in der Natur.",
     "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
     "ru": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
     "ja": "この地図には、自然の中のクライミングジム、ボルダリングホール、岩など、さまざまなクライミングの機会があります。",
     "zh_Hant": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
-    "fr": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels."
+    "fr": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels.",
+    "it": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali."
   },
   "descriptionTail": {
     "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -27,7 +28,8 @@
     "ru": "Создатель карты скалолазания — <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Пожалуйста, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>пишите</a> если у вас есть отзыв или вопросы.</p><p>Проект использует данные <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "ja": "登山地図はもともと <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> によって作成されたものです。フィードバックや質問がありましたら、<a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ご連絡</a>ください。</p><p>このプロジェクトでは、<a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>プロジェクトのデータを使用します。</p>",
     "zh_Hant": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
-    "fr": "La carte a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
+    "fr": "La carte a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
+    "it": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
   },
   "language": [
     "nl",
@@ -38,9 +40,10 @@
     "zh_Hant",
     "nb_NO",
     "it",
-    "ca",
     "fr",
-    "id"
+    "ca",
+    "id",
+    "eo"
   ],
   "maintainer": "Christian Neumann <christian@utopicode.de>",
   "icon": "./assets/themes/climbing/climbing_icon.svg",
@@ -156,7 +159,8 @@
       "iconOverlays": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen"
+          "then": "isOpen",
+          "badge": true
         }
       ],
       "width": {
@@ -214,26 +218,7 @@
           }
         }
       ],
-      "wayHandling": 1,
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/climbing/club.svg"
-          },
-          "iconBadges": [
-            {
-              "if": "opening_hours~*",
-              "then": "isOpen"
-            }
-          ],
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
-        }
-      ]
+      "wayHandling": 1
     },
     {
       "id": "climbing_gym",
@@ -323,33 +308,15 @@
       "iconOverlays": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen"
+          "then": "isOpen",
+          "badge": true
         }
       ],
       "width": "0",
       "iconSize": {
         "render": "40,40,center"
       },
-      "wayHandling": 1,
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/climbing/climbing_gym.svg"
-          },
-          "iconBadges": [
-            {
-              "if": "opening_hours~*",
-              "then": "isOpen"
-            }
-          ],
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
-        }
-      ]
+      "wayHandling": 1
     },
     {
       "id": "climbing_route",
@@ -490,11 +457,13 @@
         {
           "question": {
             "en": "How much bolts does this route have before reaching the moulinette?",
-            "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?"
+            "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
+            "de": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?"
           },
           "render": {
             "en": "This route has {climbing:bolts} bolts",
-            "fr": "Cette voie a {climbing:bolts} prises"
+            "fr": "Cette voie a {climbing:bolts} prises",
+            "de": "Diese Kletterroute hat {climbing:bolts} Haken"
           },
           "freeform": {
             "key": "climbing:bolts",
@@ -508,7 +477,8 @@
               "if": "climbing:bolted=no",
               "then": {
                 "en": "This route is not bolted",
-                "fr": "Cette voie n’a pas de prises"
+                "fr": "Cette voie n’a pas de prises",
+                "de": "Auf dieser Kletterroute sind keine Haken vorhanden"
               },
               "hideInAnswer": true
             },
@@ -516,7 +486,8 @@
               "if": "climbing:bolted=no&climbing:bolts=",
               "then": {
                 "en": "This route is not bolted",
-                "fr": "Cette voie n’a pas de prises"
+                "fr": "Cette voie n’a pas de prises",
+                "de": "Auf dieser Kletterroute sind keine Haken vorhanden"
               }
             }
           ],
@@ -568,29 +539,7 @@
           ]
         }
       ],
-      "wayHandling": 2,
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:white;./assets/themes/climbing/climbing_route.svg"
-          },
-          "iconSize": {
-            "render": "28,28,center"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#0f0"
-          },
-          "width": {
-            "render": "4"
-          }
-        }
-      ]
+      "wayHandling": 2
     },
     {
       "id": "climbing",
@@ -859,28 +808,6 @@
         "_difficulty_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:grade:french'])",
         "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])",
         "_contained_climbing_routes_count=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').length"
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/climbing/climbing_no_rope.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": {
-            "render": "#d38d5fAA"
-          },
-          "width": {
-            "render": "8"
-          }
-        }
       ]
     },
     {
@@ -1010,23 +937,7 @@
       "color": {
         "render": "#ddff55AA"
       },
-      "wayHandling": 0,
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/climbing/climbing_unknown.svg",
-          "location": [
-            "point"
-          ]
-        },
-        {
-          "color": {
-            "render": "#ddff55AA"
-          },
-          "width": {
-            "render": "2"
-          }
-        }
-      ]
+      "wayHandling": 0
     }
   ],
   "overrideAll": {

@@ -1,4 +1,19 @@
 {
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Dzieło sztuki"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Dzieło sztuki <i>{name}</i>"
+                }
+            },
+            "render": "Dzieło sztuki"
+        }
+    },
     "bench": {
         "name": "Ławki",
         "presets": {
@@ -186,6 +201,17 @@
         "name": "Duch roweru",
         "title": {
             "render": "Duch roweru"
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Warsztat samochodowy"
+                    }
+                }
+            }
         }
     }
 }
