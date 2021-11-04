@@ -71,7 +71,7 @@
             {
               "if": "lit=no",
               "then": {
-                "en": "This road is not lit",
+                "en": "This street is not lit",
                 "nl": "Deze straat is niet verlicht"
               }
             },
@@ -140,7 +140,7 @@
             {
               "if": "lit=no",
               "then": {
-                "en": "This road is not lit",
+                "en": "This street is not lit",
                 "nl": "Deze straat is niet verlicht"
               }
             },

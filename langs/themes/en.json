@@ -1341,7 +1341,7 @@
                                 "then": "This street is lit"
                             },
                             "1": {
-                                "then": "This road is not lit"
+                                "then": "This street is not lit"
                             },
                             "2": {
                                 "then": "This street is lit at night"
