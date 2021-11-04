@@ -559,6 +559,9 @@
             }
         },
         "tagRenderings": {
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
+            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -666,9 +669,6 @@
                 },
                 "question": "Welche Ventile werden unterstützt?",
                 "render": "Diese Pumpe unterstützt die folgenden Ventile: {valves}"
-            },
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
             }
         },
         "title": {
@@ -923,470 +923,6 @@
             }
         }
     },
-    "charging_station": {
-        "description": "Eine Ladestation",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Alle Fahrzeugtypen"
-                    },
-                    "1": {
-                        "question": "Ladestationen für Fahrräder"
-                    },
-                    "2": {
-                        "question": "Ladestationen für Autos"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Nur funktionierende Ladestationen"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Alle Anschlüsse"
-                    },
-                    "3": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
-                    },
-                    "7": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
-                    },
-                    "1": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
-                    }
-                }
-            }
-        },
-        "name": "Ladestationen",
-        "presets": {
-            "0": {
-                "title": "Ladestation"
-            },
-            "1": {
-                "title": "Ladestation für Elektrofahrräder"
-            },
-            "2": {
-                "title": "Ladestation für Autos"
-            },
-            "3": {
-                "title": "Ladestation"
-            }
-        },
-        "tagRenderings": {
-            "Auth phone": {
-                "question": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
-                "render": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
-            },
-            "Authentication": {
-                "mappings": {
-                    "0": {
-                        "then": "Authentifizierung durch eine Mitgliedskarte"
-                    },
-                    "1": {
-                        "then": "Authentifizierung durch eine App"
-                    },
-                    "2": {
-                        "then": "Authentifizierung per Anruf ist möglich"
-                    },
-                    "3": {
-                        "then": "Authentifizierung per Anruf ist möglich"
-                    },
-                    "4": {
-                        "then": "Authentifizierung über NFC ist möglich"
-                    },
-                    "5": {
-                        "then": "Authentifizierung über Geldkarte ist möglich"
-                    },
-                    "6": {
-                        "then": "Authentifizierung per Debitkarte ist möglich"
-                    },
-                    "7": {
-                        "then": "Das Aufladen ist hier (auch) ohne Authentifizierung möglich"
-                    }
-                },
-                "question": "Welche Authentifizierung ist an der Ladestation möglich?"
-            },
-            "Available_charging_stations (generated)": {
-                "mappings": {
-                    "5": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>"
-                    },
-                    "6": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
-                    },
-                    "7": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
-                    },
-                    "8": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
-                    },
-                    "9": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
-                    },
-                    "10": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
-                    },
-                    "11": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
-                    },
-                    "12": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
-                    },
-                    "13": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
-                    },
-                    "14": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
-                    },
-                    "15": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
-                    },
-                    "16": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
-                    },
-                    "17": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
-                    },
-                    "18": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
-                    },
-                    "19": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
-                    },
-                    "20": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
-                    },
-                    "21": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
-                    },
-                    "26": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones oder Elektrokleingeräten</span></div>"
-                    },
-                    "27": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones und Elektrokleingeräten</span></div>"
-                    },
-                    "30": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
-                    },
-                    "31": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
-                    },
-                    "3": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <span><b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</span></div>"
-                    },
-                    "0": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <span><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</span></div>"
-                    },
-                    "1": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <span><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</span></div>"
-                    },
-                    "2": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <span><b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</span></div>"
-                    },
-                    "4": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>"
-                    },
-                    "22": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (Destination)</b></span></div>"
-                    },
-                    "23": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (Destination)</b></span></div>"
-                    },
-                    "24": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla Supercharger (Destination)</b> (Typ 2 Anschluss mit Kabel der Marke Tesla)</span></div>"
-                    },
-                    "25": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla Supercharger (Destination)</b> (Typ 2 Anschluss mit Kabel der Marke Tesla)</span></div>"
-                    },
-                    "28": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</span></div>"
-                    },
-                    "29": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</span></div>"
-                    }
-                },
-                "question": "Welche Ladestationen gibt es hier?"
-            },
-            "Network": {
-                "mappings": {
-                    "0": {
-                        "then": "Nicht Teil eines größeren Netzwerks"
-                    },
-                    "1": {
-                        "then": "Nicht Teil eines größeren Netzwerks"
-                    }
-                },
-                "question": "Ist diese Ladestation Teil eines Netzwerks?",
-                "render": "Teil des Netzwerks <b>{network}</b>"
-            },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "durchgehend geöffnet (auch an Feiertagen)"
-                    }
-                },
-                "question": "Wann ist diese Ladestation geöffnet?"
-            },
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Diese Ladestation funktioniert"
-                    },
-                    "1": {
-                        "then": "Diese Ladestation ist kaputt"
-                    },
-                    "2": {
-                        "then": "Hier ist eine Ladestation geplant"
-                    },
-                    "3": {
-                        "then": "Hier wird eine Ladestation gebaut"
-                    },
-                    "4": {
-                        "then": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
-                    }
-                },
-                "question": "Ist dieser Ladepunkt in Betrieb?"
-            },
-            "Operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Eigentlich ist {operator} das Netzwerk"
-                    }
-                },
-                "question": "Wer ist der Betreiber dieser Ladestation?",
-                "render": "Diese Ladestation wird betrieben von {operator}"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Keine zusätzlichen Parkgebühren beim Laden"
-                    },
-                    "1": {
-                        "then": "Beim Laden ist eine zusätzliche Parkgebühr zu entrichten"
-                    }
-                },
-                "question": "Muss man beim Laden eine Parkgebühr bezahlen?"
-            },
-            "Type": {
-                "mappings": {
-                    "0": {
-                        "then": "Hier können <b>Fahrräder</b> geladen werden"
-                    },
-                    "1": {
-                        "then": "Hier können <b>Autos</b> geladen werden"
-                    },
-                    "2": {
-                        "then": "Hier können <b>E-Roller</b> geladen werden"
-                    },
-                    "3": {
-                        "then": "Hier können <b>LKW</b> geladen werden"
-                    },
-                    "4": {
-                        "then": "Hier können <b>Busse</b> geladen werden"
-                    }
-                },
-                "question": "Welche Fahrzeuge dürfen hier geladen werden?"
-            },
-            "access": {
-                "question": "Wer darf diese Ladestation benutzen?",
-                "render": "Zugang ist {access}",
-                "mappings": {
-                    "1": {
-                        "then": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)"
-                    },
-                    "0": {
-                        "then": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)"
-                    },
-                    "2": {
-                        "then": "Nur Kunden des Ortes, zu dem diese Station gehört, können diese Ladestation nutzen<br/><span class='subtle'>Z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann</span>"
-                    },
-                    "3": {
-                        "then": "Nicht für die Allgemeinheit zugänglich (z. B. nur für Eigentümer, Angestellte, ...)"
-                    }
-                }
-            },
-            "capacity": {
-                "question": "Wie viele Fahrzeuge können hier gleichzeitig geladen werden?",
-                "render": "{capacity} Fahrzeuge können hier gleichzeitig geladen werden"
-            },
-            "maxstay": {
-                "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>",
-                "question": "Was ist die Höchstdauer des Aufenthalts hier?",
-                "mappings": {
-                    "0": {
-                        "then": "Keine Höchstparkdauer"
-                    }
-                }
-            },
-            "ref": {
-                "render": "Die Kennziffer ist <b>{ref}</b>",
-                "question": "Wie lautet die Kennung dieser Ladestation?"
-            },
-            "website": {
-                "render": "Weitere Informationen auf <a href='{website}'>{website}</a>",
-                "question": "Wie ist die Webseite des Betreibers?"
-            },
-            "payment-options": {
-                "override": {
-                    "mappings+": {
-                        "0": {
-                            "then": "Bezahlung mit einer speziellen App"
-                        },
-                        "1": {
-                            "then": "Bezahlung mit einer Mitgliedskarte"
-                        }
-                    }
-                }
-            },
-            "email": {
-                "question": "Wie ist die Email-Adresse des Betreibers?",
-                "render": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
-            },
-            "phone": {
-                "render": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>",
-                "question": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?"
-            },
-            "charge": {
-                "question": "Wie viel muss man für die Nutzung dieser Ladestation bezahlen?",
-                "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Kostenlose Nutzung"
-                    },
-                    "1": {
-                        "then": "Kostenlose Nutzung (ohne Authentifizierung)"
-                    },
-                    "2": {
-                        "then": "Kostenlose Nutzung, aber man muss sich authentifizieren"
-                    },
-                    "3": {
-                        "then": "Kostenpflichtige Nutzung, aber kostenlos für Kunden des Hotels/der Gaststätte/des Krankenhauses/..., das die Ladestation betreibt"
-                    },
-                    "4": {
-                        "then": "Kostenpflichtige Nutzung"
-                    }
-                },
-                "question": "Muss man für die Nutzung dieser Ladestation bezahlen?"
-            },
-            "plugs-0": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:schuko}</b> Stecker des Typs <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> vorhanden"
-            },
-            "plugs-10": {
-                "render": "Hier sind <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (ein Typ2 CSS Markenstecker)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (ein Typ 2 CSS Markenstecker)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-11": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:tesla_destination}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> vorhanden"
-            },
-            "plugs-12": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (ein Typ 2 Stecker der Marke Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:tesla_destination}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (ein Typ 2 Stecker der Marke Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> vorhanden"
-            },
-            "plugs-13": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen elektronischen Geräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:USB-A}</b>-Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen elektronischen Geräten</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> vorhanden"
-            },
-            "plugs-14": {
-                "render": "Hier sind <b class='text-xl'>{socket:bosch_3pin}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-15": {
-                "render": "Hier sind <b class='text-xl'>{socket:bosch_5pin}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Stiften</b> und Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Stiften</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-2": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:chademo}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> vorhanden"
-            },
-            "plugs-3": {
-                "render": "Hier sind <b class='text-xl'>{socket:type1_cable}</b> Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-4": {
-                "render": "Hier sind <b class='text-xl'>{socket:type1}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-5": {
-                "render": "Hier sind <b class='text-xl'>{socket:type1_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-6": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:tesla_supercharger}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> vorhanden"
-            },
-            "plugs-7": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:type2}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> vorhanden"
-            },
-            "plugs-8": {
-                "render": "Hier sind <b class='text-xl'>{socket:type2_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-1": {
-                "render": "Hier sind <b class='text-xl'>{socket:typee}</b> Stecker des Typs <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-9": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:type2_cable}</b> Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> vorhanden"
-            }
-        },
-        "title": {
-            "render": "Ladestation"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " Minuten",
-                        "humanSingular": " Minute"
-                    },
-                    "1": {
-                        "human": " Stunden",
-                        "humanSingular": " Stunde"
-                    },
-                    "2": {
-                        "human": " Tage",
-                        "humanSingular": " Tag"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Volt"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Kilowatt"
-                    },
-                    "1": {
-                        "human": "Megawatt"
-                    }
-                }
-            },
-            "2": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Ein"
-                    }
-                }
-            }
-        }
-    },
     "crossings": {
         "description": "Übergänge für Fußgänger und Radfahrer",
         "name": "Kreuzungen",
@@ -1412,6 +948,42 @@
                 },
                 "question": "Können Radfahrer diese Kreuzung nutzen?"
             },
+            "crossing-button": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
+                    },
+                    "1": {
+                        "then": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern"
+                    }
+                },
+                "question": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?"
+            },
+            "crossing-continue-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
+                    },
+                    "2": {
+                        "then": "Ein Radfahrer kann bei roter Ampel nicht geradeaus fahren"
+                    }
+                },
+                "question": "Kann ein Radfahrer bei roter Ampel geradeaus fahren?"
+            },
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Übergang hat eine Verkehrsinsel"
+                    },
+                    "1": {
+                        "then": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
+                    }
+                },
+                "question": "Gibt es an diesem Übergang eine Verkehrsinsel?"
+            },
             "crossing-is-zebra": {
                 "mappings": {
                     "0": {
@@ -1422,6 +994,20 @@
                     }
                 },
                 "question": "Ist das ein Zebrastreifen?"
+            },
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                    },
+                    "1": {
+                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
+                    },
+                    "2": {
+                        "then": "Ein Radfahrer kann bei roter Ampel nicht rechts abbiegen"
+                    }
+                },
+                "question": "Kann ein Radfahrer bei roter Ampel rechts abbiegen?"
             },
             "crossing-tactile": {
                 "mappings": {
@@ -1450,56 +1036,6 @@
                     }
                 },
                 "question": "Was ist das für eine Kreuzung?"
-            },
-            "crossing-continue-through-red": {
-                "mappings": {
-                    "0": {
-                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
-                    },
-                    "1": {
-                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
-                    },
-                    "2": {
-                        "then": "Ein Radfahrer kann bei roter Ampel nicht geradeaus fahren"
-                    }
-                },
-                "question": "Kann ein Radfahrer bei roter Ampel geradeaus fahren?"
-            },
-            "crossing-has-island": {
-                "mappings": {
-                    "0": {
-                        "then": "Der Übergang hat eine Verkehrsinsel"
-                    },
-                    "1": {
-                        "then": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
-                    }
-                },
-                "question": "Gibt es an diesem Übergang eine Verkehrsinsel?"
-            },
-            "crossing-right-turn-through-red": {
-                "mappings": {
-                    "0": {
-                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
-                    },
-                    "1": {
-                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
-                    },
-                    "2": {
-                        "then": "Ein Radfahrer kann bei roter Ampel nicht rechts abbiegen"
-                    }
-                },
-                "question": "Kann ein Radfahrer bei roter Ampel rechts abbiegen?"
-            },
-            "crossing-button": {
-                "question": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?",
-                "mappings": {
-                    "0": {
-                        "then": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
-                    },
-                    "1": {
-                        "then": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern"
-                    }
-                }
             }
         },
         "title": {
@@ -1611,8 +1147,8 @@
                         "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
-                "render": "Der Radweg ist aus {cycleway:surface}",
-                "question": "Was ist der Belag dieses Radwegs?"
+                "question": "Was ist der Belag dieses Radwegs?",
+                "render": "Der Radweg ist aus {cycleway:surface}"
             },
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
@@ -1646,8 +1182,8 @@
                         "then": "Die Höchstgeschwindigkeit ist 90 km/h"
                     }
                 },
-                "render": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h",
-                "question": "Was ist die Höchstgeschwindigkeit auf dieser Straße?"
+                "question": "Was ist die Höchstgeschwindigkeit auf dieser Straße?",
+                "render": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h"
             },
             "Surface of the road": {
                 "mappings": {
@@ -1691,8 +1227,8 @@
                         "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
-                "render": "Der Radweg ist aus {surface}",
-                "question": "Was ist der Belag dieser Straße?"
+                "question": "Was ist der Belag dieser Straße?",
+                "render": "Der Radweg ist aus {surface}"
             },
             "Surface of the street": {
                 "mappings": {
@@ -1816,6 +1352,10 @@
                 },
                 "question": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
             },
+            "cycleways_and_roads-cycleway:buffer": {
+                "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
+                "render": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
+            },
             "is lit?": {
                 "mappings": {
                     "0": {
@@ -1833,13 +1373,9 @@
                 },
                 "question": "Ist diese Straße beleuchtet?"
             },
-            "cycleways_and_roads-cycleway:buffer": {
-                "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
-                "render": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
-            },
             "width:carriageway": {
-                "render": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>",
-                "question": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?<br/><span class='subtle'>Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein</span>"
+                "question": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?<br/><span class='subtle'>Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein</span>",
+                "render": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>"
             }
         },
         "title": {
@@ -1901,8 +1437,8 @@
                         "then": "Dies ist ein normaler automatischer Defibrillator"
                     }
                 },
-                "render": "Es gibt keine Informationen über den Gerätetyp",
-                "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
+                "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?",
+                "render": "Es gibt keine Informationen über den Gerätetyp"
             },
             "defibrillator-defibrillator:location": {
                 "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)",
@@ -2030,22 +1566,22 @@
     },
     "etymology": {
         "description": "Alle Objekte, die eine bekannte Namensherkunft haben",
+        "name": "Hat eine Namensherkunft",
         "tagRenderings": {
             "simple etymology": {
-                "render": "Benannt nach {name:etymology}",
-                "question": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>",
                 "mappings": {
                     "0": {
                         "then": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt"
                     }
-                }
+                },
+                "question": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>",
+                "render": "Benannt nach {name:etymology}"
             },
             "wikipedia-etymology": {
                 "question": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
                 "render": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             }
-        },
-        "name": "Hat eine Namensherkunft"
+        }
     },
     "food": {
         "filter": {
@@ -2078,14 +1614,15 @@
                 }
             }
         },
+        "name": "Restaurants und Fast Food",
         "presets": {
             "0": {
-                "title": "Restaurant",
-                "description": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden"
+                "description": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden",
+                "title": "Restaurant"
             },
             "1": {
-                "title": "Schnellimbiss",
-                "description": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert"
+                "description": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
+                "title": "Schnellimbiss"
             },
             "2": {
                 "title": "Pommesbude"
@@ -2128,23 +1665,6 @@
                 },
                 "question": "Ist an diesem Ort Mitnahme möglich?"
             },
-            "halal (no friture)": {
-                "mappings": {
-                    "0": {
-                        "then": "Hier gibt es keine halal Speisen"
-                    },
-                    "1": {
-                        "then": "Hier gibt es wenige halal Speisen"
-                    },
-                    "2": {
-                        "then": "Es gibt halal Speisen"
-                    },
-                    "3": {
-                        "then": "Es gibt ausschließlich halal Speisen"
-                    }
-                },
-                "question": "Gibt es im das Restaurant halal Speisen?"
-            },
             "Vegetarian (no friture)": {
                 "question": "Gibt es im das Restaurant vegetarische Speisen?"
             },
@@ -2161,6 +1681,23 @@
                     }
                 },
                 "question": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
+            },
+            "halal (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier gibt es keine halal Speisen"
+                    },
+                    "1": {
+                        "then": "Hier gibt es wenige halal Speisen"
+                    },
+                    "2": {
+                        "then": "Es gibt halal Speisen"
+                    },
+                    "3": {
+                        "then": "Es gibt ausschließlich halal Speisen"
+                    }
+                },
+                "question": "Gibt es im das Restaurant halal Speisen?"
             }
         },
         "title": {
@@ -2172,8 +1709,7 @@
                     "then": "Schnellrestaurant<i>{name}</i>"
                 }
             }
-        },
-        "name": "Restaurants und Fast Food"
+        }
     },
     "ghost_bike": {
         "name": "Geisterräder",
@@ -2274,6 +1810,10 @@
     },
     "nature_reserve": {
         "tagRenderings": {
+            "Curator": {
+                "question": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
+                "render": "{curator} ist der Pfleger dieses Naturschutzgebietes"
+            },
             "Dogs?": {
                 "mappings": {
                     "0": {
@@ -2289,22 +1829,18 @@
                 "question": "Sind Hunde in diesem Naturschutzgebiet erlaubt?"
             },
             "Email": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-                "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
+                "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "Surface area": {
+                "render": "Grundfläche: {_surface:ha}ha"
             },
             "Website": {
                 "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
             },
             "phone": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
-            },
-            "Curator": {
-                "question": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
-                "render": "{curator} ist der Pfleger dieses Naturschutzgebietes"
-            },
-            "Surface area": {
-                "render": "Grundfläche: {_surface:ha}ha"
+                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist",
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
             }
         }
     },
@@ -2323,8 +1859,8 @@
                         "then": "Eintritt kostenlos"
                     }
                 },
-                "render": "Der Besuch des Turms kostet <b>{charge}</b>",
-                "question": "Was kostet der Zugang zu diesem Turm?"
+                "question": "Was kostet der Zugang zu diesem Turm?",
+                "render": "Der Besuch des Turms kostet <b>{charge}</b>"
             },
             "Height": {
                 "question": "Wie hoch ist dieser Turm?",
@@ -2447,12 +1983,12 @@
                 "question": "Ist dieser Spielplatz nachts beleuchtet?"
             },
             "playground-max_age": {
-                "render": "Zugang nur für Kinder bis maximal {max_age}",
-                "question": "Bis zu welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
+                "question": "Bis zu welchem Alter dürfen Kinder auf diesem Spielplatz spielen?",
+                "render": "Zugang nur für Kinder bis maximal {max_age}"
             },
             "playground-min_age": {
-                "render": "Zugang nur für Kinder ab {min_age} Jahren",
-                "question": "Ab welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
+                "question": "Ab welchem Alter dürfen Kinder auf diesem Spielplatz spielen?",
+                "render": "Zugang nur für Kinder ab {min_age} Jahren"
             },
             "playground-opening_hours": {
                 "mappings": {
@@ -2473,8 +2009,8 @@
                 "render": "Betrieben von {operator}"
             },
             "playground-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>",
-                "question": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?"
+                "question": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "playground-surface": {
                 "mappings": {
@@ -2630,6 +2166,8 @@
         }
     },
     "shops": {
+        "description": "Ein Geschäft",
+        "name": "Geschäft",
         "presets": {
             "0": {
                 "description": "Ein neues Geschäft hinzufügen",
@@ -2637,9 +2175,18 @@
             }
         },
         "tagRenderings": {
+            "shops-email": {
+                "question": "Wie ist die Email-Adresse dieses Geschäfts?"
+            },
+            "shops-name": {
+                "question": "Wie ist der Name dieses Geschäfts?"
+            },
+            "shops-opening_hours": {
+                "question": "Wie sind die Öffnungszeiten dieses Geschäfts?"
+            },
             "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>",
-                "question": "Wie ist die Telefonnummer?"
+                "question": "Wie ist die Telefonnummer?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "shops-shop": {
                 "mappings": {
@@ -2671,15 +2218,6 @@
             "shops-website": {
                 "question": "Wie lautet die Webseite dieses Geschäfts?",
                 "render": "<a href='{website}'>{website}</a>"
-            },
-            "shops-opening_hours": {
-                "question": "Wie sind die Öffnungszeiten dieses Geschäfts?"
-            },
-            "shops-email": {
-                "question": "Wie ist die Email-Adresse dieses Geschäfts?"
-            },
-            "shops-name": {
-                "question": "Wie ist der Name dieses Geschäfts?"
             }
         },
         "title": {
@@ -2692,9 +2230,7 @@
                 }
             },
             "render": "Geschäft"
-        },
-        "name": "Geschäft",
-        "description": "Ein Geschäft"
+        }
     },
     "slow_roads": {
         "tagRenderings": {
@@ -2775,6 +2311,9 @@
                 },
                 "question": "Muss man einen Termin vereinbaren, um diesen Sportplatz zu benutzen?"
             },
+            "sport_pitch-email": {
+                "question": "Wie ist die Email-Adresse des Betreibers?"
+            },
             "sport_pitch-opening_hours": {
                 "mappings": {
                     "1": {
@@ -2782,6 +2321,9 @@
                     }
                 },
                 "question": "Wann ist dieser Sportplatz zugänglich?"
+            },
+            "sport_pitch-phone": {
+                "question": "Wie ist die Telefonnummer des Betreibers?"
             },
             "sport_pitch-sport": {
                 "mappings": {
@@ -2825,14 +2367,8 @@
                         "then": "Die Oberfläche ist <b>Beton</b>"
                     }
                 },
-                "render": "Die Oberfläche ist <b>{surface}</b>",
-                "question": "Was ist die Oberfläche dieses Sportplatzes?"
-            },
-            "sport_pitch-email": {
-                "question": "Wie ist die Email-Adresse des Betreibers?"
-            },
-            "sport_pitch-phone": {
-                "question": "Wie ist die Telefonnummer des Betreibers?"
+                "question": "Was ist die Oberfläche dieses Sportplatzes?",
+                "render": "Die Oberfläche ist <b>{surface}</b>"
             }
         },
         "title": {
@@ -2878,6 +2414,20 @@
                 "question": "Wer betreibt diese CCTV Kamera?",
                 "render": "Betrieben von {operator}"
             },
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Überwacht wird ein öffentlicher Bereich, z. B. eine Straße, eine Brücke, ein Platz, ein Park, ein Bahnhof, ein öffentlicher Korridor oder Tunnel,..."
+                    },
+                    "1": {
+                        "then": "Ein privater Außenbereich wird überwacht (z. B. ein Parkplatz, eine Tankstelle, ein Innenhof, ein Eingang, eine private Einfahrt, ...)"
+                    },
+                    "2": {
+                        "then": "Ein privater Innenbereich wird überwacht, z. B. ein Geschäft, eine private Tiefgarage, ..."
+                    }
+                },
+                "question": "Um was für eine Überwachungskamera handelt es sich"
+            },
             "Surveillance:zone": {
                 "mappings": {
                     "0": {
@@ -2903,8 +2453,6 @@
                 "render": " Überwacht ein/e {surveillance:zone}"
             },
             "camera:mount": {
-                "question": "Wie ist diese Kamera montiert?",
-                "render": "Montageart: {mount}",
                 "mappings": {
                     "0": {
                         "then": "Diese Kamera ist an einer Wand montiert"
@@ -2915,21 +2463,9 @@
                     "2": {
                         "then": "Diese Kamera ist an der Decke montiert"
                     }
-                }
-            },
-            "Surveillance type: public, outdoor, indoor": {
-                "question": "Um was für eine Überwachungskamera handelt es sich",
-                "mappings": {
-                    "0": {
-                        "then": "Überwacht wird ein öffentlicher Bereich, z. B. eine Straße, eine Brücke, ein Platz, ein Park, ein Bahnhof, ein öffentlicher Korridor oder Tunnel,..."
-                    },
-                    "1": {
-                        "then": "Ein privater Außenbereich wird überwacht (z. B. ein Parkplatz, eine Tankstelle, ein Innenhof, ein Eingang, eine private Einfahrt, ...)"
-                    },
-                    "2": {
-                        "then": "Ein privater Innenbereich wird überwacht, z. B. ein Geschäft, eine private Tiefgarage, ..."
-                    }
-                }
+                },
+                "question": "Wie ist diese Kamera montiert?",
+                "render": "Montageart: {mount}"
             },
             "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
                 "question": "In welche Himmelsrichtung ist diese Kamera ausgerichtet?"
@@ -3018,6 +2554,25 @@
                 "question": "Wie viel muss man für diese Toiletten bezahlen?",
                 "render": "Die Gebühr beträgt {charge}"
             },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Toilette verfügt über ein Waschbecken"
+                    },
+                    "1": {
+                        "then": "Diese Toilette verfügt über <b>kein</b> Waschbecken"
+                    }
+                },
+                "question": "Verfügt diese Toilette über ein Waschbecken?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "1": {
+                        "then": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
+                    }
+                },
+                "question": "Muss man für diese Toilette sein eigenes Toilettenpapier mitbringen?"
+            },
             "toilets-changing-table": {
                 "mappings": {
                     "0": {
@@ -3067,25 +2622,6 @@
                     }
                 },
                 "question": "Gibt es eine Toilette für Rollstuhlfahrer?"
-            },
-            "toilet-has-paper": {
-                "question": "Muss man für diese Toilette sein eigenes Toilettenpapier mitbringen?",
-                "mappings": {
-                    "1": {
-                        "then": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
-                    }
-                }
-            },
-            "toilet-handwashing": {
-                "question": "Verfügt diese Toilette über ein Waschbecken?",
-                "mappings": {
-                    "0": {
-                        "then": "Diese Toilette verfügt über ein Waschbecken"
-                    },
-                    "1": {
-                        "then": "Diese Toilette verfügt über <b>kein</b> Waschbecken"
-                    }
-                }
             }
         },
         "title": {
@@ -3147,6 +2683,29 @@
                 },
                 "question": "Ist dies ein Nadelbaum oder ein Laubbaum?"
             },
+            "tree-denotation": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Baum ist aufgrund seiner Größe oder seiner markanten Lage bedeutsam. Er ist nützlich zur Orientierung."
+                    },
+                    "1": {
+                        "then": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört."
+                    },
+                    "2": {
+                        "then": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage."
+                    },
+                    "3": {
+                        "then": "Der Baum steht in einem Park oder ähnlichem (Friedhof, Schulgelände, ...)."
+                    },
+                    "5": {
+                        "then": "Dieser Baum steht entlang einer Straße."
+                    },
+                    "7": {
+                        "then": "Dieser Baum steht außerhalb eines städtischen Gebiets."
+                    }
+                },
+                "question": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft."
+            },
             "tree-height": {
                 "mappings": {
                     "0": {
@@ -3204,29 +2763,6 @@
             },
             "tree_node-wikidata": {
                 "question": "Was ist das passende Wikidata Element zu diesem Baum?"
-            },
-            "tree-denotation": {
-                "mappings": {
-                    "0": {
-                        "then": "Der Baum ist aufgrund seiner Größe oder seiner markanten Lage bedeutsam. Er ist nützlich zur Orientierung."
-                    },
-                    "1": {
-                        "then": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört."
-                    },
-                    "2": {
-                        "then": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage."
-                    },
-                    "3": {
-                        "then": "Der Baum steht in einem Park oder ähnlichem (Friedhof, Schulgelände, ...)."
-                    },
-                    "5": {
-                        "then": "Dieser Baum steht entlang einer Straße."
-                    },
-                    "7": {
-                        "then": "Dieser Baum steht außerhalb eines städtischen Gebiets."
-                    }
-                },
-                "question": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft."
             }
         },
         "title": {
@@ -3256,6 +2792,7 @@
         }
     },
     "visitor_information_centre": {
+        "description": "Ein Besucherzentrum bietet Informationen über eine bestimmte Attraktion oder Sehenswürdigkeit, an der es sich befindet.",
         "name": "Besucherinformationszentrum",
         "title": {
             "mappings": {
@@ -3264,8 +2801,7 @@
                 }
             },
             "render": "{name}"
-        },
-        "description": "Ein Besucherzentrum bietet Informationen über eine bestimmte Attraktion oder Sehenswürdigkeit, an der es sich befindet."
+        }
     },
     "waste_basket": {
         "description": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
@@ -3283,6 +2819,20 @@
             }
         },
         "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Abfalleimer verfügt über einen Spender für (Hunde-)Kotbeutel"
+                    },
+                    "1": {
+                        "then": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
+                    },
+                    "2": {
+                        "then": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
+                    }
+                },
+                "question": "Verfügt dieser Abfalleimer über einen Spender für (Hunde-)Kotbeutel?"
+            },
             "waste-basket-waste-types": {
                 "mappings": {
                     "0": {
@@ -3305,20 +2855,6 @@
                     }
                 },
                 "question": "Um was für einen Abfalleimer handelt es sich?"
-            },
-            "dispensing_dog_bags": {
-                "question": "Verfügt dieser Abfalleimer über einen Spender für (Hunde-)Kotbeutel?",
-                "mappings": {
-                    "0": {
-                        "then": "Dieser Abfalleimer verfügt über einen Spender für (Hunde-)Kotbeutel"
-                    },
-                    "1": {
-                        "then": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
-                    },
-                    "2": {
-                        "then": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
-                    }
-                }
             }
         },
         "title": {

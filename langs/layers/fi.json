@@ -1,4 +1,19 @@
 {
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Taideteos"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Taideteos <i>{name}</i>"
+                }
+            },
+            "render": "Taideteos"
+        }
+    },
     "bench": {
         "name": "Penkit",
         "presets": {
@@ -100,21 +115,6 @@
         "name": "Haamupyörä",
         "title": {
             "render": "Haamupyörä"
-        }
-    },
-    "artwork": {
-        "presets": {
-            "0": {
-                "title": "Taideteos"
-            }
-        },
-        "title": {
-            "render": "Taideteos",
-            "mappings": {
-                "0": {
-                    "then": "Taideteos <i>{name}</i>"
-                }
-            }
         }
     },
     "shops": {

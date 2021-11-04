@@ -2,21 +2,26 @@
   "id": "uk_addresses",
   "title": {
     "en": "UK Addresses",
-    "de": "Adressen in Großbritannien"
+    "de": "Adressen in Großbritannien",
+    "it": "Indirizzi UK"
   },
   "shortDescription": {
     "en": "Help to build an open dataset of UK addresses",
-    "de": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen"
+    "de": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
+    "it": "Aiuta a costruire un dataset libero per gli indirizzi nel Regno Unito"
   },
   "description": {
     "en": "Contribute to OpenStreetMap by filling out address information",
     "nl": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
-    "de": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen"
+    "de": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
+    "it": "Contribuisci a OpenStreetMap inserendo le informazioni sull’indirizzo"
   },
   "language": [
     "en",
     "de",
-    "nl"
+    "it",
+    "nl",
+    "nb_NO"
   ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
@@ -41,7 +46,8 @@
       "defaultState": false,
       "name": {
         "en": "Property boundaries by osmuk.org",
-        "de": "Grenzverläufe gemäß osmuk.org"
+        "de": "Grenzverläufe gemäß osmuk.org",
+        "it": "Confini delle proprietà di osmuk.org"
       }
     }
   ],
@@ -119,7 +125,9 @@
       "id": "addresses",
       "name": {
         "en": "Known addresses in OSM",
-        "de": "Bekannte Adressen in OSM"
+        "de": "Bekannte Adressen in OSM",
+        "it": "Indirizzo presente su OSM",
+        "nb_NO": "Kjente adresser i OSM"
       },
       "minzoom": 18,
       "source": {
@@ -140,20 +148,25 @@
       "title": {
         "render": {
           "en": "Known address",
-          "de": "Bekannte Adresse"
+          "de": "Bekannte Adresse",
+          "it": "Indirizzo conosciuto",
+          "nb_NO": "Kjent adresse"
         }
       },
       "description": {
         "en": "Addresses",
         "nl": "Adressen",
-        "de": "Adressen"
+        "de": "Adressen",
+        "it": "Indirizzi",
+        "nb_NO": "Adresser"
       },
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation_osm",
           "render": {
             "en": "This address is saved in OpenStreetMap",
-            "de": "Diese Adresse ist in OpenStreetMap gespeichert"
+            "de": "Diese Adresse ist in OpenStreetMap gespeichert",
+            "it": "Questo indirizzo è salvato su OpenStreetMap"
           }
         },
         {
@@ -161,11 +174,13 @@
           "render": {
             "en": "The housenumber is <b>{addr:housenumber}</b>",
             "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
-            "de": "Die Hausnummer ist <b>{addr:housenumber}</b>"
+            "de": "Die Hausnummer ist <b>{addr:housenumber}</b>",
+            "it": "Il numero civico è <b>{addr:housenumber}</b>"
           },
           "question": {
             "en": "What is the number of this house?",
-            "de": "Wie lautet die Nummer dieses Hauses?"
+            "de": "Wie lautet die Nummer dieses Hauses?",
+            "it": "Qual è il numero civico di questa casa?"
           },
           "freeform": {
             "key": "addr:housenumber",
@@ -183,7 +198,8 @@
               "then": {
                 "en": "This building has no house number",
                 "nl": "Dit gebouw heeft geen huisnummer",
-                "de": "Dieses Gebäude hat keine Hausnummer"
+                "de": "Dieses Gebäude hat keine Hausnummer",
+                "it": "Questo edificio non ha indirizzo"
               }
             }
           ]
@@ -192,11 +208,13 @@
           "id": "uk_addresses_street",
           "render": {
             "en": "This address is in street <b>{addr:street}</b>",
-            "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
+            "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
+            "it": "L’indirizzo è in via <b>{addr:street}</b>"
           },
           "question": {
             "en": "What street is this address located in?",
-            "de": "In welcher Straße befindet sich diese Adresse?"
+            "de": "In welcher Straße befindet sich diese Adresse?",
+            "it": "Qual è la via in cui si trova?"
           },
           "freeform": {
             "key": "addr:street"

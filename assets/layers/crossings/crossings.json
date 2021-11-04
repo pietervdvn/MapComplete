@@ -254,7 +254,8 @@
                     "if": "tactile_paving=incorrect",
                     "then": {
                         "en": "This crossing has tactile paving, but is not correct",
-                        "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
+                        "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is.",
+                        "de": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt"
                     },
                     "hideInAnswer": true
                 }
@@ -278,7 +279,8 @@
                     "if": "button_operated=yes",
                     "then": {
                         "en": "This traffic light has a button to request green light",
-                        "nl": "Dit verkeerslicht heeft een knop voor groen licht"
+                        "nl": "Dit verkeerslicht heeft een knop voor groen licht",
+                        "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
                     }
                 },
                 {
@@ -286,7 +288,7 @@
                     "then": {
                         "en": "This traffic light does not have a button to request green light",
                         "nl": "Dit verkeerlicht heeft geen knop voor groen licht",
-                        "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern."
+                        "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern"
                     }
                 }
             ]

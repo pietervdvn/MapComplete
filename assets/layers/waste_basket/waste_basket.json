@@ -4,7 +4,8 @@
         "en": "Waste Basket",
         "nl": "Vuilnisbak",
         "ru": "Контейнер для мусора",
-        "de": "Abfalleimer"
+        "de": "Abfalleimer",
+        "eo": "Rubujo"
     },
     "minzoom": 17,
     "source": {
@@ -82,7 +83,8 @@
                     "if": "waste=sharps",
                     "then": {
                         "en": "A waste basket for needles and other sharp objects",
-                        "nl": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
+                        "nl": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen",
+                        "de": "Ein Abfalleimer für Nadeln und andere scharfe Gegenstände"
                     }
                 }
             ]
@@ -159,7 +161,8 @@
                     "en": "Waste Basket",
                     "nl": "Vuilnisbak",
                     "ru": "Контейнер для мусора",
-                    "de": "Abfalleimer"
+                    "de": "Abfalleimer",
+                    "eo": "Rubujo"
                 }
             }
         ]
@@ -176,7 +179,8 @@
                 "en": "Waste Basket",
                 "nl": "Vuilnisbak",
                 "ru": "Контейнер для мусора",
-                "de": "Abfalleimer"
+                "de": "Abfalleimer",
+                "eo": "Rubujo"
             },
             "presiceInput": {
                 "preferredBackground": "photo"

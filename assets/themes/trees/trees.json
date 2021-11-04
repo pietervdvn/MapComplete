@@ -9,7 +9,8 @@
     "ja": "樹木",
     "zh_Hant": "樹木",
     "pl": "Drzewa",
-    "de": "Bäume"
+    "de": "Bäume",
+    "nb_NO": "Trær"
   },
   "shortDescription": {
     "nl": "Breng bomen in kaart",
@@ -20,7 +21,8 @@
     "zh_Hant": "所有樹木的地圖",
     "ru": "Карта деревьев",
     "pl": "Sporządzić mapę wszystkich drzew",
-    "de": "Kartieren Sie alle Bäume"
+    "de": "Kartieren Sie alle Bäume",
+    "nb_NO": "Kartlegg alle trærne"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -30,7 +32,8 @@
     "ja": "すべての樹木をマッピングします!",
     "zh_Hant": "繪製所有樹木！",
     "ru": "Нанесите все деревья на карту!",
-    "de": "Kartieren Sie alle Bäume!"
+    "de": "Kartieren Sie alle Bäume!",
+    "nb_NO": "Kartlegg trærne."
   },
   "language": [
     "nl",
@@ -41,7 +44,8 @@
     "ja",
     "zh_Hant",
     "pl",
-    "de"
+    "de",
+    "nb_NO"
   ],
   "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",

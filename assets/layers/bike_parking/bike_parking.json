@@ -402,7 +402,8 @@
                 "zh_Hant": "{access}",
                 "fi": "{access}",
                 "pt_BR": "{access}",
-                "pt": "{access}"
+                "pt": "{access}",
+                "eo": "{access}"
             },
             "freeform": {
                 "key": "access",

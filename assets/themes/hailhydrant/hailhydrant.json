@@ -5,21 +5,26 @@
     "ja": "消火栓、消火器、消防署、救急ステーションです。",
     "zh_Hant": "消防栓、滅火器、消防隊、以及急救站。",
     "ru": "Пожарные гидранты, огнетушители, пожарные станции и станции скорой помощи.",
-    "fr": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers."
+    "fr": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
+    "it": "Idranti, estintori, caserme dei vigili del fuoco e stazioni delle ambulanze.",
+    "nb_NO": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
   },
   "shortDescription": {
     "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
     "ja": "消火栓、消火器、消防署消火栓、消火器、消防署、および救急ステーションを表示します。",
     "zh_Hant": "顯示消防栓、滅火器、消防隊與急救站的地圖。",
     "ru": "Карта пожарных гидрантов, огнетушителей, пожарных станций и станций скорой помощи.",
-    "fr": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers."
+    "fr": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
+    "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
+    "it": "Carta che mostra gli idranti, gli estintori, le caserme dei vigili del fuoco e le stazioni delle ambulanze."
   },
   "description": {
-    "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
+    "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.\n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.\n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
     "ja": "このマップでは、お気に入りの近隣にある消火栓、消防署、救急ステーション、消火器を検索して更新できます。\n\n正確な位置を追跡し(モバイルのみ)、左下コーナーで関連するレイヤを選択できます。このツールを使用して、マップにピン(注視点)を追加または編集したり、利用可能な質問に答えることによって追加の詳細を提供することもできます。\n\nすべての変更は自動的にOpenStreetMapのグローバルデータベースに保存され、他のユーザが自由に再利用できます。",
     "zh_Hant": "在這份地圖上面你可以在你喜愛的社區尋找與更新消防栓、消防隊、急救站與滅火器。\n\n你可以追蹤確切位置 (只有行動版) 以及在左下角選擇與你相關的圖層。你也可以使用這工具新增或編輯地圖上的釘子 (興趣點)，以及透過回答一些問題提供額外的資訊。\n\n所有你做出的變動都會自動存到開放街圖這個全球資料庫，而且能自由讓其他人取用。",
     "fr": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.<br/>Les options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.<br/>Toutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres.",
-    "de": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden."
+    "de": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
+    "it": "In questa cartina puoi vedere e aggiornare idranti, stazioni dei pompieri, stazioni delle ambulanze ed estintori del tuo quartiere preferito.\n\nPuoi seguire la tua posizione precisa (solo su cellulare) e selezionare i livelli che ti interessano nell’angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare i PDI sulla mappa e fornire ulteriori dettagli rispondendo alle domande.\n\nTutte le modifiche che farai verranno automaticamente salvate nel database globale di OpenStreetMap e potranno essere riutilizzate liberamente da tutti."
   },
   "language": [
     "en",
@@ -27,10 +32,11 @@
     "zh_Hant",
     "ru",
     "fr",
-    "de",
-    "nb_NO",
     "it",
-    "id"
+    "nb_NO",
+    "de",
+    "id",
+    "eo"
   ],
   "maintainer": "Erwin Olario",
   "icon": "./assets/themes/hailhydrant/logo.svg",
@@ -50,7 +56,8 @@
         "nb_NO": "Kart over brannhydranter",
         "ru": "Карта пожарных гидрантов",
         "fr": "Carte des bornes incendie",
-        "de": "Karte der Hydranten"
+        "de": "Karte der Hydranten",
+        "it": "Mappa degli idranti"
       },
       "minzoom": 14,
       "source": {
@@ -67,7 +74,8 @@
           "ja": "消火栓",
           "nb_NO": "Brannhydrant",
           "fr": "Bornes incendie",
-          "de": "Hydrant"
+          "de": "Hydrant",
+          "it": "Idrante"
         }
       },
       "description": {
@@ -77,7 +85,8 @@
         "nb_NO": "Kartlag for å vise brannhydranter.",
         "ru": "Слой карты, отображающий пожарные гидранты.",
         "fr": "Couche des bornes incendie.",
-        "de": "Kartenebene zur Anzeige von Hydranten."
+        "de": "Kartenebene zur Anzeige von Hydranten.",
+        "it": "Livello della mappa che mostra gli idranti antincendio."
       },
       "tagRenderings": [
         {
@@ -88,7 +97,8 @@
             "nb_NO": "Hvilken farge har brannhydranten?",
             "ru": "Какого цвета гидрант?",
             "fr": "Quelle est la couleur de la borne ?",
-            "de": "Welche Farbe hat der Hydrant?"
+            "de": "Welche Farbe hat der Hydrant?",
+            "it": "Qual è il colore dell’idrante?"
           },
           "render": {
             "en": "The hydrant color is {colour}",
@@ -96,7 +106,8 @@
             "nb_NO": "Brannhydranter er {colour}",
             "ru": "Цвет гидранта {colour}",
             "fr": "La borne est {colour}",
-            "de": "Der Hydrant hat die Farbe {colour}"
+            "de": "Der Hydrant hat die Farbe {colour}",
+            "it": "Il colore dell’idrante è {colour}"
           },
           "freeform": {
             "key": "colour"
@@ -113,7 +124,8 @@
                 "ja": "消火栓の色は不明です。",
                 "ru": "Цвет гидранта не определён.",
                 "fr": "La borne est de couleur inconnue.",
-                "de": "Die Farbe des Hydranten ist unbekannt."
+                "de": "Die Farbe des Hydranten ist unbekannt.",
+                "it": "Il colore dell’idrante è sconosciuto."
               },
               "hideInAnswer": true
             },
@@ -128,7 +140,8 @@
                 "ja": "消火栓の色は黄色です。",
                 "ru": "Гидрант жёлтого цвета.",
                 "fr": "La borne est jaune.",
-                "de": "Die Farbe des Hydranten ist gelb."
+                "de": "Die Farbe des Hydranten ist gelb.",
+                "it": "Il colore dell’idrante è giallo."
               }
             },
             {
@@ -196,7 +209,8 @@
                 "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pillar type.",
                 "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> ピラー型。",
                 "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier.",
-                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
+                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart.",
+                "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Soprasuolo."
               }
             },
             {
@@ -209,7 +223,8 @@
                 "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Pipe type.",
                 "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> パイプ型。",
                 "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau.",
-                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
+                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp.",
+                "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tubo."
               }
             },
             {
@@ -224,7 +239,8 @@
                 "ru": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Тип стены.",
                 "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> 壁型。",
                 "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural.",
-                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
+                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp.",
+                "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> A muro."
               }
             },
             {
@@ -237,7 +253,8 @@
                 "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Underground type.",
                 "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" />地下式。",
                 "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré.",
-                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
+                "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp.",
+                "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Sottosuolo."
               }
             }
           ]
@@ -248,13 +265,15 @@
             "en": "Update the lifecycle status of the hydrant.",
             "ja": "消火栓のライフサイクルステータスを更新します。",
             "fr": "Mettre à jour l’état de la borne.",
-            "de": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten."
+            "de": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten.",
+            "it": "Aggiorna lo stato di funzionamento dell’idrante."
           },
           "render": {
             "en": "Lifecycle status",
             "ja": "ライフサイクルステータス",
             "fr": "État",
-            "de": "Lebenszyklus-Status"
+            "de": "Lebenszyklus-Status",
+            "it": "Stato di funzionamento"
           },
           "freeform": {
             "key": "disused:emergency"
@@ -271,7 +290,8 @@
                 "ja": "消火栓は(完全にまたは部分的に)機能しています。",
                 "ru": "Гидрант (полностью или частично) в рабочем состоянии.",
                 "fr": "La borne est en état, ou partiellement en état, de fonctionner.",
-                "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb."
+                "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb.",
+                "it": "L’idrante è (parzialmente o completamente) funzionante."
               }
             },
             {
@@ -285,7 +305,8 @@
                 "en": "The hydrant is unavailable.",
                 "ja": "消火栓は使用できません。",
                 "fr": "La borne est hors-service.",
-                "de": "Der Hydrant ist nicht verfügbar."
+                "de": "Der Hydrant ist nicht verfügbar.",
+                "it": "L’idrante è fuori servizio."
               }
             },
             {
@@ -300,7 +321,8 @@
                 "ja": "消火栓が撤去されました。",
                 "ru": "Гидрант демонтирован.",
                 "fr": "La borne a été retirée.",
-                "de": "Der Hydrant wurde entfernt."
+                "de": "Der Hydrant wurde entfernt.",
+                "it": "L’idrante è stato rimosso."
               }
             }
           ]
@@ -330,13 +352,15 @@
             "ja": "消火栓",
             "nb_NO": "Brannhydrant",
             "fr": "Borne incendie",
-            "de": "Löschwasser-Hydrant"
+            "de": "Löschwasser-Hydrant",
+            "it": "Idrante antincendio"
           },
           "description": {
             "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
             "ja": "消火栓は消防士が水を汲み上げることができる接続点です。地下にあるかもしれません。",
             "fr": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
-            "de": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden."
+            "de": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
+            "it": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra."
           }
         }
       ],
@@ -350,7 +374,8 @@
         "nb_NO": "Kart over brannhydranter",
         "ru": "Карта огнетушителей.",
         "fr": "Couche des extincteurs.",
-        "de": "Karte mit Feuerlöschern."
+        "de": "Karte mit Feuerlöschern.",
+        "it": "Cartina degli estintori."
       },
       "minzoom": 14,
       "source": {
@@ -367,7 +392,8 @@
           "ja": "消火器",
           "nb_NO": "Brannslokkere",
           "fr": "Exctincteurs",
-          "de": "Feuerlöscher"
+          "de": "Feuerlöscher",
+          "it": "Estintori"
         }
       },
       "description": {
@@ -377,7 +403,8 @@
         "nb_NO": "Kartlag for å vise brannslokkere.",
         "ru": "Слой карты, отображающий огнетушители.",
         "fr": "Couche des lances à incendie.",
-        "de": "Kartenebene zur Anzeige von Hydranten."
+        "de": "Kartenebene zur Anzeige von Hydranten.",
+        "it": "Livello della mappa che mostra gli idranti antincendio."
       },
       "tagRenderings": [
         {
@@ -387,14 +414,17 @@
             "ja": "場所:{location}",
             "ru": "Местоположение: {location}",
             "fr": "Emplacement : {location}",
-            "de": "Standort: {location}"
+            "de": "Standort: {location}",
+            "eo": "Loko: {location}",
+            "it": "Posizione: {location}"
           },
           "question": {
             "en": "Where is it positioned?",
             "ja": "どこにあるんですか?",
             "ru": "Где это расположено?",
             "fr": "Où est-elle positionnée ?",
-            "de": "Wo befindet er sich?"
+            "de": "Wo befindet er sich?",
+            "it": "Dove è posizionato?"
           },
           "mappings": [
             {
@@ -408,7 +438,8 @@
                 "ja": "屋内にある。",
                 "ru": "Внутри.",
                 "fr": "Intérieur.",
-                "de": "Im Innenraum vorhanden."
+                "de": "Im Innenraum vorhanden.",
+                "it": "Si trova all’interno."
               }
             },
             {
@@ -422,7 +453,8 @@
                 "ja": "屋外にある。",
                 "ru": "Снаружи.",
                 "fr": "Extérieur.",
-                "de": "Im Außenraum vorhanden."
+                "de": "Im Außenraum vorhanden.",
+                "it": "Si trova all’esterno."
               }
             }
           ],
@@ -455,14 +487,16 @@
             "nb_NO": "Brannslukker",
             "ru": "Огнетушитель",
             "fr": "Extincteur",
-            "de": "Feuerlöscher"
+            "de": "Feuerlöscher",
+            "it": "Estintore"
           },
           "description": {
             "en": "A fire extinguisher is a small, portable device used to stop a fire",
             "ja": "消火器は、火災を止めるために使用される小型で携帯可能な装置である",
             "ru": "Огнетушитель - небольшое переносное устройство для тушения огня",
             "fr": "Un extincteur est un appareil portatif servant à éteindre un feu",
-            "de": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen"
+            "de": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
+            "it": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio"
           }
         }
       ],
@@ -526,7 +560,8 @@
             "ja": "このステーションの名前は{name}です。",
             "it": "Questa caserma si chiama {name}.",
             "ru": "Эта часть называется {name}.",
-            "fr": "Cette station s’appelle {name}."
+            "fr": "Cette station s’appelle {name}.",
+            "nb_NO": "Denne stasjonen heter {name}."
           }
         },
         {
@@ -545,7 +580,8 @@
             "en": "This station is along a highway called {addr:street}.",
             "ja": "{addr:street} 沿いにあります。",
             "ru": "Часть расположена вдоль шоссе {addr:street}.",
-            "fr": "La station fait partie de la {addr:street}."
+            "fr": "La station fait partie de la {addr:street}.",
+            "it": "La stazione si trova in una strada chiamata {addr:street}."
           }
         },
         {
@@ -554,7 +590,8 @@
             "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
             "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
             "ru": "Где расположена часть? (напр., название населённого пункта)",
-            "fr": "Dans quelle localité la station est-elle située ?"
+            "fr": "Dans quelle localité la station est-elle située ?",
+            "it": "In che località si trova la stazione? (ad es. quartiere, paese o città)"
           },
           "freeform": {
             "key": "addr:place"
@@ -563,7 +600,8 @@
             "en": "This station is found within {addr:place}.",
             "ja": "このステーションは{addr:place}にあります。",
             "ru": "Эта часть расположена в {addr:place}.",
-            "fr": "La station fait partie de {addr:place}."
+            "fr": "La station fait partie de {addr:place}.",
+            "it": "La stazione si trova a {addr:place}."
           }
         },
         {
@@ -571,12 +609,14 @@
           "question": {
             "en": "What agency operates this station?",
             "ja": "このステーションを運営しているのはどこですか?",
-            "fr": "Quel est l’exploitant de la station ?"
+            "fr": "Quel est l’exploitant de la station ?",
+            "it": "Quale agenzia gestisce questa stazione?"
           },
           "render": {
             "en": "This station is operated by {operator}.",
             "ja": "このステーションは{operator}によって運営されています。",
-            "fr": "Cette station est opérée par {operator}."
+            "fr": "Cette station est opérée par {operator}.",
+            "it": "Questa stazione è gestita da {operator}."
           },
           "freeform": {
             "key": "operator"
@@ -592,7 +632,9 @@
               "then": {
                 "en": "Bureau of Fire Protection",
                 "ja": "消防局(消防庁)",
-                "fr": "Brigade de Protection du Feu"
+                "fr": "Brigade de Protection du Feu",
+                "de": "Brandschutzbehörde",
+                "it": "Servizio antincendio governativo"
               }
             }
           ]
@@ -602,12 +644,14 @@
           "question": {
             "en": "How is the station operator classified?",
             "ja": "ステーションの運営の分類は?",
-            "fr": "Quel est le type d’exploitant ?"
+            "fr": "Quel est le type d’exploitant ?",
+            "it": "Com’è classificato il gestore di questa stazione?"
           },
           "render": {
             "en": "The operator is a(n) {operator:type} entity.",
             "ja": "運営者は、{operator:type} です。",
-            "fr": "L’exploitant est de type {operator:type}."
+            "fr": "L’exploitant est de type {operator:type}.",
+            "it": "Il gestore è un ente {operator:type}."
           },
           "freeform": {
             "key": "operator:type"
@@ -622,7 +666,9 @@
               "then": {
                 "en": "The station is operated by the government.",
                 "ja": "ステーションは自治体が運営する。",
-                "fr": "La station est opérée par le gouvernement."
+                "fr": "La station est opérée par le gouvernement.",
+                "it": "Questa stazione è gestita dal governo.",
+                "nb_NO": "Stasjonen drives av myndighetene."
               }
             },
             {
@@ -634,7 +680,8 @@
               "then": {
                 "en": "The station is operated by a community-based, or informal organization.",
                 "ja": "任意団体やコミュニティが運営しているステーションである。",
-                "fr": "La station est opérée par une organisation informelle."
+                "fr": "La station est opérée par une organisation informelle.",
+                "it": "Questa stazione è gestita dalla comunità oppure un’associazione informale."
               }
             },
             {
@@ -646,7 +693,8 @@
               "then": {
                 "en": "The station is operated by a formal group of volunteers.",
                 "ja": "公益団体が運営しているステーションである。",
-                "fr": "La station est opérée par un groupe officiel de bénévoles."
+                "fr": "La station est opérée par un groupe officiel de bénévoles.",
+                "it": "Questa stazione è gestita da un gruppo di volontari ufficiale."
               }
             },
             {
@@ -658,7 +706,8 @@
               "then": {
                 "en": "The station is privately operated.",
                 "ja": "個人が運営しているステーションである。",
-                "fr": "La station est opérée par un groupe privé."
+                "fr": "La station est opérée par un groupe privé.",
+                "it": "Questa stazione è gestita da privati."
               }
             }
           ]
@@ -687,13 +736,16 @@
             "ja": "消防署",
             "ru": "Пожарная часть",
             "fr": "Caserne de pompiers",
-            "de": "Feuerwache"
+            "de": "Feuerwache",
+            "it": "Caserma dei vigili del fuoco",
+            "nb_NO": "Brannstasjon"
           },
           "description": {
             "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
             "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
             "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
-            "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind."
+            "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+            "it": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra."
           }
         }
       ]
@@ -704,7 +756,9 @@
         "en": "Map of ambulance stations",
         "ja": "救急ステーションの地図",
         "ru": "Карта станций скорой помощи",
-        "fr": "Couche des ambulances"
+        "fr": "Couche des ambulances",
+        "de": "Karte der Rettungswachen",
+        "it": "Carta delle stazioni delle ambulanze"
       },
       "minzoom": 12,
       "source": {
@@ -719,13 +773,17 @@
           "en": "Ambulance Station",
           "ru": "Станция скорой помощи",
           "ja": "救急ステーション",
-          "fr": "Station d’ambulances"
+          "fr": "Station d’ambulances",
+          "de": "Rettungswache",
+          "it": "Stazione delle ambulanze"
         }
       },
       "description": {
         "en": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
         "ja": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。",
-        "fr": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical."
+        "fr": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
+        "de": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
+        "it": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali."
       },
       "tagRenderings": [
         {
@@ -737,13 +795,15 @@
             "en": "What is the name of this ambulance station?",
             "ja": "この救急ステーションの名前は何ですか?",
             "ru": "Как называется эта станция скорой помощи?",
-            "fr": "Quel est le nom de cette station ?"
+            "fr": "Quel est le nom de cette station ?",
+            "it": "Qual è il nome di questa stazione delle ambulanze?"
           },
           "render": {
             "en": "This station is called {name}.",
             "ja": "このステーションの名前は{name}です。",
             "ru": "Эта станция называется {name}.",
-            "fr": "Cette station s’appelle {name}."
+            "fr": "Cette station s’appelle {name}.",
+            "it": "Questa stazione è chiamata {name}."
           }
         },
         {
@@ -755,13 +815,15 @@
             "en": " What is the street name where the station located?",
             "ja": " 救急ステーションの所在地はどこですか?",
             "ru": " По какому адресу расположена эта станция?",
-            "fr": " Quel est le nom de la rue où la station se situe ?"
+            "fr": " Quel est le nom de la rue où la station se situe ?",
+            "it": " Come si chiama la strada in cui si trova questa stazione?"
           },
           "render": {
             "en": "This station is along a highway called {addr:street}.",
             "ja": "{addr:street} 沿いにあります。",
             "ru": "Эта станция расположена вдоль шоссе {addr:street}.",
-            "fr": "La station fait partie de {addr:street}."
+            "fr": "La station fait partie de {addr:street}.",
+            "it": "Questa stazione si trova in {addr:street}."
           }
         },
         {
@@ -770,7 +832,8 @@
             "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
             "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
             "ru": "Где расположена станция? (напр., название населённого пункта)",
-            "fr": "Dans quelle localité la station est-elle située ?"
+            "fr": "Dans quelle localité la station est-elle située ?",
+            "it": "Dove si trova la stazione? (ad es. quartiere, paese o città)"
           },
           "freeform": {
             "key": "addr:place"
@@ -778,7 +841,8 @@
           "render": {
             "en": "This station is found within {addr:place}.",
             "ja": "このステーションは{addr:place}にあります。",
-            "fr": "La station fait partie de {addr:place}."
+            "fr": "La station fait partie de {addr:place}.",
+            "it": "La stazione si trova a {addr:place}."
           }
         },
         {
@@ -786,12 +850,14 @@
           "question": {
             "en": "What agency operates this station?",
             "ja": "このステーションを運営しているのはどこですか?",
-            "fr": "Quel est l’exploitant de la station ?"
+            "fr": "Quel est l’exploitant de la station ?",
+            "it": "Quale agenzia gestisce questa stazione?"
           },
           "render": {
             "en": "This station is operated by {operator}.",
             "ja": "このステーションは{operator}によって運営されています。",
-            "fr": "Cette station est opérée par {operator}."
+            "fr": "Cette station est opérée par {operator}.",
+            "it": "Questa stazione è gestita da {operator}."
           },
           "freeform": {
             "key": "operator"
@@ -803,12 +869,14 @@
           "question": {
             "en": "How is the station operator classified?",
             "ja": "ステーションの運営の分類は?",
-            "fr": "Quel est le type d’exploitant ?"
+            "fr": "Quel est le type d’exploitant ?",
+            "it": "Com’è classificato il gestore della stazione?"
           },
           "render": {
             "en": "The operator is a(n) {operator:type} entity.",
             "ja": "運営者は、{operator:type} です。",
-            "fr": "L’exploitant est de type {operator:type}."
+            "fr": "L’exploitant est de type {operator:type}.",
+            "it": "L’operatore è un ente {operator:type}."
           },
           "freeform": {
             "key": "operator:type"
@@ -823,7 +891,8 @@
               "then": {
                 "en": "The station is operated by the government.",
                 "ja": "ステーションは自治体が運営する。",
-                "fr": "La station est opérée par le gouvernement."
+                "fr": "La station est opérée par le gouvernement.",
+                "it": "La stazione è gestita dal governo."
               }
             },
             {
@@ -835,7 +904,8 @@
               "then": {
                 "en": "The station is operated by a community-based, or informal organization.",
                 "ja": "任意団体やコミュニティが運営しているステーションである。",
-                "fr": "La station est opérée par une organisation informelle."
+                "fr": "La station est opérée par une organisation informelle.",
+                "it": "La stazione è gestita dalla comunità o un’organizzazione non ufficiale."
               }
             },
             {
@@ -847,7 +917,8 @@
               "then": {
                 "en": "The station is operated by a formal group of volunteers.",
                 "ja": "公益団体が運営しているステーションである。",
-                "fr": "La station est opérée par un groupe officiel de bénévoles."
+                "fr": "La station est opérée par un groupe officiel de bénévoles.",
+                "it": "La stazione è gestita da un gruppo ufficiale di volontari."
               }
             },
             {
@@ -859,7 +930,8 @@
               "then": {
                 "en": "The station is privately operated.",
                 "ja": "個人が運営しているステーションである。",
-                "fr": "La station est opérée par un groupe privé."
+                "fr": "La station est opérée par un groupe privé.",
+                "it": "La stazione è gestita da un privato."
               }
             }
           ]
@@ -887,14 +959,17 @@
             "en": "Ambulance station",
             "ru": "Станция скорой помощи",
             "ja": "救急ステーション(消防署)",
-            "fr": "Station d’ambulances"
+            "fr": "Station d’ambulances",
+            "de": "Rettungswache",
+            "it": "Stazione delle ambulanze"
           },
           "description": {
             "en": "Add an ambulance station to the map",
             "ja": "救急ステーション(消防署)をマップに追加する",
             "ru": "Добавить станцию скорой помощи на карту",
             "fr": "Ajouter une station d’ambulances à la carte",
-            "de": "Eine Rettungsstation der Karte hinzufügen"
+            "de": "Eine Rettungsstation der Karte hinzufügen",
+            "it": "Aggiungi una stazione delle ambulanza alla mappa"
           }
         }
       ],

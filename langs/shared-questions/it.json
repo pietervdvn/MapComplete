@@ -3,22 +3,31 @@
         "description": {
             "question": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>"
         },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Cani ammessi"
+                },
+                "1": {
+                    "then": "I cani <b>non</b> sono ammessi"
+                },
+                "2": {
+                    "then": "Cani ammessi ma solo se tenuti al guinzaglio"
+                },
+                "3": {
+                    "then": "I cani sono ammessi e possono andare in giro liberamente"
+                }
+            },
+            "question": "I cani sono ammessi in quest’attività?"
+        },
         "email": {
             "question": "Qual è l'indirizzo email di {name}?"
         },
-        "opening_hours": {
-            "question": "Quali sono gli orari di apertura di {name}?",
-            "render": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
-        },
-        "phone": {
-            "question": "Qual è il numero di telefono di {name}?"
-        },
-        "website": {
-            "question": "Qual è il sito web di {name}?"
-        },
         "level": {
-            "render": "Si trova al piano numero {level}",
             "mappings": {
+                "0": {
+                    "then": "Si trova sotto il livello stradale"
+                },
                 "1": {
                     "then": "Si trova al pianoterra"
                 },
@@ -27,12 +36,14 @@
                 },
                 "3": {
                     "then": "Si trova al primo piano"
-                },
-                "0": {
-                    "then": "Si trova sotto il livello stradale"
                 }
             },
-            "question": "A quale piano si trova questo elemento?"
+            "question": "A quale piano si trova questo elemento?",
+            "render": "Si trova al piano numero {level}"
+        },
+        "opening_hours": {
+            "question": "Quali sono gli orari di apertura di {name}?",
+            "render": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
             "mappings": {
@@ -45,8 +56,17 @@
             },
             "question": "Quali metodi di pagamento sono accettati qui?"
         },
+        "phone": {
+            "question": "Qual è il numero di telefono di {name}?"
+        },
+        "website": {
+            "question": "Qual è il sito web di {name}?"
+        },
         "wheelchair-access": {
             "mappings": {
+                "0": {
+                    "then": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle"
+                },
                 "1": {
                     "then": "Questo luogo è facilmente raggiungibile con una sedia a rotelle"
                 },
@@ -55,37 +75,9 @@
                 },
                 "3": {
                     "then": "Questo luogo non è accessibile con una sedia a rotelle"
-                },
-                "0": {
-                    "then": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle"
                 }
             },
             "question": "Questo luogo è accessibile con una sedia a rotelle?"
-        },
-        "dog-access": {
-            "mappings": {
-                "0": {
-                    "then": "Cani ammessi"
-                },
-                "2": {
-                    "then": "Cani ammessi ma solo se tenuti al guinzaglio"
-                },
-                "1": {
-                    "then": "I cani <b>non</b> sono ammessi"
-                },
-                "3": {
-                    "then": "I cani sono ammessi e possono andare in giro liberamente"
-                }
-            },
-            "question": "I cani sono ammessi in quest’attività?"
-        },
-        "wikipedialink": {
-            "question": "Qual è il corrispondente elemento su Wikipedia?",
-            "mappings": {
-                "0": {
-                    "then": "Non collegato a Wikipedia"
-                }
-            }
         },
         "wikipedia": {
             "mappings": {
@@ -94,6 +86,14 @@
                 }
             },
             "question": "Qual è l’elemento Wikidata corrispondente?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Non collegato a Wikipedia"
+                }
+            },
+            "question": "Qual è il corrispondente elemento su Wikipedia?"
         }
     }
 }

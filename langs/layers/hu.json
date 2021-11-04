@@ -1,4 +1,19 @@
 {
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Műalkotás"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Műalkotás <i>{name}</i>"
+                }
+            },
+            "render": "Műalkotás"
+        }
+    },
     "bench": {
         "name": "Padok",
         "tagRenderings": {
@@ -198,21 +213,6 @@
         "name": "Emlékkerékpár",
         "title": {
             "render": "Emlékkerékpár"
-        }
-    },
-    "artwork": {
-        "presets": {
-            "0": {
-                "title": "Műalkotás"
-            }
-        },
-        "title": {
-            "render": "Műalkotás",
-            "mappings": {
-                "0": {
-                    "then": "Műalkotás <i>{name}</i>"
-                }
-            }
         }
     },
     "shops": {

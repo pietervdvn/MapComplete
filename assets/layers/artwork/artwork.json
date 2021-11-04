@@ -22,13 +22,20 @@
             "nl": "Kunstwerk",
             "fr": "Œuvre d'art",
             "de": "Kunstwerk",
-            "id": "Karya seni",
+            "id": "Karya Seni",
             "it": "Opera d’arte",
             "ru": "Художественная работа",
             "es": "Obra de arte",
             "ja": "アートワーク",
             "zh_Hant": "藝術品",
-            "nb_NO": "Kunstverk"
+            "nb_NO": "Kunstverk",
+            "fi": "Taideteos",
+            "gl": "Obra de arte",
+            "hu": "Műalkotás",
+            "pl": "Dzieło sztuki",
+            "pt": "Obra de arte",
+            "pt_BR": "Obra de arte",
+            "sv": "Konstverk"
         },
         "mappings": [
             {
@@ -38,12 +45,20 @@
                     "nl": "Kunstwerk <i>{name}</i>",
                     "fr": "Œuvre d'art <i>{name}</i>",
                     "de": "Kunstwerk <i>{name}</i>",
-                    "id": "Karya seni <i>{name}</i>",
+                    "id": "Karya Seni <i>{name}</i>",
                     "it": "Opera <i>{name}</i>",
                     "ru": "Художественная работа <i>{name}</i>",
                     "es": "Obra de arte <i>{nombre}</i>",
                     "ja": "アートワーク <i>{name}</i>",
-                    "zh_Hant": "藝術品<i>{name}</i>"
+                    "zh_Hant": "藝術品<i>{name}</i>",
+                    "fi": "Taideteos <i>{name}</i>",
+                    "gl": "Obra de arte <i>{name}</i>",
+                    "hu": "Műalkotás <i>{name}</i>",
+                    "nb_NO": "Kunstverk <i>{name}</i>",
+                    "pl": "Dzieło sztuki <i>{name}</i>",
+                    "pt": "Obra de arte <i>{name}</i>",
+                    "pt_BR": "Obra de arte <i>{name}</i>",
+                    "sv": "Konstverk <i>{name}</i>"
                 }
             }
         ]
@@ -85,7 +100,15 @@
                 "es": "Obra de arte",
                 "ja": "アートワーク",
                 "zh_Hant": "藝術品",
-                "nb_NO": "Kunstverk"
+                "nb_NO": "Kunstverk",
+                "fi": "Taideteos",
+                "gl": "Obra de arte",
+                "hu": "Műalkotás",
+                "id": "Karya Seni",
+                "pl": "Dzieło sztuki",
+                "pt": "Obra de arte",
+                "pt_BR": "Obra de arte",
+                "sv": "Konstverk"
             }
         }
     ],

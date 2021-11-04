@@ -23,7 +23,8 @@
             "it": "Albero",
             "ru": "Дерево",
             "fr": "Arbre",
-            "de": "Baum"
+            "de": "Baum",
+            "eo": "Arbo"
         },
         "mappings": [
             {
@@ -36,7 +37,8 @@
                     "fr": "<i>{name}</i>",
                     "it": "<i>{name}</i>",
                     "ru": "<i>{name}</i>",
-                    "id": "<i>{name}</i>"
+                    "id": "<i>{name}</i>",
+                    "eo": "<i>{name}</i>"
                 }
             }
         ]
@@ -309,7 +311,8 @@
                 "ru": "Название: {name}",
                 "fr": "Nom : {name}",
                 "id": "Nama: {name}",
-                "de": "Name: {name}"
+                "de": "Name: {name}",
+                "eo": "Nomo: {name}"
             },
             "question": {
                 "nl": "Heeft de boom een naam?",
@@ -403,7 +406,8 @@
                         "nl": "Erkend als erfgoed door een andere organisatie",
                         "en": "Registered as heritage by a different organisation",
                         "it": "Registrato come patrimonio da un’organizzazione differente",
-                        "fr": "Enregistré comme patrimoine par une autre organisation"
+                        "fr": "Enregistré comme patrimoine par une autre organisation",
+                        "de": "Von einer anderen Organisation als Denkmal registriert"
                     }
                 },
                 {
@@ -431,7 +435,8 @@
                         "nl": "Erkend als erfgoed door een andere organisatie",
                         "en": "Registered as heritage by a different organisation",
                         "it": "Registrato come patrimonio da un’organizzazione differente",
-                        "fr": "Enregistré comme patrimoine par une autre organisation"
+                        "fr": "Enregistré comme patrimoine par une autre organisation",
+                        "de": "Von einer anderen Organisation als Denkmal registriert"
                     },
                     "hideInAnswer": true
                 }
@@ -449,7 +454,8 @@
                 "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
                 "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
                 "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-                "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+                "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+                "de": ""
             },
             "question": {
                 "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",

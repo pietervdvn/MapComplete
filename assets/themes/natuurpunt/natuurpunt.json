@@ -4,21 +4,28 @@
   "title": {
     "nl": "Natuurgebieden",
     "en": "Nature Reserves",
-    "de": "Naturschutzgebiete"
+    "de": "Naturschutzgebiete",
+    "it": "Riserve naturali",
+    "nb_NO": "Naturreservater"
   },
   "shortDescription": {
     "nl": "Deze kaart toont de natuurgebieden van Natuurpunt",
     "en": "This map shows the nature reserves of Natuurpunt",
-    "de": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt"
+    "de": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
+    "it": "Questa cartina mostra le riserve naturali di Natuurpunt"
   },
   "description": {
     "nl": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt",
-    "en": "On this map you can find all the nature reserves that Natuurpunt offers "
+    "en": "On this map you can find all the nature reserves that Natuurpunt offers ",
+    "de": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
+    "it": "In questa cartina è possibile trovare tutte le riserve naturali offerte da Natuupunt. "
   },
   "language": [
     "nl",
     "en",
-    "de"
+    "de",
+    "it",
+    "nb_NO"
   ],
   "mustHaveLanguage": [
     "nl"

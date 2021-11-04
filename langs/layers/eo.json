@@ -1,4 +1,81 @@
 {
+    "bench": {
+        "tagRenderings": {
+            "bench-colour": {
+                "mappings": {
+                    "0": {
+                        "then": "Koloro: bruna"
+                    },
+                    "1": {
+                        "then": "Koloro: verda"
+                    },
+                    "2": {
+                        "then": "Koloro: griza"
+                    },
+                    "3": {
+                        "then": "Koloro: blanka"
+                    },
+                    "4": {
+                        "then": "Koloro: ruĝa"
+                    },
+                    "5": {
+                        "then": "Koloro: nigra"
+                    },
+                    "6": {
+                        "then": "Koloro: blua"
+                    },
+                    "7": {
+                        "then": "Koloro: flava"
+                    }
+                },
+                "render": "Koloro: {colour}"
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Materialo: ligna"
+                    },
+                    "1": {
+                        "then": "Materialo: metala"
+                    },
+                    "2": {
+                        "then": "Materialo: ŝtona"
+                    },
+                    "3": {
+                        "then": "Materialo: betona"
+                    },
+                    "4": {
+                        "then": "Materialo: plasta"
+                    },
+                    "5": {
+                        "then": "Materialo: ŝtala"
+                    }
+                },
+                "render": "Materialo: {material}"
+            }
+        }
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "bench_at_pt-name": {
+                "render": "{name}"
+            }
+        }
+    },
+    "bicycle_library": {
+        "presets": {
+            "0": {
+                "title": "Fietsbibliotheek"
+            }
+        }
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "Access": {
+                "render": "{access}"
+            }
+        }
+    },
     "ghost_bike": {
         "name": "Fantombiciklo",
         "title": {
@@ -6,64 +83,79 @@
         }
     },
     "shops": {
-        "title": {
-            "mappings": {
-                "1": {
-                    "then": "{shop}"
-                },
-                "0": {
-                    "then": "{name}"
-                }
-            },
-            "render": "Butiko"
-        },
-        "tagRenderings": {
-            "shops-shop": {
-                "question": "Kion vendas ĉi tiu butiko?",
-                "render": "Ĉi tiu butiko vendas {shop}",
-                "mappings": {
-                    "4": {
-                        "then": "Bakejo"
-                    }
-                }
-            },
-            "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>",
-                "question": "Kio estas la telefonnumero?"
-            },
-            "shops-email": {
-                "question": "Kio estas la retpoŝta adreso de ĉi tiu butiko?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "shops-website": {
-                "render": "<a href='{website}'>{website}</a>"
-            }
-        },
+        "description": "Butiko",
+        "name": "Butiko",
         "presets": {
             "0": {
                 "description": "Enmeti novan butikon",
                 "title": "Butiko"
             }
         },
-        "description": "Butiko",
-        "name": "Butiko"
+        "tagRenderings": {
+            "shops-email": {
+                "question": "Kio estas la retpoŝta adreso de ĉi tiu butiko?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "shops-phone": {
+                "question": "Kio estas la telefonnumero?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "4": {
+                        "then": "Bakejo"
+                    }
+                },
+                "question": "Kion vendas ĉi tiu butiko?",
+                "render": "Ĉi tiu butiko vendas {shop}"
+            },
+            "shops-website": {
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
+                }
+            },
+            "render": "Butiko"
+        }
     },
     "slow_roads": {
         "tagRenderings": {
             "slow_roads-surface": {
-                "render": "La surfaco estas <b>{surface}</b>",
                 "mappings": {
-                    "6": {
-                        "then": "La surfaco estas <b>betona</b>"
+                    "0": {
+                        "then": "La surfaco estas <b>herba</b>"
                     },
                     "3": {
                         "then": "La surfaco estas <b>sabla</b>"
                     },
-                    "0": {
-                        "then": "La surfaco estas <b>herba</b>"
+                    "6": {
+                        "then": "La surfaco estas <b>betona</b>"
                     }
-                }
+                },
+                "render": "La surfaco estas <b>{surface}</b>"
             }
+        }
+    },
+    "tree_node": {
+        "tagRenderings": {
+            "tree_node-name": {
+                "render": "Nomo: {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Arbo"
         }
     },
     "viewpoint": {
@@ -82,69 +174,6 @@
             "render": "{name}"
         }
     },
-    "bench": {
-        "tagRenderings": {
-            "bench-material": {
-                "mappings": {
-                    "0": {
-                        "then": "Materialo: ligna"
-                    },
-                    "4": {
-                        "then": "Materialo: plasta"
-                    },
-                    "1": {
-                        "then": "Materialo: metala"
-                    },
-                    "2": {
-                        "then": "Materialo: ŝtona"
-                    },
-                    "3": {
-                        "then": "Materialo: betona"
-                    },
-                    "5": {
-                        "then": "Materialo: ŝtala"
-                    }
-                },
-                "render": "Materialo: {material}"
-            },
-            "bench-colour": {
-                "mappings": {
-                    "5": {
-                        "then": "Koloro: nigra"
-                    },
-                    "6": {
-                        "then": "Koloro: blua"
-                    },
-                    "7": {
-                        "then": "Koloro: flava"
-                    },
-                    "0": {
-                        "then": "Koloro: bruna"
-                    },
-                    "1": {
-                        "then": "Koloro: verda"
-                    },
-                    "2": {
-                        "then": "Koloro: griza"
-                    },
-                    "3": {
-                        "then": "Koloro: blanka"
-                    },
-                    "4": {
-                        "then": "Koloro: ruĝa"
-                    }
-                },
-                "render": "Koloro: {colour}"
-            }
-        }
-    },
-    "bench_at_pt": {
-        "tagRenderings": {
-            "bench_at_pt-name": {
-                "render": "{name}"
-            }
-        }
-    },
     "waste_basket": {
         "iconSize": {
             "mappings": {
@@ -157,35 +186,6 @@
         "presets": {
             "0": {
                 "title": "Rubujo"
-            }
-        }
-    },
-    "tree_node": {
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
-            "render": "Arbo"
-        },
-        "tagRenderings": {
-            "tree_node-name": {
-                "render": "Nomo: {name}"
-            }
-        }
-    },
-    "bicycle_library": {
-        "presets": {
-            "0": {
-                "title": "Fietsbibliotheek"
-            }
-        }
-    },
-    "bike_parking": {
-        "tagRenderings": {
-            "Access": {
-                "render": "{access}"
             }
         }
     }

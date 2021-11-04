@@ -63,12 +63,12 @@
             }
         },
         "title": {
-            "render": "Kunstverk",
             "mappings": {
                 "0": {
                     "then": "Kunstverk <i>{name}</i>"
                 }
-            }
+            },
+            "render": "Kunstverk"
         }
     },
     "bench": {
@@ -173,21 +173,6 @@
                 "question": "Hva heter dette sykkelbiblioteket?",
                 "render": "Dette sykkelbiblioteket heter {name}"
             }
-        }
-    },
-    "charging_station": {
-        "description": "En ladestasjon",
-        "name": "Ladestasjoner",
-        "tagRenderings": {
-            "Network": {
-                "render": "{network}"
-            },
-            "OH": {
-                "question": "Når åpnet denne ladestasjonen?"
-            }
-        },
-        "title": {
-            "render": "Ladestasjon"
         }
     },
     "ghost_bike": {

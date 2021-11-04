@@ -3,7 +3,8 @@
     "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information",
     "name": {
         "en": "Has etymolgy",
-        "nl": "Heeft etymology info"
+        "nl": "Heeft etymology info",
+        "de": "Hat eine Namensherkunft"
     },
     "minzoom": 12,
     "source": {

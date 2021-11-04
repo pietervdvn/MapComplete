@@ -1,66 +1,4 @@
 {
-    "ghostbikes": {
-        "title": "Fantombicikloj"
-    },
-    "openwindpowermap": {
-        "layers": {
-            "0": {
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "3": {
-                                "human": " gigavatoj"
-                            },
-                            "2": {
-                                "human": " vatoj"
-                            },
-                            "1": {
-                                "human": " kilovatoj"
-                            },
-                            "0": {
-                                "human": " megavatoj"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " metro"
-                            }
-                        }
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name}"
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "cyclestreets": {
-        "layers": {
-            "2": {
-                "title": {
-                    "render": "Strato"
-                },
-                "name": "Ĉiuj stratoj"
-            }
-        }
-    },
-    "hailhydrant": {
-        "layers": {
-            "1": {
-                "tagRenderings": {
-                    "extinguisher-location": {
-                        "render": "Loko: {location}"
-                    }
-                }
-            }
-        }
-    },
     "climbing": {
         "overrideAll": {
             "units+": {
@@ -77,6 +15,16 @@
             }
         }
     },
+    "cyclestreets": {
+        "layers": {
+            "2": {
+                "name": "Ĉiuj stratoj",
+                "title": {
+                    "render": "Strato"
+                }
+            }
+        }
+    },
     "facadegardens": {
         "layers": {
             "0": {
@@ -88,6 +36,9 @@
             }
         }
     },
+    "ghostbikes": {
+        "title": "Fantombicikloj"
+    },
     "hackerspaces": {
         "layers": {
             "0": {
@@ -98,16 +49,27 @@
                         }
                     }
                 },
+                "tagRenderings": {
+                    "hackerspaces-opening_hours": {
+                        "render": "{opening_hours_table()}"
+                    }
+                },
                 "title": {
                     "mappings": {
                         "0": {
                             "then": " {name}"
                         }
                     }
-                },
+                }
+            }
+        }
+    },
+    "hailhydrant": {
+        "layers": {
+            "1": {
                 "tagRenderings": {
-                    "hackerspaces-opening_hours": {
-                        "render": "{opening_hours_table()}"
+                    "extinguisher-location": {
+                        "render": "Loko: {location}"
                     }
                 }
             }
@@ -115,5 +77,43 @@
     },
     "maps": {
         "title": "Mapo de mapoj"
+    },
+    "openwindpowermap": {
+        "layers": {
+            "0": {
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                },
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " megavatoj"
+                            },
+                            "1": {
+                                "human": " kilovatoj"
+                            },
+                            "2": {
+                                "human": " vatoj"
+                            },
+                            "3": {
+                                "human": " gigavatoj"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " metro"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

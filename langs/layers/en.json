@@ -1005,7 +1005,7 @@
         "name": "Charging stations",
         "presets": {
             "0": {
-                "title": "Charging station"
+                "title": "charging station with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)"
             },
             "1": {
                 "title": "charging station for e-bikes"
@@ -1034,7 +1034,7 @@
                         "then": "Authentication via phone call is available"
                     },
                     "3": {
-                        "then": "Authentication via phone call is available"
+                        "then": "Authentication via SMS is available"
                     },
                     "4": {
                         "then": "Authentication via NFC is available"
@@ -1150,7 +1150,7 @@
                         "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect with 5 pins</b> and cable</span></div>"
                     }
                 },
-                "question": "Which charging stations are available here?"
+                "question": "Which charging connections are available here?"
             },
             "Network": {
                 "mappings": {
@@ -1215,7 +1215,7 @@
             "Type": {
                 "mappings": {
                     "0": {
-                        "then": "<b>bicycles</b> can be charged here"
+                        "then": "<b>Bcycles</b> can be charged here"
                     },
                     "1": {
                         "then": "<b>Cars</b> can be charged here"
@@ -1376,7 +1376,7 @@
                 "render": "Reference number is <b>{ref}</b>"
             },
             "website": {
-                "question": "What is the website of the operator?",
+                "question": "What is the website where one can find more information about this charging station?",
                 "render": "More info on <a href='{website}'>{website}</a>"
             }
         },

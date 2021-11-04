@@ -72,22 +72,6 @@
             "render": "アートワーク"
         }
     },
-    "charging_station": {
-        "description": "充電ステーション",
-        "name": "充電ステーション",
-        "tagRenderings": {
-            "Network": {
-                "question": "この充電ステーションの運営チェーンはどこですか?",
-                "render": "{network}"
-            },
-            "OH": {
-                "question": "この充電ステーションはいつオープンしますか?"
-            }
-        },
-        "title": {
-            "render": "充電ステーション"
-        }
-    },
     "food": {
         "tagRenderings": {
             "friture-take-your-container": {

@@ -186,7 +186,8 @@
                 "zh_Hans": "材质: {material}",
                 "pl": "Materiał: {material}",
                 "pt_BR": "Material: {material}",
-                "pt": "Material: {material}"
+                "pt": "Material: {material}",
+                "eo": "Materialo: {material}"
             },
             "freeform": {
                 "key": "material",
@@ -210,7 +211,8 @@
                         "pt_BR": "Material: madeira",
                         "fi": "Materiaali: puu",
                         "pl": "Materiał: drewno",
-                        "pt": "Material: madeira"
+                        "pt": "Material: madeira",
+                        "eo": "Materialo: ligna"
                     }
                 },
                 {
@@ -229,7 +231,8 @@
                         "zh_Hant": "材質：金屬",
                         "pl": "Materiał: metal",
                         "pt_BR": "Material: metal",
-                        "pt": "Material: metal"
+                        "pt": "Material: metal",
+                        "eo": "Materialo: metala"
                     }
                 },
                 {
@@ -249,7 +252,8 @@
                         "pt_BR": "Material: pedra",
                         "fi": "Materiaali: kivi",
                         "pl": "Materiał: kamień",
-                        "pt": "Material: pedra"
+                        "pt": "Material: pedra",
+                        "eo": "Materialo: ŝtona"
                     }
                 },
                 {
@@ -269,7 +273,8 @@
                         "pt_BR": "Material: concreto",
                         "fi": "Materiaali: betoni",
                         "pl": "Materiał: beton",
-                        "pt": "Material: concreto"
+                        "pt": "Material: concreto",
+                        "eo": "Materialo: betona"
                     }
                 },
                 {
@@ -289,7 +294,8 @@
                         "pt_BR": "Material: plástico",
                         "fi": "Materiaali: muovi",
                         "pl": "Materiał: plastik",
-                        "pt": "Material: plástico"
+                        "pt": "Material: plástico",
+                        "eo": "Materialo: plasta"
                     }
                 },
                 {
@@ -309,7 +315,8 @@
                         "pt_BR": "Material: aço",
                         "fi": "Materiaali: teräs",
                         "pl": "Materiał: stal",
-                        "pt": "Material: aço"
+                        "pt": "Material: aço",
+                        "eo": "Materialo: ŝtala"
                     }
                 }
             ],
@@ -380,7 +387,8 @@
                 "pt_BR": "Cor: {colour}",
                 "fi": "Väri: {colour}",
                 "pl": "Kolor: {colour}",
-                "pt": "Cor: {colour}"
+                "pt": "Cor: {colour}",
+                "eo": "Koloro: {colour}"
             },
             "question": {
                 "en": "Which colour does this bench have?",
@@ -417,7 +425,8 @@
                         "pt_BR": "Cor: marrom",
                         "fi": "Väri: ruskea",
                         "pl": "Kolor: brązowy",
-                        "pt": "Cor: castanho"
+                        "pt": "Cor: castanho",
+                        "eo": "Koloro: bruna"
                     }
                 },
                 {
@@ -436,7 +445,8 @@
                         "pt_BR": "Cor: verde",
                         "fi": "Väri: vihreä",
                         "pl": "Kolor: zielony",
-                        "pt": "Cor: verde"
+                        "pt": "Cor: verde",
+                        "eo": "Koloro: verda"
                     }
                 },
                 {
@@ -455,7 +465,8 @@
                         "pt_BR": "Cor: cinza",
                         "fi": "Väri: harmaa",
                         "pl": "Kolor: szary",
-                        "pt": "Cor: cinzento"
+                        "pt": "Cor: cinzento",
+                        "eo": "Koloro: griza"
                     }
                 },
                 {
@@ -474,7 +485,8 @@
                         "pt_BR": "Cor: branco",
                         "fi": "Väri: valkoinen",
                         "pl": "Kolor: biały",
-                        "pt": "Cor: branco"
+                        "pt": "Cor: branco",
+                        "eo": "Koloro: blanka"
                     }
                 },
                 {
@@ -493,7 +505,8 @@
                         "pt_BR": "Cor: vermelho",
                         "fi": "Väri: punainen",
                         "pl": "Kolor: czerwony",
-                        "pt": "Cor: vermelho"
+                        "pt": "Cor: vermelho",
+                        "eo": "Koloro: ruĝa"
                     }
                 },
                 {
@@ -512,7 +525,8 @@
                         "pt_BR": "Cor: preto",
                         "fi": "Väri: musta",
                         "pl": "Kolor: czarny",
-                        "pt": "Cor: preto"
+                        "pt": "Cor: preto",
+                        "eo": "Koloro: nigra"
                     }
                 },
                 {
@@ -531,7 +545,8 @@
                         "pt_BR": "Cor: azul",
                         "fi": "Väri: sininen",
                         "pl": "Kolor: niebieski",
-                        "pt": "Cor: azul"
+                        "pt": "Cor: azul",
+                        "eo": "Koloro: blua"
                     }
                 },
                 {
@@ -550,7 +565,8 @@
                         "pt_BR": "Cor: amarelo",
                         "fi": "Väri: keltainen",
                         "pl": "Kolor: żółty",
-                        "pt": "Cor: amarelo"
+                        "pt": "Cor: amarelo",
+                        "eo": "Koloro: flava"
                     }
                 }
             ],

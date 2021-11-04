@@ -54,7 +54,8 @@
                 "if": "cycleway=shared_lane",
                 "then": {
                     "nl": "Fietssuggestiestrook",
-                    "en": "Shared lane"
+                    "en": "Shared lane",
+                    "de": "Gemeinsame Fahrspur"
                 }
             },
             {
@@ -201,7 +202,7 @@
             "question": {
                 "en": "Is this a cyclestreet?",
                 "nl": "Is dit een fietsstraat?",
-                "de": "Ist das eine Fahrradstraße"
+                "de": "Ist das eine Fahrradstraße?"
             },
             "condition": {
                 "and": [
@@ -730,7 +731,8 @@
             },
             "render": {
                 "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
-                "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+                "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>",
+                "de": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>"
             },
             "freeform": {
                 "key": "width:carriageway",
@@ -742,7 +744,8 @@
             },
             "question": {
                 "en": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured curb to curb and thus includes the width of parallell parking lanes</span>",
-                "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is </span><br/><span class='subtle'>Meet dit van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>"
+                "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is </span><br/><span class='subtle'>Meet dit van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>",
+                "de": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?<br/><span class='subtle'>Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein</span>"
             },
             "id": "width:carriageway"
         },
@@ -900,7 +903,8 @@
             "id": "cycleway-traffic-signs-supplementary",
             "question": {
                 "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
-                "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
+                "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
+                "de": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
             },
             "condition": {
                 "or": [
@@ -991,7 +995,8 @@
             "id": "cycleway-traffic-signs-D7-supplementary",
             "question": {
                 "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
-                "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
+                "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
+                "de": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
             },
             "condition": {
                 "or": [

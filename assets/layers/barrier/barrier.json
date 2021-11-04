@@ -210,7 +210,8 @@
                     "if": "cycle_barrier:type=squeeze",
                     "then": {
                         "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
-                        "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                        "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
+                        "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
                     }
                 }
             ],

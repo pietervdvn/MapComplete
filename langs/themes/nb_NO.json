@@ -1,7 +1,10 @@
 {
     "aed": {
-        "title": "Åpent AED-kart",
-        "description": "Defibrillatorer i nærheten"
+        "description": "Defibrillatorer i nærheten",
+        "title": "Åpent AED-kart"
+    },
+    "artwork": {
+        "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden"
     },
     "benches": {
         "shortDescription": "Et benkekart",
@@ -9,6 +12,16 @@
     },
     "bicyclelib": {
         "title": "Sykkelbibliotek"
+    },
+    "binoculars": {
+        "shortDescription": "Et kart over fastmonterte kikkerter",
+        "title": "Kikkerter"
+    },
+    "bookcases": {
+        "title": "Kart over åpne bokhyller"
+    },
+    "cafes_and_pubs": {
+        "title": "Kafeer og kneiper"
     },
     "campersite": {
         "layers": {
@@ -23,13 +36,38 @@
                     },
                     "caravansites-fee": {
                         "mappings": {
-                            "1": {
-                                "then": "Kan brukes gratis"
-                            },
                             "0": {
                                 "then": "Man må betale for bruk"
+                            },
+                            "1": {
+                                "then": "Kan brukes gratis"
                             }
                         }
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Det finnes tilgang til Internett"
+                            },
+                            "1": {
+                                "then": "Det er tilgang til Internett"
+                            },
+                            "2": {
+                                "then": "Det er tilgang til Internett"
+                            }
+                        },
+                        "question": "Tilbyr dette stedet tilgang til Internett?"
+                    },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Man må betale ekstra for tilgang til Internett"
+                            },
+                            "1": {
+                                "then": "Man må ikke betale ekstra for tilgang til Internett"
+                            }
+                        },
+                        "question": "Må man betale for tilgang til Internett?"
                     },
                     "caravansites-toilets": {
                         "mappings": {
@@ -45,35 +83,14 @@
                     "caravansites-website": {
                         "question": "Har dette stedet en nettside?",
                         "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
-                    },
-                    "caravansites-internet": {
-                        "mappings": {
-                            "2": {
-                                "then": "Det er tilgang til Internett"
-                            },
-                            "0": {
-                                "then": "Det finnes tilgang til Internett"
-                            },
-                            "1": {
-                                "then": "Det er tilgang til Internett"
-                            }
-                        },
-                        "question": "Tilbyr dette stedet tilgang til Internett?"
-                    },
-                    "caravansites-internet-fee": {
-                        "question": "Må man betale for tilgang til Internett?",
-                        "mappings": {
-                            "1": {
-                                "then": "Man må ikke betale ekstra for tilgang til Internett"
-                            },
-                            "0": {
-                                "then": "Man må betale ekstra for tilgang til Internett"
-                            }
-                        }
                     }
                 }
             }
         }
+    },
+    "charging_stations": {
+        "shortDescription": "Et verdensomspennende kart over ladestasjoner",
+        "title": "Ladestasjoner"
     },
     "climbing": {
         "layers": {
@@ -94,8 +111,8 @@
                 "name": "Klatreruter",
                 "tagRenderings": {
                     "Length": {
-                        "render": "Denne ruten er {canonical(climbing:length)} lang",
-                        "question": "Hvor mange meter er klatreruten?"
+                        "question": "Hvor mange meter er klatreruten?",
+                        "render": "Denne ruten er {canonical(climbing:length)} lang"
                     },
                     "Name": {
                         "mappings": {
@@ -164,19 +181,26 @@
         },
         "title": "Åpent klatrekart"
     },
+    "cycle_infra": {
+        "shortDescription": "Alt relatert til sykkelinfrastruktur.",
+        "title": "Sykkelinfrastruktur"
+    },
     "cyclestreets": {
         "layers": {
+            "0": {
+                "name": "Sykkelgater"
+            },
             "1": {
+                "description": "Denne gaten vil bli sykkelgate snart",
                 "name": "Fremtidig sykkelvei",
                 "title": {
-                    "render": "Fremtidig sykkelvei",
                     "mappings": {
                         "0": {
                             "then": "{name} vil bli sykkelgate snart"
                         }
-                    }
-                },
-                "description": "Denne gaten vil bli sykkelgate snart"
+                    },
+                    "render": "Fremtidig sykkelvei"
+                }
             },
             "2": {
                 "description": "Lag for å markere hvilken som helst gate som sykkelvei",
@@ -184,9 +208,6 @@
                 "title": {
                     "render": "Gate"
                 }
-            },
-            "0": {
-                "name": "Sykkelgater"
             }
         },
         "overrideAll": {
@@ -213,6 +234,13 @@
         "shortDescription": "Et kart over sykkelveier",
         "title": "Sykkelgater"
     },
+    "cyclofix": {
+        "title": "Cyclofix — et åpent kart for syklister"
+    },
+    "drinking_water": {
+        "description": "Offentlig tilgjengelig drikkevannssteder",
+        "title": "Drikkevann"
+    },
     "facadegardens": {
         "layers": {
             "0": {
@@ -227,6 +255,9 @@
                 }
             }
         }
+    },
+    "food": {
+        "title": "Restauranter og søppelmat"
     },
     "ghostbikes": {
         "title": "Spøkelsessykler"
@@ -265,9 +296,6 @@
             },
             "2": {
                 "name": "Kart over brannstasjoner",
-                "title": {
-                    "render": "Brannstasjon"
-                },
                 "presets": {
                     "0": {
                         "title": "Brannstasjon"
@@ -284,78 +312,13 @@
                             }
                         }
                     }
+                },
+                "title": {
+                    "render": "Brannstasjon"
                 }
             }
         },
         "title": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
-    },
-    "cafes_and_pubs": {
-        "title": "Kafeer og kneiper"
-    },
-    "charging_stations": {
-        "title": "Ladestasjoner",
-        "shortDescription": "Et verdensomspennende kart over ladestasjoner"
-    },
-    "drinking_water": {
-        "title": "Drikkevann",
-        "description": "Offentlig tilgjengelig drikkevannssteder"
-    },
-    "food": {
-        "title": "Restauranter og søppelmat"
-    },
-    "parkings": {
-        "shortDescription": "Dette kartet viser forskjellige parkeringsplasser",
-        "title": "Parkering"
-    },
-    "postboxes": {
-        "layers": {
-            "0": {
-                "title": {
-                    "render": "Postboks"
-                },
-                "description": "Laget viser postbokser.",
-                "name": "Postbokser",
-                "presets": {
-                    "0": {
-                        "title": "postboks"
-                    }
-                }
-            },
-            "1": {
-                "description": "Et lag som viser postkontor.",
-                "name": "Postkontor",
-                "presets": {
-                    "0": {
-                        "title": "Postkontor"
-                    }
-                },
-                "title": {
-                    "render": "Postkontor"
-                }
-            }
-        },
-        "title": "Postboks og postkontor-kart"
-    },
-    "artwork": {
-        "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden"
-    },
-    "binoculars": {
-        "title": "Kikkerter",
-        "shortDescription": "Et kart over fastmonterte kikkerter"
-    },
-    "cyclofix": {
-        "title": "Cyclofix — et åpent kart for syklister"
-    },
-    "trees": {
-        "title": "Trær",
-        "description": "Kartlegg trærne.",
-        "shortDescription": "Kartlegg alle trærne"
-    },
-    "shops": {
-        "title": "Kart over åpne butikker"
-    },
-    "bookcases": {
-        "title": "Kart over åpne bokhyller"
     },
     "maps": {
         "title": "Et kart over kart"
@@ -378,6 +341,10 @@
             }
         }
     },
+    "parkings": {
+        "shortDescription": "Dette kartet viser forskjellige parkeringsplasser",
+        "title": "Parkering"
+    },
     "personal": {
         "title": "Personlig tema"
     },
@@ -385,8 +352,45 @@
         "shortDescription": "Et kart med lekeplasser",
         "title": "Lekeplasser"
     },
+    "postboxes": {
+        "layers": {
+            "0": {
+                "description": "Laget viser postbokser.",
+                "name": "Postbokser",
+                "presets": {
+                    "0": {
+                        "title": "postboks"
+                    }
+                },
+                "title": {
+                    "render": "Postboks"
+                }
+            },
+            "1": {
+                "description": "Et lag som viser postkontor.",
+                "name": "Postkontor",
+                "presets": {
+                    "0": {
+                        "title": "Postkontor"
+                    }
+                },
+                "title": {
+                    "render": "Postkontor"
+                }
+            }
+        },
+        "title": "Postboks og postkontor-kart"
+    },
+    "shops": {
+        "title": "Kart over åpne butikker"
+    },
     "toilets": {
         "title": "Åpent toalettkart"
+    },
+    "trees": {
+        "description": "Kartlegg trærne.",
+        "shortDescription": "Kartlegg alle trærne",
+        "title": "Trær"
     },
     "uk_addresses": {
         "layers": {
@@ -398,9 +402,5 @@
                 }
             }
         }
-    },
-    "cycle_infra": {
-        "title": "Sykkelinfrastruktur",
-        "shortDescription": "Alt relatert til sykkelinfrastruktur."
     }
 }

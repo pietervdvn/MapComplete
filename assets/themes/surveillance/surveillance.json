@@ -6,7 +6,8 @@
     "ja": "監視カメラの監視",
     "zh_Hant": "被監視的監視器",
     "fr": "Surveillance",
-    "de": "Überwachung unter Überwachung"
+    "de": "Überwachung unter Überwachung",
+    "it": "Sorveglianza sotto controllo"
   },
   "shortDescription": {
     "en": "Surveillance cameras and other means of surveillance",
@@ -15,7 +16,8 @@
     "zh_Hant": "監視鏡頭與其他型式的監視",
     "fr": "Caméras et autres dispositifs de surveillance",
     "pl": "Kamery monitorujące i inne środki nadzoru",
-    "de": "Überwachungskameras und andere Mittel zur Überwachung"
+    "de": "Überwachungskameras und andere Mittel zur Überwachung",
+    "it": "Telecamere e altri di mezzi di sorveglianza"
   },
   "description": {
     "en": "On this open map, you can find surveillance cameras.",
@@ -24,7 +26,8 @@
     "zh_Hant": "在這份開放地圖，你可以找到監視鏡頭。",
     "fr": "Cette carte indique l’emplacement des caméras de surveillance.",
     "pl": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
-    "de": "Auf dieser offenen Karte finden Sie Überwachungskameras."
+    "de": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
+    "it": "In questa cartina puoi trovare le telecamera di sorveglianza."
   },
   "language": [
     "en",
@@ -33,6 +36,7 @@
     "zh_Hant",
     "fr",
     "de",
+    "it",
     "pl"
   ],
   "maintainer": "",

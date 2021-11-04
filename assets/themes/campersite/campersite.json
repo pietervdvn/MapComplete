@@ -180,7 +180,8 @@
                 "nl": "Gebruik is betalend",
                 "fr": "L’utilisation est payante",
                 "pt_BR": "Você precisa pagar para usar",
-                "de": "Sie müssen für die Nutzung bezahlen"
+                "de": "Sie müssen für die Nutzung bezahlen",
+                "nb_NO": "Man må betale for bruk"
               }
             },
             {
@@ -335,7 +336,8 @@
             "fr": "Cet endroit offre-t-il un accès à Internet ?",
             "zh_Hant": "這個地方有提網路連線嗎？",
             "pt_BR": "Este lugar fornece acesso a internet?",
-            "de": "Ist an diesem Ort ein Internetzugang vorhanden?"
+            "de": "Ist an diesem Ort ein Internetzugang vorhanden?",
+            "nb_NO": "Tilbyr dette stedet tilgang til Internett?"
           },
           "mappings": [
             {
@@ -354,7 +356,8 @@
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à internet",
                 "de": "Internetzugang ist vorhanden",
-                "nl": "Er is internettoegang"
+                "nl": "Er is internettoegang",
+                "nb_NO": "Det finnes tilgang til Internett"
               }
             },
             {
@@ -374,7 +377,8 @@
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à Internet",
                 "de": "Internetzugang ist vorhanden",
-                "nl": "Er is internettoegang"
+                "nl": "Er is internettoegang",
+                "nb_NO": "Det er tilgang til Internett"
               },
               "hideInAnswer": true
             },
@@ -393,7 +397,8 @@
                 "zh_Hant": "這裡沒有網路連線",
                 "fr": "Il n’y a pas d’accès internet",
                 "pt_BR": "Não há acesso à internet",
-                "de": "Kein Internetzugang vorhanden"
+                "de": "Kein Internetzugang vorhanden",
+                "nb_NO": "Det er tilgang til Internett"
               }
             }
           ]
@@ -408,7 +413,8 @@
             "zh_Hant": "你需要為網路連線付費嗎？",
             "fr": "L’accès internet est-il payant ?",
             "pt_BR": "Você tem que pagar pelo acesso à internet?",
-            "de": "Ist der Internetzugang gebührenpflichtig?"
+            "de": "Ist der Internetzugang gebührenpflichtig?",
+            "nb_NO": "Må man betale for tilgang til Internett?"
           },
           "mappings": [
             {
@@ -425,7 +431,8 @@
                 "zh_Hant": "你需要額外付費來使用網路連線",
                 "fr": "L’accès internet est en supplément",
                 "pt_BR": "Você precisa pagar um extra pelo acesso à internet",
-                "de": "Der Internetzugang ist gebührenpflichtig"
+                "de": "Der Internetzugang ist gebührenpflichtig",
+                "nb_NO": "Man må betale ekstra for tilgang til Internett"
               }
             },
             {
@@ -442,7 +449,8 @@
                 "zh_Hant": "你不需要額外付費來使用網路連線",
                 "fr": "L’accès internet est inclus",
                 "pt_BR": "Você não precisa pagar um extra pelo acesso à internet",
-                "de": "Der Internetzugang ist kostenlos"
+                "de": "Der Internetzugang ist kostenlos",
+                "nb_NO": "Man må ikke betale ekstra for tilgang til Internett"
               }
             }
           ],

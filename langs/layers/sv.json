@@ -1,4 +1,19 @@
 {
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Konstverk"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Konstverk <i>{name}</i>"
+                }
+            },
+            "render": "Konstverk"
+        }
+    },
     "ghost_bike": {
         "name": "Spökcykel",
         "title": {
@@ -12,21 +27,6 @@
                     "5": {
                         "then": "Bilverkstad"
                     }
-                }
-            }
-        }
-    },
-    "artwork": {
-        "presets": {
-            "0": {
-                "title": "Konstverk"
-            }
-        },
-        "title": {
-            "render": "Konstverk",
-            "mappings": {
-                "0": {
-                    "then": "Konstverk <i>{name}</i>"
                 }
             }
         }

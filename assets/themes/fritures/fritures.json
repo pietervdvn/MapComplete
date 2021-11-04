@@ -11,7 +11,8 @@
     "nl",
     "fr",
     "en",
-    "de"
+    "de",
+    "it"
   ],
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
@@ -30,7 +31,8 @@
           "nl": "Frituren",
           "en": "Fries shop",
           "fr": "Friteries",
-          "de": "Pommesbude"
+          "de": "Pommesbude",
+          "it": "Friggitoria"
         },
         "source": {
           "osmTags": {

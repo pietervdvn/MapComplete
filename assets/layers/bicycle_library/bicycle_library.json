@@ -247,7 +247,8 @@
                 "fr": "Vélothèque",
                 "pt_BR": "Biblioteca de bicicletas",
                 "de": "Fahrradbibliothek",
-                "pt": "Biblioteca de bicicletas"
+                "pt": "Biblioteca de bicicletas",
+                "eo": "Fietsbibliotheek"
             },
             "tags": [
                 "amenity=bicycle_library"

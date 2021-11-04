@@ -3,22 +3,26 @@
   "title": {
     "en": "Waste Basket",
     "nl": "Vuilnisbak",
-    "de": "Abfalleimer"
+    "de": "Abfalleimer",
+    "it": "Cestino dei rifiuti"
   },
   "shortDescription": {
     "en": "A map with waste baskets",
     "nl": "Een kaart met vuilnisbakken",
-    "de": "Eine Karte mit Abfalleimern"
+    "de": "Eine Karte mit Abfalleimern",
+    "it": "Una cartina dei cestini dei rifiuti"
   },
   "description": {
     "en": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
     "nl": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
-    "de": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen"
+    "de": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
+    "it": "In questa cartina troverai i cestini dei rifiuti nei tuoi paraggi. Se manca un cestino, puoi inserirlo tu stesso"
   },
   "language": [
     "en",
     "nl",
-    "de"
+    "de",
+    "it"
   ],
   "maintainer": "",
   "icon": "./assets/themes/waste_basket/waste_basket.svg",

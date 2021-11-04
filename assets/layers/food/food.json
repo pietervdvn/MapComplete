@@ -92,7 +92,8 @@
             ],
             "description": {
                 "nl": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
-                "en": "A food business concentrating on fast counter-only service and take-away food"
+                "en": "A food business concentrating on fast counter-only service and take-away food",
+                "de": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert"
             },
             "preciseInput": {
                 "preferredBackground": "map"
@@ -570,7 +571,8 @@
                         "fr": "Apporter ses propres contenants <b>n’est pas permis</b>",
                         "en": "Bringing your own container is <b>not allowed</b>",
                         "ja": "独自の容器を持参することは<b>できません</b>",
-                        "ru": "Приносить свою тару <b>не разрешено</b>"
+                        "ru": "Приносить свою тару <b>не разрешено</b>",
+                        "de": "Das Mitbringen eines eigenen Containers ist <b>nicht erlaubt</b>"
                     }
                 },
                 {
@@ -579,7 +581,8 @@
                         "nl": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen.",
                         "en": "You <b>must</b> bring your own container to order here.",
                         "ja": "自身の容器が注文に<b>必要</b>。",
-                        "fr": "Il est <b>obligatoire</b> d’apporter ses propres contenants"
+                        "fr": "Il est <b>obligatoire</b> d’apporter ses propres contenants",
+                        "de": "Sie <b>müssen</b> Ihren eigenen Behälter mitbringen, um hier zu bestellen."
                     }
                 }
             ],

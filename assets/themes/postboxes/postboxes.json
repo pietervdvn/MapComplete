@@ -2,18 +2,24 @@
   "id": "postboxes",
   "title": {
     "en": "Postbox and Post Office Map",
-    "de": "Karte mit Briefkästen und Poststellen"
+    "de": "Karte mit Briefkästen und Poststellen",
+    "it": "Buche delle lettere e uffici postali",
+    "nb_NO": "Postboks og postkontor-kart"
   },
   "shortDescription": {
     "en": "A map showing postboxes and post offices",
-    "de": "Eine Karte die Briefkästen und Poststellen anzeigt"
+    "de": "Eine Karte die Briefkästen und Poststellen anzeigt",
+    "it": "Una cartina che mostra le buche delle lettere e gli uffici postali"
   },
   "description": {
-    "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. "
+    "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
+    "it": "In questa cartina puoi veder e modificare gli uffici postali e le buche delle lettere. Puoi usare questa cartina per trovare dove imbucare la tua prossima cartolina! :)<br/>Hai trovato un errore o una buca delle lettere mancante? Puoi modificare questa cartina con un account gratuito su OpenStreetMap. "
   },
   "language": [
     "en",
-    "de"
+    "de",
+    "it",
+    "nb_NO"
   ],
   "maintainer": "",
   "icon": "./assets/themes/postboxes/postbox.svg",
@@ -32,7 +38,9 @@
       "id": "postboxes",
       "name": {
         "en": "Postboxes",
-        "de": "Brieflästen"
+        "de": "Brieflästen",
+        "it": "Buche delle lettere",
+        "nb_NO": "Postbokser"
       },
       "minzoom": 12,
       "source": {
@@ -41,12 +49,16 @@
       "title": {
         "render": {
           "en": "Postbox",
-          "de": "Briefkasten"
+          "de": "Briefkasten",
+          "it": "Buca delle lettere",
+          "nb_NO": "Postboks"
         }
       },
       "description": {
         "en": "The layer showing postboxes.",
-        "de": "Die Ebene zeigt Briefkästen."
+        "de": "Die Ebene zeigt Briefkästen.",
+        "it": "Il livello che mostra le buche delle lettere.",
+        "nb_NO": "Laget viser postbokser."
       },
       "tagRenderings": [
         "images",
@@ -74,7 +86,9 @@
           ],
           "title": {
             "en": "postbox",
-            "de": "Briefkasten"
+            "de": "Briefkasten",
+            "it": "Buca delle lettere",
+            "nb_NO": "postboks"
           }
         }
       ],
@@ -92,7 +106,9 @@
       "id": "postoffices",
       "name": {
         "en": "Post offices",
-        "de": "Poststellen"
+        "de": "Poststellen",
+        "it": "Uffici postali",
+        "nb_NO": "Postkontor"
       },
       "minzoom": 12,
       "source": {
@@ -101,12 +117,16 @@
       "title": {
         "render": {
           "en": "Post Office",
-          "de": "Poststelle"
+          "de": "Poststelle",
+          "it": "Ufficio postale",
+          "nb_NO": "Postkontor"
         }
       },
       "description": {
         "en": "A layer showing post offices.",
-        "de": "Eine Ebene mit Postämtern."
+        "de": "Eine Ebene mit Postämtern.",
+        "it": "Un livello che mostra gli uffici postali.",
+        "nb_NO": "Et lag som viser postkontor."
       },
       "tagRenderings": [
         "images",
@@ -116,21 +136,24 @@
         },
         {
           "render": {
-            "en": "Opening Hours: {opening_hours_table()}"
+            "en": "Opening Hours: {opening_hours_table()}",
+            "it": "Orari di apertura: {opening_hours_table()}"
           },
           "freeform": {
             "key": "opening_hours",
             "type": "opening_hours"
           },
           "question": {
-            "en": "What are the opening hours for this post office?"
+            "en": "What are the opening hours for this post office?",
+            "it": "Quali sono gli orari di apertura di questo ufficio postale?"
           },
           "mappings": [
             {
               "if": "opening_hours=24/7",
               "then": {
                 "en": "24/7 opened (including holidays)",
-                "de": "durchgehend geöffnet (auch an Feiertagen)"
+                "de": "durchgehend geöffnet (auch an Feiertagen)",
+                "it": "aperto 24/24h (feste incluse)"
               }
             }
           ],
@@ -163,7 +186,9 @@
           ],
           "title": {
             "en": "Post Office",
-            "de": "Poststelle"
+            "de": "Poststelle",
+            "it": "Ufficio postale",
+            "nb_NO": "Postkontor"
           }
         }
       ],
@@ -175,7 +200,8 @@
             {
               "question": {
                 "en": "Currently open",
-                "de": "Aktuell geöffnet"
+                "de": "Aktuell geöffnet",
+                "it": "Aperto adesso"
               },
               "osmTags": "_isOpen=yes"
             }

@@ -13,7 +13,7 @@
     "ru": "Открытая карта АВД (Автоматизированных внешних дефибрилляторов)",
     "ja": "オープンAEDマップ",
     "zh_Hant": "開放AED地圖",
-    "nb_NO": "Åpne AED-kart",
+    "nb_NO": "Åpent AED-kart",
     "sv": "Öppna AED-karta",
     "pl": "Otwórz mapę AED",
     "pt_BR": "Abrir mapa AED"
@@ -34,7 +34,8 @@
     "zh_Hant": "在這份地圖上，你可以找到與標記附近的除顫器",
     "sv": "På denna karta kan man hitta och markera närliggande defibrillatorer",
     "pl": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy",
-    "pt_BR": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos"
+    "pt_BR": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
+    "nb_NO": "Defibrillatorer i nærheten"
   },
   "language": [
     "en",

@@ -745,51 +745,6 @@
             "render": "Oggetto relativo alle bici"
         }
     },
-    "charging_station": {
-        "description": "Una stazione di ricarica",
-        "name": "Stazioni di ricarica",
-        "tagRenderings": {
-            "Network": {
-                "question": "A quale rete appartiene questa stazione di ricarica?",
-                "render": "{network}"
-            },
-            "OH": {
-                "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
-            }
-        },
-        "title": {
-            "render": "Stazione di ricarica"
-        },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Tutti i veicoli"
-                    },
-                    "1": {
-                        "question": "Stazione di ricarica per biciclette"
-                    },
-                    "2": {
-                        "question": "Stazione di ricarica per auto"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Tutte le connessioni"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Solo stazioni di ricarica funzionanti"
-                    }
-                }
-            }
-        }
-    },
     "defibrillator": {
         "name": "Defibrillatori",
         "presets": {
@@ -1346,6 +1301,17 @@
             "render": "Microbiblioteca"
         }
     },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Autofficina"
+                    }
+                }
+            }
+        }
+    },
     "slow_roads": {
         "tagRenderings": {
             "slow_roads-surface": {
@@ -1847,17 +1813,6 @@
         },
         "title": {
             "render": "Punto panoramico"
-        }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Autofficina"
-                    }
-                }
-            }
         }
     }
 }
