@@ -100,6 +100,9 @@
             "key": "building"
           },
           "render": "The building type is <b>{building}</b>",
+          "question": {
+            "en": "What kind of building is this?"
+          },
           "mappings": [
             {
               "if": "building=house",
@@ -400,9 +403,10 @@
         }
       ],
       "calculatedTags": [
-        "_embedded_in=feat.overlapWith('OSM-buildings').filter(f => f.feat.properties['addr:housenumber'] !== undefined)[0]?.feat?.properties ",
+        "_embedded_in=feat.overlapWith('OSM-buildings')[0]?.feat?.properties ",
         "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']",
-        "_embedding_street=feat.get('_embedded_in')['addr:street']"
+        "_embedding_street=feat.get('_embedded_in')['addr:street']",
+        "_embedding_id=feat.get('_embedded_in').id"
       ],
       "isShown": {
         "render": "yes",
@@ -437,6 +441,11 @@
         {
           "id": "import-button",
           "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Import this address,,,OSM-buildings,5)}"
+        },
+        {
+          "id": "apply-button",
+          "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$HUISNR,Apply this address on the OSM-building,,_embedding_id)}",
+          "condition": "_embedded_in!="
         }
       ]
     },
@@ -636,7 +645,7 @@
       "name": "GRB geometries",
       "title": "GRB outline",
       "calculatedTags": [
-        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.9)[0] ?? null",
+        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.5)[0] ?? null",
         "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
         "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface')) ",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",

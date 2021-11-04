@@ -48,7 +48,7 @@
       "tagRenderings": [
         "images",
         {
-         
+         "id": "Minimap",
           "render": "{minimap(17): height: 10rem; overflow: hidden; border: 1px solid #DADADA; border-radius: 0.5rem; }"
         }
       ],
@@ -128,8 +128,6 @@
         "images",
         {
           "id": "minimap",
-          
-   
           "render": "{minimap(17): height: 10rem; overflow: hidden; border: 1px solid #DADADA; border-radius: 0.5rem; }"
         },
         {
