@@ -16,12 +16,12 @@ export default class LegacyJsonConvert {
 
         if (config.tagRenderings !== undefined) {
             for (const tagRendering of config.tagRenderings) {
-                if (tagRendering["#"] !== undefined) {
-                    tagRendering["id"] = tagRendering["#"]
-                    delete tagRendering["#"]
-                }
                 if (tagRendering["id"] === undefined) {
-                    if (tagRendering["freeform"]?.key !== undefined) {
+
+                    if (tagRendering["#"] !== undefined) {
+                        tagRendering["id"] = tagRendering["#"]
+                        delete tagRendering["#"]
+                    } else if (tagRendering["freeform"]?.key !== undefined) {
                         tagRendering["id"] = config.id + "-" + tagRendering["freeform"]["key"]
                     }
                 }

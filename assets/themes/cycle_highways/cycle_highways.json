@@ -116,39 +116,6 @@
           "de": "Radschnellweg"
         }
       },
-      "width": {
-        "render": "4"
-      },
-      "color": {
-        "render": "#ff7392",
-        "mappings": [
-          {
-            "if": "state=",
-            "then": "#00acfc"
-          },
-          {
-            "if": "state=temporary",
-            "then": "#00acfc"
-          }
-        ]
-      },
-      "dashArray": {
-        "render": "",
-        "mappings": [
-          {
-            "if": "state=temporary",
-            "then": "12 10"
-          },
-          {
-            "if": "note:state=has_highway_no",
-            "then": "0 8"
-          },
-          {
-            "if": "note:state=has_highway_under_construction",
-            "then": "12 10"
-          }
-        ]
-      },
       "filter": [
         {
           "id": "name-alt",
@@ -235,6 +202,43 @@
               }
             }
           ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "color": {
+            "render": "#ff7392",
+            "mappings": [
+              {
+                "if": "state=",
+                "then": "#00acfc"
+              },
+              {
+                "if": "state=temporary",
+                "then": "#00acfc"
+              }
+            ]
+          },
+          "width": {
+            "render": "4"
+          },
+          "dashArray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": "state=temporary",
+                "then": "12 10"
+              },
+              {
+                "if": "note:state=has_highway_no",
+                "then": "0 8"
+              },
+              {
+                "if": "note:state=has_highway_under_construction",
+                "then": "12 10"
+              }
+            ]
+          }
         }
       ]
     }

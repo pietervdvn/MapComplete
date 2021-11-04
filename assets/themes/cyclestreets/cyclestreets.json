@@ -84,11 +84,20 @@
         "de": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf"
       },
       "title": "{name}",
-      "icon": "./assets/themes/cyclestreets/F111.svg",
-      "color": "#0000ff",
-      "width": "10",
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/cyclestreets/F111.svg",
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": "#0000ff",
+          "width": "10"
+        }
       ]
     },
     {
@@ -110,7 +119,6 @@
         "de": "Diese Straße wird bald eine Fahrradstraße sein"
       },
       "minzoom": 9,
-      "wayHandling": 0,
       "source": {
         "osmTags": "proposed:cyclestreet=yes"
       },
@@ -136,11 +144,20 @@
           }
         ]
       },
-      "icon": "./assets/themes/cyclestreets/F113.svg",
-      "color": "#09f9dd",
-      "width": "5",
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/cyclestreets/F113.svg",
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": "#09f9dd",
+          "width": "5"
+        }
       ]
     },
     {
@@ -173,7 +190,6 @@
         }
       },
       "minzoom": 18,
-      "wayHandling": 0,
       "title": {
         "render": {
           "nl": "Straat",
@@ -191,23 +207,32 @@
           }
         ]
       },
-      "icon": "./assets/svg/pencil.svg",
-      "width": "5",
-      "color": {
-        "render": "#aaaaaa",
-        "mappings": [
-          {
-            "then": "#0000ff",
-            "if": "cyclestreet=yes"
-          },
-          {
-            "then": "#09f9dd",
-            "if": "proposed:cyclestreet=yes"
-          }
-        ]
-      },
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/svg/pencil.svg",
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#aaaaaa",
+            "mappings": [
+              {
+                "then": "#0000ff",
+                "if": "cyclestreet=yes"
+              },
+              {
+                "then": "#09f9dd",
+                "if": "proposed:cyclestreet=yes"
+              }
+            ]
+          },
+          "width": "5"
+        }
       ]
     }
   ],

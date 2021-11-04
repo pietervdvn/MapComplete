@@ -313,18 +313,6 @@
         },
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/hailhydrant/hydrant.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "20,20,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -346,7 +334,28 @@
           }
         }
       ],
-      "wayHandling": 2
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/hydrant.svg"
+          },
+          "iconSize": {
+            "render": "20,20,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
+        }
+      ]
     },
     {
       "id": "extinguisher",
@@ -438,18 +447,6 @@
         },
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "20,20,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -472,7 +469,19 @@
           }
         }
       ],
-      "wayHandling": 1
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
+          },
+          "iconSize": {
+            "render": "20,20,center"
+          },
+          "location": [
+            "point"
+          ]
+        }
+      ]
     },
     {
       "id": "fire_stations",
@@ -493,7 +502,6 @@
           ]
         }
       },
-      "wayHandling": 2,
       "title": {
         "render": {
           "en": "Fire Station",
@@ -671,18 +679,6 @@
         },
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
-      },
-      "width": {
-        "render": "1"
-      },
-      "iconSize": {
-        "render": "35,35,center"
-      },
-      "color": {
-        "render": "#c22"
-      },
       "presets": [
         {
           "tags": [
@@ -700,6 +696,28 @@
             "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
             "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
             "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind."
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+          },
+          "iconSize": {
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#c22"
+          },
+          "width": {
+            "render": "1"
           }
         }
       ]
@@ -872,18 +890,6 @@
         },
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
-      },
-      "width": {
-        "render": "1"
-      },
-      "iconSize": {
-        "render": "35,35,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -904,7 +910,28 @@
           }
         }
       ],
-      "wayHandling": 2
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
+          },
+          "iconSize": {
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "1"
+          }
+        }
+      ]
     }
   ],
   "defaultBackgroundId": "HDM_HOT"
