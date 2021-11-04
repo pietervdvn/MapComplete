@@ -48,8 +48,8 @@
       "tagRenderings": [
         "images",
         {
-          "id": "minimap",
-          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+         
+          "render": "{minimap(17): height: 10rem; overflow: hidden; border: 1px solid #DADADA; border-radius: 0.5rem; }"
         }
       ],
       "icon": {
@@ -128,7 +128,9 @@
         "images",
         {
           "id": "minimap",
-          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+          
+   
+          "render": "{minimap(17): height: 10rem; overflow: hidden; border: 1px solid #DADADA; border-radius: 0.5rem; }"
         },
         {
           "render": {
