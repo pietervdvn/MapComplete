@@ -219,7 +219,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
 #### Specifying which tags to copy or add
 
-The first argument of the import button takes a `;`-seperated list of tags to add.
+The argument `tags` of the import button takes a `;`-seperated list of tags to add.
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
@@ -232,19 +232,24 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  
+
   
  
 
 name | default | description
 ------ | --------- | -------------
+targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
 tags | _undefined_ | The tags to add onto the new object - see specification above
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 minzoom | 18 | How far the contributor must zoom in before being able to import the point
+Snap onto layer(s)/replace geometry with this other way | _undefined_ |  - If the value corresponding with this key starts with 'way/' and the feature is a LineString or Polygon, the original OSM-way geometry will be changed to match the new geometry
+ - If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list
+snap max distance | 5 | The maximum distance that this point will move to snap onto a layer (in meters)
  
 #### Example usage 
 
- `{import_button(,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,18)}`
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,18,,5)}`
 
 
 ### multi_apply 

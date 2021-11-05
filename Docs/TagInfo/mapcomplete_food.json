@@ -88,7 +88,7 @@
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Restaurants and fast food' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "designated"
     },
     {

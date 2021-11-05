@@ -112,7 +112,7 @@
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Defibrillators' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+      "description": "Layer 'Defibrillators' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
       "value": "designated"
     },
     {
