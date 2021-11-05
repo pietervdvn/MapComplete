@@ -100,13 +100,16 @@
         {
           "id": "uk_addresses_embedding_outline",
           "render": "An outline embedding this point with an address already exists in OpenStreetMap.<br>This <a href='https://openstreetmap.org/{_embedding_object:id}' target='blank'>object</a> has address <b>{_embedding_object:addr:street} {_embedding_object:addr:housenumber}</b>",
-          "mappings": [{
-            "if": "_embedding_object:id=true",
-            "then": "The INSPIRE-polygon containing this point has at least one address contained"
-          },{
-            "if": "_embedding_object:id=false",
-            "then": "The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
-          }],
+          "mappings": [
+            {
+              "if": "_embedding_object:id=true",
+              "then": "The INSPIRE-polygon containing this point has at least one address contained"
+            },
+            {
+              "if": "_embedding_object:id=false",
+              "then": "The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
+            }
+          ],
           "condition": "_embedding_object:id~*"
         },
         {
@@ -245,6 +248,33 @@
           ]
         },
         {
+          "id": "uk_addresses_housename",
+          "question": "What is the name of this house?<br/>This is normally indicated on a plaque.<br><div class='subtle'>Do NOT add names of inhabitants!</div>",
+          "render": "This house is named <b>{addr:housename}</b>",
+          "freeform": {
+            "key": "addr:housename",
+            "addExtraTags": [
+              "nohousename="
+            ]
+          },
+          "mappings": [
+            {
+              "if": "nohousename=yes",
+              "then": "This building has no housename"
+            },
+            {
+              "if": {
+                "and": [
+                  "addr:housename=",
+                  "nohousenumber!=yes"
+                ]
+              },
+              "then": "This building has no housename",
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
           "id": "uk_addresses_street",
           "render": {
             "en": "This address is in street <b>{addr:street}</b>",
@@ -278,6 +308,29 @@
             "and": [
               "nohousenumber!~yes"
             ]
+          }
+        },
+        {
+          "id": "fixme",
+          "render": "<b>Fixme description</b>{render}",
+          "question": {
+            "en": "What should be fixed here? Please explain"
+          },
+          "freeform": {
+            "key": "fixme"
+          },
+          "mappings": [
+            {
+              "if": "fixme=",
+              "then": "No fixme - write something here to explain complicated cases"
+            }
+          ]
+        },
+        "questions",
+        {
+          "id": "address-sign-image",
+          "render": {
+            "en": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
           }
         }
       ],
