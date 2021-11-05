@@ -2762,7 +2762,8 @@
                 "render": ""
             },
             "tree_node-wikidata": {
-                "question": "Was ist das passende Wikidata Element zu diesem Baum?"
+                "question": "Was ist das passende Wikidata Element zu diesem Baum?",
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
             }
         },
         "title": {
