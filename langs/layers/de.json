@@ -2871,6 +2871,41 @@
                 "options": {
                     "0": {
                         "question": "Alle Fahrzeugtypen"
+                    },
+                    "2": {
+                        "question": "Ladestation für Elektrofahrzeuge"
+                    },
+                    "1": {
+                        "question": "Elektrofahrradladestation"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "3": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
+                    },
+                    "7": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
+                    },
+                    "6": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 CCS <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker, auch bekannt als Typ 1 Combo</b>"
+                    },
+                    "5": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772) <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker <i>ohne</i> Kabel</b>"
+                    },
+                    "0": {
+                        "question": "Alle Steckertypen"
+                    },
+                    "4": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Nur funktionierende Ladestationen"
                     }
                 }
             }
