@@ -31,7 +31,8 @@
           "and": [
             "highway!=",
             "lit!=no",
-            "lit!="
+            "lit!=",
+            "service!=driveway"
           ]
         }
       },
@@ -102,7 +103,9 @@
         "nl": "Alle straten"
       },
       "source": {
-        "osmTags": "highway!="
+        "osmTags": {
+          "and": ["highway!=", "service!=driveway", "highway!=platform"]
+        }
       },
       "minZoom": 19,
       "title": {
@@ -119,7 +122,15 @@
       },
       "mapRendering": [
         {
-          "color": "#a9a9a9"
+          "color": {
+            "render":"#a9a9a9",
+            "mappings": [
+              {
+                "if":"lit=no",
+                "then": "#303030"
+              }
+            ]
+          }
         }
       ],
       "tagRenderings": [
