@@ -111,13 +111,44 @@
       },
       "minzoom": 12,
       "source": {
-        "osmTags": "amenity=post_office"
+        "osmTags": {
+          "or": [
+            "amenity=post_office",
+            "post_office=post_partner"
+          ]
+        }
       },
       "title": {
         "render": {
           "en": "Post Office",
           "de": "Poststelle"
-        }
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "post_office=post_partner",
+                "name="
+              ]
+            },
+            "then": {
+              "en": "Post partner at a shop",
+              "de": "Postfiliale im Einzelhandel"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "post_office=post_partner",
+                "name~*"
+              ]
+            },
+            "then": {
+              "en": "Post partner at {name}",
+              "de": "Postfiliale im {name}"
+            }
+          }
+        ]
       },
       "description": {
         "en": "A layer showing post offices.",
@@ -150,6 +181,81 @@
             }
           ],
           "id": "OH"
+        },
+        {
+          "id": "partner-brand",
+          "render": {
+            "en": "This location offers services for {post_office:brand}"
+          },
+          "question": {
+            "en": "For which brand does this location offer services?"
+          },
+          "condition": "post_office=post_partner",
+          "freeform": {
+            "key": "post_office:brand",
+            "type": "string"
+          },
+          "multiAnswer": true,
+          "mappings": [
+            {
+              "if": "post_office:brand=DHL",
+              "then": {
+                "en": "This location offers services for DHL"
+              },
+              "hideInAnswer": "_country=de"
+            },
+            {
+              "if": "post_office:brand=DPD",
+              "then": {
+                "en": "This location offers services for DPD"
+              }
+            },
+            {
+              "if": "post_office:brand=GLS",
+              "then": {
+                "en": "This location offers services for GLS"
+              }
+            },
+            {
+              "if": "post_office:brand=UPS",
+              "then": {
+                "en": "This location offers services for UPS"
+              }
+            },
+            {
+              "if": "post_office:brand=DHL Paketshop",
+              "then": {
+                "en": "This location is a DHL Paketshop"
+              },
+              "hideInAnswer": "_country!=de"
+            },
+            {
+              "if": "post_office:brand=Hermes PaketShop",
+              "then": {
+                "en": "This location is a Hermes PaketShop"
+              },
+              "hideInAnswer": "_country!=de"
+            },
+            {
+              "if": "post_office:brand=PostNL",
+              "then": {
+                "en": "This location is a PostNL-point"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "_country!=nl",
+                  "_country!=be"
+                ]
+              }
+            },
+            {
+              "if": "post_office:brand=bpost",
+              "then": {
+                "en": "This location offers services for bpost"
+              },
+              "hideInAnswer": "_country!=be"
+            }
+          ]
         }
       ],
       "presets": [

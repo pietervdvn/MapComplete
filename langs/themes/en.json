@@ -1216,9 +1216,47 @@
                         },
                         "question": "What are the opening hours for this post office?",
                         "render": "Opening Hours: {opening_hours_table()}"
+                    },
+                    "partner-brand": {
+                        "mappings": {
+                            "0": {
+                                "then": "This location offers services for DHL"
+                            },
+                            "1": {
+                                "then": "This location offers services for DPD"
+                            },
+                            "2": {
+                                "then": "This location offers services for GLS"
+                            },
+                            "3": {
+                                "then": "This location offers services for UPS"
+                            },
+                            "4": {
+                                "then": "This location is a DHL Paketshop"
+                            },
+                            "5": {
+                                "then": "This location is a Hermes PaketShop"
+                            },
+                            "6": {
+                                "then": "This location is a PostNL-point"
+                            },
+                            "7": {
+                                "then": "This location offers services for bpost"
+                            }
+                        },
+                        "question": "For which brand does this location offer services?",
+                        "render": "This location offers services for {post_office:brand}"
                     }
                 },
                 "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Post partner at a shop"
+                        },
+                        "1": {
+                            "then": "Post partner at {name}"
+                        }
+                    },
                     "render": "Post Office"
                 }
             }
@@ -1332,6 +1370,12 @@
                 "description": "Addresses",
                 "name": "Known addresses in OSM",
                 "tagRenderings": {
+                    "address-sign-image": {
+                        "render": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
+                    },
+                    "fixme": {
+                        "question": "What should be fixed here? Please explain"
+                    },
                     "uk_addresses_explanation_osm": {
                         "render": "This address is saved in OpenStreetMap"
                     },
