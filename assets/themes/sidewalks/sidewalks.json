@@ -32,6 +32,7 @@
         "osmTags": {
           "or": [
             "highway=residential",
+            "highway=unclassified",
             "highway=tertiary",
             "highway=secondary"
           ]
