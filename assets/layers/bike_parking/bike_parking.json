@@ -72,7 +72,7 @@
             "question": {
                 "en": "What is the type of this bicycle parking?",
                 "nl": "Van welk type is deze fietsparking?",
-                "fr": "Quel type de parking à vélos est-ce ?",
+                "fr": "Quel type de parking à vélos est-ce ?",
                 "gl": "Que tipo de aparcadoiro de bicicletas é?",
                 "de": "Was ist die Art dieses Fahrrad-Parkplatzes?",
                 "hu": "Milyen típusú ez a kerékpáros parkoló?",
@@ -212,7 +212,7 @@
             "question": {
                 "en": "What is the relative location of this bicycle parking?",
                 "nl": "Wat is de relatieve locatie van deze parking??",
-                "fr": "Quelle est la position relative de ce parking à vélo ?",
+                "fr": "Quelle est la position relative de ce parking à vélo ?",
                 "it": "Qual è la posizione relativa di questo parcheggio bici?",
                 "zh_Hant": "這個單車停車場的相對位置是？",
                 "pl": "Jaka jest względna lokalizacja tego parkingu rowerowego?",
@@ -221,20 +221,6 @@
                 "pt": "Qual a localização relativa deste estacionamento de bicicletas?"
             },
             "mappings": [
-                {
-                    "if": "location=underground",
-                    "then": {
-                        "en": "Underground parking",
-                        "nl": "Ondergrondse parking",
-                        "fr": "Parking souterrain",
-                        "it": "Parcheggio sotterraneo",
-                        "ru": "Подземная парковка",
-                        "de": "Tiefgarage",
-                        "zh_Hant": "地下停車場",
-                        "pt_BR": "Estacionamento subterrâneo",
-                        "pt": "Estacionamento subterrâneo"
-                    }
-                },
                 {
                     "if": "location=underground",
                     "then": {
@@ -264,21 +250,6 @@
                     }
                 },
                 {
-                    "if": "location=",
-                    "then": {
-                        "en": "Surface level parking",
-                        "nl": "Parking op de begane grond",
-                        "fr": "Parking en surface",
-                        "hu": "Felszíni parkoló",
-                        "it": "Parcheggio in superficie",
-                        "de": "Ebenerdiges Parken",
-                        "zh_Hant": "地面層停車場",
-                        "pt_BR": "Estacionamento ao nível da superfície",
-                        "pt": "Estacionamento ao nível da superfície"
-                    },
-                    "hideInAnwser": true
-                },
-                {
                     "if": "location=rooftop",
                     "then": {
                         "en": "Rooftop parking",
@@ -302,7 +273,7 @@
                 "nl": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw.",
                 "gl": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores.",
                 "de": "Ist dieser Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Innenparkplätze.",
-                "fr": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur.",
+                "fr": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur.",
                 "hu": "Fedett ez a parkoló? (Beltéri parkoló esetén is válaszd a \"fedett\" opciót.)",
                 "it": "È un parcheggio coperto? Indicare “coperto” per parcheggi all’interno.",
                 "zh_Hant": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。",
@@ -383,7 +354,7 @@
             "question": {
                 "en": "Who can use this bicycle parking?",
                 "nl": "Wie mag er deze fietsenstalling gebruiken?",
-                "fr": "Qui peut utiliser ce parking à vélo ?",
+                "fr": "Qui peut utiliser ce parking à vélo ?",
                 "it": "Chi può usare questo parcheggio bici?",
                 "de": "Wer kann diesen Fahrradparplatz nutzen?",
                 "zh_Hant": "誰可以使用這個單車停車場？",
@@ -402,8 +373,7 @@
                 "zh_Hant": "{access}",
                 "fi": "{access}",
                 "pt_BR": "{access}",
-                "pt": "{access}",
-                "eo": "{access}"
+                "pt": "{access}"
             },
             "freeform": {
                 "key": "access",
@@ -460,7 +430,7 @@
                 "nl": "Heeft deze fietsparking plaats voor bakfietsen?",
                 "gl": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?",
                 "de": "Gibt es auf diesem Fahrrad-Parkplatz Plätze für Lastenfahrräder?",
-                "fr": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?",
+                "fr": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?",
                 "it": "Questo parcheggio dispone di posti specifici per le bici da trasporto?",
                 "zh_Hant": "這個單車停車場有地方放裝箱的單車嗎？",
                 "pt_BR": "O estacionamento de bicicletas tem vagas para bicicletas de carga?",
@@ -552,5 +522,21 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/bike_parking/parking.svg"
+            },
+            "iconSize": "40,40,bottom",
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": "#00f",
+            "width": "1"
+        }
+    ]
 }
