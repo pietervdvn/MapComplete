@@ -39,6 +39,10 @@ export default class PointRenderingConfig extends WithContextLoader {
                 throw `A point rendering has an invalid location: '${l}' is not one of ${Array.from(allowed).join(", ")} (at ${context}.location)`
             }
         })
+        
+        if(json.icon === undefined && json.label === undefined){
+            throw `A point rendering should define at least an icon or a label`
+        }
 
         if(this.location.size == 0){
             throw "A pointRendering should have at least one 'location' to defined where it should be rendered. (At "+context+".location)"

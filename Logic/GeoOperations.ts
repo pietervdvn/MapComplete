@@ -37,8 +37,10 @@ export class GeoOperations {
      * The features with which 'feature' overlaps, are returned together with their overlap area in m²
      *
      * If 'feature' is a LineString, the features in which this feature is (partly) embedded is returned, the overlap length in meter is given
+     * If 'feature' is a Polygon, overlapping points and points within the polygon will be returned
      *
      * If 'feature' is a point, it will return every feature the point is embedded in. Overlap will be undefined
+     * 
      */
     static calculateOverlap(feature: any, otherFeatures: any[]): { feat: any, overlap: number }[] {
 

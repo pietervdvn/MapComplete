@@ -39,11 +39,6 @@
       },
       "mapRendering": [
         {
-          "location": [
-            "point"
-          ]
-        },
-        {
           "color": "#444444",
           "width": {
             "render": "1"

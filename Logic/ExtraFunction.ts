@@ -54,10 +54,10 @@ export class ExtraFunction {
     private static readonly OverlapFunc = new ExtraFunction(
         {
             name: "overlapWith",
-            doc: "Gives a list of features from the specified layer which this feature (partly) overlaps with. " +
-                "If the current feature is a point, all features that embed the point are given. " +
+            doc: "Gives a list of features from the specified layer which this feature (partly) overlaps with. A point which is embedded in the feature is detected as well." +
+                "If the current feature is a point, all features that this point is embeded in are given.\n\n" +
                 "The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.\n" +
-                "The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list" +
+                "The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list\n" +
                 "\n" +
                 "For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`",
             args: ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"]
@@ -233,7 +233,7 @@ export class ExtraFunction {
 
         return new Combine([
             ExtraFunction.intro,
-            new List(ExtraFunction.allFuncs.map(func => func._name)),
+            new List(ExtraFunction.allFuncs.map(func => `[${func._name}](#${func._name})`)),
             ...elems
         ]);
     }

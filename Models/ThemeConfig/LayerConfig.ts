@@ -192,11 +192,11 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.mapRendering = json.mapRendering
-            .filter(r => r["icon"] !== undefined || r["label"] !== undefined)
+            .filter(r => r["location"] !== undefined)
             .map((r, i) => new PointRenderingConfig(<PointRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
 
         this.lineRendering = json.mapRendering
-            .filter(r => r["icon"] === undefined && r["label"] === undefined)
+            .filter(r => r["location"] === undefined)
             .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
 
 

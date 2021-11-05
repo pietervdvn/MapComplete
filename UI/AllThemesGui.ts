@@ -7,11 +7,14 @@ import UserRelatedState from "../Logic/State/UserRelatedState";
 import {Utils} from "../Utils";
 import LanguagePicker from "./LanguagePicker";
 import IndexText from "./BigComponents/IndexText";
-import {feature} from "@turf/turf";
 import FeaturedMessage from "./BigComponents/FeaturedMessage";
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 
 export default class AllThemesGui {
     constructor() {
+        
+        try{
+            
         new FixedUiElement("").AttachTo("centermessage")
         const state = new UserRelatedState(undefined);
         const intro = new Combine([
@@ -30,5 +33,9 @@ export default class AllThemesGui {
         ]).SetClass("block m-5 lg:w-3/4 lg:ml-40")
             .SetStyle("pointer-events: all;")
             .AttachTo("topleft-tools");
+        }catch (e) {
+            new FixedUiElement("Seems like no layers are compiled - check the output of `npm run generate:layeroverview`. Is this visible online? Contact pietervdvn immediately!").SetClass("alert")
+                .AttachTo("centermessage")
+        }
     }
 }
