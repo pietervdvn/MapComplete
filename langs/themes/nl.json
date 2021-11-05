@@ -1051,7 +1051,7 @@
     "uk_addresses": {
         "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
         "layers": {
-            "1": {
+            "2": {
                 "description": "Adressen",
                 "tagRenderings": {
                     "uk_addresses_housenumber": {

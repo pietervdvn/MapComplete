@@ -1328,7 +1328,7 @@
     "uk_addresses": {
         "description": "Contribute to OpenStreetMap by filling out address information",
         "layers": {
-            "1": {
+            "2": {
                 "description": "Addresses",
                 "name": "Known addresses in OSM",
                 "tagRenderings": {

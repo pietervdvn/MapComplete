@@ -1104,7 +1104,7 @@
     "uk_addresses": {
         "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
         "layers": {
-            "1": {
+            "2": {
                 "description": "Adressen",
                 "name": "Bekannte Adressen in OSM",
                 "tagRenderings": {

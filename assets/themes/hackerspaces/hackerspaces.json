@@ -224,7 +224,7 @@
                     "hackerspace=makerspace"
                   ]
                 },
-                "then":  "./assets/themes/hackerspaces/led.png"
+                "then": "./assets/themes/hackerspaces/led.png"
               }
             ]
           },
