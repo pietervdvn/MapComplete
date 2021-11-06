@@ -256,6 +256,141 @@
               "hideInAnswer": "_country!=be"
             }
           ]
+        },
+        {
+          "id": "letter-from",
+          "render": {
+            "en": "You can post letters with these companies: {post_office:letter_from}"
+          },
+          "question": {
+            "en": "Can you post a letter here?"
+          },
+          "freeform": {
+            "key": "post_office:letter_from",
+            "type": "string"
+          },
+          "mappings": [
+            {
+              "if": "post_office:letter_from=yes",
+              "then": {
+                "en": "You can post letters here"
+              }
+            },
+            {
+              "if": "post_office:letter_from=no",
+              "then": {
+                "en": "You can't post letters here"
+              }
+            }
+          ]
+        },
+        {
+          "id": "parcel-from",
+          "render": {
+            "en": "You can post parcels with these companies: {post_office:parcel_from}"
+          },
+          "question": {
+            "en": "Can you send a parcel here?"
+          },
+          "freeform": {
+            "key": "post_office:parcel_from",
+            "type": "string"
+          },
+          "mappings": [
+            {
+              "if": "post_office:parcel_from=yes",
+              "then": {
+                "en": "You can send parcels here"
+              }
+            },
+            {
+              "if": "post_office:parcel_from=no",
+              "then": {
+                "en": "You can't send parcels here"
+              }
+            }
+          ]
+        },
+        {
+          "id": "parcel-pickup",
+          "render": {
+            "en": "You can pick up parcels from these companies: {post_office:parcel_pickup}"
+          },
+          "question": {
+            "en": "Can you pick up missed parcels here?"
+          },
+          "freeform": {
+            "key": "post_office:parcel_pickup",
+            "type": "string"
+          },
+          "mappings": [
+            {
+              "if": "post_office:parcel_pickup=yes",
+              "then": {
+                "en": "You can pick up missed parcels here"
+              }
+            },
+            {
+              "if": "post_office:parcel_pickup=no",
+              "then": {
+                "en": "You can't pick up missed parcels here"
+              }
+            }
+          ]
+        },
+        {
+          "id": "parcel-to",
+          "render": {
+            "en": "You can send parcels to here for pickup with these companies: {post_office:parcel_to}"
+          },
+          "question": {
+            "en": "Can you send parcels to here for pickup?"
+          },
+          "freeform": {
+            "key": "post_office:parcel_to",
+            "type": "string"
+          },
+          "mappings": [
+            {
+              "if": "post_office:parcel_to=yes",
+              "then": {
+                "en": "You can send parcels to here for pickup"
+              }
+            },
+            {
+              "if": "post_office:parcel_to=no",
+              "then": {
+                "en": "You can't send parcels to here for pickup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "stamps",
+          "render": {
+            "en": "You can buy stamps from companies: {post_office:stamps}"
+          },
+          "question": {
+            "en": "Can you buy stamps here?"
+          },
+          "freeform": {
+            "key": "post_office:stamps",
+            "type": "string"
+          },
+          "mappings": [
+            {
+              "if": "post_office:stamps=yes",
+              "then": {
+                "en": "You can buy stamps here"
+              }
+            },
+            {
+              "if": "post_office:stamps=no",
+              "then": {
+                "en": "You can't buy stamps here"
+              }
+            }
+          ]
         }
       ],
       "presets": [
