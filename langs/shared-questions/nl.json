@@ -59,6 +59,23 @@
     "phone": {
       "question": "Wat is het telefoonnummer van {name}?"
     },
+    "service:electricity": {
+      "mappings": {
+        "0": {
+          "then": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden"
+        },
+        "1": {
+          "then": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden"
+        },
+        "2": {
+          "then": "Er zijn binnen geen stekkers beschikbaar, maar electronica opladen kan indien men dit aan het personeel vraagt"
+        },
+        "3": {
+          "then": "Er zijn binnen geen stekkers beschikbaar"
+        }
+      },
+      "question": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+    },
     "website": {
       "question": "Wat is de website van {name}?"
     },

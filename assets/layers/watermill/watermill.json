@@ -4,7 +4,8 @@
     "nl": "Watermolens",
     "en": "Watermill",
     "de": "Wassermühle",
-    "ru": "Водяная мельница"
+    "ru": "Водяная мельница",
+    "id": "Kincir Air"
   },
   "minzoom": 12,
   "source": {
@@ -162,16 +163,6 @@
       "id": "Operator tag"
     }
   ],
-  "wayHandling": 1,
-  "icon": {
-    "render": "./assets/layers/watermill/watermill.svg"
-  },
-  "iconSize": {
-    "render": "50,50,center"
-  },
-  "color": {
-    "render": "#FFC0CB"
-  },
   "mapRendering": [
     {
       "icon": {

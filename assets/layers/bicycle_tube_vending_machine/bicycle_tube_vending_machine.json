@@ -37,22 +37,6 @@
     },
     "defaults"
   ],
-  "icon": {
-    "render": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
-  },
-  "iconOverlays": [
-    {
-      "if": {
-        "or": [
-          "operational_status=broken",
-          "operational_status=closed"
-        ]
-      },
-      "then": "close:#c33",
-      "badge": true
-    }
-  ],
-  "iconSize": "50,50,bottom",
   "source": {
     "osmTags": {
       "and": [
@@ -62,7 +46,6 @@
     }
   },
   "minzoom": 13,
-  "wayHandling": 2,
   "presets": [
     {
       "title": {
@@ -83,7 +66,6 @@
       ]
     }
   ],
-  "color": "#6bc4f7",
   "tagRenderings": [
     "images",
     {

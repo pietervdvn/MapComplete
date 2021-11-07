@@ -78,15 +78,6 @@
       "id": "picnic_table-material"
     }
   ],
-  "icon": {
-    "render": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg"
-  },
-  "iconSize": {
-    "render": "35,35,center"
-  },
-  "color": {
-    "render": "#00f"
-  },
   "presets": [
     {
       "tags": [
@@ -102,7 +93,6 @@
       }
     }
   ],
-  "wayHandling": 1,
   "deletion": {
     "softDeletionTags": {
       "and": [

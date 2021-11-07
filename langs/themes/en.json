@@ -1328,6 +1328,26 @@
   "uk_addresses": {
     "description": "Contribute to OpenStreetMap by filling out address information",
     "layers": {
+      "1": {
+        "tagRenderings": {
+          "uk_addresses_embedding_outline": {
+            "mappings": {
+              "0": {
+                "then": "The INSPIRE-polygon containing this point has at least one address contained"
+              },
+              "1": {
+                "then": "The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
+              }
+            }
+          },
+          "uk_addresses_explanation": {
+            "render": "There probably is an address here"
+          }
+        },
+        "title": {
+          "render": "Address to be determined"
+        }
+      },
       "2": {
         "description": "Addresses",
         "name": "Known addresses in OSM",

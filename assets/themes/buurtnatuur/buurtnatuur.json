@@ -74,42 +74,6 @@
       "tagRenderings": [
         "images"
       ],
-      "icon": {
-        "render": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg"
-      },
-      "width": {
-        "render": "5"
-      },
-      "iconSize": {
-        "render": "50,50,center"
-      },
-      "color": {
-        "render": "#3c3",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "name=",
-                "noname=",
-                "operator=",
-                "access=",
-                "access:description=",
-                "leisure=park"
-              ]
-            },
-            "then": "#cc1100"
-          },
-          {
-            "if": {
-              "and": [
-                "name=",
-                "noname="
-              ]
-            },
-            "then": "#fccb37"
-          }
-        ]
-      },
       "presets": [
         {
           "tags": [
@@ -230,29 +194,6 @@
       "tagRenderings": [
         "images"
       ],
-      "icon": {
-        "render": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg"
-      },
-      "width": {
-        "render": "5"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#3c3",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "name=",
-                "noname="
-              ]
-            },
-            "then": "#fccb37"
-          }
-        ]
-      },
       "presets": [
         {
           "tags": [
@@ -361,47 +302,6 @@
       "tagRenderings": [
         "images"
       ],
-      "icon": {
-        "render": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg"
-      },
-      "width": {
-        "render": "5"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#3a3",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "operator=",
-                "access=",
-                "access:description="
-              ]
-            },
-            "then": "#cc1100"
-          },
-          {
-            "if": {
-              "and": [
-                "operator="
-              ]
-            },
-            "then": "#cccc00"
-          },
-          {
-            "if": {
-              "and": [
-                "name=",
-                "noname="
-              ]
-            },
-            "then": "#fccb37"
-          }
-        ]
-      },
       "presets": [
         {
           "tags": [

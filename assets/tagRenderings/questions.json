@@ -361,6 +361,44 @@
       "type": "opening_hours"
     }
   },
+  "service:electricity":{
+    "#": "service:socket describes if a pub, restaurant or café offers electricity to their customers.",
+    "question": {
+      "en": "Does this amenity have electrical outlets, available to customers when they are inside?",
+      "nl": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+    },
+    "mappings": [
+      {
+        "then": {
+          "en": "There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics",
+          "nl": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden"
+        },
+        "if": "service:electricity=yes"
+      },
+      {
+        "then": {
+          "en": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics",
+          "nl": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden"
+        },
+        "if": "service:electricity=limited"
+      },
+      {
+        "then": {
+          "en": "There are no sockets available indoors to customers, but charging might be possible if the staff is asked",
+          "nl": "Er zijn binnen geen stekkers beschikbaar, maar electronica opladen kan indien men dit aan het personeel vraagt"
+        },
+        "if": "service:electricity=ask"
+      },
+      {
+        "then": {
+          "en": "There are a no domestic sockets available to customers seated indoors",
+          "nl": "Er zijn binnen geen stekkers beschikbaar"
+        },
+        "if": "service:electricity=no"
+      }
+    ]
+    
+  },
   "payment-options": {
     "question": {
       "en": "Which methods of payment are accepted here?",

@@ -324,25 +324,6 @@
     "questions",
     "reviews"
   ],
-  "icon": {
-    "render": "./assets/themes/shops/shop.svg"
-  },
-  "iconOverlays": [
-    {
-      "if": "opening_hours~*",
-      "then": "isOpen",
-      "badge": true
-    }
-  ],
-  "width": {
-    "render": "8"
-  },
-  "iconSize": {
-    "render": "40,40,center"
-  },
-  "color": {
-    "render": "#00f"
-  },
   "presets": [
     {
       "tags": [
@@ -368,7 +349,6 @@
       }
     }
   ],
-  "wayHandling": 2,
   "deletion": {
     "softDeletionTags": {
       "and": [

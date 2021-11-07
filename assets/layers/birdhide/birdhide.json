@@ -190,23 +190,6 @@
       "id": "birdhide-operator"
     }
   ],
-  "icon": {
-    "render": {
-      "nl": "./assets/layers/birdhide/birdhide.svg"
-    },
-    "mappings": [
-      {
-        "if": {
-          "or": [
-            "building=yes",
-            "shelter=yes",
-            "amenity=shelter"
-          ]
-        },
-        "then": "./assets/layers/birdhide/birdshelter.svg"
-      }
-    ]
-  },
   "size": {
     "freeform": {
       "addExtraTags": []
@@ -215,11 +198,6 @@
       "nl": "40,40,center"
     },
     "mappings": []
-  },
-  "color": {
-    "render": {
-      "nl": "#94bb28"
-    }
   },
   "stroke": {
     "render": {
@@ -255,7 +233,6 @@
       }
     }
   ],
-  "wayHandling": 1,
   "filter": [
     {
       "id": "wheelchair",

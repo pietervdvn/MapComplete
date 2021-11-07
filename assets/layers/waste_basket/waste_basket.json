@@ -142,34 +142,6 @@
       ]
     }
   ],
-  "icon": {
-    "render": "./assets/themes/waste_basket/waste_basket.svg"
-  },
-  "width": {
-    "render": "8"
-  },
-  "iconSize": {
-    "render": "40,40,center",
-    "mappings": [
-      {
-        "if": {
-          "and": [
-            "amenity=waste_basket"
-          ]
-        },
-        "then": {
-          "en": "Waste Basket",
-          "nl": "Vuilnisbak",
-          "ru": "Контейнер для мусора",
-          "de": "Abfalleimer",
-          "eo": "Rubujo"
-        }
-      }
-    ]
-  },
-  "color": {
-    "render": "#00f"
-  },
   "presets": [
     {
       "tags": [

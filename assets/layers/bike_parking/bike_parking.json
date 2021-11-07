@@ -22,13 +22,6 @@
       ]
     }
   },
-  "icon": {
-    "render": "./assets/layers/bike_parking/parking.svg"
-  },
-  "iconSize": "40,40,bottom",
-  "color": "#00f",
-  "width": "1",
-  "wayHandling": 2,
   "presets": [
     {
       "title": {

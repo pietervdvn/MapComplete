@@ -1430,13 +1430,6 @@
     }
   },
   "waste_basket": {
-    "iconSize": {
-      "mappings": {
-        "0": {
-          "then": "Контейнер для мусора"
-        }
-      }
-    },
     "mapRendering": {
       "0": {
         "iconSize": {

@@ -22,22 +22,6 @@
       "id": "Air minum"
     }
   },
-  "icon": {
-    "render": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg"
-  },
-  "iconOverlays": [
-    {
-      "if": {
-        "or": [
-          "operational_status=broken",
-          "operational_status=closed"
-        ]
-      },
-      "then": "close:#c33",
-      "badge": true
-    }
-  ],
-  "iconSize": "40,40,bottom",
   "source": {
     "osmTags": {
       "and": [
@@ -53,7 +37,6 @@
     "_closest_other_drinking_water_distance=Math.floor(Number(JSON.parse(feat.properties._closest_other_drinking_water)?.distance) * 1000)"
   ],
   "minzoom": 13,
-  "wayHandling": 1,
   "presets": [
     {
       "title": {
@@ -71,7 +54,6 @@
       ]
     }
   ],
-  "color": "#6bc4f7",
   "tagRenderings": [
     "images",
     {

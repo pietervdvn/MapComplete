@@ -56,20 +56,7 @@
     "phone",
     "opening_hours"
   ],
-  "icon": {
-    "render": "./assets/layers/bike_themed_object/other_services.svg"
-  },
-  "width": {
-    "render": "2"
-  },
-  "iconSize": {
-    "render": "50,50,bottom"
-  },
-  "color": {
-    "render": "#AB76D5"
-  },
   "presets": [],
-  "wayHandling": 2,
   "mapRendering": [
     {
       "icon": {

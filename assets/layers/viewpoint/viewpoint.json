@@ -21,10 +21,6 @@
     "osmTags": "tourism=viewpoint"
   },
   "minzoom": 14,
-  "icon": "./assets/layers/viewpoint/viewpoint.svg",
-  "iconSize": "20,20,center",
-  "color": "#ffffff",
-  "width": "5",
   "wayhandling": 2,
   "presets": [
     {

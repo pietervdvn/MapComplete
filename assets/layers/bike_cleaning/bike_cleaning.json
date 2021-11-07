@@ -37,10 +37,6 @@
       }
     ]
   },
-  "icon": {
-    "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
-  },
-  "iconSize": "50,50,bottom",
   "source": {
     "osmTags": {
       "or": [
@@ -51,7 +47,6 @@
     }
   },
   "minzoom": 13,
-  "wayHandling": 1,
   "presets": [
     {
       "title": {
@@ -67,20 +62,6 @@
       "tags": [
         "amenity=bicycle_wash"
       ]
-    }
-  ],
-  "color": "#6bc4f7",
-  "iconOverlays": [
-    {
-      "if": {
-        "and": [
-          "service:bicycle:cleaning~*",
-          "amenity!=bike_wash"
-        ]
-      },
-      "then": {
-        "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
-      }
     }
   ],
   "titleIcons": [

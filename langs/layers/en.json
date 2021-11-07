@@ -3219,14 +3219,6 @@
       }
     },
     "tagRenderings": {
-      "Opening-hours": {
-        "mappings": {
-          "0": {
-            "then": "Opened 24/7"
-          }
-        },
-        "question": "When are these toilets opened?"
-      },
       "toilet-access": {
         "mappings": {
           "0": {
@@ -3341,6 +3333,14 @@
           }
         },
         "question": "Is there a dedicated toilet for wheelchair users"
+      },
+      "Opening-hours": {
+        "mappings": {
+          "0": {
+            "then": "Opened 24/7"
+          }
+        },
+        "question": "When are these toilets opened?"
       }
     },
     "title": {
@@ -3531,13 +3531,6 @@
   },
   "waste_basket": {
     "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
-    "iconSize": {
-      "mappings": {
-        "0": {
-          "then": "Waste Basket"
-        }
-      }
-    },
     "mapRendering": {
       "0": {
         "iconSize": {

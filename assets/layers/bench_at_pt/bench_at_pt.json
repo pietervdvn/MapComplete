@@ -138,18 +138,6 @@
       "id": "bench_at_pt-bench"
     }
   ],
-  "icon": {
-    "render": "./assets/themes/benches/bench_public_transport.svg"
-  },
-  "width": {
-    "render": "8"
-  },
-  "iconSize": {
-    "render": "35,35,center"
-  },
-  "color": {
-    "render": "#00f"
-  },
   "mapRendering": [
     {
       "icon": {

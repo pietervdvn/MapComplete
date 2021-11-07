@@ -10,7 +10,7 @@ import LegacyJsonConvert from "../Models/ThemeConfig/LegacyJsonConvert";
 const layerFiles = ScriptUtils.getLayerFiles();
 for (const layerFile of layerFiles) {
     LegacyJsonConvert.fixLayerConfig(layerFile.parsed)
-    writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "    "))
+    writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
 }
 
 const themeFiles = ScriptUtils.getThemeFiles()
