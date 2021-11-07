@@ -35,6 +35,7 @@
     "generate:contributor-list": "git log --pretty='%aN' | sort | uniq -c | sort -hr | sed 's/ *\\([0-9]*\\) \\(.*\\)$/{\"contributor\":\"\\2\", \"commits\":\\1}/' | tr '\\n' ',' | sed 's/^/{\"contributors\":[/' | sed 's/,$/]}/' | jq > assets/contributors.json",
     "validate:layeroverview": "ts-node scripts/generateLayerOverview.ts --report",
     "validate:licenses": "ts-node scripts/generateLicenseInfo.ts --report",
+    "generate:schemas": "ts2json-schema -p Models/ThemeConfig/Json/ -o Docs/Schemas/ -t tsconfig.json -R . -m \".*ConfigJson\" -A && ts-node scripts/fixSchemas.ts ",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
     "reset:layeroverview": "echo {\\\"layers\\\":[], \\\"themes\\\":[]} > ./assets/generated/known_layers_and_themes.json",
     "generate": "mkdir -p ./assets/generated && npm run reset:layeroverview && npm run generate:images && npm run generate:translations && npm run generate:licenses && npm run generate:layeroverview",
@@ -109,6 +110,7 @@
     "sharp": "^0.28.3",
     "ts-node": "^9.0.0",
     "ts-node-dev": "^1.0.0-pre.63",
+    "ts2json-schema": "^1.4.0",
     "tslint-no-circular-imports": "^0.7.0",
     "typescript": "^3.9.7",
     "write-file": "^1.0.0"
