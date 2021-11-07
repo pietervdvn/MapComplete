@@ -105,6 +105,8 @@ Every field is documented in the source code itself - you can find them here:
 - [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
 - At last, the exact semantics of tags is documented [here](Tags_format.md)
 
+A JSON-schema file is available in Docs/Schemas - use LayoutConfig.schema.json to validate a theme file.
+
 ### MetaTags
 
 There are few tags available that are calculated for convenience - e.g. the country an object is located

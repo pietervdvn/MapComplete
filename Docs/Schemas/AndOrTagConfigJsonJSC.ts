@@ -1,5 +1,4 @@
 export default {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$ref": "#/definitions/AndOrTagConfigJson",
   "definitions": {
     "AndOrTagConfigJson": {
@@ -10,10 +9,10 @@ export default {
           "items": {
             "anyOf": [
               {
-                "type": "string"
+                "$ref": "#/definitions/AndOrTagConfigJson"
               },
               {
-                "$ref": "#/definitions/AndOrTagConfigJson"
+                "type": "string"
               }
             ]
           }
@@ -23,15 +22,16 @@ export default {
           "items": {
             "anyOf": [
               {
-                "type": "string"
+                "$ref": "#/definitions/AndOrTagConfigJson"
               },
               {
-                "$ref": "#/definitions/AndOrTagConfigJson"
+                "type": "string"
               }
             ]
           }
         }
       }
     }
-  }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }
