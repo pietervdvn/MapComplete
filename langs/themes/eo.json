@@ -39,7 +39,56 @@
   "ghostbikes": {
     "title": "Fantombicikloj"
   },
+  "hailhydrant": {
+    "layers": {
+      "1": {
+        "tagRenderings": {
+          "extinguisher-location": {
+            "render": "Loko: {location}"
+          }
+        }
+      }
+    }
+  },
   "maps": {
     "title": "Mapo de mapoj"
+  },
+  "openwindpowermap": {
+    "layers": {
+      "0": {
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "{name}"
+            }
+          }
+        },
+        "units": {
+          "0": {
+            "applicableUnits": {
+              "0": {
+                "human": " megavatoj"
+              },
+              "1": {
+                "human": " kilovatoj"
+              },
+              "2": {
+                "human": " vatoj"
+              },
+              "3": {
+                "human": " gigavatoj"
+              }
+            }
+          },
+          "1": {
+            "applicableUnits": {
+              "0": {
+                "human": " metro"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

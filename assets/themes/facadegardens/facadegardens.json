@@ -87,44 +87,12 @@
         "de": "Fassadengärten",
         "it": "Giardini verticali"
       },
-      "iconOverlays": [
-        {
-          "if": "plant~.*vine.*",
-          "then": "circle:white;./assets/themes/facadegardens/klimplant.svg",
-          "badge": true
-        },
-        {
-          "if": "plant~.*groundcover.*",
-          "then": "circle:white;./assets/themes/facadegardens/bodembedekker.svg",
-          "badge": true
-        },
-        {
-          "if": "edible=true",
-          "then": "circle:white;./assets/themes/facadegardens/eetbaar.svg",
-          "badge": true
-        },
-        {
-          "if": "rain_barel=yes",
-          "then": "circle:white;./assets/themes/facadegardens/gevelton.svg",
-          "badge": true
-        },
-        {
-          "if": "plant~.*shrub.*",
-          "then": "circle:white;./assets/themes/facadegardens/struik.svg",
-          "badge": true
-        },
-        {
-          "if": "plant~.*flower.*",
-          "then": "circle:white;./assets/themes/facadegardens/bloei.svg",
-          "badge": true
-        }
-      ],
       "tagRenderings": [
         "images",
         {
           "render": {
             "nl": "Oriëntatie: {direction} (waarbij 0=N en 90=O)",
-            "en": "Orientation: {direction} (where 0=N and 90=E)",
+            "en": "Orientation: {direction} (where 0=N and 90=O)",
             "ja": "方向: {direction} (0=N で 90=O)",
             "fr": "Orientation : {direction} (0 pour le Nord et 90 pour l’Ouest)",
             "de": "Ausrichtung: {direction} (wobei 0=N und 90=O)",
@@ -402,44 +370,6 @@
           "id": "facadegardens-description"
         }
       ],
-      "icon": {
-        "render": "circle:white;./assets/themes/facadegardens/geveltuin.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "direct_sunlight=yes"
-              ]
-            },
-            "then": "circle:white;./assets/themes/facadegardens/zon.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "direct_sunlight=partial"
-              ]
-            },
-            "then": "circle:white;./assets/themes/facadegardens/halfzon.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "direct_sunlight=no"
-              ]
-            },
-            "then": "circle:white;./assets/themes/facadegardens/schaduw.svg"
-          }
-        ]
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "50,50,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -464,7 +394,71 @@
           }
         }
       ],
-      "wayHandling": 1
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/themes/facadegardens/geveltuin.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "direct_sunlight=yes"
+                  ]
+                },
+                "then": "circle:white;./assets/themes/facadegardens/zon.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "direct_sunlight=partial"
+                  ]
+                },
+                "then": "circle:white;./assets/themes/facadegardens/halfzon.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "direct_sunlight=no"
+                  ]
+                },
+                "then": "circle:white;./assets/themes/facadegardens/schaduw.svg"
+              }
+            ]
+          },
+          "iconBadges": [
+            {
+              "if": "plant~.*vine.*",
+              "then": "circle:white;./assets/themes/facadegardens/klimplant.svg"
+            },
+            {
+              "if": "plant~.*groundcover.*",
+              "then": "circle:white;./assets/themes/facadegardens/bodembedekker.svg"
+            },
+            {
+              "if": "edible=true",
+              "then": "circle:white;./assets/themes/facadegardens/eetbaar.svg"
+            },
+            {
+              "if": "rain_barel=yes",
+              "then": "circle:white;./assets/themes/facadegardens/gevelton.svg"
+            },
+            {
+              "if": "plant~.*shrub.*",
+              "then": "circle:white;./assets/themes/facadegardens/struik.svg"
+            },
+            {
+              "if": "plant~.*flower.*",
+              "then": "circle:white;./assets/themes/facadegardens/bloei.svg"
+            }
+          ],
+          "iconSize": {
+            "render": "50,50,center"
+          },
+          "location": [
+            "point"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -792,6 +792,18 @@
     "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account.",
     "title": "Ghost bikes"
   },
+  "grb": {
+    "description": "This theme is an attempt to help automating the GRB import.<br/>Note that this is very hacky and 'steals' the GRB data from an external site; in order to do this, you need to install and activate <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>this firefox extension</a> for it to work.",
+    "layers": {
+      "1": {
+        "tagRenderings": {
+          "building type": {
+            "question": "What kind of building is this?"
+          }
+        }
+      }
+    }
+  },
   "hackerspaces": {
     "description": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
     "layers": {
@@ -1219,10 +1231,85 @@
     "shortDescription": "An editable map with basic shop information",
     "title": "Open Shop Map"
   },
+  "sidewalks": {
+    "description": "Experimental theme",
+    "layers": {
+      "0": {
+        "description": "Layer showing sidewalks of highways",
+        "name": "Sidewalks",
+        "tagRenderings": {
+          "streetname": {
+            "render": "This street is named {name}"
+          }
+        },
+        "title": {
+          "render": "{name}"
+        }
+      }
+    },
+    "shortDescription": "Sidewalk mapping",
+    "title": "Sidewalks"
+  },
   "sport_pitches": {
     "description": "A sport pitch is an area where sports are played",
     "shortDescription": "A map showing sport pitches",
     "title": "Sport pitches"
+  },
+  "street_lighting": {
+    "description": "On this map you can find everything about street lighting",
+    "layers": {
+      "1": {
+        "name": "Lit streets",
+        "tagRenderings": {
+          "lit": {
+            "mappings": {
+              "0": {
+                "then": "This street is lit"
+              },
+              "1": {
+                "then": "This street is not lit"
+              },
+              "2": {
+                "then": "This street is lit at night"
+              },
+              "3": {
+                "then": "This street is lit 24/7"
+              }
+            },
+            "question": "Is this street lit?"
+          }
+        },
+        "title": {
+          "render": "Lit street"
+        }
+      },
+      "2": {
+        "name": "All streets",
+        "tagRenderings": {
+          "lit": {
+            "mappings": {
+              "0": {
+                "then": "This street is lit"
+              },
+              "1": {
+                "then": "This street is not lit"
+              },
+              "2": {
+                "then": "This street is lit at night"
+              },
+              "3": {
+                "then": "This street is lit 24/7"
+              }
+            },
+            "question": "Is this street lit?"
+          }
+        },
+        "title": {
+          "render": "Street"
+        }
+      }
+    },
+    "title": "Street Lighting"
   },
   "surveillance": {
     "description": "On this open map, you can find surveillance cameras.",
@@ -1285,92 +1372,5 @@
     "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
     "shortDescription": "A map with waste baskets",
     "title": "Waste Basket"
-  },
-  "street_lighting": {
-    "description": "On this map you can find everything about street lighting",
-    "layers": {
-      "1": {
-        "name": "Lit streets",
-        "tagRenderings": {
-          "lit": {
-            "mappings": {
-              "0": {
-                "then": "This street is lit"
-              },
-              "1": {
-                "then": "This street is not lit"
-              },
-              "2": {
-                "then": "This street is lit at night"
-              },
-              "3": {
-                "then": "This street is lit 24/7"
-              }
-            },
-            "question": "Is this street lit?"
-          }
-        },
-        "title": {
-          "render": "Lit street"
-        }
-      },
-      "2": {
-        "name": "All streets",
-        "tagRenderings": {
-          "lit": {
-            "mappings": {
-              "0": {
-                "then": "This street is lit"
-              },
-              "1": {
-                "then": "This street is not lit"
-              },
-              "2": {
-                "then": "This street is lit at night"
-              },
-              "3": {
-                "then": "This street is lit 24/7"
-              }
-            },
-            "question": "Is this street lit?"
-          }
-        },
-        "title": {
-          "render": "Street"
-        }
-      }
-    },
-    "title": "Street Lighting"
-  },
-  "sidewalks": {
-    "description": "Experimental theme",
-    "layers": {
-      "0": {
-        "description": "Layer showing sidewalks of highways",
-        "name": "Sidewalks",
-        "tagRenderings": {
-          "streetname": {
-            "render": "This street is named {name}"
-          }
-        },
-        "title": {
-          "render": "{name}"
-        }
-      }
-    },
-    "shortDescription": "Sidewalk mapping",
-    "title": "Sidewalks"
-  },
-  "grb": {
-    "description": "This theme is an attempt to help automating the GRB import.<br/>Note that this is very hacky and 'steals' the GRB data from an external site; in order to do this, you need to install and activate <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>this firefox extension</a> for it to work.",
-    "layers": {
-      "1": {
-        "tagRenderings": {
-          "building type": {
-            "question": "What kind of building is this?"
-          }
-        }
-      }
-    }
   }
 }

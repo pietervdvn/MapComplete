@@ -968,53 +968,6 @@
     "shortDescription": "Deze kaart toont sportvelden",
     "title": "Sportvelden"
   },
-  "surveillance": {
-    "description": "Op deze open kaart kan je bewakingscamera's vinden.",
-    "shortDescription": "Bewakingscameras en dergelijke",
-    "title": "Surveillance under Surveillance"
-  },
-  "toerisme_vlaanderen": {
-    "description": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken.",
-    "descriptionTail": "Met de steun van Toerisme Vlaanderen<img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />",
-    "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
-    "title": "Toeristisch relevante info"
-  },
-  "toilets": {
-    "description": "Een kaart met openbare toiletten",
-    "title": "Open Toilettenkaart"
-  },
-  "trees": {
-    "description": "Breng bomen in kaart!",
-    "shortDescription": "Breng bomen in kaart",
-    "title": "Bomen"
-  },
-  "uk_addresses": {
-    "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
-    "layers": {
-      "2": {
-        "description": "Adressen",
-        "tagRenderings": {
-          "uk_addresses_housenumber": {
-            "mappings": {
-              "0": {
-                "then": "Dit gebouw heeft geen huisnummer"
-              }
-            },
-            "render": "Het huisnummer is <b>{addr:housenumber}</b>"
-          }
-        }
-      }
-    }
-  },
-  "waste_basket": {
-    "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
-    "shortDescription": "Een kaart met vuilnisbakken",
-    "title": "Vuilnisbak"
-  },
-  "street_lighting_assen": {
-    "description": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen",
-    "title": "Straatverlichting - Assen"
-  },
   "street_lighting": {
     "description": "Op deze kaart vind je alles over straatlantaarns",
     "layers": {
@@ -1070,5 +1023,52 @@
       }
     },
     "title": "Straatverlichting"
+  },
+  "street_lighting_assen": {
+    "description": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen",
+    "title": "Straatverlichting - Assen"
+  },
+  "surveillance": {
+    "description": "Op deze open kaart kan je bewakingscamera's vinden.",
+    "shortDescription": "Bewakingscameras en dergelijke",
+    "title": "Surveillance under Surveillance"
+  },
+  "toerisme_vlaanderen": {
+    "description": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken.",
+    "descriptionTail": "Met de steun van Toerisme Vlaanderen<img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />",
+    "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
+    "title": "Toeristisch relevante info"
+  },
+  "toilets": {
+    "description": "Een kaart met openbare toiletten",
+    "title": "Open Toilettenkaart"
+  },
+  "trees": {
+    "description": "Breng bomen in kaart!",
+    "shortDescription": "Breng bomen in kaart",
+    "title": "Bomen"
+  },
+  "uk_addresses": {
+    "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
+    "layers": {
+      "2": {
+        "description": "Adressen",
+        "tagRenderings": {
+          "uk_addresses_housenumber": {
+            "mappings": {
+              "0": {
+                "then": "Dit gebouw heeft geen huisnummer"
+              }
+            },
+            "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+          }
+        }
+      }
+    }
+  },
+  "waste_basket": {
+    "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
+    "shortDescription": "Een kaart met vuilnisbakken",
+    "title": "Vuilnisbak"
   }
 }

@@ -83,7 +83,17 @@
         "name": "Klatreruter",
         "tagRenderings": {
           "Length": {
+            "question": "Hvor mange meter er klatreruten?",
             "render": "Denne ruten er {canonical(climbing:length)} lang"
+          },
+          "Name": {
+            "mappings": {
+              "0": {
+                "then": "Denne klatreruten har ikke noe navn"
+              }
+            },
+            "question": "Hva er navnet på denne klatreruten?",
+            "render": "<strong>{name}</strong>"
           }
         },
         "title": {
@@ -149,15 +159,27 @@
   },
   "cyclestreets": {
     "layers": {
+      "0": {
+        "name": "Sykkelgater"
+      },
       "1": {
+        "description": "Denne gaten vil bli sykkelgate snart",
         "name": "Fremtidig sykkelvei",
         "title": {
+          "mappings": {
+            "0": {
+              "then": "{name} vil bli sykkelgate snart"
+            }
+          },
           "render": "Fremtidig sykkelvei"
         }
       },
       "2": {
         "description": "Lag for å markere hvilken som helst gate som sykkelvei",
-        "name": "Alle gater"
+        "name": "Alle gater",
+        "title": {
+          "render": "Gate"
+        }
       }
     },
     "overrideAll": {
@@ -246,6 +268,23 @@
       },
       "2": {
         "name": "Kart over brannstasjoner",
+        "presets": {
+          "0": {
+            "title": "Brannstasjon"
+          }
+        },
+        "tagRenderings": {
+          "station-name": {
+            "render": "Denne stasjonen heter {name}."
+          },
+          "station-operator": {
+            "mappings": {
+              "0": {
+                "then": "Stasjonen drives av myndighetene."
+              }
+            }
+          }
+        },
         "title": {
           "render": "Brannstasjon"
         }
@@ -258,6 +297,21 @@
   },
   "natuurpunt": {
     "title": "Naturreservater"
+  },
+  "openwindpowermap": {
+    "layers": {
+      "0": {
+        "units": {
+          "0": {
+            "applicableUnits": {
+              "1": {
+                "human": " kilowatt"
+              }
+            }
+          }
+        }
+      }
+    }
   },
   "parkings": {
     "shortDescription": "Dette kartet viser forskjellige parkeringsplasser",

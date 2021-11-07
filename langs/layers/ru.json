@@ -386,7 +386,13 @@
           "0": {
             "then": "Подземная парковка"
           },
+          "1": {
+            "then": "Подземная парковка"
+          },
           "2": {
+            "then": "Парковка на крыше"
+          },
+          "4": {
             "then": "Парковка на крыше"
           }
         }
@@ -628,6 +634,57 @@
       }
     }
   },
+  "charging_station": {
+    "presets": {
+      "0": {
+        "title": "Зарядная станция"
+      }
+    },
+    "tagRenderings": {
+      "Network": {
+        "question": "К какой сети относится эта станция?",
+        "render": "{network}"
+      },
+      "OH": {
+        "question": "В какое время работает эта зарядная станция?"
+      }
+    },
+    "units": {
+      "0": {
+        "applicableUnits": {
+          "0": {
+            "human": " минут",
+            "humanSingular": " минута"
+          },
+          "1": {
+            "human": " часов",
+            "humanSingular": " час"
+          },
+          "2": {
+            "human": " дней",
+            "humanSingular": " день"
+          }
+        }
+      },
+      "1": {
+        "applicableUnits": {
+          "0": {
+            "human": "Вольт"
+          }
+        }
+      },
+      "3": {
+        "applicableUnits": {
+          "0": {
+            "human": "киловатт"
+          },
+          "1": {
+            "human": "мегаватт"
+          }
+        }
+      }
+    }
+  },
   "crossings": {
     "presets": {
       "1": {
@@ -700,13 +757,6 @@
     },
     "title": {
       "render": "Дефибриллятор"
-    },
-    "icon": {
-      "mappings": {
-        "0": {
-          "then": "./assets/layers/defibrillator/aed_checked.svg"
-        }
-      }
     }
   },
   "direction": {
@@ -1387,15 +1437,6 @@
         }
       }
     },
-    "name": "Контейнер для мусора",
-    "presets": {
-      "0": {
-        "title": "Контейнер для мусора"
-      }
-    },
-    "title": {
-      "render": "Контейнер для мусора"
-    },
     "mapRendering": {
       "0": {
         "iconSize": {
@@ -1406,60 +1447,18 @@
           }
         }
       }
+    },
+    "name": "Контейнер для мусора",
+    "presets": {
+      "0": {
+        "title": "Контейнер для мусора"
+      }
+    },
+    "title": {
+      "render": "Контейнер для мусора"
     }
   },
   "watermill": {
     "name": "Водяная мельница"
-  },
-  "charging_station": {
-    "presets": {
-      "0": {
-        "title": "Зарядная станция"
-      }
-    },
-    "tagRenderings": {
-      "Network": {
-        "question": "К какой сети относится эта станция?",
-        "render": "{network}"
-      },
-      "OH": {
-        "question": "В какое время работает эта зарядная станция?"
-      }
-    },
-    "units": {
-      "0": {
-        "applicableUnits": {
-          "0": {
-            "human": " минут",
-            "humanSingular": " минута"
-          },
-          "1": {
-            "human": " часов",
-            "humanSingular": " час"
-          },
-          "2": {
-            "human": " дней",
-            "humanSingular": " день"
-          }
-        }
-      },
-      "1": {
-        "applicableUnits": {
-          "0": {
-            "human": "Вольт"
-          }
-        }
-      },
-      "3": {
-        "applicableUnits": {
-          "0": {
-            "human": "киловатт"
-          },
-          "1": {
-            "human": "мегаватт"
-          }
-        }
-      }
-    }
   }
 }

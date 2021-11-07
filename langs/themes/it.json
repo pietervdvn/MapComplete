@@ -264,8 +264,72 @@
     "description": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali.",
     "descriptionTail": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "layers": {
-      "2": {
+      "0": {
+        "description": "Un club o associazione di arrampacata",
+        "name": "Club di arrampicata",
+        "presets": {
+          "0": {
+            "description": "Un club di arrampicata",
+            "title": "Club di arrampicata"
+          },
+          "1": {
+            "description": "Un’associazione che ha a che fare con l’arrampicata",
+            "title": "Associazione di arrampicata"
+          }
+        },
         "tagRenderings": {
+          "climbing_club-name": {
+            "question": "Qual è il nome di questo club o associazione di arrampicata?",
+            "render": "<strong>{name}</strong>"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "Associazione di arrampicata"
+            }
+          },
+          "render": "Club di arrampicata"
+        }
+      },
+      "1": {
+        "description": "Una palestra di arrampicata",
+        "name": "Palestre di arrampicata",
+        "tagRenderings": {
+          "name": {
+            "question": "Qual è il nome di questa palestra di arrampicata?",
+            "render": "<strong>{name}</strong>"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "Palestra di arrampicata <strong>{name}</strong>"
+            }
+          },
+          "render": "Palestra di arrampicata"
+        }
+      },
+      "2": {
+        "name": "Vie di arrampicata",
+        "presets": {
+          "0": {
+            "title": "Via di arrampicata"
+          }
+        },
+        "tagRenderings": {
+          "Bolts": {
+            "mappings": {
+              "0": {
+                "then": "In questo percorso non sono presenti bulloni"
+              },
+              "1": {
+                "then": "In questo percorso non sono presenti bulloni"
+              }
+            },
+            "question": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
+            "render": "Questo percorso ha {climbing:bolts} bulloni"
+          },
           "Difficulty": {
             "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
             "render": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
@@ -282,6 +346,9 @@
             },
             "question": "Come si chiama questa via di arrampicata?",
             "render": "<strong>{name}</strong>"
+          },
+          "Rock type": {
+            "render": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>"
           }
         },
         "title": {
@@ -291,6 +358,235 @@
             }
           },
           "render": "Via di arrampicata"
+        }
+      },
+      "3": {
+        "description": "Un’opportunità di arrampicata",
+        "name": "Opportunità di arrampicata",
+        "presets": {
+          "0": {
+            "description": "Un’opportunità di arrampicata",
+            "title": "Opportunità di arrampicata"
+          }
+        },
+        "tagRenderings": {
+          "Containe {_contained_climbing_routes_count} routes": {
+            "render": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>"
+          },
+          "Contained routes hist": {
+            "render": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}"
+          },
+          "Contained routes length hist": {
+            "render": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}"
+          },
+          "Rock type (crag/rock/cliff only)": {
+            "mappings": {
+              "0": {
+                "then": "Calcare"
+              }
+            },
+            "question": "Qual è il tipo di roccia qua?",
+            "render": "Il tipo di roccia è {rock}"
+          },
+          "Type": {
+            "mappings": {
+              "0": {
+                "then": "Un masso per arrampicata (una singola roccia o falesia con una o poche vie di arrampicata che possono essere scalate in sicurezza senza una corda)"
+              },
+              "1": {
+                "then": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)"
+              }
+            }
+          },
+          "name": {
+            "mappings": {
+              "0": {
+                "then": "Questa opportunità di arrampicata non ha un nome"
+              }
+            },
+            "question": "Qual è il nome di questa opportunità di arrampicata?",
+            "render": "<strong>{name}</strong>"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "Muro da arrampicata <b>{name}</b>"
+            },
+            "1": {
+              "then": "Area di arrampicata <b>{name}</b>"
+            },
+            "2": {
+              "then": "Sito di arrampicata"
+            },
+            "3": {
+              "then": "Opportunità di arrampicata <b>{name}</b>"
+            }
+          },
+          "render": "Opportunità di arrampicata"
+        }
+      },
+      "4": {
+        "description": "Un’opportunità di arrampicata?",
+        "name": "Opportunità di arrampicata?",
+        "tagRenderings": {
+          "climbing-opportunity-name": {
+            "render": "<strong>{name}</strong>"
+          },
+          "climbing-possible": {
+            "mappings": {
+              "0": {
+                "then": "Non è possibile arrampicarsi qua"
+              },
+              "1": {
+                "then": "È possibile arrampicarsi qua"
+              },
+              "2": {
+                "then": "Non è possibile arrampicarsi qua"
+              }
+            },
+            "question": "È possibile arrampicarsi qua?"
+          }
+        },
+        "title": {
+          "render": "Opportunità di arrampicata?"
+        }
+      }
+    },
+    "overrideAll": {
+      "tagRenderings+": {
+        "0": {
+          "question": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"
+        },
+        "1": {
+          "mappings": {
+            "0": {
+              "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}"
+            },
+            "1": {
+              "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}"
+            },
+            "2": {
+              "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}"
+            },
+            "3": {
+              "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}"
+            }
+          }
+        },
+        "2": {
+          "mappings": {
+            "0": {
+              "then": "Pubblicamente accessibile a chiunque"
+            },
+            "1": {
+              "then": "È necessario avere un’autorizzazione per entrare"
+            },
+            "2": {
+              "then": "Riservato ai clienti"
+            },
+            "3": {
+              "then": "Riservato ai membri del club"
+            }
+          },
+          "question": "Chi può accedervi?"
+        },
+        "4": {
+          "question": "Quale è la lunghezza (media) delle vie in metri?",
+          "render": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>"
+        },
+        "5": {
+          "question": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
+          "render": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga"
+        },
+        "6": {
+          "question": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
+          "render": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga"
+        },
+        "7": {
+          "mappings": {
+            "0": {
+              "then": "L’arrampicata su massi è possibile qua"
+            },
+            "1": {
+              "then": "L’arrampicata su massi non è possibile qua"
+            },
+            "2": {
+              "then": "L’arrampicata su massi è possibile anche se su poche vie"
+            },
+            "3": {
+              "then": "Sono presenti {climbing:boulder} vie di arrampicata su massi"
+            }
+          },
+          "question": "È possibile praticare ‘bouldering’ qua?"
+        },
+        "8": {
+          "mappings": {
+            "0": {
+              "then": "È possibile arrampicarsi con moulinette qua"
+            },
+            "1": {
+              "then": "Non è possibile arrampicarsi con moulinette qua"
+            },
+            "2": {
+              "then": "Sono presenti {climbing:toprope} vie con moulinette"
+            }
+          },
+          "question": "È possibile arrampicarsi con la corda dall’alto qua?"
+        },
+        "9": {
+          "mappings": {
+            "0": {
+              "then": "L’arrampicata sportiva è possibile qua"
+            },
+            "1": {
+              "then": "L’arrampicata sportiva non è possibile qua"
+            },
+            "2": {
+              "then": "Sono presenti {climbing:sport} vie di arrampicata sportiva"
+            }
+          },
+          "question": "È possibile arrampicarsi qua con ancoraggi fissi?"
+        },
+        "10": {
+          "mappings": {
+            "0": {
+              "then": "L’arrampicata tradizionale è possibile qua"
+            },
+            "1": {
+              "then": "L’arrampicata tradizionale non è possibile qua"
+            },
+            "2": {
+              "then": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
+            }
+          },
+          "question": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
+        },
+        "11": {
+          "mappings": {
+            "0": {
+              "then": "È presente una parete per l’arrampicata di velocità"
+            },
+            "1": {
+              "then": "Non è presente una parete per l’arrampicata di velocità"
+            },
+            "2": {
+              "then": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
+            }
+          },
+          "question": "È presente una prete per l’arrampicata di velocità?"
+        }
+      },
+      "units+": {
+        "0": {
+          "applicableUnits": {
+            "0": {
+              "human": " metri"
+            },
+            "1": {
+              "human": " piedi"
+            }
+          }
         }
       }
     },
@@ -336,10 +632,20 @@
       "tagRenderings+": {
         "0": {
           "mappings": {
+            "0": {
+              "then": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
+            },
+            "1": {
+              "then": "Questa è una strada ciclabile"
+            },
+            "2": {
+              "then": "Diverrà tra poco una strada ciclabile"
+            },
             "3": {
               "then": "Questa strada non è una strada ciclabile"
             }
-          }
+          },
+          "question": "È una strada ciclabile?"
         },
         "1": {
           "question": "Questa strada diventerà una strada ciclabile quando?",
@@ -379,6 +685,8 @@
     "description": "I <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>giardini veritcali</a> e gli alberi in città non solo portano pace e tranquillità ma creano anche un ambiente più bello, aumentano la biodiversità, rendono il clima più fresco e migliorano la qualità dell’aria. <br/> Klimaan VZW e Mechelen Klimaatneutraal vogliono mappare sia i giardini verticali esistenti che quelli nuovi per mostrarli a quanti vogliono costruire un loro proprio giardino o per quelli che amano la natura e vogliono camminare per la città.<br/>Per ulteriori informazioni visita <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "layers": {
       "0": {
+        "description": "Giardini verticali",
+        "name": "Giardini verticali",
         "presets": {
           "0": {
             "description": "Aggiungi un giardino verticale",
@@ -389,6 +697,10 @@
           "facadegardens-description": {
             "question": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)",
             "render": "Maggiori dettagli: {description}"
+          },
+          "facadegardens-direction": {
+            "question": "Com’è orientato questo giardino?",
+            "render": "Orientamento: {direction} (0 per il Nord e 90 per l’Est)"
           },
           "facadegardens-edible": {
             "mappings": {
@@ -426,7 +738,8 @@
               "1": {
                 "then": "Non c'è un contenitore per raccogliere la pioggia"
               }
-            }
+            },
+            "question": "È stata installata una riserva d’acqua per il giardino?"
           },
           "facadegardens-start_date": {
             "question": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
@@ -446,6 +759,9 @@
             },
             "question": "Il giardino è al sole o in ombra?"
           }
+        },
+        "title": {
+          "render": "Giardino verticale"
         }
       }
     },
@@ -477,39 +793,199 @@
     "description": "In questa cartina puoi vedere e aggiornare idranti, stazioni dei pompieri, stazioni delle ambulanze ed estintori del tuo quartiere preferito.\n\nPuoi seguire la tua posizione precisa (solo su cellulare) e selezionare i livelli che ti interessano nell’angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare i PDI sulla mappa e fornire ulteriori dettagli rispondendo alle domande.\n\nTutte le modifiche che farai verranno automaticamente salvate nel database globale di OpenStreetMap e potranno essere riutilizzate liberamente da tutti.",
     "layers": {
       "0": {
+        "description": "Livello della mappa che mostra gli idranti antincendio.",
+        "name": "Mappa degli idranti",
+        "presets": {
+          "0": {
+            "description": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
+            "title": "Idrante antincendio"
+          }
+        },
         "tagRenderings": {
           "hydrant-color": {
             "mappings": {
+              "0": {
+                "then": "Il colore dell’idrante è sconosciuto."
+              },
+              "1": {
+                "then": "Il colore dell’idrante è giallo."
+              },
               "2": {
                 "then": "L'idrante è rosso."
               }
-            }
+            },
+            "question": "Qual è il colore dell’idrante?",
+            "render": "Il colore dell’idrante è {colour}"
+          },
+          "hydrant-state": {
+            "mappings": {
+              "0": {
+                "then": "L’idrante è (parzialmente o completamente) funzionante."
+              },
+              "1": {
+                "then": "L’idrante è fuori servizio."
+              },
+              "2": {
+                "then": "L’idrante è stato rimosso."
+              }
+            },
+            "question": "Aggiorna lo stato di funzionamento dell’idrante.",
+            "render": "Stato di funzionamento"
           },
           "hydrant-type": {
             "mappings": {
               "0": {
                 "then": "Il tipo di idrante è sconosciuto."
+              },
+              "1": {
+                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Soprasuolo."
+              },
+              "2": {
+                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tubo."
+              },
+              "3": {
+                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> A muro."
+              },
+              "4": {
+                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Sottosuolo."
               }
             },
             "question": "Di che tipo è questo idrante?",
             "render": " Tipo di idrante: {fire_hydrant:type}"
           }
+        },
+        "title": {
+          "render": "Idrante"
+        }
+      },
+      "1": {
+        "description": "Livello della mappa che mostra gli idranti antincendio.",
+        "name": "Cartina degli estintori.",
+        "presets": {
+          "0": {
+            "description": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
+            "title": "Estintore"
+          }
+        },
+        "tagRenderings": {
+          "extinguisher-location": {
+            "mappings": {
+              "0": {
+                "then": "Si trova all’interno."
+              },
+              "1": {
+                "then": "Si trova all’esterno."
+              }
+            },
+            "question": "Dove è posizionato?",
+            "render": "Posizione: {location}"
+          }
+        },
+        "title": {
+          "render": "Estintori"
         }
       },
       "2": {
         "description": "Livello che mostra le caserme dei vigili del fuoco.",
         "name": "Mappa delle caserme dei vigili del fuoco",
+        "presets": {
+          "0": {
+            "description": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra.",
+            "title": "Caserma dei vigili del fuoco"
+          }
+        },
         "tagRenderings": {
+          "station-agency": {
+            "mappings": {
+              "0": {
+                "then": "Servizio antincendio governativo"
+              }
+            },
+            "question": "Quale agenzia gestisce questa stazione?",
+            "render": "Questa stazione è gestita da {operator}."
+          },
           "station-name": {
             "question": "Come si chiama questa caserma dei vigili del fuoco?",
             "render": "Questa caserma si chiama {name}."
           },
+          "station-operator": {
+            "mappings": {
+              "0": {
+                "then": "Questa stazione è gestita dal governo."
+              },
+              "1": {
+                "then": "Questa stazione è gestita dalla comunità oppure un’associazione informale."
+              },
+              "2": {
+                "then": "Questa stazione è gestita da un gruppo di volontari ufficiale."
+              },
+              "3": {
+                "then": "Questa stazione è gestita da privati."
+              }
+            },
+            "question": "Com’è classificato il gestore di questa stazione?",
+            "render": "Il gestore è un ente {operator:type}."
+          },
+          "station-place": {
+            "question": "In che località si trova la stazione? (ad es. quartiere, paese o città)",
+            "render": "La stazione si trova a {addr:place}."
+          },
           "station-street": {
-            "question": " Qual è il nome della via in cui si trova la caserma?"
+            "question": " Qual è il nome della via in cui si trova la caserma?",
+            "render": "La stazione si trova in una strada chiamata {addr:street}."
           }
         },
         "title": {
           "render": "Caserma dei vigili del fuoco"
+        }
+      },
+      "3": {
+        "description": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali.",
+        "name": "Carta delle stazioni delle ambulanze",
+        "presets": {
+          "0": {
+            "description": "Aggiungi una stazione delle ambulanza alla mappa",
+            "title": "Stazione delle ambulanze"
+          }
+        },
+        "tagRenderings": {
+          "ambulance-agency": {
+            "question": "Quale agenzia gestisce questa stazione?",
+            "render": "Questa stazione è gestita da {operator}."
+          },
+          "ambulance-name": {
+            "question": "Qual è il nome di questa stazione delle ambulanze?",
+            "render": "Questa stazione è chiamata {name}."
+          },
+          "ambulance-operator-type": {
+            "mappings": {
+              "0": {
+                "then": "La stazione è gestita dal governo."
+              },
+              "1": {
+                "then": "La stazione è gestita dalla comunità o un’organizzazione non ufficiale."
+              },
+              "2": {
+                "then": "La stazione è gestita da un gruppo ufficiale di volontari."
+              },
+              "3": {
+                "then": "La stazione è gestita da un privato."
+              }
+            },
+            "question": "Com’è classificato il gestore della stazione?",
+            "render": "L’operatore è un ente {operator:type}."
+          },
+          "ambulance-place": {
+            "question": "Dove si trova la stazione? (ad es. quartiere, paese o città)",
+            "render": "La stazione si trova a {addr:place}."
+          },
+          "ambulance-street": {
+            "question": " Come si chiama la strada in cui si trova questa stazione?",
+            "render": "Questa stazione si trova in {addr:street}."
+          }
+        },
+        "title": {
+          "render": "Stazione delle ambulanze"
         }
       }
     },
@@ -533,6 +1009,71 @@
   },
   "openwindpowermap": {
     "description": "Una cartina per la visione e la modifica delle turbine eoliche.",
+    "layers": {
+      "0": {
+        "name": "pala eolica",
+        "presets": {
+          "0": {
+            "title": "pala eolica"
+          }
+        },
+        "tagRenderings": {
+          "turbine-diameter": {
+            "question": "Qual è il diametro (in metri) del rotore di questa pala eolica?",
+            "render": "Il diametro del rotore di questa pala eolica è di {rotor:diameter} metri."
+          },
+          "turbine-height": {
+            "question": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?",
+            "render": "L’altezza totale (raggio del rotore incluso) di questa pala eolica è di {height} metri."
+          },
+          "turbine-operator": {
+            "question": "Chi gestisce questa pala eolica?",
+            "render": "Questa pala eolica è gestita da {operator}."
+          },
+          "turbine-output": {
+            "question": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)",
+            "render": "La potenza generata da questa pala eolica è {generator:output:electricity}."
+          },
+          "turbine-start-date": {
+            "question": "Quando è entrata in funzione questa pala eolica?",
+            "render": "Questa pala eolica è entrata in funzione in data {start_date}."
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "{name}"
+            }
+          },
+          "render": "pala eolica"
+        },
+        "units": {
+          "0": {
+            "applicableUnits": {
+              "0": {
+                "human": " megawatt"
+              },
+              "1": {
+                "human": " kilowatt"
+              },
+              "2": {
+                "human": " watt"
+              },
+              "3": {
+                "human": " gigawatt"
+              }
+            }
+          },
+          "1": {
+            "applicableUnits": {
+              "0": {
+                "human": " metri"
+              }
+            }
+          }
+        }
+      }
+    },
     "title": "OpenWindPowerMap"
   },
   "parkings": {

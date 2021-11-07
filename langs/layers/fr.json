@@ -437,6 +437,12 @@
           },
           "2": {
             "then": "Parking sur un toit"
+          },
+          "3": {
+            "then": "Parking en surface"
+          },
+          "4": {
+            "then": "Parking sur un toit"
           }
         },
         "question": "Quelle est la position relative de ce parking à vélo ?"
@@ -856,13 +862,6 @@
     },
     "title": {
       "render": "Défibrillateur"
-    },
-    "icon": {
-      "mappings": {
-        "0": {
-          "then": "./assets/layers/defibrillator/aed_checked.svg"
-        }
-      }
     }
   },
   "direction": {

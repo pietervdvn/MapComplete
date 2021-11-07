@@ -437,6 +437,12 @@
           },
           "2": {
             "then": "Parcheggio sul tetto"
+          },
+          "3": {
+            "then": "Parcheggio in superficie"
+          },
+          "4": {
+            "then": "Parcheggio sul tetto"
           }
         },
         "question": "Qual è la posizione relativa di questo parcheggio bici?"
@@ -739,6 +745,17 @@
       "render": "Oggetto relativo alle bici"
     }
   },
+  "charging_station": {
+    "tagRenderings": {
+      "Network": {
+        "question": "A quale rete appartiene questa stazione di ricarica?",
+        "render": "{network}"
+      },
+      "OH": {
+        "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
+      }
+    }
+  },
   "defibrillator": {
     "name": "Defibrillatori",
     "presets": {
@@ -856,13 +873,6 @@
     },
     "title": {
       "render": "Defibrillatore"
-    },
-    "icon": {
-      "mappings": {
-        "0": {
-          "then": "./assets/layers/defibrillator/aed_checked.svg"
-        }
-      }
     }
   },
   "direction": {
@@ -1814,17 +1824,6 @@
     },
     "title": {
       "render": "Punto panoramico"
-    }
-  },
-  "charging_station": {
-    "tagRenderings": {
-      "Network": {
-        "question": "A quale rete appartiene questa stazione di ricarica?",
-        "render": "{network}"
-      },
-      "OH": {
-        "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
-      }
     }
   }
 }
