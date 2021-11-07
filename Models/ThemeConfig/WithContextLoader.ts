@@ -85,7 +85,7 @@ export default class WithContextLoader {
                     )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
                 }
                 if (renderingJson["override"] !== undefined) {
-                    sharedJson = Utils.Merge(renderingJson["override"], sharedJson)
+                    sharedJson = Utils.Merge(renderingJson["override"], JSON.parse(JSON.stringify(sharedJson)))
                 }
                 renderingJson = sharedJson
             }

@@ -228,6 +228,10 @@
             "id": "toilet-charge"
         },
         {
+            "builtin": "payment-options",
+            "override": {}
+        },
+        {
             "id": "toilets-wheelchair",
             "question": {
                 "en": "Is there a dedicated toilet for wheelchair users",
