@@ -1295,6 +1295,17 @@
                         "question": "For which brand does this location offer services?",
                         "render": "This location offers services for {post_office:brand}"
                     },
+                    "post_partner": {
+                        "mappings": {
+                            "0": {
+                                "then": "This shop is a post partner"
+                            },
+                            "1": {
+                                "then": "This shop is not a post partner"
+                            }
+                        },
+                        "question": "Is this a post partner?"
+                    },
                     "stamps": {
                         "mappings": {
                             "0": {
@@ -1318,6 +1329,31 @@
                         }
                     },
                     "render": "Post Office"
+                }
+            },
+            "2": {
+                "description": "Add a new post partner to the map",
+                "name": "Add new post partner",
+                "tagRenderings": {
+                    "post_partner": {
+                        "mappings": {
+                            "0": {
+                                "then": "This shop is a post partner"
+                            },
+                            "1": {
+                                "then": "This shop is not a post partner"
+                            }
+                        },
+                        "question": "Is this a post partner?"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    },
+                    "render": "Shop"
                 }
             }
         },

@@ -183,6 +183,30 @@
           "id": "OH"
         },
         {
+          "id": "post_partner",
+          "question": {
+            "en": "Is this a post partner?"
+          },
+          "condition": "post_office=post_partner",
+          "mappings": [
+            {
+              "if": "post_office=post_partner",
+              "then": {
+                "en": "This shop is a post partner"
+              }
+            },
+            {
+              "if": "post_office=",
+              "then": {
+                "en": "This shop is not a post partner"
+              },
+              "addExtraTags": [
+                "was:post_office=post_partner"
+              ]
+            }
+          ]
+        },
+        {
           "id": "partner-brand",
           "render": {
             "en": "This location offers services for {post_office:brand}"
@@ -444,6 +468,80 @@
           "width": {
             "render": "1"
           }
+        }
+      ]
+    },
+    {
+      "id": "addLayer",
+      "name": {
+        "en": "Add new post partner"
+      },
+      "description": {
+        "en": "Add a new post partner to the map"
+      },
+      "source": {
+        "osmTags": "shop~*"
+      },
+      "minzoom": 20,
+      "minzoomVisible": 20,
+      "title": {
+        "render": {
+          "en": "Shop"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "en": "{name}"
+            }
+          }
+        ]
+      },
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/shops/shop.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#DADADA"
+          },
+          "width": {
+            "render": "1"
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "post_partner",
+          "question": {
+            "en": "Is this shop a post partner?"
+          },
+          "mappings": [
+            {
+              "if": "post_office=post_partner",
+              "then": {
+                "en": "This shop is a post partner"
+              }
+            },
+            {
+              "if": "post_office=",
+              "then": {
+                "en": "This shop is not a post partner"
+              },
+              "addExtraTags": [
+                "was:post_office=post_partner"
+              ]
+            }
+          ]
         }
       ]
     }
