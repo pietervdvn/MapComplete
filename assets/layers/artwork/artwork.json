@@ -63,15 +63,6 @@
       }
     ]
   },
-  "icon": {
-    "render": "./assets/themes/artwork/artwork.svg"
-  },
-  "color": {
-    "render": "#0000ff"
-  },
-  "width": {
-    "render": "10"
-  },
   "description": {
     "en": "Diverse pieces of artwork",
     "nl": "Verschillende soorten kunstwerken",
@@ -85,7 +76,6 @@
     "id": "Beragam karya seni"
   },
   "minzoom": 12,
-  "wayHandling": 2,
   "presets": [
     {
       "tags": [

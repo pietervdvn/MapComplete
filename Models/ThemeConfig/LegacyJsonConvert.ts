@@ -57,20 +57,19 @@ export default class LegacyJsonConvert {
                 }
             }
 
-
-            delete config["color"]
-            delete config["width"]
-            delete config["dashArray"]
-
-            delete config["icon"]
-            delete config["iconOverlays"]
-            delete config["label"]
-            delete config["iconSize"]
-            delete config["rotation"]
-            delete config["wayHandling"]
-
         }
 
+        delete config["color"]
+        delete config["width"]
+        delete config["dashArray"]
+
+        delete config["icon"]
+        delete config["iconOverlays"]
+        delete config["label"]
+        delete config["iconSize"]
+        delete config["rotation"]
+        delete config["wayHandling"]
+        
         for (const mapRenderingElement of config.mapRendering) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
                 mapRenderingElement["iconBadges"] = mapRenderingElement["iconOverlays"]

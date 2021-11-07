@@ -453,56 +453,6 @@
       "id": "camera:mount"
     }
   ],
-  "icon": {
-    "render": "./assets/themes/surveillance/logo.svg",
-    "mappings": [
-      {
-        "if": "camera:type=dome",
-        "then": "./assets/themes/surveillance/dome.svg"
-      },
-      {
-        "if": "_direction:leftright=right",
-        "then": "./assets/themes/surveillance/cam_right.svg"
-      },
-      {
-        "if": "_direction:leftright=left",
-        "then": "./assets/themes/surveillance/cam_left.svg"
-      }
-    ]
-  },
-  "rotation": {
-    "#": "Note: {camera:direction} is substituted by a number, giving the string 'calc(123deg + 90deg)'  ; it is this string that is used as css property, which interprets the calc",
-    "render": "calc({_direction:numerical}deg + 90deg)",
-    "mappings": [
-      {
-        "if": "camera:type=dome",
-        "then": "0"
-      },
-      {
-        "if": "_direction:leftright=right",
-        "then": "calc({_direction:numerical}deg - 90deg)"
-      }
-    ]
-  },
-  "width": {
-    "render": "8"
-  },
-  "iconSize": {
-    "mappings": [
-      {
-        "if": "camera:type=dome",
-        "then": "50,50,center"
-      },
-      {
-        "if": "_direction:leftright~*",
-        "then": "100,35,center"
-      }
-    ],
-    "render": "50,50,center"
-  },
-  "color": {
-    "render": "#f00"
-  },
   "presets": [
     {
       "tags": [
@@ -512,7 +462,6 @@
       "title": "Surveillance camera"
     }
   ],
-  "wayHandling": 2,
   "mapRendering": [
     {
       "icon": {

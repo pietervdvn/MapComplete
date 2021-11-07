@@ -47,8 +47,6 @@
       }
     ]
   },
-  "icon": "./assets/layers/barrier/barrier.svg",
-  "width": "5",
   "presets": [
     {
       "title": {

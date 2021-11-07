@@ -93,18 +93,6 @@
     }
   ],
   "hideFromOverview": false,
-  "icon": {
-    "render": "./assets/layers/play_forest/icon.svg"
-  },
-  "width": {
-    "render": "2"
-  },
-  "iconSize": {
-    "render": "40,40,center"
-  },
-  "color": {
-    "render": "#007055"
-  },
   "presets": [
     {
       "title": "Speelbos",
@@ -116,7 +104,6 @@
       "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de overeenkomstige borden.<br/><img src='./assets/layers/play_forest/icon.svg'/>"
     }
   ],
-  "wayHandling": 2,
   "mapRendering": [
     {
       "icon": {

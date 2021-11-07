@@ -22,28 +22,6 @@
       "it": "Servizi igienici"
     }
   },
-  "icon": {
-    "render": "./assets/layers/toilet/toilets.svg",
-    "mappings": [
-      {
-        "if": "wheelchair=yes",
-        "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
-      },
-      {
-        "if": {
-          "or": [
-            "toilets:position=urinals",
-            "toilets:position=urinal"
-          ]
-        },
-        "then": "./assets/layers/toilet/urinal.svg"
-      }
-    ]
-  },
-  "color": {
-    "render": "#0000ff"
-  },
-  "wayHandling": 1,
   "presets": [
     {
       "title": {

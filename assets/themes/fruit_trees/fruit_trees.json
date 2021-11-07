@@ -43,18 +43,6 @@
       "tagRenderings": [
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/buurtnatuur/forest.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -167,18 +155,6 @@
           "id": "fruitboom-ref"
         }
       ],
-      "icon": {
-        "render": "./assets/themes/fruit_trees/fruit_tree.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [

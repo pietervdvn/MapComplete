@@ -142,19 +142,6 @@
     "wheelchair-access",
     "wikipedia"
   ],
-  "wayHandling": 1,
-  "icon": {
-    "render": "circle:white;./assets/layers/observation_tower/Tower_observation.svg"
-  },
-  "width": {
-    "render": "2"
-  },
-  "iconSize": {
-    "render": "40,40,center"
-  },
-  "color": {
-    "render": "#00f"
-  },
   "presets": [
     {
       "tags": [

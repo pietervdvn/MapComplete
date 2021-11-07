@@ -3,7 +3,6 @@
   "name": {
     "nl": "Paadjes, trage wegen en autoluwe straten"
   },
-  "icon": "./assets/layers/slow_roads/slow_road.svg",
   "minzoom": 16,
   "source": {
     "osmTags": {
@@ -233,38 +232,6 @@
       ]
     }
   ],
-  "width": {
-    "render": "7"
-  },
-  "dashArray": {
-    "render": "",
-    "mappings": [
-      {
-        "if": "highway=cycleway",
-        "then": ""
-      },
-      {
-        "if": "highway=path",
-        "then": "0 12"
-      },
-      {
-        "if": {
-          "or": [
-            "highway=footway",
-            "highway=pedestrian"
-          ]
-        },
-        "then": "12 18"
-      },
-      {
-        "if": "highway=living_street",
-        "then": "12 12 0 12"
-      }
-    ]
-  },
-  "color": {
-    "render": "#eaba2a"
-  },
   "presets": [],
   "mapRendering": [
     {

@@ -163,16 +163,6 @@
       "id": "Operator tag"
     }
   ],
-  "wayHandling": 1,
-  "icon": {
-    "render": "./assets/layers/watermill/watermill.svg"
-  },
-  "iconSize": {
-    "render": "50,50,center"
-  },
-  "color": {
-    "render": "#FFC0CB"
-  },
   "mapRendering": [
     {
       "icon": {

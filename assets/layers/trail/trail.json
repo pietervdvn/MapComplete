@@ -179,40 +179,8 @@
       "id": "pushchair access"
     }
   ],
-  "icon": {
-    "render": "./assets/layers/trail/trail.svg",
-    "mappings": [
-      {
-        "if": "wheelchair=yes",
-        "then": "./assets/layers/trail/wheelchair.svg"
-      },
-      {
-        "if": "pushchair=yes",
-        "then": "./assets/layers/trail/pushchair.svg"
-      }
-    ]
-  },
   "description": {
     "nl": "Aangeduide wandeltochten"
-  },
-  "wayHandling": 0,
-  "width": {
-    "render": "3"
-  },
-  "iconSize": {
-    "render": "35,35,center"
-  },
-  "color": {
-    "render": "#335D9F",
-    "mappings": [
-      {
-        "if": "colour~*",
-        "then": "{colour}"
-      }
-    ]
-  },
-  "dashArray": {
-    "render": "5 5"
   },
   "mapRendering": [
     {

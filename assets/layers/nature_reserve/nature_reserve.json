@@ -400,19 +400,6 @@
     },
     "wikipedia"
   ],
-  "wayHandling": 2,
-  "icon": {
-    "render": "./assets/layers/nature_reserve/nature_reserve.svg"
-  },
-  "width": {
-    "render": "1"
-  },
-  "iconSize": {
-    "render": "50,50,center"
-  },
-  "color": {
-    "render": "#3c3"
-  },
   "presets": [
     {
       "tags": [

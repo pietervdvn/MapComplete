@@ -117,7 +117,7 @@
             {
               "if": "_embedding_object:id=false",
               "then": {
-                "en":"The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
+                "en": "The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
               }
             }
           ],

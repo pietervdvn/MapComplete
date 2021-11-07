@@ -15,31 +15,6 @@
       ]
     }
   },
-  "wayHandling": 1,
-  "icon": {
-    "render": "circle:white;./assets/layers/cafe_pub/pub.svg",
-    "mappings": [
-      {
-        "if": "amenity=cafe",
-        "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
-      }
-    ]
-  },
-  "iconOverlays": [
-    {
-      "if": "opening_hours~*",
-      "then": "isOpen",
-      "badge": true
-    }
-  ],
-  "label": {
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-      }
-    ]
-  },
   "presets": [
     {
       "tags": [

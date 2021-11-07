@@ -30,16 +30,6 @@
       "ru": "Дефибриллятор"
     }
   },
-  "icon": {
-    "render": "./assets/themes/aed/aed.svg",
-    "mappings": [
-      {
-        "if": "_recently_surveyed=true",
-        "then": "./assets/layers/defibrillator/aed_checked.svg"
-      }
-    ]
-  },
-  "color": "#0000ff",
   "presets": [
     {
       "title": {

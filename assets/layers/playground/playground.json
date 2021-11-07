@@ -480,48 +480,6 @@
       "render": "{reviews(name, playground)}"
     }
   ],
-  "icon": {
-    "render": "./assets/themes/playgrounds/playground.svg"
-  },
-  "iconOverlays": [
-    {
-      "if": {
-        "and": [
-          "opening_hours!=24/7",
-          "opening_hours~*"
-        ]
-      },
-      "then": "isOpen",
-      "badge": true
-    }
-  ],
-  "width": {
-    "render": "1"
-  },
-  "iconSize": {
-    "render": "40,40,center",
-    "mappings": [
-      {
-        "if": "id~node/.*",
-        "then": "40,40,center"
-      },
-      {
-        "if": "_size_classification=small",
-        "then": "25,25,center"
-      },
-      {
-        "if": "_size_classification=medium",
-        "then": "40,40,center"
-      },
-      {
-        "if": "_size_classification=large",
-        "then": "60,60,center"
-      }
-    ]
-  },
-  "color": {
-    "render": "#5dbaa9"
-  },
   "presets": [
     {
       "tags": [
@@ -537,7 +495,6 @@
       }
     }
   ],
-  "wayHandling": 2,
   "deletion": {
     "softDeletionTags": {
       "and": [

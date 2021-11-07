@@ -36,11 +36,6 @@
       }
     ]
   },
-  "icon": "./assets/themes/playgrounds/playground.svg",
-  "iconSize": "40,40,center",
-  "width": "1",
-  "color": "#0f0",
-  "wayHandling": 2,
   "tagRenderings": [
     "images",
     {

@@ -58,11 +58,6 @@
       }
     ]
   },
-  "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
-  "iconSize": "40,40,bottom",
-  "width": "5",
-  "color": "#000",
-  "wayHandling": 1,
   "presets": [
     {
       "title": {

@@ -75,18 +75,6 @@
       "id": "binocular-direction"
     }
   ],
-  "icon": {
-    "render": "circle:white;./assets/layers/binocular/telescope.svg"
-  },
-  "width": {
-    "render": "8"
-  },
-  "iconSize": {
-    "render": "40,40,center"
-  },
-  "color": {
-    "render": "#00f"
-  },
   "presets": [
     {
       "tags": [

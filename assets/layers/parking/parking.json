@@ -42,22 +42,12 @@
       }
     ]
   },
-  "icon": {
-    "render": "./assets/layers/parking/parking.svg"
-  },
   "description": {
     "nl": "Parking"
   },
   "tagRenderings": [
     "images"
   ],
-  "wayHandling": 1,
-  "iconSize": {
-    "render": "36,36,center"
-  },
-  "color": {
-    "render": "#E1AD01"
-  },
   "presets": [
     {
       "tags": [

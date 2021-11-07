@@ -332,18 +332,6 @@
       "id": "bike_cafe-opening_hours"
     }
   ],
-  "icon": {
-    "render": "./assets/layers/bike_cafe/bike_cafe.svg"
-  },
-  "width": {
-    "render": "2"
-  },
-  "iconSize": {
-    "render": "50,50,bottom"
-  },
-  "color": {
-    "render": "#694E2D"
-  },
   "presets": [
     {
       "title": {
@@ -365,7 +353,6 @@
       ]
     }
   ],
-  "wayHandling": 2,
   "mapRendering": [
     {
       "icon": {

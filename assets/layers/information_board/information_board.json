@@ -29,15 +29,6 @@
   "tagRenderings": [
     "images"
   ],
-  "icon": {
-    "render": "./assets/layers/information_board/board.svg"
-  },
-  "iconSize": {
-    "render": "40,40,center"
-  },
-  "color": {
-    "render": "#00f"
-  },
   "presets": [
     {
       "tags": [
