@@ -1,10 +1,10 @@
-Available types for text fields
+
+ Available types for text fields 
 =================================
 
 
 
-The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to
-activate them
+The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them
 
 ## string
 
@@ -24,29 +24,29 @@ A geographical direction, in degrees. 0° is north, 90° is east, ... Will retur
 
 ## length
 
-A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool.
-Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
+A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
 
 ## wikidata
 
-A wikidata identifier, e.g. Q42.
+A wikidata identifier, e.g. Q42. 
+### Helper arguments 
 
-### Helper arguments
+ 
 
 name | doc
 ------ | -----
 key | the value of this tag will initialize search (default: name)
-options | A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.
+options | A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`. 
 
 subarg | doc
 -------- | -----
 removePrefixes | remove these snippets of text from the start of the passed string to search
 removePostfixes | remove these snippets of text from the end of the passed string to search
 
-### Example usage
+ 
+### Example usage 
 
-The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding
-with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
+ The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
 
 ```
 "freeform": {
@@ -101,22 +101,24 @@ A phone number
 
 ## opening_hours
 
-Has extra elements to easily input when a POI is opened.
+Has extra elements to easily input when a POI is opened. 
+### Helper arguments 
 
-### Helper arguments
+ 
 
 name | doc
 ------ | -----
-options | A JSON-object of type `{ prefix: string, postfix: string }`.
+options | A JSON-object of type `{ prefix: string, postfix: string }`.  
 
 subarg | doc
 -------- | -----
 prefix | Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse
 postfix | Piece of text that will always be added to the end of the generated opening hours
 
-### Example usage
+ 
+### Example usage 
 
-To add a conditional (based on time) access restriction:
+ To add a conditional (based on time) access restriction:
 
 ```
 
@@ -132,8 +134,7 @@ To add a conditional (based on time) access restriction:
 }
 ```
 
-*Don't forget to pass the prefix and postfix in the rendering as
-well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`
+*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`
 
 ## color
 

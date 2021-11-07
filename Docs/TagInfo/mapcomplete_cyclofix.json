@@ -966,12 +966,12 @@
     },
     {
       "key": "location",
-      "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Surface level parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "underground"
     },
     {
       "key": "location",
-      "description": "Layer 'Bike parking' shows location=surface with a fixed text, namely 'Surface level parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows location=surface with a fixed text, namely 'Rooftop parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "surface"
     },
     {
