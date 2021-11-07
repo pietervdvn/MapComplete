@@ -133,11 +133,11 @@
             },
             "Space between barrier (cyclebarrier)": {
                 "question": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?",
-                "render": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m"
+                "render": "Abstand zwischen den Barrieren (entlang der Straße): {spacing} m"
             },
             "Width of opening (cyclebarrier)": {
                 "question": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
-                "render": "Breite der Öffnung: {width:opening} m"
+                "render": "Breite der Öffnung: {opening} m"
             },
             "bicycle=yes/no": {
                 "mappings": {

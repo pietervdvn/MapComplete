@@ -183,7 +183,7 @@
             "condition": "barrier=cycle_barrier",
             "mappings": [
                 {
-                    "if": "cycle_barrier:type=single",
+                    "if": "cycle_barrier=single",
                     "then": {
                         "en": "Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
                         "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
@@ -191,7 +191,7 @@
                     }
                 },
                 {
-                    "if": "cycle_barrier:type=double",
+                    "if": "cycle_barrier=double",
                     "then": {
                         "en": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>",
                         "nl": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>",
@@ -199,7 +199,7 @@
                     }
                 },
                 {
-                    "if": "cycle_barrier:type=triple",
+                    "if": "cycle_barrier=triple",
                     "then": {
                         "en": "Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
                         "nl": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
@@ -207,7 +207,7 @@
                     }
                 },
                 {
-                    "if": "cycle_barrier:type=squeeze",
+                    "if": "cycle_barrier=squeeze",
                     "then": {
                         "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
                         "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
@@ -230,8 +230,8 @@
             },
             "condition": {
                 "and": [
-                    "cycle_barrier:type!=double",
-                    "cycle_barrier:type!=triple"
+                    "cycle_barrier!=double",
+                    "cycle_barrier!=triple"
                 ]
             },
             "freeform": {
@@ -246,9 +246,9 @@
         },
         {
             "render": {
-                "en": "Space between barriers (along the length of the road): {width:separation} m",
-                "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m",
-                "de": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m"
+                "en": "Space between barriers (along the length of the road): {spacing} m",
+                "nl": "Ruimte tussen barrières (langs de lengte van de weg): {spacing} m",
+                "de": "Abstand zwischen den Barrieren (entlang der Straße): {spacing} m"
             },
             "question": {
                 "en": "How much space is there between the barriers (along the length of the road)?",
@@ -257,12 +257,12 @@
             },
             "condition": {
                 "or": [
-                    "cycle_barrier:type=double",
-                    "cycle_barrier:type=triple"
+                    "cycle_barrier=double",
+                    "cycle_barrier=triple"
                 ]
             },
             "freeform": {
-                "key": "width:separation",
+                "key": "spacing",
                 "type": "length",
                 "helperArgs": [
                     "21",
@@ -273,9 +273,9 @@
         },
         {
             "render": {
-                "en": "Width of opening: {width:opening} m",
-                "nl": "Breedte van de opening: {width:opening} m",
-                "de": "Breite der Öffnung: {width:opening} m"
+                "en": "Width of opening: {opening} m",
+                "nl": "Breedte van de opening: {opening} m",
+                "de": "Breite der Öffnung: {opening} m"
             },
             "question": {
                 "en": "How wide is the smallest opening next to the barriers?",
@@ -284,12 +284,12 @@
             },
             "condition": {
                 "or": [
-                    "cycle_barrier:type=double",
-                    "cycle_barrier:type=triple"
+                    "cycle_barrier=double",
+                    "cycle_barrier=triple"
                 ]
             },
             "freeform": {
-                "key": "width:opening",
+                "key": "opening",
                 "type": "length",
                 "helperArgs": [
                     "21",
@@ -310,8 +310,8 @@
             },
             "condition": {
                 "or": [
-                    "cycle_barrier:type=double",
-                    "cycle_barrier:type=triple"
+                    "cycle_barrier=double",
+                    "cycle_barrier=triple"
                 ]
             },
             "freeform": {
