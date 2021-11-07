@@ -193,13 +193,10 @@
             },
             "Underground?": {
                 "mappings": {
+                    "1": {
+                        "then": "Felszíni parkoló"
+                    },
                     "2": {
-                        "then": "Felszíni parkoló"
-                    },
-                    "3": {
-                        "then": "Felszíni parkoló"
-                    },
-                    "4": {
                         "then": "Tetőparkoló"
                     }
                 }

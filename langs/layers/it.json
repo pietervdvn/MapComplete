@@ -433,15 +433,9 @@
                         "then": "Parcheggio sotterraneo"
                     },
                     "1": {
-                        "then": "Parcheggio sotterraneo"
+                        "then": "Parcheggio in superficie"
                     },
                     "2": {
-                        "then": "Parcheggio in superficie"
-                    },
-                    "3": {
-                        "then": "Parcheggio in superficie"
-                    },
-                    "4": {
                         "then": "Parcheggio sul tetto"
                     }
                 },

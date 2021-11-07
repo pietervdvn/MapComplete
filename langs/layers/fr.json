@@ -361,7 +361,7 @@
                         "then": "Accès limité aux membres d'une école, entreprise ou organisation"
                     }
                 },
-                "question": "Qui peut utiliser ce parking à vélo ?",
+                "question": "Qui peut utiliser ce parking à vélo ?",
                 "render": "{access}"
             },
             "Bicycle parking type": {
@@ -391,7 +391,7 @@
                         "then": "Zone au sol qui est marquée pour le stationnement des vélos"
                     }
                 },
-                "question": "Quel type de parking à vélos est-ce ?",
+                "question": "Quel type de parking à vélos est-ce ?",
                 "render": "Ceci est un parking à vélo de type {bicycle_parking}"
             },
             "Capacity": {
@@ -414,7 +414,7 @@
                         "then": "Il est interdit de garer des vélos cargo"
                     }
                 },
-                "question": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?"
+                "question": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?"
             },
             "Is covered?": {
                 "mappings": {
@@ -425,7 +425,7 @@
                         "then": "Ce parking n'est pas couvert"
                     }
                 },
-                "question": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur."
+                "question": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur."
             },
             "Underground?": {
                 "mappings": {
@@ -433,19 +433,13 @@
                         "then": "Parking souterrain"
                     },
                     "1": {
-                        "then": "Parking souterrain"
+                        "then": "Parking en surface"
                     },
                     "2": {
-                        "then": "Parking en surface"
-                    },
-                    "3": {
-                        "then": "Parking en surface"
-                    },
-                    "4": {
                         "then": "Parking sur un toit"
                     }
                 },
-                "question": "Quelle est la position relative de ce parking à vélo ?"
+                "question": "Quelle est la position relative de ce parking à vélo ?"
             }
         },
         "title": {

@@ -524,15 +524,9 @@
                         "then": "Underground parking"
                     },
                     "1": {
-                        "then": "Underground parking"
+                        "then": "Surface level parking"
                     },
                     "2": {
-                        "then": "Surface level parking"
-                    },
-                    "3": {
-                        "then": "Surface level parking"
-                    },
-                    "4": {
                         "then": "Rooftop parking"
                     }
                 },

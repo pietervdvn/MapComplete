@@ -524,15 +524,9 @@
                         "then": "Tiefgarage"
                     },
                     "1": {
-                        "then": "Tiefgarage"
+                        "then": "Ebenerdiges Parken"
                     },
                     "2": {
-                        "then": "Ebenerdiges Parken"
-                    },
-                    "3": {
-                        "then": "Ebenerdiges Parken"
-                    },
-                    "4": {
                         "then": "Parkplatz auf dem Dach"
                     }
                 },

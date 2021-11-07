@@ -1332,6 +1332,12 @@
                 "description": "Addresses",
                 "name": "Known addresses in OSM",
                 "tagRenderings": {
+                    "address-sign-image": {
+                        "render": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
+                    },
+                    "fixme": {
+                        "question": "What should be fixed here? Please explain"
+                    },
                     "uk_addresses_explanation_osm": {
                         "render": "This address is saved in OpenStreetMap"
                     },

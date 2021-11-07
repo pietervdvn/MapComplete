@@ -69,13 +69,6 @@
             }
         }
     },
-    "bike_parking": {
-        "tagRenderings": {
-            "Access": {
-                "render": "{access}"
-            }
-        }
-    },
     "ghost_bike": {
         "name": "Fantombiciklo",
         "title": {

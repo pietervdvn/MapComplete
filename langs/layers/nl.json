@@ -523,15 +523,9 @@
                         "then": "Ondergrondse parking"
                     },
                     "1": {
-                        "then": "Ondergrondse parking"
+                        "then": "Parking op de begane grond"
                     },
                     "2": {
-                        "then": "Parking op de begane grond"
-                    },
-                    "3": {
-                        "then": "Parking op de begane grond"
-                    },
-                    "4": {
                         "then": "Dakparking"
                     }
                 },

@@ -333,15 +333,9 @@
                         "then": "Estacionamento subterrâneo"
                     },
                     "1": {
-                        "then": "Estacionamento subterrâneo"
-                    },
-                    "2": {
                         "then": "Estacionamento de superfície"
                     },
-                    "3": {
-                        "then": "Estacionamento ao nível da superfície"
-                    },
-                    "4": {
+                    "2": {
                         "then": "Estacionamento no telhado"
                     }
                 },
