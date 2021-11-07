@@ -1,6 +1,60 @@
 {
-    "id": "bike_cleaning",
-    "name": {
+  "id": "bike_cleaning",
+  "name": {
+    "en": "Bike cleaning service",
+    "nl": "Fietsschoonmaakpunt",
+    "fr": "Service de nettoyage de vélo",
+    "it": "Servizio lavaggio bici",
+    "de": "Fahrrad-Reinigungsdienst",
+    "zh_Hant": "單車清理服務",
+    "pt_BR": "Serviço de limpeza de bicicletas",
+    "pt": "Serviço de limpeza de bicicletas"
+  },
+  "title": {
+    "render": {
+      "en": "Bike cleaning service",
+      "nl": "Fietsschoonmaakpunt",
+      "fr": "Service de nettoyage de vélo",
+      "it": "Servizio lavaggio bici",
+      "de": "Fahrrad-Reinigungsdienst",
+      "zh_Hant": "單車清理服務",
+      "pt_BR": "Serviço de limpeza de bicicletas",
+      "pt": "Serviço de limpeza de bicicletas"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Bike cleaning service <i>{name}</i>",
+          "nl": "Fietsschoonmaakpunt <i>{name}</i>",
+          "fr": "Service de nettoyage de vélo <i>{name}</i>",
+          "it": "Servizio lavaggio bici <i>{name}</i>",
+          "de": "Fahrrad-Reinigungsdienst<i>{name}</i>",
+          "zh_Hant": "單車清理服務 <i>{name}</i>",
+          "pt_BR": "Serviço de limpeza de bicicletas <i>{name}</i>",
+          "pt": "Serviço de limpeza de bicicletas <i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "icon": {
+    "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
+  },
+  "iconSize": "50,50,bottom",
+  "source": {
+    "osmTags": {
+      "or": [
+        "service:bicycle:cleaning=yes",
+        "service:bicycle:cleaning=diy",
+        "amenity=bicycle_wash"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "wayHandling": 1,
+  "presets": [
+    {
+      "title": {
         "en": "Bike cleaning service",
         "nl": "Fietsschoonmaakpunt",
         "fr": "Service de nettoyage de vélo",
@@ -9,153 +63,99 @@
         "zh_Hant": "單車清理服務",
         "pt_BR": "Serviço de limpeza de bicicletas",
         "pt": "Serviço de limpeza de bicicletas"
-    },
-    "title": {
-        "render": {
-            "en": "Bike cleaning service",
-            "nl": "Fietsschoonmaakpunt",
-            "fr": "Service de nettoyage de vélo",
-            "it": "Servizio lavaggio bici",
-            "de": "Fahrrad-Reinigungsdienst",
-            "zh_Hant": "單車清理服務",
-            "pt_BR": "Serviço de limpeza de bicicletas",
-            "pt": "Serviço de limpeza de bicicletas"
-        },
-        "mappings": [
-            {
-                "if": "name~*",
-                "then": {
-                    "en": "Bike cleaning service <i>{name}</i>",
-                    "nl": "Fietsschoonmaakpunt <i>{name}</i>",
-                    "fr": "Service de nettoyage de vélo <i>{name}</i>",
-                    "it": "Servizio lavaggio bici <i>{name}</i>",
-                    "de": "Fahrrad-Reinigungsdienst<i>{name}</i>",
-                    "zh_Hant": "單車清理服務 <i>{name}</i>",
-                    "pt_BR": "Serviço de limpeza de bicicletas <i>{name}</i>",
-                    "pt": "Serviço de limpeza de bicicletas <i>{name}</i>"
-                }
-            }
-        ]
-    },
-    "icon": {
-        "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
-    },
-    "iconSize": "50,50,bottom",
-    "source": {
-        "osmTags": {
-            "or": [
-                "service:bicycle:cleaning=yes",
-                "service:bicycle:cleaning=diy",
-                "amenity=bicycle_wash"
-            ]
-        }
-    },
-    "minzoom": 13,
-    "wayHandling": 1,
-    "presets": [
-        {
-            "title": {
-                "en": "Bike cleaning service",
-                "nl": "Fietsschoonmaakpunt",
-                "fr": "Service de nettoyage de vélo",
-                "it": "Servizio lavaggio bici",
-                "de": "Fahrrad-Reinigungsdienst",
-                "zh_Hant": "單車清理服務",
-                "pt_BR": "Serviço de limpeza de bicicletas",
-                "pt": "Serviço de limpeza de bicicletas"
-            },
-            "tags": [
-                "amenity=bicycle_wash"
-            ]
-        }
-    ],
-    "color": "#6bc4f7",
-    "iconOverlays": [
-        {
-            "if": {
-                "and": [
-                    "service:bicycle:cleaning~*",
-                    "amenity!=bike_wash"
-                ]
-            },
-            "then": {
-                "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
-            }
-        }
-    ],
-    "titleIcons": [
-        {
-            "render": "<img src='./assets/layers/bike_cleaning/bike_cleaning_icon.svg'/>"
-        }
-    ],
-    "tagRenderings": [
-        "images",
-        {
-            "question": "How much does it cost to use the cleaning service?",
-            "render": "Using the cleaning service costs {charge}",
-            "condition": "amenity!=bike_wash",
-            "freeform": {
-                "key": "service:bicycle:cleaning:charge",
-                "addExtraTags": [
-                    "service:bicycle:cleaning:fee=yes"
-                ]
-            },
-            "mappings": [
-                {
-                    "if": "service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge=",
-                    "then": "The cleaning service is free to use"
-                },
-                {
-                    "if": "service:bicycle:cleaning:fee=no&",
-                    "then": "Free to use",
-                    "hideInAnswer": true
-                },
-                {
-                    "if": "service:bicycle:cleaning:fee=yes",
-                    "then": "The cleaning service has a fee"
-                }
-            ],
-            "id": "bike_cleaning-service:bicycle:cleaning:charge"
-        },
-        {
-            "question": "How much does it cost to use the cleaning service?",
-            "render": "Using the cleaning service costs {charge}",
-            "condition": "amenity=bike_wash",
-            "freeform": {
-                "key": "charge",
-                "addExtraTags": [
-                    "fee=yes"
-                ]
-            },
-            "mappings": [
-                {
-                    "if": "fee=no&charge=",
-                    "then": "Free to use cleaning service"
-                },
-                {
-                    "if": "fee=no&",
-                    "then": "Free to use",
-                    "hideInAnswer": true
-                },
-                {
-                    "if": "fee=yes",
-                    "then": "The cleaning service has a fee"
-                }
-            ],
-            "id": "bike_cleaning-charge"
-        }
-    ],
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "disused:amenity:={amenity}",
-                "amenity="
-            ]
-        },
-        "neededChangesets": 1
-    },
-    "allowMove": {
-        "enableRelocation": false,
-        "enableImproveAccuraccy": true
+      },
+      "tags": [
+        "amenity=bicycle_wash"
+      ]
     }
+  ],
+  "color": "#6bc4f7",
+  "iconOverlays": [
+    {
+      "if": {
+        "and": [
+          "service:bicycle:cleaning~*",
+          "amenity!=bike_wash"
+        ]
+      },
+      "then": {
+        "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "render": "<img src='./assets/layers/bike_cleaning/bike_cleaning_icon.svg'/>"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "question": "How much does it cost to use the cleaning service?",
+      "render": "Using the cleaning service costs {charge}",
+      "condition": "amenity!=bike_wash",
+      "freeform": {
+        "key": "service:bicycle:cleaning:charge",
+        "addExtraTags": [
+          "service:bicycle:cleaning:fee=yes"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge=",
+          "then": "The cleaning service is free to use"
+        },
+        {
+          "if": "service:bicycle:cleaning:fee=no&",
+          "then": "Free to use",
+          "hideInAnswer": true
+        },
+        {
+          "if": "service:bicycle:cleaning:fee=yes",
+          "then": "The cleaning service has a fee"
+        }
+      ],
+      "id": "bike_cleaning-service:bicycle:cleaning:charge"
+    },
+    {
+      "question": "How much does it cost to use the cleaning service?",
+      "render": "Using the cleaning service costs {charge}",
+      "condition": "amenity=bike_wash",
+      "freeform": {
+        "key": "charge",
+        "addExtraTags": [
+          "fee=yes"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "fee=no&charge=",
+          "then": "Free to use cleaning service"
+        },
+        {
+          "if": "fee=no&",
+          "then": "Free to use",
+          "hideInAnswer": true
+        },
+        {
+          "if": "fee=yes",
+          "then": "The cleaning service has a fee"
+        }
+      ],
+      "id": "bike_cleaning-charge"
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
+  }
 }

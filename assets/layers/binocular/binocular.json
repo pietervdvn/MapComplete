@@ -1,131 +1,131 @@
 {
-    "id": "binocular",
-    "name": {
-        "en": "Binoculars",
-        "nl": "Verrekijkers",
-        "de": "Ferngläser",
-        "ru": "Бинокль"
-    },
-    "minzoom": 0,
-    "title": {
-        "render": {
-            "en": "Binoculars",
-            "nl": "Verrekijker",
-            "de": "Ferngläser",
-            "ru": "Бинокль"
-        }
-    },
-    "description": {
-        "en": "Binoculas",
-        "nl": "Verrekijkers",
-        "de": "Fernglas",
-        "ru": "Бинокли"
-    },
-    "tagRenderings": [
-        "images",
-        {
-            "mappings": [
-                {
-                    "if": {
-                        "and": [
-                            "fee=no",
-                            "charge="
-                        ]
-                    },
-                    "then": {
-                        "en": "Free to use",
-                        "nl": "Gratis te gebruiken",
-                        "de": "Kostenlose Nutzung"
-                    }
-                }
-            ],
-            "freeform": {
-                "key": "charge",
-                "addExtraTags": [
-                    "fee=yes"
-                ]
-            },
-            "render": {
-                "en": "Using these binoculars costs {charge}",
-                "nl": "Deze verrekijker gebruiken kost {charge}",
-                "de": "Die Benutzung dieses Fernglases kostet {charge}"
-            },
-            "question": {
-                "en": "How much does one have to pay to use these binoculars?",
-                "nl": "Hoeveel moet men betalen om deze verrekijker te gebruiken?",
-                "de": "Wie viel muss man für die Nutzung dieser Ferngläser bezahlen?"
-            },
-            "id": "binocular-charge"
-        },
-        {
-            "question": {
-                "en": "When looking through this binocular, in what direction does one look?",
-                "nl": "Welke richting kijkt men uit als men door deze verrekijker kijkt?",
-                "de": "In welche Richtung blickt man, wenn man durch dieses Fernglas schaut?"
-            },
-            "render": {
-                "en": "Looks towards {direction}°",
-                "nl": "Kijkt richting {direction}°",
-                "de": "Blick in Richtung {direction}°"
-            },
-            "freeform": {
-                "key": "direction",
-                "type": "direction"
-            },
-            "id": "binocular-direction"
-        }
-    ],
-    "icon": {
-        "render": "circle:white;./assets/layers/binocular/telescope.svg"
-    },
-    "width": {
-        "render": "8"
-    },
-    "iconSize": {
-        "render": "40,40,center"
-    },
-    "color": {
-        "render": "#00f"
-    },
-    "presets": [
-        {
-            "tags": [
-                "amenity=binoculars"
-            ],
-            "title": {
-                "en": "binoculars",
-                "nl": "verrekijker",
-                "de": "Ferngläser",
-                "ru": "бинокль"
-            },
-            "description": {
-                "en": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "nl": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "de": "Ein fest installiertes Teleskop oder Fernglas, für die öffentliche Nutzung. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
-            },
-            "preciseInput": {
-                "preferredBackground": "photo"
-            }
-        }
-    ],
-    "source": {
-        "osmTags": {
-            "and": [
-                "amenity=binoculars"
-            ]
-        }
-    },
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "disused:amenity:={amenity}",
-                "amenity="
-            ]
-        },
-        "neededChangesets": 1
-    },
-    "allowMove": {
-        "enableRelocation": false,
-        "enableImproveAccuraccy": true
+  "id": "binocular",
+  "name": {
+    "en": "Binoculars",
+    "nl": "Verrekijkers",
+    "de": "Ferngläser",
+    "ru": "Бинокль"
+  },
+  "minzoom": 0,
+  "title": {
+    "render": {
+      "en": "Binoculars",
+      "nl": "Verrekijker",
+      "de": "Ferngläser",
+      "ru": "Бинокль"
     }
+  },
+  "description": {
+    "en": "Binoculas",
+    "nl": "Verrekijkers",
+    "de": "Fernglas",
+    "ru": "Бинокли"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "fee=no",
+              "charge="
+            ]
+          },
+          "then": {
+            "en": "Free to use",
+            "nl": "Gratis te gebruiken",
+            "de": "Kostenlose Nutzung"
+          }
+        }
+      ],
+      "freeform": {
+        "key": "charge",
+        "addExtraTags": [
+          "fee=yes"
+        ]
+      },
+      "render": {
+        "en": "Using these binoculars costs {charge}",
+        "nl": "Deze verrekijker gebruiken kost {charge}",
+        "de": "Die Benutzung dieses Fernglases kostet {charge}"
+      },
+      "question": {
+        "en": "How much does one have to pay to use these binoculars?",
+        "nl": "Hoeveel moet men betalen om deze verrekijker te gebruiken?",
+        "de": "Wie viel muss man für die Nutzung dieser Ferngläser bezahlen?"
+      },
+      "id": "binocular-charge"
+    },
+    {
+      "question": {
+        "en": "When looking through this binocular, in what direction does one look?",
+        "nl": "Welke richting kijkt men uit als men door deze verrekijker kijkt?",
+        "de": "In welche Richtung blickt man, wenn man durch dieses Fernglas schaut?"
+      },
+      "render": {
+        "en": "Looks towards {direction}°",
+        "nl": "Kijkt richting {direction}°",
+        "de": "Blick in Richtung {direction}°"
+      },
+      "freeform": {
+        "key": "direction",
+        "type": "direction"
+      },
+      "id": "binocular-direction"
+    }
+  ],
+  "icon": {
+    "render": "circle:white;./assets/layers/binocular/telescope.svg"
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "amenity=binoculars"
+      ],
+      "title": {
+        "en": "binoculars",
+        "nl": "verrekijker",
+        "de": "Ferngläser",
+        "ru": "бинокль"
+      },
+      "description": {
+        "en": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+        "nl": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+        "de": "Ein fest installiertes Teleskop oder Fernglas, für die öffentliche Nutzung. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
+      },
+      "preciseInput": {
+        "preferredBackground": "photo"
+      }
+    }
+  ],
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=binoculars"
+      ]
+    }
+  },
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
+  }
 }

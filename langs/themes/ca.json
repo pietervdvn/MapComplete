@@ -1,49 +1,49 @@
 {
-    "aed": {
-        "description": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
-        "title": "Mapa obert de desfibril·ladors (DEA)"
-    },
-    "climbing": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "1": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "2": {
-                "tagRenderings": {
-                    "Name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "3": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "4": {
-                "tagRenderings": {
-                    "climbing-opportunity-name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            }
+  "aed": {
+    "description": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
+    "title": "Mapa obert de desfibril·ladors (DEA)"
+  },
+  "climbing": {
+    "layers": {
+      "0": {
+        "tagRenderings": {
+          "climbing_club-name": {
+            "render": "<strong>{name}</strong>"
+          }
         }
-    },
-    "personal": {
-        "description": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
-        "title": "Interfície personal"
+      },
+      "1": {
+        "tagRenderings": {
+          "name": {
+            "render": "<strong>{name}</strong>"
+          }
+        }
+      },
+      "2": {
+        "tagRenderings": {
+          "Name": {
+            "render": "<strong>{name}</strong>"
+          }
+        }
+      },
+      "3": {
+        "tagRenderings": {
+          "name": {
+            "render": "<strong>{name}</strong>"
+          }
+        }
+      },
+      "4": {
+        "tagRenderings": {
+          "climbing-opportunity-name": {
+            "render": "<strong>{name}</strong>"
+          }
+        }
+      }
     }
+  },
+  "personal": {
+    "description": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
+    "title": "Interfície personal"
+  }
 }

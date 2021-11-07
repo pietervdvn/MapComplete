@@ -1,176 +1,176 @@
 {
-    "id": "etymology",
-    "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information",
-    "name": {
-        "en": "Has etymolgy",
-        "nl": "Heeft etymology info",
-        "de": "Hat eine Namensherkunft"
-    },
-    "minzoom": 12,
-    "source": {
-        "osmTags": {
-            "or": [
-                "name:etymology:wikidata~*",
-                "name:etymology~*"
-            ]
-        }
-    },
-    "title": {
-        "render": {
-            "*": "{name}"
-        }
-    },
-    "description": {
-        "en": "All objects which have an etymology known",
-        "nl": "Alle lagen met een gelinkt etymology",
-        "de": "Alle Objekte, die eine bekannte Namensherkunft haben"
-    },
-    "calculatedTags": [
-        "_same_name_ids=feat.closestn('*', 250, undefined, 2500)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
-    ],
-    "tagRenderings": [
-        {
-            "id": "etymology-images-from-wikipedia",
-            "render": {
-                "*": "{image_carousel(name:etymology:wikidata)}"
-            }
-        },
-        {
-            "id": "wikipedia-etymology",
-            "question": {
-                "en": "What is the Wikidata-item that this object is named after?",
-                "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
-                "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?"
-            },
-            "freeform": {
-                "key": "name:etymology:wikidata",
-                "type": "wikidata",
-                "helperArgs": [
-                    "name",
-                    {
-                        "removePostfixes": [
-                            "steenweg",
-                            "heirbaan",
-                            "baan",
-                            "straat",
-                            "street",
-                            "weg",
-                            "dreef",
-                            "laan",
-                            "boulevard",
-                            "pad",
-                            "path",
-                            "plein",
-                            "square",
-                            "plaza",
-                            "wegel",
-                            "kerk",
-                            "church",
-                            "kaai"
-                        ]
-                    }
-                ]
-            },
-            "render": {
-                "en": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-                "nl": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-                "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
-            },
-            "condition": "name:etymology!=unknown"
-        },
-        {
-            "id": "zoeken op inventaris onroerend erfgoed",
-            "render": {
-                "nl": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>",
-                "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
-            },
-            "conditions": "_country=be"
-        },
-        {
-            "id": "simple etymology",
-            "question": {
-                "en": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
-                "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
-                "de": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>"
-            },
-            "render": {
-                "en": "Named after {name:etymology}",
-                "nl": "Vernoemd naar {name:etymology}",
-                "de": "Benannt nach {name:etymology}"
-            },
-            "freeform": {
-                "key": "name:etymology"
-            },
-            "mappings": [
-                {
-                    "if": "name:etymology=unknown",
-                    "then": {
-                        "en": "The origin of this name is unknown in all literature",
-                        "nl": "De oorsprong van deze naam is onbekend in de literatuur",
-                        "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt"
-                    }
-                }
-            ],
-            "condition": {
-                "or": [
-                    "name:etymology~*",
-                    "name:etymology:wikidata="
-                ]
-            }
-        },
-        {
-            "id": "street-name-sign-image",
-            "render": {
-                "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
-                "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
-            }
-        },
-        {
-            "id": "minimap",
-            "render": {
-                "*": "{minimap(18, id, _same_name_ids):height:10rem}"
-            }
-        },
-        {
-            "id": "etymology_multi_apply",
-            "render": {
-                "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
-            }
-        },
-        "wikipedia"
-    ],
-    "icon": {
-        "render": "pin:#05d7fcaa;./assets/layers/etymology/logo.svg",
-        "mappings": [
-            {
-                "if": {
-                    "and": [
-                        "name:etymology=",
-                        "name:etymology:wikidata="
-                    ]
-                },
-                "then": "pin:#fcca05aa;./assets/layers/etymology/logo.svg"
-            }
-        ]
-    },
-    "width": {
-        "render": "8"
-    },
-    "iconSize": {
-        "render": "40,40,center"
-    },
-    "color": {
-        "render": "#05d7fcaa",
-        "mappings": [
-            {
-                "if": {
-                    "and": [
-                        "name:etymology=",
-                        "name:etymology:wikidata="
-                    ]
-                },
-                "then": "#fcca05aa"
-            }
-        ]
+  "id": "etymology",
+  "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information",
+  "name": {
+    "en": "Has etymolgy",
+    "nl": "Heeft etymology info",
+    "de": "Hat eine Namensherkunft"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "or": [
+        "name:etymology:wikidata~*",
+        "name:etymology~*"
+      ]
     }
+  },
+  "title": {
+    "render": {
+      "*": "{name}"
+    }
+  },
+  "description": {
+    "en": "All objects which have an etymology known",
+    "nl": "Alle lagen met een gelinkt etymology",
+    "de": "Alle Objekte, die eine bekannte Namensherkunft haben"
+  },
+  "calculatedTags": [
+    "_same_name_ids=feat.closestn('*', 250, undefined, 2500)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
+  ],
+  "tagRenderings": [
+    {
+      "id": "etymology-images-from-wikipedia",
+      "render": {
+        "*": "{image_carousel(name:etymology:wikidata)}"
+      }
+    },
+    {
+      "id": "wikipedia-etymology",
+      "question": {
+        "en": "What is the Wikidata-item that this object is named after?",
+        "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
+        "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?"
+      },
+      "freeform": {
+        "key": "name:etymology:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "name",
+          {
+            "removePostfixes": [
+              "steenweg",
+              "heirbaan",
+              "baan",
+              "straat",
+              "street",
+              "weg",
+              "dreef",
+              "laan",
+              "boulevard",
+              "pad",
+              "path",
+              "plein",
+              "square",
+              "plaza",
+              "wegel",
+              "kerk",
+              "church",
+              "kaai"
+            ]
+          }
+        ]
+      },
+      "render": {
+        "en": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "nl": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+      },
+      "condition": "name:etymology!=unknown"
+    },
+    {
+      "id": "zoeken op inventaris onroerend erfgoed",
+      "render": {
+        "nl": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>",
+        "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
+      },
+      "conditions": "_country=be"
+    },
+    {
+      "id": "simple etymology",
+      "question": {
+        "en": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
+        "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
+        "de": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>"
+      },
+      "render": {
+        "en": "Named after {name:etymology}",
+        "nl": "Vernoemd naar {name:etymology}",
+        "de": "Benannt nach {name:etymology}"
+      },
+      "freeform": {
+        "key": "name:etymology"
+      },
+      "mappings": [
+        {
+          "if": "name:etymology=unknown",
+          "then": {
+            "en": "The origin of this name is unknown in all literature",
+            "nl": "De oorsprong van deze naam is onbekend in de literatuur",
+            "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "name:etymology~*",
+          "name:etymology:wikidata="
+        ]
+      }
+    },
+    {
+      "id": "street-name-sign-image",
+      "render": {
+        "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
+        "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+      }
+    },
+    {
+      "id": "minimap",
+      "render": {
+        "*": "{minimap(18, id, _same_name_ids):height:10rem}"
+      }
+    },
+    {
+      "id": "etymology_multi_apply",
+      "render": {
+        "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
+      }
+    },
+    "wikipedia"
+  ],
+  "icon": {
+    "render": "pin:#05d7fcaa;./assets/layers/etymology/logo.svg",
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name:etymology=",
+            "name:etymology:wikidata="
+          ]
+        },
+        "then": "pin:#fcca05aa;./assets/layers/etymology/logo.svg"
+      }
+    ]
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#05d7fcaa",
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name:etymology=",
+            "name:etymology:wikidata="
+          ]
+        },
+        "then": "#fcca05aa"
+      }
+    ]
+  }
 }

@@ -1,207 +1,207 @@
 {
-    "id": "cafe_pub",
-    "name": {
-        "nl": "Cafés",
-        "en": "Cafés and pubs",
-        "de": "Cafés und Kneipen"
+  "id": "cafe_pub",
+  "name": {
+    "nl": "Cafés",
+    "en": "Cafés and pubs",
+    "de": "Cafés und Kneipen"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=bar",
+        "amenity=pub",
+        "amenity=cafe",
+        "amenity=biergarten"
+      ]
+    }
+  },
+  "wayHandling": 1,
+  "icon": {
+    "render": "circle:white;./assets/layers/cafe_pub/pub.svg",
+    "mappings": [
+      {
+        "if": "amenity=cafe",
+        "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
+      }
+    ]
+  },
+  "iconOverlays": [
+    {
+      "if": "opening_hours~*",
+      "then": "isOpen",
+      "badge": true
+    }
+  ],
+  "label": {
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+      }
+    ]
+  },
+  "presets": [
+    {
+      "tags": [
+        "amenity=pub"
+      ],
+      "title": {
+        "en": "pub",
+        "nl": "bruin cafe of kroeg",
+        "de": "Kneipe",
+        "ru": "паб"
+      },
+      "description": {
+        "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
     },
-    "source": {
-        "osmTags": {
-            "or": [
-                "amenity=bar",
-                "amenity=pub",
-                "amenity=cafe",
-                "amenity=biergarten"
-            ]
+    {
+      "tags": [
+        "amenity=bar"
+      ],
+      "title": {
+        "en": "bar",
+        "nl": "bar",
+        "de": "Bar",
+        "ru": "бар"
+      },
+      "description": {
+        "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    },
+    {
+      "tags": [
+        "amenity=cafe"
+      ],
+      "title": {
+        "en": "cafe",
+        "nl": "cafe",
+        "de": "Café",
+        "ru": "кафе"
+      },
+      "description": {
+        "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    }
+  ],
+  "title": {
+    "render": {
+      "nl": "Café"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "<i>{name}</i>",
+          "en": "<i>{name}</i>",
+          "de": "<i>{name}</i>",
+          "ru": "<i>{name}</i>"
         }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "nl": "Wat is de naam van dit café?",
+        "en": "What is the name of this pub?",
+        "de": "Wie heißt diese Kneipe?"
+      },
+      "render": {
+        "nl": "De naam van dit café is {name}",
+        "en": "This pub is named {name}",
+        "de": "Diese Kneipe heißt {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "Name"
     },
-    "wayHandling": 1,
-    "icon": {
-        "render": "circle:white;./assets/layers/cafe_pub/pub.svg",
-        "mappings": [
-            {
-                "if": "amenity=cafe",
-                "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
-            }
-        ]
-    },
-    "iconOverlays": [
+    {
+      "question": {
+        "en": "What kind of cafe is this",
+        "nl": "Welk soort café is dit?",
+        "de": "Was ist das für ein Café"
+      },
+      "mappings": [
         {
-            "if": "opening_hours~*",
-            "then": "isOpen",
-            "badge": true
-        }
-    ],
-    "label": {
-        "mappings": [
-            {
-                "if": "name~*",
-                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-            }
-        ]
-    },
-    "presets": [
-        {
-            "tags": [
-                "amenity=pub"
-            ],
-            "title": {
-                "en": "pub",
-                "nl": "bruin cafe of kroeg",
-                "de": "Kneipe",
-                "ru": "паб"
-            },
-            "description": {
-                "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
-            },
-            "preciseInput": {
-                "preferredBackground": "map"
-            }
+          "if": "amenity=pub",
+          "then": {
+            "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
+          }
         },
         {
-            "tags": [
-                "amenity=bar"
-            ],
-            "title": {
-                "en": "bar",
-                "nl": "bar",
-                "de": "Bar",
-                "ru": "бар"
-            },
-            "description": {
-                "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
-            },
-            "preciseInput": {
-                "preferredBackground": "map"
-            }
+          "if": "amenity=bar",
+          "then": {
+            "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
+          }
         },
         {
-            "tags": [
-                "amenity=cafe"
-            ],
-            "title": {
-                "en": "cafe",
-                "nl": "cafe",
-                "de": "Café",
-                "ru": "кафе"
-            },
-            "description": {
-                "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
-            },
-            "preciseInput": {
-                "preferredBackground": "map"
-            }
-        }
-    ],
-    "title": {
-        "render": {
-            "nl": "Café"
+          "if": "amenity=cafe",
+          "then": {
+            "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
+          }
         },
-        "mappings": [
-            {
-                "if": {
-                    "and": [
-                        "name~*"
-                    ]
-                },
-                "then": {
-                    "nl": "<i>{name}</i>",
-                    "en": "<i>{name}</i>",
-                    "de": "<i>{name}</i>",
-                    "ru": "<i>{name}</i>"
-                }
-            }
-        ]
+        {
+          "if": "amenity=restaurant",
+          "then": {
+            "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt"
+          }
+        },
+        {
+          "if": "amenity=biergarten",
+          "then": {
+            "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland"
+          },
+          "hideInAnswer": "_country!=de"
+        }
+      ],
+      "id": "Classification"
     },
-    "tagRenderings": [
-        "images",
+    "opening_hours",
+    "website",
+    "email",
+    "phone",
+    "payment-options",
+    "wheelchair-access",
+    "dog-access"
+  ],
+  "filter": [
+    {
+      "id": "opened-now",
+      "options": [
         {
-            "question": {
-                "nl": "Wat is de naam van dit café?",
-                "en": "What is the name of this pub?",
-                "de": "Wie heißt diese Kneipe?"
-            },
-            "render": {
-                "nl": "De naam van dit café is {name}",
-                "en": "This pub is named {name}",
-                "de": "Diese Kneipe heißt {name}"
-            },
-            "freeform": {
-                "key": "name"
-            },
-            "id": "Name"
-        },
-        {
-            "question": {
-                "en": "What kind of cafe is this",
-                "nl": "Welk soort café is dit?",
-                "de": "Was ist das für ein Café"
-            },
-            "mappings": [
-                {
-                    "if": "amenity=pub",
-                    "then": {
-                        "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
-                    }
-                },
-                {
-                    "if": "amenity=bar",
-                    "then": {
-                        "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
-                    }
-                },
-                {
-                    "if": "amenity=cafe",
-                    "then": {
-                        "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
-                    }
-                },
-                {
-                    "if": "amenity=restaurant",
-                    "then": {
-                        "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt"
-                    }
-                },
-                {
-                    "if": "amenity=biergarten",
-                    "then": {
-                        "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland"
-                    },
-                    "hideInAnswer": "_country!=de"
-                }
-            ],
-            "id": "Classification"
-        },
-        "opening_hours",
-        "website",
-        "email",
-        "phone",
-        "payment-options",
-        "wheelchair-access",
-        "dog-access"
-    ],
-    "filter": [
-        {
-            "id": "opened-now",
-            "options": [
-                {
-                    "question": {
-                        "en": "Opened now",
-                        "nl": "Nu geopened",
-                        "de": "Jetzt geöffnet"
-                    },
-                    "osmTags": "_isOpen=yes"
-                }
-            ]
+          "question": {
+            "en": "Opened now",
+            "nl": "Nu geopened",
+            "de": "Jetzt geöffnet"
+          },
+          "osmTags": "_isOpen=yes"
         }
-    ],
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "amenity=",
-                "disused:amenity:={amenity}"
-            ]
-        }
-    },
-    "allowMove": true
+      ]
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "disused:amenity:={amenity}"
+      ]
+    }
+  },
+  "allowMove": true
 }

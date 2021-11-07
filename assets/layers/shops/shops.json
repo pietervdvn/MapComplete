@@ -1,6 +1,354 @@
 {
-    "id": "shops",
-    "name": {
+  "id": "shops",
+  "name": {
+    "en": "Shop",
+    "fr": "Magasin",
+    "ru": "Магазин",
+    "ja": "店",
+    "nl": "Winkel",
+    "de": "Geschäft",
+    "eo": "Butiko"
+  },
+  "minzoom": 16,
+  "source": {
+    "osmTags": {
+      "and": [
+        "shop~*"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Shop",
+      "fr": "Magasin",
+      "ru": "Магазин",
+      "ja": "店",
+      "nl": "Winkel",
+      "de": "Geschäft",
+      "eo": "Butiko"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "{name}",
+          "fr": "{name}",
+          "ru": "{name}",
+          "ja": "{name}",
+          "de": "{name}",
+          "eo": "{name}"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "shop!~yes"
+          ]
+        },
+        "then": {
+          "en": "{shop}",
+          "fr": "{shop}",
+          "ru": "{shop}",
+          "ja": "{shop}",
+          "de": "{shop}",
+          "eo": "{shop}"
+        }
+      }
+    ]
+  },
+  "description": {
+    "en": "A shop",
+    "fr": "Un magasin",
+    "ja": "ショップ",
+    "nl": "Een winkel",
+    "ru": "Магазин",
+    "de": "Ein Geschäft",
+    "eo": "Butiko"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What is the name of this shop?",
+        "fr": "Qu'est-ce que le nom de ce magasin?",
+        "ru": "Как называется этот магазин?",
+        "ja": "このお店の名前は何ですか?",
+        "nl": "Wat is de naam van deze winkel?",
+        "de": "Wie ist der Name dieses Geschäfts?"
+      },
+      "render": "This shop is called <i>{name}</i>",
+      "freeform": {
+        "key": "name"
+      },
+      "id": "shops-name"
+    },
+    {
+      "render": {
+        "en": "This shop sells {shop}",
+        "fr": "Ce magasin vends {shop}",
+        "ja": "こちらのお店では{shop}を販売しております",
+        "de": "Dieses Geschäft verkauft {shop}",
+        "eo": "Ĉi tiu butiko vendas {shop}"
+      },
+      "question": {
+        "en": "What does this shop sell?",
+        "fr": "Que vends ce magasin ?",
+        "ja": "このお店では何を売っていますか?",
+        "ru": "Что продаётся в этом магазине?",
+        "de": "Was wird in diesem Geschäft verkauft?",
+        "eo": "Kion vendas ĉi tiu butiko?"
+      },
+      "freeform": {
+        "key": "shop"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "shop=convenience"
+            ]
+          },
+          "then": {
+            "en": "Convenience store",
+            "fr": "Épicerie/superette",
+            "ja": "コンビニエンスストア",
+            "de": "Lebensmittelladen",
+            "nl": "Gemakswinkel"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "shop=supermarket"
+            ]
+          },
+          "then": {
+            "en": "Supermarket",
+            "fr": "Supermarché",
+            "ru": "Супермаркет",
+            "ja": "スーパーマーケット",
+            "nl": "Supermarkt",
+            "de": "Supermarkt"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "shop=clothes"
+            ]
+          },
+          "then": {
+            "en": "Clothing store",
+            "fr": "Magasin de vêtements",
+            "ru": "Магазин одежды",
+            "ja": "衣料品店",
+            "de": "Bekleidungsgeschäft",
+            "nl": "Kledingwinkel"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "shop=hairdresser"
+            ]
+          },
+          "then": {
+            "en": "Hairdresser",
+            "fr": "Coiffeur",
+            "ru": "Парикмахерская",
+            "ja": "理容師",
+            "nl": "Kapper",
+            "de": "Friseur"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "shop=bakery"
+            ]
+          },
+          "then": {
+            "en": "Bakery",
+            "fr": "Boulangerie",
+            "ja": "ベーカリー",
+            "nl": "Bakkerij",
+            "de": "Bäckerei",
+            "eo": "Bakejo"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "shop=car_repair"
+            ]
+          },
+          "then": {
+            "en": "Car repair (garage)",
+            "fr": "Garage de réparation automobile",
+            "ja": "自動車修理(ガレージ)",
+            "de": "Autowerkstatt",
+            "fi": "Autokorjaamo",
+            "hu": "Autószerelő",
+            "id": "Bengkel Mobil",
+            "it": "Autofficina",
+            "nb_NO": "Bilverksted",
+            "nl": "Autogarage",
+            "pl": "Warsztat samochodowy",
+            "pt": "Oficina de automóveis",
+            "pt_BR": "Oficina Mecânica",
+            "ru": "Автомастерская",
+            "sv": "Bilverkstad"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "shop=car"
+            ]
+          },
+          "then": {
+            "en": "Car dealer",
+            "fr": "Concessionnaire",
+            "ru": "Автосалон",
+            "ja": "自動車ディーラー",
+            "de": "Autohändler",
+            "nl": "Autodealer"
+          }
+        }
+      ],
+      "id": "shops-shop"
+    },
+    {
+      "render": {
+        "en": "<a href='tel:{phone}'>{phone}</a>",
+        "fr": "<a href='tel:{phone}'>{phone}</a>",
+        "ca": "<a href='tel:{phone}'>{phone}</a>",
+        "id": "<a href='tel:{phone}'>{phone}</a>",
+        "ru": "<a href='tel:{phone}'>{phone}</a>",
+        "ja": "<a href='tel:{phone}'>{phone}</a>",
+        "de": "<a href='tel:{phone}'>{phone}</a>",
+        "eo": "<a href='tel:{phone}'>{phone}</a>",
+        "nl": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "question": {
+        "en": "What is the phone number?",
+        "fr": "Quel est le numéro de téléphone ?",
+        "ja": "電話番号は何番ですか?",
+        "nl": "Wat is het telefoonnummer?",
+        "ru": "Какой телефон?",
+        "de": "Wie ist die Telefonnummer?",
+        "eo": "Kio estas la telefonnumero?"
+      },
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "id": "shops-phone"
+    },
+    {
+      "render": {
+        "en": "<a href='{website}'>{website}</a>",
+        "fr": "<a href='{website}'>{website}</a>",
+        "ca": "<a href='{website}'>{website}</a>",
+        "id": "<a href='{website}'>{website}</a>",
+        "ru": "<a href='{website}'>{website}</a>",
+        "ja": "<a href='{website}'>{website}</a>",
+        "de": "<a href='{website}'>{website}</a>",
+        "eo": "<a href='{website}'>{website}</a>"
+      },
+      "question": {
+        "en": "What is the website of this shop?",
+        "fr": "Quel est le site internet de ce magasin ?",
+        "ja": "このお店のホームページは何ですか?",
+        "nl": "Wat is de website van deze winkel?",
+        "ru": "Какой веб-сайт у этого магазина?",
+        "de": "Wie lautet die Webseite dieses Geschäfts?"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url"
+      },
+      "id": "shops-website"
+    },
+    {
+      "render": {
+        "en": "<a href='mailto:{email}'>{email}</a>",
+        "fr": "<a href='mailto:{email}'>{email}</a>",
+        "id": "<a href='mailto:{email}'>{email}</a>",
+        "ru": "<a href='mailto:{email}'>{email}</a>",
+        "ja": "<a href='mailto:{email}'>{email}</a>",
+        "eo": "<a href='mailto:{email}'>{email}</a>",
+        "nl": "<a href='mailto:{email}'>{email}</a>"
+      },
+      "question": {
+        "en": "What is the email address of this shop?",
+        "fr": "Quelle est l'adresse électronique de ce magasin ?",
+        "ja": "このお店のメールアドレスは何ですか?",
+        "ru": "Каков адрес электронной почты этого магазина?",
+        "nl": "Wat is het e-mailadres van deze winkel?",
+        "de": "Wie ist die Email-Adresse dieses Geschäfts?",
+        "eo": "Kio estas la retpoŝta adreso de ĉi tiu butiko?"
+      },
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "id": "shops-email"
+    },
+    {
+      "render": {
+        "en": "{opening_hours_table(opening_hours)}",
+        "fr": "{opening_hours_table(opening_hours)}",
+        "ru": "{opening_hours_table(opening_hours)}",
+        "ja": "{opening_hours_table(opening_hours)}",
+        "nl": "{opening_hours_table(opening_hours)}"
+      },
+      "question": {
+        "en": "What are the opening hours of this shop?",
+        "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
+        "ja": "この店の営業時間は何時から何時までですか?",
+        "nl": "Wat zijn de openingsuren van deze winkel?",
+        "ru": "Каковы часы работы этого магазина?",
+        "de": "Wie sind die Öffnungszeiten dieses Geschäfts?"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "id": "shops-opening_hours"
+    },
+    "questions",
+    "reviews"
+  ],
+  "icon": {
+    "render": "./assets/themes/shops/shop.svg"
+  },
+  "iconOverlays": [
+    {
+      "if": "opening_hours~*",
+      "then": "isOpen",
+      "badge": true
+    }
+  ],
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "shop=yes"
+      ],
+      "title": {
         "en": "Shop",
         "fr": "Magasin",
         "ru": "Магазин",
@@ -8,374 +356,26 @@
         "nl": "Winkel",
         "de": "Geschäft",
         "eo": "Butiko"
-    },
-    "minzoom": 16,
-    "source": {
-        "osmTags": {
-            "and": [
-                "shop~*"
-            ]
-        }
-    },
-    "title": {
-        "render": {
-            "en": "Shop",
-            "fr": "Magasin",
-            "ru": "Магазин",
-            "ja": "店",
-            "nl": "Winkel",
-            "de": "Geschäft",
-            "eo": "Butiko"
-        },
-        "mappings": [
-            {
-                "if": {
-                    "and": [
-                        "name~*"
-                    ]
-                },
-                "then": {
-                    "en": "{name}",
-                    "fr": "{name}",
-                    "ru": "{name}",
-                    "ja": "{name}",
-                    "de": "{name}",
-                    "eo": "{name}"
-                }
-            },
-            {
-                "if": {
-                    "and": [
-                        "shop!~yes"
-                    ]
-                },
-                "then": {
-                    "en": "{shop}",
-                    "fr": "{shop}",
-                    "ru": "{shop}",
-                    "ja": "{shop}",
-                    "de": "{shop}",
-                    "eo": "{shop}"
-                }
-            }
-        ]
-    },
-    "description": {
-        "en": "A shop",
-        "fr": "Un magasin",
-        "ja": "ショップ",
-        "nl": "Een winkel",
-        "ru": "Магазин",
-        "de": "Ein Geschäft",
-        "eo": "Butiko"
-    },
-    "tagRenderings": [
-        "images",
-        {
-            "question": {
-                "en": "What is the name of this shop?",
-                "fr": "Qu'est-ce que le nom de ce magasin?",
-                "ru": "Как называется этот магазин?",
-                "ja": "このお店の名前は何ですか?",
-                "nl": "Wat is de naam van deze winkel?",
-                "de": "Wie ist der Name dieses Geschäfts?"
-            },
-            "render": "This shop is called <i>{name}</i>",
-            "freeform": {
-                "key": "name"
-            },
-            "id": "shops-name"
-        },
-        {
-            "render": {
-                "en": "This shop sells {shop}",
-                "fr": "Ce magasin vends {shop}",
-                "ja": "こちらのお店では{shop}を販売しております",
-                "de": "Dieses Geschäft verkauft {shop}",
-                "eo": "Ĉi tiu butiko vendas {shop}"
-            },
-            "question": {
-                "en": "What does this shop sell?",
-                "fr": "Que vends ce magasin ?",
-                "ja": "このお店では何を売っていますか?",
-                "ru": "Что продаётся в этом магазине?",
-                "de": "Was wird in diesem Geschäft verkauft?",
-                "eo": "Kion vendas ĉi tiu butiko?"
-            },
-            "freeform": {
-                "key": "shop"
-            },
-            "mappings": [
-                {
-                    "if": {
-                        "and": [
-                            "shop=convenience"
-                        ]
-                    },
-                    "then": {
-                        "en": "Convenience store",
-                        "fr": "Épicerie/superette",
-                        "ja": "コンビニエンスストア",
-                        "de": "Lebensmittelladen",
-                        "nl": "Gemakswinkel"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "shop=supermarket"
-                        ]
-                    },
-                    "then": {
-                        "en": "Supermarket",
-                        "fr": "Supermarché",
-                        "ru": "Супермаркет",
-                        "ja": "スーパーマーケット",
-                        "nl": "Supermarkt",
-                        "de": "Supermarkt"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "shop=clothes"
-                        ]
-                    },
-                    "then": {
-                        "en": "Clothing store",
-                        "fr": "Magasin de vêtements",
-                        "ru": "Магазин одежды",
-                        "ja": "衣料品店",
-                        "de": "Bekleidungsgeschäft",
-                        "nl": "Kledingwinkel"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "shop=hairdresser"
-                        ]
-                    },
-                    "then": {
-                        "en": "Hairdresser",
-                        "fr": "Coiffeur",
-                        "ru": "Парикмахерская",
-                        "ja": "理容師",
-                        "nl": "Kapper",
-                        "de": "Friseur"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "shop=bakery"
-                        ]
-                    },
-                    "then": {
-                        "en": "Bakery",
-                        "fr": "Boulangerie",
-                        "ja": "ベーカリー",
-                        "nl": "Bakkerij",
-                        "de": "Bäckerei",
-                        "eo": "Bakejo"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "shop=car_repair"
-                        ]
-                    },
-                    "then": {
-                        "en": "Car repair (garage)",
-                        "fr": "Garage de réparation automobile",
-                        "ja": "自動車修理(ガレージ)",
-                        "de": "Autowerkstatt",
-                        "fi": "Autokorjaamo",
-                        "hu": "Autószerelő",
-                        "id": "Bengkel Mobil",
-                        "it": "Autofficina",
-                        "nb_NO": "Bilverksted",
-                        "nl": "Autogarage",
-                        "pl": "Warsztat samochodowy",
-                        "pt": "Oficina de automóveis",
-                        "pt_BR": "Oficina Mecânica",
-                        "ru": "Автомастерская",
-                        "sv": "Bilverkstad"
-                    }
-                },
-                {
-                    "if": {
-                        "and": [
-                            "shop=car"
-                        ]
-                    },
-                    "then": {
-                        "en": "Car dealer",
-                        "fr": "Concessionnaire",
-                        "ru": "Автосалон",
-                        "ja": "自動車ディーラー",
-                        "de": "Autohändler",
-                        "nl": "Autodealer"
-                    }
-                }
-            ],
-            "id": "shops-shop"
-        },
-        {
-            "render": {
-                "en": "<a href='tel:{phone}'>{phone}</a>",
-                "fr": "<a href='tel:{phone}'>{phone}</a>",
-                "ca": "<a href='tel:{phone}'>{phone}</a>",
-                "id": "<a href='tel:{phone}'>{phone}</a>",
-                "ru": "<a href='tel:{phone}'>{phone}</a>",
-                "ja": "<a href='tel:{phone}'>{phone}</a>",
-                "de": "<a href='tel:{phone}'>{phone}</a>",
-                "eo": "<a href='tel:{phone}'>{phone}</a>",
-                "nl": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "question": {
-                "en": "What is the phone number?",
-                "fr": "Quel est le numéro de téléphone ?",
-                "ja": "電話番号は何番ですか?",
-                "nl": "Wat is het telefoonnummer?",
-                "ru": "Какой телефон?",
-                "de": "Wie ist die Telefonnummer?",
-                "eo": "Kio estas la telefonnumero?"
-            },
-            "freeform": {
-                "key": "phone",
-                "type": "phone"
-            },
-            "id": "shops-phone"
-        },
-        {
-            "render": {
-                "en": "<a href='{website}'>{website}</a>",
-                "fr": "<a href='{website}'>{website}</a>",
-                "ca": "<a href='{website}'>{website}</a>",
-                "id": "<a href='{website}'>{website}</a>",
-                "ru": "<a href='{website}'>{website}</a>",
-                "ja": "<a href='{website}'>{website}</a>",
-                "de": "<a href='{website}'>{website}</a>",
-                "eo": "<a href='{website}'>{website}</a>"
-            },
-            "question": {
-                "en": "What is the website of this shop?",
-                "fr": "Quel est le site internet de ce magasin ?",
-                "ja": "このお店のホームページは何ですか?",
-                "nl": "Wat is de website van deze winkel?",
-                "ru": "Какой веб-сайт у этого магазина?",
-                "de": "Wie lautet die Webseite dieses Geschäfts?"
-            },
-            "freeform": {
-                "key": "website",
-                "type": "url"
-            },
-            "id": "shops-website"
-        },
-        {
-            "render": {
-                "en": "<a href='mailto:{email}'>{email}</a>",
-                "fr": "<a href='mailto:{email}'>{email}</a>",
-                "id": "<a href='mailto:{email}'>{email}</a>",
-                "ru": "<a href='mailto:{email}'>{email}</a>",
-                "ja": "<a href='mailto:{email}'>{email}</a>",
-                "eo": "<a href='mailto:{email}'>{email}</a>",
-                "nl": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "question": {
-                "en": "What is the email address of this shop?",
-                "fr": "Quelle est l'adresse électronique de ce magasin ?",
-                "ja": "このお店のメールアドレスは何ですか?",
-                "ru": "Каков адрес электронной почты этого магазина?",
-                "nl": "Wat is het e-mailadres van deze winkel?",
-                "de": "Wie ist die Email-Adresse dieses Geschäfts?",
-                "eo": "Kio estas la retpoŝta adreso de ĉi tiu butiko?"
-            },
-            "freeform": {
-                "key": "email",
-                "type": "email"
-            },
-            "id": "shops-email"
-        },
-        {
-            "render": {
-                "en": "{opening_hours_table(opening_hours)}",
-                "fr": "{opening_hours_table(opening_hours)}",
-                "ru": "{opening_hours_table(opening_hours)}",
-                "ja": "{opening_hours_table(opening_hours)}",
-                "nl": "{opening_hours_table(opening_hours)}"
-            },
-            "question": {
-                "en": "What are the opening hours of this shop?",
-                "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
-                "ja": "この店の営業時間は何時から何時までですか?",
-                "nl": "Wat zijn de openingsuren van deze winkel?",
-                "ru": "Каковы часы работы этого магазина?",
-                "de": "Wie sind die Öffnungszeiten dieses Geschäfts?"
-            },
-            "freeform": {
-                "key": "opening_hours",
-                "type": "opening_hours"
-            },
-            "id": "shops-opening_hours"
-        },
-        "questions",
-        "reviews"
-    ],
-    "icon": {
-        "render": "./assets/themes/shops/shop.svg"
-    },
-    "iconOverlays": [
-        {
-            "if": "opening_hours~*",
-            "then": "isOpen",
-            "badge": true
-        }
-    ],
-    "width": {
-        "render": "8"
-    },
-    "iconSize": {
-        "render": "40,40,center"
-    },
-    "color": {
-        "render": "#00f"
-    },
-    "presets": [
-        {
-            "tags": [
-                "shop=yes"
-            ],
-            "title": {
-                "en": "Shop",
-                "fr": "Magasin",
-                "ru": "Магазин",
-                "ja": "店",
-                "nl": "Winkel",
-                "de": "Geschäft",
-                "eo": "Butiko"
-            },
-            "description": {
-                "en": "Add a new shop",
-                "fr": "Ajouter un nouveau magasin",
-                "ru": "Добавить новый магазин",
-                "ja": "新しい店を追加する",
-                "nl": "Voeg een nieuwe winkel toe",
-                "de": "Ein neues Geschäft hinzufügen",
-                "eo": "Enmeti novan butikon"
-            }
-        }
-    ],
-    "wayHandling": 2,
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "amenity=",
-                "disused:amenity:={amenity}"
-            ]
-        }
-    },
-    "allowMove": true
+      },
+      "description": {
+        "en": "Add a new shop",
+        "fr": "Ajouter un nouveau magasin",
+        "ru": "Добавить новый магазин",
+        "ja": "新しい店を追加する",
+        "nl": "Voeg een nieuwe winkel toe",
+        "de": "Ein neues Geschäft hinzufügen",
+        "eo": "Enmeti novan butikon"
+      }
+    }
+  ],
+  "wayHandling": 2,
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "disused:amenity:={amenity}"
+      ]
+    }
+  },
+  "allowMove": true
 }

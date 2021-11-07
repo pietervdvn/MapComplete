@@ -1,181 +1,181 @@
 {
-    "artwork": {
-        "name": "Karya seni",
-        "presets": {
-            "0": {
-                "title": "Karya Seni"
-            }
-        },
-        "tagRenderings": {
-            "artwork-website": {
-                "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Karya Seni <i>{name}</i>"
-                }
-            },
-            "render": "Karya Seni"
-        }
+  "artwork": {
+    "name": "Karya seni",
+    "presets": {
+      "0": {
+        "title": "Karya Seni"
+      }
     },
-    "bench": {
-        "name": "Bangku",
-        "presets": {
-            "0": {
-                "title": "bangku"
-            }
-        },
-        "tagRenderings": {
-            "bench-backrest": {
-                "mappings": {
-                    "0": {
-                        "then": "Sandaran: Ya"
-                    },
-                    "1": {
-                        "then": "Sandaran: Tidak"
-                    }
-                },
-                "question": "Apakah bangku ini memiliki sandaran?",
-                "render": "Sandaran"
-            },
-            "bench-colour": {
-                "render": "Warna: {colour}"
-            },
-            "bench-seats": {
-                "render": "{seats} kursi"
-            }
-        },
-        "title": {
-            "render": "Bangku"
-        }
+    "tagRenderings": {
+      "artwork-website": {
+        "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
+      }
     },
-    "bench_at_pt": {
-        "tagRenderings": {
-            "bench_at_pt-name": {
-                "render": "{name}"
-            }
-        },
-        "title": {
-            "render": "Bangku"
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Karya Seni <i>{name}</i>"
         }
-    },
-    "bike_parking": {
-        "tagRenderings": {
-            "Access": {
-                "render": "{access}"
-            }
-        }
-    },
-    "bike_shop": {
-        "tagRenderings": {
-            "bike_shop-website": {
-                "question": "URL {name} apa?"
-            }
-        }
-    },
-    "defibrillator": {
-        "tagRenderings": {
-            "defibrillator-description": {
-                "render": "Informasi tambahan: {description}"
-            }
-        }
-    },
-    "drinking_water": {
-        "name": "Air minum",
-        "presets": {
-            "0": {
-                "title": "air minum"
-            }
-        },
-        "title": {
-            "render": "Air minum"
-        }
-    },
-    "ghost_bike": {
-        "tagRenderings": {
-            "ghost_bike-inscription": {
-                "render": "<i>{inscription}</i>"
-            },
-            "ghost_bike-source": {
-                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
-            }
-        }
-    },
-    "nature_reserve": {
-        "tagRenderings": {
-            "Email": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "phone": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            }
-        }
-    },
-    "playground": {
-        "tagRenderings": {
-            "playground-email": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "playground-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            }
-        }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-email": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Bengkel Mobil"
-                    }
-                }
-            },
-            "shops-website": {
-                "render": "<a href='{website}'>{website}</a>"
-            }
-        }
-    },
-    "tree_node": {
-        "presets": {
-            "2": {
-                "title": "Pohon"
-            }
-        },
-        "tagRenderings": {
-            "tree_node-name": {
-                "render": "Nama: {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            }
-        }
-    },
-    "viewpoint": {
-        "name": "Sudut pandang",
-        "presets": {
-            "0": {
-                "title": "Sudut pandang"
-            }
-        },
-        "tagRenderings": {
-            "viewpoint-description": {
-                "question": "Apakah Anda ingin menambahkan deskripsi?"
-            }
-        },
-        "title": {
-            "render": "Sudut pandang"
-        }
+      },
+      "render": "Karya Seni"
     }
+  },
+  "bench": {
+    "name": "Bangku",
+    "presets": {
+      "0": {
+        "title": "bangku"
+      }
+    },
+    "tagRenderings": {
+      "bench-backrest": {
+        "mappings": {
+          "0": {
+            "then": "Sandaran: Ya"
+          },
+          "1": {
+            "then": "Sandaran: Tidak"
+          }
+        },
+        "question": "Apakah bangku ini memiliki sandaran?",
+        "render": "Sandaran"
+      },
+      "bench-colour": {
+        "render": "Warna: {colour}"
+      },
+      "bench-seats": {
+        "render": "{seats} kursi"
+      }
+    },
+    "title": {
+      "render": "Bangku"
+    }
+  },
+  "bench_at_pt": {
+    "tagRenderings": {
+      "bench_at_pt-name": {
+        "render": "{name}"
+      }
+    },
+    "title": {
+      "render": "Bangku"
+    }
+  },
+  "bike_parking": {
+    "tagRenderings": {
+      "Access": {
+        "render": "{access}"
+      }
+    }
+  },
+  "bike_shop": {
+    "tagRenderings": {
+      "bike_shop-website": {
+        "question": "URL {name} apa?"
+      }
+    }
+  },
+  "defibrillator": {
+    "tagRenderings": {
+      "defibrillator-description": {
+        "render": "Informasi tambahan: {description}"
+      }
+    }
+  },
+  "drinking_water": {
+    "name": "Air minum",
+    "presets": {
+      "0": {
+        "title": "air minum"
+      }
+    },
+    "title": {
+      "render": "Air minum"
+    }
+  },
+  "ghost_bike": {
+    "tagRenderings": {
+      "ghost_bike-inscription": {
+        "render": "<i>{inscription}</i>"
+      },
+      "ghost_bike-source": {
+        "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+      }
+    }
+  },
+  "nature_reserve": {
+    "tagRenderings": {
+      "Email": {
+        "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+      },
+      "phone": {
+        "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+      }
+    }
+  },
+  "playground": {
+    "tagRenderings": {
+      "playground-email": {
+        "render": "<a href='mailto:{email}'>{email}</a>"
+      },
+      "playground-phone": {
+        "render": "<a href='tel:{phone}'>{phone}</a>"
+      }
+    }
+  },
+  "shops": {
+    "tagRenderings": {
+      "shops-email": {
+        "render": "<a href='mailto:{email}'>{email}</a>"
+      },
+      "shops-phone": {
+        "render": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "shops-shop": {
+        "mappings": {
+          "5": {
+            "then": "Bengkel Mobil"
+          }
+        }
+      },
+      "shops-website": {
+        "render": "<a href='{website}'>{website}</a>"
+      }
+    }
+  },
+  "tree_node": {
+    "presets": {
+      "2": {
+        "title": "Pohon"
+      }
+    },
+    "tagRenderings": {
+      "tree_node-name": {
+        "render": "Nama: {name}"
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "<i>{name}</i>"
+        }
+      }
+    }
+  },
+  "viewpoint": {
+    "name": "Sudut pandang",
+    "presets": {
+      "0": {
+        "title": "Sudut pandang"
+      }
+    },
+    "tagRenderings": {
+      "viewpoint-description": {
+        "question": "Apakah Anda ingin menambahkan deskripsi?"
+      }
+    },
+    "title": {
+      "render": "Sudut pandang"
+    }
+  }
 }
