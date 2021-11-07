@@ -873,9 +873,6 @@
     }
   },
   "birdhide": {
-    "color": {
-      "render": "#94bb28"
-    },
     "description": "Een vogelkijkhut",
     "filter": {
       "0": {
@@ -892,9 +889,6 @@
           }
         }
       }
-    },
-    "icon": {
-      "render": "./assets/layers/birdhide/birdhide.svg"
     },
     "mapRendering": {
       "0": {
@@ -3962,13 +3956,6 @@
   },
   "waste_basket": {
     "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
-    "iconSize": {
-      "mappings": {
-        "0": {
-          "then": "Vuilnisbak"
-        }
-      }
-    },
     "mapRendering": {
       "0": {
         "iconSize": {

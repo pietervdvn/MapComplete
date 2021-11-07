@@ -59,6 +59,23 @@
     "phone": {
       "question": "What is the phone number of {name}?"
     },
+    "service:electricity": {
+      "mappings": {
+        "0": {
+          "then": "There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics"
+        },
+        "1": {
+          "then": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics"
+        },
+        "2": {
+          "then": "There are no sockets available indoors to customers, but charging might be possible if the staff is asked"
+        },
+        "3": {
+          "then": "There are a no domestic sockets available to customers seated indoors"
+        }
+      },
+      "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
+    },
     "website": {
       "question": "What is the website of {name}?"
     },

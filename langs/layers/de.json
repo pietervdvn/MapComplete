@@ -3112,13 +3112,6 @@
   },
   "waste_basket": {
     "description": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
-    "iconSize": {
-      "mappings": {
-        "0": {
-          "then": "Abfalleimer"
-        }
-      }
-    },
     "mapRendering": {
       "0": {
         "iconSize": {

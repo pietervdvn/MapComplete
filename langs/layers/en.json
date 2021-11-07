@@ -3516,13 +3516,6 @@
   },
   "waste_basket": {
     "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
-    "iconSize": {
-      "mappings": {
-        "0": {
-          "then": "Waste Basket"
-        }
-      }
-    },
     "mapRendering": {
       "0": {
         "iconSize": {

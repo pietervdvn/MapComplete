@@ -1334,6 +1334,9 @@
             "mappings": {
               "0": {
                 "then": "The INSPIRE-polygon containing this point has at least one address contained"
+              },
+              "1": {
+                "then": "The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
               }
             }
           },
