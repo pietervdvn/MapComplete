@@ -236,7 +236,7 @@
           }
         },
         {
-          "if": "location=underground",
+          "if": "location=surface",
           "then": {
             "en": "Surface level parking",
             "nl": "Parking op de begane grond",
@@ -251,7 +251,7 @@
           }
         },
         {
-          "if": "location=surface",
+          "if": "location=rooftop",
           "then": {
             "en": "Rooftop parking",
             "nl": "Dakparking",
