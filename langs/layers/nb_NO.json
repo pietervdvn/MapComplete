@@ -1,205 +1,205 @@
 {
-    "artwork": {
-        "name": "Kunstverk",
-        "presets": {
-            "0": {
-                "title": "Kunstverk"
-            }
+  "artwork": {
+    "name": "Kunstverk",
+    "presets": {
+      "0": {
+        "title": "Kunstverk"
+      }
+    },
+    "tagRenderings": {
+      "artwork-artist_name": {
+        "question": "Hvilken artist lagde dette?",
+        "render": "Laget av {artist_name}"
+      },
+      "artwork-artwork_type": {
+        "mappings": {
+          "0": {
+            "then": "Arkitektur"
+          },
+          "1": {
+            "then": "Veggmaleri"
+          },
+          "2": {
+            "then": "Maleri"
+          },
+          "3": {
+            "then": "Skulptur"
+          },
+          "4": {
+            "then": "Statue"
+          },
+          "5": {
+            "then": "Byste"
+          },
+          "6": {
+            "then": "Stein"
+          },
+          "7": {
+            "then": "Installasjon"
+          },
+          "8": {
+            "then": "Graffiti"
+          },
+          "9": {
+            "then": "Relieff"
+          },
+          "10": {
+            "then": "Azulejo (Spansk dekorativt flisverk)"
+          },
+          "11": {
+            "then": "Flisarbeid"
+          }
         },
-        "tagRenderings": {
-            "artwork-artist_name": {
-                "question": "Hvilken artist lagde dette?",
-                "render": "Laget av {artist_name}"
-            },
-            "artwork-artwork_type": {
-                "mappings": {
-                    "0": {
-                        "then": "Arkitektur"
-                    },
-                    "1": {
-                        "then": "Veggmaleri"
-                    },
-                    "2": {
-                        "then": "Maleri"
-                    },
-                    "3": {
-                        "then": "Skulptur"
-                    },
-                    "4": {
-                        "then": "Statue"
-                    },
-                    "5": {
-                        "then": "Byste"
-                    },
-                    "6": {
-                        "then": "Stein"
-                    },
-                    "7": {
-                        "then": "Installasjon"
-                    },
-                    "8": {
-                        "then": "Graffiti"
-                    },
-                    "9": {
-                        "then": "Relieff"
-                    },
-                    "10": {
-                        "then": "Azulejo (Spansk dekorativt flisverk)"
-                    },
-                    "11": {
-                        "then": "Flisarbeid"
-                    }
-                },
-                "question": "Hvilken type kunstverk er dette?",
-                "render": "Dette er et kunstverk av typen {artwork_type}"
-            },
-            "artwork-website": {
-                "question": "Finnes det en nettside med mer info om dette kunstverket?",
-                "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
-                "render": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Kunstverk <i>{name}</i>"
-                }
-            },
-            "render": "Kunstverk"
-        }
+        "question": "Hvilken type kunstverk er dette?",
+        "render": "Dette er et kunstverk av typen {artwork_type}"
+      },
+      "artwork-website": {
+        "question": "Finnes det en nettside med mer info om dette kunstverket?",
+        "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
+      },
+      "artwork-wikidata": {
+        "question": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
+        "render": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+      }
     },
-    "bench": {
-        "name": "Benker",
-        "presets": {
-            "0": {
-                "title": "benk"
-            }
-        },
-        "tagRenderings": {
-            "bench-backrest": {
-                "mappings": {
-                    "0": {
-                        "then": "Rygglene: Ja"
-                    },
-                    "1": {
-                        "then": "Rygglene: Nei"
-                    }
-                },
-                "question": "Har denne beken et rygglene?",
-                "render": "Rygglene"
-            },
-            "bench-colour": {
-                "mappings": {
-                    "0": {
-                        "then": "Farge: brun"
-                    },
-                    "1": {
-                        "then": "Farge: grønn"
-                    },
-                    "2": {
-                        "then": "Farge: grå"
-                    },
-                    "3": {
-                        "then": "Farge: hvit"
-                    },
-                    "4": {
-                        "then": "Farge: rød"
-                    },
-                    "5": {
-                        "then": "Farge: svart"
-                    },
-                    "6": {
-                        "then": "Farge: blå"
-                    },
-                    "7": {
-                        "then": "Farge: gul"
-                    }
-                },
-                "render": "Farge: {colour}"
-            },
-            "bench-material": {
-                "mappings": {
-                    "0": {
-                        "then": "Materiale: tre"
-                    },
-                    "1": {
-                        "then": "Materiale: metall"
-                    },
-                    "2": {
-                        "then": "Materiale: stein"
-                    },
-                    "3": {
-                        "then": "Materiale: betong"
-                    },
-                    "4": {
-                        "then": "Materiale: plastikk"
-                    },
-                    "5": {
-                        "then": "Materiale: stål"
-                    }
-                },
-                "render": "Materiale: {material}"
-            },
-            "bench-seats": {
-                "question": "Hvor mange sitteplasser har denne benken?",
-                "render": "{seats} seter"
-            }
-        },
-        "title": {
-            "render": "Benk"
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Kunstverk <i>{name}</i>"
         }
-    },
-    "bench_at_pt": {
-        "name": "Benker",
-        "title": {
-            "render": "Benk"
-        }
-    },
-    "bicycle_library": {
-        "tagRenderings": {
-            "bicycle_library-charge": {
-                "mappings": {
-                    "0": {
-                        "then": "Det er gratis å leie en sykkel"
-                    }
-                },
-                "question": "Hvor mye koster det å leie en sykkel?",
-                "render": "Sykkelleie koster {charge}"
-            },
-            "bicycle_library-name": {
-                "question": "Hva heter dette sykkelbiblioteket?",
-                "render": "Dette sykkelbiblioteket heter {name}"
-            }
-        }
-    },
-    "charging_station": {
-        "tagRenderings": {
-            "Network": {
-                "render": "{network}"
-            },
-            "OH": {
-                "question": "Når åpnet denne ladestasjonen?"
-            }
-        }
-    },
-    "ghost_bike": {
-        "name": "Spøkelsessykler",
-        "title": {
-            "render": "Spøkelsessykler"
-        }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Bilverksted"
-                    }
-                }
-            }
-        }
+      },
+      "render": "Kunstverk"
     }
+  },
+  "bench": {
+    "name": "Benker",
+    "presets": {
+      "0": {
+        "title": "benk"
+      }
+    },
+    "tagRenderings": {
+      "bench-backrest": {
+        "mappings": {
+          "0": {
+            "then": "Rygglene: Ja"
+          },
+          "1": {
+            "then": "Rygglene: Nei"
+          }
+        },
+        "question": "Har denne beken et rygglene?",
+        "render": "Rygglene"
+      },
+      "bench-colour": {
+        "mappings": {
+          "0": {
+            "then": "Farge: brun"
+          },
+          "1": {
+            "then": "Farge: grønn"
+          },
+          "2": {
+            "then": "Farge: grå"
+          },
+          "3": {
+            "then": "Farge: hvit"
+          },
+          "4": {
+            "then": "Farge: rød"
+          },
+          "5": {
+            "then": "Farge: svart"
+          },
+          "6": {
+            "then": "Farge: blå"
+          },
+          "7": {
+            "then": "Farge: gul"
+          }
+        },
+        "render": "Farge: {colour}"
+      },
+      "bench-material": {
+        "mappings": {
+          "0": {
+            "then": "Materiale: tre"
+          },
+          "1": {
+            "then": "Materiale: metall"
+          },
+          "2": {
+            "then": "Materiale: stein"
+          },
+          "3": {
+            "then": "Materiale: betong"
+          },
+          "4": {
+            "then": "Materiale: plastikk"
+          },
+          "5": {
+            "then": "Materiale: stål"
+          }
+        },
+        "render": "Materiale: {material}"
+      },
+      "bench-seats": {
+        "question": "Hvor mange sitteplasser har denne benken?",
+        "render": "{seats} seter"
+      }
+    },
+    "title": {
+      "render": "Benk"
+    }
+  },
+  "bench_at_pt": {
+    "name": "Benker",
+    "title": {
+      "render": "Benk"
+    }
+  },
+  "bicycle_library": {
+    "tagRenderings": {
+      "bicycle_library-charge": {
+        "mappings": {
+          "0": {
+            "then": "Det er gratis å leie en sykkel"
+          }
+        },
+        "question": "Hvor mye koster det å leie en sykkel?",
+        "render": "Sykkelleie koster {charge}"
+      },
+      "bicycle_library-name": {
+        "question": "Hva heter dette sykkelbiblioteket?",
+        "render": "Dette sykkelbiblioteket heter {name}"
+      }
+    }
+  },
+  "ghost_bike": {
+    "name": "Spøkelsessykler",
+    "title": {
+      "render": "Spøkelsessykler"
+    }
+  },
+  "shops": {
+    "tagRenderings": {
+      "shops-shop": {
+        "mappings": {
+          "5": {
+            "then": "Bilverksted"
+          }
+        }
+      }
+    }
+  },
+  "charging_station": {
+    "tagRenderings": {
+      "Network": {
+        "render": "{network}"
+      },
+      "OH": {
+        "question": "Når åpnet denne ladestasjonen?"
+      }
+    }
+  }
 }

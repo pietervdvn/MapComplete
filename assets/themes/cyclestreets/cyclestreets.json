@@ -7,8 +7,8 @@
     "ja": "Cyclestreets",
     "zh_Hant": "單車街道",
     "de": "Fahrradstraßen",
-    "nb_NO": "Sykkelgater",
-    "it": "Strade ciclabili"
+    "it": "Strade ciclabili",
+    "nb_NO": "Sykkelgater"
   },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
@@ -57,7 +57,8 @@
         "ja": "Cyclestreets",
         "zh_Hant": "單車街道",
         "it": "Strade ciclabili",
-        "de": "Fahrradstraßen"
+        "de": "Fahrradstraßen",
+        "nb_NO": "Sykkelgater"
       },
       "minzoom": 7,
       "source": {
@@ -84,20 +85,11 @@
         "de": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf"
       },
       "title": "{name}",
+      "icon": "./assets/themes/cyclestreets/F111.svg",
+      "color": "#0000ff",
+      "width": "10",
       "tagRenderings": [
         "images"
-      ],
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/cyclestreets/F111.svg",
-          "location": [
-            "point"
-          ]
-        },
-        {
-          "color": "#0000ff",
-          "width": "10"
-        }
       ]
     },
     {
@@ -116,9 +108,11 @@
         "en": "This street will become a cyclestreet soon",
         "ja": "この通りはまもなくcyclestreetになります",
         "it": "Questa strada diventerà presto una strada ciclabile",
-        "de": "Diese Straße wird bald eine Fahrradstraße sein"
+        "de": "Diese Straße wird bald eine Fahrradstraße sein",
+        "nb_NO": "Denne gaten vil bli sykkelgate snart"
       },
       "minzoom": 9,
+      "wayHandling": 0,
       "source": {
         "osmTags": "proposed:cyclestreet=yes"
       },
@@ -138,26 +132,18 @@
               "en": "{name} will become a cyclestreet soon",
               "ja": "{name}は、もうすぐcyclestreetになる",
               "it": "{name} diventerà presto una strada ciclabile",
-              "de": "{name} wird bald eine Fahrradstraße werden"
+              "de": "{name} wird bald eine Fahrradstraße werden",
+              "nb_NO": "{name} vil bli sykkelgate snart"
             },
             "if": "name~*"
           }
         ]
       },
+      "icon": "./assets/themes/cyclestreets/F113.svg",
+      "color": "#09f9dd",
+      "width": "5",
       "tagRenderings": [
         "images"
-      ],
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/cyclestreets/F113.svg",
-          "location": [
-            "point"
-          ]
-        },
-        {
-          "color": "#09f9dd",
-          "width": "5"
-        }
       ]
     },
     {
@@ -190,6 +176,7 @@
         }
       },
       "minzoom": 18,
+      "wayHandling": 0,
       "title": {
         "render": {
           "nl": "Straat",
@@ -198,7 +185,8 @@
           "it": "Strada",
           "ru": "Улица",
           "de": "Straße",
-          "eo": "Strato"
+          "eo": "Strato",
+          "nb_NO": "Gate"
         },
         "mappings": [
           {
@@ -207,32 +195,23 @@
           }
         ]
       },
+      "icon": "./assets/svg/pencil.svg",
+      "width": "5",
+      "color": {
+        "render": "#aaaaaa",
+        "mappings": [
+          {
+            "then": "#0000ff",
+            "if": "cyclestreet=yes"
+          },
+          {
+            "then": "#09f9dd",
+            "if": "proposed:cyclestreet=yes"
+          }
+        ]
+      },
       "tagRenderings": [
         "images"
-      ],
-      "mapRendering": [
-        {
-          "icon": "./assets/svg/pencil.svg",
-          "location": [
-            "point"
-          ]
-        },
-        {
-          "color": {
-            "render": "#aaaaaa",
-            "mappings": [
-              {
-                "then": "#0000ff",
-                "if": "cyclestreet=yes"
-              },
-              {
-                "then": "#09f9dd",
-                "if": "proposed:cyclestreet=yes"
-              }
-            ]
-          },
-          "width": "5"
-        }
       ]
     }
   ],
@@ -246,7 +225,8 @@
           "en": "Is this street a cyclestreet?",
           "ja": "この通りはcyclestreetですか?",
           "nb_NO": "Er denne gaten en sykkelvei?",
-          "de": "Ist diese Straße eine Fahrradstraße?"
+          "de": "Ist diese Straße eine Fahrradstraße?",
+          "it": "È una strada ciclabile?"
         },
         "mappings": [
           {
@@ -263,7 +243,8 @@
               "en": "This street is a cyclestreet (and has a speed limit of 30 km/h)",
               "ja": "cyclestreet(最高速度は30km/h)",
               "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)",
-              "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
+              "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)",
+              "it": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
             }
           },
           {
@@ -278,7 +259,8 @@
               "en": "This street is a cyclestreet",
               "ja": "この通りはcyclestreetだ",
               "nb_NO": "Denne gaten er en sykkelvei",
-              "de": "Diese Straße ist eine Fahrradstraße"
+              "de": "Diese Straße ist eine Fahrradstraße",
+              "it": "Questa è una strada ciclabile"
             },
             "hideInAnswer": true
           },
@@ -294,7 +276,8 @@
               "en": "This street will become a cyclstreet soon",
               "ja": "この通りはまもなくcyclstreetになるだろう",
               "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
-              "de": "Diese Straße wird bald eine Fahrradstraße sein"
+              "de": "Diese Straße wird bald eine Fahrradstraße sein",
+              "it": "Diverrà tra poco una strada ciclabile"
             }
           },
           {

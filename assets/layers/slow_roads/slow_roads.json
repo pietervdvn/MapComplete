@@ -1,311 +1,311 @@
 {
-    "id": "slow_roads",
-    "name": {
-        "nl": "Paadjes, trage wegen en autoluwe straten"
+  "id": "slow_roads",
+  "name": {
+    "nl": "Paadjes, trage wegen en autoluwe straten"
+  },
+  "icon": "./assets/layers/slow_roads/slow_road.svg",
+  "minzoom": 16,
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "highway=pedestrian",
+            "highway=footway",
+            "highway=path",
+            "highway=bridleway",
+            "highway=living_street",
+            "highway=track"
+          ]
+        },
+        "access!=no",
+        "access!=private"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "nl": "Trage weg"
     },
-    "icon": "./assets/layers/slow_roads/slow_road.svg",
-    "minzoom": 16,
-    "source": {
-        "osmTags": {
-            "and": [
-                {
-                    "or": [
-                        "highway=pedestrian",
-                        "highway=footway",
-                        "highway=path",
-                        "highway=bridleway",
-                        "highway=living_street",
-                        "highway=track"
-                    ]
-                },
-                "access!=no",
-                "access!=private"
-            ]
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "{name}"
         }
-    },
-    "title": {
-        "render": {
-            "nl": "Trage weg"
-        },
-        "mappings": [
-            {
-                "if": "name~*",
-                "then": {
-                    "nl": "{name}"
-                }
-            },
-            {
-                "if": "highway=footway",
-                "then": {
-                    "nl": "Voetpad"
-                }
-            },
-            {
-                "if": "highway=cycleway",
-                "then": {
-                    "nl": "Fietspad"
-                }
-            },
-            {
-                "if": "highway=pedestrian",
-                "then": {
-                    "nl": "Voetgangersstraat"
-                }
-            },
-            {
-                "if": "highway=living_street",
-                "then": {
-                    "nl": "Woonerf"
-                }
-            },
-            {
-                "if": "highway=path",
-                "then": "Klein pad"
-            }
-        ]
-    },
-    "tagRenderings": [
-        "images",
-        {
-            "id": "explanation",
-            "mappings": [
-                {
-                    "if": "highway=living_street",
-                    "then": {
-                        "nl:": "<div class='flex'><img src='./assets/layers/slow_roads/woonerf.svg' style='width: 150px; height: auto; margin-right: 0.5em;' /> <div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div></div>"
-                    }
-                },
-                {
-                    "if": "highway=pedestrian",
-                    "then": {
-                        "nl": "Dit is een brede, autovrije straat"
-                    }
-                },
-                {
-                    "if": "highway=footway",
-                    "then": {
-                        "nl": "Dit is een voetpaadje"
-                    }
-                },
-                {
-                    "if": "highway=path",
-                    "then": {
-                        "nl": "Dit is een wegeltje of bospad"
-                    }
-                },
-                {
-                    "if": "highway=bridleway",
-                    "then": {
-                        "nl": "Dit is een ruiterswegel"
-                    }
-                },
-                {
-                    "if": "highway=track",
-                    "then": {
-                        "nl": "Dit is een tractorspoor of weg om landbouwgrond te bereikken"
-                    }
-                }
-            ]
-        },
-        {
-            "question": {
-                "nl": "Wat is de wegverharding van dit pad?"
-            },
-            "render": {
-                "nl": "De ondergrond is <b>{surface}</b>",
-                "en": "The surface is <b>{surface}</b>",
-                "ru": "Поверхность - <b>{surface}</b>",
-                "fr": "La surface en <b>{surface}</b>",
-                "it": "La superficie è <b>{surface}</b>",
-                "de": "Die Oberfläche ist <b>{surface}</b>",
-                "eo": "La surfaco estas <b>{surface}</b>"
-            },
-            "freeform": {
-                "key": "surface"
-            },
-            "mappings": [
-                {
-                    "if": "surface=grass",
-                    "then": {
-                        "nl": "De ondergrond is <b>gras</b>",
-                        "en": "The surface is <b>grass</b>",
-                        "ru": "Поверхность - <b>трава</b>",
-                        "fr": "La surface est en <b>herbe</b>",
-                        "it": "La superficie è <b>erba</b>",
-                        "de": "Die Oberfläche ist <b>Gras</b>",
-                        "eo": "La surfaco estas <b>herba</b>"
-                    }
-                },
-                {
-                    "if": "surface=ground",
-                    "then": {
-                        "nl": "De ondergrond is <b>aarde</b>",
-                        "en": "The surface is <b>ground</b>",
-                        "ru": "Поверхность - <b>земля</b>",
-                        "fr": "La surface est en <b>terre</b>",
-                        "it": "La superficie è <b>terreno</b>",
-                        "de": "Die Oberfläche ist <b>Erde</b>"
-                    }
-                },
-                {
-                    "if": "surface=unpaved",
-                    "then": {
-                        "nl": "De ondergrond is <b>onverhard</b>",
-                        "en": "The surface is <b>unpaved</b>",
-                        "fr": "La surface est <b>non pavée</b>",
-                        "it": "La superficie è <b>non pavimentata</b>",
-                        "de": "Die Oberfläche ist <b>ohne festen Belag</b>"
-                    },
-                    "hideInAnswer": true
-                },
-                {
-                    "if": "surface=sand",
-                    "then": {
-                        "nl": "De ondergrond is <b>zand</b>",
-                        "en": "The surface is <b>sand</b>",
-                        "ru": "Поверхность - <b>песок</b>",
-                        "fr": "La surface est en <b>sable</b>",
-                        "it": "La superficie è <b>sabbia</b>",
-                        "de": "Die Oberfläche ist <b>Sand</b>",
-                        "eo": "La surfaco estas <b>sabla</b>"
-                    }
-                },
-                {
-                    "if": "surface=paving_stones",
-                    "then": {
-                        "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
-                        "en": "The surface is <b>paving stones</b>",
-                        "ru": "Поверхность - <b>брусчатка</b>",
-                        "it": "La superficie è <b>pietre irregolari</b>",
-                        "fr": "La surface est en <b>pierres pavées</b>",
-                        "de": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
-                    }
-                },
-                {
-                    "if": "surface=asphalt",
-                    "then": {
-                        "nl": "De ondergrond is <b>asfalt</b>",
-                        "en": "The surface is <b>asphalt</b>",
-                        "ru": "Поверхность - <b>асфальт</b>",
-                        "it": "La superficie è <b>asfalto</b>",
-                        "fr": "La surface est en <b>bitume</b>",
-                        "de": "Die Oberfläche ist <b>Asphalt</b>"
-                    }
-                },
-                {
-                    "if": "surface=concrete",
-                    "then": {
-                        "nl": "De ondergrond is <b>beton</b>",
-                        "en": "The surface is <b>concrete</b>",
-                        "ru": "Поверхность - <b>бетон</b>",
-                        "fr": "La surface est en <b>béton</b>",
-                        "it": "La superficie è <b>calcestruzzo</b>",
-                        "de": "Die Oberfläche ist <b>Beton</b>",
-                        "eo": "La surfaco estas <b>betona</b>"
-                    }
-                },
-                {
-                    "if": "surface=paved",
-                    "then": {
-                        "nl": "De ondergrond is <b>verhard</b>",
-                        "en": "The surface is <b>paved</b>",
-                        "fr": "La surface est <b>pavée</b>",
-                        "it": "La superficie è <b>pavimentata</b>",
-                        "de": "Die Oberfläche ist <b>gepflastert</b>"
-                    },
-                    "hideInAnswer": true
-                }
-            ],
-            "id": "slow_roads-surface"
-        },
-        {
-            "id": "slow_road_is_lit",
-            "question": "Is deze weg 's nachts verlicht?",
-            "mappings": [
-                {
-                    "if": "lit=yes",
-                    "then": "'s nachts verlicht"
-                },
-                {
-                    "if": "lit=no",
-                    "then": "Niet verlicht"
-                }
-            ]
+      },
+      {
+        "if": "highway=footway",
+        "then": {
+          "nl": "Voetpad"
         }
-    ],
-    "width": {
+      },
+      {
+        "if": "highway=cycleway",
+        "then": {
+          "nl": "Fietspad"
+        }
+      },
+      {
+        "if": "highway=pedestrian",
+        "then": {
+          "nl": "Voetgangersstraat"
+        }
+      },
+      {
+        "if": "highway=living_street",
+        "then": {
+          "nl": "Woonerf"
+        }
+      },
+      {
+        "if": "highway=path",
+        "then": "Klein pad"
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "explanation",
+      "mappings": [
+        {
+          "if": "highway=living_street",
+          "then": {
+            "nl:": "<div class='flex'><img src='./assets/layers/slow_roads/woonerf.svg' style='width: 150px; height: auto; margin-right: 0.5em;' /> <div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div></div>"
+          }
+        },
+        {
+          "if": "highway=pedestrian",
+          "then": {
+            "nl": "Dit is een brede, autovrije straat"
+          }
+        },
+        {
+          "if": "highway=footway",
+          "then": {
+            "nl": "Dit is een voetpaadje"
+          }
+        },
+        {
+          "if": "highway=path",
+          "then": {
+            "nl": "Dit is een wegeltje of bospad"
+          }
+        },
+        {
+          "if": "highway=bridleway",
+          "then": {
+            "nl": "Dit is een ruiterswegel"
+          }
+        },
+        {
+          "if": "highway=track",
+          "then": {
+            "nl": "Dit is een tractorspoor of weg om landbouwgrond te bereikken"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Wat is de wegverharding van dit pad?"
+      },
+      "render": {
+        "nl": "De ondergrond is <b>{surface}</b>",
+        "en": "The surface is <b>{surface}</b>",
+        "ru": "Поверхность - <b>{surface}</b>",
+        "fr": "La surface en <b>{surface}</b>",
+        "it": "La superficie è <b>{surface}</b>",
+        "de": "Die Oberfläche ist <b>{surface}</b>",
+        "eo": "La surfaco estas <b>{surface}</b>"
+      },
+      "freeform": {
+        "key": "surface"
+      },
+      "mappings": [
+        {
+          "if": "surface=grass",
+          "then": {
+            "nl": "De ondergrond is <b>gras</b>",
+            "en": "The surface is <b>grass</b>",
+            "ru": "Поверхность - <b>трава</b>",
+            "fr": "La surface est en <b>herbe</b>",
+            "it": "La superficie è <b>erba</b>",
+            "de": "Die Oberfläche ist <b>Gras</b>",
+            "eo": "La surfaco estas <b>herba</b>"
+          }
+        },
+        {
+          "if": "surface=ground",
+          "then": {
+            "nl": "De ondergrond is <b>aarde</b>",
+            "en": "The surface is <b>ground</b>",
+            "ru": "Поверхность - <b>земля</b>",
+            "fr": "La surface est en <b>terre</b>",
+            "it": "La superficie è <b>terreno</b>",
+            "de": "Die Oberfläche ist <b>Erde</b>"
+          }
+        },
+        {
+          "if": "surface=unpaved",
+          "then": {
+            "nl": "De ondergrond is <b>onverhard</b>",
+            "en": "The surface is <b>unpaved</b>",
+            "fr": "La surface est <b>non pavée</b>",
+            "it": "La superficie è <b>non pavimentata</b>",
+            "de": "Die Oberfläche ist <b>ohne festen Belag</b>"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "surface=sand",
+          "then": {
+            "nl": "De ondergrond is <b>zand</b>",
+            "en": "The surface is <b>sand</b>",
+            "ru": "Поверхность - <b>песок</b>",
+            "fr": "La surface est en <b>sable</b>",
+            "it": "La superficie è <b>sabbia</b>",
+            "de": "Die Oberfläche ist <b>Sand</b>",
+            "eo": "La surfaco estas <b>sabla</b>"
+          }
+        },
+        {
+          "if": "surface=paving_stones",
+          "then": {
+            "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
+            "en": "The surface is <b>paving stones</b>",
+            "ru": "Поверхность - <b>брусчатка</b>",
+            "it": "La superficie è <b>pietre irregolari</b>",
+            "fr": "La surface est en <b>pierres pavées</b>",
+            "de": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
+          }
+        },
+        {
+          "if": "surface=asphalt",
+          "then": {
+            "nl": "De ondergrond is <b>asfalt</b>",
+            "en": "The surface is <b>asphalt</b>",
+            "ru": "Поверхность - <b>асфальт</b>",
+            "it": "La superficie è <b>asfalto</b>",
+            "fr": "La surface est en <b>bitume</b>",
+            "de": "Die Oberfläche ist <b>Asphalt</b>"
+          }
+        },
+        {
+          "if": "surface=concrete",
+          "then": {
+            "nl": "De ondergrond is <b>beton</b>",
+            "en": "The surface is <b>concrete</b>",
+            "ru": "Поверхность - <b>бетон</b>",
+            "fr": "La surface est en <b>béton</b>",
+            "it": "La superficie è <b>calcestruzzo</b>",
+            "de": "Die Oberfläche ist <b>Beton</b>",
+            "eo": "La surfaco estas <b>betona</b>"
+          }
+        },
+        {
+          "if": "surface=paved",
+          "then": {
+            "nl": "De ondergrond is <b>verhard</b>",
+            "en": "The surface is <b>paved</b>",
+            "fr": "La surface est <b>pavée</b>",
+            "it": "La superficie è <b>pavimentata</b>",
+            "de": "Die Oberfläche ist <b>gepflastert</b>"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "id": "slow_roads-surface"
+    },
+    {
+      "id": "slow_road_is_lit",
+      "question": "Is deze weg 's nachts verlicht?",
+      "mappings": [
+        {
+          "if": "lit=yes",
+          "then": "'s nachts verlicht"
+        },
+        {
+          "if": "lit=no",
+          "then": "Niet verlicht"
+        }
+      ]
+    }
+  ],
+  "width": {
+    "render": "7"
+  },
+  "dashArray": {
+    "render": "",
+    "mappings": [
+      {
+        "if": "highway=cycleway",
+        "then": ""
+      },
+      {
+        "if": "highway=path",
+        "then": "0 12"
+      },
+      {
+        "if": {
+          "or": [
+            "highway=footway",
+            "highway=pedestrian"
+          ]
+        },
+        "then": "12 18"
+      },
+      {
+        "if": "highway=living_street",
+        "then": "12 12 0 12"
+      }
+    ]
+  },
+  "color": {
+    "render": "#eaba2a"
+  },
+  "presets": [],
+  "mapRendering": [
+    {
+      "icon": "./assets/layers/slow_roads/slow_road.svg",
+      "location": [
+        "point"
+      ]
+    },
+    {
+      "color": {
+        "render": "#eaba2a"
+      },
+      "width": {
         "render": "7"
-    },
-    "dashArray": {
+      },
+      "dashArray": {
         "render": "",
         "mappings": [
-            {
-                "if": "highway=cycleway",
-                "then": ""
+          {
+            "if": "highway=cycleway",
+            "then": ""
+          },
+          {
+            "if": "highway=path",
+            "then": "0 12"
+          },
+          {
+            "if": {
+              "or": [
+                "highway=footway",
+                "highway=pedestrian"
+              ]
             },
-            {
-                "if": "highway=path",
-                "then": "0 12"
-            },
-            {
-                "if": {
-                    "or": [
-                        "highway=footway",
-                        "highway=pedestrian"
-                    ]
-                },
-                "then": "12 18"
-            },
-            {
-                "if": "highway=living_street",
-                "then": "12 12 0 12"
-            }
+            "then": "12 18"
+          },
+          {
+            "if": "highway=living_street",
+            "then": "12 12 0 12"
+          }
         ]
-    },
-    "color": {
-        "render": "#eaba2a"
-    },
-    "presets": [],
-    "mapRendering": [
-        {
-            "icon": "./assets/layers/slow_roads/slow_road.svg",
-            "location": [
-                "point"
-            ]
-        },
-        {
-            "color": {
-                "render": "#eaba2a"
-            },
-            "width": {
-                "render": "7"
-            },
-            "dashArray": {
-                "render": "",
-                "mappings": [
-                    {
-                        "if": "highway=cycleway",
-                        "then": ""
-                    },
-                    {
-                        "if": "highway=path",
-                        "then": "0 12"
-                    },
-                    {
-                        "if": {
-                            "or": [
-                                "highway=footway",
-                                "highway=pedestrian"
-                            ]
-                        },
-                        "then": "12 18"
-                    },
-                    {
-                        "if": "highway=living_street",
-                        "then": "12 12 0 12"
-                    }
-                ]
-            }
-        }
-    ]
+      }
+    }
+  ]
 }

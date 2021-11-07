@@ -1,34 +1,34 @@
 {
-    "artwork": {
-        "presets": {
-            "0": {
-                "title": "Konstverk"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Konstverk <i>{name}</i>"
-                }
-            },
-            "render": "Konstverk"
-        }
+  "artwork": {
+    "presets": {
+      "0": {
+        "title": "Konstverk"
+      }
     },
-    "ghost_bike": {
-        "name": "Spökcykel",
-        "title": {
-            "render": "Spökcykel"
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Konstverk <i>{name}</i>"
         }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Bilverkstad"
-                    }
-                }
-            }
-        }
+      },
+      "render": "Konstverk"
     }
+  },
+  "ghost_bike": {
+    "name": "Spökcykel",
+    "title": {
+      "render": "Spökcykel"
+    }
+  },
+  "shops": {
+    "tagRenderings": {
+      "shops-shop": {
+        "mappings": {
+          "5": {
+            "then": "Bilverkstad"
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,1146 +1,1146 @@
 {
-    "aed": {
-        "description": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren",
-        "title": "AED-Karte öffnen"
-    },
-    "artwork": {
-        "description": "Willkommen bei der Freien Kunst-Karte, einer Karte mit Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
-        "title": "Freie Kunstwerk-Karte"
-    },
-    "benches": {
-        "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten.",
-        "shortDescription": "Eine Karte aller Sitzbänke",
-        "title": "Sitzbänke"
-    },
-    "bicyclelib": {
-        "description": "Fahrradbibliotheken sind Orte, um Fahrräder auszuleihen, oft gegen eine geringe Gebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind",
-        "title": "Fahrradbibliothek"
-    },
-    "binoculars": {
-        "description": "Eine Karte mit festinstallierten Ferngläsern. Man findet sie typischerweise an touristischen Orten, Aussichtspunkten, auf Aussichtstürmen oder gelegentlich in einem Naturschutzgebiet.",
-        "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
-        "title": "Ferngläser"
-    },
-    "bookcases": {
-        "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen, zur Aufbewahrung von Büchern. Jeder kann Bücher abstellen oder mitnehmen. Die Karte zielt darauf ab, alle Orte mit Bücherschränken zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Konto schnell Ihre Lieblingsbücherschränke hinzufügen.",
-        "title": "Öffentliche Bücherschränke Karte"
-    },
-    "cafes_and_pubs": {
-        "title": "Cafés und Kneipen"
-    },
-    "campersite": {
-        "description": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
-        "layers": {
+  "aed": {
+    "description": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren",
+    "title": "AED-Karte öffnen"
+  },
+  "artwork": {
+    "description": "Willkommen bei der Freien Kunst-Karte, einer Karte mit Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
+    "title": "Freie Kunstwerk-Karte"
+  },
+  "benches": {
+    "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten.",
+    "shortDescription": "Eine Karte aller Sitzbänke",
+    "title": "Sitzbänke"
+  },
+  "bicyclelib": {
+    "description": "Fahrradbibliotheken sind Orte, um Fahrräder auszuleihen, oft gegen eine geringe Gebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind",
+    "title": "Fahrradbibliothek"
+  },
+  "binoculars": {
+    "description": "Eine Karte mit festinstallierten Ferngläsern. Man findet sie typischerweise an touristischen Orten, Aussichtspunkten, auf Aussichtstürmen oder gelegentlich in einem Naturschutzgebiet.",
+    "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
+    "title": "Ferngläser"
+  },
+  "bookcases": {
+    "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen, zur Aufbewahrung von Büchern. Jeder kann Bücher abstellen oder mitnehmen. Die Karte zielt darauf ab, alle Orte mit Bücherschränken zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Konto schnell Ihre Lieblingsbücherschränke hinzufügen.",
+    "title": "Öffentliche Bücherschränke Karte"
+  },
+  "cafes_and_pubs": {
+    "title": "Cafés und Kneipen"
+  },
+  "campersite": {
+    "description": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
+    "layers": {
+      "0": {
+        "description": "Wohnmobilstellplätze",
+        "name": "Wohnmobilstellplätze",
+        "presets": {
+          "0": {
+            "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+            "title": "Wohnmobilstellplatz"
+          }
+        },
+        "tagRenderings": {
+          "caravansites-capacity": {
+            "question": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
+            "render": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen"
+          },
+          "caravansites-charge": {
+            "question": "Wie hoch ist die Gebühr an diesem Ort?",
+            "render": "Die Gebühr beträgt {charge}"
+          },
+          "caravansites-description": {
+            "question": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
+            "render": "Mehr Details über diesen Ort: {description}"
+          },
+          "caravansites-fee": {
+            "mappings": {
+              "0": {
+                "then": "Sie müssen für die Nutzung bezahlen"
+              },
+              "1": {
+                "then": "Nutzung kostenlos"
+              }
+            },
+            "question": "Wird hier eine Gebühr erhoben?"
+          },
+          "caravansites-internet": {
+            "mappings": {
+              "0": {
+                "then": "Internetzugang ist vorhanden"
+              },
+              "1": {
+                "then": "Internetzugang ist vorhanden"
+              },
+              "2": {
+                "then": "Kein Internetzugang vorhanden"
+              }
+            },
+            "question": "Ist an diesem Ort ein Internetzugang vorhanden?"
+          },
+          "caravansites-internet-fee": {
+            "mappings": {
+              "0": {
+                "then": "Der Internetzugang ist gebührenpflichtig"
+              },
+              "1": {
+                "then": "Der Internetzugang ist kostenlos"
+              }
+            },
+            "question": "Ist der Internetzugang gebührenpflichtig?"
+          },
+          "caravansites-long-term": {
+            "mappings": {
+              "0": {
+                "then": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben"
+              },
+              "1": {
+                "then": "Nein, hier gibt es keine Dauergäste"
+              },
+              "2": {
+                "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)"
+              }
+            },
+            "question": "Gibt es a diesem Ort Plätze für Dauercamper?"
+          },
+          "caravansites-name": {
+            "question": "Wie heißt dieser Ort?",
+            "render": "Dieser Ort heißt {name}"
+          },
+          "caravansites-sanitary-dump": {
+            "mappings": {
+              "0": {
+                "then": "Dieser Ort hat eine sanitäre Entsorgungsstation"
+              },
+              "1": {
+                "then": "Dieser Ort hat keine sanitäre Entsorgungsstation"
+              }
+            },
+            "question": "Hat dieser Ort eine sanitäre Entsorgungsstation?"
+          },
+          "caravansites-toilets": {
+            "mappings": {
+              "0": {
+                "then": "Dieser Ort verfügt über Toiletten"
+              },
+              "1": {
+                "then": "Dieser Ort verfügt nicht über Toiletten"
+              }
+            },
+            "question": "Verfügt dieser Ort über Toiletten?"
+          },
+          "caravansites-website": {
+            "question": "Hat dieser Ort eine Webseite?",
+            "render": "Offizielle Webseite: <a href='{website}'>{website}</a>"
+          }
+        },
+        "title": {
+          "mappings": {
             "0": {
-                "description": "Wohnmobilstellplätze",
-                "name": "Wohnmobilstellplätze",
-                "presets": {
-                    "0": {
-                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
-                        "title": "Wohnmobilstellplatz"
-                    }
-                },
-                "tagRenderings": {
-                    "caravansites-capacity": {
-                        "question": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
-                        "render": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen"
-                    },
-                    "caravansites-charge": {
-                        "question": "Wie hoch ist die Gebühr an diesem Ort?",
-                        "render": "Die Gebühr beträgt {charge}"
-                    },
-                    "caravansites-description": {
-                        "question": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
-                        "render": "Mehr Details über diesen Ort: {description}"
-                    },
-                    "caravansites-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "Sie müssen für die Nutzung bezahlen"
-                            },
-                            "1": {
-                                "then": "Nutzung kostenlos"
-                            }
-                        },
-                        "question": "Wird hier eine Gebühr erhoben?"
-                    },
-                    "caravansites-internet": {
-                        "mappings": {
-                            "0": {
-                                "then": "Internetzugang ist vorhanden"
-                            },
-                            "1": {
-                                "then": "Internetzugang ist vorhanden"
-                            },
-                            "2": {
-                                "then": "Kein Internetzugang vorhanden"
-                            }
-                        },
-                        "question": "Ist an diesem Ort ein Internetzugang vorhanden?"
-                    },
-                    "caravansites-internet-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "Der Internetzugang ist gebührenpflichtig"
-                            },
-                            "1": {
-                                "then": "Der Internetzugang ist kostenlos"
-                            }
-                        },
-                        "question": "Ist der Internetzugang gebührenpflichtig?"
-                    },
-                    "caravansites-long-term": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben"
-                            },
-                            "1": {
-                                "then": "Nein, hier gibt es keine Dauergäste"
-                            },
-                            "2": {
-                                "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)"
-                            }
-                        },
-                        "question": "Gibt es a diesem Ort Plätze für Dauercamper?"
-                    },
-                    "caravansites-name": {
-                        "question": "Wie heißt dieser Ort?",
-                        "render": "Dieser Ort heißt {name}"
-                    },
-                    "caravansites-sanitary-dump": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort hat eine sanitäre Entsorgungsstation"
-                            },
-                            "1": {
-                                "then": "Dieser Ort hat keine sanitäre Entsorgungsstation"
-                            }
-                        },
-                        "question": "Hat dieser Ort eine sanitäre Entsorgungsstation?"
-                    },
-                    "caravansites-toilets": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort verfügt über Toiletten"
-                            },
-                            "1": {
-                                "then": "Dieser Ort verfügt nicht über Toiletten"
-                            }
-                        },
-                        "question": "Verfügt dieser Ort über Toiletten?"
-                    },
-                    "caravansites-website": {
-                        "question": "Hat dieser Ort eine Webseite?",
-                        "render": "Offizielle Webseite: <a href='{website}'>{website}</a>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Unbenannter Wohnmobilstellplatz"
-                        }
-                    },
-                    "render": "Wohnmobilstellplatz {name}"
-                }
-            },
-            "1": {
-                "description": "Sanitäre Entsorgungsstationen",
-                "name": "Sanitäre Entsorgungsstationen",
-                "presets": {
-                    "0": {
-                        "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
-                        "title": "Sanitäre Entsorgungsstation"
-                    }
-                },
-                "tagRenderings": {
-                    "dumpstations-access": {
-                        "mappings": {
-                            "0": {
-                                "then": "Sie benötigen einen Schlüssel/Code zur Benutzung"
-                            },
-                            "1": {
-                                "then": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können"
-                            },
-                            "2": {
-                                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
-                            },
-                            "3": {
-                                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
-                            }
-                        },
-                        "question": "Wer darf diese sanitäre Entsorgungsstation nutzen?"
-                    },
-                    "dumpstations-charge": {
-                        "question": "Wie hoch ist die Gebühr an diesem Ort?",
-                        "render": "Die Gebühr beträgt {charge}"
-                    },
-                    "dumpstations-chemical-waste": {
-                        "mappings": {
-                            "0": {
-                                "then": "Hier können Sie chemische Toilettenabfälle entsorgen"
-                            },
-                            "1": {
-                                "then": "Hier können Sie keine chemischen Toilettenabfälle entsorgen"
-                            }
-                        },
-                        "question": "Können Sie hier chemische Toilettenabfälle entsorgen?"
-                    },
-                    "dumpstations-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "Sie müssen für die Nutzung bezahlen"
-                            },
-                            "1": {
-                                "then": "Nutzung kostenlos"
-                            }
-                        },
-                        "question": "Wird hier eine Gebühr erhoben?"
-                    },
-                    "dumpstations-grey-water": {
-                        "mappings": {
-                            "0": {
-                                "then": "Hier können Sie Brauch-/Grauwasser entsorgen"
-                            },
-                            "1": {
-                                "then": "Hier können Sie kein Brauch-/Grauwasser entsorgen"
-                            }
-                        },
-                        "question": "Können Sie hier Brauch-/Grauwasser entsorgen?"
-                    },
-                    "dumpstations-network": {
-                        "question": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
-                        "render": "Diese Station gehört zum Verbund/Netzwerk {network}"
-                    },
-                    "dumpstations-waterpoint": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort hat eine Wasserstelle"
-                            },
-                            "1": {
-                                "then": "Dieser Ort hat keine Wasserstelle"
-                            }
-                        },
-                        "question": "Hat dieser Ort eine Wasserstelle?"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Entsorgungsstation"
-                        }
-                    },
-                    "render": "Entsorgungsstation {name}"
-                }
+              "then": "Unbenannter Wohnmobilstellplatz"
             }
-        },
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "Wer betreibt diesen Ort?",
-                    "render": "Dieser Ort wird betrieben von {operator}"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Dieser Ort hat eine Stromversorgung"
-                        },
-                        "1": {
-                            "then": "Dieser Ort hat keine Stromversorgung"
-                        }
-                    },
-                    "question": "Hat dieser Ort eine Stromversorgung?"
-                }
-            }
-        },
-        "shortDescription": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
-        "title": "Wohnmobilstellplätze"
-    },
-    "charging_stations": {
-        "description": "Auf dieser freien Karte kann man Informationen über Ladestationen finden und hinzufügen",
-        "shortDescription": "Eine weltweite Karte mit Ladestationen",
-        "title": "Ladestationen"
-    },
-    "climbing": {
-        "description": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
-        "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
-        "layers": {
-            "0": {
-                "description": "Ein Kletterverein oder eine Organisation",
-                "name": "Kletterverein",
-                "presets": {
-                    "0": {
-                        "description": "Ein Kletterverein",
-                        "title": "Kletterverein"
-                    },
-                    "1": {
-                        "description": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
-                        "title": "Eine Kletter-Organisation"
-                    }
-                },
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "question": "Wie lautet der Name dieses Vereins oder Organisation?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Kletter-Organisation"
-                        }
-                    },
-                    "render": "Kletterverein"
-                }
-            },
-            "1": {
-                "description": "Eine Kletterhalle",
-                "name": "Kletterhallen",
-                "tagRenderings": {
-                    "name": {
-                        "question": "Wie heißt diese Kletterhalle?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Kletterhalle <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Kletterhalle"
-                }
-            },
-            "2": {
-                "name": "Kletterrouten",
-                "presets": {
-                    "0": {
-                        "title": "Kletterroute"
-                    }
-                },
-                "tagRenderings": {
-                    "Bolts": {
-                        "mappings": {
-                            "0": {
-                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
-                            },
-                            "1": {
-                                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
-                            }
-                        },
-                        "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
-                        "render": "Diese Kletterroute hat {climbing:bolts} Haken"
-                    },
-                    "Difficulty": {
-                        "question": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
-                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
-                    },
-                    "Length": {
-                        "question": "Wie lang ist diese Kletterroute (in Metern)?",
-                        "render": "Diese Route ist {canonical(climbing:length)} lang"
-                    },
-                    "Name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Diese Kletterroute hat keinen Namen"
-                            }
-                        },
-                        "question": "Wie heißt diese Kletterroute?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Kleterroute <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Kleterroute"
-                }
-            },
-            "3": {
-                "description": "Eine Klettergelegenheit",
-                "name": "Klettermöglichkeiten",
-                "presets": {
-                    "0": {
-                        "description": "Eine Klettergelegenheit",
-                        "title": "Klettermöglichkeit"
-                    }
-                },
-                "tagRenderings": {
-                    "Contained routes hist": {
-                        "render": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}"
-                    },
-                    "Contained routes length hist": {
-                        "render": "<h3>Längenübersicht</h3>{histogramm(_length_hist)}"
-                    },
-                    "Rock type (crag/rock/cliff only)": {
-                        "mappings": {
-                            "0": {
-                                "then": "Kalkstein"
-                            }
-                        },
-                        "question": "Welchen Gesteinstyp gibt es hier?",
-                        "render": "Der Gesteinstyp ist {rock}"
-                    },
-                    "Type": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
-                            }
-                        }
-                    },
-                    "name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Diese Klettergelegenheit hat keinen Namen"
-                            }
-                        },
-                        "question": "Wie heißt diese Klettergelegenheit?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "1": {
-                            "then": "Klettergebiet <b>{name}</b>"
-                        },
-                        "2": {
-                            "then": "Klettergebiet"
-                        },
-                        "3": {
-                            "then": "Klettermöglichkeit <b>{name}</b>"
-                        }
-                    },
-                    "render": "Klettermöglichkeit"
-                }
-            },
-            "4": {
-                "description": "Eine Klettergelegenheit?",
-                "name": "Klettermöglichkeiten?",
-                "tagRenderings": {
-                    "climbing-opportunity-name": {
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "climbing-possible": {
-                        "mappings": {
-                            "0": {
-                                "then": "Hier kann nicht geklettert werden"
-                            },
-                            "1": {
-                                "then": "Hier kann geklettert werden"
-                            },
-                            "2": {
-                                "then": "Hier kann nicht geklettert werden"
-                            }
-                        },
-                        "question": "Kann hier geklettert werden?"
-                    }
-                },
-                "title": {
-                    "render": "Klettermöglichkeit?"
-                }
-            }
-        },
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
-                },
-                "2": {
-                    "mappings": {
-                        "0": {
-                            "then": "Öffentlich zugänglich für jedermann"
-                        },
-                        "1": {
-                            "then": "Zugang nur mit Genehmigung"
-                        },
-                        "2": {
-                            "then": "Nur für Kunden"
-                        },
-                        "3": {
-                            "then": "Nur für Vereinsmitglieder"
-                        }
-                    },
-                    "question": "Wer hat hier Zugang?"
-                },
-                "4": {
-                    "question": "Wie lang sind die Routen (durchschnittlich) in Metern?",
-                    "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang"
-                },
-                "5": {
-                    "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
-                    "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
-                },
-                "6": {
-                    "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-                    "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
-                },
-                "7": {
-                    "mappings": {
-                        "0": {
-                            "then": "Hier kann gebouldert werden"
-                        },
-                        "1": {
-                            "then": "Hier kann nicht gebouldert werden"
-                        },
-                        "2": {
-                            "then": "Bouldern ist hier nur an wenigen Routen möglich"
-                        },
-                        "3": {
-                            "then": "Hier gibt es {climbing:boulder} Boulder-Routen"
-                        }
-                    },
-                    "question": "Kann hier gebouldert werden?"
-                },
-                "8": {
-                    "mappings": {
-                        "0": {
-                            "then": "Toprope-Klettern ist hier möglich"
-                        },
-                        "1": {
-                            "then": "Toprope-Climbing ist hier nicht möglich"
-                        },
-                        "2": {
-                            "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
-                        }
-                    },
-                    "question": "Ist Toprope-Klettern hier möglich?"
-                },
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "Sportklettern ist hier möglich"
-                        },
-                        "1": {
-                            "then": "Sportklettern ist hier nicht möglich"
-                        },
-                        "2": {
-                            "then": "Hier gibt es {climbing:sport} Sportkletter-Routen"
-                        }
-                    },
-                    "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?"
-                },
-                "10": {
-                    "mappings": {
-                        "0": {
-                            "then": "Traditionelles Klettern ist hier möglich"
-                        },
-                        "1": {
-                            "then": "Traditionelles Klettern ist hier nicht möglich"
-                        },
-                        "2": {
-                            "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
-                        }
-                    },
-                    "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?"
-                },
-                "11": {
-                    "mappings": {
-                        "0": {
-                            "then": "Hier gibt es eine Speedkletter-Wand"
-                        },
-                        "1": {
-                            "then": "Hier gibt es keine Speedkletter-Wand"
-                        },
-                        "2": {
-                            "then": "Hier gibt es {climbing:speed} Speedkletter-Routen"
-                        }
-                    },
-                    "question": "Gibt es hier eine Speedkletter-Wand?"
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " Meter"
-                        },
-                        "1": {
-                            "human": " Fuß"
-                        }
-                    }
-                }
-            }
-        },
-        "title": "Offene Kletterkarte"
-    },
-    "cycle_highways": {
-        "description": "Diese Karte zeigt Radschnellwege",
-        "layers": {
-            "0": {
-                "name": "Radschnellwege",
-                "title": {
-                    "render": "Radschnellweg"
-                }
-            }
-        },
-        "title": "Radschnellwege"
-    },
-    "cycle_infra": {
-        "description": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur. Erstellt während #osoc21.",
-        "shortDescription": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur.",
-        "title": "Fahrradinfrastruktur"
-    },
-    "cyclestreets": {
-        "description": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
-        "layers": {
-            "0": {
-                "description": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf",
-                "name": "Fahrradstraßen"
-            },
-            "1": {
-                "description": "Diese Straße wird bald eine Fahrradstraße sein",
-                "name": "Zukünftige Fahrradstraße",
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name} wird bald eine Fahrradstraße werden"
-                        }
-                    },
-                    "render": "Zukünftige Fahrradstraße"
-                }
-            },
-            "2": {
-                "description": "Ebene zur Kennzeichnung einer Straße als Fahrradstraße",
-                "name": "Alle Straßen",
-                "title": {
-                    "render": "Straße"
-                }
-            }
-        },
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
-                        },
-                        "1": {
-                            "then": "Diese Straße ist eine Fahrradstraße"
-                        },
-                        "2": {
-                            "then": "Diese Straße wird bald eine Fahrradstraße sein"
-                        },
-                        "3": {
-                            "then": "Diese Straße ist keine Fahrradstraße"
-                        }
-                    },
-                    "question": "Ist diese Straße eine Fahrradstraße?"
-                },
-                "1": {
-                    "question": "Wann wird diese Straße eine Fahrradstraße?",
-                    "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
-                }
-            }
-        },
-        "shortDescription": "Eine Karte von Fahrradstraßen",
-        "title": "Fahrradstraßen"
-    },
-    "cyclofix": {
-        "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können auch interessante Orte zur Karte hinzuzufügen oder bearbeiten und weitere Daten durch Beantwortung von Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix — eine freie Karte für Radfahrer"
-    },
-    "drinking_water": {
-        "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
-        "title": "Trinkwasserstelle"
-    },
-    "etymology": {
-        "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. In dem Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Zoomen Sie genug hinein und <i>alle</i> Straßen werden angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
-        "layers": {
-            "1": {
-                "override": {
-                    "name": "Straßen ohne Informationen zur Namensherkunft"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
-                }
-            }
-        },
-        "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
-        "title": "Open Etymology Map"
-    },
-    "facadegardens": {
-        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
-        "layers": {
-            "0": {
-                "description": "Fassadengärten",
-                "name": "Fassadengärten",
-                "presets": {
-                    "0": {
-                        "description": "Einen Fassadengarten hinzufügen",
-                        "title": "Fassadengarten"
-                    }
-                },
-                "tagRenderings": {
-                    "facadegardens-description": {
-                        "question": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)",
-                        "render": "Weitere Details: {description}"
-                    },
-                    "facadegardens-direction": {
-                        "question": "Wie ist der Garten ausgerichtet?",
-                        "render": "Ausrichtung: {direction} (wobei 0=N und 90=O)"
-                    },
-                    "facadegardens-edible": {
-                        "mappings": {
-                            "0": {
-                                "then": "Es gibt essbare Pflanzen"
-                            },
-                            "1": {
-                                "then": "Es gibt keine essbaren Pflanzen"
-                            }
-                        },
-                        "question": "Gibt es essbare Pflanzen?"
-                    },
-                    "facadegardens-plants": {
-                        "mappings": {
-                            "0": {
-                                "then": "Es gibt Weinreben"
-                            },
-                            "1": {
-                                "then": "Es gibt blühende Pflanzen"
-                            },
-                            "2": {
-                                "then": "Es gibt Sträucher"
-                            },
-                            "3": {
-                                "then": "Es gibt Bodendecker"
-                            }
-                        },
-                        "question": "Welche Pflanzen wachsen hier?"
-                    },
-                    "facadegardens-rainbarrel": {
-                        "mappings": {
-                            "0": {
-                                "then": "Es gibt eine Regentonne"
-                            },
-                            "1": {
-                                "then": "Es gibt keine Regentonne"
-                            }
-                        },
-                        "question": "Gibt es ein Wasserfass für den Garten?"
-                    },
-                    "facadegardens-start_date": {
-                        "question": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
-                        "render": "Errichtungsdatum des Gartens: {start_date}"
-                    },
-                    "facadegardens-sunshine": {
-                        "mappings": {
-                            "0": {
-                                "then": "Der Garten liegt in voller Sonne"
-                            },
-                            "1": {
-                                "then": "Der Garten liegt im Halbschatten"
-                            },
-                            "2": {
-                                "then": "Der Garten liegt im Schatten"
-                            }
-                        },
-                        "question": "Ist der Garten schattig oder sonnig?"
-                    }
-                },
-                "title": {
-                    "render": "Fassadengarten"
-                }
-            }
-        },
-        "shortDescription": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen.",
-        "title": "Fassadengärten"
-    },
-    "food": {
-        "title": "Restaurants und Schnellimbisse"
-    },
-    "fritures": {
-        "layers": {
-            "0": {
-                "override": {
-                    "name": "Pommesbude"
-                }
-            }
+          },
+          "render": "Wohnmobilstellplatz {name}"
         }
-    },
-    "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
-        "title": "Geisterräder"
-    },
-    "hackerspaces": {
-        "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
-        "layers": {
-            "0": {
-                "description": "Hackerspace",
-                "name": "Hackerspace",
-                "presets": {
-                    "0": {
-                        "description": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
-                        "title": "Hackerspace"
-                    },
-                    "1": {
-                        "description": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
-                        "title": "Makerspace"
-                    }
-                },
-                "tagRenderings": {
-                    "hackerspaces-name": {
-                        "question": "Wie lautet der Name dieses Hackerspace?",
-                        "render": "Dieser Hackerspace heißt <b>{name}</b>"
-                    },
-                    "hackerspaces-opening_hours": {
-                        "mappings": {
-                            "0": {
-                                "then": "durchgehend geöffnet"
-                            }
-                        },
-                        "question": "Wann hat dieser Hackerspace geöffnet?",
-                        "render": "{opening_hours_table()}"
-                    },
-                    "hackerspaces-start_date": {
-                        "question": "Wann wurde dieser Hackerspace gegründet?",
-                        "render": "Dieser Hackerspace wurde gegründet am {start_date}"
-                    },
-                    "hs-club-mate": {
-                        "mappings": {
-                            "0": {
-                                "then": "In diesem Hackerspace gibt es Club Mate"
-                            },
-                            "1": {
-                                "then": "In diesem Hackerspace gibt es kein Club Mate"
-                            }
-                        },
-                        "question": "Gibt es in diesem Hackerspace Club Mate?"
-                    },
-                    "is_makerspace": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dies ist ein Makerspace"
-                            },
-                            "1": {
-                                "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
-                            }
-                        },
-                        "question": "Ist dies ein Hackerspace oder ein Makerspace?"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": " {name}"
-                        }
-                    },
-                    "render": "Hackerspace"
-                }
-            }
+      },
+      "1": {
+        "description": "Sanitäre Entsorgungsstationen",
+        "name": "Sanitäre Entsorgungsstationen",
+        "presets": {
+          "0": {
+            "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
+            "title": "Sanitäre Entsorgungsstation"
+          }
         },
-        "shortDescription": "Eine Karte von Hackerspaces",
-        "title": "Hackerspaces"
-    },
-    "hailhydrant": {
-        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
-        "layers": {
+        "tagRenderings": {
+          "dumpstations-access": {
+            "mappings": {
+              "0": {
+                "then": "Sie benötigen einen Schlüssel/Code zur Benutzung"
+              },
+              "1": {
+                "then": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können"
+              },
+              "2": {
+                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
+              },
+              "3": {
+                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
+              }
+            },
+            "question": "Wer darf diese sanitäre Entsorgungsstation nutzen?"
+          },
+          "dumpstations-charge": {
+            "question": "Wie hoch ist die Gebühr an diesem Ort?",
+            "render": "Die Gebühr beträgt {charge}"
+          },
+          "dumpstations-chemical-waste": {
+            "mappings": {
+              "0": {
+                "then": "Hier können Sie chemische Toilettenabfälle entsorgen"
+              },
+              "1": {
+                "then": "Hier können Sie keine chemischen Toilettenabfälle entsorgen"
+              }
+            },
+            "question": "Können Sie hier chemische Toilettenabfälle entsorgen?"
+          },
+          "dumpstations-fee": {
+            "mappings": {
+              "0": {
+                "then": "Sie müssen für die Nutzung bezahlen"
+              },
+              "1": {
+                "then": "Nutzung kostenlos"
+              }
+            },
+            "question": "Wird hier eine Gebühr erhoben?"
+          },
+          "dumpstations-grey-water": {
+            "mappings": {
+              "0": {
+                "then": "Hier können Sie Brauch-/Grauwasser entsorgen"
+              },
+              "1": {
+                "then": "Hier können Sie kein Brauch-/Grauwasser entsorgen"
+              }
+            },
+            "question": "Können Sie hier Brauch-/Grauwasser entsorgen?"
+          },
+          "dumpstations-network": {
+            "question": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
+            "render": "Diese Station gehört zum Verbund/Netzwerk {network}"
+          },
+          "dumpstations-waterpoint": {
+            "mappings": {
+              "0": {
+                "then": "Dieser Ort hat eine Wasserstelle"
+              },
+              "1": {
+                "then": "Dieser Ort hat keine Wasserstelle"
+              }
+            },
+            "question": "Hat dieser Ort eine Wasserstelle?"
+          }
+        },
+        "title": {
+          "mappings": {
             "0": {
-                "description": "Kartenebene zur Anzeige von Hydranten.",
-                "name": "Karte der Hydranten",
-                "presets": {
-                    "0": {
-                        "description": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
-                        "title": "Löschwasser-Hydrant"
-                    }
-                },
-                "tagRenderings": {
-                    "hydrant-color": {
-                        "mappings": {
-                            "0": {
-                                "then": "Die Farbe des Hydranten ist unbekannt."
-                            },
-                            "1": {
-                                "then": "Die Farbe des Hydranten ist gelb."
-                            },
-                            "2": {
-                                "then": "Die Farbe des Hydranten ist rot."
-                            }
-                        },
-                        "question": "Welche Farbe hat der Hydrant?",
-                        "render": "Der Hydrant hat die Farbe {colour}"
-                    },
-                    "hydrant-state": {
-                        "mappings": {
-                            "0": {
-                                "then": "Der Hydrant ist (ganz oder teilweise) in Betrieb."
-                            },
-                            "1": {
-                                "then": "Der Hydrant ist nicht verfügbar."
-                            },
-                            "2": {
-                                "then": "Der Hydrant wurde entfernt."
-                            }
-                        },
-                        "question": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten.",
-                        "render": "Lebenszyklus-Status"
-                    },
-                    "hydrant-type": {
-                        "mappings": {
-                            "0": {
-                                "then": "Der Typ des Hydranten ist unbekannt."
-                            },
-                            "1": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
-                            },
-                            "2": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
-                            },
-                            "3": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
-                            },
-                            "4": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
-                            }
-                        },
-                        "question": "Um welche Art von Hydrant handelt es sich?",
-                        "render": " Hydranten-Typ: {fire_hydrant:type}"
-                    }
-                },
-                "title": {
-                    "render": "Hydrant"
-                }
+              "then": "Entsorgungsstation"
+            }
+          },
+          "render": "Entsorgungsstation {name}"
+        }
+      }
+    },
+    "overrideAll": {
+      "tagRenderings+": {
+        "0": {
+          "question": "Wer betreibt diesen Ort?",
+          "render": "Dieser Ort wird betrieben von {operator}"
+        },
+        "1": {
+          "mappings": {
+            "0": {
+              "then": "Dieser Ort hat eine Stromversorgung"
             },
             "1": {
-                "description": "Kartenebene zur Anzeige von Hydranten.",
-                "name": "Karte mit Feuerlöschern.",
-                "presets": {
-                    "0": {
-                        "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
-                        "title": "Feuerlöscher"
-                    }
-                },
-                "tagRenderings": {
-                    "extinguisher-location": {
-                        "mappings": {
-                            "0": {
-                                "then": "Im Innenraum vorhanden."
-                            },
-                            "1": {
-                                "then": "Im Außenraum vorhanden."
-                            }
-                        },
-                        "question": "Wo befindet er sich?",
-                        "render": "Standort: {location}"
-                    }
-                },
-                "title": {
-                    "render": "Feuerlöscher"
-                }
+              "then": "Dieser Ort hat keine Stromversorgung"
+            }
+          },
+          "question": "Hat dieser Ort eine Stromversorgung?"
+        }
+      }
+    },
+    "shortDescription": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
+    "title": "Wohnmobilstellplätze"
+  },
+  "charging_stations": {
+    "description": "Auf dieser freien Karte kann man Informationen über Ladestationen finden und hinzufügen",
+    "shortDescription": "Eine weltweite Karte mit Ladestationen",
+    "title": "Ladestationen"
+  },
+  "climbing": {
+    "description": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
+    "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
+    "layers": {
+      "0": {
+        "description": "Ein Kletterverein oder eine Organisation",
+        "name": "Kletterverein",
+        "presets": {
+          "0": {
+            "description": "Ein Kletterverein",
+            "title": "Kletterverein"
+          },
+          "1": {
+            "description": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
+            "title": "Eine Kletter-Organisation"
+          }
+        },
+        "tagRenderings": {
+          "climbing_club-name": {
+            "question": "Wie lautet der Name dieses Vereins oder Organisation?",
+            "render": "<strong>{name}</strong>"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "Kletter-Organisation"
+            }
+          },
+          "render": "Kletterverein"
+        }
+      },
+      "1": {
+        "description": "Eine Kletterhalle",
+        "name": "Kletterhallen",
+        "tagRenderings": {
+          "name": {
+            "question": "Wie heißt diese Kletterhalle?",
+            "render": "<strong>{name}</strong>"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "Kletterhalle <strong>{name}</strong>"
+            }
+          },
+          "render": "Kletterhalle"
+        }
+      },
+      "2": {
+        "name": "Kletterrouten",
+        "presets": {
+          "0": {
+            "title": "Kletterroute"
+          }
+        },
+        "tagRenderings": {
+          "Bolts": {
+            "mappings": {
+              "0": {
+                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+              },
+              "1": {
+                "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+              }
+            },
+            "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
+            "render": "Diese Kletterroute hat {climbing:bolts} Haken"
+          },
+          "Difficulty": {
+            "question": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
+            "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
+          },
+          "Length": {
+            "question": "Wie lang ist diese Kletterroute (in Metern)?",
+            "render": "Diese Route ist {canonical(climbing:length)} lang"
+          },
+          "Name": {
+            "mappings": {
+              "0": {
+                "then": "Diese Kletterroute hat keinen Namen"
+              }
+            },
+            "question": "Wie heißt diese Kletterroute?",
+            "render": "<strong>{name}</strong>"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "Kleterroute <strong>{name}</strong>"
+            }
+          },
+          "render": "Kleterroute"
+        }
+      },
+      "3": {
+        "description": "Eine Klettergelegenheit",
+        "name": "Klettermöglichkeiten",
+        "presets": {
+          "0": {
+            "description": "Eine Klettergelegenheit",
+            "title": "Klettermöglichkeit"
+          }
+        },
+        "tagRenderings": {
+          "Contained routes hist": {
+            "render": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}"
+          },
+          "Contained routes length hist": {
+            "render": "<h3>Längenübersicht</h3>{histogramm(_length_hist)}"
+          },
+          "Rock type (crag/rock/cliff only)": {
+            "mappings": {
+              "0": {
+                "then": "Kalkstein"
+              }
+            },
+            "question": "Welchen Gesteinstyp gibt es hier?",
+            "render": "Der Gesteinstyp ist {rock}"
+          },
+          "Type": {
+            "mappings": {
+              "0": {
+                "then": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
+              }
+            }
+          },
+          "name": {
+            "mappings": {
+              "0": {
+                "then": "Diese Klettergelegenheit hat keinen Namen"
+              }
+            },
+            "question": "Wie heißt diese Klettergelegenheit?",
+            "render": "<strong>{name}</strong>"
+          }
+        },
+        "title": {
+          "mappings": {
+            "1": {
+              "then": "Klettergebiet <b>{name}</b>"
             },
             "2": {
-                "description": "Kartenebene zur Darstellung von Feuerwachen.",
-                "name": "Karte der Feuerwachen",
-                "presets": {
-                    "0": {
-                        "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
-                        "title": "Feuerwache"
-                    }
-                },
-                "tagRenderings": {
-                    "station-name": {
-                        "question": "Wie lautet der Name dieser Feuerwache?"
-                    }
-                },
-                "title": {
-                    "render": "Feuerwache"
-                }
+              "then": "Klettergebiet"
             },
             "3": {
-                "presets": {
-                    "0": {
-                        "description": "Eine Rettungsstation der Karte hinzufügen"
-                    }
-                }
+              "then": "Klettermöglichkeit <b>{name}</b>"
             }
+          },
+          "render": "Klettermöglichkeit"
+        }
+      },
+      "4": {
+        "description": "Eine Klettergelegenheit?",
+        "name": "Klettermöglichkeiten?",
+        "tagRenderings": {
+          "climbing-opportunity-name": {
+            "render": "<strong>{name}</strong>"
+          },
+          "climbing-possible": {
+            "mappings": {
+              "0": {
+                "then": "Hier kann nicht geklettert werden"
+              },
+              "1": {
+                "then": "Hier kann geklettert werden"
+              },
+              "2": {
+                "then": "Hier kann nicht geklettert werden"
+              }
+            },
+            "question": "Kann hier geklettert werden?"
+          }
         },
-        "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
+        "title": {
+          "render": "Klettermöglichkeit?"
+        }
+      }
     },
-    "maps": {
-        "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
-        "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
-        "title": "Eine Karte der Karten"
-    },
-    "natuurpunt": {
-        "description": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
-        "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
-        "title": "Naturschutzgebiete"
-    },
-    "observation_towers": {
-        "description": "Öffentlich zugänglicher Aussichtsturm",
-        "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
-        "title": "Aussichtstürme"
-    },
-    "openwindpowermap": {
-        "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
-        "layers": {
-            "0": {
-                "name": "Windrad",
-                "presets": {
-                    "0": {
-                        "title": "Windrad"
-                    }
-                },
-                "title": {
-                    "render": "Windrad"
-                },
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " Megawatt"
-                            },
-                            "1": {
-                                "human": " Kilowatt"
-                            },
-                            "2": {
-                                "human": " Watt"
-                            },
-                            "3": {
-                                "human": " Gigawatt"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " Meter"
-                            }
-                        }
-                    }
-                }
-            }
+    "overrideAll": {
+      "tagRenderings+": {
+        "0": {
+          "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
         },
-        "title": "OpenWindPowerMap"
-    },
-    "parkings": {
-        "description": "Diese Karte zeigt Parkplätze",
-        "shortDescription": "Diese Karte zeigt Parkplätze",
-        "title": "Parken"
-    },
-    "personal": {
-        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
-        "title": "Persönliches Thema"
-    },
-    "playgrounds": {
-        "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",
-        "shortDescription": "Eine Karte mit Spielplätzen",
-        "title": "Spielpläzte"
-    },
-    "postboxes": {
-        "layers": {
+        "2": {
+          "mappings": {
             "0": {
-                "description": "Die Ebene zeigt Briefkästen.",
-                "name": "Brieflästen",
-                "presets": {
-                    "0": {
-                        "title": "Briefkasten"
-                    }
-                },
-                "title": {
-                    "render": "Briefkasten"
-                }
+              "then": "Öffentlich zugänglich für jedermann"
             },
             "1": {
-                "description": "Eine Ebene mit Postämtern.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Aktuell geöffnet"
-                            }
-                        }
-                    }
-                },
-                "name": "Poststellen",
-                "presets": {
-                    "0": {
-                        "title": "Poststelle"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "durchgehend geöffnet (auch an Feiertagen)"
-                            }
-                        }
-                    }
-                },
-                "title": {
-                    "render": "Poststelle"
-                }
-            }
-        },
-        "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
-        "title": "Karte mit Briefkästen und Poststellen"
-    },
-    "shops": {
-        "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
-        "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
-        "title": "Freie Geschäftskarte"
-    },
-    "sport_pitches": {
-        "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
-        "shortDescription": "Eine Karte mit Sportplätzen",
-        "title": "Sportplätze"
-    },
-    "surveillance": {
-        "description": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
-        "shortDescription": "Überwachungskameras und andere Mittel zur Überwachung",
-        "title": "Überwachung unter Überwachung"
-    },
-    "toilets": {
-        "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
-        "title": "Freie Toilettenkarte"
-    },
-    "trees": {
-        "description": "Kartieren Sie alle Bäume!",
-        "shortDescription": "Kartieren Sie alle Bäume",
-        "title": "Bäume"
-    },
-    "uk_addresses": {
-        "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
-        "layers": {
+              "then": "Zugang nur mit Genehmigung"
+            },
             "2": {
-                "description": "Adressen",
-                "name": "Bekannte Adressen in OSM",
-                "tagRenderings": {
-                    "uk_addresses_explanation_osm": {
-                        "render": "Diese Adresse ist in OpenStreetMap gespeichert"
-                    },
-                    "uk_addresses_housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieses Gebäude hat keine Hausnummer"
-                            }
-                        },
-                        "question": "Wie lautet die Nummer dieses Hauses?",
-                        "render": "Die Hausnummer ist <b>{addr:housenumber}</b>"
-                    },
-                    "uk_addresses_street": {
-                        "question": "In welcher Straße befindet sich diese Adresse?",
-                        "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
-                    }
-                },
-                "title": {
-                    "render": "Bekannte Adresse"
-                }
+              "then": "Nur für Kunden"
+            },
+            "3": {
+              "then": "Nur für Vereinsmitglieder"
             }
+          },
+          "question": "Wer hat hier Zugang?"
         },
-        "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
-        "tileLayerSources": {
+        "4": {
+          "question": "Wie lang sind die Routen (durchschnittlich) in Metern?",
+          "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang"
+        },
+        "5": {
+          "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
+          "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
+        },
+        "6": {
+          "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
+          "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
+        },
+        "7": {
+          "mappings": {
             "0": {
-                "name": "Grenzverläufe gemäß osmuk.org"
+              "then": "Hier kann gebouldert werden"
+            },
+            "1": {
+              "then": "Hier kann nicht gebouldert werden"
+            },
+            "2": {
+              "then": "Bouldern ist hier nur an wenigen Routen möglich"
+            },
+            "3": {
+              "then": "Hier gibt es {climbing:boulder} Boulder-Routen"
             }
+          },
+          "question": "Kann hier gebouldert werden?"
         },
-        "title": "Adressen in Großbritannien"
+        "8": {
+          "mappings": {
+            "0": {
+              "then": "Toprope-Klettern ist hier möglich"
+            },
+            "1": {
+              "then": "Toprope-Climbing ist hier nicht möglich"
+            },
+            "2": {
+              "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
+            }
+          },
+          "question": "Ist Toprope-Klettern hier möglich?"
+        },
+        "9": {
+          "mappings": {
+            "0": {
+              "then": "Sportklettern ist hier möglich"
+            },
+            "1": {
+              "then": "Sportklettern ist hier nicht möglich"
+            },
+            "2": {
+              "then": "Hier gibt es {climbing:sport} Sportkletter-Routen"
+            }
+          },
+          "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?"
+        },
+        "10": {
+          "mappings": {
+            "0": {
+              "then": "Traditionelles Klettern ist hier möglich"
+            },
+            "1": {
+              "then": "Traditionelles Klettern ist hier nicht möglich"
+            },
+            "2": {
+              "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
+            }
+          },
+          "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?"
+        },
+        "11": {
+          "mappings": {
+            "0": {
+              "then": "Hier gibt es eine Speedkletter-Wand"
+            },
+            "1": {
+              "then": "Hier gibt es keine Speedkletter-Wand"
+            },
+            "2": {
+              "then": "Hier gibt es {climbing:speed} Speedkletter-Routen"
+            }
+          },
+          "question": "Gibt es hier eine Speedkletter-Wand?"
+        }
+      },
+      "units+": {
+        "0": {
+          "applicableUnits": {
+            "0": {
+              "human": " Meter"
+            },
+            "1": {
+              "human": " Fuß"
+            }
+          }
+        }
+      }
     },
-    "waste_basket": {
-        "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
-        "shortDescription": "Eine Karte mit Abfalleimern",
-        "title": "Abfalleimer"
+    "title": "Offene Kletterkarte"
+  },
+  "cycle_highways": {
+    "description": "Diese Karte zeigt Radschnellwege",
+    "layers": {
+      "0": {
+        "name": "Radschnellwege",
+        "title": {
+          "render": "Radschnellweg"
+        }
+      }
+    },
+    "title": "Radschnellwege"
+  },
+  "cycle_infra": {
+    "description": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur. Erstellt während #osoc21.",
+    "shortDescription": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur.",
+    "title": "Fahrradinfrastruktur"
+  },
+  "cyclestreets": {
+    "description": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
+    "layers": {
+      "0": {
+        "description": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf",
+        "name": "Fahrradstraßen"
+      },
+      "1": {
+        "description": "Diese Straße wird bald eine Fahrradstraße sein",
+        "name": "Zukünftige Fahrradstraße",
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "{name} wird bald eine Fahrradstraße werden"
+            }
+          },
+          "render": "Zukünftige Fahrradstraße"
+        }
+      },
+      "2": {
+        "description": "Ebene zur Kennzeichnung einer Straße als Fahrradstraße",
+        "name": "Alle Straßen",
+        "title": {
+          "render": "Straße"
+        }
+      }
+    },
+    "overrideAll": {
+      "tagRenderings+": {
+        "0": {
+          "mappings": {
+            "0": {
+              "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
+            },
+            "1": {
+              "then": "Diese Straße ist eine Fahrradstraße"
+            },
+            "2": {
+              "then": "Diese Straße wird bald eine Fahrradstraße sein"
+            },
+            "3": {
+              "then": "Diese Straße ist keine Fahrradstraße"
+            }
+          },
+          "question": "Ist diese Straße eine Fahrradstraße?"
+        },
+        "1": {
+          "question": "Wann wird diese Straße eine Fahrradstraße?",
+          "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
+        }
+      }
+    },
+    "shortDescription": "Eine Karte von Fahrradstraßen",
+    "title": "Fahrradstraßen"
+  },
+  "cyclofix": {
+    "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können auch interessante Orte zur Karte hinzuzufügen oder bearbeiten und weitere Daten durch Beantwortung von Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+    "title": "Cyclofix — eine freie Karte für Radfahrer"
+  },
+  "drinking_water": {
+    "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
+    "title": "Trinkwasserstelle"
+  },
+  "etymology": {
+    "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. In dem Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Zoomen Sie genug hinein und <i>alle</i> Straßen werden angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
+    "layers": {
+      "1": {
+        "override": {
+          "name": "Straßen ohne Informationen zur Namensherkunft"
+        }
+      },
+      "2": {
+        "override": {
+          "name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
+        }
+      }
+    },
+    "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
+    "title": "Open Etymology Map"
+  },
+  "facadegardens": {
+    "layers": {
+      "0": {
+        "description": "Fassadengärten",
+        "name": "Fassadengärten",
+        "presets": {
+          "0": {
+            "description": "Einen Fassadengarten hinzufügen",
+            "title": "Fassadengarten"
+          }
+        },
+        "tagRenderings": {
+          "facadegardens-description": {
+            "question": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)",
+            "render": "Weitere Details: {description}"
+          },
+          "facadegardens-direction": {
+            "question": "Wie ist der Garten ausgerichtet?",
+            "render": "Ausrichtung: {direction} (wobei 0=N und 90=O)"
+          },
+          "facadegardens-edible": {
+            "mappings": {
+              "0": {
+                "then": "Es gibt essbare Pflanzen"
+              },
+              "1": {
+                "then": "Es gibt keine essbaren Pflanzen"
+              }
+            },
+            "question": "Gibt es essbare Pflanzen?"
+          },
+          "facadegardens-plants": {
+            "mappings": {
+              "0": {
+                "then": "Es gibt Weinreben"
+              },
+              "1": {
+                "then": "Es gibt blühende Pflanzen"
+              },
+              "2": {
+                "then": "Es gibt Sträucher"
+              },
+              "3": {
+                "then": "Es gibt Bodendecker"
+              }
+            },
+            "question": "Welche Pflanzen wachsen hier?"
+          },
+          "facadegardens-rainbarrel": {
+            "mappings": {
+              "0": {
+                "then": "Es gibt eine Regentonne"
+              },
+              "1": {
+                "then": "Es gibt keine Regentonne"
+              }
+            },
+            "question": "Gibt es ein Wasserfass für den Garten?"
+          },
+          "facadegardens-start_date": {
+            "question": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
+            "render": "Errichtungsdatum des Gartens: {start_date}"
+          },
+          "facadegardens-sunshine": {
+            "mappings": {
+              "0": {
+                "then": "Der Garten liegt in voller Sonne"
+              },
+              "1": {
+                "then": "Der Garten liegt im Halbschatten"
+              },
+              "2": {
+                "then": "Der Garten liegt im Schatten"
+              }
+            },
+            "question": "Ist der Garten schattig oder sonnig?"
+          }
+        },
+        "title": {
+          "render": "Fassadengarten"
+        }
+      }
+    },
+    "shortDescription": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen.",
+    "title": "Fassadengärten",
+    "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
+  },
+  "food": {
+    "title": "Restaurants und Schnellimbisse"
+  },
+  "fritures": {
+    "layers": {
+      "0": {
+        "override": {
+          "name": "Pommesbude"
+        }
+      }
     }
+  },
+  "ghostbikes": {
+    "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
+    "title": "Geisterräder"
+  },
+  "hackerspaces": {
+    "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
+    "layers": {
+      "0": {
+        "description": "Hackerspace",
+        "name": "Hackerspace",
+        "presets": {
+          "0": {
+            "description": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
+            "title": "Hackerspace"
+          },
+          "1": {
+            "description": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
+            "title": "Makerspace"
+          }
+        },
+        "tagRenderings": {
+          "hackerspaces-name": {
+            "question": "Wie lautet der Name dieses Hackerspace?",
+            "render": "Dieser Hackerspace heißt <b>{name}</b>"
+          },
+          "hackerspaces-opening_hours": {
+            "mappings": {
+              "0": {
+                "then": "durchgehend geöffnet"
+              }
+            },
+            "question": "Wann hat dieser Hackerspace geöffnet?",
+            "render": "{opening_hours_table()}"
+          },
+          "hackerspaces-start_date": {
+            "question": "Wann wurde dieser Hackerspace gegründet?",
+            "render": "Dieser Hackerspace wurde gegründet am {start_date}"
+          },
+          "hs-club-mate": {
+            "mappings": {
+              "0": {
+                "then": "In diesem Hackerspace gibt es Club Mate"
+              },
+              "1": {
+                "then": "In diesem Hackerspace gibt es kein Club Mate"
+              }
+            },
+            "question": "Gibt es in diesem Hackerspace Club Mate?"
+          },
+          "is_makerspace": {
+            "mappings": {
+              "0": {
+                "then": "Dies ist ein Makerspace"
+              },
+              "1": {
+                "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
+              }
+            },
+            "question": "Ist dies ein Hackerspace oder ein Makerspace?"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": " {name}"
+            }
+          },
+          "render": "Hackerspace"
+        }
+      }
+    },
+    "shortDescription": "Eine Karte von Hackerspaces",
+    "title": "Hackerspaces"
+  },
+  "hailhydrant": {
+    "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
+    "layers": {
+      "0": {
+        "description": "Kartenebene zur Anzeige von Hydranten.",
+        "name": "Karte der Hydranten",
+        "presets": {
+          "0": {
+            "description": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
+            "title": "Löschwasser-Hydrant"
+          }
+        },
+        "tagRenderings": {
+          "hydrant-color": {
+            "mappings": {
+              "0": {
+                "then": "Die Farbe des Hydranten ist unbekannt."
+              },
+              "1": {
+                "then": "Die Farbe des Hydranten ist gelb."
+              },
+              "2": {
+                "then": "Die Farbe des Hydranten ist rot."
+              }
+            },
+            "question": "Welche Farbe hat der Hydrant?",
+            "render": "Der Hydrant hat die Farbe {colour}"
+          },
+          "hydrant-state": {
+            "mappings": {
+              "0": {
+                "then": "Der Hydrant ist (ganz oder teilweise) in Betrieb."
+              },
+              "1": {
+                "then": "Der Hydrant ist nicht verfügbar."
+              },
+              "2": {
+                "then": "Der Hydrant wurde entfernt."
+              }
+            },
+            "question": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten.",
+            "render": "Lebenszyklus-Status"
+          },
+          "hydrant-type": {
+            "mappings": {
+              "0": {
+                "then": "Der Typ des Hydranten ist unbekannt."
+              },
+              "1": {
+                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
+              },
+              "2": {
+                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
+              },
+              "3": {
+                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
+              },
+              "4": {
+                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
+              }
+            },
+            "question": "Um welche Art von Hydrant handelt es sich?",
+            "render": " Hydranten-Typ: {fire_hydrant:type}"
+          }
+        },
+        "title": {
+          "render": "Hydrant"
+        }
+      },
+      "1": {
+        "description": "Kartenebene zur Anzeige von Hydranten.",
+        "name": "Karte mit Feuerlöschern.",
+        "presets": {
+          "0": {
+            "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
+            "title": "Feuerlöscher"
+          }
+        },
+        "tagRenderings": {
+          "extinguisher-location": {
+            "mappings": {
+              "0": {
+                "then": "Im Innenraum vorhanden."
+              },
+              "1": {
+                "then": "Im Außenraum vorhanden."
+              }
+            },
+            "question": "Wo befindet er sich?",
+            "render": "Standort: {location}"
+          }
+        },
+        "title": {
+          "render": "Feuerlöscher"
+        }
+      },
+      "2": {
+        "description": "Kartenebene zur Darstellung von Feuerwachen.",
+        "name": "Karte der Feuerwachen",
+        "presets": {
+          "0": {
+            "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+            "title": "Feuerwache"
+          }
+        },
+        "tagRenderings": {
+          "station-name": {
+            "question": "Wie lautet der Name dieser Feuerwache?"
+          }
+        },
+        "title": {
+          "render": "Feuerwache"
+        }
+      },
+      "3": {
+        "presets": {
+          "0": {
+            "description": "Eine Rettungsstation der Karte hinzufügen"
+          }
+        }
+      }
+    },
+    "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
+  },
+  "maps": {
+    "title": "Eine Karte der Karten",
+    "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
+    "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren."
+  },
+  "natuurpunt": {
+    "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
+    "title": "Naturschutzgebiete",
+    "description": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden "
+  },
+  "observation_towers": {
+    "description": "Öffentlich zugänglicher Aussichtsturm",
+    "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
+    "title": "Aussichtstürme"
+  },
+  "openwindpowermap": {
+    "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
+    "layers": {
+      "0": {
+        "name": "Windrad",
+        "presets": {
+          "0": {
+            "title": "Windrad"
+          }
+        },
+        "title": {
+          "render": "Windrad"
+        },
+        "units": {
+          "0": {
+            "applicableUnits": {
+              "0": {
+                "human": " Megawatt"
+              },
+              "1": {
+                "human": " Kilowatt"
+              },
+              "2": {
+                "human": " Watt"
+              },
+              "3": {
+                "human": " Gigawatt"
+              }
+            }
+          },
+          "1": {
+            "applicableUnits": {
+              "0": {
+                "human": " Meter"
+              }
+            }
+          }
+        }
+      }
+    },
+    "title": "OpenWindPowerMap"
+  },
+  "parkings": {
+    "description": "Diese Karte zeigt Parkplätze",
+    "shortDescription": "Diese Karte zeigt Parkplätze",
+    "title": "Parken"
+  },
+  "personal": {
+    "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
+    "title": "Persönliches Thema"
+  },
+  "playgrounds": {
+    "shortDescription": "Eine Karte mit Spielplätzen",
+    "title": "Spielpläzte",
+    "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen"
+  },
+  "postboxes": {
+    "layers": {
+      "0": {
+        "description": "Die Ebene zeigt Briefkästen.",
+        "name": "Brieflästen",
+        "presets": {
+          "0": {
+            "title": "Briefkasten"
+          }
+        },
+        "title": {
+          "render": "Briefkasten"
+        }
+      },
+      "1": {
+        "description": "Eine Ebene mit Postämtern.",
+        "filter": {
+          "0": {
+            "options": {
+              "0": {
+                "question": "Aktuell geöffnet"
+              }
+            }
+          }
+        },
+        "name": "Poststellen",
+        "presets": {
+          "0": {
+            "title": "Poststelle"
+          }
+        },
+        "tagRenderings": {
+          "OH": {
+            "mappings": {
+              "0": {
+                "then": "durchgehend geöffnet (auch an Feiertagen)"
+              }
+            }
+          }
+        },
+        "title": {
+          "render": "Poststelle"
+        }
+      }
+    },
+    "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
+    "title": "Karte mit Briefkästen und Poststellen"
+  },
+  "shops": {
+    "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
+    "title": "Freie Geschäftskarte",
+    "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen"
+  },
+  "sport_pitches": {
+    "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
+    "shortDescription": "Eine Karte mit Sportplätzen",
+    "title": "Sportplätze"
+  },
+  "surveillance": {
+    "description": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
+    "shortDescription": "Überwachungskameras und andere Mittel zur Überwachung",
+    "title": "Überwachung unter Überwachung"
+  },
+  "toilets": {
+    "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
+    "title": "Freie Toilettenkarte"
+  },
+  "trees": {
+    "description": "Kartieren Sie alle Bäume!",
+    "shortDescription": "Kartieren Sie alle Bäume",
+    "title": "Bäume"
+  },
+  "uk_addresses": {
+    "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
+    "layers": {
+      "2": {
+        "description": "Adressen",
+        "name": "Bekannte Adressen in OSM",
+        "tagRenderings": {
+          "uk_addresses_explanation_osm": {
+            "render": "Diese Adresse ist in OpenStreetMap gespeichert"
+          },
+          "uk_addresses_housenumber": {
+            "mappings": {
+              "0": {
+                "then": "Dieses Gebäude hat keine Hausnummer"
+              }
+            },
+            "question": "Wie lautet die Nummer dieses Hauses?",
+            "render": "Die Hausnummer ist <b>{addr:housenumber}</b>"
+          },
+          "uk_addresses_street": {
+            "question": "In welcher Straße befindet sich diese Adresse?",
+            "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
+          }
+        },
+        "title": {
+          "render": "Bekannte Adresse"
+        }
+      }
+    },
+    "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
+    "tileLayerSources": {
+      "0": {
+        "name": "Grenzverläufe gemäß osmuk.org"
+      }
+    },
+    "title": "Adressen in Großbritannien"
+  },
+  "waste_basket": {
+    "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
+    "shortDescription": "Eine Karte mit Abfalleimern",
+    "title": "Abfalleimer"
+  }
 }

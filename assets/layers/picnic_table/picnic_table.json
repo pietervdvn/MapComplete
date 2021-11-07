@@ -1,132 +1,132 @@
 {
-    "id": "picnic_table",
-    "name": {
-        "en": "Picnic tables",
-        "nl": "Picnictafels",
-        "it": "Tavoli da picnic",
-        "ru": "Столы для пикника",
-        "fr": "Tables de pique-nique",
-        "de": "Picknick-Tische"
-    },
-    "minzoom": 12,
-    "source": {
-        "osmTags": "leisure=picnic_table"
-    },
-    "title": {
-        "render": {
-            "en": "Picnic table",
-            "nl": "Picnictafel",
-            "it": "Tavolo da picnic",
-            "ru": "Стол для пикника",
-            "fr": "Table de pique-nique",
-            "de": "Picknick-Tisch"
-        }
-    },
-    "description": {
-        "en": "The layer showing picnic tables",
-        "nl": "Deze laag toont picnictafels",
-        "it": "Il livello che mostra i tavoli da picnic",
-        "fr": "La couche montrant les tables de pique-nique",
-        "ru": "Слой, отображающий столы для пикника",
-        "de": "Die Ebene zeigt Picknicktische an"
-    },
-    "tagRenderings": [
+  "id": "picnic_table",
+  "name": {
+    "en": "Picnic tables",
+    "nl": "Picnictafels",
+    "it": "Tavoli da picnic",
+    "ru": "Столы для пикника",
+    "fr": "Tables de pique-nique",
+    "de": "Picknick-Tische"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "leisure=picnic_table"
+  },
+  "title": {
+    "render": {
+      "en": "Picnic table",
+      "nl": "Picnictafel",
+      "it": "Tavolo da picnic",
+      "ru": "Стол для пикника",
+      "fr": "Table de pique-nique",
+      "de": "Picknick-Tisch"
+    }
+  },
+  "description": {
+    "en": "The layer showing picnic tables",
+    "nl": "Deze laag toont picnictafels",
+    "it": "Il livello che mostra i tavoli da picnic",
+    "fr": "La couche montrant les tables de pique-nique",
+    "ru": "Слой, отображающий столы для пикника",
+    "de": "Die Ebene zeigt Picknicktische an"
+  },
+  "tagRenderings": [
+    {
+      "question": {
+        "en": "What material is this picnic table made of?",
+        "nl": "Van welk materiaal is deze picnictafel gemaakt?",
+        "it": "Di che materiale è fatto questo tavolo da picnic?",
+        "de": "Aus welchem Material besteht dieser Picknicktisch?",
+        "ru": "Из чего изготовлен этот стол для пикника?",
+        "fr": "En quel matériau est faite la table de pique-nique ?"
+      },
+      "render": {
+        "en": "This picnic table is made of {material}",
+        "nl": "Deze picnictafel is gemaakt van {material}",
+        "it": "Questo tavolo da picnic è fatto di {material}",
+        "de": "Dieser Picknicktisch besteht aus {material}",
+        "ru": "Этот стол для пикника сделан из {material}",
+        "fr": "La table est faite en {material}"
+      },
+      "freeform": {
+        "key": "material"
+      },
+      "mappings": [
         {
-            "question": {
-                "en": "What material is this picnic table made of?",
-                "nl": "Van welk materiaal is deze picnictafel gemaakt?",
-                "it": "Di che materiale è fatto questo tavolo da picnic?",
-                "de": "Aus welchem Material besteht dieser Picknicktisch?",
-                "ru": "Из чего изготовлен этот стол для пикника?",
-                "fr": "En quel matériau est faite la table de pique-nique ?"
-            },
-            "render": {
-                "en": "This picnic table is made of {material}",
-                "nl": "Deze picnictafel is gemaakt van {material}",
-                "it": "Questo tavolo da picnic è fatto di {material}",
-                "de": "Dieser Picknicktisch besteht aus {material}",
-                "ru": "Этот стол для пикника сделан из {material}",
-                "fr": "La table est faite en {material}"
-            },
-            "freeform": {
-                "key": "material"
-            },
-            "mappings": [
-                {
-                    "if": "material=wood",
-                    "then": {
-                        "en": "This is a wooden picnic table",
-                        "nl": "Deze picnictafel is gemaakt uit hout",
-                        "it": "È un tavolo da picnic in legno",
-                        "ru": "Это деревянный стол для пикника",
-                        "de": "Dies ist ein Picknicktisch aus Holz",
-                        "fr": "C’est une table en bois"
-                    }
-                },
-                {
-                    "if": "material=concrete",
-                    "then": {
-                        "en": "This is a concrete picnic table",
-                        "nl": "Deze picnictafel is gemaakt uit beton",
-                        "it": "È un tavolo da picnic in cemento",
-                        "ru": "Это бетонный стол для пикника",
-                        "de": "Dies ist ein Picknicktisch aus Beton",
-                        "fr": "C’est une table en béton"
-                    }
-                }
-            ],
-            "id": "picnic_table-material"
-        }
-    ],
-    "icon": {
-        "render": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg"
-    },
-    "iconSize": {
-        "render": "35,35,center"
-    },
-    "color": {
-        "render": "#00f"
-    },
-    "presets": [
-        {
-            "tags": [
-                "leisure=picnic_table"
-            ],
-            "title": {
-                "en": "picnic table",
-                "nl": "picnic-tafel",
-                "it": "tavolo da picnic",
-                "ru": "стол для пикника",
-                "de": "picknicktisch",
-                "fr": "table de pique-nique"
-            }
-        }
-    ],
-    "wayHandling": 1,
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "disused:amenity:={amenity}",
-                "amenity="
-            ]
+          "if": "material=wood",
+          "then": {
+            "en": "This is a wooden picnic table",
+            "nl": "Deze picnictafel is gemaakt uit hout",
+            "it": "È un tavolo da picnic in legno",
+            "ru": "Это деревянный стол для пикника",
+            "de": "Dies ist ein Picknicktisch aus Holz",
+            "fr": "C’est une table en bois"
+          }
         },
-        "neededChangesets": 1
-    },
-    "allowMove": {
-        "enableRelocation": false,
-        "enableImproveAccuraccy": true
-    },
-    "mapRendering": [
         {
-            "icon": {
-                "render": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg"
-            },
-            "iconSize": {
-                "render": "35,35,center"
-            },
-            "location": [
-                "point"
-            ]
+          "if": "material=concrete",
+          "then": {
+            "en": "This is a concrete picnic table",
+            "nl": "Deze picnictafel is gemaakt uit beton",
+            "it": "È un tavolo da picnic in cemento",
+            "ru": "Это бетонный стол для пикника",
+            "de": "Dies ist ein Picknicktisch aus Beton",
+            "fr": "C’est une table en béton"
+          }
         }
-    ]
+      ],
+      "id": "picnic_table-material"
+    }
+  ],
+  "icon": {
+    "render": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg"
+  },
+  "iconSize": {
+    "render": "35,35,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "leisure=picnic_table"
+      ],
+      "title": {
+        "en": "picnic table",
+        "nl": "picnic-tafel",
+        "it": "tavolo da picnic",
+        "ru": "стол для пикника",
+        "de": "picknicktisch",
+        "fr": "table de pique-nique"
+      }
+    }
+  ],
+  "wayHandling": 1,
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
+  },
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg"
+      },
+      "iconSize": {
+        "render": "35,35,center"
+      },
+      "location": [
+        "point"
+      ]
+    }
+  ]
 }

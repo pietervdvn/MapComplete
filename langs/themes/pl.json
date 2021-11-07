@@ -1,24 +1,24 @@
 {
-    "aed": {
-        "description": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy",
-        "title": "Otwórz mapę AED"
-    },
-    "artwork": {
-        "title": "Otwórz mapę dzieł sztuki"
-    },
-    "ghostbikes": {
-        "title": "Duch roweru"
-    },
-    "surveillance": {
-        "description": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
-        "shortDescription": "Kamery monitorujące i inne środki nadzoru"
-    },
-    "toilets": {
-        "description": "Mapa toalet publicznych",
-        "title": "Mapa otwartych toalet"
-    },
-    "trees": {
-        "shortDescription": "Sporządzić mapę wszystkich drzew",
-        "title": "Drzewa"
-    }
+  "aed": {
+    "description": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy",
+    "title": "Otwórz mapę AED"
+  },
+  "artwork": {
+    "title": "Otwórz mapę dzieł sztuki"
+  },
+  "ghostbikes": {
+    "title": "Duch roweru"
+  },
+  "surveillance": {
+    "description": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
+    "shortDescription": "Kamery monitorujące i inne środki nadzoru"
+  },
+  "toilets": {
+    "description": "Mapa toalet publicznych",
+    "title": "Mapa otwartych toalet"
+  },
+  "trees": {
+    "shortDescription": "Sporządzić mapę wszystkich drzew",
+    "title": "Drzewa"
+  }
 }

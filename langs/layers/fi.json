@@ -1,131 +1,131 @@
 {
-    "artwork": {
-        "presets": {
-            "0": {
-                "title": "Taideteos"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Taideteos <i>{name}</i>"
-                }
-            },
-            "render": "Taideteos"
-        }
+  "artwork": {
+    "presets": {
+      "0": {
+        "title": "Taideteos"
+      }
     },
-    "bench": {
-        "name": "Penkit",
-        "presets": {
-            "0": {
-                "title": "penkki"
-            }
-        },
-        "tagRenderings": {
-            "bench-backrest": {
-                "mappings": {
-                    "0": {
-                        "then": "Selkänoja: kyllä"
-                    },
-                    "1": {
-                        "then": "Selkänoja: ei"
-                    }
-                },
-                "render": "Selkänoja"
-            },
-            "bench-colour": {
-                "mappings": {
-                    "0": {
-                        "then": "Väri: ruskea"
-                    },
-                    "1": {
-                        "then": "Väri: vihreä"
-                    },
-                    "2": {
-                        "then": "Väri: harmaa"
-                    },
-                    "3": {
-                        "then": "Väri: valkoinen"
-                    },
-                    "4": {
-                        "then": "Väri: punainen"
-                    },
-                    "5": {
-                        "then": "Väri: musta"
-                    },
-                    "6": {
-                        "then": "Väri: sininen"
-                    },
-                    "7": {
-                        "then": "Väri: keltainen"
-                    }
-                },
-                "render": "Väri: {colour}"
-            },
-            "bench-material": {
-                "mappings": {
-                    "0": {
-                        "then": "Materiaali: puu"
-                    },
-                    "2": {
-                        "then": "Materiaali: kivi"
-                    },
-                    "3": {
-                        "then": "Materiaali: betoni"
-                    },
-                    "4": {
-                        "then": "Materiaali: muovi"
-                    },
-                    "5": {
-                        "then": "Materiaali: teräs"
-                    }
-                },
-                "render": "Materiaali: {material}"
-            }
-        },
-        "title": {
-            "render": "Penkki"
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Taideteos <i>{name}</i>"
         }
-    },
-    "bench_at_pt": {
-        "tagRenderings": {
-            "bench_at_pt-name": {
-                "render": "{name}"
-            }
-        },
-        "title": {
-            "render": "Penkki"
-        }
-    },
-    "bike_parking": {
-        "tagRenderings": {
-            "Access": {
-                "render": "{access}"
-            }
-        }
-    },
-    "bike_repair_station": {
-        "presets": {
-            "0": {
-                "title": "Pyöräpumppu"
-            }
-        }
-    },
-    "ghost_bike": {
-        "name": "Haamupyörä",
-        "title": {
-            "render": "Haamupyörä"
-        }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Autokorjaamo"
-                    }
-                }
-            }
-        }
+      },
+      "render": "Taideteos"
     }
+  },
+  "bench": {
+    "name": "Penkit",
+    "presets": {
+      "0": {
+        "title": "penkki"
+      }
+    },
+    "tagRenderings": {
+      "bench-backrest": {
+        "mappings": {
+          "0": {
+            "then": "Selkänoja: kyllä"
+          },
+          "1": {
+            "then": "Selkänoja: ei"
+          }
+        },
+        "render": "Selkänoja"
+      },
+      "bench-colour": {
+        "mappings": {
+          "0": {
+            "then": "Väri: ruskea"
+          },
+          "1": {
+            "then": "Väri: vihreä"
+          },
+          "2": {
+            "then": "Väri: harmaa"
+          },
+          "3": {
+            "then": "Väri: valkoinen"
+          },
+          "4": {
+            "then": "Väri: punainen"
+          },
+          "5": {
+            "then": "Väri: musta"
+          },
+          "6": {
+            "then": "Väri: sininen"
+          },
+          "7": {
+            "then": "Väri: keltainen"
+          }
+        },
+        "render": "Väri: {colour}"
+      },
+      "bench-material": {
+        "mappings": {
+          "0": {
+            "then": "Materiaali: puu"
+          },
+          "2": {
+            "then": "Materiaali: kivi"
+          },
+          "3": {
+            "then": "Materiaali: betoni"
+          },
+          "4": {
+            "then": "Materiaali: muovi"
+          },
+          "5": {
+            "then": "Materiaali: teräs"
+          }
+        },
+        "render": "Materiaali: {material}"
+      }
+    },
+    "title": {
+      "render": "Penkki"
+    }
+  },
+  "bench_at_pt": {
+    "tagRenderings": {
+      "bench_at_pt-name": {
+        "render": "{name}"
+      }
+    },
+    "title": {
+      "render": "Penkki"
+    }
+  },
+  "bike_parking": {
+    "tagRenderings": {
+      "Access": {
+        "render": "{access}"
+      }
+    }
+  },
+  "bike_repair_station": {
+    "presets": {
+      "0": {
+        "title": "Pyöräpumppu"
+      }
+    }
+  },
+  "ghost_bike": {
+    "name": "Haamupyörä",
+    "title": {
+      "render": "Haamupyörä"
+    }
+  },
+  "shops": {
+    "tagRenderings": {
+      "shops-shop": {
+        "mappings": {
+          "5": {
+            "then": "Autokorjaamo"
+          }
+        }
+      }
+    }
+  }
 }

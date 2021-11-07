@@ -1,53 +1,53 @@
 {
-    "id": "village_green",
-    "name": {
-        "nl": "Speelweide"
+  "id": "village_green",
+  "name": {
+    "nl": "Speelweide"
+  },
+  "source": {
+    "osmTags": "landuse=village_green"
+  },
+  "minzoom": 0,
+  "title": {
+    "render": {
+      "nl": "Speelweide"
     },
-    "source": {
-        "osmTags": "landuse=village_green"
-    },
-    "minzoom": 0,
-    "title": {
-        "render": {
-            "nl": "Speelweide"
-        },
-        "mappings": [
-            {
-                "if": "name~*",
-                "then": {
-                    "nl": "{name}"
-                }
-            }
-        ]
-    },
-    "icon": "./assets/themes/playgrounds/playground.svg",
-    "iconSize": "40,40,center",
-    "width": "1",
-    "color": "#937f20",
-    "wayHandling": 2,
-    "tagRenderings": [
-        "images",
-        {
-            "id": "village_green-explanation",
-            "render": "Dit is een klein stukje openbaar groen waar je mag spelen, picnicken, zitten, ..."
-        },
-        {
-            "id": "village_green-reviews",
-            "render": "{reviews(name, landuse=village_green )}"
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "{name}"
         }
-    ],
-    "mapRendering": [
-        {
-            "icon": "./assets/themes/playgrounds/playground.svg",
-            "iconSize": "40,40,center",
-            "location": [
-                "point",
-                "centroid"
-            ]
-        },
-        {
-            "color": "#937f20",
-            "width": "1"
-        }
+      }
     ]
+  },
+  "icon": "./assets/themes/playgrounds/playground.svg",
+  "iconSize": "40,40,center",
+  "width": "1",
+  "color": "#937f20",
+  "wayHandling": 2,
+  "tagRenderings": [
+    "images",
+    {
+      "id": "village_green-explanation",
+      "render": "Dit is een klein stukje openbaar groen waar je mag spelen, picnicken, zitten, ..."
+    },
+    {
+      "id": "village_green-reviews",
+      "render": "{reviews(name, landuse=village_green )}"
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "./assets/themes/playgrounds/playground.svg",
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": "#937f20",
+      "width": "1"
+    }
+  ]
 }

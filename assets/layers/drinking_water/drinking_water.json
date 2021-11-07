@@ -1,206 +1,208 @@
 {
-    "id": "drinking_water",
-    "name": {
-        "en": "Drinking water",
-        "nl": "Drinkbaar water",
-        "fr": "Eau potable",
-        "gl": "Auga potábel",
+  "id": "drinking_water",
+  "name": {
+    "en": "Drinking water",
+    "nl": "Drinkbaar water",
+    "fr": "Eau potable",
+    "gl": "Auga potábel",
+    "de": "Trinkwasserstelle",
+    "it": "Acqua potabile",
+    "ru": "Питьевая вода",
+    "id": "Air minum"
+  },
+  "title": {
+    "render": {
+      "en": "Drinking water",
+      "nl": "Drinkbaar water",
+      "fr": "Eau potable",
+      "gl": "Auga potábel",
+      "de": "Trinkwasserstelle",
+      "it": "Acqua potabile",
+      "ru": "Питьевая вода",
+      "id": "Air minum"
+    }
+  },
+  "icon": {
+    "render": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg"
+  },
+  "iconOverlays": [
+    {
+      "if": {
+        "or": [
+          "operational_status=broken",
+          "operational_status=closed"
+        ]
+      },
+      "then": "close:#c33",
+      "badge": true
+    }
+  ],
+  "iconSize": "40,40,bottom",
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=drinking_water",
+        "access!=permissive",
+        "access!=private"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_closest_other_drinking_water=feat.closestn('drinking_water', 1, undefined, 5000).map(f => ({id: f.feat.id, distance: ''+f.distance}))[0]",
+    "_closest_other_drinking_water_id=JSON.parse(feat.properties._closest_other_drinking_water)?.id",
+    "_closest_other_drinking_water_distance=Math.floor(Number(JSON.parse(feat.properties._closest_other_drinking_water)?.distance) * 1000)"
+  ],
+  "minzoom": 13,
+  "wayHandling": 1,
+  "presets": [
+    {
+      "title": {
+        "en": "drinking water",
+        "nl": "drinkbaar water",
+        "fr": "eau potable",
+        "gl": "auga potábel",
         "de": "Trinkwasserstelle",
-        "it": "Acqua potabile",
-        "ru": "Питьевая вода",
-        "id": "Air minum"
-    },
-    "title": {
-        "render": {
-            "en": "Drinking water",
-            "nl": "Drinkbaar water",
-            "fr": "Eau potable",
-            "gl": "Auga potábel",
-            "de": "Trinkwasserstelle",
-            "it": "Acqua potabile",
-            "ru": "Питьевая вода",
-            "id": "Air minum"
+        "it": "acqua potabile",
+        "ru": "питьевая вода",
+        "id": "air minum"
+      },
+      "tags": [
+        "amenity=drinking_water"
+      ]
+    }
+  ],
+  "color": "#6bc4f7",
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "Is this drinking water spot still operational?",
+        "nl": "Is deze drinkwaterkraan nog steeds werkende?",
+        "it": "Questo punto di acqua potabile è sempre funzionante?",
+        "fr": "Ce point d'eau potable est-il toujours opérationnel ?",
+        "de": "Ist diese Trinkwasserstelle noch in Betrieb?"
+      },
+      "render": {
+        "en": "The operational status is <i>{operational_status</i>",
+        "nl": "Deze waterkraan-status is <i>{operational_status}</i>",
+        "it": "Lo stato operativo è <i>{operational_status}</i>",
+        "fr": "L'état opérationnel est <i>{operational_status</i>",
+        "de": "Der Betriebsstatus ist <i>{operational_status</i>"
+      },
+      "freeform": {
+        "key": "operational_status"
+      },
+      "mappings": [
+        {
+          "if": "operational_status=",
+          "then": {
+            "en": "This drinking water works",
+            "nl": "Deze drinkwaterfontein werkt",
+            "it": "La fontanella funziona",
+            "fr": "Cette fontaine fonctionne",
+            "de": "Diese Trinkwasserstelle funktioniert"
+          }
+        },
+        {
+          "if": "operational_status=broken",
+          "then": {
+            "en": "This drinking water is broken",
+            "nl": "Deze drinkwaterfontein is kapot",
+            "it": "La fontanella è guasta",
+            "fr": "Cette fontaine est cassée",
+            "de": "Diese Trinkwasserstelle ist kaputt"
+          }
+        },
+        {
+          "if": "operational_status=closed",
+          "then": {
+            "en": "This drinking water is closed",
+            "nl": "Deze drinkwaterfontein is afgesloten",
+            "it": "La fontanella è chiusa",
+            "fr": "Cette fontaine est fermée",
+            "de": "Diese Trinkwasserstelle wurde geschlossen"
+          }
         }
+      ],
+      "id": "Still in use?"
     },
-    "icon": {
+    {
+      "question": {
+        "en": "How easy is it to fill water bottles?",
+        "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
+        "de": "Wie einfach ist es, Wasserflaschen zu füllen?",
+        "it": "Quanto è facile riempire d’acqua le bottiglie?",
+        "fr": "Est-il facile de remplir des bouteilles d'eau ?"
+      },
+      "mappings": [
+        {
+          "if": "bottle=yes",
+          "then": {
+            "en": "It is easy to refill water bottles",
+            "nl": "Een drinkbus bijvullen gaat makkelijk",
+            "de": "Es ist einfach, Wasserflaschen nachzufüllen",
+            "it": "È facile riempire d’acqua le bottiglie",
+            "fr": "Il est facile de remplir les bouteilles d'eau"
+          }
+        },
+        {
+          "if": "bottle=no",
+          "then": {
+            "en": "Water bottles may not fit",
+            "nl": "Een drinkbus past moeilijk",
+            "de": "Wasserflaschen passen möglicherweise nicht",
+            "it": "Le bottiglie d’acqua potrebbero non entrare",
+            "fr": "Les bouteilles d'eau peuvent ne pas passer"
+          }
+        }
+      ],
+      "id": "Bottle refill"
+    },
+    {
+      "id": "render-closest-drinking-water",
+      "render": {
+        "en": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>",
+        "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>",
+        "it": "<a href='#{_closest_other_drinking_water_id}'>C’è un’altra fontanella a {_closest_other_drinking_water_distance} metri</a>",
+        "de": "<a href='#{_closest_other_drinking_water_id}'>Eine weitere Trinkwasserstelle liegt {_closest_other_drinking_water_distance} Meter entfernt</a>",
+        "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres a>"
+      },
+      "condition": "_closest_other_drinking_water_id~*"
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
+  },
+  "mapRendering": [
+    {
+      "icon": {
         "render": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg"
-    },
-    "iconOverlays": [
+      },
+      "iconBadges": [
         {
-            "if": {
-                "or": [
-                    "operational_status=broken",
-                    "operational_status=closed"
-                ]
-            },
-            "then": "close:#c33"
-        }
-    ],
-    "iconSize": "40,40,bottom",
-    "source": {
-        "osmTags": {
-            "and": [
-                "amenity=drinking_water",
-                "access!=permissive",
-                "access!=private"
+          "if": {
+            "or": [
+              "operational_status=broken",
+              "operational_status=closed"
             ]
+          },
+          "then": "close:#c33"
         }
-    },
-    "calculatedTags": [
-        "_closest_other_drinking_water=feat.closestn('drinking_water', 1, undefined, 5000).map(f => ({id: f.feat.id, distance: ''+f.distance}))[0]",
-        "_closest_other_drinking_water_id=JSON.parse(feat.properties._closest_other_drinking_water)?.id",
-        "_closest_other_drinking_water_distance=Math.floor(Number(JSON.parse(feat.properties._closest_other_drinking_water)?.distance) * 1000)"
-    ],
-    "minzoom": 13,
-    "wayHandling": 1,
-    "presets": [
-        {
-            "title": {
-                "en": "drinking water",
-                "nl": "drinkbaar water",
-                "fr": "eau potable",
-                "gl": "auga potábel",
-                "de": "trinkwasser",
-                "it": "acqua potabile",
-                "ru": "питьевая вода",
-                "id": "air minum"
-            },
-            "tags": [
-                "amenity=drinking_water"
-            ]
-        }
-    ],
-    "color": "#6bc4f7",
-    "tagRenderings": [
-        "images",
-        {
-            "question": {
-                "en": "Is this drinking water spot still operational?",
-                "nl": "Is deze drinkwaterkraan nog steeds werkende?",
-                "it": "Questo punto di acqua potabile è sempre funzionante?",
-                "fr": "Ce point d'eau potable est-il toujours opérationnel ?",
-                "de": "Ist diese Trinkwasserstelle noch in Betrieb?"
-            },
-            "render": {
-                "en": "The operational status is <i>{operational_status</i>",
-                "nl": "Deze waterkraan-status is <i>{operational_status}</i>",
-                "it": "Lo stato operativo è <i>{operational_status}</i>",
-                "fr": "L'état opérationnel est <i>{operational_status</i>",
-                "de": "Der Betriebsstatus ist <i>{operational_status</i>"
-            },
-            "freeform": {
-                "key": "operational_status"
-            },
-            "mappings": [
-                {
-                    "if": "operational_status=",
-                    "then": {
-                        "en": "This drinking water works",
-                        "nl": "Deze drinkwaterfontein werkt",
-                        "it": "La fontanella funziona",
-                        "fr": "Cette fontaine fonctionne"
-                    }
-                },
-                {
-                    "if": "operational_status=broken",
-                    "then": {
-                        "en": "This drinking water is broken",
-                        "nl": "Deze drinkwaterfontein is kapot",
-                        "it": "La fontanella è guasta",
-                        "fr": "Cette fontaine est cassée",
-                        "de": "Diese Trinkwasserstelle ist kaputt"
-                    }
-                },
-                {
-                    "if": "operational_status=closed",
-                    "then": {
-                        "en": "This drinking water is closed",
-                        "nl": "Deze drinkwaterfontein is afgesloten",
-                        "it": "La fontanella è chiusa",
-                        "fr": "Cette fontaine est fermée",
-                        "de": "Diese Trinkwasserstelle wurde geschlossen"
-                    }
-                }
-            ],
-            "id": "Still in use?"
-        },
-        {
-            "question": {
-                "en": "How easy is it to fill water bottles?",
-                "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
-                "de": "Wie einfach ist es, Wasserflaschen zu füllen?",
-                "it": "Quanto è facile riempire d’acqua le bottiglie?",
-                "fr": "Est-il facile de remplir des bouteilles d'eau ?"
-            },
-            "mappings": [
-                {
-                    "if": "bottle=yes",
-                    "then": {
-                        "en": "It is easy to refill water bottles",
-                        "nl": "Een drinkbus bijvullen gaat makkelijk",
-                        "de": "Es ist einfach, Wasserflaschen nachzufüllen",
-                        "it": "È facile riempire d’acqua le bottiglie",
-                        "fr": "Il est facile de remplir les bouteilles d'eau"
-                    }
-                },
-                {
-                    "if": "bottle=no",
-                    "then": {
-                        "en": "Water bottles may not fit",
-                        "nl": "Een drinkbus past moeilijk",
-                        "de": "Wasserflaschen passen möglicherweise nicht",
-                        "it": "Le bottiglie d’acqua potrebbero non entrare",
-                        "fr": "Les bouteilles d'eau peuvent ne pas passer"
-                    }
-                }
-            ],
-            "id": "Bottle refill"
-        },
-        {
-            "id": "render-closest-drinking-water",
-            "render": {
-                "en": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>",
-                "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>",
-                "it": "<a href='#{_closest_other_drinking_water_id}'>C’è un’altra fontanella a {_closest_other_drinking_water_distance} metri</a>",
-                "de": "<a href='#{_closest_other_drinking_water_id}'>Ein weiterer Trinkwasserbrunnen befindet sich in {_closest_other_drinking_water_distance} Meter</a>",
-                "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres a>"
-            },
-            "condition": "_closest_other_drinking_water_id~*"
-        }
-    ],
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "disused:amenity:={amenity}",
-                "amenity="
-            ]
-        },
-        "neededChangesets": 1
-    },
-    "allowMove": {
-        "enableRelocation": false,
-        "enableImproveAccuraccy": true
-    },
-    "mapRendering": [
-        {
-            "icon": {
-                "render": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg"
-            },
-            "iconBadges": [
-                {
-                    "if": {
-                        "or": [
-                            "operational_status=broken",
-                            "operational_status=closed"
-                        ]
-                    },
-                    "then": "close:#c33"
-                }
-            ],
-            "iconSize": "40,40,bottom",
-            "location": [
-                "point"
-            ]
-        }
-    ]
+      ],
+      "iconSize": "40,40,bottom",
+      "location": [
+        "point"
+      ]
+    }
+  ]
 }

@@ -1,89 +1,89 @@
 {
-    "id": "viewpoint",
-    "name": {
+  "id": "viewpoint",
+  "name": {
+    "en": "Viewpoint",
+    "nl": "Uitzicht",
+    "de": "Aussichtspunkt",
+    "fr": "Point de vue",
+    "it": "Punto panoramico",
+    "ru": "Смотровая площадка",
+    "id": "Sudut pandang",
+    "eo": "Vidpunkto"
+  },
+  "description": {
+    "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
+    "nl": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
+    "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
+    "fr": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
+    "it": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata"
+  },
+  "source": {
+    "osmTags": "tourism=viewpoint"
+  },
+  "minzoom": 14,
+  "icon": "./assets/layers/viewpoint/viewpoint.svg",
+  "iconSize": "20,20,center",
+  "color": "#ffffff",
+  "width": "5",
+  "wayhandling": 2,
+  "presets": [
+    {
+      "title": {
         "en": "Viewpoint",
         "nl": "Uitzicht",
         "de": "Aussichtspunkt",
         "fr": "Point de vue",
-        "it": "Punto panoramico",
         "ru": "Смотровая площадка",
-        "id": "Sudut pandang",
-        "eo": "Vidpunkto"
+        "it": "Punto panoramico",
+        "id": "Sudut pandang"
+      },
+      "tags": [
+        "tourism=viewpoint"
+      ]
+    }
+  ],
+  "title": {
+    "render": {
+      "en": "Viewpoint",
+      "nl": "Uitzicht",
+      "de": "Aussichtspunkt",
+      "fr": "Point de vue",
+      "ru": "Смотровая площадка",
+      "it": "Punto panoramico",
+      "id": "Sudut pandang",
+      "eo": "Vidpunkto"
+    }
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "Do you want to add a description?",
+        "nl": "Zijn er bijzonderheden die je wilt toevoegen?",
+        "de": "Möchten Sie eine Beschreibung hinzufügen?",
+        "ru": "Вы хотите добавить описание?",
+        "fr": "Voulez-vous ajouter une description ?",
+        "it": "Vuoi aggiungere una descrizione?",
+        "id": "Apakah Anda ingin menambahkan deskripsi?"
+      },
+      "render": "{description}",
+      "freeform": {
+        "key": "description"
+      },
+      "id": "viewpoint-description"
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "./assets/layers/viewpoint/viewpoint.svg",
+      "iconSize": "20,20,center",
+      "location": [
+        "point"
+      ]
     },
-    "description": {
-        "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
-        "nl": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
-        "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
-        "fr": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
-        "it": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata"
-    },
-    "source": {
-        "osmTags": "tourism=viewpoint"
-    },
-    "minzoom": 14,
-    "icon": "./assets/layers/viewpoint/viewpoint.svg",
-    "iconSize": "20,20,center",
-    "color": "#ffffff",
-    "width": "5",
-    "wayhandling": 2,
-    "presets": [
-        {
-            "title": {
-                "en": "Viewpoint",
-                "nl": "Uitzicht",
-                "de": "Aussichtspunkt",
-                "fr": "Point de vue",
-                "ru": "Смотровая площадка",
-                "it": "Punto panoramico",
-                "id": "Sudut pandang"
-            },
-            "tags": [
-                "tourism=viewpoint"
-            ]
-        }
-    ],
-    "title": {
-        "render": {
-            "en": "Viewpoint",
-            "nl": "Uitzicht",
-            "de": "Aussichtspunkt",
-            "fr": "Point de vue",
-            "ru": "Смотровая площадка",
-            "it": "Punto panoramico",
-            "id": "Sudut pandang",
-            "eo": "Vidpunkto"
-        }
-    },
-    "tagRenderings": [
-        "images",
-        {
-            "question": {
-                "en": "Do you want to add a description?",
-                "nl": "Zijn er bijzonderheden die je wilt toevoegen?",
-                "de": "Möchten Sie eine Beschreibung hinzufügen?",
-                "ru": "Вы хотите добавить описание?",
-                "fr": "Voulez-vous ajouter une description ?",
-                "it": "Vuoi aggiungere una descrizione?",
-                "id": "Apakah Anda ingin menambahkan deskripsi?"
-            },
-            "render": "{description}",
-            "freeform": {
-                "key": "description"
-            },
-            "id": "viewpoint-description"
-        }
-    ],
-    "mapRendering": [
-        {
-            "icon": "./assets/layers/viewpoint/viewpoint.svg",
-            "iconSize": "20,20,center",
-            "location": [
-                "point"
-            ]
-        },
-        {
-            "color": "#ffffff",
-            "width": "5"
-        }
-    ]
+    {
+      "color": "#ffffff",
+      "width": "5"
+    }
+  ]
 }
