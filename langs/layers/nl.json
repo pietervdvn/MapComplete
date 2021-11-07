@@ -132,11 +132,11 @@
       },
       "Space between barrier (cyclebarrier)": {
         "question": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
-        "render": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m"
+        "render": "Ruimte tussen barrières (langs de lengte van de weg): {spacing} m"
       },
       "Width of opening (cyclebarrier)": {
         "question": "Hoe breed is de smalste opening naast de barrières?",
-        "render": "Breedte van de opening: {width:opening} m"
+        "render": "Breedte van de opening: {opening} m"
       },
       "bicycle=yes/no": {
         "mappings": {
