@@ -123,5 +123,26 @@
         }
       }
     }
+  },
+  "uk_addresses": {
+    "description": "Berkontribusi untuk OpenStreetMap dengan mengisi informasi alamat",
+    "layers": {
+      "1": {
+        "description": "Alamat",
+        "title": {
+          "render": "Alamat yang diketahui"
+        }
+      }
+    },
+    "title": "Alamat Inggris"
+  },
+  "trees": {
+    "title": "Pohon"
+  },
+  "cafes_and_pubs": {
+    "title": "Kafe dan pub"
+  },
+  "benches": {
+    "title": "Bangku"
   }
 }
