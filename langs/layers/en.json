@@ -3198,6 +3198,13 @@
             "question": "Free to use"
           }
         }
+      },
+      "3": {
+        "options": {
+          "0": {
+            "question": "Opened now"
+          }
+        }
       }
     },
     "name": "Toilets",
@@ -3212,6 +3219,14 @@
       }
     },
     "tagRenderings": {
+      "Opening-hours": {
+        "mappings": {
+          "0": {
+            "then": "Opened 24/7"
+          }
+        },
+        "question": "When are these toilets opened?"
+      },
       "toilet-access": {
         "mappings": {
           "0": {

@@ -22,28 +22,6 @@
       "it": "Servizi igienici"
     }
   },
-  "icon": {
-    "render": "./assets/layers/toilet/toilets.svg",
-    "mappings": [
-      {
-        "if": "wheelchair=yes",
-        "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
-      },
-      {
-        "if": {
-          "or": [
-            "toilets:position=urinals",
-            "toilets:position=urinal"
-          ]
-        },
-        "then": "./assets/layers/toilet/urinal.svg"
-      }
-    ]
-  },
-  "color": {
-    "render": "#0000ff"
-  },
-  "wayHandling": 1,
   "presets": [
     {
       "title": {
@@ -308,6 +286,31 @@
       "id": "toilet-charge"
     },
     {
+      "builtin": "payment-options",
+      "override": {
+        "condition": "fee=yes"
+      }
+    },
+    {
+      "id": "Opening-hours",
+      "question": {
+        "en": "When are these toilets opened?",
+        "nl": "Wanneer zijn deze toiletten open?"
+      },
+      "render": "{opening_hours_table()}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "mappings": [{
+        "if": "opening_hours=24/7",
+        "then": {
+          "en": "Opened 24/7",
+          "nl": "Altijd open"
+        }
+      }]
+    },
+    {
       "id": "toilets-wheelchair",
       "question": {
         "en": "Is there a dedicated toilet for wheelchair users",
@@ -518,7 +521,7 @@
       "id": "toilet-has-paper",
       "question": {
         "en": "Does one have to bring their own toilet paper to this toilet?",
-        "nl": "Moet je je eigen toiletpappier meenemen naar deze toilet?",
+        "nl": "Moet je je eigen toiletpapier meenemen naar deze toilet?",
         "de": "Muss man für diese Toilette sein eigenes Toilettenpapier mitbringen?"
       },
       "mappings": [
@@ -537,7 +540,11 @@
             "de": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
           }
         }
-      ]
+      ],
+      "condition": {
+        "#": "Urinals normally don't have toilet paper",
+        "and": ["toilets:position!=urinal"]
+      }
     }
   ],
   "filter": [
@@ -585,6 +592,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "is_open",
+      "options": [{
+        "question": {
+          "nl": "Nu geopened",
+          "en": "Opened now"
+        },
+        "osmTags": {
+          "or": ["opening_hours=","_isOpen=yes"]
+        }
+      }]
     }
   ],
   "deletion": {
@@ -620,6 +639,10 @@
           }
         ]
       },
+      "iconBadges": [{
+        "if": "opening_hours~*",
+        "then": "isOpen"
+      }],
       "location": [
         "point"
       ]

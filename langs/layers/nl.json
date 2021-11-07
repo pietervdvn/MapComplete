@@ -3589,6 +3589,13 @@
             "question": "Gratis toegankelijk"
           }
         }
+      },
+      "3": {
+        "options": {
+          "0": {
+            "question": "Nu geopened"
+          }
+        }
       }
     },
     "name": "Toiletten",
@@ -3603,6 +3610,14 @@
       }
     },
     "tagRenderings": {
+      "Opening-hours": {
+        "mappings": {
+          "0": {
+            "then": "Altijd open"
+          }
+        },
+        "question": "Wanneer zijn deze toiletten open?"
+      },
       "toilet-access": {
         "mappings": {
           "0": {
@@ -3666,7 +3681,7 @@
             "then": "Je moet je eigen toiletpapier meebrengen naar deze toilet"
           }
         },
-        "question": "Moet je je eigen toiletpappier meenemen naar deze toilet?"
+        "question": "Moet je je eigen toiletpapier meenemen naar deze toilet?"
       },
       "toilets-changing-table": {
         "mappings": {
