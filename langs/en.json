@@ -284,5 +284,12 @@
         "partOfAWay": "This feature is part of another way. Use another editor to move it.",
         "partOfRelation": "This feature is part of a relation. Use another editor to move it.",
         "cancel": "Cancel move"
+    },
+    "professional": {
+        "title": "Professional support with MapComplete",
+        "subheading": "What can MapComplete do for your organisation?"
+        
+        
+        
     }
 }

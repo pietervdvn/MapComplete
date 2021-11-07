@@ -9,9 +9,10 @@ import LanguagePicker from "./LanguagePicker";
 import IndexText from "./BigComponents/IndexText";
 import FeaturedMessage from "./BigComponents/FeaturedMessage";
 
-export default class AllThemesGui {
+export default class Professional {
     constructor() {
         new FixedUiElement("").AttachTo("centermessage")
+        
         const state = new UserRelatedState(undefined);
         const intro = new Combine([
             LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
