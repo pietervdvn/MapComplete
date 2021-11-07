@@ -48,6 +48,9 @@ export default class TagRenderingConfig {
             this.render = null;
             this.question = null;
             this.condition = null;
+            this.id = "questions"
+            this.group = ""
+            return;
         }
 
 

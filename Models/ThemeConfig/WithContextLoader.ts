@@ -66,12 +66,6 @@ export default class WithContextLoader {
             if (renderingJson["builtin"] !== undefined) {
                 const renderingId = renderingJson["builtin"]
                 if (renderingId === "questions") {
-                    if (readOnly) {
-                        throw `A tagrendering has a question, but asking a question does not make sense here: is it a title icon or a geojson-layer? ${context}. The offending tagrendering is ${JSON.stringify(
-                            renderingJson
-                        )}`;
-                    }
-
                     const tr = new TagRenderingConfig("questions", context);
                     renderings.push(tr)
                     continue;

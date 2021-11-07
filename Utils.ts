@@ -186,7 +186,14 @@ Note that these values can be prepare with javascript in the theme by using a [c
 
         while (match) {
             const key = match[1]
-            txt = txt.replace("{" + key + "}", tags[key] ?? "")
+            let v = tags[key]
+            if(v !== undefined ){
+                if(typeof v !== "string"){
+                    v = ""+v
+                }
+                v = v.replace(/\n/g, "<br/>")
+            }
+            txt = txt.replace("{" + key + "}", v ?? "")
             match = txt.match(regex)
         }
 

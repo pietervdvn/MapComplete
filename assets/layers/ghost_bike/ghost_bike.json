@@ -165,7 +165,8 @@
         "id": "<i>{inscription}</i>"
       },
       "freeform": {
-        "key": "inscription"
+        "key": "inscription",
+        "type": "text"
       },
       "id": "ghost_bike-inscription"
     },

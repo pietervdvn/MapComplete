@@ -196,7 +196,7 @@ export default class ValidatedTextField {
             "A basic string"),
         ValidatedTextField.tp(
             "text",
-            "A string, but allows input of longer strings more comfortably (a text area)",
+            "A string, but allows input of longer strings more comfortably and supports newlines (a text area)",
             undefined,
             undefined,
             undefined,
@@ -473,6 +473,9 @@ export default class ValidatedTextField {
 
 
         options.inputMode = tp.inputmode;
+        if(tp.inputmode === "text") {
+            options.htmlType = "area"
+        }
 
 
         let input: InputElement<string> = new TextField(options);
