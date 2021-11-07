@@ -7,6 +7,12 @@
     "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
     "title": "Buka Peta Karya Seni"
   },
+  "benches": {
+    "title": "Bangku"
+  },
+  "cafes_and_pubs": {
+    "title": "Kafe dan pub"
+  },
   "campersite": {
     "layers": {
       "0": {
@@ -124,25 +130,18 @@
       }
     }
   },
+  "trees": {
+    "title": "Pohon"
+  },
   "uk_addresses": {
     "description": "Berkontribusi untuk OpenStreetMap dengan mengisi informasi alamat",
     "layers": {
       "1": {
-        "description": "Alamat",
         "title": {
           "render": "Alamat yang diketahui"
         }
       }
     },
     "title": "Alamat Inggris"
-  },
-  "trees": {
-    "title": "Pohon"
-  },
-  "cafes_and_pubs": {
-    "title": "Kafe dan pub"
-  },
-  "benches": {
-    "title": "Bangku"
   }
 }

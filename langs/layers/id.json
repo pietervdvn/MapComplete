@@ -1,5 +1,6 @@
 {
   "artwork": {
+    "description": "Beragam karya seni",
     "name": "Karya seni",
     "presets": {
       "0": {
@@ -7,13 +8,9 @@
       }
     },
     "tagRenderings": {
-      "artwork-website": {
-        "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini",
-        "question": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?"
-      },
-      "artwork-wikidata": {
-        "render": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "question": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?"
+      "artwork-artist_name": {
+        "question": "Seniman mana yang menciptakan ini?",
+        "render": "Dibuat oleh {artist_name}"
       },
       "artwork-artwork_type": {
         "mappings": {
@@ -48,9 +45,13 @@
         "question": "Apa jenis karya seni ini?",
         "render": "Ini adalah {artwork_type}"
       },
-      "artwork-artist_name": {
-        "question": "Seniman mana yang menciptakan ini?",
-        "render": "Dibuat oleh {artist_name}"
+      "artwork-website": {
+        "question": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
+        "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini"
+      },
+      "artwork-wikidata": {
+        "question": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
+        "render": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
       }
     },
     "title": {
@@ -60,8 +61,7 @@
         }
       },
       "render": "Karya Seni"
-    },
-    "description": "Beragam karya seni"
+    }
   },
   "bench": {
     "name": "Bangku",
@@ -118,114 +118,20 @@
       }
     }
   },
-  "defibrillator": {
-    "tagRenderings": {
-      "defibrillator-description": {
-        "render": "Informasi tambahan: {description}"
-      }
-    }
-  },
-  "drinking_water": {
-    "name": "Air minum",
-    "presets": {
-      "0": {
-        "title": "air minum"
-      }
-    },
-    "title": {
-      "render": "Air minum"
-    }
-  },
-  "ghost_bike": {
-    "tagRenderings": {
-      "ghost_bike-inscription": {
-        "render": "<i>{inscription}</i>"
-      },
-      "ghost_bike-source": {
-        "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
-      }
-    }
-  },
-  "nature_reserve": {
-    "tagRenderings": {
-      "Email": {
-        "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-      },
-      "phone": {
-        "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-      }
-    }
-  },
-  "playground": {
-    "tagRenderings": {
-      "playground-email": {
-        "render": "<a href='mailto:{email}'>{email}</a>"
-      },
-      "playground-phone": {
-        "render": "<a href='tel:{phone}'>{phone}</a>"
-      }
-    }
-  },
-  "shops": {
-    "tagRenderings": {
-      "shops-email": {
-        "render": "<a href='mailto:{email}'>{email}</a>"
-      },
-      "shops-phone": {
-        "render": "<a href='tel:{phone}'>{phone}</a>"
-      },
-      "shops-shop": {
-        "mappings": {
-          "5": {
-            "then": "Bengkel Mobil"
-          }
-        }
-      },
-      "shops-website": {
-        "render": "<a href='{website}'>{website}</a>"
-      }
-    }
-  },
-  "tree_node": {
-    "presets": {
-      "2": {
-        "title": "Pohon"
-      }
-    },
-    "tagRenderings": {
-      "tree_node-name": {
-        "render": "Nama: {name}"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "<i>{name}</i>"
-        }
-      }
-    }
-  },
-  "viewpoint": {
-    "name": "Sudut pandang",
-    "presets": {
-      "0": {
-        "title": "Sudut pandang"
-      }
-    },
-    "tagRenderings": {
-      "viewpoint-description": {
-        "question": "Apakah Anda ingin menambahkan deskripsi?"
-      }
-    },
-    "title": {
-      "render": "Sudut pandang"
-    }
-  },
-  "watermill": {
-    "name": "Kincir Air"
-  },
   "cycleways_and_roads": {
     "tagRenderings": {
+      "Maxspeed (for road)": {
+        "mappings": {
+          "3": {
+            "then": "Kecepatan maksimum 70 km/jam"
+          },
+          "4": {
+            "then": "Kecepatan maksimum 90 km/jam"
+          }
+        },
+        "question": "Berapa kecepatan maksimum di jalan ini?",
+        "render": "Kecepatan maksimum di jalan ini adalah {maxspeed} km/jam"
+      },
       "Surface of the road": {
         "mappings": {
           "1": {
@@ -347,19 +253,113 @@
             "then": "Jalur sepeda wajib <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
           }
         }
-      },
-      "Maxspeed (for road)": {
-        "mappings": {
-          "3": {
-            "then": "Kecepatan maksimum 70 km/jam"
-          },
-          "4": {
-            "then": "Kecepatan maksimum 90 km/jam"
-          }
-        },
-        "question": "Berapa kecepatan maksimum di jalan ini?",
-        "render": "Kecepatan maksimum di jalan ini adalah {maxspeed} km/jam"
       }
     }
+  },
+  "defibrillator": {
+    "tagRenderings": {
+      "defibrillator-description": {
+        "render": "Informasi tambahan: {description}"
+      }
+    }
+  },
+  "drinking_water": {
+    "name": "Air minum",
+    "presets": {
+      "0": {
+        "title": "air minum"
+      }
+    },
+    "title": {
+      "render": "Air minum"
+    }
+  },
+  "ghost_bike": {
+    "tagRenderings": {
+      "ghost_bike-inscription": {
+        "render": "<i>{inscription}</i>"
+      },
+      "ghost_bike-source": {
+        "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+      }
+    }
+  },
+  "nature_reserve": {
+    "tagRenderings": {
+      "Email": {
+        "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+      },
+      "phone": {
+        "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+      }
+    }
+  },
+  "playground": {
+    "tagRenderings": {
+      "playground-email": {
+        "render": "<a href='mailto:{email}'>{email}</a>"
+      },
+      "playground-phone": {
+        "render": "<a href='tel:{phone}'>{phone}</a>"
+      }
+    }
+  },
+  "shops": {
+    "tagRenderings": {
+      "shops-email": {
+        "render": "<a href='mailto:{email}'>{email}</a>"
+      },
+      "shops-phone": {
+        "render": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "shops-shop": {
+        "mappings": {
+          "5": {
+            "then": "Bengkel Mobil"
+          }
+        }
+      },
+      "shops-website": {
+        "render": "<a href='{website}'>{website}</a>"
+      }
+    }
+  },
+  "tree_node": {
+    "presets": {
+      "2": {
+        "title": "Pohon"
+      }
+    },
+    "tagRenderings": {
+      "tree_node-name": {
+        "render": "Nama: {name}"
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "<i>{name}</i>"
+        }
+      }
+    }
+  },
+  "viewpoint": {
+    "name": "Sudut pandang",
+    "presets": {
+      "0": {
+        "title": "Sudut pandang"
+      }
+    },
+    "tagRenderings": {
+      "viewpoint-description": {
+        "question": "Apakah Anda ingin menambahkan deskripsi?"
+      }
+    },
+    "title": {
+      "render": "Sudut pandang"
+    }
+  },
+  "watermill": {
+    "name": "Kincir Air"
   }
 }

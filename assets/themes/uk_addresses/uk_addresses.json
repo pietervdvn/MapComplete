@@ -3,7 +3,8 @@
   "title": {
     "en": "UK Addresses",
     "de": "Adressen in Großbritannien",
-    "it": "Indirizzi UK"
+    "it": "Indirizzi UK",
+    "id": "Alamat Inggris"
   },
   "shortDescription": {
     "en": "Help to build an open dataset of UK addresses",
@@ -14,14 +15,15 @@
     "en": "Contribute to OpenStreetMap by filling out address information",
     "nl": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
     "de": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
-    "it": "Contribuisci a OpenStreetMap inserendo le informazioni sull’indirizzo"
+    "it": "Contribuisci a OpenStreetMap inserendo le informazioni sull’indirizzo",
+    "id": "Berkontribusi untuk OpenStreetMap dengan mengisi informasi alamat"
   },
   "language": [
     "en",
     "de",
     "it",
-    "nl",
-    "nb_NO"
+    "id",
+    "nl"
   ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
@@ -90,12 +92,17 @@
       "name": "Addresses to check",
       "minzoom": 14,
       "title": {
-        "render": "Address to be determined"
+        "render": {
+          "en": "Address to be determined",
+          "id": "Alamat yang diketahui"
+        }
       },
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation",
-          "render": "There probably is an address here"
+          "render": {
+            "en": "There probably is an address here"
+          }
         },
         {
           "id": "uk_addresses_embedding_outline",
@@ -103,11 +110,15 @@
           "mappings": [
             {
               "if": "_embedding_object:id=true",
-              "then": "The INSPIRE-polygon containing this point has at least one address contained"
+              "then": {
+                "en": "The INSPIRE-polygon containing this point has at least one address contained"
+              }
             },
             {
               "if": "_embedding_object:id=false",
-              "then": "The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
+              "then": {
+                "en":"The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
+              }
             }
           ],
           "condition": "_embedding_object:id~*"
@@ -172,7 +183,8 @@
             "point"
           ]
         }
-      ]
+      ],
+      "description": "Alamat"
     },
     {
       "id": "addresses",
