@@ -133,11 +133,11 @@
             },
             "Space between barrier (cyclebarrier)": {
                 "question": "How much space is there between the barriers (along the length of the road)?",
-                "render": "Space between barriers (along the length of the road): {width:separation} m"
+                "render": "Space between barriers (along the length of the road): {spacing} m"
             },
             "Width of opening (cyclebarrier)": {
                 "question": "How wide is the smallest opening next to the barriers?",
-                "render": "Width of opening: {width:opening} m"
+                "render": "Width of opening: {opening} m"
             },
             "bicycle=yes/no": {
                 "mappings": {
