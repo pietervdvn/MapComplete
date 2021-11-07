@@ -8,9 +8,9 @@ import FeatureSource from "../FeatureSource/FeatureSource";
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
 
 export default class GeoLocationHandler extends VariableUiElement {
-    
-    public readonly currentLocation : FeatureSource
-    
+
+    public readonly currentLocation: FeatureSource
+
     /**
      * Wether or not the geolocation is active, aka the user requested the current location
      * @private
@@ -182,25 +182,25 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
         })
 
-        this.currentLocation  = new StaticFeatureSource([], false)
+        this.currentLocation = new StaticFeatureSource([], false)
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
 
             const feature = {
                 "type": "Feature",
                 properties: {
-                    "user:location":"yes",
-                    "accuracy":location.accuracy,
-                    "speed":location.speed,
+                    "user:location": "yes",
+                    "accuracy": location.accuracy,
+                    "speed": location.speed,
                 },
-                geometry:{
-                    type:"Point",
+                geometry: {
+                    type: "Point",
                     coordinates: [location.longitude, location.latitude],
                 }
             }
-            
+
             self.currentLocation.features.setData([{feature, freshness: new Date()}])
-            
+
             const timeSinceRequest =
                 (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
             if (timeSinceRequest < 30) {
@@ -210,7 +210,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
 
         });
-  
+
     }
 
     private init(askPermission: boolean, zoomToLocation: boolean) {
@@ -279,7 +279,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             );
         } else {
             const currentZoom = this._leafletMap.data.getZoom()
-            
+
             this._leafletMap.data.setView([location.latitude, location.longitude], Math.max(targetZoom ?? 0, currentZoom));
         }
     }

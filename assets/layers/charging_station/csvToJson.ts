@@ -115,7 +115,6 @@ function run(file, protojson) {
         }
 
 
-
         overview_question_answers.push(json)
 
         // We add a second time for any amount to trigger a visualisation; but this is not an answer option

@@ -9,16 +9,16 @@ export class AllKnownLayouts {
     public static allKnownLayouts: Map<string, LayoutConfig> = AllKnownLayouts.AllLayouts();
     public static layoutsList: LayoutConfig[] = AllKnownLayouts.GenerateOrderedList(AllKnownLayouts.allKnownLayouts);
 
-    public static AllPublicLayers(){
-        const allLayers : LayerConfig[] = []
+    public static AllPublicLayers() {
+        const allLayers: LayerConfig[] = []
         const seendIds = new Set<string>()
         const publicLayouts = AllKnownLayouts.layoutsList.filter(l => !l.hideFromOverview)
         for (const layout of publicLayouts) {
-            if(layout.hideFromOverview){
+            if (layout.hideFromOverview) {
                 continue
             }
             for (const layer of layout.layers) {
-                if(seendIds.has(layer.id)){
+                if (seendIds.has(layer.id)) {
                     continue
                 }
                 seendIds.add(layer.id)
@@ -28,7 +28,7 @@ export class AllKnownLayouts {
         }
         return allLayers
     }
-    
+
     private static GenerateOrderedList(allKnownLayouts: Map<string, LayoutConfig>): LayoutConfig[] {
         const keys = ["personal", "cyclofix", "hailhydrant", "bookcases", "toilets", "aed"]
         const list = []

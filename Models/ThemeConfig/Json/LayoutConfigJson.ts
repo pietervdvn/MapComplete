@@ -1,4 +1,3 @@
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {LayerConfigJson} from "./LayerConfigJson";
 import TilesourceConfigJson from "./TilesourceConfigJson";
 
@@ -15,7 +14,7 @@ import TilesourceConfigJson from "./TilesourceConfigJson";
  * General remark: a type (string | any) indicates either a fixed or a translatable string.
  */
 export interface LayoutConfigJson {
-   
+
     /**
      * The id of this layout.
      *
@@ -216,7 +215,7 @@ export interface LayoutConfigJson {
          */
         maxZoom?: number,
         /**
-         * The number of elements per tile needed to start clustering 
+         * The number of elements per tile needed to start clustering
          * If clustering is defined, defaults to 25
          */
         minNeededElements?: number

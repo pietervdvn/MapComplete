@@ -27,14 +27,14 @@ export class TagUtils {
         return properties;
     }
 
-    static changeAsProperties(kvs : {k: string, v: string}[]): any {
+    static changeAsProperties(kvs: { k: string, v: string }[]): any {
         const tags = {}
         for (const kv of kvs) {
             tags[kv.k] = kv.v
         }
         return tags
     }
-    
+
     /**
      * Given two hashes of {key --> values[]}, makes sure that every neededTag is present in availableTags
      */

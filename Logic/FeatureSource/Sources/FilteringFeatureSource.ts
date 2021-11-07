@@ -18,6 +18,8 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         locationControl: UIEventSource<{ zoom: number }>; selectedElement: UIEventSource<any>,
         allElements: ElementStorage
     };
+    private readonly _alreadyRegistered = new Set<UIEventSource<any>>();
+    private readonly _is_dirty = new UIEventSource(false)
 
     constructor(
         state: {
@@ -53,24 +55,6 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         })
 
         this.update();
-    }
-
-    private readonly _alreadyRegistered = new Set<UIEventSource<any>>();
-    private readonly _is_dirty = new UIEventSource(false)
-
-    private registerCallback(feature: any, layer: LayerConfig) {
-        const src = this.state.allElements.addOrGetElement(feature)
-        if (this._alreadyRegistered.has(src)) {
-            return
-        }
-        this._alreadyRegistered.add(src)
-        if (layer.isShown !== undefined) {
-
-            const self = this;
-            src.map(tags => layer.isShown?.GetRenderValue(tags, "yes").txt).addCallbackAndRunD(isShown => {
-                self._is_dirty.setData(true)
-            })
-        }
     }
 
     public update() {
@@ -114,6 +98,21 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
 
         this.features.setData(newFeatures);
         this._is_dirty.setData(false)
+    }
+
+    private registerCallback(feature: any, layer: LayerConfig) {
+        const src = this.state.allElements.addOrGetElement(feature)
+        if (this._alreadyRegistered.has(src)) {
+            return
+        }
+        this._alreadyRegistered.add(src)
+        if (layer.isShown !== undefined) {
+
+            const self = this;
+            src.map(tags => layer.isShown?.GetRenderValue(tags, "yes").txt).addCallbackAndRunD(isShown => {
+                self._is_dirty.setData(true)
+            })
+        }
     }
 
 }

@@ -413,7 +413,12 @@
         }
       ],
       "condition": {
-        "or": ["maxstay~*","motorcar=yes","hgv=yes","bus=yes"]
+        "or": [
+          "maxstay~*",
+          "motorcar=yes",
+          "hgv=yes",
+          "bus=yes"
+        ]
       }
     },
     {
@@ -497,7 +502,8 @@
         "nl": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?"
       },
       "render": {
-        "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>", "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
+        "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
+        "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -548,8 +554,8 @@
       "freeform": {
         "key": "ref"
       },
-        "#": "Only asked if part of a bigger network. Small operators typically don't have a reference number",
-      "condition":"network!="
+      "#": "Only asked if part of a bigger network. Small operators typically don't have a reference number",
+      "condition": "network!="
     },
     {
       "id": "Operational status",
@@ -589,7 +595,7 @@
           }
         },
         {
-          "if":{
+          "if": {
             "and": [
               "planned:amenity=",
               "construction:amenity=charging_station",

@@ -16,13 +16,13 @@ export interface ChangeDescription {
         /**
          * The type of the change
          */
-        changeType:  "answer" | "create" | "split" | "delete" | "move" | "import" | string | null
+        changeType: "answer" | "create" | "split" | "delete" | "move" | "import" | string | null
         /**
          * THe motivation for the change, e.g. 'deleted because does not exist anymore'
          */
         specialMotivation?: string
     },
-    
+
     /**
      * Identifier of the object
      */
@@ -32,11 +32,11 @@ export interface ChangeDescription {
      * Negative for new objects
      */
     id: number,
-    
+
     /**
      * All changes to tags
      * v = "" or v = undefined to erase this tag
-     * 
+     *
      * Note that this list will only contain the _changes_ to the tags, not the full set of tags
      */
     tags?: { k: string, v: string }[],
@@ -65,9 +65,9 @@ export interface ChangeDescription {
     doDelete?: boolean
 }
 
-export class ChangeDescriptionTools{
-    
-    public static getGeojsonGeometry(change: ChangeDescription): any{
+export class ChangeDescriptionTools {
+
+    public static getGeojsonGeometry(change: ChangeDescription): any {
         switch (change.type) {
             case "node":
                 const n = new OsmNode(change.id)

@@ -19,9 +19,9 @@ export default class AllImageProviders {
         new GenericImageProvider(
             [].concat(...Imgur.defaultValuePrefix, ...WikimediaImageProvider.commonsPrefixes, ...Mapillary.valuePrefixes)
         )
-            
+
     ]
-    
+
     public static defaultKeys = [].concat(AllImageProviders.ImageAttributionSource.map(provider => provider.defaultKeyPrefixes))
 
 
@@ -32,7 +32,7 @@ export default class AllImageProviders {
             return undefined;
         }
 
-        const cacheKey = tags.data.id+tagKey
+        const cacheKey = tags.data.id + tagKey
         const cached = this._cache.get(cacheKey)
         if (cached !== undefined) {
             return cached
@@ -43,22 +43,22 @@ export default class AllImageProviders {
         this._cache.set(cacheKey, source)
         const allSources = []
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
-            
+
             let prefixes = imageProvider.defaultKeyPrefixes
-            if(tagKey !== undefined){
+            if (tagKey !== undefined) {
                 prefixes = tagKey
             }
-            
+
             const singleSource = imageProvider.GetRelevantUrls(tags, {
                 prefixes: prefixes
             })
             allSources.push(singleSource)
             singleSource.addCallbackAndRunD(_ => {
-                const all : ProvidedImage[] = [].concat(...allSources.map(source => source.data))
+                const all: ProvidedImage[] = [].concat(...allSources.map(source => source.data))
                 const uniq = []
                 const seen = new Set<string>()
                 for (const img of all) {
-                    if(seen.has(img.url)){
+                    if (seen.has(img.url)) {
                         continue
                     }
                     seen.add(img.url)

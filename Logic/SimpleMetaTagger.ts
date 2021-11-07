@@ -49,6 +49,8 @@ export default class SimpleMetaTagger {
             return true;
         }
     )
+    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTagger.metatags.filter(tagger => tagger.isLazy)
+        .map(tagger => tagger.keys));
     private static latlon = new SimpleMetaTagger({
             keys: ["_lat", "_lon"],
             doc: "The latitude and longitude of the point (or centerpoint in the case of a way/area)"
@@ -78,83 +80,6 @@ export default class SimpleMetaTagger {
             return true;
         }
     )
-
-    /**
-     * Edits the given object to rewrite 'both'-tagging into a 'left-right' tagging scheme.
-     * These changes are performed in-place.
-     * 
-     * Returns 'true' is at least one change has been made
-     * @param tags
-     */
-    public static removeBothTagging(tags: any): boolean{
-        let somethingChanged = false
-        /**
-         * Sets the key onto the properties (but doesn't overwrite if already existing)
-         */
-        function set(k, value) {
-            if (tags[k] === undefined || tags[k] === "") {
-                tags[k] = value
-                somethingChanged = true
-            }
-        }
-
-        if (tags["sidewalk"]) {
-
-            const v = tags["sidewalk"]
-            switch (v) {
-                case "none":
-                case "no":
-                    set("sidewalk:left", "no");
-                    set("sidewalk:right", "no");
-                    break
-                case "both":
-                    set("sidewalk:left", "yes");
-                    set("sidewalk:right", "yes");
-                    break;
-                case "left":
-                    set("sidewalk:left", "yes");
-                    set("sidewalk:right", "no");
-                    break;
-                case "right":
-                    set("sidewalk:left", "no");
-                    set("sidewalk:right", "yes");
-                    break;
-                default:
-                    set("sidewalk:left", v);
-                    set("sidewalk:right", v);
-                    break;
-            }
-            delete tags["sidewalk"]
-            somethingChanged = true
-        }
-
-
-        const regex = /\([^:]*\):both:\(.*\)/
-        for (const key in tags) {
-            const v = tags[key]
-            if (key.endsWith(":both")) {
-                const strippedKey = key.substring(0, key.length - ":both".length)
-                set(strippedKey + ":left", v)
-                set(strippedKey + ":right", v)
-                delete tags[key]
-                continue
-            }
-
-            const match = key.match(regex)
-            if (match !== null) {
-                const strippedKey = match[1]
-                const property = match[1]
-                set(strippedKey + ":left:" + property, v)
-                set(strippedKey + ":right:" + property, v)
-                console.log("Left-right rewritten " + key)
-                delete tags[key]
-            }
-        }
-
-
-        return somethingChanged
-    }
-    
     private static noBothButLeftRight = new SimpleMetaTagger(
         {
             keys: ["sidewalk:left", "sidewalk:right", "generic_key:left:property", "generic_key:right:property"],
@@ -163,11 +88,11 @@ export default class SimpleMetaTagger {
             cleanupRetagger: true
         },
         ((feature, state, layer) => {
-            
-            if(!layer.lineRendering.some(lr => lr.leftRightSensitive)){
+
+            if (!layer.lineRendering.some(lr => lr.leftRightSensitive)) {
                 return;
             }
-            
+
             return SimpleMetaTagger.removeBothTagging(feature.properties)
         })
     )
@@ -451,9 +376,6 @@ export default class SimpleMetaTagger {
         SimpleMetaTagger.noBothButLeftRight
 
     ];
-    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTagger.metatags.filter(tagger => tagger.isLazy)
-        .map(tagger => tagger.keys));
-
     public readonly keys: string[];
     public readonly doc: string;
     public readonly isLazy: boolean;
@@ -479,6 +401,83 @@ export default class SimpleMetaTagger {
                 }
             }
         }
+    }
+
+    /**
+     * Edits the given object to rewrite 'both'-tagging into a 'left-right' tagging scheme.
+     * These changes are performed in-place.
+     *
+     * Returns 'true' is at least one change has been made
+     * @param tags
+     */
+    public static removeBothTagging(tags: any): boolean {
+        let somethingChanged = false
+
+        /**
+         * Sets the key onto the properties (but doesn't overwrite if already existing)
+         */
+        function set(k, value) {
+            if (tags[k] === undefined || tags[k] === "") {
+                tags[k] = value
+                somethingChanged = true
+            }
+        }
+
+        if (tags["sidewalk"]) {
+
+            const v = tags["sidewalk"]
+            switch (v) {
+                case "none":
+                case "no":
+                    set("sidewalk:left", "no");
+                    set("sidewalk:right", "no");
+                    break
+                case "both":
+                    set("sidewalk:left", "yes");
+                    set("sidewalk:right", "yes");
+                    break;
+                case "left":
+                    set("sidewalk:left", "yes");
+                    set("sidewalk:right", "no");
+                    break;
+                case "right":
+                    set("sidewalk:left", "no");
+                    set("sidewalk:right", "yes");
+                    break;
+                default:
+                    set("sidewalk:left", v);
+                    set("sidewalk:right", v);
+                    break;
+            }
+            delete tags["sidewalk"]
+            somethingChanged = true
+        }
+
+
+        const regex = /\([^:]*\):both:\(.*\)/
+        for (const key in tags) {
+            const v = tags[key]
+            if (key.endsWith(":both")) {
+                const strippedKey = key.substring(0, key.length - ":both".length)
+                set(strippedKey + ":left", v)
+                set(strippedKey + ":right", v)
+                delete tags[key]
+                continue
+            }
+
+            const match = key.match(regex)
+            if (match !== null) {
+                const strippedKey = match[1]
+                const property = match[1]
+                set(strippedKey + ":left:" + property, v)
+                set(strippedKey + ":right:" + property, v)
+                console.log("Left-right rewritten " + key)
+                delete tags[key]
+            }
+        }
+
+
+        return somethingChanged
     }
 
     public static HelpText(): BaseUIElement {

@@ -64,7 +64,7 @@ export default class UserRelatedState extends ElementsState {
 
         if (layoutToUse?.hideFromOverview) {
             this.osmConnection.isLoggedIn.addCallbackAndRunD(loggedIn => {
-                if(loggedIn){
+                if (loggedIn) {
                     this.osmConnection
                         .GetPreference("hidden-theme-" + layoutToUse?.id + "-enabled")
                         .setData("true");
@@ -129,7 +129,7 @@ export default class UserRelatedState extends ElementsState {
             }
             return [home.lon, home.lat]
         })).map(homeLonLat => {
-            if(homeLonLat === undefined){
+            if (homeLonLat === undefined) {
                 return empty
             }
             return [{
@@ -148,5 +148,5 @@ export default class UserRelatedState extends ElementsState {
 
         this.homeLocation = new StaticFeatureSource(feature, false)
     }
-    
+
 }

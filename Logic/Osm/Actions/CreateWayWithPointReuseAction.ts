@@ -163,17 +163,18 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
                 })
 
                 allChanges.push(...(await newNodeAction.CreateChangeDescriptions(changes)))
-                
+
                 nodeIdsToUse.push({
                     lat, lon,
-                    nodeId : newNodeAction.newElementIdNumber})
+                    nodeId: newNodeAction.newElementIdNumber
+                })
                 continue
-                
+
             }
-            
+
             const closestPoint = info.closebyNodes[0]
             const id = Number(closestPoint.node.properties.id.split("/")[1])
-            if(closestPoint.config.mode === "move_osm_point"){
+            if (closestPoint.config.mode === "move_osm_point") {
                 allChanges.push({
                     type: "node",
                     id,
@@ -193,9 +194,9 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
         const newWay = new CreateNewWayAction(this._tags, nodeIdsToUse, {
             theme
         })
-        
+
         allChanges.push(...(await newWay.Perform(changes)))
-        
+
         return allChanges
     }
 

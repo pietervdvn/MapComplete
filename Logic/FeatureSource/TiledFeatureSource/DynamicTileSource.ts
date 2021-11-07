@@ -9,9 +9,8 @@ import {Tiles} from "../../../Models/TileRange";
  * A tiled source which dynamically loads the required tiles at a fixed zoom level
  */
 export default class DynamicTileSource implements TileHierarchy<FeatureSourceForLayer & Tiled> {
-    private readonly _loadedTiles = new Set<number>();
-
     public readonly loadedTiles: Map<number, FeatureSourceForLayer & Tiled>;
+    private readonly _loadedTiles = new Set<number>();
 
     constructor(
         layer: FilteredLayer,
@@ -24,7 +23,7 @@ export default class DynamicTileSource implements TileHierarchy<FeatureSourceFor
     ) {
         const self = this;
 
-        this.loadedTiles = new Map<number,FeatureSourceForLayer & Tiled>()
+        this.loadedTiles = new Map<number, FeatureSourceForLayer & Tiled>()
         const neededTiles = state.locationControl.map(
             location => {
                 if (!layer.isDisplayed.data) {
@@ -54,14 +53,14 @@ export default class DynamicTileSource implements TileHierarchy<FeatureSourceFor
             , [layer.isDisplayed, state.leafletMap]).stabilized(250);
 
         neededTiles.addCallbackAndRunD(neededIndexes => {
-            console.log("Tiled geojson source ",layer.layerDef.id," needs", neededIndexes)
+            console.log("Tiled geojson source ", layer.layerDef.id, " needs", neededIndexes)
             if (neededIndexes === undefined) {
                 return;
             }
             for (const neededIndex of neededIndexes) {
                 self._loadedTiles.add(neededIndex)
                 const src = constructTile(Tiles.tile_from_index(neededIndex))
-                if(src !== undefined){
+                if (src !== undefined) {
                     self.loadedTiles.set(neededIndex, src)
                 }
             }

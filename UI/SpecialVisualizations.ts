@@ -33,13 +33,10 @@ import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import Link from "./Base/Link";
 import List from "./Base/List";
-import {OsmConnection} from "../Logic/Osm/OsmConnection";
 import {SubtleButton} from "./Base/SubtleButton";
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
 import {And} from "../Logic/Tags/And";
 import Toggle from "./Input/Toggle";
-import Img from "./Base/Img";
-import FilteredLayer from "../Models/FilteredLayer";
 import {DefaultGuiState} from "./DefaultGuiState";
 
 export interface SpecialVisualization {
@@ -568,22 +565,22 @@ export default class SpecialVisualizations {
                     }
                     const targetIdKey = args[3]
                     const t = Translations.t.general.apply_button
-                    
+
                     const tagsExplanation = new VariableUiElement(tagsToApply.map(tagsToApply => {
                             const tagsStr = tagsToApply.map(t => t.asHumanString(false, true)).join("&");
                             let el: BaseUIElement = new FixedUiElement(tagsStr)
-                            if(targetIdKey !== undefined){
-                                 const targetId = tags.data[targetIdKey] ?? tags.data.id
-                                el = t.appliedOnAnotherObject.Subs({tags: tagsStr , id: targetId })
+                            if (targetIdKey !== undefined) {
+                                const targetId = tags.data[targetIdKey] ?? tags.data.id
+                                el = t.appliedOnAnotherObject.Subs({tags: tagsStr, id: targetId})
                             }
                             return el;
                         }
                     )).SetClass("subtle")
-                    
+
                     const applied = new UIEventSource(false)
                     const applyButton = new SubtleButton(image, new Combine([msg, tagsExplanation]).SetClass("flex flex-col"))
                         .onClick(() => {
-                            const targetId = tags.data[ targetIdKey] ?? tags.data.id
+                            const targetId = tags.data[targetIdKey] ?? tags.data.id
                             const changeAction = new ChangeTagAction(targetId,
                                 new And(tagsToApply.data),
                                 tags.data, // We pass in the tags of the selected element, not the tags of the target element!
@@ -596,11 +593,11 @@ export default class SpecialVisualizations {
                             applied.setData(true)
                         })
 
-                    
+
                     return new Toggle(
                         new Toggle(
-                         t.isApplied.SetClass("thanks"),   
-                        applyButton,
+                            t.isApplied.SetClass("thanks"),
+                            applyButton,
                             applied
                         )
                         , undefined, state.osmConnection.isLoggedIn)

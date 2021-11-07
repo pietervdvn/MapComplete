@@ -53,7 +53,7 @@ export default class ScriptUtils {
             try {
                 headers = headers ?? {}
                 headers.accept = "application/json"
-                console.log("ScriptUtils.DownloadJson(", url.substring(0,40), url.length > 40 ? "...":"" ,")")
+                console.log("ScriptUtils.DownloadJson(", url.substring(0, 40), url.length > 40 ? "..." : "", ")")
                 const urlObj = new URL(url)
                 https.get({
                     host: urlObj.host,

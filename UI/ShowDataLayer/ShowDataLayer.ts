@@ -1,4 +1,3 @@
-
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
@@ -20,6 +19,7 @@ We don't actually import it here. It is imported in the 'MinimapImplementation'-
  */
 export default class ShowDataLayer {
 
+    private static dataLayerIds = 0
     private readonly _leafletMap: UIEventSource<L.Map>;
     private readonly _enablePopups: boolean;
     private readonly _features: RenderingMultiPlexerFeatureSource
@@ -30,7 +30,6 @@ export default class ShowDataLayer {
     private _cleanCount = 0;
     private geoLayer = undefined;
     private isDirty = false;
-
     /**
      * If the selected element triggers, this is used to lookup the correct layer and to open the popup
      * Used to avoid a lot of callbacks on the selected element
@@ -39,9 +38,7 @@ export default class ShowDataLayer {
      * @private
      */
     private readonly leafletLayersPerId = new Map<string, { feature: any, leafletlayer: any }>()
-
     private readonly showDataLayerid: number;
-    private static dataLayerIds = 0
 
     constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
         this._leafletMap = options.leafletMap;
@@ -161,24 +158,24 @@ export default class ShowDataLayer {
                     const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
                     let offsettedLine;
                     tagsSource
-                         .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags))
+                        .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags))
                         .withEqualityStabilized((a, b) => {
-                            if(a === b){
+                            if (a === b) {
                                 return true
                             }
-                            if(a === undefined || b === undefined){
+                            if (a === undefined || b === undefined) {
                                 return false
                             }
                             return a.offset === b.offset && a.color === b.color && a.weight === b.weight && a.dashArray === b.dashArray
                         })
                         .addCallbackAndRunD(lineStyle => {
-                        if (offsettedLine !== undefined) {
-                            self.geoLayer.removeLayer(offsettedLine)
-                        }
-                        offsettedLine = L.polyline(coords, lineStyle);
-                        this.postProcessFeature(feat, offsettedLine)
-                        offsettedLine.addTo(this.geoLayer)
-                    })
+                            if (offsettedLine !== undefined) {
+                                self.geoLayer.removeLayer(offsettedLine)
+                            }
+                            offsettedLine = L.polyline(coords, lineStyle);
+                            this.postProcessFeature(feat, offsettedLine)
+                            offsettedLine.addTo(this.geoLayer)
+                        })
                 } else {
                     this.geoLayer.addData(feat);
                 }
@@ -192,7 +189,7 @@ export default class ShowDataLayer {
                 const bounds = this.geoLayer.getBounds()
                 mp.fitBounds(bounds, {animate: false})
             } catch (e) {
-                console.debug("Invalid bounds",e)
+                console.debug("Invalid bounds", e)
             }
         }
 
@@ -292,7 +289,7 @@ export default class ShowDataLayer {
             }
 
         });
-        
+
 
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(feature.properties.id + feature.geometry.type, {

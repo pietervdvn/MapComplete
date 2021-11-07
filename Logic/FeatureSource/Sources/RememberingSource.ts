@@ -6,19 +6,19 @@ import FeatureSource, {Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
 import {BBox} from "../../BBox";
 
-export default class RememberingSource implements FeatureSource , Tiled{
+export default class RememberingSource implements FeatureSource, Tiled {
 
     public readonly features: UIEventSource<{ feature: any, freshness: Date }[]>;
     public readonly name;
-    public readonly  tileIndex : number
-    public  readonly  bbox : BBox
-    
+    public readonly tileIndex: number
+    public readonly bbox: BBox
+
     constructor(source: FeatureSource & Tiled) {
         const self = this;
         this.name = "RememberingSource of " + source.name;
-        this.tileIndex=  source.tileIndex
+        this.tileIndex = source.tileIndex
         this.bbox = source.bbox;
-        
+
         const empty = [];
         this.features = source.features.map(features => {
             const oldFeatures = self.features?.data ?? empty;

@@ -129,7 +129,7 @@ export default class FeaturePipeline {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
             const srcFiltered =
                 new FilteringFeatureSource(state, src.tileIndex,
-                        new ChangeGeometryApplicator(src, state.changes)
+                    new ChangeGeometryApplicator(src, state.changes)
                 )
 
             handleFeatureSource(srcFiltered)
@@ -147,7 +147,7 @@ export default class FeaturePipeline {
 
             this.freshnesses.set(id, new TileFreshnessCalculator())
 
-            if(id === "type_node"){
+            if (id === "type_node") {
                 // Handles by the 'FullNodeDatabaseSource'
                 continue;
             }
@@ -226,15 +226,15 @@ export default class FeaturePipeline {
                     self.freshnesses.get(flayer.layerDef.id).addTileLoad(tileId, new Date())
                 })
         })
-        
-        if(state.layoutToUse.trackAllNodes){
-             const fullNodeDb = new FullNodeDatabaseSource(
-                 state.filteredLayers.data.filter(l => l.layerDef.id === "type_node")[0],
-                 tile => {
-                 new RegisteringAllFromFeatureSourceActor(tile)
-                 perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
-                 tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
-             })
+
+        if (state.layoutToUse.trackAllNodes) {
+            const fullNodeDb = new FullNodeDatabaseSource(
+                state.filteredLayers.data.filter(l => l.layerDef.id === "type_node")[0],
+                tile => {
+                    new RegisteringAllFromFeatureSourceActor(tile)
+                    perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
+                    tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                })
 
             osmFeatureSource.rawDataHandlers.push((osmJson, tileId) => fullNodeDb.handleOsmJson(osmJson, tileId))
         }
@@ -297,6 +297,34 @@ export default class FeaturePipeline {
         )
 
 
+    }
+
+    public GetAllFeaturesWithin(bbox: BBox): any[][] {
+        const self = this
+        const tiles = []
+        Array.from(this.perLayerHierarchy.keys())
+            .forEach(key => tiles.push(...self.GetFeaturesWithin(key, bbox)))
+        return tiles;
+    }
+
+    public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
+        if (layerId === "*") {
+            return this.GetAllFeaturesWithin(bbox)
+        }
+        const requestedHierarchy = this.perLayerHierarchy.get(layerId)
+        if (requestedHierarchy === undefined) {
+            console.warn("Layer ", layerId, "is not defined. Try one of ", Array.from(this.perLayerHierarchy.keys()))
+            return undefined;
+        }
+        return TileHierarchyTools.getTiles(requestedHierarchy, bbox)
+            .filter(featureSource => featureSource.features?.data !== undefined)
+            .map(featureSource => featureSource.features.data.map(fs => fs.feature))
+    }
+
+    public GetTilesPerLayerWithin(bbox: BBox, handleTile: (tile: FeatureSourceForLayer & Tiled) => void) {
+        Array.from(this.perLayerHierarchy.values()).forEach(hierarchy => {
+            TileHierarchyTools.getTiles(hierarchy, bbox).forEach(handleTile)
+        })
     }
 
     private freshnessForVisibleLayers(z: number, x: number, y: number): Date {
@@ -436,34 +464,6 @@ export default class FeaturePipeline {
             })
         })
 
-    }
-
-    public GetAllFeaturesWithin(bbox: BBox): any[][] {
-        const self = this
-        const tiles = []
-        Array.from(this.perLayerHierarchy.keys())
-            .forEach(key => tiles.push(...self.GetFeaturesWithin(key, bbox)))
-        return tiles;
-    }
-
-    public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
-        if (layerId === "*") {
-            return this.GetAllFeaturesWithin(bbox)
-        }
-        const requestedHierarchy = this.perLayerHierarchy.get(layerId)
-        if (requestedHierarchy === undefined) {
-            console.warn("Layer ", layerId, "is not defined. Try one of ", Array.from(this.perLayerHierarchy.keys()))
-            return undefined;
-        }
-        return TileHierarchyTools.getTiles(requestedHierarchy, bbox)
-            .filter(featureSource => featureSource.features?.data !== undefined)
-            .map(featureSource => featureSource.features.data.map(fs => fs.feature))
-    }
-
-    public GetTilesPerLayerWithin(bbox: BBox, handleTile: (tile: FeatureSourceForLayer & Tiled) => void) {
-        Array.from(this.perLayerHierarchy.values()).forEach(hierarchy => {
-            TileHierarchyTools.getTiles(hierarchy, bbox).forEach(handleTile)
-        })
     }
 
 }

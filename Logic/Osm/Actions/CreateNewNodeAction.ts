@@ -156,7 +156,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
 
     private setElementId(id: number) {
         this.newElementIdNumber = id;
-        this.newElementId = "node/"+id
+        this.newElementId = "node/" + id
         if (!this._reusePreviouslyCreatedPoint) {
             return
         }

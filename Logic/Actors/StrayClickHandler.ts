@@ -80,6 +80,5 @@ export default class StrayClickHandler {
 
     }
 
-    
 
 }

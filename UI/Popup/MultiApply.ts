@@ -32,6 +32,7 @@ export interface MultiApplyParams {
 
 class MultiApplyExecutor {
 
+    private static executorCache = new Map<string, MultiApplyExecutor>()
     private readonly originalValues = new Map<string, string>()
     private readonly params: MultiApplyParams;
 
@@ -48,13 +49,22 @@ class MultiApplyExecutor {
             const self = this;
             const relevantValues = p.tagsSource.map(tags => {
                 const currentValues = p.keysToApply.map(key => tags[key])
-                 // By stringifying, we have a very clear ping when they changec
+                // By stringifying, we have a very clear ping when they changec
                 return JSON.stringify(currentValues);
             })
             relevantValues.addCallbackD(_ => {
                 self.applyTaggingOnOtherFeatures()
             })
         }
+    }
+
+    public static GetApplicator(id: string, params: MultiApplyParams): MultiApplyExecutor {
+        if (MultiApplyExecutor.executorCache.has(id)) {
+            return MultiApplyExecutor.executorCache.get(id)
+        }
+        const applicator = new MultiApplyExecutor(params)
+        MultiApplyExecutor.executorCache.set(id, applicator)
+        return applicator
     }
 
     public applyTaggingOnOtherFeatures() {
@@ -101,17 +111,6 @@ class MultiApplyExecutor {
                     changeType: "answer"
                 }))
         }
-    }
-
-    private static executorCache = new Map<string, MultiApplyExecutor>()
-
-    public static GetApplicator(id: string, params: MultiApplyParams): MultiApplyExecutor {
-        if (MultiApplyExecutor.executorCache.has(id)) {
-            return MultiApplyExecutor.executorCache.get(id)
-        }
-        const applicator = new MultiApplyExecutor(params)
-        MultiApplyExecutor.executorCache.set(id, applicator)
-        return applicator
     }
 
 }

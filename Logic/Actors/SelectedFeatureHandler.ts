@@ -10,7 +10,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
  * Makes sure the hash shows the selected element and vice-versa.
  */
 export default class SelectedFeatureHandler {
-    private static readonly _no_trigger_on = new Set(["welcome", "copyright", "layers", "new", "filters","", undefined])
+    private static readonly _no_trigger_on = new Set(["welcome", "copyright", "layers", "new", "filters", "", undefined])
     private readonly hash: UIEventSource<string>;
     private readonly state: {
         selectedElement: UIEventSource<any>,
@@ -88,7 +88,7 @@ export default class SelectedFeatureHandler {
         if (!(hash.startsWith("node") || hash.startsWith("way") || hash.startsWith("relation"))) {
             return;
         }
-     
+
 
         OsmObject.DownloadObjectAsync(hash).then(obj => {
 
@@ -114,7 +114,7 @@ export default class SelectedFeatureHandler {
             // Hash has been cleared - we clear the selected element
             state.selectedElement.setData(undefined);
         } else {
-            
+
             // we search the element to select
             const feature = state.allElements.ContainingFeatures.get(h)
             if (feature === undefined) {

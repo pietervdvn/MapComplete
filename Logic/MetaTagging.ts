@@ -18,7 +18,7 @@ export default class MetaTagging {
     /**
      * This method (re)calculates all metatags and calculated tags on every given object.
      * The given features should be part of the given layer
-     * 
+     *
      * Returns true if at least one feature has changed properties
      */
     public static addMetatags(features: { feature: any; freshness: Date }[],
@@ -63,15 +63,15 @@ export default class MetaTagging {
                         // All keys are already defined, we probably already ran this one
                         continue
                     }
-                    
-                    if(metatag.isLazy){
+
+                    if (metatag.isLazy) {
                         somethingChanged = true;
-                        
+
                         metatag.applyMetaTagsOnFeature(feature, freshness, layer)
-                        
-                    }else{
-                        
-                    
+
+                    } else {
+
+
                         const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness, layer)
                         /* Note that the expression:
                         * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
@@ -146,12 +146,13 @@ export default class MetaTagging {
                                 }
                             }
                         }
-                        
-                    }} )
+
+                    }
+                })
 
             }
-            
-            
+
+
             functions.push(f)
         }
         return functions;

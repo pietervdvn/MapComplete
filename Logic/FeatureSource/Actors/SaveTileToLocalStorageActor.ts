@@ -39,7 +39,7 @@ export default class SaveTileToLocalStorageActor {
         }
     }
 
-   public static poison(layers: string[], lon: number, lat: number) {
+    public static poison(layers: string[], lon: number, lat: number) {
         for (let z = 0; z < 25; z++) {
 
             const {x, y} = Tiles.embedded_tile(lat, lon, z)

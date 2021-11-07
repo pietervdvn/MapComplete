@@ -8,6 +8,7 @@ export default class ContributorCount {
 
     public readonly Contributors: UIEventSource<Map<string, number>> = new UIEventSource<Map<string, number>>(new Map<string, number>());
     private readonly state: { featurePipeline: FeaturePipeline, currentBounds: UIEventSource<BBox>, locationControl: UIEventSource<Loc> };
+    private lastUpdate: Date = undefined;
 
     constructor(state: { featurePipeline: FeaturePipeline, currentBounds: UIEventSource<BBox>, locationControl: UIEventSource<Loc> }) {
         this.state = state;
@@ -16,15 +17,13 @@ export default class ContributorCount {
             self.update(bbox)
         })
         state.featurePipeline.runningQuery.addCallbackAndRun(
-            _ =>   self.update(state.currentBounds.data)
+            _ => self.update(state.currentBounds.data)
         )
-      
+
     }
 
-    private lastUpdate: Date = undefined;
-
     private update(bbox: BBox) {
-        if(bbox === undefined){
+        if (bbox === undefined) {
             return;
         }
         const now = new Date();

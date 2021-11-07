@@ -64,14 +64,14 @@ export interface LayerConfigJson {
      * NOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
      *  While still supported, this is considered deprecated
      */
-    source: ({ osmTags: AndOrTagConfigJson | string, overpassScript?: string  } |
+    source: ({ osmTags: AndOrTagConfigJson | string, overpassScript?: string } |
         { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean, mercatorCrs?: boolean }) & ({
         /**
          * The maximum amount of seconds that a tile is allowed to linger in the cache
          */
         maxCacheAge?: number
     })
-    
+
     /**
      *
      * A list of extra tags to calculate, specified as "keyToAssignTo=javascript-expression".
@@ -93,8 +93,8 @@ export interface LayerConfigJson {
 
     /**
      * This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
-     * This is useful to hide certain features from view. 
-     * 
+     * This is useful to hide certain features from view.
+     *
      * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
      * This implies that it is not possible to hide a feature after a tagging change
      *
@@ -207,15 +207,13 @@ export interface LayerConfigJson {
      * This is mainly create questions for a 'left' and a 'right' side of the road.
      * These will be grouped and questions will be asked together
      */
-    tagRenderings?: (string | {builtin: string, override: any} | TagRenderingConfigJson | {
+    tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson | {
         rewrite: {
             sourceString: string,
             into: string[]
         }[],
-        renderings: (string | {builtin: string, override: any} | TagRenderingConfigJson)[]
+        renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[]
     }) [],
-    
-    
 
 
     /**
@@ -273,15 +271,15 @@ export interface LayerConfigJson {
 
     /**
      * Indicates if a point can be moved and configures the modalities.
-     * 
+     *
      * A feature can be moved by MapComplete if:
-     * 
+     *
      * - It is a point
      * - The point is _not_ part of a way or a a relation.
-     * 
+     *
      * Off by default. Can be enabled by setting this flag or by configuring.
      */
-    allowMove?: boolean | MoveConfigJson 
+    allowMove?: boolean | MoveConfigJson
 
     /**
      * IF set, a 'split this road' button is shown

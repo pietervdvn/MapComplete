@@ -15,9 +15,9 @@ export class FixedInputElement<T> extends InputElement<T> {
                 comparator: ((t0: T, t1: T) => boolean) = undefined) {
         super();
         this._comparator = comparator ?? ((t0, t1) => t0 == t1);
-        if(value instanceof UIEventSource){
+        if (value instanceof UIEventSource) {
             this.value = value
-        }else{
+        } else {
             this.value = new UIEventSource<T>(value);
         }
 

@@ -264,7 +264,7 @@ export default class LayerConfig extends WithContextLoader {
         }
     }
 
-    public defaultIcon() : BaseUIElement | undefined{
+    public defaultIcon(): BaseUIElement | undefined {
         const mapRendering = this.mapRendering.filter(r => r.location.has("point"))[0]
         if (mapRendering === undefined) {
             return undefined

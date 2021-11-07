@@ -6,7 +6,7 @@ import {VariableUiElement} from "./VariableUIElement";
 
 export class TabbedComponent extends Combine {
 
-    constructor(elements: { header: BaseUIElement | string, content: BaseUIElement | string }[], 
+    constructor(elements: { header: BaseUIElement | string, content: BaseUIElement | string }[],
                 openedTab: (UIEventSource<number> | number) = 0,
                 options?: {
                     leftOfHeader?: BaseUIElement
@@ -15,13 +15,13 @@ export class TabbedComponent extends Combine {
 
         const openedTabSrc = typeof (openedTab) === "number" ? new UIEventSource(openedTab) : (openedTab ?? new UIEventSource<number>(0))
 
-        const tabs: BaseUIElement[] = [options?.leftOfHeader ]
+        const tabs: BaseUIElement[] = [options?.leftOfHeader]
         const contentElements: BaseUIElement[] = [];
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
             const header = Translations.W(element.header).onClick(() => openedTabSrc.setData(i))
             openedTabSrc.addCallbackAndRun(selected => {
-                if(selected >= elements.length){
+                if (selected >= elements.length) {
                     selected = 0
                 }
                 if (selected === i) {
@@ -40,7 +40,7 @@ export class TabbedComponent extends Combine {
         }
 
         const header = new Combine(tabs).SetClass("tabs-header-bar")
-        if(options?.styleHeader){
+        if (options?.styleHeader) {
             options.styleHeader(header)
         }
         const actualContent = new VariableUiElement(

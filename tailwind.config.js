@@ -21,9 +21,9 @@ module.exports = {
         }
     },
     plugins: [
-        plugin(function ({ addVariant, e }) {
-            addVariant('landscape', ({ modifySelectors, separator }) => {
-                modifySelectors(({ className }) => {
+        plugin(function ({addVariant, e}) {
+            addVariant('landscape', ({modifySelectors, separator}) => {
+                modifySelectors(({className}) => {
                     return `.${e(`landscape${separator}${className}`)}:landscape`
                 })
             })

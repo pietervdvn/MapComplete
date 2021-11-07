@@ -14,9 +14,9 @@ export default class PerLayerFeatureSourceSplitter {
     constructor(layers: UIEventSource<FilteredLayer[]>,
                 handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
                 upstream: FeatureSource,
-                options?:{
-        tileIndex?: number,
-        handleLeftovers?: (featuresWithoutLayer: any[]) => void
+                options?: {
+                    tileIndex?: number,
+                    handleLeftovers?: (featuresWithoutLayer: any[]) => void
                 }) {
 
         const knownLayers = new Map<string, FeatureSourceForLayer & Tiled>()
@@ -35,6 +35,7 @@ export default class PerLayerFeatureSourceSplitter {
 
             const featuresPerLayer = new Map<string, { feature, freshness } []>();
             const noLayerFound = []
+
             function addTo(layer: FilteredLayer, feature: { feature, freshness }) {
                 const id = layer.layerDef.id
                 const list = featuresPerLayer.get(id)
@@ -80,9 +81,9 @@ export default class PerLayerFeatureSourceSplitter {
                     featureSource.features.setData(features)
                 }
             }
-            
+
             // AT last, the leftovers are handled
-            if(options?.handleLeftovers !== undefined && noLayerFound.length > 0){
+            if (options?.handleLeftovers !== undefined && noLayerFound.length > 0) {
                 options.handleLeftovers(noLayerFound)
             }
         }

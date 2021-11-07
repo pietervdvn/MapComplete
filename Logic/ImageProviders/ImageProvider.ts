@@ -14,7 +14,7 @@ export default abstract class ImageProvider {
     public abstract readonly defaultKeyPrefixes: string[]
 
     private _cache = new Map<string, UIEventSource<LicenseInfo>>()
-    
+
     GetAttributionFor(url: string): UIEventSource<LicenseInfo> {
         const cached = this._cache.get(url);
         if (cached !== undefined) {
@@ -26,8 +26,6 @@ export default abstract class ImageProvider {
     }
 
     public abstract SourceIcon(backlinkSource?: string): BaseUIElement;
-
-    protected abstract DownloadAttribution(url: string): Promise<LicenseInfo>;
 
     /**
      * Given a properies object, maps it onto _all_ the available pictures for this imageProvider
@@ -76,5 +74,7 @@ export default abstract class ImageProvider {
     }
 
     public abstract ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]>;
+
+    protected abstract DownloadAttribution(url: string): Promise<LicenseInfo>;
 
 }

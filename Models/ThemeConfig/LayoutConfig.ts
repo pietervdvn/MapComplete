@@ -52,8 +52,8 @@ export default class LayoutConfig {
     public readonly overpassMaxZoom: number
     public readonly osmApiTileSize: number
     public readonly official: boolean;
-    public readonly trackAllNodes : boolean;
- 
+    public readonly trackAllNodes: boolean;
+
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
         this.id = json.id;
@@ -63,7 +63,7 @@ export default class LayoutConfig {
         this.version = json.version;
         this.language = [];
         this.trackAllNodes = false
-        
+
         if (typeof json.language === "string") {
             this.language = [json.language];
         } else {
@@ -87,32 +87,32 @@ export default class LayoutConfig {
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;
-        if(json.widenFactor <= 0){
-                throw "Widenfactor too small, shoud be > 0"
+        if (json.widenFactor <= 0) {
+            throw "Widenfactor too small, shoud be > 0"
         }
-        if(json.widenFactor > 20){
-            throw "Widenfactor is very big, use a value between 1 and 5 (current value is "+json.widenFactor+") at "+context
+        if (json.widenFactor > 20) {
+            throw "Widenfactor is very big, use a value between 1 and 5 (current value is " + json.widenFactor + ") at " + context
         }
-        
+
         this.widenFactor = json.widenFactor ?? 1.5;
-     
+
         this.defaultBackgroundId = json.defaultBackgroundId;
-        this.tileLayerSources = (json.tileLayerSources??[]).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
-        const layerInfo  = LayoutConfig.ExtractLayers(json, official, context);
+        this.tileLayerSources = (json.tileLayerSources ?? []).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
+        const layerInfo = LayoutConfig.ExtractLayers(json, official, context);
         this.layers = layerInfo.layers
         this.trackAllNodes = layerInfo.extractAllNodes
-        
-        
+
+
         this.clustering = {
             maxZoom: 16,
             minNeededElements: 25,
         };
-        if(json.clustering === false){
+        if (json.clustering === false) {
             this.clustering = {
                 maxZoom: 0,
                 minNeededElements: 100000,
             };
-        }else         if (json.clustering) {
+        } else if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
                 minNeededElements: json.clustering.minNeededElements ?? 25,
@@ -124,7 +124,7 @@ export default class LayoutConfig {
         if (json.hideInOverview) {
             throw "The json for " + this.id + " contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
         }
-        this.lockLocation = <[[number, number], [number, number]]> json.lockLocation ?? undefined;
+        this.lockLocation = <[[number, number], [number, number]]>json.lockLocation ?? undefined;
         this.enableUserBadge = json.enableUserBadge ?? true;
         this.enableShareScreen = json.enableShareScreen ?? true;
         this.enableMoreQuests = json.enableMoreQuests ?? true;
@@ -139,10 +139,10 @@ export default class LayoutConfig {
         this.enableIframePopout = json.enableIframePopout ?? true
         this.customCss = json.customCss;
         this.overpassUrl = Constants.defaultOverpassUrls
-        if(json.overpassUrl !== undefined){
-            if(typeof json.overpassUrl === "string"){
+        if (json.overpassUrl !== undefined) {
+            if (typeof json.overpassUrl === "string") {
                 this.overpassUrl = [json.overpassUrl]
-            }else{
+            } else {
                 this.overpassUrl = json.overpassUrl
             }
         }
@@ -152,11 +152,11 @@ export default class LayoutConfig {
 
     }
 
-    private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): {layers: LayerConfig[], extractAllNodes: boolean} {
+    private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): { layers: LayerConfig[], extractAllNodes: boolean } {
         const result: LayerConfig[] = []
         let exportAllNodes = false
         json.layers.forEach((layer, i) => {
-            
+
             if (typeof layer === "string") {
                 if (AllKnownLayers.sharedLayersJson.get(layer) !== undefined) {
                     if (json.overrideAll !== undefined) {
@@ -183,7 +183,7 @@ export default class LayoutConfig {
                 result.push(newLayer)
                 return
             }
-            
+
             // @ts-ignore
             let names = layer.builtin;
             if (typeof names === "string") {
@@ -191,11 +191,11 @@ export default class LayoutConfig {
             }
             names.forEach(name => {
 
-                if(name === "type_node"){
+                if (name === "type_node") {
                     // This is a very special layer which triggers special behaviour
                     exportAllNodes = true;
                 }
-                
+
                 const shared = AllKnownLayers.sharedLayersJson.get(name);
                 if (shared === undefined) {
                     throw `Unknown shared/builtin layer ${name} at ${context}.layers[${i}]. Available layers are ${Array.from(AllKnownLayers.sharedLayersJson.keys()).join(", ")}`;
@@ -287,8 +287,8 @@ export default class LayoutConfig {
         })
         return new LayoutConfig(JSON.parse(originalJson), false, "Layout rewriting")
     }
-    
-    public isLeftRightSensitive(){
+
+    public isLeftRightSensitive() {
         return this.layers.some(l => l.isLeftRightSensitive())
     }
 

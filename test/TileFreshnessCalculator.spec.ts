@@ -19,9 +19,9 @@ export default class TileFreshnessCalculatorSpec extends T {
                     equal(42, calc.freshnessFor(20, 266406 * 2, 175534 * 2 + 1).getTime())
                     equal(undefined, calc.freshnessFor(19, 266406, 175535))
                     equal(undefined, calc.freshnessFor(18, 266406 / 2, 175534 / 2))
-                    calc.addTileLoad(Tiles.tile_index(19, 266406, 175534+1), date)
-                    calc.addTileLoad(Tiles.tile_index(19, 266406+1, 175534), date)
-                    calc.addTileLoad(Tiles.tile_index(19, 266406+1, 175534+1), date)
+                    calc.addTileLoad(Tiles.tile_index(19, 266406, 175534 + 1), date)
+                    calc.addTileLoad(Tiles.tile_index(19, 266406 + 1, 175534), date)
+                    calc.addTileLoad(Tiles.tile_index(19, 266406 + 1, 175534 + 1), date)
                     equal(42, calc.freshnessFor(18, 266406 / 2, 175534 / 2).getTime())
                 }
             ]

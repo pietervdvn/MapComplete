@@ -64,7 +64,7 @@ export class ExtraFunction {
         },
         (params, feat) => {
             return (...layerIds: string[]) => {
-                const result : {feat:any, overlap: number}[]= []
+                const result: { feat: any, overlap: number }[] = []
 
                 const bbox = BBox.get(feat)
 
@@ -80,9 +80,9 @@ export class ExtraFunction {
                         result.push(...GeoOperations.calculateOverlap(feat, otherLayer));
                     }
                 }
-                
+
                 result.sort((a, b) => b.overlap - a.overlap)
-                
+
                 return result;
             }
         }
@@ -181,7 +181,7 @@ export class ExtraFunction {
                 }
                 try {
                     const parsed = JSON.parse(value)
-                    if(parsed === null){
+                    if (parsed === null) {
                         return undefined;
                     }
                     return parsed;

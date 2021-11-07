@@ -14,7 +14,6 @@ import {QueryParameters} from "../Web/QueryParameters";
 import * as personal from "../../assets/themes/personal/personal.json";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
-import {Coord} from "@turf/turf";
 
 /**
  * Contains all the leaflet-map related state
@@ -123,7 +122,21 @@ export default class MapState extends UserRelatedState {
         this.AddAllOverlaysToMap(this.leafletMap)
     }
 
+    public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
+        const initialized = new Set()
+        for (const overlayToggle of this.overlayToggles) {
+            new ShowOverlayLayer(overlayToggle.config, leafletMap, overlayToggle.isDisplayed)
+            initialized.add(overlayToggle.config)
+        }
 
+        for (const tileLayerSource of this.layoutToUse.tileLayerSources) {
+            if (initialized.has(tileLayerSource)) {
+                continue
+            }
+            new ShowOverlayLayer(tileLayerSource, leafletMap)
+        }
+
+    }
 
     private lockBounds() {
         const layout = this.layoutToUse;
@@ -199,22 +212,6 @@ export default class MapState extends UserRelatedState {
             flayers.push(flayer);
         }
         return new UIEventSource<FilteredLayer[]>(flayers);
-    }
-
-    public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
-        const initialized = new Set()
-        for (const overlayToggle of this.overlayToggles) {
-            new ShowOverlayLayer(overlayToggle.config, leafletMap, overlayToggle.isDisplayed)
-            initialized.add(overlayToggle.config)
-        }
-
-        for (const tileLayerSource of this.layoutToUse.tileLayerSources) {
-            if (initialized.has(tileLayerSource)) {
-                continue
-            }
-            new ShowOverlayLayer(tileLayerSource, leafletMap)
-        }
-
     }
 
 

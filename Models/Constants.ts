@@ -17,7 +17,6 @@ export default class Constants {
         // Doesn't support nwr: "https://overpass.openstreetmap.fr/api/interpreter"
     ]
 
-    
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {

@@ -1,6 +1,4 @@
 import {Utils} from "../Utils";
-
-Utils.runningFromConsole = true;
 import SpecialVisualizations from "../UI/SpecialVisualizations";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import Combine from "../UI/Base/Combine";
@@ -9,11 +7,12 @@ import ValidatedTextField from "../UI/Input/ValidatedTextField";
 import BaseUIElement from "../UI/BaseUIElement";
 import Translations from "../UI/i18n/Translations";
 import {writeFileSync} from "fs";
-import State from "../State";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import Minimap from "../UI/Base/Minimap";
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
+
+Utils.runningFromConsole = true;
 
 
 function WriteFile(filename, html: string | BaseUIElement, autogenSource: string[]): void {

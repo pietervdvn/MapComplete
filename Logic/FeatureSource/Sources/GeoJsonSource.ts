@@ -15,12 +15,10 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name;
     public readonly isOsmCache: boolean
-    private readonly seenids: Set<string> = new Set<string>()
     public readonly layer: FilteredLayer;
-
     public readonly tileIndex
     public readonly bbox;
-
+    private readonly seenids: Set<string> = new Set<string>()
     /**
      * Only used if the actual source is a tiled geojson.
      * A big feature might be contained in multiple tiles.
@@ -32,7 +30,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
     public constructor(flayer: FilteredLayer,
                        zxy?: [number, number, number],
                        options?: {
-                        featureIdBlacklist?: UIEventSource<Set<string>>
+                           featureIdBlacklist?: UIEventSource<Set<string>>
                        }) {
 
         if (flayer.layerDef.source.geojsonZoomLevel !== undefined && zxy === undefined) {
@@ -45,18 +43,18 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         if (zxy !== undefined) {
             const [z, x, y] = zxy;
             let tile_bbox = BBox.fromTile(z, x, y)
-            let bounds  : { minLat: number, maxLat: number, minLon: number, maxLon: number } = tile_bbox
-            if(this.layer.layerDef.source.mercatorCrs){
+            let bounds: { minLat: number, maxLat: number, minLon: number, maxLon: number } = tile_bbox
+            if (this.layer.layerDef.source.mercatorCrs) {
                 bounds = tile_bbox.toMercator()
             }
             url = url
                 .replace('{z}', "" + z)
                 .replace('{x}', "" + x)
                 .replace('{y}', "" + y)
-                .replace('{y_min}',""+bounds.minLat)
-                .replace('{y_max}',""+bounds.maxLat)
-                .replace('{x_min}',""+bounds.minLon)
-                .replace('{x_max}',""+bounds.maxLon)
+                .replace('{y_min}', "" + bounds.minLat)
+                .replace('{y_max}', "" + bounds.maxLat)
+                .replace('{x_min}', "" + bounds.minLon)
+                .replace('{x_max}', "" + bounds.maxLon)
 
             this.tileIndex = Tiles.tile_index(z, x, y)
             this.bbox = BBox.fromTile(z, x, y)
@@ -78,11 +76,11 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         const self = this;
         Utils.downloadJson(url)
             .then(json => {
-                if(json.features === undefined || json.features === null){
+                if (json.features === undefined || json.features === null) {
                     return;
                 }
-                
-                if(self.layer.layerDef.source.mercatorCrs){
+
+                if (self.layer.layerDef.source.mercatorCrs) {
                     json = GeoOperations.GeoJsonToWGS84(json)
                 }
 
@@ -109,8 +107,8 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                         continue;
                     }
                     self.seenids.add(props.id)
-                    
-                    if(self.featureIdBlacklist?.data?.has(props.id)){
+
+                    if (self.featureIdBlacklist?.data?.has(props.id)) {
                         continue;
                     }
 
@@ -122,7 +120,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                     newFeatures.push({feature: feature, freshness: freshness})
                 }
 
-                if ( newFeatures.length == 0) {
+                if (newFeatures.length == 0) {
                     return;
                 }
 

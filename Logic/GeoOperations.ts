@@ -3,6 +3,9 @@ import {BBox} from "./BBox";
 
 export class GeoOperations {
 
+    private static readonly _earthRadius = 6378137;
+    private static readonly _originShift = 2 * Math.PI * GeoOperations._earthRadius / 2;
+
     static surfaceAreaInSqMeters(feature: any) {
         return turf.area(feature);
     }
@@ -40,7 +43,7 @@ export class GeoOperations {
      * If 'feature' is a Polygon, overlapping points and points within the polygon will be returned
      *
      * If 'feature' is a point, it will return every feature the point is embedded in. Overlap will be undefined
-     * 
+     *
      */
     static calculateOverlap(feature: any, otherFeatures: any[]): { feat: any, overlap: number }[] {
 
@@ -237,13 +240,13 @@ export class GeoOperations {
      * @param point Point defined as [lon, lat]
      */
     public static nearestPoint(way, point: [number, number]) {
-        if(way.geometry.type === "Polygon"){
+        if (way.geometry.type === "Polygon") {
             way = {...way}
             way.geometry = {...way.geometry}
             way.geometry.type = "LineString"
             way.geometry.coordinates = way.geometry.coordinates[0]
         }
-        
+
         return turf.nearestPointOnLine(way, point, {units: "kilometers"});
     }
 
@@ -292,10 +295,6 @@ export class GeoOperations {
         return headerValuesOrdered.map(v => JSON.stringify(v)).join(",") + "\n" + lines.join("\n")
     }
 
-
-    private static readonly _earthRadius = 6378137;
-    private static readonly _originShift = 2 * Math.PI * GeoOperations._earthRadius / 2;
-
     //Converts given lat/lon in WGS84 Datum to XY in Spherical Mercator EPSG:900913
     public static ConvertWgs84To900913(lonLat: [number, number]): [number, number] {
         const lon = lonLat[0];
@@ -315,9 +314,34 @@ export class GeoOperations {
         y = 180 / Math.PI * (2 * Math.atan(Math.exp(y * Math.PI / 180)) - Math.PI / 2);
         return [x, y];
     }
-    
-    public static GeoJsonToWGS84(geojson){
+
+    public static GeoJsonToWGS84(geojson) {
         return turf.toWgs84(geojson)
+    }
+
+    /**
+     * Tries to remove points which do not contribute much to the general outline.
+     * Points for which the angle is ~ 180° are removed
+     * @param coordinates
+     * @constructor
+     */
+    public static SimplifyCoordinates(coordinates: [number, number][]) {
+        const newCoordinates = []
+        for (let i = 1; i < coordinates.length - 1; i++) {
+            const coordinate = coordinates[i];
+            const prev = coordinates[i - 1]
+            const next = coordinates[i + 1]
+            const b0 = turf.bearing(prev, coordinate, {final: true})
+            const b1 = turf.bearing(coordinate, next)
+
+            const diff = Math.abs(b1 - b0)
+            if (diff < 2) {
+                continue
+            }
+            newCoordinates.push(coordinate)
+        }
+        return newCoordinates
+
     }
 
     /**
@@ -412,31 +436,6 @@ export class GeoOperations {
         return undefined;
     }
 
-    /**
-     * Tries to remove points which do not contribute much to the general outline.
-     * Points for which the angle is ~ 180° are removed
-     * @param coordinates
-     * @constructor
-     */
-    public static SimplifyCoordinates(coordinates: [number, number][]){
-        const newCoordinates = []
-        for (let i = 1; i < coordinates.length - 1; i++){
-            const coordinate = coordinates[i];
-            const prev = coordinates[i - 1]
-            const next = coordinates[i + 1]
-            const b0 = turf.bearing(prev, coordinate, {final: true})
-            const b1 = turf.bearing(coordinate, next)
-            
-            const diff = Math.abs(b1 - b0)
-            if(diff < 2){
-                continue
-            }
-            newCoordinates.push(coordinate)
-        }
-        return newCoordinates
-
-    }
-    
 }
 
 

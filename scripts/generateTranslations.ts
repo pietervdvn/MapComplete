@@ -31,8 +31,8 @@ class TranslationPart {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue;
             }
-            if(translationsKey == "then"){
-                throw "Suspicious translation at "+context
+            if (translationsKey == "then") {
+                throw "Suspicious translation at " + context
             }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {

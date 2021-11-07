@@ -17,7 +17,7 @@ export interface TagRenderingConfigJson {
      * The first tagRendering of a group will always be a sticky element.
      */
     group?: string
-    
+
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
@@ -89,13 +89,13 @@ export interface TagRenderingConfigJson {
      * Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes
      */
     mappings?: {
-        
+
         /**
          * If this condition is met, then the text under `then` will be shown.
          * If no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.
-         * 
+         *
          * For example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}
-         * 
+         *
          * This can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}
          */
         if: AndOrTagConfigJson | string,

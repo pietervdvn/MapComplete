@@ -36,8 +36,8 @@ export default class CopyrightPanel extends Combine {
         locationControl: UIEventSource<Loc>,
         osmConnection: OsmConnection
     }, contributions: UIEventSource<Map<string, number>>) {
-        
-        const t =Translations.t.general.attribution
+
+        const t = Translations.t.general.attribution
         const layoutToUse = state.layoutToUse
         const josmState = new UIEventSource<string>(undefined)
         // Reset after 15s
@@ -53,7 +53,7 @@ export default class CopyrightPanel extends Combine {
                 newTab: true
             }),
             new SubtleButton(Svg.statistics_ui().SetStyle(iconStyle), t.openOsmcha.Subs({theme: state.layoutToUse.title}), {
-                url:  Utils.OsmChaLinkFor(31, state.layoutToUse.id),
+                url: Utils.OsmChaLinkFor(31, state.layoutToUse.id),
                 newTab: true
             }),
             new VariableUiElement(state.locationControl.map(location => {
@@ -63,42 +63,45 @@ export default class CopyrightPanel extends Combine {
 
             new VariableUiElement(state.locationControl.map(location => {
                 const mapillaryLink = `https://www.mapillary.com/app/?focus=map&lat=${location?.lat ?? 0}&lng=${location?.lon ?? 0}&z=${Math.max((location?.zoom ?? 2) - 1, 1)}`
-                return new SubtleButton(Svg.mapillary_black_ui().SetStyle(iconStyle), t.openMapillary, {url: mapillaryLink, newTab: true})
+                return new SubtleButton(Svg.mapillary_black_ui().SetStyle(iconStyle), t.openMapillary, {
+                    url: mapillaryLink,
+                    newTab: true
+                })
             })),
             new VariableUiElement(josmState.map(state => {
-                if(state === undefined){
+                if (state === undefined) {
                     return undefined
                 }
                 state = state.toUpperCase()
-                if(state === "OK"){
+                if (state === "OK") {
                     return t.josmOpened.SetClass("thanks")
                 }
                 return t.josmNotOpened.SetClass("alert")
             })),
             new Toggle(
-            new SubtleButton(Svg.josm_logo_ui().SetStyle(iconStyle) , t.editJosm).onClick(() => {
-                const bounds: any = state.currentBounds.data;
-                if (bounds === undefined) {
-                    return undefined
-                }
-                const top = bounds.getNorth();
-                const bottom = bounds.getSouth();
-                const right = bounds.getEast();
-                const left = bounds.getWest();
-                const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
-                Utils.download(josmLink).then(answer => josmState.setData(answer.replace(/\n/g, '').trim())).catch(_ => josmState.setData("ERROR"))
-            }), undefined, state.osmConnection.userDetails.map(ud => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible)),
-            
+                new SubtleButton(Svg.josm_logo_ui().SetStyle(iconStyle), t.editJosm).onClick(() => {
+                    const bounds: any = state.currentBounds.data;
+                    if (bounds === undefined) {
+                        return undefined
+                    }
+                    const top = bounds.getNorth();
+                    const bottom = bounds.getSouth();
+                    const right = bounds.getEast();
+                    const left = bounds.getWest();
+                    const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
+                    Utils.download(josmLink).then(answer => josmState.setData(answer.replace(/\n/g, '').trim())).catch(_ => josmState.setData("ERROR"))
+                }), undefined, state.osmConnection.userDetails.map(ud => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible)),
+
         ].map(button => button.SetStyle("max-height: 3rem"))
-        
+
         const iconAttributions = Utils.NoNull(Array.from(layoutToUse.ExtractImages()))
             .map(CopyrightPanel.IconAttribution)
-        
-        let maintainer  : BaseUIElement= undefined
-        if(layoutToUse.maintainer !== undefined && layoutToUse.maintainer !== "" && layoutToUse.maintainer.toLowerCase() !== "mapcomplete"){
+
+        let maintainer: BaseUIElement = undefined
+        if (layoutToUse.maintainer !== undefined && layoutToUse.maintainer !== "" && layoutToUse.maintainer.toLowerCase() !== "mapcomplete") {
             maintainer = Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.maintainer})
         }
-        
+
         super([
             Translations.t.general.attribution.attributionContent,
             maintainer,
@@ -106,7 +109,7 @@ export default class CopyrightPanel extends Combine {
             new FixedUiElement(layoutToUse.credits),
             new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.currentBounds),
             new VariableUiElement(contributions.map(contributions => {
-                if(contributions === undefined){
+                if (contributions === undefined) {
                     return ""
                 }
                 const sorted = Array.from(contributions, ([name, value]) => ({

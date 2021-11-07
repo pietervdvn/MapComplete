@@ -64,11 +64,11 @@ export class WikidataResponse {
     }
 
     static extractClaims(claimsJson: any): Map<string, Set<string>> {
-        
-       const simplified = wds.simplify.claims(claimsJson, {
+
+        const simplified = wds.simplify.claims(claimsJson, {
             timeConverter: 'simple-day'
         })
-        
+
         const claims = new Map<string, Set<string>>();
         for (const claimId in simplified) {
             const claimsList: any[] = simplified[claimId]
@@ -98,11 +98,11 @@ export class WikidataLexeme {
         for (const sense of json.senses) {
             const glosses = sense.glosses
             for (const language in glosses) {
-               let previousSenses = this.senses.get(language) 
-                if(previousSenses === undefined){
+                let previousSenses = this.senses.get(language)
+                if (previousSenses === undefined) {
                     previousSenses = ""
-                }else{
-                    previousSenses = previousSenses+"; "
+                } else {
+                    previousSenses = previousSenses + "; "
                 }
                 this.senses.set(language, previousSenses + glosses[language].value ?? "")
             }
@@ -192,7 +192,7 @@ export default class Wikidata {
         return result;
     }
 
-    
+
     public static async searchAndFetch(
         search: string,
         options?: WikidataSearchoptions
@@ -248,7 +248,7 @@ export default class Wikidata {
         for (const identifierPrefix of Wikidata._identifierPrefixes) {
             if (value.startsWith(identifierPrefix)) {
                 const trimmed = value.substring(identifierPrefix.length);
-                if(trimmed === ""){
+                if (trimmed === "") {
                     return undefined
                 }
                 const n = Number(trimmed)
@@ -266,14 +266,14 @@ export default class Wikidata {
         return undefined;
     }
 
-    public static IdToArticle(id: string){
-        if(id.startsWith("Q")){
-            return "https://wikidata.org/wiki/"+id
+    public static IdToArticle(id: string) {
+        if (id.startsWith("Q")) {
+            return "https://wikidata.org/wiki/" + id
         }
-        if(id.startsWith("L")){
-            return "https://wikidata.org/wiki/Lexeme:"+id
+        if (id.startsWith("L")) {
+            return "https://wikidata.org/wiki/Lexeme:" + id
         }
-        throw "Unknown id type: "+id
+        throw "Unknown id type: " + id
     }
 
     /**
@@ -289,7 +289,7 @@ export default class Wikidata {
 
         const url = "https://www.wikidata.org/wiki/Special:EntityData/" + id + ".json";
         const entities = (await Utils.downloadJsonCached(url, 10000)).entities
-        const firstKey = <string> Array.from(Object.keys(entities))[0] // Roundabout way to fetch the entity; it might have been a redirect
+        const firstKey = <string>Array.from(Object.keys(entities))[0] // Roundabout way to fetch the entity; it might have been a redirect
         const response = entities[firstKey]
 
         if (id.startsWith("L")) {

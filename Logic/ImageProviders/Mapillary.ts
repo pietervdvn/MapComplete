@@ -7,17 +7,16 @@ import Constants from "../../Models/Constants";
 
 export class Mapillary extends ImageProvider {
 
-    defaultKeyPrefixes = ["mapillary","image"]
-    
     public static readonly singleton = new Mapillary();
     private static readonly valuePrefix = "https://a.mapillary.com"
-    public static readonly valuePrefixes = [Mapillary.valuePrefix, "http://mapillary.com","https://mapillary.com","http://www.mapillary.com","https://www.mapillary.com"]
+    public static readonly valuePrefixes = [Mapillary.valuePrefix, "http://mapillary.com", "https://mapillary.com", "http://www.mapillary.com", "https://www.mapillary.com"]
+    defaultKeyPrefixes = ["mapillary", "image"]
 
     private static ExtractKeyFromURL(value: string, failIfNoMath = false): {
         key: string,
         isApiv4?: boolean
     } {
-        
+
         if (value.startsWith(Mapillary.valuePrefix)) {
             const key = value.substring(0, value.lastIndexOf("?")).substring(value.lastIndexOf("/") + 1)
             return {key: key, isApiv4: !isNaN(Number(key))};
@@ -43,11 +42,11 @@ export class Mapillary extends ImageProvider {
         if (matchApi !== null) {
             return {key: matchApi[1]};
         }
-        
-        if(failIfNoMath){
+
+        if (failIfNoMath) {
             return undefined;
         }
-        
+
         return {key: value, isApiv4: !isNaN(Number(value))};
     }
 
@@ -59,33 +58,6 @@ export class Mapillary extends ImageProvider {
         return [this.PrepareUrlAsync(key, value)]
     }
 
-    private async PrepareUrlAsync(key: string, value: string): Promise<ProvidedImage> {
-        const failIfNoMatch = key.indexOf("mapillary") < 0
-        const keyV = Mapillary.ExtractKeyFromURL(value, failIfNoMatch)
-        if(keyV === undefined){
-            return undefined;
-        }
-        
-        if (!keyV.isApiv4) {
-            const url = `https://images.mapillary.com/${keyV.key}/thumb-640.jpg?client_id=${Constants.mapillary_client_token_v3}`
-            return {
-                url: url,
-                provider: this,
-                key: key
-            }
-        } else {
-            const mapillaryId = keyV.key;
-            const metadataUrl = 'https://graph.mapillary.com/' + mapillaryId + '?fields=thumb_1024_url&&access_token=' + Constants.mapillary_client_token_v4;
-            const response = await Utils.downloadJson(metadataUrl)
-            const url = <string> response["thumb_1024_url"];
-            return {
-                url: url,
-                provider: this,
-                key: key
-            }
-        }
-    }
-    
     protected async DownloadAttribution(url: string): Promise<LicenseInfo> {
 
         const keyV = Mapillary.ExtractKeyFromURL(url)
@@ -109,5 +81,32 @@ export class Mapillary extends ImageProvider {
         license.attributionRequired = true;
 
         return license
+    }
+
+    private async PrepareUrlAsync(key: string, value: string): Promise<ProvidedImage> {
+        const failIfNoMatch = key.indexOf("mapillary") < 0
+        const keyV = Mapillary.ExtractKeyFromURL(value, failIfNoMatch)
+        if (keyV === undefined) {
+            return undefined;
+        }
+
+        if (!keyV.isApiv4) {
+            const url = `https://images.mapillary.com/${keyV.key}/thumb-640.jpg?client_id=${Constants.mapillary_client_token_v3}`
+            return {
+                url: url,
+                provider: this,
+                key: key
+            }
+        } else {
+            const mapillaryId = keyV.key;
+            const metadataUrl = 'https://graph.mapillary.com/' + mapillaryId + '?fields=thumb_1024_url&&access_token=' + Constants.mapillary_client_token_v4;
+            const response = await Utils.downloadJson(metadataUrl)
+            const url = <string>response["thumb_1024_url"];
+            return {
+                url: url,
+                provider: this,
+                key: key
+            }
+        }
     }
 }

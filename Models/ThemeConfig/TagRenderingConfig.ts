@@ -49,14 +49,14 @@ export default class TagRenderingConfig {
             this.question = null;
             this.condition = null;
         }
-        
-       
-        if(typeof json === "number"){
-            this.render = Translations.WT( ""+json)
+
+
+        if (typeof json === "number") {
+            this.render = Translations.WT("" + json)
             return;
         }
-        
-        
+
+
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context;
         }
@@ -66,7 +66,7 @@ export default class TagRenderingConfig {
             return;
         }
 
-        
+
         this.id = json.id ?? "";
         this.group = json.group ?? "";
         this.render = Translations.T(json.render, context + ".render");
@@ -74,7 +74,7 @@ export default class TagRenderingConfig {
         this.condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (json.freeform) {
 
-            if(json.freeform.addExtraTags !== undefined && json.freeform.addExtraTags.map === undefined){
+            if (json.freeform.addExtraTags !== undefined && json.freeform.addExtraTags.map === undefined) {
                 throw `Freeform.addExtraTags should be a list of strings - not a single string (at ${context})`
             }
             this.freeform = {
@@ -134,8 +134,8 @@ export default class TagRenderingConfig {
                 if (typeof mapping.if !== "string" && mapping.if["length"] !== undefined) {
                     throw `${ctx}: Invalid mapping: "if" is defined as an array. Use {"and": <your conditions>} or {"or": <your conditions>} instead`
                 }
-                
-                if(mapping.addExtraTags !== undefined && this.multiAnswer){
+
+                if (mapping.addExtraTags !== undefined && this.multiAnswer) {
                     throw `${ctx}: Invalid mapping: got a multi-Answer with addExtraTags; this is not allowed`
                 }
 
@@ -150,7 +150,7 @@ export default class TagRenderingConfig {
                     ifnot: (mapping.ifnot !== undefined ? TagUtils.Tag(mapping.ifnot, `${ctx}.ifnot`) : undefined),
                     then: Translations.T(mapping.then, `${ctx}.then`),
                     hideInAnswer: hideInAnswer,
-                    addExtraTags: (mapping.addExtraTags??[]).map((str, j) => TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`))
+                    addExtraTags: (mapping.addExtraTags ?? []).map((str, j) => TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`))
                 };
                 if (this.question) {
                     if (hideInAnswer !== true && mp.if !== undefined && !mp.if.isUsableAsAnswer()) {
@@ -260,6 +260,7 @@ export default class TagRenderingConfig {
 
         return false;
     }
+
     /**
      * Gets all the render values. Will return multiple render values if 'multianswer' is enabled.
      * The result will equal [GetRenderValue] if not 'multiAnswer'

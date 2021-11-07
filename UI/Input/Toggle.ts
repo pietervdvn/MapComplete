@@ -18,16 +18,8 @@ export default class Toggle extends VariableUiElement {
         this.isEnabled = isEnabled
     }
 
-    public ToggleOnClick(): Toggle {
-        const self = this;
-        this.onClick(() => {
-            self.isEnabled.setData(!self.isEnabled.data);
-        })
-        return this;
-    }
-
-   public static If(condition: UIEventSource<boolean>, constructor: () => BaseUIElement): BaseUIElement {
-        if(constructor === undefined){
+    public static If(condition: UIEventSource<boolean>, constructor: () => BaseUIElement): BaseUIElement {
+        if (constructor === undefined) {
             return undefined
         }
         return new Toggle(
@@ -35,6 +27,14 @@ export default class Toggle extends VariableUiElement {
             undefined,
             condition
         )
-        
+
+    }
+
+    public ToggleOnClick(): Toggle {
+        const self = this;
+        this.onClick(() => {
+            self.isEnabled.setData(!self.isEnabled.data);
+        })
+        return this;
     }
 }

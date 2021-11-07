@@ -4,8 +4,8 @@ import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 import {Utils} from "../../Utils";
 
 export default class WithContextLoader {
-    private readonly _json: any;
     protected readonly _context: string;
+    private readonly _json: any;
 
     constructor(json: any, context: string) {
         this._json = json;
@@ -47,7 +47,7 @@ export default class WithContextLoader {
         tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson)[],
         readOnly = false,
         prepConfig: ((config: TagRenderingConfigJson) => TagRenderingConfigJson) = undefined
-    ) : TagRenderingConfig[]{
+    ): TagRenderingConfig[] {
         if (tagRenderings === undefined) {
             return [];
         }

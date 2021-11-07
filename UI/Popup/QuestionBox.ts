@@ -16,7 +16,7 @@ import Lazy from "../Base/Lazy";
 export default class QuestionBox extends VariableUiElement {
 
     constructor(tagsSource: UIEventSource<any>, tagRenderings: TagRenderingConfig[], units: Unit[]) {
-        
+
         const skippedQuestions: UIEventSource<number[]> = new UIEventSource<number[]>([])
 
         tagRenderings = tagRenderings
@@ -31,20 +31,20 @@ export default class QuestionBox extends VariableUiElement {
                 const tagRenderingQuestions = tagRenderings
                     .map((tagRendering, i) =>
                         new Lazy(() => new TagRenderingQuestion(tagsSource, tagRendering,
-                        {
-                            units: units,
-                            afterSave: () => {
-                                // We save and indicate progress by pinging and recalculating
-                                skippedQuestions.ping();
-                            },
-                            cancelButton: Translations.t.general.skip.Clone()
-                                .SetClass("btn btn-secondary mr-3")
-                                .onClick(() => {
-                                    skippedQuestions.data.push(i);
+                            {
+                                units: units,
+                                afterSave: () => {
+                                    // We save and indicate progress by pinging and recalculating
                                     skippedQuestions.ping();
-                                })
-                        }
-                    )));
+                                },
+                                cancelButton: Translations.t.general.skip.Clone()
+                                    .SetClass("btn btn-secondary mr-3")
+                                    .onClick(() => {
+                                        skippedQuestions.data.push(i);
+                                        skippedQuestions.ping();
+                                    })
+                            }
+                        )));
 
                 const skippedQuestionsButton = Translations.t.general.skippedQuestions
                     .onClick(() => {

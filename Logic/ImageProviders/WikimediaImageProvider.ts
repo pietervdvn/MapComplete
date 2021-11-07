@@ -12,10 +12,10 @@ import Wikimedia from "../Web/Wikimedia";
 export class WikimediaImageProvider extends ImageProvider {
 
 
-    private readonly commons_key = "wikimedia_commons"
-    public readonly defaultKeyPrefixes = [this.commons_key,"image"]
     public static readonly singleton = new WikimediaImageProvider();
     public static readonly commonsPrefixes = ["https://commons.wikimedia.org/wiki/", "https://upload.wikimedia.org", "File:"]
+    private readonly commons_key = "wikimedia_commons"
+    public readonly defaultKeyPrefixes = [this.commons_key, "image"]
 
     private constructor() {
         super();
@@ -28,6 +28,40 @@ export class WikimediaImageProvider extends ImageProvider {
         const path = new URL(url).pathname
         return path.substring(path.lastIndexOf("/") + 1);
 
+    }
+
+    private static PrepareUrl(value: string): string {
+
+        if (value.toLowerCase().startsWith("https://commons.wikimedia.org/wiki/")) {
+            return value;
+        }
+        return (`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(value)}?width=500&height=400`)
+    }
+
+    private static startsWithCommonsPrefix(value: string): boolean {
+        return WikimediaImageProvider.commonsPrefixes.some(prefix => value.startsWith(prefix))
+    }
+
+    private static removeCommonsPrefix(value: string): string {
+        if (value.startsWith("https://upload.wikimedia.org/")) {
+            value = value.substring(value.lastIndexOf("/") + 1)
+            value = decodeURIComponent(value)
+            if (!value.startsWith("File:")) {
+                value = "File:" + value
+            }
+            return value;
+        }
+
+        for (const prefix of WikimediaImageProvider.commonsPrefixes) {
+            if (value.startsWith(prefix)) {
+                let part = value.substr(prefix.length)
+                if (prefix.startsWith("http")) {
+                    part = decodeURIComponent(part)
+                }
+                return part
+            }
+        }
+        return value;
     }
 
     SourceIcon(backlink: string): BaseUIElement {
@@ -44,12 +78,38 @@ export class WikimediaImageProvider extends ImageProvider {
 
     }
 
-    private static PrepareUrl(value: string): string {
+    public PrepUrl(value: string): ProvidedImage {
+        const hasCommonsPrefix = WikimediaImageProvider.startsWithCommonsPrefix(value)
+        value = WikimediaImageProvider.removeCommonsPrefix(value)
 
-        if (value.toLowerCase().startsWith("https://commons.wikimedia.org/wiki/")) {
-            return value;
+        if (value.startsWith("File:")) {
+            return this.UrlForImage(value)
         }
-        return (`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(value)}?width=500&height=400`)
+
+        // We do a last effort and assume this is a file
+        return this.UrlForImage("File:" + value)
+    }
+
+    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+        const hasCommonsPrefix = WikimediaImageProvider.startsWithCommonsPrefix(value)
+        if (key !== undefined && key !== this.commons_key && !hasCommonsPrefix) {
+            return []
+        }
+
+        value = WikimediaImageProvider.removeCommonsPrefix(value)
+        if (value.startsWith("Category:")) {
+            const urls = await Wikimedia.GetCategoryContents(value)
+            return urls.filter(url => url.startsWith("File:")).map(image => Promise.resolve(this.UrlForImage(image)))
+        }
+        if (value.startsWith("File:")) {
+            return [Promise.resolve(this.UrlForImage(value))]
+        }
+        if (value.startsWith("http")) {
+            // PRobably an error
+            return []
+        }
+        // We do a last effort and assume this is a file
+        return [Promise.resolve(this.UrlForImage("File:" + value))]
     }
 
     protected async DownloadAttribution(filename: string): Promise<LicenseInfo> {
@@ -66,24 +126,24 @@ export class WikimediaImageProvider extends ImageProvider {
         const data = await Utils.downloadJson(url)
         const licenseInfo = new LicenseInfo();
         const pageInfo = data.query.pages[-1]
-        if(pageInfo === undefined){
+        if (pageInfo === undefined) {
             return undefined;
         }
-        
+
         const license = (pageInfo.imageinfo ?? [])[0]?.extmetadata;
         if (license === undefined) {
-            console.warn("The file", filename ,"has no usable metedata or license attached... Please fix the license info file yourself!")
+            console.warn("The file", filename, "has no usable metedata or license attached... Please fix the license info file yourself!")
             return undefined;
         }
 
         let title = pageInfo.title
-        if(title.startsWith("File:")){
-            title=  title.substr("File:".length)
+        if (title.startsWith("File:")) {
+            title = title.substr("File:".length)
         }
-        if(title.endsWith(".jpg") || title.endsWith(".png")){
+        if (title.endsWith(".jpg") || title.endsWith(".png")) {
             title = title.substring(0, title.length - 4)
         }
-        
+
         licenseInfo.title = title
         licenseInfo.artist = license.Artist?.value;
         licenseInfo.license = license.License?.value;
@@ -102,66 +162,6 @@ export class WikimediaImageProvider extends ImageProvider {
             image = "File:" + image
         }
         return {url: WikimediaImageProvider.PrepareUrl(image), key: undefined, provider: this}
-    }
-    
-    private static startsWithCommonsPrefix(value: string): boolean{
-        return  WikimediaImageProvider.commonsPrefixes.some(prefix => value.startsWith(prefix))
-    }
-    
-    private static removeCommonsPrefix(value: string): string{
-        if(value.startsWith("https://upload.wikimedia.org/")){
-            value = value.substring(value.lastIndexOf("/") + 1)
-            value = decodeURIComponent(value)
-            if(!value.startsWith("File:")){
-                value = "File:"+value
-            }
-            return value;
-        }
-        
-        for (const prefix of WikimediaImageProvider.commonsPrefixes) {
-            if(value.startsWith(prefix)){
-                let part = value.substr(prefix.length)
-                if(prefix.startsWith("http")){
-                    part = decodeURIComponent(part)
-                }
-                return part
-            }
-        }
-        return value;
-    }
-
-    public PrepUrl(value: string): ProvidedImage {
-        const hasCommonsPrefix = WikimediaImageProvider.startsWithCommonsPrefix(value)
-        value = WikimediaImageProvider.removeCommonsPrefix(value)
-
-        if (value.startsWith("File:")) {
-            return this.UrlForImage(value)
-        }
-
-        // We do a last effort and assume this is a file
-        return this.UrlForImage("File:" + value)
-    }
-
-    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        const hasCommonsPrefix = WikimediaImageProvider.startsWithCommonsPrefix(value)
-        if(key !== undefined && key !== this.commons_key && !hasCommonsPrefix){
-            return []
-        }
-        
-        value = WikimediaImageProvider.removeCommonsPrefix(value)
-        if (value.startsWith("Category:")) {
-            const urls = await Wikimedia.GetCategoryContents(value)
-            return urls.filter(url => url.startsWith("File:")).map(image => Promise.resolve(this.UrlForImage(image)))
-        }
-        if (value.startsWith("File:")) {
-            return [Promise.resolve(this.UrlForImage(value))]
-        }
-        if (value.startsWith("http")) {
-            // PRobably an error
-            return []
-        }
-        // We do a last effort and assume this is a file
-        return [Promise.resolve(this.UrlForImage("File:" + value))]
     }
 
 

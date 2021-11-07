@@ -39,10 +39,10 @@ export class ElementStorage {
     }
 
     getEventSourceById(elementId): UIEventSource<any> {
-        if(elementId === undefined){
+        if (elementId === undefined) {
             return undefined;
         }
-            return this._elements.get(elementId);
+        return this._elements.get(elementId);
     }
 
     has(id) {

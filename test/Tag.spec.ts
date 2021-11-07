@@ -9,7 +9,6 @@ import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
 import {TagUtils} from "../Logic/Tags/TagUtils";
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
-import {RegexTag} from "../Logic/Tags/RegexTag";
 
 
 Utils.runningFromConsole = true;

@@ -7,9 +7,9 @@ export default class Title extends BaseUIElement {
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()
-        if(typeof embedded === "string"){
-        this._embedded = new FixedUiElement(embedded)
-        }else{
+        if (typeof embedded === "string") {
+            this._embedded = new FixedUiElement(embedded)
+        } else {
             this._embedded = embedded
         }
         this._level = level;

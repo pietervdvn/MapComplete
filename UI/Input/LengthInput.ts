@@ -45,7 +45,7 @@ export default class LengthInput extends InputElement<string> {
                 background: this.background,
                 allowMoving: false,
                 location: this._location,
-                attribution:true,
+                attribution: true,
                 leafletOptions: {
                     tap: true
                 }

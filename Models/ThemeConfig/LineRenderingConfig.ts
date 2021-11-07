@@ -1,6 +1,4 @@
-import PointRenderingConfigJson from "./Json/PointRenderingConfigJson";
 import WithContextLoader from "./WithContextLoader";
-import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingConfig from "./TagRenderingConfig";
 import {Utils} from "../../Utils";
 import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";

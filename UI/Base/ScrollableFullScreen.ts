@@ -19,8 +19,8 @@ import Img from "./Img";
 export default class ScrollableFullScreen extends UIElement {
     private static readonly empty = new FixedUiElement("");
     private static _currentlyOpen: ScrollableFullScreen;
-    private hashToShow: string;
     public isShown: UIEventSource<boolean>;
+    private hashToShow: string;
     private _component: BaseUIElement;
     private _fullscreencomponent: BaseUIElement;
 
@@ -61,13 +61,6 @@ export default class ScrollableFullScreen extends UIElement {
         })
     }
 
-    private clear() {
-        ScrollableFullScreen.empty.AttachTo("fullscreen")
-        const fs = document.getElementById("fullscreen");
-        ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
-        fs.classList.add("hidden")
-    }
-
     InnerRender(): BaseUIElement {
         return this._component;
     }
@@ -78,6 +71,13 @@ export default class ScrollableFullScreen extends UIElement {
         const fs = document.getElementById("fullscreen");
         ScrollableFullScreen._currentlyOpen = this;
         fs.classList.remove("hidden")
+    }
+
+    private clear() {
+        ScrollableFullScreen.empty.AttachTo("fullscreen")
+        const fs = document.getElementById("fullscreen");
+        ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
+        fs.classList.add("hidden")
     }
 
     private BuildComponent(title: BaseUIElement, content: BaseUIElement, isShown: UIEventSource<boolean>) {

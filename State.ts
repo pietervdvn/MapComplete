@@ -14,6 +14,5 @@ export default class State extends FeaturePipelineState {
         super(layoutToUse)
     }
 
-   
 
 }

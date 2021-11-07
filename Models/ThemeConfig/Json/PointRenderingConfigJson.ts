@@ -3,9 +3,9 @@ import {AndOrTagConfigJson} from "./TagConfigJson";
 
 /**
  * The PointRenderingConfig gives all details onto how to render a single point of a feature.
- * 
+ *
  * This can be used if:
- * 
+ *
  * - The feature is a point
  * - To render something at the centroid of an area, or at the start, end or projected centroid of a way
  */
@@ -16,7 +16,7 @@ export default interface PointRenderingConfigJson {
      * Using `location: ["point", "centroid"] will always render centerpoint
      */
     location: ("point" | "centroid" | "start" | "end")[]
-    
+
     /**
      * The icon for an element.
      * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.

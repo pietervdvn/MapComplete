@@ -2,9 +2,9 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 
 /**
  * The LineRenderingConfig gives all details onto how to render a single line of a feature.
- * 
+ *
  * This can be used if:
- * 
+ *
  * - The feature is a line
  * - The feature is an area
  */
@@ -28,9 +28,9 @@ export default interface LineRenderingConfigJson {
     dashArray?: string | TagRenderingConfigJson
 
     /**
-     * The number of pixels this line should be moved. 
+     * The number of pixels this line should be moved.
      * Use a positive numbe to move to the right, a negative to move to the left (left/right as defined by the drawing direction of the line).
-     * 
+     *
      * IMPORTANT: MapComplete will already normalize 'key:both:property' and 'key:both' into the corresponding 'key:left' and 'key:right' tagging (same for 'sidewalk=left/right/both' which is rewritten to 'sidewalk:left' and 'sidewalk:right')
      * This simplifies programming. Refer to the CalculatedTags.md-documentation for more details
      */

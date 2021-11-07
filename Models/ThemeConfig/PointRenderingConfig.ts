@@ -15,7 +15,7 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 
 export default class PointRenderingConfig extends WithContextLoader {
 
-    private static readonly  allowed_location_codes = new Set<string>(["point", "centroid","start","end"])
+    private static readonly allowed_location_codes = new Set<string>(["point", "centroid", "start", "end"])
     public readonly location: Set<"point" | "centroid" | "start" | "end">
 
     public readonly icon: TagRenderingConfig;
@@ -26,34 +26,34 @@ export default class PointRenderingConfig extends WithContextLoader {
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
-        
-        if(typeof json.location === "string"){
+
+        if (typeof json.location === "string") {
             json.location = [json.location]
         }
-        
+
         this.location = new Set(json.location)
-        
+
         this.location.forEach(l => {
             const allowed = PointRenderingConfig.allowed_location_codes
-            if(!allowed.has(l)){
+            if (!allowed.has(l)) {
                 throw `A point rendering has an invalid location: '${l}' is not one of ${Array.from(allowed).join(", ")} (at ${context}.location)`
             }
         })
-        
-        if(json.icon === undefined && json.label === undefined){
+
+        if (json.icon === undefined && json.label === undefined) {
             throw `A point rendering should define at least an icon or a label`
         }
 
-        if(this.location.size == 0){
-            throw "A pointRendering should have at least one 'location' to defined where it should be rendered. (At "+context+".location)"
+        if (this.location.size == 0) {
+            throw "A pointRendering should have at least one 'location' to defined where it should be rendered. (At " + context + ".location)"
         }
         this.icon = this.tr("icon", "");
         this.iconBadges = (json.iconBadges ?? []).map((overlay, i) => {
-            let tr : TagRenderingConfig;
+            let tr: TagRenderingConfig;
             if (typeof overlay.then === "string" &&
                 SharedTagRenderings.SharedIcons.get(overlay.then) !== undefined) {
                 tr = SharedTagRenderings.SharedIcons.get(overlay.then);
-            }else{
+            } else {
                 tr = new TagRenderingConfig(
                     overlay.then,
                     `iconBadges.${i}`
@@ -77,6 +77,43 @@ export default class PointRenderingConfig extends WithContextLoader {
         this.rotation = this.tr("rotation", "0");
     }
 
+    /**
+     * Given a single HTML spec (either a single image path OR "image_path_to_known_svg:fill-colour", returns a fixedUIElement containing that
+     * The element will fill 100% and be positioned absolutely with top:0 and left: 0
+     */
+    private static FromHtmlSpec(htmlSpec: string, style: string, isBadge = false): BaseUIElement {
+        if (htmlSpec === undefined) {
+            return undefined;
+        }
+        const match = htmlSpec.match(/([a-zA-Z0-9_]*):([^;]*)/);
+        if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
+            const svg = (Svg.All[match[1] + ".svg"] as string)
+            const targetColor = match[2]
+            const img = new Img(svg.replace(/#000000/g, targetColor), true)
+                .SetStyle(style)
+            if (isBadge) {
+                img.SetClass("badge")
+            }
+            return img
+        } else {
+            return new FixedUiElement(`<img src="${htmlSpec}" style="${style}" />`);
+        }
+    }
+
+    private static FromHtmlMulti(multiSpec: string, rotation: string, isBadge: boolean, defaultElement: BaseUIElement = undefined) {
+        if (multiSpec === undefined) {
+            return defaultElement
+        }
+        const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
+
+        const htmlDefs = multiSpec.trim()?.split(";") ?? []
+        const elements = Utils.NoEmpty(htmlDefs).map(def => PointRenderingConfig.FromHtmlSpec(def, style, isBadge))
+        if (elements.length === 0) {
+            return defaultElement
+        } else {
+            return new Combine(elements).SetClass("relative block w-full h-full")
+        }
+    }
 
     public ExtractImages(): Set<string> {
         const parts: Set<string>[] = [];
@@ -92,44 +129,6 @@ export default class PointRenderingConfig extends WithContextLoader {
         return allIcons;
     }
 
-    /**
-     * Given a single HTML spec (either a single image path OR "image_path_to_known_svg:fill-colour", returns a fixedUIElement containing that
-     * The element will fill 100% and be positioned absolutely with top:0 and left: 0
-     */
-    private static FromHtmlSpec(htmlSpec: string, style: string, isBadge = false): BaseUIElement {
-        if (htmlSpec === undefined) {
-            return undefined;
-        }
-        const match = htmlSpec.match(/([a-zA-Z0-9_]*):([^;]*)/);
-        if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
-            const svg = (Svg.All[match[1] + ".svg"] as string)
-            const targetColor = match[2]
-            const img = new Img(svg.replace(/#000000/g, targetColor), true)
-                .SetStyle(style)
-            if(isBadge){
-                img.SetClass("badge")
-            }
-            return img
-        } else {
-            return new FixedUiElement(`<img src="${htmlSpec}" style="${style}" />`);
-        }
-    }
-    
-    private static FromHtmlMulti(multiSpec: string, rotation: string , isBadge: boolean, defaultElement: BaseUIElement = undefined){
-        if(multiSpec === undefined){
-            return defaultElement
-        }
-        const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
-
-        const htmlDefs = multiSpec.trim()?.split(";") ?? []
-        const elements = Utils.NoEmpty(htmlDefs).map(def => PointRenderingConfig.FromHtmlSpec(def, style, isBadge))
-        if (elements.length === 0) {
-            return defaultElement
-        } else {
-            return new Combine(elements).SetClass("relative block w-full h-full")
-        }
-    }
-
     public GetSimpleIcon(tags: UIEventSource<any>): BaseUIElement {
         const self = this;
         if (this.icon === undefined) {
@@ -137,56 +136,14 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
         return new VariableUiElement(tags.map(tags => {
             const rotation = Utils.SubstituteKeys(self.rotation?.GetRenderValue(tags)?.txt ?? "0deg", tags)
-            
+
             const htmlDefs = Utils.SubstituteKeys(self.icon.GetRenderValue(tags)?.txt, tags)
-            let defaultPin : BaseUIElement = undefined
-            if(self.label === undefined){
-                defaultPin =  Svg.teardrop_with_hole_green_svg()
+            let defaultPin: BaseUIElement = undefined
+            if (self.label === undefined) {
+                defaultPin = Svg.teardrop_with_hole_green_svg()
             }
-            return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation,false, defaultPin)
+            return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
         })).SetClass("w-full h-full block")
-    }
-
-    private GetBadges(tags: UIEventSource<any>): BaseUIElement {
-        if (this.iconBadges.length === 0) {
-            return undefined
-        }
-        return new VariableUiElement(
-            tags.map(tags => {
-
-                const badgeElements = this.iconBadges.map(badge => {
-
-                    if (!badge.if.matchesProperties(tags)) {
-                        // Doesn't match...
-                        return undefined
-                    }
-
-                    const htmlDefs = Utils.SubstituteKeys(badge.then.GetRenderValue(tags)?.txt, tags)
-                    const badgeElement= PointRenderingConfig.FromHtmlMulti(htmlDefs, "0", true)?.SetClass("block relative")
-                    if(badgeElement === undefined){
-                        return undefined;
-                    }
-                    return new Combine([badgeElement]).SetStyle("width: 1.5rem").SetClass("block")
-                    
-                })
-
-                return new Combine(badgeElements).SetClass("inline-flex h-full")
-            })).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
-    }
-
-    private GetLabel(tags: UIEventSource<any>): BaseUIElement {
-        if (this.label === undefined) {
-            return undefined;
-        }
-        const self = this;
-        return new VariableUiElement(tags.map(tags => {
-            const label = self.label
-                ?.GetRenderValue(tags)
-                ?.Subs(tags)
-                ?.SetClass("block text-center")
-            return new Combine([label]).SetClass("flex flex-col items-center mt-1")
-        }))
-
     }
 
     public GenerateLeafletStyle(
@@ -246,9 +203,9 @@ export default class PointRenderingConfig extends WithContextLoader {
         const iconAndBadges = new Combine([this.GetSimpleIcon(tags), this.GetBadges(tags)])
             .SetClass("block relative")
 
-        if(!options?.noSize){
+        if (!options?.noSize) {
             iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
-        }else{
+        } else {
             iconAndBadges.SetClass("w-full h-full")
         }
 
@@ -262,6 +219,48 @@ export default class PointRenderingConfig extends WithContextLoader {
                 ? "leaflet-div-icon"
                 : "leaflet-div-icon unclickable",
         };
+    }
+
+    private GetBadges(tags: UIEventSource<any>): BaseUIElement {
+        if (this.iconBadges.length === 0) {
+            return undefined
+        }
+        return new VariableUiElement(
+            tags.map(tags => {
+
+                const badgeElements = this.iconBadges.map(badge => {
+
+                    if (!badge.if.matchesProperties(tags)) {
+                        // Doesn't match...
+                        return undefined
+                    }
+
+                    const htmlDefs = Utils.SubstituteKeys(badge.then.GetRenderValue(tags)?.txt, tags)
+                    const badgeElement = PointRenderingConfig.FromHtmlMulti(htmlDefs, "0", true)?.SetClass("block relative")
+                    if (badgeElement === undefined) {
+                        return undefined;
+                    }
+                    return new Combine([badgeElement]).SetStyle("width: 1.5rem").SetClass("block")
+
+                })
+
+                return new Combine(badgeElements).SetClass("inline-flex h-full")
+            })).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
+    }
+
+    private GetLabel(tags: UIEventSource<any>): BaseUIElement {
+        if (this.label === undefined) {
+            return undefined;
+        }
+        const self = this;
+        return new VariableUiElement(tags.map(tags => {
+            const label = self.label
+                ?.GetRenderValue(tags)
+                ?.Subs(tags)
+                ?.SetClass("block text-center")
+            return new Combine([label]).SetClass("flex flex-col items-center mt-1")
+        }))
+
     }
 
 }

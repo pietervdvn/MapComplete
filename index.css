@@ -20,7 +20,7 @@
         .z-above-controls {
             z-index: 10001
         }
-        
+
         .w-160 {
             width: 40rem;
         }
@@ -370,12 +370,12 @@ li::marker {
         opacity: 0;
         transform: rotate(-30deg);
     }
-    
+
     6% {
         opacity: 1;
         transform: rotate(-30deg);
     }
-    
+
     12% {
         opacity: 1;
         transform: rotate(-45deg);
@@ -396,7 +396,7 @@ li::marker {
         opacity: 0;
         transform: rotate(-30deg);
     }
-    
+
     100% {
         opacity: 0;
         transform: rotate(-30deg);

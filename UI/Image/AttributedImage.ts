@@ -12,10 +12,10 @@ export class AttributedImage extends Combine {
         let img: BaseUIElement;
         let attr: BaseUIElement
         img = new Img(imageInfo.url, false, {
-            fallbackImage:  imageInfo.provider === Mapillary.singleton ? "./assets/svg/blocked.svg" : undefined
+            fallbackImage: imageInfo.provider === Mapillary.singleton ? "./assets/svg/blocked.svg" : undefined
         });
         attr = new Attribution(imageInfo.provider.GetAttributionFor(imageInfo.url),
-                imageInfo.provider.SourceIcon(),
+            imageInfo.provider.SourceIcon(),
         )
 
 
