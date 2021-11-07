@@ -549,7 +549,7 @@
               "then": "Deze straat is een fietsstraat (en dus zone 30)"
             },
             "1": {
-              "then": "Deze straat i een fietsstraat"
+              "then": "Deze straat is een fietsstraat"
             },
             "2": {
               "then": "Deze straat wordt binnenkort een fietsstraat"
@@ -558,7 +558,7 @@
               "then": "Deze straat is geen fietsstraat"
             }
           },
-          "question": "Is deze straat een fietsstraat?"
+          "question": "Is de straat <b>{name}</b> een fietsstraat?"
         },
         "1": {
           "question": "Wanneer wordt deze straat een fietsstraat?",

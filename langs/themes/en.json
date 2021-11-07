@@ -653,7 +653,7 @@
               "then": "This street is not a cyclestreet"
             }
           },
-          "question": "Is this street a cyclestreet?"
+          "question": "Is the street <b>{name}</b> a cyclestreet?"
         },
         "1": {
           "question": "When will this street become a cyclestreet?",

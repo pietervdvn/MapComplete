@@ -221,8 +221,8 @@
       {
         "id": "is_cyclestreet",
         "question": {
-          "nl": "Is deze straat een fietsstraat?",
-          "en": "Is this street a cyclestreet?",
+          "nl": "Is de straat <b>{name}</b> een fietsstraat?",
+          "en": "Is the street <b>{name}</b> a cyclestreet?",
           "ja": "この通りはcyclestreetですか?",
           "nb_NO": "Er denne gaten en sykkelvei?",
           "de": "Ist diese Straße eine Fahrradstraße?",
@@ -255,7 +255,7 @@
               ]
             },
             "then": {
-              "nl": "Deze straat i een fietsstraat",
+              "nl": "Deze straat is een fietsstraat",
               "en": "This street is a cyclestreet",
               "ja": "この通りはcyclestreetだ",
               "nb_NO": "Denne gaten er en sykkelvei",
