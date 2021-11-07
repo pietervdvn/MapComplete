@@ -72,5 +72,18 @@
             },
             "id": "viewpoint-description"
         }
+    ],
+    "mapRendering": [
+        {
+            "icon": "./assets/layers/viewpoint/viewpoint.svg",
+            "iconSize": "20,20,center",
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "color": "#ffffff",
+            "width": "5"
+        }
     ]
 }

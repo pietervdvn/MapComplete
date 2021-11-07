@@ -104,8 +104,7 @@
       ],
       "name": {
         "en": "cycle highways",
-        "de": "Radschnellwege",
-        "it": "strade per velocipedi"
+        "de": "Radschnellwege"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -114,42 +113,8 @@
       "title": {
         "render": {
           "en": "cycle highway",
-          "de": "Radschnellweg",
-          "it": "strada per velocipedi"
+          "de": "Radschnellweg"
         }
-      },
-      "width": {
-        "render": "4"
-      },
-      "color": {
-        "render": "#ff7392",
-        "mappings": [
-          {
-            "if": "state=",
-            "then": "#00acfc"
-          },
-          {
-            "if": "state=temporary",
-            "then": "#00acfc"
-          }
-        ]
-      },
-      "dashArray": {
-        "render": "",
-        "mappings": [
-          {
-            "if": "state=temporary",
-            "then": "12 10"
-          },
-          {
-            "if": "note:state=has_highway_no",
-            "then": "0 8"
-          },
-          {
-            "if": "note:state=has_highway_under_construction",
-            "then": "12 10"
-          }
-        ]
       },
       "filter": [
         {
@@ -237,6 +202,43 @@
               }
             }
           ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "color": {
+            "render": "#ff7392",
+            "mappings": [
+              {
+                "if": "state=",
+                "then": "#00acfc"
+              },
+              {
+                "if": "state=temporary",
+                "then": "#00acfc"
+              }
+            ]
+          },
+          "width": {
+            "render": "4"
+          },
+          "dashArray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": "state=temporary",
+                "then": "12 10"
+              },
+              {
+                "if": "note:state=has_highway_no",
+                "then": "0 8"
+              },
+              {
+                "if": "note:state=has_highway_under_construction",
+                "then": "12 10"
+              }
+            ]
+          }
         }
       ]
     }

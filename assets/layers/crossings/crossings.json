@@ -254,8 +254,7 @@
                     "if": "tactile_paving=incorrect",
                     "then": {
                         "en": "This crossing has tactile paving, but is not correct",
-                        "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is.",
-                        "de": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt"
+                        "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
                     },
                     "hideInAnswer": true
                 }
@@ -279,8 +278,7 @@
                     "if": "button_operated=yes",
                     "then": {
                         "en": "This traffic light has a button to request green light",
-                        "nl": "Dit verkeerslicht heeft een knop voor groen licht",
-                        "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
+                        "nl": "Dit verkeerslicht heeft een knop voor groen licht"
                     }
                 },
                 {
@@ -288,7 +286,7 @@
                     "then": {
                         "en": "This traffic light does not have a button to request green light",
                         "nl": "Dit verkeerlicht heeft geen knop voor groen licht",
-                        "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern"
+                        "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern."
                     }
                 }
             ]
@@ -366,6 +364,30 @@
                     }
                 }
             ]
+        }
+    ],
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/crossings/pedestrian_crossing.svg",
+                "mappings": [
+                    {
+                        "if": {
+                            "or": [
+                                "highway=traffic_signals",
+                                "crossing=traffic_signals"
+                            ]
+                        },
+                        "then": "./assets/layers/crossings/traffic_lights.svg"
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "width": "5"
         }
     ]
 }

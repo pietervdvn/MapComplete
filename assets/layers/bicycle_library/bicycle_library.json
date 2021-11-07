@@ -288,5 +288,37 @@
     "color": {
         "render": "#c00"
     },
-    "wayHandling": 2
+    "wayHandling": 2,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg"
+            },
+            "iconBadges": [
+                {
+                    "if": "opening_hours~*",
+                    "then": "isOpen"
+                },
+                {
+                    "if": "service:bicycle:pump=yes",
+                    "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
+                }
+            ],
+            "iconSize": {
+                "render": "50,50,bottom"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": {
+                "render": "#c00"
+            },
+            "width": {
+                "render": "1"
+            }
+        }
+    ]
 }

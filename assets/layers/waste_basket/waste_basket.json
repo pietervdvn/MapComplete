@@ -83,8 +83,7 @@
                     "if": "waste=sharps",
                     "then": {
                         "en": "A waste basket for needles and other sharp objects",
-                        "nl": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen",
-                        "de": "Ein Abfalleimer für Nadeln und andere scharfe Gegenstände"
+                        "nl": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
                     }
                 }
             ]
@@ -126,7 +125,7 @@
                     },
                     "then": {
                         "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
-                        "nl": "Deze vuilbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
+                        "nl": "Deze vuilnisbak heeft <i>geen</i>verdeler voor hondenpoepzakjes",
                         "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     }
                 },
@@ -134,7 +133,7 @@
                     "if": "vending=",
                     "then": {
                         "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
-                        "nl": "Deze vuilnisbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
+                        "nl": "Deze vuilnisbaak heeft waarschijnlijk geen verdeler voor hondenpoepzakjes",
                         "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     },
                     "hideInAnwer": true
@@ -199,5 +198,41 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/waste_basket/waste_basket.svg"
+            },
+            "iconSize": {
+                "render": "40,40,center",
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "amenity=waste_basket"
+                            ]
+                        },
+                        "then": {
+                            "en": "Waste Basket",
+                            "nl": "Vuilnisbak",
+                            "ru": "Контейнер для мусора",
+                            "de": "Abfalleimer"
+                        }
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "color": {
+                "render": "#00f"
+            },
+            "width": {
+                "render": "8"
+            }
+        }
+    ]
 }

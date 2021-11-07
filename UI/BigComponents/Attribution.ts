@@ -56,6 +56,7 @@ export default class Attribution extends Combine {
             )
         )
         super([mapComplete, reportBug, stats, editHere, editWithJosm, mapillary]);
+        this.SetClass("flex")
 
     }
 

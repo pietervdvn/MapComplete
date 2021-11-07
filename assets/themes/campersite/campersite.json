@@ -180,8 +180,7 @@
                 "nl": "Gebruik is betalend",
                 "fr": "L’utilisation est payante",
                 "pt_BR": "Você precisa pagar para usar",
-                "de": "Sie müssen für die Nutzung bezahlen",
-                "nb_NO": "Man må betale for bruk"
+                "de": "Sie müssen für die Nutzung bezahlen"
               }
             },
             {
@@ -336,8 +335,7 @@
             "fr": "Cet endroit offre-t-il un accès à Internet ?",
             "zh_Hant": "這個地方有提網路連線嗎？",
             "pt_BR": "Este lugar fornece acesso a internet?",
-            "de": "Ist an diesem Ort ein Internetzugang vorhanden?",
-            "nb_NO": "Tilbyr dette stedet tilgang til Internett?"
+            "de": "Ist an diesem Ort ein Internetzugang vorhanden?"
           },
           "mappings": [
             {
@@ -356,8 +354,7 @@
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à internet",
                 "de": "Internetzugang ist vorhanden",
-                "nl": "Er is internettoegang",
-                "nb_NO": "Det finnes tilgang til Internett"
+                "nl": "Er is internettoegang"
               }
             },
             {
@@ -377,8 +374,7 @@
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à Internet",
                 "de": "Internetzugang ist vorhanden",
-                "nl": "Er is internettoegang",
-                "nb_NO": "Det er tilgang til Internett"
+                "nl": "Er is internettoegang"
               },
               "hideInAnswer": true
             },
@@ -397,8 +393,7 @@
                 "zh_Hant": "這裡沒有網路連線",
                 "fr": "Il n’y a pas d’accès internet",
                 "pt_BR": "Não há acesso à internet",
-                "de": "Kein Internetzugang vorhanden",
-                "nb_NO": "Det er tilgang til Internett"
+                "de": "Kein Internetzugang vorhanden"
               }
             }
           ]
@@ -413,8 +408,7 @@
             "zh_Hant": "你需要為網路連線付費嗎？",
             "fr": "L’accès internet est-il payant ?",
             "pt_BR": "Você tem que pagar pelo acesso à internet?",
-            "de": "Ist der Internetzugang gebührenpflichtig?",
-            "nb_NO": "Må man betale for tilgang til Internett?"
+            "de": "Ist der Internetzugang gebührenpflichtig?"
           },
           "mappings": [
             {
@@ -431,8 +425,7 @@
                 "zh_Hant": "你需要額外付費來使用網路連線",
                 "fr": "L’accès internet est en supplément",
                 "pt_BR": "Você precisa pagar um extra pelo acesso à internet",
-                "de": "Der Internetzugang ist gebührenpflichtig",
-                "nb_NO": "Man må betale ekstra for tilgang til Internett"
+                "de": "Der Internetzugang ist gebührenpflichtig"
               }
             },
             {
@@ -449,8 +442,7 @@
                 "zh_Hant": "你不需要額外付費來使用網路連線",
                 "fr": "L’accès internet est inclus",
                 "pt_BR": "Você não precisa pagar um extra pelo acesso à internet",
-                "de": "Der Internetzugang ist kostenlos",
-                "nb_NO": "Man må ikke betale ekstra for tilgang til Internett"
+                "de": "Der Internetzugang ist kostenlos"
               }
             }
           ],
@@ -643,28 +635,6 @@
         "questions",
         "reviews"
       ],
-      "icon": {
-        "render": "circle:white;./assets/themes/campersite/caravan.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "fee=no"
-              ]
-            },
-            "then": "circle:white;./assets/themes/campersite/caravan_green.svg"
-          }
-        ]
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -687,12 +657,43 @@
             "ja": "新しい公式キャンプサイトを追加します。お客様のキャンピングカーで一泊する指定の場所です。本物のキャンプのように見えるかもしれないし、単なる駐車場のように見えるかもしれない。それらは全く署名されていないかもしれませんが、自治体の決定で定義されているだけです。夜を過ごすことが予想されないキャンパー向けの通常の駐車場は、キャンプサイトではない ",
             "it": "Aggiungi una nuova area di sosta ufficiale per camper. Si tratta di aree destinate alla sosta notturna dei camper. Potrebbe trattarsi di luoghi di campeggio o semplici parcheggi. Potrebbero anche non essere segnalati sul posto, ma semplicemente indicati in una delibera comunale. Un parcheggio destinato ai camper in cui non è però consentito trascorrere la notte -non- va considerato un'area di sosta per camper. ",
             "fr": "Ajouter une nouvelle aire de camping officielle, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking ne suffit pas à rentrer dans cette catégorie ",
-            "de": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem Übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+            "de": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
             "nl": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. "
           }
         }
       ],
-      "wayHandling": 2
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/themes/campersite/caravan.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "fee=no"
+                  ]
+                },
+                "then": "circle:white;./assets/themes/campersite/caravan_green.svg"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
+        }
+      ]
     },
     {
       "id": "dumpstations",
@@ -1059,18 +1060,6 @@
           "id": "dumpstations-network"
         }
       ],
-      "icon": {
-        "render": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "32,32,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -1089,6 +1078,27 @@
             "it": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
             "fr": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires) généralement alimenté en eau potable et électricité.",
             "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom."
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg"
+          },
+          "iconSize": {
+            "render": "32,32,center"
+          },
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
           }
         }
       ]

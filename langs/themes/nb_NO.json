@@ -1,7 +1,7 @@
 {
     "aed": {
         "description": "Defibrillatorer i nærheten",
-        "title": "Åpent AED-kart"
+        "title": "Åpne AED-kart"
     },
     "artwork": {
         "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden"
@@ -36,38 +36,10 @@
                     },
                     "caravansites-fee": {
                         "mappings": {
-                            "0": {
-                                "then": "Man må betale for bruk"
-                            },
                             "1": {
                                 "then": "Kan brukes gratis"
                             }
                         }
-                    },
-                    "caravansites-internet": {
-                        "mappings": {
-                            "0": {
-                                "then": "Det finnes tilgang til Internett"
-                            },
-                            "1": {
-                                "then": "Det er tilgang til Internett"
-                            },
-                            "2": {
-                                "then": "Det er tilgang til Internett"
-                            }
-                        },
-                        "question": "Tilbyr dette stedet tilgang til Internett?"
-                    },
-                    "caravansites-internet-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "Man må betale ekstra for tilgang til Internett"
-                            },
-                            "1": {
-                                "then": "Man må ikke betale ekstra for tilgang til Internett"
-                            }
-                        },
-                        "question": "Må man betale for tilgang til Internett?"
                     },
                     "caravansites-toilets": {
                         "mappings": {
@@ -111,17 +83,7 @@
                 "name": "Klatreruter",
                 "tagRenderings": {
                     "Length": {
-                        "question": "Hvor mange meter er klatreruten?",
                         "render": "Denne ruten er {canonical(climbing:length)} lang"
-                    },
-                    "Name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Denne klatreruten har ikke noe navn"
-                            }
-                        },
-                        "question": "Hva er navnet på denne klatreruten?",
-                        "render": "<strong>{name}</strong>"
                     }
                 },
                 "title": {
@@ -187,27 +149,15 @@
     },
     "cyclestreets": {
         "layers": {
-            "0": {
-                "name": "Sykkelgater"
-            },
             "1": {
-                "description": "Denne gaten vil bli sykkelgate snart",
                 "name": "Fremtidig sykkelvei",
                 "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name} vil bli sykkelgate snart"
-                        }
-                    },
                     "render": "Fremtidig sykkelvei"
                 }
             },
             "2": {
                 "description": "Lag for å markere hvilken som helst gate som sykkelvei",
-                "name": "Alle gater",
-                "title": {
-                    "render": "Gate"
-                }
+                "name": "Alle gater"
             }
         },
         "overrideAll": {
@@ -296,23 +246,6 @@
             },
             "2": {
                 "name": "Kart over brannstasjoner",
-                "presets": {
-                    "0": {
-                        "title": "Brannstasjon"
-                    }
-                },
-                "tagRenderings": {
-                    "station-name": {
-                        "render": "Denne stasjonen heter {name}."
-                    },
-                    "station-operator": {
-                        "mappings": {
-                            "0": {
-                                "then": "Stasjonen drives av myndighetene."
-                            }
-                        }
-                    }
-                },
                 "title": {
                     "render": "Brannstasjon"
                 }
@@ -326,21 +259,6 @@
     "natuurpunt": {
         "title": "Naturreservater"
     },
-    "openwindpowermap": {
-        "layers": {
-            "0": {
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "1": {
-                                "human": " kilowatt"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
     "parkings": {
         "shortDescription": "Dette kartet viser forskjellige parkeringsplasser",
         "title": "Parkering"
@@ -353,32 +271,6 @@
         "title": "Lekeplasser"
     },
     "postboxes": {
-        "layers": {
-            "0": {
-                "description": "Laget viser postbokser.",
-                "name": "Postbokser",
-                "presets": {
-                    "0": {
-                        "title": "postboks"
-                    }
-                },
-                "title": {
-                    "render": "Postboks"
-                }
-            },
-            "1": {
-                "description": "Et lag som viser postkontor.",
-                "name": "Postkontor",
-                "presets": {
-                    "0": {
-                        "title": "Postkontor"
-                    }
-                },
-                "title": {
-                    "render": "Postkontor"
-                }
-            }
-        },
         "title": "Postboks og postkontor-kart"
     },
     "shops": {
@@ -391,16 +283,5 @@
         "description": "Kartlegg trærne.",
         "shortDescription": "Kartlegg alle trærne",
         "title": "Trær"
-    },
-    "uk_addresses": {
-        "layers": {
-            "1": {
-                "description": "Adresser",
-                "name": "Kjente adresser i OSM",
-                "title": {
-                    "render": "Kjent adresse"
-                }
-            }
-        }
     }
 }

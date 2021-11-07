@@ -304,8 +304,7 @@
                 "nl": "{curator} is de beheerder van dit gebied",
                 "en": "{curator} is the curator of this nature reserve",
                 "it": "{curator} è il curatore di questa riserva naturale",
-                "fr": "{curator} est en charge de la conservation de la réserve",
-                "de": "{curator} ist der Pfleger dieses Naturschutzgebietes"
+                "fr": "{curator} est en charge de la conservation de la réserve"
             },
             "freeform": {
                 "key": "curator",
@@ -318,8 +317,7 @@
                 "nl": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
                 "en": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
                 "it": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
-                "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
-                "de": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
+                "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée"
             },
             "render": {
                 "nl": "<a href='mailto:{email}' target='_blank'>{email}</a>",
@@ -342,8 +340,7 @@
                 "nl": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
                 "en": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
                 "it": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
-                "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
-                "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
+                "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
             },
             "render": {
                 "nl": "<a href='tel:{email}' target='_blank'>{phone}</a>",
@@ -465,6 +462,28 @@
                     }
                 }
             ]
+        }
+    ],
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/nature_reserve/nature_reserve.svg"
+            },
+            "iconSize": {
+                "render": "50,50,center"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": {
+                "render": "#3c3"
+            },
+            "width": {
+                "render": "1"
+            }
         }
     ]
 }

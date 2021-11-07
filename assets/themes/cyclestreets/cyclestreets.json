@@ -7,8 +7,8 @@
     "ja": "Cyclestreets",
     "zh_Hant": "單車街道",
     "de": "Fahrradstraßen",
-    "it": "Strade ciclabili",
-    "nb_NO": "Sykkelgater"
+    "nb_NO": "Sykkelgater",
+    "it": "Strade ciclabili"
   },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
@@ -21,7 +21,7 @@
   },
   "description": {
     "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
-    "en": "A cyclestreet is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
+    "en": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
     "ja": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",
     "zh_Hant": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
     "de": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
@@ -57,8 +57,7 @@
         "ja": "Cyclestreets",
         "zh_Hant": "單車街道",
         "it": "Strade ciclabili",
-        "de": "Fahrradstraßen",
-        "nb_NO": "Sykkelgater"
+        "de": "Fahrradstraßen"
       },
       "minzoom": 7,
       "source": {
@@ -85,11 +84,20 @@
         "de": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf"
       },
       "title": "{name}",
-      "icon": "./assets/themes/cyclestreets/F111.svg",
-      "color": "#0000ff",
-      "width": "10",
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/cyclestreets/F111.svg",
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": "#0000ff",
+          "width": "10"
+        }
       ]
     },
     {
@@ -108,11 +116,9 @@
         "en": "This street will become a cyclestreet soon",
         "ja": "この通りはまもなくcyclestreetになります",
         "it": "Questa strada diventerà presto una strada ciclabile",
-        "de": "Diese Straße wird bald eine Fahrradstraße sein",
-        "nb_NO": "Denne gaten vil bli sykkelgate snart"
+        "de": "Diese Straße wird bald eine Fahrradstraße sein"
       },
       "minzoom": 9,
-      "wayHandling": 0,
       "source": {
         "osmTags": "proposed:cyclestreet=yes"
       },
@@ -132,18 +138,26 @@
               "en": "{name} will become a cyclestreet soon",
               "ja": "{name}は、もうすぐcyclestreetになる",
               "it": "{name} diventerà presto una strada ciclabile",
-              "de": "{name} wird bald eine Fahrradstraße werden",
-              "nb_NO": "{name} vil bli sykkelgate snart"
+              "de": "{name} wird bald eine Fahrradstraße werden"
             },
             "if": "name~*"
           }
         ]
       },
-      "icon": "./assets/themes/cyclestreets/F113.svg",
-      "color": "#09f9dd",
-      "width": "5",
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/cyclestreets/F113.svg",
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": "#09f9dd",
+          "width": "5"
+        }
       ]
     },
     {
@@ -176,7 +190,6 @@
         }
       },
       "minzoom": 18,
-      "wayHandling": 0,
       "title": {
         "render": {
           "nl": "Straat",
@@ -185,8 +198,7 @@
           "it": "Strada",
           "ru": "Улица",
           "de": "Straße",
-          "eo": "Strato",
-          "nb_NO": "Gate"
+          "eo": "Strato"
         },
         "mappings": [
           {
@@ -195,23 +207,32 @@
           }
         ]
       },
-      "icon": "./assets/svg/pencil.svg",
-      "width": "5",
-      "color": {
-        "render": "#aaaaaa",
-        "mappings": [
-          {
-            "then": "#0000ff",
-            "if": "cyclestreet=yes"
-          },
-          {
-            "then": "#09f9dd",
-            "if": "proposed:cyclestreet=yes"
-          }
-        ]
-      },
       "tagRenderings": [
         "images"
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/svg/pencil.svg",
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#aaaaaa",
+            "mappings": [
+              {
+                "then": "#0000ff",
+                "if": "cyclestreet=yes"
+              },
+              {
+                "then": "#09f9dd",
+                "if": "proposed:cyclestreet=yes"
+              }
+            ]
+          },
+          "width": "5"
+        }
       ]
     }
   ],
@@ -225,8 +246,7 @@
           "en": "Is this street a cyclestreet?",
           "ja": "この通りはcyclestreetですか?",
           "nb_NO": "Er denne gaten en sykkelvei?",
-          "de": "Ist diese Straße eine Fahrradstraße?",
-          "it": "È una strada ciclabile?"
+          "de": "Ist diese Straße eine Fahrradstraße?"
         },
         "mappings": [
           {
@@ -243,8 +263,7 @@
               "en": "This street is a cyclestreet (and has a speed limit of 30 km/h)",
               "ja": "cyclestreet(最高速度は30km/h)",
               "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)",
-              "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)",
-              "it": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
+              "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
             }
           },
           {
@@ -259,8 +278,7 @@
               "en": "This street is a cyclestreet",
               "ja": "この通りはcyclestreetだ",
               "nb_NO": "Denne gaten er en sykkelvei",
-              "de": "Diese Straße ist eine Fahrradstraße",
-              "it": "Questa è una strada ciclabile"
+              "de": "Diese Straße ist eine Fahrradstraße"
             },
             "hideInAnswer": true
           },
@@ -276,8 +294,7 @@
               "en": "This street will become a cyclstreet soon",
               "ja": "この通りはまもなくcyclstreetになるだろう",
               "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
-              "de": "Diese Straße wird bald eine Fahrradstraße sein",
-              "it": "Diverrà tra poco una strada ciclabile"
+              "de": "Diese Straße wird bald eine Fahrradstraße sein"
             }
           },
           {

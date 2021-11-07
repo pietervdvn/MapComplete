@@ -1,7 +1,7 @@
 {
   "id": "cyclofix",
   "title": {
-    "en": "Cyclofix — an open map for cyclists",
+    "en": "Cyclofix - an open map for cyclists",
     "nl": "Cyclofix - een open kaart voor fietsers",
     "fr": "Cyclofix - Une carte ouverte pour les cyclistes",
     "gl": "Cyclofix - Un mapa aberto para os ciclistas",
@@ -9,7 +9,7 @@
     "ru": "Cyclofix - открытая карта для велосипедистов",
     "ja": "Cyclofix - サイクリストのためのオープンマップ",
     "zh_Hant": "單車修正 - 單車騎士的開放地圖",
-    "it": "Cyclofix — una mappa libera per chi va in bici",
+    "it": "Cyclofix - una mappa libera per chi va in bici",
     "nb_NO": "Cyclofix — et åpent kart for syklister"
   },
   "description": {

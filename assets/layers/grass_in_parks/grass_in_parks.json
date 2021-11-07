@@ -51,5 +51,19 @@
             "id": "grass-in-parks-reviews",
             "render": "{reviews(name, landuse=grass )}"
         }
+    ],
+    "mapRendering": [
+        {
+            "icon": "./assets/themes/playgrounds/playground.svg",
+            "iconSize": "40,40,center",
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": "#0f0",
+            "width": "1"
+        }
     ]
 }

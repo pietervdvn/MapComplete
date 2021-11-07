@@ -445,6 +445,17 @@
             "render": "單車停車場"
         }
     },
+    "charging_station": {
+        "tagRenderings": {
+            "Network": {
+                "question": "充電站所屬的網路是？",
+                "render": "{network}"
+            },
+            "OH": {
+                "question": "何時是充電站開放使用的時間？"
+            }
+        }
+    },
     "ghost_bike": {
         "name": "幽靈單車",
         "title": {

@@ -36,7 +36,7 @@
                 "name": "Wohnmobilstellplätze",
                 "presets": {
                     "0": {
-                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem Übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
                         "title": "Wohnmobilstellplatz"
                     }
                 },
@@ -662,6 +662,7 @@
         "title": "Open Etymology Map"
     },
     "facadegardens": {
+        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
             "0": {
                 "description": "Fassadengärten",
@@ -745,8 +746,7 @@
             }
         },
         "shortDescription": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen.",
-        "title": "Fassadengärten",
-        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
+        "title": "Fassadengärten"
     },
     "food": {
         "title": "Restaurants und Schnellimbisse"
@@ -769,13 +769,6 @@
         "layers": {
             "0": {
                 "description": "Hackerspace",
-                "icon": {
-                    "mappings": {
-                        "0": {
-                            "then": "./assets/themes/hackerspaces/led.png"
-                        }
-                    }
-                },
                 "name": "Hackerspace",
                 "presets": {
                     "0": {
@@ -842,7 +835,7 @@
         "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
+        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
         "layers": {
             "0": {
                 "description": "Kartenebene zur Anzeige von Hydranten.",
@@ -949,13 +942,6 @@
                 "tagRenderings": {
                     "station-name": {
                         "question": "Wie lautet der Name dieser Feuerwache?"
-                    },
-                    "station-agency": {
-                        "mappings": {
-                            "0": {
-                                "then": "Brandschutzbehörde"
-                            }
-                        }
                     }
                 },
                 "title": {
@@ -965,28 +951,22 @@
             "3": {
                 "presets": {
                     "0": {
-                        "description": "Eine Rettungsstation der Karte hinzufügen",
-                        "title": "Rettungswache"
+                        "description": "Eine Rettungsstation der Karte hinzufügen"
                     }
-                },
-                "description": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
-                "name": "Karte der Rettungswachen",
-                "title": {
-                    "render": "Rettungswache"
                 }
             }
         },
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
     },
     "maps": {
-        "title": "Eine Karte der Karten",
-        "shortDescription": "Eine Karte mit allen (touristischen) Karten, die OpenStreetMap kennt",
-        "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren."
+        "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
+        "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
+        "title": "Eine Karte der Karten"
     },
     "natuurpunt": {
+        "description": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
         "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
-        "title": "Naturschutzgebiete",
-        "description": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden "
+        "title": "Naturschutzgebiete"
     },
     "observation_towers": {
         "description": "Öffentlich zugänglicher Aussichtsturm",
@@ -1033,7 +1013,7 @@
                 }
             }
         },
-        "title": "Freie Windenergie-Karte"
+        "title": "OpenWindPowerMap"
     },
     "parkings": {
         "description": "Diese Karte zeigt Parkplätze",
@@ -1041,13 +1021,13 @@
         "title": "Parken"
     },
     "personal": {
-        "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
+        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
         "title": "Persönliches Thema"
     },
     "playgrounds": {
+        "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",
         "shortDescription": "Eine Karte mit Spielplätzen",
-        "title": "Spielplätze",
-        "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen"
+        "title": "Spielpläzte"
     },
     "postboxes": {
         "layers": {
@@ -1098,9 +1078,9 @@
         "title": "Karte mit Briefkästen und Poststellen"
     },
     "shops": {
+        "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
-        "title": "Freie Geschäftskarte",
-        "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen"
+        "title": "Freie Geschäftskarte"
     },
     "sport_pitches": {
         "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
@@ -1124,7 +1104,7 @@
     "uk_addresses": {
         "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
         "layers": {
-            "1": {
+            "2": {
                 "description": "Adressen",
                 "name": "Bekannte Adressen in OSM",
                 "tagRenderings": {

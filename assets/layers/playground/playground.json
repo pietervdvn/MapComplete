@@ -213,8 +213,7 @@
                 "en": "What is the minimum age required to access this playground?",
                 "it": "Qual è l’età minima per accedere a questo parco giochi?",
                 "fr": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?",
-                "ru": "С какого возраста доступна эта детская площадка?",
-                "de": "Ab welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
+                "ru": "С какого возраста доступна эта детская площадка?"
             },
             "freeform": {
                 "key": "min_age",
@@ -235,8 +234,7 @@
                 "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
                 "en": "What is the maximum age allowed to access this playground?",
                 "it": "Qual è l’età massima per accedere a questo parco giochi?",
-                "fr": "Quel est l’âge maximum autorisé pour utiliser l’aire de jeu ?",
-                "de": "Bis zu welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
+                "fr": "Quel est l’âge maximum autorisé pour utiliser l’aire de jeu ?"
             },
             "freeform": {
                 "key": "max_age",
@@ -357,8 +355,7 @@
                 "nl": "Wie kan men bellen indien er problemen zijn met de speeltuin?",
                 "en": "What is the phone number of the playground maintainer?",
                 "fr": "Quel est le numéro de téléphone du responsable du terrain de jeux ?",
-                "it": "Qual è il numero di telefono del gestore del campetto?",
-                "de": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?"
+                "it": "Qual è il numero di telefono del gestore del campetto?"
             },
             "render": {
                 "nl": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>",
@@ -491,8 +488,7 @@
                     "opening_hours~*"
                 ]
             },
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         }
     ],
     "width": {
@@ -545,5 +541,56 @@
                 "leisure="
             ]
         }
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/playgrounds/playground.svg"
+            },
+            "iconBadges": [
+                {
+                    "if": {
+                        "and": [
+                            "opening_hours!=24/7",
+                            "opening_hours~*"
+                        ]
+                    },
+                    "then": "isOpen"
+                }
+            ],
+            "iconSize": {
+                "render": "40,40,center",
+                "mappings": [
+                    {
+                        "if": "id~node/.*",
+                        "then": "40,40,center"
+                    },
+                    {
+                        "if": "_size_classification=small",
+                        "then": "25,25,center"
+                    },
+                    {
+                        "if": "_size_classification=medium",
+                        "then": "40,40,center"
+                    },
+                    {
+                        "if": "_size_classification=large",
+                        "then": "60,60,center"
+                    }
+                ]
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": {
+                "render": "#5dbaa9"
+            },
+            "width": {
+                "render": "1"
+            }
+        }
+    ]
 }

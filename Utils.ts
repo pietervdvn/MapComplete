@@ -15,6 +15,18 @@ export class Utils {
     private static injectedDownloads = {}
     private static _download_cache = new Map<string, { promise: Promise<any>, timestamp: number }>()
 
+   public  static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
+This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. \`ref=$source:geometry:type/$source:geometry:ref\`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with \`[a-zA-Z0-9_:]*\`). Sadly, delimiting with \`{}\` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+ `
+    
     static EncodeXmlValue(str) {
         if (typeof str !== "string") {
             str = "" + str
@@ -165,8 +177,10 @@ export class Utils {
         return [a.substr(0, index), a.substr(index + sep.length)];
     }
 
-    public static SubstituteKeys(txt: string, tags: any) {
-
+    public static SubstituteKeys(txt: string | undefined, tags: any): string | undefined {
+        if (txt === undefined) {
+            return undefined
+        }
         const regex = /.*{([^}]*)}.*/
 
         let match = txt.match(regex)
@@ -176,7 +190,7 @@ export class Utils {
             txt = txt.replace("{" + key + "}", tags[key] ?? "")
             match = txt.match(regex)
         }
-      
+
         return txt;
     }
 
@@ -455,11 +469,11 @@ export class Utils {
         const now = new Date()
         const lastWeek = new Date(now.getTime() - daysInThePast * 24 * 60 * 60 * 1000)
         const date = lastWeek.getFullYear() + "-" + Utils.TwoDigits(lastWeek.getMonth() + 1) + "-" + Utils.TwoDigits(lastWeek.getDate())
-        let osmcha_link = `{"date__gte":[{"label":"${date}","value":"${date}"}],"editor":[{"label":"mapcomplete","value":"mapcomplete"}]}`
+        let osmcha_link = `"date__gte":[{"label":"${date}","value":"${date}"}],"editor":[{"label":"mapcomplete","value":"mapcomplete"}]`
         if (theme !== undefined) {
-            osmcha_link = osmcha_link + "," + `{"comment":[{"label":"#${theme}","value":"#${theme}"}]`
+            osmcha_link = osmcha_link + "," + `"comment":[{"label":"#${theme}","value":"#${theme}"}]`
         }
-        return "https://osmcha.org/?filters=" + encodeURIComponent(osmcha_link)
+        return "https://osmcha.org/?filters=" + encodeURIComponent("{"+osmcha_link+"}")
     }
 
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {

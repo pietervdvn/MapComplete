@@ -28,8 +28,7 @@
     "iconOverlays": [
         {
             "if": "opening_hours~*",
-            "then": "isOpen",
-            "badge": true
+            "then": "isOpen"
         }
     ],
     "label": {
@@ -203,5 +202,35 @@
             ]
         }
     },
-    "allowMove": true
+    "allowMove": true,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "circle:white;./assets/layers/cafe_pub/pub.svg",
+                "mappings": [
+                    {
+                        "if": "amenity=cafe",
+                        "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
+                    }
+                ]
+            },
+            "iconBadges": [
+                {
+                    "if": "opening_hours~*",
+                    "then": "isOpen"
+                }
+            ],
+            "label": {
+                "mappings": [
+                    {
+                        "if": "name~*",
+                        "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+                    }
+                ]
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

@@ -175,6 +175,16 @@
             }
         }
     },
+    "charging_station": {
+        "tagRenderings": {
+            "Network": {
+                "render": "{network}"
+            },
+            "OH": {
+                "question": "Når åpnet denne ladestasjonen?"
+            }
+        }
+    },
     "ghost_bike": {
         "name": "Spøkelsessykler",
         "title": {

@@ -1,0 +1,15 @@
+{
+    "id": "gps_location",
+    "description": "Meta layer showing the current location of the user",
+    "minzoom": 0,
+    "source": {
+        "osmTags": "user:location=yes"
+    },
+    "mapRendering": [
+        {
+            "icon": "crosshair:#00f",
+            "iconSize": "40,40,center",
+            "location": "point"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "id": "conflation",
+    "description": "This is a special meta_layer which render geometry-changes for inspection",
+    "minzoom": 1,
+    "source": {
+        "osmTags": {
+            "or": [
+                "move=yes",
+                "newpoint=yes"
+            ]
+        }
+    },
+    "name": "Conflation",
+    "title": "Conflation",
+    "mapRendering": [
+        {
+            "location": "point",
+            "icon": "addSmall:#000",
+            "iconSize": "10,10,center"
+        },
+        {
+            "location": "end",
+            "icon": "circle:#0f0",
+            "iconSize": "10,10,center"
+        },
+        {
+            "location": "start",
+            "icon": "square:#f00",
+            "iconSize": "10,10,center"
+        },
+        {
+            "width": "3",
+            "color": "#00f",
+            "dasharray": {
+                "render": "",
+                "mappings": [
+                    {
+                        "if": "resulting-geometry=yes",
+                        "then": "6 6"
+                    }
+                ]
+            }
+        }
+    ]
+}

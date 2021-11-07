@@ -37,6 +37,13 @@ jobs:
           git clone --depth 1 --single-branch --branch master "https://x-access-token:$DEPLOY_KEY_PIETERVDVN@github.com/pietervdvn/pietervdvn.github.io.git"
           echo "Destination repo is cloned"
 
+      - name: Sync repo
+        env:
+          DEPLOY_KEY_PIETERVDVN: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
+        run: |
+          cd pietervdvn.github.io
+          git pull
+
       - name: "Copying files"
         run: |
           echo "Deploying"

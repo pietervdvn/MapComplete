@@ -406,8 +406,7 @@
                         "nl": "Erkend als erfgoed door een andere organisatie",
                         "en": "Registered as heritage by a different organisation",
                         "it": "Registrato come patrimonio da un’organizzazione differente",
-                        "fr": "Enregistré comme patrimoine par une autre organisation",
-                        "de": "Von einer anderen Organisation als Denkmal registriert"
+                        "fr": "Enregistré comme patrimoine par une autre organisation"
                     }
                 },
                 {
@@ -435,8 +434,7 @@
                         "nl": "Erkend als erfgoed door een andere organisatie",
                         "en": "Registered as heritage by a different organisation",
                         "it": "Registrato come patrimonio da un’organizzazione differente",
-                        "fr": "Enregistré comme patrimoine par une autre organisation",
-                        "de": "Von einer anderen Organisation als Denkmal registriert"
+                        "fr": "Enregistré comme patrimoine par une autre organisation"
                     },
                     "hideInAnswer": true
                 }
@@ -454,8 +452,7 @@
                 "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
                 "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
                 "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-                "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-                "de": ""
+                "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
             },
             "question": {
                 "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
@@ -618,5 +615,36 @@
     },
     "deletion": {
         "minNeededChangesets": 5
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "circle:#ffffff;./assets/themes/trees/unknown.svg",
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "leaf_type=broadleaved"
+                            ]
+                        },
+                        "then": "circle:#ffffff;./assets/themes/trees/broadleaved.svg"
+                    },
+                    {
+                        "if": {
+                            "and": [
+                                "leaf_type=needleleaved"
+                            ]
+                        },
+                        "then": "circle:#ffffff;./assets/themes/trees/needleleaved.svg"
+                    }
+                ]
+            },
+            "iconSize": {
+                "render": "40,40,bottom"
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

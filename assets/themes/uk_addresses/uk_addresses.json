@@ -46,16 +46,42 @@
       "defaultState": false,
       "name": {
         "en": "Property boundaries by osmuk.org",
-        "de": "Grenzverläufe gemäß osmuk.org",
-        "it": "Confini delle proprietà di osmuk.org"
+        "de": "Grenzverläufe gemäß osmuk.org"
       }
     }
   ],
   "layers": [
     {
+      "id": "raw_inspire_polygons",
+      "source": {
+        "geoJson": "https://osm-uk-addresses.russss.dev/inspire/{z}/{x}/{y}.json",
+        "osmTags": "inspireid~*",
+        "geoJsonZoomLevel": 18,
+        "isOsmCache": false
+      },
+      "minzoom": 18,
+      "calculatedTags": [
+        "_has_address=feat.overlapWith('addresses').length > 0"
+      ],
+      "#mapRendering": [
+        {
+          "width": 2,
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": "_has_address=true",
+                "then": "#0f0"
+              }
+            ]
+          }
+        }
+      ],
+      "mapRendering": []
+    },
+    {
       "id": "to_import",
       "source": {
-        "#geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/assets/themes/uk_addresses/islington_small_piece.geojson",
         "geoJson": "https://osm-uk-addresses.russss.dev/addresses/{z}/{x}/{y}.json",
         "osmTags": "inspireid~*",
         "geoJsonZoomLevel": 16,
@@ -63,23 +89,6 @@
       },
       "name": "Addresses to check",
       "minzoom": 14,
-      "wayHandling": 1,
-      "icon": {
-        "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
-        "mappings": [
-          {
-            "if": "_embedding_object:id~*",
-            "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-          },
-          {
-            "if": "_imported=yes",
-            "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-          }
-        ]
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
       "title": {
         "render": "Address to be determined"
       },
@@ -91,18 +100,29 @@
         {
           "id": "uk_addresses_embedding_outline",
           "render": "An outline embedding this point with an address already exists in OpenStreetMap.<br>This <a href='https://openstreetmap.org/{_embedding_object:id}' target='blank'>object</a> has address <b>{_embedding_object:addr:street} {_embedding_object:addr:housenumber}</b>",
+          "mappings": [
+            {
+              "if": "_embedding_object:id=true",
+              "then": "The INSPIRE-polygon containing this point has at least one address contained"
+            },
+            {
+              "if": "_embedding_object:id=false",
+              "then": "The INSPIRE-polygon containing this point has <b>no</b> addresses contained"
+            }
+          ],
           "condition": "_embedding_object:id~*"
         },
         {
           "id": "uk_addresses_import_button",
-          "render": "{import_button(ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
+          "render": "{import_button(addresses,ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
         }
       ],
       "calculatedTags": [
         "_embedding_object=feat.overlapWith('addresses')[0]?.feat?.properties ?? null",
         "_embedding_object:addr:housenumber=JSON.parse(feat.properties._embedding_object)?.['addr:housenumber']",
         "_embedding_object:addr:street=JSON.parse(feat.properties._embedding_object)?.['addr:street']",
-        "_embedding_object:id=JSON.parse(feat.properties._embedding_object)?.id"
+        "_embedding_inspire_polygon_has_address=feat.overlapWith('raw_inspire_polygons')[0]?.feat?.properties?._has_address",
+        "_embedding_object:id=feat.get('_embedding_object')?.id ?? feat.properties._embedding_inspire_polygon_has_address"
       ],
       "filter": [
         {
@@ -113,10 +133,43 @@
               "osmTags": {
                 "and": [
                   "_imported=",
-                  "_embedding_object:id="
+                  {
+                    "or": [
+                      "_embedding_object:id=",
+                      "_embedding_object:id=false"
+                    ]
+                  }
                 ]
               }
             }
+          ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "_embedding_object:id~*",
+                    "_embedding_object:id!=false"
+                  ]
+                },
+                "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+              },
+              {
+                "if": "_imported=yes",
+                "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point"
           ]
         }
       ]
@@ -125,9 +178,7 @@
       "id": "addresses",
       "name": {
         "en": "Known addresses in OSM",
-        "de": "Bekannte Adressen in OSM",
-        "it": "Indirizzo presente su OSM",
-        "nb_NO": "Kjente adresser i OSM"
+        "de": "Bekannte Adressen in OSM"
       },
       "minzoom": 18,
       "source": {
@@ -148,25 +199,20 @@
       "title": {
         "render": {
           "en": "Known address",
-          "de": "Bekannte Adresse",
-          "it": "Indirizzo conosciuto",
-          "nb_NO": "Kjent adresse"
+          "de": "Bekannte Adresse"
         }
       },
       "description": {
         "en": "Addresses",
         "nl": "Adressen",
-        "de": "Adressen",
-        "it": "Indirizzi",
-        "nb_NO": "Adresser"
+        "de": "Adressen"
       },
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation_osm",
           "render": {
             "en": "This address is saved in OpenStreetMap",
-            "de": "Diese Adresse ist in OpenStreetMap gespeichert",
-            "it": "Questo indirizzo è salvato su OpenStreetMap"
+            "de": "Diese Adresse ist in OpenStreetMap gespeichert"
           }
         },
         {
@@ -174,13 +220,11 @@
           "render": {
             "en": "The housenumber is <b>{addr:housenumber}</b>",
             "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
-            "de": "Die Hausnummer ist <b>{addr:housenumber}</b>",
-            "it": "Il numero civico è <b>{addr:housenumber}</b>"
+            "de": "Die Hausnummer ist <b>{addr:housenumber}</b>"
           },
           "question": {
             "en": "What is the number of this house?",
-            "de": "Wie lautet die Nummer dieses Hauses?",
-            "it": "Qual è il numero civico di questa casa?"
+            "de": "Wie lautet die Nummer dieses Hauses?"
           },
           "freeform": {
             "key": "addr:housenumber",
@@ -198,9 +242,35 @@
               "then": {
                 "en": "This building has no house number",
                 "nl": "Dit gebouw heeft geen huisnummer",
-                "de": "Dieses Gebäude hat keine Hausnummer",
-                "it": "Questo edificio non ha indirizzo"
+                "de": "Dieses Gebäude hat keine Hausnummer"
               }
+            }
+          ]
+        },
+        {
+          "id": "uk_addresses_housename",
+          "question": "What is the name of this house?<br/>This is normally indicated on a plaque.<br><div class='subtle'>Do NOT add names of inhabitants!</div>",
+          "render": "This house is named <b>{addr:housename}</b>",
+          "freeform": {
+            "key": "addr:housename",
+            "addExtraTags": [
+              "nohousename="
+            ]
+          },
+          "mappings": [
+            {
+              "if": "nohousename=yes",
+              "then": "This building has no housename"
+            },
+            {
+              "if": {
+                "and": [
+                  "addr:housename=",
+                  "nohousenumber!=yes"
+                ]
+              },
+              "then": "This building has no housename",
+              "hideInAnswer": true
             }
           ]
         },
@@ -208,13 +278,11 @@
           "id": "uk_addresses_street",
           "render": {
             "en": "This address is in street <b>{addr:street}</b>",
-            "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
-            "it": "L’indirizzo è in via <b>{addr:street}</b>"
+            "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
           },
           "question": {
             "en": "What street is this address located in?",
-            "de": "In welcher Straße befindet sich diese Adresse?",
-            "it": "Qual è la via in cui si trova?"
+            "de": "In welcher Straße befindet sich diese Adresse?"
           },
           "freeform": {
             "key": "addr:street"
@@ -241,52 +309,84 @@
               "nohousenumber!~yes"
             ]
           }
+        },
+        {
+          "id": "fixme",
+          "render": "<b>Fixme description</b>{render}",
+          "question": {
+            "en": "What should be fixed here? Please explain"
+          },
+          "freeform": {
+            "key": "fixme"
+          },
+          "mappings": [
+            {
+              "if": "fixme=",
+              "then": "No fixme - write something here to explain complicated cases"
+            }
+          ]
+        },
+        "questions",
+        {
+          "id": "address-sign-image",
+          "render": {
+            "en": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
+          }
         }
       ],
-      "icon": {
-        "render": "./assets/themes/uk_addresses/housenumber_ok.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                {
-                  "and": [
-                    "addr:housenumber=",
-                    "nohousenumber!=yes"
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/uk_addresses/housenumber_ok.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
                   ]
                 },
-                "addr:street="
-              ]
-            },
-            "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
-          }
-        ]
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                {
-                  "and": [
-                    "addr:housenumber=",
-                    "nohousenumber!=yes"
+                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
                   ]
                 },
-                "addr:street="
-              ]
-            },
-            "then": "#ff0"
+                "then": "#ff0"
+              }
+            ]
+          },
+          "width": {
+            "render": "8"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "named_streets",
@@ -299,12 +399,18 @@
           ]
         }
       },
-      "color": {
-        "render": "#ccc"
-      },
-      "width": {
-        "render": "0"
-      }
+      "mapRendering": [
+        {
+          "color": {
+            "render": "#ccc"
+          },
+          "width": {
+            "render": "0"
+          }
+        }
+      ]
     }
-  ]
+  ],
+  "enableShareScreen": false,
+  "enableMoreQuests": false
 }

@@ -108,7 +108,8 @@
             "openLayerControl": "Open the layer control box",
             "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point",
             "hasBeenImported": "This point has already been imported",
-            "zoomInMore": "Zoom in more to import this feature"
+            "zoomInMore": "Zoom in more to import this feature",
+            "wrongType": "This element is not a point or a way and can not be imported"
         },
         "pickLanguage": "Choose a language: ",
         "about": "Easily edit and add OpenStreetMap for a certain theme",
@@ -158,7 +159,15 @@
             },
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
-            "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
+            "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>",
+            "openOsmcha": "See latest edits made with {theme}",
+            "openMapillary": "Open Mapillary here",
+            "openIssueTracker": "File a bug",
+            "josmOpened": "JOSM is opened",
+            "josmNotOpened": "JOSM could not be reached. Make sure it is opened and remote control is enabled",
+            "editJosm": "Edit here with JOSM",
+            "editId": "Open the OpenStreetMap online editor here",
+            "donate": "Support MapComplete financially"
         },
         "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new point.",
         "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",
@@ -209,10 +218,10 @@
         },
         "opening_hours": {
             "error_loading": "Error: could not visualize these opening hours.",
-            "open_during_ph": "During a public holiday, this amenity is",
+            "open_during_ph": "During a public holiday, this is",
             "opensAt": "from",
             "openTill": "till",
-            "not_all_rules_parsed": "The opening hours of this shop are complicated. The following rules are ignored in the input element:",
+            "not_all_rules_parsed": "These opening hours are complicated. The following rules are ignored in the input element:",
             "closed_until": "Closed until {date}",
             "closed_permanently": "Closed for an unkown duration",
             "open_24_7": "Opened around the clock",
@@ -234,6 +243,10 @@
             "noResults": "Nothing found for <i>{search}</i>",
             "doSearch": "Search above to see results",
             "createNewWikidata": "Create a new Wikidata item"
+        },
+        "apply_button": {
+            "isApplied": "The changes are applied",
+            "appliedOnAnotherObject": "The object {id} will receive {tags}"
         }
     },
     "favourite": {

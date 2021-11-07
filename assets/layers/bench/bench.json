@@ -660,5 +660,18 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "circle:#FE6F32;./assets/layers/bench/bench.svg"
+            },
+            "iconSize": {
+                "render": "35,35,center"
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

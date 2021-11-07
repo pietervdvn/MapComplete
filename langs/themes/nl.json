@@ -753,7 +753,50 @@
     "grb": {
         "description": "GRB Fixup",
         "layers": {
-            "0": {
+            "3": {
+                "description": "Dit gebouw heeft een foutmelding",
+                "name": "Fixmes op gebouwen",
+                "tagRenderings": {
+                    "grb-fixme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen fixme"
+                            }
+                        },
+                        "question": "Wat zegt de fixme?",
+                        "render": "De fixme is <b>{fixme}</b>"
+                    },
+                    "grb-housenumber": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen huisnummer"
+                            }
+                        },
+                        "question": "Wat is het huisnummer?",
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+                    },
+                    "grb-min-level": {
+                        "question": "Hoeveel verdiepingen ontbreken?",
+                        "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
+                    },
+                    "grb-street": {
+                        "question": "Wat is de straat?",
+                        "render": "De straat is <b>{addr:street}</b>"
+                    },
+                    "grb-unit": {
+                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{fixme}"
+                        }
+                    },
+                    "render": "{addr:street} {addr:housenumber}"
+                }
+            },
+            "5": {
                 "description": "Dit gebouw heeft een foutmelding",
                 "name": "Fixmes op gebouwen",
                 "tagRenderings": {
@@ -925,6 +968,66 @@
         "shortDescription": "Deze kaart toont sportvelden",
         "title": "Sportvelden"
     },
+    "street_lighting": {
+        "description": "Op deze kaart vind je alles over straatlantaarns",
+        "layers": {
+            "1": {
+                "name": "Verlichte straten",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze straat is verlicht"
+                            },
+                            "1": {
+                                "then": "Deze straat is niet verlicht"
+                            },
+                            "2": {
+                                "then": "Deze straat is 's nachts verlicht"
+                            },
+                            "3": {
+                                "then": "Deze straat is 24/7 verlicht"
+                            }
+                        },
+                        "question": "Is deze straat verlicht?"
+                    }
+                },
+                "title": {
+                    "render": "Verlichte straat"
+                }
+            },
+            "2": {
+                "name": "Alle straten",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze straat is verlicht"
+                            },
+                            "1": {
+                                "then": "Deze straat is niet verlicht"
+                            },
+                            "2": {
+                                "then": "Deze straat is 's nachts verlicht"
+                            },
+                            "3": {
+                                "then": "Deze straat is 24/7 verlicht"
+                            }
+                        },
+                        "question": "Is deze straat verlicht?"
+                    }
+                },
+                "title": {
+                    "render": "Straat"
+                }
+            }
+        },
+        "title": "Straatverlichting"
+    },
+    "street_lighting_assen": {
+        "description": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen",
+        "title": "Straatverlichting - Assen"
+    },
     "surveillance": {
         "description": "Op deze open kaart kan je bewakingscamera's vinden.",
         "shortDescription": "Bewakingscameras en dergelijke",
@@ -948,7 +1051,7 @@
     "uk_addresses": {
         "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
         "layers": {
-            "1": {
+            "2": {
                 "description": "Adressen",
                 "tagRenderings": {
                     "uk_addresses_housenumber": {

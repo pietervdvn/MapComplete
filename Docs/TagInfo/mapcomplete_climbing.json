@@ -195,6 +195,26 @@
       "description": "The layer 'Climbing gyms allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "name",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
       "key": "url",
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'url' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
@@ -315,26 +335,6 @@
       "description": "Layer 'Climbing gyms' shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
-      "key": "name",
-      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "phone",
-      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "email",
-      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
       "key": "climbing",
       "description": "The MapComplete theme Open Climbing Map has a layer Climbing routes showing features with this tag",
       "value": "route"
@@ -354,6 +354,46 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Climbing routes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Climbing routes' shows noname=yes&name= with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "yes"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing routes' shows noname=yes&name= with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
+      "value": ""
+    },
+    {
+      "key": "climbing:length",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:length' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "climbing:grade:french",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:grade:french' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "climbing:bolts",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:bolts' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "climbing:bolted",
+      "description": "Layer 'Climbing routes' shows climbing:bolted=no with a fixed text, namely 'This route is not bolted' (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:bolted",
+      "description": "Layer 'Climbing routes' shows climbing:bolted=no&climbing:bolts= with a fixed text, namely 'This route is not bolted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "no&climbing:bolts="
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "url",
@@ -476,46 +516,6 @@
       "description": "Layer 'Climbing routes' shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
-      "key": "name",
-      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "noname",
-      "description": "Layer 'Climbing routes' shows noname=yes&name= with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "yes"
-    },
-    {
-      "key": "name",
-      "description": "Layer 'Climbing routes' shows noname=yes&name= with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
-      "value": ""
-    },
-    {
-      "key": "climbing:length",
-      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:length' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "climbing:grade:french",
-      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:grade:french' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "climbing:bolts",
-      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:bolts' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "climbing:bolted",
-      "description": "Layer 'Climbing routes' shows climbing:bolted=no with a fixed text, namely 'This route is not bolted' (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "no"
-    },
-    {
-      "key": "climbing:bolted",
-      "description": "Layer 'Climbing routes' shows climbing:bolted=no&climbing:bolts= with a fixed text, namely 'This route is not bolted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "no&climbing:bolts="
-    },
-    {
-      "key": "description",
-      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
       "key": "sport",
       "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities showing features with this tag",
       "value": "climbing"
@@ -535,6 +535,44 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Climbing opportunities allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Climbing opportunities' shows noname=yes&name= with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "yes"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing opportunities' shows noname=yes&name= with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
+      "value": ""
+    },
+    {
+      "key": "climbing",
+      "description": "Layer 'Climbing opportunities' shows climbing=boulder with a fixed text, namely 'A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "boulder"
+    },
+    {
+      "key": "climbing",
+      "description": "Layer 'Climbing opportunities' shows climbing=crag with a fixed text, namely 'A climbing crag - a single rock or cliff with at least a few climbing routes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "crag"
+    },
+    {
+      "key": "climbing",
+      "description": "Layer 'Climbing opportunities' shows climbing=area with a fixed text, namely 'A climbing area with one or more climbing crags and/or boulders' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "area"
+    },
+    {
+      "key": "rock",
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'rock' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "rock",
+      "description": "Layer 'Climbing opportunities' shows rock=limestone with a fixed text, namely 'Limestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "limestone"
     },
     {
       "key": "url",
@@ -655,44 +693,6 @@
     {
       "key": "climbing:speed",
       "description": "Layer 'Climbing opportunities' shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "name",
-      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "noname",
-      "description": "Layer 'Climbing opportunities' shows noname=yes&name= with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "yes"
-    },
-    {
-      "key": "name",
-      "description": "Layer 'Climbing opportunities' shows noname=yes&name= with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
-      "value": ""
-    },
-    {
-      "key": "climbing",
-      "description": "Layer 'Climbing opportunities' shows climbing=boulder with a fixed text, namely 'A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "boulder"
-    },
-    {
-      "key": "climbing",
-      "description": "Layer 'Climbing opportunities' shows climbing=crag with a fixed text, namely 'A climbing crag - a single rock or cliff with at least a few climbing routes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "crag"
-    },
-    {
-      "key": "climbing",
-      "description": "Layer 'Climbing opportunities' shows climbing=area with a fixed text, namely 'A climbing area with one or more climbing crags and/or boulders' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "area"
-    },
-    {
-      "key": "rock",
-      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'rock' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "rock",
-      "description": "Layer 'Climbing opportunities' shows rock=limestone with a fixed text, namely 'Limestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "limestone"
     },
     {
       "key": "leisure",

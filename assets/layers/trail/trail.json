@@ -40,8 +40,7 @@
             "id": "trail-length",
             "render": {
                 "en": "The trail is {_length:km} kilometers long",
-                "nl": "Deze wandeling is {_length:km} kilometer lang",
-                "de": "Der Wanderweg ist {_length:km} Kilometer lang"
+                "nl": "Deze wandeling is {_length:km} kilometer lang"
             }
         },
         {
@@ -107,32 +106,28 @@
                     "if": "colour=blue",
                     "then": {
                         "nl": "Blauwe wandeling",
-                        "en": "Blue trail",
-                        "de": "Blauer Weg"
+                        "en": "Blue trail"
                     }
                 },
                 {
                     "if": "colour=red",
                     "then": {
                         "nl": "Rode wandeling",
-                        "en": "Red trail",
-                        "de": "Roter Weg"
+                        "en": "Red trail"
                     }
                 },
                 {
                     "if": "colour=green",
                     "then": {
                         "nl": "Groene wandeling",
-                        "en": "Green trail",
-                        "de": "Grüner Weg"
+                        "en": "Green trail"
                     }
                 },
                 {
                     "if": "colour=yellow",
                     "then": {
                         "nl": "Gele wandeling",
-                        "en": "Yellow trail",
-                        "de": "Gelber Weg"
+                        "en": "Yellow trail"
                     }
                 }
             ],
@@ -213,5 +208,45 @@
     },
     "dashArray": {
         "render": "5 5"
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/trail/trail.svg",
+                "mappings": [
+                    {
+                        "if": "wheelchair=yes",
+                        "then": "./assets/layers/trail/wheelchair.svg"
+                    },
+                    {
+                        "if": "pushchair=yes",
+                        "then": "./assets/layers/trail/pushchair.svg"
+                    }
+                ]
+            },
+            "iconSize": {
+                "render": "35,35,center"
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "color": {
+                "render": "#335D9F",
+                "mappings": [
+                    {
+                        "if": "colour~*",
+                        "then": "{colour}"
+                    }
+                ]
+            },
+            "width": {
+                "render": "3"
+            },
+            "dashArray": {
+                "render": "5 5"
+            }
+        }
+    ]
 }

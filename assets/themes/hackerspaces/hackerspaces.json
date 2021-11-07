@@ -34,15 +34,13 @@
       "id": "hackerspaces",
       "name": {
         "en": "Hackerspace",
-        "de": "Hackerspace",
-        "it": "Hackerspace"
+        "de": "Hackerspace"
       },
       "minzoom": 8,
       "title": {
         "render": {
           "en": "Hackerspace",
-          "de": "Hackerspace",
-          "it": "Hackerspace"
+          "de": "Hackerspace"
         },
         "mappings": [
           {
@@ -53,41 +51,35 @@
             },
             "then": {
               "en": " {name}",
-              "de": " {name}",
-              "eo": " {name}",
-              "it": " {name}"
+              "de": " {name}"
             }
           }
         ]
       },
       "description": {
         "en": "Hackerspace",
-        "de": "Hackerspace",
-        "it": "Hackerspace"
+        "de": "Hackerspace"
       },
       "tagRenderings": [
         {
           "id": "is_makerspace",
           "question": {
             "en": "Is this a hackerspace or a makerspace?",
-            "de": "Ist dies ein Hackerspace oder ein Makerspace?",
-            "it": "È un hackerspace o un makerspace?"
+            "de": "Ist dies ein Hackerspace oder ein Makerspace?"
           },
           "mappings": [
             {
               "if": "hackerspace=makerspace",
               "then": {
                 "en": "This is a makerspace",
-                "de": "Dies ist ein Makerspace",
-                "it": "Si tratta di un makerspace"
+                "de": "Dies ist ein Makerspace"
               }
             },
             {
               "if": "hackerspace=",
               "then": {
                 "en": "This is a traditional (software oriented) hackerspace",
-                "de": "Dies ist ein traditioneller (softwareorientierter) Hackerspace",
-                "it": "Si tratta di un hackerspace tradizionale (orientato al software)"
+                "de": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
               }
             }
           ]
@@ -95,13 +87,11 @@
         {
           "question": {
             "en": "What is the name of this hackerspace?",
-            "de": "Wie lautet der Name dieses Hackerspace?",
-            "it": "Qual è il nome di questo hackerspace?"
+            "de": "Wie lautet der Name dieses Hackerspace?"
           },
           "render": {
             "en": "This hackerspace is named <b>{name}</b>",
-            "de": "Dieser Hackerspace heißt <b>{name}</b>",
-            "it": "Questo hackerspace si chiama <b>{name}</b>"
+            "de": "Dieser Hackerspace heißt <b>{name}</b>"
           },
           "freeform": {
             "key": "name"
@@ -114,8 +104,7 @@
         {
           "question": {
             "en": "When is this hackerspace opened?",
-            "de": "Wann hat dieser Hackerspace geöffnet?",
-            "it": "Quando è aperto questo hackerspace?"
+            "de": "Wann hat dieser Hackerspace geöffnet?"
           },
           "freeform": {
             "key": "opening_hours",
@@ -123,9 +112,7 @@
           },
           "render": {
             "en": "{opening_hours_table()}",
-            "de": "{opening_hours_table()}",
-            "eo": "{opening_hours_table()}",
-            "it": "{opening_hours_table()}"
+            "de": "{opening_hours_table()}"
           },
           "mappings": [
             {
@@ -136,8 +123,7 @@
               },
               "then": {
                 "en": "Opened 24/7",
-                "de": "durchgehend geöffnet",
-                "it": "Aperto sempre"
+                "de": "durchgehend geöffnet"
               }
             }
           ],
@@ -148,8 +134,7 @@
           "id": "hs-club-mate",
           "question": {
             "en": "Does this hackerspace serve Club Mate?",
-            "de": "Gibt es in diesem Hackerspace Club Mate?",
-            "it": "In questo hackerspace si serve Club-Mate?"
+            "de": "Gibt es in diesem Hackerspace Club Mate?"
           },
           "mappings": [
             {
@@ -160,8 +145,7 @@
               },
               "then": {
                 "en": "This hackerspace serves club mate",
-                "de": "In diesem Hackerspace gibt es Club Mate",
-                "it": "In questo hackerspace viene servito Club-Mate"
+                "de": "In diesem Hackerspace gibt es Club Mate"
               }
             },
             {
@@ -172,8 +156,7 @@
               },
               "then": {
                 "en": "This hackerspace does not serve club mate",
-                "de": "In diesem Hackerspace gibt es kein Club Mate",
-                "it": "In questo hackerspace non viene servito Club-Mate"
+                "de": "In diesem Hackerspace gibt es kein Club Mate"
               }
             }
           ]
@@ -181,13 +164,11 @@
         {
           "render": {
             "en": "This hackerspace was founded at {start_date}",
-            "de": "Dieser Hackerspace wurde gegründet am {start_date}",
-            "it": "Questo hackerspace è stato creato il {start_date}"
+            "de": "Dieser Hackerspace wurde gegründet am {start_date}"
           },
           "question": {
             "en": "When was this hackerspace founded?",
-            "de": "Wann wurde dieser Hackerspace gegründet?",
-            "it": "Quando è stato creato questo hackerspace?"
+            "de": "Wann wurde dieser Hackerspace gegründet?"
           },
           "freeform": {
             "key": "start_date",
@@ -196,33 +177,6 @@
           "id": "hackerspaces-start_date"
         }
       ],
-      "icon": {
-        "render": "./assets/themes/hackerspaces/glider.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "hackerspace=makerspace"
-              ]
-            },
-            "then": {
-              "en": "./assets/themes/hackerspaces/led.png",
-              "de": "./assets/themes/hackerspaces/led.png",
-              "eo": "./assets/themes/hackerspaces/led.png",
-              "it": "./assets/themes/hackerspaces/led.png"
-            }
-          }
-        ]
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -230,13 +184,11 @@
           ],
           "title": {
             "en": "Hackerspace",
-            "de": "Hackerspace",
-            "it": "Hackerspace"
+            "de": "Hackerspace"
           },
           "description": {
             "en": "A hackerspace is an area where people interested in software gather",
-            "de": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
-            "it": "Un hackerspace è un’area dove si ritrovano le persone interessate al software"
+            "de": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren"
           }
         },
         {
@@ -246,24 +198,53 @@
           ],
           "title": {
             "en": "Makerspace",
-            "de": "Makerspace",
-            "it": "Makerspace"
+            "de": "Makerspace"
           },
           "description": {
             "en": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
-            "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
-            "it": "Un makerspace è un luogo dove gli amanti del fai-da-te si ritrovano per sperimentare con dispositivi di elettronica come arduino, strisce LED, etc."
+            "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ..."
           }
         }
       ],
-      "wayHandling": 2,
       "source": {
         "osmTags": {
           "and": [
             "leisure=hackerspace"
           ]
         }
-      }
+      },
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hackerspaces/glider.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "hackerspace=makerspace"
+                  ]
+                },
+                "then": "./assets/themes/hackerspaces/led.png"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
+        }
+      ]
     }
   ]
 }

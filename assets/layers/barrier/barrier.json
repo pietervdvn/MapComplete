@@ -324,5 +324,16 @@
             },
             "id": "Overlap (cyclebarrier)"
         }
+    ],
+    "mapRendering": [
+        {
+            "icon": "./assets/layers/barrier/barrier.svg",
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "width": "5"
+        }
     ]
 }

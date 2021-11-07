@@ -9,7 +9,6 @@ import CheckBoxes from "../Input/Checkboxes";
 import InputElementMap from "../Input/InputElementMap";
 import {SaveButton} from "./SaveButton";
 import State from "../../State";
-import {Changes} from "../../Logic/Osm/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
@@ -85,7 +84,7 @@ export default class TagRenderingQuestion extends Combine {
         const save = () => {
             const selection = inputElement.GetValue().data;
             if (selection) {
-                (State.state?.changes ?? new Changes())
+                (State.state?.changes)
                     .applyAction(new ChangeTagAction(
                         tags.data.id, selection, tags.data, {
                             theme: State.state?.layoutToUse?.id ?? "unkown",

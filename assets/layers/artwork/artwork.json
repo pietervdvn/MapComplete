@@ -29,13 +29,13 @@
             "ja": "アートワーク",
             "zh_Hant": "藝術品",
             "nb_NO": "Kunstverk",
-            "fi": "Taideteos",
-            "gl": "Obra de arte",
-            "hu": "Műalkotás",
-            "pl": "Dzieło sztuki",
-            "pt": "Obra de arte",
+            "sv": "Konstverk",
             "pt_BR": "Obra de arte",
-            "sv": "Konstverk"
+            "pt": "Obra de arte",
+            "pl": "Dzieło sztuki",
+            "hu": "Műalkotás",
+            "gl": "Obra de arte",
+            "fi": "Taideteos"
         },
         "mappings": [
             {
@@ -417,5 +417,24 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/artwork/artwork.svg"
+            },
+            "location": [
+                "point",
+                "centroid"
+            ]
+        },
+        {
+            "color": {
+                "render": "#0000ff"
+            },
+            "width": {
+                "render": "10"
+            }
+        }
+    ]
 }

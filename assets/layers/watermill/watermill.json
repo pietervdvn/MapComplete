@@ -171,5 +171,18 @@
     },
     "color": {
         "render": "#FFC0CB"
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/watermill/watermill.svg"
+            },
+            "iconSize": {
+                "render": "50,50,center"
+            },
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }

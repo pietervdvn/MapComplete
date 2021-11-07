@@ -31,6 +31,9 @@ class TranslationPart {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue;
             }
+            if(translationsKey == "then"){
+                throw "Suspicious translation at "+context
+            }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
                 console.error("Non-string object in translation while trying to add more translations to '", translationsKey, "': ", v)

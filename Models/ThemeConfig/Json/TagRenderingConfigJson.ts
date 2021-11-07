@@ -11,6 +11,12 @@ export interface TagRenderingConfigJson {
      * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise
      */
     id?: string,
+
+    /**
+     * If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.
+     * The first tagRendering of a group will always be a sticky element.
+     */
+    group?: string
     
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
@@ -169,7 +175,6 @@ export interface TagRenderingConfigJson {
          */
         ifnot?: AndOrTagConfigJson | string
 
-
         /**
          * If chosen as answer, these tags will be applied as well onto the object.
          * Not compatible with multiAnswer
@@ -177,10 +182,4 @@ export interface TagRenderingConfigJson {
         addExtraTags?: string[]
 
     }[]
-
-    /**
-     * If set to true, this tagRendering will escape the current layer and attach itself to all the other layers too.
-     * However, it will _only_ be shown if it matches the overpass-tags of the layer it was originally defined in.
-     */
-    roaming?: boolean
 }

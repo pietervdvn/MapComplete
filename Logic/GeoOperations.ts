@@ -37,8 +37,10 @@ export class GeoOperations {
      * The features with which 'feature' overlaps, are returned together with their overlap area in m²
      *
      * If 'feature' is a LineString, the features in which this feature is (partly) embedded is returned, the overlap length in meter is given
+     * If 'feature' is a Polygon, overlapping points and points within the polygon will be returned
      *
      * If 'feature' is a point, it will return every feature the point is embedded in. Overlap will be undefined
+     * 
      */
     static calculateOverlap(feature: any, otherFeatures: any[]): { feat: any, overlap: number }[] {
 
@@ -235,6 +237,13 @@ export class GeoOperations {
      * @param point Point defined as [lon, lat]
      */
     public static nearestPoint(way, point: [number, number]) {
+        if(way.geometry.type === "Polygon"){
+            way = {...way}
+            way.geometry = {...way.geometry}
+            way.geometry.type = "LineString"
+            way.geometry.coordinates = way.geometry.coordinates[0]
+        }
+        
         return turf.nearestPointOnLine(way, point, {units: "kilometers"});
     }
 
@@ -297,7 +306,7 @@ export class GeoOperations {
         return [x, y];
     }
 
-//Converts XY point from (Spherical) Web Mercator EPSG:3785 (unofficially EPSG:900913) to lat/lon in WGS84 Datum
+    //Converts XY point from (Spherical) Web Mercator EPSG:3785 (unofficially EPSG:900913) to lat/lon in WGS84 Datum
     public static Convert900913ToWgs84(lonLat: [number, number]): [number, number] {
         const lon = lonLat[0]
         const lat = lonLat[1]
@@ -403,6 +412,31 @@ export class GeoOperations {
         return undefined;
     }
 
+    /**
+     * Tries to remove points which do not contribute much to the general outline.
+     * Points for which the angle is ~ 180° are removed
+     * @param coordinates
+     * @constructor
+     */
+    public static SimplifyCoordinates(coordinates: [number, number][]){
+        const newCoordinates = []
+        for (let i = 1; i < coordinates.length - 1; i++){
+            const coordinate = coordinates[i];
+            const prev = coordinates[i - 1]
+            const next = coordinates[i + 1]
+            const b0 = turf.bearing(prev, coordinate, {final: true})
+            const b1 = turf.bearing(coordinate, next)
+            
+            const diff = Math.abs(b1 - b0)
+            if(diff < 2){
+                continue
+            }
+            newCoordinates.push(coordinate)
+        }
+        return newCoordinates
+
+    }
+    
 }
 
 

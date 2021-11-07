@@ -206,7 +206,7 @@ export abstract class OsmObject {
         return result;
     }
 
-    private static ParseObjects(elements: any[]): OsmObject[] {
+    public static ParseObjects(elements: any[]): OsmObject[] {
         const objects: OsmObject[] = [];
         const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
 

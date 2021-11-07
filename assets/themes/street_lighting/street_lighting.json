@@ -1,0 +1,179 @@
+{
+  "id": "street_lighting",
+  "maintainer": "Robin van der Linde",
+  "version": "2021-10-22",
+  "language": [
+    "en",
+    "nl"
+  ],
+  "title": {
+    "en": "Street Lighting",
+    "nl": "Straatverlichting"
+  },
+  "description": {
+    "en": "On this map you can find everything about street lighting",
+    "nl": "Op deze kaart vind je alles over straatlantaarns"
+  },
+  "icon": "./assets/layers/street_lamps/street_lamp.svg",
+  "startZoom": 19,
+  "startLat": 52.99319,
+  "startLon": 6.56113,
+  "layers": [
+    "street_lamps",
+    {
+      "id": "lit_streets",
+      "name": {
+        "en": "Lit streets",
+        "nl": "Verlichte straten"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "highway!=",
+            "lit!=no",
+            "lit!=",
+            "service!=driveway"
+          ]
+        }
+      },
+      "minZoom": 16,
+      "title": {
+        "render": {
+          "en": "Lit street",
+          "nl": "Verlichte straat"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "{name}"
+          }
+        ]
+      },
+      "mapRendering": [
+        {
+          "color": "#ff0"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "lit",
+          "question": {
+            "en": "Is this street lit?",
+            "nl": "Is deze straat verlicht?"
+          },
+          "mappings": [
+            {
+              "if": "lit=yes",
+              "then": {
+                "en": "This street is lit",
+                "nl": "Deze straat is verlicht"
+              }
+            },
+            {
+              "if": "lit=no",
+              "then": {
+                "en": "This street is not lit",
+                "nl": "Deze straat is niet verlicht"
+              }
+            },
+            {
+              "if": "lit=sunset-sunrise",
+              "then": {
+                "en": "This street is lit at night",
+                "nl": "Deze straat is 's nachts verlicht"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "lit=24/7",
+              "then": {
+                "en": "This street is lit 24/7",
+                "nl": "Deze straat is 24/7 verlicht"
+              }
+            }
+          ]
+        }
+      ],
+      "allowSplit": true
+    },
+    {
+      "id": "all_streets",
+      "name": {
+        "en": "All streets",
+        "nl": "Alle straten"
+      },
+      "source": {
+        "osmTags": {
+          "and": ["highway!=", "service!=driveway", "highway!=platform"]
+        }
+      },
+      "minZoom": 19,
+      "title": {
+        "render": {
+          "en": "Street",
+          "nl": "Straat"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "{name}"
+          }
+        ]
+      },
+      "mapRendering": [
+        {
+          "color": {
+            "render":"#a9a9a9",
+            "mappings": [
+              {
+                "if":"lit=no",
+                "then": "#303030"
+              }
+            ]
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "lit",
+          "question": {
+            "en": "Is this street lit?",
+            "nl": "Is deze straat verlicht?"
+          },
+          "mappings": [
+            {
+              "if": "lit=yes",
+              "then": {
+                "en": "This street is lit",
+                "nl": "Deze straat is verlicht"
+              }
+            },
+            {
+              "if": "lit=no",
+              "then": {
+                "en": "This street is not lit",
+                "nl": "Deze straat is niet verlicht"
+              }
+            },
+            {
+              "if": "lit=sunset-sunrise",
+              "then": {
+                "en": "This street is lit at night",
+                "nl": "Deze straat is 's nachts verlicht"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "lit=24/7",
+              "then": {
+                "en": "This street is lit 24/7",
+                "nl": "Deze straat is 24/7 verlicht"
+              }
+            }
+          ]
+        }
+      ],
+      "allowSplit": true
+    }
+  ]
+}

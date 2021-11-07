@@ -54,8 +54,7 @@
                 "if": "cycleway=shared_lane",
                 "then": {
                     "nl": "Fietssuggestiestrook",
-                    "en": "Shared lane",
-                    "de": "Gemeinsame Fahrspur"
+                    "en": "Shared lane"
                 }
             },
             {
@@ -731,8 +730,7 @@
             },
             "render": {
                 "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
-                "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>",
-                "de": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>"
+                "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
             },
             "freeform": {
                 "key": "width:carriageway",
@@ -744,8 +742,7 @@
             },
             "question": {
                 "en": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured curb to curb and thus includes the width of parallell parking lanes</span>",
-                "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is </span><br/><span class='subtle'>Meet dit van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>",
-                "de": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?<br/><span class='subtle'>Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein</span>"
+                "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is </span><br/><span class='subtle'>Meet dit van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>"
             },
             "id": "width:carriageway"
         },
@@ -903,8 +900,7 @@
             "id": "cycleway-traffic-signs-supplementary",
             "question": {
                 "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
-                "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
-                "de": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
+                "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
             },
             "condition": {
                 "or": [
@@ -995,8 +991,7 @@
             "id": "cycleway-traffic-signs-D7-supplementary",
             "question": {
                 "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
-                "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
-                "de": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
+                "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
             },
             "condition": {
                 "or": [
@@ -1281,5 +1276,87 @@
             }
         ]
     },
-    "allowSplit": true
+    "allowSplit": true,
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/themes/cycle_infra/bicycleway.svg"
+            },
+            "iconSize": {
+                "render": "40,40,center"
+            },
+            "location": [
+                "point"
+            ]
+        },
+        {
+            "color": {
+                "render": "rgba(170, 170, 170, 0.7)",
+                "mappings": [
+                    {
+                        "if": "highway=cycleway",
+                        "then": "rgba(0, 189, 141, 0.7)"
+                    },
+                    {
+                        "if": "highway=path",
+                        "then": "rgba(204, 74, 207, 0.7)"
+                    },
+                    {
+                        "if": "cycleway=track",
+                        "then": "rgba(113, 3, 200, 0.7)"
+                    },
+                    {
+                        "if": "cycleway=shared_lane",
+                        "then": "rgba(74, 59, 247, 0.7)"
+                    },
+                    {
+                        "if": "cycleway=lane",
+                        "then": "rgba(254, 155, 6, 0.9)"
+                    },
+                    {
+                        "if": "cyclestreet=yes",
+                        "then": "rgba(57, 159, 191, 0.7)"
+                    }
+                ]
+            },
+            "width": {
+                "render": "8"
+            },
+            "dashArray": {
+                "render": "",
+                "mappings": [
+                    {
+                        "if": {
+                            "or": [
+                                "oneway=yes",
+                                {
+                                    "or": [
+                                        "highway=cycleway",
+                                        "highway=path"
+                                    ]
+                                }
+                            ]
+                        },
+                        "then": ""
+                    },
+                    {
+                        "if": "cycleway=track",
+                        "then": ""
+                    },
+                    {
+                        "if": "cycleway=shared_lane",
+                        "then": "15 30"
+                    },
+                    {
+                        "if": "cycleway=lane",
+                        "then": "25 15 15 15 25"
+                    },
+                    {
+                        "if": "cyclestreet=yes",
+                        "then": ""
+                    }
+                ]
+            }
+        }
+    ]
 }

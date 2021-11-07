@@ -5,8 +5,8 @@
     "nl": "Natuurgebieden",
     "en": "Nature Reserves",
     "de": "Naturschutzgebiete",
-    "it": "Riserve naturali",
-    "nb_NO": "Naturreservater"
+    "nb_NO": "Naturreservater",
+    "it": "Riserve naturali"
   },
   "shortDescription": {
     "nl": "Deze kaart toont de natuurgebieden van Natuurpunt",
@@ -17,8 +17,8 @@
   "description": {
     "nl": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt",
     "en": "On this map you can find all the nature reserves that Natuurpunt offers ",
-    "de": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
-    "it": "In questa cartina è possibile trovare tutte le riserve naturali offerte da Natuupunt. "
+    "it": "In questa cartina è possibile trovare tutte le riserve naturali offerte da Natuupunt. ",
+    "de": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden "
   },
   "language": [
     "nl",
@@ -42,9 +42,9 @@
   "enablePdfDownload": true,
   "enableDownload": true,
   "hideFromOverview": true,
-  "#": "Disable clustering for this theme",
   "clustering": {
-    "maxZoom": 0
+    "maxZoom": 0,
+    "#": "Disable clustering for this theme"
   },
   "layers": [
     {

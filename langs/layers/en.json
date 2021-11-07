@@ -1936,6 +1936,13 @@
         }
     },
     "defibrillator": {
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
         "name": "Defibrillators",
         "presets": {
             "0": {
@@ -2922,6 +2929,154 @@
             "render": "Sport pitch"
         }
     },
+    "street_lamps": {
+        "name": "Street Lamps",
+        "presets": {
+            "0": {
+                "title": "street lamp"
+            }
+        },
+        "tagRenderings": {
+            "colour": {
+                "mappings": {
+                    "0": {
+                        "then": "This lamp emits white light"
+                    },
+                    "1": {
+                        "then": "This lamp emits green light"
+                    },
+                    "2": {
+                        "then": "This lamp emits orange light"
+                    }
+                },
+                "question": "What colour light does this lamp emit?",
+                "render": "This lamp emits {light:colour} light"
+            },
+            "count": {
+                "mappings": {
+                    "0": {
+                        "then": "This lamp has 1 fixture"
+                    },
+                    "1": {
+                        "then": "This lamp has 2 fixtures"
+                    }
+                },
+                "question": "How many fixtures does this light have?",
+                "render": "This lamp has {light:count} fixtures"
+            },
+            "direction": {
+                "question": "Where does this lamp point to?",
+                "render": "This lamp points towards {light:direction}"
+            },
+            "lamp_mount": {
+                "mappings": {
+                    "0": {
+                        "then": "This lamp sits atop of a straight mast"
+                    },
+                    "1": {
+                        "then": "This lamp sits at the end of a bent mast"
+                    }
+                },
+                "question": "How is this lamp mounted to the pole?"
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "This lamp is lit at night"
+                    },
+                    "1": {
+                        "then": "This lamp is lit 24/7"
+                    },
+                    "2": {
+                        "then": "This lamp is lit based on motion"
+                    },
+                    "3": {
+                        "then": "This lamp is lit based on demand (e.g. with a pushbutton)"
+                    }
+                },
+                "question": "When is this lamp lit?"
+            },
+            "method": {
+                "mappings": {
+                    "0": {
+                        "then": "This lamp is lit electrically"
+                    },
+                    "1": {
+                        "then": "This lamp uses LEDs"
+                    },
+                    "2": {
+                        "then": "This lamp uses incandescent lighting"
+                    },
+                    "3": {
+                        "then": "This lamp uses halogen lighting"
+                    },
+                    "4": {
+                        "then": "This lamp uses discharge lamps (unknown type)"
+                    },
+                    "5": {
+                        "then": "This lamp uses a mercury-vapour lamp (lightly blueish)"
+                    },
+                    "6": {
+                        "then": "This lamp uses metal-halide lamps (bright white)"
+                    },
+                    "7": {
+                        "then": "This lamp uses fluorescent lighting"
+                    },
+                    "8": {
+                        "then": "This lamp uses sodium lamps (unknown type)"
+                    },
+                    "9": {
+                        "then": "This lamp uses low pressure sodium lamps (monochrome orange)"
+                    },
+                    "10": {
+                        "then": "This lamp uses high pressure sodium lamps (orange with white)"
+                    },
+                    "11": {
+                        "then": "This lamp is lit using gas"
+                    }
+                },
+                "question": "What kind of lighting does this lamp use?"
+            },
+            "ref": {
+                "question": "What is the reference number of this street lamp?",
+                "render": "This street lamp has the reference number {ref}"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "This lamp is suspended using cables"
+                    },
+                    "1": {
+                        "then": "This lamp is mounted on a ceiling"
+                    },
+                    "2": {
+                        "then": "This lamp is mounted in the ground"
+                    },
+                    "3": {
+                        "then": "This lamp is mounted on a short pole (mostly < 1.5m)"
+                    },
+                    "4": {
+                        "then": "This lamp is mounted on a pole"
+                    },
+                    "5": {
+                        "then": "This lamp is mounted directly to the wall"
+                    },
+                    "6": {
+                        "then": "This lamp is mounted to the wall using a metal bar"
+                    }
+                },
+                "question": "How is this street lamp mounted?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Street Lamp {ref}"
+                }
+            },
+            "render": "Street Lamp"
+        }
+    },
     "surveillance_camera": {
         "name": "Surveillance camera's",
         "tagRenderings": {
@@ -3372,6 +3527,17 @@
             "mappings": {
                 "0": {
                     "then": "Waste Basket"
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Waste Basket"
+                        }
+                    }
                 }
             }
         },

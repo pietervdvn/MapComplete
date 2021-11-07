@@ -79,13 +79,15 @@
                 ]
             },
             "then": {
-                "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
+                "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
+                "roaming": true
             }
         }
     ],
     "titleIcons": [
         {
-            "render": "<img src='./assets/layers/bike_cleaning/bike_cleaning_icon.svg'/>"
+            "render": "<img src='./assets/layers/bike_cleaning/bike_cleaning_icon.svg'/>",
+            "roaming": true
         }
     ],
     "tagRenderings": [
@@ -115,6 +117,7 @@
                     "then": "The cleaning service has a fee"
                 }
             ],
+            "roaming": true,
             "id": "bike_cleaning-service:bicycle:cleaning:charge"
         },
         {
@@ -142,6 +145,7 @@
                     "then": "The cleaning service has a fee"
                 }
             ],
+            "roaming": false,
             "id": "bike_cleaning-charge"
         }
     ],
@@ -157,5 +161,30 @@
     "allowMove": {
         "enableRelocation": false,
         "enableImproveAccuraccy": true
-    }
+    },
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
+            },
+            "iconBadges": [
+                {
+                    "if": {
+                        "and": [
+                            "service:bicycle:cleaning~*",
+                            "amenity!=bike_wash"
+                        ]
+                    },
+                    "then": {
+                        "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
+                        "roaming": true
+                    }
+                }
+            ],
+            "iconSize": "50,50,bottom",
+            "location": [
+                "point"
+            ]
+        }
+    ]
 }
