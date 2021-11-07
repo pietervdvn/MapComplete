@@ -588,6 +588,7 @@
       ],
       "condition": "cuisine=friture"
     },
+    "service:electricity",
     "dog-access"
   ],
   "filter": [

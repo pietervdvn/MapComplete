@@ -178,6 +178,7 @@
     "phone",
     "payment-options",
     "wheelchair-access",
+    "service:electricity",
     "dog-access"
   ],
   "filter": [
