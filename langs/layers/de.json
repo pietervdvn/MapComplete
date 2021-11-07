@@ -924,6 +924,7 @@
     }
   },
   "charging_station": {
+    "description": "Eine Ladestation",
     "filter": {
       "0": {
         "options": {
@@ -1226,8 +1227,7 @@
           }
         }
       }
-    },
-    "description": "Eine Ladestation"
+    }
   },
   "crossings": {
     "description": "Übergänge für Fußgänger und Radfahrer",
@@ -1743,8 +1743,8 @@
             "then": "Dies ist ein normaler automatischer Defibrillator"
           }
         },
-        "render": "Es gibt keine Informationen über den Gerätetyp",
-        "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
+        "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?",
+        "render": "Es gibt keine Informationen über den Gerätetyp"
       },
       "defibrillator-defibrillator:location": {
         "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)",
@@ -1927,8 +1927,8 @@
         "title": "Restaurant"
       },
       "1": {
-        "title": "Schnellimbiss",
-        "description": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert"
+        "description": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
+        "title": "Schnellimbiss"
       },
       "2": {
         "title": "Pommesbude"
@@ -2135,8 +2135,8 @@
         "question": "Sind Hunde in diesem Naturschutzgebiet erlaubt?"
       },
       "Email": {
-        "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
+        "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
+        "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
       },
       "Surface area": {
         "render": "Grundfläche: {_surface:ha}ha"
@@ -2145,8 +2145,8 @@
         "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
       },
       "phone": {
-        "render": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
+        "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist",
+        "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
       }
     }
   },
@@ -2165,8 +2165,8 @@
             "then": "Eintritt kostenlos"
           }
         },
-        "render": "Der Besuch des Turms kostet <b>{charge}</b>",
-        "question": "Was kostet der Zugang zu diesem Turm?"
+        "question": "Was kostet der Zugang zu diesem Turm?",
+        "render": "Der Besuch des Turms kostet <b>{charge}</b>"
       },
       "Height": {
         "question": "Wie hoch ist dieser Turm?",
@@ -2289,12 +2289,12 @@
         "question": "Ist dieser Spielplatz nachts beleuchtet?"
       },
       "playground-max_age": {
-        "render": "Zugang nur für Kinder bis maximal {max_age}",
-        "question": "Bis zu welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
+        "question": "Bis zu welchem Alter dürfen Kinder auf diesem Spielplatz spielen?",
+        "render": "Zugang nur für Kinder bis maximal {max_age}"
       },
       "playground-min_age": {
-        "render": "Zugang nur für Kinder ab {min_age} Jahren",
-        "question": "Ab welchem Alter dürfen Kinder auf diesem Spielplatz spielen?"
+        "question": "Ab welchem Alter dürfen Kinder auf diesem Spielplatz spielen?",
+        "render": "Zugang nur für Kinder ab {min_age} Jahren"
       },
       "playground-opening_hours": {
         "mappings": {
@@ -2315,8 +2315,8 @@
         "render": "Betrieben von {operator}"
       },
       "playground-phone": {
-        "render": "<a href='tel:{phone}'>{phone}</a>",
-        "question": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?"
+        "question": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?",
+        "render": "<a href='tel:{phone}'>{phone}</a>"
       },
       "playground-surface": {
         "mappings": {
@@ -2617,6 +2617,9 @@
         },
         "question": "Muss man einen Termin vereinbaren, um diesen Sportplatz zu benutzen?"
       },
+      "sport_pitch-email": {
+        "question": "Wie ist die Email-Adresse des Betreibers?"
+      },
       "sport_pitch-opening_hours": {
         "mappings": {
           "1": {
@@ -2624,6 +2627,9 @@
           }
         },
         "question": "Wann ist dieser Sportplatz zugänglich?"
+      },
+      "sport_pitch-phone": {
+        "question": "Wie ist die Telefonnummer des Betreibers?"
       },
       "sport_pitch-sport": {
         "mappings": {
@@ -2667,14 +2673,8 @@
             "then": "Die Oberfläche ist <b>Beton</b>"
           }
         },
-        "render": "Die Oberfläche ist <b>{surface}</b>",
-        "question": "Was ist die Oberfläche dieses Sportplatzes?"
-      },
-      "sport_pitch-phone": {
-        "question": "Wie ist die Telefonnummer des Betreibers?"
-      },
-      "sport_pitch-email": {
-        "question": "Wie ist die Email-Adresse des Betreibers?"
+        "question": "Was ist die Oberfläche dieses Sportplatzes?",
+        "render": "Die Oberfläche ist <b>{surface}</b>"
       }
     },
     "title": {
@@ -2860,6 +2860,25 @@
         "question": "Wie viel muss man für diese Toiletten bezahlen?",
         "render": "Die Gebühr beträgt {charge}"
       },
+      "toilet-handwashing": {
+        "mappings": {
+          "0": {
+            "then": "Diese Toilette verfügt über ein Waschbecken"
+          },
+          "1": {
+            "then": "Diese Toilette verfügt über <b>kein</b> Waschbecken"
+          }
+        },
+        "question": "Verfügt diese Toilette über ein Waschbecken?"
+      },
+      "toilet-has-paper": {
+        "mappings": {
+          "1": {
+            "then": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
+          }
+        },
+        "question": "Muss man für diese Toilette sein eigenes Toilettenpapier mitbringen?"
+      },
       "toilets-changing-table": {
         "mappings": {
           "0": {
@@ -2909,25 +2928,6 @@
           }
         },
         "question": "Gibt es eine Toilette für Rollstuhlfahrer?"
-      },
-      "toilet-has-paper": {
-        "mappings": {
-          "1": {
-            "then": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
-          }
-        },
-        "question": "Muss man für diese Toilette sein eigenes Toilettenpapier mitbringen?"
-      },
-      "toilet-handwashing": {
-        "mappings": {
-          "0": {
-            "then": "Diese Toilette verfügt über ein Waschbecken"
-          },
-          "1": {
-            "then": "Diese Toilette verfügt über <b>kein</b> Waschbecken"
-          }
-        },
-        "question": "Verfügt diese Toilette über ein Waschbecken?"
       }
     },
     "title": {
@@ -2936,9 +2936,6 @@
   },
   "trail": {
     "name": "Wanderwege",
-    "title": {
-      "render": "Wanderweg"
-    },
     "tagRenderings": {
       "Color": {
         "mappings": {
@@ -2959,6 +2956,9 @@
       "trail-length": {
         "render": "Der Wanderweg ist {_length:km} Kilometer lang"
       }
+    },
+    "title": {
+      "render": "Wanderweg"
     }
   },
   "tree_node": {

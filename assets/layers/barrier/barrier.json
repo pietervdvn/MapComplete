@@ -193,9 +193,9 @@
         {
           "if": "cycle_barrier:type=double",
           "then": {
-            "en": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>",
-            "nl": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>",
-            "de": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>"
+            "en": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
+            "nl": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
+            "de": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>"
           }
         },
         {
@@ -246,9 +246,9 @@
     },
     {
       "render": {
-        "en": "Space between barriers (along the length of the road): {width:separation} m",
-        "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m",
-        "de": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m"
+        "en": "Space between barriers (along the length of the road): {spacing} m",
+        "nl": "Ruimte tussen barrières (langs de lengte van de weg): {spacing} m",
+        "de": "Abstand zwischen den Barrieren (entlang der Straße): {spacing} m"
       },
       "question": {
         "en": "How much space is there between the barriers (along the length of the road)?",
@@ -273,9 +273,9 @@
     },
     {
       "render": {
-        "en": "Width of opening: {width:opening} m",
-        "nl": "Breedte van de opening: {width:opening} m",
-        "de": "Breite der Öffnung: {width:opening} m"
+        "en": "Width of opening: {opening} m",
+        "nl": "Breedte van de opening: {opening} m",
+        "de": "Breite der Öffnung: {opening} m"
       },
       "question": {
         "en": "How wide is the smallest opening next to the barriers?",

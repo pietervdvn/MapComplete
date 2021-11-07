@@ -49,8 +49,7 @@ export default class SimpleMetaTagger {
             return true;
         }
     )
-    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTagger.metatags.filter(tagger => tagger.isLazy)
-        .map(tagger => tagger.keys));
+
     private static latlon = new SimpleMetaTagger({
             keys: ["_lat", "_lon"],
             doc: "The latitude and longitude of the point (or centerpoint in the case of a way/area)"
@@ -382,6 +381,9 @@ export default class SimpleMetaTagger {
     public readonly includesDates: boolean
     public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date, layer: LayerConfig) => boolean;
 
+    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTagger.metatags.filter(tagger => tagger.isLazy)
+        .map(tagger => tagger.keys));
+    
     /***
      * A function that adds some extra data to a feature
      * @param docs: what does this extra data do?
