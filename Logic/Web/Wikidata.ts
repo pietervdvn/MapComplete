@@ -172,7 +172,7 @@ export default class Wikidata {
             lang +
             "&type=item&origin=*" +
             "&props=";// props= removes some unused values in the result
-        const response = await Utils.downloadJson(url)
+        const response = await Utils.downloadJsonCached(url, 10000)
 
         const result: any[] = response.search
 
@@ -192,6 +192,7 @@ export default class Wikidata {
         return result;
     }
 
+    
     public static async searchAndFetch(
         search: string,
         options?: WikidataSearchoptions
@@ -287,7 +288,7 @@ export default class Wikidata {
         }
 
         const url = "https://www.wikidata.org/wiki/Special:EntityData/" + id + ".json";
-        const entities = (await Utils.downloadJson(url)).entities
+        const entities = (await Utils.downloadJsonCached(url, 10000)).entities
         const firstKey = <string> Array.from(Object.keys(entities))[0] // Roundabout way to fetch the entity; it might have been a redirect
         const response = entities[firstKey]
 

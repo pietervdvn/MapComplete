@@ -13,6 +13,8 @@ import Svg from "../../Svg";
 
 export default class WikidataSearchBox extends InputElement<string> {
 
+    private static readonly _searchCache = new Map<string, Promise<WikidataResponse[]>>()
+    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly wikidataId: UIEventSource<string>
     private readonly searchText: UIEventSource<string>
 
@@ -27,6 +29,10 @@ export default class WikidataSearchBox extends InputElement<string> {
 
     GetValue(): UIEventSource<string> {
         return this.wikidataId;
+    }
+
+    IsValid(t: string): boolean {
+        return t.startsWith("Q") && !isNaN(Number(t.substring(1)));
     }
 
     protected InnerConstructElement(): HTMLElement {
@@ -46,12 +52,20 @@ export default class WikidataSearchBox extends InputElement<string> {
                 return;
             }
             searchFailMessage.setData(undefined)
-            lastSearchResults.WaitForPromise(
-                Wikidata.searchAndFetch(searchText, {
-                        lang: Locale.language.data,
+
+            const lang = Locale.language.data
+            const key = lang + ":" + searchText
+            let promise = WikidataSearchBox._searchCache.get(key)
+            if (promise === undefined) {
+                promise = Wikidata.searchAndFetch(searchText, {
+                        lang,
                         maxCount: 5
                     }
-                ), err => searchFailMessage.setData(err))
+                )
+                WikidataSearchBox._searchCache.set(key, promise)
+            }
+
+            lastSearchResults.WaitForPromise(promise, err => searchFailMessage.setData(err))
 
         })
 
@@ -61,10 +75,10 @@ export default class WikidataSearchBox extends InputElement<string> {
                 return new Combine([Translations.t.general.wikipedia.failed.Clone().SetClass("alert"), searchFailMessage.data])
             }
 
-            if(searchResults.length === 0){
+            if (searchResults.length === 0) {
                 return Translations.t.general.wikipedia.noResults.Subs({search: searchField.GetValue().data ?? ""})
             }
-            
+
             if (searchResults.length === 0) {
                 return Translations.t.general.wikipedia.doSearch
             }
@@ -88,7 +102,6 @@ export default class WikidataSearchBox extends InputElement<string> {
 
         }, [searchFailMessage]))
 
-        //
         const full = new Combine([
             new Title(Translations.t.general.wikipedia.searchWikidata, 3).SetClass("m-2"),
             new Combine([
@@ -106,12 +119,6 @@ export default class WikidataSearchBox extends InputElement<string> {
             })).SetStyle("max-height:12.5rem"),
             full
         ]).ConstructElement();
-    }
-
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-
-    IsValid(t: string): boolean {
-        return t.startsWith("Q") && !isNaN(Number(t.substring(1)));
     }
 
 }
