@@ -162,6 +162,17 @@ function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
     }
 
     perDirectory.forEach((licenses, dir) => {
+
+
+        for (let i = licenses.length - 1; i >= 0; i--){
+            const license = licenses[i];
+            const path = dir+"/"+license.path
+            if(! existsSync(path)){
+                console.log("Found license for now missing file: ", path, " - removing this license")
+                licenses.splice(i, 1)
+            }
+        }
+        
         licenses.sort((a, b) => a.path < b.path ? -1 : 1)
         writeFileSync(dir + "/license_info.json", JSON.stringify(licenses, null, 2))
     })
