@@ -445,7 +445,7 @@
         {
           "if": "toilets:paper_supplied=yes",
           "then": {
-            "en": "Toilet paper is equipped with toilet paper",
+            "en": "This toilet is equipped with toilet paper",
             "nl": "Deze toilet is voorzien van toiletpapier"
           }
         },

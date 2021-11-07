@@ -112,7 +112,7 @@
             "then": "Einfach, nur zwei Barrieren mit einem Zwischenraum <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
           },
           "1": {
-            "then": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>"
+            "then": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>"
           },
           "2": {
             "then": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
