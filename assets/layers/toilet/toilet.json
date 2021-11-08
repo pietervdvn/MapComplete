@@ -286,6 +286,31 @@
       "id": "toilet-charge"
     },
     {
+      "builtin": "payment-options",
+      "override": {
+        "condition": "fee=yes"
+      }
+    },
+    {
+      "id": "Opening-hours",
+      "question": {
+        "en": "When are these toilets opened?",
+        "nl": "Wanneer zijn deze toiletten open?"
+      },
+      "render": "{opening_hours_table()}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "mappings": [{
+        "if": "opening_hours=24/7",
+        "then": {
+          "en": "Opened 24/7",
+          "nl": "Altijd open"
+        }
+      }]
+    },
+    {
       "id": "toilets-wheelchair",
       "question": {
         "en": "Is there a dedicated toilet for wheelchair users",
@@ -515,10 +540,32 @@
             "de": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
           }
         }
+      ],
+      "condition": {
+        "#": "Urinals normally don't have toilet paper",
+        "and": ["toilets:position!=urinal"]
+      }
       ]
     }
   ],
+  "iconBadges": [{
+    "if": "opening_hours~*",
+    "then": "isOpen"
+  }],
   "filter": [
+    {
+      "id": "is_open",
+      "options": [{
+        "question": {
+          "nl": "Nu geopened",
+          "en": "Opened now"
+        },
+        "osmTags": {
+          "or": ["opening_hours=","_isOpen=yes"]
+        }
+      }
+      ]
+    },
     {
       "id": "wheelchair",
       "options": [
