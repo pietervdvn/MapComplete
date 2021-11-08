@@ -172,13 +172,14 @@ export default class ShowDataLayer {
                             if (offsettedLine !== undefined) {
                                 self.geoLayer.removeLayer(offsettedLine)
                             }
+                            // @ts-ignore
                             offsettedLine = L.polyline(coords, lineStyle);
                             this.postProcessFeature(feat, offsettedLine)
                             offsettedLine.addTo(this.geoLayer)
                         })
                 } else {
                     this.geoLayer.addData(feat);
-                }
+                } 
             } catch (e) {
                 console.error("Could not add ", feat, "to the geojson layer in leaflet due to", e, e.stack)
             }

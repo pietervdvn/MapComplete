@@ -608,6 +608,43 @@ export default {
             }
           ]
         },
+        "lineCap": {
+          "description": "The form at the end of a line",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "fill": {
+          "description": "Wehter or not to fill polygons",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "enum": [
+                "no",
+                "yes"
+              ],
+              "type": "string"
+            }
+          ]
+        },
+        "fillColor": {
+          "description": "The color to fill a polygon with.\nIf undefined, this will be slightly more opaque version of the stroke line",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
         "offset": {
           "description": "The number of pixels this line should be moved.\nUse a positive numbe to move to the right, a negative to move to the left (left/right as defined by the drawing direction of the line).\n\nIMPORTANT: MapComplete will already normalize 'key:both:property' and 'key:both' into the corresponding 'key:left' and 'key:right' tagging (same for 'sidewalk=left/right/both' which is rewritten to 'sidewalk:left' and 'sidewalk:right')\nThis simplifies programming. Refer to the CalculatedTags.md-documentation for more details",
           "anyOf": [

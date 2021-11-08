@@ -21,8 +21,8 @@ export default class LineRenderingConfig extends WithContextLoader {
         this.width = this.tr("width", "7");
         this.dashArray = this.tr("dashArray", "");
         this.lineCap = this.tr("lineCap", "round");
-        this.fill = this.tr("fill", "round");
-        this.fillColor = this.tr("fillColor", "round");
+        this.fill = this.tr("fill", undefined);
+        this.fillColor = this.tr("fillColor", undefined);
 
         this.leftRightSensitive = json.offset !== undefined && json.offset !== 0 && json.offset !== "0"
 
@@ -30,7 +30,7 @@ export default class LineRenderingConfig extends WithContextLoader {
     }
 
     public GenerateLeafletStyle(tags: {}):
-        { fillColor: string; color: string; lineCap: string; offset: number; weight: number; dashArray: string; fill: string } {
+        { fillColor?: string; color: string; lineCap: string; offset: number; weight: number; dashArray: string; fill?: boolean } {
         function rendernum(tr: TagRenderingConfig, deflt: number) {
             const str = Number(render(tr, "" + deflt));
             const n = Number(str);
@@ -44,7 +44,11 @@ export default class LineRenderingConfig extends WithContextLoader {
             if (tags === undefined) {
                 return deflt
             }
+            if(tr === undefined){return deflt}
             const str = tr?.GetRenderValue(tags)?.txt ?? deflt;
+            if (str === "") {
+                return deflt
+            }
             return Utils.SubstituteKeys(str, tags)?.replace(/{.*}/g, "");
         }
 
@@ -55,16 +59,27 @@ export default class LineRenderingConfig extends WithContextLoader {
                 "--catch-detail-color"
             );
         }
-
-        return {
+        
+        const style = {
             color,
             dashArray,
             weight: rendernum(this.width, 5),
             lineCap: render(this.lineCap),
-            offset: rendernum(this.offset, 0),
-            fill: render(this.fill),
-            fillColor: render(this.fillColor)
+            offset: rendernum(this.offset, 0)
         }
+
+        const fillStr = render(this.fill, undefined)
+        let fill: boolean = undefined;
+        if (fillStr !== undefined && fillStr !== "") {
+            style["fill"] = fillStr === "yes" || fillStr === "true"
+        }
+        
+        const fillColorStr = render(this.fillColor, undefined)
+        if(fillColorStr !== undefined){
+            style["fillColor"] = fillColorStr
+        }
+        return style
+        
     }
 
 }
