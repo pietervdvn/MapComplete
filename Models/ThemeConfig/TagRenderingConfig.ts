@@ -55,7 +55,7 @@ export default class TagRenderingConfig {
 
 
         if (typeof json === "number") {
-            this.render = Translations.WT("" + json)
+            this.render = Translations.T("" + json, context + ".render")
             return;
         }
 

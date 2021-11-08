@@ -506,7 +506,7 @@
                 "id~node/.*"
               ]
             },
-            "then": "40,40,center"
+            "then": "32,32,center"
           },
           {
             "if": "_size_classification=small",
@@ -514,13 +514,18 @@
           },
           {
             "if": "_size_classification=large",
-            "then": "50,50,center"
+            "then": "40,40,center"
           }
         ]
       },
       "location": [
-        "point"
+        "point","centroid"
       ]
+    },
+    {
+      "color": "#00cc00",
+      "width": "1",
+      "fill": "false"
     }
   ]
 }
