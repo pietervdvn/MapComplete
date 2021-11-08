@@ -2443,6 +2443,17 @@
       }
     }
   },
+  "parking": {
+    "description": "A layer showing car parkings",
+    "presets": {
+      "0": {
+        "title": "car parking"
+      }
+    },
+    "title": {
+      "render": "Car parking"
+    }
+  },
   "picnic_table": {
     "description": "The layer showing picnic tables",
     "name": "Picnic tables",
@@ -3219,6 +3230,14 @@
       }
     },
     "tagRenderings": {
+      "Opening-hours": {
+        "mappings": {
+          "0": {
+            "then": "Opened 24/7"
+          }
+        },
+        "question": "When are these toilets opened?"
+      },
       "toilet-access": {
         "mappings": {
           "0": {
@@ -3333,14 +3352,6 @@
           }
         },
         "question": "Is there a dedicated toilet for wheelchair users"
-      },
-      "Opening-hours": {
-        "mappings": {
-          "0": {
-            "then": "Opened 24/7"
-          }
-        },
-        "question": "When are these toilets opened?"
       }
     },
     "title": {

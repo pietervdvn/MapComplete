@@ -47,7 +47,7 @@ export default class Translations {
             return undefined;
         }
         if (typeof (s) === "string") {
-            return new Translation({en: s});
+            return new Translation({'*': s});
         }
         if (s instanceof Translation) {
             return s.Clone() /* MUST CLONE HERE! */;

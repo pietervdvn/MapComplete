@@ -2756,31 +2756,15 @@
     }
   },
   "parking": {
-    "description": "Parking",
+    "description": "Deze laag toont autoparkings",
     "name": "Parking",
     "presets": {
       "0": {
-        "description": "Voeg hier een fietsenstalling toe",
-        "title": "fietsparking"
-      },
-      "1": {
-        "description": "Voeg hier een parking voor auto's toe",
-        "title": "parking"
+        "title": "parking voor auto's"
       }
     },
     "title": {
-      "mappings": {
-        "0": {
-          "then": "{name:nl}"
-        },
-        "1": {
-          "then": "{name}"
-        },
-        "2": {
-          "then": "Fietsenstalling"
-        }
-      },
-      "render": "Parking"
+      "render": "Parking voor auto's"
     }
   },
   "picnic_table": {
@@ -3604,6 +3588,14 @@
       }
     },
     "tagRenderings": {
+      "Opening-hours": {
+        "mappings": {
+          "0": {
+            "then": "Altijd open"
+          }
+        },
+        "question": "Wanneer zijn deze toiletten open?"
+      },
       "toilet-access": {
         "mappings": {
           "0": {
@@ -3718,14 +3710,6 @@
           }
         },
         "question": "Is er een rolstoeltoegankelijke toilet voorzien?"
-      },
-      "Opening-hours": {
-        "mappings": {
-          "0": {
-            "then": "Altijd open"
-          }
-        },
-        "question": "Wanneer zijn deze toiletten open?"
       }
     },
     "title": {

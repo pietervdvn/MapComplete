@@ -202,7 +202,8 @@
         "render": "40,40,center"
       },
       "location": [
-        "point"
+        "point",
+        "centroid"
       ]
     }
   ]

@@ -5,45 +5,17 @@
   },
   "minzoom": 12,
   "source": {
-    "osmTags": {
-      "and": [
-        {
-          "or": [
-            "amenity=parking",
-            "amenity=motorcycle_parking",
-            "amenity=bicycle_parking"
-          ]
-        }
-      ]
-    }
+    "osmTags": "amenity=parking"
   },
   "title": {
     "render": {
-      "nl": "Parking"
-    },
-    "mappings": [
-      {
-        "if": "amenity=parking",
-        "then": {
-          "nl": "{name:nl}"
-        }
-      },
-      {
-        "if": "amenity=motorcycle_parking",
-        "then": {
-          "nl": "{name}"
-        }
-      },
-      {
-        "if": "amenity=bicycle_parking",
-        "then": {
-          "nl": "Fietsenstalling"
-        }
-      }
-    ]
+      "nl": "Parking voor auto's",
+      "en": "Car parking"
+    }
   },
   "description": {
-    "nl": "Parking"
+    "en": "A layer showing car parkings",
+    "nl": "Deze laag toont autoparkings"
   },
   "tagRenderings": [
     "images"
@@ -51,24 +23,11 @@
   "presets": [
     {
       "tags": [
-        "amenity=bicycle_parking"
-      ],
-      "title": {
-        "nl": "fietsparking"
-      },
-      "description": {
-        "nl": "Voeg hier een fietsenstalling toe"
-      }
-    },
-    {
-      "tags": [
         "amenity=parking"
       ],
       "title": {
-        "nl": "parking"
-      },
-      "description": {
-        "nl": "Voeg hier een parking voor auto's toe"
+        "nl": "parking voor auto's",
+        "en": "car parking"
       }
     }
   ],
@@ -94,8 +53,13 @@
         "render": "36,36,center"
       },
       "location": [
-        "point"
+        "point",
+        "centroid"
       ]
+    },
+    {
+      "width": 2,
+      "color": "#ddcc00"
     }
   ]
 }
