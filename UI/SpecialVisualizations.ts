@@ -38,10 +38,11 @@ import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
 import {And} from "../Logic/Tags/And";
 import Toggle from "./Input/Toggle";
 import {DefaultGuiState} from "./DefaultGuiState";
+import {GeoOperations} from "../Logic/GeoOperations";
 
 export interface SpecialVisualization {
     funcName: string,
-    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState) => BaseUIElement),
+    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState, ) => BaseUIElement),
     docs: string,
     example?: string,
     args: { name: string, defaultValue?: string, doc: string }[]
@@ -172,7 +173,7 @@ export default class SpecialVisualizations {
                                 // This is a list of values
                                 idList = JSON.parse(value)
                             }
-                            
+
 
                             for (const id of idList) {
                                 features.push({
@@ -425,12 +426,7 @@ export default class SpecialVisualizations {
 
                             const title = state?.layoutToUse?.title?.txt ?? "MapComplete";
 
-                            let matchingLayer: LayerConfig = undefined;
-                            for (const layer of (state?.layoutToUse?.layers ?? [])) {
-                                if (layer.source.osmTags.matchesProperties(tagSource?.data)) {
-                                    matchingLayer = layer
-                                }
-                            }
+                            let matchingLayer: LayerConfig = state?.layoutToUse?.getMatchingLayer(tagSource?.data);
                             let name = matchingLayer?.title?.GetRenderValue(tagSource.data)?.txt ?? tagSource.data?.name ?? "POI";
                             if (name) {
                                 name = `${name} (${title})`
@@ -602,6 +598,31 @@ export default class SpecialVisualizations {
                             applied
                         )
                         , undefined, state.osmConnection.isLoggedIn)
+                }
+            },
+            {
+                funcName: "export_as_gpx",
+                docs: "Exports the selected feature as GPX-file",
+                args: [],
+                constr: (state, tagSource, args) => {
+                    const t = Translations.t.general.download;
+                    
+                    return new SubtleButton(Svg.download_ui(), 
+                        new Combine([t.downloadGpx.SetClass("font-bold text-lg"),
+                            t.downloadGpxHelper.SetClass("subtle")]).SetClass("flex flex-col")
+                    ).onClick(() => {
+                        console.log("Exporting as GPX!")
+                        const tags = tagSource.data
+                        const feature = state.allElements.ContainingFeatures.get(tags.id)
+                        const matchingLayer = state?.layoutToUse?.getMatchingLayer(tags)
+                        const gpx = GeoOperations.AsGpx(feature, matchingLayer)
+                        const title = matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "gpx_track"
+                        Utils.offerContentsAsDownloadableFile(gpx, title+"_mapcomplete_export.gpx", {
+                            mimetype: "{gpx=application/gpx+xml}"
+                        })
+
+
+                    })
                 }
             }
         ]

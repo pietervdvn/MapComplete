@@ -300,5 +300,17 @@ export default class LayoutConfig {
     public isLeftRightSensitive() {
         return this.layers.some(l => l.isLeftRightSensitive())
     }
+    
+    public getMatchingLayer(tags: any) : LayerConfig | undefined{
+        if(tags === undefined){
+            return undefined
+        }
+        for (const layer of this.layers) {
+            if (layer.source.osmTags.matchesProperties(tags)) {
+                return layer
+            }
+        }
+        return undefined
+    }
 
 }

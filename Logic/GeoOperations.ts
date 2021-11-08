@@ -1,5 +1,9 @@
 import * as turf from '@turf/turf'
 import {BBox} from "./BBox";
+import togpx from "togpx"
+import Constants from "../Models/Constants";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {meta} from "@turf/turf";
 
 export class GeoOperations {
 
@@ -436,6 +440,31 @@ export class GeoOperations {
         return undefined;
     }
 
+    public static AsGpx(feature, generatedWithLayer?: LayerConfig){
+        
+        const metadata = {}
+        const tags = feature.properties
+        
+        if(generatedWithLayer !== undefined){
+            
+            metadata["name"] = generatedWithLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
+            metadata["desc"] = "Generated with MapComplete layer "+generatedWithLayer.id
+            if(tags._backend?.contains("openstreetmap")){
+                metadata["copyright"]= "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
+                metadata["author"] = tags["_last_edit:contributor"]
+                metadata["link"]= "https://www.openstreetmap.org/"+tags.id
+                metadata["time"] = tags["_last_edit:timestamp"]
+            }else{
+                metadata["time"] = new Date().toISOString()
+            }
+        }
+        
+        return togpx(feature, {
+            creator: "MapComplete "+Constants.vNumber,
+            metadata
+        })
+    }
+    
 }
 
 

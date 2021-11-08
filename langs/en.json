@@ -190,6 +190,8 @@
       "downloadAsPdf": "Download a PDF of the current map",
       "downloadAsPdfHelper": "Ideal to print the current map",
       "downloadGeojson": "Download visible data as GeoJSON",
+      "downloadGpx":"Download as GPX-file",
+      "downloadGpxHelper":"A GPX-file can be used with most navigation devices and applications",
       "exporting": "Exporting…",
       "downloadGeoJsonHelper": "Compatible with QGIS, ArcGIS, ESRI, …",
       "downloadCSV": "Download visible data as CSV",

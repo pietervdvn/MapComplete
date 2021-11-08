@@ -94,6 +94,7 @@
     "parcel": "^1.2.4",
     "prompt-sync": "^4.2.0",
     "tailwindcss": "^2.2.15",
+    "togpx": "^0.5.4",
     "tslint": "^6.1.3",
     "wikibase-sdk": "^7.14.0",
     "wikidata-sdk": "^7.14.0"
