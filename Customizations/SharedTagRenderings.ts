@@ -37,6 +37,8 @@ export default class SharedTagRenderings {
         for (const key in icons) {
             dict.set(key, <TagRenderingConfigJson>icons[key])
         }
+        
+        dict.forEach((value, key) => value.id = key)
 
         return dict;
     }

@@ -21,6 +21,7 @@ import Combine from "../../UI/Base/Combine";
 import Title from "../../UI/Base/Title";
 import List from "../../UI/Base/List";
 import Link from "../../UI/Base/Link";
+import {Utils} from "../../Utils";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -203,18 +204,37 @@ export default class LayerConfig extends WithContextLoader {
             .filter(r => r["location"] === undefined)
             .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
 
-
-        this.tagRenderings = this.ExtractLayerTagRenderings(json)
         const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined && tr["rewrite"] === undefined) ?? [];
-
-        if (missingIds.length > 0 && official) {
+        if (missingIds?.length > 0 && official) {
             console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
             throw "Missing ids in tagrenderings"
+        }
+
+        this.tagRenderings = this.ExtractLayerTagRenderings(json)
+        {
+
+
+            const emptyIds = this.tagRenderings.filter(tr => tr.id === "");
+            if (emptyIds.length > 0) {
+                throw `Some tagrendering-ids are empty or have an emtpy string; this is not allowed (at ${context})`
+            }
+
+            const duplicateIds = Utils.Dupicates(this.tagRenderings.map(f => f.id).filter(id => id !== "questions"))
+            if (duplicateIds.length > 0) {
+                throw `Some tagRenderings have a duplicate id: ${duplicateIds} (at ${context}.tagRenderings)`
+            }
         }
 
         this.filters = (json.filter ?? []).map((option, i) => {
             return new FilterConfig(option, `${context}.filter-[${i}]`)
         });
+
+        {
+            const duplicateIds = Utils.Dupicates(this.filters.map(f => f.id))
+            if (duplicateIds.length > 0) {
+                throw `Some filters have a duplicate id: ${duplicateIds} (at ${context}.filters)`
+            }
+        }
 
         if (json["filters"] !== undefined) {
             throw "Error in " + context + ": use 'filter' instead of 'filters'"

@@ -144,6 +144,21 @@ Note that these values can be prepare with javascript in the theme by using a [c
         return newArr;
     }
 
+    public static Dupicates(arr: string[]): string[] {
+        if (arr === undefined) {
+            return undefined;
+        }
+        const newArr = [];
+        const seen = new Set<string>();
+        for (const string of arr) {
+            if(seen.has(string)){
+                newArr.push(string)
+            }
+            seen.add(string)
+        }
+        return newArr;
+    }
+    
     public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean {
         if (t1.length !== t2.length) {
             return false
