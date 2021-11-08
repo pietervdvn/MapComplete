@@ -361,7 +361,7 @@
       "type": "opening_hours"
     }
   },
-  "service:electricity":{
+  "service:electricity": {
     "#": "service:socket describes if a pub, restaurant or café offers electricity to their customers.",
     "question": {
       "en": "Does this amenity have electrical outlets, available to customers when they are inside?",
@@ -397,7 +397,6 @@
         "if": "service:electricity=no"
       }
     ]
-    
   },
   "payment-options": {
     "question": {

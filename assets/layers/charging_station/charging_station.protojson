@@ -794,7 +794,6 @@
       }
     }
   ],
-  "wayHandling": 1,
   "filter": [
     {
       "id": "vehicle-type",
