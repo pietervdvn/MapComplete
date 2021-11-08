@@ -302,13 +302,15 @@
         "key": "opening_hours",
         "type": "opening_hours"
       },
-      "mappings": [{
-        "if": "opening_hours=24/7",
-        "then": {
-          "en": "Opened 24/7",
-          "nl": "Altijd open"
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "en": "Opened 24/7",
+            "nl": "Altijd open"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "toilets-wheelchair",
@@ -543,28 +545,19 @@
       ],
       "condition": {
         "#": "Urinals normally don't have toilet paper",
-        "and": ["toilets:position!=urinal"]
+        "and": [
+          "toilets:position!=urinal"
+        ]
       }
     }
   ],
-  "iconBadges": [{
-    "if": "opening_hours~*",
-    "then": "isOpen"
-  }],
-  "filter": [
+  "iconBadges": [
     {
-      "id": "is_open",
-      "options": [{
-        "question": {
-          "nl": "Nu geopened",
-          "en": "Opened now"
-        },
-        "osmTags": {
-          "or": ["opening_hours=","_isOpen=yes"]
-        }
-      }
-      ]
-    },
+      "if": "opening_hours~*",
+      "then": "isOpen"
+    }
+  ],
+  "filter": [
     {
       "id": "wheelchair",
       "options": [
@@ -605,6 +598,23 @@
               "fee=no",
               "fee=0",
               "charge=0"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_open",
+      "options": [
+        {
+          "question": {
+            "nl": "Nu geopened",
+            "en": "Opened now"
+          },
+          "osmTags": {
+            "or": [
+              "opening_hours=",
+              "_isOpen=yes"
             ]
           }
         }

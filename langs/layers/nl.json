@@ -3583,6 +3583,13 @@
             "question": "Gratis toegankelijk"
           }
         }
+      },
+      "3": {
+        "options": {
+          "0": {
+            "question": "Nu geopened"
+          }
+        }
       }
     },
     "name": "Toiletten",
@@ -3597,6 +3604,14 @@
       }
     },
     "tagRenderings": {
+      "Opening-hours": {
+        "mappings": {
+          "0": {
+            "then": "Altijd open"
+          }
+        },
+        "question": "Wanneer zijn deze toiletten open?"
+      },
       "toilet-access": {
         "mappings": {
           "0": {
