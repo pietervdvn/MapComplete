@@ -104,10 +104,10 @@ export default class CopyrightPanel extends Combine {
 
         super([
             Translations.t.general.attribution.attributionContent,
+            new FixedUiElement("MapComplete "+Constants.vNumber).SetClass("font-bold"),
             maintainer,
             new Combine(actionButtons).SetClass("block w-full"),
             new FixedUiElement(layoutToUse.credits),
-            new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.currentBounds),
             new VariableUiElement(contributions.map(contributions => {
                 if (contributions === undefined) {
                     return ""
@@ -146,7 +146,7 @@ export default class CopyrightPanel extends Combine {
             ...iconAttributions
         ].map(e => e?.SetClass("mt-4")));
         this.SetClass("flex flex-col link-underline overflow-hidden")
-        this.SetStyle("max-width: calc(100vw - 5em); width: 40rem; margin-left: 0.75rem; margin-right: 0.5rem")
+        this.SetStyle("max-width: calc(100vw - 3em); width: 40rem; margin-left: 0.75rem; margin-right: 0.5rem")
     }
 
     private static CodeContributors(): BaseUIElement {
