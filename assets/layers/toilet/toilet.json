@@ -440,6 +440,23 @@
   ],
   "filter": [
     {
+      "id": "is_open",
+      "options": [
+        {
+          "question": {
+            "nl": "Nu geopened",
+            "en": "Opened now"
+          },
+          "osmTags": {
+            "or": [
+              "opening_hours=",
+              "_isOpen=yes"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "wheelchair",
       "options": [
         {
@@ -521,6 +538,12 @@
       "location": [
         "point"
       ]
+    }
+  ],
+  "iconBadges": [
+    {
+      "if": "opening_hours~*",
+      "then": "isOpen"
     }
   ]
 }
