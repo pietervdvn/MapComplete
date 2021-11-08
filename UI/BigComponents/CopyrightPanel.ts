@@ -92,7 +92,7 @@ export default class CopyrightPanel extends Combine {
                     Utils.download(josmLink).then(answer => josmState.setData(answer.replace(/\n/g, '').trim())).catch(_ => josmState.setData("ERROR"))
                 }), undefined, state.osmConnection.userDetails.map(ud => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible)),
 
-        ].map(button => button.SetStyle("max-height: 3rem"))
+        ]
 
         const iconAttributions = Utils.NoNull(Array.from(layoutToUse.ExtractImages()))
             .map(CopyrightPanel.IconAttribution)
