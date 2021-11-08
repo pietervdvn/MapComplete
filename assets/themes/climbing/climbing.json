@@ -224,7 +224,8 @@
             "render": "40,40,center"
           },
           "location": [
-            "point","centroid"
+            "point",
+            "centroid"
           ]
         }
       ]
@@ -332,7 +333,8 @@
             "render": "40,40,center"
           },
           "location": [
-            "point","centroid"
+            "point",
+            "centroid"
           ]
         }
       ]
@@ -1010,7 +1012,8 @@
         {
           "icon": "./assets/themes/climbing/climbing_unknown.svg",
           "location": [
-            "point","centroid"
+            "point",
+            "centroid"
           ]
         },
         {

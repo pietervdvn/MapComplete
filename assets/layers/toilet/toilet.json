@@ -479,23 +479,6 @@
   ],
   "filter": [
     {
-      "id": "is_open",
-      "options": [
-        {
-          "question": {
-            "nl": "Nu geopened",
-            "en": "Opened now"
-          },
-          "osmTags": {
-            "or": [
-              "opening_hours=",
-              "_isOpen=yes"
-            ]
-          }
-        }
-      ]
-    },
-    {
       "id": "wheelchair",
       "options": [
         {
@@ -535,6 +518,23 @@
               "fee=no",
               "fee=0",
               "charge=0"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_open",
+      "options": [
+        {
+          "question": {
+            "nl": "Nu geopened",
+            "en": "Opened now"
+          },
+          "osmTags": {
+            "or": [
+              "opening_hours=",
+              "_isOpen=yes"
             ]
           }
         }

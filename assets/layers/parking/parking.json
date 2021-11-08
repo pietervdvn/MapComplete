@@ -9,13 +9,13 @@
   },
   "title": {
     "render": {
-      "nl": "Autoparking",
+      "nl": "Parking voor auto's",
       "en": "Car parking"
     }
   },
   "description": {
     "en": "A layer showing car parkings",
-    "nl": "Deze laag toont autoparkeerplaatsen"
+    "nl": "Deze laag toont autoparkings"
   },
   "tagRenderings": [
     "images"
@@ -26,7 +26,7 @@
         "amenity=parking"
       ],
       "title": {
-        "nl": "autoparking",
+        "nl": "parking voor auto's",
         "en": "car parking"
       }
     }

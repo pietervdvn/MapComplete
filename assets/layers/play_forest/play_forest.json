@@ -106,7 +106,7 @@
   ],
   "mapRendering": [
     {
-      "icon" : "./assets/layers/play_forest/icon.svg",
+      "icon": "./assets/layers/play_forest/icon.svg",
       "iconSize": {
         "render": "40,40,center"
       },
@@ -117,7 +117,7 @@
     },
     {
       "color": "#007055",
-      "width":  "2"
+      "width": "2"
     }
   ]
 }
