@@ -1,0 +1,21 @@
+{
+  "id": "gps_track",
+  "description": "Meta layer showing the previou locations of the user. Add this to your theme and override the icon to change the appearance of the current location.",
+  "minzoom": 0,
+  "source": {
+    "osmTags": "user:location=yes",
+    "maxCacheAge": 0
+  },
+  "name": "Your track",
+  "mapRendering": [
+    {
+      "icon": "circle:#f00",
+      "iconSize": "2,2,center",
+      "location": "point"
+    },
+    {
+      "width": 3,
+      "color": "#bb000077"
+    }
+  ]
+}

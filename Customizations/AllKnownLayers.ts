@@ -17,7 +17,7 @@ export default class AllKnownLayers {
     public static sharedLayersJson: Map<string, any> = AllKnownLayers.getSharedLayersJson();
 
 
-    public static added_by_default: string[] = ["gps_location", "home_location"]
+    public static added_by_default: string[] = ["gps_location", "home_location", "gps_track"]
     public static no_include: string[] = [ "conflation", "left_right_style"]
     /**
      * Layer IDs of layers which have special properties through built-in hooks

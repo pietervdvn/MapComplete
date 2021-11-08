@@ -135,6 +135,7 @@ export default class MapState extends UserRelatedState {
         
         this.initHomeLocation()
         this.initGpsLocation()
+        this.initUserLocationTrail()
     }
 
     public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
@@ -185,6 +186,46 @@ export default class MapState extends UserRelatedState {
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location")[0]
         this.currentUserLocation = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0));
     }
+    
+    private initUserLocationTrail(){
+        const histCoordinates = []
+        let lineFeature = {
+            type:"Feature",
+            geometry:{
+                type: "LineString",
+                coordinates: histCoordinates
+            },
+            properties:{
+                "user:location":"yes",
+                "id":"gps_track"
+            }
+        }
+        const features = new UIEventSource<{feature: any, freshness: Date}[]>([], "gps_track")
+        let i = 0
+        this.currentUserLocation.features.addCallbackAndRunD(([location]) => {
+            if(location === undefined){
+                return;
+            }
+            const feature = JSON.parse(JSON.stringify(location.feature))
+            feature.properties.id = "gps/"+i
+            i++
+            console.log("New location: ", feature)
+            features.data.push({feature, freshness: new Date()})
+            histCoordinates.push(feature.geometry.coordinates)
+            
+            if(lineFeature !== undefined && lineFeature.geometry.coordinates.length >= 2){
+                features.data.push({feature: lineFeature, freshness: new Date()})
+                lineFeature = undefined
+            }
+            
+            features.ping()
+        })
+        
+        
+        let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
+        this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
+
+    }
 
     private initHomeLocation() {
         const empty = []
@@ -225,7 +266,6 @@ export default class MapState extends UserRelatedState {
     }
 
     private InitializeFilteredLayers() {
-        // Initialize the filtered layers state
 
         const layoutToUse = this.layoutToUse;
         const empty = []

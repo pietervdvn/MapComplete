@@ -471,12 +471,6 @@
       }
     }
   ],
-  "iconBadges": [
-    {
-      "if": "opening_hours~*",
-      "then": "isOpen"
-    }
-  ],
   "filter": [
     {
       "id": "is_open",
@@ -574,6 +568,12 @@
           }
         ]
       },
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
       "location": [
         "point"
       ]

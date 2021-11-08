@@ -67,7 +67,7 @@ export class AllKnownLayouts {
             new List(AllKnownLayers.priviliged_layers.map(id => "[" + id + "](#" + id + ")")),
             ...AllKnownLayers.priviliged_layers
                 .map(id => AllKnownLayers.sharedLayers.get(id))
-                .map((l) => l.GenerateDocumentation(themesPerLayer.get(l.id), AllKnownLayers.added_by_default.indexOf(l.id) >= 0, AllKnownLayers.no_include.indexOf(l.id) >= 0)),
+                .map((l) => l.GenerateDocumentation(themesPerLayer.get(l.id), AllKnownLayers.added_by_default.indexOf(l.id) >= 0, AllKnownLayers.no_include.indexOf(l.id) < 0)),
             new Title("Frequently reused layers", 1),
             "The following layers are used by at least "+popularLayerCutoff+" mapcomplete themes and might be interesting for your custom theme too",
             new List(popupalLayers.map(layer => "[" + layer.id + "](#" + layer.id + ")")),

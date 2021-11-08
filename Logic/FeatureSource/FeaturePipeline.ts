@@ -75,6 +75,7 @@ export default class FeaturePipeline {
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
         state: {
+            readonly historicalUserLocations: FeatureSourceForLayer & Tiled;
             readonly homeLocation: FeatureSourceForLayer & Tiled;
             readonly currentUserLocation: FeatureSourceForLayer & Tiled;
             readonly filteredLayers: UIEventSource<FilteredLayer[]>,
@@ -127,7 +128,7 @@ export default class FeaturePipeline {
         const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
         this.perLayerHierarchy = perLayerHierarchy
 
-        const patchedHandleFeatureSource = function (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
+        function patchedHandleFeatureSource (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
             const srcFiltered =
                 new FilteringFeatureSource(state, src.tileIndex,
@@ -139,6 +140,14 @@ export default class FeaturePipeline {
             // We do not mark as visited here, this is the responsability of the code near the actual loader (e.g. overpassLoader and OSMApiFeatureLoader)
         };
 
+        function handlePriviligedFeatureSource(src: FeatureSourceForLayer & Tiled){
+            // Passthrough to passed function, except that it registers as well
+            handleFeatureSource(src)
+            src.features.addCallbackAndRunD(fs => {
+              fs.forEach(ff => state.allElements.addOrGetElement(ff.feature))
+            })
+        }
+        
 
         for (const filteredLayer of state.filteredLayers.data) {
             const id = filteredLayer.layerDef.id
@@ -155,12 +164,17 @@ export default class FeaturePipeline {
             }
 
             if (id === "gps_location") {
-                hierarchy.registerTile(state.currentUserLocation)
+                handlePriviligedFeatureSource(state.currentUserLocation)
+                continue
+            }
+
+            if (id === "gps_track") {
+                handlePriviligedFeatureSource(state.historicalUserLocations)
                 continue
             }
 
             if (id === "home_location") {
-                hierarchy.registerTile(state.homeLocation)
+                handlePriviligedFeatureSource(state.homeLocation)
                 continue
             }
 

@@ -28,6 +28,22 @@ export default interface LineRenderingConfigJson {
     dashArray?: string | TagRenderingConfigJson
 
     /**
+     * The form at the end of a line
+     */
+    lineCap?: "round" | "square" | "butt" | string | TagRenderingConfigJson
+
+    /**
+     * Wehter or not to fill polygons
+     */
+    fill?: "yes" | "no" | TagRenderingConfigJson
+
+    /**
+     * The color to fill a polygon with.
+     * If undefined, this will be slightly more opaque version of the stroke line
+     */
+    fillColor?: string | TagRenderingConfigJson
+
+    /**
      * The number of pixels this line should be moved.
      * Use a positive numbe to move to the right, a negative to move to the left (left/right as defined by the drawing direction of the line).
      *

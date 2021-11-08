@@ -61,93 +61,6 @@
       "value": "public"
     },
     {
-      "key": "access",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Open Toilet Map')"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "yes"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "customers"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "no"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "key"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=public with a fixed text, namely 'Public access' (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "public"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Open Toilet Map')"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "yes"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "customers"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "no"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "key"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=public with a fixed text, namely 'Public access' (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "public"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Open Toilet Map')"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "yes"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "customers"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "no"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "key"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=public with a fixed text, namely 'Public access' (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "public"
-    },
-    {
       "key": "fee",
       "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "yes"
@@ -160,6 +73,25 @@
     {
       "key": "charge",
       "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "yes"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely 'Opened 24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "24/7"
     },
     {
       "key": "wheelchair",

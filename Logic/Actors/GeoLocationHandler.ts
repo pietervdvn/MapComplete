@@ -184,13 +184,19 @@ export default class GeoLocationHandler extends VariableUiElement {
         this.currentLocation = state.currentUserLocation
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
-
+            console.log("Location is", location,)
             const feature = {
                 "type": "Feature",
                 properties: {
                     id: "gps",
                     "user:location": "yes",
-                    ...location
+                    "date": new Date().toISOString(),
+                    "latitude": location.latitude,
+                    "longitude": location.longitude,
+                    "speed": location.speed,
+                    "accuracy": location.accuracy,
+                    "heading": location.heading,
+                    "altitude": location.altitude
                 },
                 geometry: {
                     type: "Point",

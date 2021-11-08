@@ -15,6 +15,9 @@ export default class TagRenderingAnswer extends VariableUiElement {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }
+        if (tagsSource === undefined) {
+            throw "Trying to generate a tagRenderingAnswer without tagSource..."
+        }
         super(tagsSource.map(tags => {
             if (tags === undefined) {
                 return undefined;

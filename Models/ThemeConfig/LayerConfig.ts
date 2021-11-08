@@ -397,6 +397,9 @@ export default class LayerConfig extends WithContextLoader {
         const extraProps = []
 
         if (canBeIncluded) {
+            if(addedByDefault){
+                extraProps.push("**This layer is included automatically in every theme. This layer might contain no points**" )
+            }
             if (this.title === undefined) {
                 extraProps.push("Not clickable by default. If you import this layer in your theme, override `title` to make this clickable")
             }
@@ -410,6 +413,7 @@ export default class LayerConfig extends WithContextLoader {
             extraProps.push("This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.")
         }
 
+        
 
         let usingLayer: BaseUIElement[] = []
         if (usedInThemes?.length > 0 && !addedByDefault) {
@@ -420,12 +424,13 @@ export default class LayerConfig extends WithContextLoader {
 
         return new Combine([
             new Title(this.id, 3),
-            addedByDefault ? "**This layer is included automatically in every theme. This layer might contain no points**" : undefined,
-            new Link("Go to the source code", `../assets/layers/${this.id}/${this.id}.json`),
             this.description,
+            
+            new Link("Go to the source code", `../assets/layers/${this.id}/${this.id}.json`),
+
             new List(extraProps),
             ...usingLayer
-        ])
+        ]).SetClass("flex flex-col")
     }
 
     public CustomCodeSnippets(): string[] {

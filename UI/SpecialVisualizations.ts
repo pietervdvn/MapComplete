@@ -158,7 +158,7 @@ export default class SpecialVisualizations {
                     }
                 ],
                 example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
-                constr: (state, tagSource, args) => {
+                constr: (state, tagSource, args, defaultGuiState) => {
 
                     const keys = [...args]
                     keys.splice(0, 1)
@@ -172,6 +172,7 @@ export default class SpecialVisualizations {
                                 // This is a list of values
                                 idList = JSON.parse(value)
                             }
+                            
 
                             for (const id of idList) {
                                 features.push({

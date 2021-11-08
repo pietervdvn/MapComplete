@@ -22,7 +22,7 @@ export default class PerLayerFeatureSourceSplitter {
         const knownLayers = new Map<string, FeatureSourceForLayer & Tiled>()
 
         function update() {
-            const features = upstream.features.data;
+            const features = upstream.features?.data;
             if (features === undefined) {
                 return;
             }
