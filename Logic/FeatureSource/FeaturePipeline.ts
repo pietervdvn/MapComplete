@@ -75,6 +75,8 @@ export default class FeaturePipeline {
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
         state: {
+            readonly homeLocation: FeatureSourceForLayer & Tiled;
+            readonly currentUserLocation: FeatureSourceForLayer & Tiled;
             readonly filteredLayers: UIEventSource<FilteredLayer[]>,
             readonly locationControl: UIEventSource<Loc>,
             readonly selectedElement: UIEventSource<any>,
@@ -150,6 +152,16 @@ export default class FeaturePipeline {
             if (id === "type_node") {
                 // Handles by the 'FullNodeDatabaseSource'
                 continue;
+            }
+
+            if (id === "gps_location") {
+                hierarchy.registerTile(state.currentUserLocation)
+                continue
+            }
+
+            if (id === "home_location") {
+                hierarchy.registerTile(state.homeLocation)
+                continue
             }
 
             if (source.geojsonSource === undefined) {

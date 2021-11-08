@@ -1,6 +1,13 @@
 import * as known_layers from "../assets/generated/known_layers_and_themes.json"
 import {Utils} from "../Utils";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import BaseUIElement from "../UI/BaseUIElement";
+import Combine from "../UI/Base/Combine";
+import Title from "../UI/Base/Title";
+import List from "../UI/Base/List";
+import {AllKnownLayouts} from "./AllKnownLayouts";
+import {isNullOrUndefined} from "util";
+import {Layer} from "leaflet";
 
 export default class AllKnownLayers {
 
@@ -9,6 +16,16 @@ export default class AllKnownLayers {
     public static sharedLayers: Map<string, LayerConfig> = AllKnownLayers.getSharedLayers();
     public static sharedLayersJson: Map<string, any> = AllKnownLayers.getSharedLayersJson();
 
+
+    public static added_by_default: string[] = ["gps_location", "home_location"]
+    public static no_include: string[] = [ "conflation", "left_right_style"]
+    /**
+     * Layer IDs of layers which have special properties through built-in hooks
+     */
+    public static priviliged_layers: string[] = [...AllKnownLayers.added_by_default, "type_node",...AllKnownLayers.no_include]
+
+
+
     private static getSharedLayers(): Map<string, LayerConfig> {
         const sharedLayers = new Map<string, LayerConfig>();
         for (const layer of known_layers.layers) {
@@ -16,7 +33,6 @@ export default class AllKnownLayers {
                 // @ts-ignore
                 const parsed = new LayerConfig(layer, "shared_layers")
                 sharedLayers.set(layer.id, parsed);
-                sharedLayers[layer.id] = parsed;
             } catch (e) {
                 if (!Utils.runningFromConsole) {
                     console.error("CRITICAL: Could not parse a layer configuration!", layer.id, " due to", e)
@@ -56,6 +72,5 @@ export default class AllKnownLayers {
         }
         return sharedLayers;
     }
-
 
 }

@@ -17,6 +17,10 @@ import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
 import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../../UI/BaseUIElement";
+import Combine from "../../UI/Base/Combine";
+import Title from "../../UI/Base/Title";
+import List from "../../UI/Base/List";
+import Link from "../../UI/Base/Link";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -367,6 +371,41 @@ export default class LayerConfig extends WithContextLoader {
 
         return allRenderings;
 
+    }
+
+    public GenerateDocumentation(usedInThemes: string[], addedByDefault = false, canBeIncluded = true): BaseUIElement {
+        const extraProps = []
+
+        if (canBeIncluded) {
+            if (this.title === undefined) {
+                extraProps.push("Not clickable by default. If you import this layer in your theme, override `title` to make this clickable")
+            }
+            if (this.name === undefined) {
+                extraProps.push("Not visible in the layer selection by default. If you want to make this layer toggable, override `name`")
+            }
+            if (this.mapRendering.length === 0) {
+                extraProps.push("Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`")
+            }
+        } else {
+            extraProps.push("This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.")
+        }
+
+
+        let usingLayer: BaseUIElement[] = []
+        if (usedInThemes?.length > 0 && !addedByDefault) {
+            usingLayer = [new Title("Themes using this layer", 4),
+                new List((usedInThemes ?? []).map(id => new Link(id, "https://mapcomplete.osm.be/" + id)))
+            ]
+        }
+
+        return new Combine([
+            new Title(this.id, 3),
+            addedByDefault ? "**This layer is included automatically in every theme. This layer might contain no points**" : undefined,
+            new Link("Go to the source code", `../assets/layers/${this.id}/${this.id}.json`),
+            this.description,
+            new List(extraProps),
+            ...usingLayer
+        ])
     }
 
     public CustomCodeSnippets(): string[] {

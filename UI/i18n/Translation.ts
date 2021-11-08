@@ -227,4 +227,8 @@ export class Translation extends BaseUIElement {
         }
         return allIcons.filter(icon => icon != undefined)
     }
+    
+    AsMarkdown(): string {
+        return this.txt
+    }
 }

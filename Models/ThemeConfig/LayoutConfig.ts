@@ -160,12 +160,16 @@ export default class LayoutConfig {
             if (typeof layer === "string") {
                 if (AllKnownLayers.sharedLayersJson.get(layer) !== undefined) {
                     if (json.overrideAll !== undefined) {
-                        let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson[layer]));
+                        let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson.get(layer)));
                         const newLayer = new LayerConfig(Utils.Merge(json.overrideAll, lyr), `${json.id}+overrideAll.layers[${i}]`, official)
                         result.push(newLayer)
                         return
                     } else {
-                        result.push(AllKnownLayers.sharedLayers[layer])
+                        const shared = AllKnownLayers.sharedLayers.get(layer)
+                        if(shared === undefined){
+                            throw `Shared layer ${layer} not found (at ${context}.layers[${i}])`
+                        }
+                        result.push(shared)
                         return
                     }
                 } else {
@@ -179,8 +183,7 @@ export default class LayoutConfig {
                     layer = Utils.Merge(json.overrideAll, layer);
                 }
                 // @ts-ignore
-                const newLayer = new LayerConfig(layer, `${json.id}.layers[${i}]`, official)
-                result.push(newLayer)
+                result.push(new LayerConfig(layer, `${json.id}.layers[${i}]`, official))
                 return
             }
 
@@ -204,13 +207,19 @@ export default class LayoutConfig {
                 if (json.overrideAll !== undefined) {
                     newLayer = Utils.Merge(json.overrideAll, newLayer);
                 }
-                // @ts-ignore
-                const layerConfig = new LayerConfig(newLayer, `${json.id}.layers[${i}]`, official)
-                result.push(layerConfig)
+                result.push(new LayerConfig(newLayer, `${json.id}.layers[${i}]`, official))
                 return
             })
 
         });
+        
+        // Some special layers which are always included by default
+        for (const defaultLayer of AllKnownLayers.added_by_default) {
+            if(result.some(l => l?.id === defaultLayer)){
+                continue; // Already added
+            }
+            result.push(AllKnownLayers.sharedLayers.get(defaultLayer))
+        }
 
         return {layers: result, extractAllNodes: exportAllNodes}
     }

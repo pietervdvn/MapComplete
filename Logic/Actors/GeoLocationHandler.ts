@@ -5,11 +5,10 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
 import FeatureSource from "../FeatureSource/FeatureSource";
-import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
 
 export default class GeoLocationHandler extends VariableUiElement {
 
-    public readonly currentLocation: FeatureSource
+    private readonly currentLocation: FeatureSource
 
     /**
      * Wether or not the geolocation is active, aka the user requested the current location
@@ -59,13 +58,13 @@ export default class GeoLocationHandler extends VariableUiElement {
 
     constructor(
         state: {
-            currentGPSLocation: UIEventSource<Coordinates>,
+            currentUserLocation: FeatureSource,
             leafletMap: UIEventSource<any>,
             layoutToUse: LayoutConfig,
             featureSwitchGeolocation: UIEventSource<boolean>
         }
     ) {
-        const currentGPSLocation = state.currentGPSLocation
+        const currentGPSLocation = new UIEventSource<Coordinates>(undefined, "GPS-coordinate")
         const leafletMap = state.leafletMap
         const hasLocation = currentGPSLocation.map(
             (location) => location !== undefined
@@ -182,16 +181,16 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
         })
 
-        this.currentLocation = new StaticFeatureSource([], false)
+        this.currentLocation = state.currentUserLocation
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
 
             const feature = {
                 "type": "Feature",
                 properties: {
+                    id: "gps",
                     "user:location": "yes",
-                    "accuracy": location.accuracy,
-                    "speed": location.speed,
+                    ...location
                 },
                 geometry: {
                     type: "Point",

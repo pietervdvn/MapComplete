@@ -286,7 +286,7 @@ export class ChangesetHandler {
                 ["language", Locale.language.data],
                 ["host", window.location.host],
                 ["path", path],
-                ["source", State.state.currentGPSLocation.data !== undefined ? "survey" : undefined],
+                ["source", State.state.currentUserLocation.features.data.length > 0 ? "survey" : undefined],
                 ["imagery", State.state.backgroundLayer.data.id],
                 ...changesetTags.map(cstag => [cstag.key, cstag.value])
             ]

@@ -161,7 +161,7 @@ export default abstract class BaseUIElement {
     }
 
     public AsMarkdown(): string {
-        throw "AsMarkdown is not implemented by " + this.constructor.name
+        throw "AsMarkdown is not implemented by " + this.constructor.name+"; implement it in the subclass"
     }
 
     protected abstract InnerConstructElement(): HTMLElement;

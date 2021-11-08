@@ -19,14 +19,14 @@ export default class Title extends BaseUIElement {
         const embedded = " " + this._embedded.AsMarkdown() + " ";
 
         if (this._level == 1) {
-            return "\n" + embedded + "\n" + "=".repeat(embedded.length) + "\n\n"
+            return "\n\n" + embedded + "\n" + "=".repeat(embedded.length) + "\n\n"
         }
 
         if (this._level == 2) {
-            return "\n" + embedded + "\n" + "-".repeat(embedded.length) + "\n\n"
+            return "\n\n" + embedded + "\n" + "-".repeat(embedded.length) + "\n\n"
         }
 
-        return "\n" + "#".repeat(this._level) + embedded + "\n\n";
+        return "\n\n" + "#".repeat(this._level) + embedded + "\n\n";
     }
 
     protected InnerConstructElement(): HTMLElement {

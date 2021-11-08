@@ -36,10 +36,7 @@ export default class UserRelatedState extends ElementsState {
      * WHich other themes the user previously visited
      */
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
-    /**
-     * A feature source containing the current home location of the user
-     */
-    public homeLocation: FeatureSource
+
 
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
@@ -88,7 +85,6 @@ export default class UserRelatedState extends ElementsState {
 
 
         this.InitializeLanguage();
-        this.initHomeLocation()
         new SelectedElementTagsUpdater(this)
 
     }
@@ -114,39 +110,6 @@ export default class UserRelatedState extends ElementsState {
                 }
             })
             .ping();
-    }
-
-    private initHomeLocation() {
-        const empty = []
-        const feature = UIEventSource.ListStabilized(this.osmConnection.userDetails.map(userDetails => {
-
-            if (userDetails === undefined) {
-                return undefined;
-            }
-            const home = userDetails.home;
-            if (home === undefined) {
-                return undefined;
-            }
-            return [home.lon, home.lat]
-        })).map(homeLonLat => {
-            if (homeLonLat === undefined) {
-                return empty
-            }
-            return [{
-                "type": "Feature",
-                "properties": {
-                    "user:home": "yes",
-                    "_lon": homeLonLat[0],
-                    "_lat": homeLonLat[1]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": homeLonLat
-                }
-            }]
-        })
-
-        this.homeLocation = new StaticFeatureSource(feature, false)
     }
 
 }

@@ -1,6 +1,6 @@
 {
   "id": "conflation",
-  "description": "This is a special meta_layer which render geometry-changes for inspection",
+  "description": "If the import-button is set to conflate two ways, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme.",
   "minzoom": 1,
   "source": {
     "osmTags": {

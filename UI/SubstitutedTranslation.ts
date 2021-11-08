@@ -63,7 +63,6 @@ export class SubstitutedTranslation extends VariableUiElement {
         this.SetClass("w-full")
     }
 
-
     public static ExtractSpecialComponents(template: string, extraMappings: SpecialVisualization[] = []): {
         fixed?: string,
         special?: {

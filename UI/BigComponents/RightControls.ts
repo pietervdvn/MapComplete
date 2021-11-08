@@ -15,13 +15,6 @@ export default class RightControls extends Combine {
             state
         )
 
-        new ShowDataLayer({
-            layerToShow: AllKnownLayers.sharedLayers.get("gps_location"),
-            leafletMap: state.leafletMap,
-            enablePopups: true,
-            features: geolocatioHandler.currentLocation
-        })
-
         const geolocationButton = new Toggle(
             new MapControlButton(
                 geolocatioHandler

@@ -196,7 +196,7 @@ class LayerOverviewUtils {
                 }
                 themeConfigs.push(theme)
             } catch (e) {
-                themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
+                themeErrorCount.push("Could not parse theme " + themeFile["id"] + " due to", e)
             }
         }
 

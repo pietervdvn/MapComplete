@@ -2,6 +2,10 @@ import AllKnownLayers from "./AllKnownLayers";
 import * as known_themes from "../assets/generated/known_layers_and_themes.json"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import BaseUIElement from "../UI/BaseUIElement";
+import Combine from "../UI/Base/Combine";
+import Title from "../UI/Base/Title";
+import List from "../UI/Base/List";
 
 export class AllKnownLayouts {
 
@@ -27,6 +31,50 @@ export class AllKnownLayouts {
 
         }
         return allLayers
+    }
+
+    public static GenLayerOverviewText(): BaseUIElement {
+        for (const id of AllKnownLayers.priviliged_layers) {
+            if (!AllKnownLayers.sharedLayers.has(id)) {
+                throw "Priviliged layer definition not found: " + id
+            }
+        }
+        const allLayers: LayerConfig[] = Array.from(AllKnownLayers.sharedLayers.values())
+
+        const themesPerLayer = new Map<string, string[]>()
+
+        for (const layout of Array.from(AllKnownLayouts.allKnownLayouts.values())) {
+            if(layout.hideFromOverview){
+                continue
+            }
+            for (const layer of layout.layers) {
+                if (!themesPerLayer.has(layer.id)) {
+                    themesPerLayer.set(layer.id, [])
+                }
+                themesPerLayer.get(layer.id).push(layout.id)
+            }
+        }
+
+
+        let popularLayerCutoff = 2;
+        const popupalLayers = allLayers.filter((layer) => themesPerLayer.get(layer.id)?.length >= 2)
+            .filter(layer => AllKnownLayers.priviliged_layers.indexOf(layer.id) < 0)
+
+        return new Combine([
+            new Title("Special and other useful layers", 1),
+            "MapComplete has a few data layers available in the theme which have special properties through builtin-hooks. Furthermore, there are some normal layers (which are built from normal Theme-config files) but are so general that they get a mention here.",
+            new Title("Priviliged layers", 1),
+            new List(AllKnownLayers.priviliged_layers.map(id => "[" + id + "](#" + id + ")")),
+            ...AllKnownLayers.priviliged_layers
+                .map(id => AllKnownLayers.sharedLayers.get(id))
+                .map((l) => l.GenerateDocumentation(themesPerLayer.get(l.id), AllKnownLayers.added_by_default.indexOf(l.id) >= 0, AllKnownLayers.no_include.indexOf(l.id) >= 0)),
+            new Title("Frequently reused layers", 1),
+            "The following layers are used by at least "+popularLayerCutoff+" mapcomplete themes and might be interesting for your custom theme too",
+            new List(popupalLayers.map(layer => "[" + layer.id + "](#" + layer.id + ")")),
+            ...popupalLayers.map((layer) => layer.GenerateDocumentation(themesPerLayer.get(layer.id)))
+        ])
+
+
     }
 
     private static GenerateOrderedList(allKnownLayouts: Map<string, LayoutConfig>): LayoutConfig[] {

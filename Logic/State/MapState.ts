@@ -14,6 +14,8 @@ import {QueryParameters} from "../Web/QueryParameters";
 import * as personal from "../../assets/themes/personal/personal.json";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
+import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
+import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 
 /**
  * Contains all the leaflet-map related state
@@ -44,7 +46,17 @@ export default class MapState extends UserRelatedState {
     /**
      * The location as delivered by the GPS
      */
-    public currentGPSLocation: UIEventSource<Coordinates> = new UIEventSource<Coordinates>(undefined);
+    public currentUserLocation: FeatureSourceForLayer & Tiled;
+
+    /**
+     * All previously visited points
+     */
+    public historicalUserLocations: FeatureSourceForLayer & Tiled;
+
+    /**
+     * A feature source containing the current home location of the user
+     */
+    public homeLocation: FeatureSourceForLayer & Tiled
 
     public readonly mainMapObject: BaseUIElement & MinimapObj;
 
@@ -120,6 +132,9 @@ export default class MapState extends UserRelatedState {
 
         this.lockBounds()
         this.AddAllOverlaysToMap(this.leafletMap)
+        
+        this.initHomeLocation()
+        this.initGpsLocation()
     }
 
     public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
@@ -163,6 +178,50 @@ export default class MapState extends UserRelatedState {
                 map.setMinZoom(layout.startZoom);
             })
         }
+    }
+    
+    private initGpsLocation(){
+        // Initialize the gps layer data. This is emtpy for now, the actual writing happens in the Geolocationhandler
+        let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location")[0]
+        this.currentUserLocation = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0));
+    }
+
+    private initHomeLocation() {
+        const empty = []
+        const feature = UIEventSource.ListStabilized(this.osmConnection.userDetails.map(userDetails => {
+
+            if (userDetails === undefined) {
+                return undefined;
+            }
+            const home = userDetails.home;
+            if (home === undefined) {
+                return undefined;
+            }
+            return [home.lon, home.lat]
+        })).map(homeLonLat => {
+            if (homeLonLat === undefined) {
+                return empty
+            }
+            return [{
+                feature: {
+                    "type": "Feature",
+                    "properties": {
+                        "id":"home",
+                        "user:home": "yes",
+                        "_lon": homeLonLat[0],
+                        "_lat": homeLonLat[1]
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": homeLonLat
+                    }
+                }, freshness: new Date()
+            }]
+        })
+
+        const flayer = this.filteredLayers.data.filter(l => l.layerDef.id === "home_location")[0]
+        this.homeLocation = new SimpleFeatureSource(flayer, Tiles.tile_index(0, 0, 0), feature)
+
     }
 
     private InitializeFilteredLayers() {
