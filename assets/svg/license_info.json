@@ -734,6 +734,16 @@
     "sources": []
   },
   {
+    "path": "liberapay.svg",
+    "license": "Logo (all rights reserved)",
+    "authors": [
+      "LiberaPay"
+    ],
+    "sources": [
+      "https://liberapay.com/"
+    ]
+  },
+  {
     "path": "loading.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -1240,6 +1250,22 @@
     "sources": [
       "https://www.onlinewebfonts.com/icon/197818"
     ]
+  },
+  {
+    "path": "teardrop.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "teardrop_with_hole_green.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
   },
   {
     "path": "translate.svg",
