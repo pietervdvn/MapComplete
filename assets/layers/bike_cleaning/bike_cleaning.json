@@ -160,7 +160,7 @@
       ],
       "iconSize": "50,50,bottom",
       "location": [
-        "point"
+        "point","centroid"
       ]
     }
   ]

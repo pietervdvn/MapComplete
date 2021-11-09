@@ -396,7 +396,8 @@
       "mapRendering": [
         {
           "location": [
-            "point"
+            "point",
+            "centroid"
           ],
           "icon": "circle:#bb3322",
           "iconSize": "15,15,center"

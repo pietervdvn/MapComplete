@@ -172,7 +172,7 @@
         "render": "50,50,center"
       },
       "location": [
-        "point"
+        "point","centroid"
       ]
     }
   ]

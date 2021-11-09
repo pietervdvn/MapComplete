@@ -21,11 +21,6 @@
   "name": "Your track",
   "mapRendering": [
     {
-      "icon": "circle:#f00",
-      "iconSize": "2,2,center",
-      "location": "point"
-    },
-    {
       "width": 3,
       "color": "#bb000077"
     }

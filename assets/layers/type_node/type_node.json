@@ -5,7 +5,7 @@
   "source": {
     "osmTags": "id~node/.*"
   },
-  "mapRendering": [],
+  "mapRendering": null,
   "name": "All OSM Nodes",
   "title": "OSM node {id}",
   "tagRendering": []

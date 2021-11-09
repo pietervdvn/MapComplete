@@ -506,7 +506,7 @@
             "render": "20,20,center"
           },
           "location": [
-            "point"
+            "point","centroid"
           ]
         }
       ]

@@ -616,7 +616,7 @@
         "render": "40,40,bottom"
       },
       "location": [
-        "point"
+        "point","centroid"
       ]
     }
   ]

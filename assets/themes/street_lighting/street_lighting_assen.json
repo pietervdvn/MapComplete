@@ -36,7 +36,7 @@
       "title": "Straatlantaarn in dataset",
       "mapRendering": [
         {
-          "location": "point",
+          "location": ["point","centroid"],
           "icon": {
             "render": "circle:red",
             "mappings": [

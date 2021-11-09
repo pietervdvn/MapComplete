@@ -205,7 +205,7 @@
       "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
       "iconSize": "40,40,bottom",
       "location": [
-        "point"
+        "point","centroid"
       ]
     }
   ]

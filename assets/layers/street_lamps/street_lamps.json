@@ -25,7 +25,7 @@
   },
   "mapRendering": [
     {
-      "location": "point",
+      "location": ["point","centroid"],
       "icon": "./assets/layers/street_lamps/street_lamp.svg",
       "iconBadges": [
         {
