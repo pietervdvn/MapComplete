@@ -6,7 +6,7 @@
     "osmTags": "user:location=yes",
     "maxCacheAge": 0
   },
-  "title": {
+  "#title": {
     "render": "Your travelled path"
   },
   "tagRenderings": [
@@ -18,10 +18,10 @@
     },
     "export_as_gpx"
   ],
-  "name": "Your track",
+  "#name": "Your track",
   "mapRendering": [
     {
-      "width": 3,
+      "width": 0,
       "color": "#bb000077"
     }
   ]

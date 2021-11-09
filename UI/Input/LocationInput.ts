@@ -24,7 +24,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 osmTags: {and: []}
             },
             mapRendering: [{
-                location: ["point"],
+                location: ["point","centroid"],
                 icon: "./assets/svg/crosshair-empty.svg"
             }]
         }, "matchpoint icon", true

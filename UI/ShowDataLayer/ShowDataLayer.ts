@@ -152,7 +152,7 @@ export default class ShowDataLayer {
                 continue
             }
             try {
-                if ((feat.geometry.type === "LineString" || feat.geometry.type === "MultiLineString")) {
+                if (feat.geometry.type === "LineString") {
                     const self = this;
                     const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
                     const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
@@ -270,7 +270,7 @@ export default class ShowDataLayer {
 
         let infobox: FeatureInfoBox = undefined;
 
-        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}-${feature.pointRenderingIndex ?? feature.lineRenderingIndex}`
+        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}-${feature.pointRenderingIndex ?? feature.lineRenderingIndex}-${feature.multiLineStringIndex ?? ""}`
         popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type} ${id} is loading</div>`)
         leafletLayer.on("popupopen", () => {
             if (infobox === undefined) {

@@ -7,7 +7,6 @@ import FeatureSource from "../FeatureSource";
 import PointRenderingConfig from "../../../Models/ThemeConfig/PointRenderingConfig";
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 
-
 export default class RenderingMultiPlexerFeatureSource {
     public readonly features: UIEventSource<(any & { pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined })[]>;
 
@@ -29,7 +28,7 @@ export default class RenderingMultiPlexerFeatureSource {
 
                 const lineRenderObjects = layer.lineRendering
 
-                const withIndex: (any & { pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined })[] = [];
+                const withIndex: (any & { pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined, multiLineStringIndex: number | undefined })[] = [];
 
 
                 function addAsPoint(feat, rendering, coordinate) {
@@ -69,11 +68,18 @@ export default class RenderingMultiPlexerFeatureSource {
                                 const coordinate = coordinates[coordinates.length - 1]
                                 addAsPoint(feat, rendering, coordinate)
                             }
+                            for (let i = 0; i < lineRenderObjects.length; i++) {
+                                withIndex.push({
+                                    ...feat,
+                                    lineRenderingIndex: i
+                                })
+                            }
                         }
 
                         if (feat.geometry.type === "MultiLineString") {
-                            const lineList = feat.geometry.coordinates
-                            for (const coordinates of lineList) {
+                            const lineList: [number, number][][] = feat.geometry.coordinates
+                            for (let i1 = 0; i1 < lineList.length; i1++) {
+                                const coordinates = lineList[i1];
 
                                 for (const rendering of startRenderings) {
                                     const coordinate = coordinates[0]
@@ -83,19 +89,25 @@ export default class RenderingMultiPlexerFeatureSource {
                                     const coordinate = coordinates[coordinates.length - 1]
                                     addAsPoint(feat, rendering, coordinate)
                                 }
+
+
+                                for (let i = 0; i < lineRenderObjects.length; i++) {
+                                    const orig = {
+                                        ...feat,
+                                        lineRenderingIndex: i,
+                                        multiLineStringIndex: i1
+                                    }
+                                    orig.geometry.coordinates = coordinates
+                                    orig.geometry.type = "LineString"
+                                    withIndex.push(orig)
+                                }
                             }
-                        }
-
-
-                        for (let i = 0; i < lineRenderObjects.length; i++) {
-                            withIndex.push({
-                                ...feat,
-                                lineRenderingIndex: i
-                            })
                         }
 
                     }
                 }
+
+
                 return withIndex;
             }
         );

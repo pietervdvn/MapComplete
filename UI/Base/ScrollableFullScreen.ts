@@ -55,7 +55,7 @@ export default class ScrollableFullScreen extends UIElement {
             if (!isShown.data) {
                 return;
             }
-            if (hash === undefined || hash === "") {
+            if (hash === undefined || hash === "" || hash !== hashToShow) {
                 isShown.setData(false)
             }
         })

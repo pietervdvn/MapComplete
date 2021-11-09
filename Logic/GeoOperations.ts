@@ -3,7 +3,6 @@ import {BBox} from "./BBox";
 import togpx from "togpx"
 import Constants from "../Models/Constants";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import {meta} from "@turf/turf";
 
 export class GeoOperations {
 
@@ -465,6 +464,151 @@ export class GeoOperations {
         })
     }
     
+    public static IdentifieCommonSegments(coordinatess: [number,number][][] ): {
+        originalIndex: number,
+        segmentShardWith: number[],
+        coordinates: []
+    }[]{
+        
+        // An edge. Note that the edge might be reversed to fix the sorting condition:  start[0] < end[0] && (start[0] != end[0] || start[0] < end[1])
+        type edge = {start: [number, number], end: [number, number], intermediate: [number,number][], members: {index:number, isReversed: boolean}[]}
+
+        // The strategy:
+        // 1. Index _all_ edges from _every_ linestring. Index them by starting key, gather which relations run over them
+        // 2. Join these edges back together - as long as their membership groups are the same
+        // 3. Convert to results
+        
+        const allEdgesByKey = new Map<string, edge>()
+
+        for (let index = 0; index < coordinatess.length; index++){
+            const coordinates = coordinatess[index];
+            for (let i = 0; i < coordinates.length - 1; i++){
+                
+                const c0 = coordinates[i];
+                const c1 = coordinates[i + 1]
+                const isReversed = (c0[0] > c1[0]) || (c0[0] == c1[0] && c0[1] > c1[1])
+                
+                let key : string
+                if(isReversed){
+                    key = ""+c1+";"+c0
+                }else{
+                    key = ""+c0+";"+c1
+                }
+                const member = {index, isReversed}
+                if(allEdgesByKey.has(key)){
+                    allEdgesByKey.get(key).members.push(member)
+                    continue
+                }
+                
+                let edge : edge;
+                if(!isReversed){
+                    edge = {
+                        start : c0,
+                        end: c1,
+                        members: [member],
+                        intermediate: []
+                    }
+                }else{
+                    edge = {
+                        start : c1,
+                        end: c0,
+                        members: [member],
+                        intermediate: []
+                    }
+                }
+                allEdgesByKey.set(key, edge)
+                
+            }
+        }
+
+        // Lets merge them back together!
+        
+        let didMergeSomething = false;
+        let allMergedEdges = Array.from(allEdgesByKey.values())
+        const allEdgesByStartPoint = new Map<string, edge[]>()
+        for (const edge of allMergedEdges) {
+            
+            edge.members.sort((m0, m1) => m0.index - m1.index)
+            
+            const kstart = edge.start+""
+            if(!allEdgesByStartPoint.has(kstart)){
+                allEdgesByStartPoint.set(kstart, [])
+            }
+            allEdgesByStartPoint.get(kstart).push(edge)
+        }
+        
+        
+        function membersAreCompatible(first:edge, second:edge): boolean{
+            // There must be an exact match between the members
+            if(first.members === second.members){
+                return true
+            }
+            
+            if(first.members.length !== second.members.length){
+                return false
+            }
+            
+            // Members are sorted and have the same length, so we can check quickly
+            for (let i = 0; i < first.members.length; i++) {
+                const m0 = first.members[i]
+                const m1 = second.members[i]
+                if(m0.index !== m1.index || m0.isReversed !== m1.isReversed){
+                    return false
+                }
+            }
+            
+            // Allrigth, they are the same, lets mark this permanently
+            second.members = first.members
+            return true
+            
+        }
+        
+        do{
+            didMergeSomething = false
+            // We use 'allMergedEdges' as our running list
+            const consumed = new Set<edge>()
+            for (const edge of allMergedEdges) {
+                // Can we make this edge longer at the end?
+                if(consumed.has(edge)){
+                    continue
+                }
+                
+                console.log("Considering edge", edge)
+                const matchingEndEdges = allEdgesByStartPoint.get(edge.end+"") 
+                console.log("Matchign endpoints:", matchingEndEdges)
+                if(matchingEndEdges === undefined){
+                    continue
+                }
+                
+                
+                for (let i = 0; i < matchingEndEdges.length; i++){
+                    const endEdge = matchingEndEdges[i];
+                    
+                    if(consumed.has(endEdge)){
+                        continue
+                    }
+                    
+                    if(!membersAreCompatible(edge, endEdge)){
+                        continue
+                    }
+                    
+                    // We can make the segment longer!
+                    didMergeSomething = true
+                    console.log("Merging ", edge, "with ", endEdge)
+                    edge.intermediate.push(edge.end)
+                    edge.end = endEdge.end
+                    consumed.add(endEdge)
+                    matchingEndEdges.splice(i, 1)
+                    break;
+                }
+            }
+            
+            allMergedEdges = allMergedEdges.filter(edge => !consumed.has(edge));
+            
+        }while(didMergeSomething)
+        
+        return []
+    }
 }
 
 
