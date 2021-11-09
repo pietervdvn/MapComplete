@@ -168,22 +168,18 @@ export class Changes {
                changedObjectCoordinates.push(...chng["coordinates"])
            }
         }
-        
-        const leastDistance = Math.min(...changedObjectCoordinates.map(coor =>
+
+        return Math.min(...changedObjectCoordinates.map(coor =>
             Math.min(...recentLocationPoints.map(gpsPoint => {
                 const otherCoor = GeoOperations.centerpointCoordinates(gpsPoint)
-                const dist = GeoOperations.distanceBetween(coor, otherCoor) * 1000;
-                console.log("Comparing ", coor, "and ", otherCoor, " --> ", dist)
-                return dist
+                return GeoOperations.distanceBetween(coor, otherCoor) * 1000
             }))
         ))
-        return leastDistance
     }
     
     public async applyAction(action: OsmChangeAction): Promise<void> {
         const changeDescriptions = await action.Perform(this)
-        const distanceToObject = this.calculateDistanceToChanges(action, changeDescriptions)
-        changeDescriptions[0].meta.distanceToObject = distanceToObject
+        changeDescriptions[0].meta.distanceToObject = this.calculateDistanceToChanges(action, changeDescriptions)
         this.applyChanges(changeDescriptions)
     }
 
@@ -313,7 +309,7 @@ export class Changes {
                 pendingPerTheme.get(theme).push(changeDescription)
             }
 
-            const successes = await Promise.all(Array.from(pendingPerTheme, ([key, value]) => value)
+            const successes = await Promise.all(Array.from(pendingPerTheme, ([_, value]) => value)
                 .map(async pendingChanges => {
                     try {
                         return await self.flushSelectChanges(pendingChanges);
