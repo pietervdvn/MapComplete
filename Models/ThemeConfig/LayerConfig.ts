@@ -200,12 +200,11 @@ export default class LayerConfig extends WithContextLoader {
             this.mapRendering = []
             this.lineRendering = []
         } else {
-
-            this.mapRendering = json.mapRendering
+            this.mapRendering = Utils.NoNull(json.mapRendering)
                 .filter(r => r["location"] !== undefined)
                 .map((r, i) => new PointRenderingConfig(<PointRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
 
-            this.lineRendering = json.mapRendering
+            this.lineRendering = Utils.NoNull(json.mapRendering)
                 .filter(r => r["location"] === undefined)
                 .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
 
@@ -304,6 +303,9 @@ export default class LayerConfig extends WithContextLoader {
     }
 
     public defaultIcon(): BaseUIElement | undefined {
+        if(this.mapRendering === undefined || this.mapRendering === null){
+            return undefined;
+        }
         const mapRendering = this.mapRendering.filter(r => r.location.has("point"))[0]
         if (mapRendering === undefined) {
             return undefined

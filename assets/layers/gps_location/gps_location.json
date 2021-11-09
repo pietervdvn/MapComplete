@@ -10,7 +10,10 @@
     {
       "icon": "crosshair:#00f",
       "iconSize": "40,40,center",
-      "location": ["point","centroid"]
+      "location": [
+        "point",
+        "centroid"
+      ]
     }
   ]
 }

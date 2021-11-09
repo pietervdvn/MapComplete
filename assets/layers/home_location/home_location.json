@@ -14,7 +14,10 @@
       "iconSize": {
         "render": "20,20,center"
       },
-      "location": ["point","centroid"]
+      "location": [
+        "point",
+        "centroid"
+      ]
     }
   ]
 }

@@ -59,7 +59,7 @@ export default class RenderingMultiPlexerFeatureSource {
                             addAsPoint(feat, rendering, GeoOperations.centerpointCoordinates(feat))
                         }
 
-                        if (feat.geometry.type === "LineString") {
+                        if (feat.geometry.type === "LineString" || feat.geometry.type==="Polygon" || feat.geometry.type === "MultiPolygon") {
                             const coordinates = feat.geometry.coordinates
                             for (const rendering of startRenderings) {
                                 addAsPoint(feat, rendering, coordinates[0])

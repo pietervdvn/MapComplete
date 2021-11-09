@@ -575,7 +575,8 @@
         }
       ],
       "location": [
-        "point","centroid"
+        "point",
+        "centroid"
       ]
     }
   ]
