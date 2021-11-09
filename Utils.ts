@@ -257,6 +257,9 @@ Note that these values can be prepare with javascript in the theme by using a [c
             }
 
             const sourceV = source[key];
+            if(target === null){
+                return source
+            }
             const targetV = target[key]
             if (typeof sourceV === "object") {
                 if (sourceV === null) {
