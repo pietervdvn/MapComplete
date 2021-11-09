@@ -15,7 +15,7 @@ export default class AllThemesGui {
         try {
 
             new FixedUiElement("").AttachTo("centermessage")
-            const state = new UserRelatedState(undefined);
+            const state = new UserRelatedState(undefined, undefined);
             const intro = new Combine([
                 LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
                     .SetClass("absolute top-2 right-3"),

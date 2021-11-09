@@ -27,7 +27,7 @@ export default class DeleteAction extends OsmChangeAction {
                     specialMotivation: string
                 },
                 hardDelete: boolean) {
-        super()
+        super(id,true)
         this._id = id;
         this._hardDelete = hardDelete;
         this.meta = {...meta, changeType: "deletion"};

@@ -6,6 +6,18 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
 import FeatureSource from "../FeatureSource/FeatureSource";
 
+export interface GeoLocationPointProperties {
+    id: "gps",
+    "user:location": "yes",
+    "date": string,
+    "latitude": number
+    "longitude":number,
+    "speed": number,
+    "accuracy": number
+    "heading": number
+    "altitude":number
+}
+
 export default class GeoLocationHandler extends VariableUiElement {
 
     private readonly currentLocation: FeatureSource
@@ -184,10 +196,9 @@ export default class GeoLocationHandler extends VariableUiElement {
         this.currentLocation = state.currentUserLocation
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
-            console.log("Location is", location,)
             const feature = {
                 "type": "Feature",
-                properties: {
+                properties: <GeoLocationPointProperties>{
                     id: "gps",
                     "user:location": "yes",
                     "date": new Date().toISOString(),

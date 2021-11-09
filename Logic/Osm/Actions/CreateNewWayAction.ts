@@ -24,13 +24,13 @@ export default class CreateNewWayAction extends OsmChangeAction {
                 options: {
                     theme: string
                 }) {
-        super()
+        super(null,true)
         this.coordinates = coordinates;
         this.tags = tags;
         this._options = options;
     }
 
-    protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+    public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
 
         const newElements: ChangeDescription[] = []
 
@@ -46,7 +46,7 @@ export default class CreateNewWayAction extends OsmChangeAction {
                 changeType: null,
                 theme: this._options.theme
             })
-            await changes.applyAction(newPoint)
+            newElements.push(...await newPoint.CreateChangeDescriptions(changes))
             pointIds.push(newPoint.newElementIdNumber)
         }
 

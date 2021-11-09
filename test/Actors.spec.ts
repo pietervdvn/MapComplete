@@ -52,7 +52,7 @@ export default class ActorsSpec extends T {
             [
                 "download latest version",
                 () => {
-                    const state = new UserRelatedState(AllKnownLayouts.allKnownLayouts.get("bookcases"))
+                    const state = new UserRelatedState(AllKnownLayouts.allKnownLayouts.get("bookcases"), undefined)
                     const feature = {
                         "type": "Feature",
                         "id": "node/5568693115",

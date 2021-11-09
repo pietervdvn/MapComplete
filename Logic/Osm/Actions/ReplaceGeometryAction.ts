@@ -41,7 +41,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
             newTags?: Tag[]
         }
     ) {
-        super();
+        super(wayToReplaceId, false);
         this.state = state;
         this.feature = feature;
         this.wayToReplaceId = wayToReplaceId;

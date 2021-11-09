@@ -78,6 +78,7 @@ export class ChangesetHandler {
         }
         if (this._dryRun) {
             const changesetXML = generateChangeXML(123456);
+            console.log("Metatags are", extraMetaTags)
             console.log(changesetXML);
             return;
         }

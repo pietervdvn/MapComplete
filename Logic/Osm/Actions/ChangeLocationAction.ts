@@ -11,7 +11,7 @@ export default class ChangeLocationAction extends OsmChangeAction {
         theme: string,
         reason: string
     }) {
-        super();
+        super(id,true);
         if (!id.startsWith("node/")) {
             throw "Invalid ID: only 'node/number' is accepted"
         }
@@ -19,7 +19,7 @@ export default class ChangeLocationAction extends OsmChangeAction {
         this._newLonLat = newLonLat;
         this._meta = meta;
     }
-
+    
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
 
         const d: ChangeDescription = {

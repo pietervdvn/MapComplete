@@ -31,7 +31,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
                     reusePointWithinMeters?: number,
                     theme: string, changeType: "create" | "import" | null
                 }) {
-        super()
+        super(null,basicTags !== undefined && basicTags.length > 0)
         this._basicTags = basicTags;
         this._lat = lat;
         this._lon = lon;

@@ -46,7 +46,7 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
                 state: FeaturePipelineState,
                 config: MergePointConfig[]
     ) {
-        super();
+        super(null,true);
         this._tags = tags;
         this._state = state;
         this._config = config;
@@ -194,9 +194,8 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
         const newWay = new CreateNewWayAction(this._tags, nodeIdsToUse, {
             theme
         })
-
-        allChanges.push(...(await newWay.Perform(changes)))
-
+        
+        allChanges.push(...(await newWay.CreateChangeDescriptions(changes)))
         return allChanges
     }
 

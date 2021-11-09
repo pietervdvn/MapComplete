@@ -14,7 +14,7 @@ import {QueryParameters} from "../Web/QueryParameters";
 import * as personal from "../../assets/themes/personal/personal.json";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
-import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
+import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 
 /**
@@ -209,7 +209,6 @@ export default class MapState extends UserRelatedState {
             const feature = JSON.parse(JSON.stringify(location.feature))
             feature.properties.id = "gps/"+i
             i++
-            console.log("New location: ", feature)
             features.data.push({feature, freshness: new Date()})
             histCoordinates.push(feature.geometry.coordinates)
             
@@ -224,7 +223,7 @@ export default class MapState extends UserRelatedState {
         
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
         this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
-
+        this.changes.useLocationHistory(this)
     }
 
     private initHomeLocation() {

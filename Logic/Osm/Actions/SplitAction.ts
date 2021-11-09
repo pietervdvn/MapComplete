@@ -26,7 +26,7 @@ export default class SplitAction extends OsmChangeAction {
      * @param toleranceInMeters: if a splitpoint closer then this amount of meters to an existing point, the existing point will be used to split the line instead of a new point
      */
     constructor(wayId: string, splitPointCoordinates: [number, number][], meta: { theme: string }, toleranceInMeters = 5) {
-        super()
+        super(wayId,true)
         this.wayId = wayId;
         this._splitPointsCoordinates = splitPointCoordinates
         this._toleranceInMeters = toleranceInMeters;

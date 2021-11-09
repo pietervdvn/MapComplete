@@ -20,7 +20,11 @@ export interface ChangeDescription {
         /**
          * THe motivation for the change, e.g. 'deleted because does not exist anymore'
          */
-        specialMotivation?: string
+        specialMotivation?: string,
+        /**
+         * Added by Changes.ts
+         */
+        distanceToObject?: number
     },
 
     /**

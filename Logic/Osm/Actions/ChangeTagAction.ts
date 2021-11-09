@@ -13,13 +13,13 @@ export default class ChangeTagAction extends OsmChangeAction {
         theme: string,
         changeType: "answer" | "soft-delete" | "add-image" | string
     }) {
-        super();
+        super(elementId, true);
         this._elementId = elementId;
         this._tagsFilter = tagsFilter;
         this._currentTags = currentTags;
         this._meta = meta;
     }
-
+    
     /**
      * Doublechecks that no stupid values are added
      */
