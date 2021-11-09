@@ -196,13 +196,28 @@ export default class LayerConfig extends WithContextLoader {
             throw "MapRendering is undefined in " + context
         }
 
-        this.mapRendering = json.mapRendering
-            .filter(r => r["location"] !== undefined)
-            .map((r, i) => new PointRenderingConfig(<PointRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
+        if (json.mapRendering === null) {
+            this.mapRendering = []
+            this.lineRendering = []
+        } else {
 
-        this.lineRendering = json.mapRendering
-            .filter(r => r["location"] === undefined)
-            .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
+            this.mapRendering = json.mapRendering
+                .filter(r => r["location"] !== undefined)
+                .map((r, i) => new PointRenderingConfig(<PointRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
+
+            this.lineRendering = json.mapRendering
+                .filter(r => r["location"] === undefined)
+                .map((r, i) => new LineRenderingConfig(<LineRenderingConfigJson>r, context + ".mapRendering[" + i + "]"))
+
+            const hasCenterRendering = this.mapRendering.some(r => r.location.has("centroid") || r.location.has("start") || r.location.has("end"))
+
+            if (this.lineRendering.length === 0 && this.mapRendering.length === 0) {
+                console.log(json.mapRendering)
+                throw("The layer " + this.id + " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set maprenderings to 'null' instead of '[]'")
+            } else if (!hasCenterRendering && this.lineRendering.length === 0) {
+                throw "The layer " + this.id + " might not render ways. This might result in dropped information"
+            }
+        }
 
         const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined && tr["rewrite"] === undefined) ?? [];
         if (missingIds?.length > 0 && official) {
@@ -397,8 +412,8 @@ export default class LayerConfig extends WithContextLoader {
         const extraProps = []
 
         if (canBeIncluded) {
-            if(addedByDefault){
-                extraProps.push("**This layer is included automatically in every theme. This layer might contain no points**" )
+            if (addedByDefault) {
+                extraProps.push("**This layer is included automatically in every theme. This layer might contain no points**")
             }
             if (this.title === undefined) {
                 extraProps.push("Not clickable by default. If you import this layer in your theme, override `title` to make this clickable")
@@ -413,7 +428,6 @@ export default class LayerConfig extends WithContextLoader {
             extraProps.push("This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.")
         }
 
-        
 
         let usingLayer: BaseUIElement[] = []
         if (usedInThemes?.length > 0 && !addedByDefault) {
@@ -425,7 +439,7 @@ export default class LayerConfig extends WithContextLoader {
         return new Combine([
             new Title(this.id, 3),
             this.description,
-            
+
             new Link("Go to the source code", `../assets/layers/${this.id}/${this.id}.json`),
 
             new List(extraProps),
