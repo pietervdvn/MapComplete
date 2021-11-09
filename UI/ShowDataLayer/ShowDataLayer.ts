@@ -157,7 +157,6 @@ export default class ShowDataLayer {
                     const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
                     const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
                     let offsettedLine;
-                    console.log("Rendering ", feat)
                     tagsSource
                         .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags))
                         .withEqualityStabilized((a, b) => {
@@ -170,7 +169,6 @@ export default class ShowDataLayer {
                             return a.offset === b.offset && a.color === b.color && a.weight === b.weight && a.dashArray === b.dashArray
                         })
                         .addCallbackAndRunD(lineStyle => {
-                            console.log("Linestyle is ", lineStyle)
                             if (offsettedLine !== undefined) {
                                 self.geoLayer.removeLayer(offsettedLine)
                             }
