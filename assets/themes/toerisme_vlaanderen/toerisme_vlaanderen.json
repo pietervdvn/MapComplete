@@ -30,49 +30,11 @@
   "layers": [
     {
       "builtin": [
-        "food",
-        "cafe_pub"
-      ],
-      "override": {
-        "minzoom": 17
-      }
-    },
-    {
-      "builtin": [
-        "bench",
-        "picnic_table",
-        "waste_basket"
-      ],
-      "override": {
-        "minzoom": 19
-      }
-    },
-    {
-      "builtin": [
         "charging_station",
-        "toilet",
-        "bike_repair_station"
+        "toilet"
       ],
       "override": {
         "minzoom": 14
-      }
-    },
-    {
-      "builtin": [
-        "playground"
-      ],
-      "override": {
-        "minzoom": 14,
-        "iconSize": "25,25,center"
-      }
-    },
-    {
-      "builtin": [
-        "binocular",
-        "observation_tower"
-      ],
-      "override": {
-        "minzoom": 10
       }
     }
   ],
