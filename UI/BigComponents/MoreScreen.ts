@@ -129,9 +129,8 @@ export default class MoreScreen extends Combine {
                     const knownThemes = Utils.NoNull(Object.keys(allPreferences)
                         .filter(key => key.startsWith(prefix))
                         .map(key => key.substring(prefix.length, key.length - "-enabled".length))
-                        .map(theme => {
-                            return AllKnownLayouts.allKnownLayouts.get(theme);
-                        }))
+                        .map(theme => AllKnownLayouts.allKnownLayouts.get(theme)))
+                        .filter(theme => theme?.hideFromOverview)
                     if (knownThemes.length === 0) {
                         return undefined
                     }
