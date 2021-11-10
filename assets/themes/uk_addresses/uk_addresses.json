@@ -325,7 +325,7 @@
         },
         {
           "id": "fixme",
-          "render": "<b>Fixme description</b>{render}",
+          "render": "<b>Fixme description</b>{fixme}",
           "question": {
             "en": "What should be fixed here? Please explain"
           },

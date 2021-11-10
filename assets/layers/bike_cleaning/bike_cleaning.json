@@ -72,35 +72,50 @@
   "tagRenderings": [
     "images",
     {
-      "question": "How much does it cost to use the cleaning service?",
-      "render": "Using the cleaning service costs {charge}",
+      "question": {
+        "en": "How much does it cost to use the cleaning service?"
+      },
+      "render": {
+        "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}"
+      },
       "condition": "amenity!=bike_wash",
       "freeform": {
         "key": "service:bicycle:cleaning:charge",
         "addExtraTags": [
           "service:bicycle:cleaning:fee=yes"
-        ]
+        ],
+        "inline": true
       },
       "mappings": [
         {
           "if": "service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge=",
-          "then": "The cleaning service is free to use"
+          "then": {
+            "en": "The cleaning service is free to use"
+          }
         },
         {
-          "if": "service:bicycle:cleaning:fee=no&",
-          "then": "Free to use",
+          "if": "service:bicycle:cleaning:fee=no",
+          "then": {
+            "en": "Free to use"
+          },
           "hideInAnswer": true
         },
         {
           "if": "service:bicycle:cleaning:fee=yes",
-          "then": "The cleaning service has a fee"
+          "then": {
+            "en": "The cleaning service has a fee, but the amount is not known"
+          }
         }
       ],
       "id": "bike_cleaning-service:bicycle:cleaning:charge"
     },
     {
-      "question": "How much does it cost to use the cleaning service?",
-      "render": "Using the cleaning service costs {charge}",
+      "question": {
+        "en": "How much does it cost to use the cleaning service?"
+      },
+      "render": {
+        "en": "Using the cleaning service costs {charge}"
+      },
       "condition": "amenity=bike_wash",
       "freeform": {
         "key": "charge",
@@ -111,16 +126,22 @@
       "mappings": [
         {
           "if": "fee=no&charge=",
-          "then": "Free to use cleaning service"
+          "then": {
+            "en": "Free to use cleaning service"
+          }
         },
         {
-          "if": "fee=no&",
-          "then": "Free to use",
+          "if": "fee=no",
+          "then": {
+            "en": "Free to use"
+          },
           "hideInAnswer": true
         },
         {
           "if": "fee=yes",
-          "then": "The cleaning service has a fee"
+          "then": {
+            "en": "The cleaning service has a fee"
+          }
         }
       ],
       "id": "bike_cleaning-charge"

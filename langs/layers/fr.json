@@ -89,8 +89,7 @@
             "then": "Dossier : Non"
           }
         },
-        "question": "Ce banc dispose-t-il d'un dossier ?",
-        "render": "Dossier"
+        "question": "Ce banc dispose-t-il d'un dossier ?"
       },
       "bench-colour": {
         "mappings": {
@@ -166,8 +165,12 @@
   "bench_at_pt": {
     "name": "Bancs des arrêts de transport en commun",
     "tagRenderings": {
-      "bench_at_pt-bench": {
-        "render": "Banc assis debout"
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "1": {
+            "then": "Banc assis debout"
+          }
+        }
       },
       "bench_at_pt-name": {
         "render": "{name}"
@@ -777,14 +780,16 @@
       "defibrillator-defibrillator": {
         "mappings": {
           "0": {
-            "then": "C'est un défibrillateur manuel pour professionnel"
+            "then": "Il n'y a pas d'information sur le type de dispositif"
           },
           "1": {
+            "then": "C'est un défibrillateur manuel pour professionnel"
+          },
+          "2": {
             "then": "C'est un défibrillateur automatique manuel"
           }
         },
-        "question": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
-        "render": "Il n'y a pas d'information sur le type de dispositif"
+        "question": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?"
       },
       "defibrillator-defibrillator:location": {
         "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (dans la langue local)",
@@ -792,11 +797,11 @@
       },
       "defibrillator-defibrillator:location:en": {
         "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)",
-        "render": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location}"
+        "render": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location:en}"
       },
       "defibrillator-defibrillator:location:fr": {
         "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)",
-        "render": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location}"
+        "render": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location:fr}"
       },
       "defibrillator-description": {
         "question": "Y a-t-il des informations utiles pour les utilisateurs que vous n'avez pas pu décrire ci-dessus ? (laisser vide sinon)",
@@ -900,7 +905,7 @@
           }
         },
         "question": "Ce point d'eau potable est-il toujours opérationnel ?",
-        "render": "L'état opérationnel est <i>{operational_status</i>"
+        "render": "L'état opérationnel est <i>{operational_status}</i>"
       },
       "render-closest-drinking-water": {
         "render": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres a>"
@@ -1660,7 +1665,7 @@
           }
         },
         "question": "Comment cette caméra est-elle placée ?",
-        "render": "Méthode de montage : {mount}"
+        "render": "Méthode de montage : {camera:mount}"
       },
       "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
         "mappings": {

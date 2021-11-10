@@ -655,7 +655,7 @@
               }
             },
             "question": "消火栓の色は何色ですか?",
-            "render": "消火栓の色は{color}です"
+            "render": "消火栓の色は{colour}です"
           },
           "hydrant-state": {
             "mappings": {
@@ -669,8 +669,7 @@
                 "then": "消火栓が撤去されました。"
               }
             },
-            "question": "消火栓のライフサイクルステータスを更新します。",
-            "render": "ライフサイクルステータス"
+            "question": "消火栓のライフサイクルステータスを更新します。"
           },
           "hydrant-type": {
             "mappings": {

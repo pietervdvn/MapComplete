@@ -116,26 +116,38 @@
       "id": "bench_at_pt-name"
     },
     {
-      "render": {
-        "en": "Stand up bench",
-        "de": "Stehbank",
-        "fr": "Banc assis debout",
-        "nl": "Leunbank",
-        "it": "Panca in piedi",
-        "zh_Hans": "站立长凳",
-        "ru": "Встаньте на скамейке",
-        "zh_Hant": "站立長椅"
+      "id": "bench_at_pt-bench_type",
+      "question": {
+        "en": "What kind of bench is this?",
+        "nl": "Wat voor soort bank is dit?"
       },
-      "freeform": {
-        "key": "bench",
-        "addExtraTags": []
-      },
-      "condition": {
-        "and": [
-          "bench=stand_up_bench"
-        ]
-      },
-      "id": "bench_at_pt-bench"
+      "mappings": [
+        {
+          "if": "bench=yes",
+          "then": {
+            "en": "There is a normal, sit-down bench here"
+          }
+        },
+        {
+          "if": "bench=stand_up_bench",
+          "then": {
+            "en": "Stand up bench",
+            "de": "Stehbank",
+            "fr": "Banc assis debout",
+            "nl": "Leunbank",
+            "it": "Panca in piedi",
+            "zh_Hans": "站立长凳",
+            "ru": "Встаньте на скамейке",
+            "zh_Hant": "站立長椅"
+          }
+        },
+        {
+          "if": "bench=no",
+          "then": {
+            "en": "There is no bench here"
+          }
+        }
+      ]
     }
   ],
   "mapRendering": [

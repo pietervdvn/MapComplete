@@ -97,7 +97,7 @@
           },
           "caravansites-name": {
             "question": "Comment s'appelle cet endroit ?",
-            "render": "Cet endroit s'appelle {nom}"
+            "render": "Cet endroit s'appelle {name}"
           },
           "caravansites-sanitary-dump": {
             "mappings": {
@@ -686,8 +686,7 @@
                 "then": "La borne a été retirée."
               }
             },
-            "question": "Mettre à jour l’état de la borne.",
-            "render": "État"
+            "question": "Mettre à jour l’état de la borne."
           },
           "hydrant-type": {
             "mappings": {

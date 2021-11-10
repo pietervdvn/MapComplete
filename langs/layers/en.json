@@ -133,11 +133,11 @@
       },
       "Space between barrier (cyclebarrier)": {
         "question": "How much space is there between the barriers (along the length of the road)?",
-        "render": "Space between barriers (along the length of the road): {spacing} m"
+        "render": "Space between barriers (along the length of the road): {width:separation} m"
       },
       "Width of opening (cyclebarrier)": {
         "question": "How wide is the smallest opening next to the barriers?",
-        "render": "Width of opening: {opening} m"
+        "render": "Width of opening: {width:opening} m"
       },
       "bicycle=yes/no": {
         "mappings": {
@@ -180,8 +180,7 @@
             "then": "Backrest: No"
           }
         },
-        "question": "Does this bench have a backrest?",
-        "render": "Backrest"
+        "question": "Does this bench have a backrest?"
       },
       "bench-colour": {
         "mappings": {
@@ -257,8 +256,19 @@
   "bench_at_pt": {
     "name": "Benches at public transport stops",
     "tagRenderings": {
-      "bench_at_pt-bench": {
-        "render": "Stand up bench"
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "0": {
+            "then": "There is a normal, sit-down bench here"
+          },
+          "1": {
+            "then": "Stand up bench"
+          },
+          "2": {
+            "then": "There is no bench here"
+          }
+        },
+        "question": "What kind of bench is this?"
       },
       "bench_at_pt-name": {
         "render": "{name}"
@@ -342,7 +352,7 @@
           }
         },
         "question": "Is this vending machine still operational?",
-        "render": "The operational status is <i>{operational_status</i>"
+        "render": "The operational status is <i>{operational_status}</i>"
       }
     },
     "title": {
@@ -421,6 +431,38 @@
     "presets": {
       "0": {
         "title": "Bike cleaning service"
+      }
+    },
+    "tagRenderings": {
+      "bike_cleaning-charge": {
+        "mappings": {
+          "0": {
+            "then": "Free to use cleaning service"
+          },
+          "1": {
+            "then": "Free to use"
+          },
+          "2": {
+            "then": "The cleaning service has a fee"
+          }
+        },
+        "question": "How much does it cost to use the cleaning service?",
+        "render": "Using the cleaning service costs {charge}"
+      },
+      "bike_cleaning-service:bicycle:cleaning:charge": {
+        "mappings": {
+          "0": {
+            "then": "The cleaning service is free to use"
+          },
+          "1": {
+            "then": "Free to use"
+          },
+          "2": {
+            "then": "The cleaning service has a fee, but the amount is not known"
+          }
+        },
+        "question": "How much does it cost to use the cleaning service?",
+        "render": "Using the cleaning service costs {service:bicycle:cleaning:charge}"
       }
     },
     "title": {
@@ -1714,6 +1756,9 @@
         "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
         "render": "<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:type2_cable:output}"
       },
+      "questions": {
+        "render": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions}"
+      },
       "ref": {
         "question": "What is the reference number of this charging station?",
         "render": "Reference number is <b>{ref}</b>"
@@ -2468,14 +2513,19 @@
       "defibrillator-defibrillator": {
         "mappings": {
           "0": {
-            "then": "This is a manual defibrillator for professionals"
+            "then": "There is no info about the type of device"
           },
           "1": {
+            "then": "This is a manual defibrillator for professionals"
+          },
+          "2": {
             "then": "This is a normal automatic defibrillator"
+          },
+          "3": {
+            "then": "This is a special type of defibrillator: {defibrillator}"
           }
         },
-        "question": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
-        "render": "There is no info about the type of device"
+        "question": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?"
       },
       "defibrillator-defibrillator:location": {
         "question": "Please give some explanation on where the defibrillator can be found (in the local language)",
@@ -2591,7 +2641,7 @@
           }
         },
         "question": "Is this drinking water spot still operational?",
-        "render": "The operational status is <i>{operational_status</i>"
+        "render": "The operational status is <i>{operational_status}</i>"
       },
       "render-closest-drinking-water": {
         "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>"
@@ -3679,7 +3729,7 @@
           }
         },
         "question": "How is this camera placed?",
-        "render": "Mounting method: {mount}"
+        "render": "Mounting method: {camera:mount}"
       },
       "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
         "mappings": {

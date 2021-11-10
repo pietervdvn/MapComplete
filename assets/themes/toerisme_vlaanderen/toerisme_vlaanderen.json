@@ -3,6 +3,7 @@
   "credits": "Commissioned theme for <a href='https://www.toerismevlaanderen.be/'>Toerisme Vlaandere</a>",
   "maintainer": "MapComplete",
   "version": "0.0.1",
+  "customCss": "./assets/themes/toerisme_vlaanderen/custom.css",
   "language": [
     "en",
     "nl"

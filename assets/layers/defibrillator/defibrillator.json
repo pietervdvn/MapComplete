@@ -182,13 +182,6 @@
       "id": "defibrillator-access"
     },
     {
-      "render": {
-        "en": "There is no info about the type of device",
-        "nl": "Er is geen info over het soort toestel",
-        "fr": "Il n'y a pas d'information sur le type de dispositif",
-        "it": "Non vi sono informazioni riguardanti il tipo di questo dispositivo",
-        "de": "Es gibt keine Informationen über den Gerätetyp"
-      },
       "question": {
         "en": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
         "nl": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
@@ -196,15 +189,24 @@
         "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
         "de": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
       },
-      "freeform": {
-        "key": "defibrillator"
-      },
+    
       "condition": {
         "and": [
           "access=no"
         ]
       },
       "mappings": [
+        {
+          "if": "defibrillator=",
+          "then": {
+            "en": "There is no info about the type of device",
+            "nl": "Er is geen info over het soort toestel",
+            "fr": "Il n'y a pas d'information sur le type de dispositif",
+            "it": "Non vi sono informazioni riguardanti il tipo di questo dispositivo",
+            "de": "Es gibt keine Informationen über den Gerätetyp"
+          },
+          "hideInAnswer": true
+        },
         {
           "if": "defibrillator=manual",
           "then": {
@@ -225,6 +227,13 @@
             "ru": "Это обычный автоматический дефибриллятор",
             "de": "Dies ist ein normaler automatischer Defibrillator"
           }
+        },
+        {
+          "if": "defibrillator~",
+          "then": {
+            "en": "This is a special type of defibrillator: {defibrillator}"
+          },
+          "hideInAnswer": true
         }
       ],
       "id": "defibrillator-defibrillator"
@@ -308,9 +317,9 @@
       "render": {
         "nl": "<i>Meer informatie over de locatie (in het Engels):</i><br/>{defibrillator:location:en}",
         "en": "<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}",
-        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location}",
+        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location:en}",
         "it": "<i>Informazioni supplementari circa la posizione (in inglese):</i><br/>{defibrillator:location:en}",
-        "de": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location}"
+        "de": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location:en}"
       },
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in English)",
@@ -331,9 +340,9 @@
       "render": {
         "nl": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}",
         "en": "<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}",
-        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location}",
+        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location:fr}",
         "it": "<i>Informazioni supplementari circa la posizione (in francese):</i><br/>{defibrillator:location:fr}",
-        "de": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:Standort:fr}"
+        "de": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:location:fr}"
       },
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in French)",

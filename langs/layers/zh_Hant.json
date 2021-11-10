@@ -89,8 +89,7 @@
             "then": "靠背：無"
           }
         },
-        "question": "這個長椅是否有靠背？",
-        "render": "靠背"
+        "question": "這個長椅是否有靠背？"
       },
       "bench-colour": {
         "mappings": {
@@ -166,8 +165,12 @@
   "bench_at_pt": {
     "name": "大眾運輸站點的長椅",
     "tagRenderings": {
-      "bench_at_pt-bench": {
-        "render": "站立長椅"
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "1": {
+            "then": "站立長椅"
+          }
+        }
       },
       "bench_at_pt-name": {
         "render": "{name}"
@@ -251,7 +254,7 @@
           }
         },
         "question": "這個自動販賣機仍有運作嗎？",
-        "render": "運作狀態是 <i>{operational_status</i>"
+        "render": "運作狀態是 <i>{operational_status}</i>"
       }
     },
     "title": {
@@ -443,17 +446,6 @@
     },
     "title": {
       "render": "單車停車場"
-    }
-  },
-  "charging_station": {
-    "tagRenderings": {
-      "Network": {
-        "question": "充電站所屬的網路是？",
-        "render": "{network}"
-      },
-      "OH": {
-        "question": "何時是充電站開放使用的時間？"
-      }
     }
   },
   "ghost_bike": {

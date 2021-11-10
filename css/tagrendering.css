@@ -12,7 +12,13 @@
     padding: 1em;
     border-radius: 1em;
     font-size: larger;
+    overflow-wrap: initial;
+}
 
+.question form {
+    display: inline-block;
+    max-width: 90vw;
+    width: 100%;
 }
 
 .question svg {

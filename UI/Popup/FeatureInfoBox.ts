@@ -17,6 +17,7 @@ import {Translation} from "../i18n/Translation";
 import {Utils} from "../../Utils";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import MoveWizard from "./MoveWizard";
+import Toggle from "../Input/Toggle";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -51,13 +52,13 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): BaseUIElement {
-        let questionBoxes: Map<string, BaseUIElement> = new Map<string, BaseUIElement>();
+        let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>();
 
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map(tr => tr.group))
         if (State.state.featureSwitchUserbadge.data) {
             for (const groupName of allGroupNames) {
                 const questions = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
-                const questionBox = new QuestionBox(tags, questions, layerConfig.units);
+                const questionBox = new QuestionBox({tagsSource: tags, tagRenderings: questions, units:layerConfig.units});
                 questionBoxes.set(groupName, questionBox)
             }
         }
@@ -75,7 +76,20 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                     const questionBox = questionBoxes.get(tr.group)
                     questionBoxes.delete(tr.group)
                     
-                    renderingsForGroup.push(questionBox)
+                    if(tr.render !== undefined){
+                        const renderedQuestion = new TagRenderingAnswer(tags, tr, tr.group + " questions", "", {
+                            specialViz: new Map<string, BaseUIElement>([["questions", questionBox]])
+                        })
+                        const possiblyHidden = new Toggle(
+                            renderedQuestion,
+                            undefined,
+                            questionBox.currentQuestion.map(i => i !== undefined)
+                        )
+                        renderingsForGroup.push(possiblyHidden)
+                    }else{
+                        renderingsForGroup.push(questionBox)
+                    }
+                    
                 } else {
                     let classes = innerClasses
                     let isHeader = renderingsForGroup.length === 0 && i > 0

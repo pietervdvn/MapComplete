@@ -45,27 +45,6 @@
   "tagRenderings": [
     "images",
     {
-      "render": {
-        "en": "Backrest",
-        "de": "Rückenlehne",
-        "fr": "Dossier",
-        "nl": "Rugleuning",
-        "es": "Respaldo",
-        "hu": "Háttámla",
-        "id": "Sandaran",
-        "it": "Schienale",
-        "ru": "Спинка",
-        "zh_Hans": "靠背",
-        "zh_Hant": "靠背",
-        "nb_NO": "Rygglene",
-        "fi": "Selkänoja",
-        "pl": "Oparcie",
-        "pt_BR": "Encosto",
-        "pt": "Encosto"
-      },
-      "freeform": {
-        "key": "backrest"
-      },
       "mappings": [
         {
           "if": "backrest=yes",

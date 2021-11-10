@@ -224,7 +224,7 @@ Note that these values can be prepare with javascript in the theme by using a [c
         link.href = location;
         link.media = 'all';
         head.appendChild(link);
-        console.log("Added custom layout ", location)
+        console.log("Added custom css file ", location)
     }
 
     /**

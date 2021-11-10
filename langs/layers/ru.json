@@ -105,8 +105,7 @@
             "then": "Без спинки"
           }
         },
-        "question": "Есть ли у этой скамейки спинка?",
-        "render": "Спинка"
+        "question": "Есть ли у этой скамейки спинка?"
       },
       "bench-colour": {
         "mappings": {
@@ -182,8 +181,12 @@
   "bench_at_pt": {
     "name": "Скамейки на остановках общественного транспорта",
     "tagRenderings": {
-      "bench_at_pt-bench": {
-        "render": "Встаньте на скамейке"
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "1": {
+            "then": "Встаньте на скамейке"
+          }
+        }
       },
       "bench_at_pt-name": {
         "render": "{name}"
@@ -267,7 +270,7 @@
           }
         },
         "question": "Этот торговый автомат все еще работает?",
-        "render": "Рабочий статус: <i> {operational_status</i>"
+        "render": "Рабочий статус: <i> {operational_status}</i>"
       }
     },
     "title": {
@@ -634,57 +637,6 @@
       }
     }
   },
-  "charging_station": {
-    "presets": {
-      "0": {
-        "title": "Зарядная станция"
-      }
-    },
-    "tagRenderings": {
-      "Network": {
-        "question": "К какой сети относится эта станция?",
-        "render": "{network}"
-      },
-      "OH": {
-        "question": "В какое время работает эта зарядная станция?"
-      }
-    },
-    "units": {
-      "0": {
-        "applicableUnits": {
-          "0": {
-            "human": " минут",
-            "humanSingular": " минута"
-          },
-          "1": {
-            "human": " часов",
-            "humanSingular": " час"
-          },
-          "2": {
-            "human": " дней",
-            "humanSingular": " день"
-          }
-        }
-      },
-      "1": {
-        "applicableUnits": {
-          "0": {
-            "human": "Вольт"
-          }
-        }
-      },
-      "3": {
-        "applicableUnits": {
-          "0": {
-            "human": "киловатт"
-          },
-          "1": {
-            "human": "мегаватт"
-          }
-        }
-      }
-    }
-  },
   "crossings": {
     "presets": {
       "1": {
@@ -732,7 +684,7 @@
       },
       "defibrillator-defibrillator": {
         "mappings": {
-          "1": {
+          "2": {
             "then": "Это обычный автоматический дефибриллятор"
           }
         }

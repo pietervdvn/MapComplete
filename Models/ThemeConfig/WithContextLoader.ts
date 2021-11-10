@@ -6,6 +6,10 @@ import {Utils} from "../../Utils";
 export default class WithContextLoader {
     protected readonly _context: string;
     private readonly _json: any;
+    
+    public static getKnownTagRenderings : ((id: string) => TagRenderingConfigJson)= function(id)  {
+        return SharedTagRenderings.SharedTagRenderingJson.get(id)
+}
 
     constructor(json: any, context: string) {
         this._json = json;
@@ -71,7 +75,7 @@ export default class WithContextLoader {
                     continue;
                 }
 
-                let sharedJson = SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
+                let sharedJson = WithContextLoader.getKnownTagRenderings(renderingId)
                 if (sharedJson === undefined) {
                     const keys = Array.from(SharedTagRenderings.SharedTagRenderingJson.keys());
                     throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(

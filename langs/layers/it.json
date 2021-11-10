@@ -89,8 +89,7 @@
             "then": "Schienale: No"
           }
         },
-        "question": "Questa panchina ha lo schienale?",
-        "render": "Schienale"
+        "question": "Questa panchina ha lo schienale?"
       },
       "bench-colour": {
         "mappings": {
@@ -166,8 +165,12 @@
   "bench_at_pt": {
     "name": "Panchine alle fermate del trasporto pubblico",
     "tagRenderings": {
-      "bench_at_pt-bench": {
-        "render": "Panca in piedi"
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "1": {
+            "then": "Panca in piedi"
+          }
+        }
       },
       "bench_at_pt-name": {
         "render": "{name}"
@@ -745,17 +748,6 @@
       "render": "Oggetto relativo alle bici"
     }
   },
-  "charging_station": {
-    "tagRenderings": {
-      "Network": {
-        "question": "A quale rete appartiene questa stazione di ricarica?",
-        "render": "{network}"
-      },
-      "OH": {
-        "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
-      }
-    }
-  },
   "defibrillator": {
     "name": "Defibrillatori",
     "presets": {
@@ -788,14 +780,16 @@
       "defibrillator-defibrillator": {
         "mappings": {
           "0": {
-            "then": "Questo è un defibrillatore manuale per professionisti"
+            "then": "Non vi sono informazioni riguardanti il tipo di questo dispositivo"
           },
           "1": {
+            "then": "Questo è un defibrillatore manuale per professionisti"
+          },
+          "2": {
             "then": "È un normale defibrillatore automatico"
           }
         },
-        "question": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
-        "render": "Non vi sono informazioni riguardanti il tipo di questo dispositivo"
+        "question": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?"
       },
       "defibrillator-defibrillator:location": {
         "question": "Indica più precisamente dove si trova il defibrillatore (in lingua locale)",
@@ -1556,7 +1550,7 @@
           }
         },
         "question": "Com'è posizionata questa telecamera?",
-        "render": "Metodo di montaggio: {mount}"
+        "render": "Metodo di montaggio: {camera:mount}"
       },
       "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
         "mappings": {

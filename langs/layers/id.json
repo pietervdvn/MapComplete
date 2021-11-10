@@ -80,8 +80,7 @@
             "then": "Sandaran: Tidak"
           }
         },
-        "question": "Apakah bangku ini memiliki sandaran?",
-        "render": "Sandaran"
+        "question": "Apakah bangku ini memiliki sandaran?"
       },
       "bench-colour": {
         "render": "Warna: {colour}"

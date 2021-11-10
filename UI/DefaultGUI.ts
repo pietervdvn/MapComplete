@@ -44,6 +44,11 @@ export default class DefaultGUI {
 
         this.SetupUIElements();
         this.SetupMap()
+        
+        
+        if(state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0){
+            Utils.LoadCustomCss(state.layoutToUse.customCss)
+        }
     }
 
     public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, state: FeaturePipelineState) {

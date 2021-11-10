@@ -289,12 +289,6 @@ li::marker {
     padding: 0.15em 0.3em;
 }
 
-.question form {
-    display: inline-block;
-    max-width: 90vw;
-    width: 100%;
-}
-
 .invalid {
     box-shadow: 0 0 10px #ff5353;
     height: min-content;

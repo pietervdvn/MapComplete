@@ -39,7 +39,7 @@
         }
       },
       "question": "Em que nível se encontra este elemento?",
-      "render": "Está no {nível}º andar"
+      "render": "Está no {level}º andar"
     },
     "opening_hours": {
       "question": "Qual é o horário de funcionamento de {name}?",

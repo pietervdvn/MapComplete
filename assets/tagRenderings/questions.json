@@ -484,7 +484,7 @@
       "fr": "Étage {level}",
       "pl": "Znajduje się na {level} piętrze",
       "sv": "Ligger på {level}:e våningen",
-      "pt": "Está no {nível}º andar",
+      "pt": "Está no {level}º andar",
       "eo": "En la {level}a etaĝo",
       "hu": "{level}. emeleten található",
       "it": "Si trova al piano numero {level}"

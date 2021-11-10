@@ -409,11 +409,11 @@
         "de": "Wie ist diese Kamera montiert?"
       },
       "render": {
-        "en": "Mounting method: {mount}",
+        "en": "Mounting method: {camera:mount}",
         "nl": "Montage: {camera:mount}",
-        "fr": "Méthode de montage : {mount}",
-        "it": "Metodo di montaggio: {mount}",
-        "de": "Montageart: {mount}"
+        "fr": "Méthode de montage : {camera:mount}",
+        "it": "Metodo di montaggio: {camera:mount}",
+        "de": "Montageart: {camera:mount}"
       },
       "freeform": {
         "key": "camera:mount"

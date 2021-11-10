@@ -128,7 +128,7 @@
             "it": "Questo luogo è chiamato {name}",
             "ru": "Это место называется {name}",
             "ja": "この場所は {name} と呼ばれています",
-            "fr": "Cet endroit s'appelle {nom}",
+            "fr": "Cet endroit s'appelle {name}",
             "zh_Hant": "這個地方叫做 {name}",
             "nl": "Deze plaats heet {name}",
             "pt_BR": "Este lugar é chamado de {name}",

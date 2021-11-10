@@ -39,8 +39,7 @@
             "then": "Respaldo: No"
           }
         },
-        "question": "¿Este banco tiene un respaldo?",
-        "render": "Respaldo"
+        "question": "¿Este banco tiene un respaldo?"
       },
       "bench-material": {
         "mappings": {

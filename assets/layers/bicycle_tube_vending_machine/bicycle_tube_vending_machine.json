@@ -81,15 +81,15 @@
         "pt": "Esta máquina de venda automática ainda está operacional?"
       },
       "render": {
-        "en": "The operational status is <i>{operational_status</i>",
+        "en": "The operational status is <i>{operational_status}</i>",
         "nl": "Deze verkoopsautomaat is <i>{operational_status}</i>",
         "fr": "L'état opérationnel est <i>{operational_status}</i>",
         "it": "Lo stato operativo è <i>{operational_status}</i>",
-        "de": "Der Betriebszustand ist <i>{operational_status</i>",
-        "ru": "Рабочий статус: <i> {operational_status</i>",
-        "zh_Hant": "運作狀態是 <i>{operational_status</i>",
-        "pt_BR": "O estado operacional é: <i>{operational_status</i>",
-        "pt": "O estado operacional é: <i>{operational_status</i>"
+        "de": "Der Betriebszustand ist <i>{operational_status}</i>",
+        "ru": "Рабочий статус: <i> {operational_status}</i>",
+        "zh_Hant": "運作狀態是 <i>{operational_status}</i>",
+        "pt_BR": "O estado operacional é: <i>{operational_status}</i>",
+        "pt": "O estado operacional é: <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"

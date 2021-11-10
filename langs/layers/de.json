@@ -133,11 +133,11 @@
       },
       "Space between barrier (cyclebarrier)": {
         "question": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?",
-        "render": "Abstand zwischen den Barrieren (entlang der Straße): {spacing} m"
+        "render": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m"
       },
       "Width of opening (cyclebarrier)": {
         "question": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
-        "render": "Breite der Öffnung: {opening} m"
+        "render": "Breite der Öffnung: {width:opening} m"
       },
       "bicycle=yes/no": {
         "mappings": {
@@ -180,8 +180,7 @@
             "then": "Rückenlehne: Nein"
           }
         },
-        "question": "Hat diese Bank eine Rückenlehne?",
-        "render": "Rückenlehne"
+        "question": "Hat diese Bank eine Rückenlehne?"
       },
       "bench-colour": {
         "mappings": {
@@ -257,8 +256,12 @@
   "bench_at_pt": {
     "name": "Sitzbänke bei Haltestellen",
     "tagRenderings": {
-      "bench_at_pt-bench": {
-        "render": "Stehbank"
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "1": {
+            "then": "Stehbank"
+          }
+        }
       },
       "bench_at_pt-name": {
         "render": "{name}"
@@ -342,7 +345,7 @@
           }
         },
         "question": "Ist dieser Automat noch in Betrieb?",
-        "render": "Der Betriebszustand ist <i>{operational_status</i>"
+        "render": "Der Betriebszustand ist <i>{operational_status}</i>"
       }
     },
     "title": {
@@ -923,312 +926,6 @@
       }
     }
   },
-  "charging_station": {
-    "description": "Eine Ladestation",
-    "filter": {
-      "0": {
-        "options": {
-          "0": {
-            "question": "Alle Fahrzeugtypen"
-          },
-          "1": {
-            "question": "Ladestation für Fahrräder"
-          },
-          "2": {
-            "question": "Ladestation für Autos"
-          }
-        }
-      },
-      "1": {
-        "options": {
-          "0": {
-            "question": "Nur funktionierende Ladestationen"
-          }
-        }
-      },
-      "2": {
-        "options": {
-          "0": {
-            "question": "Alle Anschlüsse"
-          },
-          "3": {
-            "question": "Hat einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
-          },
-          "7": {
-            "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
-          }
-        }
-      }
-    },
-    "presets": {
-      "0": {
-        "title": "Ladestation"
-      }
-    },
-    "tagRenderings": {
-      "Auth phone": {
-        "question": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
-        "render": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
-      },
-      "Authentication": {
-        "mappings": {
-          "0": {
-            "then": "Authentifizierung durch eine Mitgliedskarte"
-          },
-          "1": {
-            "then": "Authentifizierung durch eine App"
-          },
-          "2": {
-            "then": "Authentifizierung per Anruf ist möglich"
-          },
-          "3": {
-            "then": "Authentifizierung per Anruf ist möglich"
-          },
-          "4": {
-            "then": "Authentifizierung über NFC ist möglich"
-          },
-          "5": {
-            "then": "Authentifizierung über Geldkarte ist möglich"
-          },
-          "6": {
-            "then": "Authentifizierung per Debitkarte ist möglich"
-          },
-          "7": {
-            "then": "Das Aufladen ist hier (auch) ohne Authentifizierung möglich"
-          }
-        },
-        "question": "Welche Authentifizierung ist an der Ladestation möglich?"
-      },
-      "Available_charging_stations (generated)": {
-        "mappings": {
-          "5": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>"
-          },
-          "6": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
-          },
-          "7": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 mit Kabel</b> (J1772)</span></div>"
-          },
-          "8": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
-          },
-          "9": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</span></div>"
-          },
-          "10": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
-          },
-          "11": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)</span></div>"
-          },
-          "12": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
-          },
-          "13": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>"
-          },
-          "14": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
-          },
-          "15": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Typ 2</b> (Mennekes)</span></div>"
-          },
-          "16": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
-          },
-          "17": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Typ 2 CCS</b> (Mennekes)</span></div>"
-          },
-          "18": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
-          },
-          "19": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Typ 2 mit Kabel</b> (Mennekes)</span></div>"
-          },
-          "20": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
-          },
-          "21": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</span></div>"
-          },
-          "26": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones oder Elektrokleingeräten</span></div>"
-          },
-          "27": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> zum Laden von Smartphones und Elektrokleingeräten</span></div>"
-          },
-          "30": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
-          },
-          "31": {
-            "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect mit 5 Pins</b> und Kabel</span></div>"
-          }
-        },
-        "question": "Welche Ladestationen gibt es hier?"
-      },
-      "Network": {
-        "mappings": {
-          "0": {
-            "then": "Nicht Teil eines größeren Netzwerks"
-          },
-          "1": {
-            "then": "Nicht Teil eines größeren Netzwerks"
-          }
-        },
-        "question": "Ist diese Ladestation Teil eines Netzwerks?",
-        "render": "Teil des Netzwerks <b>{network}</b>"
-      },
-      "OH": {
-        "mappings": {
-          "0": {
-            "then": "durchgehend geöffnet (auch an Feiertagen)"
-          }
-        },
-        "question": "Wann ist diese Ladestation geöffnet?"
-      },
-      "Operational status": {
-        "mappings": {
-          "0": {
-            "then": "Diese Ladestation funktioniert"
-          },
-          "1": {
-            "then": "Diese Ladestation ist kaputt"
-          },
-          "2": {
-            "then": "Hier ist eine Ladestation geplant"
-          },
-          "3": {
-            "then": "Hier wird eine Ladestation gebaut"
-          },
-          "4": {
-            "then": "Diese Ladestation wurde dauerhaft deaktiviert und wird nicht mehr benutzt, ist aber noch sichtbar"
-          }
-        },
-        "question": "Ist dieser Ladepunkt in Betrieb?"
-      },
-      "Operator": {
-        "mappings": {
-          "0": {
-            "then": "Eigentlich ist {operator} das Netzwerk"
-          }
-        },
-        "question": "Wer ist der Betreiber dieser Ladestation?",
-        "render": "Diese Ladestation wird betrieben von {operator}"
-      },
-      "Parking:fee": {
-        "mappings": {
-          "0": {
-            "then": "Keine zusätzlichen Parkgebühren beim Laden"
-          },
-          "1": {
-            "then": "Beim Laden ist eine zusätzliche Parkgebühr zu entrichten"
-          }
-        },
-        "question": "Muss man beim Laden eine Parkgebühr bezahlen?"
-      },
-      "Type": {
-        "mappings": {
-          "0": {
-            "then": "<b>Fahrräder</b> können hier geladen werden"
-          },
-          "1": {
-            "then": "<b>Autos</b> können hier geladen werden"
-          },
-          "2": {
-            "then": "<b> Roller</b> können hier geladen werden"
-          },
-          "3": {
-            "then": "<b>Lastkraftwagen</b> (LKW) können hier geladen werden"
-          },
-          "4": {
-            "then": "<b>Busse</b> können hier geladen werden"
-          }
-        },
-        "question": "Welche Fahrzeuge dürfen hier geladen werden?"
-      },
-      "access": {
-        "question": "Wer darf diese Ladestation benutzen?",
-        "render": "Zugang ist {access}"
-      },
-      "capacity": {
-        "question": "Wie viele Fahrzeuge können hier gleichzeitig geladen werden?",
-        "render": "{capacity} Fahrzeuge können hier gleichzeitig geladen werden"
-      },
-      "email": {
-        "question": "Wie ist die Email-Adresse des Betreibers?",
-        "render": "Bei Problemen senden Sie eine E-Mail an <a href='mailto:{email}'>{email}</a>"
-      },
-      "maxstay": {
-        "mappings": {
-          "0": {
-            "then": "Keine Höchstparkdauer"
-          }
-        },
-        "question": "Was ist die Höchstdauer des Aufenthalts hier?",
-        "render": "Die maximale Parkzeit beträgt <b>{canonical(maxstay)}</b>"
-      },
-      "payment-options": {
-        "override": {
-          "mappings+": {
-            "0": {
-              "then": "Bezahlung mit einer speziellen App"
-            },
-            "1": {
-              "then": "Bezahlung mit einer Mitgliedskarte"
-            }
-          }
-        }
-      },
-      "phone": {
-        "question": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
-        "render": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
-      },
-      "ref": {
-        "question": "Wie lautet die Kennung dieser Ladestation?",
-        "render": "Die Kennziffer ist <b>{ref}</b>"
-      },
-      "website": {
-        "question": "Wie ist die Webseite des Betreibers?",
-        "render": "Weitere Informationen auf <a href='{website}'>{website}</a>"
-      }
-    },
-    "units": {
-      "0": {
-        "applicableUnits": {
-          "0": {
-            "human": " Minuten",
-            "humanSingular": " Minute"
-          },
-          "1": {
-            "human": " Stunden",
-            "humanSingular": " Stunde"
-          },
-          "2": {
-            "human": " Tage",
-            "humanSingular": " Tag"
-          }
-        }
-      },
-      "1": {
-        "applicableUnits": {
-          "0": {
-            "human": "Volt"
-          }
-        }
-      },
-      "3": {
-        "applicableUnits": {
-          "0": {
-            "human": "Kilowatt"
-          },
-          "1": {
-            "human": "Megawatt"
-          }
-        }
-      }
-    }
-  },
   "crossings": {
     "description": "Übergänge für Fußgänger und Radfahrer",
     "name": "Kreuzungen",
@@ -1737,14 +1434,16 @@
       "defibrillator-defibrillator": {
         "mappings": {
           "0": {
-            "then": "Dies ist ein manueller Defibrillator für den professionellen Einsatz"
+            "then": "Es gibt keine Informationen über den Gerätetyp"
           },
           "1": {
+            "then": "Dies ist ein manueller Defibrillator für den professionellen Einsatz"
+          },
+          "2": {
             "then": "Dies ist ein normaler automatischer Defibrillator"
           }
         },
-        "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?",
-        "render": "Es gibt keine Informationen über den Gerätetyp"
+        "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
       },
       "defibrillator-defibrillator:location": {
         "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)",
@@ -1752,11 +1451,11 @@
       },
       "defibrillator-defibrillator:location:en": {
         "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Englisch)",
-        "render": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location}"
+        "render": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location:en}"
       },
       "defibrillator-defibrillator:location:fr": {
         "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Französisch)",
-        "render": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:Standort:fr}"
+        "render": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:location:fr}"
       },
       "defibrillator-description": {
         "question": "Gibt es nützliche Informationen für Benutzer, die Sie oben nicht beschreiben konnten? (leer lassen, wenn nein)",
@@ -1860,7 +1559,7 @@
           }
         },
         "question": "Ist diese Trinkwasserstelle noch in Betrieb?",
-        "render": "Der Betriebsstatus ist <i>{operational_status</i>"
+        "render": "Der Betriebsstatus ist <i>{operational_status}/i>"
       },
       "render-closest-drinking-water": {
         "render": "<a href='#{_closest_other_drinking_water_id}'>Ein weiterer Trinkwasserbrunnen befindet sich in {_closest_other_drinking_water_distance} Meter</a>"
@@ -2771,7 +2470,7 @@
           }
         },
         "question": "Wie ist diese Kamera montiert?",
-        "render": "Montageart: {mount}"
+        "render": "Montageart: {camera:mount}"
       },
       "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
         "question": "In welche Himmelsrichtung ist diese Kamera ausgerichtet?"
@@ -3064,8 +2763,7 @@
         "render": "Name: {name}"
       },
       "tree_node-ref:OnroerendErfgoed": {
-        "question": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
-        "render": ""
+        "question": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?"
       },
       "tree_node-wikidata": {
         "question": "Was ist das passende Wikidata Element zu diesem Baum?",

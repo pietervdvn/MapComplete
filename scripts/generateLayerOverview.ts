@@ -188,7 +188,7 @@ class LayerOverviewUtils {
                         allTranslations
                             .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
                             .forEach(missing => {
-                                themeErrorCount.push("The theme " + theme.id + " should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context)
+                                themeErrorCount.push("The theme " + theme.id + " should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context+".\n\tThe full translation is "+missing.tr.translations)
                             })
                     }
 

@@ -30,8 +30,7 @@
           "1": {
             "then": "Selkänoja: ei"
           }
-        },
-        "render": "Selkänoja"
+        }
       },
       "bench-colour": {
         "mappings": {

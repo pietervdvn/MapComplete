@@ -1,16 +1,18 @@
 import * as known_layers from "../assets/generated/known_layers_and_themes.json"
 import {Utils} from "../Utils";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import BaseUIElement from "../UI/BaseUIElement";
-import Combine from "../UI/Base/Combine";
-import Title from "../UI/Base/Title";
-import List from "../UI/Base/List";
-import {AllKnownLayouts} from "./AllKnownLayouts";
-import {isNullOrUndefined} from "util";
-import {Layer} from "leaflet";
+import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
+import SharedTagRenderings from "./SharedTagRenderings";
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
+import WithContextLoader from "../Models/ThemeConfig/WithContextLoader";
 
 export default class AllKnownLayers {
 
+    public static inited = (_ => {
+        WithContextLoader.getKnownTagRenderings = (id => AllKnownLayers.getTagRendering(id))
+        return true 
+    })()
+    
 
     // Must be below the list...
     public static sharedLayers: Map<string, LayerConfig> = AllKnownLayers.getSharedLayers();
@@ -64,13 +66,50 @@ export default class AllKnownLayers {
         return sharedLayers;
     }
 
-    private static getSharedLayersJson(): Map<string, any> {
+    private static getSharedLayersJson(): Map<string, LayerConfigJson> {
         const sharedLayers = new Map<string, any>();
         for (const layer of known_layers.layers) {
             sharedLayers.set(layer.id, layer);
             sharedLayers[layer.id] = layer;
         }
         return sharedLayers;
+    }
+
+    /**
+     * Gets the appropriate tagRenderingJSON
+     * Allows to steal them from other layers.
+     * This will add the tags of the layer to the configuration though!
+     * @param renderingId
+     */
+    static getTagRendering(renderingId: string): TagRenderingConfigJson {
+        if(renderingId.indexOf(".") < 0){
+            return SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
+        }
+
+        const [layerId, id] = renderingId.split(".")
+        const layer = AllKnownLayers.getSharedLayersJson().get(layerId)
+        if(layer === undefined){
+            if(Utils.runningFromConsole){
+                // Probably generating the layer overview
+                return <TagRenderingConfigJson> {
+                    id: "dummy"
+                }
+            }
+            throw "Builtin layer "+layerId+" not found"
+        }
+        const renderings = layer?.tagRenderings ?? []
+        for (const rendering of renderings) {
+            if(rendering["id"] === id){
+                const found = <TagRenderingConfigJson>  JSON.parse(JSON.stringify(rendering))
+                if(found.condition === undefined){
+                    found.condition = layer.source.osmTags
+                }else{
+                    found.condition = {and: [found.condition, layer.source.osmTags]}
+                }
+            return found
+            }
+        }
+        throw `The rendering with id ${id} was not found in the builtin layer ${layerId}. Try one of ${Utils.NoNull(renderings.map(r => r["id"])).join(", ")}` 
     }
 
 }

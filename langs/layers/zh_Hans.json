@@ -16,8 +16,7 @@
             "then": "靠背：无"
           }
         },
-        "question": "这个长椅有靠背吗？",
-        "render": "靠背"
+        "question": "这个长椅有靠背吗？"
       },
       "bench-colour": {
         "mappings": {
@@ -92,8 +91,12 @@
   "bench_at_pt": {
     "name": "在公交站点的长椅",
     "tagRenderings": {
-      "bench_at_pt-bench": {
-        "render": "站立长凳"
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "1": {
+            "then": "站立长凳"
+          }
+        }
       },
       "bench_at_pt-name": {
         "render": "{name}"

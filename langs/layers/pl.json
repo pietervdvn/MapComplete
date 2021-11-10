@@ -31,8 +31,7 @@
             "then": "Oparcie: Nie"
           }
         },
-        "question": "Czy ta ławka ma oparcie?",
-        "render": "Oparcie"
+        "question": "Czy ta ławka ma oparcie?"
       },
       "bench-colour": {
         "mappings": {

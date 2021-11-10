@@ -132,11 +132,11 @@
       },
       "Space between barrier (cyclebarrier)": {
         "question": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
-        "render": "Ruimte tussen barrières (langs de lengte van de weg): {spacing} m"
+        "render": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m"
       },
       "Width of opening (cyclebarrier)": {
         "question": "Hoe breed is de smalste opening naast de barrières?",
-        "render": "Breedte van de opening: {opening} m"
+        "render": "Breedte van de opening: {width:opening} m"
       },
       "bicycle=yes/no": {
         "mappings": {
@@ -179,8 +179,7 @@
             "then": "Rugleuning ontbreekt"
           }
         },
-        "question": "Heeft deze zitbank een rugleuning?",
-        "render": "Rugleuning"
+        "question": "Heeft deze zitbank een rugleuning?"
       },
       "bench-colour": {
         "mappings": {
@@ -256,8 +255,13 @@
   "bench_at_pt": {
     "name": "Zitbanken aan bushaltes",
     "tagRenderings": {
-      "bench_at_pt-bench": {
-        "render": "Leunbank"
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "1": {
+            "then": "Leunbank"
+          }
+        },
+        "question": "Wat voor soort bank is dit?"
       },
       "bench_at_pt-name": {
         "render": "{name}"
@@ -1828,6 +1832,9 @@
         "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
         "render": "<div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:type2_cable:output}"
       },
+      "questions": {
+        "render": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions}"
+      },
       "ref": {
         "question": "Wat is het referentienummer van dit oplaadstation?",
         "render": "Het referentienummer van dit oplaadpunt is <b>{ref}</b>"
@@ -2556,14 +2563,16 @@
       "defibrillator-defibrillator": {
         "mappings": {
           "0": {
-            "then": "Dit is een manueel toestel enkel voor professionals"
+            "then": "Er is geen info over het soort toestel"
           },
           "1": {
+            "then": "Dit is een manueel toestel enkel voor professionals"
+          },
+          "2": {
             "then": "Dit is een gewone automatische defibrillator"
           }
         },
-        "question": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
-        "render": "Er is geen info over het soort toestel"
+        "question": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?"
       },
       "defibrillator-defibrillator:location": {
         "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)",

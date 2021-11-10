@@ -231,8 +231,8 @@
         "de": "Dieses Fahrradgeschäft heißt {name}",
         "it": "Questo negozio di biciclette è chiamato {name}",
         "ru": "Этот магазин велосипедов называется {name}",
-        "pt_BR": "Esta loja de bicicletas se chama {nome}",
-        "pt": "Esta loja de bicicletas se chama {nome}"
+        "pt_BR": "Esta loja de bicicletas se chama {name}",
+        "pt": "Esta loja de bicicletas se chama {name}"
       },
       "freeform": {
         "key": "name"
@@ -664,32 +664,7 @@
         }
       ]
     },
-    {
-      "question": "How much does it cost to use the cleaning service?",
-      "render": "Using the cleaning service costs {charge}",
-      "freeform": {
-        "key": "service:bicycle:cleaning:charge",
-        "addExtraTags": [
-          "service:bicycle:cleaning:fee=yes"
-        ]
-      },
-      "mappings": [
-        {
-          "if": "service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge=",
-          "then": "The cleaning service is free to use"
-        },
-        {
-          "if": "service:bicycle:cleaning:fee=no&",
-          "then": "Free to use",
-          "hideInAnswer": true
-        },
-        {
-          "if": "service:bicycle:cleaning:fee=yes",
-          "then": "The cleaning service has a fee"
-        }
-      ],
-      "id": "bike_cleaning-service:bicycle:cleaning:charge"
-    }
+    "bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge"
   ],
   "presets": [
     {

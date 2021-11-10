@@ -26,8 +26,7 @@
             "then": "Háttámla: Nem"
           }
         },
-        "question": "Van háttámlája ennek a padnak?",
-        "render": "Háttámla"
+        "question": "Van háttámlája ennek a padnak?"
       },
       "bench-colour": {
         "mappings": {

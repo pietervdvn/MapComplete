@@ -31,8 +31,7 @@
             "then": "Encosto: Não"
           }
         },
-        "question": "Este assento tem um escosto?",
-        "render": "Encosto"
+        "question": "Este assento tem um escosto?"
       },
       "bench-colour": {
         "mappings": {
@@ -189,7 +188,7 @@
           }
         },
         "question": "Esta máquina de venda automática ainda está operacional?",
-        "render": "O estado operacional é: <i>{operational_status</i>"
+        "render": "O estado operacional é: <i>{operational_status}</i>"
       }
     },
     "title": {
@@ -505,7 +504,7 @@
       },
       "bike_shop-name": {
         "question": "Qual o nome desta loja de bicicletas?",
-        "render": "Esta loja de bicicletas se chama {nome}"
+        "render": "Esta loja de bicicletas se chama {name}"
       },
       "bike_shop-phone": {
         "question": "Qual o número de telefone de {name}?"

@@ -829,8 +829,7 @@
                 "then": "L’idrante è stato rimosso."
               }
             },
-            "question": "Aggiorna lo stato di funzionamento dell’idrante.",
-            "render": "Stato di funzionamento"
+            "question": "Aggiorna lo stato di funzionamento dell’idrante."
           },
           "hydrant-type": {
             "mappings": {

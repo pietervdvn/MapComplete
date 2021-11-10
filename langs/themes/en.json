@@ -905,17 +905,16 @@
           "hydrant-state": {
             "mappings": {
               "0": {
-                "then": "The hydrant is (fully or partially) working."
+                "then": "The hydrant is (fully or partially) working"
               },
               "1": {
-                "then": "The hydrant is unavailable."
+                "then": "The hydrant is unavailable"
               },
               "2": {
-                "then": "The hydrant has been removed."
+                "then": "The hydrant has been removed"
               }
             },
-            "question": "Update the lifecycle status of the hydrant.",
-            "render": "Lifecycle status"
+            "question": "Is this hydrant still working?"
           },
           "hydrant-type": {
             "mappings": {

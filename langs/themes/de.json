@@ -473,7 +473,7 @@
         },
         "6": {
           "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-          "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
+          "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:max} (französisch/belgisches System)"
         },
         "7": {
           "mappings": {
@@ -874,8 +874,7 @@
                 "then": "Der Hydrant wurde entfernt."
               }
             },
-            "question": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten.",
-            "render": "Lebenszyklus-Status"
+            "question": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten."
           },
           "hydrant-type": {
             "mappings": {

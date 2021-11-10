@@ -173,9 +173,46 @@ export default class TagRenderingConfig {
             throw `${context}: A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
         }
 
-        if (this.freeform && this.render === undefined) {
-            throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
+        if (this.freeform) {
+            if(this.render === undefined){
+                throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
+            }
+            for (const ln in this.render.translations) {
+                const txt :string = this.render.translations[ln]
+                if(txt === ""){
+                    throw context+" Rendering for language "+ln+" is empty"
+                }
+                if(txt.indexOf("{"+this.freeform.key+"}") >= 0){
+                    continue
+                }
+                if(txt.indexOf("{canonical("+this.freeform.key+")") >= 0){
+                    continue
+                }
+                if(this.freeform.type === "opening_hours" && txt.indexOf("{opening_hours_table(") >= 0){
+                    continue
+                }
+                if(this.freeform.type === "wikidata" && txt.indexOf("{wikipedia("+this.freeform.key) >= 0){
+                    continue
+                }
+                if(this.freeform.key === "wikidata" && txt.indexOf("{wikipedia()") >= 0){
+                    continue
+                }
+                throw `${context}: The rendering for language ${ln} does not contain the freeform key {${this.freeform.key}}. This is a bug, as this rendering should show exactly this freeform key!\nThe rendering is ${txt} `
+                
+            }
         }
+
+        if (this.id === "questions" && this.render !== undefined) {
+            for (const ln in this.render.translations) {
+                const txt :string = this.render.translations[ln]
+                if(txt.indexOf("{questions}") >= 0){
+                    continue
+                }
+                throw `${context}: The rendering for language ${ln} does not contain {questions}. This is a bug, as this rendering should include exactly this to trigger those questions to be shown!`
+
+            }
+        }
+
 
         if (this.render && this.question && this.freeform === undefined) {
             throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}; the question is ${this.question.txt}`
@@ -238,7 +275,7 @@ export default class TagRenderingConfig {
     public IsKnown(tags: any): boolean {
         if (this.condition &&
             !this.condition.matchesProperties(tags)) {
-            // Filtered away by the condition
+            // Filtered away by the condition, so it is kindof known
             return true;
         }
         if (this.multiAnswer) {

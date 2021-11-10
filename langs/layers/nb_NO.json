@@ -88,8 +88,7 @@
             "then": "Rygglene: Nei"
           }
         },
-        "question": "Har denne beken et rygglene?",
-        "render": "Rygglene"
+        "question": "Har denne beken et rygglene?"
       },
       "bench-colour": {
         "mappings": {
@@ -172,16 +171,6 @@
       "bicycle_library-name": {
         "question": "Hva heter dette sykkelbiblioteket?",
         "render": "Dette sykkelbiblioteket heter {name}"
-      }
-    }
-  },
-  "charging_station": {
-    "tagRenderings": {
-      "Network": {
-        "render": "{network}"
-      },
-      "OH": {
-        "question": "Når åpnet denne ladestasjonen?"
       }
     }
   },

@@ -454,8 +454,7 @@
         "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-        "de": ""
+        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
       },
       "question": {
         "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",

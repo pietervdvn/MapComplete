@@ -65,11 +65,11 @@
         "de": "Ist diese Trinkwasserstelle noch in Betrieb?"
       },
       "render": {
-        "en": "The operational status is <i>{operational_status</i>",
+        "en": "The operational status is <i>{operational_status}</i>",
         "nl": "Deze waterkraan-status is <i>{operational_status}</i>",
         "it": "Lo stato operativo è <i>{operational_status}</i>",
-        "fr": "L'état opérationnel est <i>{operational_status</i>",
-        "de": "Der Betriebsstatus ist <i>{operational_status</i>"
+        "fr": "L'état opérationnel est <i>{operational_status}</i>",
+        "de": "Der Betriebsstatus ist <i>{operational_status}/i>"
       },
       "freeform": {
         "key": "operational_status"
