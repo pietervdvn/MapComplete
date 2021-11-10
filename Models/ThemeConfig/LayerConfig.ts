@@ -22,6 +22,7 @@ import Title from "../../UI/Base/Title";
 import List from "../../UI/Base/List";
 import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
+import * as icons from "../../assets/tagRenderings/icons.json"
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -255,13 +256,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         const titleIcons = [];
-        const defaultIcons = [
-            "phonelink",
-            "emaillink",
-            "wikipedialink",
-            "osmlink",
-            "sharelink",
-        ];
+        const defaultIcons = icons.defaultIcons;
         for (const icon of json.titleIcons ?? defaultIcons) {
             if (icon === "defaults") {
                 titleIcons.push(...defaultIcons);

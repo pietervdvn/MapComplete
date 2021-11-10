@@ -11,7 +11,8 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
  */
 export default class TagRenderingAnswer extends VariableUiElement {
 
-    constructor(tagsSource: UIEventSource<any>, configuration: TagRenderingConfig, contentClasses: string = "", contentStyle: string = "") {
+    constructor(tagsSource: UIEventSource<any>, configuration: TagRenderingConfig,
+                contentClasses: string = "", contentStyle: string = "") {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }

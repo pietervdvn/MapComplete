@@ -74,6 +74,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                     // This is a question box!
                     const questionBox = questionBoxes.get(tr.group)
                     questionBoxes.delete(tr.group)
+                    
                     renderingsForGroup.push(questionBox)
                 } else {
                     let classes = innerClasses
