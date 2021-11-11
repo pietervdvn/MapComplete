@@ -1477,20 +1477,6 @@
         },
         "question": "Di che tipo di videocamera si tratta?"
       },
-      "Indoor camera? This isn't clear for 'public'-cameras": {
-        "mappings": {
-          "0": {
-            "then": "Questa videocamera si trova al chiuso"
-          },
-          "1": {
-            "then": "Questa videocamera si trova all'aperto"
-          },
-          "2": {
-            "then": "Questa videocamera si trova probabilmente all'esterno"
-          }
-        },
-        "question": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?"
-      },
       "Level": {
         "question": "A che piano si trova questa videocamera?",
         "render": "Si trova al piano {level}"
@@ -1552,7 +1538,7 @@
         "question": "Com'è posizionata questa telecamera?",
         "render": "Metodo di montaggio: {camera:mount}"
       },
-      "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
+      "camera_direction": {
         "mappings": {
           "0": {
             "then": "Punta in direzione {direction}"
@@ -1560,6 +1546,20 @@
         },
         "question": "In quale direzione geografica punta questa videocamera?",
         "render": "Punta in direzione {camera:direction}"
+      },
+      "is_indoor": {
+        "mappings": {
+          "0": {
+            "then": "Questa videocamera si trova al chiuso"
+          },
+          "1": {
+            "then": "Questa videocamera si trova all'aperto"
+          },
+          "2": {
+            "then": "Questa videocamera si trova probabilmente all'esterno"
+          }
+        },
+        "question": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?"
       }
     },
     "title": {

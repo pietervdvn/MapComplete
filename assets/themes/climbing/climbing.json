@@ -713,7 +713,7 @@
             "it": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>"
           },
           "condition": "_contained_climbing_routes~*",
-          "id": "Containe {_contained_climbing_routes_count} routes"
+          "id": "Contained_climbing_routes"
         },
         {
           "render": {

@@ -3656,20 +3656,6 @@
         },
         "question": "What kind of camera is this?"
       },
-      "Indoor camera? This isn't clear for 'public'-cameras": {
-        "mappings": {
-          "0": {
-            "then": "This camera is located indoors"
-          },
-          "1": {
-            "then": "This camera is located outdoors"
-          },
-          "2": {
-            "then": "This camera is probably located outdoors"
-          }
-        },
-        "question": "Is the public space surveilled by this camera an indoor or outdoor space?"
-      },
       "Level": {
         "question": "On which level is this camera located?",
         "render": "Located on level {level}"
@@ -3731,7 +3717,7 @@
         "question": "How is this camera placed?",
         "render": "Mounting method: {camera:mount}"
       },
-      "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
+      "camera_direction": {
         "mappings": {
           "0": {
             "then": "Films to a compass heading of {direction}"
@@ -3739,6 +3725,20 @@
         },
         "question": "In which geographical direction does this camera film?",
         "render": "Films to a compass heading of {camera:direction}"
+      },
+      "is_indoor": {
+        "mappings": {
+          "0": {
+            "then": "This camera is located indoors"
+          },
+          "1": {
+            "then": "This camera is located outdoors"
+          },
+          "2": {
+            "then": "This camera is probably located outdoors"
+          }
+        },
+        "question": "Is the public space surveilled by this camera an indoor or outdoor space?"
       }
     },
     "title": {

@@ -368,7 +368,7 @@
       "freeform": {
         "key": "description"
       },
-      "id": "Non-editable description {description}"
+      "id": "Non-editable description"
     },
     {
       "question": "Is er extra info die je kwijt wil?",
@@ -378,7 +378,7 @@
       "freeform": {
         "key": "description:0"
       },
-      "id": "Editable description {description:0}"
+      "id": "Editable description"
     },
     {
       "render": {

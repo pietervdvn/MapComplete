@@ -48,9 +48,16 @@ export default class WithContextLoader {
      * A string is interpreted as a name to call
      */
     public ParseTagRenderings(
-        tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson)[],
-        readOnly = false,
-        prepConfig: ((config: TagRenderingConfigJson) => TagRenderingConfigJson) = undefined
+        tagRenderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[],
+        options?:{
+            /**
+             * Throw an error if 'question' is defined
+             */
+            readOnlyMode?: boolean,
+            requiresId?: boolean
+            prepConfig?: ((config: TagRenderingConfigJson) => TagRenderingConfigJson)
+            
+        }
     ): TagRenderingConfig[] {
         if (tagRenderings === undefined) {
             return [];
@@ -58,8 +65,9 @@ export default class WithContextLoader {
 
         const context = this._context
         const renderings: TagRenderingConfig[] = []
-        if (prepConfig === undefined) {
-            prepConfig = c => c
+        options = options ?? {}
+        if (options.prepConfig === undefined) {
+            options.prepConfig = c => c
         }
         for (let i = 0; i < tagRenderings.length; i++) {
             let renderingJson = tagRenderings[i]
@@ -89,9 +97,16 @@ export default class WithContextLoader {
             }
 
 
-            const patchedConfig = prepConfig(<TagRenderingConfigJson>renderingJson)
+            const patchedConfig = options.prepConfig(<TagRenderingConfigJson>renderingJson)
 
             const tr = new TagRenderingConfig(patchedConfig, `${context}.tagrendering[${i}]`);
+            if(options.readOnlyMode && tr.question !== undefined){
+                throw "A question is defined for "+`${context}.tagrendering[${i}], but this is not allowed at this position - probably because this rendering is an icon, badge or label`
+            }
+            if(options.requiresId && tr.id === ""){
+                throw `${context}.tagrendering[${i}] has an invalid ID - make sure it is defined and not empty`
+            }
+            
             renderings.push(tr)
         }
 

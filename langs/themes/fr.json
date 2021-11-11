@@ -357,14 +357,14 @@
           }
         },
         "tagRenderings": {
-          "Containe {_contained_climbing_routes_count} routes": {
-            "render": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>"
-          },
           "Contained routes hist": {
             "render": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}"
           },
           "Contained routes length hist": {
             "render": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}"
+          },
+          "Contained_climbing_routes": {
+            "render": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>"
           },
           "Rock type (crag/rock/cliff only)": {
             "mappings": {

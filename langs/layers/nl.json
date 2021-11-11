@@ -3149,7 +3149,7 @@
         },
         "question": "Zijn honden toegelaten in dit gebied?"
       },
-      "Editable description {description:0}": {
+      "Editable description": {
         "render": "Extra info: <i>{description:0}</i>"
       },
       "Email": {
@@ -3169,7 +3169,7 @@
         "question": "Wat is de Nederlandstalige naam van dit gebied?",
         "render": "Dit gebied heet {name:nl}"
       },
-      "Non-editable description {description}": {
+      "Non-editable description": {
         "render": "Extra info: <i>{description}</i>"
       },
       "Operator tag": {
@@ -3966,20 +3966,6 @@
         },
         "question": "Wat voor soort camera is dit?"
       },
-      "Indoor camera? This isn't clear for 'public'-cameras": {
-        "mappings": {
-          "0": {
-            "then": "Deze camera bevindt zich binnen"
-          },
-          "1": {
-            "then": "Deze camera bevindt zich buiten"
-          },
-          "2": {
-            "then": "Deze camera bevindt zich waarschijnlijk buiten"
-          }
-        },
-        "question": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?"
-      },
       "Level": {
         "question": "Op welke verdieping bevindt deze camera zich?",
         "render": "Bevindt zich op verdieping {level}"
@@ -4041,7 +4027,7 @@
         "question": "Hoe is deze camera geplaatst?",
         "render": "Montage: {camera:mount}"
       },
-      "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
+      "camera_direction": {
         "mappings": {
           "0": {
             "then": "Filmt in kompasrichting {direction}"
@@ -4049,6 +4035,20 @@
         },
         "question": "In welke geografische richting filmt deze camera?",
         "render": "Filmt in kompasrichting {camera:direction}"
+      },
+      "is_indoor": {
+        "mappings": {
+          "0": {
+            "then": "Deze camera bevindt zich binnen"
+          },
+          "1": {
+            "then": "Deze camera bevindt zich buiten"
+          },
+          "2": {
+            "then": "Deze camera bevindt zich waarschijnlijk buiten"
+          }
+        },
+        "question": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?"
       }
     },
     "title": {

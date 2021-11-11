@@ -2397,20 +2397,6 @@
         },
         "question": "Um welche Kameratyp handelt se sich?"
       },
-      "Indoor camera? This isn't clear for 'public'-cameras": {
-        "mappings": {
-          "0": {
-            "then": "Diese Kamera befindet sich im Innenraum"
-          },
-          "1": {
-            "then": "Diese Kamera befindet sich im Freien"
-          },
-          "2": {
-            "then": "Diese Kamera ist möglicherweise im Freien"
-          }
-        },
-        "question": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?"
-      },
       "Level": {
         "question": "Auf welcher Ebene befindet sich diese Kamera?",
         "render": "Befindet sich auf Ebene {level}"
@@ -2472,8 +2458,22 @@
         "question": "Wie ist diese Kamera montiert?",
         "render": "Montageart: {camera:mount}"
       },
-      "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view": {
+      "camera_direction": {
         "question": "In welche Himmelsrichtung ist diese Kamera ausgerichtet?"
+      },
+      "is_indoor": {
+        "mappings": {
+          "0": {
+            "then": "Diese Kamera befindet sich im Innenraum"
+          },
+          "1": {
+            "then": "Diese Kamera befindet sich im Freien"
+          },
+          "2": {
+            "then": "Diese Kamera ist möglicherweise im Freien"
+          }
+        },
+        "question": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?"
       }
     },
     "title": {

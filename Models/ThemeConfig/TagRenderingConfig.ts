@@ -71,6 +71,10 @@ export default class TagRenderingConfig {
 
 
         this.id = json.id ?? "";
+        if(this.id.match(/^[a-zA-Z0-9 ()?\/=:;,_-]*$/) === null){
+            throw "Invalid ID in "+context+": an id can only contain [a-zA-Z0-0_-] as characters. The offending id is: "+this.id
+        }
+        
         this.group = json.group ?? "";
         this.render = Translations.T(json.render, context + ".render");
         this.question = Translations.T(json.question, context + ".question");
@@ -173,6 +177,18 @@ export default class TagRenderingConfig {
             throw `${context}: A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
         }
 
+        if (this.id === "questions" && this.render !== undefined) {
+            for (const ln in this.render.translations) {
+                const txt :string = this.render.translations[ln]
+                if(txt.indexOf("{questions}") >= 0){
+                    continue
+                }
+                throw `${context}: The rendering for language ${ln} does not contain {questions}. This is a bug, as this rendering should include exactly this to trigger those questions to be shown!`
+
+            }
+        }
+
+
         if (this.freeform) {
             if(this.render === undefined){
                 throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
@@ -202,16 +218,6 @@ export default class TagRenderingConfig {
             }
         }
 
-        if (this.id === "questions" && this.render !== undefined) {
-            for (const ln in this.render.translations) {
-                const txt :string = this.render.translations[ln]
-                if(txt.indexOf("{questions}") >= 0){
-                    continue
-                }
-                throw `${context}: The rendering for language ${ln} does not contain {questions}. This is a bug, as this rendering should include exactly this to trigger those questions to be shown!`
-
-            }
-        }
 
 
         if (this.render && this.question && this.freeform === undefined) {

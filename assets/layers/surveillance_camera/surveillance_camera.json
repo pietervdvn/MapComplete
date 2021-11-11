@@ -140,7 +140,7 @@
           "hideInAnswer": true
         }
       ],
-      "id": "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view"
+      "id": "camera_direction"
     },
     {
       "freeform": {
@@ -264,7 +264,7 @@
           "hideInAnswer": true
         }
       ],
-      "id": "Indoor camera? This isn't clear for 'public'-cameras"
+      "id": "is_indoor"
     },
     {
       "question": {

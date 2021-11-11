@@ -133,7 +133,6 @@ export default class LayerConfig extends WithContextLoader {
                 const code = kv.substring(index + 1);
 
                 try {
-
                     new Function("feat", "return " + code + ";");
                 } catch (e) {
                     throw `Invalid function definition: code ${code} is invalid:${e} (at ${context})`
@@ -225,9 +224,8 @@ export default class LayerConfig extends WithContextLoader {
             throw "Missing ids in tagrenderings"
         }
 
-        this.tagRenderings = this.ExtractLayerTagRenderings(json)
-        {
-
+        this.tagRenderings = this.ExtractLayerTagRenderings(json, official)
+        if (official) {
 
             const emptyIds = this.tagRenderings.filter(tr => tr.id === "");
             if (emptyIds.length > 0) {
@@ -265,7 +263,9 @@ export default class LayerConfig extends WithContextLoader {
             }
         }
 
-        this.titleIcons = this.ParseTagRenderings(titleIcons, true);
+        this.titleIcons = this.ParseTagRenderings(titleIcons, {
+            readOnlyMode: true
+        });
 
         this.title = this.tr("title", undefined);
         this.isShown = this.tr("isShown", "yes");
@@ -298,7 +298,7 @@ export default class LayerConfig extends WithContextLoader {
     }
 
     public defaultIcon(): BaseUIElement | undefined {
-        if(this.mapRendering === undefined || this.mapRendering === null){
+        if (this.mapRendering === undefined || this.mapRendering === null) {
             return undefined;
         }
         const mapRendering = this.mapRendering.filter(r => r.location.has("point"))[0]
@@ -309,7 +309,7 @@ export default class LayerConfig extends WithContextLoader {
         return mapRendering.GenerateLeafletStyle(defaultTags, false, {noSize: true}).html
     }
 
-    public ExtractLayerTagRenderings(json: LayerConfigJson): TagRenderingConfig[] {
+    public ExtractLayerTagRenderings(json: LayerConfigJson, official: boolean): TagRenderingConfig[] {
 
         if (json.tagRenderings === undefined) {
             return []
@@ -342,12 +342,16 @@ export default class LayerConfig extends WithContextLoader {
             throw `Error in ${this._context}.tagrenderings[${i}]: got a value which defines either \`rewrite\` or \`renderings\`, but not both. Either define both or move the \`renderings\`  out of this scope`
         }
 
-        const allRenderings = this.ParseTagRenderings(normalTagRenderings, false);
+        const allRenderings = this.ParseTagRenderings(normalTagRenderings,
+            {
+                requiresId: official
+            });
 
         if (renderingsToRewrite.length === 0) {
             return allRenderings
         }
 
+        /* Used for left|right group creation and replacement */
         function prepConfig(keyToRewrite: string, target: string, tr: TagRenderingConfigJson) {
 
             function replaceRecursive(transl: string | any) {
@@ -379,7 +383,9 @@ export default class LayerConfig extends WithContextLoader {
             const textToReplace = rewriteGroup.rewrite.sourceString
             const targets = rewriteGroup.rewrite.into
             for (const target of targets) {
-                const parsedRenderings = this.ParseTagRenderings(tagRenderings, false, tr => prepConfig(textToReplace, target, tr))
+                const parsedRenderings = this.ParseTagRenderings(tagRenderings,  {
+                    prepConfig: tr => prepConfig(textToReplace, target, tr)
+                })
 
                 if (!rewriteGroups.has(target)) {
                     rewriteGroups.set(target, [])
