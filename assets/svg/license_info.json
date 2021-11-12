@@ -1300,6 +1300,14 @@
     "sources": []
   },
   {
+    "path": "upload.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "wikidata.svg",
     "license": "Logo; All rights reserved",
     "authors": [
