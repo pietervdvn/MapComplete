@@ -6,61 +6,69 @@ What can MapComplete do for your organisation?
 
 Maintaining a set of up-to-date geodata is hard, error prone and expensive.
 
-To add insult to injury, many organisations end up collecting the same data independently - resulting in duplicated efforts, non-standardized data formats and many incomplete datasets.
+To add insult to injury, many organizations end up collecting the same data independently - resulting in duplicated efforts, non-standardized data formats and many incomplete datasets.
 
 At the same time, there is a huge community which gathers a lot of geodata into one shared and standardized database - namely OpenStreetMap.org.
-OpenStreetMap, which has a very liberal license, allows for infinite reuse of this rich dataset, but can be hard to edit, especially for non-technical users as most OpenStreetMap editors show _all_ data at once. A user who wishes to update information on their topic of choice (e.g. a bench, a shop, a waste basket, ...) is confronted with every street, every building and every other feature nearby.
+This dataset has a very liberal license which allows for infinite reuse but can be hard to edit, especially for non-technical users as most OpenStreetMap editors show _all_ data at once.
+A user who wishes to update information on their topic of choice (e.g. a bench, a shop, a waste basket, ...) is confronted with every street, every building and every other feature nearby.
 
-MapComplete is the in-between solution, offering a more traditional interface focused on just one topic while offering powerful editing capabilities disguised as simple-to-use building blocks. 
+MapComplete is the in-between solution, offering a more traditional map focused on just one topic while offering powerful editing capabilities disguised as simple-to-use building blocks. 
 
 What data can be found in OpenStreetMap?
 =====
 
-OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as **it can be verified on the ground**. OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects, but the objects themselves might have a tremendous amount of attributes.
+OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as **it can be verified on the ground**.
 
-To give some examples:
+OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects.
+An individual object might also have a ton of attributes, bringing a lot of nuance, e.g.:
 
 - Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run over theme
 - Shops and other amenities might have opening hours, a phone number, a link to the website, which payment methods are supported, what they sell, which services they offer, ...
 - Toilets might have information about wheelchair accessibility, a changing table, if payment is needed, ...
 - and much, much more...
 
+Using MapComplete in your organization
+=========
 
+If an existing MapComplete theme is what you need to survey data or to show on your website, feel free to embed it.
+Embedding those is free and will always be.
+
+Do you need some other data, but does the theme not exist yet? The MapComplete-developers can build it for you on a decent budget. Get in touch via [email](mailto:pietervdvn@posteo.net), [github](https://github.com/pietervdvn/MapComplete/issues) or [send a message via osm.org](https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet)
+
+If you still feel unsure, the possibilities are outlined below. Additionally, some common questions are answered
 
  What data can be shown with MapComplete?
-====
+--------
 
-MapComplete has a powerful templating system, which allows to quickly spin up a map showing precisely those features that you need and showing relevant attributes in the popups.
+MapComplete has a powerful templating system, which allows to quickly create a map showing precisely those features that you need and showing relevant attributes in the popups.
 
-This data can be fetched from OpenStreetMap directly, but MapComplete can also use external datasets - e.g. to show a legacy data set, to compare OpenStreetMap with another dataset, to show data that is not suited for OpenStreetMap (planned activities, statistics, ...)
+This data can be fetched from OpenStreetMap directly, but MapComplete can also use external datasets - 
+e.g. to compare OpenStreetMap with another dataset or to show data that is not suited for OpenStreetMap (planned activities, statistics, ...)
 
-We can setup a custom map visualisation, showing precisely the data you need.
 
-Data survey
-===
+What are the survey possibilities?
+----
 
 MapComplete also is an easy to use survey tool. It is ideal to collect the necessary data in a few clicks, both on desktop and on mobile.
 
 We can setup a custom survey tool, asking precisely the data you need in a future-proof way.
 
- 
-Import helper
-=====
+Do you have a dataset that has to be (re)surveyed?
 
-Do you have a dataset that has to be resurveyed?
+This is the ideal moment to add those to OpenStreetMap directly.
+MapComplete can show your dataset and OpenStreetMap at the same time, making it easier to visit all the locations and to see what the community already contributed.
 
-This is the ideal moment to make the switch. MapComplete can show your dataset and OpenStreetMap at the same time, making it easier to check all the locations and to add all the data directly into OpenStreetMap.
 
-Make the switch!
-================
+Benefits of the OSM-ecosystem!
+-----
 
 It can be very hard to leave your own dataset behind, as building this dataset often took a lot of time and effort.
 
 However, the benefits of switching over to OSM are huge:
 
 - You are not alone anymore to gather and maintain this dataset - a whole community is at your side
-- Many applications use OpenStreetMap data - such as Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, most cycle-applications all rely on OpenStreetMap
-- Many governement organisations and municipalities use OpenStreetMap on their websites
+- Your data will reach a bigger audience then ever via Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, nearly all cycle-applications, ...
+- Many governement organisations and municipalities use OpenStreetMap on their websites too
 
 What about vandalism?
 ---------------------
