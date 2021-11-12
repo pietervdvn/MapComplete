@@ -51,7 +51,7 @@ export default class Constants {
      * If a user makes multiple changes, all these distances are put into multiple bins, depending on this distance.
      * For every bin, the totals are uploaded as metadata
      */
-    static distanceToChangeObjectBins = [25,50,100,500,1000,5000]
+    static distanceToChangeObjectBins = [25,50,100,500,1000,5000, Number.MAX_VALUE]
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

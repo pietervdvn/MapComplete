@@ -263,8 +263,13 @@ export class Changes {
             if(count === 0){
                 return undefined
             }
+            const maxD =maxDistances[i]
+            let key = `change_within_${maxD}m`
+            if(maxD === Number.MAX_VALUE){
+                key = `change_over_${maxDistances[i - 1]}m`
+            }
             return {
-                key: "change_within_"+maxDistances[i]+"m",
+                key ,
                 value: count,
                 aggregate:true
             }
