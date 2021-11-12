@@ -1,4 +1,7 @@
 {
+  "questions": {
+    "id": "questions"
+  },
   "images": {
     "render": "{image_carousel()}{image_upload()}"
   },

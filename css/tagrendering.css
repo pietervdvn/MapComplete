@@ -11,7 +11,7 @@
     color: var(--subtle-detail-color-contrast);
     padding: 1em;
     border-radius: 1em;
-    font-size: larger;
+    font-size: larger !important;
     overflow-wrap: initial;
 }
 

@@ -104,6 +104,12 @@ export default class TagRenderingConfig {
                 throw `Freeform.args is defined. This should probably be 'freeform.helperArgs' (at ${context})`
 
             }
+            
+            if(json.freeform.key === "questions"){
+                if(this.id !== "questions"){
+                    throw `If you use a freeform key 'questions', the ID must be 'questions' too to trigger the special behaviour. The current id is '${this.id}' (at ${context})`
+                }
+            }
 
 
             if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
@@ -186,6 +192,9 @@ export default class TagRenderingConfig {
                 throw `${context}: The rendering for language ${ln} does not contain {questions}. This is a bug, as this rendering should include exactly this to trigger those questions to be shown!`
 
             }
+            if(this.freeform?.key !== undefined && this.freeform?.key !== "questions"){
+                throw `${context}: If the ID is questions to trigger a question box, the only valid freeform value is 'questions' as well. Set freeform to questions or remove the freeform all together`
+            }
         }
 
 
@@ -199,6 +208,9 @@ export default class TagRenderingConfig {
                     throw context+" Rendering for language "+ln+" is empty"
                 }
                 if(txt.indexOf("{"+this.freeform.key+"}") >= 0){
+                    continue
+                }
+                if(txt.indexOf("{"+this.freeform.key+":") >= 0){
                     continue
                 }
                 if(txt.indexOf("{canonical("+this.freeform.key+")") >= 0){
@@ -363,6 +375,9 @@ export default class TagRenderingConfig {
             }
         }
 
+        if(this.id === "questions"){
+            return this.render
+        }
 
         if (this.freeform?.key === undefined) {
             return this.render;

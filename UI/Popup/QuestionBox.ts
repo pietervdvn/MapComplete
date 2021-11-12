@@ -14,14 +14,19 @@ import Lazy from "../Base/Lazy";
  */
 export default class QuestionBox extends VariableUiElement {
     public readonly skippedQuestions: UIEventSource<number[]>;
-    public readonly currentQuestion: UIEventSource<number | undefined>;
+    public readonly restingQuestions: UIEventSource<BaseUIElement[]>;
 
-    constructor(options: { tagsSource: UIEventSource<any>, tagRenderings: TagRenderingConfig[], units: Unit[] }) {
+    constructor(options: {
+        tagsSource: UIEventSource<any>,
+        tagRenderings: TagRenderingConfig[], units: Unit[],
+        showAllQuestionsAtOnce?: boolean | UIEventSource<boolean>
+    }) {
 
         const skippedQuestions: UIEventSource<number[]> = new UIEventSource<number[]>([])
 
         const tagsSource = options.tagsSource
         const units = options.units
+        options.showAllQuestionsAtOnce = options.showAllQuestionsAtOnce ?? false
         const tagRenderings = options.tagRenderings
             .filter(tr => tr.question !== undefined)
             .filter(tr => tr.question !== null)
@@ -50,8 +55,7 @@ export default class QuestionBox extends VariableUiElement {
             .onClick(() => {
                 skippedQuestions.setData([]);
             })
-
-        const currentQuestion: UIEventSource<number | undefined> = tagsSource.map(tags => {
+        tagsSource.map(tags => {
             if (tags === undefined) {
                 return undefined;
             }
@@ -74,13 +78,40 @@ export default class QuestionBox extends VariableUiElement {
                 return i
             }
             return undefined; // The questions are depleted
+        }, [skippedQuestions]);
+        
+        const questionsToAsk: UIEventSource<BaseUIElement[]> = tagsSource.map(tags => {
+            if (tags === undefined) {
+                return [];
+            }
+            const qs = []
+            for (let i = 0; i < tagRenderingQuestions.length; i++) {
+                let tagRendering = tagRenderings[i];
+
+                if (skippedQuestions.data.indexOf(i) >= 0) {
+                    continue;
+                }
+                if (tagRendering.IsKnown(tags)) {
+                    continue;
+                }
+                if (tagRendering.condition &&
+                    !tagRendering.condition.matchesProperties(tags)) {
+                    // Filtered away by the condition, so it is kindof known
+                    continue;
+                }
+
+                // this value is NOT known - this is the question we have to show!
+                qs.push(tagRenderingQuestions[i])
+            }
+            return qs
         }, [skippedQuestions])
 
-
-        super(currentQuestion.map(i => {
+        super(questionsToAsk.map(allQuestions => {
                 const els: BaseUIElement[] = []
-                if (i !== undefined) {
-                    els.push(tagRenderingQuestions[i])
+                if (options.showAllQuestionsAtOnce === true || options.showAllQuestionsAtOnce["data"]) {
+                    els.push(...questionsToAsk.data)
+                } else {
+                    els.push(allQuestions[0])
                 }
 
                 if (skippedQuestions.data.length > 0) {
@@ -92,7 +123,7 @@ export default class QuestionBox extends VariableUiElement {
         )
 
         this.skippedQuestions = skippedQuestions;
-        this.currentQuestion = currentQuestion
+        this.restingQuestions = questionsToAsk
 
 
     }

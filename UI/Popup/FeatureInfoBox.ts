@@ -18,6 +18,7 @@ import {Utils} from "../../Utils";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import MoveWizard from "./MoveWizard";
 import Toggle from "../Input/Toggle";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -56,9 +57,16 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map(tr => tr.group))
         if (State.state.featureSwitchUserbadge.data) {
+            const questionSpecs = layerConfig.tagRenderings.filter(tr => tr.id === "questions")
             for (const groupName of allGroupNames) {
                 const questions = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
-                const questionBox = new QuestionBox({tagsSource: tags, tagRenderings: questions, units:layerConfig.units});
+                const questionSpec = questionSpecs.filter(tr => tr.group === groupName)[0]
+                const questionBox = new QuestionBox({
+                    tagsSource: tags,
+                    tagRenderings: questions,
+                    units: layerConfig.units,
+                    showAllQuestionsAtOnce: questionSpec?.freeform?.helperArgs["showAllQuestions"] ?? State.state.featureSwitchShowAllQuestions
+                });
                 questionBoxes.set(groupName, questionBox)
             }
         }
@@ -75,21 +83,22 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                     // This is a question box!
                     const questionBox = questionBoxes.get(tr.group)
                     questionBoxes.delete(tr.group)
-                    
-                    if(tr.render !== undefined){
+
+                    if (tr.render !== undefined) {
+                        questionBox.SetClass("text-sm")
                         const renderedQuestion = new TagRenderingAnswer(tags, tr, tr.group + " questions", "", {
                             specialViz: new Map<string, BaseUIElement>([["questions", questionBox]])
                         })
                         const possiblyHidden = new Toggle(
                             renderedQuestion,
                             undefined,
-                            questionBox.currentQuestion.map(i => i !== undefined)
+                            questionBox.restingQuestions.map(ls => ls?.length > 0)
                         )
                         renderingsForGroup.push(possiblyHidden)
-                    }else{
+                    } else {
                         renderingsForGroup.push(questionBox)
                     }
-                    
+
                 } else {
                     let classes = innerClasses
                     let isHeader = renderingsForGroup.length === 0 && i > 0

@@ -8,7 +8,9 @@ export interface TagRenderingConfigJson {
 
     /**
      * The id of the tagrendering, should be an unique string.
-     * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise
+     * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.
+     * 
+     * Use 'questions' to trigger the question box of this group (if a group is defined)
      */
     id?: string,
 

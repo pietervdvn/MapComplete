@@ -187,10 +187,10 @@ class OpeningHoursTextField implements TextFieldDef {
         return new OpeningHoursInput(value, prefix, postfix)
     }
 }
-
 export default class ValidatedTextField {
 
     public static tpList: TextFieldDef[] = [
+        
         ValidatedTextField.tp(
             "string",
             "A basic string"),

@@ -77,12 +77,6 @@ export default class WithContextLoader {
 
             if (renderingJson["builtin"] !== undefined) {
                 const renderingId = renderingJson["builtin"]
-                if (renderingId === "questions") {
-                    const tr = new TagRenderingConfig("questions", context);
-                    renderings.push(tr)
-                    continue;
-                }
-
                 let sharedJson = WithContextLoader.getKnownTagRenderings(renderingId)
                 if (sharedJson === undefined) {
                     const keys = Array.from(SharedTagRenderings.SharedTagRenderingJson.keys());
