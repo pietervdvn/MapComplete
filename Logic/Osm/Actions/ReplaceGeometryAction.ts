@@ -62,7 +62,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                 continue
             }
             for (let j = i + 1; j < coordinates.length; j++) {
-                const d = 1000 * GeoOperations.distanceBetween(coordinates[i], coordinates[j])
+                const d = GeoOperations.distanceBetween(coordinates[i], coordinates[j])
                 if (d < 0.1) {
                     console.log("Identical coordinates detected: ", i, " and ", j, ": ", coordinates[i], coordinates[j], "distance is", d)
                     this.identicalTo[j] = i

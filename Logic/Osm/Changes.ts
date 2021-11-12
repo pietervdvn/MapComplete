@@ -172,7 +172,7 @@ export class Changes {
         return Math.min(...changedObjectCoordinates.map(coor =>
             Math.min(...recentLocationPoints.map(gpsPoint => {
                 const otherCoor = GeoOperations.centerpointCoordinates(gpsPoint)
-                return GeoOperations.distanceBetween(coor, otherCoor) * 1000
+                return GeoOperations.distanceBetween(coor, otherCoor)
             }))
         ))
     }

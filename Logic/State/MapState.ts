@@ -57,7 +57,7 @@ export default class MapState extends UserRelatedState {
     /**
      * The number of seconds that the GPS-locations are stored in memory
      */
-    public gpsLocationHistoryRetentionTime = new UIEventSource(7 * 24 * 60 * 60, "gps_location_retention" )
+    public gpsLocationHistoryRetentionTime = new UIEventSource(7 * 24 * 60 * 60, "gps_location_retention")
     public historicalUserLocationsTrack: FeatureSourceForLayer & Tiled;
 
     /**
@@ -77,7 +77,7 @@ export default class MapState extends UserRelatedState {
      */
     public overlayToggles: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]
 
-  
+
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
 
@@ -139,7 +139,7 @@ export default class MapState extends UserRelatedState {
 
         this.lockBounds()
         this.AddAllOverlaysToMap(this.leafletMap)
-        
+
         this.initHomeLocation()
         this.initGpsLocation()
         this.initUserLocationTrail()
@@ -187,15 +187,15 @@ export default class MapState extends UserRelatedState {
             })
         }
     }
-    
-    private initGpsLocation(){
+
+    private initGpsLocation() {
         // Initialize the gps layer data. This is emtpy for now, the actual writing happens in the Geolocationhandler
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location")[0]
         this.currentUserLocation = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0));
     }
-    
-    private initUserLocationTrail(){
-        const features = LocalStorageSource.GetParsed<{feature: any, freshness: Date}[]>("gps_location_history", [])
+
+    private initUserLocationTrail() {
+        const features = LocalStorageSource.GetParsed<{ feature: any, freshness: Date }[]>("gps_location_history", [])
         const now = new Date().getTime()
         features.data = features.data
             .map(ff => ({feature: ff.feature, freshness: new Date(ff.freshness)}))
@@ -204,59 +204,59 @@ export default class MapState extends UserRelatedState {
         const self = this;
         let i = 0
         this.currentUserLocation.features.addCallbackAndRunD(([location]) => {
-            if(location === undefined){
+            if (location === undefined) {
                 return;
             }
-            
+
             const previousLocation = features.data[features.data.length - 1]
-            if(previousLocation !== undefined){
+            if (previousLocation !== undefined) {
                 const d = GeoOperations.distanceBetween(
                     previousLocation.feature.geometry.coordinates,
                     location.feature.geometry.coordinates
-
                 )
-                if(d < 20){
+                let timeDiff = Number.MAX_VALUE // in seconds
+                const olderLocation = features.data[features.data.length - 2]
+                if (olderLocation !== undefined) {
+                    timeDiff = (previousLocation.freshness.getTime() - olderLocation.freshness.getTime()) / 1000
+                }
+                if (d < 20 && timeDiff < 60) {
                     // Do not append changes less then 20m - it's probably noise anyway
                     return;
                 }
             }
-            
+
             const feature = JSON.parse(JSON.stringify(location.feature))
-            feature.properties.id = "gps/"+features.data.length
+            feature.properties.id = "gps/" + features.data.length
             i++
             features.data.push({feature, freshness: new Date()})
             features.ping()
         })
-        
-        
+
+
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location_history")[0]
         this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
         this.changes.useLocationHistory(this)
 
 
-
-
-       
-        
         const asLine = features.map(allPoints => {
-            if(allPoints === undefined || allPoints.length < 2){
+            if (allPoints === undefined || allPoints.length < 2) {
                 return []
             }
 
             const feature = {
                 type: "Feature",
-                properties:{
-                    "id":"location_track",
+                properties: {
+                    "id": "location_track",
                     "_date:now": new Date().toISOString(),
                 },
-                geometry:{
+                geometry: {
                     type: "LineString",
                     coordinates: allPoints.map(ff => ff.feature.geometry.coordinates)
                 }
             }
-            
+
             self.allElements.ContainingFeatures.set(feature.properties.id, feature)
-            
+
             return [{
                 feature,
                 freshness: new Date()
@@ -286,7 +286,7 @@ export default class MapState extends UserRelatedState {
                 feature: {
                     "type": "Feature",
                     "properties": {
-                        "id":"home",
+                        "id": "home",
                         "user:home": "yes",
                         "_lon": homeLonLat[0],
                         "_lat": homeLonLat[1]
