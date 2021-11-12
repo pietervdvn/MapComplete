@@ -43,18 +43,6 @@
       "tagRenderings": [
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/buurtnatuur/forest.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -66,6 +54,27 @@
           },
           "description": {
             "nl": "Voeg een boomgaard toe (als punt - omtrek nog te tekenen)"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/buurtnatuur/forest.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
           }
         }
       ]
@@ -146,18 +155,6 @@
           "id": "fruitboom-ref"
         }
       ],
-      "icon": {
-        "render": "./assets/themes/fruit_trees/fruit_tree.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -168,6 +165,27 @@
           },
           "description": {
             "nl": "Voeg hier een boom toe"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/fruit_trees/fruit_tree.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
           }
         }
       ]

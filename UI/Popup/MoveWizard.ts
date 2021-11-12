@@ -42,7 +42,7 @@ export default class MoveWizard extends Toggle {
             changes: Changes,
             layoutToUse: LayoutConfig,
             allElements: ElementStorage
-        }, options : MoveConfig) {
+        }, options: MoveConfig) {
 
         const t = Translations.t.move
         const loginButton = new Toggle(
@@ -64,7 +64,7 @@ export default class MoveWizard extends Toggle {
                 minZoom: 6
             })
         }
-        if(options.enableImproveAccuracy){
+        if (options.enableImproveAccuracy) {
             reasons.push({
                 text: t.reasons.reasonInaccurate,
                 invitingText: t.inviteToMove.reasonInaccurate,
@@ -79,8 +79,8 @@ export default class MoveWizard extends Toggle {
 
         const currentStep = new UIEventSource<"start" | "reason" | "pick_location" | "moved">("start")
         const moveReason = new UIEventSource<MoveReason>(undefined)
-        let moveButton : BaseUIElement;
-        if(reasons.length === 1){
+        let moveButton: BaseUIElement;
+        if (reasons.length === 1) {
             const reason = reasons[0]
             moveReason.setData(reason)
             moveButton = new SubtleButton(
@@ -89,7 +89,7 @@ export default class MoveWizard extends Toggle {
             ).onClick(() => {
                 currentStep.setData("pick_location")
             })
-        }else{
+        } else {
             moveButton = new SubtleButton(
                 Svg.move_ui().SetStyle("height: 1.5rem; width: auto"),
                 t.inviteToMove.generic
@@ -97,7 +97,7 @@ export default class MoveWizard extends Toggle {
                 currentStep.setData("reason")
             })
         }
-        
+
 
         const moveAgainButton = new SubtleButton(
             Svg.move_ui(),
@@ -107,8 +107,6 @@ export default class MoveWizard extends Toggle {
         })
 
 
-        
-        
         const selectReason = new Combine(reasons.map(r => new SubtleButton(r.icon, r.text).onClick(() => {
             moveReason.setData(r)
             currentStep.setData("pick_location")
@@ -129,16 +127,16 @@ export default class MoveWizard extends Toggle {
             })
 
             let background: string[]
-            if(typeof reason.background == "string"){
+            if (typeof reason.background == "string") {
                 background = [reason.background]
-            }else{
+            } else {
                 background = reason.background
             }
-            
+
             const locationInput = new LocationInput({
                 minZoom: reason.minZoom,
                 centerLocation: loc,
-                mapBackground:AvailableBaseLayers.SelectBestLayerAccordingTo(loc, new UIEventSource(background))
+                mapBackground: AvailableBaseLayers.SelectBestLayerAccordingTo(loc, new UIEventSource(background))
             })
 
             if (reason.lockBounds) {
@@ -198,8 +196,8 @@ export default class MoveWizard extends Toggle {
             moveDisallowedReason.setData(t.isWay)
         } else if (id.startsWith("relation")) {
             moveDisallowedReason.setData(t.isRelation)
-        } else if(id.indexOf("-") < 0) {
-            
+        } else if (id.indexOf("-") < 0) {
+
             OsmObject.DownloadReferencingWays(id).then(referencing => {
                 if (referencing.length > 0) {
                     console.log("Got a referencing way, move not allowed")
@@ -207,7 +205,7 @@ export default class MoveWizard extends Toggle {
                 }
             })
             OsmObject.DownloadReferencingRelations(id).then(partOf => {
-                if(partOf.length > 0){ 
+                if (partOf.length > 0) {
                     moveDisallowedReason.setData(t.partOfRelation)
                 }
             })

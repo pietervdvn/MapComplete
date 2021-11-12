@@ -76,7 +76,7 @@ knownLicenses.set("streetcomplete", {
     authors: ["Tobias Zwick (westnordost)"],
     path: undefined,
     license: "CC0",
-    sources: ["https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics","https://f-droid.org/packages/de.westnordost.streetcomplete/"]
+    sources: ["https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics", "https://f-droid.org/packages/de.westnordost.streetcomplete/"]
 })
 
 
@@ -162,6 +162,17 @@ function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
     }
 
     perDirectory.forEach((licenses, dir) => {
+
+
+        for (let i = licenses.length - 1; i >= 0; i--) {
+            const license = licenses[i];
+            const path = dir + "/" + license.path
+            if (!existsSync(path)) {
+                console.log("Found license for now missing file: ", path, " - removing this license")
+                licenses.splice(i, 1)
+            }
+        }
+
         licenses.sort((a, b) => a.path < b.path ? -1 : 1)
         writeFileSync(dir + "/license_info.json", JSON.stringify(licenses, null, 2))
     })
@@ -187,6 +198,26 @@ function queryMissingLicenses(missingLicenses: string[]) {
     console.log("You're through!")
 }
 
+
+/**
+ * Creates the humongous license_info in the generated assets, containing all licenses with a path relative to the root
+ * @param licensePaths
+ */
+function createFullLicenseOverview(licensePaths) {
+
+    const allLicenses: SmallLicense[] = []
+    for (const licensePath of licensePaths) {
+        const licenses = <SmallLicense[]>JSON.parse(readFileSync(licensePath, "UTF-8"))
+        for (const license of licenses) {
+            const dir = licensePath.substring(0, licensePath.length - "license_info.json".length)
+            license.path = dir + license.path
+            allLicenses.push(license)
+        }
+    }
+
+    writeFileSync("./assets/generated/license_info.json", JSON.stringify(allLicenses, null, "  "))
+}
+
 console.log("Checking and compiling license info")
 const contents = ScriptUtils.readDirRecSync("./assets")
     .filter(entry => entry.indexOf("./assets/generated") != 0)
@@ -197,7 +228,6 @@ if (!existsSync("./assets/generated")) {
     mkdirSync("./assets/generated")
 }
 
-writeFileSync("./assets/generated/license_info.json", JSON.stringify(licenseInfos, null, "  "))
 
 const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
@@ -221,13 +251,10 @@ if (missingLicenses.length > 0) {
     const msg = `There are ${missingLicenses.length} licenses missing and ${invalidLicenses.length} invalid licenses.`
     console.log(missingLicenses.concat(invalidLicenses).join("\n"))
     console.error(msg)
-    if (process.argv.indexOf("--report") >= 0) {
-        console.log("Writing report!")
-        writeFileSync("missing_licenses.txt", missingLicenses.concat(invalidLicenses).join("\n"))
-    }
     if (process.argv.indexOf("--no-fail") < 0) {
         throw msg
     }
 }
 
 cleanLicenseInfo(licensePaths, licenseInfos)
+createFullLicenseOverview(licensePaths)

@@ -2,8 +2,8 @@
 
 > Let a thousand flowers bloom
 
-**MapComplete is an OpenStreetMap viewer and editor.** It shows map features on a certain topic, and allows to see, edit and
-add new features to the map. It can be seen as a
+**MapComplete is an OpenStreetMap viewer and editor.** It shows map features on a certain topic, and allows to see, edit
+and add new features to the map. It can be seen as a
 webversion [crossover of StreetComplete and MapContrib](Docs/MapComplete_vs_other_editors.md). It tries to be just as
 easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle
 infrastructure, ...)
@@ -15,24 +15,28 @@ infrastructure, ...)
 - Easy to set up a custom theme
 - Easy to fall down the rabbit hole of OSM
 
-**The basic functionality is** to download some map features from Overpass and then ask certain questions. An answer is sent
-back to directly to OpenStreetMap.
+**The basic functionality is** to download some map features from Overpass and then ask certain questions. An answer is
+sent back to directly to OpenStreetMap.
 
 Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `wikimedia_commons`-tag is present, it
 follows those to get these images too.
 
-**An explicit non-goal** of MapComplete is to modify geometries of ways. Although adding a point to a way or splitting a way
-in two parts might be added one day.
+**An explicit non-goal** of MapComplete is to modify geometries of ways. Although adding a point to a way or splitting a
+way in two parts might be added one day.
 
-**More about MapComplete:** [Watch Pieter's talk on the 2021 State Of The Map Conference](https://media.ccc.de/v/sotm2021-9448-introduction-and-review-of-mapcomplete) ([YouTube](https://www.youtube.com/watch?v=zTtMn6fNbYY)) about the history, vision and future of MapComplete.
+**More about
+MapComplete:** [Watch Pieter's talk on the 2021 State Of The Map Conference](https://media.ccc.de/v/sotm2021-9448-introduction-and-review-of-mapcomplete) ([YouTube](https://www.youtube.com/watch?v=zTtMn6fNbYY))
+about the history, vision and future of MapComplete.
 
 # Creating your own theme
 
 It is possible to quickly make and distribute your own theme
+
 - [please read the documentation on how to do this](Docs/Making_Your_Own_Theme.md).
 
 ## Examples
 
+- [An overview of all official themes](https://pietervdvn.github.io/mc/develop/index.html).
 - [Buurtnatuur.be](http://buurtnatuur.be), developed for the Belgian [Green party](https://www.groen.be/). They also
   funded the initial development!
 - [Cyclofix](https://pietervdvn.github.io/MapComplete/index.html?layout=cyclofix), further development
@@ -43,7 +47,7 @@ It is possible to quickly make and distribute your own theme
 - [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=maps&z=14&lat=50.650&lon=4.2668#element),
   after a tweet
 
-There are plenty more. Discover them in the app.
+There are plenty more. [Discover them in the app](https://mapcomplete.osm.be/index.html).
 
 ### Statistics
 

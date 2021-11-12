@@ -20,7 +20,7 @@
         .z-above-controls {
             z-index: 10001
         }
-        
+
         .w-160 {
             width: 40rem;
         }
@@ -89,6 +89,15 @@ html, body {
 
 .leaflet-control-attribution {
     display: block ruby;
+}
+
+.badge {
+}
+
+.badge svg {
+    /*Workaround for leaflet*/
+    width: unset !important;
+    height: 100% !important;
 }
 
 svg, img {
@@ -280,12 +289,6 @@ li::marker {
     padding: 0.15em 0.3em;
 }
 
-.question form {
-    display: inline-block;
-    max-width: 90vw;
-    width: 100%;
-}
-
 .invalid {
     box-shadow: 0 0 10px #ff5353;
     height: min-content;
@@ -361,12 +364,12 @@ li::marker {
         opacity: 0;
         transform: rotate(-30deg);
     }
-    
+
     6% {
         opacity: 1;
         transform: rotate(-30deg);
     }
-    
+
     12% {
         opacity: 1;
         transform: rotate(-45deg);
@@ -387,7 +390,7 @@ li::marker {
         opacity: 0;
         transform: rotate(-30deg);
     }
-    
+
     100% {
         opacity: 0;
         transform: rotate(-30deg);

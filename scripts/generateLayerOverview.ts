@@ -12,8 +12,8 @@ import {Utils} from "../Utils";
 // It spits out an overview of those to be used to load them
 
 interface LayersAndThemes {
-    themes: any[],
-    layers: { parsed: any, path: string }[]
+    themes: LayoutConfigJson[],
+    layers: { parsed: LayerConfigJson, path: string }[]
 }
 
 
@@ -35,7 +35,6 @@ class LayerOverviewUtils {
         }
     }
 
-
     writeFiles(lt: LayersAndThemes) {
         writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
             "layers": lt.layers.map(l => l.parsed),
@@ -43,11 +42,15 @@ class LayerOverviewUtils {
         }))
     }
 
-
     validateLayer(layerJson: LayerConfigJson, path: string, knownPaths: Set<string>, context?: string): string[] {
         let errorCount = [];
         if (layerJson["overpassTags"] !== undefined) {
             errorCount.push("Layer " + layerJson.id + "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
+        }
+        const forbiddenTopLevel = ["icon","wayHandling","roamingRenderings","roamingRendering","label","width","color","colour","iconOverlays"]
+        for (const forbiddenKey of forbiddenTopLevel) {
+            if(layerJson[forbiddenKey] !== undefined)
+            errorCount.push("Layer "+layerJson.id+" still has a forbidden key "+forbiddenKey)
         }
         try {
             const layer = new LayerConfig(layerJson, "test", true)
@@ -109,6 +112,8 @@ class LayerOverviewUtils {
         }
 
         let themeErrorCount = []
+        // used only for the reports
+        let themeConfigs: LayoutConfig[] = []
         for (const themeInfo of themeFiles) {
             const themeFile = themeInfo.parsed
             const themePath = themeInfo.path
@@ -119,7 +124,7 @@ class LayerOverviewUtils {
                 themeErrorCount.push("The theme " + themeFile.id + " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) ")
             }
             if (themeFile["roamingRenderings"] !== undefined) {
-                themeErrorCount.push("Theme " + themeFile.id + " contains an old 'roamingRenderings'. Use an 'overrideAll' instead")    
+                themeErrorCount.push("Theme " + themeFile.id + " contains an old 'roamingRenderings'. Use an 'overrideAll' instead")
             }
             for (const layer of themeFile.layers) {
                 if (typeof layer === "string") {
@@ -144,17 +149,17 @@ class LayerOverviewUtils {
                     }
                 }
             }
-            
+
             const referencedLayers = Utils.NoNull([].concat(...themeFile.layers.map(layer => {
-                if(typeof  layer === "string"){
+                if (typeof layer === "string") {
                     return layer
                 }
-                if(layer["builtin"] !== undefined){
+                if (layer["builtin"] !== undefined) {
                     return layer["builtin"]
                 }
                 return undefined
             }).map(layerName => {
-                if(typeof layerName === "string"){
+                if (typeof layerName === "string") {
                     return [layerName]
                 }
                 return layerName
@@ -176,22 +181,22 @@ class LayerOverviewUtils {
                 }
                 const neededLanguages = themeFile["mustHaveLanguage"]
                 if (neededLanguages !== undefined) {
-                    console.log("Checking language requerements for ", theme.id, "as it must have", neededLanguages.join(", "))
-                    const allTranslations = [].concat(Translation.ExtractAllTranslationsFrom(theme, theme.id),  
-                        ...referencedLayers.map(layerId => Translation.ExtractAllTranslationsFrom(knownLayerIds.get(layerId), theme.id+"->"+layerId)))
+                    console.log("Checking language requirements for ", theme.id, "as it must have", neededLanguages.join(", "))
+                    const allTranslations = [].concat(Translation.ExtractAllTranslationsFrom(theme, theme.id),
+                        ...referencedLayers.map(layerId => Translation.ExtractAllTranslationsFrom(knownLayerIds.get(layerId), theme.id + "->" + layerId)))
                     for (const neededLanguage of neededLanguages) {
                         allTranslations
                             .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
                             .forEach(missing => {
-                                themeErrorCount.push("The theme " + theme.id + " should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context)
+                                themeErrorCount.push("The theme " + theme.id + " should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context+".\n\tThe full translation is "+missing.tr.translations)
                             })
                     }
 
 
                 }
-
+                themeConfigs.push(theme)
             } catch (e) {
-                themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
+                themeErrorCount.push("Could not parse theme " + themeFile["id"] + " due to", e)
             }
         }
 
@@ -210,12 +215,11 @@ class LayerOverviewUtils {
             console.log(msg)
             console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
-            if (process.argv.indexOf("--report") >= 0) {
+            if (args.indexOf("--report") >= 0) {
                 console.log("Writing report!")
                 writeFileSync("layer_report.txt", errors)
             }
-
-            if (process.argv.indexOf("--no-fail") < 0) {
+            if (args.indexOf("--no-fail") < 0) {
                 throw msg;
             }
         }

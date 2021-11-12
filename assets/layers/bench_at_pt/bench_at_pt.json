@@ -1,153 +1,174 @@
 {
-    "id": "bench_at_pt",
-    "name": {
-        "en": "Benches at public transport stops",
-        "de": "Sitzbänke bei Haltestellen",
-        "fr": "Bancs des arrêts de transport en commun",
-        "nl": "Zitbanken aan bushaltes",
-        "es": "Bancos en una parada de transporte público",
-        "hu": "Padok megállókban",
-        "it": "Panchine alle fermate del trasporto pubblico",
-        "ru": "Скамейки на остановках общественного транспорта",
-        "zh_Hans": "在公交站点的长椅",
-        "nb_NO": "Benker",
-        "zh_Hant": "大眾運輸站點的長椅",
-        "pt_BR": "Bancos em pontos de transporte público",
-        "pl": "Ławki na przystankach komunikacji miejskiej",
-        "pt": "Bancos em pontos de transporte público"
-    },
-    "minzoom": 14,
-    "source": {
-        "osmTags": {
-            "or": [
-                "bench=yes",
-                "bench=stand_up_bench"
-            ]
-        }
-    },
-    "title": {
-        "render": {
-            "en": "Bench",
-            "de": "Sitzbank",
-            "fr": "Banc",
-            "nl": "Zitbank",
-            "es": "Banco",
-            "hu": "Pad",
-            "it": "Panchina",
-            "ru": "Скамейка",
-            "id": "Bangku",
-            "zh_Hans": "长椅",
-            "nb_NO": "Benk",
-            "zh_Hant": "長椅",
-            "pt_BR": "Banco",
-            "fi": "Penkki",
-            "pl": "Ławka",
-            "pt": "Banco"
-        },
-        "mappings": [
-            {
-                "if": {
-                    "or": [
-                        "public_transport=platform",
-                        "railway=platform",
-                        "highway=bus_stop"
-                    ]
-                },
-                "then": {
-                    "en": "Bench at public transport stop",
-                    "de": "Sitzbank bei Haltestelle",
-                    "fr": "Banc d'un arrêt de transport en commun",
-                    "nl": "Zitbank aan een bushalte",
-                    "hu": "Pad megállóban",
-                    "it": "Panchina alla fermata del trasporto pubblico",
-                    "ru": "Скамейка на остановке общественного транспорта",
-                    "zh_Hans": "在公交站点的长椅",
-                    "zh_Hant": "大眾運輸站點的長椅",
-                    "pt_BR": "Banco em ponto de transporte público",
-                    "pl": "Ławka na przystanku komunikacji miejskiej",
-                    "pt": "Banco em ponto de transporte público"
-                }
-            },
-            {
-                "if": {
-                    "and": [
-                        "amenity=shelter"
-                    ]
-                },
-                "then": {
-                    "en": "Bench in shelter",
-                    "de": "Sitzbank in Unterstand",
-                    "fr": "Banc dans un abri",
-                    "nl": "Zitbank in een schuilhokje",
-                    "hu": "Pad fedett helyen",
-                    "it": "Panchina in un riparo",
-                    "zh_Hans": "在庇护所的长椅",
-                    "ru": "Скамейка в укрытии",
-                    "zh_Hant": "涼亭內的長椅",
-                    "pt_BR": "Banco em abrigo",
-                    "pt": "Banco em abrigo"
-                }
-            }
-        ]
-    },
-    "tagRenderings": [
-        "images",
-        {
-            "render": {
-                "en": "{name}",
-                "de": "{name}",
-                "fr": "{name}",
-                "nl": "{name}",
-                "hu": "{name}",
-                "it": "{name}",
-                "ru": "{name}",
-                "id": "{name}",
-                "zh_Hans": "{name}",
-                "zh_Hant": "{name}",
-                "pt_BR": "{name}",
-                "fi": "{name}",
-                "pl": "{name}",
-                "pt": "{name}",
-                "eo": "{name}"
-            },
-            "freeform": {
-                "key": "name"
-            },
-            "id": "bench_at_pt-name"
-        },
-        {
-            "render": {
-                "en": "Stand up bench",
-                "de": "Stehbank",
-                "fr": "Banc assis debout",
-                "nl": "Leunbank",
-                "it": "Panca in piedi",
-                "zh_Hans": "站立长凳",
-                "ru": "Встаньте на скамейке",
-                "zh_Hant": "站立長椅"
-            },
-            "freeform": {
-                "key": "bench",
-                "addExtraTags": []
-            },
-            "condition": {
-                "and": [
-                    "bench=stand_up_bench"
-                ]
-            },
-            "id": "bench_at_pt-bench"
-        }
-    ],
-    "icon": {
-        "render": "./assets/themes/benches/bench_public_transport.svg"
-    },
-    "width": {
-        "render": "8"
-    },
-    "iconSize": {
-        "render": "35,35,center"
-    },
-    "color": {
-        "render": "#00f"
+  "id": "bench_at_pt",
+  "name": {
+    "en": "Benches at public transport stops",
+    "de": "Sitzbänke bei Haltestellen",
+    "fr": "Bancs des arrêts de transport en commun",
+    "nl": "Zitbanken aan bushaltes",
+    "es": "Bancos en una parada de transporte público",
+    "hu": "Padok megállókban",
+    "it": "Panchine alle fermate del trasporto pubblico",
+    "ru": "Скамейки на остановках общественного транспорта",
+    "zh_Hans": "在公交站点的长椅",
+    "nb_NO": "Benker",
+    "zh_Hant": "大眾運輸站點的長椅",
+    "pt_BR": "Bancos em pontos de transporte público",
+    "pl": "Ławki na przystankach komunikacji miejskiej",
+    "pt": "Bancos em pontos de transporte público"
+  },
+  "minzoom": 14,
+  "source": {
+    "osmTags": {
+      "or": [
+        "bench=yes",
+        "bench=stand_up_bench"
+      ]
     }
+  },
+  "title": {
+    "render": {
+      "en": "Bench",
+      "de": "Sitzbank",
+      "fr": "Banc",
+      "nl": "Zitbank",
+      "es": "Banco",
+      "hu": "Pad",
+      "it": "Panchina",
+      "ru": "Скамейка",
+      "id": "Bangku",
+      "zh_Hans": "长椅",
+      "nb_NO": "Benk",
+      "zh_Hant": "長椅",
+      "pt_BR": "Banco",
+      "fi": "Penkki",
+      "pl": "Ławka",
+      "pt": "Banco"
+    },
+    "mappings": [
+      {
+        "if": {
+          "or": [
+            "public_transport=platform",
+            "railway=platform",
+            "highway=bus_stop"
+          ]
+        },
+        "then": {
+          "en": "Bench at public transport stop",
+          "de": "Sitzbank bei Haltestelle",
+          "fr": "Banc d'un arrêt de transport en commun",
+          "nl": "Zitbank aan een bushalte",
+          "hu": "Pad megállóban",
+          "it": "Panchina alla fermata del trasporto pubblico",
+          "ru": "Скамейка на остановке общественного транспорта",
+          "zh_Hans": "在公交站点的长椅",
+          "zh_Hant": "大眾運輸站點的長椅",
+          "pt_BR": "Banco em ponto de transporte público",
+          "pl": "Ławka na przystanku komunikacji miejskiej",
+          "pt": "Banco em ponto de transporte público"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "amenity=shelter"
+          ]
+        },
+        "then": {
+          "en": "Bench in shelter",
+          "de": "Sitzbank in Unterstand",
+          "fr": "Banc dans un abri",
+          "nl": "Zitbank in een schuilhokje",
+          "hu": "Pad fedett helyen",
+          "it": "Panchina in un riparo",
+          "zh_Hans": "在庇护所的长椅",
+          "ru": "Скамейка в укрытии",
+          "zh_Hant": "涼亭內的長椅",
+          "pt_BR": "Banco em abrigo",
+          "pt": "Banco em abrigo"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "render": {
+        "en": "{name}",
+        "de": "{name}",
+        "fr": "{name}",
+        "nl": "{name}",
+        "hu": "{name}",
+        "it": "{name}",
+        "ru": "{name}",
+        "id": "{name}",
+        "zh_Hans": "{name}",
+        "zh_Hant": "{name}",
+        "pt_BR": "{name}",
+        "fi": "{name}",
+        "pl": "{name}",
+        "pt": "{name}",
+        "eo": "{name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "bench_at_pt-name"
+    },
+    {
+      "id": "bench_at_pt-bench_type",
+      "question": {
+        "en": "What kind of bench is this?",
+        "nl": "Wat voor soort bank is dit?"
+      },
+      "mappings": [
+        {
+          "if": "bench=yes",
+          "then": {
+            "en": "There is a normal, sit-down bench here"
+          }
+        },
+        {
+          "if": "bench=stand_up_bench",
+          "then": {
+            "en": "Stand up bench",
+            "de": "Stehbank",
+            "fr": "Banc assis debout",
+            "nl": "Leunbank",
+            "it": "Panca in piedi",
+            "zh_Hans": "站立长凳",
+            "ru": "Встаньте на скамейке",
+            "zh_Hant": "站立長椅"
+          }
+        },
+        {
+          "if": "bench=no",
+          "then": {
+            "en": "There is no bench here"
+          }
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/benches/bench_public_transport.svg"
+      },
+      "iconSize": {
+        "render": "35,35,center"
+      },
+      "location": [
+        "point"
+      ]
+    },
+    {
+      "color": {
+        "render": "#00f"
+      },
+      "width": {
+        "render": "8"
+      }
+    }
+  ]
 }

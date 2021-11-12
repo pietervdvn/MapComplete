@@ -6,13 +6,15 @@ Some highlights of new releases.
 0.10
 ----
 
-The 0.10 version contains a lot of refactorings on various core of the application, namely in the rendering stack, the fetching of data and uploading.
+The 0.10 version contains a lot of refactorings on various core of the application, namely in the rendering stack, the
+fetching of data and uploading.
 
 Some highlights are:
 
 1. The addition of fallback overpass servers
 2. Fetching data from OSM directly (especially useful in the personal theme)
-3. Splitting all the features per tile (with a maximum amount of features per tile, splitting further if needed), making everything a ton faster
+3. Splitting all the features per tile (with a maximum amount of features per tile, splitting further if needed), making
+   everything a ton faster
 4. If a tile has too much features, the featuers are not shown. Instead, a rectangle with the feature amount is shown.
 
 Furthermore, it contains a few new themes and theme updates:
@@ -31,9 +33,8 @@ Other various small improvements:
 0.8 and 0.9
 -----------
 
-Addition of filters per layer
-Addition of a download-as-pdf for select themes
-Addition of a download-as-geojson and download-as-csv for select themes
+Addition of filters per layer Addition of a download-as-pdf for select themes Addition of a download-as-geojson and
+download-as-csv for select themes
 
 ...
 

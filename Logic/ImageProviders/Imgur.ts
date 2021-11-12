@@ -7,10 +7,9 @@ import {LicenseInfo} from "./LicenseInfo";
 
 export class Imgur extends ImageProvider {
 
-    public static readonly defaultValuePrefix = ["https://i.imgur.com"] 
-    public readonly defaultKeyPrefixes: string[] = ["image"];
-
+    public static readonly defaultValuePrefix = ["https://i.imgur.com"]
     public static readonly singleton = new Imgur();
+    public readonly defaultKeyPrefixes: string[] = ["image"];
 
     private constructor() {
         super();
@@ -89,6 +88,17 @@ export class Imgur extends ImageProvider {
         return undefined;
     }
 
+    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+        if (Imgur.defaultValuePrefix.some(prefix => value.startsWith(prefix))) {
+            return [Promise.resolve({
+                url: value,
+                key: key,
+                provider: this
+            })]
+        }
+        return []
+    }
+
     protected DownloadAttribution: (url: string) => Promise<LicenseInfo> = async (url: string) => {
         const hash = url.substr("https://i.imgur.com/".length).split(".jpg")[0];
 
@@ -112,16 +122,5 @@ export class Imgur extends ImageProvider {
         return licenseInfo
     }
 
-    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        if (Imgur.defaultValuePrefix.some(prefix => value.startsWith(prefix))) {
-            return [Promise.resolve({
-                url: value,
-                key: key,
-                provider: this
-            })]
-        }
-        return []
-    }
 
-  
 }

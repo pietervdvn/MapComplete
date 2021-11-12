@@ -1,10 +1,8 @@
 import T from "./TestHelper";
-import State from "../State";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import SelectedElementTagsUpdater from "../Logic/Actors/SelectedElementTagsUpdater";
 import UserRelatedState from "../Logic/State/UserRelatedState";
 import {Utils} from "../Utils";
-import ScriptUtils from "../scripts/ScriptUtils";
 import SelectedFeatureHandler from "../Logic/Actors/SelectedFeatureHandler";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {ElementStorage} from "../Logic/ElementStorage";
@@ -113,14 +111,14 @@ export default class ActorsSpec extends T {
                     lon: 0,
                     zoom: 0
                 })
-                
-                
+
+
                 loc.addCallback(_ => {
                     T.equals("node/5568693115", selected.data.properties.id)
                     T.equals(14, loc.data.zoom)
-                    T.equals( 51.2179199, loc.data.lat)
+                    T.equals(51.2179199, loc.data.lat)
                 })
-                
+
                 new SelectedFeatureHandler(hash, {
                     selectedElement: selected,
                     allElements: new ElementStorage(),
@@ -128,9 +126,7 @@ export default class ActorsSpec extends T {
                     locationControl: loc,
                     layoutToUse: undefined
                 })
-                
-                
-                
+
 
             }]
 

@@ -113,8 +113,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         let data: any = undefined
         let date: Date = undefined
         let lastUsed = 0;
-        
-        
+
 
         const layersToDownload = []
         for (const layer of this.state.layoutToUse.layers) {
@@ -137,7 +136,7 @@ export default class OverpassFeatureSource implements FeatureSource {
 
         const self = this;
         const overpassUrls = self.state.overpassUrl.data
-        let bounds : BBox 
+        let bounds: BBox
         do {
             try {
 
@@ -180,9 +179,9 @@ export default class OverpassFeatureSource implements FeatureSource {
             }
         } while (data === undefined && this._isActive.data);
 
-        
+
         try {
-            if(data === undefined){
+            if (data === undefined) {
                 return undefined
             }
             data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date, undefined));

@@ -78,7 +78,7 @@
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Restaurants and fast food' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "designated"
     },
     {
@@ -304,6 +304,26 @@
       "key": "reusable_packaging:accept",
       "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "only"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=yes with a fixed text, namely 'There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=limited with a fixed text, namely 'There are a few domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=ask with a fixed text, namely 'There are no sockets available indoors to customers, but charging might be possible if the staff is asked' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "ask"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=no with a fixed text, namely 'There are a no domestic sockets available to customers seated indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "no"
     },
     {
       "key": "dog",

@@ -10,7 +10,8 @@
     "ja": "ベンチ",
     "zh_Hant": "長椅",
     "nb_NO": "Benker",
-    "pt_BR": "Bancadas"
+    "pt_BR": "Bancadas",
+    "id": "Bangku"
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -44,7 +45,8 @@
     "ja",
     "zh_Hant",
     "nb_NO",
-    "pt_BR"
+    "pt_BR",
+    "id"
   ],
   "maintainer": "Florian Edelmann",
   "icon": "./assets/themes/benches/bench_poi.svg",

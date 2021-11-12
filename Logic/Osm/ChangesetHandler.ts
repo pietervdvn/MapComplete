@@ -53,61 +53,6 @@ export class ChangesetHandler {
         }
     }
 
-    private handleIdRewrite(node: any, type: string): [string, string] {
-        const oldId = parseInt(node.attributes.old_id.value);
-        if (node.attributes.new_id === undefined) {
-            // We just removed this point!
-            const element = this.allElements.getEventSourceById("node/" + oldId);
-            element.data._deleted = "yes"
-            element.ping();
-            return;
-        }
-
-        const newId = parseInt(node.attributes.new_id.value);
-        const result: [string, string] = [type + "/" + oldId, type + "/" + newId]
-        if (!(oldId !== undefined && newId !== undefined &&
-            !isNaN(oldId) && !isNaN(newId))) {
-            return undefined;
-        }
-        if (oldId == newId) {
-            return undefined;
-        }
-        console.log("Rewriting id: ", type + "/" + oldId, "-->", type + "/" + newId);
-        const element = this.allElements.getEventSourceById("node/" + oldId);
-        if(element === undefined){
-            // Element to rewrite not found, probably a node or relation that is not rendered
-            return undefined
-        }
-        element.data.id = type + "/" + newId;
-        this.allElements.addElementById(type + "/" + newId, element);
-        this.allElements.ContainingFeatures.set(type + "/" + newId, this.allElements.ContainingFeatures.get(type + "/" + oldId))
-        element.ping();
-        return result;
-    }
-
-    private parseUploadChangesetResponse(response: XMLDocument): void {
-        const nodes = response.getElementsByTagName("node");
-        const mappings = new Map<string, string>()
-        // @ts-ignore
-        for (const node of nodes) {
-            const mapping = this.handleIdRewrite(node, "node")
-            if (mapping !== undefined) {
-                mappings.set(mapping[0], mapping[1])
-            }
-        }
-
-        const ways = response.getElementsByTagName("way");
-        // @ts-ignore
-        for (const way of ways) {
-            const mapping = this.handleIdRewrite(way, "way")
-            if (mapping !== undefined) {
-                mappings.set(mapping[0], mapping[1])
-            }
-        }
-        this.changes.registerIdRewrites(mappings)
-
-    }
-
     /**
      * The full logic to upload a change to one or more elements.
      *
@@ -133,6 +78,7 @@ export class ChangesetHandler {
         }
         if (this._dryRun) {
             const changesetXML = generateChangeXML(123456);
+            console.log("Metatags are", extraMetaTags)
             console.log(changesetXML);
             return;
         }
@@ -191,7 +137,7 @@ export class ChangesetHandler {
                         // The old value is overwritten, thus we drop
                     }
                 }
-                
+
                 await this.UpdateTags(csId, extraMetaTags.map(csTag => <[string, string]>[csTag.key, csTag.value]))
 
 
@@ -207,6 +153,60 @@ export class ChangesetHandler {
         }
     }
 
+    private handleIdRewrite(node: any, type: string): [string, string] {
+        const oldId = parseInt(node.attributes.old_id.value);
+        if (node.attributes.new_id === undefined) {
+            // We just removed this point!
+            const element = this.allElements.getEventSourceById("node/" + oldId);
+            element.data._deleted = "yes"
+            element.ping();
+            return;
+        }
+
+        const newId = parseInt(node.attributes.new_id.value);
+        const result: [string, string] = [type + "/" + oldId, type + "/" + newId]
+        if (!(oldId !== undefined && newId !== undefined &&
+            !isNaN(oldId) && !isNaN(newId))) {
+            return undefined;
+        }
+        if (oldId == newId) {
+            return undefined;
+        }
+        console.log("Rewriting id: ", type + "/" + oldId, "-->", type + "/" + newId);
+        const element = this.allElements.getEventSourceById("node/" + oldId);
+        if (element === undefined) {
+            // Element to rewrite not found, probably a node or relation that is not rendered
+            return undefined
+        }
+        element.data.id = type + "/" + newId;
+        this.allElements.addElementById(type + "/" + newId, element);
+        this.allElements.ContainingFeatures.set(type + "/" + newId, this.allElements.ContainingFeatures.get(type + "/" + oldId))
+        element.ping();
+        return result;
+    }
+
+    private parseUploadChangesetResponse(response: XMLDocument): void {
+        const nodes = response.getElementsByTagName("node");
+        const mappings = new Map<string, string>()
+        // @ts-ignore
+        for (const node of nodes) {
+            const mapping = this.handleIdRewrite(node, "node")
+            if (mapping !== undefined) {
+                mappings.set(mapping[0], mapping[1])
+            }
+        }
+
+        const ways = response.getElementsByTagName("way");
+        // @ts-ignore
+        for (const way of ways) {
+            const mapping = this.handleIdRewrite(way, "way")
+            if (mapping !== undefined) {
+                mappings.set(mapping[0], mapping[1])
+            }
+        }
+        this.changes.registerIdRewrites(mappings)
+
+    }
 
     private async CloseChangeset(changesetId: number = undefined): Promise<void> {
         const self = this
@@ -287,7 +287,7 @@ export class ChangesetHandler {
                 ["language", Locale.language.data],
                 ["host", window.location.host],
                 ["path", path],
-                ["source", State.state.currentGPSLocation.data !== undefined ? "survey" : undefined],
+                ["source", State.state.currentUserLocation.features.data.length > 0 ? "survey" : undefined],
                 ["imagery", State.state.backgroundLayer.data.id],
                 ...changesetTags.map(cstag => [cstag.key, cstag.value])
             ]

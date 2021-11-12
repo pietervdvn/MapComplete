@@ -28,14 +28,15 @@ To develop and build MapComplete, you
 
 0. Make a fork and clone the repository.
 0. Install the nodejs version specified in [.tool-versions](./.tool-versions)
-   - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can then install node with `n install <node-version>`
-   - You can [use asdf to manage your runtime versions](https://asdf-vm.com/).
+    - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can
+      then install node with `n install <node-version>`
+    - You can [use asdf to manage your runtime versions](https://asdf-vm.com/).
 0. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install
    nodeJS: https://nodejs.org/en/download/
 0. On iOS, install `wget` (`brew install wget`)
 0. Run `npm run init` which …
-   - runs `npm install`
-   - generates some additional dependencies and files
+    - runs `npm install`
+    - generates some additional dependencies and files
 0. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
 0. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
@@ -106,7 +107,8 @@ Try removing `node_modules`, `package-lock.json` and `.cache`
 Misc setup
 ----------
 
-The json-git-merger is used to quickly merge translation files, [documentation here](https://github.com/jonatanpedersen/git-json-merge#single-project--directory)
+~~The json-git-merger is used to quickly merge translation files, [documentation here](https://github.com/jonatanpedersen/git-json-merge#single-project--directory).~~
+This merge driver is broken and would sometimes drop new questions or duplicate them... Not a good idea!
 
 Overview of package.json-scripts
 --------------------------------

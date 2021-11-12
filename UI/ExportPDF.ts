@@ -1,9 +1,6 @@
-
-
 import jsPDF from "jspdf";
-import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
 import {UIEventSource} from "../Logic/UIEventSource";
-import Minimap from "./Base/Minimap";
+import Minimap, {MinimapObj} from "./Base/Minimap";
 import Loc from "../Models/Loc";
 import BaseLayer from "../Models/BaseLayer";
 import {FixedUiElement} from "./Base/FixedUiElement";
@@ -14,7 +11,7 @@ import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import FeaturePipeline from "../Logic/FeatureSource/FeaturePipeline";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import {BBox} from "../Logic/BBox";
-import ShowOverlayLayer from "./ShowDataLayer/ShowOverlayLayer";
+
 /**
  * Creates screenshoter to take png screenshot
  * Creates jspdf and downloads it
@@ -63,14 +60,12 @@ export default class ExportPDF {
             location: new UIEventSource<Loc>(loc), // We remove the link between the old and the new UI-event source as moving the map while the export is running fucks up the screenshot
             background: options.background,
             allowMoving: false,
-
-
-            onFullyLoaded: leaflet => window.setTimeout(() => {
+            onFullyLoaded: _ => window.setTimeout(() => {
                 if (self._screenhotTaken) {
                     return;
                 }
                 try {
-                    self.CreatePdf(leaflet)
+                    self.CreatePdf(minimap)
                         .then(() => self.cleanup())
                         .catch(() => self.cleanup())
                 } catch (e) {
@@ -85,10 +80,10 @@ export default class ExportPDF {
         minimap.AttachTo(options.freeDivId)
 
         // Next: we prepare the features. Only fully contained features are shown
-        minimap.leafletMap .addCallbackAndRunD(leaflet => {
+        minimap.leafletMap.addCallbackAndRunD(leaflet => {
             const bounds = BBox.fromLeafletBounds(leaflet.getBounds().pad(0.2))
             options.features.GetTilesPerLayerWithin(bounds, tile => {
-                if(tile.layer.layerDef.minzoom > l.zoom){
+                if (tile.layer.layerDef.minzoom > l.zoom) {
                     return
                 }
                 new ShowDataLayer(
@@ -101,7 +96,7 @@ export default class ExportPDF {
                     }
                 )
             })
-            
+
         })
 
         State.state.AddAllOverlaysToMap(minimap.leafletMap)
@@ -112,20 +107,16 @@ export default class ExportPDF {
         this._screenhotTaken = true;
     }
 
-    private async CreatePdf(leaflet: L.Map) {
+    private async CreatePdf(minimap: MinimapObj) {
+
+
         console.log("PDF creation started")
         const t = Translations.t.general.pdf;
         const layout = this._layout
-        const screenshotter = new SimpleMapScreenshoter();
-        //minimap op index.html -> hidden daar alles op doen en dan weg
-        //minimap - leaflet map ophalen - boundaries ophalen - State.state.featurePipeline
-        screenshotter.addTo(leaflet);
-
 
         let doc = new jsPDF('landscape');
 
-
-        const image = (await screenshotter.takeScreen('image'))
+        const image = await minimap.TakeScreenshot()
         // @ts-ignore
         doc.addImage(image, 'PNG', 0, 0, this.mapW, this.mapH);
 

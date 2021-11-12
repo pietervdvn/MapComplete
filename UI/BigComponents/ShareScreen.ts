@@ -8,11 +8,14 @@ import Toggle from "../Input/Toggle";
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import MapState from "../../Logic/State/MapState";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import Loc from "../../Models/Loc";
+import BaseLayer from "../../Models/BaseLayer";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 export default class ShareScreen extends Combine {
 
-    constructor(state: MapState) {
+    constructor(state: { layoutToUse: LayoutConfig, locationControl: UIEventSource<Loc>, backgroundLayer: UIEventSource<BaseLayer>, filteredLayers: UIEventSource<FilteredLayer[]> }) {
         const layout = state?.layoutToUse;
         const tr = Translations.t.general.sharescreen;
 
@@ -59,40 +62,39 @@ export default class ShareScreen extends Combine {
         }
 
 
+        const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = state.backgroundLayer;
+        const currentBackground = new VariableUiElement(currentLayer.map(layer => {
+            return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""});
+        }));
+        const includeCurrentBackground = new Toggle(
+            new Combine([check(), currentBackground]),
+            new Combine([nocheck(), currentBackground]),
+            new UIEventSource<boolean>(true)
+        ).ToggleOnClick()
+        optionCheckboxes.push(includeCurrentBackground);
+        optionParts.push(includeCurrentBackground.isEnabled.map((includeBG) => {
+            if (includeBG) {
+                return "background=" + currentLayer.data.id
+            } else {
+                return null
+            }
+        }, [currentLayer]));
 
-            const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = state.backgroundLayer;
-            const currentBackground = new VariableUiElement(currentLayer.map(layer => {
-                return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""});
-            }));
-            const includeCurrentBackground = new Toggle(
-                new Combine([check(), currentBackground]),
-                new Combine([nocheck(), currentBackground]),
-                new UIEventSource<boolean>(true)
-            ).ToggleOnClick()
-            optionCheckboxes.push(includeCurrentBackground);
-            optionParts.push(includeCurrentBackground.isEnabled.map((includeBG) => {
-                if (includeBG) {
-                    return "background=" + currentLayer.data.id
-                } else {
-                    return null
-                }
-            }, [currentLayer]));
 
+        const includeLayerChoices = new Toggle(
+            new Combine([check(), tr.fsIncludeCurrentLayers.Clone()]),
+            new Combine([nocheck(), tr.fsIncludeCurrentLayers.Clone()]),
+            new UIEventSource<boolean>(true)
+        ).ToggleOnClick()
+        optionCheckboxes.push(includeLayerChoices);
 
-            const includeLayerChoices = new Toggle(
-                new Combine([check(), tr.fsIncludeCurrentLayers.Clone()]),
-                new Combine([nocheck(), tr.fsIncludeCurrentLayers.Clone()]),
-                new UIEventSource<boolean>(true)
-            ).ToggleOnClick()
-            optionCheckboxes.push(includeLayerChoices);
-
-            optionParts.push(includeLayerChoices.isEnabled.map((includeLayerSelection) => {
-                if (includeLayerSelection) {
-                    return Utils.NoNull(state.filteredLayers.data.map(fLayerToParam)).join("&")
-                } else {
-                    return null
-                }
-            }, state.filteredLayers.data.map((flayer) => flayer.isDisplayed)));
+        optionParts.push(includeLayerChoices.isEnabled.map((includeLayerSelection) => {
+            if (includeLayerSelection) {
+                return Utils.NoNull(state.filteredLayers.data.map(fLayerToParam)).join("&")
+            } else {
+                return null
+            }
+        }, state.filteredLayers.data.map((flayer) => flayer.isDisplayed)));
 
 
         const switches = [

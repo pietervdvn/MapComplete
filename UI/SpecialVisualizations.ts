@@ -20,7 +20,7 @@ import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import ImportButton from "./BigComponents/ImportButton";
+import {ImportButtonSpecialViz} from "./BigComponents/ImportButton";
 import {Tag} from "../Logic/Tags/Tag";
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
@@ -29,10 +29,20 @@ import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 import WikipediaBox from "./Wikipedia/WikipediaBox";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import MultiApply from "./Popup/MultiApply";
+import AllKnownLayers from "../Customizations/AllKnownLayers";
+import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
+import Link from "./Base/Link";
+import List from "./Base/List";
+import {SubtleButton} from "./Base/SubtleButton";
+import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
+import {And} from "../Logic/Tags/And";
+import Toggle from "./Input/Toggle";
+import {DefaultGuiState} from "./DefaultGuiState";
+import {GeoOperations} from "../Logic/GeoOperations";
 
 export interface SpecialVisualization {
     funcName: string,
-    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
+    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState, ) => BaseUIElement),
     docs: string,
     example?: string,
     args: { name: string, defaultValue?: string, doc: string }[]
@@ -40,6 +50,7 @@ export interface SpecialVisualization {
 
 export default class SpecialVisualizations {
 
+    static tagsToApplyHelpText = Utils.Special_visualizations_tagsToApplyHelpText
     public static specialVisualizations: SpecialVisualization[] =
         [
             {
@@ -49,7 +60,7 @@ export default class SpecialVisualizations {
                 constr: ((state: State, tags: UIEventSource<any>) => {
                     const calculatedTags = [].concat(
                         SimpleMetaTagger.lazyTags,
-                        ... state.layoutToUse.layers.map(l => l.calculatedTags?.map(c => c[0]) ?? []))
+                        ...state.layoutToUse.layers.map(l => l.calculatedTags?.map(c => c[0]) ?? []))
                     return new VariableUiElement(tags.map(tags => {
                         const parts = [];
                         for (const key in tags) {
@@ -57,20 +68,20 @@ export default class SpecialVisualizations {
                                 continue
                             }
                             let v = tags[key]
-                            if(v === ""){
+                            if (v === "") {
                                 v = "<b>empty string</b>"
                             }
                             parts.push([key, v ?? "<b>undefined</b>"]);
                         }
-                        
-                        for(const key of calculatedTags){
+
+                        for (const key of calculatedTags) {
                             const value = tags[key]
-                            if(value === undefined){
+                            if (value === undefined) {
                                 continue
                             }
-                            parts.push([ "<i>"+key+"</i>", value ])
+                            parts.push(["<i>" + key + "</i>", value])
                         }
-                        
+
                         return new Table(
                             ["key", "value"],
                             parts
@@ -88,7 +99,7 @@ export default class SpecialVisualizations {
                 }],
                 constr: (state: State, tags, args) => {
                     let imagePrefixes: string[] = undefined;
-                    if(args.length > 0){
+                    if (args.length > 0) {
                         imagePrefixes = [].concat(...args.map(a => a.split(",")));
                     }
                     return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags, imagePrefixes);
@@ -101,9 +112,9 @@ export default class SpecialVisualizations {
                     name: "image-key",
                     doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
                     defaultValue: "image"
-                },{
-                    name:"label",
-                    doc:"The text to show on the button",
+                }, {
+                    name: "label",
+                    doc: "The text to show on the button",
                     defaultValue: "Add image"
                 }],
                 constr: (state: State, tags, args) => {
@@ -125,17 +136,16 @@ export default class SpecialVisualizations {
                     new VariableUiElement(
                         tagsSource.map(tags => tags[args[0]])
                             .map(wikidata => {
-                                const wikidatas : string[] = 
+                                const wikidatas: string[] =
                                     Utils.NoEmpty(wikidata?.split(";")?.map(wd => wd.trim()) ?? [])
                                 return new WikipediaBox(wikidatas)
                             })
-                        
                     )
-                  
+
             },
             {
                 funcName: "minimap",
-                docs: "A small map showing the selected feature. Note that no styling is applied, wrap this in a div",
+                docs: "A small map showing the selected feature.",
                 args: [
                     {
                         doc: "The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close",
@@ -149,7 +159,7 @@ export default class SpecialVisualizations {
                     }
                 ],
                 example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
-                constr: (state, tagSource, args) => {
+                constr: (state, tagSource, args, defaultGuiState) => {
 
                     const keys = [...args]
                     keys.splice(0, 1)
@@ -163,6 +173,7 @@ export default class SpecialVisualizations {
                                 // This is a list of values
                                 idList = JSON.parse(value)
                             }
+
 
                             for (const id of idList) {
                                 features.push({
@@ -219,6 +230,53 @@ export default class SpecialVisualizations {
                 }
             },
             {
+                funcName: "sided_minimap",
+                docs: "A small map showing _only one side_ the selected feature. *This features requires to have linerenderings with offset* as only linerenderings with a postive or negative offset will be shown. Note: in most cases, this map will be automatically introduced",
+                args: [
+                    {
+                        doc: "The side to show, either `left` or `right`",
+                        name: "side",
+                    }
+                ],
+                example: "`{sided_minimap(left)}`",
+                constr: (state, tagSource, args) => {
+
+                    const properties = tagSource.data;
+                    const locationSource = new UIEventSource<Loc>({
+                        lat: Number(properties._lat),
+                        lon: Number(properties._lon),
+                        zoom: 18
+                    })
+                    const minimap = Minimap.createMiniMap(
+                        {
+                            background: state.backgroundLayer,
+                            location: locationSource,
+                            allowMoving: false
+                        }
+                    )
+                    const side = args[0]
+                    const feature = state.allElements.ContainingFeatures.get(tagSource.data.id)
+                    const copy = {...feature}
+                    copy.properties = {
+                        id: side
+                    }
+                    new ShowDataLayer(
+                        {
+                            leafletMap: minimap["leafletMap"],
+                            enablePopups: false,
+                            zoomToFeatures: true,
+                            layerToShow: AllKnownLayers.sharedLayers.get("left_right_style"),
+                            features: new StaticFeatureSource([copy], false),
+                            allElements: State.state.allElements
+                        }
+                    )
+
+
+                    minimap.SetStyle("overflow: hidden; pointer-events: none;")
+                    return minimap;
+                }
+            },
+            {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
                 example: "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
@@ -253,9 +311,18 @@ export default class SpecialVisualizations {
                     name: "key",
                     defaultValue: "opening_hours",
                     doc: "The tagkey from which the table is constructed."
+                }, {
+                    name: "prefix",
+                    defaultValue: "",
+                    doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__"
+                }, {
+                    name: "postfix",
+                    defaultValue: "",
+                    doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
                 }],
+                example: "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                 constr: (state: State, tagSource: UIEventSource<any>, args) => {
-                    return new OpeningHoursVisualization(tagSource, args[0])
+                    return new OpeningHoursVisualization(tagSource, args[0], args[1], args[2])
                 }
             },
             {
@@ -359,12 +426,7 @@ export default class SpecialVisualizations {
 
                             const title = state?.layoutToUse?.title?.txt ?? "MapComplete";
 
-                            let matchingLayer: LayerConfig = undefined;
-                            for (const layer of (state?.layoutToUse?.layers ?? [])) {
-                                if (layer.source.osmTags.matchesProperties(tagSource?.data)) {
-                                    matchingLayer = layer
-                                }
-                            }
+                            let matchingLayer: LayerConfig = state?.layoutToUse?.getMatchingLayer(tagSource?.data);
                             let name = matchingLayer?.title?.GetRenderValue(tagSource.data)?.txt ?? tagSource.data?.name ?? "POI";
                             if (name) {
                                 name = `${name} (${title})`
@@ -415,86 +477,25 @@ export default class SpecialVisualizations {
                     )
                 }
             },
+            new ImportButtonSpecialViz(),
             {
-                funcName: "import_button",
-                args: [
-                    {
-                        name: "tags",
-                        doc: "Tags to copy-specification. This contains one or more pairs (seperated by a `;`), e.g. `amenity=fast_food; addr:housenumber=$number`. This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. (Hint: prepare these values, e.g. with calculatedTags)"
-                    },
-                    {
-                        name: "text",
-                        doc: "The text to show on the button",
-                        defaultValue: "Import this data into OpenStreetMap"
-                    },
-                    {
-                        name: "icon",
-                        doc: "A nice icon to show in the button",
-                        defaultValue: "./assets/svg/addSmall.svg"
-                    },
-                    {name:"minzoom",
-                    doc: "How far the contributor must zoom in before being able to import the point",
-                    defaultValue: "18"}],
-                docs: `This button will copy the data from an external dataset into OpenStreetMap. It is only functional in official themes but can be tested in unofficial themes.
-
-If you want to import a dataset, make sure that:
-
-1. The dataset to import has a suitable license
-2. The community has been informed of the import
-3. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed
-
-There are also some technicalities in your theme to keep in mind:
-
-1. The new point will be added and will flow through the program as any other new point as if it came from OSM.
-    This means that there should be a layer which will match the new tags and which will display it.
-2. The original point from your geojson layer will gain the tag '_imported=yes'.
-    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
-3. There should be a way for the theme to detect previously imported points, even after reloading.
-    A reference number to the original dataset is an excellen way to do this    
-`,
-                constr: (state, tagSource, args) => {
-                    if (!state.layoutToUse.official && !state.featureSwitchIsTesting.data) {
-                        return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),
-                            new FixedUiElement("To test, add 'test=true' to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.")])
-                    }
-                    const tgsSpec = args[0].split(";").map(spec => {
-                        const kv = spec.split("=").map(s => s.trim());
-                        if (kv.length != 2) {
-                            throw "Invalid key spec: multiple '=' found in " + spec
-                        }
-                        return kv
-                    })
-                    const rewrittenTags: UIEventSource<Tag[]> = tagSource.map(tags => {
-                        const newTags: Tag [] = []
-                        for (const [key, value] of tgsSpec) {
-                            if (value.startsWith('$')) {
-                                const origKey = value.substring(1)
-                                newTags.push(new Tag(key, tags[origKey]))
-                            } else {
-                                newTags.push(new Tag(key, value))
-                            }
-                        }
-                        return newTags
-                    })
-                    const id = tagSource.data.id;
-                    const feature = state.allElements.ContainingFeatures.get(id)
-                    if (feature.geometry.type !== "Point") {
-                        return new FixedUiElement("Error: can only import point objects").SetClass("alert")
-                    }
-                    const [lon, lat] = feature.geometry.coordinates;
-                    return new ImportButton(
-                        args[2], args[1], tagSource, rewrittenTags, lat, lon, Number(args[3]), state
-                    )
-                }
-            },
-            {funcName: "multi_apply",
+                funcName: "multi_apply",
                 docs: "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags",
-                args:[
+                args: [
                     {name: "feature_ids", doc: "A JSOn-serialized list of IDs of features to apply the tagging on"},
-                    {name: "keys", doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features."                    },
+                    {
+                        name: "keys",
+                        doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features."
+                    },
                     {name: "text", doc: "The text to show on the button"},
-                    {name:"autoapply",doc:"A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown"},
-                    {name:"overwrite",doc:"If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change"}
+                    {
+                        name: "autoapply",
+                        doc: "A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown"
+                    },
+                    {
+                        name: "overwrite",
+                        doc: "If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change"
+                    }
                 ],
                 example: "{multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}",
                 constr: (state, tagsSource, args) => {
@@ -503,14 +504,14 @@ There are also some technicalities in your theme to keep in mind:
                     const text = args[2]
                     const autoapply = args[3]?.toLowerCase() === "true"
                     const overwrite = args[4]?.toLowerCase() === "true"
-                    const featureIds : UIEventSource<string[]> = tagsSource.map(tags => {
-                          const ids =  tags[featureIdsKey]
-                        try{
-                            if(ids === undefined){
+                    const featureIds: UIEventSource<string[]> = tagsSource.map(tags => {
+                        const ids = tags[featureIdsKey]
+                        try {
+                            if (ids === undefined) {
                                 return []
                             }
                             return JSON.parse(ids);
-                        }catch(e){
+                        } catch (e) {
                             console.warn("Could not parse ", ids, "as JSON to extract IDS which should be shown on the map.")
                             return []
                         }
@@ -526,14 +527,140 @@ There are also some technicalities in your theme to keep in mind:
                             state
                         }
                     );
-                
+
+                }
+            },
+            {
+                funcName: "tag_apply",
+                docs: "Shows a big button; clicking this button will apply certain tags onto the feature.\n\nThe first argument takes a specification of which tags to add.\n" + SpecialVisualizations.tagsToApplyHelpText,
+                args: [
+                    {
+                        name: "tags_to_apply",
+                        doc: "A specification of the tags to apply"
+                    },
+                    {
+                        name: "message",
+                        doc: "The text to show to the contributor"
+                    },
+                    {
+                        name: "image",
+                        doc: "An image to show to the contributor on the button"
+                    },
+                    {
+                        name: "id_of_object_to_apply_this_one",
+                        defaultValue: undefined,
+                        doc: "If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element"
+                    }
+                ],
+                example: "`{tag_apply(survey_date:=$_now:date, Surveyed today!)}`",
+                constr: (state, tags, args) => {
+                    const tagsToApply = SpecialVisualizations.generateTagsToApply(args[0], tags)
+                    const msg = args[1]
+                    let image = args[2]?.trim()
+                    if (image === "" || image === "undefined") {
+                        image = undefined
+                    }
+                    const targetIdKey = args[3]
+                    const t = Translations.t.general.apply_button
+
+                    const tagsExplanation = new VariableUiElement(tagsToApply.map(tagsToApply => {
+                            const tagsStr = tagsToApply.map(t => t.asHumanString(false, true)).join("&");
+                            let el: BaseUIElement = new FixedUiElement(tagsStr)
+                            if (targetIdKey !== undefined) {
+                                const targetId = tags.data[targetIdKey] ?? tags.data.id
+                                el = t.appliedOnAnotherObject.Subs({tags: tagsStr, id: targetId})
+                            }
+                            return el;
+                        }
+                    )).SetClass("subtle")
+
+                    const applied = new UIEventSource(false)
+                    const applyButton = new SubtleButton(image, new Combine([msg, tagsExplanation]).SetClass("flex flex-col"))
+                        .onClick(() => {
+                            const targetId = tags.data[targetIdKey] ?? tags.data.id
+                            const changeAction = new ChangeTagAction(targetId,
+                                new And(tagsToApply.data),
+                                tags.data, // We pass in the tags of the selected element, not the tags of the target element!
+                                {
+                                    theme: state.layoutToUse.id,
+                                    changeType: "answer"
+                                }
+                            )
+                            state.changes.applyAction(changeAction)
+                            applied.setData(true)
+                        })
+
+
+                    return new Toggle(
+                        new Toggle(
+                            t.isApplied.SetClass("thanks"),
+                            applyButton,
+                            applied
+                        )
+                        , undefined, state.osmConnection.isLoggedIn)
+                }
+            },
+            {
+                funcName: "export_as_gpx",
+                docs: "Exports the selected feature as GPX-file",
+                args: [],
+                constr: (state, tagSource, args) => {
+                    const t = Translations.t.general.download;
+                    
+                    return new SubtleButton(Svg.download_ui(), 
+                        new Combine([t.downloadGpx.SetClass("font-bold text-lg"),
+                            t.downloadGpxHelper.SetClass("subtle")]).SetClass("flex flex-col")
+                    ).onClick(() => {
+                        console.log("Exporting as GPX!")
+                        const tags = tagSource.data
+                        const feature = state.allElements.ContainingFeatures.get(tags.id)
+                        const matchingLayer = state?.layoutToUse?.getMatchingLayer(tags)
+                        const gpx = GeoOperations.AsGpx(feature, matchingLayer)
+                        const title = matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "gpx_track"
+                        Utils.offerContentsAsDownloadableFile(gpx, title+"_mapcomplete_export.gpx", {
+                            mimetype: "{gpx=application/gpx+xml}"
+                        })
+
+
+                    })
                 }
             }
         ]
 
-    static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
+    static generateTagsToApply(spec: string, tagSource: UIEventSource<any>): UIEventSource<Tag[]> {
 
-    private static GenHelpMessage() {
+        const tgsSpec = spec.split(";").map(spec => {
+            const kv = spec.split("=").map(s => s.trim());
+            if (kv.length != 2) {
+                throw "Invalid key spec: multiple '=' found in " + spec
+            }
+            return kv
+        })
+        return tagSource.map(tags => {
+            const newTags: Tag [] = []
+            for (const [key, value] of tgsSpec) {
+                if (value.indexOf('$') >= 0) {
+
+                    let parts = value.split("$")
+                    // THe first of the split won't start with a '$', so no substitution needed
+                    let actualValue = parts[0]
+                    parts.shift()
+
+                    for (const part of parts) {
+                        const [_, varName, leftOver] = part.match(/([a-zA-Z0-9_:]*)(.*)/)
+                        actualValue += (tags[varName] ?? "") + leftOver
+                    }
+                    newTags.push(new Tag(key, actualValue))
+                } else {
+                    newTags.push(new Tag(key, value))
+                }
+            }
+            return newTags
+        })
+
+    }
+
+    public static HelpMessage() {
 
         const helpTexts =
             SpecialVisualizations.specialVisualizations.map(viz => new Combine(
@@ -541,7 +668,13 @@ There are also some technicalities in your theme to keep in mind:
                     new Title(viz.funcName, 3),
                     viz.docs,
                     viz.args.length > 0 ? new Table(["name", "default", "description"],
-                        viz.args.map(arg => [arg.name, arg.defaultValue ?? "undefined", arg.doc])
+                        viz.args.map(arg => {
+                            let defaultArg = arg.defaultValue ?? "_undefined_"
+                            if (defaultArg == "") {
+                                defaultArg = "_empty string_"
+                            }
+                            return [arg.name, defaultArg, arg.doc];
+                        })
                     ) : undefined,
                     new Title("Example usage", 4),
                     new FixedUiElement(
@@ -552,12 +685,18 @@ There are also some technicalities in your theme to keep in mind:
             ));
 
 
+        const toc = new List(
+            SpecialVisualizations.specialVisualizations.map(viz => new Link(viz.funcName, "#" + viz.funcName))
+        )
+
         return new Combine([
                 new Title("Special tag renderings", 3),
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
-                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_fcs need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
+                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
+                toc,
                 ...helpTexts
             ]
-        );
+        ).SetClass("flex flex-col");
     }
+
 }

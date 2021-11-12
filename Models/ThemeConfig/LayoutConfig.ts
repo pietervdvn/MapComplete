@@ -1,7 +1,5 @@
 import {Translation} from "../../UI/i18n/Translation";
-import TagRenderingConfig from "./TagRenderingConfig";
 import {LayoutConfigJson} from "./Json/LayoutConfigJson";
-import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
@@ -25,7 +23,6 @@ export default class LayoutConfig {
     public readonly startLat: number;
     public readonly startLon: number;
     public readonly widenFactor: number;
-    public readonly roamingRenderings: TagRenderingConfig[];
     public readonly defaultBackgroundId?: string;
     public layers: LayerConfig[];
     public tileLayerSources: TilesourceConfig[]
@@ -55,7 +52,8 @@ export default class LayoutConfig {
     public readonly overpassMaxZoom: number
     public readonly osmApiTileSize: number
     public readonly official: boolean;
- 
+    public readonly trackAllNodes: boolean;
+
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
         this.id = json.id;
@@ -64,6 +62,8 @@ export default class LayoutConfig {
         this.credits = json.credits;
         this.version = json.version;
         this.language = [];
+        this.trackAllNodes = false
+
         if (typeof json.language === "string") {
             this.language = [json.language];
         } else {
@@ -87,61 +87,32 @@ export default class LayoutConfig {
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;
-        if(json.widenFactor <= 0){
-                throw "Widenfactor too small, shoud be > 0"
+        if (json.widenFactor <= 0) {
+            throw "Widenfactor too small, shoud be > 0"
         }
-        if(json.widenFactor > 20){
-            throw "Widenfactor is very big, use a value between 1 and 5 (current value is "+json.widenFactor+") at "+context
+        if (json.widenFactor > 20) {
+            throw "Widenfactor is very big, use a value between 1 and 5 (current value is " + json.widenFactor + ") at " + context
         }
+
         this.widenFactor = json.widenFactor ?? 1.5;
-        this.roamingRenderings = (json.roamingRenderings ?? []).map((tr, i) => {
-                if (typeof tr === "string") {
-                    if (SharedTagRenderings.SharedTagRendering.get(tr) !== undefined) {
-                        return SharedTagRenderings.SharedTagRendering.get(tr);
-                    }
-                }
-                return new TagRenderingConfig(tr, undefined, `${this.id}.roaming_renderings[${i}]`);
-            }
-        );
+
         this.defaultBackgroundId = json.defaultBackgroundId;
-        this.tileLayerSources = (json.tileLayerSources??[]).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
-        this.layers = LayoutConfig.ExtractLayers(json, official, context);
+        this.tileLayerSources = (json.tileLayerSources ?? []).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
+        const layerInfo = LayoutConfig.ExtractLayers(json, official, context);
+        this.layers = layerInfo.layers
+        this.trackAllNodes = layerInfo.extractAllNodes
 
-        // ALl the layers are constructed, let them share tagRenderings now!
-        const roaming: { r, source: LayerConfig }[] = []
-        for (const layer of this.layers) {
-            roaming.push({r: layer.GetRoamingRenderings(), source: layer});
-        }
-
-        for (const layer of this.layers) {
-            for (const r of roaming) {
-                if (r.source == layer) {
-                    continue;
-                }
-                layer.AddRoamingRenderings(r.r);
-            }
-        }
-
-        for (const layer of this.layers) {
-            layer.AddRoamingRenderings(
-                {
-                    titleIcons: [],
-                    iconOverlays: [],
-                    tagRenderings: this.roamingRenderings
-                }
-            );
-        }
 
         this.clustering = {
             maxZoom: 16,
             minNeededElements: 25,
         };
-        if(json.clustering === false){
+        if (json.clustering === false) {
             this.clustering = {
                 maxZoom: 0,
                 minNeededElements: 100000,
             };
-        }else         if (json.clustering) {
+        } else if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
                 minNeededElements: json.clustering.minNeededElements ?? 25,
@@ -153,7 +124,7 @@ export default class LayoutConfig {
         if (json.hideInOverview) {
             throw "The json for " + this.id + " contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
         }
-        this.lockLocation = <[[number, number], [number, number]]> json.lockLocation ?? undefined;
+        this.lockLocation = <[[number, number], [number, number]]>json.lockLocation ?? undefined;
         this.enableUserBadge = json.enableUserBadge ?? true;
         this.enableShareScreen = json.enableShareScreen ?? true;
         this.enableMoreQuests = json.enableMoreQuests ?? true;
@@ -168,10 +139,10 @@ export default class LayoutConfig {
         this.enableIframePopout = json.enableIframePopout ?? true
         this.customCss = json.customCss;
         this.overpassUrl = Constants.defaultOverpassUrls
-        if(json.overpassUrl !== undefined){
-            if(typeof json.overpassUrl === "string"){
+        if (json.overpassUrl !== undefined) {
+            if (typeof json.overpassUrl === "string") {
                 this.overpassUrl = [json.overpassUrl]
-            }else{
+            } else {
                 this.overpassUrl = json.overpassUrl
             }
         }
@@ -181,19 +152,24 @@ export default class LayoutConfig {
 
     }
 
-    private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): LayerConfig[] {
+    private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): { layers: LayerConfig[], extractAllNodes: boolean } {
         const result: LayerConfig[] = []
-
+        let exportAllNodes = false
         json.layers.forEach((layer, i) => {
+
             if (typeof layer === "string") {
                 if (AllKnownLayers.sharedLayersJson.get(layer) !== undefined) {
                     if (json.overrideAll !== undefined) {
-                        let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson[layer]));
+                        let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson.get(layer)));
                         const newLayer = new LayerConfig(Utils.Merge(json.overrideAll, lyr), `${json.id}+overrideAll.layers[${i}]`, official)
                         result.push(newLayer)
                         return
                     } else {
-                        result.push(AllKnownLayers.sharedLayers[layer])
+                        const shared = AllKnownLayers.sharedLayers.get(layer)
+                        if(shared === undefined){
+                            throw `Shared layer ${layer} not found (at ${context}.layers[${i}])`
+                        }
+                        result.push(shared)
                         return
                     }
                 } else {
@@ -207,16 +183,22 @@ export default class LayoutConfig {
                     layer = Utils.Merge(json.overrideAll, layer);
                 }
                 // @ts-ignore
-                const newLayer = new LayerConfig(layer, `${json.id}.layers[${i}]`, official)
-                result.push(newLayer)
+                result.push(new LayerConfig(layer, `${json.id}.layers[${i}]`, official))
                 return
             }
+
             // @ts-ignore
             let names = layer.builtin;
             if (typeof names === "string") {
                 names = [names]
             }
             names.forEach(name => {
+
+                if (name === "type_node") {
+                    // This is a very special layer which triggers special behaviour
+                    exportAllNodes = true;
+                }
+
                 const shared = AllKnownLayers.sharedLayersJson.get(name);
                 if (shared === undefined) {
                     throw `Unknown shared/builtin layer ${name} at ${context}.layers[${i}]. Available layers are ${Array.from(AllKnownLayers.sharedLayersJson.keys()).join(", ")}`;
@@ -225,15 +207,21 @@ export default class LayoutConfig {
                 if (json.overrideAll !== undefined) {
                     newLayer = Utils.Merge(json.overrideAll, newLayer);
                 }
-                // @ts-ignore
-                const layerConfig = new LayerConfig(newLayer, `${json.id}.layers[${i}]`, official)
-                result.push(layerConfig)
+                result.push(new LayerConfig(newLayer, `${json.id}.layers[${i}]`, official))
                 return
             })
 
         });
+        
+        // Some special layers which are always included by default
+        for (const defaultLayer of AllKnownLayers.added_by_default) {
+            if(result.some(l => l?.id === defaultLayer)){
+                continue; // Already added
+            }
+            result.push(AllKnownLayers.sharedLayers.get(defaultLayer))
+        }
 
-        return result
+        return {layers: result, extractAllNodes: exportAllNodes}
     }
 
     public CustomCodeSnippets(): string[] {
@@ -307,6 +295,22 @@ export default class LayoutConfig {
             originalJson = originalJson.replace(new RegExp(key, "g"), value)
         })
         return new LayoutConfig(JSON.parse(originalJson), false, "Layout rewriting")
+    }
+
+    public isLeftRightSensitive() {
+        return this.layers.some(l => l.isLeftRightSensitive())
+    }
+    
+    public getMatchingLayer(tags: any) : LayerConfig | undefined{
+        if(tags === undefined){
+            return undefined
+        }
+        for (const layer of this.layers) {
+            if (layer.source.osmTags.matchesProperties(tags)) {
+                return layer
+            }
+        }
+        return undefined
     }
 
 }

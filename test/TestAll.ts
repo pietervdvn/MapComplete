@@ -13,6 +13,7 @@ import TileFreshnessCalculatorSpec from "./TileFreshnessCalculator.spec";
 import WikidataSpecTest from "./Wikidata.spec.test";
 import ImageProviderSpec from "./ImageProvider.spec";
 import ActorsSpec from "./Actors.spec";
+import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
 
 
 ScriptUtils.fixUtils()
@@ -29,14 +30,15 @@ const allTests = [
     new TileFreshnessCalculatorSpec(),
     new WikidataSpecTest(),
     new ImageProviderSpec(),
-    new ActorsSpec()
+    new ActorsSpec(),
+    new ReplaceGeometrySpec()
 ]
 
 Utils.externalDownloadFunction = async (url) => {
     console.error("Fetching ", url, "blocked in tests, use Utils.injectJsonDownloadForTests")
     const data = await ScriptUtils.DownloadJSON(url)
     console.log("\n\n ----------- \nBLOCKED DATA\n Utils.injectJsonDownloadForTests(\n" +
-        "       ", JSON.stringify(url),", \n",
+        "       ", JSON.stringify(url), ", \n",
         "       ", JSON.stringify(data), "\n    )\n------------------\n\n")
     throw "Detected internet access for URL " + url + ", please inject it with Utils.injectJsonDownloadForTests"
 }
@@ -53,7 +55,7 @@ if (args.length > 0) {
 }
 
 if (testsToRun.length == 0) {
-    throw "No tests found. Try one of "+allTests.map(t => t.name).join(", ")
+    throw "No tests found. Try one of " + allTests.map(t => t.name).join(", ")
 }
 
 for (let i = 0; i < testsToRun.length; i++) {

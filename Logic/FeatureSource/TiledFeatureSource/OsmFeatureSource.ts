@@ -13,9 +13,10 @@ import {Or} from "../../Tags/Or";
 import {TagsFilter} from "../../Tags/TagsFilter";
 
 export default class OsmFeatureSource {
-    private readonly _backend: string;
-
     public readonly isRunning: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly downloadedTiles = new Set<number>()
+    public rawDataHandlers: ((osmJson: any, tileId: number) => void)[] = []
+    private readonly _backend: string;
     private readonly filteredLayers: UIEventSource<FilteredLayer[]>;
     private readonly handleTile: (fs: (FeatureSourceForLayer & Tiled)) => void;
     private isActive: UIEventSource<boolean>;
@@ -28,7 +29,6 @@ export default class OsmFeatureSource {
         },
         markTileVisited?: (tileId: number) => void
     };
-    public readonly downloadedTiles = new Set<number>()
     private readonly allowedTags: TagsFilter;
 
     constructor(options: {
@@ -52,13 +52,13 @@ export default class OsmFeatureSource {
             if (options.isActive?.data === false) {
                 return;
             }
-            
+
             neededTiles = neededTiles.filter(tile => !self.downloadedTiles.has(tile))
 
-            if(neededTiles.length == 0){
+            if (neededTiles.length == 0) {
                 return;
             }
-            
+
             self.isRunning.setData(true)
             try {
 
@@ -66,12 +66,12 @@ export default class OsmFeatureSource {
                     console.log("Tile download", Tiles.tile_from_index(neededTile).join("/"), "started")
                     self.downloadedTiles.add(neededTile)
                     self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {
-                        console.log("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded")
+                        console.debug("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded")
                     })
                 }
             } catch (e) {
                 console.error(e)
-            }finally {
+            } finally {
                 console.log("Done")
                 self.isRunning.setData(false)
             }
@@ -94,11 +94,11 @@ export default class OsmFeatureSource {
         try {
 
             console.log("Attempting to get tile", z, x, y, "from the osm api")
-            const osmXml = await Utils.download(url, {"accept": "application/xml"})
+            const osmJson = await Utils.downloadJson(url)
             try {
-                const parsed = new DOMParser().parseFromString(osmXml, "text/xml");
-                console.log("Got tile", z, x, y, "from the osm api")
-                const geojson = OsmToGeoJson.default(parsed,
+                console.debug("Got tile", z, x, y, "from the osm api")
+                this.rawDataHandlers.forEach(handler => handler(osmJson, Tiles.tile_index(z, x, y)))
+                const geojson = OsmToGeoJson.default(osmJson,
                     // @ts-ignore
                     {
                         flatProperties: true
@@ -108,10 +108,8 @@ export default class OsmFeatureSource {
                 // We only keep what is needed
 
                 geojson.features = geojson.features.filter(feature => this.allowedTags.matchesProperties(feature.properties))
-
                 geojson.features.forEach(f => f.properties["_backend"] = this._backend)
-                
-                console.log("Tile geojson:", z, x, y, "is", geojson)
+
                 const index = Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,
                     this.handleTile,

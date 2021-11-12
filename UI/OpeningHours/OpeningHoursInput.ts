@@ -23,11 +23,39 @@ export default class OpeningHoursInput extends InputElement<string> {
     private readonly _value: UIEventSource<string>;
     private readonly _element: BaseUIElement;
 
-    constructor(value: UIEventSource<string> = new UIEventSource<string>("")) {
+    constructor(value: UIEventSource<string> = new UIEventSource<string>(""), prefix = "", postfix = "") {
         super();
         this._value = value;
+        let valueWithoutPrefix = value
+        if (prefix !== "" && postfix !== "") {
 
-        const leftoverRules = value.map<string[]>(str => {
+            valueWithoutPrefix = value.map(str => {
+                if (str === undefined) {
+                    return undefined;
+                }
+                if (str === "") {
+                    return ""
+                }
+                if (str.startsWith(prefix) && str.endsWith(postfix)) {
+                    return str.substring(prefix.length, str.length - postfix.length)
+                }
+                return str
+            }, [], noPrefix => {
+                if (noPrefix === undefined) {
+                    return undefined;
+                }
+                if (noPrefix === "") {
+                    return ""
+                }
+                if (noPrefix.startsWith(prefix) && noPrefix.endsWith(postfix)) {
+                    return noPrefix
+                }
+
+                return prefix + noPrefix + postfix
+            })
+        }
+
+        const leftoverRules = valueWithoutPrefix.map<string[]>(str => {
             if (str === undefined) {
                 return []
             }
@@ -45,9 +73,9 @@ export default class OpeningHoursInput extends InputElement<string> {
             return leftOvers;
         })
         // Note: MUST be bound AFTER the leftover rules!
-        const rulesFromOhPicker = value.map(OH.Parse);
+        const rulesFromOhPicker = valueWithoutPrefix.map(OH.Parse);
 
-        const ph = value.map<string>(str => {
+        const ph = valueWithoutPrefix.map<string>(str => {
             if (str === undefined) {
                 return ""
             }
@@ -68,7 +96,7 @@ export default class OpeningHoursInput extends InputElement<string> {
                 ...leftoverRules.data,
                 ph.data
             ]
-            value.setData(Utils.NoEmpty(rules).join(";"));
+            valueWithoutPrefix.setData(Utils.NoEmpty(rules).join(";"));
         }
 
         rulesFromOhPicker.addCallback(update);

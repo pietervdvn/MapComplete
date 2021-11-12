@@ -1,120 +1,123 @@
 {
-    "id": "play_forest",
-    "name": {
-        "nl": "Speelbossen"
+  "id": "play_forest",
+  "name": {
+    "nl": "Speelbossen"
+  },
+  "minzoom": 13,
+  "source": {
+    "osmTags": {
+      "and": [
+        "playground=forest"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "nl": "Speelbos"
     },
-    "minzoom": 13,
-    "source": {
-        "osmTags": {
-            "and": [
-                "playground=forest"
-            ]
+    "mappings": [
+      {
+        "if": "name~Speelbos.*",
+        "then": {
+          "nl": "{name}"
         }
-    },
-    "title": {
-        "render": {
-            "nl": "Speelbos"
-        },
-        "mappings": [
-            {
-                "if": "name~Speelbos.*",
-                "then": {
-                    "nl": "{name}"
-                }
-            },
-            {
-                "if": "name~*",
-                "then": {
-                    "nl": "Speelbos {name}"
-                }
-            }
-        ]
-    },
-    "description": {
-        "nl": "Een speelbos is een vrij toegankelijke zone in een bos"
-    },
-    "tagRenderings": [
-        "images",
-        {
-            "question": "Wie beheert dit gebied?",
-            "render": "Dit gebied wordt beheerd door {operator}",
-            "freeform": {
-                "key": "operator"
-            },
-            "mappings": [
-                {
-                    "if": "operator~[aA][nN][bB]",
-                    "then": "Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>",
-                    "hideInAnswer": true
-                },
-                {
-                    "if": "operator=Agenstchap Natuur en Bos",
-                    "then": "Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>"
-                }
-            ],
-            "id": "play_forest-operator"
-        },
-        {
-            "id": "play_forest-opening_hours",
-            "question": "Wanneer is deze speelzone toegankelijk?",
-            "mappings": [
-                {
-                    "if": "opening_hours=08:00-22:00",
-                    "then": "Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00)"
-                },
-                {
-                    "if": "opening_hours=Jul-Aug 08:00-22:00",
-                    "then": "Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00"
-                }
-            ]
-        },
-        {
-            "question": "Wie kan men emailen indien er problemen zijn met de speelzone?",
-            "render": "De bevoegde dienst kan bereikt worden via {email}",
-            "freeform": {
-                "key": "email",
-                "type": "email"
-            },
-            "id": "play_forest-email"
-        },
-        {
-            "question": "Wie kan men bellen indien er problemen zijn met de speelzone?",
-            "render": "De bevoegde dienst kan getelefoneerd worden via {phone}",
-            "freeform": {
-                "key": "phone",
-                "type": "phone"
-            },
-            "id": "play_forest-phone"
-        },
-        "questions",
-        {
-            "id": "play_forest-reviews",
-            "render": "{reviews(name, play_forest)}"
+      },
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "Speelbos {name}"
         }
-    ],
-    "hideFromOverview": false,
-    "icon": {
-        "render": "./assets/layers/play_forest/icon.svg"
+      }
+    ]
+  },
+  "description": {
+    "nl": "Een speelbos is een vrij toegankelijke zone in een bos"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": "Wie beheert dit gebied?",
+      "render": "Dit gebied wordt beheerd door {operator}",
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": [
+        {
+          "if": "operator~[aA][nN][bB]",
+          "then": "Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>",
+          "hideInAnswer": true
+        },
+        {
+          "if": "operator=Agenstchap Natuur en Bos",
+          "then": "Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>"
+        }
+      ],
+      "id": "play_forest-operator"
     },
-    "width": {
-        "render": "2"
+    {
+      "id": "play_forest-opening_hours",
+      "question": "Wanneer is deze speelzone toegankelijk?",
+      "mappings": [
+        {
+          "if": "opening_hours=08:00-22:00",
+          "then": "Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00)"
+        },
+        {
+          "if": "opening_hours=Jul-Aug 08:00-22:00",
+          "then": "Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00"
+        }
+      ]
     },
-    "iconSize": {
+    {
+      "question": "Wie kan men emailen indien er problemen zijn met de speelzone?",
+      "render": "De bevoegde dienst kan bereikt worden via {email}",
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "id": "play_forest-email"
+    },
+    {
+      "question": "Wie kan men bellen indien er problemen zijn met de speelzone?",
+      "render": "De bevoegde dienst kan getelefoneerd worden via {phone}",
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "id": "play_forest-phone"
+    },
+    "questions",
+    {
+      "id": "play_forest-reviews",
+      "render": "{reviews(name, play_forest)}"
+    }
+  ],
+  "hideFromOverview": false,
+  "presets": [
+    {
+      "title": "Speelbos",
+      "tags": [
+        "leisure=playground",
+        "playground=forest",
+        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+      ],
+      "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de overeenkomstige borden.<br/><img src='./assets/layers/play_forest/icon.svg'/>"
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "./assets/layers/play_forest/icon.svg",
+      "iconSize": {
         "render": "40,40,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
     },
-    "color": {
-        "render": "#007055"
-    },
-    "presets": [
-        {
-            "title": "Speelbos",
-            "tags": [
-                "leisure=playground",
-                "playground=forest",
-                "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
-            ],
-            "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de overeenkomstige borden.<br/><img src='./assets/layers/play_forest/icon.svg'/>"
-        }
-    ],
-    "wayHandling": 2
+    {
+      "color": "#007055",
+      "width": "2"
+    }
+  ]
 }

@@ -1,0 +1,19 @@
+{
+  "id": "gps_location",
+  "description": "Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) returned by the browser.",
+  "minzoom": 0,
+  "source": {
+    "osmTags": "id=gps",
+    "maxCacheAge": 0
+  },
+  "mapRendering": [
+    {
+      "icon": "crosshair:#00f",
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

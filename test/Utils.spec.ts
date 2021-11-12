@@ -43,7 +43,7 @@ export default class UtilsSpec extends T {
             ["Sort object keys", () => {
                 const o = {
                     x: 'x',
-                    abc: {'x':'x','a':'a'},
+                    abc: {'x': 'x', 'a': 'a'},
                     def: 'def'
                 }
                 equal('{"x":"x","abc":{"x":"x","a":"a"},"def":"def"}', JSON.stringify(o))

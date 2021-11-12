@@ -6,6 +6,8 @@ import {ElementStorage} from "../ElementStorage";
 import {Changes} from "../Osm/Changes";
 import {OsmObject} from "../Osm/OsmObject";
 import {OsmConnection} from "../Osm/OsmConnection";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import SimpleMetaTagger from "../SimpleMetaTagger";
 
 export default class SelectedElementTagsUpdater {
 
@@ -14,13 +16,14 @@ export default class SelectedElementTagsUpdater {
         "changeset",
         "user",
         "uid",
-        "id"]                                         )
+        "id"])
 
     constructor(state: {
         selectedElement: UIEventSource<any>,
         allElements: ElementStorage,
         changes: Changes,
-        osmConnection: OsmConnection
+        osmConnection: OsmConnection,
+        layoutToUse: LayoutConfig
     }) {
 
 
@@ -37,7 +40,8 @@ export default class SelectedElementTagsUpdater {
         selectedElement: UIEventSource<any>,
         allElements: ElementStorage,
         changes: Changes,
-        osmConnection: OsmConnection
+        osmConnection: OsmConnection,
+        layoutToUse: LayoutConfig
     }) {
 
 
@@ -70,10 +74,17 @@ export default class SelectedElementTagsUpdater {
                                   selectedElement: UIEventSource<any>,
                                   allElements: ElementStorage,
                                   changes: Changes,
-                                  osmConnection: OsmConnection
+                                  osmConnection: OsmConnection,
+                                  layoutToUse: LayoutConfig
                               }, latestTags: any, id: string
     ) {
         try {
+
+            const leftRightSensitive = state.layoutToUse.isLeftRightSensitive()
+
+            if (leftRightSensitive) {
+                SimpleMetaTagger.removeBothTagging(latestTags)
+            }
 
             const pendingChanges = state.changes.pendingChanges.data
                 .filter(change => change.type + "/" + change.id === id)
@@ -91,6 +102,7 @@ export default class SelectedElementTagsUpdater {
                     }
                 }
             }
+
 
             // With the changes applied, we merge them onto the upstream object
             let somethingChanged = false;
@@ -115,7 +127,7 @@ export default class SelectedElementTagsUpdater {
                 if (currentKey.startsWith("_")) {
                     continue
                 }
-                if(this.metatags.has(currentKey)){
+                if (this.metatags.has(currentKey)) {
                     continue
                 }
                 if (currentKey in latestTags) {

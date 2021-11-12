@@ -1,144 +1,143 @@
 {
-    "artwork": {
-        "description": "Diversas piezas de obras de arte",
-        "name": "Obras de arte",
-        "presets": {
-            "0": {
-                "title": "Obra de arte"
-            }
-        },
-        "tagRenderings": {
-            "artwork-artwork_type": {
-                "question": "Cuál es el tipo de esta obra de arte?",
-                "render": "Esta es un {artwork_type}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Obra de arte <i>{nombre}</i>"
-                }
-            },
-            "render": "Obra de arte"
-        }
+  "artwork": {
+    "description": "Diversas piezas de obras de arte",
+    "name": "Obras de arte",
+    "presets": {
+      "0": {
+        "title": "Obra de arte"
+      }
     },
-    "bench": {
-        "name": "Bancos",
-        "presets": {
-            "0": {
-                "title": "banco"
-            }
-        },
-        "tagRenderings": {
-            "bench-backrest": {
-                "mappings": {
-                    "0": {
-                        "then": "Respaldo: Si"
-                    },
-                    "1": {
-                        "then": "Respaldo: No"
-                    }
-                },
-                "question": "¿Este banco tiene un respaldo?",
-                "render": "Respaldo"
-            },
-            "bench-material": {
-                "mappings": {
-                    "0": {
-                        "then": "Material: madera"
-                    },
-                    "1": {
-                        "then": "Material: metal"
-                    },
-                    "2": {
-                        "then": "Material: piedra"
-                    },
-                    "3": {
-                        "then": "Material: concreto"
-                    },
-                    "4": {
-                        "then": "Material: plastico"
-                    },
-                    "5": {
-                        "then": "Material: acero"
-                    }
-                },
-                "render": "Material: {material}"
-            },
-            "bench-seats": {
-                "question": "¿Cuántos asientos tiene este banco?",
-                "render": "{seats} asientos"
-            }
-        },
-        "title": {
-            "render": "Banco"
-        }
+    "tagRenderings": {
+      "artwork-artwork_type": {
+        "question": "Cuál es el tipo de esta obra de arte?",
+        "render": "Esta es un {artwork_type}"
+      }
     },
-    "bench_at_pt": {
-        "name": "Bancos en una parada de transporte público",
-        "title": {
-            "render": "Banco"
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Obra de arte <i>{nombre}</i>"
         }
-    },
-    "defibrillator": {
-        "name": "Desfibriladores",
-        "presets": {
-            "0": {
-                "title": "Desfibrilador"
-            }
-        },
-        "tagRenderings": {
-            "defibrillator-access": {
-                "mappings": {
-                    "0": {
-                        "then": "Acceso libre"
-                    },
-                    "1": {
-                        "then": "Publicament accesible"
-                    },
-                    "2": {
-                        "then": "Sólo accesible a clientes"
-                    },
-                    "3": {
-                        "then": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)"
-                    }
-                },
-                "question": "¿Está el desfibrilador accesible libremente?",
-                "render": "El acceso es {access}"
-            },
-            "defibrillator-defibrillator:location": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)"
-            },
-            "defibrillator-defibrillator:location:en": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)"
-            },
-            "defibrillator-defibrillator:location:fr": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
-            },
-            "defibrillator-indoors": {
-                "mappings": {
-                    "0": {
-                        "then": "Este desfibrilador está en interior"
-                    },
-                    "1": {
-                        "then": "Este desfibrilador está en exterior"
-                    }
-                },
-                "question": "¿Esté el desfibrilador en interior?"
-            },
-            "defibrillator-level": {
-                "question": "¿En qué planta se encuentra el defibrilador localizado?",
-                "render": "El desfibrilador se encuentra en la planta {level}"
-            }
-        },
-        "title": {
-            "render": "Desfibrilador"
-        }
-    },
-    "ghost_bike": {
-        "name": "Bicicleta blanca",
-        "title": {
-            "render": "Bicicleta blanca"
-        }
+      },
+      "render": "Obra de arte"
     }
+  },
+  "bench": {
+    "name": "Bancos",
+    "presets": {
+      "0": {
+        "title": "banco"
+      }
+    },
+    "tagRenderings": {
+      "bench-backrest": {
+        "mappings": {
+          "0": {
+            "then": "Respaldo: Si"
+          },
+          "1": {
+            "then": "Respaldo: No"
+          }
+        },
+        "question": "¿Este banco tiene un respaldo?"
+      },
+      "bench-material": {
+        "mappings": {
+          "0": {
+            "then": "Material: madera"
+          },
+          "1": {
+            "then": "Material: metal"
+          },
+          "2": {
+            "then": "Material: piedra"
+          },
+          "3": {
+            "then": "Material: concreto"
+          },
+          "4": {
+            "then": "Material: plastico"
+          },
+          "5": {
+            "then": "Material: acero"
+          }
+        },
+        "render": "Material: {material}"
+      },
+      "bench-seats": {
+        "question": "¿Cuántos asientos tiene este banco?",
+        "render": "{seats} asientos"
+      }
+    },
+    "title": {
+      "render": "Banco"
+    }
+  },
+  "bench_at_pt": {
+    "name": "Bancos en una parada de transporte público",
+    "title": {
+      "render": "Banco"
+    }
+  },
+  "defibrillator": {
+    "name": "Desfibriladores",
+    "presets": {
+      "0": {
+        "title": "Desfibrilador"
+      }
+    },
+    "tagRenderings": {
+      "defibrillator-access": {
+        "mappings": {
+          "0": {
+            "then": "Acceso libre"
+          },
+          "1": {
+            "then": "Publicament accesible"
+          },
+          "2": {
+            "then": "Sólo accesible a clientes"
+          },
+          "3": {
+            "then": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)"
+          }
+        },
+        "question": "¿Está el desfibrilador accesible libremente?",
+        "render": "El acceso es {access}"
+      },
+      "defibrillator-defibrillator:location": {
+        "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)"
+      },
+      "defibrillator-defibrillator:location:en": {
+        "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)"
+      },
+      "defibrillator-defibrillator:location:fr": {
+        "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
+      },
+      "defibrillator-indoors": {
+        "mappings": {
+          "0": {
+            "then": "Este desfibrilador está en interior"
+          },
+          "1": {
+            "then": "Este desfibrilador está en exterior"
+          }
+        },
+        "question": "¿Esté el desfibrilador en interior?"
+      },
+      "defibrillator-level": {
+        "question": "¿En qué planta se encuentra el defibrilador localizado?",
+        "render": "El desfibrilador se encuentra en la planta {level}"
+      }
+    },
+    "title": {
+      "render": "Desfibrilador"
+    }
+  },
+  "ghost_bike": {
+    "name": "Bicicleta blanca",
+    "title": {
+      "render": "Bicicleta blanca"
+    }
+  }
 }

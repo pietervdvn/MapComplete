@@ -21,8 +21,13 @@ export default class SplitRoadWizard extends Toggle {
     private static splitLayerStyling = new LayerConfig({
         id: "splitpositions",
         source: {osmTags: "_cutposition=yes"},
-        icon: {render: "circle:white;./assets/svg/scissors.svg"},
-        iconSize: {render: "30,30,center"},
+        mapRendering: [
+            {
+                location: ["point", "centroid"],
+                icon: {render: "circle:white;./assets/svg/scissors.svg"},
+                iconSize: {render: "30,30,center"}
+            }
+        ],
     }, "(BUILTIN) SplitRoadWizard.ts", true)
 
     public dialogIsOpened: UIEventSource<boolean>
@@ -61,7 +66,7 @@ export default class SplitRoadWizard extends Toggle {
         miniMap.installBounds(BBox.get(roadElement).pad(0.25), false)
 
         // Define how a cut is displayed on the map
-        
+
         // Datalayer displaying the road and the cut points (if any)
         new ShowDataLayer({
             features: new StaticFeatureSource(splitPoints, true),
@@ -90,7 +95,7 @@ export default class SplitRoadWizard extends Toggle {
             const points = splitPoints.data.map((f, i) => [f.feature, i])
                 .filter(p => GeoOperations.distanceBetween(p[0].geometry.coordinates, coordinates) * 1000 < 5)
                 .map(p => p[1])
-                .sort()
+                .sort((a, b) => a - b)
                 .reverse()
             if (points.length > 0) {
                 for (const point of points) {

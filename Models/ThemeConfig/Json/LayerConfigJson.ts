@@ -4,6 +4,8 @@ import FilterConfigJson from "./FilterConfigJson";
 import {DeleteConfigJson} from "./DeleteConfigJson";
 import UnitConfigJson from "./UnitConfigJson";
 import MoveConfigJson from "./MoveConfigJson";
+import PointRenderingConfigJson from "./PointRenderingConfigJson";
+import LineRenderingConfigJson from "./LineRenderingConfigJson";
 
 /**
  * Configuration for a single layer
@@ -62,14 +64,14 @@ export interface LayerConfigJson {
      * NOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
      *  While still supported, this is considered deprecated
      */
-    source: ({ osmTags: AndOrTagConfigJson | string, overpassScript?: string  } |
+    source: ({ osmTags: AndOrTagConfigJson | string, overpassScript?: string } |
         { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean, mercatorCrs?: boolean }) & ({
         /**
          * The maximum amount of seconds that a tile is allowed to linger in the cache
          */
         maxCacheAge?: number
     })
-    
+
     /**
      *
      * A list of extra tags to calculate, specified as "keyToAssignTo=javascript-expression".
@@ -91,8 +93,8 @@ export interface LayerConfigJson {
 
     /**
      * This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
-     * This is useful to hide certain features from view. 
-     * 
+     * This is useful to hide certain features from view.
+     *
      * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
      * This implies that it is not possible to hide a feature after a tagging change
      *
@@ -126,72 +128,8 @@ export interface LayerConfigJson {
      */
     titleIcons?: (string | TagRenderingConfigJson)[];
 
-    /**
-     * The icon for an element.
-     * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
-     *
-     * The result of the icon is rendered as follows:
-     * the resulting string is interpreted as a _list_ of items, separated by ";". The bottommost layer is the first layer.
-     * As a result, on could use a generic pin, then overlay it with a specific icon.
-     * To make things even more practical, one can use all SVG's from the folder "assets/svg" and _substitute the color_ in it.
-     * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
-     *
-     */
-    icon?: string | TagRenderingConfigJson;
 
-    /**
-     * IconsOverlays are a list of extra icons/badges to overlay over the icon.
-     * The 'badge'-toggle changes their behaviour.
-     * If badge is set, it will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
-     * If badges is false, it'll be a simple overlay
-     *
-     * Note: strings are interpreted as icons, so layering and substituting is supported
-     */
-    iconOverlays?: { if: string | AndOrTagConfigJson, then: string | TagRenderingConfigJson, badge?: boolean }[]
-
-    /**
-     * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ...
-     * Default is '40,40,center'
-     */
-    iconSize?: string | TagRenderingConfigJson;
-    /**
-     * The rotation of an icon, useful for e.g. directions.
-     * Usage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
-     */
-    rotation?: string | TagRenderingConfigJson;
-    /**
-     * A HTML-fragment that is shown below the icon, for example:
-     * <div style="background: white; display: block">{name}</div>
-     *
-     * If the icon is undefined, then the label is shown in the center of the feature.
-     * Note that, if the wayhandling hides the icon then no label is shown as well.
-     */
-    label?: string | TagRenderingConfigJson;
-
-    /**
-     * The color for way-elements and SVG-elements.
-     * If the value starts with "--", the style of the body element will be queried for the corresponding variable instead
-     */
-    color?: string | TagRenderingConfigJson;
-    /**
-     * The stroke-width for way-elements
-     */
-    width?: string | TagRenderingConfigJson;
-
-    /**
-     * A dasharray, e.g. "5 6"
-     * The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap',
-     * Default value: "" (empty string == full line)
-     */
-    dashArray?: string | TagRenderingConfigJson
-
-    /**
-     * Wayhandling: should a way/area be displayed as:
-     * 0) The way itself
-     * 1) Only the centerpoint
-     * 2) The centerpoint and the way
-     */
-    wayHandling?: number;
+    mapRendering: (PointRenderingConfigJson | LineRenderingConfigJson)[]
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.
@@ -265,8 +203,17 @@ export interface LayerConfigJson {
      *
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
      *
+     * At last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.
+     * This is mainly create questions for a 'left' and a 'right' side of the road.
+     * These will be grouped and questions will be asked together
      */
-    tagRenderings?: (string | {builtin: string, override: any} | TagRenderingConfigJson) [],
+    tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson | {
+        rewrite: {
+            sourceString: string,
+            into: string[]
+        }[],
+        renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[]
+    }) [],
 
 
     /**
@@ -324,15 +271,15 @@ export interface LayerConfigJson {
 
     /**
      * Indicates if a point can be moved and configures the modalities.
-     * 
+     *
      * A feature can be moved by MapComplete if:
-     * 
+     *
      * - It is a point
      * - The point is _not_ part of a way or a a relation.
-     * 
+     *
      * Off by default. Can be enabled by setting this flag or by configuring.
      */
-    allowMove?: boolean | MoveConfigJson 
+    allowMove?: boolean | MoveConfigJson
 
     /**
      * IF set, a 'split this road' button is shown

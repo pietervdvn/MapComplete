@@ -264,7 +264,7 @@ export default class DeleteWizard extends Toggle {
                 ]
 
 
-            }, undefined, "Delete wizard"
+            }, "Delete wizard"
         )
     }
 

@@ -8,6 +8,7 @@ import {Utils} from "../Utils";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
 import BaseUIElement from "./BaseUIElement";
+import {DefaultGuiState} from "./DefaultGuiState";
 
 export class SubstitutedTranslation extends VariableUiElement {
 
@@ -49,7 +50,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                         }
                         const viz = proto.special;
                         try {
-                            return viz.func.constr(State.state, tagsSource, proto.special.args).SetStyle(proto.special.style);
+                            return viz.func.constr(State.state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
                         } catch (e) {
                             console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
                             return new FixedUiElement(`Could not generate special rendering for ${viz.func}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")
@@ -61,7 +62,6 @@ export class SubstitutedTranslation extends VariableUiElement {
 
         this.SetClass("w-full")
     }
-
 
     public static ExtractSpecialComponents(template: string, extraMappings: SpecialVisualization[] = []): {
         fixed?: string,
@@ -85,7 +85,9 @@ export class SubstitutedTranslation extends VariableUiElement {
                 const partAfter = SubstitutedTranslation.ExtractSpecialComponents(matched[4], extraMappings);
                 const args = knownSpecial.args.map(arg => arg.defaultValue ?? "");
                 if (argument.length > 0) {
-                    const realArgs = argument.split(",").map(str => str.trim());
+                    const realArgs = argument.split(",").map(str => str.trim()
+                        .replace(/&LPARENS/g, '(')
+                        .replace(/&RPARENS/g, ')'));
                     for (let i = 0; i < realArgs.length; i++) {
                         if (args.length <= i) {
                             args.push(realArgs[i]);

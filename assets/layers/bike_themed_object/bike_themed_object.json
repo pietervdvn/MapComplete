@@ -1,73 +1,82 @@
 {
-    "id": "bike_themed_object",
-    "name": {
-        "en": "Bike related object",
-        "nl": "Fietsgerelateerd object",
-        "fr": "Objet cycliste",
-        "de": "Mit Fahrrad zusammenhängendes Objekt",
-        "it": "Oggetto relativo alle bici"
+  "id": "bike_themed_object",
+  "name": {
+    "en": "Bike related object",
+    "nl": "Fietsgerelateerd object",
+    "fr": "Objet cycliste",
+    "de": "Mit Fahrrad zusammenhängendes Objekt",
+    "it": "Oggetto relativo alle bici"
+  },
+  "minzoom": 13,
+  "source": {
+    "osmTags": {
+      "or": [
+        "theme=bicycle",
+        "theme=cycling",
+        "sport=cycling",
+        "association=cycling",
+        "association=bicycle",
+        "ngo=cycling",
+        "ngo=bicycle",
+        "club=bicycle",
+        "club=cycling"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Bike related object",
+      "nl": "Fietsgerelateerd object",
+      "fr": "Objet cycliste",
+      "de": "Mit Fahrrad zusammenhängendes Objekt",
+      "it": "Oggetto relativo alle bici"
     },
-    "minzoom": 13,
-    "source": {
-        "osmTags": {
-            "or": [
-                "theme=bicycle",
-                "theme=cycling",
-                "sport=cycling",
-                "association=cycling",
-                "association=bicycle",
-                "ngo=cycling",
-                "ngo=bicycle",
-                "club=bicycle",
-                "club=cycling"
-            ]
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "<i>{name}</i>"
+      },
+      {
+        "if": "leisure=track",
+        "then": {
+          "nl": "Wielerpiste",
+          "en": "Cycle track",
+          "fr": "Piste cyclable",
+          "it": "Pista ciclabile",
+          "de": "Radweg"
         }
-    },
-    "title": {
-        "render": {
-            "en": "Bike related object",
-            "nl": "Fietsgerelateerd object",
-            "fr": "Objet cycliste",
-            "de": "Mit Fahrrad zusammenhängendes Objekt",
-            "it": "Oggetto relativo alle bici"
-        },
-        "mappings": [
-            {
-                "if": "name~*",
-                "then": "<i>{name}</i>"
-            },
-            {
-                "if": "leisure=track",
-                "then": {
-                    "nl": "Wielerpiste",
-                    "en": "Cycle track",
-                    "fr": "Piste cyclable",
-                    "it": "Pista ciclabile",
-                    "de": "Radweg"
-                }
-            }
-        ]
-    },
-    "tagRenderings": [
-        "images",
-        "description",
-        "website",
-        "email",
-        "phone",
-        "opening_hours"
-    ],
-    "icon": {
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    "description",
+    "website",
+    "email",
+    "phone",
+    "opening_hours"
+  ],
+  "presets": [],
+  "mapRendering": [
+    {
+      "icon": {
         "render": "./assets/layers/bike_themed_object/other_services.svg"
-    },
-    "width": {
-        "render": "2"
-    },
-    "iconSize": {
+      },
+      "iconSize": {
         "render": "50,50,bottom"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
     },
-    "color": {
+    {
+      "color": {
         "render": "#AB76D5"
-    },
-    "presets": [],
-    "wayHandling": 2
+      },
+      "width": {
+        "render": "2"
+      }
+    }
+  ]
 }

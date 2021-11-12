@@ -61,25 +61,6 @@
       "value": "no"
     },
     {
-      "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Drinking water' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&service:bicycle:cleaning:charge="
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "yes"
-    },
-    {
       "key": "leisure",
       "description": "The MapComplete theme De Natuur in has a layer Vogelkijkhutten showing features with this tag",
       "value": "bird_hide"
@@ -190,25 +171,6 @@
       "value": "Agentschap Natuur en Bos"
     },
     {
-      "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Vogelkijkhutten' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Vogelkijkhutten' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&service:bicycle:cleaning:charge="
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Vogelkijkhutten' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Vogelkijkhutten' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "yes"
-    },
-    {
       "key": "tourism",
       "description": "The MapComplete theme De Natuur in has a layer Maps showing features with this tag",
       "value": "map"
@@ -274,25 +236,6 @@
       "value": "no"
     },
     {
-      "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Maps' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&service:bicycle:cleaning:charge="
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "yes"
-    },
-    {
       "key": "information",
       "description": "The MapComplete theme De Natuur in has a layer Information boards showing features with this tag",
       "value": "board"
@@ -312,25 +255,6 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Information boards' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Information boards' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&service:bicycle:cleaning:charge="
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Information boards' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Information boards' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "yes"
     },
     {
       "key": "leisure",
@@ -505,25 +429,6 @@
       "key": "wikidata",
       "description": "Layer 'Natuurgebied' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key wikidata.",
       "value": ""
-    },
-    {
-      "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Natuurgebied' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&service:bicycle:cleaning:charge="
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Natuurgebied' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "no&"
-    },
-    {
-      "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Natuurgebied' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
-      "value": "yes"
     }
   ]
 }

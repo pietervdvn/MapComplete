@@ -1,4 +1,11 @@
 {
+  "defaultIcons": ["phonelink",
+    "emaillink",
+    "wikipedialink",
+    "osmlink",
+    "sharelink"
+  ],
+  
   "wikipedialink": {
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>",
     "condition": {

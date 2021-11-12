@@ -5,8 +5,10 @@ import Loc from "../../Models/Loc";
 export interface AvailableBaseLayersObj {
     readonly osmCarto: BaseLayer;
     layerOverview: BaseLayer[];
-    AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> 
-    SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> ;
+
+    AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]>
+
+    SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer>;
 
 }
 
@@ -15,13 +17,13 @@ export interface AvailableBaseLayersObj {
  * Changes the basemap
  */
 export default class AvailableBaseLayers {
-    
-    
+
+
     public static layerOverview: BaseLayer[];
     public static osmCarto: BaseLayer;
 
     private static implementation: AvailableBaseLayersObj
-    
+
     static AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
         return AvailableBaseLayers.implementation?.AvailableLayersAt(location) ?? new UIEventSource<BaseLayer[]>([]);
     }
@@ -31,7 +33,7 @@ export default class AvailableBaseLayers {
 
     }
 
-    public static implement(backend: AvailableBaseLayersObj){
+    public static implement(backend: AvailableBaseLayersObj) {
         AvailableBaseLayers.layerOverview = backend.layerOverview
         AvailableBaseLayers.osmCarto = backend.osmCarto
         AvailableBaseLayers.implementation = backend

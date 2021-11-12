@@ -9,8 +9,8 @@ export default class Wikimedia {
      * @param continueParameter: if the page indicates that more pages should be loaded, this uses a token to continue. Provided by wikimedia
      */
     public static async GetCategoryContents(categoryName: string,
-                                             maxLoad = 10,
-                                             continueParameter: string = undefined): Promise<string[]> {
+                                            maxLoad = 10,
+                                            continueParameter: string = undefined): Promise<string[]> {
         if (categoryName === undefined || categoryName === null || categoryName === "") {
             return [];
         }

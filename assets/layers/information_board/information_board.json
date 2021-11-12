@@ -1,72 +1,81 @@
 {
-    "id": "information_board",
-    "name": {
-        "nl": "Informatieborden",
-        "en": "Information boards",
-        "it": "Pannelli informativi",
-        "fr": "Panneaux d'informations",
-        "de": "Informationstafeln",
-        "ru": "Информационные щиты"
-    },
-    "minzoom": 12,
-    "source": {
-        "osmTags": {
-            "and": [
-                "information=board"
-            ]
-        }
-    },
-    "title": {
-        "render": {
-            "nl": "Informatiebord",
-            "en": "Information board",
-            "it": "Pannello informativo",
-            "fr": "Panneau d'informations",
-            "de": "Informationstafel",
-            "ru": "Информационный щит"
-        }
-    },
-    "tagRenderings": [
-        "images"
-    ],
-    "icon": {
-        "render": "./assets/layers/information_board/board.svg"
-    },
-    "iconSize": {
-        "render": "40,40,center"
-    },
-    "color": {
-        "render": "#00f"
-    },
-    "presets": [
-        {
-            "tags": [
-                "tourism=information",
-                "information=board"
-            ],
-            "title": {
-                "nl": "informatiebord",
-                "en": "information board",
-                "it": "pannello informativo",
-                "fr": "panneau d'informations",
-                "de": "informationstafel",
-                "ru": "информационный щит"
-            }
-        }
-    ],
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "disused:tourism:=information",
-                "tourism=",
-                "razed:information=board",
-                "information="
-            ]
-        },
-        "neededChangesets": 1
-    },
-    "allowMove": {
-        "enableRelocation": false,
-        "enableImproveAccuraccy": true
+  "id": "information_board",
+  "name": {
+    "nl": "Informatieborden",
+    "en": "Information boards",
+    "it": "Pannelli informativi",
+    "fr": "Panneaux d'informations",
+    "de": "Informationstafeln",
+    "ru": "Информационные щиты"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "and": [
+        "information=board"
+      ]
     }
+  },
+  "title": {
+    "render": {
+      "nl": "Informatiebord",
+      "en": "Information board",
+      "it": "Pannello informativo",
+      "fr": "Panneau d'informations",
+      "de": "Informationstafel",
+      "ru": "Информационный щит"
+    }
+  },
+  "tagRenderings": [
+    "images"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "tourism=information",
+        "information=board"
+      ],
+      "title": {
+        "nl": "informatiebord",
+        "en": "information board",
+        "it": "pannello informativo",
+        "fr": "panneau d'informations",
+        "de": "informationstafel",
+        "ru": "информационный щит"
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:tourism:=information",
+        "tourism=",
+        "razed:information=board",
+        "information="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
+  },
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/layers/information_board/board.svg"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "location": [
+        "point"
+      ]
+    },
+    {
+      "color": {
+        "render": "#00f"
+      }
+    }
+  ]
 }

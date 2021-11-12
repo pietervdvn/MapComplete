@@ -103,7 +103,7 @@
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Cafés and pubs' shows wheelchair=designated with a fixed text, namely 'This place is specially adapated for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "description": "Layer 'Cafés and pubs' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "designated"
     },
     {
@@ -119,6 +119,26 @@
     {
       "key": "wheelchair",
       "description": "Layer 'Cafés and pubs' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "no"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Cafés and pubs' shows service:electricity=yes with a fixed text, namely 'There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Cafés and pubs' shows service:electricity=limited with a fixed text, namely 'There are a few domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "limited"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Cafés and pubs' shows service:electricity=ask with a fixed text, namely 'There are no sockets available indoors to customers, but charging might be possible if the staff is asked' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "ask"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Cafés and pubs' shows service:electricity=no with a fixed text, namely 'There are a no domestic sockets available to customers seated indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "no"
     },
     {

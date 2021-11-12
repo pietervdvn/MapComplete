@@ -26,7 +26,7 @@ export default class SimpleMetaTagger {
                 "_last_edit:changeset",
                 "_last_edit:timestamp",
                 "_version_number",
-            "_backend"],
+                "_backend"],
             doc: "Information about the last edit of this object."
         },
         (feature) => {/*Note: also called by 'UpdateTagsFromOsmAPI'*/
@@ -49,6 +49,7 @@ export default class SimpleMetaTagger {
             return true;
         }
     )
+
     private static latlon = new SimpleMetaTagger({
             keys: ["_lat", "_lon"],
             doc: "The latitude and longitude of the point (or centerpoint in the case of a way/area)"
@@ -67,16 +68,32 @@ export default class SimpleMetaTagger {
     private static layerInfo = new SimpleMetaTagger(
         {
             doc: "The layer-id to which this feature belongs. Note that this might be return any applicable if `passAllFeatures` is defined.",
-            keys:["_layer"],
+            keys: ["_layer"],
             includesDates: false,
         },
         (feature, freshness, layer) => {
-            if(feature.properties._layer === layer.id){
+            if (feature.properties._layer === layer.id) {
                 return false;
             }
             feature.properties._layer = layer.id
             return true;
         }
+    )
+    private static noBothButLeftRight = new SimpleMetaTagger(
+        {
+            keys: ["sidewalk:left", "sidewalk:right", "generic_key:left:property", "generic_key:right:property"],
+            doc: "Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' and 'generic_key:right:property' (and similar for sidewalk tagging). Note that this rewritten tags _will be reuploaded on a change_. To prevent to much unrelated retagging, this is only enabled if the layer has at least some lineRenderings with offset defined",
+            includesDates: false,
+            cleanupRetagger: true
+        },
+        ((feature, state, layer) => {
+
+            if (!layer.lineRendering.some(lr => lr.leftRightSensitive)) {
+                return;
+            }
+
+            return SimpleMetaTagger.removeBothTagging(feature.properties)
+        })
     )
     private static surfaceArea = new SimpleMetaTagger(
         {
@@ -85,12 +102,12 @@ export default class SimpleMetaTagger {
             isLazy: true
         },
         (feature => {
-            
+
             Object.defineProperty(feature.properties, "_surface", {
                 enumerable: false,
                 configurable: true,
                 get: () => {
-                    const sqMeters = ""+ GeoOperations.surfaceAreaInSqMeters(feature);
+                    const sqMeters = "" + GeoOperations.surfaceAreaInSqMeters(feature);
                     delete feature.properties["_surface"]
                     feature.properties["_surface"] = sqMeters;
                     return sqMeters
@@ -108,7 +125,7 @@ export default class SimpleMetaTagger {
                     return sqMetersHa
                 }
             })
-            
+
             return true;
         })
     );
@@ -219,8 +236,8 @@ export default class SimpleMetaTagger {
                 // isOpen is irrelevant
                 return false
             }
-            
-            Object.defineProperty(feature.properties, "_isOpen",{
+
+            Object.defineProperty(feature.properties, "_isOpen", {
                 enumerable: false,
                 configurable: true,
                 get: () => {
@@ -247,7 +264,7 @@ export default class SimpleMetaTagger {
 
                                 if (oldNextChange > (new Date()).getTime() &&
                                     tags["_isOpen:oldvalue"] === tags["opening_hours"]
-                                && tags["_isOpen"] !== undefined) {
+                                    && tags["_isOpen"] !== undefined) {
                                     // Already calculated and should not yet be triggered
                                     return false;
                                 }
@@ -354,35 +371,115 @@ export default class SimpleMetaTagger {
         SimpleMetaTagger.isOpen,
         SimpleMetaTagger.directionSimplified,
         SimpleMetaTagger.currentTime,
-        SimpleMetaTagger.objectMetaInfo
+        SimpleMetaTagger.objectMetaInfo,
+        SimpleMetaTagger.noBothButLeftRight
 
     ];
-    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTagger.metatags.filter(tagger => tagger.isLazy)
-        .map(tagger => tagger.keys));
-
     public readonly keys: string[];
     public readonly doc: string;
     public readonly isLazy: boolean;
     public readonly includesDates: boolean
     public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date, layer: LayerConfig) => boolean;
+
+    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTagger.metatags.filter(tagger => tagger.isLazy)
+        .map(tagger => tagger.keys));
     
     /***
      * A function that adds some extra data to a feature
      * @param docs: what does this extra data do?
      * @param f: apply the changes. Returns true if something changed
      */
-    constructor(docs: { keys: string[], doc: string, includesDates?: boolean, isLazy?: boolean },
+    constructor(docs: { keys: string[], doc: string, includesDates?: boolean, isLazy?: boolean, cleanupRetagger?: boolean },
                 f: ((feature: any, freshness: Date, layer: LayerConfig) => boolean)) {
         this.keys = docs.keys;
         this.doc = docs.doc;
         this.isLazy = docs.isLazy
         this.applyMetaTagsOnFeature = f;
         this.includesDates = docs.includesDates ?? false;
-        for (const key of docs.keys) {
-            if (!key.startsWith('_') && key.toLowerCase().indexOf("theme") < 0) {
-                throw `Incorrect metakey ${key}: it should start with underscore (_)`
+        if (!docs.cleanupRetagger) {
+            for (const key of docs.keys) {
+                if (!key.startsWith('_') && key.toLowerCase().indexOf("theme") < 0) {
+                    throw `Incorrect metakey ${key}: it should start with underscore (_)`
+                }
             }
         }
+    }
+
+    /**
+     * Edits the given object to rewrite 'both'-tagging into a 'left-right' tagging scheme.
+     * These changes are performed in-place.
+     *
+     * Returns 'true' is at least one change has been made
+     * @param tags
+     */
+    public static removeBothTagging(tags: any): boolean {
+        let somethingChanged = false
+
+        /**
+         * Sets the key onto the properties (but doesn't overwrite if already existing)
+         */
+        function set(k, value) {
+            if (tags[k] === undefined || tags[k] === "") {
+                tags[k] = value
+                somethingChanged = true
+            }
+        }
+
+        if (tags["sidewalk"]) {
+
+            const v = tags["sidewalk"]
+            switch (v) {
+                case "none":
+                case "no":
+                    set("sidewalk:left", "no");
+                    set("sidewalk:right", "no");
+                    break
+                case "both":
+                    set("sidewalk:left", "yes");
+                    set("sidewalk:right", "yes");
+                    break;
+                case "left":
+                    set("sidewalk:left", "yes");
+                    set("sidewalk:right", "no");
+                    break;
+                case "right":
+                    set("sidewalk:left", "no");
+                    set("sidewalk:right", "yes");
+                    break;
+                default:
+                    set("sidewalk:left", v);
+                    set("sidewalk:right", v);
+                    break;
+            }
+            delete tags["sidewalk"]
+            somethingChanged = true
+        }
+
+
+        const regex = /\([^:]*\):both:\(.*\)/
+        for (const key in tags) {
+            const v = tags[key]
+            if (key.endsWith(":both")) {
+                const strippedKey = key.substring(0, key.length - ":both".length)
+                set(strippedKey + ":left", v)
+                set(strippedKey + ":right", v)
+                delete tags[key]
+                continue
+            }
+
+            const match = key.match(regex)
+            if (match !== null) {
+                const strippedKey = match[1]
+                const property = match[1]
+                set(strippedKey + ":left:" + property, v)
+                set(strippedKey + ":right:" + property, v)
+                console.log("Left-right rewritten " + key)
+                delete tags[key]
+            }
+        }
+
+
+        return somethingChanged
     }
 
     public static HelpText(): BaseUIElement {

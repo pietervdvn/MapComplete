@@ -45,6 +45,9 @@ export default abstract class BaseUIElement {
      * Adds all the relevant classes, space separated
      */
     public SetClass(clss: string) {
+        if (clss == undefined) {
+            return
+        }
         const all = clss.split(" ").map(clsName => clsName.trim());
         let recordedChange = false;
         for (let c of all) {
@@ -158,7 +161,7 @@ export default abstract class BaseUIElement {
     }
 
     public AsMarkdown(): string {
-        throw "AsMarkdown is not implemented by " + this.constructor.name
+        throw "AsMarkdown is not implemented by " + this.constructor.name+"; implement it in the subclass"
     }
 
     protected abstract InnerConstructElement(): HTMLElement;

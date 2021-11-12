@@ -10,7 +10,7 @@ export default class Img extends BaseUIElement {
         fallbackImage?: string
     }) {
         super();
-        if(src === undefined || src === "undefined"){
+        if (src === undefined || src === "undefined") {
             throw "Undefined src for image"
         }
         this._src = src;
@@ -44,7 +44,7 @@ export default class Img extends BaseUIElement {
         }
         el.onerror = () => {
             if (self._options?.fallbackImage) {
-                if(el.src === self._options.fallbackImage){
+                if (el.src === self._options.fallbackImage) {
                     // Sigh... nothing to be done anymore
                     return;
                 }

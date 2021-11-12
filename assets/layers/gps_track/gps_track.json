@@ -1,0 +1,28 @@
+{
+  "id": "gps_track",
+  "description": "Meta layer showing the previou locations of the user. Add this to your theme and override the icon to change the appearance of the current location.",
+  "minzoom": 0,
+  "source": {
+    "osmTags": "user:location=yes",
+    "maxCacheAge": 0
+  },
+  "#title": {
+    "render": "Your travelled path"
+  },
+  "tagRenderings": [
+    {
+      "id": "Privacy notice",
+      "render": {
+        "en": "This is the path you've travelled since this website is opened. Don't worry - this is only visible to you and no one else. Your location data is never sent off-device."
+      }
+    },
+    "export_as_gpx"
+  ],
+  "#name": "Your track",
+  "mapRendering": [
+    {
+      "width": 0,
+      "color": "#bb000077"
+    }
+  ]
+}

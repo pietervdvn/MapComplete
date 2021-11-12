@@ -11,16 +11,13 @@ Currently, they are:
 When the data enters from Overpass or from the OSM-API, they are first distributed per layer:
 
 OVERPASS | ---PerLayerFeatureSource---> FeatureSourceForLayer[]
-OSM      |
+OSM |
 
 The GeoJSon files (not tiled) are then added to this list
 
 A single FeatureSourcePerLayer is then further handled by splitting it into a tile hierarchy.
 
-
-
 In order to keep thins snappy, they are distributed over a tiled database per layer.
-
 
 ## Notes
 

@@ -34,6 +34,38 @@ export class Translation extends BaseUIElement {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
     }
 
+    static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
+        const allTranslations: { context: string, tr: Translation }[] = []
+        for (const key in object) {
+            const v = object[key]
+            if (v === undefined || v === null) {
+                continue
+            }
+            if (v instanceof Translation) {
+                allTranslations.push({context: context + "." + key, tr: v})
+                continue
+            }
+            if (typeof v === "object") {
+                allTranslations.push(...Translation.ExtractAllTranslationsFrom(v, context + "." + key))
+
+            }
+        }
+        return allTranslations
+    }
+
+    static fromMap(transl: Map<string, string>) {
+        const translations = {}
+        let hasTranslation = false;
+        transl?.forEach((value, key) => {
+            translations[key] = value
+            hasTranslation = true
+        })
+        if (!hasTranslation) {
+            return undefined
+        }
+        return new Translation(translations);
+    }
+
     public textFor(language: string): string {
         if (this.translations["*"]) {
             return this.translations["*"];
@@ -195,36 +227,8 @@ export class Translation extends BaseUIElement {
         }
         return allIcons.filter(icon => icon != undefined)
     }
-
-    static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
-        const allTranslations: { context: string, tr: Translation }[] = []
-        for (const key in object) {
-            const v = object[key]
-            if (v === undefined || v === null) {
-                continue
-            }
-            if (v instanceof Translation) {
-                allTranslations.push({context: context +"." + key, tr: v})
-                continue
-            }
-            if (typeof v === "object") {
-                allTranslations.push(...Translation.ExtractAllTranslationsFrom(v, context + "." + key))
-                continue
-            }
-        }
-        return allTranslations
-    }
-
-    static fromMap(transl: Map<string, string>) {
-        const translations = {}
-        let hasTranslation = false;
-        transl?.forEach((value, key) => {
-            translations[key] = value
-            hasTranslation = true
-        })
-        if(!hasTranslation){
-            return undefined
-        }
-        return new Translation(translations);
+    
+    AsMarkdown(): string {
+        return this.txt
     }
 }

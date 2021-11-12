@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.11.3";
+    public static vNumber = "0.12.7";
     public static ImgurApiKey = '7070e7167f0a25a'
     public static readonly mapillary_client_token_v3 = 'TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
@@ -17,7 +17,6 @@ export default class Constants {
         // Doesn't support nwr: "https://overpass.openstreetmap.fr/api/interpreter"
     ]
 
-    
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -40,6 +39,19 @@ export default class Constants {
      * (Note that pendingChanges might upload sooner if the popup is closed or similar)
      */
     static updateTimeoutSec: number = 30;
+    /**
+     * If the contributor has their GPS location enabled and makes a change,
+     * the points visited less then `nearbyVisitTime`-seconds ago will be inspected.
+     * The point closest to the changed feature will be considered and this distance will be tracked.
+     * ALl these distances are used to calculate a nearby-score
+     */
+    static nearbyVisitTime: number= 30 * 60;
+    /**
+     * If a user makes a change, the distance to the changed object is calculated.
+     * If a user makes multiple changes, all these distances are put into multiple bins, depending on this distance.
+     * For every bin, the totals are uploaded as metadata
+     */
+    static distanceToChangeObjectBins = [25,50,100,500,1000,5000]
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

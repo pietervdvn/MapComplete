@@ -16,7 +16,10 @@ export default class EditableTagRendering extends Toggle {
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
                 units: Unit [],
-                editMode = new UIEventSource<boolean>(false)
+                options: {
+                    editMode?: UIEventSource<boolean>,
+                    innerElementClasses?: string
+                }
     ) {
 
         // The tagrendering is hidden if:
@@ -25,15 +28,20 @@ export default class EditableTagRendering extends Toggle {
         const renderingIsShown = tags.map(tags =>
             configuration.IsKnown(tags) &&
             (configuration?.condition?.matchesProperties(tags) ?? true))
-        
+
         super(
-            new Lazy(() => EditableTagRendering.CreateRendering(tags, configuration, units, editMode)),
+            new Lazy(() => {
+                const editMode = options.editMode ?? new UIEventSource<boolean>(false)
+                const rendering = EditableTagRendering.CreateRendering(tags, configuration, units, editMode);
+                rendering.SetClass(options.innerElementClasses)
+                return rendering
+            }),
             undefined,
             renderingIsShown
         )
     }
-    
-    private static CreateRendering(tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>) : BaseUIElement{
+
+    private static CreateRendering(tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>): BaseUIElement {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration)
         answer.SetClass("w-full")
         let rendering = answer;
@@ -71,7 +79,6 @@ export default class EditableTagRendering extends Toggle {
                 editMode
             )
         }
-        rendering.SetClass("block w-full break-word text-default m-1 p-1 border-b border-gray-200 mb-2 pb-2")
         return rendering;
     }
 

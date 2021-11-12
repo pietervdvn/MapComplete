@@ -13,44 +13,6 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
     private readonly handleFeatureSource: (src: FeatureSourceForLayer & Tiled, index: number) => void;
     private readonly undefinedTiles: Set<number>;
 
-    public static GetFreshnesses(layerId: string): Map<number, Date> {
-        const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layerId + "-"
-        const freshnesses = new Map<number, Date>()
-        for (const key of Object.keys(localStorage)) {
-            if (!(key.startsWith(prefix) && key.endsWith("-time"))) {
-                continue
-            }
-            const index = Number(key.substring(prefix.length, key.length - "-time".length))
-            const time = Number(localStorage.getItem(key))
-            const freshness = new Date()
-            freshness.setTime(time)
-            freshnesses.set(index, freshness)
-        }
-        return freshnesses
-    }
-
-
-    static cleanCacheForLayer(layer: LayerConfig) {
-        const now = new Date()
-        const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.id + "-"
-        console.log("Cleaning tiles of ", prefix, "with max age",layer.maxAgeOfCache)
-        for (const key of Object.keys(localStorage)) {
-            if (!(key.startsWith(prefix) && key.endsWith("-time"))) {
-                continue
-            }
-            const index = Number(key.substring(prefix.length, key.length - "-time".length))
-            const time = Number(localStorage.getItem(key))
-            const timeDiff = (now.getTime() - time) / 1000
-            
-            if(timeDiff >= layer.maxAgeOfCache){
-                const k = prefix+index;
-                localStorage.removeItem(k)
-                localStorage.removeItem(k+"-format")
-                localStorage.removeItem(k+"-time")
-            }
-        }
-    }
-
     constructor(layer: FilteredLayer,
                 handleFeatureSource: (src: FeatureSourceForLayer & Tiled, index: number) => void,
                 state: {
@@ -108,6 +70,43 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
             }
         })
 
+    }
+
+    public static GetFreshnesses(layerId: string): Map<number, Date> {
+        const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layerId + "-"
+        const freshnesses = new Map<number, Date>()
+        for (const key of Object.keys(localStorage)) {
+            if (!(key.startsWith(prefix) && key.endsWith("-time"))) {
+                continue
+            }
+            const index = Number(key.substring(prefix.length, key.length - "-time".length))
+            const time = Number(localStorage.getItem(key))
+            const freshness = new Date()
+            freshness.setTime(time)
+            freshnesses.set(index, freshness)
+        }
+        return freshnesses
+    }
+
+    static cleanCacheForLayer(layer: LayerConfig) {
+        const now = new Date()
+        const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.id + "-"
+        console.log("Cleaning tiles of ", prefix, "with max age", layer.maxAgeOfCache)
+        for (const key of Object.keys(localStorage)) {
+            if (!(key.startsWith(prefix) && key.endsWith("-time"))) {
+                continue
+            }
+            const index = Number(key.substring(prefix.length, key.length - "-time".length))
+            const time = Number(localStorage.getItem(key))
+            const timeDiff = (now.getTime() - time) / 1000
+
+            if (timeDiff >= layer.maxAgeOfCache) {
+                const k = prefix + index;
+                localStorage.removeItem(k)
+                localStorage.removeItem(k + "-format")
+                localStorage.removeItem(k + "-time")
+            }
+        }
     }
 
     private loadTile(neededIndex: number) {

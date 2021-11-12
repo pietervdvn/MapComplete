@@ -97,7 +97,7 @@ export default class FeaturePipelineState extends MapState {
             }, this
         );
         new SelectedFeatureHandler(Hash.hash, this)
-        
+
         this.AddClusteringToMap(this.leafletMap)
 
     }

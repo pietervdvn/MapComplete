@@ -5,9 +5,9 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 
 export default class VariableInputElement<T> extends InputElement<T> {
 
+    public readonly IsSelected: UIEventSource<boolean>;
     private readonly value: UIEventSource<T>;
     private readonly element: BaseUIElement
-    public readonly IsSelected: UIEventSource<boolean>;
     private readonly upstream: UIEventSource<InputElement<T>>;
 
     constructor(upstream: UIEventSource<InputElement<T>>) {
@@ -23,13 +23,12 @@ export default class VariableInputElement<T> extends InputElement<T> {
         return this.value;
     }
 
-    protected InnerConstructElement(): HTMLElement {
-        return this.element.ConstructElement();
-    }
-
-
     IsValid(t: T): boolean {
         return this.upstream.data.IsValid(t);
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+        return this.element.ConstructElement();
     }
 
 }

@@ -102,7 +102,7 @@
           },
           "render": {
             "en": "The hydrant color is {colour}",
-            "ja": "消火栓の色は{color}です",
+            "ja": "消火栓の色は{colour}です",
             "nb_NO": "Brannhydranter er {colour}",
             "ru": "Цвет гидранта {colour}",
             "fr": "La borne est {colour}",
@@ -262,21 +262,11 @@
         {
           "id": "hydrant-state",
           "question": {
-            "en": "Update the lifecycle status of the hydrant.",
+            "en": "Is this hydrant still working?",
             "ja": "消火栓のライフサイクルステータスを更新します。",
             "fr": "Mettre à jour l’état de la borne.",
             "de": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten.",
             "it": "Aggiorna lo stato di funzionamento dell’idrante."
-          },
-          "render": {
-            "en": "Lifecycle status",
-            "ja": "ライフサイクルステータス",
-            "fr": "État",
-            "de": "Lebenszyklus-Status",
-            "it": "Stato di funzionamento"
-          },
-          "freeform": {
-            "key": "disused:emergency"
           },
           "mappings": [
             {
@@ -286,7 +276,7 @@
                 ]
               },
               "then": {
-                "en": "The hydrant is (fully or partially) working.",
+                "en": "The hydrant is (fully or partially) working",
                 "ja": "消火栓は(完全にまたは部分的に)機能しています。",
                 "ru": "Гидрант (полностью или частично) в рабочем состоянии.",
                 "fr": "La borne est en état, ou partiellement en état, de fonctionner.",
@@ -302,7 +292,7 @@
                 ]
               },
               "then": {
-                "en": "The hydrant is unavailable.",
+                "en": "The hydrant is unavailable",
                 "ja": "消火栓は使用できません。",
                 "fr": "La borne est hors-service.",
                 "de": "Der Hydrant ist nicht verfügbar.",
@@ -317,7 +307,7 @@
                 ]
               },
               "then": {
-                "en": "The hydrant has been removed.",
+                "en": "The hydrant has been removed",
                 "ja": "消火栓が撤去されました。",
                 "ru": "Гидрант демонтирован.",
                 "fr": "La borne a été retirée.",
@@ -329,18 +319,6 @@
         },
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/hailhydrant/hydrant.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "20,20,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -364,7 +342,28 @@
           }
         }
       ],
-      "wayHandling": 2
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/hydrant.svg"
+          },
+          "iconSize": {
+            "render": "20,20,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
+        }
+      ]
     },
     {
       "id": "extinguisher",
@@ -464,18 +463,6 @@
         },
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "20,20,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -500,7 +487,20 @@
           }
         }
       ],
-      "wayHandling": 1
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
+          },
+          "iconSize": {
+            "render": "20,20,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
     },
     {
       "id": "fire_stations",
@@ -521,7 +521,6 @@
           ]
         }
       },
-      "wayHandling": 2,
       "title": {
         "render": {
           "en": "Fire Station",
@@ -714,18 +713,6 @@
         },
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
-      },
-      "width": {
-        "render": "1"
-      },
-      "iconSize": {
-        "render": "35,35,center"
-      },
-      "color": {
-        "render": "#c22"
-      },
       "presets": [
         {
           "tags": [
@@ -746,6 +733,28 @@
             "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
             "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
             "it": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra."
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+          },
+          "iconSize": {
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#c22"
+          },
+          "width": {
+            "render": "1"
           }
         }
       ]
@@ -938,18 +947,6 @@
         },
         "images"
       ],
-      "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
-      },
-      "width": {
-        "render": "1"
-      },
-      "iconSize": {
-        "render": "35,35,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -973,7 +970,28 @@
           }
         }
       ],
-      "wayHandling": 2
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
+          },
+          "iconSize": {
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "1"
+          }
+        }
+      ]
     }
   ],
   "defaultBackgroundId": "HDM_HOT"

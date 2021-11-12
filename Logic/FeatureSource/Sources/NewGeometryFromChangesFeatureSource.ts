@@ -7,7 +7,7 @@ import State from "../../../State";
 
 export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
-    
+
     /**
      * A feature source containing exclusively new elements
      */
@@ -31,7 +31,6 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                 // Already handled
                 !seenChanges.has(ch)))
             .addCallbackAndRunD(changes => {
-
                 if (changes.length === 0) {
                     return;
                 }
@@ -54,10 +53,10 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                         for (const kv of change.tags) {
                             tags[kv.k] = kv.v
                         }
-                        tags["id"] = change.type+"/"+change.id
-                        
+                        tags["id"] = change.type + "/" + change.id
+
                         tags["_backend"] = State.state.osmConnection._oauth_config.url
-                        
+
                         switch (change.type) {
                             case "node":
                                 const n = new OsmNode(change.id)
@@ -71,7 +70,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                                 const w = new OsmWay(change.id)
                                 w.tags = tags
                                 w.nodes = change.changes["nodes"]
-                                w.coordinates = change.changes["coordinates"].map(coor => coor.reverse())
+                                w.coordinates = change.changes["coordinates"].map(coor => [coor[1], coor[0]])
                                 add(w.asGeoJson())
                                 break;
                             case "relation":
@@ -86,7 +85,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                     }
 
                 }
-                
+
                 self.features.ping()
             })
     }

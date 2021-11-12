@@ -31,6 +31,9 @@ class TranslationPart {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue;
             }
+            if (translationsKey == "then") {
+                throw "Suspicious translation at " + context
+            }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
                 console.error("Non-string object in translation while trying to add more translations to '", translationsKey, "': ", v)
@@ -242,7 +245,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
         let json = tr.toJson(lang)
         try {
 
-            json = JSON.stringify(JSON.parse(json), null, "    ");
+            json = JSON.stringify(JSON.parse(json), null, "  ");
         } catch (e) {
             console.error(e)
         }
@@ -357,7 +360,7 @@ function mergeLayerTranslations() {
     const layerFiles = ScriptUtils.getLayerFiles();
     for (const layerFile of layerFiles) {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, loadTranslationFilesFrom("layers"))
-        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "    "))
+        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
     }
 }
 

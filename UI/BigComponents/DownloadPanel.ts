@@ -12,26 +12,25 @@ import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import SimpleMetaTagger from "../../Logic/SimpleMetaTagger";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import {meta} from "@turf/turf";
 import {BBox} from "../../Logic/BBox";
 
 export class DownloadPanel extends Toggle {
-    
+
     constructor() {
         const state: {
             featurePipeline: FeaturePipeline,
             layoutToUse: LayoutConfig,
             currentBounds: UIEventSource<BBox>
         } = State.state
-        
+
 
         const t = Translations.t.general.download
         const name = State.state.layoutToUse.id;
-        
+
         const includeMetaToggle = new CheckBoxes([t.includeMetaData.Clone()])
         const metaisIncluded = includeMetaToggle.GetValue().map(selected => selected.length > 0)
 
-        
+
         const buttonGeoJson = new SubtleButton(Svg.floppy_ui(),
             new Combine([t.downloadGeojson.Clone().SetClass("font-bold"),
                 t.downloadGeoJsonHelper.Clone()]).SetClass("flex flex-col"))
@@ -42,7 +41,7 @@ export class DownloadPanel extends Toggle {
                         mimetype: "application/vnd.geo+json"
                     });
             })
-        
+
 
         const buttonCSV = new SubtleButton(Svg.floppy_ui(), new Combine(
             [t.downloadCSV.Clone().SetClass("font-bold"),
@@ -59,9 +58,9 @@ export class DownloadPanel extends Toggle {
 
         const downloadButtons = new Combine(
             [new Title(t.title),
-                buttonGeoJson, 
+                buttonGeoJson,
                 buttonCSV,
-                includeMetaToggle, 
+                includeMetaToggle,
                 t.licenseInfo.Clone().SetClass("link-underline")])
             .SetClass("w-full flex flex-col border-4 border-gray-300 rounded-3xl p-4")
 
@@ -107,7 +106,7 @@ export class DownloadPanel extends Toggle {
         }
 
         return {
-            type:"FeatureCollection",
+            type: "FeatureCollection",
             features: resultFeatures
         }
 

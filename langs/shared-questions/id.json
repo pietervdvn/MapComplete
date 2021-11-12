@@ -1,32 +1,32 @@
 {
-    "undefined": {
-        "email": {
-            "question": "Apa alamat surel dari {name}?"
-        },
-        "level": {
-            "mappings": {
-                "3": {
-                    "then": "Berlokasi di lantai pertama"
-                }
-            },
-            "question": "Pada tingkat apa fitur ini diletakkan?"
-        },
-        "payment-options": {
-            "mappings": {
-                "0": {
-                    "then": "Disini menerima pembayaran tunai"
-                },
-                "1": {
-                    "then": "Disini menerima pembayaran dengan kartu"
-                }
-            },
-            "question": "Metode pembayaran manakah yang di terima disini?"
-        },
-        "phone": {
-            "question": "Nomor telepon dari {name|?"
-        },
-        "website": {
-            "question": "Apa situs web dari {name}?"
+  "undefined": {
+    "email": {
+      "question": "Apa alamat surel dari {name}?"
+    },
+    "level": {
+      "mappings": {
+        "3": {
+          "then": "Berlokasi di lantai pertama"
         }
+      },
+      "question": "Pada tingkat apa fitur ini diletakkan?"
+    },
+    "payment-options": {
+      "mappings": {
+        "0": {
+          "then": "Disini menerima pembayaran tunai"
+        },
+        "1": {
+          "then": "Disini menerima pembayaran dengan kartu"
+        }
+      },
+      "question": "Metode pembayaran manakah yang di terima disini?"
+    },
+    "phone": {
+      "question": "Nomor telepon dari {name|?"
+    },
+    "website": {
+      "question": "Apa situs web dari {name}?"
     }
+  }
 }

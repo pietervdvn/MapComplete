@@ -6,9 +6,8 @@ export default class ImgurUploader {
     public readonly queue: UIEventSource<string[]> = new UIEventSource<string[]>([]);
     public readonly failed: UIEventSource<string[]> = new UIEventSource<string[]>([]);
     public readonly success: UIEventSource<string[]> = new UIEventSource<string[]>([]);
-    private readonly _handleSuccessUrl: (string) => void;
-    
     public maxFileSizeInMegabytes = 10;
+    private readonly _handleSuccessUrl: (string) => void;
 
     constructor(handleSuccessUrl: (string) => void) {
         this._handleSuccessUrl = handleSuccessUrl;

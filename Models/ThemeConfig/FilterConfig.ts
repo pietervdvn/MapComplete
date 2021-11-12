@@ -18,7 +18,7 @@ export default class FilterConfig {
         if (json.id === undefined) {
             throw `A filter without id was found at ${context}`
         }
-        if(json.id.match(/^[a-zA-Z0-9_-]*$/) === null){
+        if (json.id.match(/^[a-zA-Z0-9_-]*$/) === null) {
             throw `A filter with invalid id was found at ${context}. Ids should only contain letters, numbers or - _`
 
         }
@@ -42,9 +42,9 @@ export default class FilterConfig {
 
             return {question: question, osmTags: osmTags};
         });
-        
-        if(this.options.length > 1 && this.options[0].osmTags["and"]?.length !== 0){
-            throw "Error in "+context+"."+this.id+": the first option of a multi-filter should always be the 'reset' option and not have any filters"
+
+        if (this.options.length > 1 && this.options[0].osmTags["and"]?.length !== 0) {
+            throw "Error in " + context + "." + this.id + ": the first option of a multi-filter should always be the 'reset' option and not have any filters"
         }
     }
 }

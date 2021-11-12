@@ -8,6 +8,8 @@ import * as L from "leaflet";
 import {Map} from "leaflet";
 import Minimap, {MinimapObj, MinimapOptions} from "./Minimap";
 import {BBox} from "../../Logic/BBox";
+import 'leaflet-polylineoffset'
+import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
 
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0;
@@ -101,6 +103,12 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         })
     }
 
+    public async TakeScreenshot() {
+        const screenshotter = new SimpleMapScreenshoter();
+        screenshotter.addTo(this.leafletMap.data);
+        return await screenshotter.takeScreen('image')
+    }
+
     protected InnerConstructElement(): HTMLElement {
         const div = document.createElement("div")
         div.id = this._id;
@@ -146,8 +154,8 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         const self = this;
         let currentLayer = this._background.data.layer()
         let latLon = <[number, number]>[location.data?.lat ?? 0, location.data?.lon ?? 0]
-        if(isNaN(latLon[0]) || isNaN(latLon[1])){
-            latLon = [0,0]
+        if (isNaN(latLon[0]) || isNaN(latLon[1])) {
+            latLon = [0, 0]
         }
         const options = {
             center: latLon,

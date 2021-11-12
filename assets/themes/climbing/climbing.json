@@ -13,7 +13,7 @@
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
-    "de": "Eine Karte mit verschiedenen Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen in der Natur.",
+    "de": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
     "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
     "ru": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
     "ja": "この地図には、自然の中のクライミングジム、ボルダリングホール、岩など、さまざまなクライミングの機会があります。",
@@ -159,25 +159,6 @@
         "phone",
         "opening_hours"
       ],
-      "icon": {
-        "render": "./assets/themes/climbing/club.svg"
-      },
-      "iconOverlays": [
-        {
-          "if": "opening_hours~*",
-          "then": "isOpen",
-          "badge": true
-        }
-      ],
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
-      },
       "presets": [
         {
           "tags": [
@@ -228,7 +209,26 @@
           }
         }
       ],
-      "wayHandling": 1
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/climbing/club.svg"
+          },
+          "iconBadges": [
+            {
+              "if": "opening_hours~*",
+              "then": "isOpen"
+            }
+          ],
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
     },
     {
       "id": "climbing_gym",
@@ -318,21 +318,26 @@
         "opening_hours",
         "reviews"
       ],
-      "icon": {
-        "render": "./assets/themes/climbing/climbing_gym.svg"
-      },
-      "iconOverlays": [
+      "mapRendering": [
         {
-          "if": "opening_hours~*",
-          "then": "isOpen",
-          "badge": true
+          "icon": {
+            "render": "./assets/themes/climbing/climbing_gym.svg"
+          },
+          "iconBadges": [
+            {
+              "if": "opening_hours~*",
+              "then": "isOpen"
+            }
+          ],
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
         }
-      ],
-      "width": "0",
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "wayHandling": 1
+      ]
     },
     {
       "id": "climbing_route",
@@ -539,18 +544,6 @@
         },
         "reviews"
       ],
-      "icon": {
-        "render": "circle:white;./assets/themes/climbing/climbing_route.svg"
-      },
-      "width": {
-        "render": "4"
-      },
-      "iconSize": {
-        "render": "28,28,center"
-      },
-      "color": {
-        "render": "#0f0"
-      },
       "presets": [
         {
           "title": {
@@ -566,7 +559,28 @@
           ]
         }
       ],
-      "wayHandling": 2
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/themes/climbing/climbing_route.svg"
+          },
+          "iconSize": {
+            "render": "28,28,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#0f0"
+          },
+          "width": {
+            "render": "4"
+          }
+        }
+      ]
     },
     {
       "id": "climbing",
@@ -699,7 +713,7 @@
             "it": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>"
           },
           "condition": "_contained_climbing_routes~*",
-          "id": "Containe {_contained_climbing_routes_count} routes"
+          "id": "Contained_climbing_routes"
         },
         {
           "render": {
@@ -810,18 +824,6 @@
         },
         "reviews"
       ],
-      "icon": {
-        "render": "./assets/themes/climbing/climbing_no_rope.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#d38d5fAA"
-      },
       "presets": [
         {
           "tags": [
@@ -847,7 +849,6 @@
           }
         }
       ],
-      "wayHandling": 2,
       "calculatedTags": [
         "_contained_climbing_routes_properties=feat.overlapWith('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
         "_contained_climbing_routes=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
@@ -855,6 +856,28 @@
         "_difficulty_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:grade:french'])",
         "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])",
         "_contained_climbing_routes_count=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').length"
+      ],
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/themes/climbing/climbing_no_rope.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#d38d5fAA"
+          },
+          "width": {
+            "render": "8"
+          }
+        }
       ]
     },
     {
@@ -985,14 +1008,23 @@
           ]
         }
       ],
-      "icon": "./assets/themes/climbing/climbing_unknown.svg",
-      "width": {
-        "render": "2"
-      },
-      "color": {
-        "render": "#ddff55AA"
-      },
-      "wayHandling": 0
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/climbing/climbing_unknown.svg",
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#ddff55AA"
+          },
+          "width": {
+            "render": "2"
+          }
+        }
+      ]
     }
   ],
   "overrideAll": {
@@ -1303,7 +1335,7 @@
           "it": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?"
         },
         "render": {
-          "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
+          "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:max} (französisch/belgisches System)",
           "en": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system",
           "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
           "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です",

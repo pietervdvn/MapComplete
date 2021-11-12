@@ -19,7 +19,7 @@ export class RegexTag extends TagsFilter {
         if (fromTag === undefined) {
             return;
         }
-        if(typeof fromTag === "number"){
+        if (typeof fromTag === "number") {
             fromTag = "" + fromTag;
         }
         if (typeof possibleRegex === "string") {
@@ -47,11 +47,11 @@ export class RegexTag extends TagsFilter {
     }
 
     matchesProperties(tags: any): boolean {
-        if(typeof this.key === "string"){
+        if (typeof this.key === "string") {
             const value = tags[this.key] ?? ""
             return RegexTag.doesMatch(value, this.value) != this.invert;
         }
-        
+
         for (const key in tags) {
             if (key === undefined) {
                 continue;

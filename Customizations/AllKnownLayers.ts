@@ -1,13 +1,32 @@
 import * as known_layers from "../assets/generated/known_layers_and_themes.json"
 import {Utils} from "../Utils";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
+import SharedTagRenderings from "./SharedTagRenderings";
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
+import WithContextLoader from "../Models/ThemeConfig/WithContextLoader";
 
 export default class AllKnownLayers {
 
+    public static inited = (_ => {
+        WithContextLoader.getKnownTagRenderings = (id => AllKnownLayers.getTagRendering(id))
+        return true 
+    })()
+    
 
     // Must be below the list...
     public static sharedLayers: Map<string, LayerConfig> = AllKnownLayers.getSharedLayers();
     public static sharedLayersJson: Map<string, any> = AllKnownLayers.getSharedLayersJson();
+
+
+    public static added_by_default: string[] = ["gps_location", "home_location", "gps_track"]
+    public static no_include: string[] = [ "conflation", "left_right_style"]
+    /**
+     * Layer IDs of layers which have special properties through built-in hooks
+     */
+    public static priviliged_layers: string[] = [...AllKnownLayers.added_by_default, "type_node",...AllKnownLayers.no_include]
+
+
 
     private static getSharedLayers(): Map<string, LayerConfig> {
         const sharedLayers = new Map<string, LayerConfig>();
@@ -16,7 +35,6 @@ export default class AllKnownLayers {
                 // @ts-ignore
                 const parsed = new LayerConfig(layer, "shared_layers")
                 sharedLayers.set(layer.id, parsed);
-                sharedLayers[layer.id] = parsed;
             } catch (e) {
                 if (!Utils.runningFromConsole) {
                     console.error("CRITICAL: Could not parse a layer configuration!", layer.id, " due to", e)
@@ -48,7 +66,7 @@ export default class AllKnownLayers {
         return sharedLayers;
     }
 
-    private static getSharedLayersJson(): Map<string, any> {
+    private static getSharedLayersJson(): Map<string, LayerConfigJson> {
         const sharedLayers = new Map<string, any>();
         for (const layer of known_layers.layers) {
             sharedLayers.set(layer.id, layer);
@@ -57,5 +75,41 @@ export default class AllKnownLayers {
         return sharedLayers;
     }
 
+    /**
+     * Gets the appropriate tagRenderingJSON
+     * Allows to steal them from other layers.
+     * This will add the tags of the layer to the configuration though!
+     * @param renderingId
+     */
+    static getTagRendering(renderingId: string): TagRenderingConfigJson {
+        if(renderingId.indexOf(".") < 0){
+            return SharedTagRenderings.SharedTagRenderingJson.get(renderingId)
+        }
+
+        const [layerId, id] = renderingId.split(".")
+        const layer = AllKnownLayers.getSharedLayersJson().get(layerId)
+        if(layer === undefined){
+            if(Utils.runningFromConsole){
+                // Probably generating the layer overview
+                return <TagRenderingConfigJson> {
+                    id: "dummy"
+                }
+            }
+            throw "Builtin layer "+layerId+" not found"
+        }
+        const renderings = layer?.tagRenderings ?? []
+        for (const rendering of renderings) {
+            if(rendering["id"] === id){
+                const found = <TagRenderingConfigJson>  JSON.parse(JSON.stringify(rendering))
+                if(found.condition === undefined){
+                    found.condition = layer.source.osmTags
+                }else{
+                    found.condition = {and: [found.condition, layer.source.osmTags]}
+                }
+            return found
+            }
+        }
+        throw `The rendering with id ${id} was not found in the builtin layer ${layerId}. Try one of ${Utils.NoNull(renderings.map(r => r["id"])).join(", ")}` 
+    }
 
 }

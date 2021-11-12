@@ -18,6 +18,8 @@ export default class MetaTagging {
     /**
      * This method (re)calculates all metatags and calculated tags on every given object.
      * The given features should be part of the given layer
+     *
+     * Returns true if at least one feature has changed properties
      */
     public static addMetatags(features: { feature: any; freshness: Date }[],
                               params: ExtraFuncParams,
@@ -25,7 +27,7 @@ export default class MetaTagging {
                               options?: {
                                   includeDates?: true | boolean,
                                   includeNonDates?: true | boolean
-                              }) {
+                              }): boolean {
 
         if (features === undefined || features.length === 0) {
             return;
@@ -48,6 +50,7 @@ export default class MetaTagging {
         // The calculated functions - per layer - which add the new keys
         const layerFuncs = this.createRetaggingFunc(layer)
 
+        let atLeastOneFeatureChanged = false;
 
         for (let i = 0; i < features.length; i++) {
             const ff = features[i];
@@ -60,15 +63,15 @@ export default class MetaTagging {
                         // All keys are already defined, we probably already ran this one
                         continue
                     }
-                    
-                    if(metatag.isLazy){
+
+                    if (metatag.isLazy) {
                         somethingChanged = true;
-                        
+
                         metatag.applyMetaTagsOnFeature(feature, freshness, layer)
-                        
-                    }else{
-                        
-                    
+
+                    } else {
+
+
                         const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness, layer)
                         /* Note that the expression:
                         * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
@@ -95,8 +98,10 @@ export default class MetaTagging {
 
             if (somethingChanged) {
                 State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping()
+                atLeastOneFeatureChanged = true
             }
         }
+        return atLeastOneFeatureChanged
     }
 
 
@@ -141,12 +146,13 @@ export default class MetaTagging {
                                 }
                             }
                         }
-                        
-                    }} )
+
+                    }
+                })
 
             }
-            
-            
+
+
             functions.push(f)
         }
         return functions;

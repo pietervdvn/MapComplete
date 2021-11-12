@@ -15,7 +15,7 @@ import {Utils} from "../../Utils";
  */
 export default class Attribution extends Combine {
 
-     constructor(location: UIEventSource<Loc>,
+    constructor(location: UIEventSource<Loc>,
                 userDetails: UIEventSource<UserDetails>,
                 layoutToUse: LayoutConfig,
                 currentBounds: UIEventSource<BBox>) {
@@ -56,6 +56,7 @@ export default class Attribution extends Combine {
             )
         )
         super([mapComplete, reportBug, stats, editHere, editWithJosm, mapillary]);
+        this.SetClass("flex")
 
     }
 

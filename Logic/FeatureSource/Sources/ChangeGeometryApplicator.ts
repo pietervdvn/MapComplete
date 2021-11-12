@@ -11,9 +11,9 @@ import {ChangeDescription, ChangeDescriptionTools} from "../../Osm/Actions/Chang
 export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name: string;
+    public readonly layer: FilteredLayer
     private readonly source: IndexedFeatureSource;
     private readonly changes: Changes;
-    public readonly layer: FilteredLayer
 
     constructor(source: (IndexedFeatureSource & FeatureSourceForLayer), changes: Changes) {
         this.source = source;
@@ -22,10 +22,10 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
 
         this.name = "ChangesApplied(" + source.name + ")"
         this.features = new UIEventSource<{ feature: any; freshness: Date }[]>(undefined)
-        
+
         const self = this;
         source.features.addCallbackAndRunD(_ => self.update())
-        
+
         changes.allChanges.addCallbackAndRunD(_ => self.update())
 
     }
@@ -52,9 +52,9 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
         const changesPerId = new Map<string, ChangeDescription[]>()
         for (const ch of changesToApply) {
             const key = ch.type + "/" + ch.id
-            if(changesPerId.has(key)){
+            if (changesPerId.has(key)) {
                 changesPerId.get(key).push(ch)
-            }else{
+            } else {
                 changesPerId.set(key, [ch])
             }
         }
@@ -66,7 +66,7 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
                 newFeatures.push(feature)
                 continue;
             }
-            
+
             // Allright! We have a feature to rewrite!
             const copy = {
                 ...feature

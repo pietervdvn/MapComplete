@@ -1,17 +1,23 @@
 {
-    "id": "home_location",
-    "description": "Meta layer showing the home location of the user",
-    "minzoom": 0,
-    "source": {
-        "osmTags": "user:home=yes"
-    },
-    "icon": {
+  "id": "home_location",
+  "description": "Meta layer showing the home location of the user. The home location can be set in the [profile settings](https://www.openstreetmap.org/profile/edit) of OpenStreetMap.",
+  "minzoom": 0,
+  "source": {
+    "osmTags": "user:home=yes",
+    "maxCacheAge": 0
+  },
+  "mapRendering": [
+    {
+      "icon": {
         "render": "circle:white;./assets/svg/home.svg"
-    },
-    "iconSize": {
+      },
+      "iconSize": {
         "render": "20,20,center"
-    },
-    "color": {
-        "render": "#00f"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
     }
+  ]
 }

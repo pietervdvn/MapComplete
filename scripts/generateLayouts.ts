@@ -1,6 +1,4 @@
 import {Utils} from "../Utils";
-// We HAVE to mark this while importing
-Utils.runningFromConsole = true;
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
@@ -9,6 +7,8 @@ import Constants from "../Models/Constants";
 import * as all_known_layouts from "../assets/generated/known_layers_and_themes.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+// We HAVE to mark this while importing
+Utils.runningFromConsole = true;
 
 
 const sharp = require('sharp');

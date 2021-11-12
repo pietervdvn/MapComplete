@@ -33,10 +33,14 @@
         "osmTags": "shadow=yes",
         "isOsmCache": false
       },
-      "color": "#444444",
-      "width": {
-        "render": "1"
-      }
+      "mapRendering": [
+        {
+          "color": "#444444",
+          "width": {
+            "render": "1"
+          }
+        }
+      ]
     },
     {
       "builtin": "play_forest",
@@ -138,7 +142,6 @@
     },
     {
       "id": "walking_routes",
-      "icon": "./assets/themes/speelplekken/walking_route.svg",
       "name": {
         "nl": "Wandelroutes van provincie Antwerpen"
       },
@@ -237,22 +240,26 @@
         "questions",
         "reviews"
       ],
-      "color": {
-        "render": "#6d6",
-        "mappings": [
-          {
-            "if": "color~*",
-            "then": "{color}"
+      "mapRendering": [
+        {
+          "color": {
+            "render": "#6d6",
+            "mappings": [
+              {
+                "if": "color~*",
+                "then": "{color}"
+              },
+              {
+                "if": "colour~*",
+                "then": "{colour}"
+              }
+            ]
           },
-          {
-            "if": "colour~*",
-            "then": "{colour}"
+          "width": {
+            "render": "9"
           }
-        ]
-      },
-      "width": {
-        "render": "9"
-      }
+        }
+      ]
     }
   ],
   "clustering": {

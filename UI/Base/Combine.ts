@@ -30,13 +30,13 @@ export default class Combine extends BaseUIElement {
                 if (subEl === undefined || subEl === null) {
                     continue;
                 }
-                try{
-                    
-                const subHtml = subEl.ConstructElement()
-                if (subHtml !== undefined) {
-                    el.appendChild(subHtml)
-                }
-                }catch(e){
+                try {
+
+                    const subHtml = subEl.ConstructElement()
+                    if (subHtml !== undefined) {
+                        el.appendChild(subHtml)
+                    }
+                } catch (e) {
                     console.error("Could not generate subelement in combine due to ", e)
                 }
             }

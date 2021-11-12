@@ -10,6 +10,7 @@ import {UIEventSource} from "./UIEventSource";
 import {LocalStorageSource} from "./Web/LocalStorageSource";
 import LZString from "lz-string";
 import * as personal from "../assets/themes/personal/personal.json";
+import LegacyJsonConvert from "../Models/ThemeConfig/LegacyJsonConvert";
 
 export default class DetermineLayout {
 
@@ -60,40 +61,8 @@ export default class DetermineLayout {
                 layer.minzoom = Math.max(16, layer.minzoom)
             }
         }
-        
+
         return [layoutToUse, undefined]
-    }
-
-    private static async LoadRemoteTheme(link: string): Promise<LayoutConfig | null> {
-        console.log("Downloading map theme from ", link);
-
-        new FixedUiElement(`Downloading the theme from the <a href="${link}">link</a>...`)
-            .AttachTo("centermessage");
-
-        try {
-
-            const parsed = await Utils.downloadJson(link)
-            console.log("Got ", parsed)
-            try {
-                parsed.id = link;
-                return new LayoutConfig(parsed, false).patchImages(link, JSON.stringify(parsed));
-            } catch (e) {
-                console.error(e)
-                DetermineLayout.ShowErrorOnCustomTheme(
-                    `<a href="${link}">${link}</a> is invalid:`,
-                    new FixedUiElement(e)
-                )
-                return null;
-            }
-
-        } catch (e) {
-            console.erorr(e)
-            DetermineLayout.ShowErrorOnCustomTheme(
-                `<a href="${link}">${link}</a> is invalid - probably not found or invalid JSON:`,
-                new FixedUiElement(e)
-            )
-            return null;
-        }
     }
 
     public static LoadLayoutFromHash(
@@ -136,6 +105,7 @@ export default class DetermineLayout {
                 }
             }
 
+            LegacyJsonConvert.fixThemeConfig(json)
             const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);
             return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
@@ -161,6 +131,39 @@ export default class DetermineLayout {
         ])
             .SetClass("flex flex-col clickable")
             .AttachTo("centermessage");
+    }
+
+    private static async LoadRemoteTheme(link: string): Promise<LayoutConfig | null> {
+        console.log("Downloading map theme from ", link);
+
+        new FixedUiElement(`Downloading the theme from the <a href="${link}">link</a>...`)
+            .AttachTo("centermessage");
+
+        try {
+
+            const parsed = await Utils.downloadJson(link)
+            console.log("Got ", parsed)
+            LegacyJsonConvert.fixThemeConfig(parsed)
+            try {
+                parsed.id = link;
+                return new LayoutConfig(parsed, false).patchImages(link, JSON.stringify(parsed));
+            } catch (e) {
+                console.error(e)
+                DetermineLayout.ShowErrorOnCustomTheme(
+                    `<a href="${link}">${link}</a> is invalid:`,
+                    new FixedUiElement(e)
+                )
+                return null;
+            }
+
+        } catch (e) {
+            console.error(e)
+            DetermineLayout.ShowErrorOnCustomTheme(
+                `<a href="${link}">${link}</a> is invalid - probably not found or invalid JSON:`,
+                new FixedUiElement(e)
+            )
+            return null;
+        }
     }
 
 }

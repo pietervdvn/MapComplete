@@ -4,11 +4,11 @@ import {GeoOperations} from "./GeoOperations";
 
 export class BBox {
 
+    static global: BBox = new BBox([[-180, -90], [180, 90]]);
     readonly maxLat: number;
     readonly maxLon: number;
     readonly minLat: number;
     readonly minLon: number;
-    static global: BBox = new BBox([[-180, -90], [180, 90]]);
 
     constructor(coordinates) {
         this.maxLat = -90;
@@ -43,6 +43,17 @@ export class BBox {
             feature.bbox = new BBox([[turfBbox[0], turfBbox[1]], [turfBbox[2], turfBbox[3]]]);
         }
         return feature.bbox;
+    }
+
+    static fromTile(z: number, x: number, y: number): BBox {
+        return new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
+    }
+
+    static fromTileIndex(i: number): BBox {
+        if (i === 0) {
+            return BBox.global
+        }
+        return BBox.fromTile(...Tiles.tile_from_index(i))
     }
 
     /**
@@ -83,24 +94,6 @@ export class BBox {
         return true;
     }
 
-    private check() {
-        if (isNaN(this.maxLon) || isNaN(this.maxLat) || isNaN(this.minLon) || isNaN(this.minLat)) {
-            console.log(this);
-            throw  "BBOX has NAN";
-        }
-    }
-
-    static fromTile(z: number, x: number, y: number): BBox {
-        return new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
-    }
-
-    static fromTileIndex(i: number): BBox {
-        if (i === 0) {
-            return BBox.global
-        }
-        return BBox.fromTile(...Tiles.tile_from_index(i))
-    }
-
     getEast() {
         return this.maxLon
     }
@@ -115,6 +108,11 @@ export class BBox {
 
     getSouth() {
         return this.minLat
+    }
+
+    contains(lonLat: [number, number]) {
+        return this.minLat <= lonLat[1] && lonLat[1] <= this.maxLat
+            && this.minLon <= lonLat[0] && lonLat[0] <= this.maxLon
     }
 
     pad(factor: number, maxIncrease = 2): BBox {
@@ -173,5 +171,12 @@ export class BBox {
         }
 
 
+    }
+
+    private check() {
+        if (isNaN(this.maxLon) || isNaN(this.maxLat) || isNaN(this.minLon) || isNaN(this.minLat)) {
+            console.log(this);
+            throw  "BBOX has NAN";
+        }
     }
 }

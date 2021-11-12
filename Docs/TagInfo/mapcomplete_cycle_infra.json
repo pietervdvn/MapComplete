@@ -600,7 +600,7 @@
     },
     {
       "key": "cycle_barrier:type",
-      "description": "Layer 'Barriers' shows cycle_barrier:type=double with a fixed text, namely 'Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "description": "Layer 'Barriers' shows cycle_barrier:type=double with a fixed text, namely 'Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "double"
     },
     {

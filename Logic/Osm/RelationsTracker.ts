@@ -1,4 +1,3 @@
-import State from "../../State";
 import {UIEventSource} from "../UIEventSource";
 
 export interface Relation {
@@ -21,10 +20,6 @@ export default class RelationsTracker {
     constructor() {
     }
 
-    public RegisterRelations(overpassJson: any): void {
-        this.UpdateMembershipTable(RelationsTracker.GetRelationElements(overpassJson))
-    }
-
     /**
      * Gets an overview of the relations - except for multipolygons. We don't care about those
      * @param overpassJson
@@ -37,6 +32,10 @@ export default class RelationsTracker {
             relation.properties = relation.tags
         }
         return relations
+    }
+
+    public RegisterRelations(overpassJson: any): void {
+        this.UpdateMembershipTable(RelationsTracker.GetRelationElements(overpassJson))
     }
 
     /**

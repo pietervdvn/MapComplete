@@ -413,7 +413,12 @@
         }
       ],
       "condition": {
-        "or": ["maxstay~*","motorcar=yes","hgv=yes","bus=yes"]
+        "or": [
+          "maxstay~*",
+          "motorcar=yes",
+          "hgv=yes",
+          "bus=yes"
+        ]
       }
     },
     {
@@ -497,7 +502,8 @@
         "nl": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?"
       },
       "render": {
-        "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>", "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
+        "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
+        "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -548,8 +554,8 @@
       "freeform": {
         "key": "ref"
       },
-        "#": "Only asked if part of a bigger network. Small operators typically don't have a reference number",
-      "condition":"network!="
+      "#": "Only asked if part of a bigger network. Small operators typically don't have a reference number",
+      "condition": "network!="
     },
     {
       "id": "Operational status",
@@ -604,7 +610,7 @@
           }
         },
         {
-          "if":{
+          "if": {
             "and": [
               "planned:amenity=",
               "construction:amenity=charging_station",
@@ -666,71 +672,82 @@
           "bicycle="
         ]
       }
+    },
+    {
+      "id": "questions"
+    },
+    {
+      "id": "questions",
+      "group": "technical",
+      "render": {
+        "en": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions}",
+        "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions}"
+      }
     }
   ],
-  "icon": {
-    "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
-    "mappings": [
-      {
-        "if": "bicycle=yes",
-        "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
-      },
-      {
-        "if": {
-          "or": [
-            "car=yes",
-            "motorcar=yes"
-          ]
-        },
-        "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
-      }
-    ]
-  },
-  "iconOverlays": [
+  "mapRendering": [
     {
-      "if": {
-        "or": [
-          "disused:amenity=charging_station",
-          "operational_status=broken"
-        ]
-      },
-      "then": "cross_bottom_right:#c22;"
-    },
-    {
-      "if": {
-        "or": [
-          "proposed:amenity=charging_station",
-          "planned:amenity=charging_station"
-        ]
-      },
-      "then": "./assets/layers/charging_station/under_construction.svg",
-      "badge": true
-    },
-    {
-      "if": {
-        "and": [
-          "bicycle=yes",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
+        "mappings": [
           {
-            "or": [
-              "motorcar=yes",
-              "car=yes"
-            ]
+            "if": "bicycle=yes",
+            "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
+          },
+          {
+            "if": {
+              "or": [
+                "car=yes",
+                "motorcar=yes"
+              ]
+            },
+            "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
           }
         ]
       },
-      "then": "circle:#fff;./assets/themes/charging_stations/car.svg",
-      "badge": true
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "disused:amenity=charging_station",
+              "operational_status=broken"
+            ]
+          },
+          "then": "cross:#c22;"
+        },
+        {
+          "if": {
+            "or": [
+              "proposed:amenity=charging_station",
+              "planned:amenity=charging_station"
+            ]
+          },
+          "then": "./assets/layers/charging_station/under_construction.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "bicycle=yes",
+              {
+                "or": [
+                  "motorcar=yes",
+                  "car=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
+        }
+      ],
+      "iconSize": {
+        "render": "50,50,bottom"
+      }
     }
   ],
-  "width": {
-    "render": "8"
-  },
-  "iconSize": {
-    "render": "50,50,bottom"
-  },
-  "color": {
-    "render": "#00f"
-  },
   "presets": [
     {
       "tags": [
@@ -788,7 +805,6 @@
       }
     }
   ],
-  "wayHandling": 1,
   "filter": [
     {
       "id": "vehicle-type",

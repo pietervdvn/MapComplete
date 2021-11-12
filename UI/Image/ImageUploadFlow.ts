@@ -16,13 +16,13 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 
 export class ImageUploadFlow extends Toggle {
 
-    
+
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
-    
+
     constructor(tagsSource: UIEventSource<any>, imagePrefix: string = "image", text: string = undefined) {
         const perId = ImageUploadFlow.uploadCountsPerId
         const id = tagsSource.data.id
-        if(!perId.has(id)){
+        if (!perId.has(id)) {
             perId.set(id, new UIEventSource<number>(0))
         }
         const uploadedCount = perId.get(id)
@@ -39,7 +39,7 @@ export class ImageUploadFlow extends Toggle {
                 key = imagePrefix + ":" + freeIndex;
             }
             console.log("Adding image:" + key, url);
-            uploadedCount.data ++
+            uploadedCount.data++
             uploadedCount.ping()
             Promise.resolve(State.state.changes
                 .applyAction(new ChangeTagAction(
@@ -50,17 +50,17 @@ export class ImageUploadFlow extends Toggle {
                     }
                 )))
         })
-        
+
         const licensePicker = new LicensePicker()
 
         const t = Translations.t.image;
-        
-        let labelContent : BaseUIElement
-            if(text === undefined) {
-                labelContent = Translations.t.image.addPicture.Clone().SetClass("block align-middle mt-1 ml-3 text-4xl ")
-            }else{
-                labelContent = new FixedUiElement(text).SetClass("block align-middle mt-1 ml-3 text-2xl ")
-            }
+
+        let labelContent: BaseUIElement
+        if (text === undefined) {
+            labelContent = Translations.t.image.addPicture.Clone().SetClass("block align-middle mt-1 ml-3 text-4xl ")
+        } else {
+            labelContent = new FixedUiElement(text).SetClass("block align-middle mt-1 ml-3 text-2xl ")
+        }
         const label = new Combine([
             Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
             labelContent
@@ -74,17 +74,17 @@ export class ImageUploadFlow extends Toggle {
 
 
             for (var i = 0; i < filelist.length; i++) {
-                const sizeInBytes=  filelist[i].size
+                const sizeInBytes = filelist[i].size
                 console.log(filelist[i].name + " has a size of " + sizeInBytes + " Bytes");
-                if(sizeInBytes > uploader.maxFileSizeInMegabytes * 1000000){
+                if (sizeInBytes > uploader.maxFileSizeInMegabytes * 1000000) {
                     alert(Translations.t.image.toBig.Subs({
                         actual_size: (Math.floor(sizeInBytes / 1000000)) + "MB",
-                        max_size: uploader.maxFileSizeInMegabytes+"MB"
+                        max_size: uploader.maxFileSizeInMegabytes + "MB"
                     }).txt)
                     return;
                 }
             }
-            
+
             console.log("Received images from the user, starting upload")
             const license = licensePicker.GetValue()?.data ?? "CC0"
 
@@ -114,31 +114,31 @@ export class ImageUploadFlow extends Toggle {
 
         const uploadFlow: BaseUIElement = new Combine([
             new VariableUiElement(uploader.queue.map(q => q.length).map(l => {
-                if(l == 0){
+                if (l == 0) {
                     return undefined;
                 }
-                if(l == 1){
-                   return t.uploadingPicture.Clone().SetClass("alert")
-                }else{
+                if (l == 1) {
+                    return t.uploadingPicture.Clone().SetClass("alert")
+                } else {
                     return t.uploadingMultiple.Subs({count: "" + l}).SetClass("alert")
                 }
             })),
             new VariableUiElement(uploader.failed.map(q => q.length).map(l => {
-                if(l==0){
+                if (l == 0) {
                     return undefined
                 }
                 return t.uploadFailed.Clone().SetClass("alert");
             })),
             new VariableUiElement(uploadedCount.map(l => {
-                if(l == 0){
-                    return  undefined;
+                if (l == 0) {
+                    return undefined;
                 }
-                if(l == 1){
+                if (l == 1) {
                     return t.uploadDone.Clone().SetClass("thanks");
                 }
                 return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks")
             })),
-            
+
             fileSelector,
             Translations.t.image.respectPrivacy.Clone().SetStyle("font-size:small;"),
             licensePicker

@@ -50,26 +50,28 @@ export class OsmConnection {
     _dryRun: boolean;
     public preferencesHandler: OsmPreferences;
     public changesetHandler: ChangesetHandler;
-    private fakeUser: boolean;
-    private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
-    private readonly _iframeMode: Boolean | boolean;
-    private readonly _singlePage: boolean;
     public readonly _oauth_config: {
         oauth_consumer_key: string,
         oauth_secret: string,
         url: string
     };
+    private fakeUser: boolean;
+    private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
+    private readonly _iframeMode: Boolean | boolean;
+    private readonly _singlePage: boolean;
     private isChecking = false;
 
-    constructor(options:{dryRun?: false | boolean,
-                fakeUser?: false | boolean,
-                allElements: ElementStorage,
-                changes: Changes,
-                oauth_token?: UIEventSource<string>,
-                // Used to keep multiple changesets open and to write to the correct changeset
-                layoutName: string,
-                singlePage?: boolean,
-                osmConfiguration?: "osm" | "osm-test" }
+    constructor(options: {
+                    dryRun?: false | boolean,
+                    fakeUser?: false | boolean,
+                    allElements: ElementStorage,
+                    changes: Changes,
+                    oauth_token?: UIEventSource<string>,
+                    // Used to keep multiple changesets open and to write to the correct changeset
+                    layoutName: string,
+                    singlePage?: boolean,
+                    osmConfiguration?: "osm" | "osm-test"
+                }
     ) {
         this.fakeUser = options.fakeUser ?? false;
         this._singlePage = options.singlePage ?? true;
@@ -79,7 +81,7 @@ export class OsmConnection {
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(this._oauth_config.url), "userDetails");
-        this.userDetails.data.dryRun = (options.dryRun ?? false) || (options.fakeUser ?? false) ;
+        this.userDetails.data.dryRun = (options.dryRun ?? false) || (options.fakeUser ?? false);
         if (options.fakeUser) {
             const ud = this.userDetails.data;
             ud.csCount = 5678
@@ -112,7 +114,7 @@ export class OsmConnection {
                     self.AttemptLogin();
                 }, this.auth);
 
-            options.   oauth_token.setData(undefined);
+            options.oauth_token.setData(undefined);
 
         }
         if (this.auth.authenticated()) {

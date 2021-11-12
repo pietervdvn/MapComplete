@@ -1,5 +1,4 @@
 import {Utils} from "../Utils";
-import * as Events from "events";
 
 export class UIEventSource<T> {
 
@@ -75,27 +74,6 @@ export class UIEventSource<T> {
         promise?.catch(err => console.warn("Promise failed:", err))
         return src
     }
-    
-    public AsPromise(): Promise<T>{
-        const self = this;
-        return new Promise((resolve, reject) => {
-            if(self.data !== undefined){
-                resolve(self.data)
-            }else{
-                self.addCallbackD(data => {
-                    resolve(data)
-                    return true; // return true to unregister as we only need to be called once
-                })
-            }
-        })
-    }
-
-    public WaitForPromise(promise: Promise<T>, onFail: ((any) => void)): UIEventSource<T> {
-        const self = this;
-        promise?.then(d => self.setData(d))
-        promise?.catch(err =>onFail(err))
-        return this
-    }
 
     /**
      * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
@@ -152,6 +130,57 @@ export class UIEventSource<T> {
             return;
         })
         return stable
+    }
+
+    public static asFloat(source: UIEventSource<string>): UIEventSource<number> {
+        return source.map(
+            (str) => {
+                let parsed = parseFloat(str);
+                return isNaN(parsed) ? undefined : parsed;
+            },
+            [],
+            (fl) => {
+                if (fl === undefined || isNaN(fl)) {
+                    return undefined;
+                }
+                return ("" + fl).substr(0, 8);
+            }
+        )
+    }
+
+    public AsPromise(): Promise<T> {
+        const self = this;
+        return new Promise((resolve, reject) => {
+            if (self.data !== undefined) {
+                resolve(self.data)
+            } else {
+                self.addCallbackD(data => {
+                    resolve(data)
+                    return true; // return true to unregister as we only need to be called once
+                })
+            }
+        })
+    }
+
+    public WaitForPromise(promise: Promise<T>, onFail: ((any) => void)): UIEventSource<T> {
+        const self = this;
+        promise?.then(d => self.setData(d))
+        promise?.catch(err => onFail(err))
+        return this
+    }
+
+    public withEqualityStabilized(comparator: (t: T | undefined, t1: T | undefined) => boolean): UIEventSource<T> {
+        let oldValue = undefined;
+        return this.map(v => {
+            if (v == oldValue) {
+                return oldValue
+            }
+            if (comparator(oldValue, v)) {
+                return oldValue
+            }
+            oldValue = v;
+            return v;
+        })
     }
 
     /**
@@ -220,14 +249,14 @@ export class UIEventSource<T> {
                 sink.setData(null)
             } else if (newEventSource === undefined) {
                 sink.setData(undefined)
-            }else if (!seenEventSources.has(newEventSource)) {
+            } else if (!seenEventSources.has(newEventSource)) {
                 seenEventSources.add(newEventSource)
                 newEventSource.addCallbackAndRun(resultData => {
                     if (mapped.data === newEventSource) {
                         sink.setData(resultData);
                     }
                 })
-            }else{
+            } else {
                 // Already seen, so we don't have to add a callback, just update the value
                 sink.setData(newEventSource.data)
             }
@@ -286,7 +315,7 @@ export class UIEventSource<T> {
     }
 
     public stabilized(millisToStabilize): UIEventSource<T> {
-        if(Utils.runningFromConsole){
+        if (Utils.runningFromConsole) {
             return this;
         }
 
@@ -320,21 +349,5 @@ export class UIEventSource<T> {
                 return callback(data)
             }
         })
-    }
-
-    public static asFloat(source: UIEventSource<string>): UIEventSource<number> {
-        return source.map(
-            (str) => {
-                let parsed = parseFloat(str);
-                return isNaN(parsed) ? undefined : parsed;
-            },
-            [],
-            (fl) => {
-                if (fl === undefined || isNaN(fl)) {
-                    return undefined;
-                }
-                return ("" + fl).substr(0, 8);
-            }
-        )
     }
 }

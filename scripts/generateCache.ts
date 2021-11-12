@@ -86,9 +86,9 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
             }
             const runningSeconds = (new Date().getTime() - startTime) / 1000
             const resting = failed + (r.total - downloaded)
-            const perTile=   (runningSeconds / (downloaded - skipped))
-            const estimated =Math.floor(resting * perTile)
-            console.log("total: ", downloaded, "/", r.total, "failed: ", failed, "skipped: ", skipped, "running time: ",Utils.toHumanTime(runningSeconds)+"s", "estimated left: ", Utils.toHumanTime(estimated), "("+Math.floor(perTile)+"s/tile)")
+            const perTile = (runningSeconds / (downloaded - skipped))
+            const estimated = Math.floor(resting * perTile)
+            console.log("total: ", downloaded, "/", r.total, "failed: ", failed, "skipped: ", skipped, "running time: ", Utils.toHumanTime(runningSeconds) + "s", "estimated left: ", Utils.toHumanTime(estimated), "(" + Math.floor(perTile) + "s/tile)")
 
             const boundsArr = Tiles.tile_bounds(r.zoomlevel, x, y)
             const bounds = {
@@ -106,13 +106,13 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
                 if ((<string>json.remark ?? "").startsWith("runtime error")) {
                     console.error("Got a runtime error: ", json.remark)
                     failed++;
-                }else if (json.elements.length === 0) {
+                } else if (json.elements.length === 0) {
                     console.log("Got an empty response! Writing anyway")
                 }
-                   
 
-                    console.log("Got the response - writing to ", filename)
-                    writeFileSync(filename, JSON.stringify(json, null, "  "));
+
+                console.log("Got the response - writing to ", filename)
+                writeFileSync(filename, JSON.stringify(json, null, "  "));
             } catch (err) {
                 console.log(url)
                 console.log("Could not download - probably hit the rate limit; waiting a bit. (" + err + ")")
@@ -180,7 +180,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
     function handleLayer(source: FeatureSourceForLayer) {
         const layer = source.layer.layerDef;
         const targetZoomLevel = layer.source.geojsonZoomLevel ?? 0
-        
+
         const layerId = layer.id
         if (layer.source.isOsmCacheLayer !== true) {
             return;
@@ -245,11 +245,11 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
         writeFileSync(path, JSON.stringify(perX))
 
         // And, if needed, to create a points-only layer
-        if(pointsOnlyLayers.indexOf(layer.id) >= 0){
+        if (pointsOnlyLayers.indexOf(layer.id) >= 0) {
             const features = source.features.data.map(f => f.feature)
             const points = features.map(feature => GeoOperations.centerpoint(feature))
             console.log("Writing points overview for ", layerId)
-            const targetPath = targetdir+"_"+layerId+"_points.geojson"
+            const targetPath = targetdir + "_" + layerId + "_points.geojson"
             // This is the geojson file containing all features for this tile
             writeFileSync(targetPath, JSON.stringify({
                 type: "FeatureCollection",
@@ -270,7 +270,6 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
 }
 
 
-
 async function main(args: string[]) {
 
     if (args.length == 0) {
@@ -284,12 +283,12 @@ async function main(args: string[]) {
     const lon0 = Number(args[4])
     const lat1 = Number(args[5])
     const lon1 = Number(args[6])
-    
+
     let generatePointLayersFor = []
-    if(args[7] == "--generate-point-overview"){
+    if (args[7] == "--generate-point-overview") {
         generatePointLayersFor = args[8].split(",")
     }
-    
+
 
     const tileRange = Tiles.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
 
