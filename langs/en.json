@@ -172,6 +172,7 @@
     "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new point.",
     "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",
     "goToInbox": "Open inbox",
+    "removeLocationHistory": "Delete the location history",
     "getStartedLogin": "Log in with OpenStreetMap to get started",
     "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
     "noTagsSelected": "No tags selected",
@@ -192,6 +193,8 @@
       "downloadGeojson": "Download visible data as GeoJSON",
       "downloadGpx":"Download as GPX-file",
       "downloadGpxHelper":"A GPX-file can be used with most navigation devices and applications",
+      "uploadGpx":"Upload your track to OpenStreetMap",
+
       "exporting": "Exporting…",
       "downloadGeoJsonHelper": "Compatible with QGIS, ArcGIS, ESRI, …",
       "downloadCSV": "Download visible data as CSV",

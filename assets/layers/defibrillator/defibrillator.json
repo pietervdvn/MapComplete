@@ -189,7 +189,6 @@
         "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
         "de": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
       },
-    
       "condition": {
         "and": [
           "access=no"

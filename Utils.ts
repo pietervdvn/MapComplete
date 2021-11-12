@@ -361,6 +361,34 @@ Note that these values can be prepare with javascript in the theme by using a [c
         )
     }
 
+    public static upload(url: string, data, headers?: any): Promise<string> {
+
+        return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.onload = () => {
+                    if (xhr.status == 200) {
+                        resolve(xhr.response)
+                    } else if (xhr.status === 509 || xhr.status === 429) {
+                        reject("rate limited")
+                    } else {
+                        reject(xhr.statusText)
+                    }
+                };
+                xhr.open('POST', url);
+                if (headers !== undefined) {
+
+                    for (const key in headers) {
+                        xhr.setRequestHeader(key, headers[key])
+                    }
+                }
+
+                xhr.send(data);
+                xhr.onerror = reject
+            }
+        )
+    }
+
+
     public static async downloadJsonCached(url: string, maxCacheTimeMs: number, headers?: any): Promise<any> {
         const cached = Utils._download_cache.get(url)
         if (cached !== undefined) {

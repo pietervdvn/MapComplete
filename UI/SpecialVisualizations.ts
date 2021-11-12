@@ -39,10 +39,11 @@ import {And} from "../Logic/Tags/And";
 import Toggle from "./Input/Toggle";
 import {DefaultGuiState} from "./DefaultGuiState";
 import {GeoOperations} from "../Logic/GeoOperations";
+import Hash from "../Logic/Web/Hash";
 
 export interface SpecialVisualization {
     funcName: string,
-    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState, ) => BaseUIElement),
+    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
     docs: string,
     example?: string,
     args: { name: string, defaultValue?: string, doc: string }[]
@@ -174,11 +175,11 @@ export default class SpecialVisualizations {
                                 idList = JSON.parse(value)
                             }
 
-
                             for (const id of idList) {
+                                const feature = featureStore.get(id)
                                 features.push({
                                     freshness: new Date(),
-                                    feature: featureStore.get(id)
+                                    feature
                                 })
                             }
                         }
@@ -606,8 +607,8 @@ export default class SpecialVisualizations {
                 args: [],
                 constr: (state, tagSource, args) => {
                     const t = Translations.t.general.download;
-                    
-                    return new SubtleButton(Svg.download_ui(), 
+
+                    return new SubtleButton(Svg.download_ui(),
                         new Combine([t.downloadGpx.SetClass("font-bold text-lg"),
                             t.downloadGpxHelper.SetClass("subtle")]).SetClass("flex flex-col")
                     ).onClick(() => {
@@ -617,11 +618,24 @@ export default class SpecialVisualizations {
                         const matchingLayer = state?.layoutToUse?.getMatchingLayer(tags)
                         const gpx = GeoOperations.AsGpx(feature, matchingLayer)
                         const title = matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "gpx_track"
-                        Utils.offerContentsAsDownloadableFile(gpx, title+"_mapcomplete_export.gpx", {
+                        Utils.offerContentsAsDownloadableFile(gpx, title + "_mapcomplete_export.gpx", {
                             mimetype: "{gpx=application/gpx+xml}"
                         })
 
 
+                    })
+                }
+            },
+            {
+                funcName: "clear_location_history",
+                docs: "A button to remove the travelled track information from the device",
+                args: [],
+                constr: state => {
+                    return new SubtleButton(
+                        Svg.delete_icon_svg().SetStyle("height: 1.5rem"), Translations.t.general.removeLocationHistory
+                    ).onClick(() => {
+                        state.historicalUserLocations.features.setData([])
+                        Hash.hash.setData(undefined)
                     })
                 }
             }

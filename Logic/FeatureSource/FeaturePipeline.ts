@@ -5,11 +5,9 @@ import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from 
 import TiledFeatureSource from "./TiledFeatureSource/TiledFeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import {TileHierarchyTools} from "./TiledFeatureSource/TileHierarchy";
-import FilteredLayer from "../../Models/FilteredLayer";
 import MetaTagging from "../MetaTagging";
 import RememberingSource from "./Sources/RememberingSource";
 import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
-import {Changes} from "../Osm/Changes";
 import GeoJsonSource from "./Sources/GeoJsonSource";
 import Loc from "../../Models/Loc";
 import RegisteringAllFromFeatureSourceActor from "./Actors/RegisteringAllFromFeatureSourceActor";
@@ -22,11 +20,10 @@ import {NewGeometryFromChangesFeatureSource} from "./Sources/NewGeometryFromChan
 import ChangeGeometryApplicator from "./Sources/ChangeGeometryApplicator";
 import {BBox} from "../BBox";
 import OsmFeatureSource from "./TiledFeatureSource/OsmFeatureSource";
-import {OsmConnection} from "../Osm/OsmConnection";
 import {Tiles} from "../../Models/TileRange";
 import TileFreshnessCalculator from "./TileFreshnessCalculator";
-import {ElementStorage} from "../ElementStorage";
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
+import MapState from "../State/MapState";
 
 
 /**
@@ -51,19 +48,7 @@ export default class FeaturePipeline {
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
 
     private readonly overpassUpdater: OverpassFeatureSource
-    private state: {
-        readonly filteredLayers: UIEventSource<FilteredLayer[]>,
-        readonly locationControl: UIEventSource<Loc>,
-        readonly selectedElement: UIEventSource<any>,
-        readonly changes: Changes,
-        readonly layoutToUse: LayoutConfig,
-        readonly leafletMap: any,
-        readonly overpassUrl: UIEventSource<string[]>;
-        readonly overpassTimeout: UIEventSource<number>;
-        readonly overpassMaxZoom: UIEventSource<number>;
-        readonly osmConnection: OsmConnection
-        readonly currentBounds: UIEventSource<BBox>
-    };
+    private state: MapState;
     private readonly relationTracker: RelationsTracker
     private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>;
 
@@ -74,24 +59,7 @@ export default class FeaturePipeline {
 
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
-        state: {
-            readonly historicalUserLocations: FeatureSourceForLayer & Tiled;
-            readonly homeLocation: FeatureSourceForLayer & Tiled;
-            readonly currentUserLocation: FeatureSourceForLayer & Tiled;
-            readonly filteredLayers: UIEventSource<FilteredLayer[]>,
-            readonly locationControl: UIEventSource<Loc>,
-            readonly selectedElement: UIEventSource<any>,
-            readonly changes: Changes,
-            readonly layoutToUse: LayoutConfig,
-            readonly leafletMap: any,
-            readonly overpassUrl: UIEventSource<string[]>;
-            readonly overpassTimeout: UIEventSource<number>;
-            readonly overpassMaxZoom: UIEventSource<number>;
-            readonly osmConnection: OsmConnection
-            readonly currentBounds: UIEventSource<BBox>,
-            readonly osmApiTileSize: UIEventSource<number>,
-            readonly allElements: ElementStorage
-        }) {
+        state: MapState) {
         this.state = state;
 
         const self = this
@@ -138,7 +106,7 @@ export default class FeaturePipeline {
             handleFeatureSource(srcFiltered)
             self.somethingLoaded.setData(true)
             // We do not mark as visited here, this is the responsability of the code near the actual loader (e.g. overpassLoader and OSMApiFeatureLoader)
-        };
+        }
 
         function handlePriviligedFeatureSource(src: FeatureSourceForLayer & Tiled){
             // Passthrough to passed function, except that it registers as well
@@ -168,8 +136,13 @@ export default class FeaturePipeline {
                 continue
             }
 
-            if (id === "gps_track") {
+            if (id === "gps_location_history") {
                 handlePriviligedFeatureSource(state.historicalUserLocations)
+                continue
+            }
+
+            if (id === "gps_track") {
+                handlePriviligedFeatureSource(state.historicalUserLocationsTrack)
                 continue
             }
 

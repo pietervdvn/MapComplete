@@ -16,6 +16,8 @@ import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
+import {LocalStorageSource} from "../Web/LocalStorageSource";
+import {GeoOperations} from "../GeoOperations";
 
 /**
  * Contains all the leaflet-map related state
@@ -52,6 +54,11 @@ export default class MapState extends UserRelatedState {
      * All previously visited points
      */
     public historicalUserLocations: FeatureSourceForLayer & Tiled;
+    /**
+     * The number of seconds that the GPS-locations are stored in memory
+     */
+    public gpsLocationHistoryRetentionTime = new UIEventSource(7 * 24 * 60 * 60, "gps_location_retention" )
+    public historicalUserLocationsTrack: FeatureSourceForLayer & Tiled;
 
     /**
      * A feature source containing the current home location of the user
@@ -70,7 +77,7 @@ export default class MapState extends UserRelatedState {
      */
     public overlayToggles: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]
 
-
+  
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
 
@@ -188,42 +195,75 @@ export default class MapState extends UserRelatedState {
     }
     
     private initUserLocationTrail(){
-        const histCoordinates = []
-        let lineFeature = {
-            type:"Feature",
-            geometry:{
-                type: "LineString",
-                coordinates: histCoordinates
-            },
-            properties:{
-                "user:location":"yes",
-                "id":"gps_track"
-            }
-        }
-        const features = new UIEventSource<{feature: any, freshness: Date}[]>([], "gps_track")
+        const features = LocalStorageSource.GetParsed<{feature: any, freshness: Date}[]>("gps_location_history", [])
+        const now = new Date().getTime()
+        features.data = features.data
+            .map(ff => ({feature: ff.feature, freshness: new Date(ff.freshness)}))
+            .filter(ff => (now - ff.freshness.getTime()) < this.gpsLocationHistoryRetentionTime.data)
+        features.ping()
+        const self = this;
         let i = 0
         this.currentUserLocation.features.addCallbackAndRunD(([location]) => {
             if(location === undefined){
                 return;
             }
-            const feature = JSON.parse(JSON.stringify(location.feature))
-            feature.properties.id = "gps/"+i
-            i++
-            features.data.push({feature, freshness: new Date()})
-            histCoordinates.push(feature.geometry.coordinates)
             
-            if(lineFeature !== undefined && lineFeature.geometry.coordinates.length >= 2){
-                features.data.push({feature: lineFeature, freshness: new Date()})
-                lineFeature = undefined
+            const previousLocation = features.data[features.data.length - 1]
+            if(previousLocation !== undefined){
+                const d = GeoOperations.distanceBetween(
+                    previousLocation.feature.geometry.coordinates,
+                    location.feature.geometry.coordinates
+
+                )
+                if(d < 20){
+                    // Do not append changes less then 20m - it's probably noise anyway
+                    return;
+                }
             }
             
+            const feature = JSON.parse(JSON.stringify(location.feature))
+            feature.properties.id = "gps/"+features.data.length
+            i++
+            features.data.push({feature, freshness: new Date()})
             features.ping()
         })
         
         
-        let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
+        let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location_history")[0]
         this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
         this.changes.useLocationHistory(this)
+
+
+
+
+       
+        
+        const asLine = features.map(allPoints => {
+            if(allPoints === undefined || allPoints.length < 2){
+                return []
+            }
+
+            const feature = {
+                type: "Feature",
+                properties:{
+                    "id":"location_track",
+                    "_date:now": new Date().toISOString(),
+                },
+                geometry:{
+                    type: "LineString",
+                    coordinates: allPoints.map(ff => ff.feature.geometry.coordinates)
+                }
+            }
+            
+            self.allElements.ContainingFeatures.set(feature.properties.id, feature)
+            
+            return [{
+                feature,
+                freshness: new Date()
+            }]
+        })
+        let gpsLineLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
+        this.historicalUserLocationsTrack = new SimpleFeatureSource(gpsLineLayerDef, Tiles.tile_index(0, 0, 0), asLine);
     }
 
     private initHomeLocation() {
