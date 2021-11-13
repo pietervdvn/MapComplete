@@ -5,7 +5,6 @@
 import {UIEventSource} from "../../UIEventSource";
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
-import {Utils} from "../../../Utils";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
 
@@ -14,17 +13,17 @@ export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name;
     public readonly layer: FilteredLayer
-    private readonly _sources: UIEventSource<FeatureSource[]>;
     public readonly tileIndex: number;
     public readonly bbox: BBox;
     public readonly containedIds: UIEventSource<Set<string>> = new UIEventSource<Set<string>>(new Set())
+    private readonly _sources: UIEventSource<FeatureSource[]>;
 
     constructor(layer: FilteredLayer, tileIndex: number, bbox: BBox, sources: UIEventSource<FeatureSource[]>) {
         this.tileIndex = tileIndex;
         this.bbox = bbox;
         this._sources = sources;
         this.layer = layer;
-        this.name = "FeatureSourceMerger("+layer.layerDef.id+", "+Tiles.tile_from_index(tileIndex).join(",")+")"
+        this.name = "FeatureSourceMerger(" + layer.layerDef.id + ", " + Tiles.tile_from_index(tileIndex).join(",") + ")"
         const self = this;
 
         const handledSources = new Set<FeatureSource>();

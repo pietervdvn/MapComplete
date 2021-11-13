@@ -28,12 +28,12 @@ export default class OpeningHoursInput extends InputElement<string> {
         this._value = value;
         let valueWithoutPrefix = value
         if (prefix !== "" && postfix !== "") {
-       
+
             valueWithoutPrefix = value.map(str => {
                 if (str === undefined) {
                     return undefined;
                 }
-                if(str === ""){
+                if (str === "") {
                     return ""
                 }
                 if (str.startsWith(prefix) && str.endsWith(postfix)) {
@@ -44,7 +44,7 @@ export default class OpeningHoursInput extends InputElement<string> {
                 if (noPrefix === undefined) {
                     return undefined;
                 }
-                if(noPrefix === ""){
+                if (noPrefix === "") {
                     return ""
                 }
                 if (noPrefix.startsWith(prefix) && noPrefix.endsWith(postfix)) {

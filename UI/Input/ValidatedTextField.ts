@@ -187,16 +187,16 @@ class OpeningHoursTextField implements TextFieldDef {
         return new OpeningHoursInput(value, prefix, postfix)
     }
 }
-
 export default class ValidatedTextField {
 
     public static tpList: TextFieldDef[] = [
+        
         ValidatedTextField.tp(
             "string",
             "A basic string"),
         ValidatedTextField.tp(
             "text",
-            "A string, but allows input of longer strings more comfortably (a text area)",
+            "A string, but allows input of longer strings more comfortably and supports newlines (a text area)",
             undefined,
             undefined,
             undefined,
@@ -271,7 +271,7 @@ export default class ValidatedTextField {
                 if (args[0]) {
                     zoom = Number(args[0])
                     if (isNaN(zoom)) {
-                        console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ",args[0]," (using 19 instead)")
+                        console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ", args[0], " (using 19 instead)")
                         zoom = 19
                     }
                 }
@@ -473,6 +473,9 @@ export default class ValidatedTextField {
 
 
         options.inputMode = tp.inputmode;
+        if(tp.inputmode === "text") {
+            options.htmlType = "area"
+        }
 
 
         let input: InputElement<string> = new TextField(options);

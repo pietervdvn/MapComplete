@@ -44,13 +44,13 @@ export class Denomination {
     get human(): Translation {
         return this._human.Clone()
     }
-   
+
     get humanSingular(): Translation {
         return (this._humanSingular ?? this._human).Clone()
     }
-    
-    getToggledHuman(isSingular: UIEventSource<boolean>): BaseUIElement{
-        if(this._humanSingular === undefined){
+
+    getToggledHuman(isSingular: UIEventSource<boolean>): BaseUIElement {
+        if (this._humanSingular === undefined) {
             return this.human
         }
         return new Toggle(
@@ -59,7 +59,7 @@ export class Denomination {
             isSingular
         )
     }
-    
+
     public canonicalValue(value: string, actAsDefault?: boolean) {
         if (value === undefined) {
             return undefined;
@@ -68,12 +68,12 @@ export class Denomination {
         if (stripped === null) {
             return null;
         }
-        if(stripped === "1" && this._canonicalSingular !== undefined){
-            return "1 "+this._canonicalSingular
+        if (stripped === "1" && this._canonicalSingular !== undefined) {
+            return "1 " + this._canonicalSingular
         }
         return stripped + " " + this.canonical;
     }
-    
+
     /**
      * Returns the core value (without unit) if:
      * - the value ends with the canonical or an alternative value (or begins with if prefix is set)
@@ -89,30 +89,31 @@ export class Denomination {
 
         value = value.toLowerCase()
         const self = this;
-        function startsWith(key){
-            if(self.prefix){
+
+        function startsWith(key) {
+            if (self.prefix) {
                 return value.startsWith(key)
-            }else{
+            } else {
                 return value.endsWith(key)
             }
         }
-        
-        function substr(key){
-            if(self.prefix){
+
+        function substr(key) {
+            if (self.prefix) {
                 return value.substr(key.length).trim()
-            }else{
+            } else {
                 return value.substring(0, value.length - key.length).trim()
             }
         }
-        
-        if(this.canonical !== "" && startsWith(this.canonical.toLowerCase())){
+
+        if (this.canonical !== "" && startsWith(this.canonical.toLowerCase())) {
             return substr(this.canonical)
-        } 
-        
-        if(this._canonicalSingular !== undefined && this._canonicalSingular !== "" && startsWith(this._canonicalSingular)){
+        }
+
+        if (this._canonicalSingular !== undefined && this._canonicalSingular !== "" && startsWith(this._canonicalSingular)) {
             return substr(this._canonicalSingular)
         }
-        
+
         for (const alternativeValue of this.alternativeDenominations) {
             if (startsWith(alternativeValue)) {
                 return substr(alternativeValue);

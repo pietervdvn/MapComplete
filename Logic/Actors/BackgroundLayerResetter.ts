@@ -13,11 +13,11 @@ export default class BackgroundLayerResetter {
                 location: UIEventSource<Loc>,
                 availableLayers: UIEventSource<BaseLayer[]>,
                 defaultLayerId: string = undefined) {
-        
-        if(Utils.runningFromConsole){
+
+        if (Utils.runningFromConsole) {
             return
         }
-        
+
         defaultLayerId = defaultLayerId ?? AvailableBaseLayers.osmCarto.id;
 
         // Change the baselayer back to OSM if we go out of the current range of the layer

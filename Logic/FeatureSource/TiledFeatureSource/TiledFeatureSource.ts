@@ -1,6 +1,5 @@
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
-import {Utils} from "../../../Utils";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import TileHierarchy from "./TileHierarchy";
 import {Tiles} from "../../../Models/TileRange";
@@ -28,13 +27,13 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
     public readonly containedIds: UIEventSource<Set<string>>
 
     public readonly bbox: BBox;
+    public readonly tileIndex: number;
     private upper_left: TiledFeatureSource
     private upper_right: TiledFeatureSource
     private lower_left: TiledFeatureSource
     private lower_right: TiledFeatureSource
     private readonly maxzoom: number;
     private readonly options: TiledFeatureSourceOptions
-    public readonly tileIndex: number;
 
     private constructor(z: number, x: number, y: number, parent: TiledFeatureSource, options?: TiledFeatureSourceOptions) {
         this.z = z;
@@ -92,25 +91,25 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
         return root;
     }
 
-    private isSplitNeeded(featureCount: number){
-        if(this.upper_left !== undefined){
+    private isSplitNeeded(featureCount: number) {
+        if (this.upper_left !== undefined) {
             // This tile has been split previously, so we keep on splitting
             return true;
         }
-        if(this.z >= this.maxzoom){
+        if (this.z >= this.maxzoom) {
             // We are not allowed to split any further
             return false
         }
-        if(this.options.minZoomLevel !== undefined && this.z < this.options.minZoomLevel){
+        if (this.options.minZoomLevel !== undefined && this.z < this.options.minZoomLevel) {
             // We must have at least this zoom level before we are allowed to start splitting
             return true
         }
-        
+
         // To much features - we split
         return featureCount > this.maxFeatureCount
-        
+
     }
-    
+
     /***
      * Adds the list of features to this hierarchy.
      * If there are too much features, the list will be broken down and distributed over the subtiles (only retaining features that don't fit a subtile on this level)
@@ -121,7 +120,7 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
         if (features === undefined || features.length === 0) {
             return;
         }
-        
+
         if (!this.isSplitNeeded(features.length)) {
             this.features.setData(features)
             return;
@@ -155,7 +154,7 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
                 } else {
                     overlapsboundary.push(feature)
                 }
-            }else if (this.options.minZoomLevel === undefined) {
+            } else if (this.options.minZoomLevel === undefined) {
                 if (bbox.isContainedIn(this.upper_left.bbox)) {
                     ulf.push(feature)
                 } else if (bbox.isContainedIn(this.upper_right.bbox)) {

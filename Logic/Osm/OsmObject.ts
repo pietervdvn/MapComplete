@@ -56,7 +56,7 @@ export abstract class OsmObject {
         OsmObject.objectCache.set(id, src);
         return src;
     }
-    
+
     static async DownloadPropertiesOf(id: string): Promise<any> {
         const splitted = id.split("/");
         const idN = Number(splitted[1]);
@@ -84,18 +84,18 @@ export abstract class OsmObject {
         const parsed = OsmObject.ParseObjects(rawData.elements);
         // Lets fetch the object we need
         for (const osmObject of parsed) {
-            if(osmObject.type !== type){
+            if (osmObject.type !== type) {
                 continue;
             }
-            if(osmObject.id !== idN){
+            if (osmObject.id !== idN) {
                 continue
             }
             // Found the one!
             return osmObject
         }
         throw "PANIC: requested object is not part of the response"
-        
-        
+
+
     }
 
 
@@ -170,6 +170,43 @@ export abstract class OsmObject {
         const elements: any[] = data.elements;
         return OsmObject.ParseObjects(elements);
     }
+
+    public static ParseObjects(elements: any[]): OsmObject[] {
+        const objects: OsmObject[] = [];
+        const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
+
+        for (const element of elements) {
+            const type = element.type;
+            const idN = element.id;
+            let osmObject: OsmObject = null
+            switch (type) {
+                case("node"):
+                    const node = new OsmNode(idN);
+                    allNodes.set(idN, node);
+                    osmObject = node
+                    node.SaveExtraData(element);
+                    break;
+                case("way"):
+                    osmObject = new OsmWay(idN);
+                    const nodes = element.nodes.map(i => allNodes.get(i));
+                    osmObject.SaveExtraData(element, nodes)
+                    break;
+                case("relation"):
+                    osmObject = new OsmRelation(idN);
+                    osmObject.SaveExtraData(element, [])
+                    break;
+            }
+
+            if (osmObject !== undefined && OsmObject.backendURL !== OsmObject.defaultBackend) {
+                osmObject.tags["_backend"] = OsmObject.backendURL
+            }
+
+            osmObject?.LoadData(element)
+            objects.push(osmObject)
+        }
+        return objects;
+    }
+
     protected static isPolygon(tags: any): boolean {
         for (const tagsKey in tags) {
             if (!tags.hasOwnProperty(tagsKey)) {
@@ -204,42 +241,6 @@ export abstract class OsmObject {
         }
 
         return result;
-    }
-
-    public static ParseObjects(elements: any[]): OsmObject[] {
-        const objects: OsmObject[] = [];
-        const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
-
-        for (const element of elements) {
-            const type = element.type;
-            const idN = element.id;
-            let osmObject: OsmObject = null
-            switch (type) {
-                case("node"):
-                    const node = new OsmNode(idN);
-                    allNodes.set(idN, node);
-                    osmObject = node
-                    node.SaveExtraData(element);
-                    break;
-                case("way"):
-                    osmObject = new OsmWay(idN);
-                    const nodes = element.nodes.map(i => allNodes.get(i));
-                    osmObject.SaveExtraData(element, nodes)
-                    break;
-                case("relation"):
-                    osmObject = new OsmRelation(idN);
-                    osmObject.SaveExtraData(element, [])
-                    break;
-            }
-            
-            if (osmObject !== undefined && OsmObject.backendURL !== OsmObject.defaultBackend) {
-                osmObject.tags["_backend"] = OsmObject.backendURL
-            }
-            
-            osmObject?.LoadData(element)
-            objects.push(osmObject)
-        }
-        return objects;
     }
 
     // The centerpoint of the feature, as [lat, lon]

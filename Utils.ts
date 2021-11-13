@@ -10,12 +10,7 @@ export class Utils {
     public static runningFromConsole = typeof window === "undefined";
     public static readonly assets_path = "./assets/svg/";
     public static externalDownloadFunction: (url: string, headers?: any) => Promise<any>;
-    private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
-    private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
-    private static injectedDownloads = {}
-    private static _download_cache = new Map<string, { promise: Promise<any>, timestamp: number }>()
-
-   public  static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
+    public static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
 This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
 
 If a value to substitute is undefined, empty string will be used instead.
@@ -26,7 +21,11 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  `
-    
+    private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
+    private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
+    private static injectedDownloads = {}
+    private static _download_cache = new Map<string, { promise: Promise<any>, timestamp: number }>()
+
     static EncodeXmlValue(str) {
         if (typeof str !== "string") {
             str = "" + str
@@ -145,6 +144,21 @@ Note that these values can be prepare with javascript in the theme by using a [c
         return newArr;
     }
 
+    public static Dupicates(arr: string[]): string[] {
+        if (arr === undefined) {
+            return undefined;
+        }
+        const newArr = [];
+        const seen = new Set<string>();
+        for (const string of arr) {
+            if(seen.has(string)){
+                newArr.push(string)
+            }
+            seen.add(string)
+        }
+        return newArr;
+    }
+    
     public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean {
         if (t1.length !== t2.length) {
             return false
@@ -187,7 +201,14 @@ Note that these values can be prepare with javascript in the theme by using a [c
 
         while (match) {
             const key = match[1]
-            txt = txt.replace("{" + key + "}", tags[key] ?? "")
+            let v = tags[key]
+            if(v !== undefined ){
+                if(typeof v !== "string"){
+                    v = ""+v
+                }
+                v = v.replace(/\n/g, "<br/>")
+            }
+            txt = txt.replace("{" + key + "}", v ?? "")
             match = txt.match(regex)
         }
 
@@ -203,7 +224,7 @@ Note that these values can be prepare with javascript in the theme by using a [c
         link.href = location;
         link.media = 'all';
         head.appendChild(link);
-        console.log("Added custom layout ", location)
+        console.log("Added custom css file ", location)
     }
 
     /**
@@ -236,6 +257,9 @@ Note that these values can be prepare with javascript in the theme by using a [c
             }
 
             const sourceV = source[key];
+            if(target === null){
+                return source
+            }
             const targetV = target[key]
             if (typeof sourceV === "object") {
                 if (sourceV === null) {
@@ -336,6 +360,34 @@ Note that these values can be prepare with javascript in the theme by using a [c
             }
         )
     }
+
+    public static upload(url: string, data, headers?: any): Promise<string> {
+
+        return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.onload = () => {
+                    if (xhr.status == 200) {
+                        resolve(xhr.response)
+                    } else if (xhr.status === 509 || xhr.status === 429) {
+                        reject("rate limited")
+                    } else {
+                        reject(xhr.statusText)
+                    }
+                };
+                xhr.open('POST', url);
+                if (headers !== undefined) {
+
+                    for (const key in headers) {
+                        xhr.setRequestHeader(key, headers[key])
+                    }
+                }
+
+                xhr.send(data);
+                xhr.onerror = reject
+            }
+        )
+    }
+
 
     public static async downloadJsonCached(url: string, maxCacheTimeMs: number, headers?: any): Promise<any> {
         const cached = Utils._download_cache.get(url)
@@ -473,7 +525,7 @@ Note that these values can be prepare with javascript in the theme by using a [c
         if (theme !== undefined) {
             osmcha_link = osmcha_link + "," + `"comment":[{"label":"#${theme}","value":"#${theme}"}]`
         }
-        return "https://osmcha.org/?filters=" + encodeURIComponent("{"+osmcha_link+"}")
+        return "https://osmcha.org/?filters=" + encodeURIComponent("{" + osmcha_link + "}")
     }
 
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {

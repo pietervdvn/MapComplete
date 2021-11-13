@@ -31,10 +31,10 @@ export default class PendingChangesUploader {
                 }
             });
 
-        if(Utils.runningFromConsole){
+        if (Utils.runningFromConsole) {
             return;
         }
-        
+
         document.addEventListener('mouseout', e => {
             // @ts-ignore
             if (!e.toElement && !e.relatedTarget) {

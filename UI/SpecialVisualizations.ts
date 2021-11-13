@@ -33,18 +33,17 @@ import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import Link from "./Base/Link";
 import List from "./Base/List";
-import {OsmConnection} from "../Logic/Osm/OsmConnection";
 import {SubtleButton} from "./Base/SubtleButton";
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
 import {And} from "../Logic/Tags/And";
 import Toggle from "./Input/Toggle";
-import Img from "./Base/Img";
-import FilteredLayer from "../Models/FilteredLayer";
 import {DefaultGuiState} from "./DefaultGuiState";
+import {GeoOperations} from "../Logic/GeoOperations";
+import Hash from "../Logic/Web/Hash";
 
 export interface SpecialVisualization {
     funcName: string,
-    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState) => BaseUIElement),
+    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
     docs: string,
     example?: string,
     args: { name: string, defaultValue?: string, doc: string }[]
@@ -161,7 +160,7 @@ export default class SpecialVisualizations {
                     }
                 ],
                 example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
-                constr: (state, tagSource, args) => {
+                constr: (state, tagSource, args, defaultGuiState) => {
 
                     const keys = [...args]
                     keys.splice(0, 1)
@@ -177,9 +176,10 @@ export default class SpecialVisualizations {
                             }
 
                             for (const id of idList) {
+                                const feature = featureStore.get(id)
                                 features.push({
                                     freshness: new Date(),
-                                    feature: featureStore.get(id)
+                                    feature
                                 })
                             }
                         }
@@ -427,12 +427,7 @@ export default class SpecialVisualizations {
 
                             const title = state?.layoutToUse?.title?.txt ?? "MapComplete";
 
-                            let matchingLayer: LayerConfig = undefined;
-                            for (const layer of (state?.layoutToUse?.layers ?? [])) {
-                                if (layer.source.osmTags.matchesProperties(tagSource?.data)) {
-                                    matchingLayer = layer
-                                }
-                            }
+                            let matchingLayer: LayerConfig = state?.layoutToUse?.getMatchingLayer(tagSource?.data);
                             let name = matchingLayer?.title?.GetRenderValue(tagSource.data)?.txt ?? tagSource.data?.name ?? "POI";
                             if (name) {
                                 name = `${name} (${title})`
@@ -568,22 +563,22 @@ export default class SpecialVisualizations {
                     }
                     const targetIdKey = args[3]
                     const t = Translations.t.general.apply_button
-                    
+
                     const tagsExplanation = new VariableUiElement(tagsToApply.map(tagsToApply => {
                             const tagsStr = tagsToApply.map(t => t.asHumanString(false, true)).join("&");
                             let el: BaseUIElement = new FixedUiElement(tagsStr)
-                            if(targetIdKey !== undefined){
-                                 const targetId = tags.data[targetIdKey] ?? tags.data.id
-                                el = t.appliedOnAnotherObject.Subs({tags: tagsStr , id: targetId })
+                            if (targetIdKey !== undefined) {
+                                const targetId = tags.data[targetIdKey] ?? tags.data.id
+                                el = t.appliedOnAnotherObject.Subs({tags: tagsStr, id: targetId})
                             }
                             return el;
                         }
                     )).SetClass("subtle")
-                    
+
                     const applied = new UIEventSource(false)
                     const applyButton = new SubtleButton(image, new Combine([msg, tagsExplanation]).SetClass("flex flex-col"))
                         .onClick(() => {
-                            const targetId = tags.data[ targetIdKey] ?? tags.data.id
+                            const targetId = tags.data[targetIdKey] ?? tags.data.id
                             const changeAction = new ChangeTagAction(targetId,
                                 new And(tagsToApply.data),
                                 tags.data, // We pass in the tags of the selected element, not the tags of the target element!
@@ -596,14 +591,52 @@ export default class SpecialVisualizations {
                             applied.setData(true)
                         })
 
-                    
+
                     return new Toggle(
                         new Toggle(
-                         t.isApplied.SetClass("thanks"),   
-                        applyButton,
+                            t.isApplied.SetClass("thanks"),
+                            applyButton,
                             applied
                         )
                         , undefined, state.osmConnection.isLoggedIn)
+                }
+            },
+            {
+                funcName: "export_as_gpx",
+                docs: "Exports the selected feature as GPX-file",
+                args: [],
+                constr: (state, tagSource, args) => {
+                    const t = Translations.t.general.download;
+
+                    return new SubtleButton(Svg.download_ui(),
+                        new Combine([t.downloadGpx.SetClass("font-bold text-lg"),
+                            t.downloadGpxHelper.SetClass("subtle")]).SetClass("flex flex-col")
+                    ).onClick(() => {
+                        console.log("Exporting as GPX!")
+                        const tags = tagSource.data
+                        const feature = state.allElements.ContainingFeatures.get(tags.id)
+                        const matchingLayer = state?.layoutToUse?.getMatchingLayer(tags)
+                        const gpx = GeoOperations.AsGpx(feature, matchingLayer)
+                        const title = matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "gpx_track"
+                        Utils.offerContentsAsDownloadableFile(gpx, title + "_mapcomplete_export.gpx", {
+                            mimetype: "{gpx=application/gpx+xml}"
+                        })
+
+
+                    })
+                }
+            },
+            {
+                funcName: "clear_location_history",
+                docs: "A button to remove the travelled track information from the device",
+                args: [],
+                constr: state => {
+                    return new SubtleButton(
+                        Svg.delete_icon_svg().SetStyle("height: 1.5rem"), Translations.t.general.removeLocationHistory
+                    ).onClick(() => {
+                        state.historicalUserLocations.features.setData([])
+                        Hash.hash.setData(undefined)
+                    })
                 }
             }
         ]

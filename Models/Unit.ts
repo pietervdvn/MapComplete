@@ -37,7 +37,9 @@ export class Unit {
         const possiblePostFixes = new Set<string>()
 
         function addPostfixesOf(str) {
-            if(str === undefined){return}
+            if (str === undefined) {
+                return
+            }
             str = str.toLowerCase()
             for (let i = 0; i < str.length + 1; i++) {
                 const substr = str.substring(0, i)
@@ -54,8 +56,8 @@ export class Unit {
         this.possiblePostFixes.sort((a, b) => b.length - a.length)
     }
 
-    
-    static fromJson(json: UnitConfigJson, ctx: string){
+
+    static fromJson(json: UnitConfigJson, ctx: string) {
         const appliesTo = json.appliesToKey
         for (let i = 0; i < appliesTo.length; i++) {
             let key = appliesTo[i];
@@ -82,7 +84,7 @@ export class Unit {
         const applicable = json.applicableUnits.map((u, i) => new Denomination(u, `${ctx}.units[${i}]`))
         return new Unit(appliesTo, applicable, json.eraseInvalidValues ?? false)
     }
-    
+
     isApplicableToKey(key: string | undefined): boolean {
         if (key === undefined) {
             return false;
@@ -112,7 +114,7 @@ export class Unit {
             return undefined;
         }
         const [stripped, denom] = this.findDenomination(value)
-        const human =  stripped === "1" ? denom?.humanSingular :  denom?.human
+        const human = stripped === "1" ? denom?.humanSingular : denom?.human
         if (human === undefined) {
             return new FixedUiElement(stripped ?? value);
         }

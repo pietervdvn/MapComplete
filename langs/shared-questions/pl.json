@@ -1,38 +1,38 @@
 {
-    "undefined": {
-        "description": {
-            "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
+  "undefined": {
+    "description": {
+      "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
+    },
+    "email": {
+      "question": "Jaki jest adres e-mail do {name}?"
+    },
+    "level": {
+      "mappings": {
+        "0": {
+          "then": "Znajduje się pod ziemią"
         },
-        "email": {
-            "question": "Jaki jest adres e-mail do {name}?"
+        "1": {
+          "then": "Znajduje się na parterze"
         },
-        "level": {
-            "mappings": {
-                "0": {
-                    "then": "Znajduje się pod ziemią"
-                },
-                "1": {
-                    "then": "Znajduje się na parterze"
-                },
-                "2": {
-                    "then": "Znajduje się na parterze"
-                },
-                "3": {
-                    "then": "Znajduje się na pierwszym piętrze"
-                }
-            },
-            "question": "Na jakim poziomie znajduje się ta funkcja?",
-            "render": "Znajduje się na {level} piętrze"
+        "2": {
+          "then": "Znajduje się na parterze"
         },
-        "opening_hours": {
-            "question": "Jakie są godziny otwarcia {name}?",
-            "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
-        },
-        "phone": {
-            "question": "Jaki jest numer telefonu do {name}?"
-        },
-        "website": {
-            "question": "Jaka jest strona internetowa {name}?"
+        "3": {
+          "then": "Znajduje się na pierwszym piętrze"
         }
+      },
+      "question": "Na jakim poziomie znajduje się ta funkcja?",
+      "render": "Znajduje się na {level} piętrze"
+    },
+    "opening_hours": {
+      "question": "Jakie są godziny otwarcia {name}?",
+      "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
+    },
+    "phone": {
+      "question": "Jaki jest numer telefonu do {name}?"
+    },
+    "website": {
+      "question": "Jaka jest strona internetowa {name}?"
     }
+  }
 }

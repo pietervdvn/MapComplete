@@ -1,11 +1,11 @@
 {
-    "aed": {
-        "title": "Nyílt AED Térkép"
-    },
-    "artwork": {
-        "title": "Nyít Műalkotás Térkép"
-    },
-    "ghostbikes": {
-        "title": "Emlékkerékpár"
-    }
+  "aed": {
+    "title": "Nyílt AED Térkép"
+  },
+  "artwork": {
+    "title": "Nyít Műalkotás Térkép"
+  },
+  "ghostbikes": {
+    "title": "Emlékkerékpár"
+  }
 }

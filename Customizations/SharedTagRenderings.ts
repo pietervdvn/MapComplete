@@ -15,7 +15,7 @@ export default class SharedTagRenderings {
         const d = new Map<string, TagRenderingConfig>()
         for (const key of Array.from(configJsons.keys())) {
             try {
-                d.set(key, new TagRenderingConfig(configJsons.get(key),  `SharedTagRenderings.${key}`))
+                d.set(key, new TagRenderingConfig(configJsons.get(key), `SharedTagRenderings.${key}`))
             } catch (e) {
                 if (!Utils.runningFromConsole) {
                     console.error("BUG: could not parse", key, " from questions.json or icons.json - this error happened during the build step of the SharedTagRenderings", e)
@@ -37,8 +37,11 @@ export default class SharedTagRenderings {
         for (const key in icons) {
             dict.set(key, <TagRenderingConfigJson>icons[key])
         }
+        
+        dict.forEach((value, key) => value.id = key)
 
         return dict;
     }
+
 
 }

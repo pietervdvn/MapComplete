@@ -8,7 +8,7 @@ import {ElementStorage} from "../ElementStorage";
 import {Utils} from "../../Utils";
 
 export default class TitleHandler {
-    constructor(state : {
+    constructor(state: {
         selectedElement: UIEventSource<any>,
         layoutToUse: LayoutConfig,
         allElements: ElementStorage
@@ -28,7 +28,7 @@ export default class TitleHandler {
                         continue;
                     }
                     if (layer.source.osmTags.matchesProperties(tags)) {
-                        const tagsSource = state.allElements.getEventSourceById(tags.id)
+                        const tagsSource = state.allElements.getEventSourceById(tags.id) ?? new UIEventSource<any>(tags)
                         const title = new TagRenderingAnswer(tagsSource, layer.title)
                         return new Combine([defaultTitle, " | ", title]).ConstructElement()?.innerText ?? defaultTitle;
                     }
@@ -39,7 +39,7 @@ export default class TitleHandler {
 
 
         currentTitle.addCallbackAndRunD(title => {
-            if(Utils.runningFromConsole){
+            if (Utils.runningFromConsole) {
                 return
             }
             document.title = title

@@ -115,7 +115,6 @@ function run(file, protojson) {
         }
 
 
-
         overview_question_answers.push(json)
 
         // We add a second time for any amount to trigger a visualisation; but this is not an answer option
@@ -152,6 +151,7 @@ function run(file, protojson) {
 
         technicalQuestions.push({
             "id": "voltage-" + i,
+            group: "technical",
             question: {
                 en: `What voltage do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke spanning levert de stekker van type ${descrWithImage_nl}`
@@ -181,6 +181,7 @@ function run(file, protojson) {
 
         technicalQuestions.push({
             "id": "current-" + i,
+            group:"technical",
             question: {
                 en: `What current do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke stroom levert de stekker van type ${descrWithImage_nl}?`,
@@ -210,6 +211,7 @@ function run(file, protojson) {
 
         technicalQuestions.push({
             "id": "power-output-" + i,
+            group:"technical",
             question: {
                 en: `What power output does a single plug of type ${descrWithImage_en} offer?`,
                 nl: `Welk vermogen levert een enkele stekker van type ${descrWithImage_nl}?`,
@@ -255,6 +257,7 @@ function run(file, protojson) {
         "mappings": overview_question_answers
     }
     questions.unshift(toggles)
+    questions.push(...technicalQuestions)
 
     const stringified = questions.map(q => JSON.stringify(q, null, "  "))
     let protoString = readFileSync(protojson, "utf8")

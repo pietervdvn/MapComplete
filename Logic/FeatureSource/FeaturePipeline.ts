@@ -5,11 +5,9 @@ import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from 
 import TiledFeatureSource from "./TiledFeatureSource/TiledFeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import {TileHierarchyTools} from "./TiledFeatureSource/TileHierarchy";
-import FilteredLayer from "../../Models/FilteredLayer";
 import MetaTagging from "../MetaTagging";
 import RememberingSource from "./Sources/RememberingSource";
 import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
-import {Changes} from "../Osm/Changes";
 import GeoJsonSource from "./Sources/GeoJsonSource";
 import Loc from "../../Models/Loc";
 import RegisteringAllFromFeatureSourceActor from "./Actors/RegisteringAllFromFeatureSourceActor";
@@ -22,11 +20,10 @@ import {NewGeometryFromChangesFeatureSource} from "./Sources/NewGeometryFromChan
 import ChangeGeometryApplicator from "./Sources/ChangeGeometryApplicator";
 import {BBox} from "../BBox";
 import OsmFeatureSource from "./TiledFeatureSource/OsmFeatureSource";
-import {OsmConnection} from "../Osm/OsmConnection";
 import {Tiles} from "../../Models/TileRange";
 import TileFreshnessCalculator from "./TileFreshnessCalculator";
-import {ElementStorage} from "../ElementStorage";
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
+import MapState from "../State/MapState";
 
 
 /**
@@ -51,19 +48,7 @@ export default class FeaturePipeline {
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
 
     private readonly overpassUpdater: OverpassFeatureSource
-    private state: {
-        readonly filteredLayers: UIEventSource<FilteredLayer[]>,
-        readonly locationControl: UIEventSource<Loc>,
-        readonly selectedElement: UIEventSource<any>,
-        readonly changes: Changes,
-        readonly layoutToUse: LayoutConfig,
-        readonly leafletMap: any,
-        readonly overpassUrl: UIEventSource<string[]>;
-        readonly overpassTimeout: UIEventSource<number>;
-        readonly overpassMaxZoom: UIEventSource<number>;
-        readonly osmConnection: OsmConnection
-        readonly currentBounds: UIEventSource<BBox>
-    };
+    private state: MapState;
     private readonly relationTracker: RelationsTracker
     private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>;
 
@@ -74,21 +59,7 @@ export default class FeaturePipeline {
 
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
-        state: {
-            readonly filteredLayers: UIEventSource<FilteredLayer[]>,
-            readonly locationControl: UIEventSource<Loc>,
-            readonly selectedElement: UIEventSource<any>,
-            readonly changes: Changes,
-            readonly layoutToUse: LayoutConfig,
-            readonly leafletMap: any,
-            readonly overpassUrl: UIEventSource<string[]>;
-            readonly overpassTimeout: UIEventSource<number>;
-            readonly overpassMaxZoom: UIEventSource<number>;
-            readonly osmConnection: OsmConnection
-            readonly currentBounds: UIEventSource<BBox>,
-            readonly osmApiTileSize: UIEventSource<number>,
-            readonly allElements: ElementStorage
-        }) {
+        state: MapState) {
         this.state = state;
 
         const self = this
@@ -125,18 +96,26 @@ export default class FeaturePipeline {
         const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
         this.perLayerHierarchy = perLayerHierarchy
 
-        const patchedHandleFeatureSource = function (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
+        function patchedHandleFeatureSource (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
             const srcFiltered =
                 new FilteringFeatureSource(state, src.tileIndex,
-                        new ChangeGeometryApplicator(src, state.changes)
+                    new ChangeGeometryApplicator(src, state.changes)
                 )
 
             handleFeatureSource(srcFiltered)
             self.somethingLoaded.setData(true)
             // We do not mark as visited here, this is the responsability of the code near the actual loader (e.g. overpassLoader and OSMApiFeatureLoader)
-        };
+        }
 
+        function handlePriviligedFeatureSource(src: FeatureSourceForLayer & Tiled){
+            // Passthrough to passed function, except that it registers as well
+            handleFeatureSource(src)
+            src.features.addCallbackAndRunD(fs => {
+              fs.forEach(ff => state.allElements.addOrGetElement(ff.feature))
+            })
+        }
+        
 
         for (const filteredLayer of state.filteredLayers.data) {
             const id = filteredLayer.layerDef.id
@@ -147,9 +126,29 @@ export default class FeaturePipeline {
 
             this.freshnesses.set(id, new TileFreshnessCalculator())
 
-            if(id === "type_node"){
+            if (id === "type_node") {
                 // Handles by the 'FullNodeDatabaseSource'
                 continue;
+            }
+
+            if (id === "gps_location") {
+                handlePriviligedFeatureSource(state.currentUserLocation)
+                continue
+            }
+
+            if (id === "gps_location_history") {
+                handlePriviligedFeatureSource(state.historicalUserLocations)
+                continue
+            }
+
+            if (id === "gps_track") {
+                handlePriviligedFeatureSource(state.historicalUserLocationsTrack)
+                continue
+            }
+
+            if (id === "home_location") {
+                handlePriviligedFeatureSource(state.homeLocation)
+                continue
             }
 
             if (source.geojsonSource === undefined) {
@@ -226,15 +225,15 @@ export default class FeaturePipeline {
                     self.freshnesses.get(flayer.layerDef.id).addTileLoad(tileId, new Date())
                 })
         })
-        
-        if(state.layoutToUse.trackAllNodes){
-             const fullNodeDb = new FullNodeDatabaseSource(
-                 state.filteredLayers.data.filter(l => l.layerDef.id === "type_node")[0],
-                 tile => {
-                 new RegisteringAllFromFeatureSourceActor(tile)
-                 perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
-                 tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
-             })
+
+        if (state.layoutToUse.trackAllNodes) {
+            const fullNodeDb = new FullNodeDatabaseSource(
+                state.filteredLayers.data.filter(l => l.layerDef.id === "type_node")[0],
+                tile => {
+                    new RegisteringAllFromFeatureSourceActor(tile)
+                    perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
+                    tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                })
 
             osmFeatureSource.rawDataHandlers.push((osmJson, tileId) => fullNodeDb.handleOsmJson(osmJson, tileId))
         }
@@ -297,6 +296,34 @@ export default class FeaturePipeline {
         )
 
 
+    }
+
+    public GetAllFeaturesWithin(bbox: BBox): any[][] {
+        const self = this
+        const tiles = []
+        Array.from(this.perLayerHierarchy.keys())
+            .forEach(key => tiles.push(...self.GetFeaturesWithin(key, bbox)))
+        return tiles;
+    }
+
+    public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
+        if (layerId === "*") {
+            return this.GetAllFeaturesWithin(bbox)
+        }
+        const requestedHierarchy = this.perLayerHierarchy.get(layerId)
+        if (requestedHierarchy === undefined) {
+            console.warn("Layer ", layerId, "is not defined. Try one of ", Array.from(this.perLayerHierarchy.keys()))
+            return undefined;
+        }
+        return TileHierarchyTools.getTiles(requestedHierarchy, bbox)
+            .filter(featureSource => featureSource.features?.data !== undefined)
+            .map(featureSource => featureSource.features.data.map(fs => fs.feature))
+    }
+
+    public GetTilesPerLayerWithin(bbox: BBox, handleTile: (tile: FeatureSourceForLayer & Tiled) => void) {
+        Array.from(this.perLayerHierarchy.values()).forEach(hierarchy => {
+            TileHierarchyTools.getTiles(hierarchy, bbox).forEach(handleTile)
+        })
     }
 
     private freshnessForVisibleLayers(z: number, x: number, y: number): Date {
@@ -436,34 +463,6 @@ export default class FeaturePipeline {
             })
         })
 
-    }
-
-    public GetAllFeaturesWithin(bbox: BBox): any[][] {
-        const self = this
-        const tiles = []
-        Array.from(this.perLayerHierarchy.keys())
-            .forEach(key => tiles.push(...self.GetFeaturesWithin(key, bbox)))
-        return tiles;
-    }
-
-    public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
-        if (layerId === "*") {
-            return this.GetAllFeaturesWithin(bbox)
-        }
-        const requestedHierarchy = this.perLayerHierarchy.get(layerId)
-        if (requestedHierarchy === undefined) {
-            console.warn("Layer ", layerId, "is not defined. Try one of ", Array.from(this.perLayerHierarchy.keys()))
-            return undefined;
-        }
-        return TileHierarchyTools.getTiles(requestedHierarchy, bbox)
-            .filter(featureSource => featureSource.features?.data !== undefined)
-            .map(featureSource => featureSource.features.data.map(fs => fs.feature))
-    }
-
-    public GetTilesPerLayerWithin(bbox: BBox, handleTile: (tile: FeatureSourceForLayer & Tiled) => void) {
-        Array.from(this.perLayerHierarchy.values()).forEach(hierarchy => {
-            TileHierarchyTools.getTiles(hierarchy, bbox).forEach(handleTile)
-        })
     }
 
 }

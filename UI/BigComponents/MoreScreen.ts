@@ -39,110 +39,6 @@ export default class MoreScreen extends Combine {
         ]);
     }
 
-
-    private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
-        return new VariableUiElement(state.installedThemes.map(customThemes => {
-            if (customThemes.length <= 0) {
-                return undefined;
-            }
-            const customThemeButtons = customThemes.map(theme => MoreScreen.createLinkButton(state, theme.layout, theme.definition)?.SetClass(buttonClass))
-            return new Combine([
-                Translations.t.general.customThemeIntro.Clone(),
-                new Combine(customThemeButtons).SetClass(themeListClasses)
-            ]);
-        }));
-    }
-
-    private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string) {
-        const t = Translations.t.general.morescreen
-        const prefix = "mapcomplete-hidden-theme-"
-        const hiddenTotal = AllKnownLayouts.layoutsList.filter(layout => layout.hideFromOverview).length
-        return new Toggle(
-            new VariableUiElement(
-                state.osmConnection.preferencesHandler.preferences.map(allPreferences => {
-                    const knownThemes = Utils.NoNull(Object.keys(allPreferences)
-                        .filter(key => key.startsWith(prefix))
-                        .map(key => key.substring(prefix.length, key.length - "-enabled".length))
-                        .map(theme => {
-                            return AllKnownLayouts.allKnownLayouts.get(theme);
-                        }))
-                    if (knownThemes.length === 0) {
-                        return undefined
-                    }
-
-                    const knownLayouts = new Combine(knownThemes.map(layout =>
-                        MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass)
-                    )).SetClass(themeListStyle)
-
-                    return new Combine([
-                        new Title(t.previouslyHiddenTitle),
-                        t.hiddenExplanation.Subs({hidden_discovered: ""+knownThemes.length,total_hidden: ""+hiddenTotal}),
-                        knownLayouts
-                    ])
-
-                })
-            ).SetClass("flex flex-col"),
-            undefined,
-            state.osmConnection.isLoggedIn
-        )
-
-
-    }
-
-    private static createOfficialThemesList(state: { osmConnection: OsmConnection, locationControl?: UIEventSource<Loc> }, buttonClass: string): BaseUIElement {
-        let officialThemes = AllKnownLayouts.layoutsList
-
-        let buttons = officialThemes.map((layout) => {
-            if (layout === undefined) {
-                console.trace("Layout is undefined")
-                return undefined
-            }
-            if(layout.hideFromOverview){
-                return undefined;
-            }
-            const button = MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass);
-            if (layout.id === personal.id) {
-                return new VariableUiElement(
-                    state.osmConnection.userDetails.map(userdetails => userdetails.csCount)
-                        .map(csCount => {
-                            if (csCount < Constants.userJourney.personalLayoutUnlock) {
-                                return undefined
-                            } else {
-                                return button
-                            }
-                        })
-                )
-            }
-            return button;
-        })
-
-        let customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
-        buttons.splice(0, 0, customGeneratorLink);
-
-        return new Combine(buttons)
-    }
-
-    /*
-    * Returns either a link to the issue tracker or a link to the custom generator, depending on the achieved number of changesets
-    * */
-    private static createCustomGeneratorButton(state: { osmConnection: OsmConnection }): VariableUiElement {
-        const tr = Translations.t.general.morescreen;
-        return new VariableUiElement(
-            state.osmConnection.userDetails.map(userDetails => {
-                if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
-                    return new SubtleButton(null, tr.requestATheme.Clone(), {
-                        url: "https://github.com/pietervdvn/MapComplete/issues",
-                        newTab: true
-                    });
-                }
-                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme.Clone(), {
-                    url: "https://pietervdvn.github.io/mc/legacy/070/customGenerator.html",
-                    newTab: false
-                });
-            })
-        )
-    }
-
     /**
      * Creates a button linking to the given theme
      * @private
@@ -161,7 +57,7 @@ export default class MoreScreen extends Combine {
             console.error("ID is undefined for layout", layout);
             return undefined;
         }
-        
+
         if (layout.id === state?.layoutToUse?.id) {
             return undefined;
         }
@@ -208,6 +104,111 @@ export default class MoreScreen extends Combine {
                 Translations.WT(layout.shortDescription)?.SetClass("subtle") ?? "",
                 `</dd>`,
             ]), {url: linkText, newTab: false});
+    }
+
+    private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
+        return new VariableUiElement(state.installedThemes.map(customThemes => {
+            if (customThemes.length <= 0) {
+                return undefined;
+            }
+            const customThemeButtons = customThemes.map(theme => MoreScreen.createLinkButton(state, theme.layout, theme.definition)?.SetClass(buttonClass))
+            return new Combine([
+                Translations.t.general.customThemeIntro.Clone(),
+                new Combine(customThemeButtons).SetClass(themeListClasses)
+            ]);
+        }));
+    }
+
+    private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string) {
+        const t = Translations.t.general.morescreen
+        const prefix = "mapcomplete-hidden-theme-"
+        const hiddenTotal = AllKnownLayouts.layoutsList.filter(layout => layout.hideFromOverview).length
+        return new Toggle(
+            new VariableUiElement(
+                state.osmConnection.preferencesHandler.preferences.map(allPreferences => {
+                    const knownThemes = Utils.NoNull(Object.keys(allPreferences)
+                        .filter(key => key.startsWith(prefix))
+                        .map(key => key.substring(prefix.length, key.length - "-enabled".length))
+                        .map(theme => AllKnownLayouts.allKnownLayouts.get(theme)))
+                        .filter(theme => theme?.hideFromOverview)
+                    if (knownThemes.length === 0) {
+                        return undefined
+                    }
+
+                    const knownLayouts = new Combine(knownThemes.map(layout =>
+                        MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass)
+                    )).SetClass(themeListStyle)
+
+                    return new Combine([
+                        new Title(t.previouslyHiddenTitle),
+                        t.hiddenExplanation.Subs({
+                            hidden_discovered: "" + knownThemes.length,
+                            total_hidden: "" + hiddenTotal
+                        }),
+                        knownLayouts
+                    ])
+
+                })
+            ).SetClass("flex flex-col"),
+            undefined,
+            state.osmConnection.isLoggedIn
+        )
+
+
+    }
+
+    private static createOfficialThemesList(state: { osmConnection: OsmConnection, locationControl?: UIEventSource<Loc> }, buttonClass: string): BaseUIElement {
+        let officialThemes = AllKnownLayouts.layoutsList
+
+        let buttons = officialThemes.map((layout) => {
+            if (layout === undefined) {
+                console.trace("Layout is undefined")
+                return undefined
+            }
+            if (layout.hideFromOverview) {
+                return undefined;
+            }
+            const button = MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass);
+            if (layout.id === personal.id) {
+                return new VariableUiElement(
+                    state.osmConnection.userDetails.map(userdetails => userdetails.csCount)
+                        .map(csCount => {
+                            if (csCount < Constants.userJourney.personalLayoutUnlock) {
+                                return undefined
+                            } else {
+                                return button
+                            }
+                        })
+                )
+            }
+            return button;
+        })
+
+        let customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
+        buttons.splice(0, 0, customGeneratorLink);
+
+        return new Combine(buttons)
+    }
+
+    /*
+    * Returns either a link to the issue tracker or a link to the custom generator, depending on the achieved number of changesets
+    * */
+    private static createCustomGeneratorButton(state: { osmConnection: OsmConnection }): VariableUiElement {
+        const tr = Translations.t.general.morescreen;
+        return new VariableUiElement(
+            state.osmConnection.userDetails.map(userDetails => {
+                if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
+                    return new SubtleButton(null, tr.requestATheme.Clone(), {
+                        url: "https://github.com/pietervdvn/MapComplete/issues",
+                        newTab: true
+                    });
+                }
+                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme.Clone(), {
+                    url: "https://pietervdvn.github.io/mc/legacy/070/customGenerator.html",
+                    newTab: false
+                });
+            })
+        )
     }
 
 

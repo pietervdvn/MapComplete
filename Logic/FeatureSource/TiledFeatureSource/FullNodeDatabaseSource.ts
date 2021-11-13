@@ -19,7 +19,7 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
             throw "Layer is undefined"
         }
     }
-    
+
     public handleOsmJson(osmJson: any, tileId: number) {
 
         const allObjects = OsmObject.ParseObjects(osmJson.elements)

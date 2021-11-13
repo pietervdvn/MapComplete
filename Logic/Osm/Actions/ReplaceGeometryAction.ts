@@ -41,7 +41,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
             newTags?: Tag[]
         }
     ) {
-        super();
+        super(wayToReplaceId, false);
         this.state = state;
         this.feature = feature;
         this.wayToReplaceId = wayToReplaceId;
@@ -62,7 +62,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                 continue
             }
             for (let j = i + 1; j < coordinates.length; j++) {
-                const d = 1000 * GeoOperations.distanceBetween(coordinates[i], coordinates[j])
+                const d = GeoOperations.distanceBetween(coordinates[i], coordinates[j])
                 if (d < 0.1) {
                     console.log("Identical coordinates detected: ", i, " and ", j, ": ", coordinates[i], coordinates[j], "distance is", d)
                     this.identicalTo[j] = i
@@ -77,13 +77,13 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
     public async getPreview(): Promise<FeatureSource> {
         const {closestIds, allNodesById} = await this.GetClosestIds();
-        console.log("Generating preview, identicals are ", )
+        console.log("Generating preview, identicals are ",)
         const preview = closestIds.map((newId, i) => {
-            if(this.identicalTo[i] !== undefined){
+            if (this.identicalTo[i] !== undefined) {
                 return undefined
             }
-            
-            
+
+
             if (newId === undefined) {
                 return {
                     type: "Feature",
@@ -123,7 +123,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         const {closestIds, osmWay} = await this.GetClosestIds()
 
         for (let i = 0; i < closestIds.length; i++) {
-            if(this.identicalTo[i] !== undefined){
+            if (this.identicalTo[i] !== undefined) {
                 const j = this.identicalTo[i]
                 actualIdsToUse.push(actualIdsToUse[j])
                 continue
@@ -221,7 +221,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
         const closestIds = []
         const distances = []
-        for (let i = 0; i < this.targetCoordinates.length; i++){
+        for (let i = 0; i < this.targetCoordinates.length; i++) {
             const target = this.targetCoordinates[i];
             let closestDistance = undefined
             let closestId = undefined;
@@ -240,15 +240,15 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
         // Next step: every closestId can only occur once in the list
         // We skip the ones which are identical
-            console.log("Erasing double ids")
+        console.log("Erasing double ids")
         for (let i = 0; i < closestIds.length; i++) {
-            if(this.identicalTo[i] !== undefined){
+            if (this.identicalTo[i] !== undefined) {
                 closestIds[i] = closestIds[this.identicalTo[i]]
                 continue
             }
             const closestId = closestIds[i]
             for (let j = i + 1; j < closestIds.length; j++) {
-                if(this.identicalTo[j] !== undefined){
+                if (this.identicalTo[j] !== undefined) {
                     continue
                 }
                 const otherClosestId = closestIds[j]

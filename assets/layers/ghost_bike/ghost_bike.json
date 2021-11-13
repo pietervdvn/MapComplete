@@ -1,216 +1,213 @@
 {
-    "id": "ghost_bike",
-    "name": {
-        "en": "Ghost bikes",
-        "nl": "Witte Fietsen",
-        "de": "Geisterräder",
-        "it": "Bici fantasma",
-        "fr": "Vélos fantômes",
-        "eo": "Fantombiciklo",
-        "es": "Bicicleta blanca",
-        "fi": "Haamupyörä",
-        "gl": "Bicicleta pantasma",
-        "hu": "Emlékkerékpár",
-        "ja": "ゴーストバイク",
-        "nb_NO": "Spøkelsessykler",
-        "pl": "Duch roweru",
-        "pt_BR": "Bicicleta fantasma",
-        "ru": "Велосипед Ghost",
-        "sv": "Spökcykel",
-        "zh_Hant": "幽靈單車",
-        "pt": "Bicicleta fantasma"
+  "id": "ghost_bike",
+  "name": {
+    "en": "Ghost bikes",
+    "nl": "Witte Fietsen",
+    "de": "Geisterräder",
+    "it": "Bici fantasma",
+    "fr": "Vélos fantômes",
+    "eo": "Fantombiciklo",
+    "es": "Bicicleta blanca",
+    "fi": "Haamupyörä",
+    "gl": "Bicicleta pantasma",
+    "hu": "Emlékkerékpár",
+    "ja": "ゴーストバイク",
+    "nb_NO": "Spøkelsessykler",
+    "pl": "Duch roweru",
+    "pt_BR": "Bicicleta fantasma",
+    "ru": "Велосипед Ghost",
+    "sv": "Spökcykel",
+    "zh_Hant": "幽靈單車",
+    "pt": "Bicicleta fantasma"
+  },
+  "source": {
+    "osmTags": "memorial=ghost_bike"
+  },
+  "minzoom": 0,
+  "title": {
+    "render": {
+      "en": "Ghost bike",
+      "nl": "Witte Fiets",
+      "de": "Geisterrad",
+      "it": "Bici fantasma",
+      "fr": "Vélo fantôme",
+      "eo": "Fantombiciklo",
+      "es": "Bicicleta blanca",
+      "fi": "Haamupyörä",
+      "gl": "Bicicleta pantasma",
+      "hu": "Emlékkerékpár",
+      "ja": "ゴーストバイク",
+      "nb_NO": "Spøkelsessykler",
+      "pl": "Duch roweru",
+      "pt_BR": "Bicicleta fantasma",
+      "ru": "Велосипед Ghost",
+      "sv": "Spökcykel",
+      "zh_Hant": "幽靈單車",
+      "pt": "Bicicleta fantasma"
     },
-    "source": {
-        "osmTags": "memorial=ghost_bike"
-    },
-    "minzoom": 0,
-    "title": {
-        "render": {
-            "en": "Ghost bike",
-            "nl": "Witte Fiets",
-            "de": "Geisterrad",
-            "it": "Bici fantasma",
-            "fr": "Vélo fantôme",
-            "eo": "Fantombiciklo",
-            "es": "Bicicleta blanca",
-            "fi": "Haamupyörä",
-            "gl": "Bicicleta pantasma",
-            "hu": "Emlékkerékpár",
-            "ja": "ゴーストバイク",
-            "nb_NO": "Spøkelsessykler",
-            "pl": "Duch roweru",
-            "pt_BR": "Bicicleta fantasma",
-            "ru": "Велосипед Ghost",
-            "sv": "Spökcykel",
-            "zh_Hant": "幽靈單車",
-            "pt": "Bicicleta fantasma"
-        },
-        "mappings": [
-            {
-                "if": "name~*",
-                "then": {
-                    "en": "Ghost bike in the remembrance of {name}",
-                    "nl": "Witte fiets ter nagedachtenis van {name}",
-                    "de": "Geisterrad im Gedenken an {name}",
-                    "it": "Bici fantasma in ricordo di {name}",
-                    "fr": "Vélo fantôme en souvenir de {name}"
-                }
-            }
-        ]
-    },
-    "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
-    "iconSize": "40,40,bottom",
-    "width": "5",
-    "color": "#000",
-    "wayHandling": 1,
-    "presets": [
-        {
-            "title": {
-                "en": "Ghost bike",
-                "nl": "Witte fiets",
-                "de": "Geisterrad",
-                "it": "Bici fantasma",
-                "fr": "Vélo fantôme"
-            },
-            "tags": [
-                "historic=memorial",
-                "memorial=ghost_bike"
-            ]
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Ghost bike in the remembrance of {name}",
+          "nl": "Witte fiets ter nagedachtenis van {name}",
+          "de": "Geisterrad im Gedenken an {name}",
+          "it": "Bici fantasma in ricordo di {name}",
+          "fr": "Vélo fantôme en souvenir de {name}"
         }
-    ],
-    "tagRenderings": [
-        {
-            "id": "ghost-bike-explanation",
-            "render": {
-                "en": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
-                "nl": "Een Witte Fiets (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval.",
-                "de": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt wird.",
-                "it": "Una <b>bici fantasma</b> è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente.",
-                "fr": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident."
-            }
-        },
-        "images",
-        {
-            "question": {
-                "en": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
-                "nl": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>",
-                "de": "An wen erinnert dieses Geisterrad?<span class='question-subtext'><br/>Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.</span>",
-                "it": "A chi è dedicata questa bici fantasma?<span class='question-subtext'><br/>Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.</span>",
-                "fr": "À qui est dédié ce vélo fantôme ?<span class='question-subtext'><br/>Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille </span>"
-            },
-            "render": {
-                "en": "In remembrance of {name}",
-                "nl": "Ter nagedachtenis van {name}",
-                "de": "Im Gedenken an {name}",
-                "it": "In ricordo di {name}",
-                "fr": "En souvenir de {name}",
-                "ru": "В знак памяти о {name}"
-            },
-            "freeform": {
-                "key": "name"
-            },
-            "mappings": [
-                {
-                    "if": "noname=yes",
-                    "then": {
-                        "en": "No name is marked on the bike",
-                        "nl": "De naam is niet aangeduid op de fiets",
-                        "de": "Auf dem Fahrrad ist kein Name angegeben",
-                        "it": "Nessun nome scritto sulla bici",
-                        "fr": "Aucun nom n'est marqué sur le vélo"
-                    }
-                }
-            ],
-            "id": "ghost_bike-name"
-        },
-        {
-            "question": {
-                "en": "On what webpage can one find more information about the Ghost bike or the accident?",
-                "nl": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
-                "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
-                "it": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
-                "fr": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?"
-            },
-            "render": {
-                "en": "<a href='{source}' target='_blank'>More information is available</a>",
-                "nl": "<a href='{source}' target='_blank'>Meer informatie</a>",
-                "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>",
-                "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>",
-                "ru": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>",
-                "fr": "<a href='{source}' target='_blank'>Plus d'informations sont disponibles</a>",
-                "id": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
-            },
-            "freeform": {
-                "type": "url",
-                "key": "source"
-            },
-            "id": "ghost_bike-source"
-        },
-        {
-            "question": {
-                "en": "What is the inscription on this Ghost bike?",
-                "nl": "Wat is het opschrift op deze witte fiets?",
-                "de": "Wie lautet die Inschrift auf diesem Geisterrad?",
-                "it": "Che cosa è scritto sulla bici fantasma?",
-                "fr": "Quelle est l'inscription sur ce vélo fantôme ?"
-            },
-            "render": {
-                "en": "<i>{inscription}</i>",
-                "nl": "<i>{inscription}</i>",
-                "de": "<i>{inscription}</i>",
-                "ca": "<i>{inscription}</i>",
-                "fr": "<i>{inscription}</i>",
-                "it": "<i>{inscription}</i>",
-                "ru": "<i>{inscription}</i>",
-                "id": "<i>{inscription}</i>"
-            },
-            "freeform": {
-                "key": "inscription"
-            },
-            "id": "ghost_bike-inscription"
-        },
-        {
-            "question": {
-                "nl": "Wanneer werd deze witte fiets geplaatst?",
-                "en": "When was this Ghost bike installed?",
-                "it": "Quando è stata installata questa bici fantasma?",
-                "fr": "Quand ce vélo fantôme a-t-il été installée ?",
-                "de": "Wann wurde dieses Geisterrad aufgestellt?"
-            },
-            "render": {
-                "nl": "Geplaatst op {start_date}",
-                "en": "Placed on {start_date}",
-                "it": "Piazzata in data {start_date}",
-                "fr": "Placé le {start_date}",
-                "ru": "Установлен {start_date}"
-            },
-            "freeform": {
-                "key": "start_date",
-                "type": "date"
-            },
-            "id": "ghost_bike-start_date"
-        }
-    ],
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "razed:memorial:=ghost_bike",
-                "memorial="
-            ]
-        },
-        "neededChangesets": 50
-    },
-    "allowMove": {
-        "enableRelocation": false,
-        "enableImproveAccuraccy": true
-    },
-    "mapRendering": [
-        {
-            "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
-            "iconSize": "40,40,bottom",
-            "location": [
-                "point"
-            ]
-        }
+      }
     ]
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "Ghost bike",
+        "nl": "Witte fiets",
+        "de": "Geisterrad",
+        "it": "Bici fantasma",
+        "fr": "Vélo fantôme"
+      },
+      "tags": [
+        "historic=memorial",
+        "memorial=ghost_bike"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "ghost-bike-explanation",
+      "render": {
+        "en": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
+        "nl": "Een Witte Fiets (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval.",
+        "de": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt wird.",
+        "it": "Una <b>bici fantasma</b> è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente.",
+        "fr": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident."
+      }
+    },
+    "images",
+    {
+      "question": {
+        "en": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
+        "nl": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>",
+        "de": "An wen erinnert dieses Geisterrad?<span class='question-subtext'><br/>Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.</span>",
+        "it": "A chi è dedicata questa bici fantasma?<span class='question-subtext'><br/>Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.</span>",
+        "fr": "À qui est dédié ce vélo fantôme ?<span class='question-subtext'><br/>Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille </span>"
+      },
+      "render": {
+        "en": "In remembrance of {name}",
+        "nl": "Ter nagedachtenis van {name}",
+        "de": "Im Gedenken an {name}",
+        "it": "In ricordo di {name}",
+        "fr": "En souvenir de {name}",
+        "ru": "В знак памяти о {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "then": {
+            "en": "No name is marked on the bike",
+            "nl": "De naam is niet aangeduid op de fiets",
+            "de": "Auf dem Fahrrad ist kein Name angegeben",
+            "it": "Nessun nome scritto sulla bici",
+            "fr": "Aucun nom n'est marqué sur le vélo"
+          }
+        }
+      ],
+      "id": "ghost_bike-name"
+    },
+    {
+      "question": {
+        "en": "On what webpage can one find more information about the Ghost bike or the accident?",
+        "nl": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
+        "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
+        "it": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
+        "fr": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?"
+      },
+      "render": {
+        "en": "<a href='{source}' target='_blank'>More information is available</a>",
+        "nl": "<a href='{source}' target='_blank'>Meer informatie</a>",
+        "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>",
+        "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>",
+        "ru": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>",
+        "fr": "<a href='{source}' target='_blank'>Plus d'informations sont disponibles</a>",
+        "id": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+      },
+      "freeform": {
+        "type": "url",
+        "key": "source"
+      },
+      "id": "ghost_bike-source"
+    },
+    {
+      "question": {
+        "en": "What is the inscription on this Ghost bike?",
+        "nl": "Wat is het opschrift op deze witte fiets?",
+        "de": "Wie lautet die Inschrift auf diesem Geisterrad?",
+        "it": "Che cosa è scritto sulla bici fantasma?",
+        "fr": "Quelle est l'inscription sur ce vélo fantôme ?"
+      },
+      "render": {
+        "en": "<i>{inscription}</i>",
+        "nl": "<i>{inscription}</i>",
+        "de": "<i>{inscription}</i>",
+        "ca": "<i>{inscription}</i>",
+        "fr": "<i>{inscription}</i>",
+        "it": "<i>{inscription}</i>",
+        "ru": "<i>{inscription}</i>",
+        "id": "<i>{inscription}</i>"
+      },
+      "freeform": {
+        "key": "inscription"
+      },
+      "id": "ghost_bike-inscription"
+    },
+    {
+      "question": {
+        "nl": "Wanneer werd deze witte fiets geplaatst?",
+        "en": "When was this Ghost bike installed?",
+        "it": "Quando è stata installata questa bici fantasma?",
+        "fr": "Quand ce vélo fantôme a-t-il été installée ?",
+        "de": "Wann wurde dieses Geisterrad aufgestellt?"
+      },
+      "render": {
+        "nl": "Geplaatst op {start_date}",
+        "en": "Placed on {start_date}",
+        "it": "Piazzata in data {start_date}",
+        "fr": "Placé le {start_date}",
+        "ru": "Установлен {start_date}",
+        "de": "Aufgestellt am {start_date}"
+      },
+      "freeform": {
+        "key": "start_date",
+        "type": "date"
+      },
+      "id": "ghost_bike-start_date"
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "razed:memorial:=ghost_bike",
+        "memorial="
+      ]
+    },
+    "neededChangesets": 50
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
+  },
+  "mapRendering": [
+    {
+      "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
+      "iconSize": "40,40,bottom",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
 }

@@ -8,6 +8,11 @@ import {Utils} from "../../Utils";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import SimpleMetaTagger from "../SimpleMetaTagger";
 import CreateNewNodeAction from "./Actions/CreateNewNodeAction";
+import FeatureSource from "../FeatureSource/FeatureSource";
+import {ElementStorage} from "../ElementStorage";
+import {GeoLocationPointProperties} from "../Actors/GeoLocationHandler";
+import {GeoOperations} from "../GeoOperations";
+import {ChangesetTag} from "./ChangesetHandler";
 
 /**
  * Handles all changes made to OSM.
@@ -27,6 +32,8 @@ export class Changes {
 
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean;
+    
+    private _state : { allElements: ElementStorage; historicalUserLocations: FeatureSource }
 
     constructor(leftRightSensitive: boolean = false) {
         this._leftRightSensitive = leftRightSensitive;
@@ -113,14 +120,67 @@ export class Changes {
             })
     }
 
-    public async applyAction(action: OsmChangeAction): Promise<void> {
-        this.applyChanges(await action.Perform(this))
-    }
+    private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]){
 
-    public async applyActions(actions: OsmChangeAction[]) {
-        for (const action of actions) {
-            await this.applyAction(action)
+        if (this._state === undefined) {
+            // No state loaded -> we can't calculate...
+            return;
         }
+        if(!change.trackStatistics){
+            // Probably irrelevant, such as a new helper node
+            return;
+        }
+        const now = new Date()
+        const recentLocationPoints = this._state.historicalUserLocations.features.data.map(ff => ff.feature)
+            .filter(feat => feat.geometry.type === "Point")
+            .filter(feat => {
+                const visitTime = new Date((<GeoLocationPointProperties>feat.properties).date)
+                // In seconds
+                const diff = (now.getTime() - visitTime.getTime()) / 1000
+                return diff < Constants.nearbyVisitTime;
+            })
+        if(recentLocationPoints.length === 0){
+            // Probably no GPS enabled/no fix 
+            return;
+        }
+        
+        // The applicable points, contain information in their properties about location, time and GPS accuracy
+        // They are all GeoLocationPointProperties
+        // We walk every change and determine the closest distance possible
+        // Only if the change itself does _not_ contain any coordinates, we fall back and search the original feature in the state
+        
+        const changedObjectCoordinates : [number, number][] = []
+        
+        const feature = this._state.allElements.ContainingFeatures.get(change.mainObjectId)
+        if(feature !== undefined){
+        changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
+        }
+
+        for (const changeDescription of changeDescriptions) {
+            const chng : {lat: number, lon: number} | {coordinates : [number,number][]} | {members} = changeDescription.changes
+            if(chng === undefined){
+                continue
+            }
+           if(chng["lat"] !== undefined){
+               changedObjectCoordinates.push([chng["lat"],chng["lon"]])
+           }
+           if(chng["coordinates"] !== undefined){
+               changedObjectCoordinates.push(...chng["coordinates"])
+           }
+        }
+
+        return Math.min(...changedObjectCoordinates.map(coor =>
+            Math.min(...recentLocationPoints.map(gpsPoint => {
+                const otherCoor = GeoOperations.centerpointCoordinates(gpsPoint)
+                return GeoOperations.distanceBetween(coor, otherCoor)
+            }))
+        ))
+    }
+    
+    public async applyAction(action: OsmChangeAction): Promise<void> {
+        const changeDescriptions = await action.Perform(this)
+        changeDescriptions[0].meta.distanceToObject = this.calculateDistanceToChanges(action, changeDescriptions)
+        this.applyChanges(changeDescriptions)
     }
 
     public applyChanges(changes: ChangeDescription[]) {
@@ -129,6 +189,13 @@ export class Changes {
         this.pendingChanges.ping();
         this.allChanges.data.push(...changes)
         this.allChanges.ping()
+    }
+    
+    public useLocationHistory(state: {
+        allElements: ElementStorage,
+        historicalUserLocations: FeatureSource
+    }){
+        this._state= state
     }
 
     public registerIdRewrites(mappings: Map<string, string>): void {
@@ -162,7 +229,6 @@ export class Changes {
             return true
         }
 
-        const meta = pending[0].meta
 
         const perType = Array.from(
             Utils.Hist(pending.filter(descr => descr.meta.changeType !== undefined && descr.meta.changeType !== null)
@@ -177,16 +243,51 @@ export class Changes {
                 key: descr.meta.changeType + ":" + descr.type + "/" + descr.id,
                 value: descr.meta.specialMotivation
             }))
-        const metatags = [{
+        
+        const distances = Utils.NoNull(pending.map(descr => descr.meta.distanceToObject));
+        distances.sort((a, b) => a - b)
+        const perBinCount = Constants.distanceToChangeObjectBins.map(_ => 0)
+
+        let j = 0;
+        const maxDistances = Constants.distanceToChangeObjectBins
+        for (let i = 0; i < maxDistances.length; i++){
+            const maxDistance = maxDistances[i];
+            // distances is sorted in ascending order, so as soon as one is to big, all the resting elements will be bigger too
+            while(j < distances.length && distances[j] < maxDistance){
+                perBinCount[i] ++
+                j++
+            }
+        }
+
+        const perBinMessage = Utils.NoNull(perBinCount.map((count, i) => {
+            if(count === 0){
+                return undefined
+            }
+            const maxD =maxDistances[i]
+            let key = `change_within_${maxD}m`
+            if(maxD === Number.MAX_VALUE){
+                key = `change_over_${maxDistances[i - 1]}m`
+            }
+            return {
+                key ,
+                value: count,
+                aggregate:true
+            }
+        }))
+        
+        // This method is only called with changedescriptions for this theme
+        const theme = pending[0].meta.theme
+        const metatags : ChangesetTag[] = [{
             key: "comment",
-            value: "Adding data with #MapComplete for theme #" + meta.theme
+            value: "Adding data with #MapComplete for theme #" + theme
         },
             {
                 key: "theme",
-                value: meta.theme
+                value: theme
             },
             ...perType,
-            ...motivations
+            ...motivations,
+            ...perBinMessage
         ]
 
         await State.state.osmConnection.changesetHandler.UploadChangeset(
@@ -213,7 +314,7 @@ export class Changes {
                 pendingPerTheme.get(theme).push(changeDescription)
             }
 
-            const successes = await Promise.all(Array.from(pendingPerTheme, ([key, value]) => value)
+            const successes = await Promise.all(Array.from(pendingPerTheme, ([_, value]) => value)
                 .map(async pendingChanges => {
                     try {
                         return await self.flushSelectChanges(pendingChanges);

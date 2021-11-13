@@ -8,6 +8,18 @@ import {ChangeDescription} from "./ChangeDescription";
 export default abstract class OsmChangeAction {
 
     private isUsed = false
+    public readonly trackStatistics: boolean;
+    /**
+     * The ID of the object that is the center of this change.
+     * Null if the action creates a new object
+     * Undefined if such an id does not make sense
+     */
+    public readonly mainObjectId: string;
+    
+    constructor(mainObjectId: string, trackStatistics: boolean = true) {
+        this.trackStatistics = trackStatistics;
+        this.mainObjectId = mainObjectId
+    }
 
     public Perform(changes: Changes) {
         if (this.isUsed) {
@@ -18,6 +30,4 @@ export default abstract class OsmChangeAction {
     }
 
     protected abstract CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]>
-
-
 }

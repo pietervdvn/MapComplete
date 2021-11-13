@@ -16,9 +16,9 @@ export default class EditableTagRendering extends Toggle {
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
                 units: Unit [],
-                options:{
-                editMode? : UIEventSource<boolean> ,
-                innerElementClasses?: string
+                options: {
+                    editMode?: UIEventSource<boolean>,
+                    innerElementClasses?: string
                 }
     ) {
 
@@ -28,7 +28,7 @@ export default class EditableTagRendering extends Toggle {
         const renderingIsShown = tags.map(tags =>
             configuration.IsKnown(tags) &&
             (configuration?.condition?.matchesProperties(tags) ?? true))
-        
+
         super(
             new Lazy(() => {
                 const editMode = options.editMode ?? new UIEventSource<boolean>(false)
@@ -40,8 +40,8 @@ export default class EditableTagRendering extends Toggle {
             renderingIsShown
         )
     }
-    
-    private static CreateRendering(tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>) : BaseUIElement{
+
+    private static CreateRendering(tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>): BaseUIElement {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration)
         answer.SetClass("w-full")
         let rendering = answer;

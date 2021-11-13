@@ -1,720 +1,679 @@
 {
-    "id": "food",
-    "name": {
-        "nl": "Eetgelegenheden",
-        "en": "Restaurants and fast food",
-        "de": "Restaurants und Fast Food"
+  "id": "food",
+  "name": {
+    "nl": "Eetgelegenheden",
+    "en": "Restaurants and fast food",
+    "de": "Restaurants und Fast Food"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=fast_food",
+        "amenity=restaurant"
+      ]
+    }
+  },
+  "minzoom": 12,
+  "presets": [
+    {
+      "title": {
+        "en": "restaurant",
+        "nl": "restaurant",
+        "ru": "ресторан",
+        "de": "Restaurant"
+      },
+      "tags": [
+        "amenity=restaurant"
+      ],
+      "description": {
+        "nl": "Een eetgegelegenheid waar je aan tafel wordt bediend",
+        "en": "A formal eating place with sit-down facilities selling full meals served by waiters",
+        "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
     },
-    "source": {
-        "osmTags": {
-            "or": [
-                "amenity=fast_food",
-                "amenity=restaurant"
-            ]
+    {
+      "title": {
+        "en": "fastfood",
+        "nl": "fastfood-zaak",
+        "ru": "быстрое питание",
+        "de": "Schnellimbiss"
+      },
+      "tags": [
+        "amenity=fast_food"
+      ],
+      "description": {
+        "nl": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
+        "en": "A food business concentrating on fast counter-only service and take-away food",
+        "de": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    },
+    {
+      "title": {
+        "en": "fries shop",
+        "nl": "frituur",
+        "de": "Pommesbude"
+      },
+      "tags": [
+        "amenity=fast_food",
+        "cuisine=friture"
+      ],
+      "description": {
+        "nl": "Een fastfood-zaak waar je frieten koopt"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    }
+  ],
+  "title": {
+    "render": {
+      "nl": "Eetgelegenheid"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*",
+            "amenity=restaurant"
+          ]
+        },
+        "then": {
+          "nl": "Restaurant <i>{name}</i>",
+          "en": "Restaurant <i>{name}</i>",
+          "de": "Restaurant <i>{name}</i>"
         }
+      },
+      {
+        "if": {
+          "and": [
+            "name~*",
+            "amenity=fast_food"
+          ]
+        },
+        "then": {
+          "nl": "Fastfood-zaak <i>{name}</i>",
+          "en": "Fastfood <i>{name}</i>",
+          "de": "Schnellrestaurant<i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "nl": "Wat is de naam van deze eetgelegenheid?",
+        "en": "What is the name of this restaurant?",
+        "de": "Wie heißt dieses Restaurant?"
+      },
+      "render": {
+        "nl": "De naam van deze eetgelegeheid is {name}",
+        "en": "The name of this restaurant is {name}",
+        "de": "Das Restaurant heißt {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "Name"
     },
-    "minzoom": 12,
-    "wayHandling": 1,
-    "icon": {
+    {
+      "question": {
+        "en": "What type of business is this?",
+        "nl": "Wat voor soort zaak is dit?",
+        "de": "Um was für ein Geschäft handelt es sich?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=fast_food",
+          "then": {
+            "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
+          }
+        },
+        {
+          "if": "amenity=restaurant",
+          "then": {
+            "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
+          }
+        }
+      ],
+      "id": "Fastfood vs restaurant"
+    },
+    "opening_hours",
+    "website",
+    "email",
+    "phone",
+    "payment-options",
+    "wheelchair-access",
+    {
+      "question": {
+        "nl": "Welk soort gerechten worden hier geserveerd?",
+        "en": "Which food is served here?",
+        "de": "Welches Essen gibt es hier?"
+      },
+      "render": {
+        "nl": "Deze plaats serveert vooral {cuisine}",
+        "en": "This place mostly serves {cuisine}",
+        "de": "An diesem Ort gibt es hauptsächlich {cuisine}"
+      },
+      "freeform": {
+        "key": "cuisine",
+        "addExtraTags": [
+          "fixme=Freeform tag `cuisine` used, to be doublechecked"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "cuisine=pizza",
+          "then": {
+            "en": "This is a pizzeria",
+            "nl": "Dit is een pizzeria",
+            "de": "Dies ist eine Pizzeria"
+          }
+        },
+        {
+          "if": "cuisine=friture",
+          "then": {
+            "en": "This is a friture",
+            "nl": "Dit is een frituur",
+            "de": "Dies ist eine Pommesbude"
+          }
+        },
+        {
+          "if": "cuisine=pasta",
+          "then": {
+            "en": "Mainly serves pasta",
+            "nl": "Dit is een pastazaak",
+            "de": "Bietet vorwiegend Pastagerichte an"
+          }
+        },
+        {
+          "if": "cuisine=kebab",
+          "then": {
+            "nl": "Dit is een kebabzaak"
+          }
+        },
+        {
+          "if": "cuisine=sandwich",
+          "then": {
+            "nl": "Dit is een broodjeszaak"
+          }
+        },
+        {
+          "if": "cuisine=burger",
+          "then": {
+            "nl": "Dit is een hamburgerrestaurant"
+          }
+        },
+        {
+          "if": "cuisine=sushi",
+          "then": {
+            "nl": "Dit is een sushirestaurant"
+          }
+        },
+        {
+          "if": "cuisine=coffee",
+          "then": {
+            "nl": "Dit is een koffiezaak"
+          }
+        },
+        {
+          "if": "cuisine=italian",
+          "then": {
+            "nl": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
+          }
+        },
+        {
+          "if": "cuisine=french",
+          "then": {
+            "nl": "Dit is een Frans restaurant"
+          }
+        },
+        {
+          "if": "cuisine=chinese",
+          "then": {
+            "nl": "Dit is een Chinees restaurant"
+          }
+        },
+        {
+          "if": "cuisine=greek",
+          "then": {
+            "nl": "Dit is een Grieks restaurant"
+          }
+        },
+        {
+          "if": "cuisine=indian",
+          "then": {
+            "nl": "Dit is een Indisch restaurant"
+          }
+        },
+        {
+          "if": "cuisine=turkish",
+          "then": {
+            "nl": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
+          }
+        },
+        {
+          "if": "cuisine=thai",
+          "then": {
+            "nl": "Dit is een Thaïs restaurant"
+          }
+        }
+      ],
+      "id": "Cuisine"
+    },
+    {
+      "question": {
+        "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
+        "en": "Does this place offer takea-way?",
+        "de": "Ist an diesem Ort Mitnahme möglich?"
+      },
+      "mappings": [
+        {
+          "if": "takeaway=only",
+          "then": {
+            "en": "This is a take-away only business",
+            "nl": "Hier is enkel afhaal mogelijk",
+            "de": "Dieses Geschäft bietet nur Artikel zur Mitnahme an"
+          }
+        },
+        {
+          "if": "takeaway=yes",
+          "then": {
+            "en": "Take-away is possible here",
+            "nl": "Eten kan hier afgehaald worden",
+            "de": "Mitnahme möglich"
+          }
+        },
+        {
+          "if": "takeaway=no",
+          "then": {
+            "en": "Take-away is not possible here",
+            "nl": "Hier is geen afhaalmogelijkheid",
+            "de": "Mitnahme nicht möglich"
+          }
+        }
+      ],
+      "id": "Takeaway"
+    },
+    {
+      "question": {
+        "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
+        "en": "Does this restaurant have a vegetarian option?",
+        "de": "Gibt es im das Restaurant vegetarische Speisen?"
+      },
+      "mappings": [
+        {
+          "if": "diet:vegetarian=no",
+          "then": {
+            "nl": "Geen vegetarische opties beschikbaar"
+          }
+        },
+        {
+          "if": "diet:vegetarian=limited",
+          "then": {
+            "nl": "Beperkte vegetarische opties zijn beschikbaar"
+          }
+        },
+        {
+          "if": "diet:vegetarian=yes",
+          "then": {
+            "nl": "Vegetarische opties zijn beschikbaar"
+          }
+        },
+        {
+          "if": "diet:vegetarian=only",
+          "then": {
+            "nl": "Enkel vegetarische opties zijn beschikbaar"
+          }
+        }
+      ],
+      "condition": "cuisine!=friture",
+      "id": "Vegetarian (no friture)"
+    },
+    {
+      "question": {
+        "nl": "Heeft deze eetgelegenheid een veganistische optie?"
+      },
+      "mappings": [
+        {
+          "if": "diet:vegan=no",
+          "then": {
+            "nl": "Geen veganistische opties beschikbaar"
+          }
+        },
+        {
+          "if": "diet:vegan=limited",
+          "then": {
+            "nl": "Beperkte veganistische opties zijn beschikbaar"
+          }
+        },
+        {
+          "if": "diet:vegan=yes",
+          "then": {
+            "nl": "Veganistische opties zijn beschikbaar"
+          }
+        },
+        {
+          "if": "diet:vegan=only",
+          "then": {
+            "nl": "Enkel veganistische opties zijn beschikbaar"
+          }
+        }
+      ],
+      "condition": "cuisine!=friture",
+      "id": "Vegan (no friture)"
+    },
+    {
+      "question": {
+        "en": "Does this restaurant offer a halal menu?",
+        "nl": "Heeft dit restaurant halal opties?",
+        "de": "Gibt es im das Restaurant halal Speisen?"
+      },
+      "mappings": [
+        {
+          "if": "diet:halal=no",
+          "then": {
+            "en": "There are no halal options available",
+            "nl": "Er zijn geen halal opties aanwezig",
+            "de": "Hier gibt es keine halal Speisen"
+          }
+        },
+        {
+          "if": "diet:halal=limited",
+          "then": {
+            "en": "There is a small halal menu",
+            "nl": "Er zijn een beperkt aantal halal opties",
+            "de": "Hier gibt es wenige halal Speisen"
+          }
+        },
+        {
+          "if": "diet:halal=yes",
+          "then": {
+            "nl": "Halal menu verkrijgbaar",
+            "en": "There is a halal menu",
+            "de": "Es gibt halal Speisen"
+          }
+        },
+        {
+          "if": "diet:halal=only",
+          "then": {
+            "nl": "Enkel halal opties zijn beschikbaar",
+            "en": "Only halal options are available",
+            "de": "Es gibt ausschließlich halal Speisen"
+          }
+        }
+      ],
+      "condition": "cuisine!=friture",
+      "id": "halal (no friture)"
+    },
+    {
+      "id": "friture-vegetarian",
+      "question": {
+        "nl": "Heeft deze frituur vegetarische snacks?",
+        "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
+      },
+      "mappings": [
+        {
+          "if": "diet:vegetarian=yes",
+          "then": {
+            "nl": "Er zijn vegetarische snacks aanwezig",
+            "fr": "Des collations végétariens sont disponibles"
+          }
+        },
+        {
+          "if": "diet:vegetarian=limited",
+          "then": {
+            "nl": "Slechts enkele vegetarische snacks",
+            "fr": "Quelques snacks végétariens seulement"
+          }
+        },
+        {
+          "if": "diet:vegetarian=no",
+          "then": {
+            "nl": "Geen vegetarische snacks beschikbaar",
+            "fr": "Pas d'en-cas végétariens disponibles"
+          }
+        }
+      ],
+      "condition": "cuisine=friture"
+    },
+    {
+      "id": "friture-vegan",
+      "question": {
+        "nl": "Heeft deze frituur veganistische snacks?",
+        "fr": "Cette friterie est-elle équipée de snacks végétaliens ?"
+      },
+      "mappings": [
+        {
+          "if": "diet:vegan=yes",
+          "then": {
+            "nl": "Er zijn veganistische snacks aanwezig",
+            "fr": "Des collations végétaliens sont disponibles"
+          }
+        },
+        {
+          "if": "diet:vegan=limited",
+          "then": {
+            "nl": "Slechts enkele veganistische snacks",
+            "fr": "Quelques snacks végétaliens seulement"
+          }
+        },
+        {
+          "if": "diet:vegan=no",
+          "then": {
+            "nl": "Geen veganistische snacks beschikbaar",
+            "fr": "Pas d'en-cas végétaliens disponibles"
+          }
+        }
+      ],
+      "condition": "cuisine=friture"
+    },
+    {
+      "id": "friture-oil",
+      "question": {
+        "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
+        "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?"
+      },
+      "mappings": [
+        {
+          "if": "friture:oil=vegetable",
+          "then": {
+            "nl": "Plantaardige olie",
+            "fr": "Huile végétale"
+          }
+        },
+        {
+          "if": "friture:oil=animal",
+          "then": {
+            "nl": "Dierlijk vet",
+            "fr": "Graisse animale"
+          }
+        }
+      ],
+      "condition": "cuisine=friture"
+    },
+    {
+      "id": "friture-take-your-container",
+      "question": {
+        "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
+        "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
+        "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
+        "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>",
+        "de": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
+      },
+      "mappings": [
+        {
+          "if": "reusable_packaging:accept=yes",
+          "then": {
+            "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
+            "fr": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets",
+            "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste",
+            "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます",
+            "de": "Sie können <b>ihre eigenen Behälter</b> mitbringen, um Ihre Bestellung zu erhalten, was Einwegverpackungsmaterial und damit Abfall spart"
+          }
+        },
+        {
+          "if": "reusable_packaging:accept=no",
+          "then": {
+            "nl": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen",
+            "fr": "Apporter ses propres contenants <b>n’est pas permis</b>",
+            "en": "Bringing your own container is <b>not allowed</b>",
+            "ja": "独自の容器を持参することは<b>できません</b>",
+            "ru": "Приносить свою тару <b>не разрешено</b>",
+            "de": "Das Mitbringen eines eigenen Containers ist <b>nicht erlaubt</b>"
+          }
+        },
+        {
+          "if": "reusable_packaging:accept=only",
+          "then": {
+            "nl": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen.",
+            "en": "You <b>must</b> bring your own container to order here.",
+            "ja": "自身の容器が注文に<b>必要</b>。",
+            "fr": "Il est <b>obligatoire</b> d’apporter ses propres contenants",
+            "de": "Sie <b>müssen</b> Ihren eigenen Behälter mitbringen, um hier zu bestellen."
+          }
+        }
+      ],
+      "condition": "cuisine=friture"
+    },
+    "service:electricity",
+    "dog-access"
+  ],
+  "filter": [
+    {
+      "id": "opened-now",
+      "options": [
+        {
+          "question": {
+            "en": "Opened now",
+            "nl": "Nu geopened",
+            "de": "Aktuell geöffnet"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    },
+    {
+      "id": "vegetarian",
+      "options": [
+        {
+          "question": {
+            "en": "Has a vegetarian menu",
+            "nl": "Heeft een vegetarisch menu",
+            "de": "Hat vegetarische Speisen"
+          },
+          "osmTags": {
+            "or": [
+              "diet:vegetarian=yes",
+              "diet:vegetarian=only",
+              "diet:vegan=yes",
+              "diet:vegan=only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "vegan",
+      "options": [
+        {
+          "question": {
+            "en": "Has a vegan menu",
+            "nl": "Heeft een veganistisch menu",
+            "de": "Bietet vegan Speisen an"
+          },
+          "osmTags": {
+            "or": [
+              "diet:vegan=yes",
+              "diet:vegan=only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "halal",
+      "options": [
+        {
+          "question": {
+            "en": "Has a halal menu",
+            "nl": "Heeft een halal menu",
+            "de": "Hat halal Speisen"
+          },
+          "osmTags": {
+            "or": [
+              "diet:halal=yes",
+              "diet:halal=only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "disused:amenity:={amenity}"
+      ]
+    }
+  },
+  "allowMove": true,
+  "mapRendering": [
+    {
+      "icon": {
         "render": "circle:white;./assets/layers/food/restaurant.svg",
         "mappings": [
-            {
-                "if": {
-                    "and": [
-                        "amenity=fast_food",
-                        "cuisine=friture"
-                    ]
-                },
-                "then": "circle:white;./assets/layers/food/fries.svg"
-            },
-            {
-                "if": "amenity=fast_food",
-                "then": "circle:white;./assets/layers/food/fastfood.svg"
-            }
-        ]
-    },
-    "iconOverlays": [
-        {
-            "if": "opening_hours~*",
-            "then": "isOpen",
-            "badge": true
-        },
-        {
+          {
             "if": {
-                "or": [
-                    "diet:vegetarian=yes",
-                    "diet:vegan=yes"
-                ]
-            },
-            "then": {
-                "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
-            },
-            "badge": true
-        }
-    ],
-    "label": {
-        "mappings": [
-            {
-                "if": "name~*",
-                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-            }
-        ]
-    },
-    "presets": [
-        {
-            "title": {
-                "en": "restaurant",
-                "nl": "restaurant",
-                "ru": "ресторан",
-                "de": "Restaurant"
-            },
-            "tags": [
-                "amenity=restaurant"
-            ],
-            "description": {
-                "nl": "Een eetgegelegenheid waar je aan tafel wordt bediend",
-                "en": "A formal eating place with sit-down facilities selling full meals served by waiters",
-                "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden"
-            },
-            "preciseInput": {
-                "preferredBackground": "map"
-            }
-        },
-        {
-            "title": {
-                "en": "fastfood",
-                "nl": "fastfood-zaak",
-                "ru": "быстрое питание",
-                "de": "Schnellimbiss"
-            },
-            "tags": [
-                "amenity=fast_food"
-            ],
-            "description": {
-                "nl": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
-                "en": "A food business concentrating on fast counter-only service and take-away food"
-            },
-            "preciseInput": {
-                "preferredBackground": "map"
-            }
-        },
-        {
-            "title": {
-                "en": "fries shop",
-                "nl": "frituur",
-                "de": "Pommesbude"
-            },
-            "tags": [
+              "and": [
                 "amenity=fast_food",
                 "cuisine=friture"
-            ],
-            "description": {
-                "nl": "Een fastfood-zaak waar je frieten koopt"
+              ]
             },
-            "preciseInput": {
-                "preferredBackground": "map"
-            }
-        }
-    ],
-    "title": {
-        "render": {
-            "nl": "Eetgelegenheid"
-        },
-        "mappings": [
-            {
-                "if": {
-                    "and": [
-                        "name~*",
-                        "amenity=restaurant"
-                    ]
-                },
-                "then": {
-                    "nl": "Restaurant <i>{name}</i>",
-                    "en": "Restaurant <i>{name}</i>",
-                    "de": "Restaurant <i>{name}</i>"
-                }
-            },
-            {
-                "if": {
-                    "and": [
-                        "name~*",
-                        "amenity=fast_food"
-                    ]
-                },
-                "then": {
-                    "nl": "Fastfood-zaak <i>{name}</i>",
-                    "en": "Fastfood <i>{name}</i>",
-                    "de": "Schnellrestaurant<i>{name}</i>"
-                }
-            }
+            "then": "circle:white;./assets/layers/food/fries.svg"
+          },
+          {
+            "if": "amenity=fast_food",
+            "then": "circle:white;./assets/layers/food/fastfood.svg"
+          }
         ]
-    },
-    "tagRenderings": [
-        "images",
+      },
+      "iconBadges": [
         {
-            "question": {
-                "nl": "Wat is de naam van deze eetgelegenheid?",
-                "en": "What is the name of this restaurant?",
-                "de": "Wie heißt dieses Restaurant?"
-            },
-            "render": {
-                "nl": "De naam van deze eetgelegeheid is {name}",
-                "en": "The name of this restaurant is {name}",
-                "de": "Das Restaurant heißt {name}"
-            },
-            "freeform": {
-                "key": "name"
-            },
-            "id": "Name"
+          "if": "opening_hours~*",
+          "then": "isOpen"
         },
         {
-            "question": {
-                "en": "What type of business is this?",
-                "nl": "Wat voor soort zaak is dit?",
-                "de": "Um was für ein Geschäft handelt es sich?"
-            },
-            "mappings": [
-                {
-                    "if": "amenity=fast_food",
-                    "then": {
-                        "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
-                    }
-                },
-                {
-                    "if": "amenity=restaurant",
-                    "then": {
-                        "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
-                    }
-                }
-            ],
-            "id": "Fastfood vs restaurant"
-        },
-        "opening_hours",
-        "website",
-        "email",
-        "phone",
-        "payment-options",
-        "wheelchair-access",
-        {
-            "question": {
-                "nl": "Welk soort gerechten worden hier geserveerd?",
-                "en": "Which food is served here?",
-                "de": "Welches Essen gibt es hier?"
-            },
-            "render": {
-                "nl": "Deze plaats serveert vooral {cuisine}",
-                "en": "This place mostly serves {cuisine}",
-                "de": "An diesem Ort gibt es hauptsächlich {cuisine}"
-            },
-            "freeform": {
-                "key": "cuisine",
-                "addExtraTags": [
-                    "fixme=Freeform tag `cuisine` used, to be doublechecked"
-                ]
-            },
-            "mappings": [
-                {
-                    "if": "cuisine=pizza",
-                    "then": {
-                        "en": "This is a pizzeria",
-                        "nl": "Dit is een pizzeria",
-                        "de": "Dies ist eine Pizzeria"
-                    }
-                },
-                {
-                    "if": "cuisine=friture",
-                    "then": {
-                        "en": "This is a friture",
-                        "nl": "Dit is een frituur",
-                        "de": "Dies ist eine Pommesbude"
-                    }
-                },
-                {
-                    "if": "cuisine=pasta",
-                    "then": {
-                        "en": "Mainly serves pasta",
-                        "nl": "Dit is een pastazaak",
-                        "de": "Bietet vorwiegend Pastagerichte an"
-                    }
-                },
-                {
-                    "if": "cuisine=kebab",
-                    "then": {
-                        "nl": "Dit is een kebabzaak"
-                    }
-                },
-                {
-                    "if": "cuisine=sandwich",
-                    "then": {
-                        "nl": "Dit is een broodjeszaak"
-                    }
-                },
-                {
-                    "if": "cuisine=burger",
-                    "then": {
-                        "nl": "Dit is een hamburgerrestaurant"
-                    }
-                },
-                {
-                    "if": "cuisine=sushi",
-                    "then": {
-                        "nl": "Dit is een sushirestaurant"
-                    }
-                },
-                {
-                    "if": "cuisine=coffee",
-                    "then": {
-                        "nl": "Dit is een koffiezaak"
-                    }
-                },
-                {
-                    "if": "cuisine=italian",
-                    "then": {
-                        "nl": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
-                    }
-                },
-                {
-                    "if": "cuisine=french",
-                    "then": {
-                        "nl": "Dit is een Frans restaurant"
-                    }
-                },
-                {
-                    "if": "cuisine=chinese",
-                    "then": {
-                        "nl": "Dit is een Chinees restaurant"
-                    }
-                },
-                {
-                    "if": "cuisine=greek",
-                    "then": {
-                        "nl": "Dit is een Grieks restaurant"
-                    }
-                },
-                {
-                    "if": "cuisine=indian",
-                    "then": {
-                        "nl": "Dit is een Indisch restaurant"
-                    }
-                },
-                {
-                    "if": "cuisine=turkish",
-                    "then": {
-                        "nl": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
-                    }
-                },
-                {
-                    "if": "cuisine=thai",
-                    "then": {
-                        "nl": "Dit is een Thaïs restaurant"
-                    }
-                }
-            ],
-            "id": "Cuisine"
-        },
-        {
-            "question": {
-                "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
-                "en": "Does this place offer takea-way?",
-                "de": "Ist an diesem Ort Mitnahme möglich?"
-            },
-            "mappings": [
-                {
-                    "if": "takeaway=only",
-                    "then": {
-                        "en": "This is a take-away only business",
-                        "nl": "Hier is enkel afhaal mogelijk",
-                        "de": "Dieses Geschäft bietet nur Artikel zur Mitnahme an"
-                    }
-                },
-                {
-                    "if": "takeaway=yes",
-                    "then": {
-                        "en": "Take-away is possible here",
-                        "nl": "Eten kan hier afgehaald worden",
-                        "de": "Mitnahme möglich"
-                    }
-                },
-                {
-                    "if": "takeaway=no",
-                    "then": {
-                        "en": "Take-away is not possible here",
-                        "nl": "Hier is geen afhaalmogelijkheid",
-                        "de": "Mitnahme nicht möglich"
-                    }
-                }
-            ],
-            "id": "Takeaway"
-        },
-        {
-            "question": {
-                "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
-                "en": "Does this restaurant have a vegetarian option?",
-                "de": "Gibt es im das Restaurant vegetarische Speisen?"
-            },
-            "mappings": [
-                {
-                    "if": "diet:vegetarian=no",
-                    "then": {
-                        "nl": "Geen vegetarische opties beschikbaar"
-                    }
-                },
-                {
-                    "if": "diet:vegetarian=limited",
-                    "then": {
-                        "nl": "Beperkte vegetarische opties zijn beschikbaar"
-                    }
-                },
-                {
-                    "if": "diet:vegetarian=yes",
-                    "then": {
-                        "nl": "Vegetarische opties zijn beschikbaar"
-                    }
-                },
-                {
-                    "if": "diet:vegetarian=only",
-                    "then": {
-                        "nl": "Enkel vegetarische opties zijn beschikbaar"
-                    }
-                }
-            ],
-            "condition": "cuisine!=friture",
-            "id": "Vegetarian (no friture)"
-        },
-        {
-            "question": {
-                "nl": "Heeft deze eetgelegenheid een veganistische optie?"
-            },
-            "mappings": [
-                {
-                    "if": "diet:vegan=no",
-                    "then": {
-                        "nl": "Geen veganistische opties beschikbaar"
-                    }
-                },
-                {
-                    "if": "diet:vegan=limited",
-                    "then": {
-                        "nl": "Beperkte veganistische opties zijn beschikbaar"
-                    }
-                },
-                {
-                    "if": "diet:vegan=yes",
-                    "then": {
-                        "nl": "Veganistische opties zijn beschikbaar"
-                    }
-                },
-                {
-                    "if": "diet:vegan=only",
-                    "then": {
-                        "nl": "Enkel veganistische opties zijn beschikbaar"
-                    }
-                }
-            ],
-            "condition": "cuisine!=friture",
-            "id": "Vegan (no friture)"
-        },
-        {
-            "question": {
-                "en": "Does this restaurant offer a halal menu?",
-                "nl": "Heeft dit restaurant halal opties?",
-                "de": "Gibt es im das Restaurant halal Speisen?"
-            },
-            "mappings": [
-                {
-                    "if": "diet:halal=no",
-                    "then": {
-                        "en": "There are no halal options available",
-                        "nl": "Er zijn geen halal opties aanwezig",
-                        "de": "Hier gibt es keine halal Speisen"
-                    }
-                },
-                {
-                    "if": "diet:halal=limited",
-                    "then": {
-                        "en": "There is a small halal menu",
-                        "nl": "Er zijn een beperkt aantal halal opties",
-                        "de": "Hier gibt es wenige halal Speisen"
-                    }
-                },
-                {
-                    "if": "diet:halal=yes",
-                    "then": {
-                        "nl": "Halal menu verkrijgbaar",
-                        "en": "There is a halal menu",
-                        "de": "Es gibt halal Speisen"
-                    }
-                },
-                {
-                    "if": "diet:halal=only",
-                    "then": {
-                        "nl": "Enkel halal opties zijn beschikbaar",
-                        "en": "Only halal options are available",
-                        "de": "Es gibt ausschließlich halal Speisen"
-                    }
-                }
-            ],
-            "condition": "cuisine!=friture",
-            "id": "halal (no friture)"
-        },
-        {
-            "id": "friture-vegetarian",
-            "question": {
-                "nl": "Heeft deze frituur vegetarische snacks?",
-                "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
-            },
-            "mappings": [
-                {
-                    "if": "diet:vegetarian=yes",
-                    "then": {
-                        "nl": "Er zijn vegetarische snacks aanwezig",
-                        "fr": "Des collations végétariens sont disponibles"
-                    }
-                },
-                {
-                    "if": "diet:vegetarian=limited",
-                    "then": {
-                        "nl": "Slechts enkele vegetarische snacks",
-                        "fr": "Quelques snacks végétariens seulement"
-                    }
-                },
-                {
-                    "if": "diet:vegetarian=no",
-                    "then": {
-                        "nl": "Geen vegetarische snacks beschikbaar",
-                        "fr": "Pas d'en-cas végétariens disponibles"
-                    }
-                }
-            ],
-            "condition": "cuisine=friture"
-        },
-        {
-            "id": "friture-vegan",
-            "question": {
-                "nl": "Heeft deze frituur veganistische snacks?",
-                "fr": "Cette friterie est-elle équipée de snacks végétaliens ?"
-            },
-            "mappings": [
-                {
-                    "if": "diet:vegan=yes",
-                    "then": {
-                        "nl": "Er zijn veganistische snacks aanwezig",
-                        "fr": "Des collations végétaliens sont disponibles"
-                    }
-                },
-                {
-                    "if": "diet:vegan=limited",
-                    "then": {
-                        "nl": "Slechts enkele veganistische snacks",
-                        "fr": "Quelques snacks végétaliens seulement"
-                    }
-                },
-                {
-                    "if": "diet:vegan=no",
-                    "then": {
-                        "nl": "Geen veganistische snacks beschikbaar",
-                        "fr": "Pas d'en-cas végétaliens disponibles"
-                    }
-                }
-            ],
-            "condition": "cuisine=friture"
-        },
-        {
-            "id": "friture-oil",
-            "question": {
-                "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
-                "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?"
-            },
-            "mappings": [
-                {
-                    "if": "friture:oil=vegetable",
-                    "then": {
-                        "nl": "Plantaardige olie",
-                        "fr": "Huile végétale"
-                    }
-                },
-                {
-                    "if": "friture:oil=animal",
-                    "then": {
-                        "nl": "Dierlijk vet",
-                        "fr": "Graisse animale"
-                    }
-                }
-            ],
-            "condition": "cuisine=friture"
-        },
-        {
-            "id": "friture-take-your-container",
-            "question": {
-                "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
-                "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
-                "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
-                "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>",
-                "de": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
-            },
-            "mappings": [
-                {
-                    "if": "reusable_packaging:accept=yes",
-                    "then": {
-                        "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
-                        "fr": "Vous pouvez <b>apporter vos contenants</b> pour votre commande, limitant l’usage de matériaux à usage unique et les déchets",
-                        "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste",
-                        "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます",
-                        "de": "Sie können <b>ihre eigenen Behälter</b> mitbringen, um Ihre Bestellung zu erhalten, was Einwegverpackungsmaterial und damit Abfall spart"
-                    }
-                },
-                {
-                    "if": "reusable_packaging:accept=no",
-                    "then": {
-                        "nl": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen",
-                        "fr": "Apporter ses propres contenants <b>n’est pas permis</b>",
-                        "en": "Bringing your own container is <b>not allowed</b>",
-                        "ja": "独自の容器を持参することは<b>できません</b>",
-                        "ru": "Приносить свою тару <b>не разрешено</b>"
-                    }
-                },
-                {
-                    "if": "reusable_packaging:accept=only",
-                    "then": {
-                        "nl": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen.",
-                        "en": "You <b>must</b> bring your own container to order here.",
-                        "ja": "自身の容器が注文に<b>必要</b>。",
-                        "fr": "Il est <b>obligatoire</b> d’apporter ses propres contenants"
-                    }
-                }
-            ],
-            "condition": "cuisine=friture"
-        },
-        "dog-access"
-    ],
-    "filter": [
-        {
-            "id": "opened-now",
-            "options": [
-                {
-                    "question": {
-                        "en": "Opened now",
-                        "nl": "Nu geopened",
-                        "de": "Aktuell geöffnet"
-                    },
-                    "osmTags": "_isOpen=yes"
-                }
+          "if": {
+            "or": [
+              "diet:vegetarian=yes",
+              "diet:vegan=yes"
             ]
-        },
-        {
-            "id": "vegetarian",
-            "options": [
-                {
-                    "question": {
-                        "en": "Has a vegetarian menu",
-                        "nl": "Heeft een vegetarisch menu",
-                        "de": "Hat vegetarische Speisen"
-                    },
-                    "osmTags": {
-                        "or": [
-                            "diet:vegetarian=yes",
-                            "diet:vegetarian=only",
-                            "diet:vegan=yes",
-                            "diet:vegan=only"
-                        ]
-                    }
-                }
-            ]
-        },
-        {
-            "id": "vegan",
-            "options": [
-                {
-                    "question": {
-                        "en": "Has a vegan menu",
-                        "nl": "Heeft een veganistisch menu",
-                        "de": "Bietet vegan Speisen an"
-                    },
-                    "osmTags": {
-                        "or": [
-                            "diet:vegan=yes",
-                            "diet:vegan=only"
-                        ]
-                    }
-                }
-            ]
-        },
-        {
-            "id": "halal",
-            "options": [
-                {
-                    "question": {
-                        "en": "Has a halal menu",
-                        "nl": "Heeft een halal menu",
-                        "de": "Hat halal Speisen"
-                    },
-                    "osmTags": {
-                        "or": [
-                            "diet:halal=yes",
-                            "diet:halal=only"
-                        ]
-                    }
-                }
-            ]
+          },
+          "then": {
+            "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
+          }
         }
-    ],
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "amenity=",
-                "disused:amenity:={amenity}"
-            ]
-        }
-    },
-    "allowMove": true,
-    "mapRendering": [
-        {
-            "icon": {
-                "render": "circle:white;./assets/layers/food/restaurant.svg",
-                "mappings": [
-                    {
-                        "if": {
-                            "and": [
-                                "amenity=fast_food",
-                                "cuisine=friture"
-                            ]
-                        },
-                        "then": "circle:white;./assets/layers/food/fries.svg"
-                    },
-                    {
-                        "if": "amenity=fast_food",
-                        "then": "circle:white;./assets/layers/food/fastfood.svg"
-                    }
-                ]
-            },
-            "iconBadges": [
-                {
-                    "if": "opening_hours~*",
-                    "then": "isOpen"
-                },
-                {
-                    "if": {
-                        "or": [
-                            "diet:vegetarian=yes",
-                            "diet:vegan=yes"
-                        ]
-                    },
-                    "then": {
-                        "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
-                    }
-                }
-            ],
-            "label": {
-                "mappings": [
-                    {
-                        "if": "name~*",
-                        "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-                    }
-                ]
-            },
-            "location": [
-                "point"
-            ]
-        }
-    ]
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
 }

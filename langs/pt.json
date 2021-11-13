@@ -1,42 +1,42 @@
 {
-    "centerMessage": {
-        "retrying": "Surgiu uma falha ao carregar os dados. A tentar novamente dentro de {count} segundos…",
-        "ready": "Concluído!",
-        "zoomIn": "Amplie para ver ou editar os dados",
-        "loadingData": "A carregar os dados…"
+  "centerMessage": {
+    "retrying": "Surgiu uma falha ao carregar os dados. A tentar novamente dentro de {count} segundos…",
+    "ready": "Concluído!",
+    "zoomIn": "Amplie para ver ou editar os dados",
+    "loadingData": "A carregar os dados…"
+  },
+  "image": {
+    "isDeleted": "Eliminada",
+    "doDelete": "Remover imagem",
+    "dontDelete": "Cancelar",
+    "uploadDone": "A sua imagem foi adicionada. Obrigado pela ajuda!",
+    "respectPrivacy": "Não fotografe pessoas nem placas de veículos. Não envie imagens do Google Maps, do Google Streetview ou outras fontes protegidas por direitos de autor.",
+    "uploadFailed": "Não foi possível enviar a sua imagem. Está conectado à Internet e permite APIs de terceiros? O navegador \"Brave\" ou o plugin \"uMatrix\" podem estar a bloqueá-los.",
+    "ccb": "sob a licença CC-BY",
+    "ccbs": "sob a licença CC-BY-SA",
+    "cco": "no domínio público",
+    "willBePublished": "A sua imagem será publicada: ",
+    "pleaseLogin": "Entre na sua conta para adicionar uma imagem",
+    "uploadingMultiple": "A enviar {count} imagens…",
+    "uploadingPicture": "A enviar a sua imagem…",
+    "addPicture": "Adicionar imagem",
+    "uploadMultipleDone": "Foram adicionadas {count} fotografias. Obrigado por ajudar!",
+    "toBig": "A sua imagem é muito grande porque tem {actual_size}. Use imagens com o máximo {max_size}"
+  },
+  "index": {
+    "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
+    "title": "Bem-vindo(a) ao MapComplete",
+    "intro": "O MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
+    "pickTheme": "Escolha um tema abaixo para começar.",
+    "featuredThemeTitle": "Destaque desta semana"
+  },
+  "delete": {
+    "reasons": {
+      "notFound": "Não foi possível encontrar este elemento"
     },
-    "image": {
-        "isDeleted": "Eliminada",
-        "doDelete": "Remover imagem",
-        "dontDelete": "Cancelar",
-        "uploadDone": "A sua imagem foi adicionada. Obrigado pela ajuda!",
-        "respectPrivacy": "Não fotografe pessoas nem placas de veículos. Não envie imagens do Google Maps, do Google Streetview ou outras fontes protegidas por direitos de autor.",
-        "uploadFailed": "Não foi possível enviar a sua imagem. Está conectado à Internet e permite APIs de terceiros? O navegador \"Brave\" ou o plugin \"uMatrix\" podem estar a bloqueá-los.",
-        "ccb": "sob a licença CC-BY",
-        "ccbs": "sob a licença CC-BY-SA",
-        "cco": "no domínio público",
-        "willBePublished": "A sua imagem será publicada: ",
-        "pleaseLogin": "Entre na sua conta para adicionar uma imagem",
-        "uploadingMultiple": "A enviar {count} imagens…",
-        "uploadingPicture": "A enviar a sua imagem…",
-        "addPicture": "Adicionar imagem",
-        "uploadMultipleDone": "Foram adicionadas {count} fotografias. Obrigado por ajudar!",
-        "toBig": "A sua imagem é muito grande porque tem {actual_size}. Use imagens com o máximo {max_size}"
-    },
-    "index": {
-        "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
-        "title": "Bem-vindo(a) ao MapComplete",
-        "intro": "O MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
-        "pickTheme": "Escolha um tema abaixo para começar.",
-        "featuredThemeTitle": "Destaque desta semana"
-    },
-    "delete": {
-        "reasons": {
-            "notFound": "Não foi possível encontrar este elemento"
-        },
-        "explanations": {
-            "selectReason": "Por favor, selecione a razão porque este elemento deve ser eliminado",
-            "hardDelete": "Este ponto será eliminado no OpenStreetMap. Pode ser recuperado por um contribuidor com experiência"
-        }
+    "explanations": {
+      "selectReason": "Por favor, selecione a razão porque este elemento deve ser eliminado",
+      "hardDelete": "Este ponto será eliminado no OpenStreetMap. Pode ser recuperado por um contribuidor com experiência"
     }
+  }
 }

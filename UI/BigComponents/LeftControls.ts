@@ -45,8 +45,8 @@ export default class LeftControls extends Combine {
                     state,
                     new ContributorCount(state).Contributors
                 ),
-             "copyright",
-             guiState.copyrightViewIsOpened
+            "copyright",
+            guiState.copyrightViewIsOpened
         );
 
         const copyrightButton = new Toggle(

@@ -4,13 +4,13 @@ import Constants from "../Models/Constants";
 import Hash from "../Logic/Web/Hash";
 
 export class DefaultGuiState {
+    static state: DefaultGuiState;
     public readonly welcomeMessageIsOpened: UIEventSource<boolean>;
     public readonly downloadControlIsOpened: UIEventSource<boolean>;
     public readonly filterViewIsOpened: UIEventSource<boolean>;
     public readonly copyrightViewIsOpened: UIEventSource<boolean>;
     public readonly welcomeMessageOpenedTab: UIEventSource<number>
     public readonly allFullScreenStates: UIEventSource<boolean>[] = []
-    static state: DefaultGuiState;
 
     constructor() {
 

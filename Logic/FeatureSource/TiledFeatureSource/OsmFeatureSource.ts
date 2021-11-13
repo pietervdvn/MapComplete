@@ -13,9 +13,10 @@ import {Or} from "../../Tags/Or";
 import {TagsFilter} from "../../Tags/TagsFilter";
 
 export default class OsmFeatureSource {
-    private readonly _backend: string;
-
     public readonly isRunning: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly downloadedTiles = new Set<number>()
+    public rawDataHandlers: ((osmJson: any, tileId: number) => void)[] = []
+    private readonly _backend: string;
     private readonly filteredLayers: UIEventSource<FilteredLayer[]>;
     private readonly handleTile: (fs: (FeatureSourceForLayer & Tiled)) => void;
     private isActive: UIEventSource<boolean>;
@@ -28,10 +29,7 @@ export default class OsmFeatureSource {
         },
         markTileVisited?: (tileId: number) => void
     };
-    public readonly downloadedTiles = new Set<number>()
     private readonly allowedTags: TagsFilter;
-    
-    public rawDataHandlers: ((osmJson: any, tileId: number) => void)[] = []
 
     constructor(options: {
         handleTile: (tile: FeatureSourceForLayer & Tiled) => void;
@@ -54,13 +52,13 @@ export default class OsmFeatureSource {
             if (options.isActive?.data === false) {
                 return;
             }
-            
+
             neededTiles = neededTiles.filter(tile => !self.downloadedTiles.has(tile))
 
-            if(neededTiles.length == 0){
+            if (neededTiles.length == 0) {
                 return;
             }
-            
+
             self.isRunning.setData(true)
             try {
 
@@ -73,7 +71,7 @@ export default class OsmFeatureSource {
                 }
             } catch (e) {
                 console.error(e)
-            }finally {
+            } finally {
                 console.log("Done")
                 self.isRunning.setData(false)
             }
@@ -111,7 +109,7 @@ export default class OsmFeatureSource {
 
                 geojson.features = geojson.features.filter(feature => this.allowedTags.matchesProperties(feature.properties))
                 geojson.features.forEach(f => f.properties["_backend"] = this._backend)
-                
+
                 const index = Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,
                     this.handleTile,

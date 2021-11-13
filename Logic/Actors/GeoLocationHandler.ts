@@ -5,12 +5,23 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
 import FeatureSource from "../FeatureSource/FeatureSource";
-import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
+
+export interface GeoLocationPointProperties {
+    id: "gps",
+    "user:location": "yes",
+    "date": string,
+    "latitude": number
+    "longitude":number,
+    "speed": number,
+    "accuracy": number
+    "heading": number
+    "altitude":number
+}
 
 export default class GeoLocationHandler extends VariableUiElement {
-    
-    public readonly currentLocation : FeatureSource
-    
+
+    private readonly currentLocation: FeatureSource
+
     /**
      * Wether or not the geolocation is active, aka the user requested the current location
      * @private
@@ -59,13 +70,13 @@ export default class GeoLocationHandler extends VariableUiElement {
 
     constructor(
         state: {
-            currentGPSLocation: UIEventSource<Coordinates>,
+            currentUserLocation: FeatureSource,
             leafletMap: UIEventSource<any>,
             layoutToUse: LayoutConfig,
             featureSwitchGeolocation: UIEventSource<boolean>
         }
     ) {
-        const currentGPSLocation = state.currentGPSLocation
+        const currentGPSLocation = new UIEventSource<Coordinates>(undefined, "GPS-coordinate")
         const leafletMap = state.leafletMap
         const hasLocation = currentGPSLocation.map(
             (location) => location !== undefined
@@ -182,25 +193,30 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
         })
 
-        this.currentLocation  = new StaticFeatureSource([], false)
+        this.currentLocation = state.currentUserLocation
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
-
             const feature = {
                 "type": "Feature",
-                properties: {
-                    "user:location":"yes",
-                    "accuracy":location.accuracy,
-                    "speed":location.speed,
+                properties: <GeoLocationPointProperties>{
+                    id: "gps",
+                    "user:location": "yes",
+                    "date": new Date().toISOString(),
+                    "latitude": location.latitude,
+                    "longitude": location.longitude,
+                    "speed": location.speed,
+                    "accuracy": location.accuracy,
+                    "heading": location.heading,
+                    "altitude": location.altitude
                 },
-                geometry:{
-                    type:"Point",
+                geometry: {
+                    type: "Point",
                     coordinates: [location.longitude, location.latitude],
                 }
             }
-            
+
             self.currentLocation.features.setData([{feature, freshness: new Date()}])
-            
+
             const timeSinceRequest =
                 (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
             if (timeSinceRequest < 30) {
@@ -210,7 +226,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
 
         });
-  
+
     }
 
     private init(askPermission: boolean, zoomToLocation: boolean) {
@@ -279,7 +295,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             );
         } else {
             const currentZoom = this._leafletMap.data.getZoom()
-            
+
             this._leafletMap.data.setView([location.latitude, location.longitude], Math.max(targetZoom ?? 0, currentZoom));
         }
     }

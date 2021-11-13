@@ -31,7 +31,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
                     reusePointWithinMeters?: number,
                     theme: string, changeType: "create" | "import" | null
                 }) {
-        super()
+        super(null,basicTags !== undefined && basicTags.length > 0)
         this._basicTags = basicTags;
         this._lat = lat;
         this._lon = lon;
@@ -111,12 +111,12 @@ export default class CreateNewNodeAction extends OsmChangeAction {
         // We check that it isn't close to an already existing point
         let reusedPointId = undefined;
         const prev = <[number, number]>geojson.geometry.coordinates[index]
-        if (GeoOperations.distanceBetween(prev, <[number, number]>projected.geometry.coordinates) * 1000 < this._reusePointDistance) {
+        if (GeoOperations.distanceBetween(prev, <[number, number]>projected.geometry.coordinates) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index]
         }
         const next = <[number, number]>geojson.geometry.coordinates[index + 1]
-        if (GeoOperations.distanceBetween(next, <[number, number]>projected.geometry.coordinates) * 1000 < this._reusePointDistance) {
+        if (GeoOperations.distanceBetween(next, <[number, number]>projected.geometry.coordinates) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index + 1]
         }
@@ -156,7 +156,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
 
     private setElementId(id: number) {
         this.newElementIdNumber = id;
-        this.newElementId = "node/"+id
+        this.newElementId = "node/" + id
         if (!this._reusePreviouslyCreatedPoint) {
             return
         }

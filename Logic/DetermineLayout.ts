@@ -61,41 +61,8 @@ export default class DetermineLayout {
                 layer.minzoom = Math.max(16, layer.minzoom)
             }
         }
-        
+
         return [layoutToUse, undefined]
-    }
-
-    private static async LoadRemoteTheme(link: string): Promise<LayoutConfig | null> {
-        console.log("Downloading map theme from ", link);
-
-        new FixedUiElement(`Downloading the theme from the <a href="${link}">link</a>...`)
-            .AttachTo("centermessage");
-
-        try {
-
-            const parsed = await Utils.downloadJson(link)
-            console.log("Got ", parsed)
-            LegacyJsonConvert.fixThemeConfig(parsed)
-            try {
-                parsed.id = link;
-                return new LayoutConfig(parsed, false).patchImages(link, JSON.stringify(parsed));
-            } catch (e) {
-                console.error(e)
-                DetermineLayout.ShowErrorOnCustomTheme(
-                    `<a href="${link}">${link}</a> is invalid:`,
-                    new FixedUiElement(e)
-                )
-                return null;
-            }
-
-        } catch (e) {
-            console.error(e)
-            DetermineLayout.ShowErrorOnCustomTheme(
-                `<a href="${link}">${link}</a> is invalid - probably not found or invalid JSON:`,
-                new FixedUiElement(e)
-            )
-            return null;
-        }
     }
 
     public static LoadLayoutFromHash(
@@ -164,6 +131,39 @@ export default class DetermineLayout {
         ])
             .SetClass("flex flex-col clickable")
             .AttachTo("centermessage");
+    }
+
+    private static async LoadRemoteTheme(link: string): Promise<LayoutConfig | null> {
+        console.log("Downloading map theme from ", link);
+
+        new FixedUiElement(`Downloading the theme from the <a href="${link}">link</a>...`)
+            .AttachTo("centermessage");
+
+        try {
+
+            const parsed = await Utils.downloadJson(link)
+            console.log("Got ", parsed)
+            LegacyJsonConvert.fixThemeConfig(parsed)
+            try {
+                parsed.id = link;
+                return new LayoutConfig(parsed, false).patchImages(link, JSON.stringify(parsed));
+            } catch (e) {
+                console.error(e)
+                DetermineLayout.ShowErrorOnCustomTheme(
+                    `<a href="${link}">${link}</a> is invalid:`,
+                    new FixedUiElement(e)
+                )
+                return null;
+            }
+
+        } catch (e) {
+            console.error(e)
+            DetermineLayout.ShowErrorOnCustomTheme(
+                `<a href="${link}">${link}</a> is invalid - probably not found or invalid JSON:`,
+                new FixedUiElement(e)
+            )
+            return null;
+        }
     }
 
 }

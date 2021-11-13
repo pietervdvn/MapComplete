@@ -14,7 +14,10 @@ import {QueryParameters} from "../Web/QueryParameters";
 import * as personal from "../../assets/themes/personal/personal.json";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
-import {Coord} from "@turf/turf";
+import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
+import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
+import {LocalStorageSource} from "../Web/LocalStorageSource";
+import {GeoOperations} from "../GeoOperations";
 
 /**
  * Contains all the leaflet-map related state
@@ -45,7 +48,22 @@ export default class MapState extends UserRelatedState {
     /**
      * The location as delivered by the GPS
      */
-    public currentGPSLocation: UIEventSource<Coordinates> = new UIEventSource<Coordinates>(undefined);
+    public currentUserLocation: FeatureSourceForLayer & Tiled;
+
+    /**
+     * All previously visited points
+     */
+    public historicalUserLocations: FeatureSourceForLayer & Tiled;
+    /**
+     * The number of seconds that the GPS-locations are stored in memory
+     */
+    public gpsLocationHistoryRetentionTime = new UIEventSource(7 * 24 * 60 * 60, "gps_location_retention")
+    public historicalUserLocationsTrack: FeatureSourceForLayer & Tiled;
+
+    /**
+     * A feature source containing the current home location of the user
+     */
+    public homeLocation: FeatureSourceForLayer & Tiled
 
     public readonly mainMapObject: BaseUIElement & MinimapObj;
 
@@ -121,9 +139,27 @@ export default class MapState extends UserRelatedState {
 
         this.lockBounds()
         this.AddAllOverlaysToMap(this.leafletMap)
+
+        this.initHomeLocation()
+        this.initGpsLocation()
+        this.initUserLocationTrail()
     }
 
+    public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
+        const initialized = new Set()
+        for (const overlayToggle of this.overlayToggles) {
+            new ShowOverlayLayer(overlayToggle.config, leafletMap, overlayToggle.isDisplayed)
+            initialized.add(overlayToggle.config)
+        }
 
+        for (const tileLayerSource of this.layoutToUse.tileLayerSources) {
+            if (initialized.has(tileLayerSource)) {
+                continue
+            }
+            new ShowOverlayLayer(tileLayerSource, leafletMap)
+        }
+
+    }
 
     private lockBounds() {
         const layout = this.layoutToUse;
@@ -152,8 +188,123 @@ export default class MapState extends UserRelatedState {
         }
     }
 
+    private initGpsLocation() {
+        // Initialize the gps layer data. This is emtpy for now, the actual writing happens in the Geolocationhandler
+        let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location")[0]
+        this.currentUserLocation = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0));
+    }
+
+    private initUserLocationTrail() {
+        const features = LocalStorageSource.GetParsed<{ feature: any, freshness: Date }[]>("gps_location_history", [])
+        const now = new Date().getTime()
+        features.data = features.data
+            .map(ff => ({feature: ff.feature, freshness: new Date(ff.freshness)}))
+            .filter(ff => (now - ff.freshness.getTime()) < this.gpsLocationHistoryRetentionTime.data)
+        features.ping()
+        const self = this;
+        let i = 0
+        this.currentUserLocation.features.addCallbackAndRunD(([location]) => {
+            if (location === undefined) {
+                return;
+            }
+
+            const previousLocation = features.data[features.data.length - 1]
+            if (previousLocation !== undefined) {
+                const d = GeoOperations.distanceBetween(
+                    previousLocation.feature.geometry.coordinates,
+                    location.feature.geometry.coordinates
+                )
+                let timeDiff = Number.MAX_VALUE // in seconds
+                const olderLocation = features.data[features.data.length - 2]
+                if (olderLocation !== undefined) {
+                    timeDiff = (previousLocation.freshness.getTime() - olderLocation.freshness.getTime()) / 1000
+                }
+                if (d < 20 && timeDiff < 60) {
+                    // Do not append changes less then 20m - it's probably noise anyway
+                    return;
+                }
+            }
+
+            const feature = JSON.parse(JSON.stringify(location.feature))
+            feature.properties.id = "gps/" + features.data.length
+            i++
+            features.data.push({feature, freshness: new Date()})
+            features.ping()
+        })
+
+
+        let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location_history")[0]
+        this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
+        this.changes.useLocationHistory(this)
+
+
+        const asLine = features.map(allPoints => {
+            if (allPoints === undefined || allPoints.length < 2) {
+                return []
+            }
+
+            const feature = {
+                type: "Feature",
+                properties: {
+                    "id": "location_track",
+                    "_date:now": new Date().toISOString(),
+                },
+                geometry: {
+                    type: "LineString",
+                    coordinates: allPoints.map(ff => ff.feature.geometry.coordinates)
+                }
+            }
+
+            self.allElements.ContainingFeatures.set(feature.properties.id, feature)
+
+            return [{
+                feature,
+                freshness: new Date()
+            }]
+        })
+        let gpsLineLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
+        this.historicalUserLocationsTrack = new SimpleFeatureSource(gpsLineLayerDef, Tiles.tile_index(0, 0, 0), asLine);
+    }
+
+    private initHomeLocation() {
+        const empty = []
+        const feature = UIEventSource.ListStabilized(this.osmConnection.userDetails.map(userDetails => {
+
+            if (userDetails === undefined) {
+                return undefined;
+            }
+            const home = userDetails.home;
+            if (home === undefined) {
+                return undefined;
+            }
+            return [home.lon, home.lat]
+        })).map(homeLonLat => {
+            if (homeLonLat === undefined) {
+                return empty
+            }
+            return [{
+                feature: {
+                    "type": "Feature",
+                    "properties": {
+                        "id": "home",
+                        "user:home": "yes",
+                        "_lon": homeLonLat[0],
+                        "_lat": homeLonLat[1]
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": homeLonLat
+                    }
+                }, freshness: new Date()
+            }]
+        })
+
+        const flayer = this.filteredLayers.data.filter(l => l.layerDef.id === "home_location")[0]
+        this.homeLocation = new SimpleFeatureSource(flayer, Tiles.tile_index(0, 0, 0), feature)
+
+    }
+
     private InitializeFilteredLayers() {
-        // Initialize the filtered layers state
 
         const layoutToUse = this.layoutToUse;
         const empty = []
@@ -199,22 +350,6 @@ export default class MapState extends UserRelatedState {
             flayers.push(flayer);
         }
         return new UIEventSource<FilteredLayer[]>(flayers);
-    }
-
-    public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
-        const initialized = new Set()
-        for (const overlayToggle of this.overlayToggles) {
-            new ShowOverlayLayer(overlayToggle.config, leafletMap, overlayToggle.isDisplayed)
-            initialized.add(overlayToggle.config)
-        }
-
-        for (const tileLayerSource of this.layoutToUse.tileLayerSources) {
-            if (initialized.has(tileLayerSource)) {
-                continue
-            }
-            new ShowOverlayLayer(tileLayerSource, leafletMap)
-        }
-
     }
 
 

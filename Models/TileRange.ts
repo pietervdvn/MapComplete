@@ -1,5 +1,5 @@
 import {control} from "leaflet";
-import zoom = control.zoom;
+
 
 export interface TileRange {
     xstart: number,
@@ -15,7 +15,7 @@ export class Tiles {
     public static MapRange<T>(tileRange: TileRange, f: (x: number, y: number) => T): T[] {
         const result: T[] = []
         const total = tileRange.total
-        if(total > 100000){
+        if (total > 100000) {
             throw "Tilerange too big"
         }
         for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
@@ -27,24 +27,6 @@ export class Tiles {
         return result;
     }
 
-
-    private static tile2long(x, z) {
-        return (x / Math.pow(2, z) * 360 - 180);
-    }
-
-    private static tile2lat(y, z) {
-        const n = Math.PI - 2 * Math.PI * y / Math.pow(2, z);
-        return (180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))));
-    }
-
-    private static lon2tile(lon, zoom) {
-        return (Math.floor((lon + 180) / 360 * Math.pow(2, zoom)));
-    }
-
-    private static lat2tile(lat, zoom) {
-        return (Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
-    }
-    
     /**
      * Calculates the tile bounds of the
      * @param z
@@ -56,7 +38,6 @@ export class Tiles {
         return [[Tiles.tile2lat(y, z), Tiles.tile2long(x, z)], [Tiles.tile2lat(y + 1, z), Tiles.tile2long(x + 1, z)]]
     }
 
-
     static tile_bounds_lon_lat(z: number, x: number, y: number): [[number, number], [number, number]] {
         return [[Tiles.tile2long(x, z), Tiles.tile2lat(y, z)], [Tiles.tile2long(x + 1, z), Tiles.tile2lat(y + 1, z)]]
     }
@@ -67,13 +48,14 @@ export class Tiles {
      * @param x
      * @param y
      */
-    static centerPointOf(z: number, x: number, y: number): [number, number]{
-        return [(Tiles.tile2long(x, z) + Tiles.tile2long(x+1, z)) / 2, (Tiles.tile2lat(y, z) + Tiles.tile2lat(y+1, z)) / 2]
+    static centerPointOf(z: number, x: number, y: number): [number, number] {
+        return [(Tiles.tile2long(x, z) + Tiles.tile2long(x + 1, z)) / 2, (Tiles.tile2lat(y, z) + Tiles.tile2lat(y + 1, z)) / 2]
     }
-    
+
     static tile_index(z: number, x: number, y: number): number {
         return ((x * (2 << z)) + y) * 100 + z
     }
+
     /**
      * Given a tile index number, returns [z, x, y]
      * @param index
@@ -93,7 +75,7 @@ export class Tiles {
     static embedded_tile(lat: number, lon: number, z: number): { x: number, y: number, z: number } {
         return {x: Tiles.lon2tile(lon, z), y: Tiles.lat2tile(lat, z), z: z}
     }
-    
+
     static TileRangeBetween(zoomlevel: number, lat0: number, lon0: number, lat1: number, lon1: number): TileRange {
         const t0 = Tiles.embedded_tile(lat0, lon0, zoomlevel)
         const t1 = Tiles.embedded_tile(lat1, lon1, zoomlevel)
@@ -114,5 +96,22 @@ export class Tiles {
         }
     }
 
-   
+    private static tile2long(x, z) {
+        return (x / Math.pow(2, z) * 360 - 180);
+    }
+
+    private static tile2lat(y, z) {
+        const n = Math.PI - 2 * Math.PI * y / Math.pow(2, z);
+        return (180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))));
+    }
+
+    private static lon2tile(lon, zoom) {
+        return (Math.floor((lon + 180) / 360 * Math.pow(2, zoom)));
+    }
+
+    private static lat2tile(lat, zoom) {
+        return (Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
+    }
+
+
 }

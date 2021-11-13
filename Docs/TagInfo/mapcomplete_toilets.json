@@ -75,6 +75,25 @@
       "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Open Toilet Map')"
     },
     {
+      "key": "payment:cash",
+      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "yes"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely 'Opened 24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "24/7"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "yes"
@@ -150,7 +169,7 @@
     },
     {
       "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'Toilet paper is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "yes"
     },
     {

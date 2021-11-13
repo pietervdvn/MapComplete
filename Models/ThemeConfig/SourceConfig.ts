@@ -8,7 +8,7 @@ export default class SourceConfig {
     public readonly geojsonSource?: string;
     public readonly geojsonZoomLevel?: number;
     public readonly isOsmCacheLayer: boolean;
-   public readonly mercatorCrs: boolean;
+    public readonly mercatorCrs: boolean;
 
     constructor(params: {
         mercatorCrs?: boolean;
@@ -36,11 +36,12 @@ export default class SourceConfig {
             console.error(params)
             throw `Source said it is a OSM-cached layer, but didn't define the actual source of the cache (in context ${context})`
         }
-        if(params.geojsonSource !== undefined && params.geojsonSourceLevel !== undefined){
-            if(! ["x","y","x_min","x_max","y_min","Y_max"].some(toSearch => params.geojsonSource.indexOf(toSearch) > 0)){
+        if (params.geojsonSource !== undefined && params.geojsonSourceLevel !== undefined) {
+            if (!["x", "y", "x_min", "x_max", "y_min", "Y_max"].some(toSearch => params.geojsonSource.indexOf(toSearch) > 0)) {
                 throw `Source defines a geojson-zoomLevel, but does not specify {x} nor {y} (or equivalent), this is probably a bug (in context ${context})`
-        }}
-        this.osmTags = params.osmTags ?? new RegexTag("id",/.*/);
+            }
+        }
+        this.osmTags = params.osmTags ?? new RegexTag("id", /.*/);
         this.overpassScript = params.overpassScript;
         this.geojsonSource = params.geojsonSource;
         this.geojsonZoomLevel = params.geojsonSourceLevel;

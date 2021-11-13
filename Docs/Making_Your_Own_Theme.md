@@ -105,10 +105,67 @@ Every field is documented in the source code itself - you can find them here:
 - [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
 - At last, the exact semantics of tags is documented [here](Tags_format.md)
 
+A JSON-schema file is available in Docs/Schemas - use LayoutConfig.schema.json to validate a theme file.
+
 ### MetaTags
 
 There are few tags available that are calculated for convenience - e.g. the country an object is located
 at. [An overview of all these metatags is available here](Docs/CalculatedTags.md)
+
+
+### TagRendering groups
+
+A tagRendering can have a `group`-attribute, which acts as a tag.
+All tagRenderings with the same group name will be rendered together, in the same order as they were defined.
+
+For example, if the defined tagrenderings have groups `A A B A A B B B`, the group order is `A B` and first all tagrenderings from group A will be rendered (thus numbers 0, 1, 3 and 4) followed by the question box for this group.
+Then, all the tagRenderings for group B will be shown, thus number 2, 5, 6 and 7, again followed by their questionbox.
+
+Additionally, every tagrendering will receive a the groupname as class in the HTML, which can be used to hook up custom CSS.
+
+If no group tag is given, the group is `` (empty string)
+
+### Deciding the questions position
+
+By default, the questions are shown just beneath their group.
+
+To override this behaviour, one can add a tagrendering with id `questions` to move the questions up.
+
+To add a title to the questions, one can add a `render` and a condition.
+
+To change the behaviour of the questionbox to show _all_ questions at once, one can use a helperArgs in the freeform field with option `showAllQuestions`.
+
+For example, to show the questions on top, use:
+
+```
+"tagRenderings": [
+    { "id": "questions" }
+    { ... some tagrendering ... }
+    { ... more tagrendering ...}
+]
+```
+
+To show _all_ the questions of a group at once in the middle of the tagrenderings, with a header, use:
+
+```
+"tagRenderings": [
+    { 
+      "id": "questions" ,
+      "group": "groupname",
+      "render": {
+        "en": "<h3>Technical questions</h3>The following questions are very technical!<br />{questions}
+      },
+      "freeform": {
+        "key": "questions",
+        "helperArgs": {
+            "showAllQuestions": true
+        }
+      }
+    }
+    { ... some tagrendering ... }
+    { ... more tagrendering ...}
+]
+```
 
 Some hints
 ------------
@@ -173,16 +230,7 @@ Instead, make one layer for one kind of object and change the icon based on attr
 
 Using layers as filters - this doesn't work!
 
-_All_ data is downloaded in one go and cached locally first. The layer selection (bottom left of the live app) then
-selects _anything_ that matches the criteria. This match is then passed of to the rendering layer, which selects the
-layer independently. This means that a feature can show up, even if it's layer is unselected!
-
-For example, in the [cyclofix-theme](https://mapcomplete.osm.org/cyclofix), there is the layer with _bike-wash_ for do
-it yourself bikecleaning - points marked with `service:bicycle:cleaning`. However, a bicycle repair shop can offer this
-service too!
-
-If all the layers are deselected except the bike wash layer, a shop having this tag will still match and will still show
-up as shop.
+Use the `filter`-functionality instead
 
 ### Not reading the .JSON-specs
 

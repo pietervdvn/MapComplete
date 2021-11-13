@@ -104,7 +104,11 @@
       },
       "source": {
         "osmTags": {
-          "and": ["highway!=", "service!=driveway", "highway!=platform"]
+          "and": [
+            "highway!=",
+            "service!=driveway",
+            "highway!=platform"
+          ]
         }
       },
       "minZoom": 19,
@@ -123,10 +127,10 @@
       "mapRendering": [
         {
           "color": {
-            "render":"#a9a9a9",
+            "render": "#a9a9a9",
             "mappings": [
               {
-                "if":"lit=no",
+                "if": "lit=no",
                 "then": "#303030"
               }
             ]

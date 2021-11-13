@@ -9,7 +9,6 @@ import Toggle from "../Input/Toggle";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import {Tag} from "../../Logic/Tags/Tag";
 import Loading from "../Base/Loading";
-import CreateNewWayAction from "../../Logic/Osm/Actions/CreateNewWayAction";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {Changes} from "../../Logic/Osm/Changes";
@@ -32,7 +31,6 @@ import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeature
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import BaseLayer from "../../Models/BaseLayer";
 import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction";
-import FullNodeDatabaseSource from "../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
 import CreateWayWithPointReuseAction from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
 import OsmChangeAction from "../../Logic/Osm/Actions/OsmChangeAction";
 import FeatureSource from "../../Logic/FeatureSource/FeatureSource";
@@ -282,8 +280,8 @@ export default class ImportButton extends Toggle {
     }
 
     public static createConfirmForWay(o: ImportButtonState,
-                                            isImported: UIEventSource<boolean>,
-                                            importClicked: UIEventSource<boolean>): BaseUIElement {
+                                      isImported: UIEventSource<boolean>,
+                                      importClicked: UIEventSource<boolean>): BaseUIElement {
 
         const confirmationMap = Minimap.createMiniMap({
             allowMoving: true,
@@ -301,8 +299,8 @@ export default class ImportButton extends Toggle {
             allElements: o.state.allElements,
             layers: o.state.filteredLayers
         })
-        
-        let action : OsmChangeAction & {getPreview() : Promise<FeatureSource>}
+
+        let action: OsmChangeAction & { getPreview(): Promise<FeatureSource> }
 
         const theme = o.state.layoutToUse.id
         const changes = o.state.changes
@@ -320,7 +318,7 @@ export default class ImportButton extends Toggle {
             )
 
             confirm = async () => {
-                changes.applyAction (action)
+                changes.applyAction(action)
                 return o.feature.properties.id
             }
 
@@ -332,8 +330,8 @@ export default class ImportButton extends Toggle {
             } else if (geom.type === "Polygon") {
                 coordinates = geom.coordinates[0]
             }
-            
-            
+
+
             action = new CreateWayWithPointReuseAction(
                 o.newTags.data,
                 coordinates,
@@ -341,13 +339,13 @@ export default class ImportButton extends Toggle {
                 o.state,
                 [{
                     withinRangeOfM: 1,
-                    ifMatches: new Tag("_is_part_of_building","true"),
-                    mode:"move_osm_point"
-                    
+                    ifMatches: new Tag("_is_part_of_building", "true"),
+                    mode: "move_osm_point"
+
                 }]
             )
-            
-            
+
+
             confirm = async () => {
                 changes.applyAction(action)
                 return undefined

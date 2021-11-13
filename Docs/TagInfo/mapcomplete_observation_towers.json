@@ -77,16 +77,6 @@
       "value": "yes"
     },
     {
-      "key": "payment:app",
-      "description": "Layer 'Observation towers' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:membership_card",
-      "description": "Layer 'Observation towers' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
-      "value": "yes"
-    },
-    {
       "key": "wheelchair",
       "description": "Layer 'Observation towers' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
       "value": "designated"

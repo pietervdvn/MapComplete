@@ -4,7 +4,6 @@ import Wikidata, {WikidataResponse} from "../../Logic/Web/Wikidata";
 import {Translation} from "../i18n/Translation";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Loading from "../Base/Loading";
-import {Transform} from "stream";
 import Translations from "../i18n/Translations";
 import Combine from "../Base/Combine";
 import Img from "../Base/Img";
@@ -15,6 +14,43 @@ import BaseUIElement from "../BaseUIElement";
 import {Utils} from "../../Utils";
 
 export default class WikidataPreviewBox extends VariableUiElement {
+
+    private static isHuman = [
+        {p: 31/*is a*/, q: 5 /* human */},
+    ]
+    // @ts-ignore
+    private static extraProperties: {
+        requires?: { p: number, q?: number }[],
+        property: string,
+        display: Translation | Map<string, string | (() => BaseUIElement) /*If translation: Subs({value: * })  */>
+    }[] = [
+        {
+            requires: WikidataPreviewBox.isHuman,
+            property: "P21",
+            display: new Map([
+                ['Q6581097', () => Svg.gender_male_ui().SetStyle("width: 1rem; height: auto")],
+                ['Q6581072', () => Svg.gender_female_ui().SetStyle("width: 1rem; height: auto")],
+                ['Q1097630', () => Svg.gender_inter_ui().SetStyle("width: 1rem; height: auto")],
+                ['Q1052281', () => Svg.gender_trans_ui().SetStyle("width: 1rem; height: auto")/*'transwomen'*/],
+                ['Q2449503', () => Svg.gender_trans_ui().SetStyle("width: 1rem; height: auto")/*'transmen'*/],
+                ['Q48270', () => Svg.gender_queer_ui().SetStyle("width: 1rem; height: auto")]
+            ])
+        },
+        {
+            property: "P569",
+            requires: WikidataPreviewBox.isHuman,
+            display: new Translation({
+                "*": "Born: {value}"
+            })
+        },
+        {
+            property: "P570",
+            requires: WikidataPreviewBox.isHuman,
+            display: new Translation({
+                "*": "Died: {value}"
+            })
+        }
+    ]
 
     constructor(wikidataId: UIEventSource<string>) {
         let inited = false;
@@ -45,6 +81,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         }))
 
     }
+    // @ts-ignore
 
     public static WikidataResponsePreview(wikidata: WikidataResponse): BaseUIElement {
         let link = new Link(
@@ -57,7 +94,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         let info = new Combine([
             new Combine(
                 [Translation.fromMap(wikidata.labels)?.SetClass("font-bold"),
-                link]).SetClass("flex justify-between"),
+                    link]).SetClass("flex justify-between"),
             Translation.fromMap(wikidata.descriptions),
             WikidataPreviewBox.QuickFacts(wikidata)
         ]).SetClass("flex flex-col link-underline")
@@ -80,87 +117,49 @@ export default class WikidataPreviewBox extends VariableUiElement {
         return info
     }
 
-    private static isHuman = [
-        {p: 31/*is a*/, q: 5 /* human */},
-    ]
-    // @ts-ignore
-    // @ts-ignore
-    private static extraProperties: {
-        requires?: { p: number, q?: number }[],
-        property: string,
-        display: Translation | Map<string, string | (() => BaseUIElement) /*If translation: Subs({value: * })  */>
-    }[] = [
-        {
-            requires: WikidataPreviewBox.isHuman,
-            property: "P21",
-            display: new Map([
-                ['Q6581097', () => Svg.gender_male_ui().SetStyle("width: 1rem; height: auto")],
-                ['Q6581072', () => Svg.gender_female_ui().SetStyle("width: 1rem; height: auto")],
-                ['Q1097630',() => Svg.gender_inter_ui().SetStyle("width: 1rem; height: auto")],
-                ['Q1052281',() => Svg.gender_trans_ui().SetStyle("width: 1rem; height: auto")/*'transwomen'*/],
-                ['Q2449503',() => Svg.gender_trans_ui().SetStyle("width: 1rem; height: auto")/*'transmen'*/],
-                ['Q48270',() => Svg.gender_queer_ui().SetStyle("width: 1rem; height: auto")]
-            ])
-        },
-        {
-            property: "P569",
-            requires: WikidataPreviewBox.isHuman,
-            display: new Translation({
-                "*":"Born: {value}"
-            })
-        },
-        {
-            property: "P570",
-            requires: WikidataPreviewBox.isHuman,
-            display: new Translation({
-                "*":"Died: {value}"
-            })
-        }
-    ]
-
     public static QuickFacts(wikidata: WikidataResponse): BaseUIElement {
-        
-        const els : BaseUIElement[] = []
+
+        const els: BaseUIElement[] = []
         for (const extraProperty of WikidataPreviewBox.extraProperties) {
             let hasAllRequirements = true
             for (const requirement of extraProperty.requires) {
-                if(!wikidata.claims?.has("P"+requirement.p)){
+                if (!wikidata.claims?.has("P" + requirement.p)) {
                     hasAllRequirements = false;
                     break
                 }
-                if(!wikidata.claims?.get("P"+requirement.p).has("Q"+requirement.q)){
+                if (!wikidata.claims?.get("P" + requirement.p).has("Q" + requirement.q)) {
                     hasAllRequirements = false;
                     break
                 }
             }
-            if(!hasAllRequirements){
+            if (!hasAllRequirements) {
                 continue
             }
-            
+
             const key = extraProperty.property
             const display = extraProperty.display
             const value: string[] = Array.from(wikidata.claims.get(key))
-            if(value === undefined){
+            if (value === undefined) {
                 continue
             }
-            if(display instanceof Translation){
+            if (display instanceof Translation) {
                 els.push(display.Subs({value: value.join(", ")}).SetClass("m-2"))
                 continue
             }
             const constructors = Utils.NoNull(value.map(property => display.get(property)))
             const elems = constructors.map(v => {
-                if(typeof v === "string"){
+                if (typeof v === "string") {
                     return new FixedUiElement(v)
-                }else{
+                } else {
                     return v();
                 }
             })
             els.push(new Combine(elems).SetClass("flex m-2"))
         }
-        if(els.length === 0){
+        if (els.length === 0) {
             return undefined;
         }
-        
+
         return new Combine(els).SetClass("flex")
     }
 

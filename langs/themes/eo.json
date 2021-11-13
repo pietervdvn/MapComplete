@@ -1,45 +1,94 @@
 {
-    "climbing": {
-        "overrideAll": {
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " metro"
-                        },
-                        "1": {
-                            "human": " futo"
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "cyclestreets": {
-        "layers": {
-            "2": {
-                "name": "Ĉiuj stratoj",
-                "title": {
-                    "render": "Strato"
-                }
-            }
-        }
-    },
-    "facadegardens": {
-        "layers": {
+  "climbing": {
+    "overrideAll": {
+      "units+": {
+        "0": {
+          "applicableUnits": {
             "0": {
-                "tagRenderings": {
-                    "facadegardens-description": {
-                        "render": "Pliaj detaloj: {description}"
-                    }
-                }
+              "human": " metro"
+            },
+            "1": {
+              "human": " futo"
             }
+          }
         }
-    },
-    "ghostbikes": {
-        "title": "Fantombicikloj"
-    },
-    "maps": {
-        "title": "Mapo de mapoj"
+      }
     }
+  },
+  "cyclestreets": {
+    "layers": {
+      "2": {
+        "name": "Ĉiuj stratoj",
+        "title": {
+          "render": "Strato"
+        }
+      }
+    }
+  },
+  "facadegardens": {
+    "layers": {
+      "0": {
+        "tagRenderings": {
+          "facadegardens-description": {
+            "render": "Pliaj detaloj: {description}"
+          }
+        }
+      }
+    }
+  },
+  "ghostbikes": {
+    "title": "Fantombicikloj"
+  },
+  "hailhydrant": {
+    "layers": {
+      "1": {
+        "tagRenderings": {
+          "extinguisher-location": {
+            "render": "Loko: {location}"
+          }
+        }
+      }
+    }
+  },
+  "maps": {
+    "title": "Mapo de mapoj"
+  },
+  "openwindpowermap": {
+    "layers": {
+      "0": {
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "{name}"
+            }
+          }
+        },
+        "units": {
+          "0": {
+            "applicableUnits": {
+              "0": {
+                "human": " megavatoj"
+              },
+              "1": {
+                "human": " kilovatoj"
+              },
+              "2": {
+                "human": " vatoj"
+              },
+              "3": {
+                "human": " gigavatoj"
+              }
+            }
+          },
+          "1": {
+            "applicableUnits": {
+              "0": {
+                "human": " metro"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

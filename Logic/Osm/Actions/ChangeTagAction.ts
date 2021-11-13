@@ -7,19 +7,19 @@ export default class ChangeTagAction extends OsmChangeAction {
     private readonly _elementId: string;
     private readonly _tagsFilter: TagsFilter;
     private readonly _currentTags: any;
-    private readonly _meta: {theme: string, changeType: string};
+    private readonly _meta: { theme: string, changeType: string };
 
     constructor(elementId: string, tagsFilter: TagsFilter, currentTags: any, meta: {
         theme: string,
         changeType: "answer" | "soft-delete" | "add-image" | string
     }) {
-        super();
+        super(elementId, true);
         this._elementId = elementId;
         this._tagsFilter = tagsFilter;
         this._currentTags = currentTags;
         this._meta = meta;
     }
-
+    
     /**
      * Doublechecks that no stupid values are added
      */
@@ -31,11 +31,11 @@ export default class ChangeTagAction extends OsmChangeAction {
             return undefined;
         }
         if (value === undefined || value === null) {
-            console.error("Invalid value for ", key,":", value);
+            console.error("Invalid value for ", key, ":", value);
             return undefined;
         }
-        
-        if(typeof value !== "string"){
+
+        if (typeof value !== "string") {
             console.error("Invalid value for ", key, "as it is not a string:", value)
             return undefined;
         }
@@ -53,7 +53,7 @@ export default class ChangeTagAction extends OsmChangeAction {
         const type = typeId[0]
         const id = Number(typeId  [1])
         return [{
-            type: <"node"|"way"|"relation"> type,
+            type: <"node" | "way" | "relation">type,
             id: id,
             tags: changedTags,
             meta: this._meta

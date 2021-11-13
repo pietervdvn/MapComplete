@@ -1482,6 +1482,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1495,11 +1500,6 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-4xl {
@@ -1996,12 +1996,6 @@ li::marker {
   margin: 0.25em;
   text-align: center;
   padding: 0.15em 0.3em;
-}
-
-.question form {
-  display: inline-block;
-  max-width: 90vw;
-  width: 100%;
 }
 
 .invalid {

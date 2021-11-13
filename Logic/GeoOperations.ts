@@ -1,7 +1,13 @@
 import * as turf from '@turf/turf'
 import {BBox} from "./BBox";
+import togpx from "togpx"
+import Constants from "../Models/Constants";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 export class GeoOperations {
+
+    private static readonly _earthRadius = 6378137;
+    private static readonly _originShift = 2 * Math.PI * GeoOperations._earthRadius / 2;
 
     static surfaceAreaInSqMeters(feature: any) {
         return turf.area(feature);
@@ -24,12 +30,12 @@ export class GeoOperations {
     }
 
     /**
-     * Returns the distance between the two points in kilometers
+     * Returns the distance between the two points in meters
      * @param lonlat0
      * @param lonlat1
      */
     static distanceBetween(lonlat0: [number, number], lonlat1: [number, number]) {
-        return turf.distance(lonlat0, lonlat1)
+        return turf.distance(lonlat0, lonlat1) * 1000
     }
 
     /**
@@ -40,7 +46,7 @@ export class GeoOperations {
      * If 'feature' is a Polygon, overlapping points and points within the polygon will be returned
      *
      * If 'feature' is a point, it will return every feature the point is embedded in. Overlap will be undefined
-     * 
+     *
      */
     static calculateOverlap(feature: any, otherFeatures: any[]): { feat: any, overlap: number }[] {
 
@@ -237,13 +243,13 @@ export class GeoOperations {
      * @param point Point defined as [lon, lat]
      */
     public static nearestPoint(way, point: [number, number]) {
-        if(way.geometry.type === "Polygon"){
+        if (way.geometry.type === "Polygon") {
             way = {...way}
             way.geometry = {...way.geometry}
             way.geometry.type = "LineString"
             way.geometry.coordinates = way.geometry.coordinates[0]
         }
-        
+
         return turf.nearestPointOnLine(way, point, {units: "kilometers"});
     }
 
@@ -292,10 +298,6 @@ export class GeoOperations {
         return headerValuesOrdered.map(v => JSON.stringify(v)).join(",") + "\n" + lines.join("\n")
     }
 
-
-    private static readonly _earthRadius = 6378137;
-    private static readonly _originShift = 2 * Math.PI * GeoOperations._earthRadius / 2;
-
     //Converts given lat/lon in WGS84 Datum to XY in Spherical Mercator EPSG:900913
     public static ConvertWgs84To900913(lonLat: [number, number]): [number, number] {
         const lon = lonLat[0];
@@ -315,9 +317,34 @@ export class GeoOperations {
         y = 180 / Math.PI * (2 * Math.atan(Math.exp(y * Math.PI / 180)) - Math.PI / 2);
         return [x, y];
     }
-    
-    public static GeoJsonToWGS84(geojson){
+
+    public static GeoJsonToWGS84(geojson) {
         return turf.toWgs84(geojson)
+    }
+
+    /**
+     * Tries to remove points which do not contribute much to the general outline.
+     * Points for which the angle is ~ 180° are removed
+     * @param coordinates
+     * @constructor
+     */
+    public static SimplifyCoordinates(coordinates: [number, number][]) {
+        const newCoordinates = []
+        for (let i = 1; i < coordinates.length - 1; i++) {
+            const coordinate = coordinates[i];
+            const prev = coordinates[i - 1]
+            const next = coordinates[i + 1]
+            const b0 = turf.bearing(prev, coordinate, {final: true})
+            const b1 = turf.bearing(coordinate, next)
+
+            const diff = Math.abs(b1 - b0)
+            if (diff < 2) {
+                continue
+            }
+            newCoordinates.push(coordinate)
+        }
+        return newCoordinates
+
     }
 
     /**
@@ -412,31 +439,176 @@ export class GeoOperations {
         return undefined;
     }
 
-    /**
-     * Tries to remove points which do not contribute much to the general outline.
-     * Points for which the angle is ~ 180° are removed
-     * @param coordinates
-     * @constructor
-     */
-    public static SimplifyCoordinates(coordinates: [number, number][]){
-        const newCoordinates = []
-        for (let i = 1; i < coordinates.length - 1; i++){
-            const coordinate = coordinates[i];
-            const prev = coordinates[i - 1]
-            const next = coordinates[i + 1]
-            const b0 = turf.bearing(prev, coordinate, {final: true})
-            const b1 = turf.bearing(coordinate, next)
+    public static AsGpx(feature, generatedWithLayer?: LayerConfig){
+        
+        const metadata = {}
+        const tags = feature.properties
+        
+        if(generatedWithLayer !== undefined){
             
-            const diff = Math.abs(b1 - b0)
-            if(diff < 2){
-                continue
+            metadata["name"] = generatedWithLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
+            metadata["desc"] = "Generated with MapComplete layer "+generatedWithLayer.id
+            if(tags._backend?.contains("openstreetmap")){
+                metadata["copyright"]= "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
+                metadata["author"] = tags["_last_edit:contributor"]
+                metadata["link"]= "https://www.openstreetmap.org/"+tags.id
+                metadata["time"] = tags["_last_edit:timestamp"]
+            }else{
+                metadata["time"] = new Date().toISOString()
             }
-            newCoordinates.push(coordinate)
         }
-        return newCoordinates
-
+        
+        return togpx(feature, {
+            creator: "MapComplete "+Constants.vNumber,
+            metadata
+        })
     }
     
+    public static IdentifieCommonSegments(coordinatess: [number,number][][] ): {
+        originalIndex: number,
+        segmentShardWith: number[],
+        coordinates: []
+    }[]{
+        
+        // An edge. Note that the edge might be reversed to fix the sorting condition:  start[0] < end[0] && (start[0] != end[0] || start[0] < end[1])
+        type edge = {start: [number, number], end: [number, number], intermediate: [number,number][], members: {index:number, isReversed: boolean}[]}
+
+        // The strategy:
+        // 1. Index _all_ edges from _every_ linestring. Index them by starting key, gather which relations run over them
+        // 2. Join these edges back together - as long as their membership groups are the same
+        // 3. Convert to results
+        
+        const allEdgesByKey = new Map<string, edge>()
+
+        for (let index = 0; index < coordinatess.length; index++){
+            const coordinates = coordinatess[index];
+            for (let i = 0; i < coordinates.length - 1; i++){
+                
+                const c0 = coordinates[i];
+                const c1 = coordinates[i + 1]
+                const isReversed = (c0[0] > c1[0]) || (c0[0] == c1[0] && c0[1] > c1[1])
+                
+                let key : string
+                if(isReversed){
+                    key = ""+c1+";"+c0
+                }else{
+                    key = ""+c0+";"+c1
+                }
+                const member = {index, isReversed}
+                if(allEdgesByKey.has(key)){
+                    allEdgesByKey.get(key).members.push(member)
+                    continue
+                }
+                
+                let edge : edge;
+                if(!isReversed){
+                    edge = {
+                        start : c0,
+                        end: c1,
+                        members: [member],
+                        intermediate: []
+                    }
+                }else{
+                    edge = {
+                        start : c1,
+                        end: c0,
+                        members: [member],
+                        intermediate: []
+                    }
+                }
+                allEdgesByKey.set(key, edge)
+                
+            }
+        }
+
+        // Lets merge them back together!
+        
+        let didMergeSomething = false;
+        let allMergedEdges = Array.from(allEdgesByKey.values())
+        const allEdgesByStartPoint = new Map<string, edge[]>()
+        for (const edge of allMergedEdges) {
+            
+            edge.members.sort((m0, m1) => m0.index - m1.index)
+            
+            const kstart = edge.start+""
+            if(!allEdgesByStartPoint.has(kstart)){
+                allEdgesByStartPoint.set(kstart, [])
+            }
+            allEdgesByStartPoint.get(kstart).push(edge)
+        }
+        
+        
+        function membersAreCompatible(first:edge, second:edge): boolean{
+            // There must be an exact match between the members
+            if(first.members === second.members){
+                return true
+            }
+            
+            if(first.members.length !== second.members.length){
+                return false
+            }
+            
+            // Members are sorted and have the same length, so we can check quickly
+            for (let i = 0; i < first.members.length; i++) {
+                const m0 = first.members[i]
+                const m1 = second.members[i]
+                if(m0.index !== m1.index || m0.isReversed !== m1.isReversed){
+                    return false
+                }
+            }
+            
+            // Allrigth, they are the same, lets mark this permanently
+            second.members = first.members
+            return true
+            
+        }
+        
+        do{
+            didMergeSomething = false
+            // We use 'allMergedEdges' as our running list
+            const consumed = new Set<edge>()
+            for (const edge of allMergedEdges) {
+                // Can we make this edge longer at the end?
+                if(consumed.has(edge)){
+                    continue
+                }
+                
+                console.log("Considering edge", edge)
+                const matchingEndEdges = allEdgesByStartPoint.get(edge.end+"") 
+                console.log("Matchign endpoints:", matchingEndEdges)
+                if(matchingEndEdges === undefined){
+                    continue
+                }
+                
+                
+                for (let i = 0; i < matchingEndEdges.length; i++){
+                    const endEdge = matchingEndEdges[i];
+                    
+                    if(consumed.has(endEdge)){
+                        continue
+                    }
+                    
+                    if(!membersAreCompatible(edge, endEdge)){
+                        continue
+                    }
+                    
+                    // We can make the segment longer!
+                    didMergeSomething = true
+                    console.log("Merging ", edge, "with ", endEdge)
+                    edge.intermediate.push(edge.end)
+                    edge.end = endEdge.end
+                    consumed.add(endEdge)
+                    matchingEndEdges.splice(i, 1)
+                    break;
+                }
+            }
+            
+            allMergedEdges = allMergedEdges.filter(edge => !consumed.has(edge));
+            
+        }while(didMergeSomething)
+        
+        return []
+    }
 }
 
 

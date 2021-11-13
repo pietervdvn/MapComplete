@@ -20,7 +20,7 @@ export default class FeaturedMessage extends Combine {
             if (wm.end_date <= now) {
                 continue
             }
-           
+
             if (welcome_message !== undefined) {
                 console.warn("Multiple applicable messages today:", welcome_message.featured_theme)
             }
@@ -62,7 +62,7 @@ export default class FeaturedMessage extends Combine {
                 message: wm.message,
                 featured_theme: wm.featured_theme
             })
-            
+
         }
         return all_messages
     }

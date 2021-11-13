@@ -105,7 +105,7 @@ export default class SimpleAddUI extends Toggle {
                         selectedPreset.setData(undefined)
                     }
 
-                    const message =Translations.t.general.add.addNew.Subs({category: preset.name});
+                    const message = Translations.t.general.add.addNew.Subs({category: preset.name});
                     return new ConfirmLocationOfPoint(state, filterViewIsOpened, preset,
                         message,
                         state.LastClickLocation.data,

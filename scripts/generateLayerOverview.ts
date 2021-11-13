@@ -47,6 +47,11 @@ class LayerOverviewUtils {
         if (layerJson["overpassTags"] !== undefined) {
             errorCount.push("Layer " + layerJson.id + "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
         }
+        const forbiddenTopLevel = ["icon","wayHandling","roamingRenderings","roamingRendering","label","width","color","colour","iconOverlays"]
+        for (const forbiddenKey of forbiddenTopLevel) {
+            if(layerJson[forbiddenKey] !== undefined)
+            errorCount.push("Layer "+layerJson.id+" still has a forbidden key "+forbiddenKey)
+        }
         try {
             const layer = new LayerConfig(layerJson, "test", true)
             const images = Array.from(layer.ExtractImages())
@@ -183,7 +188,7 @@ class LayerOverviewUtils {
                         allTranslations
                             .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
                             .forEach(missing => {
-                                themeErrorCount.push("The theme " + theme.id + " should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context)
+                                themeErrorCount.push("The theme " + theme.id + " should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context+".\n\tThe full translation is "+missing.tr.translations)
                             })
                     }
 
@@ -191,7 +196,7 @@ class LayerOverviewUtils {
                 }
                 themeConfigs.push(theme)
             } catch (e) {
-                themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
+                themeErrorCount.push("Could not parse theme " + themeFile["id"] + " due to", e)
             }
         }
 

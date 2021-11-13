@@ -12,12 +12,11 @@ export default interface UnitConfigJson {
     /**
      * The possible denominations
      */
-    applicableUnits:ApplicableUnitJson[]
+    applicableUnits: ApplicableUnitJson[]
 
 }
 
-export interface ApplicableUnitJson
-{
+export interface ApplicableUnitJson {
     /**
      * The canonical value which will be added to the text.
      * e.g. "m" for meters
@@ -28,8 +27,8 @@ export interface ApplicableUnitJson
      * The canonical denomination in the case that the unit is precisely '1'
      */
     canonicalDenominationSingular?: string,
-    
-    
+
+
     /**
      * A list of alternative values which can occur in the OSM database - used for parsing.
      */

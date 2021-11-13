@@ -8,9 +8,8 @@ import {BBox} from "../../BBox";
 
 export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer & Tiled> {
     public readonly loadedTiles: Map<number, FeatureSourceForLayer & Tiled> = new Map<number, FeatureSourceForLayer & Tiled>();
-    private readonly sources: Map<number, UIEventSource<FeatureSource[]>> = new Map<number, UIEventSource<FeatureSource[]>>();
-
     public readonly layer: FilteredLayer;
+    private readonly sources: Map<number, UIEventSource<FeatureSource[]>> = new Map<number, UIEventSource<FeatureSource[]>>();
     private _handleTile: (src: FeatureSourceForLayer & IndexedFeatureSource, index: number) => void;
 
     constructor(layer: FilteredLayer, handleTile: (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled, index: number) => void) {
@@ -24,7 +23,7 @@ export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer 
      * @param src
      * @param index
      */
-    public registerTile(src: FeatureSource  & Tiled) {
+    public registerTile(src: FeatureSource & Tiled) {
 
         const index = src.tileIndex
         if (this.sources.has(index)) {

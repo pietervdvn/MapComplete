@@ -543,128 +543,128 @@
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
-      "value": ""
-    },
-    {
-      "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
-      "value": "charging_station"
-    },
-    {
-      "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
-      "value": ""
-    },
-    {
-      "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
-      "value": ""
-    },
-    {
-      "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
-      "value": ""
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "broken"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "charging_station"
     },
     {
       "key": "parking:fee",

@@ -2,15 +2,14 @@
  * This script attempt to automatically fix some basic issues when a theme from the custom generator is loaded
  */
 import {Utils} from "../Utils"
-Utils.runningFromConsole = true;
 import {readFileSync, writeFileSync} from "fs";
 import SmallLicense from "../Models/smallLicense";
-import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ScriptUtils from "./ScriptUtils";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
+Utils.runningFromConsole = true;
 
 
 ScriptUtils.fixUtils()

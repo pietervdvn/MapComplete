@@ -24,7 +24,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 osmTags: {and: []}
             },
             mapRendering: [{
-                location: ["point"],
+                location: ["point","centroid"],
                 icon: "./assets/svg/crosshair-empty.svg"
             }]
         }, "matchpoint icon", true
@@ -96,22 +96,22 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 let min = undefined;
                 let matchedWay = undefined;
                 for (const feature of self._snapTo.data ?? []) {
-                    try{
-                        
-                    const nearestPointOnLine = GeoOperations.nearestPoint(feature.feature, [loc.lon, loc.lat])
-                    if (min === undefined) {
-                        min = nearestPointOnLine
-                        matchedWay = feature.feature;
-                        continue;
-                    }
+                    try {
 
-                    if (min.properties.dist > nearestPointOnLine.properties.dist) {
-                        min = nearestPointOnLine
-                        matchedWay = feature.feature;
+                        const nearestPointOnLine = GeoOperations.nearestPoint(feature.feature, [loc.lon, loc.lat])
+                        if (min === undefined) {
+                            min = nearestPointOnLine
+                            matchedWay = feature.feature;
+                            continue;
+                        }
 
-                    }
-                    }catch(e){
-                        console.log("Snapping to a nearest point failed for ", feature.feature,"due to ", e)
+                        if (min.properties.dist > nearestPointOnLine.properties.dist) {
+                            min = nearestPointOnLine
+                            matchedWay = feature.feature;
+
+                        }
+                    } catch (e) {
+                        console.log("Snapping to a nearest point failed for ", feature.feature, "due to ", e)
                     }
                 }
 
@@ -167,8 +167,9 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     installBounds(factor: number | BBox, showRange?: boolean): void {
         this.map.installBounds(factor, showRange)
     }
+
     TakeScreenshot(): Promise<any> {
-       return this.map.TakeScreenshot()
+        return this.map.TakeScreenshot()
     }
 
     protected InnerConstructElement(): HTMLElement {

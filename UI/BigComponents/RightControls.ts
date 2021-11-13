@@ -9,19 +9,12 @@ import AllKnownLayers from "../../Customizations/AllKnownLayers";
 
 export default class RightControls extends Combine {
 
-    constructor(state:MapState) {
-        
+    constructor(state: MapState) {
+
         const geolocatioHandler = new GeoLocationHandler(
             state
         )
-        
-        new ShowDataLayer({
-            layerToShow: AllKnownLayers.sharedLayers.get("gps_location"),
-            leafletMap: state.leafletMap,
-            enablePopups: true,
-            features: geolocatioHandler.currentLocation
-        })
-        
+
         const geolocationButton = new Toggle(
             new MapControlButton(
                 geolocatioHandler

@@ -32,7 +32,7 @@ export default class LegacyJsonConvert {
             // This is a legacy format, lets create a pointRendering
             let location: ("point" | "centroid")[] = ["point"]
             let wayHandling: number = config["wayHandling"] ?? 0
-            if (wayHandling === 2) {
+            if (wayHandling !== 0) {
                 location = ["point", "centroid"]
             }
             config.mapRendering = [
@@ -57,20 +57,19 @@ export default class LegacyJsonConvert {
                 }
             }
 
-
-            delete config["color"]
-            delete config["width"]
-            delete config["dashArray"]
-
-            delete config["icon"]
-            delete config["iconOverlays"]
-            delete config["label"]
-            delete config["iconSize"]
-            delete config["rotation"]
-            delete config["wayHandling"]
-
         }
 
+        delete config["color"]
+        delete config["width"]
+        delete config["dashArray"]
+
+        delete config["icon"]
+        delete config["iconOverlays"]
+        delete config["label"]
+        delete config["iconSize"]
+        delete config["rotation"]
+        delete config["wayHandling"]
+        
         for (const mapRenderingElement of config.mapRendering) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
                 mapRenderingElement["iconBadges"] = mapRenderingElement["iconOverlays"]

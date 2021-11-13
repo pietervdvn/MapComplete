@@ -46,7 +46,7 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
                 state: FeaturePipelineState,
                 config: MergePointConfig[]
     ) {
-        super();
+        super(null,true);
         this._tags = tags;
         this._state = state;
         this._config = config;
@@ -163,17 +163,18 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
                 })
 
                 allChanges.push(...(await newNodeAction.CreateChangeDescriptions(changes)))
-                
+
                 nodeIdsToUse.push({
                     lat, lon,
-                    nodeId : newNodeAction.newElementIdNumber})
+                    nodeId: newNodeAction.newElementIdNumber
+                })
                 continue
-                
+
             }
-            
+
             const closestPoint = info.closebyNodes[0]
             const id = Number(closestPoint.node.properties.id.split("/")[1])
-            if(closestPoint.config.mode === "move_osm_point"){
+            if (closestPoint.config.mode === "move_osm_point") {
                 allChanges.push({
                     type: "node",
                     id,
@@ -194,8 +195,7 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
             theme
         })
         
-        allChanges.push(...(await newWay.Perform(changes)))
-        
+        allChanges.push(...(await newWay.CreateChangeDescriptions(changes)))
         return allChanges
     }
 
@@ -225,7 +225,7 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
             const coor = coordinates[i]
             // Check closeby (and probably identical) point further in the coordinate list, mark them as duplicate
             for (let j = i + 1; j < coordinates.length; j++) {
-                if (1000 * GeoOperations.distanceBetween(coor, coordinates[j]) < 0.1) {
+                if (GeoOperations.distanceBetween(coor, coordinates[j]) < 0.1) {
                     coordinateInfo[j] = {
                         lngLat: coor,
                         identicalTo: i
@@ -244,7 +244,7 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
             }[] = []
             for (const node of allNodes) {
                 const center = node.geometry.coordinates
-                const d = 1000 * GeoOperations.distanceBetween(coor, center)
+                const d = GeoOperations.distanceBetween(coor, center)
                 if (d > maxDistance) {
                     continue
                 }

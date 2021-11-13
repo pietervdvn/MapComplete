@@ -14,7 +14,7 @@ export default class Wikipedia {
     private static readonly classesToRemove = [
         "shortdescription",
         "sidebar",
-        "infobox","infobox_v2",
+        "infobox", "infobox_v2",
         "noprint",
         "ambox",
         "mw-editsection",
@@ -22,26 +22,27 @@ export default class Wikipedia {
         "mw-empty-elt",
         "hatnote" // Often redirects
     ]
-    
+
     private static readonly idsToRemove = [
         "sjabloon_zie"
     ]
 
     private static readonly _cache = new Map<string, UIEventSource<{ success: string } | { error: any }>>()
-    
+
     public static GetArticle(options: {
         pageName: string,
-        language?: "en" | string}): UIEventSource<{ success: string } | { error: any }>{
-        const key = (options.language ?? "en")+":"+options.pageName
+        language?: "en" | string
+    }): UIEventSource<{ success: string } | { error: any }> {
+        const key = (options.language ?? "en") + ":" + options.pageName
         const cached = Wikipedia._cache.get(key)
-        if(cached !== undefined){
+        if (cached !== undefined) {
             return cached
         }
         const v = UIEventSource.FromPromiseWithErr(Wikipedia.GetArticleAsync(options))
         Wikipedia._cache.set(key, v)
         return v;
     }
-    
+
     public static async GetArticleAsync(options: {
         pageName: string,
         language?: "en" | string
@@ -57,24 +58,22 @@ export default class Wikipedia {
         const content = Array.from(div.children)[0]
 
         for (const forbiddenClass of Wikipedia.classesToRemove) {
-           const toRemove = content.getElementsByClassName(forbiddenClass)
+            const toRemove = content.getElementsByClassName(forbiddenClass)
             for (const toRemoveElement of Array.from(toRemove)) {
                 toRemoveElement.parentElement?.removeChild(toRemoveElement)
             }
         }
 
         for (const forbiddenId of Wikipedia.idsToRemove) {
-            const toRemove = content.querySelector("#"+forbiddenId)
+            const toRemove = content.querySelector("#" + forbiddenId)
             toRemove?.parentElement?.removeChild(toRemove)
         }
-        
-        
+
 
         const links = Array.from(content.getElementsByTagName("a"))
 
         // Rewrite relative links to absolute links + open them in a new tab
-        links.filter(link => link.getAttribute("href")?.startsWith("/") ?? false).
-        forEach(link => {
+        links.filter(link => link.getAttribute("href")?.startsWith("/") ?? false).forEach(link => {
             link.target = '_blank'
             // note: link.getAttribute("href") gets the textual value, link.href is the rewritten version which'll contain the host for relative paths
             link.href = `https://${language}.wikipedia.org${link.getAttribute("href")}`;

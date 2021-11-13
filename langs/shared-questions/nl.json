@@ -1,99 +1,116 @@
 {
-    "undefined": {
-        "description": {
-            "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
+  "undefined": {
+    "description": {
+      "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
+    },
+    "dog-access": {
+      "mappings": {
+        "0": {
+          "then": "honden zijn toegelaten"
         },
-        "dog-access": {
-            "mappings": {
-                "0": {
-                    "then": "honden zijn toegelaten"
-                },
-                "1": {
-                    "then": "honden zijn <b>niet</b> toegelaten"
-                },
-                "2": {
-                    "then": "honden zijn <b>enkel aan de leiband</b> welkom"
-                },
-                "3": {
-                    "then": "honden zijn welkom en mogen vrij rondlopen"
-                }
-            },
-            "question": "Zijn honden toegelaten in deze zaak?"
+        "1": {
+          "then": "honden zijn <b>niet</b> toegelaten"
         },
-        "email": {
-            "question": "Wat is het e-mailadres van {name}?"
+        "2": {
+          "then": "honden zijn <b>enkel aan de leiband</b> welkom"
         },
-        "level": {
-            "mappings": {
-                "0": {
-                    "then": "Bevindt zich ondergronds"
-                },
-                "1": {
-                    "then": "Bevindt zich op de begane grond"
-                },
-                "2": {
-                    "then": "Bevindt zich gelijkvloers"
-                },
-                "3": {
-                    "then": "Bevindt zich op de eerste verdieping"
-                }
-            },
-            "question": "Op welke verdieping bevindt dit punt zich?",
-            "render": "Bevindt zich op de {level}de verdieping"
-        },
-        "opening_hours": {
-            "question": "Wat zijn de openingstijden van {name}?",
-            "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
-        },
-        "payment-options": {
-            "mappings": {
-                "0": {
-                    "then": "Cash geld wordt hier aanvaard"
-                },
-                "1": {
-                    "then": "Betalen met bankkaarten kan hier"
-                }
-            },
-            "question": "Welke betaalmiddelen worden hier geaccepteerd?"
-        },
-        "phone": {
-            "question": "Wat is het telefoonnummer van {name}?"
-        },
-        "website": {
-            "question": "Wat is de website van {name}?"
-        },
-        "wheelchair-access": {
-            "mappings": {
-                "0": {
-                    "then": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel"
-                },
-                "1": {
-                    "then": "Deze plaats is vlot bereikbaar met een rolstoel"
-                },
-                "2": {
-                    "then": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk"
-                },
-                "3": {
-                    "then": "Niet rolstoeltoegankelijk"
-                }
-            },
-            "question": "Is deze plaats rolstoeltoegankelijk?"
-        },
-        "wikipedia": {
-            "mappings": {
-                "0": {
-                    "then": "Er werd nog geen Wikipedia-pagina gekoppeld"
-                }
-            },
-            "question": "Welk Wikidata-item komt overeen met dit object?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Nog geen Wikipedia-artikel bekend"
-                }
-            },
-            "question": "Welk Wikipedia-artikel beschrijft dit object?"
+        "3": {
+          "then": "honden zijn welkom en mogen vrij rondlopen"
         }
+      },
+      "question": "Zijn honden toegelaten in deze zaak?"
+    },
+    "email": {
+      "question": "Wat is het e-mailadres van {name}?"
+    },
+    "level": {
+      "mappings": {
+        "0": {
+          "then": "Bevindt zich ondergronds"
+        },
+        "1": {
+          "then": "Bevindt zich op de begane grond"
+        },
+        "2": {
+          "then": "Bevindt zich gelijkvloers"
+        },
+        "3": {
+          "then": "Bevindt zich op de eerste verdieping"
+        }
+      },
+      "question": "Op welke verdieping bevindt dit punt zich?",
+      "render": "Bevindt zich op de {level}de verdieping"
+    },
+    "opening_hours": {
+      "question": "Wat zijn de openingstijden van {name}?",
+      "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
+    },
+    "payment-options": {
+      "mappings": {
+        "0": {
+          "then": "Cash geld wordt hier aanvaard"
+        },
+        "1": {
+          "then": "Betalen met bankkaarten kan hier"
+        }
+      },
+      "question": "Welke betaalmiddelen worden hier geaccepteerd?"
+    },
+    "phone": {
+      "question": "Wat is het telefoonnummer van {name}?"
+    },
+    "service:electricity": {
+      "mappings": {
+        "0": {
+          "then": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden"
+        },
+        "1": {
+          "then": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden"
+        },
+        "2": {
+          "then": "Er zijn binnen geen stekkers beschikbaar, maar electronica opladen kan indien men dit aan het personeel vraagt"
+        },
+        "3": {
+          "then": "Er zijn binnen geen stekkers beschikbaar"
+        }
+      },
+      "question": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+    },
+    "website": {
+      "question": "Wat is de website van {name}?"
+    },
+    "wheelchair-access": {
+      "mappings": {
+        "0": {
+          "then": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel"
+        },
+        "1": {
+          "then": "Deze plaats is vlot bereikbaar met een rolstoel"
+        },
+        "2": {
+          "then": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk"
+        },
+        "3": {
+          "then": "Niet rolstoeltoegankelijk"
+        }
+      },
+      "question": "Is deze plaats rolstoeltoegankelijk?"
+    },
+    "wikipedia": {
+      "mappings": {
+        "0": {
+          "then": "Er werd nog geen Wikipedia-pagina gekoppeld"
+        }
+      },
+      "question": "Welk Wikidata-item komt overeen met dit object?"
+    },
+    "wikipedialink": {
+      "mappings": {
+        "0": {
+          "then": "Nog geen Wikipedia-artikel bekend"
+        }
+      },
+      "question": "Welk Wikipedia-artikel beschrijft dit object?"
     }
+  }
 }

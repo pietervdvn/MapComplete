@@ -110,12 +110,13 @@
             "end"
           ],
           "icon": "circle:#ccc",
-          "iconSize": "20,20,center"
+          "iconSize": "3,3,center"
         },
         {
           "#": "The center line",
           "color": "#ffffff55",
-          "width": 8
+          "width": 8,
+          "lineCap": "butt"
         },
         {
           "#": "left",
@@ -145,7 +146,8 @@
               }
             ]
           },
-          "offset": -6
+          "offset": -6,
+          "lineCap": "butt"
         },
         {
           "color": "#888",
@@ -172,6 +174,7 @@
               }
             ]
           },
+          "lineCap": "butt",
           "offset": 6
         }
       ],

@@ -1,5 +1,4 @@
 import T from "./TestHelper";
-import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
 import {Utils} from "../Utils";
 
 export default class ReplaceGeometrySpec extends T {
@@ -175,8 +174,6 @@ export default class ReplaceGeometrySpec extends T {
                 const wayId = "way/160909312"
                 const url = `https://www.openstreetmap.org/api/0.6/${wayId}/full`;
                 const rawData = await Utils.downloadJsonCached(url, 1000)
-
-
 
 
             }]

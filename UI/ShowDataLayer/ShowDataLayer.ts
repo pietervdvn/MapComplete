@@ -1,4 +1,3 @@
-
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
@@ -20,6 +19,7 @@ We don't actually import it here. It is imported in the 'MinimapImplementation'-
  */
 export default class ShowDataLayer {
 
+    private static dataLayerIds = 0
     private readonly _leafletMap: UIEventSource<L.Map>;
     private readonly _enablePopups: boolean;
     private readonly _features: RenderingMultiPlexerFeatureSource
@@ -30,7 +30,6 @@ export default class ShowDataLayer {
     private _cleanCount = 0;
     private geoLayer = undefined;
     private isDirty = false;
-
     /**
      * If the selected element triggers, this is used to lookup the correct layer and to open the popup
      * Used to avoid a lot of callbacks on the selected element
@@ -39,9 +38,7 @@ export default class ShowDataLayer {
      * @private
      */
     private readonly leafletLayersPerId = new Map<string, { feature: any, leafletlayer: any }>()
-
     private readonly showDataLayerid: number;
-    private static dataLayerIds = 0
 
     constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
         this._leafletMap = options.leafletMap;
@@ -155,33 +152,34 @@ export default class ShowDataLayer {
                 continue
             }
             try {
-                if ((feat.geometry.type === "LineString" || feat.geometry.type === "MultiLineString")) {
+                if (feat.geometry.type === "LineString") {
                     const self = this;
                     const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
                     const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
                     let offsettedLine;
                     tagsSource
-                         .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags))
+                        .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags))
                         .withEqualityStabilized((a, b) => {
-                            if(a === b){
+                            if (a === b) {
                                 return true
                             }
-                            if(a === undefined || b === undefined){
+                            if (a === undefined || b === undefined) {
                                 return false
                             }
                             return a.offset === b.offset && a.color === b.color && a.weight === b.weight && a.dashArray === b.dashArray
                         })
                         .addCallbackAndRunD(lineStyle => {
-                        if (offsettedLine !== undefined) {
-                            self.geoLayer.removeLayer(offsettedLine)
-                        }
-                        offsettedLine = L.polyline(coords, lineStyle);
-                        this.postProcessFeature(feat, offsettedLine)
-                        offsettedLine.addTo(this.geoLayer)
-                    })
+                            if (offsettedLine !== undefined) {
+                                self.geoLayer.removeLayer(offsettedLine)
+                            }
+                            // @ts-ignore
+                            offsettedLine = L.polyline(coords, lineStyle);
+                            this.postProcessFeature(feat, offsettedLine)
+                            offsettedLine.addTo(this.geoLayer)
+                        })
                 } else {
                     this.geoLayer.addData(feat);
-                }
+                } 
             } catch (e) {
                 console.error("Could not add ", feat, "to the geojson layer in leaflet due to", e, e.stack)
             }
@@ -192,7 +190,7 @@ export default class ShowDataLayer {
                 const bounds = this.geoLayer.getBounds()
                 mp.fitBounds(bounds, {animate: false})
             } catch (e) {
-                console.debug("Invalid bounds",e)
+                console.debug("Invalid bounds", e)
             }
         }
 
@@ -272,7 +270,7 @@ export default class ShowDataLayer {
 
         let infobox: FeatureInfoBox = undefined;
 
-        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}-${feature.pointRenderingIndex ?? feature.lineRenderingIndex}`
+        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}-${feature.pointRenderingIndex ?? feature.lineRenderingIndex}-${feature.multiLineStringIndex ?? ""}`
         popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type} ${id} is loading</div>`)
         leafletLayer.on("popupopen", () => {
             if (infobox === undefined) {
@@ -292,7 +290,7 @@ export default class ShowDataLayer {
             }
 
         });
-        
+
 
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(feature.properties.id + feature.geometry.type, {

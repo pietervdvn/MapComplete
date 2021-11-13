@@ -266,13 +266,285 @@ export default class RelationSplitHandlerSpec extends T {
             }
         )
         Utils.injectJsonDownloadForTests(
-            "https://www.openstreetmap.org/api/0.6/relation/4374576" ,
-            {"version":"0.6","generator":"CGImap 0.8.5 (1266692 spike-06.openstreetmap.org)","copyright":"OpenStreetMap and contributors","attribution":"http://www.openstreetmap.org/copyright","license":"http://opendatacommons.org/licenses/odbl/1-0/","elements":[{"type":"relation","id":4374576,"timestamp":"2014-12-23T21:42:27Z","version":2,"changeset":27660623,"user":"escada","uid":436365,"members":[{"type":"way","ref":318616190,"role":"from"},{"type":"node","ref":1407529979,"role":"via"},{"type":"way","ref":143298912,"role":"to"}],"tags":{"restriction":"no_right_turn","type":"restriction"}}]}
+            "https://www.openstreetmap.org/api/0.6/relation/4374576",
+            {
+                "version": "0.6",
+                "generator": "CGImap 0.8.5 (1266692 spike-06.openstreetmap.org)",
+                "copyright": "OpenStreetMap and contributors",
+                "attribution": "http://www.openstreetmap.org/copyright",
+                "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+                "elements": [{
+                    "type": "relation",
+                    "id": 4374576,
+                    "timestamp": "2014-12-23T21:42:27Z",
+                    "version": 2,
+                    "changeset": 27660623,
+                    "user": "escada",
+                    "uid": 436365,
+                    "members": [{"type": "way", "ref": 318616190, "role": "from"}, {
+                        "type": "node",
+                        "ref": 1407529979,
+                        "role": "via"
+                    }, {"type": "way", "ref": 143298912, "role": "to"}],
+                    "tags": {"restriction": "no_right_turn", "type": "restriction"}
+                }]
+            }
         )
 
         Utils.injectJsonDownloadForTests(
-            "https://www.openstreetmap.org/api/0.6/way/143298912/full" ,
-            {"version":"0.6","generator":"CGImap 0.8.5 (4046166 spike-07.openstreetmap.org)","copyright":"OpenStreetMap and contributors","attribution":"http://www.openstreetmap.org/copyright","license":"http://opendatacommons.org/licenses/odbl/1-0/","elements":[{"type":"node","id":26343912,"lat":51.2146847,"lon":3.2397007,"timestamp":"2015-04-11T10:40:56Z","version":5,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":26343913,"lat":51.2161912,"lon":3.2386907,"timestamp":"2015-04-11T10:40:56Z","version":6,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":26343914,"lat":51.2193456,"lon":3.2360696,"timestamp":"2015-04-11T10:40:56Z","version":5,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":26343915,"lat":51.2202816,"lon":3.2352429,"timestamp":"2015-04-11T10:40:56Z","version":5,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":875668688,"lat":51.2131868,"lon":3.2406009,"timestamp":"2015-04-11T10:40:56Z","version":4,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":1109632153,"lat":51.2207068,"lon":3.234882,"timestamp":"2015-04-11T10:40:55Z","version":3,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":1109632154,"lat":51.220784,"lon":3.2348394,"timestamp":"2021-05-30T08:01:17Z","version":4,"changeset":105557550,"user":"albertino","uid":499281},{"type":"node","id":1109632177,"lat":51.2205082,"lon":3.2350441,"timestamp":"2015-04-11T10:40:55Z","version":3,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":1407529961,"lat":51.2168476,"lon":3.2381772,"timestamp":"2015-04-11T10:40:55Z","version":2,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":1407529969,"lat":51.2155155,"lon":3.23917,"timestamp":"2011-08-21T20:08:27Z","version":1,"changeset":9088257,"user":"toeklk","uid":219908},{"type":"node","id":1407529979,"lat":51.212694,"lon":3.2409595,"timestamp":"2015-04-11T10:40:55Z","version":6,"changeset":30139621,"user":"M!dgard","uid":763799,"tags":{"highway":"traffic_signals"}},{"type":"node","id":1634435395,"lat":51.2129189,"lon":3.2408257,"timestamp":"2012-02-15T19:37:51Z","version":1,"changeset":10695640,"user":"Eimai","uid":6072},{"type":"node","id":1634435396,"lat":51.2132508,"lon":3.2405417,"timestamp":"2012-02-15T19:37:51Z","version":1,"changeset":10695640,"user":"Eimai","uid":6072},{"type":"node","id":1634435397,"lat":51.2133918,"lon":3.2404416,"timestamp":"2015-04-11T10:40:55Z","version":2,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":1974988033,"lat":51.2127459,"lon":3.240928,"timestamp":"2012-10-20T12:24:13Z","version":1,"changeset":13566903,"user":"skyman81","uid":955688},{"type":"node","id":3250129361,"lat":51.2127906,"lon":3.2409016,"timestamp":"2018-12-19T00:00:33Z","version":2,"changeset":65596519,"user":"beardhatcode","uid":5439560,"tags":{"crossing":"traffic_signals","highway":"crossing"}},{"type":"node","id":3250129363,"lat":51.2149189,"lon":3.2395571,"timestamp":"2015-04-11T10:40:56Z","version":2,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":3450326133,"lat":51.2139571,"lon":3.2401205,"timestamp":"2015-04-11T10:40:26Z","version":1,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":3450326135,"lat":51.2181385,"lon":3.2370893,"timestamp":"2015-04-11T10:40:26Z","version":1,"changeset":30139621,"user":"M!dgard","uid":763799},{"type":"node","id":4794847239,"lat":51.2191224,"lon":3.2362584,"timestamp":"2019-08-27T23:07:05Z","version":2,"changeset":73816461,"user":"Pieter Vander Vennet","uid":3818858},{"type":"node","id":8493044168,"lat":51.2130348,"lon":3.2407284,"timestamp":"2021-03-06T21:52:51Z","version":1,"changeset":100555232,"user":"kaart_fietser","uid":11022240,"tags":{"highway":"traffic_signals","traffic_signals":"traffic_lights"}},{"type":"node","id":8792687918,"lat":51.2207505,"lon":3.2348579,"timestamp":"2021-06-02T18:27:15Z","version":1,"changeset":105735092,"user":"albertino","uid":499281},{"type":"way","id":143298912,"timestamp":"2021-06-02T18:27:15Z","version":15,"changeset":105735092,"user":"albertino","uid":499281,"nodes":[1407529979,1974988033,3250129361,1634435395,8493044168,875668688,1634435396,1634435397,3450326133,26343912,3250129363,1407529969,26343913,1407529961,3450326135,4794847239,26343914,26343915,1109632177,1109632153,8792687918,1109632154],"tags":{"cycleway:right":"track","highway":"primary","lanes":"2","lit":"yes","maxspeed":"70","name":"Buiten Kruisvest","oneway":"yes","ref":"R30","surface":"asphalt","wikipedia":"nl:Buiten Kruisvest"}}]}
+            "https://www.openstreetmap.org/api/0.6/way/143298912/full",
+            {
+                "version": "0.6",
+                "generator": "CGImap 0.8.5 (4046166 spike-07.openstreetmap.org)",
+                "copyright": "OpenStreetMap and contributors",
+                "attribution": "http://www.openstreetmap.org/copyright",
+                "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+                "elements": [{
+                    "type": "node",
+                    "id": 26343912,
+                    "lat": 51.2146847,
+                    "lon": 3.2397007,
+                    "timestamp": "2015-04-11T10:40:56Z",
+                    "version": 5,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 26343913,
+                    "lat": 51.2161912,
+                    "lon": 3.2386907,
+                    "timestamp": "2015-04-11T10:40:56Z",
+                    "version": 6,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 26343914,
+                    "lat": 51.2193456,
+                    "lon": 3.2360696,
+                    "timestamp": "2015-04-11T10:40:56Z",
+                    "version": 5,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 26343915,
+                    "lat": 51.2202816,
+                    "lon": 3.2352429,
+                    "timestamp": "2015-04-11T10:40:56Z",
+                    "version": 5,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 875668688,
+                    "lat": 51.2131868,
+                    "lon": 3.2406009,
+                    "timestamp": "2015-04-11T10:40:56Z",
+                    "version": 4,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 1109632153,
+                    "lat": 51.2207068,
+                    "lon": 3.234882,
+                    "timestamp": "2015-04-11T10:40:55Z",
+                    "version": 3,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 1109632154,
+                    "lat": 51.220784,
+                    "lon": 3.2348394,
+                    "timestamp": "2021-05-30T08:01:17Z",
+                    "version": 4,
+                    "changeset": 105557550,
+                    "user": "albertino",
+                    "uid": 499281
+                }, {
+                    "type": "node",
+                    "id": 1109632177,
+                    "lat": 51.2205082,
+                    "lon": 3.2350441,
+                    "timestamp": "2015-04-11T10:40:55Z",
+                    "version": 3,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 1407529961,
+                    "lat": 51.2168476,
+                    "lon": 3.2381772,
+                    "timestamp": "2015-04-11T10:40:55Z",
+                    "version": 2,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 1407529969,
+                    "lat": 51.2155155,
+                    "lon": 3.23917,
+                    "timestamp": "2011-08-21T20:08:27Z",
+                    "version": 1,
+                    "changeset": 9088257,
+                    "user": "toeklk",
+                    "uid": 219908
+                }, {
+                    "type": "node",
+                    "id": 1407529979,
+                    "lat": 51.212694,
+                    "lon": 3.2409595,
+                    "timestamp": "2015-04-11T10:40:55Z",
+                    "version": 6,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"highway": "traffic_signals"}
+                }, {
+                    "type": "node",
+                    "id": 1634435395,
+                    "lat": 51.2129189,
+                    "lon": 3.2408257,
+                    "timestamp": "2012-02-15T19:37:51Z",
+                    "version": 1,
+                    "changeset": 10695640,
+                    "user": "Eimai",
+                    "uid": 6072
+                }, {
+                    "type": "node",
+                    "id": 1634435396,
+                    "lat": 51.2132508,
+                    "lon": 3.2405417,
+                    "timestamp": "2012-02-15T19:37:51Z",
+                    "version": 1,
+                    "changeset": 10695640,
+                    "user": "Eimai",
+                    "uid": 6072
+                }, {
+                    "type": "node",
+                    "id": 1634435397,
+                    "lat": 51.2133918,
+                    "lon": 3.2404416,
+                    "timestamp": "2015-04-11T10:40:55Z",
+                    "version": 2,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 1974988033,
+                    "lat": 51.2127459,
+                    "lon": 3.240928,
+                    "timestamp": "2012-10-20T12:24:13Z",
+                    "version": 1,
+                    "changeset": 13566903,
+                    "user": "skyman81",
+                    "uid": 955688
+                }, {
+                    "type": "node",
+                    "id": 3250129361,
+                    "lat": 51.2127906,
+                    "lon": 3.2409016,
+                    "timestamp": "2018-12-19T00:00:33Z",
+                    "version": 2,
+                    "changeset": 65596519,
+                    "user": "beardhatcode",
+                    "uid": 5439560,
+                    "tags": {"crossing": "traffic_signals", "highway": "crossing"}
+                }, {
+                    "type": "node",
+                    "id": 3250129363,
+                    "lat": 51.2149189,
+                    "lon": 3.2395571,
+                    "timestamp": "2015-04-11T10:40:56Z",
+                    "version": 2,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 3450326133,
+                    "lat": 51.2139571,
+                    "lon": 3.2401205,
+                    "timestamp": "2015-04-11T10:40:26Z",
+                    "version": 1,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 3450326135,
+                    "lat": 51.2181385,
+                    "lon": 3.2370893,
+                    "timestamp": "2015-04-11T10:40:26Z",
+                    "version": 1,
+                    "changeset": 30139621,
+                    "user": "M!dgard",
+                    "uid": 763799
+                }, {
+                    "type": "node",
+                    "id": 4794847239,
+                    "lat": 51.2191224,
+                    "lon": 3.2362584,
+                    "timestamp": "2019-08-27T23:07:05Z",
+                    "version": 2,
+                    "changeset": 73816461,
+                    "user": "Pieter Vander Vennet",
+                    "uid": 3818858
+                }, {
+                    "type": "node",
+                    "id": 8493044168,
+                    "lat": 51.2130348,
+                    "lon": 3.2407284,
+                    "timestamp": "2021-03-06T21:52:51Z",
+                    "version": 1,
+                    "changeset": 100555232,
+                    "user": "kaart_fietser",
+                    "uid": 11022240,
+                    "tags": {"highway": "traffic_signals", "traffic_signals": "traffic_lights"}
+                }, {
+                    "type": "node",
+                    "id": 8792687918,
+                    "lat": 51.2207505,
+                    "lon": 3.2348579,
+                    "timestamp": "2021-06-02T18:27:15Z",
+                    "version": 1,
+                    "changeset": 105735092,
+                    "user": "albertino",
+                    "uid": 499281
+                }, {
+                    "type": "way",
+                    "id": 143298912,
+                    "timestamp": "2021-06-02T18:27:15Z",
+                    "version": 15,
+                    "changeset": 105735092,
+                    "user": "albertino",
+                    "uid": 499281,
+                    "nodes": [1407529979, 1974988033, 3250129361, 1634435395, 8493044168, 875668688, 1634435396, 1634435397, 3450326133, 26343912, 3250129363, 1407529969, 26343913, 1407529961, 3450326135, 4794847239, 26343914, 26343915, 1109632177, 1109632153, 8792687918, 1109632154],
+                    "tags": {
+                        "cycleway:right": "track",
+                        "highway": "primary",
+                        "lanes": "2",
+                        "lit": "yes",
+                        "maxspeed": "70",
+                        "name": "Buiten Kruisvest",
+                        "oneway": "yes",
+                        "ref": "R30",
+                        "surface": "asphalt",
+                        "wikipedia": "nl:Buiten Kruisvest"
+                    }
+                }]
+            }
         )
 
 
@@ -394,7 +666,7 @@ export default class RelationSplitHandlerSpec extends T {
                             allWaysNodesInOrder: withSplit
                         }, "no-theme")
                     const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
-                    const allIds = changeDescription[0].changes["members"].map(m => m.type+"/"+ m.ref+"-->"+m.role).join(",")
+                    const allIds = changeDescription[0].changes["members"].map(m => m.type + "/" + m.ref + "-->" + m.role).join(",")
                     const expected = "way/318616190-->from,node/1407529979-->via,way/-1-->to"
                     T.equals(expected, allIds)
 

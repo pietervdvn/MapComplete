@@ -1,111 +1,65 @@
 {
-    "id": "parking",
-    "name": {
-        "nl": "Parking"
+  "id": "parking",
+  "name": {
+    "nl": "Parking"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "amenity=parking"
+  },
+  "title": {
+    "render": {
+      "nl": "Parking voor auto's",
+      "en": "Car parking"
+    }
+  },
+  "description": {
+    "en": "A layer showing car parkings",
+    "nl": "Deze laag toont autoparkings"
+  },
+  "tagRenderings": [
+    "images"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=parking"
+      ],
+      "title": {
+        "nl": "parking voor auto's",
+        "en": "car parking"
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
     },
-    "minzoom": 12,
-    "source": {
-        "osmTags": {
-            "and": [
-                {
-                    "or": [
-                        "amenity=parking",
-                        "amenity=motorcycle_parking",
-                        "amenity=bicycle_parking"
-                    ]
-                }
-            ]
-        }
-    },
-    "title": {
-        "render": {
-            "nl": "Parking"
-        },
-        "mappings": [
-            {
-                "if": "amenity=parking",
-                "then": {
-                    "nl": "{name:nl}"
-                }
-            },
-            {
-                "if": "amenity=motorcycle_parking",
-                "then": {
-                    "nl": "{name}"
-                }
-            },
-            {
-                "if": "amenity=bicycle_parking",
-                "then": {
-                    "nl": "Fietsenstalling"
-                }
-            }
-        ]
-    },
-    "icon": {
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
+  },
+  "mapRendering": [
+    {
+      "icon": {
         "render": "./assets/layers/parking/parking.svg"
-    },
-    "description": {
-        "nl": "Parking"
-    },
-    "tagRenderings": [
-        "images"
-    ],
-    "wayHandling": 1,
-    "iconSize": {
+      },
+      "iconSize": {
         "render": "36,36,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
     },
-    "color": {
-        "render": "#E1AD01"
-    },
-    "presets": [
-        {
-            "tags": [
-                "amenity=bicycle_parking"
-            ],
-            "title": {
-                "nl": "fietsparking"
-            },
-            "description": {
-                "nl": "Voeg hier een fietsenstalling toe"
-            }
-        },
-        {
-            "tags": [
-                "amenity=parking"
-            ],
-            "title": {
-                "nl": "parking"
-            },
-            "description": {
-                "nl": "Voeg hier een parking voor auto's toe"
-            }
-        }
-    ],
-    "deletion": {
-        "softDeletionTags": {
-            "and": [
-                "disused:amenity:={amenity}",
-                "amenity="
-            ]
-        },
-        "neededChangesets": 1
-    },
-    "allowMove": {
-        "enableRelocation": false,
-        "enableImproveAccuraccy": true
-    },
-    "mapRendering": [
-        {
-            "icon": {
-                "render": "./assets/layers/parking/parking.svg"
-            },
-            "iconSize": {
-                "render": "36,36,center"
-            },
-            "location": [
-                "point"
-            ]
-        }
-    ]
+    {
+      "width": 2,
+      "color": "#ddcc00"
+    }
+  ]
 }

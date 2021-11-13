@@ -7,7 +7,7 @@ import State from "../../../State";
 
 export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
-    
+
     /**
      * A feature source containing exclusively new elements
      */
@@ -53,10 +53,10 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                         for (const kv of change.tags) {
                             tags[kv.k] = kv.v
                         }
-                        tags["id"] = change.type+"/"+change.id
-                        
+                        tags["id"] = change.type + "/" + change.id
+
                         tags["_backend"] = State.state.osmConnection._oauth_config.url
-                        
+
                         switch (change.type) {
                             case "node":
                                 const n = new OsmNode(change.id)
@@ -85,7 +85,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                     }
 
                 }
-                
+
                 self.features.ping()
             })
     }

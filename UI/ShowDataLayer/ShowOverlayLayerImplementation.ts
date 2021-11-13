@@ -4,14 +4,14 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import ShowOverlayLayer from "./ShowOverlayLayer";
 
 export default class ShowOverlayLayerImplementation {
-    
-    public static Implement(){
+
+    public static Implement() {
         ShowOverlayLayer.implementation = ShowOverlayLayerImplementation.AddToMap
     }
-    
+
     public static AddToMap(config: TilesourceConfig,
                            leafletMap: UIEventSource<any>,
-                           isShown: UIEventSource<boolean> = undefined){
+                           isShown: UIEventSource<boolean> = undefined) {
         leafletMap.map(leaflet => {
             if (leaflet === undefined) {
                 return;
@@ -41,5 +41,5 @@ export default class ShowOverlayLayerImplementation {
 
         })
     }
-    
+
 }

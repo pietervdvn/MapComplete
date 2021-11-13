@@ -23,7 +23,7 @@ export default class SplitRoadWizard extends Toggle {
         source: {osmTags: "_cutposition=yes"},
         mapRendering: [
             {
-                location: ["point","centroid"],
+                location: ["point", "centroid"],
                 icon: {render: "circle:white;./assets/svg/scissors.svg"},
                 iconSize: {render: "30,30,center"}
             }
@@ -93,9 +93,9 @@ export default class SplitRoadWizard extends Toggle {
         function onMapClick(coordinates) {
             // First, we check if there is another, already existing point nearby
             const points = splitPoints.data.map((f, i) => [f.feature, i])
-                .filter(p => GeoOperations.distanceBetween(p[0].geometry.coordinates, coordinates) * 1000 < 5)
+                .filter(p => GeoOperations.distanceBetween(p[0].geometry.coordinates, coordinates) < 5)
                 .map(p => p[1])
-                .sort()
+                .sort((a, b) => a - b)
                 .reverse()
             if (points.length > 0) {
                 for (const point of points) {

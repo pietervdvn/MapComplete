@@ -7,9 +7,9 @@ export default class Title extends BaseUIElement {
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()
-        if(typeof embedded === "string"){
-        this._embedded = new FixedUiElement(embedded)
-        }else{
+        if (typeof embedded === "string") {
+            this._embedded = new FixedUiElement(embedded)
+        } else {
             this._embedded = embedded
         }
         this._level = level;
@@ -19,14 +19,14 @@ export default class Title extends BaseUIElement {
         const embedded = " " + this._embedded.AsMarkdown() + " ";
 
         if (this._level == 1) {
-            return "\n" + embedded + "\n" + "=".repeat(embedded.length) + "\n\n"
+            return "\n\n" + embedded + "\n" + "=".repeat(embedded.length) + "\n\n"
         }
 
         if (this._level == 2) {
-            return "\n" + embedded + "\n" + "-".repeat(embedded.length) + "\n\n"
+            return "\n\n" + embedded + "\n" + "-".repeat(embedded.length) + "\n\n"
         }
 
-        return "\n" + "#".repeat(this._level) + embedded + "\n\n";
+        return "\n\n" + "#".repeat(this._level) + embedded + "\n\n";
     }
 
     protected InnerConstructElement(): HTMLElement {

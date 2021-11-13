@@ -10,7 +10,8 @@
     "zh_Hant": "樹木",
     "pl": "Drzewa",
     "de": "Bäume",
-    "nb_NO": "Trær"
+    "nb_NO": "Trær",
+    "id": "Pohon"
   },
   "shortDescription": {
     "nl": "Breng bomen in kaart",
@@ -45,7 +46,8 @@
     "zh_Hant",
     "pl",
     "de",
-    "nb_NO"
+    "nb_NO",
+    "id"
   ],
   "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",

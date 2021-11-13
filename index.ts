@@ -35,11 +35,11 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
 class Init {
     public static Init(layoutToUse: LayoutConfig, encoded: string) {
 
-        if(layoutToUse === null){
+        if (layoutToUse === null) {
             // Something went wrong, error message is already on screen
             return;
         }
-        
+
         if (layoutToUse === undefined) {
             // No layout found
             new AllThemesGui()
@@ -69,7 +69,7 @@ class Init {
         // This 'leaks' the global state via the window object, useful for debugging
         // @ts-ignore
         window.mapcomplete_state = State.state;
-        
+
         new DefaultGUI(State.state, guiState)
 
         if (encoded !== undefined && encoded.length > 10) {

@@ -1,5 +1,4 @@
 import {UIEventSource} from "../UIEventSource";
-import {Utils} from "../../Utils";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {BBox} from "../BBox";
 
@@ -19,7 +18,7 @@ export interface Tiled {
 /**
  * A feature source which only contains features for the defined layer
  */
-export interface FeatureSourceForLayer extends FeatureSource{
+export interface FeatureSourceForLayer extends FeatureSource {
     readonly layer: FilteredLayer
 }
 

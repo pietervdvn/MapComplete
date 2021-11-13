@@ -2,7 +2,6 @@ import T from "./TestHelper";
 import UserDetails, {OsmConnection} from "../Logic/Osm/OsmConnection";
 import {UIEventSource} from "../Logic/UIEventSource";
 import ScriptUtils from "../scripts/ScriptUtils";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {ElementStorage} from "../Logic/ElementStorage";
 import {Changes} from "../Logic/Osm/Changes";
 

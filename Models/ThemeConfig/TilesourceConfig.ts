@@ -19,7 +19,7 @@ export default class TilesourceConfig {
         this.minzoom = config.minZoom ?? 0
         this.maxzoom = config.maxZoom ?? 999
         this.defaultState = config.defaultState ?? true;
-        if(this.id === undefined){
+        if (this.id === undefined) {
             throw "An id is obligated"
         }
         if (this.minzoom > this.maxzoom) {
@@ -34,7 +34,7 @@ export default class TilesourceConfig {
         if (this.source.indexOf("{zoom}") >= 0) {
             throw "Invalid source url: use {z} instead of {zoom}  (at " + ctx + ".source)"
         }
-        if(!this.defaultState && config.name === undefined){
+        if (!this.defaultState && config.name === undefined) {
             throw "Disabling an overlay without a name is not possible"
         }
     }

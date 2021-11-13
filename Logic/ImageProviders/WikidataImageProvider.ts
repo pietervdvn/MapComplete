@@ -1,4 +1,3 @@
-import {Utils} from "../../Utils";
 import ImageProvider, {ProvidedImage} from "./ImageProvider";
 import BaseUIElement from "../../UI/BaseUIElement";
 import Svg from "../../Svg";
@@ -7,10 +6,6 @@ import Wikidata from "../Web/Wikidata";
 
 export class WikidataImageProvider extends ImageProvider {
 
-    public SourceIcon(backlinkSource?: string): BaseUIElement {
-        throw Svg.wikidata_svg();
-    }
-
     public static readonly singleton = new WikidataImageProvider()
     public readonly defaultKeyPrefixes = ["wikidata"]
 
@@ -18,17 +13,17 @@ export class WikidataImageProvider extends ImageProvider {
         super()
     }
 
-    protected DownloadAttribution(url: string): Promise<any> {
-        throw new Error("Method not implemented; shouldn't be needed!");
+    public SourceIcon(backlinkSource?: string): BaseUIElement {
+        throw Svg.wikidata_svg();
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
         const entity = await Wikidata.LoadWikidataEntryAsync(value)
-        if(entity === undefined){
+        if (entity === undefined) {
             return []
         }
-       
-        const allImages : Promise<ProvidedImage>[] = []
+
+        const allImages: Promise<ProvidedImage>[] = []
         // P18 is the claim 'depicted in this image'
         for (const img of Array.from(entity.claims.get("P18") ?? [])) {
             const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined, img)
@@ -36,19 +31,23 @@ export class WikidataImageProvider extends ImageProvider {
         }
         // P373 is 'commons category'
         for (let cat of Array.from(entity.claims.get("P373") ?? [])) {
-            if(!cat.startsWith("Category:")){
-                cat = "Category:"+cat
+            if (!cat.startsWith("Category:")) {
+                cat = "Category:" + cat
             }
             const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined, cat)
             allImages.push(...promises)
         }
-        
+
         const commons = entity.commons
         if (commons !== undefined && (commons.startsWith("Category:") || commons.startsWith("File:"))) {
-            const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined , commons)
+            const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined, commons)
             allImages.push(...promises)
         }
         return allImages
+    }
+
+    protected DownloadAttribution(url: string): Promise<any> {
+        throw new Error("Method not implemented; shouldn't be needed!");
     }
 
 }

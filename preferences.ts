@@ -3,7 +3,6 @@ import Combine from "./UI/Base/Combine";
 import {Button} from "./UI/Base/Button";
 import {TextField} from "./UI/Input/TextField";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import {UIEventSource} from "./Logic/UIEventSource";
 import {Utils} from "./Utils";
 import {SubtleButton} from "./UI/Base/SubtleButton";
 import LZString from "lz-string";
@@ -28,24 +27,27 @@ function salvageThemes(preferences: any) {
     const knownThemeNames = new Set<string>();
     const correctThemeNames = []
     for (const key in preferences) {
-            try{
-        if (!(typeof key === "string")) {
-            continue;
-        }
-        const prefix = "mapcomplete-installed-theme-";
-        // mapcomplete-installed-theme-arbres_llefia-combined-11
-        //mapcomplete-installed-theme-1roadAlllanes-combined-length
-        if (!key.startsWith(prefix)) {
-            continue;
-        }
-        const theme = key.substring(prefix.length, key.indexOf("-combined-"))
+        try {
+            if (!(typeof key === "string")) {
+                continue;
+            }
+            const prefix = "mapcomplete-installed-theme-";
+            // mapcomplete-installed-theme-arbres_llefia-combined-11
+            //mapcomplete-installed-theme-1roadAlllanes-combined-length
+            if (!key.startsWith(prefix)) {
+                continue;
+            }
+            const theme = key.substring(prefix.length, key.indexOf("-combined-"))
 
-        if (key.endsWith("-length")) {
-            correctThemeNames.push(theme)
-        } else {
-            knownThemeNames.add(theme);
+            if (key.endsWith("-length")) {
+                correctThemeNames.push(theme)
+            } else {
+                knownThemeNames.add(theme);
+            }
+        } catch (e) {
+            console.error(e)
         }
-    }catch(e){console.error(e)}}
+    }
 
     for (const correctThemeName of correctThemeNames) {
         knownThemeNames.delete(correctThemeName);
@@ -74,12 +76,12 @@ function salvageThemes(preferences: any) {
         try {
             jsonObject = JSON.parse(atob(combined));
         } catch (e) {
-            try{
-                
-            // We try to decode with lz-string
-            jsonObject = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(combined))) as LayoutConfigJson;
-            }catch(e0){
-                console.log("Could not salvage theme. Initial parsing failed due to:", e,"\nWith LZ failed due ", e0)
+            try {
+
+                // We try to decode with lz-string
+                jsonObject = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(combined))) as LayoutConfigJson;
+            } catch (e0) {
+                console.log("Could not salvage theme. Initial parsing failed due to:", e, "\nWith LZ failed due ", e0)
             }
 
         }

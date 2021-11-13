@@ -13,10 +13,10 @@ export default class Attribution extends VariableUiElement {
         }
         super(
             license.map((license: LicenseInfo) => {
-                if(license === undefined){
+                if (license === undefined) {
                     return undefined
                 }
-                
+
                 return new Combine([
                     icon?.SetClass("block left").SetStyle("height: 2em; width: 2em; padding-right: 0.5em;"),
 
