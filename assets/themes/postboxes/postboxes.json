@@ -474,10 +474,10 @@
     {
       "id": "addLayer",
       "name": {
-        "en": "Add new post partner"
+        "en": "Shops"
       },
       "description": {
-        "en": "Add a new post partner to the map"
+        "en": "Add a new post partner to the map in an existing shop"
       },
       "source": {
         "osmTags": "shop~*"
@@ -536,10 +536,7 @@
               "if": "post_office=",
               "then": {
                 "en": "This shop is not a post partner"
-              },
-              "addExtraTags": [
-                "was:post_office=post_partner"
-              ]
+              }
             }
           ]
         }

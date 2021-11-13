@@ -1215,10 +1215,144 @@
             },
             "question": "What are the opening hours for this post office?",
             "render": "Opening Hours: {opening_hours_table()}"
+          },
+          "letter-from": {
+            "mappings": {
+              "0": {
+                "then": "You can post letters here"
+              },
+              "1": {
+                "then": "You can't post letters here"
+              }
+            },
+            "question": "Can you post a letter here?",
+            "render": "You can post letters with these companies: {post_office:letter_from}"
+          },
+          "parcel-from": {
+            "mappings": {
+              "0": {
+                "then": "You can send parcels here"
+              },
+              "1": {
+                "then": "You can't send parcels here"
+              }
+            },
+            "question": "Can you send a parcel here?",
+            "render": "You can post parcels with these companies: {post_office:parcel_from}"
+          },
+          "parcel-pickup": {
+            "mappings": {
+              "0": {
+                "then": "You can pick up missed parcels here"
+              },
+              "1": {
+                "then": "You can't pick up missed parcels here"
+              }
+            },
+            "question": "Can you pick up missed parcels here?",
+            "render": "You can pick up parcels from these companies: {post_office:parcel_pickup}"
+          },
+          "parcel-to": {
+            "mappings": {
+              "0": {
+                "then": "You can send parcels to here for pickup"
+              },
+              "1": {
+                "then": "You can't send parcels to here for pickup"
+              }
+            },
+            "question": "Can you send parcels to here for pickup?",
+            "render": "You can send parcels to here for pickup with these companies: {post_office:parcel_to}"
+          },
+          "partner-brand": {
+            "mappings": {
+              "0": {
+                "then": "This location offers services for DHL"
+              },
+              "1": {
+                "then": "This location offers services for DPD"
+              },
+              "2": {
+                "then": "This location offers services for GLS"
+              },
+              "3": {
+                "then": "This location offers services for UPS"
+              },
+              "4": {
+                "then": "This location is a DHL Paketshop"
+              },
+              "5": {
+                "then": "This location is a Hermes PaketShop"
+              },
+              "6": {
+                "then": "This location is a PostNL-point"
+              },
+              "7": {
+                "then": "This location offers services for bpost"
+              }
+            },
+            "question": "For which brand does this location offer services?",
+            "render": "This location offers services for {post_office:brand}"
+          },
+          "post_partner": {
+            "mappings": {
+              "0": {
+                "then": "This shop is a post partner"
+              },
+              "1": {
+                "then": "This shop is not a post partner"
+              }
+            },
+            "question": "Is this a post partner?"
+          },
+          "stamps": {
+            "mappings": {
+              "0": {
+                "then": "You can buy stamps here"
+              },
+              "1": {
+                "then": "You can't buy stamps here"
+              }
+            },
+            "question": "Can you buy stamps here?",
+            "render": "You can buy stamps from companies: {post_office:stamps}"
           }
         },
         "title": {
+          "mappings": {
+            "0": {
+              "then": "Post partner at a shop"
+            },
+            "1": {
+              "then": "Post partner at {name}"
+            }
+          },
           "render": "Post Office"
+        }
+      },
+      "2": {
+        "description": "Add a new post partner to the map in an existing shop",
+        "name": "Shops",
+        "tagRenderings": {
+          "post_partner": {
+            "mappings": {
+              "0": {
+                "then": "This shop is a post partner"
+              },
+              "1": {
+                "then": "This shop is not a post partner"
+              }
+            },
+            "question": "Is this shop a post partner?"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "{name}"
+            }
+          },
+          "render": "Shop"
         }
       }
     },
