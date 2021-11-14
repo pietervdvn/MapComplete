@@ -42,6 +42,9 @@ export default class TagRenderingConfig {
     }[]
 
     constructor(json: string | TagRenderingConfigJson, context?: string) {
+        if (json === undefined) {
+            throw "Initing a TagRenderingConfig with undefined in " + context;
+        }
 
         if (json === "questions") {
             // Very special value
@@ -55,14 +58,11 @@ export default class TagRenderingConfig {
 
 
         if (typeof json === "number") {
-            this.render = Translations.T("" + json, context + ".render")
-            return;
+            json = ""+json
         }
 
 
-        if (json === undefined) {
-            throw "Initing a TagRenderingConfig with undefined in " + context;
-        }
+
         if (typeof json === "string") {
             this.render = Translations.T(json, context + ".render");
             this.multiAnswer = false;
@@ -74,6 +74,8 @@ export default class TagRenderingConfig {
         if(this.id.match(/^[a-zA-Z0-9 ()?\/=:;,_-]*$/) === null){
             throw "Invalid ID in "+context+": an id can only contain [a-zA-Z0-0_-] as characters. The offending id is: "+this.id
         }
+        
+        
         
         this.group = json.group ?? "";
         this.render = Translations.T(json.render, context + ".render");

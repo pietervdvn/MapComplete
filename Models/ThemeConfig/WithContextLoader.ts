@@ -7,8 +7,13 @@ export default class WithContextLoader {
     protected readonly _context: string;
     private readonly _json: any;
     
-    public static getKnownTagRenderings : ((id: string) => TagRenderingConfigJson)= function(id)  {
-        return SharedTagRenderings.SharedTagRenderingJson.get(id)
+    public static getKnownTagRenderings : ((id: string) => TagRenderingConfigJson[])=  function(id)  {
+        const found = SharedTagRenderings.SharedTagRenderingJson.get(id)
+        if(found !== undefined){
+            return [found]
+        }else{
+            return []
+        }
 }
 
     constructor(json: any, context: string) {
@@ -64,36 +69,54 @@ export default class WithContextLoader {
         }
 
         const context = this._context
-        const renderings: TagRenderingConfig[] = []
         options = options ?? {}
         if (options.prepConfig === undefined) {
             options.prepConfig = c => c
         }
+        const preparedConfigs : TagRenderingConfigJson[] = []
         for (let i = 0; i < tagRenderings.length; i++) {
             let renderingJson = tagRenderings[i]
             if (typeof renderingJson === "string") {
                 renderingJson = {builtin: renderingJson, override: undefined}
             }
 
-            if (renderingJson["builtin"] !== undefined) {
-                const renderingId = renderingJson["builtin"]
-                let sharedJson = WithContextLoader.getKnownTagRenderings(renderingId)
-                if (sharedJson === undefined) {
-                    const keys = Array.from(SharedTagRenderings.SharedTagRenderingJson.keys());
-                    throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(
-                        ", "
-                    )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
-                }
+            if (renderingJson["builtin"] === undefined) {
+                const patchedConfig = options.prepConfig(<TagRenderingConfigJson>renderingJson)
+                preparedConfigs.push(patchedConfig)
+                continue
+            
+            } 
+            
+            
+            const renderingId = renderingJson["builtin"]
+            let sharedJsons = []
+            if(typeof renderingId === "string"){
+                sharedJsons = WithContextLoader.getKnownTagRenderings(renderingId)
+            }else{
+                sharedJsons = [].concat( ...(<string[]>renderingId).map(id => WithContextLoader.getKnownTagRenderings(id) ) )
+            }
+
+            if (sharedJsons.length === 0) {
+                const keys = Array.from(SharedTagRenderings.SharedTagRenderingJson.keys());
+                throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(
+                    ", "
+                )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
+            }
+            for (let sharedJson of sharedJsons) {
                 if (renderingJson["override"] !== undefined) {
                     sharedJson = Utils.Merge(renderingJson["override"], JSON.parse(JSON.stringify(sharedJson)))
                 }
-                renderingJson = sharedJson
+    
+                const patchedConfig = options.prepConfig(<TagRenderingConfigJson>sharedJson)
+                preparedConfigs.push(patchedConfig)
             }
 
+        }
 
-            const patchedConfig = options.prepConfig(<TagRenderingConfigJson>renderingJson)
-
-            const tr = new TagRenderingConfig(patchedConfig, `${context}.tagrendering[${i}]`);
+        const renderings: TagRenderingConfig[] = []
+        for (let i = 0; i < preparedConfigs.length; i++){
+            const preparedConfig = preparedConfigs[i];
+            const tr = new TagRenderingConfig(preparedConfig, `${context}.tagrendering[${i}]`);
             if(options.readOnlyMode && tr.question !== undefined){
                 throw "A question is defined for "+`${context}.tagrendering[${i}], but this is not allowed at this position - probably because this rendering is an icon, badge or label`
             }
