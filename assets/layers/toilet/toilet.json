@@ -469,7 +469,9 @@
           "toilets:position!=urinal"
         ]
       }
-    }
+    },
+"level",
+"description"
   ],
   "filter": [
     {
