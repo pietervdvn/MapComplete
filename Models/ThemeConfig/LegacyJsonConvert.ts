@@ -1,4 +1,5 @@
 import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
+import PointRenderingConfig from "./PointRenderingConfig";
 
 export default class LegacyJsonConvert {
 
@@ -29,22 +30,26 @@ export default class LegacyJsonConvert {
         }
 
         if (config.mapRendering === undefined && config.id !== "sidewalks") {
+            config.mapRendering = []
             // This is a legacy format, lets create a pointRendering
             let location: ("point" | "centroid")[] = ["point"]
             let wayHandling: number = config["wayHandling"] ?? 0
             if (wayHandling !== 0) {
                 location = ["point", "centroid"]
             }
-            config.mapRendering = [
-                {
-                    icon: config["icon"],
-                    iconBadges: config["iconOverlays"],
-                    label: config["label"],
-                    iconSize: config["iconSize"],
-                    location,
-                    rotation: config["rotation"]
-                }
-            ]
+           if(config["icon"] ?? config["label"] !== undefined){
+               
+            const pointConfig =   {
+                icon: config["icon"],
+                iconBadges: config["iconOverlays"],
+                label: config["label"],
+                iconSize: config["iconSize"],
+                location,
+                rotation: config["rotation"]
+            }
+            config.mapRendering.push(pointConfig)
+           }
+            
 
             if (wayHandling !== 1) {
                 const lineRenderConfig = <LineRenderingConfigJson>{
@@ -55,6 +60,9 @@ export default class LegacyJsonConvert {
                 if (Object.keys(lineRenderConfig).length > 0) {
                     config.mapRendering.push(lineRenderConfig)
                 }
+            }
+            if(config.mapRendering.length === 0){
+                throw "Could not convert the legacy theme into a new theme: no renderings defined for layer "+config.id
             }
 
         }

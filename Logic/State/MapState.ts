@@ -55,7 +55,8 @@ export default class MapState extends UserRelatedState {
      */
     public historicalUserLocations: FeatureSourceForLayer & Tiled;
     /**
-     * The number of seconds that the GPS-locations are stored in memory
+     * The number of seconds that the GPS-locations are stored in memory.
+     * Time in seconds
      */
     public gpsLocationHistoryRetentionTime = new UIEventSource(7 * 24 * 60 * 60, "gps_location_retention")
     public historicalUserLocationsTrack: FeatureSourceForLayer & Tiled;
@@ -199,7 +200,7 @@ export default class MapState extends UserRelatedState {
         const now = new Date().getTime()
         features.data = features.data
             .map(ff => ({feature: ff.feature, freshness: new Date(ff.freshness)}))
-            .filter(ff => (now - ff.freshness.getTime()) < this.gpsLocationHistoryRetentionTime.data)
+            .filter(ff => (now - ff.freshness.getTime()) < 1000 * this.gpsLocationHistoryRetentionTime.data)
         features.ping()
         const self = this;
         let i = 0
