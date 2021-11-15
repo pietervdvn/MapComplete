@@ -3,7 +3,6 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
 import TileHierarchy from "./TileHierarchy";
 import SaveTileToLocalStorageActor from "../Actors/SaveTileToLocalStorageActor";
-import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 
@@ -32,21 +31,6 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
                 return Number(key.substring(prefix.length));
             })
             .filter(i => !isNaN(i))
-
-        console.debug("Layer", layer.layerDef.id, "has following tiles in available in localstorage", knownTiles.map(i => Tiles.tile_from_index(i).join("/")).join(", "))
-        for (const index of knownTiles) {
-
-            const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.layerDef.id + "-" + index;
-            const version = localStorage.getItem(prefix + "-format")
-            if (version === undefined || version !== SaveTileToLocalStorageActor.formatVersion) {
-                // Invalid version! Remove this tile from local storage
-                localStorage.removeItem(prefix)
-                localStorage.removeItem(prefix + "-time")
-                localStorage.removeItem(prefix + "-format")
-                this.undefinedTiles.add(index)
-                console.log("Dropped old format tile", prefix)
-            }
-        }
 
         const self = this
         state.currentBounds.map(bounds => {
@@ -91,7 +75,6 @@ export default class TiledFromLocalStorageSource implements TileHierarchy<Featur
     static cleanCacheForLayer(layer: LayerConfig) {
         const now = new Date()
         const prefix = SaveTileToLocalStorageActor.storageKey + "-" + layer.id + "-"
-        console.log("Cleaning tiles of ", prefix, "with max age", layer.maxAgeOfCache)
         for (const key of Object.keys(localStorage)) {
             if (!(key.startsWith(prefix) && key.endsWith("-time"))) {
                 continue

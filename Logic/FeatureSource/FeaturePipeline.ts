@@ -56,6 +56,8 @@ export default class FeaturePipeline {
 
     private readonly oldestAllowedDate: Date;
     private readonly osmSourceZoomLevel
+    
+    private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
 
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
@@ -77,7 +79,7 @@ export default class FeaturePipeline {
                 .map(ch => ch.changes)
                 .filter(coor => coor["lat"] !== undefined && coor["lon"] !== undefined)
                 .forEach(coor => {
-                    SaveTileToLocalStorageActor.poison(state.layoutToUse.layers.map(l => l.id), coor["lon"], coor["lat"])
+                    state.layoutToUse.layers.forEach(l => self.localStorageSavers.get(l.id).poison(coor["lon"], coor["lat"]))
                 })
         })
 
@@ -150,6 +152,8 @@ export default class FeaturePipeline {
                 handlePriviligedFeatureSource(state.homeLocation)
                 continue
             }
+            
+            this.localStorageSavers.set(filteredLayer.layerDef.id,  new SaveTileToLocalStorageActor(filteredLayer.layerDef.id))
 
             if (source.geojsonSource === undefined) {
                 // This is an OSM layer
@@ -210,7 +214,7 @@ export default class FeaturePipeline {
             handleTile: tile => {
                 new RegisteringAllFromFeatureSourceActor(tile)
                 if (tile.layer.layerDef.maxAgeOfCache > 0) {
-                    new SaveTileToLocalStorageActor(tile, tile.tileIndex)
+                    self.localStorageSavers.get(tile.layer.layerDef.id).addTile(tile)
                 }
                 perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
                 tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
@@ -219,10 +223,11 @@ export default class FeaturePipeline {
             state: state,
             markTileVisited: (tileId) =>
                 state.filteredLayers.data.forEach(flayer => {
-                    if (flayer.layerDef.maxAgeOfCache > 0) {
-                        SaveTileToLocalStorageActor.MarkVisited(flayer.layerDef.id, tileId, new Date())
+                    const layer = flayer.layerDef
+                    if (layer.maxAgeOfCache > 0) {
+                        self.localStorageSavers.get(layer.id).MarkVisited(tileId, new Date())
                     }
-                    self.freshnesses.get(flayer.layerDef.id).addTileLoad(tileId, new Date())
+                    self.freshnesses.get(layer.id).addTileLoad(tileId, new Date())
                 })
         })
 
@@ -252,10 +257,8 @@ export default class FeaturePipeline {
                 maxFeatureCount: state.layoutToUse.clustering.minNeededElements,
                 maxZoomLevel: state.layoutToUse.clustering.maxZoom,
                 registerTile: (tile) => {
-                    // We save the tile data for the given layer to local storage
-                    if (source.layer.layerDef.source.geojsonSource === undefined || source.layer.layerDef.source.isOsmCacheLayer == true) {
-                        new SaveTileToLocalStorageActor(tile, tile.tileIndex)
-                    }
+                    // We save the tile data for the given layer to local storage - data sourced from overpass
+                    self.localStorageSavers.get(tile.layer.layerDef.id).addTile(tile)
                     perLayerHierarchy.get(source.layer.layerDef.id).registerTile(new RememberingSource(tile))
                     tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
 
@@ -417,7 +420,7 @@ export default class FeaturePipeline {
                         const tileIndex = Tiles.tile_index(paddedToZoomLevel, x, y)
                         downloadedLayers.forEach(layer => {
                             self.freshnesses.get(layer.id).addTileLoad(tileIndex, date)
-                            SaveTileToLocalStorageActor.MarkVisited(layer.id, tileIndex, date)
+                            self.localStorageSavers.get(layer.id).MarkVisited(tileIndex, date)
                         })
                     })
 
