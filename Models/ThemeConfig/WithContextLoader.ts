@@ -71,6 +71,11 @@ export default class WithContextLoader {
         }
         for (let i = 0; i < tagRenderings.length; i++) {
             let renderingJson = tagRenderings[i]
+            if(renderingJson === "questions"){
+                renderingJson = {
+                    id: "questions"
+                }
+            }
             if (typeof renderingJson === "string") {
                 renderingJson = {builtin: renderingJson, override: undefined}
             }

@@ -138,7 +138,13 @@
         "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
       }
     },
-    "wikipedia"
+    {
+      "id": "wikipedia",
+      "render": {
+        "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}"
+      },
+      "condition": "wikidata~*"
+    }
   ],
   "mapRendering": [
     {

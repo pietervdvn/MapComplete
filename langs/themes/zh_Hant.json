@@ -1,323 +1,274 @@
 {
-    "aed": {
-        "description": "在這份地圖上，你可以找到與標記附近的除顫器",
-        "title": "開放AED地圖"
-    },
-    "artwork": {
-        "description": "歡迎來到開放藝術品地圖，這份地圖會顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品",
-        "title": "開放藝術品地圖"
-    },
-    "benches": {
-        "description": "這份地圖顯示開放街圖上所有記錄的長椅：單獨的長椅，屬於大眾運輸站點或涼亭的長椅。只要有開放街圖帳號，你可以新增長椅或是編輯既有長椅的詳細內容。",
-        "shortDescription": "長椅的地圖",
-        "title": "長椅"
-    },
-    "bicyclelib": {
-        "description": "單車圖書館是指每年支付小額費用，然後可以租用單車的地方。最有名的單車圖書館案例是給小孩的，能夠讓長大的小孩用目前的單車換成比較大的單車",
-        "title": "單車圖書館"
-    },
-    "bookcases": {
-        "description": "公共書架是街邊箱子、盒子、舊的電話亭或是其他存放書本的物件，每一個人都能放置或拿取書本。這份地圖收集所有類型的書架，你可以探索你附近新的書架，同時也能用免費的開放街圖帳號來快速新增你最愛的書架。",
-        "title": "開放書架地圖"
-    },
-    "campersite": {
-        "description": "這個網站收集所有官方露營地點，以及那邊能排放廢水。你可以加上詳細的服務項目與價格，加上圖片以及評價。這是網站與網路 app，資料則是存在開放街圖，因此會永遠免費，而且可以被所有 app 再利用。",
-        "layers": {
-            "0": {
-                "description": "露營地",
-                "name": "露營地",
-                "presets": {
-                    "0": {
-                        "title": "露營地",
-                        "description": "新增正式露營地點，通常是設計給過夜的露營者的地點。看起來像是真的露營地或是一般的停車場，而且也許沒有任何指標，但在城鎮被定議地點。如果一般給露營者的停車場並不是用來過夜，則不是露營地點 "
-                    }
-                },
-                "tagRenderings": {
-                    "caravansites-capacity": {
-                        "question": "多少露營者能夠待在這裡？(如果沒有明顯的空間數字或是允許車輛則可以跳過)",
-                        "render": "{capacity} 露營者能夠同時使用這個地方"
-                    },
-                    "caravansites-charge": {
-                        "question": "這個地方收多少費用？",
-                        "render": "這個地方收費 {charge}"
-                    },
-                    "caravansites-description": {
-                        "question": "你想要為這個地方加一般的敘述嗎？(不要重覆加先前問過或提供的資訊，請保持敘述性-請將意見留在評價)",
-                        "render": "這個地方更詳細的資訊： {description}"
-                    },
-                    "caravansites-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "你要付費才能使用"
-                            },
-                            "1": {
-                                "then": "可以免費使用"
-                            }
-                        },
-                        "question": "這個地方收費嗎？"
-                    },
-                    "caravansites-internet": {
-                        "mappings": {
-                            "0": {
-                                "then": "這裡有網路連線"
-                            },
-                            "1": {
-                                "then": "這裡有網路連線"
-                            },
-                            "2": {
-                                "then": "這裡沒有網路連線"
-                            }
-                        },
-                        "question": "這個地方有提網路連線嗎？"
-                    },
-                    "caravansites-internet-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "你需要額外付費來使用網路連線"
-                            },
-                            "1": {
-                                "then": "你不需要額外付費來使用網路連線"
-                            }
-                        },
-                        "question": "你需要為網路連線付費嗎？"
-                    },
-                    "caravansites-long-term": {
-                        "mappings": {
-                            "0": {
-                                "then": "有，這個地方有提供長期租用，但你也可以用天計算費用"
-                            },
-                            "1": {
-                                "then": "沒有，這裡沒有永久的客戶"
-                            },
-                            "2": {
-                                "then": "如果有長期租用合約才有可能待下來(如果你選擇這個地方則會在這份地圖消失)"
-                            }
-                        },
-                        "question": "這個地方有提供長期租用嗎？"
-                    },
-                    "caravansites-name": {
-                        "question": "這個地方叫做什麼？",
-                        "render": "這個地方叫做 {name}"
-                    },
-                    "caravansites-sanitary-dump": {
-                        "mappings": {
-                            "0": {
-                                "then": "這個地方有衛生設施"
-                            },
-                            "1": {
-                                "then": "這個地方沒有衛生設施"
-                            }
-                        },
-                        "question": "這個地方有衛生設施嗎？"
-                    },
-                    "caravansites-toilets": {
-                        "mappings": {
-                            "0": {
-                                "then": "這個地方有廁所"
-                            },
-                            "1": {
-                                "then": "這個地方並沒有廁所"
-                            }
-                        },
-                        "question": "這個地方有廁所嗎？"
-                    },
-                    "caravansites-website": {
-                        "question": "這個地方有網站嗎？",
-                        "render": "官方網站：<a href='{website}'>{website}</a>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "沒有名稱的露營地"
-                        }
-                    },
-                    "render": "露營地 {name}"
-                }
+  "aed": {
+    "description": "在這份地圖上，你可以找到與標記附近的除顫器",
+    "title": "開放AED地圖"
+  },
+  "artwork": {
+    "description": "歡迎來到開放藝術品地圖，這份地圖會顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品",
+    "title": "開放藝術品地圖"
+  },
+  "benches": {
+    "description": "這份地圖顯示開放街圖上所有記錄的長椅：單獨的長椅，屬於大眾運輸站點或涼亭的長椅。只要有開放街圖帳號，你可以新增長椅或是編輯既有長椅的詳細內容。",
+    "shortDescription": "長椅的地圖",
+    "title": "長椅"
+  },
+  "bicyclelib": {
+    "description": "單車圖書館是指每年支付小額費用，然後可以租用單車的地方。最有名的單車圖書館案例是給小孩的，能夠讓長大的小孩用目前的單車換成比較大的單車",
+    "title": "單車圖書館"
+  },
+  "bookcases": {
+    "description": "公共書架是街邊箱子、盒子、舊的電話亭或是其他存放書本的物件，每一個人都能放置或拿取書本。這份地圖收集所有類型的書架，你可以探索你附近新的書架，同時也能用免費的開放街圖帳號來快速新增你最愛的書架。",
+    "title": "開放書架地圖"
+  },
+  "campersite": {
+    "description": "這個網站收集所有官方露營地點，以及那邊能排放廢水。你可以加上詳細的服務項目與價格，加上圖片以及評價。這是網站與網路 app，資料則是存在開放街圖，因此會永遠免費，而且可以被所有 app 再利用。",
+    "layers": {
+      "0": {
+        "description": "露營地",
+        "name": "露營地",
+        "presets": {
+          "0": {
+            "title": "露營地"
+          }
+        },
+        "tagRenderings": {
+          "caravansites-capacity": {
+            "question": "多少露營者能夠待在這裡？(如果沒有明顯的空間數字或是允許車輛則可以跳過)",
+            "render": "{capacity} 露營者能夠同時使用這個地方"
+          },
+          "caravansites-charge": {
+            "question": "這個地方收多少費用？",
+            "render": "這個地方收費 {charge}"
+          },
+          "caravansites-description": {
+            "question": "你想要為這個地方加一般的敘述嗎？(不要重覆加先前問過或提供的資訊，請保持敘述性-請將意見留在評價)",
+            "render": "這個地方更詳細的資訊： {description}"
+          },
+          "caravansites-fee": {
+            "mappings": {
+              "0": {
+                "then": "你要付費才能使用"
+              },
+              "1": {
+                "then": "可以免費使用"
+              }
             },
-            "1": {
-                "tagRenderings": {
-                    "dumpstations-chemical-waste": {
-                        "mappings": {
-                            "0": {
-                                "then": "你可以在這邊丟棄廁所化學廢棄物"
-                            },
-                            "1": {
-                                "then": "你不能在這邊丟棄廁所化學廢棄物"
-                            }
-                        },
-                        "question": "你能在這裡丟棄廁所化學廢棄物嗎？"
-                    },
-                    "dumpstations-access": {
-                        "mappings": {
-                            "0": {
-                                "then": "你需要網路鑰匙/密碼來使用這個設施"
-                            },
-                            "1": {
-                                "then": "你需要是露營/露營地的客戶才能使用這一地方"
-                            },
-                            "3": {
-                                "then": "任何人都可以使用這個垃圾站"
-                            },
-                            "2": {
-                                "then": "任何人都可以使用這個衛生廢棄物站"
-                            }
-                        },
-                        "question": "誰可以使用這個垃圾站？"
-                    },
-                    "dumpstations-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "你需要付費才能使用"
-                            },
-                            "1": {
-                                "then": "這裡可以免費使用"
-                            }
-                        },
-                        "question": "這個地方需要付費嗎？"
-                    },
-                    "dumpstations-charge": {
-                        "render": "這個地方收費 {charge}",
-                        "question": "這個地方收費多少？"
-                    }
-                },
-                "description": "垃圾處理站",
-                "name": "垃圾處理站",
-                "presets": {
-                    "0": {
-                        "title": "垃圾丟棄站",
-                        "description": "新增垃圾站，這通常是提供露營駕駛丟棄廢水與化學性廁所廢水的地方，也會有飲用水與電力。"
-                    }
-                }
-            }
-        },
-        "shortDescription": "露營者尋找渡過夜晚的場地",
-        "title": "露營地點"
-    },
-    "charging_stations": {
-        "description": "在這份開放地圖上，你可以尋找與標示充電站的資訊",
-        "shortDescription": "全世界的充電站地圖",
-        "title": "充電站"
-    },
-    "climbing": {
-        "description": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
-        "descriptionTail": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
-        "layers": {
-            "0": {
-                "description": "攀岩社團或組織",
-                "name": "攀岩社團",
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "攀岩 NGO"
-                        }
-                    },
-                    "render": "攀岩社團"
-                }
-            }
-        },
-        "title": "開放攀爬地圖"
-    },
-    "cyclestreets": {
-        "description": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
-        "layers": {
-            "0": {
-                "name": "單車街道"
+            "question": "這個地方收費嗎？"
+          },
+          "caravansites-internet": {
+            "mappings": {
+              "0": {
+                "then": "這裡有網路連線"
+              },
+              "1": {
+                "then": "這裡有網路連線"
+              },
+              "2": {
+                "then": "這裡沒有網路連線"
+              }
             },
-            "1": {
-                "name": "將來的單車街道"
-            }
-        },
-        "shortDescription": "單車街道的地圖",
-        "title": "單車街道"
-    },
-    "cyclofix": {
-        "description": "這份地圖的目的是為單車騎士能夠輕易顯示滿足他們需求的相關設施。<br><br>你可以追蹤你確切位置 (只有行動版)，以及在左下角選擇相關的圖層。你可以使用這工具在地圖新增或編輯釘子，以及透過回答問題來提供更多資訊。<br><br>所有你的變動都會自動存在開放街圖這全球資料圖，並且能被任何人自由取用。<br><br>你可以到 <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> 閱讀更多資訊。",
-        "title": "單車修正 - 單車騎士的開放地圖"
-    },
-    "drinking_water": {
-        "description": "在這份地圖上，公共可及的飲水點可以顯示出來，也能輕易的增加",
-        "title": "飲用水"
-    },
-    "facadegardens": {
-        "layers": {
-            "0": {
-                "description": "立面花園",
-                "name": "立面花園",
-                "title": {
-                    "render": "立面花園"
-                }
-            }
-        },
-        "shortDescription": "這地圖顯示立面花園的照片以及其他像是方向、日照以及植栽種類等實用訊息。",
-        "title": "立面花園"
-    },
-    "ghostbikes": {
-        "description": "<b>幽靈單車</b>是用來紀念死於交通事故的單車騎士，在事發地點附近放置白色單車。<br/><br/>在這份地圖上面，你可以看到所有在開放街圖已知的幽靈單車。有缺漏的幽靈單車嗎？所有人都可以在這邊新增或是更新資訊-只有你有(免費)開放街圖帳號。",
-        "title": "幽靈單車"
-    },
-    "hailhydrant": {
-        "description": "在這份地圖上面你可以在你喜愛的社區尋找與更新消防栓、消防隊、急救站與滅火器。\n\n你可以追蹤確切位置 (只有行動版) 以及在左下角選擇與你相關的圖層。你也可以使用這工具新增或編輯地圖上的釘子 (興趣點)，以及透過回答一些問題提供額外的資訊。\n\n所有你做出的變動都會自動存到開放街圖這個全球資料庫，而且能自由讓其他人取用。",
-        "layers": {
-            "0": {
-                "description": "顯示消防栓的地圖圖層。",
-                "name": "消防栓地圖"
+            "question": "這個地方有提網路連線嗎？"
+          },
+          "caravansites-internet-fee": {
+            "mappings": {
+              "0": {
+                "then": "你需要額外付費來使用網路連線"
+              },
+              "1": {
+                "then": "你不需要額外付費來使用網路連線"
+              }
             },
-            "1": {
-                "description": "顯示消防栓的地圖圖層。"
-            }
+            "question": "你需要為網路連線付費嗎？"
+          },
+          "caravansites-long-term": {
+            "mappings": {
+              "0": {
+                "then": "有，這個地方有提供長期租用，但你也可以用天計算費用"
+              },
+              "1": {
+                "then": "沒有，這裡沒有永久的客戶"
+              },
+              "2": {
+                "then": "如果有長期租用合約才有可能待下來(如果你選擇這個地方則會在這份地圖消失)"
+              }
+            },
+            "question": "這個地方有提供長期租用嗎？"
+          },
+          "caravansites-name": {
+            "question": "這個地方叫做什麼？",
+            "render": "這個地方叫做 {name}"
+          },
+          "caravansites-sanitary-dump": {
+            "mappings": {
+              "0": {
+                "then": "這個地方有衛生設施"
+              },
+              "1": {
+                "then": "這個地方沒有衛生設施"
+              }
+            },
+            "question": "這個地方有衛生設施嗎？"
+          },
+          "caravansites-toilets": {
+            "mappings": {
+              "0": {
+                "then": "這個地方有廁所"
+              },
+              "1": {
+                "then": "這個地方並沒有廁所"
+              }
+            },
+            "question": "這個地方有廁所嗎？"
+          },
+          "caravansites-website": {
+            "question": "這個地方有網站嗎？",
+            "render": "官方網站：<a href='{website}'>{website}</a>"
+          }
         },
-        "shortDescription": "顯示消防栓、滅火器、消防隊與急救站的地圖。",
-        "title": "消防栓、滅火器、消防隊、以及急救站。"
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "沒有名稱的露營地"
+            }
+          },
+          "render": "露營地 {name}"
+        }
+      },
+      "1": {
+        "tagRenderings": {
+          "dumpstations-chemical-waste": {
+            "mappings": {
+              "0": {
+                "then": "你可以在這邊丟棄廁所化學廢棄物"
+              },
+              "1": {
+                "then": "你不能在這邊丟棄廁所化學廢棄物"
+              }
+            },
+            "question": "你能在這裡丟棄廁所化學廢棄物嗎？"
+          }
+        }
+      }
     },
-    "maps": {
-        "description": "在這份地圖你可以找到所在在開放街圖上已知的地圖 - 特別是顯示地區、城市、區域的資訊版面上的大型地圖，例如佈告欄背面的旅遊地圖，自然保護區的地圖，區域的單車網路地圖，...)<br/><br/>如果有缺少的地圖，你可以輕易在開放街圖上新增這地圖。",
-        "shortDescription": "這份主題顯示所有已知的開放街圖上的 (旅遊) 地圖",
-        "title": "地圖的地圖"
+    "shortDescription": "露營者尋找渡過夜晚的場地",
+    "title": "露營地點"
+  },
+  "charging_stations": {
+    "description": "在這份開放地圖上，你可以尋找與標示充電站的資訊",
+    "shortDescription": "全世界的充電站地圖",
+    "title": "充電站"
+  },
+  "climbing": {
+    "description": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
+    "descriptionTail": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
+    "layers": {
+      "0": {
+        "description": "攀岩社團或組織",
+        "name": "攀岩社團",
+        "tagRenderings": {
+          "climbing_club-name": {
+            "render": "<strong>{name}</strong>"
+          }
+        },
+        "title": {
+          "mappings": {
+            "0": {
+              "then": "攀岩 NGO"
+            }
+          },
+          "render": "攀岩社團"
+        }
+      }
     },
-    "personal": {
-        "description": "從所有可用的主題圖層創建個人化主題",
-        "title": "個人化主題"
+    "title": "開放攀爬地圖"
+  },
+  "cyclestreets": {
+    "description": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
+    "layers": {
+      "0": {
+        "name": "單車街道"
+      },
+      "1": {
+        "name": "將來的單車街道"
+      }
     },
-    "playgrounds": {
-        "description": "在這份地圖上，你可以尋找遊樂場以及其相關資訊",
-        "shortDescription": "遊樂場的地圖",
-        "title": "遊樂場"
+    "shortDescription": "單車街道的地圖",
+    "title": "單車街道"
+  },
+  "cyclofix": {
+    "description": "這份地圖的目的是為單車騎士能夠輕易顯示滿足他們需求的相關設施。<br><br>你可以追蹤你確切位置 (只有行動版)，以及在左下角選擇相關的圖層。你可以使用這工具在地圖新增或編輯釘子，以及透過回答問題來提供更多資訊。<br><br>所有你的變動都會自動存在開放街圖這全球資料圖，並且能被任何人自由取用。<br><br>你可以到 <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> 閱讀更多資訊。",
+    "title": "單車修正 - 單車騎士的開放地圖"
+  },
+  "drinking_water": {
+    "description": "在這份地圖上，公共可及的飲水點可以顯示出來，也能輕易的增加",
+    "title": "飲用水"
+  },
+  "facadegardens": {
+    "layers": {
+      "0": {
+        "description": "立面花園",
+        "name": "立面花園",
+        "title": {
+          "render": "立面花園"
+        }
+      }
     },
-    "shops": {
-        "description": "這份地圖上，你可以標記商家基本資訊，新增營業時間以及聯絡電話",
-        "title": "開放商店地圖"
+    "shortDescription": "這地圖顯示立面花園的照片以及其他像是方向、日照以及植栽種類等實用訊息。",
+    "title": "立面花園"
+  },
+  "ghostbikes": {
+    "description": "<b>幽靈單車</b>是用來紀念死於交通事故的單車騎士，在事發地點附近放置白色單車。<br/><br/>在這份地圖上面，你可以看到所有在開放街圖已知的幽靈單車。有缺漏的幽靈單車嗎？所有人都可以在這邊新增或是更新資訊-只有你有(免費)開放街圖帳號。",
+    "title": "幽靈單車"
+  },
+  "hailhydrant": {
+    "description": "在這份地圖上面你可以在你喜愛的社區尋找與更新消防栓、消防隊、急救站與滅火器。\n\n你可以追蹤確切位置 (只有行動版) 以及在左下角選擇與你相關的圖層。你也可以使用這工具新增或編輯地圖上的釘子 (興趣點)，以及透過回答一些問題提供額外的資訊。\n\n所有你做出的變動都會自動存到開放街圖這個全球資料庫，而且能自由讓其他人取用。",
+    "layers": {
+      "0": {
+        "description": "顯示消防栓的地圖圖層。",
+        "name": "消防栓地圖"
+      },
+      "1": {
+        "description": "顯示消防栓的地圖圖層。"
+      }
     },
-    "sport_pitches": {
-        "description": "運動場地是進行運動的地方",
-        "shortDescription": "顯示運動場地的地圖",
-        "title": "運動場地"
-    },
-    "surveillance": {
-        "description": "在這份開放地圖，你可以找到監視鏡頭。",
-        "shortDescription": "監視鏡頭與其他型式的監視",
-        "title": "被監視的監視器"
-    },
-    "toilets": {
-        "description": "公共廁所的地圖",
-        "title": "開放廁所地圖"
-    },
-    "trees": {
-        "description": "繪製所有樹木！",
-        "shortDescription": "所有樹木的地圖",
-        "title": "樹木"
-    },
-    "binoculars": {
-        "shortDescription": "固定望遠鏡的地圖",
-        "title": "望遠鏡",
-        "description": "固定一地的望遠鏡地圖，特別是能夠在旅遊景點、觀景點、城鎮環景點，或是自然保護區找到。"
-    },
-    "cafes_and_pubs": {
-        "title": "咖啡廳與酒吧"
-    }
+    "shortDescription": "顯示消防栓、滅火器、消防隊與急救站的地圖。",
+    "title": "消防栓、滅火器、消防隊、以及急救站。"
+  },
+  "maps": {
+    "description": "在這份地圖你可以找到所在在開放街圖上已知的地圖 - 特別是顯示地區、城市、區域的資訊版面上的大型地圖，例如佈告欄背面的旅遊地圖，自然保護區的地圖，區域的單車網路地圖，...)<br/><br/>如果有缺少的地圖，你可以輕易在開放街圖上新增這地圖。",
+    "shortDescription": "這份主題顯示所有已知的開放街圖上的 (旅遊) 地圖",
+    "title": "地圖的地圖"
+  },
+  "personal": {
+    "description": "從所有可用的主題圖層創建個人化主題",
+    "title": "個人化主題"
+  },
+  "playgrounds": {
+    "description": "在這份地圖上，你可以尋找遊樂場以及其相關資訊",
+    "shortDescription": "遊樂場的地圖",
+    "title": "遊樂場"
+  },
+  "shops": {
+    "description": "這份地圖上，你可以標記商家基本資訊，新增營業時間以及聯絡電話",
+    "title": "開放商店地圖"
+  },
+  "sport_pitches": {
+    "description": "運動場地是進行運動的地方",
+    "shortDescription": "顯示運動場地的地圖",
+    "title": "運動場地"
+  },
+  "surveillance": {
+    "description": "在這份開放地圖，你可以找到監視鏡頭。",
+    "shortDescription": "監視鏡頭與其他型式的監視",
+    "title": "被監視的監視器"
+  },
+  "toilets": {
+    "description": "公共廁所的地圖",
+    "title": "開放廁所地圖"
+  },
+  "trees": {
+    "description": "繪製所有樹木！",
+    "shortDescription": "所有樹木的地圖",
+    "title": "樹木"
+  }
 }

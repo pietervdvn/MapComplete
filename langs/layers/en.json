@@ -2670,6 +2670,9 @@
       "street-name-sign-image": {
         "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
       },
+      "wikipedia": {
+        "render": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}"
+      },
       "wikipedia-etymology": {
         "question": "What is the Wikidata-item that this object is named after?",
         "render": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
