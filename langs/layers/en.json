@@ -1197,7 +1197,7 @@
             "Network": {
                 "mappings": {
                     "0": {
-                        "then": "Not part of a bigger network"
+                        "then": "Not part of a bigger network, e.g. because the charging station is maintained by a local business"
                     },
                     "1": {
                         "then": "Not part of a bigger network"

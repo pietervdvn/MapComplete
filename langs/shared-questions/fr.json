@@ -59,41 +59,6 @@
         "phone": {
             "question": "Quel est le numéro de téléphone de {name} ?"
         },
-        "website": {
-            "question": "Quel est le site web de {name} ?"
-        },
-        "wheelchair-access": {
-            "mappings": {
-              "1": {
-                "then": "Cet endroit est facilement accessible avec un fauteuil roulant"
-              },
-              "0": {
-                "then": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants"
-              },
-                "2": {
-                    "then": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
-                },
-                "3": {
-                    "then": "Cet endroit n'est pas accessible en chaise roulante"
-            },
-            "question": "Est-ce que cet endroit est accessible en chaise roulante ?"
-        }
-    },
-        "wikipedialink": {
-                "mappings": {
-                    "0": {
-                        "then": "Non lié avec Wikipedia"
-                    }
-                }
-            },
-        "wikipedia": {
-                "question": "Quelle est l'entité Wikidata correspondante ?",
-                "mappings": {
-                    "0": {
-                        "then": "Pas encore de lien vers une page Wikipedia"
-                    }
-                }
-            },
         "service:electricity": {
             "mappings": {
                 "2": {
@@ -101,6 +66,41 @@
                 },
                 "3": {
                     "then": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur"
+                }
+            }
+        },
+        "website": {
+            "question": "Quel est le site web de {name} ?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants"
+                },
+                "1": {
+                    "then": "Cet endroit est facilement accessible avec un fauteuil roulant"
+                },
+                "2": {
+                    "then": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
+                },
+                "3": {
+                    "then": "Cet endroit n'est pas accessible en chaise roulante"
+                }
+            },
+            "question": "Est-ce que cet endroit est accessible en chaise roulante ?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Pas encore de lien vers une page Wikipedia"
+                }
+            },
+            "question": "Quelle est l'entité Wikidata correspondante ?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Non lié avec Wikipedia"
                 }
             }
         }

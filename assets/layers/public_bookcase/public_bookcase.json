@@ -310,7 +310,9 @@
               "nobrand="
             ]
           },
-          "addExtraTags": ["brand:wikidata=Q6650101"]
+          "addExtraTags": [
+            "brand:wikidata=Q6650101"
+          ]
         },
         {
           "if": {

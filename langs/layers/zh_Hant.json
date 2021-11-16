@@ -450,13 +450,13 @@
     },
     "ghost_bike": {
         "name": "幽靈單車",
-        "title": {
-            "render": "幽靈單車"
-        },
         "presets": {
             "0": {
                 "title": "幽靈單車"
             }
+        },
+        "title": {
+            "render": "幽靈單車"
         }
     }
 }

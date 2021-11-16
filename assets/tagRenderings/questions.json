@@ -14,7 +14,8 @@
       "pt": "Qual é a entidade Wikidata correspondente?",
       "hu": "Mi a megfelelő Wikidata-elem?",
       "it": "Qual è l’elemento Wikidata corrispondente?",
-      "nb_NO": "Hva er respektivt Wikipedia-element?"
+      "nb_NO": "Hva er respektivt Wikipedia-element?",
+      "fr": "Quelle est l'entité Wikidata correspondante ?"
     },
     "mappings": [
       {
@@ -26,7 +27,8 @@
           "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
           "hu": "Még nincs Wikipédia-oldal belinkelve",
           "it": "Nessuna pagina Wikipedia è ancora stata collegata",
-          "nb_NO": "Ingen Wikipedia-side lenket enda"
+          "nb_NO": "Ingen Wikipedia-side lenket enda",
+          "fr": "Pas encore de lien vers une page Wikipedia"
         },
         "hideInAnswer": true
       }
@@ -96,7 +98,8 @@
           "pt": "Não vinculado à Wikipédia",
           "hu": "Nincs belinkelve a Wikipédiához",
           "it": "Non collegato a Wikipedia",
-          "nb_NO": "Ikke lenket med Wikipedia"
+          "nb_NO": "Ikke lenket med Wikipedia",
+          "fr": "Non lié avec Wikipedia"
         }
       }
     ],
@@ -181,7 +184,8 @@
           "de": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet",
           "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
           "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
-          "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere"
+          "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
+          "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants"
         }
       },
       {
@@ -198,7 +202,8 @@
           "de": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen",
           "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
           "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
-          "nb_NO": "Dette stedet kan enkelt besøkes med rullestol"
+          "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
+          "fr": "Cet endroit est facilement accessible avec un fauteuil roulant"
         }
       },
       {
@@ -272,7 +277,7 @@
           "nl": "honden zijn <b>niet</b> toegelaten",
           "pt": "Os cães <b>não</b> são permitidos",
           "de": "Hunde sind <b>nicht</b> erlaubt",
-          "fr": "Les chiens <b>ne</b> sont <b>pas</b> admis",
+          "fr": "Chiens <b>non</b> admis",
           "eo": "Hundoj estas <b>malpermesataj</b>",
           "hu": "Kutya <b>nem</b> vihető be",
           "it": "I cani <b>non</b> sono ammessi",
@@ -368,34 +373,41 @@
     "#": "service:socket describes if a pub, restaurant or café offers electricity to their customers.",
     "question": {
       "en": "Does this amenity have electrical outlets, available to customers when they are inside?",
-      "nl": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+      "nl": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?",
+      "pt": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?"
     },
     "mappings": [
       {
         "then": {
           "en": "There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics",
-          "nl": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden"
+          "nl": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden",
+          "pt": "Há muitas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos"
         },
         "if": "service:electricity=yes"
       },
       {
         "then": {
           "en": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics",
-          "nl": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden"
+          "nl": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden",
+          "pt": "Há algumas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos"
         },
         "if": "service:electricity=limited"
       },
       {
         "then": {
           "en": "There are no sockets available indoors to customers, but charging might be possible if the staff is asked",
-          "nl": "Er zijn binnen geen stekkers beschikbaar, maar electronica opladen kan indien men dit aan het personeel vraagt"
+          "nl": "Er zijn binnen geen stekkers beschikbaar, maar electronica opladen kan indien men dit aan het personeel vraagt",
+          "fr": "Il n'y a pas de prises disponibles à l'intérieur pour les clients, mais la recharge est peut-être possible sur demande auprès des employés",
+          "pt": "Não há tomadas elétricas disponíveis para clientes sentados no interior, mas pode-se pedir aos funcionários para carregar dispositivos eletrónicos"
         },
         "if": "service:electricity=ask"
       },
       {
         "then": {
           "en": "There are a no domestic sockets available to customers seated indoors",
-          "nl": "Er zijn binnen geen stekkers beschikbaar"
+          "nl": "Er zijn binnen geen stekkers beschikbaar",
+          "fr": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur",
+          "pt": "Não há tomadas elétricas disponíveis para clientes sentados no interior"
         },
         "if": "service:electricity=no"
       }

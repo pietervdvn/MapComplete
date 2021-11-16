@@ -16,13 +16,13 @@
     },
     "ghost_bike": {
         "name": "Spökcykel",
-        "title": {
-            "render": "Spökcykel"
-        },
         "presets": {
             "0": {
                 "title": "Spökcykel"
             }
+        },
+        "title": {
+            "render": "Spökcykel"
         }
     },
     "shops": {

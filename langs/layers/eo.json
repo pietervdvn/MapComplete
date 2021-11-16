@@ -78,13 +78,13 @@
     },
     "ghost_bike": {
         "name": "Fantombiciklo",
-        "title": {
-            "render": "Fantombiciklo"
-        },
         "presets": {
             "0": {
                 "title": "Fantombiciklo"
             }
+        },
+        "title": {
+            "render": "Fantombiciklo"
         }
     },
     "shops": {

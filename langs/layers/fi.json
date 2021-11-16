@@ -112,13 +112,13 @@
     },
     "ghost_bike": {
         "name": "Haamupyörä",
-        "title": {
-            "render": "Haamupyörä"
-        },
         "presets": {
             "0": {
                 "title": "Haamupyörä"
             }
+        },
+        "title": {
+            "render": "Haamupyörä"
         }
     },
     "shops": {

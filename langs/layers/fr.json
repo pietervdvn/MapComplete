@@ -72,6 +72,58 @@
             "render": "Œuvre d'art"
         }
     },
+    "barrier": {
+        "presets": {
+            "0": {
+                "title": "Bollard"
+            }
+        },
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "0": {
+                        "then": "Bollard amovible"
+                    },
+                    "1": {
+                        "then": "Bollard fixe"
+                    },
+                    "2": {
+                        "then": "Bollard qui peut être couché"
+                    },
+                    "3": {
+                        "then": "Bollard flexible, généralement en plastique"
+                    },
+                    "4": {
+                        "then": "Bollard rétractable"
+                    }
+                },
+                "question": "Quel est le type de bollard (borne) ?"
+            },
+            "MaxWidth": {
+                "render": "Largeur maximale: {maxwidth:physical} m"
+            },
+            "Width of opening (cyclebarrier)": {
+                "render": "Largeur de l'ouverture : {width:opening} m"
+            },
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": "Un cycliste peut franchir ceci."
+                    },
+                    "1": {
+                        "then": "Un cycliste ne peut pas franchir ceci."
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bollard"
+                }
+            }
+        }
+    },
     "bench": {
         "name": "Bancs",
         "presets": {
@@ -167,11 +219,11 @@
         "tagRenderings": {
             "bench_at_pt-bench_type": {
                 "mappings": {
-                    "1": {
-                        "then": "Banc assis debout"
-                    },
                     "0": {
                         "then": "Il y a un banc normal pour s'asseoir ici"
+                    },
+                    "1": {
+                        "then": "Banc assis debout"
                     },
                     "2": {
                         "then": "Il n'y a pas de banc ici"
@@ -535,6 +587,9 @@
                 },
                 "question": "Est-ce que cette pompe est électrique ?"
             },
+            "bike_repair_station-email": {
+                "question": "Quelle est l'adresse email du service de maintenance ?"
+            },
             "bike_repair_station-manometer": {
                 "mappings": {
                     "0": {
@@ -564,6 +619,9 @@
                 "question": "Qui maintient cette pompe à vélo ?",
                 "render": "Mantenue par {operator}"
             },
+            "bike_repair_station-phone": {
+                "question": "Quel est le numéro de téléphone du service de maintenance ?"
+            },
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
@@ -578,12 +636,6 @@
                 },
                 "question": "Quelles valves sont compatibles ?",
                 "render": "Cette pompe est compatible avec les valves suivantes : {valves}"
-            },
-            "bike_repair_station-phone": {
-                "question": "Quel est le numéro de téléphone du service de maintenance ?"
-            },
-            "bike_repair_station-email": {
-                "question": "Quelle est l'adresse email du service de maintenance ?"
             }
         },
         "title": {
@@ -758,6 +810,42 @@
                 }
             },
             "render": "Objet cycliste"
+        }
+    },
+    "binocular": {
+        "presets": {
+            "0": {
+                "description": "Une longue-vue ou une paire de jumelles montée sur un poteau, disponible au public pour scruter les environs.\n<img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
+            }
+        }
+    },
+    "birdhide": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accessible aux fauteuils roulants"
+                    }
+                }
+            }
+        }
+    },
+    "cafe_pub": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert maintenant"
+                    }
+                }
+            }
+        },
+        "name": "Cafés et pubs",
+        "tagRenderings": {
+            "Name": {
+                "question": "Quel est le nom de ce pub ?",
+                "render": "Ce pub se nomme {name}"
+            }
         }
     },
     "defibrillator": {
@@ -1945,139 +2033,6 @@
         },
         "title": {
             "render": "Point de vue"
-        }
-    },
-    "barrier": {
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Bollard"
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Bollard"
-            }
-        },
-        "tagRenderings": {
-            "Bollard type": {
-                "mappings": {
-                    "3": {
-                        "then": "Bollard flexible, généralement en plastique"
-                    },
-                    "0": {
-                        "then": "Bollard amovible"
-                    },
-                    "1": {
-                        "then": "Bollard fixe"
-                    },
-                    "2": {
-                        "then": "Bollard qui peut être couché"
-                    },
-                    "4": {
-                        "then": "Bollard rétractable"
-                    }
-                },
-                "question": "Quel est le type de bollard (borne) ?"
-            },
-            "MaxWidth": {
-                "render": "Largeur maximale: {maxwidth:physical} m"
-            },
-            "Width of opening (cyclebarrier)": {
-                "render": "Largeur de l'ouverture : {width:opening} m"
-            },
-            "bicycle=yes/no": {
-                "mappings": {
-                    "0": {
-                        "then": "Un cycliste peut franchir ceci."
-                    },
-                    "1": {
-                        "then": "Un cycliste ne peut pas franchir ceci."
-                    }
-                }
-            }
-        }
-    },
-    "cafe_pub": {
-        "tagRenderings": {
-            "Name": {
-                "question": "Quel est le nom de ce pub ?",
-                "render": "Ce pub se nomme {name}"
-            }
-        },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert maintenant"
-                    }
-                }
-            }
-        },
-        "name": "Cafés et pubs"
-    },
-    "charging_station": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Tout type de véhicule"
-                    },
-                    "2": {
-                        "question": "Station de charge pour automobiles"
-                    },
-                    "1": {
-                        "question": "Station de charge pour vélos"
-                    }
-                }
-            }
-        },
-        "tagRenderings": {
-            "Authentication": {
-                "mappings": {
-                    "1": {
-                        "then": "Authentification par une app"
-                    },
-                    "7": {
-                        "then": "Charger ici est (aussi) possible sans authentification"
-                    },
-                    "0": {
-                        "then": "Authentification par carte de membre"
-                    },
-                    "4": {
-                        "then": "Authentification par NFC est disponible"
-                    },
-                    "6": {
-                        "then": "Authentification par carte de débit est disponible"
-                    },
-                    "2": {
-                        "then": "Authentification par appel téléphonique est disponible"
-                    },
-                    "3": {
-                        "then": "Authentification par SMS est disponible"
-                    }
-                },
-                "question": "Quelle sorte d'authentification est disponible à cette station de charge ?"
-            }
-        }
-    },
-    "binocular": {
-        "presets": {
-            "0": {
-                "description": "Une longue-vue ou une paire de jumelles montée sur un poteau, disponible au public pour scruter les environs.\n<img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
-            }
-        }
-    },
-    "birdhide": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Accessible aux fauteuils roulants"
-                    }
-                }
-            }
         }
     }
 }

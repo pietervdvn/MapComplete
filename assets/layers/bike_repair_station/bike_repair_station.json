@@ -239,7 +239,8 @@
       "question": {
         "en": "What is the email address of the maintainer?",
         "nl": "Wat is het email-adres van de beheerder?",
-        "de": "Wie lautet die E-Mail-Adresse des Betreuers?"
+        "de": "Wie lautet die E-Mail-Adresse des Betreuers?",
+        "fr": "Quelle est l'adresse email du service de maintenance ?"
       },
       "freeform": {
         "key": "email",
@@ -252,7 +253,8 @@
       "question": {
         "en": "What is the phone number of the maintainer?",
         "nl": "Wat is het telefoonnummer van de beheerder?",
-        "de": "Wie lautet die Telefonnummer des Betreibers?"
+        "de": "Wie lautet die Telefonnummer des Betreibers?",
+        "fr": "Quel est le numéro de téléphone du service de maintenance ?"
       },
       "freeform": {
         "key": "phone",

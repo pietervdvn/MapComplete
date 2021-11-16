@@ -1273,7 +1273,7 @@
             "Network": {
                 "mappings": {
                     "0": {
-                        "then": "Maakt geen deel uit van een groter netwerk"
+                        "then": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt"
                     },
                     "1": {
                         "then": "Maakt geen deel uit van een groter netwerk"
@@ -3007,6 +3007,13 @@
                 }
             },
             "render": "Witte Fiets"
+        }
+    },
+    "gps_track": {
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": "Dit is waar je was sinds je deze website hebt geopened. Dit is enkel zichtbaar voor jou en niemand anders, je locatie wordt niet verstuurd"
+            }
         }
     },
     "grass_in_parks": {

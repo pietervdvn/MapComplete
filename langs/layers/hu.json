@@ -213,13 +213,13 @@
     },
     "ghost_bike": {
         "name": "Emlékkerékpár",
-        "title": {
-            "render": "Emlékkerékpár"
-        },
         "presets": {
             "0": {
                 "title": "Emlékkerékpár"
             }
+        },
+        "title": {
+            "render": "Emlékkerékpár"
         }
     },
     "shops": {

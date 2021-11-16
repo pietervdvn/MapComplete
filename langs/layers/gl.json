@@ -396,13 +396,13 @@
     },
     "ghost_bike": {
         "name": "Bicicleta pantasma",
-        "title": {
-            "render": "Bicicleta pantasma"
-        },
         "presets": {
             "0": {
                 "title": "Bicicleta pantasma"
             }
+        },
+        "title": {
+            "render": "Bicicleta pantasma"
         }
     }
 }
