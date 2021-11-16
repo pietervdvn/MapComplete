@@ -217,7 +217,8 @@
         "title": "Кемпинги"
     },
     "charging_stations": {
-        "description": "На этой карте вы можно найти и отметить информацию о зарядных станциях"
+        "description": "На этой карте вы можно найти и отметить информацию о зарядных станциях",
+        "title": "Зарядные станции"
     },
     "climbing": {
         "description": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
@@ -291,6 +292,15 @@
                         }
                     }
                 }
+            },
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " метр"
+                        }
+                    }
+                }
             }
         },
         "title": "Открытая карта скалолазания"
@@ -302,6 +312,9 @@
                 "title": {
                     "render": "Улица"
                 }
+            },
+            "0": {
+                "name": "Cyclestreets"
             }
         }
     },
@@ -507,5 +520,152 @@
         "description": "Нанесите все деревья на карту!",
         "shortDescription": "Карта деревьев",
         "title": "Деревья"
+    },
+    "hackerspaces": {
+        "layers": {
+            "0": {
+                "name": "Хакерспейс",
+                "tagRenderings": {
+                    "hackerspaces-opening_hours": {
+                        "mappings": {
+                            "0": {
+                                "then": "Открыто 24/7"
+                            }
+                        },
+                        "render": "{opening_hours_table()}"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Хакерспейс"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": " {name}"
+                        }
+                    },
+                    "render": "Хакерспейс"
+                },
+                "description": "Хакерспейс"
+            }
+        },
+        "title": "Хакерспейсы"
+    },
+    "openwindpowermap": {
+        "layers": {
+            "0": {
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                },
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " мегаватт"
+                            },
+                            "1": {
+                                "human": " киловатт"
+                            },
+                            "2": {
+                                "human": " ватт"
+                            },
+                            "3": {
+                                "human": " гигаватт"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " метр"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OpenWindPowerMap"
+    },
+    "postboxes": {
+        "layers": {
+            "1": {
+                "name": "Почтовые отделения",
+                "tagRenderings": {
+                    "OH": {
+                        "render": "Часы работы: {opening_hours_table()}"
+                    }
+                },
+                "title": {
+                    "render": "Почтовое отделение"
+                },
+                "presets": {
+                    "0": {
+                        "title": "Почтовое отделение"
+                    }
+                }
+            },
+            "0": {
+                "presets": {
+                    "0": {
+                        "title": "почтовый ящик"
+                    }
+                },
+                "name": "Почтовые ящики",
+                "title": {
+                    "render": "Почтовый ящик"
+                }
+            }
+        }
+    },
+    "cafes_and_pubs": {
+        "title": "Кафе и пабы"
+    },
+    "cycle_infra": {
+        "title": "Велосипедная дорожка"
+    },
+    "parkings": {
+        "title": "Парковка"
+    },
+    "sidewalks": {
+        "layers": {
+            "0": {
+                "title": {
+                    "render": "{name}"
+                },
+                "name": "Тротуары"
+            }
+        },
+        "title": "Тротуары",
+        "description": "Экспериментальная тема"
+    },
+    "street_lighting": {
+        "layers": {
+            "2": {
+                "name": "Все улицы",
+                "title": {
+                    "render": "Улица"
+                }
+            }
+        },
+        "title": "Уличное освещение"
+    },
+    "uk_addresses": {
+        "layers": {
+            "2": {
+                "description": "Адреса"
+            }
+        }
+    },
+    "etymology": {
+        "title": "Открытая этимологическая карта"
+    },
+    "observation_towers": {
+        "title": "Смотровые башни"
     }
 }
