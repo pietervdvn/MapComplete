@@ -21,6 +21,7 @@ import Loc from "../../Models/Loc";
 import Toggle from "../Input/Toggle";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 /**
  * The attribution panel shown on mobile
@@ -143,7 +144,8 @@ export default class CopyrightPanel extends Combine {
             })),
             CopyrightPanel.CodeContributors(),
             new Title(t.iconAttribution.title, 3),
-            ...iconAttributions
+            ...iconAttributions,
+            new PrivacyPolicy()
         ].map(e => e?.SetClass("mt-4")));
         this.SetClass("flex flex-col link-underline overflow-hidden")
         this.SetStyle("max-width: calc(100vw - 3em); width: 40rem; margin-left: 0.75rem; margin-right: 0.5rem")
