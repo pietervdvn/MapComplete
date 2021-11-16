@@ -218,7 +218,6 @@ export default class MapState extends UserRelatedState {
                 let timeDiff = Number.MAX_VALUE // in seconds
                 const olderLocation = features.data[features.data.length - 2]
                 if (olderLocation !== undefined) {
-                    console.log("Previous location", previousLocation)
                     timeDiff = (new Date(previousLocation.freshness).getTime() - new Date(olderLocation.freshness).getTime()) / 1000
                 }
                 if (d < 20 && timeDiff < 60) {

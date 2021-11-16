@@ -8,12 +8,8 @@ export class IdbLocalStorage {
     
     public static Get<T>(key: string, options: { defaultValue?: T }): UIEventSource<T>{
         const src = new UIEventSource<T>(options.defaultValue, "idb-local-storage:"+key)
-        idb.get(key).then(v => {
-            src.setData(v ?? options.defaultValue)
-        })
-        src.stabilized(1000).addCallback(v => {
-            idb.set(key, v)
-        })
+        idb.get(key).then(v => src.setData(v ?? options.defaultValue))
+        src.addCallback(v => idb.set(key, v))
         return src;
         
     }
@@ -22,4 +18,7 @@ export class IdbLocalStorage {
         idb.set(key, value)
     }
 
+    static GetDirectly(key: string) {
+        return idb.get(key)
+    }
 }

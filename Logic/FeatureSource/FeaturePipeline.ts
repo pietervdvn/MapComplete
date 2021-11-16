@@ -11,7 +11,6 @@ import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
 import GeoJsonSource from "./Sources/GeoJsonSource";
 import Loc from "../../Models/Loc";
 import RegisteringAllFromFeatureSourceActor from "./Actors/RegisteringAllFromFeatureSourceActor";
-import TiledFromLocalStorageSource from "./TiledFeatureSource/TiledFromLocalStorageSource";
 import SaveTileToLocalStorageActor from "./Actors/SaveTileToLocalStorageActor";
 import DynamicGeoJsonTileSource from "./TiledFeatureSource/DynamicGeoJsonTileSource";
 import {TileHierarchyMerger} from "./TiledFeatureSource/TileHierarchyMerger";
@@ -66,9 +65,6 @@ export default class FeaturePipeline {
 
         const self = this
         const expiryInSeconds = Math.min(...state.layoutToUse.layers.map(l => l.maxAgeOfCache))
-        for (const layer of state.layoutToUse.layers) {
-            TiledFromLocalStorageSource.cleanCacheForLayer(layer)
-        }
         this.oldestAllowedDate = new Date(new Date().getTime() - expiryInSeconds);
         this.osmSourceZoomLevel = state.osmApiTileSize.data;
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
@@ -153,22 +149,22 @@ export default class FeaturePipeline {
                 continue
             }
             
-            this.localStorageSavers.set(filteredLayer.layerDef.id,  new SaveTileToLocalStorageActor(filteredLayer.layerDef.id))
+            const localTileSaver =  new SaveTileToLocalStorageActor(filteredLayer)
+            this.localStorageSavers.set(filteredLayer.layerDef.id, localTileSaver)
 
             if (source.geojsonSource === undefined) {
                 // This is an OSM layer
                 // We load the cached values and register them
                 // Getting data from upstream happens a bit lower
-                new TiledFromLocalStorageSource(filteredLayer,
-                    (src) => {
-                        new RegisteringAllFromFeatureSourceActor(src)
-                        hierarchy.registerTile(src);
-                        src.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(src))
-                    }, state)
-
-                TiledFromLocalStorageSource.GetFreshnesses(id).forEach((value, key) => {
-                    self.freshnesses.get(id).addTileLoad(key, value)
-                })
+                localTileSaver.LoadTilesFromDisk(
+                    state.currentBounds,
+                    (tileIndex, freshness) => self.freshnesses.get(id).addTileLoad(tileIndex, freshness),
+                    (tile) => {
+                        new RegisteringAllFromFeatureSourceActor(tile)
+                        hierarchy.registerTile(tile);
+                        tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                    }
+                )
 
                 continue
             }
