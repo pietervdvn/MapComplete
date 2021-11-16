@@ -1,216 +1,216 @@
 {
-  "artwork": {
-    "presets": {
-      "0": {
-        "title": "Dzieło sztuki"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "Dzieło sztuki <i>{name}</i>"
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Dzieło sztuki"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Dzieło sztuki <i>{name}</i>"
+                }
+            },
+            "render": "Dzieło sztuki"
         }
-      },
-      "render": "Dzieło sztuki"
-    }
-  },
-  "bench": {
-    "name": "Ławki",
-    "presets": {
-      "0": {
-        "title": "Ławka"
-      }
     },
-    "tagRenderings": {
-      "bench-backrest": {
-        "mappings": {
-          "0": {
-            "then": "Oparcie: Tak"
-          },
-          "1": {
-            "then": "Oparcie: Nie"
-          }
+    "bench": {
+        "name": "Ławki",
+        "presets": {
+            "0": {
+                "title": "Ławka"
+            }
         },
-        "question": "Czy ta ławka ma oparcie?"
-      },
-      "bench-colour": {
-        "mappings": {
-          "0": {
-            "then": "Kolor: brązowy"
-          },
-          "1": {
-            "then": "Kolor: zielony"
-          },
-          "2": {
-            "then": "Kolor: szary"
-          },
-          "3": {
-            "then": "Kolor: biały"
-          },
-          "4": {
-            "then": "Kolor: czerwony"
-          },
-          "5": {
-            "then": "Kolor: czarny"
-          },
-          "6": {
-            "then": "Kolor: niebieski"
-          },
-          "7": {
-            "then": "Kolor: żółty"
-          }
+        "tagRenderings": {
+            "bench-backrest": {
+                "mappings": {
+                    "0": {
+                        "then": "Oparcie: Tak"
+                    },
+                    "1": {
+                        "then": "Oparcie: Nie"
+                    }
+                },
+                "question": "Czy ta ławka ma oparcie?"
+            },
+            "bench-colour": {
+                "mappings": {
+                    "0": {
+                        "then": "Kolor: brązowy"
+                    },
+                    "1": {
+                        "then": "Kolor: zielony"
+                    },
+                    "2": {
+                        "then": "Kolor: szary"
+                    },
+                    "3": {
+                        "then": "Kolor: biały"
+                    },
+                    "4": {
+                        "then": "Kolor: czerwony"
+                    },
+                    "5": {
+                        "then": "Kolor: czarny"
+                    },
+                    "6": {
+                        "then": "Kolor: niebieski"
+                    },
+                    "7": {
+                        "then": "Kolor: żółty"
+                    }
+                },
+                "question": "Jaki kolor ma ta ławka?",
+                "render": "Kolor: {colour}"
+            },
+            "bench-direction": {
+                "question": "W jakim kierunku patrzysz siedząc na ławce?",
+                "render": "Siedząc na ławce, patrzy się w kierunku {direction}°."
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Materiał: drewno"
+                    },
+                    "1": {
+                        "then": "Materiał: metal"
+                    },
+                    "2": {
+                        "then": "Materiał: kamień"
+                    },
+                    "3": {
+                        "then": "Materiał: beton"
+                    },
+                    "4": {
+                        "then": "Materiał: plastik"
+                    },
+                    "5": {
+                        "then": "Materiał: stal"
+                    }
+                },
+                "question": "Z czego wykonana jest ławka (siedzisko)?",
+                "render": "Materiał: {material}"
+            },
+            "bench-seats": {
+                "question": "Ile siedzeń ma ta ławka?",
+                "render": "{seats} siedzeń"
+            },
+            "bench-survey:date": {
+                "question": "Kiedy ostatnio badano tę ławkę?",
+                "render": "Ławka ta była ostatnio badana w dniu {survey:date}"
+            }
         },
-        "question": "Jaki kolor ma ta ławka?",
-        "render": "Kolor: {colour}"
-      },
-      "bench-direction": {
-        "question": "W jakim kierunku patrzysz siedząc na ławce?",
-        "render": "Siedząc na ławce, patrzy się w kierunku {direction}°."
-      },
-      "bench-material": {
-        "mappings": {
-          "0": {
-            "then": "Materiał: drewno"
-          },
-          "1": {
-            "then": "Materiał: metal"
-          },
-          "2": {
-            "then": "Materiał: kamień"
-          },
-          "3": {
-            "then": "Materiał: beton"
-          },
-          "4": {
-            "then": "Materiał: plastik"
-          },
-          "5": {
-            "then": "Materiał: stal"
-          }
-        },
-        "question": "Z czego wykonana jest ławka (siedzisko)?",
-        "render": "Materiał: {material}"
-      },
-      "bench-seats": {
-        "question": "Ile siedzeń ma ta ławka?",
-        "render": "{seats} siedzeń"
-      },
-      "bench-survey:date": {
-        "question": "Kiedy ostatnio badano tę ławkę?",
-        "render": "Ławka ta była ostatnio badana w dniu {survey:date}"
-      }
-    },
-    "title": {
-      "render": "Ławka"
-    }
-  },
-  "bench_at_pt": {
-    "name": "Ławki na przystankach komunikacji miejskiej",
-    "tagRenderings": {
-      "bench_at_pt-name": {
-        "render": "{name}"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "Ławka na przystanku komunikacji miejskiej"
+        "title": {
+            "render": "Ławka"
         }
-      },
-      "render": "Ławka"
-    }
-  },
-  "bicycle_library": {
-    "description": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
-  },
-  "bike_parking": {
-    "name": "Parking dla rowerów",
-    "presets": {
-      "0": {
-        "title": "Parking dla rowerów"
-      }
     },
-    "tagRenderings": {
-      "Bicycle parking type": {
-        "question": "Jaki jest typ tego parkingu dla rowerów?",
-        "render": "Jest to parking rowerowy typu: {bicycle_parking}"
-      },
-      "Underground?": {
-        "question": "Jaka jest względna lokalizacja tego parkingu rowerowego?"
-      }
-    },
-    "title": {
-      "render": "Parking dla rowerów"
-    }
-  },
-  "bike_repair_station": {
-    "presets": {
-      "0": {
-        "description": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.<h3>Przykłady pompek rowerowych</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "title": "Pompka do roweru"
-      },
-      "1": {
-        "title": "Stacja naprawy rowerów i pompka"
-      }
-    },
-    "tagRenderings": {
-      "Operational status": {
-        "mappings": {
-          "0": {
-            "then": "Pompka rowerowa jest zepsuta"
-          },
-          "1": {
-            "then": "Pompka rowerowa jest sprawna"
-          }
+    "bench_at_pt": {
+        "name": "Ławki na przystankach komunikacji miejskiej",
+        "tagRenderings": {
+            "bench_at_pt-name": {
+                "render": "{name}"
+            }
         },
-        "question": "Czy pompka rowerowa jest nadal sprawna?"
-      },
-      "bike_repair_station-electrical_pump": {
-        "mappings": {
-          "0": {
-            "then": "Pompa ręczna"
-          },
-          "1": {
-            "then": "Pompka elektryczna"
-          }
-        },
-        "question": "Czy jest to elektryczna pompka do roweru?"
-      },
-      "bike_repair_station-manometer": {
-        "mappings": {
-          "0": {
-            "then": "Jest manometr"
-          },
-          "1": {
-            "then": "Nie ma manometru"
-          },
-          "2": {
-            "then": "Jest manometr, ale jest uszkodzony"
-          }
-        },
-        "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
-      },
-      "bike_repair_station-valves": {
-        "question": "Jakie zawory są obsługiwane?",
-        "render": "Ta pompka obsługuje następujące zawory: {valves}"
-      }
-    }
-  },
-  "ghost_bike": {
-    "name": "Duch roweru",
-    "title": {
-      "render": "Duch roweru"
-    }
-  },
-  "shops": {
-    "tagRenderings": {
-      "shops-shop": {
-        "mappings": {
-          "5": {
-            "then": "Warsztat samochodowy"
-          }
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Ławka na przystanku komunikacji miejskiej"
+                }
+            },
+            "render": "Ławka"
         }
-      }
+    },
+    "bicycle_library": {
+        "description": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
+    },
+    "bike_parking": {
+        "name": "Parking dla rowerów",
+        "presets": {
+            "0": {
+                "title": "Parking dla rowerów"
+            }
+        },
+        "tagRenderings": {
+            "Bicycle parking type": {
+                "question": "Jaki jest typ tego parkingu dla rowerów?",
+                "render": "Jest to parking rowerowy typu: {bicycle_parking}"
+            },
+            "Underground?": {
+                "question": "Jaka jest względna lokalizacja tego parkingu rowerowego?"
+            }
+        },
+        "title": {
+            "render": "Parking dla rowerów"
+        }
+    },
+    "bike_repair_station": {
+        "presets": {
+            "0": {
+                "description": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.<h3>Przykłady pompek rowerowych</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "title": "Pompka do roweru"
+            },
+            "1": {
+                "title": "Stacja naprawy rowerów i pompka"
+            }
+        },
+        "tagRenderings": {
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Pompka rowerowa jest zepsuta"
+                    },
+                    "1": {
+                        "then": "Pompka rowerowa jest sprawna"
+                    }
+                },
+                "question": "Czy pompka rowerowa jest nadal sprawna?"
+            },
+            "bike_repair_station-electrical_pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Pompa ręczna"
+                    },
+                    "1": {
+                        "then": "Pompka elektryczna"
+                    }
+                },
+                "question": "Czy jest to elektryczna pompka do roweru?"
+            },
+            "bike_repair_station-manometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Jest manometr"
+                    },
+                    "1": {
+                        "then": "Nie ma manometru"
+                    },
+                    "2": {
+                        "then": "Jest manometr, ale jest uszkodzony"
+                    }
+                },
+                "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
+            },
+            "bike_repair_station-valves": {
+                "question": "Jakie zawory są obsługiwane?",
+                "render": "Ta pompka obsługuje następujące zawory: {valves}"
+            }
+        }
+    },
+    "ghost_bike": {
+        "name": "Duch roweru",
+        "title": {
+            "render": "Duch roweru"
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Warsztat samochodowy"
+                    }
+                }
+            }
+        }
     }
-  }
 }

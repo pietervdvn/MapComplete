@@ -1,34 +1,34 @@
 {
-  "undefined": {
-    "email": {
-      "question": "Vad är e-postadressen till {name}?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "Ligger under jorden"
+    "undefined": {
+        "email": {
+            "question": "Vad är e-postadressen till {name}?"
         },
-        "1": {
-          "then": "Ligger på bottenvåningen"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Ligger under jorden"
+                },
+                "1": {
+                    "then": "Ligger på bottenvåningen"
+                },
+                "2": {
+                    "then": "Ligger på bottenvåningen"
+                },
+                "3": {
+                    "then": "Ligger på första våningen"
+                }
+            },
+            "render": "Ligger på {level}:e våningen"
         },
-        "2": {
-          "then": "Ligger på bottenvåningen"
+        "opening_hours": {
+            "question": "Vilka är öppettiderna för {name}?",
+            "render": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
         },
-        "3": {
-          "then": "Ligger på första våningen"
+        "phone": {
+            "question": "Vad är telefonnumret till {name}?"
+        },
+        "website": {
+            "question": "Vad är webbplatsen för {name}?"
         }
-      },
-      "render": "Ligger på {level}:e våningen"
-    },
-    "opening_hours": {
-      "question": "Vilka är öppettiderna för {name}?",
-      "render": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
-    },
-    "phone": {
-      "question": "Vad är telefonnumret till {name}?"
-    },
-    "website": {
-      "question": "Vad är webbplatsen för {name}?"
     }
-  }
 }

@@ -1,208 +1,208 @@
 {
-  "bench": {
-    "name": "长椅",
-    "presets": {
-      "0": {
-        "title": "长椅"
-      }
-    },
-    "tagRenderings": {
-      "bench-backrest": {
-        "mappings": {
-          "0": {
-            "then": "靠背：有"
-          },
-          "1": {
-            "then": "靠背：无"
-          }
+    "bench": {
+        "name": "长椅",
+        "presets": {
+            "0": {
+                "title": "长椅"
+            }
         },
-        "question": "这个长椅有靠背吗？"
-      },
-      "bench-colour": {
-        "mappings": {
-          "0": {
-            "then": "颜色：棕"
-          },
-          "1": {
-            "then": "颜色：绿"
-          },
-          "2": {
-            "then": "颜色：灰"
-          },
-          "3": {
-            "then": "颜色：白"
-          },
-          "4": {
-            "then": "颜色：红"
-          },
-          "5": {
-            "then": "颜色：黑"
-          },
-          "6": {
-            "then": "颜色：蓝"
-          },
-          "7": {
-            "then": "颜色：黄"
-          }
+        "tagRenderings": {
+            "bench-backrest": {
+                "mappings": {
+                    "0": {
+                        "then": "靠背：有"
+                    },
+                    "1": {
+                        "then": "靠背：无"
+                    }
+                },
+                "question": "这个长椅有靠背吗？"
+            },
+            "bench-colour": {
+                "mappings": {
+                    "0": {
+                        "then": "颜色：棕"
+                    },
+                    "1": {
+                        "then": "颜色：绿"
+                    },
+                    "2": {
+                        "then": "颜色：灰"
+                    },
+                    "3": {
+                        "then": "颜色：白"
+                    },
+                    "4": {
+                        "then": "颜色：红"
+                    },
+                    "5": {
+                        "then": "颜色：黑"
+                    },
+                    "6": {
+                        "then": "颜色：蓝"
+                    },
+                    "7": {
+                        "then": "颜色：黄"
+                    }
+                },
+                "question": "这个长椅是什么颜色的？",
+                "render": "颜色： {colour}"
+            },
+            "bench-direction": {
+                "question": "坐在长椅上的时候你目视的方向是哪边？",
+                "render": "坐在长椅上的时候目视方向为 {direction}°方位。"
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "材质：木"
+                    },
+                    "1": {
+                        "then": "材质：金属"
+                    },
+                    "2": {
+                        "then": "材质：石头"
+                    },
+                    "3": {
+                        "then": "材质：混凝土"
+                    },
+                    "4": {
+                        "then": "材质：塑料"
+                    },
+                    "5": {
+                        "then": "材质：不锈钢"
+                    }
+                },
+                "question": "这个长椅（或座椅）是用什么材料做的？",
+                "render": "材质: {material}"
+            },
+            "bench-seats": {
+                "question": "这个长椅有几个座位？"
+            },
+            "bench-survey:date": {
+                "question": "上次对这个长椅实地调查是什么时候？",
+                "render": "这个长椅于 {survey:date}最后一次实地调查"
+            }
         },
-        "question": "这个长椅是什么颜色的？",
-        "render": "颜色： {colour}"
-      },
-      "bench-direction": {
-        "question": "坐在长椅上的时候你目视的方向是哪边？",
-        "render": "坐在长椅上的时候目视方向为 {direction}°方位。"
-      },
-      "bench-material": {
-        "mappings": {
-          "0": {
-            "then": "材质：木"
-          },
-          "1": {
-            "then": "材质：金属"
-          },
-          "2": {
-            "then": "材质：石头"
-          },
-          "3": {
-            "then": "材质：混凝土"
-          },
-          "4": {
-            "then": "材质：塑料"
-          },
-          "5": {
-            "then": "材质：不锈钢"
-          }
-        },
-        "question": "这个长椅（或座椅）是用什么材料做的？",
-        "render": "材质: {material}"
-      },
-      "bench-seats": {
-        "question": "这个长椅有几个座位？"
-      },
-      "bench-survey:date": {
-        "question": "上次对这个长椅实地调查是什么时候？",
-        "render": "这个长椅于 {survey:date}最后一次实地调查"
-      }
-    },
-    "title": {
-      "render": "长椅"
-    }
-  },
-  "bench_at_pt": {
-    "name": "在公交站点的长椅",
-    "tagRenderings": {
-      "bench_at_pt-bench_type": {
-        "mappings": {
-          "1": {
-            "then": "站立长凳"
-          }
+        "title": {
+            "render": "长椅"
         }
-      },
-      "bench_at_pt-name": {
-        "render": "{name}"
-      }
     },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "在公交站点的长椅"
+    "bench_at_pt": {
+        "name": "在公交站点的长椅",
+        "tagRenderings": {
+            "bench_at_pt-bench_type": {
+                "mappings": {
+                    "1": {
+                        "then": "站立长凳"
+                    }
+                }
+            },
+            "bench_at_pt-name": {
+                "render": "{name}"
+            }
         },
-        "1": {
-          "then": "在庇护所的长椅"
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "在公交站点的长椅"
+                },
+                "1": {
+                    "then": "在庇护所的长椅"
+                }
+            },
+            "render": "长椅"
         }
-      },
-      "render": "长椅"
-    }
-  },
-  "bicycle_library": {
-    "tagRenderings": {
-      "bicycle-library-target-group": {
-        "question": "谁可以从这里借自行车？"
-      }
-    }
-  },
-  "bicycle_tube_vending_machine": {
-    "tagRenderings": {
-      "Still in use?": {
-        "mappings": {
-          "0": {
-            "then": "这个借还机正常工作"
-          },
-          "1": {
-            "then": "这个借还机已经损坏"
-          },
-          "2": {
-            "then": "这个借还机被关闭了"
-          }
-        }
-      }
-    }
-  },
-  "bike_cafe": {
-    "name": "自行车咖啡",
-    "presets": {
-      "0": {
-        "title": "自行车咖啡"
-      }
     },
-    "tagRenderings": {
-      "bike_cafe-bike-pump": {
-        "mappings": {
-          "0": {
-            "then": "这家自行车咖啡为每个人提供打气筒"
-          },
-          "1": {
-            "then": "这家自行车咖啡不为每个人提供打气筒"
-          }
-        },
-        "question": "这家自行车咖啡为每个使用者提供打气筒吗？"
-      },
-      "bike_cafe-email": {
-        "question": "{name}的电子邮箱是什么？"
-      },
-      "bike_cafe-name": {
-        "question": "这个自行车咖啡的名字是什么？",
-        "render": "这家自行车咖啡叫做 {name}"
-      },
-      "bike_cafe-opening_hours": {
-        "question": "这家自行车咖啡什么时候开门营业？"
-      },
-      "bike_cafe-phone": {
-        "question": "{name}的电话号码是什么？"
-      },
-      "bike_cafe-repair-service": {
-        "mappings": {
-          "0": {
-            "then": "这家自行车咖啡可以修车"
-          },
-          "1": {
-            "then": "这家自行车咖啡不能修车"
-          }
-        },
-        "question": "这家自行车咖啡t提供修车服务吗？"
-      },
-      "bike_cafe-repair-tools": {
-        "mappings": {
-          "0": {
-            "then": "这家自行车咖啡为DIY修理者提供工具"
-          },
-          "1": {
-            "then": "这家自行车咖啡不为DIY修理者提供工具"
-          }
-        },
-        "question": "这里有供你修车用的工具吗？"
-      },
-      "bike_cafe-website": {
-        "question": "{name}的网站是什么？"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "自行车咖啡 <i>{name}</i>"
+    "bicycle_library": {
+        "tagRenderings": {
+            "bicycle-library-target-group": {
+                "question": "谁可以从这里借自行车？"
+            }
         }
-      },
-      "render": "自行车咖啡"
+    },
+    "bicycle_tube_vending_machine": {
+        "tagRenderings": {
+            "Still in use?": {
+                "mappings": {
+                    "0": {
+                        "then": "这个借还机正常工作"
+                    },
+                    "1": {
+                        "then": "这个借还机已经损坏"
+                    },
+                    "2": {
+                        "then": "这个借还机被关闭了"
+                    }
+                }
+            }
+        }
+    },
+    "bike_cafe": {
+        "name": "自行车咖啡",
+        "presets": {
+            "0": {
+                "title": "自行车咖啡"
+            }
+        },
+        "tagRenderings": {
+            "bike_cafe-bike-pump": {
+                "mappings": {
+                    "0": {
+                        "then": "这家自行车咖啡为每个人提供打气筒"
+                    },
+                    "1": {
+                        "then": "这家自行车咖啡不为每个人提供打气筒"
+                    }
+                },
+                "question": "这家自行车咖啡为每个使用者提供打气筒吗？"
+            },
+            "bike_cafe-email": {
+                "question": "{name}的电子邮箱是什么？"
+            },
+            "bike_cafe-name": {
+                "question": "这个自行车咖啡的名字是什么？",
+                "render": "这家自行车咖啡叫做 {name}"
+            },
+            "bike_cafe-opening_hours": {
+                "question": "这家自行车咖啡什么时候开门营业？"
+            },
+            "bike_cafe-phone": {
+                "question": "{name}的电话号码是什么？"
+            },
+            "bike_cafe-repair-service": {
+                "mappings": {
+                    "0": {
+                        "then": "这家自行车咖啡可以修车"
+                    },
+                    "1": {
+                        "then": "这家自行车咖啡不能修车"
+                    }
+                },
+                "question": "这家自行车咖啡t提供修车服务吗？"
+            },
+            "bike_cafe-repair-tools": {
+                "mappings": {
+                    "0": {
+                        "then": "这家自行车咖啡为DIY修理者提供工具"
+                    },
+                    "1": {
+                        "then": "这家自行车咖啡不为DIY修理者提供工具"
+                    }
+                },
+                "question": "这里有供你修车用的工具吗？"
+            },
+            "bike_cafe-website": {
+                "question": "{name}的网站是什么？"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "自行车咖啡 <i>{name}</i>"
+                }
+            },
+            "render": "自行车咖啡"
+        }
     }
-  }
 }

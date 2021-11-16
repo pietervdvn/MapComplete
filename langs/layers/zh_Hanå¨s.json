@@ -1,9 +1,9 @@
 {
-  "bench": {
-    "tagRenderings": {
-      "bench-material": {
-        "render": "材质: {material}"
-      }
+    "bench": {
+        "tagRenderings": {
+            "bench-material": {
+                "render": "材质: {material}"
+            }
+        }
     }
-  }
 }

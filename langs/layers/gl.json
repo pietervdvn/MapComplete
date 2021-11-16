@@ -1,403 +1,403 @@
 {
-  "artwork": {
-    "presets": {
-      "0": {
-        "title": "Obra de arte"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "Obra de arte <i>{name}</i>"
+    "artwork": {
+        "presets": {
+            "0": {
+                "title": "Obra de arte"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Obra de arte <i>{name}</i>"
+                }
+            },
+            "render": "Obra de arte"
         }
-      },
-      "render": "Obra de arte"
-    }
-  },
-  "bike_cafe": {
-    "name": "Café de ciclistas",
-    "presets": {
-      "0": {
-        "title": "Café de ciclistas"
-      }
     },
-    "tagRenderings": {
-      "bike_cafe-bike-pump": {
-        "mappings": {
-          "0": {
-            "then": "Este café de ciclistas ofrece unha bomba de ar"
-          },
-          "1": {
-            "then": "Este café de ciclistas non ofrece unha bomba de ar"
-          }
+    "bike_cafe": {
+        "name": "Café de ciclistas",
+        "presets": {
+            "0": {
+                "title": "Café de ciclistas"
+            }
         },
-        "question": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?"
-      },
-      "bike_cafe-email": {
-        "question": "Cal é o enderezo de correo electrónico de {name}?"
-      },
-      "bike_cafe-name": {
-        "question": "Cal é o nome deste café de ciclistas?",
-        "render": "Este café de ciclistas chámase {name}"
-      },
-      "bike_cafe-phone": {
-        "question": "Cal é o número de teléfono de {name}?"
-      },
-      "bike_cafe-repair-service": {
-        "mappings": {
-          "0": {
-            "then": "Este café de ciclistas arranxa bicicletas"
-          },
-          "1": {
-            "then": "Este café de ciclistas non arranxa bicicletas"
-          }
+        "tagRenderings": {
+            "bike_cafe-bike-pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Este café de ciclistas ofrece unha bomba de ar"
+                    },
+                    "1": {
+                        "then": "Este café de ciclistas non ofrece unha bomba de ar"
+                    }
+                },
+                "question": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?"
+            },
+            "bike_cafe-email": {
+                "question": "Cal é o enderezo de correo electrónico de {name}?"
+            },
+            "bike_cafe-name": {
+                "question": "Cal é o nome deste café de ciclistas?",
+                "render": "Este café de ciclistas chámase {name}"
+            },
+            "bike_cafe-phone": {
+                "question": "Cal é o número de teléfono de {name}?"
+            },
+            "bike_cafe-repair-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Este café de ciclistas arranxa bicicletas"
+                    },
+                    "1": {
+                        "then": "Este café de ciclistas non arranxa bicicletas"
+                    }
+                },
+                "question": "Este café de ciclistas arranxa bicicletas?"
+            },
+            "bike_cafe-repair-tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Hai ferramentas aquí para arranxar a túa propia bicicleta"
+                    },
+                    "1": {
+                        "then": "Non hai ferramentas aquí para arranxar a túa propia bicicleta"
+                    }
+                },
+                "question": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
+            },
+            "bike_cafe-website": {
+                "question": "Cal é a páxina web de {name}?"
+            }
         },
-        "question": "Este café de ciclistas arranxa bicicletas?"
-      },
-      "bike_cafe-repair-tools": {
-        "mappings": {
-          "0": {
-            "then": "Hai ferramentas aquí para arranxar a túa propia bicicleta"
-          },
-          "1": {
-            "then": "Non hai ferramentas aquí para arranxar a túa propia bicicleta"
-          }
-        },
-        "question": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
-      },
-      "bike_cafe-website": {
-        "question": "Cal é a páxina web de {name}?"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "Café de ciclistas <i>{name}</i>"
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Café de ciclistas <i>{name}</i>"
+                }
+            },
+            "render": "Café de ciclistas"
         }
-      },
-      "render": "Café de ciclistas"
-    }
-  },
-  "bike_parking": {
-    "name": "Aparcadoiro de bicicletas",
-    "presets": {
-      "0": {
-        "title": "Aparcadoiro de bicicletas"
-      }
     },
-    "tagRenderings": {
-      "Bicycle parking type": {
-        "mappings": {
-          "0": {
-            "then": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
-          },
-          "1": {
-            "then": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
-          },
-          "2": {
-            "then": "Cadeado para guiador <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
-          },
-          "3": {
-            "then": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
-          },
-          "4": {
-            "then": "Dobre cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
-          },
-          "5": {
-            "then": "Abeiro <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
-          }
+    "bike_parking": {
+        "name": "Aparcadoiro de bicicletas",
+        "presets": {
+            "0": {
+                "title": "Aparcadoiro de bicicletas"
+            }
         },
-        "question": "Que tipo de aparcadoiro de bicicletas é?",
-        "render": "Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}"
-      },
-      "Capacity": {
-        "question": "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?",
-        "render": "Lugar para {capacity} bicicletas"
-      },
-      "Cargo bike capacity?": {
-        "question": "Cantas bicicletas de carga caben neste aparcadoiro de bicicletas?",
-        "render": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga"
-      },
-      "Cargo bike spaces?": {
-        "mappings": {
-          "0": {
-            "then": "Este aparcadoiro ten espazo para bicicletas de carga."
-          },
-          "1": {
-            "then": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga."
-          },
-          "2": {
-            "then": "Non está permitido aparcar bicicletas de carga"
-          }
+        "tagRenderings": {
+            "Bicycle parking type": {
+                "mappings": {
+                    "0": {
+                        "then": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
+                    },
+                    "1": {
+                        "then": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                    },
+                    "2": {
+                        "then": "Cadeado para guiador <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                    },
+                    "3": {
+                        "then": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                    },
+                    "4": {
+                        "then": "Dobre cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                    },
+                    "5": {
+                        "then": "Abeiro <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                    }
+                },
+                "question": "Que tipo de aparcadoiro de bicicletas é?",
+                "render": "Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}"
+            },
+            "Capacity": {
+                "question": "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?",
+                "render": "Lugar para {capacity} bicicletas"
+            },
+            "Cargo bike capacity?": {
+                "question": "Cantas bicicletas de carga caben neste aparcadoiro de bicicletas?",
+                "render": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga"
+            },
+            "Cargo bike spaces?": {
+                "mappings": {
+                    "0": {
+                        "then": "Este aparcadoiro ten espazo para bicicletas de carga."
+                    },
+                    "1": {
+                        "then": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga."
+                    },
+                    "2": {
+                        "then": "Non está permitido aparcar bicicletas de carga"
+                    }
+                },
+                "question": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?"
+            },
+            "Is covered?": {
+                "mappings": {
+                    "0": {
+                        "then": "Este aparcadoiro está cuberto (ten un teito)"
+                    },
+                    "1": {
+                        "then": "Este aparcadoiro non está cuberto"
+                    }
+                },
+                "question": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores."
+            }
         },
-        "question": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?"
-      },
-      "Is covered?": {
-        "mappings": {
-          "0": {
-            "then": "Este aparcadoiro está cuberto (ten un teito)"
-          },
-          "1": {
-            "then": "Este aparcadoiro non está cuberto"
-          }
-        },
-        "question": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores."
-      }
-    },
-    "title": {
-      "render": "Aparcadoiro de bicicletas"
-    }
-  },
-  "bike_repair_station": {
-    "name": "Estación de bicicletas (arranxo, bomba de ar ou ambos)",
-    "presets": {
-      "0": {
-        "title": "Bomba de ar"
-      },
-      "1": {
-        "title": "Estación de arranxo de bicicletas con bomba de ar"
-      },
-      "2": {
-        "title": "Estación de arranxo de bicicletas sin bomba de ar"
-      }
-    },
-    "tagRenderings": {
-      "Operational status": {
-        "mappings": {
-          "0": {
-            "then": "A bomba de ar está estragada"
-          },
-          "1": {
-            "then": "A bomba de ar está operativa"
-          }
-        },
-        "question": "Segue a funcionar a bomba de ar?"
-      },
-      "bike_repair_station-available-services": {
-        "mappings": {
-          "0": {
-            "then": "Só hai unha bomba de ar presente"
-          },
-          "1": {
-            "then": "Só hai ferramentas (desaparafusadores, alicates...) presentes"
-          },
-          "2": {
-            "then": "Hai ferramentas e unha bomba de ar presentes"
-          }
-        },
-        "question": "Que servizos están dispoñíbeis nesta estación de bicicletas?"
-      },
-      "bike_repair_station-bike-chain-tool": {
-        "mappings": {
-          "0": {
-            "then": "Hai unha ferramenta para a cadea"
-          },
-          "1": {
-            "then": "Non hai unha ferramenta para a cadea"
-          }
-        },
-        "question": "Esta estación de arranxo de bicicletas ten unha ferramenta especial para arranxar a cadea da túa bicicleta?"
-      },
-      "bike_repair_station-bike-stand": {
-        "mappings": {
-          "0": {
-            "then": "Hai un guindastre ou soporte"
-          },
-          "1": {
-            "then": "Non hai un guindastre ou soporte"
-          }
-        },
-        "question": "Esta estación de bicicletas ten un guindastre para pendurar a túa bicicleta ou un soporte para elevala?"
-      },
-      "bike_repair_station-electrical_pump": {
-        "mappings": {
-          "0": {
-            "then": "Bomba de ar manual"
-          },
-          "1": {
-            "then": "Bomba de ar eléctrica"
-          }
-        },
-        "question": "Esta é unha bomba de ar eléctrica?"
-      },
-      "bike_repair_station-manometer": {
-        "mappings": {
-          "0": {
-            "then": "Hai manómetro"
-          },
-          "1": {
-            "then": "Non hai manómetro"
-          },
-          "2": {
-            "then": "Hai manómetro pero está estragado"
-          }
-        },
-        "question": "Ten a bomba de ar un indicador de presión ou un manómetro?"
-      },
-      "bike_repair_station-valves": {
-        "mappings": {
-          "0": {
-            "then": "Sclaverand (tamén coñecido como Presta)"
-          },
-          "1": {
-            "then": "Dunlop"
-          },
-          "2": {
-            "then": "Schrader (para automóbiles)"
-          }
-        },
-        "question": "Que válvulas son compatíbeis?",
-        "render": "Esta bomba de ar admite as seguintes válvulas: {valves}"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "Estación de arranxo de bicicletas"
-        },
-        "1": {
-          "then": "Estación de arranxo de bicicletas"
-        },
-        "2": {
-          "then": "Bomba de ar estragada"
-        },
-        "3": {
-          "then": "Bomba de ar <i>{name}</i>"
-        },
-        "4": {
-          "then": "Bomba de ar"
+        "title": {
+            "render": "Aparcadoiro de bicicletas"
         }
-      },
-      "render": "Estación de bicicletas (arranxo e bomba de ar)"
-    }
-  },
-  "bike_shop": {
-    "name": "Tenda/arranxo de bicicletas",
-    "presets": {
-      "0": {
-        "title": "Tenda/arranxo de bicicletas"
-      }
     },
-    "tagRenderings": {
-      "bike_repair_bike-pump-service": {
-        "mappings": {
-          "0": {
-            "then": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa"
-          },
-          "1": {
-            "then": "Esta tenda non ofrece unha bomba de ar para uso de calquera persoa"
-          }
+    "bike_repair_station": {
+        "name": "Estación de bicicletas (arranxo, bomba de ar ou ambos)",
+        "presets": {
+            "0": {
+                "title": "Bomba de ar"
+            },
+            "1": {
+                "title": "Estación de arranxo de bicicletas con bomba de ar"
+            },
+            "2": {
+                "title": "Estación de arranxo de bicicletas sin bomba de ar"
+            }
         },
-        "question": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa?"
-      },
-      "bike_repair_rents-bikes": {
-        "mappings": {
-          "0": {
-            "then": "Esta tenda aluga bicicletas"
-          },
-          "1": {
-            "then": "Esta tenda non aluga bicicletas"
-          }
+        "tagRenderings": {
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "A bomba de ar está estragada"
+                    },
+                    "1": {
+                        "then": "A bomba de ar está operativa"
+                    }
+                },
+                "question": "Segue a funcionar a bomba de ar?"
+            },
+            "bike_repair_station-available-services": {
+                "mappings": {
+                    "0": {
+                        "then": "Só hai unha bomba de ar presente"
+                    },
+                    "1": {
+                        "then": "Só hai ferramentas (desaparafusadores, alicates...) presentes"
+                    },
+                    "2": {
+                        "then": "Hai ferramentas e unha bomba de ar presentes"
+                    }
+                },
+                "question": "Que servizos están dispoñíbeis nesta estación de bicicletas?"
+            },
+            "bike_repair_station-bike-chain-tool": {
+                "mappings": {
+                    "0": {
+                        "then": "Hai unha ferramenta para a cadea"
+                    },
+                    "1": {
+                        "then": "Non hai unha ferramenta para a cadea"
+                    }
+                },
+                "question": "Esta estación de arranxo de bicicletas ten unha ferramenta especial para arranxar a cadea da túa bicicleta?"
+            },
+            "bike_repair_station-bike-stand": {
+                "mappings": {
+                    "0": {
+                        "then": "Hai un guindastre ou soporte"
+                    },
+                    "1": {
+                        "then": "Non hai un guindastre ou soporte"
+                    }
+                },
+                "question": "Esta estación de bicicletas ten un guindastre para pendurar a túa bicicleta ou un soporte para elevala?"
+            },
+            "bike_repair_station-electrical_pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Bomba de ar manual"
+                    },
+                    "1": {
+                        "then": "Bomba de ar eléctrica"
+                    }
+                },
+                "question": "Esta é unha bomba de ar eléctrica?"
+            },
+            "bike_repair_station-manometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Hai manómetro"
+                    },
+                    "1": {
+                        "then": "Non hai manómetro"
+                    },
+                    "2": {
+                        "then": "Hai manómetro pero está estragado"
+                    }
+                },
+                "question": "Ten a bomba de ar un indicador de presión ou un manómetro?"
+            },
+            "bike_repair_station-valves": {
+                "mappings": {
+                    "0": {
+                        "then": "Sclaverand (tamén coñecido como Presta)"
+                    },
+                    "1": {
+                        "then": "Dunlop"
+                    },
+                    "2": {
+                        "then": "Schrader (para automóbiles)"
+                    }
+                },
+                "question": "Que válvulas son compatíbeis?",
+                "render": "Esta bomba de ar admite as seguintes válvulas: {valves}"
+            }
         },
-        "question": "Esta tenda aluga bicicletas?"
-      },
-      "bike_repair_repairs-bikes": {
-        "mappings": {
-          "0": {
-            "then": "Esta tenda arranxa bicicletas"
-          },
-          "1": {
-            "then": "Esta tenda non arranxa bicicletas"
-          },
-          "2": {
-            "then": "Esta tenda só arranxa bicicletas mercadas aquí"
-          },
-          "3": {
-            "then": "Esta tenda só arranxa bicicletas dunha certa marca"
-          }
-        },
-        "question": "Esta tenda arranxa bicicletas?"
-      },
-      "bike_repair_second-hand-bikes": {
-        "mappings": {
-          "0": {
-            "then": "Esta tenda vende bicicletas de segunda man"
-          },
-          "1": {
-            "then": "Esta tenda non vende bicicletas de segunda man"
-          },
-          "2": {
-            "then": "Esta tenda só vende bicicletas de segunda man"
-          }
-        },
-        "question": "Esta tenda vende bicicletas de segunda man?"
-      },
-      "bike_repair_sells-bikes": {
-        "mappings": {
-          "0": {
-            "then": "Esta tenda vende bicicletas"
-          },
-          "1": {
-            "then": "Esta tenda non vende bicicletas"
-          }
-        },
-        "question": "Esta tenda vende bicicletas?"
-      },
-      "bike_repair_tools-service": {
-        "mappings": {
-          "0": {
-            "then": "Hai ferramentas aquí para arranxar a túa propia bicicleta"
-          },
-          "1": {
-            "then": "Non hai ferramentas aquí para arranxar a túa propia bicicleta"
-          }
-        },
-        "question": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
-      },
-      "bike_shop-email": {
-        "question": "Cal é o enderezo de correo electrónico de {name}?"
-      },
-      "bike_shop-name": {
-        "question": "Cal é o nome desta tenda de bicicletas?",
-        "render": "Esta tenda de bicicletas chámase {name}"
-      },
-      "bike_shop-phone": {
-        "question": "Cal é o número de teléfono de {name}?"
-      },
-      "bike_shop-website": {
-        "question": "Cal é a páxina web de {name}?"
-      }
-    },
-    "title": {
-      "mappings": {
-        "3": {
-          "then": "Arranxo de bicicletas <i>{name}</i>"
-        },
-        "4": {
-          "then": "Tenda de bicicletas <i>{name}</i>"
-        },
-        "5": {
-          "then": "Tenda/arranxo de bicicletas <i>{name}</i>"
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Estación de arranxo de bicicletas"
+                },
+                "1": {
+                    "then": "Estación de arranxo de bicicletas"
+                },
+                "2": {
+                    "then": "Bomba de ar estragada"
+                },
+                "3": {
+                    "then": "Bomba de ar <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Bomba de ar"
+                }
+            },
+            "render": "Estación de bicicletas (arranxo e bomba de ar)"
         }
-      },
-      "render": "Tenda/arranxo de bicicletas"
-    }
-  },
-  "drinking_water": {
-    "name": "Auga potábel",
-    "presets": {
-      "0": {
-        "title": "auga potábel"
-      }
     },
-    "title": {
-      "render": "Auga potábel"
+    "bike_shop": {
+        "name": "Tenda/arranxo de bicicletas",
+        "presets": {
+            "0": {
+                "title": "Tenda/arranxo de bicicletas"
+            }
+        },
+        "tagRenderings": {
+            "bike_repair_bike-pump-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa"
+                    },
+                    "1": {
+                        "then": "Esta tenda non ofrece unha bomba de ar para uso de calquera persoa"
+                    }
+                },
+                "question": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa?"
+            },
+            "bike_repair_rents-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda aluga bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta tenda non aluga bicicletas"
+                    }
+                },
+                "question": "Esta tenda aluga bicicletas?"
+            },
+            "bike_repair_repairs-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda arranxa bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta tenda non arranxa bicicletas"
+                    },
+                    "2": {
+                        "then": "Esta tenda só arranxa bicicletas mercadas aquí"
+                    },
+                    "3": {
+                        "then": "Esta tenda só arranxa bicicletas dunha certa marca"
+                    }
+                },
+                "question": "Esta tenda arranxa bicicletas?"
+            },
+            "bike_repair_second-hand-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda vende bicicletas de segunda man"
+                    },
+                    "1": {
+                        "then": "Esta tenda non vende bicicletas de segunda man"
+                    },
+                    "2": {
+                        "then": "Esta tenda só vende bicicletas de segunda man"
+                    }
+                },
+                "question": "Esta tenda vende bicicletas de segunda man?"
+            },
+            "bike_repair_sells-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda vende bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta tenda non vende bicicletas"
+                    }
+                },
+                "question": "Esta tenda vende bicicletas?"
+            },
+            "bike_repair_tools-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Hai ferramentas aquí para arranxar a túa propia bicicleta"
+                    },
+                    "1": {
+                        "then": "Non hai ferramentas aquí para arranxar a túa propia bicicleta"
+                    }
+                },
+                "question": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
+            },
+            "bike_shop-email": {
+                "question": "Cal é o enderezo de correo electrónico de {name}?"
+            },
+            "bike_shop-name": {
+                "question": "Cal é o nome desta tenda de bicicletas?",
+                "render": "Esta tenda de bicicletas chámase {name}"
+            },
+            "bike_shop-phone": {
+                "question": "Cal é o número de teléfono de {name}?"
+            },
+            "bike_shop-website": {
+                "question": "Cal é a páxina web de {name}?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "3": {
+                    "then": "Arranxo de bicicletas <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Tenda de bicicletas <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Tenda/arranxo de bicicletas <i>{name}</i>"
+                }
+            },
+            "render": "Tenda/arranxo de bicicletas"
+        }
+    },
+    "drinking_water": {
+        "name": "Auga potábel",
+        "presets": {
+            "0": {
+                "title": "auga potábel"
+            }
+        },
+        "title": {
+            "render": "Auga potábel"
+        }
+    },
+    "ghost_bike": {
+        "name": "Bicicleta pantasma",
+        "title": {
+            "render": "Bicicleta pantasma"
+        }
     }
-  },
-  "ghost_bike": {
-    "name": "Bicicleta pantasma",
-    "title": {
-      "render": "Bicicleta pantasma"
-    }
-  }
 }

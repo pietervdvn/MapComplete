@@ -1,97 +1,97 @@
 {
-  "undefined": {
-    "description": {
-      "question": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>"
-    },
-    "dog-access": {
-      "mappings": {
-        "0": {
-          "then": "Hunder tillates"
+    "undefined": {
+        "description": {
+            "question": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>"
         },
-        "1": {
-          "then": "Hunder tillates <b>ikke</b>"
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Hunder tillates"
+                },
+                "1": {
+                    "then": "Hunder tillates <b>ikke</b>"
+                },
+                "2": {
+                    "then": "Hunder tillates, men de må være i bånd"
+                },
+                "3": {
+                    "then": "Hunder tillates og kan gå fritt"
+                }
+            },
+            "question": "Tillates hunder i denne forretningen?"
         },
-        "2": {
-          "then": "Hunder tillates, men de må være i bånd"
+        "email": {
+            "question": "Hva er e-postadressen til {name}?"
         },
-        "3": {
-          "then": "Hunder tillates og kan gå fritt"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Under bakken"
+                },
+                "1": {
+                    "then": "På gateplan"
+                },
+                "2": {
+                    "then": "På gateplan"
+                },
+                "3": {
+                    "then": "I andre etasje"
+                }
+            }
+        },
+        "opening_hours": {
+            "question": "Hva er åpningstidene for {name})",
+            "render": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Kontanter godtas her"
+                },
+                "1": {
+                    "then": "Betalingskort godtas her"
+                }
+            },
+            "question": "Hvilke betalingsmetoder godtas her?"
+        },
+        "phone": {
+            "question": "Hva er telefonnummeret til {name}?"
+        },
+        "website": {
+            "question": "Hva er nettsiden til {name}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Dette stedet er spesielt tilpasset rullestolsbrukere"
+                },
+                "1": {
+                    "then": "Dette stedet kan enkelt besøkes med rullestol"
+                },
+                "2": {
+                    "then": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett"
+                },
+                "3": {
+                    "then": "Dette stedet er ikke tilgjengelig for besøk med rullestol"
+                }
+            },
+            "question": "Er dette stedet tilgjengelig for rullestoler?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Ingen Wikipedia-side lenket enda"
+                }
+            },
+            "question": "Hva er respektivt Wikipedia-element?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Ikke lenket med Wikipedia"
+                }
+            },
+            "question": "Hva er respektivt element på Wikipedia?"
         }
-      },
-      "question": "Tillates hunder i denne forretningen?"
-    },
-    "email": {
-      "question": "Hva er e-postadressen til {name}?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "Under bakken"
-        },
-        "1": {
-          "then": "På gateplan"
-        },
-        "2": {
-          "then": "På gateplan"
-        },
-        "3": {
-          "then": "I andre etasje"
-        }
-      }
-    },
-    "opening_hours": {
-      "question": "Hva er åpningstidene for {name})",
-      "render": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}"
-    },
-    "payment-options": {
-      "mappings": {
-        "0": {
-          "then": "Kontanter godtas her"
-        },
-        "1": {
-          "then": "Betalingskort godtas her"
-        }
-      },
-      "question": "Hvilke betalingsmetoder godtas her?"
-    },
-    "phone": {
-      "question": "Hva er telefonnummeret til {name}?"
-    },
-    "website": {
-      "question": "Hva er nettsiden til {name}?"
-    },
-    "wheelchair-access": {
-      "mappings": {
-        "0": {
-          "then": "Dette stedet er spesielt tilpasset rullestolsbrukere"
-        },
-        "1": {
-          "then": "Dette stedet kan enkelt besøkes med rullestol"
-        },
-        "2": {
-          "then": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett"
-        },
-        "3": {
-          "then": "Dette stedet er ikke tilgjengelig for besøk med rullestol"
-        }
-      },
-      "question": "Er dette stedet tilgjengelig for rullestoler?"
-    },
-    "wikipedia": {
-      "mappings": {
-        "0": {
-          "then": "Ingen Wikipedia-side lenket enda"
-        }
-      },
-      "question": "Hva er respektivt Wikipedia-element?"
-    },
-    "wikipedialink": {
-      "mappings": {
-        "0": {
-          "then": "Ikke lenket med Wikipedia"
-        }
-      },
-      "question": "Hva er respektivt element på Wikipedia?"
     }
-  }
 }
