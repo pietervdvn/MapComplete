@@ -245,7 +245,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
         let json = tr.toJson(lang)
         try {
 
-            json = JSON.stringify(JSON.parse(json), null, "  ");
+            json = JSON.stringify(JSON.parse(json), null, "    "); // MUST BE FOUR SPACES
         } catch (e) {
             console.error(e)
         }

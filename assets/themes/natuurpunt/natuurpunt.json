@@ -2,8 +2,8 @@
   "id": "natuurpunt",
   "customCss": "./assets/themes/natuurpunt/natuurpunt.css",
   "title": {
-    "nl": "Natuurgebieden",
-    "en": "Nature Reserves",
+    "nl": "De Natuurpunt-kaart",
+    "en": "The map of Natuurpunt",
     "de": "Naturschutzgebiete",
     "nb_NO": "Naturreservater",
     "it": "Riserve naturali"

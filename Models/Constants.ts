@@ -4,7 +4,6 @@ export default class Constants {
 
     public static vNumber = "0.12.8";
     public static ImgurApiKey = '7070e7167f0a25a'
-    public static readonly mapillary_client_token_v3 = 'TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
 
     public static defaultOverpassUrls = [

@@ -1,103 +1,103 @@
 {
-  "defibrillator": {
-    "name": "Desfibril·ladors",
-    "presets": {
-      "0": {
-        "title": "Desfibril·lador"
-      }
-    },
-    "tagRenderings": {
-      "defibrillator-access": {
-        "mappings": {
-          "0": {
-            "then": "Accés lliure"
-          },
-          "1": {
-            "then": "Publicament accessible"
-          },
-          "2": {
-            "then": "Només accessible a clients"
-          },
-          "3": {
-            "then": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)"
-          }
+    "defibrillator": {
+        "name": "Desfibril·ladors",
+        "presets": {
+            "0": {
+                "title": "Desfibril·lador"
+            }
         },
-        "question": "Està el desfibril·lador accessible lliurement?",
-        "render": "L'accés és {access}"
-      },
-      "defibrillator-defibrillator:location": {
-        "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
-      },
-      "defibrillator-defibrillator:location:en": {
-        "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
-      },
-      "defibrillator-defibrillator:location:fr": {
-        "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
-      },
-      "defibrillator-indoors": {
-        "mappings": {
-          "0": {
-            "then": "Aquest desfibril·lador està a l'interior"
-          },
-          "1": {
-            "then": "Aquest desfibril·lador està a l'exterior"
-          }
+        "tagRenderings": {
+            "defibrillator-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accés lliure"
+                    },
+                    "1": {
+                        "then": "Publicament accessible"
+                    },
+                    "2": {
+                        "then": "Només accessible a clients"
+                    },
+                    "3": {
+                        "then": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)"
+                    }
+                },
+                "question": "Està el desfibril·lador accessible lliurement?",
+                "render": "L'accés és {access}"
+            },
+            "defibrillator-defibrillator:location": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            },
+            "defibrillator-defibrillator:location:en": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            },
+            "defibrillator-defibrillator:location:fr": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            },
+            "defibrillator-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest desfibril·lador està a l'interior"
+                    },
+                    "1": {
+                        "then": "Aquest desfibril·lador està a l'exterior"
+                    }
+                },
+                "question": "Està el desfibril·lador a l'interior?"
+            },
+            "defibrillator-level": {
+                "question": "A quina planta està el desfibril·lador localitzat?",
+                "render": "Aquest desfibril·lador és a la planta {level}"
+            }
         },
-        "question": "Està el desfibril·lador a l'interior?"
-      },
-      "defibrillator-level": {
-        "question": "A quina planta està el desfibril·lador localitzat?",
-        "render": "Aquest desfibril·lador és a la planta {level}"
-      }
-    },
-    "title": {
-      "render": "Desfibril·lador"
-    }
-  },
-  "ghost_bike": {
-    "tagRenderings": {
-      "ghost_bike-inscription": {
-        "render": "<i>{inscription}</i>"
-      }
-    }
-  },
-  "nature_reserve": {
-    "tagRenderings": {
-      "Email": {
-        "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-      },
-      "phone": {
-        "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-      }
-    }
-  },
-  "playground": {
-    "tagRenderings": {
-      "playground-email": {
-        "render": "<a href='mailto:{email}'>{email}</a>"
-      },
-      "playground-phone": {
-        "render": "<a href='tel:{phone}'>{phone}</a>"
-      }
-    }
-  },
-  "shops": {
-    "tagRenderings": {
-      "shops-phone": {
-        "render": "<a href='tel:{phone}'>{phone}</a>"
-      },
-      "shops-website": {
-        "render": "<a href='{website}'>{website}</a>"
-      }
-    }
-  },
-  "tree_node": {
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "<i>{name}</i>"
+        "title": {
+            "render": "Desfibril·lador"
         }
-      }
+    },
+    "ghost_bike": {
+        "tagRenderings": {
+            "ghost_bike-inscription": {
+                "render": "<i>{inscription}</i>"
+            }
+        }
+    },
+    "nature_reserve": {
+        "tagRenderings": {
+            "Email": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "phone": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            }
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "playground-email": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "playground-phone": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            }
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-phone": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-website": {
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        }
+    },
+    "tree_node": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        }
     }
-  }
 }

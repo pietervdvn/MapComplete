@@ -1,147 +1,147 @@
 {
-  "aed": {
-    "description": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat",
-    "title": "Buka Peta AED"
-  },
-  "artwork": {
-    "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
-    "title": "Buka Peta Karya Seni"
-  },
-  "benches": {
-    "title": "Bangku"
-  },
-  "cafes_and_pubs": {
-    "title": "Kafe dan pub"
-  },
-  "campersite": {
-    "layers": {
-      "0": {
-        "tagRenderings": {
-          "caravansites-fee": {
-            "mappings": {
-              "1": {
-                "then": "Boleh digunakan tanpa bayaran"
-              }
-            }
-          },
-          "caravansites-internet": {
-            "mappings": {
-              "0": {
-                "then": "Akses Web tersedia"
-              },
-              "1": {
-                "then": "Akses Web tersedia"
-              },
-              "2": {
-                "then": "Tiada akses Web"
-              }
-            },
-            "question": "Tempat ini berbagi akses Web?"
-          },
-          "caravansites-name": {
-            "question": "Apakah nama tempat ini?"
-          },
-          "caravansites-toilets": {
-            "mappings": {
-              "0": {
-                "then": "Tempat sini ada tandas"
-              },
-              "1": {
-                "then": "Tempat sini tiada tandas"
-              }
-            }
-          },
-          "caravansites-website": {
-            "question": "Tempat sini terada situs web?",
-            "render": "Situs resmi: <a href='{website}'>{website}</a>"
-          }
-        }
-      }
+    "aed": {
+        "description": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat",
+        "title": "Buka Peta AED"
     },
-    "overrideAll": {
-      "tagRenderings+": {
-        "1": {
-          "mappings": {
+    "artwork": {
+        "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
+        "title": "Buka Peta Karya Seni"
+    },
+    "benches": {
+        "title": "Bangku"
+    },
+    "cafes_and_pubs": {
+        "title": "Kafe dan pub"
+    },
+    "campersite": {
+        "layers": {
             "0": {
-              "then": "Tempat ini memiliki catu daya"
+                "tagRenderings": {
+                    "caravansites-fee": {
+                        "mappings": {
+                            "1": {
+                                "then": "Boleh digunakan tanpa bayaran"
+                            }
+                        }
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Akses Web tersedia"
+                            },
+                            "1": {
+                                "then": "Akses Web tersedia"
+                            },
+                            "2": {
+                                "then": "Tiada akses Web"
+                            }
+                        },
+                        "question": "Tempat ini berbagi akses Web?"
+                    },
+                    "caravansites-name": {
+                        "question": "Apakah nama tempat ini?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tempat sini ada tandas"
+                            },
+                            "1": {
+                                "then": "Tempat sini tiada tandas"
+                            }
+                        }
+                    },
+                    "caravansites-website": {
+                        "question": "Tempat sini terada situs web?",
+                        "render": "Situs resmi: <a href='{website}'>{website}</a>"
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Tempat ini memiliki catu daya"
+                        },
+                        "1": {
+                            "then": "Tempat ini tidak memiliki sumber listrik"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "charging_stations": {
+        "title": "Stasiun pengisian daya"
+    },
+    "climbing": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "climbing_club-name": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
             },
             "1": {
-              "then": "Tempat ini tidak memiliki sumber listrik"
+                "tagRenderings": {
+                    "name": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "2": {
+                "tagRenderings": {
+                    "Name": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "3": {
+                "tagRenderings": {
+                    "name": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "4": {
+                "tagRenderings": {
+                    "climbing-opportunity-name": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  },
-  "charging_stations": {
-    "title": "Stasiun pengisian daya"
-  },
-  "climbing": {
-    "layers": {
-      "0": {
-        "tagRenderings": {
-          "climbing_club-name": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      },
-      "1": {
-        "tagRenderings": {
-          "name": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      },
-      "2": {
-        "tagRenderings": {
-          "Name": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      },
-      "3": {
-        "tagRenderings": {
-          "name": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      },
-      "4": {
-        "tagRenderings": {
-          "climbing-opportunity-name": {
-            "render": "<strong>{name}</strong>"
-          }
-        }
-      }
-    }
-  },
-  "hailhydrant": {
-    "layers": {
-      "0": {
-        "tagRenderings": {
-          "hydrant-type": {
-            "mappings": {
-              "3": {
-                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "trees": {
-    "title": "Pohon"
-  },
-  "uk_addresses": {
-    "description": "Berkontribusi untuk OpenStreetMap dengan mengisi informasi alamat",
-    "layers": {
-      "1": {
-        "title": {
-          "render": "Alamat yang diketahui"
-        }
-      }
     },
-    "title": "Alamat Inggris"
-  }
+    "hailhydrant": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "hydrant-type": {
+                        "mappings": {
+                            "3": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "trees": {
+        "title": "Pohon"
+    },
+    "uk_addresses": {
+        "description": "Berkontribusi untuk OpenStreetMap dengan mengisi informasi alamat",
+        "layers": {
+            "1": {
+                "title": {
+                    "render": "Alamat yang diketahui"
+                }
+            }
+        },
+        "title": "Alamat Inggris"
+    }
 }
