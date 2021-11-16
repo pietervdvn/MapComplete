@@ -94,6 +94,23 @@
                 }
             },
             "question": "Qual é o item correspondente na Wikipédia?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Há muitas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos"
+                },
+                "1": {
+                    "then": "Há algumas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos"
+                },
+                "2": {
+                    "then": "Não há tomadas elétricas disponíveis para clientes sentados no interior, mas pode-se pedir aos funcionários para carregar dispositivos eletrónicos"
+                },
+                "3": {
+                    "then": "Não há tomadas elétricas disponíveis para clientes sentados no interior"
+                }
+            },
+            "question": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?"
         }
     }
 }

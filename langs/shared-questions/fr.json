@@ -9,7 +9,7 @@
                     "then": "Chiens admis"
                 },
                 "1": {
-                    "then": "Les chiens <b>ne</b> sont <b>pas</b> admis"
+                    "then": "Chiens <b>non</b> admis"
                 },
                 "2": {
                     "then": "Les chiens sont admis, mais ils doivent être tenus en laisse"
@@ -64,14 +64,45 @@
         },
         "wheelchair-access": {
             "mappings": {
+              "1": {
+                "then": "Cet endroit est facilement accessible avec un fauteuil roulant"
+              },
+              "0": {
+                "then": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants"
+              },
                 "2": {
                     "then": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
                 },
                 "3": {
                     "then": "Cet endroit n'est pas accessible en chaise roulante"
-                }
             },
             "question": "Est-ce que cet endroit est accessible en chaise roulante ?"
+        }
+    },
+        "wikipedialink": {
+                "mappings": {
+                    "0": {
+                        "then": "Non lié avec Wikipedia"
+                    }
+                }
+            },
+        "wikipedia": {
+                "question": "Quelle est l'entité Wikidata correspondante ?",
+                "mappings": {
+                    "0": {
+                        "then": "Pas encore de lien vers une page Wikipedia"
+                    }
+                }
+            },
+        "service:electricity": {
+            "mappings": {
+                "2": {
+                    "then": "Il n'y a pas de prises disponibles à l'intérieur pour les clients, mais la recharge est peut-être possible sur demande auprès des employés"
+                },
+                "3": {
+                    "then": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur"
+                }
+            }
         }
     }
 }
