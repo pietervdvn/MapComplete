@@ -92,13 +92,13 @@
     },
     "ghost_bike": {
         "name": "ゴーストバイク",
-        "title": {
-            "render": "ゴーストバイク"
-        },
         "presets": {
             "0": {
                 "title": "ゴーストバイク"
             }
+        },
+        "title": {
+            "render": "ゴーストバイク"
         }
     },
     "shops": {

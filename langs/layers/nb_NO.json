@@ -176,13 +176,13 @@
     },
     "ghost_bike": {
         "name": "Spøkelsessykler",
-        "title": {
-            "render": "Spøkelsessykler"
-        },
         "presets": {
             "0": {
                 "title": "Spøkelsessykler"
             }
+        },
+        "title": {
+            "render": "Spøkelsessykler"
         }
     },
     "shops": {
