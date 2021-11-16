@@ -114,6 +114,11 @@
         "name": "Haamupyörä",
         "title": {
             "render": "Haamupyörä"
+        },
+        "presets": {
+            "0": {
+                "title": "Haamupyörä"
+            }
         }
     },
     "shops": {

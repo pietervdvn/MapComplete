@@ -215,6 +215,11 @@
         "name": "Emlékkerékpár",
         "title": {
             "render": "Emlékkerékpár"
+        },
+        "presets": {
+            "0": {
+                "title": "Emlékkerékpár"
+            }
         }
     },
     "shops": {

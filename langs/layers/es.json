@@ -138,6 +138,11 @@
         "name": "Bicicleta blanca",
         "title": {
             "render": "Bicicleta blanca"
+        },
+        "presets": {
+            "0": {
+                "title": "Bicicleta blanca"
+            }
         }
     }
 }

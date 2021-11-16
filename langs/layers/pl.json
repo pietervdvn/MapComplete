@@ -200,6 +200,11 @@
         "name": "Duch roweru",
         "title": {
             "render": "Duch roweru"
+        },
+        "presets": {
+            "0": {
+                "title": "Duch roweru"
+            }
         }
     },
     "shops": {

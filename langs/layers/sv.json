@@ -18,6 +18,11 @@
         "name": "Spökcykel",
         "title": {
             "render": "Spökcykel"
+        },
+        "presets": {
+            "0": {
+                "title": "Spökcykel"
+            }
         }
     },
     "shops": {

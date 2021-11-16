@@ -538,6 +538,11 @@
         "name": "Bicicleta fantasma",
         "title": {
             "render": "Bicicleta fantasma"
+        },
+        "presets": {
+            "0": {
+                "title": "Bicicleta fantasma"
+            }
         }
     },
     "shops": {

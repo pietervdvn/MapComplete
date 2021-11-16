@@ -178,6 +178,11 @@
         "name": "Spøkelsessykler",
         "title": {
             "render": "Spøkelsessykler"
+        },
+        "presets": {
+            "0": {
+                "title": "Spøkelsessykler"
+            }
         }
     },
     "shops": {

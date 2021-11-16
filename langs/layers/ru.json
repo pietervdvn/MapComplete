@@ -745,7 +745,7 @@
         }
     },
     "ghost_bike": {
-        "name": "Велосипед Ghost",
+        "name": "Велосипед ghost",
         "tagRenderings": {
             "ghost_bike-inscription": {
                 "render": "<i>{inscription}</i>"
@@ -762,6 +762,11 @@
         },
         "title": {
             "render": "Велосипед Ghost"
+        },
+        "presets": {
+            "0": {
+                "title": "Велосипед ghost"
+            }
         }
     },
     "information_board": {

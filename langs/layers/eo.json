@@ -80,6 +80,11 @@
         "name": "Fantombiciklo",
         "title": {
             "render": "Fantombiciklo"
+        },
+        "presets": {
+            "0": {
+                "title": "Fantombiciklo"
+            }
         }
     },
     "shops": {
