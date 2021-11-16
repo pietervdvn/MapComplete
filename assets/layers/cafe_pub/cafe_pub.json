@@ -3,7 +3,8 @@
   "name": {
     "nl": "Cafés",
     "en": "Cafés and pubs",
-    "de": "Cafés und Kneipen"
+    "de": "Cafés und Kneipen",
+    "fr": "Cafés et pubs"
   },
   "source": {
     "osmTags": {
@@ -94,12 +95,14 @@
       "question": {
         "nl": "Wat is de naam van dit café?",
         "en": "What is the name of this pub?",
-        "de": "Wie heißt diese Kneipe?"
+        "de": "Wie heißt diese Kneipe?",
+        "fr": "Quel est le nom de ce pub ?"
       },
       "render": {
         "nl": "De naam van dit café is {name}",
         "en": "This pub is named {name}",
-        "de": "Diese Kneipe heißt {name}"
+        "de": "Diese Kneipe heißt {name}",
+        "fr": "Ce pub se nomme {name}"
       },
       "freeform": {
         "key": "name"
@@ -164,7 +167,8 @@
           "question": {
             "en": "Opened now",
             "nl": "Nu geopened",
-            "de": "Jetzt geöffnet"
+            "de": "Jetzt geöffnet",
+            "fr": "Ouvert maintenant"
           },
           "osmTags": "_isOpen=yes"
         }

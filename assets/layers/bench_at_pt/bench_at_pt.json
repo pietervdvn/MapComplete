@@ -125,7 +125,8 @@
         {
           "if": "bench=yes",
           "then": {
-            "en": "There is a normal, sit-down bench here"
+            "en": "There is a normal, sit-down bench here",
+            "fr": "Il y a un banc normal pour s'asseoir ici"
           }
         },
         {
@@ -144,7 +145,8 @@
         {
           "if": "bench=no",
           "then": {
-            "en": "There is no bench here"
+            "en": "There is no bench here",
+            "fr": "Il n'y a pas de banc ici"
           }
         }
       ]
