@@ -264,7 +264,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 )
             }
             return available[0]
-        })
+        }, [preferedCategory])
     }
 
     private CalculateAvailableLayersAt(lon: number, lat: number): BaseLayer[] {

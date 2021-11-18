@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Capa_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 512 512"
+   style="enable-background:new 0 0 512 512;"
+   xml:space="preserve"
+   sodipodi:docname="satellite.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"><metadata
+   id="metadata105"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs103" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1003"
+   id="namedview101"
+   showgrid="false"
+   inkscape:zoom="0.4609375"
+   inkscape:cx="256"
+   inkscape:cy="256"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Capa_1" />
+<g
+   id="g68"
+   transform="rotate(135,260.34904,265.22801)">
+	<polygon
+   style="fill:none"
+   points="243.312,72 256,72 268.687,72 256,59.313 "
+   id="polygon2" />
+	<polygon
+   style="fill:#5c546a"
+   points="280,432 280,416 256,416 232,416 232,432 256,432 "
+   id="polygon4" />
+	<path
+   style="fill:#888693"
+   d="m 240,456 h 16 v -24 h -24 -8 c -8.82,0 -16,7.176 -16,16 v 48 c 0,8.824 7.18,16 16,16 h 8 v -48 c 0,-4.418 3.582,-8 8,-8 z"
+   id="path6"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#b6b8be"
+   d="m 256,456 h 16 c 4.418,0 8,3.582 8,8 v 48 h 8 c 8.82,0 16,-7.176 16,-16 v -48 c 0,-8.824 -7.18,-16 -16,-16 h -8 -24 z"
+   id="path8"
+   inkscape:connector-curvature="0" />
+	<rect
+   x="88"
+   y="280"
+   style="fill:#5c546a"
+   width="72"
+   height="48"
+   id="rect10" />
+	<path
+   style="fill:#5c546a"
+   d="m 88,392 h 48 c 13.234,0 24,-10.766 24,-24 V 344 H 88 Z"
+   id="path12"
+   inkscape:connector-curvature="0" />
+	<rect
+   y="280"
+   style="fill:#5c546a"
+   width="72"
+   height="48"
+   id="rect14"
+   x="0" />
+	<path
+   style="fill:#5c546a"
+   d="m 0,344 v 24 c 0,13.234 10.766,24 24,24 h 48 v -48 z"
+   id="path16"
+   inkscape:connector-curvature="0" />
+	<rect
+   y="216"
+   style="fill:#5c546a"
+   width="72"
+   height="48"
+   id="rect18"
+   x="0" />
+	<rect
+   x="88"
+   y="216"
+   style="fill:#5c546a"
+   width="72"
+   height="48"
+   id="rect20" />
+	<path
+   style="fill:#5c546a"
+   d="M 72,152 H 24 C 10.766,152 0,162.766 0,176 v 24 h 72 z"
+   id="path22"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#5c546a"
+   d="m 160,200 v -24 c 0,-13.234 -10.766,-24 -24,-24 H 88 v 48 z"
+   id="path24"
+   inkscape:connector-curvature="0" />
+	<polygon
+   style="fill:#888693"
+   points="0,200 0,216 72,216 72,264 0,264 0,280 72,280 72,328 0,328 0,344 72,344 72,392 88,392 88,344 160,344 160,328 88,328 88,280 160,280 176,280 176,264 160,264 88,264 88,216 160,216 160,200 88,200 88,152 72,152 72,200 "
+   id="polygon26" />
+	<rect
+   x="440"
+   y="280"
+   style="fill:#5c546a"
+   width="72"
+   height="48"
+   id="rect28" />
+	<path
+   style="fill:#5c546a"
+   d="m 352,344 v 24 c 0,13.234 10.766,24 24,24 h 48 v -48 z"
+   id="path30"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#5c546a"
+   d="m 440,392 h 48 c 13.234,0 24,-10.766 24,-24 v -24 h -72 z"
+   id="path32"
+   inkscape:connector-curvature="0" />
+	<rect
+   x="352"
+   y="280"
+   style="fill:#5c546a"
+   width="72"
+   height="48"
+   id="rect34" />
+	<path
+   style="fill:#5c546a"
+   d="m 424,152 h -48 c -13.234,0 -24,10.766 -24,24 v 24 h 72 z"
+   id="path36"
+   inkscape:connector-curvature="0" />
+	<rect
+   x="440"
+   y="216"
+   style="fill:#5c546a"
+   width="72"
+   height="48"
+   id="rect38" />
+	<path
+   style="fill:#5c546a"
+   d="m 488,152 h -48 v 48 h 72 v -24 c 0,-13.234 -10.766,-24 -24,-24 z"
+   id="path40"
+   inkscape:connector-curvature="0" />
+	<rect
+   x="352"
+   y="216"
+   style="fill:#5c546a"
+   width="72"
+   height="48"
+   id="rect42" />
+	<polygon
+   style="fill:#888693"
+   points="336,280 352,280 424,280 424,328 352,328 352,344 424,344 424,392 440,392 440,344 512,344 512,328 440,328 440,280 512,280 512,264 440,264 440,216 512,216 512,200 440,200 440,152 424,152 424,200 352,200 352,216 424,216 424,264 352,264 336,264 "
+   id="polygon44" />
+	<path
+   style="fill:#5c546a"
+   d="m 272,200 v -17.209 c -5.217,0.792 -10.559,1.209 -16,1.209 -5.441,0 -10.783,-0.417 -16,-1.209 V 200 h 16 z"
+   id="path46"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#ffcf00"
+   d="m 336,216 c 0,-8.824 -7.18,-16 -16,-16 h -48 -16 v 40 h 16 c 13.255,0 24,10.745 24,24 v 152 h 16 c 13.234,0 24,-10.766 24,-24 V 280 264 Z"
+   id="path48"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#ff9300"
+   d="m 240,240 h 16 v -40 h -16 -48 c -8.82,0 -16,7.176 -16,16 v 48 16 112 c 0,13.234 10.766,24 24,24 h 16 V 264 c 0,-13.255 10.745,-24 24,-24 z"
+   id="path50"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#5c546a"
+   d="M 256,59.313 268.687,72 h 22.625 L 264,44.688 V 38.921 C 262.822,39.603 261.459,40 260,40 h -8 c -1.459,0 -2.822,-0.397 -4,-1.079 v 5.767 L 220.687,72 h 22.625 z"
+   id="path52"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#888693"
+   d="m 256,72 h -12.688 -22.625 -52.281 c -4.484,0 -8.797,1.906 -11.828,5.227 -3.047,3.332 -4.555,7.824 -4.148,12.32 4.413,48.436 40.882,86.15 87.57,93.244 5.217,0.792 10.559,1.209 16,1.209 z"
+   id="path54"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#ffcf00"
+   d="m 260,40 c 1.459,0 2.822,-0.397 4,-1.079 2.389,-1.384 4,-3.961 4,-6.921 V 8 c 0,-4.418 -3.582,-8 -8,-8 h -8 c -4.418,0 -8,3.582 -8,8 v 24 c 0,2.959 1.611,5.537 4,6.921 1.178,0.682 2.541,1.079 4,1.079 z"
+   id="path56"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#ff7400"
+   d="m 256,240 h -16 c -13.255,0 -24,10.745 -24,24 v 152 h 16 24 z"
+   id="path58"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#b6b8be"
+   d="m 256,72 v 112 c 5.441,0 10.783,-0.417 16,-1.209 46.688,-7.093 83.157,-44.808 87.57,-93.244 0.406,-4.496 -1.102,-8.988 -4.148,-12.32 C 352.39,73.906 348.078,72 343.594,72 h -52.281 -22.625 z"
+   id="path60"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#ff9300"
+   d="m 272,240 h -16 v 176 h 24 16 V 264 c 0,-13.255 -10.745,-24 -24,-24 z"
+   id="path62"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#5c546a"
+   d="m 240,456 c -4.418,0 -8,3.582 -8,8 v 48 h 24 v -56 z"
+   id="path64"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#888693"
+   d="m 272,456 h -16 v 56 h 24 v -48 c 0,-4.419 -3.582,-8 -8,-8 z"
+   id="path66"
+   inkscape:connector-curvature="0" />
+</g>
+<g
+   id="g70"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g72"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g74"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g76"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g78"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g80"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g82"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g84"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g86"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g88"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g90"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g92"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g94"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g96"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+<g
+   id="g98"
+   transform="rotate(-135,253.45828,262.13625)">
+</g>
+</svg>

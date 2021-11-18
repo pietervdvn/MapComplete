@@ -618,6 +618,16 @@
     ]
   },
   {
+    "path": "generic_map.svg",
+    "license": "CC0",
+    "authors": [
+      "Svg Repo"
+    ],
+    "sources": [
+      "https://www.svgrepo.com/svg/22182/map"
+    ]
+  },
+  {
     "path": "hand.svg",
     "license": "CC0",
     "authors": [
@@ -1114,6 +1124,16 @@
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
+  },
+  {
+    "path": "satellite.svg",
+    "license": "CC0",
+    "authors": [
+      "SVG Repo"
+    ],
+    "sources": [
+      "https://www.svgrepo.com/svg/80960/satellite"
+    ]
   },
   {
     "path": "scissors.svg",
