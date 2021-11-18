@@ -438,8 +438,8 @@
         {
           "if": "no:network=yes",
           "then": {
-            "en": "Not part of a bigger network",
-            "nl": "Maakt geen deel uit van een groter netwerk"
+            "en": "Not part of a bigger network, e.g. because the charging station is maintained by a local business",
+            "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt"
           }
         },
         {
@@ -459,8 +459,32 @@
           "then": "Blink"
         },
         {
-          "if": "network=eVgo",
-          "then": "eVgo"
+          "if": "network=EVgo",
+          "then": "EVgo",
+          "addExtraTags": [
+            "brand:wikidata=Q61803820"
+          ]
+        },
+        {
+          "if": "network=Allego",
+          "then": "Allego",
+          "addExtraTags": [
+            "brand:wikidata=Q75560554"
+          ]
+        },
+        {
+          "if": "network=Blue Corner",
+          "then": "Blue Corner",
+          "addExtraTags": [
+            "brand:wikidata=Q106902344"
+          ]
+        },
+        {
+          "if": "network=Tesla",
+          "then": "Tesla",
+          "addExtraTags": [
+            "brand:wikidata=Q478214"
+          ]
         }
       ]
     },
@@ -493,7 +517,8 @@
           ],
           "hideInAnswer": "operator="
         }
-      ]
+      ],
+      "condition": "network="
     },
     {
       "id": "phone",
