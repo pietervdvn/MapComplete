@@ -1,0 +1,168 @@
+{
+  "id": "cyclenodes",
+  "title": {
+    "en": "Cycle Node Networks",
+    "de": "Fahrrad-Knotenpunktnetzwerke"
+  },
+  "description": {
+    "en": "This map shows cycle node networks and allows you to add new nodes easily",
+    "de": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen"
+  },
+  "language": [
+    "en",
+    "de"
+  ],
+  "maintainer": "Sebastian Kürten",
+  "icon": "./assets/themes/cyclenodes/logo.svg",
+  "version": "0",
+  "startLat": 51.755515,
+  "startLon": 14.327545,
+  "startZoom": 11,
+  "widenFactor": 0.05,
+  "roamingRenderings": [],
+    "clustering":{
+    "maxZoom": 11,
+    "minNeededElements": 1000000
+  },
+  "layers": [
+    {
+      "id": "node2node",
+      "name": {
+        "en": "node to node links"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "network=rcn",
+            "network:type=node_network"
+          ]
+        }
+      },
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "en": "node to node link"
+        },
+        "mappings": [
+          {
+            "if": "ref~*",
+            "then": {
+              "en": "node to node link <strong>{ref}</strong>"
+            }
+          }
+        ]
+      },
+      "width": {
+        "render": "4"
+      },
+      "color": {
+        "render": "#00a703"
+      },
+      "tagRenderings": [
+        {
+          "question": {
+            "en": "When was this node to node link last surveyed?"
+          },
+          "render": {
+            "en": "This node to node link was last surveyed on {survey:date}"
+          },
+          "freeform": {
+            "key": "survey:date",
+            "type": "date"
+          },
+          "mappings": [
+            {
+              "if": "survey:date:={_now:date}",
+              "then": "Surveyed today!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node",
+      "name": {
+        "en": "nodes"
+      },
+      "source": {
+        "osmTags": {
+          "or": [
+            "network:type=node_network",
+            "rcn_ref~*"
+          ]
+        }
+      },
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "en": "cycle node <strong>{rcn_ref}</strong>",
+          "de": "Knotenpunkt"
+        }
+      },
+      "label": {
+        "mappings": [
+          {
+            "if": "rcn_ref~*",
+            "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
+          },
+          {
+            "if": "rcn_ref=",
+            "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>"
+          }
+        ]
+      },
+      "presets": [
+        {
+          "title": {
+            "de": "Knotenpunkt"
+          },
+          "tags": [
+            "network:type=node_network"
+          ]
+        },
+        {
+          "title": {
+            "de": "Knotenpunkt im Netzwerk Spree-Neiße"
+          },
+          "tags": [
+            "network:type=node_network",
+            "cycle_network=Knotenpunktwegweisung Spree-Neiße"
+          ]
+        }
+      ],
+      "tagRenderings": [
+        {
+          "question": {
+            "en": "When was this cycle node last surveyed?"
+          },
+          "render": {
+            "en": "This cycle node was last surveyed on {survey:date}"
+          },
+          "freeform": {
+            "key": "survey:date",
+            "type": "date"
+          },
+          "mappings": [
+            {
+              "if": "survey:date:={_now:date}",
+              "then": "Surveyed today!"
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "How many other cycle nodes does this node link to?"
+          },
+          "render": {
+            "en": "This node links to {expected_rcn_route_relations} other cycle nodes."
+          },
+          "freeform": {
+            "key": "expected_rcn_route_relations",
+            "type": "int"
+          }
+        },
+        "images"
+      ]
+    }
+  ]
+}
