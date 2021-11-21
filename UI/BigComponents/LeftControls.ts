@@ -1,8 +1,6 @@
 import Combine from "../Base/Combine";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Translations from "../i18n/Translations";
-import CopyrightPanel from "./CopyrightPanel";
-import ContributorCount from "../../Logic/ContributorCount";
 import Toggle from "../Input/Toggle";
 import MapControlButton from "../MapControlButton";
 import Svg from "../../Svg";
@@ -16,6 +14,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
 import BaseLayer from "../../Models/BaseLayer";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import BackgroundMapSwitch from "./BackgroundMapSwitch";
 
 export default class LeftControls extends Combine {
 
@@ -38,23 +37,6 @@ export default class LeftControls extends Combine {
                     copyrightViewIsOpened: UIEventSource<boolean>
                 }) {
 
-        const toggledCopyright = new ScrollableFullScreen(
-            () => Translations.t.general.attribution.attributionTitle.Clone(),
-            () =>
-                new CopyrightPanel(
-                    state,
-                    new ContributorCount(state).Contributors
-                ),
-            "copyright",
-            guiState.copyrightViewIsOpened
-        );
-
-        const copyrightButton = new Toggle(
-            toggledCopyright,
-            new MapControlButton(Svg.copyright_svg())
-                .onClick(() => toggledCopyright.isShown.setData(true)),
-            toggledCopyright.isShown
-        ).SetClass("p-0.5");
 
         const toggledDownload = new Toggle(
             new AllDownloads(
@@ -93,10 +75,10 @@ export default class LeftControls extends Combine {
             state.featureSwitchFilter
         );
 
-
         super([filterButton,
             downloadButtonn,
-            copyrightButton])
+            new BackgroundMapSwitch(state, state.backgroundLayer)
+        ])
 
         this.SetClass("flex flex-col")
 

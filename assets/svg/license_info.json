@@ -488,6 +488,16 @@
     "sources": []
   },
   {
+    "path": "eye.svg",
+    "license": "CC-BY-SA 3.0 Unported",
+    "authors": [
+      "Dave Gandy"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/File:Eye_open_font_awesome.svg"
+    ]
+  },
+  {
     "path": "filter.svg",
     "license": "CC0",
     "authors": [

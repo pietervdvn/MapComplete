@@ -3,7 +3,6 @@ import {UIEventSource} from "../UIEventSource";
 import BaseLayer from "../../Models/BaseLayer";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import AvailableBaseLayers from "../Actors/AvailableBaseLayers";
-import BackgroundLayerResetter from "../Actors/BackgroundLayerResetter";
 import Attribution from "../../UI/BigComponents/Attribution";
 import Minimap, {MinimapObj} from "../../UI/Base/Minimap";
 import {Tiles} from "../../Models/TileRange";
@@ -84,35 +83,17 @@ export default class MapState extends UserRelatedState {
 
         this.availableBackgroundLayers = AvailableBaseLayers.AvailableLayersAt(this.locationControl);
 
-        this.backgroundLayer = this.backgroundLayerId.map(
-            (selectedId: string) => {
-                if (selectedId === undefined) {
-                    return AvailableBaseLayers.osmCarto;
-                }
-
-                const available = this.availableBackgroundLayers.data;
-                for (const layer of available) {
-                    if (layer.id === selectedId) {
-                        return layer;
-                    }
-                }
-                return AvailableBaseLayers.osmCarto;
-            },
-            [this.availableBackgroundLayers],
-            (layer) => layer.id
-        );
-
-
-        /*
-        * Selects a different background layer if the background layer has no coverage at the current location
-         */
-        new BackgroundLayerResetter(
-            this.backgroundLayer,
-            this.locationControl,
-            this.availableBackgroundLayers,
-            this.layoutToUse.defaultBackgroundId
-        );
-
+        let defaultLayer = AvailableBaseLayers.osmCarto
+        const available = this.availableBackgroundLayers.data;
+        for (const layer of available) {
+            if (this.backgroundLayerId.data === layer.id) {
+                defaultLayer = layer;
+            }
+        }
+        const self = this
+        this.backgroundLayer = new UIEventSource<BaseLayer>(defaultLayer)
+        this.backgroundLayer.addCallbackAndRunD(layer => self.backgroundLayerId.setData(layer.id))
+        
         const attr = new Attribution(
             this.locationControl,
             this.osmConnection.userDetails,
@@ -334,10 +315,7 @@ export default class MapState extends UserRelatedState {
                 const filtersPerName = new Map<string, FilterConfig>()
                 layer.filters.forEach(f => filtersPerName.set(f.id, f))
                 const qp = QueryParameters.GetQueryParameter("filter-" + layer.id, "", "Filtering state for a layer")
-                flayer.appliedFilters.map(filters => {
-                    filters = filters ?? []
-                    return filters.map(f => f.filter.id + "." + f.selected).join(",")
-                }, [], textual => {
+                flayer.appliedFilters.map(filters => (filters ?? []).map(f => f.filter.id + "." + f.selected).join(","), [], textual => {
                     if (textual.length === 0) {
                         return empty
                     }

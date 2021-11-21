@@ -11,27 +11,28 @@ import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 import {BBox} from "../../BBox";
 import SimpleFeatureSource from "../Sources/SimpleFeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
+import Loc from "../../../Models/Loc";
 
 export default class SaveTileToLocalStorageActor {
     private readonly visitedTiles: UIEventSource<Map<number, Date>>
     private readonly _layer: LayerConfig;
-    private readonly _flayer : FilteredLayer
+    private readonly _flayer: FilteredLayer
     private readonly initializeTime = new Date()
 
     constructor(layer: FilteredLayer) {
         this._flayer = layer
         this._layer = layer.layerDef
-        this.visitedTiles = IdbLocalStorage.Get("visited_tiles_" + this._layer.id, 
-            {defaultValue: new Map<number, Date>(), })
+        this.visitedTiles = IdbLocalStorage.Get("visited_tiles_" + this._layer.id,
+            {defaultValue: new Map<number, Date>(),})
         this.visitedTiles.stabilized(100).addCallbackAndRunD(tiles => {
             for (const key of Array.from(tiles.keys())) {
                 const tileFreshness = tiles.get(key)
 
-                const toOld = (this.initializeTime.getTime() -  tileFreshness.getTime()) > 1000 * this._layer.maxAgeOfCache
-                if(toOld){
+                const toOld = (this.initializeTime.getTime() - tileFreshness.getTime()) > 1000 * this._layer.maxAgeOfCache
+                if (toOld) {
                     // Purge this tile
                     this.SetIdb(key, undefined)
-                    console.debug("Purging tile",this._layer.id,key)         
+                    console.debug("Purging tile", this._layer.id, key)
                     tiles.delete(key)
                 }
             }
@@ -39,66 +40,70 @@ export default class SaveTileToLocalStorageActor {
             return true;
         })
     }
+
     
-    public LoadTilesFromDisk(currentBounds: UIEventSource<BBox>, 
-                       registerFreshness: (tileId: number, freshness: Date) => void,
-                       registerTile: ((src: FeatureSource & Tiled ) => void)){
+    public LoadTilesFromDisk(currentBounds: UIEventSource<BBox>, location: UIEventSource<Loc>,
+                             registerFreshness: (tileId: number, freshness: Date) => void,
+                             registerTile: ((src: FeatureSource & Tiled) => void)) {
         const self = this;
+        const loadedTiles = new Set<number>()
         this.visitedTiles.addCallbackD(tiles => {
-            if(tiles.size === 0){
+            if (tiles.size === 0) {
                 // We don't do anything yet as probably not yet loaded from disk
                 // We'll unregister later on
                 return;
             }
-            for (const key of Array.from(tiles.keys())) {
-                const tileFreshness = tiles.get(key)
-                if(tileFreshness > self.initializeTime){
-                    // This tile is loaded by another source
-                    continue
+            currentBounds.addCallbackAndRunD(bbox => {
+
+                if(self._layer.minzoomVisible > location.data.zoom){
+                    // Not enough zoom
+                    return;
                 }
-                registerFreshness(key, tileFreshness)
-                
-                const tileBbox = BBox.fromTileIndex(key)
-                currentBounds.addCallbackAndRunD(bbox => {
-                    if(bbox.overlapsWith(tileBbox)){
-                        // The current tile should be loaded from disk
-                        this.GetIdb(key).then((features:{feature: any, freshness: Date}[] ) => {
-                            console.log("Loaded tile "+self._layer.id+"_"+key+" from disk")
-                            const src = new SimpleFeatureSource(self._flayer, key, new UIEventSource<{feature: any; freshness: Date}[]>(features))
-                            registerTile(src)
-                        })
-                        return true; // only load once: unregister
+
+                // Iterate over all available keys in the local storage, check which are needed and fresh enough
+                for (const key of Array.from(tiles.keys())) {
+                    const tileFreshness = tiles.get(key)
+                    if (tileFreshness > self.initializeTime) {
+                        // This tile is loaded by another source
+                        continue
                     }
-                })
-                
-            }
-            
+
+                    registerFreshness(key, tileFreshness)
+                    const tileBbox = BBox.fromTileIndex(key)
+                    if (!bbox.overlapsWith(tileBbox)) {
+                        continue;
+                    }
+                    if (loadedTiles.has(key)) {
+                        // Already loaded earlier
+                        continue
+                    }
+                    loadedTiles.add(key)
+                    this.GetIdb(key).then((features: { feature: any, freshness: Date }[]) => {
+                        console.debug("Loaded tile " + self._layer.id + "_" + key + " from disk")
+                        const src = new SimpleFeatureSource(self._flayer, key, new UIEventSource<{ feature: any; freshness: Date }[]>(features))
+                        registerTile(src)
+                    })
+                }
+            })
+
             return true; // Remove the callback
-            
+
         })
     }
 
-    private SetIdb(tileIndex, data){
-        IdbLocalStorage.SetDirectly(this._layer.id+"_"+tileIndex, data)
-    }
-
-    private GetIdb(tileIndex){
-      return IdbLocalStorage.GetDirectly(this._layer.id+"_"+tileIndex)
-    }
-    
-    public addTile(tile: FeatureSource & Tiled){
+    public addTile(tile: FeatureSource & Tiled) {
         const self = this
         tile.features.addCallbackAndRunD(features => {
             const now = new Date()
 
             if (features.length > 0) {
-               self.SetIdb(tile.tileIndex, features)
+                self.SetIdb(tile.tileIndex, features)
             }
             // We _still_ write the time to know that this tile is empty!
             this.MarkVisited(tile.tileIndex, now)
         })
     }
-    
+
     public poison(lon: number, lat: number) {
         for (let z = 0; z < 25; z++) {
             const {x, y} = Tiles.embedded_tile(lat, lon, z)
@@ -110,6 +115,14 @@ export default class SaveTileToLocalStorageActor {
 
     public MarkVisited(tileId: number, freshness: Date) {
         this.visitedTiles.data.set(tileId, freshness)
-        this.visitedTiles.ping()    
+        this.visitedTiles.ping()
+    }
+
+    private SetIdb(tileIndex, data) {
+        IdbLocalStorage.SetDirectly(this._layer.id + "_" + tileIndex, data)
+    }
+
+    private GetIdb(tileIndex) {
+        return IdbLocalStorage.GetDirectly(this._layer.id + "_" + tileIndex)
     }
 }

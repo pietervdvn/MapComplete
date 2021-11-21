@@ -157,7 +157,7 @@ export default class FeaturePipeline {
                 // We load the cached values and register them
                 // Getting data from upstream happens a bit lower
                 localTileSaver.LoadTilesFromDisk(
-                    state.currentBounds,
+                    state.currentBounds, state.locationControl,
                     (tileIndex, freshness) => self.freshnesses.get(id).addTileLoad(tileIndex, freshness),
                     (tile) => {
                         new RegisteringAllFromFeatureSourceActor(tile)
@@ -221,7 +221,13 @@ export default class FeaturePipeline {
                 state.filteredLayers.data.forEach(flayer => {
                     const layer = flayer.layerDef
                     if (layer.maxAgeOfCache > 0) {
-                        self.localStorageSavers.get(layer.id).MarkVisited(tileId, new Date())
+                       const saver = self.localStorageSavers.get(layer.id)
+                           if(saver === undefined){
+                               console.warn("No local storage saver found for ", layer.id)
+                           }else{
+                               
+                           saver.MarkVisited(tileId, new Date())
+                           }
                     }
                     self.freshnesses.get(layer.id).addTileLoad(tileId, new Date())
                 })

@@ -208,6 +208,10 @@ li::marker {
     border: 5px solid var(--catch-detail-color);
 }
 
+.border-invisible {
+    border: 5px solid #00000000;
+}
+
 .border-attention {
     border-color: var(--catch-detail-color);
 }

@@ -4,7 +4,8 @@
   "minzoom": 0,
   "source": {
     "osmTags": "user:location=yes",
-    "maxCacheAge": 604800
+    "#": "Cache is disabled here as these points are kept seperately",
+    "maxCacheAge": 0
   },
   "mapRendering": null
 }

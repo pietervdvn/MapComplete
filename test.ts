@@ -3,12 +3,22 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import Loc from "./Models/Loc";
 import AvailableBaseLayersImplementation from "./Logic/Actors/AvailableBaseLayersImplementation";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
+import BaseLayer from "./Models/BaseLayer";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
 
-new BackgroundMapSwitch({
+AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
+const state = {
+    currentBackground: new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto),
     locationControl: new UIEventSource<Loc>({
         zoom: 19,
-        lat: 51.5,
-        lon: 4.1
+        lat: 51.2,
+        lon: 3.2
     })
-}).AttachTo("maindiv")
+}
+const actualBackground = new UIEventSource(AvailableBaseLayers.osmCarto)
+new BackgroundMapSwitch(state,
+    {
+        currentBackground: actualBackground
+    }).AttachTo("maindiv")
+
+new VariableUiElement(actualBackground.map(bg => bg.id)).AttachTo("extradiv")

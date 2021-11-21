@@ -13,7 +13,8 @@ export interface MinimapOptions {
     attribution?: BaseUIElement | boolean,
     onFullyLoaded?: (leaflet: L.Map) => void,
     leafletMap?: UIEventSource<any>,
-    lastClickLocation?: UIEventSource<{ lat: number, lon: number }>
+    lastClickLocation?: UIEventSource<{ lat: number, lon: number }>,
+    addLayerControl?: boolean | false
 }
 
 export interface MinimapObj {

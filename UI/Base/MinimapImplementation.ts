@@ -10,6 +10,7 @@ import Minimap, {MinimapObj, MinimapOptions} from "./Minimap";
 import {BBox} from "../../Logic/BBox";
 import 'leaflet-polylineoffset'
 import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
+import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
 
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0;
@@ -24,6 +25,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     private readonly _attribution: BaseUIElement | boolean;
     private readonly _lastClickLocation: UIEventSource<{ lat: number; lon: number }>;
     private readonly _bounds: UIEventSource<BBox> | undefined;
+    private readonly _addLayerControl: boolean;
 
     private constructor(options: MinimapOptions) {
         super()
@@ -38,6 +40,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         this._onFullyLoaded = options.onFullyLoaded
         this._attribution = options.attribution
         this._lastClickLocation = options.lastClickLocation;
+        this._addLayerControl = options.addLayerControl ?? false
         MinimapImplementation._nextId++
 
     }
@@ -131,6 +134,17 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         });
 
         resizeObserver.observe(div);
+
+        if (this._addLayerControl) {
+            const switcher = new BackgroundMapSwitch({
+                    locationControl: this._location,
+                    backgroundLayer: this._background
+                },
+                this._background
+            ).SetClass("top-0 right-0 z-above-map absolute")
+            wrapper.appendChild(switcher.ConstructElement())
+        }
+
         return wrapper;
 
     }

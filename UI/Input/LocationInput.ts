@@ -150,7 +150,8 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 background: this.mapBackground,
                 attribution: this.mapBackground !== State.state?.backgroundLayer,
                 lastClickLocation: this.clickLocation,
-                bounds: this._bounds
+                bounds: this._bounds,
+                addLayerControl: true
             }
         )
         this.leafletMap = this.map.leafletMap
