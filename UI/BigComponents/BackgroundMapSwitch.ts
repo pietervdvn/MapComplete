@@ -84,9 +84,16 @@ class SingleLayerSelectionButton extends Toggle {
             previousLayer.setData(previousLayer.data ?? available.data)
             options.currentBackground.setData(previousLayer.data)
         })
+        
+        options.currentBackground.addCallbackAndRunD(background => {
+            if (background.category === options.preferredType) {
+                previousLayer.setData(background)
+            }
+        })
 
 
-        available.addCallbackAndRunD(availableLayer => {
+        available.addCallbackD(availableLayer => {
+            // Called whenever a better layer is available
 
             if (previousLayer.data === undefined) {
                 // PreviousLayer is unset -> we definitively weren't using this category -> no need to switch
@@ -95,6 +102,11 @@ class SingleLayerSelectionButton extends Toggle {
             if (options.currentBackground.data?.id !== previousLayer.data?.id) {
                 // The previously used layer doesn't match the current layer -> no need to switch
                 return;
+            }
+            
+            // Is the previous layer still valid? If so, we don't bother to switch
+            if(previousLayer.data.feature === null || GeoOperations.inside(locationControl.data, previousLayer.data.feature)){
+                return
             }
 
             if (availableLayer.category === options.preferredType) {
@@ -109,12 +121,6 @@ class SingleLayerSelectionButton extends Toggle {
                     // Fallback to OSM carto
                     options.currentBackground.setData(AvailableBaseLayers.osmCarto)
                 }
-            }
-        })
-
-        options.currentBackground.addCallbackAndRunD(background => {
-            if (background.category === options.preferredType) {
-                previousLayer.setData(background)
             }
         })
 
