@@ -488,6 +488,16 @@
     "sources": []
   },
   {
+    "path": "eye.svg",
+    "license": "CC-BY-SA 3.0 Unported",
+    "authors": [
+      "Dave Gandy"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/File:Eye_open_font_awesome.svg"
+    ]
+  },
+  {
     "path": "filter.svg",
     "license": "CC0",
     "authors": [
@@ -615,6 +625,16 @@
     ],
     "sources": [
       "https://www.iconpacks.net/free-icon-pack/gender-107.html"
+    ]
+  },
+  {
+    "path": "generic_map.svg",
+    "license": "CC0",
+    "authors": [
+      "Svg Repo"
+    ],
+    "sources": [
+      "https://www.svgrepo.com/svg/22182/map"
     ]
   },
   {
@@ -1116,6 +1136,16 @@
     "sources": []
   },
   {
+    "path": "satellite.svg",
+    "license": "CC0",
+    "authors": [
+      "SVG Repo"
+    ],
+    "sources": [
+      "https://www.svgrepo.com/svg/80960/satellite"
+    ]
+  },
+  {
     "path": "scissors.svg",
     "license": "CC-BY 3.0",
     "authors": [
@@ -1297,6 +1327,14 @@
     "path": "up.svg",
     "license": "CC0; trivial",
     "authors": [],
+    "sources": []
+  },
+  {
+    "path": "upload.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "sources": []
   },
   {

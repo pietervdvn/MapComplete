@@ -223,6 +223,7 @@ export class UIEventSource<T> {
         for (const callback of this._callbacks) {
             if (callback(this.data) === true) {
                 // This callback wants to be deleted
+                // Note: it has to return precisely true in order to avoid accidental deletions
                 if (toDelete === undefined) {
                     toDelete = [callback]
                 } else {

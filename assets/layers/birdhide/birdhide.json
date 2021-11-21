@@ -241,7 +241,8 @@
           "question": {
             "nl": "Rolstoeltoegankelijk",
             "en": "Wheelchair accessible",
-            "de": "Zugänglich für Rollstuhlfahrer"
+            "de": "Zugänglich für Rollstuhlfahrer",
+            "fr": "Accessible aux fauteuils roulants"
           },
           "osmTags": {
             "or": [

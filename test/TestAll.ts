@@ -14,6 +14,7 @@ import WikidataSpecTest from "./Wikidata.spec.test";
 import ImageProviderSpec from "./ImageProvider.spec";
 import ActorsSpec from "./Actors.spec";
 import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
+import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
 
 
 ScriptUtils.fixUtils()
@@ -31,7 +32,8 @@ const allTests = [
     new WikidataSpecTest(),
     new ImageProviderSpec(),
     new ActorsSpec(),
-    new ReplaceGeometrySpec()
+    new ReplaceGeometrySpec(),
+    new LegacyThemeLoaderSpec()
 ]
 
 Utils.externalDownloadFunction = async (url) => {

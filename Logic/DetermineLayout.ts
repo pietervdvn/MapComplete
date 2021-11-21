@@ -23,7 +23,6 @@ export default class DetermineLayout {
         const layoutFromBase64 = decodeURIComponent(loadCustomThemeParam.data);
 
         if (layoutFromBase64.startsWith("http")) {
-            // The userLayout is actually an url
             const layout = await DetermineLayout.LoadRemoteTheme(layoutFromBase64)
             return [layout, undefined]
         }
@@ -114,6 +113,7 @@ export default class DetermineLayout {
             if (hash === undefined || hash.length < 10) {
                 DetermineLayout.ShowErrorOnCustomTheme("Could not load a theme from the hash", new FixedUiElement("Hash does not contain data"))
             }
+            this.ShowErrorOnCustomTheme("Could not parse the hash", new FixedUiElement(e))
             return null;
         }
     }

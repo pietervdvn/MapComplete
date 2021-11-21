@@ -93,7 +93,7 @@ export default class SplitRoadWizard extends Toggle {
         function onMapClick(coordinates) {
             // First, we check if there is another, already existing point nearby
             const points = splitPoints.data.map((f, i) => [f.feature, i])
-                .filter(p => GeoOperations.distanceBetween(p[0].geometry.coordinates, coordinates) * 1000 < 5)
+                .filter(p => GeoOperations.distanceBetween(p[0].geometry.coordinates, coordinates) < 5)
                 .map(p => p[1])
                 .sort((a, b) => a - b)
                 .reverse()

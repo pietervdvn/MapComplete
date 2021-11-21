@@ -30,12 +30,12 @@ export class GeoOperations {
     }
 
     /**
-     * Returns the distance between the two points in kilometers
+     * Returns the distance between the two points in meters
      * @param lonlat0
      * @param lonlat1
      */
     static distanceBetween(lonlat0: [number, number], lonlat1: [number, number]) {
-        return turf.distance(lonlat0, lonlat1)
+        return turf.distance(lonlat0, lonlat1) * 1000
     }
 
     /**

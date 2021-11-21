@@ -64,6 +64,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 console.warn("Editor layer index: name not defined on ", props)
                 continue
             }
+            
 
             const leafletLayer: () => TileLayer = () => AvailableBaseLayersImplementation.CreateBackgroundLayer(
                 props.id,
@@ -83,7 +84,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 min_zoom: props.min_zoom ?? 1,
                 name: props.name,
                 layer: leafletLayer,
-                feature: layer,
+                feature: layer.geometry !== null ? layer : null,
                 isBest: props.best ?? false,
                 category: props.category
             });
@@ -96,14 +97,14 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
         X; // Import X to make sure the namespace is not optimized away
         function l(id: string, name: string): BaseLayer {
             try {
-                const layer: any = () => L.tileLayer.provider(id, undefined);
+                const layer: any = L.tileLayer.provider(id, undefined);
                 return {
                     feature: null,
                     id: id,
                     name: name,
-                    layer: layer,
-                    min_zoom: layer.minzoom,
-                    max_zoom: layer.maxzoom,
+                    layer: () => L.tileLayer.provider(id, undefined),
+                    min_zoom: 1,
+                    max_zoom: layer.options.maxZoom,
                     category: "osmbasedmap",
                     isBest: false
                 }
@@ -114,7 +115,6 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
         }
 
         const layers = [
-            l("CyclOSM", "CyclOSM - A bicycle oriented map"),
             l("Stamen.TonerLite", "Toner Lite (by Stamen)"),
             l("Stamen.TonerBackground", "Toner Background - no labels (by Stamen)"),
             l("Stamen.Watercolor", "Watercolor (by Stamen)"),
@@ -193,37 +193,20 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 subdomains: domains
             });
     }
-
+    
     public AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
-        const source = location.map(
+        return UIEventSource.ListStabilized(location.map(
             (currentLocation) => {
-
                 if (currentLocation === undefined) {
                     return this.layerOverview;
                 }
-
-                const currentLayers = source?.data; // A bit unorthodox - I know
-                const newLayers = this.CalculateAvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
-
-                if (currentLayers === undefined) {
-                    return newLayers;
-                }
-                if (newLayers.length !== currentLayers.length) {
-                    return newLayers;
-                }
-                for (let i = 0; i < newLayers.length; i++) {
-                    if (newLayers[i].name !== currentLayers[i].name) {
-                        return newLayers;
-                    }
-                }
-
-                return currentLayers;
-            });
-        return source;
+                return this.CalculateAvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
+            }));
     }
 
     public SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> {
-        return this.AvailableLayersAt(location).map(available => {
+        return this.AvailableLayersAt(location)
+            .map(available => {
             // First float all 'best layers' to the top
             available.sort((a, b) => {
                     if (a.isBest && b.isBest) {
@@ -264,9 +247,10 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 )
             }
             return available[0]
-        })
+        }, [preferedCategory])
     }
 
+    
     private CalculateAvailableLayersAt(lon: number, lat: number): BaseLayer[] {
         const availableLayers = [this.osmCarto]
         const globalLayers = [];

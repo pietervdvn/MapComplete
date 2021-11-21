@@ -2995,7 +2995,8 @@
       "#": "In some cases, charging is free but one has to be authenticated. We only ask for authentication if fee is no (or unset). By default one sees the questions for either the payment options or the authentication options, but normally not both",
       "question": {
         "en": "What kind of authentication is available at the charging station?",
-        "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?"
+        "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?",
+        "fr": "Quelle sorte d'authentification est disponible à cette station de charge ?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -3004,7 +3005,8 @@
           "ifnot": "authentication:membership_card=no",
           "then": {
             "en": "Authentication by a membership card",
-            "nl": "Aanmelden met een lidkaart is mogelijk"
+            "nl": "Aanmelden met een lidkaart is mogelijk",
+            "fr": "Authentification par carte de membre"
           }
         },
         {
@@ -3012,7 +3014,8 @@
           "ifnot": "authentication:app=no",
           "then": {
             "en": "Authentication by an app",
-            "nl": "Aanmelden via een applicatie is mogelijk"
+            "nl": "Aanmelden via een applicatie is mogelijk",
+            "fr": "Authentification par une app"
           }
         },
         {
@@ -3020,7 +3023,8 @@
           "ifnot": "authentication:phone_call=no",
           "then": {
             "en": "Authentication via phone call is available",
-            "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk"
+            "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
+            "fr": "Authentification par appel téléphonique est disponible"
           }
         },
         {
@@ -3028,7 +3032,8 @@
           "ifnot": "authentication:short_message=no",
           "then": {
             "en": "Authentication via SMS is available",
-            "nl": "Aanmelden via SMS is mogelijk"
+            "nl": "Aanmelden via SMS is mogelijk",
+            "fr": "Authentification par SMS est disponible"
           }
         },
         {
@@ -3036,7 +3041,8 @@
           "ifnot": "authentication:nfc=no",
           "then": {
             "en": "Authentication via NFC is available",
-            "nl": "Aanmelden via NFC is mogelijk"
+            "nl": "Aanmelden via NFC is mogelijk",
+            "fr": "Authentification par NFC est disponible"
           }
         },
         {
@@ -3052,7 +3058,8 @@
           "ifnot": "authentication:debit_card=no",
           "then": {
             "en": "Authentication via debit card is available",
-            "nl": "Aanmelden met een betaalkaart is mogelijk"
+            "nl": "Aanmelden met een betaalkaart is mogelijk",
+            "fr": "Authentification par carte de débit est disponible"
           }
         },
         {
@@ -3060,7 +3067,8 @@
           "ifnot": "authentication:none=no",
           "then": {
             "en": "Charging here is (also) possible without authentication",
-            "nl": "Hier opladen is (ook) mogelijk zonder aan te melden"
+            "nl": "Hier opladen is (ook) mogelijk zonder aan te melden",
+            "fr": "Charger ici est (aussi) possible sans authentification"
           }
         }
       ],
@@ -3140,8 +3148,8 @@
         {
           "if": "no:network=yes",
           "then": {
-            "en": "Not part of a bigger network",
-            "nl": "Maakt geen deel uit van een groter netwerk"
+            "en": "Not part of a bigger network, e.g. because the charging station is maintained by a local business",
+            "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt"
           }
         },
         {
@@ -3161,8 +3169,32 @@
           "then": "Blink"
         },
         {
-          "if": "network=eVgo",
-          "then": "eVgo"
+          "if": "network=EVgo",
+          "then": "EVgo",
+          "addExtraTags": [
+            "brand:wikidata=Q61803820"
+          ]
+        },
+        {
+          "if": "network=Allego",
+          "then": "Allego",
+          "addExtraTags": [
+            "brand:wikidata=Q75560554"
+          ]
+        },
+        {
+          "if": "network=Blue Corner",
+          "then": "Blue Corner",
+          "addExtraTags": [
+            "brand:wikidata=Q106902344"
+          ]
+        },
+        {
+          "if": "network=Tesla",
+          "then": "Tesla",
+          "addExtraTags": [
+            "brand:wikidata=Q478214"
+          ]
         }
       ]
     },
@@ -3195,7 +3227,8 @@
           ],
           "hideInAnswer": "operator="
         }
-      ]
+      ],
+      "condition": "network="
     },
     {
       "id": "phone",
@@ -3520,20 +3553,23 @@
         {
           "question": {
             "en": "All vehicle types",
-            "nl": "Alle voertuigen"
+            "nl": "Alle voertuigen",
+            "fr": "Tout type de véhicule"
           }
         },
         {
           "question": {
             "en": "Charging station for bicycles",
-            "nl": "Oplaadpunten voor fietsen"
+            "nl": "Oplaadpunten voor fietsen",
+            "fr": "Station de charge pour vélos"
           },
           "osmTags": "bicycle=yes"
         },
         {
           "question": {
             "en": "Charging station for cars",
-            "nl": "Oplaadpunten voor auto's"
+            "nl": "Oplaadpunten voor auto's",
+            "fr": "Station de charge pour automobiles"
           },
           "osmTags": {
             "or": [

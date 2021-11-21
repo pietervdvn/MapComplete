@@ -172,7 +172,7 @@ export class Changes {
         return Math.min(...changedObjectCoordinates.map(coor =>
             Math.min(...recentLocationPoints.map(gpsPoint => {
                 const otherCoor = GeoOperations.centerpointCoordinates(gpsPoint)
-                return GeoOperations.distanceBetween(coor, otherCoor) * 1000
+                return GeoOperations.distanceBetween(coor, otherCoor)
             }))
         ))
     }
@@ -263,8 +263,13 @@ export class Changes {
             if(count === 0){
                 return undefined
             }
+            const maxD =maxDistances[i]
+            let key = `change_within_${maxD}m`
+            if(maxD === Number.MAX_VALUE){
+                key = `change_over_${maxDistances[i - 1]}m`
+            }
             return {
-                key: "change_within_"+maxDistances[i]+"m",
+                key ,
                 value: count,
                 aggregate:true
             }

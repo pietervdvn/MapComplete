@@ -2,9 +2,8 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.12.7";
+    public static vNumber = "0.12.10";
     public static ImgurApiKey = '7070e7167f0a25a'
-    public static readonly mapillary_client_token_v3 = 'TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
 
     public static defaultOverpassUrls = [
@@ -51,7 +50,7 @@ export default class Constants {
      * If a user makes multiple changes, all these distances are put into multiple bins, depending on this distance.
      * For every bin, the totals are uploaded as metadata
      */
-    static distanceToChangeObjectBins = [25,50,100,500,1000,5000]
+    static distanceToChangeObjectBins = [25,50,100,500,1000,5000, Number.MAX_VALUE]
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

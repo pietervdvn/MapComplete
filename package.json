@@ -74,6 +74,7 @@
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
     "i18next-client": "^1.11.4",
+    "idb-keyval": "^6.0.3",
     "jquery": "^3.6.0",
     "jspdf": "^2.3.1",
     "latlon2country": "^1.1.3",

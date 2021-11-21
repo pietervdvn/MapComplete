@@ -111,12 +111,12 @@ export default class CreateNewNodeAction extends OsmChangeAction {
         // We check that it isn't close to an already existing point
         let reusedPointId = undefined;
         const prev = <[number, number]>geojson.geometry.coordinates[index]
-        if (GeoOperations.distanceBetween(prev, <[number, number]>projected.geometry.coordinates) * 1000 < this._reusePointDistance) {
+        if (GeoOperations.distanceBetween(prev, <[number, number]>projected.geometry.coordinates) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index]
         }
         const next = <[number, number]>geojson.geometry.coordinates[index + 1]
-        if (GeoOperations.distanceBetween(next, <[number, number]>projected.geometry.coordinates) * 1000 < this._reusePointDistance) {
+        if (GeoOperations.distanceBetween(next, <[number, number]>projected.geometry.coordinates) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index + 1]
         }

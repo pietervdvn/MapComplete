@@ -1,7 +1,5 @@
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
-import Attribution from "./Attribution";
-import State from "../../State";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import * as licenses from "../../assets/generated/license_info.json"
@@ -21,6 +19,8 @@ import Loc from "../../Models/Loc";
 import Toggle from "../Input/Toggle";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
+import PrivacyPolicy from "./PrivacyPolicy";
+import ContributorCount from "../../Logic/ContributorCount";
 
 /**
  * The attribution panel shown on mobile
@@ -35,7 +35,7 @@ export default class CopyrightPanel extends Combine {
         currentBounds: UIEventSource<BBox>,
         locationControl: UIEventSource<Loc>,
         osmConnection: OsmConnection
-    }, contributions: UIEventSource<Map<string, number>>) {
+    }) {
 
         const t = Translations.t.general.attribution
         const layoutToUse = state.layoutToUse
@@ -102,6 +102,8 @@ export default class CopyrightPanel extends Combine {
             maintainer = Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.maintainer})
         }
 
+       const contributions = new ContributorCount(state).Contributors
+        
         super([
             Translations.t.general.attribution.attributionContent,
             new FixedUiElement("MapComplete "+Constants.vNumber).SetClass("font-bold"),

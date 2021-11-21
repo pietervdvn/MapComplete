@@ -34,7 +34,8 @@
           "en": "Bollard",
           "nl": "Paaltje",
           "de": "Poller",
-          "ru": "Прикол"
+          "ru": "Прикол",
+          "fr": "Bollard"
         }
       },
       {
@@ -53,7 +54,8 @@
         "en": "Bollard",
         "nl": "Paaltje",
         "de": "Poller",
-        "ru": "Прикол"
+        "ru": "Прикол",
+        "fr": "Bollard"
       },
       "tags": [
         "barrier=bollard"
@@ -107,7 +109,8 @@
           "then": {
             "en": "A cyclist can go past this.",
             "nl": "Een fietser kan hier langs.",
-            "de": "Ein Radfahrer kann hindurchfahren."
+            "de": "Ein Radfahrer kann hindurchfahren.",
+            "fr": "Un cycliste peut franchir ceci."
           }
         },
         {
@@ -115,7 +118,8 @@
           "then": {
             "en": "A cyclist can not go past this.",
             "nl": "Een fietser kan hier niet langs.",
-            "de": "Ein Radfahrer kann nicht hindurchfahren."
+            "de": "Ein Radfahrer kann nicht hindurchfahren.",
+            "fr": "Un cycliste ne peut pas franchir ceci."
           }
         }
       ],
@@ -125,7 +129,8 @@
       "question": {
         "en": "What kind of bollard is this?",
         "nl": "Wat voor soort paal is dit?",
-        "de": "Um was für einen Poller handelt es sich?"
+        "de": "Um was für einen Poller handelt es sich?",
+        "fr": "Quel est le type de bollard (borne) ?"
       },
       "condition": "barrier=bollard",
       "mappings": [
@@ -134,7 +139,8 @@
           "then": {
             "en": "Removable bollard",
             "nl": "Verwijderbare paal",
-            "de": "Entfernbarer Poller"
+            "de": "Entfernbarer Poller",
+            "fr": "Bollard amovible"
           }
         },
         {
@@ -142,7 +148,8 @@
           "then": {
             "en": "Fixed bollard",
             "nl": "Vaste paal",
-            "de": "Feststehender Poller"
+            "de": "Feststehender Poller",
+            "fr": "Bollard fixe"
           }
         },
         {
@@ -150,7 +157,8 @@
           "then": {
             "en": "Bollard that can be folded down",
             "nl": "Paal die platgevouwen kan worden",
-            "de": "Umlegbarer Poller"
+            "de": "Umlegbarer Poller",
+            "fr": "Bollard qui peut être couché"
           }
         },
         {
@@ -158,7 +166,8 @@
           "then": {
             "en": "Flexible bollard, usually plastic",
             "nl": "Flexibele paal, meestal plastic",
-            "de": "Flexibler Poller, meist aus Kunststoff"
+            "de": "Flexibler Poller, meist aus Kunststoff",
+            "fr": "Bollard flexible, généralement en plastique"
           }
         },
         {
@@ -166,7 +175,8 @@
           "then": {
             "en": "Rising bollard",
             "nl": "Verzonken poller",
-            "de": "Ausfahrender Poller"
+            "de": "Ausfahrender Poller",
+            "fr": "Bollard rétractable"
           }
         }
       ],
@@ -219,7 +229,8 @@
       "render": {
         "en": "Maximum width: {maxwidth:physical} m",
         "nl": "Maximumbreedte: {maxwidth:physical} m",
-        "de": "Maximale Durchfahrtsbreite: {maxwidth:physical} m"
+        "de": "Maximale Durchfahrtsbreite: {maxwidth:physical} m",
+        "fr": "Largeur maximale: {maxwidth:physical} m"
       },
       "question": {
         "en": "How wide is the gap left over besides the barrier?",
@@ -273,7 +284,8 @@
       "render": {
         "en": "Width of opening: {width:opening} m",
         "nl": "Breedte van de opening: {width:opening} m",
-        "de": "Breite der Öffnung: {width:opening} m"
+        "de": "Breite der Öffnung: {width:opening} m",
+        "fr": "Largeur de l'ouverture : {width:opening} m"
       },
       "question": {
         "en": "How wide is the smallest opening next to the barriers?",

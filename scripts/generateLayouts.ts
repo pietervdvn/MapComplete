@@ -227,6 +227,7 @@ createManifest(new LayoutConfig({
     writeFileSync("index.manifest", manif)
 })
 
+
 console.log("Counting all translations")
 Translations.CountTranslations();
 console.log("All done!");

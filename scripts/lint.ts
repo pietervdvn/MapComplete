@@ -9,12 +9,20 @@ import LegacyJsonConvert from "../Models/ThemeConfig/LegacyJsonConvert";
 
 const layerFiles = ScriptUtils.getLayerFiles();
 for (const layerFile of layerFiles) {
-    LegacyJsonConvert.fixLayerConfig(layerFile.parsed)
-    writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
+    try {
+        LegacyJsonConvert.fixLayerConfig(layerFile.parsed)
+        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
+    } catch (e) {
+        console.error("COULD NOT LINT LAYER" + layerFile.path + ":\n\t" + e)
+    }
 }
 
 const themeFiles = ScriptUtils.getThemeFiles()
 for (const themeFile of themeFiles) {
-    LegacyJsonConvert.fixThemeConfig(themeFile.parsed)
-    writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "  "))
+    try {
+        LegacyJsonConvert.fixThemeConfig(themeFile.parsed)
+        writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "  "))
+    } catch (e) {
+        console.error("COULD NOT LINT THEME" + themeFile.path + ":\n\t" + e)
+    }
 }

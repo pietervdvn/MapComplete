@@ -18,6 +18,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
+import BaseLayer from "../../Models/BaseLayer";
 
 interface MoveReason {
     text: Translation | string,
@@ -133,10 +134,12 @@ export default class MoveWizard extends Toggle {
                 background = reason.background
             }
 
+            const preferredBackground = AvailableBaseLayers.SelectBestLayerAccordingTo(loc, new UIEventSource(background)).data
             const locationInput = new LocationInput({
                 minZoom: reason.minZoom,
                 centerLocation: loc,
-                mapBackground: AvailableBaseLayers.SelectBestLayerAccordingTo(loc, new UIEventSource(background))
+                mapBackground: new UIEventSource<BaseLayer>(preferredBackground) // We detach the layer
+                
             })
 
             if (reason.lockBounds) {

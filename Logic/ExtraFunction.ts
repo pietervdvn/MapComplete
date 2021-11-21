@@ -90,7 +90,7 @@ export class ExtraFunction {
     private static readonly DistanceToFunc = new ExtraFunction(
         {
             name: "distanceTo",
-            doc: "Calculates the distance between the feature and a specified point in kilometer. The input should either be a pair of coordinates, a geojson feature or the ID of an object",
+            doc: "Calculates the distance between the feature and a specified point in meter. The input should either be a pair of coordinates, a geojson feature or the ID of an object",
             args: ["feature OR featureID OR longitude", "undefined OR latitude"]
         },
         (featuresPerLayer, feature) => {

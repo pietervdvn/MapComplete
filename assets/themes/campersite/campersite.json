@@ -658,7 +658,8 @@
             "it": "Aggiungi una nuova area di sosta ufficiale per camper. Si tratta di aree destinate alla sosta notturna dei camper. Potrebbe trattarsi di luoghi di campeggio o semplici parcheggi. Potrebbero anche non essere segnalati sul posto, ma semplicemente indicati in una delibera comunale. Un parcheggio destinato ai camper in cui non è però consentito trascorrere la notte -non- va considerato un'area di sosta per camper. ",
             "fr": "Ajouter une nouvelle aire de camping officielle, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking ne suffit pas à rentrer dans cette catégorie ",
             "de": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
-            "nl": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. "
+            "nl": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
+            "zh_Hant": "新增正式露營地點，通常是設計給過夜的露營者的地點。看起來像是真的露營地或是一般的停車場，而且也許沒有任何指標，但在城鎮被定議地點。如果一般給露營者的停車場並不是用來過夜，則不是露營地點 "
           }
         }
       ],
@@ -704,7 +705,8 @@
         "it": "Luoghi di sversamento delle acque reflue",
         "fr": "Site de vidange",
         "pt_BR": "Estações de despejo sanitário",
-        "de": "Sanitäre Entsorgungsstationen"
+        "de": "Sanitäre Entsorgungsstationen",
+        "zh_Hant": "垃圾處理站"
       },
       "minzoom": 10,
       "source": {
@@ -751,7 +753,8 @@
         "it": "Luoghi di sversamento delle acque reflue",
         "fr": "Site de vidange",
         "pt_BR": "Estações de despejo sanitário",
-        "de": "Sanitäre Entsorgungsstationen"
+        "de": "Sanitäre Entsorgungsstationen",
+        "zh_Hant": "垃圾處理站"
       },
       "tagRenderings": [
         "images",
@@ -764,7 +767,8 @@
             "it": "Questo luogo è a pagamento?",
             "fr": "Ce site est-il payant ?",
             "pt_BR": "Este lugar cobra alguma taxa?",
-            "de": "Wird hier eine Gebühr erhoben?"
+            "de": "Wird hier eine Gebühr erhoben?",
+            "zh_Hant": "這個地方需要付費嗎？"
           },
           "mappings": [
             {
@@ -780,7 +784,8 @@
                 "it": "A pagamento",
                 "fr": "Ce site demande un paiement",
                 "pt_BR": "Você precisa pagar pelo uso",
-                "de": "Sie müssen für die Nutzung bezahlen"
+                "de": "Sie müssen für die Nutzung bezahlen",
+                "zh_Hant": "你需要付費才能使用"
               }
             },
             {
@@ -796,7 +801,8 @@
                 "it": "È gratuito",
                 "fr": "Ce site ne demande pas de paiement",
                 "pt_BR": "Pode ser usado gratuitamente",
-                "de": "Nutzung kostenlos"
+                "de": "Nutzung kostenlos",
+                "zh_Hant": "這裡可以免費使用"
               }
             }
           ]
@@ -809,7 +815,8 @@
             "it": "Ha una tariffa di {charge}",
             "fr": "Ce site fait payer {charge}",
             "pt_BR": "Este lugar cobra {charge}",
-            "de": "Die Gebühr beträgt {charge}"
+            "de": "Die Gebühr beträgt {charge}",
+            "zh_Hant": "這個地方收費 {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -818,7 +825,8 @@
             "it": "Qual è la tariffa di questo luogo?",
             "fr": "Combien ce site demande t’il de payer ?",
             "pt_BR": "Quanto este lugar cobra?",
-            "de": "Wie hoch ist die Gebühr an diesem Ort?"
+            "de": "Wie hoch ist die Gebühr an diesem Ort?",
+            "zh_Hant": "這個地方收費多少？"
           },
           "freeform": {
             "key": "charge"
@@ -973,7 +981,8 @@
             "it": "Chi può utilizzare questo luogo di sversamento?",
             "ru": "Кто может использовать эту станцию утилизации?",
             "fr": "Qui peut utiliser le site de vidange ?",
-            "de": "Wer darf diese sanitäre Entsorgungsstation nutzen?"
+            "de": "Wer darf diese sanitäre Entsorgungsstation nutzen?",
+            "zh_Hant": "誰可以使用這個垃圾站？"
           },
           "mappings": [
             {
@@ -987,7 +996,8 @@
                 "ja": "これを使用するには、ネットワークキー/コードが必要です",
                 "it": "Servono una chiave o un codice di accesso",
                 "fr": "Un code est nécessaire",
-                "de": "Sie benötigen einen Schlüssel/Code zur Benutzung"
+                "de": "Sie benötigen einen Schlüssel/Code zur Benutzung",
+                "zh_Hant": "你需要網路鑰匙/密碼來使用這個設施"
               }
             },
             {
@@ -1001,7 +1011,8 @@
                 "ja": "この場所を使用するには、キャンプ/キャンプサイトのお客様である必要があります",
                 "it": "È obbligatorio essere un cliente di questo campeggio o di questa area camper",
                 "fr": "Le site est réservés aux clients",
-                "de": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können"
+                "de": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können",
+                "zh_Hant": "你需要是露營/露營地的客戶才能使用這一地方"
               }
             },
             {
@@ -1016,7 +1027,8 @@
                 "it": "Chiunque può farne uso",
                 "ru": "Любой может воспользоваться этой станцией утилизации",
                 "fr": "Le site est en libre-service",
-                "de": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
+                "de": "Jeder darf diese sanitäre Entsorgungsstation nutzen",
+                "zh_Hant": "任何人都可以使用這個衛生廢棄物站"
               },
               "hideInAnswer": true
             },
@@ -1032,7 +1044,8 @@
                 "it": "Chiunque può farne uso",
                 "ru": "Любой может воспользоваться этой станцией утилизации",
                 "fr": "Le site est en libre-service",
-                "de": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
+                "de": "Jeder darf diese sanitäre Entsorgungsstation nutzen",
+                "zh_Hant": "任何人都可以使用這個垃圾站"
               }
             }
           ]
@@ -1070,14 +1083,16 @@
             "ja": "衛生ゴミ捨て場",
             "it": "luogo di sversamento delle acque reflue",
             "fr": "Site de vidange",
-            "de": "Sanitäre Entsorgungsstation"
+            "de": "Sanitäre Entsorgungsstation",
+            "zh_Hant": "垃圾丟棄站"
           },
           "description": {
             "en": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
             "ja": "新しい衛生ゴミ捨て場を追加します。ここは、キャンピングカーの運転手が排水や携帯トイレの廃棄物を捨てることができる場所です。飲料水や電気もあることが多いです。",
             "it": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
             "fr": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires) généralement alimenté en eau potable et électricité.",
-            "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom."
+            "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
+            "zh_Hant": "新增垃圾站，這通常是提供露營駕駛丟棄廢水與化學性廁所廢水的地方，也會有飲用水與電力。"
           }
         }
       ],
