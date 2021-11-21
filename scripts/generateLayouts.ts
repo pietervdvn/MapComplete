@@ -7,7 +7,6 @@ import Constants from "../Models/Constants";
 import * as all_known_layouts from "../assets/generated/known_layers_and_themes.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
-import PrivacyPolicy from "../UI/BigComponents/PrivacyPolicy";
 // We HAVE to mark this while importing
 Utils.runningFromConsole = true;
 

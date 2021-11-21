@@ -1,5 +1,4 @@
 import {Utils} from "../Utils";
-import {UIEventSource} from "../Logic/UIEventSource";
 
 /**
  * A thin wrapper around a html element, which allows to generate a HTML-element.
@@ -12,7 +11,6 @@ export default abstract class BaseUIElement {
     private clss: Set<string> = new Set<string>();
     private style: string;
     private _onClick: () => void;
-    private _onHover: UIEventSource<boolean>;
 
     public onClick(f: (() => void)) {
         this._onClick = f;
@@ -136,18 +134,6 @@ export default abstract class BaseUIElement {
                     e.consumed = true;
                 }
                 el.classList.add("pointer-events-none", "cursor-pointer");
-            }
-
-            if (this._onHover !== undefined) {
-                const self = this;
-                el.addEventListener('mouseover', () => self._onHover.setData(true));
-                el.addEventListener('mouseout', () => self._onHover.setData(false));
-            }
-
-            if (this._onHover !== undefined) {
-                const self = this;
-                el.addEventListener('mouseover', () => self._onHover.setData(true));
-                el.addEventListener('mouseout', () => self._onHover.setData(false));
             }
 
             return el
