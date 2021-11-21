@@ -210,7 +210,11 @@ export default class FeaturePipeline {
             handleTile: tile => {
                 new RegisteringAllFromFeatureSourceActor(tile)
                 if (tile.layer.layerDef.maxAgeOfCache > 0) {
-                    self.localStorageSavers.get(tile.layer.layerDef.id).addTile(tile)
+                    const saver = self.localStorageSavers.get(tile.layer.layerDef.id)
+                    if(saver === undefined){
+                        console.error("No localStorageSaver found for layer ",tile.layer.layerDef.id)
+                    }
+                    saver?.addTile(tile)
                 }
                 perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
                 tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))

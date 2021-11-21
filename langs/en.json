@@ -28,7 +28,8 @@
     "title": "Welcome to MapComplete",
     "featuredThemeTitle": "Featured this week",
     "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about features of a specific theme and allows to update it.",
-    "pickTheme": "Pick a theme below to get started."
+    "pickTheme": "Pick a theme below to get started.",
+    "logIn": "Log in to see other themes you previously visited"
   },
   "split": {
     "split": "Split",

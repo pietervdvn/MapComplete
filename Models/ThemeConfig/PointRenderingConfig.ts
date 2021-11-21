@@ -47,7 +47,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         if (this.location.size == 0) {
             throw "A pointRendering should have at least one 'location' to defined where it should be rendered. (At " + context + ".location)"
         }
-        this.icon = this.tr("icon", "");
+        this.icon = this.tr("icon", undefined);
         this.iconBadges = (json.iconBadges ?? []).map((overlay, i) => {
             let tr: TagRenderingConfig;
             if (typeof overlay.then === "string" &&
@@ -65,8 +65,8 @@ export default class PointRenderingConfig extends WithContextLoader {
             };
         });
 
-        const iconPath = this.icon.GetRenderValue({id: "node/-1"}).txt;
-        if (iconPath.startsWith(Utils.assets_path)) {
+        const iconPath = this.icon?.GetRenderValue({id: "node/-1"})?.txt;
+        if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length);
             if (Svg.All[iconKey] === undefined) {
                 throw "Builtin SVG asset not found: " + iconPath;
@@ -200,7 +200,8 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
 
 
-        const iconAndBadges = new Combine([this.GetSimpleIcon(tags), this.GetBadges(tags)])
+        const icon = this.GetSimpleIcon(tags)
+        const iconAndBadges = new Combine([, this.GetBadges(tags)])
             .SetClass("block relative")
 
         if (!options?.noSize) {
@@ -208,9 +209,21 @@ export default class PointRenderingConfig extends WithContextLoader {
         } else {
             iconAndBadges.SetClass("w-full h-full")
         }
+        
+        let label = this.GetLabel(tags)
+        let htmlEl : BaseUIElement;
+        if(icon === undefined && label === undefined){
+            htmlEl = undefined
+        }else if(icon === undefined){
+            htmlEl = label
+        }else if(label === undefined){
+            htmlEl = iconAndBadges
+        }else {
+            htmlEl = new Combine([iconAndBadges, label]).SetStyle("flex flex-col")
+        }
 
         return {
-            html: new Combine([iconAndBadges, this.GetLabel(tags)]).SetStyle("flex flex-col"),
+            html: htmlEl,
             iconSize: [iconW, iconH],
             iconAnchor: [anchorW, anchorH],
             popupAnchor: [0, 3 - anchorH],

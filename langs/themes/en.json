@@ -609,6 +609,45 @@
         "shortDescription": "A map where you can view and edit things related to the bicycle infrastructure.",
         "title": "Bicycle infrastructure"
     },
+    "cyclenodes": {
+        "description": "This map shows cycle node networks and allows you to add new nodes easily",
+        "layers": {
+            "0": {
+                "name": "node to node links",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "When was this node to node link last surveyed?",
+                        "render": "This node to node link was last surveyed on {survey:date}"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "node to node link <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "node to node link"
+                }
+            },
+            "1": {
+                "name": "nodes",
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "question": "How many other cycle nodes does this node link to?",
+                        "render": "This node links to {expected_rcn_route_relations} other cycle nodes."
+                    },
+                    "node-survey:date": {
+                        "question": "When was this cycle node last surveyed?",
+                        "render": "This cycle node was last surveyed on {survey:date}"
+                    }
+                },
+                "title": {
+                    "render": "cycle node <strong>{rcn_ref}</strong>"
+                }
+            }
+        },
+        "title": "Cycle Node Networks"
+    },
     "cyclestreets": {
         "description": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
         "layers": {
@@ -795,7 +834,7 @@
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.<br/>Note that this is very hacky and 'steals' the GRB data from an external site; in order to do this, you need to install and activate <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>this firefox extension</a> for it to work.",
         "layers": {
-            "1": {
+            "2": {
                 "tagRenderings": {
                     "building type": {
                         "question": "What kind of building is this?"
