@@ -29,7 +29,7 @@ export default class LegacyJsonConvert {
             }
         }
 
-        if (config.mapRendering === undefined && config.id !== "sidewalks") {
+        if (config.mapRendering === undefined) {
             config.mapRendering = []
             // This is a legacy format, lets create a pointRendering
             let location: ("point" | "centroid")[] = ["point"]

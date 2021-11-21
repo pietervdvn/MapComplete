@@ -15,12 +15,12 @@
   "maintainer": "Sebastian Kürten",
   "icon": "./assets/themes/cyclenodes/logo.svg",
   "version": "0",
+  "hideFromOverview": true,
   "startLat": 51.755515,
   "startLon": 14.327545,
   "startZoom": 11,
   "widenFactor": 0.05,
-  "roamingRenderings": [],
-    "clustering":{
+  "clustering": {
     "maxZoom": 11,
     "minNeededElements": 1000000
   },
@@ -34,7 +34,8 @@
         "osmTags": {
           "and": [
             "network=rcn",
-            "network:type=node_network"
+            "network:type=node_network",
+            "route=bicycle"
           ]
         }
       },
@@ -52,12 +53,16 @@
           }
         ]
       },
-      "width": {
-        "render": "4"
-      },
-      "color": {
-        "render": "#00a703"
-      },
+      "mapRendering": [
+        {
+          "width": {
+            "render": "4"
+          },
+          "color": {
+            "render": "#00a703"
+          }
+        }
+      ],
       "tagRenderings": [
         {
           "question": {
@@ -75,8 +80,10 @@
               "if": "survey:date:={_now:date}",
               "then": "Surveyed today!"
             }
-          ]
-        }
+          ],
+          "id": "node2node-survey:date"
+        },
+        "export_as_gpx"
       ]
     },
     {
@@ -86,30 +93,37 @@
       },
       "source": {
         "osmTags": {
-          "or": [
-            "network:type=node_network",
+          "and": [
             "rcn_ref~*"
           ]
         }
       },
+      "mapRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "label": {
+            "mappings": [
+              {
+                "if": "rcn_ref~*",
+                "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
+              },
+              {
+                "if": "rcn_ref=",
+                "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>"
+              }
+            ]
+          }
+        }
+      ],
       "minzoom": 12,
       "title": {
         "render": {
           "en": "cycle node <strong>{rcn_ref}</strong>",
           "de": "Knotenpunkt"
         }
-      },
-      "label": {
-        "mappings": [
-          {
-            "if": "rcn_ref~*",
-            "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
-          },
-          {
-            "if": "rcn_ref=",
-            "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>"
-          }
-        ]
       },
       "presets": [
         {
@@ -147,7 +161,8 @@
               "if": "survey:date:={_now:date}",
               "then": "Surveyed today!"
             }
-          ]
+          ],
+          "id": "node-survey:date"
         },
         {
           "question": {
@@ -159,7 +174,8 @@
           "freeform": {
             "key": "expected_rcn_route_relations",
             "type": "int"
-          }
+          },
+          "id": "node-expected_rcn_route_relations"
         },
         "images"
       ]
