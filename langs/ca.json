@@ -203,7 +203,7 @@
     },
     "favourite": {
         "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
-        "loginNeeded": "<h3>Entrar</h3>El disseny personalizat només està disponible pels usuaris d' OpenstreetMap",
+        "loginNeeded": "<h3>Entrar</h3>El disseny personalitzat només està disponible pels usuaris d'OpenstreetMap",
         "reload": "Recarregar dades"
     },
     "reviews": {
