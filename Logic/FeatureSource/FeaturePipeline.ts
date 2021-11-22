@@ -75,7 +75,7 @@ export default class FeaturePipeline {
                 .map(ch => ch.changes)
                 .filter(coor => coor["lat"] !== undefined && coor["lon"] !== undefined)
                 .forEach(coor => {
-                    state.layoutToUse.layers.forEach(l => self.localStorageSavers.get(l.id).poison(coor["lon"], coor["lat"]))
+                    state.layoutToUse.layers.forEach(l => self.localStorageSavers.get(l.id)?.poison(coor["lon"], coor["lat"]))
                 })
         })
 
@@ -227,10 +227,9 @@ export default class FeaturePipeline {
                     if (layer.maxAgeOfCache > 0) {
                        const saver = self.localStorageSavers.get(layer.id)
                            if(saver === undefined){
-                               console.warn("No local storage saver found for ", layer.id)
+                               console.error("No local storage saver found for ", layer.id)
                            }else{
-                               
-                           saver.MarkVisited(tileId, new Date())
+                                saver.MarkVisited(tileId, new Date())
                            }
                     }
                     self.freshnesses.get(layer.id).addTileLoad(tileId, new Date())
@@ -264,7 +263,7 @@ export default class FeaturePipeline {
                 maxZoomLevel: state.layoutToUse.clustering.maxZoom,
                 registerTile: (tile) => {
                     // We save the tile data for the given layer to local storage - data sourced from overpass
-                    self.localStorageSavers.get(tile.layer.layerDef.id).addTile(tile)
+                    self.localStorageSavers.get(tile.layer.layerDef.id)?.addTile(tile)
                     perLayerHierarchy.get(source.layer.layerDef.id).registerTile(new RememberingSource(tile))
                     tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
 
@@ -426,7 +425,7 @@ export default class FeaturePipeline {
                         const tileIndex = Tiles.tile_index(paddedToZoomLevel, x, y)
                         downloadedLayers.forEach(layer => {
                             self.freshnesses.get(layer.id).addTileLoad(tileIndex, date)
-                            self.localStorageSavers.get(layer.id).MarkVisited(tileIndex, date)
+                            self.localStorageSavers.get(layer.id)?.MarkVisited(tileIndex, date)
                         })
                     })
 

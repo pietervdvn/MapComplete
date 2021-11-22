@@ -31,44 +31,150 @@
   "enableGeolocation": false,
   "layers": [
     {
-      "id": "osm-fixmes",
-      "name": {
-        "nl": "Fixmes op gebouwen"
+      "builtin": "type_node",
+      "isShown": {
+        "render": "no"
       },
-      "passAllFeatures": true,
+      "override": {
+        "calculatedTags": [
+          "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
+          "_is_part_of_building_passage=feat.get('parent_ways')?.some(p => p.tunnel === 'building_passage') ?? false",
+          "_is_part_of_highway=!feat.get('is_part_of_building_passage') && (feat.get('parent_ways')?.some(p => p.highway !== undefined && p.highway !== '') ?? false)",
+          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false"
+        ],
+        "mapRendering": [
+          {
+            "icon": "square:#00f",
+            "iconSize": "5,5,center",
+            "location": "point"
+          }
+        ]
+      }
+    },
+    {
+      "id": "OSM-buildings",
+      "name": "All OSM-buildings",
       "source": {
-        "maxCacheAge": 0,
-        "osmTags": {
-          "and": [
-            "fixme~*",
-            "building~*"
-          ]
-        }
+        "osmTags": "building~*",
+        "maxCacheAge": 0
       },
       "calculatedTags": [
         "_grbNumber=(feat.properties.fixme?.match(/GRB thinks that this has number ([^;]+)/ ) ?? ['','none']) [1]"
       ],
-      "title": {
-        "render": {
-          "nl": "{addr:street} {addr:housenumber}"
-        },
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "fixme~*"
-              ]
-            },
-            "then": {
-              "nl": "{fixme}"
-            }
+      "mapRendering": [
+        {
+          "width": {
+            "render": "2",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "5"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00c",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "#ff00ff"
+              },
+              {
+                "if": "building=house",
+                "then": "#a00"
+              },
+              {
+                "if": "building=shed",
+                "then": "#563e02"
+              },
+              {
+                "if": {
+                  "or": [
+                    "building=garage",
+                    "building=garages"
+                  ]
+                },
+                "then": "#f9bfbb"
+              },
+              {
+                "if": "building=yes",
+                "then": "#0774f2"
+              }
+            ]
           }
-        ]
-      },
-      "description": {
-        "nl": "Dit gebouw heeft een foutmelding"
-      },
+        },
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "label": {
+            "mappings": [
+              {
+                "if": "addr:housenumber~*",
+                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          }
+        }
+      ],
+      "title": "OSM-gebouw",
       "tagRenderings": [
+        {
+          "id": "building type",
+          "freeform": {
+            "key": "building"
+          },
+          "render": "The building type is <b>{building}</b>",
+          "question": {
+            "en": "What kind of building is this?"
+          },
+          "mappings": [
+            {
+              "if": "building=house",
+              "then": "A normal house"
+            },
+            {
+              "if": "building=detached",
+              "then": "A house detached from other building"
+            },
+            {
+              "if": "building=semidetached_house",
+              "then": "A house sharing only one wall with another house"
+            },
+            {
+              "if": "building=apartments",
+              "then": "An apartment building - highrise for living"
+            },
+            {
+              "if": "building=office",
+              "then": "An office building - highrise for work"
+            },
+            {
+              "if": "building=apartments",
+              "then": "An apartment building"
+            },
+            {
+              "if": "building=shed",
+              "then": "A small shed, e.g. in a garden"
+            },
+            {
+              "if": "building=garage",
+              "then": "A single garage to park a car"
+            },
+            {
+              "if": "building=garages",
+              "then": "A building containing only garages; typically they are all identical"
+            },
+            {
+              "if": "building=yes",
+              "then": "A building - no specification"
+            }
+          ]
+        },
         {
           "id": "grb-housenumber",
           "render": {
@@ -185,153 +291,19 @@
             "key": "building:min_level",
             "type": "pnat"
           }
-        }
-      ],
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "label": {
-            "mappings": [
-              {
-                "if": "addr:housenumber~*",
-                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          }
-        },
-        {
-          "dashArray": "2 2",
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "2"
-          }
-        }
-      ]
-    },
-    {
-      "builtin": "type_node",
-      "isShown": {
-        "render": "no"
-      },
-      "override": {
-        "calculatedTags": [
-          "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
-          "_is_part_of_building_passage=feat.get('parent_ways')?.some(p => p.tunnel === 'building_passage') ?? false",
-          "_is_part_of_highway=!feat.get('is_part_of_building_passage') && (feat.get('parent_ways')?.some(p => p.highway !== undefined && p.highway !== '') ?? false)",
-          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false"
-        ],
-        "mapRendering": [
-          {
-            "icon": "square:#00f",
-            "iconSize": "5,5,center",
-            "location": "point"
-          }
-        ]
-      }
-    },
-    {
-      "id": "OSM-buildings",
-      "name": "All OSM-buildings",
-      "source": {
-        "osmTags": "building~*",
-        "maxCacheAge": 0
-      },
-      "mapRendering": [
-        {
-          "width": {
-            "render": "2"
-          },
-          "color": {
-            "render": "#00c",
-            "mappings": [
-              {
-                "if": "building=house",
-                "then": "#a00"
-              },
-              {
-                "if": "building=shed",
-                "then": "#563e02"
-              },
-              {
-                "if": {
-                  "or": [
-                    "building=garage",
-                    "building=garages"
-                  ]
-                },
-                "then": "#f9bfbb"
-              },
-              {
-                "if": "building=yes",
-                "then": "#0774f2"
-              }
-            ]
-          }
-        }
-      ],
-      "title": "OSM-gebouw",
-      "tagRenderings": [
-        {
-          "id": "building type",
-          "freeform": {
-            "key": "building"
-          },
-          "render": "The building type is <b>{building}</b>",
-          "question": {
-            "en": "What kind of building is this?"
-          },
-          "mappings": [
-            {
-              "if": "building=house",
-              "then": "A normal house"
-            },
-            {
-              "if": "building=detached",
-              "then": "A house detached from other building"
-            },
-            {
-              "if": "building=semidetached_house",
-              "then": "A house sharing only one wall with another house"
-            },
-            {
-              "if": "building=apartments",
-              "then": "An apartment building - highrise for living"
-            },
-            {
-              "if": "building=office",
-              "then": "An office building - highrise for work"
-            },
-            {
-              "if": "building=apartments",
-              "then": "An apartment building"
-            },
-            {
-              "if": "building=shed",
-              "then": "A small shed, e.g. in a garden"
-            },
-            {
-              "if": "building=garage",
-              "then": "A single garage to park a car"
-            },
-            {
-              "if": "building=garages",
-              "then": "A building containing only garages; typically they are all identical"
-            },
-            {
-              "if": "building=yes",
-              "then": "A building - no specification"
-            }
-          ]
         },
         "all_tags"
+      ],
+      "filter": [
+        {
+          "id": "has-fixme",
+          "options": [
+            {
+              "osmTags": "fixme~*",
+              "question": "Heeft een FIXME"
+            }
+          ]
+        }
       ]
     },
     {
@@ -399,8 +371,10 @@
             "point",
             "centroid"
           ],
-          "icon": "circle:#bb3322",
-          "iconSize": "15,15,center"
+          "iconSize": "15,15,center",
+          "label": {
+            "render": "<div style='background:#faa' class='rounded-full'>{HNRLABEL}</div>"
+          }
         }
       ],
       "calculatedTags": [
@@ -507,7 +481,7 @@
         },
         {
           "id": "Import-button",
-          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Upload this building to OpenStreetMap)}",
+          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Upload this building to OpenStreetMap)}",
           "mappings": [
             {
               "if": "_overlaps_with!=null",

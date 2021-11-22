@@ -753,9 +753,7 @@
     "grb": {
         "description": "GRB Fixup",
         "layers": {
-            "0": {
-                "description": "Dit gebouw heeft een foutmelding",
-                "name": "Fixmes op gebouwen",
+            "1": {
                 "tagRenderings": {
                     "grb-fixme": {
                         "mappings": {
@@ -786,14 +784,6 @@
                     "grb-unit": {
                         "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
                     }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{fixme}"
-                        }
-                    },
-                    "render": "{addr:street} {addr:housenumber}"
                 }
             }
         },

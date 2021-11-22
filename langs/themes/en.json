@@ -834,7 +834,7 @@
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.<br/>Note that this is very hacky and 'steals' the GRB data from an external site; in order to do this, you need to install and activate <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>this firefox extension</a> for it to work.",
         "layers": {
-            "2": {
+            "1": {
                 "tagRenderings": {
                     "building type": {
                         "question": "What kind of building is this?"
