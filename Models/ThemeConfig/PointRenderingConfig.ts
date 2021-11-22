@@ -201,7 +201,7 @@ export default class PointRenderingConfig extends WithContextLoader {
 
 
         const icon = this.GetSimpleIcon(tags)
-        const iconAndBadges = new Combine([, this.GetBadges(tags)])
+        const iconAndBadges = new Combine([icon, this.GetBadges(tags)])
             .SetClass("block relative")
 
         if (!options?.noSize) {
