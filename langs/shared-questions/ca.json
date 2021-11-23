@@ -1,1 +1,116 @@
-{}
+{
+    "undefined": {
+        "level": {
+            "question": "A quina planta està situat aquest element?",
+            "mappings": {
+                "3": {
+                    "then": "Situat a primera planta"
+                },
+                "2": {
+                    "then": "Situat a planta zero"
+                },
+                "1": {
+                    "then": "Situat a planta zero"
+                },
+                "0": {
+                    "then": "Situat a planta subterrani"
+                }
+            },
+            "render": "Situat a la planta {level}"
+        },
+        "email": {
+            "question": "Quina és l'adreça de correu electrònic de {name}?"
+        },
+        "dog-access": {
+            "question": "S'accepten gossos en aquest negoci?",
+            "mappings": {
+                "3": {
+                    "then": "S'accepten gossos lliures"
+                },
+                "2": {
+                    "then": "S'accepten gossos però lligats"
+                },
+                "1": {
+                    "then": "<b>No</b> s'accepten gossos"
+                },
+                "0": {
+                    "then": "S'accepten gossos"
+                }
+            }
+        },
+        "description": {
+            "question": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. <br/><span style='font-size: small'>No repeteixis informació que ja hi és</span>"
+        },
+        "phone": {
+            "question": "Quin és el telèfon de {name}?"
+        },
+        "payment-options": {
+            "question": "Quins mètodes de pagament s'accepten aquí?",
+            "mappings": {
+                "1": {
+                    "then": "S'accepten targetes de crèdit"
+                },
+                "0": {
+                    "then": "S'accepten diners"
+                }
+            }
+        },
+        "opening_hours": {
+            "render": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+            "question": "Quin és l'horari d'obertura de {name}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "2": {
+                    "then": "No hi ha endolls disponibles per als clients però es pot carregar si es demana als responsables"
+                },
+                "1": {
+                    "then": "Hi ha aslguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics"
+                },
+                "0": {
+                    "then": "Està ple d'endolls pels clients de dins, on es poden carregar els aparells electrònics"
+                },
+                "3": {
+                    "then": "No hi ha endolls disponibles per als clients"
+                }
+            },
+            "question": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "1": {
+                    "then": "És facilment arribable amb cadira de rodes"
+                },
+                "0": {
+                    "then": "Aquest lloc està especialment adaptat per a les cadires de rodes"
+                },
+                "3": {
+                    "then": "Aquest lloc no és accessible amb cadira de rodes"
+                },
+                "2": {
+                    "then": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil"
+                }
+            },
+            "question": "Aquest lloc és accessible amb cadira de rodes?"
+        },
+        "website": {
+            "question": "Quina és la web de {name}?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "No enllaçat amb Viquipèdia"
+                }
+            },
+            "question": "Quin és l'ítem a Viquipèdia?"
+        },
+        "wikipedia": {
+            "question": "Quina és la correspondent entitat a Wikidata?",
+            "mappings": {
+                "0": {
+                    "then": "No hi ha cap enllaça a Viquipèdia encara"
+                }
+            }
+        }
+    }
+}
