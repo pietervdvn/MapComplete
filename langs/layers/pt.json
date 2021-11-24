@@ -12,6 +12,64 @@
                 }
             },
             "render": "Obra de arte"
+        },
+        "description": "Diversas obras de arte",
+        "name": "Obras de arte",
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Que artista criou isto?",
+                "render": "Criado por {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Arquitetura"
+                    },
+                    "1": {
+                        "then": "Mural"
+                    },
+                    "2": {
+                        "then": "Pintura"
+                    },
+                    "3": {
+                        "then": "Escultura"
+                    },
+                    "4": {
+                        "then": "Estátua"
+                    },
+                    "5": {
+                        "then": "Busto"
+                    },
+                    "6": {
+                        "then": "Pedra"
+                    },
+                    "7": {
+                        "then": "Instalação"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Relevo"
+                    },
+                    "10": {
+                        "then": "Azulejo (azulejo decorativo espanhol e português)"
+                    },
+                    "11": {
+                        "then": "Ladrilhos"
+                    }
+                },
+                "question": "Qual é o tipo desta obra de arte?",
+                "render": "Isto é um(a) {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Existe um site com mais informações sobre esta obra de arte?",
+                "render": "Mais informações <a href='{website}' target='_blank'>neste site</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?",
+                "render": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
         }
     },
     "bench": {

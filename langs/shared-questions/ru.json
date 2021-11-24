@@ -33,6 +33,13 @@
         },
         "website": {
             "question": "Какой сайт у {name}?"
+        },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Собаки разрешены"
+                }
+            }
         }
     }
 }
