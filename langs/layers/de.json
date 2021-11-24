@@ -563,7 +563,7 @@
         },
         "tagRenderings": {
             "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
+                "render": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,%0D%0A%0D%0AMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
             },
             "Operational status": {
                 "mappings": {
