@@ -197,6 +197,7 @@ export default class DefaultGUI {
                 return;
             }
             isOpened.setData(false);
+            return true; // Unregister this caller - we only autoclose once
         });
 
         this.state.selectedElement.addCallbackAndRunD((_) => {
