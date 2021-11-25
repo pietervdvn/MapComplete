@@ -193,10 +193,9 @@
       "downloadAsPdf": "Download a PDF of the current map",
       "downloadAsPdfHelper": "Ideal to print the current map",
       "downloadGeojson": "Download visible data as GeoJSON",
-      "downloadGpx":"Download as GPX-file",
-      "downloadGpxHelper":"A GPX-file can be used with most navigation devices and applications",
-      "uploadGpx":"Upload your track to OpenStreetMap",
-
+      "downloadGpx": "Download as GPX-file",
+      "downloadGpxHelper": "A GPX-file can be used with most navigation devices and applications",
+      "uploadGpx": "Upload your track to OpenStreetMap",
       "exporting": "Exporting…",
       "downloadGeoJsonHelper": "Compatible with QGIS, ArcGIS, ESRI, …",
       "downloadCSV": "Download visible data as CSV",
@@ -307,7 +306,7 @@
   },
   "privacy": {
     "title": "Privacy policy",
-    "intro":"Privacy is important - for both the individual and for society. MapComplete tries to respect your privacy as much as possible - up to the point no annoying cookie banner is needed. However, we still would like to inform you which information is gathered and shared, under which circumstances and why these trade-offs are made.",
+    "intro": "Privacy is important - for both the individual and for society. MapComplete tries to respect your privacy as much as possible - up to the point no annoying cookie banner is needed. However, we still would like to inform you which information is gathered and shared, under which circumstances and why these trade-offs are made.",
     "trackingTitle": "Statistical data",
     "tracking": "To gather some insight in whom visits our website, some technical information is collected. This is included the country you visited the webpage from, which website referred you to MapComplete, the type of your device and the screensize. A coockie is placed on your device to indicate that you visited MapComplete earlier today. This data is not detailed enough to personally identify you. These statistics are only available to anyone in aggregate and are <a href='https://pietervdvn.goatcounter.com' target='_blank'>publicly available to anyone</a>",
     "geodataTitle": "Your geolocation",
@@ -315,8 +314,46 @@
     "editingTitle": "When making changes",
     "editing": "When you make a change to the map, this change is recorded on OpenStreetMap and is publicly available to anyone. A changeset made with MapComplete includes the following data: <ul><li>The changes you made</li><li>Your username</li><li>When this change is made</li><li>The theme you used while making the change</li><li>The language of the user interface</li><li>An indication of how close you were to changed objects. Other mappers can use this information to determine if a change was made based on survey or on remote research</li></ul> Please refer to <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>the privacy policy on OpenStreetMap.org</a> for detailed information. We'd like to remind you that you can use a fictional name when signing up.",
     "miscCookiesTitle": "Other cookies",
-    "miscCookies":"MapComplete integrates with various other services, especially to load images of features. Images are hosted on various third-party servers, which might set cookies on their own.",
+    "miscCookies": "MapComplete integrates with various other services, especially to load images of features. Images are hosted on various third-party servers, which might set cookies on their own.",
     "whileYoureHere": "Do you care about privacy?",
     "surveillance": "As you are reading the privacy policy, you probably care about privacy - so do we! We even made <a href='https://mapcomplete.osm.be/surveillance'>a theme showing surveillance cameras.</a> Feel free to map them all!"
+  },
+  "professional": {
+    "title": "Professional support with MapComplete",
+    "intro": "The developer of MapComplete offers professional support. This document outlines some of the possibilities, common questions and the boundaries of MapComplete",
+    "osmTitle": "What can OpenStreetMap and MapComplete do for your organisation?",
+    "osmText": "Maintaining a set of up-to-date geodata is hard, error prone and expensive.<br/>To add insult to injury, many organizations end up collecting the same data independently - resulting in duplicated efforts, non-standardized data formats and many incomplete, unmaintained datasets.<br/>At the same time, there is a huge community which gathers a lot of geodata into one shared, global and standardized database - namely OpenStreetMap.org.<br/>This dataset has a very liberal license which allows for infinite reuse but can be hard to edit, especially for non-technical users as most OpenStreetMap editors show <i>all</i> data at once and require some technical knowledge.A user who wishes to update information on their topic of choice (e.g. a bench, a shop, a waste basket, ...) is confronted with every street, every building and every other feature nearby.<br/>    MapComplete is the in-between solution, offering a more traditional map focused on just one topic while offering powerful editing capabilities disguised as simple-to-use building blocks.",
+    
+    "aboutOsm": {
+      "title": "What is OpenStreetMap and why use it in your organisation?",
+      "intro": "OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as <b>it can be verified on the ground</b>.<br/> OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects.An individual object might also have a ton of attributes, bringing a lot of nuance, e.g.:",
+      "li0": "Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run over theme",
+      "li1": "Shops and other amenities might have opening hours, a phone number, a link to the website, which payment methods are supported, what they sell, which services they offer, ...",
+      "li2": "Toilets might have information about wheelchair accessibility, a changing table, if payment is needed, ...",
+      "li3": "and much, much more...",
+      "benefits": {
+        "title": "Benefits of the OSM-ecosystem",
+        "intro": "It can be very hard to leave your own dataset behind, as building this dataset often took a lot of time and effort.<br/>However, the benefits of switching over to OSM are huge:",
+        "li0": "You are not alone anymore to gather and maintain this dataset - a whole community is at your side",
+        "li1": "Your data will reach a bigger audience then ever via Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, nearly all cycle-applications, ...",
+        "li2": "Many governement organisations and municipalities use OpenStreetMap on their websites too"
+      },
+      "license": {
+        "title": "The license",
+        "intro": "OpenStreetMap is licensed under the Open Database License. The [full copyright text](https://osm.org/copyright) can be summarized as following:",
+        "li0": "A product using OpenStreetMap data must give attribution.",
+        "li1": "OpenStreetMap-data must remain _open_. This means that data of a map containing OpenStreetMap data can be copied again.",
+        "outro": "The license has a few implications - these are explained below."
+      },
+      "vandalism": {
+        "title": "What about vandalism?",
+        "intro": "As anyone can edit the data, it is indeed possible that a malicious change is made. However, this is extremely rare for a few reasons:",
+        "li0": "the technical barrier to make changes is high",
+        "li1": "a small malicious change has low impact, thus little reward for a vandal",
+        "li": "a high impact change is quickly noticed and reverted since so many people use this data",
+        "li": "all changes are tracked and tied to a single user. A repeating offender is quickly banned",
+        "li": "In Belgium (and some other countries), the first edit by a new contributor is systematically checked and corrected if needed."
+      }
+    }
   }
 }

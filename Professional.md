@@ -1,35 +1,16 @@
-Professional support with MapComplete
-==========
-
-The developer of MapComplete offers professional support. This document outlines some of the possibilities, pitfalls and common questions.
 
 
+What about vandalism?
+---------------------
 
-What can MapComplete do for your organisation?
-----
+As anyone can edit the data, it is indeed possible that a malicious change is made. However, this is extremely rare for a few reasons:
 
-Maintaining a set of up-to-date geodata is hard, error prone and expensive.
+- the technical barrier to make changes is high
+- a small malicious change has low impact, thus little reward for a vandal
+- a high impact change is quickly noticed and reverted since so many people use this data
+- all changes are tracked and tied to a single user. A repeating offender is quickly banned
+- In Belgium (and some other countries), the first edit by a new contributor is systematically checked and corrected if needed.
 
-To add insult to injury, many organizations end up collecting the same data independently - resulting in duplicated efforts, non-standardized data formats and many incomplete datasets.
-
-At the same time, there is a huge community which gathers a lot of geodata into one shared and standardized database - namely OpenStreetMap.org.
-This dataset has a very liberal license which allows for infinite reuse but can be hard to edit, especially for non-technical users as most OpenStreetMap editors show _all_ data at once.
-A user who wishes to update information on their topic of choice (e.g. a bench, a shop, a waste basket, ...) is confronted with every street, every building and every other feature nearby.
-
-MapComplete is the in-between solution, offering a more traditional map focused on just one topic while offering powerful editing capabilities disguised as simple-to-use building blocks. 
-
-What data can be found in OpenStreetMap?
-=====
-
-OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as **it can be verified on the ground**.
-
-OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects.
-An individual object might also have a ton of attributes, bringing a lot of nuance, e.g.:
-
-- Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run over theme
-- Shops and other amenities might have opening hours, a phone number, a link to the website, which payment methods are supported, what they sell, which services they offer, ...
-- Toilets might have information about wheelchair accessibility, a changing table, if payment is needed, ...
-- and much, much more...
 
 Using MapComplete in your organization
 =========
@@ -53,7 +34,7 @@ e.g. to compare OpenStreetMap with another dataset or to show data that is not s
 What are the survey possibilities?
 ----
 
-MapComplete also is an easy to use survey tool. It is ideal to collect the necessary data in a few clicks, both on desktop and on mobile.
+MapComplete is an easy to use _survey_ tool. It is ideal to collect the necessary in a few clicks, both on desktop and on mobile. This data is contributed directly into OpenStreetMap.
 
 We can setup a custom survey tool, asking precisely the data you need in a future-proof way.
 
@@ -62,28 +43,6 @@ Do you have a dataset that has to be (re)surveyed?
 This is the ideal moment to add those to OpenStreetMap directly.
 MapComplete can show your dataset and OpenStreetMap at the same time, making it easier to visit all the locations and to see what the community already contributed.
 
-
-Benefits of the OSM-ecosystem!
------
-
-It can be very hard to leave your own dataset behind, as building this dataset often took a lot of time and effort.
-
-However, the benefits of switching over to OSM are huge:
-
-- You are not alone anymore to gather and maintain this dataset - a whole community is at your side
-- Your data will reach a bigger audience then ever via Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, nearly all cycle-applications, ...
-- Many governement organisations and municipalities use OpenStreetMap on their websites too
-
-What about vandalism?
----------------------
-
-As anyone can edit the data, it is indeed possible that a malicious change is made. However, this is extremely rare for a few reasons:
-
-- the technical barrier to make changes is high
-- a small malicious change has low impact, thus little reward for a vandal
-- a high impact change is quickly noticed and reverted since so many people use this data
-- all changes are tracked and tied to a single user. A repeating offender is quickly banned
-- In Belgium (and some other countries), the first edit by a new contributor is systematically checked and corrected if needed.
 
 
 Using the data in internal processes
@@ -94,20 +53,21 @@ Someone with basic spreadsheet-skills can thus easily create graphs and insights
 
 The data can also be retrieved for free via an API-call if an automated setup is needed.
 
+
 Some drawbacks
 ===========================
 
 While joining this community has tremendous benefits, there are a few topics to carefully consider.
 
-### Data not suited for OpenStreetMap
+## Data not suited for OpenStreetMap
 
-MapComplete is built to upload data changes to OpenStreetMap, which needs verifiability.
+The basic rule for OpenStreetMap is that all data must be verifiable on the ground and are somewhat permanent.
 
 This implies that some data _cannot_ be sent to OpenStreetMap directly - but some workarounds exist.
 
-- Subjective data (such as reviews) are not suited for OpenStreetMap. However, MapComplete has an integration with Mangrove.reviews, an openly licenses review website
-- OpenStreetMap only gathers on features that are somewhat permanent and are visible on the ground. Road works that are planned next month are thus _not_ recorded, neither are road works which only last a few days.
-- Temporal data (e.g. statistics of air quality, traffic intensity, ...) can not stored on OpenStreetMap as they are hard to verify by a volunteer. _MapComplete can still visualize this data, if provided in a compatible format though_
+- Subjective data (such as reviews) are not suited for OpenStreetMap. However, MapComplete has an integration with Mangrove.reviews, an openly licensed review website
+- Events of a few days, road works that are planned next month are thus _not_ recorded, neither are road works which only last a few days.
+- Temporal data (e.g. statistics of air quality, traffic intensity, ...) can not stored on OpenStreetMap as they are hard to verify by a volunteer. Note that, if this data is available elsewhere, it can still be visualized though.
 
 
 ### Licensing nuances
