@@ -1,6 +1,7 @@
 import {FixedUiElement} from "./FixedUiElement";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
+import Title from "./Title";
 
 export default class Combine extends BaseUIElement {
     private readonly uiElements: BaseUIElement[];
@@ -22,10 +23,7 @@ export default class Combine extends BaseUIElement {
 
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
-
         try {
-
-
             for (const subEl of this.uiElements) {
                 if (subEl === undefined || subEl === null) {
                     continue;
@@ -47,6 +45,20 @@ export default class Combine extends BaseUIElement {
         }
 
         return el;
+    }
+    
+    public getToC(): Title[]{
+        const titles = []
+        for (const uiElement of this.uiElements) {
+            if(uiElement instanceof Combine){
+                titles.push(...uiElement.getToC())
+            }else if(uiElement instanceof Title){
+                titles.push(uiElement)
+            }
+        }
+        return titles
+        
+        
     }
 
 }
