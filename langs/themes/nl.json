@@ -753,9 +753,7 @@
     "grb": {
         "description": "GRB Fixup",
         "layers": {
-            "3": {
-                "description": "Dit gebouw heeft een foutmelding",
-                "name": "Fixmes op gebouwen",
+            "1": {
                 "tagRenderings": {
                     "grb-fixme": {
                         "mappings": {
@@ -786,57 +784,6 @@
                     "grb-unit": {
                         "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
                     }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{fixme}"
-                        }
-                    },
-                    "render": "{addr:street} {addr:housenumber}"
-                }
-            },
-            "5": {
-                "description": "Dit gebouw heeft een foutmelding",
-                "name": "Fixmes op gebouwen",
-                "tagRenderings": {
-                    "grb-fixme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Geen fixme"
-                            }
-                        },
-                        "question": "Wat zegt de fixme?",
-                        "render": "De fixme is <b>{fixme}</b>"
-                    },
-                    "grb-housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Geen huisnummer"
-                            }
-                        },
-                        "question": "Wat is het huisnummer?",
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
-                    },
-                    "grb-min-level": {
-                        "question": "Hoeveel verdiepingen ontbreken?",
-                        "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
-                    },
-                    "grb-street": {
-                        "question": "Wat is de straat?",
-                        "render": "De straat is <b>{addr:street}</b>"
-                    },
-                    "grb-unit": {
-                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{fixme}"
-                        }
-                    },
-                    "render": "{addr:street} {addr:housenumber}"
                 }
             }
         },

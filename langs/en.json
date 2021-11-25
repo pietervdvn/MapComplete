@@ -28,7 +28,8 @@
     "title": "Welcome to MapComplete",
     "featuredThemeTitle": "Featured this week",
     "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about features of a specific theme and allows to update it.",
-    "pickTheme": "Pick a theme below to get started."
+    "pickTheme": "Pick a theme below to get started.",
+    "logIn": "Log in to see other themes you previously visited"
   },
   "split": {
     "split": "Split",
@@ -108,6 +109,7 @@
       "openLayerControl": "Open the layer control box",
       "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point",
       "hasBeenImported": "This point has already been imported",
+      "importTags": "The element will receive {tags}",
       "zoomInMore": "Zoom in more to import this feature",
       "wrongType": "This element is not a point or a way and can not be imported"
     },

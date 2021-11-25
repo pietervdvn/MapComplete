@@ -179,7 +179,7 @@ interface PlotSpec {
     name: string,
     interpetKeysAs: "date" | "number" | "string" | string
     plot: {
-        type: "pie" | "bar"
+        type: "pie" | "bar" | "line"
         count: { key: string, value: number }[]
     } | {
         type: "stacked-bar"
@@ -196,6 +196,7 @@ interface PlotSpec {
 function createGraph(
     title: string,
     ...options: PlotSpec[]) {
+    console.log("Creating graph",title,"...")
     const process = exec("python3 GenPlot.py \"graphs/" + title + "\"", ((error, stdout, stderr) => {
         console.log("Python: ", stdout)
         if (error !== null) {
@@ -207,7 +208,8 @@ function createGraph(
     }))
 
     for (const option of options) {
-        process.stdin._write(JSON.stringify(option) + "\n", "utf-8", undefined)
+        const d = JSON.stringify(option) + "\n"
+        process.stdin._write(d, "utf-8", undefined)
     }
     process.stdin._write("\n", "utf-8", undefined)
 
@@ -229,6 +231,7 @@ class Histogram<K> {
     }
 
     public bump(key: K, increase = 1) {
+
         if (this.counts.has(key)) {
             this.counts.set(key, increase + this.counts.get(key))
         } else {
@@ -324,6 +327,20 @@ class Histogram<K> {
         return hist
     }
 
+    public asRunningAverages(convertToRange: ((key: K) => K[])) {
+        const newCount = new Histogram<K>()
+        const self = this
+        this.counts.forEach((_, key) => {
+            const keysToCheck = convertToRange(key)
+            let sum = 0
+            for (const k of keysToCheck) {
+                sum += self.counts.get(k) ?? 0
+            }
+            newCount.bump(key, sum / keysToCheck.length)
+        })
+        return newCount
+    }
+
     /**
      * Given a histogram:
      * 'a': 3
@@ -400,6 +417,15 @@ class Histogram<K> {
         const spec = this.asPie(options)
         spec.plot.type = "bar"
         return spec;
+    }
+
+    public asLine(options: {
+        name: string
+        compare?: (a: K, b: K) => number
+    }) {
+        const spec = this.asPie(options)
+        spec.plot.type = "line"
+        return spec
     }
 
 }
@@ -506,7 +532,8 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
     hist
         .createOthersCategory("other", 20)
         .addCountToName()
-        .asBar({name: "Changesets per theme (bar)" + appliedFilterDescription}).render()
+        .asBar({name: "Changesets per theme (bar)" + appliedFilterDescription})
+    .render()
 
 
     new Histogram<string>(allFeatures.map(f => f.properties.user))
@@ -516,7 +543,33 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         {
             compare: (a, b) => Number(a) - Number(b),
             name: "Contributors per changeset count" + appliedFilterDescription
-        }).render()
+        })
+    .render()
+
+
+    const csPerDay = new Histogram<string>(allFeatures.map(f => f.properties.date.substr(0, 10)))
+
+    const perDayLine = csPerDay
+        .keyToDate()
+        .asLine({
+            compare: (a, b) => a.getTime() - b.getTime(),
+            name: "Changesets per day" + appliedFilterDescription
+        })
+
+    const perDayAvg = csPerDay.asRunningAverages(key => {
+        const keys = []
+        for (let i = 0; i < 7; i++) {
+            const otherDay = new Date(new Date(key).getTime() - i * 1000 * 60 * 60 * 24)
+            keys.push(otherDay.toISOString().substr(0, 10))
+        }
+        return keys
+    })
+        .keyToDate()
+        .asLine({
+        compare: (a, b) => a.getTime() - b.getTime(),
+        name: "Running weekly average" + appliedFilterDescription
+    })
+    createGraph("Changesets per day (line)" + appliedFilterDescription, perDayLine, perDayAvg)
 
     new Histogram<string>(allFeatures.map(f => f.properties.metadata.host))
         .asPie({
@@ -588,8 +641,25 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
 
 }
 
+function createMiscGraphs(allFeatures: ChangeSetData[], emptyCS: ChangeSetData[]) {
+    new Histogram(emptyCS.map(f => f.properties.date)).keyToDate().asBar({
+        name: "Empty changesets by date"
+    }).render()
+    const geojson = {
+        type: "FeatureCollection",
+        features: allFeatures.map(f => {
+            try {
+                return GeoOperations.centerpoint(f.geometry);
+            } catch (e) {
+                console.error("Could not create center point: ", e, f)
+            }
+        })
+    }
+    writeFileSync("centerpoints.geojson", JSON.stringify(geojson, undefined, 2))
+}
 
-new StatsDownloader("stats").DownloadStats()
+
+// new StatsDownloader("stats").DownloadStats()
 const allPaths = readdirSync("stats")
     .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
 let allFeatures: ChangeSetData[] = [].concat(...allPaths
@@ -599,25 +669,7 @@ let allFeatures: ChangeSetData[] = [].concat(...allPaths
 const emptyCS = allFeatures.filter(f => f.properties.metadata.theme === "EMPTY CS")
 allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "EMPTY CS")
 
-new Histogram(emptyCS.map(f => f.properties.date)).keyToDate().asBar({
-    name: "Empty changesets by date"
-}).render()
-
-
-const geojson = {
-    type: "FeatureCollection",
-    features: allFeatures.map(f => {
-        try {
-            return GeoOperations.centerpoint(f.geometry);
-        } catch (e) {
-            console.error("Could not create center point: ", e, f)
-        }
-    })
-}
-
-writeFileSync("centerpoints.geojson", JSON.stringify(geojson, undefined, 2))
-
-
+createMiscGraphs(allFeatures, emptyCS)
 createGraphs(allFeatures, "")
 createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
 createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")

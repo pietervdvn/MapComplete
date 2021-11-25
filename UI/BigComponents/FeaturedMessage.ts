@@ -33,16 +33,11 @@ export default class FeaturedMessage extends Combine {
 
     public static WelcomeMessages(): { start_date: Date, end_date: Date, message: string, featured_theme?: string }[] {
         const all_messages: { start_date: Date, end_date: Date, message: string, featured_theme?: string }[] = []
-        console.log("Constructing the list...", welcome_messages)
         for (const i in welcome_messages) {
-            console.log(i)
             if (isNaN(Number(i))) {
                 continue
             }
-            console.log("> ", i)
             const wm = welcome_messages[i]
-            console.log(wm)
-
             if (wm === null) {
                 continue
             }

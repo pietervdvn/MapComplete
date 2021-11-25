@@ -302,11 +302,10 @@ export default class ImportButton extends Toggle {
 
         let action: OsmChangeAction & { getPreview(): Promise<FeatureSource> }
 
-        const theme = o.state.layoutToUse.id
         const changes = o.state.changes
         let confirm: () => Promise<string>
         if (o.conflationSettings !== undefined) {
-
+            // Conflate the way
             action = new ReplaceGeometryAction(
                 o.state,
                 o.feature,
@@ -323,6 +322,7 @@ export default class ImportButton extends Toggle {
             }
 
         } else {
+            // Upload the way to OSM
             const geom = o.feature.geometry
             let coordinates: [number, number][]
             if (geom.type === "LineString") {
@@ -330,7 +330,6 @@ export default class ImportButton extends Toggle {
             } else if (geom.type === "Polygon") {
                 coordinates = geom.coordinates[0]
             }
-
 
             action = new CreateWayWithPointReuseAction(
                 o.newTags.data,
@@ -341,7 +340,6 @@ export default class ImportButton extends Toggle {
                     withinRangeOfM: 1,
                     ifMatches: new Tag("_is_part_of_building", "true"),
                     mode: "move_osm_point"
-
                 }]
             )
 
@@ -364,7 +362,13 @@ export default class ImportButton extends Toggle {
             })
         })
 
-        const confirmButton = new SubtleButton(o.image(), o.message)
+        const tagsExplanation = new VariableUiElement(o.newTags.map(tagsToApply => {
+                const tagsStr = tagsToApply.map(t => t.asHumanString(false, true)).join("&");
+                return Translations.t.general.add.importTags.Subs({tags: tagsStr});
+            }
+        )).SetClass("subtle")
+
+        const confirmButton = new SubtleButton(o.image(), new Combine([o.message, tagsExplanation]).SetClass("flex flex-col"))
         confirmButton.onClick(async () => {
             {
                 if (isImported.data) {
@@ -380,9 +384,7 @@ export default class ImportButton extends Toggle {
             }
         })
 
-        const cancel = new SubtleButton(Svg.close_ui(), Translations.t.general.cancel).onClick(() => {
-            importClicked.setData(false)
-        })
+        const cancel = new SubtleButton(Svg.close_ui(), Translations.t.general.cancel).onClick(() => importClicked.setData(false))
 
 
         return new Combine([confirmationMap, confirmButton, cancel]).SetClass("flex flex-col")

@@ -39,6 +39,15 @@ def createBar(options):
     pyplot.legend()
 
 
+def createLine(options):
+    data = options["plot"]["count"]
+    keys = genKeys(data, options["interpetKeysAs"])
+    values = list(map(lambda kv: kv["value"], data))
+
+    pyplot.plot(keys, values, label=options["name"])
+    pyplot.legend()
+
+
 pyplot_init()
 title = sys.argv[1]
 pyplot.title = title
@@ -59,5 +68,8 @@ while (True):
         createPie(options)
     elif (options["plot"]["type"] == "bar"):
         createBar(options)
+    elif (options["plot"]["type"] == "line"):
+        createLine(options)
     else:
         print("Unkown type: " + options.type)
+print("Plot generated")

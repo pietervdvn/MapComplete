@@ -581,6 +581,25 @@
         "shortDescription": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur.",
         "title": "Fahrradinfrastruktur"
     },
+    "cyclenodes": {
+        "description": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen",
+        "layers": {
+            "1": {
+                "presets": {
+                    "0": {
+                        "title": "Knotenpunkt"
+                    },
+                    "1": {
+                        "title": "Knotenpunkt im Netzwerk Spree-Neiße"
+                    }
+                },
+                "title": {
+                    "render": "Knotenpunkt"
+                }
+            }
+        },
+        "title": "Fahrrad-Knotenpunktnetzwerke"
+    },
     "cyclestreets": {
         "description": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
         "layers": {

@@ -563,7 +563,7 @@
         },
         "tagRenderings": {
             "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix#{id}.'>Rapporteer deze fietspomp als kapot</a>"
+                "render": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id}.%0D%0A%0D%0AMet vriendelijke groeten.'>Rapporteer deze fietspomp als kapot</a>"
             },
             "Operational status": {
                 "mappings": {

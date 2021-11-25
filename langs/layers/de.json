@@ -260,8 +260,15 @@
                 "mappings": {
                     "1": {
                         "then": "Stehbank"
+                    },
+                    "0": {
+                        "then": "Hier gibt es eine normale Sitzbank"
+                    },
+                    "2": {
+                        "then": "Hier gibt es keine Bank"
                     }
-                }
+                },
+                "question": "Was ist das für eine Bank?"
             },
             "bench_at_pt-name": {
                 "render": "{name}"
@@ -433,6 +440,38 @@
                 }
             },
             "render": "Fahrrad-Reinigungsdienst"
+        },
+        "tagRenderings": {
+            "bike_cleaning-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Kostenloser Reinigungsservice"
+                    },
+                    "2": {
+                        "then": "Der Reinigungsservice ist kostenpflichtig"
+                    },
+                    "1": {
+                        "then": "Kostenlose Nutzung"
+                    }
+                },
+                "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
+                "render": "Die Nutzung des Reinigungsdienstes kostet {charge}"
+            },
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "mappings": {
+                    "1": {
+                        "then": "Kostenlose Nutzung"
+                    },
+                    "0": {
+                        "then": "Der Reinigungsservice ist kostenlos"
+                    },
+                    "2": {
+                        "then": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt"
+                    }
+                },
+                "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
+                "render": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}"
+            }
         }
     },
     "bike_parking": {
@@ -563,7 +602,7 @@
         },
         "tagRenderings": {
             "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
+                "render": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,%0D%0A%0D%0AMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
             },
             "Operational status": {
                 "mappings": {
@@ -2872,5 +2911,37 @@
     },
     "watermill": {
         "name": "Wassermühle"
+    },
+    "charging_station": {
+        "filter": {
+            "0": {
+                "options": {
+                    "2": {
+                        "question": "Ladestation für Autos"
+                    },
+                    "0": {
+                        "question": "Alle Fahrzeugtypen"
+                    },
+                    "1": {
+                        "question": "Ladestation für Fahrräder"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Nur funktionierende Ladestationen"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Alle Anschlüsse"
+                    }
+                }
+            }
+        },
+        "description": "Eine Ladestation"
     }
 }

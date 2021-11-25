@@ -8,6 +8,8 @@ import {Utils} from "../Utils";
 import LanguagePicker from "./LanguagePicker";
 import IndexText from "./BigComponents/IndexText";
 import FeaturedMessage from "./BigComponents/FeaturedMessage";
+import Toggle from "./Input/Toggle";
+import {SubtleButton} from "./Base/SubtleButton";
 
 export default class AllThemesGui {
     constructor() {
@@ -15,16 +17,22 @@ export default class AllThemesGui {
         try {
 
             new FixedUiElement("").AttachTo("centermessage")
-            const state = new UserRelatedState(undefined, undefined);
+            const state = new UserRelatedState(undefined);
             const intro = new Combine([
+
                 LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
-                    .SetClass("absolute top-2 right-3"),
+
+                    .SetClass("flex absolute top-2 right-3"),
                 new IndexText()
             ]);
             new Combine([
                 intro,
                 new FeaturedMessage(),
                 new MoreScreen(state, true),
+                new Toggle(
+                    undefined,
+                    new SubtleButton(undefined, Translations.t.index.logIn).SetStyle("height:min-content").onClick(() => state.osmConnection.AttemptLogin()),
+                    state.osmConnection.isLoggedIn),
                 Translations.t.general.aboutMapcomplete
                     .Subs({"osmcha_link": Utils.OsmChaLinkFor(7)})
                     .SetClass("link-underline"),
