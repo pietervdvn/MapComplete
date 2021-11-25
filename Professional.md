@@ -1,6 +1,10 @@
 Professional support with MapComplete
 ==========
 
+The developer of MapComplete offers professional support. This document outlines some of the possibilities, pitfalls and common questions.
+
+
+
 What can MapComplete do for your organisation?
 ----
 

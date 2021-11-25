@@ -14,6 +14,9 @@ import State from "./State";
 import AvailableBaseLayersImplementation from "./Logic/Actors/AvailableBaseLayersImplementation";
 import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerImplementation";
 import {DefaultGuiState} from "./UI/DefaultGuiState";
+import {Browser} from "leaflet";
+import win = Browser.win;
+import ProfessionalGui from "./UI/ProfessionalGui";
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()
