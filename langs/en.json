@@ -322,15 +322,18 @@
     "title": "Professional support with MapComplete",
     "intro": "The developer of MapComplete offers professional support. This document outlines some of the possibilities, common questions and the boundaries of MapComplete",
     "osmTitle": "What can OpenStreetMap and MapComplete do for your organisation?",
-    "osmText": "Maintaining a set of up-to-date geodata is hard, error prone and expensive.<br/>To add insult to injury, many organizations end up collecting the same data independently - resulting in duplicated efforts, non-standardized data formats and many incomplete, unmaintained datasets.<br/>At the same time, there is a huge community which gathers a lot of geodata into one shared, global and standardized database - namely OpenStreetMap.org.<br/>This dataset has a very liberal license which allows for infinite reuse but can be hard to edit, especially for non-technical users as most OpenStreetMap editors show <i>all</i> data at once and require some technical knowledge.A user who wishes to update information on their topic of choice (e.g. a bench, a shop, a waste basket, ...) is confronted with every street, every building and every other feature nearby.<br/>    MapComplete is the in-between solution, offering a more traditional map focused on just one topic while offering powerful editing capabilities disguised as simple-to-use building blocks.",
-    
+    "text0": "<p>Maintaining a set of up-to-date geodata is hard, error prone and expensive.<br/>To add insult to injury, many organizations end up collecting the same data independently - resulting in duplicated efforts, non-standardized data formats and many incomplete, unmaintained datasets.</p><p>At the same time, there is a huge community which gathers a lot of geodata into one shared, global and standardized database - namely OpenStreetMap.org.</p>",
+    "text1": "<p>MapComplete is the editor to make contributing data to OpenStreetMap easy.</p>",
+
     "aboutOsm": {
-      "title": "What is OpenStreetMap and why use it in your organisation?",
+      "aboutOsm": {
+      "title": "What is OpenStreetMap?",
       "intro": "OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as <b>it can be verified on the ground</b>.<br/> OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects.An individual object might also have a ton of attributes, bringing a lot of nuance, e.g.:",
       "li0": "Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run over theme",
       "li1": "Shops and other amenities might have opening hours, a phone number, a link to the website, which payment methods are supported, what they sell, which services they offer, ...",
       "li2": "Toilets might have information about wheelchair accessibility, a changing table, if payment is needed, ...",
-      "li3": "and much, much more...",
+      "li3": "and much, much more..."
+      },
       "benefits": {
         "title": "Benefits of the OSM-ecosystem",
         "intro": "It can be very hard to leave your own dataset behind, as building this dataset often took a lot of time and effort.<br/>However, the benefits of switching over to OSM are huge:",
@@ -340,9 +343,9 @@
       },
       "license": {
         "title": "The license",
-        "intro": "OpenStreetMap is licensed under the Open Database License. The [full copyright text](https://osm.org/copyright) can be summarized as following:",
+        "intro": "OpenStreetMap is licensed under the Open Database License. The <a href='https://osm.org/copyright' target='_blank'>full copyright text</a> can be summarized as following:",
         "li0": "A product using OpenStreetMap data must give attribution.",
-        "li1": "OpenStreetMap-data must remain _open_. This means that data of a map containing OpenStreetMap data can be copied again.",
+        "li1": "OpenStreetMap-data must remain <i>open</i>. This means that data of a map containing OpenStreetMap data can be copied again.",
         "outro": "The license has a few implications - these are explained below."
       },
       "vandalism": {
@@ -350,10 +353,29 @@
         "intro": "As anyone can edit the data, it is indeed possible that a malicious change is made. However, this is extremely rare for a few reasons:",
         "li0": "the technical barrier to make changes is high",
         "li1": "a small malicious change has low impact, thus little reward for a vandal",
-        "li": "a high impact change is quickly noticed and reverted since so many people use this data",
-        "li": "all changes are tracked and tied to a single user. A repeating offender is quickly banned",
-        "li": "In Belgium (and some other countries), the first edit by a new contributor is systematically checked and corrected if needed."
+        "li2": "a high impact change is quickly noticed and reverted since so many people use this data",
+        "li3": "all changes are tracked and tied to a single user. A repeating offender is quickly banned",
+        "li4": "In Belgium (and some other countries), the first edit by a new contributor is systematically checked and corrected if needed."
       }
+    },
+    "aboutMc": {
+      "title": "Using MapComplete in your organization",
+      "text0": "If an existing MapComplete theme is what you need to survey data or to show on your website, feel free to embed it. Embedding the public themes is free and always will be.",
+      "text1": "Do you need some other data, but does the theme not exist yet? The MapComplete-developers can build it for you on a decent budget. Get in touch via <a href='mailto:pietervdvn@posteo.net'>email</a>, <a href='https://github.com/pietervdvn/MapComplete/issues'>github</a> or <a href'https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet'>send a message via osm.org</a>",
+      "text2": "If you still feel unsure, the possibilities are outlined below. Additionally, some common questions are answered",
+"layers": {
+  "title": "What data can be shown with MapComplete?",
+ "intro": "<p>MapComplete has a powerful templating system, which allows to quickly create a map showing precisely those features that you need and showing relevant attributes in the popups.</p><p>This data can be fetched from OpenStreetMap directly, but MapComplete can also use external datasets - e.g. to compare OpenStreetMap with another dataset or to show data that is not suited for OpenStreetMap (planned activities, statistics, ...)"
+}
+      
+
+      
+      
+      
+
+
     }
+    
+    
   }
 }

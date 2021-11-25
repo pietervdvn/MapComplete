@@ -1,36 +1,5 @@
 
 
-What about vandalism?
----------------------
-
-As anyone can edit the data, it is indeed possible that a malicious change is made. However, this is extremely rare for a few reasons:
-
-- the technical barrier to make changes is high
-- a small malicious change has low impact, thus little reward for a vandal
-- a high impact change is quickly noticed and reverted since so many people use this data
-- all changes are tracked and tied to a single user. A repeating offender is quickly banned
-- In Belgium (and some other countries), the first edit by a new contributor is systematically checked and corrected if needed.
-
-
-Using MapComplete in your organization
-=========
-
-If an existing MapComplete theme is what you need to survey data or to show on your website, feel free to embed it.
-Embedding those is free and will always be.
-
-Do you need some other data, but does the theme not exist yet? The MapComplete-developers can build it for you on a decent budget. Get in touch via [email](mailto:pietervdvn@posteo.net), [github](https://github.com/pietervdvn/MapComplete/issues) or [send a message via osm.org](https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet)
-
-If you still feel unsure, the possibilities are outlined below. Additionally, some common questions are answered
-
- What data can be shown with MapComplete?
---------
-
-MapComplete has a powerful templating system, which allows to quickly create a map showing precisely those features that you need and showing relevant attributes in the popups.
-
-This data can be fetched from OpenStreetMap directly, but MapComplete can also use external datasets - 
-e.g. to compare OpenStreetMap with another dataset or to show data that is not suited for OpenStreetMap (planned activities, statistics, ...)
-
-
 What are the survey possibilities?
 ----
 

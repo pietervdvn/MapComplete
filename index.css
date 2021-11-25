@@ -473,3 +473,8 @@ li::marker {
     height: var(--image-carousel-height);
     width: unset;
 }
+
+.animate-height {
+    transition: max-height .5s ease-in-out;
+    overflow-y: hidden;
+}
