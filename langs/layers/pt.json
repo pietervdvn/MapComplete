@@ -1,20 +1,12 @@
 {
     "artwork": {
+        "description": "Diversas obras de arte",
+        "name": "Obras de arte",
         "presets": {
             "0": {
                 "title": "Obra de arte"
             }
         },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Obra de arte <i>{name}</i>"
-                }
-            },
-            "render": "Obra de arte"
-        },
-        "description": "Diversas obras de arte",
-        "name": "Obras de arte",
         "tagRenderings": {
             "artwork-artist_name": {
                 "question": "Que artista criou isto?",
@@ -70,6 +62,14 @@
                 "question": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?",
                 "render": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Obra de arte <i>{name}</i>"
+                }
+            },
+            "render": "Obra de arte"
         }
     },
     "bench": {

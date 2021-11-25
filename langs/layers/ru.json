@@ -637,6 +637,43 @@
             }
         }
     },
+    "charging_station": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " минут",
+                        "humanSingular": " минута"
+                    },
+                    "1": {
+                        "human": " часов",
+                        "humanSingular": " час"
+                    },
+                    "2": {
+                        "human": " дней",
+                        "humanSingular": " день"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Вольт"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "киловатт"
+                    },
+                    "1": {
+                        "human": "мегаватт"
+                    }
+                }
+            }
+        }
+    },
     "crossings": {
         "presets": {
             "1": {
@@ -1410,42 +1447,5 @@
     },
     "watermill": {
         "name": "Водяная мельница"
-    },
-    "charging_station": {
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "humanSingular": " минута",
-                        "human": " минут"
-                    },
-                    "1": {
-                        "human": " часов",
-                        "humanSingular": " час"
-                    },
-                    "2": {
-                        "human": " дней",
-                        "humanSingular": " день"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Вольт"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "киловатт"
-                    },
-                    "1": {
-                        "human": "мегаватт"
-                    }
-                }
-            }
-        }
     }
 }

@@ -7,7 +7,8 @@
     "it": "Caffè e pub",
     "nb_NO": "Kafeer og kneiper",
     "id": "Kafe dan pub",
-    "zh_Hant": "咖啡廳與酒吧"
+    "zh_Hant": "咖啡廳與酒吧",
+    "ru": "Кафе и пабы"
   },
   "description": {
     "nl": "Cafés, kroegen en drinkgelegenheden"
@@ -19,7 +20,8 @@
     "it",
     "nb_NO",
     "id",
-    "zh_Hant"
+    "zh_Hant",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",

@@ -18,8 +18,9 @@
   "language": [
     "en",
     "de",
+    "nb_NO",
     "it",
-    "nb_NO"
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/themes/postboxes/postbox.svg",
@@ -38,7 +39,8 @@
       "id": "postboxes",
       "name": {
         "en": "Postboxes",
-        "de": "Brieflästen"
+        "de": "Brieflästen",
+        "ru": "Почтовые ящики"
       },
       "minzoom": 12,
       "source": {
@@ -47,7 +49,8 @@
       "title": {
         "render": {
           "en": "Postbox",
-          "de": "Briefkasten"
+          "de": "Briefkasten",
+          "ru": "Почтовый ящик"
         }
       },
       "description": {
@@ -68,7 +71,8 @@
           ],
           "title": {
             "en": "postbox",
-            "de": "Briefkasten"
+            "de": "Briefkasten",
+            "ru": "почтовый ящик"
           }
         }
       ],
@@ -107,7 +111,8 @@
       "id": "postoffices",
       "name": {
         "en": "Post offices",
-        "de": "Poststellen"
+        "de": "Poststellen",
+        "ru": "Почтовые отделения"
       },
       "minzoom": 12,
       "source": {
@@ -116,7 +121,8 @@
       "title": {
         "render": {
           "en": "Post Office",
-          "de": "Poststelle"
+          "de": "Poststelle",
+          "ru": "Почтовое отделение"
         }
       },
       "description": {
@@ -131,7 +137,8 @@
         },
         {
           "render": {
-            "en": "Opening Hours: {opening_hours_table()}"
+            "en": "Opening Hours: {opening_hours_table()}",
+            "ru": "Часы работы: {opening_hours_table()}"
           },
           "freeform": {
             "key": "opening_hours",
@@ -159,7 +166,8 @@
           ],
           "title": {
             "en": "Post Office",
-            "de": "Poststelle"
+            "de": "Poststelle",
+            "ru": "Почтовое отделение"
           }
         }
       ],

@@ -4,7 +4,8 @@
     "en": "Open Etymology Map",
     "nl": "Open Etymology-kaart",
     "de": "Open Etymology Map",
-    "it": "Apri Carta Etimologica"
+    "it": "Apri Carta Etimologica",
+    "ru": "Открытая этимологическая карта"
   },
   "shortDescription": {
     "en": "What is the origin of a toponym?",
@@ -22,7 +23,8 @@
     "en",
     "nl",
     "de",
-    "it"
+    "it",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/layers/etymology/logo.svg",

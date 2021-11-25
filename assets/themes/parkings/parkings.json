@@ -5,7 +5,8 @@
     "en": "Parking",
     "de": "Parken",
     "it": "Parcheggio",
-    "nb_NO": "Parkering"
+    "nb_NO": "Parkering",
+    "ru": "Парковка"
   },
   "shortDescription": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
@@ -25,7 +26,8 @@
     "en",
     "de",
     "it",
-    "nb_NO"
+    "nb_NO",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/themes/parkings/parkings.svg",
