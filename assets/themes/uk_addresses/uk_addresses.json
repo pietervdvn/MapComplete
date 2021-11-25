@@ -23,7 +23,8 @@
     "de",
     "it",
     "id",
-    "nl"
+    "nl",
+    "ru"
   ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
@@ -218,7 +219,8 @@
       "description": {
         "en": "Addresses",
         "nl": "Adressen",
-        "de": "Adressen"
+        "de": "Adressen",
+        "ru": "Адреса"
       },
       "tagRenderings": [
         {

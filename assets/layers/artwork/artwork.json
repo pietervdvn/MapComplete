@@ -11,7 +11,8 @@
     "es": "Obras de arte",
     "ja": "美術品",
     "zh_Hant": "藝術品",
-    "nb_NO": "Kunstverk"
+    "nb_NO": "Kunstverk",
+    "pt": "Obras de arte"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -73,7 +74,8 @@
     "es": "Diversas piezas de obras de arte",
     "ja": "多様な作品",
     "zh_Hant": "不同類型的藝術品",
-    "id": "Beragam karya seni"
+    "id": "Beragam karya seni",
+    "pt": "Diversas obras de arte"
   },
   "minzoom": 12,
   "presets": [
@@ -117,7 +119,8 @@
         "ja": "これは{artwork_type}です",
         "zh_Hant": "這是 {artwork_type}",
         "nb_NO": "Dette er et kunstverk av typen {artwork_type}",
-        "id": "Ini adalah {artwork_type}"
+        "id": "Ini adalah {artwork_type}",
+        "pt": "Isto é um(a) {artwork_type}"
       },
       "question": {
         "en": "What is the type of this artwork?",
@@ -130,7 +133,8 @@
         "ja": "この作品の種類は何ですか?",
         "zh_Hant": "這是什麼類型的藝術品？",
         "nb_NO": "Hvilken type kunstverk er dette?",
-        "id": "Apa jenis karya seni ini?"
+        "id": "Apa jenis karya seni ini?",
+        "pt": "Qual é o tipo desta obra de arte?"
       },
       "freeform": {
         "key": "artwork_type",
@@ -151,7 +155,8 @@
             "ja": "建物",
             "zh_Hant": "建築物",
             "nb_NO": "Arkitektur",
-            "id": "Arsitektur"
+            "id": "Arsitektur",
+            "pt": "Arquitetura"
           }
         },
         {
@@ -166,7 +171,8 @@
             "ja": "壁画",
             "zh_Hant": "壁畫",
             "nb_NO": "Veggmaleri",
-            "id": "Mural"
+            "id": "Mural",
+            "pt": "Mural"
           }
         },
         {
@@ -181,7 +187,8 @@
             "ja": "絵画",
             "zh_Hant": "繪畫",
             "nb_NO": "Maleri",
-            "id": "Lukisan"
+            "id": "Lukisan",
+            "pt": "Pintura"
           }
         },
         {
@@ -196,7 +203,8 @@
             "ja": "彫刻",
             "zh_Hant": "雕塑",
             "nb_NO": "Skulptur",
-            "id": "Patung"
+            "id": "Patung",
+            "pt": "Escultura"
           }
         },
         {
@@ -210,7 +218,8 @@
             "ru": "Статуя",
             "ja": "彫像",
             "zh_Hant": "雕像",
-            "nb_NO": "Statue"
+            "nb_NO": "Statue",
+            "pt": "Estátua"
           }
         },
         {
@@ -224,7 +233,8 @@
             "ru": "Бюст",
             "ja": "胸像",
             "zh_Hant": "半身像",
-            "nb_NO": "Byste"
+            "nb_NO": "Byste",
+            "pt": "Busto"
           }
         },
         {
@@ -239,7 +249,8 @@
             "ja": "石",
             "zh_Hant": "石頭",
             "nb_NO": "Stein",
-            "id": "Batu"
+            "id": "Batu",
+            "pt": "Pedra"
           }
         },
         {
@@ -254,7 +265,8 @@
             "ja": "インスタレーション",
             "zh_Hant": "安裝",
             "nb_NO": "Installasjon",
-            "id": "Instalasi"
+            "id": "Instalasi",
+            "pt": "Instalação"
           }
         },
         {
@@ -269,7 +281,8 @@
             "ja": "落書き",
             "zh_Hant": "塗鴨",
             "nb_NO": "Graffiti",
-            "id": "Graffiti"
+            "id": "Graffiti",
+            "pt": "Graffiti"
           }
         },
         {
@@ -284,7 +297,8 @@
             "ja": "レリーフ",
             "zh_Hant": "寬慰",
             "nb_NO": "Relieff",
-            "id": "Relief"
+            "id": "Relief",
+            "pt": "Relevo"
           }
         },
         {
@@ -299,7 +313,8 @@
             "ja": "Azulejo (スペインの装飾タイル)",
             "zh_Hant": "Azulejo (西班牙雕塑作品名稱)",
             "nb_NO": "Azulejo (Spansk dekorativt flisverk)",
-            "id": "Azulejo (ubin dekoratif Spanyol)"
+            "id": "Azulejo (ubin dekoratif Spanyol)",
+            "pt": "Azulejo (azulejo decorativo espanhol e português)"
           }
         },
         {
@@ -313,7 +328,8 @@
             "ru": "Плитка (мозаика)",
             "ja": "タイルワーク",
             "zh_Hant": "瓷磚",
-            "nb_NO": "Flisarbeid"
+            "nb_NO": "Flisarbeid",
+            "pt": "Ladrilhos"
           }
         }
       ],
@@ -330,7 +346,8 @@
         "ja": "どのアーティストが作ったんですか?",
         "zh_Hant": "創造這個的藝術家是誰？",
         "nb_NO": "Hvilken artist lagde dette?",
-        "id": "Seniman mana yang menciptakan ini?"
+        "id": "Seniman mana yang menciptakan ini?",
+        "pt": "Que artista criou isto?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -342,7 +359,8 @@
         "ja": "作成者:{artist_name}",
         "zh_Hant": "{artist_name} 創作",
         "nb_NO": "Laget av {artist_name}",
-        "id": "Dibuat oleh {artist_name}"
+        "id": "Dibuat oleh {artist_name}",
+        "pt": "Criado por {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -360,7 +378,8 @@
         "ja": "この作品についての詳しい情報はどのウェブサイトにありますか?",
         "zh_Hant": "在那個網站能夠找到更多藝術品的資訊？",
         "nb_NO": "Finnes det en nettside med mer info om dette kunstverket?",
-        "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?"
+        "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
+        "pt": "Existe um site com mais informações sobre esta obra de arte?"
       },
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -372,7 +391,8 @@
         "ru": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>",
         "ja": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある",
         "zh_Hant": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊",
-        "nb_NO": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
+        "nb_NO": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>",
+        "pt": "Mais informações <a href='{website}' target='_blank'>neste site</a>"
       },
       "freeform": {
         "key": "website",
@@ -391,7 +411,8 @@
         "ja": "<b>このアートワーク</b>に関するWikidataのエントリーはどれですか?",
         "zh_Hant": "<b>這個藝術品</b>有那個對應的 Wikidata 項目？",
         "nb_NO": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
-        "id": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?"
+        "id": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
+        "pt": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?"
       },
       "render": {
         "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
@@ -403,7 +424,8 @@
         "ja": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する",
         "zh_Hant": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應",
         "nb_NO": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "id": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+        "id": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+        "pt": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
       },
       "freeform": {
         "key": "wikidata",

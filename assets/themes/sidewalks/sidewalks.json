@@ -1,16 +1,19 @@
 {
   "id": "sidewalks",
   "title": {
-    "en": "Sidewalks"
+    "en": "Sidewalks",
+    "ru": "Тротуары"
   },
   "shortDescription": {
     "en": "Sidewalk mapping"
   },
   "description": {
-    "en": "Experimental theme"
+    "en": "Experimental theme",
+    "ru": "Экспериментальная тема"
   },
   "language": [
-    "en"
+    "en",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -25,7 +28,8 @@
     {
       "id": "sidewalks",
       "name": {
-        "en": "Sidewalks"
+        "en": "Sidewalks",
+        "ru": "Тротуары"
       },
       "minzoom": 12,
       "source": {
@@ -40,7 +44,8 @@
       },
       "title": {
         "render": {
-          "en": "{name}"
+          "en": "{name}",
+          "ru": "{name}"
         },
         "mappings": [
           {

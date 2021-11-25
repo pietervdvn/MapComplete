@@ -8,7 +8,8 @@
     "zh_Hant": "充電站",
     "nl": "Oplaadpunten",
     "de": "Ladestationen",
-    "nb_NO": "Ladestasjoner"
+    "nb_NO": "Ladestasjoner",
+    "ru": "Зарядные станции"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
@@ -17,7 +18,8 @@
     "zh_Hant": "全世界的充電站地圖",
     "nl": "Een wereldwijde kaart van oplaadpunten",
     "de": "Eine weltweite Karte mit Ladestationen",
-    "nb_NO": "Et verdensomspennende kart over ladestasjoner"
+    "nb_NO": "Et verdensomspennende kart over ladestasjoner",
+    "ru": "Карта зарядных станций по всему миру"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",

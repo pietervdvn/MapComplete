@@ -4,11 +4,13 @@
   "version": "2021-10-22",
   "language": [
     "en",
-    "nl"
+    "nl",
+    "ru"
   ],
   "title": {
     "en": "Street Lighting",
-    "nl": "Straatverlichting"
+    "nl": "Straatverlichting",
+    "ru": "Уличное освещение"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
@@ -100,7 +102,8 @@
       "id": "all_streets",
       "name": {
         "en": "All streets",
-        "nl": "Alle straten"
+        "nl": "Alle straten",
+        "ru": "Все улицы"
       },
       "source": {
         "osmTags": {
@@ -115,7 +118,8 @@
       "title": {
         "render": {
           "en": "Street",
-          "nl": "Straat"
+          "nl": "Straat",
+          "ru": "Улица"
         },
         "mappings": [
           {

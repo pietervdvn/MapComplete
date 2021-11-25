@@ -73,10 +73,12 @@
     "images",
     {
       "question": {
-        "en": "How much does it cost to use the cleaning service?"
+        "en": "How much does it cost to use the cleaning service?",
+        "de": "Wie viel kostet die Nutzung des Reinigungsdienstes?"
       },
       "render": {
-        "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}"
+        "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}",
+        "de": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}"
       },
       "condition": "amenity!=bike_wash",
       "freeform": {
@@ -90,20 +92,23 @@
         {
           "if": "service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge=",
           "then": {
-            "en": "The cleaning service is free to use"
+            "en": "The cleaning service is free to use",
+            "de": "Der Reinigungsservice ist kostenlos"
           }
         },
         {
           "if": "service:bicycle:cleaning:fee=no",
           "then": {
-            "en": "Free to use"
+            "en": "Free to use",
+            "de": "Kostenlose Nutzung"
           },
           "hideInAnswer": true
         },
         {
           "if": "service:bicycle:cleaning:fee=yes",
           "then": {
-            "en": "The cleaning service has a fee, but the amount is not known"
+            "en": "The cleaning service has a fee, but the amount is not known",
+            "de": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt"
           }
         }
       ],
@@ -111,10 +116,12 @@
     },
     {
       "question": {
-        "en": "How much does it cost to use the cleaning service?"
+        "en": "How much does it cost to use the cleaning service?",
+        "de": "Wie viel kostet die Nutzung des Reinigungsdienstes?"
       },
       "render": {
-        "en": "Using the cleaning service costs {charge}"
+        "en": "Using the cleaning service costs {charge}",
+        "de": "Die Nutzung des Reinigungsdienstes kostet {charge}"
       },
       "condition": "amenity=bike_wash",
       "freeform": {
@@ -127,20 +134,23 @@
         {
           "if": "fee=no&charge=",
           "then": {
-            "en": "Free to use cleaning service"
+            "en": "Free to use cleaning service",
+            "de": "Kostenloser Reinigungsservice"
           }
         },
         {
           "if": "fee=no",
           "then": {
-            "en": "Free to use"
+            "en": "Free to use",
+            "de": "Kostenlose Nutzung"
           },
           "hideInAnswer": true
         },
         {
           "if": "fee=yes",
           "then": {
-            "en": "The cleaning service has a fee"
+            "en": "The cleaning service has a fee",
+            "de": "Der Reinigungsservice ist kostenpflichtig"
           }
         }
       ],

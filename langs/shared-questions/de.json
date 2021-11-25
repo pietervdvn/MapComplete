@@ -59,6 +59,23 @@
         "phone": {
             "question": "Was ist die Telefonnummer von {name}?"
         },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
+                },
+                "1": {
+                    "then": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
+                },
+                "2": {
+                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird"
+                },
+                "3": {
+                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung"
+                }
+            },
+            "question": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?"
+        },
         "website": {
             "question": "Was ist die Website von {name}?"
         },
@@ -94,23 +111,6 @@
                 }
             },
             "question": "Was ist der entsprechende Artikel auf Wikipedia?"
-        },
-        "service:electricity": {
-            "mappings": {
-                "0": {
-                    "then": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
-                },
-                "1": {
-                    "then": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
-                },
-                "2": {
-                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird"
-                },
-                "3": {
-                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung"
-                }
-            },
-            "question": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?"
         }
     }
 }

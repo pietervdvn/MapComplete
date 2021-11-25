@@ -4,7 +4,8 @@
     "en": "Observation towers",
     "nl": "Uitkijktorens",
     "de": "Aussichtstürme",
-    "it": "Torri di osservazione"
+    "it": "Torri di osservazione",
+    "ru": "Смотровые башни"
   },
   "shortDescription": {
     "en": "Publicly accessible towers to enjoy the view",
@@ -22,7 +23,8 @@
     "en",
     "nl",
     "de",
-    "it"
+    "it",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/layers/observation_tower/Tower_observation.svg",
