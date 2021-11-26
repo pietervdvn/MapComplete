@@ -6,17 +6,19 @@ import Toggleable, {Accordeon} from "./Base/Toggleable";
 import List from "./Base/List";
 import BaseUIElement from "./BaseUIElement";
 import Link from "./Base/Link";
+import LanguagePicker from "./LanguagePicker";
+import Hash from "../Logic/Web/Hash";
+import {Translation} from "./i18n/Translation";
+import {SubtleButton} from "./Base/SubtleButton";
+import Svg from "../Svg";
 
 class TableOfContents extends Combine {
 
-    /**
-     * All the padding levels. Note that these are written out so that tailwind-generate-css can detect them
-     * @private
-     */
-    private static readonly paddings: string[] = ["pl-0, pl-2", "pl-4", "pl-6", "pl-8", "pl-10", "pl-12", "pl-14"]
     private readonly titles: Title[]
 
-    constructor(elements: Combine | Title[]) {
+    constructor(elements: Combine | Title[], options: {
+        noTopLevel: false | boolean
+    }) {
         let titles: Title[]
         if (elements instanceof Combine) {
             titles = elements.getToC()
@@ -24,19 +26,69 @@ class TableOfContents extends Combine {
             titles = elements
         }
 
-        const minLevel = Math.min(...titles.map(t => t.level))
-
-        const els: BaseUIElement[] = []
+        let els: { level: number, content: BaseUIElement }[] = []
         for (const title of titles) {
-            const l = title.level - minLevel
-            const padding = TableOfContents.paddings[l]
-            const text = title.title.ConstructElement().innerText
-            const vis = new Link(new FixedUiElement(text), "#" + text).SetClass(padding)
-            els.push(vis)
+            let content: BaseUIElement
+            if (title.title instanceof Translation) {
+                content = title.title.Clone()
+            } else {
+                content = new FixedUiElement(title.title.ConstructElement().innerText)
+            }
+
+            const vis = new Link(content, "#" + title.id)
+
+            Hash.hash.addCallbackAndRun(h => {
+                if (h === title.id) {
+                    vis.SetClass("font-bold")
+                } else {
+                    vis.RemoveClass("font-bold")
+                }
+            })
+            els.push({level: title.level, content: vis})
+
         }
-        super(els);
+        if (options.noTopLevel) {
+            const minLevel = Math.min(...els.map(e => e.level))
+            els = els.filter(e => e.level !== minLevel)
+        }
+
+
+        super(TableOfContents.mergeLevel(els).map(el => el.SetClass("mt-2")));
         this.SetClass("flex flex-col")
         this.titles = titles;
+    }
+
+    private static mergeLevel(elements: { level: number, content: BaseUIElement }[]): BaseUIElement[] {
+        const maxLevel = Math.max(...elements.map(e => e.level))
+        const minLevel = Math.min(...elements.map(e => e.level))
+        if (maxLevel === minLevel) {
+            return elements.map(e => e.content)
+        }
+        const result: { level: number, content: BaseUIElement } [] = []
+        let running: BaseUIElement[] = []
+        for (const element of elements) {
+            if (element.level === maxLevel) {
+                running.push(element.content)
+                continue
+            }
+            if (running.length !== undefined) {
+                result.push({
+                    content: new List(running),
+                    level: maxLevel - 1
+                })
+                running = []
+            }
+            result.push(element)
+        }
+        if (running.length !== undefined) {
+            result.push({
+                content: new List(running),
+                level: maxLevel - 1
+            })
+        }
+
+        return TableOfContents.mergeLevel(result)
+
     }
 
     AsMarkdown(): string {
@@ -71,19 +123,18 @@ export default class ProfessionalGui {
     constructor() {
         const t = Translations.t.professional
 
-        //  LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages()).SetClass("flex absolute top-2 right-3"),
-        const content = new Combine([
+
+        const header = new Combine([
+            new FixedUiElement(`<img class="w-12 h-12 sm:h-24 sm:w-24" src="./assets/svg/logo.svg" alt="MapComplete Logo">`)
+                .SetClass("flex-none m-3"),
             new Combine([
-                new FixedUiElement(`<img class="w-12 h-12 sm:h-24 sm:w-24" src="./assets/svg/logo.svg" alt="MapComplete Logo">`)
-                    .SetClass("flex-none m-3"),
-                new Combine([
+                new Title(t.title, 1).SetClass("font-bold text-3xl"),
+                t.intro
+            ]).SetClass("flex flex-col")
+        ]).SetClass("flex")
 
-                    new Title(t.title, 1).SetClass("font-bold text-3xl"),
-                    t.intro
-                ]).SetClass("flex flex-col")
-
-            ]).SetClass("flex"),
-
+        const content = new Combine([
+            header,
             new Title(t.osmTitle, 2).SetClass("text-2xl"),
             t.text0,
             t.text1,
@@ -97,13 +148,41 @@ export default class ProfessionalGui {
             new Title(t.aboutMc.title, 2).SetClass("text-2xl"),
             t.aboutMc.text0,
             t.aboutMc.text1,
-            t.aboutMc.text2
+            t.aboutMc.text2,
+            new Accordeon([
+                new Snippet(t.aboutMc.layers),
+                new Snippet(t.aboutMc.survey),
+                new Snippet(t.aboutMc.internalUse)
+            ]),
+            new Title(t.drawbacks.title, 2).SetClass("text-2xl"),
+            t.drawbacks.intro,
+            new Accordeon([
+                new Snippet(t.drawbacks.unsuitedData),
+                new Snippet(t.drawbacks.licenseNuances)
+            ]),
+
+        ]).SetClass("flex flex-col pb-12 m-3 lg:w-3/4 lg:ml-10 link-underline")
 
 
-        ]).SetClass("flex flex-col pb-12 m-3 lg:w-3/4 lg:ml-10")
+        const backToIndex = new Combine([new SubtleButton(
+            Svg.back_svg().SetStyle("height: 1.5rem;"),
+            t.backToMapcomplete,
+            {
+                url: window.location.host + "/index.html"
+            }
+        )]).SetClass("block")
 
-        const toc = new TableOfContents(content)
-        new Combine([toc, content]).SetClass("flex").AttachTo("main")
+        const leftContents: BaseUIElement[] = [
+            backToIndex,
+            new TableOfContents(content, {
+                noTopLevel: true
+            }).SetClass("subtle"),
+            LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages()).SetClass("mt-4 self-end flex-col"),
+        ].map(el => el.SetClass("pl-4"))
+        const leftBar = new Combine([
+            new Combine(leftContents).SetClass("sticky top-4 m-4")
+        ]).SetClass("block w-full md:w-2/6 lg:w-1/6")
+        new Combine([leftBar, content]).SetClass("block md:flex").AttachTo("main")
 
     }
 

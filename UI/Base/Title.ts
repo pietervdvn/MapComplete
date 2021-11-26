@@ -1,9 +1,11 @@
 import BaseUIElement from "../BaseUIElement";
 import {FixedUiElement} from "./FixedUiElement";
+import Hash from "../../Logic/Web/Hash";
 
 export default class Title extends BaseUIElement {
     public readonly title: BaseUIElement;
     public readonly level: number;
+    public readonly id : string
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()
@@ -13,6 +15,7 @@ export default class Title extends BaseUIElement {
             this.title = embedded
         }
         this.level = level;
+        this.id = this.title.ConstructElement().innerText.replace(/ /g, '_')
     }
 
     AsMarkdown(): string {
@@ -36,6 +39,7 @@ export default class Title extends BaseUIElement {
         }
         const h = document.createElement("h" + this.level)
         h.appendChild(el)
+        el.id = this.id
         return h;
     }
 }

@@ -1,6 +1,8 @@
 import BaseUIElement from "../BaseUIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "./Combine";
+import Title from "./Title";
+import Hash from "../../Logic/Web/Hash";
 
 export class Accordeon extends Combine {
 
@@ -23,14 +25,32 @@ export class Accordeon extends Combine {
 export default class Toggleable extends Combine {
     public readonly isVisible = new UIEventSource(false)
 
-    constructor(title: BaseUIElement, content: BaseUIElement) {
+    constructor(title: Title | BaseUIElement, content: BaseUIElement) {
         super([title, content])
-        content.SetClass("animate-height border-l-4 border-gray-300 pl-2")
+        content.SetClass("animate-height border-l-4 pl-2")
         title.SetClass("background-subtle rounded-lg")
         const self = this
         this.onClick(() => self.isVisible.setData(!self.isVisible.data))
         const contentElement = content.ConstructElement()
 
+        if(title instanceof Title){
+            Hash.hash.addCallbackAndRun(h => {
+                if(h === title.id){
+                    self.isVisible.setData(true)
+                    content.RemoveClass("border-gray-300")
+                    content.SetClass("border-red-300")
+                }else{
+                    content.SetClass("border-gray-300")
+                    content.RemoveClass("border-red-300")
+                }
+            })
+            this.isVisible.addCallbackAndRun(isVis => {
+                if(isVis){
+                    Hash.hash.setData(title.id)
+                }
+            })
+        }
+        
         this.isVisible.addCallbackAndRun(isVisible => {
             if (isVisible) {
                 contentElement.style.maxHeight = "100vh"
