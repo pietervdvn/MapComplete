@@ -3418,12 +3418,6 @@
       "render": {
         "en": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions}",
         "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions}"
-      },
-      "freeform": {
-        "key": "questions",
-        "helperArgs": {
-          "showAllQuestions": true
-        }
       }
     }
   ],
@@ -3555,16 +3549,16 @@
           "question": {
             "en": "All vehicle types",
             "nl": "Alle voertuigen",
-            "fr": "Tout type de véhicule",
-            "de": "Alle Fahrzeugtypen"
+            "de": "Alle Fahrzeugtypen",
+            "fr": "Tout type de véhicule"
           }
         },
         {
           "question": {
             "en": "Charging station for bicycles",
             "nl": "Oplaadpunten voor fietsen",
-            "fr": "Station de charge pour vélos",
-            "de": "Ladestation für Fahrräder"
+            "de": "Ladestation für Fahrräder",
+            "fr": "Station de charge pour vélos"
           },
           "osmTags": "bicycle=yes"
         },
@@ -3572,8 +3566,8 @@
           "question": {
             "en": "Charging station for cars",
             "nl": "Oplaadpunten voor auto's",
-            "fr": "Station de charge pour automobiles",
-            "de": "Ladestation für Autos"
+            "de": "Ladestation für Autos",
+            "fr": "Station de charge pour automobiles"
           },
           "osmTags": {
             "or": [

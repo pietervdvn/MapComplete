@@ -15,7 +15,7 @@ export default class Title extends BaseUIElement {
             this.title = embedded
         }
         this.level = level;
-        this.id = this.title.ConstructElement().innerText.replace(/ /g, '_')
+        this.id = this.title.ConstructElement()?.innerText?.replace(/ /g, '_') ?? ""
     }
 
     AsMarkdown(): string {
