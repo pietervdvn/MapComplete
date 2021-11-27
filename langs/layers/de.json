@@ -996,7 +996,7 @@
                         "then": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
                     },
                     "1": {
-                        "then": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern."
+                        "then": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern"
                     }
                 },
                 "question": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?"
@@ -1598,7 +1598,7 @@
                     }
                 },
                 "question": "Ist diese Trinkwasserstelle noch in Betrieb?",
-                "render": "Der Betriebsstatus ist <i>{operational_status}/i>"
+                "render": "Der Betriebsstatus ist <i>{operational_status}</i>"
             },
             "render-closest-drinking-water": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Ein weiterer Trinkwasserbrunnen befindet sich in {_closest_other_drinking_water_distance} Meter</a>"
@@ -2938,6 +2938,9 @@
                 "options": {
                     "0": {
                         "question": "Alle Anschlüsse"
+                    },
+                    "1": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     }
                 }
             }
