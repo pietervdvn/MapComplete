@@ -119,14 +119,16 @@
       "id": "bench_at_pt-bench_type",
       "question": {
         "en": "What kind of bench is this?",
-        "nl": "Wat voor soort bank is dit?"
+        "nl": "Wat voor soort bank is dit?",
+        "de": "Was ist das für eine Bank?"
       },
       "mappings": [
         {
           "if": "bench=yes",
           "then": {
             "en": "There is a normal, sit-down bench here",
-            "fr": "Il y a un banc normal pour s'asseoir ici"
+            "fr": "Il y a un banc normal pour s'asseoir ici",
+            "de": "Hier gibt es eine normale Sitzbank"
           }
         },
         {
@@ -146,7 +148,8 @@
           "if": "bench=no",
           "then": {
             "en": "There is no bench here",
-            "fr": "Il n'y a pas de banc ici"
+            "fr": "Il n'y a pas de banc ici",
+            "de": "Hier gibt es keine Bank"
           }
         }
       ]

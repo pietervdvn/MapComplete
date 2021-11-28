@@ -1080,7 +1080,8 @@
               "fr": " mètres",
               "de": " Meter",
               "eo": " metro",
-              "it": " metri"
+              "it": " metri",
+              "ru": " метр"
             },
             "default": true
           },

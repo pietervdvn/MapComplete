@@ -23,7 +23,8 @@
   },
   "description": {
     "en": "A charging station",
-    "nl": "Oplaadpunten"
+    "nl": "Oplaadpunten",
+    "de": "Eine Ladestation"
   },
   "tagRenderings": [
     "images",
@@ -3554,14 +3555,16 @@
           "question": {
             "en": "All vehicle types",
             "nl": "Alle voertuigen",
-            "fr": "Tout type de véhicule"
+            "fr": "Tout type de véhicule",
+            "de": "Alle Fahrzeugtypen"
           }
         },
         {
           "question": {
             "en": "Charging station for bicycles",
             "nl": "Oplaadpunten voor fietsen",
-            "fr": "Station de charge pour vélos"
+            "fr": "Station de charge pour vélos",
+            "de": "Ladestation für Fahrräder"
           },
           "osmTags": "bicycle=yes"
         },
@@ -3569,7 +3572,8 @@
           "question": {
             "en": "Charging station for cars",
             "nl": "Oplaadpunten voor auto's",
-            "fr": "Station de charge pour automobiles"
+            "fr": "Station de charge pour automobiles",
+            "de": "Ladestation für Autos"
           },
           "osmTags": {
             "or": [
@@ -3586,7 +3590,8 @@
         {
           "question": {
             "en": "Only working charging stations",
-            "nl": "Enkel werkende oplaadpunten"
+            "nl": "Enkel werkende oplaadpunten",
+            "de": "Nur funktionierende Ladestationen"
           },
           "osmTags": {
             "and": [
@@ -3603,13 +3608,15 @@
         {
           "question": {
             "en": "All connectors",
-            "nl": "Alle types"
+            "nl": "Alle types",
+            "de": "Alle Anschlüsse"
           }
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
           },
           "osmTags": "socket:schuko~*"
         },
@@ -3739,11 +3746,13 @@
           ],
           "human": {
             "en": " minutes",
-            "nl": " minuten"
+            "nl": " minuten",
+            "ru": " минут"
           },
           "humanSingular": {
             "en": " minute",
-            "nl": " minuut"
+            "nl": " minuut",
+            "ru": " минута"
           }
         },
         {
@@ -3759,11 +3768,13 @@
           ],
           "human": {
             "en": " hours",
-            "nl": " uren"
+            "nl": " uren",
+            "ru": " часов"
           },
           "humanSingular": {
             "en": " hour",
-            "nl": " uur"
+            "nl": " uur",
+            "ru": " час"
           }
         },
         {
@@ -3776,11 +3787,13 @@
           ],
           "human": {
             "en": " days",
-            "nl": " day"
+            "nl": " day",
+            "ru": " дней"
           },
           "humanSingular": {
             "en": " day",
-            "nl": " dag"
+            "nl": " dag",
+            "ru": " день"
           }
         }
       ]
@@ -3816,7 +3829,8 @@
           ],
           "human": {
             "en": "Volts",
-            "nl": "volt"
+            "nl": "volt",
+            "ru": "Вольт"
           }
         }
       ],
@@ -3885,7 +3899,8 @@
           ],
           "human": {
             "en": "kilowatt",
-            "nl": "kilowatt"
+            "nl": "kilowatt",
+            "ru": "киловатт"
           }
         },
         {
@@ -3895,7 +3910,8 @@
           ],
           "human": {
             "en": "megawatt",
-            "nl": "megawatt"
+            "nl": "megawatt",
+            "ru": "мегаватт"
           }
         }
       ],

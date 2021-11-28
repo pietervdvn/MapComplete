@@ -4,7 +4,8 @@
     "en": "OpenWindPowerMap",
     "fr": "OpenWindPowerMap",
     "de": "OpenWindPowerMap",
-    "it": "OpenWindPowerMap"
+    "it": "OpenWindPowerMap",
+    "ru": "Открытая карта ветроэнергетики"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
@@ -19,6 +20,7 @@
     "fr",
     "de",
     "it",
+    "ru",
     "nl",
     "eo",
     "nb_NO"
@@ -59,7 +61,8 @@
               "en": "{name}",
               "fr": "{name}",
               "eo": "{name}",
-              "it": "{name}"
+              "it": "{name}",
+              "ru": "{name}"
             }
           }
         ]
@@ -184,7 +187,8 @@
                 "fr": " megawatts",
                 "de": " Megawatt",
                 "eo": " megavatoj",
-                "it": " megawatt"
+                "it": " megawatt",
+                "ru": " мегаватт"
               }
             },
             {
@@ -200,7 +204,8 @@
                 "de": " Kilowatt",
                 "eo": " kilovatoj",
                 "it": " kilowatt",
-                "nb_NO": " kilowatt"
+                "nb_NO": " kilowatt",
+                "ru": " киловатт"
               }
             },
             {
@@ -215,7 +220,8 @@
                 "fr": " watts",
                 "de": " Watt",
                 "eo": " vatoj",
-                "it": " watt"
+                "it": " watt",
+                "ru": " ватт"
               }
             },
             {
@@ -230,7 +236,8 @@
                 "fr": " gigawatts",
                 "de": " Gigawatt",
                 "eo": " gigavatoj",
-                "it": " gigawatt"
+                "it": " gigawatt",
+                "ru": " гигаватт"
               }
             }
           ],
@@ -253,7 +260,8 @@
                 "fr": " mètres",
                 "de": " Meter",
                 "eo": " metro",
-                "it": " metri"
+                "it": " metri",
+                "ru": " метр"
               }
             }
           ]

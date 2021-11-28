@@ -5,7 +5,8 @@
     "nl": "Fietsinfrastructuur",
     "de": "Fahrradinfrastruktur",
     "it": "Infrastruttura dei velocipedi",
-    "nb_NO": "Sykkelinfrastruktur"
+    "nb_NO": "Sykkelinfrastruktur",
+    "ru": "Велосипедная дорожка"
   },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",
@@ -25,7 +26,8 @@
     "nl",
     "de",
     "it",
-    "nb_NO"
+    "nb_NO",
+    "ru"
   ],
   "maintainer": "MapComplete",
   "hideFromOverview": false,

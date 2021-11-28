@@ -3,7 +3,8 @@
   "title": {
     "en": "Hackerspaces",
     "de": "Hackerspaces",
-    "it": "Hackerspace"
+    "it": "Hackerspace",
+    "ru": "Хакерспейсы"
   },
   "shortDescription": {
     "en": "A map of hackerspaces",
@@ -19,7 +20,7 @@
     "en",
     "de",
     "it",
-    "eo"
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/themes/hackerspaces/glider.svg",
@@ -34,13 +35,15 @@
       "id": "hackerspaces",
       "name": {
         "en": "Hackerspace",
-        "de": "Hackerspace"
+        "de": "Hackerspace",
+        "ru": "Хакерспейс"
       },
       "minzoom": 8,
       "title": {
         "render": {
           "en": "Hackerspace",
-          "de": "Hackerspace"
+          "de": "Hackerspace",
+          "ru": "Хакерспейс"
         },
         "mappings": [
           {
@@ -51,14 +54,16 @@
             },
             "then": {
               "en": " {name}",
-              "de": " {name}"
+              "de": " {name}",
+              "ru": " {name}"
             }
           }
         ]
       },
       "description": {
         "en": "Hackerspace",
-        "de": "Hackerspace"
+        "de": "Hackerspace",
+        "ru": "Хакерспейс"
       },
       "tagRenderings": [
         {
@@ -112,7 +117,8 @@
           },
           "render": {
             "en": "{opening_hours_table()}",
-            "de": "{opening_hours_table()}"
+            "de": "{opening_hours_table()}",
+            "ru": "{opening_hours_table()}"
           },
           "mappings": [
             {
@@ -123,7 +129,8 @@
               },
               "then": {
                 "en": "Opened 24/7",
-                "de": "durchgehend geöffnet"
+                "de": "durchgehend geöffnet",
+                "ru": "Открыто 24/7"
               }
             }
           ],
@@ -184,7 +191,8 @@
           ],
           "title": {
             "en": "Hackerspace",
-            "de": "Hackerspace"
+            "de": "Hackerspace",
+            "ru": "Хакерспейс"
           },
           "description": {
             "en": "A hackerspace is an area where people interested in software gather",

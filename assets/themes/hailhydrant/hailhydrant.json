@@ -278,7 +278,7 @@
               "then": {
                 "en": "The hydrant is (fully or partially) working",
                 "ja": "消火栓は(完全にまたは部分的に)機能しています。",
-                "ru": "Гидрант (полностью или частично) в рабочем состоянии.",
+                "ru": "Гидрант (полностью или частично) в рабочем состоянии",
                 "fr": "La borne est en état, ou partiellement en état, de fonctionner.",
                 "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb.",
                 "it": "L’idrante è (parzialmente o completamente) funzionante."
@@ -309,7 +309,7 @@
               "then": {
                 "en": "The hydrant has been removed",
                 "ja": "消火栓が撤去されました。",
-                "ru": "Гидрант демонтирован.",
+                "ru": "Гидрант демонтирован",
                 "fr": "La borne a été retirée.",
                 "de": "Der Hydrant wurde entfernt.",
                 "it": "L’idrante è stato rimosso."
