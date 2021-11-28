@@ -1,4 +1,53 @@
 {
+    "ambulancestation": {
+        "description": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali.",
+        "name": "Carta delle stazioni delle ambulanze",
+        "presets": {
+            "0": {
+                "description": "Aggiungi una stazione delle ambulanza alla mappa",
+                "title": "Stazione delle ambulanze"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "Quale agenzia gestisce questa stazione?",
+                "render": "Questa stazione è gestita da {operator}."
+            },
+            "ambulance-name": {
+                "question": "Qual è il nome di questa stazione delle ambulanze?",
+                "render": "Questa stazione è chiamata {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "La stazione è gestita dal governo."
+                    },
+                    "1": {
+                        "then": "La stazione è gestita dalla comunità o un’organizzazione non ufficiale."
+                    },
+                    "2": {
+                        "then": "La stazione è gestita da un gruppo ufficiale di volontari."
+                    },
+                    "3": {
+                        "then": "La stazione è gestita da un privato."
+                    }
+                },
+                "question": "Com’è classificato il gestore della stazione?",
+                "render": "L’operatore è un ente {operator:type}."
+            },
+            "ambulance-place": {
+                "question": "Dove si trova la stazione? (ad es. quartiere, paese o città)",
+                "render": "La stazione si trova a {addr:place}."
+            },
+            "ambulance-street": {
+                "question": " Come si chiama la strada in cui si trova questa stazione?",
+                "render": "Questa stazione si trova in {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Stazione delle ambulanze"
+        }
+    },
     "artwork": {
         "description": "Diverse opere d’arte",
         "name": "Opere d’arte",
@@ -915,6 +964,87 @@
             "render": "Acqua potabile"
         }
     },
+    "extinguisher": {
+        "description": "Livello della mappa che mostra gli idranti antincendio.",
+        "name": "Cartina degli estintori.",
+        "presets": {
+            "0": {
+                "description": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
+                "title": "Estintore"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Si trova all’interno."
+                    },
+                    "1": {
+                        "then": "Si trova all’esterno."
+                    }
+                },
+                "question": "Dove è posizionato?",
+                "render": "Posizione: {location}"
+            }
+        },
+        "title": {
+            "render": "Estintori"
+        }
+    },
+    "fire_station": {
+        "description": "Livello che mostra le caserme dei vigili del fuoco.",
+        "name": "Mappa delle caserme dei vigili del fuoco",
+        "presets": {
+            "0": {
+                "description": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra.",
+                "title": "Caserma dei vigili del fuoco"
+            }
+        },
+        "tagRenderings": {
+            "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "Servizio antincendio governativo"
+                    }
+                },
+                "question": "Quale agenzia gestisce questa stazione?",
+                "render": "Questa stazione è gestita da {operator}."
+            },
+            "station-name": {
+                "question": "Come si chiama questa caserma dei vigili del fuoco?",
+                "render": "Questa caserma si chiama {name}."
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Questa stazione è gestita dal governo."
+                    },
+                    "1": {
+                        "then": "Questa stazione è gestita dalla comunità oppure un’associazione informale."
+                    },
+                    "2": {
+                        "then": "Questa stazione è gestita da un gruppo di volontari ufficiale."
+                    },
+                    "3": {
+                        "then": "Questa stazione è gestita da privati."
+                    }
+                },
+                "question": "Com’è classificato il gestore di questa stazione?",
+                "render": "Il gestore è un ente {operator:type}."
+            },
+            "station-place": {
+                "question": "In che località si trova la stazione? (ad es. quartiere, paese o città)",
+                "render": "La stazione si trova a {addr:place}."
+            },
+            "station-street": {
+                "question": " Qual è il nome della via in cui si trova la caserma?",
+                "render": "La stazione si trova in una strada chiamata {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Caserma dei vigili del fuoco"
+        }
+    },
     "ghost_bike": {
         "name": "Bici fantasma",
         "presets": {
@@ -955,6 +1085,71 @@
                 }
             },
             "render": "Bici fantasma"
+        }
+    },
+    "hydrant": {
+        "description": "Livello della mappa che mostra gli idranti antincendio.",
+        "name": "Mappa degli idranti",
+        "presets": {
+            "0": {
+                "description": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
+                "title": "Idrante antincendio"
+            }
+        },
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "0": {
+                        "then": "Il colore dell’idrante è sconosciuto."
+                    },
+                    "1": {
+                        "then": "Il colore dell’idrante è giallo."
+                    },
+                    "2": {
+                        "then": "L'idrante è rosso."
+                    }
+                },
+                "question": "Qual è il colore dell’idrante?",
+                "render": "Il colore dell’idrante è {colour}"
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "0": {
+                        "then": "L’idrante è (parzialmente o completamente) funzionante."
+                    },
+                    "1": {
+                        "then": "L’idrante è fuori servizio."
+                    },
+                    "2": {
+                        "then": "L’idrante è stato rimosso."
+                    }
+                },
+                "question": "Aggiorna lo stato di funzionamento dell’idrante."
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Il tipo di idrante è sconosciuto."
+                    },
+                    "1": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Soprasuolo."
+                    },
+                    "2": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tubo."
+                    },
+                    "3": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> A muro."
+                    },
+                    "4": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Sottosuolo."
+                    }
+                },
+                "question": "Di che tipo è questo idrante?",
+                "render": " Tipo di idrante: {fire_hydrant:type}"
+            }
+        },
+        "title": {
+            "render": "Idrante"
         }
     },
     "information_board": {

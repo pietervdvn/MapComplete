@@ -39,17 +39,6 @@
     "ghostbikes": {
         "title": "Fantombicikloj"
     },
-    "hailhydrant": {
-        "layers": {
-            "1": {
-                "tagRenderings": {
-                    "extinguisher-location": {
-                        "render": "Loko: {location}"
-                    }
-                }
-            }
-        }
-    },
     "maps": {
         "title": "Mapo de mapoj"
     },

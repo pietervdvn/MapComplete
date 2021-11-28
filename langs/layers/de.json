@@ -1,4 +1,17 @@
 {
+    "ambulancestation": {
+        "description": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
+        "name": "Karte der Rettungswachen",
+        "presets": {
+            "0": {
+                "description": "Eine Rettungsstation der Karte hinzufügen",
+                "title": "Rettungswache"
+            }
+        },
+        "title": {
+            "render": "Rettungswache"
+        }
+    },
     "artwork": {
         "description": "Verschiedene Kunstwerke",
         "name": "Kunstwerke",
@@ -1662,6 +1675,58 @@
             }
         }
     },
+    "extinguisher": {
+        "description": "Kartenebene zur Anzeige von Hydranten.",
+        "name": "Karte mit Feuerlöschern.",
+        "presets": {
+            "0": {
+                "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
+                "title": "Feuerlöscher"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Im Innenraum vorhanden."
+                    },
+                    "1": {
+                        "then": "Im Außenraum vorhanden."
+                    }
+                },
+                "question": "Wo befindet er sich?",
+                "render": "Standort: {location}"
+            }
+        },
+        "title": {
+            "render": "Feuerlöscher"
+        }
+    },
+    "fire_station": {
+        "description": "Kartenebene zur Darstellung von Feuerwachen.",
+        "name": "Karte der Feuerwachen",
+        "presets": {
+            "0": {
+                "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+                "title": "Feuerwache"
+            }
+        },
+        "tagRenderings": {
+            "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "Brandschutzbehörde"
+                    }
+                }
+            },
+            "station-name": {
+                "question": "Wie lautet der Name dieser Feuerwache?"
+            }
+        },
+        "title": {
+            "render": "Feuerwache"
+        }
+    },
     "food": {
         "filter": {
             "0": {
@@ -1830,6 +1895,71 @@
                 }
             },
             "render": "Geisterrad"
+        }
+    },
+    "hydrant": {
+        "description": "Kartenebene zur Anzeige von Hydranten.",
+        "name": "Karte der Hydranten",
+        "presets": {
+            "0": {
+                "description": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
+                "title": "Löschwasser-Hydrant"
+            }
+        },
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Farbe des Hydranten ist unbekannt."
+                    },
+                    "1": {
+                        "then": "Die Farbe des Hydranten ist gelb."
+                    },
+                    "2": {
+                        "then": "Die Farbe des Hydranten ist rot."
+                    }
+                },
+                "question": "Welche Farbe hat der Hydrant?",
+                "render": "Der Hydrant hat die Farbe {colour}"
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Hydrant ist (ganz oder teilweise) in Betrieb."
+                    },
+                    "1": {
+                        "then": "Der Hydrant ist nicht verfügbar."
+                    },
+                    "2": {
+                        "then": "Der Hydrant wurde entfernt."
+                    }
+                },
+                "question": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten."
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Typ des Hydranten ist unbekannt."
+                    },
+                    "1": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
+                    },
+                    "2": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
+                    },
+                    "3": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
+                    },
+                    "4": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
+                    }
+                },
+                "question": "Um welche Art von Hydrant handelt es sich?",
+                "render": " Hydranten-Typ: {fire_hydrant:type}"
+            }
+        },
+        "title": {
+            "render": "Hydrant"
         }
     },
     "information_board": {
